@@ -26,12 +26,12 @@ ms.locfileid: "43858640"
  コードとしてマークするテキスト。  
   
 ## <a name="remarks"></a>Remarks  
- 使用して、`<code>`をコードとして複数の行を示すタグ。 説明内のテキストをコードとしてマークする場合は、[\<c](../../../visual-basic/language-reference/xmldoc/c.md) タグを使用します。  
+ 使用して、`<code>`をコードとして複数の行を示すタグ。 説明内のテキストをコードとしてマークする場合は、[\<c>](../../../visual-basic/language-reference/xmldoc/c.md) タグを使用します。  
   
  コンパイル時に [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
 ## <a name="example"></a>例  
- この例では、\<コード > タグを使用するためのサンプル コードを`ID`フィールド。  
+ この例では、\<code> タグを使用するためのサンプル コードを`ID`フィールド。  
   
  [!code-vb[VbVbcnXmlDocComments#2](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/code_1.vb)]  
   
