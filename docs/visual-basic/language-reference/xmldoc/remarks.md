@@ -1,5 +1,5 @@
 ---
-title: '&lt;「解説」&gt; (Visual Basic)'
+title: '<remarks> (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <remarks> XML tag
@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2018
 ms.locfileid: "43863034"
 ---
-# <a name="ltremarksgt-visual-basic"></a>&lt;「解説」&gt; (Visual Basic)
+# <a name="ltremarksgt-visual-basic"></a><remarks> (Visual Basic)
 メンバーの「解説」セクションをを指定します。  
   
 ## <a name="syntax"></a>構文  
