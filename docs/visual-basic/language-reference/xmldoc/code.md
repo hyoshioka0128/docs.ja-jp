@@ -26,7 +26,7 @@ ms.locfileid: "43858640"
  コードとしてマークするテキスト。  
   
 ## <a name="remarks"></a>Remarks  
- 使用して、`<code>`をコードとして複数の行を示すタグ。 説明内のテキストをコードとしてマークする場合は、[\<c](../../../visual-basic/language-reference/xmldoc/c.md) タグを使用します。  
+ 使用して、`<code>`をコードとして複数の行を示すタグ。 説明内のテキストをコードとしてマークする場合は、[\<c>](../../../visual-basic/language-reference/xmldoc/c.md) タグを使用します。  
   
  コンパイル時に [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
