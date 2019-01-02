@@ -1,5 +1,5 @@
 ---
-title: '&#39;#ElseIf&#39;前に、対応する必要がある&#39;#If&#39;または&#39;#ElseIf&#39;'
+title: ''#ElseIf' の前には、対応する '#If' または '#ElseIf' が必要です'
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30014
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ms.locfileid: "33588149"
 ---
-# <a name="39elseif39-must-be-preceded-by-a-matching-39if39-or-39elseif39"></a>&#39;#ElseIf&#39;前に、対応する必要がある&#39;#If&#39;または&#39;#ElseIf&#39;
+# <a name="39elseif39-must-be-preceded-by-a-matching-39if39-or-39elseif39"></a>'#ElseIf' の前には、対応する '#If' または '#ElseIf' が必要です
 `#ElseIf` 条件付きコンパイル ディレクティブです。 `#ElseIf`句の前に、対応する必要があります`#If`または`#ElseIf`句。  
   
  **エラー ID:** BC30014  
