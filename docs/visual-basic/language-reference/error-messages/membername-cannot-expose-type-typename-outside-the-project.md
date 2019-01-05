@@ -1,5 +1,5 @@
 ---
-title: '&#39;&lt;membername&gt; &#39;型を公開できません&#39; &lt;typename&gt; &#39;経由でプロジェクトの外部&lt;コンテナー&gt; &#39; &lt;containertypename。&gt;&#39;'
+title: ''<membername>' は、型 '<typename>' を <containertype> '<containertypename>' 経由でプロジェクトの外側に公開できません。'
 ms.date: 07/20/2015
 f1_keywords:
 - bc30909
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/04/2018
 ms.locfileid: "33588094"
 ---
-# <a name="39ltmembernamegt39-cannot-expose-type-39lttypenamegt39-outside-the-project-through-ltcontainertypegt-39ltcontainertypenamegt39"></a>&#39;&lt;membername&gt; &#39;型を公開できません&#39; &lt;typename&gt; &#39;経由でプロジェクトの外部&lt;コンテナー&gt; &#39; &lt;containertypename。&gt;&#39;
+# <a name="39ltmembernamegt39-cannot-expose-type-39lttypenamegt39-outside-the-project-through-ltcontainertypegt-39ltcontainertypenamegt39"></a>'<membername>' は、型 '<typename>' を <containertype> '<containertypename>' 経由でプロジェクトの外側に公開できません。
 変数、プロシージャのパラメーター、または関数の戻り値は、そのコンテナーでは、外部に公開されるが、コンテナーの外部公開してはならないを型として宣言されています。  
   
  次のスケルトン コードは、このエラーが発生する状況を示しています。  
