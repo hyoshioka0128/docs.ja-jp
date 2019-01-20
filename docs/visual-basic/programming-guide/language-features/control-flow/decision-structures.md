@@ -21,10 +21,10 @@ Visual Basic では、条件をテストし、そのテストの結果に応じ�
   
  次の図は、条件が真性をテストし、true と false であるかに応じて異なる処理を実行する条件判断構造を示します。  
   
- ![If のフロー チャートしています.そうしたら...他の構築](../../../../visual-basic/programming-guide/language-features/control-flow/media/ifthenelse.gif "IfThenElse")  
+ ![If...Then...Else 構造](../../../../visual-basic/programming-guide/language-features/control-flow/media/ifthenelse.gif "IfThenElse")  
 条件が true と false の場合は、別の操作を実行  
   
-## <a name="ifthenelse-construction"></a>もし...そうしたら...他の構築  
+## <a name="ifthenelse-construction"></a>If...Then...Else 構造  
  `If...Then...Else` 構造では、1 つまたは複数の条件をテストし、各条件に応じて 1 つまたは複数のステートメントを実行できます。 条件をテストし、次の方法でアクションを実行できます。  
   
 -   条件の場合は、1 つまたは複数のステートメントを実行します。 `True`  
