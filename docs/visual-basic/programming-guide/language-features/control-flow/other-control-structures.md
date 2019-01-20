@@ -18,7 +18,7 @@ Visual Basic では、リソースを破棄または繰り返しオブジェク�
 ## <a name="usingend-using-construction"></a>使用しています.構築を使用して終了  
  `Using...End Using`構築を行うステートメント ブロックを確立する、SQL 接続などのリソースを使用します。 リソースを取得することができます必要に応じて、`Using`ステートメントです。 終了すると、`Using`ブロック、Visual Basic を自動的に破棄されたリソースを使用するには、他のコードで使用可能になるようにします。 ローカルで破棄可能なリソースを指定する必要があります。 詳細については、「[Using ステートメント](../../../../visual-basic/language-reference/statements/using-statement.md)」を参照してください。  
   
-## <a name="withend-with-construction"></a>With...End With の構築  
+## <a name="withend-with-construction"></a>With...End With 構造  
  `With...End With`構築では、オブジェクト参照を 1 回指定することができますし、一連のメンバーにアクセスするステートメントを実行します。 コードを簡略化でき、Visual Basic がそれにアクセスする各ステートメントの参照を再確立があるないために、パフォーマンスを向上させるこのことができます。 詳細については、次を参照してください[With...End With ステートメント](../../../../visual-basic/language-reference/statements/with-end-with-statement.md)です。  
   
 ## <a name="see-also"></a>関連項目  
