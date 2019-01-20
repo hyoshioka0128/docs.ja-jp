@@ -26,7 +26,7 @@ Visual Basic のループ構造を使用すると、コードの 1 つまたは�
 条件が true になるまで、一連のステートメントを実行しています。  
   
 ## <a name="while-loops"></a>While ループ  
- `While`しています.`End While`で条件が指定されていれば、構築が一連のステートメントを実行、`While`ステートメントが`True`です。 詳細については、次を参照してください[中...While ステートメント終了](../../../../visual-basic/language-reference/statements/while-end-while-statement.md)です。  
+ `While`しています.`End While`で条件が指定されていれば、構築が一連のステートメントを実行、`While`ステートメントが`True`です。 詳細については、[While ... End While ステートメント](../../../../visual-basic/language-reference/statements/while-end-while-statement.md)を参照してください。  
   
 ## <a name="do-loops"></a>Do ループ  
  `Do`しています.`Loop`構築では、ループ構造の末尾または先頭のいずれかに条件をテストすることができます。 条件がある限り、ループ処理を実行するかどうかを指定することも`True`になるまで`True`です。 詳細については、次を参照してください[操作を行います...ステートメントをループ](../../../../visual-basic/language-reference/statements/do-loop-statement.md)です。  
