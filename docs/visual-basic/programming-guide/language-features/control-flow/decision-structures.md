@@ -40,7 +40,7 @@ Visual Basic では、条件をテストし、そのテストの結果に応じ�
 ## <a name="selectcase-construction"></a>このオプションを選択するとしてください.ケースの構築  
  `Select...Case`構築では、1 回式を評価し、別の使用可能な値に基づいたステートメントのさまざまなセットを実行することができます。 詳細については、次を参照してください[を選択しています...ステートメントの case](../../../../visual-basic/language-reference/statements/select-case-statement.md)です。  
   
-## <a name="trycatchfinally-construction"></a>Try しています.キャッチしてください.最後に構築  
+## <a name="trycatchfinally-construction"></a>Try...Catch...Finally 構造  
  `Try...Catch...Finally` 構造では、一連のステートメントのいずれかの例外が発生した場合にコントロールを保持する環境下でステートメントを実行できます。 さまざまな例外のさまざまな操作を実行することができます。 必要に応じて、全体を終了する前に実行されるコードのブロックを指定することができます`Try...Catch...Finally`どうなるかに関係なく、構築します。 詳しくは、「[Try...Catch...Finally ステートメント](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)」をご覧ください。  
   
 > [!NOTE]
