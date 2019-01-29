@@ -56,7 +56,7 @@ End With
 |`Function`|終了するために必要な`Function`プロシージャの定義を照合することによって開始された[Function ステートメント](function-statement.md)します。 実行されると、`End Function`ステートメントでは、呼び出し元のコードに制御が戻ります。|
 |`Get`|終了するために必要な`Property`プロシージャの定義を照合することによって開始された[Get ステートメント](get-statement.md)します。 実行されると、`End Get`ステートメントでは、プロパティの値を要求するステートメントに制御が戻ります。|
 |`If`|終了するために必要な`If`.`Then`...`Else`ブロックを照合することによって開始された定義`If`ステートメント。 参照してください[If...Then...Else ステートメント](if-then-else-statement.md)です。|
-|`Interface`|照合することによって開始されたインターフェイス定義を終了するために必要な[インターフェイス ステートメント](interface-statement.md)します。|
+|`Interface`|照合することによって開始されたインターフェイス定義を終了するために必要な[Interface ステートメント](interface-statement.md)します。|
 |`Module`|照合することによって開始されたモジュールの定義を終了するために必要な[モジュール ステートメント](module-statement.md)します。|
 |`Namespace`|照合することによって開始された名前空間の定義を終了するために必要な[Namespace ステートメント](namespace-statement.md)します。|
 |`Operator`|照合することによって開始された演算子の定義を終了するために必要な[Operator Statement](operator-statement.md)します。|
