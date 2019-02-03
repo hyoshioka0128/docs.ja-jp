@@ -34,7 +34,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 01/23/2019
 ms.locfileid: "54548951"
 ---
-# <a name="declare-statement"></a>Declare Statement
+# <a name="declare-statement"></a>Declare ステートメント
 外部のファイルに実装されているプロシージャへの参照を宣言します。  
   
 ## <a name="syntax"></a>構文  
