@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル: Windows Api の呼び出し (Visual Basic)'
+title: 'チュートリアル: Windows API の呼び出し (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - DLLs, calling
@@ -18,26 +18,26 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 01/23/2019
 ms.locfileid: "54657975"
 ---
-# <a name="walkthrough-calling-windows-apis-visual-basic"></a>チュートリアル: Windows Api の呼び出し (Visual Basic)
-Windows Api は、Windows オペレーティング システムの一部であるダイナミック リンク ライブラリ (Dll) です。 それらを使用するには、独自の同等のプロシージャを記述するのにことは困難である場合は、タスクを実行します。 たとえば、という名前の関数は、Windows`FlashWindowEx`を可能にすること、アプリケーションのタイトル バーを薄いおよび濃い網掛けを切り替える。  
+# <a name="walkthrough-calling-windows-apis-visual-basic"></a>チュートリアル: Windows API の呼び出し (Visual Basic)
+Windows API は、Windows オペレーティング システムの一部であるダイナミック リンク ライブラリ (Dll) です。 それらを使用するには、独自の同等のプロシージャを記述するのにことは困難である場合は、タスクを実行します。 たとえば、という名前の関数は、Windows`FlashWindowEx`を可能にすること、アプリケーションのタイトル バーを薄いおよび濃い網掛けを切り替える。  
   
- Windows Api を使用して、コード内の利点は、数十個は既に書き込まれている便利な関数の使用を待機しているが含まれているため、開発時間を保存することができます。 欠点は、問題が生じた場合、および晙の処理が難しくなって Windows Api であることができます。  
+ Windows API を使用して、コード内の利点は、数十個は既に書き込まれている便利な関数の使用を待機しているが含まれているため、開発時間を保存することができます。 欠点は、問題が生じた場合、および晙の処理が難しくなって Windows API であることができます。  
   
- Windows Api では、相互運用性の特殊なカテゴリを表します。 Windows Api では、マネージ コードを使用しないでください、タイプ ライブラリ、および Visual Studio で使用されるものとは異なるデータ型を使用して、組み込みはありません。 これらの違いにより、Windows Api は COM オブジェクト、Windows Api との相互運用ではなく、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]プラットフォームを使用して実行されます呼び出すには、pinvoke です。 プラットフォーム呼び出しはマネージ Dll で実装されたアンマネージ関数を呼び出すコードを有効するサービスです。 詳細については、次を参照してください。[アンマネージ DLL 関数の処理](../../../framework/interop/consuming-unmanaged-dll-functions.md)します。 Visual Basic で PInvoke を使用するにはいずれかを使用して、`Declare`ステートメントまたは適用する、`DllImport`属性を空のプロシージャです。  
+ Windows API では、相互運用性の特殊なカテゴリを表します。 Windows API では、マネージ コードを使用しないでください、タイプ ライブラリ、および Visual Studio で使用されるものとは異なるデータ型を使用して、組み込みはありません。 これらの違いにより、Windows API は COM オブジェクト、Windows API との相互運用ではなく、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]プラットフォームを使用して実行されます呼び出すには、pinvoke です。 プラットフォーム呼び出しはマネージ Dll で実装されたアンマネージ関数を呼び出すコードを有効するサービスです。 詳細については、次を参照してください。[アンマネージ DLL 関数の処理](../../../framework/interop/consuming-unmanaged-dll-functions.md)します。 Visual Basic で PInvoke を使用するにはいずれかを使用して、`Declare`ステートメントまたは適用する、`DllImport`属性を空のプロシージャです。  
   
- Windows API の呼び出しでは、Visual Basic では、以前は、プログラミングの重要な部分をされたが、Visual Basic .NET を使用して必要なことはほとんどありません。 可能であればからマネージ コードを使用する必要があります、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Windows API の呼び出しではなく、タスクを実行します。 このチュートリアルは、使用する必要のある状況についての情報を提供します。 Windows Api が必要です。  
+ Windows API の呼び出しでは、Visual Basic では、以前は、プログラミングの重要な部分をされたが、Visual Basic .NET を使用して必要なことはほとんどありません。 可能であればからマネージ コードを使用する必要があります、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Windows API の呼び出しではなく、タスクを実行します。 このチュートリアルは、使用する必要のある状況についての情報を提供します。 Windows API が必要です。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ## <a name="api-calls-using-declare"></a>使用して API 呼び出しを宣言します。  
- Windows Api を呼び出すための最も一般的な方法を使用して、`Declare`ステートメント。  
+ Windows API を呼び出すための最も一般的な方法を使用して、`Declare`ステートメント。  
   
 #### <a name="to-declare-a-dll-procedure"></a>DLL のプロシージャを宣言するには  
   
 1.  を呼び出そうと関数とその引数、引数の型の名前を特定し、値だけでなく、名前とそれを含んでいる DLL の場所を返します。  
   
     > [!NOTE]
-    >  Windows Api については、プラットフォーム SDK の Windows API で Win32 SDK ドキュメントを参照してください。 Windows Api を使用する定数の詳細については、Windows.h、Platform SDK に含まれているなどのヘッダー ファイルを調べてください。  
+    >  Windows API については、プラットフォーム SDK の Windows API で Win32 SDK ドキュメントを参照してください。 Windows API を使用する定数の詳細については、Windows.h、Platform SDK に含まれているなどのヘッダー ファイルを調べてください。  
   
 2.  クリックして、新しい Windows アプリケーション プロジェクトを開く**新規**上、**ファイル** メニューのをクリックして**プロジェクト**します。 **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
