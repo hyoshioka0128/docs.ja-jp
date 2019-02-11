@@ -15,10 +15,10 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 01/30/2019
 ms.locfileid: "55268198"
 ---
-# <a name="module-element-network-settings"></a>\<モジュール > 要素 (ネットワーク設定)
+# <a name="module-element-network-settings"></a>\<module> 要素 (ネットワーク設定)
 新しいプロキシ モジュールをアプリケーションに追加します。  
   
- \<configuration>  
+\<configuration>  
 \<system.net>  
 \<defaultProxy>  
 \<module>  
