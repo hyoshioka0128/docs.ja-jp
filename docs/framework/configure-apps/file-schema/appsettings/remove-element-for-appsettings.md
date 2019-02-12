@@ -1,5 +1,5 @@
 ---
-title: <remove> の <appSettings> 要素
+title: <appSettings>の<remove>要素
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings/remove
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 01/30/2019
 ms.locfileid: "55258722"
 ---
-# <a name="remove-element-for-appsettings"></a>\<削除 > 要素の\<appSettings >
+# <a name="remove-element-for-appsettings"></a>\<appSettings>の\<remove>要素
 
 カスタム アプリケーションの設定を削除します。
 
