@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル: デザイン時に Windows フォームで新しい WPF コンテンツを作成します。'
+title: 'チュートリアル: デザイン時に Windows フォームで新しい WPF コンテンツを作成'
 ms.date: 08/18/2018
 helpviewer_keywords:
 - interoperability [Windows Forms], WPF and Windows Forms
@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/09/2019
 ms.locfileid: "57707912"
 ---
-# <a name="walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time"></a>チュートリアル: デザイン時に Windows フォームで新しい WPF コンテンツを作成します。
+# <a name="walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time"></a>チュートリアル: デザイン時に Windows フォームで新しい WPF コンテンツを作成
 
 このトピックでは、Windows フォーム ベースのアプリケーションで使用する Windows Presentation Foundation (WPF) コントロールを作成する方法を示します。
 
