@@ -55,7 +55,7 @@ Windows フォームにおける印刷の基盤は、<xref:System.Drawing.Printi
        }  
     ```  
   
-     (Visual c# と[!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)])、イベント ハンドラーを登録するフォームのコンス トラクターで、次のコードを配置します。  
+     (Visual # と[!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)])、イベント ハンドラーを登録するフォームのコンス トラクターで、次のコードを配置します。  
   
     ```csharp  
     this.printDocument1.PrintPage += new  
