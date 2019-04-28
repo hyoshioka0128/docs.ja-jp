@@ -28,5 +28,5 @@ ms.locfileid: "59164490"
 ## <a name="see-also"></a>関連項目
 
 - [base](~/docs/csharp/language-reference/keywords/base.md)
-- [方法: Windows フォームを継承します。](how-to-inherit-windows-forms.md)
+- [方法: Windows フォームを継承する](how-to-inherit-windows-forms.md)
 - [Windows フォームのビジュアルの継承](windows-forms-visual-inheritance.md)
