@@ -25,7 +25,7 @@ ms.locfileid: "61672576"
 >  実際に画面に表示されるダイアログ ボックスとメニュー コマンドは、アクティブな設定またはエディションによっては、ヘルプの説明と異なる場合があります。 設定を変更するには、 **[ツール]** メニューの **[設定のインポートとエクスポート]** をクリックします。 詳細については、「[Visual Studio IDE のカスタマイズ](/visualstudio/ide/personalizing-the-visual-studio-ide)」を参照してください。  
   
 > [!NOTE]
->  使用して、Visual C のコントロールをテストすることはできません、 **UserControl Test Container**します。  
+>  使用して、Visual C++ のコントロールをテストすることはできません、 **UserControl Test Container**します。  
   
 ### <a name="to-test-the-run-time-behavior-of-a-usercontrol"></a>UserControl の実行時の動作をテストするには  
   
