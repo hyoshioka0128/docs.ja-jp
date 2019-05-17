@@ -83,5 +83,5 @@ ms.locfileid: "64607315"
   
 ## <a name="see-also"></a>関連項目
 
-- [\<ランタイム > 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)
+- [\<runtime> 要素](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)
 - [\<configuration> 要素](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)
