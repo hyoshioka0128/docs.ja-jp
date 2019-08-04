@@ -9,7 +9,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61674702"
 ---
-# <a name="add-element-for-schemesettings-uri-settings"></a>\<追加 > schemeSettings (Uri 設定) の要素
+# <a name="add-element-for-schemesettings-uri-settings"></a>\schemeSettings の <add> 要素 (Uri 設定)
 スキーム名の設定の設定を追加します。  
   
  \<configuration>  
