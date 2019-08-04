@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61705156"
 ---
-# <a name="add-element-for-authenticationmodules-network-settings"></a>\<追加 > authenticationModules (ネットワーク設定) の要素
+# <a name="add-element-for-authenticationmodules-network-settings"></a>\authenticationModules の <add> 要素 (ネットワーク設定)
 アプリケーションに認証モジュールを追加します。  
   
  \<configuration>  
