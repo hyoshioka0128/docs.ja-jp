@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61705130"
 ---
-# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy > 要素 (ネットワーク設定)
+# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy> 要素 (ネットワーク設定)
 HTTP キャッシュがアクティブでかどうかし、既定のキャッシュ ポリシーの記述について説明します。  
   
  \<configuration>  
