@@ -9,7 +9,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64592758"
 ---
-# <a name="idn-element-uri-settings"></a>\<idn > 要素 (Uri 設定)
+# <a name="idn-element-uri-settings"></a>\<idn> 要素 (Uri 設定)
 ドメイン名に国際化ドメイン名 (IDN) 解析が適用されるかどうかを指定します。  
   
 ## <a name="schema-hierarchy"></a>スキーマの階層  
