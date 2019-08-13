@@ -64,7 +64,7 @@ End Function
 >  例では、単純な反復子以外のトピックのすべての例についてには、次が含まれています。 [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)のステートメント、`System.Collections`と`System.Collections.Generic`名前空間。  
   
 ## <a name="BKMK_SimpleIterator"></a> 単純な反復子  
- 次の例は、1 つ`Yield`内にあるステートメント、[をしています.[次へ]](../../../visual-basic/language-reference/statements/for-next-statement.md)ループします。 `Main` では、`For Each` ステートメント本文の各イテレーションで iterator 関数が呼び出され、これが次の `Yield` ステートメントに続行されます。  
+ 次の例は、1 つ`Yield`内にあるステートメント、[For…Next](../../../visual-basic/language-reference/statements/for-next-statement.md)ループします。 `Main` では、`For Each` ステートメント本文の各イテレーションで iterator 関数が呼び出され、これが次の `Yield` ステートメントに続行されます。  
   
 ```vb  
 Sub Main()  
@@ -214,7 +214,7 @@ End Class
 ```  
   
 ## <a name="BKMK_TryBlocks"></a> Try ブロック  
- Visual Basic では、`Yield`内のステートメント、`Try`のブロックを[お試しください.キャッチしてください.Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)します。 A`Try`を持つブロックを`Yield`ステートメントを持つことができます`Catch`ブロック、および、持つことができます、`Finally`ブロックします。  
+ Visual Basic では、`Yield`内のステートメント、`Try`のブロックを[Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)します。 A`Try`を持つブロックを`Yield`ステートメントを持つことができます`Catch`ブロック、および、持つことができます、`Finally`ブロックします。  
   
  次の例が含まれます`Try`、 `Catch`、および`Finally`反復子関数でブロックします。 `Finally`反復子関数でのブロックを実行する前に、`For Each`イテレーションが完了するとします。  
   
