@@ -41,7 +41,7 @@ result = object1 Is object2
  `Is` 使用することができますも、`TypeOf`キーワードを`TypeOf`.`Is`オブジェクト変数のデータ型と互換性があるかどうかをテストする式。  
   
 > [!NOTE]
->  `Is`でキーワードを使用しても、[を選択しています.Case ステートメント](../../../visual-basic/language-reference/statements/select-case-statement.md)します。  
+>  `Is`キーワードは[Select...Case ステートメント](../../../visual-basic/language-reference/statements/select-case-statement.md)でも使用されます。  
   
 ## <a name="example"></a>例  
  次の例では、`Is`オブジェクト参照のペアを比較する演算子。 割り当てられている結果を`Boolean`2 つのオブジェクトが同一であるかどうかを表す値。  
