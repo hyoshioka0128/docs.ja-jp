@@ -14,12 +14,12 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70252720"
 ---
-# <a name="crst_disablespinwait-element"></a>\<Crst_DisableSpinWait > 要素
+# <a name="crst_disablespinwait-element"></a>\<Crst_DisableSpinWait> 要素
 
 競合の多い場合、クリティカル セクションのスピン待機時間を無効にするかどうかを指定します。  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<ランタイム >** ](runtime-element.md)\
+&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<Crst_DisableSpinWait >**  
   
 ## <a name="syntax"></a>構文  
