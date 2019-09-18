@@ -19,11 +19,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70252673"
 ---
-# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures > 要素
+# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures> 要素
 プローブによってアセンブリが見つからなかったために発生するバインドエラーのキャッシュを無効にするかどうかを指定します。  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<ランタイム >** ](runtime-element.md)\
+&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<disableCachingBindingFailures >**  
   
 ## <a name="syntax"></a>構文  
