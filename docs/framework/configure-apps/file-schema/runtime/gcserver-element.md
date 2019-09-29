@@ -17,11 +17,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70252548"
 ---
-# <a name="gcserver-element"></a>\<gcServer > 要素
+# <a name="gcserver-element"></a>\<gcServer> 要素
 共通言語ランタイムがサーバーのガベージ コレクションを実行するかどうかを指定します。  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<ランタイム >** ](runtime-element.md)\
+&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<gcServer>**  
   
 ## <a name="syntax"></a>構文  
