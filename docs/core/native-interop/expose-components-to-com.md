@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 686d1b31478121a8b2c907d99672a5fcc3438a71
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 8f9624414a2b423bd43e8790d11b70ae1ca6286d
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849035"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216231"
 ---
 # <a name="exposing-net-core-components-to-com"></a>COM への .NET Core コンポーネントの公開
 
@@ -25,16 +25,24 @@ ms.locfileid: "70849035"
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-- [.NET Core 3.0 Preview 7 SDK](https://dotnet.microsoft.com/download) 以降のバージョンをインストールします。
+- [NET Core 3.0 SDK](https://dotnet.microsoft.com/download) 以降のバージョンをインストールします。
 
 ## <a name="create-the-library"></a>ライブラリを作成する
 
 最初の手順では、ライブラリを作成します。
 
-1. 新しいフォルダーを作成し、そのフォルダーで `dotnet new classlib` を実行します。
+1. 新しいフォルダーを作成し、そのフォルダーで次のコマンドを実行します。
+    
+    ```dotnetcli
+    dotnet new classlib
+    ```
+
 2. `Class1.cs`を開きます。
 3. ファイルの先頭に、`using System.Runtime.InteropServices;` を追加します。
-4. `IServer` という名前のインターフェイスを作成します。 たとえば、[!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)] のようにします。
+4. `IServer` という名前のインターフェイスを作成します。 次に例を示します。
+
+   [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
+
 5. このインターフェイスに、実装する COM インターフェイス用のインターフェイス GUID を使用して、`[Guid("<IID>")]` 属性を追加します。 たとえば、`[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]` のようにします。 この GUID は、COM 用のこのインターフェイスの唯一の識別子であるため、一意である必要があることに注意してください。 Visual Studio で GUID を作成するには、[ツール] > [GUID の作成] の順に移動して GUI の作成ツールを開きます。
 6. インターフェイスに `[InterfaceType]` 属性を追加し、お使いのインターフェイスで実装すべき基本 COM インターフェイスを指定します。
 7. `IServer` を実装する、`Server` という名前のクラスを作成します。
@@ -66,7 +74,7 @@ ms.locfileid: "70849035"
 
 GitHub の dotnet/samples リポジトリには、完全に機能する [COM サーバーのサンプル](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo)があります。
 
-## <a name="additional-notes"></a>その他のメモ
+## <a name="additional-notes"></a>補足メモ
 
 .NET Core では、.NET Framework とは異なり、.NET Core アセンブリからの COM タイプ ライブラリ (TLB) の生成はサポートしていません。 インターフェイスのネイティブ宣言には、IDL ファイルまたは C++ ヘッダーを手動で記述する必要があります。
 

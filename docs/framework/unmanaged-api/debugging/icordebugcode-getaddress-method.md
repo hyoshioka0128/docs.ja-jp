@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fbdf8649e3cb2221e5c74eefd22959dc4b382236
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7df668487601e4278b56e196a43d1154b643fd29
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747685"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700745"
 ---
 # <a name="icordebugcodegetaddress-method"></a>ICorDebugCode::GetAddress メソッド
-この"ICorDebugCode"インターフェイスを表すコード セグメントの相対仮想アドレス (RVA) を取得します。  
+この "" コード "インターフェイスが表すコードセグメントの相対仮想アドレス (RVA) を取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -37,15 +37,13 @@ HRESULT GetAddress (
   
 ## <a name="parameters"></a>パラメーター  
  `pStart`  
- [out]コード セグメントの RVA へのポインター。  
+ 入出力コードセグメントの RVA へのポインター。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **・** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
   
- **ヘッダー:** CorDebug.idl、CorDebug.h  
+ **ヘッダー:** CorDebug .idl、CorDebug. h  
   
- **ライブラリ:** CorGuids.lib  
+ **ライブラリ**CorGuids .lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>関連項目
+ **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

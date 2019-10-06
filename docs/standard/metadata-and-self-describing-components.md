@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ccfb0dee0eb6380d48498ba61f763eb777bded1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1a35f4ffa88211d914dbf84c87da49fafa89a929
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754947"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353901"
 ---
 # <a name="metadata-and-self-describing-components"></a>メタデータと自己言及的なコンポーネント
 
@@ -84,9 +84,7 @@ ms.locfileid: "64754947"
 
 メタデータ トークンは、4 バイトで構成される数値です。 最上位バイトは、特定のトークンの参照先であるメタデータ テーブル (メソッド、型など) を表します。 残り 3 バイトは、記述されているプログラミング要素と対応する、メタデータ テーブル内の行を指定します。 たとえば、C# 言語でメソッドを定義し、そのメソッドを PE ファイルとしてコンパイルすると、PE ファイルの MSIL 部分に次のようなメタデータ トークンが格納されます。
 
-```
-0x06000004
-```
+`0x06000004`
 
 最上位バイト (`0x06`) は、**MethodDef** トークンであることを示します。 下位 3 バイト (`000004`) は、**MethodDef** テーブル内の、このメソッドの定義を記述する情報に対応する 4 行目を参照するように、共通言語ランタイムに指示します。
 
@@ -140,7 +138,7 @@ public class MyApp
 
 上記のコードの `Main` 関数によって生成された MSIL の一部の例を次に示します。 MSIL とメタデータは、[MSIL 逆アセンブラー (Ildasm.exe)](../../docs/framework/tools/ildasm-exe-il-disassembler.md) を使用することにより、任意の .NET Framework アプリケーションから表示できます。
 
-```
+```console
 .entrypoint
 .maxstack  3
 .locals ([0] int32 ValueOne,

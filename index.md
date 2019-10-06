@@ -5,13 +5,13 @@ hide_bc: true
 title: .NET ドキュメント
 description: .NET で、C#、Visual Basic、および F# を使用して任意のプラットフォームでさまざまなアプリケーションを作成する方法を説明します。 API リファレンス、サンプル コード、チュートリアルなどを参照します。
 ms.custom: updateeachrelease
-ms.date: 09/23/2019
-ms.openlocfilehash: cb567ea473e99c3bbd3d63a2328d45e94ca742ff
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.date: 09/30/2019
+ms.openlocfilehash: a30744ca8831375f9a54f054b226274e273a67a5
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216699"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736772"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -118,6 +118,7 @@ ms.locfileid: "71216699"
                                                 <p><a href="/dotnet/core/porting/">.NET Framework からの移植</a></p>
                                                 <p><a href="/aspnet/core/getting-started/">ASP.NET Core</a></p>
                                                 <p><a href="/ef/core/">EF Core</a></p>
+                                                <p><a href="/dotnet/desktop-wpf/">デスクトップ ガイド (WPF)</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -581,17 +582,37 @@ ms.locfileid: "71216699"
                                 </a>
                             </li>
                             <li>
+                                <a href="/dotnet/desktop-wpf/">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/net-docs-desktop-2-core.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Windows Presentation Foundation (.NET Core)</h3>
+                                                    <p>WPF では、開発者が Windows でデスクトップ アプリケーションを構築するための XAML ベースのモデルが用意されています。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/dotnet/framework/wpf/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="/dotnet/images/hub/net-docs-desktop-2.svg" alt="" />
+                                                        <img src="/dotnet/images/hub/net-docs-desktop-2-framework.svg" alt="" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Windows Presentation Foundation (WPF)</h3>
+                                                    <h3>Windows Presentation Foundation (.NET Framework)</h3>
                                                     <p>WPF では、開発者が Windows でデスクトップ アプリケーションを構築するための XAML ベースのモデルが用意されています。
                                                     </p>
                                                 </div>
@@ -797,6 +818,155 @@ ms.locfileid: "71216699"
                                                 <div class="cardText">
                                                     <h3>.NET for Apache Spark</h3>
                                                     <p>大量のデータ、リアルタイムのストリーム、機械学習、アドホック クエリなど、.NET コードで記述されたあらゆるものを処理します。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#architecture">アーキテクチャ</a>
+                        <ul id="architecture" class="cardsC">
+                            <li>
+                                <a href="/dotnet/architecture/microservices">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/microservices.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>.NET マイクロサービス:コンテナー化された .NET アプリケーションのアーキテクチャ</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/containerized-lifecycle">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/devops.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/modernize-with-azure-containers">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/azure-containers.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Azure クラウドと Windows コンテナーで既存の .NET アプリケーションを最新式にする</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/modern-web-apps-azure">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/tools.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>ASP.NET Core および Azure での最新の Web アプリケーションの設計</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/serverless">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/serverless.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>サーバーレス アプリ: アーキテクチャ、パターン、および Azure の実装</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/cloud-native">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/cloud-native.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3><strong>プレビュー</strong> Azure 向けクラウド ネイティブ .NET アプリケーションの設計</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/blazor-for-web-forms-developers">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/blazor.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3><strong>プレビュー</strong> ASP.NET Web Forms 開発者向け Blazor</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/architecture/grpc-for-wcf-developers">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/grpc.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3><strong>プレビュー</strong> WCF 開発者向け ASP.NET Core gRPC</h3>
                                                 </div>
                                             </div>
                                         </div>

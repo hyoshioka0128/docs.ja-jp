@@ -1,15 +1,15 @@
 ---
-title: '方法: 注釈を使用して LINQ to XML ツリーを XSLT スタイル (Visual Basic) を変換するには'
+title: '方法: 注釈を使用して XSLT スタイル (Visual Basic) の LINQ to XML ツリーを変換する'
 ms.date: 07/20/2015
 ms.assetid: 08e91fa2-dac2-4463-9ef1-87b1ac3fa890
-ms.openlocfilehash: 9ebff2276fc9f574989530fdb07a0d0875ff74a3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aa0561ecc26139d191107521a8bb5fc2889332cd
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648812"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835071"
 ---
-# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>方法: 注釈を使用して LINQ to XML ツリーを XSLT スタイル (Visual Basic) を変換するには
+# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>方法: 注釈を使用して XSLT スタイル (Visual Basic) の LINQ to XML ツリーを変換する
 注釈を使用することで、XML ツリーの変換が容易になります。  
   
  XML ドキュメントには、"ドキュメント中心で混合コンテンツを含んでいる" ものがあります。 このようなドキュメントでは、必ずしも要素の子ノードの構造を把握する必要はありません。 たとえば、テキストを含んでいるノードは次のようになります。  
@@ -18,7 +18,7 @@ ms.locfileid: "64648812"
 <text>A phrase with <b>bold</b> and <i>italic</i> text.</text>  
 ```  
   
- どのテキスト ノードにも、任意の数の `<b>` と `<i>` が子要素として存在する可能性があります。 このアプローチは、さまざまな他の状況に拡張: など、さまざまな通常の段落、箇条書きの段落、ビットマップなどの子要素を含むことのできるページ。 テーブルのセルには、テキスト、ドロップダウン リスト、またはビットマップが含まれている場合があります。 ドキュメント中心の XML の主要な特性の 1 つは、特定の要素がどの子要素を持つかがわからない点です。  
+ どのテキスト ノードにも、任意の数の `<b>` と `<i>` が子要素として存在する可能性があります。 この方法は、他の多くの状況にまで拡張されています。たとえば、通常の段落、箇条書きの段落、ビットマップなど、さまざまな子要素を含むことができるページなどです。 テーブルのセルには、テキスト、ドロップダウン リスト、またはビットマップが含まれている場合があります。 ドキュメント中心の XML の主要な特性の 1 つは、特定の要素がどの子要素を持つかがわからない点です。  
   
  ツリー内の要素を変換するとき、その要素の子について詳しく理解している必要がない場合は、注釈を使用するこの方法が効果的です。  
   
@@ -135,7 +135,7 @@ End Module
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```console
 Before Transform  
 ----------------  
 <Root>  
@@ -158,33 +158,23 @@ After Transform
 ## <a name="effecting-the-transform"></a>変換の実施  
  小さな関数 `XForm` によって、元の注釈付きツリーから変換された新しいツリーが作成されます。  
   
-- この関数の擬似コードはかなり単純です。  
+この関数の擬似コードはかなり単純です。  
   
-```  
-The function takes an XElement as an argument and returns an XElement.   
-If an element has an XElement annotation, then  
-    Return a new XElement  
-        The name of the new XElement is the annotation element's name.  
-        All attributes are copied from the annotation to the new node.  
-        All child nodes are copied from the annotation, with the  
-            exception that the special node xf:ApplyTransforms is  
-            recognized, and the source element's child nodes are  
-            iterated. If the source child node is not an XElement, it  
-            is copied to the new tree. If the source child is an  
-            XElement, then it is transformed by calling this function  
-            recursively.  
-If an element is not annotated  
-    Return a new XElement  
-        The name of the new XElement is the source element's name  
-        All attributes are copied from the source element to the  
-            destination's element.  
-        All child nodes are copied from the source element.  
-        If the source child node is not an XElement, it is copied to  
-            the new tree. If the source child is an XElement, then it  
-            is transformed by calling this function recursively.  
-```  
-  
- この関数の実装を次に示します。  
+> 関数は、引数として XElement を受け取り、XElement を返します。
+>   
+> 要素に XElement 注釈がある場合は、新しい XElement を返します。  
+>    - 新しい XElement の名前は、annotation 要素の名前です。  
+>    - すべての属性が注釈から新しいノードにコピーされます。  
+>    - すべての子ノードは注釈からコピーされます。ただし、特殊なノード xf: ApplyTransforms が認識され、ソース要素の子ノードが反復処理される点が異なります。 ソースの子ノードが XElement でない場合は、新しいツリーにコピーされます。 ソースの子が XElement の場合は、この関数を再帰的に呼び出して変換されます。
+>  
+> 要素に注釈が付いていない場合は、次のようになります。  
+>    - 新しい XElement を返す  
+>        - 新しい XElement の名前は、ソース要素の名前です。  
+>        - すべての属性は、ソース要素からコピー先の要素にコピーされます。  
+>        - すべての子ノードは、ソース要素からコピーされます。  
+>        - ソースの子ノードが XElement でない場合は、新しいツリーにコピーされます。 ソースの子が XElement の場合は、この関数を再帰的に呼び出して変換されます。  
+
+この関数の実装を次に示します。  
   
 ```vb  
 ' Build a transformed XML tree per the annotations.  
@@ -346,7 +336,7 @@ End Module
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```console
 Before Transform  
 ----------------  
 <Root Att1="123">  

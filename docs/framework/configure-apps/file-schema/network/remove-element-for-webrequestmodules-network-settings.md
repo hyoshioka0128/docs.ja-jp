@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-ms.openlocfilehash: 20a586e945a889d1fd8a8d4c5c09c8b790c56fc3
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: f8209ea89ac8cd214389feddee8c475e10bc939a
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664017"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697815"
 ---
-# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<webRequestModules の > 要素の削除 (ネットワーク設定)
+# <a name="remove-element-for-webrequestmodules-network-settings"></a>webRequestModules (ネットワーク設定) の @no__t 0remove > 要素
 アプリケーションからカスタム Web 要求モジュールを削除します。  
   
- \<configuration>  
-\<system.net>  
-\<webRequestModules>  
-\<remove>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 **\<remove を削除**します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -38,7 +38,7 @@ ms.locfileid: "69664017"
   
 ### <a name="attributes"></a>属性  
   
-|**属性**|**説明**|  
+|**属性**|**[説明]**|  
 |-------------------|---------------------|  
 |`prefix`|この Web 要求モジュールによって処理される要求の URI プレフィックス。|  
   
@@ -47,21 +47,21 @@ ms.locfileid: "69664017"
   
 ### <a name="parent-elements"></a>親要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[webRequestModules](webrequestmodules-element-network-settings.md)|ネットワークホストから情報を要求するために使用するモジュールを指定します。|  
   
-## <a name="remarks"></a>Remarks  
- 要素`remove`は、指定された URI プレフィックスの登録済み Web 要求モジュールを削除します。  
+## <a name="remarks"></a>コメント  
+ @No__t-0 要素は、指定された URI プレフィックスの登録済み Web 要求モジュールを削除します。  
   
- `prefix`属性の値は、有効な URI の先頭の文字 ("`http`"、`http://www.contoso.com`"" など) にする必要があります。  
+ @No__t-0 属性の値は、"`http`" や "`http://www.contoso.com`" など、有効な URI の先頭の文字にする必要があります。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
 ## <a name="example"></a>例  
 
-次の例では、HTTP 用の既存の Web 要求モジュールを削除し、HTTP 要求用の新しいカスタム`www.contoso.com`web 要求モジュールをに登録します。
+次の例では、HTTP 用の既存の Web 要求モジュールを削除し、HTTP 要求用の新しいカスタム Web 要求モジュールを `www.contoso.com` に登録します。
   
 ```xml  
 <configuration>  

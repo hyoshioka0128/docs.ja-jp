@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-ms.openlocfilehash: 503863dab1780b896be5d80edac88d13eaa49842
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 4a6e22352a309f9d624c6922abc531cb31a5baf1
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854177"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736685"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>DataAdapter によるデータ ソースの更新
 
@@ -84,7 +84,7 @@ adapter.Update(table.Select(Nothing, Nothing, _
   DataViewRowState.ModifiedCurrent))
 
 ' Finally, process inserts.
-dataAdapater.Update(table.Select(Nothing, Nothing, _
+adapter.Update(table.Select(Nothing, Nothing, _
   DataViewRowState.Added))
 ```
 

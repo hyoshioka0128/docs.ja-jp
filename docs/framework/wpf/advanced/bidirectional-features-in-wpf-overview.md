@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 4c3a39c1d1252951b0847638809c9e1e6be2a21e
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 2a599322ef955b9f702f8960f294f5d093ede74a
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856194"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834747"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>WPF の双方向機能の概要
 
@@ -134,7 +134,7 @@ XAML 要素には、 [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml
 
 <xref:System.Windows.FlowDirection>が予期したとおりに動作しないケースがいくつかあります。 ここでは、そのような例外を 2 つ取り上げて説明します。
 
-**Image**
+**[イメージ]**
 
 は<xref:System.Windows.Controls.Image> 、イメージを表示するコントロールを表します。 で[!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)]は、 [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] <xref:System.Windows.Controls.Image.Source%2A> 表示<xref:System.Windows.Controls.Image>するのを定義するプロパティと共に使用できます。
 
@@ -178,7 +178,7 @@ XAML 要素には、 [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml
 
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は引き続きこの機能を備え、置換を使用するタイミングと方法をユーザーがさらに制御できるようにこの機能のサポートが強化されています。 この機能はすべての言語向けに設計されていますが、アプリケーションが実行される可能性のあるカルチャが多岐にわたるために特定の言語に合わせて数字の形状を設定することがアプリケーション開発者にとって通常は問題となる双方向コンテンツに対して特に有用です。
 
-での[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]数値置換の動作を制御するコアプロパティ<xref:System.Windows.Media.NumberSubstitution.Substitution%2A>は、依存関係プロパティです。 クラス<xref:System.Windows.Media.NumberSubstitution>は、テキスト内の数字を表示する方法を指定します。 その動作を定義する 3 つのパブリック プロパティがあります。 以下は、各プロパティの概要です。
+での[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]数値置換の動作を制御するコアプロパティ<xref:System.Windows.Media.NumberSubstitution.Substitution%2A>は、依存関係プロパティです。 クラス<xref:System.Windows.Media.NumberSubstitution>は、テキスト内の数字を表示する方法を指定します。 その動作を定義する 3 つのパブリック プロパティがあります。 各プロパティの概要を次に示します。
 
 **CultureSource:**
 
@@ -204,7 +204,7 @@ XAML 要素には、 [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml
 
 - <xref:System.Windows.Media.NumberSubstitutionMethod.European>:数値は常にヨーロッパの数字としてレンダリングされます。
 
-- <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational> :数字は、カルチャの<xref:System.Globalization.CultureInfo.NumberFormat%2A>で指定されているように、数字カルチャの national 数字を使用して表示されます。
+- <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>:数字は、カルチャの<xref:System.Globalization.CultureInfo.NumberFormat%2A>で指定されているように、数字カルチャの national 数字を使用して表示されます。
 
 - <xref:System.Windows.Media.NumberSubstitutionMethod.Traditional>:数値は、数字カルチャに対して従来の数字を使用してレンダリングされます。 ほとんどのカルチャでは、これはと<xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>同じです。 ただし、 <xref:System.Windows.Media.NumberSubstitutionMethod.NativeNational>アラビア語カルチャによってはラテン数字が使用されますが、この値はすべてのアラビアカルチャでアラビア数字になります。
 
@@ -226,7 +226,7 @@ XAML 要素には、 [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml
 
 最初に、アプリケーションコンポーネントの`NumberSubstitution.CultureSource="Text"`を設定します。 この設定を使用すると[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] <xref:System.Windows.Controls.TextBlock>、のように、既定値として "User" を持つテキスト要素の設定がから取得されないようにします。
 
-例えば:
+以下に例を示します。
 
 ```xaml
 <TextBlock

@@ -1,5 +1,5 @@
 ---
-title: <clear> の <listeners> の <source> 要素
+title: <source> の <listeners> の <clear> 要素
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - <clear> element for <listeners> for <source>
 - clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-ms.openlocfilehash: 768d51a74b4c31d1250d2f5d6517f760f886e0a0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 05c20040ef59f4dee6b15bbe0b0369281b532754
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920558"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697185"
 ---
-# <a name="clear-element-for-listeners-for-source"></a>\<ソース > の\<リスナー \<> の > 要素をクリアします
+# <a name="clear-element-for-listeners-for-source"></a>\<source > の \< リスナー > の @no__t 0clear > 要素
 トレース ソースの `Listeners` コレクションを消去します。  
   
- \<configuration>  
-\<system.diagnostics>  
-\<ソース >  
-\<ソース >  
-\<リスナー >  
-\<clear>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t no__t-3[ **\<sources >** ](sources-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5[ **\<source >** になります。](source-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners** (&) >](listeners-element-for-source.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -34,7 +34,7 @@ ms.locfileid: "69920558"
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- なし。  
+ [なし] :  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -49,14 +49,14 @@ ms.locfileid: "69920558"
 |`source`|トレース メッセージを開始するトレース ソースを指定します。|  
 |`listeners`|メッセージを収集、格納、およびルーティングするリスナーを指定します。|  
   
-## <a name="remarks"></a>Remarks  
- 要素`<clear>`は`Listeners` 、<xref:System.Diagnostics.DefaultTraceListener>を含む、トレースソースのコレクションからすべてのリスナーを削除します。 要素を使用`<add>`し`<clear>`て、コレクション内に他のアクティブなリスナーが存在しないことを特定することができます。  
+## <a name="remarks"></a>コメント  
+ @No__t-0 要素は、<xref:System.Diagnostics.DefaultTraceListener> を含む、トレースソースの `Listeners` コレクションからすべてのリスナーを削除します。 @No__t-1 要素を使用して、コレクション内に他のアクティブなリスナーが存在しないことを特定するには、`<clear>` 要素を使用します。  
   
 ## <a name="configuration-file"></a>構成ファイル  
  この要素は、コンピューターの構成ファイル (machine.config) とアプリケーション構成ファイルで使用できます。  
   
 ## <a name="example"></a>例  
- 次の例では、要素を`<clear>`使用し`<add>`て`console`リスナー `textListener`を追加してから、トレースソース`Listeners` `TraceSourceApp`のコレクションに追加する方法を示します。  
+ 次の例では、`<clear>` の要素を使用してから、`<add>` の要素を使用してリスナー `console` と @no__t をトレースソースの @no__t 4 コレクションに追加する方法を示します。  
   
 ```xml  
 <configuration>  

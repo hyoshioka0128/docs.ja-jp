@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 422613a9016efb55c299f24c50cd2eec6c2c1069
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a5ccd0e9e0e3e5bedad06a619be115c362b38e0d
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588403"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392158"
 ---
 # <a name="types-c-programming-guide"></a>型 (C# プログラミング ガイド)
 
@@ -62,7 +62,7 @@ C# は、厳密に型指定された言語です。 すべての変数および�
 
 詳細については、「[キャストと型変換](./casting-and-type-conversions.md)」を参照してください。
 
-## <a name="built-in-types"></a>組み込みの型
+## <a name="built-in-types"></a>組み込み型
 
 C# には、整数、浮動小数点値、ブール式、テキスト文字、10 進数値などのデータを表現するための標準的な組み込みの数値型が用意されています。 また、組み込みの `string` 型や `object` 型もあります。 これらの型は、すべての C# プログラムで使用できます。 組み込み型の詳細については、「[組み込み型のリファレンス表](../../language-reference/keywords/built-in-types-table.md)」を参照してください。
 
@@ -157,7 +157,7 @@ C# では、リテラル値の型がコンパイラによって決定されま�
 
 ## <a name="generic-types"></a>ジェネリック型
 
-クライアント コードが型のインスタンスを作成したときに提供される実際の型 ("*具象型*") のプレースホルダーとして使用される 1 つまたは複数の "*型パラメーター*" で、型を宣言することもできます。 このような型は、*ジェネリック型*と呼ばれます。 たとえば、.NET の型 <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。
+クライアント コードが型のインスタンスを作成したときに提供される実際の型 (*具象型*) のプレースホルダーとして使用される 1 つ以上の*型パラメーター*で、型を宣言することもできます。 このような型は、*ジェネリック型*と呼ばれます。 たとえば、.NET の型 <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> には、慣例により *T* という名前が与えられる 1 つの型パラメーターがあります。この型のインスタンスを作成するときには、たとえば文字列の場合なら、リストに含まれるオブジェクトの型を次のように指定します。
 
 ```csharp
 List<string> stringList = new List<string>();
@@ -168,13 +168,13 @@ stringList.Add(4);
 
 型パラメーターを使用することで、同じクラスを再利用して任意の型の要素を格納できます。このとき、各要素を[オブジェクト](../../language-reference/keywords/object.md)に変換する必要はありません。 ジェネリック コレクション クラスが "*厳密に型指定されたコレクション*" と呼ばれるのは、コレクションの要素の固有の型をコンパイラが認識しているためで、たとえば、前の例の `stringList` オブジェクトに整数を追加しようとすると、コンパイル時にエラーが発生します。 詳細については、「[ジェネリック](../generics/index.md)」を参照してください。
 
-## <a name="implicit-types-anonymous-types-and-nullable-types"></a>暗黙の型、匿名型、および Null 許容型
+## <a name="implicit-types-anonymous-types-and-nullable-value-types"></a>暗黙の型、匿名型、および Null 許容値型
 
 前にも説明したとおり、ローカル変数 (クラスのメンバーではない) の型を暗黙的に指定するには、[var](../../language-reference/keywords/var.md) キーワードを使用します。 変数の型はコンパイル時に決定されますが、その型はコンパイラによって指定されます。 詳細については、「[暗黙的に型指定されるローカル変数](../classes-and-structs/implicitly-typed-local-variables.md)」を参照してください。
 
 場合によっては、メソッドの境界を越えて格納したり受け渡したりする予定のない単純な一連の関連値に名前付きの型を作成するのは便利ではないこともあります。 このような場合は、"*匿名型*" を作成できます。 詳細については、「[匿名型](../classes-and-structs/anonymous-types.md)」を参照してください。
 
-値型には、通常、[null](../../language-reference/keywords/null.md) 値を割り当てることができません。 しかし、型の後ろに `?` を付けることによって、null 値を設定できる値型を作成できます。 たとえば、`int?` は、[null](../../language-reference/keywords/null.md) 値も設定できる `int` 型です。 CTS では、null 許容型は一般的な構造体型 <xref:System.Nullable%601?displayProperty=nameWithType> のインスタンスです。 Null 許容型は、数値が null になる可能性のあるデータベースとの間でデータを受け渡しする場合に、特に便利です。 詳細については、「[ull 許容型](../nullable-types/index.md)」を参照してください。
+値型には、通常、[null](../../language-reference/keywords/null.md) 値を割り当てることができません。 しかし、型の後ろに `?` を付けることによって、null 値を設定できる値型を作成できます。 たとえば、`int?` は、[null](../../language-reference/keywords/null.md) 値も設定できる `int` 型です。 Null 許容値型は一般的な構造体型 <xref:System.Nullable%601?displayProperty=nameWithType> のインスタンスです。 Null 許容値型は、数値が null になる可能性のあるデータベースとの間でデータを受け渡しする場合に、特に便利です。 詳細については、「[Null 許容値型](../nullable-types/index.md)」を参照してください。
 
 ## <a name="related-sections"></a>関連項目
 

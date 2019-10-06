@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-ms.openlocfilehash: 4df1653b7bd6865ad9f5d7d3fb9be6815dcfe018
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: af22b6a895fef8037eb5c069ffb7cb23d1333531
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781018"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833678"
 ---
 # <a name="standard-query-operator-translation"></a>標準クエリ演算子の変換
 
@@ -38,12 +38,12 @@ SQL は主に、順序付けられていない*値のセット*を使用しま�
 
 ### <a name="take-skip"></a>Take、Skip
 
-<xref:System.Linq.Enumerable.Take%2A>メソッド<xref:System.Linq.Enumerable.Skip%2A>とメソッドは、*順序付け*されたセットに対してのみ定義されています。 順序付けされていないセットまたはマルチセットのセマンティクスは未定義です。
+<xref:System.Linq.Enumerable.Take%2A> および <xref:System.Linq.Enumerable.Skip%2A> メソッドは、*順序付け*されたセットに対してのみ定義されています。 順序付けされていないセットまたはマルチセットのセマンティクスは未定義です。
 
 > [!NOTE]
 > <xref:System.Linq.Enumerable.Take%2A> と <xref:System.Linq.Enumerable.Skip%2A> を SQL Server 2000 に対するクエリで使用する場合は、いくつかの制限があります。 詳細については、「[トラブルシューティング](troubleshooting.md)」の「SQL Server 2000 でのスキップと Take 例外」を参照してください。
 
-SQL での順序付けに関する制限[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]により、は、これらのメソッドの引数の順序をメソッドの結果に移動しようとします。 たとえば、次のような [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリがあるとします。
+SQL での順序付けに関する制限により、@no__t は、これらのメソッドの引数の順序をメソッドの結果に移動しようとします。 たとえば、次のような [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリがあるとします。
 
 [!code-csharp[DLinqSQOTranslation#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#1)]
 [!code-vb[DLinqSQOTranslation#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#1)]
@@ -74,7 +74,7 @@ ORDER BY [t0].[CustomerID]
 
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] によって変換されないメソッドを次に示します。 最も一般的な理由は、順序なしのマルチセットとシーケンスの違いにあります。
 
-|演算子|理由|
+|演算子|理論的根拠|
 |---------------|---------------|
 |<xref:System.Linq.Enumerable.TakeWhile%2A>, <xref:System.Linq.Enumerable.SkipWhile%2A>|SQL クエリの操作の対象は、シーケンスではなく、マルチセットです。 結果に対して適用する最後の句が `ORDER BY` であることが必要です。 このため、これら 2 つのメソッドには、汎用的な変換がありません。|
 |<xref:System.Linq.Enumerable.Reverse%2A>|順序付けされたセットに対しては、このメソッドの変換が可能ですが、現在の [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では変換されません。|
@@ -94,7 +94,7 @@ ORDER BY [t0].[CustomerID]
 
 ### <a name="aggregates"></a>集計
 
-標準クエリ演算子の集計メソッド <xref:System.Linq.Enumerable.Sum%2A> では、空のシーケンスや null のみを含むシーケンスはゼロに評価されます。 で[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]は、SQL のセマンティクスは変更されず<xref:System.Linq.Enumerable.Sum%2A> 、空`null`のシーケンスまたは null のみを含むシーケンスの場合は0ではなくに評価されます。
+標準クエリ演算子の集計メソッド <xref:System.Linq.Enumerable.Sum%2A> では、空のシーケンスや null のみを含むシーケンスはゼロに評価されます。 @No__t 0 では、SQL のセマンティクスは変更されず、<xref:System.Linq.Enumerable.Sum%2A> は空のシーケンスまたは null のみを含むシーケンスに対しては、0ではなく `null` に評価されます。
 
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] での集計には、中間結果に対する SQL の制限が適用されます。 32 ビットの整数の <xref:System.Linq.Enumerable.Sum%2A> の計算では、64 ビットの結果は使用されません。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] による <xref:System.Linq.Enumerable.Sum%2A> の変換では、オーバーフローが発生することがあります。これには、標準クエリ演算子の実装で、対応するメモリ内シーケンスでオーバーフローが発生しないケースも含まれます。
 
@@ -102,7 +102,7 @@ ORDER BY [t0].[CustomerID]
 
 ### <a name="entity-arguments"></a>エンティティ引数
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]<xref:System.Linq.Enumerable.GroupBy%2A> および<xref:System.Linq.Enumerable.OrderBy%2A>メソッドでエンティティ型を使用できるようにします。 これらの演算子の変換では、型の引数を使用している場合、その型のすべてのメンバーを指定しているのと同等と見なされます。 たとえば、次のコードは同じ意味です。
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] を指定すると、<xref:System.Linq.Enumerable.GroupBy%2A> メソッドと <xref:System.Linq.Enumerable.OrderBy%2A> メソッドでエンティティ型を使用できます。 これらの演算子の変換では、型の引数を使用している場合、その型のすべてのメンバーを指定しているのと同等と見なされます。 たとえば、次のコードは同じ意味です。
 
 [!code-csharp[DLinqSQOTranslation#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#2)]
 [!code-vb[DLinqSQOTranslation#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#2)]
@@ -121,17 +121,17 @@ ORDER BY [t0].[CustomerID]
 
 - <xref:System.Linq.Enumerable.Except%2A>
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]は、*フラット*引数の等値比較をサポートしていますが、シーケンスを含むまたはを含む引数に対しては使用できません。 フラットな引数とは、SQL の行に対応付けられる型のものです。 シーケンスを含まないと静的に決定できる 1 つまたは複数のエンティティ型の射影は、フラットな引数と見なされます。
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、*フラット*引数の等値比較をサポートしますが、またはシーケンスを含む引数に対しては使用できません。 フラットな引数とは、SQL の行に対応付けられる型のものです。 シーケンスを含まないと静的に決定できる 1 つまたは複数のエンティティ型の射影は、フラットな引数と見なされます。
 
-フラットな引数の例を次に示します。
+フラット引数の例を次に示します。
 
-[!code-csharp[DLinqSQOTranslation#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#3)]
-[!code-vb[DLinqSQOTranslation#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#3)]
+[!code-csharp[DLinqSQOTranslation#3](~/samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#3)]
+[!code-vb[DLinqSQOTranslation#3](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#3)]
 
-フラットでない (階層構造の) 引数の例を次に示します。
+次に、非フラット (階層) 引数の例を示します。
 
-[!code-csharp[DLinqSQOTranslation#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#4)]
-[!code-vb[DLinqSQOTranslation#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#4)]
+[!code-csharp[DLinqSQOTranslation#4](~/samples/snippets/csharp/VS_Snippets_Data/DLinqSQOTranslation/cs/Program.cs#4)]
+[!code-vb[DLinqSQOTranslation#4](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqSQOTranslation/vb/Module1.vb#4)]
 
 ### <a name="visual-basic-function-translation"></a>Visual Basic の関数の変換
 
@@ -158,7 +158,7 @@ Visual Basic のコンパイラが使用する以下のヘルパー関数は、�
 
 ### <a name="inheritance-mapping-restrictions"></a>継承の対応付けの制限
 
-詳細については、「[方法 :継承階層](how-to-map-inheritance-hierarchies.md)をマップします。
+詳細については、「[方法 :継承階層をマップする @ no__t-0。
 
 ### <a name="inheritance-in-queries"></a>クエリでの継承
 
@@ -198,7 +198,7 @@ C# のキャストは射影でのみサポートされます。 他の場所で�
 
 ## <a name="sql-server-2000-support"></a>SQL Server 2000 のサポート
 
-次の SQL Server 2000 の制限 (Microsoft SQL Server 2005 と比較) [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]がサポートに影響を与えます。
+次の SQL Server 2000 の制限 (Microsoft SQL Server 2005 と比較) は、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のサポートに影響します。
 
 ### <a name="cross-apply-and-outer-apply-operators"></a>Cross Apply 演算子および Outer Apply 演算子
 
@@ -208,13 +208,13 @@ C# のキャストは射影でのみサポートされます。 他の場所で�
 
 ### <a name="text--ntext"></a>text / ntext
 
-Microsoft SQL Server 2005 `text`でサポートされている特定`nvarchar(max)`の`varchar(max)`クエリ操作 / で、データ型 /  `ntext`を使用することはできません。
+データ型 `text` @ no__t @ no__t は、Microsoft SQL Server 2005 でサポートされている `varchar(max)` @ no__t @ no__t に対する特定のクエリ操作では使用できません。
 
 この制限事項には、対処方法はありません。 具体的には、`Distinct()` 列または `text` 列に割り当てられているメンバーを含む結果に対して、`ntext` を使用することはできません。
 
 ### <a name="behavior-triggered-by-nested-queries"></a>入れ子になったクエリによってトリガーされる動作
 
-SQL Server 2000 (SP4 を通じて) のバインダーには、入れ子になったクエリによってトリガーされる特異性がいくつかあります。 この特異動作をトリガーする SQL クエリのセットは、正しく定義されていません。 このため、SQL Server 例外が発生する可能性の[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]あるクエリのセットを定義することはできません。
+SQL Server 2000 (SP4 を通じて) のバインダーには、入れ子になったクエリによってトリガーされる特異性がいくつかあります。 この特異動作をトリガーする SQL クエリのセットは、正しく定義されていません。 このため、SQL Server 例外が発生する可能性がある @no__t 0 クエリのセットを定義することはできません。
 
 ### <a name="skip-and-take-operators"></a>Skip 演算子および Take 演算子
 
@@ -232,7 +232,7 @@ SQL Server 2000 (SP4 を通じて) のバインダーには、入れ子になっ
 
   - 射影での型キャスト
 
-- メソッドの後に<xref:System.Linq.Enumerable.AsEnumerable%2A>続くメソッドは、*ローカルで実行*されます。 このメソッドでは即時実行は行われません。
+- @No__t-0 メソッドに続くメソッドは*ローカルで実行*されます。 このメソッドでは即時実行は行われません。
 
 - `struct` は、クエリ結果の戻り値の型として、または結果の型のメンバーとして使用できます。 エンティティはクラスである必要があります。 匿名型はクラス インスタンスとして実体化されますが、射影では名前付き構造体 (エンティティ以外) を使用できます。
 
@@ -248,7 +248,7 @@ SQL Server 2000 (SP4 を通じて) のバインダーには、入れ子になっ
 
 ## <a name="see-also"></a>関連項目
 
-- [参照](reference.md)
+- [リファレンス](reference.md)
 - [シーケンスの要素の取得またはスキップ](return-or-skip-elements-in-a-sequence.md)
 - [2 つのシーケンスの連結](concatenate-two-sequences.md)
 - [2 つのシーケンスの差集合の取得](return-the-set-difference-between-two-sequences.md)

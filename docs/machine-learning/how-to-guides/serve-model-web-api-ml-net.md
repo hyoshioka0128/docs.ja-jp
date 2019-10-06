@@ -1,16 +1,16 @@
 ---
 title: ASP.NET Core Web API でのモデルのデプロイ
 description: ASP.NET Core Web API を使用して、インターネット経由で予測用の ML.NET 感情分析機械学習モデルを提供します
-ms.date: 08/20/2019
+ms.date: 09/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 8d21ae5ae3aa4701ddd7d042d5069351c22864bb
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 1173315bbc88797ce0c6d0fcc9597896f14889ac
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182549"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332687"
 ---
 # <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>ASP.NET Core Web API でのモデルのデプロイ
 
@@ -27,9 +27,9 @@ ASP.NET Core Web API を使用して、事前トレーニング済みの ML.NET 
 
 ## <a name="create-aspnet-core-web-api-project"></a>ASP.NET Core Web API プロジェクトを作成する
 
-1. Visual Studio 2017 を開きます。 メニューバーから、 **[ファイル] > [新規作成] > [プロジェクト]** の順に選択します。 [新しいプロジェクト] ダイアログで、 **[Visual C#]** ノードを選択し、 **[Web]** ノードを選択します。 次に、 **[ASP.NET Core Web アプリケーション]** プロジェクト テンプレートを選択します。 **[名前]** テキスト ボックスに「SentimentAnalysisWebAPI」と入力し、 **[OK]** を選択します。
+1. Visual Studio 2017 を開きます。 メニューバーから、**[ファイル] > [新規作成] > [プロジェクト]** の順に選択します。 [新しいプロジェクト] ダイアログで、**[Visual C#]** ノードを選択し、**[Web]** ノードを選択します。 次に、**[ASP.NET Core Web アプリケーション]** プロジェクト テンプレートを選択します。 **[名前]** テキスト ボックスに「SentimentAnalysisWebAPI」と入力し、**[OK]** を選択します。
 
-1. ASP.NET Core プロジェクトの複数の種類が表示されているウィンドウで、 **[API]** を選択し、 **[OK]** を選択します。
+1. ASP.NET Core プロジェクトの複数の種類が表示されているウィンドウで、**[API]** を選択し、**[OK]** を選択します。
 
 1. 事前トレーニング済みの機械学習モデルを保存するための *MLModels* という名前のディレクトリをプロジェクト内に作成します。
 
@@ -37,11 +37,11 @@ ASP.NET Core Web API を使用して、事前トレーニング済みの ML.NET 
 
 1. **Microsoft.ML NuGet パッケージ**をインストールします。
 
-    ソリューション エクスプローラーで、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。 [パッケージ ソース] として [nuget.org] を選択します。[参照] タブを選択し、「**Microsoft.ML**」を検索します。一覧からそのパッケージを選択し、[インストール] を選択します。 **[変更のプレビュー]** ダイアログで **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、[ライセンスの同意] ダイアログの **[同意する]** を選択します。
+    ソリューション エクスプローラーで、プロジェクトを右クリックし、**[NuGet パッケージの管理]** を選択します。 [パッケージ ソース] として [nuget.org] を選択します。[参照] タブを選択し、「**Microsoft.ML**」を検索します。一覧からそのパッケージを選択し、[インストール] を選択します。 **[変更のプレビュー]** ダイアログで **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、[ライセンスの同意] ダイアログの **[同意する]** を選択します。
 
 1. **Microsoft.Extensions.ML NuGet パッケージ**をインストールします。
 
-    ソリューション エクスプローラーで、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。 パッケージ ソースとして "nuget.org" を選択します。[参照] タブを選択し、「**Microsoft.Extensions.ML**」を検索します。一覧からそのパッケージを選択して、[インストール] ボタンを選択します。 **[変更のプレビュー]** ダイアログで **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、[ライセンスの同意] ダイアログの **[同意する]** を選択します。
+    ソリューション エクスプローラーで、プロジェクトを右クリックし、**[NuGet パッケージの管理]** を選択します。 パッケージ ソースとして "nuget.org" を選択します。[参照] タブを選択し、「**Microsoft.Extensions.ML**」を検索します。一覧からそのパッケージを選択して、[インストール] ボタンを選択します。 **[変更のプレビュー]** ダイアログで **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、[ライセンスの同意] ダイアログの **[同意する]** を選択します。
 
 ### <a name="add-model-to-aspnet-core-web-api-project"></a>モデルを ASP.NET Core Web API プロジェクトに追加する
 
@@ -77,8 +77,8 @@ ASP.NET Core Web API を使用して、事前トレーニング済みの ML.NET 
     }
     ```
 
-4. ソリューションエクスプローラーで、*DataModels* ディレクトリを右クリックし、 **[追加] > [新しいアイテム]** の順に選択します。
-5. **[新しい項目の追加]** ダイアログ ボックスで、 **[クラス]** を選択し、 **[名前]** フィールドを *SentimentPrediction.cs* に変更します。 次に、[追加] を選択します。 コード エディターに *SentimentPrediction.cs* ファイルが開きます。 *SentimentPrediction.cs* の先頭に次の using ステートメントを追加します。
+4. ソリューションエクスプローラーで、*DataModels* ディレクトリを右クリックし、**[追加] > [新しいアイテム]** の順に選択します。
+5. **[新しい項目の追加]** ダイアログ ボックスで、**[クラス]** を選択し、**[名前]** フィールドを *SentimentPrediction.cs* に変更します。 次に、[追加] を選択します。 コード エディターに *SentimentPrediction.cs* ファイルが開きます。 *SentimentPrediction.cs* の先頭に次の using ステートメントを追加します。
 
     ```csharp
     using Microsoft.ML.Data;
@@ -103,9 +103,9 @@ ASP.NET Core Web API を使用して、事前トレーニング済みの ML.NET 
 
 ## <a name="register-predictionenginepool-for-use-in-the-application"></a>アプリケーションで使用する PredictionEnginePool を登録する
 
-1つの予測を行うのに [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) を使用します。 [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) をお使いのアプリケーションで使用するには、必要に応じて作成しなければなりません。 その場合、ベストプラクティスとして、依存関係を挿入することを検討します。
+1 つの予測を作成するには、[`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) を作成する必要があります。 [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) はスレッド セーフではありません。 さらに、アプリケーション内で必要なすべての場所にそのインスタンスを作成する必要があります。 アプリケーションの規模が拡大すると、このプロセスが管理不能になる可能性があります。 パフォーマンスとスレッド セーフを向上させるには、依存性の挿入と `PredictionEnginePool` サービスを組み合わせて使用します。これにより、アプリケーション全体で使用する [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) オブジェクトの [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) が作成されます。
 
-[ASP.NET Core での依存関係の挿入](/aspnet/core/fundamentals/dependency-injection)については、リンク先で提供されている詳しい情報を確認してください。
+[ASP.NET Core での依存関係の挿入](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1)については、リンク先で提供されている詳しい情報を確認してください。
 
 1. *Startup.cs* を開き、ファイルの先頭に次の using ステートメントを追加します。
 
@@ -126,22 +126,27 @@ ASP.NET Core Web API を使用して、事前トレーニング済みの ML.NET 
     {
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         services.AddPredictionEnginePool<SentimentData, SentimentPrediction>()
-            .FromFile("MLModels/sentiment_model.zip");
+            .FromFile(modelName: "SentimentAnalysisModel", filePath:"MLModels/sentiment_model.zip", watchForChanges: true);
     }
     ```
 
-大まかに言えば、このコードは、オブジェクトとサービスがアプリケーションによって要求されたときに、初期化を手動ではなく自動的に実行します。
+大まかに言えば、オブジェクトとサービスがアプリケーションによって要求されたときに、このコードでは、後で使用できるように手動ではなく自動的に初期化が実行されます。 
 
-> [!WARNING]
-> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) はスレッド セーフではありません。 パフォーマンスとスレッドセーフを改善するために、`PredictionEnginePool` サービスを使用します。これにより、アプリケーションで使用される `PredictionEngine` オブジェクトの [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) が作成されます。 詳しくは、[ASP.NET Core での `PredictionEngine` オブジェクトプールの作成と使用](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)のブログ投稿で確認してください。  
+機械学習モデルは静的ではありません。 新しいトレーニング データが使用可能になると、モデルの再トレーニングと再展開が行われます。 アプリケーションに最新バージョンのモデルを取り込む方法の 1 つは、アプリケーション全体を再展開することです。 ただし、これによってアプリケーションのダウンタイムが発生します。 `PredictionEnginePool` サービスには、アプリケーションを停止することなく、更新されたモデルを再度読み込むメカニズムが用意されています。 
+
+`watchForChanges` パラメーターを `true` に設定すると、`PredictionEnginePool` では、ファイル システムの変更通知をリッスンし、ファイルに変更があったときにイベントを発生させる [`FileSystemWatcher`](xref:System.IO.FileSystemWatcher) が開始されます。 これにより、モデルを自動的に再度読み込む `PredictionEnginePool` のプロンプトが表示されます。
+
+モデルは `modelName` パラメーターによって識別されるため、変更時にアプリケーションごとに複数のモデルを再度読み込むことができます。 
+
+また、リモートに格納されているモデルを操作するときは `FromUri` メソッドを使用できます。 `FromUri` では、ファイルの変更イベントを監視するのではなく、リモートの場所の変更をポーリングします。 ポーリング間隔は既定で 5 分に設定されています。 アプリケーションの要件に基づいてポーリング間隔を増減することができます。
 
 ## <a name="create-predict-controller"></a>予測コントローラーを作成する
 
 HTTP 要求の受信の処理をするために、コントローラーを作成します。
 
-1. ソリューション エクスプローラーで、*Controllers* ディレクトリを右クリックし、 **[追加] > [コントローラー]** の順に選択します。
-1. **[新しい項目の追加]** ダイアログ ボックスで、 **[空の API コントローラー]** を選択し、 **[追加]** を選択します。
-1. プロンプトで、 **[コントローラー名]** フィールドを*PredictController.cs* に変更します。 次に、[追加] を選択します。 コードエディターで *PredictController.cs* ファイルが開きます。 *PredictController.cs* の先頭に次の using ステートメントを追加します。
+1. ソリューション エクスプローラーで、*Controllers* ディレクトリを右クリックし、**[追加] > [コントローラー]** の順に選択します。
+1. **[新しい項目の追加]** ダイアログ ボックスで、**[空の API コントローラー]** を選択し、**[追加]** を選択します。
+1. プロンプトで、**[コントローラー名]** フィールドを*PredictController.cs* に変更します。 次に、[追加] を選択します。 コードエディターで *PredictController.cs* ファイルが開きます。 *PredictController.cs* の先頭に次の using ステートメントを追加します。
 
     ```csharp
     using System;
@@ -170,7 +175,7 @@ HTTP 要求の受信の処理をするために、コントローラーを作成
                 return BadRequest();
             }
 
-            SentimentPrediction prediction = _predictionEnginePool.Predict(input);
+            SentimentPrediction prediction = _predictionEnginePool.Predict(modelName: "SentimentAnalysisModel", example: input);
 
             string sentiment = Convert.ToBoolean(prediction.Prediction) ? "Positive" : "Negative";
 
@@ -179,7 +184,7 @@ HTTP 要求の受信の処理をするために、コントローラーを作成
     }
     ```
 
-このコードでは、`PredictionEnginePool` を依存関係の挿入によって取得してコントローラーのコンストラクターに渡すことで割り当てています。 そして、`Predict` コントローラーの `Post` メソッドでは、`PredictionEnginePool` を使用して予測を行い、成功した場合はその結果をユーザーに返します。
+このコードでは、`PredictionEnginePool` を依存関係の挿入によって取得してコントローラーのコンストラクターに渡すことで割り当てています。 次に、`Predict` コントローラーの `Post` メソッドで `PredictionEnginePool` を使用し、`Startup` クラスに登録されている `SentimentAnalysisModel` を使用して予測を行い、成功した場合に結果をユーザーに返します。
 
 ## <a name="test-web-api-locally"></a>Web API をローカルでテストする
 
@@ -198,7 +203,7 @@ HTTP 要求の受信の処理をするために、コントローラーを作成
     Negative
     ```
 
-おめでとうございます! ASP.NET Core Web API を使用して、インターネット経由で予測を実行するモデルを正常に提供できました。
+おめでとうございます!  ASP.NET Core Web API を使用して、インターネット経由で予測を実行するモデルを正常に提供できました。
 
 ## <a name="next-steps"></a>次の手順
 

@@ -10,19 +10,19 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-ms.openlocfilehash: fd90d271591a47849b3f70aea50cbe909b6fd613
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 02fd794eb7b7b7f46f7f7bc4e43036cb4a4758ed
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920410"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699184"
 ---
-# <a name="trace-element"></a>\<トレース > 要素
+# <a name="trace-element"></a>\<trace > 要素
 トレース メッセージを収集、格納、およびルーティングするリスナーを保持します。  
   
- \<configuration>  
-\<system.diagnostics>  
-\<トレース >  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3 **\<trace >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -71,7 +71,7 @@ ms.locfileid: "69920410"
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
   
 ## <a name="example"></a>例  
- 次の例では、 `<trace>`要素を使用して、リスナー `MyListener`を`Listeners`コレクションに追加する方法を示します。 `MyListener`という名前`MyListener.log`のファイルを作成し、出力をファイルに書き込みます。 属性がに`false`設定されています。これにより、トレースリスナーがスレッドセーフである場合は、グローバルロックが使用されません。 `useGlobalLock` 属性はに`true`設定されます。これにより、メソッドが呼び出されて<xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType>いるかどうかに関係なく、トレースリスナーはファイルに書き込みを行います。 `autoflush` 属性が 0 (ゼロ) に設定されている場合、メソッドの<xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType>呼び出し時にリスナーによって0個の空白がインデントされます。 `indentsize`  
+ 次の例は、`<trace>` 要素を使用して、リスナー `MyListener` を `Listeners` コレクションに追加する方法を示しています。 `MyListener` `MyListener.log` という名前のファイルを作成し、出力をファイルに書き込みます。 @No__t-0 属性が `false` に設定されています。これにより、トレースリスナーがスレッドセーフである場合は、グローバルロックが使用されません。 @No__t-0 属性が `true` に設定されています。これにより、<xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> メソッドが呼び出されているかどうかに関係なく、トレースリスナーがファイルに書き込みます。 @No__t-0 属性が 0 (ゼロ) に設定されています。これにより、<xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> メソッドが呼び出されたときにリスナーが0個のスペースにインデントを設定します。  
   
 ```xml  
 <configuration>  

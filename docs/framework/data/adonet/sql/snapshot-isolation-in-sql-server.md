@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 2f17e9828f46e6355cdbbddb1b8a83f1188b1a01
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6d85cc041850300d1d079b227dcb8ed9201a0502
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791745"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699069"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>SQL Server でのスナップショット分離
 スナップショット分離により、OLTP アプリケーションのコンカレンシーが向上しています。  
   
 ## <a name="understanding-snapshot-isolation-and-row-versioning"></a>スナップショット分離と行バージョン管理について  
- スナップショット分離を有効にすると、各トランザクションの更新された行バージョンが**tempdb**に保持されます。 一意のトランザクション シーケンス番号が各トランザクションを識別し、これらの一意の番号がそれぞれの行バージョン用に記録されます。 トランザクションは、シーケンス番号がトランザクションのシーケンス番号よりも前にある、最新の行バージョンを処理します。 トランザクションが開始された後で作成された最新の行バーションは、トランザクションにより無視されます。  
+ スナップショット分離が有効になったら、各トランザクションの更新された行バージョンを保持する必要があります。  SQL Server 2019 より前では、これらのバージョンは**tempdb**に格納されていました。 SQL Server 2019 では、新しい機能である、高速データベース復旧 (ADR) が導入されています。これには、独自の行バージョンのセットが必要です。  そのため、SQL Server 2019 では、ADR が有効になっていない場合、行バージョンは常に**tempdb**に保持されます。  ADR が有効になっている場合、スナップショット分離と ADR に関連するすべての行バージョンは、ユーザーが指定したファイルグループ内のユーザーデータベースにある ADR の永続的なバージョンストア (PVS) に保持されます。 一意のトランザクション シーケンス番号が各トランザクションを識別し、これらの一意の番号がそれぞれの行バージョン用に記録されます。 トランザクションは、シーケンス番号がトランザクションのシーケンス番号よりも前にある、最新の行バージョンを処理します。 トランザクションが開始された後で作成された最新の行バーションは、トランザクションにより無視されます。  
   
  "スナップショット" という用語は、トランザクション内のすべてのクエリが、トランザクションの開始時点のデータベースの状態に基づいて、データベースの同じバージョン、つまりスナップショットを参照するという事実を表しています。 ロックは、スナップショット トランザクション内の基になるデータ行やデータ ページでは取得されません。スナップショット トランザクションでは、先に開始されてまだ完了していないトランザクションによりブロックされることなく、他のトランザクションを実行できます。 データを変更するトランザクションは、データを読み取るトランザクションをブロックしません。また、データを読み取るトランザクションは、データを書き込むトランザクションをブロックしません。この理由は、通常、これらのトランザクションは SQL Server の既定の READ COMMITTED 分離レベルにあるためです。 また、ブロック不可の動作は、複雑なトランザクションのデッドロックの可能性を大幅に軽減します。  
   
@@ -76,7 +76,7 @@ SET READ_COMMITTED_SNAPSHOT ON
  スナップショット トランザクションでは、他のトランザクションによって行が更新されないようにするロックは使用せずに、常にオプティミスティック コンカレンシーを使用します。 スナップショット トランザクションは、トランザクションの開始後に変更された行への更新をコミットしようとすると、このトランザクションがロールバックし、エラーになります。  
   
 ## <a name="working-with-snapshot-isolation-in-adonet"></a>ADO.NET でのスナップショット分離の使用  
- スナップショット分離は、<xref:System.Data.SqlClient.SqlTransaction> クラスによって ADO.NET 内でサポートされます。 データベースでスナップショット分離が有効になっているが、READ_COMMITTED_SNAPSHOT で構成されていない場合<xref:System.Data.SqlClient.SqlTransaction>は、 <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>メソッドを呼び出すときに、IsolationLevel 列挙値を使用してを開始する必要があります。 このコード フラグメントでは、接続は開かれている <xref:System.Data.SqlClient.SqlConnection> オブジェクトであることを前提としています。  
+ スナップショット分離は、<xref:System.Data.SqlClient.SqlTransaction> クラスによって ADO.NET 内でサポートされます。 データベースでスナップショット分離が有効になっているが、READ_COMMITTED_SNAPSHOT で構成されていない場合は、<xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> メソッドを呼び出すときに、 **IsolationLevel**列挙値を使用して <xref:System.Data.SqlClient.SqlTransaction> を開始する必要があります。 このコード フラグメントでは、接続は開かれている <xref:System.Data.SqlClient.SqlConnection> オブジェクトであることを前提としています。  
   
 ```vb  
 Dim sqlTran As SqlTransaction = _  

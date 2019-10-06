@@ -11,6 +11,8 @@
       href: how-to-explicitly-throw-exceptions.md
     - name: '方法: ユーザー定義の例外を作成する'
       href: how-to-create-user-defined-exceptions.md
+    - name: '方法: ローカライズされた例外メッセージを使用するユーザー定義の例外を作成する'
+      href: how-to-create-localized-exception-messages.md
     - name: ユーザー フィルター例外ハンドラーの使用
       href: using-user-filtered-exception-handlers.md
     - name: '方法: finally ブロックを使用する'

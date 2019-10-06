@@ -8,20 +8,20 @@ helpviewer_keywords:
 - defaultHttpCachePolicy element
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
-ms.openlocfilehash: 1dd31884a072d16ed004c0b49be61e8cee399787
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: f3b029e8b931e976bee85c98dd926e020c5b8743
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664150"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698277"
 ---
 # <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy> 要素 (ネットワーク設定)
 HTTP キャッシュがアクティブかどうか、および既定のキャッシュポリシーについて説明します。  
   
- \<configuration>  
-\<system.net>  
-\<requestCaching>  
-\<defaultHttpCachePolicy>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t @ no__t-2 @ no__t-3[ **\<requestcaching >** ](requestcaching-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 **\<defaultHttpCachePolicy >** を行います。  
   
 ## <a name="syntax"></a>構文  
   
@@ -55,10 +55,10 @@ HTTP キャッシュがアクティブかどうか、および既定のキャッ
 |-------------|-----------------|  
 |[requestCaching](requestcaching-element-network-settings.md)|ネットワーク要求のキャッシュメカニズムを制御します。|  
   
-## <a name="remarks"></a>Remarks  
- `policyLevel`属性の値がまたは`Default`の`BypassCache`いずれかです。  
+## <a name="remarks"></a>コメント  
+ @No__t-0 属性の値は、`BypassCache` または `Default` のいずれかです。  
   
- `maximumAge`、、および`maximumStale`の`minimumFresh`各要素の値は、明示的な時間間隔であり、形式は*d*です。*hh*:*mm*:*ss* (日数、時間、分、秒)、または必要に`minValue`応じ`maxValue`て定数または。  
+ @No__t-0、`maximumStale`、`minimumFresh` の各要素の値は、明示的な時間間隔であり、形式は*d*です。*hh*:*mm*:*ss* (日数、時間、分、秒)、または必要に応じて `minValue` または `maxValue` の定数。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  

@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
 ms.custom: ''
-ms.openlocfilehash: b2a660d2fc42f0dfe932afce167058f7c1efc92b
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 7480c86af1acd482adff5e3e24dc229f24af0e5b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116508"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216319"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>方法: Windows Forms デスクトップ アプリを .NET Core に移植する
 
@@ -50,7 +50,7 @@ ms.locfileid: "71116508"
 
 01. Windows Forms の別のバージョンを使用している。
 
-    .NET Core 3.0 プレビュー 1 がリリースされたときに、Windows Forms は GitHub でオープン ソースになりました。 .NET Core Windows Forms のコードは、.NET Framework Windows Forms コード ベースの 1 つの分岐です。 違いの存在によって、アプリが移植されない可能性があります。
+    .NET Core 3.0 Preview 1 がリリースされたときに、Windows フォームは GitHub でオープン ソースになりました。 .NET Core Windows フォームのコードは、.NET Framework Windows フォーム コード ベースからの 1 つの分岐です。 違いの存在によって、アプリが移植されない可能性があります。
 
 01. [Windows 互換機能パック][compat-pack]が移行に役立つ可能性がある。
 

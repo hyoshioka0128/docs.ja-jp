@@ -1,15 +1,15 @@
 ---
-title: 連結クエリ (LINQ to XML) のパフォーマンス (Visual Basic)
+title: 連結クエリのパフォーマンス (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 589f2adc-69f9-404d-b9d6-4c28dabea7f7
-ms.openlocfilehash: 8634ca224f5892918721996114649c392a5080a0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 69ed09addb50ac45e7b46cd0322d4df076b5875b
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665872"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834949"
 ---
-# <a name="performance-of-chained-queries-linq-to-xml-visual-basic"></a>連結クエリ (LINQ to XML) のパフォーマンス (Visual Basic)
+# <a name="performance-of-chained-queries-linq-to-xml-visual-basic"></a>連結クエリのパフォーマンス (LINQ to XML) (Visual Basic)
 
 LINQ (および LINQ to XML) の重要な利点の 1 つは、連結クエリが、大きい複雑な単一クエリと同様のパフォーマンスを発揮できるという点です。
 
@@ -29,7 +29,7 @@ Next
 
 この例を実行すると、次の出力が生成されます。
 
-```
+```console
 4
 ```
 

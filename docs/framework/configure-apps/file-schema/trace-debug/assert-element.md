@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-ms.openlocfilehash: 5ba781598542d271f41476b1a1e9d61faeb6ff74
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 30ec24aefcf8c4d1e110238a2c60a958eded5545
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927182"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699384"
 ---
 # <a name="assert-element"></a>\<assert > 要素
 <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> メソッドの呼び出し時にメッセージ ボックスを表示するかどうかを指定し、メッセージの書き込み先のファイルの名前も指定します。  
   
- \<configuration>  
-\<system.diagnostics>  
-\<assert >  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t @ no__t-2 @ no__t-3 **\<assert >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -55,11 +55,11 @@ ms.locfileid: "69927182"
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
   
-## <a name="remarks"></a>Remarks  
- Assert > 要素の両方の属性 **\<** は省略可能です。 メッセージを書き込むファイルを指定せずにメッセージボックスを無効にすることも、メッセージを有効にしたままメッセージを書き込むファイルを指定することもできます。  
+## <a name="remarks"></a>コメント  
+ **@No__t-1 assert >** 要素の両方の属性は省略可能です。 メッセージを書き込むファイルを指定せずにメッセージボックスを無効にすることも、メッセージを有効にしたままメッセージを書き込むファイルを指定することもできます。  
   
 ## <a name="example"></a>例  
- 次の例は、 **Assert**を呼び出し、メッセージをに`c:\log.txt`書き込むときに、メッセージボックスの表示を無効にする方法を示しています。  
+ 次の例は、 **Assert**を呼び出し、メッセージを `c:\log.txt` に書き込むときに、メッセージボックスの表示を無効にする方法を示しています。  
   
 ```xml  
 <configuration>  

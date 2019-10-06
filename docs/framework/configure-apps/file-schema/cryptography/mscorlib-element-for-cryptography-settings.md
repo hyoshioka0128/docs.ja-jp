@@ -8,18 +8,18 @@ helpviewer_keywords:
 - mscorlib element
 - <mscorlib> element
 ms.assetid: d549668f-31f1-4b92-8021-a9135c09ca3c
-ms.openlocfilehash: c780087246ea91846896037a245b82493251e538
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4e2159cda5f35b5795804dede09ec17d07d71b23
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921060"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699746"
 ---
-# <a name="mscorlib-element-for-cryptography-settings"></a>\<暗号化設定の mscorlib > 要素
-[ \<Cryptographysettings > 要素](cryptographysettings-element.md)を格納します。  
+# <a name="mscorlib-element-for-cryptography-settings"></a>暗号化設定の @no__t 0mscorlib > 要素
+[@No__t-1cryptographySettings > 要素](cryptographysettings-element.md)が含まれています。  
   
- \<configuration>  
-\<mscorlib >  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1 **\<mscorlib >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -32,7 +32,7 @@ ms.locfileid: "69921060"
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- なし。  
+ [なし] :  
   
 ### <a name="child-elements"></a>子要素  
   
@@ -47,7 +47,7 @@ ms.locfileid: "69921060"
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
   
 ## <a name="example"></a>例  
- 次の例は、  **\<mscorlib >** 要素を使用して、暗号化クラスを参照し、ランタイムを構成する方法を示しています。 その後、文字列 "RSA" を<xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType>メソッドに渡し、 <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A>メソッドを使用してオブジェクトを`MyCryptoRSAClass`返すことができます。  
+ 次の例は、 **\<mscorlib >** 要素を使用して、暗号化クラスを参照し、ランタイムを構成する方法を示しています。 その後、文字列 "RSA" を <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> メソッドに渡し、<xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> メソッドを使用して `MyCryptoRSAClass` オブジェクトを返すことができます。  
   
 ```xml  
 <configuration>  

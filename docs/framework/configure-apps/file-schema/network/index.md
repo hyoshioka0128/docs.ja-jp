@@ -12,15 +12,17 @@ helpviewer_keywords:
 - connections [.NET Framework], network configuration elements
 - network resources, network configuration elements
 ms.assetid: f1de5a0f-76c5-4833-819f-5222b8146340
-ms.openlocfilehash: 0f5d762a2b688bebcb7c027be6c639b6d64c069d
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 5e3bd1b1734fc7fba50b72785531a8b001d6d741
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664117"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698150"
 ---
 # <a name="network-settings-schema"></a>ネットワーク設定スキーマ
-ネットワーク設定は、.NET Framework がインターネットに接続する方法を指定します。 次の表では、[\<system.Net > 要素 (ネットワーク設定)](system-net-element-network-settings.md) の下にある各子構成要素の関数について説明します。  
+ネットワーク設定は、.NET Framework がインターネットに接続する方法を指定します。
+
+@No__t > の設定では、.NET Framework がネットワークに接続する方法を指定します。 次の表では、[\<system.Net > 要素 (ネットワーク設定)](system-net-element-network-settings.md) の下にある各子構成要素の関数について説明します。  
   
 |要素|説明|  
 |-------------|-----------------|  
@@ -31,7 +33,7 @@ ms.locfileid: "69664117"
 |[\<requestCaching> 要素 (ネットワーク設定)](requestcaching-element-network-settings.md)|ネットワーク要求のキャッシュメカニズムを制御します。|  
 |[\<webRequestModules> 要素 (ネットワーク設定)](webrequestmodules-element-network-settings.md)|インターネット ホストから情報を要求するために使用するモジュールを指定します。|  
   
- Uri の設定は、.NET Framework での Uniform Resource Identifier (URI) を使用して表現された Web アドレスの処理方法を指定します。 次の表では、[\<Uri> 要素 (Uri 設定)](uri-element-uri-settings.md) の下にある各子構成要素の関数について説明します。  
+@No__t 0uri > 設定は、uniform resource identifier (Uri) を使用して表された web アドレスを .NET Framework が処理する方法を指定します。 次の表では、 [\<uri > 要素 (Uri 設定)](uri-element-uri-settings.md)の下にある各子構成要素の関数について説明します。  
   
 |要素|説明|  
 |-------------|-----------------|  

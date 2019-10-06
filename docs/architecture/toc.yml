@@ -5,8 +5,6 @@
   items:
     - name: ASP.NET Core および Microsoft Azure での最新の Web アプリケーションの設計
       href: modern-web-apps-azure/
-    - name: Azure 向けクラウド ネイティブ .NET アプリの設計
-      href: cloud-native/
     - name: Azure クラウドと Windows コンテナーで既存の .NET アプリケーションを最新式にする
       href: modernize-with-azure-containers/
     - name: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
@@ -15,6 +13,11 @@
       href: microservices/
     - name: 'サーバーレス アプリ: アーキテクチャ、パターン、および Azure の実装'
       href: serverless/
+- name: 電子書籍のプレビュー
+  expanded: true
+  items:
+    - name: Azure 向けクラウド ネイティブ .NET アプリの設計
+      href: cloud-native/
     - name: ASP.NET Web Forms 開発者向け Blazor
       href: blazor-for-web-forms-developers/
     - name: WCF 開発者向け ASP.NET Core gRPC

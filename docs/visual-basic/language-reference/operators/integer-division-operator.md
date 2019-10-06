@@ -17,19 +17,19 @@ helpviewer_keywords:
 - quotients, integer
 - truncation [Visual Basic], integer division
 ms.assetid: 4b0ee347-950c-45c9-8e23-54bc85df208e
-ms.openlocfilehash: 276071fef3632d1a617f177b6fe18026b290103a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d1a46f99c21be007d33361ba095a3f0c52fe906c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917246"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701147"
 ---
 # <a name="-operator-visual-basic"></a>\ 演算子 (Visual Basic)
 2つの数値を除算し、整数の結果を返します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```vb  
 expression1 \ expression2  
 ```  
   
@@ -50,8 +50,8 @@ expression1 \ expression2
   
  [/演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)は、小数部の剰余を保持する完全な商を返します。  
   
-## <a name="remarks"></a>Remarks  
- 除算を実行する前に、Visual Basic 浮動小数点数値式をに`Long`変換しようとしています。 `Option Strict` が`On`の場合は、コンパイラエラーが発生します。 が`Option Strict` <xref:System.OverflowException> の場合、値が [Long データ型](../../../visual-basic/language-reference/data-types/long-data-type.md)の範囲外の場合は、を指定できます。 `Off` へ`Long`の変換も、*銀行の丸め*処理の対象となります。 詳細については、「[型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)」の「小数部」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 除算を実行する前に、Visual Basic 浮動小数点数値式をに`Long`変換しようとしています。 `Option Strict` が`On`の場合は、コンパイラエラーが発生します。 が`Option Strict` <xref:System.OverflowException> の場合、値が [Long データ型](../../../visual-basic/language-reference/data-types/long-data-type.md)の範囲外の場合は、を指定できます。 `Off` @No__t-0 への変換は、銀行型*丸めの*対象にもなります。 詳細については、「[型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)」の「小数部」を参照してください。  
   
  また`expression1`は`expression2`が[Nothing](../../../visual-basic/language-reference/nothing.md)に評価される場合、0として扱われます。  
   
@@ -59,7 +59,7 @@ expression1 \ expression2
  が`expression2` 0 に評価され`\`た場合、 <xref:System.DivideByZeroException>演算子は例外をスローします。 これは、オペランドのすべての数値データ型に当てはまります。  
   
 > [!NOTE]
-> 演算子はオーバーロードできます。つまり、クラスまたは構造体がそのクラスまたは構造体の型を持つ場合に、クラスまたは構造体がその動作を再定義できます。 `\` コードでこのようなクラスまたは構造体に対してこの演算子を使用する場合は、再定義された動作を理解していることを確認してください。 詳細については、「 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+> @No__t-0 演算子は*オーバーロード*できます。つまり、クラスまたは構造体がそのクラスまたは構造体の型を持つ場合に、クラスまたは構造体がその動作を再定義できます。 コードでこのようなクラスまたは構造体に対してこの演算子を使用する場合は、再定義された動作を理解していることを確認してください。 詳細については、「 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では`\` 、演算子を使用して、整数除算を実行します。 結果は、2つのオペランドの整数の商を表す整数で、残りの部分は破棄されます。  
@@ -70,7 +70,7 @@ expression1 \ expression2
   
 ## <a name="see-also"></a>関連項目
 
-- [\\= 演算子](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
+- [\\ = 演算子](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
 - [/演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)
 - [Option Strict ステートメント](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [算術演算子](../../../visual-basic/language-reference/operators/arithmetic-operators.md)

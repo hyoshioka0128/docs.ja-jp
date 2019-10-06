@@ -1,18 +1,18 @@
 ---
 title: インデックスと範囲を使用してデータの範囲を調べる
 description: この高度なチュートリアルでは、インデックスと範囲を使用してデータを調べ、シーケンシャル データ セットのスライスを調べる方法について説明します。
-ms.date: 04/19/2019
+ms.date: 09/20/2019
 ms.custom: mvc
-ms.openlocfilehash: d0eeadfff9732ced22e045536a88ed49cd98bbaa
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: a879601e1358f72e80983992a3cd96ba1fb06a38
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117827"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391970"
 ---
 # <a name="indices-and-ranges"></a>インデックスと範囲
 
-範囲とインデックスには、<xref:System.Array>、<xref:System.String>、<xref:System.Span%601>、または <xref:System.ReadOnlySpan%601> 内の 1 つの要素または範囲にアクセスできる簡潔な構文が用意されています。 これらの機能を使用すると、簡潔でわかりやすい構文でシーケンス内の各要素または要素の範囲にアクセスできるようになります。
+範囲とインデックスには、シーケンス内の 1 つの要素または範囲にアクセスできる簡潔な構文が用意されています。
 
 このチュートリアルでは、次の作業を行う方法について説明します。
 
@@ -74,6 +74,14 @@ string[] words = new string[]
 次のサンプルは、こうした選択肢の理由の多くを示しています。 `x`、`y`、`z` を変更してさまざまな組み合わせを試してください。 実験するときには、有効な組み合わせになるように `x` が `y` 未満の値、`y` が `z` 未満の値を使用します。 新しいメソッドに次のコードを追加します。 さまざまな組み合わせを試してください。
 
 [!code-csharp[SemanticsExamples](~/samples/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Semantics)]
+
+## <a name="type-support-for-indices-and-ranges"></a>インデックスと範囲の型のサポート
+
+型に <xref:System.Index> または <xref:System.Range> パラメーターを持つ[インデクサー](../programming-guide/indexers/index.md)が用意されている場合、それぞれ明示的にインデックスまたは範囲をサポートします。
+
+アクセス可能なゲッターと戻り値の型 `int` を持つ `Length` または `Count` という名前のプロパティがある場合、型は**可算**です。 インデックスまたは範囲を明示的にサポートしていない可算型は、それらを暗黙的にサポートしている可能性があります。 詳細については、[機能の提案に関する注記](~/_csharplang/proposals/csharp-8.0/ranges.md)の「[暗黙的なインデックスのサポート](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support)」と「[暗黙的な範囲のサポート](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support)」のセクションを参照してください。
+
+たとえば、次の .NET 型は、<xref:System.Array>、<xref:System.String>、<xref:System.Span%601>、および <xref:System.ReadOnlySpan%601> のインデックスと範囲の両方をサポートしています。 <xref:System.Collections.Generic.List%601> はインデックスをサポートしていますが、範囲はサポートしていません。
 
 ## <a name="scenarios-for-indices-and-ranges"></a>インデックスと範囲のシナリオ
 

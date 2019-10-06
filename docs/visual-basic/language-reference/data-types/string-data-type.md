@@ -18,30 +18,30 @@ helpviewer_keywords:
 - String literals [Visual Basic]
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
-ms.openlocfilehash: 11c4f119360af386fa2c5609ea7815b9ae7a64f3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6d2fd226735622de5cd7197060c05b8ac12b69f1
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647001"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696839"
 ---
 # <a name="string-data-type-visual-basic"></a>文字列型 (String) (Visual Basic)
-0 ~ 65535 の値範囲の符号なし 16 ビット (2 バイト) コード ポイントのシーケンスを保持します。 各*コード ポイント*、または文字コードを 1 つの Unicode 文字を表します。 文字列は、0 からおよそ 20億を含めることができます (2 ^31) の Unicode 文字。  
+0 ~ 65535 の範囲の値を範囲とする符号なし16ビット (2 バイト) コードポイントのシーケンスを保持します。 各*コードポイント*(文字コード) は、1つの Unicode 文字を表します。 文字列には、0 ~ 約 20億 (2 ^ 31) の Unicode 文字を含めることができます。  
   
-## <a name="remarks"></a>Remarks  
- 使用して、`String`データ型の配列の管理オーバーヘッドがなく、複数の文字を保持するために`Char()`、配列の`Char`要素。  
+## <a name="remarks"></a>コメント  
+ @No__t 0 のデータ型を使用して、`Char` 要素の配列である `Char()` の配列管理オーバーヘッドを発生させずに、複数の文字を保持します。  
   
- 既定値`String`は`Nothing`(null 参照)。 これはいない空の文字列と同じ (値`""`)。  
+ @No__t-0 の既定値は `Nothing` (null 参照) です。 これは空の文字列 (値 `""`) と同じではないことに注意してください。  
   
 ## <a name="unicode-characters"></a>Unicode 文字  
- Unicode の最初の 128 個のコード ポイント (0 ~ 127) は、文字および記号の標準的な US キーボード上に対応します。 これら最初の 128 個のコード ポイントは、ASCII 文字セットの定義と同じです。 2 番目の 128 個のコード ポイント (128 ~ 255) では、ラテン語系のアルファベット文字、アクセント記号、通貨記号、および分数などの特殊文字を表します。 Unicode では、さまざまなシンボルを他のコード ポイント (256 ~ 65535) を使用します。 これには、世界中のテキスト文字、分音記号、および数学的、技術的な記号が含まれます。  
+ Unicode の最初の128コードポイント (0 ~ 127) は、標準の U.S. キーボードの文字と記号に対応しています。 これらの最初の128コードポイントは、ASCII 文字セットで定義されているものと同じです。 2番目の128コードポイント (128 ~ 255) は、ラテン語に基づくアルファベット文字、アクセント、通貨記号、分数などの特殊文字を表します。 Unicode では、さまざまなシンボルについて、残りのコードポイント (256-65535) を使用します。 これには、世界中のテキスト文字、分音記号、数学、およびテクニカルシンボルが含まれます。  
   
- などのメソッドを使用することができます<xref:System.Char.IsDigit%2A>と<xref:System.Char.IsPunctuation%2A>で個々 の文字で、`String`変数を Unicode の分類を決定します。  
+ @No__t-2 変数の個々の文字に <xref:System.Char.IsDigit%2A> や <xref:System.Char.IsPunctuation%2A> などのメソッドを使用して、Unicode 分類を決定することができます。  
   
 ## <a name="format-requirements"></a>書式の要件  
- 囲む必要があります、`String`引用符で囲まれたリテラル (`" "`)。 2 つの連続する引用符を使用する場合は、文字列内の文字の 1 つとして、引用符を含める必要があります、(`""`)。 次に例を示します。  
+ @No__t-0 リテラルは引用符で囲む必要があります (`" "`)。 文字列内のいずれかの文字として引用符を含める必要がある場合は、2つの連続する引用符 (`""`) を使用します。 次に例を示します。  
   
-```  
+```vb  
 Dim j As String = "Joe said ""Hello"" to me."  
 Dim h As String = "Hello"  
 ' The following messages all display the same thing:  
@@ -51,32 +51,32 @@ MsgBox("Joe said " & """" & h & """" & " to me.")
 MsgBox("Joe said """ & h & """ to me.")  
 ```  
   
- 文字列に引用符を表す、連続する引用符は開始と終了引用符に依存しないことに注意してください、`String`リテラル。  
+ 文字列内の引用符を表す連続した引用符は、@no__t 0 リテラルを開始および終了する引用符とは関係がないことに注意してください。  
   
 ## <a name="string-manipulations"></a>文字列操作  
- 文字列を割り当てると、`String`変数、その文字列は*不変*、その長さまたは内容を変更することができることはできません。 何らかの方法で文字列を変更するとき、Visual Basic は新しい文字列を作成および 1 つ前を破棄します。 `String`変数をポイントし、新しい文字列。  
+ @No__t 0 の変数に文字列を割り当てると、その文字列は*不変*になります。つまり、長さや内容を変更することはできません。 文字列を任意の方法で変更すると、Visual Basic によって新しい文字列が作成され、前の文字列が破棄されます。 @No__t 0 の変数は、新しい文字列を指します。  
   
- 内容を操作することができます、`String`さまざまな文字列関数を使用して変数。 次の例を示しています、<xref:Microsoft.VisualBasic.Strings.Left%2A>関数  
+ @No__t 0 変数の内容を操作するには、さまざまな文字列関数を使用します。 次の例は、<xref:Microsoft.VisualBasic.Strings.Left%2A> 関数を示しています。  
   
-```  
+```vb  
 Dim S As String = "Database"  
 ' The following statement sets S to a new string containing "Data".  
 S = Microsoft.VisualBasic.Left(S, 4)  
 ```  
   
- 別のコンポーネントによって作成される文字列は、先頭または末尾のスペースで埋められます可能性があります。 このような文字列を受信する場合は使用できます、 <xref:Microsoft.VisualBasic.Strings.Trim%2A>、 <xref:Microsoft.VisualBasic.Strings.LTrim%2A>、および<xref:Microsoft.VisualBasic.Strings.RTrim%2A>これらのスペースを削除する関数。  
+ 別のコンポーネントによって作成された文字列は、先頭または末尾にスペースが埋め込まれている可能性があります。 このような文字列を受け取った場合は、<xref:Microsoft.VisualBasic.Strings.Trim%2A>、<xref:Microsoft.VisualBasic.Strings.LTrim%2A>、<xref:Microsoft.VisualBasic.Strings.RTrim%2A> の各関数を使用して、これらのスペースを削除できます。  
   
- 文字列操作の詳細については、次を参照してください。[文字列](../../../visual-basic/programming-guide/language-features/strings/index.md)します。  
+ 文字列操作の詳細については、「[文字列](../../../visual-basic/programming-guide/language-features/strings/index.md)」を参照してください。  
   
 ## <a name="programming-tips"></a>プログラミングのヒント  
   
-- **負の数。** 文字がによって保持されていることに注意してください。`String`署名されていないと、負の値を表すことはできません。 いずれの場合も、行わないで`String`数値の値を保持します。  
+- **負の数値。** @No__t-0 によって保持されている文字は符号なしであり、負の値を表すことはできないことに注意してください。 どのような場合でも、`String` を使用して数値を保持することはできません。  
   
-- **相互運用の考慮事項。** 例のオートメーションまたは COM オブジェクト、.NET framework では、作成されていないコンポーネントとやり取りする場合、他の環境では文字列の文字の別のデータ幅 (8 ビット) ことに注意してください。 このようなコンポーネントに 8 ビット文字の文字列引数を渡す場合の宣言として`Byte()`、配列の`Byte`、要素の代わりに`String`新しい Visual Basic コードで。  
+- **相互運用に関する考慮事項。** .NET Framework 用に作成されていないコンポーネント (たとえば、オートメーションや COM オブジェクト) とやり取りする場合は、他の環境で文字列文字のデータ幅が異なる (8 ビット) ことに注意してください。 8ビット文字の文字列引数をこのようなコンポーネントに渡す場合は、新しい Visual Basic コードで `String` ではなく、`Byte` 要素の配列 @no__t 0 として宣言します。  
   
-- **型宣言文字。** 識別子の型文字を付加`$`任意の識別子に強制的に、`String`データ型。 `String` リテラルの型文字がありません。 ただし、コンパイラは、引用符で囲まれたリテラルを扱います (`" "`) として`String`します。  
+- **文字を入力します。** 識別子の型文字 `$` を任意の識別子に追加すると、強制的に `String` のデータ型になります。 `String` にはリテラルの型文字がありません。 ただし、コンパイラは、引用符で囲まれたリテラル (`" "`) を `String` として扱います。  
   
-- **フレームワークの型。** .NET Framework に対応する型は、<xref:System.String?displayProperty=nameWithType>クラス。  
+- **フレームワークの種類。** .NET Framework 内の対応する型は、@no__t 0 のクラスです。  
   
 ## <a name="see-also"></a>関連項目
 
@@ -85,5 +85,5 @@ S = Microsoft.VisualBasic.Left(S, 4)
 - [Char データ型](../../../visual-basic/language-reference/data-types/char-data-type.md)
 - [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [方法: 符号なしの型を使用する Windows の機能を呼び出す](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
+- [2 つのオブジェクトが等しいかどうかをテストする方法符号なしの型を使用する Windows の機能を呼び出す](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
 - [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

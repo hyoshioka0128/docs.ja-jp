@@ -15,12 +15,12 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: 181d01f6e688b94876f77155bf598aba129e9fbf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a61f4eedde611cfb7598d55465103924516e06c6
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949911"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834608"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Windows フォームにおけるマウス イベント
 
@@ -48,7 +48,7 @@ ms.locfileid: "69949911"
 
 4. <xref:System.Windows.Forms.Control.MouseUp> イベント。
 
-マウス ボタンのダブル クリックに対して発生したイベントの順序を次に示します。
+マウスボタンをダブルクリックしたときに発生するイベントの順序は次のとおりです。
 
 1. <xref:System.Windows.Forms.Control.MouseDown> イベント。
 
@@ -66,13 +66,16 @@ ms.locfileid: "69949911"
 
 8. <xref:System.Windows.Forms.Control.MouseUp> イベント。
 
-マウスクリックイベントの順序を示すコード例については、「 [方法:Windows フォームコントロール](how-to-handle-user-input-events-in-windows-forms-controls.md)でユーザー入力イベントを処理します。
+マウスクリックイベントの順序を示すコード例については、@no__t を参照してください。Windows フォームコントロール @ no__t のユーザー入力イベントを処理します。
 
 ### <a name="individual-controls"></a>個別のコントロール
 
 次のコントロールは、標準のマウス クリック イベントの動作に準拠していません。
 
-- <xref:System.Windows.Forms.Button>、<xref:System.Windows.Forms.CheckBox>、<xref:System.Windows.Forms.ComboBox>、および <xref:System.Windows.Forms.RadioButton> の各コントロール
+- <xref:System.Windows.Forms.Button>
+- <xref:System.Windows.Forms.CheckBox>
+- <xref:System.Windows.Forms.ComboBox>
+- <xref:System.Windows.Forms.RadioButton>
 
   > [!NOTE]
   > <xref:System.Windows.Forms.ComboBox> コントロールについて、ユーザーが編集フィールド、ボタン、またはリスト内の項目をクリックすると、後述するイベントの動作が発生します。
@@ -124,7 +127,7 @@ ms.locfileid: "69949911"
 
   - 右ダブルクリック : <xref:System.Windows.Forms.Control.Click>、<xref:System.Windows.Forms.Control.MouseClick>、<xref:System.Windows.Forms.Control.DoubleClick>、<xref:System.Windows.Forms.Control.MouseDoubleClick>
 
-### <a name="painting-behavior-of-toggle-controls"></a>切り替えコントロールの描画の動作
+### <a name="painting-behavior-of-toggle-controls"></a>トグルコントロールの描画動作
 
 <xref:System.Windows.Forms.ButtonBase> クラスから派生するコントロールなど、切り替えコントロールには、次のようなマウス クリック イベントと組み合わせた独自の描画の動作があります。
 

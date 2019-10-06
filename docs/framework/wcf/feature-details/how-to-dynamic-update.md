@@ -2,12 +2,12 @@
 title: '方法: 動的な更新'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: 0a103e980d0d1be08f3ae6850c6af64405582c7b
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 95d99afd09daf4d9bf3937a71d7773332ff1bc14
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972076"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834718"
 ---
 # <a name="how-to-dynamic-update"></a>方法: 動的な更新
 ここでは、ルーティング構成の作成および動的な更新に必要な基本的手順について説明します。 この例では、ルーティングの初期構成を構成ファイルから取得し、すべてのメッセージを regularCalc 電卓サービスにルーティングします。ただし、これは、roundingCalc のサービスの提供先となるエンドポイントを変更するために、後でプログラムによって更新されます。  
@@ -163,7 +163,8 @@ ms.locfileid: "70972076"
     > 新しい RoutingConfiguration を提供するメソッドは RoutingExtension service サービス拡張に含まれているため、新しい RoutingConfiguration オブジェクトは、ServiceHost または ServiceExtension (別の ServiceExtension など) への参照を含む WCF 拡張モデル、またはこの参照を取得できる WCF 拡張モデル内の任意の場所で提供できます。
   
 ## <a name="example"></a>例  
- この例で使用されているコンソール アプリケーション全体の一覧を次に示します。  
+
+この例で使用されているコンソールアプリケーションの完全な一覧を次に示します。
   
 ```csharp
 //-----------------------------------------------------------------  
@@ -241,7 +242,8 @@ namespace Microsoft.Samples.AdvancedFilters
 ```  
   
 ## <a name="example"></a>例  
- この例で使用されている構成ファイルの全体の一覧を次に示します。  
+ 
+この例で使用される構成ファイルの完全な一覧を次に示します。
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -298,4 +300,4 @@ namespace Microsoft.Samples.AdvancedFilters
   
 ## <a name="see-also"></a>関連項目
 
-- [ルーティング サービス](../../../../docs/framework/wcf/samples/routing-services.md)
+- [ルーティング サービス](../samples/routing-services.md)

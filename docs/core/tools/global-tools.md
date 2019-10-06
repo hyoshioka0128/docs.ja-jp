@@ -4,12 +4,12 @@ description: .NET Core グローバル ツールとそれらに使用できる .
 author: KathleenDollard
 ms.date: 05/29/2018
 ms.custom: seodec18
-ms.openlocfilehash: 01c1463ceddcd64e5bab05b95a5ae4a91b6da838
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 40a0aabcf523e8dac9a3ad226064bbb3c1b3ce5b
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117455"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332017"
 ---
 # <a name="net-core-global-tools-overview"></a>.NET core グローバル ツールの概要
 
@@ -107,31 +107,6 @@ dotnet doc
 dotnet <command> --help
 ```
 
-### <a name="what-could-go-wrong"></a>起こりうる問題
-
-グローバル ツールは、[フレームワークに依存するアプリケーション](../deploying/index.md#framework-dependent-deployments-fdd)です。つまり、お使いのマシンにインストールされている .NET Core ランタイムに依存します。 予定していたランタイムが見つからない場合、ツールは次のような通常の .NET Core ランタイムのロール フォワード ルールに従います。
-
-* アプリケーションは、指定されたメジャー バージョンおよびマイナー バージョンの最上位の修正プログラム リリースにロール フォワードされます。
-* 一致するメジャー バージョン番号とマイナー バージョン番号と一致するランタイムがない場合は、次に高いマイナー バージョンが使用されます。
-* ランタイムのプレビュー バージョン間、またはプレビュー バージョンとリリース バージョン間では、ロール フォワードは発生しません。 したがって、プレビュー バージョンを使用して作成されたグローバル ツールは、作成者がリビルドして再パブリッシュしてから再インストールする必要があります。
-* .NET Core 2.1 Preview 1 で作成されたグローバル ツールでは、その他の問題が発生する可能性があります。 詳細については、「[.NET Core 2.1 Preview 2 Known Issues](https://github.com/dotnet/core/blob/master/release-notes/2.1/Preview/2.1.0-preview2-known-issues.md)」 (.NET Core 2.1 Preview 2 の既知の問題) を参照してください。
-
-アプリケーションで適切なランタイムが見つからない場合は、実行が失敗し、エラーが報告されます。
-
-発生する可能性がある別の問題は、以前のプレビュー時に作成されたグローバル ツールが、現在インストールされている .NET Core ランタイムで実行できない場合があることです。 次のコマンドを使用して、お使いのマシンにインストールされているランタイムを確認することができます。
-
-```dotnetcli
-dotnet --list-runtimes
-```
-
-グローバル ツールの作成者に連絡して、ツール パッケージを再コンパイルして、NuGet に更新されたバージョン番号で再パブリッシュできるかどうかを確認します。 作成者が NuGet でパッケージを更新したら、自分のコピーを更新できます。
-
-.NET Core CLI は、初めて使用したときに既定の場所を PATH 環境変数に追加しようとします。 ただし、次のようなシナリオでは、既定の場所が PATH に追加されない場合があります。
-
-* `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` 環境変数を設定している場合
-* macOS で、 *.pkg* ではなく *.tar.gz* ファイルを使用して .NET Core SDK をインストールしている場合
-* Linux で、パスを構成するためにシェル環境ファイルを編集する必要がある場合
-
 ## <a name="other-cli-commands"></a>その他の CLI コマンド
 
 .NET Core SDK には、.NET Core グローバル ツールをサポートするその他のコマンドが含まれています。 次のいずれかのオプションを使用して、任意の `dotnet tool` コマンドを使用します。
@@ -162,3 +137,7 @@ dotnet tool uninstall -g <packagename>
 ```dotnetcli
 dotnet tool list -g
 ```
+
+## <a name="see-also"></a>関連項目
+
+* [.NET Core ツールの使用に関する問題のトラブルシューティング](troubleshoot-usage-issues.md)

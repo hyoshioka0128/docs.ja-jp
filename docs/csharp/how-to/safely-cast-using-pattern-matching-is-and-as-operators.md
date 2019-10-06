@@ -6,12 +6,12 @@ helpviewer_keywords:
 - cast operators [C#], as and is operators
 - as operator [C#]
 - is operator [C#]
-ms.openlocfilehash: 764a69869b8a5b8f76e2f58aced51761af73e50e
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: d82c60374db637bb8ac879a23e2d74c39194ca18
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566280"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353727"
 ---
 # <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>方法: パターン マッチング、is 演算子、as 演算子を使用して安全にキャストする
 
@@ -23,11 +23,11 @@ ms.locfileid: "69566280"
 
 上記のサンプルでは、パターン マッチング構文のいくつかの機能が示されています。 `if (a is Mammal m)` ステートメントと `if (o is Mammal m)` ステートメントにより、初期化が割り当てられたテストが結合されます。 この割り当ては、テストに成功した場合にのみ行われます。 変数 `m` は、それが割り当てられている埋め込み `if` ステートメントでのみ範囲に入ります。 後で同じメソッドで `m` にアクセスすることはできません。 対話型ウィンドウで試してください。
 
-次のサンプル コードに示されているように、[null 許容型](../programming-guide/nullable-types/index.md)に値があるかどうかをテストする目的で同じ構文を使用することもできます。
+次のサンプル コードに示されているように、[null 許容値型](../programming-guide/nullable-types/index.md)に値があるかどうかをテストする目的で同じ構文を使用することもできます。
 
 [!code-csharp[Pattern matching with nullable types](../../../samples/snippets/csharp/how-to/safelycast/nullablepatternmatching/Program.cs#PatternMatchingNullable)]
 
-上記のサンプルでは、変換で使用するパターン マッチング構文の他の機能が示されています。 `null` 値を具体的に探すことで null パターンの変数をテストできます。 変数のランタイム値が `null` のとき、`is` ステートメントで型を確認すると必ず `false` が返されます。 パターン マッチング `is` ステートメントでは、`int?` や `Nullable<int>` など、null 許容値型が許可されませんが、他の値の型についてはテストできます。
+上記のサンプルでは、変換で使用するパターン マッチング構文の他の機能が示されています。 `null` 値を具体的に探すことで null パターンの変数をテストできます。 変数のランタイム値が `null` のとき、`is` ステートメントで型を確認すると必ず `false` が返されます。 パターン マッチング `is` ステートメントでは、`int?` や `Nullable<int>` など、null 許容値型が許可されませんが、他の値の型についてはテストできます。 前の例の `is` パターンは null 許容値型に限定されません。 また、これらのパターンを使用して、参照型の変数に値があるか、`null` であるかをテストすることもできます。
 
 上記のサンプルでは、変数がさまざまな型の 1 つになる `switch` ステートメントでパターン マッチング `is` 式を使用する方法も確認できます。
 

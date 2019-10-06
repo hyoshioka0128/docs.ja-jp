@@ -2,12 +2,12 @@
 title: .NET Core の csproj 形式に追加されたもの
 description: 既存の csproj ファイルと .NET Core の csproj ファイルの違いについて説明します
 ms.date: 04/08/2019
-ms.openlocfilehash: 13239b5235138cc6994841bbb81f8f12e661e337
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 89ab22f0c5e69f29ff31e13d46dce8ba278d08da
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969839"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216204"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core の csproj 形式に追加されたもの
 
@@ -125,13 +125,13 @@ ASP.NET Core メタパッケージに対するこれらの参照では、ほと�
 
 ### <a name="sdk-attribute"></a>SDK 属性
 
-*.csproj* ファイルのルート `<Project>` 要素には、`Sdk` という新しい属性があります。 `Sdk` は、プロジェクトで使用される SDK を指定します。 [レイヤー化のドキュメント](cli-msbuild-architecture.md)で説明されているように、SDK は、.NET Core コードをビルドできる MSBuild [タスク](/visualstudio/msbuild/msbuild-tasks)および[ターゲット](/visualstudio/msbuild/msbuild-targets)のセットです。 .NET Core ツールには主に 3 つの SDK が付属しており、.NET Core 3.0 プレビューを使用する場合は、追加の 2 つの SDK があります。
+*.csproj* ファイルのルート `<Project>` 要素には、`Sdk` という新しい属性があります。 `Sdk` は、プロジェクトで使用される SDK を指定します。 [レイヤー化のドキュメント](cli-msbuild-architecture.md)で説明されているように、SDK は、.NET Core コードをビルドできる MSBuild [タスク](/visualstudio/msbuild/msbuild-tasks)および[ターゲット](/visualstudio/msbuild/msbuild-targets)のセットです。 .NET Core では、次の SDK を利用できます。
 
 1. ID が `Microsoft.NET.Sdk` の .NET Core SDK
 2. ID が `Microsoft.NET.Sdk.Web` の .NET Core Web SDK
 3. ID が `Microsoft.NET.Sdk.Razor` の .NET Core Razor クラス ライブラリ SDK
-4. ID が `Microsoft.NET.Sdk.Worker` の .NET Core Worker Service (.NET Core 3.0 プレビュー)
-5. ID が `Microsoft.NET.Sdk.WindowsDesktop` の .NET Core WinForms および WPF (.NET Core 3.0 プレビュー)
+4. ID が `Microsoft.NET.Sdk.Worker` の .NET Core Worker Service (.NET Core 3.0 以降)
+5. ID が `Microsoft.NET.Sdk.WindowsDesktop` の .NET Core WinForms および WPF (.NET Core 3.0 以降)
 
 .NET Core ツールを使用し、コードをビルドするには、`Sdk` 属性を `<Project>` 要素の ID のいずれかに設定する必要があります。
 

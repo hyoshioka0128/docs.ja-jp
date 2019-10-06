@@ -8,17 +8,18 @@ helpviewer_keywords:
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 410c8bdb63b56a78dbfa64c21344fdcd6a6656c3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2a5449b4fa77ba99a18595077081089e80bd32df
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051612"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833617"
 ---
 # <a name="specifying-an-entry-point"></a>エントリ ポイントの指定
+
 エントリ ポイントは、DLL 内の関数の位置を識別します。 マネージド プロジェクト内では、対象となる関数の元の名前または序数エントリ ポイントによって、その関数が相互運用の境界にまたがって識別されます。 また、エントリ ポイントを別の名前に割り当てて、関数の名前を事実上変更できます。  
   
- DLL 関数の名前を変更する理由を次に示します。  
+ DLL 関数の名前を変更する考えられる原因の一覧を次に示します。  
   
 - 大文字と小文字が区別される API 関数名を使わないようにするため  
   
@@ -31,7 +32,8 @@ ms.locfileid: "71051612"
  このトピックでは、マネージド コード内の DLL 関数の名前を変更する方法について説明します。  
   
 ## <a name="renaming-a-function-in-visual-basic"></a>Visual Basic での関数名の変更  
- Visual Basic で <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> フィールドを設定するには、**Declare** ステートメントで **Function** キーワードを使います。 基本的な宣言を次の例に示します。  
+ 
+Visual Basic で <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> フィールドを設定するには、**Declare** ステートメントで **Function** キーワードを使います。 基本的な宣言を次の例に示します。  
   
 ```vb
 Friend Class NativeMethods
@@ -43,7 +45,7 @@ Friend Class NativeMethods
 End Class
 ```
   
- 定義に **Alias** キーワードを含めることで、**MessageBox** エントリ ポイントを **MsgBox** に置き換えることができます。その例を次に示します。 どちらの例でも、**Auto** キーワードを使って、エントリ ポイントの文字セットのバージョンを指定する手間を省いています。 文字セットの選択の詳細については、「[文字セットの指定](specifying-a-character-set.md)」を参照してください。  
+定義に **Alias** キーワードを含めることで、**MessageBox** エントリ ポイントを **MsgBox** に置き換えることができます。その例を次に示します。 どちらの例でも、**Auto** キーワードを使って、エントリ ポイントの文字セットのバージョンを指定する手間を省いています。 文字セットの選択の詳細については、「[文字セットの指定](specifying-a-character-set.md)」を参照してください。  
   
 ```vb
 Friend Class NativeMethods

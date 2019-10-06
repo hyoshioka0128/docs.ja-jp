@@ -2,12 +2,12 @@
 title: <bookmarkResumptionQuery>WCF の
 ms.date: 03/30/2017
 ms.assetid: 755a34f0-87c9-4a1e-ae4d-0fb8a6fbdc0e
-ms.openlocfilehash: 36d169b78e78692c7b45c75d5d375bddbba1c66f
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 8cb254599a9742305ec958fd77174f4c4b8a57c2
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70850106"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834004"
 ---
 # <a name="bookmarkresumptionquery-of-wcf"></a>\<WCF の bookmarkResumptionQuery >
 
@@ -52,7 +52,7 @@ ms.locfileid: "70850106"
   
 ### <a name="child-elements"></a>子要素
 
-なし。
+[なし] :
   
 ### <a name="parent-elements"></a>親要素  
   

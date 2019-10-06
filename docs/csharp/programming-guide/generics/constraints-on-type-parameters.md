@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: bb545d9da73154c237f55809a3a72ff0f121ce1a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 5c36639d76a6fbd4e36f39486369a55a56a6e3ea
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396278"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>型パラメーターの制約 (C# プログラミング ガイド)
 
@@ -20,7 +20,7 @@ ms.locfileid: "70253017"
 
 |制約|説明|
 |----------------|-----------------|
-|`where T : struct`|この型引数は値の型である必要があります。 <xref:System.Nullable%601> を除く任意の値の型を指定できます。 null 許容型の詳細については、「[null 許容型](../nullable-types/index.md)」をご覧ください。|
+|`where T : struct`|この型引数は値の型である必要があります。 <xref:System.Nullable%601> を除く任意の値の型を指定できます。 null 許容値型の詳細については、「[null 許容値型](../nullable-types/index.md)」を参照してください。|
 |`where T : class`|この型引数は参照型である必要があります。 この制約は、任意のクラス、インターフェイス、デリゲート、または配列型にも適用されます。|
 |`where T : notnull`|この型引数は null 非許容型である必要があります。 引数は、C# 8.0 以降では null 非許容参照型、または null 非許容値型にできます。 この制約は、任意のクラス、インターフェイス、デリゲート、または配列型にも適用されます。|
 |`where T : unmanaged`|この型引数は[アンマネージド型](../../language-reference/builtin-types/unmanaged-types.md)である必要があります。|

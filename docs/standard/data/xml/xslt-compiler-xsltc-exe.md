@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8a0c34eebda789f6561195c89e2660ae77603dc0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 729e6caa36ed8c2f6e77153f8d8ae356513b0603
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923281"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956989"
 ---
 # <a name="xslt-compiler-xsltcexe"></a>XSLT コンパイラ (xsltc.exe)
 XSLT コンパイラ (xsltc.exe) は、XSLT スタイル シートをコンパイルしてアセンブリを生成します。 コンパイルしたスタイル シートを <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> メソッドに直接渡すことができます。 xsltc.exe を使用して署名があるアセンブリを生成することはできません。  
@@ -19,7 +19,7 @@ XSLT コンパイラ (xsltc.exe) は、XSLT スタイル シートをコンパ�
   
 ## <a name="syntax"></a>構文  
   
-```  
+```console  
 xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]  
 ```  
   
@@ -29,9 +29,9 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |--------------|-----------------|  
 |`sourceFile`|スタイル シートの名前を指定します。 スタイル シートはローカル ファイルであるか、イントラネット上に置かれていることが必要です。|  
   
-## <a name="options"></a>オプション  
+## <a name="options"></a>および  
   
-|オプション|説明|  
+|OPTION|説明|  
 |------------|-----------------|  
 |`/c[lass]:` `name`|以降のスタイル シートのクラス名を指定します。 クラス名には完全修飾名を指定できます。<br /><br /> 既定のクラス名は、スタイル シートの名前です。 たとえば、スタイル シート customers.xsl をコンパイルした場合、既定のクラス名は customers になります。|  
 |`/debug[`+&#124;-`]`|デバッグ情報を生成するかどうかを指定します。<br /><br /> `+` または `/debug` を指定すると、コンパイラによりデバッグ情報が生成され、プログラム データベース (PDB) ファイルに記録されます。 生成される PDB ファイルの名前は `assemblyName`.pdb です。<br /><br /> `-` を指定しない場合、`/debug` の指定が有効となります。これを指定した場合、デバッグ情報は作成されません。 製品版のアセンブリが生成されます。 **注:** デバッグ モードでコンパイルすると、XSLT のパフォーマンスが大きな影響を受けることがあります。|  
@@ -43,7 +43,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |`@` `file`|コンパイラ オプションを含むファイルを指定できます。|  
 |`?`|このツールのコマンド構文とオプションを表示します。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  XSLT ソリューションは、複数のスタイル シート モジュールで構成できます。 xsltc.exe ツールを使用して、スタイル シートからアセンブリを生成できます。 このアセンブリを <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> メソッドに直接渡すことができます。 XSLT の配置シナリオによっては、これによってパフォーマンス コストを削減できます。  
   
 > [!NOTE]
@@ -54,36 +54,36 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 ## <a name="examples"></a>使用例  
  次のコマンドを実行すると、スタイル シートがコンパイルされ、booksort.dll という名前のアセンブリが作成されます。  
   
-```  
+```console  
 xsltc booksort.xsl  
 ```  
   
  次のコマンドを実行すると、スタイル シートがコンパイルされ、booksort.dll という名前のアセンブリと booksort.pdb という名前の PDB ファイルが作成されます。  
   
-```  
+```console  
 xsltc booksort.xsl /debug  
 ```  
   
  次のコマンドを実行すると、msxsl:script 要素を含むスタイル シートがコンパイルされ、calc.dll および calc_Script1.dll という 2 つのアセンブリが作成されます。  
   
-```  
+```console  
 xsltc /settings:script+ calc.xsl  
 ```  
   
  次のコマンドを実行すると、DTD 処理とスタイルのサポートが有効になり、myTest.dll および myTest_Script1.dll という 2 つのアセンブリが作成されます。  
   
-```  
+```console  
 xsltc /settings:DTD+,script+ /out:myTest calc.xsl  
 ```  
   
  次のコマンドを実行すると、2 つのスタイル シート モジュールがコンパイルされ、booksort.dll という名前のアセンブリが 1 つ作成されます。  
   
-```  
+```console  
 xsltc booksort.xsl output.xsl  
 ```  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Xml.Xsl.XslCompiledTransform>
-- [方法: アセンブリを使用して XSLT 変換を実行する](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md)
+- [2 つのオブジェクトが等しいかどうかをテストする方法アセンブリを使用して XSLT 変換を実行する](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md)
 - [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)

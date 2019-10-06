@@ -2,12 +2,12 @@
 title: null 許容参照型
 description: この記事では、C# 8 で追加された null 許容参照型の概要を説明します。 新規および既存のプロジェクトにおいて、その機能によって null 参照例外に対する安全性がどのように提供されるかを学習します。
 ms.date: 02/19/2019
-ms.openlocfilehash: e66d74cdde3b3de9ec3f1b435cdbd3e3b24c2663
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 05a8e14a7c51df685b3ffdf16aab997da0a8036f
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851071"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332373"
 ---
 # <a name="nullable-reference-types"></a>null 許容参照型
 
@@ -35,7 +35,7 @@ string? name;
 
 型の名前に `?` が追加されていないすべての変数は、**null 非許容参照型**です。 この機能を有効にすると、既存のコードのすべての参照型変数がそれに含まれます。
 
-コンパイラでは、静的分析を使用して、null 許容参照が非 null として認識されているかどうかが判定されます。 コンパイラは、null の可能性があるときに null 許容参照を逆参照していると警告します。 この動作は、変数名の後に **null 免除演算子** (`!`) を使用することでオーバーライドできます。 たとえば、変数 `name` は null ではないことがわかっているのに、コンパイラで警告が出る場合は、次のようにコードを記述することで、コンパイラの分析をオーバーライドできます。
+コンパイラでは、静的分析を使用して、null 許容参照が非 null として認識されているかどうかが判定されます。 コンパイラは、null の可能性があるときに null 許容参照を逆参照していると警告します。 この動作は、変数名の後に **null 免除演算子** `!` を使用することでオーバーライドできます。 たとえば、変数 `name` は null ではないことがわかっているのに、コンパイラで警告が出る場合は、次のようにコードを記述することで、コンパイラの分析をオーバーライドできます。
 
 ```csharp
 name!.Length;
@@ -58,7 +58,7 @@ name!.Length;
 
 null 許容コンテキストでは、コンパイラによる参照型変数の解釈方法を細かく制御できます。 特定のソース行の **null 許容注釈コンテキスト**は、`enabled` または `disabled` です。 C# 8 より前のコンパイラでは、`disabled` null 許容コンテキスト内のすべてのコードがコンパイルされるものと考えることができます。すべての参照型は null になることができます。 **null 許容警告コンテキスト**は、`enabled` または `disabled` に設定することができます。 null 許容警告コンテキストでは、フロー分析を使用するコンパイラによって生成される警告が指定されます。
 
-プロジェクトの null 許容注釈コンテキストと null 許容警告コンテキストは、`csproj` ファイルの `Nullable` 要素を使用して設定することができます。 この要素では、コンパイラによって型の null 値の許容が解釈される方法と、生成される警告を構成します。 有効な設定は次のとおりです。
+プロジェクトの null 許容注釈コンテキストと null 許容警告コンテキストは、*.csproj* ファイルの `Nullable` 要素を使用して設定することができます。 この要素では、コンパイラによって型の null 値の許容が解釈される方法と、生成される警告を構成します。 有効な設定は次のとおりです。
 
 - `enable`:null 許容注釈コンテキストは**有効**です。 null 許容警告コンテキストは**有効**です。
   - 参照型の変数 (`string` など) は、null 非許容です。  null 値の許容のすべての警告は有効です。
@@ -69,21 +69,21 @@ null 許容コンテキストでは、コンパイラによる参照型変数の
 - `disable`:null 許容注釈コンテキストは**無効**です。 null 許容警告コンテキストは**無効**です。
   - 参照型の変数は無関係であり、以前のバージョンの C# と同じです。 null 値の許容のすべての警告は無効です。
 
-> [!IMPORTANT]
-> `Nullable` 要素は以前、`NullableContextOptions` という名称でした。 Visual Studio 2019、16.2-p1 で名前が変わりました。 .NET Core SDK 3.0.100-preview5-011568 にはこの変更が行われていません。 .NET Core CLI をご利用の場合、次のプレビューが利用可能になるまで `NullableContextOptions` を使用する必要があります。
-
 ディレクティブを使用して、プロジェクト内の任意の場所にこれらと同じコンテキストを設定することもできます。
 
 - `#nullable enable`:null 許容注釈コンテキストと null 許容警告コンテキストを、**有効**に設定します。
 - `#nullable disable`:null 許容注釈コンテキストと null 許容警告コンテキストを、**無効**に設定します。
 - `#nullable restore`:null 許容注釈コンテキストと null 許容警告コンテキストを、プロジェクトの設定に戻します。
-- `#pragma warning disable nullable`:null 許容警告コンテキストを**無効**に設定します。
-- `#pragma warning enable nullable`:null 許容警告コンテキストを**有効**に設定します。
-- `#pragma warning restore nullable`:null 許容警告コンテキストをプロジェクトの設定に戻します。
+- `#nullable disable warnings`:null 許容警告コンテキストを**無効**に設定します。
+- `#nullable enable warnings`:null 許容警告コンテキストを**有効**に設定します。
+- `#nullable restore warnings`:null 許容警告コンテキストをプロジェクトの設定に戻します。
+- `#nullable disable annotations`:Null 許容の注釈コンテキストを**無効**に設定します。
+- `#nullable enable annotations`:Null 許容の注釈コンテキストを**有効**に設定します。
+- `#nullable restore annotations`:注釈の警告コンテキストをプロジェクト設定に復元します。
 
 既定の null 許容注釈および警告コンテキストは `disabled` です。 その決定は、既存のコードを変更せずにコンパイルできて新しい警告は生成されないことを意味します。
 
-### <a name="nullable-annotation-context"></a>null 許容注釈コンテキスト
+## <a name="nullable-annotation-context"></a>null 許容注釈コンテキスト
 
 null 許容注釈コンテキストが無効になっていると、コンパイラでは次の規則が使用されます。
 
@@ -101,7 +101,7 @@ null 許容注釈コンテキストが有効になっていると、コンパイ
 - すべての null 許容参照型 (変数宣言で型の後に `?` を付けて示されているもの) は、null にすることができます。 静的分析によって、逆参照されるときに値が null 以外であることがわかっているかどうかが決定されます。 そうでない場合、コンパイラで警告が出ます。
 - null 免除演算子を使用して、null 許容参照が null ではないことを宣言できます。
 
-null 許容注釈コンテキストが有効になっていると、参照型に追加された `?` 文字により、**null 許容参照型**が宣言されます。 **null 免除演算子** (`!`) を式に追加して、式が null ではないことを宣言できます。
+null 許容注釈コンテキストが有効になっていると、参照型に追加された `?` 文字により、**null 許容参照型**が宣言されます。 **null 免除演算子** `!` を式に追加して、式が null ではないことを宣言できます。
 
 ## <a name="nullable-warning-context"></a>null 許容警告コンテキスト
 

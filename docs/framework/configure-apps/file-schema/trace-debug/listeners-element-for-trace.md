@@ -7,20 +7,20 @@ helpviewer_keywords:
 - <listeners> element
 - listeners element
 ms.assetid: 1394c2c3-6304-46db-87c1-8e8b16f5ad5b
-ms.openlocfilehash: e4550d4c4cd9ff37c5937ad366cccf91387c0e3f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 84b67532825372e7f69d86e1ef6060f4263587eb
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927021"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699348"
 ---
-# <a name="listeners-element-for-trace"></a>\<トレース > の\<リスナー > 要素
+# <a name="listeners-element-for-trace"></a>\< トレース > の @no__t 0listeners > 要素
 メッセージを収集、格納、およびルーティングするリスナーを指定します。 リスナーは、適切なターゲットにトレース出力を送信します。  
   
- \<configuration> 要素  
-\<system. diagnostics > 要素  
-\<トレース > 要素  
-\<トレース > の\<リスナー > 要素  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3[ **\<trace >** ](trace-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 **\<listeners >** を行います。  
   
 ## <a name="syntax"></a>構文  
   
@@ -36,7 +36,7 @@ ms.locfileid: "69927021"
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- なし。  
+ [なし] :  
   
 ### <a name="child-elements"></a>子要素  
   
@@ -44,7 +44,7 @@ ms.locfileid: "69927021"
 |-------------|-----------------|  
 |[\<add>](add-element-for-listeners-for-trace.md)|`Listeners` コレクションにリスナーを追加します。|  
 |[\<clear>](clear-element-for-listeners-for-trace.md)|トレースの `Listeners` コレクションを削除します。|  
-|[\<remove>](remove-element-for-listeners-for-trace.md)|`Listeners`コレクションからリスナーを削除します。|  
+|[\<remove>](remove-element-for-listeners-for-trace.md)|@No__t 0 のコレクションからリスナーを削除します。|  
   
 ### <a name="parent-elements"></a>親要素  
   
@@ -54,14 +54,14 @@ ms.locfileid: "69927021"
 |`system.diagnostics`|ASP.NET 構成セクションのルート要素を指定します。|  
 |`trace`|トレース メッセージを収集、格納、およびルーティングするリスナーを保持します。|  
   
-## <a name="remarks"></a>Remarks  
- クラス<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>クラスは、同じ**Listeners**コレクションを共有します。 これらのクラスのいずれかのコレクションにリスナーオブジェクトを追加すると、他のクラスは同じリスナーを使用します。 .NET Framework に付属しているリスナークラスは、 <xref:System.Diagnostics.TraceListener>クラスから派生します。  
+## <a name="remarks"></a>コメント  
+ @No__t-0 および <xref:System.Diagnostics.Trace> クラスは、同じ**リスナー**コレクションを共有します。 これらのクラスのいずれかのコレクションにリスナーオブジェクトを追加すると、他のクラスは同じリスナーを使用します。 .NET Framework に付属しているリスナークラスは、@no__t 0 クラスから派生します。  
   
 ## <a name="configuration-file"></a>構成ファイル  
  この要素は、コンピューターの構成ファイル (machine.config) とアプリケーション構成ファイルで使用できます。  
   
 ## <a name="example"></a>例  
- 次の例では、listeners  **\<>** 要素を使用してリスナー `MyListener`および`MyEventListener`リスナーコレクションに追加する方法を示します。 `MyListener`という名前`MyListener.log`のファイルを作成し、その出力をファイルに書き込みます。 `MyEventListener`イベントログにエントリを作成します。  
+ 次の例では、 **\<listeners >** 要素を使用してリスナー `MyListener` と @no__t を**リスナー**コレクションに追加する方法を示します。 `MyListener` `MyListener.log` という名前のファイルを作成し、出力をファイルに書き込みます。 `MyEventListener` を入力すると、イベントログにエントリが作成されます。  
   
 ```xml  
 <configuration>  

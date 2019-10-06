@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, structs
 - structs [C#]
 ms.assetid: b7cf4ff2-0eb7-4e5c-93d5-b2196b4f5d89
-ms.openlocfilehash: 063d7e3b68fbe6c01ff0df4ae935fec5af6f6891
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: df2a235651a2242ffe18df377dce9995af31e99f
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743837"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392450"
 ---
 # <a name="structs-c-programming-guide"></a>構造体 (C# プログラミング ガイド)
 
@@ -29,14 +29,14 @@ ms.locfileid: "67743837"
 - 構造体は、パラメーターのあるコンストラクターを宣言できます。
 - 構造体は、他の構造体やクラスから継承できず、基本クラスになることはできません。 すべての構造体が <xref:System.ValueType> を直接継承し、System.ValueType は <xref:System.Object> を継承します。  
 - 構造体は、インターフェイスを実装できます。
-- 構造体は `null` にすることができません。変数が null 許容型として宣言されない限り、構造体変数に `null` を割り当てることはできません。
+- 構造体は `null` にすることができません。変数が null 許容値型として宣言されない限り、構造体変数に `null` を割り当てることはできません。
   
 ## <a name="see-also"></a>関連項目
 
 - [C# プログラミング ガイド](../index.md)
 - [クラスと構造体](index.md)
 - [クラス](classes.md)
-- [Null 許容型](../nullable-types/index.md)
+- [null 許容値型](../nullable-types/index.md)
 - [識別子名](../inside-a-program/identifier-names.md)
 - [構造体の使用](using-structs.md)
 - [方法: メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する](how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)

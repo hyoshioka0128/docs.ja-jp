@@ -4,12 +4,12 @@ description: ref 戻り値と ref ローカル変数を定義して使用する�
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/04/2018
-ms.openlocfilehash: fcac162f63438b6cbe54908383467d4b0f227c39
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: e23007deffea0f542d623be918cd1c61496d1362
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59081847"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353886"
 ---
 # <a name="ref-returns-and-ref-locals"></a>ref 戻り値と ref ローカル変数
 
@@ -27,12 +27,12 @@ C# 7.0 以降の C# は参照戻り値 (ref 戻り値) に対応しています�
 
 - 戻り値はリテラル `null` にすることができません。 `null` を返すと、コンパイラ エラー CS8156 "参照渡しで返すことができないため、このコンテキストで使用できない式があります" が生成されます。
 
-   ref 戻りを含むメソッドは、現在の値が null (インスタンス化されていない) 値か、値の型が [null 許容型](../nullable-types/index.md)の変数にエイリアスを返すことができます。
- 
+   ref 戻り値があるメソッドは、現在の値が null (インスタンス化されていない) 値か、値の型が [null 許容値型](../nullable-types/index.md)の変数にエイリアスを返すことができます。
+
 - 戻り値は、定数、列挙型のメンバー、プロパティの値渡し戻り値、`class` または `struct` のメソッドにすることができません。 この規則に違反すると、コンパイラ エラー CS8156 "参照渡しで返すことができないため、このコンテキストで使用できない式があります" が生成されます。
 
 さらに、参照戻り値は非同期メソッドでは許可されません。 非同期メソッドは実行が終了する前に戻る可能性があり、戻り値はまだ不明です。
- 
+
 ## <a name="defining-a-ref-return-value"></a>ref 戻り値の定義
 
 "*参照戻り値*" を返すメソッドは、次の 2 つの条件を満たす必要があります。

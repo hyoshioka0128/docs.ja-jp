@@ -2,12 +2,12 @@
 title: '方法: エラー処理'
 ms.date: 03/30/2017
 ms.assetid: de566e39-9358-44ff-8244-780f6b799966
-ms.openlocfilehash: 4958e7914d9feb32dc00d11a215cf8247e9baffc
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 3b8e48a74ff7671b942b5499fb3a0b5d0f389d61
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424604"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834711"
 ---
 # <a name="how-to-error-handling"></a>方法: エラー処理
 
@@ -79,7 +79,7 @@ ms.locfileid: "67424604"
     </backupLists>
     ```
 
-4. フィルターを deadDestination エンドポイントおよびバックアップ エンドポイント リストと関連付けるフィルター テーブルを定義します。  まず、ルーティング サービスは、このフィルターに関連付けられた送信先エンドポイントにメッセージを送信しようとします。 deadDestination エンドポイントには、実行中のサービスを参照していないアドレスが格納されているため、これはネットワーク エラーになります。 ルーティング サービスは、次に、backupEndpointList に指定されたエンドポイントにメッセージを送信しようとします。
+4. フィルターを deadDestination エンドポイントおよびバックアップ エンドポイント リストと関連付けるフィルター テーブルを定義します。  まず、ルーティング サービスは、このフィルターに関連付けられた送信先エンドポイントにメッセージを送信しようとします。 deadDestination エンドポイントには、実行中のサービスを参照していないアドレスが格納されているため、これはネットワーク エラーになります。 次に、ルーティングサービスは、backupEndpointList で指定されたエンドポイントにメッセージを送信しようとします。
 
     ```xml
     <filterTables>
@@ -93,7 +93,7 @@ ms.locfileid: "67424604"
           </filterTables>
     ```
 
-5. 受信メッセージをフィルター テーブルに含まれているフィルターと照合して評価するには、ルーティング動作を使用して、フィルター テーブルをサービス エンドポイントと関連付ける必要があります。  次の例では、filterTable1 関連付けるサービスのエンドポイントを示します。
+5. 受信メッセージをフィルター テーブルに含まれているフィルターと照合して評価するには、ルーティング動作を使用して、フィルター テーブルをサービス エンドポイントと関連付ける必要があります。  次の例は、"filterTable1" をサービスエンドポイントに関連付ける方法を示しています。
 
     ```xml
     <behaviors>
@@ -108,7 +108,7 @@ ms.locfileid: "67424604"
 
 ## <a name="example"></a>例
 
-構成ファイル全体の一覧を次に示します。
+構成ファイルの完全な一覧を次に示します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>

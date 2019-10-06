@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4a0a6a00fc76a646b4295db726bd8ae67733e321
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0ce9d5f706a473d64e97fb02e0426060878d9c75
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053220"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834032"
 ---
 # <a name="application-domains"></a>アプリケーション ドメイン
 
@@ -128,7 +128,7 @@ ms.locfileid: "71053220"
   
 ### <a name="syntax"></a>構文  
   
-```  
+```env  
 COMPLUS_LoaderOptimization = 1  
 ```  
   
@@ -151,7 +151,7 @@ COMPLUS_LoaderOptimization = 1
 
  環境の HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN キーの複数文字列値に `COMPLUS_LoaderOptimization=1` を追加することにより、強制的にすべてのアセンブリを IISADMIN サービスにドメイン中立として読み込まないようにできます。  
   
-```  
+```env  
 Key = HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN  
 Name = Environment  
 Type = REG_MULTI_SZ  

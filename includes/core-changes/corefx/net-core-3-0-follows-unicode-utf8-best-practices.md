@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6643f64010332cf14d466cbba28a1c3cca671ac3
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 0795ee244bf3d1261bbe61dc0c67c3936f427f04
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117263"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216354"
 ---
 ### <a name="net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences"></a>.NET Core 3.0 は不正な形式の UTF-8 バイト シーケンスを置換するときに Unicode のベスト プラクティスに従う
 
@@ -44,7 +44,7 @@ CoreFx
 - <xref:System.Text.UTF8Encoding.GetChars%2A?displayProperty=nameWithType>
 - <xref:System.Text.UTF8Encoding.GetString(System.Byte[],System.Int32,System.Int32)?displayProperty=nameWithType>
 
-<!-- 
+<!--
 
 ### Affected APIs
 
@@ -53,4 +53,3 @@ CoreFx
 - `M:System.Text.UTF8Encoding.GetString(System.Byte[],System.Int32,System.Int32)`
 
 -->
-

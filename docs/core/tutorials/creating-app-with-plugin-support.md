@@ -4,12 +4,12 @@ description: プラグインをサポートする .NET Core アプリケーシ�
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/28/2019
-ms.openlocfilehash: 54a4459619ee69fc74a14da7ff7fe10a472a4433
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: e8b02d9b2175b4663e665db1a5a40a9bf3c44d10
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849446"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216260"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>プラグインがある .NET Core アプリケーションを作成する
 
@@ -22,15 +22,29 @@ ms.locfileid: "70849446"
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-- [.NET Core 3.0 Preview 2 SDK](https://dotnet.microsoft.com/download)以降のバージョンがインストールされていること。
+- [.NET Core 3.0](https://dotnet.microsoft.com/download) 以降のバージョンをインストールします。
 
 ## <a name="create-the-application"></a>アプリケーションを作成する
 
 最初にアプリケーションを作成します。
 
-1. 新しいフォルダーを作成し、そのフォルダーで `dotnet new console -o AppWithPlugin` を実行します。 
-2. プロジェクトのビルドをより容易にするため、Visual Studio のソリューション ファイルを作成します。 同じフォルダーで `dotnet new sln` を実行します。 
-3. `dotnet sln add AppWithPlugin/AppWithPlugin.csproj` を実行して、アプリ プロジェクトをソリューションに追加します。
+1. 新しいフォルダーを作成し、そのフォルダーで次のコマンドを実行します。
+
+    ```dotnetcli
+    dotnet new console -o AppWithPlugin
+    ```
+
+2. プロジェクトのビルドをより容易にするため、Visual Studio のソリューション ファイルを作成します。 同じフォルダー内で、次のコマンドを実行します。
+
+    ```dotnetcli
+    dotnet new sln
+    ```
+
+3. 次のコマンドを実行して、アプリ プロジェクトをソリューションに追加します。
+
+    ```dotnetcli
+    dotnet sln add AppWithPlugin/AppWithPlugin.csproj
+    ```
 
 これで、アプリケーションのスケルトンに入力できます。 *AppWithPlugin/Program.cs* ファイル内のコードを次のコードに置き換えます。
 
@@ -203,8 +217,18 @@ static Assembly LoadPlugin(string relativePath)
 
 ルート フォルダーに戻り、次の手順を実行します。
 
-1. `dotnet new classlib -o HelloPlugin` を実行して、`HelloPlugin` という名前の新しいクラス ライブラリ プロジェクトを作成します。
-2. `dotnet sln add HelloPlugin/HelloPlugin.csproj` を実行して、そのプロジェクトを `AppWithPlugin` ソリューションに追加します。 
+1. 次のコマンドを実行して、`HelloPlugin` という名前の新しいクラス ライブラリ プロジェクトを作成します。
+    
+    ```dotnetcli
+    dotnet new classlib -o HelloPlugin
+    ```
+
+2. 次のコマンドを実行して、そのプロジェクトを `AppWithPlugin` ソリューションに追加します。
+
+    ```dotnetcli
+    dotnet sln add HelloPlugin/HelloPlugin.csproj
+    ```
+
 3. *HelloPlugin/Class1.cs* ファイルを、次のコンテンツを持つ *HelloCommand.cs* という名前のファイルに置き換えます。
 
 [!code-csharp[the-hello-plugin](~/samples/core/extensions/AppWithPlugin/HelloPlugin/HelloCommand.cs)]

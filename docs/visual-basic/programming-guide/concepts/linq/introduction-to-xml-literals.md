@@ -1,20 +1,20 @@
 ---
-title: Visual Basic2 で XML リテラルの概要
+title: Visual Basic2 での XML リテラルの概要
 ms.date: 07/20/2015
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-ms.openlocfilehash: 68ba1e018d4ad9501532745a88090f0f756b5c17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5355a3c0f01bb247e38e52816693ee47d7d50556
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61834276"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834988"
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Visual Basic の XML リテラルの概要
-このセクションでは、Visual Basic で XML ツリーの作成に関する情報を提供します。  
+ここでは、Visual Basic での XML ツリーの作成について説明します。  
   
- LINQ クエリの結果をコンテンツとして XML ツリーの使用方法の詳細については、次を参照してください。[関数型構築 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)します。  
+ LINQ クエリの結果を XML ツリーのコンテンツとして使用する方法の詳細については、「[関数型構築 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)」を参照してください。  
   
- Visual Basic で XML リテラルの詳細については、次を参照してください。[概要の LINQ to Visual Basic における XML](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)します。  
+ Visual Basic の XML リテラルの詳細については、「 [Visual Basic の LINQ to XML の概要](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)」を参照してください。  
   
 ## <a name="creating-xml-trees"></a>XML ツリーの作成  
  <xref:System.Xml.Linq.XElement> (この場合は `contacts`) を作成する方法を次の例に示します。  
@@ -190,11 +190,11 @@ Console.WriteLine("Child2 was {0}", _
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```console  
 Child1 was cloned  
 Child2 was attached  
 ```  
   
 ## <a name="see-also"></a>関連項目
 
-- [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [XML ツリーの作成 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

@@ -3,14 +3,15 @@ title: 構造体 - C# ガイド
 description: 構造体型と、構造体を作成する方法について説明します
 ms.date: 10/12/2016
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: fbaa7fcc26009fe3117784b411941d30af0ba3c5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e0974b7dcf3c0888cb52bea81b07a58e3a98640b
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608020"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396129"
 ---
 # <a name="structs"></a>構造体
+
 "*構造体*" は値の型です。 構造体が作成されると、構造体が割り当てられている変数にはその構造体の実際のデータが設定されます。 構造体が新しい変数に割り当てられると、そのデータがコピーされます。 したがって、新しい変数と元の変数には、同じデータのコピーが別個に含まれることになります。 一方のコピーに対して行われた変更は、もう一方のコピーには影響しません。
 
 値型の変数は、その値を直接含みます。つまり、変数がどのようなコンテキストで宣言されたとしても、必ずメモリがインラインで割り当てられます。 値型の変数には、独立したヒープ割り当てやガベージ コレクションのオーバーヘッドはありません。  
@@ -51,7 +52,8 @@ ms.locfileid: "64608020"
   
 - 構造体は、インターフェイスを実装できます。
 
-## <a name="literal-values"></a>リテラル値  
+## <a name="literal-values"></a>リテラル値
+
 C# では、リテラル値の型がコンパイラによって決定されます。 数値リテラルの型指定の方法を指定するには、その数値の末尾に文字を付加します。 たとえば、値 4.56 を float 型として扱うには、数値の後に "f" または "F" を付加して、`4.56f` のように指定します。 文字を付加しない場合、リテラルの `double` 型はコンパイラによって推論されます。 文字サフィックスによって指定できる型の詳細については、「[値型](./language-reference/keywords/value-types.md)」の各型のリファレンス ページを参照してください。  
   
 リテラルは型指定され、すべての型は最終的に <xref:System.Object> から派生するため、次のようなコードを記述してコンパイルできます。  
@@ -62,8 +64,9 @@ C# では、リテラル値の型がコンパイラによって決定されま�
 
 もう 1 つの機能は "*バイナリ リテラル*" で、これにより 16 進数表記ではなく、ビット パターンを直接指定できます。
 
-## <a name="nullable-types"></a>Null 許容型  
-値型には、通常、[null](./language-reference/keywords/null.md) 値を割り当てることができません。 しかし、型の後ろに **?** を付けることによって、null 値を設定できる値型を作成できます。 たとえば、**int?** は、[null](./language-reference/keywords/null.md) も設定できる **int** 型です。 CTS では、null 許容型は一般的な構造体型 <xref:System.Nullable%601> のインスタンスです。 Null 許容型は、数値が null になる可能性のあるデータベースとの間でデータを受け渡しする場合に、特に便利です。 詳細については、「[null 許容型 (C# プログラミング ガイド)](./programming-guide/nullable-types/index.md)」を参照してください。
+## <a name="nullable-value-types"></a>null 許容値型
+
+値型には、通常、[null](language-reference/keywords/null.md) 値を割り当てることができません。 しかし、型の後ろに `?` を付けることによって、null 値を設定できる値型を作成できます。 たとえば、`int?` は、[null](./language-reference/keywords/null.md) 値も設定できる `int` 型です。 null 許容値型は一般的な構造体型 <xref:System.Nullable%601> のインスタンスです。 null 許容値型は、数値が null または未定義の可能性があるデータベースとの間でデータを受け渡しする場合に、特に便利です。 詳細については、「[null 許容値型](programming-guide/nullable-types/index.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

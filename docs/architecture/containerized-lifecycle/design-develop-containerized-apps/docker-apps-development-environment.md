@@ -2,12 +2,12 @@
 title: Docker アプリの開発環境
 description: Docker 開発ライフサイクルをサポートする最も重要な開発ツールのオプションについて説明します。
 ms.date: 02/15/2019
-ms.openlocfilehash: 0f71ffa5e6870f45908e4def6577120a17ec744c
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 35236e75f47e830d0970ca9cfd074d9a69e6f85c
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68672429"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214293"
 ---
 # <a name="development-environment-for-docker-apps"></a>Docker アプリの開発環境
 
@@ -20,7 +20,6 @@ ms.locfileid: "68672429"
 任意の開発言語をサポートする軽量なクロスプラットフォーム エディターを選択すると、Visual Studio Code と Docker CLI を使用することができます。 これらの製品は、シンプルかつ堅牢性の高いエクスペリエンスを提供しますが、このことは開発者のワークフローを効率化するために不可欠です。 Docker 開発者は、"Docker for Mac" または "Docker for Windows" (開発環境) をインストールすることで、1 つの Docker CLI を使用して Windows と Linux (実行時環境) 用の両方のアプリを構築することができます。 さらに、Visual Studio Code は、Dockerfile 用の IntelliSense を含む Docker の拡張機能や、エディターから Docker コマンドを実行するショートカット タスクをサポートします。
 
 > [!NOTE]
->
 > Visual Studio Code をダウンロードするには <https://code.visualstudio.com/download> を参照してください。
 >
 > Mac および Windows 用 Docker をダウンロードするには <https://www.docker.com/products/docker> を参照してください。

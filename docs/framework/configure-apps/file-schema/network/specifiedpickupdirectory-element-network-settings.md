@@ -8,21 +8,21 @@ helpviewer_keywords:
 - specifiedPickupDirectory element
 - <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
-ms.openlocfilehash: b2e31dee4f5aff2bf6cedf5c4e9ca235695b0a53
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 47aa357dac8b6bf71ce8c391004af16f8c98e347
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659094"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697589"
 ---
-# <a name="specifiedpickupdirectory-element-network-settings"></a>\<> 要素の候補 (ネットワーク設定)
+# <a name="specifiedpickupdirectory-element-network-settings"></a>\< に設定します。 > 要素 (ネットワーク設定)
 SMTP (Simple Mail Transport Protocol) サーバー用のローカル ディレクトリを設定します。  
   
- \<configuration>  
-\<system.net>  
-\<mailSettings>  
-\<smtp>  
-\<specifiedPickupDirectory>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t @ no__t-2 @ no__t-3[ **\<mailSettings >** ](mailsettings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5[ **\<smtp >** のようになります。](smtp-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t @ no__t-6 @ no__t-7 **\<の場合は、を >** します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -50,8 +50,8 @@ SMTP (Simple Mail Transport Protocol) サーバー用のローカル ディレ�
 |-------------|-----------------|  
 |[\<smtp> 要素 (ネットワーク設定)](smtp-element-network-settings.md)|簡易メール転送プロトコル (SMTP) 電子メールの送信オプションを構成します。|  
   
-## <a name="remarks"></a>Remarks  
- 属性`specifiedPickupDirectory`は、アプリケーションが SMTP サーバーによって処理されるメールメッセージを保存するディレクトリを設定します。  
+## <a name="remarks"></a>コメント  
+ @No__t-0 属性は、アプリケーションが SMTP サーバーによって処理されるメールメッセージを保存するディレクトリを設定します。  
   
 ## <a name="example"></a>例  
  次の例では、電子メールのピックアップディレクトリとして c:\ maildrop を指定します。  

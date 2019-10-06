@@ -1,19 +1,19 @@
 ---
-title: '方法: LINQ to XML (Visual Basic) を使用してディクショナリを使用します。'
+title: '方法: LINQ to XML (Visual Basic) を使用してディクショナリを操作する'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
-ms.openlocfilehash: def00fcd356472825ebc4b9f5c306cf3547991e1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9773b926d16b51ea912792b0f348a26a9a3c7a29
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61614146"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835083"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>方法: LINQ to XML (Visual Basic) を使用してディクショナリを使用します。
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>方法: LINQ to XML (Visual Basic) を使用してディクショナリを操作する
 さまざまなデータ構造と XML を相互に変換すると便利な場合がよくあります。 このトピックでは、<xref:System.Collections.Generic.Dictionary%602> と XML を相互に変換することによる、一般的な相互変換の実装について説明します。  
   
 ## <a name="example"></a>例  
- この例では、埋め込み式の中で XML リテラルと、クエリを使用します。 新しいクエリ プロジェクト<xref:System.Xml.Linq.XElement>用の新しいコンテンツになりますが、オブジェクト、 `Root` <xref:System.Xml.Linq.XElement>オブジェクト。  
+ この例では、埋め込み式で XML リテラルとクエリを使用します。 このクエリは、新しい <xref:System.Xml.Linq.XElement> オブジェクトを射影し、`Root` <xref:System.Xml.Linq.XElement> オブジェクトの新しいコンテンツになります。  
   
 ```vb  
 Dim dict As Dictionary(Of String, String) = New Dictionary(Of String, String)()  
@@ -63,7 +63,7 @@ Next
   
  このコードを実行すると、次の出力が生成されます。  
   
-```  
+```console  
 Child1:Value1  
 Child2:Value2  
 Child3:Value3  
@@ -72,4 +72,4 @@ Child4:Value4
   
 ## <a name="see-also"></a>関連項目
 
-- [射影と変換 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [プロジェクションと変換 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

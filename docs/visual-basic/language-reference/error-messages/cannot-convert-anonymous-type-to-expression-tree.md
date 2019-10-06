@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36548
 ms.assetid: 27de068f-080e-4160-86bf-1ec23fd1925a
-ms.openlocfilehash: 045061f403b301d460bc85d161c1d6dee9c7d9f1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ba14c0cd8781b8771ac8b746e3efec29a457294a
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602399"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701188"
 ---
 # <a name="cannot-convert-anonymous-type-to-expression-tree-because-it-contains-a-field-that-is-used-in-the-initialization-of-another-field"></a>型のプロパティは別のプロパティを初期化するために使用されるため、匿名型を式のツリーに変換することはできません。
-コンパイラでは、匿名型の別のプロパティを初期化するために、匿名型の 1 つのプロパティを使用する場合、匿名の式ツリーへの変換は受け入れられません。 たとえば、次のコードで`Prop1`が初期化リストで宣言されの初期値として使用し、`Prop2`します。  
+匿名型の1つのプロパティを使用して匿名型の別のプロパティを初期化する場合、コンパイラは匿名型から式ツリーへの変換を受け入れません。 たとえば、次のコードでは、`Prop1` は初期化リストで宣言され、`Prop2` の初期値として使用されます。  
   
 ```vb  
 Module M2  
@@ -35,9 +35,9 @@ End Module
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 初期値を割り当てる`Prop1`ローカル変数にします。 両方にその変数を割り当てる`Prop1`と`Prop2`、次のコードに示すようにします。  
+- @No__t-0 の初期値をローカル変数に代入します。 次のコードに示すように、その変数を `Prop1` と `Prop2` の両方に割り当てます。  
   
-    ```  
+    ```vb  
     Sub Main()  
   
         Dim temp = 2  
@@ -50,4 +50,4 @@ End Module
 
 - [匿名型 (Visual Basic)](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
 - [式ツリー (Visual Basic)](../../programming-guide/concepts/expression-trees/index.md)
-- [方法: 式ツリーを使用して動的クエリ (Visual Basic) を作成するには](../../programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md)
+- [2 つのオブジェクトが等しいかどうかをテストする方法式ツリーを使用して動的クエリを作成する (Visual Basic) ](../../programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md)

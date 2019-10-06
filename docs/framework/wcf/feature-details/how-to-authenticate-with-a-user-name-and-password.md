@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-ms.openlocfilehash: e1db413dfdcfa18403e1b67361cea710b203fe5d
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 33205f9e12fcee53f2f29b63b836ea0cbc792025
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045953"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834733"
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>方法: ユーザー名とパスワードで認証する
 
-このトピックでは、Windows Communication Foundation (WCF) サービスを有効にして、Windows ドメインのユーザー名とパスワードを使用してクライアントを認証する方法について説明します。 自己ホスト型 WCF サービスが稼働していることを前提としています。 基本的な自己ホスト型 WCF サービスを作成する例については、[はじめにチュートリアル](../../../../docs/framework/wcf/getting-started-tutorial.md)を参照してください。 このトピックでは、サービスがコードで構成されているものとします。 構成ファイルを使用して同様のサービスを構成する例については、「[メッセージセキュリティユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)」を参照してください。
+このトピックでは、Windows Communication Foundation (WCF) サービスを有効にして、Windows ドメインのユーザー名とパスワードを使用してクライアントを認証する方法について説明します。 自己ホスト型 WCF サービスが稼働していることを前提としています。 基本的な自己ホスト型 WCF サービスを作成する例については、[はじめにチュートリアル](../../../../docs/framework/wcf/getting-started-tutorial.md)を参照してください。 このトピックでは、サービスがコードで構成されているものとします。 構成ファイルを使用して同様のサービスを構成する例については、「[メッセージセキュリティユーザー名](../samples/message-security-user-name.md)」を参照してください。
 
 Windows ドメイン ユーザー名とパスワードを使用してクライアントを認証するようにサービスを構成するには、<xref:System.ServiceModel.WSHttpBinding> を使用し、その `Security.Mode` プロパティを `Message` に設定します。 また、ユーザー名とパスワードをクライアントからサービスに送信するときに X.509 証明書を指定する必要があります。この証明書は、ユーザー名とパスワードの暗号化に使用されます。
 
@@ -25,14 +25,14 @@ Windows ドメイン ユーザー名とパスワードを使用してクライ�
 
     ```csharp
     // ...
-    WSHttpBinding userNameBinding = new WSHttpBinding();
+    var userNameBinding = new WSHttpBinding();
     userNameBinding.Security.Mode = SecurityMode.Message;
     userNameBinding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
     svcHost.AddServiceEndpoint(typeof(IService1), userNameBinding, "");
     // ...
     ```
 
-2. ネットワーク経由で送信されるユーザー名とパスワードの情報を暗号化するために使用するサーバー証明書を指定します。 次のコードは、上記のコードの直後に追加します。 次の例では、[メッセージセキュリティユーザー名](../../../../docs/framework/wcf/samples/message-security-user-name.md)のサンプルから、セットアップの .bat ファイルによって作成された証明書を使用します。
+2. ネットワーク経由で送信されるユーザー名とパスワードの情報を暗号化するために使用するサーバー証明書を指定します。 次のコードは、上記のコードの直後に追加します。 次の例では、[メッセージセキュリティユーザー名](../samples/message-security-user-name.md)のサンプルから、セットアップの .bat ファイルによって作成された証明書を使用します。
 
     ```csharp
     // ...
@@ -44,7 +44,7 @@ Windows ドメイン ユーザー名とパスワードを使用してクライ�
 
 ## <a name="to-call-the-service-passing-username-and-password"></a>ユーザー名とパスワードを渡すサービスを呼び出すには
 
-1. クライアント アプリケーションは、ユーザー名とパスワードの入力をユーザーに求める必要があります。 次のコードでは、ユーザー名とパスワードの入力をユーザーに求めます。
+1. クライアント アプリケーションは、ユーザー名とパスワードの入力をユーザーに求める必要があります。 次のコードでは、ユーザーにユーザー名とパスワードの入力を求めています。
 
     > [!WARNING]
     > このコードは、入力中のパスワードが表示されるため、運用環境では使用しないでください。
@@ -57,27 +57,26 @@ Windows ドメイン ユーザー名とパスワードを使用してクライ�
         username = Console.ReadLine();
         Console.WriteLine("   Enter password:");
         password = Console.ReadLine();
-        return;
     }
     ```
 
-2. 次のコードに示すように、クライアントの資格情報を指定して、クライアント プロキシのインスタンスを作成します。
+2. 次のコードに示すように、クライアントの資格情報を指定して、クライアントプロキシのインスタンスを作成します。
 
     ```csharp
     string username;
     string password;
 
-    // Instantiate the proxy
-    Service1Client proxy = new Service1Client();
+    // Instantiate the proxy.
+    var proxy = new Service1Client();
 
-    // Prompt the user for username & password
+    // Prompt the user for username & password.
     GetPassword(out username, out password);
 
-    // Set the user’s credentials on the proxy
+    // Set the user's credentials on the proxy.
     proxy.ClientCredentials.UserName.UserName = username;
     proxy.ClientCredentials.UserName.Password = password;
 
-    // Treat the test certificate as trusted
+    // Treat the test certificate as trusted.
     proxy.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.PeerOrChainTrust;
     // Call the service operation using the proxy
     ```
@@ -92,6 +91,6 @@ Windows ドメイン ユーザー名とパスワードを使用してクライ�
 - <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>
 - <xref:System.ServiceModel.WSHttpSecurity.Mode%2A>
 - <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A>
-- [基本認証を使用する場合のトランスポート セキュリティ](../../../../docs/framework/wcf/feature-details/transport-security-with-basic-authentication.md)
-- [分散アプリケーションのセキュリティ](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)
-- [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)
+- [基本認証を使用する場合のトランスポート セキュリティ](transport-security-with-basic-authentication.md)
+- [分散アプリケーションのセキュリティ](distributed-application-security.md)
+- [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md)

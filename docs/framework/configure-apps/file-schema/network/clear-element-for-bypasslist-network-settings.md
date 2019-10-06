@@ -10,21 +10,21 @@ helpviewer_keywords:
 - <bypasslist>, clear element
 - bypasslist, clear element
 ms.assetid: 301584ca-a914-4100-b180-3b288d3b099e
-ms.openlocfilehash: e5305d9aed09b6c4d1ad4201e5e08e007a14c7c0
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 4d078dac14103560423bfccdd4a1717031e7a60f
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664186"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699509"
 ---
 # <a name="clear-element-for-bypasslist-network-settings"></a>bypasslist の \<clear> 要素 (ネットワーク設定)
 プロキシバイパスリストをクリアします。  
   
- \<configuration>  
-\<system.net>  
-\<defaultProxy>  
-\<bypasslist>  
-\<clear>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5[ **\<bypasslist >** を行います。](bypasslist-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 @ no__t-6 @ no__t-7 **\<clear > を削除**します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -36,19 +36,19 @@ ms.locfileid: "69664186"
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- なし。  
+ [なし] :  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
   
 ### <a name="parent-elements"></a>親要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[bypasslist](bypasslist-element-network-settings.md)|プロキシを使用しないアドレスを記述する一連の正規表現を提供します。|  
   
-## <a name="remarks"></a>Remarks  
- 要素`clear`は、バイパスリストからすべてのエントリを削除します。  
+## <a name="remarks"></a>コメント  
+ @No__t-0 要素は、バイパスリストからすべてのエントリを削除します。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  

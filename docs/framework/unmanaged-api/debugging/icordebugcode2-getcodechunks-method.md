@@ -17,47 +17,50 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4bbc7ac7d87c6a5d36dc3432c603bb7d16d62c00
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1bdaf6391ca5c19f073708d6258ad5775bec9824
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747432"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700725"
 ---
 # <a name="icordebugcode2getcodechunks-method"></a>ICorDebugCode2::GetCodeChunks メソッド
-このコード オブジェクトを構成しているコード チャンクを取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```cpp  
-HRESULT GetCodeChunks (  
-    [in]  ULONG32     cbufSize,  
-    [out] ULONG32     *pcnumChunks,  
-    [out, size_is(cbufSize), length_is(*pcnumChunks)]   
-        CodeChunkInfo chunks[]  
-);  
-```  
-  
-## <a name="parameters"></a>パラメーター  
+
+このコード オブジェクトを構成しているコード チャンクを取得します。
+
+## <a name="syntax"></a>構文
+
+```cpp
+HRESULT GetCodeChunks (
+    [in]  ULONG32     cbufSize,
+    [out] ULONG32     *pcnumChunks,
+    [out, size_is(cbufSize), length_is(*pcnumChunks)]
+        CodeChunkInfo chunks[]
+);
+```
+
+## <a name="parameters"></a>パラメーター
+
  `cbufSize`  
- [in]サイズ、`chunks`配列。  
-  
+ から@No__t-0 配列のサイズ。
+
  `pcnumChunks`  
- [out]返されるチャンクの数、`chunks`配列。  
-  
+ 入出力@No__t-0 配列で返されたチャンクの数。
+
  `chunks`  
- [out]コードの 1 つのチャンクを表す"CodeChunkInfo"構造体の配列。 場合の値`cbufSize`が 0 の場合このパラメーターを null にすることができます。  
-  
-## <a name="remarks"></a>Remarks  
- コード チャンクが重複し、は、これが連結されたによって順序に従っている[icordebugcode::getcode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md)します。 .NET Framework version 2.0 では、Microsoft intermediate language (MSIL) コード オブジェクトには、1 つのコード チャンクが構成されています。  
-  
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
-  
- **ヘッダー:** CorDebug.idl、CorDebug.h  
-  
- **ライブラリ:** CorGuids.lib  
-  
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
-## <a name="see-also"></a>関連項目
+ 入出力"CodeChunkInfo" 構造体の配列。それぞれが1つのコードチャンクを表します。 @No__t-0 の値が0の場合、このパラメーターには null を指定できます。
+
+## <a name="remarks"></a>コメント
+
+ コードチャンクは重複しません。コードチャンクは、「[コード:: GetCode](icordebugcode-getcode-method.md)」によって連結された順序に従います。 .NET Framework バージョン2.0 の Microsoft 中間言語 (MSIL) コードオブジェクトは、1つのコードチャンクを構成します。
+
+## <a name="requirements"></a>要件
+
+ **・** [システム要件](../../get-started/system-requirements.md)に関するページを参照してください。
+
+ **ヘッダー:** CorDebug .idl、CorDebug. h
+
+ **ライブラリ**CorGuids .lib
+
+ **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ 

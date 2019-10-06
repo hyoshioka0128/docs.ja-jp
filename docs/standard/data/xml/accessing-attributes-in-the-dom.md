@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 08919e05f8396d37cb50ca24989b86000c854411
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: HT
+ms.openlocfilehash: 272c224c8a1c5061392856685f374237f8a10579
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679321"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956875"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>DOM の属性へのアクセス
 
@@ -122,7 +122,7 @@ public class Sample
 
 コレクション内のすべての属性を表示します。
 
-```
+```console
 genre = novel
 ISBN = 1-861001-57-5
 misc = sale item

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bb262f5a02343aeb91c28eb21c939edef8a70f61
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 1066a3533dedd5976f2dd73b1858ad8fa0c1f653
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666294"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392696"
 ---
 # <a name="managed-threading-best-practices"></a>マネージド スレッド処理の実施
 マルチスレッドには慎重なプログラミングが必要です。 ほとんどのタスクでは、スレッド プールのスレッドを使って実行の要求をキューに置くことによって、処理の複雑さを軽減できます。 このトピックでは、マルチ スレッド動作の調整や、ブロックするスレッドの処理など、より難しい状況について説明します。  
@@ -145,10 +145,7 @@ else {
     {  
         lock (lockObject)  
         {  
-            if (x == null)  
-            {  
-                x = y;  
-            }  
+            x ??= y;
         }  
     }  
     ```  

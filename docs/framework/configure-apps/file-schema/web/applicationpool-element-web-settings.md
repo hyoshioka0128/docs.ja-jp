@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: 786f667bcba7959ac485b4abe667239b05059c45
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c88f4e5407e550047eaf0f5c8d0d2924da611e93
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941443"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699223"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool > 要素 (Web 設定)
 ASP.NET アプリケーションが IIS 7.0 以降のバージョンで統合モードで実行されている場合に、プロセス全体の動作を管理するために ASP.NET によって使用される構成設定を指定します。  
@@ -18,9 +18,9 @@ ASP.NET アプリケーションが IIS 7.0 以降のバージョンで統合モ
 > [!IMPORTANT]
 > この要素とサポートされる機能は、ASP.NET アプリケーションが IIS 7.0 以降のバージョンでホストされている場合にのみ機能します。  
   
- \<configuration>  
-\<system.web > 要素 (Web 設定)  
-\<applicationPool > 要素 (Web 設定)  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t[ **@no__t 47 >** ](system-web-element-web-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3 **\<applicationPool >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -32,7 +32,8 @@ ASP.NET アプリケーションが IIS 7.0 以降のバージョンで統合モ
 ```  
   
 ## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+
+以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
   
@@ -51,20 +52,22 @@ ASP.NET アプリケーションが IIS 7.0 以降のバージョンで統合モ
 |-------------|-----------------|  
 |[\<system.web >](system-web-element-web-settings.md)|ASP.NET がホストアプリケーションと対話する方法について説明します。|  
   
-## <a name="remarks"></a>Remarks  
- IIS 7.0 以降のバージョンを統合モードで実行する場合、この要素の組み合わせを使用して、アプリケーションが IIS アプリケーションプールでホストされている場合に、ASP.NET がスレッドを管理し、要求をキューに配置する方法を構成できます。 IIS 6 を実行した場合、またはクラシックモードまたは ISAPI モードで IIS 7.0 を実行している場合、これらの設定は無視されます。  
+## <a name="remarks"></a>コメント  
+
+IIS 7.0 以降のバージョンを統合モードで実行する場合、この要素の組み合わせを使用して、アプリケーションが IIS アプリケーションプールでホストされている場合に、ASP.NET がスレッドを管理し、要求をキューに配置する方法を構成できます。 IIS 6 を実行した場合、またはクラシックモードまたは ISAPI モードで IIS 7.0 を実行している場合、これらの設定は無視されます。  
   
- この`applicationPool`設定は、.NET Framework の特定のバージョンで実行されるすべてのアプリケーションプールに適用されます。 設定は、aspnet ファイルに格納されています。 .NET Framework のバージョン2.0 および4.0 では、このファイルのバージョンがあります。 (.NET Framework のバージョン3.0 および3.5 は、aspnet .config ファイルをバージョン2.0 で共有します)。  
+@No__t-0 の設定は、.NET Framework の特定のバージョンで実行されるすべてのアプリケーションプールに適用されます。 設定は、aspnet ファイルに格納されています。 .NET Framework のバージョン2.0 および4.0 では、このファイルのバージョンがあります。 (.NET Framework のバージョン3.0 および3.5 は、aspnet .config ファイルをバージョン2.0 で共有します)。  
   
 > [!IMPORTANT]
-> で IIS 7.0 を実行し[!INCLUDE[win7](../../../../../includes/win7-md.md)]ている場合は、アプリケーションプールごとに個別の aspnet ファイルを構成できます。 これにより、各アプリケーションプールのスレッドのパフォーマンスを調整できます。  
+> @No__t-0 で IIS 7.0 を実行している場合は、アプリケーションプールごとに個別の aspnet .config ファイルを構成できます。 これにより、各アプリケーションプールのスレッドのパフォーマンスを調整できます。  
   
- `maxConcurrentRequestsPerCPU`設定の場合、.NET Framework 4 の既定の設定 "5000" は、ASP.NET によって制御される要求の調整を無効にします (CPU あたりの要求が実際に5000またはそれ以上の場合を除く)。 既定の設定は、CPU ごとの同時実行制御を自動的に管理する CLR スレッドプールに依存します。 非同期要求処理を広範囲にわたって使用するアプリケーションや、ネットワーク i/o でブロックされている実行時間の長い要求が多数あるアプリケーションでは、.NET Framework 4 の既定の制限値を増やすことができます。 を`maxConcurrentRequestsPerCPU` 0 に設定すると、ASP.NET 要求を処理するためのマネージスレッドの使用が無効になります。 アプリケーションが IIS アプリケーションプールで実行されている場合、要求は IIS の i/o スレッドにとどまります。そのため、同時実行は IIS スレッド設定によって制限されます。  
+@No__t-0 設定の場合、.NET Framework 4 の既定の設定 "5000" は、ASP.NET によって制御される要求の調整を無効にします (CPU あたりの要求が実際に5000以上の場合を除く)。 既定の設定は、CPU ごとの同時実行制御を自動的に管理する CLR スレッドプールに依存します。 非同期要求処理を広範囲にわたって使用するアプリケーションや、ネットワーク i/o でブロックされている実行時間の長い要求が多数あるアプリケーションでは、.NET Framework 4 の既定の制限値を増やすことができます。 @No__t-0 を0に設定すると、ASP.NET 要求を処理するためのマネージスレッドの使用がオフになります。 アプリケーションが IIS アプリケーションプールで実行されている場合、要求は IIS の i/o スレッドにとどまります。そのため、同時実行は IIS スレッド設定によって制限されます。  
   
- この設定は、 [processModel](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100))要素の`requestQueueLimit`属性と同じように動作します。これは、ASP.NET アプリケーションの web.config ファイルで設定されます。 `requestQueueLimit` ただし、aspnet `requestQueueLimit`ファイルの設定は、web.config ファイルの`requestQueueLimit`設定よりも優先されます。 つまり、両方の属性が設定されている場合 (既定では true)、 `requestQueueLimit` aspnet ファイルの設定が優先されます。  
+@No__t 0 の設定は、ASP.NET アプリケーションの web.config ファイルで設定されている[processModel](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100))要素の `requestQueueLimit` 属性と同じように動作します。 ただし、aspnet ファイルの @no__t 0 の設定は、web.config ファイルの `requestQueueLimit` 設定よりも優先されます。 つまり、両方の属性が設定されている場合 (既定では true)、aspnet ファイルの @no__t 0 の設定が優先されます。  
   
 ## <a name="example"></a>例  
- 次の例は、次のような場合に、ASP.NET ファイルでプロセス全体の動作を構成する方法を示しています。  
+
+次の例は、次のような場合に、ASP.NET ファイルでプロセス全体の動作を構成する方法を示しています。  
   
 - アプリケーションは、IIS 7.0 アプリケーションプールでホストされます。  
   
@@ -72,7 +75,7 @@ ASP.NET アプリケーションが IIS 7.0 以降のバージョンで統合モ
   
 - アプリケーションで .NET Framework 3.5 SP1 以降のバージョンが使用されています。  
   
- この例の値は既定値です。  
+この例の値は既定値です。  
   
 ```xml  
 <configuration>  
@@ -89,8 +92,8 @@ ASP.NET アプリケーションが IIS 7.0 以降のバージョンで統合モ
   
 |||  
 |-|-|  
-|名前空間||  
-|スキーマ名||  
+|Namespace||  
+|[スキーマ名]||  
 |検証ファイル||  
 |空にすることができます||  
   

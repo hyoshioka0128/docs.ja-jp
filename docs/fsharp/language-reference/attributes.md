@@ -2,12 +2,12 @@
 title: 属性
 description: 属性がF#プログラミングコンストラクトにメタデータを適用できるようにする方法について説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: 08d50f7f57b6c0a81221e8f635f77f67750d0ff9
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 17822891109b8e8eaa10044f82f0b872ce9d30b5
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71082937"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736811"
 ---
 # <a name="attributes"></a>属性
 
@@ -19,13 +19,13 @@ ms.locfileid: "71082937"
 [<target:attribute-name(arguments)>]
 ```
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
 前の構文では、*ターゲット*は省略可能であり、存在する場合は、属性が適用されるプログラムエンティティの種類を指定します。 *Target*の有効な値は、このドキュメントの後半で示す表に示されています。
 
 *属性名*は、有効な属性型の名前 (名前空間で修飾されている可能性があります) を`Attribute`参照します。通常、属性の型名に使用されるサフィックスは使用できません。 たとえば、このコンテキスト`ObsoleteAttribute` `Obsolete`では、型を短くすることができます。
 
-*引数*は、属性の型のコンストラクターへの引数です。 属性に既定のコンストラクターがある場合は、引数リストとかっこを省略できます。 属性は、位置指定引数と名前付き引数の両方をサポートします。 *位置指定引数*は、出現する順序で使用される引数です。 名前付き引数は、属性にパブリックプロパティがある場合に使用できます。 これらを設定するには、引数リストで次の構文を使用します。
+*引数*は、属性の型のコンストラクターへの引数です。 属性にパラメーターなしのコンストラクターがある場合は、引数リストとかっこを省略できます。 属性は、位置指定引数と名前付き引数の両方をサポートします。 *位置指定引数*は、出現する順序で使用される引数です。 名前付き引数は、属性にパブリックプロパティがある場合に使用できます。 これらを設定するには、引数リストで次の構文を使用します。
 
 ```fsharp
 property-name = property-value
@@ -47,7 +47,7 @@ property-name = property-value
 
 .NET リフレクションを使用すると、実行時に属性に対してクエリを実行できます。
 
-上記のコード例のように、複数の属性を個別に宣言することも、セミコロンを使用して個々の属性とコンストラクターを区切る場合は、1つの角かっこで宣言することもできます。次に例を示します。
+前のコード例のように、複数の属性を個別に宣言することも、セミコロンを使用して個々の属性とコンストラクターを区切る場合は、1組の角かっこで宣言することもできます。次に例を示します。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6604.fs)]
 
@@ -55,13 +55,13 @@ property-name = property-value
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6605.fs)]
 
-属性をターゲット`assembly`と`module`する属性については、アセンブリの最上位`do`レベルのバインドに属性を適用します。 次の`assembly`ように、属性`module`宣言にまたはを含めることができます。
+属性をターゲット`assembly`と`module`する属性については、アセンブリの最上位`do`レベルのバインドに属性を適用します。 次のように、属性宣言に `assembly` または `module` という単語を含めることができます。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6606.fs)]
 
-適用する属性の属性のターゲットを省略したかどうか、 `do` 、バインド、その属性の意味のある属性のターゲットを特定しようと試みます F# コンパイラ。 多くの属性クラスには、その`System.AttributeUsageAttribute`属性でサポートされているターゲットに関する情報を含む型の属性があります。 属性が`System.AttributeUsageAttribute`ターゲットとしての関数をサポートしていることをが示す場合、属性はプログラムのメインエントリポイントに適用されます。 属性が`System.AttributeUsageAttribute`ターゲットとしてのアセンブリをサポートしていることがによって示されている場合、コンパイラは、アセンブリに適用する属性を受け取ります。 ほとんどの属性は、関数とアセンブリの両方には適用されませんが、その場合、属性はプログラムの main 関数に適用されます。 属性ターゲットが明示的に指定されている場合は、指定されたターゲットに属性が適用されます。
+`do`バインディングに適用されている属性の属性ターゲットを省略したF#場合、コンパイラは、その属性に対して意味のある属性ターゲットを特定しようとします。 多くの属性クラスには、その`System.AttributeUsageAttribute`属性でサポートされているターゲットに関する情報を含む型の属性があります。 属性が`System.AttributeUsageAttribute`ターゲットとしての関数をサポートしていることをが示す場合、属性はプログラムのメインエントリポイントに適用されます。 属性が`System.AttributeUsageAttribute`ターゲットとしてのアセンブリをサポートしていることがによって示されている場合、コンパイラは、アセンブリに適用する属性を受け取ります。 ほとんどの属性は、関数とアセンブリの両方には適用されませんが、その場合、属性はプログラムの main 関数に適用されます。 属性ターゲットが明示的に指定されている場合は、指定されたターゲットに属性が適用されます。
 
-通常、属性ターゲットを明示的に指定する必要はありませんが、次の表に、属性の*target*の有効な値を使用例と共に示します。
+通常、属性ターゲットを明示的に指定する必要はありませんが、次の表に示すように、属性の*target*に有効な値を使用例と共に示します。
 
 <table>
   <tr>
@@ -69,7 +69,7 @@ property-name = property-value
     <th>例</td> 
   </tr>
   <tr>
-    <td>アセンブリ</td>
+    <td>アセンブリ (assembly)</td>
     <td><pre lang="fsharp"><code>[&lt;assembly: AssemblyVersionAttribute("1.0.0.0")&gt;]</code></pre></td> 
   </tr>
   <tr>
@@ -89,7 +89,7 @@ property-name = property-value
     <td><pre lang="fsharp"><code>member this.MyMethod([&lt;param: Out&gt;] x : ref&lt;int&gt;) = x := 10</code></pre></td> 
   </tr>
   <tr>
-    <td>型</td>
+    <td>type</td>
     <td>
         <pre lang="fsharp"><code>
 [&lt;type: StructLayout(Sequential)&gt;] 

@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
-ms.openlocfilehash: 88212fb2c04eab61b719a161ae01ccdda9a6110d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 95a67a552efacf9e77dc3ebc3e0187817a6d82e2
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64640728"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698584"
 ---
 # <a name="extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations"></a>'Extension' 属性は 'Module'、'Sub'、または 'Function' の各宣言にのみ適用できます
-Visual Basic でのデータ型を拡張する唯一の方法では、標準のモジュール内で拡張メソッドを定義します。 拡張メソッドになる、`Sub`プロシージャまたは`Function`プロシージャ。 すべての拡張メソッドは、拡張機能の属性でマークする必要があります`<Extension()>`から、<xref:System.Runtime.CompilerServices?displayProperty=nameWithType>名前空間。 必要に応じて、拡張メソッドを含むモジュールの場合は、同じ方法でマークされている可能性があります。 拡張属性の他の使用が有効ではありません。  
+Visual Basic でデータ型を拡張する唯一の方法は、標準モジュール内で拡張メソッドを定義することです。 拡張メソッドには、@no__t 0 プロシージャまたは `Function` プロシージャを指定できます。 すべての拡張メソッドは、<xref:System.Runtime.CompilerServices?displayProperty=nameWithType> の名前空間の拡張属性 (@no__t 0) でマークする必要があります。 必要に応じて、拡張メソッドを含むモジュールを同じ方法でマークすることもできます。 その他の拡張属性の使用は有効ではありません。  
   
  **エラー ID:** BC36550  
   
@@ -23,12 +23,12 @@ Visual Basic でのデータ型を拡張する唯一の方法では、標準の�
   
 - 拡張属性を削除します。  
   
-- 外側のモジュールで定義されている、方法として、拡張機能を再設計します。  
+- 外側のモジュールで定義されているメソッドとして拡張機能を再設計します。  
   
 ## <a name="example"></a>例  
- 次の例では、定義、`Print`のメソッド、`String`データ型。  
+ 次の例では、`String` データ型の `Print` メソッドを定義します。  
   
-```  
+```vb  
 Imports StringUtility  
 Imports System.Runtime.CompilerServices  
 Namespace StringUtility  

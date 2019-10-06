@@ -3,12 +3,12 @@ title: null 許容参照型を使用して設計する
 description: この高度なチュートリアルでは、null 許容参照型の概要について説明します。 参照値で null がいつ許容されるかに関する設計意図を表すことで、コンパイラで null が許容されるようにします。
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 0c95065e6c380fab6ba33432a32b3297e78027a3
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 842b1bb6e0d3032c6181cccf77934541754ff8ec
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926627"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332332"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>チュートリアル: null 許容参照型で既存のコードを移行する
 
@@ -25,7 +25,7 @@ C# 8 には **null 許容参照型**が導入されています。これは、nu
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。C# 8.0 ベータ コンパイラも実行されるようにします。 C# 8 ベータ コンパイラは、[Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) または最新の [.NET Core 3.0 プレビュー](https://dotnet.microsoft.com/download/dotnet-core/3.0)で利用できます。
+お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。C# 8.0 コンパイラも実行されるようにします。 C# 8 コンパイラは [Visual Studio 2019 バージョン 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) または [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download) 以降で使用できます。
 
 このチュートリアルでは、.NET と、C# と Visual Studio または .NET Core CLI のいずれかに精通していることを前提としています。
 
@@ -52,9 +52,6 @@ C# 8 には **null 許容参照型**が導入されています。これは、nu
 ```xml
 <Nullable>enable</Nullable>
 ```
-
-> [!IMPORTANT]
-> `Nullable` 要素は以前、`NullableContextOptions` という名称でした。 Visual Studio 2019、16.2-p1 で名前が変わりました。 .NET Core SDK 3.0.100-preview5-011568 にはこの変更が行われていません。 .NET Core CLI をご利用の場合、次のプレビューが利用可能になるまで `NullableContextOptions` を使用する必要があります。
 
 テスト ビルドを行い、警告の一覧に注目します。 この小さいアプリケーションでは 5 つのコンパイラ警告が生成されるので、null 許容注釈コンテキストを有効にしたまま、プロジェクト全体の警告の修正を始めます。
 

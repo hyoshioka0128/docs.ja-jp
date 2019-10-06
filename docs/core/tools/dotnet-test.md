@@ -2,12 +2,12 @@
 title: dotnet test コマンド
 description: dotnet test コマンドは、指定されたプロジェクトで単体テストを実行する場合に使用されます。
 ms.date: 05/29/2018
-ms.openlocfilehash: 306b6f8d890e567afc419b0408d7e683baaa814d
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: c3115d546efb1f076ae9f9731f83a12183aa4154
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117569"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182515"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -122,7 +122,7 @@ dotnet test [-h|--help]
 
 `-s|--settings <SETTINGS_FILE>`
 
-テストの実行に使用する `.runsettings` ファイルです。 [`.runsettings` ファイルを使用して単体テストを構成します。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019)
+テストの実行に使用する `.runsettings` ファイルです。 [`.runsettings` ファイルを使用して単体テストを構成します。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
 
 `-t|--list-tests`
 
@@ -192,7 +192,7 @@ RunSettings について詳しくは、[vstest.console.exe:RunSettings 引数渡
 
 `-s|--settings <SETTINGS_FILE>`
 
-テストの実行に使用する `.runsettings` ファイルです。 [`.runsettings` ファイルを使用して単体テストを構成します。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019)
+テストの実行に使用する `.runsettings` ファイルです。 [`.runsettings` ファイルを使用して単体テストを構成します。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
 
 `-t|--list-tests`
 
@@ -242,7 +242,7 @@ RunSettings について詳しくは、[vstest.console.exe:RunSettings 引数渡
 
 `-s|--settings <SETTINGS_FILE>`
 
-テストの実行に使用する `.runsettings` ファイルです。 [`.runsettings` ファイルを使用して単体テストを構成します。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019)
+テストの実行に使用する `.runsettings` ファイルです。 [`.runsettings` ファイルを使用して単体テストを構成します。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
 
 `-t|--list-tests`
 

@@ -8,20 +8,20 @@ helpviewer_keywords:
 - performanceCounter element
 - <performanceCounter> element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
-ms.openlocfilehash: 05aac6c1ed3c04bce263a45cafdb9bec906bd75b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3fe6b19d0055aafad859b55960800d9786d7fa08
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664057"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698000"
 ---
 # <a name="performancecounter-element-network-settings"></a>\<performanceCounter > 要素 (ネットワーク設定)
 ネットワークパフォーマンスカウンターを有効または無効にします。  
   
- \<configuration>  
-\<system.net>  
-\<settings>  
-\<performanceCounters>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t @ no__t @no__t @ no__t-3[ **-6 設定 >** ](settings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 **\<performanceCounters >** を行います。  
   
 ## <a name="syntax"></a>構文  
   
@@ -49,17 +49,17 @@ ms.locfileid: "69664057"
 |-------------|-----------------|  
 |[settings](settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>コメント  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
  ネットワーク パフォーマンス カウンターは、使用される構成ファイルで有効になっている必要があります。 すべてのネットワーク パフォーマンス カウンターは、構成ファイル内の 1 つの設定で有効または無効にされます。 ネットワーク パフォーマンス カウンターを個別に有効または無効にすることはできません。 特定のネットワークパフォーマンスカウンターの詳細については、「[ネットワークパフォーマンスカウンター](../../../debug-trace-profile/performance-counters.md#networking)」を参照してください。  
   
  既定値は、ネットワークパフォーマンスカウンターが無効になっていることを示します。  
   
- プロパティ<xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>は、適用可能な構成ファイルから**enabled**属性の現在の値を取得するために使用できます。  
+ @No__t-0 プロパティは、適用可能な構成ファイルから**enabled**属性の現在の値を取得するために使用できます。  
   
 ## <a name="example"></a>例  
- 次の例では、および関連<xref:System.Net>する名前空間を構成して、ネットワークパフォーマンスカウンターを有効にする方法を示します。  
+ 次の例では、<xref:System.Net> および関連する名前空間を構成して、ネットワークパフォーマンスカウンターを有効にする方法を示します。  
   
 ```xml  
 <configuration>  

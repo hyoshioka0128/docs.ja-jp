@@ -14,12 +14,12 @@ ms.prod:
 - PRODUCT VALUE
 helpviewer_keywords:
 - OFFLINE BOOK INDEX ENTRIES
-ms.openlocfilehash: 3cd1096a07b1de39d1961fdc8c5add56604804ea
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: 3674508c25e9a4b166f994e7ca16df04e484956b
+ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151833"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71306358"
 ---
 # <a name="metadata-and-markdown-template"></a>メタデータとマークダウン テンプレート
 
@@ -315,7 +315,8 @@ UID に特殊文字 \`、\# または \* が含まれる場合、UID 値はそ�
 |SQL|sql|
 |Swift|swift|
 |TypeScript|typescript|
-|VB|VB|
+|Visual Basic|VB|
+|VBScript|vbscript|
 |XAML|xaml|
 |XML|xml|
 

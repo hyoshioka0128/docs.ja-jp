@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 02dbf5ccca97f5e7d2e1fada39bdf601cf37906f
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 843007ac6467584fbe6350b6ea19ef67609d73e2
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71119150"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216913"
 ---
-### <a name="controldefaultfont-changed-to-segoe-ui-9pt"></a>`Control.DefaultFont` の `Segoe UI 9pt` への変更 
+### <a name="controldefaultfont-changed-to-segoe-ui-9pt"></a>`Control.DefaultFont` の `Segoe UI 9pt` への変更
 
 #### <a name="change-description"></a>変更の説明
 

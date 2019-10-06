@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: b2c3553f527e9fec8856297c7424a081b5b31db0
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 39f5be7a667b4e37e84246ef0bfeb03c0099d4b7
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609921"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353363"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>ブール論理演算子 (C# リファレンス)
 
@@ -127,7 +127,7 @@ ms.locfileid: "67609921"
 |null|False|False|null|  
 |null|null|null|null|  
 
-これらの演算子の動作は、null 許容値型の一般的な演算子の動作とは異なります。 通常、値型のオペランドに定義されている演算子も、対応する null 値型のオペランドと共に使用できます。 このような演算子は、そのオペランドのいずれかが `null` の場合に `null` を生成します。 ただし、`&` および `|` 演算子は、オペランドの 1 つが `null` の場合でも、null 以外の値を生成する可能性があります。 null 許容値型の演算子の動作については、「[Null 許容型の使用](../../programming-guide/nullable-types/using-nullable-types.md)」記事の「[演算子](../../programming-guide/nullable-types/using-nullable-types.md#operators)」セクションを参照してください。
+これらの演算子の動作は、null 許容値型の一般的な演算子の動作とは異なります。 通常、値型のオペランドに定義されている演算子も、対応する null 値型のオペランドと共に使用できます。 このような演算子は、そのオペランドのいずれかが `null` の場合に `null` を生成します。 ただし、`&` および `|` 演算子は、オペランドの 1 つが `null` の場合でも、null 以外の値を生成する可能性があります。 null 許容値型の演算子の動作については、[null 許容値型の使用](../../programming-guide/nullable-types/using-nullable-types.md)に関する記事の「[演算子](../../programming-guide/nullable-types/using-nullable-types.md#operators)」セクションを参照してください。
 
 次の例に示すように、`!` 演算子と `^` 演算子を `bool?` オペランドと共に使用することもできます。
 

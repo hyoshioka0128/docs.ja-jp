@@ -5,72 +5,72 @@ helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 ms.assetid: 4e8279c2-ed5b-4681-8903-8a6671874000
-ms.openlocfilehash: c0b47521c6a62071466ae4193cd8553bdfb3dcde
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: caddad463f7c525c8b715d70f49bf8bebcc7cfbd
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62014233"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701265"
 ---
 # <a name="customizing-which-objects-are-available-in-my-visual-basic"></a>My で利用可能なオブジェクトのカスタマイズ (Visual Basic)
 
-このトピックでは、これを制御する方法について説明します`My`オブジェクトは、プロジェクトの設定で有効になって`_MYTYPE`条件付きコンパイル定数。 Visual Studio 統合開発環境 (IDE) の保持、`_MYTYPE`プロジェクト、プロジェクトの種類と同期するための条件付きコンパイル定数。  
+このトピックでは、プロジェクトの @no__t 1 つの条件付きコンパイル定数を設定することによって、有効にする @no__t 0 オブジェクトを制御する方法について説明します。 Visual Studio 統合開発環境 (IDE) では、プロジェクトの種類と同期しているプロジェクトに対して、@no__t 0 の条件付きコンパイル定数が保持されます。  
   
-## <a name="predefined-mytype-values"></a>定義済みの\_MYTYPE の値  
+## <a name="predefined-_mytype-values"></a>定義済みの @no__t 0MYTYPE 値  
 
-使用する必要があります、`/define`コンパイラ オプションを設定する、`_MYTYPE`条件付きコンパイル定数。 独自の値を指定するときに、 `_MYTYPE` 、定数で囲んでください。 文字列値バック スラッシュ/引用符 (\\") のシーケンス。 たとえば、次のように使用する可能性があります。  
+@No__t-0 コンパイラオプションを使用して、`_MYTYPE` の条件付きコンパイル定数を設定する必要があります。 @No__t 0 定数に独自の値を指定する場合は、文字列値を円記号/引用符 (\\ ") のシーケンスで囲む必要があります。 たとえば、次のように使用できます。  
   
-```  
+```console  
 /define:_MYTYPE=\"WindowsForms\"  
 ```  
   
- この表ではどのような`_MYTYPE`プロジェクトの種類をいくつかの条件付きコンパイル定数に設定されます。  
+ 次の表は、いくつかのプロジェクトの種類に対して、@no__t 0 の条件付きコンパイル定数がどのように設定されているかを示しています。  
   
-|プロジェクトの種類|\_MYTYPE の値|  
+|プロジェクトの種類|@no__t 0MYTYPE 値|  
 |------------------|--------------------|  
-|クラス ライブラリ|"Windows"|  
-|コンソール アプリケーション|「コンソール」|  
-|Web|"Web"|  
-|Web コントロール ライブラリ|"WebControl"|  
-|Windows アプリケーション|"WindowsForms"|  
-|ユーザー設定を開始するときに、Windows アプリケーション `Sub Main`|"WindowsFormsWithCustomSubMain"|  
-|Windows コントロール ライブラリ|"Windows"|  
-|Windows サービス|「コンソール」|  
-|Empty|「空」|  
+|クラス ライブラリ|ウィンドウ|  
+|コンソール アプリケーション|コンソール|  
+|Web|Www|  
+|Web コントロールライブラリ|WebControl|  
+|Windows アプリケーション|WindowsForms|  
+|Windows アプリケーション (カスタム @no__t で開始する場合)-0|"Windowsフォーム Withcustomsubmain"|  
+|Windows コントロールライブラリ|ウィンドウ|  
+|Windows サービス|コンソール|  
+|Empty|指定|  
   
 > [!NOTE]
-> すべての条件付きコンパイルの文字列比較は関係なく大文字/小文字`Option Compare`ステートメントを設定します。  
+> @No__t-0 ステートメントの設定方法に関係なく、すべての条件付きコンパイル文字列の比較では大文字と小文字が区別されます。  
   
-## <a name="dependent-my-compilation-constants"></a>依存\_マイ コンパイル定数  
+## <a name="dependent-_my-compilation-constants"></a>依存 \_MY コンパイル定数  
 
-`_MYTYPE`条件付きコンパイル定数の場合、さらに、その他のいくつかの値を制御`_MY`コンパイル定数。  
+さらに、@no__t 0 の条件付きコンパイル定数は、他のいくつかの `_MY` コンパイル定数の値を制御します。  
   
-|\_MYTYPE|\_MYAPPLICATIONTYPE|\_MYCOMPUTERTYPE|\_MYFORMS|\_MYUSERTYPE|\_MYWEBSERVICES|  
+|\_MYTYPE|\_MYAPPLICATIONTYPE|\_MYCOMPUTERTYPE|\_MYFORMS|\_MYUSERTYPE|\_MYWEBSERVICES 場合|  
 |--------------|-------------------------|----------------------|---------------|------------------|---------------------|  
-|「コンソール」|「コンソール」|"Windows"|未定義|"Windows"|true|  
-|"Custom"|未定義|未定義|未定義|未定義|未定義|  
-|「空」|未定義|未定義|未定義|未定義|未定義|  
-|"Web"|未定義|"Web"|false|"Web"|false|  
-|"WebControl"|未定義|"Web"|false|"Web"|true|  
-|"Windows"または""|"Windows"|"Windows"|未定義|"Windows"|true|  
-|"WindowsForms"|"WindowsForms"|"Windows"|true|"Windows"|true|  
-|"WindowsFormsWithCustomSubMain"|「コンソール」|"Windows"|true|"Windows"|true|  
+|コンソール|コンソール|ウィンドウ|未定義。|ウィンドウ|true|  
+|ショー|未定義。|未定義。|未定義。|未定義。|未定義。|  
+|指定|未定義。|未定義。|未定義。|未定義。|未定義。|  
+|Www|未定義。|Www|false|Www|false|  
+|WebControl|未定義。|Www|false|Www|true|  
+|"Windows" または ""|ウィンドウ|ウィンドウ|未定義。|ウィンドウ|true|  
+|WindowsForms|WindowsForms|ウィンドウ|true|ウィンドウ|true|  
+|"Windowsフォーム Withcustomsubmain"|コンソール|ウィンドウ|true|ウィンドウ|true|  
   
- 既定では、未定義の条件付きコンパイル定数を解決する`FALSE`します。 既定の動作をオーバーライドするようにプロジェクトをコンパイルするときに、未定義の定数の値を指定できます。  
+ 既定では、未定義の条件付きコンパイル定数は `FALSE` に解決されます。 プロジェクトをコンパイルするときに、未定義の定数の値を指定して、既定の動作をオーバーライドできます。  
   
 > [!NOTE]
-> ときに`_MYTYPE`設定が"Custom"にプロジェクトに含まれる、`My`が名前空間が含まれていないオブジェクトには。 ただし、設定`_MYTYPE`を追加できない、"Empty"のように、コンパイラ、`My`名前空間とそのオブジェクト。  
+> @No__t-0 が "Custom" に設定されている場合、プロジェクトには `My` の名前空間が含まれますが、オブジェクトは含まれません。 ただし、`_MYTYPE` を "Empty" に設定すると、コンパイラで `My` の名前空間とそのオブジェクトを追加できなくなります。  
   
- このテーブルの定義済みの値の効果の説明、`_MY`コンパイル定数。  
+ 次の表では、`_MY` コンパイル定数の定義済みの値の影響について説明します。  
   
 |定数|説明|  
 |--------------|-------------|  
-|`_MYAPPLICATIONTYPE`|により、`My.Application`定数は、「コンソールの」、Windows の場合は、"または"WindowsForms"。<br /><br /> -「コンソール」バージョンから派生した<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>します。 "Windows"のバージョンよりも少ないメンバーです。<br />-"Windows"のバージョンから派生した<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>それから"WindowsForms"バージョンよりも少ないメンバーを持ちます。<br />-"WindowsForms"バージョンの`My.Application`から派生した<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>します。 場合、 `TARGET` "winexe"を指定する定数を定義し、クラスが含まれています、`Sub Main`メソッド。|  
-|`_MYCOMPUTERTYPE`|により、`My.Computer`定数が"Web"または"Windows"の場合。<br /><br /> -"Web"のバージョンから派生した<xref:Microsoft.VisualBasic.Devices.ServerComputer>、"Windows"のバージョンよりも少ないメンバーを持つとします。<br />-"Windows"のバージョンの`My.Computer`から派生した<xref:Microsoft.VisualBasic.Devices.Computer>します。|  
-|`_MYFORMS`|により、`My.Forms`定数の場合、`TRUE`します。|  
-|`_MYUSERTYPE`|により、`My.User`定数が"Web"または"Windows"の場合。<br /><br /> -の"Web"バージョン`My.User`は現在の HTTP 要求のユーザー id に関連付けられています。<br />-"Windows"のバージョンの`My.User`スレッドの現在のプリンシパルに関連付けられています。|  
-|`_MYWEBSERVICES`|により、`My.WebServices`定数の場合、`TRUE`します。|  
-|`_MYTYPE`|により、 `My.Log`、 `My.Request`、および`My.Response`定数が"Web"の場合。|  
+|`_MYAPPLICATIONTYPE`|定数が "Console"、"Windows"、または "WindowsForms" の場合、`My.Application` を有効にします。<br /><br /> -"Console" バージョンは <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> から派生します。 とには、"Windows" バージョンよりも少数のメンバーがあります。<br />-"Windows" のバージョンは @no__t 横-0 から派生し、"WindowsForms" バージョンよりも少数のメンバーを持ちます。<br />-@No__t-0 の "WindowsForms" バージョンは <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> から派生します。 @No__t 0 の定数が "winexe" に定義されている場合、クラスには `Sub Main` メソッドが含まれます。|  
+|`_MYCOMPUTERTYPE`|定数が "Web" または "Windows" の場合、`My.Computer` を有効にします。<br /><br /> -"Web" バージョンは <xref:Microsoft.VisualBasic.Devices.ServerComputer> から派生し、"Windows" バージョンよりも少数のメンバーを持ちます。<br />-"Windows" バージョンの `My.Computer` は <xref:Microsoft.VisualBasic.Devices.Computer> から派生します。|  
+|`_MYFORMS`|定数が-1 @no__t の場合、`My.Forms` を有効にします。|  
+|`_MYUSERTYPE`|定数が "Web" または "Windows" の場合、`My.User` を有効にします。<br /><br /> -@No__t-0 の "Web" バージョンは、現在の HTTP 要求のユーザー id に関連付けられています。<br />-"Windows" バージョンの `My.User` は、スレッドの現在のプリンシパルに関連付けられています。|  
+|`_MYWEBSERVICES`|定数が-1 @no__t の場合、`My.WebServices` を有効にします。|  
+|`_MYTYPE`|定数が "Web" の場合、`My.Log`、`My.Request`、および `My.Response` を有効にします。|  
   
 ## <a name="see-also"></a>関連項目
 

@@ -9,12 +9,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: de25c3dcf33471a1aadb4445a83affab9c40914b
-ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
+ms.openlocfilehash: b8f0c7c4584505d382e78aca68e2e99c9fa7748f
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71306336"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834624"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>チュートリアル: ユーザー補助対応の Windows ベースのアプリケーションの作成
 
@@ -46,7 +46,7 @@ ms.locfileid: "71306336"
 
 #### <a name="to-begin-making-the-application"></a>アプリケーションの作成を開始するには
 
-- Visual Basic またはビジュアルC#で新しい Windows アプリケーションを作成します。 プロジェクトに **PizzaOrder** という名前を付けます。 (詳細については、「[ソリューションとプロジェクトの作成](/visualstudio/ide/creating-solutions-and-projects)」を参照。)
+- Visual Basic またはビジュアルC#で新しい Windows アプリケーションを作成します。 プロジェクトに **PizzaOrder** という名前を付けます。 詳細については、「[新しいソリューションとプロジェクトの作成](/visualstudio/ide/creating-solutions-and-projects)」を参照してください。
 
 ## <a name="adding-the-controls-to-the-form"></a>フォームへのコントロールの追加
 

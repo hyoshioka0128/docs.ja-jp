@@ -1,69 +1,97 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: ML.NET のドキュメント
+summary: オープンソースの ML.NET を使用して機械学習ソリューションを構築し、それらをアプリケーションに統合する方法について説明します。 チュートリアルやコード例などを紹介します。
 metadata:
-  document_id: na
   title: ML.NET のドキュメント - チュートリアル、API リファレンス
-  meta.description: 'Learn how to use ML.NET, an open-source and cross-platform machine learning framework you can use to build custom machine learning solutions and integrate them into .NET applications. Incorporate AI into your apps using the .NET skills you already have and without leaving .NET.'
+  description: オープンソースの ML.NET を使用して機械学習ソリューションを構築し、それらをアプリケーションに統合する方法について説明します。 チュートリアルやコード例などを紹介します。
+  ms.prod: dotnet-ml
   ms.topic: landing-page
-  ms.date: 09/16/2019
-  ms.author: nakersha
+  ms.collection: collection
   author: natke
-abstract:
-  description: カスタムの機械学習ソリューションを構築し、.NET アプリケーションに統合するためのオープン ソースのクロスプラットフォーム機械学習フレームワークである ML.NET の使用方法について説明します。 チュートリアル、コード例、API リファレンスなどのドキュメントでその方法を説明します。
-sections:
-  - title: ステップ バイ ステップのチュートリアル
-    items:
-      - type: paragraph
-        text: ML.NET を使用して一般的なソリューションを作成する方法について説明します。
-      - type: paragraph
-        text: '<b>ML.NET API を使用した開発</b>:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/machine-learning/tutorials/sentiment-analysis">二項分類を使用してセンチメントを分析する</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/github-issue-classification">多クラス分類を使用して GitHub の問題を分類する</a></li>
-          - html: <a href="/dotnet/machine-learning/tutorials/predict-prices">回帰を使用して価格を予測する</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/iris-clustering">クラスタリングを使用して花を特徴別に分類する</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/movie-recommendation">行列の因数分解を使用して映画レコメンダーを作成する</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/image-classification">TensorFlow を使用してカスタム画像分類子を構築する</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/object-detection-onnx">ONNX を使用して画像内のオブジェクトを検出する</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/text-classification-tf">TensorFlow を使用して映画レビューのセンチメントを分類する</a>
-      - type: paragraph
-        text: 'グラフィカルな Visual Studio 拡張機能<b>モデル ビルダーの使用</b>:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/machine-learning/tutorials/predict-prices-with-model-builder">モデル ビルダーを使った価格の予測</a>
-          - html: <a href="/dotnet/machine-learning/tutorials/sentiment-analysis-model-builder">Razor Pages Web アプリケーションをビルドしてセンチメントを分析する</a>
-      - type: paragraph
-        text: '<b>ML.NET CLI の実行</b>:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/machine-learning/tutorials/mlnet-cli">ML.NET CLI を使用してセンチメントを分析する</a>
-  - title: サンプル
-    items:
-      - type: paragraph
-        text: 'C# および F# のアプリを確認するには、GitHub の<a href="https://github.com/dotnet/machinelearning-samples">サンプル リポジトリ</a>を参照してください。'
-  - title: 関連項目
-    items:
-      - type: paragraph
-        text: <b>ML.NET API</b>
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/api/?view=ml-dotnet">リリース ML.NET API</a> には、データ処理用のコンポーネントや、二項分類、多クラス分類、回帰、異常の検出、時系列と予測、ランキング、モデルの保存と読み込み、ONNX モデルと TensorFlow モデルの処理のためのアルゴリズムなどが含まれています。
-          - html: <a href="/dotnet/api/?view=ml-dotnet-preview">プレビュー ML.NET API</a> には、推奨タスク用のアルゴリズムと標準のディープ ラーニング モデル向けのサポートが含まれています。
-      - type: paragraph
-        text: <b>AutoML API</b>
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/api/index?view=automl-dotnet">Auto ML API</a>
-      - type: paragraph
-        text: <b>ML.NET CLI リファレンス</b>
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/dotnet/machine-learning/reference/ml-net-cli-reference">ML.NET CLI コマンド リファレンス</a>
+  ms.author: nakersha
+  ms.date: 09/23/2019
+  ms.openlocfilehash: f6f4d0c516a1310df5c497a3f4e7331877f3c5a9
+  ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/24/2019
+  ms.locfileid: "71216640"
+landingContent:
+- title: ML.NET の概要
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ML.NET とは
+      url: how-does-mldotnet-work.md
+  - linkListType: concept
+    links:
+    - text: 機械学習モデルの種類
+      url: resources/tasks.md
+    - text: アルゴリズムの選択方法
+      url: how-to-choose-an-ml-net-algorithm.md
+    - text: データ変換
+      url: resources/transforms.md
+- title: モデル ビルダーの使用
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: モデル ビルダーとは
+      url: automate-training-with-model-builder.md
+  - linkListType: quickstart
+    links:
+    - text: モデル ビルダーのインストール
+      url: how-to-guides/install-model-builder.md
+  - linkListType: tutorial
+    links:
+    - text: 価格の予測 - モデル ビルダー
+      url: tutorials/predict-prices-with-model-builder.md
+    - text: センチメントを分析する Razor Pages Web アプリを構築する
+      url: tutorials/sentiment-analysis-model-builder.md
+- title: API の概要
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 転移学習を使用して TensorFlow 画像分類器を構築する
+      url: tutorials/image-classification.md
+    - text: Web サイト コメントのセンチメントを分析する
+      url: tutorials/sentiment-analysis.md
+    - text: ONNX を使用して画像内のオブジェクトを検出する
+      url: tutorials/object-detection-onnx.md
+  - linkListType: how-to-guide
+    links:
+    - text: さまざまなソースからデータを読み込む
+      url: how-to-guides/load-data-ml-net.md
+    - text: モデル構築用のデータを準備する
+      url: how-to-guides/prepare-data-ml-net.md
+    - text: モデルのトレーニングと評価
+      url: how-to-guides/train-machine-learning-model-ml-net.md
+    - text: トレーニング済みモデルを使用して予測する
+      url: how-to-guides/machine-learning-model-predictions-ml-net.md
+    - text: トレーニング済みのモデルの保存と読み込み
+      url: how-to-guides/save-load-machine-learning-models-ml-net.md
+- title: ML.NET CLI を使用する
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ML.NET CLI を使用してモデルのトレーニングを自動化する
+      url: automate-training-with-cli.md
+  - linkListType: quickstart
+    links:
+    - text: ML.NET CLI をインストールする
+      url: how-to-guides/install-ml-net-cli.md
+  - linkListType: tutorial
+    links:
+    - text: センチメントを分析する - ML.NET CLI と AutoML
+      url: tutorials/mlnet-cli.md
+- title: API リファレンス
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: ML.NET API リファレンス
+      url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
+    - text: ML.NET API リファレンス (プレビュー)
+      url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview
+    - text: ML.NET CLI リファレンス
+      url: reference/ml-net-cli-reference.md
+    - text: AutoML API リファレンス
+      url: https://docs.microsoft.com/dotnet/api/?view=automl-dotnet

@@ -15,19 +15,19 @@ helpviewer_keywords:
 - Const statement [Visual Basic], directive (#Const)
 - 'declaring constants [Visual Basic], #const directive'
 ms.assetid: 707669e5-23f9-4f17-8622-a0d534429386
-ms.openlocfilehash: 5458bbebc6064eb6273b8deb5447b8941e1d233f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b8d2da2158a8244b4533eb6ef49049949417216
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61746697"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71696852"
 ---
 # <a name="const-directive"></a>#Const ディレクティブ
-Visual basic の条件付きコンパイラ定数を定義します。  
+Visual Basic の条件付きコンパイラ定数を定義します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```vb  
 #Const constname = expression  
 ```  
   
@@ -36,12 +36,12 @@ Visual basic の条件付きコンパイラ定数を定義します。
  必須。 定義されている定数の名前。  
   
  `expression`  
- 必須。 リテラルやその他の条件付きコンパイラ定数、またはすべての算術演算子または論理演算子を除く任意の組み合わせ`Is`します。  
+ 必須。 リテラル、その他の条件付きコンパイラ定数、またはすべての算術演算子または論理演算子を含む任意の組み合わせ (`Is` を除く)。  
   
-## <a name="remarks"></a>Remarks  
- 条件付きコンパイラ定数は、表示されるファイルにプライベートでは常にです。 使用してパブリック コンパイラ定数を作成することはできません、`#Const`ディレクティブです。 または、ユーザー インターフェイスでのみ作成できます、`/define`コンパイラ オプション。  
+## <a name="remarks"></a>コメント  
+ 条件付きコンパイラ定数は、それらが表示されるファイルに対して常にプライベートです。 @No__t-0 ディレクティブを使用して、パブリックコンパイラ定数を作成することはできません。ユーザーインターフェイスまたは `/define` コンパイラオプションでのみ作成できます。  
   
- 使用できるは、条件付きコンパイラ定数とリテラルのみ`expression`します。 定義されている標準の定数を使用して`Const`エラーが発生します。 逆で定義されている定数を使用することができます、`#Const`条件付きコンパイルのみのキーワード。 定数できますもが定義されていないの値がある場合`Nothing`します。  
+ @No__t-0 では、条件付きコンパイラ定数とリテラルのみを使用できます。 @No__t-0 で定義された標準の定数を使用すると、エラーが発生します。 逆に、`#Const` キーワードで定義された定数は、条件付きコンパイルにのみ使用できます。 定数は未定義にすることもできます。その場合、値は `Nothing` になります。  
   
 ## <a name="example"></a>例  
  `#Const` ディレクティブの使用例を次に示します。  

@@ -45,6 +45,10 @@
           href: tutorials/mlnet-cli.md
         - name: Model Builder と Razor Pages を使用したセンチメントの分析
           href: tutorials/sentiment-analysis-model-builder.md
+    - name: Infer.NET
+      items:
+        - name: Infer.NET を使用した確率的プログラミング
+          href: how-to-guides/matchup-app-infer-net.md
 - name: 概念
   items:
     - name: ML.NET タスク (モデル型)
@@ -95,10 +99,6 @@
           href: how-to-guides/install-ml-net-cli.md
         - name: 自動化された ML API を使用する
           href: how-to-guides/how-to-use-the-automl-api.md
-    - name: Infer.NET
-      items:
-        - name: Infer.NET を使用した確率的プログラミング
-          href: how-to-guides/matchup-app-infer-net.md
 - name: 関連項目
   items:
     - name: API

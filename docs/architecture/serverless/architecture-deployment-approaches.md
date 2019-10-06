@@ -4,12 +4,12 @@ description: エンタープライズアーキテクチャがクラウドにデ�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 8a1203ea2fc7089223c03b3a3e02fd3303610272
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 4cc8442509fc8a0e2cc0eb797365423458e77684
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69577635"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834337"
 ---
 # <a name="architecture-deployment-approaches"></a>アーキテクチャのデプロイ方法
 
@@ -138,9 +138,9 @@ Docker コンテナーの詳細については、「 [docker とは](../microser
 
 |         |IaaS     |PaaS     |コンテナー|サーバー|
 |---------|---------|---------|---------|----------|
-|**拡大縮小**|VM       |[インスタンス] |アプリ      |関数  |
+|**スケール**|VM       |Instance |アプリ      |関数  |
 |**抽出**|ハードウェア|プラットフォーム|OS ホスト|ランタイム   |
-|**間隔** |VM       |プロジェクト  |イメージ    |コード      |
+|**間隔** |VM       |Project  |イメージ    |コード      |
 |**有効期間**|前月|日数から月|分から日|ミリ秒 (分)|
 |**負っ**|アプリケーション、依存関係、ランタイム、およびオペレーティングシステム|アプリケーションと依存関係|アプリケーション、依存関係、およびランタイム|関数
 

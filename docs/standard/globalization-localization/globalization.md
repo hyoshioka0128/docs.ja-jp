@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8820fb898e0944704b7c81363962d523770a541c
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: ce2f127858305a96b358c1661b98a359ae565f57
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442478"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393120"
 ---
 # <a name="globalization"></a>グローバリゼーション
 
@@ -40,7 +40,7 @@ ms.locfileid: "56442478"
 
 Windows オペレーティング システムを含む、多くのアプリケーションとオペレーティング システムでは、文字セットを表すためにコード ページを使用できます。 コード ページには、通常、0x00 から 0x7F までの標準 ASCII 値が含まれ、0x80 から 0xFF までの残りの値に他の文字をマップします。 0x80 から 0xFF までの値の解釈は特定のコード ページによって異なります。 このため、可能な場合は、グローバライズされたアプリでコード ページを使用しないようにします。
 
-次の例では、システムの既定のコード ページとデータが保存されたコード ページとが異なる場合にコード ページのデータを解釈する危険性を示しています  (このシナリオをシミュレートするため、例では、異なるコード ページを明示的に指定します)。最初に、ギリシャ文字の大文字で構成される配列を定義します。 コード ページ 737 (MS-DOS ギリシャ語とも呼ばれます) を使用してそれらをバイト配列にエンコードし、バイト配列をファイルに保存します。 ファイルを取得し、そのバイト配列をコード ページ 737 を使用してデコードした場合、元の文字が復元されます。 ただし、ファイルを取得して、そのバイト配列をコード ページ 1252 (または Windows-1252。ラテン語アルファベットの文字を表します) を使用してデコードした場合、元の文字は失われます。
+次の例では、システムの既定のコード ページとデータが保存されたコード ページとが異なる場合にコード ページのデータを解釈する危険性を示しています (このシナリオをシミュレートするため、例では、異なるコード ページを明示的に指定します)。最初に、ギリシャ文字の大文字で構成される配列を定義します。 コード ページ 737 (MS-DOS ギリシャ語とも呼ばれます) を使用してそれらをバイト配列にエンコードし、バイト配列をファイルに保存します。 ファイルを取得し、そのバイト配列をコード ページ 737 を使用してデコードした場合、元の文字が復元されます。 ただし、ファイルを取得して、そのバイト配列をコード ページ 1252 (または Windows-1252。ラテン語アルファベットの文字を表します) を使用してデコードした場合、元の文字は失われます。
 
 [!code-csharp[Conceptual.Globalization#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/codepages1.cs#1)]
 [!code-vb[Conceptual.Globalization#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/codepages1.vb#1)]
@@ -85,8 +85,7 @@ Unicode を使用することで、同じコード単位を必ず同じ文字に
 
 等価性の比較では、<xref:System.String.Equals%2A?displayProperty=nameWithType> メソッドを呼び出すのではなく、検索したり、部分文字列を比較したりすることがあります。 場合によっては、部分文字列検索を使用して、その部分文字列が別の文字列と等しいかどうかを確認できます。 この比較の目的が非言語的である場合、検索はカルチャに依存するのではなく、序数に基づいて実行する必要があります。
 
-次の例は、非言語的なデータに対してカルチャに依存した検索を実行することの危険性を示しています。 
-  `AccessesFileSystem` メソッドは、部分文字列 "FILE" で始まる URI のファイル システムのアクセスを禁止するように設計されています。 これを実行するため、カルチャに依存し、大文字と小文字を区別しない比較を実行して、URI の先頭と文字列 "FILE" を比較します。 ファイル システムにアクセスする URI は "FILE:" または "file:" で始まる可能性があるため、"i" (U+0069) は常に "I" (U+0049) と等価の小文字表現であるという暗黙の前提があります。 ただし、トルコ語およびアゼルバイジャン語には、"i" の大文字として "İ" (U+0130) があります。 このような相違があるため、カルチャに依存した比較を使用すると、ファイル システムのアクセスを禁止する必要がある場合でもそのアクセスが許可されます。
+次の例は、非言語的なデータに対してカルチャに依存した検索を実行することの危険性を示しています。 `AccessesFileSystem` メソッドは、部分文字列 "FILE" で始まる URI のファイル システムのアクセスを禁止するように設計されています。 これを実行するため、カルチャに依存し、大文字と小文字を区別しない比較を実行して、URI の先頭と文字列 "FILE" を比較します。 ファイル システムにアクセスする URI は "FILE:" または "file:" で始まる可能性があるため、"i" (U+0069) は常に "I" (U+0049) と等価の小文字表現であるという暗黙の前提があります。 ただし、トルコ語およびアゼルバイジャン語には、"i" の大文字として "İ" (U+0130) があります。 このような相違があるため、カルチャに依存した比較を使用すると、ファイル システムのアクセスを禁止する必要がある場合でもそのアクセスが許可されます。
 
 [!code-csharp[Conceptual.Globalization#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/equals1.cs#12)]
 [!code-vb[Conceptual.Globalization#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/equals1.vb#12)]
@@ -103,8 +102,7 @@ Unicode を使用することで、同じコード単位を必ず同じ文字に
 [!code-csharp[Conceptual.Globalization#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/sort1.cs#14)]
 [!code-vb[Conceptual.Globalization#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/sort1.vb#14)]
 
-カルチャに依存した文字列比較は、各カルチャの <xref:System.Globalization.CompareInfo> プロパティによって返される <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> オブジェクトによって定義されます。 
-  <xref:System.String.Compare%2A?displayProperty=nameWithType> メソッド オーバーロードを使用するカルチャに依存した文字列比較では、<xref:System.Globalization.CompareInfo> オブジェクトも使用します。
+カルチャに依存した文字列比較は、各カルチャの <xref:System.Globalization.CompareInfo> プロパティによって返される <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> オブジェクトによって定義されます。 <xref:System.String.Compare%2A?displayProperty=nameWithType> メソッド オーバーロードを使用するカルチャに依存した文字列比較では、<xref:System.Globalization.CompareInfo> オブジェクトも使用します。
 
 .NET は、文字列データのカルチャに依存した並べ替えを実行するためにテーブルを使用します。 並べ替えのウェイトと文字列の正規化に関するデータが入ったこれらのテーブルの内容は、特定のバージョンの .NET によって実装される Unicode 標準のバージョンによって決まります。 次の表は、特定のバージョンの .NET Framework と .NET Core によって実装される Unicode のバージョンです。 サポートされている Unicode バージョンの一覧は、文字の比較と並べ替えに対してのみ適用されます。カテゴリ別での Unicode 文字の分類には適用されません。 詳細については、記事「<xref:System.String>」 の「Strings and The Unicode Standard」 (文字列と Unicode 標準) セクションを参照してください。
 
@@ -120,8 +118,7 @@ Unicode を使用することで、同じコード単位を必ず同じ文字に
 
 .NET Framework 4.5 以降と .NET Core のすべてのバージョンでは、文字列の比較と並べ替えはオペレーティング システムによって異なります。 Windows 7 で実行される NET Framework 4.5 以降は、Unicode 5.0 を実装する独自のテーブルからデータを取得します。 Windows 8 以降で実行される NET Framework 4.5 以降は、Unicode 6.3 を実装するオペレーティング システムのテーブルからデータを取得します。 .NET Core では、サポートされている Unicode のバージョンは基になるオペレーティング システムによって異なります。 カルチャに依存した並べ替えが実行されたデータをシリアル化する場合は、<xref:System.Globalization.SortVersion> クラスを使用して、.NET およびオペレーティング システムの並べ替え順序と一致するように、シリアル化されたデータをいつ並べ替える必要があるかを判断できます。 例については、<xref:System.Globalization.SortVersion> クラスに関するトピックを参照してください。
 
-広範なカルチャ固有の並べ替えを文字列データに対して実行するアプリの場合、<xref:System.Globalization.SortKey> クラスを使用して文字列を比較できます。 並べ替えキーは、特定の文字列のアルファベット順、大文字と小文字の区別、発音の区別など、カルチャ固有の並べ替えウェイトを反映しています。 並べ替えキーを使用した比較はバイナリであるため、<xref:System.Globalization.CompareInfo> オブジェクトを暗黙的または明示的に使用する比較よりも高速です。 
-  <xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType> メソッドに文字列を渡すことによって、特定の文字列のカルチャ固有の並べ替えキーを作成します。
+広範なカルチャ固有の並べ替えを文字列データに対して実行するアプリの場合、<xref:System.Globalization.SortKey> クラスを使用して文字列を比較できます。 並べ替えキーは、特定の文字列のアルファベット順、大文字と小文字の区別、発音の区別など、カルチャ固有の並べ替えウェイトを反映しています。 並べ替えキーを使用した比較はバイナリであるため、<xref:System.Globalization.CompareInfo> オブジェクトを暗黙的または明示的に使用する比較よりも高速です。 <xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType> メソッドに文字列を渡すことによって、特定の文字列のカルチャ固有の並べ替えキーを作成します。
 
 次の例は、前の例と似ています。 ただし、暗黙的に <xref:System.Array.Sort%28System.Array%29?displayProperty=nameWithType> メソッドを呼び出す <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType> メソッドを呼び出すのではなく、インスタンス化して、<xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> メソッドに渡す、並べ替えキーを比較する <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Collections.Generic.IComparer%7B%60%600%7D%29?displayProperty=nameWithType> 実装を定義しています。
 
@@ -186,7 +183,7 @@ Unicode を使用することで、同じコード単位を必ず同じ文字に
 
 シリアル化されたシステムと同じタイム ゾーンのシステムでデータを復元すると、出力に示すように、逆シリアル化された日付と時刻の値は正確に元の値を反映しています。
 
-```
+```console
 '3/30/2013 6:00:00 PM' --> 3/30/2013 6:00:00 PM Unspecified
 '2013-03-30T18:00:00' --> 3/30/2013 6:00:00 PM Unspecified
 '2013-03-30T18:00:00.0000000-07:00' --> 3/30/2013 6:00:00 PM Local
@@ -196,7 +193,7 @@ Unicode を使用することで、同じコード単位を必ず同じ文字に
 
 ただし、別のタイム ゾーンのシステムでデータを復元する場合は、"o" (ラウンド トリップ) 標準書式指定文字列を使用して書式設定された日付と時刻の値だけがタイム ゾーン情報を維持して、同じ時点を表します。 日付と時刻のデータがロマンス標準時ゾーンのシステムで復元されたときの出力を次に示します。
 
-```
+```console
 '3/30/2013 6:00:00 PM' --> 3/30/2013 6:00:00 PM Unspecified
 '2013-03-30T18:00:00' --> 3/30/2013 6:00:00 PM Unspecified
 '2013-03-30T18:00:00.0000000-07:00' --> 3/31/2013 3:00:00 AM Local
@@ -221,7 +218,7 @@ Unicode を使用することで、同じコード単位を必ず同じ文字に
 
 データを太平洋標準時ゾーンのシステムでシリアル化し、ロマンス標準時ゾーンのシステムで逆シリアル化すると、次の出力が表示されます。
 
-```
+```console
 '2013-03-30T18:00:00.0000000-07:00' --> 3/31/2013 3:00:00 AM Local
 'Sun, 31 Mar 2013 01:00:00 GMT' --> 3/31/2013 3:00:00 AM Local
 '2013-03-31 01:00:00Z' --> 3/31/2013 3:00:00 AM Local
@@ -341,8 +338,7 @@ Unicode を使用することで、同じコード単位を必ず同じ文字に
 
 - .NET では置換カルチャをサポートしています。 これにより、既存の標準カルチャを補足または既存の標準カルチャを完全に置き換える新しいカスタム カルチャを定義できます。
 
-- Windows システムのユーザーは、コントロール パネルの **[地域と言語]** アプリを使用してカルチャ固有の設定をカスタマイズできます。 
-  <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化するときに、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを呼び出すことでこのようなユーザーによるカスタマイズを反映するかどうかを決定できます。 通常は、エンド ユーザーのアプリでは、ユーザー設定を尊重して、ユーザー自身が予期する形式でデータを表示する必要があります。
+- Windows システムのユーザーは、コントロール パネルの **[地域と言語]** アプリを使用してカルチャ固有の設定をカスタマイズできます。 <xref:System.Globalization.CultureInfo> オブジェクトをインスタンス化するときに、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクターを呼び出すことでこのようなユーザーによるカスタマイズを反映するかどうかを決定できます。 通常は、エンド ユーザーのアプリでは、ユーザー設定を尊重して、ユーザー自身が予期する形式でデータを表示する必要があります。
 
 ## <a name="see-also"></a>関連項目
 

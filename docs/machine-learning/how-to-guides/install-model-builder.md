@@ -5,12 +5,12 @@ author: luisquintanilla
 ms.author: luquinta
 ms.date: 06/21/2019
 ms.custom: mvc, how-to
-ms.openlocfilehash: 54ab595c56f816517180aab48022c7df207fe84d
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
+ms.openlocfilehash: b0d45ab7807bf84b98c58e85580d5aa04d0c5f7d
+ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410570"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71306324"
 ---
 # <a name="how-to-install-mlnet-model-builder"></a>ML.NET モデル ビルダーのインストール方法
 
@@ -43,15 +43,27 @@ ML.NET モデル ビルダーは、Visual Studio Marketplace または Visual St
 ### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 1. メニュー バーで、 **[ツール]**  >  **[拡張機能と更新プログラム]** の順に選択します
+
+    ![VS2017 の拡張機能マネージャー ダイアログを開く](./media/install-model-builder/vs2017-open-extensions-manager.png)
+
 1. *[拡張機能と更新プログラム]* プロンプト内で、 *[オンライン]* ノードを選択します
 1. 検索バーで「*ML.NET モデル ビルダー*」を検索し、結果から「ML.NET モデル ビルダー (Preview)」を選択します
+
+    ![VS2017 の拡張機能マネージャー ダイアログでモデル ビルダー拡張機能を検索してインストールする](./media/install-model-builder/vs2017-install-model-builder.png)
+
 1. プロンプトの指示に従って、インストールを行います
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
 1. メニュー バーで **[拡張機能]**  >  **[拡張機能の管理]** の順に選択します
+
+    ![VS2019 の拡張機能マネージャー ダイアログを開く](./media/install-model-builder/vs2019-open-extensions-manager.png)
+
 1. *[拡張機能と更新プログラム]* プロンプト内で、 *[オンライン]* ノードを選択します
 1. 検索バーに「*ML.NET モデル ビルダー*」と入力し、「ML.NET モデル ビルダー (Preview)」を選択します
+
+    ![VS2019 の拡張機能マネージャー ダイアログでモデル ビルダー拡張機能を検索してインストールする](./media/install-model-builder/vs2019-install-model-builder.png)
+
 1. プロンプトの指示に従って、インストールを行います
 
 ## <a name="uninstall"></a>[アンインストール]
@@ -59,15 +71,27 @@ ML.NET モデル ビルダーは、Visual Studio Marketplace または Visual St
 ### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 1. メニュー バーで、 **[ツール]**  >  **[拡張機能と更新プログラム]** の順に選択します
+
+    ![VS2017 の [拡張機能の管理] ダイアログを開く](./media/install-model-builder/vs2017-open-extensions-manager.png)
+
 1. *[拡張機能と更新プログラム]* プロンプト内で、 *[インストール済み]* ノードを展開し、 *[ツール]* を選択します
 1. ツールの一覧から「ML.NET モデル ビルダー (Preview)」を選択し、 *[アンインストール]* を選択します
+
+    ![VS2017 の拡張機能マネージャー ダイアログでモデル ビルダー拡張機能を検索してアンインストールする](./media/install-model-builder/vs2017-uninstall-model-builder.png)
+
 1. プロンプトの指示に従って、アンインストールを行います
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
 1. メニュー バーで **[拡張機能]**  >  **[拡張機能の管理]** の順に選択します
+
+    ![VS2019 の [拡張機能の管理] ダイアログを開く](./media/install-model-builder/vs2019-open-extensions-manager.png)
+
 1. *[拡張機能と更新プログラム]* プロンプト内で、 *[インストール済み]* ノードを展開し、 *[ツール]* を選択します
 1. ツールの一覧から「ML.NET モデル ビルダー (Preview)」を選択し、 *[アンインストール]* を選択します
+
+    ![VS2019 の拡張機能マネージャー ダイアログでモデル ビルダー拡張機能を検索してアンインストールする](./media/install-model-builder/vs2019-uninstall-model-builder.png)
+
 1. プロンプトの指示に従って、アンインストールを行います
 
 ## <a name="upgrade"></a>Upgrade

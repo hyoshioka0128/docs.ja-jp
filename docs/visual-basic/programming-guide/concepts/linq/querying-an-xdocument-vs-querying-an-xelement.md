@@ -1,15 +1,15 @@
 ---
-title: XDocument のクエリと (Visual Basic) を XElement のクエリ
+title: XDocument のクエリと XElement (Visual Basic) に対するクエリの実行
 ms.date: 07/20/2015
 ms.assetid: 2d111f84-0ded-4cde-8d93-5440557a726d
-ms.openlocfilehash: 500b1e58663ef6aca052850ad7994687e2cc36f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4aba08319abeb21de79b3b8511044b8272402984
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766494"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834946"
 ---
-# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a>XDocument のクエリと (Visual Basic) を XElement のクエリ
+# <a name="querying-an-xdocument-vs-querying-an-xelement-visual-basic"></a>XDocument のクエリと XElement (Visual Basic) に対するクエリの実行
 <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> によってドキュメントを読み込む場合、<xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> によって読み込む場合とは少し異なるクエリを記述する必要があることがわかります。  
   
 ## <a name="comparison-of-xdocumentload-and-xelementload"></a>XDocument.Load と XElement.Load の比較  
@@ -38,7 +38,7 @@ Next
   
  この例では、次の出力が生成されることが想定されます。  
   
-```  
+```console
 Querying tree loaded with XElement.Load  
 ----  
 <Child1>1</Child1>  
@@ -69,7 +69,7 @@ Next
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```console
 Querying tree loaded with XDocument.Load  
 ----  
 <Root>  
@@ -104,7 +104,7 @@ Next
   
  このクエリは、<xref:System.Xml.Linq.XElement> をルートとするツリーのクエリと同じように動作します。 この例では次の出力が生成されます。  
   
-```  
+```console
 Querying tree loaded with XDocument.Load  
 ----  
 <Child1>1</Child1>  

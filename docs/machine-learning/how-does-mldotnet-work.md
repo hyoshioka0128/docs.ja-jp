@@ -1,21 +1,23 @@
 ---
 title: ML.NET の概要とそのしくみ
 description: ML.NET を使用すると、オンラインまたはオフラインのどちらのシナリオでも、.NET アプリケーションに機械学習を追加できます。 この機能により、データを使った自動予測をアプリケーションで利用できるようになります。ML.NET を使うためにネットワークに接続する必要はありません。 この記事では、ML.NET の機械学習の基本について説明します。
-ms.date: 08/26/2019
+ms.date: 09/27/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: d49a4bdfec133fe805bc9d534e04edf2f9ca5726
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 1ae6b82ada841ad172cbe6a59b667aaaf619e714
+ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929409"
+ms.lasthandoff: 09/28/2019
+ms.locfileid: "71592046"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>ML.NET の概要とそのしくみ
 
-ML.NET を使用すると、オンラインまたはオフラインのどちらのシナリオでも、.NET アプリケーションに機械学習を追加できます。 この機能により、データを使った自動予測をアプリケーションで利用できるようになります。ネットワークに接続する必要はありません。 この記事では、ML.NET の機械学習の基本について説明します。 
+ML.NET を使用すると、オンラインまたはオフラインのどちらのシナリオでも、.NET アプリケーションに機械学習を追加できます。 この機能により、データを使った自動予測をアプリケーションで利用できるようになります。ネットワークに接続する必要はありません。 この記事では、ML.NET の機械学習の基本について説明します。
+
+ML.NET は、.NET Core を使用して Windows、Linux、macOS 上で動作します。また、.NET Framework を使用して Windows 上で動作します。 64 ビットはすべてのプラットフォームでサポートされています。 TensorFlow、LightGBM、および ONNX 関連の機能を除き、32 ビットは Windows 上でサポートされています。
 
 ML.NET を使用して作成できる予測の種類の例を次に示します。
 
@@ -125,7 +127,7 @@ ML.NET モデルは、予測される出力に到達するために入力デー�
 
 [データの準備方法](./how-to-guides/prepare-data-ml-net.md)に関する記事では、データ準備を適用する方法が全般的に説明されています。
 
-[使用可能なすべての変換](./resources/transforms.md) についての付録は、リソース セクションを参照してください。
+すべての[使用できる変換](./resources/transforms.md)の付録については、リソース セクションを参照してください。
 
 ## <a name="model-evaluation"></a>モデル評価
 
@@ -156,7 +158,7 @@ ML.NET モデルは、予測される出力に到達するために入力デー�
         // RMS error: 0.19
 ```
 
-評価メトリックから、誤差が少ないことと、予測される出力とテスト出力の間の相関度が高いことがわかります。 簡単ですね。 実際の例で優れたモデル メトリックを実現するには、さらに調整が必要です。
+評価メトリックから、誤差が少ないことと、予測される出力とテスト出力の間の相関度が高いことがわかります。 簡単でしたね。 実際の例で優れたモデル メトリックを実現するには、さらに調整が必要です。
 
 ## <a name="mlnet-architecture"></a>ML.NET のアーキテクチャ
 
@@ -175,8 +177,8 @@ ML.NET アプリケーションは <xref:Microsoft.ML.MLContext> オブジェク
 ||予測|<xref:Microsoft.ML.ForecastingCatalog>||
 ||ランキング|<xref:Microsoft.ML.RankingCatalog>||
 ||回帰|<xref:Microsoft.ML.RegressionCatalog>||
-||推奨事項|<xref:Microsoft.ML.RecommendationCatalog>|`Microsoft.ML.Recommender` NuGet パッケージを追加|
-||TimeSeries|<xref:Microsoft.ML.TimeSeriesCatalog>|`Microsoft.ML.TimeSeries` NuGet パッケージを追加|
+||推奨事項|<xref:Microsoft.ML.RecommendationCatalog>|`Microsoft.ML.Recommender` NuGet パッケージを取得する|
+||TimeSeries|<xref:Microsoft.ML.TimeSeriesCatalog>|`Microsoft.ML.TimeSeries` NuGet パッケージを取得する|
 |モデルの使用法 ||<xref:Microsoft.ML.ModelOperationsCatalog>||
 
 上記の各カテゴリの作成方法に移動できます。 Visual Studio を使用すると、IntelliSense を介してカタログが表示されます。

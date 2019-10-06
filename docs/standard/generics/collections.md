@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b0de14fd5d576774ed1605784f5f0c6b0fae2c8c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 51938dade8ebd1b84010533e04b26cf989ed5f24
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948921"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353946"
 ---
 # <a name="generic-collections-in-net"></a>.NET の汎用コレクション
 
@@ -40,7 +40,7 @@ ms.locfileid: "69948921"
  <xref:System.Nullable%601> ジェネリック構造体により、`null` が割り当て可能であるかのように値型を使用できます。 これは、値型が含まれるフィールドが欠落している可能性のあるデータベース クエリで作業するときに便利です。 ジェネリック型パラメーターには、任意の値型を指定できます。  
   
 > [!NOTE]
-> C# および Visual Basic には null 許容型の構文があるので、その言語では <xref:System.Nullable%601> を明示的に使用する必要はありません。 「[Null 許容型 (C# プログラミング ガイド)](../../csharp/programming-guide/nullable-types/index.md)」および「[null 許容値型 (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)」を参照してください。 
+> C# および Visual Basic には null 許容型の構文があるので、その言語では <xref:System.Nullable%601> を明示的に使用する必要はありません。 「[Null 許容値型 (C# プログラミング ガイド)](../../csharp/programming-guide/nullable-types/index.md)」および「[null 許容値型 (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)」を参照してください。
   
  <xref:System.ArraySegment%601> ジェネリック構造体は、任意の型の 0 から始まる 1 次元の配列内で、要素の範囲を区切る方法を提供します。 ジェネリック型パラメーターは、配列の要素の型です。  
   

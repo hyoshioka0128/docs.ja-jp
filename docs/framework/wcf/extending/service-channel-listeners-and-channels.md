@@ -2,12 +2,12 @@
 title: サービス:チャネル リスナーとチャネル
 ms.date: 03/30/2017
 ms.assetid: 8ccbe0e8-7e55-441d-80de-5765f67542fa
-ms.openlocfilehash: 0a740f5dcf682c3c140adb9c4c7c9678c4eae132
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4367d844867db7fdad013e30d047f9385addbce5
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70797173"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834797"
 ---
 # <a name="service-channel-listeners-and-channels"></a>サービス:チャネル リスナーとチャネル
 
@@ -25,21 +25,21 @@ ms.locfileid: "70797173"
 
 このプロセスは、概念上、各チャネル内のキューとしてモデル化できますが、実際には実装がキューを使用しない場合もあります。 チャネル リスナーには、下の層またはネットワークからメッセージを受信し、キューに配置する役割があります。 また、チャネルには、キューからメッセージを取得し、上の層から (たとえば、チャネル上で `Receive` を呼び出すことによって) メッセージが要求されたときにそのメッセージを渡す役割があります。
 
-WCF には、このプロセスの基底クラスヘルパーが用意されています。 (この記事で説明するチャネルヘルパークラスの図については、「[チャネルモデルの概要](channel-model-overview.md)」を参照してください)。
+WCF には、このプロセスの基底クラスヘルパーが用意されています。 この記事で説明するチャネルヘルパークラスの図については、「[チャネルモデルの概要](channel-model-overview.md)」を参照してください。
 
-- クラス<xref:System.ServiceModel.Channels.CommunicationObject>は、「[チャネルの開発](developing-channels.md)」の手順 2. で説明されているステートマシンを実装<xref:System.ServiceModel.ICommunicationObject>し、適用します。
+- @No__t-0 クラスは @no__t を実装し、「[チャネルの開発](developing-channels.md)」の手順 2. で説明されているステートマシンを適用します。
 
 - <xref:System.ServiceModel.Channels.ChannelManagerBase> クラスには <xref:System.ServiceModel.Channels.CommunicationObject> が実装され、<xref:System.ServiceModel.Channels.ChannelFactoryBase> と <xref:System.ServiceModel.Channels.ChannelListenerBase> の統合基本クラスが提供されます。 <xref:System.ServiceModel.Channels.ChannelManagerBase> クラスは、<xref:System.ServiceModel.Channels.ChannelBase> を実装する基本クラスである <xref:System.ServiceModel.Channels.IChannel> との組み合わせによって動作します。
 
-- クラス<xref:System.ServiceModel.Channels.ChannelFactoryBase>は、 <xref:System.ServiceModel.Channels.ChannelManagerBase>と<xref:System.ServiceModel.Channels.IChannelFactory>を実装し`CreateChannel` 、オーバーロードを`OnCreateChannel` 1 つの抽象メソッドに統合します。
+- @No__t-0 クラスは <xref:System.ServiceModel.Channels.ChannelManagerBase> と <xref:System.ServiceModel.Channels.IChannelFactory> を実装し、@no__t 3 つのオーバーロードを1つの @no__t 抽象メソッドに統合します。
 
 - <xref:System.ServiceModel.Channels.ChannelListenerBase> クラスは、<xref:System.ServiceModel.Channels.IChannelListener> を実装しています。 基本状態管理を行います。
 
-次の説明は、トランスポートに[基づいています。UDP](../samples/transport-udp.md)サンプル。
+次の説明は、@no__t 0Transport に基づいています。UDP](../samples/transport-udp.md)サンプル。
 
 ## <a name="creating-a-channel-listener"></a>チャネルリスナーの作成
 
-サンプル`UdpChannelListener`が実装するは、 <xref:System.ServiceModel.Channels.ChannelListenerBase>クラスから派生します。 単一の UDP ソケットを使用して、データグラムを受信します。 `OnOpen` メソッドは、非同期ループ内で UDP ソケットを使用してデータを受信します。 その後、メッセージ エンコーディング システムを使用して、データを次のようにメッセージに変換します。
+サンプルが実装する @no__t 0 は、<xref:System.ServiceModel.Channels.ChannelListenerBase> クラスから派生します。 単一の UDP ソケットを使用して、データグラムを受信します。 `OnOpen` メソッドは、非同期ループ内で UDP ソケットを使用してデータを受信します。 その後、メッセージ エンコーディング システムを使用して、データを次のようにメッセージに変換します。
 
 ```csharp
 message = UdpConstants.MessageEncoder.ReadMessage(
@@ -48,7 +48,7 @@ message = UdpConstants.MessageEncoder.ReadMessage(
 );
 ```
 
-複数のソースから到着するメッセージが同じデータグラム チャネルで表されるので、`UdpChannelListener` はシングルトン リスナーです。 このリスナーには、一度<xref:System.ServiceModel.Channels.IChannel>に1つのアクティブなが関連付けられています。 このサンプルでは、<xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> メソッドによって返されるチャネルがその後破棄される場合のみ、もう 1 つ生成されます。 メッセージが受信されると、このシングルトンチャネルにエンキューされます。
+複数のソースから到着するメッセージが同じデータグラム チャネルで表されるので、`UdpChannelListener` はシングルトン リスナーです。 同時にこのリスナーに関連付けられているアクティブな @no__t 0 は1つだけです。 このサンプルでは、<xref:System.ServiceModel.Channels.ChannelListenerBase%601.AcceptChannel%2A> メソッドによって返されるチャネルがその後破棄される場合のみ、もう 1 つ生成されます。 メッセージが受信されると、このシングルトンチャネルにエンキューされます。
 
 ### <a name="udpinputchannel"></a>UdpInputChannel
 

@@ -9,19 +9,19 @@ helpviewer_keywords:
 - switches element
 - trace switches, <switches> element
 ms.assetid: 4cf36786-b89a-40e2-a0f1-86bb9b783343
-ms.openlocfilehash: 92a1c8db43579048945d76082e3ebd2862efd7ed
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c161f842192396101dcc6850f3b3da328958eac3
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920436"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697084"
 ---
-# <a name="switches-element"></a>\<> 要素を切り替えます
+# <a name="switches-element"></a>\<switches > 要素
 トレース スイッチと、トレース スイッチを設定するレベルを保持します。  
   
- \<configuration>  
-\<system.diagnostics>  
-\<スイッチ >  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3 **\<switches >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -34,7 +34,7 @@ ms.locfileid: "69920436"
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- なし。  
+ [なし] :  
   
 ### <a name="child-elements"></a>子要素  
   
@@ -49,11 +49,11 @@ ms.locfileid: "69920436"
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`System.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
   
-## <a name="remarks"></a>Remarks  
- トレーススイッチのレベルは、構成ファイルに配置することによって変更できます。 スイッチがの<xref:System.Diagnostics.BooleanSwitch>場合は、オンまたはオフにすることができます。 スイッチがの<xref:System.Diagnostics.TraceSwitch>場合は、別のレベルを割り当てて、アプリケーションが出力するトレースメッセージまたはデバッグメッセージの種類を指定できます。  
+## <a name="remarks"></a>コメント  
+ トレーススイッチのレベルは、構成ファイルに配置することによって変更できます。 スイッチが @no__t 0 の場合は、オンまたはオフにすることができます。 スイッチが @no__t 0 の場合は、別のレベルを割り当てて、アプリケーションが出力するトレースメッセージまたはデバッグメッセージの種類を指定できます。  
   
 ## <a name="example"></a>例  
- 次の例では、  **\<switch >** `General`要素を使用してトレーススイッチを<xref:System.Diagnostics.TraceLevel>レベル`Data`に設定し、ブール型のトレーススイッチを有効にする方法を示します。  
+ 次の例では、 **\<switch >** 要素を使用して `General` トレーススイッチを <xref:System.Diagnostics.TraceLevel> レベルに設定し、@no__t ブールトレーススイッチを有効にする方法を示します。  
   
 ```xml  
 <configuration>  
@@ -72,3 +72,4 @@ ms.locfileid: "69920436"
 - <xref:System.Diagnostics.TraceSwitch>
 - <xref:System.Diagnostics.BooleanSwitch>
 - [トレースおよびデバッグ設定のスキーマ](index.md)
+ 

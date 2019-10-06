@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: f9e563cb87ee376e33442cdf718f70202d300f40
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 4fd8b679dcd4ac9efce5fa915118736b15206068
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895174"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834766"
 ---
 # <a name="duplex-services"></a>双方向サービス
 
@@ -93,4 +93,4 @@ binding.ClientBaseAddress = New Uri("http://localhost:8000/DuplexTestUsingCode/C
 
 - [二重](../samples/duplex.md)
 - [クライアントのランタイム動作の指定](../specifying-client-run-time-behavior.md)
-- [方法: チャネルファクトリを作成し、それを使用してチャネルを作成および管理する](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)
+- [2 つのオブジェクトが等しいかどうかをテストする方法チャネルファクトリを作成し、それを使用してチャネルを作成および管理する](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)

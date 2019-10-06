@@ -12,23 +12,23 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: e5cb1ddc130a8b1913f30b0d20d27941005dd9d3
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: c6028f524a16b836310f0c8d564205244515cdc9
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063256"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701281"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf 演算子 (Visual Basic)
-式の結果のランタイム型が型との互換性がかどうかを確認します。 指定された型。
+式の結果のランタイム型が、指定された型との間で型と互換性があるかどうかを確認します。
   
 ## <a name="syntax"></a>構文  
   
-```  
+```vb  
 result = TypeOf objectexpression Is typename  
 ```  
   
-```  
+```vb  
 result = TypeOf objectexpression IsNot typename  
 ```  
   
@@ -42,7 +42,7 @@ result = TypeOf objectexpression IsNot typename
  `typename`  
  必須。 任意のデータ型名。  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>コメント  
  `TypeOf` 演算子は、`objectexpression` の実行時の型が `typename` と互換性があるかどうかを調べます。 互換性は、`typename` の型のカテゴリに依存します。 互換性を決定する方法を次の表に示します。  
   
 |`typename` の型のカテゴリ|互換性の条件|  
@@ -66,7 +66,7 @@ result = TypeOf objectexpression IsNot typename
 
 - [Is 演算子](../../../visual-basic/language-reference/operators/is-operator.md)
 - [IsNot 演算子](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Visual Basic における比較演算子](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Visual Basic の比較演算子](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
 - [Visual Basic における演算子の優先順位](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [機能別の演算子一覧](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [演算子および式](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

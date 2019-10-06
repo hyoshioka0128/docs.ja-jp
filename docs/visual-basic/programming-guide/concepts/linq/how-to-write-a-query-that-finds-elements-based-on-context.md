@@ -2,12 +2,12 @@
 title: '方法: コンテキストに基づいて要素を検索するクエリを記述する (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 0b085290-ddc1-4126-aaa0-e4c95a3d9a09
-ms.openlocfilehash: 1743a0793a8b572cb212d45a31924fe8eb93bf45
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: a7661ea35ff829875ee4c625c45da533865fea9f
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710401"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835026"
 ---
 # <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>方法: コンテキストに基づいて要素を検索するクエリを記述する (Visual Basic)
 コンテキストに基づいて要素を選択するクエリの記述が必要になる場合があります。 つまり、前の兄弟要素や次の兄弟要素に基づいてフィルターしたり、 子要素や祖先要素に基づいてフィルターすることが必要になる場合が考えられます。  
@@ -51,7 +51,7 @@ Next
   
  このコードを実行すると、次の出力が生成されます。  
   
-```  
+```console  
 id = 1  
 id = 3  
 id = 6  
@@ -100,7 +100,7 @@ End Module
   
  このコードを実行すると、次の出力が生成されます。  
   
-```  
+```console  
 id = 1  
 id = 3  
 id = 6  

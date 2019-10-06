@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms, bi-directional support
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5615ec6125cf622d4d6cd72d219d13be4bd5b096
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: bb97d545da422a129ece1f432b3120e1a994c453
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040400"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956925"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Windows フォーム アプリケーションの双方向サポート
 Visual Studio を使用して、アラビア語やヘブライ語などの双方向 (右から左) の言語をサポートする Windows ベースのアプリケーションを作成できます。 これには、標準的なフォーム、ダイアログ ボックス、MDI フォームや、これらのフォームで操作できるすべてのコントロール、まり、<xref:System.Windows.Forms.Control> 名前空間のすべてのオブジェクトが含まれます。
@@ -23,7 +23,7 @@ Visual Studio を使用して、アラビア語やヘブライ語などの双方
  カルチャと UI カルチャの設定は、アプリケーションが日付、時刻、通貨、およびその他の情報をどのように操作するかを決定します。 双方向言語のカルチャおよび UI カルチャのサポートは、その他の言語と同じです。 詳細については、「[グローバル Windows フォームおよび web フォームのカルチャ固有のクラス](/visualstudio/ide/culture-specific-classes-for-global-windows-forms-and-web-forms)」を参照してください。
 
 ## <a name="righttoleft-and-righttoleftlayout-properties"></a>RightToLeft プロパティと RightToLeftLayout プロパティ
- フォームの派生元となる基底 <xref:System.Windows.Forms.Control> クラスには、フォームとコントロールの読み取り順序を変更するよう設定できる <xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティが含まれます。 フォームの <xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティを設定する場合、既定ではフォームのコントロールがこの設定を継承します。 ただし、ほとんどのコントロールで <xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティを個別に設定することもできます。 「 [方法:グローバリゼーション](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7d3337xw(v=vs.100))用に Windows フォームに右から左に記述されたテキストを表示します。
+ フォームの派生元となる基底 <xref:System.Windows.Forms.Control> クラスには、フォームとコントロールの読み取り順序を変更するよう設定できる <xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティが含まれます。 フォームの <xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティを設定する場合、既定ではフォームのコントロールがこの設定を継承します。 ただし、ほとんどのコントロールで <xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティを個別に設定することもできます。 @No__t を参照してください。グローバリゼーション @ no__t の Windows フォームに右から左に記述されたテキストを表示します。
 
  <xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティの影響は、コントロールごとに異なります。 一部のコントロールで、<xref:System.Windows.Forms.Button>、<xref:System.Windows.Forms.TreeView>、および <xref:System.Windows.Forms.ToolTip> の各コントロールの場合のように、プロパティでは読み取り順序のみを設定します。 その他のコントロールでは、<xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティが読み取り順序とレイアウトの両方を変更します。 これには、<xref:System.Windows.Forms.RadioButton>、<xref:System.Windows.Forms.ComboBox>、および <xref:System.Windows.Forms.CheckBox> の各コントロールが含まれます。 その他のコントロールには、右から左のレイアウトのミラーに適用される <xref:System.Windows.Forms.Form.RightToLeftLayout%2A> プロパティが必要です。 次の表は、<xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティと <xref:System.Windows.Forms.Form.RightToLeftLayout%2A> プロパティが個々 の Windows フォーム コントロールに影響する方法の詳細を示します。
 
@@ -37,49 +37,49 @@ Visual Studio を使用して、アラビア語やヘブライ語などの双方
 |<xref:System.Windows.Forms.ContextMenu>|RTL の読み取り順序で右揃えで表示|効果なし|いいえ|
 |<xref:System.Windows.Forms.DataGrid>|RTL の読み取り順序で右揃えで表示|効果なし|いいえ|
 |<xref:System.Windows.Forms.DataGridView>|RTL の読み取り順序とコントロールのレイアウトの両方に影響を与える|効果なし|いいえ|
-|<xref:System.Windows.Forms.DateTimePicker>|影響を受けません。オペレーティング システムの言語によって異なります|コントロールをミラーリングする|[はい]|
+|<xref:System.Windows.Forms.DateTimePicker>|影響を受けません。オペレーティング システムの言語によって異なります|コントロールをミラーリングする|はい|
 |<xref:System.Windows.Forms.DomainUpDown>|上矢印と下矢印ボタンを左揃え|効果なし|いいえ|
-|<xref:System.Windows.Forms.ErrorProvider>|サポートなし|効果なし|いいえ|
+|<xref:System.Windows.Forms.ErrorProvider>|サポートされていません|効果なし|いいえ|
 |<xref:System.Windows.Forms.FontDialog>|オペレーティング システムの言語によって異なります|効果なし|いいえ|
-|<xref:System.Windows.Forms.Form>|RTL の読み取り順序を設定し、スクロール バーを反転させる|フォームをミラー化する|[はい]|
+|<xref:System.Windows.Forms.Form>|RTL の読み取り順序を設定し、スクロール バーを反転させる|フォームをミラー化する|はい|
 |<xref:System.Windows.Forms.GroupBox>|キャプションが右揃えで表示されます。 子コントロールは、このプロパティを継承できます。|コントロール内で <xref:System.Windows.Forms.TableLayoutPanel> を使用して、右から左へのミラーリングをサポートする|いいえ|
 |<xref:System.Windows.Forms.HScrollBar>|右揃えのスクロール ボックス (つまみ) で始まる|効果なし|いいえ|
 |<xref:System.Windows.Forms.ImageList>|不要|効果なし|いいえ|
 |<xref:System.Windows.Forms.Label>|右揃えに表示されます。 <xref:System.Windows.Forms.Label.TextAlign%2A> および <xref:System.Windows.Forms.Label.ImageAlign%2A> を反転する|効果なし|いいえ|
 |<xref:System.Windows.Forms.LinkLabel>|右揃えに表示されます。 <xref:System.Windows.Forms.Label.TextAlign%2A> および <xref:System.Windows.Forms.Label.ImageAlign%2A> を反転する|効果なし|いいえ|
 |<xref:System.Windows.Forms.ListBox>|アイテムが右揃え|効果なし|いいえ|
-|<xref:System.Windows.Forms.ListView>|読み取り順序を RTL に設定し、要素は左揃えを維持する|コントロールをミラーリングする|[はい]|
+|<xref:System.Windows.Forms.ListView>|読み取り順序を RTL に設定し、要素は左揃えを維持する|コントロールをミラーリングする|はい|
 |<xref:System.Windows.Forms.MainMenu>|(デザイン時ではなく) 実行時に RTL の読み取り順序で右揃えの表示|効果なし|いいえ|
 |<xref:System.Windows.Forms.MaskedTextBox>|テキストが右から左へ表示されます。|効果なし|いいえ|
-|<xref:System.Windows.Forms.MonthCalendar>|影響を受けません。オペレーティング システムの言語によって異なります|コントロールをミラーリングする|[はい]|
-|<xref:System.Windows.Forms.NotifyIcon>|サポートされていません|サポートなし|いいえ|
+|<xref:System.Windows.Forms.MonthCalendar>|影響を受けません。オペレーティング システムの言語によって異なります|コントロールをミラーリングする|はい|
+|<xref:System.Windows.Forms.NotifyIcon>|サポートされていません|サポートされていません|いいえ|
 |<xref:System.Windows.Forms.NumericUpDown>|上矢印と下矢印ボタンを左揃え|効果なし|いいえ|
-|<xref:System.Windows.Forms.OpenFileDialog>|右から左に記述するオペレーティングシステムでは、ダイアログをローカライズ<xref:System.Windows.Forms.Control.RightToLeft>するため<xref:System.Windows.Forms.RightToLeft.Yes?displayProperty=nameWithType>に、含んでいるフォームのプロパティを設定します。 |効果なし|いいえ|
+|<xref:System.Windows.Forms.OpenFileDialog>|右から左に記述するオペレーティングシステムで、含まれるフォームの <xref:System.Windows.Forms.Control.RightToLeft> プロパティを @no__t に設定すると、ダイアログがローカライズされます。 |効果なし|いいえ|
 |<xref:System.Windows.Forms.PageSetupDialog>|影響を受けません。オペレーティング システムの言語によって異なります|効果なし|いいえ|
-|<xref:System.Windows.Forms.Panel>|子コントロールは、このプロパティを継承できます。|コントロール内で <xref:System.Windows.Forms.TableLayoutPanel> を使用して、右から左をサポートする|[はい]|
-|<xref:System.Windows.Forms.PictureBox>|サポートなし|効果なし|いいえ|
+|<xref:System.Windows.Forms.Panel>|子コントロールは、このプロパティを継承できます。|コントロール内で <xref:System.Windows.Forms.TableLayoutPanel> を使用して、右から左をサポートする|はい|
+|<xref:System.Windows.Forms.PictureBox>|サポートされていません|効果なし|いいえ|
 |<xref:System.Windows.Forms.PrintDialog>|影響を受けません。オペレーティング システムの言語によって異なります|効果なし|いいえ|
 |<xref:System.Drawing.Printing.PrintDocument>|垂直スクロール バーが左揃えになり、水平スクロール バーが左から開始|効果なし|いいえ|
-|<xref:System.Windows.Forms.PrintPreviewDialog>|サポートなし|サポートなし|いいえ|
-|<xref:System.Windows.Forms.ProgressBar>|このプロパティによる影響はなし|コントロールをミラーリングする|[はい]|
+|<xref:System.Windows.Forms.PrintPreviewDialog>|サポートされていません|サポートされていません|いいえ|
+|<xref:System.Windows.Forms.ProgressBar>|このプロパティによる影響はなし|コントロールをミラーリングする|はい|
 |<xref:System.Windows.Forms.RadioButton>|テキストの右側にラジオ ボタンが表示|効果なし|いいえ|
 |<xref:System.Windows.Forms.RichTextBox>|テキストを含むコントロールの要素が RTL の読み取り順序で右から左に表示される|効果なし|いいえ|
 |<xref:System.Windows.Forms.SaveFileDialog>|影響を受けません。オペレーティング システムの言語によって異なります|効果なし|いいえ|
 |<xref:System.Windows.Forms.SplitContainer>|パネルのレイアウトが反転され、垂直スクロール バーは左側に表示され、水平スクロール バーは右から始まる|<xref:System.Windows.Forms.TableLayoutPanel> を使用して、子コントロールの順序をミラーリングする|いいえ|
-|<xref:System.Windows.Forms.Splitter>|サポートなし|効果なし|いいえ|
+|<xref:System.Windows.Forms.Splitter>|サポートされていません|効果なし|いいえ|
 |<xref:System.Windows.Forms.StatusBar>|サポートされていません。代わりに <xref:System.Windows.Forms.StatusStrip> を使用|効果はありません。代わりに <xref:System.Windows.Forms.StatusStrip> を使用|いいえ|
-|<xref:System.Windows.Forms.TabControl>|このプロパティによる影響はなし|コントロールをミラーリングする|[はい]|
+|<xref:System.Windows.Forms.TabControl>|このプロパティによる影響はなし|コントロールをミラーリングする|はい|
 |<xref:System.Windows.Forms.TextBox>|RTL の読み取り順序で右から左へテキストが表示されます。|効果なし|いいえ|
 |<xref:System.Windows.Forms.Timer>|不要|不要|いいえ|
-|<xref:System.Windows.Forms.ToolBar>|このプロパティの夜影響はなし。代わりに <xref:System.Windows.Forms.ToolStrip> を使用|効果はありません。代わりに <xref:System.Windows.Forms.ToolStrip> を使用|[はい]|
+|<xref:System.Windows.Forms.ToolBar>|このプロパティの夜影響はなし。代わりに <xref:System.Windows.Forms.ToolStrip> を使用|効果はありません。代わりに <xref:System.Windows.Forms.ToolStrip> を使用|はい|
 |<xref:System.Windows.Forms.ToolTip>|RTL の読み取り順序を設定|効果なし|いいえ|
 |<xref:System.Windows.Forms.TrackBar>|スクロールやトラックは右から始まります。<xref:System.Windows.Forms.TrackBar.Orientation%2A> が垂直方向の場合、タイマー刻みは右から発生します。|効果なし|いいえ|
-|<xref:System.Windows.Forms.TreeView>|RTL の読み取り順序のみを設定|コントロールをミラーリングする|[はい]|
+|<xref:System.Windows.Forms.TreeView>|RTL の読み取り順序のみを設定|コントロールをミラーリングする|はい|
 |<xref:System.Windows.Forms.UserControl>|左側に垂直スクロール バーが表示され、水平スクロール バーは右側につまみがあります|直接サポートはありません。<xref:System.Windows.Forms.TableLayoutPanel> を使用します。|いいえ|
 |<xref:System.Windows.Forms.VScrollBar>|右側のスクロール可能なコントロールの代わりに左側に表示されます。|効果なし|いいえ|
 
-## <a name="encoding"></a>エンコード
- Windows フォームは Unicode をサポートするので、双方向のアプリケーションを作成するときに、任意の文字セットを含めることができます。 ただし、すべての Windows フォーム コントロールですべてのプラットフォームの Unicode をサポートするわけではありません。 詳細については、「[エンコード方式および Windows フォームのグローバリゼーション](encoding-and-windows-forms-globalization.md)」を参照してください。
+## <a name="encoding"></a>[エンコード]
+ Windows フォームは Unicode をサポートするので、双方向のアプリケーションを作成するときに、任意の文字セットを含めることができます。 ただし、すべての Windows フォーム コントロールですべてのプラットフォームの Unicode をサポートするわけではありません。
 
 ## <a name="gdi"></a>GDI+
  GDI + を使用して、右から左への読み取り順序でテキストを描画できます。 <xref:System.Drawing.Graphics.DrawString%2A> メソッドは、テキストの描画に使用され、テキストの原点を反転させるために、<xref:System.Drawing.StringFormatFlags> 列挙の <xref:System.Drawing.StringFormatFlags.DirectionRightToLeft> のメンバーを設定できる `StringFormat` パラメーターをサポートします。
@@ -120,4 +120,3 @@ Visual Studio を使用して、アラビア語やヘブライ語などの双方
 ## <a name="see-also"></a>関連項目
 
 - [ASP.NET Web アプリケーションに対する双方向サポート](https://docs.microsoft.com/previous-versions/aspnet/6eedwbtt(v=vs.100))
-- [Windows フォームアプリケーションのグローバル化](globalizing-windows-forms.md)

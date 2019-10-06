@@ -17,35 +17,37 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 52ba9d5bac5e772d721d38e4e8a7ba6757d0ae2e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 89df0e9be0600b51dcc8a68c5aba3f06e86e1b53
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747488"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700809"
 ---
 # <a name="icordebugcodegetsize-method"></a>ICorDebugCode::GetSize メソッド
-この"ICorDebugCode"で表されるバイナリ コードのバイト単位のサイズを取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```cpp  
-HRESULT GetSize (  
-    [out] ULONG32    *pcBytes  
-);  
-```  
-  
-## <a name="parameters"></a>パラメーター  
+
+この "コード" によって表されるバイナリコードのサイズ (バイト単位) を取得します。
+
+## <a name="syntax"></a>構文
+
+```cpp
+HRESULT GetSize (
+    [out] ULONG32    *pcBytes
+);
+```
+
+## <a name="parameters"></a>パラメーター
+
  `pcBytes`  
- [out]このコードのバイナリのバイト単位のサイズへのポインター`ICorDebugCode`オブジェクトが表す。  
-  
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
-  
- **ヘッダー:** CorDebug.idl、CorDebug.h  
-  
- **ライブラリ:** CorGuids.lib  
-  
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>関連項目
+ 入出力この @no__t 0 オブジェクトが表すバイナリコードのサイズ (バイト単位) へのポインター。
+
+## <a name="requirements"></a>要件
+
+ **・** [システム要件](../../get-started/system-requirements.md)に関するページを参照してください。
+
+ **ヘッダー:** CorDebug .idl、CorDebug. h
+
+ **ライブラリ**CorGuids .lib
+
+ **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ 

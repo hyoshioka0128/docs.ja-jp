@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 2dd10c0843b2bea4755d5f4f0aceea6509c7cf46
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 38b935814d713284dae1ca931b90c63bbcac332b
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054262"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216896"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>チュートリアル: ML.NET で事前トレーニング済みの TensorFlow モデルを使用して映画レビューのセンチメントを分析する
 
@@ -21,6 +21,7 @@ ms.locfileid: "71054262"
 
 このチュートリアルでは、次の作業を行う方法について説明します。
 > [!div class="checklist"]
+>
 > * 事前トレーニング済みの TensorFlow モデルを読み込む
 > * Web サイトのコメント テキストをモデルに適したフィーチャーに変換する
 > * モデルを使用して予測する
@@ -120,7 +121,7 @@ ms.locfileid: "71054262"
     [!code-csharp[Prediction](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#Prediction "Declare prediction class")]
 
     `MovieReviewSentimentPrediction` はモデルのトレーニング後に使用される予測クラスです。 `MovieReviewSentimentPrediction` には、1 つの `float` 配列 (`Prediction`) と `VectorType` 属性が含まれます。
-    
+
 ### <a name="create-the-mlcontext-lookup-dictionary-and-action-to-resize-features"></a>MLContext、検索ディクショナリ、フィーチャーのサイズを変更するアクションを作成する
 
 [MLContext クラス](xref:Microsoft.ML.MLContext)は、すべての ML.NET 操作の始点です。 `mlContext` を初期化することで、モデル作成ワークフローのオブジェクト間で共有できる新しい ML.NET 環境が作成されます。 これは Entity Framework における `DBContext` と概念的には同じです。
@@ -191,7 +192,7 @@ ms.locfileid: "71054262"
 
 1. パイプラインからモデルを作成するためのコードを追加します。
 
-    [!code-csharp[SnippetCreateModel](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#SnippetCreateModel)]  
+    [!code-csharp[SnippetCreateModel](~/samples/machine-learning/tutorials/TextClassificationTF/Program.cs#SnippetCreateModel)]
 
     ML.NET モデルは、`Fit` メソッドを呼び出すことによって、パイプラインのエスティメーターのチェーンから作成されます。 この場合、TensorFlow モデルは既に以前トレーニングされているため、モデルを作成するためのデータを調整することはありません。 `Fit` メソッドの要件を満たすために、空のデータ ビュー オブジェクトを提供します。
 
@@ -200,10 +201,10 @@ ms.locfileid: "71054262"
 1. `PredictSentiment` メソッドを `Main` メソッドの下に追加します。
 
     ```csharp
-        public static void PredictSentiment(MLContext mlContext, ITransformer model)
-        {
+    public static void PredictSentiment(MLContext mlContext, ITransformer model)
+    {
 
-        }
+    }
     ```
 
 1. 次のコードを追加して、`PredictionEngine` を `PredictSentiment()` メソッドの 1 行目として作成します。
@@ -241,8 +242,8 @@ ms.locfileid: "71054262"
 結果は以下のようになるはずです。 処理中にメッセージが表示されます。 警告または処理メッセージが表示されることがありますが、 わかりやすくするために、これらのメッセージは次の結果から削除してあります。
 
 ```console
-   Number of classes: 2
-   Is sentiment/review positive ? Yes
+Number of classes: 2
+Is sentiment/review positive ? Yes
 ```
 
 おめでとうございます! これで、ML.NET で事前トレーニング済みの `TensorFlow` モデルを再利用することにより、メッセージのセンチメントを分類および予測するための機械学習モデルをビルドできました。
@@ -251,6 +252,7 @@ ms.locfileid: "71054262"
 
 このチュートリアルでは、次の作業を行う方法を学びました。
 > [!div class="checklist"]
+>
 > * 事前トレーニング済みの TensorFlow モデルを読み込む
 > * Web サイトのコメント テキストをモデルに適したフィーチャーに変換する
 > * モデルを使用して予測する

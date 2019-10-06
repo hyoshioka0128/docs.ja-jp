@@ -4,12 +4,12 @@ description: このトピックでは、Visual Studio for Mac と .NET Core を�
 author: mairaw
 ms.date: 07/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: ff508bbe8d72a88ea32adfbed984d4e9e8b8e7ca
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 77e676c327b62369e7ddb9444bf8f246d3c5c2e8
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925823"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182498"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Visual Studio for Mac を使用した macOS での .NET Core の概要
 
@@ -25,7 +25,7 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
 「[Mac における .NET Core の前提条件](../macos-prerequisites.md)」のトピックをご覧ください。
 
-サポートされているバージョンの .NET Core を使用していることを確認するには、「[.NET Core サポート](https://docs.microsoft.com/visualstudio/mac/net-core-support?view=vsmac-2019)」ガイドを参照してください。
+サポートされているバージョンの .NET Core を使用していることを確認するには、「[.NET Core サポート](/visualstudio/mac/net-core-support)」の記事を参照してください。
 
 ## <a name="get-started"></a>作業開始
 

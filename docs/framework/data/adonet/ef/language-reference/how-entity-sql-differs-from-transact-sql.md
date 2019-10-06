@@ -2,12 +2,12 @@
 title: Entity SQL と Transact-SQL の相違点
 ms.date: 03/30/2017
 ms.assetid: 9c9ee36d-f294-4c8b-a196-f0114c94f559
-ms.openlocfilehash: e809cea2f853eed51d28e55f81a411f7af2e5a33
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: e0af0a415d812337d6abf449e9ee170526c3df0c
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854473"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833722"
 ---
 # <a name="how-entity-sql-differs-from-transact-sql"></a>Entity SQL と Transact-SQL の相違点
 このトピックでは、 [!INCLUDE[esql](../../../../../../includes/esql-md.md)]と transact-sql の違いについて説明します。  
@@ -18,7 +18,7 @@ ms.locfileid: "70854473"
  継承を操作するときは、スーパータイプ インスタンスのコレクションからサブタイプのインスタンスを選択すると便利である場合がよくあります。 (シーケンス`oftype`のC#場合[!INCLUDE[esql](../../../../../../includes/esql-md.md)]と同様に) の[oftype](oftype-entity-sql.md)演算子は、この機能を提供します。  
   
 ## <a name="support-for-collections"></a>コレクションのサポート  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]コレクションをファーストクラスのエンティティとして扱います。 例:  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]コレクションをファーストクラスのエンティティとして扱います。 以下に例を示します。  
   
 - コレクションの式は、`from` 句内で有効です。  
   
@@ -37,7 +37,7 @@ ms.locfileid: "70854473"
   
  次の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリはすべて有効です。  
   
-```  
+```sql  
 1+2 *3  
 "abc"  
 row(1 as a, 2 as b)  
@@ -72,33 +72,33 @@ set(e1)
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、`group by` 句を伴うクエリにも制限を課しています。 このような`select`クエリの`having`句および句内の式`group by`は、そのエイリアスを使用してのみキーを参照できます。 次のコンストラクトは Transact-sql では有効ですが、に[!INCLUDE[esql](../../../../../../includes/esql-md.md)]はありません。  
   
-```  
-select t.x + t.y from T as t group by t.x + t.y  
+```sql  
+SELECT t.x + t.y FROM T AS t group BY t.x + t.y
 ```  
   
  これを [!INCLUDE[esql](../../../../../../includes/esql-md.md)] で実行するには、次のように指定します。  
   
-```  
-select k from T as t group by (t.x + t.y) as k  
+```sql  
+SELET k FROM T AS t GROUP BY (t.x + t.y) AS k
 ```  
   
 ## <a name="referencing-columns-properties-of-tables-collections"></a>テーブル (コレクション) の列 (プロパティ) の参照  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 内の列の参照は、すべてテーブルの別名を使用して修飾する必要があります。 次のコンストラクト (はテーブル`a` `T`の有効な列であると仮定) は transact-sql では有効ですが[!INCLUDE[esql](../../../../../../includes/esql-md.md)]、では有効ではありません。  
   
-```  
-select a from T  
+```sql  
+SELECT a FROM T
 ```  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] の形式は次のとおりです。  
   
-```  
-select t.a as A from T as t  
+```sql  
+SELECT t.a AS A FROM T AS t
 ```  
   
  テーブルの別名は `from` 句では省略できます。 テーブル名は暗黙的な別名として使用されます。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では次の形式も使用できます。  
   
-```  
-select Tab.a from Tab  
+```sql  
+SELET Tab.a FROM Tab
 ```  
   
 ## <a name="navigation-through-objects"></a>オブジェクト間の移動  
@@ -106,7 +106,7 @@ select Tab.a from Tab
   
  たとえば、`p` が Person 型の式である場合、この人の住所の市区町村を参照するには次の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 構文が使用されます。  
   
-```  
+```sql  
 p.Address.City   
 ```  
   
@@ -120,46 +120,46 @@ p.Address.City
 ## <a name="changes-to-group-by"></a>Group By への変更  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では `group by` キーの別名定義をサポートしています。 `select`句`group by`および`having`句内の式は、これらのエイリアスを使用してキーを参照する必要があります。 たとえば、次のような [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 構文があるとします。  
   
-```  
-select k1, count(t.a), sum(t.a)  
-from T as t  
-group by t.b + t.c as k1  
+```sql  
+SELECT k1, count(t.a), sum(t.a)
+FROM T AS t
+GROUP BY t.b + t.c AS k1
 ```  
   
  ...は、次の Transact-sql に相当します。  
   
-```  
-select b + c, count(*), sum(a)   
-from T  
-group by b + c  
+```sql  
+SELECT b + c, count(*), sum(a)
+FROM T
+GROUP BY b + c
 ```  
   
 ## <a name="collection-based-aggregates"></a>コレクションベースの集計  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、2 種類の集計をサポートしています。  
   
- コレクションベースの集計は、コレクションに対して演算を行い、集計結果を生成します。 これらはクエリ内の任意の場所で使用でき、`group by` 句を必要としません。 次に例を示します。  
+ コレクションベースの集計は、コレクションに対して演算を行い、集計結果を生成します。 これらはクエリ内の任意の場所で使用でき、`group by` 句を必要としません。 以下に例を示します。  
   
-```  
-select t.a as a, count({1,2,3}) as b from T as t     
+```sql  
+SELECT t.a AS a, count({1,2,3}) AS b FROM T AS t
 ```  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、SQL スタイルの集計もサポートしています。 次に例を示します。  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、SQL スタイルの集計もサポートしています。 以下に例を示します。  
   
-```  
-select a, sum(t.b) from T as t group by t.a as a  
+```sql  
+SELECT a, sum(t.b) FROM T AS t GROUP BY t.a AS a
 ```  
   
 ## <a name="order-by-clause-usage"></a>ORDER BY 句の使用法  
- Transact-sql では、最上位の SELECT. でのみ ORDER BY 句を指定できます。 FROM .. WHERE ブロックでのみ指定できます。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、入れ子になった ORDER BY 式を使用でき、それをクエリ内の任意の場所に配置できますが、入れ子になったクエリ内の順序は保持されません。  
+Transact-sql では、最上位の `SELECT .. FROM .. WHERE` ブロックにのみ `ORDER BY` 句を指定できます。 @No__t 0 では、入れ子になった `ORDER BY` 式を使用でき、クエリ内の任意の場所に配置できますが、入れ子になったクエリの順序は保持されません。  
   
-```  
+```sql  
 -- The following query will order the results by the last name  
 SELECT C1.FirstName, C1.LastName  
-        FROM AdventureWorks.Contact as C1  
+        FROM AdventureWorks.Contact AS C1
         ORDER BY C1.LastName  
 ```  
   
-```  
+```sql  
 -- In the following query ordering of the nested query is ignored.  
 SELECT C2.FirstName, C2.LastName  
     FROM (SELECT C1.FirstName, C1.LastName  
@@ -176,7 +176,7 @@ SELECT C2.FirstName, C2.LastName
  DML  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)]では、DML ステートメント (insert、update、delete) は現在サポートされていません。  
   
- DDL  
+ DDL (DDL)  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] の現在のバージョンでは DDL はサポートされていません。  
   
  命令型プログラミング  
@@ -197,16 +197,16 @@ SELECT C2.FirstName, C2.LastName
  クエリ結果のバッチ処理  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、クエリ結果のバッチ処理はサポートされていません。 たとえば、有効な Transact-sql (バッチとして送信) は次のようになります。  
   
-```  
-select * from products;  
-select * from catagories;  
+```sql  
+SELECT * FROM products;
+SELECT * FROM catagories;
 ```  
   
  ただし、同等の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] はサポートされていません。  
   
-```  
-Select value p from Products as p;  
-Select value c from Categories as c;  
+```sql  
+SELECT value p FROM Products AS p;
+SELECT value c FROM Categories AS c;
 ```  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] は、コマンドごとに 1 つの結果生成クエリ ステートメントのみをサポートします。  

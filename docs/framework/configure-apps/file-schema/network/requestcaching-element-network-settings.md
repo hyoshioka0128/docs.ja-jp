@@ -8,19 +8,19 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: 2a3d0b182acad2351ed095934ca97c6194d344fc
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: f0979d2e0caeb0b22b90572aef0ad53235020f1d
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659131"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697826"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching> 要素 (ネットワーク設定)
 ネットワーク要求のキャッシュメカニズムを制御します。  
   
- \<configuration>  
-\<system.net>  
-\<requestCaching>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t @ no__t-2 @ no__t-3 **\<requestCaching >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -42,7 +42,7 @@ ms.locfileid: "69659131"
   
 |属性|説明|  
 |---------------|-----------------|  
-|`isPrivateCache`|キャッシュがさまざまなユーザーの情報の分離を提供するかどうかを指定します。 既定値は `true` です。 中間層アプリケーションの`false`場合は、この値をにする必要があります。|  
+|`isPrivateCache`|キャッシュがさまざまなユーザーの情報の分離を提供するかどうかを指定します。 既定値は `true` です。 中間層アプリケーションでは、この値は `false` にする必要があります。|  
 |`disableAllCaching`|すべての Web 応答に対してキャッシュを無効にし、プログラムでオーバーライドすることはできないことを指定します。|  
 |`defaultPolicyLevel`|<xref:System.Net.Cache.RequestCacheLevel> 列挙値の値の 1 つ。 既定値は `BypassCache` です。|  
 |`unspecifiedMaximumAge`|コンテンツが期限切れとしてマークされるまでの既定の時間を指定します。|  

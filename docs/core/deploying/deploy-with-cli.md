@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: a72e5e557cd3aa098b674bffd277e3cc6da99d33
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 00064b774145e7267fe26b31ef3bba4d5271a5c3
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59306067"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181511"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>CLI を使用して .NET Core アプリを公開する
 
@@ -59,7 +59,7 @@ CLI の使用方法について簡単にわかるヘルプをお探しですか�
 
 ## <a name="sample-app"></a>サンプル アプリ
 
-次のいずれかのアプリを使用して、公開コマンドを確認できます。 ターミナルで次のコマンドを実行すると、アプリが作成されます。
+次のアプリを使用して、公開コマンドを確認できます。 ターミナルで次のコマンドを実行すると、アプリが作成されます。
 
 ```dotnetcli
 mkdir apptest1
@@ -128,14 +128,13 @@ FDE の公開では、アプリが実行されるシステムで使用できる�
 
 `dotnet publish` コマンドで次のスイッチを使用して、FDE を公開する必要があります (現在のプラットフォームをターゲットにするときの .NET Core 3.x を除きます)。
 
-- `-r <RID>`
-  このスイッチでは、識別子 (RID) を使用してターゲット プラットフォームを指定します。 ランタイム識別子の一覧については、[ランタイム識別子 (RID) のカタログ](../rid-catalog.md)に関する記事をご覧ください。
+- `-r <RID>` このスイッチでは、識別子 (RID) を使用してターゲット プラットフォームを指定します。 ランタイム識別子の一覧については、[ランタイム識別子 (RID) のカタログ](../rid-catalog.md)に関する記事をご覧ください。
 
 - `--self-contained false` このスイッチでは、識別子 (RID) を使用してターゲット プラットフォームを指定します。
 
-`-r` スイッチを使用すると常に、出力フォルダーが次のパスに変わります:  `./bin/<BUILD-CONFIGURATION>/<TFM>/<RID>/publish/`
+`-r` スイッチを使用すると常に、出力フォルダーのパスが `./bin/<BUILD-CONFIGURATION>/<TFM>/<RID>/publish/` に変わります
 
-[アプリの例](#sample-app)を使用する場合は、`dotnet publish -f netcoreapp2.2 -r win10-x64 --self-contained false` を実行します。 このコマンドでは、次の実行可能ファイルが作成されます:  `./bin/Debug/netcoreapp2.2/win10-x64/publish/apptest1.exe`
+[アプリの例](#sample-app)を使用する場合は、`dotnet publish -f netcoreapp2.2 -r win10-x64 --self-contained false` を実行します。 このコマンドでは、実行可能ファイル `./bin/Debug/netcoreapp2.2/win10-x64/publish/apptest1.exe` が作成されます
 
 > [!NOTE]
 > **グローバリゼーション インバリアント モード**を有効にすることで、展開の合計サイズを小さくすることができます。 このモードは、全世界を意識するものではなく、[インバリアント カルチャ](xref:System.Globalization.CultureInfo.InvariantCulture)の書式設定規則、大文字/小文字の区別規則、文字列比較、並べ替え順序を使用できるアプリケーションにとって便利です。 **グローバリゼーション インバリアント モード**の詳細と、それを有効にする方法については、「[.NET Core Globalization Invariant Mode](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md)」(.NET Core のグローバリゼーション インバリアント モード) をご覧ください
@@ -148,8 +147,7 @@ SCD の公開で作成されるアプリでは、使用可能な最新の .NET C
 
 `dotnet publish` コマンドで次のスイッチを使用して、SCD を公開する必要があります。
 
-- `-r <RID>`
-  このスイッチでは、識別子 (RID) を使用してターゲット プラットフォームを指定します。 ランタイム識別子の一覧については、[ランタイム識別子 (RID) のカタログ](../rid-catalog.md)に関する記事をご覧ください。
+- `-r <RID>` このスイッチでは、識別子 (RID) を使用してターゲット プラットフォームを指定します。 ランタイム識別子の一覧については、[ランタイム識別子 (RID) のカタログ](../rid-catalog.md)に関する記事をご覧ください。
 
 - `--self-contained true` このスイッチでは、SCD として実行可能ファイルを作成するよう .NET Core SDK に指示されます。
 

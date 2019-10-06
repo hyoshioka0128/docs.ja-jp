@@ -1,14 +1,13 @@
 ---
 title: .NET Core について
 description: .NET Core について説明します。
-author: richlander
-ms.date: 08/01/2018
-ms.openlocfilehash: ea9253bacf2bcee63430cd45f2a9ed412ce629e7
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.date: 09/17/2019
+ms.openlocfilehash: 1baad9d6611a4c4340012b9a467d3499ad9ab834
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849132"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181924"
 ---
 # <a name="about-net-core"></a>.NET Core について
 
@@ -24,7 +23,14 @@ ms.locfileid: "70849132"
 
 ## <a name="languages"></a>言語
 
-.NET Core のアプリケーションとライブラリを記述するには、C#、Visual Basic および F# 言語を使用できます。 これらの言語は、[Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)、[Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)、Sublime Text、Vim などの好きなテキスト エディターや IDE に統合することができます。 この統合は、一部は [OmniSharp](https://www.omnisharp.net/) と [Ionide](http://ionide.io) のプロジェクトの優れた要員によって提供されます。
+.NET Core のアプリケーションとライブラリを記述するには、C#、Visual Basic および F# 言語を使用できます。 これらの言語は、任意のテキスト エディターまたは統合開発環境 (IDE) で使用できます。これには次のものが含まれます。
+
+- [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
+- [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+- サブライム テキスト
+- Vim
+ 
+この統合は、[OmniSharp](https://www.omnisharp.net/) および [Ionide](http://ionide.io) プロジェクトの共同作成者によって、一部提供されています。
 
 ## <a name="apis"></a>API
 
@@ -63,11 +69,11 @@ ms.locfileid: "70849132"
 
 ### <a name="open-source"></a>ソースを開く
 
-[.NET Core](https://github.com/dotnet/core) はオープン ソース ([MIT ライセンス](https://github.com/dotnet/core/blob/master/LICENSE.TXT)) であり、2014 年に Microsoft によって [.NET Foundation](https://dotnetfoundation.org) に提供されたものです。 現在では、最もアクティブな .NET Foundation プロジェクトの 1 つとなっています。 個人、学術、商用などの目的で、個人および企業が自由に採用できます。 複数の企業が、アプリ、ツール、新しいプラットフォーム、およびホスティング サービスの一部として .NET Core を使用しています。 これらの企業の一部は、GitHub の .NET Core に多大な貢献をしており、[.NET Foundation テクニカル ステアリング グループ](https://dotnetfoundation.org/blog/tsg-welcome)の一員として製品の方向性に関するガイダンスを提供しています。
+[.NET Core](https://github.com/dotnet/core) はオープン ソース ([MIT ライセンス](https://github.com/dotnet/core/blob/master/LICENSE.TXT)) であり、2014 年に Microsoft によって [.NET Foundation](https://dotnetfoundation.org) に提供されたものです。 現在では、最もアクティブな .NET Foundation プロジェクトの 1 つとなっています。 個人、学術、商用などの目的で、個人および企業が使用できます。 複数の企業が、アプリ、ツール、新しいプラットフォーム、およびホスティング サービスの一部として .NET Core を使用しています。 これらの企業の一部は、GitHub の .NET Core に多大な貢献をしており、[.NET Foundation テクニカル ステアリング グループ](https://dotnetfoundation.org/blog/tsg-welcome)の一員として製品の方向性に関するガイダンスを提供しています。
 
 ### <a name="designed-for-adaptability"></a>適応できる設計
 
-.NET Core は、その他の .NET 製品と非常に似ているがユニークな製品としてビルドされています。 新しいプラットフォームとワークロードへの広範な適応性を可能にするように設計されています。 複数の OS および CPU ポートを使用でき、さらに多くの OS に移植できます。
+.NET Core は、その他の .NET 製品と比較すると非常に似ているがユニークな製品としてビルドされています。 新しいプラットフォームとワークロードに幅広く適応できるように設計されており、複数の OS および CPU ポートを使用できます (また、移植先が増える可能性があります)。
 
 この製品は複数の部分に分割されており、さまざまな時間で新しいプラットフォームにさまざまな部分を適応させることができます。 ランタイムとプラットフォーム固有の基本的なライブラリは、ユニットとして移植する必要があります。 プラットフォームに依存しないライブラリは、構造により、すべてのプラットフォームでそのまま機能します。 開発者の効率性を高めるために、プロジェクトではプラットフォーム固有の実装を低減する傾向にあり、その方向でアルゴリズムまたは API を完全または部分的に実装できる場合は、プラットフォームに依存しない C# コードが常に優先されます。
 
@@ -95,8 +101,8 @@ Windows 実装と Unix 実装はほぼ同じサイズです。 CoreFX は、[Mic
 
 .NET Core と .NET Framework の主な違いは、次のとおりです。
 
-- **アプリ モデル** -- .NET Core は一部の .NET Framework アプリ モデルをサポートしていません。 具体的には、ASP.NET Web フォームと ASP.NET MVC はサポートしませんが、ASP.NET Core MVC をサポートしています。 [.NET Core 3 が WPF と Windows フォームをサポートする](https://devblogs.microsoft.com/dotnet/net-core-3-and-support-for-windows-desktop-applications/)ことが発表されています。
-- **API** -- .NET Core には、ファクタリングが異なる (アセンブリ名が異なる、型に対して公開されているメンバーが主要なケースで異なる) .NET Framework 基本クラス ライブラリの大規模なサブセットが含まれています。 この相違によって、ポートの発信元を .NET Core に変更しなければならない場合があります ([microsoft/dotnet-apiport](https://github.com/microsoft/dotnet-apiport) を参照)。 .NET Core は [.NET Standard](../standard/net-standard.md) API 仕様を実装します。
+- **アプリ モデル** -- .NET Core は一部の .NET Framework アプリ モデルをサポートしていません。 具体的には、ASP.NET Web フォームと ASP.NET MVC はサポートしませんが、ASP.NET Core MVC をサポートしています。 また、.Net Core 3.0 以降、.NET Core は Windows 上の WPF と Windows フォームのみをサポートしています。
+- **API** -- .NET Core には、ファクタリングが異なる (アセンブリ名が異なる、型に対して公開されているメンバーが主要なケースで異なる) .NET Framework 基本クラス ライブラリの大規模なサブセットが含まれています。 場合によっては、これらの違いにより、.NET Core へのポート ソースの変更が必要になることがあります。 詳細については、[.NET Portability Analyzer](../standard/analyzers/portability-analyzer.md) に関するページを参照してください。 .NET Core は [.NET Standard](../standard/net-standard.md) API 仕様を実装します。
 - **サブシステム** -- .NET Core は、より単純な実装とプログラミング モデルを目的として、.NET Framework 内のサブシステムのサブセットを実装します。 たとえば、コード アクセス セキュリティ (CAS) はサポートされていませんが、リフレクションはサポートされています。
 - **プラットフォーム** -- .NET Framework は Windows と Windows Server をサポートしており、.NET Core は macOS と Linux もサポートしています。
 - **オープン ソース** -- .NET Core はオープン ソースであり、[.NET Framework の読み取り専用のサブセット](https://github.com/microsoft/referencesource)はオープン ソースです。
@@ -107,12 +113,22 @@ Windows 実装と Unix 実装はほぼ同じサイズです。 CoreFX は、[Mic
 
 ### <a name="comparison-with-mono"></a>Mono との比較
 
-[Mono](https://www.mono-project.com/) は、オリジナルのクロスプラットフォームおよび[オープン ソース](https://github.com/mono/mono)の .NET 実装であり、2004 年に登場しました。 .NET Framework のコミュニティの複製として考えることができます。 Mono プロジェクト チームは、互換性のある実装を提供するために、Microsoft によって発行されたオープン [.NET standards](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (特に ECMA 335) に依存していました。
+[Mono](https://www.mono-project.com/) は .NET の元のクロスプラットフォームです。 .NET Framework の[オープンソース]([open-source](https://github.com/mono/mono))の代替として始まり、iOS および Android デバイスが普及するにつれてモバイル デバイスをターゲットとするように移行してきました。 .NET Framework のコミュニティの複製として考えることができます。 Mono プロジェクト チームは、互換性のある実装を提供するために、Microsoft によって発行されたオープン [.NET standards](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (特に ECMA 335) に依存していました。
 
 .NET Core と .NET Mono の主な違いは、次のとおりです。
 
-- **アプリモデル** -- Mono は、Xamarin 製品を介して .NET Framework アプリモデル (たとえば、Windows フォーム) のサブセットおよびいくつかの追加のアプリモデル (たとえば、[Xamarin.iOS](https://www.xamarin.com/platform)) をサポートしています。 .NET Core はこれらをサポートしていません。
+- **アプリモデル** -- Mono は、Xamarin 製品を介して .NET Framework アプリモデル (たとえば、Windows フォーム) のサブセット、およびモバイル開発用のいくつかの追加のもの (たとえば、[Xamarin.iOS](https://www.xamarin.com/platform)) をサポートしています。 .NET Core では、Xamarin をサポートしていません。
 - **API** -- Mono は、.NET Framework API の[大規模なサブセット](http://docs.go-mono.com/?link=root%3a%2fclasslib)をサポートしており、同じアセンブリ名およびファクタリングを使用します。
 - **プラットフォーム** -- Mono は、さまざまなプラットフォームおよび CPU をサポートしています。
 - **オープン ソース** --Mono と .NET Core は両方とも MIT ライセンスを使用しており、.NET Foundation プロジェクトです。
 - **フォーカス** -- 近年、Mono はモバイル プラットフォームに重点を置いており、.NET Core はクラウドとデスクトップのワークロードを重視しています。
+
+## <a name="the-future"></a>将来
+
+.NET 5 は .NET Core の次期リリースであり、プラットフォームの統合を表していることが発表されました。 このプロジェクトは、次のいくつかの主要な方法で .NET を改善することを目的としています。
+
+- 共通のランタイム動作と開発者エクスペリエンスを備えた、あらゆる場所で使用できる 1 つの .NET ランタイムとフレームワークを生成します。
+- .Net Core、.NET Framework、Xamarin、Mono を最大限に活用して .NET の機能を拡張します。
+- 開発者 (Microsoft とコミュニティ) が連携して取り組んで拡張し、すべてのシナリオを向上させることができる単一のコードベースから製品を構築します。
+
+.NET 5 向けの計画内容の詳細については、「[Introducing .NET 5](https://devblogs.microsoft.com/dotnet/introducing-net-5/)」(.NET 5 の概要) を参照してください。

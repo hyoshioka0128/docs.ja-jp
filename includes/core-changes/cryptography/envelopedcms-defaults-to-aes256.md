@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7682eae5a28d4ef87d6622b775e0f2f9408bcbae
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: b965c3a975b0f2cadd906799fef1665261d96d6e
+ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117142"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71182020"
 ---
 ### <a name="envelopedcms-defaults-to-aes-256-encryption"></a>EnvelopedCms が AES-256 暗号化を既定で使用
 

@@ -3,12 +3,12 @@ title: WIF 3.5 でビルドされたアプリケーションを WIF 4.5 に移�
 ms.date: 03/30/2017
 ms.assetid: 7a32fe6e-5f68-4693-9371-19411fa8063c
 author: BrucePerlerMS
-ms.openlocfilehash: 3ba99a061d060ebe7740fe61846c3684b5c3085d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 645fd09de91d8190384faea9df2ef18511162c2f
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045479"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834519"
 ---
 # <a name="guidelines-for-migrating-an-application-built-using-wif-35-to-wif-45"></a>WIF 3.5 でビルドされたアプリケーションを WIF 4.5 に移行するためのガイドライン
 
@@ -110,7 +110,7 @@ Visual Studio の Extensions and Updates Manager から Identity and Access Tool
 
 - スタンドアロンのフェデレーション ユーティリティ (FedUtil) は WIF 4.5 では使用できません。 Identity and Access Tool を使用して、構成ファイルを変更し、ID 管理を STS に外部委託できます。
 
-Id およびアクセス ツールの詳細については、「[Identity and Access Tool for Visual Studio 2012](identity-and-access-tool-for-vs.md)」 (Visual Studio 2012 の ID およびアクセス ツール) を参照してください。
+Id およびアクセスツールの詳細については、「 [Visual Studio 2012 用 id およびアクセスツール](identity-and-access-tool-for-vs.md)」を参照してください。
 
 <a name="BKMK_ToolingChanges"></a>
 

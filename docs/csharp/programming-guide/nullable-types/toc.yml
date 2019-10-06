@@ -1,7 +1,7 @@
-- name: Null 許容型
+- name: null 許容値型
   href: index.md
   items:
-    - name: Null 許容型の使用
+    - name: Null 許容値型の使用
       href: using-nullable-types.md
-    - name: '方法: Null 許容型を識別する'
+    - name: '方法: Null 許容値型を識別する'
       href: how-to-identify-a-nullable-type.md

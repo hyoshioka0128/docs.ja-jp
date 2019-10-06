@@ -1,17 +1,17 @@
 ---
 title: C# 8.0 の新機能 - C# ガイド
-description: C# 8.0 で使用できる新しい機能の概要を説明します。 この記事は、プレビュー 5 での最新のものです。
+description: C# 8.0 で使用できる新しい機能の概要を説明します。
 ms.date: 09/20/2019
-ms.openlocfilehash: a434d1f7598bc3f6787f7466e48fb161db192761
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: ee0f6c9d7cfbe829508e3e0900e249c204266ca3
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182405"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396026"
 ---
 # <a name="whats-new-in-c-80"></a>C# 8.0 の新機能
 
-C# 言語では、既に試すことができる多くの機能強化が行われています。
+C# 8.0 では、C# 言語に次の機能と機能強化が追加されています。
 
 - [読み取り専用メンバー](#readonly-members)
 - [既定のインターフェイス メンバー](#default-interface-members)
@@ -30,9 +30,6 @@ C# 言語では、既に試すことができる多くの機能強化が行わ�
 - [構築されたアンマネージド型](#unmanaged-constructed-types)
 - [入れ子になった式の stackalloc](#stackalloc-in-nested-expressions)
 - [verbatim 補間文字列の拡張](#enhancement-of-interpolated-verbatim-strings)
-
-> [!NOTE]
-> この記事の最後の更新は、C# 8.0 プレビュー 5 に関するものです。
 
 この記事の以降では、これらの機能について簡単に説明します。 詳細な記事がある場合は、それらのチュートリアルと概要へのリンクが提供されています。 `dotnet try` グローバル ツールを使って、これらの機能をご自身の環境で調べることができます。
 
@@ -190,7 +187,7 @@ public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
 
 ### <a name="tuple-patterns"></a>タプル パターン
 
-いくつかのアルゴリズムは複数の入力に依存しています。 **タプル パターン**を使うと、[タプル](../tuples.md)として表現された複数の値に基づいて切り替えを行うことができます。  "*rock、paper、scissors (じゃんけん)* " ゲーム用の switch 式を示すコードを以下に示します。
+いくつかのアルゴリズムは複数の入力に依存しています。 **タプル パターン**を使うと、[タプル](../tuples.md)として表現された複数の値に基づいて切り替えを行うことができます。  "*rock、paper、scissors (じゃんけん)*" ゲーム用の switch 式を示すコードを以下に示します。
 
 ```csharp
 public static string RockPaperScissors(string first, string second)
@@ -378,18 +375,18 @@ await foreach (var number in GenerateSequence())
 
 ## <a name="indices-and-ranges"></a>インデックスと範囲
 
-範囲とインデックスでは、配列、[文字列](../language-reference/builtin-types/reference-types.md#the-string-type)、<xref:System.Span%601>、または <xref:System.ReadOnlySpan%601> 内の部分範囲を指定するための簡潔な構文が提供されます。
+インデックスと範囲には、シーケンス内の 1 つの要素または範囲にアクセスできる簡潔な構文が用意されています。
 
 この言語のサポートでは、次の 2 つの新しい型と 2 つの新しい演算子を使用しています。
 
 - <xref:System.Index?displayProperty=nameWithType> はシーケンスとしてインデックスを表します。
-- `^` 演算子。シーケンスの末尾から相対的なインデックスを指定します。
+- index from end 演算子の `^`。シーケンスの末尾から相対的なインデックスを指定します。
 - <xref:System.Range?displayProperty=nameWithType> はシーケンスのサブ範囲を表します。
-- 範囲演算子 (`..`)。範囲の先頭と末尾をそのオペランドとして指定します。
+- 範囲演算子の `..`。範囲の先頭と末尾をそのオペランドとして指定します。
 
 インデックスのルールから始めましょう。 配列 `sequence` を考えます。 `0` インデックスは `sequence[0]` と同じです。 `^0` インデックスは `sequence[sequence.Length]` と同じです。 `sequence[sequence.Length]` と同様に、`sequence[^0]` は例外をスローすることに注意してください。 任意の数値 `n` の場合、インデックス `^n` は `sequence.Length - n` と同じです。
 
-範囲は、範囲の*先頭*と*末尾*を指定します。 範囲の先頭は包含ですが、範囲の末尾は排他です。つまり、"*先頭*" は範囲に含まれますが、"*末尾*" は範囲に含まれません。 範囲 `[0..^0]` は、`[0..sequence.Length]` が範囲全体を表すのと同じように、範囲全体を表します。 
+範囲は、範囲の*先頭*と*末尾*を指定します。 範囲の先頭は包含ですが、範囲の末尾は排他です。つまり、"*先頭*" は範囲に含まれますが、"*末尾*" は範囲に含まれません。 範囲 `[0..^0]` は、`[0..sequence.Length]` が範囲全体を表すのと同じように、範囲全体を表します。
 
 いくつか例を見てみましょう。 先頭および末尾からのインデックスの注釈が付けられた、次のような配列について考えます。
 
@@ -447,6 +444,8 @@ Range phrase = 1..4;
 ```csharp
 var text = words[phrase];
 ```
+
+配列でインデックスと範囲がサポートされるだけではありません。 [string](../language-reference/builtin-types/reference-types.md#the-string-type)、<xref:System.Span%601>、または <xref:System.ReadOnlySpan%601> と共にインデックスと範囲を使用することもできます。 詳細については、「[インデックスと範囲の型のサポート](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges)」を参照してください。
 
 チュートリアルでのインデックスと範囲について詳しくは、「[Indices and ranges (インデックスと範囲)](../tutorials/ranges-indexes.md)」で調べることができます。
 

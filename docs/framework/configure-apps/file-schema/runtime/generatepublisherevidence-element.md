@@ -14,11 +14,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70252532"
 ---
-# <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence > 要素
+# <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> 要素
 ランタイムがコードアクセスセキュリティ<xref:System.Security.Policy.Publisher> (CAS) の証拠を作成するかどうかを指定します。  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<ランタイム >** ](runtime-element.md)\
+&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<generatePublisherEvidence>**  
   
 ## <a name="syntax"></a>構文  

@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-ms.openlocfilehash: 93d02618ff19f431b3602e74478337f6918df289
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 42177f22e632e4a05b1f0b4d934f3e56ab9ff0f2
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665163"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698567"
 ---
-# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>式を再帰的には、包含するプロパティを呼び出す '\<propertyname >'
-内のステートメント、`Set`プロパティ定義のプロシージャは、プロパティの名前に、値を格納します。  
+# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>式は、含んでいるプロパティ ' \<propertyname > ' を再帰的に呼び出します
+プロパティ定義の @no__t 0 プロシージャ内のステートメントは、プロパティの名前に値を格納します。  
   
- プロパティの値を保持するための推奨アプローチが定義するには、`Private`プロパティのコンテナーに変数を両方で使用、`Get`と`Set`プロシージャ。 `Set`プロシージャこれで受信した値を格納し、`Private`変数。  
+ プロパティの値を保持するには、プロパティのコンテナーで @no__t 0 変数を定義し、@no__t と @no__t の両方のプロシージャで使用することをお勧めします。 @No__t-0 プロシージャは、この `Private` 変数に入力値を格納する必要があります。  
   
- `Get`プロシージャと同様に動作を`Function`プロシージャ、プロパティ名に値を代入し、発生してコントロールを返すため、`End Get`ステートメント。 ただしを含めるにはお勧め、`Private`変数の値として、 [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)します。  
+ @No__t-0 プロシージャは、`Function` プロシージャと同じように動作するので、`End Get` ステートメントを検出することによって、プロパティ名に値を割り当て、制御を返すことができます。 ただし、@no__t 0 の変数を[Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)の値として含めることをお勧めします。  
   
- `Set`プロシージャと同様に動作を`Sub`プロシージャで、値は返されません。 そのため、プロシージャまたはプロパティ名には内で特別な意味がない、`Set`して、プロシージャに値を格納ことはできません。  
+ @No__t-0 プロシージャは、値を返さない `Sub` プロシージャと同じように動作します。 したがって、プロシージャまたはプロパティの名前は @no__t 0 プロシージャ内では特別な意味を持たず、値を格納することはできません。  
   
- 次の例は、推奨されるアプローチを続けて、このエラーを引き起こす可能性のある方法を示しています。  
+ 次の例では、このエラーの原因となる可能性がある方法を示し、その後に推奨される方法を示します。  
   
-```  
+```vb  
 Public Class illustrateProperties  
 ' The code in the following property causes this error.  
     Public Property badProp() As Char  
@@ -61,7 +61,7 @@ End Class
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 前の例に示すように推奨されるアプローチを使用するプロパティの定義を書き直してください。  
+- 前の例に示されているように、推奨される方法を使用するようにプロパティ定義を書き直してください。  
   
 ## <a name="see-also"></a>関連項目
 

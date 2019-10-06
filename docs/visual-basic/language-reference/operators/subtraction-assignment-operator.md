@@ -10,39 +10,39 @@ helpviewer_keywords:
 - operator -=
 - compound assignment statements [Visual Basic]
 ms.assetid: 5ead0c37-ae50-48f7-8435-8e341d81cae1
-ms.openlocfilehash: be1ff4f10f6b30d8448d2441ee3ad2c1e2f80e2d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f857c8bf2f89120e047c49674ce9e8a3bff22f7d
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013492"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701315"
 ---
 # <a name="--operator-visual-basic"></a>-= 演算子 (Visual Basic)
-変数またはプロパティの値から式の値を減算し、結果を変数またはプロパティに代入します。  
+変数またはプロパティの値から式の値を減算し、その結果を変数またはプロパティに代入します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```vb  
 variableorproperty -= expression  
 ```  
   
 ## <a name="parts"></a>指定項目  
  `variableorproperty`  
- 必須。 任意の数値型の変数またはプロパティ。  
+ 必須。 任意の数値変数またはプロパティ。  
   
  `expression`  
  必須。 任意の数式。  
   
-## <a name="remarks"></a>Remarks  
- 左側にある要素、`-=`演算子は、単純なスカラー変数、プロパティ、または配列の要素。 変数またはプロパティにすることはできません[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)します。  
+## <a name="remarks"></a>コメント  
+ @No__t-0 演算子の左側の要素は、単純なスカラー変数、プロパティ、または配列の要素にすることができます。 変数またはプロパティを[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)にすることはできません。  
   
- `-=`演算子は最初変数または (演算子の左側にある) のプロパティの値から (演算子の右側にある) の式の値を減算します。 演算子は、変数またはプロパティに、その操作の結果を割り当てます。  
+ @No__t-0 演算子は、演算子の左側の変数またはプロパティの値から (演算子の右側にある) 式の値を最初に減算します (演算子の左辺の)。 次に、演算子は、その操作の結果を変数またはプロパティに代入します。  
   
 ## <a name="overloading"></a>オーバーロード  
- [-演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-operator.md)を指定できます*オーバー ロードされた*、つまり、ことクラスまたは構造体を再定義できますその動作はそのクラスまたは構造体の型。 オーバー ロード、`-`演算子の動作に影響、`-=`演算子。 コードで使用する場合`-=`クラスまたは構造体をオーバー ロードで`-`、再定義された動作を確認してください。 詳細については、「 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+ [-演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-operator.md)は*オーバーロード*できます。つまり、クラスまたは構造体がそのクラスまたは構造体の型を持つ場合に、クラスまたは構造体がその動作を再定義できます。 @No__t-0 演算子のオーバーロードは、`-=` 演算子の動作に影響します。 コードで `-` をオーバーロードするクラスまたは構造体に @no__t 0 を使用している場合は、再定義された動作を理解していることを確認してください。 詳細については、「 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次の例では、 `-=` 1 を減算する演算子を`Integer`から別の変数と、その結果、後者の変数を割り当てる。  
+ 次の例では、`-=` 演算子を使用して、1つの @no__t 変数を別の変数から減算し、その結果を後者の変数に代入します。  
   
  [!code-vb[VbVbalrOperators#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#11)]  
   

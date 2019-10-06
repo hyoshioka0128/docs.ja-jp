@@ -2,12 +2,12 @@
 title: Docker アプリの内部ループ開発ワークフロー
 description: Docker アプリケーションの開発の "内部ループ" ワークフローについて説明します。
 ms.date: 02/15/2019
-ms.openlocfilehash: ce573546f61b98c2f93e998203497fa949e9efe8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 04e1b29e6a0cef89df05cc9124806c74a38b5249
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673979"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71214360"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Docker アプリの内部ループ開発ワークフロー
 
@@ -47,8 +47,7 @@ Docker をプロセスとして活用する内部ループ開発ワークフロ�
 
 Mac または Windows 向けの最新版 Docker を使用すると、Docker アプリケーションをもっと簡単に開発できます。設定も簡単です。
 
-> [!情報]
->
+> [!TIP]
 > Docker for Windows の設定方法については、<https://docs.docker.com/docker-for-windows/> にお進みください。
 >
 >Docker for Mac の設定方法については、<https://docs.docker.com/docker-for-mac/> にお進みください。
@@ -57,8 +56,7 @@ Mac または Windows 向けの最新版 Docker を使用すると、Docker ア�
 
 Microsoft からは Visual Studio Code が提供されます。これは Mac、Windows、Linux でサポートされている軽量のコード エディターであり、IntelliSense、[さまざまな言語のサポート](https://code.visualstudio.com/docs/languages/overview) (JavaScript、.NET、Go、Java、Ruby、Python、ほとんどの新しい言語)、[デバッグ](https://code.visualstudio.com/Docs/editor/debugging)、[Git との統合](https://code.visualstudio.com/Docs/editor/versioncontrol)、[拡張機能サポート](https://code.visualstudio.com/docs/extensions/overview)を提供します。 このエディターは、Mac および Linux の開発者に最適です。 Windows でも、完全な Visual Studio アプリケーションを使用できます。
 
-> [!情報]
->
+> [!TIP]
 > Windows、Mac、Linux 向けの Visual Studio Code をインストールする方法については、<https://code.visualstudio.com/docs/setup/setup-overview/> にお進みください。
 >
 > Docker for Mac の設定方法については、<https://docs.docker.com/docker-for-mac/> にお進みください。
@@ -94,7 +92,6 @@ Docker 拡張機能をインストールするには、Ctrl + Shift + P キー�
 `DockerFile` は通常、アプリまたはサービスのルート フォルダーに配置され、そのアプリまたはサービスを設定し、実行する方法を Docker に認識させるための必須のコマンドが含まれています。 `DockerFile` を作成し、コード (node.js や .NET Core など) とともにプロジェクトに追加できます。この環境が初めての場合、次のヒントをご覧ください。
 
 > [!TIP]
->
 > Docker コンテナーに関連する `Dockerfile` および `docker-compose.yml` ファイルを使用するとき、Docker 拡張機能を利用してガイドを表示することができます。 最終的には、このツールなしでこの種類のファイルを記述することになるでしょうが、Docker 拡張機能の使用は学習曲線を加速するので、開始点として推奨されます。
 
 図 4-24 では、VS Code 用 Docker 拡張機能で docker-compose ファイルが追加される様子を確認できます。
@@ -133,8 +130,7 @@ DockerFile では、実行時に使用する TCP ポートをリッスンする�
 
 使用している言語とフレームワークによっては、Dockerfile に別の構成設定を指定できます。 たとえば、`["dotnet", "MySingleContainerWebApp.dll"]` を含む `ENTRYPOINT` 行では、.NET Core アプリケーションを実行するように Docker に指示します。 SDK と .NET Core CLI (`dotnet CLI`) を使用して .NET アプリケーションをビルドし、実行する場合、この設定は異なるものになります。 ここで重要なことは、ENTRYPOINT 行とその他の設定はアプリケーションに選択した言語とプラットフォームに依存するということです。
 
-> [!情報]
->
+> [!TIP]
 > .NET Core アプリケーション向け Docker イメージのビルド方法については、<https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images> にお進みください。
 >
 > 独自のイメージをビルドする方法については、<https://docs.docker.com/engine/tutorials/dockerimages/> にお進みください。
@@ -154,7 +150,6 @@ Docker の[この記事](https://docs.docker.com/engine/userguide/eng-image/base
 アプリを構成するカスタム サービスごとに、関連イメージを作成する必要があります。 アプリが 1 つのサービスまたは Web アプリで構成されている場合、イメージは 1 つのみ必要です。
 
 > [!NOTE]
->
 > "外部ループ DevOps ワークフロー" を考慮すると、イメージがソース コードからそのグローバル環境で作成されるよう、ソース コードを Git リポジトリにプッシュするたびに (継続的インテグレーション)、自動化されたビルド プロセスによってイメージが作成されます。
 >
 > ただし、その外部ループ ルートに進むことを検討する前に、正しく動作しないコードがソース コントロール システム (Git など) にプッシュされることがないよう、Docker アプリケーションが実際に正しく動作することを確認する必要があります。

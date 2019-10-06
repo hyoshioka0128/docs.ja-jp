@@ -1,22 +1,22 @@
 ---
-title: '方法: 多くのファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割します。'
+title: '方法: グループを使用してファイルを複数のファイルに分割する (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-ms.openlocfilehash: 3c3d0d4d8c45ba2d7016636f0272ace0fdc6ffa3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e12de7380ca34478506fde98aecae2501d2529ee
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592483"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835111"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>方法: 多くのファイルのファイル グループ (LINQ) (Visual Basic) を使用して分割します。
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>方法: グループを使用してファイルを複数のファイルに分割する (LINQ) (Visual Basic)
 この例では、2 つのファイルの内容をマージし、新しい方法でデータを整理する一連の新しいファイルを作成するための、1 つの方法を示します。  
   
 ### <a name="to-create-the-data-files"></a>データ ファイルを作成するには  
   
 1. 次の名前を names1.txt という名前のテキスト ファイルにコピーし、プロジェクト フォルダーに保存します。  
   
-    ```  
+    ```text  
     Bankov, Peter  
     Holm, Michael  
     Garcia, Hugo  
@@ -31,7 +31,7 @@ ms.locfileid: "65592483"
   
 2. 次の名前を names2.txt という名前のテキスト ファイルにコピーし、プロジェクト フォルダーに保存します。2 つのファイルには、共通の名前がいくつか含まれていることに注意してください。  
   
-    ```  
+    ```text  
     Liu, Jinghao  
     Bankov, Peter  
     Holm, Michael  
@@ -116,7 +116,7 @@ End Class
  このプログラムは、データ ファイルとしてグループごとに異なるファイルを同じフォルダーに書き込みます。  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
-VB.NET コンソール アプリケーション プロジェクトを作成、 `Imports` System.Linq 名前空間のステートメント。
+VB.NET コンソールアプリケーションプロジェクトを作成します。これには、名前空間の @no__t 0 ステートメントを使用します。
   
 ## <a name="see-also"></a>関連項目
 

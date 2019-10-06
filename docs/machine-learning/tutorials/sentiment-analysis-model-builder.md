@@ -1,17 +1,17 @@
 ---
 title: 'チュートリアル: センチメントの分析 - 二項分類'
 description: このチュートリアルでは、Web サイトのコメントのセンチメントを分類して適切なアクションを実行する Razor Pages アプリケーションの作成方法について説明します。 この二項センチメント分類子では、Visual Studio の C# を使用します。
-ms.date: 09/13/2019
+ms.date: 09/26/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c6184e097daf4604173db9e2a34606e68eb0fdc8
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0878a9318e7c60be29eeac9fb4efd47e408ab660
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054274"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332575"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>チュートリアル: ML.NET モデル ビルダーを使用して Web アプリケーションで Web サイトのコメントのセンチメントを分析する
 
@@ -22,13 +22,14 @@ ms.locfileid: "71054274"
 このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
-> * ASP.NET Core Razor Pages アプリケーションを作成する
-> * データを準備して理解する
-> * シナリオを選択する
-> * データを読み込む
-> * モデルをトレーニングする
-> * モデルを評価する
-> * モデルを使用して予測を行う
+>
+> - ASP.NET Core Razor Pages アプリケーションを作成する
+> - データを準備して理解する
+> - シナリオを選択する
+> - データを読み込む
+> - モデルをトレーニングする
+> - モデルを評価する
+> - モデルを使用して予測を行う
 
 > [!NOTE]
 > モデル ビルダーは現在のところ、プレビュー段階です。
@@ -43,17 +44,17 @@ ms.locfileid: "71054274"
 
 1. **ASP.NET Core Razor Pages アプリケーション**を作成します。
 
-    1. Visual Studio を開いて、メニュー バーで **[ファイル]、[新規]、[プロジェクト]** の順に選択します。 
-    1. [新しいプロジェクト] ダイアログで、 **[Visual C#]** ノードを選択し、 **[Web]** ノードを選択します。 
-    1. 次に、 **[ASP.NET Core Web アプリケーション]** プロジェクト テンプレートを選択します。 
+    1. Visual Studio を開いて、メニュー バーで **[ファイル]、[新規]、[プロジェクト]** の順に選択します。
+    1. [新しいプロジェクト] ダイアログで、**[Visual C#]** ノードを選択し、**[Web]** ノードを選択します。
+    1. 次に、**[ASP.NET Core Web アプリケーション]** プロジェクト テンプレートを選択します。
     1. **[名前]** テキスト ボックスに「SentimentRazor」と入力します。
-    1. **[ソリューションのディレクトリの作成]** チェックボックスは、既定でオンになっています。 オンになっていない場合は、オンにします。 
-    1. **[OK]** ボタンを選択します。
-    1. さまざまな種類の ASP.NET Core プロジェクトが表示されているウィンドウで、 **[Web アプリケーション]** を選択し、 **[OK]** ボタンを選択します。
+    1. **[ソリューションのディレクトリの作成]** チェックボックスは、既定でオンになっています。 オンになっていない場合は、オンにします。
+    1. [**OK**] ボタンを選択します。
+    1. さまざまな種類の ASP.NET Core プロジェクトが表示されているウィンドウで、**[Web アプリケーション]** を選択し、**[OK]** ボタンを選択します。
 
 ## <a name="prepare-and-understand-the-data"></a>データを準備して理解する
 
-[Wikipedia detox データセット](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)をダウンロードします。 Web ページが開いたら、そのページを右クリックして、 **[名前を付けて保存]** を選択し、コンピューター上の任意の場所にファイルを保存します。 
+[Wikipedia detox データセット](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)をダウンロードします。 Web ページが開いたら、そのページを右クリックして、**[名前を付けて保存]** を選択し、コンピューター上の任意の場所にファイルを保存します。
 
 *wikipedia-detox-250-line-data.tsv* データセットの各行は、ユーザーが Wikipedia に残した異なるレビューを表します。 最初の列は、テキストのセンチメントを表し (0 は無害、1 は有害)、2 番目の列はユーザーが残したコメントを表します。 列はタブで区切られます。 データは次のようになります。
 
@@ -65,12 +66,12 @@ ms.locfileid: "71054274"
 
 ## <a name="choose-a-scenario"></a>シナリオを選択する
 
-![](./media/sentiment-analysis-model-builder/model-builder-screen.png)
+![Visual Studio のモデル ビルダー ウィザード](./media/sentiment-analysis-model-builder/model-builder-screen.png)
 
-モデルをトレーニングするには、モデル ビルダーによって提供される機械学習シナリオの一覧から選択する必要があります。 
+モデルをトレーニングするには、モデル ビルダーによって提供される機械学習シナリオの一覧から選択する必要があります。
 
-1. **ソリューション エクスプローラー**で、 *[SentimentRazor]* プロジェクトを右クリックし、 **[追加]**  >  **[機械学習]** の順に選択します。
-1. このサンプルのシナリオは、センチメント分析です。 モデル ビルダー ツールの "*シナリオ*" の手順で、 **[センチメント分析]** シナリオを選択します。
+1. **ソリューション エクスプローラー**で、*[SentimentRazor]* プロジェクトを右クリックし、**[追加]** > **[機械学習]** の順に選択します。
+1. このサンプルのシナリオは、センチメント分析です。 モデル ビルダー ツールの "*シナリオ*" の手順で、**[センチメント分析]** シナリオを選択します。
 
 ## <a name="load-the-data"></a>データを読み込む
 
@@ -78,14 +79,15 @@ ms.locfileid: "71054274"
 
 1. モデル ビルダー ツールのデータの手順で、データ ソースのドロップダウンから **[ファイル]** を選択します。
 1. **[ファイルの選択]** テキスト ボックスの横にあるボタンを選択し、エクスプローラーを使用してファイルを参照し、*wikipedia-detox-250-line-data.tsv* ファイルを選択します。
-1. **[Label or Column to Predict]\(予測するラベルまたは列\)** ドロップダウンで **[センチメント]** を選択します。
+1. **[Column to Predict (Label)]\(予測する列 (ラベル)\)** ドロップダウンで **[センチメント]** を選択します。
+1. **[Input Columns (Features)]\(入力列 (特徴)\)** ドロップダウンは既定値のままにします。
 1. **[トレーニング]** リンクを選択して、モデル ビルダー ツールの次の手順に進みます。
 
 ## <a name="train-the-model"></a>モデルをトレーニングする
 
 このチュートリアルで、価格予測モデルのトレーニングに使用する機械学習のタスクは、二項分類です。 モデルのトレーニング プロセス中、モデル ビルダーは、データセットに対して最もパフォーマンスの優れたモデルを見つけるために、さまざまな二項分類アルゴリズムと設定を使用して個々のモデルをトレーニングします。
 
-モデルのトレーニングに必要な時間は、データの量に比例します。 モデル ビルダーにより、 **[Time to train (seconds)]\(トレーニング時間 (秒)\)** の既定値が、データ ソースのサイズに基づいて自動的に選択されます。 
+モデルのトレーニングに必要な時間は、データの量に比例します。 モデル ビルダーにより、**[Time to train (seconds)]\(トレーニング時間 (秒)\)** の既定値が、データ ソースのサイズに基づいて自動的に選択されます。
 
 1. モデル ビルダーによって **[トレーニング時間 (秒)]** の値が 10 秒に設定しますが、30 秒に増加します。 トレーニング時間が長いほど、モデル ビルダーは最良のモデルの検索の中で、より多くのアルゴリズムやパラメーターの組み合わせを調べることができます。
 1. **[Start Training]\(トレーニング開始\)** を選択します。
@@ -97,13 +99,13 @@ ms.locfileid: "71054274"
     - [Best algorithm]\(最良のアルゴリズム\) には、これまでにモデル ビルダーで見つかった最良のパフォーマンスのアルゴリズムの名前が表示されます。
     - [Last algorithm]\(最後のアルゴリズム\) には、モデル ビルダーがモデルのトレーニングに最近使用したアルゴリズムの名前が表示されます。
 
-1. トレーニングが完了したら、 **[評価]** リンクを選択して、次の手順に進みます。
+1. トレーニングが完了したら、**[評価]** リンクを選択して、次の手順に進みます。
 
 ## <a name="evaluate-the-model"></a>モデルを評価する
 
-トレーニングの手順の結果が、最良のパフォーマンスだった 1 つのモデルになります。 モデル ビルダー ツールの評価の手順の出力セクションには、 **[Best Model]\(最良のモデル\)** エントリの最良のパフォーマンスのモデルで使用されたアルゴリズムと、 **[Best Model Quality (RSquared)]\(最良のモデル品質 (RSquared)\)** のメトリックが含まれます。 また、概要テーブルには上位 5 つのモデルとそのメトリックが含まれています。
+トレーニングの手順の結果が、最良のパフォーマンスだった 1 つのモデルになります。 モデル ビルダー ツールの評価の手順の出力セクションには、**[Best Model]\(最良のモデル\)** エントリの最良のパフォーマンスのモデルで使用されたアルゴリズムと、**[Best Model Quality (RSquared)]\(最良のモデル品質 (RSquared)\)** のメトリックが含まれます。 また、概要テーブルには上位 5 つのモデルとそのメトリックが含まれています。
 
-精度のメトリックに不満がある場合、モデルのトレーニング時間を増やすか、さらに多くのデータを使用すると、モデルの精度を簡単に高めることができます。 それ以外の場合、 **[コード]** リンクを選択して、モデル ビルダー ツールの最後の手順に進みます。
+精度のメトリックに不満がある場合、モデルのトレーニング時間を増やすか、さらに多くのデータを使用すると、モデルの精度を簡単に高めることができます。 それ以外の場合、**[コード]** リンクを選択して、モデル ビルダー ツールの最後の手順に進みます。
 
 ## <a name="add-the-code-to-make-predictions"></a>予測を行うコードを追加する
 
@@ -111,42 +113,32 @@ ms.locfileid: "71054274"
 
 ### <a name="reference-the-trained-model"></a>トレーニング済みモデルの参照
 
-1. モデル ビルダー ツールの "*コード*" の手順で、 **[プロジェクトの追加]** を選択して、自動生成されたプロジェクトをソリューションに追加します。
+1. モデル ビルダー ツールの "*コード*" の手順で、**[プロジェクトの追加]** を選択して、自動生成されたプロジェクトをソリューションに追加します。
 
     **ソリューション エクスプローラー**に次のプロジェクトが表示されます。
 
     - *SentimentRazorML.ConsoleApp*: モデル トレーニングと予測コードが含まれる .NET Core コンソール アプリケーション。
-    - *SentimentRazorML.Model*: 入出力モデル データのスキーマを定義するデータ モデルと、トレーニング中にパフォーマンスが最も良かったモデルの永続化バージョンが含まれる .NET Standard クラス ライブラリ。
+    - *SentimentRazorML.Model*: 入出力モデル データのスキーマを定義するデータ モデルと、トレーニング中にパフォーマンスが最も良かったモデルの保存済みバージョンが含まれる .NET Standard クラス ライブラリ。
 
     このチュートリアルでは、コンソールではなく *SentimentRazor* Web アプリケーションで予測を行うため、*SentimentRazorML.Model* プロジェクトのみを使用します。 *SentimentRazorML.ConsoleApp* はスコアリングに使用されませんが、これは、後で新しいデータを使用してモデルを再トレーニングするために使用できます。 ただし、再トレーニングはこのチュートリアルの範囲外です。
 
-1. トレーニング済みのモデルを Razor Pages アプリケーション内で使用するには、*SentimentRazorML.Model* プロジェクトへの参照を追加します。
-
-    1. **[SentimentRazor]** プロジェクトを右クリックします。 
-    1. **[追加]、[参照]** の順に選択します。 
-    1. **[プロジェクト]、[ソリューション]** ノードの順に選択して、リストで **[SentimentRazorML.Model]** プロジェクトのチェックボックスをオンにします。
-    1. **[OK]** を選択します。
-
 ### <a name="configure-the-predictionengine-pool"></a>PredictionEngine プールの構成
 
-1つの予測を行うのに [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) を使用します。 お使いのアプリケーションで [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) を使用するには、必要に応じてそれを作成する必要があります。 その場合、ベストプラクティスとして、依存関係を挿入することを検討します。
-
-> [!WARNING]
-> [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) はスレッド セーフではありません。 パフォーマンスとスレッドセーフを改善するために、`PredictionEnginePool` サービスを使用します。これにより、アプリケーションで使用される `PredictionEngine` オブジェクトの [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) が作成されます。 詳しくは、[ASP.NET Core での `PredictionEngine` オブジェクトプールの作成と使用](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)のブログ投稿で確認してください。 
+1 つの予測を作成するには、[`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) を作成する必要があります。 [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) はスレッド セーフではありません。 さらに、アプリケーション内で必要なすべての場所にそのインスタンスを作成する必要があります。 アプリケーションの規模が拡大すると、このプロセスが管理不能になる可能性があります。 パフォーマンスとスレッド セーフを向上させるには、依存性の挿入と `PredictionEnginePool` サービスを組み合わせて使用します。これにより、アプリケーション全体で使用する [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) オブジェクトの [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) が作成されます。
 
 1. *Microsoft.Extensions.ML* NuGet パッケージをインストールします。
 
-    1. **ソリューション エクスプローラー**で、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。 
-    1. [パッケージ ソース] として [nuget.org] を選択します。 
-    1. **[参照]** タブを選択して、「**Microsoft.Extensions.ML**」を検索します。 
-    1. リストでパッケージを選択して、 **[インストール]** ボタンを選択します。 
+    1. **ソリューション エクスプローラー**で、プロジェクトを右クリックし、**[NuGet パッケージの管理]** を選択します。
+    1. [パッケージ ソース] として [nuget.org] を選択します。
+    1. **[参照]** タブを選択して、「**Microsoft.Extensions.ML**」を検索します。
+    1. リストでパッケージを選択して、**[インストール]** ボタンを選択します。
     1. **[変更のプレビュー]** ダイアログで **[OK]** ボタンを選択します。
-    1. 一覧表示されているパッケージのライセンス条項に同意する場合は、 **[ライセンスへの同意]** ダイアログで **[同意する]** ボタンを選択します。 
+    1. 一覧表示されているパッケージのライセンス条項に同意する場合は、**[ライセンスへの同意]** ダイアログで **[同意する]** ボタンを選択します。
 
 1. *SentimentRazor* プロジェクトで *Startup.cs* ファイルを開きます。
 1. *Microsoft.Extensions.ML* NuGet パッケージと *SentimentRazorML.Model* プロジェクトを参照する次の using ステートメントを追加します。
 
-    [!code-csharp [StartupUsings](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Startup.cs#L12-L14)]        
+    [!code-csharp [StartupUsings](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Startup.cs#L12-L14)]
 
 1. トレーニング済みのモデル ファイルの場所を格納するグローバル変数を作成します。
 
@@ -172,7 +164,7 @@ ms.locfileid: "71054274"
 
     [!code-csharp [IndexUsings](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L7-L8)]
 
-    `Startup` クラスで構成された `PredictionEnginePool` を使用するには、使用するモデルのコンストラクターにそれを挿入する必要があります。 
+    `Startup` クラスで構成された `PredictionEnginePool` を使用するには、使用するモデルのコンストラクターにそれを挿入する必要があります。
 
 1. `IndexModel` クラス内で `PredictionEnginePool` を参照する変数を追加します。
 
@@ -195,15 +187,15 @@ ms.locfileid: "71054274"
 
     1. ユーザーからの入力が空白または null の場合、`OnGetAnalyzeSentiment` メソッド内で、"*ニュートラル*" センチメントを返します。
 
-        [!code-csharp [InitInput](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L28)] 
-    
-    1. 入力が有効な場合は、`ModelInput` の新しいインスタンスを作成します。 
+        [!code-csharp [InitInput](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L28)]
 
-        [!code-csharp [InitInput](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L29)] 
+    1. 入力が有効な場合は、`ModelInput` の新しいインスタンスを作成します。
+
+        [!code-csharp [InitInput](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L29)]
 
     1. `PredictionEnginePool` を使用してセンチメントを予測します。
 
-        [!code-csharp [MakePrediction](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L30)] 
+        [!code-csharp [MakePrediction](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml.cs#L30)]
 
     1. 次のコードを使用して、予測された `bool` 値を有害または無害に変換します。
 
@@ -217,7 +209,7 @@ ms.locfileid: "71054274"
 
 `OnGetAnalyzeSentiment` によって返される結果は、`Index` Web ページに動的に表示されます。
 
-1. *Pages* ディレクトリ内にある *Index.cshtm* を開いて、その内容を次のコードに置き換えます。 
+1. *Pages* ディレクトリ内にある *Index.cshtm* を開いて、その内容を次のコードに置き換えます。
 
     [!code-cshtml [IndexPage](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/Pages/Index.cshtml)]
 
@@ -247,9 +239,9 @@ ms.locfileid: "71054274"
 
 アプリケーションがセットアップされたので、アプリケーションを実行します。アプリケーションはブラウザー内で起動します。
 
-アプリケーションが起動したら、テキスト領域に「*Model Builder is cool!* 」 と入力します。 表示される予測済みセンチメントは、「*無害*」になります。
+アプリケーションが起動したら、テキスト領域に「*Model Builder is cool!*」 と入力します。 表示される予測済みセンチメントは、「*無害*」になります。
 
-![](./media/sentiment-analysis-model-builder/web-app.png)
+![予測済みセンチメント ウィンドウの実行中ウィンドウ](./media/sentiment-analysis-model-builder/web-app.png)
 
 別のソリューション内で後でモデル ビルダーによって生成されたプロジェクトを参照する必要がある場合、それらは、`C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools` ディレクトリ内にあります。
 
@@ -257,13 +249,14 @@ ms.locfileid: "71054274"
 
 このチュートリアルでは、次の作業を行う方法を学びました。
 > [!div class="checklist"]
-> * ASP.NET Core Razor Pages アプリケーションを作成する
-> * データを準備して理解する
-> * シナリオを選択する
-> * データを読み込む
-> * モデルをトレーニングする
-> * モデルを評価する
-> * モデルを使用して予測を行う
+>
+> - ASP.NET Core Razor Pages アプリケーションを作成する
+> - データを準備して理解する
+> - シナリオを選択する
+> - データを読み込む
+> - モデルをトレーニングする
+> - モデルを評価する
+> - モデルを使用して予測を行う
 
 ### <a name="additional-resources"></a>その他のリソース
 

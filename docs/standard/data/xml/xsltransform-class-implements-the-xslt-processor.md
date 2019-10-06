@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 88373fe2-4a6b-44f9-8a62-8a3e348e3a46
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7c36ff35622ae5c9cddf4ffd1ebd0a60feb348a8
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
-ms.translationtype: HT
+ms.openlocfilehash: 8cc3eb3e3f147d8ed15587946af743c96739a9b1
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170889"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71956865"
 ---
 # <a name="xsltransform-class-implements-the-xslt-processor"></a>XslTransform クラスによる XSLT プロセッサの実装
 
@@ -180,9 +180,9 @@ Console.WriteLine("Passing " + tmpDoc.OuterXml + " to print_root.xsl");
 xslt.Transform(tmpDoc, null, Console.Out, null);
 ```
 
-この例では、library.xml ファイルと print_root.xsl ファイルを入力として使用し、次の出力をコンソールに表示します。
+この例では、入力としてライブラリ .xml と print_root ファイルを使用し、次の情報をコンソールに出力します。
 
-```
+```console
 Passing <book genre="novel" ISBN="1-861001-57-5"><title>Pride And Prejudice</title></book> to print_root.xsl
 Root node is book.
 ```

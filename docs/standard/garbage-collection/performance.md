@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6409bbecdef2da03a18ed246cb90478b2a1fd7f6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a0d21ab8af3669575a451644deb2b3572fdb7651
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054061"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71354029"
 ---
 # <a name="garbage-collection-and-performance"></a>ガベージ コレクションとパフォーマンス
 
@@ -321,7 +321,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
     マネージド例外の場合は、次の例のように、<xref:System.OutOfMemoryException> が例外の種類として表示されます。
 
-    ```
+    ```console
     Exception object: 39594518
     Exception type: System.OutOfMemoryException
     Message: <none>
@@ -335,7 +335,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
     履歴に例外の呼び出しが含まれているスレッドは、`RaiseTheException` 引数によって示されます。 これはマネージド例外オブジェクトです。
 
-    ```
+    ```console
     28adfb44 7923918f 5b61f2b4 00000000 5b61f2b4 mscorwks!RaiseTheException+0xa0
     ```
 
@@ -355,7 +355,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   次の例のように、最も大きな空き領域が表示されます。
 
-  ```
+  ```console
   Largest free region: Base 54000000 - Size 0003A980
   ```
 
@@ -369,7 +369,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   MAXIMUM 列の最大値が最も大きな空き領域です。以下に例を示します。
 
-  ```
+  ```console
   TYPE        MINIMUM   MAXIMUM     AVERAGE   BLK COUNT   TOTAL
   ~~~~        ~~~~~~~   ~~~~~~~     ~~~~~~~   ~~~~~~~~~~  ~~~~
   Free:
@@ -415,7 +415,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   この結果は次のようになります。
 
-  ```
+  ```console
   Number of GC Heaps: 2
   ------------------------------
   Heap 0 (002db550)
@@ -459,7 +459,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   最も多くの領域を使用しているオブジェクトは出力の最後の数行に表示されるため、そこを分析します。 次に例を示します。
 
-  ```
+  ```console
   2c6108d4   173712     14591808 DevExpress.XtraGrid.Views.Grid.ViewInfo.GridCellInfo
   00155f80      533     15216804      Free
   7a747c78   791070     15821400 System.Collections.Specialized.ListDictionary+DictionaryNode
@@ -479,7 +479,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   結果の例を次に示します。
 
-  ```
+  ```console
   Address  MT           Size  Gen
   1875d2c0 790fa3e0      152    2 System.String HighlightNullStyle_Blotter_PendingOrder-11_Blotter_PendingOrder-11
   …
@@ -503,7 +503,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   履歴で見つかるルートは誤検出である可能性があります。 詳細については、コマンド `!help gcroot` を使用してください。
 
-  ```
+  ```console
   ebx:Root:19011c5c(System.Windows.Forms.Application+ThreadContext)->
   19010b78(DemoApp.FormDemoApp)->
   19011158(System.Windows.Forms.PropertyStore)->
@@ -551,7 +551,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
     次のような出力が表示されます。
 
-    ```
+    ```console
        OSID     Special thread type
     2    cd0    DbgHelper
     3    c18    Finalizer
@@ -570,7 +570,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   このコマンドは、次の例に示すように、マネージド ヒープのすべての空きオブジェクトの合計サイズを表示します。
 
-  ```
+  ```console
   total 230 objects
   Statistics:
         MT    Count    TotalSize Class Name
@@ -584,7 +584,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   次のような出力が表示されます。 最後の行には短期セグメントが表示されています。
 
-  ```
+  ```console
   Heap 0 (0015ad08)
   generation 0 starts at 0x49521f8c
   generation 1 starts at 0x494d7f64
@@ -604,7 +604,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   この結果は次のようになります。 ジェネレーション 0 は約 9 MB です。
 
-  ```
+  ```console
   Evaluate expression: 9321848 = 008e3d78
   ```
 
@@ -614,7 +614,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   この結果は次のようになります。
 
-  ```
+  ```console
   ------------------------------
   Heap 0
   total 409 objects
@@ -647,7 +647,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   次の例に示すように、固定ハンドルの数を含む統計情報が表示されます。
 
-  ```
+  ```console
   GC Handle Statistics:
   Strong Handles:      29
   Pinned Handles:      10
@@ -665,7 +665,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   次のデータには 4 つのサンプリング間隔が示されています。サンプリング間隔の時間は 2 秒で、8 秒間にわたって調査が行われています。 `Gen0`、`Gen1`、`Gen2` の各列には、そのジェネレーションでその間隔の間に発生したガベージ コレクションの番号が表示されています。
 
-  ```
+  ```console
   Interval    Gen0    Gen1    Gen2    % Time in GC
           1       9       3       1              10
           2      10       3       1               1
@@ -677,7 +677,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   次の例には 5 つの間隔があります。
 
-  ```
+  ```console
   Interval    Gen0    Gen1    Gen2     % Time in GC
           1       9       3       1                3
           2      10       3       1                1
@@ -692,7 +692,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   たとえば、次のデータは、非同時実行ガベージ コレクションの実行中に発生したイベント シーケンスを示しています。
 
-  ```
+  ```console
   Timestamp    Event name
   513052        GCSuspendEEBegin_V1
   513078        GCSuspendEEEnd
@@ -711,7 +711,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   次の例は、バックグラウンド ガベージ コレクションの出力を示しています。この出力には、process、thread、および event field が含まれています (すべてのデータが示されているわけではありません)。
 
-  ```
+  ```console
   timestamp(us)    event name            process    thread    event field
   42504385        GCSuspendEEBegin_V1    Test.exe    4372             1
   42504648        GCSuspendEEEnd         Test.exe    4372
@@ -751,7 +751,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   次のような出力が表示されます。
 
-  ```
+  ```console
   0012f3b0 79ff0bf8 mscorwks!WKS::GCHeap::GarbageCollect
   0012f454 30002894 mscorwks!GCInterface::CollectGeneration+0xa4
   0012f490 79fa22bd fragment_ni!request.Main(System.String[])+0x48
@@ -761,7 +761,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   メモリの割り当てによってガベージ コレクションが発生した場合は、次のような履歴になります。
 
-  ```
+  ```console
   0012f230 7a07c551 mscorwks!WKS::GCHeap::GarbageCollectGeneration
   0012f2b8 7a07cba8 mscorwks!WKS::gc_heap::try_allocate_more_space+0x1a1
   0012f2d4 7a07cefb mscorwks!WKS::gc_heap::allocate_more_space+0x18
@@ -781,7 +781,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   出力の例を以下に示します (最も多くの領域を使用しているオブジェクトのみが示されています)。
 
-  ```
+  ```console
   79124228    31857      9862328 System.Object[]
   035f0384    25668     11601936 Toolkit.TlkPosition
   00155f80    21248     12256296      Free
@@ -803,7 +803,7 @@ ETW イベント ログは効率的であり、ガベージ コレクション�
 
   出力の例を以下に示します (最も多くの領域を使用しているオブジェクトのみが示されています)。
 
-  ```
+  ```console
   79124228    26648      9314256 System.Object[]
   035f0384    25668     11601936 Toolkit.TlkPosition
   79103b6c   296770     13057880 System.Threading.ReaderWriterLock

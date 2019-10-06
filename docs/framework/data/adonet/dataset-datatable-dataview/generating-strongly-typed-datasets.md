@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 54333cbf-bb43-4314-a7d4-6dc1dd1c44b3
-ms.openlocfilehash: f1c1fd77bed700fae8e5a658da8b267120518ca9
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ce7e5ad53f7aa5dad457ca1aa6ab76716086c0c3
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786304"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833987"
 ---
 # <a name="generating-strongly-typed-datasets"></a>厳密に型指定された DataSet の生成
-Xml スキーマ定義言語 (xsd) 標準に準拠した xml スキーマを使用すると、Windows ソフトウェア開発キット<xref:System.Data.DataSet> (SDK) に付属している xsd.exe ツールを使用して、厳密に型指定されたを生成できます。  
+Xml スキーマ定義言語 (XSD) 標準に準拠した XML スキーマを使用すると、Windows ソフトウェア開発キット (SDK) に用意されている XSD.EXE ツールを使用して、厳密に型指定された @no__t 0 を生成できます。  
   
- (データベーステーブルから xsd を作成するには<xref:System.Data.DataSet.WriteXmlSchema%2A> 、「」または「 [Visual Studio でのデータセットの操作](/visualstudio/data-tools/dataset-tools-in-visual-studio)」を参照してください)。  
+ (データベーステーブルから xsd を作成するには、「<xref:System.Data.DataSet.WriteXmlSchema%2A>」または「 [Visual Studio でのデータセットの操作](/visualstudio/data-tools/dataset-tools-in-visual-studio)」を参照してください)。  
   
  次のコードは、このツールを使用して**データセット**を生成するための構文を示しています。  
   
@@ -23,7 +23,7 @@ Xml スキーマ定義言語 (xsd) 標準に準拠した xml スキーマを使�
 xsd.exe /d /l:CS XSDSchemaFileName.xsd /eld /n:XSDSchema.Namespace  
 ```  
   
- この構文では、 `/d`ディレクティブは**データセット**を生成するようにツールに`/l:`指示し、は、使用する言語 (たとえば、 C#または Visual Basic .net) をツールに指示します。 省略可能`/eld`なディレクティブは、LINQ to DataSet を使用して、生成されたデータセットに対してクエリを実行できることを指定し**ます。** このオプションは、`/d` オプションと組み合わせて指定します。 詳細については、「[型指定](../querying-typed-datasets.md)された Dataset のクエリ」を参照してください。 省略可能`/n:`なディレクティブは、 **xsdschema**という名前の**データセット**の名前空間も生成するようにツールに指示します。 コマンドの出力は XSDSchemaFileName.cs で、ADO.NET アプリケーションでコンパイルおよび使用できます。 生成されたコードをライブラリまたはモジュールとしてコンパイルできます。  
+ この構文では、`/d` ディレクティブは**データセット**を生成するようにツールに指示し、@no__t は、使用する言語 (たとえば、 C#または Visual Basic .net) をツールに指示します。 省略可能な `/eld` ディレクティブは、LINQ to DataSet を使用して、生成されたデータセットに対してクエリを実行できることを指定し**ます。** このオプションは、`/d` オプションと組み合わせて指定します。 詳細については、「[型指定](../querying-typed-datasets.md)された Dataset のクエリ」を参照してください。 オプションの `/n:` ディレクティブは、 **Xsdschema. namespace**という名前の**データセット**の名前空間も生成するようにツールに指示します。 コマンドの出力は XSDSchemaFileName.cs で、ADO.NET アプリケーションでコンパイルおよび使用できます。 生成されたコードをライブラリまたはモジュールとしてコンパイルできます。  
   
  C# コンパイラ (csc.exe) を使用して、生成されたコードをライブラリとしてコンパイルする構文を次のコードで示します。  
   
@@ -73,7 +73,7 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
   Console.WriteLine(customerRow.CustomerID);  
 ```  
   
- 例に使用された XML スキーマを次に示します。  
+ 次に、この例で使用する XML スキーマを示します。
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

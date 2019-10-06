@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 417550397582641c5a8fa97c061377beadfb0e6f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: aae38c8c2446ead128925e0e1d910ae12c8f220f
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045581"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736756"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>.NET アプリでのリソースのパッケージ化と配置
 
@@ -42,20 +42,20 @@ ms.locfileid: "71045581"
 このモデルにいくつかの利点があります。
 
 - アプリケーションを配置した後で、段階的に新しいカルチャのリソースを追加できます。 カルチャに固有のリソースを後で開発するには多くの時間を必要とすることがあるため、後から追加できれば、メイン アプリケーションを最初にリリースしておき、カルチャ固有のリソースを後で配布できます。
-
 - アプリケーションを再コンパイルすることなく、アプリケーションのサテライト アセンブリを更新および変更することができます。
-
 - アプリケーションで読み込む必要があるのは、特定のカルチャに必要なリソースを含むサテライト アセンブリだけです。 このようにすると、システム リソースの使用を大幅に減らすことができます。
 
  ただし、このモデルにも短所はあります。
 
 - 複数のリソース セットを管理する必要があります。
-
 - 複数の構成をテストする必要があるため、アプリケーションのテストの初期コストが増えます。 長期的に見れば、複数の各国語バージョンを並列にテストして管理するより、複数のサテライトを持つ 1 つの中核アプリケーションをテストする方が簡単かつ安価であることに注意してください。
 
 ## <a name="resource-naming-conventions"></a>リソースの名前付け規則
 
 アプリケーションのリソースをパッケージ化するときは、共通言語ランタイムで想定されているリソース名前付け規則を使って、リソースに名前を付ける必要があります。 ランタイムは、そのカルチャ名でリソースを識別します。 各カルチャには一意の名前が指定されています。通常は、言語に関連付けられた小文字 2 文字のカルチャ名と、必要に応じて、国または地域に関連付けられた大文字 2 文字のサブカルチャ名を組み合わせたものです。 カルチャ名の後にダッシュ (-) で区切ってサブカルチャ名は記述します。 日本で話される日本語は ja-JP、米国で話される英語は en-US、ドイツで話されるドイツ語は de-DE、オーストリアで話されるドイツ語は de-AT などとなります。 [Windows でサポートされている言語/地域名の一覧](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c)の「**Language tag (言語タグ)** 」列をご覧ください。 カルチャ名は、[BCP 47](https://tools.ietf.org/html/bcp47) によって定義されている標準に準拠します。
+
+> [!NOTE]
+> 2文字のカルチャ名には、`zh-Hans` (簡体字) のような例外がいくつかあります。
 
 > [!NOTE]
 > リソース ファイルの作成については、「[リソース ファイルの作成](creating-resource-files-for-desktop-apps.md)」および「[サテライト アセンブリの作成](creating-satellite-assemblies-for-desktop-apps.md)」をご覧ください。
@@ -204,8 +204,8 @@ Greeting=Добрый день
 
 アプリケーションのソース コードは、Example1.cs または Example1.vb という名前のファイルに存在します。 このファイルには、既定のアプリケーション リソースが fr サブディレクトリにあることを示す <xref:System.Resources.NeutralResourcesLanguageAttribute> 属性が含まれます。 リソース マネージャーをインスタンス化し、`Greeting` リソースの値を取得して、コンソールに表示します。
 
-[!code-csharp[Conceptual.Resources.Packaging#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.packaging/cs/example1.cs#1)]
-[!code-vb[Conceptual.Resources.Packaging#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.packaging/vb/example1.vb#1)]
+[!code-csharp[Conceptual.Resources.Packaging#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.packaging/cs/example1.cs#1)]
+[!code-vb[Conceptual.Resources.Packaging#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.packaging/vb/example1.vb#1)]
 
 その後、次のようにコマンド ラインから C# のソース コードをコンパイルできます。
 

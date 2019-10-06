@@ -3,56 +3,53 @@ title: project.json からの .NET Core の移行
 description: project.json を使って以前の .NET Core プロジェクトを移行する方法について説明します
 ms.date: 07/19/2017
 ms.custom: seodec18
-ms.openlocfilehash: 6334f06a998054cfaf766654dda59d87f5d23ed8
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 167f0707bbaf34ce12a1c56ee2320e7cc4f48bd3
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105305"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698915"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>project.json からの .NET Core プロジェクトの移行
 
-このドキュメントでは、.NET Core プロジェクトの移行シナリオについて説明します。次の 3 つの移行シナリオを取り上げます。
+このドキュメントでは、.NET Core プロジェクトの次の 3 つの移行シナリオについて説明します。
 
 1. [有効な最新スキーマの *project.json* から *csproj* への移行](#migration-from-projectjson-to-csproj)
 2. [DNX から csproj への移行](#migration-from-dnx-to-csproj)
 3. [RC3 と以前の .NET Core csproj プロジェクトから最終形式への移行](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
 
-このドキュメントを使用できるのは、project.json を引き続き使っている、以前の .NET Core プロジェクトのみです。 これを .NET Framework から .NET Core への移行に適用することはできません。
+このドキュメントは、project.json を使っている、以前の .NET Core プロジェクトのみに適用されます。 .NET Framework から .NET Core への移行には適用されません。
 
 ## <a name="migration-from-projectjson-to-csproj"></a>project.json から csproj への移行
 
 *project.json* から *.csproj* への移行は、次のいずれかの方法で実行できます。
 
-- [Visual Studio 2017](#visual-studio-2017)
+- [Visual Studio](#visual-studio)
 - [dotnet 移行コマンドライン ツール](#dotnet-migrate)
 
 いずれの方法も、同じ基本エンジンを使用してプロジェクトを移行するので、両方の結果は同じです。 ほとんどの場合、2 つの方法のいずれかを使用して *project.json* を *csproj* に移行するだけで完了します。プロジェクト ファイルをさらに手動で編集する必要はありません。 結果の *.csproj* ファイルには、格納しているディレクトリ名と同じ名前が付けられます。
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+### <a name="visual-studio"></a>Visual Studio
 
-*.xproj* ファイルまたは *.xproj* ファイルを参照するソリューションを開くと、 **[一方向のアップグレード]** ダイアログが表示されます。 このダイアログには、移行されるプロジェクトが表示されます。
-ソリューション ファイルを開くと、ソリューション ファイルに指定されているすべてのプロジェクトが表示されます。 移行されるプロジェクトの一覧を確認し、 **[OK]** を選択します。
+Visual Studio 2017 または Visual Studio 2019 バージョン 16.2 以前で *.xproj* ファイル、または *.xproj* ファイルを参照するソリューション ファイルを開くと、 **[一方向のアップグレード]** ダイアログが表示されます。 このダイアログには、移行されるプロジェクトが表示されます。 ソリューション ファイルを開くと、ソリューション ファイルに指定されているすべてのプロジェクトが表示されます。 移行されるプロジェクトの一覧を確認し、 **[OK]** を選択します。
 
 ![移行されるプロジェクトの一覧が表示された [一方向のアップグレード] ダイアログ](media/one-way-upgrade.jpg)
 
-Visual Studio では、選択したプロジェクトが自動的に移行されます。 すべてのプロジェクトを選択していない状態でソリューションを移行すると、同じダイアログが開き、そのソリューションの残りのプロジェクトをアップグレードすることを確認するメッセージが表示されます。 プロジェクトが移行されたら、**ソリューション エクスプローラー** ウィンドウでプロジェクトを右クリックして、 **[編集 \<プロジェクト名.csproj]** を選択し、そのコンテンツを表示して変更することができます。
+選択したプロジェクトは、Visual Studio によって自動的に移行されます。 すべてのプロジェクトを選択していない状態でソリューションを移行すると、同じダイアログが開き、そのソリューションの残りのプロジェクトをアップグレードすることを確認するメッセージが表示されます。 プロジェクトが移行されたら、**ソリューション エクスプローラー** ウィンドウでプロジェクトを右クリックして、 **[編集 \<プロジェクト名.csproj]** を選択し、そのコンテンツを表示して変更することができます。
 
-移行されたファイル (*project.json*、*global.json*、 *.xproj*、およびソリューション ファイル) は *Backup* フォルダーに移動されます。 移行されるソリューション ファイルは Visual Studio 2017 にアップグレードされ、以前のバージョンの Visual Studio ではそのソリューション ファイルを開くことができなくなります。
-移行レポートを含む *UpgradeLog.htm* というファイルも保存され、自動的に開かれます。
+移行されたファイル (*project.json*、*global.json*、 *.xproj*、およびソリューション ファイル) は *Backup* フォルダーに移動されます。 移行されるソリューション ファイルは Visual Studio 2017 または Visual Studio 2019 にアップグレードされ、Visual Studio 2015 以前のバージョンではそのソリューション ファイルを開くことができなくなります。 移行レポートを含む *UpgradeLog.htm* というファイルも保存され、自動的に開かれます。
 
 > [!IMPORTANT]
-> 新しいツールは Visual Studio 2015 で使用できないので、Visual Studio 2015 を使用してプロジェクトを移行できません。
+> Visual Studio 2015 を使用してプロジェクトを移行することはできません。
 
 ### <a name="dotnet-migrate"></a>dotnet の移行
 
-コマンドラインのシナリオでは、[`dotnet migrate`](../tools/dotnet-migrate.md) コマンドを使用できます。 検出されたものに応じて、プロジェクト、ソリューション、または一連のフォルダーの順に移行されます。
-プロジェクトを移行すると、プロジェクトとそのすべての依存ファイルが移行されます。
+コマンドラインのシナリオでは、[`dotnet migrate`](../tools/dotnet-migrate.md) コマンドを使用できます。 検出されたものに応じて、プロジェクト、ソリューション、または一連のフォルダーの順に移行されます。 プロジェクトを移行すると、プロジェクトとそのすべての依存ファイルが移行されます。
 
 移行されたファイル (*project.json*、*global.json*、および *.xproj*) は *Backup* フォルダーに移動されます。
 
 > [!NOTE]
-> Visual Studio コードを使用している場合、`dotnet migrate` コマンドを実行しても、`tasks.json` などの Visual Studio コード固有のファイルは変更されません。 これらのファイルは手動で変更する必要があります。
+> Visual Studio Code を使用している場合、`dotnet migrate` コマンドを実行しても、`tasks.json` などの Visual Studio コード固有のファイルは変更されません。 これらのファイルは手動で変更する必要があります。
 > これは、Project Ryder などのエディターや、Visual Studio ではない統合開発環境 (IDE) を使用している場合にも該当します。
 
 project.json および csproj 形式の比較については、「[project.json プロパティと csproj プロパティの間のマッピング](../tools/project-json-to-csproj.md)」を参照してください。

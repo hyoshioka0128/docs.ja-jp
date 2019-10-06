@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-ms.openlocfilehash: de5672e5c6762b1e0742e717a3d499a4f93ee8ec
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: fa00aed2cd1e96ec788d4bc9c1c63f20561d8d1c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659342"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698184"
 ---
 # <a name="httpwebrequest-element-network-settings"></a>\<httpWebRequest > 要素 (ネットワーク設定)
 Web 要求パラメーターをカスタマイズします。  
   
- \<configuration>  
-\<system.net>  
-\<settings>  
-\<httpWebRequest >  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t @ no__t @no__t @ no__t-3[ **-6 設定 >** ](settings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 **\<httpWebRequest >** を行います。  
   
 ## <a name="syntax"></a>構文  
   
@@ -39,7 +39,7 @@ Web 要求パラメーターをカスタマイズします。
   
 ### <a name="attributes"></a>属性  
   
-|**属性**|**説明**|  
+|**属性**|**[説明]**|  
 |-------------------|---------------------|  
 |`maximumResponseHeadersLength`|応答ヘッダーの最大長を kb 単位で指定します。 既定値は 64 です。 値が-1 の場合は、応答ヘッダーにサイズ制限が適用されないことを示します。|  
 |`maximumErrorResponseLength`|エラー応答の最大長を kb 単位で指定します。 既定値は 64 です。 値が-1 の場合は、エラー応答にサイズ制限が適用されないことを示します。|  
@@ -51,12 +51,12 @@ Web 要求パラメーターをカスタマイズします。
   
 ### <a name="parent-elements"></a>親要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[settings](settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
   
-## <a name="remarks"></a>Remarks  
- 既定では、.NET Framework は URI 解析に RFC 2616 を厳密に適用します。 一部のサーバー応答には、禁止されたフィールドの制御文字<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>が含まれる場合<xref:System.Net.WebException>があります。これにより、メソッドはをスローします。 **Useunsafeheaderparsing**が**true**に設定され<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType>ている場合、はこの場合にをスローしません。ただし、アプリケーションは、いくつかの形式の URI 解析攻撃に対して脆弱になります。 最適な解決策は、応答に制御文字が含まれないようにサーバーを変更することです。  
+## <a name="remarks"></a>コメント  
+ 既定では、.NET Framework は URI 解析に RFC 2616 を厳密に適用します。 一部のサーバー応答には、禁止されたフィールドの制御文字が含まれる場合があります。これにより、<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> のメソッドが <xref:System.Net.WebException> をスローします。 **Useunsafeheaderparsing 解析**が**true**に設定されている場合、<xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> は、この場合はをスローしません。ただし、アプリケーションは、いくつかの形式の URI 解析攻撃に対して脆弱になります。 最適な解決策は、応答に制御文字が含まれないようにサーバーを変更することです。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  

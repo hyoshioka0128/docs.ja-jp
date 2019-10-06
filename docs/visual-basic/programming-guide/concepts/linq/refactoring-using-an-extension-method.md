@@ -1,16 +1,16 @@
 ---
-title: 拡張メソッド (Visual Basic) を使用したリファクタリング
+title: 拡張メソッドを使用したリファクタリング (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d87ae99a-cfa9-4a31-a5e4-9d6437be6810
-ms.openlocfilehash: 360b723fd8ef63338213dfcaa2c00f659ba3e74a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e6ed0e81a7139411507d8f3c16b34a50b2e7aebf
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666075"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834899"
 ---
-# <a name="refactoring-using-an-extension-method-visual-basic"></a>拡張メソッド (Visual Basic) を使用したリファクタリング
-この例では、前の例では、ビルド[(Visual Basic) の段落のテキストを取得して](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md)、拡張メソッドとして実装される純粋関数を使用して文字列の連結をリファクターします。  
+# <a name="refactoring-using-an-extension-method-visual-basic"></a>拡張メソッドを使用したリファクタリング (Visual Basic)
+この例は、拡張メソッドとして実装されている純粋関数を使用して文字列の連結をリファクタリングすることによって、[段落のテキスト (Visual Basic) を取得](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md)する前の例に基づいています。  
   
  前の例では、<xref:System.Linq.Enumerable.Aggregate%2A> 標準クエリ演算子を使用して、複数の文字列が 1 つの文字列に連結されていました。 ただし、拡張メソッドでこの処理を記述した方が、結果のクエリが小さく簡単になるので便利です。  
   
@@ -19,7 +19,7 @@ ms.locfileid: "64666075"
   
  この例には、`StringConcatenate` メソッドの複数のオーバーロードが含まれています。  
   
- この例のソース ドキュメントを作成するための手順を確認できます[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)します。  
+ この例のソースドキュメントを作成する手順については[、「ソースとなる Office OPEN XML ドキュメントを作成する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)」を参照してください。  
   
  この例では、WindowsBase アセンブリのクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。  
   
@@ -82,7 +82,7 @@ Console.WriteLine("{0}", intNumbers.StringConcatenate(Function(i) i.ToString(), 
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```console  
 onetwothree  
 one:two:three:  
 123  
@@ -216,9 +216,9 @@ Module Module1
 End Module  
 ```  
   
- この例で、次で説明されているドキュメントに適用されたときに出力を生成[ソース Office Open XML ドキュメント (Visual Basic) を作成する](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)します。  
+ この例では、「ソースとなる[Office OPEN XML ドキュメントの作成 (Visual Basic)](creating-the-source-office-open-xml-document.md)」で説明されているドキュメントに適用すると、次の出力が生成されます。
   
-```  
+```console  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
 StyleName:Normal ><  
 StyleName:Normal >The following example prints to the console.<  
@@ -245,5 +245,5 @@ StyleName:Code >Hello World<
   
 ## <a name="see-also"></a>関連項目
 
-- [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [純粋関数 (Visual Basic) へのリファクタリング](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [純粋関数へのリファクタリング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

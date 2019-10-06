@@ -1,15 +1,15 @@
 ---
-title: '方法: XSD (LINQ to XML) を使用して検証 (Visual Basic)'
+title: '方法: XSD (LINQ to XML) を使用した検証 (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a0fe88d4-4e77-49e7-90de-8953feeccc21
-ms.openlocfilehash: a29473b871961af0de033b77076686cc5b9dde0e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67b197d3c92e7f72b7bda444f307b191eaec8304
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613355"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835062"
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>方法: XSD (LINQ to XML) を使用して検証 (Visual Basic)
+# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>方法: XSD (LINQ to XML) を使用した検証 (Visual Basic)
 <xref:System.Xml.Schema> 名前空間には、XML スキーマ定義言語 (XSD) ファイルに対して XML ツリーを簡単に検証できる拡張メソッドが含まれています。 詳細については、<xref:System.Xml.Schema.Extensions.Validate%2A> メソッドのドキュメントを参照してください。  
   
 ## <a name="example"></a>例  
@@ -67,7 +67,7 @@ End Sub
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```console  
 Validating doc1  
 doc1 validated  
   
@@ -113,7 +113,7 @@ End Sub
   
  この例を実行すると、次の出力が生成されます。  
   
-```  
+```console  
 Attempting to validate  
 custOrdDoc validated  
   
@@ -125,4 +125,4 @@ custOrdDoc did not validate
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Xml.Schema.Extensions.Validate%2A>
-- [XML ツリー (Visual Basic) の作成](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [XML ツリーの作成 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

@@ -9,46 +9,46 @@ helpviewer_keywords:
 - TypeOf...Is expression
 - Is operator [Visual Basic]
 ms.assetid: 8045a6c8-2a83-45b6-ad47-d09a704c656d
-ms.openlocfilehash: a5481a9bce01e84ce4f078335c8cd15a747a3c51
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0351d224d9bf08a8f3ca74090de7b9c51c2c61bf
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917217"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701362"
 ---
 # <a name="is-operator-visual-basic"></a>Is 演算子 (Visual Basic)
 2つのオブジェクト参照変数を比較します。  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```vb  
 result = object1 Is object2  
 ```  
   
 ## <a name="parts"></a>指定項目  
  `result`  
- 必須。 任意`Boolean`の値。  
+ 必須。 @No__t 0 の値。  
   
  `object1`  
- 必須。 任意`Object`の名前。  
+ 必須。 任意の `Object` の名前。  
   
  `object2`  
- 必須。 任意`Object`の名前。  
+ 必須。 任意の `Object` の名前。  
   
-## <a name="remarks"></a>Remarks  
- 演算子`Is`は、2つのオブジェクト参照が同じオブジェクトを参照するかどうかを判断します。 ただし、値の比較は実行されません。 と`object1` `True`の両方`False`がまったく同じオブジェクトインスタンスを参照する`result`場合、はです。それ以外`result`の場合、はになります。 `object2`  
+## <a name="remarks"></a>コメント  
+ @No__t-0 演算子は、2つのオブジェクト参照が同じオブジェクトを参照するかどうかを判断します。 ただし、値の比較は実行されません。 @No__t-0 および `object2` がまったく同じオブジェクトインスタンスを参照している場合、`result` は `True` です。そうでない場合、`result` は `False` になります。  
   
- `Is``TypeOf` キーワード`TypeOf`と共に使用することもできます...`Is`式。オブジェクト変数がデータ型と互換性があるかどうかをテストします。  
+ `Is` は、`TypeOf` キーワードと共に使用して `TypeOf`... `Is` 式を作成することもできます。これにより、オブジェクト変数がデータ型と互換性があるかどうかがテストされます。  
   
 > [!NOTE]
 > `Is`キーワードは[Select...Case ステートメント](../../../visual-basic/language-reference/statements/select-case-statement.md)でも使用されます。  
   
 ## <a name="example"></a>例  
- 次の例では`Is` 、演算子を使用して、オブジェクト参照のペアを比較しています。 結果は、2つの`Boolean`オブジェクトが同一かどうかを表す値に割り当てられます。  
+ 次の例では、`Is` 演算子を使用して、オブジェクト参照のペアを比較します。 結果は、2つのオブジェクトが同一かどうかを表す @no__t 0 の値に割り当てられます。  
   
  [!code-vb[VbVbalrOperators#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#27)]  
   
- 前の例で示したように、 `Is`演算子を使用すると、事前バインディングオブジェクトと遅延バインディングオブジェクトの両方をテストできます。  
+ 前の例で示したように、`Is` 演算子を使用して、事前バインディングオブジェクトと遅延バインディングオブジェクトの両方をテストできます。  
   
 ## <a name="see-also"></a>関連項目
 

@@ -1,18 +1,18 @@
 ---
-title: データ型 (Visual Basic) の変換
+title: データ型の変換 (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 9b0cf1ab-de48-4c6e-9f00-05b40fade46e
-ms.openlocfilehash: 866b30d3d65add8714f2088169b0769c340f264e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4d0658983b5873c635d1926444293b0ddf5b0a87
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641975"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71835172"
 ---
-# <a name="converting-data-types-visual-basic"></a>データ型 (Visual Basic) の変換
+# <a name="converting-data-types-visual-basic"></a>データ型の変換 (Visual Basic)
 変換メソッドは、入力オブジェクトの型を変更します。  
   
- LINQ クエリの変換操作は、さまざまなアプリケーションで役に立ちます。 次にいくつかの例を示します。  
+ LINQ クエリの変換操作は、さまざまなアプリケーションで役に立ちます。 次に例をいくつか示します。
   
 - <xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType> メソッドを使用すると、標準クエリ演算子の型のカスタム実装を非表示することができます。  
   
@@ -25,7 +25,7 @@ ms.locfileid: "64641975"
   
  名前が "As" で始まるこの表の変換メソッドは、ソース コレクションの静的型を変更しますが、ソース コレクションを列挙しません。 名前が "To" で始まるメソッドは、ソース コレクションを列挙し、各項目を対応するコレクション型に変換します。  
   
-|メソッド名|説明|Visual Basic のクエリ式の構文|説明|  
+|メソッド名|説明|Visual Basic クエリ式の構文|詳細情報|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
 |AsEnumerable|<xref:System.Collections.Generic.IEnumerable%601> として型指定された入力を返します。|該当なし。|<xref:System.Linq.Enumerable.AsEnumerable%2A?displayProperty=nameWithType>|  
 |AsQueryable|(ジェネリック) <xref:System.Collections.IEnumerable> を (ジェネリック) <xref:System.Linq.IQueryable> に変換します。|該当なし。|<xref:System.Linq.Queryable.AsQueryable%2A?displayProperty=nameWithType>|  
@@ -37,7 +37,7 @@ ms.locfileid: "64641975"
 |ToLookup|キー セレクター関数に基づいて、<xref:System.Linq.Lookup%602> (一対多の辞書) に要素を変換します。 このメソッドはクエリの実行を強制します。|該当なし。|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>クエリ式の構文例  
- 次のコード例では、`From As`サブタイプでのみ利用可能なメンバーにアクセスする前に、サブタイプの型をキャストする句。  
+ 次のコード例では、`From As` 句を使用して、サブタイプでのみ使用できるメンバーにアクセスする前に型をサブタイプにキャストします。  
   
 ```vb  
 Class Plant  
@@ -82,4 +82,4 @@ End Sub
 - <xref:System.Linq>
 - [標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [From 句](../../../../visual-basic/language-reference/queries/from-clause.md)
-- [方法: ArrayList を照会する linq (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)
+- [2 つのオブジェクトが等しいかどうかをテストする方法LINQ を使用して ArrayList を照会する (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)

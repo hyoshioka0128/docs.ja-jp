@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
-ms.openlocfilehash: c4704fb09e9519c14f29365b2cf7f536bbbc5dca
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6ceebc3af01c13474affa6e728c49d6d246eb331
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619561"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71701197"
 ---
 # <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>この呼び出しは待機されなかったため、現在のメソッドの実行は呼び出しの完了を待たずに続行されます。
 この呼び出しは待機されなかったため、現在のメソッドの実行は呼び出しの完了を待たずに続行されます。 呼び出しの結果に 'Await' 演算子を適用することを検討してください。  
@@ -83,7 +83,7 @@ ms.locfileid: "64619561"
   
      この例では、呼び出し 1 または呼び出し 2 を選択した場合、完了が待機されない非同期メソッド (`CalledMethodAsync`) は、呼び出し元 (`CallingMethodAsync`) と呼び出し元の呼び出し元 (`StartButton_Click`) の両方が完了した後に完了します。 次の出力の最後の行に、呼び出されたメソッドがいつ完了したかが示されています。 この出力には、完全な例の `CallingMethodAsync` を呼び出すイベント ハンドラーへのエントリとその終了が示されています。  
   
-    ```  
+    ```console  
     Entering the Click event handler.  
       Entering calling method.  
         Entering called method, starting and awaiting Task.Delay.  

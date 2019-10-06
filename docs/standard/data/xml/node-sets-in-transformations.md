@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: ad034f0e-ff8b-4a71-9a4c-528c754263c4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8a84234ee797dac7487492dc92af2de4fa7ef503
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: fbcd9b93f63d48229c174b0f6518fd0150e98e18
+ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962546"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71957029"
 ---
 # <a name="node-sets-in-transformations"></a>変換におけるノード セット
 ノード セットは、XPath (XML Path Language) 式が返す 4 つの基本データ型のうちの 1 つです。 ノード セットは、ドキュメントの順番で作成された、重複がなくソートされていないノードのコレクションであり、スタイル シートの変数に割り当てることができます。  
@@ -58,9 +58,9 @@ ms.locfileid: "69962546"
 </bookstore>  
 ```  
   
-## <a name="output"></a>Output  
+## <a name="output"></a>[出力]  
   
-```  
+```output  
 ******  
 Seven Years in Trenton  
 ******  

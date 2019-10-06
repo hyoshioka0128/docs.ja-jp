@@ -2,12 +2,12 @@
 title: 構成ファイルにおける探索の構成
 ms.date: 03/30/2017
 ms.assetid: b9884c11-8011-4763-bc2c-c526b80175d0
-ms.openlocfilehash: c282767e686ac8a6382268aee8b45eb2d1297f5a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ad44d0ad1f0d67d84cc42f6b9938d096c245417
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857520"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834757"
 ---
 # <a name="configuring-discovery-in-a-configuration-file"></a>構成ファイルにおける探索の構成
 探索で使用される構成設定は、4 つの主なグループに分類されます。 このトピックでは、各グループについて簡単に説明し、各グループの構成方法の例を紹介します。 以下の各セクションは、各領域についてのより詳細なドキュメントにリンクされます。  
@@ -28,7 +28,7 @@ ms.locfileid: "61857520"
       </serviceBehaviors>  
 ```  
   
- 動作を指定すると後から参照を <`service`> 要素の次の例に示すようにします。  
+ 動作を指定したら、次の例に示すように、< `service` > 要素からそれを参照します。  
   
 ```xml  
 <system.serviceModel>  
@@ -46,7 +46,7 @@ ms.locfileid: "61857520"
   
  サービスを探索可能にするには、探索エンドポイントを追加する必要もあります。上の例では、<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> 標準エンドポイントを追加しています。  
   
- アナウンス エンドポイントを追加するときに、アナウンス リスナー サービスも追加する必要があります、<`services`> 要素の次の例に示すようにします。  
+ アナウンスエンドポイントを追加する場合は、次の例に示すように、< `services` > 要素にアナウンスリスナーサービスを追加する必要もあります。  
   
 ```xml  
 <services>  
@@ -137,7 +137,7 @@ ms.locfileid: "61857520"
 </behavior>  
 ```  
   
- 詳細については<xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>と<xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>を参照してください[WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)します。  
+ @No__t-0 および <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> の詳細については、「 [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)」を参照してください。  
   
 ## <a name="binding-element-configuration"></a>バインド要素の構成  
  バインディング要素の構成は、クライアント側で最も興味深い構成です。 構成を使用して、WCF クライアント アプリケーションからのサービスの探索に使用する検索条件を指定できます。  次の例では、<xref:System.ServiceModel.Discovery.DiscoveryClient> チャネルとのカスタム バインドを作成し、型とスコープを含む検索条件を指定しています。 また、<xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> プロパティと <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> プロパティの値も指定しています。  
@@ -177,10 +177,10 @@ ms.locfileid: "61857520"
     </client>  
 ```  
   
- 検索条件の詳細については、次を参照してください。[探索検索と FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md)します。 探索およびバインディング要素を参照の詳細については[WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ 検索条件の詳細については[、「探索検索と findcriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md)」を参照してください。 検出要素とバインド要素の詳細については、「 [WCF discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)」を参照してください。  
   
 ## <a name="standard-endpoint-configuration"></a>標準エンドポイントの構成  
- 標準エンドポイントは定義済みのエンドポイントで、これには、1 つ以上のプロパティ (アドレス、バインディング、またはコントラクト) の既定値、または、変更できない 1 つ以上のプロパティ値が設定されています。 .NET 4 には、<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>、<xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>、および <xref:System.ServiceModel.Discovery.DynamicEndpoint> という 3 種類の探索関連の標準エンドポイントが用意されています。  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> は、UDP マルチキャスト バインディングを使用した探索操作用に事前に構成されている標準エンドポイントです。 <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> は、UDP バインディングを使用したアナウンスの送信用に事前に構成されている標準エンドポイントです。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> は、実行時に探索対象のサービスのエンドポイント アドレスを動的に検索するために探索が使用する標準エンドポイントです。  標準バインディングがで指定された、<`endpoint`> 要素を追加する標準エンドポイントの種類を指定した種類の属性が含まれています。 <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> および <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> を追加する方法を次の例に示します。  
+ 標準エンドポイントは定義済みのエンドポイントで、これには、1 つ以上のプロパティ (アドレス、バインディング、またはコントラクト) の既定値、または、変更できない 1 つ以上のプロパティ値が設定されています。 .NET 4 には、<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>、<xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>、および <xref:System.ServiceModel.Discovery.DynamicEndpoint> という 3 種類の探索関連の標準エンドポイントが用意されています。  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> は、UDP マルチキャスト バインディングを使用した探索操作用に事前に構成されている標準エンドポイントです。 <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> は、UDP バインディングを使用したアナウンスの送信用に事前に構成されている標準エンドポイントです。 <xref:System.ServiceModel.Discovery.DynamicEndpoint> は、実行時に探索対象のサービスのエンドポイント アドレスを動的に検索するために探索が使用する標準エンドポイントです。  標準バインディングは、追加する標準エンドポイントの種類を指定した kind 属性を含む < `endpoint` > 要素を使用して指定します。 <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> および <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> を追加する方法を次の例に示します。  
   
 ```xml  
 <services>  
@@ -194,7 +194,7 @@ ms.locfileid: "61857520"
 </services>  
 ```  
   
- 標準エンドポイントが構成されている、<`standardEndpoints`> 要素。 <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> および <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> を構成する方法を次の例に示します。  
+ 標準エンドポイントは、< @no__t 0 > 要素で構成されます。 <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> および <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> を構成する方法を次の例に示します。  
   
 ```xml  
 <standardEndpoints>  
@@ -226,7 +226,7 @@ ms.locfileid: "61857520"
       </udpDiscoveryEndpoint>  
 ```  
   
- 参照では、構成の標準エンドポイント構成を追加すると、<`endpoint`> 次の例に示すように、各エンドポイントの要素。  
+ 標準エンドポイント構成を追加したら、次の例に示すように、各エンドポイントの < `endpoint` > 要素の構成を参照します。  
   
 ```xml  
 <services>  
@@ -269,4 +269,4 @@ ms.locfileid: "61857520"
 </system.ServiceModel>  
 ```  
   
- 標準エンドポイントの詳細については、次を参照してください[標準エンドポイント。](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)
+ 標準エンドポイントの詳細については、「[標準エンドポイント](standard-endpoints.md)」を参照してください。

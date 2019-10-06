@@ -8,19 +8,19 @@ helpviewer_keywords:
 - settings element
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
-ms.openlocfilehash: 12797e2f06d03aacd81700eae57d5776c1a6f354
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ba08f630dc602c950da309bf29482d85b41af7ef
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663995"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697689"
 ---
-# <a name="settings-element-network-settings"></a>\<設定 > 要素 (ネットワーク設定)
+# <a name="settings-element-network-settings"></a>\<settings > 要素 (ネットワーク設定)
 <xref:System.Net?displayProperty=nameWithType> 名前空間の基本的なネットワーク オプションを構成します。  
   
- \<configuration>  
-\<system.net>  
-\<settings>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t @ no__t-2 @ no__t-3 **@no__t 設定 >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -40,7 +40,7 @@ ms.locfileid: "69663995"
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- なし。  
+ [なし] :  
   
 ### <a name="child-elements"></a>子要素  
   
@@ -49,7 +49,7 @@ ms.locfileid: "69663995"
 |[httpListener](httplistener-element-network-settings.md)|<xref:System.Net.HttpListener>クラスで使用されるパラメータをカスタマイズします。|  
 |[httpWebRequest](httpwebrequest-element-network-settings.md)|Web 要求パラメーターをカスタマイズします。|  
 |[ipv6](ipv6-element-network-settings.md)|インターネットプロトコルバージョン 6 (IPv6) のサポートを有効にします。|  
-|[\<performanceCounter > 要素 (ネットワーク設定)](performancecounter-element-network-settings.md)|ネットワークパフォーマンスカウンターを有効にします。|  
+|[\< Performancecounter > 要素 (ネットワーク設定)](performancecounter-element-network-settings.md)|ネットワークパフォーマンスカウンターを有効にします。|  
 |[servicePointManager](servicepointmanager-element-network-settings.md)|ネットワークリソースへの接続を構成します。|  
 |[socket](socket-element-network-settings.md)|ソケット操作が完了ポートを使用するかどうかを指定します。|  
 |[\<webProxyScript > 要素 (ネットワーク設定)](webproxyscript-element-network-settings.md)|Web プロキシを検出するために使用するスクリプトの特性を構成します。|  
@@ -60,7 +60,7 @@ ms.locfileid: "69663995"
 |-------------|-----------------|  
 |[system.net](system-net-element-network-settings.md)|.NET Framework がネットワークに接続する方法を指定するための設定が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>コメント  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  

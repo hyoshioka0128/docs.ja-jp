@@ -334,8 +334,6 @@
     - name: Windows フォームのグローバル化
       href: globalizing-windows-forms.md
       items:
-        - name: エンコード方式および Windows フォームのグローバリゼーション
-          href: encoding-and-windows-forms-globalization.md
         - name: Windows フォームおよびコントロールの国際対応フォント
           href: international-fonts-in-windows-forms-and-controls.md
         - name: Windows フォーム アプリケーションの双方向サポート

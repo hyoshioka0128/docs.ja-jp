@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <oidEntry> element
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
-ms.openlocfilehash: cbdf6150010ca2dace3f0610d9caa90c2bf52746
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eed2a4d06906d2928be62aed20a75484c3eea946
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921056"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699767"
 ---
 # <a name="oidentry-element"></a>\<oidEntry > 要素
 ASN.1 オブジェクト識別子 (OID) を表示名にマップします。  
   
- \<configuration>  
-\<mscorlib >  
-\<cryptographySettings >  
-\<oidMap>  
-\<oidEntry >  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3[ **\<cryptographySettings >** ](cryptographysettings-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5[ **\<oidMap >** を行います。](oidmap-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 @ no__t-6 **\<oidEntry >** します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -38,7 +38,7 @@ ASN.1 オブジェクト識別子 (OID) を表示名にマップします。
 |属性|説明|  
 |---------------|-----------------|  
 |**ドーナツ**|必須の属性です。<br /><br /> クラスによって実装されたアルゴリズムに対応する asn.1 OID を指定します。|  
-|**name**|必須の属性です。<br /><br /> Nameentry > タグの**name**属性[の値を指定します。 \<](nameentry-element.md)|  
+|**name**|必須の属性です。<br /><br /> [@No__t-2nameEntry >](nameentry-element.md)タグの**name**属性の値を指定します。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -52,11 +52,11 @@ ASN.1 オブジェクト識別子 (OID) を表示名にマップします。
 |`mscorlib`|`cryptographySettings`要素を含んでいます。|  
 |`oidMap`|クラスに対する asn.1 オブジェクト識別子 (OID) マッピングが含まれています。|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>コメント  
  Asn.1 オブジェクト識別子は、一部の暗号化形式でアルゴリズムを識別します。 オブジェクト識別子を、識別するアルゴリズムのフレンドリ名にマップします。  
   
 ## <a name="example"></a>例  
- 次の例は、  **\<oidEntry >** 要素を使用して、RIPEMD 160 ハッシュアルゴリズムのオブジェクト識別子をそのハッシュアルゴリズムの実装にマップする方法を示しています。  
+ 次の例では、 **\<oidEntry >** 要素を使用して、160 RIPEMD ハッシュアルゴリズムのオブジェクト識別子をそのハッシュアルゴリズムの実装にマップする方法を示します。  
   
 ```xml  
 <configuration>  

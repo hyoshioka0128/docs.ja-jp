@@ -4,12 +4,12 @@ description: ASP.NET Core および Azure での最新の Web アプリケーシ
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: e257410c51d70af31b565d99a8d28ef82ce681d7
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 8985434467346acc360e9a89c052803f495e87d1
+ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71332008"
 ---
 # <a name="common-web-application-architectures"></a>一般的な Web アプリケーション アーキテクチャ
 
@@ -186,7 +186,7 @@ ASP.NET Core MVC アプリケーション内のユーザー インターフェ�
 
 このモデルを管理するには、アプリケーションを表す単一のコンテナーを展開します。 ロード バランサーを前面に配置してコピーを追加するだけで、スケーリングできます。 単一のコンテナーまたは VM で単一の展開を管理することで、このように簡単になります。
 
-![](./media/image5-13.png)
+![図 5-13](./media/image5-13.png)
 
 図 5-13 に示すように、複数のコンポーネント/ライブラリ、または内部レイヤーを各コンテナーに含めることができます。 しかし、"_コンテナーは 1 つのことを実行し、それを 1 つのプロセスで実行する_" というコンテナーの原則に従えば、このモノリシック パターンは矛盾する可能性があります。
 
@@ -198,7 +198,7 @@ ASP.NET Core MVC アプリケーション内のユーザー インターフェ�
 
 モノリシック アプローチは一般的であり、多くの組織が、このアーキテクチャ アプローチによって開発を行っています。 多くの組織が十分に良好な結果を収めている一方で、限界に達している組織もあります。 多くの組織は、このモデルでアプリケーションを設計していました。これは、ツールとインフラストラクチャのせいでサービス指向アーキテクチャ (SOA) の構築が非常に困難だったためと、アプリケーションが大きくなるまで SOA の必要性がわからなかったためです。 モノリシック アプローチの限界に達しているとわかった場合は、コンテナーとマイクロサービスを有効活用できるようにアプリを分割することを次の論理的な手順とすることができます。
 
-![](./media/image5-14.png)
+![図 5-14](./media/image5-14.png)
 
 Microsoft Azure のモノリシック アプリケーションは、各インスタンスに専用の VM を使用して展開できます。 [Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/) を使用すると、VM のスケーリングを簡単に行うことができます。 [Azure App Service](https://azure.microsoft.com/services/app-service/) では、VM の管理を必要とせずに、モノリシック アプリケーションを実行し、インスタンスを簡単にスケーリングすることができます。 Azure App Services では、Docker コンテナーの単一インスタンスも実行できるため、展開が簡単になります。 Docker を使用すれば、1 つの VM を Docker ホストとして展開し、複数のインスタンスを実行できます。 図 5-14 に示すように、Azure バランサーを使用してスケーリングを管理できます。
 
@@ -292,16 +292,17 @@ ENTRYPOINT ["dotnet", "Web.dll"]
 Visual Studio を使用して、ご利用のアプリケーションに Docker サポートを追加する場合は、その際に Docker Desktop が実行されていることを確認してください。 ウィザードを起動するときに、Docker Desktop が実行されていない場合、ウィザードは正しく実行されません。 さらに、ウィザードでは、正しい Docker のサポートを追加するためにコンテナーの現在の選択について説明します。 Windows コンテナーのサポートを追加する場合は、Windows コンテナーが構成された状態で Docker Desktop が実行されているときに、ウィザードを実行する必要があります。 Linux コンテナーのサポートを追加する場合は、Linux コンテナーが構成された状態で Docker が実行されているときに、ウィザードを実行する必要があります。
 
 ### <a name="references--common-web-architectures"></a>参照 – 一般的な Web アーキテクチャ
-> - **クリーン アーキテクチャ**  
->   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
-> - **オニオン アーキテクチャ**  
->   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
-> - **リポジトリ パターン**  
->   <https://deviq.com/repository-pattern/>
-> - **クリーン アーキテクチャ ソリューションのサンプル**  
->   <https://github.com/ardalis/cleanarchitecture>
-> - **マイクロサービス電子書籍の設計**  
->   <https://aka.ms/MicroservicesEbook>
+
+- **クリーン アーキテクチャ**  
+  <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
+- **オニオン アーキテクチャ**  
+  <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
+- **リポジトリ パターン**  
+  <https://deviq.com/repository-pattern/>
+- **クリーン アーキテクチャ ソリューションのサンプル**  
+  <https://github.com/ardalis/cleanarchitecture>
+- **マイクロサービス電子書籍の設計**  
+  <https://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
 >[前へ](architectural-principles.md)

@@ -278,7 +278,7 @@ Parameter name: year
 [!code-csharp[Conceptual.Calendars#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/formatstrings3.cs#10)]
 [!code-vb[Conceptual.Calendars#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/formatstrings3.vb#10)]
 
-日本語のカレンダーでは、時代 (年号) の最初の年はガント (元年) と呼ばれています。 たとえば、Heisei 1 ではなく、Heisei 時代 (年号) の最初の年を Heisei ガントとして記述できます。 .Net では、次の標準またはカスタムの日時書式指定文字列で書式指定された日付と時刻の書式設定操作で<xref:System.Globalization.CultureInfo> 、日本語 ("ja-jp") カルチャを表すオブジェクトと共に使用する場合に、この規則が適用されます。<xref:System.Globalization.JapaneseCalendar>クラス:
+日本語のカレンダーでは、時代 (年号) の最初の年は元年と呼ばれています。 たとえば、平成 1 年ではなく、平成時代 (年号) の最初の年を平成元年として記述できます。 .Net では、次の標準またはカスタムの日時書式指定文字列で書式指定された日付と時刻の書式設定操作で<xref:System.Globalization.CultureInfo> 、日本語 ("ja-jp") カルチャを表すオブジェクトと共に使用する場合に、この規則が適用されます。<xref:System.Globalization.JapaneseCalendar>クラス:
 
 - "D" 標準の日付と時刻の書式指定文字列で示される[長い形式の日付パターン](../base-types/standard-date-and-time-format-strings.md#LongDate)。
 - "F" 標準の日付と時刻の書式指定文字列で示される、[完全な日付と長い形式の時刻パターン](../base-types/standard-date-and-time-format-strings.md#FullDateLongTime)。
@@ -291,7 +291,7 @@ Parameter name: year
   [!code-csharp[gannen](~/samples/snippets/standard/datetime/calendars/gannen/cs/program.cs)]
   [!code-vb[gannen](~/samples/snippets/standard/datetime/calendars/gannen/vb/gannen-fmt.vb)]
 
-書式設定操作でこの動作が望ましくない場合は、.NET のバージョンに応じて次の操作を行うことで、以前の動作を復元できます。これは、常に時代 (年号) の最初の年を "ガント" ではなく "1" として表します。
+書式設定操作でこの動作が望ましくない場合は、.NET のバージョンに応じて次の操作を行うことで、以前の動作を復元できます。これは、常に時代 (年号) の最初の年を "元年" ではなく "1" として表します。
 
 - **.NET Core:** 次のものを、 *. netcore. json*構成ファイルに追加できます。
 
@@ -323,13 +323,13 @@ Parameter name: year
    |型 | REG_SZ |
    |値 | true |
 
-書式設定操作が無効になっている場合、前の例では次の出力が表示されます。
+書式設定操作で元年のサポートが無効になっている場合、前の例では次の出力が表示されます。
 
 ```console
 Japanese calendar date: 平成1年8月18日 (Gregorian: Friday, August 18, 1989)
 ```
 
-また、.NET も更新され、日付と時刻の解析操作で、"1" または "ガント" として表される年を含む文字列がサポートされるようになりました。 これを行う必要はありませんが、以前の動作を復元して、時代 (年号) の最初の年として "1" だけを認識することができます。 .NET のバージョンに応じて、次のようにすることができます。
+また、.NET も更新され、日付と時刻の解析操作で、"1" または "元年" として表される年を含む文字列がサポートされるようになりました。 これを行う必要はありませんが、以前の動作を復元して、時代 (年号) の最初の年として "1" だけを認識することができます。 .NET のバージョンに応じて、次のようにすることができます。
 
 - **.NET Core:** 次のものを、 *. netcore. json*構成ファイルに追加できます。
 

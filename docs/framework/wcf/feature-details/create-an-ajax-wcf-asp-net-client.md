@@ -2,12 +2,12 @@
 title: Visual Studio で AJAX 対応 WCF サービスと ASP.NET クライアントを作成する
 ms.date: 08/17/2018
 ms.assetid: 95012df8-2a66-420d-944a-8afab261013e
-ms.openlocfilehash: 1f5c9eb1750b0df28836f147d5b4be1b223bb52e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a6d6e87de6200a5cb9bba566d595066673cdf9cf
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053692"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834785"
 ---
 # <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a>方法: AJAX 対応 WCF サービスと、サービスにアクセスする ASP.NET クライアントを作成する
 
@@ -104,9 +104,9 @@ ms.locfileid: "71053692"
 
 ## <a name="run-the-program"></a>プログラムを実行する
 
-*WebForm1*にフォーカスがあることを確認し、 **[開始]** ボタンをクリックして web クライアントを起動します。 ボタンには緑色の三角形が表示され、 **IIS Express (Microsoft Edge)** のようなものが表示されます。 または、 **F5**キーを押します。 **[Price-3 サンドイッチ]** ボタンをクリックして、予想される出力 "3.75" を生成します。
+*WebForm1*にフォーカスがあることを確認し、 **[開始]** ボタンをクリックして web クライアントを起動します。 ボタンには緑色の三角形が表示され、 **IIS Express (Microsoft Edge)** のようなものが表示されます。 または、 <kbd>F5</kbd>キーを押します。 **[Price-3 サンドイッチ]** ボタンをクリックして、予想される出力 "3.75" を生成します。
 
-## <a name="example-code"></a>コード例
+## <a name="example"></a>例
 
 *CostService.svc.cs*ファイルの完全なコードを次に示します。
 

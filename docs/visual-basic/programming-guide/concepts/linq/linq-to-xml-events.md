@@ -2,12 +2,12 @@
 title: LINQ to XML イベント (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
-ms.openlocfilehash: dcdaf321cfb75ca77e1d8b3f5a541a9418c3f512
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d35f8063fe87ee4be3dd49a3c0221cb9c47cb22e
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021272"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834981"
 ---
 # <a name="linq-to-xml-events-visual-basic"></a>LINQ to XML イベント (Visual Basic)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] イベントを使うと、XML ツリーが変更されるときに通知を受けることができます。  
@@ -19,7 +19,7 @@ ms.locfileid: "62021272"
 ## <a name="types-and-events"></a>型とイベント  
  イベントを使用する場合は、次の型を使用できます。  
   
-|型|説明|  
+|種類|説明|  
 |----------|-----------------|  
 |<xref:System.Xml.Linq.XObjectChange>|<xref:System.Xml.Linq.XObject> に対してイベントが生成されるときのイベントの種類を指定します。|  
 |<xref:System.Xml.Linq.XObjectChangeEventArgs>|<xref:System.Xml.Linq.XObject.Changing> イベントおよび <xref:System.Xml.Linq.XObject.Changed> イベントのデータを提供します。|  
@@ -95,7 +95,7 @@ End Module
 ### <a name="comments"></a>コメント  
  このコードを実行すると、次の出力が生成されます。  
   
-```  
+```console  
 Changed System.Xml.Linq.XElement Add  
 Changed System.Xml.Linq.XElement Add  
 Changed System.Xml.Linq.XText Remove  

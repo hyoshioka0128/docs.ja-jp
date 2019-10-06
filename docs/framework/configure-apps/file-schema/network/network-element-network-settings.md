@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <network> element
 - network element
 ms.assetid: 2c2c6ad4-ed11-48ab-b28e-2bc0ba9b42c7
-ms.openlocfilehash: ee60b990bc749dbb9c5d0e7426c57e9392ddf9d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bac288bb28c4176e52366d0e0b7d8bc7d313cf96
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920976"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698014"
 ---
-# <a name="network-element-network-settings"></a>\<network > 要素 (ネットワーク設定)
+# <a name="network-element-network-settings"></a>@no__t 0network > 要素 (ネットワーク設定)
 外部の簡易メール転送プロトコル (SMTP) サーバーのネットワークオプションを構成します。  
   
- \<configuration>  
-\<system.net>  
-\<mailSettings>  
-\<smtp>  
-\<network>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t @ no__t-2 @ no__t-3[ **\<mailSettings >** ](mailsettings-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5[ **\<smtp >** のようになります。](smtp-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 @ no__t-6 @ no__t-7 **\<network > に**なります。  
   
 ## <a name="syntax"></a>構文  
   
@@ -65,28 +65,28 @@ ms.locfileid: "69920976"
 |[\<smtp> 要素 (ネットワーク設定)](smtp-element-network-settings.md)|簡易メール転送プロトコル (SMTP) 電子メールの送信オプションを構成します。|  
   
 ## <a name="remarks"></a>Remarks  
- 一部の SMTP サーバーでは、使用する前にサーバーに対して認証を行う必要があります。 ホストで既定のネットワーク資格情報を使用して認証する場合は、 `defaultCredentials`属性をに`true`設定します。 プロパティ<xref:System.Net.Configuration.SmtpNetworkElement.DefaultCredentials%2A?displayProperty=nameWithType>は、適用可能`defaultCredentials`な構成ファイルから属性の現在の値を取得するために使用できます。  
+ 一部の SMTP サーバーでは、使用する前にサーバーに対して認証を行う必要があります。 ホストで既定のネットワーク資格情報を使用して認証する場合は、`defaultCredentials` 属性を `true` に設定します。 @No__t-0 プロパティを使用して、適用可能な構成ファイルから `defaultCredentials` 属性の現在の値を取得できます。  
   
  基本認証 (ユーザー名とパスワード) を使用して、SMTP サーバーに対する認証を行うこともできます。 このオプションを使用するには、指定した SMTP サーバーの有効なユーザー名とパスワードを指定する必要があります。  
   
 > [!NOTE]
-> 基本認証は、 `userName`および`password`の値を暗号化せずにサーバーに送信します。 ネットワークトラフィックを監視するすべてのユーザーは、資格情報を表示し、それらを使用してサーバーに接続できます。 Kerberos や NT LAN Manager (NTLM) など、より安全な認証メカニズムの使用を検討する必要があります。`defaultCredentials` が`true`の場合、サーバーがこれらのプロトコルをサポートする場合、Kerberos または NTLM が使用されます。  
+> 基本認証では、`userName` および `password` の値が暗号化されずにサーバーに送信されます。 ネットワークトラフィックを監視するすべてのユーザーは、資格情報を表示し、それらを使用してサーバーに接続できます。 Kerberos や NT LAN Manager (NTLM) など、より安全な認証メカニズムの使用を検討する必要があります。@No__t-0 が `true` の場合、サーバーがこれらのプロトコルをサポートする場合、Kerberos または NTLM が使用されます。  
   
- 基本認証および既定のネットワーク資格情報オプションは、同時には指定できません。をに`defaultCredentials` `true`設定し、ユーザー名とパスワードを指定した場合、既定のネットワーク資格情報が使用され、基本認証データは無視されます。  
+ 基本認証および既定のネットワーク資格情報オプションは、同時には指定できません。`defaultCredentials` を `true` に設定し、ユーザー名とパスワードを指定すると、既定のネットワーク資格情報が使用され、基本認証データは無視されます。  
   
- 基本認証でを指定`userName`する場合は、メールサーバーに対して自分で認証`password`を行うようにを指定する必要もあります。  
+ @No__t-0 を指定する場合は、[基本認証] で、メールサーバーに対して自分で認証を行うための `password` を指定する必要もあります。  
   
- プロパティ<xref:System.Net.Configuration.SmtpNetworkElement.UserName%2A?displayProperty=nameWithType>は、適用可能`userName`な構成ファイルから属性の現在の値を取得するために使用できます。 プロパティ<xref:System.Net.Configuration.SmtpNetworkElement.Password%2A?displayProperty=nameWithType>は、適用可能`password`な構成ファイルから属性の現在の値を取得するために使用できます。 通常`password` 、セキュリティ上の理由から、属性を構成ファイルに入力することはできません。  
+ @No__t-0 プロパティを使用して、適用可能な構成ファイルから `userName` 属性の現在の値を取得できます。 @No__t-0 プロパティを使用して、適用可能な構成ファイルから `password` 属性の現在の値を取得できます。 セキュリティ上の理由から、通常、構成ファイルには @no__t 0 属性が入力されません。  
   
- 属性`clientDomain`は、smtp プロトコルの初期要求で使用されるクライアントのドメイン名を smtp サーバーに変更します。 属性`clientDomain`は、既定で使用される localhost 名ではなく、ローカルコンピューターの完全修飾ドメイン名に設定できます。 これにより、SMTP プロトコル標準への準拠が向上します。 既定値は、要求を送信しているローカルコンピューターの localhost 名です。 プロパティ<xref:System.Net.Configuration.SmtpNetworkElement.ClientDomain%2A?displayProperty=nameWithType>は、適用可能`clientDomain`な構成ファイルから属性の現在の値を取得するために使用できます。  
+ @No__t-0 属性は、SMTP プロトコルの初期要求で使用されるクライアントのドメイン名を SMTP サーバーに変更します。 @No__t-0 属性は、既定で使用される localhost 名ではなく、ローカルコンピューターの完全修飾ドメイン名に設定できます。 これにより、SMTP プロトコル標準への準拠が向上します。 既定値は、要求を送信しているローカルコンピューターの localhost 名です。 @No__t-0 プロパティを使用して、適用可能な構成ファイルから `clientDomain` 属性の現在の値を取得できます。  
   
- 拡張`targetName`保護を使用する場合、この属性は認証に使用されます。 既定値は "SMTPSVC/\<host >" の形式です。ここ\<で、host > は SMTP メールサーバーのホスト名です。 プロパティ<xref:System.Net.Configuration.SmtpNetworkElement.TargetName%2A?displayProperty=nameWithType>は、適用可能`targetName`な構成ファイルから属性の現在の値を取得するために使用できます。  
+ @No__t-0 属性は、拡張保護を使用する場合に認証に使用されます。 既定値は "SMTPSVC/\<host >" の形式です。ここで \<host > は SMTP メールサーバーのホスト名です。 @No__t-0 プロパティを使用して、適用可能な構成ファイルから `targetName` 属性の現在の値を取得できます。  
   
- 属性`enableSsl`では、SMTP メールサーバーへのアクセスに SSL を使用するかどうかを指定します。 <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>クラスでサポートされているのは、RFC 3207 で定義されているトランスポート層セキュリティ経由の Secure smtp に対する smtp サービス拡張のみです。 このモードでは、暗号化されていないチャネルで SMTP セッションが開始され、SSL を使用してセキュリティで保護された通信に切り替えるために、クライアントからサーバーに STARTTLS コマンドが発行されます。 詳細については、インターネット技術標準化委員会 (IETF) によって発行された RFC 3207 を参照してください。  
+ @No__t-0 属性は、SMTP メールサーバーへのアクセスに SSL を使用するかどうかを指定します。 <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>クラスでサポートされているのは、RFC 3207 で定義されているトランスポート層セキュリティ経由の Secure smtp に対する smtp サービス拡張のみです。 このモードでは、暗号化されていないチャネルで SMTP セッションが開始され、SSL を使用してセキュリティで保護された通信に切り替えるために、クライアントからサーバーに STARTTLS コマンドが発行されます。 詳細については、インターネット技術標準化委員会 (IETF) によって発行された RFC 3207 を参照してください。  
   
  代替の接続方法では、プロトコルコマンドが送信される前に、SSL セッションが事前に確立されます。 この接続方法は SMTPS とも呼ばれ、既定ではポート465を使用します。 SSL を使用したこの代替接続方法は、現在サポートされていません。  
   
- プロパティ<xref:System.Net.Configuration.SmtpNetworkElement.EnableSsl%2A?displayProperty=nameWithType>は、適用可能`enableSsl`な構成ファイルから属性の現在の値を取得するために使用できます。  
+ @No__t-0 プロパティを使用して、適用可能な構成ファイルから `enableSsl` 属性の現在の値を取得できます。  
   
 ## <a name="example"></a>例  
  次の例では、既定のネットワーク資格情報を使用して電子メールを送信するための適切な SMTP パラメーターを指定しています。  

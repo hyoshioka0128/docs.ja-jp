@@ -8,19 +8,19 @@ helpviewer_keywords:
 - defaultProxy element
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
-ms.openlocfilehash: 7e49762ee017564734bfb2b2f7074d94b7eabe11
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 0945629c1395917bc1cf825f2ba84d20afa99957
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659393"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71698209"
 ---
 # <a name="defaultproxy-element-network-settings"></a>\<defaultProxy> 要素 (ネットワーク設定)
 ハイパーテキスト転送プロトコル (HTTP: Hypertext Transfer Protocol) プロキシ サーバーを構成します。  
   
- \<configuration>  
-\<system.net>  
-\<defaultProxy>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<defaultProxy >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -39,14 +39,14 @@ ms.locfileid: "69659393"
   
 ### <a name="attributes"></a>属性  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |`enabled`|Web プロキシが使用されているかどうかを指定します。 既定値は `true` です。|  
 |`useDefaultCredentials`|このホストに対する既定の資格情報が Web プロキシにアクセスするために使用されるかどうかを指定します。 既定値は `false` です。|  
   
 ### <a name="child-elements"></a>子要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[bypasslist](bypasslist-element-network-settings.md)|プロキシを使用しないアドレスを記述する一連の正規表現を提供します。|  
 |[module](module-element-network-settings.md)|新しいプロキシ モジュールをアプリケーションに追加します。|  
@@ -54,11 +54,11 @@ ms.locfileid: "69659393"
   
 ### <a name="parent-elements"></a>親要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|.NET Framework がネットワークに接続する方法を指定するための設定が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>コメント  
  defaultProxy 要素が空の場合、Internet Explorer のプロキシ設定が使用されます。 この動作は、.NET Framework Version 1.1 とは異なります。  
   
  例外がスローされるのは、 [module](module-element-network-settings.md)要素で非パブリック型が指定されている場合、 <xref:System.Net.IWebProxy>型がクラスから派生していない場合、このオブジェクトのパラメーターなしのコンストラクターの例外が発生した場合、またはを取得しているときに例外が発生した場合です。システム指定の既定のプロキシ。 例外の <xref:System.Exception.InnerException%2A> プロパティに、このエラーの根本原因に関する詳細情報が含まれています。  

@@ -9,27 +9,25 @@ helpviewer_keywords:
 - configuration files [ASP.NET]
 - configuration schema [.NET Framework], Web settings
 ms.assetid: ae1ac356-267d-4753-8d7a-7a04eb45a9be
-ms.openlocfilehash: d53d3a105203addfacb1c982e0960bd12996f571
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 71b9e46a8c2d60c853af63ee78e2ed5dbe6e98f4
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941422"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699145"
 ---
 # <a name="web-settings-schema"></a>Web 設定スキーマ
 Web 設定は、CPU と、ASP.NET ホスト層によって管理されているプロセス全体の動作に適用される CPU および ASP.NET 設定の実行レベルを指定します。 これらの設定は、ASP.NET アプリケーションの Web.config ファイルで指定されているアプリケーション ドメインの種類の設定とは異なります。  
   
- Web 設定は、.NET Framework のバージョンのインストール フォルダーに配置された Aspnet.config ファイルに格納されます。 たとえば、.NET Framework 2.0 の Aspnet .config ファイルは、次のフォルダーにあります。  
+Web 設定は、.NET Framework のバージョンのインストール フォルダーに配置された Aspnet.config ファイルに格納されます。 たとえば、.NET Framework 2.0 の Aspnet .config ファイルは、次のフォルダーにあります。  
   
- `C:\Windows\Microsoft.NET\Framework\v2.0.50727\`  
+`C:\Windows\Microsoft.NET\Framework\v2.0.50727\`  
   
- Web 設定は、machine.config ファイル、ルート、Web.config ファイル、アプリケーション レベルの Web.config ファイルなどの他の構成ファイルでは使用されません。  
+Web 設定は、machine.config ファイル、ルート、Web.config ファイル、アプリケーション レベルの Web.config ファイルなどの他の構成ファイルでは使用されません。  
   
- [\<configuration> 要素](../configuration-element.md)  
-  
- [\<system.web> 要素 (Web 設定)](system-web-element-web-settings.md)  
-  
- [\<applicationPool> 要素 (Web 設定)](applicationpool-element-web-settings.md)  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t[ **@no__t 47 >** ](system-web-element-web-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3[ **\<applicationPool >** ](applicationpool-element-web-settings.md)  
   
 |要素|説明|  
 |-------------|-----------------|  

@@ -2,12 +2,12 @@
 title: '明示的なフィールド: Val キーワード'
 description: F# ' Val ' キーワードについて説明します。これは、型を初期化せずに、クラスまたは構造体の型に値を格納する場所を宣言するために使用されます。
 ms.date: 05/16/2016
-ms.openlocfilehash: fe339e33dae27ae226022a68dd8247d1ab1994b3
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 2703d9a2734cfda1614a401ec24c6630ec31b2f1
+ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216481"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71736830"
 ---
 # <a name="explicit-fields-the-val-keyword"></a>明示的なフィールド: Val キーワード
 
@@ -28,19 +28,16 @@ val [ mutable ] [ access-modifier ] field-name : type-name
 Primary コンストラクターを持つクラス型の明示的なフィールドには、 [DefaultValue](https://msdn.microsoft.com/library/a3a3307b-8c05-441e-b109-245511614d58)属性が必要です。 この属性は、フィールドが 0 に初期化されることを示します。 フィールドの型ではゼロ初期化をサポートしている必要があります。 型が次のいずれかである場合は、ゼロ初期化がサポートされています。
 
 - 値が 0 のプリミティブ型。
-
 - 標準値、外れ値、または値の表現として null 値をサポートする型。 これには、クラス、タプル、レコード、関数、インターフェイス、.NET 参照型、`unit` 型、判別された共用体型が含まれます。
-
 - .NET 値型。
-
 - すべてのフィールドで既定値 0 がサポートされている構造体。
 
 たとえば、`someField` と呼ばれる変更できないフィールドには、.NET によるコンパイル済み表現を使用した、`someField@` という名前のバッキング フィールドが含まれており、ユーザーは `someField` という名前のプロパティを使用して、格納されている値にアクセスします。
 
 変更可能なフィールドの場合、.NET によるコンパイル済み表現は .NET フィールドになります。
 
->[!WARNING]
->.NET Framework 名前空間`System.ComponentModel`には、同じ名前を持つ属性が含まれています。 この属性の詳細については、「`System.ComponentModel.DefaultValueAttribute`」を参照してください。
+> [!WARNING]
+> .NET Framework 名前空間`System.ComponentModel`には、同じ名前を持つ属性が含まれています。 この属性の詳細については、「<xref:System.ComponentModel.DefaultValueAttribute>」を参照してください。
 
 次のコードは、明示的なフィールドの使用方法を示しています。また、比較のために、プライマリ コンストラクターを持つクラスの `let` バインディングも示しています。 `let` バインディングのフィールド `myInt1` が private であることに注意してください。 `let` バインディングのフィールド `myInt1` をメンバー メソッドから参照する際は、自己識別子 `this` は必要ありません。 ただし、明示的なフィールド `myInt2` と `myString` を参照する際は、自己識別子が必要です。
 
@@ -59,7 +56,7 @@ Primary コンストラクターを持つクラス型の明示的なフィール
 
 出力は `35 22`になります。
 
-次のコードは、構造体での明示的なフィールドの使用方法を示しています。 構造体は値型であるため、フィールドの値を 0 に設定する既定のコンストラクターが自動的に含まれます。 そのため、`DefaultValue` 属性は必要ありません。
+次のコードは、構造体での明示的なフィールドの使用方法を示しています。 構造体は値型であるため、フィールドの値を0に設定するパラメーターなしのコンストラクターが自動的に設定されます。 そのため、`DefaultValue` 属性は必要ありません。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6703.fs)]
 
@@ -75,6 +72,6 @@ Primary コンストラクターを持つクラス型の明示的なフィール
 
 ## <a name="see-also"></a>関連項目
 
-- [プロパティ](properties.md)
+- [Properties](properties.md)
 - [メンバー](index.md)
 - [クラス内の `let` バインド](let-bindings-in-classes.md)

@@ -2,12 +2,12 @@
 title: '方法: 複雑なフィルター処理を使用したクエリの作成 (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: bf286ffc-7990-4b00-a4eb-ee3d70129950
-ms.openlocfilehash: 0459c9549238257c0a76276a1d10f6d370144214
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 41b967e2876be98016b48da5122478f63385c6a8
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709862"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834972"
 ---
 # <a name="how-to-write-queries-with-complex-filtering-visual-basic"></a>方法: 複雑なフィルター処理を使用したクエリの作成 (Visual Basic)
 複雑なフィルターを使用して LINQ to XML クエリを記述することが必要になる場合があります。 たとえば、特定の名前と値を持つ子要素を含む要素をすべて検索しなければならない場合があります。 このトピックでは、複雑なフィルターを使用してクエリを記述する例について説明します。  
@@ -17,7 +17,7 @@ ms.locfileid: "68709862"
   
  この例では、次の XML ドキュメントを使用します: 「[サンプル XML ファイル:複数の購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)。  
   
- 演算子の`Any`詳細については、「[量指定子操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md)」を参照してください。  
+ @No__t-0 演算子の詳細については、「[量指定子操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md)」を参照してください。  
   
 ```vb  
 Dim root As XElement = XElement.Load("PurchaseOrders.xml")  
@@ -38,7 +38,7 @@ Next
   
  このコードを実行すると、次の出力が生成されます。  
   
-```  
+```console  
 99505  
 ```  
   
@@ -72,7 +72,7 @@ End Module
   
  このコードを実行すると、次の出力が生成されます。  
   
-```  
+```console  
 99505  
 ```  
   

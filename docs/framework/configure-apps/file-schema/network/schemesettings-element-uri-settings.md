@@ -2,19 +2,19 @@
 title: <schemeSettings> 要素 (Uri 設定)
 ms.date: 03/30/2017
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-ms.openlocfilehash: 46012b15d41422fb3357e57438e320136809ef41
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 498aef77a1dfd8cffcac73b704b8d1bb6df5d165
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664006"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697769"
 ---
 # <a name="schemesettings-element-uri-settings"></a>\<schemeSettings > 要素 (Uri 設定)
 <xref:System.Uri> が特定のスキームに解析される方法を指定します。  
   
- \<configuration>  
-\<uri>  
-\<schemeSettings>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\< uri >** ](uri-element-uri-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3 **\<schemeSettings >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -31,7 +31,7 @@ ms.locfileid: "69664006"
   
 ### <a name="child-elements"></a>子要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[add](add-element-for-schemesettings-uri-settings.md)|スキーム名のスキーム設定を追加します。|  
 |[clear](clear-element-for-schemesettings-uri-settings.md)|既存のスキーム設定をすべてクリアします。|  
@@ -39,12 +39,12 @@ ms.locfileid: "69664006"
   
 ### <a name="parent-elements"></a>親要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[uri](uri-element-uri-settings.md)|.NET Framework が、uniform resource identifier (Uri) を使用して表された web アドレスを処理する方法を指定する設定が含まれます。|  
   
-## <a name="remarks"></a>Remarks  
- 既定では、 <xref:System.Uri?displayProperty=nameWithType>クラスは、パスの圧縮を実行する前に、エンコードされたパス区切り記号のエスケープを解除します。 これは、次のような攻撃に対するセキュリティメカニズムとして実装されています。  
+## <a name="remarks"></a>コメント  
+ 既定では、<xref:System.Uri?displayProperty=nameWithType> クラスは、パスの圧縮を実行する前に、エンコードされたパス区切り記号のエスケープを解除します。 これは、次のような攻撃に対するセキュリティメカニズムとして実装されています。  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -52,7 +52,7 @@ ms.locfileid: "69664006"
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- このため、クラス<xref:System.Uri?displayProperty=nameWithType>はまずパスの区切り記号をエスケープ解除し、次にパスの圧縮を適用します。 上の悪意のある URL をクラスコンストラクター <xref:System.Uri?displayProperty=nameWithType>に渡すと、次の URI が生成されます。  
+ このため、<xref:System.Uri?displayProperty=nameWithType> クラスはまずパスの区切り記号をエスケープ解除し、次にパスの圧縮を適用します。 上記の悪意のある URL を <xref:System.Uri?displayProperty=nameWithType> クラスコンストラクターに渡すと、次の URI になります。  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -62,7 +62,7 @@ ms.locfileid: "69664006"
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
 ## <a name="example"></a>例  
- 次の例は、http スキームに対し<xref:System.Uri>てパーセントでエンコードされたパス区切り記号をエスケープしないようにするために、クラスによって使用される構成を示しています。  
+ 次の例は、http スキームでパーセントでエンコードされたパス区切り記号をエスケープしないようにするために <xref:System.Uri> クラスによって使用される構成を示しています。  
   
 ```xml  
 <configuration>  
@@ -78,8 +78,8 @@ ms.locfileid: "69664006"
   
 |||
 |-|-|  
-|名前空間|システム|  
-|スキーマ名||  
+|Namespace|System|  
+|[スキーマ名]||  
 |検証ファイル||  
 |空にすることができます||  
   

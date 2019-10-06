@@ -1,5 +1,5 @@
 ---
-title: <filter> の <add> の <listeners> の <trace> 要素
+title: <trace> の <listeners> の <add> の <filter> 要素
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add/filter
@@ -8,22 +8,22 @@ helpviewer_keywords:
 - filter element for <add> for <listeners> for <trace>
 - <filter> element for <add> for <listeners> for <trace>
 ms.assetid: eb9c18f5-dfa8-47c5-b91b-e4b93e76e1cc
-ms.openlocfilehash: afde5381a7dd7dfe6a1a9d238a2029511bd9bae2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f6b1ec99c5aab8e85df7f1920aca32f49a5be066
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927135"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71699358"
 ---
-# <a name="filter-element-for-add-for-listeners-for-trace"></a>\<トレース > の\< \<リスナー>のadd>のフィルター>\<要素
-トレースの`Listeners`コレクションのリスナーにフィルターを追加します。  
+# <a name="filter-element-for-add-for-listeners-for-trace"></a>\<trace > 用の \< add > の \<filter > 要素
+トレースの @no__t 0 コレクションのリスナーにフィルターを追加します。  
   
- \<configuration>  
-\<system.diagnostics>  
-\<トレース >  
-\<リスナー >  
-\<add>  
-\<フィルター >  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3[ **\<trace >** ](trace-element.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5[ **\<listeners >** します。](listeners-element-for-trace.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t @ no__t-6 @ no__t-7[ **&nbsp;0add > を追加**します。](add-element-for-listeners-for-trace.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t @ no__t @ no__t @ no__t-7 @ no__t-8 @-9 **&nbsp;1filter > を選択**します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -40,7 +40,7 @@ ms.locfileid: "69927135"
   
 |属性|説明|  
 |---------------|-----------------|  
-|`type`|必須の属性です。<br /><br /> フィルターの種類を指定します。この型は<xref:System.Diagnostics.TraceFilter>クラスから継承する必要があります。 型の名前空間で修飾された名前を使用できます。これは、 <xref:System.Type.FullName%2A>型のプロパティに対応します。または、 <xref:System.Type.AssemblyQualifiedName%2A>プロパティに対応するアセンブリ情報を含む完全修飾型名を使用することもできます。 完全修飾型名の詳細については、「[完全修飾型名の指定](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md)」を参照してください。|  
+|`type`|必須の属性です。<br /><br /> フィルターの種類を指定します。この型は、<xref:System.Diagnostics.TraceFilter> クラスから継承する必要があります。 型の名前空間で修飾された名前を使用できます。これは、型の @no__t 0 のプロパティに対応します。または、<xref:System.Type.AssemblyQualifiedName%2A> プロパティに対応するアセンブリ情報を含む完全修飾型名を使用することもできます。 完全修飾型名の詳細については、「[完全修飾型名の指定](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md)」を参照してください。|  
 |`initializeData`|省略可能な属性です。<br /><br /> 指定されたフィルタークラスのコンストラクターに渡される文字列。|  
   
 ### <a name="child-elements"></a>子要素  
@@ -56,13 +56,13 @@ ms.locfileid: "69927135"
 |`listeners`|メッセージを収集、格納、およびルーティングするリスナーを格納します。 リスナーは、適切なターゲットにトレース出力を送信します。|  
 |`add`|`Listeners` コレクションにリスナーを追加します。|  
   
-## <a name="remarks"></a>Remarks  
- 要素`<filter>`は、 `<add>` [sharedListeners > で定義されているリスナーの名前だけでなく、リスナーの種類を指定するトレースリスナーの要素に含まれている必要があります。 \<](sharedlisteners-element.md) リスナーが[ \<sharedListeners >](sharedlisteners-element.md)で定義されている場合は、そのリスナーのフィルターをその要素で定義する必要があります。  
+## <a name="remarks"></a>コメント  
+ @No__t-0 要素は、 [\<sharedListeners >](sharedlisteners-element.md)で定義されているリスナーの名前だけでなく、リスナーの種類を指定するトレースリスナーの `<add>` 要素に格納されている必要があります。 リスナーが[@no__t 1sharedListeners >](sharedlisteners-element.md)で定義されている場合は、そのリスナーのフィルターをその要素で定義する必要があります。  
   
  この要素は、コンピューターの構成ファイル (machine.config) とアプリケーション構成ファイルで使用できます。  
   
 ## <a name="example"></a>例  
- 次の`<filter>`例では、要素を使用して、フィルターイベントレベルをとして`Error`指定し、トレースの`Listeners`コレクション内のリスナー `console`にフィルターを追加する方法を示します。  
+ 次の例では、`<filter>` 要素を使用して、トレースの `Listeners` コレクションにある `console` のリスナーにフィルターを追加し、フィルターイベントレベルを `Error` に指定する方法を示します。  
   
 ```xml  
 <configuration>  

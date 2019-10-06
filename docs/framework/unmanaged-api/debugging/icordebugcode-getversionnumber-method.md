@@ -17,38 +17,40 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 155a8d5465e0fb19c55c9d11b67c6031c2b2c4a3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4b6fd6e8043f1c62da8994b43a9b9af45fb2e3c0
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747525"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700819"
 ---
 # <a name="icordebugcodegetversionnumber-method"></a>ICorDebugCode::GetVersionNumber メソッド
-この"ICorDebugCode"を表すコードのバージョンを識別する 1 から始まる番号を取得します。  
-  
-## <a name="syntax"></a>構文  
-  
-```cpp  
-HRESULT GetVersionNumber (  
-    [out] ULONG32    *nVersion  
-);  
-```  
-  
-## <a name="parameters"></a>パラメーター  
+
+この "" コード "が表すコードのバージョンを識別する、1から始まる番号を取得します。
+
+## <a name="syntax"></a>構文
+
+```cpp
+HRESULT GetVersionNumber (
+    [out] ULONG32    *nVersion
+);
+```
+
+## <a name="parameters"></a>パラメーター
+
  `nVersion`  
- [out]コードのバージョン番号へのポインター。  
+ 入出力コードのバージョン番号へのポインター。
+
+## <a name="remarks"></a>コメント
+
+ バージョン番号は、エディットコンティニュ (EnC) 操作がコードで実行されるたびにインクリメントされます。
+
+## <a name="requirements"></a>要件
+
+ **・** [システム要件](../../get-started/system-requirements.md)に関するページを参照してください。  
   
-## <a name="remarks"></a>Remarks  
- バージョン番号は、コードに対してエディット コンティニュ (EnC) 操作を実行するたびにインクリメントされます。  
+ **ヘッダー:** CorDebug .idl、CorDebug. h  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+ **ライブラリ**CorGuids .lib  
   
- **ヘッダー:** CorDebug.idl、CorDebug.h  
-  
- **ライブラリ:** CorGuids.lib  
-  
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
-## <a name="see-also"></a>関連項目
+ **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -16,7 +16,7 @@ ms.locfileid: "69040049"
 # <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control-using-the-designer"></a>方法: デザイナーを使って Windows フォーム DataGrid コントロールにテーブルと列を追加する
 
 > [!NOTE]
->   <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。 詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。
+> <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。 詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。
 
 <xref:System.Windows.Forms.DataGrid>オブジェクトを作成<xref:System.Windows.Forms.DataGrid> <xref:System.Windows.Forms.GridTableStylesCollection> <xref:System.Windows.Forms.DataGrid.TableStyles%2A>し、コントロールのプロパティを使用してアクセスするオブジェクトに追加することにより、テーブルおよび列の Windows フォームコントロール<xref:System.Windows.Forms.DataGridTableStyle>にデータを表示できます。 各テーブルスタイルには、 <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> <xref:System.Windows.Forms.DataGridTableStyle>のプロパティで指定されているデータテーブルの内容が表示されます。 既定では、列スタイルが指定されていないテーブルスタイルでは、そのデータテーブル内のすべての列が表示されます。 にオブジェクトを追加<xref:System.Windows.Forms.DataGridColumnStyle>することで、テーブル内のどの列を表示するかを制限できます。この<xref:System.Windows.Forms.DataGridTableStyle>オブジェクトには、各のプロパティを<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>通じてアクセスします。 <xref:System.Windows.Forms.GridColumnStylesCollection>
 
@@ -40,7 +40,7 @@ ms.locfileid: "69040049"
 
 ### <a name="to-add-a-column-to-the-datagrid-control-in-the-designer"></a>デザイナーで DataGrid コントロールに列を追加するには
 
-1. **DataGridTableStyle コレクションエディター**の **[メンバー]** ボックスで、適切なテーブルのスタイルを選択します。 コレクションエディターの **[プロパティ]** ボックスで<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>コレクションを選択し、プロパティの横にプロパティウィンドウある省略記号ボタン (省略記号ボタン ([...]) をクリック](./media/visual-studio-ellipsis-button.png)![します。**System.windows.forms.datagridcolumnstyle> コレクションエディター**を表示します。
+1. **DataGridTableStyle コレクションエディター**の **[メンバー]** ボックスで、適切なテーブルのスタイルを選択します。 コレクションエディターの **[プロパティ]** ボックスで<xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>コレクションを選択し、![プロパティの横にプロパティウィンドウある省略記号ボタン (省略記号ボタン ([...]) をクリック](./media/visual-studio-ellipsis-button.png)します。**System.windows.forms.datagridcolumnstyle> コレクションエディター**を表示します。
 
 2. コレクションエディターで、 **[追加]** をクリックして列のスタイルを挿入するか、 **[追加]** の横にある下矢印をクリックして列の種類を指定します。
 

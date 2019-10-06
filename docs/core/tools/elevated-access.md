@@ -3,12 +3,12 @@ title: dotnet コマンドの特権アクセス
 description: 特権アクセスを必要とする dotnet コマンドのベスト プラクティスについて説明します。
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: b6de87f375a584da25e160d79f51f1bc48f3c302
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: cf7c93a0adcae7092a61a6fc6046cd45cf00bf58
+ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969860"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71216310"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>dotnet コマンドの特権アクセス
 
@@ -41,7 +41,7 @@ ms.locfileid: "70969860"
 
 ツールをインストールするには、管理者特権のプロンプトで次のコマンドを実行します。 インストール中、*dotnet-tools* フォルダーが作成されます。
 
-```cmd
+```dotnetcli
 dotnet tool install PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools".
 ```
 
@@ -69,7 +69,7 @@ TOOLCOMMAND
 
 管理者特権プロンプトで次のコマンドを入力します。
 
-```cmd
+```dotnetcli
 dotnet tool uninstall PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools"
 ```
 

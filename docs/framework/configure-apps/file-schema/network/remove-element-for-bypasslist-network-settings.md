@@ -10,22 +10,22 @@ helpviewer_keywords:
 - bypasslist, remove element
 - remove element, bypasslist
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
-ms.openlocfilehash: 99c18bd5b779845d52831b4a9591eaf4d5e5530b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 97b49a8a520d6a4f72945366874991d2deb18710
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920964"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697893"
 ---
-# <a name="remove-element-for-bypasslist-network-settings"></a>\<bypasslist の > 要素の削除 (ネットワーク設定)
+# <a name="remove-element-for-bypasslist-network-settings"></a>bypasslist (ネットワーク設定) の @no__t 0remove > 要素
 
 プロキシバイパスリストから IP アドレスまたは DNS 名を削除します。
 
-\<configuration>
-\<system.net>\
-\<defaultProxy > \
-\<bypasslist>\
-\<remove>
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5[ **\<bypasslist >** を行います。](bypasslist-element-network-settings.md)  
+&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 @ no__t-6 @ no__t-7 **\<remove を削除**します。  
 
 ## <a name="syntax"></a>構文
 
@@ -41,7 +41,7 @@ ms.locfileid: "69920964"
 
 ### <a name="attributes"></a>属性
 
-|**属性**|**説明**|
+|**属性**|**[説明]**|
 |-------------------|---------------------|
 |`address`|IP アドレスまたは DNS 名を記述する正規表現。|
 
@@ -51,15 +51,15 @@ ms.locfileid: "69920964"
 
 ### <a name="parent-elements"></a>親要素
 
-|**要素**|**説明**|
+|**要素**|**[説明]**|
 |-----------------|---------------------|
 |[bypasslist](bypasslist-element-network-settings.md)|プロキシを使用しないアドレスを記述する一連の正規表現を提供します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
-要素`remove`は、プロキシサーバーをバイパスするアドレスの一覧から、IP アドレスまたは DNS サーバー名を記述する正規表現を削除します。 これらのアドレスは、構成ファイルで既に定義されているか、構成階層の上位レベルに定義されています。
+@No__t-0 要素は、プロキシサーバーをバイパスするアドレスの一覧から、IP アドレスまたは DNS サーバー名を記述する正規表現を削除します。 これらのアドレスは、構成ファイルで既に定義されているか、構成階層の上位レベルに定義されています。
 
-`address`属性の値は、一連の IP アドレスまたはホスト名を表す正規表現である必要があります。
+@No__t-0 属性の値は、一連の IP アドレスまたはホスト名を表す正規表現である必要があります。
 
 正規表現の詳細については、「」を参照してください。[正規表現を .NET Framework](../../../../standard/base-types/regular-expressions.md)します。
 

@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30801
 ms.assetid: 67743319-2d1c-496e-bfd9-22b046b43b5a
-ms.openlocfilehash: 3634ea4b97f25e41e27629c51119f2ea4df5f887
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fa474aaff4b1ceaf9b80be5dbc869276a54a6e65
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589773"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700992"
 ---
 # <a name="labels-that-are-numbers-must-be-followed-by-colons"></a>数字を指定するラベルの後には、コロンが必要です。
-行番号は、ラベルの他の種類と同じ規則に従うし、コロンを含める必要があります。  
+行番号は、他の種類のラベルと同じ規則に従い、コロンが含まれている必要があります。  
   
  **エラー ID:** BC30801  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 配置後にコード行の先頭のコロンの数例えば：  
+- 数字の後にコード行の先頭にコロンを付けます。例えば：  
   
-    ```  
+    ```vb  
     400:    X += 1  
     ```  
   

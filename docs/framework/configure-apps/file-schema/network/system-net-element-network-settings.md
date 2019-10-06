@@ -8,18 +8,18 @@ helpviewer_keywords:
 - system.Net element
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
-ms.openlocfilehash: 449146612938700f59f5e2ec761526d1dc66a3fc
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 810e942394c75c192e4423afe4c674ef3a2b9900
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663956"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71697503"
 ---
 # <a name="systemnet-element-network-settings"></a>\<system.Net> 要素 (ネットワーク設定)
 .NET Framework がネットワークに接続する方法を指定するための設定が含まれています。  
   
- \<configuration>  
-\<system.net>  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp; @ no__t-1 **@no__t 3net.tcp >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -32,31 +32,31 @@ ms.locfileid: "69663956"
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- なし。  
+ [なし] :  
   
 ### <a name="child-elements"></a>子要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[authenticationModules](authenticationmodules-element-network-settings.md)|インターネット要求を認証するために使用するモジュールを指定します。|  
 |[connectionManagement](connectionmanagement-element-network-settings.md)|インターネットホストへの接続の最大数を指定します。|  
 |[defaultProxy](defaultproxy-element-network-settings.md)|ハイパーテキスト転送プロトコル (HTTP: Hypertext Transfer Protocol) プロキシ サーバーを構成します。|  
 |[mailSettings](mailsettings-element-network-settings.md)|簡易メール転送プロトコル (SMTP) 電子メールの送信オプションを構成します。|  
 |[requestCaching](requestcaching-element-network-settings.md)|ネットワーク要求のキャッシュメカニズムを制御します。|  
-|[settings](settings-element-network-settings.md)|<xref:System.Net>および関連する子名前空間のクラスの基本的なネットワークオプションを構成します。|  
+|[settings](settings-element-network-settings.md)|@No__t-0 および関連する子名前空間のクラスの基本的なネットワークオプションを構成します。|  
 |[webRequestModules](webrequestmodules-element-network-settings.md)|インターネットホストから情報を要求するために使用するモジュールを指定します。|  
   
 ### <a name="parent-elements"></a>親要素  
   
-|**要素**|**説明**|  
+|**要素**|**[説明]**|  
 |-----------------|---------------------|  
 |[configuration](../configuration-element.md)|すべての名前空間の設定が含まれます。|  
   
-## <a name="remarks"></a>Remarks  
- <xref:System.Net> [ System.net>要素には、および関連する子名前空間のクラスの設定が含ま\<](system-net-element-network-settings.md)れています。 この設定では、インターネットホストから情報を受信するための認証モジュール、接続管理、メール設定、プロキシサーバー、およびインターネット要求モジュールを構成します。  
+## <a name="remarks"></a>コメント  
+ [@No__t 1system. net >](system-net-element-network-settings.md)要素には、<xref:System.Net> および関連する子名前空間のクラスの設定が含まれています。 この設定では、インターネットホストから情報を受信するための認証モジュール、接続管理、メール設定、プロキシサーバー、およびインターネット要求モジュールを構成します。  
   
 ## <a name="example"></a>例  
- 次の例は、クラスによって<xref:System.Net>使用される一般的な構成を示しています。  
+ 次の例は、<xref:System.Net> クラスで使用される一般的な構成を示しています。  
   
 ```xml  
 <configuration>  

@@ -7,19 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - BC30909
 ms.assetid: ffa7395d-e182-4087-8ce8-079810fdae54
-ms.openlocfilehash: cb5191442ed8d3ee47c5116b10740e277ffa5bac
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca67e74d7790352bd1842cb8a59fe1525af6e18c
+ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661927"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71700897"
 ---
-# <a name="membername-cannot-expose-type-typename-outside-the-project-through-containertype-containertypename"></a>'\<membername >' の型を公開できません'\<typename >' 経由でプロジェクトの外部\<でフィルター処理します > '\<containertypename >'。
-変数、プロシージャのパラメーター、または関数の戻り値が、そのコンテナーの外部に公開されているが、コンテナーの外に必ず公開しない型として宣言されています。  
+# <a name="membername-cannot-expose-type-typename-outside-the-project-through-containertype-containertypename"></a>' \<membername > ' は、2containertype @no__t ' >-3containertypename @no__t ' 経由でプロジェクトの外部の型 ' \< typename > ' を公開できません
+変数、プロシージャパラメーター、または関数の戻り値は、コンテナーの外部に公開されますが、コンテナーの外部に公開されてはならない型として宣言されています。  
   
- 次のスケルトン コードは、このエラーが発生する状況を示しています。  
+ 次のスケルトンコードは、このエラーを生成する状況を示しています。  
   
-```  
+```vb  
 Private Class privateClass  
 End Class  
 Public Class mainClass  
@@ -27,14 +27,14 @@ Public Class mainClass
 End Class  
 ```  
   
- 宣言されている型`Protected`、 `Friend`、 `Protected Friend`、または`Private`その宣言コンテキストの外部アクセスを制限するためのものです。 データとして使用制限の少ない方のアクセス権を持つ変数の型はこの目的を倒すとします。 上記のスケルトン コード`exposedVar`は`Public`公開と`privateClass`にアクセス権のないコードにします。  
+ @No__t-0、`Friend`、`Protected Friend`、または `Private` として宣言された型は、宣言コンテキストの外部でアクセスが制限されることを意図しています。 アクセス制限が低い変数のデータ型として使用すると、この目的が損なわれます。 前のスケルトンコードでは、`exposedVar` は `Public` であり、@no__t にアクセスできないようにするコードには、-2 を公開します。  
   
  **エラー ID:** BC30909  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 変数、プロシージャのパラメーター、または関数のアクセス レベルの変更は、少なくともそのデータ型のアクセス レベルと同程度に制限するように返します。  
+- 変数、プロシージャパラメーター、または関数のアクセスレベルを、少なくともそのデータ型のアクセスレベルと同じ制限以上になるように変更します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)

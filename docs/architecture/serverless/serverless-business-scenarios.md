@@ -4,12 +4,12 @@ description: 画像処理からモバイルバックエンドおよび ETL パ�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: cb761524976125c816aae925f0c369eb8c76e7de
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7024a33f8a7fccd6afa51c126454afedd87cceee
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926478"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71834294"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>サーバーレスのビジネス シナリオとユース ケース
 

@@ -317,13 +317,18 @@
       items:
         - name: 概要
           href: core/tools/index.md
-        - name: グローバル ツール
+        - name: ツール
           expanded: true
           items:
-            - name: 概要
-              href: core/tools/global-tools.md
-            - name: グローバル ツールを作成する
-              href: core/tools/global-tools-how-to-create.md
+            - name: グローバル ツール
+              expanded: true
+              items:
+                - name: 概要
+                  href: core/tools/global-tools.md
+                - name: グローバル ツールを作成する
+                  href: core/tools/global-tools-how-to-create.md
+            - name: ツールの使用に関するイシューのトラブルシューティング
+              href: core/tools/troubleshoot-usage-issues.md
         - name: 昇格されたアクセス権
           href: core/tools/elevated-access.md
         - name: 機能拡張モデル

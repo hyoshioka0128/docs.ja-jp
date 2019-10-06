@@ -5,18 +5,18 @@ metadata:
   title: .NET for Apache Spark のドキュメント
   description: .NET for Apache Spark を使用して、.NET コードを記述するすべての場所で、Apache Spark を使用して、大量のデータ、リアルタイムのストリーム、機械学習、アドホック クエリなどを処理する方法について説明します。
   services: service
-  ms.service: dotnet-spark
+  ms.prod: dotnet-spark
   ms.topic: landing-page
   ms.collection: collection
   author: mamccrea
   ms.author: mamccrea
   ms.date: 09/11/2019
-  ms.openlocfilehash: 9836e97aa2a958792fe95c8a1241d284ef860c45
-  ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+  ms.openlocfilehash: bce56c20e30df1f6eb6d6be5edb7ea766a783d83
+  ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2019
-  ms.locfileid: "70928511"
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71332560"
 landingContent:
 - title: .NET for Apache Spark について
   linkLists:

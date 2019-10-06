@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e2e37de4d3032db6d9578eae7ba0be5c1e39f39d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 42edce63856b629511faeb165362da18ea3cecad
+ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71051754"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71833628"
 ---
 # <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>方法: マネージ コード DCOM を WCF に移行する
 Windows Communication Foundation (WCF) は、分散コンポーネント オブジェクト モデル (DCOM) と比較して、分散環境でサーバーとクライアントの間でマネージド コードを呼び出すための、推奨されているセキュリティで保護された選択肢です。 この記事では、以下のシナリオで、DCOM から WCF にコードを移行する方法を示します。  
@@ -60,7 +60,7 @@ public interface IRemoteService
   
  このシナリオでは、クライアントは、リモート サービスからオブジェクトの逆シリアル化されたコピーを受け取ります。 クライアントは、サービスにコールバックしなくても、このローカル コピーと対話できます。  つまり、ローカル コピーのメソッドが呼び出されるときに、サービスはまったく関与しないことがクライアントに保証されています。 WCF は常にサービスから値渡しでオブジェクトを返すため、次の各手順では、通常の WCF サービスを作成する方法について説明します。  
   
-### <a name="step-1-define-the-wcf-service-interface"></a>手順 1: WCF サービスのインターフェイスを定義する  
+### <a name="step-1-define-the-wcf-service-interface"></a>手順 1:WCF サービスのインターフェイスを定義する  
  WCF サービスのパブリック インターフェイスを定義し、[<xref:System.ServiceModel.ServiceContractAttribute>] 属性でマークします。  クライアントに公開するメソッドを [<xref:System.ServiceModel.OperationContractAttribute>] 属性でマークします。 次の例は、これらの属性を使用して、サーバー側のインターフェイスと、クライアントが呼び出すことのできるインターフェイス メソッドとを識別する方法を示しています。 このシナリオで使用されるメソッドは、太字で示します。  
   
 ```csharp  
@@ -79,7 +79,7 @@ public interface ICustomerManager
 }  
 ```  
   
-### <a name="step-2-define-the-data-contract"></a>手順 2: データ コントラクトを定義する  
+### <a name="step-2-define-the-data-contract"></a>手順 2:データ コントラクトを定義する  
  次に、サービスとクライアントの間でデータが交換される方法を説明する、サービスのデータ コントラクトを作成する必要があります。  データ コントラクトで説明されたクラスは、[<xref:System.Runtime.Serialization.DataContractAttribute>] 属性でマークする必要があります。 クライアントとサーバーの両方に対して表示する個々のプロパティやフィールドは、[<xref:System.Runtime.Serialization.DataMemberAttribute>] 属性でマークする必要があります。 データ コントラクト内のクラスから派生した型を許可するには、[<xref:System.Runtime.Serialization.KnownTypeAttribute>] 属性でそれらを区別する必要があります。 WCF は、サービス インターフェイス内の型と既知の型として識別される型だけを、シリアル化または逆シリアル化します。 既知の型ではない型を使用しようとすると、例外が発生します。  
   
  データ コントラクトの詳細については、「[データ コントラクト](../wcf/samples/data-contracts.md)」を参照してください。  
@@ -121,7 +121,7 @@ public class Address
 }  
 ```  
   
-### <a name="step-3-implement-the-wcf-service"></a>手順 3: WCF サービスを実装する  
+### <a name="step-3-implement-the-wcf-service"></a>手順 3:WCF サービスを実装する  
  次に、前の手順で定義したインターフェイスを実装する、WCF サービス クラスを実装する必要があります。  
   
 ```csharp  
@@ -138,7 +138,7 @@ public class CustomerService: ICustomerManager
 }  
 ```  
   
-### <a name="step-4-configure-the-service-and-the-client"></a>手順 4: サービスとクライアントを構成する  
+### <a name="step-4-configure-the-service-and-the-client"></a>手順 4:サービスとクライアントを構成する  
  WCF サービスを実行するには、特定の WCF バインドを使用して特定の URL で上記のサービス インターフェイスを公開するエンドポイントを宣言する必要があります。 バインディングは、クライアントとサーバーが通信するための、トランスポート、エンコード、およびプロトコルの詳細を指定します。 通常、サービス プロジェクトの構成ファイル (web.config) にバインドを追加します。 サービス例のためのバインド エントリを以下に示します。  
   
 ```xml  
@@ -169,7 +169,7 @@ public class CustomerService: ICustomerManager
 </configuration>  
 ```  
   
-### <a name="step-5-run-the-service"></a>手順 5: サービスを実行する  
+### <a name="step-5-run-the-service"></a>手順 5:サービスを実行する  
  最後に、サービス アプリに次の行を追加して、アプリを起動することにより、コンソール アプリケーション内で自己ホストすることができます。 WCF サービス アプリケーションをホストするその他の方法について詳しくは、「[ホスティング サービス](../wcf/hosting-services.md)」を参照してください。  
   
 ```csharp  
@@ -177,7 +177,7 @@ ServiceHost customerServiceHost = new ServiceHost(typeof(CustomerService));
 customerServiceHost.Open();  
 ```  
   
-### <a name="step-6-call-the-service-from-the-client"></a>手順 6: クライアントからサービスを呼び出す  
+### <a name="step-6-call-the-service-from-the-client"></a>手順 6:クライアントからサービスを呼び出す  
  クライアントからのサービスを呼び出すには、サービスのチャネル ファクトリを作成し、チャネルを要求する必要があります。これにより、クライアントから `GetCustomer` メソッドを直接呼び出すことができるようになります。 チャネルはサービスのインターフェイスを実装し、基になる要求/応答のロジックを処理します。  このメソッドの呼び出しからの戻り値は、サービス応答の逆シリアル化されたコピーです。  
   
 ```csharp  
@@ -250,7 +250,7 @@ public interface IRemoteService
 }  
 ```  
   
-### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a>手順 1: セッションフル WCF サービスのインターフェイスと実装を定義する  
+### <a name="step-1-define-the-sessionful-wcf-service-interface-and-implementation"></a>手順 1:セッションフル WCF サービスのインターフェイスと実装を定義する  
  最初に、セッションフル オブジェクトを含む WCF サービスのインターフェイスを定義します。  
   
  このコードでは、セッションフル オブジェクトが `ServiceContract` 属性でマークされ、通常の WCF サービスのインターフェイスとして示されています。  さらに、<xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> プロパティが設定されて、セッションフル サービスとなることが示されています。  
@@ -290,7 +290,7 @@ public interface ISessionBoundObject
     }  
 ```  
   
-### <a name="step-2-define-the-wcf-factory-service-for-the-sessionful-object"></a>手順 2: セッションフル オブジェクトの WCF ファクトリ サービスを定義する  
+### <a name="step-2-define-the-wcf-factory-service-for-the-sessionful-object"></a>手順 2:セッションフル オブジェクトの WCF ファクトリ サービスを定義する  
  セッションフル オブジェクトを作成するサービスを定義して実装する必要があります。 この方法を次のコードに示します。 このコードは、<xref:System.ServiceModel.EndpointAddress10> オブジェクトとして返される別の WCF サービスを作成します。  これはセッションフル オブジェクトの作成に使用できる、エンドポイントのシリアル化可能な形式です。  
   
 ```csharp  
@@ -302,7 +302,7 @@ public interface ISessionBoundObject
     }  
 ```  
   
- このサービスの実装を次に示します。 この実装では、セッションフル オブジェクトを作成するためにシングルトン チャネル ファクトリを保持しています。  チャネル ファクトリは、`GetInstanceAddress` が呼び出されるとチャネルを作成し、このチャネルに関連付けられているリモート アドレスをポイントする <xref:System.ServiceModel.EndpointAddress10> オブジェクトを作成します。   <xref:System.ServiceModel.EndpointAddress10> は、値渡しでクライアントに返すことのできるデータ型です。  
+ このサービスの実装を次に示します。 この実装では、セッションフル オブジェクトを作成するためにシングルトン チャネル ファクトリを保持しています。  チャネル ファクトリは、`GetInstanceAddress` が呼び出されるとチャネルを作成し、このチャネルに関連付けられているリモート アドレスをポイントする <xref:System.ServiceModel.EndpointAddress10> オブジェクトを作成します。   <xref:System.ServiceModel.EndpointAddress10> は、値渡しでクライアントに返すことのできるデータ型です。
   
 ```csharp  
 public class SessionBoundFactory : ISessionBoundFactory  
@@ -322,14 +322,14 @@ public class SessionBoundFactory : ISessionBoundFactory
     }  
 ```  
   
-### <a name="step-3-configure-and-start-the-wcf-services"></a>手順 3: WCF サービスを構成して開始する  
+### <a name="step-3-configure-and-start-the-wcf-services"></a>手順 3:WCF サービスを構成して開始する  
  これらのサービスをホストするには、サーバーの構成ファイル (web.config) に以下を追加する必要があります。  
   
 1. セッションフル オブジェクトのエンドポイントを示す `<client>` セクションを追加します。  このシナリオでは、サーバーもクライアントとして機能するので、それが有効となるように構成する必要があります。  
   
 2. `<services>` セクションで、ファクトリおよびセッションフル オブジェクトのサービス エンドポイントを宣言します。  これにより、クライアントは、サービス エンドポイントと通信すること、<xref:System.ServiceModel.EndpointAddress10> を取得すること、およびセッションフル チャネルを作成することが可能になります。  
   
- これらの設定のある構成ファイルの例を次に示します。  
+ これらの設定を含む構成ファイルの例を次に示します。  
   
 ```xml  
 <configuration>  
@@ -368,7 +368,7 @@ typeof(MySessionBoundObject));
 sessionBoundServiceHost.Open();  
 ```  
   
-### <a name="step-4-configure-the-client-and-call-the-service"></a>手順 4: クライアントを構成してサービスを呼び出す  
+### <a name="step-4-configure-the-client-and-call-the-service"></a>手順 4:クライアントを構成してサービスを呼び出す  
  プロジェクトのアプリケーション構成ファイル (app.config) に以下のエントリを作成して、クライアントが WCF サービスと通信するように構成します。  
   
 ```xml  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b5cf6f0ae66141957d545134a2f8ff8eb799097
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 60693a6570eff6f9d4980d8f29f1385bc7462f08
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946451"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353153"
 ---
 # <a name="plinq-data-sample"></a>PLINQ データのサンプル
 このサンプルには、.csv 形式のデータ例と、データを顧客、製品、注文、その他の詳細のメモリ内コレクションに変換するメソッドが含まれています。 PLINQ でさらに試す場合は、他の特定のトピックのコード例をこのトピックのコードに貼り付けて、`Main` メソッドから呼び出すことができます。 また、独自の PLINQ クエリでこのデータを使用することもできます。  
@@ -35,7 +35,7 @@ ms.locfileid: "69946451"
   
 4. F5 キーを押し、プロジェクトが正常にビルドされ、実行されることを確認します。 次の出力がコンソール ウィンドウに表示されます。  
   
-    ```  
+    ```console  
     Customer count: 50  
     Product count: 77  
     Order count: 190  
@@ -48,7 +48,7 @@ ms.locfileid: "69946451"
   
 ## <a name="data"></a>データ  
   
-```  
+```console  
 CUSTOMERS  
 ALFKI,Alfreds Futterkiste,Obere Str. 57,Berlin,12209  
 ANATR,Ana Trujillo Emparedados y helados,Avda. de la Constitución 2222,México D.F.,05021  

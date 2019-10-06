@@ -2,18 +2,18 @@
 title: 公式の .NET Docker イメージ
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 公式の .NET Docker イメージ
 ms.date: 01/07/2019
-ms.openlocfilehash: 749485bfe07e0245493da67af915805f644a1897
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 43b2f47912e38e99926d7f06c3cda72f17d0e3fc
+ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039632"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71353874"
 ---
 # <a name="official-net-docker-images"></a>公式の .NET Docker イメージ
 
 公式の .NET Docker イメージは Microsoft により作成および最適化された Docker イメージです。 [Docker Hub](https://hub.docker.com/u/microsoft/) の Microsoft リポジトリで一般公開されています。 各リポジトリには、.NET のバージョンに応じて、また OS (Linux Debian、Alpine Linux、Windows Nano Server、Windows Server Core など) とそのバージョンに応じて、複数のイメージを含めることができます。
 
-.NET Core 2.1 以降は、ASP.NET Core 用を含むすべての .NET Core イメージが Docker Hub の .NET Core イメージ リポジトリ <https://hub.docker.com/\_/microsoft-dotnet-core/> で提供されています。
+.NET Core 2.1 以降は、ASP.NET Core 用を含むすべての .NET Core イメージが Docker Hub の .NET Core イメージ リポジトリ <https://hub.docker.com/_/microsoft-dotnet-core/> で提供されています。
 
 イメージ リポジトリの多くではさまざまなタグを利用できるため、特定のフレームワーク バージョンだけでなく、OS (Linux ディストリビューションまたは Windows のバージョン) も選択できます。
 
