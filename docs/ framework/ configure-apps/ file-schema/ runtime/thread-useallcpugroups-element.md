@@ -11,12 +11,12 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70252271"
 ---
-# <a name="thread_useallcpugroups-element"></a>\<Thread_UseAllCpuGroups > 要素
+# <a name="thread_useallcpugroups-element"></a>\<Thread_UseAllCpuGroups> 要素
 
 ランタイムによって、すべての CPU グループにマネージド スレッドを分散するかどうかを指定します。
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<ランタイム >** ](runtime-element.md)\
+&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<Thread_UseAllCpuGroups >**  
 
 ## <a name="syntax"></a>構文
