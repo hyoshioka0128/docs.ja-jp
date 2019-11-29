@@ -1,5 +1,5 @@
 ---
-title: Dim ステートメント (Visual Basic)
+title: Dim ステートメント
 ms.date: 05/12/2018
 f1_keywords:
 - vb.Dim
@@ -29,12 +29,12 @@ helpviewer_keywords:
 - Dim statement [Visual Basic], syntax
 - variables [Visual Basic], member and local
 ms.assetid: fae3eca1-f0b2-4400-994b-7aa58a848448
-ms.openlocfilehash: 5663935db5fc7ad03d18ff94fae2be9a569290ac
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: ac66ffdba622673ef42017d147c05b2a2733dede
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583433"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343763"
 ---
 # <a name="dim-statement-visual-basic"></a>Dim ステートメント (Visual Basic)
 
@@ -51,11 +51,11 @@ Dim [ WithEvents ] variablelist
 
 - `attributelist`
 
-  省略可能です。 「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。
+  任意。 「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。
 
 - `accessmodifier`
 
-  省略可能です。 次のいずれかの値を指定します。
+  任意。 次のいずれかになります。
 
   - [Public](../../../visual-basic/language-reference/modifiers/public.md)
 
@@ -73,27 +73,27 @@ Dim [ WithEvents ] variablelist
 
 - `Shared`
 
-  省略可能です。 「[共有](../../../visual-basic/language-reference/modifiers/shared.md)」を参照してください。
+  任意。 「[共有](../../../visual-basic/language-reference/modifiers/shared.md)」を参照してください。
 
 - `Shadows`
 
-  省略可能です。 「[シャドウ](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。
+  任意。 「[シャドウ](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。
 
 - `Static`
 
-  省略可能です。 「[静的](../../../visual-basic/language-reference/modifiers/static.md)」を参照してください。
+  任意。 「[静的](../../../visual-basic/language-reference/modifiers/static.md)」を参照してください。
 
 - `ReadOnly`
 
-  省略可能です。 「 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)」を参照してください。
+  任意。 「 [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)」を参照してください。
 
 - `WithEvents`
 
-省略可能です。 イベントを発生させるクラスのインスタンスを参照するオブジェクト変数であることを指定します。 「 [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)」を参照してください。
+任意。 イベントを発生させるクラスのインスタンスを参照するオブジェクト変数であることを指定します。 「 [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)」を参照してください。
 
 - `variablelist`
 
-  必須です。 このステートメントで宣言されている変数のリスト。
+  必須。 このステートメントで宣言されている変数のリスト。
 
   `variable [ , variable ... ]`
 
@@ -101,18 +101,18 @@ Dim [ WithEvents ] variablelist
 
   `variablename [ ( [ boundslist ] ) ] [ As [ New ] datatype [ With`{`[ .propertyname = propinitializer [ , ... ] ] } ] ] [ = initializer ]`
 
-  |パーツ|説明|
+  |要素|説明|
   |---|---|
-  |`variablename`|必須です。 変数名。 「 [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|
-  |`boundslist`|省略可能です。 配列変数の各次元の境界の一覧。|
-  |`New`|省略可能です。 @No__t_0 ステートメントの実行時に、クラスの新しいインスタンスを作成します。|
-  |`datatype`|省略可能です。 変数のデータ型。|
-  |`With`|省略可能です。 オブジェクト初期化子リストについて説明します。|
-  |`propertyname`|省略可能です。 インスタンスを作成しているクラスのプロパティの名前。|
-  |`propinitializer`|@No__t_0 = の後に指定する必要があります。 評価され、プロパティ名に割り当てられる式。|
-  |`initializer`|@No__t_0 が指定されていない場合は省略可能です。 評価され、作成時に変数に割り当てられる式。|
+  |`variablename`|必須。 変数の名前。 「 [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|
+  |`boundslist`|任意。 配列変数の各次元の境界の一覧。|
+  |`New`|任意。 `Dim` ステートメントの実行時に、クラスの新しいインスタンスを作成します。|
+  |`datatype`|任意。 変数のデータ型。|
+  |`With`|任意。 オブジェクト初期化子リストについて説明します。|
+  |`propertyname`|任意。 インスタンスを作成しているクラスのプロパティの名前。|
+  |`propinitializer`|`propertyname` = の後に指定する必要があります。 評価され、プロパティ名に割り当てられる式。|
+  |`initializer`|`New` が指定されていない場合は省略可能です。 評価され、作成時に変数に割り当てられる式。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
 Visual Basic コンパイラは、`Dim` ステートメントを使用して、変数のデータ型やその他の情報 (変数にアクセスできるコードなど) を決定します。 次の例では、`Integer` 値を保持する変数を宣言しています。
 
@@ -127,7 +127,7 @@ Dim finished As Boolean
 Dim monitorBox As System.Windows.Forms.Form
 ```
 
-参照型の場合は、`New` キーワードを使用して、データ型によって指定されたクラスまたは構造体の新しいインスタンスを作成します。 @No__t_0 を使用する場合、初期化子式は使用しません。 代わりに、変数を作成するクラスのコンストラクターに、必要に応じて引数を指定します。
+参照型の場合は、`New` キーワードを使用して、データ型によって指定されたクラスまたは構造体の新しいインスタンスを作成します。 `New`を使用する場合、初期化子式は使用しません。 代わりに、変数を作成するクラスのコンストラクターに、必要に応じて引数を指定します。
 
 ```vb
 Dim bottomLabel As New System.Windows.Forms.Label
@@ -139,7 +139,7 @@ Dim bottomLabel As New System.Windows.Forms.Label
 
 次のアクセス修飾子は、プロシージャの外部で変数を宣言するために使用されます: `Public`、`Protected`、`Friend`、`Protected Friend`、および `Private`。 詳細については、「 [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
 
-@No__t_0 キーワードは省略可能で、通常、`Public`、`Protected`、`Friend`、`Protected Friend`、`Private`、`Shared`、`Shadows`、`Static`、`ReadOnly`、0 のいずれかの修飾子を指定すると省略されます。
+`Dim` キーワードは省略可能で、通常、`Public`、`Protected`、`Friend`、`Protected Friend`、`Private`、`Shared`、`Shadows`、`Static`、`ReadOnly`、`WithEvents`のいずれかの修飾子を指定すると省略されます。
 
 ```vb
 Public maximumAllowed As Double
@@ -148,7 +148,7 @@ Private salary As Decimal
 Static runningTotal As Integer
 ```
 
-@No__t_0 が on (既定値) の場合、コンパイラは使用するすべての変数の宣言を必要とします。 詳細については、「 [Option Explicit ステートメント](../../../visual-basic/language-reference/statements/option-explicit-statement.md)」を参照してください。
+`Option Explicit` が on (既定値) の場合、コンパイラは使用するすべての変数の宣言を必要とします。 詳細については、「 [Option Explicit ステートメント](../../../visual-basic/language-reference/statements/option-explicit-statement.md)」を参照してください。
 
 ## <a name="specifying-an-initial-value"></a>初期値の指定
 
@@ -212,7 +212,7 @@ Dim totals(20) As Integer
 Dim totals(0 To 20) As Integer
 ```
 
-次のステートメントは、`Double` 型の2次元配列を宣言しています。 配列には、6つの列 (5 + 1) の4行 (3 + 1) があります。 上限は、ディメンションの長さではなく、インデックスの最大有効値を表します。 ディメンションの長さは、上限に1を加えた値です。
+次のステートメントは、`Double`型の2次元配列を宣言しています。 配列には、6つの列 (5 + 1) の4行 (3 + 1) があります。 上限は、ディメンションの長さではなく、インデックスの最大有効値を表します。 ディメンションの長さは、上限に1を加えた値です。
 
 ```vb
 Dim matrix2(3, 5) As Double
@@ -220,7 +220,7 @@ Dim matrix2(3, 5) As Double
 
 配列は、1 ~ 32 の次元を持つことができます。
 
-配列宣言では、すべての境界を空白のままにすることができます。 これを行うと、指定した次元の数が配列に含まれていますが、初期化されていません。 この値は、少なくともその要素の一部を初期化するまで `Nothing` の値を持ちます。 @No__t_0 ステートメントでは、すべてのディメンションに対して、またはディメンションなしの境界を指定する必要があります。
+配列宣言では、すべての境界を空白のままにすることができます。 これを行うと、指定した次元の数が配列に含まれていますが、初期化されていません。 この値は、少なくともその要素の一部を初期化するまで `Nothing` の値を持ちます。 `Dim` ステートメントでは、すべてのディメンションに対して、またはディメンションなしの境界を指定する必要があります。
 
 ```vb
 ' Declare an array with blank array bounds.
@@ -235,7 +235,7 @@ ReDim messages(4)
 Dim oneDimension(), twoDimensions(,), threeDimensions(,,) As Byte
 ```
 
-配列の次元の1つを-1 に宣言することによって、*長さ0の配列*を宣言できます。 長さ0の配列を保持する変数には `Nothing` 値がありません。 特定の共通言語ランタイム関数では、長さが0の配列が必要です。 このような配列にアクセスしようとすると、ランタイム例外が発生します。 詳細については、「[配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)」を参照してください。
+配列の次元の1つを-1 に宣言することによって、*長さ0の配列*を宣言できます。 長さ0の配列を保持する変数には `Nothing`値がありません。 特定の共通言語ランタイム関数では、長さが0の配列が必要です。 このような配列にアクセスしようとすると、ランタイム例外が発生します。 詳細については、「[配列](../../../visual-basic/programming-guide/language-features/arrays/index.md)」を参照してください。
 
 配列リテラルを使用して、配列の値を初期化できます。 これを行うには、初期化値を中かっこ (`{}`) で囲みます。
 
@@ -257,16 +257,16 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 
 |データ型が指定されているか|初期化子が指定されているか|例|結果|
 |---|---|---|---|
-|Ｘ|Ｘ|`Dim qty`|[Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)がオフ (既定値) の場合、変数は `Nothing` に設定されます。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|
-|Ｘ|[はい]|`Dim qty = 5`|[オプションの推論](../../../visual-basic/language-reference/statements/option-infer-statement.md)が on (既定値) の場合、変数は初期化子のデータ型を受け取ります。 「[ローカル型の推定](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)」を参照してください。<br /><br /> `Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。<br /><br /> `Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。|
-|[はい]|Ｘ|`Dim qty As Integer`|変数は、データ型の既定値に初期化されます。 このセクションで後述する表を参照してください。|
-|[はい]|[はい]|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|
+|いいえ|いいえ|`Dim qty`|[Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)がオフ (既定値) の場合、変数は `Nothing`に設定されます。<br /><br /> `Option Strict` がオンの場合、コンパイル時エラーが発生します。|
+|いいえ|はい|`Dim qty = 5`|[オプションの推論](../../../visual-basic/language-reference/statements/option-infer-statement.md)が on (既定値) の場合、変数は初期化子のデータ型を受け取ります。 「[ローカル型の推定](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)」を参照してください。<br /><br /> `Option Infer` がオフで、`Option Strict` がオフの場合、変数は `Object` のデータ型になります。<br /><br /> `Option Infer` がオフで、`Option Strict` がオンの場合、コンパイル時エラーが発生します。|
+|はい|いいえ|`Dim qty As Integer`|変数は、データ型の既定値に初期化されます。 このセクションで後述する表を参照してください。|
+|はい|はい|`Dim qty  As Integer = 5`|初期化子のデータ型を指定したデータ型に変換できない場合は、コンパイル時エラーが発生します。|
 
 データ型を指定しても初期化子を指定しなかった場合は、Visual Basic 変数をそのデータ型の既定値に初期化します。 既定の初期化値を次の表に示します。
 
-|データの種類|既定値|
+|データ型|既定値|
 |---|---|
-|すべての数値型 (`Byte` と `SByte` を含む)|0|
+|すべての数値型 (`Byte` と `SByte`を含む)|0|
 |`Char`|バイナリ0|
 |すべての参照型 (`Object`、`String`、すべての配列を含む)|`Nothing`|
 |`Boolean`|`False`|
@@ -276,7 +276,7 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 
 ## <a name="static-local-variable-lifetime"></a>静的ローカル変数の有効期間
 
-@No__t_0 ローカル変数の有効期間は、宣言されているプロシージャよりも長くなります。 変数の有効期間の境界は、プロシージャが宣言されている場所と `Shared` かどうかによって異なります。
+`Static` ローカル変数の有効期間は、宣言されているプロシージャよりも長くなります。 変数の有効期間の境界は、プロシージャが宣言されている場所と `Shared`かどうかによって異なります。
 
 |プロシージャの宣言|変数の初期化|既存の変数の停止|
 |---|---|---|
@@ -290,9 +290,9 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 
 モジュールレベルでは、`Static` 修飾子を使用してメンバー変数を宣言することはできません。 プロシージャレベルでは、`Shared`、`Shadows`、`ReadOnly`、`WithEvents`、または任意のアクセス修飾子を使用してローカル変数を宣言することはできません。
 
-@No__t_0 を指定することによって、変数にアクセスできるコードを指定できます。 クラスおよびモジュールメンバー変数 (プロシージャ以外) では、既定でプライベートアクセスが使用され、構造体メンバー変数は既定でパブリックアクセスになります。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。 ローカル変数 (プロシージャ内) では、アクセス修飾子を使用できません。
+`accessmodifier`を指定することによって、変数にアクセスできるコードを指定できます。 クラスおよびモジュールメンバー変数 (プロシージャ以外) では、既定でプライベートアクセスが使用され、構造体メンバー変数は既定でパブリックアクセスになります。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。 ローカル変数 (プロシージャ内) では、アクセス修飾子を使用できません。
 
-@No__t_0 は、プロシージャ内のローカル変数ではなく、メンバー変数に対してのみ指定できます。 @No__t_0 を指定する場合、変数のデータ型は、`Object` ではなく、特定のクラス型である必要があります。 @No__t_0 で配列を宣言することはできません。 イベントの詳細については、「 [events](../../../visual-basic/programming-guide/language-features/events/index.md)」を参照してください。
+`WithEvents` は、プロシージャ内のローカル変数ではなく、メンバー変数に対してのみ指定できます。 `WithEvents`を指定する場合、変数のデータ型は、`Object`ではなく、特定のクラス型である必要があります。 `WithEvents`で配列を宣言することはできません。 イベントの詳細については、「 [events](../../../visual-basic/programming-guide/language-features/events/index.md)」を参照してください。
 
 > [!NOTE]
 > クラス、構造体、またはモジュールの外部のコードでは、メンバー変数の名前を、そのクラス、構造体、またはモジュールの名前で修飾する必要があります。 プロシージャまたはブロックの外側のコードは、そのプロシージャまたはブロック内のローカル変数を参照できません。
@@ -303,7 +303,7 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 
 クラスが特に貴重なリソース (データベース接続やファイルハンドルなど) を保持している場合は、次のガベージコレクションが使用されなくなったクラスインスタンスをクリーンアップするまで待機することはできません。 クラスは、ガベージコレクションの前にリソースを解放する手段を提供するために、<xref:System.IDisposable> インターフェイスを実装できます。 このインターフェイスを実装するクラスは、重要なリソースを直ちに解放するために呼び出すことができる `Dispose` メソッドを公開します。
 
-@No__t_0 ステートメントは、リソースを取得し、一連のステートメントを実行して、リソースを破棄するプロセスを自動化します。 ただし、リソースは <xref:System.IDisposable> インターフェイスを実装する必要があります。 詳細については、「[sing ステートメント](../../../visual-basic/language-reference/statements/using-statement.md)」を参照してください。
+`Using` ステートメントは、リソースを取得し、一連のステートメントを実行して、リソースを破棄するプロセスを自動化します。 ただし、リソースは <xref:System.IDisposable> インターフェイスを実装する必要があります。 詳細については、「[sing ステートメント](../../../visual-basic/language-reference/statements/using-statement.md)」を参照してください。
 
 ## <a name="example"></a>例
 
@@ -319,7 +319,7 @@ Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 
 ## <a name="example"></a>例
 
-次の例では、`speedValue` 変数がクラスレベルで宣言されています。 @No__t_0 キーワードは、変数を宣言するために使用されます。 変数には、`Car` クラスの任意のプロシージャからアクセスできます。
+次の例では、`speedValue` 変数がクラスレベルで宣言されています。 `Private` キーワードは、変数を宣言するために使用されます。 変数には、`Car` クラスの任意のプロシージャからアクセスできます。
 
 [!code-vb[VbVbalrStatements#144](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class11.vb#144)]
 

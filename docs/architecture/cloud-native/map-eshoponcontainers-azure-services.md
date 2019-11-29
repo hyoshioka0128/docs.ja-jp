@@ -44,7 +44,7 @@ APIM を使用すると、アプリケーションは複数の異なるサービ
 
 アプリケーションが AKS を使用している場合のもう1つのオプションは、AKS クラスター内のポッドとして Azure ゲートウェイの受信コントローラーをデプロイすることです。 これにより、クラスターを Azure アプリケーションゲートウェイと統合し、ゲートウェイがトラフィックを AKS ポッドに負荷分散できるようになります。 [詳細については、AKS 用の Azure ゲートウェイの受信コントローラーに関するページを参照して](https://github.com/Azure/application-gateway-kubernetes-ingress)ください。
 
-## <a name="data"></a>データ
+## <a name="data"></a>Data
 
 EShopOnContainers で使用されるさまざまなバックエンドサービスには、異なる記憶域要件があります。 複数のマイクロサービスで SQL Server データベースを使用します。 バスケットマイクロサービスは、永続化のために Redis キャッシュを活用します。 場所マイクロサービスでは、データに MongoDB API が必要です。 Azure では、これらの各データ形式をサポートしています。
 
@@ -64,7 +64,7 @@ EShopOnContainers アプリケーションでは、ユーザーの現在の買�
 
 運用環境にデプロイされると、eShopOnContainers アプリケーションは、回復性を向上させるために使用できる複数の Azure サービスを活用できるようになります。 アプリケーションは、Application Insights と統合できる正常性チェックを発行して、アプリの可用性に基づいてレポートとアラートを提供します。 Azure リソースには、バグやパフォーマンスの問題を特定して修正するために使用できる診断ログも用意されています。 リソースログは、アプリケーションでさまざまな Azure リソースがどのように使用されているか、およびその方法に関する詳細情報を提供します。 クラウドネイティブの回復性機能の詳細については、[第6章](resiliency.md)を参照してください。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [EShopOnContainers アーキテクチャ](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Architecture)
 - [高いスケーラビリティと可用性のためにマイクロサービスと複数のコンテナー アプリケーションを調整する](https://docs.microsoft.com/dotnet/architecture/microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications)

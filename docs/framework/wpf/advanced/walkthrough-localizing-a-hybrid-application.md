@@ -5,12 +5,12 @@ helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-ms.openlocfilehash: bef296d5de4735780c839af312b5d4fe7eeeb960
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 281afad0c0de856ca67abc74c65aff0e7afc3e01
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197854"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976505"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>チュートリアル : ハイブリッド アプリケーションのローカライズ
 
@@ -56,7 +56,7 @@ ms.locfileid: "73197854"
 
 ### <a name="to-add-localizable-content"></a>ローカライズ可能なコンテンツを追加するには
 
-1. **ソリューションエクスプローラー**で、 **[simplecontrol .xaml]** をダブルクリックして、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]で開きます。
+1. **ソリューションエクスプローラー**で、 **[simplecontrol .xaml]** をダブルクリックして、WPF デザイナーで開きます。
 
 2. 次のコードを使用して、<xref:System.Windows.Controls.Button> コントロールの内容を設定します。
 

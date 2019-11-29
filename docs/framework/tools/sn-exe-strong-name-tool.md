@@ -10,12 +10,12 @@ helpviewer_keywords:
 - strong-named assemblies, signing files
 - key pairs for signing files
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
-ms.openlocfilehash: dc9b8beafe1b174543afaf9da7e7180638d561ff
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 90cad6529b3ac2a8afedaca0c43d5c7561dcf9e6
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104358"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138966"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (厳密名ツール)
 厳密名ツール (Sn.exe) は、[厳密な名前](../../standard/assembly/strong-named.md)を使用してアセンブリに署名する場合に役立ちます。 Sn.exe には、キーの管理、署名の生成、署名の検査に関する各オプションが用意されています。  
@@ -55,7 +55,7 @@ sn [-quiet][option [parameter(s)]]
 |`-o infile [outfile]`|*infile* から公開キーを抽出し、.csv ファイルに格納します。 公開キーの各バイトはコンマで区切られます。 この形式は、ソース コード内で、キーへの参照を初期化済みの配列としてハードコーディングする場合に便利です。 *outfile* を指定しない場合、出力はクリップボードに保存されます。 **注:** このオプションでは、入力が公開キーのみであるかどうかの検証は行われません。 `infile` に秘密キーとのキー ペアが格納されていた場合、秘密キーも抽出されます。|  
 |`-p infile outfile [hashalg]`|*infile* 内のキー ペアから公開キーを抽出し、その公開キーを *outfile* に格納します。オプションで *hashalg* で指定された RSA アルゴリズムを使用します。 この公開キーは、[アセンブリ リンカー (Al.exe)](al-exe-assembly-linker.md) の **/delaysign+** オプションと **/keyfile** オプションを使用して、アセンブリへの署名を遅らせるときに使用できます。 アセンブリの署名を遅らせた場合、コンパイル時には公開キーだけが設定され、後で秘密キーが判明したときに追加される署名用にファイル内の領域が予約されます。|  
 |`-pc container outfile [hashalg]`|*container* 内のキー ペアから公開キーを抽出し、*outfile* に格納します。 *hashalg* オプションを使用する場合、RSA アルゴリズムにより公開キーが抽出されます。|  
-|`-Pb [y &#124; n]`|厳密な名前を省略するポリシーが強制されるかどうかを指定します。 *y* を指定すると、完全に信頼されている <xref:System.AppDomain> に完全信頼アセンブリが読み込まれるとき、アセンブリの厳密な名前の検証は行われません。 *n* を指定した場合は、厳密な名前が正しいかどうかのみ検証されますが、特定の厳密な名前については確認されません。 <xref:System.Security.Permissions.StrongNameIdentityPermission> は、完全に信頼されているアセンブリには効果がありません。 厳密な名前の一致については、独自のチェックを実行する必要があります。<br /><br /> `y` も `n` も指定しない場合は、現在の設定が表示されます。 既定値は、`y` です。 **注:** 64 ビット コンピューターでは、Sn.exe の 32 ビットのインスタンスと 64 ビットのインスタンスの両方にこのパラメーターを設定する必要があります。|  
+|`-Pb [y|n]`|厳密な名前を省略するポリシーが強制されるかどうかを指定します。 *y* を指定すると、完全に信頼されている <xref:System.AppDomain> に完全信頼アセンブリが読み込まれるとき、アセンブリの厳密な名前の検証は行われません。 *n* を指定した場合は、厳密な名前が正しいかどうかのみ検証されますが、特定の厳密な名前については確認されません。 <xref:System.Security.Permissions.StrongNameIdentityPermission> は、完全に信頼されているアセンブリには効果がありません。 厳密な名前の一致については、独自のチェックを実行する必要があります。<br /><br /> `y` も `n` も指定しない場合は、現在の設定が表示されます。 既定値は、`y` です。 **注:** 64 ビット コンピューターでは、Sn.exe の 32 ビットのインスタンスと 64 ビットのインスタンスの両方にこのパラメーターを設定する必要があります。|  
 |`-q[uiet]`|クワイエット モードを指定します。このモードでは、成功メッセージは表示されません。|  
 |`-R[a] assembly infile`|以前に署名したアセンブリ、または署名を遅らせたアセンブリに、*infile* 内のキー ペアを使用して再署名します。<br /><br /> **-Ra** を使用すると、アセンブリ内のすべてのファイルについてハッシュが再計算されます。|  
 |`-Rc[a] assembly container`|以前に署名したアセンブリ、または署名を遅らせたアセンブリに、*container* 内のキー ペアを使用して再署名します。<br /><br /> **-Rca** を使用すると、アセンブリ内のすべてのファイルについてハッシュが再計算されます。|  

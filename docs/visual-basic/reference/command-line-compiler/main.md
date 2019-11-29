@@ -24,14 +24,14 @@ ms.locfileid: "72005508"
   
 ## <a name="arguments"></a>引数  
  `location`  
- 必須。 プログラムの開始時に呼び出される @no__t 0 のプロシージャを含むクラスまたはモジュールの名前。 この形式は、 **main: module**または **-main: namespace. module**の形式にすることができます。  
+ 必須。 プログラムの開始時に呼び出される `Sub Main` プロシージャを含むクラスまたはモジュールの名前。 この形式は、 **main: module**または **-main: namespace. module**の形式にすることができます。  
   
 ## <a name="remarks"></a>コメント  
  このオプションは、実行可能ファイルまたは Windows 実行可能プログラムを作成するときに使用します。 **-Main**オプションを省略した場合、コンパイラは、すべてのパブリッククラスとモジュールで有効な共有 `Sub Main` を検索します。  
   
- @No__t-1 プロシージャのさまざまな形式については、「 [Visual Basic の Main プロシージャ](../../../visual-basic/programming-guide/program-structure/main-procedure.md)」を参照してください。  
+ `Main` プロシージャのさまざまな形式の詳細については、「 [Visual Basic の Main プロシージャ](../../../visual-basic/programming-guide/program-structure/main-procedure.md)」を参照してください。  
   
- @No__t-0 が <xref:System.Windows.Forms.Form> から継承するクラスである場合、コンパイラは、クラスに @no__t 3 プロシージャがない場合にアプリケーションを起動する既定の `Main` プロシージャを提供します。 これにより、開発環境で作成されたコマンドラインでコードをコンパイルできます。  
+ `location` が <xref:System.Windows.Forms.Form>から継承するクラスである場合、コンパイラは、クラスに `Main` プロシージャがない場合にアプリケーションを起動する既定の `Main` プロシージャを提供します。 これにより、開発環境で作成されたコマンドラインでコードをコンパイルできます。  
   
  [!code-vb[VbVbalrCompiler#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/Class1.vb#16)]  
   
@@ -46,13 +46,13 @@ ms.locfileid: "72005508"
 4. **[スタートアップオブジェクト]** ボックスの値を変更します。  
   
 ## <a name="example"></a>例  
- 次のコードでは `T2.vb` と `T3.vb` をコンパイルし、`Sub Main` プロシージャが `Test2` クラスで見つかることを指定します。  
+ 次のコードは `T2.vb` と `T3.vb`をコンパイルし、`Sub Main` プロシージャが `Test2` クラスにあることを指定します。  
   
 ```console
 vbc t2.vb t3.vb -main:Test2  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)

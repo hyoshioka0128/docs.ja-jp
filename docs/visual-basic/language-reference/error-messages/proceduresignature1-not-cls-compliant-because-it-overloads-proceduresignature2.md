@@ -16,7 +16,7 @@ ms.locfileid: "72250180"
 ---
 # <a name="proceduresignature1-is-not-cls-compliant-because-it-overloads-proceduresignature2-which-differs-from-it-only-by-array-of-array-parameter-types-or-by-the-rank-of-the-array-parameter-types"></a>\<proceduresignature1 > は CLS に準拠していません。これは、配列パラメーター型の配列または配列パラメーター型のランクのみが異なる \<proceduresignature2 > をオーバーロードするためです。
 
-プロシージャまたはプロパティが別のプロシージャまたはプロパティをオーバーライドするときに `<CLSCompliant(True)>` としてマークされます。パラメーターリスト間の唯一の違いは、ジャグ配列または配列のランクの入れ子レベルです。
+プロシージャまたはプロパティが別のプロシージャまたはプロパティをオーバーライドする場合、そのプロシージャまたはプロパティは `<CLSCompliant(True)>` としてマークされます。パラメーターリスト間の唯一の違いは、ジャグ配列または配列のランクの入れ子レベルです。
   
  次の宣言では、2番目と3番目の宣言によってこのエラーが生成されます。
   
@@ -26,9 +26,9 @@ ms.locfileid: "72250180"
   
  `Overloads Sub ProcessArray(arrayParam(,) As Integer)`  
   
- 2番目の宣言では、元の1次元パラメーター `arrayParam` を配列の配列に変更します。 3番目の宣言は、-0 @no__t を2次元配列 (ランク 2) に変更します。 Visual Basic では、これらの変更のいずれかによってのみオーバーロードが異なることが許可されますが、このようなオーバーロードは、[言語に依存しないコンポーネント](../../../standard/language-independence-and-language-independent-components.md)(CLS) に準拠していません。  
+ 2番目の宣言では、元の1次元パラメーター `arrayParam` を配列の配列に変更します。 3番目の宣言は、`arrayParam` を2次元配列 (ランク 2) に変更します。 Visual Basic では、これらの変更のいずれかによってのみオーバーロードが異なることが許可されますが、このようなオーバーロードは、[言語に依存しないコンポーネント](../../../standard/language-independence-and-language-independent-components.md)(CLS) に準拠していません。  
   
- プログラミング要素に <xref:System.CLSCompliantAttribute> を適用する場合は、属性の `isCompliant` パラメーターを `True` または `False` のどちらかに設定して、準拠または非準拠を示します。 このパラメーターには既定値がありません。値を指定する必要があります。  
+ プログラミング要素に <xref:System.CLSCompliantAttribute> を適用する場合は、準拠または非準拠を示すために、属性の `isCompliant` パラメーターを `True` または `False` のどちらかに設定します。 このパラメーターには既定値がありませんので、値を指定する必要があります。  
   
  要素に <xref:System.CLSCompliantAttribute> を適用しないと、その要素は非準拠と見なされます。  
   
@@ -39,9 +39,9 @@ ms.locfileid: "72250180"
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
 - CLS 準拠が必要な場合は、このヘルプページで言及されている変更のみよりも多くの方法でオーバーロードを定義します。
-- このヘルプページで説明されている変更によってのみオーバーロードが異なる必要がある場合は、定義から <xref:System.CLSCompliantAttribute> を削除するか `<CLSCompliant(False)>` としてマークします。
+- このヘルプページで説明されている変更によってのみオーバーロードが異なる必要がある場合は、定義から <xref:System.CLSCompliantAttribute> を削除するか、`<CLSCompliant(False)>`としてマークします。
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [プロシージャのオーバーロード](../../programming-guide/language-features/procedures/procedure-overloading.md)
 - [Overloads](../modifiers/overloads.md)

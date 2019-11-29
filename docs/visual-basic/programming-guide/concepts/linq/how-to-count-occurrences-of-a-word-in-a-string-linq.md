@@ -1,13 +1,13 @@
 ---
-title: '方法: 文字列内の単語の出現回数をカウントする (LINQ) (Visual Basic)'
+title: '方法: 文字列での単語の出現回数をカウントする (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: bc367e46-f7cc-45f9-936f-754e661b7bb9
-ms.openlocfilehash: 3a2ae52a3380e4a0d8df4adb580e84362e3f13f3
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 92e0b522a1367566c64d6158fd239534e37ad44f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524167"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353699"
 ---
 # <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-visual-basic"></a>方法: 文字列内の単語の出現回数をカウントする (LINQ) (Visual Basic)
 
@@ -62,6 +62,6 @@ End Class
 
 VB.NET コンソールアプリケーションプロジェクトを作成します。このプロジェクトには、名前空間の `Imports` ステートメントが含まれています。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

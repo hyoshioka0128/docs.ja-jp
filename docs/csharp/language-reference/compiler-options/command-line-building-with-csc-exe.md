@@ -5,12 +5,12 @@ helpviewer_keywords:
 - builds [C#]
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
-ms.openlocfilehash: 9dcc1837ca9c5c1fae3cd6a2a9d03b7e80423627
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: dfd494ceb631a8f86cc3a249e5168c1f413e7e4f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040382"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972912"
 ---
 # <a name="command-line-build-with-cscexe"></a>csc.exe を使用したコマンド ラインからのビルド
 
@@ -18,7 +18,7 @@ C# コンパイラは、その実行可能ファイルの名前 (*csc.exe*) を�
 
 **Visual Studio 用開発者コマンド プロンプト** ウィンドウを使用した場合、必要なすべての環境変数が設定されます。 このツールを表示する方法については、「[Visual Studio 用開発者コマンド プロンプト](../../../framework/tools/developer-command-prompt-for-vs.md)」トピックをご覧ください。
 
-標準のコマンド プロンプト ウィンドウを使用する場合は、コンピューター上の任意のサブディレクトリから *csc.exe* を呼び出すことができるようにパスを修正する必要があります。 また、*vsvars32.bat* を実行して、コマンド ライン ビルドをサポートするための適切な環境変数を設定する必要があります。 *vsvars32.bat* について、その検索および実行方法に関する手順など、詳細情報については「[方法:Visual Studio のコマンドラインのための環境変数を設定する](./how-to-set-environment-variables-for-the-visual-studio-command-line.md)」をご覧ください。
+標準のコマンド プロンプト ウィンドウを使用する場合は、コンピューター上の任意のサブディレクトリから *csc.exe* を呼び出すことができるようにパスを修正する必要があります。 また、*vsvars32.bat* を実行して、コマンド ライン ビルドをサポートするための適切な環境変数を設定する必要があります。 検索して実行する方法の手順など、*vsvars32.bat* の詳細については、「[Visual Studio のコマンドラインのための環境変数を設定する方法](./how-to-set-environment-variables-for-the-visual-studio-command-line.md)」を参照してください。
 
 Windows Software Development Kit (SDK) のみがインストールされているコンピューターでは、**SDK コマンド プロンプト** ( **[Microsoft .NET Framework SDK]** メニュー オプションから開くことができます) で C# コンパイラを使用できます。
 

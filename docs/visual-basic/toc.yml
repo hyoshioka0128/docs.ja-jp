@@ -970,15 +970,15 @@
         - name: ActiveX コンポーネントを作成できません。
           href: language-reference/error-messages/cannot-create-activex-component.md
         - name: '''<name>'' は、''System.MarshalByRefObject'' を基本クラスとして持つクラス ''<name>'' の値付きフィールド ''<classname>'' のメンバーであるため、参照できません。'
-          href: language-reference/error-messages/cannot-refer-to-name-because-it-is-member-of-value-typed-field-name-of-class.md
+          href: language-reference/error-messages/bc30310.md
         - name: クラスの明示的なインスタンスを指定しないで、共有メソッドまたは共有メンバー初期化子内からクラスのインスタンス メンバーへ参照することはできません。
-          href: language-reference/error-messages/cannot-refer-to-an-instance-member-of-a-class.md
+          href: language-reference/error-messages/bc30369.md
         - name: 必要な一時ファイルを作成できません。
           href: language-reference/error-messages/can-t-create-necessary-temporary-file.md
         - name: '''<filename>'' を書き込むために開くことができません。'
-          href: language-reference/error-messages/can-t-open-filename-for-writing.md
+          href: language-reference/error-messages/bc2012.md
         - name: クラス '<classname>' が見つかりません。
-          href: language-reference/error-messages/class-classname-cannot-be-found.md
+          href: language-reference/error-messages/bc31098.md
         - name: クラスがオートメーションをサポートしていないか、必要なインターフェイスをサポートしていません。
           href: language-reference/error-messages/class-does-not-support-automation-or-does-not-support-expected-interface.md
         - name: '''Class'' ステートメントの終わりには、対応する ''End Class'' を指定しなければなりません。'
@@ -1285,7 +1285,7 @@
           href: language-reference/error-messages/xml-literals-and-xml-properties-are-not-supported-in-embedded-code-in-aspnet.md
         - name: XML 名前空間 URI '<uri>' は 'xmlns' にのみバインドできます。
           href: language-reference/error-messages/xml-namespace-uri-uri-can-be-bound-only-to-xmlns.md
-- name: 関連項目
+- name: 辞書／辞典／その他
   href: reference/index.md
   items:
     - name: コマンド ライン コンパイラ

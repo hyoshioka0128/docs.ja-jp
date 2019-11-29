@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 09/23/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: bc525aeefe2c247c610886fae6ae7d79cb9e6517
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: d0ea5aefa62dd4029610ab8a7f7ce9ed52a59600
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274334"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283937"
 ---
 # <a name="welcome-to-net"></a>.NET にようこそ
 
@@ -47,7 +47,7 @@ ms.locfileid: "71274334"
 - [.NET のガイド](standard/index.md)
 - [.NET Core のガイド](core/index.md)
 - [.NET Framework ガイド](framework/index.md)
-- [C# のガイド](csharp/index.md)
+- [C# のガイド](csharp/index.yml)
 - [F# のガイド](fsharp/index.md)
 - [Visual Basic のガイド](visual-basic/index.md)
 - [ML.NET ガイド](machine-learning/index.yml)

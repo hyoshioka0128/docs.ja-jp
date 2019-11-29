@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: ac69b38df3439932be7f65d871c64700585538cb
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 65990c699bafa8eec1ba7dcbce624c88316cbb72
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774300"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283285"
 ---
 # <a name="working-with-certificates"></a>証明書の使用
 
@@ -72,7 +72,7 @@ Windows Communication Foundation (WCF) のセキュリティをプログラミ�
 
 新しいサービスの作成時には、信頼されたルート証明書によって発行されていない証明書を使用できます。また、発行する証明書が、信頼されたルート証明機関ストアになくてもかまいません。 開発だけを目的としている場合は、証明書の信頼チェーンをチェックする機構を一時的に無効にできます。 これを行うには、`CertificateValidationMode` プロパティを `PeerTrust` または `PeerOrChainTrust` に設定します。 これらのモードにより、証明書を自己発行するか (ピア信頼)、信頼チェーンに含めるかを指定できます。 このプロパティは、次のどのクラスでも設定できます。
 
-|インスタンス|property|
+|クラス|プロパティ|
 |-----------|--------------|
 |<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
 |<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
@@ -113,9 +113,9 @@ PowerShell の新しい SelfSignedCertificate コマンドレットは、x.509 �
 
 ### <a name="service-certificates"></a>サービス証明書
 
-サービス証明書の第一の目的は、クライアントに対してサーバーを認証することです。 クライアントがサーバーを認証するときの最初のチェックの 1 つとして、"**サブジェクト**" フィールドの値とサービスへのアクセスに使用する URI (Uniform Resource Identifier) が比較されます。この場合、双方の DNS が一致する必要があります。 たとえば、サービスの URI が `http://www.contoso.com/endpoint/` 場合、 **Subject**フィールドにも `www.contoso.com` 値が含まれている必要があります。
+サービス証明書の第一の目的は、クライアントに対してサーバーを認証することです。 クライアントがサーバーを認証するときの最初のチェックの 1 つとして、"**サブジェクト**" フィールドの値とサービスへのアクセスに使用する URI (Uniform Resource Identifier) が比較されます。この場合、双方の DNS が一致する必要があります。 たとえば、サービスの URI が `http://www.contoso.com/endpoint/` 場合、 **Subject**フィールドにも `www.contoso.com`値が含まれている必要があります。
 
-このフィールドには複数の値を含めることができますが、各値の先頭にはその値を示す初期化コードが付加されます。 一般的に、初期化は一般的な名前の "CN" です。たとえば、`CN = www.contoso.com` のようになります。 "**サブジェクト**" フィールドを空白にすることもできます。この場合、"**サブジェクト代替名**" フィールドに値として **DNS 名**を含めることができます。
+このフィールドには複数の値を含めることができますが、各値の先頭にはその値を示す初期化コードが付加されます。 一般的に、初期化は一般的な名前の "CN" です。たとえば、`CN = www.contoso.com`のようになります。 "**サブジェクト**" フィールドを空白にすることもできます。この場合、"**サブジェクト代替名**" フィールドに値として **DNS 名**を含めることができます。
 
 また、証明書の "**目的**" フィールドの値に、適切な値 ("サーバー認証" や "クライアント認証" など) を含める必要があります。
 
@@ -135,13 +135,13 @@ PowerShell の新しい SelfSignedCertificate コマンドレットは、x.509 �
 
 証明書が失効した場合、失効した証明書から発生した下位のチェーンも無効になり、認証手順において信頼されなくなります。 失効した証明書を検出するために、各発行者は日時が記された"*証明書失効リスト*" (CRL) を発行します。 このリストは、オンラインの失効またはオフラインの失効を使用してチェックできます。これを使用するには、`RevocationMode`、`DefaultRevocationMode`、<xref:System.Security.Cryptography.X509Certificates.X509RevocationMode>、および <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> の各クラスの <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication> プロパティまたは <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication> プロパティを <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> 列挙値のいずれかに設定します。 すべてのプロパティの既定値は、`Online` です。
 
-([\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) の) [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) と ([\<endpointBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) の) [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md).の両方の `revocationMode` 属性を使用することにより、構成でモードを設定することもできます。
+(`revocationMode`[serviceBehaviors>\< の) ](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)[authentication>\< と (](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)[endpointBehaviors>\< の) ](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)[authentication>\<.の両方の ](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) 属性を使用することにより、構成でモードを設定することもできます。
 
 ## <a name="the-setcertificate-method"></a>SetCertificate メソッド
 
 WCF では、認証、暗号化、またはメッセージのデジタル署名を行うために、多くの場合、サービスまたはクライアントが使用する証明書または証明書のセットを指定する必要があります。 これは、X.509 証明書を表すさまざまなクラスの `SetCertificate` メソッドを使用することで、プログラムによって実行できます。 `SetCertificate` メソッドを使用して証明書を指定するクラスは次のとおりです。
 
-|インスタンス|メソッド|
+|クラス|メソッド|
 |-----------|------------|
 |<xref:System.ServiceModel.Security.PeerCredential>|<xref:System.ServiceModel.Security.PeerCredential.SetCertificate%2A>|
 |<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>|<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>|
@@ -168,7 +168,7 @@ IIS と Active Directory には、証明書を Windows ユーザー アカウン
 
 Active Directory のマッピングを使用する方法の詳細については、「[Mapping Client Certificates with Directory Service Mapping](https://go.microsoft.com/fwlink/?LinkId=88918)」(ディレクトリ サービスのマッピングによるクライアント証明書のマッピング) を参照してください。
 
-この機能が有効になっている場合、<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> クラスの <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> プロパティを `true` に設定できます。 構成では、次のコードに示すように、[\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) 要素の `mapClientCertificateToWindowsAccount` 属性を `true` に設定できます。
+この機能が有効になっている場合、<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> クラスの <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> プロパティを `true` に設定できます。 構成では、次のコードに示すように、`mapClientCertificateToWindowsAccount`[authentication>\< 要素の ](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) 属性を `true` に設定できます。
 
 ```xml
 <serviceBehaviors>
@@ -184,7 +184,7 @@ Active Directory のマッピングを使用する方法の詳細については
 
 Windows ユーザー アカウントを表すトークンに X.509 証明書をマップすると、Windows トークンを使用して保護されたリソースにアクセスできるため、このマッピングが特権の昇格と見なされます。 したがって、マッピングを行う前に、ドメイン ポリシーにそのポリシーに準拠する X.509 証明書が必要となります。 この要件は、*SChannel* セキュリティ パッケージによって適用されます。
 
-[!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] 以降を使用している場合は、Windows アカウントにマッピングされる前に、証明書がドメイン ポリシーに準拠していることが WCF によって確認されます。
+.NET Framework 3.5 以降のバージョンを使用する場合、WCF では、証明書が Windows アカウントにマップされる前にドメインポリシーに準拠していることを確認します。
 
 WCF の最初のリリースでは、ドメイン ポリシーを参照せずにマッピングが実行されます。 そのため、マッピングが有効になっており、X.509 証明書がドメイン ポリシーを満たしていない場合は、最初のリリースの下で実行しているときには動作していた古いアプリケーションが動作しなくなる可能性があります。
 
@@ -194,4 +194,4 @@ WCF の最初のリリースでは、ドメイン ポリシーを参照せずに
 - <xref:System.ServiceModel.Security>
 - <xref:System.ServiceModel>
 - <xref:System.Security.Cryptography.X509Certificates.X509FindType>
-- [サービスおよびクライアントのセキュリティ保護](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

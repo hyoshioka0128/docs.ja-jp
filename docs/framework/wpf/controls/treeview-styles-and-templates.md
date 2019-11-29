@@ -9,15 +9,15 @@ helpviewer_keywords:
 - styles [WPF], TreeView
 - TreeView [WPF], styles and templates
 ms.assetid: a49adb77-0202-4caa-b94a-8bb110d7fa9a
-ms.openlocfilehash: f6dbe54324a5ad5e2f85719d819c035abfd644b1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 45276d23380fe956fc3d59b90d5baae23ee8a7e2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460187"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283634"
 ---
 # <a name="treeview-styles-and-templates"></a>TreeView のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.TreeView> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+このトピックでは、<xref:System.Windows.Controls.TreeView> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」を参照してください。  
   
 ## <a name="treeview-parts"></a>TreeView パーツ  
  <xref:System.Windows.Controls.TreeView> コントロールには、名前付きの部分がありません。  
@@ -29,14 +29,14 @@ ms.locfileid: "73460187"
   
 |VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
-|有効|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
+|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|  
   
 ## <a name="treeviewitem-parts"></a>TreeViewItem パーツ  
  次の表に、<xref:System.Windows.Controls.TreeViewItem> コントロールの名前付きの部分を示します。  
   
-|パーツ|[種類]|説明|  
+|要素|種類|説明|  
 |----------|----------|-----------------|  
 |PART_Header|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.Controls.TreeView> コントロールのヘッダーの内容を格納しているビジュアル要素。|  
   
@@ -47,17 +47,17 @@ ms.locfileid: "73460187"
 |----------------------|---------------------------|-----------------|  
 |標準|CommonStates|既定の状態です。|  
 |MouseOver|CommonStates|マウスポインターが <xref:System.Windows.Controls.TreeViewItem>上に配置されています。|  
-|Disabled|CommonStates|<xref:System.Windows.Controls.TreeViewItem> が無効になっています。|  
+|無効|CommonStates|<xref:System.Windows.Controls.TreeViewItem> が無効になっています。|  
 |フォーカスされている|FocusStates|<xref:System.Windows.Controls.TreeViewItem> にフォーカスがあります。|  
 |フォーカスされていない|FocusStates|<xref:System.Windows.Controls.TreeViewItem> にフォーカスがありません。|  
 |[展開済み]|すべての状態|<xref:System.Windows.Controls.TreeViewItem> コントロールが展開されます。|  
 |Collapsed|すべての状態|<xref:System.Windows.Controls.TreeViewItem> コントロールが折りたたまれています。|  
 |HasItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> には項目があります。|  
 |NoItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> には項目がありません。|  
-|選択済み|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されています。|  
+|Selected|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されています。|  
 |SelectedInactive|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されていますが、アクティブになっていません。|  
 |未選択|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> が選択されていません。|  
-|有効|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
+|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|  
   
@@ -72,11 +72,11 @@ ms.locfileid: "73460187"
   
  完全なサンプルについては、[Styling with ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating)を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [コントロールのスタイルとテンプレート](control-styles-and-templates.md)
 - [コントロールのカスタマイズ](control-customization.md)
 - [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](customizing-the-appearance-of-an-existing-control.md)
+- [コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)

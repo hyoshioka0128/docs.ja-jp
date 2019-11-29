@@ -41,7 +41,7 @@ Azure Container Instances は、シナリオのテストに最適です。 ク�
 
 Azure Container Instances には、Azure でコンテナーを実行する最速で簡単な方法が用意されています。 App service や orchestrator を構成したり、仮想マシンに対処したりする必要はありません。 ただし、単純であるため、ACI は主にテスト目的で使用する必要があります。 アプリケーションで自動スケーラビリティが必要な場合、複数のコンテナーが連携するように構成されている場合、またはその他の複雑な機能がある場合は、アプリをホストするために使用できるその他の適切な Azure サービスがあります。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [Azure Container Instances Docs](https://docs.microsoft.com/azure/container-instances/)
 - [ACR からコンテナーインスタンスをデプロイする](https://docs.microsoft.com/azure/container-instances/container-instances-using-azure-container-registry#deploy-with-azure-portal)

@@ -3,20 +3,20 @@ title: ML.NET のチュートリアル
 description: ML.NET のチュートリアルでは、カスタム AI ソリューションを構築し、これを .NET アプリケーションに統合する方法について説明しています。
 ms.custom: seodec18
 ms.date: 07/08/2019
-ms.openlocfilehash: 6d5b622194cbaa20ed4e7283e6f1ea66f16a7b47
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: bf59efb4118d9d4fac24413d7568df412a0e9475
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054010"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977170"
 ---
-# <a name="mlnet-tutorials"></a>ML.NET のチュートリアル 
+# <a name="mlnet-tutorials"></a>ML.NET のチュートリアル
 
 次のチュートリアルで、[ML.NET](../index.yml) を使用して機械学習のカスタム ソリューションを構築し、これを .NET アプリケーションに統合する方法を理解できます。
 
 - [感情分析](sentiment-analysis.md): ML.NET を使用して**二項分類**タスクを適用する方法を示します。
 - [GitHub の問題の分類](github-issue-classification.md): ML.NET を使って**多クラス分類**タスクを適用する方法を示します。
-- [料金予測](taxi-fare.md): ML.NET を使用して**回帰**タスクを適用する方法を示します。
+- [料金予測](predict-prices.md): ML.NET を使用して**回帰**タスクを適用する方法を示します。
 - [アヤメのクラスタ リング](iris-clustering.md): ML.NET を使用して**クラスタ リング**を適用する方法を示します。
 - [推奨](movie-recommendation.md): 以前のユーザー評価に基づき映画の**推奨**を生成します
 - [画像分類](image-classification.md): 既存の TensorFlow モデルを再トレーニングし、ML.NET を使ってカスタム画像分類器を作成する方法を示します。

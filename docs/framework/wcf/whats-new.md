@@ -40,7 +40,7 @@ WCF では、コントラクト優先の開発がサポートされるように�
 
 ### <a name="aspnet-compatibility-mode-default-changed"></a>ASP.NET 互換性モードの既定値の変更
 
-WCF には ASP.NET 互換性モードが用意されています。これにより、開発者は WCF サービスを作成する際に ASP.NET HTTP パイプラインの機能へのフル アクセスが付与されます。 このモードを使用するには、web.config の[@no__t 2serviceHostingEnvironment >](../configure-apps/file-schema/wcf/servicehostingenvironment.md)セクションで `aspNetCompatibilityEnabled` 属性を true に設定する必要があります。また、この appDomain のすべてのサービスは、@no__t 4 の `RequirementsMode` または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required> @no__t に設定されている必要があります。 既定では <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> が <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> に設定されています。 詳細については、「 [WCF Services と ASP.NET](./feature-details/wcf-services-and-aspnet.md)」を参照してください。
+WCF には ASP.NET 互換性モードが用意されています。これにより、開発者は WCF サービスを作成する際に ASP.NET HTTP パイプラインの機能へのフル アクセスが付与されます。 このモードを使用するには、web.config の[\<serviceHostingEnvironment >](../configure-apps/file-schema/wcf/servicehostingenvironment.md)セクションで `aspNetCompatibilityEnabled` 属性を true に設定する必要があります。また、この appDomain のすべてのサービスは、その <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> の `RequirementsMode` プロパティを <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>に設定する必要があります。 既定では <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> は <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>に設定されています。 詳細については、「 [WCF Services と ASP.NET](./feature-details/wcf-services-and-aspnet.md)」を参照してください。
 
 ### <a name="new-transport-default-values"></a>トランスポートの新しい既定値
 
@@ -48,7 +48,7 @@ WCF には ASP.NET 互換性モードが用意されています。これによ�
 
 ### <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 
-<xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーで使用されるメモリの量を制限する XML ディクショナリ リーダーの構成可能なクォータ値が格納されます。 これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。 詳細については、「 [WCF の単純化機能](wcf-simplification-features.md)」を参照してください。
+<xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーによって使用されるメモリの量を制限する、XML ディクショナリリーダーの構成可能なクォータ値が含まれています。 これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。 詳細については、「 [WCF の単純化機能](wcf-simplification-features.md)」を参照してください。
 
 ### <a name="wcf-configuration-validation"></a>WCF 構成検証
 
@@ -68,7 +68,7 @@ HTTPS 上のエンドポイントの公開を簡単にするため、HTTPS の�
 
 ## <a name="generating-a-single-wsdl-document"></a>単一の WSDL ドキュメントの生成
 
-サード パーティの WSDL の処理スタックには、xsd:import を使用して他のドキュメントに依存している WSDL ドキュメントを処理できないものもあります。 WCF により、すべての WSDL 情報が 1 つのドキュメントで返されるように指定できるようになりました。 単一の WSDL ドキュメントを要求するには、サービスからメタデータを要求するときに、URI に "? singleWSDL" を追加します。
+サード パーティの WSDL の処理スタックには、xsd:import を使用して他のドキュメントに依存している WSDL ドキュメントを処理できないものもあります。 WCF により、すべての WSDL 情報が 1 つのドキュメントで返されるように指定できるようになりました。 単一 WSDL ドキュメントをリクエストするには、サービスからメタデータを要求するときに、その URI に "?singleWSDL" を追加します。
 
 ## <a name="websocket-support"></a>WebSocket のサポート
 
@@ -78,11 +78,11 @@ Websocket は、TCP と同様のパフォーマンス特性を持つポート 80
 
 次の表は、変更された設定と追加情報の場所を示しています。
 
-|property|オン|新しい既定値|参照先|
+|プロパティ|オン|新しい既定値|参照先|
 |--------------|--------|-----------------|------------------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 秒|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * プロセッサの数|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * トランスポート用のプロセッサの数<br /><br /> 4 @no__t-SMSvcHost のプロセッサ数が0です。|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [Net.tcp ポート共有サービスを構成しています](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * トランスポート用のプロセッサの数<br /><br /> 4 \* SMSvcHost のプロセッサ数|[Net.tcp ポート共有サービスの構成](./feature-details/configuring-the-net-tcp-port-sharing-service.md)<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A>|
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * プロセッサの数|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|
 |receiveTimeout|SMSvcHost.exe|30 秒|[Net.TCP ポート共有サービスを構成する](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 
@@ -92,7 +92,7 @@ Websocket は、TCP と同様のパフォーマンス特性を持つポート 80
 
 ## <a name="configuring-wcf-services-in-code"></a>コード内での WCF サービスの構成
 
-Windows Communication Foundation (WCF) を使用すると、開発者は構成ファイルまたはコードを使用してサービスを構成できます。 構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 WCF では、コードでサービスを構成することもできます。 以前のバージョンの WCF (4.0 以前) では、自己ホスト型のシナリオでサービスを構成するのは簡単でしたが、<xref:System.ServiceModel.ServiceHost> クラスを使用すると、ServiceHost. Open を呼び出す前にエンドポイントと動作を構成できました。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスにアクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降、WCF では、自己ホスト型サービスと web ホステッドサービスの両方をコード内で簡単に構成できます。 詳細については、「[コードでの WCF サービスの構成](configuring-wcf-services-in-code.md)」を参照してください。
+Windows Communication Foundation (WCF) を使用すると、開発者は構成ファイルまたはコードを使用してサービスを構成できます。 構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 WCF では、コードでサービスを構成することもできます。 以前のバージョンの WCF (4.0 以前) では、自己ホスト型のシナリオでサービスを構成するのは簡単でした。 <xref:System.ServiceModel.ServiceHost> クラスを使用すると、ServiceHost. Open を呼び出す前にエンドポイントと動作を構成できました。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスにアクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降、WCF では、自己ホスト型サービスと web ホステッドサービスの両方をコード内で簡単に構成できます。 詳細については、「[コードでの WCF サービスの構成](configuring-wcf-services-in-code.md)」を参照してください。
 
 ## <a name="channelfactory-caching"></a>ChannelFactory のキャッシュ
 

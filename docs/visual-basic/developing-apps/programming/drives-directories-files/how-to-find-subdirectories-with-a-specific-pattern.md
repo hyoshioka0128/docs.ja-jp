@@ -1,16 +1,16 @@
 ---
-title: '方法: 特定のパターンに一致するサブディレクトリを検索する (Visual Basic)'
+title: '方法: 特定のパターンに一致するサブディレクトリを検索する'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - pattern matching
 - folders, finding
 ms.assetid: c9265fd1-7483-4150-8b7f-ff642caa939d
-ms.openlocfilehash: 96ae5c5c44263a47343058012d8b8aa064d9cd92
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: c8e13598080139cafabffb2e17d0a3b99c37dc5d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039434"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348767"
 ---
 # <a name="how-to-find-subdirectories-with-a-specific-pattern-in-visual-basic"></a>方法: 特定のパターンに一致するサブディレクトリを検索する (Visual Basic)
 

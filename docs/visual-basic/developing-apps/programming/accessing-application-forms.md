@@ -1,5 +1,5 @@
 ---
-title: アプリケーション フォームへのアクセス (Visual Basic)
+title: アプリケーション フォームへのアクセス
 ms.date: 07/20/2015
 helpviewer_keywords:
 - forms [Visual Basic], communicating between
@@ -8,17 +8,19 @@ helpviewer_keywords:
 - My.Forms object
 - forms [Visual Basic], accessing all open
 ms.assetid: 9aaf5aaf-2012-4f97-89c7-6e62b9d17863
-ms.openlocfilehash: 85de915f4dc9a79e0161411951062afbeb764513
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 332b6a7563160528b6c17210170af0db6e9bc0e7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821687"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349239"
 ---
 # <a name="accessing-application-forms-visual-basic"></a>アプリケーション フォームへのアクセス (Visual Basic)
+
 `My.Forms` オブジェクトは、アプリケーションのプロジェクトで宣言された各 Windows フォームのインスタンスに簡単にアクセスする方法を提供します。 `My.Application` オブジェクトのプロパティを利用し、アプリケーションのスプラッシュ スクリーンとメイン フォームにアクセスし、アプリケーションのオープン フォームの一覧を取得することもできます。  
   
-## <a name="tasks"></a>[タスク]  
+## <a name="tasks"></a>タスク  
+
  次の表に示すのは、アプリケーションのフォームにアクセスする方法を示す例です。  
   
 |終了|参照トピック|  

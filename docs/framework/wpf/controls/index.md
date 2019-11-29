@@ -1,5 +1,5 @@
 ---
-title: コントロール
+title: Controls
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73459449"
 ---
-# <a name="controls"></a>コントロール
+# <a name="controls"></a>Controls
 <a name="introduction"></a>
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、<xref:System.Windows.Controls.Button>、<xref:System.Windows.Controls.Label>、<xref:System.Windows.Controls.TextBox>、<xref:System.Windows.Controls.Menu>、<xref:System.Windows.Controls.ListBox>など、ほぼすべての Windows アプリケーションで使用される一般的な UI コンポーネントの多くが付属しています。 これまで、これらのオブジェクトはコントロールと呼ばれてきました。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] SDK は、アプリケーション内の表示されたオブジェクトを表すクラスを厳密には "コントロール" として使用しますが、クラスは、<xref:System.Windows.Controls.Control> クラスを継承して可視性を持つ必要がないことに注意することが重要です。 <xref:System.Windows.Controls.Control> クラスを継承するクラスには、<xref:System.Windows.Controls.ControlTemplate>が含まれています。これにより、コントロールのコンシューマーは、新しいサブクラスを作成しなくても、コントロールの外観を根本的に変更できます。  このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]で一般的に使用されるコントロール (<xref:System.Windows.Controls.Control> クラスから継承されるコントロールとそれ以外のコントロールの両方) について説明します。  
 
@@ -97,7 +97,7 @@ ms.locfileid: "73459449"
 
  これらの基本クラスの詳細については、「 [WPF コンテンツモデル](wpf-content-model.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [スタイルとテンプレート](styling-and-templating.md)
 - [カテゴリ別のコントロール](controls-by-category.md)

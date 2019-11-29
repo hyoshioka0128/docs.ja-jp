@@ -1,16 +1,16 @@
 ---
-title: .NET Security Analyzer - .NET
-description: .NET Framework Analyzer パッケージの .NET Security Analyzer を利用し、セキュリティ上のリスクを見つけ、対処する方法について説明します。
+title: .NET Framework アナライザー - .NET
+description: .NET Framework Analyzer パッケージの .NET Framework Analyzers を利用し、セキュリティ上のリスクを見つけ、対処する方法について説明します。
 author: billwagner
 ms.author: wiwagn
 ms.date: 01/25/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: 03268375739b34a43f38c60fbfd2c993da9f3840
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 7e64b00eb6fd2c2dbb12c54a2c725590b4d22e15
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197963"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345943"
 ---
 # <a name="the-net-framework-analyzer"></a>.NET Framework Analyzer
 
@@ -20,7 +20,7 @@ ms.locfileid: "73197963"
 
 ## <a name="installing-and-configuring-the-net-framework-analyzer"></a>.NET Framework Analyzer をインストールし、構成する
 
-.NET Security Analyzer は、それを実行するすべてのプロジェクトで、NuGet パッケージとしてインストールする必要があります。 1 人の開発者がそれをプロジェクトに追加すれば十分です。 アナライザー パッケージはプロジェクト依存関係であり、更新済みのソリューションが与えられると、あらゆる開発者のコンピューターで実行されます。
+.NET Framework Analyzer は、それを実行するすべてのプロジェクトで、NuGet パッケージとしてインストールする必要があります。 1 人の開発者がそれをプロジェクトに追加すれば十分です。 アナライザー パッケージはプロジェクト依存関係であり、更新済みのソリューションが与えられると、あらゆる開発者のコンピューターで実行されます。
 
 .NET Framework Analyzer は [Microsoft.NetFramework.Analyzers](https://www.nuget.org/packages/Microsoft.NetFramework.Analyzers/) NuGet パッケージで配布されます。 このパッケージは、.NET Framework に固有のアナライザーのみ提供します。これにはセキュリティ アナライザーが含まれています。 多くの場合、[Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers) NuGet パッケージが必要になります。 FxCopAnalyzers 集合パッケージには、Framework.Analyzers パッケージに含まれているすべてのフレームワーク アナライザーと次のアナライザーが含まれています。
 

@@ -1,16 +1,16 @@
 ---
-title: カスタム ログ リスナーの作成 (Visual Basic)
+title: カスタム ログ リスナーの作成
 ms.date: 07/20/2015
 helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-ms.openlocfilehash: 298bfa2987397591492480d953949d20168785bf
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 7b611e93119dc66a9404cf271ea201676d7b5318
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581684"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353622"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>チュートリアル: カスタム ログ リスナーの作成 (Visual Basic)
 

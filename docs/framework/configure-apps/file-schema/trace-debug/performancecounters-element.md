@@ -20,8 +20,8 @@ ms.locfileid: "71697152"
 パフォーマンス カウンターが共有するグローバル メモリのサイズを指定します。
 
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t @ no__t-3 **\<performanceCounters >**  
+&nbsp;&nbsp;[ **\<の >** ](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<performanceCounters >**  
 
 ## <a name="syntax"></a>構文
 
@@ -29,9 +29,9 @@ ms.locfileid: "71697152"
 <performanceCounters filemappingsize="524288" />
 ```
 
-## <a name="attributes-and-elements"></a>属性および要素
+## <a name="attributes-and-elements"></a>属性と要素
 
-以降のセクションでは、属性、子要素、および親要素について説明します。
+次のセクションでは、属性、子要素、親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -41,7 +41,7 @@ ms.locfileid: "71697152"
 
 ### <a name="child-elements"></a>子要素
 
-なし。
+[なし]。
 
 ### <a name="parent-elements"></a>親要素
 
@@ -54,11 +54,11 @@ ms.locfileid: "71697152"
 
 パフォーマンスカウンターは、メモリマップトファイルまたは共有メモリを使用して、パフォーマンスデータをパブリッシュします。  共有メモリのサイズによって、一度に使用できるインスタンスの数が決まります。  共有メモリには、グローバル共有メモリと個別の共有メモリの2種類があります。  グローバル共有メモリは、.NET Framework バージョン1.0 または1.1 と共にインストールされたすべてのパフォーマンスカウンターカテゴリによって使用されます。  .NET Framework バージョン2.0 と共にインストールされるパフォーマンスカウンターカテゴリには、個別の共有メモリが使用されます。各パフォーマンスカウンターカテゴリには独自のメモリがあります。
 
-グローバル共有メモリのサイズは、構成ファイルでのみ設定できます。  既定のサイズは 524288 byes、最大サイズは33554432バイト、最小サイズは32768バイトです。  グローバル共有メモリはすべてのプロセスとカテゴリによって共有されるため、最初の作成者はサイズを指定します。  アプリケーション構成ファイルでサイズを定義する場合、そのサイズは、アプリケーションがパフォーマンスカウンターを実行する最初のアプリケーションである場合にのみ使用されます。  したがって、`filemappingsize` の値を指定する正しい場所は machine.config ファイルです。  グローバル共有メモリ内のメモリは、個々のパフォーマンスカウンターによって解放されることはないため、異なる名前を持つ多数のパフォーマンスカウンターインスタンスが作成されると、最終的にグローバル共有メモリが使い果たされます。
+グローバル共有メモリのサイズは、構成ファイルでのみ設定できます。  既定のサイズは 524288 byes、最大サイズは33554432バイト、最小サイズは32768バイトです。  グローバル共有メモリはすべてのプロセスとカテゴリによって共有されるため、最初の作成者はサイズを指定します。  アプリケーション構成ファイルでサイズを定義する場合、そのサイズは、アプリケーションがパフォーマンスカウンターを実行する最初のアプリケーションである場合にのみ使用されます。  そのため、`filemappingsize` 値を指定する正しい場所は machine.config ファイルです。  グローバル共有メモリ内のメモリは、個々のパフォーマンスカウンターによって解放されることはないため、異なる名前を持つ多数のパフォーマンスカウンターインスタンスが作成されると、最終的にグローバル共有メモリが使い果たされます。
 
-個別の共有メモリのサイズについては、レジストリキー HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services @ no__t-0 *\< category name >* \Performance が最初に参照され、その後に値が続きます。構成ファイル内のグローバル共有メモリに対して指定されます。 [FileMappingSize] の値が存在しない場合は、構成ファイルのグローバル設定の1つ目の共有メモリサイズが4番目 (1/4) に設定されます。
+個別の共有メモリのサイズについては、レジストリキーの DWORD FileMappingSize 値 HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\\ *\<category name >* 最初に参照され、次に構成ファイルのグローバル共有メモリに指定された値が続きます。 [FileMappingSize] の値が存在しない場合は、構成ファイルのグローバル設定の1つ目の共有メモリサイズが4番目 (1/4) に設定されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Diagnostics.PerformanceCounter>
 - <xref:System.Diagnostics.PerformanceCounterCategory>

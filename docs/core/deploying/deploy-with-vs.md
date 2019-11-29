@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: fd6861a71bdaac2d3500be52ae29c9fdb383a574
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f80b483fedc600a1e1a48d36ce9b7b95c6de9f27
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092712"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428898"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Visual Studio を使用して .NET Core アプリを展開する
 
@@ -24,7 +24,7 @@ ms.locfileid: "73092712"
 - 自己完結型の展開
 - サードパーティの依存関係を含む、自己完結型の展開
 
-Visual Studio を使用して、.NET Core アプリケーションを開発する方法の詳細については、「[Windows における .NET Core の前提条件](../windows-prerequisites.md#prerequisites-to-develop-net-core-apps-with-visual-studio)」を参照してください。
+Visual Studio を使用して、.NET Core アプリケーションを開発する方法の詳細については、[.NET Core の依存関係と要件](../install/dependencies.md?tabs=netcore30&pivots=os-windows)に関する記事を参照してください。
 
 ## <a name="framework-dependent-deployment"></a>フレームワークに依存する展開
 
@@ -71,7 +71,7 @@ Visual Studio を使用して、.NET Core アプリケーションを開発す�
 
 1. **NuGet パッケージ マネージャー**を使用し、プロジェクトに NuGet パッケージへの参照を追加します。このとき、パッケージがシステムにまだない場合はそれをインストールします。 パッケージ マネージャーを開くには、 **[ツール]**  >  **[NuGet パッケージ マネージャー]**  >  **[ソリューションの NuGet パッケージの管理]** を順に選択します。
 
-1. `Newtonsoft.Json` がシステムにインストールされていることを確認します。されていない場合はインストールします。 **[インストール済み]** タブに、システムにインストールされた NuGet パッケージの一覧が表示されます。 `Newtonsoft.Json` がそこにない場合、 **[参照]** タブを選択し、検索ボックスに "Newtonsoft.Json" と入力します。 `Newtonsoft.Json` を選択し、右側のウィンドウでプロジェクトを選択してから、 **[インストール]** を選択します。
+1. サードパーティの依存関係 (`Newtonsoft.Json` など) がシステムにインストールされていることを確認し、インストールされていない場合はインストールします。 **[インストール済み]** タブに、システムにインストールされた NuGet パッケージの一覧が表示されます。 `Newtonsoft.Json` がそこにない場合、 **[参照]** タブを選択し、検索ボックスに "Newtonsoft.Json" と入力します。 `Newtonsoft.Json` を選択し、右側のウィンドウでプロジェクトを選択してから、 **[インストール]** を選択します。
 
 1. `Newtonsoft.Json` が既にシステムにインストールされている場合、 **[ソリューション パッケージの管理]** タブの右のウィンドウからプロジェクトを選択し、プロジェクトに追加します。
 
@@ -98,7 +98,7 @@ Visual Studio を使用して、.NET Core アプリケーションを開発す�
 
    インバリアント モードを有効にするには、**ソリューション エクスプローラー**で (ソリューションではなく) プロジェクトを右クリックし、 **[SCD.csproj の編集]** または **[SCD.vbproj の編集]** を選択します。 次の強調表示された行をファイルに追加します。
 
- [!code-xml[globalization-invariant-mode](~/samples/snippets/core/deploying/xml/invariant.csproj)]
+   [!code-xml[globalization-invariant-mode](~/samples/snippets/core/deploying/xml/invariant.csproj?highlight=6-8)]
 
 1. アプリケーションのデバッグ ビルドを作成します。
 
@@ -268,7 +268,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 
 1. **NuGet パッケージ マネージャー**を使用し、プロジェクトに NuGet パッケージへの参照を追加します。このとき、パッケージがシステムにまだない場合はそれをインストールします。 パッケージ マネージャーを開くには、 **[ツール]**  >  **[NuGet パッケージ マネージャー]**  >  **[ソリューションの NuGet パッケージの管理]** を順に選択します。
 
-1. `Newtonsoft.Json` がシステムにインストールされていることを確認します。されていない場合はインストールします。 **[インストール済み]** タブに、システムにインストールされた NuGet パッケージの一覧が表示されます。 `Newtonsoft.Json` がそこにない場合、 **[参照]** タブを選択し、検索ボックスに "Newtonsoft.Json" と入力します。 `Newtonsoft.Json` を選択し、右側のウィンドウでプロジェクトを選択してから、 **[インストール]** を選択します。
+1. サードパーティの依存関係 (`Newtonsoft.Json` など) がシステムにインストールされていることを確認し、インストールされていない場合はインストールします。 **[インストール済み]** タブに、システムにインストールされた NuGet パッケージの一覧が表示されます。 `Newtonsoft.Json` がそこにない場合、 **[参照]** タブを選択し、検索ボックスに "Newtonsoft.Json" と入力します。 `Newtonsoft.Json` を選択し、右側のウィンドウでプロジェクトを選択してから、 **[インストール]** を選択します。
 
 1. `Newtonsoft.Json` が既にシステムにインストールされている場合、 **[ソリューション パッケージの管理]** タブの右のウィンドウからプロジェクトを選択し、プロジェクトに追加します。
 

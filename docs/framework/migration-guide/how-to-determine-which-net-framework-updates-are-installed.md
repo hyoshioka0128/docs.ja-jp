@@ -1,5 +1,5 @@
 ---
-title: 方法:インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する
+title: インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラム
 description: コンピューターにインストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する方法について説明します。
 ms.date: 11/27/2017
 dev_langs:
@@ -11,21 +11,21 @@ helpviewer_keywords:
 ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1c69d4bb370087dddafbfed41cbfb1fef229677c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: aad202e7c9df01c2893e74a39744f2c32783f1f0
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318973"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73735203"
 ---
-# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>方法:インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する
+# <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する方法
 
 この記事では、コンピューターにインストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する方法について説明します。
 
 > [!NOTE]
 > この記事で紹介する手法にはすべて、管理特権が与えられたアカウントが必要になります。
 
-## <a name="to-find-installed-updates-using-the-registry"></a>レジストリを利用し、インストールされている更新プログラムを見つける
+## <a name="use-registry-editor"></a>レジストリ エディターを使用する
 
 コンピューターにインストールされている .NET Framework のバージョンごとのインストール済みのセキュリティ更新プログラムおよび修正プログラムは、Windows レジストリに一覧表示されます。 レジストリ エディター (*regedit.exe*) プログラムを使用して、この情報を表示することができます。
 
@@ -33,13 +33,13 @@ ms.locfileid: "72318973"
 
 2. レジストリ エディターで、次のサブキーを開きます。
 
-     `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates`
+     **HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates**
 
      インストールされている更新プログラムは、適用された .NET Framework バージョンを識別するサブキーの下に一覧表示されています。 各更新プログラムは、サポート技術情報の (KB) 番号で識別されます。
 
 レジストリ エディターでは、各バージョンの .NET Framework バージョンとインストールされている更新プログラムが別々のサブキーに格納されます。 インストールされているバージョン番号の詳細については、「[方法: インストールされている .NET Framework バージョンを確認する](how-to-determine-which-versions-are-installed.md)」を参照してください。
 
-## <a name="to-find-installed-updates-by-querying-the-registry-in-code"></a>コードでレジストリにクエリを実行し、インストールされている更新プログラムを見つける
+## <a name="query-the-registry-using-code"></a>コードを使用してレジストリのクエリを実行する
 
 次の例では、コンピューターにインストールされている .NET Framework セキュリティ更新プログラムおよび修正プログラムをプログラミングによって判断します。
 
@@ -67,7 +67,7 @@ Microsoft .NET Framework 4 Extended
   KB2600217
 ```
 
-## <a name="to-find-installed-updates-by-querying-the-registry-in-powershell"></a>PowerShell でレジストリにクエリを実行し、インストールされている更新プログラムを見つける
+## <a name="use-powershell-to-query-the-registry"></a>PowerShell を使用してレジストリのクエリを実行する
 
 次の例では、PowerShell を利用し、コンピューターにインストールされている .NET Framework セキュリティ更新プログラムおよび修正プログラムを判断する方法を示します。
 

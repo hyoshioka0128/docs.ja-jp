@@ -145,7 +145,7 @@ Blazor でのルーティングは、`Router` コンポーネントによって�
 
 ## <a name="navigation"></a>ナビゲーション
 
-ASP.NET Web フォームでは、ブラウザーにリダイレクト応答を返すことによって、別のページへのナビゲーションをトリガーします。 (例:
+ASP.NET Web フォームでは、ブラウザーにリダイレクト応答を返すことによって、別のページへのナビゲーションをトリガーします。 例 :
 
 ```csharp
 protected void NavigateButton_Click(object sender, EventArgs e)

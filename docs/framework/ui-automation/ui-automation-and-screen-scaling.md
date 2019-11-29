@@ -10,16 +10,16 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: e0f7bd553096be0674827aa0498a53df5247940e
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
+ms.openlocfilehash: ceab7db1f9eeb47ec020e220ec702af8181855e2
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133779"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442481"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>UI オートメーションおよび画面の拡大縮小
 > [!NOTE]
-> このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 の最新情報[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]については[、「Windows Automation API:UI オートメーション](https://go.microsoft.com/fwlink/?LinkID=156746)。  
+> このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](/windows/win32/winauto/entry-uiauto-win32)」を参照してください。  
   
 Windows Vista 以降では、ユーザーはドット/インチ (dpi) の設定を変更して、画面上のほとんどのユーザーインターフェイス (UI) 要素のサイズを大きくすることができます。 この機能は Windows では長時間使用できましたが、以前のバージョンでは、アプリケーションによってスケーリングを実装する必要がありました。 Windows Vista 以降では、デスクトップウィンドウマネージャーによって、独自のスケーリングを処理しないすべてのアプリケーションに対して既定のスケーリングが実行されます。 UI オートメーション クライアント アプリケーションでは、この機能を考慮に入れる必要があります。  
   
@@ -29,20 +29,20 @@ Windows Vista 以降では、ユーザーはドット/インチ (dpi) の設定�
   
  Dpi 設定の変更は、画面の解像度の変更と同じではありません。 Dpi スケーリングでは、画面上の物理ピクセルの数は変わりません。 拡大縮小が適用されるのは、 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 要素のサイズと位置です。 拡大縮小しないよう明示的に指定されていないデスクトップとアプリケーションに対し、デスクトップ ウィンドウ マネージャー (DWM) はこの拡大縮小を自動的に実行できます。  
   
- 実際には、ユーザーがスケールファクターを 120 dpi に設定すると、画面上の垂直方向または水平方向のインチが 25% 大きくなります。 すべての寸法は、それに応じて拡大されます。 画面の左上隅からのアプリケーション ウィンドウのオフセットは、25% 増加します。 アプリケーションのスケーリングが有効になっていて、アプリケーションが dpi 対応でない場合、ウィンドウのサイズは、含まれるすべて[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]の要素のオフセットとサイズと共に、同じ比率で増加します。  
+ 実際には、ユーザーがスケールファクターを 120 dpi に設定すると、画面上の垂直方向または水平方向のインチが25% 大きくなります。 すべての寸法は、それに応じて拡大されます。 画面の左上隅からのアプリケーション ウィンドウのオフセットは、25% 増加します。 アプリケーションのスケーリングが有効になっていて、アプリケーションが dpi 対応でない場合、ウィンドウのサイズは、含まれているすべての [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 要素のオフセットとサイズと共に、同じ比率で増加します。  
   
 > [!NOTE]
 > 既定では、DWM は dpi が120に設定されている場合は dpi 非対応アプリケーションのスケーリングを実行しませんが、dpi が144以上のカスタム値に設定されている場合は、この動作を実行します。 ただし、この既定の動作は、ユーザーがオーバーライドできます。  
   
  画面の拡大縮小は、画面座標に何らかの関わりを持つアプリケーションに新しい課題をもたらします。 現在、画面には物理座標と論理座標という 2 つの座標系が含まれています。 あるポイントの物理座標は、原点の左上からの実際のオフセット (ピクセル数) です。 論理座標は、ピクセル自体が拡大縮小された場合のオフセットです。  
   
- たとえば、ダイアログ ボックスを設計し、座標 (100, 48) にボタンを配置するとします。 このダイアログボックスが既定の 96 dpi で表示されている場合、ボタンはの物理座標 (100、48) にあります。 120 dpi では、(125、60) の物理座標に配置されます。 ただし、論理座標はどの dpi 設定でも同じです。(100、48)。  
+ たとえば、ダイアログ ボックスを設計し、座標 (100, 48) にボタンを配置するとします。 このダイアログボックスが既定の 96 dpi で表示されている場合、ボタンはの物理座標 (100、48) にあります。 120 dpi では、(125、60) の物理座標に配置されます。 ただし、論理座標は、すべての dpi 設定で同じです (100、48)。  
   
  論理座標は、dpi 設定に関係なく、オペレーティングシステムとアプリケーションの動作が一貫しているため、重要です。 たとえば、 <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType> は通常、論理座標を返します。 ダイアログボックス内の要素の上にカーソルを移動すると、dpi 設定に関係なく同じ座標が返されます。 (100, 100) にコントロールを描画すると、それらの論理座標に描画され、すべての dpi 設定で同じ相対位置が使用されます。  
   
 <a name="Scaling_in_UI_Automation_Clients"></a>   
 ## <a name="scaling-in-ui-automation-clients"></a>UI オートメーション クライアントにおける拡大縮小  
- API [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]は論理座標を使用しません。 次のメソッドとプロパティが返す、あるいはパラメーターとして受け取るのは、物理座標です。  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] API は論理座標を使用しません。 次のメソッドとプロパティが返す、あるいはパラメーターとして受け取るのは、物理座標です。  
   
 - <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A>  
   
@@ -73,8 +73,8 @@ Windows Vista 以降では、ユーザーはドット/インチ (dpi) の設定�
 > [!CAUTION]
 > <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType>は使用しないでください。 拡大縮小される環境において、クライアント ウィンドウ外でのこのプロパティの動作は定義されていません。  
   
- アプリケーションが非 dpi 対応アプリケーションとの間で直接通信を行う場合は、 [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]関数`PhysicalToLogicalPoint`と`LogicalToPhysicalPoint`を使用して論理座標と物理座標を変換することができます。  
+ アプリケーションが非 dpi 対応アプリケーションとの間で直接のプロセス間通信を実行する場合は、[!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] 関数 `PhysicalToLogicalPoint` と `LogicalToPhysicalPoint`を使用して論理座標と物理座標を変換することができます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Highlighter Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - walkthroughs [WPF]
 - WPF walkthroughs [WPF]
 ms.assetid: c29bde96-0389-4aff-a9fb-cd678f66b7f7
-ms.openlocfilehash: 34cd7e96442a570a3951e6303d2ac90ce5da6239
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: fbd5006611a0a8e0d90b589df7b2cb6a34101457
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920408"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977027"
 ---
 # <a name="wpf-walkthroughs"></a>WPF のチュートリアル
 チュートリアルでは、一般的なシナリオの詳しい手順について説明します。 このため、製品や特定の機能領域について知るための最初のステップとして適しています。
@@ -21,11 +21,11 @@ ms.locfileid: "72920408"
 
 |Title|説明|
 |-----------|-----------------|
-|[チュートリアル: WPF デザイナーを使用した単純な WPF アプリケーションの構築](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546972(v=vs.100))|[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]を使用して単純な WPF アプリケーションを構築する方法を示します。|
+|[チュートリアル: WPF デザイナーを使用した単純な WPF アプリケーションの構築](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546972(v=vs.100))|WPF デザイナーを使用して単純な WPF アプリケーションをビルドする方法を示します。|
 |[チュートリアル: 動的レイアウトの構築](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514519(v=vs.100))|<xref:System.Windows.Controls.Grid> panel コントロールを使用して動的レイアウトを作成する方法を示します。|
 |[チュートリアル: WPF デザイナーを使用してサイズ変更可能なアプリケーションを作成する](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546954(v=vs.100))|実行時にユーザーが変更できるウィンドウレイアウトを作成する方法を示します。|
-|[チュートリアル: WPF デザイナーを使用したデータバインディングの作成](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd434207(v=vs.100))|[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] を使用して、データをコントロールに接続するデータバインディングを作成する方法を示します。|
-|[チュートリアル: DesignInstance を使用したデザイナーのデータへのバインド](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd490796(v=vs.100))|実行時に割り当てられたデータコンテキストのデザイン時に、[!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] を使用してデータバインディングを作成する方法を示します。|
+|[チュートリアル: WPF デザイナーを使用したデータバインディングの作成](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd434207(v=vs.100))|WPF デザイナーを使用して、データをコントロールに接続するデータバインディングを作成する方法を示します。|
+|[チュートリアル: DesignInstance を使用したデザイナーのデータへのバインド](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd490796(v=vs.100))|WPF デザイナーを使用して、デザイン時に、実行時に割り当てられたデータコンテキストのデータバインディングを作成する方法を示します。|
 
 ## <a name="wpf-walkthroughs"></a>WPF のチュートリアル
 

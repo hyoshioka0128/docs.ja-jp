@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a9e7d68530ae1f0666fc4940ffe7605c3bf8dfe3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ac07fc9ba6f030209a5e0d0160689fab95bc1b4a
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119607"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088765"
 ---
 # <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>NameValueSectionHandler および DictionarySectionHandler の > 要素を追加 \<には
 
 カスタムアプリケーション設定を追加します。 > タグの**追加\<** には、キーと値のペアが含まれています。
 
-[ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectionName >** ](custom-element-2.md)   
+[ **\<configuration>** ](configuration-element.md)\
+&nbsp;&nbsp;[ **\<sectionName >** ](custom-element-2.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<追加 >**
 
 ## <a name="syntax"></a>構文

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 881b9fedfaa42ffb402e226a6b271f47feb20617
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 34187b5fdcfcd4d08b4067213372fd12c7533cf7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736808"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74430527"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides > 要素
 <xref:System.AppContext> クラスで使用される、新機能に対するオプトアウト メカニズムを指定するスイッチを 1 つまたは複数定義します。  
@@ -39,9 +39,9 @@ ms.locfileid: "73736808"
   
 ### <a name="value-attribute"></a>value 属性  
   
-|[値]|説明|  
+|値|説明|  
 |-----------|-----------------|  
-|"name = value"|定義済みのスイッチ名とその値 (`true` または `false`)。 複数のスイッチの名前と値のペアは、セミコロン (";") で区切られます。 .NET Framework でサポートされている定義済みスイッチ名の一覧については、「解説」を参照してください。|  
+|"name=value"|定義済みのスイッチ名とその値 (`true` または `false`)。 複数のスイッチの名前と値のペアは、セミコロン (";") で区切られます。 .NET Framework でサポートされている定義済みスイッチ名の一覧については、「解説」を参照してください。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -53,8 +53,8 @@ ms.locfileid: "73736808"
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|ランタイム初期化オプションに関する情報を含んでいます。|  
   
-## <a name="remarks"></a>Remarks  
- .NET Framework 4.6 以降では、構成ファイルの `<AppContextSwitchOverrides>` 要素によって、API の呼び出し元は、アプリが新しい機能を利用できるか、ライブラリの以前のバージョンとの互換性を維持できるかを判断できます。 たとえば、API の動作がライブラリの2つのバージョン間で変更された場合、`<AppContextSwitchOverrides>` 要素を使用すると、その API の呼び出し元は、新しい機能をサポートするライブラリのバージョンで新しい動作を無効にすることができます。 .NET Framework で Api を呼び出すアプリの場合は、`<AppContextSwitchOverrides>` 要素を使用して、アプリが以前のバージョンの .NET Framework を対象としている呼び出し元が、そのアプリを含むバージョンの .NET Framework で実行されている場合に新しい機能をオプトインすることもできます。機.  
+## <a name="remarks"></a>コメント  
+ .NET Framework 4.6 以降では、構成ファイルの `<AppContextSwitchOverrides>` 要素によって、API の呼び出し元は、アプリが新しい機能を利用できるか、ライブラリの以前のバージョンとの互換性を維持できるかを判断できます。 たとえば、API の動作がライブラリの2つのバージョン間で変更された場合、`<AppContextSwitchOverrides>` 要素を使用すると、その API の呼び出し元は、新しい機能をサポートするライブラリのバージョンで新しい動作を無効にすることができます。 .NET Framework で Api を呼び出すアプリの場合、`<AppContextSwitchOverrides>` 要素を使用して、アプリが以前のバージョンの .NET Framework を対象としている呼び出し元が、その機能を含む .NET Framework のバージョンでアプリを実行している場合に、新しい機能をオプトインすることもできます。  
   
  `<AppContextSwitchOverrides>` 要素の `value` 属性は、セミコロンで区切られた1つ以上の名前と値のペアで構成される1つの文字列で構成されます。  各名前は互換性スイッチを識別し、対応する値はスイッチが設定されているかどうかを示すブール値 (`true` または `false`) です。 既定では、スイッチは `false`であり、ライブラリには新しい機能が用意されています。 スイッチが設定されている場合 (つまり、その値が `true`) の場合にのみ、以前の機能が提供されます。 これにより、ライブラリは既存の API に新しい動作を提供できるようになり、以前の動作に依存する呼び出し元は新しい機能を無効にすることができます。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "73736808"
 |`Switch.System.IO.`<br/>`UseLegacyPathHandling`|レガシパスの正規化を使用するかどうか、および <xref:System.IO.Path.GetDirectoryName%2A?displayProperty=nameWithType> および <xref:System.IO.Path.GetPathRoot%2A?displayProperty=nameWithType> メソッドで URI パスをサポートするかどうかを制御します。 詳細については、「[軽減策: パスの正規化](../../../migration-guide/mitigation-path-normalization.md)と[軽減策: パスのコロンチェック](../../../migration-guide/mitigation-path-colon-checks.md)」を参照してください。|.NET Framework 4.6.2|
 |`Switch.System.`<br/>`MemberDescriptorEqualsReturnsFalseIfEquivalent`|等しいかどうかのテストで、あるオブジェクトの <xref:System.ComponentModel.MemberDescriptor.Category%2A?displayProperty=nameWithType> プロパティを2番目のオブジェクトの <xref:System.ComponentModel.MemberDescriptor.Description%2A?displayProperty=nameWithType> プロパティと比較するかどうかを制御します。 詳細については、「 [MemberDescriptor の不適切な実装](../../../migration-guide/retargeting/4.6.1-4.6.2.md#incorrect-implementation-of-memberdescriptorequals)」を参照してください。|.NET Framework 4.6.2|  
  `Switch.System.Net.`<br/>`DontCheckCertificateEKUs`|証明書の拡張キー使用法 (EKU) の検証を無効にします。 EKU (拡張キー使用法) 拡張は、キーを使用するアプリケーションを示すオブジェクト識別子 (OID) の集まりです。|.NET Framework 4.6|
-|`Switch.System.Net.`<br/>`DontEnableSchSendAuxRecord`|SCH_SEND_AUX_RECORD の使用を無効にして、SSL/TLS (利用) の軽減策に対する TLS 1.0 ブラウザーの悪用を無効にします。|.NET Framework 4.6|
+|`Switch.System.Net.`<br/>`DontEnableSchSendAuxRecord`|SCH_SEND_AUX_RECORD の使用を無効にすることで、SSL/TLS (利用) の軽減策に対する TLS 1.0 ブラウザーの悪用を無効にします。|.NET Framework 4.6|
 |`Switch.System.Net.`<br/>`DontEnableSchUseStrongCrypto`|<xref:System.Net.ServicePointManager?displayProperty=nameWithType> クラスと <xref:System.Net.Security.SslStream?displayProperty=nameWithType> クラスで SSL 3.0 プロトコルを使用できるかどうかを制御します。 詳細については、「[軽減策: TLS プロトコル](../../../migration-guide/mitigation-tls-protocols.md)」を参照してください。|.NET Framework 4.6|
 |`Switch.System.Net.`<br/>`DontEnableSystemDefaultTlsVersions`|既定の Tls12、Tls11、Tls に戻す SystemDefault TLS のバージョンを無効にします。|.NET Framework 4.7|
 |`Switch.System.Net.`<br/>`DontEnableTlsAlerts`|System.net.security.sslstream TLS サーバー側アラートを無効にします。|.NET Framework 4.7|
@@ -116,7 +116,7 @@ ms.locfileid: "73736808"
 |`Switch.System.Windows.Controls.Grid.`<br/>`StarDefinitionsCanExceedAvailableSpace` |Windows Presentation Foundation が、\*列に領域を割り当てるときに古いアルゴリズム (`true`) と新しいアルゴリズム (`false`) のどちらを適用するかを決定します。 詳細については、「[Mitigation: Grid Control's Space Allocation to Star-columns](../../../migration-guide/retargeting/4.6.2-4.7.md#wpf-grid-allocation-of-space-to-star-columns)」 (軽減策: グリッド コントロールの *-column へのディスク領域の割り当て) を参照してください。 |.NET Framework 4.7 |
 |`Switch.System.Windows.Controls.TabControl.`<br/>`SelectionPropertiesCanLagBehindSelectionChangedEvent`|選択変更イベントを発生させる前に、セレクターまたはタブコントロールが、選択した値プロパティの値を常に更新するかどうかを制御します。|.NET Framework 4.7.1|
 |`Switch.System.Windows.Controls.Text.`<br/>`UseAdornerForTextboxSelectionRendering`|<xref:System.Windows.Controls.TextBox> と <xref:System.Windows.Controls.PasswordBox> コントロールで非装飾ベースの選択表示を使用できるかどうかを決定します。これは、occluded テキスト (`false`) を防ぐため、またはテキストが装飾層 (`true`) でのみ表示されるかどうかを指定します。|.NET Framework 4.7.2|
-|`Switch.System.Windows.Data.Binding.`<br/>`IListIndexerHidesCustomIndexer`|カスタム IList インデクサーが <xref:System.Windows.Data.Binding?displayProperty=nameWithType> クラスによって正しく使用されないか (`false`)、正しく (`true`) 使用されるかを制御します。|.NET Framework 4.8|
+|`Switch.System.Windows.Data.Binding.`<br/>`IListIndexerHidesCustomIndexer`|カスタム IList インデクサーが <xref:System.Windows.Data.Binding?displayProperty=nameWithType> クラスによって正しく使用されないか (`true`)、正しく (`false`) 使用されるかを制御します。|.NET Framework 4.8|
 |`Switch.System.Windows.DoNotScaleForDpiChanges`|DPI の変更がシステムごとに行われるか (値 `false`)、モニターごとに行われるか (`true`の値) を決定します。|.NET Framework 4.6.2|
 |`Switch.System.Windows.`<br/>`DoNotUsePresentationDpiCapabilityTier2OrGreater`|WPF がモニターごとに認識されるモードで実行される場合に、<xref:System.Windows.Interop.HwndHost?displayProperty=nameWithType> 内のコントロールのサイズを変更するかどうかを制御します (`true`) または有効にします (`false`)。|.NET Framework 4.8|
 |`Switch.System.Windows.Forms.`<br/>`DomainUpDown.UseLegacyScrolling`|コントロールテキストが存在する場合に、開発者が <xref:System.Windows.Forms.DomainUpDown.UpButton?displayProperty=nameWithType> アクションを特別に処理する必要があるかどうかを判断します。 <xref:System.Windows.Forms.DomainUpDown.UpButton> アクションを処理 `true`。<xref:System.Windows.Forms.DomainUpDown.UpButton?displayProperty=nameWithType> と <xref:System.Windows.Forms.DomainUpDown.DownButton?displayProperty=nameWithType> アクションが正常に同期されるように `false` します。|.NET Framework 4.7.2|

@@ -1,16 +1,16 @@
 ---
-title: '方法: 文字列を比較する - C# ガイド'
+title: 文字列を比較する方法 - C# ガイド
 description: 大文字小文字の区別およびカルチャ固有の順序を使用してまたは使用せずに文字列値を比較および並べ替える方法について説明します。
 ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: a3e5f8dd9cfac809aafc2533463390cd5a64e0d6
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: dda3ec8cb6a0131867e6ea3bb0cf7199d86058ff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395456"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973319"
 ---
 # <a name="how-to-compare-strings-in-c"></a>C\# で文字列を比較する方法
 

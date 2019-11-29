@@ -1,14 +1,13 @@
 ---
 title: WCF 開発者向け Kubernetes-gRPC
 description: Kubernetes クラスターで ASP.NET Core gRPC サービスを実行しています。
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 819c761a7a55485612b7fb0c8b392971751d8724
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 503b582ae9fdcf8c72c87558de3a8ddd898489aa
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841577"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967563"
 ---
 # <a name="kubernetes"></a>Kubernetes
 
@@ -47,7 +46,7 @@ metadata:
 
 ポッドは、Kubernetes での実行の基本単位です。 複数のコンテナーを実行できますが、1つのコンテナーを実行するためにも使用されます。 ポッドには、コンテナーに必要なすべてのストレージリソースと、ネットワークの IP アドレスも含まれています。
 
-### <a name="services"></a>Services
+### <a name="services"></a>サービス
 
 サービスは、ポッド (またはポッドのセット) を記述し、クラスター内でそれらにアクセスする手段を提供するメタオブジェクトです。たとえば、クラスター DNS サービスを使用して、サービス名をポッド IP アドレスのセットにマップすることができます。
 
@@ -303,7 +302,7 @@ StockWeb アプリケーションでは、単純な要求/応答サービスか�
 
 ![StockWeb スクリーンショット](media/kubernetes/stockweb-screenshot.png)
 
-`stockdata` サービスのレプリカの数が増加した場合は、**サーバー**の値が行ごとに変更されることが予想されますが、実際には、100のすべてのレコードが常に同じインスタンスから返されます。 数秒ごとにページを更新した場合、サーバー ID は変わりません。 なぜこれが発生するのでしょうか。 ここでは2つの要素について説明します。
+`stockdata` サービスのレプリカの数が増加した場合は、**サーバー**の値が行ごとに変更されることが予想されますが、実際には、100のすべてのレコードが常に同じインスタンスから返されます。 数秒ごとにページを更新した場合、サーバー ID は変わりません。 なぜですか。 ここでは2つの要素について説明します。
 
 まず、Kubernetes service discovery システムは、既定で "ラウンドロビン" の負荷分散を使用します。 最初に DNS サーバーにクエリを実行すると、サービスに対して最初に一致する IP アドレスが返されます。 次に、リスト内の次の IP アドレス、最後まで、その時点で、ループが開始されます。
 

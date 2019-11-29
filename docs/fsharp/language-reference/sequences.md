@@ -1,20 +1,20 @@
 ---
 title: シーケンス
 description: シーケンスを使用F#する方法について説明します。データの大きな順序で並べ替えられたコレクションがあり、必ずしもすべての要素を使用するとは限りません。
-ms.date: 02/19/2019
-ms.openlocfilehash: 76aeeb8b89ed8146ee1b7f909af6bf0764fcc55d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 11/04/2019
+ms.openlocfilehash: 34e03f1cead0a9f678f637afcb6c8397ef7572bc
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424981"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971442"
 ---
 # <a name="sequences"></a>シーケンス
 
 > [!NOTE]
 > この記事の API リファレンスのリンクをクリックすると MSDN に移動します。  docs.microsoft.com API リファレンスは完全ではありません。
 
-*シーケンス*は、すべて1つの型からなる論理的な一連の要素です。 シーケンスは、大量の順序付けられたデータのコレクションがあり、すべての要素を使用するとは限らない場合に特に便利です。 個々のシーケンス要素は必要に応じてのみ計算されるので、すべての要素が使用されるわけではありません。 シーケンスは、`System.Collections.Generic.IEnumerable`のエイリアスである `seq<'T>` 型によって表されます。 したがって、`System.IEnumerable` を実装するすべての .NET Framework 型をシーケンスとして使用できます。 [Seq モジュール](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)は、シーケンスに関連する操作のサポートを提供します。
+*シーケンス*は、すべて1つの型からなる論理的な一連の要素です。 シーケンスは、大量の順序付けられたデータのコレクションがあり、すべての要素を使用するとは限らない場合に特に便利です。 個々のシーケンス要素は必要に応じてのみ計算されるので、すべての要素が使用されるわけではありません。 シーケンスは、<xref:System.Collections.Generic.IEnumerable%601>のエイリアスである `seq<'T>` 型によって表されます。 したがって、<xref:System.Collections.Generic.IEnumerable%601> インターフェイスを実装するすべての .NET 型をシーケンスとして使用できます。 [Seq モジュール](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)は、シーケンスに関連する操作のサポートを提供します。
 
 ## <a name="sequence-expressions"></a>シーケンス式
 
@@ -22,17 +22,17 @@ ms.locfileid: "73424981"
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1502.fs)]
 
-シーケンス式は、シーケンスのF#値を生成する式で構成されます。 `yield` キーワードを使用して、シーケンスの一部となる値を生成できます。
-
-次に例を示します。
+シーケンス式は、シーケンスのF#値を生成する式で構成されます。 プログラムで値を生成することもできます。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1503.fs)]
 
-次の例に示すように、`yield`の代わりに `->` 演算子を使用できます。その場合は、`do` キーワードを省略できます。
+前のサンプルでは、`->` 演算子を使用しています。これにより、値がシーケンスの一部になる式を指定できます。 `->` は、その後に続くコードのすべての部分が値を返す場合にのみ使用できます。
+
+または、次に示すオプションの `yield` を使用して、`do` キーワードを指定することもできます。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1504.fs)]
 
-次のコードでは、グリッドを表す配列へのインデックスと共に、座標ペアのリストが生成されます。
+次のコードでは、グリッドを表す配列へのインデックスと共に、座標ペアのリストが生成されます。 最初の `for` 式では、`do` を指定する必要があることに注意してください。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1505.fs)]
 
@@ -40,9 +40,34 @@ ms.locfileid: "73424981"
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1506.fs)]
 
-イテレーションで `yield` または `->` を使用する場合、各反復処理では、シーケンスの1つの要素が生成されます。 各反復処理で要素のシーケンスが生成される場合は、`yield!`を使用します。 その場合、各反復処理で生成された要素が連結され、最終的なシーケンスが生成されます。
+前に説明したように、ここでは `do` が必要です。 `if`を持つ `else` 分岐が存在しないためです。 `->`を使用しようとすると、すべてのブランチが値を返すわけではないというエラーが表示されます。
 
-シーケンス式では、複数の式を組み合わせることができます。 各式によって生成される要素は、連結されます。 例については、このトピックの「例」のセクションを参照してください。
+## <a name="the-yield-keyword"></a>`yield!` キーワード
+
+場合によっては、要素のシーケンスを別のシーケンスに含めることが必要になることがあります。 シーケンスを別のシーケンス内に含めるには、`yield!` キーワードを使用する必要があります。
+
+```fsharp
+// Repeats '1 2 3 4 5' ten times
+seq {
+    for _ in 1..10 do
+        yield! seq { 1; 2; 3; 4; 5}
+}
+```
+
+`yield!` を検討するもう1つの方法は、内部シーケンスを平坦化し、それを含んでいるシーケンスに含めることです。
+
+`yield!` が式で使用されている場合、他のすべての単一の値では `yield` キーワードを使用する必要があります。
+
+```fsharp
+// Combine repeated values with their values
+seq {
+    for x in 1..10 do
+        yield x
+        yield! seq { for i in 1..x -> i}
+}
+```
+
+前の例で `x` だけを指定すると、シーケンスに値が生成されなくなります。
 
 ## <a name="examples"></a>使用例
 
@@ -50,7 +75,7 @@ ms.locfileid: "73424981"
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1507.fs)]
 
-次のコードでは、`yield` を使用して、3つの要素の組で構成される乗算テーブルを作成します。各要素は、2つの要素と製品で構成されます。
+次の例では、3つの要素の組で構成される乗算テーブルを作成します。各要素は2つの要素と製品で構成されています。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1508.fs)]
 
@@ -62,7 +87,7 @@ ms.locfileid: "73424981"
 
 シーケンスは、[リスト](lists.md)と同じ機能の多くをサポートします。 シーケンスは、キー生成関数を使用したグループ化やカウントなどの操作もサポートします。 シーケンスは、サブシーケンスを抽出するためのさまざまな関数もサポートします。
 
-リスト、配列、セット、マップなどの多くのデータ型は、列挙可能なコレクションであるため、暗黙的にシーケンスされます。 引数としてシーケンスを受け取る関数は、`System.Collections.Generic.IEnumerable<'T>`を実装する任意F#の .NET Framework データ型に加えて、共通のデータ型のいずれかと共に機能します。 リストを引数として受け取る関数と比較します。この関数はリストを受け取ることしかできません。 型 `seq<'T>` は `IEnumerable<'T>`の型略称です。 これは、のF#配列、リスト、セット、マップを含むジェネリック `System.Collections.Generic.IEnumerable<'T>`を実装する型、およびほとんどの .NET Framework コレクション型は、`seq` 型と互換性があり、シーケンスが想定されているすべての場所で使用できることを意味します。
+リスト、配列、セット、マップなどの多くのデータ型は、列挙可能なコレクションであるため、暗黙的にシーケンスされます。 引数としてシーケンスを受け取る関数は、`System.Collections.Generic.IEnumerable<'T>`を実装するすべてF#の .net データ型に加えて、共通のデータ型のいずれかで動作します。 リストを引数として受け取る関数と比較します。この関数はリストを受け取ることしかできません。 型 `seq<'T>` は `IEnumerable<'T>`の型略称です。 これは、のF#配列、リスト、セット、マップを含むジェネリック `System.Collections.Generic.IEnumerable<'T>`を実装する型、およびほとんどの .net コレクション型は、`seq` の型と互換性があり、シーケンスが必要な場合に使用できることを意味します。
 
 ## <a name="module-functions"></a>モジュール関数
 

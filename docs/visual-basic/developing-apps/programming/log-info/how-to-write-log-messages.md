@@ -1,15 +1,15 @@
 ---
-title: '方法: ログ メッセージを書き込む (Visual Basic)'
+title: '方法: ログ メッセージを書き込む'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Application.Log object, writing log messages
 ms.assetid: 972a3e0c-2996-4623-a7a9-d7ebc4d207f8
-ms.openlocfilehash: 007d08917ed5ecae6889d03d820d48e4695c9344
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 38570047db48e009aea2af376304430db1ec29f4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676123"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352055"
 ---
 # <a name="how-to-write-log-messages-visual-basic"></a>方法: ログ メッセージを書き込む (Visual Basic)
 

@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - breaking changes [Visual Basic]
 ms.assetid: 708fb176-35eb-4cbc-a6e7-a04c6e3bdaff
-ms.openlocfilehash: 847034503f2797cf16a944478ebf9587a6985e82
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 35f230aae85b6a971185c576b98898a45734de90
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834011"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973980"
 ---
 # <a name="visual-basic-breaking-changes-in-visual-studio"></a>Visual Studio における Visual Basic の互換性に影響する変更点
+
 Visual Studio 2017 の最新のドキュメントの詳細については、[Visual Studio 2017 ドキュメント](https://docs.microsoft.com/visualstudio/)をご参照ください。
 
 Visual Studio 2015 の Visual Basic の変更によって、Visual Studio 2013 の Visual Basic で作成したアプリケーションがコンパイルされなくなったり実行時の動作が変わったりすることはありません。  

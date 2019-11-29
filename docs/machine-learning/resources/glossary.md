@@ -4,18 +4,18 @@ description: ML.NET でカスタム モデルをビルドする際に役立つ�
 ms.custom: seodec18
 ms.topic: reference
 ms.date: 07/31/2019
-ms.openlocfilehash: cb5681f1f72776ec9a8cbcfe45519befe02b8caf
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: bd4f2db701f537d5c87529115a6bd44035432534
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180183"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977287"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>機械学習の重要な用語の用語集
 
 ML.NET でカスタム モデルをビルドする際に役立つ機械学習の重要な用語を次に示します。
 
-## <a name="accuracy"></a>精度
+## <a name="accuracy"></a>正確度
 
 [分類](#classification)における正確度は、正しく分類された項目の数をテスト セット内の項目の総数で割ったものです。 0 (正確度が最も低い) ～ 1 (正確度が最も高い) の値になります。 正確度は、モデル パフォーマンスの評価メトリックの 1 つです。 [精度](#precision)、[再現率](#recall)、および [F 値](#f-score)と併せて考慮してください。
 
@@ -29,9 +29,9 @@ ML.NET でカスタム モデルをビルドする際に役立つ機械学習の
 
 ## <a name="calibration"></a>調整
 
-調整は、二項分類と多クラス分類のために、生のスコアをクラスのメンバーシップにマップするプロセスです。 一部 ML.NET トレーナーには `NonCalibrated` サフィックスがあります。 これらのアルゴリズムからは、後でクラスの確率にマップする必要がある生のスコアが生成されます。 
+調整は、二項分類と多クラス分類のために、生のスコアをクラスのメンバーシップにマップするプロセスです。 一部 ML.NET トレーナーには `NonCalibrated` サフィックスがあります。 これらのアルゴリズムからは、後でクラスの確率にマップする必要がある生のスコアが生成されます。
 
-## <a name="catalog"></a>カタログ 
+## <a name="catalog"></a>Catalog
 
 ML.NET では、カタログは、共通の目的でグループ化された拡張機能のコレクションです。
 
@@ -45,7 +45,7 @@ ML.NET では、カタログは、共通の目的でグループ化された拡�
 
 [回帰](#regression)における評価メトリックであり、データがモデルにどの程度適合するかを示します。 0 ～ 1 の値になります。 値 0 は、データがランダムであるか、モデルに適合できないことを意味します。 値 1 は、モデルがデータと完全に一致していることを意味します。 多くの場合、これは r<sup>2</sup>、R<sup>2</sup>、または r の 2 乗と呼ばれます。
 
-## <a name="data"></a>Data
+## <a name="data"></a>データ
 
 データはあらゆる機械学習アプリケーションの中心です。 ML.NET では、データは <xref:Microsoft.ML.IDataView> オブジェクトで表されます。 データ ビュー オブジェクト:
 
@@ -81,7 +81,7 @@ ML.NET では、カタログは、共通の目的でグループ化された拡�
 
 機械学習アルゴリズムのパラメーターです。 例として、デシジョン フォレストにおける学習するツリー数や勾配降下アルゴリズムにおけるステップ サイズなどがあります。 *ハイパーパラメーター*の値は、モデルのトレーニング前に設定され、予測関数のパラメーターを検出するプロセスを管理します。例として、デシジョン ツリーにおける比較ポイントや線形回帰モデルにおける重みなどがあります。 詳しくは、Wikipedia の[ハイパーパラメーター](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning))の記事を参照してください。
 
-## <a name="label"></a>Label
+## <a name="label"></a>group1
 
 機械学習モデルで予測される要素です。 たとえば、犬種や将来の株価などです。
 
@@ -123,7 +123,7 @@ ML.NET では、カタログは、共通の目的でグループ化された拡�
 
 モデルをデータ セットに適合させるために必要なすべての操作です。 パイプラインは、データのインポート、変換、特徴付け、および学習の各ステップで構成されます。 トレーニングが完了したパイプラインがモデルになります。
 
-## <a name="precision"></a>Precision
+## <a name="precision"></a>有効桁数
 
 [分類](#classification)におけるクラスの精度は、そのクラスに属していると正確に予測された項目の数を、クラスに属していると予測された項目の総数で割ったものです。
 
@@ -170,7 +170,7 @@ ML.NET では、カタログは、共通の目的でグループ化された拡�
 
 <xref:Microsoft.ML.ITransformer> インターフェイスを実装する ML.NET クラス。
 
-トランスフォーマーでは、ある <xref:Microsoft.ML.IDataView> が別のものに変換されます。 トランスフォーマーを作成するには、[エスティメーター](#estimator)またはエスティメーター パイプラインをトレーニングします。 
+トランスフォーマーでは、ある <xref:Microsoft.ML.IDataView> が別のものに変換されます。 トランスフォーマーを作成するには、[エスティメーター](#estimator)またはエスティメーター パイプラインをトレーニングします。
 
 ## <a name="unsupervised-machine-learning"></a>教師なし機械学習
 

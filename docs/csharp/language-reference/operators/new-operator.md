@@ -5,12 +5,12 @@ ms.date: 06/25/2019
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 3d64c4805abe38c80301748ffa6b35fc87563b60
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: c21132a6622ce697fe3c52a461a33f548e0c8f31
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67403970"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036385"
 ---
 # <a name="new-operator-c-reference"></a>new 演算子 (C# リファレンス)
 
@@ -50,7 +50,7 @@ ms.locfileid: "67403970"
 
 以前作成した型のインスタンスを破棄する必要はありません。 参照型と値型のインスタンスは両方とも自動的に破棄されます。 値型のインスタンスは、それらを格納しているコンテキストが破棄されるとすぐに破棄されます。 参照型のインスタンスは[ガベージ コレクター](../../../standard/garbage-collection/index.md)によって、そのインスタンスへの最後の参照が削除された後、不特定のタイミングで破棄されます。
 
-ファイル ハンドルなどのアンマネージド リソースを含む型の場合、格納されているリソースができるだけ早く確実に解放されるように、決定的なクリーンアップを使用することをお勧めします。 詳細については、<xref:System.IDisposable?displayProperty=nameWithType> API リファレンスと [using ステートメント](../keywords/using-statement.md)に関する記事を参照してください。
+ファイル ハンドルなどのアンマネージド リソースを含む型インスタンスの場合、格納されているリソースができるだけ早く確実に解放されるように、決定的なクリーンアップを使用することをお勧めします。 詳細については、<xref:System.IDisposable?displayProperty=nameWithType> API リファレンスと [using ステートメント](../keywords/using-statement.md)に関する記事を参照してください。
 
 ## <a name="operator-overloadability"></a>演算子のオーバーロード可/不可
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 2502d542513ace1173b6c33a2399ce010620b888
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 99f522181232d16b9913ba3c55f34274b75d8966
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044462"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449415"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)
 
@@ -66,7 +66,7 @@ MageUI.exe でサポートされている機能は、コマンド ライン ツ�
 |**新規**|証明機関 (CA: Certificate Authority) によって証明できない、.pfx ファイルを新規作成します。 ClickOnce の配置に署名するために使用する証明書の種類の詳細については、「[信頼されたアプリケーションの配置の概要](/visualstudio/deployment/trusted-application-deployment-overview)」を参照してください。|  
 |**パスワード**|この証明書で署名するために使用するパスワードの入力欄です。 該当しない場合は、空白にできます。|  
 |**保存された証明書で署名する**|使用しているコンピューターの証明書ストアに格納されている、選択可能なデジタル署名が一覧表示されます。|  
-|**タイムスタンプ URI**|デジタル タイムスタンプ サービスの URI (Uniform Resource Locator) が表示されます。 次のバージョンのアプリケーションを配置する前にデジタル証明書の有効期限が切れる場合、マニフェストにタイムスタンプを設定すると、マニフェストに再署名する必要がなくなります。 詳細については、[Windows ルート証明書プログラムのメンバー](https://go.microsoft.com/fwlink/?LinkId=159000)に関するページと「[ClickOnce and Authenticode](/visualstudio/deployment/clickonce-and-authenticode)」 (ClickOnce と Authenticode)を参照してください。|  
+|**タイムスタンプ URI**|デジタル タイムスタンプ サービスの URI (Uniform Resource Locator) が表示されます。 次のバージョンのアプリケーションを配置する前にデジタル証明書の有効期限が切れる場合、マニフェストにタイムスタンプを設定すると、マニフェストに再署名する必要がなくなります。 詳細については、[Windows ルート証明書プログラムのメンバー](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265983(v=ws.11))に関するページと「[ClickOnce and Authenticode](/visualstudio/deployment/clickonce-and-authenticode)」 (ClickOnce と Authenticode)を参照してください。|  
 |**署名しない**|デジタル証明書から署名を追加せずにマニフェストを保存できます。|  
   
 ## <a name="tab-and-panel-descriptions"></a>タブおよびパネルの説明  

@@ -26,6 +26,8 @@
               href: fundamentals/styles-templates-overview.md
             - name: リソースを作成して適用する
               href: fundamentals/styles-templates-create-apply-style.md
+            - name: テンプレートを作成して適用する
+              href: themes/how-to-create-apply-template.md
     - name: データの操作
       items:
         - name: データ バインディングの概要

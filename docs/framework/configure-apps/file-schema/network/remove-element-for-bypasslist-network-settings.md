@@ -17,15 +17,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697893"
 ---
-# <a name="remove-element-for-bypasslist-network-settings"></a>bypasslist (ネットワーク設定) の @no__t 0remove > 要素
-
+# <a name="remove-element-for-bypasslist-network-settings"></a>bypasslist の \<remove> 要素 (ネットワーク設定)
 プロキシバイパスリストから IP アドレスまたは DNS 名を削除します。
 
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5[ **\<bypasslist >** を行います。](bypasslist-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-5 @ no__t-6 @ no__t-7 **\<remove を削除**します。  
+&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultproxy>** ](defaultproxy-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[ **\<bypasslist>** ](bypasslist-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**  
 
 ## <a name="syntax"></a>構文
 
@@ -35,31 +34,31 @@ ms.locfileid: "71697893"
 />
 ```
 
-## <a name="attributes-and-elements"></a>属性および要素
+## <a name="attributes-and-elements"></a>属性と要素
 
-以降のセクションでは、属性、子要素、および親要素について説明します。
+次のセクションでは、属性、子要素、親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
-|**属性**|**[説明]**|
+|**属性**|**説明**|
 |-------------------|---------------------|
 |`address`|IP アドレスまたは DNS 名を記述する正規表現。|
 
 ### <a name="child-elements"></a>子要素
 
-なし。
+[なし]。
 
 ### <a name="parent-elements"></a>親要素
 
-|**要素**|**[説明]**|
+|**要素**|**説明**|
 |-----------------|---------------------|
 |[bypasslist](bypasslist-element-network-settings.md)|プロキシを使用しないアドレスを記述する一連の正規表現を提供します。|
 
 ## <a name="remarks"></a>コメント
 
-@No__t-0 要素は、プロキシサーバーをバイパスするアドレスの一覧から、IP アドレスまたは DNS サーバー名を記述する正規表現を削除します。 これらのアドレスは、構成ファイルで既に定義されているか、構成階層の上位レベルに定義されています。
+`remove` 要素は、プロキシサーバーをバイパスするアドレスの一覧から、IP アドレスまたは DNS サーバー名を記述する正規表現を削除します。 これらのアドレスは、構成ファイルで既に定義されているか、構成階層の上位レベルに定義されています。
 
-@No__t-0 属性の値は、一連の IP アドレスまたはホスト名を表す正規表現である必要があります。
+`address` 属性の値は、一連の IP アドレスまたはホスト名を表す正規表現である必要があります。
 
 正規表現の詳細については、「」を参照してください。[正規表現を .NET Framework](../../../../standard/base-types/regular-expressions.md)します。
 
@@ -84,7 +83,7 @@ ms.locfileid: "71697893"
 </configuration>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [ネットワーク設定スキーマ](index.md)

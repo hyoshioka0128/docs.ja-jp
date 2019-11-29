@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XAML [WPF], TemplateBinding markup extension
 - TemplateBinding markup extensions [WPF]
 ms.assetid: 1d25bbfc-dbc2-499d-9f12-419d23d4ac6a
-ms.openlocfilehash: 399e4ac223d2fcb728ece2c92d25a087990992f2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 6d89978b907c8f124b5162c97de5edc034cf1e95
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458672"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976671"
 ---
 # <a name="templatebinding-markup-extension"></a>TemplateBinding のマークアップ拡張機能
 コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールの別のプロパティの値にリンクします。  
@@ -38,7 +38,7 @@ ms.locfileid: "73458672"
 |`sourceProperty`|template 宣言された型に存在する、<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType> によって指定された別の依存関係プロパティ。<br /><br /> または<br /><br /> template 宣言された対象の型とは異なる型で定義されている "ドットダウン" プロパティ名。 これは、実際には <xref:System.Windows.PropertyPath> です。 「 [PROPERTYPATH XAML 構文](propertypath-xaml-syntax.md)」を参照してください。|  
   
 ## <a name="remarks"></a>Remarks  
- `TemplateBinding` は、`{Binding RelativeSource={RelativeSource TemplatedParent}}`で構築された `Binding` に似た、テンプレートシナリオ用の[バインド](binding-markup-extension.md)の最適化された形式です。 関連するプロパティが既定で双方向のバインディングの場合でも、`TemplateBinding` は常に一方向のバインディングです。 関連する両方のプロパティは、依存関係プロパティである必要があります。 テンプレート化された親への双方向のバインドを実現するには、代わりに次の binding ステートメントを使用して `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`ます。 
+ `TemplateBinding` は、`{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}`で構築された `Binding` に似た、テンプレートシナリオ用の[バインド](binding-markup-extension.md)の最適化された形式です。 関連するプロパティが既定で双方向のバインディングの場合でも、`TemplateBinding` は常に一方向のバインディングです。 関連する両方のプロパティは、依存関係プロパティである必要があります。 テンプレート化された親への双方向のバインドを実現するには、代わりに次の binding ステートメントを使用して `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`ます。 
   
  [RelativeSource](relativesource-markupextension.md)は、テンプレート内で相対プロパティのバインドを実行するために、`TemplateBinding` ではなくまたはと組み合わせて使用されることがある、別のマークアップ拡張機能です。  
   

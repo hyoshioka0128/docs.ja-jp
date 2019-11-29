@@ -6,14 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - ALink API
 ms.assetid: f4a84be2-309c-439c-b686-6facb85f4654
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ba9ea93ce2e2874da6c26eb364c14b421ea94794
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f44482d0be70a8c5651bf440a264468a4446f009
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70776927"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445657"
 ---
 # <a name="alink-api-unmanaged-api-reference"></a>ALink API (アンマネージド API リファレンス)
 .NET Framework アセンブリと非バインド モジュールの作成をサポートします。  

@@ -1,13 +1,13 @@
 ---
-title: '方法: グループを使用してファイルを複数のファイルに分割する (LINQ) (Visual Basic)'
+title: '方法: グループを使用して 1 つのファイルを複数のファイルに分割する (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-ms.openlocfilehash: d438da7eb50e13c23a9c1b77a74f19fba8d95e04
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: bd210f5119540bd35c18a07a21fc836339222bd0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524061"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74341356"
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>方法: グループを使用してファイルを複数のファイルに分割する (LINQ) (Visual Basic)
 
@@ -15,7 +15,7 @@ ms.locfileid: "72524061"
 
 ### <a name="to-create-the-data-files"></a>データ ファイルを作成するには
 
-1. 次の名前を names1.txt という名前のテキスト ファイルにコピーし、プロジェクト フォルダーに保存します。
+1. 以下の名前を names1.txt という名前のテキスト ファイルにコピーし、プロジェクト フォルダーに保存します。
 
     ```text
     Bankov, Peter

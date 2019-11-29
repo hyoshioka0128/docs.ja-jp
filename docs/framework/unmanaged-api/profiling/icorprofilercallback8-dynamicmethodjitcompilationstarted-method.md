@@ -44,7 +44,7 @@ JIT コンパイルが開始されるメモリ内関数の識別子。
 [入力] `cbILHeader`    
 IL ヘッダー内のバイト数。 
 
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>コメント  
 
 このコールバックは、動的メソッドが JIT コンパイルされるたびにトリガーされます。 これには、さまざまな IL スタブおよび LCG メソッドが含まれます。 その目的は、コンパイルされたメソッドをユーザーに識別するのに十分な情報をプロファイラーライターに提供することです。
 
@@ -53,7 +53,7 @@ IL ヘッダー内のバイト数。
 
 `pILHeader` ポインターは、コールバック中にのみ有効です。
 
-## <a name="requirements"></a>［要件］  
+## <a name="requirements"></a>要件  
  **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
@@ -62,7 +62,7 @@ IL ヘッダー内のバイト数。
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [DynamicMethodJITCompilationFinished メソッド](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)
 - [ICorProfilerCallback8 インターフェイス](icorprofilercallback8-interface.md)

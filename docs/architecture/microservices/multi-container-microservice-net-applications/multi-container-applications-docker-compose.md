@@ -2,12 +2,12 @@
 title: docker-compose.yml で複数のコンテナー アプリケーションを定義する
 description: docker-compose.yml を使用して複数コンテナーのアプリケーション用にマイクロサービスの構成を指定する方法。
 ms.date: 10/02/2018
-ms.openlocfilehash: 938a9aa192f82628051bd7dc065f661f510ba544
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 02db27feb1320d8b9c6823b8f9ef51c2ddf9791c
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416698"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737096"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>docker-compose.yml で複数のコンテナー アプリケーションを定義する
 
@@ -177,9 +177,15 @@ Compose を使用してリモート Docker エンジンに展開することも�
 
 既定では、Compose は docker-compose.yml と省略可能な docker-compose.override.yml の 2 つのファイルを読み取ります。 図 6-11 に示すように、Visual Studio を使用している場合に Docker サポートを有効にすると、アプリケーションをデバッグするための docker compose.vs.debug.g.yml ファイルも Visual Studio によって追加で作成されます。このファイルは、メイン ソリューション フォルダー内の obj\\Docker\\ フォルダーで確認できます。
 
-![docker-compose プロジェクト ファイルの構造: .dockerignore (ファイルを無視する)、docker-compose.yml (マイクロ サービスを作成する)、docker-compose.override.yml (マイクロ サービス環境を構成する)。](./media/image12.png)
+![docker compose プロジェクト内のファイルのスクリーンショット。](./media/multi-container-applications-docker-compose/docker-compose-file-visual-studio.png)
 
 **図 6-11**。 Visual Studio 2017 の docker-compose ファイル
+
+**docker-compose** プロジェクトのファイル構造:
+
+* *.dockerignore* - ファイルを無視するために使用
+* *docker-compose.yml* - マイクロサービスを作成するために使用
+* *docker-compose.override.yml* - マイクロサービス環境を構成するために使用
 
 Visual Studio Code や Sublime などの任意のエディターを使用して docker-compose ファイルを編集し、docker-compose up コマンドを使用してアプリケーションを実行することができます。
 
@@ -191,11 +197,11 @@ docker-compose.override.yml ファイルには、その名前が示すように�
 
 一般的なユース ケースは、運用、ステージング、CI、開発などの複数の環境をターゲットにできるように、複数の compose ファイルを定義する場合です。 これらの相違点をサポートするため、図 6-12 に示すように、ご利用の Compose 構成を複数のファイルに分割できます。
 
-![複数の docker-ompose*.fml ファイルを組み合わせることで、さまざまな環境に対応できます。](./media/image13.png)
+![基本ファイルをオーバーライドするように設定された 3 つの docker-compose ファイルの図。](./media/multi-container-applications-docker-compose/multiple-docker-compose-files-override-base.png)
 
 **図 6-12**。 基本の docker-compose.yml ファイル内の値をオーバーライドする複数の docker-compose ファイル
 
-基本の docker-compose.yml ファイルから開始します。 この基本ファイルには、環境に合わせて変更されない基本構成または静的な構成設定が含まれている必要があります。 たとえば、eShopOnContainers には、基本ファイルとして次の docker-compose.yml ファイル (サービスを少なくして簡略化) があります。
+複数の docker-compose*.yml ファイルを組み合わせて、さまざまな環境を処理することができます。 基本の docker-compose.yml ファイルから開始します。 この基本ファイルには、環境に合わせて変更されない基本構成または静的な構成設定が含まれている必要があります。 たとえば、eShopOnContainers には、基本ファイルとして次の docker-compose.yml ファイル (サービスを少なくして簡略化) があります。
 
 ```yml
 #docker-compose.yml (Base)

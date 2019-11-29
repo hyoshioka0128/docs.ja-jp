@@ -2,12 +2,12 @@
 title: C# 8.0 の新機能 - C# ガイド
 description: C# 8.0 で使用できる新しい機能の概要を説明します。
 ms.date: 09/20/2019
-ms.openlocfilehash: e6a2357f4405b4eb31b12a1e3faa6896a31c21a1
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 540b95beaf00c17812a3b602602504278be69b0e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960831"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429391"
 ---
 # <a name="whats-new-in-c-80"></a>C# 8.0 の新機能
 
@@ -30,6 +30,8 @@ C# 8.0 では、C# 言語に次の機能と機能強化が追加されていま�
 - [構築されたアンマネージド型](#unmanaged-constructed-types)
 - [入れ子になった式の stackalloc](#stackalloc-in-nested-expressions)
 - [verbatim 補間文字列の拡張](#enhancement-of-interpolated-verbatim-strings)
+
+C# 8.0 は **.NET Core 3.x** と **.NET Standard 2.1** でサポートされています。 詳細については、「[C# 言語のバージョン管理](../language-reference/configure-language-version.md)」を参照してください。
 
 この記事の以降では、これらの機能について簡単に説明します。 詳細な記事がある場合は、それらのチュートリアルと概要へのリンクが提供されています。 `dotnet try` グローバル ツールを使って、これらの機能をご自身の環境で調べることができます。
 

@@ -1,5 +1,5 @@
 ---
-title: Visual Basic でのアクセス レベル
+title: アクセス レベル
 ms.date: 05/10/2018
 helpviewer_keywords:
 - members [Visual Basic], accessing in Visual Basic
@@ -14,18 +14,18 @@ helpviewer_keywords:
 - Private access modifier
 - declared elements [Visual Basic], access level
 ms.assetid: 6e06c1ab-fd78-47f0-83a8-1152780b5e1a
-ms.openlocfilehash: d1548f7850c68bc3c5422cf9d8d3d30eaa4aa8f3
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 33a218a2acc3c876428d6c9a887280a559f84323
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035887"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348679"
 ---
 # <a name="access-levels-in-visual-basic"></a>Visual Basic でのアクセス レベル
 
 宣言された要素の*アクセスレベル*は、その要素にアクセスするためのアクセス許可の範囲です。つまり、読み取りまたは書き込みのアクセス許可を持っているコードにアクセスできます。 これは、要素自体を宣言する方法だけでなく、要素のコンテナーのアクセスレベルによっても決定されます。 コンテナー要素にアクセスできないコードは、`Public`として宣言されていても、含まれている要素のいずれにもアクセスできません。 たとえば、`Private` 構造体の `Public` 変数は、構造体を含むクラス内からアクセスできますが、そのクラスの外部からはアクセスできません。
 
-## <a name="public"></a>Public
+## <a name="public"></a>パブリック
 
 宣言ステートメント内の[Public](../../../language-reference/modifiers/public.md)キーワードは、同じプロジェクト内の任意の場所のコード、プロジェクトを参照する他のプロジェクト、およびプロジェクトからビルドされた任意のアセンブリから、要素にアクセスできることを指定します。 次のコードは、`Public` の宣言の例を示しています。
 
@@ -35,7 +35,7 @@ Public Class ClassForEverybody
 
 `Public` は、モジュール、インターフェイス、または名前空間レベルでのみ使用できます。 つまり、パブリック要素は、ソースファイルまたは名前空間のレベルで、またはインターフェイス、モジュール、クラス、または構造体の内部で宣言できますが、プロシージャ内では宣言できません。
   
-## <a name="protected"></a>Protected
+## <a name="protected"></a>プロテクト
 
 宣言ステートメント内の[Protected](../../../language-reference/modifiers/protected.md)キーワードは、同じクラス内から、またはこのクラスから派生したクラスからのみ要素にアクセスできることを指定します。 次のコードは、`Protected` の宣言の例を示しています。
 
@@ -65,7 +65,7 @@ Protected Friend stringForProjectAndHeirs As String
 
 `Protected Friend` は、クラスのメンバーを宣言する場合にのみ、クラスレベルで使用できます。 つまり、保護された friend 要素はクラスで宣言できますが、ソースファイルまたは名前空間のレベル、またはインターフェイス、モジュール、構造体、またはプロシージャの内部では宣言できません。
 
-## <a name="private"></a>Private
+## <a name="private"></a>プライベート
 
 宣言ステートメントの[Private](../../../language-reference/modifiers/private.md)キーワードは、同じモジュール、クラス、または構造体内からのみ要素にアクセスできることを指定します。 次のコードは、`Private` の宣言の例を示しています。
 
@@ -113,12 +113,12 @@ Private Protected internalValue As Integer
 
 |アクセス修飾子|付与されたアクセスレベル|このアクセスレベルで宣言できる要素|この修飾子を使用できる宣言コンテキスト|
 |---------------------|--------------------------|-----------------------------------------------------|----------------------------------------------------------------|
-|`Public`|有無<br /><br /> パブリック要素を参照できるすべてのコードは、それにアクセスできます。|インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|ソースファイル<br /><br /> Namespace<br /><br /> Interface<br /><br /> Module<br /><br /> インスタンス<br /><br /> 構造体|
-|`Protected`|Derivational:<br /><br /> 保護された要素を宣言するクラスのコード、またはプロテクト要素から派生したクラスは、要素にアクセスできます。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|インスタンス|
-|`Friend`|アセンブリ:<br /><br /> フレンド要素を宣言するアセンブリ内のコードがそれにアクセスできる|インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|ソースファイル<br /><br /> Namespace<br /><br /> Interface<br /><br /> Module<br /><br /> インスタンス<br /><br /> 構造体|
-|`Protected` `Friend`|`Protected` と `Friend`の和集合:<br /><br /> 同じクラスのコード、または保護された friend 要素と同じアセンブリ、または要素のクラスから派生した任意のクラス内のコードは、このコードにアクセスできます|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|インスタンス|
-|`Private`|宣言コンテキスト:<br /><br /> 含まれている型内のコードを含む、プライベート要素を宣言する型のコードは、要素にアクセスできます。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|Module<br /><br /> インスタンス<br /><br /> 構造体|
-|`Private Protected`|プライベートに保護された要素を宣言するクラスのコード、または bas クラスと同じアセンブリ内に存在する派生クラスのコード。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 手順<br /><br /> プロパティ<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|インスタンス|
+|`Public`|有無<br /><br /> パブリック要素を参照できるすべてのコードは、それにアクセスできます。|インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> [プロパティ]<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|ソース ファイル<br /><br /> Namespace<br /><br /> インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体|
+|`Protected`|Derivational:<br /><br /> 保護された要素を宣言するクラスのコード、またはプロテクト要素から派生したクラスは、要素にアクセスできます。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 手順<br /><br /> [プロパティ]<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|クラス|
+|`Friend`|アセンブリ:<br /><br /> フレンド要素を宣言するアセンブリ内のコードがそれにアクセスできる|インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> [プロパティ]<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|ソース ファイル<br /><br /> Namespace<br /><br /> インターフェイス<br /><br /> モジュール<br /><br /> クラス<br /><br /> 構造体|
+|`Protected` `Friend`|`Protected` と `Friend`の和集合:<br /><br /> 同じクラスのコード、または保護された friend 要素と同じアセンブリ、または要素のクラスから派生した任意のクラス内のコードは、このコードにアクセスできます|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 手順<br /><br /> [プロパティ]<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|クラス|
+|`Private`|宣言コンテキスト:<br /><br /> 含まれている型内のコードを含む、プライベート要素を宣言する型のコードは、要素にアクセスできます。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 構造体のメンバー<br /><br /> 手順<br /><br /> [プロパティ]<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|モジュール<br /><br /> クラス<br /><br /> 構造体|
+|`Private Protected`|プライベートに保護された要素を宣言するクラスのコード、または bas クラスと同じアセンブリ内に存在する派生クラスのコード。|インターフェイス<br /><br /> クラス<br /><br /> 構造体<br /><br /> 手順<br /><br /> [プロパティ]<br /><br /> メンバー変数<br /><br /> 定数<br /><br /> 列挙<br /><br /> イベント<br /><br /> 外部宣言<br /><br /> デリゲート|クラス|
 
 ## <a name="see-also"></a>関連項目
 

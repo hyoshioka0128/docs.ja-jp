@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: fbd4df8820073a3cdf2a8d5aad9c56bd7ca751df
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 36704d56b66de977ac7f63fd7e766c925ef9023b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460532"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974686"
 ---
 # <a name="documents-in-wpf"></a>WPF のドキュメント
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、以前の世代の Windows よりも簡単にアクセスして読み取ることができるように設計された忠実度の高いコンテンツの作成を可能にする幅広いドキュメント機能が用意されています。 拡張された機能と品質に加えて、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、ドキュメントの表示、パッケージ化、およびセキュリティの統合されたサービスも提供します。 ここでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のドキュメントの種類とドキュメントのパッケージ化の概要を説明します。  
@@ -125,13 +125,13 @@ ms.locfileid: "73460532"
   
 <a name="XPS_Documents"></a>   
 ## <a name="xps-documents"></a>XPS ドキュメント  
- XML Paper Specification (XPS) ドキュメントは、レンダリングに必要なすべてのリソースと情報と共に1つ以上の固定ドキュメントを含むパッケージです。  XPS は、ネイティブ [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] の印刷スプールファイル形式でもあります。  <xref:System.Windows.Xps.Packaging.XpsDocument> は、標準の ZIP データセットに格納されます。また、イメージやフォントファイルなどの XML コンポーネントとバイナリコンポーネントの組み合わせを含めることができます。 [PackageRelationships](#PackageRelationships) は、ドキュメントを完全にレンダリングするために必要なコンテンツとリソースの間の依存関係を定義するために使用されます。  <xref:System.Windows.Xps.Packaging.XpsDocument> の設計では、複数の用途をサポートする1つの忠実度の高いドキュメントソリューションを提供します。  
+ XML Paper Specification (XPS) ドキュメントは、レンダリングに必要なすべてのリソースと情報と共に1つ以上の固定ドキュメントを含むパッケージです。  XPS は、ネイティブの Windows Vista の印刷スプールファイル形式でもあります。  <xref:System.Windows.Xps.Packaging.XpsDocument> は、標準の ZIP データセットに格納されます。また、イメージやフォントファイルなどの XML コンポーネントとバイナリコンポーネントの組み合わせを含めることができます。 [PackageRelationships](#PackageRelationships) は、ドキュメントを完全にレンダリングするために必要なコンテンツとリソースの間の依存関係を定義するために使用されます。  <xref:System.Windows.Xps.Packaging.XpsDocument> の設計では、複数の用途をサポートする1つの忠実度の高いドキュメントソリューションを提供します。  
   
 - 単一の移植可能で配布しやすいファイルとして、固定ドキュメント コンテンツおよびリソースを読み取り、書き込み、および格納する。  
   
 - XPS ビューアーアプリケーションを使用してドキュメントを表示する。  
   
-- [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] のネイティブな印刷スプール出力形式でドキュメントを出力する。  
+- Windows Vista のネイティブの印刷スプール出力形式でドキュメントを出力します。  
   
 - XPS 互換プリンターにドキュメントを直接ルーティングする。  
   

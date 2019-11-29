@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: 93f02b8a0f828be89c6a1b7bfcdc6ba2a2a93e81
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: c6eff1cae79e7b555c5a41d10712b4f3022ff793
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597192"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73419490"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>匿名型 (C# プログラミング ガイド)
 
@@ -29,7 +29,7 @@ var v = new { Amount = 108, Message = "Hello" };
 Console.WriteLine(v.Amount + v.Message);  
 ```  
   
- 通常、匿名型はクエリ式の [select](../../language-reference/keywords/select-clause.md) 句で使用され、ソース シーケンスの各オブジェクトからプロパティのサブセットを返します。 クエリの詳細については、「[LINQ クエリ式](../linq-query-expressions/index.md)」を参照してください。  
+ 通常、匿名型はクエリ式の [select](../../language-reference/keywords/select-clause.md) 句で使用され、ソース シーケンスの各オブジェクトからプロパティのサブセットを返します。 クエリの詳細については、「[C# での LINQ](../../linq/index.md)」を参照してください。  
   
  匿名型には、読み取り専用パブリック プロパティが 1 つ以上含まれます。 それ以外のクラス メンバー (メソッドやイベントなど) は無効です。 プロパティの初期化に使用される式に、`null`、匿名関数、ポインター型を指定することはできません。  
   
@@ -48,7 +48,7 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
 ```  
   
 ## <a name="remarks"></a>解説  
- 匿名型は [object](../../language-reference/keywords/object.md) から直接派生した [class](../../language-reference/keywords/class.md) 型であり、[object](../../language-reference/keywords/object.md) 以外の型にキャストできません。 コンパイラは各匿名型に名前を付けますが、この名前にアプリケーションはアクセスできません。 共通言語ランタイムから見た場合、匿名型と他の参照型に違いはありません。  
+ 匿名型は [object](../../language-reference/builtin-types/reference-types.md) から直接派生した [class](../../language-reference/keywords/class.md) 型であり、[object](../../language-reference/builtin-types/reference-types.md) 以外の型にキャストできません。 コンパイラは各匿名型に名前を付けますが、この名前にアプリケーションはアクセスできません。 共通言語ランタイムから見た場合、匿名型と他の参照型に違いはありません。  
   
  アセンブリ内の複数の匿名オブジェクト初期化子が、同じ順序で同じ名前や型を持つプロパティのシーケンスを指定する場合、コンパイラはそれらのオブジェクトを同じ型のインスタンスとして処理します。 これらのオブジェクトは、コンパイラで生成された同一の型情報を共有します。  
   
@@ -60,5 +60,5 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
 
 - [C# プログラミング ガイド](../index.md)
 - [オブジェクト初期化子とコレクション初期化子](./object-and-collection-initializers.md)
-- [C# の LINQ の概要](../concepts/linq/getting-started-with-linq.md)
-- [LINQ クエリ式](../linq-query-expressions/index.md)
+- [C# の LINQ の概要](/dotnet/csharp/programming-guide/concepts/linq/)
+- [C# での LINQ](../../linq/index.md)

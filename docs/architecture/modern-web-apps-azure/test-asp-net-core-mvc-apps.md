@@ -4,12 +4,12 @@ description: ASP.NET Core および Azure での最新の Web アプリケーシ
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 9bc97efdda44ca4dfa4a583c32e9e55c9502d975
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6096bd3aa35a27c97862089d09d537bdc5b1fff0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089695"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971542"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>ASP.NET Core MVC アプリのテスト
 
@@ -285,12 +285,16 @@ namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 
 > ### <a name="references--test-aspnet-core-mvc-apps"></a>リファレンス – ASP.NET Core MVC アプリのテスト
 >
-> - **ASP.NET Core でのテスト**  
+> - **ASP.NET Core でのテスト** \
 >   <https://docs.microsoft.com/aspnet/core/testing/>
-> - **単体テストの名前付け規則**  
+> - **単体テストの名前付け規則** \
 >   <https://ardalis.com/unit-test-naming-convention>
-> - **EF Core のテスト**  
+> - **EF Core のテスト** \
 >   <https://docs.microsoft.com/ef/core/miscellaneous/testing/>
+> - **ASP.NET Core での統合テスト** \
+>   <https://docs.microsoft.com/aspnet/core/test/integration-tests>
+> - **ASP.NET Community Standup - 2018 年 5 月 15 日 - Javier C. Nelson による MVC テスト** - YouTube ビデオ \
+>   <https://www.youtube.com/watch?v=wtOE-xmFJkw&list=PL1rZQsJPBU2StolNg0aqvQswETPcYnNKL&index=5>
 
 >[!div class="step-by-step"]
 >[前へ](work-with-data-in-asp-net-core-apps.md)

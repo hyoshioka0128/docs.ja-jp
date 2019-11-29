@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 62186409fdc1abb2275af535be3ae939a1e63323
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c3550a593eafb9b50fa7e419e2f747c3e7a0e2ea
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922290"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972647"
 ---
 # <a name="type-testing-and-cast-operators-c-reference"></a>型テストとキャスト演算子 (C# リファレンス)
 
@@ -52,7 +52,7 @@ E is T
 
 [!code-csharp[is with reference conversion](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#IsWithReferenceConversion)]
 
-次の例で示す `is` 演算子では、ボックス化変換とボックス化解除変換は考慮されますが、数値変換は考慮されません。
+次の例で示す `is` 演算子では、ボックス化変換とボックス化解除変換は考慮されますが、[数値変換](../builtin-types/numeric-conversions.md)は考慮されません。
 
 [!code-csharp-interactive[is with int](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#IsWithInt)]
 
@@ -137,7 +137,7 @@ E is T ? (T)(E) : (T)null
 
 ## <a name="operator-overloadability"></a>演算子のオーバーロード可/不可
 
-`is`、`as`、および `typeof` 演算子は、オーバーロードできません。
+`is`、`as`、および `typeof` の各演算子はオーバーロードできません。
 
 ユーザー定義型で `()` 演算子をオーバーロードすることはできませんが、キャスト式で実行できるカスタム型変換を定義することはできます。 詳細については、「[User-defined conversion operators](user-defined-conversion-operators.md)」(ユーザー定義の変換演算子) を参照してください。
 
@@ -154,4 +154,5 @@ E is T ? (T)(E) : (T)null
 
 - [C# リファレンス](../index.md)
 - [C# 演算子](index.md)
-- [方法: パターン マッチング、is 演算子、as 演算子を使用して安全にキャストする](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [パターン マッチング、is 演算子、as 演算子を使用して安全にキャストする方法](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [.NET のジェネリック](../../../standard/generics/index.md)

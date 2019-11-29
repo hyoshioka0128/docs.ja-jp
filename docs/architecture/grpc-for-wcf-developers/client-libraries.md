@@ -1,14 +1,13 @@
 ---
 title: GRPC クライアントライブラリの作成-WCF 開発者向け gRPC
 description: GRPC サービス用の共有クライアントライブラリ/パッケージについて説明します。
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: b403e7e1638496947ac7f6fc976cbeab2f435bbf
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 2135fe8b24a2311a31cb2bed191d290b1112bc66
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73842063"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967884"
 ---
 # <a name="create-grpc-client-libraries"></a>GRPC クライアントライブラリを作成する
 
@@ -146,7 +145,7 @@ namespace Grpc.Core
 }
 ```
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 `IAsyncEnumerable` モデルと `IObservable` モデルは、.NET でのデータの非同期ストリームを処理するための適切にサポートされ、適切に記述された方法です。 gRPC ストリームは、最新の .NET Core フレームワークとリアクティブ/非同期プログラミングスタイルとの密接な統合を実現するために、両方のパラダイムに適しています。
 

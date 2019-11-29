@@ -1,5 +1,5 @@
 ---
-title: '方法: インストールされている .NET Framework バージョンを確認する'
+title: インストールされている .NET Framework バージョンを確認する
 ms.date: 04/18/2019
 dev_langs:
 - csharp
@@ -9,18 +9,16 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: abfa42be4b8c759da3fb34a2204058143e39689c
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: b860aac01780acb67c53e822eff478b78198996b
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956669"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73738190"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>方法: インストールされている .NET Framework バージョンを確認する
 
-ユーザーはコンピューターに複数のバージョンの .NET Framework を[インストール](https://docs.microsoft.com/dotnet/framework/install)して実行できます。 アプリを開発または配置する場合、どのバージョンの .NET Framework がユーザーのコンピューターにインストールされているかを確認しなければならない場合があります。
+ユーザーはコンピューターに複数のバージョンの .NET Framework を[インストール](../install/index.md)して実行できます。 アプリを開発または配置する場合、どのバージョンの .NET Framework がユーザーのコンピューターにインストールされているかを確認しなければならない場合があります。
 
 .NET Framework は、個別にバージョン管理される 2 つの主要コンポーネントで構成されています。
 
@@ -34,17 +32,20 @@ ms.locfileid: "71956669"
 > .NET Framework のバージョンと CLR のバージョンの間には違いがあります。
 >
 > - .NET Framework は、.NET Framework のクラス ライブラリを構成するアセンブリのセットに基づいてバージョン管理されています。 たとえば、.NET Framework のバージョンには、4.5、4.6.1、および 4.7.2 が含まれます。
->- CLR は、.NET Framework アプリケーションが実行されているランタイムに基づいてバージョン管理されています。 1 つの CLR バージョンは、通常複数の NET Framework バージョンをサポートしています。 たとえば、CLR バージョン 4.0.30319.*xxxxx* (ここでの *xxxxx* は 42000 より小さい) は .NET Framework バージョン 4 から 4.5.2 をサポートしており、CLR バージョン 4.0.30319.42000 では .NET Framework 4.6 以降をサポートします。
+> - CLR は、.NET Framework アプリケーションが実行されているランタイムに基づいてバージョン管理されています。 1 つの CLR バージョンは、通常複数の NET Framework バージョンをサポートしています。 たとえば、CLR バージョン 4.0.30319.*xxxxx* (ここでの *xxxxx* は 42000 より小さい) は .NET Framework バージョン 4 から 4.5.2 をサポートしており、CLR バージョン 4.0.30319.42000 では .NET Framework 4.6 以降をサポートします。
 >
 > バージョンの詳細については、「[.NET Framework のバージョンおよび依存関係](versions-and-dependencies.md)」を参照してください。
 
-コンピューターにインストールされている .NET Framework のバージョンの一覧を取得するには、レジストリにアクセスします。 レジストリを確認するには、レジストリ エディタを使用するか、次に従ってコードで照会します。
+レジストリには、コンピューターにインストールされている .NET Framework のバージョンの一覧が含まれています。 レジストリを確認するには、レジストリ エディターを使用するか、次のようにコードで照会します。
 
 - .NET Framework の新しいバージョンを探す (4.5 以降):
+
   - [レジストリ エディターを使用し .NET Framework のバージョンを探す](#net_b)
   - [コードを使用し .NET Framework のバージョンのレジストリを照会する](#net_d)
   - [PowerShell を使用し .NET Framework のバージョンのレジストリを照会する](#ps_a)
-- .NET Framework の古いバージョンを探す (1 から 4):
+
+- .NET Framework の以前のバージョンを探す (1 から 4):
+
   - [レジストリ エディターを使用し .NET Framework のバージョンを探す](#net_a)
   - [コードを使用し .NET Framework のバージョンのレジストリを照会する](#net_c)
 
@@ -57,9 +58,11 @@ ms.locfileid: "71956669"
 
 ## <a name="find-newer-net-framework-versions-45-and-later"></a>.NET Framework の新しいバージョンを探す (4.5 以降)
 
+レジストリ エディターを使用して、レジストリ内のバージョン情報を検索したり、プログラムでレジストリを照会したりすることができます。
+
 <a name="net_b"></a>
 
-### <a name="find-net-framework-versions-45-and-later-in-the-registry"></a>レジストリで .NET Framework バージョン 4.5 以降を探す
+### <a name="use-registry-editor"></a>レジストリ エディターを使用する
 
 1. **スタート** メニューの **[ファイル名を指定して実行]** を選択し、「*regedit*」と入力し、 **[OK]** を選択します。
 
@@ -70,9 +73,9 @@ ms.locfileid: "71956669"
     > [!NOTE]
     > レジストリの **NET Framework セットアップ** フォルダーの先頭はピリオドでは "*ありません*"。
 
-3. **Release** という DWORD のエントリを探します。 それがある場合、.NET Framework 4.5 以降のバージョンがインストールされています。 その値は、.NET Framework の特定のバージョンのリリース キーです。 たとえば、次の図では、**Release** エントリの値は *378389* で、これは .NET Framework 4.5 のリリース キーです。
+3. **Release** という DWORD のエントリを探します。 それがある場合、.NET Framework 4.5 以降がインストールされています。 その値は、.NET Framework の特定のバージョンのリリース キーです。 たとえば、次の図では、**Release** エントリの値は 378389 で、これは .NET Framework 4.5 のリリース キーです。
 
-     ![.NET Framework 4.5 のレジストリ エントリ](./media/clr-installdir.png ".NET Framework 4.5 のレジストリ エントリ")
+   ![.NET Framework 4.5 のレジストリ エントリ](./media/clr-installdir.png ".NET Framework 4.5 のレジストリ エントリ。")
 
 次の表は、.NET Framework 4.5 以降のバージョンに対する個々のオペレーティング システムでの **Release** DWORD 値の一覧です。
 
@@ -91,23 +94,42 @@ ms.locfileid: "71956669"
 |.NET Framework 4.7|Windows 10 Creators Update:460798<br />他のすべての Windows オペレーティング システム (他の Windows 10 オペレーティング システムを含む):460805|
 |.NET Framework 4.7.1|Windows 10 Fall Creators Update および Windows Server バージョン 1709:461308<br/>他のすべての Windows オペレーティング システム (他の Windows 10 オペレーティング システムを含む):461310|
 |.NET Framework 4.7.2|Windows 10 April 2018 Update および Windows Server バージョン 1803:461808<br/>Windows 10 April 2018 Update および Windows Server バージョン 1803 以外のすべての Windows オペレーティング システム:461814|
-|.NET Framework 4.8|Windows 10 May 2019 Update: 528040<br/>他のすべての Windows オペレーティング システム (他の Windows 10 オペレーティング システムを含む): 528049|
+|.NET Framework 4.8|Windows 10 May 2019 Update および Windows 10 November 2019 Update:528040<br/>他のすべての Windows オペレーティング システム (他の Windows 10 オペレーティング システムを含む):528049|
 
-これらの値は次のように使用できます。
+#### <a name="specific-version"></a>特定のバージョン
 
-- 特定のバージョンの .NET Framework が特定のバージョンの Windows オペレーティング システムにインストールされているかどうかを判断するには、**Release** DWORD 値が表に記載されている値と "*同じ*" であることを確認します。 たとえば、.NET Framework 4.6 が Windows 10 システム上に存在するかどうかを判断するには、**Release** 値が 393295 と "*同じ*" であることを確認します。
+*特定*のバージョンの .NET Framework が特定のバージョンの Windows オペレーティング システムにインストールされているかどうかを判断するには、**Release** DWORD 値が表に記載されている値と "*同じ*" であることを確認します。 たとえば、.NET Framework 4.6 が Windows 10 システム上に存在するかどうかを判断するには、**Release** 値が 393295 と "*同じ*" であることを確認します。
 
-- .NET Framework の最小バージョンが存在するかどうかを判断するには、そのバージョン用の小さい **RELEASE** DWORD 値を使用します。 たとえば、アプリケーションが .NET Framework 4.6 以降のバージョンで実行されている場合、**RELEASE** DWORD 値が 393295 "*以上*" であることを確認します。 各 .NET Framework バージョンの最小 **RELEASE** DWORD 値のみが記載された表については、「[The minimum values of the Release DWORD for .NET Framework 4.5 and later versions (.NET Framework 4.5 以降のバージョン用の Release DWORD の最小値)](minimum-release-dword.md)」を参照してください。
+#### <a name="minimum-version"></a>最小バージョン
 
-- 複数のバージョンを確認するには、まず、値が最新の .NET Framework バージョン用の小さい DWORD 値 "*以上*" であることを確認してから、その値と、それよりも以前のバージョン用の小さい DWORD 値を順番に比較します。 たとえば、アプリケーションに .NET Framework 4.7 以降が必要で、存在する .NET Framework の特定のバージョンを確認する場合は、461808 (.NET Framework 4.7.2 用の小さい DWORD 値) "*以上*" の **RELEASE** DWORD 値であることの確認から始めます。 次に、**RELEASE** DWORD 値と、以降の各 .NET Framework バージョン用の小さい値と比較します。 各 .NET Framework バージョンの最小 **RELEASE** DWORD 値のみが記載された表については、「[The minimum values of the Release DWORD for .NET Framework 4.5 and later versions (.NET Framework 4.5 以降のバージョン用の Release DWORD の最小値)](minimum-release-dword.md)」を参照してください。
+.NET Framework の*最小*バージョンが存在するかどうかを判断するには、前の表から、そのバージョンの最小の**RELEASE** DWORD 値を使用します (便宜上、次の表にも最小値が記載されています)。
+
+たとえば、アプリケーションが .NET Framework 4.8 以降のバージョンで実行されている場合、**RELEASE** DWORD 値が 528040 "*以上*" であることを確認します。
+
+|.NET Framework のバージョン|Release DWORD の最小値|
+|--------------------------------|-------------|
+|.NET Framework 4.5|378389|
+|.NET Framework 4.5.1|378675|
+|.NET Framework 4.5.2|379893|
+|.NET Framework 4.6|393295|
+|.NET Framework 4.6.1|394254|
+|.NET Framework 4.6.2|394802|
+|.NET Framework 4.7|460798|
+|.NET Framework 4.7.1|461308|
+|.NET Framework 4.7.2|461808|
+|.NET Framework 4.8|528040|
+
+#### <a name="multiple-versions"></a>複数のバージョン
+
+複数のバージョンを確認するには、まず、値が最新の .NET Framework バージョン用の小さい DWORD 値 "*以上*" であることを確認してから、その値と、それよりも以前のバージョン用の小さい DWORD 値を順番に比較します。 たとえば、アプリケーションに .NET Framework 4.7 以降が必要で、存在する .NET Framework の特定のバージョンを確認する場合は、461808 (.NET Framework 4.7.2 用の小さい DWORD 値) "*以上*" の **RELEASE** DWORD 値であることの確認から始めます。 次に、**RELEASE** DWORD 値と、以降の各 .NET Framework バージョン用の小さい値と比較します。
 
 <a name="net_d"></a>
 
-### <a name="find-net-framework-versions-45-and-later-with-code"></a>コードで .NET Framework バージョン 4.5 以降を探す
+### <a name="query-the-registry-using-code"></a>コードを使用してレジストリのクエリを実行する
 
 1. <xref:Microsoft.Win32.RegistryKey.OpenBaseKey%2A?displayProperty=nameWithType> メソッドと <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A?displayProperty=nameWithType> メソッドを使用し、Windows レジストリの **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full** サブキーにアクセスします。
 
-    **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full** サブキーに **Release** DWORD があるということは、コンピューターに .NET Framework 4.5 以降のバージョンがインストールされていることを意味します。
+   **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full** サブキーに **Release** DWORD があるということは、コンピューターに .NET Framework 4.5 以降のバージョンがインストールされていることを意味します。
 
 2. **Release** エントリの値を確認して、インストールされているバージョンを判断します。 上位互換性があるかを確認するには、[.NET Framework のバージョンの表](#version_table)で示されている値以上の値があることを確認します。
 
@@ -124,9 +146,9 @@ ms.locfileid: "71956669"
 
 <a name="ps_a"></a>
 
-### <a name="check-for-a-minimum-required-net-framework-version-45-and-later-with-powershell"></a>PowerShell を使用して最低限必要な .NET Framework のバージョン (4.5 以降) を確認する
+### <a name="use-powershell-to-check-for-a-minimum-required-version"></a>PowerShell を使用して最低限必要なバージョンを確認する
 
-- PowerShell コマンドを使用し、**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full** サブキーから **Release** エントリの値を確認します。
+PowerShell コマンドを使用し、**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full** サブキーから **Release** エントリの値を確認します。
 
 次の例では、**Release** エントリの値を確認して、.NET Framework 4.6.2 以降がインストールされているかどうかを判断しています。 このコードでは、インストールされていない場合は、`True` が返され、されている場合は `False` が返されます。
 
@@ -134,13 +156,13 @@ ms.locfileid: "71956669"
 (Get-ItemProperty "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full").Release -ge 394802
 ```
 
-さまざまな必要最低限の .NET Framework バージョンを確認するには、これらの例の *394802* を [.NET Framework のバージョンの表](#version_table)の **Release** 値と置き換えます。
+別の最低限必要なの .NET Framework バージョンを確認するには、例の `394802` を [.NET Framework バージョン一覧](#version_table)の値に置き換えます。 そのバージョンに対して示されている最小値を使用します。
 
-## <a name="find-older-net-framework-versions-182114"></a>.NET Framework の古いバージョンを探す (1 から 4)
+## <a name="find-older-net-framework-versions-1-through-4"></a>.NET Framework の以前のバージョンを探す (1 から 4)
 
 <a name="net_a"></a>
 
-### <a name="find-net-framework-versions-182114-in-the-registry"></a>レジストリで .NET Framework バージョン 1 から 4 を探す
+### <a name="use-registry-editor-older-framework-versions"></a>レジストリ エディターを使用する (古いバージョンのフレームワーク)
 
 1. **スタート** メニューの **[ファイル名を指定して実行]** を選択し、「*regedit*」と入力し、 **[OK]** を選択します。
 
@@ -161,9 +183,9 @@ ms.locfileid: "71956669"
 
 <a name="net_c"></a>
 
-### <a name="find-net-framework-versions-182114-with-code"></a>コードで .NET Framework バージョン 1 から 4 を探す
+### <a name="query-the-registry-using-code-older-framework-versions"></a>コードを使用してレジストリのクエリを実行する (以前のバージョンのフレームワーク)
 
-- <xref:Microsoft.Win32.RegistryKey?displayProperty=nameWithType> クラスを使用して、Windows レジストリの **HKEY_LOCAL_MACHINE\Software\Microsoft\NET Framework Setup\NDP** サブキーにアクセスします。
+<xref:Microsoft.Win32.RegistryKey?displayProperty=nameWithType> クラスを使用して、Windows レジストリの **HKEY_LOCAL_MACHINE\Software\Microsoft\NET Framework Setup\NDP** サブキーにアクセスします。
 
 次の例では、インストールされている .NET Framework のバージョン 1 から 4 が検索されています。
 
@@ -174,13 +196,13 @@ ms.locfileid: "71956669"
 
 <a name="clr_a"></a>
 
-### <a name="find-the-current-clr-version-with-clrverexe"></a>Clrver.exe を使用して現在の CLR のバージョンを調べる
+### <a name="use-clrverexe"></a>Clrver.exe を使用する
 
 [CLR バージョン ツール (Clrver.exe)](../tools/clrver-exe-clr-version-tool.md) を使用して、コンピューターにインストールされている CLR のバージョンを確認します。
 
-- [Visual Studio 用開発者コマンド プロンプト](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs)で「`clrver`」と入力します。
+- [Visual Studio 用開発者コマンド プロンプト](../tools/developer-command-prompt-for-vs.md)で「`clrver`」と入力します。
 
-    出力例:
+    出力例
 
     ```console
     Versions installed on the machine:
@@ -190,7 +212,7 @@ ms.locfileid: "71956669"
 
 <a name="clr_b"></a>
 
-### <a name="find-the-current-clr-version-with-the-environment-class"></a>Environment クラスを使用して現在の CLR のバージョンを調べる
+### <a name="use-the-environment-class"></a>Environment クラスを使用する
 
 > [!IMPORTANT]
 > .NET Framework 4.5 以降のバージョンでは、CLR のバージョンの検出に <xref:System.Environment.Version%2A?displayProperty=nameWithType> プロパティを使用しないでください。 代わりに、「[コードで .NET Framework バージョン 4.5 以降を探す](#net_d)」の説明に従い、レジストリを照会します。

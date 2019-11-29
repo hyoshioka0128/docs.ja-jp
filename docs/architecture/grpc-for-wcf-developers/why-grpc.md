@@ -1,14 +1,13 @@
 ---
 title: Wcf 開発者向けに gRPC を使用することをお勧めする理由 (WCF 開発者向け)
 description: 最新のアーキテクチャとプラットフォームへの移行を検討している WCF 開発者に gRPC が適している理由について説明します。
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: f96e9a059dc9f12a13c9eb5bb7184ee75d602458
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: da712e1ceee92f0a1a2661252dcda602f5dde9a0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841307"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966941"
 ---
 # <a name="why-grpc-is-recommended-for-wcf-developers"></a>WCF 開発者に gRPC が推奨される理由
 
@@ -22,7 +21,7 @@ Grpc の言語と手法について詳しく説明する前に、gRPC が、.NET
 
 GRPC が他のソリューションを上回る理由としては、次のようなものがあります。
 
-### <a name="performance"></a>パフォーマンス
+### <a name="performance"></a>パフォーマンス テスト
 
 既に説明したように、http/1.1 ではなく HTTP/2 を使用すると、人間が判読できるメッセージの要件がなくなり、より高速なバイナリプロトコルが使用されます。 これは、コンピューターを解析する場合により効率的です。 また、HTTP/2 では、単一の接続での多重化要求がサポートされています。これにより、キューで待機しなくても応答がすぐに送信されるようになります ("ヘッドライン (ホル) ブロック" と呼ばれる HTTP/1.1 の問題)。 GRPC を使用する場合に必要なリソースが減少します。これにより、モバイルデバイスや低速のネットワークでの使用に適したソリューションになります。
 
@@ -34,7 +33,7 @@ GRPC が他のソリューションを上回る理由としては、次のよう
 
 gRPC は包括的な RPC ソリューションです。 この機能は、複数の言語やプラットフォームで一貫して動作し、必要な定型コードの大部分が自動生成された優れたツールを提供します。これにより、ビジネスロジックに重点を置いて開発者の時間を増やすことができます。
 
-### <a name="streaming"></a>ストリーム
+### <a name="streaming"></a>ストリーミング
 
 gRPC には、WCF の完全な双方向サービスに非常に類似した機能を提供する完全な双方向ストリーミングがあります。 gRPC ストリーミングは、通常のインターネット接続、ロードバランサー、およびサービスメッシュを介して動作できます。
 

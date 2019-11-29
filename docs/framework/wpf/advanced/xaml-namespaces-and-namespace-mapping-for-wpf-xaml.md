@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: 8f381a06aa916be378052d00f0d65f37ef910433
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 5cce8ff04dbf163aba95346447f0557da14197da
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740649"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976775"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>XAML 名前空間および WPF XAML の名前空間の割り当て
 このトピックでは、WPF XAML ファイルのルートタグでよく見られる2つの XAML 名前空間マッピングの存在と目的について詳しく説明します。 また、独自のコードで定義されている要素、または別のアセンブリ内に定義されている要素を使用するために、同様のマッピングを生成する方法についても説明します。  
@@ -112,7 +112,7 @@ End Namespace
 ## <a name="designer-namespaces-and-other-prefixes-from-xaml-templates"></a>デザイナーの名前空間と XAML テンプレートからのその他のプレフィックス  
  WPF XAML 用の開発環境やデザインツールで作業している場合は、xaml マークアップ内に他の定義済みの XAML 名前空間/プレフィックスがあることがわかります。  
   
- [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] は、通常プレフィックス `d:`にマップされるデザイナー名前空間を使用します。 WPF 用の最新のプロジェクトテンプレートでは、この XAML 名前空間を事前にマップして、[!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] と他のデザイン環境間の XAML のインターチェンジをサポートすることができます。 このデザインの XAML 名前空間は、デザイナーの XAML ベースの UI を roundtripping しながら、デザイン状態を perpetuate するために使用されます。 また、デザイナーで実行時データソースを有効にする `d:IsDataSource`などの機能にも使用されます。  
+ Visual Studio の WPF デザイナーでは、通常、プレフィックス `d:`にマップされるデザイナーの名前空間を使用します。 WPF の新しいプロジェクトテンプレートでは、この XAML 名前空間を事前にマップして、Visual Studio の WPF デザイナーとその他のデザイン環境間で XAML のインターチェンジをサポートすることができます。 このデザインの XAML 名前空間は、デザイナーの XAML ベースの UI を roundtripping しながら、デザイン状態を perpetuate するために使用されます。 また、デザイナーで実行時データソースを有効にする `d:IsDataSource`などの機能にも使用されます。  
   
  マップされていると思われるもう1つのプレフィックスは `mc:`です。 `mc:` は、マークアップ互換性のためのものであり、必ずしも XAML 固有ではないマークアップ互換性パターンを利用しています。 また、マークアップ互換性機能を使用して、フレームワーク間、またはバッキング実装の他の境界間で XAML を交換したり、XAML スキーマコンテキスト間で作業したり、デザイナーで制限されたモードの互換性を提供したりすることができます。 マークアップ互換性の概念と WPF との関係の詳細については、「[マークアップの互換性 (mc:)」を参照してください。言語機能](markup-compatibility-mc-language-features.md)。  
   

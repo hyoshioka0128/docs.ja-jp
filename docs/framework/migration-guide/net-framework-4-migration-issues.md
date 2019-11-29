@@ -5,30 +5,16 @@ helpviewer_keywords:
 - .NET Framework 4, migration
 - application compatibility
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
-ms.openlocfilehash: d3966ff15e06baf293ea02dad031bd5849b4a20f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c1c3298d87ad0f481fa30182e40cd5edcd535d6a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126039"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975617"
 ---
 # <a name="net-framework-4-migration-issues"></a>.NET Framework 4 への移行に関する問題
 
-このトピックでは、.NET Framework バージョン 3.5 Service Pack 1 から .NET Framework バージョン 4 への移行に関する問題、修正、標準への準拠やセキュリティに関する変更、お客様のフィードバックに基づいた変更などについて説明します。 これらの変更点のほとんどは、アプリケーションのプログラミング変更を必要としません。 変更が必要になる可能性のある変更点については、表の「推奨される変更」列をご覧ください。
-
-このトピックでは、次の分野の主な変更点について説明します。
-
-- [ASP.NET と Web](#aspnet-and-web)
-
-- [コア](#core)
-
-- [データ](#data)
-
-- [Windows Communication Foundation (WCF)](#windows-communication-foundation-wcf)
-
-- [Windows Presentation Foundation (WPF)](#windows-presentation-foundation-wpf)
-
-- [XML](#xml)
+このトピックでは、.NET Framework バージョン 3.5 Service Pack 1 から .NET Framework バージョン 4 への移行に関する問題、修正、標準への準拠やセキュリティに関する変更、お客様のフィードバックに基づいた変更などについて説明します。 これらの変更点のほとんどは、アプリケーションのプログラミング変更を必要としません。 変更が必要になる可能性のある変更点については、表の「推奨される変更」列をご覧ください。 目立った変更点は、ASP.NET や Windows Presentation Foundation (WPF) などの領域別に分類されています。
 
 このトピックで取り上げる問題の大まかな概要については、「[.NET Framework 4 移行ガイド](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ff657133%28v=vs.100%29)」をご覧ください。
 
@@ -56,7 +42,7 @@ ms.locfileid: "73126039"
 | **Web.config ファイル内の Mobile アセンブリ** | 以前のバージョンの ASP.NET では、System.Web.Mobile.dll アセンブリへの参照は、`system.web`/`compilation` の `assemblies` セクションにある、ルートの Web.config ファイルに含まれていました。 パフォーマンスを向上させるために、このアセンブリへの参照は削除されました。<br><br>メモ:System.Web.Mobile.dll アセンブリと ASP.NET モバイル コントロールは ASP.NET 4 に含まれていますが、それらの使用は非推奨とされました。 | このアセンブリに含まれる型を使用する場合は、ルートの Web.config ファイルまたはアプリケーションの Web.config ファイルにアセンブリへの参照を追加します。 |
 | **出力キャッシュ** | ASP.NET 1.0 のバグが原因で、出力キャッシュの設定として `Location="ServerAndClient"` が指定されたキャッシュ ページでは、応答に `Vary:*` HTTP ヘッダーが生成されていました。 その結果、クライアント ブラウザーに対して、ローカルにページをキャッシュしないように指示がなされていました。 ASP.NET 1.1 では、<xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A> メソッドが追加され、`Vary:*` ヘッダーを抑制するためにこのメソッドを呼び出すことができました。 ただし、バグ報告では、開発者が既存の `SetOmitVaryStar` の動作を認識していないことが示唆されています。<br><br>ASP.NET 4 では、次のディレクティブを指定する応答から `Vary:*` HTTP ヘッダーは生成されなくなりました。<br><br>`<%@ OutputCache Location="ServerAndClient" %>`<br><br>そのため、<xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A> ヘッダーを無効にするための `Vary:*` メソッドは不要になりました。 `Location` 属性に "ServerAndClient" を指定するアプリケーションでは、<xref:System.Web.HttpCachePolicy.SetOmitVaryStar%2A> を呼び出す必要なくブラウザーにページをキャッシュできます。 | アプリケーション内のページで `Vary:*` を生成する必要がある場合は、次の例に示すように <xref:System.Web.HttpResponse.AppendHeader%2A> メソッドを呼び出します。<br><br>`System.Web.HttpResponse.AppendHeader("Vary","*");`<br><br>または、出力キャッシュ `Location` 属性の値を "Server" に変更できます。 |
 | **ページの解析** | ASP.NET Web ページ (.aspx ファイル) とユーザー コントロール (.ascx ファイル) のページ パーサーは、旧バージョンの ASP.NET よりも ASP.NET 4 の方が厳密であり、無効とみなされて警告が出力されるマークアップの数が、旧バージョンに比べて多くなります。 | ページの実行時に出力されたエラー メッセージを調べて、無効なマークアップが原因で発生したエラーを修正します。 |
-| **Passport 型** | Passport (現在の Live ID SDK) の変更により、ASP.NET 2.0 に組み込まれた Passport のサポートは廃止され、サポートされなくなりました。 その結果、<xref:System.Web.Security> の Passport に関連する型は、`ObsoleteAttribute` 属性としてマークされるようになりました。 | <xref:System.Web.Security> 名前空間の Passport 型 (たとえば、<xref:System.Web.Security.PassportIdentity>) を使用するコードは、[SDK](https://go.microsoft.com/fwlink/?LinkId=106346) を使用するように変更してください。 |
+| **Passport 型** | Passport (現在の Live ID SDK) の変更により、ASP.NET 2.0 に組み込まれた Passport のサポートは廃止され、サポートされなくなりました。 その結果、<xref:System.Web.Security> の Passport に関連する型は、`ObsoleteAttribute` 属性としてマークされるようになりました。 | <xref:System.Web.Security> 名前空間の Passport 型 (たとえば、<xref:System.Web.Security.PassportIdentity>) を使用するコードは、Windows Live ID SDK を使用するように変更してください。 |
 | **FilePath プロパティの PathInfo 情報** | ASP.NET 4 では、<xref:System.Web.HttpRequest.FilePath>、<xref:System.Web.HttpRequest.AppRelativeCurrentExecutionFilePath>、<xref:System.Web.HttpRequest.CurrentExecutionFilePath> などのプロパティからの戻り値に `PathInfo` 値が含まれなくなりました。 代わりに、<xref:System.Web.HttpRequest.PathInfo> 内の `PathInfo` 情報が使用できます。 たとえば、次のような URL フラグメントがあるとします。<br><br>`/testapp/Action.mvc/SomeAction`<br><br>旧バージョンの ASP.NET では、<xref:System.Web.HttpRequest> プロパティは次の値を持ちます。<br><br>* <xref:System.Web.HttpRequest.FilePath>: `/testapp/Action.mvc/SomeAction`<br>* <xref:System.Web.HttpRequest.PathInfo>: (空)<br><br>ASP.NET 4 では、<xref:System.Web.HttpRequest> プロパティは代わりに次の値を持ちます。<br><br>* <xref:System.Web.HttpRequest.FilePath>: `/testapp/Action.mvc`<br>* <xref:System.Web.HttpRequest.PathInfo>: `SomeAction` | <xref:System.Web.HttpRequest> クラスのプロパティに依存してパス情報を返しているコード内の箇所を調べます。コードを変更して、パス情報の返し方に関する変更を反映させてください。 |
 | **要求の検証** | 要求の検証を改善するために、ASP.NET 要求の検証は、要求ライフ サイクルの初期に呼び出されます。 その結果、要求の検証は、Web サービスの呼び出しやカスタム ハンドラーに対する要求など、.aspx ファイルが対象ではない要求に対して実行されます。 要求の検証は、カスタム HTTP モジュールが要求処理パイプラインで実行されている場合にもアクティブになります。<br><br>この変更の結果、.aspx ファイル以外のリソースに対する要求では、要求検証エラーがスローされることがあります。 要求パイプラインで実行されるカスタム コード (たとえば、カスタム HTTP モジュール) も、要求検証エラーをスローすることがあります。 | 必要に応じて、Web 構成ファイルで次の設定を使用することにより、.aspx ページでのみ要求検証を起動する古い動作に戻すことができます。<br><br>`<httpRuntime requestValidationMode="2.0" />`<br><br>警告 :古い動作に戻す場合は、既存のハンドラー、モジュール、その他のカスタム コード内のすべてのコードで、XSS 攻撃ベクトルである可能性がある潜在的に安全でない HTTP 入力のチェックが実行されることを確認してください。 |
 | **ルーティング** | Visual Studio 2010 でファイル システム Web サイトを作成するときに、その Web サイトがフォルダー名にドット (.) を含むフォルダー内にある場合、URL ルーティングは正常に動作しません。 一部の仮想パスから、HTTP 404 エラーが返されます。 これが発生するのは、Visual Studio 2010 がルート仮想ディレクトリに正しくないパスを使用して Visual Studio 開発サーバーを起動するためです。 | * ファイル ベースの Web サイトの **[プロパティ]** ページで、**仮想パス**属性を "/" に変更します。<br><br>または<br><br>* Web サイト プロジェクトの代わりに、Web アプリケーション プロジェクトを作成します。 Web アプリケーション プロジェクトではこの問題は発生しません。プロジェクト フォルダーの名前にドットが含まれている場合でも、URL ルーティングは動作します。<br><br>または<br><br>* IIS でホストされる HTTP ベースの Web サイトを作成します。 IIS でホストされる Web サイトでは、プロジェクト ファイル フォルダーと同様に、仮想パスでもドットを使用できます。 |
@@ -104,7 +90,7 @@ ms.locfileid: "73126039"
 
 | 機能 | 3\.5 SP1 との相違 | 推奨される変更 |
 | ------- | ------------------------ | ------------------- |
-| **破損したプロセスの状態に対する例外** | CLR は、破損したプロセス状態に対する例外をマネージド コード内の例外ハンドラーに伝達しなくなりました。 | これらの例外は、プロセスの状態が破損していることを示します。 この状態にあるアプリケーションの実行はお勧めしません。<br><br>詳細については、「<xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>」と、CLR 徹底解剖ブログの「[破損状態例外を処理する](https://go.microsoft.com/fwlink/?LinkID=179681)」エントリをご覧ください。 |
+| **破損したプロセスの状態に対する例外** | CLR は、破損したプロセス状態に対する例外をマネージド コード内の例外ハンドラーに伝達しなくなりました。 | これらの例外は、プロセスの状態が破損していることを示します。 この状態にあるアプリケーションの実行はお勧めしません。<br><br>詳細については、「<xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>」と、MSDN マガジンの「[破損状態例外を処理する](https://docs.microsoft.com/archive/msdn-magazine/2009/february/clr-inside-out-handling-corrupted-state-exceptions)」エントリをご覧ください。 |
 | **実行エンジンの例外** | キャッチ可能な例外によって不安定なプロセスが実行を継続できるため、<xref:System.ExecutionEngineException> は廃止されました。 この変更により、実行時の予測可能性と信頼性が向上しました。 | 状況を通知するには <xref:System.InvalidOperationException> を使用します。 |
 
 ### <a name="reflection"></a>リフレクション
@@ -291,7 +277,7 @@ Namespace: <xref:System.Windows>、<xref:System.Windows.Automation.Peers>、<xre
 | **Namespace 属性** | データの破損を防ぐために、<xref:System.Xml.XPath.XPathNavigator> オブジェクトは `x:xmlns` 属性のローカル名を正しく返すようになりました。 |
 | **名前空間の宣言** | サブツリーの <xref:System.Xml.XmlReader> オブジェクトは、1 つの XML 要素内に重複する名前空間宣言を作成しなくなりました。 |
 | **スキーマの検証** | 誤ったスキーマ検証を防ぐために、<xref:System.Xml.Schema.XmlSchemaSet> クラスは、XSD スキーマが正しく一貫してコンパイルされるようにします。 これらのスキーマには、他のスキーマを含めることができます。たとえば、`A.xsd` は `B.xsd` を含むことができ、さらにその中には `C.xsd` を含むことができます。 これらのいずれかをコンパイルすると、この依存関係のグラフがスキャンされます。 |
-| **スクリプト関数** | [function-available 関数](https://msdn.microsoft.com/library/ms256124(v=vs.110).aspx)は、関数が実際に使用可能な場合に `false` を間違って返さなくなりました。 |
+| **スクリプト関数** | [function-available 関数](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256124(v=vs.100))は、関数が実際に使用可能な場合に `false` を間違って返さなくなりました。 |
 | **URI** | <xref:System.Xml.Linq.XElement.Load%2A> メソッドは、LINQ クエリで正しい BaseURI を返すようになりました。 |
 
 ### <a name="validation"></a>検証

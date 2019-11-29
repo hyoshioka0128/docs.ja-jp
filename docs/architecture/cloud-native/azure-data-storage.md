@@ -21,7 +21,7 @@ Azure 仮想マシンをプロビジョニングし、任意のデータベー�
 
 次に、Azure で使用可能な DBaaS オプションについて見ていきます。 Microsoft は、Azure を "オープンプラットフォーム" にして、さまざまなオープンソースのリレーショナルデータベースと NoSQL データベースの管理されたサポートを提供し、さまざまなオープンソースの基礎に対する重要な貢献をアクティブメンバーとして提供するという取り組みを続けています。
 
-## <a name="azure-sql-database"></a>Azure SQL Database
+## <a name="azure-sql-database"></a>Azure SQL データベース
 
 [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/)は、Microsoft SQL Server データベースエンジンに基づいて、機能豊富で汎用的なサービスとしてのリレーショナルデータベース (dbaas) です。 これは、Microsoft によって完全に管理され、高パフォーマンスで信頼性の高い、セキュリティで保護されたクラウドデータベースです。 このサービスは、オンプレミスバージョンの SQL Server で検出された多くの機能を共有します。
 

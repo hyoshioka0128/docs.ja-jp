@@ -9,15 +9,15 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
-ms.openlocfilehash: a734240fd8a7ec5217674342dc20b3cf8cbdf4ab
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 605ff7a9acaaa217f0e482579968757dd451aed9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739629"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974843"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>コントロールへのデータのバインド (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、`ComboBox` や `ListView` などのコントロールを <xref:System.Data.Services.Client.DataServiceCollection%601> クラスのインスタンスにバインドすることができます。 このコレクションは <xref:System.Collections.ObjectModel.ObservableCollection%601> クラスから継承され、[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] フィードのデータが含まれます。 このクラスは、項目が追加または削除されたときに通知を行う動的なデータ コレクションを表します。 データバインディングに <xref:System.Data.Services.Client.DataServiceCollection%601> のインスタンスを使用する場合、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントライブラリはこれらのイベントを処理して、<xref:System.Data.Services.Client.DataServiceContext> によって追跡されるオブジェクトが、バインドされた UI 要素のデータと同期されるようにします。  
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、`ComboBox` や `ListView` などのコントロールを <xref:System.Data.Services.Client.DataServiceCollection%601> クラスのインスタンスにバインドすることができます。 このコレクションは、<xref:System.Collections.ObjectModel.ObservableCollection%601> クラスから継承され、Open Data Protocol (OData) フィードのデータを格納します。 このクラスは、項目が追加または削除されたときに通知を行う動的なデータ コレクションを表します。 データバインディングに <xref:System.Data.Services.Client.DataServiceCollection%601> のインスタンスを使用する場合、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントライブラリはこれらのイベントを処理して、<xref:System.Data.Services.Client.DataServiceContext> によって追跡されるオブジェクトが、バインドされた UI 要素のデータと同期されるようにします。  
   
  <xref:System.Data.Services.Client.DataServiceCollection%601> クラスは、<xref:System.Collections.Specialized.INotifyCollectionChanged> インターフェイスを (間接的に) 実装して、コレクションに対してオブジェクトが追加または削除されたときのコンテキストを警告します。 <xref:System.Data.Services.Client.DataServiceCollection%601> と使用するデータ サービス型オブジェクトは、<xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスも実装して、バインディング コレクション内のオブジェクトのプロパティが変更されたときに <xref:System.Data.Services.Client.DataServiceCollection%601> に警告する必要があります。  
   
@@ -25,7 +25,7 @@ ms.locfileid: "73739629"
 > **[サービス参照の追加]** ダイアログまたは[datasvcutil.exe](wcf-data-service-client-utility-datasvcutil-exe.md)ツールを使用し `/dataservicecollection` てクライアントデータサービスクラスを生成する場合、生成されるデータクラスは <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを実装します。 詳細については、「[方法: クライアントデータサービスクラスを手動で生成する](how-to-manually-generate-client-data-service-classes-wcf-data-services.md)」を参照してください。  
   
 ## <a name="creating-the-binding-collection"></a>バインディング コレクションの作成  
- 指定した <xref:System.Data.Services.Client.DataServiceCollection%601> インスタンスでクラス コンストラクター メソッドの 1 つを呼び出し、オプションで <xref:System.Data.Services.Client.DataServiceContext> または実行時に <xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスを返す LINQ クエリを呼び出して <xref:System.Collections.Generic.IEnumerable%601> クラスの新しいインスタンスを作成します。 この <xref:System.Collections.Generic.IEnumerable%601> は、[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] フィードから具体化されたバインディングコレクションのオブジェクトのソースを提供します。 詳細については、「[オブジェクトの具体化](object-materialization-wcf-data-services.md)」を参照してください。 既定では、バインドされたオブジェクトおよびコレクションに挿入された項目に対する変更は、<xref:System.Data.Services.Client.DataServiceContext> によって自動的に追跡されます。 これらの変更を手動で追跡する必要がある場合は、`trackingMode` パラメーターを受け取り、<xref:System.Data.Services.Client.TrackingMode.None>の値を指定するコンストラクターメソッドの1つを呼び出します。  
+ 指定した <xref:System.Data.Services.Client.DataServiceCollection%601> インスタンスでクラス コンストラクター メソッドの 1 つを呼び出し、オプションで <xref:System.Data.Services.Client.DataServiceContext> または実行時に <xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスを返す LINQ クエリを呼び出して <xref:System.Collections.Generic.IEnumerable%601> クラスの新しいインスタンスを作成します。 この <xref:System.Collections.Generic.IEnumerable%601> は、OData フィードから具体化されたバインディングコレクションのオブジェクトのソースを提供します。 詳細については、「[オブジェクトの具体化](object-materialization-wcf-data-services.md)」を参照してください。 既定では、バインドされたオブジェクトおよびコレクションに挿入された項目に対する変更は、<xref:System.Data.Services.Client.DataServiceContext> によって自動的に追跡されます。 これらの変更を手動で追跡する必要がある場合は、`trackingMode` パラメーターを受け取り、<xref:System.Data.Services.Client.TrackingMode.None>の値を指定するコンストラクターメソッドの1つを呼び出します。  
   
  次の例は、指定された <xref:System.Data.Services.Client.DataServiceCollection%601> と、すべての顧客と関連する注文を返す <xref:System.Data.Services.Client.DataServiceContext> に基づいて、<xref:System.Data.Services.Client.DataServiceQuery%601> のインスタンスを作成する方法を示します。  
   

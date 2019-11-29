@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 130eb4be66d13b43e5605ef98a647fa9f4223014
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 04c8731867e32ce1000a511c9ab36db554664a97
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116093"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73038948"
 ---
 # <a name="operator-overloading-c-reference"></a>演算子のオーバーロード (C# リファレンス)
 
@@ -21,13 +21,13 @@ ms.locfileid: "71116093"
 演算子の宣言には `operator` キーワードを使用します。 演算子の宣言では、次の規則を満たす必要があります。
 
 - これには、`public` と `static` 修飾子の両方が含まれています。
-- 単項演算子に指定できるパラメーター数は 1 です。 二項演算子に指定できるパラメーター数は 2 です。 どちらの場合も、少なくとも 1 つのパラメーターの型が `T` または `T?` でなければなりません。`T` は演算子の宣言が含まれる型です。
+- 単項演算子には、1 つの入力パラメーターがあります。 2 項演算子には、2 つの入力パラメーターがあります。 どちらの場合も、少なくとも 1 つのパラメーターの型が `T` または `T?` でなければなりません。`T` は演算子の宣言が含まれる型です。
 
 次の例は、有理数を表す簡略化された構造を定義しています。 構造体がいくつかの[算術演算子](arithmetic-operators.md)をオーバーロードします。
 
 [!code-csharp[fraction example](~/samples/csharp/language-reference/operators/OperatorOverloading.cs)]
 
-`int` から `Fraction` への暗黙的な変換を定義することで、前の例を拡張できます。 その場合、オーバーロードされた演算子はこれら 2 つの型の引数をサポートします。 つまり、整数を分数に足し、結果として分数を取得できるようになります。
+`int` から `Fraction` への[暗黙的な変換を定義する](user-defined-conversion-operators.md)ことで、前の例を拡張できます。 その場合、オーバーロードされた演算子はこれら 2 つの型の引数をサポートします。 つまり、整数を分数に足し、結果として分数を取得できるようになります。
 
 また、`operator` キーワードを使用してカスタムの型変換を定義することもできます。 詳細については、「[User-defined conversion operators](user-defined-conversion-operators.md)」(ユーザー定義の変換演算子) を参照してください。
 

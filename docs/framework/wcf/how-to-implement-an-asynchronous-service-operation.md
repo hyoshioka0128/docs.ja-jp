@@ -38,14 +38,14 @@ Windows Communication Foundation (WCF) アプリケーションでは、サー�
   
     2. 非同期 `BeginSampleMethod` 操作  
   
-    3. 非同期 `BeginServiceAsyncMethod` @ no__t @ no__t 操作のペア。  
+    3. `EndServiceAsyncMethod` 操作のペア /非同期 `BeginServiceAsyncMethod`。  
   
 2. <xref:System.IAsyncResult?displayProperty=nameWithType> オブジェクトを使用したサービスの実装  
   
  [!code-csharp[C_SyncAsyncClient#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_syncasyncclient/cs/services.cs#1)]
  [!code-vb[C_SyncAsyncClient#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_syncasyncclient/vb/services.vb#1)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [サービス コントラクトの設計](designing-service-contracts.md)
 - [同期操作と非同期操作](synchronous-and-asynchronous-operations.md)

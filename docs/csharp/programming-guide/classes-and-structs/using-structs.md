@@ -5,16 +5,16 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: 8b2810af81a57cf21b9a2e2438f7f6aa2cb7a669
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 491ee0224ffa39262992f7f42d20e5f97560b73f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772072"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429501"
 ---
 # <a name="using-structs-c-programming-guide"></a>構造体の使用 (C# プログラミング ガイド)
 
-`struct` 型は、 `Point`、 `Rectangle`、 `Color`などの軽量のオブジェクトを表すのに適しています。 点を表すには [自動実装プロパティ](../../language-reference/keywords/class.md) がある [クラス](./auto-implemented-properties.md)を使用するのと同じくらい便利ですが、シナリオによっては [構造体](../../language-reference/keywords/struct.md) を使用する方がより効率的です。 たとえば、1,000 個の `Point` オブジェクトから成る配列を宣言する場合は、各オブジェクトの参照用に追加のメモリを割り当てます。この場合、構造体であれば処理上の負荷を抑えることができます。 .NET Framework には <xref:System.Drawing.Point> という名前のオブジェクトが含まれているため、この例の構造体には代わりに `Coords` という名前が付けられています。
+`struct` 型は、 `Point`、 `Rectangle`、 `Color`などの軽量のオブジェクトを表すのに適しています。 点を表すには [自動実装プロパティ](../../language-reference/keywords/class.md) がある [クラス](./auto-implemented-properties.md)を使用するのと同じくらい便利ですが、シナリオによっては [構造体](../../language-reference/keywords/struct.md) を使用する方がより効率的です。 たとえば、1,000 個の `Point` オブジェクトから成る配列を宣言する場合は、各オブジェクトの参照用に追加のメモリを割り当てます。この場合、構造体であれば処理上の負荷を抑えることができます。 .NET には <xref:System.Drawing.Point> という名前のオブジェクトが既に含まれているため、この例の構造体には代わりに `Coords` という名前が付けられています。
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 

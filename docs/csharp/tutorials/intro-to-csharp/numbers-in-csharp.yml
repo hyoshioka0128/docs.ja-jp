@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: C# の分岐とループ
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 31647906dd3e1286220077831d2ce90b65a5b73c
-  ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+  ms.openlocfilehash: b417ba7ff340019c74b0c3430242f59d6217b07f
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72774013"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969366"
 items:
 - durationInMinutes: 1
   content: >
@@ -24,7 +24,7 @@ items:
 - title: 整数の演算の確認
   durationInMinutes: 4
   content: >
-    対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し、**[実行]** をクリックします。
+    対話型ウィンドウで次のコードを実行します。 **[Enter focus mode]\(フォーカス モードを入力する\)** ボタンを選択します。 次に、対話型ウィンドウで次のコード ブロックを入力し、**[実行]** を選択します。
 
 
     ```csharp
@@ -58,7 +58,7 @@ items:
     > この対話型チュートリアルでは、対話型ウィンドウで作成したコードを変更して、自分で確認できます。 このチュートリアルでは、各ステップで実際に試すことができる例を用意しています。
 
 
-    まずは、上記の各種演算を実行してみます。 3 行目を変更して、各演算を試します。 編集が終わるごとに、**[実行]** をクリックします。
+    まずは、上記の各種演算を実行してみます。 3 行目を変更して、各演算を試します。 編集が終わるごとに、**[実行]** ボタンを選択します。
 
 
     減算：
@@ -181,7 +181,7 @@ items:
     ```
 
 
-    もう一度 **[実行]** をクリックして結果を確認します。
+    もう一度 **[実行]** を選択して結果を確認します。
 
 
     > [!NOTE]
@@ -415,7 +415,7 @@ items:
 
     > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - content: >-
-    これで "C# の数値" に関する対話型チュートリアルは終了です。 下の**ブランチとループ**のリンクをクリックすることで次の対話式チュートリアルを開始することができます。また、[.NET サイト](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)にアクセスして .NET Core SDK をダウンロードし、ご利用のコンピューター上でプロジェクトを作成し、コーディングを続けることもできます。 "次の手順" セクションでは、これらのチュートリアルに戻ります。
+    これで "C# の数値" に関する対話型チュートリアルは終了です。 下の**分岐とループ**のリンクを選択することで次の対話式チュートリアルを開始することができます。また、[.NET サイト](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)にアクセスして .NET Core SDK をダウンロードし、ご利用のマシン上でプロジェクトを作成し、コーディングを続けることもできます。 "次の手順" セクションでは、これらのチュートリアルに戻ります。
 
 
     C# の数値の詳細については、次のトピックで学習できます。

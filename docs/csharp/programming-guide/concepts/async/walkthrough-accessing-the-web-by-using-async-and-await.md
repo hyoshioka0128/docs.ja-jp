@@ -2,12 +2,12 @@
 title: 'チュートリアル: Async と Await を使用した Web へのアクセス (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 30677be2299dfa4411263dc5c61093fc0ca0f442
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 42b09dab26fd514e184163eaf41aff117d3a463f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73195643"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281791"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>チュートリアル: Async と Await を使用した Web へのアクセス (C#)
 
@@ -254,7 +254,7 @@ Control returned to startButton_Click.
 
      `webReq.GetResponseAsync` への呼び出しによって、`Task(Of WebResponse)` または `Task<WebResponse>` が返されます。 その後、`WebResponse` 値を取得するため、タスクに await 演算子が適用されます。
 
-     非同期メソッドにタスクの完了に依存しない処理がある場合、メソッドはこれら 2 つのステートメントの間、つまり非同期メソッドへの呼び出しから、`await` 演算子の適用までの間にその処理を続行することができます。 たとえば、「[方法:async と await を使用して複数の Web 要求を並列実行する (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)」と「[方法:Task.WhenAll を使用して AsyncWalkthrough を拡張する (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)」を参照してください。
+     非同期メソッドにタスクの完了に依存しない処理がある場合、メソッドはこれら 2 つのステートメントの間、つまり非同期メソッドへの呼び出しから、`await` 演算子の適用までの間にその処理を続行することができます。 この例については、「[async と await を使用して複数の Web 要求を並列実行する方法 (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)」および「[Task.WhenAll を使用して AsyncWalkthrough を拡張する方法 (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)」を参照してください。
 
 3. 前の手順で `await` 演算子を追加したため、コンパイラ エラーが発生します。 この演算子は、[async](../../../language-reference/keywords/async.md) 修飾子でマークされているメソッドでのみ使用できます。 `CopyTo` への呼び出しを `CopyToAsync` への呼び出しに置き換える変換手順を繰り返す間は、エラーを無視してください。
 
@@ -690,11 +690,11 @@ namespace AsyncExampleWPF
 
 ## <a name="see-also"></a>関連項目
 
-- [Async Sample:Web へのアクセスのチュートリアル (C# および Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
+- [Async Sample:Web へのアクセスのチュートリアル (C# および Visual Basic)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hh300224(v=vs.110))
 - [async](../../../language-reference/keywords/async.md)
 - [await](../../../language-reference/operators/await.md)
 - [Async および Await を使用した非同期プログラミング (C#)](./index.md)
 - [非同期の戻り値の型 (C#)](./async-return-types.md)
 - [タスク ベースの非同期プログラミング (TAP)](https://www.microsoft.com/download/details.aspx?id=19957)
-- [方法: Task.WhenAll を使用して AsyncWalkthrough を拡張する (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
-- [方法: async と await を使用して複数の Web 要求を並列実行する (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)
+- [Task.WhenAll を使用して AsyncWalkthrough を拡張する方法 (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [async と await を使用して複数の Web 要求を並列実行する方法 (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

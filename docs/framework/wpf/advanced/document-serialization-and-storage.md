@@ -6,12 +6,12 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: d56968ad390d4681b3c1bb1580a864f9a9f0e10c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ff0555105f219db5ed891c02400b0587c825718e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424300"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974659"
 ---
 # <a name="document-serialization-and-storage"></a>ドキュメントのシリアル化および保存
 
@@ -43,7 +43,7 @@ Microsoft .NET Framework には、高品質のドキュメントを作成およ�
 
 ### <a name="xps-print-path"></a>XPS 印刷パス
 
-Microsoft .NET Framework XPS 印刷パスは、印刷出力を使用してドキュメントを書き込むための拡張可能な機構も提供します。  XPS は、ドキュメントファイル形式として機能し、[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]のネイティブな印刷スプール形式として機能します。  XPS ドキュメントは、中間形式に変換しなくても、XPS 互換プリンターに直接送信できます。  印刷パス出力オプションと機能について詳しくは、「[印刷の概要](printing-overview.md)」をご覧ください。
+Microsoft .NET Framework XPS 印刷パスは、印刷出力を使用してドキュメントを書き込むための拡張可能な機構も提供します。  XPS は、ドキュメントファイル形式として機能し、Windows Vista のネイティブな印刷スプール形式として機能します。  XPS ドキュメントは、中間形式に変換しなくても、XPS 互換プリンターに直接送信できます。  印刷パス出力オプションと機能について詳しくは、「[印刷の概要](printing-overview.md)」をご覧ください。
 
 <a name="PluginSerializers"></a>
 
@@ -55,7 +55,7 @@ Microsoft .NET Framework XPS 印刷パスは、印刷出力を使用してドキ
 
 ### <a name="using-a-plug-in-serializer"></a>プラグイン シリアライザーの使用
 
-プラグイン シリアライザーは簡単に使うことができます。  <xref:System.Windows.Documents.Serialization.SerializerProvider> クラスは、システムにインストールされている各プラグインの <xref:System.Windows.Documents.Serialization.SerializerDescriptor> オブジェクトを列挙します。  <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A> プロパティは、現在の構成に基づいてインストールされているプラグインをフィルター処理し、シリアライザーがアプリケーションによって読み込まれて使用されることを確認します。  <xref:System.Windows.Documents.Serialization.SerializerDescriptor> には、<xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A> や <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A>などの他のプロパティも用意されています。このプロパティを使用して、アプリケーションは、使用可能な出力形式のシリアライザーを選択するようにユーザーに要求できます。  XPS 用の既定のプラグインシリアライザーは .NET Framework と共に提供され、常に列挙されます。  ユーザーが出力形式を選択した後、<xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> メソッドを使用して、特定の形式の <xref:System.Windows.Documents.Serialization.SerializerWriter> を作成します。  <xref:System.Windows.Documents.Serialization.SerializerWriter>.<xref:System.Windows.Documents.Serialization.SerializerWriter.Write%2A> その後、メソッドを呼び出して、ドキュメントストリームをデータストアに出力できます。
+プラグイン シリアライザーは簡単に使うことができます。  <xref:System.Windows.Documents.Serialization.SerializerProvider> クラスは、システムにインストールされている各プラグインの <xref:System.Windows.Documents.Serialization.SerializerDescriptor> オブジェクトを列挙します。  <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A> プロパティは、現在の構成に基づいてインストールされているプラグインをフィルター処理し、シリアライザーがアプリケーションによって読み込まれて使用されることを確認します。  <xref:System.Windows.Documents.Serialization.SerializerDescriptor> には、<xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A> や <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A>などの他のプロパティも用意されています。このプロパティを使用して、アプリケーションは、使用可能な出力形式のシリアライザーを選択するようにユーザーに要求できます。  XPS 用の既定のプラグインシリアライザーは .NET Framework と共に提供され、常に列挙されます。  ユーザーが出力形式を選択した後、<xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> メソッドを使用して、特定の形式の <xref:System.Windows.Documents.Serialization.SerializerWriter> を作成します。  その後、<xref:System.Windows.Documents.Serialization.SerializerWriter.Write%2A?displayProperty=nameWithType> メソッドを呼び出して、ドキュメントストリームをデータストアに出力できます。
 
 次の例は、"PlugInFileFilter" プロパティで <xref:System.Windows.Documents.Serialization.SerializerProvider> メソッドを使用するアプリケーションを示しています。  PlugInFileFilter は、インストールされているプラグインを列挙し、<xref:Microsoft.Win32.SaveFileDialog>の使用可能なファイルオプションを含むフィルター文字列を構築します。
 

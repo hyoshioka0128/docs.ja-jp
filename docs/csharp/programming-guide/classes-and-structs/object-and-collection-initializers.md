@@ -6,12 +6,12 @@ helpviewer_keywords:
 - object initializers [C#]
 - collection initializers [C#]
 ms.assetid: c58f3db5-d7d4-4651-bd2d-5a3a97357f61
-ms.openlocfilehash: f6977fa6c5a8909d6108a5ccfc140b89a4fdd5a4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 837be04208d438f15b4cc7c7124a47ef6c038cb2
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596563"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73455440"
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>オブジェクト初期化子とコレクション初期化子 (C# プログラミング ガイド)
 
@@ -103,7 +103,7 @@ List<int> digits2 = new List<int> { 0 + 1, 12 % 3, MakeInt() };
   
 [!code-csharp[DictionaryInitializer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#DictionaryIndexerInitializer)]  
 
-上記のサンプルの場合、<xref:System.Collections.Generic.Dictionary%602.Item(%600)> を呼び出して値を設定するコードが生成されます。 C# 6 より、次の構文を使用し、ディクショナリやその他の連想コンテナーを初期化できます。 インデクサー構文の代わりに、括弧と代入によって 1 つのオブジェクトと複数の値が処理されていることにご注目ください。
+上記のサンプルの場合、<xref:System.Collections.Generic.Dictionary%602.Item(%600)> を呼び出して値を設定するコードが生成されます。 C# 6 以前は、次の構文を使用して、ディクショナリやその他の連想コンテナーを初期化できます。 インデクサー構文の代わりに、括弧と代入によって 1 つのオブジェクトと複数の値が処理されていることにご注目ください。
 
 [!code-csharp[DictionaryAddInitializer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#DictionaryAddInitializer)]  
 
@@ -126,5 +126,5 @@ List<int> digits2 = new List<int> { 0 + 1, 12 % 3, MakeInt() };
 ## <a name="see-also"></a>関連項目
 
 - [C# プログラミング ガイド](../index.md)
-- [LINQ クエリ式](../linq-query-expressions/index.md)
+- [C# での LINQ](../../linq/index.md)
 - [匿名型](anonymous-types.md)

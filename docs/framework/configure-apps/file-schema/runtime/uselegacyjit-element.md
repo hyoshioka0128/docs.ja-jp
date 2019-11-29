@@ -2,12 +2,12 @@
 title: <useLegacyJit> 要素
 ms.date: 04/26/2017
 ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
-ms.openlocfilehash: 47aacb629dc234d9aeaab1ef6e6844fbbe5dbfdb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a126b8c0050a8d1fd96a3d090f9b018a9faa07a7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73115108"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968852"
 ---
 # <a name="uselegacyjit-element"></a>\<useLegacyJit> 要素
 
@@ -44,7 +44,7 @@ ms.locfileid: "73115108"
   
 ### <a name="child-elements"></a>子要素
 
-なし
+None
   
 ### <a name="parent-elements"></a>親要素  
   
@@ -53,7 +53,7 @@ ms.locfileid: "73115108"
 | `configuration` | 共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。 |  
 | `runtime`       | ランタイム初期化オプションに関する情報を含んでいます。                                                        |  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 
 .NET Framework 4.6 以降、共通言語ランタイムは、Just-in-time (JIT) コンパイルに新しい64ビットコンパイラを既定で使用します。 場合によっては、以前のバージョンの64ビット JIT コンパイラによって JIT コンパイルされたアプリケーションコードとの動作が異なる場合があります。 `<useLegacyJit>` 要素の `enabled` 属性を `1`に設定することにより、新しい64ビット JIT コンパイラを無効にし、代わりに従来の64ビット JIT コンパイラを使用してアプリをコンパイルできます。  
   
@@ -66,7 +66,7 @@ ms.locfileid: "73115108"
 
   `COMPLUS_useLegacyJit` 環境変数を `0` (新しい64ビット JIT コンパイラを使用) または `1` (古い64ビット JIT コンパイラを使用) のいずれかに設定します。
   
-  ```  
+  ```env  
   COMPLUS_useLegacyJit=0|1  
   ```  
   
@@ -95,4 +95,4 @@ ms.locfileid: "73115108"
 
 - [\<ランタイム > 要素](runtime-element.md)
 - [\<configuration> 要素](../configuration-element.md)
-- [軽減策:新しい64ビット JIT コンパイラ](../../../migration-guide/mitigation-new-64-bit-jit-compiler.md)
+- [軽減策: 新しい 64 ビット JIT コンパイラ](../../../migration-guide/mitigation-new-64-bit-jit-compiler.md)

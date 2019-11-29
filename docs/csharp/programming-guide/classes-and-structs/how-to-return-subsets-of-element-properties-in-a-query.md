@@ -1,18 +1,18 @@
 ---
-title: '方法: クエリで要素のプロパティのサブセットを返す - C# プログラミング ガイド'
+title: クエリで要素のプロパティのサブセットを返す方法 - C# プログラミング ガイド
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: 196383731507137bf4309d38d27b36f29b23a06c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1266b866d671854c787d907b91f654c128681de9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419300"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970458"
 ---
-# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>方法: クエリで要素のプロパティのサブセットを返す (C# プログラミング ガイド)
+# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>クエリで要素のプロパティのサブセットを返す方法 (C# プログラミング ガイド)
 次の両方の条件に当てはまる場合は、クエリ式に匿名型を使用します。  
   
 - 各ソース要素のプロパティの一部のみを返したい。  

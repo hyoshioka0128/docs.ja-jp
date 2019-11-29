@@ -5,14 +5,14 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
 ms.custom: ''
-ms.openlocfilehash: 7480c86af1acd482adff5e3e24dc229f24af0e5b
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 64920f1d226fcc8265d0be252d4751f2ba278cc1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216319"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973288"
 ---
-# <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>方法: Windows Forms デスクトップ アプリを .NET Core に移植する
+# <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Windows フォーム デスクトップ アプリを .NET Core に移植する方法
 
 この記事では、Windows Forms ベースのデスクトップ アプリを、.NET Framework から .NET Core 3.0 に移植する方法について説明します。 .NET Core 3.0 SDK には、Windows Forms アプリケーションのサポートが含まれています。 Windows Forms は、まだ Windows 専用のフレームワークであるため、Windows 上でのみ実行されます。 この例では、.NET Core CLI を使用して、プロジェクトの作成と管理を行います。
 

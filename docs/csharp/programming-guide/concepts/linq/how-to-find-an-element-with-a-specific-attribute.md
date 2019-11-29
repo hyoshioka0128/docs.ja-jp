@@ -1,15 +1,15 @@
 ---
-title: 方法:特定の属性を持つ要素を検索する (C#)
+title: 特定の属性を持つ要素を検索する方法 (C#)
 ms.date: 07/20/2015
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: da2d1691af6268a97e1f586e92c26bbb26906100
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 106885b8658c493caab3101e6b4ce921589076eb
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593608"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141164"
 ---
-# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>方法:特定の属性を持つ要素を検索する (C#)
+# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>特定の属性を持つ要素を検索する方法 (C#)
 このトピックでは、特定の値を含む属性を持つ要素を検索する方法について説明します。  
   
 ## <a name="example"></a>例  

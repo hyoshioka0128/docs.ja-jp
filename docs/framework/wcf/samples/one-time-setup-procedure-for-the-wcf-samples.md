@@ -2,12 +2,12 @@
 title: Windows Communication Foundation サンプルの 1 回限りのセットアップの手順
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 90463a83b8a10085d4df90a2832886e43c51c734
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7dbc4a1b5235c0cb6aa154379358c7761bc4ab1d
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424928"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141845"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Windows Communication Foundation サンプルの 1 回限りのセットアップの手順
 
@@ -22,7 +22,7 @@ ms.locfileid: "73424928"
 
 1. ASP.NET が設定されていることを確認します。 ASP.NET をセットアップする方法の詳細については、[インターネットインフォメーションサービスのホスティング手順](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)に関する説明を参照してください。
 
-2. [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] がインストールされていることを確認します。 次のバージョンの v2.0 (またはそれ以降) のディレクトリを検索します: **\windows\ microsoft.net \framework**
+2. .NET Framework 4 がインストールされていることを確認します。 次のバージョンの v2.0 (またはそれ以降) のディレクトリを検索します: **\windows\ microsoft.net \framework**
 
 3. Visual Studio 2012 がインストールされておらず、オペレーティングシステムが Windows Server 2008 SP2 以降ではない場合は、[修正プログラム 251798](https://go.microsoft.com/fwlink/?LinkId=184693)をインストールします。
 
@@ -37,15 +37,15 @@ ms.locfileid: "73424928"
     ```
 
     > [!WARNING]
-    > コマンド `aspnet_regiis –i –enable` を実行すると、[!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)]を使用して既定のアプリケーションプールが実行されるようになります。これにより、同じコンピューター上の他のアプリケーションに対して非互換性の問題が生じる可能性があります。
+    > コマンド `aspnet_regiis –i –enable` を実行すると、既定のアプリプールが .NET Framework 4 を使用して実行されます。これにより、同じコンピューター上の他のアプリケーションに対して非互換性の問題が生じる可能性があります。
 
 5. [ファイアウォールの指示](../../../../docs/framework/wcf/samples/firewall-instructions.md)に従って、サンプルで使用するポートを有効にします。
 
-6. 次の既定のディレクトリを確認してください: \<InstallDrive >: **\WF_WCF_Samples**。 サンプルが既にインストールされている場合は、これが既定のディレクトリです。
+6. 次の既定のディレクトリを確認してください: \<InstallDrive > **:\ WF_WCF_Samples**。 サンプルが既にインストールされている場合は、これが既定のディレクトリです。
 
 7. サンプルがインストールされていない場合は、の[C#](https://go.microsoft.com/fwlink/?LinkId=190939)サンプルダウンロード場所からインストールします。
 
-8. サンプルをインストールした後、\<InstallDrive >: **\WF_WCF_Samples\WCF\Setup\\** にアクセスします。
+8. サンプルをインストールしたら、\<InstallDrive > **:\ WF_WCF_Samples \wcf\setup\\** にアクセスします。
 
 9. **Setupvroot**バッチファイルを実行します。 次の手順が実行されます。
 
@@ -65,7 +65,7 @@ ms.locfileid: "73424928"
 
 11. コンピューター上に C:\logs ディレクトリを作成します (一部のサンプルで必要になることがあります)。 このフォルダーに対する書き込みアクセスが適切なアカウントに付与されていることを確認してください。 Windows 7、[!INCLUDE[wv](../../../../includes/wv-md.md)]、および Windows Server 2008 R2 では、このアカウントは**Network Service**です。 [!INCLUDE[lserver](../../../../includes/lserver-md.md)] では NT Authority\Network Service、 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] では ASPNET です。
 
-12. Setupcerttool.bat ファイルを実行します。 このファイルは、\<InstallPath > \WF_WCF_Samples\WCF\Setup\ フォルダーにあります。  このスクリプトでは、次のタスクが実行されます。
+12. Setupcerttool.bat ファイルを実行します。 このファイルは、\<InstallPath > \ WF_WCF_Samples \WCF\Setup\ フォルダーにあります。  このスクリプトでは、次のタスクが実行されます。
 
     - FindPrivateKey ツールをビルドします。
 

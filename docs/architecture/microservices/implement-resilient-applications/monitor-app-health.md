@@ -2,12 +2,12 @@
 title: 正常性の監視
 description: 正常性の監視を実施する 1 つの方法を探ります。
 ms.date: 01/07/2019
-ms.openlocfilehash: 2d43efa7b6cfb855a033ee4d766c64c2472ceb36
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f1d63e04bbea95fcf0a9f9d3b50aef0e7d4a830e
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094081"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732910"
 ---
 # <a name="health-monitoring"></a>正常性の監視
 
@@ -123,7 +123,7 @@ eShopOnContainers のマイクロサービスは、そのタスクを実行す�
 
 たとえば、`Catalog.API` マイクロ サービスでは、次の NuGet パッケージが追加されています。
 
-![AspNetCore.Diagnostics.HealthChecks NuGet パッケージが参照される Catalog.API プロジェクトのソリューション エクスプローラー ビュー](./media/image6.png)
+![AspNetCore.Diagnostics.HealthChecks NuGet パッケージのスクリーンショット。](./media/monitor-app-health/aspnet-core-diagnostics-health-checks.png)
 
 **図 8-7** AspNetCore.Diagnostics.HealthChecks を使用して Catalog.API に実装されたカスタム正常性チェック
 
@@ -191,7 +191,7 @@ app.UseHealthChecks("/hc", new HealthCheckOptions()
 
 この記事の説明に従って正常性チェックを構成し、マイクロサービスを Docker で実行した後、正常かどうかをブラウザーから直接確認することができます。 図 8-8 に示すように、Docker ホスト内でコンテナー ポートを公開し、外部の Docker ホスト IP または `localhost` を介してコンテナーにアクセスできるようにする必要があります。
 
-![正常性チェックから返された JSON 応答のブラウザー ビュー](./media/image7.png)
+![正常性チェックから返された JSON 応答のスクリーンショット。](./media/monitor-app-health/health-check-json-response.png)
 
 **図 8-8** ブラウザーからの単一サービスの正常性状態の確認
 
@@ -205,7 +205,7 @@ eShopOnContainers サンプルには、図 8-9 に示すように、サンプル
 
 幸い、[AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) からは [AspNetCore.HealthChecks.UI](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI/) NuGet パッケージも提供されます。このパッケージを利用し、構成された URI から正常性チェックの結果を表示できます。
 
-![eShopOnContainers のすべてのマイクロサービスの正常性状態が表示された WebStatus アプリのブラウザー ビュー](./media/image8.png)
+![Health Checks UI の eShopOnContainers の正常性状態のスクリーンショット。](./media/monitor-app-health/health-check-status-ui.png)
 
 **図 8-9** eShopOnContainers のサンプルの正常性チェック レポート
 

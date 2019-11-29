@@ -29,7 +29,7 @@ ms.locfileid: "73841763"
 
 モノリシックアプリケーションに配置するには、通常、1つの小さいモジュールだけを置換する場合でも、アプリケーション全体を再起動する必要があります。 アプリケーションをホストしているマシンの数によっては、デプロイ中にダウンタイムが発生する可能性があります。
 
-### <a name="hosting"></a>ホスト
+### <a name="hosting"></a>ホスティング
 
 モノリシックアプリケーションは、1台のコンピューターインスタンスで完全にホストされます。 これには、分散アプリケーションのどのモジュールよりも高い機能を必要とするハードウェアが必要になる場合があります。 また、アプリのいずれかの部分がボトルネックになった場合は、スケールアウトするために、アプリケーション全体を追加のマシンノードにデプロイする必要があります。
 
@@ -206,7 +206,7 @@ Docker サポートに加えて、図3-8 に示すコンテナーオーケスト
 
 **図 3-9**. Visual Studio の Orchestrator サポートの追加
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [Kubernetes とは](https://blog.newrelic.com/engineering/what-is-kubernetes/)
 - [Minikube を使用した Kubernetes のインストール](https://kubernetes.io/docs/setup/learning-environment/minikube/)

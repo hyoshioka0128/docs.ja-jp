@@ -1,25 +1,25 @@
 ---
-title: チュートリアル:センチメントの分析 - 二項分類
+title: 'チュートリアル: センチメントの分析 - 二項分類'
 description: このチュートリアルでは、Web サイトのコメントのセンチメントを分類して適切なアクションを実行する Razor Pages アプリケーションの作成方法について説明します。 この二項センチメント分類子では、Visual Studio の C# を使用します。
 ms.date: 10/08/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4a97fb70caafd7b0003830259ddbb0ec72a2ca8a
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 5e5b60a53db70b33ed798bcf33497b74911ba727
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180270"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974793"
 ---
-# <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>チュートリアル:ML.NET モデル ビルダーを使用して Web アプリケーションで Web サイトのコメントのセンチメントを分析する
+# <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>チュートリアル: ML.NET モデル ビルダーを使用して Web アプリケーションで Web サイトのコメントのセンチメントを分析する
 
 ここでは、Web アプリケーション内部でコメントからセンチメントをリアルタイムで分析する方法を学習します。
 
 このチュートリアルでは、Web サイトのコメントのセンチメントをリアルタイムで分類する ASP.NET Core Razor Pages アプリケーションの作成方法について説明します。
 
-このチュートリアルでは、以下の内容を学習します。
+このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
 >
@@ -49,7 +49,7 @@ ms.locfileid: "72180270"
     1. 次に、 **[ASP.NET Core Web アプリケーション]** プロジェクト テンプレートを選択します。
     1. **[名前]** テキスト ボックスに「SentimentRazor」と入力します。
     1. **[ソリューションのディレクトリの作成]** チェックボックスは、既定でオンになっています。 オンになっていない場合は、オンにします。
-    1. **[OK]**  ボタンを選択します。
+    1. **[OK]** ボタンを選択します。
     1. さまざまな種類の ASP.NET Core プロジェクトが表示されているウィンドウで、 **[Web アプリケーション]** を選択し、 **[OK]** ボタンを選択します。
 
 ## <a name="prepare-and-understand-the-data"></a>データを準備して理解する
@@ -58,7 +58,7 @@ ms.locfileid: "72180270"
 
 *wikipedia-detox-250-line-data.tsv* データセットの各行は、ユーザーが Wikipedia に残した異なるレビューを表します。 最初の列は、テキストのセンチメントを表し (0 は無害、1 は有害)、2 番目の列はユーザーが残したコメントを表します。 列はタブで区切られます。 データは次のようになります。
 
-| センチメント | SentimentText |
+| Sentiment | SentimentText |
 | :---: | :---: |
 1 | ==無礼== なんて無礼な。Carl のその画像をアップロードし戻しておくのが身のためだぞ。
 1 | == OK! ==  それなら、WILD ONES WIKI をぶっ壊す!!!
@@ -128,7 +128,7 @@ ms.locfileid: "72180270"
 
 1. *Microsoft.Extensions.ML* NuGet パッケージをインストールします。
 
-    1. **ソリューション エクスプローラー**でプロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選びます。
+    1. **ソリューション エクスプローラー**で、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
     1. [パッケージ ソース] として [nuget.org] を選択します。
     1. **[参照]** タブを選択して、「**Microsoft.Extensions.ML**」を検索します。
     1. リストでパッケージを選択して、 **[インストール]** ボタンを選択します。
@@ -160,7 +160,7 @@ ms.locfileid: "72180270"
 
         string fullPath = Path.Combine(assemblyFolderPath, relativePath);
         return fullPath;
-    }    
+    }
     ```
 
 1. `Startup` クラス コンストラクターで `GetAbsolutePath` メソッドを使用して、`_modelPath` を設定します。
@@ -201,7 +201,7 @@ ms.locfileid: "72180270"
     public IndexModel(PredictionEnginePool<ModelInput, ModelOutput> predictionEnginePool)
     {
         _predictionEnginePool = predictionEnginePool;
-    }    
+    }
     ```
 
 1. `PredictionEnginePool` を使用して、Web ページから受け取ったユーザー入力から予測を行うメソッド ハンドラーを作成します。
@@ -287,7 +287,7 @@ ms.locfileid: "72180270"
 
 ## <a name="next-steps"></a>次の手順
 
-このチュートリアルでは、以下の内容を学習しました。
+このチュートリアルでは、次の作業を行う方法を学びました。
 > [!div class="checklist"]
 >
 > - ASP.NET Core Razor Pages アプリケーションを作成する

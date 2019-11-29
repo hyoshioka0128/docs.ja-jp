@@ -8,12 +8,12 @@ helpviewer_keywords:
 - events [WPF], windows
 - WPF [WPF], events
 ms.assetid: d3b93c6f-aa6b-486d-a010-d097ea8a516b
-ms.openlocfilehash: e6aa6fea3c19d452013e4e77d7ef4773a2f45343
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 70fbd1a4c4062708ab6082c4ec39e3e99354b004
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010346"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73460506"
 ---
 # <a name="events-wpf"></a>イベント (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では、アプリケーションの要素ツリー内のさまざまなリスナー上に存在するハンドラーを呼び出すことができるルーティング イベントが導入されています。  
@@ -27,9 +27,9 @@ ms.locfileid: "62010346"
  [プロパティ変更イベント](property-change-events.md)  
  [Visual Basic と WPF のイベント処理](visual-basic-and-wpf-event-handling.md)  
  [弱いイベント パターン](weak-event-patterns.md)  
- [方法トピック](events-how-to-topics.md)  
+ [方法のトピック](events-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>参照先  
  <xref:System.Windows.RoutedEvent>  
   
  <xref:System.Windows.EventManager>  
@@ -41,9 +41,9 @@ ms.locfileid: "62010346"
   [WPF の XAML](xaml-in-wpf.md)  
   [基本要素](base-elements.md)  
   [要素のツリーおよびシリアル化](element-tree-and-serialization.md)  
-  [Properties](properties-wpf.md)  
+  [プロパティ](properties-wpf.md)  
   [入力](input-wpf.md)  
   [リソース](resources-wpf.md)  
-  [スタイルとテンプレート](../controls/styling-and-templating.md)  
+  [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
   [WPF のコンテンツ モデル](../controls/wpf-content-model.md)  
   [スレッド モデル](threading-model.md)

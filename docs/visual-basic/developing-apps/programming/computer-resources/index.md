@@ -1,17 +1,17 @@
 ---
-title: コンピューター リソースへのアクセス (Visual Basic)
+title: コンピューター リソースへのアクセス
 ms.date: 07/20/2015
 helpviewer_keywords:
 - computer resources [Visual Basic]
 - My.Computer object [Visual Basic], tasks
 - computer resources [Visual Basic], accessing
 ms.assetid: 75b81c88-f7c0-46e0-95c8-0c006d2120f9
-ms.openlocfilehash: 5eb240b23d255987e96c58fefc7007c8030c6502
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 27310a50289b9b2c315f52ad471da1f32ef0721a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524402"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345529"
 ---
 # <a name="accessing-computer-resources-visual-basic"></a>コンピューター リソースへのアクセス (Visual Basic)
 

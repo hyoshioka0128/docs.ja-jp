@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: 757cbce98c73821a19ee162b7828fa4ad952de3c
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: a997cc62b03a0d92d5ef76173981f5a9e287b13a
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73195490"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204593"
 ---
 # <a name="c-walkthroughs"></a>C# チュートリアル
 チュートリアルでは、製品や特定の機能領域について学習を開始するのに適した一般的なシナリオについて詳細な手順を示します。  
@@ -24,7 +24,7 @@ ms.locfileid: "73195490"
  [async](./language-reference/keywords/async.md) と [await](./language-reference/operators/await.md) を使用して非同期ソリューションを作成する方法を示します。  
   
  [Creating a Windows Runtime Component in C# or Visual Basic and Calling it from JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript) (C# および Visual Basic での Windows ランタイム コンポーネントの作成および JavaScript による呼び出し)  
- Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化した後、JavaScript を使用して Windows 用に作成された [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリからコンポーネントを呼び出す方法を示します。  
+ Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化した後、JavaScript を使用して Windows 用に作成された Windows 8.x Store アプリからコンポーネントを呼び出す方法を示します。  
   
  [Office のプログラミング (C# および Visual Basic)](./programming-guide/interop/walkthrough-office-programming.md)  
  C# および Visual Basic を使用して、Excel ブックや Word 文書を作成する方法を示します。  

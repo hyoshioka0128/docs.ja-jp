@@ -5,12 +5,12 @@ ms.assetid: b65ea7de-0801-477a-a39c-e914c2cc107c
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: bf1cb28a6e3096a42aae1c777f6d2d6f9cc16c49
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: a74d4b74ead8492028a092e090f9281231802a87
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774327"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348178"
 ---
 # <a name="friend-assemblies"></a>フレンド アセンブリ
 
@@ -55,7 +55,6 @@ public class ClassWithFriendMethod
 
 ```vb
 Imports System.Runtime.CompilerServices
-Imports System
 <Assembly: InternalsVisibleTo("AssemblyB")>
 
 ' Friend class.

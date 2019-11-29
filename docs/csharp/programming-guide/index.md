@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: c9d879d1760f543d5a4722977d4dee8bca856016
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ad4e953941e189e6ed9baefb6cb07e7955000c7f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739194"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283113"
 ---
 # <a name="c-programming-guide"></a>C# プログラミング ガイド
 
@@ -89,4 +89,3 @@ ms.locfileid: "73739194"
 ## <a name="see-also"></a>関連項目
 
 - [C# リファレンス](../language-reference/index.md)
-- [C#](../index.md)

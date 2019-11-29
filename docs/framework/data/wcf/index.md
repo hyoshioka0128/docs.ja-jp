@@ -5,18 +5,18 @@ helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: 017fe2177cf824d461b4c51ea805f75b6ddbe064
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1ce152b84f17a35982a75f54b5418623ba39210f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779993"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975233"
 ---
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 
-WCF Data Services (旧称 "ADO.NET Data Services" と呼ばれていた) は、を使用[!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]して Web またはイントラネット上のデータを公開および使用するサービスを作成できるようにする、.NET Framework のコンポーネントです。 [転送 (REST)](https://go.microsoft.com/fwlink/?LinkId=113919)。 OData は、URI でアドレス指定できるリソースとしてデータを公開します。 標準的な HTTP 動詞である GET、PUT、POST、および DELETE を使用してデータにアクセスし、変更できます。 OData は、 [Entity Data Model](../adonet/entity-data-model.md)のエンティティとリレーションシップの規則を使用して、アソシエーションによって関連付けられたエンティティのセットとしてリソースを公開します。
+WCF Data Services (旧称 "ADO.NET Data Services" と呼ばれていた) は、 [Representational State Transfer (REST)](https://go.microsoft.com/fwlink/?LinkId=113919)のセマンティクスを使用して、Web またはイントラネット上のデータを公開および使用するための Open Data Protocol (OData) を使用するサービスを作成できるようにする、.NET Framework のコンポーネントです。 OData は、URI でアドレス指定できるリソースとしてデータを公開します。 標準的な HTTP 動詞である GET、PUT、POST、および DELETE を使用してデータにアクセスし、変更できます。 OData は、 [Entity Data Model](../adonet/entity-data-model.md)のエンティティとリレーションシップの規則を使用して、アソシエーションによって関連付けられたエンティティのセットとしてリソースを公開します。
 
-WCF Data Services は、OData プロトコルを使用してリソースのアドレス指定と更新を行います。 このようにして、OData をサポートする任意のクライアントからこれらのサービスにアクセスできます。 OData を使用すると、よく知られている転送形式を使用して、リソースにデータを要求して書き込むことができます。Atom は、データを XML として交換および更新するための標準のセットであり、AJAX アプリケーションで幅広く使用されるテキストベースのデータ交換形式である JavaScript Object Notation (JSON) です。
+WCF Data Services は、OData プロトコルを使用してリソースのアドレス指定と更新を行います。 このようにして、OData をサポートする任意のクライアントからこれらのサービスにアクセスできます。 OData を使用すると、一般的な転送形式 (Atom、データを XML として交換および更新するための標準のセット)、および AJAX で幅広く使用されるテキストベースのデータ交換形式である JavaScript Object Notation (JSON) を使用して、リソースにデータを要求して書き込むことができます。プログラム.
 
 WCF Data Services は、さまざまなソースから送信されたデータを OData フィードとして公開できます。 Visual Studio tools を使用すると、ADO.NET Entity Framework データモデルを使用して、OData ベースのサービスを簡単に作成できます。 また、共通言語ランタイム (CLR) クラスに基づいて OData フィードを作成したり、遅延バインディングまたは型指定されていないデータを作成したりすることもできます。
 
@@ -40,19 +40,19 @@ WCF Data Services には、一般的な .NET Framework クライアントアプ�
 
 - [クイック スタート](quickstart-wcf-data-services.md)
 
-- [方法: データサービスクエリの実行](how-to-execute-data-service-queries-wcf-data-services.md)
+- [方法: データ サービス クエリを実行する](how-to-execute-data-service-queries-wcf-data-services.md)
 
 - [方法: Windows Presentation Foundation 要素にデータをバインドする](bind-data-to-wpf-elements-wcf-data-services.md)
 
 OData の詳細を知りたい...
 
-- [ホワイトOData の概要](https://go.microsoft.com/fwlink/?LinkId=220867)
+- [ホワイト ペーパー: OData の概要](https://go.microsoft.com/fwlink/?LinkId=220867)
 
 - [Open Data Protocol Web サイト](https://go.microsoft.com/fwlink/?LinkID=184554)
 
-- [OData』](https://go.microsoft.com/fwlink/?LinkID=185248)
+- [OData: SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
 
-- [ODataよく寄せられる質問](https://go.microsoft.com/fwlink/?LinkId=185867)
+- [OData: よく寄せられる質問](https://go.microsoft.com/fwlink/?LinkId=185867)
 
 ビデオを見ています...
 
@@ -60,7 +60,7 @@ OData の詳細を知りたい...
 
 - [WCF Data Services 開発者用ビデオ](https://go.microsoft.com/fwlink/?LinkId=220861)
 
-- [OData開発者向け Web サイト](https://go.microsoft.com/fwlink/?LinkId=185866)
+- [OData: 開発者 Web サイト](https://go.microsoft.com/fwlink/?LinkId=185866)
 
 エンドツーエンドのサンプルを確認するには...
 
@@ -68,7 +68,7 @@ OData の詳細を知りたい...
 
 - [MSDN サンプル ギャラリーのその他の WCF Data Services サンプル](https://go.microsoft.com/fwlink/?LinkId=220866)
 
-- [OData』](https://go.microsoft.com/fwlink/?LinkID=185248)
+- [OData: SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
 
 Visual Studio との統合について知りたい
 
@@ -82,7 +82,7 @@ Visual Studio との統合について知りたい
 
 - [概要](wcf-data-services-overview.md)
 
-- [ホワイトOData の概要](https://go.microsoft.com/fwlink/?LinkId=220867)
+- [ホワイト ペーパー: OData の概要](https://go.microsoft.com/fwlink/?LinkId=220867)
 
 - [アプリケーション シナリオ](application-scenarios-wcf-data-services.md)
 
@@ -100,7 +100,7 @@ LINQ...
 
 - [LINQ に関する留意点](linq-considerations-wcf-data-services.md)
 
-- [方法: データサービスクエリの実行](how-to-execute-data-service-queries-wcf-data-services.md)
+- [方法: データ サービス クエリを実行する](how-to-execute-data-service-queries-wcf-data-services.md)
 
 まだいくつかの情報が必要です...
 

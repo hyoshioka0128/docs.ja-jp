@@ -1,5 +1,5 @@
 ---
-title: Visual Basic におけるプロシージャ
+title: 手順
 ms.date: 04/28/2017
 helpviewer_keywords:
 - procedures [Visual Basic], structured code
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - structured code [Visual Basic], procedures
 - procedures
 ms.assetid: 9effbcf0-80a0-4d1a-98f4-2c6920592766
-ms.openlocfilehash: 4b6dfe30268aef7dc61f130c2775e2cc0d1503e8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b959f4b6986bc325c97c7cbe9aeee0341832f6cc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64635623"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345994"
 ---
 # <a name="procedures-in-visual-basic"></a>Visual Basic におけるプロシージャ
-A*プロシージャ*宣言ステートメントで囲まれている Visual Basic ステートメント ブロックは、(`Function`、 `Sub`、 `Operator`、 `Get`、 `Set`) し、対応する`End`宣言します。 Visual Basic でのすべての実行可能なステートメントは、何らかのプロシージャ内である必要があります。  
+*プロシージャ*は、宣言ステートメント (`Function`、`Sub`、`Operator`、`Get`、`Set`)、および一致する `End` 宣言で囲まれた Visual Basic ステートメントのブロックです。 Visual Basic 内のすべての実行可能なステートメントは、何らかのプロシージャ内になければなりません。  
   
 ## <a name="calling-a-procedure"></a>プロシージャの呼び出し  
  コード内の他の場所からプロシージャを呼び出します。 これは、*プロシージャ コール*と呼ばれています。 プロシージャの実行が終了すると、それを呼び出したコード (*呼び出しコード*と呼ばれます) に制御が戻ります。 呼び出しコードは、名前でプロシージャを指定して、これに制御を転送するステートメント、またはステートメント内の式です。  
@@ -34,7 +34,7 @@ A*プロシージャ*宣言ステートメントで囲まれている Visual Bas
  プロシージャは、ほとんどの場合、呼び出すたびにデータごとに動作する必要があります。 この情報は、プロシージャ コールの一部としてプロシージャに渡すことができます。 プロシージャは、*パラメーター*を 0 個、またはそれ以上でも定義することができ、それぞれが渡す必要がある値を表しています。 プロシージャ定義の各パラメーターに相当するのが、プロシージャ コールの*引数*です。 引数は、指定したプロシージャ コールの対応するパラメーターに渡される値を表しています。  
   
 ## <a name="types-of-procedures"></a>プロシージャの種類  
- Visual Basic では、いくつかの種類のプロシージャを使用します。  
+ Visual Basic は、次のようないくつかの種類のプロシージャを使用します。  
   
 - [Sub プロシージャ](./sub-procedures.md)はアクションを実行しますが、呼び出しコードに値を返しません。  
   
@@ -61,9 +61,9 @@ A*プロシージャ*宣言ステートメントで囲まれている Visual Bas
   
 - 1 つのプログラムで使用するために開発したプロシージャを、他のプログラムでも使用できます。多くの場合、プログラムをほとんどまたはまったく変更せずに使用できます。 これにより、コードの重複を避けることができます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [方法: プロシージャを作成します。](./how-to-create-a-procedure.md)
+- [方法 : プロシージャを作成する](./how-to-create-a-procedure.md)
 - [Sub プロシージャ](./sub-procedures.md)
 - [Function プロシージャ](./function-procedures.md)
 - [Property プロシージャ](./property-procedures.md)

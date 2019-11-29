@@ -4,12 +4,12 @@ description: 機械学習モデルに適した ML.NET アルゴリズムの選�
 author: natke
 ms.topic: overview
 ms.date: 06/05/2019
-ms.openlocfilehash: dfea21908258e6eb0b696de7affe1b03cff5cb3b
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 0721418d8b0b3c9ab645eb9885b0f4951c37762e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972087"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976697"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>ML.NET アルゴリズムの選び方
 
@@ -19,9 +19,9 @@ ms.locfileid: "68972087"
 
 ## <a name="trainer--algorithm--task"></a>トレーナー = アルゴリズム + タスク
 
-アルゴリズムは、**モデル**を生成するために実行される数学です。 アルゴリズムが異なると、特性が異なるモデルが生成されます。 
+アルゴリズムは、**モデル**を生成するために実行される数学です。 アルゴリズムが異なると、特性が異なるモデルが生成されます。
 
-ML.NET では、同じアルゴリズムを異なるタスクに適用できます。 たとえば、確率的双対座標上昇法は、二項分類、多クラス分類、回帰に使用できます。 違いは、タスクに合わせてアルゴリズムの出力が解釈される方法にあります。 
+ML.NET では、同じアルゴリズムを異なるタスクに適用できます。 たとえば、確率的双対座標上昇法は、二項分類、多クラス分類、回帰に使用できます。 違いは、タスクに合わせてアルゴリズムの出力が解釈される方法にあります。
 
 ML.NET には、各アルゴリズムとタスクの組み合わせに対して、トレーニング アルゴリズムを実行し、解釈するコンポーネントが用意されています。 これらのコンポーネントはトレーナーと呼ばれます。 たとえば、<xref:Microsoft.ML.Trainers.SdcaRegressionTrainer> には、**回帰**タスクに適用される **StochasticDualCoordinatedAscent** アルゴリズムが使用されます。
 

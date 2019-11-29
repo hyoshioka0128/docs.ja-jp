@@ -17,7 +17,7 @@ ms.locfileid: "73114918"
   
 [ **\<configuration>** ](../configuration-element.md)\
 &nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<UseSmallInternalThreadStacks >**  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<UseSmallInternalThreadStacks>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -38,7 +38,7 @@ ms.locfileid: "73114918"
   
 |[値]|説明|  
 |-----------|-----------------|  
-|TRUE|明示的なスタックサイズを要求します。|  
+|true|明示的なスタックサイズを要求します。|  
 |False|既定のスタックサイズを使用します。 これは .NET Framework 4 の既定値です。|  
   
 ### <a name="child-elements"></a>子要素  

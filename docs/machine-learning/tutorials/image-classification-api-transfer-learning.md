@@ -3,22 +3,19 @@ title: 'チュートリアル: 転移学習を利用した自動ビジュアル�
 description: このチュートリアルでは、転移学習を利用し、ML.NET で TensorFlow ディープ ラーニング モデルをトレーニングする方法を説明します。具体的には、画像検出 API を利用し、コンクリートの表面の画像をひび割れあり/ひび割れなしに分類します。
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 10/25/2019
+ms.date: 11/14/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: b8aec80134188811eb80ad1394e5a64d65a3c6f0
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 443f9e9a83ebf31bb6c62323015af4a554323b67
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72961954"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74205055"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>チュートリアル: 転移学習と ML.NET Image Classification API を利用した自動ビジュアル検査
 
 転移学習、事前トレーニング済みの TensorFlow モデル、ML.NET Image Classification API を利用してカスタム ディープ ラーニング モデルをトレーニングし、コンクリートの表面の画像をひび割れあり/ひび割れなしに分類する方法について説明します。
-
-> [!NOTE]
-> このチュートリアルでは、プレビュー版の ML.NET Image Classification API を使用します。
 
 このチュートリアルでは、次の作業を行う方法について説明します。
 > [!div class="checklist"]
@@ -56,7 +53,7 @@ ML.NET からは、画像分類を実行するさまざまな方法が与えら�
 
 転移学習では、ある問題を解決することで得られた知識が関連する別の問題に応用されます。
 
-ディープ ラーニング モデルを最初からトレーニングするには、いくつかのパラメーター、大量のラベル付きトレーニング データ、膨大な量の計算リソース (数百時間の GPU) を設定する必要があります。 事前トレーニング済みモデルと転移学習を使用すると、トレーニング プロセスをショートカットできます。 
+ディープ ラーニング モデルを最初からトレーニングするには、いくつかのパラメーター、大量のラベル付きトレーニング データ、膨大な量の計算リソース (数百時間の GPU) を設定する必要があります。 事前トレーニング済みモデルと転移学習を使用すると、トレーニング プロセスをショートカットできます。
 
 ## <a name="training-process"></a>トレーニング プロセス
 
@@ -77,14 +74,14 @@ Image Classification API のトレーニング プロセスは、事前トレー
 
 ## <a name="understand-the-pretrained-model"></a>事前トレーニング済みモデルについて
 
-このチュートリアルで使用される事前トレーニング済みモデルは、Residual Network (ResNet) v2 モデルの 101 レイヤー型です。 元のモデルは、画像を 1,000 個のカテゴリに分類する目的でトレーニングされています。 このモデルでは、サイズ 224 x 224 の画像を入力として受け取り、トレーニングしたクラス別にクラス確率を出力します。 このモデルの一部は、2 つのクラス間で予測する目的でカスタム画像を利用して新しいモデルをトレーニングするために使用されます。 
+このチュートリアルで使用される事前トレーニング済みモデルは、Residual Network (ResNet) v2 モデルの 101 レイヤー型です。 元のモデルは、画像を 1,000 個のカテゴリに分類する目的でトレーニングされています。 このモデルでは、サイズ 224 x 224 の画像を入力として受け取り、トレーニングしたクラス別にクラス確率を出力します。 このモデルの一部は、2 つのクラス間で予測する目的でカスタム画像を利用して新しいモデルをトレーニングするために使用されます。
 
 ## <a name="create-console-application"></a>コンソール アプリケーションの作成
 
 転移学習と Image Classification API の概要を理解できたところで、アプリケーションを構築しましょう。
 
 1. "DeepLearning_ImageClassification_Binary" という名前の **C# .NET Core コンソール アプリケーション**を作成します。
-1. **Microsoft.ML 1.4.0-preview2** NuGet パッケージをインストールします。
+1. **Microsoft.ML** バージョン **1.4.0** NuGet パッケージをインストールします。
     1. ソリューション エクスプローラーで、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
     1. [パッケージ ソース] として [nuget.org] を選択します。
     1. **[参照]** タブを選択します。
@@ -92,14 +89,14 @@ Image Classification API のトレーニング プロセスは、事前トレー
     1. **Microsoft.ML** を探します。
     1. **[インストール]** ボタンを選択します。
     1. **[変更のプレビュー]** ダイアログの **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、 **[ライセンスの同意]** ダイアログの **[同意する]** を選択します。
-    1. この手順を **Microsoft.ML.Dnn 0.16.0-preview2** と **Microsoft.ML.ImageAnalytics 1.4.0-preview2** に繰り返します。
+    1. **Microsoft.ML.Vision** バージョン **1.4.0**、**SciSharp.TensorFlow.Redist** バージョン **1.15.0**、**Microsoft.ML.ImageAnalytics** バージョン **1.4.0** NuGet パッケージに対してもこれらの手順を繰り返します。
 
 ### <a name="prepare-and-understand-the-data"></a>データを準備して理解する
 
 > [!NOTE]
 > このチュートリアルのデータセットの提供元: Maguire, Marc; Dorafshan, Sattar; and Thomas, Robert J., "SDNET2018:A concrete crack image dataset for machine learning applications" (2018). Browse all Datasets. Paper 48. https://digitalcommons.usu.edu/all_datasets/48
 
-SDNET2018 は、ひび割れあり/ひび割れなしのコンクリート構造物 (橋床、壁、歩道) に関する注釈を含む画像データセットです。 
+SDNET2018 は、ひび割れあり/ひび割れなしのコンクリート構造物 (橋床、壁、歩道) に関する注釈を含む画像データセットです。
 
 ![SDNET2018 データセットの橋床のサンプル](./media/image-classification-api-transfer-learning/sdnet2018decksamples.png)
 
@@ -126,9 +123,9 @@ SDNET2018 は、ひび割れあり/ひび割れなしのコンクリート構造
 
     [!code-csharp [ProgramUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L1-L7)]
 
-1. *Program.cs* の `Program` クラスの下で `ImageData` という名前のクラスを作成します。 このクラスは、最初に読み込んだデータを表わすために使用されます。 
+1. *Program.cs* の `Program` クラスの下で `ImageData` という名前のクラスを作成します。 このクラスは、最初に読み込んだデータを表わすために使用されます。
 
-    [!code-csharp [ImageDataClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L135-L140)]
+    [!code-csharp [ImageDataClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L137-L142)]
 
     `ImageData` には次のプロパティが含まれます。
 
@@ -139,40 +136,46 @@ SDNET2018 は、ひび割れあり/ひび割れなしのコンクリート構造
 
     1. `ImageData` クラスの下で、`ModelInput` という名前の新しいクラスに入力データのスキーマを定義します。
 
-        [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L142-L151)]
+        [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L144-L153)]
 
         `ModelInput` には次のプロパティが含まれます。
 
-        - `ImagePath` は、画像が保存されている完全修飾パスです。 
+        - `ImagePath` は、画像が保存されている完全修飾パスです。
         - `Label` は、画像が属するカテゴリです。 これが予測する値です。
         - `Image` は画像の `byte[]` 表現です。 モデルでは、トレーニングのために画像データがこの種類になることが求められます。
-        - `LabelAsKey` は `Label` の数値表現です。 
+        - `LabelAsKey` は `Label` の数値表現です。
 
         `Image` と `LabelAsKey` のみ、モデルのトレーニングと予測に使用されます。 `ImagePath` プロパティと `Label` プロパティは、元の画像ファイルの名前やカテゴリにアクセスするときに便利なため、維持されます。
 
-    1. 次に、`ModelInput` クラスの下で、`ModelOutput` という名前の新しいクラスに出力データのスキーマを定義します。 
+    1. 次に、`ModelInput` クラスの下で、`ModelOutput` という名前の新しいクラスに出力データのスキーマを定義します。
 
-        [!code-csharp [ModelOutputClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L153-L160)]
+        [!code-csharp [ModelOutputClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L155-L162)]
 
         `ModelOutput` には次のプロパティが含まれます。
 
         - `ImagePath` は、画像が保存されている完全修飾パスです。
-        - `Label` は、画像が属する元のカテゴリです。 これが予測する値です。 
+        - `Label` は、画像が属する元のカテゴリです。 これが予測する値です。
         - `PredictedLabel` はモデルで予測された値です。
 
         `ModelInput` と同様に、予測には `PredictedLabel` のみが必要になります。モデルによる予測が含まれているためです。 `ImagePath` プロパティと `Label` プロパティは、元の画像ファイルの名前やカテゴリにアクセスするときに便利なため、保持されます。
 
+### <a name="create-workspace-directory"></a>ワークスペース ディレクトリを作成する
+
+トレーニング データと検証データが頻繁に変更されない場合は、今後の実行のために、計算されたボトルネック値をキャッシュすることをお勧めします。
+
+1. プロジェクトで *workspace* という名前の新しいディレクトリを作成し、計算されたボトルネック値とモデルの `.pb` バージョンを格納します。
+
 ### <a name="define-paths-and-initialize-variables"></a>パスを定義し、変数を初期化する
 
-1. `Main` メソッド内でアセットの場所を定義します。
+1. `Main` メソッド内で、アセットの場所、計算されたボトルネック値、モデルの `.pb` バージョンを定義します。
 
-    [!code-csharp [DefinePaths](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L15-L16)]
+    [!code-csharp [DefinePaths](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L15-L17)]
 
 1. 次に、[MLContext](xref:Microsoft.ML.MLContext) の新しいインスタンスを使用して `mlContext` 変数を初期化します。
 
-    [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L18)]
+    [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L19)]
 
-[MLContext](xref:Microsoft.ML.MLContext) クラスは、すべての ML.NET 操作の開始点で、mlContext を初期化することで、モデル作成ワークフローのオブジェクト間で共有できる新しい ML.NET 環境が作成されます。 これは Entity Framework における `DBContext` と概念的には同じです。
+    [MLContext](xref:Microsoft.ML.MLContext) クラスは、すべての ML.NET 操作の開始点で、mlContext を初期化することで、モデル作成ワークフローのオブジェクト間で共有できる新しい ML.NET 環境が作成されます。 これは Entity Framework における `DBContext` と概念的には同じです。
 
 ## <a name="load-the-data"></a>データを読み込む
 
@@ -189,7 +192,7 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
 1. `LoadImagesDirectory` 内で次のコードを追加し、サブディレクトリからすべてのファイル パスを取得します。
 
-    [!code-csharp [GetFiles](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L102-L103)]
+    [!code-csharp [GetFiles](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L104-L105)]
 
 1. 次に、`foreach` ステートメントを利用して各ファイルを反復処理します。
 
@@ -202,33 +205,33 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
 1. `foreach` ステートメント内で、ファイルの拡張子がサポートされていることを確認します。 Image Classification API では、JPEG 形式と PNG 形式がサポートされています。
 
-    [!code-csharp [CheckExtension](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L107-L108)]
+    [!code-csharp [CheckExtension](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L109-L110)]
 
 1. 次に、ファイルのラベルを取得します。 `useFolderNameAsLabel` パラメーターが `true` に設定されている場合、ファイルが保存されている親ディレクトリがラベルとして使用されます。 それ以外の場合、ラベルは、ファイルのプレフィックスか名前自体にする必要があります。
 
-    [!code-csharp [GetLabel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L110-L124)]
+    [!code-csharp [GetLabel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L112-L126)]
 
 1. 最後に、`ModelInput` の新しいインスタンスを作成します。
 
-    [!code-csharp [CreateImageData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L126-L130)]
+    [!code-csharp [CreateImageData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L128-L132)]
 
 ### <a name="prepare-the-data"></a>データを準備する
 
 1. `Main` メソッドに戻り、`LoadFromDirectory` ユーティリティを使用し、トレーニングに使用される画像の一覧を取得します。
 
-    [!code-csharp [LoadImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L20)]
+    [!code-csharp [LoadImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L21)]
 
 1. 次に、[`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) メソッドを利用して [`IDataView`](xref:Microsoft.ML.IDataView) に画像を読み込みます。
 
-    [!code-csharp [CreateIDataView](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L22)]    
+    [!code-csharp [CreateIDataView](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L23)]
 
 1. データはディレクトリから読み取られた順序で読み込まれます。 データのバランスを維持するために、[`ShuffleRows`](xref:Microsoft.ML.DataOperationsCatalog.ShuffleRows*) メソッドを利用してシャッフルします。
 
-    [!code-csharp [ShuffleRows](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L24)]
+    [!code-csharp [ShuffleRows](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L25)]
 
-1. 機械学習モデルでは、数値形式で入力する必要があります。 そのため、トレーニングの前にデータでいくつかの処理を行う必要があります。 [`MapValueToKey`](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey*) 変換と [`LoadImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.LoadImages*) 変換から構成される [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) を作成します。 `MapValueToKey` 変換では、`Label` 列のカテゴリ値を受け取り、それを数値 `KeyType` に変換し、`LabelAsKey` という名前の新しい列に保存します。 `LoadImages` では、`imageFolder` パラメーターと共に `ImagePath` から値を取得し、トレーニングのために画像を読み込みます。 `useImageType` を `false` に設定すると、画像が `byte[]` に変換されます。 
+1. 機械学習モデルでは、数値形式で入力する必要があります。 そのため、トレーニングの前にデータでいくつかの処理を行う必要があります。 [`MapValueToKey`](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey*) 変換と `LoadRawImageBytes` 変換から構成される [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) を作成します。 `MapValueToKey` 変換では、`Label` 列のカテゴリ値を受け取り、それを数値 `KeyType` に変換し、`LabelAsKey` という名前の新しい列に保存します。 `LoadImages` では、`imageFolder` パラメーターと共に `ImagePath` から値を取得し、トレーニングのために画像を読み込みます。
 
-    [!code-csharp [DefinePreprocessingPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L26-L33)]
+    [!code-csharp [PreprocessingPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L27-L33)]
 
 1. データを `preprocessingPipeline` [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) に適用する [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit*) メソッドを使用し、事前処理済みのデータが含まれる [`IDataView`](xref:Microsoft.ML.IDataView) メソッドを返す [`Transform`](xref:Microsoft.ML.Data.TransformerChain`1.Transform*) メソッドを続けます。
 
@@ -238,9 +241,9 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
     [!code-csharp [CreateDataSplits](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L39-L40)]
 
-    上のコード サンプルでは、2 回分割されます。 まず、事前処理済みのデータが分割され、70% がトレーニングに使用され、残りの 30% が検証に使用されます。 次に、30% の検証セットがさらに検証セットとテスト セットに分割され、90% が検証に使用され、10% がテストに使用されます。 
+    上のコード サンプルでは、2 回分割されます。 まず、事前処理済みのデータが分割され、70% がトレーニングに使用され、残りの 30% が検証に使用されます。 次に、30% の検証セットがさらに検証セットとテスト セットに分割され、90% が検証に使用され、10% がテストに使用されます。
 
-    このようなデータ分割の目的は試験を受けるようなものです。 試験勉強するとき、ノート、教科書、参考書で復習し、試験に出る概念をつかみます。 トレーニング セットがこれに相当します。 次に、模擬試験を受け、自分の知識を確認します。 ここで役立つのが検証セットです。 実際に試験を受ける前に概念をしっかり理解しているかを確認したくなることでしょう。 模擬試験の結果に基づき、間違った箇所や良く理解していなかった箇所をメモし、本番の試験に向けて復習する中、変えるべきところを組み込みます。 最後に、試験を受けます。 テスト セットがこれに相当します。 試験に出ている問題は今まで見たことがありません。トレーニングと検証から学習したことを活用し、手元の課題に自分の知識を応用します。 
+    このようなデータ分割の目的は試験を受けるようなものです。 試験勉強するとき、ノート、教科書、参考書で復習し、試験に出る概念をつかみます。 トレーニング セットがこれに相当します。 次に、模擬試験を受け、自分の知識を確認します。 ここで役立つのが検証セットです。 実際に試験を受ける前に概念をしっかり理解しているかを確認したくなることでしょう。 模擬試験の結果に基づき、間違った箇所や良く理解していなかった箇所をメモし、本番の試験に向けて復習する中、変えるべきところを組み込みます。 最後に、試験を受けます。 テスト セットがこれに相当します。 試験に出ている問題は今まで見たことがありません。トレーニングと検証から学習したことを活用し、手元の課題に自分の知識を応用します。
 
 1. トレーニング データ、検証データ、テスト データそれぞれの値をパーティションに割り当てます。
 
@@ -248,29 +251,31 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
 ## <a name="define-the-training-pipeline"></a>トレーニング パイプラインを定義する
 
-モデル トレーニングはいくつかのステップから構成されます。 まず、Image Classification API を利用し、モデルがトレーニングされます。 次に、`PredictedLabel` 列のエンコード済みラベルが `MapKeyToValue` 変換により元のカテゴリ値に戻されます。 
+モデル トレーニングはいくつかのステップから構成されます。 まず、Image Classification API を利用し、モデルがトレーニングされます。 次に、`PredictedLabel` 列のエンコード済みラベルが `MapKeyToValue` 変換により元のカテゴリ値に戻されます。
 
-1. `mapLabelEstimator` 変換と `ImageClassification` 変換の両方から構成されるトレーニング [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) パイプラインを定義します。
+1. `ImageClassificationTrainer` の必須パラメーターと省略可能なパラメーターのセットを格納するために、新しい変数を作成します。 
 
-    [!code-csharp [DefineTrainingPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L46-L58)]    
+    [!code-csharp [ClassifierOptions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L46-L57)]
 
-    `ImageClassification` 見積もりツールはいくつかのパラメーターを受け取ります。
+    `ImageClassificationTrainer` では、いくつかの省略可能なパラメーターを取得します。
 
-    - `featuresColumnName` はモデルの入力として使用される列です。
-    - `labelColumnName` は予測する値の列です。
-    - `arch` では、使用する事前トレーニング済みモデル アーキテクチャが定義されます。 このチュートリアルでは、ResNetv2 モデルの 101 レイヤー型が使用されます。
-    - `epoch` では、トレーニング プロセスを通してデータセット全体に行われる繰り返しの最大数が指定されます。 この数値が大きければ大きいほど、モデルがトレーニングされる時間が長くなり、より優れたモデルが生成される可能性が高くなります。
-    - `batchSize` は、トレーニング時に使用するサンプルの数です。 1 エポック中、batchSize に等しい複数のバッチがモデルのトレーニングと更新に使用されます。 この数値が低ければ低いほど、各バッチの処理時に必要になるメモリがそれだけ少なくなります。
-    - `testOnTrainSet` からは、検証セットがないとき、トレーニング セットに対してパフォーマンスを検証するようにモデルに指示が出ます。
-    - `metricsCallback` では、トレーニング中に進捗状況を追跡記録する関数がバインドされます。
-    - `validationSet` は検証データが含まれる [`IDataView`](xref:Microsoft.ML.IDataView) です。
-    - `reuseTrainSetBottleneckCachedValues` からは、後続の実行でボトルネック フェーズからキャッシュされた値を使用するかどうかがモデルに伝えられます。 ボトルネック フェーズは、初回実行時の計算処理が激しいワンタイム パススルー計算です。 トレーニング データが変わらないとき、エポック数やバッチ サイズを変えて実験する場合、キャッシュした値を利用すると、モデルのトレーニングに必要な時間が大幅に短縮されます。
-    - `reuseValidationSetBottleneckCachedValues` は `reuseTrainSetBottleneckCachedValues` に似ていますが、これは検証データセット用になります。
-    - `disableEarlyStopping` からは、早期停止方針を採用するかどうかが ImageClassification 見積もりツールに伝えられます。 モデルではトレーニング中に精確な予測を支援する最適な値が検索されるため、パフォーマンスが上がったり下がったりすることがあります。 最後にモデルが最後のエポックに到達したとき、トレーニングから学習したパターンが最適以下となることがあります。 早期停止では、トレーニングにおけるパフォーマンスの低下を監視し、最適なモデルを維持する目的でトレーニング プロセスを停止します。
+    - `FeatureColumnName` はモデルの入力として使用される列です。
+    - `LabelColumnName` は予測する値の列です。
+    - `ValidationSet` は検証データが含まれる [`IDataView`](xref:Microsoft.ML.IDataView) です。
+    - `Arch` では、使用する事前トレーニング済みモデル アーキテクチャが定義されます。 このチュートリアルでは、ResNetv2 モデルの 101 レイヤー型が使用されます。
+    - `MetricsCallback` では、トレーニング中に進捗状況を追跡記録する関数がバインドされます。
+    - `TestOnTrainSet` からは、検証セットがないとき、トレーニング セットに対してパフォーマンスを検証するようにモデルに指示が出ます。
+    - `ReuseTrainSetBottleneckCachedValues` からは、後続の実行でボトルネック フェーズからキャッシュされた値を使用するかどうかがモデルに伝えられます。 ボトルネック フェーズは、初回実行時の計算処理が激しいワンタイム パススルー計算です。 トレーニング データが変わらないとき、エポック数やバッチ サイズを変えて実験する場合、キャッシュした値を利用すると、モデルのトレーニングに必要な時間が大幅に短縮されます。
+    - `ReuseValidationSetBottleneckCachedValues` は `ReuseTrainSetBottleneckCachedValues` に似ていますが、これは検証データセット用になります。
+    - `WorkspacePath` では、計算されたボトルネック値と `.pb` バージョンのモデルを格納するディレクトリを定義します。
+
+1. `mapLabelEstimator` と `ImageClassificationTrainer` の両方から構成される [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) トレーニング パイプラインを定義します。
+
+    [!code-csharp [TrainingPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L59-L60)]
 
 1. [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit*) メソッドを利用してモデルをトレーニングします。
 
-    [!code-csharp [TrainModel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L60)]
+    [!code-csharp [TrainModel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L62)]
 
 ## <a name="use-the-model"></a>モデルを使用する
 
@@ -278,7 +283,7 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
 `Main` メソッドの下で、コンソールに予測情報を表示する、`OutputPrediction` という名前の新しいユーティリティ メソッドを作成します。
 
-[!code-csharp [OuputPredictionMethod](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L94-L98)]
+[!code-csharp [OuputPredictionMethod](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L96-L100)]
 
 ### <a name="classify-a-single-image"></a>1 枚の画像を分類する
 
@@ -293,23 +298,23 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
 1. `ClassifySingleImage` メソッド内に [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) を作成します。 [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) は、データの 1 つのインスタンスを渡してから、その予測を実行できる便利な API です。
 
-    [!code-csharp [CreatePredictionEngine](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L71)]    
+    [!code-csharp [CreatePredictionEngine](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L73)]
 
-1. 1 つの `ModelInput` インスタンスにアクセスするには、[`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) メソッドを利用して `data` [`IDataView`](xref:Microsoft.ML.IDataView) を [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) に変換し、最初の観察を取得します。 
+1. 1 つの `ModelInput` インスタンスにアクセスするには、[`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) メソッドを利用して `data` [`IDataView`](xref:Microsoft.ML.IDataView) を [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) に変換し、最初の観察を取得します。
 
-    [!code-csharp [GetTestInputData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L73)]
+    [!code-csharp [GetTestInputData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L75)]
 
 1. [`Predict`](xref:Microsoft.ML.PredictionEngine%602.Predict*) メソッドを使用し、画像を分類します。
 
-    [!code-csharp [MakeSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L75)]
+    [!code-csharp [MakeSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L77)]
 
 1. `OutputPrediction` メソッドでコンソールに予測を出力します。
 
-    [!code-csharp [OuputSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L77-L78)]
+    [!code-csharp [OuputSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L79-L80)]
 
 1. `Main` メソッド内で、画像のテスト セットを利用して `ClassifySingleImage` を呼び出します。
 
-    [!code-csharp [ClassifySingleImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L62)]
+    [!code-csharp [ClassifySingleImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L64)]
 
 ### <a name="classify-multiple-images"></a>複数の画像を分類する
 
@@ -324,19 +329,19 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
 1. [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) メソッドを利用し、予測を含む [`IDataView`](xref:Microsoft.ML.IDataView) を作成します。 `ClassifyImages` メソッド内に次のコードを追加します。
 
-    [!code-csharp [MakeMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L83)]
+    [!code-csharp [MakeMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L85)]
 
 1. 予測を反復処理するには、[`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) メソッドを利用して `predictionData` [`IDataView`](xref:Microsoft.ML.IDataView) を [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) に変換し、最初の 10 件の観察を取得します。
 
-    [!code-csharp [IEnumerablePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L85)]
+    [!code-csharp [IEnumerablePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L87)]
 
 1. 予測を反復処理し、元のラベルと予測後のラベルを出力します。
 
-    [!code-csharp [OutputMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L87-L91)]
+    [!code-csharp [OutputMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L89-L93)]
 
 1. 最後に、`Main` メソッド内で、画像のテスト セットを利用して `ClassifyImages` を呼び出します。
 
-    [!code-csharp [ClassifyImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L64)]
+    [!code-csharp [ClassifyImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L66)]
 
 ## <a name="run-the-application"></a>アプリケーションの実行
 
@@ -347,10 +352,10 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 画像は `byte[]` として読み込まれており、表示する画像名がないため、画像名には値が出力されません。
 
 ```test
-Phase: Bottleneck Computation, Dataset used:      Train, Image Index: 279, Image Name:
-Phase: Bottleneck Computation, Dataset used:      Train, Image Index: 280, Image Name:
-Phase: Bottleneck Computation, Dataset used: Validation, Image Index:   1, Image Name:
-Phase: Bottleneck Computation, Dataset used: Validation, Image Index:   2, Image Name:
+Phase: Bottleneck Computation, Dataset used:      Train, Image Index: 279
+Phase: Bottleneck Computation, Dataset used:      Train, Image Index: 280
+Phase: Bottleneck Computation, Dataset used: Validation, Image Index:   1
+Phase: Bottleneck Computation, Dataset used: Validation, Image Index:   2
 ```
 
 **トレーニング フェーズ**
@@ -373,7 +378,7 @@ Image: 7001-163.jpg | Actual Value: UD | Predicted Value: UD
 Image: 7001-210.jpg | Actual Value: UD | Predicted Value: UD
 ```
 
-*7001-220.jpg* 画像の検査後、実際のところ、ひび割れがないことがわかりました。 
+*7001-220.jpg* 画像の検査後、実際のところ、ひび割れがないことがわかりました。
 
 ![予測に使用された SDNET2018 データセット画像](./media/image-classification-api-transfer-learning/predictedimage.jpg)
 
@@ -383,8 +388,8 @@ Image: 7001-210.jpg | Actual Value: UD | Predicted Value: UD
 
 モデルの結果に不満が残る場合、次の手法を試し、パフォーマンスを向上してみることができます。
 
-- **データを増やす**:モデルが学習するサンプルの数が多ければ多いほど、パフォーマンスがそれだけ上がります。 [SDNET2018 データセット](https://digitalcommons.usu.edu/cgi/viewcontent.cgi?filename=2&article=1047&context=all_datasets&type=additional)を全部ダウンロードし、それを利用してトレーニングします。 
-- **データを拡張する**:データに変化を与える一般的な手法は、画像にさまざまな変換 (回転、裏返し、移動、トリミング) を適用してデータを強化することです。 これでモデルが学習するサンプルに変化が与えられます。 
+- **データを増やす**:モデルが学習するサンプルの数が多ければ多いほど、パフォーマンスがそれだけ上がります。 [SDNET2018 データセット](https://digitalcommons.usu.edu/cgi/viewcontent.cgi?filename=2&article=1047&context=all_datasets&type=additional)を全部ダウンロードし、それを利用してトレーニングします。
+- **データを拡張する**:データに変化を与える一般的な手法は、画像にさまざまな変換 (回転、裏返し、移動、トリミング) を適用してデータを強化することです。 これでモデルが学習するサンプルに変化が与えられます。
 - **トレーニング時間を増やす**:トレーニング時間が長ければ長いほど、モデルがそれだけ微調整されます。 エポックの数を増やすことで、モデルのパフォーマンスが上がることもあります。
 - **パイパーパラメーターで実験する**:このチュートリアルで使用されているパラメーターに加え、他のパラメーターを微調整するとパフォーマンスが上がることがあります。 各エポック後のモデル更新の規模を決定する学習率を変更すると、パフォーマンスが上がることがあります。
 - **別のモデル アーキテクチャを使用する**:目で見たときのデータによっては、その特徴を最も効果的に学習できるモデルが異なることがあります。 モデルのパフォーマンスに不満が残る場合、アーキテクチャの変更をお試しください。

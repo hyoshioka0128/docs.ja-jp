@@ -1,18 +1,18 @@
 ---
-title: 方法:C# で定数を定義する
+title: C# で定数を定義する方法
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 43f511be-346c-4b8a-995e-aded94542ece
-ms.openlocfilehash: ba5bc3d03dcaf5c8be94936a453a439670e8dc1f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6681b1987ec9b5bce40b3abffb9b7d11d4a82bcc
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924488"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970961"
 ---
-# <a name="how-to-define-constants-in-c"></a>方法:C\# で定数を定義する
+# <a name="how-to-define-constants-in-c"></a>C\# で定数を定義する方法
 定数とは、値がコンパイル時に設定され、変更できないフィールドです。 定数を使用して、特殊な値の数値リテラル ("マジック ナンバー") の代わりにわかりやすい名前を提供します。  
   
 > [!NOTE]

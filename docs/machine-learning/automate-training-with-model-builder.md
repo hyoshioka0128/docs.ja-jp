@@ -4,12 +4,12 @@ description: ML.NET モデル ビルダーを使用し、機械学習モデル�
 author: natke
 ms.date: 08/07/2019
 ms.custom: overview
-ms.openlocfilehash: 77b5e75fede1a4aa93eadcf7e21591d82f565cab
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 77fe56dba3532617ad9fb0c89bfaac7c8e031ce7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929479"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971522"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>モデル ビルダーの概要としくみ
 
@@ -60,7 +60,7 @@ ML.NET モデル ビルダーは、直観的なグラフィックスでカスタ
 
 #### <a name="predict-a-category-when-there-are-three-or-more-categories"></a>カテゴリを予測する (3 つ以上のカテゴリがある場合)
 
-多クラス分類は、データを 3 つ以上のクラスに分類する目的で利用できます。 
+多クラス分類は、データを 3 つ以上のクラスに分類する目的で利用できます。
 
 ![ドキュメントと製品の分類、サポート チケットのルーティング、顧客の問題の優先度設定など、多クラス分類の例](media/multiclass-classification-examples.png)
 

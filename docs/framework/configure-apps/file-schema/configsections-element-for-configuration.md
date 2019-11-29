@@ -1,5 +1,5 @@
 ---
-title: <configuration> の <configSections> 要素
+title: <configSections> の <configuration> 要素
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections
@@ -25,7 +25,7 @@ ms.locfileid: "73119016"
 
 ## <a name="attributes"></a>属性
 
-None
+なし
 
 ## <a name="parent-element"></a>親要素
 
@@ -39,10 +39,10 @@ None
 | --- | ----------- |
 | [ **\<セクション >** ](section-element.md) | 構成セクションの宣言が含まれています。 |
 | [ **\<sectionGroup >** ](sectiongroup-element-for-configsections.md) | 構成セクションの名前空間を定義します。 |
-| [ **\<remove>** ](remove-element-for-configsections.md) | 定義済みセクションまたはセクショングループを削除します。 |
+| [ **\<remove>** ](remove-element-for-configsections.md) | 定義済みのセクション、またはセクション グループを削除します。 |
 | [ **\<clear>** ](clear-element-for-configsections.md) | 以前に定義したセクションとセクショングループをすべて消去します。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
 この要素が構成ファイル内にある場合は、 **\<configuration >** 要素の最初の子要素である必要があります。
 
@@ -66,6 +66,6 @@ None
 
 この要素は、アプリケーション構成ファイル *、コンピューター構成*ファイル (machine.config)、およびアプリケーションディレクトリレベルでは*ない web.config ファイル*で使用できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [.NET Framework の構成ファイルスキーマ](index.md)

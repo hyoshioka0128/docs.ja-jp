@@ -4,12 +4,12 @@ description: Web アプリケーションを構築しているときに、従来
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: d68c167dce791a31eeb5ca5729b50ec22c64f9b0
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9ede64249705aba3f22a9663b8a258e41f030aca
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675479"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739455"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>従来の Web アプリケーションかシングル ページ アプリケーション (SPA) を選択する
 
@@ -40,7 +40,7 @@ SPA モデルで可能になるユーザー エクスペリエンスの改善と
 
 ## <a name="blazor"></a>Blazor
 
-ASP.NET Core 3.0 には、Blazor と呼ばれる、機能が豊富で構成可能な対話型 UI を構築するための新しいモデルが導入されています。 サーバー側 Blazor を利用すれば、開発者はサーバー上に Razor で UI を構築できます。また、WebAssembly という JavaScript ライブラリを使用してこのコードをブラウザーに配信し、クライアント側で実行できます。 ASP.NET Core 3.0 は現在も開発中です。この電子書籍が 3.0 に更新されたとき、このテクノロジに関する情報が増えていることが予想されます。 Blazor の詳細については、[Blazor の概要](https://blazor.net/docs/get-started.html)に関するページをご覧ください。
+ASP.NET Core 3.0 には、Blazor と呼ばれる、機能が豊富で構成可能な対話型 UI を構築するための新しいモデルが導入されています。 サーバー側 Blazor を使うと、開発者はサーバー上で Razor を使用して UI を構築できます。また、[WebAssembly](https://webassembly.org/) を使用してこのコードをブラウザーに配信し、クライアント側で実行できます。 ASP.NET Core 3.0 は現在も開発中です。この電子書籍が 3.0 に更新されたとき、このテクノロジに関する情報が増えていることが予想されます。 Blazor の詳細については、[Blazor の概要](https://blazor.net/docs/get-started.html)に関するページをご覧ください。
 
 ## <a name="when-to-choose-traditional-web-apps"></a>従来の Web アプリケーションを選択する場合
 

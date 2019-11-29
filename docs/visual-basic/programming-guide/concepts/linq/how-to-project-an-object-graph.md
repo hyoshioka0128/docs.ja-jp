@@ -1,19 +1,19 @@
 ---
-title: '方法: オブジェクトグラフを射影する (Visual Basic)'
+title: '方法 : オブジェクト グラフを射影する'
 ms.date: 07/20/2015
 ms.assetid: 9451eb47-6a31-49d7-84df-73368c618422
-ms.openlocfilehash: 6c4a040600b26e3e2d3d031c8eb991dd9c14fbac
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 68b58226dbf30f82709a39e96bef0f8cce95d0ec
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320260"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347773"
 ---
 # <a name="how-to-project-an-object-graph-visual-basic"></a>方法: オブジェクトグラフを射影する (Visual Basic)
 このトピックでは、XML からオブジェクト グラフを射影 (作成) する方法を示します。  
   
 ## <a name="example"></a>例  
- 次のコードでは、「[サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md)」という XML ドキュメントから `Address`、`PurchaseOrder`、および `PurchaseOrderItem` の各クラスを使用してオブジェクト グラフを作成します。  
+ 次のコードでは、「`Address`サンプル XML ファイル: 一般的な購買発注書 (LINQ to XML)`PurchaseOrder`」という XML ドキュメントから `PurchaseOrderItem`、[、および ](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) の各クラスを使用してオブジェクト グラフを作成します。  
   
 ```vb  
 Class Address  
@@ -337,7 +337,7 @@ USPrice: 39.98
 ShipDate: 5/21/1999  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Linq.Enumerable.Select%2A>
 - <xref:System.Linq.Enumerable.ToList%2A>

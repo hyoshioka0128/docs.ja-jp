@@ -56,7 +56,7 @@ ms.locfileid: "73841745"
 
 最後に、アプリケーション内の特定のタスクに対してサーバーレスを利用すると、複雑さが増します。 多くの場合、アプリケーションをモジュール化された疎結合方式で設計してから、サーバーレスで提供される利点によって複雑さが増すというメリットがあるかどうかを確認することをお勧めします。 小規模なアプリケーションの多くは、単一のモノリシックデプロイで完全に動作します。サーバーレスコンピューティングに必要な分散アプリケーションアーキテクチャは必要ありません。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [サーバーレスコールドスタートについて](https://azure.microsoft.com/blog/understanding-serverless-cold-start/)
 - [事前に準備した med-v Azure Functions インスタンス](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances)

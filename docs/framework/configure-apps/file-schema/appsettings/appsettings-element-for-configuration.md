@@ -16,12 +16,12 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73119269"
 ---
-# <a name="appsettings-element-for-configuration"></a>\<構成の appSettings > 要素を \<
+# <a name="appsettings-element-for-configuration"></a>\<configuration> の \<appSettings> 要素
 
 カスタムアプリケーション設定が含まれます。 これは、.NET Framework によって提供される定義済みの構成セクションです。
 
 [ **\<configuration>** ](../configuration-element.md)   
-&nbsp;&nbsp; **\<appSettings >**
+&nbsp;&nbsp; **\<appSettings>**
 
 ## <a name="syntax"></a>構文
 
@@ -35,13 +35,13 @@ ms.locfileid: "73119269"
 
 |           | 説明 |
 | --------- | ----------- |
-| **file**  | 省略可能な属性です。<br><br>カスタムアプリケーション構成設定を含む外部ファイルへの相対パスを指定します。 指定されたファイルには、> の追加 **\<、> の削除**、 **\<のクリア >** 要素の **\<** で指定されているものと同じ種類の設定が含まれており、それらの要素と同じキー/値ペアの形式を使用します。<br><br>指定されたパスは、メイン構成ファイルに対する相対パスです。 Windows フォームアプリケーションの場合、これはアプリケーション構成ファイルの場所ではなく、バイナリフォルダー ( */bin/debug*など) です。 Web フォームアプリケーションの場合、パスは、web.config ファイルが配置さ*れている*アプリケーションルートに対する相対パスです。<br><br>指定されたファイルが見つからない場合、ランタイムは属性を無視することに注意してください。 |
+| **file**  | 省略可能な属性です。<br><br>カスタムアプリケーション構成設定を含む外部ファイルへの相対パスを指定します。 同じ種類設定で指定されているにはが、指定したファイルに含まれています、 **\<add>** 、 **\<remove>** 、および **\<clear>** 要素と同じキー/値ペアは、それらの要素として書式設定を使用します。<br><br>指定されたパスは、メイン構成ファイルに対する相対パスです。 Windows フォームアプリケーションの場合、これはアプリケーション構成ファイルの場所ではなく、バイナリフォルダー ( */bin/debug*など) です。 Web フォームアプリケーションの場合、パスは、web.config ファイルが配置さ*れている*アプリケーションルートに対する相対パスです。<br><br>指定されたファイルが見つからない場合、ランタイムは属性を無視することに注意してください。 |
 
 ## <a name="parent-element"></a>親要素
 
 |     | 説明 |
 | --- | ----------- |
-| [ **\<構成 >** Element](../configuration-element.md) | 共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。 |
+| [ **\<configuration>** 要素](../configuration-element.md) | 共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。 |
 
 ## <a name="child-elements"></a>子要素
 
@@ -51,13 +51,15 @@ ms.locfileid: "73119269"
 | [ **\<clear>** ](clear-element-for-appsettings.md) | 以前に定義したアプリケーション設定をすべてクリアします。 |
 | [ **\<remove>** ](remove-element-for-appsettings.md) | 以前に定義したアプリケーション設定を削除します。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
-**\<appSettings >** 要素には、データベース接続文字列、ファイルパス、XML Web サービス url、またはアプリケーションのその他のカスタム構成情報など、カスタムアプリケーション構成情報が格納されます。 **\<appSettings >** 要素で指定されたキーと値のペアは、<xref:System.Configuration.ConfigurationSettings> クラスを使用してコードでアクセスされます。
+**\<appSettings>** 要素には、データベース接続文字列、ファイルパス、XML Web サービス url、またはアプリケーションのその他のカスタム構成情報など、カスタムアプリケーション構成情報が格納されます。 **\<appSettings >** 要素で指定されたキーと値のペアは、<xref:System.Configuration.ConfigurationSettings> クラスを使用してコードでアクセスされます。
 
-Web.config ファイル*とアプリケーション*構成ファイルの **\<appSettings >** 要素で**file**属性を使用できます。 この属性は、追加設定を提供するか、 **\<appSettings >** 要素で指定された設定をオーバーライドする構成ファイルを指定します。 **ファイル**属性は、アプリケーション構成ファイルで指定されたプロジェクト設定をユーザーがオーバーライドする必要がある場合など、ソース管理チームの開発シナリオで使用できます。
+Web.config ファイルと*アプリケーション*構成ファイルの **\<appSettings>** 要素で **file** 属性を使用できます。 この属性は、追加設定を提供するか、 **\<appSettings>** 要素で指定された設定をオーバーライドする構成ファイルを指定します。 **file** 属性は、アプリケーション構成ファイルで指定されたプロジェクト設定をユーザーがオーバーライドする必要がある場合など、ソース管理チームの開発シナリオで使用できます。
 
-**File**属性で指定される構成ファイルには **\<構成 >** ではなく **\<appSettings >** のルートノードが必要です。
+
+**file** 属性で指定された構成ファイルには、**\<configuration>** ではなく **\<appSettings >** のルート ノードが必要です。
+
 
 ## <a name="example"></a>例
 
@@ -82,8 +84,10 @@ Web.config ファイル*とアプリケーション*構成ファイルの **\<ap
 
 ## <a name="configuration-file"></a>構成ファイル
 
-この要素は、アプリケーション構成ファイル *、コンピューター構成*ファイル (machine.config)、およびアプリケーションディレクトリレベルでは*ない web.config ファイル*で使用できます。
 
-## <a name="see-also"></a>関連項目
+この要素は、アプリケーション構成ファイル、マシン構成ファイル *(Machine.config)*、およびアプリケーションディレクトリレベルではない *Web.config* ファイルで使用できます。
+
+
+## <a name="see-also"></a>参照
 
 - [.NET Framework の構成ファイルスキーマ](../index.md)

@@ -1,24 +1,26 @@
 ---
-title: レジストリからの読み取りとレジストリへの書き込み (Visual Basic)
+title: レジストリからの読み取りとレジストリへの書き込み
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.Registry object, tasks
 - registry [Visual Basic], writing to
 - registry [Visual Basic], reading
 ms.assetid: a13da106-185b-41d7-b23c-416da65e21e4
-ms.openlocfilehash: fcc13d82a2b27221c13f9277585c21196b47003d
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 89db9ef9db4235c069d6239d32e4f8679fbabf0b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591479"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349760"
 ---
 # <a name="reading-from-and-writing-to-the-registry-visual-basic"></a>レジストリからの読み取りとレジストリへの書き込み (Visual Basic)
+
 このトピックでは、レジストリに関連するタスクおよび概念説明のトピックについて説明します。  
   
  Visual Basic のプログラミングでは、レジストリへのアクセスには、Visual Basic に用意されている関数を使用する方法と、.NET Framework のレジストリ クラスを使用する方法のいずれかを選択できます。 レジストリは、オペレーティング システムからの情報と、コンピューターにホストされるアプリケーションからの情報をホストします。 レジストリを操作すると、システム リソースや保護情報への不適切なアクセスが許可され、セキュリティが損なわれる場合があります。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
+
  [方法: レジストリ キーを作成し、その値を設定する](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)  
  `My.Computer.Registry` オブジェクトの `CreateSubKey` および `SetValue` メソッドを使用して、レジストリ キーを作成し、その値を設定する方法について説明します。  
   
@@ -35,6 +37,7 @@ ms.locfileid: "65591479"
  レジストリに関連するセキュリティの問題について説明します。  
   
 ## <a name="related-sections"></a>関連項目  
+
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>  
  `My.Computer.Registry` オブジェクトのメンバーをリストして説明します。  
   

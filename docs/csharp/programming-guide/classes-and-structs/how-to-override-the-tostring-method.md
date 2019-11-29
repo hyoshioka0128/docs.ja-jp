@@ -1,19 +1,19 @@
 ---
-title: '方法: ToString メソッドをオーバーライドする - C# プログラミング ガイド'
+title: ToString メソッドをオーバーライドする方法 - C# プログラミング ガイド
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ToString method, overriding in C#
 - inheritance [C#], overriding OnPaint and ToString
 ms.assetid: 8016db69-1f19-420c-8e17-98e8bebb7749
-ms.openlocfilehash: 9dd567e537768ceb8b9f61ce58dccd443db38ec7
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 3d5b63609ea61764d4042d534c40d8032fb82841
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419338"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970468"
 ---
-# <a name="how-to-override-the-tostring-method-c-programming-guide"></a>方法: ToString メソッドをオーバーライドする (C# プログラミング ガイド)
+# <a name="how-to-override-the-tostring-method-c-programming-guide"></a>ToString メソッドをオーバーライドする方法 (C# プログラミング ガイド)
 
 C# では、すべてのクラスまたは構造体が、暗黙的に <xref:System.Object> クラスを継承します。 そのため、C# のすべてのオブジェクトが <xref:System.Object.ToString%2A> メソッドを取得し、そのオブジェクトの文字列表現を返します。 たとえば、`int` 型の変数はすべて `ToString` メソッドを持ち、次のようにその変数の内容を文字列として返すことができます。  
   

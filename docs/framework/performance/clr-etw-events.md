@@ -8,21 +8,21 @@ helpviewer_keywords:
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6798a83973f94f07a2a215d5208aa55f0f9ae929
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 951941af2568e72fe093860801bd2595b3037e41
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046740"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428171"
 ---
 # <a name="clr-etw-events"></a>CLR ETW イベント
-このセクションのトピックでは、Windows イベント トレーシング (ETW) イベントについて説明します。 各イベントは、キーワードとレベルに関連付けられています。詳細については、「[CLR ETW キーワードおよびレベル](clr-etw-keywords-and-levels.md)」トピックを参照してください。 CLR には、イベントのプロバイダーが 2 つあります。  
+このセクションのトピックでは、Windows イベント トレーシング (ETW) イベントについて説明します。 各イベントは、キーワードとレベルに関連付けられています。詳細については、「[CLR ETW のキーワードとレベル](clr-etw-keywords-and-levels.md)」トピックを参照してください。 CLR には、イベントのプロバイダーが 2 つあります。  
   
 - ランタイム プロバイダー。有効になっているキーワードに応じてイベントを発生させます (キーワードとはイベントのカテゴリです)。 CLR ランタイム プロバイダーの GUID は e13c0d23-ccbc-4e12-931b-d9cc2eee27e4 です。  
   
 - ランダウン プロバイダー。特殊な用途があります。 CLR ランダウン プロバイダーの GUID は a669021c-c450-4609-a035-5af59af4df18 です。  
   
- プロバイダーの詳細については、「[CLR ETW プロバイダー](clr-etw-providers.md)」を参照してください。  
+ プロバイダーの詳細については、「[CLR ETW Providers](clr-etw-providers.md)」(CLR ETW プロバイダー) を参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ランタイム情報イベント](runtime-information-etw-events.md)  
@@ -61,10 +61,10 @@ ms.locfileid: "71046740"
  [スタック イベント](stack-etw-event.md)  
  イベントが発生した後に、他のイベントでスタック トレースの生成に使用された情報をキャプチャします。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [ETW によるデバッグとパフォーマンスチューニングの向上](https://go.microsoft.com/fwlink/?LinkId=179696)
-- [Windows パフォーマンスブログ](https://go.microsoft.com/fwlink/?LinkId=179509)
+- [ETW によるデバッグとパフォーマンスチューニングの向上](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
+- [Windows パフォーマンスブログ](https://blogs.msdn.microsoft.com/pigscanfly/tag/xperf/)
 - [.NET Framework のログ記録の制御](controlling-logging.md)
 - [CLR ETW プロバイダー](clr-etw-providers.md)
 - [CLR ETW キーワードおよびレベル](clr-etw-keywords-and-levels.md)

@@ -10,14 +10,12 @@ helpviewer_keywords:
 - COR_ENABLE_PROFILING environment variable
 - profiling API [.NET Framework], enabling
 ms.assetid: fefca07f-7555-4e77-be86-3c542e928312
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1e6c87a408b348cb6ecc7a3f6afa7060a1568a37
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 86720cb1739e3f193cd1d5081577d69bca1cf0f9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966114"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74427052"
 ---
 # <a name="setting-up-a-profiling-environment"></a>プロファイル環境の設定
 > [!NOTE]
@@ -25,9 +23,9 @@ ms.locfileid: "69966114"
   
  マネージド プロセス (アプリケーションまたはサービス) は、起動されると、共通言語ランタイム (CLR: Common Language Runtime) を読み込みます。 CLR は、初期化されると、プロファイラーに接続する必要があるかどうかを決定するために、次の 2 つの環境変数を評価します。  
   
-- COR_ENABLE_PROFILING:CLR は、この環境変数が存在し、が1に設定されている場合にのみプロファイラーに接続します。  
+- COR_ENABLE_PROFILING: この環境変数が存在し、1 に設定されている場合にのみ、CLR はプロファイラーに接続します。  
   
-- COR_PROFILER:COR_ENABLE_PROFILING チェックに合格した場合、CLR は、この CLSID または ProgID を持つプロファイラーに接続します。これは、以前にレジストリに格納されている必要があります。 COR_PROFILER 環境変数は文字列として定義されます。以下に 2 つの例を示します。  
+- COR_PROFILER: COR_ENABLE_PROFILING のチェックに合格した場合、CLR はこの CLSID または ProgID (あらかじめレジストリに格納されている) を持つプロファイラーに接続します。 COR_PROFILER 環境変数は文字列として定義されます。以下に 2 つの例を示します。  
   
     ```cpp  
     set COR_PROFILER={32E2F4DA-1BEA-47ea-88F9-C5DAF691C94A}  
@@ -51,7 +49,7 @@ ms.locfileid: "69966114"
   
 - ユーザー レベルで設定した変数は、エクスプローラーを使用して開始するすべてのアプリケーションに適用されます。 変数を設定した後にコマンド プロンプト ウィンドウを開くと、それらの環境設定が表示されます。そのウィンドウから起動するアプリケーションにも同じ設定が適用されます。 ユーザーレベルで環境変数を設定するには、**マイコンピューター**を右クリックし、**プロパティ** をクリックします。 **詳細設定** タブをクリックし、**環境変数** をクリックして、変数を **ユーザー変数** の一覧に追加します。  
   
-- コンピューター レベルで設定した変数は、そのコンピューターで起動するすべてのアプリケーションに適用されます。 そのコンピューターでコマンド プロンプト ウィンドウを開くと、それらの環境設定が表示されます。そのウィンドウから起動するアプリケーションにも同じ設定が適用されます。 つまり、そのコンピューター上のすべてのマネージド プロセスがプロファイラーと共に起動します。 コンピューターレベルで環境変数を設定するには、 **[マイコンピューター]** を右クリックし、 **[プロパティ]** をクリックします。次に、 **[詳細設定]** タブをクリックし、 **[環境変数]** をクリックして、変数を **[システム変数]** の一覧に追加します。コンピューターを再起動します。 再起動後、変数はシステム全体で試用できるようになります。  
+- コンピューター レベルで設定した変数は、そのコンピューターで起動するすべてのアプリケーションに適用されます。 そのコンピューターでコマンド プロンプト ウィンドウを開くと、それらの環境設定が表示されます。そのウィンドウから起動するアプリケーションにも同じ設定が適用されます。 つまり、そのコンピューター上のすべてのマネージド プロセスがプロファイラーと共に起動します。 コンピューターレベルで環境変数を設定するには、**マイコンピューター**を右クリックし、 **[プロパティ]** をクリックします。次に、 **[詳細設定]** タブをクリックし、 **[環境変数]** をクリックします。次に、変数を **[システム変数]** の一覧に追加してから、コンピューターを再起動します。 再起動後、変数はシステム全体で試用できるようになります。  
   
  Windows サービスのプロファイリングを行う場合は、環境変数を設定した後、コンピューターを再起動してプロファイラー DLL を登録する必要があります。 これらの考慮事項の詳細については、「 [Windows サービスのプロファイリング](#windows_service)」セクションを参照してください。  
   
@@ -70,7 +68,7 @@ ms.locfileid: "69966114"
 HRESULT Initialize(IUnknown *pICorProfilerInfoUnk)  
 ```  
   
- プロファイラーは、プロファイル`pICorProfilerInfoUnk`中により多くの情報を要求できるように、 [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)または[ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)インターフェイスポインターを照会して保存する必要があります。  
+ プロファイラーは、 [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)または[ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)インターフェイスポインターの `pICorProfilerInfoUnk` に対してクエリを実行し、プロファイル中により多くの情報を要求できるように保存する必要があります。  
   
 ## <a name="setting-event-notifications"></a>イベント通知の設定  
  次に、プロファイラーは[ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md)メソッドを呼び出して、関心のある通知のカテゴリを指定します。 たとえば、関数の Enter および Leave の通知とガベージ コレクションの通知のみを確認する場合は、次のように指定します。  
@@ -95,6 +93,6 @@ pInfo->SetEventMask(COR_PRF_MONITOR_ENTERLEAVE | COR_PRF_MONITOR_GC)
   
  この方法では、すべての CLR プロセスもプロファイリングの対象になります。 プロファイラーは、現在のプロセスが対象であるかどうかを検出するために、 [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)コールバックにロジックを追加する必要があります。 プロファイリングの対象ではない場合、プロファイラーは、初期化を実行せずにコールバックからエラーを返すことができます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [プロファイルの概要](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)

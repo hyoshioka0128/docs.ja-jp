@@ -1,5 +1,5 @@
 ---
-title: < diagnostics > 要素
+title: < diagnostics> 要素
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.diagnostics
@@ -15,11 +15,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71699194"
 ---
-# <a name="systemdiagnostics-element"></a>\<system. diagnostics > 要素
+# <a name="systemdiagnostics-element"></a>\<diagnostics > 要素
 メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1 **\<system >**  
+&nbsp;&nbsp; **\<の >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -28,11 +28,11 @@ ms.locfileid: "71699194"
 </system.diagnostics>  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a>属性と要素  
+ 次のセクションでは、属性、子要素、親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- [なし] :  
+ [なし]。  
   
 ### <a name="child-elements"></a>子要素  
   
@@ -52,10 +52,10 @@ ms.locfileid: "71699194"
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
   
 ## <a name="example"></a>例  
- 次の例は、トレーススイッチとトレースリスナーを **\<system. diagnostics >** 要素内に埋め込む方法を示しています。 @No__t-0 トレーススイッチが <xref:System.Diagnostics.TraceLevel> レベルに設定されています。 トレースリスナー `myListener` は、`MyListener.log` という名前のファイルを作成し、出力をファイルに書き込みます。  
+ 次の例は、トレーススイッチとトレースリスナーを **\<の >** 要素内に埋め込む方法を示しています。 `General` トレーススイッチは、<xref:System.Diagnostics.TraceLevel> レベルに設定されます。 トレースリスナー `myListener` によって `MyListener.log` というファイルが作成され、その出力がファイルに書き込まれます。  
   
 > [!NOTE]
-> .NET Framework バージョン 2.0 では、スイッチの値を指定するためにテキストを使用できます。 たとえば、<xref:System.Diagnostics.BooleanSwitch> の場合は `true` を指定し、<xref:System.Diagnostics.TraceSwitch> の場合は `Error` などの列挙値を表すテキストを使用します。 `<add name="myTraceSwitch" value="Error" />` という行は、`<add name="myTraceSwitch" value="1" />` と同じです。  
+> .NET Framework バージョン 2.0 では、スイッチの値を指定するためにテキストを使用できます。 たとえば、<xref:System.Diagnostics.BooleanSwitch> の `true` を指定したり、<xref:System.Diagnostics.TraceSwitch>の `Error` などの列挙値を表すテキストを使用したりできます。 `<add name="myTraceSwitch" value="Error" />` という行は、`<add name="myTraceSwitch" value="1" />` と同じです。  
   
 ```xml  
 <configuration>  
@@ -72,7 +72,7 @@ ms.locfileid: "71699194"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Diagnostics.Trace>
 - <xref:System.Diagnostics.Debug>

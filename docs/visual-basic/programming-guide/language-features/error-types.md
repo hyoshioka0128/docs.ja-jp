@@ -1,5 +1,5 @@
 ---
-title: エラーの種類 (Visual Basic)
+title: エラーの種類
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions, types
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], types of errors
 - syntax errors [Visual Basic], Visual Basic
 ms.assetid: 3048aabf-8c97-4e13-9150-853769cb5f6f
-ms.openlocfilehash: 5be91162d5c178fc032fba32605107c3fcd4d16b
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 04320c7a2fd27749e6de24f0ad21cc51c86ddda2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197203"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345156"
 ---
 # <a name="error-types-visual-basic"></a>エラーの種類 (Visual Basic)
 Visual Basic では、エラーは構文エラー、実行時エラー、および論理エラーの3つのカテゴリのいずれかに分類されます。
@@ -30,9 +30,9 @@ Visual Basic では、エラーは構文エラー、実行時エラー、およ�
  *実行時エラー*は、コードをコンパイルして実行した後にのみ表示されるエラーです。 このようなコードには、構文エラーがないにもかかわらず、実行できないと思われるコードが含まれます。 たとえば、ファイルを開くためのコード行が正しく記述されているとします。 ただし、ファイルが存在しない場合、アプリケーションはファイルを開くことができず、例外がスローされます。 ほとんどのランタイムエラーは、問題のあるコードを書き直すか、[例外処理](../../language-reference/statements/try-catch-finally-statement.md)を使用して再コンパイルし、再実行することによって修正できます。
   
 ## <a name="logic-errors"></a>ロジックエラー
- *ロジックエラー*は、アプリケーションが使用された後に表示されるエラーです。 ほとんどの場合、開発者によって作成された仮定に誤りがあるか、またはユーザーの操作に対する応答として望ましくないまたは予期しない結果になります。 たとえば、誤って入力されたキーによってメソッドに誤った情報が提供されることがあります。そうでない場合は、常に有効な値がメソッドに渡されると想定できます。 ロジックエラーは[例外処理](../../language-reference/statements/try-catch-finally-statement.md)を使用して処理できますが (たとえば、引数が `Nothing` であるかどうかをテストし、<xref:System.ArgumentNullException>をスローするなど)、ほとんどの場合、ロジックのエラーを修正し、アプリケーションを再コンパイルすることによって対処する必要があります.
+ *ロジックエラー*は、アプリケーションが使用された後に表示されるエラーです。 ほとんどの場合、開発者によって作成された仮定に誤りがあるか、またはユーザーの操作に対する応答として望ましくないまたは予期しない結果になります。 たとえば、誤って入力されたキーによってメソッドに誤った情報が提供されることがあります。そうでない場合は、常に有効な値がメソッドに渡されると想定できます。 [例外処理](../../language-reference/statements/try-catch-finally-statement.md)を使用してロジックエラーを処理することもできますが (たとえば、引数が `Nothing` であるかどうかをテストし、<xref:System.ArgumentNullException>をスローするなど)、ほとんどの場合、ロジックのエラーを修正し、アプリケーションを再コンパイルすることによって対処する必要があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
 - [デバッガーの基本事項](/visualstudio/debugger/debugger-feature-tour)

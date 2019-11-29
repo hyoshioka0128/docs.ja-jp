@@ -8,19 +8,19 @@ metadata:
   ms.date: 12/11/2018
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: e1414c17cefd0fb31bb782a311e11dbd4cc056bb
-  ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+  ms.openlocfilehash: bd11bda04ccf7d8253907bee8f17fc2b86ed76cd
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2019
-  ms.locfileid: "70394086"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969491"
 items:
 - durationInMinutes: 1
   content: >
     このチュートリアルでは C# 6 を対話形式で詳しく学習できます。ブラウザーを使用して C# を記述し、コードをコンパイルして実行した結果を確認します。 これには、より新しく簡潔な C# 6 の機能を使用するため、以前の C# プラクティスを変更する一連のレッスンが含まれています。 この記事の残りの部分では、これらの各機能の概要と、各機能をより詳しく学習するためのリンクを提供します。
 - title: 読み取り専用の型を有効にする読み取り専用の自動プロパティ
   durationInMinutes: 2
-  content: "自動プロパティ構文に対する 2 つの機能強化 (読み取り専用の自動プロパティと自動プロパティ初期化子) により、より多くの場所で自動プロパティが使いやすくなりました。 次の小さなプログラムを検討します。\n\n[!code-csharp[Starter](../../../../samples/csharp/tutorials/exploration/csharp6-starter/Program.cs)]  \n\n    \n フォーカス モードに入り、上記のコードを C# 対話型ウィンドウにコピーします。 次に、*[実行]* をクリックして、コードにより何が行われるかを確認します。 `AllCaps` には、大文字の文字列を返すことに加え、プロパティ値の変更という望ましくない副作用があります。 `Person` クラスの作成者は、`FirstName` と `LastName` の文字列を読み取り専用にすることを意図していました。 C# 6 では、その意図を明白にすることができます。 両方のプロパティから `private set` を削除して、読み取り専用の自動プロパティを作成します。 *[実行]* をクリックして、`FirstName` プロパティと `LastName`プロパティが変更されるべきでないタイミングで変更される 2 つの場所をコンパイラが特定するのを確認します。 `AllCaps` メソッドを次のコードに変更して、コンパイラ エラーを修正できます。\n\n```csharp\npublic string AllCaps()\n{\n  return ToString().ToUpper();\n}\n```\n\nこの新しい構文を使用することで、コンパイラはプロパティを変更できないようにします。\n"
+  content: "自動プロパティ構文に対する 2 つの機能強化 (読み取り専用の自動プロパティと自動プロパティ初期化子) により、より多くの場所で自動プロパティが使いやすくなりました。 次の小さなプログラムを検討します。\n\n[!code-csharp[Starter](../../../../samples/csharp/tutorials/exploration/csharp6-starter/Program.cs)]  \n\n    \n フォーカス モードに入り、上記のコードを C# 対話型ウィンドウにコピーします。 次に、*[実行]* を選択して、コードにより何が行われるかを確認します。 `AllCaps` には、大文字の文字列を返すことに加え、プロパティ値の変更という望ましくない副作用があります。 `Person` クラスの作成者は、`FirstName` と `LastName` の文字列を読み取り専用にすることを意図していました。 C# 6 では、その意図を明白にすることができます。 両方のプロパティから `private set` を削除して、読み取り専用の自動プロパティを作成します。 *[実行]* を選択して、`FirstName` および `LastName` プロパティが変更されるべきでないタイミングで変更される 2 つの場所をコンパイラが特定するのを確認します。 `AllCaps` メソッドを次のコードに変更して、コンパイラ エラーを修正できます。\n\n```csharp\npublic string AllCaps()\n{\n  return ToString().ToUpper();\n}\n```\n\nこの新しい構文を使用することで、コンパイラはプロパティを変更できないようにします。\n"
 - title: 自動プロパティのバッキング フィールドの初期化
   durationInMinutes: 1
   content: "C# 6 の新しい構文により、自動プロパティに初期化子を使用することができます。 クラスに新しい機能が増えたため、これはさらに重要になります。 ミドル ネーム プロパティと、3 つの文字列を受け取る新しいコンストラクターを `Person` クラスに追加します。\n\n[!code-csharp[MiddleName](../../../../samples/csharp/tutorials/exploration/csharp6-finished/Program.cs#MiddleName)]  \n\n`MiddleName` プロパティの割り当ては初期化子です。 これはミドル ネーム用にコンパイラによって生成されたバッキング フィールドを初期化します。\n"

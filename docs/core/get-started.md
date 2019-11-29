@@ -4,12 +4,12 @@ description: Windows、Linux、macOS で .NET Core アプリケーションを�
 author: thraka
 ms.author: adegeo
 ms.date: 09/19/2019
-ms.openlocfilehash: 9dbc3ebc8d43fe2570a90f4e10fd155a5b114351
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 78066f2904f6a874b71165e4fe1769b6b778ae41
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72521627"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428868"
 ---
 # <a name="get-started-with-net-core"></a>.NET Core の概要
 
@@ -52,7 +52,7 @@ Hello World!
 - [Visual Studio 2017 と .NET Core をインストールして使用する方法](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017/)に関するビデオを見る。
 - [.NET Core でのコマンド ラインの使用に関する概要。](tutorials/using-with-xplat-cli.md)
 
-サポートされている Windows のバージョンの一覧については、[Windows 開発の前提条件](windows-prerequisites.md)に関する記事をご覧ください。
+サポートされている Windows バージョンの一覧については、[.NET Core の依存関係と要件](install/dependencies.md?tabs=netcore30&pivots=os-windows)に関する記事を参加してください。
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
@@ -61,7 +61,7 @@ Hello World!
 - [.NET Core でのコマンド ラインの使用に関する概要。](tutorials/using-with-xplat-cli.md)
 - [Ubuntu 上の Visual Studio Code での C# と .NET Core の使用に関する概要](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu)のビデオを見る。
 
-サポートされている Linux ディストリビューションおよびバージョンの一覧については、[Linux 開発における前提条件](linux-prerequisites.md)に関する記事をご覧ください。
+サポートされている Linux のディストリビューションとバージョンの一覧については、[.NET Core の依存関係と要件](install/dependencies.md?tabs=netcore30&pivots=os-linux)に関する記事を参加してください。
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
@@ -73,6 +73,6 @@ Hello World!
 - [Visual Studio for Mac を使用した macOS での .NET Core の概要。](tutorials/using-on-mac-vs.md)
 - [Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築。](tutorials/using-on-mac-vs-full-solution.md)
 
-サポートされている OS X または macOS のバージョンの一覧については、「[macOS における .NET Core の前提条件](macos-prerequisites.md)」の記事を参照してください。
+サポートされている OS X / macOS バージョンの一覧については、[.NET Core の依存関係と要件](install/dependencies.md?tabs=netcore30&pivots=os-macos)に関する記事を参加してください。
 
 ---

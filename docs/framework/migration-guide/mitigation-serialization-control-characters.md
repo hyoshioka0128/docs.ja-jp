@@ -7,14 +7,12 @@ helpviewer_keywords:
 - DataContractJsonSerializer changes
 - serialization changes
 ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 12b26c8cc01b7af1c3b345d2f274a1d25a19d689
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: faa7a32766a3ea1ef9cddcdb8af8fd0dd5a6f287
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70789844"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457813"
 ---
 # <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>軽減策:DataContractJsonSerializer での制御文字のシリアル化
 
@@ -42,4 +40,4 @@ ms.locfileid: "70789844"
  
 ## <a name="see-also"></a>関連項目
 
-- [.NET Framework 4.7 における再ターゲットの変更点](retargeting-changes-in-the-net-framework-4-7.md)
+- [アプリケーションの互換性](application-compatibility.md)

@@ -77,15 +77,15 @@ Razor ディレクティブは `@` 文字で始まり、通常、ファイルの
 
 次の表は、Blazor で使用されるさまざまな Razor ディレクティブとそれらの ASP.NET Web フォームに相当するものをまとめたものです (存在する場合)。
 
-|ディレクティブ    |説明|例|同等の Web フォーム|
+|Directive    |説明|例|同等の Web フォーム|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |コンポーネントにクラスレベルの属性を追加します。|`@attribute [Authorize]`|None|
+|`@attribute` |コンポーネントにクラスレベルの属性を追加します。|`@attribute [Authorize]`|なし|
 |`@code`      |コンポーネントにクラスメンバーを追加します。|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|指定したインターフェイスを実装します。|`@implements IDisposable`|分離コードを使用する|
 |`@inherits`  |指定した基底クラスから継承します。|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |コンポーネントにサービスを挿入します。|`@inject IJSRuntime JS`|None|
+|`@inject`    |コンポーネントにサービスを挿入します。|`@inject IJSRuntime JS`|なし|
 |`@layout`    |コンポーネントのレイアウトコンポーネントを指定します。|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |コンポーネントの名前空間を設定します。|`@namespace MyNamespace`|None|
+|`@namespace` |コンポーネントの名前空間を設定します。|`@namespace MyNamespace`|なし|
 |`@page`      |コンポーネントのルートを指定します。|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |コンポーネントのジェネリック型パラメーターを指定します。|`@typeparam TItem`|分離コードを使用する|
 |`@using`     |スコープに取り込む名前空間を指定します|`@using MyComponentNamespace`|*Web.config に名前*空間を追加する|
@@ -110,7 +110,7 @@ Blazor (`@onclick`、`@bind`、`@ref`など) で使用されるさまざまな�
 
 *.Aspx*および *.ascx*ファイルで使用される構文の多くには、Razor の並列構文があります。 次に、ASP.NET Web フォームと Razor の構文を簡単に比較します。
 
-|特性                      |Web フォーム           |構文               |Razor         |構文 |
+|機能                      |Web フォーム           |構文               |Razor         |構文 |
 |-----------------------------|--------------------|---------------------|--------------|-------|
 |ディレクティブ                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |コードブロック                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
@@ -639,7 +639,7 @@ public class CounterBase : ComponentBase
 
 基底クラスのコンポーネントのメンバーの可視性は、コンポーネントクラスに表示される `protected` または `public` である必要があります。
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他のリソース
 
 前のは、Blazor コンポーネントのすべての側面を網羅するものではありません。 [ASP.NET Core Razor コンポーネントを作成して使用](/aspnet/core/blazor/components)する方法の詳細については、Blazor のドキュメントを参照してください。
 

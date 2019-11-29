@@ -1,14 +1,13 @@
 ---
 title: Wcf 開発者向けの gRPC-gRPC への WCF 要求/応答サービスの移行
 description: 単純な要求/応答サービスを WCF から gRPC に移行する方法について説明します。
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 12e042e8e7e3683cc4da1fedce2482e7199b04a7
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: f0b20e7b374438f90d83aebc6035a4e4dd94ae18
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841505"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971787"
 ---
 # <a name="migrate-a-wcf-request-reply-service-to-a-grpc-unary-rpc"></a>WCF 要求/応答サービスを gRPC 単項 RPC に移行する
 

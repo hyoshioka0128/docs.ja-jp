@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: d23a3408-b525-4aec-a186-2ac7ca65d7a4
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a9d1cf182eaf6f245baa5d898bac3ca7d3190234
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6bbb41f8fd3ac37f1c21fe8b4f6159e3d303777c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763094"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445183"
 ---
 # <a name="icorprofilercallbackappdomainshutdownstarted-method"></a>ICorProfilerCallback::AppDomainShutdownStarted メソッド
-プロセスから、アプリケーション ドメインがアンロードされることをプロファイラーに通知します。  
+アプリケーションドメインがプロセスからアンロードされていることをプロファイラーに通知します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -36,20 +34,20 @@ HRESULT AppDomainShutdownStarted(
   
 ## <a name="parameters"></a>パラメーター  
  `appDomainId`  
- [in]アプリケーションのアセンブリが格納されているドメインを識別します。  
+ からアプリケーションのアセンブリが格納されているドメインを識別します。  
   
-## <a name="remarks"></a>Remarks  
- 値`appDomainId`は後の情報の要求は無効です、`AppDomainShutdownStarted`メソッドを返します。-これは、このアプリケーション ドメインに関する情報を取得するプロファイラーの最後のチャンスです。  
+## <a name="remarks"></a>コメント  
+ `appDomainId` の値は、`AppDomainShutdownStarted` メソッドから返された後の情報要求に対して無効です。これは、このアプリケーションドメインに関する情報を取得するためのプロファイラーの最後の機会です。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

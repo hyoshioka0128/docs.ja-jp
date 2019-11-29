@@ -69,7 +69,7 @@ Azure のほとんどのリソースと同様に、ポータルを使用して�
 
 - [スケール]
 - 認証
-- ネットワーキング
+- ネットワーク
 - 監視
 - Tags
 
@@ -103,7 +103,7 @@ az aks use-dev-spaces -g my-aks-resource-group -n MyAKSCluster
 Visual Studio で Azure Dev Spaces に接続 ![には](./media/azure-dev-spaces-visual-studio-launchsettings.png)
 **図 3-12**をご確認ください。 Visual Studio での Azure Dev Spaces への接続
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [カナリアリリース](https://martinfowler.com/bliki/CanaryRelease.html)
 - [VS Code での Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/quickstart-netcore)

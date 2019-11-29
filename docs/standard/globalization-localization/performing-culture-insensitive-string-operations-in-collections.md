@@ -15,12 +15,12 @@ helpviewer_keywords:
 - SortedList class, culture-insensitive string operations
 - culture parameter
 ms.assetid: 5cdc9396-a64b-4615-a1cd-b605db4c5983
-ms.openlocfilehash: 5bd6e49f23ca5b694664393f3eb18cc72ada7bdd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 13a9f4896a37be4297f2a1a11435b85ade381c66
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120815"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353672"
 ---
 # <a name="performing-culture-insensitive-string-operations-in-collections"></a>カルチャの影響を受けないコレクションの操作の実行
 
@@ -78,7 +78,6 @@ internalHashtable = new Hashtable(new CaseInsensitiveHashCodeProvider
 `SortedList`は、キーによって並べ替えられ、キーとインデックスを使ってアクセスできる、キーと値のペアのコレクションを表します。 文字列がキーであるときに `SortedList` を使用すると、並べ替えと検索が `Thread.CurrentCulture` プロパティの影響を受けることがあります。 `SortedList` でカルチャを認識しない動作を実行するには、`comparer` パラメーターを受け取るコンストラクターの 1 つを使用して `SortedList` を作成します。 `comparer` パラメーターは、キーの比較に使用される <xref:System.Collections.IComparer> の実装を指定します。 このパラメーターには、キーを比較するために `CultureInfo.InvariantCulture` を使用するカスタム comparer クラスを指定してください。 次の例は、カルチャを認識しないカスタム comparer クラスです。これは `SortedList`コンストラクターの `comparer` パラメーターとして指定できます。
 
 ```vb
-Imports System
 Imports System.Collections
 Imports System.Globalization
 

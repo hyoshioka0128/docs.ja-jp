@@ -2,12 +2,12 @@
 title: 連結演算 (C#)
 ms.date: 07/20/2015
 ms.assetid: 890ee104-c590-457e-8a7f-b2b5da0fb417
-ms.openlocfilehash: 43fb9c2768dd3b055b693967a548cc2826972f9c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: f02e323e673e46f4e7ba4a6005c86b7f9050f8ef
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594681"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141523"
 ---
 # <a name="concatenation-operations-c"></a>連結演算 (C#)
 連結とは、1 つのシーケンスを別のシーケンスに追加する演算を指します。  
@@ -20,12 +20,12 @@ ms.locfileid: "69594681"
   
 ## <a name="methods"></a>メソッド  
   
-|メソッド名|説明|C# のクエリ式の構文|詳細情報|  
+|メソッド名|説明|C# のクエリ式の構文|説明|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|Concat|2 つのシーケンスを連結して 1 つのシーケンスにします。|適用不可。|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=nameWithType>|  
+|Concat|2 つのシーケンスを連結して 1 つのシーケンスにします。|該当なし。|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Linq>
 - [標準クエリ演算子の概要 (C#)](./standard-query-operators-overview.md)
-- [方法: 文字列コレクションを結合および比較する (LINQ) (C#)](./how-to-combine-and-compare-string-collections-linq.md)
+- [文字列コレクションを結合および比較する方法 (LINQ) (C#)](./how-to-combine-and-compare-string-collections-linq.md)

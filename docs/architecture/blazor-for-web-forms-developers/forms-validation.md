@@ -125,7 +125,7 @@ public class Starship
 
 フォームの送信後、モデルバインドデータは、データベースのようなデータストアに保存されていません。 Blazor WebAssembly では、データをサーバーに送信する必要があります。 たとえば、HTTP POST 要求を使用します。 Blazor Server アプリでは、データは既にサーバー上に存在していますが、保存する必要があります。 Blazor アプリでのデータアクセスの処理は、データの処理に[関する](data.md)セクションの対象です。
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他のリソース
 
 Blazor アプリでの[フォームと検証](/aspnet/core/blazor/forms-validation)の詳細については、Blazor のドキュメントを参照してください。
 

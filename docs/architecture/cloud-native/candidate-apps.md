@@ -3,18 +3,18 @@ title: クラウドネイティブ向けアプリ候補
 description: クラウドネイティブアプローチによってメリットが得られるアプリケーションの種類について説明します
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 127dca45ce8a5e025ca7511e6513afffe64e592d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 328af4081d830cf1a7959a37c2155090ec4da3ff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73841859"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968297"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>クラウドネイティブ向けアプリ候補
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-ポートフォリオ内のアプリを確認します。 クラウドネイティブアーキテクチャについては、そのうちのどれが適していますか。 彼ら皆。 おそらく、
+ポートフォリオ内のアプリを確認します。 クラウドネイティブアーキテクチャについては、そのうちのどれが適していますか。 全部ですか。 おそらく、
 
 コストと利益の分析を適用すると、クラウドネイティブの hefty price タグがサポートされない可能性が高くなります。 クラウドネイティブのコストは、アプリケーションのビジネス価値をはるかに超えています。
 
@@ -64,13 +64,13 @@ ms.locfileid: "73841859"
 
 適切な移行戦略は、組織の優先順位と対象とするシステムによって異なります。 多くの場合、モノリシックアプリケーションをクラウドで最適化したり、N 層アプリに粗いサービスを追加したりすると、コスト効率が向上します。 このような場合でも、Azure App Service によって提供されるもののようなクラウド PaaS 機能を十分に活用できます。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 この章では、クラウドネイティブコンピューティングを導入しました。 クラウドネイティブアプリケーションを駆動する主な機能と共に、定義を提供しました。 この投資と労力を正当化するアプリケーションの種類について見てきました。
 
 ここでは、クラウドネイティブの詳細について説明します。
 
-### <a name="references"></a>関連項目
+### <a name="references"></a>参照
 
 - [クラウドネイティブコンピューティングファンデーション](https://www.cncf.io/)
 
@@ -89,8 +89,6 @@ ms.locfileid: "73841859"
 - [Netflix によるコードのデプロイ方法](https://www.infoq.com/news/2013/06/netflix/)
 
 - [マイクロサービスでの Wat のスケーリングのためのオーバーロードコントロール](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf)
-
-- [RayGun-ケーススタディ](https://raygun.com/case-study/ovation)
 
 >[!div class="step-by-step"]
 >[前へ](definition.md)

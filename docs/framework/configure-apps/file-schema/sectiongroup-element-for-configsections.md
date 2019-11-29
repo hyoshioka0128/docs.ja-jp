@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 6c27f9e2-809c-4bc9-aca9-72f90360e7a3
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9113811557ded3a580a0bbacb24f2fe7e8d05ccf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 746a997e162b0fd370a249b8d039be623b57d77f
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73114778"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089015"
 ---
 # <a name="sectiongroup-element-for-configsections"></a>\<configSections の \<sectionGroup > 要素 >
 
 構成セクションの名前空間を定義します。
 
-[ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)   
+[ **\<configuration>** ](configuration-element.md)\
+&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<sectionGroup >**
 
 ## <a name="syntax"></a>構文

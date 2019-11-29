@@ -1,5 +1,5 @@
 ---
-title: '方法: メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する - C# プログラミング ガイド'
+title: メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する方法 - C# プログラミング ガイド
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - passing parameters [C#], structs vs. classes
 - methods [C#], passing classes vs. structs
 ms.assetid: 9c1313a6-32a8-4ea7-a59f-450f66af628b
-ms.openlocfilehash: 09b40a1ee8ab57a4b8a641acae49ab31a14d3d5b
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 9bacc7b3913a6e353e39f1e45fa99ea2dcdbe668
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70893146"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970540"
 ---
-# <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>方法: メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する (C# プログラミング ガイド)
+# <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する方法 (C# プログラミング ガイド)
 次の例では、メソッドに[構造体](../../language-reference/keywords/struct.md)を渡すことと[クラス](../../language-reference/keywords/class.md) インスタンスを渡すことの違いを示します。 この例では、両方の引数 (構造体とクラス インスタンス) が値によって渡され、両方のメソッドが引数の 1 つのフィールドの値を変更します。 ただし、2 つのメソッドの結果は同じではありません。構造体を渡した場合に渡される内容と、クラスのインスタンスを渡した場合に渡される内容が異なるためです。  
   
  構造体は[値型](../../language-reference/keywords/value-types.md)であるため、メソッドに[構造体が値によって渡される](./passing-value-type-parameters.md)と、メソッドは構造体引数のコピーを受け取って操作します。 メソッドは、呼び出し側メソッドの元の構造体にはアクセスできないため、どのような場合でもこの構造体を変更することはできません。 メソッドで変更できるのはコピーのみです。  

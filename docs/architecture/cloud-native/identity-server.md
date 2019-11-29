@@ -98,7 +98,7 @@ public class Startup
 
 多くのクラウドネイティブアプリケーションでは、フロントエンドでサーバー側 Api とリッチクライアントシングルページアプリケーション (spa) を利用しています。 ユーザーは、NPM を使用して[JavaScript クライアント](http://docs.identityserver.io/en/latest/quickstarts/6_javascript_client.html)(`oidc-client.js`) を提供します。これを spas に追加することにより、web api のサインイン、サインアウト、トークンベースの認証に使用できるようになります。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [サーバーのドキュメント](http://docs.identityserver.io/en/latest/)
 - [アプリケーションの種類](https://docs.microsoft.com/azure/active-directory/develop/app-types)

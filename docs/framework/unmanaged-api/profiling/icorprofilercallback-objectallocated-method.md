@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: eb412622-77cc-4abd-a2cd-c910fe8edd54
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 10a000fd98ad12dc39f8f8338485d6bb4093ee07
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 66643bbb8dbc914b2e0e48a7f0c87630fe95e5d3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782980"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445849"
 ---
 # <a name="icorprofilercallbackobjectallocated-method"></a>ICorProfilerCallback::ObjectAllocated メソッド
-オブジェクトの割り当てられたヒープ内のメモリ プロファイラーに通知します。  
+ヒープ内のメモリがオブジェクトに割り当てられたことをプロファイラーに通知します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -37,24 +35,24 @@ HRESULT ObjectAllocated(
   
 ## <a name="parameters"></a>パラメーター  
  `objectId`  
- [in]メモリが割り当てられたオブジェクトの ID。  
+ からメモリが割り当てられたオブジェクトの ID。  
   
  `classId`  
- [in]オブジェクトがインスタンス クラスの ID。  
+ からオブジェクトがインスタンスとして使用されているクラスの ID。  
   
-## <a name="remarks"></a>Remarks  
- `ObjectedAllocated`メソッドは、スタックまたはアンマネージ メモリからの割り当てに対しては呼び出されません。 `classId`パラメーターがまだ読み込まれていないマネージ コード内のクラスを参照できます。 プロファイラーはそのクラスのクラスのロード コールバックの直後に、`ObjectAllocated`コールバック。  
+## <a name="remarks"></a>コメント  
+ `ObjectedAllocated` メソッドは、スタックまたはアンマネージメモリからの割り当てに対しては呼び出されません。 `classId` パラメーターは、まだ読み込まれていないマネージコード内のクラスを参照できます。 プロファイラーは、`ObjectAllocated` コールバックの直後に、そのクラスのクラス読み込みコールバックを受け取ります。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
 - [ClassLoadStarted メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md)

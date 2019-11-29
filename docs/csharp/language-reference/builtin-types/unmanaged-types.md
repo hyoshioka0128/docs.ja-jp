@@ -3,12 +3,12 @@ title: アンマネージド型 - C# リファレンス
 ms.date: 09/06/2019
 helpviewer_keywords:
 - unmanaged type [C#]
-ms.openlocfilehash: 25aa42ba8c8f0023b4f818feb2edbb325f805fb6
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 81eef59ceb20bcae6c749dd59578ce35da253826
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374118"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204470"
 ---
 # <a name="unmanaged-types-c-reference"></a>アンマネージド型 (C# リファレンス)
 
@@ -19,7 +19,7 @@ ms.locfileid: "70374118"
 - すべての[ポインター](../../programming-guide/unsafe-code-pointers/pointer-types.md) 型
 - アンマネージド型のフィールドのみが含まれるすべてのユーザー定義の[構造体](../keywords/struct.md)型で、かつ C# 7.3 以前の場合は、構築された型 (1 つ以上の型引数が含まれる型) でない
 
-C# 7.3 以降、[`unmanaged` 制約](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint)を使用して、型パラメーターが非ポインターのアンマネージド型であることを指定できます。
+C# 7.3 以降、[`unmanaged` 制約](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint)を使用して、型パラメーターが非ポインターで、null 非許容で、アンマネージド型であることを指定できます。
 
 C# 8.0 以降では、次の例に示すように、アンマネージド型のフィールドのみが含まれる "*構築された*" 構造体型もアンマネージド型になります。
 

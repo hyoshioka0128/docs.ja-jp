@@ -5,14 +5,12 @@ ms.date: 02/06/2019
 helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d7c282157639a6a60270ce8dbebbc91dd0e0a3f3
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 45dcc58b252963e80798ba86ca5c4f461d493fac
+ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826617"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73120142"
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>式形式のメンバー (C# プログラミング ガイド)
 
@@ -89,9 +87,9 @@ C# 7.0 以降では、式本体の定義を使用してプロパティ `get` と
 
 ## <a name="indexers"></a>インデクサー
 
-プロパティと同様に、get アクセサーが値を返す単一のステートメントで構成される場合、または set アクセサーが単純な代入を実行する場合、インデクサーの get と set アクセサーは、式本体の定義で構成されます。
+プロパティと同様に、`get` アクセサーが値を返す単一のステートメントで構成される場合、または `set` アクセサーがシンプルな代入を実行する場合、インデクサーの `get` と `set` アクセサーは、式本体の定義で構成されます。
 
-次の例では、`Sports` というクラスを定義します。このクラスには、複数のスポーツ名を含む内部 <xref:System.String> 配列があります。 インデクサーの get および set アクセサーはいずれも、式本体の定義として実装されます。
+次の例では、`Sports` というクラスを定義します。このクラスには、複数のスポーツ名を含む内部 <xref:System.String> 配列があります。 インデクサーの `get` および `set` アクセサーはいずれも、式本体の定義として実装されます。
 
 [!code-csharp[expression-bodied-indexer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-indexers.cs#1)]
 

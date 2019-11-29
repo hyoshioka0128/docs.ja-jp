@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8e7dbf14-98a2-4384-a950-58a7640e59df
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8f8c18935069e4162236f99c411312087ce73bdc
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d44eae4da70418e2d4f398b2bacee1fb53d55b60
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782220"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443057"
 ---
 # <a name="icorprofilerinfo2getthreadstaticaddress-method"></a>ICorProfilerInfo2::GetThreadStaticAddress メソッド
-指定したスレッドのスコープ内の指定したスレッド内静的フィールドのアドレスを取得します。  
+指定したスレッドのスコープ内にある、指定したスレッド静的フィールドのアドレスを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -39,30 +37,30 @@ HRESULT GetThreadStaticAddress(
   
 ## <a name="parameters"></a>パラメーター  
  `classId`  
- [in]要求されたスレッド内静的フィールドを含むクラスの ID。  
+ から要求されたスレッド静的フィールドを含むクラスの ID。  
   
  `fieldToken`  
- [in]要求されたスレッド内静的フィールドのメタデータ トークン。  
+ から要求されたスレッドの静的フィールドのメタデータトークン。  
   
  `threadId`  
- [in]要求された静的フィールドのスコープにあるスレッドの ID。  
+ から要求された静的フィールドのスコープであるスレッドの ID。  
   
  `ppAddress`  
- [out]指定したスレッド内の静的フィールドのアドレスへのポインター。  
+ 入出力指定したスレッド内の静的フィールドのアドレスへのポインター。  
   
-## <a name="remarks"></a>Remarks  
- `GetThreadStaticAddress`メソッドは、次のいずれかを返す可能性があります。  
+## <a name="remarks"></a>コメント  
+ `GetThreadStaticAddress` メソッドは、次のいずれかを返す場合があります。  
   
-- 指定された静的フィールドに指定したコンテキスト内のアドレスが割り当てられていない場合の CORPROF_E_DATAINCOMPLETE HRESULT。  
+- 指定されたコンテキストで、指定された静的フィールドにアドレスが割り当てられていない場合は CORPROF_E_DATAINCOMPLETE HRESULT。  
   
-- ガベージ コレクション ヒープで可能性のあるオブジェクトのアドレス。 これらのアドレスの後、ガベージ コレクションが無効になる後、ガベージ コレクションのプロファイラーが有効である想定しないでください。  
+- ガベージコレクションヒープ内に存在する可能性があるオブジェクトのアドレス。 これらのアドレスは、ガベージコレクションの後に無効になることがあります。そのため、ガベージコレクションプロファイラーは、これらのアドレスが有効であると想定することはできません。  
   
- クラスのクラスのコンス トラクターが完了したら、前に`GetThreadStaticAddress`はいくつかの静的フィールドは既に初期化可能性がありますが、すべての静的フィールドの CORPROF_E_DATAINCOMPLETE を返し、ガベージ コレクション オブジェクトのルートします。  
+ クラスのクラスコンストラクターが完了する前に、`GetThreadStaticAddress` はすべての静的フィールドに対して CORPROF_E_DATAINCOMPLETE を返します。ただし、静的フィールドの一部は既に初期化されており、ガベージコレクションオブジェクトがルート化される場合があります。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   

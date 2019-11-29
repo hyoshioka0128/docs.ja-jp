@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 908c3fb0baacc7fd75dae875e9a9d49a08fe5401
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a88159085e48d69550320ffabe3035f549c78653
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459716"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975608"
 ---
 # <a name="security-wpf"></a>セキュリティ (WPF)
 <a name="introduction"></a>Windows Presentation Foundation (WPF) のスタンドアロンアプリケーションとブラウザーでホストされるアプリケーションを開発する場合は、セキュリティモデルを考慮する必要があります。 [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] スタンドアロンアプリケーションは、Windows インストーラー (.msi)、XCopy、または ClickOnce を使用してデプロイされているかどうかにかかわらず、無制限のアクセス許可 (CAS**FullTrust**アクセス許可セット) で実行されます。 部分的に信頼されたスタンドアロンの WPF アプリケーションを ClickOnce で展開することはサポートされていません。 ただし、完全に信頼されたホストアプリケーションでは、.NET Framework アドインモデルを使用して部分信頼 <xref:System.AppDomain> を作成できます。 詳細については、「 [WPF アドインの概要](./app-development/wpf-add-ins-overview.md)」を参照してください。  
@@ -209,7 +209,7 @@ ms.locfileid: "73459716"
   
  Windows Internet Explorer で WPF <xref:System.Windows.Controls.WebBrowser> コントロールを含む部分信頼 XAML ブラウザーアプリケーション (XBAP) を実行すると、WPF は Internet Explorer プロセスのアドレス空間で WebBrowser ActiveX コントロールをホストします。 WebBrowser ActiveX コントロールは Internet Explorer プロセスでホストされているため、Internet Explorer のすべての機能コントロールが WebBrowser ActiveX コントロールに対しても有効になります。  
   
- Internet Explorer で実行されている XBAP にも、標準のスタンドアロン アプリケーションよりも高いレベルのセキュリティが適用されます。 この追加のセキュリティは、Internet Explorer、つまり WebBrowser ActiveX コントロールが、既定では [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] と [!INCLUDE[win7](../../../includes/win7-md.md)]で保護モードで実行されるためです。 保護モードの詳細については、「 [Internet Explorer の保護モードの概要と操作](https://go.microsoft.com/fwlink/?LinkId=179393)」を参照してください。  
+ Internet Explorer で実行されている XBAP にも、標準のスタンドアロン アプリケーションよりも高いレベルのセキュリティが適用されます。 この追加のセキュリティは、Internet Explorer と WebBrowser ActiveX コントロールが既定で Windows Vista および [!INCLUDE[win7](../../../includes/win7-md.md)]で実行されているためです。 保護モードの詳細については、「 [Internet Explorer の保護モードの概要と操作](https://go.microsoft.com/fwlink/?LinkId=179393)」を参照してください。  
   
 > [!NOTE]
 > インターネットゾーン内で、WPF <xref:System.Windows.Controls.WebBrowser> コントロールを含む XBAP を Firefox で実行しようとすると、<xref:System.Security.SecurityException> がスローされます。 これは、WPF セキュリティ ポリシーが原因です。  
@@ -258,7 +258,7 @@ ms.locfileid: "73459716"
  このように設定すると、外部コンテンツは、アプリケーションをホストするプロセスとは異なるプロセスに読み込まれます。 このプロセスは既定のインターネット ゾーン アクセス許可セットに限定されており、ホスト アプリケーションとクライアント コンピューターから外部コンテンツを効果的に分離します。  
   
 > [!NOTE]
-> <xref:System.Windows.Navigation.NavigationWindow> またはスタンドアロンアプリケーションの <xref:System.Windows.Controls.Frame> からの [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルへの移動は、プレゼンテーションホストプロセスを含む WPF ブラウザーホスティングインフラストラクチャに基づいて実装されますが、セキュリティレベルは、コンテンツは [!INCLUDE[wiprlhext](../../../includes/wiprlhext-md.md)] の Internet Explorer に直接読み込まれ、[!INCLUDE[win7](../../../includes/win7-md.md)] ます (これは引き続きプレゼンテーションホストを経由します)。 これは、Web ブラウザーを使用しているスタンドアロン WPF アプリケーションに、Internet Explorer の保護モード セキュリティ機能が追加されていないためです。  
+> <xref:System.Windows.Navigation.NavigationWindow> またはスタンドアロンアプリケーション内の <xref:System.Windows.Controls.Frame> からの [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ファイルへの移動は、プレゼンテーションホストプロセスを含む WPF ブラウザーホスティングインフラストラクチャに基づいて実装されますが、コンテンツが Windows [!INCLUDE[win7](../../../includes/win7-md.md)] Vista の Internet Explorer に直接読み込まれている (または、プレゼンテーションホストを介している) 場合よりも、セキュリティレベルは若干低くなります。 これは、Web ブラウザーを使用しているスタンドアロン WPF アプリケーションに、Internet Explorer の保護モード セキュリティ機能が追加されていないためです。  
   
 <a name="BestPractices"></a>   
 ## <a name="resources-for-developing-wpf-applications-that-promote-security"></a>セキュリティを向上する WPF アプリケーションを開発するためのリソース  

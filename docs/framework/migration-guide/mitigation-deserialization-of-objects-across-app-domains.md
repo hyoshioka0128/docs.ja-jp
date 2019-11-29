@@ -2,14 +2,12 @@
 title: '軽減策: アプリ ドメイン全体でのオブジェクトの逆シリアル化'
 ms.date: 03/30/2017
 ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: de2456a1365a1fb48b3e9f126e090b8da77728cc
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: e2d90a77cab699646bd31eaa162d1bd1744fd51b
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894122"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457927"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>軽減策: アプリ ドメイン全体でのオブジェクトの逆シリアル化
 場合によっては、アプリが異なるアプリケーション ベースを持つ複数のアプリ ドメインを使用すると、アプリ ドメイン間で論理呼び出しコンテキストのオブジェクトを逆シリアル化しようとして、例外がスローされます。  
@@ -50,4 +48,4 @@ ms.locfileid: "70894122"
   
 ## <a name="see-also"></a>関連項目
 
-- [ランタイムの変更点](runtime-changes-in-the-net-framework-4-5-1.md)
+- [アプリケーションの互換性](application-compatibility.md)

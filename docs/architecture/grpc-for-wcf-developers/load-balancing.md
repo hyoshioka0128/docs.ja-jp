@@ -1,14 +1,13 @@
 ---
 title: WCF 開発者向けの gRPC-gRPC の負荷分散
 description: GRPC サービスを使用するロードバランサーの選択。
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 18965b9c4765ac693c6ba36ad3ea9848ce858a5c
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 070fc7fda73988302d15c8cec12b1ac359641317
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841553"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967454"
 ---
 # <a name="load-balancing-grpc"></a>GRPC の負荷分散
 

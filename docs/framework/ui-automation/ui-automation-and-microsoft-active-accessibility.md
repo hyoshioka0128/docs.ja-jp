@@ -7,16 +7,16 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: 99909f29e3228e7bc140ebdc888d4663bcbca0b5
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 96998b2e625c7e395dd61d6905bc437ef1ca697d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040529"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436640"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>UI オートメーションと Microsoft Active Accessibility
 > [!NOTE]
-> このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「Windows Automation API の [」を参照してください。UI オートメーション](https://go.microsoft.com/fwlink/?LinkID=156746)。  
+> このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](/windows/win32/winauto/entry-uiauto-win32)」を参照してください。  
   
  Microsoft Active Accessibility は、アプリケーションをアクセス可能にするための以前のソリューションでした。 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] は、Microsoft Windows の新しいユーザー補助モデルであり、支援技術製品および自動テストツールのニーズに対応することを目的としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] は、Active Accessibility よりも多くの機能強化を提供します。  
   
@@ -54,13 +54,13 @@ ms.locfileid: "73040529"
   
  Active Accessibility の要素間のナビゲーションは、空間 (画面の左側にある要素に移動するなど)、論理 (たとえば、次のメニュー項目に移動する、ダイアログボックス内のタブオーダーで次の項目に移動するなど)、または階層 (たとえば、コンテナー内の最初の子を移動したり、子からその親に移動したりすることができます。 子要素が `IAccessible`を実装しているオブジェクトであるとは限らないため、階層的ナビゲーションは複雑です。  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]では、すべての [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 要素は、同じ基本機能をサポートする <xref:System.Windows.Automation.AutomationElement> オブジェクトです (プロバイダーの観点からは、これらは <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>から継承されたインターフェイスを実装するオブジェクトです)。ナビゲーションは主に階層的 (親から子、兄弟から次の兄弟) です (兄弟間のナビゲーションは、タブ オーダーに従う場合があるため、論理的要素も持っています)。<xref:System.Windows.Automation.TreeWalker> クラスを使用すると、ツリーのフィルター処理されたビューを使用して、任意の開始点から移動できます。 <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> と <xref:System.Windows.Automation.AutomationElement.FindAll%2A>を使用して、特定の子または子孫に移動することもできます。たとえば、指定したコントロール パターンがサポートされるダイアログ ボックス内のすべての要素を非常に簡単に取得できます。  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]では、すべての [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 要素は、同じ基本機能をサポートする <xref:System.Windows.Automation.AutomationElement> オブジェクトです (プロバイダーの観点からは、これらは <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>から継承されたインターフェイスを実装するオブジェクトです)。ナビゲーションは主に階層構造です。親から子、そして兄弟から次の兄弟へと移動します。 (兄弟間のナビゲーションは、タブオーダーに従っている場合があるため、論理要素を持ちます)。<xref:System.Windows.Automation.TreeWalker> クラスを使用すると、ツリーのフィルター処理されたビューを使用して、任意の開始点から移動できます。 <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> と <xref:System.Windows.Automation.AutomationElement.FindAll%2A>を使用して、特定の子または子孫に移動することもできます。たとえば、指定したコントロール パターンがサポートされるダイアログ ボックス内のすべての要素を非常に簡単に取得できます。  
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] でのナビゲーションは、Active Accessibility よりも一貫性があります。 ドロップダウンリストやポップアップウィンドウなどの一部の要素が Active Accessibility ツリーに2回表示され、それらの要素からのナビゲーションが予期しない結果になる場合があります。 実際には、rebar コントロールに Active Accessibility を正しく実装することはできません。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] では親の再指定や位置の変更が可能なため、ウィンドウの所有関係による階層にかかわらず、要素をツリー内の任意の場所に配置できます。  
   
 <a name="Roles_and_Control_Types"></a>   
 ## <a name="roles-and-control-types"></a>役割とコントロール型  
- Active Accessibility では、`accRole` プロパティ (`IAccessible::get_actRole`) を使用して、ROLE_SYSTEM_SLIDER や YW など、[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]内の要素のロールの説明を取得します。 要素の役割は、要素の機能を表す主要な鍵になります。 コントロールとの対話は、 `IAccessible::accSelect` や `IAccessible::accDoDefaultAction`などの固定のメソッドを使用して実現されます。 クライアント アプリケーションと [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] の間の対話は、 `IAccessible`を通して実行できる範囲に限定されます。  
+ Active Accessibility は、`accRole` プロパティ (`IAccessible::get_actRole`) を使用して、[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]内の要素のロールの説明 (ROLE_SYSTEM_SLIDER や ROLE_SYSTEM_MENUITEM など) を取得します。 要素の役割は、要素の機能を表す主要な鍵になります。 コントロールとの対話は、 `IAccessible::accSelect` や `IAccessible::accDoDefaultAction`などの固定のメソッドを使用して実現されます。 クライアント アプリケーションと [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] の間の対話は、 `IAccessible`を通して実行できる範囲に限定されます。  
   
  これに対して、 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] では、要素のコントロール型 ( <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A> プロパティで記述) と、その要素に期待される機能とが大きく分離されています。 機能は、特殊なインターフェイスの実装を通じてプロバイダーによってサポートされる、コントロール パターンによって決定されます。 複数のコントロール パターンを組み合わせると、特定の [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 要素がサポートする機能をすべて記述することができます。 プロバイダーによっては、ある 1 つの特定のコントロール パターンをサポートしなければならないものがあります。たとえば、チェック ボックスのプロバイダーは Toggle コントロール パターンをサポートする必要があります。 また、コントロール パターンのセットを 1 つ以上サポートしなければならないものもあります。たとえば、ボタンは、Toggle と Invoke のいずれかをサポートする必要があります。 さらに、コントロール パターンをまったくサポートしないものもあります。たとえば、移動もサイズ変更もドッキングもできないペインには、コントロール パターンはありません。  
   
@@ -70,8 +70,8 @@ ms.locfileid: "73040529"
   
 |Active Accessibility ロール|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のコントロール型|  
 |----------------------------------------------------------------------|----------------------------------------------------------------------------------------|  
-|ROLE_SYSTEM_PUSHBUTTON|Button|  
-|ROLE_SYSTEM_CLIENT|予定表|  
+|ROLE_SYSTEM_PUSHBUTTON|ボタン|  
+|ROLE_SYSTEM_CLIENT|カレンダー|  
 |ROLE_SYSTEM_CHECKBUTTON|チェック ボックス|  
 |ROLE_SYSTEM_COMBOBOX|コンボ ボックス|  
 |ROLE_SYSTEM_CLIENT|カスタム|  
@@ -79,38 +79,38 @@ ms.locfileid: "73040529"
 |ROLE_SYSTEM_LISTITEM|データ項目|  
 |ROLE_SYSTEM_DOCUMENT|ドキュメント|  
 |ROLE_SYSTEM_TEXT|編集|  
-|ROLE_SYSTEM_GROUPING|グループ化|  
-|ROLE_SYSTEM_LIST|Header|  
+|ROLE_SYSTEM_GROUPING|グループ|  
+|ROLE_SYSTEM_LIST|ヘッダー|  
 |ROLE_SYSTEM_COLUMNHEADER|ヘッダー項目|  
 |ROLE_SYSTEM_LINK|ハイパーリンク|  
-|ROLE_SYSTEM_GRAPHIC|Image|  
-|ROLE_SYSTEM_LIST|リスト|  
-|ROLE_SYSTEM_LISTITEM|リスト項目|  
+|ROLE_SYSTEM_GRAPHIC|イメージ|  
+|ROLE_SYSTEM_LIST|一覧|  
+|ROLE_SYSTEM_LISTITEM|リスト アイテム|  
 |ROLE_SYSTEM_MENUPOPUP|メニュー|  
 |ROLE_SYSTEM_MENUBAR|メニュー バー|  
 |ROLE_SYSTEM_MENUITEM|メニュー項目|  
-|ROLE_SYSTEM_PANE|ペイン|  
+|ROLE_SYSTEM_PANE|ウィンドウ|  
 |ROLE_SYSTEM_PROGRESSBAR|進行状況バー|  
 |ROLE_SYSTEM_RADIOBUTTON|オプション ボタン|  
 |ROLE_SYSTEM_SCROLLBAR|スクロール バー|  
-|ROLE_SYSTEM_SEPARATOR|区切り記号|  
-|ROLE_SYSTEM_SLIDER|Slider|  
+|ROLE_SYSTEM_SEPARATOR|[区切り文字]|  
+|ROLE_SYSTEM_SLIDER|[スライダー]|  
 |ROLE_SYSTEM_SPINBUTTON|Spinner|  
 |ROLE_SYSTEM_SPLITBUTTON|分割ボタン|  
 |ROLE_SYSTEM_STATUSBAR|ステータス バー|  
 |ROLE_SYSTEM_PAGETABLIST|タブ|  
 |ROLE_SYSTEM_PAGETAB|タブ項目|  
-|ROLE_SYSTEM_TABLE|テーブル|  
-|ROLE_SYSTEM_STATICTEXT|テキスト|  
-|ROLE_SYSTEM_INDICATOR|つまみ|  
+|ROLE_SYSTEM_TABLE|Table|  
+|ROLE_SYSTEM_STATICTEXT|Text|  
+|ROLE_SYSTEM_INDICATOR|サム|  
 |ROLE_SYSTEM_TITLEBAR|タイトル バー|  
 |ROLE_SYSTEM_TOOLBAR|ツール バー|  
-|ROLE_SYSTEM_TOOLTIP|ヒント|  
+|ROLE_SYSTEM_TOOLTIP|ToolTip|  
 |ROLE_SYSTEM_OUTLINE|ツリー|  
 |ROLE_SYSTEM_OUTLINEITEM|ツリー項目|  
-|ROLE_SYSTEM_WINDOW|[Window]|  
+|ROLE_SYSTEM_WINDOW|ウィンドウ|  
   
- さまざまなコントロール型の詳細については、「 [UI オートメーション コントロール型](ui-automation-control-types.md)」を参照してください。  
+ さまざまなコントロール型の詳細については、「 [UI Automation Control Types](ui-automation-control-types.md)」を参照してください。  
   
 <a name="States_and_Properties"></a>   
 ## <a name="states-and-properties"></a>状態とプロパティ  
@@ -139,9 +139,9 @@ ms.locfileid: "73040529"
   
 |Active Accessibility の状態|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] プロパティ|状態の変更をトリガーする|  
 |-----------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------|  
-|STATE_SYSTEM_CHECKED|チェック ボックスの場合、 <xref:System.Windows.Automation.TogglePattern.ToggleStateProperty><br /><br /> オプション ボタンの場合、 <xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|Y|  
-|STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Collapsed>|Y|  
-|STATE_SYSTEM_EXPANDED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Expanded> または <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>|Y|  
+|STATE_SYSTEM_CHECKED|チェック ボックスの場合、 <xref:System.Windows.Automation.TogglePattern.ToggleStateProperty><br /><br /> オプション ボタンの場合、 <xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|○|  
+|STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Collapsed>|○|  
+|STATE_SYSTEM_EXPANDED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Expanded> または <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>|○|  
 |STATE_SYSTEM_FOCUSABLE|<xref:System.Windows.Automation.AutomationElement.IsKeyboardFocusableProperty>|N|  
 |STATE_SYSTEM_FOCUSED|<xref:System.Windows.Automation.AutomationElement.HasKeyboardFocusProperty>|N|  
 |STATE_SYSTEM_HASPOPUP|<xref:System.Windows.Automation.ExpandCollapsePattern> (メニュー項目の場合)|N|  
@@ -156,7 +156,7 @@ ms.locfileid: "73040529"
 |STATE_SYSTEM_SELECTABLE|<xref:System.Windows.Automation.SelectionItemPattern> がサポートされています|N|  
 |STATE_SYSTEM_SELECTED|<xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|N|  
 |STATE_SYSTEM_SIZEABLE|<xref:System.Windows.Automation.TransformPattern.TransformPatternInformation.CanResize%2A>|N|  
-|STATE_SYSTEM_UNAVAILABLE|<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>|Y|  
+|STATE_SYSTEM_UNAVAILABLE|<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>|○|  
   
  次の状態は、ほとんどの Active Accessibility コントロールサーバーで実装されていないか、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]に同等のものがありませんでした。  
   
@@ -189,7 +189,7 @@ ms.locfileid: "73040529"
 |WinEvent|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] のイベント識別子|  
 |--------------|--------------------------------------------------------------------------------------------|  
 |EVENT_OBJECT_ACCELERATORCHANGE|<xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty> プロパティの変更|  
-|EVENT_OBJECT_CONTENTSCROLLED|関連付けられたスクロール バーにおける<xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty> または  プロパティの変更|  
+|EVENT_OBJECT_CONTENTSCROLLED|関連付けられたスクロール バーにおける<xref:System.Windows.Automation.ScrollPattern.VerticalScrollPercentProperty> または <xref:System.Windows.Automation.ScrollPattern.HorizontalScrollPercentProperty> プロパティの変更|  
 |EVENT_OBJECT_CREATE|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
 |EVENT_OBJECT_DEFACTIONCHANGE|同等の機能がありません|  
 |EVENT_OBJECT_DESCRIPTIONCHANGE|まったく同等の項目はありません (おそらく <xref:System.Windows.Automation.AutomationElement.HelpTextProperty> または <xref:System.Windows.Automation.AutomationElement.LocalizedControlTypeProperty> プロパティの変更)|  
@@ -249,6 +249,6 @@ ms.locfileid: "73040529"
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] モデルでは、プロバイダーが他のプロバイダー コードを呼び出す必要がありません。 必要な集約はすべて [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] コア サービスが行います。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [UI オートメーションの基礎](index.md)

@@ -1,5 +1,5 @@
 ---
-title: コマンド ラインからのビルド (Visual Basic)
+title: コマンド ラインからのビルド
 ms.date: 07/20/2015
 helpviewer_keywords:
 - builds [Visual Basic], command-line
@@ -13,41 +13,41 @@ helpviewer_keywords:
 - command-line compilers [Visual Basic], Visual Basic
 - command line [Visual Basic], Visual Basic
 ms.assetid: e61947e9-a42e-4717-a699-5f70a98cdd03
-ms.openlocfilehash: 719ca45403ea56a655f06dbfea7c0fb7e32b34f7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: c7219c0497bb87f0cc44f27229eaf25f9b3eebce
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046429"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344793"
 ---
 # <a name="building-from-the-command-line-visual-basic"></a>コマンド ラインからのビルド (Visual Basic)
 
-Visual Basic のプロジェクトは、1つまたは複数の個別のソースファイルで構成されます。 コンパイルと呼ばれるプロセスでは、これらのファイルが1つのパッケージ (アプリケーションとして実行できる1つの実行可能ファイル) にまとめられます。
+A Visual Basic project is made up of one or more separate source files. During the process known as compilation, these files are brought together into one package—a single executable file that can be run as an application.
 
-Visual Basic は、Visual Studio 統合開発環境 (IDE) 内からプログラムをコンパイルする代わりに、コマンドラインコンパイラを提供します。 コマンドラインコンパイラは、システムメモリまたは記憶域スペースが制限されているコンピューターを使用したり、書き込みを行ったりする場合など、IDE のすべての機能を必要としない場合に適しています。
+Visual Basic provides a command-line compiler as an alternative to compiling programs from within the Visual Studio integrated development environment (IDE). The command-line compiler is designed for situations in which you do not require the full set of features in the IDE—for example, when you are using or writing for computers with limited system memory or storage space.
 
-Visual Studio IDE 内からソースファイルをコンパイルするには、 **[ビルド]** メニューの **[ビルド]** をクリックします。
+To compile source files from within the Visual Studio IDE, choose the **Build** command from the **Build** menu.
 
 > [!TIP]
-> Visual Studio IDE を使用してプロジェクトファイルをビルドする場合、関連付けられている**vbc.exe**コマンドとそのスイッチに関する情報を出力ウィンドウに表示できます。 この情報を表示するには、[オプション] ダイアログボックス、[プロジェクトとソリューション]、[ビルドと実行](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run)] の順に開き、 **MSBuild プロジェクトのビルド出力の詳細**レベルを **[標準]** または [高レベルの詳細 に設定します。 詳細については、「[方法 :ビルドログファイル](/visualstudio/ide/how-to-view-save-and-configure-build-log-files)を表示、保存、および構成します。
+> When you build project files by using the Visual Studio IDE, you can display information about the associated **vbc** command and its switches in the output window. To display this information, open the [Options Dialog Box,  Projects and Solutions, Build and Run](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run), and then set the **MSBuild project build output verbosity** to **Normal** or a higher level of verbosity. 詳細については、「[方法: ビルド ログ ファイルを表示、保存、および構成する](/visualstudio/ide/how-to-view-save-and-configure-build-log-files)」をご覧ください。
 
-MSBuild を使用してコマンド プロンプトで、プロジェクト (.vbproj) ファイルをコンパイルすることができます。 詳細については、次を参照してください。[コマンド ライン リファレンス](/visualstudio/msbuild/msbuild-command-line-reference)と[チュートリアル:MSBuild の使用](/visualstudio/msbuild/walkthrough-using-msbuild)に関するページを参照してください。
+You can compile project (.vbproj) files at a command prompt by using MSBuild. For more information, see [Command-Line Reference](/visualstudio/msbuild/msbuild-command-line-reference) and [Walkthrough: Using MSBuild](/visualstudio/msbuild/walkthrough-using-msbuild).
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[方法: コマンドラインコンパイラを起動します。](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) \
-MS-DOS プロンプトまたは特定のサブディレクトリからコマンドラインコンパイラを呼び出す方法について説明します。
+[How to: Invoke the Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) \
+Describes how to invoke the command-line compiler at the MS-DOS prompt or from a specific subdirectory.
 
-[コンパイルコマンドラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
-独自に使用するために変更できるサンプルコマンドラインの一覧を示します。
+[Sample Compilation Command Lines](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
+Provides a list of sample command lines that you can modify for your own use.
 
 ## <a name="related-sections"></a>関連項目
 
 [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md) \
-アルファベット順または目的別に構成された、コンパイラオプションの一覧を提供します。
+Provides lists of compiler options, organized alphabetically or by purpose.
 
-[条件付きコンパイル](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md) \
-コードの特定のセクションをコンパイルする方法について説明します。
+[Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md) \
+Describes how to compile particular sections of code.
 
 [Visual Studio でのプロジェクトとソリューションのビルドおよびクリーン](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) \
-さまざまなビルドに含まれる内容を整理し、プロジェクトのプロパティを選択し、プロジェクトが正しい順序でビルドされるようにする方法について説明します。
+Describes how to organize what will be included in different builds, choose project properties, and ensure that projects build in the correct order.

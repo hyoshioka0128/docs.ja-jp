@@ -2,12 +2,12 @@
 title: Entity Framework Core でインフラストラクチャの永続レイヤーを実装する
 description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | Entity Framework Core を使用してインフラストラクチャの永続レイヤーを実装する方法の詳細。'
 ms.date: 10/08/2018
-ms.openlocfilehash: 7e3480999b115ac13f8d7ebcaed826b407aa7637
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: b70ede6b47cbf990d0435aef841416c68f6439b4
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674099"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737922"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Entity Framework Core でインフラストラクチャの永続レイヤーを実装する
 
@@ -174,11 +174,11 @@ Entity Framework DbContext クラスは Unit of Work と Repository のパター
 
 図 7-18 では、リポジトリを使用しない (EF DbContext を直接使用する) 場合とリポジトリのモック (疑似) を簡単にするリポジトリを使用する場合の違いを確認できます。
 
-![カスタム リポジトリを使用する場合とプレーンな DbContext を使用する場合の違い: カスタム リポジトリの場合、抽象レイヤーが追加されますが、このレイヤーを利用し、リポジトリをモックすることでテストが簡単になります。](./media/image19.png)
+![2 つのリポジトリ内のコンポーネントとデータフローを示す図。](./media/infrastructure-persistence-layer-implemenation-entity-framework-core/custom-repo-versus-db-context.png)
 
 **図 7-18**。 カスタム リポジトリとプレーンな DbContext の使用の違い
 
-モックにはさまざまな代替手法があります。 リポジトリだけをモックしたり、作業単位全体をモックしたりすることができます。 通常、リポジトリだけをモックする手法で十分です。作業単位全体を抽出し、モックする複雑な作業は通常は必要ありません。
+図 7-18 に示すように、カスタム リポジトリを使用すると抽象化レイヤーが追加され、それを使用してリポジトリのモックを作成することで、テストが容易になります。 モックにはさまざまな代替手法があります。 リポジトリだけをモックしたり、作業単位全体をモックしたりすることができます。 通常、リポジトリだけをモックする手法で十分です。作業単位全体を抽出し、モックする複雑な作業は通常は必要ありません。
 
 この後、アプリケーション レイヤーについて取り上げるとき、依存関係の挿入が ASP.NET Core でどのように機能するか、リポジトリを使用するとき、それがどのように実装されるか説明します。
 

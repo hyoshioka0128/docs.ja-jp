@@ -2,13 +2,14 @@
 title: 厳密に型指定されたデリゲート
 description: デリゲートを必要とする機能を作成するときに、汎用デリゲート型を使用してカスタム型を宣言する方法について説明します。
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 564a683d-352b-4e57-8bac-b466529daf6b
-ms.openlocfilehash: 2e4cc1c7bfa0aaa90f3aaefa0da64c5486a9d10f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: efdbef39d0e6bf2f07cde2c9621cec173e921752
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33215165"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037357"
 ---
 # <a name="strongly-typed-delegates"></a>厳密に型指定されたデリゲート
 
@@ -34,7 +35,7 @@ public delegate void Action<in T1, in T2>(T1 arg1, T2 arg2);
 ジェネリック型引数の `in` 修飾子については、共変性についての記事で取り上げます。
 
 `Action` デリゲートには、最大 16 の引数を含むバリエーションが存在します (例: <xref:System.Action%6016>)。
-これらの定義では、デリゲート引数のそれぞれに異なるジェネリック引数が使われているという点が重要です。それによってきわめて高い柔軟性が実現されているからです。 メソッドの一連の引数は、必ずしも同じ型である必要はありませんが、同じ型である場合もあります。
+これらの定義では、デリゲート引数のそれぞれに異なるジェネリック引数が使われているという点が重要です。それにより、最大限の柔軟性が実現します。 メソッドの一連の引数は、必ずしも同じ型である必要はありませんが、同じ型である場合もあります。
 
 戻り値を持たないデリゲート型には、いずれかの `Action` 型を使用します。
 
@@ -54,7 +55,8 @@ public delegate TResult Func<in T1, in T2, out TResult>(T1 arg1, T2 arg2);
 
 値を返すデリゲート型には、いずれかの `Func` 型を使用します。
 
-また、単一の値に対する判定結果を返すデリゲートに特化された <xref:System.Predicate%601> という型も存在します。
+また、単一の値に対する判定結果を返すデリゲートに特化された <xref:System.Predicate%601> 
+という型も存在します。
 
 ```csharp
 public delegate bool Predicate<in T>(T obj);

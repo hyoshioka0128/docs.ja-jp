@@ -9,16 +9,16 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: 806bc3de138ebae682d2e248593230c753eb7ba2
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: dd14a4baf9967f41690e7978b8b6cf57c9275e36
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422757"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428510"
 ---
 # <a name="group-clause-c-reference"></a>group 句 (C# リファレンス)
 
-`group` 句は、グループのキー値に一致する 0 個以上の項目を含む <xref:System.Linq.IGrouping%602> オブジェクトのシーケンスを返します。 たとえば、各文字列の最初の文字に基づいて文字列のシーケンスをグループ化することができます。 この場合、最初の文字がキーで、型は [char](char.md) であり、各 <xref:System.Linq.IGrouping%602> オブジェクトの `Key` プロパティに格納されています。 コンパイラは、キーの型を推論します。
+`group` 句は、グループのキー値に一致する 0 個以上の項目を含む <xref:System.Linq.IGrouping%602> オブジェクトのシーケンスを返します。 たとえば、各文字列の最初の文字に基づいて文字列のシーケンスをグループ化することができます。 この場合、最初の文字がキーで、型は [char](../builtin-types/char.md) であり、各 <xref:System.Linq.IGrouping%602> オブジェクトの `Key` プロパティに格納されています。 コンパイラは、キーの型を推論します。
 
 次の例で示すように、クエリ式は `group` 句で終了できます。
 
@@ -66,7 +66,7 @@ ms.locfileid: "73422757"
 group person by new {name = person.surname, city = person.city};
 ```
 
-クエリ変数を別のメソッドに渡す場合には、名前付きの型を使用します。 キーの自動実装プロパティを使用して特殊クラスを作成し、<xref:System.Object.Equals%2A> メソッドと <xref:System.Object.GetHashCode%2A> メソッドをオーバーライドします。 これらのメソッドを厳密にオーバーライドする必要がない構造体を使用することも可能です。 詳細については、「[方法: 自動実装するプロパティを使用して簡易クラスを実装する](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md)」および[ディレクトリ ツリーで重複するファイルをクエリする方法](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)に関するページをご覧ください。 後述の記事には、名前付きの型を複合キーで使用する方法のコード例があります。
+クエリ変数を別のメソッドに渡す場合には、名前付きの型を使用します。 キーの自動実装プロパティを使用して特殊クラスを作成し、<xref:System.Object.Equals%2A> メソッドと <xref:System.Object.GetHashCode%2A> メソッドをオーバーライドします。 これらのメソッドを厳密にオーバーライドする必要がない構造体を使用することも可能です。 詳細については、「[方法: 自動実装するプロパティを使用して簡易クラスを実装する](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md)」と[ディレクトリ ツリーで重複するファイルをクエリする方法](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)に関するページをご覧ください。 後述の記事には、名前付きの型を複合キーで使用する方法のコード例があります。
 
 ## <a name="example"></a>例
 

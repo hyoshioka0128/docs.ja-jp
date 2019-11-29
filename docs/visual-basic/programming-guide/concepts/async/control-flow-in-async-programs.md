@@ -1,13 +1,13 @@
 ---
-title: 非同期プログラムの制御フロー (Visual Basic)
+title: 非同期プログラムにおける制御フロー
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 69474b3c8d4ce08da46c9ba793da58786a607d91
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 94b2c2ea89f729e882229d4ecce7faa169c24267
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420124"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347938"
 ---
 # <a name="control-flow-in-async-programs-visual-basic"></a>非同期プログラムの制御フロー (Visual Basic)
 
@@ -117,7 +117,7 @@ Length of the downloaded string: 33946.
 
 1. Visual Studio を起動します。
 
-2. メニュー バーで **[ファイル]** 、 **[新規作成]** 、 **[プロジェクト]** の順にクリックします。
+2. メニュー バーで、 **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。
 
     **[新しいプロジェクト]** ダイアログ ボックスが表示されます。
 

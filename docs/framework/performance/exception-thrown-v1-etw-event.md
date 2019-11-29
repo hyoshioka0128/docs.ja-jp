@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 0d3da389-6b7b-40f6-a877-fac546d6019c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 91abd9e6f31380b7e8cd3df1a14aa5c5722901ba
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 3f0e968053c87319bf90bf3de0f21d750ec899ab
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046511"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447629"
 ---
 # <a name="exception-thrown_v1-etw-event"></a>Exception Thrown_V1 ETW イベント
 このイベントは、スローされる例外に関する情報をキャプチャします。  
   
  イベントが発生するキーワードとイベントのレベルを次の表に示します (詳細については、「 [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md)」を参照してください)。  
   
-|イベントを発生させるキーワード|レベル|  
+|イベントを発生させるキーワード|Level|  
 |-----------------------------------|-----------|  
 |`ExceptionKeyword` (0x8000)|警告 (2)|  
   
@@ -36,10 +36,10 @@ ms.locfileid: "71046511"
 |例外の種類|win:UnicodeString|例外の種類 (`System.NullReferenceException` など)。|  
 |例外メッセージ|win:UnicodeString|実際の例外メッセージ。|  
 |EIPCodeThrow|win:Pointer|例外が発生した命令ポインター。|  
-|ExceptionHR|win:UInt32|例外 [HRESULT](https://go.microsoft.com/fwlink/?LinkId=179679)。|  
-|ExceptionFlags|win:UInt16|0x01HasInnerException (Visual Basic ドキュメントの「 [CLR ETW イベント](clr-etw-events.md)」を参照してください)。<br /><br /> 除くIsNestedException.<br /><br /> 0x04IsRethrownException.<br /><br /> 0x08IsCorruptedStateException (プロセスの状態が破損していることを示します。「MSDN で[破損状態の例外を処理](https://go.microsoft.com/fwlink/?LinkId=179681)する」を参照してください)。<br /><br /> 0x10IsCLSCompliant (から<xref:System.Exception>派生する例外は cls に準拠していますが、それ以外の場合は cls に準拠していません)。|  
+|ExceptionHR|win:UInt32|例外 [HRESULT](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a)。|  
+|ExceptionFlags|win:UInt16|0x01: HasInnerException (Visual Basic のドキュメントで「[CLR ETW イベント](clr-etw-events.md)」を参照)。<br /><br /> 0x02: IsNestedException。<br /><br /> 0x04: IsRethrownException。<br /><br /> 0x08: IsCorruptedStateException (プロセスの状態が破損していることを示します。「[破損状態の例外の処理](https://docs.microsoft.com/archive/msdn-magazine/2009/february/clr-inside-out-handling-corrupted-state-exceptions)」を参照してください)。<br /><br /> 0x10: IsCLSCompliant (<xref:System.Exception> から派生した例外は CLS 準拠で、それ以外は CLS 非準拠)。|  
 |ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [CLR ETW イベント](clr-etw-events.md)

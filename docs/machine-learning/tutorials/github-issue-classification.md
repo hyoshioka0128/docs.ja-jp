@@ -1,15 +1,15 @@
 ---
 title: 'チュートリアル: サポートの問題の分類 - 多クラス分類'
 description: GitHub の問題を分類し、それを特定の領域に割り当てるための多クラス分類シナリオで、ML.NET を使用する方法について説明します。
-ms.date: 09/30/2019
+ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 7507463cfc5504182f028ab2ced9a03733c61f6d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 65b83c4396c1f80281cbb60b5e9e6e91c802472b
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774484"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74205039"
 ---
 # <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-ml-net"></a>チュートリアル: ML .NET での多クラス分類を使用したサポートの問題の分類
 
@@ -50,7 +50,7 @@ ms.locfileid: "72774484"
 
 4. **Microsoft.ML NuGet パッケージ**をインストールします。
 
-    ソリューション エクスプローラーで、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。 [パッケージ ソース] として [nuget.org] を選択します。[参照] タブを選択し、「**Microsoft.ML**」を検索します。一覧から **v 1.0.0** パッケージを選択し、 **[インストール]** ボタンを選択します。 **[変更のプレビュー]** ダイアログの **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、 **[ライセンスの同意]** ダイアログの **[同意する]** を選択します。
+    ソリューション エクスプローラーで、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。 [パッケージ ソース] として [nuget.org] を選択します。[参照] タブを選択し、「**Microsoft.ML**」を検索し、 **[インストール]** ボタンを選択します。 **[変更のプレビュー]** ダイアログの **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、 **[ライセンスの同意]** ダイアログの **[同意する]** を選択します。
 
 ### <a name="prepare-your-data"></a>データを準備する
 
@@ -278,7 +278,7 @@ public static void Evaluate(DataViewSchema trainingDataViewSchema)
 
 * 対数損失: [対数損失](../resources/glossary.md#log-loss)に関するページを参照してください。 対数損失は可能な限り 1 に近づけます。
 
-* 対数損失還元: 範囲は [-inf, 100] です。ここで、100 は完璧な予測で、0 は平均の予測です。 対数損失還元は可能な限り 1 に近づけます。
+* 対数損失還元: 範囲は [-inf, 1.00] です。ここで、1.00 は完璧な予測で、0 は平均の予測です。 対数損失還元は可能な限り 1 に近づけます。
 
 ### <a name="displaying-the-metrics-for-model-validation"></a>モデル検証のためのメトリックを表示する
 
@@ -388,4 +388,4 @@ GitHub の問題を追加して、`Predict` メソッドでトレーニングさ
 
 さらに詳しく学習するには、次のチュートリアルに進んでください。
 > [!div class="nextstepaction"]
-> [タクシー代予測](taxi-fare.md)
+> [タクシー代予測](predict-prices.md)

@@ -1,5 +1,5 @@
 ---
-title: '方法: Visual Studio のコマンドラインのための環境変数を設定する'
+title: Visual Studio のコマンドラインのための環境変数を設定する方法
 ms.date: 09/29/2017
 f1_keywords:
 - cs.build.commandline
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - Visual C# compiler, enabling
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
-ms.openlocfilehash: 9b26f6b80488ad4043054cd23f0f351773e8d6d1
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 3b69a92d28663bbbd34245435a69aea80d20fdc9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602859"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972828"
 ---
-# <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>方法: Visual Studio のコマンドラインのための環境変数を設定する
+# <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Visual Studio のコマンドラインのための環境変数を設定する方法
 
 VsDevCmd.bat ファイルは、適切な環境変数を設定してコマンド ライン ビルドを有効にします。
 

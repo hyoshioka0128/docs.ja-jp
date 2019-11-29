@@ -1,5 +1,5 @@
 ---
-title: '方法: XML 要素および XML 属性名を修飾する'
+title: '方法 : XML 要素および XML 属性名を修飾する'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,16 +9,16 @@ helpviewer_keywords:
 - qualifying XML elements
 - XML namespaces, qualifying elements and names in
 ms.assetid: 44719f90-7e15-42e8-a9e2-282287e2b5bf
-ms.openlocfilehash: 04e9dd3c135c516fa5554b9b547306337fb6a668
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1f79caf6ff295d793c615b17d387cdd165e440e7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755405"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353095"
 ---
-# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>方法: XML 要素および XML 属性名を修飾する
+# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>方法 : XML 要素および XML 属性名を修飾する
 
-インスタンスに格納される XML 名前空間、<xref:System.Xml.Serialization.XmlSerializerNamespaces>クラスは、World Wide Web Consortium (W3C) 仕様に準拠する必要があります[Namespaces in XML](https://www.w3.org/TR/REC-xml-names/)します。
+<xref:System.Xml.Serialization.XmlSerializerNamespaces> クラスのインスタンスに含まれる XML 名前空間は、 [xml の名前空間](https://www.w3.org/TR/REC-xml-names/)と呼ばれる WORLD WIDE WEB コンソーシアム (W3C) の仕様に準拠している必要があります。
 
 XML 名前空間を使用すると、XML ドキュメント内の XML 要素および XML 属性の名前を修飾できます。 修飾名は、プレフィックスとローカル名がコロンで区切られた構成になっています。 プレフィックスはプレースホルダーとしてのみ機能し、名前空間を指定する URI に割り当てられます。 汎用的に管理される URI 名前空間とローカル名を組み合わせることにより、生成される名前は、必ず汎用的に一意になります。
 
@@ -26,8 +26,7 @@ XML 名前空間を使用すると、XML ドキュメント内の XML 要素お�
 
 ## <a name="to-create-qualified-names-in-an-xml-document"></a>XML ドキュメントにおける修飾名を作成するには
 
-1. 
-  `XmlSerializerNamespaces` クラスのインスタンスを作成します。
+1. `XmlSerializerNamespaces` クラスのインスタンスを作成します。
 
 2. すべてのプレフィックスと名前空間のペアを `XmlSerializerNamespaces` に追加します。
 
@@ -43,6 +42,7 @@ XML 名前空間を使用すると、XML ドキュメント内の XML 要素お�
 
 `XmlSerializerNamespaces` を作成し、このオブジェクトにプレフィックスと名前空間のペアを 2 つ追加する例を次に示します。 このコードでは、`XmlSerializer` クラスのインスタンスをシリアル化するために使用される `Books` を作成します。 また、`Serialize` を使用して `XmlSerializerNamespaces` メソッドを呼び出し、XML にプレフィックス付き名前空間を含めることができるようにします。
 
+<!-- TODO: THE FOLLOWING VB SNIPPET ISN'T CORRECT!! -->
 ```vb
 Option Explicit
 public class Price
@@ -170,13 +170,13 @@ public class Book
 }
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [XML スキーマ定義ツールと XML シリアル化](the-xml-schema-definition-tool-and-xml-serialization.md)
 - [XML シリアル化の概要](introducing-xml-serialization.md)
 - [XmlSerializer クラス](xref:System.Xml.Serialization.XmlSerializer)
 - [XML シリアル化を制御する属性](attributes-that-control-xml-serialization.md)
-- [方法: XML Stream の代替要素名を指定します。](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
-- [方法: オブジェクトをシリアル化します。](how-to-serialize-an-object.md)
-- [方法: オブジェクトを逆シリアル化します。](how-to-deserialize-an-object.md)
+- [方法 : XML ストリームの代替要素名を指定する](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [方法 : オブジェクトをシリアル化する](how-to-serialize-an-object.md)
+- [方法 : オブジェクトを逆シリアル化する](how-to-deserialize-an-object.md)

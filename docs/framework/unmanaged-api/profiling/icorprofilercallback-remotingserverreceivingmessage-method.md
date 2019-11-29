@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5604d21f-e6b7-490e-b469-42122a7568e1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2bc3e48185c3bc289a4f7bfd865f69d9c06a720c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2c2eb7d0dc04d813b1ce91fb1acf4b171f244592
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67750513"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445761"
 ---
 # <a name="icorprofilercallbackremotingserverreceivingmessage-method"></a>ICorProfilerCallback::RemotingServerReceivingMessage メソッド
-プロセスがリモート メソッド呼び出しまたはアクティブ化要求を受信したことをプロファイラーに通知します。  
+プロセスがリモートメソッド呼び出しまたはアクティベーション要求を受信したことをプロファイラーに通知します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -37,31 +35,31 @@ HRESULT RemotingClientSendingMessage(
   
 ## <a name="parameters"></a>パラメーター  
  `pCookie`  
- [in]指定された値に対応する値[icorprofilercallback::remotingclientsendingmessage](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md)これらの条件下で。  
+ から次の条件下で[ICorProfilerCallback:: RemotingClientSendingMessage](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md)で指定された値に対応する値。  
   
-- リモート処理の GUID の cookie はアクティブです。  
+- リモート処理 GUID クッキーはアクティブです。  
   
 - チャネルは、メッセージの送信に成功します。  
   
-- GUID の cookie は、クライアント側のプロセスでアクティブにします。  
+- GUID cookie は、クライアント側のプロセスでアクティブです。  
   
- これにより、リモート処理呼び出しと論理呼び出し履歴の作成のペアを容易にします。  
+ これにより、リモート処理呼び出しと論理呼び出し履歴の作成を簡単に組み合わせることができます。  
   
  `fIsAsync`  
- [in]値が`true`呼び出しが非同期。 それ以外の場合`false`します。  
+ から呼び出しが非同期の場合に `true` される値。それ以外の場合は、`false`ます。  
   
-## <a name="remarks"></a>Remarks  
- メッセージの要求が非同期の場合は、任意のスレッドによって、要求を処理することができます。  
+## <a name="remarks"></a>コメント  
+ メッセージ要求が非同期の場合は、任意のスレッドで要求を処理できます。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

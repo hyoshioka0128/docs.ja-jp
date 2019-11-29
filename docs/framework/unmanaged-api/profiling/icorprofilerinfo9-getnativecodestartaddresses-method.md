@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 80571933bc8d91c074dbee62aad50cece6277d51
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 7593e8873c2714df85146903c0052a9909a95ccd
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69665511"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444716"
 ---
 # <a name="icorprofilerinfo9getnativecodestartaddresses-method"></a>ICorProfilerInfo9:: GetNativeCodeStartAddresses メソッド
 
@@ -47,19 +47,19 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
 入出力使用可能なアドレスの数。
 
 `codeStartAddresses` \
-入出力の`UINT_PTR`配列。各は、指定された関数のネイティブ本体の開始アドレスです。
+入出力`UINT_PTR`の配列。各配列は、指定された関数のネイティブ本体の開始アドレスです。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
 階層化コンパイルが有効になっている場合、関数は複数のネイティブコード本体を持つことができます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**・** 「 [.Net Core でサポートされるオペレーティングシステム](../../../core/windows-prerequisites.md#net-core-supported-operating-systems)」を参照してください。
+**プラットフォーム:** 「 [.Net Core でサポートされるオペレーティングシステム](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows)」を参照してください。
 
-**ヘッダー:** Corprof.idl、Corprof.idl
+**ヘッダー** : CorProf.idl、CorProf.h
 
-**ライブラリ**CorGuids .lib
+**ライブラリ:** CorGuids.lib
 
 **.Net のバージョン:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 

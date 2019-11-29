@@ -10,17 +10,18 @@ helpviewer_keywords:
 ms.assetid: 0d07090c-9b47-4ecc-81d1-29d539603c9b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c9edab859900bf2001956045a5285801bb61d310
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 9aaec282fda0a038d14f3a0cd57e1a8a2855f2ad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71045940"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448134"
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Windows ストア アプリのための .NET Framework のリフレクション
-.NET Framework 4.5 以降、.NET Framework には、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリで使用されるリフレクション型およびメンバーのセットが含まれます。 これらの型およびメンバーは、完全な .NET Framework だけでなく [Windows ストア アプリ用 .NET](https://go.microsoft.com/fwlink/?LinkID=225700) でも使用できます。 このドキュメントでは、これらと .NET Framework 4 以前のバージョンでの対応するものとの主な相違点について説明します。  
+
+.NET Framework 4.5 以降、.NET Framework には、Windows 8.x ストアアプリで使用する一連のリフレクション型とメンバーが含まれています。 これらの型およびメンバーは、完全な .NET Framework だけでなく Windows ストア アプリ用 .NET でも使用できます。 このドキュメントでは、これらと .NET Framework 4 以前のバージョンでの対応するものとの主な相違点について説明します。  
   
- [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリを作成する場合は、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] でリフレクション型とメンバーを使用する必要があります。 デスクトップ アプリを使用する場合もこれらの型およびメンバーを使用できますが、必須ではないため、両方のタイプのアプリに同じコードを使用できます。  
+ Windows 8.x ストアアプリを作成する場合は、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]のリフレクションの型とメンバーを使用する必要があります。 デスクトップ アプリを使用する場合もこれらの型およびメンバーを使用できますが、必須ではないため、両方のタイプのアプリに同じコードを使用できます。  
   
 ## <a name="typeinfo-and-assembly-loading"></a>TypeInfo およびアセンブリの読み込み  
  [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] では、<xref:System.Reflection.TypeInfo> クラスに .NET Framework 4 <xref:System.Type> クラスの機能の一部が含まれます。 <xref:System.Type> オブジェクトは型定義への参照を表し、<xref:System.Reflection.TypeInfo> オブジェクトは型定義自体を表します。 これによって、参照するアセンブリをランタイムが必ずしも読み込まなくても、<xref:System.Type> オブジェクトを操作できるようになります。 関連付けられた <xref:System.Reflection.TypeInfo> オブジェクトを取得すると、アセンブリが強制的に読み込まれます。  
@@ -33,15 +34,14 @@ ms.locfileid: "71045940"
  リフレクション プロパティは、継承ツリーを走査する代わりに、特定オブジェクトの宣言されたメソッドのみを返します。 また、フィルター処理に <xref:System.Reflection.BindingFlags> パラメーターを使用しません。 代わりに、返されるコレクションで LINQ クエリを使用することにより、フィルター処理をユーザー コード内で発生させます。 (`typeof(Object)` の結果などにより) ランタイムから始まるリフレクション オブジェクトの場合、継承ツリーを走査するには <xref:System.Reflection.RuntimeReflectionExtensions> クラスのヘルパー メソッドを使用するのが最も適切です。 カスタマイズされたリフレクション コンテキストのオブジェクトのコンシューマーは、これらのメソッドを使用できず、独自に継承ツリーを走査する必要があります。  
   
 ## <a name="restrictions"></a>制約  
- [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] アプリでは、.NET Framework の一部の型とメンバーへのアクセスが制限されます。 たとえば、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] オブジェクトを使用して、<xref:System.Reflection.MethodInfo> に含まれない .NET Framework のメソッドを呼び出すことはできません。 また、[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] メンバーおよび <xref:System.Runtime.InteropServices.Marshal> メンバーと同様に、<xref:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal> アプリにおいて安全とは見なされない特定の型およびメンバーはブロックされます。 この制限は、.NET Framework の型とメンバーにのみ適用されます。ユーザー コードやサードパーティ コードは通常どおり呼び出すことができます。  
+ Windows 8.x ストアアプリでは、一部の .NET Framework の種類とメンバーへのアクセスが制限されています。 たとえば、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] オブジェクトを使用して、<xref:System.Reflection.MethodInfo> に含まれない .NET Framework のメソッドを呼び出すことはできません。 また、Windows 8.x ストアアプリのコンテキスト内で安全と見なされない特定の型およびメンバーは、<xref:System.Runtime.InteropServices.Marshal> および <xref:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal> メンバーと同様にブロックされます。 この制限は、.NET Framework の型とメンバーにのみ適用されます。ユーザー コードやサードパーティ コードは通常どおり呼び出すことができます。  
   
 ## <a name="example"></a>例  
- この例は、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] のリフレクション型とメンバーを使用して、<xref:System.Globalization.Calendar> 型のメソッドとプロパティを、継承されたメソッドとプロパティも含めて取得します。 このコードを実行するには、Reflection という名前のプロジェクトの `textblock1` という名前の <xref:Windows.UI.Xaml.Controls.TextBlock?displayProperty=nameWithType> コントロールを含む [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] ページ用のコード ファイルにこのコードを貼り付けます。 別の名前のプロジェクトにこのコードを張り付ける場合は、名前空間の名前をプロジェクトに一致するように変更してください。  
+ この例は、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] のリフレクション型とメンバーを使用して、<xref:System.Globalization.Calendar> 型のメソッドとプロパティを、継承されたメソッドとプロパティも含めて取得します。 このコードを実行するには、[リフレクション] という名前のプロジェクトに `textblock1` という名前の <xref:Windows.UI.Xaml.Controls.TextBlock?displayProperty=nameWithType> コントロールを含む Windows 8.x ストアページのコードファイルに貼り付けます。 別の名前のプロジェクトにこのコードを張り付ける場合は、名前空間の名前をプロジェクトに一致するように変更してください。  
   
  [!code-csharp[System.ReflectionWinStoreApp#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflectionwinstoreapp/cs/mainpage.xaml.cs#1)]
  [!code-vb[System.ReflectionWinStoreApp#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflectionwinstoreapp/vb/mainpage.xaml.vb#1)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [リフレクション](reflection.md)
-- [Windows ストア アプリ用 .NET – サポートされている API](https://go.microsoft.com/fwlink/?LinkID=225700)

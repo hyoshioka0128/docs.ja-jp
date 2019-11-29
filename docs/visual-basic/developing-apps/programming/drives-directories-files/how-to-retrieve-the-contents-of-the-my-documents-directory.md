@@ -1,17 +1,18 @@
 ---
-title: '方法: My Documents ディレクトリの内容を取得する (Visual Basic)'
+title: '方法: My Documents ディレクトリの内容を取得する'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My Documents directory
 ms.assetid: 26560d01-7dda-4457-8e95-21db23d71aea
-ms.openlocfilehash: f03dbe1811dd5367dab2d32d94ba35ff05fad198
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cf4470020507c581999b9d72602ddb6e3e76ed74
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623148"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74334536"
 ---
 # <a name="how-to-retrieve-the-contents-of-the-my-documents-directory-in-visual-basic"></a>方法: My Documents ディレクトリの内容を取得する (Visual Basic)
+
 <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories> オブジェクトを使用すると、**My Documents** や **Desktop** など、多くの **All Users** ディレクトリを読み取ることができます。  
   
 ### <a name="to-read-from-the-my-documents-folder"></a>My Documents フォルダーを読み取るには  

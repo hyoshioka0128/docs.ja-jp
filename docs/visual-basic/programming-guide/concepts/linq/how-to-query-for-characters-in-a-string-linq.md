@@ -1,13 +1,13 @@
 ---
-title: '方法: 文字列内の文字を照会する (LINQ) (Visual Basic)'
+title: '方法: 文字列内の文字を照会する (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 499ebbe0-746c-4235-9dba-ce722c12b50e
-ms.openlocfilehash: f2102a8cb149fa9c7886826e509bf254fad5eb95
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 9da6d5abd6155a7af5ec59e17693e8acae7e7b73
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582726"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347718"
 ---
 # <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>方法: 文字列内の文字を照会する (LINQ) (Visual Basic)
 
@@ -60,7 +60,7 @@ End Class
 
 VB.NET コンソールアプリケーションプロジェクトを作成します。このプロジェクトには、名前空間の `Imports` ステートメントが含まれています。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [方法: LINQ クエリと正規表現を組み合わせる (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)
+- [LINQ と文字列 (Visual Basic)](linq-and-strings.md)
+- [LINQ クエリと正規表現を組み合わせる方法 (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md)

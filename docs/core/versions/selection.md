@@ -5,12 +5,12 @@ author: thraka
 ms.author: adegeo
 ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: db42ba4916aad739bd2c9d8b547f16022fce44bd
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 043b9b85633e81670783e7870f1be7726ab07e81
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104945"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73454624"
 ---
 # <a name="select-the-net-core-version-to-use"></a>使用する .NET Core のバージョンを選択する
 
@@ -39,7 +39,7 @@ SDK コマンドには `dotnet new` または `dotnet run` が含まれていま
 
 まれに、以前のバージョンの SDK を使用する必要がある場合があります。 そのバージョンは [*global.json* ファイル](../tools/global-json.md)で指定します。 "最新版を使用する" というポリシーは、インストールされている最新版より以前のバージョンの .NET Core SDK を指定するには *global.json* を使用することを意味します。
 
-*global.json* はファイル階層のどこにでも配置できます。 CLI はプロジェクト ディレクトリから上方を検索し、最初の *global.json* を見つけます。 ファイル システム内のその場所によって、特定の *global.json* が適用されるプロジェクトを制御します。 .NET CLI は、現在の作業ディレクトリからパスを上方に移動し、*global.json* ファイルを繰り返し検索します。 見つかった最初の *global.json* ファイルによって、使用されるバージョンが指定されます。 そのバージョンがインストールされている場合、そのバージョンが使用されます。 *global.json* に指定されている SDK が見つからない場合、.NET CLI はインストールされている最新の SDK にロールフォワードします。 ロール フォワードは、*global.json* ファイルが見つからないとき、これは既定の動作と同じになります。
+*global.json* はファイル階層のどこにでも配置できます。 CLI はプロジェクト ディレクトリから上方を検索し、最初の *global.json* を見つけます。 ファイル システム内のその場所によって、特定の *global.json* が適用されるプロジェクトを制御します。 .NET CLI は、現在の作業ディレクトリからパスを上方に移動し、*global.json* ファイルを繰り返し検索します。 見つかった最初の *global.json* ファイルによって、使用されるバージョンが指定されます。 その SDK バージョンがインストールされている場合、そのバージョンが使用されます。 *global.json* で指定された SDK が見つからない場合、.NET CLI では、[照合ルール](../tools/global-json.md#matching-rules)を使用して、互換性のある SDK を選択します。何も見つからない場合は失敗します。
 
 次の例は *global.json* 構文を示しています。
 

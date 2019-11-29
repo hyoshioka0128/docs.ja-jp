@@ -19,8 +19,8 @@ ms.locfileid: "71697826"
 ネットワーク要求のキャッシュメカニズムを制御します。  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t @ no__t-2 @ no__t-3 **\<requestCaching >**  
+&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<requestcaching >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -35,14 +35,14 @@ ms.locfileid: "71697826"
 </requestCaching>
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a>属性と要素  
+ 次のセクションでは、属性、子要素、親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
   
 |属性|説明|  
 |---------------|-----------------|  
-|`isPrivateCache`|キャッシュがさまざまなユーザーの情報の分離を提供するかどうかを指定します。 既定値は `true` です。 中間層アプリケーションでは、この値は `false` にする必要があります。|  
+|`isPrivateCache`|キャッシュがさまざまなユーザーの情報の分離を提供するかどうかを指定します。 既定値は `true` です。 この値は、中間層アプリケーションで `false` する必要があります。|  
 |`disableAllCaching`|すべての Web 応答に対してキャッシュを無効にし、プログラムでオーバーライドすることはできないことを指定します。|  
 |`defaultPolicyLevel`|<xref:System.Net.Cache.RequestCacheLevel> 列挙値の値の 1 つ。 既定値は `BypassCache` です。|  
 |`unspecifiedMaximumAge`|コンテンツが期限切れとしてマークされるまでの既定の時間を指定します。|  
@@ -86,7 +86,7 @@ ms.locfileid: "71697826"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Net.Cache?displayProperty=nameWithType>
 - [ネットワーク設定スキーマ](index.md)

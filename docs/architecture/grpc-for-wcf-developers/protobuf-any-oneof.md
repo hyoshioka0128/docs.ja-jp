@@ -1,14 +1,13 @@
 ---
 title: Protobuf variant 型のフィールドと、WCF 開発者向け gRPC の組み合わせ
 description: Any 型および Oneof キーワードを使用して、メッセージ内のバリアントオブジェクト型を表す方法について説明します。
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 10f55288eb4a6aa603228da5b4850317d6bde614
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: af3ba22c238aa80a8c6119f62d5d8914770cad68
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841475"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971617"
 ---
 # <a name="protobuf-any-and-oneof-fields-for-variant-types"></a>Protobuf variant 型のフィールドをすべて使用します。
 
@@ -16,7 +15,7 @@ WCF での動的プロパティ型 (`object`型のプロパティ) の処理は�
 
 Protobuf には、複数の型の値を処理するための2つの簡単なオプションが用意されています。 `Any` 型は既知の Protobuf メッセージ型を表すことができますが、`oneof` キーワードを使用すると、特定のメッセージで設定できるフィールドの範囲が1つだけであることを指定できます。
 
-## <a name="any"></a>どれでも可
+## <a name="any"></a>任意
 
 `Any` は、Protobuf の "既知の型" の1つです。サポートされているすべての言語の実装で、便利で再利用可能なメッセージ型のコレクションです。 `Any` の種類を使用するには、`google/protobuf/any.proto` 定義をインポートする必要があります。
 

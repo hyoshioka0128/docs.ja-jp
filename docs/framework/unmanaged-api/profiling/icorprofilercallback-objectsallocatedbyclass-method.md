@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91d688f3-a80e-419d-9755-ff94bc04188a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4229332ef3a079a5a294e27b624dde0e1fb46691
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9ba021ec223d00e57081567b76f70f59768e6b9a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782961"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445858"
 ---
 # <a name="icorprofilercallbackobjectsallocatedbyclass-method"></a>ICorProfilerCallback::ObjectsAllocatedByClass メソッド
-最新のガベージ コレクションの後に作成された指定した各クラスのインスタンスの数をプロファイラーに通知します。  
+最後のガベージコレクション以降に作成された、指定した各クラスのインスタンスの数をプロファイラーに通知します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -38,30 +36,30 @@ HRESULT ObjectsAllocatedByClass(
   
 ## <a name="parameters"></a>パラメーター  
  `cClassCount`  
- [in]サイズ、`classIds`と`cObjects`配列。  
+ から`classIds` および `cObjects` 配列のサイズ。  
   
  `classIds`  
- [in]クラス Id、各 ID が 1 つまたは複数のインスタンスを持つクラスを指定の配列。  
+ からクラス Id の配列。各 ID は、1つ以上のインスタンスを持つクラスを指定します。  
   
  `cObjects`  
- [in]各整数が対応するクラスのインスタンスの数を指定します、整数の配列、`classIds`配列。  
+ から整数の配列。各整数は、`classIds` 配列内の対応するクラスのインスタンスの数を指定します。  
   
-## <a name="remarks"></a>Remarks  
- `classIds`と`cObjects`配列は並列配列です。 たとえば、`classIds[i]`と`cObjects[i]`同じクラスを参照します。 前のガベージ コレクションの後、クラスのインスタンスが作成されていない場合、クラスは省略されます。 `ObjectsAllocatedByClass`コールバックは、大きなオブジェクト ヒープに割り当てられたオブジェクトは報告されません。  
+## <a name="remarks"></a>コメント  
+ `classIds` 配列と `cObjects` 配列は、並列配列です。 たとえば、`classIds[i]` と `cObjects[i]` は同じクラスを参照します。 前のガベージコレクションの後にクラスのインスタンスが作成されていない場合、クラスは省略されます。 `ObjectsAllocatedByClass` コールバックは、大きなオブジェクトヒープに割り当てられたオブジェクトを報告しません。  
   
- によって、報告される`ObjectsAllocatedByClass`はのみ推定されます。 正確な数は、使用[icorprofilercallback::objectallocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md)します。  
+ `ObjectsAllocatedByClass` によって報告される数値は、推定値のみです。 正確にカウントするには、 [ICorProfilerCallback:: ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md)を使用します。  
   
- `classIds`配列は 1 つまたは複数の null エントリを含めることができる場合、対応する`cObjects`配列がアンロードしている型。  
+ 対応する `cObjects` 配列にアンロードされている型がある場合、`classIds` 配列には1つ以上の null エントリを含めることができます。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

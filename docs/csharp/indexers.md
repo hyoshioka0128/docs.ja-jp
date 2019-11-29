@@ -2,13 +2,14 @@
 title: インデクサー
 description: C# のインデクサーとインデックス付きプロパティの実装方法を説明します。これらのプロパは、1 つまたは複数の引数を使用して参照されます。
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: a13163cb6bd835dfdd16c83c905c134eb8a86e7d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 86e646b341cf098d8621f095d4bfc9ea2191940d
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197601"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039119"
 ---
 # <a name="indexers"></a>インデクサー
 
@@ -326,4 +327,4 @@ using CityDataMeasurements = System.Collections.Generic.Dictionary<string, Syste
 ## <a name="summing-up"></a>まとめ
 
 クラスにプロパティのような要素があり、そのプロパティが単一の値ではなく値のコレクションを表していて、各項目が引数のセットによって識別される場合は、インデクサーを作成する必要があります。 これらの引数では、参照する必要があるコレクションの項目を一意に特定できます。
-インデクサーにより、[プロパティ](properties.md)の概念は拡張されます。メンバーはクラスの外部からデータ項目のように扱われますが、別の面ではメソッドに似ています。 インデクサーを使用すると、引数は、項目のセットを表すプロパティ内で単一の項目を見つけることができます。
+インデクサーにより、[プロパティ](properties.md)の概念は拡張されます。メンバーはクラスの外部からデータ項目のように扱われますが、内部ではメソッドに似ています。 インデクサーを使用すると、引数は、項目のセットを表すプロパティ内で単一の項目を見つけることができます。

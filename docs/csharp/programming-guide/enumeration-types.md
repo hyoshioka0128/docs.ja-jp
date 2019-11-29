@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# Language, enums
 - bit flags [C#]
 ms.assetid: 64a9b731-9e3c-4336-8a09-018db2aa10b7
-ms.openlocfilehash: fea12a32d39f98ddc575e2d538e7501d2ff49768
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 3573959a1e10b475a9867631767de5d10a08b9ea
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590546"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969773"
 ---
 # <a name="enumeration-types-c-programming-guide"></a>列挙型 (C# プログラミング ガイド)
 
@@ -86,7 +86,7 @@ Console.WriteLine("{0} is month number #{1}.", thisMonth, monthNumber);
 
 詳細については、<xref:System.Enum?displayProperty=nameWithType> を参照してください。
 
-拡張メソッドを利用して列挙に新しいメソッドを作成することもできます。 詳細については、[方法:列挙型対応の新しいメソッドを作成する](./classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md)」をご覧ください。
+拡張メソッドを利用して列挙に新しいメソッドを作成することもできます。 詳細については、「[列挙型対応の新しいメソッドを作成する方法](./classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

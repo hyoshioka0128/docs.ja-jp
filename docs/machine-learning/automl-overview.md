@@ -6,12 +6,12 @@ ms.date: 05/01/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
-ms.openlocfilehash: da2d764e678debc78a25faeb8e48facb44fc4021
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 263004e67bf88af4182788e8c74cb410460e9201
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929420"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971404"
 ---
 # <a name="automated-machine-learning-with-mlnet"></a>ML.NET による自動機械学習
 
@@ -22,7 +22,7 @@ ms.locfileid: "70929420"
 - (モデルを理解するために) 特徴の選択とモデルのトレーニングに使用されるソース コード
 
 > [!NOTE]
-> この機能は現在プレビュー段階であり、資料は変更される場合があります。 
+> この機能は現在プレビュー段階であり、資料は変更される場合があります。
 
 現在、自動 ML は二項分類、多クラス分類、回帰の機械学習[タスク](resources/tasks.md)に限定されています。 他の機械学習タスクが今後のリリースでサポートされる予定です。
 

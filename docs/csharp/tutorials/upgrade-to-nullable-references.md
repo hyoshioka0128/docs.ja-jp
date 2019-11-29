@@ -4,12 +4,12 @@ description: この高度なチュートリアルでは、null 許容参照型�
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 9cb9ac1b292e61d6a8a5f84be29a6a6c323725fc
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: d0faea19ac1c7c7f28d9775fc3b69c71a752fbcb
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039683"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969344"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>チュートリアル: null 許容参照型で既存のコードを移行する
 
@@ -32,7 +32,7 @@ C# 8 には **null 許容参照型**が導入されています。これは、nu
 
 ## <a name="explore-the-sample-application"></a>サンプル アプリケーションを調べる
 
-これから移行するサンプル アプリケーションは、RSS フィード リーダー Web アプリです。 1 つの RSS フィードから読み取り、最新の記事の要約を表示します。 いずれかの記事をクリックすると、そのサイトに移動できます。 そのアプリケーションは比較的新しいものですが、null 許容参照型が有効になる前に書かれました。 アプリケーションの設計上の決定では適切な原則が表されていましたが、この重要な言語機能は利用されていません。
+これから移行するサンプル アプリケーションは、RSS フィード リーダー Web アプリです。 1 つの RSS フィードから読み取り、最新の記事の要約を表示します。 いずれかの記事を選択すると、そのサイトに移動できます。 そのアプリケーションは比較的新しいものですが、null 許容参照型が有効になる前に書かれました。 アプリケーションの設計上の決定では適切な原則が表されていましたが、この重要な言語機能は利用されていません。
 
 サンプル アプリケーションには、アプリの主要な機能を検証する単体テスト ライブラリが含まれています。 生成された警告に基づいて実装のいずれかを変更する場合、そのプロジェクトによって容易に安全なアップグレードを行うことができます。 GitHub の [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/start) リポジトリから、スタート コードをダウンロードすることができます。
 

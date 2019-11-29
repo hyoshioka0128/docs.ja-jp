@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 5b3b0af5b46774beff9fb7a2a86c37e5399c0dd2
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: bea5cd1b42773e62601edbc113b2155ff78cf884
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957387"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977408"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>ML.NET CLI を使用してセンチメントを分析する
 
@@ -105,7 +105,7 @@ ML.NET CLI は任意のコマンドプロンプト (Windows、Mac、または Li
 
     ![PowerShell 上の ML.NET CLI の auto-train](./media/mlnet-cli/mlnet-auto-train-binary-classification-bash.gif)
 
-    この特定のケースでは、CLI ツールでは、わずか 10 秒の間に指定した小さなデータセットに対してかなりの回数の反復処理を実行できました。つまり、内部データ変換とアルゴリズムのハイパーパラメーターが異なるさまざまなアルゴリズム/構成の組み合わせに基づいて、複数回のトレーニングを行いました。 
+    この特定のケースでは、CLI ツールでは、わずか 10 秒の間に指定した小さなデータセットに対してかなりの回数の反復処理を実行できました。つまり、内部データ変換とアルゴリズムのハイパーパラメーターが異なるさまざまなアルゴリズム/構成の組み合わせに基づいて、複数回のトレーニングを行いました。
 
     最後に、10 秒間で検出された "最高品質" のモデルは、何らかの特定の構成を持つ特定のトレーナー/アルゴリズムを使用するモデルです。 探索時間によっては、コマンドから異なる結果が生成される可能性があります。 選択は、`Accuracy` など、表示されている複数のメトリックに基づいています。
 
@@ -118,16 +118,16 @@ ML.NET CLI は任意のコマンドプロンプト (Windows、Mac、または Li
     追加のメトリックや、さまざまなモデルの評価に使用される**メトリックに関するより詳細な情報** (正確度、AUC、AUCPR、F1 スコアなど) については、[ML.NET のメトリックの概要](../resources/metrics.md)に関する記事を参照してください。
 
     > [!NOTE]
-    > これと同じデータセットを試し、`--max-exploration-time` に数分間 (たとえば 180 秒を指定するので 3 分間) を指定すると、このデータセット (かなり小規模で 1,000 行) に対して、トレーニング パイプライン構成が異なる優れた "最適なモデル" が自動的に検出されます。 
-        
-    大規模なデータセットを対象とした "運用環境対応モデル" である "最高/高品質" なモデルを見つけるには、通常、データセットのサイズに応じて、はるかに長い探索時間を指定して、CLI を使用した実験を行う必要があります。 実際のところ、多くの場合、特に行と列のデータセットが大きいと、数時間の探索時間が必要になることがあります。 
+    > これと同じデータセットを試し、`--max-exploration-time` に数分間 (たとえば 180 秒を指定するので 3 分間) を指定すると、このデータセット (かなり小規模で 1,000 行) に対して、トレーニング パイプライン構成が異なる優れた "最適なモデル" が自動的に検出されます。
+
+    大規模なデータセットを対象とした "運用環境対応モデル" である "最高/高品質" なモデルを見つけるには、通常、データセットのサイズに応じて、はるかに長い探索時間を指定して、CLI を使用した実験を行う必要があります。 実際のところ、多くの場合、特に行と列のデータセットが大きいと、数時間の探索時間が必要になることがあります。
 
 1. 前のコマンド実行により、以下の資産が生成されました。
 
-    - すぐに使用できるシリアル化されたモデル .zip ("最適なモデル")。 
+    - すぐに使用できるシリアル化されたモデル .zip ("最適なモデル")。
     - その生成されたモデルを実行/スコア付けする C# コード (そのモデルを使用してエンドユーザー アプリで予測を行うため)。
     - そのモデルを生成に使用される C# トレーニング コード (学習目的)。
-    - ハイパーパラメーターとデータ変換の組み合わせを使用して各アルゴリズムに関する具体的な詳細情報を試し、すべての反復処理が探索されたログ ファイル。 
+    - ハイパーパラメーターとデータ変換の組み合わせを使用して各アルゴリズムに関する具体的な詳細情報を試し、すべての反復処理が探索されたログ ファイル。
 
     最初の 2 つの資産 (.ZIP ファイル モデルと、そのモデルを実行する C# コード) は、その生成された ML モデルを使用して予測を行うために、エンドユーザー アプリ (ASP.NET Core Web アプリ、サービス、デスクトップ アプリなど) で直接使用できます。
 
@@ -145,10 +145,10 @@ ML.NET CLI は任意のコマンドプロンプト (Windows、Mac、または Li
     ![CLI によって生成された VS ソリューション](./media/mlnet-cli/generated-csharp-solution-detailed.png)
 
     - シリアル化された ML モデル (.zip ファイル) とデータ クラス (データ モデル) を含む、生成された**クラス ライブラリ**は、エンドユーザー アプリケーションで直接使用できます。さらに、そのクラス ライブラリを直接参照する (または必要に応じてコードを移動する) こともできます。
-    - 生成された**コンソール アプリ**には、確認する必要がある実行コードが含まれているので、通常、単純なコード (わずか数行) を予測を行うエンドユーザー アプリケーションに移動することで、"スコア付けコード" (予測する ML モデルを実行するコード) を再利用します。 
+    - 生成された**コンソール アプリ**には、確認する必要がある実行コードが含まれているので、通常、単純なコード (わずか数行) を予測を行うエンドユーザー アプリケーションに移動することで、"スコア付けコード" (予測する ML モデルを実行するコード) を再利用します。
 
-1. クラス ライブラリ プロジェクト内の **ModelInput.cs** および **ModelOutput.cs** クラス ファイルを開きます。 これらのクラスは、データの保持に使用される "データ クラス" つまり POCO クラスであることがわかります。 これは "定型コード" ですが、データセットに数十列から数百列がある場合に生成すると便利です。 
-    - `ModelInput` クラスはデータセットからデータを読み取るときに使用されます。 
+1. クラス ライブラリ プロジェクト内の **ModelInput.cs** および **ModelOutput.cs** クラス ファイルを開きます。 これらのクラスは、データの保持に使用される "データ クラス" つまり POCO クラスであることがわかります。 これは "定型コード" ですが、データセットに数十列から数百列がある場合に生成すると便利です。
+    - `ModelInput` クラスはデータセットからデータを読み取るときに使用されます。
     - `ModelOutput` クラスは、予測結果 (予測データ) を取得するために使用します。
 
 1. Program.cs ファイルを開き、コードを調べます。 わずか数行で、モデルを実行し、サンプル予測を行うことができます。
@@ -164,7 +164,7 @@ ML.NET CLI は任意のコマンドプロンプト (Windows、Mac、または Li
         ITransformer mlModel = mlContext.Model.Load(MODEL_FILEPATH, out DataViewSchema inputSchema);
         var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 
-        // Create sample data to do a single prediction with it 
+        // Create sample data to do a single prediction with it
         ModelInput sampleData = CreateSingleDataSample(mlContext, DATA_FILEPATH);
 
         // Try a single prediction
@@ -174,7 +174,7 @@ ML.NET CLI は任意のコマンドプロンプト (Windows、Mac、または Li
     }
     ```
 
-- コードの最初の行では、ML.NET コードを実行するたびに、必要な `MLContext` オブジェクトを作成するだけです。 
+- コードの最初の行では、ML.NET コードを実行するたびに、必要な `MLContext` オブジェクトを作成するだけです。
 
 - 2 行目のコードはコメント化されています。なぜなら、モデルは既に CLI ツールによってトレーニングされ、モデルのシリアル化された .ZIP ファイルに保存されているので、モデルをトレーニングする必要がないからです。 ただし、CLI による *"モデルのトレーニング方法"* を確認するには、その行をコメント解除し、その特定の ML モデルに使用されるトレーニング コードを実行/デバッグすることができます。
 
@@ -215,11 +215,11 @@ ML.NET CLI は任意のコマンドプロンプト (Windows、Mac、または Li
 
     ---
 
-1. ハードコーディングされたサンプル データをセンチメントが異なる他の文に変更して、モデルがどのように肯定的センチメントまたは否定的センチメントを予測するかを確認してみてください。 
+1. ハードコーディングされたサンプル データをセンチメントが異なる他の文に変更して、モデルがどのように肯定的センチメントまたは否定的センチメントを予測するかを確認してみてください。
 
 ## <a name="infuse-your-end-user-applications-with-ml-model-predictions"></a>エンドユーザー アプリケーションに ML モデルの予測を組み込む
 
-同様の "ML モデル スコア付けコード" を使用して、エンドユーザー アプリケーションでモデルを実行し、予測することができます。 
+同様の "ML モデル スコア付けコード" を使用して、エンドユーザー アプリケーションでモデルを実行し、予測することができます。
 
 たとえば、そのコードを **WPF** や **WinForms** などの任意の Windows デスクトップ アプリケーションに直接移動して、コンソール アプリで実行したときと同じ方法でモデルを実行できます。
 
@@ -229,14 +229,14 @@ ML.NET CLI は任意のコマンドプロンプト (Windows、Mac、または Li
 
 モデル オブジェクト (モデルの .zip ファイルから読み込まれた `ITransformer`) と `PredictionEngine` オブジェクトの作成は、最適化するようにします。特に、スケーラブルな Web アプリと分散サービスに対して実行する場合は特にそうです。 最初のケースでは、モデル オブジェクト (`ITransformer`) の最適化は簡単です。 `ITransformer` オブジェクトはスレッドセーフなので、オブジェクトをシングルトン オブジェクトまたは静的オブジェクトとしてキャッシュして、モデルの読み込みを 1 回にすることができます。
 
-2 つ目のオブジェクトの `PredictionEngine` オブジェクトはそれほど簡単ではありません。`PredictionEngine` オブジェクトはスレッドセーフではないので、ASP.NET Core アプリでこのオブジェクトをシングルトン オブジェクトまたは静的オブジェクトとしてインスタンス化することができないからです。 このスレッド セーフとスケーラビリティの問題については、この[ブログ記事](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)で詳しく説明されています。 
+2 つ目のオブジェクトの `PredictionEngine` オブジェクトはそれほど簡単ではありません。`PredictionEngine` オブジェクトはスレッドセーフではないので、ASP.NET Core アプリでこのオブジェクトをシングルトン オブジェクトまたは静的オブジェクトとしてインスタンス化することができないからです。 このスレッド セーフとスケーラビリティの問題については、この[ブログ記事](https://devblogs.microsoft.com/cesardelatorre/how-to-optimize-and-run-ml-net-models-on-scalable-asp-net-core-webapis-or-web-apps/)で詳しく説明されています。
 
 ただし、状況はこのブログ記事で説明されているよりもはるかに簡単になりました。 Microsoft はより簡単なアプローチに取り組み、優れた **".NET Core 統合パッケージ"** を作成しました。アプリケーションの DI サービス (Dependency Injection サービス) に登録することで ASP.NET Core アプリおよびサービスで簡単に使用できます。また、その後はコードから直接使用できます。 その実行方法については、次のチュートリアルと例を参照してください。
 
 - [チュートリアル: スケーラブルな ASP.NET Core Web アプリと WebAPI 上の ML.NET モデルの実行](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
 - [サンプル: ASP.NET Core WebAPI 上のスケーラブルな ML.NET モデル](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
-## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>"最高品質" のモデルのトレーニングに使用された生成済み C# コードを調べる 
+## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>"最高品質" のモデルのトレーニングに使用された生成済み C# コードを調べる
 
 より高度な学習目的のために、生成済みモデルのトレーニングに CLI ツールによって使用された生成済み C# コードを調べることもできます。
 
@@ -253,7 +253,7 @@ ML.NET CLI は任意のコマンドプロンプト (Windows、Mac、または Li
 - [ML.NET CLI を使用してモデルのトレーニングを自動化する](../automate-training-with-cli.md)
 - [チュートリアル: スケーラブルな ASP.NET Core Web アプリと WebAPI 上の ML.NET モデルの実行](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
 - [サンプル: ASP.NET Core WebAPI 上のスケーラブルな ML.NET モデル](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
-- [ML.NET CLI auto-train コマンド リファレンス ガイド](../reference/ml-net-cli-reference.md) 
+- [ML.NET CLI auto-train コマンド リファレンス ガイド](../reference/ml-net-cli-reference.md)
 - [ML.NET コマンドライン インターフェイス (CLI) ツールをインストールする方法](../how-to-guides/install-ml-net-cli.md)
 - [ML.NET CLI のテレメトリ](../resources/ml-net-cli-telemetry.md)
 

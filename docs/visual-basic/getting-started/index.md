@@ -1,16 +1,16 @@
 ---
-title: Visual Basic 入門
+title: 作業開始
 ms.date: 09/10/2018
 helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-ms.openlocfilehash: c5cd4ab82fde1604dea14718b3cdd1a104fdf922
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 386f7aa74efbcb69e1a2fc0e528c88f25b1d5e2b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425150"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344823"
 ---
 # <a name="get-started-with-visual-basic"></a>Visual Basic 入門
 
@@ -53,7 +53,7 @@ Visual Basic 言語のさまざまな面を説明するヘルプ ページの一
 - [Visual Studio](/visualstudio/)\
 Visual Studio のドキュメントへのリンクを示します。
 
-- [C#](../../csharp/index.md)\
+- [C#](../../csharp/index.yml)\
 Visual C# を使用したアプリケーション開発についてのドキュメントへのリンクを示します。
 
 - [Visual C++](/cpp/)\

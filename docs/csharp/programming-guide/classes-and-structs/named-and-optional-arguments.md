@@ -14,12 +14,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 83e465651762fce33a62009fb3add40373a33c51
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 30475b637202d3b614ac968897e467956bc78646
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772122"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970508"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>名前付き引数と省略可能な引数 (C# プログラミング ガイド)
 C# 4 では、名前付き引数と省略可能な引数が導入されています。 *名前付き引数*を使用すると、パラメーター リストのパラメーターの位置ではなく、パラメーター名に引数を関連付けることによって、特定のパラメーターの引数を指定できます。 *省略可能な引数*を使用すると、一部のパラメーターの引数を省略できます。 両方の手法をメソッド、インデクサー、コンストラクター、デリゲートで使用できます。  
@@ -113,7 +113,7 @@ C# 4 では、名前付き引数と省略可能な引数が導入されていま
   
  [!code-csharp[csProgGuideNamedAndOptional#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/namedandoptcom.cs#13)]  
   
- 詳細情報と例については、「[方法: Office プログラミングで名前付き引数と省略可能な引数を使用する](./how-to-use-named-and-optional-arguments-in-office-programming.md)」と「[方法: Visual C# の機能を使用して Office 相互運用オブジェクトにアクセスする](../interop/how-to-access-office-onterop-objects.md)」をご覧ください。  
+ 詳細については、「[Office プログラミングで名前付き引数と省略可能な引数を使用する方法](./how-to-use-named-and-optional-arguments-in-office-programming.md)」と「[Visual C# の機能を使用して Office 相互運用オブジェクトにアクセスする](../interop/how-to-access-office-onterop-objects.md)」をご覧ください。  
   
 ## <a name="overload-resolution"></a>Overload Resolution  
  名前付き引数と省略可能な引数を使用すると、オーバーロードの解決に次のように影響します。  
@@ -129,7 +129,7 @@ C# 4 では、名前付き引数と省略可能な引数が導入されていま
   
 ## <a name="see-also"></a>関連項目
 
-- [方法: Office プログラミングで名前付き引数と省略可能な引数を使用する](./how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Office プログラミングで名前付き引数と省略可能な引数を使用する方法](./how-to-use-named-and-optional-arguments-in-office-programming.md)
 - [dynamic 型の使用](../types/using-type-dynamic.md)
 - [コンストラクターの使用](./using-constructors.md)
 - [インデクサーの使用](../indexers/using-indexers.md)

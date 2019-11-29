@@ -2,12 +2,12 @@
 title: IHostedService と BackgroundService クラスを使ってマイクロサービスのバックグラウンド タスクを実装する
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスの .NET Core でバックグラウンド タスクを実装する IHostedService と BackgroundService を使用する新しいオプションについて理解します。
 ms.date: 01/07/2019
-ms.openlocfilehash: 2d0b41bc7853dc616284c46462efe96ca1a9d296
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: d289d8ccc737fa9fc13b95da44e4b617b431f96a
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770119"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737199"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>IHostedService と BackgroundService クラスを使ってマイクロサービスのバックグラウンド タスクを実装する
 
@@ -17,11 +17,11 @@ ms.locfileid: "72770119"
 
 .NET Core 2.0 以降では、ホステッド サービスを簡単に実装できるようにする <xref:Microsoft.Extensions.Hosting.IHostedService> という名前の新しいインターフェイスが、フレームワークによって提供されています。 基本的な考え方は、図 6-26 に示すように、ご利用の Web ホストまたはホストが実行されているときに、バックグラウンドで実行される複数のバックグラウンド タスク (ホステッド サービス) を登録できることです。
 
-![ASP.NET Core 1.x と 2.x は、Web アプリのバックグラウンド プロセスで IWebHost をサポートしており、.NET Core 2 と 1 は、プレーンなコンソール アプリでのバックグラウンド処理に IHost をサポートしています。](./media/image26.png)
+![ASP.NET Core IWebHost と .NET Core IHost を比較した図。](./media/background-tasks-with-ihostedservice/ihosted-service-webhost-vs-host.png)
 
 **図 6-26**。 WebHost と Host で IHostedService を使用した場合の比較
 
-`WebHost` と `Host` の違いに注目してください。
+ASP.NET Core 1.x および 2.x では、Web アプリのバックグラウンド プロセスの IWebHost をサポートしています。 .NET Core 2.1 では、プレーンなコンソール アプリを使用したバックグラウンド プロセス用の IHost をサポートしています。 `WebHost` と `Host` の違いに注目してください。
 
 ASP.NET Core 2.0 の `WebHost` (`IWebHost` を実装する基底クラス) は、MVC Web アプリや Web API サービスを実装している場合など、HTTP サーバー機能をプロセスに提供するために使用するインフラストラクチャ成果物です。 ASP.NET Core での新しいインフラストラクチャのすべての長所を提供することで、依存関係の挿入を使用、要求パイプラインなどへのミドルウェアの挿入、およびこれらの `IHostedServices` をバックグラウンド タスクに正確に使用することを可能にします。
 
@@ -224,9 +224,11 @@ WebHost.CreateDefaultBuilder(args)
 
 次の図は、IHostedServices を実装する場合のクラスとインターフェイスの概要を視覚的に示しています。
 
-![クラス ダイアグラム:IWebHost と IHost は、BackgroundService から継承され、IHostedService を実装する多くのサービスをホストできます。](./media/image27.png)
+![IWebHost と IHost で多数のサービスをホストできることを示す図。](./media/background-tasks-with-ihostedservice/class-diagram-custom-ihostedservice.png)
 
 **図 6-27**。 IHostedService に関連する複数のクラスとインターフェイスを示すクラス図
+
+クラス ダイアグラム:IWebHost と IHost は、BackgroundService から継承され、IHostedService を実装する多くのサービスをホストできます。
 
 ### <a name="deployment-considerations-and-takeaways"></a>展開に関する注意事項と習得事項
 

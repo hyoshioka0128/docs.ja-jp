@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - nameof operator [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: 965b3e96a20906187df4c8693f050c550a747091
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: fa858db918cdaf04c757f2741265e359acb74f7b
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331436"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036353"
 ---
 # <a name="nameof-operator-c-reference"></a>nameof 演算子 (C# リファレンス)
 

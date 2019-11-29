@@ -1,5 +1,5 @@
 ---
-title: Async (Visual Basic)
+title: Async
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Async
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Async [Visual Basic]
 - Async keyword [Visual Basic]
 ms.assetid: 1be8b4b5-9689-41b5-bd33-b906bfd53bc5
-ms.openlocfilehash: aaf5a95edb9cba9726163be3925b006a7641597c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 73d433c66750ead3a97b1c283cc26b4c43f078df
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040852"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351627"
 ---
 # <a name="async-visual-basic"></a>Async (Visual Basic)
 
@@ -49,7 +49,7 @@ End Function
 
 ## <a name="return-types"></a>戻り値の型
 
-非同期メソッドは、[サブ](../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)プロシージャ、または戻り値の型がまたは<xref:System.Threading.Tasks.Task> <xref:System.Threading.Tasks.Task%601>の[関数](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)プロシージャです。 メソッドで[ByRef](../../../visual-basic/language-reference/modifiers/byref.md)パラメーターを宣言することはできません。
+非同期メソッドは、[サブ](../../../visual-basic/programming-guide/language-features/procedures/sub-procedures.md)プロシージャ、または戻り値の型が <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601>の[関数](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)プロシージャです。 メソッドで[ByRef](../../../visual-basic/language-reference/modifiers/byref.md)パラメーターを宣言することはできません。
 
 メソッドの[return](../../../visual-basic/language-reference/statements/return-statement.md)ステートメントに TResult 型のオペランドが含まれている場合は、非同期メソッドの戻り値の型に `Task(Of TResult)` を指定します。 メソッドの完了時に意味のある値を返さない場合は、`Task` を使用します。 これにより、メソッドの呼び出しでは `Task` が返されますが、`Task` の完了時に、`Await` を待機している `Task` ステートメントは結果値を生成しません。
 
@@ -59,7 +59,7 @@ End Function
 
 ## <a name="example"></a>例
 
-次の例は、非同期のイベント ハンドラー、非同期ラムダ式、および非同期メソッドを示しています。 これらの要素を使用する完全な例については、[チュートリアルを参照してください。Async と Await を使用した Web へのアクセス](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」をご覧ください。 チュートリアル コードは、[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)のページからダウンロードできます。
+次の例は、非同期のイベント ハンドラー、非同期ラムダ式、および非同期メソッドを示しています。 これらの要素を使用する完全な例については、「[チュートリアル: Async と Await を使用した Web へのアクセス](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」を参照してください。 チュートリアル コードは、[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)のページからダウンロードできます。
 
 ```vb
 ' An event handler must be a Sub procedure.
@@ -106,7 +106,7 @@ Private Async Function GetURLContentsAsync(url As String) As Task(Of Byte())
 End Function
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
 - [Await 演算子](../../../visual-basic/language-reference/operators/await-operator.md)

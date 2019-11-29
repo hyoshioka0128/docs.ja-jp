@@ -2,14 +2,12 @@
 title: 軽減策:パスのコロン チェック
 ms.date: 03/30/2017
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: a74c25a9bf4dd8b9ab86bd280881fe1a7999e1d5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e88643fea3bd507289436f41880a2de34117884f
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70789985"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457894"
 ---
 # <a name="mitigation-path-colon-checks"></a>軽減策:パスのコロン チェック
 .NET Framework 4.6.2 以降を対象とするアプリから、以前はサポートされていなかったパスをサポートするために (長さと形式の両方について) 数多くの変更が加えられました。 具体的には、適切なドライブの区切り構文 (コロン) のチェックがより正しく行われるようになりました。  
@@ -34,4 +32,4 @@ ms.locfileid: "70789985"
   
 ## <a name="see-also"></a>関連項目
 
-- [変更の再ターゲット](retargeting-changes-in-the-net-framework-4-6-2.md)
+- [アプリケーションの互換性](application-compatibility.md)

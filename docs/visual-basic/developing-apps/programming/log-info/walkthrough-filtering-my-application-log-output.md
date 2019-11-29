@@ -1,17 +1,17 @@
 ---
-title: My.Application.Log の出力のフィルター処理 (Visual Basic)
+title: My.Application.Log の出力をフィルター処理する
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Log object, filtering output
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: 16cbbf9bf82e0c1e48eaacfcc9f07f718ed8de49
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: f18556bbe1ca2d77925482319246d403892d31ef
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524784"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353587"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic)
 

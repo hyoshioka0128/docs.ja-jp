@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 08/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 6d13e7e4788dfd2bad6fd26015d76342b38f1142
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 1364b6a1cf6d424975828185a50175b2763c6516
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774447"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73420068"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>チュートリアル: ML.NET で ONNX を使用してオブジェクトを検出する
 
@@ -45,7 +45,7 @@ ML.NET の事前トレーニング済みの ONNX モデルを使用して画像�
 
 オブジェクト検出はコンピューターのビジョンの問題です。 画像の分類に密接に関連していますが、オブジェクト検出では、より詳細なスケールで画像分類が実行されます。 オブジェクト検出では、画像内のエンティティの特定 "_と_" 分類の両方が行われます。 オブジェクト検出は、画像に異なる種類のオブジェクトが複数含まれる場合に使用します。
 
-![左側に犬の画像分類、右側にドッグ ショーのグループのオブジェクト分類がある横並びの画像](./media/object-detection-onnx/img-classification-obj-detection.PNG)
+![画像の分類とオブジェクトの分類を示すスクリーンショット。](./media/object-detection-onnx/img-classification-obj-detection.png)
 
 オブジェクト検出のユース ケースには、次のようなものがあります。
 
@@ -66,7 +66,7 @@ ML.NET の事前トレーニング済みの ONNX モデルを使用して画像�
 
 オブジェクト検出は、画像処理タスクです。 そのため、この問題を解決するためにトレーニングされるほとんどのディープ ラーニング モデルは、CNN です。 このチュートリアルで使用するモデルは、次のドキュメントで説明されている YOLOv2 モデルのコンパクトなバージョンである Tiny YOLOv2 モデルです。[「YOLO9000:Better, Faster, Stronger」 (YOLO9000: より良く、より速く、より強く) (Redmon、Fadhari 著)](https://arxiv.org/pdf/1612.08242.pdf)。 Tiny YOLOv2 は Pascal VOC データセットでトレーニングされ、20 種類のクラスのオブジェクトを予測できる 15 個のレイヤーで構成されています。 Tiny YOLOv2 は元の YOLOv2 モデルを凝縮したバージョンなので、速度と精度のトレードオフが生じます。 Netron などのツールを使用して、モデルを構成するさまざまなレイヤーを視覚化できます。 モデルを検査すると、ニューラル ネットワークを構成するすべてのレイヤー間の接続のマッピングが生成されます。各レイヤーには、レイヤーの名前と共にそれぞれの入力/出力の寸法が含まれます。 モデルの入力と出力を記述するために使用されるデータ構造は、テンソルと呼ばれます。 テンソルは、データを N 次元に格納するコンテナーと考えることができます。 Tiny YOLOv2 の場合、入力レイヤーの名前は `image` であり、`3 x 416 x 416` の寸法のテンソルが想定されています。 出力レイヤーの名前は `grid` であり、`125 x 13 x 13` の寸法の出力テンソルが生成されます。
 
-![非表示レイヤーに分割される入力レイヤー、次に出力レイヤー](./media/object-detection-onnx/netron-model-map.png)
+![非表示レイヤーに分割される入力レイヤー、次に出力レイヤー](./media/object-detection-onnx/netron-model-map-layers.png)
 
 YOLO モデルは `3(RGB) x 416px x 416px` の画像を受け取ります。 この入力はモデルによって取得され、さまざまなレイヤーを経由して出力が生成されます。 出力では入力画像が `13 x 13` グリッドに分割されます。グリッド内の各セルは、`125` 値で構成されます。
 
@@ -74,11 +74,11 @@ YOLO モデルは `3(RGB) x 416px x 416px` の画像を受け取ります。 こ
 
 Open Neural Network Exchange (ONNX) は、AI モデルのオープン ソース形式です。 ONNX は、フレームワーク間の相互運用性をサポートしています。 つまり、PyTorch などの多くの一般的な機械学習フレームワークのいずれかでモデルをトレーニングして ONNX 形式に変換し、ML.NET などの別のフレームワークで ONNX モデルを使用することができます。 詳細については、[ONNX の Web サイト](https://onnx.ai/)を参照してください。
 
-![ONNX でサポートされている形式を ONNX にインポートし、他の ONNX でサポートされている形式から使用する](./media/object-detection-onnx/onnx-frameworks.png)
+![使用されている、ONNX でサポートされる形式の図。](./media/object-detection-onnx/onyx-supported-formats.png)
 
 事前トレーニング済みの Tiny YOLOv2 モデルは ONNX 形式で格納されます。これはレイヤーのシリアル化された表現であり、それらのレイヤーの学習済みパターンです。 ML.NET では、ONNX との相互運用性は [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) および [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) NuGet パッケージを使用して実現されます。 [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) パッケージには、画像を受け取り、予測またはトレーニング パイプラインへの入力として使用できる数値にエンコードする一連の変換が含まれています。 [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) パッケージでは、ONNX ランタイムを利用して ONNX モデルを読み込み、それを使用して、指定された入力に基づいて予測を行います。
 
-![ONNX ファイルから ONNX ランタイム、最後に C# アプリケーションのデータ フロー](./media/object-detection-onnx/onnx-ml-net-integration.png)
+![ONNX ランタイムへの ONNX ファイルのデータ フロー。](./media/object-detection-onnx/onnx-ml-net-integration.png)
 
 ## <a name="set-up-the-net-core-project"></a>.NET Core プロジェクトを設定する
 
@@ -703,7 +703,7 @@ person and its Confidence score: 0.5551759
 
 画像を境界ボックスと共に表示するには、`assets/images/output/` ディレクトリに移動します。 処理された画像の 1 つのサンプルを次に示します。
 
-![ダイニング ルームの処理済み画像のサンプル](./media/object-detection-onnx/image3.jpg)
+![ダイニング ルームの処理済み画像のサンプル](./media/object-detection-onnx/dinning-room-table-chairs.png)
 
 おめでとうございます! これで、ML.NET でトレーニング済みの `ONNX` モデルを再利用してオブジェクト検出用の機械学習モデルを構築できました。
 

@@ -1,15 +1,15 @@
 ---
-title: '方法: 中間値を計算する (C#)'
+title: 中間値を計算する方法 (C#)
 ms.date: 07/20/2015
 ms.assetid: 7fd3001f-f8f9-4bce-879f-d4c7af8a04fe
-ms.openlocfilehash: fe3f992e85b3fb508fced943e1428a4fb6ae2490
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 3ead3bfb02f7c9192db96996c1f1e01a86a4191a
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205380"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141447"
 ---
-# <a name="how-to-calculate-intermediate-values-c"></a>方法: 中間値を計算する (C#)
+# <a name="how-to-calculate-intermediate-values-c"></a>中間値を計算する方法 (C#)
 この例では、並べ替え、フィルタリング、および選択を実行する際に使用できる中間値を計算する方法について説明します。  
   
 ## <a name="example"></a>例  

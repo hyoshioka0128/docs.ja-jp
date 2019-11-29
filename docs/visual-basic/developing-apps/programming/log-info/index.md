@@ -1,5 +1,5 @@
 ---
-title: アプリケーションからの情報のログ記録 (Visual Basic)
+title: アプリケーションからの情報のログ記録
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Log object
@@ -9,21 +9,22 @@ helpviewer_keywords:
 - My.Application.Log object
 - examples [Visual Basic], logging application information
 ms.assetid: 8bf4f047-22d6-48d6-aec5-93b98ad5b8e8
-ms.openlocfilehash: 3202bdb2c4274e6d3127537b7cae661ba6e63a35
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dace4bac3bf7529b8c50a492a092ad478f4d9e2d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052509"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353252"
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>アプリケーションからの情報のログ記録 (Visual Basic)
+
 このセクションには、`My.Application.Log` オブジェクトまたは `My.Log` オブジェクトを使ってアプリケーションの情報を記録する方法と、アプリケーションのログ機能を拡張する方法に関するトピックが含まれます。  
   
  `Log` オブジェクトはアプリケーションのログ リスナーに情報を書き込むためのメソッドを提供し、`Log` オブジェクトの高度な `TraceSource` プロパティは詳細な構成情報を提供します。 `Log` オブジェクトは、アプリケーションの構成ファイルによって構成されます。  
   
- `My.Log` オブジェクトは、ASP.NET アプリケーションでのみ使うことができます。 クライアント アプリケーションの場合は `My.Application.Log` を使います。 詳細については、「<xref:Microsoft.VisualBasic.Logging.Log>」を参照してください。  
+ `My.Log` オブジェクトは、ASP.NET アプリケーションでのみ使うことができます。 クライアント アプリケーションの場合は `My.Application.Log` を使います。 詳細については、<xref:Microsoft.VisualBasic.Logging.Log> を参照してください。  
   
-## <a name="tasks"></a>[タスク]  
+## <a name="tasks"></a>タスク  
   
 |終了|解決方法については、|  
 |--------|---------|  

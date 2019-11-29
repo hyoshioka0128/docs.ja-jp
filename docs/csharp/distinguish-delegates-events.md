@@ -2,13 +2,14 @@
 title: デリゲートとイベントの識別
 description: デリゲートとイベントの違いと、.NET Core の各機能を使用する状況について説明します。
 ms.date: 06/20/2016
+ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: 2f9c26519d93314f4991829191723df5426b23b7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ff90af1d2b1a92f06eed58228f8e8ca5ff6b93ca
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33219139"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037314"
 ---
 # <a name="distinguishing-delegates-and-events"></a>デリゲートとイベントの識別
 
@@ -35,7 +36,7 @@ ms.locfileid: "33219139"
 
 別の考慮事項として、デリゲート メソッドのために必要なメソッド プロトタイプがあります。 ご覧のとおり、イベントに使用されるデリゲートにはすべて戻り値の型 void が与えられます。 また、イベント引数オブジェクトのプロパティを変更することでイベント ソースに情報を戻すイベント ハンドラーを作成する表現形式があります。 そのような表現形式は実際に機能しますが、メソッドから値を返すことと同じように自然ではありません。
 
-多くの場合、これらの 2 つのヒューリスティックが存在します。デリゲート メソッドが値を返す場合、何らかの形式でアルゴリズムに影響を与える可能性があります。
+この 2 つのヒューリスティックは両方とも存在する可能性があります。デリゲート メソッドが値を返す場合は、何らかの形でアルゴリズムに影響を与える可能性があります。
 
 ## <a name="event-listeners-often-have-longer-lifetimes"></a>イベント リスナーの有効期間が頻繁に長くなる 
 

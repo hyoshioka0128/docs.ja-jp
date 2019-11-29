@@ -6,12 +6,12 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 7010c38797ab64e5106c96c06cd814c143ca9c24
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: dab708bfbc33458bc2664c0d04757f0badcc2575
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419387"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141608"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>暗黙的に型指定されるローカル変数 (C# プログラミング ガイド)
 
@@ -30,13 +30,13 @@ ms.locfileid: "73419387"
 - [for](../../language-reference/keywords/for.md) 初期化ステートメント。
 
     ```csharp
-    for(var x = 1; x < 10; x++)
+    for (var x = 1; x < 10; x++)
     ```
 
 - [foreach](../../language-reference/keywords/foreach-in.md) 初期化ステートメント。
 
     ```csharp
-    foreach(var item in list){...}
+    foreach (var item in list) {...}
     ```
 
 - [using](../../language-reference/keywords/using-statement.md) ステートメント。
@@ -45,7 +45,7 @@ ms.locfileid: "73419387"
     using (var file = new StreamReader("C:\\myfile.txt")) {...}
     ```
 
-詳細については、[クエリ式で暗黙的に型指定されるローカル変数および配列を使用する](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)」をご覧ください。
+詳細については、「[「クエリ式で暗黙的に型指定されるローカル変数および配列を使用する方法](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)」を参照してください。
 
 ## <a name="var-and-anonymous-types"></a>var と匿名型
 
@@ -63,7 +63,7 @@ ms.locfileid: "73419387"
 
 - `var` は、クラス スコープのフィールドで使用できません。
 
-- `var` を使用して宣言された変数は、初期化式では使用できません。 つまり、`: int i = (i = 20);` という式は有効ですが、`var i = (i = 20);` という式はコンパイル時のエラーを生成します。
+- `var` を使用して宣言された変数は、初期化式では使用できません。 つまり、`int i = (i = 20);` という式は有効ですが、`var i = (i = 20);` という式はコンパイル時エラーが生成されます。
 
 - 暗黙的に型指定された複数の変数を同じステートメント内で初期化することはできません。
 
@@ -95,7 +95,7 @@ private var bookTitles = new List<string>();
 
 - [C# リファレンス](../../language-reference/index.md)
 - [暗黙的に型指定される配列](../arrays/implicitly-typed-arrays.md)
-- [方法: クエリ式で暗黙的に型指定されるローカル変数および配列を使用する](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
+- [クエリ式で暗黙的に型指定されるローカル変数および配列を使用する方法](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
 - [匿名型](anonymous-types.md)
 - [オブジェクト初期化子とコレクション初期化子](object-and-collection-initializers.md)
 - [var](../../language-reference/keywords/var.md)

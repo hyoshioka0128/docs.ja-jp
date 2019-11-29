@@ -1,5 +1,5 @@
 ---
-title: パラメーター配列 (Visual Basic)
+title: パラメーター配列
 ms.date: 07/20/2015
 helpviewer_keywords:
 - parameter arrays [Visual Basic], about parameter arrays
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], indefinite number of argument values
 - arrays [Visual Basic], parameter arrays
 ms.assetid: c43edfae-9114-4096-9ebc-8c5c957a1067
-ms.openlocfilehash: 285a5f10e2394fcb001a652fad66e8128b9fbc1a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ffb532fbac70b9aa8ab210450e4d9207f5e0291f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424614"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351124"
 ---
 # <a name="parameter-arrays-visual-basic"></a>パラメーター配列 (Visual Basic)
 通常、プロシージャの宣言よりも多くの引数を指定してプロシージャを呼び出すことはできません。 不特定数の引数が必要な場合は、パラメーター*配列*を宣言して、プロシージャがパラメーターの値の配列を受け取ることができるようにすることができます。 プロシージャを定義するときに、パラメーター配列内の要素の数を知る必要はありません。 配列のサイズは、プロシージャの呼び出しごとに個別に決定されます。  
@@ -56,7 +56,7 @@ ms.locfileid: "73424614"
   
  [!code-vb[VbVbcnProcedures#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#49)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:Microsoft.VisualBasic.Information.UBound%2A>
 - [手順](./index.md)

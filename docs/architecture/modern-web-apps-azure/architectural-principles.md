@@ -4,12 +4,12 @@ description: ASP.NET Core および Azure での最新の Web アプリケーシ
 author: ardalis
 ms.author: wiwagn
 ms.date: 02/16/2019
-ms.openlocfilehash: 91bb3be207c9919eb7eb0119e96e76aae94858be
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 656c92c417283366e4bb757489c189ecbc0ea815
+ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373766"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73416687"
 ---
 # <a name="architectural-principles"></a>アーキテクチャの原則
 
@@ -75,7 +75,7 @@ ms.locfileid: "70373766"
 
 ### <a name="persistence-ignorance"></a>永続性の無視
 
-**永続性の無視** (PI) は永続化を必要とする型を参照しますが、そのコードは永続化技術の選択による影響を受けません。 そのような .NET 内の型は、特定の基本クラスから継承することも、特定のインターフェイスを実装することも必要ないため、Plain Old CLR Object (POCO) と呼ばれることがあります。 永続性の無視は重要です。これにより、同じビジネス モデルを複数の方法で永続化することができ、アプリケーションの柔軟性が向上するからです。 永続化の選択肢は時間の経過と共に、あるデータベース技術から別のデータベース技術へと変化する場合があります。また、アプリケーションを起動したものすべて (たとえば、リレーショナル データベースに加えて、Redis キャッシュまたは Azure DocumentDb を使用) に加えて、永続化の追加フォームが必要な場合があります。
+**永続性の無視** (PI) は永続化を必要とする型を参照しますが、そのコードは永続化技術の選択による影響を受けません。 そのような .NET 内の型は、特定の基本クラスから継承することも、特定のインターフェイスを実装することも必要ないため、Plain Old CLR Object (POCO) と呼ばれることがあります。 永続性の無視は重要です。これにより、同じビジネス モデルを複数の方法で永続化することができ、アプリケーションの柔軟性が向上するからです。 永続化の選択肢は時間の経過と共に、あるデータベース技術から別のデータベース技術へと変化する場合があります。また、アプリケーションを起動したものすべて (たとえば、リレーショナル データベースに加えて、Redis キャッシュまたは Azure Cosmos DB を使用) に加えて、永続化の追加フォームが必要な場合があります。
 
 この原則に対する違反の例を次に示します。
 

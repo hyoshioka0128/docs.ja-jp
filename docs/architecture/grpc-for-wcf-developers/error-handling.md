@@ -1,14 +1,13 @@
 ---
 title: エラー処理-WCF 開発者向け gRPC
 description: 記述予定
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 91f5789d8ed0f01f3ce2f3f9a6c6ccf14f245290
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2c44bd9264c877a7c7a86c115b6da9f759006016
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73842003"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967793"
 ---
 # <a name="error-handling"></a>エラー処理
 
@@ -16,7 +15,7 @@ WCF は `FaultException<T>` と `FaultContract` を使用して、SOAP Fault sta
 
 残念ながら、現在のバージョンの gRPC では、WCF での洗練された機能が不足しており、単純なステータスコードとメタデータに基づいて組み込まれたエラー処理は限られています。 次の表に、最も一般的に使用されるステータスコードの簡単なガイドを示します。
 
-| 状態コード | 問題 |
+| 状態コード | Problem |
 | ----------- | ------- |
 | `GRPC_STATUS_UNIMPLEMENTED` | メソッドが書き込まれていません。 |
 | `GRPC_STATUS_UNAVAILABLE` | サービス全体に問題があります。 |

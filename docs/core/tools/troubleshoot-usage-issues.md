@@ -3,12 +3,12 @@ title: .NET Core ツールの使用に関する問題のトラブルシューテ
 description: .NET Core ツールを実行するときの一般的な問題と考えられる解決策について説明します。
 author: kdollard
 ms.date: 09/23/2019
-ms.openlocfilehash: fc6c520ab57235c78148a6b77717cbd80a989451
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: df896405a122050acba220923eee58e87e0b75b6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318295"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74282499"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>.NET Core ツールの使用に関する問題のトラブルシューティング
 
@@ -25,7 +25,7 @@ ms.locfileid: "72318295"
 
 実行可能ファイルが見つからない場合は、次のようなメッセージが表示されます。
 
-```
+```console
 Could not execute because the specified command or file was not found.
 Possible reasons for this include:
   * You misspelled a built-in dotnet command.
@@ -101,7 +101,7 @@ dotnet --info
 
 いろいろな理由で、.NET Core のグローバル ツールまたはローカル ツールのインストールが失敗する可能性があります。 ツールのインストールが失敗すると、次のようなメッセージが表示されます。
 
-```
+```console
 Tool '{0}' failed to install. This failure may have been caused by:
 
 * You are attempting to install a preview release and did not use the --version option to specify the version.

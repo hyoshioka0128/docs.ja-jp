@@ -1,5 +1,5 @@
 ---
-title: ファイル エンコーディング (Visual Basic)
+title: ファイル エンコーディング
 ms.date: 07/20/2015
 helpviewer_keywords:
 - character encodings
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Unicode, file encoding
 - file encoding
 ms.assetid: ea2c5f5f-bbb1-4150-9928-b9951fa6bc57
-ms.openlocfilehash: d73226c58d39c970ec02c32a2c188f2747a7d87e
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 52770187568d0ba0f54ec36ee2c3d754a9b4d9a8
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583463"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348892"
 ---
 # <a name="file-encodings-visual-basic"></a>ファイル エンコーディング (Visual Basic)
 

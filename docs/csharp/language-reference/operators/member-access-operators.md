@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 45af31d10d77f4c63b27b34595b97fdd11ef95a1
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: ba2a8cd4995b9baab2071d3fb3c7980e45565692
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116134"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039000"
 ---
 # <a name="member-access-operators-c-reference"></a>メンバー アクセス演算子 (C# リファレンス)
 
@@ -92,7 +92,7 @@ ms.locfileid: "71116134"
 
 [!code-csharp-interactive[indexer access](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Indexers)]
 
-インデクサーを使用すると、配列のインデックス作成と同様の方法でユーザー定義型のインスタンスのインデックスを作成することができます。 整数である必要がある配列インデックスとは異なり、任意の型を持つインデクサー引数を宣言できます。
+インデクサーを使用すると、配列のインデックス作成と同様の方法でユーザー定義型のインスタンスのインデックスを作成することができます。 整数である必要がある配列インデックスとは異なり、任意の型を持つインデクサー パラメーターを宣言できます。
 
 インデクサーの詳細については、「[インデクサー](../../programming-guide/indexers/index.md)」を参照してください。
 
@@ -122,7 +122,7 @@ A?.B?[C];
 
 [!code-csharp-interactive[null-conditional operators](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#NullConditional)]
 
-前述の例では、[NULL 合体演算子](null-coalescing-operator.md)の使用方法も示しています。 NULL 合体演算子は、NULL 条件演算の結果が `null` の場合に評価する代替の式を指定するために使用することができます。
+前の例では、null 条件演算の結果が `null` の場合に評価する代替の式を指定するために、[null 合体演算子 `??`](null-coalescing-operator.md) も使用しています。
 
 ### <a name="thread-safe-delegate-invocation"></a>スレッドセーフなデリゲートの呼び出し
 
@@ -198,6 +198,8 @@ if (handler != null)
 - [要素アクセス](~/_csharplang/spec/expressions.md#element-access)
 - [NULL 条件演算子](~/_csharplang/spec/expressions.md#null-conditional-operator)
 - [呼び出し式](~/_csharplang/spec/expressions.md#invocation-expressions)
+
+インデックスと範囲について詳しくは、[機能提案メモ](~/_csharplang/proposals/csharp-8.0/ranges.md)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

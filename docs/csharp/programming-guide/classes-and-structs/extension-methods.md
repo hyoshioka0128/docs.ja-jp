@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: e37fc792f79044345d52b2bc463813c0bde22f5b
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 5cce8eb3ad36208c3d376bc8c94da484e9f9181e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970905"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971053"
 ---
 # <a name="extension-methods-c-programming-guide"></a>拡張メソッド (C# プログラミング ガイド)
 拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを "追加" できます。 拡張メソッドは特別な種類の静的メソッドですが、拡張された型のインスタンス メソッドのように呼び出します。 C#、F#、および Visual Basic で作成されたクライアント コードの場合は、拡張メソッドの呼び出しと、型で実際に定義されたメソッドの呼び出しに明確な違いはありません。  
@@ -44,7 +44,7 @@ int i = s.WordCount();
   
  コードでは、インスタンス メソッドの構文を使用して拡張メソッドを呼び出します。 ただし、コンパイラが生成する中間言語 (IL: Intermediate Language) により、コードは静的メソッドに対する呼び出しに変換されます。 したがって、カプセル化の原則には実質的に違反していません。 実際に、拡張メソッドは、それらが拡張している型のプライベート変数にはアクセスできません。  
   
- 詳細については、「[方法 :カスタム拡張メソッドを実装して呼び出す](./how-to-implement-and-call-a-custom-extension-method.md)」をご覧ください。  
+ 詳細については、「[カスタム拡張メソッドを実装して呼び出す方法](./how-to-implement-and-call-a-custom-extension-method.md)」を参照してください。
   
  一般的には、独自の拡張メソッドを実装するよりも、拡張メソッドを呼び出すことの方がはるかに多くなります。 拡張メソッドは、インスタンス メソッドの構文を使用して呼び出すので、特別な知識がなくてもクライアント コードからそれらを使用できます。 メソッドが定義されている名前空間に関する `using` ディレクティブを追加するだけで、特定の型の拡張メソッドを使用できるようになります。 たとえば、標準クエリ演算子を使用するには、次の `using` ディレクティブをコードに追加します。  
   

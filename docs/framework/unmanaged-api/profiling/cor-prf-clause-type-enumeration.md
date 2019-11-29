@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: f64c325a-ed3a-4aaf-b847-a88edbc4fefc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 18197f0c500a205a66bdda8a9401f31d4208ae67
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 94230cbad95ff0a5d4234c27aa5d1d56ac5be9bb
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780433"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428401"
 ---
-# <a name="corprfclausetype-enumeration"></a>COR_PRF_CLAUSE_TYPE 列挙型
+# <a name="cor_prf_clause_type-enumeration"></a>COR_PRF_CLAUSE_TYPE 列挙型
 コードが入った、または出た例外句のタイプを示します。  
   
 ## <a name="syntax"></a>構文  
@@ -41,20 +39,20 @@ typedef enum {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`COR_PRF_CLAUSE_NONE`|例外の句が無効です。|  
-|`COR_PRF_CLAUSE_FILTER`|例外の句は、フィルター式です。|  
-|`COR_PRF_CLAUSE_CATCH`|例外の句は、`catch`ステートメント。|  
-|`COR_PRF_CLAUSE_FINALLY`|例外の句は、`finally`ステートメント。|  
+|`COR_PRF_CLAUSE_NONE`|Exception 句が有効ではありません。|  
+|`COR_PRF_CLAUSE_FILTER`|Exception 句はフィルター式です。|  
+|`COR_PRF_CLAUSE_CATCH`|Exception 句は `catch` ステートメントです。|  
+|`COR_PRF_CLAUSE_FINALLY`|Exception 句は `finally` ステートメントです。|  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [列挙型のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

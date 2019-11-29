@@ -1,27 +1,31 @@
 ---
-title: '方法: Visual Basic でファイルを作成する'
+title: '方法: ファイルを作成する'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - text files [Visual Basic], creating
 - files [Visual Basic], creating
 ms.assetid: 0253bb6d-5519-4a50-b882-b93ef5cca0d9
-ms.openlocfilehash: f24fdd6ce1fea7540c33e4a2fdfc06885825f76a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 20533ec01d3198d499312ed0c15ec8cca2ff70bd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628980"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348794"
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>方法: Visual Basic でファイルを作成する
+
 この例では、<xref:System.IO.File> クラスで <xref:System.IO.File.Create%2A> メソッドを使用して、指定したパスに空のテキスト ファイルを作成します。  
   
 ## <a name="example"></a>例  
+
  [!code-vb[VbFileIOMisc#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/class2.vb#1)]  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
+
  ファイルに書き込むには、`file` 変数を使用します。  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
+
  ファイルが既に存在する場合、それは置き換えられます。  
   
  次の条件を満たす場合は、例外が発生する可能性があります。  
@@ -39,6 +43,7 @@ ms.locfileid: "64628980"
 - パスがコロン ":" のみである場合 (<xref:System.NotSupportedException>)。  
   
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+
  部分信頼環境では、<xref:System.Security.SecurityException> がスローされる場合があります。  
   
  <xref:System.IO.File.Create%2A> メソッドへの呼び出しでは、<xref:System.Security.Permissions.FileIOPermission> が必要です。  

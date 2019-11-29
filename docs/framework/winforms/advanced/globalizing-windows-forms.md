@@ -35,18 +35,18 @@ Windows フォームまたはコントロールが受け取る入力の種類を
 
 - [.NET アプリケーションのグローバライズとローカライズ](../../../standard/globalization-localization/index.md)
 
-- [チュートリアル: デザイナーを使用し、ClickOnce 配置 API で必要に応じてサテライト アセンブリをダウンロードする](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer)
+- [チュートリアル : デザイナーを使用し、ClickOnce 配置 API で必要に応じてサテライト アセンブリをダウンロードする](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api-using-the-designer)
 
 - [ClickOnce アプリケーションのローカライズ](/visualstudio/deployment/localizing-clickonce-applications)
 
-- [チュートリアル: ClickOnce 配置 API を使用して必要に応じてサテライト アセンブリをダウンロードする](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api)
+- [チュートリアル : ClickOnce 配置 API を使用して必要に応じてサテライト アセンブリをダウンロードする](/visualstudio/deployment/walkthrough-downloading-satellite-assemblies-on-demand-with-the-clickonce-deployment-api)
 
-- [2 つのオブジェクトが等しいかどうかをテストする方法Windows フォームグローバリゼーション @ no__t にカルチャと UI カルチャを設定する
+- [方法: Windows フォームグローバリゼーション用のカルチャおよび UI カルチャを設定する](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/b28bx3bh(v=vs.100))
 
-- [2 つのオブジェクトが等しいかどうかをテストする方法ミラー化された Windows フォームとコントロールの作成 @ no__t-0
+- [方法: ミラー化された Windows フォームとコントロールを作成する](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/xwbz5ws0(v=vs.100))
 
-- [2 つのオブジェクトが等しいかどうかをテストする方法AutoSize と TableLayoutPanel コントロールを使用した Windows フォームでのローカライズのサポート @ no__t-0
+- [方法: AutoSize と TableLayoutPanel コントロールを使用して Windows フォームのローカリゼーションをサポートする](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/1zkt8b33(v=vs.100))
 
-- [チュートリアル: Windows フォーム @ no__t のローカライズ
+- [チュートリアル: Windows フォームのローカライズ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))
 
-- [チュートリアル: ローカライズの比率を調整するレイアウトの作成 @ no__t-0
+- [チュートリアル: ローカライズの比率を調整するレイアウトの作成](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100))

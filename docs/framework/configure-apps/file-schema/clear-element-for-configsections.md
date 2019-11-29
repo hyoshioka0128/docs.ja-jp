@@ -1,5 +1,5 @@
 ---
-title: <configSections> の <clear> 要素
+title: <clear> の <configSections> 要素
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/clear
@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73119081"
 ---
-# <a name="clear-element-for-configsections"></a>\<configSections の > 要素をクリア \<
+# <a name="clear-element-for-configsections"></a>\<configSections の > 要素をクリア \<>
 
 以前に定義したセクションとセクショングループをすべて消去します。
 
@@ -44,9 +44,9 @@ ms.locfileid: "73119081"
 
 ## <a name="child-elements"></a>子要素
 
-None
+なし
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
 **\<clear >** 要素は、現在の構成ファイルまたは構成ファイル階層の上位レベルで定義されたすべてのセクションとセクショングループをアプリケーションから削除します。
 
@@ -91,6 +91,6 @@ None
 
 この要素は、アプリケーション構成ファイル *、コンピューター構成*ファイル (machine.config)、およびアプリケーションディレクトリレベルでは*ない web.config ファイル*で使用できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [.NET Framework の構成ファイルスキーマ](index.md)

@@ -3,12 +3,12 @@ title: ICorProfilerInfo10 インターフェイス
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 06cce79fbb2b2eb143e77e3c6fda194e47d4f4f3
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: f2bc716110c14972e5b2c32bceb3123b16e87c61
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928800"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449845"
 ---
 # <a name="icorprofilerinfo10-interface"></a>ICorProfilerInfo10 インターフェイス
 
@@ -25,9 +25,9 @@ ms.locfileid: "70928800"
 |[SuspendRuntime メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-suspendruntime-method.md)| GC を実行せずにランタイムを中断します。 |
 |[ResumeRuntime メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-resumeruntime-method.md)| GC を実行せずにランタイムを再開します。 |
 
-## <a name="requirements"></a>必要条件  
-**・** 「 [.Net Core でサポートされるオペレーティングシステム](../../../core/windows-prerequisites.md#net-core-supported-operating-systems)」を参照してください。  
-**ヘッダー:** Corprof.idl、Corprof.idl  
+## <a name="requirements"></a>要件  
+**プラットフォーム:** 「 [.Net Core でサポートされるオペレーティングシステム](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows)」を参照してください。  
+**ヘッダー** : CorProf.idl、CorProf.h  
 **.Net のバージョン:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)] 
 
 ## <a name="see-also"></a>関連項目

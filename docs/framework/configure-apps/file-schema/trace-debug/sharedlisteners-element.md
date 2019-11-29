@@ -22,8 +22,8 @@ ms.locfileid: "71699302"
 任意の source 要素または trace 要素が参照できるリスナーを含みます。  これらのリスナーは、既定ではトレースを受信せず、実行時にこれらのリスナーを取得することはできません。 共有リスナーとして識別されるリスナーは、名前を指定してソースまたはトレースに追加できます。  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t @ no__t-3 **\<sharedListeners >**  
+&nbsp;&nbsp;[ **\<の >** ](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<sharedListeners >**  
   
 ## <a name="syntax"></a>構文  
   
@@ -33,11 +33,11 @@ ms.locfileid: "71699302"
 </sharedListeners>  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a>属性と要素  
+ 次のセクションでは、属性、子要素、親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- [なし] :  
+ [なし]。  
   
 ### <a name="child-elements"></a>子要素  
   
@@ -53,12 +53,12 @@ ms.locfileid: "71699302"
 |`system.diagnostics`|ASP.NET 構成セクションのルート要素を指定します。|  
   
 ## <a name="remarks"></a>コメント  
- リスナーを共有リスナーコレクションに追加しても、それがアクティブなリスナーになることはありません。 トレースソースまたはトレースに追加するには、そのトレース要素の @no__t 0 コレクションに追加する必要があります。 .NET Framework 内のリスナークラスは、@no__t 0 クラスから派生します。  
+ リスナーを共有リスナーコレクションに追加しても、それがアクティブなリスナーになることはありません。 トレースソースまたはトレースに追加するには、そのトレース要素の `Listeners` コレクションに追加する必要があります。 .NET Framework 内のリスナークラスは、<xref:System.Diagnostics.TraceListener> クラスから派生します。  
   
  この要素は、コンピューターの構成ファイル (machine.config) とアプリケーション構成ファイルで使用できます。  
   
 ## <a name="example"></a>例  
- 次の例では、`<sharedListeners>` 要素を使用して、リスナー `console` を <xref:System.Diagnostics.TraceSource> と <xref:System.Diagnostics.Trace> の両方のクラスの `Listeners` コレクションに追加する方法を示します。 コンソールトレースリスナーは、<xref:System.Diagnostics.TraceSource> または <xref:System.Diagnostics.Trace> のいずれかの呼び出しを使用して、トレース情報をコンソールに書き込みます。  
+ 次の例では、`<sharedListeners>` 要素を使用して、<xref:System.Diagnostics.TraceSource> クラスと <xref:System.Diagnostics.Trace> クラスの両方の `Listeners` コレクションにリスナー `console` を追加する方法を示します。 コンソールトレースリスナーは、<xref:System.Diagnostics.TraceSource> または <xref:System.Diagnostics.Trace>の呼び出しによって、トレース情報をコンソールに書き込みます。  
   
 ```xml  
 <configuration>  
@@ -88,7 +88,7 @@ ms.locfileid: "71699302"
 </configuration>
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Diagnostics.TraceListener>
 - [トレースおよびデバッグ設定のスキーマ](index.md)

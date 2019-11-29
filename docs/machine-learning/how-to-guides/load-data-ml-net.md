@@ -1,20 +1,22 @@
 ---
 title: ファイルとその他のソースからデータを読み込む
-description: このハウツーでは、処理とトレーニング用のデータを ML.NET に読み込む方法について説明します。 データは、もともとはファイルか、またはデータベース、JSON、XML、メモリ内コレクションなどのその他のデータソースに格納されています。
-ms.date: 09/11/2019
+description: API を利用し、処理とトレーニング用のデータを ML.NET に読み込む方法について説明します。 データはファイル、データベース、JSON、XML、メモリ内コレクションに格納されます。
+ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 4008f38bf4a20113a3f5c865e38222e5b82f2acc
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 83aaae2d2e75b3076841750bf5d505390a538bc0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991361"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344754"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>ファイルとその他のソースからデータを読み込む
 
-このハウツーでは、処理とトレーニング用のデータを ML.NET に読み込む方法について説明します。 データは、もともとはファイルか、またはデータベース、JSON、XML、メモリ内コレクションなどのその他のデータソースに格納されています。
+API を利用し、処理とトレーニング用のデータを ML.NET に読み込む方法について説明します。 データは、もともとはファイルか、またはデータベース、JSON、XML、メモリ内コレクションなどのその他のデータソースに格納されています。
+
+モデル ビルダーを使用している場合、「[モデル ビルダーにトレーニング データを読み込む](load-data-model-builder.md)」を参照してください。
 
 ## <a name="create-the-data-model"></a>データ モデルを作成する
 
@@ -107,18 +109,19 @@ IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubF
 
 ## <a name="load-data-from-a-relational-database"></a>リレーショナル データベースからデータを読み込む
 
-> [!NOTE]
-> DatabaseLoader は現在のところ、プレビュー段階です。 [Microsoft.ML.Experimental](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) および [System.Data.SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) NuGet パッケージを参照することで使用できます。
-
 ML.NET では、SQL Server、Azure SQL Database、Oracle、SQLite、PostgreSQL、Progress、IBM DB2 など数多くの、[`System.Data`](xref:System.Data) でサポートされている多様なリレーショナル データベースからのデータの読み込みがサポートされています。
+
+> [!NOTE]
+> `DatabaseLoader` を使用するには、[System.Data.SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) NuGet パッケージを参照します。
 
 `House` という名前のテーブルと、次のスキーマが指定されたデータベースがあるとします。
 
 ```SQL
 CREATE TABLE [House] (
-    [HouseId] int NOT NULL IDENTITY,
-    [Size] real NOT NULL,
-    [Price] real NOT NULL
+    [HouseId] INT NOT NULL IDENTITY,
+    [Size] INT NOT NULL,
+    [NumBed] INT NOT NULL,
+    [Price] REAL NOT NULL
     CONSTRAINT [PK_House] PRIMARY KEY ([HouseId])
 );
 ```
@@ -129,6 +132,8 @@ CREATE TABLE [House] (
 public class HouseData
 {
     public float Size { get; set; }
+
+    public float NumBed { get; set; }
 
     public float Price { get; set; }
 }
@@ -147,12 +152,14 @@ DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<HouseData>();
 ```csharp
 string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=<YOUR-DB-FILEPATH>;Database=<YOUR-DB-NAME>;Integrated Security=True;Connect Timeout=30";
 
-string sqlCommand = "SELECT Size,Price FROM House";
+string sqlCommand = "SELECT Size, CAST(NumBed as REAL) as NumBed, Price FROM House";
 
-DatabaseSource dbSource = new DatabaseSource(SqlClientFactory.Instance,connectionString,sqlCommand);
+DatabaseSource dbSource = new DatabaseSource(SqlClientFactory.Instance, connectionString, sqlCommand);
 ```
 
-最後に、`Load` メソッドを使用して [`IDataView`](xref:Microsoft.ML.IDataView) にデータを読み込みます。
+[`Real`](xref:System.Data.SqlDbType) 型ではない数値データは [`Real`](xref:System.Data.SqlDbType)に変換する必要があります。 [`Real`](xref:System.Data.SqlDbType) 型は、単精度浮動小数点値または ML.NET アルゴリズムによって求められる入力型の [`Single`](xref:System.Single) として表されます。 このサンプルでは、`NumBed` 列はデータベース内では整数になります。 `CAST` 組み込み関数を使用すると、[`Real`](xref:System.Data.SqlDbType) に変換されます。 `Price` プロパティは既に [`Real`](xref:System.Data.SqlDbType) 型であるため、そのまま読み込まれます。
+
+`Load` メソッドを使用して [`IDataView`](xref:Microsoft.ML.IDataView) にデータを読み込みます。
 
 ```csharp
 IDataView data = loader.Load(dbSource);
@@ -205,3 +212,8 @@ MLContext mlContext = new MLContext();
 //Load Data
 IDataView data = mlContext.Data.LoadFromEnumerable<HousingData>(inMemoryCollection);
 ```
+
+## <a name="next-steps"></a>次の手順
+
+- データを消去するか、消去以外の処理を行う方法については、「[モデル構築用のデータを準備する](prepare-data-ml-net.md)」を参照してください。
+- モデルを構築する用意ができたら、「[モデルのトレーニングと評価](train-machine-learning-model-ml-net.md)」を参照してください。

@@ -4,12 +4,12 @@ description: ML.NET でサポートされている機能エンジニアリング
 author: natke
 ms.author: nakersha
 ms.date: 04/02/2019
-ms.openlocfilehash: 25da3cceb3c9090661b34254ed240207aaf3b9d7
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: cb191b1688dce8f703bdabcd220eb39efe68fd48
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929258"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977235"
 ---
 # <a name="data-transformations"></a>データ変換
 
@@ -21,7 +21,7 @@ ms.locfileid: "70929258"
 
 このガイドの変換は、[IEstimator](xref:Microsoft.ML.IEstimator%601) インターフェイスを実装するクラスを返します。 データ変換はまとめて連結することができます。 各変換は、リンクされた参照ドキュメントで指定されている特定の種類および形式のデータを想定し、生成します。
 
-一部のデータ変換には、そのパラメーターを計算するためにトレーニング データが必要です。 たとえば、<xref:Microsoft.ML.NormalizationCatalog.NormalizeMeanVariance%2A> トランスフォーマーは、`Fit()` の操作中にトレーニング データの平均と分散を計算し、`Transform()` 操作でそのパラメーターを使用します。 
+一部のデータ変換には、そのパラメーターを計算するためにトレーニング データが必要です。 たとえば、<xref:Microsoft.ML.NormalizationCatalog.NormalizeMeanVariance%2A> トランスフォーマーは、`Fit()` の操作中にトレーニング データの平均と分散を計算し、`Transform()` 操作でそのパラメーターを使用します。
 
 他のデータ変換はトレーニング データを必要としません。 たとえば、<xref:Microsoft.ML.ImageEstimatorsCatalog.ConvertToGrayscale*> の変換は、`Fit()` の操作中にトレーニング データを確認せずに `Transform()` の操作を実行できます。
 
@@ -62,7 +62,7 @@ ms.locfileid: "70929258"
 
 | 変換 | 定義 |
 | --- | --- |
-| <xref:Microsoft.ML.TextCatalog.FeaturizeText*> | テキスト列を正規化された ngram と char-gram のカウントの float 配列に変換します | 
+| <xref:Microsoft.ML.TextCatalog.FeaturizeText*> | テキスト列を正規化された ngram と char-gram のカウントの float 配列に変換します |
 | <xref:Microsoft.ML.TextCatalog.TokenizeIntoWords*> | 1 つ以上のテキスト列を個々の単語に分割します |
 | <xref:Microsoft.ML.TextCatalog.TokenizeIntoCharactersAsKeys*> | 1 つ以上のテキスト列を一連のトピックに関する個々の文字 float に分割します |
 | <xref:Microsoft.ML.TextCatalog.NormalizeText*> | 大文字と小文字の変更、分音記号、句読点、数字の削除を行います |

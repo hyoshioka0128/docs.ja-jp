@@ -14,18 +14,16 @@ helpviewer_keywords:
 ms.assetid: c3809c8f-1737-4f0f-9442-0c01ee689871
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6057bd48ff4fe3f852f82de2bab972d95fef138c
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: 0ce84e1545523302cd47e60b9f047bc470e6bf0f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868564"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443630"
 ---
 # <a name="corelementtype-enumeration"></a>CorElementType 列挙型
 
-共通言語ランタイム<xref:System.Type>、型修飾子、またはメタデータ型シグネチャの型に関する情報を指定します。
+共通言語ランタイム <xref:System.Type>、型修飾子、またはメタデータ型シグネチャの型に関する情報を指定します。
 
 ## <a name="syntax"></a>構文
 
@@ -118,36 +116,36 @@ typedef enum CorElementType {
 |`ELEMENT_TYPE_SENTINEL`|可変個のパラメーターのリストの sentinel である型修飾子。|
 |`ELEMENT_TYPE_PINNED`|内部的に使用されます。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
-型修飾子は、より複雑な型を表すための基礎となります。 `CorElementType`型修飾子の値は、型シグネチャの直後に続く値に適用されます。 `CorElementType`型修飾子の値の後に続く値には`CorElementType` 、次の表に示すように、単純型の値、メタデータトークン、またはその他の値を指定できます。
+型修飾子は、より複雑な型を表すための基礎となります。 型シグネチャの直後に続く値に、`CorElementType` 型修飾子の値が適用されます。 `CorElementType` 型修飾子の値の後に続く値は、次の表に示すように `CorElementType` 単純型の値、メタデータトークン、またはその他の値にすることができます。
 
 > [!NOTE]
 > すべての数値 (*数値*、*引数の数*、*メタデータトークン*、*順位*、*カウント*、および*バインド*) は、圧縮された整数として格納されます。 詳細については、ECMA Web サイトの「 [STANDARD ECMA-335-共通言語基盤 (CLI)](https://go.microsoft.com/fwlink/?LinkID=116487) 」を参照してください。
 
-|型修飾子|Format|
+|型修飾子|形式|
 |-------------------|------------|
-|`ELEMENT_TYPE_PTR`|ELEMENT_TYPE_PTR \<値`CorElementType`の >|
-|`ELEMENT_TYPE_BYREF`|ELEMENT_TYPE_BYREF \<値`CorElementType`の >|
-|`ELEMENT_TYPE_VALUETYPE`|ELEMENT_TYPE_VALUETYPE \<を`mdTypeDef`メタデータトークン >|
-|`ELEMENT_TYPE_CLASS`|ELEMENT_TYPE_CLASS \<を`mdTypeDef`メタデータトークン >|
-|`ELEMENT_TYPE_VAR`|ELEMENT_TYPE_VAR \<number >|
-|`ELEMENT_TYPE_ARRAY`|ELEMENT_TYPE_ARRAY \<a `CorElementType` value> \<rank> \<count1> \<bound1> ... \<countN> \<boundN>|
-|`ELEMENT_TYPE_GENERICINST`|> \< `mdTypeDef` 引数数\<> arg1 > にメタデータトークンを ELEMENT_TYPE_GENERICINST しています... \<\<argN >|
-|`ELEMENT_TYPE_FNPTR`|ELEMENT_TYPE_FNPTR \<呼び出し規約を含む、関数のシグネチャの完全な署名 >|
-|`ELEMENT_TYPE_SZARRAY`|ELEMENT_TYPE_SZARRAY \<値`CorElementType`の >|
-|`ELEMENT_TYPE_MVAR`|ELEMENT_TYPE_MVAR \<number >|
-|`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE_\<a `mdTypeRef`または`mdTypeDef`メタデータトークンの >|
-|`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT \<a `mdTypeRef`または`mdTypeDef`メタデータトークンの >|
+|`ELEMENT_TYPE_PTR`|`CorElementType` 値 \<ELEMENT_TYPE_PTR >|
+|`ELEMENT_TYPE_BYREF`|`CorElementType` 値 \<ELEMENT_TYPE_BYREF >|
+|`ELEMENT_TYPE_VALUETYPE`|`mdTypeDef` メタデータトークンを \<ELEMENT_TYPE_VALUETYPE >|
+|`ELEMENT_TYPE_CLASS`|`mdTypeDef` メタデータトークンを \<ELEMENT_TYPE_CLASS >|
+|`ELEMENT_TYPE_VAR`|ELEMENT_TYPE_VAR \<数 >|
+|`ELEMENT_TYPE_ARRAY`|ELEMENT_TYPE_ARRAY \<`CorElementType` 値 > \<rank > \<count1 > \<bound1 >... \<countN > \<boundN >|
+|`ELEMENT_TYPE_GENERICINST`|`mdTypeDef` のメタデータ > トークンを \<ELEMENT_TYPE_GENERICINST \<の引数の数 > \<arg1 >... \<argN >|
+|`ELEMENT_TYPE_FNPTR`|呼び出し規約を含め、関数の完全なシグネチャを ELEMENT_TYPE_FNPTR \<>|
+|`ELEMENT_TYPE_SZARRAY`|`CorElementType` 値 \<ELEMENT_TYPE_SZARRAY >|
+|`ELEMENT_TYPE_MVAR`|ELEMENT_TYPE_MVAR \<数 >|
+|`ELEMENT_TYPE_CMOD_REQD`|`mdTypeRef` または `mdTypeDef` メタデータトークンを\<ELEMENT_TYPE_ >|
+|`ELEMENT_TYPE_CMOD_OPT`|`mdTypeRef` または `mdTypeDef` メタデータトークンを \<E_T_CMOD_OPT >|
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**・** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。
+**:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。
 
 **ヘッダー:** CorHdr. h
 
 **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

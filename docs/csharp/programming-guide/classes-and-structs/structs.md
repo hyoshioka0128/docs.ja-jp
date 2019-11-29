@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, structs
 - structs [C#]
 ms.assetid: b7cf4ff2-0eb7-4e5c-93d5-b2196b4f5d89
-ms.openlocfilehash: 945d4b060dd9d08f6f16013b27980f66e804ad45
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 35b39da0b15c41b7b2c7a6567bea5dca3fb430e7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739232"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970316"
 ---
 # <a name="structs-c-programming-guide"></a>構造体 (C# プログラミング ガイド)
 
@@ -39,4 +39,4 @@ ms.locfileid: "73739232"
 - [null 許容値型](../../language-reference/builtin-types/nullable-value-types.md)
 - [識別子名](../inside-a-program/identifier-names.md)
 - [構造体の使用](using-structs.md)
-- [方法: メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する](how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)
+- [メソッドに構造体を渡すこととクラス参照を渡すことの違いを理解する方法](how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)

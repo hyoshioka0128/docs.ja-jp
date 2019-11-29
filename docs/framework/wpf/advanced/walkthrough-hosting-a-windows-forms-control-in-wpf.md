@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting Windows Forms control in WPF [WPF]
 ms.assetid: 9cb88415-39b0-4c46-80c4-ff325b674286
-ms.openlocfilehash: 3cd01126e22927151f3c7fb08726c006c710dd34
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: e353c35e9989e5887e038371672adbb6c2d3598d
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197923"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976525"
 ---
 # <a name="walkthrough-hosting-a-windows-forms-control-in-wpf"></a>チュートリアル: WPF での Windows フォーム コントロールのホスト
 
@@ -38,7 +38,7 @@ ms.locfileid: "73197923"
 
     - System.Windows.Forms
 
-3. [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]で Mainwindow.xaml を開きます。
+3. WPF デザイナーで Mainwindow.xaml を開きます。
 
 4. <xref:System.Windows.Controls.Grid> 要素に `grid1`という名前を指定します。
 

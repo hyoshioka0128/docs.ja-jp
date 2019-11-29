@@ -2,12 +2,12 @@
 title: 破壊的変更を評価する - .NET Core
 description: .NET Core が開発者のために .NET バージョンをまたいで互換性を維持するために試行している方法について説明します。
 ms.date: 06/10/2019
-ms.openlocfilehash: f4e18a17f58452c9325f36390626ae690f5ed777
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3ad3cbe36ee09d371e26dc7da36a31207a6c1b25
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739346"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973651"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>.NET Core の破壊的変更を評価する
 
@@ -103,7 +103,7 @@ ms.locfileid: "73739346"
 
   オーバーライドを導入すると、[ベース](../../csharp/language-reference/keywords/base.md)を呼び出すときに以前のコンシューマーでオーバーライドがスキップされる可能性があることに注意してください。
 
-- **✔️ 以前にクラスにコンストラクターがなかった場合に、既定の (パラメーターなしの) コンストラクターと共に、クラスにコンストラクターを追加する**
+- **✔️ 以前にクラスにコンストラクターがなかった場合に、パラメーターなしのコンストラクターと共に、クラスにコンストラクターを追加する**
 
    ただし、パラメーターなしのコンストラクターを追加 "*せずに*" 以前にコンストラクターがなかったクラスにコンストラクターを追加することは許可されていません。
 

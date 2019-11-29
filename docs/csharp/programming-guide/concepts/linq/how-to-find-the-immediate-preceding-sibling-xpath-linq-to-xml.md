@@ -1,15 +1,15 @@
 ---
-title: '方法: 直前の兄弟を検索する (XPath-LINQ to XML) (C#)'
+title: 直前の兄弟を検索する方法 (XPath-LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 74c06201-0b1b-4b5e-b3ac-0092980614e6
-ms.openlocfilehash: bc0a3250cf1f56ebf9a367f6472be8f3230cee5a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 1e5aece41021642d43b7f6f7b78bb105156ee4ee
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253625"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141006"
 ---
-# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>方法: 直前の兄弟を検索する (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>直前の兄弟を検索する方法 (XPath-LINQ to XML) (C#)
 ノードの直前の兄弟を検索することが必要になる場合があります。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] とは対照的に、XPath では先行する兄弟軸の位置述語にはセマンティクス上の違いがあります。この  と XPath の相違点は、注目すべき特徴といえます。  
   
 ## <a name="example"></a>例  

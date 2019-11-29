@@ -9,20 +9,20 @@ helpviewer_keywords:
 - styles [WPF], DataGrid
 - parts [WPF], DataGrid
 ms.assetid: 9cb31d63-f148-4d25-b079-816e73f988c7
-ms.openlocfilehash: d1ef962132f4c057229c8150a8d49809ce8c7430
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 066e8c9ce1112399be8128d0821498f0d56a3dc3
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460390"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283804"
 ---
 # <a name="datagrid-styles-and-templates"></a>DataGrid のスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.DataGrid> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+このトピックでは、<xref:System.Windows.Controls.DataGrid> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」を参照してください。  
   
 ## <a name="datagrid-parts"></a>DataGrid のパーツ  
  次の表に、<xref:System.Windows.Controls.DataGrid> コントロールの名前付きの部分を示します。  
   
-|パーツ|[種類]|説明|  
+|要素|種類|説明|  
 |-|-|-|  
 |PART_ColumnHeadersPresenter|<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>|列ヘッダーを格納している行。|  
   
@@ -36,10 +36,10 @@ ms.locfileid: "73460390"
 |VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
 |標準|CommonStates|既定の状態です。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
+|無効|CommonStates|コントロールが無効になっています。|  
 |InvalidFocused|ValidationStates|コントロールが無効で、フォーカスがあります。|  
 |InvalidUnfocused|ValidationStates|コントロールが無効で、フォーカスがありません。|  
-|有効|ValidationStates|コントロールは有効です。|  
+|Valid|ValidationStates|コントロールは有効です。|  
   
 ## <a name="datagridcell-parts"></a>DataGridCell パーツ  
  <xref:System.Windows.Controls.DataGridCell> 要素には名前付きの部分がありません。  
@@ -53,15 +53,15 @@ ms.locfileid: "73460390"
 |MouseOver|CommonStates|マウスポインターがセルの上に置かれています。|  
 |フォーカスされている|FocusStates|セルにフォーカスがあります。|  
 |フォーカスされていない|FocusStates|セルにフォーカスがありません|  
-|[現在]|CurrentStates|セルが現在のセルです。|  
+|現在|CurrentStates|セルが現在のセルです。|  
 |Regular|CurrentStates|セルが現在のセルではありません。|  
 |表示|InteractionStates|セルは表示モードです。|  
-|編集|InteractionStates|セルは編集モードです。|  
-|選択済み|SelectionStates|セルが選択されています。|  
+|編集中|InteractionStates|セルは編集モードです。|  
+|Selected|SelectionStates|セルが選択されています。|  
 |未選択|SelectionStates|セルが選択されていません。|  
 |InvalidFocused|ValidationStates|セルが無効で、フォーカスがあります。|  
 |InvalidUnfocused|ValidationStates|セルが無効であり、フォーカスがありません。|  
-|有効|ValidationStates|セルが有効です。|  
+|Valid|ValidationStates|セルが有効です。|  
   
 ## <a name="datagridrow-parts"></a>DataGridRow パーツ  
  <xref:System.Windows.Controls.DataGridRow> 要素には名前付きの部分がありません。  
@@ -84,12 +84,12 @@ ms.locfileid: "73460390"
 |Unfocused_Selected|CommonStates|行が選択されていますが、フォーカスがありません。|  
 |InvalidFocused|ValidationStates|コントロールが無効で、フォーカスがあります。|  
 |InvalidUnfocused|ValidationStates|コントロールが無効で、フォーカスがありません。|  
-|有効|ValidationStates|コントロールは有効です。|  
+|Valid|ValidationStates|コントロールは有効です。|  
   
 ## <a name="datagridrowheader-parts"></a>DataGridRowHeader パーツ  
  次の表に、<xref:System.Windows.Controls.Primitives.DataGridRowHeader> 要素の名前付きの部分を示します。  
   
-|パーツ|[種類]|説明|  
+|要素|種類|説明|  
 |-|-|-|  
 |PART_TopHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|先頭から行ヘッダーのサイズを変更するために使用される要素。|  
 |PART_BottomHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|行ヘッダーのサイズを下端から変更するために使用される要素。|  
@@ -117,12 +117,12 @@ ms.locfileid: "73460390"
 |Unfocused_Selected|CommonStates|行が選択されていますが、フォーカスがありません。|  
 |InvalidFocused|ValidationStates|コントロールが無効で、フォーカスがあります。|  
 |InvalidUnfocused|ValidationStates|コントロールが無効で、フォーカスがありません。|  
-|有効|ValidationStates|コントロールは有効です。|  
+|Valid|ValidationStates|コントロールは有効です。|  
   
 ## <a name="datagridcolumnheaderspresenter-parts"></a>DataGridColumnHeadersPresenter パーツ  
  次の表に、<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> 要素の名前付きの部分を示します。  
   
-|パーツ|[種類]|説明|  
+|要素|種類|説明|  
 |-|-|-|  
 |PART_FillerColumnHeader|<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>|列ヘッダーのプレースホルダーです。|  
   
@@ -133,12 +133,12 @@ ms.locfileid: "73460390"
 |-|-|-|  
 |InvalidFocused|ValidationStates|セルが無効で、フォーカスがあります。|  
 |InvalidUnfocused|ValidationStates|セルが無効であり、フォーカスがありません。|  
-|有効|ValidationStates|セルが有効です。|  
+|Valid|ValidationStates|セルが有効です。|  
   
 ## <a name="datagridcolumnheader-parts"></a>DataGridColumnHeader パーツ  
  次の表に、<xref:System.Windows.Controls.Primitives.DataGridColumnHeader> 要素の名前付きの部分を示します。  
   
-|パーツ|[種類]|説明|  
+|要素|種類|説明|  
 |-|-|-|  
 |PART_LeftHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|列ヘッダーのサイズを左から変更するために使用される要素。|  
 |PART_RightHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|列ヘッダーのサイズを右側から変更するために使用される要素。|  
@@ -153,10 +153,10 @@ ms.locfileid: "73460390"
 |押されている|CommonStates|コントロールが押されています。|  
 |SortAscending|SortStates|列は昇順に並べ替えられます。|  
 |SortDescending|SortStates|列は降順で並べ替えられます。|  
-|並べ替え|SortStates|列が並べ替えられていません。|  
+|［並び替えなし］|SortStates|列が並べ替えられていません。|  
 |InvalidFocused|ValidationStates|コントロールが無効で、フォーカスがあります。|  
 |InvalidUnfocused|ValidationStates|コントロールが無効で、フォーカスがありません。|  
-|有効|ValidationStates|コントロールは有効です。|  
+|Valid|ValidationStates|コントロールは有効です。|  
   
 ## <a name="datagrid-controltemplate-example"></a>DataGrid ControlTemplate の例  
  次の例は、<xref:System.Windows.Controls.DataGrid> コントロールとそれに関連付けられている型の <xref:System.Windows.Controls.ControlTemplate> を定義する方法を示しています。  
@@ -169,11 +169,11 @@ ms.locfileid: "73460390"
   
  完全なサンプルについては、[Styling with ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating)を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [コントロールのスタイルとテンプレート](control-styles-and-templates.md)
 - [コントロールのカスタマイズ](control-customization.md)
 - [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](customizing-the-appearance-of-an-existing-control.md)
+- [コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)

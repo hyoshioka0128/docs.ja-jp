@@ -9,16 +9,16 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 0807e46d36a4cf031bc44ae0dc4efab79dd51d03
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: edab64bf02a2b60cce21af536d2da98193dea9a1
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991342"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73196218"
 ---
 # <a name="hello-world----your-first-program"></a>Hello World -- 最初のプログラム
 
-この記事では、Visual Studio を使用して従来の "Hello World!" プログラムを 作成します。 Visual Studio は、.NET 開発向けに設計された多くの機能を備えた、本格的な統合開発環境 (IDE) です。 Visual Studio の一部の機能のみを使用して、このプログラムを作成します。 Visual Studio の詳細については、[Visual C# および Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)に関するページを参照してください。
+この記事では、Visual Studio を使用して従来の "Hello World!" プログラムを 作成します。 Visual Studio は、.NET 開発向けに設計された多くの機能を備えた、本格的な統合開発環境 (IDE) です。 Visual Studio の一部の機能のみを使用して、このプログラムを作成します。 Visual Studio の詳細については、[Visual C# の概要](/visualstudio/ide/quickstart-csharp-console)に関するページを参照してください。
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
@@ -128,4 +128,4 @@ C# プログラムは、普通、.NET Framework のランタイムライブラ�
 - [C# プログラミング ガイド](../index.md)
 - [サンプルおよびチュートリアル](../../../samples-and-tutorials/index.md)
 - [Main() とコマンドライン引数](../main-and-command-args/index.md)
-- [Visual C# と Visual Basic の概要](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+- [Visual C# 入門](/visualstudio/ide/quickstart-csharp-console)

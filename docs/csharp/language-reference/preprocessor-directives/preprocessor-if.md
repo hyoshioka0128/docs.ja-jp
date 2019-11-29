@@ -1,22 +1,22 @@
 ---
 title: '#if プリプロセッサ ディレクティブ - C# リファレンス'
 ms.custom: seodec18
-ms.date: 06/30/2018
+ms.date: 10/27/2019
 f1_keywords:
 - '#if'
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: d0297094fbb8098b706cb8c6338fa123afc0753b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 561a628c60888a8d4f3c50c8413784e1ed210599
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605690"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036003"
 ---
 # <a name="if-c-reference"></a>#if (C# リファレンス)
 
-C# コンパイラでは、`#if` ディレクティブ、次いで [#endif](preprocessor-endif.md) ディレクティブが検出されると、これらのディレクティブ間のコードがコンパイルされます (指定されたシンボルが定義されている場合に限る)。 C および C++ とは異なり、シンボルに数値を割り当てることはできません。 C# の #if ステートメントはブール値で、シンボルが定義されているかどうかのみをテストします。 例:
+C# コンパイラでは、`#if` ディレクティブ、次いで [#endif](preprocessor-endif.md) ディレクティブが検出されると、これらのディレクティブ間のコードがコンパイルされます (指定されたシンボルが定義されている場合に限る)。 C および C++ とは異なり、シンボルに数値を割り当てることはできません。 C# の #if ステートメントはブール値で、シンボルが定義されているかどうかのみをテストします。 次に例を示します。
 
 ```csharp
 #if DEBUG
@@ -40,13 +40,16 @@ C# コンパイラでは、`#if` ディレクティブ、次いで [#endif](prep
 
 `#define` を使用して作成したシンボルのスコープは、そのシンボルが定義されているファイルです。
 
-また、ビルド システムも、各種[ターゲット フレームワーク](../../../standard/frameworks.md)を表す、定義済みプリプロセッサ シンボルを認識します。 これは、複数の .NET の実装やバージョンをターゲットとできるアプリケーションを作成する場合に役立ちます。
+ビルド システムは、SDK 型プロジェクトの各種[ターゲット フレームワーク](../../../standard/frameworks.md)を表す、定義済みプリプロセッサ シンボルも認識します。 これは、複数の .NET の実装やバージョンをターゲットとできるアプリケーションを作成する場合に役立ちます。
 
 [!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
 
+> [!NOTE]
+> 従来の .NET Framework プロジェクトでは、プロジェクトの [プロパティ] ページを使用して、Visual Studio のさまざまなターゲット フレームワークの条件付きコンパイル シンボルを手動で構成する必要があります。
+
 他の定義済みシンボルとしては、DEBUG 定数と TRACE 定数があります。 `#define` を使用して、プロジェクトに設定された値をオーバーライドできます。 たとえば、DEBUG シンボルは、ビルド構成プロパティ ("デバッグ" モードまたは "リリース" モード) に応じて自動的に設定されます。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 次の例は、ファイルで MYTEST シンボルを定義し、MYTEST シンボルと DEBUG シンボルの値をテストする方法を示しています。 この例の出力は、プロジェクトをデバッグとリリースのどちらの構成モードでビルドするかによって異なります。
 

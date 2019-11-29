@@ -1,13 +1,13 @@
 ---
-title: 高度な LINQ to XML プログラミング (Visual Basic)
+title: 高度な LINQ to XML プログラミング
 ms.date: 07/20/2015
 ms.assetid: 36018532-a55c-4538-8a27-98f475ea3415
-ms.openlocfilehash: b1ffed42036bd7398384717725328e19e6ac7812
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: dc3974cca043db07a238b69aa84c0b1c66364291
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198285"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345806"
 ---
 # <a name="advanced-linq-to-xml-programming-visual-basic"></a>高度な LINQ to XML プログラミング (Visual Basic)
 ここでは、特定の [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] シナリオにおける上級開発者だけを対象とした情報を紹介します。  

@@ -1,5 +1,5 @@
 ---
-title: '方法: 文字列が有効な電子メール形式であるかどうかを検証する'
+title: 文字列が有効な電子メール形式であるかどうかを検証する方法
 ms.date: 12/10/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,16 +18,14 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 352808e561a0f59d41f092eb7c70c40a591da5b6
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: c02fc215fa66951ae3333175191ab96a226a2afe
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846777"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73197584"
 ---
-# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>方法: 文字列が有効な電子メール形式であるかどうかを検証する
+# <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>文字列が有効な電子メール形式であるかどうかを検証する方法
 
 正規表現を使用して文字列の形式が有効な電子メール形式であるかどうかを検証する例を次に示します。
 
@@ -52,7 +50,7 @@ ms.locfileid: "72846777"
 [!code-csharp[RegularExpressions.Examples.Email#7](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.Email/cs/example4.cs#7)]
 [!code-vb[RegularExpressions.Examples.Email#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.Email/vb/example4.vb#7)]
 
-この例の正規表現パターン ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?([)([(\d{1,3}.){3}\d{1,3}])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][-a-z0-9]{0,22}[a-z0-9]))$`` の意味を次の凡例に示します。 正規表現のコンパイルには、<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> フラグが使用されます。
+この例の正規表現パターン ``^(?(")(".+?(?<!\\)"@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$`` の意味を次の凡例に示します。 正規表現のコンパイルには、<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> フラグが使用されます。
 
 パターン `^`:文字列の先頭から照合を開始します。
 
@@ -64,7 +62,7 @@ ms.locfileid: "72846777"
 
 パターン `(\.(?!\.))`:次の文字がピリオドの場合は、その文字と一致します。 ピリオドでない場合は、次の文字を先読みして照合を継続します。 `(?!\.)` は、2 つの連続するピリオドが電子メール アドレスのローカル部分に出現することを防ぐゼロ幅の負の先読みアサーションです。
 
-パターン ``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]``:次の文字がピリオドでない場合は、任意の単語文字または -!#$%&'*+/=?^`{}|~ のいずれかの文字と一致します。
+パターン ``|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w]``:次の文字がピリオドではない場合、任意の単語文字または -!#$%&'\*+/=?^\`{}|~ のいずれかの文字と一致します。
 
 パターン ``((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*``:0 回以上の代替パターン (ピリオドとそれに続くピリオド以外の文字、または複数の文字のうちのいずれかの 1 文字) と一致します。
 

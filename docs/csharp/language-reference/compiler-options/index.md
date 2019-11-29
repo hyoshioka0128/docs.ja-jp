@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-ms.openlocfilehash: dab91ddd1f2b9c91560329eeb1c51ca7f6f175bd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 787f9c5fff79eb67e2d74043782532c1fc4034b5
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455251"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972750"
 ---
 # <a name="c-compiler-options"></a>C# コンパイラ オプション
 
@@ -29,7 +29,7 @@ Visual Studio では、コンパイラ オプションは *web.config* ファイ
 
 - コマンド ラインから Visual C# アプリケーションを構築する方法については、「[csc.exe を使用したコマンド ラインからのビルド](command-line-building-with-csc-exe.md)」を参照してください。
 
-- [方法: Visual Studio のコマンドラインのための環境変数を設定する](how-to-set-environment-variables-for-the-visual-studio-command-line.md) *vsvars32.bat* を実行してコマンドライン ビルドを有効にする手順があります。
+- 「[方法: Visual Studio のコマンドラインのための環境変数を設定する](how-to-set-environment-variables-for-the-visual-studio-command-line.md)」には、*vsvars32.bat* を実行してコマンドライン ビルドを有効にする手順が記載されています。
 
 - [カテゴリ別の C# コンパイラ オプションの一覧](listed-by-category.md) コンパイラ オプションのカテゴリ別一覧。
 

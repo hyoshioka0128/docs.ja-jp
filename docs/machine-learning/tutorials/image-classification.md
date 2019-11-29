@@ -1,17 +1,17 @@
 ---
 title: 'チュートリアル: 事前トレーニング済みの TensorFlow モデルから ML.NET 画像分類モデルを生成する'
 description: 既存の TensorFlow モデルから新しい ML.NET 画像分類モデルに知識を転移する方法について説明します。 TensorFlow モデルは、画像を 1,000 個のカテゴリに分類するためにトレーニングされました。 ML.NET モデルでは、転移学習を利用して、さらに少ない数のカテゴリに画像を分類します。
-ms.date: 10/30/2019
+ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
 author: natke
 ms.author: nakersha
-ms.openlocfilehash: bd25a24e467148c46958b6e7ce7b18e181dab5fd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 952ce5c52bcd09b8c4e4e40d5ddf85835a26478d
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129598"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204984"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>チュートリアル: 事前トレーニング済みの TensorFlow モデルから ML.NET 画像分類モデルを生成する
 
@@ -39,14 +39,8 @@ TensorFlow モデルは、画像を 1,000 個のカテゴリに分類するた�
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-* [Visual Studio 2017 バージョン 15.6 以降](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017)が ".NET Core クロスプラット フォーム開発" ワークロードと共にインストールされている
-
-* Microsoft.ML 1.3.1 Nuget パッケージ
-* Microsoft.ML.ImageAnalytics 1.3.1 Nuget パッケージ
-* Microsoft.ML.TensorFlow 1.3.1 Nuget パッケージ
-
+* [Visual Studio 2017 バージョン 15.6 以降](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017)が ".NET Core クロスプラットフォーム開発" ワークロードと共にインストールされている。
 * [チュートリアル資産ディレクトリの .ZIP ファイル](https://github.com/dotnet/samples/blob/master/machine-learning/tutorials/TransferLearningTF/image-classifier-assets.zip)
-
 * [InceptionV1 機械学習モデル](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip)
 
 ## <a name="select-the-right-machine-learning-task"></a>適切な機械学習タスクを選択する
@@ -130,10 +124,10 @@ toaster2.png    appliance
 
     * ソリューション エクスプローラーで、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
     * [パッケージ ソース] として "nuget.org" を選択し、[参照] タブを選択し、"**Microsoft.ML**" を検索します。
-    * **[バージョン]** ドロップダウンをクリックし、一覧から **1.3.1** パッケージを選択し、 **[インストール]** ボタンを選択します。
+    * **[バージョン]** ドロップダウンをクリックし、一覧から **1.4.0** パッケージを選択し、 **[インストール]** ボタンを選択します。
     * **[変更のプレビュー]** ダイアログで **[OK]** ボタンを選択します。
     * 一覧表示されているパッケージのライセンス条項に同意する場合は、 **[ライセンスへの同意]** ダイアログで **[同意する]** ボタンを選択します。
-    * **Microsoft.ML.ImageAnalytics v1.3.1** と **Microsoft.ML.TensorFlow v1.3.1** について、これらの手順を繰り返します。
+    * **Microsoft.ML.ImageAnalytics v1.4.0**、**SciSharp.TensorFlow.Redist v1.15.0**、**Microsoft.ML.TensorFlow v1.4.0** にこれらの手順を繰り返します。
 
 ### <a name="download-assets"></a>資産をダウンロードする
 

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 417f02ce9e8ee88edeb2a4dab88111cae39a8a4b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 639a3a01c9c4da13e0212bd0230acbd2af170b25
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771862"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428520"
 ---
 # <a name="enum-c-reference"></a>enum (C# リファレンス)
 
@@ -35,7 +35,7 @@ enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 
 この列挙型では、要素の並びは `0` からではなく、 `1` から開始します ただし、列挙型には値が 0 となる定数を含めておくことをお勧めします。 詳細については、[列挙型](../../programming-guide/enumeration-types.md)を参照してください。
 
-すべての列挙型には基になる型があり、基になる型には任意の[整数数値型](../builtin-types/integral-numeric-types.md)を指定できます。 [char](char.md)型は、列挙体の基になる型にできない型です。 列挙要素の基になる既定の型は [int](../builtin-types/integral-numeric-types.md)です。[byte](../builtin-types/integral-numeric-types.md)など、他の整数型の列挙型を宣言するには、次の例に示すように、識別子に続けてコロンを使用し、その後に型を記述します。
+すべての列挙型には基になる型があり、基になる型には任意の[整数数値型](../builtin-types/integral-numeric-types.md)を指定できます。 [char](../builtin-types/char.md)型は、列挙体の基になる型にできない型です。 列挙要素の基になる既定の型は [int](../builtin-types/integral-numeric-types.md)です。[byte](../builtin-types/integral-numeric-types.md)など、他の整数型の列挙型を宣言するには、次の例に示すように、識別子に続けてコロンを使用し、その後に型を記述します。
 
 ```csharp
 enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};

@@ -2,12 +2,12 @@
 title: メッセージ インスペクター
 ms.date: 03/30/2017
 ms.assetid: 9bd1f305-ad03-4dd7-971f-fa1014b97c9b
-ms.openlocfilehash: 01553084aa049688cd05fa36e46fb6f67983fb21
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7b8cc0f8e8aa0544c531566a8fe35f54a3914896
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424148"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977305"
 ---
 # <a name="message-inspectors"></a>メッセージ インスペクター
 このサンプルでは、クライアントとサービスのメッセージ インスペクタを実装して構成する方法を示します。  
@@ -19,7 +19,7 @@ ms.locfileid: "73424148"
 ## <a name="message-inspector"></a>メッセージ インスペクタ  
  クライアント メッセージ インスペクタには、<xref:System.ServiceModel.Dispatcher.IClientMessageInspector> インターフェイスが実装され、サービス メッセージ インスペクタには <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> インターフェイスが実装されます。 こうした実装を 1 つのクラスに結合すると、クライアントとサービスの両方で使用できるメッセージ インスペクタとして設定できます。 このサンプルでは、このように結合されたメッセージ インスペクタを実装します。 このインスペクタは、受信メッセージと送信メッセージが検証されるスキーマ セットを渡すように構築されます。開発者はインスペクタを使用して、受信メッセージまたは送信メッセージを検証するかどうか、およびインスペクタをディスパッチ モードとクライアント モードのどちらにするかを指定できます。この指定内容は、このトピックで後述するようにエラー処理に影響します。  
   
-```csharp  
+```csharp
 public class SchemaValidationMessageInspector : IClientMessageInspector, IDispatchMessageInspector  
 {  
     XmlSchemaSet schemaSet;  
@@ -206,7 +206,7 @@ void ValidateMessageBody(ref System.ServiceModel.Channels.Message message, bool 
   
  次の `SchemaValidationBehavior` クラスは、このサンプルのメッセージ インスペクタをクライアント ランタイムまたはディスパッチ ランタイムに追加するときに使用される動作です。 この実装は、どちらの場合でも基本的な実装です。 <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A> と <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A> ではメッセージ インスペクタが作成され、それぞれのランタイムの <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> コレクションに追加されます。  
   
-```csharp  
+```csharp
 public class SchemaValidationBehavior : IEndpointBehavior  
 {  
     XmlSchemaSet schemaSet;   
@@ -299,7 +299,7 @@ public class SchemaValidationBehavior : IEndpointBehavior
   
  ランタイムがクライアントまたはエンドポイントを構築するときにその構成データを評価する場合、オーバーライドされた `CreateBehavior` メソッドにより、構成データは動作オブジェクトになります。  
   
-```csharp  
+```csharp
 public class SchemaValidationBehaviorExtensionElement : BehaviorExtensionElement  
 {  
     public SchemaValidationBehaviorExtensionElement()  

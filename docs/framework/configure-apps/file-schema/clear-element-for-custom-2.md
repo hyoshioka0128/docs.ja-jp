@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3e27bb7e21baf2eb4990d0107db4aae1b5f9a7d1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fff5a5c2a523480f2eaebb127ec98ff6e9908acf
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119075"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088712"
 ---
 # <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>NameValueSectionHandler および DictionarySectionHandler の \<clear > 要素
 
 セクションで以前に定義したすべての設定を消去します。
 
-[ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectionName >** ](custom-element-2.md)   
+[ **\<configuration>** ](configuration-element.md)\
+&nbsp;&nbsp;[ **\<sectionName >** ](custom-element-2.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<クリア >**
 
 ## <a name="syntax"></a>構文

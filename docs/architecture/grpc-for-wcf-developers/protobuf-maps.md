@@ -1,14 +1,13 @@
 ---
 title: Protobuf maps for dictionary-gRPC for WCF 開発者
 description: Protobuf maps を使用してを表す方法について説明します。NET の辞書型。
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: aef6b0f378e7a63f362ec42642cae15b32d49a08
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 8b4f29daa263f329dc533d3ddc596d0f47c1b6e0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841451"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967422"
 ---
 # <a name="protobuf-maps-for-dictionaries"></a>Protobuf のディクショナリのマップ
 

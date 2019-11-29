@@ -2,17 +2,18 @@
 title: COR_PRF_HIGH_MONITOR 列挙型
 ms.date: 04/10/2018
 ms.assetid: 3ba543d8-15e5-4322-b6e7-1ebfc92ed7dd
-ms.openlocfilehash: 03fa33e0e2b4175d9f82bc6021731d58805da258
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fc0251624738a06d1be7081ebd099e97f7278a15
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123996"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283140"
 ---
 # <a name="cor_prf_high_monitor-enumeration"></a>COR_PRF_HIGH_MONITOR 列挙型
+
 [.NET Framework 4.5.2 以降のバージョンでのみでサポート]  
   
- プロファイラーが読み込み時に[ICorProfilerInfo5:: SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)メソッドに対して指定できる[COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)列挙に含まれるフラグだけでなく、フラグも提供します。  
+プロファイラーが読み込み時に[ICorProfilerInfo5:: SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)メソッドに対して指定できる、 [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)列挙に含まれるフラグだけでなく、フラグも提供します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -48,27 +49,29 @@ typedef enum {
 |`COR_PRF_HIGH_BASIC_GC`|.NET Core 3.0 以降のバージョンのみ: [`COR_PRF_MONITOR_GC`](cor-prf-monitor-enumeration.md)と比較して、軽量の GC プロファイルオプションを提供します。 [GarbageCollectionStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionstarted-method.md)、 [GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md)、および[GetGenerationBounds](icorprofilerinfo2-getgenerationbounds-method.md)の各コールバックのみを制御します。 `COR_PRF_MONITOR_GC` フラグとは異なり、`COR_PRF_HIGH_BASIC_GC` は同時実行ガベージコレクションを無効にしません。|
 |`COR_PRF_HIGH_MONITOR_GC_MOVED_OBJECTS`|.NET Core 3.0 以降のバージョンのみ: Gc を圧縮するために、 [Movedreferences](icorprofilercallback-movedreferences-method.md)と[MovedReferences2](icorprofilercallback4-movedreferences2-method.md)コールバックを有効にします。|
 |`COR_PRF_HIGH_MONITOR_LARGEOBJECT_ALLOCATED`|.NET Core 3.0 以降のバージョンのみ: [`COR_PRF_MONITOR_OBJECT_ALLOCATED`](cor-prf-monitor-enumeration.md)に似ていますが、ラージオブジェクトヒープ (LOH) に対してのみオブジェクト割り当てに関する情報を提供します。|
-|`COR_PRF_HIGH_REQUIRE_PROFILE_IMAGE`|プロファイルが強化されたイメージを必要とするすべての `COR_PRF_HIGH_MONITOR` フラグを表しています。 これは、 [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)列挙体の `COR_PRF_REQUIRE_PROFILE_IMAGE` フラグに対応します。|  
+|`COR_PRF_HIGH_REQUIRE_PROFILE_IMAGE`|プロファイルが強化されたイメージを必要とするすべての `COR_PRF_HIGH_MONITOR` フラグを表しています。 これは、 [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)列挙の `COR_PRF_REQUIRE_PROFILE_IMAGE` フラグに対応します。|  
 |`COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH`|プロファイラーが実行中のアプリケーションに割り当てられた後に設定することが可能な、`COR_PRF_HIGH_MONITOR` のすべてのフラグを表します。|  
 |`COR_PRF_HIGH_MONITOR_IMMUTABLE`|初期化中にのみ設定可能な、`COR_PRF_HIGH_MONITOR` のすべてのフラグを表します。 他の場所でこれらのフラグを変更しようとすると、エラーを表す `HRESULT` 値が生じます。|  
   
-## <a name="remarks"></a>Remarks  
- `COR_PRF_HIGH_MONITOR` フラグは、 [ICorProfilerInfo5:: GetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md)メソッドと[ICorProfilerInfo5:: SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)メソッドの `pdwEventsHigh` パラメーターと共に使用されます。  
+## <a name="remarks"></a>コメント
+
+`COR_PRF_HIGH_MONITOR` フラグは、 [ICorProfilerInfo5:: GetEventMask2](icorprofilerinfo5-geteventmask2-method.md)メソッドと[ICorProfilerInfo5:: SetEventMask2](icorprofilerinfo5-seteventmask2-method.md)メソッドの `pdwEventsHigh` パラメーターと共に使用されます。  
   
 .NET Framework 4.6.1 以降では、`COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH` の値が0から `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` (0x00000002) に変更されました。 .NET Framework 4.7.2 以降では、その値が `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` から `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED | COR_PRF_HIGH_MONITOR_DYNAMIC_FUNCTION_UNLOADS`に変更されました。   
 
 `COR_PRF_HIGH_MONITOR_IMMUTABLE` は、初期化中にのみ設定できるすべてのフラグを表すビットマスクとして使用することを目的としています。 これらのフラグを他の場所で変更しようとすると、失敗した `HRESULT`になります。
 
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件
+
+**:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー** : CorProf.idl、CorProf.h  
+**ヘッダー** : CorProf.idl、CorProf.h  
   
- **ライブラリ:** CorGuids.lib  
+**ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+**.NET Framework のバージョン:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [列挙型のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
 - [COR_PRF_MONITOR 列挙型](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)

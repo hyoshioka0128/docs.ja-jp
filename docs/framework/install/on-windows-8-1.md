@@ -5,12 +5,12 @@ description: Windows 8.1 に .NET Framework をインストールする方法に
 author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
-ms.openlocfilehash: 3959e6c9f45897b799b3305893580ec881b02f8d
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: a7dd68c8e47fa004ec3861cefe1afd56f14e7068
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853905"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283048"
 ---
 # <a name="install-the-net-framework-on-windows-81-and-windows-server-2012-r2"></a>Windows 8.1 と Windows Server 2012 R2 に .NET Framework をインストールする
 
@@ -20,7 +20,7 @@ ms.locfileid: "70853905"
 
 これらの手順は、必要な .NET Framework バージョンをインストールする場合に役立ちます。 [.NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) が最新バージョンです。 これは Windows 8.1 と Windows Server 2012 R2 でサポートされており、[Windows 10 May 2019 Update](https://support.microsoft.com/help/4028685/windows-10-get-the-update) に付属します。
 
-## <a name="net-framework-8"></a>.NET Framework 8
+## <a name="net-framework-48"></a>.NET Framework 4.8
 
 > [!div class="button"]
 > [.NET Framework 4.8 のダウンロード](https://dotnet.microsoft.com/download/dotnet-framework/net48)

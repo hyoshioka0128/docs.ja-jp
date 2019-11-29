@@ -50,7 +50,7 @@ Azure Dev Spaces を使用すると、チームは AKS を直接操作しなが�
 
 EShopOnContainers サンプルには、オンラインマーケティングキャンペーンの追跡のサポートが含まれています。 Azure 関数は、指定されたキャンペーン ID のマーケティングキャンペーンの詳細を取得するために使用されます。 この目的のために完全な ASP.NET Core アプリケーションを作成するのではなく、1つの Azure 関数エンドポイントがシンプルで十分です。 Azure Functions は、特に Kubernetes で実行するように構成されている場合に、完全 ASP.NET Core アプリケーションよりもはるかに簡単なビルドおよび配置モデルを備えています。 関数の配置は、Azure Resource Manager (ARM) テンプレートと Azure CLI を使用してスクリプト化されます。 このキャンペーン詳細マイクロサービスは顧客向けではなく、オンラインストアと同じ要件がないため、Azure Functions の候補として適しています。 関数を使用するには、データベース接続文字列データやイメージベース URI 設定など、一部の構成が適切に機能する必要があります。 Azure Functions は、Azure Portal で構成します。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [eShopOnContainers: AKS で Kubernetes クラスターを作成する](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Deploy-to-Azure-Kubernetes-Service-(AKS)#create-kubernetes-cluster-in-aks)
 - [eShopOnContainers: Azure Dev Spaces](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)

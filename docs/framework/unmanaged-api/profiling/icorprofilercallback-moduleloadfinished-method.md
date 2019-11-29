@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 050649e5-ffc0-4458-a0a4-d9ee128a219e
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c04b7862363b441ab35d6dd364c4dffaf7464153
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 08fbf49e6944de4934a9fe7a960405ee96a7d8e3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769229"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445942"
 ---
 # <a name="icorprofilercallbackmoduleloadfinished-method"></a>ICorProfilerCallback::ModuleLoadFinished メソッド
-モジュールの読み込みが完了したことをプロファイラーに通知します。  
+モジュールが読み込みを終了したことをプロファイラーに通知します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -37,26 +35,26 @@ HRESULT ModuleLoadFinished(
   
 ## <a name="parameters"></a>パラメーター  
  `moduleId`  
- [in]読み込みが完了しているモジュールの ID。  
+ から読み込みを終了したモジュールの ID。  
   
  `hrStatus`  
- [in]モジュールが正常に読み込まれたかどうかを示す HRESULT。  
+ からモジュールが正常に読み込まれたかどうかを示す HRESULT。  
   
-## <a name="remarks"></a>Remarks  
- 値`moduleId`まで情報の要求に対して無効です、`ModuleLoadFinished`メソッドが呼び出されます。  
+## <a name="remarks"></a>コメント  
+ `moduleId` の値は、`ModuleLoadFinished` メソッドが呼び出されるまで、情報要求に対して有効ではありません。  
   
- モジュールの読み込みの一部が後に続ける可能性があります、`ModuleLoadFinished`コールバック。 エラーの HRESULT で`hrStatus`失敗を示します。 ただし、成功 HRESULT で`hrStatus`のみに、モジュールの読み込みの最初の部分が成功したことを示します。  
+ `ModuleLoadFinished` コールバックの後も、モジュールの読み込みの一部が続行される場合があります。 `hrStatus` のエラー HRESULT はエラーを示します。 ただし、`hrStatus` の成功 HRESULT は、モジュールの読み込みの最初の部分が成功したことのみを示します。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
 - [ModuleLoadStarted メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)

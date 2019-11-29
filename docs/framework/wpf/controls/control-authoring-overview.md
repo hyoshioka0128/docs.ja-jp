@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: fe7704b9366bf46f0c9965f78ce441000ead6334
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 1ac8964f915206205d5c9e6ab782fcaa59bf2a99
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460780"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975725"
 ---
 # <a name="control-authoring-overview"></a>コントロールの作成の概要
 
@@ -36,7 +36,7 @@ ms.locfileid: "73460780"
   > [!NOTE]
   > <xref:System.Windows.Controls.RadioButton> は <xref:System.Windows.DataTemplate>を使用できますが、この例では <xref:System.Windows.DataTemplate> では不十分です。  <xref:System.Windows.DataTemplate> は、コントロールのコンテンツの外観を定義します。 <xref:System.Windows.Controls.RadioButton>の場合、コンテンツは、<xref:System.Windows.Controls.RadioButton> が選択されているかどうかを示す円の右側に表示されます。  信号機の例では、オプション ボタンに必要なのは "点灯" する円だけです。 信号の外観要件は <xref:System.Windows.Controls.RadioButton>の既定の外観とは異なるため、<xref:System.Windows.Controls.ControlTemplate>を再定義する必要があります。  一般に、コントロールのコンテンツ (またはデータ) を定義するために <xref:System.Windows.DataTemplate> を使用し、<xref:System.Windows.Controls.ControlTemplate> を使用してコントロールを構造化する方法を定義します。
 
-- **トリガー。** <xref:System.Windows.Trigger> を使用すると、新しいコントロールを作成せずに、コントロールの外観と動作を動的に変更できます。 たとえば、アプリケーションに複数の <xref:System.Windows.Controls.ListBox> コントロールがあり、各 <xref:System.Windows.Controls.ListBox> の項目を選択したときに太字と赤にする必要があるとします。 最初の性質は、<xref:System.Windows.Controls.ListBox> から継承するクラスを作成し、選択した項目の外観を変更するために <xref:System.Windows.Controls.Primitives.Selector.OnSelectionChanged%2A> メソッドをオーバーライドする場合がありますが、選択した項目の外観を変更する <xref:System.Windows.Controls.ListBoxItem> のスタイルにトリガーを追加する方法が適しています. トリガーを使用すると、プロパティ値を変更したり、プロパティ値に基づいた処理を実行したりできます。 <xref:System.Windows.EventTrigger> を使用すると、イベントが発生したときにアクションを実行できます。
+- **トリガー。** <xref:System.Windows.Trigger> を使用すると、新しいコントロールを作成せずに、コントロールの外観と動作を動的に変更できます。 たとえば、アプリケーションに複数の <xref:System.Windows.Controls.ListBox> コントロールがあり、各 <xref:System.Windows.Controls.ListBox> の項目を選択したときに太字と赤にする必要があるとします。 最初の性質は、<xref:System.Windows.Controls.ListBox> から継承するクラスを作成し、選択した項目の外観を変更するために <xref:System.Windows.Controls.Primitives.Selector.OnSelectionChanged%2A> メソッドをオーバーライドすることですが、より適切な方法は、選択した項目の外観を変更する <xref:System.Windows.Controls.ListBoxItem> のスタイルにトリガーを追加する方法です。 トリガーを使用すると、プロパティ値を変更したり、プロパティ値に基づいた処理を実行したりできます。 <xref:System.Windows.EventTrigger> を使用すると、イベントが発生したときにアクションを実行できます。
 
 スタイル、テンプレート、トリガーの詳細については、「[スタイルとテンプレート](styling-and-templating.md)」を参照してください。
 
@@ -187,7 +187,7 @@ ms.locfileid: "73460780"
 
 ### <a name="design-for-designers"></a>デザイナーに対応したデザイン
 
-[!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] でカスタム WPF コントロールのサポート (たとえば、[プロパティ] ウィンドウでのプロパティ編集) を利用するには、以下のガイドラインに従います。  [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]の開発の詳細については、「 [Visual Studio での XAML のデザイン](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)」を参照してください。
+Visual Studio の WPF デザイナー (たとえば、プロパティウィンドウを使用したプロパティ編集) でカスタム WPF コントロールのサポートを受けるには、次のガイドラインに従います。  WPF デザイナーの開発の詳細については、「 [Visual Studio での XAML のデザイン](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)」を参照してください。
 
 #### <a name="dependency-properties"></a>依存関係プロパティ
 

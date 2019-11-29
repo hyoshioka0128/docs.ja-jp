@@ -115,12 +115,22 @@
           tocHref: /dotnet/core/
           topicHref: /dotnet/core/index
           items:
-            - name: ツール
-              tocHref: /dotnet/core/tools/
-              topicHref: /dotnet/core/tools/index
             - name: 互換性
               tocHref: /dotnet/core/compatibility/
               topicHref: /dotnet/core/compatibility/index
+            - name: ランタイム構成
+              tocHref: /dotnet/core/run-time-config/
+              topicHref: /dotnet/core/run-time-config/index
+            - name: ツール
+              tocHref: /dotnet/core/tools/
+              topicHref: /dotnet/core/tools/index
+            - name: インストール ガイド
+              tocHref: /dotnet/core/install/
+              topicHref: /dotnet/core/install/index
+              items:
+                - name: Linux パッケージ マネージャー
+                  tocHref: /dotnet/core/install/
+                  topicHref: /dotnet/core/install/index
         - name: .NET Framework
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index
@@ -387,7 +397,7 @@
             - name: データ バインディング
               tocHref: /dotnet/desktop-wpf/data
               topicHref: /dotnet/desktop-wpf/data/index
-        - name: 'C# のガイド'
+        - name: 'C# ガイド'
           tocHref: /dotnet/csharp/
           topicHref: /dotnet/csharp/index
           items:

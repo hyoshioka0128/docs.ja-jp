@@ -4,12 +4,12 @@ description: このトピックでは、再利用可能なライブラリと単�
 author: mairaw
 ms.date: 06/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 46d118cc4dc54e34db0f964aa3f8d76f0ad67249
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 0081463c0a99acc5cb4e02bb96e2218bbcf61131
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925998"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428628"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築
 
@@ -25,11 +25,11 @@ Visual Studio for Mac では、.NET Core アプリケーション開発用の機
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-- OpenSSL (.NET Core 1.1 が実行されている場合):「[Mac における .NET Core の前提条件](../macos-prerequisites.md)」のトピックをご覧ください。
+- OpenSSL (.NET Core 1.1 が実行されている場合):[.NET Core の依存関係と要件](../install/dependencies.md?tabs=netcore30&pivots=os-macos)に関するトピックを参照してください。
 - [.NET Core SDK 1.1 以降](https://dotnet.microsoft.com/download)
 - [Visual Studio 2017 for Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 
-必須コンポーネントの詳細については、「[Mac における .NET Core の前提条件](../macos-prerequisites.md)」を参照してください。 Visual Studio 2017 for Mac の完全なシステム要件については、「[Visual Studio 2017 for Mac 製品ファミリのシステム要件](/visualstudio/productinfo/vs2017-system-requirements-mac)」をご覧ください。
+前提条件の詳細については、[.NET Core の依存関係と要件](../install/dependencies.md?tabs=netcore30&pivots=os-macos)に関する記事を参照してください。 Visual Studio 2017 for Mac の完全なシステム要件については、「[Visual Studio 2017 for Mac 製品ファミリのシステム要件](/visualstudio/productinfo/vs2017-system-requirements-mac)」をご覧ください。
 
 ## <a name="building-a-library"></a>ライブラリのビルド
 

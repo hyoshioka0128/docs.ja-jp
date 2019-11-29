@@ -2,12 +2,12 @@
 title: 値オブジェクトの実装
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 新しい Entity Framework 機能を使用し、値オブジェクトを実装する方法の詳細とオプション。
 ms.date: 10/08/2018
-ms.openlocfilehash: b2f7b0f36fea25c25edd47731d9387810bd2b44d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 2608517c4006f5e8da1d31b2c337d8ddd3ddd542
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674149"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739872"
 ---
 # <a name="implement-value-objects"></a>値オブジェクトを実装する
 
@@ -17,7 +17,7 @@ ms.locfileid: "68674149"
 
 図 7-13 は、Order 集計内の Address 値オブジェクトを示しています。
 
-![Order 集計内の Address 値オブジェクト。](./media/image14.png)
+![Order 集計内の Address 値オブジェクトを示す図。](./media/implement-value-objects/value-object-within-aggregate.png)
 
 **図 7-13**。 Order 集計内の Address 値オブジェクト
 

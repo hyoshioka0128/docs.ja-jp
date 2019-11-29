@@ -1,19 +1,19 @@
 ---
-title: '方法: 文字列を検索する (C# ガイド)'
+title: 文字列を検索する方法 (C# ガイド)
 ms.date: 02/21/2018
 helpviewer_keywords:
 - searching strings [C#]
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 12fb0e7c9fe02c3438fa989059dbea6238d24104
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4a1eb818dfd8fb48b003ca184dd533f73d342662
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420307"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973105"
 ---
-# <a name="how-to-search-strings"></a>方法: 文字列を検索する
+# <a name="how-to-search-strings"></a>文字列を検索する方法
 
 2 つの主な戦略を使用して、文字列のテキストを検索することができます。 <xref:System.String> クラスのメソッドは特定のテキストを検索します。 正規表現はテキストのパターンを検索します。
 

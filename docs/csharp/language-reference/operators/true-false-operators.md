@@ -6,12 +6,12 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: 7cbfca932b5f9f8a6f658e84204da5005da5ffb8
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 780c63e5a8f3f0d82559565b3319fe54507e3d21
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609839"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036125"
 ---
 # <a name="true-and-false-operators-c-reference"></a>true 演算子と false 演算子 (C# リファレンス)
 

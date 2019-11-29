@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
-ms.openlocfilehash: 95942e9818eccc018c123148949c6f2dee4fa6e0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ba28a81dd2ea0684ed863821afd3a8f31c0fb064
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736626"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140770"
 ---
 # <a name="msmqintegrationbinding"></a>\<msmqIntegrationBinding >
 MSMQ を介してメッセージをルーティングすることでキューのサポートを提供するバインディングを定義します。  
@@ -62,7 +62,7 @@ MSMQ を介してメッセージをルーティングすることでキューの
 |exactlyOnce|各メッセージが 1 回だけ受信されるかどうかを示すブール値です。 その後、送信側に配信エラーが通知されます。 `durable` が `false` の場合、この属性は無視されて、配信が保証されずにメッセージが転送されます。 既定値は、 `true`です。 詳細については、「<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>」を参照してください。|  
 |maxReceivedMessageSize|このバインディングにより処理される最大メッセージ サイズ (ヘッダーを含む) をバイト単位で定義する正の整数です。 この制限を超えるメッセージの送信者が、SOAP エラーを受信します。 メッセージは受信者によってドロップされ、トレース ログにこのイベントのエントリが作成されます。 既定値は 65536 です。 このメッセージ サイズの制限は、サービス拒否 (DoS) 攻撃への露出を制限するためのものです。|  
 |maxRetryCycles|有害メッセージ検出機能により使用される再試行サイクルの回数を示す整数です。 すべてのサイクルの配信試行にすべて失敗すると、メッセージは有害メッセージになります。 既定値は 2 です。 詳細については、「<xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A>」を参照してください。|  
-|name|バインディングの構成名を格納する文字列です。 この値は、バインディングの ID として使用されるため、一意にする必要があります。 [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)] 以降では、バインディングおよび動作に名前を付ける必要はありません。 既定の構成と無名のバインドおよび動作の詳細については、「 [WCF サービスの](../../../wcf/samples/simplified-configuration-for-wcf-services.md)構成と簡略化された構成の[簡略化](../../../wcf/simplified-configuration.md)」を参照してください。|  
+|name|バインディングの構成名を格納する文字列です。 この値は、バインディングの ID として使用されるため、一意にする必要があります。 .NET Framework 4 以降では、バインドと動作に名前を付ける必要はありません。 既定の構成と無名のバインドおよび動作の詳細については、「 [WCF サービスの](../../../wcf/samples/simplified-configuration-for-wcf-services.md)構成と簡略化された構成の[簡略化](../../../wcf/simplified-configuration.md)」を参照してください。|  
 |openTimeout|実行中の操作が完了するまでの時間間隔を指定する <xref:System.TimeSpan> 値です。 この値は必ず <xref:System.TimeSpan.Zero> 以上である必要があります。 既定値は 00:01:00 です。|  
 |receiveErrorHandling|有害メッセージおよびディスパッチ不能メッセージの処理方法を指定する <xref:System.ServiceModel.ReceiveErrorHandling> 値。|  
 |receiveRetryCount|アプリケーション キューからアプリケーションへのメッセージの転送が失敗した場合に、キュー マネージャーが即時再試行を行う最大回数を指定する整数。<br /><br /> 配信試行を最大回数実行してもアプリケーションがメッセージにアクセスできない場合、メッセージは、後で再配信するために再試行キューに送信されます。 メッセージが送信キューに戻されるまでの時間は、`retryCycleDelay` で制御されます。 再試行サイクルが `maxRetryCycles` 値に達した場合は、メッセージが有害メッセージ キューに送信されるか、送信者に否定応答が返されます。|  
@@ -89,13 +89,13 @@ MSMQ を介してメッセージをルーティングすることでキューの
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\< セキュリティ >](security-of-msmqintegrationbinding.md)|バインディングのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement> 型です。|  
+|[\<セキュリティ >](security-of-msmqintegrationbinding.md)|バインディングのセキュリティ設定を定義します。 この要素は <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement> 型です。|  
   
 ### <a name="parent-elements"></a>親要素  
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\< バインド >](bindings.md)|この要素には、標準バインディングおよびカスタム バインドのコレクションが保持されます。|  
+|[\<バインド >](bindings.md)|この要素には、標準バインディングおよびカスタム バインドのコレクションが保持されます。|  
   
 ## <a name="remarks"></a>Remarks  
  このバインド要素を使用すると、Windows Communication Foundation (WCF) アプリケーションが、COM、MSMQ ネイティブ Api、または使用可能な <xref:System.Messaging?displayProperty=nameWithType> 名前空間で定義されている型を使用する既存の MSMQ アプリケーションとメッセージを送受信できるようになります。この構成要素を使用して、キューのアドレス指定方法、転送の保証、メッセージを永続的にに保存する必要があるかどうか、およびメッセージを保護および認証する方法を指定します。 詳細については、「[方法: WCF エンドポイントおよびメッセージキューアプリケーションを使用](../../../wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)してメッセージを交換する」を参照してください。  
@@ -137,7 +137,7 @@ MSMQ を介してメッセージをルーティングすることでキューの
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>
-- [\<binding >](bindings.md)
+- [\<バインド >](bindings.md)
 - [バインディング](../../../wcf/bindings.md)
 - [システムが提供するバインディングの構成](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [サービスとクライアントを構成するためのバインディングの使用](../../../wcf/using-bindings-to-configure-services-and-clients.md)

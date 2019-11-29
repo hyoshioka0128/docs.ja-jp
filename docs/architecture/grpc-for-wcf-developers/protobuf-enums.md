@@ -1,14 +1,13 @@
 ---
 title: Protobuf 列挙型-WCF 開発者向け gRPC
 description: Protobuf で列挙型を宣言して使用する方法について説明します。
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: f18196f54caba824d7101782a88cf3bf699560d5
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 4ea4d03bede2a9ebfd1f2c3ee56f299e918800e9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841415"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971576"
 ---
 # <a name="protobuf-enumerations"></a>Protobuf 列挙型
 

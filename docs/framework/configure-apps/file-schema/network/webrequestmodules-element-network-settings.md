@@ -19,8 +19,8 @@ ms.locfileid: "71697461"
 ネットワークホストから情報を要求するために使用するモジュールを指定します。  
   
 [ **\<configuration>** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t 47 >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t @ no__t @ no__t-4webRequestModules >  
+&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;\<webRequestModules >  
   
 ## <a name="syntax"></a>構文  
   
@@ -29,15 +29,15 @@ ms.locfileid: "71697461"
 </webRequestModules>  
 ```  
   
-## <a name="attributes-and-elements"></a>属性および要素  
- 以降のセクションでは、属性、子要素、および親要素について説明します。  
+## <a name="attributes-and-elements"></a>属性と要素  
+ 次のセクションでは、属性、子要素、親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- [なし] :  
+ [なし]。  
   
 ### <a name="child-elements"></a>子要素  
   
-|**要素**|**[説明]**|  
+|**要素**|**説明**|  
 |-----------------|---------------------|  
 |[add](add-element-for-webrequestmodules-network-settings.md)|アプリケーションにカスタム Web 要求モジュールを追加します。|  
 |[clear](clear-element-for-webrequestmodules-network-settings.md)|アプリケーションから、登録されているすべての Web 要求モジュールを削除します。|  
@@ -45,14 +45,14 @@ ms.locfileid: "71697461"
   
 ### <a name="parent-elements"></a>親要素  
   
-|**要素**|**[説明]**|  
+|**要素**|**説明**|  
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|.NET Framework がネットワークに接続する方法を指定するための設定が含まれています。|  
   
 ## <a name="remarks"></a>コメント  
- @No__t-0 要素は、ネットワークホストへの情報要求を処理するために、<xref:System.Net.WebRequest> クラスの子孫を登録します。 Web 要求モジュールは @no__t 0 インターフェイスを実装する必要があります。  
+ `webRequestModules` 要素は、ネットワークホストへの情報要求を処理するために <xref:System.Net.WebRequest> クラスの子孫を登録します。 Web 要求モジュールは、<xref:System.Net.IWebRequestCreate> インターフェイスを実装する必要があります。  
   
- .NET Framework には、`http://`、`https://`、および `file://` で始まる Uri の Web 要求モジュールが含まれています。 既定のモジュールをオーバーライドするには、構成ファイルにカスタムモジュールを登録する必要があります。  
+ .NET Framework には、`http://`、`https://`、および `file://`で始まる Uri の Web 要求モジュールが含まれています。 既定のモジュールをオーバーライドするには、構成ファイルにカスタムモジュールを登録する必要があります。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
@@ -73,7 +73,7 @@ ms.locfileid: "71697461"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.IWebRequestCreate>

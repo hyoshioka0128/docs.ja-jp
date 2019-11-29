@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: c255711e4b165fdca27d50c6bd0f2debfe15ae25
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 058e75c81c18f0ec73140f6fc13a91f4e0012a61
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773867"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73036356"
 ---
 # <a name="integral-numeric-types--c-reference"></a>整数数値型 (C# リファレンス)
 
@@ -100,7 +100,7 @@ var binaryLiteral = 0b_0010_1010;
 
 整数リテラルで表される値が <xref:System.UInt64.MaxValue?displayProperty=nameWithType> を超えると、コンパイル エラー [CS1021](../../misc/cs1021.md) が発生します。
 
-整数リテラルの決定された型が `int` で、その値が変換先の型の範囲内にある場合、リテラルで表される値は暗黙的に `sbyte`、`byte`、`short`、`ushort`、`uint`、または `ulong` に変換されます。
+整数リテラルの決定された型が `int` で、リテラルで表される値が変換先の型の範囲内にある場合、値を暗黙的に `sbyte`、`byte`、`short`、`ushort`、`uint`、または `ulong` に変換できます。
 
 ```csharp
 byte a = 17;

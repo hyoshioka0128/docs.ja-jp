@@ -28,7 +28,7 @@ ms.locfileid: "72318693"
   
  WCF メッセージングレイヤーは、個人情報をローカルコンピューターに書き込みません。 ただし、サービスの開発者が個人情報を公開するサービスを作成した場合は、ネットワーク レベルで個人情報を公開することがあります。このような例として、エンドポイント名に個人名を使用している場合や、エンドポイントの Web サービス記述言語に個人情報を追加しても、https を使用して WSDL にアクセスすることをクライアントに要求しない場合などがあります。 また、開発者が個人情報を公開するエンドポイントに対して[ServiceModel メタデータユーティリティツール (svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)ツールを実行した場合、ツールの出力にその情報が含まれている可能性があり、出力ファイルはローカルハードディスクに書き込まれます。  
   
-## <a name="hosting"></a>ホスト  
+## <a name="hosting"></a>ホスティング  
  WCF のホスティング機能を使用すると、アプリケーションをオンデマンドで開始したり、複数のアプリケーション間でポートの共有を有効にしたりできます。 WCF アプリケーションは、ASP.NET と同様にインターネットインフォメーションサービス (IIS) でホストできます。  
   
  ホストでは、特定の情報をネットワークに公開せず、コンピューター上にデータを格納しません。  
@@ -44,7 +44,7 @@ ms.locfileid: "72318693"
   
  認証によって、通信するエンドポイント間にセキュリティで保護されたセッションを確立できます。 このセッションは、セキュリティ セッションの有効期間が切れるまで有効な GUID によって識別されます。 格納されるデータと格納場所を次の表に示します。  
   
-|データ|記憶域|  
+|Data|記憶域|  
 |----------|-------------|  
 |ユーザー名、X.509 証明書、Kerberos トークンなどのプレゼンテーション資格情報、および資格情報への参照|Windows 証明書ストアなど、標準の Windows 資格情報管理機構|  
 |ユーザー名とパスワードなど、ユーザーのメンバーシップ情報|ASP.NET メンバーシッププロバイダー。|  
@@ -147,9 +147,9 @@ ms.locfileid: "72318693"
   
  wsse:BinarySecurityToken  
   
- \- xmlns: saml = "urn: oasis: names: tc: SAML: 1.0: assertion" 太字の項目 (下) は削除されます。  
+ xmlns: saml = "urn: oasis: names: tc: SAML: 1.0: assertion" の \- は、太字 (下) の項目が削除されます。  
   
- \<Assertion  
+ \<アサーション  
   
  MajorVersion="1"  
   
@@ -163,41 +163,41 @@ ms.locfileid: "72318693"
   
  >  
   
- \<Conditions NotBefore = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
+ \<条件 NotBefore = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
   
- \<AudienceRestrictionCondition >  
+ \<AudienceRestrictionCondition>  
   
- @no__t 0Audience > [uri] \</Audience > +  
+ \<オーディエンス > [uri]\</対象ユーザー > +  
   
- \</AudienceRestrictionCondition > *  
+ \</AudienceRestrictionCondition>*  
   
- \<DoNotCacheCondition/> *  
+ \<DoNotCacheCondition />*  
   
- < @ no__t-1--抽象基本データ型  
+ <\!--抽象基本データ型  
   
- \<Condition/> *  
+ \<条件/> *  
   
  -->  
   
  \</条件 >?  
   
- \<Advice >  
+ \<通知 >  
   
- \<AssertionIDReference > [ID] \</AssertionIDReference > *  
+ \<AssertionIDReference > [ID]\</AssertionIDReference > *  
   
- \<Assertion > [assertion] \</Assertion > *  
+ \<Assertion > [assertion]\</assertion > *  
   
  [any]*  
   
- \</通知 > ですか?  
+ \</アドバイス > ですか?  
   
- < @ no__t-1--抽象基本型  
+ <\!--抽象基本型  
   
- \<Statement/> *  
+ \<ステートメント/> *  
   
- \<SubjectStatement >  
+ \<SubjectStatement>  
   
- \<Subject >  
+ \<サブジェクト >  
   
  `<NameIdentifier`  
   
@@ -213,17 +213,17 @@ ms.locfileid: "72318693"
   
  \<SubjectConfirmation >  
   
- \<ConfirmationMethod > [anyUri] \</ConfirmationMethod > +  
+ \<ConfirmationMethod > [anyUri]\</ConfirmationMethod > +  
   
- \<SubjectConfirmationData > [any] \</SubjectConfirmationData >?  
+ \<SubjectConfirmationData > [any]\</SubjectConfirmationData >?  
   
- \<ds: KeyInfo >... \</ds: KeyInfo >?  
+ \<ds:KeyInfo>...\</ds:KeyInfo>?  
   
- \</SubjectConfirmation >?  
+ \</> 確認しますか?  
   
- \</件名 >  
+ \</Subject>  
   
- \</SubjectStatement > *  
+ \</SubjectStatement>*  
   
  -->  
   
@@ -255,13 +255,13 @@ ms.locfileid: "72318693"
   
  />*  
   
- \</AuthenticationStatement > *  
+ \</AuthenticationStatement>*  
   
- \<AttributeStatement >  
+ \<AttributeStatement>  
   
  [Subject]  
   
- \<Attribute  
+ \<属性  
   
  AttributeName="[string]"  
   
@@ -273,31 +273,31 @@ ms.locfileid: "72318693"
   
  \</属性 > +  
   
- \</AttributeStatement > *  
+ \</AttributeStatement>*  
   
  \<AuthorizationDecisionStatement  
   
  Resource="[uri]"  
   
- Decision = "[拒否&#124;&#124;の不確定の許可]  
+ Decision="[Permit&#124;Deny&#124;Indeterminate]"  
   
  >  
   
  [Subject]  
   
- \<Action 名前空間 = "[uri]" > [文字列] \</Action > +  
+ \<Action Namespace = "[uri]" > [string]\</Action > +  
   
- @no__t 0Evidence >  
+ 証拠 > の \<  
   
- \<AssertionIDReference > [ID] \</AssertionIDReference > +  
+ \<AssertionIDReference > [ID]\</AssertionIDReference > +  
   
- \<Assertion > [assertion] \</Assertion > +  
+ \<Assertion > [assertion]\</assertion > +  
   
- \</証拠 >?  
+ \</Evidence>?  
   
- \</Authorizationdecisionstatement に > *  
+ \</AuthorizationDecisionStatement>*  
   
- \</アサーション >  
+ \</Assertion>  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>復号化されたまたは暗号化されていないメッセージをログに記録するときにメッセージ本文から削除される情報  
  前に説明したように、WCF では、暗号化された暗号化されていないメッセージや暗号化されていないメッセージのメッセージヘッダーから、キーと既知の可能性がある さらに、WCF は、キー交換に関連するセキュリティメッセージについて説明する次の一覧の本文要素とアクションの本文から、キーと既知の可能性がある個人情報を削除します。  
@@ -401,7 +401,7 @@ ms.locfileid: "72318693"
   
  Web サービス記述言語 (WSDL) には、ポートの定義が入ります。 各ポートには、エンドポイント アドレス、およびアプリケーションが使用するサービスを表すバインディングがあります。 WSDL の公開は、構成を使用して無効にできます。 コンピューターに保持される情報はありません。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Windows Communication Foundation](index.md)
-- [Security](./feature-details/security.md)
+- [セキュリティ](./feature-details/security.md)

@@ -3,12 +3,12 @@ title: ICorProfilerInfo9 インターフェイス
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: af6bd02c6d4e88c72dca20d2520d1ecc8cf1c421
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 74031fd822550f8a0752d02ce0c2d89b2f5ae546
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928784"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444952"
 ---
 # <a name="icorprofilerinfo9-interface"></a>ICorProfilerInfo9 インターフェイス
 
@@ -22,9 +22,9 @@ ms.locfileid: "70928784"
 |[GetILToNativeMapping3 メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-getiltonativemapping3-method.md)| ネイティブコードの開始アドレスが指定されている場合、この just-in-time バージョンのコードのネイティブから IL へのマッピング情報を返します。 |
 |[GetCodeInfo4 メソッド](icorprofilerinfo9-getcodeinfo4-method.md)| ネイティブコードの開始アドレスを指定すると、このコードを格納する仮想メモリのブロックが返されます。 |
 
-## <a name="requirements"></a>必要条件  
-**・** 「 [.Net Core でサポートされるオペレーティングシステム](../../../core/windows-prerequisites.md#net-core-supported-operating-systems)」を参照してください。  
-**ヘッダー:** Corprof.idl、Corprof.idl  
+## <a name="requirements"></a>要件  
+**プラットフォーム:** 「 [.Net Core でサポートされるオペレーティングシステム](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows)」を参照してください。  
+**ヘッダー** : CorProf.idl、CorProf.h  
 **.Net のバージョン:** [!INCLUDE[net_core](../../../../includes/net-core-22-md.md)]  
 
 ## <a name="see-also"></a>関連項目

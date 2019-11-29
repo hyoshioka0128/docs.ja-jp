@@ -1,5 +1,5 @@
 ---
-title: '方法: Visual Basic でファイルをダウンロードする'
+title: '方法: ファイルをダウンロードする'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - downloading Internet resources [Visual Basic], files
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - files [Visual Basic], downloading
 - files [Visual Basic], transferring
 ms.assetid: ac479f81-c0e2-4b99-af73-217f446b73da
-ms.openlocfilehash: 4dd45ef70dbe3b1949e6d787748bbb27bb88d52c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 4923feb46ff638de9514a4d70fc00367491a6f44
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046609"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345621"
 ---
 # <a name="how-to-download-a-file-in-visual-basic"></a>方法: Visual Basic でファイルをダウンロードする
 

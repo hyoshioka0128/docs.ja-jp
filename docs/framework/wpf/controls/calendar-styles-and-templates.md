@@ -9,20 +9,20 @@ helpviewer_keywords:
 - Calendar [WPF], styles and templates
 - ControlTemplate [WPF], Calendar
 ms.assetid: f4fcf046-7a8f-41b8-b5a8-534b64e0345c
-ms.openlocfilehash: 49d9ced42572ac06a4ff824ec41a59c14497d215
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 64cb62a3459a3eeea6aa5e91b433a58a88ab08ea
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460928"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283555"
 ---
 # <a name="calendar-styles-and-templates"></a>カレンダーのスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.Calendar> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[Customizing the Appearance of an Existing Control by Creating a ControlTemplate](customizing-the-appearance-of-an-existing-control.md)」を参照してください。  
+このトピックでは、<xref:System.Windows.Controls.Calendar> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」を参照してください。  
   
 ## <a name="calendar-parts"></a>予定表のパーツ  
  次の表に、<xref:System.Windows.Controls.Calendar> コントロールの名前付きの部分を示します。  
   
-|パーツ|[種類]|説明|  
+|要素|種類|説明|  
 |-|-|-|  
 |PART_CalendarItem|<xref:System.Windows.Controls.Primitives.CalendarItem>|<xref:System.Windows.Controls.Calendar>に現在表示されている月または年。|  
 |PART_Root|<xref:System.Windows.Controls.Panel>|<xref:System.Windows.Controls.Primitives.CalendarItem>を含むパネル。|  
@@ -32,14 +32,14 @@ ms.locfileid: "73460928"
   
 |VisualState 名|VisualStateGroup 名|説明|  
 |----------------------|---------------------------|-----------------|  
-|有効|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
+|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|  
   
 ## <a name="calendaritem-parts"></a>CalendarItem の部分  
  次の表に、<xref:System.Windows.Controls.Primitives.CalendarItem> コントロールの名前付きの部分を示します。  
   
-|パーツ|[種類]|説明|  
+|要素|種類|説明|  
 |-|-|-|  
 |PART_Root|<xref:System.Windows.FrameworkElement>|コントロールのルート。|  
 |PART_PreviousButton|<xref:System.Windows.Controls.Button>|クリックされたときに予定表の前のページを表示するボタン。|  
@@ -57,10 +57,10 @@ ms.locfileid: "73460928"
 |-|-|-|  
 |通常の状態|CommonStates|既定の状態です。|  
 |無効状態|CommonStates|<xref:System.Windows.UIElement.IsEnabled%2A> プロパティが `false`場合のカレンダーの状態。|  
-|有効|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
+|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|  
-|有効|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
+|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|  
   
@@ -73,22 +73,22 @@ ms.locfileid: "73460928"
 |VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
 |標準|CommonStates|既定の状態です。|  
-|Disabled|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> が無効になっています。|  
+|無効|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> が無効になっています。|  
 |MouseOver|CommonStates|マウスポインターが <xref:System.Windows.Controls.Primitives.CalendarDayButton>上に配置されています。|  
 |押されている|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> が押されています。|  
-|選択済み|SelectionStates|ボタンが選択されています。|  
+|Selected|SelectionStates|ボタンが選択されています。|  
 |未選択|SelectionStates|このボタンは選択されていません。|  
 |CalendarButtonFocused|CalendarButtonFocusStates|ボタンにフォーカスがあります。|  
 |CalendarButtonUnfocused|CalendarButtonFocusStates|ボタンにフォーカスがありません。|  
 |フォーカスされている|FocusStates|ボタンにフォーカスがあります。|  
 |フォーカスされていない|FocusStates|ボタンにフォーカスがありません。|  
-|アクティブ|ActiveStates|このボタンはアクティブです。|  
-|非アクティブ|ActiveStates|ボタンが非アクティブです。|  
+|Active|ActiveStates|このボタンはアクティブです。|  
+|Inactive|ActiveStates|ボタンが非アクティブです。|  
 |RegularDay|DayStates|このボタンは <xref:System.DateTime.Today%2A?displayProperty=nameWithType>を表していません。|  
 |今日|DayStates|このボタンは <xref:System.DateTime.Today%2A?displayProperty=nameWithType>を表します。|  
 |NormalDay|BlackoutDayStates|このボタンは、選択できる日を表します。|  
 |ブラックアウト日|BlackoutDayStates|このボタンは、選択できない日を表します。|  
-|有効|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
+|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|  
   
@@ -101,18 +101,18 @@ ms.locfileid: "73460928"
 |VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
 |標準|CommonStates|既定の状態です。|  
-|Disabled|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> が無効になっています。|  
+|無効|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> が無効になっています。|  
 |MouseOver|CommonStates|マウスポインターが <xref:System.Windows.Controls.Primitives.CalendarButton>上に配置されています。|  
 |押されている|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> が押されています。|  
-|選択済み|SelectionStates|ボタンが選択されています。|  
+|Selected|SelectionStates|ボタンが選択されています。|  
 |未選択|SelectionStates|このボタンは選択されていません。|  
 |CalendarButtonFocused|CalendarButtonFocusStates|ボタンにフォーカスがあります。|  
 |CalendarButtonUnfocused|CalendarButtonFocusStates|ボタンにフォーカスがありません。|  
 |フォーカスされている|FocusStates|ボタンにフォーカスがあります。|  
 |フォーカスされていない|FocusStates|ボタンにフォーカスがありません。|  
-|アクティブ|ActiveStates|このボタンはアクティブです。|  
-|非アクティブ|ActiveStates|ボタンが非アクティブです。|  
-|有効|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
+|Active|ActiveStates|このボタンはアクティブです。|  
+|Inactive|ActiveStates|ボタンが非アクティブです。|  
+|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|  
   
@@ -127,11 +127,11 @@ ms.locfileid: "73460928"
   
  完全なサンプルについては、[Styling with ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating)を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
 - [コントロールのスタイルとテンプレート](control-styles-and-templates.md)
 - [コントロールのカスタマイズ](control-customization.md)
 - [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [ControlTemplate の作成による既存のコントロールの外観のカスタマイズ](customizing-the-appearance-of-an-existing-control.md)
+- [コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)

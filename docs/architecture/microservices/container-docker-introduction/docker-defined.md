@@ -2,22 +2,22 @@
 title: Docker について
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Docker について
 ms.date: 08/31/2018
-ms.openlocfilehash: 6fb08157a78bfaee48e0bf919fc5942eadf0f287
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 215d756c631440c99a3a8ad8128ec61fef3bc26d
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771343"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73740100"
 ---
 # <a name="what-is-docker"></a>Docker について
 
 [Docker](https://www.docker.com/) は、クラウドまたはオンプレミスで実行できる移植可能な自己完結型のコンテナーとしてアプリの展開を自動化する[オープン ソース プロジェクト](https://github.com/docker/docker)です。 Docker は、クラウド、Linux、および Windows ベンダー (Microsoft を含む) と協力し、このテクノロジを促進し、進化させている[企業](https://www.docker.com/)でもあります。
 
-![Docker コンテナーは、オンプレミスのカスタマー データセンター内、外部サービス プロバイダー内、Azure 上のクラウド内など、どこでも実行できます。](./media/image2.png)
+![Docker コンテナーを実行できる場所を示す図。](./media/docker-defined/docker-containers-run-anywhere.png)
 
 **図 2-2** Docker は、ハイブリッド クラウドのすべてのレイヤーでコンテナーを展開します。
 
-Docker イメージ コンテナーは、Linux と Windows 上でネイティブに実行できます。 ただし、Windows イメージは Windows ホスト上でのみ実行でき、Linux イメージは (現在のところ Hyper-V Linux VM を使用して) Linux ホストと Windows ホスト上で実行できます (ここで言うホストとは、サーバーまたは VM です)。
+Docker コンテナーは、オンプレミスのカスタマー データセンター内、外部サービス プロバイダー内、Azure 上のクラウド内など、どこでも実行できます。 Docker イメージ コンテナーは、Linux と Windows 上でネイティブに実行できます。 ただし、Windows イメージは Windows ホスト上でのみ実行でき、Linux イメージは (現在のところ Hyper-V Linux VM を使用して) Linux ホストと Windows ホスト上で実行できます (ここで言うホストとは、サーバーまたは VM です)。
 
 開発者は、Windows、Linux、または macOS 上の開発環境を使用できます。 開発用コンピューターで、アプリとその依存関係を含む、Docker イメージが展開されている Docker ホストを実行します。 Linux または Mac 上で開発する場合は、Linux ベースの Docker ホストを使用し、Linux コンテナー専用のイメージを作成できます (Mac 上で開発する場合は、macOS からコードを編集したり Docker CLI を実行したりすることができますが、この記事の執筆時点では、コンテナーは macOS 上で直接動作しません)。Windows 上で開発する場合は、Linux または Windows コンテナーのいずれかのイメージを作成できます。
 
@@ -37,10 +37,12 @@ Docker イメージ コンテナーは、Linux と Windows 上でネイティブ
 
 | 仮想マシン | Docker コンテナー |
 | -----------------| ------------------|
-|![VM の場合、ホスト サーバーに 3 つの基本レイヤーがあります。下からインフラストラクチャ、ホスト オペレーティング システム、ハイパーバイザーです。また、それらすべての上位には、各 VM の OS とすべての必要なライブラリがあります。](./media/image3.png)|![Docker の場合、ホスト サーバーにはインフラストラクチャと OS のみがあり、その上位には、コンテナー エンジンがあります。これで、コンテナーの分離が維持され、さらにベースの OS サービスが共有されます。](./media/image4.png)|
+|![従来の VM のハードウェア/ソフトウェア スタックを示す図。](./media/docker-defined/virtual-machine-hardware-software.png)|![Docker コンテナーのハードウェア/ソフトウェア スタックを示す図。](./media/docker-defined/docker-container-hardware-software.png)|
 |仮想マシンには、アプリケーション、必要なライブラリまたはバイナリ、および完全なゲスト オペレーティング システムが含まれます。 完全な仮想化では、コンテナー詰めより多くのリソースが必要です。 | コンテナーには、アプリケーションとそのすべての依存関係が含まれます。 ただし、OS カーネルは他のコンテナーと共有され、ホスト オペレーティング システム上のユーザー空間内で分離されたプロセスとして実行されます (コンテナーごとに特別な仮想マシン内で実行される Hyper-V コンテナーは例外です)。 |
 
 **図 2-3** 従来の仮想マシンと Docker コンテナーの比較
+
+VM の場合、ホスト サーバーに 3 つの基本レイヤーがあります。下からインフラストラクチャ、ホスト オペレーティング システム、ハイパーバイザーです。また、それらすべての上位には、各 VM の OS とすべての必要なライブラリがあります。 Docker の場合、ホスト サーバーにはインフラストラクチャと OS のみがあり、その上位には、コンテナー エンジンがあります。これで、コンテナーの分離が維持され、さらにベースの OS サービスが共有されます。
 
 コンテナーに必要なリソースははるかに少ないため (たとえば、完全な OS は必要ありません)、導入が簡単で、すぐに開始することができます。 そのため、密度を高めることができます。つまり、同じハードウェア ユニットでより多くのサービスを実行できるため、コストを削減できます。
 

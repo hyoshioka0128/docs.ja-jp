@@ -8,8 +8,8 @@
   href: framework/
 - name: .NET デスクトップ ガイド - WPF
   href: desktop-wpf/
-- name: 'C# のガイド'
-  href: csharp/
+- name: 'C# ガイド'
+  href: csharp/index.yml
 - name: 'F# のガイド'
   href: fsharp/
 - name: Visual Basic のガイド

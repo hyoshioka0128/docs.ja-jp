@@ -24,16 +24,16 @@ ms.locfileid: "73118927"
 
 [ **\<configuration>** ](configuration-element.md)   
 [ **\<configSections >** ](configsections-element-for-configuration.md)   
-[ **\<クリア >** ](clear-element-for-configsections.md)   
-[ **  を削除\<** ](remove-element-for-configsections.md)には  
-[ **\<セクション >** ](section-element.md)   
+[ **\<clear>** ](clear-element-for-configsections.md)   
+[ **\<remove>** ](remove-element-for-configsections.md)   
+[ **\<section>** ](section-element.md)   
 [ **\<sectionGroup >** ](sectiongroup-element-for-configsections.md)
 
 |     | 説明 |
 | --- | ----------- |
-| [ **\<configSections**の **> をクリア\<** >](clear-element-for-configsections.md) | 以前に定義したセクションとセクショングループをすべて消去します。 |
+| [ **\<configSections >** の **\<clear>** ](clear-element-for-configsections.md) | 以前に定義したセクションとセクショングループをすべて消去します。 |
 | [ **\<clear>** ](clear-element-for-configsections.md) | 以前に定義したセクションとセクショングループをすべて消去します。 |
 | [ **\<configSections >** ](configsections-element-for-configuration.md) | 構成セクションと名前空間の宣言が含まれています。 |
-| [ **\<configSections**の **> を削除\<** >](remove-element-for-configsections.md) | 定義済みセクションまたはセクショングループを削除します。 |
-| [ **\<configSections >** および **\<sectionGroup**の **\<セクション >** >](section-element.md) | 構成セクションの宣言が含まれています。 |
+| [ **\<remove>** の **\<configSections>** ](remove-element-for-configsections.md) | 定義済みのセクション、またはセクション グループを削除します。 |
+| [ **\<section>** の **\<configSections >** と **\<sectionGroup >** ](section-element.md) | 構成セクションの宣言が含まれています。 |
 | [ **\<configSections**の **\<sectionGroup >** >](sectiongroup-element-for-configsections.md) | 構成セクションの名前空間を定義します。 |

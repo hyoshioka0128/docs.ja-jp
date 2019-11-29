@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2b374116-0972-416a-8cf5-79213129be9a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2c5c8165d44cc3a305820f8e97c07da37f2a0693
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d5d7da343148d5f1c2aa9b2b639b094f8269199b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67775810"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74433206"
 ---
 # <a name="icorprofilerinfo2getcontextstaticaddress-method"></a>ICorProfilerInfo2::GetContextStaticAddress メソッド
-指定したコンテキストのスコープ内の指定したコンテキストの静的フィールドのアドレスを取得します。  
+指定されたコンテキストのスコープ内にある、指定されたコンテキスト静的フィールドのアドレスを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -39,36 +37,36 @@ HRESULT GetContextStaticAddress(
   
 ## <a name="parameters"></a>パラメーター  
  `classId`  
- [in]要求されたコンテキストの静的フィールドが含まれるクラスの ID。  
+ から要求されたコンテキスト静的フィールドを含むクラスの ID。  
   
  `fieldToken`  
- [in]要求されたコンテキストの静的フィールドのメタデータ トークン。  
+ から要求されたコンテキスト静的フィールドのメタデータトークン。  
   
  `contextId`  
- [in]要求されたコンテキストの静的フィールドのスコープのコンテキストの ID。  
+ から要求されたコンテキスト静的フィールドのスコープであるコンテキストの ID。  
   
  `ppAddress`  
- [out]指定したコンテキスト内にある静的フィールドのアドレスへのポインター。  
+ 入出力指定されたコンテキスト内の静的フィールドのアドレスへのポインター。  
   
-## <a name="remarks"></a>Remarks  
- `GetContextStaticAddress`メソッドは、次のいずれかを返す可能性があります。  
+## <a name="remarks"></a>コメント  
+ `GetContextStaticAddress` メソッドは、次のいずれかを返す場合があります。  
   
-- 指定された静的フィールドに指定したコンテキスト内のアドレスが割り当てられていない場合の CORPROF_E_DATAINCOMPLETE HRESULT。  
+- 指定されたコンテキストで、指定された静的フィールドにアドレスが割り当てられていない場合は CORPROF_E_DATAINCOMPLETE HRESULT。  
   
-- ガベージ コレクション ヒープで可能性のあるオブジェクトのアドレス。 これらのアドレスは、ガベージ コレクション後にプロファイラーを想定しないでくださいが有効であるために、ガベージ コレクションの後無効になる可能性があります。  
+- ガベージコレクションヒープ内に存在する可能性があるオブジェクトのアドレス。 これらのアドレスは、ガベージコレクションの後に無効になることがあります。そのため、ガベージコレクションの後、プロファイラーはそれらが有効であると想定してはなりません。  
   
- クラスのクラスのコンス トラクターが完了したら、前に`GetContextStaticAddress`はいくつかの静的フィールドは既に初期化可能性がありますが、すべての静的フィールドの CORPROF_E_DATAINCOMPLETE を返し、ガベージ コレクション オブジェクトのルートします。  
+ クラスのクラスコンストラクターが完了する前に、`GetContextStaticAddress` はすべての静的フィールドに対して CORPROF_E_DATAINCOMPLETE を返します。ただし、静的フィールドの一部は既に初期化されており、ガベージコレクションオブジェクトがルート化される場合があります。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ICorProfilerInfo インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
 - [ICorProfilerInfo2 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

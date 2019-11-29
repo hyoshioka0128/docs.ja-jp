@@ -2,16 +2,16 @@
 title: ADO.NET のデータ追跡
 ms.date: 03/30/2017
 ms.assetid: a6a752a5-d2a9-4335-a382-b58690ccb79f
-ms.openlocfilehash: 1b2ee679ce4b0d39b993b9081f428fe585ef7d92
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e27f1f30ab8626b21421d6d4a7808f8ffef5c26f
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784896"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088776"
 ---
 # <a name="data-tracing-in-adonet"></a>ADO.NET のデータ追跡
 
-ADO.NET、Oracle、OLE DB、および ODBC <xref:System.Data.DataSet>用 SQL Server の .net データプロバイダー、および SQL Server ネットワークプロトコルによってサポートされる組み込みのデータトレース機能が組み込まれています。
+ADO.NET、Oracle、OLE DB、および <xref:System.Data.DataSet>ODBC 用 SQL Server の .NET データプロバイダー、および SQL Server ネットワークプロトコルによってサポートされている組み込みのデータトレース機能が組み込まれています。
 
 データ アクセス API 呼び出しのトレースは、次の問題を診断する際に役立ちます。
 
@@ -31,9 +31,9 @@ ADO.NET でのマネージトレースの設定と構成の詳細については
 
 ## <a name="accessing-diagnostic-information-in-the-extended-events-log"></a>拡張イベント ログの診断情報へのアクセス
 
-SQL Server の .NET Framework Data Provider では、データアクセスのトレース ([データアクセスのトレース](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh880086(v=msdn.10))) が更新され、クライアントイベントと接続エラーなどの診断情報をサーバーの接続から簡単に関連付けることができるようになりました。拡張イベントログのリングバッファーとアプリケーションのパフォーマンス情報。 拡張イベントログの読み取りの詳細については、「[イベントセッションデータの表示](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh710068(v=sql.110))」を参照してください。
+SQL Server の .NET Framework Data Provider では、データアクセスのトレース ([データアクセスのトレース](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh880086(v=msdn.10))) が更新され、クライアントイベントと接続エラーなどの診断情報を、拡張イベントログのサーバーの接続リングバッファーとアプリケーションのパフォーマンス情報から簡単に関連付けられるようになりました。 拡張イベントログの読み取りの詳細については、「[イベントセッションデータの表示](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh710068(v=sql.110))」を参照してください。
 
-接続操作では、ADO.NET はクライアント接続 ID を送信します。 接続に失敗した場合は、接続リングバッファー (接続[リングバッファーを使用した SQL Server 2008 の接続のトラブルシューティング](https://go.microsoft.com/fwlink/?LinkId=207752)) `ClientConnectionID`にアクセスし、フィールドを見つけて、接続エラーに関する診断情報を取得することができます。 クライアント接続 ID は、エラーが発生した場合にのみリング バッファーに記録されます。 (接続がログイン前のパケットを送信する前に失敗すると、クライアント接続 ID は生成されません。)クライアント接続 ID は 16 バイトの GUID です。 拡張イベント セッション内のイベントに `client_connection_id` アクションが追加された場合にも、拡張イベントのターゲット出力のクライアント接続 ID を見つけることができます。 それ以上にクライアントのドライバーの診断について支援が必要な場合は、データ アクセスのトレースを有効にし、接続コマンドを再実行して、データ アクセスのトレースの `ClientConnectionID` フィールドを確認することができます。
+接続操作では、ADO.NET はクライアント接続 ID を送信します。 接続に失敗した場合は、接続リングバッファー (接続[リングバッファーを使用した SQL Server 2008 の接続のトラブルシューティング](https://go.microsoft.com/fwlink/?LinkId=207752)) にアクセスし、`ClientConnectionID` フィールドを見つけて、接続エラーに関する診断情報を取得することができます。 クライアント接続 ID は、エラーが発生した場合にのみリング バッファーに記録されます。 (ログイン前パケットを送信する前に接続が失敗した場合、クライアント接続 ID は生成されません)。クライアント接続 ID は16バイトの GUID です。 拡張イベント セッション内のイベントに `client_connection_id` アクションが追加された場合にも、拡張イベントのターゲット出力のクライアント接続 ID を見つけることができます。 それ以上にクライアントのドライバーの診断について支援が必要な場合は、データ アクセスのトレースを有効にし、接続コマンドを再実行して、データ アクセスのトレースの `ClientConnectionID` フィールドを確認することができます。
 
 `SqlConnection.ClientConnectionID` プロパティを使用して、クライアント接続 ID をプログラムによって取得できます。
 

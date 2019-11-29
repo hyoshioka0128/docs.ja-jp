@@ -1,25 +1,25 @@
 ---
-title: '方法: オブジェクト初期化子を使用してオブジェクトを初期化する - C# プログラミング ガイド'
+title: オブジェクト初期化子を使用してオブジェクトを初期化する方法 - C# プログラミング ガイド
 ms.custom: seodec18
 ms.date: 12/20/2018
 helpviewer_keywords:
 - object initializers [C#], how to use
 - objects [C#], initializing
 ms.assetid: 4b75ebb2-2e29-43de-929c-d736a8f27ce6
-ms.openlocfilehash: 7b31e28c23a70e9f0794c82feb2a984c40ee9d0f
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: be555688a645c7689e76b5b4499c44255c18dbc8
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267585"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970874"
 ---
-# <a name="how-to-initialize-objects-by-using-an-object-initializer-c-programming-guide"></a>方法: オブジェクト初期化子を使用してオブジェクトを初期化する (C# プログラミング ガイド)
+# <a name="how-to-initialize-objects-by-using-an-object-initializer-c-programming-guide"></a>オブジェクト初期化子を使用してオブジェクトを初期化する方法 (C# プログラミング ガイド)
 
 オブジェクト初期化子を使用すると、型のコンストラクターを明示的に呼び出さずに、宣言的な方法で型オブジェクトを初期化できます。  
   
 次の例は、指定したオブジェクトでオブジェクト初期化子を使用する方法を示しています。 コンパイラは、最初に既定のインスタンス コンストラクターにアクセスし、メンバーの初期化を処理することで、オブジェクト初期化子を処理します。 そのため、クラスでパラメーターなしのコンストラクターが `private` として宣言されている場合、パブリック アクセスを必要とするオブジェクト初期化子は失敗します。
   
-匿名型を定義する場合は、オブジェクト初期化子を使用する必要があります。 詳細については、「[方法 :クエリで要素のプロパティのサブセットを返す](how-to-return-subsets-of-element-properties-in-a-query.md)」をご覧ください。  
+匿名型を定義する場合は、オブジェクト初期化子を使用する必要があります。 詳細については、「[クエリで要素のプロパティのサブセットを返す方法](how-to-return-subsets-of-element-properties-in-a-query.md)」を参照してください。  
   
 ## <a name="example"></a>例  
 

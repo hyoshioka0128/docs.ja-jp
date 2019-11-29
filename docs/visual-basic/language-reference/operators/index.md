@@ -1,15 +1,15 @@
 ---
-title: 演算子 (Visual Basic)
+title: 演算子
 ms.date: 10/17/2018
 helpviewer_keywords:
 - operators [Visual Basic]
 ms.assetid: 3d3421df-fcc5-4888-9249-d78f16774ce6
-ms.openlocfilehash: a2a9fb5343c4e07fa28d87bc991beea4c390b042
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 1398b58c1e95bfb172c9b314e562262003632713
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035589"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74330990"
 ---
 # <a name="operators-visual-basic"></a>演算子 (Visual Basic)
 

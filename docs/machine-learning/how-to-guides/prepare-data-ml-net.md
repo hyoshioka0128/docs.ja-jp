@@ -5,22 +5,22 @@ author: luisquintanilla
 ms.author: luquinta
 ms.date: 09/11/2019
 ms.custom: mvc, how-to, title-hack-0625
-ms.openlocfilehash: 4452aef351f33df532f3c673307dedbbf71631b8
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: e9bfad4724b353b0f3bfc615a40f1d72b80a2cd4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929367"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976980"
 ---
 # <a name="prepare-data-for-building-a-model"></a>モデル構築用のデータを準備する
 
 ML.NET を利用して、追加処理やモデルのビルドのためのデータを準備する方法について説明します。
 
-多くの場合、データは未整理であり、分散しています。 ML.NET 機械学習アルゴリズムでは、入力値などの特性が単一の数値ベクターになっていることを想定しています。 同様に、予測する値 (ラベル) は、カテゴリ データの場合は特に、エンコードする必要があります。 したがって、データ準備の目標の 1 つは、データを ML.NET アルゴリズムから期待されている形式にすることです。 
+多くの場合、データは未整理であり、分散しています。 ML.NET 機械学習アルゴリズムでは、入力値などの特性が単一の数値ベクターになっていることを想定しています。 同様に、予測する値 (ラベル) は、カテゴリ データの場合は特に、エンコードする必要があります。 したがって、データ準備の目標の 1 つは、データを ML.NET アルゴリズムから期待されている形式にすることです。
 
 ## <a name="filter-data"></a>データのフィルター処理
 
-データセット内の全データが、分析に関係するわけではない場合もあります。 関係のないデータを除去する方法が、フィルター処理です。 [`DataOperationsCatalog`](xref:Microsoft.ML.DataOperationsCatalog) には、全データを含む [`IDataView`](xref:Microsoft.ML.IDataView) を取得して目的のデータだけを含む [IDataView](xref:Microsoft.ML.IDataView) を返す一連のフィルター操作が用意されています。 フィルター操作は、[`TransformsCatalog`](xref:Microsoft.ML.TransformsCatalog) にあるような [`IEstimator`](xref:Microsoft.ML.IEstimator%601) または [`ITransformer`](xref:Microsoft.ML.ITransformer) ではないため、[`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) または [`TransformerChain`](xref:Microsoft.ML.Data.TransformerChain%601) データ準備パイプラインの一部に含めることはできません。 
+データセット内の全データが、分析に関係するわけではない場合もあります。 関係のないデータを除去する方法が、フィルター処理です。 [`DataOperationsCatalog`](xref:Microsoft.ML.DataOperationsCatalog) には、全データを含む [`IDataView`](xref:Microsoft.ML.IDataView) を取得して目的のデータだけを含む [IDataView](xref:Microsoft.ML.IDataView) を返す一連のフィルター操作が用意されています。 フィルター操作は、[`TransformsCatalog`](xref:Microsoft.ML.TransformsCatalog) にあるような [`IEstimator`](xref:Microsoft.ML.IEstimator%601) または [`ITransformer`](xref:Microsoft.ML.ITransformer) ではないため、[`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) または [`TransformerChain`](xref:Microsoft.ML.Data.TransformerChain%601) データ準備パイプラインの一部に含めることはできません。
 
 次の入力データを使用して、[`IDataView`](xref:Microsoft.ML.IDataView) に読み込ませます。
 
@@ -56,7 +56,7 @@ IDataView filteredData = mlContext.Data.FilterRowsByColumn(data, "Price", lowerB
 
 ## <a name="replace-missing-values"></a>欠損値を置き換える
 
-欠損値は、データセット内でよく発生します。 欠損値を処理する 1 つの方法は、指定された型の既定値があればその値に、またはそのデータの平均値などの意味のある別の値に置き換えることです。 
+欠損値は、データセット内でよく発生します。 欠損値を処理する 1 つの方法は、指定された型の既定値があればその値に、またはそのデータの平均値などの意味のある別の値に置き換えることです。
 
 次の入力データを使用して、[`IDataView`](xref:Microsoft.ML.IDataView) に読み込ませます。
 
@@ -98,11 +98,11 @@ ITransformer replacementTransformer = replacementEstimator.Fit(data);
 IDataView transformedData = replacementTransformer.Transform(data);
 ```
 
-ML.NET では、さまざまな[置換モード](xref:Microsoft.ML.Transforms.MissingValueReplacingEstimator.ReplacementMode)をサポートしています。 上記のサンプルでは、該当の列の平均値を使って欠損値を入力する、`Mean` 置換モードを使用しています。 置換の結果、データ内の最後の要素である `Price` プロパティには、100,000 と 300,000 の平均として 200,000 が入力されます。 
+ML.NET では、さまざまな[置換モード](xref:Microsoft.ML.Transforms.MissingValueReplacingEstimator.ReplacementMode)をサポートしています。 上記のサンプルでは、該当の列の平均値を使って欠損値を入力する、`Mean` 置換モードを使用しています。 置換の結果、データ内の最後の要素である `Price` プロパティには、100,000 と 300,000 の平均として 200,000 が入力されます。
 
 ## <a name="use-normalizers"></a>ノーマライザーを使用する
 
-[正規化](https://en.wikipedia.org/wiki/Feature_scaling)は、アルゴリズムの適用を迅速に行えるように、同じスケール上にない特性を標準化する目的で使用されるデータの事前処理手法です。 たとえば、年齢と収入のような値の範囲は、年齢は一般的に 0 から 100 の範囲で、また、収入は一般的に 0 から 1000 単位の範囲で、大きく変わります。 正規化変換のより詳細な一覧と説明については、[変換に関するページ](../resources/transforms.md)を確認してください。 
+[正規化](https://en.wikipedia.org/wiki/Feature_scaling)は、アルゴリズムの適用を迅速に行えるように、同じスケール上にない特性を標準化する目的で使用されるデータの事前処理手法です。 たとえば、年齢と収入のような値の範囲は、年齢は一般的に 0 から 100 の範囲で、また、収入は一般的に 0 から 1000 単位の範囲で、大きく変わります。 正規化変換のより詳細な一覧と説明については、[変換に関するページ](../resources/transforms.md)を確認してください。
 
 ### <a name="min-max-normalization"></a>最小 - 最大の正規化
 
@@ -142,7 +142,7 @@ IDataView transformedData = minMaxTransformer.Transform(data);
 
 ### <a name="binning"></a>ビン分割
 
-[ビン分割](https://en.wikipedia.org/wiki/Data_binning)では、連続する値を不連続な入力値表現に変換します。 たとえば、特性の 1 つが年齢だとします。 実際の年齢値を使用する代わりに、ビン分割によってその値の範囲を作成します。 0 から 18 を 1 つのビン、19 から 35 をもう 1 つのビン、のように指定できます。 
+[ビン分割](https://en.wikipedia.org/wiki/Data_binning)では、連続する値を不連続な入力値表現に変換します。 たとえば、特性の 1 つが年齢だとします。 実際の年齢値を使用する代わりに、ビン分割によってその値の範囲を作成します。 0 から 18 を 1 つのビン、19 から 35 をもう 1 つのビン、のように指定できます。
 
 次の入力データを使用して、[`IDataView`](xref:Microsoft.ML.IDataView) に読み込ませます。
 
@@ -167,7 +167,7 @@ HomeData[] homeDataList = new HomeData[]
 };
 ```
 
-[`NormalizeBinning`](xref:Microsoft.ML.NormalizationCatalog.NormalizeBinning*) メソッドを使用して、データをビンに正規化します。 `maximumBinCount` パラメータ―を使用すると、データを分類するために必要なビン数を指定できます。 この例では、データは 2 つのビンに配置されます。  
+[`NormalizeBinning`](xref:Microsoft.ML.NormalizationCatalog.NormalizeBinning*) メソッドを使用して、データをビンに正規化します。 `maximumBinCount` パラメータ―を使用すると、データを分類するために必要なビン数を指定できます。 この例では、データは 2 つのビンに配置されます。
 
 ```csharp
 // Define binning estimator
@@ -185,12 +185,12 @@ IDataView transformedData = binningTransformer.Transform(data);
 
 ## <a name="work-with-categorical-data"></a>カテゴリ別データを扱う
 
-非数値のカテゴリ別データは、機械学習モデルのビルドに使用する前に、数値に変換する必要があります。 
+非数値のカテゴリ別データは、機械学習モデルのビルドに使用する前に、数値に変換する必要があります。
 
 次の入力データを使用して、[`IDataView`](xref:Microsoft.ML.IDataView) に読み込ませます。
 
 ```csharp
-CarData[] cars = new CarData[] 
+CarData[] cars = new CarData[]
 {
     new CarData
     {
@@ -210,7 +210,7 @@ CarData[] cars = new CarData[]
 };
 ```
 
-カテゴリ別の `VehicleType` プロパティは、[`OneHotEncoding`](xref:Microsoft.ML.CategoricalCatalog.OneHotEncoding*) メソッドを使用して数値に変換できます。 
+カテゴリ別の `VehicleType` プロパティは、[`OneHotEncoding`](xref:Microsoft.ML.CategoricalCatalog.OneHotEncoding*) メソッドを使用して数値に変換できます。
 
 ```csharp
 // Define categorical transform estimator
@@ -224,7 +224,7 @@ ITransformer categoricalTransformer = categoricalEstimator.Fit(data);
 IDataView transformedData = categoricalTransformer.Transform(data);
 ```
 
-変換の結果、`VehicleType` のテキスト値が数値に変わります。 変換が適用されると、`VehicleType` 列内の項目は次のようになります。 
+変換の結果、`VehicleType` のテキスト値が数値に変わります。 変換が適用されると、`VehicleType` 列内の項目は次のようになります。
 
 ```text
 [
@@ -256,7 +256,7 @@ ReviewData[] reviews = new ReviewData[]
 };
 ```
 
-テキストを数値ベクター表現に変換する最も簡単な手順は、[`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) メソッドを使用することです。 [`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) 変換を使用することで、一連の変換が入力テキストの列に適用されて、Ip 正則化による単語と文字の N グラムを表した数値ベクターになります。 
+テキストを数値ベクター表現に変換する最も簡単な手順は、[`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) メソッドを使用することです。 [`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) 変換を使用することで、一連の変換が入力テキストの列に適用されて、Ip 正則化による単語と文字の N グラムを表した数値ベクターになります。
 
 ```csharp
 // Define text transform estimator
@@ -288,7 +288,7 @@ var textEstimator = mlContext.Transforms.Text.NormalizeText("Description")
     .Append(mlContext.Transforms.NormalizeLpNorm("Description"));
 ```
 
-`textEstimator` には、[`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) メソッドによって実行される操作のサブセットが含まれています。 より複雑なパイプラインの利点は、データに適用される変換に対する制御と可視性です。 
+`textEstimator` には、[`FeaturizeText`](xref:Microsoft.ML.TextCatalog.FeaturizeText*) メソッドによって実行される操作のサブセットが含まれています。 より複雑なパイプラインの利点は、データに適用される変換に対する制御と可視性です。
 
 最初の項目を例として使用した場合、`textEstimator` によって定義された変換手順で生成した結果を詳細に説明すると、次のようになります。
 

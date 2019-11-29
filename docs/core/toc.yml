@@ -2,6 +2,46 @@
   href: index.md
 - name: .NET Core について
   href: about.md
+- name: インストール
+  items:
+    - name: 概要
+      href: install/index.md
+    - name: SDK をインストールする
+      href: install/sdk.md
+    - name: ランタイムをインストールする
+      href: install/runtime.md
+    - name: サポートされる OS と依存関係
+      href: install/dependencies.md
+    - name: .NET Core のバージョンを確認する方法
+      href: install/how-to-detect-installed-versions.md
+    - name: Linux パッケージ マネージャー
+      items:
+        - name: RHEL 7
+          href: install/linux-package-manager-rhel7.md
+        - name: RHEL 8.1
+          href: install/linux-package-manager-rhel81.md
+        - name: Ubuntu 16.04
+          href: install/linux-package-manager-ubuntu-1604.md
+        - name: Ubuntu 18.04
+          href: install/linux-package-manager-ubuntu-1804.md
+        - name: Ubuntu 19.04
+          href: install/linux-package-manager-ubuntu-1904.md
+        - name: Debian 9
+          href: install/linux-package-manager-debian9.md
+        - name: Debian 10
+          href: install/linux-package-manager-debian10.md
+        - name: Fedora 29
+          href: install/linux-package-manager-fedora29.md
+        - name: Fedora 30
+          href: install/linux-package-manager-fedora30.md
+        - name: CentOS 7
+          href: install/linux-package-manager-centos7.md
+        - name: OpenSUSE 15
+          href: install/linux-package-manager-opensuse15.md
+        - name: SLES 12
+          href: install/linux-package-manager-sles12.md
+        - name: SLES 15
+          href: install/linux-package-manager-sles15.md
 - name: 作業開始
   href: get-started.md
   items:
@@ -23,12 +63,6 @@
       href: tutorials/testing-library-with-visual-studio.md
     - name: Visual Studio 2017 での .NET Standard ライブラリの使用
       href: tutorials/consuming-library-with-visual-studio.md
-- name: Windows の前提条件
-  href: windows-prerequisites.md
-- name: macOS の前提条件
-  href: macos-prerequisites.md
-- name: Linux の前提条件
-  href: linux-prerequisites.md
 - name: .NET Core の新機能
   items:
     - name: .NET Core 3.0 の新機能
@@ -54,22 +88,28 @@
           href: tutorials/cli-templates-create-template-pack.md
     - name: macOS での .NET Core の概要
       href: tutorials/using-on-macos.md
-    - name: Visual Studio for Mac を使用した macOS での .NET Core の概要
+    - name: Visual Studio for Mac を使用した .NET Core の概要
       href: tutorials/using-on-mac-vs.md
-    - name: Visual Studio for Mac を使用した macOS での完全な .NET Core ソリューションの構築
+    - name: macOS での完全な .NET Core ソリューションの構築
       href: tutorials/using-on-mac-vs-full-solution.md
     - name: CLI ツールを使用する .NET Core に関する概要
       href: tutorials/using-with-xplat-cli.md
-    - name: .NET Core コマンド ラインを使用したプロジェクトの整理およびテスト
+    - name: .NET Core CLI を使用したプロジェクトの整理およびテスト
       href: tutorials/testing-with-cli.md
-    - name: クロス プラットフォーム ツールによるライブラリの開発
+    - name: クロスプラットフォーム ツールによるライブラリの開発
       href: tutorials/libraries.md
-    - name: プラグインがある .NET Core アプリケーションを作成する
+    - name: プラグインを使用した .NET Core アプリの作成
       href: tutorials/creating-app-with-plugin-support.md
-    - name: ASP.NET Core アプリケーションの開発
+    - name: ASP.NET Core MVC アプリの開発
       href: tutorials/aspnet-core.md
     - name: ネイティブ コードからの .NET Core のホスト
       href: tutorials/netcore-hosting.md
+- name: ランタイム構成
+  items:
+    - name: 設定
+      href: run-time-config/index.md
+    - name: ガベージ コレクター設定
+      href: run-time-config/garbage-collector.md
 - name: ネイティブ相互運用性
   items:
     - name: COM への .NET Core コンポーネントの公開
@@ -200,7 +240,7 @@
       href: tools/telemetry.md
     - name: global.json の概要
       href: tools/global-json.md
-    - name: 関連項目
+    - name: 辞書／辞典／その他
       items:
         - name: dotnet
           href: tools/dotnet.md
@@ -212,7 +252,7 @@
           href: tools/dotnet-clean.md
         - name: dotnet help
           href: tools/dotnet-help.md
-        - name: dotnet の移行
+        - name: dotnet migrate
           href: tools/dotnet-migrate.md
         - name: dotnet msbuild
           href: tools/dotnet-msbuild.md

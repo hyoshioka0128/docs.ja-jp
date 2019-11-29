@@ -2,13 +2,14 @@
 title: 式ツリーの構築
 description: 式ツリーを構築するためのテクニックについて説明します。
 ms.date: 06/20/2016
+ms.technology: csharp-advanced-concepts
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.openlocfilehash: 7751af17aafa8e2d1a14125da43352108b1c1f95
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 45628b00633c8d6ff51dbd5f5dbdda7ca25dd7c4
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36207190"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73037094"
 ---
 # <a name="building-expression-trees"></a>式ツリーの構築
 
@@ -16,7 +17,7 @@ ms.locfileid: "36207190"
 
 これまでに説明した式ツリーは、いずれも C# コンパイラで作成したものです。 `Expression<Func<T>>` や他の同様の型として型指定された変数に割り当てるラムダ式を作成するだけの手順でしたが、 式ツリーを作成する方法は他にもあります。 実行時にメモリ内で式を構築する必要があるというシナリオはよくあります。 
 
-式ツリーは不変なので、式ツリーの構築は複雑です。 不変とは、リーフからルートにいたるまでツリーを構築する必要があることを意味します。 式ツリーの構築に使用する API がこれを反映しています。ノードの構築に使用するメソッドは、そのすべての子を引数として取得します。 いくつかの例を挙げながら手法を説明します。
+式ツリーは不変なので、式ツリーの構築は複雑です。 不変とは、リーフからルートにいたるまでツリーを構築する必要があることを意味します。 式ツリーの構築に使用する API は、次の事実を反映しています。ノードの構築に使用するメソッドは、すべての子を引数として受け取ります。 いくつかの例を挙げながら手法を説明します。
 
 ## <a name="creating-nodes"></a>ノードの作成
 

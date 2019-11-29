@@ -1,5 +1,5 @@
 ---
-title: = 演算子 - C# リファレンス
+title: 代入演算子 - C# リファレンス
 ms.custom: seodec18
 ms.date: 09/10/2019
 f1_keywords:
@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: a450a55524f33f4f06ed077aba864e8f641a458d
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 103bc823ab6a56d53a3f2ec05b8de9295f1de400
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70924661"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039080"
 ---
-# <a name="-operator-c-reference"></a>= 演算子 (C# リファレンス)
+# <a name="assignment-operators-c-reference"></a>代入演算子 (C# リファレンス)
 
 代入演算子 `=` は、右辺オペランドの値を、左辺オペランドに指定された変数、[プロパティ](../../programming-guide/classes-and-structs/properties.md)、または[インデクサー](../../programming-guide/indexers/index.md)要素に割り当てます。 代入式の結果は、左辺のオペランドに割り当てられる値です。 右辺のオペランドの型は、左辺のオペランドの型と同じであるか、暗黙に変換できる必要があります。
 
-代入演算子は右結合です。つまり、次の形式の式があるとします。
+代入演算子 `=` は右結合です。つまり、次の形式の式があるとします
 
 ```csharp
 a = b = c
@@ -41,8 +41,6 @@ C# 7.3 以降では、ref 代入演算子 `= ref` を使用して、[ref ロー�
 [!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
 
 ref 代入演算子の場合、その両方のオペランドの型が同じである必要があります。
-
-詳しくは、[機能提案メモ](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md)をご覧ください。
 
 ## <a name="compound-assignment"></a>複合代入。
 
@@ -68,11 +66,15 @@ C# 8.0 以降では、null 合体割り当て演算子 `??=` を使用して、�
 
 ## <a name="operator-overloadability"></a>演算子のオーバーロード可/不可
 
-ユーザー定義型は、代入演算子をオーバー ロードできません。 ただし、ユーザー定義型は、別の型への暗黙的な変換を定義できます。 この方法により、ユーザー定義型の値を、別の型の変数、プロパティ、またはインデクサー要素に割り当てることができます。 詳細については、[ユーザー定義の変換演算子](user-defined-conversion-operators.md) に関するページを参照してください。
+ユーザー定義型は、代入演算子を[オーバーロード](operator-overloading.md)できません。 ただし、ユーザー定義型は、別の型への暗黙的な変換を定義できます。 この方法により、ユーザー定義型の値を、別の型の変数、プロパティ、またはインデクサー要素に割り当てることができます。 詳細については、[ユーザー定義の変換演算子](user-defined-conversion-operators.md) に関するページを参照してください。
+
+ユーザー定義型は、複合代入演算子を明示的にオーバーロードすることはできません。 ただし、ユーザー定義型が二項演算子 `op` をオーバーロードし、`op=` 演算子も存在する場合は、それも暗黙的にオーバーロードされます。
 
 ## <a name="c-language-specification"></a>C# 言語仕様
 
-詳細については、[C# 言語仕様](../language-specification/index.md)の「[Assignment operators (代入演算子)](~/_csharplang/spec/expressions.md#assignment-operators)」セクションを参照してください。
+詳細については、[C# 言語仕様](~/_csharplang/spec/introduction.md)の「[Assignment operators (代入演算子)](~/_csharplang/spec/expressions.md#assignment-operators)」セクションを参照してください。
+
+ref 代入演算子 `= ref` の詳細については、[機能提案メモ](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

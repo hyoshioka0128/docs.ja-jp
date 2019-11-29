@@ -34,7 +34,7 @@ ASP.NET Web Forms framework は、2002に最初に出荷された .NET Framework
 
 .NET コミュニティでは、クロスプラットフォームのサポートとオープンソースの両方が採用されています。 .NET Core は、Windows、macOS、およびさまざまな Linux ディストリビューションを含む多数のプラットフォームで動作する .NET のオープンソースおよびクロスプラットフォームの実装です。 Xamarin には、オープンソースバージョンの .NET という Mono が用意されています。 Mono は、Android、iOS、およびウォッチやスマートテレビなどの他のさまざまなフォームファクターで実行されます。 [.Net 5](https://devblogs.microsoft.com/dotnet/introducing-net-5/)では、.net Core と Mono を "1 つの .net ランタイムおよびフレームワークに整合させることにより、共通のランタイム動作と開発者エクスペリエンスを持つことができる" ということが発表されました。
 
-Web フォームの特典は、オープンソースとクロスプラットフォームのサポートに移行することによって ASP.NET ますか。 残念ながら、この答えは、プラットフォームの他の部分と同じ程度ではありません。 .NET チームは[最近](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/)、ASP.NET Web フォームが .net Core または .net 5 に移植されないことを明確にしました。 それはどうしてですか。
+Web フォームの特典は、オープンソースとクロスプラットフォームのサポートに移行することによって ASP.NET ますか。 残念ながら、この答えは、プラットフォームの他の部分と同じ程度ではありません。 .NET チームは[最近](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/)、ASP.NET Web フォームが .net Core または .net 5 に移植されないことを明確にしました。 これはどうしてでしょうか。
 
 ASP.NET Web フォームを移植するために .NET Core の初期の時代に取り組みました。 必要な重大な変更の数が少なすぎることが検出されました。 ここでも、Microsoft の場合でも、同時にサポートできる web フレームワークの数に制限があります。 コミュニティ内のだれかが、オープンソースでクロスプラットフォームバージョンの ASP.NET Web フォームを作成する原因となる可能性があります。 [ASP.NET Web フォームのソースコード](https://github.com/microsoft/referencesource)は、参照形式で公開されています。 しかし、このような場合は、ASP.NET Web フォームが Windows のみを保持し、オープンソースの貢献度モデルは存在しないように見えます。 クロスプラットフォームサポートまたはオープンソースがシナリオにとって重要である場合は、新しいものを探す必要があります。
 

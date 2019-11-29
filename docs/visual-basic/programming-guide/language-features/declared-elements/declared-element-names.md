@@ -1,5 +1,5 @@
 ---
-title: 宣言された要素の名前 (Visual Basic)
+title: Declared Element Names
 ms.date: 07/20/2015
 helpviewer_keywords:
 - declared elements [Visual Basic], case sensitivity
@@ -23,12 +23,12 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - identifiers [Visual Basic], elements
 ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
-ms.openlocfilehash: 0ace2b13473db30a4500648a67f6ce34edf3e587
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: e8620517b934a5f1a97ea25c5a94c8b932bb47b2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197561"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345427"
 ---
 # <a name="declared-element-names-visual-basic"></a>宣言された要素の名前 (Visual Basic)
 宣言されたすべての要素には、*識別子*とも呼ばれる名前が付いています。これは、コードがそれを参照するために使用します。  
@@ -84,12 +84,12 @@ ms.locfileid: "73197561"
 ## <a name="case-sensitivity-in-names"></a>名前の大文字と小文字の区別  
  Visual Basic の要素名は大文字と小文字が区別されます。 つまり、コンパイラは、アルファベットの大文字と小文字が異なる2つの名前を比較するときに、同じ名前として解釈します。 たとえば、 `ABC` と `abc` は、宣言された同じ要素を参照していると見なされます。  
   
- ただし、共通言語ランタイム (CLR) では、大文字と小文字を区別するバインディングが使用されます。 このため、アセンブリまたは DLL を作成し、他のアセンブリで使用できるようにすると、名前の大文字と小文字が区別されるようになります。 たとえば、 `ABC`という名前の要素を持つクラスを定義し、他のアセンブリから共通言語ランタイムを通じてこのクラスを使用する場合は、この要素を `ABC`として参照する必要があります。 後でクラスを再コンパイルし、要素の名前を `abc`に変更した場合、クラスを使用している他のアセンブリは、その要素にアクセスできなくなります。 したがって、アセンブリを更新してリリースするときは、パブリックな要素の名前の大文字と小文字を変更しないでください。  
+ しかし、共通言語ランタイム (CLR) のバインディングでは大文字と小文字が区別されます。 このため、アセンブリまたは DLL を作成し、他のアセンブリで使用できるようにすると、名前の大文字と小文字が区別されるようになります。 たとえば、 `ABC`という名前の要素を持つクラスを定義し、他のアセンブリから共通言語ランタイムを通じてこのクラスを使用する場合は、この要素を `ABC`として参照する必要があります。 後でクラスを再コンパイルし、要素の名前を `abc`に変更した場合、クラスを使用している他のアセンブリは、その要素にアクセスできなくなります。 したがって、アセンブリを更新してリリースするときは、パブリックな要素の名前の大文字と小文字を変更しないでください。  
   
 ## <a name="names-and-locales"></a>名前とロケール  
  名前の比較は、ロケールに依存しません。 2つの名前が1つのロケールで一致する場合は、すべてのロケールで一致することが保証されます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [宣言された要素](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)
 - [宣言された要素の特性](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)

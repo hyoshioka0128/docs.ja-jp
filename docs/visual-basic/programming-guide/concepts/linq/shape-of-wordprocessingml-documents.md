@@ -1,15 +1,15 @@
 ---
-title: WordprocessingML ドキュメント (Visual Basic) の構造
+title: WordprocessingML ドキュメントの構造
 ms.date: 07/20/2015
 ms.assetid: 2dfb446b-5a07-4c00-9ab3-a74ba734ff3a
-ms.openlocfilehash: 265da66329128e610c491c3ff50cec1bca434f6d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 64e9ca280c000ba488bfc72248bd83e37474f043
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786426"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350605"
 ---
-# <a name="shape-of-wordprocessingml-documents-visual-basic"></a>WordprocessingML ドキュメント (Visual Basic) の構造
+# <a name="shape-of-wordprocessingml-documents-visual-basic"></a>WordprocessingML ドキュメントの構造 (Visual Basic)
 このトピックでは、WordprocessingML ドキュメントの XML 構造について説明します。  
   
 ## <a name="microsoft-office-formats"></a>Microsoft Office 形式  
@@ -87,13 +87,13 @@ Module Module1
 End Module  
 ```  
   
-## <a name="external-resources"></a>外部リソース  
+## <a name="external-resources"></a>外部資料  
  [Office (2007) Open XML ファイル形式の概要](https://docs.microsoft.com/previous-versions/office/developer/office-2007/aa338205(v=office.12))  
   
  [WordprocessingML の概要](https://docs.microsoft.com/previous-versions/office/developer/office-2003/aa212812(v=office.11))  
   
- [Office 2003:XML リファレンス スキーマのダウンロード ページ](https://go.microsoft.com/fwlink/?LinkId=98095)  
+ [Office 2003: XML リファレンス スキーマのダウンロード ページ](https://go.microsoft.com/fwlink/?LinkId=98095)  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [チュートリアル: WordprocessingML ドキュメント (Visual Basic) 内のコンテンツの操作](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

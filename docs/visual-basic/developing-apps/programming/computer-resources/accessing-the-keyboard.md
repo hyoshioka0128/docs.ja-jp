@@ -1,5 +1,5 @@
 ---
-title: キーボードへのアクセス (Visual Basic)
+title: キーボードへのアクセス
 ms.date: 07/20/2015
 helpviewer_keywords:
 - keyboards [Visual Basic], accessing [Visual Basic]
@@ -7,17 +7,19 @@ helpviewer_keywords:
 - keystrokes
 - CapsLock property
 ms.assetid: aa37d54c-5c98-4b44-b98a-c26d2a03c038
-ms.openlocfilehash: 00cdf18d057ca8a5c59cde02759b5c8c572a8bba
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 4e4a6aa3567094ca87e41367e82d5fa6c61fe100
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58823572"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74329546"
 ---
 # <a name="accessing-the-keyboard-visual-basic"></a>キーボードへのアクセス (Visual Basic)
+
 `My.Computer.Keyboard` オブジェクトは、現在どのキーが押されているかなど、キーボードの現在の状態にアクセスするためのプロパティを提供します。また、キーストロークを作業中のウィンドウに送る方法を提供します。  
   
-## <a name="tasks"></a>[タスク]  
+## <a name="tasks"></a>タスク  
+
  この表は `My.Computer.Keyboard` オブジェクトに関連するタスクを一覧にしたものであり、各タスクの実行方法を実演するトピックにここからアクセスできます。  
   
 |終了|解決方法については、|  

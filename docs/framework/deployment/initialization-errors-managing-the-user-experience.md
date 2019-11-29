@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ce022e92e8b6770c42800a04a349eff751bdb708
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 3cd881044d45a276ec361d24097b59b8ce76b7e4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052057"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975701"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>.NET Framework の初期化エラー:ユーザー エクスペリエンスの管理
 
@@ -41,7 +41,7 @@ CLR アクティベーションの API は、ホストにアクティベーシ�
 
 CLR アクティベーション システムがアプリケーションで必要なランタイムの正しいバージョンを読み込むことができない場合、ユーザーには、コンピューターがアプリケーションを実行するように正しく構成されていないことを示すエラー メッセージが表示され、この状況を解決できるようになります。 この状況では、通常、次のエラー メッセージが表示されます。 ユーザーは **[はい]** を選択すると、アプリケーションに適切な .NET Framework のバージョンをダウンロードできる Microsoft Web サイトに移動します。
 
-![[.NET Framework 初期化エラー] ダイアログ ボックス](./media/initialization-errors-managing-the-user-experience/initialization-error-dialog.png "初期化エラーの一般的なエラー メッセージ")
+![.NET Framework 初期化エラー ダイアログ ボックス](./media/initialization-errors-managing-the-user-experience/initialization-error-dialog.png "初期化エラーの一般的なエラー メッセージ")
 
 ## <a name="resolving-the-initialization-error"></a>初期化エラーの解決
 
@@ -59,7 +59,7 @@ CLR アクティベーション システムがアプリケーションで必要
 
 [ICLRMetaHostPolicy::GetRequestedRuntime](../unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) メソッドは、入力として [METAHOST_POLICY_FLAGS](../unmanaged-api/hosting/metahost-policy-flags-enumeration.md) 列挙型のメンバーを受け取ります。 METAHOST_POLICY_SHOW_ERROR_DIALOG フラグを含めると、CLR の要求されたバージョンが見つからない場合にエラー メッセージを要求することができます。 既定では、エラー メッセージは表示されません ([ICLRMetaHost::GetRuntime](../unmanaged-api/hosting/iclrmetahost-getruntime-method.md) メソッドは、このフラグを受け取らず、エラー メッセージを表示する他の方法を提供しません)。
 
-Windows には、プロセス内で実行するコードの結果としてエラー メッセージを表示するかどうかを宣言する際に使用できる [SetErrorMode](https://go.microsoft.com/fwlink/p/?LinkID=255242) 関数が用意されています。 SEM_FAILCRITICALERRORS フラグを指定すると、エラー メッセージが表示されないようにすることができます。
+Windows には、プロセス内で実行するコードの結果としてエラー メッセージを表示するかどうかを宣言する際に使用できる [SetErrorMode](/windows/win32/api/errhandlingapi/nf-errhandlingapi-seterrormode) 関数が用意されています。 SEM_FAILCRITICALERRORS フラグを指定すると、エラー メッセージが表示されないようにすることができます。
 
 ただし、一部のシナリオでは、アプリケーション プロセスで設定された SEM_FAILCRITICALERRORS の設定をオーバーライドすることが重要です。 たとえば、CLR をホストし、SEM_FAILCRITICALERRORS が設定されているプロセスでホストされるネイティブの COM コンポーネントがある場合、その特定のアプリケーション プロセス内でエラー メッセージを表示する影響に応じて、フラグをオーバーライドできます。 この場合、次のいずれかのフラグを使用して、SEM_FAILCRITICALERRORS をオーバーライドできます。
 
@@ -89,7 +89,7 @@ CLR アクティベーション システムでは、他のバージョンの Wi
 
 .NET Framework 3.5 がインストールされている場合、ユーザーは [!INCLUDE[win8](../../../includes/win8-md.md)] コンピューターで .NET Framework 2.0、3.0、または 3.5 に依存するアプリケーションを実行できます。 また、アプリケーションが .NET Framework 1.0 または 1.1 でのみ実行するように明示的に構成されていなければ、.NET Framework 1.0 および 1.1 のアプリケーションを実行することもできます。 「[.NET Framework 1.1 からの移行](../migration-guide/migrating-from-the-net-framework-1-1.md)」をご覧ください。
 
-.NET Framework 4.5 以降では、CLR アクティベーション ログは、初期化エラー メッセージが表示された日時とその理由を記録するログ エントリを含むように強化されています。 詳細については、「[方法 :CLR のアクティブ化に関する問題をデバッグする](how-to-debug-clr-activation-issues.md)」で説明されているように、CLR のアクティベーションに関する問題のデバッグに役立つログ インフラストラクチャが用意されています。
+.NET Framework 4.5 以降では、CLR アクティベーション ログは、初期化エラー メッセージが表示された日時とその理由を記録するログ エントリを含むように強化されています。 詳細については、[CLR のアクティブ化に関する問題をデバッグする](how-to-debug-clr-activation-issues.md)」で説明されているように、CLR のアクティベーションに関する問題のデバッグに役立つログ インフラストラクチャが用意されています。
 
 ## <a name="see-also"></a>関連項目
 

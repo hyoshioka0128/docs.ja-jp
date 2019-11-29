@@ -1,15 +1,15 @@
 ---
-title: 方法:式ツリーを変更する (C#)
+title: 式ツリーを変更する方法 (C#)
 ms.date: 07/20/2015
 ms.assetid: 9b0cd8c2-457e-4833-9e36-31e79545f442
-ms.openlocfilehash: 7875cf1ccca8866cc87ebec80701ad77ad2bea2d
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: e921c594497d02f5eb16cc60294e947e83636d7a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595059"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969901"
 ---
-# <a name="how-to-modify-expression-trees-c"></a>方法:式ツリーを変更する (C#)
+# <a name="how-to-modify-expression-trees-c"></a>式ツリーを変更する方法 (C#)
 このトピックでは、式ツリーを変更する方法について説明します。 式ツリーは変更不可であるため、直接変更を加えることができません。 式ツリーを変更するには、既存の式ツリーのコピーを作成する必要があります。コピーを作成する際に、必要な変更を加えます。 <xref:System.Linq.Expressions.ExpressionVisitor> クラスを使用して、既存の式ツリーを走査し、走査した各ノードをコピーすることができます。  
   
 ### <a name="to-modify-an-expression-tree"></a>式ツリーを変更するには  
@@ -72,5 +72,5 @@ ms.locfileid: "69595059"
   
 ## <a name="see-also"></a>関連項目
 
-- [方法: 式ツリーを実行する (C#)](./how-to-execute-expression-trees.md)
+- [式ツリーを実行する方法 (C#)](./how-to-execute-expression-trees.md)
 - [式ツリー (C#)](./index.md)

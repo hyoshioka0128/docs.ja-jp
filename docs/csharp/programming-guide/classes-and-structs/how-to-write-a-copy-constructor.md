@@ -1,19 +1,19 @@
 ---
-title: '方法: コピー コンストラクターを記述する - C# プログラミング ガイド'
+title: コピー コンストラクターを記述する方法 - C# プログラミング ガイド
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# Language, copy constructor
 - copy constructor [C#]
 ms.assetid: fba899b5-fc41-428e-a745-3ebdbf37990a
-ms.openlocfilehash: bdc352566052f4cec1686176131e9b1e1b768794
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 4ac7ccb55775019eb86d5345797d2fd74d3b9527
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596607"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970399"
 ---
-# <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>方法: コピー コンストラクターを記述する (C# プログラミング ガイド)
+# <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>コピー コンストラクターを記述する方法 (C# プログラミング ガイド)
 C# では、オブジェクトのコピー コンストラクターが提供されていませんが、独自に作成することができます。  
   
 ## <a name="example"></a>例  

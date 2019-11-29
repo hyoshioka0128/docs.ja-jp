@@ -1,5 +1,5 @@
 ---
-title: Identity
+title: ID
 description: Azure 向けのクラウドネイティブ .NET アプリの設計 |アイデンティティ
 ms.date: 09/23/2019
 ms.openlocfilehash: 4cc7c04bf323d2589777df466321f6801f511b6f
@@ -9,7 +9,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "73840347"
 ---
-# <a name="identity"></a>Identity
+# <a name="identity"></a>ID
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -27,7 +27,7 @@ ms.locfileid: "73840347"
 
 通常、STS はプリンシパルの認証のみを行います。 リソースへのアクセスレベルを決定することは、アプリケーションの他の部分に残されます。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [Microsoft id プラットフォーム](https://docs.microsoft.com/azure/active-directory/develop/)
 

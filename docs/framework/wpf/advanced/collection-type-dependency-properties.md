@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - collection-type properties [WPF]
 ms.assetid: 99f96a42-3ab7-4f64-a16b-2e10d654e97c
-ms.openlocfilehash: f7f8c25844f41dd8915c0f4404d6714b4c81233c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 039ae0cb314eba2f1bb3e5b39f2127a5e694f334
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458467"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974154"
 ---
 # <a name="collection-type-dependency-properties"></a>コレクション型依存関係プロパティ
 ここでは、プロパティの型がコレクション型である場合に依存関係プロパティを実装する方法についての、ガイダンスと推奨されるパターンを示します。  
@@ -28,8 +28,11 @@ ms.locfileid: "73458467"
 ## <a name="initializing-the-collection-beyond-the-default-value"></a>既定値を上回るコレクションの初期化  
  依存関係プロパティを作成するときは、初期フィールド値としてプロパティの既定値を指定しません。 代わりに、依存関係プロパティのメタデータを使用して既定値を指定します。 プロパティが参照型の場合、依存関係プロパティのメタデータで指定する既定値はインスタンスごとの既定値ではありません。その型のすべてのインスタンスに適用される既定値です。 したがって、コレクション プロパティ メタデータによって定義される単一の静的コレクションを、その型の新しく作成されるインスタンスの作業既定値として使用しないように注意してください。 代わりに、クラス コンストラクターのロジックの一部として、コレクションの値に一意 (インスタンス) のコレクションを意図的に設定する必要があります。 それ以外の場合は、意図しないシングルトン クラスを作成することになります。  
   
- 例を次に示します。 この例は、`Aquarium` クラスの定義を示しています。 クラスは、コレクション型の依存関係プロパティ `AquariumObjects`を定義します。このプロパティは、ジェネリック <xref:System.Collections.Generic.List%601> 型を <xref:System.Windows.FrameworkElement> 型制約と共に使用します。 依存関係プロパティの <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> の呼び出しでは、メタデータによって既定値が新しいジェネリック <xref:System.Collections.Generic.List%601>に設定されます。  
-  
+ 例を次に示します。 この例の次のセクションでは、`Aquarium`クラスの定義を示します。これには、既定値を持つ欠陥が含まれています。 クラスは、コレクション型の依存関係プロパティ `AquariumObjects`を定義します。このプロパティは、ジェネリック <xref:System.Collections.Generic.List%601> 型を <xref:System.Windows.FrameworkElement> 型制約と共に使用します。 依存関係プロパティの <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> の呼び出しでは、メタデータによって既定値が新しいジェネリック <xref:System.Collections.Generic.List%601>に設定されます。
+
+> [!WARNING]
+> 次のコードは正しく動作しません。
+
  [!code-csharp[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport2/CSharp/page.xaml.cs#collectionproblemdefinition)]
  [!code-vb[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport2/visualbasic/page.xaml.vb#collectionproblemdefinition)]  
   

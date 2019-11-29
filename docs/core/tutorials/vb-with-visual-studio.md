@@ -5,12 +5,12 @@ ms.date: 08/07/2017
 dev_langs:
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 1200afb30c6bdebf66b2a1e080c62a776a7e9826
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 63f5b422f1d5c4843d6fadb5973eaf16e50ee961
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100877"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428573"
 ---
 # <a name="build-a-visual-basic-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Visual Studio 2017 で .NET Core を使用して Visual Basic Hello World アプリケーションを構築する
 
@@ -20,7 +20,7 @@ ms.locfileid: "73100877"
 
 [Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) が ".NET Core クロスプラット フォーム開発" とともにインストールされていること。 .NET Core 2.1 以降のバージョンを使用してアプリを開発することができます。
 
-詳細については、「[Windows における .NET Core の前提条件](../windows-prerequisites.md)」を参照してください。
+詳細については、[.NET Core の依存関係と要件](../install/dependencies.md?tabs=netcore30&pivots=os-windows)に関する記事を参照してください。
 
 ## <a name="a-simple-hello-world-application"></a>シンプルな "Hello World" アプリケーション
 

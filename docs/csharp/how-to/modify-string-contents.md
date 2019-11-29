@@ -1,16 +1,16 @@
 ---
-title: '方法: 文字列の内容を変更する - C# ガイド'
+title: 文字列の内容を変更する方法 - C# ガイド
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 2cc1166d98a6cc07e0827a138cecb09c0530b899
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 539e313173d46c2c92399cefe94207c8beed03b4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267762"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973264"
 ---
-# <a name="how-to-modify-string-contents-in-c"></a>方法: C\# で文字列の内容を変更する
+# <a name="how-to-modify-string-contents-in-c"></a>C\# で文字列の内容を変更する方法
 
 この記事では、既存の `string` を変更して `string` を生成するためのいくつかの手法を示します。 紹介するすべての手法で、変更の結果が `string` オブジェクトとして返されます。 これを明確に示すため、すべての例で、新しい変数に結果を格納します。 これで、それぞれの例を実行したときに、元の `string` と、変更から生じる `string` の両方を確認できます。
 
@@ -48,7 +48,7 @@ ms.locfileid: "67267762"
 
 [正規表現](../../standard/base-types/regular-expressions.md)を使用すると、テキスト一致パターンを新しいテキストに置き換えることができます (パターンで定義されている場合もあります)。 次の例では、<xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> クラスを使用してソース文字列でパターンを検索し、適切な大文字と小文字に置き換えています。 <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> メソッドは、置換のロジックをその引数の 1 つとして提供する機能を受け取ります。 この例で、関数 `LocalReplaceMatchCase` は、サンプル メソッド内で宣言された**ローカル関数**です。 `LocalReplaceMatchCase` は、<xref:System.Text.StringBuilder?displayProperty=nameWithType> クラスを使用して大文字と小文字が適切な置換文字列を作成します。
 
-正規表現は、既知のテキストよりもパターンに従ったテキストを検索して置き換える場合に特に役立ちます。 詳細については、「[方法: 文字列を検索する](search-strings.md)」を参照してください。 検索パターン "the\s" は、単語 "the" とその後の空白文字を検索します。 パターンのこの部分により、ソース文字列の "there" は一致しなくなります。 正規表現言語要素の詳細については、「[正規表現言語 - クイック リファレンス](../../standard/base-types/regular-expression-language-quick-reference.md)」をご覧ください。
+正規表現は、既知のテキストよりもパターンに従ったテキストを検索して置き換える場合に特に役立ちます。 詳細については、「[文字列を検索する方法](search-strings.md)」を参照してください。 検索パターン "the\s" は、単語 "the" とその後の空白文字を検索します。 パターンのこの部分により、ソース文字列の "there" は一致しなくなります。 正規表現言語要素の詳細については、「[正規表現言語 - クイック リファレンス](../../standard/base-types/regular-expression-language-quick-reference.md)」をご覧ください。
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#5)]
 

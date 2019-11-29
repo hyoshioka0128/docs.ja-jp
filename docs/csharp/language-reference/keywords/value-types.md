@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 8703532ff8551e8bd42128eb9e8cdcf2afd9dad8
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: b264be5d2589455562a19ef55b5ddf1a4e74ce15
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739678"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428455"
 ---
 # <a name="value-types-c-reference"></a>値型 (C# リファレンス)
 
@@ -40,7 +40,7 @@ ms.locfileid: "73739678"
 
 *単純型*は、C# に用意されている定義済みの構造体型のセットであり、次の型を構成します。
 
-- [整数型](../builtin-types/integral-numeric-types.md): 整数の数値型と [char](char.md) 型
+- [整数型](../builtin-types/integral-numeric-types.md): 整数の数値型と [char](../builtin-types/char.md) 型
 - [浮動小数点型](../builtin-types/floating-point-numeric-types.md)
 - [bool](bool.md)
 

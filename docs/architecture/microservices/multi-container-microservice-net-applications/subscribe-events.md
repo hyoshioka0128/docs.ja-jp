@@ -2,12 +2,12 @@
 title: イベントへのサブスクライブ
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 統合イベントの発行とサブスクライブについて。
 ms.date: 10/02/2018
-ms.openlocfilehash: 208b0f27aa1e6ceb6686e9e846b6e31d9f1c74df
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c607f8b980f7dffacf3564688c6c9bb498264d96
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035637"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73737072"
 ---
 # <a name="subscribing-to-events"></a>イベントへのサブスクライブ
 
@@ -139,7 +139,7 @@ CQRS アプローチを使用する場合など、より高度なマイクロサ
 
 図 6-22 は、1 番目のアプローチのアーキテクチャを示しています。
 
-![イベント発行時に原子性を処理する 1 つのアプローチ: あるトランザクションを使用してイベントログ テーブルにイベントをコミットし、次に別のトランザクションを使用して発行します (eShopOnContainers で使用)](./media/image23.png)
+![ワーカー マイクロサービスを使用せずに発行する場合の原子性の図。](./media/subscribe-events/atomicity-publish-event-bus.png)
 
 **図 6-22**。 イベント バスにイベントを発行するときの原子性
 
@@ -147,7 +147,7 @@ CQRS アプローチを使用する場合など、より高度なマイクロサ
 
 2 番目のアプローチでは、EventLog テーブルをキューとして使用し、常に常にワーカー マイクロサービスを使用してメッセージを発行します。 その場合、プロセスは図 6-23 のようになります。 これには追加のマイクロサービスが表示されており、テーブルはイベントを発行する際の単一のソースです。
 
-![原子性を処理するためのもう 1 つのアプローチ: イベント ログ テーブルに発行し、別のマイクロサービス (バックグラウンド ワーカー) からイベントを発行するようにします。](./media/image24.png)
+![ワーカー マイクロサービスを使用して発行するときの原子性の図。](./media/subscribe-events/atomicity-publish-worker-microservice.png)
 
 **図 6-23**。 ワーカー マイクロサービスを使用してイベント バスにイベントを発行するときの原子性
 
@@ -279,7 +279,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 イベント ハンドラーは、その商品がいずれかの買い物かごインスタンス内に存在するかどうかを確認する必要があります。 また、関連する買い物かご品目の品目価格をすべて更新します。 最後に、図 6-24 に示すように、ユーザーに表示する価格変更についてのアラートを作成します。
 
-![ブラウザーの画像。ユーザー カートの価格変更通知。](./media/image25.png)
+![ユーザー カートで価格変更の通知を示しているブラウザーのスクリーンショット。](./media/subscribe-events/display-item-price-change.png)
 
 **図 6-24**。 統合イベントによって通知された、買い物かご内の品目の価格変更の表示
 

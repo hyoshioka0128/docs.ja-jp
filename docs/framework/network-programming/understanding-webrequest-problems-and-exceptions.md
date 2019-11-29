@@ -2,12 +2,12 @@
 title: WebRequest の問題と例外について
 ms.date: 03/30/2017
 ms.assetid: 74a361a5-e912-42d3-8f2e-8e9a96880a2b
-ms.openlocfilehash: c5712467cdebb854d09cb55c29878cb8b553f271
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: af859d9ad8ac69bfe636384832f0fb62e0771b48
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047101"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448393"
 ---
 # <a name="understanding-webrequest-problems-and-exceptions"></a>WebRequest の問題と例外について
 <xref:System.Net.WebRequest> とその派生クラス (<xref:System.Net.HttpWebRequest>、<xref:System.Net.FtpWebRequest>、<xref:System.Net.FileWebRequest>) は例外をスローし、異常な状態を信号で伝えます。 このような問題の解決はすぐにわからないことがあります。  
@@ -26,7 +26,7 @@ ms.locfileid: "71047101"
 |<xref:System.Net.WebExceptionStatus.ConnectionClosed>|既に閉じられているソケットへの書き込みをアプリケーションが試行しました。|クライアントまたはサーバーがオーバーロードの状態になっています。 負荷を減らしてください。<br /><br /> <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> 設定を増やします。<br /><br /> Web サービス パフォーマンス設定の変更方法については、<https://support.microsoft.com/?id=821268> をご覧ください。|  
 |<xref:System.Net.WebExceptionStatus.MessageLengthLimitExceeded>|メッセージ長に設定された制限 (<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>) を超えています。|<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A> プロパティの値を増やします。|  
 |<xref:System.Net.WebExceptionStatus.ProxyNameResolutionFailure>|ドメイン ネーム サービスがプロキシ ホスト名を解決できませんでした。|プロキシを正しく構成します。 以下を参照してください。<https://support.microsoft.com/?id=318140><br /><br /> <xref:System.Net.HttpWebRequest.Proxy%2A> プロパティを `null` に設定し、プロキシを使用しないことを <xref:System.Net.HttpWebRequest> に適用します。|  
-|<xref:System.Net.WebExceptionStatus.ServerProtocolViolation>|サーバーからの応答が有効な HTTP 応答ではありません。 サーバー応答が HTTP 1.1 RFC に準拠しないことを .NET Framework が検出したとき、この問題が発生します。 応答に含まれるヘッダーまたはヘッダー区切り文字が正しくないとき、この問題が発生することがあります。RFC 2616 は HTTP 1.1 とサーバーからの応答の有効な形式を定義します。 詳細については、[Internet Engineering Task Force (IETF)](https://www.ietf.org/) の Web サイトの「[RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://go.microsoft.com/fwlink/?LinkID=147388)」をご覧ください。|トランザクションのネットワーク トレースを取得し、応答のヘッダーを調べます。<br /><br /> アプリケーションが解析せずに (セキュリティ上、これは問題になる可能性があります) サーバー応答を要求する場合、構成ファイルで `useUnsafeHeaderParsing` を `true` に設定します。 [\<httpWebRequest> 要素 (ネットワーク設定)](../configure-apps/file-schema/network/httpwebrequest-element-network-settings.md) を参照してください。|  
+|<xref:System.Net.WebExceptionStatus.ServerProtocolViolation>|サーバーからの応答が有効な HTTP 応答ではありません。 サーバー応答が HTTP 1.1 RFC に準拠しないことを .NET Framework が検出したとき、この問題が発生します。 応答に含まれるヘッダーまたはヘッダー区切り文字が正しくないとき、この問題が発生することがあります。RFC 2616 は HTTP 1.1 とサーバーからの応答の有効な形式を定義します。 詳細については、[Internet Engineering Task Force (IETF)](https://www.ietf.org/) の Web サイトの「[RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://tools.ietf.org/html/rfc2616)」をご覧ください。|トランザクションのネットワーク トレースを取得し、応答のヘッダーを調べます。<br /><br /> アプリケーションが解析せずに (セキュリティ上、これは問題になる可能性があります) サーバー応答を要求する場合、構成ファイルで `useUnsafeHeaderParsing` を `true` に設定します。 [\<httpWebRequest> 要素 (ネットワーク設定)](../configure-apps/file-schema/network/httpwebrequest-element-network-settings.md) を参照してください。|  
   
 ## <a name="see-also"></a>関連項目
 

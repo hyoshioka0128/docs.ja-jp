@@ -43,7 +43,7 @@ func init ProjectName --docker
 
 Azure functions は、特定の関数を対象とするイベントの割合に基づいて、需要に合わせて自動的にスケールします。 さらに、Kubernetes を利用して関数をホストし、Kubernetes ベースのイベントドリブン自動スケール (KEDA) を使用することもできます。 イベントが発生していない場合、KEDA は0インスタンスにスケールダウンでき、イベントに応答して、水平ポッドオートスケーラーを使用して要求を満たすためにコンテナーの数をスケールアップできます。 [詳細については、KEDA での Azure functions のスケーリングに関するページを参照して](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda)ください。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [Docker コンテナーで Azure Functions を実行する](https://markheath.net/post/azure-functions-docker)
 - [カスタムイメージを使用して Linux で関数を作成する](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image)

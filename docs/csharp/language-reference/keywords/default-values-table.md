@@ -6,12 +6,12 @@ ms.date: 07/29/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: d9889ce389eed73a9af0a3f72dcca6ec476cae15
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 2f1ad5cc029b93261153e46d854cd8bf3e31ce92
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796500"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74428528"
 ---
 # <a name="default-values-table-c-reference"></a>既定値の一覧表 (C# リファレンス)
 
@@ -23,10 +23,10 @@ ms.locfileid: "68796500"
 |任意の[組み込み整数数値型](../builtin-types/integral-numeric-types.md)|0 (ゼロ)|
 |任意の[組み込み浮動小数点数値型](../builtin-types/floating-point-numeric-types.md)|0 (ゼロ)|
 |[bool](bool.md)|`false`|
-|[char](char.md)|`'\0'` (U+0000)|
+|[char](../builtin-types/char.md)|`'\0'` (U+0000)|
 |[enum](enum.md)|式 `(E)0` によって生成される値。`E` は列挙型識別子です。|
 |[struct](struct.md)|すべての値型フィールドが既定値に設定され、すべての参照型フィールドが `null` に設定された値。|
-|任意の [null 許容値型](../../programming-guide/nullable-types/index.md)|<xref:System.Nullable%601.HasValue%2A> プロパティが `false` で、<xref:System.Nullable%601.Value%2A> プロパティが未定義のインスタンス。 その規定値は、null 許容値型の "*null*" 値とも呼ばれます。|
+|任意の [null 許容値型](../builtin-types/nullable-value-types.md)|<xref:System.Nullable%601.HasValue%2A> プロパティが `false` で、<xref:System.Nullable%601.Value%2A> プロパティが未定義のインスタンス。 その規定値は、null 許容値型の "*null*" 値とも呼ばれます。|
 
 次の例に示すように、型の既定値を生成するには [default 演算子](../operators/default.md)を使います。
 

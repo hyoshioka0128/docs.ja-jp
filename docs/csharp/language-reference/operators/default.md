@@ -5,12 +5,12 @@ description: 型の既定値を生成するには、default 演算子を使い�
 ms.date: 08/01/2019
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 5623cb9dc3790b5bb99635c41cb3f122f4c71d8e
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 6503e82a42f116a7ba8461ae060592377579f255
+ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796941"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73039047"
 ---
 # <a name="default-operator-c-reference"></a>default 演算子 (C# リファレンス)
 
@@ -27,9 +27,9 @@ ms.locfileid: "68796941"
 C# 7.1 以降では、`default` リテラルを使って、コンパイラが式の型を推論できる場合に、型の既定値を生成できます。 `default` リテラル式では、`T` が推定型である式 `default(T)` と同じ値が生成されます。 `default` リテラルは、次のいずれの場合でも使用できます。
 
 - 変数の代入または初期化。
-- 省略可能なメソッド パラメーターの既定値の宣言。
+- [省略可能なメソッド パラメーター](../../methods.md#optional-parameters-and-arguments)の既定値の宣言。
 - メソッド呼び出しでの引数値の指定。
-- `return` ステートメント内、または式のようなメンバー内の式として。
+- [`return` ステートメント](../keywords/return.md)内、または[式のようなメンバー](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)内の式として。
 
 `default` リテラルの使い方の例を次に示します。
 
@@ -46,3 +46,4 @@ C# 7.1 以降では、`default` リテラルを使って、コンパイラが式
 - [C# リファレンス](../index.md)
 - [C# 演算子](index.md)
 - [既定値の一覧表](../keywords/default-values-table.md)
+- [.NET のジェネリック](../../../standard/generics/index.md)

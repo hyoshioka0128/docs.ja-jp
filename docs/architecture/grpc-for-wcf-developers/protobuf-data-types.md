@@ -1,20 +1,19 @@
 ---
 title: Protobuf スカラーデータ型-gRPC (WCF 開発者向け)
 description: .NET Core の Protobuf と gRPC でサポートされている基本的なデータ型と既知のデータ型について説明します。
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: cae9cc483ffb791a9b53e6a2d9d7c0924d725a67
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: ae7f5f48099000dff0eefb36e23cb9b9f2ac517c
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841457"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971545"
 ---
 # <a name="protobuf-scalar-data-types"></a>Protobuf スカラー データ型
 
 Protobuf は、ネイティブスカラー値型の範囲をサポートしています。 次の表に、それらのすべてのC#型に対応する型を示します。
 
-| Protobuf 型 | C# 型      | ノート |
+| Protobuf 型 | C# 型      | 説明 |
 | ------------- | ------------ | ----- |
 | `double`      | `double`     |       |
 | `float`       | `float`      |       |
@@ -32,7 +31,7 @@ Protobuf は、ネイティブスカラー値型の範囲をサポートして�
 | `string`      | `string`     | 3     |
 | `bytes`       | `ByteString` | 4     |
 
-## <a name="notes"></a>ノート
+## <a name="notes"></a>説明
 
 1. `int32` および `int64` の標準エンコードは、署名された値を使用する場合には非効率的です。 フィールドに負の数値が含まれている可能性がある場合は、代わりに `sint32` または `sint64` を使用します。 両方の型はC# 、それぞれ `int` と `long` 型にマップされます。
 2. `fixed` のフィールドでは、値が何であるかにかかわらず、常に同じバイト数を使用します。 この動作により、シリアル化と逆シリアル化がより大きな値に対して高速化されます。
@@ -120,7 +119,7 @@ Protobuf は、生成されたメッセージプロパティに simple `T?` (`in
 
 既知の型 `Timestamp` と `Duration` は、クラスとして .NET で表現されるため、null 許容バージョンを必要としませんが `DateTimeOffset` または `TimeSpan`に変換するときに、これらの型のプロパティで null をチェックすることが重要です。
 
-## <a name="decimals"></a>数点
+## <a name="decimals"></a>10 進
 
 Protobuf は、.NET `decimal` 型をネイティブでサポートしていません。 `double` と `float`だけです。 Protobuf プロジェクトでは、標準 `Decimal` 型を既知の型に追加することができますが、それをサポートする言語とフレームワークはプラットフォームでサポートされていますが、まだ実装されていません。
 

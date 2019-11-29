@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 36254062835b9ab70ba470f6286b7515003dec11
-  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.openlocfilehash: 365cf0b2ef36dd0be624d022e3dea5e16a9eb58c
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2019
-  ms.locfileid: "70850797"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969406"
 items:
 - durationInMinutes: 1
   content: >
@@ -24,7 +24,7 @@ items:
 - title: 最初の C# プログラムの実行
   durationInMinutes: 2
   content: >
-    対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウで次のコード ブロックを入力し、**[実行]** をクリックします。
+    対話型ウィンドウで次のコードを実行します。 **[Enter focus mode]\(フォーカス モードを入力する\)** ボタンを選択します。 次に、対話型ウィンドウで次のコード ブロックを入力し、**[実行]** を選択します。
 
 
     ```csharp
@@ -96,7 +96,7 @@ items:
     ```
 
 
-    もう一度 **[実行]** をクリックして結果を確認します。
+    もう一度 **[実行]** を選択して結果を確認します。
 
 
     **変数**と**定数**の文字列から文字列を作成するには、`+` を使用していました。 もっと良い方法があります。
@@ -118,7 +118,7 @@ items:
     ```
 
 
-    もう一度 **[実行]** をクリックして結果を確認します。 メッセージは "Hello {aFriend}" ではなく、"Hello Maira" であるはずです。
+    もう一度 **[実行]** を選択して結果を確認します。 メッセージは "Hello {aFriend}" ではなく、"Hello Maira" であるはずです。
 
 
     > [!NOTE]
@@ -296,7 +296,7 @@ items:
 
     > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - content: >-
-    C# 概要の "Hello C#" チュートリアルはこれで終了です。 下の **C# における数値** リンクをクリックすることで次の対話式チュートリアルを開始することも、[.NET サイト](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)にアクセスして .NET Core SDK をダウンロードし、ご利用のコンピューター上でプロジェクトを作成し、コーディングを続けることもできます。 "次の手順" セクションでは、これらのチュートリアルに戻ります。
+    C# 概要の "Hello C#" チュートリアルはこれで終了です。 下の **[C# の数値]** リンクを選択することで次の対話式チュートリアルを開始することも、[.NET サイト](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)にアクセスして .NET Core SDK をダウンロードし、ご利用のマシン上でプロジェクトを作成し、コーディングを続けることもできます。 "次の手順" セクションでは、これらのチュートリアルに戻ります。
 
 
     `string` 型の詳細については次を参照してください。

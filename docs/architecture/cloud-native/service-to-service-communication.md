@@ -3,12 +3,12 @@ title: サービス間の通信
 description: バックエンドクラウドネイティブマイクロサービスが他のバックエンドマイクロサービスと通信する方法について説明します。
 author: robvet
 ms.date: 09/09/2019
-ms.openlocfilehash: 6a7e72491cb56d925e684b94109b1aaa98e24df3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a5124b8b83f62ff17b1230ead63db26e0c1f2a5b
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73842015"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74087597"
 ---
 # <a name="service-to-service-communication"></a>サービス間の通信
 
@@ -208,7 +208,7 @@ Event Grid は、完全に管理されたサーバーレスクラウドサービ
 
 ### <a name="streaming-messages-in-the-azure-cloud"></a>Azure クラウドでのメッセージのストリーミング
 
-Azure Service Bus と Event Grid は、新しいドキュメントのような単一の独立したイベントを公開するアプリケーションに対して、Cosmos DB に挿入された優れたサポートを提供します。 しかし、クラウドネイティブシステムで*関連イベントのストリーム*を処理する必要がある場合はどうでしょうか。 [イベントストリーム](https://msdn.microsoft.com/magazine/dn904671)はより複雑です。 通常は、時間順で相互関係があり、グループとして処理する必要があります。
+Azure Service Bus と Event Grid は、新しいドキュメントのような単一の独立したイベントを公開するアプリケーションに対して、Cosmos DB に挿入された優れたサポートを提供します。 しかし、クラウドネイティブシステムで*関連イベントのストリーム*を処理する必要がある場合はどうでしょうか。 [イベントストリーム](https://docs.microsoft.com/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems)はより複雑です。 通常は、時間順で相互関係があり、グループとして処理する必要があります。
 
 [Azure Event Hub](https://azure.microsoft.com/services/event-hubs/)は、イベントを収集、変換、および格納するデータストリーミングプラットフォームおよびイベントインジェストサービスです。 テレメトリコンテキストから生成された継続的なイベント通知など、ストリーミングデータをキャプチャするために微調整されています。 このサービスは、拡張性が高く、 [1 秒あたり何百万ものイベント](https://docs.microsoft.com/azure/event-hubs/event-hubs-about)を格納および処理できます。 図4-18 に示すように、多くの場合、イベントパイプラインのフロントドアとして、取り込みストリームをイベントの消費から切り離します。
 
@@ -220,7 +220,7 @@ Azure Service Bus と Event Grid は、新しいドキュメントのような�
 
 イベントハブでは、HTTPS や AMQP などの一般的なイベント発行プロトコルがサポートされています。 Kafka 1.0 もサポートしています。 [既存の kafka アプリケーションは](https://docs.microsoft.com/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview)、大規模な kafka クラスターを管理する代わりに、kafka プロトコルを使用して Event Hub と通信できます。 オープンソースのクラウドネイティブシステムの多くは、Kafka を採用しています。
 
-Event Hubs は、メッセージストリームの特定のサブセット (パーティション) のみを読み取る、パーティション分割された[コンシューマーモデル](https://docs.microsoft.com/azure/event-hubs/event-hubs-features)を介してメッセージストリーミングを実装します。 このパターンでは、イベント処理に対して非常に優れた水平スケールを実現し、キューやトピックで使用できないストリームに重点を置いたその他の機能を提供します。 パーティションは、イベントハブに保持される順序付けられた一連のイベントです。 新しいイベントが到着すると、このシーケンスの末尾に追加されます。 図4-19 は、イベントハブでのパーティション分割を示しています。
+Event Hubs は、メッセージストリームの特定のサブセット (パーティション) のみを読み取る、パーティション分割された[コンシューマーモデル](https://docs.microsoft.com/azure/event-hubs/event-hubs-features)を介してメッセージストリーミングを実装します。 このパターンでは、イベント処理の横の倍率を大きくすることができ、キューおよびトピックで使用できないその他のストリームに重点を置いた機能を提供します。 パーティションは、イベントハブに保持される順序付けられた一連のイベントです。 新しいイベントが到着すると、このシーケンスの末尾に追加されます。 図4-19 は、イベントハブでのパーティション分割を示しています。
 
 ![イベントハブのパーティション分割](./media/event-hub-partitioning.png)
 

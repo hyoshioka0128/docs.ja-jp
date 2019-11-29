@@ -1,15 +1,15 @@
 ---
-title: 方法:LINQ クエリと正規表現を組み合わせる (C#)
+title: LINQ クエリと正規表現を組み合わせる方法 (C#)
 ms.date: 07/20/2015
 ms.assetid: 6b003b65-20a4-4ca2-929e-2ee3f215aecc
-ms.openlocfilehash: 7e3540dfe6d93f5262790bce615cc7fe3f1fbb93
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 97551f7d9d8cf13f05449c2f825ed4d29eb3d86e
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594046"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141412"
 ---
-# <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>方法:LINQ クエリと正規表現を組み合わせる (C#)
+# <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>LINQ クエリと正規表現を組み合わせる方法 (C#)
 この例では、<xref:System.Text.RegularExpressions.Regex> クラスを使用して正規表現を作成し、テキスト文字列内の複雑な一致を取得する方法を示します。 LINQ クエリを使用すると、正規表現で検索する必要のあるファイルだけをフィルターで抽出したり、結果の形式を指定したりするのが簡単になります。  
   
 ## <a name="example"></a>例  

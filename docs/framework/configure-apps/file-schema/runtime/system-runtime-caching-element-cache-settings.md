@@ -18,7 +18,7 @@ ms.locfileid: "73115515"
 構成ファイル内の <xref:System.Runtime.Caching.ObjectCache> エントリを使用して既定のメモリ内の `memoryCache` の実装の構成を提供します。  
   
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;**\<system.runtime.caching>**  
+&nbsp;&nbsp; **\<system.runtime.caching>**  
   
 ## <a name="syntax"></a>構文  
   

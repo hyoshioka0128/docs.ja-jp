@@ -1,5 +1,5 @@
 ---
-title: 複合データ型 (Visual Basic)
+title: 複合データ型
 ms.date: 04/25/2017
 helpviewer_keywords:
 - classes [Visual Basic], composite data types
@@ -11,20 +11,20 @@ helpviewer_keywords:
 - classes [Visual Basic], composite types
 - types [Visual Basic], composite
 ms.assetid: 62970f2e-52c0-4369-8963-613820f1f434
-ms.openlocfilehash: 768559c7a6caf064f7529786675e51ce19667d6b
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 1c099c5082f1c4173a50c70998c99135c94821e6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581707"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346376"
 ---
 # <a name="composite-data-types-visual-basic"></a>複合データ型 (Visual Basic)
 Visual Basic の基本データ型に加えて、さまざまな型の項目をアセンブルして、構造体、配列、クラスなどの*複合データ型*を作成することもできます。 複合データ型は、基本型および他の複合型から構築できます。 たとえば、構造体要素の配列、または配列メンバーを持つ構造体を定義できます。  
   
-## <a name="data-types"></a>データの種類  
+## <a name="data-types"></a>データ型  
  複合型は、そのコンポーネントのデータ型とは異なります。 たとえば、`Integer` の要素の配列は、`Integer` データ型ではありません。  
   
- 通常、配列のデータ型は、要素の型、かっこ、およびコンマを使用して、必要に応じて表されます。 たとえば、`String` 要素の1次元配列は `String()` として表され、`Boolean` 要素の2次元配列は `Boolean(,)` として表されます。  
+ 通常、配列のデータ型は、要素の型、かっこ、およびコンマを使用して、必要に応じて表されます。 たとえば、`String` 要素の1次元配列は `String()`として表され、`Boolean` 要素の2次元配列は `Boolean(,)`として表されます。  
   
 ## <a name="structure-types"></a>構造体の型  
  すべての構造体を構成する1つのデータ型はありません。 2つの構造体が同じ順序で同じ要素を定義している場合でも、構造体の各定義は一意のデータ型を表します。 ただし、同じ構造体の複数のインスタンスを作成した場合、Visual Basic はそれらを同じデータ型であると見なします。  
@@ -42,7 +42,7 @@ Visual Basic の基本データ型に加えて、さまざまな型の項目を�
   
 - 配列の要素型。  
   
- 特に、特定のディメンションの長さは、インスタンスのデータ型の一部ではありません。 次に例を示します。  
+ 特に、特定のディメンションの長さは、インスタンスのデータ型の一部ではありません。 これを次の例に示します。  
   
 ```vb  
 Dim arrayA( ) As Byte = New Byte(12) {}  
@@ -52,7 +52,7 @@ Dim arrayD( , ) As Short
 Dim arrayE( , ) As Short = New Short(4, 10) {}  
 ```  
   
- 前の例では、配列変数 `arrayA` と `arrayB` は、異なる長さに初期化されている場合でも、同じデータ型 (`Byte()`) と見なされます。 @No__t_0 と `arrayC` の変数は、要素の型が異なるため、同じ型ではありません。 @No__t_0 と `arrayD` の変数は、ランクが異なるため、同じ型ではありません。 @No__t_3 がまだ初期化されていない場合でも、`arrayD` と `arrayE` 変数は同じ型 (`Short(,)`) を持ちます。  
+ 前の例では、配列変数 `arrayA` と `arrayB` は、異なる長さに初期化されている場合でも、同じデータ型 (`Byte()`) と見なされます。 `arrayB` と `arrayC` の変数は、要素の型が異なるため、同じ型ではありません。 `arrayC` と `arrayD` の変数は、ランクが異なるため、同じ型ではありません。 `arrayD` がまだ初期化されていない場合でも、`arrayD` と `arrayE` 変数は同じ型 (`Short(,)`) を持ちます。  
   
  配列の詳細については、「[配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)」を参照してください。  
   
@@ -61,11 +61,11 @@ Dim arrayE( , ) As Short = New Short(4, 10) {}
   
  クラスの詳細については、「[オブジェクトとクラス](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [データの種類](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [基本データ型](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
-- [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Visual Basic におけるジェネリック型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
 - [Visual Basic での型変換](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [構造体](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)

@@ -2,12 +2,12 @@
 title: サーキット ブレーカー パターンの実装
 description: サーキット ブレーカー パターンを HTTP 再試行の補助システムとして実装する方法について説明します。
 ms.date: 10/16/2018
-ms.openlocfilehash: a1a24094ae98d8c767ccf692fe8ded6e28d47854
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 00ca39b4b6fac37ff60adf128c3f4e22c5fc14e2
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094116"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73732825"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>サーキット ブレーカー パターンを実装する
 
@@ -94,7 +94,7 @@ Docker ホスト内で eShopOnContainers ソリューションを起動する場
 
 その後、図 8-5 に示されているように、URI `http://localhost:5103/failing` を使用して状態を確認できます。
 
-![FailingMiddleware シミュレーションの状態を検査した結果がブラウザーに表示されています。](./media/image4.png)
+![失敗したミドルウェアのシミュレーションの状態を確認するスクリーンショット。](./media/implement-circuit-breaker-pattern/failing-middleware-simulation.png)
 
 **図 8-5** "failing" ASP.NET ミドルウェアの状態を確認している。この場合は無効。
 
@@ -134,7 +134,7 @@ public class CartController : Controller
 
 まとめます。 再試行ポリシーは、HTTP 要求の実行を数回試行し、HTTP エラーが発生します。 再試行回数がサーキット ブレーカー ポリシーに設定された最大回数に達すると (この場合は 5 回)、アプリケーションは BrokenCircuitException をスローします。 結果として、図 8-6 に示されているようなメッセージが表示されます。
 
-![ブラウザーに MVC Web アプリが表示されており、サーキット ブレーカー ポリシーによってトリガーされた [basket service inoperative]\(バスケット サービスが動作していません\) というメッセージが示されています。](./media/image5.png)
+![バスケット サービスが機能しないというエラーを含む MVC Web アプリのスクリーンショット。](./media/implement-circuit-breaker-pattern/basket-service-inoperative.png)
 
 **図 8-6** サーキット ブレーカーが UI にエラーを返している
 

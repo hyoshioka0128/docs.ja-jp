@@ -1,14 +1,13 @@
 ---
 title: Protobuf 入れ子になった型-gRPC (WCF 開発者向け)
 description: Protobuf と gRPC での入れ子になったメッセージの種類、およびでC#の生成方法について説明します。
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: ec9fc522619230c1201bfef1e8128f7356936212
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: bbc7ed41516d29f867bbc9da5b258f6a3c9ff261
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841403"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967398"
 ---
 # <a name="protobuf-nested-types"></a>Protobuf 入れ子型
 

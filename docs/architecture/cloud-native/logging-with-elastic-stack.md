@@ -96,7 +96,7 @@ output {
 
 もう1つのオプションは、最近発表された[サービスとしての ELK オファリング](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/)です。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [エラスティックスタックを Azure にインストールする](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 

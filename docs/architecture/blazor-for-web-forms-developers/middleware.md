@@ -21,7 +21,7 @@ ASP.NET Core アプリは一連のミドルウェアに基づいて構築され�
 
 ASP.NET Core 要求パイプラインは、順番に呼び出される一連の要求デリゲートで構成されています。 次の図は、その概念を示しています。 実行のスレッドは黒い矢印をたどります。
 
-![商談](media/middleware/request-delegate-pipeline.png)
+![パイプライン](media/middleware/request-delegate-pipeline.png)
 
 上の図には、ライフサイクルイベントの概念がありません。 この概念は、ASP.NET Web フォーム要求がどのように処理されるかについての基礎となります。 このシステムにより、どのようなプロセスが発生しているかがわかりやすくなり、ミドルウェアをいつでも挿入できるようになります。 ミドルウェアは、要求パイプラインに追加された順序で実行されます。 また、構成ファイルではなくコードに追加されています (通常は*Startup.cs*)。
 
@@ -35,7 +35,7 @@ ASP.NET 4.x には多数のモジュールが含まれています。 同様に�
 
 次の表に、ASP.NET Core の代替ミドルウェアとコンポーネントの一覧を示します。
 
-|Module                 |ASP.NET 4.x モジュール           |ASP.NET Core オプション|
+|モジュール                 |ASP.NET 4.x モジュール           |ASP.NET Core オプション|
 |-----------------------|-----------------------------|-------------------|
 |HTTP エラー            |`CustomErrorModule`          |[状態コード ページ ミドルウェア](/aspnet/core/fundamentals/error-handling#usestatuscodepages)|
 |既定のドキュメント       |`DefaultDocumentModule`      |[既定のファイル ミドルウェア](/aspnet/core/fundamentals/static-files#serve-a-default-document)|
@@ -45,11 +45,11 @@ ASP.NET 4.x には多数のモジュールが含まれています。 同様に�
 |ファイルのキャッシュ           |`FileCacheModule`            |[応答キャッシュ ミドルウェア](/aspnet/core/performance/caching/middleware)|
 |HTTP キャッシュ           |`HttpCacheModule`            |[応答キャッシュ ミドルウェア](/aspnet/core/performance/caching/middleware)|
 |HTTP ログ           |`HttpLoggingModule`          |[ASP.NET Core のログ](/aspnet/core/fundamentals/logging/index)|
-|HTTP リダイレクト       |`HttpRedirectionModule`      |[ミドルウェアの URL リライト](/aspnet/core/fundamentals/url-rewriting)|
+|HTTP リダイレクト       |`HttpRedirectionModule`      |[URL リライト ミドルウェア](/aspnet/core/fundamentals/url-rewriting)|
 |ISAPI フィルター          |`IsapiFilterModule`          |[ミドルウェア](/aspnet/core/fundamentals/middleware/index)|
 |ISAPI                  |`IsapiModule`                |[ミドルウェア](/aspnet/core/fundamentals/middleware/index)|
 |要求のフィルター処理      |`RequestFilteringModule`     |[URL リライトミドルウェア IRule](/aspnet/core/fundamentals/url-rewriting#irule-based-rule)|
-|URL の書き換え&#8224;   |`RewriteModule`              |[ミドルウェアの URL リライト](/aspnet/core/fundamentals/url-rewriting)|
+|URL の書き換え&#8224;   |`RewriteModule`              |[URL リライト ミドルウェア](/aspnet/core/fundamentals/url-rewriting)|
 |静的な圧縮     |`StaticCompressionModule`    |[応答圧縮ミドルウェア](/aspnet/core/performance/response-compression)|
 |静的コンテンツ         |`StaticFileModule`           |[静的ファイル ミドルウェア](/aspnet/core/fundamentals/static-files)|
 |URL 承認      |`UrlAuthorizationModule`     |[ASP.NET Core ID](/aspnet/core/security/authentication/identity)|

@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: f43cd61fbcb3c1c872961476449822c574f76cff
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: b55b2f9266477a0bb12c39840c9f2108a5c0f0c4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835280"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283916"
 ---
 # <a name="net-architectural-components"></a>.NET アーキテクチャ コンポーネント
 
@@ -110,6 +110,6 @@ C# 言語および共通言語基盤 (CLI) の仕様は、[Ecma International®]
 - [.NET Standard](net-standard.md)
 - [.NET Core のガイド](../core/index.md)
 - [.NET Framework ガイド](../framework/index.md)
-- [C# のガイド](../csharp/index.md)
+- [C# のガイド](../csharp/index.yml)
 - [F# のガイド](../fsharp/index.md)
 - [VB.NET ガイド](../visual-basic/index.md)

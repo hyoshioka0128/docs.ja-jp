@@ -1,14 +1,13 @@
 ---
 title: Protobuf の予約済みフィールド-WCF 開発者向け gRPC
 description: バージョン間の互換性のために予約されているフィールドについて説明します。
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 34697371299bdc5d9a58c0696c1ce7d19816ca87
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: e589cd38a712ce014fa2c4d847fbde359d538dd0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841391"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967314"
 ---
 # <a name="protobuf-reserved-fields"></a>Protobuf 予約フィールド
 

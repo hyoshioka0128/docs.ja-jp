@@ -1,15 +1,15 @@
 ---
 title: WCF Web Service Reference を追加する
 description: .NET Framework プロジェクトのサービス参照の追加と同様に、.NET Core プロジェクトと ASP.NET Core プロジェクトの機能を追加する Microsoft WCF Web Service Reference Provider Tool の概要。
-author: mlacouture
-ms.date: 04/19/2018
+author: dasetser
+ms.date: 10/29/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 28eaae4a83d918f8a9e5376eb3c8d42843ffa027
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: feecf374e1af48f349495c13ea91b810c6b0a1c3
+ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773960"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73191901"
 ---
 # <a name="use-the-wcf-web-service-reference-provider-tool"></a>WCF Web Service Reference Provider ツールを使用する
 
@@ -76,12 +76,16 @@ ms.locfileid: "72773960"
 
 これらのプロセスが完了すると、生成された WCF クライアントの種類のインスタンスを作成し、サービス操作を呼び出すことができます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="see-also"></a>関連項目
 
-### <a name="feedback--questions"></a>フィードバックと質問
+- [Windows Communication Foundation アプリケーション入門](../../framework/wcf/getting-started-tutorial.md)
+- [Visual Studio での Windows Communication Foundation サービスと WCF データ サービス](/visualstudio/data-tools/windows-communication-foundation-services-and-wcf-data-services-in-visual-studio)
+- [WCF supported features on .NET Core](https://github.com/dotnet/wcf/blob/master/release-notes/SupportedFeatures-v2.1.0.md) (.NET Core でサポートされる WCF の機能)
 
-質問やフィードバックがありましたら、[GitHub で問題を提起してください](https://github.com/dotnet/wcf/issues/new)。 [GitHub の WCF リポジトリ](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling)で既存の質問や問題を確認することもできます。
+## <a name="feedback--questions"></a>フィードバックと質問
 
-### <a name="release-notes"></a>リリース ノート
+ご不明な点またはフィードバックについては、[Developer Community](https://developercommunity.visualstudio.com/) で[問題の報告](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) ツールを使用して報告してください。
+
+## <a name="release-notes"></a>リリース ノート
 
 - 既知の問題を含む最新のリリース情報については、[リリース ノート](https://github.com/dotnet/wcf/blob/master/release-notes/WCF-Web-Service-Reference-notes.md)のページを参照してください。

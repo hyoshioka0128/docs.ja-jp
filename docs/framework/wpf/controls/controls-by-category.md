@@ -14,7 +14,7 @@ ms.locfileid: "72005694"
 # <a name="controls-by-category"></a>カテゴリ別のコントロール
 Windows Presentation Foundation (WPF) コントロールは、複数のカテゴリに論理的にグループ化できます。 これらのカテゴリを使用すると、類似の使用パターンや機能を持つコントロールを見つけやすくなり、シナリオに適したコントロールを選択できます。  
   
-## <a name="layout"></a>レイアウト  
+## <a name="layout"></a>[レイアウト]  
  レイアウト コントロールを使用して、子要素のサイズ、ディメンション、位置、および配置を制御します。  
   
 - <xref:System.Windows.Controls.Border>  
@@ -56,7 +56,7 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
 - <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="buttons"></a>ボタン  
- ボタンは、最も基本的なユーザー インターフェイス コントロールの 1 つです。 通常、アプリケーションは、ユーザーがクリックしたときに @no__t 0 イベントでいくつかのタスクを実行します。  
+ ボタンは、最も基本的なユーザー インターフェイス コントロールの 1 つです。 通常、アプリケーションは、ユーザーがクリックしたときに、<xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントの一部のタスクを実行します。  
   
 - <xref:System.Windows.Controls.Button>  
   
@@ -87,7 +87,7 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
   
 - <xref:System.Windows.Controls.ToolBar>  
   
-## <a name="selection"></a>選択  
+## <a name="selection"></a>選択内容  
  選択コントロールを使用すると、ユーザーは 1 つ以上のオプションを選択できます。  
   
 - <xref:System.Windows.Controls.CheckBox>  
@@ -139,7 +139,7 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
   
 - <xref:System.Windows.Controls.ToolTip>  
   
-## <a name="documents"></a>Documents  
+## <a name="documents"></a>ドキュメント  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] には、ドキュメントの表示に特化したコントロールがいくつかあります。 これらのコントロールは、対象となるユーザーのシナリオに応じて、読みやすさを最適化します。  
   
 - <xref:System.Windows.Controls.DocumentViewer>  
@@ -177,6 +177,6 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
   
 - <xref:System.Windows.Controls.InkPresenter>  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [コントロール ライブラリ](control-library.md)

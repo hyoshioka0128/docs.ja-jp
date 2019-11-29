@@ -9,38 +9,27 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library
 ms.assetid: 643575d0-d26d-4c35-8de7-a9c403e97dd6
-ms.openlocfilehash: 7f5969bc6f73b2260ae1ffa4b0026d5b4119ff88
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6c589e85a0bbfb3f0b5858698ffb2a294ff88cf2
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134272"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973777"
 ---
 # <a name="dataflow-task-parallel-library"></a>データフロー (タスク並列ライブラリ)
-<a name="top"></a> タスク並列ライブラリ (TPL) はデータ フロー コンポーネントを提供し、コンカレンシー対応アプリケーションの堅牢性を強化します。 これらのデータ フロー コンポーネントは *TPL データ フロー ライブラリ*と総称されます。 データ フロー モデルは、粒度の粗いデータ フローおよびパイプライン処理タスクのためのインプロセス メッセージ パッシングを提供し、アクター ベースのプログラミング モデルを推進します。 データ フロー コンポーネントは、TPL の種類とスケジュール インフラストラクチャの上でビルドされ、非同期プログラミングをサポートするために C#、Visual Basic、および F# 言語と統合されています。 相互に非同期通信を行う必要がある複数の操作を行う場合、またはデータが使用可能になったときにデータを処理する場合に、これらのデータ フロー コンポーネントは役立ちます。 たとえば、Web カメラからのイメージ データを処理するアプリケーションを考えてみます。 データ フロー モデルを使用すると、イメージ フレームが使用可能になったときに、それをアプリケーションで処理できます。 たとえば、アプリケーションが輝度修正や赤目補正などを実行してイメージ フレームを向上させる場合、データ フロー コンポーネントの*パイプライン*を作成できます。 パイプラインの各ステージは、イメージを変換するために、TPL が提供する機能のような、粒度の粗い並列機能を使用する場合があります。  
+タスク並列ライブラリ (TPL) で提供されるデータ フロー コンポーネントは、コンカレンシー対応アプリケーションの堅牢性の強化に役立てることができます。 これらのデータ フロー コンポーネントは *TPL データ フロー ライブラリ*と総称されます。 データ フロー モデルは、粒度の粗いデータ フローおよびパイプライン処理タスクのためのインプロセス メッセージ パッシングを提供し、アクター ベースのプログラミング モデルを推進します。 データ フロー コンポーネントは、TPL の種類とスケジュール インフラストラクチャの上でビルドされ、非同期プログラミングをサポートするために C#、Visual Basic、および F# 言語と統合されています。 相互に非同期通信を行う必要がある複数の操作を行う場合、またはデータが使用可能になったときにデータを処理する場合に、これらのデータ フロー コンポーネントは役立ちます。 たとえば、Web カメラからのイメージ データを処理するアプリケーションを考えてみます。 データ フロー モデルを使用すると、イメージ フレームが使用可能になったときに、それをアプリケーションで処理できます。 たとえば、アプリケーションが輝度修正や赤目補正などを実行してイメージ フレームを向上させる場合、データ フロー コンポーネントの*パイプライン*を作成できます。 パイプラインの各ステージは、イメージを変換するために、TPL が提供する機能のような、粒度の粗い並列機能を使用する場合があります。  
   
  ここでは、TPL データ フロー ライブラリの概要を示します。 プログラミング モデル、定義済みのデータ フロー ブロックの型、およびアプリケーションの特定の要件を満たすためのデータ フロー ブロックの構成方法を説明します。  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
-  
- このドキュメントは、次のトピックに分かれています。  
-  
-- [プログラミング モデル](#model)  
-  
-- [定義済みのデータ フロー ブロックの型](#predefined_types)  
-  
-- [データ フロー ブロックの動作を構成する](#behavior)  
-  
-- [カスタム データ フロー ブロック](#custom)  
-  
-<a name="model"></a>   
-## <a name="programming-model"></a>プログラミング モデル  
+
+## <a name="programming-model"></a>プログラミング モデル
  TPL データ フロー ライブラリはメッセージ パッシングおよび、並列化され、CPU 負荷が高く、I/O 負荷が高く、スループットが高く、待機時間が短いアプリケーションのための基盤を提供します。 また、システム上でのデータのバッファリング方法や移動について、明示的に制御できます。 データ フロー プログラミング モデルの理解を深めるため、非同期的にディスクからイメージを読み込み、それらの合成イメージを作成するアプリケーションを考えてみます。 従来のプログラミング モデルでは、通常、タスクを協調させ、共有データにアクセスするには、コールバックおよびロックなどの同期オブジェクトを使用する必要があります。 データ フロー プログラミング モデルを使用すると、イメージがディスクから読み込まれたときにそれを処理する、データ フロー オブジェクトを作成できます。 データ フロー モデルでは、データが使用可能になったときの処理方法と、データ間の依存関係を宣言します。 ランタイムがデータ間の依存関係を管理するため、通常は共有データへのアクセスの同期要件を回避できます。 さらに、ランタイムのスケジュールは非同期のデータの到着に基づいて動作するため、基になるスレッドを効率的に管理することによって、データ フローの応答性とスループットが向上します。 Windows フォーム アプリケーションでイメージ処理を実装するためにデータフロー プログラミング モデルを使う例については、「[チュートリアル:Windows フォーム アプリケーションでのデータフローの使用](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md)」を参照してください。  
   
 ### <a name="sources-and-targets"></a>ソースとターゲット  
  TPL データ フロー ライブラリは、データのバッファリングと処理を行うデータ構造体である*データ フロー ブロック*で構成されます。 TPL は*ソース ブロック*、*ターゲット ブロック*、および*伝達子ブロック*の 3 種類のデータ フロー ブロックを定義します。 ソース ブロックはデータのソースとして機能し、それを読み取ることができます。 ターゲット ブロックはデータのレシーバーとして機能し、それに書き込むことができます。 伝達子ブロックは、ソース ブロックとターゲット ブロックのどちらとしても機能し、読み取りも書き込みもできます。 TPL は <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601?displayProperty=nameWithType> インターフェイスを定義してソースを表し、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601?displayProperty=nameWithType> によってターゲットを表し、<xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602?displayProperty=nameWithType> によって伝達子を表します。 <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602> は、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> と <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> の両方から継承します。  
   
- TPL データ フロー ライブラリは、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>、および <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602> のインターフェイスを実装する、複数の定義済みのデータ フロー ブロックの型を提供します。 これらのデータ フロー ブロックの型については、このドキュメントの「[定義済みのデータ フロー ブロックの型](#predefined_types)」のセクションで説明します。  
+ TPL データ フロー ライブラリは、<xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>、<xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>、および <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602> のインターフェイスを実装する、複数の定義済みのデータ フロー ブロックの型を提供します。 これらのデータ フロー ブロックの型については、このドキュメントの「[定義済みのデータ フロー ブロックの型](#predefined-dataflow-block-types)」のセクションで説明します。  
   
 ### <a name="connecting-blocks"></a>ブロックの接続  
  データ フロー ブロックを接続して、データ フロー ブロックのリニア シーケンスである*パイプライン*を作成するか、またはデータ フロー ブロックのグラフである*ネットワーク*を作成できます。 パイプラインは、ネットワークの 1 つの形態です。 パイプラインまたはネットワークでは、データが使用可能になると、ソースはターゲットに非同期的にデータを伝達します。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A?displayProperty=nameWithType> メソッドは、ターゲット ブロックにソースのデータ フロー ブロックをリンクします。 ソースは、ターゲットにリンクしないか、または複数のターゲットにリンクできます。ターゲットはソースからリンクされないか、または複数のソースからリンクできます。 パイプラインまたはネットワークとの間でデータ フロー ブロックを同時に追加または削除できます。 定義済みのデータ フロー ブロックの型は、リンクとリンク解除のすべてのスレッド セーフな側面を処理します。  
@@ -78,10 +67,7 @@ ms.locfileid: "73134272"
  [!code-vb[TPLDataflow_Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#11)]  
   
  また、継続タスクの本体で <xref:System.Threading.Tasks.Task.IsCanceled%2A> などのプロパティを使用して、データ フロー ブロックの完了ステータスに関する追加情報を決定することもできます。 継続タスク、および継続タスクと取り消し処理やエラー処理との関連の詳細については、「[継続タスクを使用したタスクの連結](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)」、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」、および[例外処理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)に関するページを参照してください。  
-  
- [[ページのトップへ](#top)]  
-  
-<a name="predefined_types"></a>   
+
 ## <a name="predefined-dataflow-block-types"></a>定義済みのデータ フロー ブロックの型  
  TPL データ フロー ライブラリは、いくつかの定義済みのデータ フロー ブロックの型を提供します。 これらの型は、*バッファリング ブロック*、*実行ブロック*、*グループ化ブロック*の 3 種類に分けられます。 次のセクションでは、これらの種類を構成するブロックの型について説明します。  
   
@@ -201,10 +187,7 @@ ms.locfileid: "73134272"
  [!code-vb[TPLDataflow_Overview#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#9)]  
   
  <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> を使って、プログラムがデータベースを読み取る間にその結果と発生する例外の両方をキャプチャする詳しい例については、「[チュートリアル:BatchBlock および BatchedJoinBlock を使用した効率の向上](../../../docs/standard/parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md)」を参照してください。  
-  
- [[ページのトップへ](#top)]  
-  
-<a name="behavior"></a>   
+
 ## <a name="configuring-dataflow--block-behavior"></a>データフロー ブロックの動作を構成する  
  データ フロー ブロックの型のコンストラクターに <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions?displayProperty=nameWithType> のオブジェクトを提供することによって、追加のオプションを有効にできます。 これらのオプションは、基になるタスクと並列化の次数を管理するスケジューラなどの動作を制御します。 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions> には、特定のデータ フロー ブロックの型に固有の動作を指定する派生型があります。 各データ フロー ブロックの型に関連付けられているオプション型の概要を次の表に示します。  
   
@@ -254,16 +237,11 @@ ms.locfileid: "73134272"
   
  <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> などの結合ブロックでは、最長一致モードは、対応する結合データが使用できない場合でも、ブロックが直ちにデータを受け入れることを意味します。 最短一致モードは、ターゲットのそれぞれで結合が完了できるように使用可能になるまで、ブロックがすべての受信メッセージを延期することを意味します。 延期されたメッセージのいずれかが使用できなくなった場合、結合ブロックは延期されたすべてのメッセージを解放し、プロセスを再起動します。 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> クラスにおいては、最長一致と最短一致の動作は似ていますが、最短一致の場合には、バッチを完了するために十分なメッセージを別のソースから使用できるようになるまで <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> オブジェクトがすべての受信メッセージを延期する点が異なります。  
   
- データ フロー ブロックに最短一致モードを指定するには、<xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> を `False` に設定します。 最短一致モードを使い、複数の結合ブロックを有効にして、データ ソースをより効率的に共有する例については、「[方法:JoinBlock を使用して複数のソースからデータを読み込む](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md)」を参照してください。  
-  
- [[ページのトップへ](#top)]  
-  
-<a name="custom"></a>   
+ データ フロー ブロックに最短一致モードを指定するには、<xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> を `False` に設定します。 最短一致モードを使い、複数の結合ブロックを有効にして、データ ソースをより効率的に共有する例については、「[方法:JoinBlock を使用して複数のソースからデータを読み込む](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md)」を参照してください。
+
 ## <a name="custom-dataflow-blocks"></a>カスタム データ フロー ブロック  
- TPL データ フロー ライブラリは多くの定義済みブロックの型を提供しますが、カスタム動作を実行する追加のブロックの型を作成できます。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> または <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> インターフェイスを直接実装するか、または <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate%2A> メソッドを使用して、既存のブロックの型の動作をカプセル化する複雑なブロックをビルドします。 カスタム データフロー ブロック機能の実装方法を示した例については、「[チュートリアル:カスタム データフロー ブロックの型の作成](../../../docs/standard/parallel-programming/walkthrough-creating-a-custom-dataflow-block-type.md)」を参照してください。  
-  
- [[ページのトップへ](#top)]  
-  
+ TPL データ フロー ライブラリは多くの定義済みブロックの型を提供しますが、カスタム動作を実行する追加のブロックの型を作成できます。 <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> または <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> インターフェイスを直接実装するか、または <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate%2A> メソッドを使用して、既存のブロックの型の動作をカプセル化する複雑なブロックをビルドします。 カスタム データフロー ブロック機能の実装方法を示した例については、「[チュートリアル:カスタム データフロー ブロックの型の作成](../../../docs/standard/parallel-programming/walkthrough-creating-a-custom-dataflow-block-type.md)」を参照してください。
+
 ## <a name="related-topics"></a>関連トピック  
   
 |Title|説明|  

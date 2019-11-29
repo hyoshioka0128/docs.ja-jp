@@ -1,17 +1,17 @@
 ---
-title: Function 式 (Visual Basic)
+title: Function 式
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Function expression [Visual Basic]
 - functions [Visual Basic], function expressions
 - lambda expressions [Visual Basic], function expression
 ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
-ms.openlocfilehash: 0ab4a77395b478df06f34240212438f3e6e18f6e
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: d14d7c9bc701b5e06c51202c07c3b79832aba7cc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71592204"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74331078"
 ---
 # <a name="function-expression-visual-basic"></a>Function 式 (Visual Basic)
 関数ラムダ式を定義するパラメーターとコードを宣言します。  
@@ -28,23 +28,23 @@ End Function
   
 ## <a name="parts"></a>指定項目  
   
-|項目|定義|  
+|用語|Definition|  
 |---|---|  
-|`parameterlist`|任意。 このプロシージャのパラメーターを表すローカル変数名の一覧です。 リストが空の場合でも、かっこは存在する必要があります。 「[パラメーターリスト](../../../visual-basic/language-reference/statements/parameter-list.md)」を参照してください。|  
+|`parameterlist`|省略可。 このプロシージャのパラメーターを表すローカル変数名の一覧です。 リストが空の場合でも、かっこは存在する必要があります。 「[パラメーターリスト](../../../visual-basic/language-reference/statements/parameter-list.md)」を参照してください。|  
 |`expression`|必須。 1つの式。 式の型は、関数の戻り値の型です。|  
-|`statements`|必須。 @No__t-0 ステートメントを使用して値を返すステートメントの一覧。 ( [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)を参照してください)。返される値の型は、関数の戻り値の型です。|  
+|`statements`|必須。 `Return` ステートメントを使用して値を返すステートメントの一覧。 ( [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)を参照してください)。返される値の型は、関数の戻り値の型です。|  
   
 ## <a name="remarks"></a>コメント  
- *ラムダ式*は、値を計算して返す名前のない関数です。 ラムダ式は、デリゲート型を使用できる場所であればどこでも使用できます。ただし、`RemoveHandler` の引数として使用することはできません。 デリゲートの詳細と、デリゲートでのラムダ式の使用については、「[デリゲートステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)」および「厳密でない[デリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)」を参照してください。  
+ *ラムダ式*は、値を計算して返す名前のない関数です。 ラムダ式は、デリゲート型を使用できる場所であればどこでも使用できます。ただし、`RemoveHandler`の引数として使用することはできません。 デリゲートの詳細と、デリゲートでのラムダ式の使用については、「[デリゲートステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)」および「厳密でない[デリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)」を参照してください。  
   
 ## <a name="lambda-expression-syntax"></a>ラムダ式の構文  
- ラムダ式の構文は、標準関数の構文に似ています。 違いは次のとおりです。  
+ ラムダ式の構文は、標準関数の構文に似ています。 相違点は、次のとおりです。  
   
 - ラムダ式に名前がありません。  
   
-- ラムダ式には、`Overloads` や `Overrides` などの修飾子を含めることはできません。  
+- ラムダ式には、`Overloads` や `Overrides`などの修飾子を含めることはできません。  
   
-- ラムダ式では、関数の戻り値の型を指定するために `As` 句を使用しません。 代わりに、型は、単一行のラムダ式の結果が評価される値、または複数行ラムダ式の戻り値から推論されます。 たとえば、単一行のラムダ式の本体が `Where cust.City = "London"` の場合、その戻り値の型は `Boolean` になります。  
+- ラムダ式では、関数の戻り値の型を指定するために `As` 句を使用しません。 代わりに、型は、単一行のラムダ式の結果が評価される値、または複数行ラムダ式の戻り値から推論されます。 たとえば、単一行のラムダ式の本体が `Where cust.City = "London"`場合、その戻り値の型は `Boolean`になります。  
   
 - 単一行のラムダ式の本体は、ステートメントではなく、式である必要があります。 本文は、関数プロシージャの呼び出しで構成できますが、サブプロシージャの呼び出しでは使用できません。  
   
@@ -72,7 +72,7 @@ End Function
  [!code-vb[VbVbalrLambdas#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>例  
- ラムダ式は @no__t 0 のクエリ演算子の多くを基にしており、メソッドベースのクエリで明示的に使用することができます。 次の例は、一般的な @no__t 0 クエリの後に、クエリをメソッド形式に変換したものを示しています。  
+ ラムダ式は [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]内のクエリ演算子の多くを基にしており、メソッドベースのクエリで明示的に使用することができます。 次の例では、一般的な [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリを示し、その後にクエリをメソッド形式に変換します。  
   
 ```vb  
 Dim londonCusts = From cust In db.Customers  
@@ -87,7 +87,7 @@ Dim londonCusts = db.Customers.
   
  クエリメソッドの詳細については、「[クエリ](../../../visual-basic/language-reference/queries/index.md)」を参照してください。 標準クエリ演算子の詳細については、「[標準クエリ演算子の概要](../../programming-guide/concepts/linq/standard-query-operators-overview.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)
 - [ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)

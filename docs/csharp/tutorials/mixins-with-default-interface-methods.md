@@ -3,14 +3,14 @@ title: 既定のインターフェイス メソッドを使用して mixin 型�
 description: 既定のインターフェイス メンバーを使用すると、実装のためにオプションの既定の実装を使用してインターフェイスを拡張できます。
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: 798413f0071159893de39f3e190a9b2693571bb7
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fb8fc1f432bdf909bae4f54bb76d10d7619f71a3
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039271"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140846"
 ---
-# <a name="tutorial-mix-in-functionality-when-creating-classes-using-interfaces-with-default-interface-methods"></a>チュートリアル: 既定のインターフェイス メソッドでインターフェイスを使用してクラスを作成するときの機能の混合
+# <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>チュートリアル: 既定のインターフェイス メソッドでインターフェイスを使用してクラスを作成するときの機能の混合
 
 .NET Core 3.0 上の C# 8.0 以降では、インターフェイスのメンバーを宣言するときに実装を定義できます。 この機能により、インターフェイスで宣言された機能の既定の実装を定義できるという新機能が提供されます。 クラスでは、機能をオーバーライドする場合、既定の機能を使用する場合、および個別の機能のサポートを宣言しない場合を選択できます。
 

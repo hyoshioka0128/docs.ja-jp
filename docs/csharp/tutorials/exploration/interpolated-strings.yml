@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: c3c4927a4afbf69f2101aa2596389e6f94cea243
-  ms.sourcegitcommit: 4aeac5d588ded58246f58030919e56b70a7674e4
+  ms.openlocfilehash: bc2d600afabbac9783e8fb12e3bd47e83a3495b7
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 10/27/2019
-  ms.locfileid: "72966979"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969443"
 items:
 - durationInMinutes: 2
   content: >
@@ -22,7 +22,7 @@ items:
 - title: 挿入文字列を作成する
   durationInMinutes: 2
   content: >
-    対話型ウィンドウで次のコードを実行します。 そのためには、対話型ウィンドウでこのコードを入力し ("`<name>`" を自分の名前に置き換えて)、**[実行]** を選択します。
+    対話型ウィンドウで次のコードを実行します。 **[Enter focus mode]\(フォーカス モードを入力する\)** ボタンを選択します。 次に、対話型ウィンドウで次のコード ブロックを入力し (`<name>` を自分の名前に置き換えて)、**[実行]** を選択します。
 
 
     ```csharp

@@ -19,7 +19,7 @@ Azure AD はクラウド用に構築されています。 これは、LDAP を�
 
 Azure AD は、オンプレミスでホストされているアプリケーションに SSO を提供するために使用される会社ブランドのサインイン画面、マルチファクトリ認証、およびクラウドベースのアプリケーションプロキシをサポートしています。 さまざまな種類のセキュリティレポートとアラート機能を提供します。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [Microsoft id プラットフォーム](https://docs.microsoft.com/azure/active-directory/develop/)
 

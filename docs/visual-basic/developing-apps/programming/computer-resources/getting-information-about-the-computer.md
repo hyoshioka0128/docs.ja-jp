@@ -1,15 +1,15 @@
 ---
-title: '方法: コンピューターについての情報の取得 (Visual Basic)'
+title: コンピューターについての情報の取得
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.Info object [Visual Basic], tasks
 ms.assetid: 13c145bc-5c85-4fea-a5dd-2ca8681a0252
-ms.openlocfilehash: c313f96ec17e2cfb1d94fedebbce5b2f5b8dbc95
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: fd5b49cd053d70e752352e2b050f9202564ee7d7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581257"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348119"
 ---
 # <a name="getting-information-about-the-computer-visual-basic"></a>方法: コンピューターについての情報の取得 (Visual Basic)
 

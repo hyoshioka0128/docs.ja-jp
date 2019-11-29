@@ -3,12 +3,12 @@ title: C# における数値 - C# の概要に関するチュートリアル
 description: 数値型とそのプロパティ、およびメソッドを詳しく見ていくことで C# について学習します。
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: b392682a245101e37a182cb92d36ccb1dd34b13e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: a06bc57e5c979b62e19407747cb2c8a2447ca114
+ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039703"
+ms.lasthandoff: 11/07/2019
+ms.locfileid: "73739141"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>C\# で整数と浮動小数点数を操作する
 
@@ -18,7 +18,11 @@ ms.locfileid: "73039703"
 
 ## <a name="explore-integer-math"></a>整数の演算の確認
 
-「*numbers-quickstart*」という名前のディレクトリを作成します。 それを現在のディレクトリとし、`dotnet new console -n NumbersInCSharp -o .` を実行します。
+「*numbers-quickstart*」という名前のディレクトリを作成します。 それを現在のディレクトリにして、次のコマンドを実行します。
+
+```dotnetcli
+dotnet new console -n NumbersInCSharp -o .
+```
 
 好みのエディターで *Program.cs* を開き、`Console.WriteLine("Hello World!");` の行を次のコードで置き換えます。
 

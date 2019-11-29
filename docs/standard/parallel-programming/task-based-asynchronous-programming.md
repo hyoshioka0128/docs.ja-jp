@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 36ff76db984a864a201313ddb7478cc1e93888fd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 51292d977f2be87cec7c3481f5004fe5fe756224
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139986"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204537"
 ---
 # <a name="task-based-asynchronous-programming"></a>タスク ベースの非同期プログラミング
 
@@ -268,7 +268,7 @@ TPL には、並列のシナリオおよび順次的なシナリオの両方に�
 
 <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> または <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> から継承しないことをお勧めします。 代わりに、<xref:System.Threading.Tasks.Task.AsyncState%2A> プロパティを使用して、追加のデータまたは状態を <xref:System.Threading.Tasks.Task> オブジェクトまたは <xref:System.Threading.Tasks.Task%601> オブジェクトに関連付けることをおすすめします。 拡張メソッドを使用して、<xref:System.Threading.Tasks.Task> クラスおよび <xref:System.Threading.Tasks.Task%601> クラスの機能を拡張することもできます。 拡張メソッドの詳細については、[拡張メソッド (C# プログラミングガイド)](../../csharp/programming-guide/classes-and-structs/extension-methods.md) と[拡張メソッド (Visual Basic)](../../visual-basic/programming-guide/language-features/procedures/extension-methods.md) に関する記事を参照してください。
 
-<xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> から継承する必要がある場合、<xref:System.Threading.Tasks.Task.Run%2A>、<xref:System.Threading.Tasks.Task.Run%2A>、または <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType>, <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType>、または <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> の各クラスを使用して、カスタムのタスクの型のインスタンスを作成することはできません。これらのクラスで作成されるのは、<xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> オブジェクトだけであるためです。 また、<xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.TaskFactory>、および <xref:System.Threading.Tasks.TaskFactory%601> で提供されるタスク継続機構でも、<xref:System.Threading.Tasks.Task> オブジェクトと <xref:System.Threading.Tasks.Task%601> オブジェクトしか作成されないため、これらの機構を使用してカスタムのタスクの型のインスタンスを作成することはできません。
+<xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> から継承する必要がある場合、<xref:System.Threading.Tasks.Task.Run%2A>、<xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType>、<xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType>、<xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> の各クラスを使用して、カスタムのタスクの型のインスタンスを作成することはできません。これらのクラスで作成されるのは、<xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> オブジェクトだけであるためです。 また、<xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.TaskFactory>、および <xref:System.Threading.Tasks.TaskFactory%601> で提供されるタスク継続機構でも、<xref:System.Threading.Tasks.Task> オブジェクトと <xref:System.Threading.Tasks.Task%601> オブジェクトしか作成されないため、これらの機構を使用してカスタムのタスクの型のインスタンスを作成することはできません。
 
 ## <a name="related-topics"></a>関連トピック
 

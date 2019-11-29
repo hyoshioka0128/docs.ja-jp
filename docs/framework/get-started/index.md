@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: cb56097d49b194234031aba3ee9811b961ae6c64
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ca2a4e6c44a26889a2fffa5cc5fa2cbba3eab782
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107716"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281831"
 ---
 # <a name="get-started-with-the-net-framework"></a>.NET Framework の概要
 
@@ -65,7 +65,7 @@ Windows 8 よりも前の Windows バージョンで .NET Framework を削除す
 
 1. オペレーティング システムにプレインストールされていない場合は、アプリが対象とする .NET Framework のバージョンをインストールします。 最新の製品バージョンは .NET Framework 4.8 です。 これは Windows 10 May 2019 Update にプレインストールされており、以前のバージョンの Windows オペレーティング システムでもダウンロード可能です。 .NET Framework システム要件については、「[.NET Framework システム要件](system-requirements.md)」を参照してください。 その他のバージョンの .NET Framework のインストールの詳細については、[インストール ガイド](../install/guide-for-developers.md)に関するページを参照してください。 .NET Framework の追加パッケージは、アウト オブ バンドでリリースされます。これは、通常のリリース サイクルや定期的なリリース サイクルではなく、ローリング方式でリリースされるということを意味します。 これらのパッケージの詳細については、「[.NET Framework および特別なリリース](the-net-framework-and-out-of-band-releases.md)」を参照してください。
 
-2. .NET Framework でサポートされている、アプリ開発に使用する言語を選択します。 Microsoft の [Visual Basic](../../visual-basic/index.md)、[C#](../../csharp/index.md)、[F#](../../fsharp/index.md)、および [C++ と CLI](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp) を含む多くの言語から選択できます。 (.NET Framework のアプリを開発できるプログラミング言語は、[共通言語基盤 (CLI) 仕様](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/)に準拠します)。
+2. .NET Framework でサポートされている、アプリ開発に使用する言語を選択します。 Microsoft の [Visual Basic](../../visual-basic/index.md)、[C#](../../csharp/index.yml)、[F#](../../fsharp/index.md)、および [C++ と CLI](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp) を含む多くの言語から選択できます。 (.NET Framework のアプリを開発できるプログラミング言語は、[共通言語基盤 (CLI) 仕様](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/)に準拠します)。
 
 3. アプリの作成に使用する、選択したプログラミング言語をサポートする開発環境を選択してインストールします。 [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) は、.NET Framework アプリ用の Microsoft 統合開発環境 (IDE) です。 これには、いくつかエディションがあります。
 

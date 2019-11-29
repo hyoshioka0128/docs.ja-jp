@@ -1,14 +1,13 @@
 ---
 title: プロトコルバッファー-WCF 開発者向け gRPC
 description: GRPC ネットワークに使用されるプロトコルバッファーワイヤ形式の概要。
-author: markrendle
 ms.date: 09/09/2019
-ms.openlocfilehash: 6b47c7f3576134d8ee44f79e329cc4879661e6c3
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: dbe8cb43475cfeec19051daf68452ef86269372f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841385"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967287"
 ---
 # <a name="protocol-buffers"></a>プロトコルバッファー
 

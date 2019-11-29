@@ -1,18 +1,18 @@
 - name: 'F# のガイド'
   href: index.md
-- name: 開始するには
+- name: はじめに
   href: get-started/index.md
   items:
     - name: 'F# をインストールする'
       href: get-started/install-fsharp.md
     - name: 'Visual Studio での F# の概要'
       href: get-started/get-started-visual-studio.md
-    - name: 'Visual Studio for Mac での F# の概要'
-      href: get-started/get-started-with-visual-studio-for-mac.md
-    - name: 'Visual Studio Code および Ionide での F# の概要'
+    - name: 'Visual Studio Code での F# の概要'
       href: get-started/get-started-vscode.md
     - name: '.NET Core CLI での F# の概要'
       href: get-started/get-started-command-line.md
+    - name: 'Visual Studio for Mac での F# の概要'
+      href: get-started/get-started-with-visual-studio-for-mac.md
 - name: 'F# とは'
   href: what-is-fsharp.md
 - name: 'F# のツアー'

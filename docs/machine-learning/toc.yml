@@ -7,7 +7,7 @@
       items:
         - name: ML.NET API
           href: how-does-mldotnet-work.md
-    - name: ツール
+    - name: モデル ビルダー & CLI
       items:
         - name: ML.NET モデル ビルダー ツール
           href: automate-training-with-model-builder.md
@@ -97,7 +97,7 @@
               href: how-to-guides/serve-model-serverless-azure-functions-ml-net.md
             - name: Web API にモデルをデプロイする
               href: how-to-guides/serve-model-web-api-ml-net.md
-    - name: ツール
+    - name: モデル ビルダー & CLI
       items:
         - name: モデル ビルダーにデータを読み込む
           href: how-to-guides/load-data-model-builder.md
@@ -109,18 +109,12 @@
           href: how-to-guides/how-to-use-the-automl-api.md
 - name: 辞書／辞典／その他
   items:
-    - name: API
-      items:
-        - name: ML.NET API リファレンス
-          href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet'
-        - name: ML.NET API プレビュー API リファレンス
-          href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview'
-    - name: ツール
-      items:
-        - name: CLI リファレンス
-          href: reference/ml-net-cli-reference.md
-        - name: ML.NET AutoML API リファレンス
-          href: 'https://docs.microsoft.com/dotnet/api/index?view=automl-dotnet'
+    - name: ML.NET API リファレンス
+      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet'
+    - name: ML.NET API プレビュー API リファレンス
+      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview'
+    - name: CLI リファレンス
+      href: reference/ml-net-cli-reference.md
 - name: リソース
   items:
     - name: 概要

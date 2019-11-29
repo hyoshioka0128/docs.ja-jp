@@ -1,14 +1,13 @@
 ---
 title: Wcf 開発者向けの gRPC-gRPC への WCF 双方向サービスの移行
 description: さまざまな形式の WCF 双方向サービスを gRPC streaming services に移行する方法について説明します。
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 1702c9f7659f056af9009e81847f28c6e65b277c
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: e2248df20e5c2d8f96055d42ba684749251154bd
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841481"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971879"
 ---
 # <a name="migrate-wcf-duplex-services-to-grpc"></a>WCF 双方向サービスを gRPC に移行する
 

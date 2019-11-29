@@ -1,19 +1,19 @@
 ---
-title: '方法: パターン マッチング、is 演算子、as 演算子を使用して安全にキャストする'
+title: パターン マッチング、is 演算子、as 演算子を使用して安全にキャストする方法
 description: パターン マッチングの手法を利用し、変数を別の型に安全にキャストする方法について説明します。 パターン マッチング、is 演算子、as 演算子を利用し、型を安全に変換できます。
 ms.date: 09/05/2018
 helpviewer_keywords:
 - cast operators [C#], as and is operators
 - as operator [C#]
 - is operator [C#]
-ms.openlocfilehash: 8d090df1338c535b11a7fd3ec32f6d1cb00b338f
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 762f8135063f7256ce7a167c65013703d9249039
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739689"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973094"
 ---
-# <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>方法: パターン マッチング、is 演算子、as 演算子を使用して安全にキャストする
+# <a name="how-to-safely-cast-by-using-pattern-matching-and-the-is-and-as-operators"></a>パターン マッチング、is 演算子、as 演算子を使用して安全にキャストする方法
 
 オブジェクトはポリモーフィックであるため、基本クラス型の変数で派生[型](../programming-guide/types/index.md)を保持できます。 派生型のインスタンス メンバーにアクセスするには、値を[キャスト](../programming-guide/types/casting-and-type-conversions.md)して派生型に戻す必要があります。 ただし、キャストでは、<xref:System.InvalidCastException> がスローされるリスクが生まれます。 C# には、[パターン マッチング](../pattern-matching.md) ステートメントがあります。これは成功する場合のみという条件でキャストを実行します。 C# には、値が特定の型であることをテストする [is](../language-reference/operators/type-testing-and-cast.md#is-operator) 演算子と [as](../language-reference/operators/type-testing-and-cast.md#as-operator) 演算子もあります。
 

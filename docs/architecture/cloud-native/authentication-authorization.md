@@ -21,7 +21,7 @@ ms.locfileid: "73840749"
 - ほとんどの組織は、既に何らかの範囲の Azure AD に依存しています。
 - NTLM ハッシュを二重にハッシュすると、ローカル Active Directory で動作する資格情報が侵害されることがなくなります。
 
-## <a name="references"></a>関連項目
+## <a name="references"></a>参照
 
 - [認証の基本](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios)
 - [アクセストークンと要求](https://docs.microsoft.com/azure/active-directory/develop/access-tokens)

@@ -40,14 +40,14 @@ JIT コンパイルが成功したかどうかを示す値。
 [入力] `fIsSafeToBlock`   
 ブロックによって、呼び出し元のスレッドがこのコールバックから戻るまでランタイムが待機する可能性があることを示す `true` ます。`false` は、ブロックがランタイムの操作に影響を与えないことを示します。  
 
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>コメント  
 
 このコールバックは、動的メソッドの JIT コンパイルが完了するたびにトリガーされます。 これには、さまざまな IL スタブおよび LCG メソッドが含まれます。 その目的は、コンパイルされたメソッドをユーザーに識別するのに十分な情報をプロファイラーライターに提供することです。
 
 > [!NOTE]
 > 動的メソッドにはメタデータがないため、`functionId` 値を使用してメタデータトークンに解決することはできません。
 
-## <a name="requirements"></a>［要件］  
+## <a name="requirements"></a>要件  
  **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
@@ -56,7 +56,7 @@ JIT コンパイルが成功したかどうかを示す値。
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [DynamicMethodJITCompilationStarted メソッド](icorprofilercallback8-dynamicmethodjitcompilationstarted-method.md)
 - [ICorProfilerCallback8 インターフェイス](icorprofilercallback8-interface.md)

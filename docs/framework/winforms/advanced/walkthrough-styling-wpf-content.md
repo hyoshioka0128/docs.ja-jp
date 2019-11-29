@@ -9,12 +9,12 @@ ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 581fcbfdfd7806b8f0f70347ac96f1bf09fa9098
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d0aa2c54f05cea658c95dc2c23b7ba4bb78835c9
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460936"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138930"
 ---
 # <a name="walkthrough-style-wpf-content"></a>チュートリアル: WPF コンテンツのスタイルを適用する
 
@@ -61,7 +61,7 @@ Visual Studio を開き、Visual Basic または `StylingWpfContent`C#という�
 
    WPF デザイナーで `UserControl1` が開きます。
 
-1. XAML ビューで、次の XAML を `<UserControl>` の開始タグの後に挿入します。 この XAML は、明暗のあるグラデーション境界を持つグラデーションを作成します。 このコントロールをクリックすると、グラデーションが変わり、ボタンを押したような外観が生成されます。 詳しくは、「 [スタイルとテンプレート](../../wpf/controls/styling-and-templating.md)」をご覧ください。
+1. XAML ビューで、次の XAML を `<UserControl>` の開始タグの後に挿入します。 この XAML は、明暗のあるグラデーション境界を持つグラデーションを作成します。 このコントロールをクリックすると、グラデーションが変わり、ボタンを押したような外観が生成されます。 詳しくは、「 [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)」をご覧ください。
 
    ```xaml
    <UserControl.Resources>
@@ -142,4 +142,4 @@ Visual Studio を開き、Visual Basic または `StylingWpfContent`C#という�
 - [WPF コントロールの使用](using-wpf-controls.md)
 - [Visual Studio で XAML をデザインする](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
 - [XAML の概要 (WPF)](../../wpf/advanced/xaml-overview-wpf.md)
-- [スタイルとテンプレート](../../wpf/controls/styling-and-templating.md)
+- [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

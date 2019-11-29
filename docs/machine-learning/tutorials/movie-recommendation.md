@@ -5,12 +5,12 @@ author: briacht
 ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 51dcf5cd85913f0e69ea51dff5101426cc57390f
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 5b4541b527559ee05c9b97d84324e9e70599a014
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774462"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977380"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>チュートリアル: ML.NET でマトリックス因子分解を使用して映画レコメンダーをビルドする
 
@@ -73,7 +73,7 @@ ms.locfileid: "72774462"
 
 2. ソリューション エクスプローラーで、各 \*.csv ファイルを右クリックし、 **[プロパティ]** を選択します。 **[詳細設定]** で、 **[出力ディレクトリにコピー]** の値を **[新しい場合はコピーする]** に変更します。
 
-   ![VS の [新しい場合はコピーする]](./media/movie-recommendation/copytoout.gif)
+   ![VS の [新しい場合はコピーする] を選択するユーザーの GIF](./media/movie-recommendation/copy-to-output-if-newer.gif)
 
 ## <a name="load-your-data"></a>データを読み込む
 
@@ -83,7 +83,7 @@ ML.NET プロセスの最初の手順では、モデルのトレーニングと�
 
 \*.csv ファイルからのデータのプレビューを以下に示します。
 
-![データのプレビュー](./media/movie-recommendation/csv-dataset-preview.png)
+![CVS データセットのプレビューのスクリーンショット。](./media/movie-recommendation/csv-file-dataset-preview.png)
 
 \*.csv ファイルには、4 つの列があります。
 
@@ -102,7 +102,7 @@ ML.NET プロセスの最初の手順では、モデルのトレーニングと�
 | `movieId`      |               |
 | `timestamp`     |               |
 
-`Label` を予測するために使用する `Features` を決めるかどうかは任意です。 最適な `Features` を選択を支援するため、[Permutation Feature Importance](../how-to-guides/determine-global-feature-importance-in-model.md) のような手法を使用することもできます。
+`Label` を予測するために使用する `Features` を決めるかどうかは任意です。 最適な `Features` の選択を支援するため、[順列の特徴量の重要度](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md)のような手法を使用することもできます。
 
 ここでは、`Feature` として `timestamp` 列を削除する必要があります。これは、タイムスタンプはユーザーが特定の映画をどのように評価するかにはまったく影響しないため、より正確な予測を行うことには役立たないからです。
 
@@ -171,11 +171,11 @@ ML.NET には、次の 3 つの主要な概念があります。[データ](../r
 
 機械学習のトレーニング アルゴリズムには、特定の形式のデータが必要です。 `Transformers` は表形式のデータを互換性のある形式に変換 (トランスフォーム) するために使用されます。
 
-![トランスフォーマーの画像](./media/movie-recommendation/transformer.png)
+![トランスフォーマー データフローの図。](./media/movie-recommendation/data-transformer-transformed.png)
 
 `Estimators` を作成して、ML.NET で `Transformers` を作成します。 `Estimators` はデータを取得して `Transformers` を返します。
 
-![エスティメーターの画像](./media/movie-recommendation/estimator.png)
+![エスティメーター データフローの図。](./media/movie-recommendation/data-estimator-transformer.png)
 
 モデルのトレーニングに使用するレコメンデーション トレーニング アルゴリズムは、`Estimator` の一例です。
 
@@ -373,7 +373,7 @@ public static void SaveModel(MLContext mlContext, DataViewSchema trainingDataVie
 
 ### <a name="use-your-saved-model"></a>保存したモデルを使用する
 
-トレーニング済みモデルを保存すると、さまざまな環境でそのモデルを利用できるようになります (トレーニング済みの機械学習モデルを運用化する方法については、[「ハウツー ガイド」](../how-to-guides/consuming-model-ml-net.md)を参照してください)。
+トレーニング済みモデルを保存すると、さまざまな環境でそのモデルを利用できるようになります。 トレーニング済みの機械学習モデルを運用化する方法については、「[トレーニング済みモデルの保存と読み込み](../how-to-guides/save-load-machine-learning-models-ml-net.md)」を参照してください。
 
 ## <a name="results"></a>結果
 
@@ -420,7 +420,7 @@ Movie 10 is recommended for user 6
 
 各ユーザーと映画 ID の十分なサンプルが含まれたトレーニング データをさらに追加することで、レコメンデーション モデルの品質を向上させることができます。
 
-[クロス検証](../how-to-guides/train-cross-validation-ml-net.md)は、モデルを評価するための手法で、(このチュートリアルで行ったようにデータセットからテスト データを抽出するのではなく) データをサブセットにランダムに分割して、一部のグループをトレーニング データとして取得し、一部のグループをテスト データとして取得します。 この手法は、モデルの品質に関しては、トレーニングとテストを分割するよりも優れています。
+[クロス検証](../how-to-guides/train-machine-learning-model-cross-validation-ml-net.md)は、モデルを評価するための手法で、(このチュートリアルで行ったようにデータセットからテスト データを抽出するのではなく) データをサブセットにランダムに分割して、一部のグループをトレーニング データとして取得し、一部のグループをテスト データとして取得します。 この手法は、モデルの品質に関しては、トレーニングとテストを分割するよりも優れています。
 
 ### <a name="features"></a>フィーチャー
 
@@ -428,7 +428,7 @@ Movie 10 is recommended for user 6
 
 これは出発点としては適切ですが、実際には、データセットに他の属性や `Features` (年齢、性別、地理的場所など) が含まれている場合には、これらを追加することができます。 より関連性の高い `Features` を追加することで、レコメンデーション モデルのパフォーマンスを向上させることができます。
 
-自分の機械学習タスクにとってどの `Features` が最も関連性が高いかがわからない場合は、最も影響が大きい `Features` を検出するために ML.NET で提供されている Feature Contribution Calculation (FCC) および [Feature Permutation Importance](../how-to-guides/determine-global-feature-importance-in-model.md) を利用することもできます。
+自分の機械学習タスクにとってどの `Features` が最も関連性が高いかがわからない場合は、最も影響が大きい `Features` を検出するために ML.NET で提供されている Feature Contribution Calculation (FCC) および[順列の特徴量の重要度](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md)を利用することもできます。
 
 ### <a name="algorithm-hyperparameters"></a>アルゴリズムのハイパーパラメーター
 

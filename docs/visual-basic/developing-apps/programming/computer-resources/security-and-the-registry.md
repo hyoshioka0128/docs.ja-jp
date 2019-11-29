@@ -1,21 +1,23 @@
 ---
-title: セキュリティとレジストリ (Visual Basic)
+title: セキュリティとレジストリ
 ms.date: 07/20/2015
 helpviewer_keywords:
 - security [Visual Basic], registry
 - registry [Visual Basic], security issues
 ms.assetid: 9980aff7-2f69-492b-8f66-29a9a76d3df5
-ms.openlocfilehash: 2fdb8003365841a4eef298eb853765dd3bc4587d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 454180207d6432e80d87941d1f329f2a4ea7a801
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916532"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345481"
 ---
 # <a name="security-and-the-registry-visual-basic"></a>セキュリティとレジストリ (Visual Basic)
+
 ここでは、レジストリにデータを格納するときのセキュリティへの影響について説明します。  
   
 ## <a name="permissions"></a>アクセス許可  
+
  レジストリ キーがアクセス制御リスト (ACL) によって保護されていても、パスワードなど他人に知られたくないデータをプレーン テキストでレジストリに格納するのは危険です。  
   
  レジストリを操作すると、システム リソースや保護情報への不適切なアクセスが許可され、セキュリティが損なわれる場合があります。 これらのプロパティを使うには、<xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型の読み書きアクセス許可が必要です。これは、レジストリ変数へのアクセスを制御します。 完全な信頼で実行されるコード (既定のセキュリティ ポリシーでは、これはユーザーのローカル ハード ディスクにインストールされているコードです) は、レジストリにアクセスするために必要なアクセス許可を持っています。 詳細については、<xref:System.Security.Permissions.RegistryPermission> クラスを参照してください。  
@@ -33,6 +35,7 @@ ms.locfileid: "69916532"
 |`Write`|書き込み|  
   
 ## <a name="checking-values-in-registry-keys"></a>レジストリ キーの値のチェック  
+
  レジストリの値を作成するときは、その値が既存の値である場合の処理を決めておく必要があります。 悪意のあるユーザーによって作成された別のプロセスが既に値を作成し、アクセス権を持っている可能性があります。 レジストリ値にデータを設定すると、そのデータを他のプロセスから利用できるようになります。 これを回避するには、`GetValue` メソッドを使います。 このメソッドは、キーがまだ存在しない場合、`Nothing` を返します。  
   
 > [!IMPORTANT]

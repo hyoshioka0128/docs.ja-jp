@@ -14,16 +14,14 @@ helpviewer_keywords:
 ms.assetid: 75594833-bed3-47b2-a426-b75c5fe6fbcf
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e084bc957eca9474078ed5ca3aef0276361dbe1b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d2d9ca77e764fe439753f1174a42af5ef80faa59
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745527"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447708"
 ---
-# <a name="corprfsuspendreason-enumeration"></a>COR_PRF_SUSPEND_REASON 列挙型
+# <a name="cor_prf_suspend_reason-enumeration"></a>COR_PRF_SUSPEND_REASON 列挙型
 ランタイムが中断された理由を示します。  
   
 ## <a name="syntax"></a>構文  
@@ -44,27 +42,27 @@ typedef enum {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`COR_PRF_FIELD_SUSPEND_OTHER`|不明な理由により、ランタイムは中断されます。|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC`|ガベージ コレクションの要求にサービス ランタイムは中断されます。<br /><br /> ガベージ コレクションに関連するコールバックの間に発生、 [icorprofilercallback::runtimesuspendfinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md)と[icorprofilercallback::runtimeresumestarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md)コールバック。|  
-|`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|ランタイムは、中断できるように、`AppDomain`シャット ダウンすることができます。<br /><br /> どのスレッドは、ランタイムが決定されます、ランタイムが中断されている間、`AppDomain`はシャット ダウンして復帰するときに中止するように設定されています。 あるない`AppDomain`-この中断の間の特定のコールバック。|  
-|`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|コード ピッチが実行できるように、ランタイムは中断されます。<br /><br /> コード ピッチが場合にのみ、ジャストイン タイム (JIT) コンパイラ active コード ピッチが有効になっているが発生します。 ピッチングのコールバックの間で発生するコード、`ICorProfilerCallback::RuntimeSuspendFinished`と`ICorProfilerCallback::RuntimeResumeStarted`コールバック。 **注:** この値は 2.0 では使用されないように、CLR JIT は、.NET Framework version 2.0 で関数をピッチいないします。|  
-|`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|ランタイムが中断されるため、シャット ダウンできます。 操作を完了するすべてのスレッドが中断する必要があります。|  
-|`COR_PRF_FIELD_SUSPEND_FOR_INPROC_DEBUGGER`|ランタイムは、インプロセス デバッグの中断します。|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC_PREP`|ランタイムは、ガベージ コレクションの準備を中断します。|  
-|`COR_PRF_SUSPEND_FOR_REJIT`|ランタイムの JIT 再コンパイルは中断されます。|  
+|`COR_PRF_FIELD_SUSPEND_OTHER`|ランタイムは、不特定の理由で中断されています。|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC`|ランタイムは、ガベージコレクション要求を処理するために中断されています。<br /><br /> ガベージコレクションに関連するコールバックは、 [ICorProfilerCallback:: RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md)と[ICorProfilerCallback:: RuntimeResumeStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md)コールバックの間で発生します。|  
+|`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|`AppDomain` をシャットダウンできるように、ランタイムは中断されています。<br /><br /> ランタイムが中断されている間、ランタイムは、シャットダウンされている `AppDomain` 内のスレッドを特定し、再開時に中止するように設定します。 この中断中に `AppDomain`固有のコールバックはありません。|  
+|`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|コードピッチが発生するようにランタイムが中断されています。<br /><br /> Code ピッチ ensues は、just-in-time (JIT) コンパイラがアクティブであり、コードピッチが有効になっている場合にのみ使用します。 Code ピッチコールバックは、`ICorProfilerCallback::RuntimeSuspendFinished` と `ICorProfilerCallback::RuntimeResumeStarted` コールバックの間で発生します。 **注:** CLR JIT は .NET Framework バージョン2.0 の関数のピッチを調整しないため、この値は2.0 では使用されません。|  
+|`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|ランタイムは、シャットダウンできるように中断されています。 操作を完了するには、すべてのスレッドを中断する必要があります。|  
+|`COR_PRF_FIELD_SUSPEND_FOR_INPROC_DEBUGGER`|ランタイムは、インプロセスデバッグのために中断されています。|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC_PREP`|ランタイムは、ガベージコレクションの準備のために中断されています。|  
+|`COR_PRF_SUSPEND_FOR_REJIT`|ランタイムは JIT 再コンパイルのために中断されています。|  
   
-## <a name="remarks"></a>Remarks  
- アンマネージ コードに含まれるすべてのランタイム スレッドは、この時点で、中断されます、ランタイムが再開されるまで、実行時の再入力するまで実行を続行が許可されます。 これは、ランタイムに入る新しいスレッドにも適用されます。 ランタイム内のすべてのスレッドは可能なコード内にある場合はすぐに中断または、割り込み可能なコードに到達したときに中断します。  
+## <a name="remarks"></a>コメント  
+ アンマネージコード内のすべてのランタイムスレッドは、ランタイムを再入力しようとするまで実行を継続することができます。ランタイムは、ランタイムが再開されるまで中断されます。 これは、ランタイムに入る新しいスレッドにも当てはまります。 ランタイム内のすべてのスレッドは、中断可能なコードに含まれている場合はすぐに中断されます。または、中断可能なコードに到着したときに中断するように求められます。  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [列挙型のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

@@ -2,20 +2,20 @@
 title: WCF WEB HTTP サービスのキャッシュ サポート
 ms.date: 03/30/2017
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-ms.openlocfilehash: 655e8807a78d542cd7fa586eca3750507891f74b
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 7c60deab635c29785398a1b50f9cf14c0f688420
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988771"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141780"
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>WCF WEB HTTP サービスのキャッシュ サポート
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]WCF Web HTTP サービスの ASP.NET で既に提供されている宣言型キャッシュ機構を使用できるようにします。 これにより、WCF Web HTTP サービス操作からの応答をキャッシュできます。 キャッシュ用に構成されているサービスに対してユーザーが HTTP GET を送信すると、ASP.NET は、キャッシュされた応答を送り返し、サービス メソッドは呼び出されません。 キャッシュの有効期限が切れると、ユーザーが次回に HTTP GET を送信したときに、サービス メソッドが呼び出され、応答が再度キャッシュされます。 ASP.NET キャッシュの詳細については、「 [ASP.NET キャッシュの概要](https://go.microsoft.com/fwlink/?LinkId=152534)」を参照してください。  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] では、WCF Web HTTP サービスの ASP.NET で既に提供されている宣言型のキャッシュ機構を使用できます。 これにより、WCF Web HTTP サービス操作からの応答をキャッシュできます。 キャッシュ用に構成されているサービスに対してユーザーが HTTP GET を送信すると、ASP.NET は、キャッシュされた応答を送り返し、サービス メソッドは呼び出されません。 キャッシュの有効期限が切れると、ユーザーが次回に HTTP GET を送信したときに、サービス メソッドが呼び出され、応答が再度キャッシュされます。 ASP.NET キャッシュの詳細については、「 [ASP.NET キャッシュの概要](https://go.microsoft.com/fwlink/?LinkId=152534)」を参照してください。  
   
 ## <a name="basic-web-http-service-caching"></a>基本的な Web HTTP サービスのキャッシュ  
  WEB HTTP サービスのキャッシュを有効にするには、まず、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> の <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> を <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required> に設定してサービスに適用し、ASP.NET との互換性を有効にする必要があります。  
   
- [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)] では、キャッシュ プロファイル名を指定できる <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> という新しい属性が導入されています。 この属性は、サービス操作に適用されます。 次の例では、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> をサービスに適用して ASP.NET との互換性を有効にし、`GetCustomer` 操作をキャッシュできるように構成しています。 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> 属性には、使用されるキャッシュ設定が含まれるキャッシュ プロファイルを指定します。  
+ .NET Framework 4 では、キャッシュプロファイル名を指定できる <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> という新しい属性が導入されています。 この属性は、サービス操作に適用されます。 次の例では、<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> をサービスに適用して ASP.NET との互換性を有効にし、`GetCustomer` 操作をキャッシュできるように構成しています。 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> 属性には、使用されるキャッシュ設定が含まれるキャッシュ プロファイルを指定します。  
   
 ```csharp
 [ServiceContract] 
@@ -42,7 +42,7 @@ public class Service
 > [!WARNING]
 > ASP.NET 互換性モードが有効にされていない場合は、<xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> が使用されて、例外がスローされます。  
   
- <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> によって指定されたキャッシュ プロファイル名によって、Web.config 構成ファイルに追加されるキャッシュ プロファイルが特定されます。 キャッシュプロファイルは、次の構成例に`outputCacheSetting`示すように、< > 要素で定義されています。  
+ <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> によって指定されたキャッシュ プロファイル名によって、Web.config 構成ファイルに追加されるキャッシュ プロファイルが特定されます。 キャッシュプロファイルは、次の構成例に示すように、<`outputCacheSetting`> 要素で定義されています。  
   
 ```xml
 <!-- ...  -->
@@ -58,10 +58,10 @@ public class Service
 </system.web>  
 ```  
   
- これは、ASP.NET アプリケーションで使用できる構成要素と同じです。 ASP.NET cache プロファイルの詳細については<xref:System.Web.Configuration.OutputCacheProfile>、「」を参照してください。 Web HTTP サービスの場合、キャッシュ プロファイルで最も重要な属性は `cacheDuration` と `varyByParam` です。 この 2 つの属性はどちらも必要です。 `cacheDuration` は、応答がキャッシュに保持される時間 (秒数) を設定します。 `varyByParam` では、応答のキャッシュに使用されるクエリ文字列パラメーターを指定できます。 異なるクエリ文字列パラメーターの値を使用する要求は、すべて個別にキャッシュされます。 たとえば、最初の要求がに`http://MyServer/MyHttpService/MyOperation?param=10`対して行われると、同じ URI で行われる後続のすべての要求は、キャッシュされた応答を返します (キャッシュ期間が経過していない限り)。 クエリ文字列パラメーターの値が異なることを除いて同じである同様の要求に対する応答は、個別にキャッシュされます。 このような個別のキャッシングを行わない場合は、`varyByParam` を "none" に設定します。  
+ これは、ASP.NET アプリケーションで使用できる構成要素と同じです。 ASP.NET cache プロファイルの詳細については、「<xref:System.Web.Configuration.OutputCacheProfile>」を参照してください。 Web HTTP サービスの場合、キャッシュ プロファイルで最も重要な属性は `cacheDuration` と `varyByParam` です。 この 2 つの属性はどちらも必要です。 `cacheDuration` は、応答がキャッシュに保持される時間 (秒数) を設定します。 `varyByParam` では、応答のキャッシュに使用されるクエリ文字列パラメーターを指定できます。 異なるクエリ文字列パラメーターの値を使用する要求は、すべて個別にキャッシュされます。 たとえば、最初の要求が `http://MyServer/MyHttpService/MyOperation?param=10`に行われると、同じ URI で行われる後続のすべての要求は、キャッシュされた応答を返します (キャッシュ期間が経過していない場合)。 クエリ文字列パラメーターの値が異なることを除いて同じである同様の要求に対する応答は、個別にキャッシュされます。 このような個別のキャッシングを行わない場合は、`varyByParam` を "none" に設定します。  
   
 ## <a name="sql-cache-dependency"></a>SQL キャッシュ依存関係  
- Web HTTP サービスの応答も、SQL キャッシュ依存関係と併せてキャッシュできます。 SQL データベースに格納されているデータに応じて WCF Web HTTP サービスが異なる場合は、サービスの応答をキャッシュして、キャッシュした応答を、SQL データベース テーブル内のデータの変更時に無効にすることもできます。 この動作は、すべて Web.config ファイル内で構成します。 最初に、<`connectionStrings`> 要素で接続文字列を定義する必要があります。  
+ Web HTTP サービスの応答も、SQL キャッシュ依存関係と併せてキャッシュできます。 SQL データベースに格納されているデータに応じて WCF Web HTTP サービスが異なる場合は、サービスの応答をキャッシュして、キャッシュした応答を、SQL データベース テーブル内のデータの変更時に無効にすることもできます。 この動作は、すべて Web.config ファイル内で構成します。 まず、<`connectionStrings`> 要素で接続文字列を定義する必要があります。  
   
 ```xml
 <connectionStrings>
@@ -71,7 +71,7 @@ public class Service
 </connectionStrings>
 ```  
   
- 次に、次の構成例に示すよう`caching`に、<`system.web`> 要素内の < > 要素内で SQL キャッシュの依存関係を有効にする必要があります。  
+ 次に、次の構成例に示すように、<`system.web`> 要素内の <`caching`> 要素内の SQL キャッシュ依存関係を有効にする必要があります。  
   
 ```xml  
 <system.web>
@@ -87,7 +87,7 @@ public class Service
 </system.web>
 ```  
   
- ここでは、SQL キャッシュ依存関係を有効にし、ポーリング タイムを 1000 ミリ秒に設定しています。 ポーリング タイムが経過するたびに、データベース テーブルで更新の有無が確認されます。 変更が検出されると、キャッシュの内容が削除され、次にサービス操作が呼び出されたときに、新しい応答がキャッシュされます。 次の例`sqlCacheDependency`に示すように、< の > 要素内にデータベースを`databases`追加し、< > 要素内の接続文字列を参照します。  
+ ここでは、SQL キャッシュ依存関係を有効にし、ポーリング タイムを 1000 ミリ秒に設定しています。 ポーリング タイムが経過するたびに、データベース テーブルで更新の有無が確認されます。 変更が検出されると、キャッシュの内容が削除され、次にサービス操作が呼び出されたときに、新しい応答がキャッシュされます。 次の例に示すように、<`sqlCacheDependency`> 要素内にデータベースを追加し、<`databases`> 要素内の接続文字列を参照します。  
   
 ```xml  
 <system.web>
@@ -103,7 +103,7 @@ public class Service
 </system.web>  
 ```  
   
- 次に、次の例に示すように、`caching`< > 要素内に出力キャッシュ設定を構成する必要があります。  
+ 次に、次の例に示すように、<`caching`> 要素内に出力キャッシュ設定を構成する必要があります。  
   
 ```xml
 <system.web>

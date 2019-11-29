@@ -1,16 +1,15 @@
 ---
 title: 概要-WCF 開発者向け gRPC
-description: 概要
-author: markrendle
+description: はじめに
 ms.date: 09/02/2019
-ms.openlocfilehash: 9eb12d5060ddf4f345ebe095738c98238c6caab7
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 3fb7ae440f65cc2daa2a2c984d01d0c0c1eac0aa
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841571"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967621"
 ---
-# <a name="introduction"></a>概要
+# <a name="introduction"></a>はじめに
 
 コンピューター間の通信を支援することは、デジタル時代の主要 preoccupations の1つでした。 具体的には、現在のインフラストラクチャの相互運用性の要件を満たす最適なリモート通信メカニズムを決定するために、継続的な取り組みが行われています。 ご想像のとおり、このメカニズムは、要求またはインフラストラクチャの進化に伴って変化します。
 
@@ -18,7 +17,7 @@ ms.locfileid: "73841571"
 
 gRPC は、広く使用されているソフトウェアコミュニティで広く普及しているフレームワークであり、多くのプログラミング言語で開発者が最新の RPC シナリオを実現するために使用します。 コミュニティとエコシステムは、Kubernetes、サービスメッシュ、ロードバランサーなどのインフラストラクチャコンポーネントに追加される gRPC プロトコルのサポートにより、活気とアクティブなものになっています。 これらの要因、パフォーマンス、効率性、クロスプラットフォームの互換性により、gRPC は、新しいアプリと WCF アプリを .NET Core に移行するための自然な選択肢となります。
 
-## <a name="history"></a>歴史
+## <a name="history"></a>履歴
 
 コンピューターネットワークの基本的な原則は、相互にデータを交換するコンピューターのグループだけでなく、相互に関連する一連のタスクを実現するためにデータを交換することではありません。 しかし、複雑さ、規模、および期待は指数関数的に増加しています。  
 
@@ -62,7 +61,7 @@ Windows Communication Foundation は、サービスを構築するためのフ�
 
 ## <a name="whom-this-guide-is-for"></a>このガイドの対象ユーザー
 
-このガイドは、.NET Framework または .NET Core を使用している開発者向けに作成されています。これまでは、WCF を使用しています。また、.NET Core 3.0 以降のバージョンでは、アプリケーションを最新の RPC 環境に移行することを求めています。 また、このガイドは、組み込みの gRPC ツールを使用する必要がある .NET Core 3.0 へのアップグレードを行う開発者にとって、より一般的に使用される場合もあります。
+このガイドは、.NET Framework または .NET Core で作業している開発者の中でも、以前に WCF を使用したことがある方々、使用しているアプリケーションを .NET Core 3.0 以降のバージョン用の最新の RPC 環境に移行しようとしている方々向けに作成されています。 また、このガイドは、.NET Core 3.0 へのアップグレードを実施または検討している開発者で、組み込みの gRPC ツールの使用を希望している方々にとっても一般的に役立つ場合があります。
 
 >[!div class="step-by-step"]
 >[前へ](index.md)

@@ -2,12 +2,12 @@
 title: CQRS マイクロサービスに読み取り/クエリを実装する
 description: コンテナー化された .NET アプリケーション用の .NET マイクロサービス アーキテクチャ | Dapper を使用した eShopOnContainers でのオーダリング マイクロサービスの CQRS のクエリ側の実装を理解する。
 ms.date: 10/08/2018
-ms.openlocfilehash: 6541a0cb7ce8ac3946e119483308d91158bdb522
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 235b0e471a17e2a37a883a111cf499b7837f3ea1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094059"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972084"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>CQRS マイクロサービスに読み取り/クエリを実装する
 
@@ -15,15 +15,15 @@ ms.locfileid: "73094059"
 
 図 7-3 に示すように、方法は単純です。 API インターフェイスは、Dapper のようなマイクロ オブジェクト リレーショナル マッパー (ORM) などの任意のインフラストラクチャを使用して、UI アプリケーションのニーズに応じて動的な ViewModel を返すことで Web API コントローラーによって実装されます。
 
-![単純化された CQRS アプローチのクエリ側の最も単純なアプローチは、動的な ViewModels を返す Micro-ORM のような Dapper を使用して、データベースをクエリすることによって実装できます。](./media/image3.png)
+![簡略化された CQRS における上位レベルのクエリ側を示す図。](./media/cqrs-microservice-reads/simple-approach-cqrs-queries.png)
 
 **図 7-3**。 CQRS マイクロサービスでのクエリの最も単純な方法
 
-これがクエリの最も単純な方法と考えられます。 クエリ定義ではデータベースをクエリし、各クエリに対してオンザフライでビルドされた動的な ViewModel を返します。 クエリはべき等であるため、クエリの実行回数に関係なく、データが変更されることはありません。 したがって、トランザクション側で使用される DDD パターン (集計などのパターン) によって制限される必要はありません。これが、クエリがトランザクション領域から分離される理由です。 UI に必要なデータについてデータベースをクエリし、SQL ステートメント自体を除く、任意の場所 (ViewModel のクラスがない) で静的に定義する必要のない動的な ViewModel を返すだけです。
+単純化された CQRS アプローチのクエリ側の最も単純なアプローチは、動的な ViewModels を返す Micro-ORM のような Dapper を使用して、データベースをクエリすることによって実装できます。 クエリ定義ではデータベースをクエリし、各クエリに対してオンザフライでビルドされた動的な ViewModel を返します。 クエリはべき等であるため、クエリの実行回数に関係なく、データが変更されることはありません。 したがって、トランザクション側で使用される DDD パターン (集計などのパターン) によって制限される必要はありません。これが、クエリがトランザクション領域から分離される理由です。 UI に必要なデータについてデータベースをクエリし、SQL ステートメント自体を除く、任意の場所 (ViewModel のクラスがない) で静的に定義する必要のない動的な ViewModel を返すだけです。
 
 これは単純な方法であるため、クエリ側で必要なコード ([Dapper](https://github.com/StackExchange/Dapper) のようなマイクロ ORM を使用するコードなど) を[同じ Web API プロジェクト内で](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/Queries/OrderQueries.cs)実装することができます。 これは図 7-4 に示されています。 クエリは eShopOnContainers 内の **Ordering.API** マイクロサービス プロジェクトで定義されています。
 
-![[アプリケーション] > [クエリ] フォルダーが表示された Ordering.API プロジェクトのソリューション エクスプローラーのビュー。](./media/image4.png)
+![Ordering.API プロジェクトの Queries フォルダーのスクリーンショット。](./media/cqrs-microservice-reads/ordering-api-queries-folder.png)
 
 **図 7-4**。 eShopOnContainers でのオーダリング マイクロサービスのクエリ
 
@@ -41,7 +41,7 @@ ViewModel として、クラスで定義されている静的な型を指定す�
 
 Dapper はオープンソースのプロジェクト (Sam Saffron によって最初に作成された) であり、[スタック オーバーフロー](https://stackoverflow.com/)で使用される構成要素の一部です。 Dapper を使用するために必要になるのは、次の図に示すように、[Dapper NuGet パッケージ](https://www.nuget.org/packages/Dapper)を使用してインストールすることだけです。
 
-![VS の NuGet パッケージの管理ビューで表示された Dapper パッケージ。](./media/image4.1.png)
+![[NuGet パッケージ] ビューの Dapper パッケージのスクリーンショット。](./media/cqrs-microservice-reads/drapper-package-nuget.png)
 
 コードで Dapper 拡張メソッドにアクセスできるようにするために、ステートメントを追加する必要もあります。
 
@@ -177,7 +177,7 @@ public class OrderSummary
 
 次のイメージで、Swagger UI にどのように ResponseType 情報が表示されるかを確認できます。
 
-![Ordering API 用の Swagger UI ページのブラウザー ビュー。](./media/image5.png)
+![Ordering API 用の Swagger UI ページのスクリーンショット。](./media/cqrs-microservice-reads/swagger-ordering-http-api.png)
 
 **図 7-5**。 Web API からの応答型と考えられる HTTP ステータス コードを示す Swagger UI
 
@@ -189,7 +189,7 @@ public class OrderSummary
  <https://github.com/StackExchange/dapper-dot-net>
 
 - **Julie Lerman。データ ポイント - Dapper、Entity Framework、およびハイブリッド アプリ (MSDN マガジンの記事)**  
-  <https://msdn.microsoft.com/magazine/mt703432>
+  <https://docs.microsoft.com/archive/msdn-magazine/2016/may/data-points-dapper-entity-framework-and-hybrid-apps>
 
 - **Swagger を使用する ASP.NET Core Web API のヘルプ ページ**  
   <https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio>

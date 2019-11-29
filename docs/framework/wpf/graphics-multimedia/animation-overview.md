@@ -231,10 +231,10 @@ ms.locfileid: "73039188"
 
 |プロパティの型|対応する基本 (From/To/By) アニメーション|対応するキー フレーム アニメーション|対応するパス アニメーション|使用例|
 |-------------------|----------------------------------------------------|---------------------------------------|----------------------------------|-------------------|
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|None|<xref:System.Windows.Media.SolidColorBrush> または <xref:System.Windows.Media.GradientStop>の <xref:System.Windows.Media.SolidColorBrush.Color%2A> をアニメーション化します。|
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|なし|<xref:System.Windows.Media.SolidColorBrush> または <xref:System.Windows.Media.GradientStop>の <xref:System.Windows.Media.SolidColorBrush.Color%2A> をアニメーション化します。|
 |<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimation>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|<xref:System.Windows.Controls.DockPanel> または <xref:System.Windows.Controls.Button>の <xref:System.Windows.FrameworkElement.Height%2A> の <xref:System.Windows.FrameworkElement.Width%2A> をアニメーション化します。|
 |<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimation>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|<xref:System.Windows.Media.EllipseGeometry>の <xref:System.Windows.Media.EllipseGeometry.Center%2A> 位置をアニメーション化します。|
-|<xref:System.String>|None|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|None|<xref:System.Windows.Controls.TextBlock> または <xref:System.Windows.Controls.Button>の <xref:System.Windows.Controls.ContentControl.Content%2A> の <xref:System.Windows.Controls.TextBlock.Text%2A> をアニメーション化します。|
+|<xref:System.String>|なし|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|なし|<xref:System.Windows.Controls.TextBlock> または <xref:System.Windows.Controls.Button>の <xref:System.Windows.Controls.ContentControl.Content%2A> の <xref:System.Windows.Controls.TextBlock.Text%2A> をアニメーション化します。|
 
 <a name="animationsaretimelines"></a>
 
@@ -367,7 +367,7 @@ ms.locfileid: "73039188"
 
 ## <a name="related-topics"></a>関連トピック
 
-|Title|説明|
+|タイトル|説明|
 |-----------|-----------------|
 |[アニメーションとタイミング システムの概要](animation-and-timing-system-overview.md)|タイミングシステムが <xref:System.Windows.Media.Animation.Timeline> クラスと <xref:System.Windows.Media.Animation.Clock> クラスを使用して、アニメーションを作成できるようにする方法について説明します。|
 |[アニメーションのヒントとテクニック](animation-tips-and-tricks.md)|パフォーマンスなど、アニメーションでの問題を解決するための役に立つヒントの一覧を示します。|
@@ -380,7 +380,7 @@ ms.locfileid: "73039188"
 |[ストーリーボードの概要](storyboards-overview.md)|複数のタイムラインを持つストーリーボードを使って複雑なアニメーションを作成する方法について説明します。|
 |[タイミング動作の概要](timing-behaviors-overview.md)|アニメーションで使用される <xref:System.Windows.Media.Animation.Timeline> の型とプロパティについて説明します。|
 |[タイミング イベントの概要](timing-events-overview.md)|開始、一時停止、再開、スキップ、停止など、タイムラインのポイントでコードを実行するために <xref:System.Windows.Media.Animation.Timeline> および <xref:System.Windows.Media.Animation.Clock> オブジェクトで使用できるイベントについて説明します。|
-|[方法トピック](animation-and-timing-how-to-topics.md)|アプリケーションでアニメーションとタイムラインを使うためのコード例を示します。|
+|[方法のトピック](animation-and-timing-how-to-topics.md)|アプリケーションでアニメーションとタイムラインを使うためのコード例を示します。|
 |[クロックに関する「方法」トピック](clocks-how-to-topics.md)|アプリケーションで <xref:System.Windows.Media.Animation.Clock> オブジェクトを使用するためのコード例が含まれています。|
 |[キー フレームに関する「方法」トピック](key-frame-animation-how-to-topics.md)|アプリケーションでキー フレーム アニメーションを使うためのコード例を示します。|
 |[パス アニメーションに関する「方法」トピック](path-animation-how-to-topics.md)|アプリケーションでパス アニメーションを使うためのコード例を示します。|

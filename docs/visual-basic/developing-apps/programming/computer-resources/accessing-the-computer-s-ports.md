@@ -1,21 +1,23 @@
 ---
-title: コンピューターのポートへのアクセス (Visual Basic)
+title: コンピューターのポートへのアクセス
 ms.date: 07/20/2015
 helpviewer_keywords:
 - serial ports
 - My.Computer.Ports object [Visual Basic], tasks
 ms.assetid: b04a2f76-992a-4585-ab41-8bbbdbd554a1
-ms.openlocfilehash: 7788e08c1257ff900b08ef6b8d26d3fe42ad9116
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e790a41fc945a395feebc63f8d26efdc51dc4fa9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589334"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74329595"
 ---
 # <a name="accessing-the-computers-ports-visual-basic"></a>コンピューターのポートへのアクセス (Visual Basic)
+
 `My.Computer.Ports` オブジェクトは、コンピューターのシリアル ポートにアクセスするためのプロパティとメソッドを提供します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
+
  [方法: Visual Basic で利用可能なシリアル ポートを表示する](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)  
  利用可能なシリアル ポートを表示する方法について説明します。  
   
@@ -31,7 +33,8 @@ ms.locfileid: "65589334"
  [.NET Framework でのポート操作](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
  ポート操作の実行時に .NET Framework を使用する方法について説明します。  
   
-## <a name="reference"></a>関連項目  
+## <a name="reference"></a>辞書／辞典／その他  
+
  <xref:Microsoft.VisualBasic.Devices.Ports>  
  `My.Computer.Ports` オブジェクトとそのメンバーについて説明します。  
   
@@ -42,5 +45,6 @@ ms.locfileid: "65589334"
  <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> オブジェクトを作成して開く `OpenSerialPort` メソッドについて説明します。  
   
 ## <a name="related-sections"></a>関連項目  
+
  <xref:System.IO.Ports.SerialPort>  
  .NET Framework の <xref:System.IO.Ports.SerialPort> クラスについて説明します。

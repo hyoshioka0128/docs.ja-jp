@@ -1,13 +1,13 @@
 ---
 title: キーワード リファレンス
 description: すべてのF#言語キーワードに関する情報へのリンクを検索します。
-ms.date: 05/16/2016
-ms.openlocfilehash: 2be6d078653a4595cbdfe97be7aab8e3b3c10ea9
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 11/04/2019
+ms.openlocfilehash: 64bb680a0861f4b8287f887ea67edb6fcf4f88a6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425083"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976618"
 ---
 # <a name="keyword-reference"></a>キーワード リファレンス
 
@@ -87,7 +87,7 @@ ms.locfileid: "73425083"
 |`when`|[制約](./generics/constraints.md)|パターンに一致する場合、ブール条件 (*場合*によっては) に使用され、ジェネリック型パラメーターの制約句を導入します。|
 |`while`|[ループ: `while...do` 式](loops-while-do-expression.md)|では、ループ構造が導入されています。|
 |`with`|[match 式](match-expressions.md)<br /><br />[オブジェクト式](object-expressions.md)<br /><br />[レコード式のコピーと更新](copy-and-update-record-expressions.md)<br /><br />[型拡張](type-extensions.md)<br /><br />[例外: `try...with` 式](./exception-handling/the-try-with-expression.md)|パターン一致式で `match` キーワードと共に使用されます。 オブジェクト式、レコードコピー式、および型拡張でも使用され、メンバー定義を導入したり、例外ハンドラーを導入したりします。|
-|`yield`|[シーケンス](sequences.md)|シーケンスの値を生成するために、シーケンス式で使用されます。|
+|`yield`|[リスト](lists.md)、[配列](arrays.md)、[シーケンス](sequences.md)|シーケンスの値を生成するために、リスト、配列、またはシーケンス式で使用されます。 通常は、ほとんどの状況で暗黙的に使用されるため、を省略できます。|
 |`yield!`|[コンピュテーション式](computation-expressions.md)<br /><br />[非同期ワークフロー](asynchronous-workflows.md)|コンピュテーション式で使用され、指定されたコンピュテーション式の結果を、それを含むコンピュテーション式の結果のコレクションに追加します。|
 
 次のトークンは、OCaml F#言語のキーワードであるため、で予約されています。

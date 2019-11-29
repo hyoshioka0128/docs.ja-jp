@@ -4,12 +4,12 @@ description: XML ドキュメント コメントを含むコードを文書化�
 ms.date: 02/14/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: a9142b36586de4d08dec6c4b72bfd1725b4830ac
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c858a92309710a0ac6b68e9194f2d7ef4c9577a0
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037654"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140668"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>XML コメントによるコードの文書化
 
@@ -21,16 +21,16 @@ XML 文書化コメントは、その他すべてのコメントと同じよう�
 
 コンパイル時に XML ファイルを生成するには、次のいずれかを実行します。
 
-- .NET Core を使用してコマンド ラインからアプリケーションを開発している場合は、.csproj プロジェクト ファイルの `<PropertyGroup>` セクションに [DocumentationFile 要素](/visualstudio/msbuild/common-msbuild-project-properties) を追加できます。 次の例では、プロジェクト ディレクトリの中に、アセンブリと同じルート ファイル名で XML ファイルが生成されます。
+- .NET Core を使用してコマンド ラインからアプリケーションを開発している場合は、.csproj プロジェクト ファイルの `<PropertyGroup>` セクションに `GenerateDocumentationFile` 要素を追加できます。 また、[`DocumentationFile` 要素](/visualstudio/msbuild/common-msbuild-project-properties)を使用して、ドキュメント ファイルへのパスを直接指定することもできます。 次の例では、プロジェクト ディレクトリの中に、アセンブリと同じルート ファイル名で XML ファイルが生成されます。
 
+   ```xml
+   <GenerateDocumentationFile>true</GenerateDocumentationFile>
+   ```
+   
+   これは、次の指定と同じです。
+   
    ```xml
    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-   ```
-
-   XML ファイルの名前と正確な絶対パスまたは相対パスを指定することもできます。 次の例では、アプリケーションのデバッグ バージョンと同じディレクトリに XML ファイルが生成されます。
-
-   ```xml
-   <DocumentationFile>bin\Debug\netcoreapp2.1\App.xml</DocumentationFile>
    ```
 
 - Visual Studio を使用してアプリケーションを開発する場合は、プロジェクトを右クリックして、 **[プロパティ]** を選択します。 プロパティ ダイアログ ボックスで、 **[ビルド]** タブをクリックし、 **[XML ドキュメント ファイル]** をオンにします。 コンパイラがファイルを書き込む場所を変更することもできます。

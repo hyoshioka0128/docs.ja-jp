@@ -2,12 +2,12 @@
 title: セキュリティに関する注意事項 (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: d9adf4ed9e340ff589117f160e370c7d1595a207
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 9a560db5dbcb7a87a1c933febfb8bf676cc8816b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039864"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968417"
 ---
 # <a name="security-considerations-entity-framework"></a>セキュリティに関する注意事項 (Entity Framework)
 このトピックでは、Entity Framework アプリケーションの開発、配置、および実行に固有のセキュリティの考慮事項について説明します。 また、セキュリティで保護された .NET Framework アプリケーションを作成するための推奨事項に従ってください。 詳細については、「[セキュリティの概要](../security-overview.md)」を参照してください。  
@@ -119,11 +119,11 @@ ms.locfileid: "73039864"
  次の理由で、信頼できない可能性のある呼び出し元に公開されたメソッドから <xref:System.Linq.IQueryable%601> 型を返さないようにします。  
   
 - <xref:System.Linq.IQueryable%601> 型を公開するクエリのコンシューマーが、セキュリティ保護されたデータを公開したり結果セットのサイズを増やしたりする結果に関するメソッドを呼び出す可能性があるため。 たとえば、次のようなメソッド シグネチャについて考えてみます。  
-  
-    ```csharp  
-    public IQueryable<Customer> GetCustomer(int customerId)  
-    ```  
-  
+
+    ```csharp
+    public IQueryable<Customer> GetCustomer(int customerId)
+    ```
+
     このクエリのコンシューマーは返された `.Include("Orders")` の `IQueryable<Customer>` を呼び出し、クエリが公開を意図していないデータを取得する可能性があります。 これを回避するには、メソッドの戻り値の型を <xref:System.Collections.Generic.IEnumerable%601> に変更し、結果を具体化するメソッド (`.ToList()` など) を呼び出します。  
   
 - 結果が反復されると <xref:System.Linq.IQueryable%601> クエリが実行されるため、<xref:System.Linq.IQueryable%601> 型を公開するクエリのコンシューマーがスローされた例外をキャッチする可能性があります。 例外にコンシューマーを対象としていない情報が含まれている場合があります。  

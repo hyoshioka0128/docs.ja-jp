@@ -14,20 +14,18 @@ helpviewer_keywords:
 ms.assetid: eb4e4ce0-06e7-4469-bbc4-edc2eb5da4b1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3b82d9ac610cb393696ef94fb797a48b737b0231
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0af990930e8c30307e9da3b586621ca8ddb95d0c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965747"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438754"
 ---
 # <a name="icorprofilerinfo-interface"></a>ICorProfilerInfo インターフェイス
 コードプロファイラーが共通言語ランタイム (CLR) と通信してイベントの監視および要求情報を制御するために使用するメソッドを提供します。  
   
 > [!NOTE]
-> `ICorProfilerInfo`インターフェイスの各メソッドは、成功または失敗を示す HRESULT を返します。 使用できるリターンコードの一覧については、「CorError. h」を参照してください。  
+> `ICorProfilerInfo` インターフェイスの各メソッドは、成功または失敗を示す HRESULT を返します。 使用できるリターンコードの一覧については、「CorError. h」を参照してください。  
   
 ## <a name="methods"></a>メソッド  
   
@@ -38,13 +36,13 @@ ms.locfileid: "69965747"
 |[ForceGC メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-forcegc-method.md)|ランタイム内で強制的にガベージコレクションを実行します。|  
 |[GetAppDomainInfo メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getappdomaininfo-method.md)|指定されたアプリケーションドメインに関する情報を取得します。|  
 |[GetAssemblyInfo メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getassemblyinfo-method.md)|指定したアセンブリに関する情報を取得します。|  
-|[GetClassFromObject メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassfromobject-method.md)|のを`ClassID`取得します。<br /><br /> オブジェクトを指定`ObjectID`します。|  
+|[GetClassFromObject メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassfromobject-method.md)|の `ClassID` を取得します。<br /><br /> オブジェクト (`ObjectID`を指定)。|  
 |[GetClassFromToken メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassfromtoken-method.md)|メタデータトークンを指定して、クラスの ID を取得します。 このメソッドは .NET Framework バージョン2.0 では廃止されています。 代わりに[ICorProfilerInfo2:: GetClassFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md)メソッドを使用してください。|  
 |[GetClassIDInfo メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassidinfo-method.md)|指定したクラスの親モジュールとメタデータトークンを取得します。|  
 |[GetCodeInfo メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getcodeinfo-method.md)|指定した関数 ID に関連付けられているネイティブ コードの範囲を取得します。 このメソッドは、互換性のために残されています。 代わりに[ICorProfilerInfo2:: GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md)メソッドを使用してください。|  
 |[GetCurrentThreadID メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getcurrentthreadid-method.md)|マネージスレッドの場合、現在のスレッドの ID を取得します。|  
 |[GetEventMask メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md)|プロファイラーが CLR からイベント通知を受信する現在のイベントカテゴリを取得します。|  
-|[GetFunctionFromIP メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md)|マネージコード命令ポインターをに`FunctionID`マップします。|  
+|[GetFunctionFromIP メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md)|マネージコード命令ポインターを `FunctionID`にマップします。|  
 |[GetFunctionFromToken メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromtoken-method.md)|関数の ID を取得します。 このメソッドは .NET Framework バージョン2.0 では廃止されています。 代わりに[ICorProfilerInfo2:: GetFunctionFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md)メソッドを使用してください。|  
 |[GetFunctionInfo メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctioninfo-method.md)|指定された関数の親クラスとメタデータトークンを取得します。|  
 |[GetHandleFromThread メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-gethandlefromthread-method.md)|スレッドの ID を Win32 スレッドハンドルにマップします。|  
@@ -67,19 +65,19 @@ ms.locfileid: "69965747"
 |[SetILFunctionBody メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md)|指定したモジュール内の指定した関数の本体を置き換えます。|  
 |[SetILInstrumentedCodeMap メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md)|指定された関数の元の MSIL のオフセットが、関数のプロファイラーによって変更された MSIL の新しいオフセットにどのようにマップされるかを指定します。|  
   
-## <a name="remarks"></a>Remarks  
- プロファイラーは、CLR と通信し`ICorProfilerInfo`てイベントの監視と要求情報を制御するために、インターフェイスのメソッドを呼び出します。  
+## <a name="remarks"></a>コメント  
+ プロファイラーは、CLR と通信してイベントの監視と要求情報を制御するために、`ICorProfilerInfo` インターフェイス内のメソッドを呼び出します。  
   
- `ICorProfilerInfo`インターフェイスのメソッドは、フリースレッドモデルを使用して CLR によって実装されます。 各メソッドが、成功または失敗を示す HRESULT を返します。 使用できるリターンコードの一覧については、「CorError. h」を参照してください。  
+ `ICorProfilerInfo` インターフェイスのメソッドは、フリースレッドモデルを使用して CLR によって実装されます。 各メソッドが、成功または失敗を示す HRESULT を返します。 使用できるリターンコードの一覧については、「CorError. h」を参照してください。  
   
- CLR は、初期化中に各コードプロファイラーへのインターフェイスと`ICorProfilerInfo`して、プロファイラーの[ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)の実装を介してを渡します。 次に、コードプロファイラーは、 `ICorProfilerInfo`インターフェイスのメソッドを呼び出して、CLR の制御下で実行されているマネージコードに関する情報を取得できます。  
+ CLR は、 [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)のプロファイラーの実装を介して、初期化中に各コードプロファイラーへの `ICorProfilerInfo` インターフェイスを渡します。 コードプロファイラーは、`ICorProfilerInfo` インターフェイスのメソッドを呼び出して、CLR の制御下で実行されているマネージコードに関する情報を取得できます。  
   
-## <a name="requirements"></a>必要条件  
- **・** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** Corprof.idl、Corprof.idl  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
- **ライブラリ**CorGuids .lib  
+ **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

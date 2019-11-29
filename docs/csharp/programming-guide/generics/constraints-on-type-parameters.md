@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 62d0aacc3464969366cbdc8107adbc9a5c364b0c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: d05307735506db0f0e4abab067334e4f0466ee6a
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417796"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204638"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>型パラメーターの制約 (C# プログラミング ガイド)
 
@@ -20,16 +20,14 @@ ms.locfileid: "73417796"
 
 |制約|説明|
 |----------------|-----------------|
-|`where T : struct`|この型引数は値の型である必要があります。 <xref:System.Nullable%601> を除く任意の値の型を指定できます。 null 許容値型の詳細については、「[null 許容値型](../nullable-types/index.md)」を参照してください。|
+|`where T : struct`|この型引数は null 非許容値型である必要があります。 null 許容値型の詳細については、「[null 許容値型](../../language-reference/builtin-types/nullable-value-types.md)」を参照してください。 すべての値の型にはアクセス可能なパラメーターなしのコンストラクターがあるため、`struct` 制約は `new()` 制約を意味し、`new()` 制約と組み合わせることはできません。 また、`struct` 制約を `unmanaged` 制約と組み合わせることもできません。|
 |`where T : class`|この型引数は参照型である必要があります。 この制約は、任意のクラス、インターフェイス、デリゲート、または配列型にも適用されます。|
 |`where T : notnull`|この型引数は null 非許容型である必要があります。 引数は、C# 8.0 以降では null 非許容参照型、または null 非許容値型にできます。 この制約は、任意のクラス、インターフェイス、デリゲート、または配列型にも適用されます。|
-|`where T : unmanaged`|この型引数は[アンマネージド型](../../language-reference/builtin-types/unmanaged-types.md)である必要があります。|
-|`where T : new()`|この型引数には、パラメーターなしのパブリック コンストラクターが必要です。 `new()` 制約を別の制約と併用する場合、この制約を最後に指定する必要があります。|
+|`where T : unmanaged`|この型引数は null 非許容で[アンマネージド型](../../language-reference/builtin-types/unmanaged-types.md)である必要があります。 `unmanaged` 制約は `struct` 制約を意味し、`struct` 制約とも `new()` 制約とも組み合わせることはできません。|
+|`where T : new()`|この型引数には、パラメーターなしのパブリック コンストラクターが必要です。 `new()` 制約を別の制約と併用する場合、この制約を最後に指定する必要があります。 `new()` 制約は、`struct` や `unmanaged` 制約と組み合わせることはできません。|
 |`where T :` *\<基底クラス名>*|この型引数は、指定された基底クラスであるか、そのクラスから派生している必要があります。|
 |`where T :` *\<インターフェイス名>*|この型引数は、指定されたインターフェイスであるか、そのインターフェイスを実装している必要があります。 複数のインターフェイス制約を指定することができます。 制約のインターフェイスを汎用的にすることもできます。|
 |`where T : U`|T に指定する型引数は、U に指定された引数であるか、その引数から派生している必要があります。|
-
-制約の一部は同時に指定できません。 すべての値の型に、アクセス可能なパラメーターなしのコンストラクターがある必要があります。 `struct` 制約は `new()` 制約を意味し、`new()` 制約は `struct` 制約と組み合わせることはできません。 `unmanaged` 制約は `struct` 制約を意味します。 `unmanaged` 制約は、`struct` 制約とも `new()` 制約とも組み合わせることはできません。
 
 ## <a name="why-use-constraints"></a>制約を使用する理由
 
@@ -85,11 +83,13 @@ C# 8.0 以降では、`notnull` 制約を使用して、型引数が null 非許
 
 ## <a name="unmanaged-constraint"></a>アンマネージド制約
 
-C# 7.3 以降、`unmanaged` 制約を指定して、型パラメーターが [アンマネージド制約](../../language-reference/builtin-types/unmanaged-types.md)である必要があることを指定できます。 `unmanaged` 制約では、次の例のように、メモリのブロックとして操作できる型を処理する再利用可能なルーチンを記述できます。
+C# 7.3 以降、`unmanaged` 制約を指定して、型パラメーターが null 非許容で[アンマネージド型](../../language-reference/builtin-types/unmanaged-types.md)である必要があることを指定できます。 `unmanaged` 制約では、次の例のように、メモリのブロックとして操作できる型を処理する再利用可能なルーチンを記述できます。
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#15)]
 
 ビルトイン型ではない型で `sizeof` 演算子を使用するため、先行するメソッドは `unsafe` コンテキストでコンパイルされる必要があります。 `unmanaged` 制約なしで、`sizeof` 演算子を使用することはできません。
+
+`unmanaged` 制約は `struct` 制約を意味するため、これと組み合わせることはできません。 `struct` 制約は `new()` 制約を意味するため、`unmanaged` 制約を `new()` 制約と組み合わせることもできません。
 
 ## <a name="delegate-constraints"></a>制約をデリゲートする
 

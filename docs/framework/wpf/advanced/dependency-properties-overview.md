@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 663dd7a785200ddbc78cc0cd1fb5b43531982f42
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 5803d656d765f3f4fe3039e28b9c06202218fcfc
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458959"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973985"
 ---
 # <a name="dependency-properties-overview"></a>依存関係プロパティの概要
 
@@ -168,7 +168,7 @@ XAML は、プロパティを設定するためのさまざまな構文形式を
 詳細については、「[プロパティ値の継承](property-value-inheritance.md)」を参照してください。
 
 ### <a name="wpf-designer-integration"></a>WPF デザイナーの統合
-依存関係プロパティとして実装されるプロパティを使用するカスタム コントロールは、適切な [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] のサポートを受けます。 1 つの例として、 **[プロパティ]** ウィンドウで、直接依存関係プロパティと添付依存関係プロパティを編集できる機能が挙げられます。 詳細については、「[コントロールの作成の概要](../controls/control-authoring-overview.md)」を参照してください。
+依存関係プロパティとして実装されているプロパティを持つカスタムコントロールは、Visual Studio のサポートに適した WPF デザイナーを受け取ります。 1 つの例として、 **[プロパティ]** ウィンドウで、直接依存関係プロパティと添付依存関係プロパティを編集できる機能が挙げられます。 詳細については、「[コントロールの作成の概要](../controls/control-authoring-overview.md)」を参照してください。
 
 ## <a name="dependency-property-value-precedence"></a>依存関係プロパティ値の優先順位
 依存関係プロパティの値を取得する場合、WPF プロパティ システムに関係する他のプロパティに基づく入力のいずれかを介して、そのプロパティに設定された値を取得する可能性があります。 プロパティの値の取得方法に関するさまざまなシナリオが予測可能な方法で相互作用できるように、依存関係プロパティ値の優先順位が存在しています。

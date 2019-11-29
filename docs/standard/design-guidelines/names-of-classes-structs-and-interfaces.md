@@ -35,7 +35,7 @@ ms.locfileid: "71353703"
   
  **✓ CONSIDER** 基底クラスの名前のクラスを派生の名前を終了します。  
   
- これは非常に読みやすく、リレーションシップについて明確に説明しています。 このコードの例としては、`ArgumentOutOfRangeException` (`Exception` の一種であり、`SerializableAttribute`) があります。これは `Attribute` です。 ただし、このガイドラインを適用するには、適切な判断を使用することが重要です。たとえば、`Button` クラスは @no__t 1 つのイベントの一種ですが、`Control` は名前に表示されません。  
+ これは非常に読みやすく、リレーションシップについて明確に説明しています。 このコードの例としては、`ArgumentOutOfRangeException`があります。これは `Exception`の一種であり、`SerializableAttribute`であり、`Attribute`です。 ただし、このガイドラインを適用するには、適切な判断を使用することが重要です。たとえば、`Button` クラスは `Control` イベントの一種ですが、名前に `Control` は表示されません。  
   
  **✓ DO** インターフェイス名のプレフィックス文字では、型がインターフェイスであることを示します。  
   
@@ -66,7 +66,7 @@ public interface ISessionChannel<TSession> where TSession : ISession {
   
  **✓ CONSIDER** 制約を示す名前、パラメーターの型パラメーター上に配置します。  
   
- たとえば、`ISession` に制限されているパラメーターは、`TSession` と呼ばれる場合があります。  
+ たとえば、`ISession` に制約されたパラメーターは `TSession`と呼ばれる場合があります。  
   
 ## <a name="names-of-common-types"></a>共通型の名前  
  **✓ DO** から派生または特定の .NET Framework 型を実装する型の名前を付けるときは、次の表に説明されているガイドラインに従ってください。  
@@ -78,7 +78,7 @@ public interface ISessionChannel<TSession> where TSession : ISession {
 |`System.EventArgs`|**✓ DO** "EventArgs です"というサフィックスを追加。|  
 |`System.Enum`|**X DO NOT** 代わりに使用する言語でサポートされているキーワードを使用して; たとえば、C# の場合、次のように使用します。 このクラスから派生、`enum`キーワード。<br /><br /> **X DO NOT** 「列挙」または"Flag"サフィックスを追加|  
 |`System.Exception`|**✓ DO** "Exception"サフィックスを追加|  
-|`IDictionary` <br /> `IDictionary<TKey,TValue>`|**✓ DO** 「ディクショナリ」というサフィックスを追加。 @No__t-0 は特定の種類のコレクションですが、このガイドラインは、次に示す一般的なコレクションのガイドラインよりも優先されます。|  
+|`IDictionary` <br /> `IDictionary<TKey,TValue>`|**✓ DO** 「ディクショナリ」というサフィックスを追加。 `IDictionary` は特定の種類のコレクションであることに注意してくださいが、このガイドラインは、次に示す一般的なコレクションのガイドラインよりも優先されます。|  
 |`IEnumerable` <br /> `ICollection` <br /> `IList` <br /> `IEnumerable<T>` <br /> `ICollection<T>` <br /> `IList<T>`|**✓ DO** 「コレクション」サフィックスを追加|  
 |`System.IO.Stream`|**✓ DO** 「ストリームです」というサフィックスを追加。|  
 |`CodeAccessPermission IPermission`|**✓ DO** 「権限」というサフィックスを追加。|  
@@ -96,11 +96,11 @@ public interface ISessionChannel<TSession> where TSession : ISession {
   
  **X DO NOT** リッチ テキストの列挙型などの列挙値の名前 (例:"ad"ADO 列挙型の場合。)、"rtf"に対して、プレフィックスを使用します。  
   
- *Portions © 2005, 2009 Microsoft Corporation.All rights reserved.*  
+ *©2005、2009 Microsoft Corporation の部分。すべての権限が予約されています。*  
   
- [ Framework のデザインガイドラインから、ピアソン教育, Inc. のアクセス許可によって @no__t。再利用可能な .NET ライブラリの規則、表現、パターン、2番目のエディション @ no__t-0 by Krzysztof Cwalina、および Addison-Wesley Professional によって Microsoft Windows 開発シリーズの一部として2008年10月22日に公開さ @no__t れました。  
+ *2008 年 10 月 22 日に Microsoft Windows Development シリーズの一部として、Addison-Wesley Professional によって発行された、Krzysztof Cwalina および Brad Abrams による「[Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)」 (フレームワーク デザイン ガイドライン: 再利用可能な .NET ライブラリの規則、用法、パターン、第 2 版) から Pearson Education, Inc. の許可を得て再印刷されています。*  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)
 - [名前付けのガイドライン](../../../docs/standard/design-guidelines/naming-guidelines.md)

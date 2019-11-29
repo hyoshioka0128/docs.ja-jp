@@ -1,13 +1,13 @@
 ---
-title: 非同期アプリでの再入の処理 (Visual Basic)
+title: 非同期アプリにおける再入の処理
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: 466ff3ba4cdb627143b3ffc988ae4a16348e6ca6
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: cd8b43aa9b2373b5ce038e5007678778201f0746
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775537"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354266"
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>非同期アプリでの再入の処理 (Visual Basic)
 
@@ -17,7 +17,7 @@ ms.locfileid: "72775537"
 > この例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 以降が、コンピューターにインストールされている必要があります。
 
 > [!NOTE]
-> TLS (Transport Layer Security) バージョン1.2 は、アプリ開発で使用する最小バージョンになりました。 アプリが4.7 より前の .NET framework バージョンを対象としている場合は、[トランスポート層セキュリティ (TLS) のベストプラクティス](../../../../framework/network-programming/tls.md)について、次の記事を参照してください .NET Framework 
+> 現在、アプリ開発で使用する最小バージョンは、トランスポート層セキュリティ (TLS) バージョン 1.2 です。 ご利用のアプリがバージョン 4.7 より前の .NET Framework を対象としている場合は、「[.NET Framework でのトランスポート層セキュリティ (TLS) のベスト プラクティス](../../../../framework/network-programming/tls.md)」の記事を参照してください。 
 
 ## <a name="BKMK_RecognizingReentrancy"></a>再入を認識する
 
@@ -139,7 +139,7 @@ End Sub
         Dim cts As CancellationTokenSource
     ```
 
-2. `StartButton_Click` で、処理が既に実行されているかどうかを確認します。 @No__t_0 の値が `Nothing` 場合、操作は既にアクティブになっていません。 値が `Nothing` ない場合、既に実行されている操作は取り消されます。
+2. `StartButton_Click` で、処理が既に実行されているかどうかを確認します。 `cts` の値が `Nothing`場合、操作は既にアクティブになっていません。 値が `Nothing`ない場合、既に実行されている操作は取り消されます。
 
     ```vb
     ' *** If a download process is already underway, cancel it.
@@ -156,7 +156,7 @@ End Sub
     cts = newCTS
     ```
 
-4. @No__t_0 の最後に、現在のプロセスが完了したので、`cts` の値を `Nothing` に戻します。
+4. `StartButton_Click`の最後に、現在のプロセスが完了したので、`cts` の値を `Nothing`に戻します。
 
     ```vb
     ' *** When the process completes, signal that another process can proceed.
@@ -474,7 +474,7 @@ End Function
 
 この例を実行するには、変更を「[アプリケーションをビルドする](#BKMK_BuildingTheApp)」のコードに貼り付けます。また、「[アプリをダウンロードする](#BKMK_DownloadingTheApp)」の手順に従って、サンプルをダウンロードし、QueueResults プロジェクトを実行することもできます。
 
-#### <a name="points-of-interest"></a>目的のポイント
+#### <a name="points-of-interest"></a>重要点
 
 出力で先頭にシャープ記号 (#) が付いている情報行は、この例の動作を明確に示しています。
 
@@ -516,7 +516,7 @@ End Function
   TOTAL bytes returned:  915908
   ```
 
-- @No__t_0 タスクは、最初に開始されたグループ A に対してのみ、`FinishOneGroupAsync` の開始時に `Nothing` ます。 `FinishOneGroupAsync` に達したとき、グループ A はまだ await 式を完了していません。 したがって、コントロールは `AccessTheWebAsync` に戻っておらず、`pendingWork` への最初の割り当ては発生していません。
+- `pendingWork` タスクは、最初に開始されたグループ A に対してのみ、`FinishOneGroupAsync` の開始時に `Nothing` ます。 `FinishOneGroupAsync` に達したとき、グループ A はまだ await 式を完了していません。 したがって、コントロールは `AccessTheWebAsync` に戻っておらず、`pendingWork` への最初の割り当ては発生していません。
 
 - 次の 2 行は、出力に必ず同時に表示されます。 `StartButton_Click` のグループ操作が開始してから、グループのタスクが `pendingWork` に割り当てられるまでの間、コードが中断されることは決してありません。
 
@@ -556,7 +556,7 @@ End Function
 
 1. Visual Studio を起動します。
 
-2. メニュー バーで **[ファイル]** 、 **[新規作成]** 、 **[プロジェクト]** の順にクリックします。
+2. メニュー バーで、 **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。
 
      **[新しいプロジェクト]** ダイアログ ボックスが表示されます。
 
@@ -564,7 +564,7 @@ End Function
 
 4. プロジェクトの種類の一覧の **[WPF アプリケーション]** をクリックします。
 
-5. プロジェクトに `WebsiteDownloadWPF` という名前を指定し、4.6 以降の .NET Framework バージョンを選択して、 **[OK]** ボタンをクリックします。
+5. プロジェクトに `WebsiteDownloadWPF` という名前を指定し、4.6 以降の .NET Framework のバージョンを選択して、 **[OK]** ボタンをクリックします。
 
      **ソリューション エクスプローラー**に新しいプロジェクトが表示されます。
 
@@ -592,7 +592,7 @@ End Function
 
      テキスト ボックスとボタンを含む簡単なウィンドウが、MainWindow.xaml の**デザイン** ビューに表示されます。
 
-8. **ソリューションエクスプローラー**で、 **[参照]** を右クリックし、 **[参照の追加]** を選択します。
+8. **ソリューション エクスプローラー**で **[参照]** を右クリックし、 **[参照の追加]** を選択します。
 
      まだ選択されていない場合は、<xref:System.Net.Http> の参照を追加します。
 
@@ -682,7 +682,7 @@ End Function
 
 12. 「[[Start] ボタンを無効にする](#BKMK_DisableTheStartButton)」、「[操作を取り消して再開する](#BKMK_CancelAndRestart)」、または「[複数の操作を実行して出力をキューに登録する](#BKMK_RunMultipleOperations)」の変更を行って再入を処理します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)

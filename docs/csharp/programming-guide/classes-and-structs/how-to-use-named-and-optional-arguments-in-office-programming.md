@@ -1,5 +1,5 @@
 ---
-title: '方法: Office プログラミングで名前付き引数と省略可能な引数を使用する - C# プログラミング ガイド'
+title: Office プログラミングで名前付き引数と省略可能な引数を使用する方法 - C# プログラミング ガイド
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: 90b60a6410ffbe7f9802b01bf3303b6e842a1424
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: d7efd13f26912f8cd944bcbc5568e9bbca92c3a0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002794"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970492"
 ---
-# <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>方法: Office プログラミングで名前付き引数と省略可能な引数を使用する (C# プログラミング ガイド)
+# <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Office プログラミングで名前付き引数と省略可能な引数を使用する方法 (C# プログラミング ガイド)
 
 C# 4 で導入された名前付き引数と省略可能な引数を使うと、C# プログラミングの便利さ、柔軟性、読みやすさが向上します。 さらに、Microsoft Office オートメーション API などの COM インターフェイスへのアクセスが大幅に楽になります。
 
@@ -38,7 +38,7 @@ C# 4 で導入された名前付き引数と省略可能な引数を使うと、
 
 6. **[名前]** フィールドに、プロジェクトの名前を入力します。
 
-7. Click **OK**.
+7. **[OK]** をクリックします。
 
      **ソリューション エクスプローラー**に新しいプロジェクトが表示されます。
 
@@ -48,7 +48,7 @@ C# 4 で導入された名前付き引数と省略可能な引数を使うと、
 
 2. **[.NET]** ページの **[コンポーネント名]** の一覧で、**Microsoft.Office.Interop.Word** を選びます。
 
-3. Click **OK**.
+3. **[OK]** をクリックします。
 
 ## <a name="to-add-necessary-using-directives"></a>ディレクティブを使用して必要なものを追加するには
 

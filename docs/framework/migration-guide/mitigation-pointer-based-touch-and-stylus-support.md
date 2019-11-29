@@ -7,14 +7,12 @@ helpviewer_keywords:
 - WPF retargeting changes
 - WPF pointer-based touch and stylus stack
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 67e41450ed69d73a4b27b0aa37974ae01be69687
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6b3e8068be2f5ed82c483b760fe100ea0a751588
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779240"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457863"
 ---
 # <a name="mitigation-pointer-based-touch-and-stylus-support"></a>軽減策:ポインター ベースのタッチおよびスタイラスのサポート
 
@@ -56,4 +54,4 @@ ms.locfileid: "70779240"
 
 ## <a name="see-also"></a>関連項目
 
-- [.NET Framework 4.7 における再ターゲットの変更点](retargeting-changes-in-the-net-framework-4-7.md)
+- [アプリケーションの互換性](application-compatibility.md)

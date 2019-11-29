@@ -1,14 +1,13 @@
 ---
 title: WCF 開発者向け Docker-gRPC
 description: ASP.NET Core gRPC アプリケーション用の Docker イメージの作成
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: cc369da9494ade532187dfc8d19a94a3a037ebab
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: a5aceb4b5270cb828965e990a62db4147012adff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841655"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73967837"
 ---
 # <a name="docker"></a>Docker
 
@@ -18,14 +17,14 @@ ms.locfileid: "73841655"
 
 Microsoft では、.NET Core アプリケーションをビルドして実行するためのさまざまな基本イメージを提供しています。 ASP.NET Core 3.0 イメージを作成するには、アプリケーションをビルドして発行するための SDK イメージと配置用のランタイムイメージという2つの基本イメージが使用されます。
 
-| Image | 説明 |
+| イメージ | 説明 |
 | ----- | ----------- |
 | [mcr.microsoft.com/dotnet/core/sdk](https://hub.docker.com/_/microsoft-dotnet-core-sdk/) | `docker build`を使用してアプリケーションをビルドする場合。 運用環境では使用されません。 |
 | [mcr.microsoft.com/dotnet/core/aspnet](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) | ランタイムと ASP.NET Core の依存関係を含みます。 運用環境の場合。 |
 
 各イメージには、タグによって識別される、異なる Linux ディストリビューションに基づく4つのバリエーションがあります。
 
-| イメージタグ | Linux | ノート |
+| イメージタグ | Linux | 説明 |
 | --------- | ----- | ----- |
 | 3.0-buster、3.0 | Debian 10 | OS バリアントが指定されていない場合の既定のイメージ。 |
 | 3.0-アルペン | Alpine 3.9 | Alpine base イメージは Debian または Ubuntu よりもはるかに小さいものです。 |

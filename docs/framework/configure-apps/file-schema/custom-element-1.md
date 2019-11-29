@@ -20,7 +20,7 @@ ms.locfileid: "73118836"
 \<セクション > 要素で定義され、<xref:System.Configuration.SingleTagSectionHandler> クラスを使用するカスタム構成セクションの設定を定義します。
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp; *\<sectionName >*
+&nbsp;&nbsp; *\<sectionName>*
 
 ## <a name="syntax"></a>構文
 
@@ -40,9 +40,9 @@ ms.locfileid: "73118836"
 
 ## <a name="child-elements"></a>子要素
 
-None
+なし
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
 **\<sectionName >** 要素は、 [ **\<configsections >** ](configsections-element-for-configuration.md)要素の[ **\<セクション >** ](section-element.md)タグで定義されたカスタム要素です。 <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>を呼び出すと、構成システムによって <xref:System.Collections.IDictionary> オブジェクトが返されます。
 
@@ -66,6 +66,6 @@ None
 
 この要素は、アプリケーション構成ファイル *、コンピューター構成*ファイル (machine.config)、およびアプリケーションディレクトリレベルでは*ない web.config ファイル*で使用できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [.NET Framework の構成ファイルスキーマ](index.md)

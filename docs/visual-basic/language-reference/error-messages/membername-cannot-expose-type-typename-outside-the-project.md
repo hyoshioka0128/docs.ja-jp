@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71700897"
 ---
-# <a name="membername-cannot-expose-type-typename-outside-the-project-through-containertype-containertypename"></a>' \<membername > ' は、2containertype @no__t ' >-3containertypename @no__t ' 経由でプロジェクトの外部の型 ' \< typename > ' を公開できません
+# <a name="membername-cannot-expose-type-typename-outside-the-project-through-containertype-containertypename"></a>'\<membername > ' は \<containertype > '\<containertypename > ' 経由でプロジェクト外部の型 '\<typename > ' を公開できません
 変数、プロシージャパラメーター、または関数の戻り値は、コンテナーの外部に公開されますが、コンテナーの外部に公開されてはならない型として宣言されています。  
   
  次のスケルトンコードは、このエラーを生成する状況を示しています。  
@@ -27,7 +27,7 @@ Public Class mainClass
 End Class  
 ```  
   
- @No__t-0、`Friend`、`Protected Friend`、または `Private` として宣言された型は、宣言コンテキストの外部でアクセスが制限されることを意図しています。 アクセス制限が低い変数のデータ型として使用すると、この目的が損なわれます。 前のスケルトンコードでは、`exposedVar` は `Public` であり、@no__t にアクセスできないようにするコードには、-2 を公開します。  
+ `Protected`、`Friend`、`Protected Friend`、または `Private` として宣言されている型は、宣言コンテキストの外部でアクセスが制限されていることを意図しています。 アクセス制限が低い変数のデータ型として使用すると、この目的が損なわれます。 上記のスケルトンコードでは、`exposedVar` は `Public` であり、アクセス権を持たないコードに `privateClass` を公開します。  
   
  **エラー ID:** BC30909  
   
@@ -35,6 +35,6 @@ End Class
   
 - 変数、プロシージャパラメーター、または関数のアクセスレベルを、少なくともそのデータ型のアクセスレベルと同じ制限以上になるように変更します。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)

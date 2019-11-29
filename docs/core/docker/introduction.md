@@ -3,12 +3,12 @@ title: Docker の概要
 description: この記事では、.NET Core アプリケーションのコンテキストでの Docker の基本と概要について説明します。
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 3f40d2723feb5a31066115ae11cafba11981f1b4
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 22c8fa4cda5cfd6564695d3b86072c64f22fa335
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523005"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74087386"
 ---
 # <a name="introduction-to-net-and-docker"></a>.NET および Docker の概要
 
@@ -40,7 +40,7 @@ Microsoft Container Registry (MCR) は、Microsoft が提供するコンテナ�
 
 ### <a name="dockerfile"></a>Dockerfile
 
-**Dockerfile** は、イメージを作成する一連の手順を定義したファイルです。 **Dockerfile** 内の各手順で、イメージ内のレイヤーを作成します。 ほとんどの場合、イメージをリビルドすると、変更されたレイヤーのみがリビルドされます。 **Dockerfile** は他のユーザーに配布できます。他のユーザーは、これを使って、自分が作成したのと同じ方法で新しいイメージを再作成できます。 これにより、イメージを作成する方法に関する "*手順*" を配布できますが、自分のイメージを配布するための主要な方法はそれをレジストリに公開することです。
+**Dockerfile** は、イメージを作成する一連の手順を定義したファイルです。 **Dockerfile** 内の各手順で、イメージ内のレイヤーを作成します。 ほとんどの場合、イメージをリビルドすると、変更されたレイヤーのみがリビルドされます。 **Dockerfile** は他のユーザーに配布できます。他のユーザーは、これを使って、自分が作成したときと同じ方法で新しいイメージを再作成できます。 これにより、イメージを作成する方法に関する "*手順*" を配布できますが、自分のイメージを配布するための主要な方法はそれをレジストリに公開することです。
 
 ## <a name="net-core-images"></a>.NET Core イメージ
 
@@ -61,7 +61,7 @@ PaaS 環境で Linux コンテナーを使用して Web アプリまたは API �
 - [Azure Container Instances](https://azure.microsoft.com/services/container-instances/)\
 クラウドでコンテナーをホストしますが、高度な管理サービスは何もありません。
 
- [Azure Batch](https://azure.microsoft.com/services/batch/)\
+- [Azure Batch](https://azure.microsoft.com/services/batch/)\
 コンテナーを使用して反復的なコンピューティング ジョブを実行します。
 
 - [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/)\
@@ -72,7 +72,7 @@ Windows Server コンテナーを使用して、.NET アプリケーションを
 
 ## <a name="next-steps"></a>次の手順
 
-- [.NET Core アプリケーションをコンテナー化する方法について説明します。](build-docker-netcore-container.md)
+- [.NET Core アプリケーションをコンテナー化する方法について説明します。](build-container.md)
 - [ASP.NET Core アプリケーションをコンテナー化する方法を学習します。](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
 - [Learn の ASP.NET Core マイクロサービスのチュートリアルをお試しください。](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
 - [Visual Studio でのコンテナー ツールについて学習します](/visualstudio/containers/overview)

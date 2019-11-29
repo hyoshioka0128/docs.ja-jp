@@ -1,14 +1,13 @@
 ---
 title: WCF エンドポイントと gRPC メソッド-WCF 開発者向け gRPC
 description: ServiceContract および OperationContract 属性で宣言された WCF エンドポイントと、Protobuf で宣言されている gRPC メソッドの比較
-author: markrendle
 ms.date: 09/02/2019
-ms.openlocfilehash: 1cb7fedf1fbb632438134375306801f356d7b921
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 763862a363afc6aab72335050cf4822754816c7a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "73841301"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73966930"
 ---
 # <a name="wcf-endpoints-and-grpc-methods"></a>WCF エンドポイントと gRPC メソッド
 

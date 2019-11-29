@@ -1,19 +1,20 @@
 ---
-title: トラブルシューティング:ログ リスナー (Visual Basic)
+title: トラブルシューティング:ログ リスナー
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event logs, troubleshooting
 - troubleshooting Visual Basic, event logs
 - troubleshooting event logs
 ms.assetid: ac6eb760-3d5d-461e-aedd-40599ee22e49
-ms.openlocfilehash: 12282df50bc42d2a153a9aa8db01f2654acd91ce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: dd139935dae7fe4d1334b861e6590df29bab7202
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59299528"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346856"
 ---
 # <a name="troubleshooting-log-listeners-visual-basic"></a>トラブルシューティング:ログ リスナー (Visual Basic)
+
 `My.Application.Log` オブジェクトおよび `My.Log` オブジェクトを使用すると、アプリケーション内で発生したイベントに関する情報をログに記録できます。  
   
  これらのメッセージを受信するログ リスナーを判断する方法については、「[チュートリアル: My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)」を参照してください。  
@@ -36,7 +37,7 @@ ms.locfileid: "59299528"
   
      [!code-vb[VbVbalrMyApplicationLog#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#19)]  
   
-     詳細については、「<xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A>」を参照してください。  
+     詳細については、<xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A> を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

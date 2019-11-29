@@ -1,13 +1,13 @@
 ---
-title: 修飾子 (Visual Basic)
+title: 修飾子
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 466d69ec966037ae3a980bba381fc61be52f30e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0379a0d0571a66bda4df06f5c2d3282d80034cae
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051183"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351541"
 ---
 # <a name="modifiers-visual-basic"></a>修飾子 (Visual Basic)
 このセクションのトピックでは、Visual Basic ランタイム修飾子を示します。  
@@ -15,7 +15,7 @@ ms.locfileid: "62051183"
 ## <a name="in-this-section"></a>このセクションの内容  
  [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md)  
   
- [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)  
+ [アセンブリ](../../../visual-basic/language-reference/modifiers/assembly.md)  
   
  [Async](../../../visual-basic/language-reference/modifiers/async.md)  
   
@@ -23,9 +23,9 @@ ms.locfileid: "62051183"
   
  [ByRef](../../../visual-basic/language-reference/modifiers/byref.md)  
   
- [ByVal](../../../visual-basic/language-reference/modifiers/byval.md)  
+ [ParamArray](../../../visual-basic/language-reference/modifiers/byval.md)  
   
- [default](../../../visual-basic/language-reference/modifiers/default.md)  
+ [Shared](../../../visual-basic/language-reference/modifiers/default.md)  
   
  [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
@@ -39,7 +39,7 @@ ms.locfileid: "62051183"
   
  [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
   
- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
+ [MyBase](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
   
  [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
   
@@ -87,7 +87,7 @@ ms.locfileid: "62051183"
   
  [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
   
-## <a name="related-sections"></a>関連項目  
+## <a name="related-sections"></a>関連セクション  
  [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

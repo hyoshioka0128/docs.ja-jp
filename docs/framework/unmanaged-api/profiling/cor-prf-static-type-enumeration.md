@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 441d7809-5b65-41a5-ba64-2910a8008315
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 753c3b38187dd69593dcb0520acef9ce4b137039
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 40efe81f72a2043503bf521e3e47dad1a7f4530c
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751899"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448450"
 ---
-# <a name="corprfstatictype-enumeration"></a>COR_PRF_STATIC_TYPE 列挙型
-フィールドが静的であるかどうかを示し、静的な場合は、フィールドに適用される静的なクオリティを示します。 フィールドを複数持つことを示すビットごとの OR 演算を使用してこれらの値を結合できる別の静的品質。  
+# <a name="cor_prf_static_type-enumeration"></a>COR_PRF_STATIC_TYPE 列挙型
+フィールドが静的であるかどうかを示し、静的な場合は、フィールドに適用される静的なクオリティを示します。 これらの値は、ビットごとの OR 演算を使用して組み合わせて、フィールドに複数の異なる静的品質があることを示すことができます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -42,21 +40,21 @@ typedef enum {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`COR_PRF_FIELD_NOT_A_STATIC`|フィールドは静的でありません。|  
-|`COR_PRF_FIELD_APP_DOMAIN_STATIC`|フィールドには、アプリケーション ドメインの静的です。|  
-|`COR_PRF_FIELD_THREAD_STATIC`|フィールドでは、スレッドの静的です。|  
-|`COR_PRF_FIELD_CONTEXT_STATIC`|フィールドでは、コンテキストの静的です。|  
-|`COR_PRF_FIELD_RVA_STATIC`|フィールドが相対仮想アドレス (RVA)-静的です。|  
+|`COR_PRF_FIELD_NOT_A_STATIC`|フィールドは静的ではありません。|  
+|`COR_PRF_FIELD_APP_DOMAIN_STATIC`|フィールドは [アプリケーションドメイン-静的] です。|  
+|`COR_PRF_FIELD_THREAD_STATIC`|フィールドはスレッド静的です。|  
+|`COR_PRF_FIELD_CONTEXT_STATIC`|フィールドは、コンテキスト静的です。|  
+|`COR_PRF_FIELD_RVA_STATIC`|フィールドは、相対仮想アドレス (RVA)-static です。|  
   
-## <a name="requirements"></a>必要条件  
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>要件  
+ **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorProf.idl、CorProf.h  
+ **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [列挙型のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

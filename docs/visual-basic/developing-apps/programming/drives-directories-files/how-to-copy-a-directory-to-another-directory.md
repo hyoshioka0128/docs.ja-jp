@@ -1,5 +1,5 @@
 ---
-title: '方法: Visual Basic でディレクトリを別のディレクトリにコピーする'
+title: '方法: ディレクトリを別のディレクトリにコピーする'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [Visual Basic], copying directories
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - folders [Visual Basic], copying
 - directories [Visual Basic], copying
 ms.assetid: 2a370bd7-10ba-4219-afc4-4519d031eb6c
-ms.openlocfilehash: d8f32da0f4b701d745cd5f70feb7cc461a09842f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a23079f093f53ab8e20eb71c684a594dcf7f894b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039468"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348860"
 ---
 # <a name="how-to-copy-a-directory-to-another-directory-in-visual-basic"></a>方法: Visual Basic でディレクトリを別のディレクトリにコピーする
 

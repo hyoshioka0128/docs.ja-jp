@@ -2,12 +2,12 @@
 title: 厳密に型指定された拡張のサンプル
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-ms.openlocfilehash: 5ee2f13df9d3c0841b3e8b62b1633ea4520d3860
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8dc6bca87989b1ee8e1ee440b0d64e2c196cc28f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421509"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73978235"
 ---
 # <a name="strongly-typed-extensions-sample"></a>厳密に型指定された拡張のサンプル
 このサンプルでは、例を示す目的で <xref:System.ServiceModel.Syndication.SyndicationFeed> クラスを使用します。 ただし、このサンプルで示すパターンは、拡張データをサポートするすべての配信クラスで使用できます。  
@@ -90,7 +90,7 @@ public class InReplyToElement : IXmlSerializable
   
  `InReplyToElement` クラスは、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装します。このインターフェイスは、オブジェクト インスタンスを XML から読み取る、または書き込む方法の直接制御を可能にします。 `ReadXml` メソッドは、渡された `Ref` から `HRef`、`Source`、`MediaType`、および <xref:System.Xml.XmlReader> の各プロパティを最初に読み取ります。 不明な属性は<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> コレクションに格納されます。 すべての属性が読み取られると、<xref:System.Xml.XmlReader.ReadStartElement> が呼び出されて、リーダーが次の要素に進みます。 次のコードに示すように、このクラスによりモデル化された要素には必須の子がないので、子要素は `XElement` インスタンスにバッファされ、<xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> コレクションに格納されます。  
   
-```csharp  
+```csharp
 public void ReadXml(System.Xml.XmlReader reader)  
 {  
     bool isEmpty = reader.IsEmptyElement;  
@@ -146,7 +146,7 @@ public void ReadXml(System.Xml.XmlReader reader)
   
  `WriteXml` では、`InReplyToElement` メソッドは最初に `Ref`、`HRef`、`Source`、および `MediaType` の各プロパティの値を XML 属性として書き込みます (`WriteXml` は、実際の外側の要素自体は書き込みません。`WriteXml` により行われるためです)。 また、次のコードに示すように、<xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> および <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> の内容をライタに書き込みます。  
   
-```csharp  
+```csharp
 public void WriteXml(System.Xml.XmlWriter writer)  
 {  
     if (this.Ref != null)  
@@ -189,7 +189,7 @@ public void WriteXml(System.Xml.XmlWriter writer)
   
  `ThreadedFeed` クラスは、`SyndicationFeed` から継承され、`OnCreateItem` をオーバーライドして `ThreadedItem` を返します。 また、次のコードに示すように、`Items` コレクションにアクセスするメソッドを `ThreadedItems` として実装します。  
   
-```csharp  
+```csharp
 public class ThreadedFeed : SyndicationFeed  
 {  
     public ThreadedFeed()  
@@ -213,7 +213,7 @@ public class ThreadedFeed : SyndicationFeed
   
  `ThreadedItem` クラスは `SyndicationItem` から継承され、`InReplyToElement` を厳密に型指定されたプロパティとします。 これにより、`InReplyTo` 拡張データにプログラムによって簡単にアクセスできます。 また、次のコードに示すように、その拡張データの読み取り/書き込みを行う `TryParseElement` および `WriteElementExtensions` も実装します。  
   
-```csharp  
+```csharp
 public class ThreadedItem : SyndicationItem  
 {  
     private InReplyToElement inReplyTo;  

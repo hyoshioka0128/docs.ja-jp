@@ -2,14 +2,12 @@
 title: '軽減策: X509CertificateClaimSet.FindClaims メソッド'
 ms.date: 03/30/2017
 ms.assetid: ee356e3b-f932-48f5-875a-5e42340bee63
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ffc03e6c88a2aabb967587d8b1ee7d0b784b4e7d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e75b1cae599b153012b8525a0e1e36ed116e695f
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70778942"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73457757"
 ---
 # <a name="mitigation-x509certificateclaimsetfindclaims-method"></a>軽減策: X509CertificateClaimSet.FindClaims メソッド
 <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> メソッドは、.NET Framework 4.6.1 を対象とするアプリから、`claimType` 引数と SAN フィールド内のすべての DNS エントリとの照合を試みます。  
@@ -38,4 +36,4 @@ ms.locfileid: "70778942"
   
 ## <a name="see-also"></a>関連項目
 
-- [変更の再ターゲット](retargeting-changes-in-the-net-framework-4-6-1.md)
+- [アプリケーションの互換性](application-compatibility.md)

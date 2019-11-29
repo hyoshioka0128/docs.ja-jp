@@ -1,5 +1,5 @@
 ---
-title: Structure ステートメント (Visual Basic)
+title: Structure ステートメント
 ms.date: 05/12/2018
 f1_keywords:
 - vb.Structure
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - UDT (user-defined types)
 - types [Visual Basic], user-defined
 ms.assetid: 9bd1deea-2a89-4cdc-812c-6dcbb947c391
-ms.openlocfilehash: ac128e257269ca301400bd8b294539d1ec836cab
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 120f836b9d49c00e9c53af0d1fc832e22c8cbbb8
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038615"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346458"
 ---
 # <a name="structure-statement"></a>Structure ステートメント
 
@@ -38,20 +38,20 @@ End Structure
 
 |用語|定義|
 |---|---|
-|`attributelist`|省略可能です。 「[属性リスト](attribute-list.md)」を参照してください。|
-|`accessmodifier`|省略可能です。 次のいずれかの値を指定します。<br /><br /> -   [パブリック](../modifiers/public.md)<br />[保護されている](../modifiers/protected.md)-   <br />-   [Friend](../modifiers/friend.md)<br />-   [プライベート](../modifiers/private.md)<br />[保護されたフレンド](../modifiers/protected-friend.md)の - <br/>- [プライベート保護](../modifiers/private-protected.md) <br /><br /> 「 [Access levels in Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|
-|`Shadows`|省略可能です。 「[シャドウ](../modifiers/shadows.md)」を参照してください。|
-|`Partial`|省略可能です。 構造体の部分定義を示します。 「[部分](../modifiers/partial.md)」を参照してください。|
-|`name`|必須です。 この構造体の名前です。 「 [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|
-|`Of`|省略可能です。 これがジェネリックな構造体であることを指定します。|
+|`attributelist`|任意。 「[属性リスト](attribute-list.md)」を参照してください。|
+|`accessmodifier`|任意。 次のいずれかになります。<br /><br /> -   [パブリック](../modifiers/public.md)<br />[保護されている](../modifiers/protected.md)-   <br />-   [Friend](../modifiers/friend.md)<br />-   [プライベート](../modifiers/private.md)<br />[保護されたフレンド](../modifiers/protected-friend.md)の - <br/>- [プライベート保護](../modifiers/private-protected.md) <br /><br /> 「 [Access levels in Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|
+|`Shadows`|任意。 「[シャドウ](../modifiers/shadows.md)」を参照してください。|
+|`Partial`|任意。 構造体の部分定義を示します。 「[部分](../modifiers/partial.md)」を参照してください。|
+|`name`|必須。 この構造体の名前です。 「 [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|
+|`Of`|任意。 これがジェネリックな構造体であることを指定します。|
 |`typelist`|[Of](of-clause.md)キーワードを使用する場合は必須です。 この構造体の型パラメーター リストを指定します。 [型リスト](type-list.md)を参照してください。|
-|`Implements`|省略可能です。 この構造体が、複数のインターフェイスのメンバーを実装していることを示します。 「 [Implements ステートメント](implements-statement.md)」を参照してください。|
+|`Implements`|任意。 この構造体が、複数のインターフェイスのメンバーを実装していることを示します。 「 [Implements ステートメント](implements-statement.md)」を参照してください。|
 |`interfacenames`|`Implements` ステートメントを使用する場合は必ず指定します。 この構造体が実装するインターフェイスの名前を指定します。|
-|`datamemberdeclarations`|必須です。 構造体の*データメンバー*を宣言する、0個以上の `Const`、`Dim`、`Enum`、または `Event` ステートメント。|
-|`methodmemberdeclarations`|省略可能です。 構造体の*メソッドメンバー*として機能する、`Function`、`Operator`、`Property`、または `Sub` の各プロシージャの、0個以上の宣言。|
-|`End Structure`|必須です。 `Structure` の定義を終了します。|
+|`datamemberdeclarations`|必須。 構造体の*データメンバー*を宣言する、0個以上の `Const`、`Dim`、`Enum`、または `Event` ステートメント。|
+|`methodmemberdeclarations`|任意。 構造体の*メソッドメンバー*として機能する、`Function`、`Operator`、`Property`、または `Sub` の各プロシージャの、0個以上の宣言。|
+|`End Structure`|必須。 `Structure` の定義を終了します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
 `Structure` ステートメントは、カスタマイズできる複合値型を定義します。 *構造体*は、以前のバージョンの Visual Basic のユーザー定義型 (UDT) を一般化したものです。 詳細については、「[構造](../../programming-guide/language-features/data-types/structures.md)」を参照してください。
 
@@ -75,7 +75,7 @@ End Structure
 
      <xref:System.ValueType>を指定する場合でも、構造体の定義で[Inherits ステートメント](inherits-statement.md)を使用することはできません。
 
-- **ション.** 構造体が[Implements ステートメント](implements-statement.md)を使用する場合は、`interfacenames` で指定するすべてのインターフェイスで定義されているすべてのメンバーを実装する必要があります。
+- **ション.** 構造体が[Implements ステートメント](implements-statement.md)を使用する場合は、`interfacenames`で指定するすべてのインターフェイスで定義されているすべてのメンバーを実装する必要があります。
 
 - **既定のプロパティ。** 構造体では、[既定](../modifiers/default.md)の修飾子を使用して、最大で1つのプロパティを*既定のプロパティ*として指定できます。 詳細については、「 [Default](../modifiers/default.md)」を参照してください。
 
@@ -118,6 +118,6 @@ End Structure
 - [Const ステートメント](const-statement.md)
 - [Enum ステートメント](enum-statement.md)
 - [Event ステートメント](event-statement.md)
-- [Operator ステートメント](operator-statement.md)
+- [Operator Statement](operator-statement.md)
 - [Property ステートメント](property-statement.md)
 - [構造体とクラス](../../programming-guide/language-features/data-types/structures-and-classes.md)

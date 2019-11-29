@@ -7,16 +7,16 @@ helpviewer_keywords:
 - XAML [WPF]
 - Extensible Application Markup Language [WPF]
 ms.assetid: 5d858575-a83b-42df-ad3f-047ed2d6e3c8
-ms.openlocfilehash: 33b40ddbb0c959332f7d95ffa0f1633b910bcb33
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: cea6809ebf9a4ae516d59bd99bf8126d2e874788
+ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68672008"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73459567"
 ---
 # <a name="xaml-in-wpf"></a>WPF の XAML
 
-[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]は、宣言型アプリケーションプログラミングのマークアップ言語です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]XAML プロセッサ実装を実装し、XAML 言語サポートを提供します。 型[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]は、XAML 表現のために必要な型を提供できるように実装されています。 一般に、XAML マークアップで[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]アプリケーション UI の大部分を作成できます。  
+[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] は、宣言型アプリケーションプログラミングのマークアップ言語です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、XAML プロセッサの実装を実装し、XAML 言語のサポートを提供します。 XAML 表現のために必要な型を提供できるように、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 型が実装されています。 一般に、XAML マークアップで [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーション UI の大部分を作成できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
 
@@ -31,18 +31,18 @@ ms.locfileid: "68672008"
 [XAML での空白の処理](../../xaml-services/whitespace-processing-in-xaml.md)  
 [TypeConverters および XAML](typeconverters-and-xaml.md)  
 [XML 文字エンティティと XAML](../../xaml-services/xml-character-entities-and-xaml.md)  
-[XAML 名前空間 (x:)言語機能](../../xaml-services/xaml-namespace-x-language-features.md)  
+[XAML 名前空間 (x:) 言語機能](../../xaml-services/xaml-namespace-x-language-features.md)  
 [WPF XAML 拡張機能](wpf-xaml-extensions.md)  
-[マークアップの互換性 (mc:)言語機能](markup-compatibility-mc-language-features.md)  
+[マークアップの互換性 (mc:) 言語機能](markup-compatibility-mc-language-features.md)  
   
 ## <a name="related-sections"></a>関連項目  
 
 [WPF アーキテクチャ](wpf-architecture.md)  
 [基本要素](base-elements.md)  
 [要素のツリーおよびシリアル化](element-tree-and-serialization.md)  
-[Properties](properties-wpf.md)  
+[プロパティ](properties-wpf.md)  
 [イベント](events-wpf.md)  
 [入力](input-wpf.md)  
 [リソース](resources-wpf.md)  
-[スタイルとテンプレート](../controls/styling-and-templating.md)  
+[スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
 [スレッド モデル](threading-model.md)
