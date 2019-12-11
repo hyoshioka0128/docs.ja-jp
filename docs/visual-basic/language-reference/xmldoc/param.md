@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352297"
 ---
-# <a name="param-visual-basic"></a>\<param > (Visual Basic)
+# <a name="param-visual-basic"></a>\<param> (Visual Basic)
 パラメーターの名前と説明を定義します。  
   
 ## <a name="syntax"></a>構文  
