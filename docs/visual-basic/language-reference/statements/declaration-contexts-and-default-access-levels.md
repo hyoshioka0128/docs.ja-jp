@@ -45,11 +45,11 @@ ms.locfileid: "74354103"
 |外部参照 ([Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md))|使用不可|`Public` (`Interface`では許可されていません)|使用不可|  
 |Operator ([Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md))|使用不可|`Public` (`Interface` または `Module`では許可されていません)|使用不可|  
 |Property ([Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md))|使用不可|`Public`|使用不可|  
-|Default プロパティ ([既定値](../../../visual-basic/language-reference/modifiers/default.md))|使用不可|`Public` (`Module`では許可されていません)|使用不可|  
+|Default プロパティ ([Default](../../../visual-basic/language-reference/modifiers/default.md))|使用不可|`Public` (`Module`では許可されていません)|使用不可|  
 |Event ([イベントステートメント](../../../visual-basic/language-reference/statements/event-statement.md))|使用不可|`Public`|使用不可|  
 |Delegate ([Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md))|`Friend`|`Public`|使用不可|  
   
- 詳細については、「 [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ 詳細については、「[Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照
 
