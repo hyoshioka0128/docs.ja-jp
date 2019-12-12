@@ -42,7 +42,7 @@ Error errornumber
 |`Description`|この文字列が存在する場合は、指定された `Number`の `Error` 関数の戻り値に対応する文字列式。 文字列が存在しない場合、`Description` には長さ0の文字列 ("") が含まれます。|  
 |`HelpFile`|適切な Visual Basic ヘルプファイルの完全修飾ドライブ、パス、およびファイル名。|  
 |`HelpContext`|`Number` プロパティに対応するエラーの Visual Basic ヘルプファイルコンテキスト ID。|  
-|`LastDLLError`|回.|  
+|`LastDLLError`|ゼロ。|  
   
  エラーハンドラーが存在しない場合、または何も有効になっていない場合は、エラーメッセージが作成され、`Err` オブジェクトのプロパティから表示されます。  
   
