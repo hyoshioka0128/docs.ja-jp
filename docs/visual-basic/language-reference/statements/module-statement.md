@@ -63,7 +63,7 @@ End Module
 
 モジュールには、プログラムと同じ有効期間があります。 メンバーはすべて `Shared`ので、プログラムの有効期間と同じになります。
 
-モジュールは既定で[Friend](../../../visual-basic/language-reference/modifiers/friend.md)アクセスになります。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。 詳細については、「 [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
+モジュールは既定で [Friend](../../../visual-basic/language-reference/modifiers/friend.md) アクセスになります。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。 詳細については、「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
 
 モジュールのすべてのメンバーは、暗黙的に `Shared`ます。
 
@@ -79,7 +79,7 @@ End Module
 
 ## <a name="rules"></a>ルール
 
-- **修飾子。 ** すべてのモジュールメンバーは暗黙的に[Shared](../../../visual-basic/language-reference/modifiers/shared.md)されます。 メンバーを宣言するときに `Shared` キーワードを使用することはできません。また、メンバーの共有ステータスを変更することもできません。
+- **修飾子。** すべてのモジュールメンバーは暗黙的に [Shared](../../../visual-basic/language-reference/modifiers/shared.md) されます。 メンバーを宣言するときに `Shared` キーワードを使用することはできません。また、メンバーの共有ステータスを変更することもできません。
 
 - **継承。** モジュールは、すべてのモジュールが継承する <xref:System.Object>以外の型から継承することはできません。 特に、1つのモジュールが別のモジュールから継承することはできません。
 
@@ -91,11 +91,11 @@ End Module
 
 - **アクセスレベル。** モジュール内では、各メンバーを独自のアクセス レベルで宣言できます。 モジュールメンバーの既定の [Public](../../../visual-basic/language-reference/modifiers/public.md) アクセスは、変数と定数を除き、既定で [Private](../../../visual-basic/language-reference/modifiers/private.md) アクセスになります。 モジュールがそのメンバーの 1 つ以上のアクセス権を持っている場合、指定されたモジュールへのアクセス レベルが優先されます。
 
-- **スコープ。 ** モジュールは、名前空間全体でスコープ内にあります。
+- **スコープ。** モジュールは、名前空間全体でスコープ内にあります。
 
   すべてのモジュールメンバーのスコープは、モジュール全体です。 すべてのメンバーに*型の上位変換*が適用されていることに注意してください。これにより、そのスコープがモジュールを含む名前空間に昇格します。 詳細については、「[型の上位変換](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md)」を参照してください。
 
-- **評価。 プロジェクトには複数のモジュールを含めることができます。また、2 つ以上の複数のモジュールで同じ名前を持つメンバーを宣言することができます。 ただし、そのようなメンバーへの参照がそのモジュールの外部からのものである場合は、適切なモジュール名を使用して修飾する必要があります。 詳細については、「[宣言された要素の参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)」を参照してください。
+- **評価。** プロジェクトには複数のモジュールを含めることができます。また、2 つ以上の複数のモジュールで同じ名前を持つメンバーを宣言することができます。 ただし、そのようなメンバーへの参照がそのモジュールの外部からのものである場合は、適切なモジュール名を使用して修飾する必要があります。 詳細については、「[宣言された要素の参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)」を参照してください。
 
 ## <a name="example"></a>例
 
