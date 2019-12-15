@@ -29,13 +29,13 @@ ms.locfileid: "74347831"
   
  このコンテキストでは、`Widening` キーワードを使用できます。  
   
- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
  拡大変換と縮小変換演算子の定義の例については、「[方法: 変換演算子を定義](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)する」を参照してください。  
   
 ## <a name="see-also"></a>参照
 
-- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
 - [拡大変換と縮小変換](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
 - [方法 : 演算子を定義する](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
