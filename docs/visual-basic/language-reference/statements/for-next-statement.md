@@ -61,7 +61,7 @@ Next [ counter ]
 |`Next`|必須。 `For` ループの定義を終了します。|
 
 > [!NOTE]
-> このステートメントで `To` キーワードを使用して、カウンターの範囲を指定します。 このキーワードは、 [Select...Case ステートメント](../../../visual-basic/language-reference/statements/select-case-statement.md)と配列宣言。 配列の宣言の詳細については、「 [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)」を参照してください。
+> このステートメントで `To` キーワードを使用して、カウンターの範囲を指定します。 このキーワードは、 [Select...Case ステートメント](../../../visual-basic/language-reference/statements/select-case-statement.md)と配列宣言。 配列の宣言の詳細については、「[Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)」を参照してください。
 
 ## <a name="simple-examples"></a>簡単な例
 
@@ -172,7 +172,7 @@ Visual Basic が `Next` ステートメントを検出するたびに、`step` �
 
 ## <a name="example"></a>例
 
-次の例では、列挙[ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)を使用して宣言された列挙型を反復処理します。
+次の例では、[Enum ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)を使用して宣言された列挙型を反復処理します。
 
 [!code-vb[VbVbalrStatements#116](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class7.vb#116)]
 

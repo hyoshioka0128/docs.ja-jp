@@ -34,7 +34,7 @@ End Get
 |用語|Definition|  
 |---|---|  
 |`attributelist`|省略可。 「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。|  
-|`accessmodifier`|このプロパティの `Get` および `Set` ステートメントのうちの1つで、省略可能です。 次のいずれかになります。<br /><br /> -     [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 「 [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|  
+|`accessmodifier`|このプロパティの `Get` および `Set` ステートメントのうちの 1 つで、省略可能です。 次のいずれかになります。<br /><br /> -     [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> 「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|  
 |`statements`|省略可。 `Get` プロパティプロシージャが呼び出されたときに実行される1つ以上のステートメント。|  
 |`End Get`|必須。 `Get` property プロシージャの定義を終了します。|  
   

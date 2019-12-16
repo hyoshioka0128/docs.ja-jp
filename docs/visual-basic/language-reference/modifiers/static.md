@@ -1,5 +1,5 @@
 ---
-title: 静的
+title: Static
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Static

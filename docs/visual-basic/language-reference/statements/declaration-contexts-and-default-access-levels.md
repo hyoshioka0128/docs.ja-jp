@@ -49,7 +49,7 @@ ms.locfileid: "74354103"
 |イベント ([Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md))|使用不可|`Public`|使用不可|  
 |デリゲート ([Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md))|`Friend`|`Public`|使用不可|  
   
- 詳細については、「[Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ 詳細については、「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照
 

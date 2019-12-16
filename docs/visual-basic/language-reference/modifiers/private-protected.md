@@ -46,23 +46,23 @@ ms.locfileid: "74351340"
 
 - [Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md)
 
-- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)
 
-- クラスで入れ子にされたデリゲートの[デリゲートステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)
+- クラスで入れ子にされたデリゲートの[Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)
 
 - [Dim ステートメント](../../../visual-basic/language-reference/statements/dim-statement.md)
 
-- クラスに入れ子になっている列挙型の[列挙ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)
+- クラスに入れ子になっている列挙型の[Enum ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)
 
 - [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)
 
 - [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)
 
-- クラスで入れ子にされたインターフェイスの[インターフェイスステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)
+- クラスで入れ子にされたインターフェイスの[Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)
 
 - [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)
 
-- クラスで入れ子になった構造体の[構造ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)
+- クラスで入れ子になった構造体の[Structure ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)
 
 - [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)
 

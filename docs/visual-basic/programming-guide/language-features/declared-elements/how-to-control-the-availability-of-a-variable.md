@@ -25,7 +25,7 @@ ms.locfileid: "74345390"
   
 - *ローカル変数*(プロシージャ内で定義) とにはパブリックアクセスがありますが、そのプロシージャ内のコードだけがアクセスできます。 ローカル変数のアクセスレベルを変更することはできませんが、それを含むプロシージャのアクセスレベルを変更することはできます。  
   
- 詳細については、「 [Visual Basic のアクセスレベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ 詳細については、「[Visual Basic でのアクセス レベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
   
 ## <a name="private-and-public-access"></a>プライベートアクセスとパブリックアクセス  
   
@@ -88,7 +88,7 @@ Private numberForMeOnly As Integer
   
 ## <a name="see-also"></a>参照
 
-- [Visual Basic のアクセスレベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Visual Basic でのアクセス レベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)
 - [Public](../../../../visual-basic/language-reference/modifiers/public.md)
 - [Protected](../../../../visual-basic/language-reference/modifiers/protected.md)

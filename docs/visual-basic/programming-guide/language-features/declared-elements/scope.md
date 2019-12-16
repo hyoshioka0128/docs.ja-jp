@@ -98,7 +98,7 @@ End If
 
 モジュールレベルで宣言を行うと、選択したアクセスレベルによってスコープが決まります。 モジュール、クラス、または構造体を含む名前空間は、スコープにも影響します。
 
-[プライベート](../../../../visual-basic/language-reference/modifiers/private.md)アクセスレベルを宣言する要素は、そのモジュール内のすべてのプロシージャで使用できますが、別のモジュール内のコードには使用できません。 アクセスレベルのキーワードを使用しない場合、モジュールレベルの `Dim` ステートメントは既定で `Private` になります。 ただし、`Dim` ステートメントで `Private` キーワードを使用すると、スコープとアクセスレベルをより明確にすることができます。
+[Private](../../../../visual-basic/language-reference/modifiers/private.md) アクセスレベルを宣言する要素は、そのモジュール内のすべてのプロシージャで使用できますが、別のモジュール内のコードには使用できません。 アクセスレベルのキーワードを使用しない場合、モジュールレベルの `Dim` ステートメントは既定で `Private` になります。 ただし、`Dim` ステートメントで `Private` キーワードを使用すると、スコープとアクセスレベルをより明確にすることができます。
 
 次の例では、モジュールで定義されているすべてのプロシージャが文字列変数 `strMsg`を参照できます。 2番目のプロシージャを呼び出すと、`strMsg` 文字列変数の内容がダイアログボックスに表示されます。
 
@@ -142,13 +142,13 @@ Public strMsg As String
 
 ### <a name="minimizing-scope"></a>スコープの最小化
 
-一般に、変数または定数を宣言するときは、可能な限り範囲を絞り込むことをお勧めします (ブロックスコープが最も狭い)。 これにより、メモリを節約し、コードが間違った変数を誤って参照する可能性を最小限に抑えることができます。 同様に、プロシージャ呼び出し間で値を保持する必要がある場合にのみ、変数を[静的](../../../../visual-basic/language-reference/modifiers/static.md)に宣言する必要があります。
+一般に、変数または定数を宣言するときは、可能な限り範囲を絞り込むことをお勧めします (ブロックスコープが最も狭い)。 これにより、メモリを節約し、コードが間違った変数を誤って参照する可能性を最小限に抑えることができます。 同様に、プロシージャ呼び出し間で値を保持する必要がある場合にのみ、変数を[Static](../../../../visual-basic/language-reference/modifiers/static.md)に宣言する必要があります。
 
 ## <a name="see-also"></a>参照
 
 - [宣言された要素の特性](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)
 - [方法: 変数のスコープを制御する](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)
 - [Visual Basic の有効期間](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
-- [Visual Basic のアクセスレベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Visual Basic でのアクセス レベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
 - [変数宣言](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

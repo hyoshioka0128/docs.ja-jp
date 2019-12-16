@@ -43,7 +43,7 @@ End Set
   
 - `Protected Friend`  
   
- 「 [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ 「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
   
  `value`  
  必須。 プロパティの新しい値を格納しているパラメーター。  

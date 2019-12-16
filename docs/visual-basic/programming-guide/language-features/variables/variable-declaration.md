@@ -73,9 +73,9 @@ Dim l, m As Long, x, y As Single
 ## <a name="characteristics-of-declared-variables"></a>宣言された変数の特性  
  変数の*有効*期間は、その期間内に使用できる期間です。 一般に、変数は、その変数を宣言する要素 (プロシージャやクラスなど) が引き続き存在する限り存在します。 変数に含まれる要素の有効期間が過ぎても既存の変数を続行する必要がない場合は、宣言で特別な操作を行う必要はありません。 変数が、それを含む要素よりも長く存在する必要がある場合は、`Dim` ステートメントに `Static` または `Shared` キーワードを含めることができます。 詳細については、「 [Visual Basic の有効期間](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)」を参照してください。  
   
- 変数の*スコープ*は、その名前を修飾せずに参照できるすべてのコードのセットです。 変数のスコープは、宣言されている場所によって決まります。 特定の地域にあるコードは、その領域で定義された変数を使用できますが、名前を修飾する必要はありません。 詳細については、「 [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)」を参照してください。  
+ 変数の*スコープ*は、その名前を修飾せずに参照できるすべてのコードのセットです。 変数のスコープは、宣言されている場所によって決まります。 特定の地域にあるコードは、その領域で定義された変数を使用できますが、名前を修飾する必要はありません。 詳細については、「[Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)」を参照してください。  
   
- 変数の*アクセスレベル*は、それにアクセスするためのアクセス許可を持つコードの範囲です。 これは、`Dim` ステートメントで使用するアクセス修飾子 ( [Public](../../../../visual-basic/language-reference/modifiers/public.md) 、 [Private](../../../../visual-basic/language-reference/modifiers/private.md)など) によって決定されます。 詳細については、「 [Visual Basic のアクセスレベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ 変数の*アクセスレベル*は、それにアクセスするためのアクセス許可を持つコードの範囲です。 これは、`Dim` ステートメントで使用するアクセス修飾子 ( [Public](../../../../visual-basic/language-reference/modifiers/public.md) 、 [Private](../../../../visual-basic/language-reference/modifiers/private.md)など) によって決定されます。 詳細については、「[Visual Basic でのアクセス レベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照
 
