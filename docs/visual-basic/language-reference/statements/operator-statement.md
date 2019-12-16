@@ -79,7 +79,7 @@ End Operator
 |要素|説明|
 |----------|-----------------|
 |`ByVal`|省略可能ですが、渡すメカニズムは[ByVal](../../../visual-basic/language-reference/modifiers/byval.md)である必要があります。|
-|`operandname`|必須。 このオペランドを表す変数の名前。 「 [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|
+|`operandname`|必須。 このオペランドを表す変数の名前。 「[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。|
 |`operandtype`|`Option Strict` が `On`場合を除き、省略可能です。 このオペランドのデータ型。|
 
 `type`  
