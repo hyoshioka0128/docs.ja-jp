@@ -22,7 +22,7 @@ ms.locfileid: "74345377"
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>方法: 変数のスコープを制御する (Visual Basic)
 通常、変数は、宣言する領域全体で*スコープ*内にあるか、参照用に表示されます。 場合によっては、変数の*アクセスレベル*がそのスコープに影響を与えることがあります。  
   
- 詳細については、「 [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)」を参照してください。  
+ 詳細については、「[Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)」を参照してください。  
   
 ## <a name="scope-at-block-or-procedure-level"></a>ブロックレベルまたはプロシージャレベルのスコープ  
   
@@ -88,9 +88,9 @@ Public strMsg As String
   
 ## <a name="see-also"></a>参照
 
-- [Visual Basic 内のスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [Visual Basic の有効期間](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
-- [Visual Basic のアクセスレベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Visual Basic におけるスコープ](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Visual Basic における有効期間](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Visual Basic でのアクセス レベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [変数](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [変数宣言](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Dim ステートメント](../../../../visual-basic/language-reference/statements/dim-statement.md)
