@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: b264be5d2589455562a19ef55b5ddf1a4e74ce15
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c797b1e9a80030ce6a97fccb14da2c51d753a1dc
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428455"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552328"
 ---
 # <a name="value-types-c-reference"></a>値型 (C# リファレンス)
 
@@ -42,7 +42,7 @@ ms.locfileid: "74428455"
 
 - [整数型](../builtin-types/integral-numeric-types.md): 整数の数値型と [char](../builtin-types/char.md) 型
 - [浮動小数点型](../builtin-types/floating-point-numeric-types.md)
-- [bool](bool.md)
+- [bool](../builtin-types/bool.md)
 
 単純型はキーワードで識別されますが、これらのキーワードは、<xref:System> 名前空間に事前に定義されている構造体型の単なるエイリアスです。 たとえば、[int](../builtin-types/integral-numeric-types.md) は <xref:System.Int32?displayProperty=nameWithType> のエイリアスです。 エイリアスの完全な一覧については、「[組み込み型の一覧表](built-in-types-table.md)」を参照してください。
 

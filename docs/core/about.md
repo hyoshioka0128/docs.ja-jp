@@ -2,12 +2,12 @@
 title: .NET Core について
 description: .NET Core について説明します。
 ms.date: 09/17/2019
-ms.openlocfilehash: a1127a39d67b6c24994a2957298c62d87703950d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 22530e861f6a13a6930b2fb35c91b4f7a95a17c7
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416741"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801947"
 ---
 # <a name="about-net-core"></a>.NET Core について
 
@@ -29,18 +29,18 @@ ms.locfileid: "73416741"
 - [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 - サブライム テキスト
 - Vim
- 
+
 この統合は、[OmniSharp](https://www.omnisharp.net/) および [Ionide](http://ionide.io) プロジェクトの共同作成者によって、一部提供されています。
 
 ## <a name="apis"></a>API
 
 .NET Core は多くのシナリオに対応する API を公開しています。次のうちのいくつかを次に示します。
 
-- [bool](../csharp/language-reference/keywords/bool.md) や [int](../csharp/language-reference/builtin-types/integral-numeric-types.md) などのプリミティブ型。
+- <xref:System.Boolean?displayProperty=nameWithType> や <xref:System.Int32?displayProperty=nameWithType> などのプリミティブ型。
 - <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> や <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> などのコレクション。
 - <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> や <xref:System.IO.FileStream?displayProperty=nameWithType> などのユーティリティ型。
 - <xref:System.Data.DataSet?displayProperty=nameWithType> や [DbSet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/) などのデータ型。
-- <xref:System.Numerics.Vector?displayProperty=nameWithType> や [Pipelines](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/) などの高パフォーマンス型。
+- <xref:System.Numerics.Vector?displayProperty=nameWithType> や [Pipelines](../standard/io/pipelines.md) などの高パフォーマンス型。
 
 .NET core では [.NET Standard](../standard/net-standard.md) 仕様を実装することで .NET Framework や Mono の API との互換性を提供します。
 
@@ -56,7 +56,7 @@ ms.locfileid: "73416741"
 
 .NET Core は、次の部分で構成されます。
 
-- 型システム、アセンブリ読み込み、ガベージ コレクター、ネイティブ相互運用機能、およびその他の基本的なサービスを提供する [.NET Core ランタイム](https://github.com/dotnet/coreclr)。 [.NET Core フレームワーク ライブラリ](https://github.com/dotnet/corefx)はプリミティブ データ型、アプリ コンポジションの種類、および基本的なユーティリティを提供します。
+- 型システム、アセンブリ読み込み、ガベージ コレクター、ネイティブ相互運用機能、およびその他の基本的なサービスを提供する [.NET Core ランタイム](https://github.com/dotnet/runtime/tree/master/src/coreclr)。 [.NET Core フレームワーク ライブラリ](https://github.com/dotnet/runtime/tree/master/src/libraries)はプリミティブ データ型、アプリ コンポジションの種類、および基本的なユーティリティを提供します。
 - Web アプリ、IoT アプリ、モバイル バックエンドなど、最新のクラウド ベースのインターネットに接続されているアプリケーションを構築するためのフレームワークを提供する [ASP.NET ランタイム](https://github.com/aspnet/home)。
 - .NET Core 開発者エクスペリエンスを有効にする [.NET Core CLI ツール](https://github.com/dotnet/cli)と言語コンパイラ ([Roslyn](https://github.com/dotnet/roslyn) および [F#](https://github.com/microsoft/visualfsharp))。
 - .NET Core アプリと CLI ツールの起動に使用する [dotnet ツール](https://github.com/dotnet/core-setup)。 ランタイムの選択、ランタイムのホスト、アセンブリ読み込みポリシーの提供、アプリおよびツールの起動を行います。
@@ -79,17 +79,17 @@ ms.locfileid: "73416741"
 
 ユーザーから、複数のオペレーティング システムをサポートするには .NET Core をどのように実装すべきかという質問をよく受けます。 多いのは、個別の実装を行うのか、または[条件付きコンパイル](https://en.wikipedia.org/wiki/Conditional_compilation)を使用するのかという質問です。 どちらも正しいですが、条件付きコンパイルが特に好まれる傾向にあります。
 
-次の図に示すように、[CoreFX](https://github.com/dotnet/corefx) の大部分は、すべてのプラットフォーム間で共有されているプラットフォームに依存しないコードです。 プラットフォームに依存しないコードは、すべてのプラットフォームで使用される 1 つのポータブル アセンブリとして実装できます。
+次の図に示すように、[.NET Core ライブラリ](https://github.com/dotnet/runtime/tree/master/src/libraries)の大部分は、すべてのプラットフォーム間で共有されるプラットフォームに依存しないコードです。 プラットフォームに依存しないコードは、すべてのプラットフォームで使用される 1 つのポータブル アセンブリとして実装できます。
 
 ![CoreFX:プラットフォームごとのコードの行](../images/corefx-platforms-loc.png)
 
-Windows 実装と Unix 実装はほぼ同じサイズです。 CoreFX は、[Microsoft.Win32.Registry](https://github.com/dotnet/corefx/tree/master/src/Microsoft.Win32.Registry) などの Windows 専用の機能をいくつか実装しますが、Unix 専用の概念はまだあまり実装されていないので、Windows の実装の方が大きくなります。 また、Linux 実装と macOS 実装の大部分は Unix 実装全体で共有されており、Linux 固有の実装と macOS 固有の実装はほぼ同じサイズです。
+Windows 実装と Unix 実装はほぼ同じサイズです。 .NET Core ライブラリでは、[Microsoft.Win32.Registry](https://github.com/dotnet/runtime/tree/master/src/libraries/Microsoft.Win32.Registry) などの Windows 専用の機能がいくつか実装されていますが、Unix 専用の概念はまだあまり実装されていないため、Windows の実装の方が大きくなります。 また、Linux 実装と macOS 実装の大部分は Unix 実装全体で共有されており、Linux 固有の実装と macOS 固有の実装はほぼ同じサイズです。
 
 .NET Core には、プラットフォーム固有のライブラリとプラットフォームに依存しないライブラリが混在しています。 このパターンは次のいくつかの例に見られます。
 
-- [CoreCLR](https://github.com/dotnet/coreclr) はプラットフォーム固有です。 メモリ マネージャーやスレッド スケジューラのような OS サブシステムの上に構築します。
-- [System.IO](https://github.com/dotnet/corefx/tree/master/src/System.IO) と [System.Security.Cryptography.Algorithms](https://github.com/dotnet/corefx/tree/master/src/System.Security.Cryptography.Algorithms) は、記憶域および暗号化 API が各 OS で異なるので、プラットフォーム固有です。
-- [System.Collections](https://github.com/dotnet/corefx/tree/master/src/System.Collections) と [System.Linq](https://github.com/dotnet/corefx/tree/master/src/System.Linq) は、データ構造上で作成および操作を行うので、プラットフォームに依存しません。
+- [CoreCLR](https://github.com/dotnet/runtime/tree/master/src/coreclr) はプラットフォーム固有です。 メモリ マネージャーやスレッド スケジューラのような OS サブシステムの上に構築します。
+- [System.IO](https://github.com/dotnet/runtime/tree/master/src/libraries/System.IO) と [System.Security.Cryptography.Algorithms](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Security.Cryptography.Algorithms) は、記憶域および暗号化 API が各 OS で異なるので、プラットフォーム固有です。
+- [System.Collections](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Collections) と [System.Linq](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Linq) は、データ構造上で作成および操作を行うので、プラットフォームに依存しません。
 
 ## <a name="comparisons-to-other-net-implementations"></a>その他の .NET 実装との比較
 

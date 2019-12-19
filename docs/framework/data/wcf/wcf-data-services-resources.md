@@ -4,36 +4,36 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: 0b80461c48dc8cf619b59b0b93c0aa5edca9c4c4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 5110cdf53953bebd1a5ccd2781afa5c57175ea54
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975035"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568755"
 ---
 # <a name="wcf-data-services-resources"></a>WCF Data Services リソース
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の概要に関するトピックは次のとおりです。 これらのトピックの多くには、詳細情報が記載された関連トピックへのリンクも含まれています。  
+WCF Data Services 入門トピックは次の場所にあります。 これらのトピックの多くには、詳細情報が記載された関連トピックへのリンクも含まれています。  
   
  [概要](wcf-data-services-overview.md)  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] で使用可能な機能の概要について説明します。  
+ WCF Data Services で使用できる機能の概要について説明します。  
   
  [はじめに](../adonet/ef/getting-started.md)  
- [クイックスタート](quickstart-wcf-data-services.md)に示すように、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]を使用してデータサービスを設計およびアクセスする方法について説明します。  
+ [クイックスタート](quickstart-wcf-data-services.md)に示すように、WCF Data Services を使用してデータサービスを設計およびアクセスする方法について説明します。  
   
  [アプリケーション シナリオ](application-scenarios-wcf-data-services.md)  
- Open Data Protocol (OData) フィードにアクセスする [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] およびアプリケーションを作成するためのタスクベースのアプローチを提供します。  
+ Open Data Protocol (OData) フィードにアクセスする WCF Data Services およびアプリケーションを作成するためのタスクベースのアプローチを提供します。  
   
  [.NET 用語集](../../../standard/glossary.md)  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] と OData のドキュメントで使用される用語が含まれます。  
+ WCF Data Services と OData のドキュメントで使用される用語が含まれます。  
   
-## <a name="external-resources"></a>外部リソース  
- 次の外部リソースでは、OData フィードを公開および使用する [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] アプリケーションを作成するための追加情報とサポートを提供しています。  
+## <a name="external-resources"></a>外部資料  
+ 次の外部リソースでは、OData フィードを公開および使用する WCF Data Services アプリケーションを作成するための追加情報とサポートを提供しています。  
   
  [WCF Data Services フォーラム](https://go.microsoft.com/fwlink/?LinkId=150512)  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] 開発者のためのデータ プログラミング サポート。  
+ WCF Data Services 開発者向けのデータプログラミングサポート。  
   
  [WCF Data Services チームのブログ](https://go.microsoft.com/fwlink/?LinkId=150511)  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の機能の最新情報と説明が記載されているブログ。  
+ WCF Data Services の機能の更新と説明が記載されているブログ。  
   
  [OData Web サイト](https://go.microsoft.com/fwlink/?LinkID=184554)  
  OData に関する情報の主要なソースです。  
@@ -51,14 +51,14 @@ ms.locfileid: "73975035"
  データ サービスのビルドおよびアクセス方法について説明するビデオ スクリーン キャストのセットが提供されています。  
   
  [概要: WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=131074)  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] の利点に関する概要が記載されたホワイト ペーパー。  
+ WCF Data Services の利点に関する高レベルの情報を提供するホワイトペーパーです。  
   
  [Microsoft WCF Data Services の使用](https://go.microsoft.com/fwlink/?LinkID=131075)  
  追加情報およびクライアント アプリケーションのデータ サービスの作成とデータ サービスへのアクセスの例が記載されたホワイト ペーパー。  
   
  エンティティリレーションシップモデル: Peter Pin-Pin-shan Chen, マサチューセッツ国立テクノロジによる[データの統合ビューへの](https://go.microsoft.com/fwlink/?LinkId=91909)対応  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] によって実装されるエンティティ リレーショナル モデルの基礎について説明します。 コンピューター分野で最もよく引用される 1976 年に書かれた論文。  
+ WCF Data Services によって実装されるエンティティリレーショナルモデルの基礎について説明します。 コンピューター分野で最もよく引用される 1976 年に書かれた論文。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [はじめに](getting-started-with-wcf-data-services.md)

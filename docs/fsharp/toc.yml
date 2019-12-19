@@ -1,5 +1,7 @@
-- name: 'F# のガイド'
-  href: index.md
+- name: 'F# ドキュメント'
+  href: index.yml
+- name: 'F# とは'
+  href: what-is-fsharp.md
 - name: はじめに
   href: get-started/index.md
   items:
@@ -13,8 +15,6 @@
       href: get-started/get-started-command-line.md
     - name: 'Visual Studio for Mac での F# の概要'
       href: get-started/get-started-with-visual-studio-for-mac.md
-- name: 'F# とは'
-  href: what-is-fsharp.md
 - name: 'F# のツアー'
   href: tour.md
 - name: チュートリアル
@@ -39,6 +39,14 @@
           href: tutorials/type-providers/troubleshooting-type-providers.md
     - name: 'F# Interactive'
       href: tutorials/fsharp-interactive/index.md
+- name: 'F# の新機能'
+  items:
+    - name: 'F# 4.7'
+      href: whats-new/fsharp-47.md
+    - name: 'F# 4.6'
+      href: whats-new/fsharp-46.md
+    - name: 'F# 4.5'
+      href: whats-new/fsharp-45.md
 - name: 'F# 言語リファレンス'
   href: language-reference/index.md
   items:

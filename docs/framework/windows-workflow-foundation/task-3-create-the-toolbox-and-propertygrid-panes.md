@@ -2,16 +2,16 @@
 title: 'タスク 3: ツールボックス ペインと PropertyGrid ペインの作成'
 ms.date: 03/30/2017
 ms.assetid: 72c1546a-eed5-4f0f-a616-719a163414f4
-ms.openlocfilehash: 402a25c1cb82c245afa94f58cefc180515622ea9
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: 29e50b24135cd3d6a02052d846e1781b0d9fa325
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275864"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716230"
 ---
 # <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>タスク 3: ツールボックス ペインと PropertyGrid ペインの作成
 
-このタスクでは、**ツールボックス**ペインと**PropertyGrid**ペインを作成し、再ホストされた [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]に追加します。
+このタスクでは、**ツールボックス**ペインと**PropertyGrid**ペインを作成し、再ホストされた Windows ワークフローデザイナーに追加します。
 
 参考として、このトピックの最後に、ワークフローデザイナーシリーズのトピックの再[ホスト](rehosting-the-workflow-designer.md)に関する3つのタスクを完了した後に MainWindow.xaml.cs ファイルに含まれている必要があるコードについて説明します。
 
@@ -106,7 +106,7 @@ ms.locfileid: "72275864"
 
 4. <kbd>F5</kbd>キーを押して、ソリューションをビルドして実行します。 **[ツールボックス]** 、ワークフローデザインキャンバス、および  **[PropertyGrid]** の各ウィンドウがすべて表示されます。また、デザインキャンバスに <xref:System.Activities.Statements.Assign> アクティビティまたは <xref:System.Activities.Statements.Sequence> アクティビティをドラッグすると、強調表示されているアクティビティに応じてプロパティグリッドが更新されます。
 
-## <a name="example"></a>例
+## <a name="example"></a>使用例
 
 *MainWindow.xaml.cs*ファイルには、次のコードが含まれています。
 

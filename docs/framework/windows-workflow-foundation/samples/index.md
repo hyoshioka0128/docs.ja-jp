@@ -2,16 +2,16 @@
 title: Windows Workflow (WF) のサンプルドキュメント
 ms.date: 09/24/2018
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
-ms.openlocfilehash: c4c04732f3562d7624c9daaefe8e47839b9bdd72
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 24858d1b8d904bb32b2cee01d8ed5d710f97b15f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141944"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715972"
 ---
 # <a name="windows-workflow-wf-samples"></a>Windows Workflow (WF) のサンプル
 
-Windows Workflow Foundation (WF) のさまざまな側面に関する命令を提供する[Windows Workflow サンプルをダウンロード](https://go.microsoft.com/fwlink/?LinkId=150780)できます。
+Windows Workflow Foundation (WF) のさまざまな側面に関する命令を提供する[Windows Workflow サンプルをダウンロード](https://www.microsoft.com/download/details.aspx?id=21459)できます。
 
 このセクションの記事では、ダウンロードパッケージのいくつかのサンプルについて説明します。 すべてのサンプルを網羅した完全なドキュメントセットについては、 [.NET Framework 4 WF サンプル](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd483375(v%3dvs.100))を参照してください。
 

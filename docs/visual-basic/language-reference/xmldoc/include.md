@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348457"
 ---
-# <a name="include-visual-basic"></a>> を含める \<(Visual Basic)
+# <a name="include-visual-basic"></a>\<include> (Visual Basic)
 は、ソースコード内の型とメンバーを記述する別のファイルを参照します。  
   
 ## <a name="syntax"></a>構文  

@@ -51,5 +51,5 @@ ms.locfileid: "74350158"
 
 - [Function ステートメント](function-statement.md)
 - [Sub ステートメント](sub-statement.md)
-- [Declare Statement](declare-statement.md)
+- [Declare ステートメント](declare-statement.md)
 - [ラムダ式](../../programming-guide/language-features/procedures/lambda-expressions.md)

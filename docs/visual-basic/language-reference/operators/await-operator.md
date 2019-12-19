@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: c2389ff0c94afc2156e594f5d93535d1ed0107a8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e0c617ce32f80bdde1bcfda31da40ae610e07452
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74336266"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74712351"
 ---
 # <a name="await-operator-visual-basic"></a>Await 演算子 (Visual Basic)
 
@@ -23,7 +23,7 @@ ms.locfileid: "74336266"
 > [!NOTE]
 > `Async` キーワードおよび `Await` キーワードは、Visual Studio 2012 で導入されました。 非同期プログラミングの概要については、「 [async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)」を参照してください。
 
-通常、`Await` 演算子を適用するタスクは、[タスクベースの非同期パターン](https://go.microsoft.com/fwlink/?LinkId=204847)、つまり、<xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601>を実装するメソッドの呼び出しからの戻り値です。
+通常、`Await` 演算子を適用するタスクは、[タスクベースの非同期パターン](https://www.microsoft.com/download/details.aspx?id=19957)、つまり、<xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601>を実装するメソッドの呼び出しからの戻り値です。
 
 次のコードでは、<xref:System.Net.Http.HttpClient> メソッドの <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> が `getContentsTask` (`Task(Of Byte())`) を返します。 これにより、操作が完了したときに実際のバイト配列が生成されることが保証されます。 `Await` 演算子が `getContentsTask` に適用されているため、`SumPageSizesAsync` が完了するまで `getContentsTask` の実行が中断されます。 その間、コントロールは `SumPageSizesAsync` の呼び出し元に戻されます。 `getContentsTask` が終了すると、`Await` 式がバイト配列に評価されます。
 
@@ -72,9 +72,9 @@ Await AsyncMethodThatReturnsTask()
 
 非同期メソッドのエラー処理の例については、「Try...」を参照してください。 [キャッチ...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)。
 
-## <a name="example"></a>例
+## <a name="example"></a>使用例
 
-次に示す Windows フォームの例では、`Await` という非同期メソッドで `WaitAsynchronouslyAsync` が使用されています。 このメソッドの動作と `WaitSynchronously` の動作の違いを確認します。 `Await` には `WaitSynchronously` 演算子がないため、定義で `Async` 修飾子が使用されていて、本体で <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> が呼び出されているにもかかわらず、同期的に実行されます。
+次に示す Windows フォームの例では、`Await` という非同期メソッドで `WaitAsynchronouslyAsync` が使用されています。 このメソッドの動作と `WaitSynchronously` の動作の違いを確認します。 `WaitSynchronously` には `Await` 演算子がないため、定義で `Async` 修飾子が使用されていて、本体で <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> が呼び出されているにもかかわらず、同期的に実行されます。
 
 ```vb
 Private Async Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

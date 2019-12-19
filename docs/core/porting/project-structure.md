@@ -4,12 +4,12 @@ description: プロジェクト所有者が横並びの .NET Framework と .NET 
 author: conniey
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 701aa64be8d6c712ef635411ad6c226a3c3ab8ed
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 789f50ffb61b80f590a24bc45693df895b3424f7
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522971"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801929"
 ---
 # <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>.NET Framework と .NET Core の両方をサポートするようにプロジェクトを整理する
 
@@ -24,12 +24,12 @@ ms.locfileid: "72522971"
   - コンパイラ ディレクティブを利用することで、ライブラリの特定の .NET Framework バージョンに対してコードを記述できます。
 
   *サポートされていないシナリオ:*
-  - 既存のプロジェクトを開くには、開発者が Visual Studio 2017 を使用している必要があります。 旧バージョンの Visual Studio をサポートするには、[プロジェクト ファイルを異なるフォルダーで保持する](#support-vs)ことが推奨されます。
+  - 既存のプロジェクトを開くには、開発者が Visual Studio 2017 以降を使用している必要があります。 旧バージョンの Visual Studio をサポートするには、[プロジェクト ファイルを異なるフォルダーで保持する](#support-vs)ことが推奨されます。
 
 - <a name="support-vs"></a>[**既存のプロジェクトと新しい .NET Core プロジェクトを別々に保存する**](#keep-existing-projects-and-create-a-net-core-project)
 
   *効果:*
-  - 既存のプロジェクトで引き続き開発をサポートします。Visual Studio 2017 を所有していない開発者/貢献者はアップグレードする必要がありません。
+  - Visual Studio 2017 以降を持っていない場合がある開発者と共同作成者に対して、既存のプロジェクトの開発をサポートします。
   - 既存のプロジェクトで新しいバグが発生する可能性が減ります。既存のプロジェクトではコード チャーンが要求されないためです。
 
 ## <a name="example"></a>例

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - while keyword [C#]
 ms.assetid: 72a0765c-6852-4aca-b327-4a11cb7f5c59
-ms.openlocfilehash: ab0a8ba0b724757b4f239daf1d3319b989c4531a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: fad0ceae9cf1080e7f4b553e0808fd531fd28c57
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421917"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552380"
 ---
 # <a name="while-c-reference"></a>while (C# リファレンス)
 

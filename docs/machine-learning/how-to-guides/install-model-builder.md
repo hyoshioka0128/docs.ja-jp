@@ -3,14 +3,14 @@ title: モデル ビルダーのインストール方法
 description: ML.NET モデル ビルダー ツールのインストール方法について説明します
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 06/21/2019
+ms.date: 11/21/2019
 ms.custom: mvc, how-to
-ms.openlocfilehash: a1034d294012b8df5ec778fc40602fe52223961d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: b87f712ad7a8b2229c1d42db4bad1fe511475ac7
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774561"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552942"
 ---
 # <a name="how-to-install-mlnet-model-builder"></a>ML.NET モデル ビルダーのインストール方法
 
@@ -19,10 +19,13 @@ ML.NET モデル ビルダーをインストールして .NET アプリケーシ
 > [!NOTE]
 > モデル ビルダーは現在のところ、プレビュー段階です。
 
-## <a name="pre-requisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
 - Visual Studio 2017 バージョン 15.9.12 以降 / Visual Studio 2019
-- .NET Core 2.1 以降の SDK
+- .NET Core 2.1 SDK 以降。
+
+> [!NOTE]
+> .NET Core 3.0 SDK は現在サポートされていません。
 
 ## <a name="limitations"></a>制限事項
 

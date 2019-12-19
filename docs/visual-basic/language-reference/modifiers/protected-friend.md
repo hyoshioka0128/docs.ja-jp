@@ -1,5 +1,5 @@
 ---
-title: Protected Friend
+title: Protected Friend (Visual Basic)
 ms.date: 05/10/2018
 helpviewer_keywords:
 - Protected Friend keyword [Visual Basic]
@@ -13,7 +13,7 @@ ms.locfileid: "74351315"
 ---
 # <a name="protected-friend-visual-basic"></a>Protected Friend (Visual Basic)
 
-キーワード組み合わせ `Protected Friend` はメンバー アクセス修飾子です。 このクラスは、宣言された要素に対して[フレンド](friend.md)アクセスと[保護された](protected.md)アクセスの両方を実行するため、同じアセンブリ内の任意の場所、独自のクラス、および派生クラスからアクセスできます。 `Protected Friend` は、クラスのメンバーに対してのみ指定できます。構造体のメンバーに `Protected Friend` を適用することはできません。構造体を継承することはできません。
+キーワード組み合わせ `Protected Friend` はメンバー アクセス修飾子です。 このクラスは、宣言された要素に対して[Friend](friend.md)アクセスと[Protected](protected.md)アクセスの両方を実行するため、同じアセンブリ内の任意の場所、独自のクラス、および派生クラスからアクセスできます。 `Protected Friend` は、クラスのメンバーに対してのみ指定できます。構造体のメンバーに `Protected Friend` を適用することはできません。構造体を継承することはできません。
 
 > [!NOTE]
 > Visual Studio では、`protected friend` で F1 ヘルプを選択すると、 [protected](protected.md)または[friend](friend.md)のヘルプが表示されます。 IDE は、複合単語ではなくカーソルの下にある1つのトークンを選択します。

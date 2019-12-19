@@ -72,7 +72,7 @@ End Function
 
   - [Private Protected](../../language-reference/modifiers/private-protected.md)
 
-  「 [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
+  「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
 
 - `proceduremodifiers`
 
@@ -94,15 +94,15 @@ End Function
 
 - `Shared`
 
-  省略可。 「[共有](../../../visual-basic/language-reference/modifiers/shared.md)」を参照してください。
+  省略可。 「[Shared](../../../visual-basic/language-reference/modifiers/shared.md)」を参照してください。
 
 - `Shadows`
 
-  省略可。 「[シャドウ](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。
+  省略可。 「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。
 
 - `Async`
 
-  省略可。 「 [Async](../../../visual-basic/language-reference/modifiers/async.md)」を参照してください。
+  省略可。 「[Async](../../../visual-basic/language-reference/modifiers/async.md)」を参照してください。
 
 - `Iterator`
 
@@ -110,7 +110,7 @@ End Function
 
 - `name`
 
-  必須。 プロシージャの名前。 「 [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。
+  必須。 プロシージャの名前。 「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。
 
 - `typeparamlist`
 
@@ -126,7 +126,7 @@ End Function
 
 - `Implements`
 
-  省略可。 このプロシージャが1つ以上の `Function` プロシージャを実装することを示します。各プロシージャは、このプロシージャのクラスまたは構造体を含むインターフェイスで定義されています。 「 [Implements ステートメント](implements-statement.md)」を参照してください。
+  省略可。 このプロシージャが1つ以上の `Function` プロシージャを実装することを示します。各プロシージャは、このプロシージャのクラスまたは構造体を含むインターフェイスで定義されています。 「[Implements ステートメント](implements-statement.md)」を参照してください。
 
 - `implementslist`
 
@@ -145,7 +145,7 @@ End Function
 
 - `Handles`
 
-  省略可。 このプロシージャが1つ以上の特定のイベントを処理できることを示します。 「[ハンドル](handles-clause.md)」を参照してください。
+  省略可。 このプロシージャが 1 つ以上の特定のイベントを処理できることを示します。 「[Handles 句](handles-clause.md)」を参照してください。
 
 - `eventlist`
 
@@ -213,7 +213,7 @@ End Function
 
 `Function` プロシージャは、`Sqrt`、`Cos`、`ChrW`などのライブラリ関数を呼び出すのと同じ方法で呼び出すことができます。
 
-`Call` キーワードを使用して関数を呼び出すこともできます。 その場合、戻り値は無視されます。 ほとんどの場合、`Call` キーワードの使用は推奨されていません。 詳細については、「 [Call ステートメント](call-statement.md)」を参照してください。
+`Call` キーワードを使用して関数を呼び出すこともできます。 その場合、戻り値は無視されます。 ほとんどの場合、`Call` キーワードの使用は推奨されていません。 詳細については、「[Call ステートメント](call-statement.md)」を参照してください。
 
 Visual Basic は、内部効率を向上させるために算術式を再配置することがあります。 そのため、関数が同じ式の変数の値を変更する場合は、算術式で `Function` プロシージャを使用しないでください。
 
@@ -232,13 +232,13 @@ Visual Basic は、内部効率を向上させるために算術式を再配置�
 
 [Sub ステートメント](sub-statement.md)を `Async` 修飾子でマークすることもできます。 これは主に、値を返すことができないイベントハンドラーに使用されます。 `Async` `Sub` プロシージャは待機できません。また、`Async` の `Sub` プロシージャの呼び出し元は、`Sub` プロシージャによってスローされた例外をキャッチできません。
 
-`Async` 関数の詳細については、「 [async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)」、「非同期[プログラムでの制御フロー](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)」、および「非同期の[戻り値の型](../../../visual-basic/programming-guide/concepts/async/async-return-types.md)」を参照してください。
+`Async` 関数の詳細については、「[async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)」、「非同期[プログラムでの制御フロー](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)」、および「非同期の[戻り値の型](../../../visual-basic/programming-guide/concepts/async/async-return-types.md)」を参照してください。
 
 ## <a name="iterator-functions"></a>反復子メソッド
 
 *反復子*関数は、リストや配列などのコレクションに対してカスタムの反復処理を実行します。 Iterator 関数は[Yield](yield-statement.md)ステートメントを使用して、各要素を1回に1つ返します。 [Yield](yield-statement.md)ステートメントに到達すると、コード内の現在の場所が記憶されます。 次回、反復子メソッドが呼び出されると、この位置から実行が再開されます。
 
-For Each を使用して、クライアントコードから反復子を呼び出します。 [次](for-each-next-statement.md)のステートメント。
+[For Each...Next](for-each-next-statement.md) ステートメントを使用して、クライアントコードから反復子を呼び出します。
 
 反復子関数の戻り値の型には、<xref:System.Collections.IEnumerable>、<xref:System.Collections.Generic.IEnumerable%601>、<xref:System.Collections.IEnumerator>、または <xref:System.Collections.Generic.IEnumerator%601>を指定できます。
 

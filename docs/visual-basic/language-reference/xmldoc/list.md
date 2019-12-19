@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352318"
 ---
-# <a name="list-visual-basic"></a>\<一覧 > (Visual Basic)
+# <a name="list-visual-basic"></a>\<list> (Visual Basic)
 リストまたはテーブルを定義します。  
   
 ## <a name="syntax"></a>構文  

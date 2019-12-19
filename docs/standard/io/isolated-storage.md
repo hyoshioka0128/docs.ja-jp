@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 94d435d8f50683c24e7ca28100fbf5abf0fdcc19
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 33583f430e5af2f3fa7027233febd9ec61f85a3f
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204776"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802454"
 ---
 # <a name="isolated-storage"></a>分離ストレージ
 <a name="top"></a>デスクトップ アプリでは、分離ストレージは、コードと保存データを関連付ける標準化された方法を定義することにより、分離性と安全性を提供するデータ ストレージ機構です。 標準化には、ほかにも利点があります。 管理者は分離ストレージの操作用にデザインされたツールを使用して、ファイルのストレージ領域の構成、セキュリティ ポリシーの設定、および不要なデータの削除を行うことができます。 分離ストレージを使用すると、ファイル システムの安全な場所を指定するための固有のパスを指定する必要がなくなり、分離ストレージのアクセス権限を持たない他のアプリケーションからデータを保護できます。 アプリケーションのストレージ領域の場所を示すハードコーディングされた情報は不要になります。
@@ -118,7 +118,7 @@ ms.locfileid: "74204776"
 |Windows 2000、Windows XP、Windows Server 2003 (Windows NT 4.0 からのアップグレード)|ローミングに対応したストア =<br /><br /> \<SYSTEMROOT>\Profiles\\<user\>\Application Data<br /><br /> ローミングに対応しないストア =<br /><br /> \<SYSTEMROOT>\Profiles\\<user\>\Local Settings\Application Data|
 |Windows 2000 - クリーン インストール (および Windows 98 と Windows NT 3.51 からのアップグレード)|ローミングに対応したストア =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> ローミングに対応しないストア =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
 |Windows XP、Windows Server 2003 - クリーン インストール (および Windows 2000 と Windows 98 からのアップグレード)|ローミングに対応したストア =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> ローミングに対応しないストア =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
-|[!INCLUDE[win8](../../../includes/win8-md.md)]、Windows 7、Windows Server 2008、Windows Vista|ローミングに対応したストア =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Roaming<br /><br /> ローミングに対応しないストア =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Local|
+|Windows 8、Windows 7、Windows Server 2008、Windows Vista|ローミングに対応したストア =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Roaming<br /><br /> ローミングに対応しないストア =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Local|
 
 <a name="isolated_storage_tasks"></a>
 
@@ -179,7 +179,7 @@ ms.locfileid: "74204776"
 
 <a name="reference"></a>
 
-## <a name="reference"></a>関連項目
+## <a name="reference"></a>辞書／辞典／その他
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType>
 

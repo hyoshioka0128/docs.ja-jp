@@ -2,12 +2,12 @@
 title: Windows Workflow Foundation 4 のパフォーマンス
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 9a7e1dd2c5ab92ace955aa3b3095f2ed04ee3272
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6e6669cd41795c356e4b7b30f19d93bd8dfa917a
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283235"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802649"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Windows Workflow Foundation 4 のパフォーマンス
 
@@ -17,13 +17,13 @@ ms.locfileid: "74283235"
 
 ## <a name="terminology"></a>用語
 
- .NET Framework 4 で導入された [!INCLUDE[wf1](../../../includes/wf1-md.md)] のバージョンは、このトピックの残りの部分で WF4 と呼ばれます。 [!INCLUDE[wf1](../../../includes/wf1-md.md)] は .NET Framework 3.0 で導入され、.NET Framework 3.5 SP1 を通じていくつかのマイナーリビジョンがありました。 Workflow Foundation の .NET Framework 3.5 バージョンは、このトピックの残りの部分で WF3 と呼ばれます。 WF3 は .NET Framework 4 に WF4 とサイドバイサイドで同梱されています。 WF3 アーティファクトを WF4 に移行する方法の詳細については、「 [Windows Workflow Foundation 4 移行ガイド](https://go.microsoft.com/fwlink/?LinkID=153313)」を参照してください。
+ .NET Framework 4 で導入された [!INCLUDE[wf1](../../../includes/wf1-md.md)] のバージョンは、このトピックの残りの部分で WF4 と呼ばれます。 [!INCLUDE[wf1](../../../includes/wf1-md.md)] は .NET Framework 3.0 で導入され、.NET Framework 3.5 SP1 を通じていくつかのマイナーリビジョンがありました。 Workflow Foundation の .NET Framework 3.5 バージョンは、このトピックの残りの部分で WF3 と呼ばれます。 WF3 は .NET Framework 4 に WF4 とサイドバイサイドで同梱されています。 WF3 アーティファクトを WF4 に移行する方法の詳細については、「 [Windows Workflow Foundation 4 移行ガイド](migration-guidance.md)」を参照してください。
 
  Windows Communication Foundation (WCF) は、サービス指向アプリケーションを構築するための Microsoft の統一プログラミングモデルです。 WF3 と共に .NET 3.0 の一部として初めて導入されましたが、現在は .NET Framework の重要なコンポーネントの1つです。
 
  Windows Server AppFabric は、IIS 上で動作する Web アプリケーションおよび複合アプリケーションの構築、拡張、および管理を容易にする、統合された一連のテクノロジです。 監視およびサービスとワークフローの管理を行うためのツールを提供します。 詳細については、「 [Windows Server AppFabric 1.0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10))」を参照してください。
 
-## <a name="goals"></a>目標
+## <a name="goals"></a>目的
  このトピックの目的は、WF4 のパフォーマンス特性のさまざまな状況での測定データを示し、 WF4 と WF3 を詳細に比較して、新しいリビジョンでの大幅な機能強化について説明することです。 この記事のシナリオとデータは WF4 と WF3 のさまざまな側面の基本的なコストを定量化しています。 このデータは WF4 のパフォーマンス特性を理解するうえで役立ちます。また、WF3 から WF4 への移行計画または WF4 を使用したアプリケーション開発に役立つことがあります。 ただし、この記事に記載されているデータから結論を導き出す場合には注意が必要です。 複合ワークフロー アプリケーションのパフォーマンスは、ワークフローの実装方法や異なるコンポーネントの統合方法に大きく依存します。 アプリケーションのパフォーマンス特性を確認するには、各アプリケーションを測定する必要があります。
 
 ## <a name="overview-of-wf4-performance-enhancements"></a>WF4 のパフォーマンスの強化の概要
@@ -105,7 +105,7 @@ ms.locfileid: "74283235"
  このシーケンス ワークフローには 1 つの <xref:System.Activities.Statements.While> アクティビティが含まれ、ループ内に何も処理しない 1 つの子アクティビティを含みます。
 
 ### <a name="replicator-compared-to-parallelforeach"></a>Replicator と ParallelForEach の比較
- WF3 の <xref:System.Workflow.Activities.ReplicatorActivity> には、順次および並列実行モードがあります。  順次モードのアクティビティのパフォーマンスは <xref:System.Workflow.Activities.WhileActivity> と同様です。  並列実行で特に便利なアクティビティは <xref:System.Workflow.Activities.ReplicatorActivity> です。  このアクティビティに類似した WF4 のアクティビティは <xref:System.Activities.Statements.ParallelForEach%601> です。
+ WF3 の <xref:System.Workflow.Activities.ReplicatorActivity> には順次実行モードと並列実行モードがあります。  順次モードのアクティビティのパフォーマンスは <xref:System.Workflow.Activities.WhileActivity> と同様です。  並列実行で特に便利なアクティビティは <xref:System.Workflow.Activities.ReplicatorActivity> です。  このアクティビティに類似した WF4 のアクティビティは <xref:System.Activities.Statements.ParallelForEach%601> です。
 
  次の図は、このテストに使用するワークフローを示しています。 左側が WF3 ワークフロー、右側が WF4 ワークフローです。
 
@@ -180,14 +180,14 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
 ### <a name="online-store-service"></a>オンライン ストア サービス
  Windows Workflow Foundation の利点の1つは、複数のサービスを使用してプロセスを作成する機能です。  この例として、2 つのサービスの呼び出しを調整して発注するオンライン ストア サービスがあります。  まず、注文検証サービスを使用して注文を検証します。  次に、ウェアハウス サービスを使用して注文を受け付けます。
 
- 注文検証サービスとウェアハウス サービスの 2 つのバックエンド サービスは両方のテストで不変です。  変更する部分は、調整を行うオンライン ストア サービスです。  1つのケースでは、サービスは WCF サービスとして手動でコーディングされます。  それ以外の場合、サービスは WF4 で WCF ワークフローサービスとして書き込まれます。 追跡や永続化などの [!INCLUDE[wf1](../../../includes/wf1-md.md)]固有の機能は、このテストではオフになっています。
+ 注文検証サービスとウェアハウス サービスの 2 つのバックエンド サービスは両方のテストで不変です。  変更する部分は、調整を行うオンライン ストア サービスです。  1つのケースでは、サービスは WCF サービスとして手動でコーディングされます。  それ以外の場合、サービスは WF4 で WCF ワークフローサービスとして書き込まれます。 追跡や永続化などの [!INCLUDE[wf1](../../../includes/wf1-md.md)] 固有の機能はこのテストでは無効にします。
 
 ### <a name="environment"></a>環境
 ![パフォーマンス測定用の環境設定](./media/performance/performance-test-environment.gif)
 
  クライアントは複数のコンピューターから HTTP 経由でオンライン ストア サービスを要求します。  1 台のコンピューターで 3 つのサービスのすべてをホストします。  オンライン ストア サービスとバックエンド サービスの間にあるトランスポート層は TCP または HTTP です。  1 秒あたりの操作は、オンライン ストア サービスに対する `PurchaseOrder` の呼び出しが完了した件数に基づいて測定されます。  チャネル プールは WF4 で導入された新機能です。  このテストチャネルプーリングの WCF 部分では、すぐに使用できるようになっていません。そのため、オンラインストアサービスでは、単純なプーリング手法の手動でコーディングされた実装が使用されていました。
 
-### <a name="performance"></a>パフォーマンス テスト
+### <a name="performance"></a>パフォーマンス
 ![オンラインストアサービスのパフォーマンスを示す縦棒グラフ](./media/performance/online-store-performance-graph.gif)
 
  チャネル プールなしでバックエンド TCP サービスに接続した場合、[!INCLUDE[wf1](../../../includes/wf1-md.md)] サービスはスループットに 17.2% 影響します。  チャネル プールを使用した場合、スループットは 23.8% 低下します。  HTTP では影響ははるかに小さく、プールなしの場合で 4.3%、プールを使用した場合で 8.1% の影響があります。  HTTP を使用する場合はチャネル プールのメリットがきわめて少ないことも重要な点です。
@@ -301,9 +301,9 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  この図で注目すべき明白な傾向の 1 つは、WF3 および WF4 のいずれの場合も入れ子がメモリ使用量に与える影響が比較的小さいことです。  メモリに最も重大な影響をもたらす要因はワークフロー内のアクティビティの数です。  シーケンス 1,000、複合深さ 5 シーケンス 5、複合深さ 7 シーケンス 1 (バリエーションあり) の各データから、アクティビティの数が千単位になるとメモリ使用量の増加が顕著になることが明らかです。  最大 29 K のアクティビティが存在する極端なケース (深さ 7 シーケンス 1) では、WF4 のメモリ使用量は WF3 より約 79% 少なくなっています。
 
 ### <a name="multiple-workflow-definitions-test"></a>複数のワークフロー定義のテスト
- ワークフロー定義ごとのメモリの測定は、WF3 と WF4 でワークフローのホスティングに使用できるオプションが原因で 2 つの異なるテストに分かれています。  このテストでは、ワークフローの複雑さテストと異なり、指定されたワークフローのインスタンス化と実行を定義ごとに 1 回だけ行います。  これは、ワークフロー定義とそのホストは AppDomain の有効期間中はメモリ内に保持されるためです。  指定されたワークフロー インスタンスの実行によって使用されたメモリは、ガベージ コレクション中にクリーンアップする必要があります。  WF4 の移行ガイドラインに、ホスト オプションの詳細が記載されています。 詳細については、「 [WF 移行クックブック: ワークフローホスティング](https://go.microsoft.com/fwlink/?LinkID=153313)」を参照してください。
+ ワークフロー定義ごとのメモリの測定は、WF3 と WF4 でワークフローのホスティングに使用できるオプションが原因で 2 つの異なるテストに分かれています。  このテストでは、ワークフローの複雑さテストと異なり、指定されたワークフローのインスタンス化と実行を定義ごとに 1 回だけ行います。  これは、ワークフロー定義とそのホストは AppDomain の有効期間中はメモリ内に保持されるためです。  指定されたワークフロー インスタンスの実行によって使用されたメモリは、ガベージ コレクション中にクリーンアップする必要があります。  WF4 の移行ガイドラインに、ホスト オプションの詳細が記載されています。 詳細については、「 [WF 移行クックブック: ワークフローホスティング](migration-guidance.md)」を参照してください。
 
- ワークフロー定義テスト用に多数のワークフロー定義を作成するには、いくつかの方法があります。  たとえば、コード生成を使用して、名前以外は同一の 1,000 のワークフローを作成し、各ワークフローを個別のファイルに保存します。  この方法はコンソール ホストのテストで使用しました。  WF3 では、ワークフロー定義の実行に <xref:System.Workflow.Runtime.WorkflowRuntime> クラスを使用します。  WF4 は <xref:System.Activities.WorkflowApplication> を使用して単一ワークフローのインスタンスを作成するか、直接 <xref:System.Activities.WorkflowInvoker> を使用してアクティビティがメソッドに呼び出された場合のように実行できます。  <xref:System.Activities.WorkflowApplication> は、1つのワークフローインスタンスのホストであり、このテストで使用されるように <xref:System.Workflow.Runtime.WorkflowRuntime> するための機能の同等性を備えています。
+ ワークフロー定義テスト用に多数のワークフロー定義を作成するには、いくつかの方法があります。  たとえば、コード生成を使用して、名前以外は同一の 1,000 のワークフローを作成し、各ワークフローを個別のファイルに保存します。  この方法はコンソール ホストのテストで使用しました。  WF3 では、ワークフロー定義の実行に <xref:System.Workflow.Runtime.WorkflowRuntime> クラスを使用します。  WF4 は <xref:System.Activities.WorkflowApplication> を使用して単一ワークフローのインスタンスを作成するか、直接 <xref:System.Activities.WorkflowInvoker> を使用してアクティビティがメソッドに呼び出された場合のように実行できます。  <xref:System.Activities.WorkflowApplication> は単一ワークフローのインスタンスのホストで、<xref:System.Workflow.Runtime.WorkflowRuntime> に類似した機能を持つため、このテストで使用しました。
 
  IIS でワークフローをホストする場合、<xref:System.Web.Hosting.VirtualPathProvider> を使用することで、すべての XAMLX または XOML ファイルを生成するのではなく、新しい <xref:System.ServiceModel.WorkflowServiceHost> を作成することができます。  <xref:System.Web.Hosting.VirtualPathProvider> は、受信要求を処理し、データベース (この場合は、その場で生成される) から読み込むことができる "仮想ファイル" で応答します。  したがって、1,000 個の物理ファイルを作成する必要はありません。
 
@@ -353,7 +353,7 @@ public class Workflow1 : Activity
 
 ## <a name="workflow-runtime-services"></a>ワークフロー ランタイムのサービス
 
-### <a name="persistence"></a>永続化
+### <a name="persistence"></a>永続性
  WF3 と WF4 には SQL 永続化プロバイダーが付属しています。  WF3 の SQL 永続化プロバイダーはワークフロー インスタンスをシリアル化して BLOB に格納する単純な実装です。  そのため、このプロバイダーのパフォーマンスはワークフロー インスタンスのサイズに大きく依存します。  WF3 では、前述したさまざまな理由からインスタンスのサイズは大きくなる可能性があります。  シリアル化されたインスタンスをデータベースに格納するとワークフローの状態を視認できないため、多くの場合に顧客は既定の SQL 永続化プロバイダーを使用しません。  ワークフロー ID が不明な場合、特定のワークフローを探すには、永続化された各インスタンスを逆シリアル化して内容を確認する必要があります。  多くの開発者は、この不都合を解消するために独自の永続化プロバイダーを作成することを選択します。
 
  WF4 の SQL 永続化プロバイダーでは、この問題の一部に対処することを試みました。  永続化テーブルは、アクティブなブックマークや昇格可能なプロパティなどの一定の情報を公開します。  WF4 の新しいコンテンツ ベースの相関関係機能は WF3 の SQL 永続化手法では適切に機能せず、永続化されたワークフロー インスタンスの構成に変更が生じます。  これにより永続化プロバイダーの処理が複雑化し、データベースに余分な負荷がかかります。
@@ -434,7 +434,7 @@ public class Workflow1 : Activity
  状態監視はスループットに約 3% の影響をもたらしています。  基本プロファイルのコストは約 8% です。
 
 ## <a name="interop"></a>Interop
- WF4 では [!INCLUDE[wf1](../../../includes/wf1-md.md)] をほぼ全面的に変更しているため、WF3 のワークフローおよびアクティビティは WF4 とは直接互換性がありません。  Windows Workflow Foundation 早期に採用した多くのお客様には、社内またはサードパーティのワークフロー定義と WF3 のカスタムアクティビティがあります。  WF4 への移行を簡素化するには、Interop アクティビティを使用する方法があります。この方法により WF4 ワークフロー内から WF3 アクティビティを実行できます。  <xref:System.Activities.Statements.Interop> アクティビティは必要な場合にのみ使用することをお勧めします。 WF4 への移行の詳細については、 [WF4 の移行](https://go.microsoft.com/fwlink/?LinkID=153313)に関するガイダンスを参照してください。
+ WF4 では [!INCLUDE[wf1](../../../includes/wf1-md.md)] をほぼ全面的に変更しているため、WF3 のワークフローおよびアクティビティは WF4 とは直接互換性がありません。  Windows Workflow Foundation 早期に採用した多くのお客様には、社内またはサードパーティのワークフロー定義と WF3 のカスタムアクティビティがあります。  WF4 への移行を簡素化するには、Interop アクティビティを使用する方法があります。この方法により WF4 ワークフロー内から WF3 アクティビティを実行できます。  <xref:System.Activities.Statements.Interop> アクティビティは必要な場合にのみ使用することをお勧めします。 WF4 への移行の詳細については、 [WF4 の移行](migration-guidance.md)に関するガイダンスを参照してください。
 
 ### <a name="environment-setup"></a>環境の設定
  ![ワークフローパフォーマンステスト用の環境設定](./media/performance/performance-test-environment.gif)
@@ -443,7 +443,7 @@ public class Workflow1 : Activity
  
 次の表は、さまざまな構成でシーケンス内の5つのアクティビティを含むワークフローを実行した結果を示しています。
 
-|テスト|スループット (ワークフロー/秒)|
+|[テスト]|スループット (ワークフロー/秒)|
 |----------|-----------------------------------|
 |WF3 ランタイムの WF3 シーケンス|1,576|
 |Interop を使用した WF4 ランタイムの WF3 シーケンス|2,745|

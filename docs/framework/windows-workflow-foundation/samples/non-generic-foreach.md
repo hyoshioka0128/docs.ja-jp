@@ -2,12 +2,12 @@
 title: 非ジェネリックの ForEach
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
-ms.openlocfilehash: cb040d8bd5fbb34cc00b246f2e51789866fd8e78
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: a4bbc594ec0bf2d387e700508c7d92685216accc
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989035"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715653"
 ---
 # <a name="non-generic-foreach"></a>非ジェネリックの ForEach
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] のツールボックスには、制御フロー アクティビティのセットが用意されています。これには、<xref:System.Activities.Statements.ForEach%601> コレクションを反復処理できる <xref:System.Collections.Generic.IEnumerable%601> が含まれています。  
@@ -67,12 +67,12 @@ Activity sampleUsage =
    };  
 ```  
   
-|条件|Message|Severity|例外の種類|  
+|条件|[メッセージ]|重要度|例外の種類|  
 |---------------|-------------|--------------|--------------------|  
-|値が `null` である|必須のアクティビティ引数 'Values' の値が指定されませんでした。|Error|<xref:System.InvalidOperationException>|  
+|値が `null` である|必須のアクティビティ引数 'Values' の値が指定されませんでした。|エラー|<xref:System.InvalidOperationException>|  
   
 ## <a name="foreach-designer"></a>ForEach デザイナー  
- サンプルのアクティビティ デザイナーは、組み込みの <xref:System.Activities.Statements.ForEach%601> アクティビティ用に提供されているデザイナーに外観が似ています。 デザイナーは、[**サンプル**の**非ジェネリックアクティビティ**] カテゴリの [ツールボックス] に表示されます。 デザイナーのツールボックスには**ForEachWithBodyFactory**という名前が付けられ<xref:System.Activities.Presentation.IActivityTemplateFactory>ます。これは、アクティビティがツールボックスでを公開<xref:System.Activities.ActivityAction>するためです。これにより、適切に構成されたを持つアクティビティが作成されます。  
+ サンプルのアクティビティ デザイナーは、組み込みの <xref:System.Activities.Statements.ForEach%601> アクティビティ用に提供されているデザイナーに外観が似ています。 デザイナーは、[**サンプル**の**非ジェネリックアクティビティ**] カテゴリの [ツールボックス] に表示されます。 デザイナーのツールボックスには**ForEachWithBodyFactory**という名前が付けられます。これは、アクティビティがツールボックス内の <xref:System.Activities.Presentation.IActivityTemplateFactory> を公開し、適切に構成された <xref:System.Activities.ActivityAction>を持つアクティビティを作成するためです。  
   
 ```csharp  
 public sealed class ForEachWithBodyFactory : IActivityTemplateFactory  
@@ -101,13 +101,13 @@ public sealed class ForEachWithBodyFactory : IActivityTemplateFactory
   
     2. **デザイナ Testclient**デザイナー内でアクティビティを使用する方法を示します。  
   
-2. プロジェクトをビルドして実行します。  
+2. プロジェクトをビルドおよび実行します。  
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780)にアクセスして、すべての[!INCLUDE[wf1](../../../../includes/wf1-md.md)] Windows Communication Foundation (wcf) とサンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NonGenericForEach`

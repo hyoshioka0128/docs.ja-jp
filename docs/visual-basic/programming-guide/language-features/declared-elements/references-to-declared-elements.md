@@ -1,5 +1,5 @@
 ---
-title: References to Declared Elements
+title: 宣言された要素の参照
 ms.date: 07/20/2015
 helpviewer_keywords:
 - declared elements [Visual Basic]
@@ -112,7 +112,7 @@ Dim demoClass As class1 = New class1()
 demoClass.someSub[(argumentlist)]  
 ```  
   
- クラス名自体を使用して、[共有](../../../../visual-basic/language-reference/modifiers/shared.md)されていないメンバーを修飾することはできません。 まず、オブジェクト変数にインスタンスを作成し (この場合は `demoClass`)、変数名でインスタンスを参照する必要があります。  
+ クラス名自体を使用して、[Shared](../../../../visual-basic/language-reference/modifiers/shared.md) されていないメンバーを修飾することはできません。 まず、オブジェクト変数にインスタンスを作成し (この場合は `demoClass`)、変数名でインスタンスを参照する必要があります。  
   
  クラスまたは構造体に `Shared` メンバーが含まれている場合は、クラスまたは構造体の名前を使用するか、インスタンスを指す変数または式を使用して、そのメンバーを修飾できます。  
   
@@ -150,7 +150,7 @@ End Module
 ```  
   
 ## <a name="references-to-projects"></a>プロジェクトへの参照  
- 別のプロジェクトで定義されている[パブリック](../../../../visual-basic/language-reference/modifiers/public.md)要素を使用するには、最初にそのプロジェクトのアセンブリまたはタイプライブラリへの*参照*を設定する必要があります。 参照を設定するには、 **[プロジェクト]** メニューの **[参照の追加]** をクリックするか、 [-reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md)コマンドラインコンパイラオプションを使用します。  
+ 別のプロジェクトで定義されている [Public](../../../../visual-basic/language-reference/modifiers/public.md) 要素を使用するには、最初にそのプロジェクトのアセンブリまたはタイプライブラリへの*参照*を設定する必要があります。 参照を設定するには、 **[プロジェクト]** メニューの **[参照の追加]** をクリックするか、 [-reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md)コマンドラインコンパイラオプションを使用します。  
   
  たとえば、.NET Framework の XML オブジェクトモデルを使用できます。 <xref:System.Xml> 名前空間への参照を設定した場合は、<xref:System.Xml.XmlDocument>などの任意のクラスを宣言して使用できます。 次の例では、<xref:System.Xml.XmlDocument>を使用します。  
   
@@ -161,7 +161,7 @@ Dim xDoc As System.Xml.XmlDocument
 ```  
   
 ## <a name="importing-containing-elements"></a>インポート (含まれる要素を)  
- [Imports ステートメント (.Net 名前空間と型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)を使用して、使用するモジュールまたはクラスを含む名前空間を*インポート*できます。 これにより、インポートされた名前空間で定義されている要素の名前を完全修飾せずに参照できます。 次の例では、前の例を書き直して <xref:System.Xml> 名前空間をインポートします。  
+ [Imports ステートメント (.NET 名前空間と型)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)を使用して、使用するモジュールまたはクラスを含む名前空間を*インポート*できます。 これにより、インポートされた名前空間で定義されている要素の名前を完全修飾せずに参照できます。 次の例では、前の例を書き直して <xref:System.Xml> 名前空間をインポートします。  
   
 ```vb  
 ' Assume this project has a reference to System.Xml  
@@ -191,7 +191,7 @@ Dim xDoc As xD.XmlDocument
  すべての要素に一意の名前を付けることで、名前のあいまいさを回避できます。 その後、名前を名前空間、モジュール、またはクラスで修飾することなく、任意の要素を参照できます。 間違った要素が誤って参照される可能性を低くすることもできます。  
   
 ## <a name="shadowing"></a>シャドウ  
- 2つのプログラミング要素が同じ名前を共有している場合、そのうちの1つは、もう一方を非表示にしたり*影*を付けることができます。 シャドウされた要素を参照することはできません。代わりに、シャドウされた要素名を使用するコードでは、Visual Basic コンパイラによってシャドウ要素に解決されます。 例の詳細については、「 [Visual Basic でのシャドウ](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)」を参照してください。  
+ 2 つのプログラミング要素が同じ名前を共有している場合、そのうちの 1 つを非表示にしたり、もう一方に*シャドウ*を付けることができます。 シャドウされた要素を参照することはできません。代わりに、シャドウされた要素名を使用するコードでは、Visual Basic コンパイラによってシャドウ要素に解決されます。 例の詳細については、「[Visual Basic におけるシャドウ](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照
 

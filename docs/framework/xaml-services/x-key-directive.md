@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Key attribute in XAML [XAML Services]
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
-ms.openlocfilehash: 8321a09db31c9f6d2103a252a195fcdbf8da3e66
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4ffd7a2922c7f3ba35ccb9ac7ce29a6a00cd99af
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283856"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837208"
 ---
 # <a name="xkey-directive"></a>x:Key ディレクティブ
 XAML で定義されたディクショナリで作成および参照される要素を一意に識別します。 `x:Key` 値を XAML オブジェクトに追加するのは、リソース ディクショナリ (<xref:System.Windows.ResourceDictionary> など) のリソースを識別するための最も一般的な方法です。  
@@ -47,8 +47,8 @@ XAML で定義されたディクショナリで作成および参照される要
 |`stringKeyValue`|キーとして使用するテキスト文字列。 テキスト文字列は、 [XamlName 文法](xamlname-grammar.md)に準拠している必要があります。|  
 |`markupExtensionUsage`|マークアップ拡張機能の区切り記号 {}には、キーとして使用するオブジェクトを提供するマークアップ拡張機能の使用法が含まれます。 「解説」を参照してください。|  
   
-## <a name="remarks"></a>コメント  
- `x:Key` は、XAML リソースディクショナリの概念をサポートします。 言語としての XAML ではリソース ディクショナリの実装は定義されていません。特定の UI フレーム ワークによって定義されています。 WPF での XAML リソースディクショナリの実装方法の詳細については、「 [Xaml リソース](../../desktop-wpf/fundamentals/xaml-resources-define.md)」を参照してください。  
+## <a name="remarks"></a>Remarks  
+ `x:Key` は XAML のリソース ディクショナリの概念をサポートしています。 言語としての XAML ではリソース ディクショナリの実装は定義されていません。特定の UI フレーム ワークによって定義されています。 WPF での XAML リソースディクショナリの実装方法の詳細については、「 [Xaml リソース](../../desktop-wpf/fundamentals/xaml-resources-define.md)」を参照してください。  
   
  XAML 2006 および WPF では、`x:Key` を属性として指定する必要があります。 文字列ではないキーも使用できますが、文字列ではない値を属性形式で提供するためには、マークアップ拡張機能を使用する必要があります。 XAML 2009 を使用している場合は、`x:Key` を要素として指定して、マークアップ拡張機能の中間を必要とせずに、文字列以外のオブジェクト型によってキー指定されたディクショナリを明示的にサポートすることができます。 このトピックの「XAML 2009」セクションを参照してください。 「解説」の残りの部分は、XAML 2006 の実装に特に適用されます。  
   
@@ -63,7 +63,7 @@ XAML で定義されたディクショナリで作成および参照される要
   
 - 一部の WPF 型は、ディクショナリの使用に対して暗黙のキーを宣言します。 たとえば、<xref:System.Windows.Style> が設定された <xref:System.Windows.Style.TargetType%2A> や、<xref:System.Windows.DataTemplate> が設定された <xref:System.Windows.DataTemplate.DataType%2A> は、<xref:System.Windows.ResourceDictionary> に格納して、暗黙のキーを使用できます。  
   
-- WPF は、マージされたリソース ディクショナリの概念をサポートしています。 キーは、マージされたディクショナリ間で共有できます。また、共有されたキーの動作には、<xref:System.Windows.FrameworkContentElement.FindResource%2A> を使用してアクセスできます。 詳細については、「[Merged Resource Dictionaries](../wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
+- WPF は、マージされたリソース ディクショナリの概念をサポートしています。 キーは、マージされたディクショナリ間で共有できます。また、共有されたキーの動作には、<xref:System.Windows.FrameworkContentElement.FindResource%2A> を使用してアクセスできます。 詳細については、「[マージされたリソース ディクショナリ](../wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
   
  通常、WPF XAML の実装およびアプリケーション モデルでは、キーの一意性が XAML マークアップ コンパイラによってチェックされることはありません。 その代わり、`x:Key` 値が指定されていない場合や一意でない場合は、読み込み時に XAML パーサー エラーが発生します。 ただし、Visual Studio で WPF のディクショナリを処理すると、デザインフェーズでこのようなエラーが発生することがよくあります。  
   
@@ -75,7 +75,7 @@ XAML で定義されたディクショナリで作成および参照される要
   
  既に説明したように、キー値はマークアップ拡張機能によって指定され、文字列値以外になる場合があります。 WPF シナリオの例として、`x:Key` の値が[ComponentResourceKey](../wpf/advanced/componentresourcekey-markup-extension.md)であることが挙げられます。 特定のコントロールでは、スタイルを完全に置き換えることなく、そのコントロールの外観と動作の一部に影響を与えるカスタム スタイル リソースの型に対応するスタイル キーが公開されます。 このようなキーの例として、<xref:System.Windows.Controls.ToolBar.ButtonStyleKey%2A> が挙げられます。  
   
- WPF のマージされたディクショナリ機能では、キーの一意性およびキーの検索動作について考慮を要する点があります。 詳細については、「[Merged Resource Dictionaries](../wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
+ WPF のマージされたディクショナリ機能では、キーの一意性およびキーの検索動作について考慮を要する点があります。 詳細については、「[マージされたリソース ディクショナリ](../wpf/advanced/merged-resource-dictionaries.md)」を参照してください。  
   
 ## <a name="xaml-2009"></a>XAML 2009  
  XAML 2009 緩和されは、常に属性形式で提供される `x:Key` 制限をします。  
@@ -101,14 +101,14 @@ keyObject
 |-|-|  
 |`keyObject`|専用のディクショナリで指定された `object` のキーとして使用されるオブジェクトの、オブジェクト要素。|  
   
-- この種類の使用方法のコンテナー/親は、ここには示しません。 `object` は、特化されたディクショナリの実装を表す object 要素の子である必要があります。 `keyObject` はオブジェクトインスタンス (または値型の値) であることが想定されています。これは、特定の特殊なディクショナリ実装のキーとして適しています。  
+- この種類の使用方法のコンテナー/親は、ここには示しません。 `object` は、専用のディクショナリの実装を表すオブジェクト要素の子であると想定されます。 `keyObject` は、その専用のディクショナリの実装のキーとして適切なオブジェクト インスタンス (または値の型の値) であると想定されます。  
   
 - WPF は、この使用方法を必要とするディクショナリを実装しません。 オブジェクト キーは XAML 言語のより一般的な機能であり、カスタム ディクショナリのシナリオで XAML でのディクショナリ作成が望まれる場合に有益であることがあります。 リソースに対して文字列以外のキーを使用する暗黙的なスタイルなどの WPF 機能については、別の方法によってキーを確立、または指定することができるので、オブジェクト キーを使用する必要はありません。  
   
 - *Keyobject*は、直接のオブジェクトインスタンスではなく、オブジェクト要素形式のマークアップ拡張機能を使用することもできます。  
   
 ## <a name="silverlight-usage-notes"></a>Silverlight の使用上の注意  
- Silverlight の `x:Key` は個別に記載されています。 詳細については、「 [XAML 名前空間 (x:)」を参照してください。言語機能 (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=199081)。  
+ Silverlight 用の `x:Key` に関しては、別途ドキュメントが用意されています。 詳細については、「 [XAML 名前空間 (x:)」を参照してください。言語機能 (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc188995(v=vs.95))。  
   
 ## <a name="see-also"></a>参照
 

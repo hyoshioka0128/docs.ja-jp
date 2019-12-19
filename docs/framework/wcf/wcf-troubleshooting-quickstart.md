@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: 86aab2b39aaa9c7d7d92f7d5738482723cf6852f
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: dfbf5a9b437d0acea16a75236fd3d2861c0f2e06
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320182"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802358"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>WCF トラブルシューティング クイックスタート
 このトピックでは、WCF クライアントと WCF サービスの開発時に生じるさまざまな既知の問題の一覧を示します。 発生している問題がこの一覧にない場合は、サービスに対してトレースを構成することをお勧めします。 これにより、トレース ファイル ビューアーで表示し、サービス内で発生することがある例外に関する詳細情報を取得できるトレース ファイルが生成されます。 トレースの構成の詳細については、「 [Configuring Tracing](./diagnostics/tracing/configuring-tracing.md)」を参照してください。 トレース ファイル ビューアーの詳細については、「 [Service Trace Viewer Tool (SvcTraceViewer.exe)](service-trace-viewer-tool-svctraceviewer-exe.md)」を参照してください。  
@@ -136,9 +136,9 @@ public class MyServiceHost : ServiceHost
   
 - [Windows 認証エラーのデバッグ](./feature-details/debugging-windows-authentication-errors.md)  
   
-- [Http.sys を使用した Kerberos サービス プリンシパル名の登録](https://go.microsoft.com/fwlink/?LinkId=86943)  
+- [Http.sys を使用した Kerberos サービス プリンシパル名の登録](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms178119(v=sql.105))  
   
-- [Kerberos の説明](https://go.microsoft.com/fwlink/?LinkId=86946)  
+- [Kerberos の説明](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742516(v%3dtechnet.10))  
   
 <a name="BKMK_q5"></a>   
 ## <a name="when-i-throw-a-faultexceptionexception-where-the-type-is-an-exception-i-always-receive-a-general-faultexception-type-on-the-client-and-not-the-generic-type-whats-happening"></a>型が例外である > FaultException\<Exception をスローすると、常に、ジェネリック型ではなく、クライアントで一般的な FaultException 型を受け取ります。 どうしてでしょうか。  
@@ -237,7 +237,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BK_MK99"></a>   
 ## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a>WCF SOAP アプリケーションから WCF Web HTTP アプリケーションを呼び出すと、サービスから "405 メソッドは許可されていません" というエラーが返されます  
- Wcf サービスから WCF Web HTTP アプリケーション (<xref:System.ServiceModel.WebHttpBinding> と <xref:System.ServiceModel.Description.WebHttpBehavior>を使用するサービス) を呼び出すと、次の例外が発生する可能性があります。 `Unhandled Exception: System.ServiceModel.FaultException`1 [System.servicemodel. ExceptionDetail]: リモートサーバーが予期しない応答を返しました: (405) メソッドが <xref:System.ServiceModel.OperationContext><xref:System.ServiceModel.OperationContext> 許可されていません この問題を解決するには、WCF Web HTTP サービス操作内で <xref:System.ServiceModel.OperationContextScope> を作成します。 例 :  
+ Wcf サービスから WCF Web HTTP アプリケーション (<xref:System.ServiceModel.WebHttpBinding> と <xref:System.ServiceModel.Description.WebHttpBehavior>を使用するサービス) を呼び出すと、次の例外が発生する可能性があります。 `Unhandled Exception: System.ServiceModel.FaultException`1 [System.servicemodel. ExceptionDetail]: リモートサーバーが予期しない応答を返しました: (405) メソッドが <xref:System.ServiceModel.OperationContext><xref:System.ServiceModel.OperationContext> 許可されていません この問題を解決するには、WCF Web HTTP サービス操作内で <xref:System.ServiceModel.OperationContextScope> を作成します。 例:  
   
 ```csharp
 public string Echo(string input)  

@@ -2,12 +2,12 @@
 title: での非同期プログラミングF#
 description: がコアF#関数型プログラミングの概念から派生した言語レベルのプログラミングモデルに基づいて、非同期性のクリーンなサポートを提供する方法について説明します。
 ms.date: 12/17/2018
-ms.openlocfilehash: 1ede4a5c1e26df271ac94f9b2c216ac84fb38f59
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 583b0f5154e6ad8875b21503cfb78f70a069ff7b
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395790"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837104"
 ---
 # <a name="async-programming-in-f"></a>F\# での非同期プログラミング
 
@@ -39,7 +39,7 @@ ms.locfileid: "72395790"
 
 重要なことは、非同期計算はメインプログラムフローから独立していることです。 非同期計算がいつまたはどのように実行されるかに関する保証はほとんどありませんが、それらを調整しスケジューリングするためのアプローチがいくつかあります。 この記事の残りの部分では、 F# の非同期処理に関する主要な概念と、F# に組み込まれている型、関数、および式の使用方法について説明します。
 
-## <a name="core-concepts"></a>主要な概念
+## <a name="core-concepts"></a>コア概念
 
 F# では、非同期プログラミングは次の 3 つの主要な概念を中心にしています。
 
@@ -103,8 +103,8 @@ let main argv =
 
 ご覧のように、`main` 関数には、さらに多くの呼び出しが行われています。 概念的には、次のことが行われます。
 
-1. コマンドライン引数を、`Async<unit>` を指定して `Array.map` の計算に変換します。
-2. 実行時に並列で `Async<'T[]>` の計算をスケジュールして実行する `printTotalFileBytes` を作成します。
+1. コマンドライン引数を、`Array.map` を指定して `Async<unit>` の計算に変換します。
+2. 実行時に並列で `printTotalFileBytes` の計算をスケジュールして実行する `Async<'T[]>` を作成します。
 3. `Async<unit>` を生成しますが、これは並列計算を実行してその結果を無視します。
 4. `Async.RunSynchronously` で最後の計算を明示的に実行し、完了するまでブロックします。
 
@@ -127,6 +127,7 @@ let main argv =
     argv
     |> Array.map printTotalFileBytes
     |> Async.Sequential
+    |> Async.Ignore
     |> Async.RunSynchronously
     |> ignore
 ```
@@ -149,7 +150,7 @@ F# の非同期計算は、既に実行されている作業を表すのでは�
 computation: Async<'T> - timeout: ?int -> Async<Async<'T>>
 ```
 
-使用すべき状況:
+いつ使用するか:
 
 - 一度に 1 つずつではなく、複数の非同期計算を同時に実行するが、並列でスケジューリングされない場合。
 - 子計算の有効期間を親計算の有効期間に関連付ける場合。
@@ -169,7 +170,7 @@ computation: Async<'T> - timeout: ?int -> Async<Async<'T>>
 computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
 ```
 
-使用すべき状況:
+いつ使用するか:
 
 - 非同期計算の途中で、呼び出し元のスレッドで何かを更新する必要がある場合。
 
@@ -187,7 +188,7 @@ computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
 computation: Async<'T> - taskCreationOptions: ?TaskCreationOptions - cancellationToken: ?CancellationToken -> Task<'T>
 ```
 
-使用すべき状況:
+いつ使用するか:
 
 - 非同期計算の結果を表すために <xref:System.Threading.Tasks.Task%601> を想定している .NET API を呼び出す必要がある場合。
 
@@ -244,7 +245,7 @@ computations: seq<Async<'T>> -> Async<'T[]>
 task: Task<'T>  -> Async<'T>
 ```
 
-使用すべき状況:
+いつ使用するか:
 
 - F#の非同期計算内で <xref:System.Threading.Tasks.Task%601> を返す .NET API を使用する場合。
 
@@ -262,7 +263,7 @@ task: Task<'T>  -> Async<'T>
 computation: Async<'T> -> Async<Choice<'T, exn>>
 ```
 
-使用すべき状況:
+いつ使用するか:
 
 - 例外によって失敗する可能性があり、呼び出し元でその例外を処理する必要がある非同期処理を実行する場合。
 
@@ -280,7 +281,7 @@ computation: Async<'T> -> Async<Choice<'T, exn>>
 computation: Async<'T> -> Async<unit>
 ```
 
-使用すべき状況:
+いつ使用するか:
 
 - 結果が不要な非同期計算がある場合。 これは、非非同期コードの `ignore` コードに似ています。
 
@@ -327,7 +328,7 @@ computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
 注意事項:
 
 - `Async.Start` で開始された計算によって発生した例外は、呼び出し元に反映されません。 呼び出し履歴は完全にアンワインドされます。
-- `printfn` で開始された effectful 作業 (`Async.Start` の呼び出しなど) では、プログラムの実行のメインスレッドで効果が発生しません。
+- `Async.Start` で開始された effectful 作業 (`printfn` の呼び出しなど) では、プログラムの実行のメインスレッドで効果が発生しません。
 
 ## <a name="interoperating-with-net"></a>.NET との相互運用
 

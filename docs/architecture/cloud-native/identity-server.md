@@ -2,12 +2,12 @@
 title: クラウドネイティブアプリ用のサーバー
 description: Azure 向けのクラウドネイティブ .NET アプリの設計 |IdentityServer
 ms.date: 06/30/2019
-ms.openlocfilehash: 3797214685d20109b2c5dc4440ae5fc64dfddce6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e96395766d1a4b63815c10c2c90e35a8f7f9159d
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73841787"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568465"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>クラウドネイティブアプリケーション用のサーバー
 
@@ -45,7 +45,7 @@ ms.locfileid: "73841787"
 
 IdentityServer4 はオープンソースであり、自由に使用できます。 NuGet パッケージを使用して、アプリケーションに追加することができます。 メインパッケージは、400万回以上ダウンロードされた[IdentityServer4](https://www.nuget.org/packages/IdentityServer4/)です。 基本パッケージには、ユーザーインターフェイスコードは含まれず、メモリ構成でのみサポートされます。 データベースで使用するには、Entity Framework Core を使用して、ユーザーの構成データとオペレーションデータを格納する[IdentityServer4](https://www.nuget.org/packages/IdentityServer4.EntityFramework)のようなデータプロバイダーも必要になります。 ユーザーインターフェイスでは、[クイックスタート UI リポジトリ](https://github.com/IdentityServer/IdentityServer4.Quickstart.UI)から ASP.NET Core MVC アプリケーションにファイルをコピーして、ユーザーのサインインとサインアウトのサポートを追加することができます。
 
-## <a name="configuration"></a>構成
+## <a name="configuration"></a>の構成
 
 ユーザーは、各カスタムインストールの一部として構成できるさまざまな種類のプロトコルとソーシャル認証プロバイダーをサポートしています。 これは通常、`ConfigureServices` メソッドの ASP.NET Core アプリケーションの `Startup` クラスで行われます。 構成には、サポートされるプロトコル、および使用されるサーバーとエンドポイントへのパスの指定が含まれます。 図8-2 は、IdentityServer4 クイックスタート UI プロジェクトから取得した構成の例を示しています。
 
@@ -65,7 +65,7 @@ public class Startup
                 options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
 
                 options.ClientId = "<insert here>";
-                options.ClientSecret = "<inser here>";
+                options.ClientSecret = "<insert here>";
             })
             .AddOpenIdConnect("demoidsrv", "IdentityServer", options =>
             {

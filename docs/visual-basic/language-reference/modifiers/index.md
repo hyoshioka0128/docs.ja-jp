@@ -2,12 +2,12 @@
 title: 修飾子
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 0379a0d0571a66bda4df06f5c2d3282d80034cae
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2056cdc69c7d89b78e9b269fc919a0e0f6b76bf4
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351541"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838287"
 ---
 # <a name="modifiers-visual-basic"></a>修飾子 (Visual Basic)
 このセクションのトピックでは、Visual Basic ランタイム修飾子を示します。  
@@ -15,7 +15,7 @@ ms.locfileid: "74351541"
 ## <a name="in-this-section"></a>このセクションの内容  
  [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md)  
   
- [アセンブリ](../../../visual-basic/language-reference/modifiers/assembly.md)  
+ [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)  
   
  [Async](../../../visual-basic/language-reference/modifiers/async.md)  
   
@@ -23,9 +23,9 @@ ms.locfileid: "74351541"
   
  [ByRef](../../../visual-basic/language-reference/modifiers/byref.md)  
   
- [ParamArray](../../../visual-basic/language-reference/modifiers/byval.md)  
+ [ByVal](../../../visual-basic/language-reference/modifiers/byval.md)  
   
- [Shared](../../../visual-basic/language-reference/modifiers/default.md)  
+ [default](../../../visual-basic/language-reference/modifiers/default.md)  
   
  [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
@@ -39,7 +39,7 @@ ms.locfileid: "74351541"
   
  [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
   
- [MyBase](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
+ [New](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
   
  [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
   
@@ -51,7 +51,7 @@ ms.locfileid: "74351541"
   
  [Out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)  
   
- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
+ [オーバーロード](../../../visual-basic/language-reference/modifiers/overloads.md)  
   
  [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
   
@@ -83,11 +83,9 @@ ms.locfileid: "74351541"
   
  [Widening](../../../visual-basic/language-reference/modifiers/widening.md)  
   
- [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)  
+ [ReadOnly](../../../visual-basic/language-reference/modifiers/withevents.md)  
   
  [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
   
 ## <a name="related-sections"></a>関連セクション  
  [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
-  
- [Visual Basic](../../../visual-basic/index.md)

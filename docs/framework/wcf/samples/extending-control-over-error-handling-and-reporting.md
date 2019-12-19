@@ -2,12 +2,12 @@
 title: エラー処理およびレポートに対する制御の拡張
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-ms.openlocfilehash: abb747a0deecb7e07776d9cd6ef5bc3775b1be9d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b7a3e0fa9b0799d98ea3df8df760e26851febf90
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281702"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716411"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>エラー処理およびレポートに対する制御の拡張
 このサンプルでは、<xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを使用して、Windows Communication Foundation (WCF) サービスのエラー処理およびエラー報告に対する制御を拡張する方法を示します。 このサンプルは、エラーを処理するためにサービスに追加のコードが追加された[はじめに](../../../../docs/framework/wcf/samples/getting-started-sample.md)に基づいています。 クライアントは、強制的にエラーが発生する状態にされます。 サービスはエラーを途中受信して、ファイルに記録します。  
@@ -19,7 +19,7 @@ ms.locfileid: "74281702"
   
  このサンプルでは、`CalculatorErrorHandler` 型は <xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを実装します。 「  
   
- <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> メソッドは `CalculatorErrorHandler`、エラーのログを c:\ のエラー txt テキストファイルに書き込みます。 このサンプルではエラーを記録して表示します。このエラーの報告は、クライアントに返されます。  
+ <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> メソッドでは、`CalculatorErrorHandler` がエラーのログを c:\logs の Error.txt テキスト ファイルに書き込みます。 このサンプルではエラーを記録して表示します。このエラーの報告は、クライアントに返されます。  
   
 ```csharp
 public class CalculatorErrorHandler : IErrorHandler
@@ -154,6 +154,6 @@ Fault: Reason = Invalid Argument: The argument must be greater than zero.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\ErrorHandling`  

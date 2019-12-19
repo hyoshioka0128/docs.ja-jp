@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354322"
 ---
-# <a name="code-visual-basic"></a>\<コード > (Visual Basic)
+# <a name="code-visual-basic"></a>\<code> (Visual Basic)
 テキストが複数行のコードであることを示します。  
   
 ## <a name="syntax"></a>構文  
@@ -26,12 +26,12 @@ ms.locfileid: "74354322"
  コードとしてマークするテキスト。  
   
 ## <a name="remarks"></a>コメント  
- 複数行をコードとして示すには、`<code>` タグを使用します。 説明内のテキストをコードとしてマークする場合は、[\<c](../../../visual-basic/language-reference/xmldoc/c.md) タグを使用します。  
+ 複数行をコードとして示すには、`<code>` タグを使用します。 説明内のテキストをコードとしてマークする場合は、[\<c>](../../../visual-basic/language-reference/xmldoc/c.md) タグを使用します。  
   
  コンパイル時に [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
 ## <a name="example"></a>例  
- この例では、\<コード > タグを使用して、`ID` フィールドを使用するためのコード例を含めます。  
+ この例では、\<code> タグを使用して、`ID` フィールドを使用するためのコード例を含めます。  
   
  [!code-vb[VbVbcnXmlDocComments#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#2)]  
   

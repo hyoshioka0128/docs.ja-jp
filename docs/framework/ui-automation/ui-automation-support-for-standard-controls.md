@@ -5,16 +5,16 @@ helpviewer_keywords:
 - controls, UI Automation support for
 - UI Automation, support for standard controls
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
-ms.openlocfilehash: c59352f908c5f4a1fd2ca6dd631d26bb5d69f09a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 314526c1164f70e6b261df1a6f11ddce2b5fa240
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441225"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960072"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>UI オートメーションによる標準コントロールのサポート
 > [!NOTE]
-> このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](/windows/win32/winauto/entry-uiauto-win32)」を参照してください。  
+> このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI Automation (Windows のオートメーション API: UI オートメーション)](/windows/win32/winauto/entry-uiauto-win32)」を参照してください。  
   
  このトピックでは、 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] 、 [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)]、および [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]フレームワーク向けに開発されたアプリケーションの標準コントロールに対する [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] サポートについて説明します。  
   
@@ -26,31 +26,31 @@ ms.locfileid: "74441225"
 ## <a name="win32-controls"></a>Win32 コントロール  
  ほとんどの [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] コントロールは、UIAutomationClientsideProviders.dll のクライアント側プロバイダーによって [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] に公開されています。 このアセンブリは、UI オートメーション クライアント アプリケーションで使用するために、自動的に登録されます。  
   
- 完全なサポートは、ComCtrl32.dll のバージョン 6 ( [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)] 以降で使用可能) のコントロールに対してのみ提供されています。  
+ 完全サポートは、 *、comctrl32.dll*のバージョン6のコントロールに対してのみ提供されます。  
   
  次のコントロールがサポートされています。  
   
 |[クラス名]|コントロール型|  
 |----------------|------------------|  
-|ボタン|ボタン|  
-|ボタン|RadioButton|  
-|ボタン|グループ|  
-|ボタン|CheckBox|  
-|ボタン|ハイパーリンク|  
-|ボタン|SplitButton|  
-|ボタン|CheckBox|  
+|Button|Button|  
+|Button|RadioButton|  
+|Button|グループ|  
+|Button|CheckBox|  
+|Button|ハイパーリンク|  
+|Button|SplitButton|  
+|Button|CheckBox|  
 |ComboBoxEx32|ComboBox|  
 |ComboBox|ComboBox|  
-|編集|ドキュメント|  
-|編集|編集|  
+|[編集]|ドキュメント|  
+|[編集]|[編集]|  
 |SysLink|ハイパーリンク|  
-|静的|Text|  
-|静的|イメージ|  
+|スタティック|テキスト|  
+|スタティック|Image|  
 |SysIPAddress32|カスタム|  
 |SysHeader32|Header/HeaderItem|  
 |SysListView32|DataGrid|  
-|SysListView32|一覧|  
-|ListBox|一覧|  
+|SysListView32|リスト型|  
+|ListBox|リスト型|  
 |ListBox|ListItem|  
 |#32768|メニュー|  
 |#32768|MenuItem|  
@@ -67,13 +67,13 @@ ms.locfileid: "74441225"
 |SysTabControl32|TabItem|  
 |ToolbarWindow32|ToolBar|  
 |ToolbarWindow32|MenuItem|  
-|ToolbarWindow32|ボタン|  
+|ToolbarWindow32|Button|  
 |ToolbarWindow32|CheckBox|  
 |ToolbarWindow32|RadioButton|  
 |ToolbarWindow32|[区切り文字]|  
 |tooltips_class32|ToolTip|  
 |#32774|ToolTip|  
-|ReBarWindow32|ツール バー|  
+|ReBarWindow32|ToolBar|  
 |SysTreeView32|ツリー|  
 |SysTreeView32|TreeItem|  
   
@@ -83,10 +83,10 @@ ms.locfileid: "74441225"
   
 |[クラス名]|コントロール型|  
 |----------------|------------------|  
-|SysAnimate32|イメージ|  
+|SysAnimate32|Image|  
 |SysPager|Spinner|  
 |SysDateTimePick32|カスタム|  
-|SysMonthCal32|カレンダー|  
+|SysMonthCal32|予定表|  
 |MS_WINNOTE|Tooltip|  
 |VBBubble|Tooltip|  
 |ScrollBar (スタンドアロン コントロールとして使用される場合)|[スライダー]|  
@@ -100,7 +100,7 @@ ms.locfileid: "74441225"
   
 |クラス名|  
 |----------------|  
-|ボタン|  
+|Button|  
 |CheckBox|  
 |CheckedListBox|  
 |ColorDialog|  
@@ -128,8 +128,8 @@ ms.locfileid: "74441225"
 |StatusBar|  
 |TabControl/TabPage|  
 |TextBox|  
-|タイマー|  
-|ツール バー|  
+|タイマ|  
+|ToolBar|  
 |ToolTip|  
 |TrackBar|  
 |TreeView|  
@@ -169,4 +169,4 @@ ms.locfileid: "74441225"
   
 ## <a name="see-also"></a>参照
 
-- [UI Automation Control Types](ui-automation-control-types.md)
+- [UI オートメーション コントロール型](ui-automation-control-types.md)

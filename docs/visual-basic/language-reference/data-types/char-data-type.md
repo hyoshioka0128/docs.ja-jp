@@ -1,5 +1,5 @@
 ---
-title: 文字型 (Char)
+title: Char データ型 (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Char
@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344045"
 ---
-# <a name="char-data-type-visual-basic"></a>文字型 (Char) (Visual Basic)
+# <a name="char-data-type-visual-basic"></a>Char データ型 (Visual Basic)
 
 0 ~ 65535 の値の範囲内の符号なし16ビット (2 バイト) コードポイントを保持します。 各*コードポイント*(文字コード) は、1つの Unicode 文字を表します。
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: d30b2e30639837730ecb185a2c0f659a63955004
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 72e3b35465968674a20aa48262d3425a2190ff74
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975397"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802268"
 ---
 # <a name="create-the-data-service"></a>データ サービスを作成する
 
@@ -26,9 +26,9 @@ ms.locfileid: "73975397"
 
 ## <a name="create-the-aspnet-web-app"></a>ASP.NET web アプリを作成する
 
-1. Visual Studio の **[ファイル]** メニューで、[**新規** > **プロジェクト**] を選択します。
+1. Visual Studio の **[ファイル]** メニューで､ **[新規作成]**  >  **[プロジェクト]** を選択します。
 
-1. **[新しいプロジェクト]** ダイアログボックスの Visual Basic またはC# ビジュアル の下で、 **[web]** カテゴリを選択し、 **[ASP.NET web Application]** を選択します。
+1. **新しいプロジェクト** ダイアログ ボックスで、Visual Basic または Visual C# のいずれかの選択 で、 **Web**カテゴリ、および選択**ASP.NET Web アプリケーション**します。
 
 1. プロジェクトの名前として `NorthwindService` を入力し、[ **OK]** を選択します。
 
@@ -71,7 +71,7 @@ ms.locfileid: "73975397"
    ![Visual Studio 2015 の WCF Data Service 項目テンプレート](./media/wcf-data-service-item-template.png)
 
    > [!NOTE]
-   > **WCF Data Service**テンプレートは visual studio 2015 で使用できますが、visual studio 2017 では使用できません。
+   > **WCF Data Service**テンプレートは visual studio 2015 で使用できますが、visual studio 2017 以降では使用できません。
 
 3. サービスの名前として、「`Northwind`」と入力します。
 
@@ -94,13 +94,13 @@ ms.locfileid: "73975397"
     > [!NOTE]
     > ASP.NET アプリケーションにアクセスできるクライアントは、データ サービスによって公開されるリソースにもアクセスできます。 運用データ サービスで、リソースへの承認されていないアクセスを防止するために、アプリケーション自身もセキュリティで保護する必要があります。 詳細については、「 [Securing WCF Data Services](securing-wcf-data-services.md)」を参照してください。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
 ここでは、Northwind サンプルデータベースに基づく OData フィードを公開する新しいデータサービスを作成し、ASP.NET Web アプリケーションに対するアクセス許可を持つクライアントに対してフィードへのアクセスを有効にしました。 次に、Visual Studio からデータサービスを開始し、Web ブラウザーから HTTP GET 要求を送信して OData フィードにアクセスします。
 
 > [!div class="nextstepaction"]
 > [Web ブラウザーからサービスにアクセスする](accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ADO.NET Entity Data Model ツール](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

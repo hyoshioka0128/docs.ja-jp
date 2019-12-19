@@ -8,12 +8,12 @@ helpviewer_keywords:
 - installing .NET Framework
 - installation [.NET Framework]
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
-ms.openlocfilehash: 8c4b328cdecb468af57fe699283584e901772175
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 407c9a3fd5057a8e1d68707c9e475d76b3f266e2
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73091995"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960047"
 ---
 # <a name="install-the-net-framework-for-developers"></a>開発者向けの .NET Framework のインストール
 
@@ -43,8 +43,8 @@ ms.locfileid: "73091995"
 |**4.6.1**|[NET Framework 4.6.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=690706)|[4.6.1 Web インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/?LinkId=671729)<br /><br /> [4.6.1 オフライン インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/?LinkId=671744)|**インストール可能なバージョン:**<br /><br/> Windows 10 <br /> Windows 8.1 以前<br /> Windows Server 2012 R2 以前<br /> (完全な一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください)|
 |**4.6**|Visual Studio 2015 に含まれる<br /><br /> [Microsoft .NET Framework 4.6 Targeting Pack](https://go.microsoft.com/fwlink/?LinkId=528261)|[4.6 Web インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/?LinkId=528259)<br /><br /> [4.6 オフライン インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/?LinkId=528233)|**このバージョンを含む製品:** <br/><br /> Windows 10 <br />[Visual Studio 2015](https://my.visualstudio.com/Downloads?q=visual%20studio%202015)<br /><br /> **インストール可能なバージョン:**<br /><br/> Windows 8.1 以前<br /> Windows Server 2012 R2 以前<br /> (完全な一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください)|
 |**4.5.2**|[Microsoft .NET Framework 4.5.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=397702)<br /><br /> Visual Studio 2013、Visual Studio 2012 または他の IDE での使用|[4.5.2 Web インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkId=397703)<br /><br /> [4.5.2 オフライン インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkId=397706)|**インストール可能なバージョン:**<br /><br/> Windows 8.1 以前<br /> Windows Server 2012 R2 以前<br /> (完全な一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください)|
-|**4.5.1**|[Microsoft .NET Framework 4.5.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=324213)<br /><br /> Visual Studio 2013、Visual Studio 2012 または他の IDE での使用|[4.5.1 Web インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkId=310158)<br /><br /> [4.5.1 オフライン インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkId=310159)|**このバージョンを含む製品:**<br /> <br/>[!INCLUDE[win81](../../../includes/win81-md.md)]<br /> Windows Server 2012 R2<br /> [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)<br /><br /> **インストール可能なバージョン:**<br /><br/> [!INCLUDE[win8](../../../includes/win8-md.md)] 以前<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] 以前<br />(完全な一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください)|
-|**4.5**|Visual Studio 2012 に含まれる<br /><br /> Windows 8 SDK の一部としても入手可能|[4.5 Web インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkId=245484)|**このバージョンを含む製品:** <br/><br /> [!INCLUDE[win8](../../../includes/win8-md.md)]<br /> [!INCLUDE[winserver8](../../../includes/winserver8-md.md)]<br /> [Visual Studio 2012](https://my.visualstudio.com/Downloads?q=visual%20studio%202012)<br /><br /> **インストール可能なバージョン:**<br/><br /> Windows 7 以前<br /> Windows Server 2008 SP2 以前<br />(完全な一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください)|
+|**4.5.1**|[Microsoft .NET Framework 4.5.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=324213)<br /><br /> Visual Studio 2013、Visual Studio 2012 または他の IDE での使用|[4.5.1 Web インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkId=310158)<br /><br /> [4.5.1 オフライン インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkId=310159)|**このバージョンを含む製品:**<br /> <br/>Windows 8.1<br /> Windows Server 2012 R2<br /> [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)<br /><br /> **インストール可能なバージョン:**<br /><br/> Windows 8 以前<br /> Windows Server 2012 以前<br />(完全な一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください)|
+|**4.5**|Visual Studio 2012 に含まれる<br /><br /> Windows 8 SDK の一部としても入手可能|[4.5 Web インストーラーのダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkId=245484)|**このバージョンを含む製品:** <br/><br /> Windows 8<br /> Windows Server 2012<br /> [Visual Studio 2012](https://my.visualstudio.com/Downloads?q=visual%20studio%202012)<br /><br /> **インストール可能なバージョン:**<br/><br /> Windows 7 以前<br /> Windows Server 2008 SP2 以前<br />(完全な一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください)|
 
 .NET Framework の特定のバージョンの **Developer Pack** は、利用可能な場合には、サポートされているすべてのプラットフォームにインストールできます。
 

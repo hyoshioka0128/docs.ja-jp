@@ -25,9 +25,9 @@ ms.locfileid: "74348679"
 
 宣言された要素の*アクセスレベル*は、その要素にアクセスするためのアクセス許可の範囲です。つまり、読み取りまたは書き込みのアクセス許可を持っているコードにアクセスできます。 これは、要素自体を宣言する方法だけでなく、要素のコンテナーのアクセスレベルによっても決定されます。 コンテナー要素にアクセスできないコードは、`Public`として宣言されていても、含まれている要素のいずれにもアクセスできません。 たとえば、`Private` 構造体の `Public` 変数は、構造体を含むクラス内からアクセスできますが、そのクラスの外部からはアクセスできません。
 
-## <a name="public"></a>パブリック
+## <a name="public"></a>Public
 
-宣言ステートメント内の[Public](../../../language-reference/modifiers/public.md)キーワードは、同じプロジェクト内の任意の場所のコード、プロジェクトを参照する他のプロジェクト、およびプロジェクトからビルドされた任意のアセンブリから、要素にアクセスできることを指定します。 次のコードは、`Public` の宣言の例を示しています。
+宣言ステートメント内の [Public](../../../language-reference/modifiers/public.md) キーワードは、同じプロジェクト内の任意の場所のコード、プロジェクトを参照する他のプロジェクト、およびプロジェクトからビルドされた任意のアセンブリから、要素にアクセスできることを指定します。 次のコードは、`Public` の宣言の例を示しています。
 
 ```vb
 Public Class ClassForEverybody
@@ -35,9 +35,9 @@ Public Class ClassForEverybody
 
 `Public` は、モジュール、インターフェイス、または名前空間レベルでのみ使用できます。 つまり、パブリック要素は、ソースファイルまたは名前空間のレベルで、またはインターフェイス、モジュール、クラス、または構造体の内部で宣言できますが、プロシージャ内では宣言できません。
   
-## <a name="protected"></a>プロテクト
+## <a name="protected"></a>Protected
 
-宣言ステートメント内の[Protected](../../../language-reference/modifiers/protected.md)キーワードは、同じクラス内から、またはこのクラスから派生したクラスからのみ要素にアクセスできることを指定します。 次のコードは、`Protected` の宣言の例を示しています。
+宣言ステートメント内の [Protected](../../../language-reference/modifiers/protected.md) キーワードは、同じクラス内から、またはこのクラスから派生したクラスからのみ要素にアクセスできることを指定します。 次のコードは、`Protected` の宣言の例を示しています。
 
 ```vb
 Protected Class ClassForMyHeirs
@@ -47,7 +47,7 @@ Protected Class ClassForMyHeirs
 
 ## <a name="friend"></a>Friend
 
-宣言ステートメントの[Friend](../../../language-reference/modifiers/friend.md)キーワードは、要素がアセンブリの外部からではなく、同じアセンブリ内からアクセスできることを指定します。 次のコードは、`Friend` の宣言の例を示しています。
+宣言ステートメントの [Friend](../../../language-reference/modifiers/friend.md) キーワードは、要素がアセンブリの外部からではなく、同じアセンブリ内からアクセスできることを指定します。 次のコードは、`Friend` の宣言の例を示しています。
 
 ```vb
 Friend stringForThisProject As String
@@ -65,9 +65,9 @@ Protected Friend stringForProjectAndHeirs As String
 
 `Protected Friend` は、クラスのメンバーを宣言する場合にのみ、クラスレベルで使用できます。 つまり、保護された friend 要素はクラスで宣言できますが、ソースファイルまたは名前空間のレベル、またはインターフェイス、モジュール、構造体、またはプロシージャの内部では宣言できません。
 
-## <a name="private"></a>プライベート
+## <a name="private"></a>Private
 
-宣言ステートメントの[Private](../../../language-reference/modifiers/private.md)キーワードは、同じモジュール、クラス、または構造体内からのみ要素にアクセスできることを指定します。 次のコードは、`Private` の宣言の例を示しています。
+宣言ステートメントの [Private](../../../language-reference/modifiers/private.md) キーワードは、同じモジュール、クラス、または構造体内からのみ要素にアクセスできることを指定します。 次のコードは、`Private` の宣言の例を示しています。
 
 ```vb
 Private _numberForMeOnly As Integer
@@ -105,7 +105,7 @@ Private Protected internalValue As Integer
 </PropertyGroup>
 ```
 
-詳細について[は、「Visual Basic 言語バージョンの設定](../../../language-reference/configure-language-version.md)」を参照してください。
+詳細については、[Visual Basic の言語バージョンの設定](../../../language-reference/configure-language-version.md)」を参照してください。
 
 ## <a name="access-modifiers"></a>アクセス修飾子
 
@@ -128,7 +128,7 @@ Private Protected internalValue As Integer
 - [宣言された要素の参照](references-to-declared-elements.md)
 - [宣言された要素の特性](declared-element-characteristics.md)
 - [Visual Basic の有効期間](lifetime.md)
-- [Visual Basic 内のスコープ](scope.md)
+- [Visual Basic におけるスコープ](scope.md)
 - [方法: 変数の可用性を制御する](how-to-control-the-availability-of-a-variable.md)
 - [変数](../variables/index.md)
 - [変数宣言](../variables/variable-declaration.md)

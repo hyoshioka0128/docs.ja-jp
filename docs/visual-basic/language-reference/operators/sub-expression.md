@@ -1,5 +1,5 @@
 ---
-title: 部分式
+title: Sub 式 (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [Visual Basic], sub expression
@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350899"
 ---
-# <a name="sub-expression-visual-basic"></a>部分式 (Visual Basic)
+# <a name="sub-expression-visual-basic"></a>Sub 式 (Visual Basic)
 サブルーチンラムダ式を定義するパラメーターとコードを宣言します。  
   
 ## <a name="syntax"></a>構文  

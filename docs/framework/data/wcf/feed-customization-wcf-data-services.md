@@ -10,22 +10,22 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: 56c91fd1e9ea4a2e35bacbebab0f489e337cfec5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 08df16be9df6d55ab9f1426e205e56d9609ce72e
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975299"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569223"
 ---
 # <a name="feed-customization-wcf-data-services"></a>フィードのカスタマイズ (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、Open Data Protocol (OData) を使用してデータをフィードとして公開します。 OData は、データフィードの Atom 形式と JavaScript Object Notation (JSON) 形式の両方をサポートしています。 Atom フィードを使用する場合、OData には、エンティティやリレーションシップなどのデータをシリアル化するための標準的な方法が、HTTP メッセージの本文に含めることができる XML 形式で用意されています。 OData は、エンティティと Atom 要素に含まれるデータ間の既定のエンティティプロパティマッピングを定義します。 詳細については、「 [OData: Atom 形式](https://go.microsoft.com/fwlink/?LinkID=185794)」を参照してください。  
+WCF Data Services は、Open Data Protocol (OData) を使用してデータをフィードとして公開します。 OData は、データフィードの Atom 形式と JavaScript Object Notation (JSON) 形式の両方をサポートしています。 Atom フィードを使用する場合、OData には、エンティティやリレーションシップなどのデータをシリアル化するための標準的な方法が、HTTP メッセージの本文に含めることができる XML 形式で用意されています。 OData は、エンティティと Atom 要素に含まれるデータ間の既定のエンティティプロパティマッピングを定義します。 詳細については、「 [OData: Atom 形式](https://go.microsoft.com/fwlink/?LinkID=185794)」を参照してください。  
   
  場合によっては、データ サービスから返されるプロパティのデータを、標準のフィードの形式ではなくカスタマイズした方法でシリアル化する必要があります。 OData を使用すると、データフィードのシリアル化をカスタマイズして、エンティティのプロパティを、エントリの未使用の要素や属性、またはフィード内のエントリのカスタム要素にマップすることができます。  
   
 > [!NOTE]
 > フィードのカスタマイズは、Atom フィードでのみサポートされます。 返されたフィードに対して JSON 形式が要求されたときは、カスタム フィードが返されません。  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] を使用すると、Atom ペイロードに対するエンティティとプロパティの代替マッピングは、属性をデータ モデルのエンティティ型に手動で適用することによって定義できます。 これらの属性の適用方法は、データ サービスのデータ ソース プロバイダーによって決定されます。  
+ WCF Data Services では、データモデルのエンティティ型に属性を手動で適用することによって、Atom ペイロードの代替エンティティプロパティマッピングを定義できます。 これらの属性の適用方法は、データ サービスのデータ ソース プロバイダーによって決定されます。  
   
 > [!IMPORTANT]
 > カスタム フィードを定義する場合、カスタム マッピングが定義されているすべてのエンティティ プロパティが投影に含まれることを保証する必要があります。 マップされているエンティティ プロパティがこの射影に含まれていない場合、データの損失が発生することがあります。 詳細については、「[クエリプロジェクション](query-projections-wcf-data-services.md)」を参照してください。  
@@ -47,10 +47,10 @@ ms.locfileid: "73975299"
 ### <a name="custom-feed-attributes"></a>カスタム フィード属性  
  次の表に、データ モデルを定義する概念スキーマ定義言語 (CSDL) に追加できるフィードをカスタマイズする XML 属性を示します。 これらの属性は、<xref:System.Data.Services.Common.EntityPropertyMappingAttribute> のプロパティと同等です。  
   
-|属性名|説明|  
+|［属性名］:|説明|  
 |--------------------|-----------------|  
 |`FC_ContentKind`|コンテンツの種類を示します。 次のキーワードは、配信コンテンツの種類を定義します。<br /><br /> `text:` プロパティ値は、フィードにテキストとして表示されます。<br /><br /> `html:` プロパティ値は、HTML としてフィードに表示されます。<br /><br /> `xhtml:` プロパティ値は、XML 形式の HTML としてフィードに表示されます。<br /><br /> これらのキーワードは、リフレクション プロバイダーと共に使用する <xref:System.Data.Services.Common.SyndicationTextContentKind> 列挙の値と同等です。<br /><br /> この属性は、`FC_NsPrefix` および `FC_NsUri` 属性が使用されているときはサポートされません。<br /><br /> `xhtml` 属性の値として `FC_ContentKind` を指定する場合、そのプロパティ値に正しい形式の XML が含まれることを確認する必要があります。 データ サービスは、変換を行わずに値を返します。 さらに、返された XML 内の XML 要素のプレフィックスに名前空間 URI、およびマップされたフィード内で定義されたプレフィックスが含まれている必要があります。|  
-|`FC_KeepInContent`|参照されたプロパティ値をフィードのコンテンツ セクションおよびマップされた場所の両方に含める必要があることを示します。 有効値は `true` または `false` です。 結果として得られるフィードを以前のバージョンの [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]と下位互換性を持たせるには、値がフィードのコンテンツセクションに含まれることを確認するために `true` の値を指定します。|  
+|`FC_KeepInContent`|参照されたプロパティ値をフィードのコンテンツ セクションおよびマップされた場所の両方に含める必要があることを示します。 有効値は `true` または `false` です。 結果として得られるフィードを以前のバージョンの WCF Data Services と下位互換性を持たせるには、値がフィードのコンテンツセクションに含まれることを確認するために `true` の値を指定します。|  
 |`FC_NsPrefix`|非配信マッピング内の XML 要素の名前空間プレフィックス。 この属性は、`FC_NsUri` 属性と一緒に使用する必要があります。この属性は、`FC_ContentKind` 属性と一緒に使用できません。|  
 |`FC_NsUri`|非配信マッピング内の XML 要素の名前空間 URI。 この属性は、`FC_NsPrefix` 属性と一緒に使用する必要があります。この属性は、`FC_ContentKind` 属性と一緒に使用できません。|  
 |`FC_SourcePath`|このフィード マッピング規則が適用されるエンティティのプロパティのパス。 この属性は、`EntityType` 要素で使用されている場合にのみサポートされます。<br /><br /> <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> プロパティは、複合型を直接参照できません。 複合型の場合は、プロパティ名が円記号 (`/`) で区切られたパス式を使用する必要があります。 たとえば、次の値は、整数プロパティ `Age` と複合プロパティを持つ `Person` エンティティ型に対して使用できます。<br /><br /> `Address`:<br /><br /> `Age`<br /><br /> `Address/Street`<br /><br /> <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> プロパティは、プロパティ名で無効な文字 (スペースなど) を含む値に設定することはできません。|  
@@ -83,7 +83,7 @@ ms.locfileid: "73975299"
 ## <a name="feed-customization-considerations"></a>フィードのカスタマイズに関する考慮事項  
  カスタム フィードのマッピングを定義する場合は、以下を検討してください。  
   
-- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントは、空白のみが含まれている場合、フィード内のマップされた要素を空として扱います。 このため、空白のみを含むマップされた要素は、同じ空白を持つクライアントでは具体化されません。 この空白をクライアントに保持するには、フィードマッピング属性で `KeepInContext` の値を `true` に設定する必要があります。  
+- WCF Data Services クライアントは、空白のみが含まれている場合、フィード内のマップされた要素を空として扱います。 このため、空白のみを含むマップされた要素は、同じ空白を持つクライアントでは具体化されません。 この空白をクライアントに保持するには、フィードマッピング属性で `KeepInContext` の値を `true` に設定する必要があります。  
   
 ## <a name="versioning-requirements"></a>バージョン管理の要件  
  フィードのカスタマイズには、次の OData プロトコルのバージョン管理の要件があります。  
@@ -92,7 +92,7 @@ ms.locfileid: "73975299"
   
  詳細については、「[データサービスのバージョン管理](data-service-versioning-wcf-data-services.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [リフレクション プロバイダー](reflection-provider-wcf-data-services.md)
 - [Entity Framework プロバイダー](entity-framework-provider-wcf-data-services.md)

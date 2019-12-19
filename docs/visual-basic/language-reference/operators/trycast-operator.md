@@ -18,21 +18,21 @@ ms.locfileid: "74348208"
 例外をスローしない型変換操作を導入します。  
   
 ## <a name="remarks"></a>コメント  
- 変換の試行が失敗した場合、`CType` と `DirectCast` の両方で <xref:System.InvalidCastException> エラーがスローされます。 これにより、アプリケーションのパフォーマンスが低下する可能性があります。 `TryCast` は[何も返しません](../../../visual-basic/language-reference/nothing.md)。そのため、考えられる例外を処理する代わりに、返された結果を `Nothing`に対してのみテストする必要があります。  
+ 変換の試行が失敗した場合、`CType` と `DirectCast` の両方で <xref:System.InvalidCastException> エラーがスローされます。 これにより、アプリケーションのパフォーマンスが低下する可能性があります。 `TryCast` は [Nothing](../../../visual-basic/language-reference/nothing.md) を返します。そのため、考えられる例外を処理する代わりに、返された結果を `Nothing`に対してのみテストする必要があります。  
   
  `TryCast` キーワードは、 [CType 関数](../../../visual-basic/language-reference/functions/ctype-function.md)と[DirectCast Operator](../../../visual-basic/language-reference/operators/directcast-operator.md)キーワードを使用するのと同じ方法で使用します。 最初の引数として式を指定し、2番目の引数として変換する型を指定します。 `TryCast` は、クラスやインターフェイスなどの参照型に対してのみ動作します。 2つの型の間の継承または実装関係が必要です。 これは、一方の型が他の型を継承または実装する必要があることを意味します。  
   
 ## <a name="errors-and-failures"></a>エラーとエラー  
- `TryCast` は、継承または実装関係が存在しないことを検出すると、コンパイラエラーを生成します。 ただし、コンパイラエラーが発生しても、正常に変換できないことは保証されません。 目的の変換が縮小されている場合は、実行時に失敗する可能性があります。 この場合、`TryCast` は[何も](../../../visual-basic/language-reference/nothing.md)返しません。  
+ `TryCast` は、継承または実装関係が存在しないことを検出すると、コンパイラエラーを生成します。 ただし、コンパイラエラーがないからといって、正常に変換できるとは限りません。 目的の変換が縮小されている場合は、実行時に失敗する可能性があります。 この場合、`TryCast` は [Nothing](../../../visual-basic/language-reference/nothing.md) を返します。  
   
 ## <a name="conversion-keywords"></a>変換キーワード  
  型変換のキーワードの比較を次に示します。  
   
 |Keyword|データの種類|引数のリレーションシップ|実行時エラー|  
 |---|---|---|---|  
-|[CType Function](../../../visual-basic/language-reference/functions/ctype-function.md)|任意のデータ型|拡大または縮小変換は、2つのデータ型の間で定義する必要があります|スロー <xref:System.InvalidCastException>|  
-|[DirectCast 演算子](../../../visual-basic/language-reference/operators/directcast-operator.md)|任意のデータ型|一方の型は、他の型を継承するか、他の型を実装する必要があります|スロー <xref:System.InvalidCastException>|  
-|`TryCast`|参照型のみ|一方の型は、他の型を継承するか、他の型を実装する必要があります|[Nothing](../../../visual-basic/language-reference/nothing.md)を返します|  
+|[CType Function](../../../visual-basic/language-reference/functions/ctype-function.md)|任意のデータ型|拡大または縮小変換は、2つのデータ型の間で定義する必要があります|Throws <xref:System.InvalidCastException>|  
+|[DirectCast 演算子](../../../visual-basic/language-reference/operators/directcast-operator.md)|任意のデータ型|一方の型は、他の型を継承するか、他の型を実装する必要があります|Throws <xref:System.InvalidCastException>|  
+|`TryCast`|参照型のみ|一方の型は、他の型を継承するか、他の型を実装する必要があります|[Nothing](../../../visual-basic/language-reference/nothing.md) を返します|  
   
 ## <a name="example"></a>例  
  次の例は、`TryCast` を使用する方法を示しています。  

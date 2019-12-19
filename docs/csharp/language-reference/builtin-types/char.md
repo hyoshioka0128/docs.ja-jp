@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 3b2eec4f0e17aa329fe3865fb3ef453ee030c6a7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ab49b8cbddac2569d6063a5f312105bef3033e84
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450842"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552299"
 ---
 # <a name="char-c-reference"></a>char (C# リファレンス)
 
@@ -21,6 +21,8 @@ ms.locfileid: "74450842"
 |型|範囲|サイズ|.NET 型|
 |----------|-----------|----------|-------------------------|
 |`char`|U+0000 ～ U+FFFF|16 ビット|<xref:System.Char?displayProperty=nameWithType>|
+
+`char` 型の既定値は `\0` (つまり U+0000) です。
 
 [string](reference-types.md#the-string-type) 型では、`char` 値のシーケンスとしてテキストを表わします。
 

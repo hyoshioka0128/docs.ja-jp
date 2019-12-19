@@ -18,13 +18,13 @@ ms.locfileid: "74350488"
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>方法: プロシージャの複数のバージョンを定義する (Visual Basic)
 複数のバージョンでプロシージャを定義*するには*、各バージョンに対して同じ名前を使用し、異なるパラメーターリストを使用します。 オーバーロードの目的は、プロシージャの名前を区別せずに、密接に関連する複数のバージョンを定義することです。  
   
- 詳細については、「 [Procedure Overloading](./procedure-overloading.md)」を参照してください。  
+ 詳細については、「[プロシージャのオーバーロード](./procedure-overloading.md)」を参照してください。  
   
 ### <a name="to-define-multiple-versions-of-a-procedure"></a>プロシージャの複数のバージョンを定義するには  
   
 1. 定義するプロシージャの各バージョンに対して、`Sub` または `Function` 宣言ステートメントを記述します。 すべての宣言で同じプロシージャ名を使用します。  
   
-2. [オーバーロード](../../../../visual-basic/language-reference/modifiers/overloads.md)キーワードを使用して、各宣言内の `Sub` または `Function` キーワードの前に配置します。 必要に応じて、宣言で `Overloads` を省略できますが、宣言のいずれかに含める場合は、すべての宣言に含める必要があります。  
+2. [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) キーワードを使用して、各宣言内の `Sub` または `Function` キーワードの前に配置します。 必要に応じて、宣言で `Overloads` を省略できますが、宣言のいずれかに含める場合は、すべての宣言に含める必要があります。  
   
 3. 各宣言ステートメントの後にプロシージャコードを記述し、呼び出し元のコードがそのバージョンのパラメーターリストに一致する引数を指定した場合に処理します。 呼び出し元のコードがどのパラメーターを指定したかをテストする必要はありません。 Visual Basic は、プロシージャの一致するバージョンに制御を渡します。  
   

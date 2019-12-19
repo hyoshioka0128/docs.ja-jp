@@ -9,12 +9,12 @@ helpviewer_keywords:
 - templates [WPF], ComboBox
 - parts [WPF], ComboBox
 ms.assetid: b0662fa1-16d7-4320-b26b-c1804e565a44
-ms.openlocfilehash: 92671001733f525188ba3c7bcf3ed3c55615e301
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 887698bdaebf7bc5ddac8997167589d9fbd3dd4d
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283789"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960378"
 ---
 # <a name="combobox-styles-and-templates"></a>ComboBox のスタイルとテンプレート
 このトピックでは、<xref:System.Windows.Controls.ComboBox> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」を参照してください。  
@@ -22,7 +22,7 @@ ms.locfileid: "74283789"
 ## <a name="combobox-parts"></a>ComboBox パーツ  
  次の表に、<xref:System.Windows.Controls.ComboBox> コントロールの名前付きの部分を示します。  
   
-|要素|種類|説明|  
+|のコンポーネント|の型|説明|  
 |-|-|-|  
 |PART_EditableTextBox|<xref:System.Windows.Controls.TextBox>|<xref:System.Windows.Controls.ComboBox>のテキストを格納します。|  
 |PART_Popup|<xref:System.Windows.Controls.Primitives.Popup>|コンボボックス内の項目を含むドロップダウン。|  
@@ -35,7 +35,7 @@ ms.locfileid: "74283789"
 |VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
 |標準|CommonStates|既定の状態です。|  
-|無効|CommonStates|コントロールが無効になっています。|  
+|Disabled|CommonStates|コントロールが無効になっています。|  
 |MouseOver|CommonStates|マウスポインターが <xref:System.Windows.Controls.ComboBox> コントロールの上にあります。|  
 |フォーカスされている|FocusStates|コントロールにフォーカスがあります。|  
 |フォーカスされていない|FocusStates|コントロールにフォーカスがありません。|  
@@ -55,11 +55,11 @@ ms.locfileid: "74283789"
 |VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
 |標準|CommonStates|既定の状態です。|  
-|無効|CommonStates|コントロールが無効になっています。|  
-|MouseOver|CommonStates|マウスポインターが <xref:System.Windows.Controls.ComboBox> コントロールの上にあります。|  
+|Disabled|CommonStates|コントロールが無効になっています。|  
+|MouseOver|CommonStates|マウスポインターが <xref:System.Windows.Controls.ComboBoxItem> コントロールの上にあります。|  
 |フォーカスされている|FocusStates|コントロールにフォーカスがあります。|  
 |フォーカスされていない|FocusStates|コントロールにフォーカスがありません。|  
-|Selected|SelectionStates|項目は現在選択されています。|  
+|選択された|SelectionStates|項目は現在選択されています。|  
 |未選択|SelectionStates|この項目は選択されていません。|  
 |SelectedUnfocused|SelectionStates|この項目は選択されていますが、フォーカスがありません。|  
 |Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  

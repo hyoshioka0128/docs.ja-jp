@@ -2,12 +2,12 @@
 title: 使用とスタイルのプロパティの設定-WCF サンプル
 ms.date: 03/30/2017
 ms.assetid: c09a0600-116f-41cf-900a-1b7e4ea4e300
-ms.openlocfilehash: 946f8f6aab253eb881faaba7adfdc68dc54d7f0b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f92b25144759692c54aa7a1730a9bb85cab4f15f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958798"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714439"
 ---
 # <a name="setting-the-use-and-style-properties"></a>Use および Style プロパティの設定
 
@@ -74,7 +74,7 @@ public interface IUseAndStyleCalculator
 }
 ```
 
-それぞれの <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> 設定と <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> 設定との違いを示すには、これらの設定をサービス内で変更してクライアントを再生成し、サンプルを実行します。その後、サービス ビューア ツールを使用して c:\logs\message.logs ファイルを調べます。 表示しても、メタデータへの影響を観察 `http://localhost/ServiceModelSamples/service.svc?wsdl` です。 通常、サービスのメタデータは複数のページに分割されます。 メインの wsdl ページには、WSDL バインディングが含まれていますが、表示 `http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0` メッセージの定義を確認します。
+それぞれの <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> 設定と <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> 設定との違いを示すには、これらの設定をサービス内で変更してクライアントを再生成し、サンプルを実行します。その後、サービス ビューア ツールを使用して c:\logs\message.logs ファイルを調べます。 また、`http://localhost/ServiceModelSamples/service.svc?wsdl`を表示して、メタデータへの影響についても確認します。 通常、サービスのメタデータは複数のページに分割されます。 メイン wsdl ページには WSDL バインドが含まれていますが、メッセージ定義を監視するための `http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0` が表示されます。
 
 ## <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには
 
@@ -91,6 +91,6 @@ public interface IUseAndStyleCalculator
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780)にアクセスして、すべての[!INCLUDE[wf1](../../../../includes/wf1-md.md)] Windows Communication Foundation (wcf) とサンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。
 > 
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\UseAndStyle`

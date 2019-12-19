@@ -2,15 +2,15 @@
 title: サポートされていないシナリオ
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: cc40ccbf83e92404dca07344fae0a6f56f92cefa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 67a4e64208e00f9124b3cdc53d743c060274dac2
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955320"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837975"
 ---
 # <a name="unsupported-scenarios"></a>サポートされていないシナリオ
-Windows Communication Foundation (WCF) では、さまざまな理由により、特定のセキュリティシナリオがサポートされていません。 たとえば、Home [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Edition では SSPI または Kerberos 認証プロトコルが実装されていないため、WCF では、そのプラットフォームで Windows 認証を使用したサービスの実行はサポートされていません。 Windows XP Home Edition で WCF を実行する場合は、ユーザー名/パスワードや HTTP/HTTPS 統合認証などの他の認証メカニズムがサポートされます。  
+Windows Communication Foundation (WCF) では、さまざまな理由により、特定のセキュリティシナリオがサポートされていません。 たとえば、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition では SSPI または Kerberos 認証プロトコルが実装されていないため、WCF では、そのプラットフォームで Windows 認証を使用してサービスを実行することはサポートされていません。 Windows XP Home Edition で WCF を実行する場合は、ユーザー名/パスワードや HTTP/HTTPS 統合認証などの他の認証メカニズムがサポートされます。  
   
 ## <a name="impersonation-scenarios"></a>偽装シナリオ  
   
@@ -18,17 +18,17 @@ Windows Communication Foundation (WCF) では、さまざまな理由により�
  WCF クライアントが、偽装で Windows 認証を使用して WCF サービスへの非同期呼び出しを行うと、偽装 ID ではなくクライアント プロセスの ID で認証が行われる場合があります。  
   
 ### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>Windows XP と有効化されたセキュリティ コンテキスト トークン クッキー  
- WCF は偽装をサポートして<xref:System.InvalidOperationException>いません。次の条件が存在する場合は、がスローされます。  
+ WCF では偽装がサポートされていないため、次の条件に該当する場合は <xref:System.InvalidOperationException> がスローされます。  
   
 - オペレーティング システムが [!INCLUDE[wxp](../../../../includes/wxp-md.md)] である。  
   
 - 認証モードで Windows ID が生成された。  
   
-- <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> の <xref:System.ServiceModel.OperationBehaviorAttribute> プロパティが <xref:System.ServiceModel.ImpersonationOption.Required> に設定されます。  
+- <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> の <xref:System.ServiceModel.OperationBehaviorAttribute> プロパティが <xref:System.ServiceModel.ImpersonationOption.Required> に設定されています。  
   
 - 状態ベースのセキュリティ コンテキスト トークン (SCT: Security Context Token) が作成された (既定では、作成は無効になっています)。  
   
- 状態ベースの SCT はカスタム バインドの使用によってのみ作成できます。 詳細については、「[方法 :セキュリティで保護されたセッション](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)のセキュリティコンテキストトークンを作成します。)コードでトークンを有効にするには、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> メソッドまたは <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> メソッドを使用して、セキュリティ バインディング要素 (<xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> または <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType>) を作成し、`requireCancellation` パラメーターを `false` に設定します。 このパラメーターは、SCT のキャッシュを参照します。 値を `false` に設定することによって、状態ベースの SCT 機能が有効になります。  
+ 状態ベースの SCT はカスタム バインディングの使用によってのみ作成できます。 詳細については、「[方法: セキュリティで保護されたセッションのセキュリティコンテキストトークンを作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)する」を参照してください。コードでは、トークンは <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> または <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> メソッドを使用してセキュリティバインド要素 (<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> または <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>) を作成し、`requireCancellation` パラメーターを `false`に設定することによって有効にします。 このパラメーターは、SCT のキャッシュを参照します。 値を `false` に設定することによって、状態ベースの SCT 機能が有効になります。  
   
  または、構成において、<`customBinding`> を作成し、<`security`> 要素を追加して `authenticationMode` 属性に SecureConversation および `requireSecurityContextCancellation` 属性に `true` を設定することによってもトークンが有効になります。  
   
@@ -36,7 +36,7 @@ Windows Communication Foundation (WCF) では、さまざまな理由により�
 > 上記の要件は限定的です。 たとえば、<xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> は Windows ID を生成するバインド要素を作成しますが、SCT を確立しません。 したがって、`Required` で [!INCLUDE[wxp](../../../../includes/wxp-md.md)] オプションと共に使用できます。  
   
 ### <a name="possible-aspnet-conflict"></a>考えられる ASP.NET との競合  
- WCF と ASP.NET は、どちらも偽装を有効または無効にすることができます。 ASP.NET が WCF アプリケーションをホストする場合、WCF と ASP.NET の構成設定の間に競合が存在する可能性があります。 競合が発生した場合は、 <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A>プロパティがに<xref:System.ServiceModel.ImpersonationOption.NotAllowed>設定されていない限り、WCF の設定が優先されます。この場合、ASP.NET の権限借用の設定が優先されます。  
+ WCF と ASP.NET は、どちらも偽装を有効または無効にすることができます。 ASP.NET が WCF アプリケーションをホストする場合、WCF と ASP.NET の構成設定の間に競合が存在する可能性があります。 競合が発生した場合は、<xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティが <xref:System.ServiceModel.ImpersonationOption.NotAllowed>に設定されていない限り、WCF 設定が優先されます。この場合、ASP.NET impersonation 設定が優先されます。  
   
 ### <a name="assembly-loads-may-fail-under-impersonation"></a>偽装を有効にすると、アセンブリの読み込みに失敗する場合がある  
  偽装されたコンテキストにアセンブリを読み込むためのアクセス権がない場合、共通言語ランタイム (CLR: Common Language Runtime) が AppDomain のアセンブリを初めて読み込もうとしたときに、その <xref:System.AppDomain> はエラーをキャッシュします。 この場合、偽装を元に戻した後、元に戻されたコンテキストにアセンブリを読み込むためのアクセス権があったとしても、それ以降のアセンブリの読み込みは失敗します。 これは、ユーザー コンテキストの変更後に、CLR が読み込みを再試行しないためです。 このエラーから回復するには、アプリケーション ドメインを再起動する必要があります。  
@@ -62,7 +62,7 @@ Windows Communication Foundation (WCF) では、さまざまな理由により�
  FIPS 準拠の AES 暗号化は、ID レベルの偽装での双方向コールバックでは機能しません。  
   
 ### <a name="cngksp-certificates"></a>CNG/KSP 証明書  
- *暗号化 API:次世代 (CNG)* は、CryptoAPI の長期的な後継です。 この API は、以降のバージョンの[!INCLUDE[wv](../../../../includes/wv-md.md)]Windows [!INCLUDE[lserver](../../../../includes/lserver-md.md)]では、アンマネージコードで使用できます。  
+ *CRYPTOGRAPHY API: Next Generation (CNG)* は、CryptoAPI の長期的な後継です。 この API は、Windows Vista、[!INCLUDE[lserver](../../../../includes/lserver-md.md)] 以降の Windows バージョンのアンマネージコードで使用できます。  
   
  .NET Framework 4.6.1 以前のバージョンでは、従来の CryptoAPI を使用して CNG/KSP 証明書を処理するため、これらの証明書はサポートされません。 これらの証明書を .NET Framework 4.6.1 以前のバージョンで使用すると、例外が発生します。  
   
@@ -70,14 +70,14 @@ Windows Communication Foundation (WCF) では、さまざまな理由により�
   
 - `p/invoke` を `CertGetCertificateContextProperty` に対して実行し、返された `dwProvType` で `CertGetCertificateContextProperty` を調べる。  
   
-- コマンドライン`certutil`からコマンドを使用して、証明書を照会します。 詳細については、「[証明書のトラブルシューティングに関する Certutil タスク](https://go.microsoft.com/fwlink/?LinkId=120056)」を参照してください。  
+- 証明書を照会するには、コマンドラインから `certutil` コマンドを使用します。 詳細については、「[証明書のトラブルシューティングに関する Certutil タスク](https://go.microsoft.com/fwlink/?LinkId=120056)」を参照してください。  
   
 ## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>ASP.NET の偽装と ASP.NET 互換を使用する必要がある場合にメッセージ セキュリティが失敗する  
  WCF では、クライアント認証が行われないようにするため、次の設定の組み合わせはサポートされていません。  
   
-- ASP.NET の偽装が有効になっています。 これを行うには、Web.config ファイルで <`identity`> 要素の `impersonate` 属性を `true` に設定します。  
+- ASP.NET の偽装が有効になっています。 これは、web.config ファイルで、<`identity`> 要素の `impersonate` 属性を `true`に設定することによって行われます。  
   
-- ASP.NET 互換モードを有効にするに`aspNetCompatibilityEnabled`は、 [ \<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)の属性`true`をに設定します。  
+- ASP.NET 互換モードを有効にするには[\<serviceHostingEnvironment >](../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)の `aspNetCompatibilityEnabled` 属性を `true`に設定します。  
   
 - メッセージ モード セキュリティを使用している。  
   
@@ -93,11 +93,11 @@ Windows Communication Foundation (WCF) では、さまざまな理由により�
   
  そのような状況の例は次の 3 つのエンドポイント アドレスを使うサービスです。  
   
-- `http://localhost/CalculatorService/service`(サービス)  
+- `http://localhost/CalculatorService/service` (サービス)  
   
-- `http://localhost/CalculatorService/issue_ticket`(STS)  
+- `http://localhost/CalculatorService/issue_ticket` (STS)  
   
-- `http://localhost/CalculatorService/mex`(メタデータエンドポイント)  
+- `http://localhost/CalculatorService/mex` (メタデータエンドポイント)  
   
  これによって例外がスローされます。  
   
@@ -108,7 +108,7 @@ Windows Communication Foundation (WCF) では、さまざまな理由により�
   
  解決策は、インポートを行った後、クライアント側で直接バインディングを変更することです。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
 - [情報の漏えい](../../../../docs/framework/wcf/feature-details/information-disclosure.md)

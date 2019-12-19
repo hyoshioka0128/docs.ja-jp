@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 4a1eb818dfd8fb48b003ca184dd533f73d342662
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 15ea77d13a93d88bd996a22b6fe1aaad81df572d
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973105"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74959703"
 ---
 # <a name="how-to-search-strings"></a>文字列を検索する方法
 
@@ -52,7 +52,7 @@ ms.locfileid: "73973105"
 [!code-csharp-interactive[Search using regular expressions](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#3)]
   
 > [!TIP]
-> `string` メソッドは、通常、正確な文字列を検索するときに選択することをお勧めします。 正規表現は、ソース文字列でいくつかのパターンを検索する場合に適しています。
+> `string` メソッドは、通常、正確な文字列を検索するときに選択することをお勧めします。 正規表現は、ソース文字列で何らかのパターンを検索する場合に適しています。
 
 ## <a name="does-a-string-follow-a-pattern"></a>文字列はパターンに従っていますか?
 

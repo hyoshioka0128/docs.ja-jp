@@ -9,13 +9,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/14/2019
 ms.locfileid: "74088373"
 ---
-# <a name="httplistener-element-network-settings"></a>\<httpListener > 要素 (ネットワーク設定)
+# <a name="httplistener-element-network-settings"></a>\<httpListener> 要素 (ネットワーク設定)
 <xref:System.Net.HttpListener> クラスによって使用されるパラメーターをカスタマイズします。  
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<設定 >** ](settings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**httpListener >**
+&nbsp;&nbsp;[ **\<system.net>** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<設定>** ](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<httpListener>**
 
 ## <a name="syntax"></a>構文  
   
@@ -43,7 +43,7 @@ ms.locfileid: "74088373"
   
 |**要素**|**説明**|  
 |-----------------|---------------------|  
-|[設定](settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
+|[settings](settings-element-network-settings.md)|<xref:System.Net> 名前空間の基本的なネットワーク オプションを構成します。|  
   
 ## <a name="remarks"></a>Remarks  
  **UnescapeRequestUrl**属性は、パーセントエンコードされた値が変換され、その他の正規化ステップが実行される場合に、<xref:System.Net.HttpListener> が、変換後の uri ではなく、未加工のエスケープされていない uri を使用するかどうかを示します。  

@@ -77,7 +77,7 @@ End Sub
 
   - [Private Protected](../../language-reference/modifiers/private-protected.md)
 
-  「 [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
+  「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
 
 - `proceduremodifiers`
 
@@ -99,19 +99,19 @@ End Sub
 
 - `Shared`
 
-  省略可。 「[共有](../modifiers/shared.md)」を参照してください。
+  省略可。 「[Shared](../modifiers/shared.md)」を参照してください。
 
 - `Shadows`
 
-  省略可。 「[シャドウ](../modifiers/shadows.md)」を参照してください。
+  省略可。 「[Shadows](../modifiers/shadows.md)」を参照してください。
 
 - `Async`
 
-  省略可。 「 [Async](../modifiers/async.md)」を参照してください。
+  省略可。 「[Async](../modifiers/async.md)」を参照してください。
 
 - `name`
 
-  必須。 プロシージャの名前。 「 [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。 クラスのコンストラクタープロシージャを作成するには、`Sub` プロシージャの名前を `New` キーワードに設定します。 詳細については、「[オブジェクトの有効期間: オブジェクトの作成方法と破棄方法](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)」を参照してください。
+  必須。 プロシージャの名前。 「[Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。 クラスのコンストラクタープロシージャを作成するには、`Sub` プロシージャの名前を `New` キーワードに設定します。 詳細については、「[オブジェクトの有効期間: オブジェクトの作成方法と破棄方法](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)」を参照してください。
 
 - `typeparamlist`
 
@@ -123,7 +123,7 @@ End Sub
 
 - `Implements`
 
-  省略可。 このプロシージャが1つ以上の `Sub` プロシージャを実装することを示します。各プロシージャは、このプロシージャのクラスまたは構造体を含むインターフェイスで定義されています。 「 [Implements ステートメント](implements-statement.md)」を参照してください。
+  省略可。 このプロシージャが1つ以上の `Sub` プロシージャを実装することを示します。各プロシージャは、このプロシージャのクラスまたは構造体を含むインターフェイスで定義されています。 「[Implements ステートメント](implements-statement.md)」を参照してください。
 
 - `implementslist`
 
@@ -142,7 +142,7 @@ End Sub
 
 - `Handles`
 
-  省略可。 このプロシージャが1つ以上の特定のイベントを処理できることを示します。 「[ハンドル](handles-clause.md)」を参照してください。
+  省略可。 このプロシージャが1つ以上の特定のイベントを処理できることを示します。 「[Handles](handles-clause.md)」を参照してください。
 
 - `eventlist`
 
@@ -199,7 +199,7 @@ End Sub
 
 `Sub` プロシージャと `Function` プロシージャは、パラメーターを持つことができ、一連のステートメントを実行できます。 ただし、`Function` プロシージャは値を返し、`Sub` プロシージャは返しません。 したがって、式の中で `Sub` プロシージャを使用することはできません。
 
-`Sub` プロシージャを呼び出すときに `Call` キーワードを使用することはできますが、ほとんどの場合、そのキーワードは推奨されません。 詳細については、「 [Call ステートメント](call-statement.md)」を参照してください。
+`Sub` プロシージャを呼び出すときに `Call` キーワードを使用することはできますが、ほとんどの場合、そのキーワードは推奨されません。 詳細については、「[Call ステートメント](call-statement.md)」を参照してください。
 
 Visual Basic は、内部効率を向上させるために算術式を再配置することがあります。 そのため、引数リストに他のプロシージャを呼び出す式が含まれている場合は、それらの式が特定の順序で呼び出されると想定しないでください。
 
@@ -218,7 +218,7 @@ Visual Basic は、内部効率を向上させるために算術式を再配置�
 
 `Async` プロシージャで[ByRef](../modifiers/byref.md)パラメーターを宣言することはできません。
 
-`Async` の手順の詳細については、「 [async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)」、「非同期[プログラムでの制御フロー](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)」、および「非同期の[戻り値の型](../../../visual-basic/programming-guide/concepts/async/async-return-types.md)」を参照してください。
+`Async` の手順の詳細については、「[async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)」、「非同期[プログラムでの制御フロー](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)」、および「非同期の[戻り値の型](../../../visual-basic/programming-guide/concepts/async/async-return-types.md)」を参照してください。
 
 ## <a name="example"></a>例
 

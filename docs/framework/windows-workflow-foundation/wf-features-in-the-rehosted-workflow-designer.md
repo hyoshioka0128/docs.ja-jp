@@ -2,12 +2,12 @@
 title: 再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: 2b893fede30606789c82a64a19fa368e3fd74c4d
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: bf5c12fe7892bf81fda9714ba02870a9c8ab8b4e
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74142069"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837598"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>再ホストされたワークフロー デザイナーにおける Workflow Foundation 4.5 の新機能のサポート
 .NET Framework 4.5 の Windows Workflow Foundation (WF) では、ワークフローデザイナーのエクスペリエンスに対するいくつかの機能強化など、多くの新機能が導入されました。 このトピックでは、このような新機能のうち、再ホストされたデザイナーでサポートされている機能と現時点ではサポートされていない機能について詳しく説明します。
@@ -15,7 +15,7 @@ ms.locfileid: "74142069"
 > [!NOTE]
 > .NET Framework 4.5 で導入された新しい Windows Workflow Foundation (WF) 機能の一覧については、「 [.net 4.5 における Windows Workflow Foundation の新](whats-new-in-wf-in-dotnet.md)機能」を参照してください。
 
-## <a name="activities"></a>アクティビティ
+## <a name="activities"></a>活動
  組み込みのアクティビティ ライブラリには、既存のアクティビティ用の新しいアクティビティと新しい機能が含まれています。 これらの新しいアクティビティはすべて、再ホストされたデザイナーでサポートされています。 これらの新しいアクティビティの詳細については、「 [.net 4.5 の Windows Workflow Foundation の新機能](whats-new-in-wf-in-dotnet.md)」の「[アクティビティ](whats-new-in-wf-in-dotnet.md#BKMK_NewActivities)」セクションを参照してください。
 
 ## <a name="c-expressions"></a>C# の式
@@ -122,7 +122,7 @@ ms.locfileid: "74142069"
  このリリースには、フローチャートおよびシーケンシャル ワークフロー開発モデルに加えて、ステート マシンのワークフロー、およびコントラクト優先ワークフロー サービスが含まれています。  
   
 ### <a name="state-machine-workflows"></a>ステート マシンのワークフロー  
- ステートマシンのワークフローは、 [Microsoft .NET Framework 4 Platform Update 1](https://go.microsoft.com/fwlink/?LinkID=215092)の .NET Framework 4.0.1 の一部として導入されました。 この更新プログラムには、開発者がステート マシンのワークフローを作成できるようにする、いくつかの新しいクラスとアクティビティが含まれていました。 これらのクラスとアクティビティは .NET Framework 4.5 に対して更新されました。 更新プログラムには次のものが含まれています。  
+ ステートマシンのワークフローは、 [Microsoft .NET Framework 4 Platform Update 1](https://blogs.msdn.microsoft.com/endpoint/2011/04/18/microsoft-net-framework-4-platform-update-1/)の .NET Framework 4.0.1 の一部として導入されました。 この更新プログラムには、開発者がステート マシンのワークフローを作成できるようにする、いくつかの新しいクラスとアクティビティが含まれていました。 これらのクラスとアクティビティは .NET Framework 4.5 に対して更新されました。 更新プログラムは、下記のものなどです。  
   
 1. 状態にブレークポイントを設定する機能。  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - names in XAML [XAML Services]
 - XamlName grammar [XAML Services]
 ms.assetid: 11e4cada-41d2-494d-9531-0d3df4dfcbe3
-ms.openlocfilehash: a39d25f03583ab9020878b7a659bc99489231ff9
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a1e7a5a03db4a24ed4d13d62899754cfe9e76b56
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458888"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837156"
 ---
 # <a name="xamlname-grammar"></a>XamlName の文法
 XamlName 文法は、XAML 言語仕様 (MS XAML) で定義されている特定の文法です。これは便宜上、ここで再現します。  
@@ -55,4 +55,4 @@ DottedXamlName ::= XamlName '.' XamlName
 ```  
   
 ## <a name="remarks"></a>Remarks  
- 完全な仕様については、「 [\[の\]](https://go.microsoft.com/fwlink/?LinkId=114525)」を参照してください。
+ 完全な仕様については、「 [\[の\]](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))」を参照してください。

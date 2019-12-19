@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3cd881044d45a276ec361d24097b59b8ce76b7e4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: cadcb5c2e85f046b5c1c561c17663b7c94829f4f
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975701"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802244"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>.NET Framework の初期化エラー:ユーザー エクスペリエンスの管理
 
@@ -80,14 +80,14 @@ CLR にはさまざまなシナリオ向けの一連のホストが含まれて�
 
 ## <a name="windows-8-behavior-and-ui"></a>Windows 8 の動作と UI
 
-CLR アクティベーション システムでは、他のバージョンの Windows オペレーティング システムで提供しているのと同じ動作と UI を [!INCLUDE[win8](../../../includes/win8-md.md)] でも提供しています。ただし、CLR 2.0 を読み込む際に問題が発生する場合は除きます。 [!INCLUDE[win8](../../../includes/win8-md.md)] には、CLR 4.5 を使用する .NET Framework 4.5 が含まれています。 ただし、[!INCLUDE[win8](../../../includes/win8-md.md)] には CLR 2.0 を使用する .NET Framework 2.0、3.0、3.5 のいずれも含まれていません。 その結果、既定では、CLR 2.0 に依存するアプリケーションが [!INCLUDE[win8](../../../includes/win8-md.md)] で実行されません。 代わりに、ユーザーが .NET Framework 3.5 をインストールできるように、次のダイアログ ボックスが表示されます。 ユーザーは、コントロール パネルで .NET Framework 3.5 を有効にすることもできます。 両方のオプションの説明については、「[Windows 10、Windows 8.1、および Windows 8 への .NET Framework 3.5 のインストール](../install/dotnet-35-windows-10.md)」を参照してください。
+CLR アクティベーション システムでは、他のバージョンの Windows オペレーティング システムで提供しているのと同じ動作と UI を Windows 8 でも提供しています。ただし、CLR 2.0 を読み込む際に問題が発生する場合は除きます。 Windows 8 には、CLR 4.5 を使用する .NET Framework 4.5 が含まれています。 ただし、Windows 8 には CLR 2.0 を使用する .NET Framework 2.0、3.0、3.5 のいずれも含まれていません。 その結果、既定では、CLR 2.0 に依存するアプリケーションを Windows 8 上で実行することはできません。 代わりに、ユーザーが .NET Framework 3.5 をインストールできるように、次のダイアログ ボックスが表示されます。 ユーザーは、コントロール パネルで .NET Framework 3.5 を有効にすることもできます。 両方のオプションの説明については、「[Windows 10、Windows 8.1、および Windows 8 への .NET Framework 3.5 のインストール](../install/dotnet-35-windows-10.md)」を参照してください。
 
 ![Windows 8 に 3.5 をインストールするためのダイアログ ボックス](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "必要に応じた .NET Framework 3.5 のインストール時のプロンプト")
 
 > [!NOTE]
-> .NET Framework 4.5 によって、ユーザーのコンピューターの .NET Framework 4 (CLR 4) が置き換えられます。 したがって、[!INCLUDE[win8](../../../includes/win8-md.md)] では、.NET Framework 4 アプリケーションはこのダイアログ ボックスを表示せずにシームレスに実行されます。
+> .NET Framework 4.5 によって、ユーザーのコンピューターの .NET Framework 4 (CLR 4) が置き換えられます。 したがって、Windows 8 上では、.NET Framework 4 アプリケーションはこのダイアログ ボックスを表示せずにシームレスに実行されます。
 
-.NET Framework 3.5 がインストールされている場合、ユーザーは [!INCLUDE[win8](../../../includes/win8-md.md)] コンピューターで .NET Framework 2.0、3.0、または 3.5 に依存するアプリケーションを実行できます。 また、アプリケーションが .NET Framework 1.0 または 1.1 でのみ実行するように明示的に構成されていなければ、.NET Framework 1.0 および 1.1 のアプリケーションを実行することもできます。 「[.NET Framework 1.1 からの移行](../migration-guide/migrating-from-the-net-framework-1-1.md)」をご覧ください。
+.NET Framework 3.5 がインストールされている場合、ユーザーは Windows 8 コンピューター上で .NET Framework 2.0、3.0、または 3.5 に依存するアプリケーションを実行できます。 また、アプリケーションが .NET Framework 1.0 または 1.1 でのみ実行するように明示的に構成されていなければ、.NET Framework 1.0 および 1.1 のアプリケーションを実行することもできます。 「[.NET Framework 1.1 からの移行](../migration-guide/migrating-from-the-net-framework-1-1.md)」をご覧ください。
 
 .NET Framework 4.5 以降では、CLR アクティベーション ログは、初期化エラー メッセージが表示された日時とその理由を記録するログ エントリを含むように強化されています。 詳細については、[CLR のアクティブ化に関する問題をデバッグする](how-to-debug-clr-activation-issues.md)」で説明されているように、CLR のアクティベーションに関する問題のデバッグに役立つログ インフラストラクチャが用意されています。
 

@@ -1,20 +1,19 @@
 ---
-title: Windows Forms アプリを .NET Core 3.0 に移植する
-description: .NET Framework Windows Forms アプリケーションを .NET Core 3.0 for Windows に移植する方法について説明します。
+title: Windows フォーム アプリを .NET Core に移植する
+description: .NET Framework Windows フォーム アプリケーションを .NET Core for Windows に移植する方法について説明します。
 author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
-ms.custom: ''
-ms.openlocfilehash: 64920f1d226fcc8265d0be252d4751f2ba278cc1
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 959b506fe23691e160d7e88e0ae61cc71c1f3421
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973288"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567275"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Windows フォーム デスクトップ アプリを .NET Core に移植する方法
 
-この記事では、Windows Forms ベースのデスクトップ アプリを、.NET Framework から .NET Core 3.0 に移植する方法について説明します。 .NET Core 3.0 SDK には、Windows Forms アプリケーションのサポートが含まれています。 Windows Forms は、まだ Windows 専用のフレームワークであるため、Windows 上でのみ実行されます。 この例では、.NET Core CLI を使用して、プロジェクトの作成と管理を行います。
+この記事では、Windows フォームベースのデスクトップ アプリを、.NET Framework から .NET Core 3.0 以降に移植する方法について説明します。 .NET Core 3.0 SDK には、Windows Forms アプリケーションのサポートが含まれています。 Windows Forms は、まだ Windows 専用のフレームワークであるため、Windows 上でのみ実行されます。 この例では、.NET Core CLI を使用して、プロジェクトの作成と管理を行います。
 
 この記事では、さまざまな名前が使用して、移行で使用されるファイルの種類を識別しています。 実際のファイルの名前とは異なっているため、自分のプロジェクトを移行するときは、次の一覧の名前に置き換えて説明をお読みください。
 
@@ -31,14 +30,14 @@ ms.locfileid: "73973288"
 
   次の Visual Studio ワークロードをインストールします。
   - .NET デスクトップ開発
-  - .NET クロスプラットフォーム開発
+  - .NET Core クロスプラットフォームの開発
 
 - 問題なくビルドされて実行されているソリューション内の作業用 Windows Forms プロジェクト。
-- プロジェクトは C# でコーディングされている必要があります。 
-- 最新の [.NET Core 3.0](https://aka.ms/netcore3download) のプレビューをインストールします。
+- C# でコードを書いたプロジェクト。
+- [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) 3.0 以降
 
->[!NOTE]
->**Visual Studio 2017** では、.NET Core 3.0 プロジェクトはサポートされていません。 **Visual Studio 2019** では .NET Core 3.0 プロジェクトはサポートされていますが、.NET Core 3.0 Windows Forms プロジェクト用のビジュアル デザイナーはまだサポートされていません。 ビジュアル デザイナーを使用するには、.NET Core プロジェクトとフォーム ファイルを共有するソリューション内に .NET Windows Forms プロジェクトを配置する必要です。
+> [!NOTE]
+> **Visual Studio 2017** では、.NET Core 3.0 プロジェクトはサポートされていません。 **Visual Studio 2019** では .NET Core 3.0 プロジェクトはサポートされていますが、.NET Core 3.0 Windows Forms プロジェクト用のビジュアル デザイナーはまだサポートされていません。 ビジュアル デザイナーを使用するには、.NET Core プロジェクトとフォーム ファイルを共有するソリューション内に .NET Windows フォーム プロジェクトを配置する必要です。
 
 ### <a name="consider"></a>次の例を考えてみましょう
 
@@ -117,7 +116,7 @@ dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
 
 .NET Framework で作成された Windows Forms プロジェクトには、生成されるアセンブリのバージョンなどのアセンブリの属性を格納する `AssemblyInfo.cs` ファイルが含まれています。 SDK スタイルのプロジェクトでは、SDK プロジェクト ファイルに基づいて、この情報が自動的に生成されます。 両方の種類の "アセンブリ情報" があると、競合が発生します。 この問題は、自動生成を無効にして、既存の `AssemblyInfo.cs` ファイルをプロジェクトに強制的に使用させることで解決します。
 
-メインの `<PropertyGroup>` ノードに追加する 3 つの設定があります。 
+メインの `<PropertyGroup>` ノードに追加する 3 つの設定があります。
 
 - **GenerateAssemblyInfo**\
 このプロパティを `false` に設定すると、アセンブリ属性が生成されなくなります。 これにより、.NET Framework プロジェクトからの既存の `AssemblyInfo.cs` ファイルとの競合を回避できます。
@@ -148,7 +147,7 @@ dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
 
 ## <a name="add-source-code"></a>ソース コードを追加する
 
-現時点では、**MyFormsCore.csproj** プロジェクトには、コンパイルされるコードはありません。 既定では、.NET Core プロジェクトには、現在のディレクトリとすべての子ディレクトリ内のすべてのソース コードが自動的に含まれます。 相対パスを使用して、.NET Framework プロジェクトのコードが含まれるようにプロジェクトを構成する必要があります。 .NET Framework プロジェクトで、フォームのアイコンとリソース用の **.resx** ファイルが使用されている場合は、それらも含める必要があります。 
+現時点では、**MyFormsCore.csproj** プロジェクトには、コンパイルされるコードはありません。 既定では、.NET Core プロジェクトには、現在のディレクトリとすべての子ディレクトリ内のすべてのソース コードが自動的に含まれます。 相対パスを使用して、.NET Framework プロジェクトのコードが含まれるようにプロジェクトを構成する必要があります。 .NET Framework プロジェクトで、フォームのアイコンとリソース用の **.resx** ファイルが使用されている場合は、それらも含める必要があります。
 
 次の `<ItemGroup>` コードを、プロジェクトに追加します。 各ステートメントには、子ディレクトリを含むファイルの glob パターンが含まれています。
 
@@ -163,7 +162,7 @@ dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
 
 ## <a name="add-nuget-packages"></a>NuGet パッケージを追加する
 
-.NET Framework プロジェクトによって参照される各 NuGet パッケージを.NET Core プロジェクトに追加します。 
+.NET Framework プロジェクトによって参照される各 NuGet パッケージを.NET Core プロジェクトに追加します。
 
 ほとんどの場合、.NET Framework Windows Forms アプリには、**packages.config** プロジェクトによって参照されるすべての NuGet パッケージの一覧を含むファイルがあります。 この一覧を調べて、.NET Core プロジェクトに追加する NuGet パッケージを決定できます。 たとえば、.NET Framework プロジェクトで `MetroFramework`、`MetroFramework.Design`、および `MetroFramework.Fonts` NuGet パッケージが参照されている場合は、**SolutionFolder** ディレクトリから Visual Studio または .NET Core CLI のいずれかを使用して、それぞれをプロジェクトに追加します。
 
@@ -243,7 +242,7 @@ SolutionFolder
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    
+
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
 
@@ -251,12 +250,12 @@ SolutionFolder
     <AssemblyName>MyCoreControls</AssemblyName>
     <RootNamespace>WindowsFormsControlLibrary1</RootNamespace>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <Compile Include="..\MyFormsControls\**\*.cs" />
     <EmbeddedResource Include="..\MyFormsControls\**\*.resx" />
   </ItemGroup>
-  
+
 </Project>
 ```
 
@@ -276,7 +275,7 @@ dotnet add .\MyFormsAppCore\MyFormsCore.csproj reference .\MyFormsControlsCore\M
   </ItemGroup>
 ```
 
-## <a name="problems-compiling"></a>コンパイルの問題
+## <a name="compilation-problems"></a>コンパイルの問題
 
 プロジェクトのコンパイルで問題が発生した場合は、.NET Framework では使用できるが .NET Core では使用できない Windows 専用 API が使用されている可能性があります。 [Windows 互換機能パック][compat-pack] NuGet パッケージのプロジェクトへの追加を試すことができます。 このパッケージは Windows でのみ実行され、約 20,000 の Windows API を .NET Core と .NET Standard プロジェクトに追加します。
 
@@ -297,7 +296,7 @@ dotnet add .\MyFormsAppCore\MyFormsCore.csproj package Microsoft.Windows.Compati
 この記事で説明したように、Visual Studio 2019 では、.NET Framework プロジェクトでのみフォーム デザイナーがサポートされます。 サイドバイサイドの .NET Core プロジェクトを作成することで、.NET Framework プロジェクトを使用してフォームをデザインしながら、.NET Core でプロジェクトをテストできます。 ソリューション ファイルには、.NET Framework と .NET Core の両方のプロジェクトが含まれます。 .NET Framework プロジェクトにフォームとコントロールを追加してデザインし、.NET Core プロジェクトに追加されたファイルの glob パターンに基づいて、新しいファイルまたは変更されたファイルが、.NET Core プロジェクトに自動的に追加されます。
 
 Visual Studio 2019 で Windows Forms デザイナーがサポートされるようになったら、.NET Core プロジェクト ファイルの内容を .NET Framework プロジェクト ファイルにコピーして貼り付けることができます。 その後、`<Source>` と `<EmbeddedResource>` 項目を使用して追加されたファイルの glob パターンを削除します。 アプリで使用されるすべてのプロジェクト参照のパスを修正します。 これにより、.NET Framework プロジェクトが .NET Core プロジェクトに効率的にアップグレードされます。
- 
+
 ## <a name="next-steps"></a>次の手順
 
 - [Windows 互換機能パック][compat-pack]の詳細を確認する。

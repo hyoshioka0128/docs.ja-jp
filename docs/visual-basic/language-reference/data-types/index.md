@@ -58,7 +58,7 @@ ms.locfileid: "74343996"
 |[Double](../../../visual-basic/language-reference/data-types/double-data-type.md) (倍精度浮動小数点)|<xref:System.Double>|8 バイト|-1.79769313486231570 e + 308 から-4.94065645841246544 E-324 <sup>†</sup> (負の値の場合)<br /><br /> 4.94065645841246544 e-324 ~ 1.79769313486231570 E + 308 <sup>†</sup> (正の値)|  
 |[Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32>|4 バイト|-2,147, 483,648 ~ 2,147, 483,647 (符号あり)|  
 |[Long](../../../visual-basic/language-reference/data-types/long-data-type.md) (長整数)|<xref:System.Int64>|8 バイト|-9223372036854775808 ~ 9223372036854775807 (9.2... E + 18 <sup>†</sup>) (符号付き)|  
-|[オブジェクト](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object> (クラス)|32ビットプラットフォームで4バイト<br /><br /> 64ビットプラットフォームで8バイト|任意の型を型の変数に格納することができ `Object`|  
+|[Object](../../../visual-basic/language-reference/data-types/object-data-type.md)|<xref:System.Object> (クラス)|32ビットプラットフォームで4バイト<br /><br /> 64ビットプラットフォームで8バイト|任意の型を型の変数に格納することができ `Object`|  
 |[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte>|1 バイト|-128 ~ 127 (符号あり)|  
 |[Short](../../../visual-basic/language-reference/data-types/short-data-type.md) (short 整数)|<xref:System.Int16>|2 バイト|-32,768 ~ 32,767 (符号あり)|  
 |[Single](../../../visual-basic/language-reference/data-types/single-data-type.md) (単精度浮動小数点)|<xref:System.Single>|4 バイト|-3.4028235 e + 38 ~-1.401298 E-45 <sup>†</sup> (負の値の場合)<br /><br /> 1.401298 e-45 ~ 3.4028235 E + 38 <sup>†</sup> (正の値)|  

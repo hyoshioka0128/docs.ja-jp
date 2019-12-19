@@ -25,12 +25,12 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-ms.openlocfilehash: e362ad75fd9989cc87751286f83918d340a58820
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 20aa7ecd354ef1a8982ae75eda87275c80cdaaf6
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141484"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802467"
 ---
 # <a name="format-types-in-net"></a>.NET での型の書式設定
 
@@ -85,7 +85,7 @@ ms.locfileid: "73141484"
 [!code-vb[Conceptual.Formatting.Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/default1.vb#1)]
 
 > [!WARNING]
-> [!INCLUDE[win81](../../../includes/win81-md.md)] 以降、Windows ランタイムには、既定の書式指定をサポートする単一のメソッド [IStringable.ToString](xref:Windows.Foundation.IStringable.ToString%2A) を備えた <xref:Windows.Foundation.IStringable> インターフェイスが含まれています。 ただし、マネージド型では `IStringable` インターフェイスを実装しないことをお勧めします。 詳細については、<xref:System.Object.ToString%2A?displayProperty=nameWithType> リファレンス ページの「Windows ランタイムと `IStringable` インターフェイス」セクションを参照してください。
+> Windows 8 以降、Windows ランタイムには、既定の書式指定をサポートする単一のメソッド [IStringable.ToString](xref:Windows.Foundation.IStringable.ToString%2A) を備えた <xref:Windows.Foundation.IStringable> インターフェイスが含まれています。 ただし、マネージド型では `IStringable` インターフェイスを実装しないことをお勧めします。 詳細については、<xref:System.Object.ToString%2A?displayProperty=nameWithType> リファレンス ページの「Windows ランタイムと `IStringable` インターフェイス」セクションを参照してください。
 
 インターフェイス以外の型はすべて <xref:System.Object>から派生するため、この機能はカスタムのクラスまたは構造体に自動的に提供されます。 ただし、既定の `ToString` メソッドで提供される機能には制限があります。型を識別しますが、型のインスタンスに関する情報を指定すると、エラーになります。 それ自体に関する情報を提供するオブジェクトの文字列形式を提供するには、 `ToString` メソッドをオーバーライドする必要があります。
 

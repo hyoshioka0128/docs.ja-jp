@@ -41,7 +41,7 @@ Implements interfacename.interfacemember [, ...]
   
  インターフェイスを実装する場合は、インターフェイスで宣言されたすべてのメンバーを実装する必要があります。 メンバーを省略すると、構文エラーと見なされます。 個々のメンバーを実装するには、クラスまたは構造体でメンバーを宣言するときに、 [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)キーワード (`Implements` ステートメントとは別のもの) を指定します。 詳細については、「 [インターフェイス](../../../visual-basic/programming-guide/language-features/interfaces/index.md)で定義されているインターフェイスのプライベート C++ 固有の実装です。  
   
- クラスでは、プロパティとプロシージャの[プライベート](../../../visual-basic/language-reference/modifiers/private.md)実装を使用できますが、これらのメンバーには、インターフェイスの型として宣言された変数に、実装するクラスのインスタンスをキャストすることによってのみアクセスできます。  
+ クラスでは、プロパティとプロシージャの [Private](../../../visual-basic/language-reference/modifiers/private.md) 実装を使用できますが、これらのメンバーには、インターフェイスの型として宣言された変数に、実装するクラスのインスタンスをキャストすることによってのみアクセスできます。  
   
 ## <a name="example"></a>例  
  次の例は、`Implements` ステートメントを使用してインターフェイスのメンバーを実装する方法を示しています。 これは、イベント、プロパティ、およびプロシージャを使用して `ICustomerInfo` という名前のインターフェイスを定義します。 クラス `customerInfo`、インターフェイスで定義されているすべてのメンバーを実装します。  

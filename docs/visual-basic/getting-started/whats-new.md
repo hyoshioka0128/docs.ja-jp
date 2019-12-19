@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 1efcee0ac3bdba1b7e1379a0ac072ea714add756
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 45763504c2d25596b0adfb4b8a0236b332d89e8c
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423914"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802053"
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic の新機能
 
@@ -292,3 +292,4 @@ End Interface
 ## <a name="see-also"></a>関連項目
 
 - [Visual Studio 2017 の新機能](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Visual Studio 2019 の新機能](/visualstudio/ide/whats-new-visual-studio-2019)

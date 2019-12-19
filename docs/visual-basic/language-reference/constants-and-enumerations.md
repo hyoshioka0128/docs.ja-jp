@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constants [Visual Basic]
 - constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-ms.openlocfilehash: de03ce61535d4695a00d0c4b8998ef4b81583425
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e47fd1c606f7d4cd0cf2fa6398beaa183ed95076
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347879"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838157"
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>定数と列挙型 (Visual Basic)
 
@@ -43,17 +43,17 @@ Visual Basic には、開発者に対して多数の定義済み定数と列挙�
 |`vbNewLine`|改行文字。|  
 |`vbNullChar`|Null 文字。|  
 |`vbNullString`|長さ0の文字列 ("") と同じではありません。外部プロシージャを呼び出すために使用されます。|  
-|`vbObjectError`|エラー番号。 ユーザー定義エラー番号は、この値より大きくする必要があります。 例 :<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
+|`vbObjectError`|エラー番号。 ユーザー定義エラー番号は、この値より大きくする必要があります。 例:<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
 |`vbTab`|タブ文字。|  
 |`vbBack`|バックスペース文字。|  
 |`vbFormFeed`|Microsoft Windows では使用されません。|  
 |`vbVerticalTab`|Microsoft Windows では役に立ちません。|  
   
-## <a name="enumerations"></a>列挙体  
+## <a name="enumerations"></a>列挙  
 
  次の表に、Visual Basic によって提供される列挙体の一覧とその説明を示します。  
   
-|列挙型|説明|  
+|列挙体|説明|  
 |---|---|  
 |<xref:Microsoft.VisualBasic.AppWinStyle>|<xref:Microsoft.VisualBasic.Interaction.Shell%2A> 関数を呼び出すときに、起動されるプログラムに使用するウィンドウスタイルを示します。|  
 |<xref:Microsoft.VisualBasic.AudioPlayMode>|オーディオメソッドを呼び出すときにサウンドを再生する方法を示します。|  
@@ -84,6 +84,5 @@ Visual Basic には、開発者に対して多数の定義済み定数と列挙�
 ## <a name="see-also"></a>参照
 
 - [Visual Basic の言語リファレンス](../../visual-basic/language-reference/index.md)
-- [Visual Basic](../../visual-basic/index.md)
 - [定数の概要](../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
 - [列挙型の概要](../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)

@@ -16,10 +16,10 @@ Visual Basic 言語のキーワードとランタイム ライブラリ メン�
   
 |操作|Language 要素|  
 |------------|----------------------|  
-|ランタイム エラーの生成|<xref:Microsoft.VisualBasic.Collection.Clear%2A>、[エラー](../../../visual-basic/language-reference/statements/error-statement.md)、<xref:Microsoft.VisualBasic.ErrObject.Raise%2A>|  
+|ランタイム エラーの生成|<xref:Microsoft.VisualBasic.Collection.Clear%2A>、[Error](../../../visual-basic/language-reference/statements/error-statement.md)、<xref:Microsoft.VisualBasic.ErrObject.Raise%2A>|  
 |例外の取得|<xref:Microsoft.VisualBasic.ErrObject.GetException%2A>|  
 |エラー情報の提供|<xref:Microsoft.VisualBasic.Information.Err%2A>|  
-|ランタイム エラーのトラップ|[エラーが発生](../../../visual-basic/language-reference/statements/on-error-statement.md)したら、[再開](../../../visual-basic/language-reference/statements/resume-statement.md)し[てみてください...キャッチ...最後](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)に|  
+|ランタイム エラーのトラップ|[On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)、[Resume](../../../visual-basic/language-reference/statements/resume-statement.md)、[Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)|  
 |エラーになった行番号の提供|<xref:Microsoft.VisualBasic.ErrObject.Erl%2A>|  
 |システム エラー コードの提供|<xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>|  
   

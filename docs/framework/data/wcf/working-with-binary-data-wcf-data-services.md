@@ -8,22 +8,22 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-ms.openlocfilehash: e088383adf2345f9a2698d0f8794765461cdbaad
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9a09908a2a998d5da739b28aefda3d5aecdc08e0
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975025"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568744"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>バイナリ データの操作 (WCF Data Services)
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントライブラリを使用すると、次のいずれかの方法で、Open Data Protocol (OData) フィードからバイナリデータを取得および更新できます。
+WCF Data Services クライアントライブラリを使用すると、次のいずれかの方法で、Open Data Protocol (OData) フィードからバイナリデータを取得および更新できます。
 
 - エンティティのプリミティブ型のプロパティとして。 メモリに容易に読み込むことができる小さいバイナリ データ オブジェクトを操作する場合は、この方法が適しています。 この場合、バイナリ プロパティは、データ モデルによって公開されるエンティティ プロパティです。データ サービスは、応答メッセージの Base-64 バイナリ エンコード XML としてバイナリ データをシリアル化します。
 
 - 個別のバイナリ リソース ストリームとして。 写真、ビデオ、またはその他の種類のバイナリ エンコード データを表すバイナリ ラージ オブジェクト (BLOB) データにアクセスしたり、変更したりする場合は、この方法が適しています。
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、OData で定義されている HTTP を使用したバイナリデータのストリーミングを実装します。 このメカニズムでは、バイナリデータはとは別のメディアリソースとして扱われます。これは、メディアリンクエントリと呼ばれるエンティティに関連付けられています。 詳細については、「 [Streaming Provider](streaming-provider-wcf-data-services.md)」を参照してください。
+WCF Data Services は、OData で定義されている HTTP を使用したバイナリデータのストリーミングを実装します。 このメカニズムでは、バイナリデータはとは別のメディアリソースとして扱われます。これは、メディアリンクエントリと呼ばれるエンティティに関連付けられています。 詳細については、「 [Streaming Provider](streaming-provider-wcf-data-services.md)」を参照してください。
 
 > [!TIP]
 > 写真を格納する OData サービスからバイナリイメージファイルをダウンロードする Windows Presentation Foundation (WPF) クライアントアプリケーションを作成する手順の例については、「 [Data Services ストリーミングプロバイダーシリーズ-パート 2: クライアントからのメディアリソースストリームへのアクセス](https://go.microsoft.com/fwlink/?LinkId=201637)」を参照してください。 ブログ記事で取り上げているストリーミングフォトデータサービスのサンプルコードをダウンロードするには、MSDN コードギャラリーの[ストリーミングフォトデータサービスのサンプル](https://go.microsoft.com/fwlink/?LinkId=198988)を参照してください。
@@ -34,11 +34,11 @@ ms.locfileid: "73975025"
 
 [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]
 
-このトピックのその他の例では、メディア リソース ストリームにアクセスし変更する方法を紹介します。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントライブラリを使用して .NET Framework クライアントアプリケーションでメディアリソースストリームを使用する方法の完全な例については、「[クライアントからメディアリソースストリームにアクセス](https://go.microsoft.com/fwlink/?LinkID=201637)する」を参照してください。
+このトピックのその他の例では、メディア リソース ストリームにアクセスし変更する方法を紹介します。 WCF Data Services クライアントライブラリを使用して .NET Framework クライアントアプリケーションでメディアリソースストリームを使用する方法の完全な例については、「[クライアントからメディアリソースストリームにアクセス](https://go.microsoft.com/fwlink/?LinkID=201637)する」を参照してください。
 
 ## <a name="accessing-the-binary-resource-stream"></a>バイナリ リソース ストリームへのアクセス
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントライブラリには、OData ベースのデータサービスからバイナリリソースストリームにアクセスするためのメソッドが用意されています。 メディア リソースをダウンロードするときには、メディア リソースの URI を使用することも、メディア リソース データ自体を含むバイナリ ストリームを取得することもできます。 メディア リソース データをバイナリ ストリームとしてアップロードすることもできます。
+WCF Data Services クライアントライブラリには、OData ベースのデータサービスからバイナリリソースストリームにアクセスするためのメソッドが用意されています。 メディア リソースをダウンロードするときには、メディア リソースの URI を使用することも、メディア リソース データ自体を含むバイナリ ストリームを取得することもできます。 メディア リソース データをバイナリ ストリームとしてアップロードすることもできます。
 
 > [!TIP]
 > 写真を格納する OData サービスからバイナリイメージファイルをダウンロードする Windows Presentation Foundation (WPF) クライアントアプリケーションを作成する手順の例については、「 [Data Services ストリーミングプロバイダーシリーズ-パート 2: クライアントからのメディアリソースストリームへのアクセス](https://go.microsoft.com/fwlink/?LinkId=201637)」を参照してください。 ブログ記事で取り上げているストリーミングフォトデータサービスのサンプルコードをダウンロードするには、MSDN コードギャラリーの[ストリーミングフォトデータサービスのサンプル](https://go.microsoft.com/fwlink/?LinkId=198988)を参照してください。
@@ -72,7 +72,7 @@ ms.locfileid: "73975025"
 > [!NOTE]
 > <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> を呼び出すときには、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> が呼び出されるまでストリームはデータ サービスに送信されないことに注意してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [WCF Data Services クライアント ライブラリ](wcf-data-services-client-library.md)
 - [コントロールへのデータのバインド](binding-data-to-controls-wcf-data-services.md)

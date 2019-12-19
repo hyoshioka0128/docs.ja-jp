@@ -1,5 +1,5 @@
 ---
-title: C# の for ステートメント
+title: for ステートメント - C# リファレンス
 ms.date: 06/13/2018
 f1_keywords:
 - for
@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: 5ebc478f8840173cacc0bc211061f3013379abd9
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: fc6a23cabd93323cacc33dfc4388116881c1fc84
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422792"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552261"
 ---
 # <a name="for-c-reference"></a>for (C# リファレンス)
 

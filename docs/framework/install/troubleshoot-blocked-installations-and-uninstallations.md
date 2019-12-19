@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework, troubleshooting blocked installations
 - blocked .NET Framework installations, troubleshooting
 ms.assetid: c3fdfbc1-ed99-4202-a2b0-8c4f1646385d
-ms.openlocfilehash: d0f3d857a90aca763121595151a2193125b47c6c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: df7eaf971f3a54057758dc7d974ae00cd4797ad7
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975626"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960027"
 ---
 # <a name="troubleshoot-blocked-net-framework-installations-and-uninstallations"></a>.NET Framework のインストールおよびアンインストールのブロックのトラブルシューティング
 
@@ -48,7 +48,7 @@ Windows 8 以降では、.NET Framework はオペレーティング システム
 |.NET Framework 4.5.x/4.6.x/4.7.x/4.8 は、既にこのオペレーティング システムにインストールされています。 .NET Framework 4.5.x/4.6.x/4.7.x/4.8 再頒布可能パッケージをインストールする必要はありません。|アクションなし。<br /><br /> システムにインストールされている .NET Framework のバージョンを確認する方法については、「[方法:インストールされている .NET Framework バージョンを確認する](../migration-guide/how-to-determine-which-versions-are-installed.md)」を参照してください。 サポートされるオペレーティング システムについては、[システム要件](../get-started/system-requirements.md)に関するページをご覧ください。|  
 |.NET Framework 4.5.x/4.6.x/4.7.x/4.8 は、このオペレーティング システムではサポートされていません。|サポートされるオペレーティング システムについては、[システム要件](../get-started/system-requirements.md)に関するページをご覧ください。<br /><br /> Windows 7 での .NET Framework のインストールに失敗した場合、通常このメッセージは Windows 7 SP1 がインストールされていないことを示します。 Windows 7 システムでは、.NET Framework には Windows 7 SP1 が必要です。 Windows 7 を使用していて Service Pack 1 をインストールしていない場合、.NET Framework をインストールする前に、Service Pack 1 をインストールする必要があります。 Windows 7 SP1 のインストールの詳細については、[Windows 7 Service Pack 1 (SP1) のインストール方法の詳細](https://windows.microsoft.com/windows7/install-windows-7-service-pack-1)に関するページを参照してください。|  
 |Your computer is currently running a Server Core installation of Windows Server 2008 operating system. (現在、コンピューターでは Windows Server 2008 オペレーティング システムの Server Core インストールが実行されています。) .NET Framework 4.5.x には、オペレーティング システムまたは Server Core 2008 R2 SP1 の完全なリリースが必要です。 Windows Server 2008 SP2、Windows Server 2008 R2 SP1、Server Core 2008 R2 SP1 のいずれかの完全バージョンをインストールして、.NET Framework 4.5.x セットアップを再度実行してください。|.NET Framework は、Windows Server 2008 R2 SP1 以降の Server Core ロールでサポートされています。 [システム要件](../get-started/system-requirements.md)に関するページを参照してください。|  
-|.NET Framework 4.5.x は既にこのオペレーティング システムの一部として組み込まれていますが、現在は無効になっています ([!INCLUDE[winserver8](../../../includes/winserver8-md.md)] のみ)。| **コントロール パネル**の **[Windows の機能の有効化または無効化]** を使用して、.NET Framework 4.5.x を有効にします。 |  
+|.NET Framework 4.5.x は既にこのオペレーティング システムの一部として組み込まれていますが、現在は無効になっています (Windows Server 2012 のみ)。| **コントロール パネル**の **[Windows の機能の有効化または無効化]** を使用して、.NET Framework 4.5.x を有効にします。 |  
 |このセットアップ プログラムは x86 コンピューターのみを対象としています。 x64 コンピューターまたは IA64 コンピューターにはインストールできません。|[システム要件](../get-started/system-requirements.md)に関するページを参照してください。|  
 |このセットアップ プログラムは x64 コンピューターまたは x86 コンピューターのみを対象としています。 IA64 コンピューターにはインストールできません。|[システム要件](../get-started/system-requirements.md)に関するページを参照してください。|  
 

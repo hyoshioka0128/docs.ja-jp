@@ -19,7 +19,7 @@ ms.locfileid: "74349148"
 ## <a name="remarks"></a>コメント  
  このコンテキストでは、`Alias` キーワードを使用できます。  
   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
  次の例では、`Alias` キーワードを使用して、この例のの代わりに `getUserName` が使用されている、`GetUserNameA`advapi32.dll 内の関数の名前を指定しています。 Function `getUserName` が sub `getUser`で呼び出され、現在のユーザーの名前が表示されます。  
   

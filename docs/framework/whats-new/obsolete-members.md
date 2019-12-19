@@ -7,12 +7,12 @@ helpviewer_keywords:
 - members, obsolete in .NET Framework
 - obsolete members [.NET Framework]
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
-ms.openlocfilehash: 2231552f9c3353890963a4ad5388194036fa27bf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 063d7b5cfddace89efa636327c71a214ee01fdd0
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134101"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802727"
 ---
 # <a name="obsolete-members-in-the-net-framework"></a>.NET Framework で互換性のために残されているメンバー
 
@@ -646,8 +646,8 @@ ms.locfileid: "73134101"
 |<xref:System.Web.HttpContext?displayProperty=nameWithType>|<xref:System.Web.HttpContext.GetConfig%2A>|別の方法として、System.Web.dll の <xref:System.Web.HttpContext.GetSection%2A?displayProperty=nameWithType> を使用することをお勧めします。|
 |<xref:System.Web.HttpUtility?displayProperty=nameWithType>|<xref:System.Web.HttpUtility.UrlEncodeUnicode%2A>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> このメソッドでは標準に準拠しない出力が生成されるので、相互運用性に問題があります。 別の方法として、<xref:System.Web.HttpUtility.UrlEncode%28System.String%29> を使用することをお勧めします。|
 |<xref:System.Web.HttpUtility?displayProperty=nameWithType>|<xref:System.Web.HttpUtility.UrlEncodeUnicodeToBytes%2A>|最初に .NET Framework 4.5 で非推奨とされました。<br /><br /> このメソッドでは標準に準拠しない出力が生成されるので、相互運用性に問題があります。 別の方法として、<xref:System.Web.HttpUtility.UrlEncodeToBytes%28System.String%29> を使用することをお勧めします。|
-|<xref:System.Web.Configuration.AuthenticationMode?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationMode.Passport>|このフィールドは、互換性のために残されています。 パスポート認証製品はサポート対象から除外され、[Microsoft アカウント](https://go.microsoft.com/fwlink/?LinkId=733413)に置き換えられました。|
-|<xref:System.Web.Configuration.AuthenticationSection?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationSection.Passport%2A>|このプロパティは今後使用しません。 パスポート認証製品はサポート対象から除外され、[Microsoft アカウント](https://go.microsoft.com/fwlink/?LinkId=733413)に置き換えられました。|
+|<xref:System.Web.Configuration.AuthenticationMode?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationMode.Passport>|このフィールドは、互換性のために残されています。 パスポート認証製品はサポート対象から除外され、[Microsoft アカウント](https://account.microsoft.com/account/Account?destrt=home-index)に置き換えられました。|
+|<xref:System.Web.Configuration.AuthenticationSection?displayProperty=nameWithType>|<xref:System.Web.Configuration.AuthenticationSection.Passport%2A>|このプロパティは今後使用しません。 パスポート認証製品はサポート対象から除外され、[Microsoft アカウント](https://account.microsoft.com/account/Account?destrt=home-index)に置き換えられました。|
 |<xref:System.Web.Configuration.HttpCapabilitiesBase?displayProperty=nameWithType>|<xref:System.Web.Configuration.HttpCapabilitiesBase.JavaScript%2A>|別の方法として、<xref:System.Web.Configuration.HttpCapabilitiesBase.EcmaScriptVersion%2A?displayProperty=nameWithType> プロパティを使用することをお勧めします。 <xref:System.Version.Major%2A?displayProperty=nameWithType> のバージョン値が 1 以上である場合は、JavaScript のサポートを意味します。|
 |<xref:System.Web.Configuration.SystemWebSectionGroup?displayProperty=nameWithType>|<xref:System.Web.Configuration.SystemWebSectionGroup.MobileControls%2A>|System.Web.Mobile.dll は、互換性のために残されています。|
 |<xref:System.Web.Routing.UrlRoutingModule?displayProperty=nameWithType>|<xref:System.Web.Routing.UrlRoutingModule.PostMapRequestHandler%2A>|このメソッドは、互換性のために残されています。 <xref:System.Web.Routing.UrlRoutingModule.Init%2A> イベントを使用するには、 <xref:System.Web.Routing.UrlRoutingModule.PostMapRequestHandler%2A> メソッドをオーバーライドします。|

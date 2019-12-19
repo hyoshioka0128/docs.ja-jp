@@ -30,10 +30,10 @@ Const constantlist
 省略可。 このステートメントで宣言されているすべての定数に適用される属性のリスト。 山かっこ ("`<`" と "`>`") の[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)を参照してください。
 
 `accessmodifier`  
-省略可。 これらの定数にアクセスできるコードを指定するには、これを使用します。 [Public](../../../visual-basic/language-reference/modifiers/public.md)、 [protected](../../../visual-basic/language-reference/modifiers/protected.md)、 [friend](../../../visual-basic/language-reference/modifiers/friend.md)、 [Protected Friend](../modifiers/protected-friend.md)、 [private](../../../visual-basic/language-reference/modifiers/private.md)、または[private](../../language-reference/modifiers/private-protected.md)を指定できます。
+省略可。 これらの定数にアクセスできるコードを指定するには、これを使用します。 [Public](../../../visual-basic/language-reference/modifiers/public.md)、 [Protected](../../../visual-basic/language-reference/modifiers/protected.md)、 [Friend](../../../visual-basic/language-reference/modifiers/friend.md)、 [Protected Friend](../modifiers/protected-friend.md)、 [private](../../../visual-basic/language-reference/modifiers/private.md)、または[Private](../../language-reference/modifiers/private-protected.md)を指定できます。
 
 `Shadows`  
-省略可。 基底クラスのプログラミング要素を再宣言および非表示にするには、これを使用します。 「[シャドウ](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。
+省略可。 基底クラスのプログラミング要素を再宣言および非表示にするには、これを使用します。 「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。
 
 `constantlist`  
 必須。 このステートメントで宣言されている定数の一覧。
@@ -64,9 +64,9 @@ Const constantlist
 
   プロシージャレベルで宣言された定数は*ローカル定数*です。これは、それを宣言するプロシージャまたはブロックに対してローカルです。
 
-- **アトリビュート.** 属性は、ローカル定数ではなく、メンバー定数にのみ適用できます。 属性は、アセンブリのメタデータに情報を提供します。これは、ローカル定数などの一時的なストレージには意味がありません。
+- **属性。 ** 属性は、ローカル定数ではなく、メンバー定数にのみ適用できます。 属性は、アセンブリのメタデータに情報を提供します。これは、ローカル定数などの一時的なストレージには意味がありません。
 
-- **ド.** 既定では、すべての定数は `Shared`、`Static`、および `ReadOnly`です。 定数を宣言するときに、これらのキーワードを使用することはできません。
+- **修飾子。 **既定では、すべての定数は `Shared`、`Static`、および `ReadOnly`です。 定数を宣言するときにこれらのキーワードを使用することはできません。
 
   プロシージャレベルでは、`Shadows` または任意のアクセス修飾子を使用してローカル定数を宣言することはできません。
 
@@ -80,15 +80,15 @@ Const constantlist
 
 - **異なる型。** 宣言する変数ごとに個別の `As` 句を使用して、異なる定数に異なるデータ型を指定できます。 ただし、共通の `As` 句を使用して、同じ型の複数の定数を宣言することはできません。
 
-- **イニシャライズ.** `constantlist`内のすべての定数の値を初期化する必要があります。 `initializer` を使用して、定数に割り当てられる式を指定します。 式には、リテラルの任意の組み合わせ、既に定義されている他の定数、および既に定義されている列挙メンバーを使用できます。 算術演算子と論理演算子を使用すると、このような要素を組み合わせることができます。
+- **初期化。  **   `constantlist`内のすべての定数の値を初期化する必要があります。 `initializer` を使用して、定数に割り当てられる式を指定します。 式には、リテラルの任意の組み合わせ、既に定義されている他の定数、および既に定義されている列挙メンバーを使用できます。 算術演算子と論理演算子を使用すると、このような要素を組み合わせることができます。
 
   `initializer`では、変数または関数を使用できません。 ただし、`CByte` や `CShort`などの変換キーワードを使用することもできます。 定数 `String` または `Char` 引数を使用して呼び出す場合は、コンパイル時に評価できるため、`AscW` を使用することもできます。
 
 ## <a name="behavior"></a>動作
 
-- **検索.** ローカル定数は、プロシージャまたはブロック内からのみアクセスできます。 メンバー定数は、クラス、構造体、またはモジュール内のどこからでもアクセスできます。
+- **スコープ。 ** ローカル定数は、プロシージャまたはブロック内からのみアクセスできます。 メンバー定数は、クラス、構造体、またはモジュール内のどこからでもアクセスできます。
 
-- **評価.** クラス、構造体、またはモジュールの外部のコードでは、メンバー定数の名前を、そのクラス、構造体、またはモジュールの名前で修飾する必要があります。 プロシージャまたはブロックの外側のコードは、そのプロシージャまたはブロック内のローカル定数を参照できません。
+- **修飾。 ** クラス、構造体、またはモジュールの外部のコードでは、メンバー定数の名前を、そのクラス、構造体、またはモジュールの名前で修飾する必要があります。 プロシージャまたはブロックの外側のコードは、そのプロシージャまたはブロック内のローカル定数を参照できません。
 
 ## <a name="example"></a>例
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: c6856002288a46e78d1e1373201cf149407a814f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c7859ab610f5eae54eeb31833cb370b694df6553
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974014"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74959790"
 ---
 # <a name="graphics-rendering-tiers"></a>グラフィックスの描画層
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェア性能は描画層で決まります。  
@@ -64,7 +64,7 @@ ms.locfileid: "73974014"
   
  次の機能は、描画層 1 と描画層 2 でハードウェア高速化されます。  
   
-|特性|ノート|  
+|特性|メモ|  
 |-------------|-----------|  
 |2D 描画|ほとんどの 2D 描画をサポートします。|  
 |3D ラスター化|ほとんどの 3D ラスター化をサポートします。|  
@@ -76,20 +76,20 @@ ms.locfileid: "73974014"
   
  次の機能は、描画層 2 でのみハードウェア高速化されます。  
   
-|特性|ノート|  
+|特性|メモ|  
 |-------------|-----------|  
-|3D アンチエイリアス|3D アンチエイリアシングは、windows Vista や [!INCLUDE[win7](../../../../includes/win7-md.md)]など、Windows Display Driver Model (WDDM) をサポートするオペレーティングシステムでのみサポートされます。|  
+|3D アンチエイリアス|3D アンチエイリアシングは、windows Vista や Windows 7 などの Windows Display Driver Model (WDDM) をサポートするオペレーティングシステムでのみサポートされます。|  
   
  次の機能はハードウェア高速化**されません**。  
   
-|特性|ノート|  
+|特性|メモ|  
 |-------------|-----------|  
 |印刷コンテンツ|印刷コンテンツはすべて、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ソフトウェア パイプラインを利用して描画されます。|  
 |<xref:System.Windows.Media.Imaging.RenderTargetBitmap> を使用するラスタライズされたコンテンツ|<xref:System.Windows.Media.Imaging.RenderTargetBitmap>の <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> メソッドを使用してレンダリングされたすべてのコンテンツ。|  
 |<xref:System.Windows.Media.TileBrush> を使用するタイル化されたコンテンツ|<xref:System.Windows.Media.TileBrush> の <xref:System.Windows.Media.TileBrush.TileMode%2A> プロパティが <xref:System.Windows.Media.TileMode.Tile>に設定されているタイル化されたコンテンツ。|  
 |グラフィックス ハードウェアの最大テクスチャ サイズを超過する表面|ほとんどのグラフィックス ハードウェアの場合、大きな表面のサイズは 2048x2048 ピクセルか 4096x4096 ピクセルになります。|  
 |ビデオ RAM 要件がグラフィックス ハードウェアのメモリを超える操作|Windows SDK の [WPF Performance Suite](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)) に含まれる Perforator ツールを利用し、アプリケーションのビデオ RAM 使用率を監視できます。|  
-|レイヤード ウィンドウ|レイヤード ウィンドウを利用することで、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションは四角形以外のウィンドウ内の画面にコンテンツを描画できます。 Windows Vista や [!INCLUDE[win7](../../../../includes/win7-md.md)]など、Windows Display Driver Model (WDDM) をサポートするオペレーティングシステムでは、レイヤードウィンドウはハードウェアアクセラレータになります。 [!INCLUDE[winxp](../../../../includes/winxp-md.md)] のような他のシステムの場合、ハードウェア高速化なしで、ソフトウェアによりレイヤード ウィンドウが描画されます。<br /><br /> 次の <xref:System.Windows.Window> プロパティを設定することにより、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でレイヤードウィンドウを有効にすることができます。<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
+|レイヤード ウィンドウ|レイヤード ウィンドウを利用することで、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションは四角形以外のウィンドウ内の画面にコンテンツを描画できます。 Windows Vista や Windows 7 など、Windows Display Driver Model (WDDM) をサポートするオペレーティングシステムでは、レイヤードウィンドウはハードウェアアクセラレータになります。 Windows XP などの他のシステムでは、レイヤードウィンドウはハードウェアアクセラレータなしのソフトウェアによってレンダリングされます。<br /><br /> 次の <xref:System.Windows.Window> プロパティを設定することにより、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でレイヤードウィンドウを有効にすることができます。<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
   
 <a name="other_resources"></a>   
 ## <a name="other-resources"></a>その他の参照情報  
@@ -127,7 +127,7 @@ ms.locfileid: "73974014"
  ![スクリーンショット: DirectX 診断ツール](./media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
 DirectX 診断ツールのメイン ウィンドウ  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.Media.RenderCapability>
 - <xref:System.Windows.Media.RenderOptions>

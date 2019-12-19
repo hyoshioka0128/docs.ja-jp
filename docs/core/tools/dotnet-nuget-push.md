@@ -2,13 +2,13 @@
 title: dotnet nuget push コマンド
 description: dotnet nuget push コマンドでは、パッケージをサーバーにプッシュして発行します。
 author: karann-msft
-ms.date: 06/26/2019
-ms.openlocfilehash: 3299f79ec62aebdcdbef38f1e8b09a2dc5529ec4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 12/04/2019
+ms.openlocfilehash: 5e80295a570adc30a06d86b6735cb0387e39d5a3
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117495"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74835520"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -26,7 +26,7 @@ ms.locfileid: "71117495"
 
 ```dotnetcli
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
-    [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
+    [--no-service-endpoint] [-s|--source] [--skip-duplicate] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
 ```
 
@@ -52,7 +52,7 @@ dotnet nuget push [-h|--help]
 
 * **`-h|--help`**
 
-コマンドの短いヘルプを印刷します。
+  コマンドの短いヘルプを印刷します。
 
 * **`--interactive`**
 
@@ -74,6 +74,10 @@ dotnet nuget push [-h|--help]
 
   サーバー URL を指定します。 `DefaultPushSource` 構成値が NuGet 構成ファイルに設定されない限り、このオプションは必須です。
 
+* **`--skip-duplicate`**
+
+  複数のパッケージを HTTP(S) サーバーにプッシュする場合は、すべての 409 競合応答を警告として処理して、プッシュを続行できるようにします。 .NET Core 3.1 SDK 以降で利用できます。
+                                 
 * **`-sk|--symbol-api-key <API_KEY>`**
 
   シンボル サーバーの API キーです。
@@ -127,3 +131,9 @@ dotnet nuget push [-h|--help]
   > [!NOTE]
   > このコマンドがうまくいかない場合は、古いバージョンの SDK (.NET Core 2.1 SDK 以前のバージョン) に存在したバグが原因である可能性があります。
   > これを解決するには、SDK のバージョンをアップグレードするか、代わりに次のコマンドを実行します: `dotnet nuget push **/*.nupkg`
+  
+* HTTP(S) サーバーによって 409 競合応答が返された場合でも、すべての *.nupkg* ファイルをプッシュします。
+
+  ```dotnetcli
+  dotnet nuget push *.nupkg --skip-duplicate
+  ```

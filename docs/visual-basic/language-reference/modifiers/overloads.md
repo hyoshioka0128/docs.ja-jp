@@ -1,5 +1,5 @@
 ---
-title: Shadows
+title: Overloads (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Overloads
@@ -29,7 +29,7 @@ ms.locfileid: "74351411"
 
 - **宣言コンテキスト。** `Overloads` は、プロパティまたはプロシージャの宣言ステートメントでのみ使用できます。
 
-- **結合された修飾子。** 同じプロシージャ宣言で、`Overloads` を[シャドウ](../../../visual-basic/language-reference/modifiers/shadows.md)と共に指定することはできません。
+- **結合された修飾子。** 同じプロシージャ宣言で、`Overloads` を [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) と共に指定することはできません。
 
 - **必要な相違点。** この宣言の*シグネチャ*は、オーバーロードされるすべてのプロパティまたはプロシージャのシグネチャとは異なる必要があります。 シグネチャは、プロパティまたはプロシージャの名前と以下の項目で構成されます。
 
@@ -69,7 +69,7 @@ ms.locfileid: "74351411"
 
 - [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)
 
-- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)
 
 - [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)
 

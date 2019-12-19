@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-ms.openlocfilehash: a64a09195101cd4b1ec3c6f990dd09d54466aea0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: bc2338191bbf6922f56c833ebf115c5b21d92b00
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975406"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569313"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>サービス操作の呼び出し (WCF Data Services)
-Open Data Protocol (OData) は、データサービスのサービス操作を定義します。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、データ サービスのメソッドとしてこのような操作を定義できます。 他のデータ サービス リソースと同様に、これらのサービス操作は URI によってアドレス指定できます。 サービス操作では、エンティティ型のコレクション、1 つのエンティティ型のインスタンス、およびプリミティブ型 (整数、文字列など) を返すことができます。 さらに、サービス操作では、`null` (Visual Basic の場合は `Nothing`) を返すこともできます。 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリを使用して、HTTP GET 要求をサポートするサービス操作にアクセスすることができます。 この種のサービス操作は、<xref:System.ServiceModel.Web.WebGetAttribute> が適用されたメソッドとして定義されます。 詳細については、「[サービス操作](service-operations-wcf-data-services.md)」を参照してください。  
+Open Data Protocol (OData) は、データサービスのサービス操作を定義します。 WCF Data Services を使用すると、このような操作をデータサービスのメソッドとして定義できます。 他のデータ サービス リソースと同様に、これらのサービス操作は URI によってアドレス指定できます。 サービス操作では、エンティティ型のコレクション、1 つのエンティティ型のインスタンス、およびプリミティブ型 (整数、文字列など) を返すことができます。 さらに、サービス操作では、`null` (Visual Basic の場合は `Nothing`) を返すこともできます。 WCF Data Services クライアントライブラリを使用して、HTTP GET 要求をサポートするサービス操作にアクセスできます。 この種のサービス操作は、<xref:System.ServiceModel.Web.WebGetAttribute> が適用されたメソッドとして定義されます。 詳細については、「[サービス操作](service-operations-wcf-data-services.md)」を参照してください。  
   
- サービス操作は、OData を実装するデータサービスによって返されるメタデータで公開されます。 メタデータ内で、サービス操作は、`FunctionImport` 要素として表されます。 厳密に型指定された <xref:System.Data.Services.Client.DataServiceContext> を生成するとき、この要素は "サービス参照の追加" と DataSvcUtil.exe ツールで無視されます。 このため、サービス操作を直接呼び出すために使用できるコンテキストにはメソッドはありません。 ただし、次のいずれかの方法を使用して、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントでサービス操作を呼び出すことができます。  
+ サービス操作は、OData を実装するデータサービスによって返されるメタデータで公開されます。 メタデータ内で、サービス操作は、`FunctionImport` 要素として表されます。 厳密に型指定された <xref:System.Data.Services.Client.DataServiceContext> を生成するとき、この要素は "サービス参照の追加" と DataSvcUtil.exe ツールで無視されます。 このため、サービス操作を直接呼び出すために使用できるコンテキストにはメソッドはありません。 ただし、次の2つの方法のいずれかで、WCF Data Services クライアントを使用してサービス操作を呼び出すこともできます。  
   
 - <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> で <xref:System.Data.Services.Client.DataServiceContext> メソッドを呼び出し、サービス操作の URI をその他のパラメーターと共に指定します。 このメソッドは、GET サービス操作の呼び出しに使用されます。  
   
 - <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> の <xref:System.Data.Services.Client.DataServiceContext> メソッドを使用して、<xref:System.Data.Services.Client.DataServiceQuery%601> オブジェクトを作成します。 <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> を呼び出すとき、サービス操作の名前が `entitySetName` パラメーターに渡されます。 このメソッドは、列挙されたときまたは <xref:System.Data.Services.Client.DataServiceQuery%601> メソッドが呼び出されたときにサービス操作を呼び出す <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A> オブジェクトを返します。 このメソッドは、コレクションを返す GET サービス操作の呼び出しに使用されます。 1 つのパラメーターは、<xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> メソッドを使用して指定することができます。 このメソッドによって返される <xref:System.Data.Services.Client.DataServiceQuery%601> オブジェクトは、クエリ オブジェクトのようにさらに構成できます。 詳細については、「[データサービスのクエリ](querying-the-data-service-wcf-data-services.md)」を参照してください。  
   
 ## <a name="considerations-for-calling-service-operations"></a>サービス操作の呼び出しに関する考慮事項  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントを使用してサービス操作を呼び出す際は、次の点に注意してください。  
+ WCF Data Services クライアントを使用してサービス操作を呼び出す場合は、次の考慮事項が適用されます。  
   
 - データサービスに非同期でアクセスする場合は、<xref:System.Data.Services.Client.DataServiceContext> または <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A>の /<xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドで、同等の非同期 <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A>/<xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> メソッドを使用する必要があります。  
   
-- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリは、プリミティブ型のコレクションを返すサービス操作からの結果を具体化できません。  
+- WCF Data Services クライアントライブラリは、プリミティブ型のコレクションを返すサービス操作の結果を具体化できません。  
   
-- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリでは、POST サービス操作の呼び出しをサポートしていません。 HTTP POST によって呼び出されるサービス操作は、<xref:System.ServiceModel.Web.WebInvokeAttribute> に `Method="POST"` パラメーターを使用して定義します。 HTTP POST 要求を使用してサービス操作を呼び出すには、代わりに <xref:System.Net.HttpWebRequest> を使用する必要があります。  
+- WCF Data Services クライアントライブラリは、POST サービス操作の呼び出しをサポートしていません。 HTTP POST によって呼び出されるサービス操作は、<xref:System.ServiceModel.Web.WebInvokeAttribute> に `Method="POST"` パラメーターを使用して定義します。 HTTP POST 要求を使用してサービス操作を呼び出すには、代わりに <xref:System.Net.HttpWebRequest> を使用する必要があります。  
   
 - <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> を使用して、エンティティまたはプリミティブ型の単一の結果を返す GET サービス操作または 1 つ以上の入力パラメーターを必要とする GET サービス操作を呼び出すことはできません。 代わりに <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> メソッドを呼び出す必要があります。  
   
@@ -37,7 +37,7 @@ Open Data Protocol (OData) は、データサービスのサービス操作を�
 - <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> を使用してサービス操作を呼び出すと、クライアントライブラリは、アンパサンド (&) などの予約文字のパーセントエンコードを実行し、文字列内の単一引用符をエスケープすることによって、<xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> に指定された文字を自動的にエスケープします。 ただし、 *Execute*メソッドのいずれかを呼び出してサービス操作を呼び出す場合は、ユーザーが指定した文字列値のエスケープを必ず実行する必要があります。 URI 内の単一引用符は、単一引用符のペアとしてエスケープされます。  
   
 ## <a name="examples-of-calling-service-operations"></a>サービス操作の呼び出しの例  
- このセクションには、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリを使用してサービス操作を呼び出す方法を示す次の例が含まれています。  
+ ここでは、WCF Data Services クライアントライブラリを使用してサービス操作を呼び出す方法について、次の例について説明します。  
   
 - [Execute&lt;T&gt; を呼び出してエンティティのコレクションを返す](calling-service-operations-wcf-data-services.md#ExecuteIQueryable)  
   
@@ -124,6 +124,6 @@ Open Data Protocol (OData) は、データサービスのサービス操作を�
  [!code-csharp[Astoria Northwind Client#OnAsyncQueryExecutionComplete](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#onasyncqueryexecutioncomplete)]
  [!code-vb[Astoria Northwind Client#OnAsyncQueryExecutionComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#onasyncqueryexecutioncomplete)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [WCF Data Services クライアント ライブラリ](wcf-data-services-client-library.md)

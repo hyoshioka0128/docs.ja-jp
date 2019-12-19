@@ -1,5 +1,5 @@
 ---
-title: パブリック
+title: Public (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Public
@@ -33,7 +33,7 @@ ms.locfileid: "74351294"
   
 - **既定のアクセス。** プロシージャ内のローカル変数は、既定でパブリックアクセスに設定されているので、アクセス修飾子を使用することはできません。  
   
-- **アクセス修飾子。** アクセスレベルを指定するキーワードは、*アクセス修飾子*と呼ばれます。 アクセス修飾子の比較については、「 [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+- **アクセス修飾子。** アクセスレベルを指定するキーワードは、*アクセス修飾子*と呼ばれます。 アクセス修飾子の比較については、「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
   
  `Public` 修飾子は、次のコンテキストで使用できます。  
   
@@ -41,7 +41,7 @@ ms.locfileid: "74351294"
   
  [Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
  [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
@@ -57,7 +57,7 @@ ms.locfileid: "74351294"
   
  [Module ステートメント](../../../visual-basic/language-reference/statements/module-statement.md)  
   
- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
  [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
   

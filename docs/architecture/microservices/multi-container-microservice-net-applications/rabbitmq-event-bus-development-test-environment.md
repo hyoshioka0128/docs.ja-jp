@@ -2,12 +2,12 @@
 title: 開発環境またはテスト環境の RabbitMQ でイベント バスを実装する
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 開発環境またはテスト環境の統合イベント向けに RabbitMQ でイベント バスのメッセージングを実装します。
 ms.date: 10/02/2018
-ms.openlocfilehash: 211348caec3c101435fcdd99bd96fd8e17a6456b
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ba1cea9384893955ae0743ac8d6a34c350224cd5
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739486"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711198"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>開発環境またはテスト環境の RabbitMQ でイベント バスを実装する
 
@@ -108,6 +108,20 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
 
 Subscribe メソッドは IIntegrationEventHandler オブジェクト (現在のマイクロサービスでのコールバック メソッドに似ている) に加えて、それに関連する IntegrationEvent オブジェクトを受け入れます。 コードは次にそのイベント ハンドラーを、各種の統合イベントがクライアント マイクロサービスごとに保持できるイベント ハンドラーの一覧に追加します。 クライアント コードがまだサブスクライブしていないイベントがある場合、コードは該当するイベントの種類に対してチャネルを作成します。これにより、そのイベントが他のサービスから発行されたときに RabbitMQ からプッシュ スタイルでイベントを受け取ることができます。
 
+前述のように、eShopOnContainers に実装されているイベント バスはメイン シナリオのみに対処するもので、実稼働の準備はできていないため、教育的な目的しかありません。
+
+実稼働シナリオの場合は、以下の RabbitMQ に特化した追加のリソースと、「[マイクロサービス間でイベント ベースの通信を実装する](./integration-event-based-microservice-communications.md#additional-resources)」のセクションを確認してください。
+
+## <a name="additional-resources"></a>その他の技術情報
+
+RabbitMQ に対応した実稼働可能なソリューション。
+
+- **EasyNetQ** - RabbitMQ 向けのオープン ソース .NET API クライアント \
+  <http://easynetq.com/>
+
+- **MassTransit** \
+  <https://masstransit-project.com/>
+  
 >[!div class="step-by-step"]
 >[前へ](integration-event-based-microservice-communications.md)
 >[次へ](subscribe-events.md)

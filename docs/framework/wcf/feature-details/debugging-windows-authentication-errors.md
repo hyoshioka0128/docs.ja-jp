@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 20ca8f049298f75412da4c8a7e58975954f67741
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 52e968706ef4ca703a26e613e681cff3c30ba181
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968859"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838027"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Windows 認証エラーのデバッグ
 セキュリティ機構として Windows 認証を使用する場合、セキュリティ サポート プロバイダー インターフェイス (SSPI: Security Support Provider Interface) がセキュリティ プロセスを処理します。 SSPI 層でセキュリティエラーが発生すると、Windows Communication Foundation (WCF) によって表示されます。 このトピックでは、エラーの診断に役立つフレームワークと一連の質問を示します。  
@@ -36,22 +36,22 @@ ms.locfileid: "69968859"
   
  この表の列見出しは、サーバーが使用すると考えられるアカウントの種類を示します。 左の列は、クライアントが使用すると考えられるアカウントの種類を示します。  
   
-||Local User|ローカル システム|Domain User|Domain Machine|  
+||ローカル ユーザー|ローカル システム|ドメイン ユーザー|Domain Machine|  
 |-|----------------|------------------|-----------------|--------------------|  
-|Local User|NTLM|NTLM|NTLM|NTLM|  
+|ローカル ユーザー|NTLM|NTLM|NTLM|NTLM|  
 |ローカル システム|匿名 NTLM|匿名 NTLM|匿名 NTLM|匿名 NTLM|  
-|Domain User|NTLM|NTLM|Kerberos|Kerberos|  
+|ドメイン ユーザー|NTLM|NTLM|Kerberos|Kerberos|  
 |Domain Machine|NTLM|NTLM|Kerberos|Kerberos|  
   
  具体的には、次の 4 種類のアカウントがあります。  
   
-- ローカルユーザー:コンピューターのみのユーザープロファイル。 例 : `MachineName\Administrator` または `MachineName\ProfileName`。  
+- Local User : コンピューター専用のユーザー プロファイル。 例 : `MachineName\Administrator` または `MachineName\ProfileName`。  
   
-- ローカルシステム:ドメインに参加していないコンピューター上のビルトインアカウントシステム。  
+- Local System : ドメインに参加していないコンピューターの SYSTEM ビルトイン アカウント。  
   
-- ドメインユーザー:Windows ドメインのユーザーアカウント。 たとえば、`DomainName\ProfileName` のように指定します。  
+- Domain User : Windows ドメインのユーザー アカウント。 たとえば、`DomainName\ProfileName` のように指定します。  
   
-- ドメインマシン:Windows ドメインに参加しているコンピューター上で実行されているコンピューター id を持つプロセス。 たとえば、`MachineName\Network Service` のように指定します。  
+- Domain Machine : Windows ドメインに参加しているコンピューターで実行されている、コンピューター ID を使用するプロセス。 たとえば、`MachineName\Network Service` のように指定します。  
   
 > [!NOTE]
 > サービス資格情報は、<xref:System.ServiceModel.ICommunicationObject.Open%2A> クラスの <xref:System.ServiceModel.ServiceHost> メソッドが呼び出されたときにキャプチャされます。 クライアント資格情報は、クライアントがメッセージを送信するたびに読み取られます。  
@@ -93,12 +93,12 @@ ms.locfileid: "69968859"
   
     1. NTLM を使用できないようにするには、コードで `ChannelFactory.Credentials.Windows.AllowNtlm = false` ステートメントを使用します。  
   
-    2. 構成ファイルで `allowNtlm` 属性を `false` に設定することもできます。 この属性は、 [ \<windows >](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md)に含まれています。  
+    2. 構成ファイルで `allowNtlm` 属性を `false` に設定することもできます。 この属性は、 [windows >\<](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md)に含まれています。  
   
 ### <a name="ntlm-protocol"></a>NTLM プロトコル  
   
 #### <a name="negotiate-ssp-falls-back-to-ntlm-but-ntlm-is-disabled"></a>ネゴシエート SSP は NTLM にフォールバックするが、NTLM が無効になっている  
- プロパティ<xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>がに`false`設定されている場合、NTLM が使用されている場合、Windows Communication Foundation (WCF) がベストエフォートで例外をスローします。 ただし、このプロパティを `false` に設定しても、ネットワーク経由で NTLM 資格情報が送信されなくなるとは限りません。  
+ <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> プロパティは `false`に設定されます。これにより、Windows Communication Foundation (WCF) は、NTLM が使用されている場合に、ベストエフォートで例外をスローします。 ただし、このプロパティを `false` に設定しても、ネットワーク経由で NTLM 資格情報が送信されなくなるとは限りません。  
   
  NTLM へのフォールバックを無効にする方法を次に示します。  
   
@@ -139,12 +139,12 @@ ms.locfileid: "69968859"
  [!code-vb[C_DebuggingWindowsAuth#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#3)]  
   
 #### <a name="sspi-is-not-available"></a>SSPI を使用できない  
- サーバーとして使用する場合、次のオペレーティングシステムは Windows 認証をサポートしていません。[!INCLUDE[wxp](../../../../includes/wxp-md.md)]Home edition、 [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Media Center Edition、および[!INCLUDE[wv](../../../../includes/wv-md.md)]home edition。  
+ サーバーとして使用する場合、次のオペレーティングシステムは Windows 認証をサポートしていません: [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition、[!INCLUDE[wxp](../../../../includes/wxp-md.md)] Media Center Edition、Windows Vista Home edition。  
   
 #### <a name="developing-and-deploying-with-different-identities"></a>異なる ID を使用した開発と展開  
  アプリケーションを 1 台のコンピューターで開発し、別のコンピューターに展開し、異なるアカウントの種類を使用して各コンピューターで認証を行う場合、動作の違いが発生する場合があります。 たとえば、`SSPI Negotiated` 認証モードを使用して Windows XP Professional コンピューターでアプリケーションを開発するとします。 ローカル ユーザー アカウントを使用して認証する場合は、NTLM プロトコルが使用されます。 アプリケーションを開発した後は、ドメイン アカウントで実行されるサービスを Windows Server 2003 コンピューターに展開します。 この時点で、クライアントは Kerberos とドメイン コントローラーを使用するため、このサービスを認証できなくなります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
 - <xref:System.ServiceModel.Security.WindowsServiceCredential>

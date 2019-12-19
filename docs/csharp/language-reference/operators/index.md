@@ -9,16 +9,16 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 78233b9a18f4369ebb086f2016af3f945b6a654a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 11c544e7fc923b0820141fb2e096ef7707f0a95f
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039012"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552473"
 ---
 # <a name="c-operators-c-reference"></a>C# 演算子 (C# リファレンス)
 
-C# では、組み込み型でサポートされた演算子が多数提供されています。 たとえば、[算術演算子](arithmetic-operators.md)は数値オペランドで算術演算を実行し、[ブール論理演算子](boolean-logical-operators.md)は [bool](../keywords/bool.md) オペランドで論理演算を実行します。 特定の演算子は[オーバーロード](operator-overloading.md)できます。 演算子のオーバーロードを利用すると、ユーザー定義型のオペランドに対して演算子の動作を指定できます。
+C# では、組み込み型でサポートされた演算子が多数提供されています。 たとえば、[算術演算子](arithmetic-operators.md)は数値オペランドで算術演算を実行し、[ブール論理演算子](boolean-logical-operators.md)は [bool](../builtin-types/bool.md) オペランドで論理演算を実行します。 特定の演算子は[オーバーロード](operator-overloading.md)できます。 演算子のオーバーロードを利用すると、ユーザー定義型のオペランドに対して演算子の動作を指定できます。
 
 [式](../../programming-guide/statements-expressions-operators/expressions.md)では、演算子の優先順位と結合規則によって、操作の実行順序が決まります。 かっこを使用すれば、演算子の優先順位と結合規則によって定められた評価の順序を変更することができます。
 
@@ -42,12 +42,12 @@ Console.WriteLine(a); //  output: 8
 
 | 演算子 | カテゴリまたは名前 |
 | --------- | ---------------- |
-| [x.y](member-access-operators.md#member-access-operator-)、[x?.y](member-access-operators.md#null-conditional-operators--and-)、[x?[y]](member-access-operators.md#null-conditional-operators--and-)、[f(x)](member-access-operators.md#invocation-operator-)、[a&#91;i&#93;](member-access-operators.md#indexer-operator-)、[x++](arithmetic-operators.md#increment-operator-)、[x--](arithmetic-operators.md#decrement-operator---)、[new](new-operator.md)、[typeof](type-testing-and-cast.md#typeof-operator)、[checked](../keywords/checked.md)、[unchecked](../keywords/unchecked.md)、[default](default.md)、[nameof](nameof.md)、[delegate](delegate-operator.md)、[sizeof](sizeof.md)、[stackalloc](stackalloc.md)、[x->y](pointer-related-operators.md#pointer-member-access-operator--) | プライマリ |
+| [x.y](member-access-operators.md#member-access-operator-)、[x?.y](member-access-operators.md#null-conditional-operators--and-)、[x?[y]](member-access-operators.md#null-conditional-operators--and-)、[f(x)](member-access-operators.md#invocation-operator-)、[a&#91;i&#93;](member-access-operators.md#indexer-operator-)、[x++](arithmetic-operators.md#increment-operator-)、[x--](arithmetic-operators.md#decrement-operator---)、[new](new-operator.md)、[typeof](type-testing-and-cast.md#typeof-operator)、[checked](../keywords/checked.md)、[unchecked](../keywords/unchecked.md)、[default](default.md)、[nameof](nameof.md)、[delegate](delegate-operator.md)、[sizeof](sizeof.md)、[stackalloc](stackalloc.md)、[x->y](pointer-related-operators.md#pointer-member-access-operator--) | 1 次式 |
 | [+x](arithmetic-operators.md#unary-plus-and-minus-operators)、[-x](arithmetic-operators.md#unary-plus-and-minus-operators)、[\!x](boolean-logical-operators.md#logical-negation-operator-)、[~x](bitwise-and-shift-operators.md#bitwise-complement-operator-)、[++x](arithmetic-operators.md#increment-operator-)、[--x](arithmetic-operators.md#decrement-operator---)、[^x](member-access-operators.md#index-from-end-operator-)、[(T)x](type-testing-and-cast.md#cast-operator-)、[await](await.md)、[&x](pointer-related-operators.md#address-of-operator-)、[*x](pointer-related-operators.md#pointer-indirection-operator-)、[true and false](true-false-operators.md) | 単項 |
-| [x..y](member-access-operators.md#range-operator-) | Range |
+| [x..y](member-access-operators.md#range-operator-) | 範囲 |
 | [x * y](arithmetic-operators.md#multiplication-operator-)、[x / y](arithmetic-operators.md#division-operator-)、[x % y](arithmetic-operators.md#remainder-operator-) | 乗法|
 | [x + y](arithmetic-operators.md#addition-operator-)、[x – y](arithmetic-operators.md#subtraction-operator--) | 加法 |
-| [x \<\<  y](bitwise-and-shift-operators.md#left-shift-operator-)、[x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | Shift |
+| [x \<\<  y](bitwise-and-shift-operators.md#left-shift-operator-)、[x >> y](bitwise-and-shift-operators.md#right-shift-operator-) | シフト |
 | [x \< y](comparison-operators.md#less-than-operator-)、[x > y](comparison-operators.md#greater-than-operator-)、[x \<= y](comparison-operators.md#less-than-or-equal-operator-)、[x >= y](comparison-operators.md#greater-than-or-equal-operator-)、[is](type-testing-and-cast.md#is-operator)、[as](type-testing-and-cast.md#as-operator) | 関係式と型検査 |
 | [x == y](equality-operators.md#equality-operator-), [x != y](equality-operators.md#inequality-operator-) | 等価比較 |
 | `x & y` | [ブール演算の論理 AND](boolean-logical-operators.md#logical-and-operator-) または[ビット演算の論理 AND](bitwise-and-shift-operators.md#logical-and-operator-) |
@@ -78,7 +78,7 @@ Console.WriteLine($"a = {a}, b = {b}");  // output: a = 1, b = 6
 
 式内のオペランドは、演算子の優先順位と結合規則に関係なく、左から右に評価されます。 次の例では、演算子とオペランドが評価される順序を示しています。
 
-| 式 | 評価の順序 |
+| 正規表現 | 評価の順序 |
 | ---------- | ------------------- |
 |`a + b`|a、b、+|
 |`a + b * c`|a、b、c、*、+|

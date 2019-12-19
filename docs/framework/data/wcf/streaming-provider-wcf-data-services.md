@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: da575c65902ec8751c12482d0c8d0abd523623e4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a5793eae92ffdfa65872c93273bd7cfefdc6f674
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975120"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568807"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>ストリーミング プロバイダー (WCF Data Services)
 
@@ -25,7 +25,7 @@ ms.locfileid: "73975120"
 
 - メディア リンク エントリ - 関連するメディア リソース ストリームへの参照を含むエンティティ。
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、ストリーミング データ プロバイダーを実装してバイナリ リソース ストリームを定義します。 ストリーミングプロバイダーの実装では、特定のエンティティに関連付けられたメディアリソースストリームが <xref:System.IO.Stream> オブジェクトとしてデータサービスに提供されます。 この実装によって、データ サービスでは、指定された MIME の種類のバイナリ データ ストリームとしてメディア リソースを HTTP 経由で受け入れて、返すことができます。
+WCF Data Services では、ストリーミングデータプロバイダーを実装することによってバイナリリソースストリームを定義します。 ストリーミングプロバイダーの実装では、特定のエンティティに関連付けられたメディアリソースストリームが <xref:System.IO.Stream> オブジェクトとしてデータサービスに提供されます。 この実装によって、データ サービスでは、指定された MIME の種類のバイナリ データ ストリームとしてメディア リソースを HTTP 経由で受け入れて、返すことができます。
 
 バイナリ データのストリーミングをサポートするデータ サービスを構成するには、次の手順に従う必要があります。
 
@@ -79,7 +79,7 @@ Entity Framework プロバイダーを使用し、メディアリソースを公
 
 ## <a name="creating-the-streaming-data-service"></a>ストリーミング データ サービスの作成
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ランタイムに <xref:System.Data.Services.Providers.IDataServiceStreamProvider> の実装へのアクセスを提供するには、作成するデータ サービスで <xref:System.IServiceProvider> インターフェイスも実装する必要があります。 次の例は、<xref:System.IServiceProvider.GetService%2A> メソッドを実装して、`PhotoServiceStreamProvider` を実装する <xref:System.Data.Services.Providers.IDataServiceStreamProvider> クラスのインスタンスを返す方法を示しています。
+WCF Data Services ランタイムに <xref:System.Data.Services.Providers.IDataServiceStreamProvider> の実装へのアクセスを提供するには、作成するデータサービスも <xref:System.IServiceProvider> インターフェイスを実装する必要があります。 次の例は、<xref:System.IServiceProvider.GetService%2A> メソッドを実装して、`PhotoServiceStreamProvider` を実装する <xref:System.Data.Services.Providers.IDataServiceStreamProvider> クラスのインスタンスを返す方法を示しています。
 
 [!code-csharp[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_photo_streaming_service/cs/photodata.svc.cs#photoservicestreamingprovider)]
 [!code-vb[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_photo_streaming_service/vb/photodata.svc.vb#photoservicestreamingprovider)]
@@ -99,7 +99,7 @@ ASP.NET Web アプリケーションでデータサービスを作成する場�
 
 ## <a name="using-data-streams-in-a-client-application"></a>クライアント アプリケーションでのデータ ストリームの使用
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリを使用すると、クライアントのバイナリ ストリームとして公開されたリソースを取得および更新できます。 詳細については、「[バイナリデータの操作](working-with-binary-data-wcf-data-services.md)」を参照してください。
+WCF Data Services クライアントライブラリを使用すると、これらの公開されたリソースをクライアントでバイナリストリームとして取得し、更新することができます。 詳細については、「[バイナリデータの操作](working-with-binary-data-wcf-data-services.md)」を参照してください。
 
 ## <a name="considerations-for-working-with-a-streaming-provider"></a>ストリーミング プロバイダーの使用に関する考慮事項
 
@@ -137,7 +137,7 @@ ASP.NET Web アプリケーションでデータサービスを作成する場�
 
 詳細については、「[データサービスのバージョン管理](data-service-versioning-wcf-data-services.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Data Services プロバイダー](data-services-providers-wcf-data-services.md)
 - [カスタム データ サービス プロバイダー](custom-data-service-providers-wcf-data-services.md)

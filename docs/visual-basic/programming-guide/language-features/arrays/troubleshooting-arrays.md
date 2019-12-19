@@ -22,7 +22,7 @@ ms.locfileid: "74349065"
 ## <a name="compilation-errors-declaring-and-initializing-an-array"></a>配列の宣言と初期化に関するコンパイルエラー  
  コンパイルエラーは、配列の宣言、作成、および初期化に関する規則の誤解から生じる可能性があります。 エラーの最も一般的な原因は次のとおりです。  
   
-- 配列変数宣言で次元の長さを指定した後に、[新しい Operator](../../../../visual-basic/language-reference/operators/new-operator.md)句を指定します。 次のコード行は、この型の無効な宣言を示しています。  
+- 配列変数宣言で次元の長さを指定した後に、[New 演算子](../../../../visual-basic/language-reference/operators/new-operator.md) 句を指定します。 次のコード行は、この型の無効な宣言を示しています。  
   
      `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
   

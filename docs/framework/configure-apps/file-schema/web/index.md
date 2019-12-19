@@ -26,8 +26,8 @@ Web 設定は、.NET Framework のバージョンのインストール フォル
 Web 設定は、machine.config ファイル、ルート、Web.config ファイル、アプリケーション レベルの Web.config ファイルなどの他の構成ファイルでは使用されません。  
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system.web >** ](system-web-element-web-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<applicationPool >** ](applicationpool-element-web-settings.md)
+&nbsp;&nbsp;[ **\<system.web>** ](system-web-element-web-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<applicationPool>** ](applicationpool-element-web-settings.md)
 
 |要素|説明|  
 |-------------|-----------------|  

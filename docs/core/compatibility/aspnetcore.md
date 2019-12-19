@@ -1,19 +1,23 @@
 ---
 title: ASP.NET Core の破壊的変更 - .NET Core
 description: ASP.NET Core における破壊的変更をリストアップします。
-ms.date: 11/20/2019
+ms.date: 11/25/2019
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 26b1fc2d2abe2dd8421a8c527add6b9fd4f3f847
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 130a89f45c3f80975c56ea3a4845ee560921286e
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74282514"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568380"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core の破壊的変更
 
 次は、ASP.NET Core の破壊的変更を ASP.NET Core のバージョン別に一覧にしたものです。 ASP.NET Core からは、.NET Core で使用される Web アプリ開発機能が提供されます。
+
+## <a name="aspnet-core-31"></a>ASP.NET Core 3.1
+
+[!INCLUDE[HTTP: Browser SameSite changes impact authentication](~/includes/core-changes/aspnetcore/3.1/http-cookie-samesite-authn-impacts.md)]
 
 ## <a name="aspnet-core-30"></a>ASP.NET Core 3.0
 

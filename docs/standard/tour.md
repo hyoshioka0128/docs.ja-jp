@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: e0e35562e2351f9b985c74b60d8769577c3e3f56
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 274fea83c474d4b67aab919b604eda893d8204d7
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283897"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552865"
 ---
 # <a name="tour-of-net"></a>.NET のツアー
 
@@ -31,7 +31,7 @@ Microsoft が開発とサポートに力を注いでいる .NET 言語は、C#�
 
 * C# はシンプル、強力、タイプセーフ、そしてオブジェクト指向でありながらも、C スタイル言語の表現力と簡潔さが維持されています。 C や類似の言語を使い慣れている人であれば、ほとんど問題なく C# に適応できます。 C# について詳しくは、「[C# ガイド](../csharp/index.yml)」 (C# ガイド) をご覧ください。
 
-* F# はクロスプラットフォームの関数型プログラミング言語ですが、従来のオブジェクト指向および命令型プログラミングもサポートしています。 F# について詳しくは、「[F# ガイド](../fsharp/index.md)」 (F# ガイド) をご覧ください。
+* F# はクロスプラットフォームの関数型プログラミング言語ですが、従来のオブジェクト指向および命令型プログラミングもサポートしています。 F# について詳しくは、「[F# ガイド](../fsharp/index.yml)」 (F# ガイド) をご覧ください。
 
 * Visual Basic は、学習しやすい言語で、.NET 上で実行されるさまざまなアプリの構築に使用します。 .NET 言語の中で VB の構文は通常の人間の言語に最も近いため、ソフトウェア開発の経験のないユーザーでも使いやすい言語です。
 

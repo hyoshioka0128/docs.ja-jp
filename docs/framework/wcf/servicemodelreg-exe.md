@@ -2,12 +2,12 @@
 title: ServiceModel 登録ツール (ServiceModelReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
-ms.openlocfilehash: aa9fc1b2338007db240fb10a9af35754107b07d0
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 2b2580a43270cc221de9cfdf0894a59a040ba307
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424871"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837767"
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>ServiceModel 登録ツール (ServiceModelReg.exe)
 このコマンド ライン ツールは、単一コンピューター上で WCF および WF コンポーネントの登録を管理するための機能を提供します。 WCF および WF コンポーネントはインストール時に構成されるため、通常の状況ではこのツールを使用する必要はありません。 しかし、サービスのアクティブ化に関する問題が発生する場合は、このツールを使用してコンポーネントを登録できます。  
@@ -24,7 +24,7 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
  %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\  
   
 > [!NOTE]
-> ServiceModel 登録ツールが [!INCLUDE[wv](../../../includes/wv-md.md)]で実行されている場合、 **[Windows の機能]** ダイアログボックスに、 **Microsoft .NET Framework 3.0**の**Windows Communication Foundation HTTP アクティブ化**] オプションがオンになっていることが反映されないことがあります。 **[Windows の機能]** ダイアログボックスにアクセスするには、 **[スタート]** ボタンをクリックし、 **[実行]** をクリックしてから、「」**と入力し**ます。  
+> ServiceModel 登録ツールが Windows Vista で実行されている場合、 **[windows の機能]** ダイアログが表示されないことがあります。 **Microsoft .NET Framework 3.0**の**Windows Communication Foundation HTTP Activation**オプションが有効になっていることを示します。 **[Windows の機能]** ダイアログボックスにアクセスするには、 **[スタート]** ボタンをクリックし、 **[実行]** をクリックしてから、「」**と入力し**ます。  
   
  次の表は、ServiceModelReg.exe で使用できるオプションを示します。  
   
@@ -37,7 +37,7 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
 |`-u`|-c で指定された WCF および WF のコンポーネントをアンインストールします。|  
 |`-c`|コンポーネントをインストールまたはアンインストールします。<br /><br /> -httpnamespace-HTTP 名前空間の予約<br />-tcpportsharing-TCP ポート共有サービス<br />-tcpactivation – TCP activation service (.NET 4 クライアントプロファイルではサポートされていません)<br />-namedpipeactivation –名前付きパイプアクティブ化サービス (.NET 4 クライアントプロファイルではサポートされていません)<br />-msmqactivation – MSMQ アクティブ化サービス (.NET 4 クライアントプロファイルではサポートされていません)<br />-etw – ETW イベントトレースマニフェスト (Windows Vista 以降)|  
 |`-q`|Quiet モード (エラー ログのみ表示)|  
-|`-v`|Verbose モード|  
+|`-v`|詳細モード。|  
 |`-nologo`|著作権やバナー メッセージを表示しません。|  
 |`-?`|ヘルプ テキストを表示します。|  
   

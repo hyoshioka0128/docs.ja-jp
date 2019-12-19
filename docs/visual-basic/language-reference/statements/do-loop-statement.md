@@ -64,18 +64,18 @@ Loop { While | Until } condition
 |`Loop`|必須。 `Do` ループの定義を終了します。|  
   
 ## <a name="remarks"></a>コメント  
- 条件が満たされるまで、一連のステートメントを無限に繰り返す必要がある場合は、`Do...Loop` 構造体を使用します。 ステートメントを設定された回数繰り返し実行する場合は、.. [.次のステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)は通常、より適しています。  
+ 条件が満たされるまで、一連のステートメントを無限に繰り返す必要がある場合は、`Do...Loop` 構造体を使用します。 ステートメントを設定された回数繰り返し実行する場合は、[For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md) は通常、より適しています。  
   
  `While` または `Until` のいずれかを使用して `condition`を指定できますが、両方を指定することはできません。  
   
  ループの開始時または終了時に、`condition` テストできるのは1回だけです。 ループの開始時に (`Do` ステートメントで) `condition` をテストした場合、ループは一度も実行されない可能性があります。 ループの最後 (`Loop` ステートメント) でテストした場合、ループは常に少なくとも1回は実行されます。  
   
- 通常、この条件は2つの値の比較によって得られますが、[ブールデータ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md)の値 (`True` または `False`) に評価される任意の式を指定できます。 これには、`Boolean`に変換されたその他のデータ型 (数値型など) の値が含まれます。  
+ 通常、この条件は2つの値の比較によって得られますが、[Boolean データ型](../../../visual-basic/language-reference/data-types/boolean-data-type.md) の値 (`True` または `False`) に評価される任意の式を指定できます。 これには、`Boolean`に変換されたその他のデータ型 (数値型など) の値が含まれます。  
   
  ループを入れ子にするには、別のループ内にループを挿入し `Do` ます。 また、さまざまな種類の制御構造を相互に入れ子にすることもできます。 詳細については、「[入れ子になったコントロール構造](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)」を参照してください。  
   
 > [!NOTE]
-> `Do...Loop` 構造では、より高い柔軟性が得[られます。End While ステートメント](../../../visual-basic/language-reference/statements/while-end-while-statement.md)を使用すると、`condition` が `True` 停止したとき、または最初に `True`になったときにループを終了するかどうかを決定できます。 また、ループの開始時または終了時に `condition` をテストすることもできます。  
+> `Do...Loop` 構造では、より高い柔軟性が得[While...End While ステートメント](../../../visual-basic/language-reference/statements/while-end-while-statement.md) を使用すると、`condition` が `True` 停止したとき、または最初に `True`になったときにループを終了するかどうかを決定できます。 また、ループの開始時または終了時に `condition` をテストすることもできます。  
   
 ## <a name="exit-do"></a>終了  
  [Exit Do](../../../visual-basic/language-reference/statements/exit-statement.md)ステートメントを使用すると、別の方法で `Do…Loop`を終了できます。 `Exit Do` は、`Loop` ステートメントの直後のステートメントに制御を直ちに転送します。  

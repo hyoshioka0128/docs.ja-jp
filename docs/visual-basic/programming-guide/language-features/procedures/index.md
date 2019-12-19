@@ -1,5 +1,5 @@
 ---
-title: 手順
+title: Visual Basic におけるプロシージャ
 ms.date: 04/28/2017
 helpviewer_keywords:
 - procedures [Visual Basic], structured code
@@ -71,5 +71,5 @@ ms.locfileid: "74345994"
 - [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)
 - [再帰プロシージャ](./recursive-procedures.md)
 - [プロシージャのオーバーロード](./procedure-overloading.md)
-- [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
+- [Visual Basic におけるジェネリック プロシージャ](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
 - [クラスとオブジェクト](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

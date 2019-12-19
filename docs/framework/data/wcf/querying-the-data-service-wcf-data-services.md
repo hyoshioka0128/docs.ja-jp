@@ -9,16 +9,16 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: e37a1654bdc62937bbb27c293a110293c9928645
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 99fe377e8fff193c4f8bb566946b95c61c1b3693
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975163"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568881"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>データ サービスに対するクエリ (WCF Data Services)
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアント ライブラリを使用すると、言語統合クエリ (LINQ) を含め、使い慣れた .NET Framework プログラミング パターンを使用してデータ サービスに対してクエリを実行できます。 このクライアント ライブラリは、クライアント上で <xref:System.Data.Services.Client.DataServiceQuery%601> クラスのインスタンスとして定義されたクエリを HTTP GET 要求メッセージに変換します。 ライブラリは応答メッセージを受信し、クライアントデータサービスクラスのインスタンスに変換します。 これらのクラスは、<xref:System.Data.Services.Client.DataServiceContext> が属する <xref:System.Data.Services.Client.DataServiceQuery%601> によって追跡されます。
+WCF Data Services クライアントライブラリを使用すると、統合言語クエリ (LINQ) を含め、使い慣れた .NET Framework プログラミングパターンを使用して、データサービスに対するクエリを実行できます。 このクライアント ライブラリは、クライアント上で <xref:System.Data.Services.Client.DataServiceQuery%601> クラスのインスタンスとして定義されたクエリを HTTP GET 要求メッセージに変換します。 ライブラリは応答メッセージを受信し、クライアントデータサービスクラスのインスタンスに変換します。 これらのクラスは、<xref:System.Data.Services.Client.DataServiceContext> が属する <xref:System.Data.Services.Client.DataServiceQuery%601> によって追跡されます。
 
 ## <a name="data-service-queries"></a>データ サービス クエリ
 
@@ -45,11 +45,11 @@ ms.locfileid: "73975163"
 
 詳細については、「[方法: データサービスクエリを実行する](how-to-execute-data-service-queries-wcf-data-services.md)」を参照してください。
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントは、でC#*動的*な型を使用する場合など、遅延バインディングオブジェクトのクエリをサポートします。 パフォーマンス上の理由から、データ サービスに対しては常に厳密に型指定されたクエリを作成するようにしてください。 <xref:System.Tuple> 型と動的オブジェクトはクライアントでサポートされていません。
+WCF Data Services クライアントは、でC#*動的*な型を使用する場合など、遅延バインディングオブジェクトのクエリをサポートします。 パフォーマンス上の理由から、データ サービスに対しては常に厳密に型指定されたクエリを作成するようにしてください。 <xref:System.Tuple> 型と動的オブジェクトはクライアントでサポートされていません。
 
 ## <a name="linq-queries"></a>LINQ クエリ
 
-<xref:System.Data.Services.Client.DataServiceQuery%601> クラスは LINQ で定義された <xref:System.Linq.IQueryable%601> インターフェイスを実装するため、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] クライアントライブラリは、エンティティセットデータに対する LINQ クエリを、データサービスリソースに対して評価されるクエリ式を表す URI に変換できます。 次の例は、前述の <xref:System.Data.Services.Client.DataServiceQuery%601> と同じ LINQ クエリです。ここでは、輸送費が 30 ドルを超える `Orders` を取得し、その結果を輸送費順に並べ替えます。
+<xref:System.Data.Services.Client.DataServiceQuery%601> クラスは LINQ で定義された <xref:System.Linq.IQueryable%601> インターフェイスを実装するため、WCF Data Services クライアントライブラリは、エンティティセットデータに対する LINQ クエリを、データサービスリソースに対して評価されるクエリ式を表す URI に変換できます。 次の例は、前述の <xref:System.Data.Services.Client.DataServiceQuery%601> と同じ LINQ クエリです。ここでは、輸送費が 30 ドルを超える `Orders` を取得し、その結果を輸送費順に並べ替えます。
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionslinqspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqspecific)]
@@ -67,7 +67,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 
 ## <a name="adding-query-options"></a>クエリ オプションの追加
 
-データ サービス クエリは、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] で提供されるすべてのクエリ オプションをサポートしています。 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> メソッドを呼び出して、クエリ オプションを <xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスに追加します。 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> は、新しい <xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスを返します。このインスタンスは元のクエリと同等ですが、新しいクエリ オプション セットを含みます。 次のクエリを実行すると、`Orders` 値でフィルターされ、`Freight` によって降順に並べ替えられた `OrderID` が返されます。
+データサービスクエリは、WCF Data Servicess が提供するすべてのクエリオプションをサポートしています。 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> メソッドを呼び出して、クエリ オプションを <xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスに追加します。 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> は、新しい <xref:System.Data.Services.Client.DataServiceQuery%601> インスタンスを返します。このインスタンスは元のクエリと同等ですが、新しいクエリ オプション セットを含みます。 次のクエリを実行すると、`Orders` 値でフィルターされ、`Freight` によって降順に並べ替えられた `OrderID` が返されます。
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionsspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionsspecific)]
@@ -118,7 +118,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 
 - <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A> - 結果の次のページの URI を含む <xref:System.Data.Services.Client.DataServiceQueryContinuation> オブジェクトを返します。
 
-既定では、[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、クエリ URI によって明示的に選択されたデータのみを返します。 これにより、必要に応じてデータ サービスから追加のデータを明示的に読み込むことができます。 データ サービスからデータを明示的に読み込むたびに要求がデータ サービスに送られます。 明示的に読み込むことができるデータには、関連エンティティ、ページングされた応答データ、バイナリ データ ストリームがあります。
+既定では、WCF Data Services は、クエリ URI によって明示的に選択されたデータのみを返します。 これにより、必要に応じてデータ サービスから追加のデータを明示的に読み込むことができます。 データ サービスからデータを明示的に読み込むたびに要求がデータ サービスに送られます。 明示的に読み込むことができるデータには、関連エンティティ、ページングされた応答データ、バイナリ データ ストリームがあります。
 
 > [!NOTE]
 > データ サービスはページングされた応答を返す場合があるので、アプリケーションではページングされたデータ サービス応答を処理するプログラミング パターンを使用することをお勧めします。 詳細については、「[遅延コンテンツの読み込み](loading-deferred-content-wcf-data-services.md)」を参照してください。
@@ -151,6 +151,6 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 
 - [方法: クエリ結果を射影する](how-to-project-query-results-wcf-data-services.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [WCF Data Services クライアント ライブラリ](wcf-data-services-client-library.md)

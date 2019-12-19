@@ -2,48 +2,48 @@
 title: WCF 開発者向けの新しい ASP.NET Core gRPC プロジェクト-gRPC を作成する
 description: Visual Studio またはコマンドラインを使用して gRPC プロジェクトを作成する方法について説明します。
 ms.date: 09/02/2019
-ms.openlocfilehash: 992c3f57be25ae2517d41437170dc287f58934b6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ea6d7658404f61fedb25d7de7ddedb7c51437383
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967894"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711446"
 ---
 # <a name="create-a-new-aspnet-core-grpc-project"></a>新しい ASP.NET Core gRPC プロジェクトを作成する
 
-.NET Core には、強力な CLI ツール `dotnet`が付属しています。このツールを使用すると、コマンドラインからプロジェクトとソリューションを作成および管理できます。 このツールは Visual Studio と密接に統合されているため、使い慣れた GUI インターフェイスを通じてすべてを使用できます。 この章では、新しい ASP.NET Core gRPC プロジェクトを作成する両方の方法について説明します。最初に Visual Studio を使用し、次に .NET Core CLI を使用します。
+.NET Core SDK には、`dotnet`の強力な CLI ツールが付属しています。このツールを使用すると、コマンドラインからプロジェクトとソリューションを作成および管理できます。 SDK は Visual Studio と密接に統合されているので、使い慣れたグラフィカルユーザーインターフェイスを使用してすべてを利用できます。 この章では、新しい ASP.NET Core gRPC プロジェクトを作成する両方の方法について説明します。
 
-## <a name="create-the-project-using-visual-studio"></a>Visual Studio を使用してプロジェクトを作成する
+## <a name="create-the-project-by-using-visual-studio"></a>Visual Studio を使用してプロジェクトを作成する
 
 > [!IMPORTANT]
-> ASP.NET Core 3.0 アプリを開発するには、 **ASP.NET および web 開発**ワークロードがインストールされた Visual Studio 2019.3 以降が必要です。
+> ASP.NET Core 3.0 アプリを開発するには、 **ASP.NET と web 開発**ワークロードがインストールされた Visual Studio 2019 16.3 以降が必要です。
 
-空の*ソリューション*テンプレートから、 **TraderSys**という名前の空のソリューションを作成します。 `src`という名前のソリューションフォルダーを追加し、フォルダーを右クリックして、コンテキストメニューから [ > **新しいプロジェクト**の**追加**] を選択します。 [テンプレート検索] ボックスに「`grpc`」と入力すると、`gRPC Service`という名前のプロジェクトテンプレートが表示されます。
+空の*ソリューション*テンプレートから、 **TraderSys**という名前の空のソリューションを作成します。 `src`という名前のソリューションフォルダーを追加します。 次に、フォルダーを右クリックし、[**新しいプロジェクト**の**追加** > ] を選択します。 [テンプレート検索] ボックスに「`grpc`」と入力すると、`gRPC Service`という名前のプロジェクトテンプレートが表示されます。
 
-![GRPC サービスプロジェクトテンプレートを表示する [新しいプロジェクトの追加] ダイアログ](media/create-project/new-grpc-project.png)
+![[新しいプロジェクトの追加] ダイアログボックスのスクリーンショット](media/create-project/new-grpc-project.png)
 
-**[次]** へ をクリックして **[プロジェクトの構成]** ダイアログに進み、プロジェクトに `TraderSys.Portfolios`という名前を設定して、`src` サブディレクトリを**場所**に追加します。
+**[次]** へ を選択して、 **[新しいプロジェクトの構成]** ダイアログボックスに進みます。 プロジェクトに `TraderSys.Portfolios`という名前を指定し、その**場所**に `src` サブディレクトリを追加します。
 
-![プロジェクトの構成ダイアログ](media/create-project/configure-project.png)
+![[新しいプロジェクトの構成] ダイアログボックスのスクリーンショット](media/create-project/configure-project.png)
 
-**[次]** へ をクリックして、 **[新しい grpc プロジェクト]** ダイアログボックスに進みます。
+**[次]** へ を選択して、 **[新しい Grpc サービスの作成]** ダイアログボックスに進みます。
 
-![新しい gRPC プロジェクトダイアログ](media/create-project/create-new-grpc-service.png)
+![[新しい gRPC サービスの作成] ダイアログボックスのスクリーンショット](media/create-project/create-new-grpc-service.png)
 
-現時点では、サービスを作成するためのオプションは限られています。 Docker は後でブックに導入されるため、このチェックボックスはオンのままにして **[作成]** をクリックするだけです。 最初の ASP.NET Core 3.0 gRPC プロジェクトが生成され、ソリューションに追加されます。 `dotnet CLI`の操作について知りたくない場合は、「[コード例のクリーンアップ](#clean-up-the-example-code)」のセクションに進んでください。
+現時点では、サービス作成のオプションは限られています。 Docker は後で導入されるため、このオプションをオフのままにしておきます。 [作成] を選択**する**だけです。 最初の ASP.NET Core 3.0 gRPC プロジェクトが生成され、ソリューションに追加されます。 `dotnet CLI`の操作について知りたくない場合は、「[コード例のクリーンアップ](#clean-up-the-example-code)」のセクションに進んでください。
 
-## <a name="create-the-project-using-the-net-core-cli"></a>.NET Core CLI を使用してプロジェクトを作成する
+## <a name="create-the-project-by-using-the-net-core-cli"></a>.NET Core CLI を使用してプロジェクトを作成します。
 
 ここでは、コマンドラインからのソリューションとプロジェクトの作成について説明します。
 
-次に示すように、ソリューションを作成します。 `-o` (または `--output`) フラグは、出力ディレクトリを指定します。これは、現在のディレクトリに作成されます (存在しない場合)。 このソリューションには、ディレクトリと同じ名前が付けられます (つまり、`TraderSys.sln`)。`-n` (または `--name`) フラグを使用して別の名前を指定することもできます。
+次のコマンドに示すように、ソリューションを作成します。 `-o` (または `--output`) フラグは、現在のディレクトリに作成されている出力ディレクトリを指定します (まだ存在しない場合)。 このソリューションには、ディレクトリと同じ名前が付けられています: `TraderSys.sln`。 別の名前を指定するには、`-n` (または `--name`) フラグを使用します。
 
 ```dotnetcli
 dotnet new sln -o TraderSys
 cd TraderSys
 ```
 
-ASP.NET Core 3.0 には、gRPC サービス用の CLI テンプレートが付属しています。 このテンプレートを使用して新しいプロジェクトを作成し、ASP.NET Core プロジェクトの規則と同様に `src` サブディレクトリに配置します。 `-n` フラグを使用して別の名前を指定しない限り、プロジェクトはディレクトリ (つまり `TraderSys.Portfolios.csproj`) の後に名前が付けられます。
+ASP.NET Core 3.0 には、gRPC サービス用の CLI テンプレートが付属しています。 このテンプレートを使用して新しいプロジェクトを作成し、ASP.NET Core プロジェクトの従来のように `src` サブディレクトリに配置します。 `-n` フラグを使用して別の名前を指定しない限り、プロジェクトにはディレクトリ (`TraderSys.Portfolios.csproj`) の後に名前が付けられます。
 
 ```dotnetcli
 dotnet new grpc -o src/TraderSys.Portfolios
@@ -56,17 +56,17 @@ dotnet sln add src/TraderSys.Portfolios
 ```
 
 > [!TIP]
-> 指定されたディレクトリに含まれるのは1つの `.csproj` ファイルのみであるため、入力を保存するディレクトリだけを指定することはできません。
+> 特定のディレクトリに含まれるのは1つの `.csproj` ファイルのみであるため、ディレクトリだけを指定して、入力を保存することができます。
 
 このソリューションは、Visual Studio 2019、Visual Studio Code、または任意のエディターで開くことができるようになりました。
 
 ## <a name="clean-up-the-example-code"></a>コード例をクリーンアップする
 
-これで、予約済みの gRPC テンプレートを使用してサンプルサービスが作成されました。このテンプレートは、本で既に確認されています。 これは、株価取引のコンテキストでは役に立たないので、最初のプロジェクトの内容を編集します。
+これで、このブックで既に確認されている gRPC テンプレートを使用して、サンプルサービスを作成できました。 これは、株価取引のコンテキストでは役に立たないので、最初のプロジェクトの内容を編集します。
 
 ### <a name="rename-and-edit-the-proto-file"></a>プロトコルファイルの名前を変更して編集する
 
-`Protos/greet.proto` ファイルの名前を `Protos/portfolios.proto` に変更し、エディターで開きます。 `package` 行の後のすべてを削除し、`option csharp_namespace`、`package`、および `service` の名前を変更して、既定の `SayHello` サービスを削除します。そのため、コードは次のようになります。
+`Protos/greet.proto` ファイルの名前を `Protos/portfolios.proto`に変更し、エディターで開きます。 `package` 行の後のすべてを削除します。 次に、`option csharp_namespace`、`package` と `service` の名前を変更し、既定の `SayHello` サービスを削除します。 コードは次のようになります。
 
 ```protobuf
 syntax = "proto3";
@@ -85,7 +85,7 @@ service Portfolios {
 
 Visual Studio などの統合開発環境 (IDE) で `greet.proto` ファイルの名前を変更すると、このファイルへの参照が `.csproj` ファイルで自動的に更新されます。 ただし、Visual Studio Code などの他のエディターでは、この参照は自動的に更新されないため、プロジェクトファイルを手動で編集する必要があります。
 
-GRPC ビルドターゲットには、`Protobuf` item 要素があります。この要素を使用して、コンパイルする `.proto` ファイルと、必要なコード生成の形式 ("サーバー" または "クライアント") を指定できます。
+GRPC ビルドターゲットには、`Protobuf` item 要素があります。この要素を使用して、コンパイルする `.proto` ファイルを指定できます。また、どの形式のコード生成が必要か (つまり、"Server" または "Client") があります。
 
 ```xml
 <ItemGroup>
@@ -93,9 +93,9 @@ GRPC ビルドターゲットには、`Protobuf` item 要素があります。�
 </ItemGroup>
 ```
 
-### <a name="rename-the-greeterservice-class"></a>GreeterService クラスの名前を変更する
+### <a name="rename-the-greeterservice-class"></a>`GreeterService` クラスの名前を変更する
 
-`GreeterService` クラスは `Services` フォルダーにあり、`Greeter.GreeterBase`から継承されます。 名前を `PortfolioService` に変更し、基本クラスを `Portfolios.PortfoliosBase`に変更します。 `override` メソッドを削除します。
+`GreeterService` クラスは `Services` フォルダーにあり、`Greeter.GreeterBase`から継承されます。 名前を `PortfolioService`に変更し、基本クラスを `Portfolios.PortfoliosBase`に変更します。 `override` メソッドを削除します。
 
 ```csharp
 public class PortfolioService : Portfolios.PortfoliosBase

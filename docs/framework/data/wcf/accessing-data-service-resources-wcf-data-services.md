@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
-ms.openlocfilehash: cf6877dd67ad9e17a43be5eafb84a2ecf21d7190
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7eea23ba3dc5e9cc327d9cdfba10c72af7525c30
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975431"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569404"
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>データ サービス リソースへのアクセス (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] は、Open Data Protocol (OData) をサポートして、Uri でアドレス指定できるリソースを含むフィードとしてデータを公開します。 これらのリソースは、 [Entity Data Model](../adonet/entity-data-model.md)のエンティティとリレーションシップの規則に従って表されます。 このモデルでは、エンティティはアプリケーション ドメイン内のデータの操作単位 (データ型) を表します (顧客、注文、項目、製品など)。 エンティティ データは、Representational State Transfer (REST) のセマンティクス (特に、標準的な HTTP 動詞である GET、PUT、POST、および DELETE) を使用してアクセスおよび変更できます。  
+WCF Data Services は、Open Data Protocol (OData) をサポートして、Uri でアドレス指定できるリソースを含むフィードとしてデータを公開します。 これらのリソースは、 [Entity Data Model](../adonet/entity-data-model.md)のエンティティとリレーションシップの規則に従って表されます。 このモデルでは、エンティティはアプリケーション ドメイン内のデータの操作単位 (データ型) を表します (顧客、注文、項目、製品など)。 エンティティ データは、Representational State Transfer (REST) のセマンティクス (特に、標準的な HTTP 動詞である GET、PUT、POST、および DELETE) を使用してアクセスおよび変更できます。  
   
 ## <a name="addressing-resources"></a>リソースへの対処  
  OData では、URI を使用してデータモデルによって公開されているすべてのデータに対応します。 たとえば、次の URI は、Customers エンティティセットであるフィードを返します。これには、Customer エンティティ型のすべてのインスタンスのエントリが含まれます。  
@@ -56,7 +56,7 @@ ms.locfileid: "73975431"
   
  返されたフィードのエントリは、注文の ShipCity プロパティの値でも並べ替えられています。  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] では、次の OData システムクエリオプションがサポートされています。  
+ WCF Data Services では、次の OData システムクエリオプションがサポートされています。  
   
 |クエリ オプション|説明|  
 |------------------|-----------------|  
@@ -78,6 +78,6 @@ ms.locfileid: "73975431"
 ## <a name="consuming-the-returned-feed"></a>返されたフィードの使用  
  OData リソースの URI を使用すると、サービスによって公開されるエンティティデータに対処できます。 Web ブラウザーの [アドレス] フィールドに URI を入力すると、要求されたリソースの OData フィード表現が返されます。 詳細については、 [WCF Data Services のクイックスタート](quickstart-wcf-data-services.md)を参照してください。 Web ブラウザーは、データサービスリソースから予想されるデータが返されることをテストする場合に便利ですが、データの作成、更新、および削除を行うことができる運用データサービスは、通常、Web ページのアプリケーションコードまたはスクリプト言語によってアクセスされます。 詳細については、「[クライアントアプリケーションでのデータサービスの使用](using-a-data-service-in-a-client-application-wcf-data-services.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Open Data Protocol Web サイト](https://www.odata.org/)

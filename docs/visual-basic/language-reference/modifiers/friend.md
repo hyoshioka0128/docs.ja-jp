@@ -30,9 +30,9 @@ ms.locfileid: "74351559"
  `Friend` は、モジュール、インターフェイス、または名前空間レベルでのみ使用できます。 したがって、`Friend` 要素の宣言コンテキストは、ソースファイル、名前空間、インターフェイス、モジュール、クラス、または構造体である必要があります。プロシージャを指定することはできません。  
 
 > [!NOTE]
-> [Protected Friend](protected-friend.md)アクセス修飾子を使用することもできます。これにより、クラスメンバーは、クラス内、派生クラス、およびクラスが定義されている同じアセンブリからアクセスできます。 クラス内および同じアセンブリ内の派生クラスからメンバーへのアクセスを制限するには、[プライベート Protected](private-protected.md)アクセス修飾子を使用します。
+> [Protected Friend](protected-friend.md)アクセス修飾子を使用することもできます。これにより、クラスメンバーは、クラス内、派生クラス、およびクラスが定義されている同じアセンブリからアクセスできます。 クラス内および同じアセンブリ内の派生クラスからメンバーへのアクセスを制限するには、[Private Protected](private-protected.md)アクセス修飾子を使用します。
 
- `Friend` とその他のアクセス修飾子の比較については、「 [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+ `Friend` とその他のアクセス修飾子の比較については、「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
   
 > [!NOTE]
 > 別のアセンブリがフレンドアセンブリであることを指定できます。これにより、`Friend`としてマークされているすべての型とメンバーにアクセスできるようになります。 詳細については、[Friend アセンブリ](../../../standard/assembly/friend.md)に関するページを参照してください。
@@ -49,7 +49,7 @@ ms.locfileid: "74351559"
   
  [Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
  [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
@@ -79,7 +79,7 @@ ms.locfileid: "74351559"
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)
 - [Private Protected](./private-protected.md)
 - [Protected Friend](./protected-friend.md)
-- [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
-- [手順](../../../visual-basic/programming-guide/language-features/procedures/index.md)
+- [Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Visual Basic におけるプロシージャ](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [構造体](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

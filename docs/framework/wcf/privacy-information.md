@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 0b277728d2f2c224d5e45e3990ab2fd588bc81d3
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c5500b8fd8b35081e83e2e9279dc4f236ef3c7b0
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318693"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837936"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation のプライバシー情報
 マイクロソフトは、エンド ユーザーのプライバシー保護に力を入れています。 Windows Communication Foundation (WCF) バージョン3.0 を使用してアプリケーションをビルドすると、アプリケーションがエンドユーザーのプライバシーに影響を与える可能性があります。 たとえば、アプリケーションが明示的にユーザーの連絡先情報を収集することがあります。つまり、アプリケーションがインターネットを経由して Web サイトに情報を要求したり、情報を送信したりすることがあります。 マイクロソフトの技術をアプリケーションに組み込んでいる場合、その技術にプライバシーに影響を与える可能性がある独自の動作が存在することがあります。 WCF は、お客様またはエンドユーザーが Microsoft に送信することを選択しない限り、アプリケーションからマイクロソフトに情報を送信しません。  
@@ -44,7 +44,7 @@ ms.locfileid: "72318693"
   
  認証によって、通信するエンドポイント間にセキュリティで保護されたセッションを確立できます。 このセッションは、セキュリティ セッションの有効期間が切れるまで有効な GUID によって識別されます。 格納されるデータと格納場所を次の表に示します。  
   
-|Data|記憶域|  
+|Data|Storage|  
 |----------|-------------|  
 |ユーザー名、X.509 証明書、Kerberos トークンなどのプレゼンテーション資格情報、および資格情報への参照|Windows 証明書ストアなど、標準の Windows 資格情報管理機構|  
 |ユーザー名とパスワードなど、ユーザーのメンバーシップ情報|ASP.NET メンバーシッププロバイダー。|  
@@ -54,7 +54,7 @@ ms.locfileid: "72318693"
 ## <a name="auditing"></a>監査  
  監査では、認証イベントと承認イベントの成功と失敗を記録します。 監査レコードには、サービス URI、アクション URI、および呼び出し元の ID が入ります。  
   
- また、監査では、管理者がメッセージ ログの設定 (オンまたはオフ) を変更した時刻を記録します。その理由は、メッセージ ログが、ヘッダーと本文のアプリケーション固有のデータをログに記録する可能性があるためです。 [!INCLUDE[wxp](../../../includes/wxp-md.md)] の場合、レコードはアプリケーション イベント ログに記録されます。 [!INCLUDE[wv](../../../includes/wv-md.md)] と [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] の場合、レコードは、セキュリティ イベント ログに記録されます。  
+ また、監査では、管理者がメッセージ ログの設定 (オンまたはオフ) を変更した時刻を記録します。その理由は、メッセージ ログが、ヘッダーと本文のアプリケーション固有のデータをログに記録する可能性があるためです。 [!INCLUDE[wxp](../../../includes/wxp-md.md)] の場合、レコードはアプリケーション イベント ログに記録されます。 Windows Vista および [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]では、レコードがセキュリティイベントログに記録されます。  
   
 ## <a name="transactions"></a>トランザクション  
  トランザクション機能は、WCF アプリケーションにトランザクションサービスを提供します。  
@@ -404,4 +404,4 @@ ms.locfileid: "72318693"
 ## <a name="see-also"></a>参照
 
 - [Windows Communication Foundation](index.md)
-- [セキュリティ](./feature-details/security.md)
+- [Security](./feature-details/security.md)

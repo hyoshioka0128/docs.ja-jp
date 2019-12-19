@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic]
 ms.assetid: 651c73e4-dca8-402b-9c6b-e3902b3a3f4b
-ms.openlocfilehash: 8956d8dd8f46b4235d71802ccc743dfebcb051be
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2108e36956ada98e48e6ab05cec56dbf2a12b3dd
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344153"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838261"
 ---
 # <a name="objects-visual-basic"></a>オブジェクト (Visual Basic)
 このトピックでは、Visual Basic ランタイム オブジェクトを示すトピックや、そのメンバー プロシージャ、プロパティ、およびイベントの表を含む、その他のトピックへのリンクを提供します。  
@@ -48,4 +48,3 @@ ms.locfileid: "74344153"
 ## <a name="see-also"></a>参照
 
 - [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)
-- [Visual Basic](../../../visual-basic/index.md)

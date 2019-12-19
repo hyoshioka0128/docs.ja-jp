@@ -32,10 +32,10 @@ End Namespace
   
 ## <a name="parts"></a>指定項目  
  グローバル  
- 省略可。 では、プロジェクトのルート名前空間から名前空間を定義できます。 [Visual Basic の「名前空間」を](../../../visual-basic/programming-guide/program-structure/namespaces.md)参照してください。  
+ 省略可。 では、プロジェクトのルート名前空間から名前空間を定義できます。 [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md) を参照してください。  
   
  `name`  
- 必須。 名前空間を識別する一意の名前。 有効な Visual Basic 識別子である必要があります。 詳細については、「宣言された[要素名](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。  
+ 必須。 名前空間を識別する一意の名前。 有効な Visual Basic 識別子である必要があります。 詳細については、[宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。  
   
  `componenttypes`  
  省略可。 名前空間を構成する要素。 これらには、列挙体、構造体、インターフェイス、クラス、モジュール、デリゲート、およびその他の名前空間が含まれますが、これらに限定されるわけではありません。  
@@ -64,9 +64,9 @@ End Namespace
   
  ジェネリックリストクラスの例のように、`Namespace` ステートメントで既存の名前空間を指定する場合は、ルート名前空間を null 値に設定できます。 これを行うには、 **[プロジェクト]** メニューの **[プロジェクトのプロパティ]** をクリックし、 **[ルート名前空間]** エントリをオフにして、ボックスが空になるようにします。 ジェネリックリストクラスの例でこれを実行しなかった場合、Visual Basic コンパイラは、プロジェクト `Payroll`内の新しい名前空間として `System.Collections.Generic` します。完全な名前は `Payroll.System.Collections.Generic`です。  
   
- または、`Global` キーワードを使用して、プロジェクトの外部で定義されている名前空間の要素を参照することもできます。 これにより、プロジェクト名をルート名前空間として保持できます。 これにより、プログラミング要素を既存の名前空間のものと誤ってマージする可能性が低くなります。 詳細については、「 [Visual Basic の名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)」の「完全修飾名のグローバルキーワード」セクションを参照してください。  
+ または、`Global` キーワードを使用して、プロジェクトの外部で定義されている名前空間の要素を参照することもできます。 そうすることで、プロジェクト名をルート名前空間として保持できます。 これにより、プログラミング要素を既存の名前空間のものと誤ってマージする可能性が低くなります。 詳細については、「[Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)」の「完全修飾名のグローバルキーワード」セクションを参照してください。  
   
- `Global` キーワードは、Namespace ステートメントでも使用できます。 これにより、プロジェクトのルート名前空間から名前空間を定義できます。 詳細については、「 [Visual Basic の名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)」の「名前空間ステートメントのグローバルキーワード」セクションを参照してください。  
+ `Global` キーワードは、Namespace ステートメントでも使用できます。 これにより、プロジェクトのルート名前空間から名前空間を定義できます。 詳細については、「[Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)」の「名前空間ステートメントのグローバルキーワード」セクションを参照してください。  
   
  **行う.** ルート名前空間は、名前空間名の予期しない連結につながる可能性があります。 プロジェクトの外部で定義されている名前空間への参照を作成した場合、Visual Basic コンパイラは、ルート名前空間の入れ子になった名前空間としてそれらを construe できます。 このような場合、コンパイラは、外部名前空間で既に定義されている型を認識しません。 これを回避するには、「ルート名前空間」で説明されているようにルート名前空間を null 値に設定するか、`Global` キーワードを使用して外部名前空間の要素にアクセスします。  
   
@@ -106,4 +106,4 @@ End Namespace
 
 - [Imports ステートメント (.NET 名前空間および型)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
 - [宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
-- [Visual Basic 内の名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)
+- [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)

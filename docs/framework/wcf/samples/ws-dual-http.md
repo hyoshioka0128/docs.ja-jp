@@ -2,12 +2,12 @@
 title: WS デュアル Http
 ms.date: 03/30/2017
 ms.assetid: 9997eba5-29ec-48db-86f3-fa77b241fb1a
-ms.openlocfilehash: 44fdf6f0b27e15c486afa32f67668e9fd6eeac10
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 1f1592598c0ed148f06c0a99ccdb8a8347175d8f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74138674"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716787"
 ---
 # <a name="ws-dual-http"></a>WS デュアル Http
 
@@ -21,7 +21,7 @@ ms.locfileid: "74138674"
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\DualHttp`
 
@@ -88,7 +88,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 4. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。
 
     > [!IMPORTANT]
-    > 複数コンピューター構成でクライアントを実行する場合は、 [\<クライアント > 要素の\<エンドポイント >](../../configure-apps/file-schema/wcf/endpoint-of-client.md)の `address` 属性と[`clientBaseAddress` バインド](../../configure-apps/file-schema/wcf/bindings.md)の\<属性の両方で localhost を置き換える必要があり >次に示すように、 [\<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)要素の要素には、適切なコンピューターの名前を指定します。
+    > 複数コンピューター構成でクライアントを実行する場合は、次に示すように、 [\<クライアントの > 要素の\<エンドポイント >](../../configure-apps/file-schema/wcf/endpoint-of-client.md)の `address` 属性と、`clientBaseAddress` [wsDualHttpBinding\<](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)要素の > [binding\<](../../configure-apps/file-schema/wcf/bindings.md)要素の > 属性の両方にある localhost を、適切なコンピューターの名前に置き換えてください。
 
     ```xml
     <client>

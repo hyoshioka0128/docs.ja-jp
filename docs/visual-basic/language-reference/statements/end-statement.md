@@ -40,7 +40,7 @@ End
   
  `End` は、開いている可能性のあるリソースには参加せずにアプリケーションを終了するため、使用する前に、正常に終了するようにしてください。 たとえば、アプリケーションでフォームが開いている場合は、コントロールが `End` ステートメントに到達する前に、それらを閉じる必要があります。  
   
- `End` は、すぐに停止する必要がある場合にのみ使用してください。 プロシージャを終了する通常の方法 ([Return statement](../../../visual-basic/language-reference/statements/return-statement.md)ステートメントと[Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)) は、プロシージャを正常に終了するだけでなく、呼び出し元のコードが正常に終了する機会を与えることもできます。 たとえば、コンソールアプリケーションは、単純に `Main` プロシージャから `Return` できます。  
+ `End` は、すぐに停止する必要がある場合にのみ使用してください。 プロシージャを終了する通常の方法 ([Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)ステートメントと[Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)) は、プロシージャを正常に終了するだけでなく、呼び出し元のコードが正常に終了する機会を与えることもできます。 たとえば、コンソールアプリケーションは、単純に `Main` プロシージャから `Return` できます。  
   
 > [!IMPORTANT]
 > `End` ステートメントは、<xref:System> 名前空間の <xref:System.Environment> クラスの <xref:System.Environment.Exit%2A> メソッドを呼び出します。 <xref:System.Environment.Exit%2A> には `UnmanagedCode` のアクセス許可が必要です。 そうしないと、<xref:System.Security.SecurityException> エラーが発生します。  

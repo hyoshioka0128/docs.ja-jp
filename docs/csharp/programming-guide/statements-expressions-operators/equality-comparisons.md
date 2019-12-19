@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - object equality [C#]
 ms.assetid: 10b865ea-4e7b-4127-9242-c9b8f57d9f04
-ms.openlocfilehash: bc3ce4b94bfc72e058d4660d01eb16ef0e0f11db
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a6876cb98a8c1b1e58e61eb650416d412467ae3d
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588719"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552420"
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>等価比較 (C# プログラミング ガイド)
 
@@ -24,11 +24,11 @@ ms.locfileid: "69588719"
   
  このコードでは、2 つのオブジェクトが作成されますが、代入ステートメント以降は、両方の参照が同一のオブジェクトを参照しています。 したがって、参照の等価性があります。 2 つの参照が同じオブジェクトを参照しているかどうかを判断するには、<xref:System.Object.ReferenceEquals%2A> メソッドを使用します。  
   
- 参照の等価性の概念は参照型のみに適用されます。 値型オブジェクトには参照の等価性がありません。これは、値型のインスタンスが変数に代入される場合、値のコピーが作成されるためです。 そのため、ボックス化を解除した 2 つの構造体でメモリ内の同じ場所を参照することはできません。 さらに、<xref:System.Object.ReferenceEquals%2A> を使用して 2 つの値型を比較する場合、オブジェクトに含まれている値がすべて同一である場合でも、結果は常に `false` になります。 これは、各変数が個別のオブジェクト インスタンスにボックス化されているためです。 詳細については、[方法:参照の等価性 (同値) をテストする](./how-to-test-for-reference-equality-identity.md)」をご覧ください。  
+ 参照の等価性の概念は参照型のみに適用されます。 値型オブジェクトには参照の等価性がありません。これは、値型のインスタンスが変数に代入される場合、値のコピーが作成されるためです。 そのため、ボックス化を解除した 2 つの構造体でメモリ内の同じ場所を参照することはできません。 さらに、<xref:System.Object.ReferenceEquals%2A> を使用して 2 つの値型を比較する場合、オブジェクトに含まれている値がすべて同一である場合でも、結果は常に `false` になります。 これは、各変数が個別のオブジェクト インスタンスにボックス化されているためです。 詳細については、[参照の等価性 (同値) をテストする](./how-to-test-for-reference-equality-identity.md)」をご覧ください。  
 
 ## <a name="value-equality"></a>値の等価性
 
- 値が等価であるとは、2 つのオブジェクトが同じ値を含むことを意味します。 [int](../../language-reference/builtin-types/integral-numeric-types.md)、[bool](../../language-reference/keywords/bool.md) などのプリミティブ値型では、値が等価であることをテストするのは簡単です。 次の例に示すように、[==](../../language-reference/operators/equality-operators.md#equality-operator-) 演算子を使用できます。  
+ 値が等価であるとは、2 つのオブジェクトが同じ値を含むことを意味します。 [int](../../language-reference/builtin-types/integral-numeric-types.md)、[bool](../../language-reference/builtin-types/bool.md) などのプリミティブ値型では、値が等価であることをテストするのは簡単です。 次の例に示すように、[==](../../language-reference/operators/equality-operators.md#equality-operator-) 演算子を使用できます。  
   
 ```csharp  
 int a = GetOriginalValue();  
@@ -51,7 +51,7 @@ if( b == a)
   
 ## <a name="related-topics"></a>関連トピック  
   
-|タイトル|説明|  
+|Title|説明|  
 |-----------|-----------------|  
 |[方法: 参照の等価性 (同値) をテストする](./how-to-test-for-reference-equality-identity.md)|2 つの変数に参照の等価性があるかどうかを確認する方法を説明します。|  
 |[方法: 型の値の等価性を定義する](./how-to-define-value-equality-for-a-type.md)|型の値の等価性にカスタムの定義を指定する方法を説明します。|  

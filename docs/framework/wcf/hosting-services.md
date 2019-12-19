@@ -4,14 +4,14 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-ms.openlocfilehash: 634e34eceeb3d3b8828a6d5ed85b6194bcf8586c
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: b914d5d9f578c5ce13dfc1c520f1b26f8af1fa76
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72961154"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837923"
 ---
-# <a name="hosting-services"></a>ホスティングサービス
+# <a name="hosting-services"></a>ホスティング サービス
 
 アクティブにするには、サービスを作成してそのコンテキストと有効期間を制御するランタイム環境内で、サービスをホストする必要があります。 Windows Communication Foundation (WCF) サービスは、マネージコードをサポートする任意の Windows プロセスで実行するように設計されています。
 
@@ -19,7 +19,7 @@ WCF は、サービス指向アプリケーションを構築するための統�
 
 これらのホスト オプションの範囲は、コンソール アプリケーション内部での実行から、Windows サービスのようなサーバー環境、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) で管理されるワーカー プロセス内での実行までさまざまです。 開発者は、サービスの展開要件を満たすホスト環境を選択します。 このような要件は、アプリケーションを展開するプラットフォーム、メッセージの送受信を行うトランスポート、適切な可用性を保証するために必要なプロセスのリサイクルや管理、その他、管理上または信頼性上の要件から導き出されます。 ホスト オプションの情報とガイドラインについて、次のセクションで説明します。
 
-## <a name="hosting-options"></a>ホスティングオプション
+## <a name="hosting-options"></a>ホスティング オプション
 
 ### <a name="self-host-in-a-managed-application"></a>マネージアプリケーションでの自己ホスト
  WCF サービスは、任意のマネージアプリケーションでホストできます。 これは、展開に必要なインフラストラクチャが最小限になるため、最も柔軟なオプションです。 マネージド アプリケーション コード内にサービスのコードを埋め込み、続いて <xref:System.ServiceModel.ServiceHost> のインスタンスを作成して開き、サービスを有効にします。 詳細については、「[方法: マネージアプリケーションで WCF サービスをホスト](how-to-host-a-wcf-service-in-a-managed-application.md)する」を参照してください。
@@ -35,7 +35,7 @@ WCF は、サービス指向アプリケーションを構築するための統�
  IIS でホストされるサービスは HTTP トランスポートしか使用できません。 IIS 5.1 の実装では、 [!INCLUDE[wxp](../../../includes/wxp-md.md)]にいくつかの制限がありました。 [!INCLUDE[wxp](../../../includes/wxp-md.md)] の IIS 5.1 によって WCF サービスに対して提供されるメッセージベースのアクティブ化では、同じコンピューター上の他のすべての自己ホスト型 WCF サービスがポート80を使用して通信することをブロックします。 WCF サービスは、[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]の IIS 6.0 でホストされている場合、他のアプリケーションと同じ AppDomain/アプリケーションプール/ワーカープロセスで実行できます。 ただし、WCF と IIS 6.0 はどちらもカーネルモードの HTTP スタック (http.sys) を使用するため、iis 6.0 は、IIS 5.1 とは異なり、同じコンピューターで実行されている他の自己ホスト型 WCF サービスとポート80を共有できます。
 
 ### <a name="windows-process-activation-service-was"></a>Windows プロセス アクティブ化サービス (WAS)
- Windows プロセス アクティブ化サービス (WAS) とは、 [!INCLUDE[lserver](../../../includes/lserver-md.md)] でも使用できる [!INCLUDE[wv](../../../includes/wv-md.md)]用の新しいプロセス アクティブ化機構です。 使い慣れた IIS 6.0 プロセスモデル (アプリケーションプールとメッセージベースのプロセスアクティベーション) とホスト機能 (迅速な障害保護、正常性の監視、リサイクルなど) が保持されますが、アクティベーションから HTTP への依存関係は削除されます。構造. IIS 7.0 では、HTTP 経由でのメッセージベースのアクティベーションを実行するために WAS が使用されます。 また、wcf でサポートされている他のプロトコル (TCP、MSMQ、名前付きパイプなど) に対してメッセージベースのアクティベーションを提供するために、WAS にもプラグインが追加されました。 これにより、IIS のプロセスのリサイクル、迅速な障害保護、一般的な構成システムなど、これまで HTTP ベースのアプリケーションのみで利用可能だった IIS 機能を、通信プロトコルを使用するアプリケーションでも使用できるようになりました。
+ Windows プロセスアクティブ化サービス (WAS) は、Windows Vista でも使用可能な [!INCLUDE[lserver](../../../includes/lserver-md.md)] 用の新しいプロセスアクティブ化メカニズムです。 使い慣れた IIS 6.0 プロセスモデル (アプリケーションプールとメッセージベースのプロセスアクティベーション) とホスト機能 (迅速な障害保護、正常性の監視、リサイクルなど) が保持されますが、アクティベーションから HTTP への依存関係は削除されます。構造. IIS 7.0 では、HTTP 経由でのメッセージベースのアクティベーションを実行するために WAS が使用されます。 また、wcf でサポートされている他のプロトコル (TCP、MSMQ、名前付きパイプなど) に対してメッセージベースのアクティベーションを提供するために、WAS にもプラグインが追加されました。 これにより、IIS のプロセスのリサイクル、迅速な障害保護、一般的な構成システムなど、これまで HTTP ベースのアプリケーションのみで利用可能だった IIS 機能を、通信プロトコルを使用するアプリケーションでも使用できるようになりました。
 
  このホスト オプションでは、WAS が正しく構成されている必要がありますが、アプリケーションの一部としてホスト コードを書く必要はありません。 WAS ホストを構成する方法の詳細については、「 [how to: Host a WCF Service IN was](./feature-details/how-to-host-a-wcf-service-in-was.md)」を参照してください。
 
@@ -54,15 +54,15 @@ WCF は、サービス指向アプリケーションを構築するための統�
 
 |ホスト環境|プラットフォームの可用性|サポートされるトランスポート|プロセスと AppDomain のリサイクル|
 |-------------------------|---------------------------|--------------------------|-------------------------------------|
-|マネージド アプリケーション ("自己ホスト")|[!INCLUDE[wxp](../../../includes/wxp-md.md)], [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], [!INCLUDE[wv](../../../includes/wv-md.md)],<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP、<br /><br /> net.tcp、<br /><br /> net.pipe、<br /><br /> net.msmq|Ｘ|
-|Windows サービス (従来 NT サービスと呼ばれていたもの)|[!INCLUDE[wxp](../../../includes/wxp-md.md)], [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], [!INCLUDE[wv](../../../includes/wv-md.md)],<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP、<br /><br /> net.tcp、<br /><br /> net.pipe、<br /><br /> net.msmq|Ｘ|
-|IIS 5.1|[!INCLUDE[wxp](../../../includes/wxp-md.md)]|HTTP|[はい]|
-|IIS 6.0|[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]|HTTP|[はい]|
-|Windows プロセス アクティブ化サービス (WAS)|[!INCLUDE[wv](../../../includes/wv-md.md)]、 [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP、<br /><br /> net.tcp、<br /><br /> net.pipe、<br /><br /> net.msmq|[はい]|
+|マネージド アプリケーション ("自己ホスト")|[!INCLUDE[wxp](../../../includes/wxp-md.md)]、[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]、Windows Vista、<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP、<br /><br /> net.tcp、<br /><br /> net.pipe、<br /><br /> net.msmq|いいえ|
+|Windows サービス (従来 NT サービスと呼ばれていたもの)|[!INCLUDE[wxp](../../../includes/wxp-md.md)]、[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]、Windows Vista、<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP、<br /><br /> net.tcp、<br /><br /> net.pipe、<br /><br /> net.msmq|いいえ|
+|IIS 5.1|[!INCLUDE[wxp](../../../includes/wxp-md.md)]|HTTP|○|
+|IIS 6.0|[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]|HTTP|○|
+|Windows プロセス アクティブ化サービス (WAS)|Windows Vista、[!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP、<br /><br /> net.tcp、<br /><br /> net.pipe、<br /><br /> net.msmq|○|
 
  信頼されていないホストからサービスや拡張機能を実行すると、セキュリティが損なわれるので注意してください。 また、偽装して <xref:System.ServiceModel.ServiceHost> を開くと、アプリケーションは、ユーザーの <xref:System.Security.Principal.WindowsIdentity> をキャッシュするなどして、ユーザーがログオフしていないことを確認する必要があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [基本的なプログラミング ライフサイクル](basic-programming-lifecycle.md)
 - [サービス コントラクトの実装](implementing-service-contracts.md)

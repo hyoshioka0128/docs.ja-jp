@@ -2,16 +2,16 @@
 title: デバッグのワークフロー
 ms.date: 03/30/2017
 ms.assetid: b23b4814-ebb1-4c51-b7a9-469f4da7a96d
-ms.openlocfilehash: 3947e61161b0e2108fa48fbc7e33fb7601645a1b
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 2bfc50215697636f1771d6bb35510fbf9e0b435d
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291488"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802636"
 ---
 # <a name="debugging-workflows"></a>デバッグのワークフロー
 
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、開発環境から実行中のワークフローをデバッグするためのオプションがいくつか用意されています。 ワークフローは、デザイナー、XAML、およびコードでデバッグできます。
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] には、開発環境から実行中のワークフローをデバッグするオプションがいくつかあります。 ワークフローは、デザイナー、XAML、およびコードでデバッグできます。
 
 ## <a name="debugging-in-the-workflow-designer"></a>ワークフロー デザイナーでのデバッグ
 
@@ -29,9 +29,9 @@ ms.locfileid: "72291488"
 
 ワークフローのデバッグは、Visual Studio のインフラストラクチャを使用したプロセスへのアタッチもサポートしています。 そのため、ワークフロー作成者は、Internet Information Services (IIS) 7.0 など異なるホスト環境で実行されているワークフローをデバッグできます。
 
-## <a name="remote-debugging"></a>リモート デバッグ
+## <a name="remote-debugging"></a>Remote Debugging
 
-Windows Workflow Foundation (WF) リモートデバッグは、他の Visual Studio コンポーネントのリモートデバッグと同じように機能します。 リモートデバッグの使用方法の詳細については、「[方法: リモートデバッグを有効](https://go.microsoft.com/fwlink/?LinkId=196257)にする」を参照してください。
+Windows Workflow Foundation (WF) リモートデバッグは、他の Visual Studio コンポーネントのリモートデバッグと同じように機能します。 リモートデバッグの使用方法の詳細については、「[方法: リモートデバッグを有効](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/febz73k0(v=vs.100))にする」を参照してください。
 
 > [!NOTE]
 > ワークフローアプリケーションが x86 アーキテクチャを対象としていて、64ビットオペレーティングシステムを実行しているコンピューターでホストされている場合、リモートデバッグは、Visual Studio がリモートコンピューターにインストールされていない場合、またはワークフローアプリケーションのターゲットが**ANY CPU**に変更されている場合を除き、機能しません。

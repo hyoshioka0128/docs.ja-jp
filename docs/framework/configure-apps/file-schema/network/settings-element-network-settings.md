@@ -15,12 +15,12 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/14/2019
 ms.locfileid: "74089119"
 ---
-# <a name="settings-element-network-settings"></a>\<設定 > 要素 (ネットワーク設定)
+# <a name="settings-element-network-settings"></a>\<settings> 要素 (ネットワーク設定)
 <xref:System.Net?displayProperty=nameWithType> 名前空間の基本的なネットワーク オプションを構成します。  
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<設定 >**
+&nbsp;&nbsp;[ **\<system.net>** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<settings>**
 
 ## <a name="syntax"></a>構文  
   

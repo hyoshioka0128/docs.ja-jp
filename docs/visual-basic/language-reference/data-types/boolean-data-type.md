@@ -25,7 +25,7 @@ ms.locfileid: "74347842"
   
 ## <a name="remarks"></a>コメント  
 
- [ブールデータ型 (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md)を使用して、true/false、yes/no、on/off などの2つの状態の値を格納します。  
+ [Boolean データ型 (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) を使用して、true/false、yes/no、on/off などの 2 つの状態の値を格納します。  
   
  `Boolean` の既定値は `False` です。  
   

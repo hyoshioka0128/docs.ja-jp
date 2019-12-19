@@ -2,12 +2,12 @@
 title: ランタイムの構成
 description: ランタイム構成設定を使用して .NET Core アプリケーションを構成する方法について説明します。
 ms.date: 11/13/2019
-ms.openlocfilehash: f7074b07bdd5aca23b6caae78952d630d905c489
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2665026347e94d26026821beb2bfcf8441f755f6
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283964"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801920"
 ---
 # <a name="net-core-run-time-configuration-settings"></a>.NET Core ランタイム構成設定
 
@@ -26,11 +26,11 @@ ms.locfileid: "74283964"
 
 - [環境変数](#environment-variables)
 
-ドキュメントのこのセクションの記事は、デバッグやガベージ コレクションなどのカテゴリ別に分類されています。 *runtimeconfig. json* (.NET Core のみ)、*app.config* (.NET Framework のみ)、および環境変数で使用可能な構成オプションが示されています。
+ドキュメントのこのセクションの記事は、デバッグやガベージ コレクションなどのカテゴリ別に分類されています。 必要に応じて、*runtimeconfig. json* (.NET Core のみ)、*app.config* (.NET Framework のみ)、および環境変数の構成オプションが示されています。
 
 ## <a name="runtimeconfigjson"></a>runtimeconfig.json
 
-*runtimeconfig.json* ファイルの **configProperties** セクションで、ランタイム構成オプションを指定します。 このセクションには次の形式が含まれます。
+アプリの *runtimeconfig.json* ファイルの **configProperties** セクションで、ランタイム構成オプションを指定します。 このセクションには次の形式が含まれます。
 
 ```json
 {

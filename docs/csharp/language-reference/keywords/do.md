@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - do keyword [C#]
 ms.assetid: 50725f79-9ba6-4898-aa78-6e331568a1bb
-ms.openlocfilehash: 08f964b1e5c78a429dc50f81398d840f58ec4b13
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5612cfb2462117ac431de9c702cd8137f495e5dc
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422846"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551809"
 ---
 # <a name="do-c-reference"></a>do (C# リファレンス)
 

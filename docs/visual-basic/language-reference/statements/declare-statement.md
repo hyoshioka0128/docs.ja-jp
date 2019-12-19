@@ -55,8 +55,8 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 |用語|Definition|
 |---|---|
 |`attributelist`|省略可。 「[属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)」を参照してください。|
-|`accessmodifier`|省略可。 次のいずれかになります。<br /><br /> -   [パブリック](../../../visual-basic/language-reference/modifiers/public.md)<br />[保護されている](../../../visual-basic/language-reference/modifiers/protected.md)-   <br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [プライベート](../../../visual-basic/language-reference/modifiers/private.md)<br />[保護されたフレンド](../../language-reference/modifiers/protected-friend.md)の - <br />- [プライベート保護](../../language-reference/modifiers/private-protected.md)<br /><br /> 「 [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|
-|`Shadows`|省略可。 「[シャドウ](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。|
+|`accessmodifier`|省略可。 次のいずれかになります。<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />- [Protected Friend](../../language-reference/modifiers/protected-friend.md)<br />- [Private Protected](../../language-reference/modifiers/private-protected.md)<br /><br /> 「[Visual Basic でのアクセス レベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。|
+|`Shadows`|省略可。 「[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)」を参照してください。|
 |`charsetmodifier`|省略可。 文字セットとファイル検索情報を指定します。 次のいずれかになります。<br /><br /> -   [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md) (既定値)<br />-   [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />-   [Auto](../../../visual-basic/language-reference/modifiers/auto.md)|
 |`Sub`|省略可能ですが、`Sub` または `Function` のいずれかが表示されている必要があります。 外部プロシージャが値を返さないことを示します。|
 |`Function`|省略可能ですが、`Sub` または `Function` のいずれかが表示されている必要があります。 外部プロシージャが値を返すことを示します。|
@@ -74,13 +74,13 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 
 `Declare` は、モジュール レベルでのみ使用できます。 つまり、外部参照の*宣言コンテキスト*は、クラス、構造体、またはモジュールである必要があり、ソースファイル、名前空間、インターフェイス、プロシージャ、またはブロックにすることはできません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。
 
-外部参照では、既定で[パブリック](../../../visual-basic/language-reference/modifiers/public.md)アクセスが使用されます。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。
+外部参照では、既定で[Public](../../../visual-basic/language-reference/modifiers/public.md)アクセスが使用されます。 アクセス修飾子を使用してこれらのアクセス レベルを調整できます。
 
 ## <a name="rules"></a>ルール
 
 - **アトリビュート.** 外部参照に属性を適用できます。 適用した属性は、プロジェクト内でのみ有効になり、外部ファイルには反映されません。
 
-- **ド.** 外部プロシージャは暗黙的に[共有](../../../visual-basic/language-reference/modifiers/shared.md)されます。 外部参照を宣言するときに `Shared` キーワードを使用することはできません。また、共有ステータスを変更することもできません。
+- **ド.** 外部プロシージャは暗黙的に[Shared](../../../visual-basic/language-reference/modifiers/shared.md)されます。 外部参照を宣言するときに `Shared` キーワードを使用することはできません。また、共有ステータスを変更することもできません。
 
   外部プロシージャは、オーバーライド、インターフェイスメンバーの実装、またはイベントの処理に関与することはできません。 したがって、`Implements`ステートメントで `Overrides`、`Overridable`、`NotOverridable`、`MustOverride`、`Handles`、または `Declare` キーワードを使用することはできません。
 

@@ -6,18 +6,18 @@ helpviewer_keywords:
 - XAML Services in WPF [XAML Services]
 - System.Xaml [XAML Services], conceptual documentation
 ms.assetid: 0e11f386-808c-4eae-9ba6-029ad7ba2211
-ms.openlocfilehash: a99b9f3cb8c008f72eaac7ee1b8790d63c547a8d
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 8e1e8dc9a1410d05c19e4dd1bccb30c65d7c5e66
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453959"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837286"
 ---
 # <a name="xaml-services"></a>XAML サービス
 このトピックでは、.NET Framework XAML サービスと呼ばれるテクノロジセットの機能について説明します。 説明されているサービスと Api の大部分は、アセンブリシステム .Xaml にあります。これは、.NET Framework 4 セットの .NET core アセンブリで導入されたアセンブリです。 サービスには、リーダーとライター、スキーマクラスとスキーマのサポート、ファクトリ、クラスの属性、XAML 言語の組み込みサポート、およびその他の XAML 言語機能が含まれます。  
   
 ## <a name="about-this-documentation"></a>このドキュメントについて  
- XAML サービス .NET Framework の概念に関するドキュメントでは、XAML 言語を使用した経験があることと、特定のフレームワーク ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] や Windows Workflow Foundation、特定のテクノロジ機能領域など) にどのように適用されるのかを前提としています。たとえば、<xref:Microsoft.Build.Framework.XamlTypes>のビルドカスタマイズ機能。 このドキュメントでは、マークアップ言語、XAML 構文の用語、またはその他の入門資料としての XAML の基本については説明しません。 代わりに、このドキュメントでは、特に、システムの .Xaml アセンブリライブラリで有効になっている .NET Framework XAML サービスを使用する方法について説明します。 これらの Api のほとんどは、XAML 言語の統合と拡張性のシナリオに使用されます。 これには、次のいずれかが含まれます。  
+ .NET Framework XAML サービスの概念ドキュメントでは、XAML 言語の以前の経験があること、および特定のフレームワーク ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] や Windows Workflow Foundation など) や特定のテクノロジ機能領域 (<xref:Microsoft.Build.Framework.XamlTypes>のビルドカスタマイズ機能など) にどのように適用されるかを前提としています。 このドキュメントでは、マークアップ言語、XAML 構文の用語、またはその他の入門資料としての XAML の基本については説明しません。 代わりに、このドキュメントでは、特に、システムの .Xaml アセンブリライブラリで有効になっている .NET Framework XAML サービスを使用する方法について説明します。 これらの Api のほとんどは、XAML 言語の統合と拡張性のシナリオに使用されます。 これには、次のいずれかが含まれます。  
   
 - 基本 XAML リーダーまたは XAML ライターの機能を拡張する (XAML ノードストリームを直接処理する、独自の XAML リーダーまたは XAML ライターを派生させる)。  
   
@@ -27,16 +27,16 @@ ms.locfileid: "73453959"
   
 - XAML 値コンバーター (マークアップ拡張機能、カスタム型の型コンバーター) の記述。  
   
-- カスタム XAML スキーマコンテキストの定義 (バッキング型ソースの代替アセンブリ読み込み手法を使用)、アセンブリを常にリフレクションするのではなく、既知の型の参照手法を使用します。 CLR `AppDomain` とその関連付けられているセキュリティモデル)。  
+- カスタム XAML スキーマコンテキストを定義する (バッキング型のソースに対して代替のアセンブリ読み込み手法を使用する、常にアセンブリを反映するのではなく、既知の型の参照手法を使用する、CLR `AppDomain` とそれに関連付けられているセキュリティモデルを使用しない、読み込まれたアセンブリの概念を使用する)。  
   
 - 基本 XAML 型システムの拡張。  
   
 - `Lookup` または `Invoker` 手法を使用した XAML 型システムへの影響、および型の戻り方の評価方法。  
   
- XAML の概要については、「 [xaml の概要 (WPF)」](../../desktop-wpf/fundamentals/xaml.md)を参照してください。 このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] と xaml マークアップおよび XAML 言語機能を使用するための新しい対象ユーザー向けの XAML について説明します。 もう1つの便利なドキュメントは、 [XAML 言語仕様](https://go.microsoft.com/fwlink/?LinkId=114525)の入門資料です。  
+ XAML の概要については、「 [xaml の概要 (WPF)」](../../desktop-wpf/fundamentals/xaml.md)を参照してください。 このトピックでは、[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] と xaml マークアップおよび XAML 言語機能を使用するための新しい対象ユーザー向けの XAML について説明します。 もう1つの便利なドキュメントは、 [XAML 言語仕様](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))の入門資料です。  
   
 ## <a name="net-framework-xaml-services-and-systemxaml-in-the-net-architecture"></a>.NET アーキテクチャでの XAML サービスと app.xaml の .NET Framework  
- 以前のバージョンの Microsoft .NET Framework では、XAML 言語機能のサポートは Microsoft .NET フレームワーク ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、Windows Workflow Foundation および Windows Communication Foundation (WCF)) 上に構築されたフレームワークによって実装されていました。実際に使用しているフレームワークに応じて、動作と API がさまざまに異なります。 これには、XAML パーサーとそのオブジェクトグラフの作成機構、XAML 言語の組み込み、シリアル化のサポートなどが含まれます。  
+ 以前のバージョンの Microsoft .NET Framework では、XAML 言語機能のサポートは Microsoft .NET フレームワーク ([!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、Windows Workflow Foundation および Windows Communication Foundation (WCF)) 上に構築されたフレームワークによって実装されていました。そのため、使用している特定のフレームワークに応じて、動作と API が変化します。 これには、XAML パーサーとそのオブジェクトグラフの作成機構、XAML 言語の組み込み、シリアル化のサポートなどが含まれます。  
   
  .NET Framework 4 では、.NET Framework xaml サービスと、xaml 言語機能をサポートするために必要なものの多くが定義されています。 これには、XAML リーダーと XAML ライターの基本クラスが含まれます。 フレームワーク固有の XAML 実装に含まれていなかった .NET Framework XAML サービスに追加された最も重要な機能は、XAML の型システム表現です。 型システム表現は、フレームワークの特定の機能に依存することなく XAML 機能を中心としたオブジェクト指向の方法で XAML を表します。  
   
@@ -79,7 +79,7 @@ ms.locfileid: "73453959"
   
 - <xref:System.Xaml.XamlXmlWriter.Flush%2A> を呼び出して、最終的な出力を取得します。  
   
- XAML ノードストリームの概念の詳細については、「 [Xaml ノードストリームの構造と概念](understanding-xaml-node-stream-structures-and-concepts.md)について」を参照してください。  
+ XAML ノード ストリームの概念の詳細については、「[XAML ノード ストリームの構造と概念について](understanding-xaml-node-stream-structures-and-concepts.md)」を参照してください。  
   
 ### <a name="the-xamlservices-class"></a>XamlServices クラス  
  XAML ノードストリームを処理する必要は必ずしも必要ではありません。 基本的な読み込みパスまたは基本的な保存パスが必要な場合は、<xref:System.Xaml.XamlServices> クラスで Api を使用できます。  

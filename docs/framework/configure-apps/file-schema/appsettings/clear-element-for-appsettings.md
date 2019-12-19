@@ -16,13 +16,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/14/2019
 ms.locfileid: "74088733"
 ---
-# <a name="clear-element-for-appsettings"></a>\<appSettings > の \<クリア > 要素
+# <a name="clear-element-for-appsettings"></a>\<appSettings > の \<clear> 要素
 
 カスタムアプリケーション設定をクリアします。
 
 [ **\<configuration>** ](../configuration-element.md)\
 &nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<クリア >**
+&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**
 
 ## <a name="syntax"></a>構文
 

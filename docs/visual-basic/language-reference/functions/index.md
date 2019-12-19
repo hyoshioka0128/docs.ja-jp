@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic, functions
 - functions [Visual Basic]
 ms.assetid: d86fc51f-f46e-4941-8ae2-6262da3d2688
-ms.openlocfilehash: 6a0c1d1df42b9db7cbc47ef32c88101115a62a4f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 88d3032b3084c5a85ddf2b6490bee61ad894536a
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348075"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837078"
 ---
 # <a name="functions-visual-basic"></a>関数 (Visual Basic)
 このセクションのトピックには、Visual Basic ランタイムのメンバー関数のテーブルが含まれています。  
@@ -25,11 +25,9 @@ ms.locfileid: "74348075"
   
  [文字列関数](../../../visual-basic/language-reference/functions/string-functions.md)  
   
- [CString](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
   
- [CType Function](../../../visual-basic/language-reference/functions/ctype-function.md)  
+ [CType 関数](../../../visual-basic/language-reference/functions/ctype-function.md)  
   
 ## <a name="related-sections"></a>関連セクション  
  [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
-  
- [Visual Basic](../../../visual-basic/index.md)

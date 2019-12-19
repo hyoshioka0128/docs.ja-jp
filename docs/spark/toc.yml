@@ -17,11 +17,17 @@
       href: tutorials/amazon-emr-spark-deployment.md
     - name: Databricks のデプロイする
       href: tutorials/databricks-deployment.md
+    - name: 構造化ストリーミング
+      href: tutorials/streaming.md
 - name: 使い方ガイド
   items:
     - name: アプリケーションをデバッグする
       href: how-to-guides/debug.md
-- name: 関連項目
+    - name: HDInsight にジョブを送信する
+      href: how-to-guides/hdinsight-deploy-methods.md
+    - name: Databricks にジョブを送信する
+      href: how-to-guides/databricks-deploy-methods.md
+- name: 辞書／辞典／その他
   items:
     - name: API リファレンス
       href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'

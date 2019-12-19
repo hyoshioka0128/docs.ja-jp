@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 3e87ba8c9442c4bba24e4e569cd20bdbdc76f6ec
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 1b7fccc673f82986a53dcb3dfcb68e8575b99dfd
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73457996"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74959993"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>.NET Framework 配置ガイド (開発者向け)
 このトピックでは、.NET Framework 4.5 から [!INCLUDE[net_current](../../../includes/net-current-version.md)] までの任意のバージョンの .NET Framework を、それぞれのアプリと共にインストールする開発者向けの情報を提供します。
@@ -51,7 +51,7 @@ ms.locfileid: "73457996"
 
 - .NET Framework 4.5 とそのポイント リリースをインストールするには、管理者特権が必要です。
 
-- .NET Framework 4.5 は、[!INCLUDE[win8](../../../includes/win8-md.md)] と [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] に含まれるため、これらのオペレーティング システムではアプリと一緒に配置する必要はありません。 同様に、.NET Framework 4.5.1 は [!INCLUDE[win81](../../../includes/win81-md.md)] と Windows Server 2012 R2 に含まれます。 .NET Framework 4.5.2 はどのオペレーティング システムにも含まれていません。 .NET Framework 4.6 は Windows 10 に含まれます。 .NET Framework 4.6.1 は Windows 10 November Update に含まれます。 .NET Framework 4.6.2 は Windows 10 Anniversary Update に含まれます。  .NET Framework 4.7 は Windows 10 Creators Update に、.NET Framework 4.7.1 は Windows 10 Fall Creators Update に、.NET Framework 4.7.2 は Windows 10 October 2018 Update と Windows 10 April 2018 Update にそれぞれ含まれます。 .NET Framework 4.8 は Windows 10 May 2019 Update に含まれています。 ハードウェア要件とソフトウェア要件の一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください。
+- .NET Framework 4.5 は、Windows 8 と Windows Server 2012 に含まれているため、これらのオペレーティング システムではアプリと一緒に配置する必要はありません。 同様に、.NET Framework 4.5.1 は Windows 8.1 と Windows Server 2012 R2 に含まれます。 .NET Framework 4.5.2 はどのオペレーティング システムにも含まれていません。 .NET Framework 4.6 は Windows 10 に含まれます。 .NET Framework 4.6.1 は Windows 10 November Update に含まれます。 .NET Framework 4.6.2 は Windows 10 Anniversary Update に含まれます。  .NET Framework 4.7 は Windows 10 Creators Update に、.NET Framework 4.7.1 は Windows 10 Fall Creators Update に、.NET Framework 4.7.2 は Windows 10 October 2018 Update と Windows 10 April 2018 Update にそれぞれ含まれます。 .NET Framework 4.8 は Windows 10 May 2019 Update に含まれています。 ハードウェア要件とソフトウェア要件の一覧については、「[システム要件](../get-started/system-requirements.md)」を参照してください。
 
 - .NET Framework 4.5 以降では、ユーザーはセットアップ中に、実行されている .NET Framework アプリケーションの一覧を表示し、簡単に終了できます。 これにより、.NET Framework のインストールによるシステムの再起動を回避できます。 「 [システム再起動の削減](reducing-system-restarts.md)」を参照してください。
 
@@ -276,8 +276,8 @@ Windows インストーラー XML (WiX) ツールセットは、XML ソース �
 |Windows 10 にインストールされた .NET Framework 4.6|393295|
 |Windows 10 以外のすべての OS バージョンにインストールされた .NET Framework 4.6|393297|
 |.NET Framework 4.5.2|379893|
-|[!INCLUDE[win81](../../../includes/win81-md.md)] または Windows Server 2012 R2 でインストールされた .NET Framework 4.5.1|378675|
-|[!INCLUDE[win8](../../../includes/win8-md.md)]、Windows 7 にインストールされた .NET Framework 4.5.1|378758|
+|Windows 8.1 または Windows Server 2012 R2 でインストールされた .NET Framework 4.5.1|378675|
+|Windows 8 と Windows 7 にインストールされた .NET Framework 4.5.1|378758|
 |.NET Framework 4.5|378389|
 
 ### <a name="detecting-the-language-packs"></a>言語パックの検出
@@ -368,7 +368,7 @@ Web インストーラーを使用する場合は、言語パックをチェー�
 
 ## <a name="uninstalling-the-net-framework"></a>.NET Framework のアンインストール
 
-[!INCLUDE[win8](../../../includes/win8-md.md)] 以降では、コントロール パネルの **[Windows の機能の有効化または無効化]** を使用して .NET Framework 4.5 またはそのポイント リリースの 1 つをアンインストールできます。 Windows の旧バージョンでは、コントロール パネルの **[プログラムの追加と削除]** を使用して .NET Framework 4.5 またはそのポイントリリースの 1 つをアンインストールできます。
+Windows 8 以降、コントロール パネルの **[Windows の機能の有効化または無効化]** を使用して、.NET Framework 4.5 またはそのポイント リリースの 1 つをアンインストールできます。 Windows の旧バージョンでは、コントロール パネルの **[プログラムの追加と削除]** を使用して .NET Framework 4.5 またはそのポイントリリースの 1 つをアンインストールできます。
 
 > [!IMPORTANT]
 > Windows 7 およびそれ以前のオペレーティング システムでは、.NET Framework 4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、4.7.1、4.7.2、または 4.8 をアンインストールしても .NET Framework 4.5 のファイルは復元されず、.NET Framework 4.5 をアンインストールしても .NET Framework 4 のファイルは復元されません。 旧バージョンに戻る場合は、更新プログラムと共に再インストールする必要があります。

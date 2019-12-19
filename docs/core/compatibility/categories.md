@@ -2,16 +2,24 @@
 title: 破壊的変更のカテゴリ - .NET Core
 description: .NET Core での破壊的変更のカテゴリの分類方法について説明します。
 ms.date: 06/10/2019
-ms.openlocfilehash: 68bc51b6662de070ef901b73fb75ff3aced95726
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 4569c1ab19cb9bfa3e16aa8d5f941705eb926fa7
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739362"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567919"
 ---
 # <a name="breaking-change-categories"></a>破壊的変更のカテゴリ
 
-"*互換性*" とは、コードが最初に開発されたときのものとは異なる .NET 実装のバージョンで、コードがコンパイルまたは実行できることを指します。 特定の変更があると、6 つの異なる方法で互換性に影響する場合があります。 [互換性を評価するときに考慮される変更の個々の種類](index.md)は、最初の 5 つのカテゴリに分類できます。
+"*互換性*" とは、コードが最初に開発されたときのものとは異なる .NET 実装のバージョンで、コードがコンパイルまたは実行できることを指します。 特定の変更があると、6 つの異なる方法で互換性に影響する場合があります。 互換性を評価するときに考慮される[変更の個々の種類](index.md)は、次の 5 つのカテゴリに分類できます。
+
+- [動作の変更](#behavioral-change)
+- [バイナリの互換性](#binary-compatibility)
+- [ソースの互換性](#source-compatibility)
+- [デザイン時の互換性](#design-time-compatibility)
+- [下位互換性](#backwards-compatibility)
+
+[上位互換性](#forward-compatibility)は .NET Core の目標ではありません。
 
 ## <a name="behavioral-change"></a>動作の変更
 

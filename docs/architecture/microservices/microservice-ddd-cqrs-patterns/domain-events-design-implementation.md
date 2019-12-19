@@ -2,12 +2,12 @@
 title: 'ドメイン イベント: 設計と実装'
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 集約間の通信を確立するための重要な概念であるドメイン イベントの詳細を表示する。
 ms.date: 10/08/2018
-ms.openlocfilehash: f0dbd6b0e70d825122d319611a327438df065588
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3bba18d4a77b47abee55c16bae8a64ed27ac9aba
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739896"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884229"
 ---
 # <a name="domain-events-design-and-implementation"></a>ドメイン イベント: 設計と実装
 
@@ -341,6 +341,8 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
 ## <a name="conclusions-on-domain-events"></a>ドメイン イベントのまとめ
 
 説明したように、ドメイン内での変更の副作用を明示的に実装するには、ドメイン イベントを使います。 DDD の用語では、1 つ以上の集約に副作用を明示的に実装するには、ドメイン イベントを使います。 さらに、スケーラビリティを向上させ、データベース ロックの影響を小さくする必要がある場合は、同じドメイン内の集約の間の最終的な整合性を使います。
+
+参照アプリは [MediatR](https://github.com/jbogard/MediatR) を使用して、単一のトランザクション内で、集計間のドメイン イベントを同期的に伝達します。 [RabbitMQ](https://www.rabbitmq.com/) のような AMQP 実装や [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) で、最終的な整合性を使用してドメイン イベントを非同期的に伝達することもできますが、前述のように、障害が発生した場合の補正アクションの必要性を考慮する必要があります。
 
 ## <a name="additional-resources"></a>その他の技術情報
 

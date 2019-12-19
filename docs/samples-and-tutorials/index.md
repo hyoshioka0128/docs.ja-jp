@@ -4,12 +4,12 @@ description: .NET Core、ASP.NET Core、C# 言語に関する、.NET の学習�
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 7953d178e9a24fc42f11b6bc5c866805ec381137
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5132415a6be03787111aaed8d027d436bb6820fe
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423568"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884437"
 ---
 # <a name="net-samples-and-tutorials"></a>.NET サンプルおよびチュートリアル
 
@@ -25,7 +25,7 @@ ms.locfileid: "73423568"
 
 ### <a name="tutorials"></a>チュートリアル
 
-**[CLI ツールを使用する .NET Core コンソール アプリの作成: 手順ガイド](../core/tutorials/using-with-xplat-cli.md)**
+**[CLI ツールを使用する .NET Core コンソール アプリの作成: 手順ガイド](../core/tutorials/cli-create-console-app.md)**
 
 このガイドでは、.NET Core CLI ツールを使用してクロスプラットフォーム コンソール アプリを作成する方法を説明します。 基本的なコンソール アプリから始めて、最終的にテストを含む複数プロジェクトまで拡張します。 段階的に機能を追加し、作業を進めながらナレッジを構築します。 [完全なサンプル](https://github.com/dotnet/samples/tree/master/core/console-apps)は、GitHub の dotnet/samples リポジトリにあります。
 

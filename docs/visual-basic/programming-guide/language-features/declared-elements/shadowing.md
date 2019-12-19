@@ -46,7 +46,7 @@ ms.locfileid: "74345324"
  スコープを使用したシャドウの例については、「[方法: 変数と同じ名前の変数を非表示に](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)する」を参照してください。  
   
 ### <a name="shadowing-through-inheritance"></a>継承によるシャドウ処理  
- 派生クラスが基底クラスから継承されたプログラミング要素を再定義する場合、再定義要素は元の要素をシャドウします。 宣言された要素の型、またはオーバーロードされた要素のセットは、他の型を使用してシャドウできます。 たとえば、`Integer` 変数を使用すると、`Function` プロシージャをシャドウできます。 別のプロシージャでプロシージャをシャドウする場合は、別のパラメーターリストと別の戻り値の型を使用できます。  
+ 派生クラス内の複数の要素を持つ同じ基底クラス要素をシャドウする場合、シャドウされる要素は、その要素のオーバーロードされたバージョンになります。詳細については、「[プロシージャのオーバーロード](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)」を参照してください。 
   
  次の図は、基本クラス `b` と、`b`から継承する派生クラス `d` を示しています。 基底クラスは `proc`という名前のプロシージャを定義し、派生クラスは同じ名前の別のプロシージャでそれをシャドウします。 最初の `Call` ステートメントは、派生クラスのシャドウ `proc` にアクセスします。 ただし、`MyBase` キーワードはシャドウをバイパスし、基本クラスのシャドウされたプロシージャにアクセスします。  
   
@@ -100,7 +100,7 @@ End Module
  シャドウは、オーバーライドと混同しないようにしてください。 どちらも、派生クラスが基底クラスから継承し、宣言された1つの要素を別の要素で再定義するときに使用されます。 ただし、2つの間には大きな違いがあります。 比較については、「[シャドウとオーバーライドの違い](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md)」を参照してください。  
   
 ## <a name="shadowing-and-overloading"></a>シャドウとオーバーロード  
- 派生クラス内の複数の要素を持つ同じ基底クラス要素をシャドウする場合、シャドウされる要素は、その要素のオーバーロードされたバージョンになります。 詳細については、「 [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)」を参照してください。  
+ 派生クラス内の複数の要素を持つ同じ基底クラス要素をシャドウする場合、シャドウされる要素は、その要素のオーバーロードされたバージョンになります。 詳細については、「[プロシージャのオーバーロード](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)」を参照してください。  
   
 ## <a name="accessing-a-shadowed-element"></a>シャドウ要素へのアクセス  
  派生クラスから要素にアクセスする場合、通常は、その派生クラスの現在のインスタンスを使用します。そのためには、要素名を `Me` キーワードで修飾します。 派生クラスが基底クラスの要素をシャドウする場合は、`MyBase` キーワードを使用して修飾することで、基底クラスの要素にアクセスできます。  

@@ -9,16 +9,16 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 ms.assetid: 4d1111c0-9447-4231-a997-96a2b74b3453
-ms.openlocfilehash: 5ce98a7908470a402779436db43333d46f5101fc
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: b43c3f6fd8ca56aaa99fffd40317920ee7600a2c
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180152"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802714"
 ---
 # <a name="json-serialization-in-net---overview"></a>.NET での JSON のシリアル化-概要
 
-@No__t-0 名前空間は、JavaScript Object Notation (JSON) との間でシリアル化および逆シリアル化を行うための機能を提供します。
+`System.Text.Json` 名前空間は、JavaScript Object Notation (JSON) にシリアル化および逆シリアル化する機能を提供します。
 
 ライブラリの設計では、高度な機能セットに対する高パフォーマンスと低メモリ割り当てが強調されています。 組み込みの UTF-8 サポートは、UTF-8 としてエンコードされた JSON テキストの読み取りと書き込みのプロセスを最適化します。これは、web 上のデータおよびディスク上のファイルのための最も一般的なエンコードです。
 
@@ -35,10 +35,10 @@ ms.locfileid: "72180152"
 ## <a name="additional-resources"></a>その他の技術情報
 
 * [ライブラリの使用方法](system-text-json-how-to.md)
-* [ソース コード](https://github.com/dotnet/corefx/tree/master/src/System.Text.Json)
+* [ソース コード](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Text.Json)
 * [API リファレンス](xref:System.Text.Json)
-* [ロードマップ](https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/roadmap/README.md)
+* [ロードマップ](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Text.Json/roadmap/README.md)
 * Dotnet/corefx リポジトリでの GitHub の問題
-  * [System.string の開発についての説明](https://github.com/dotnet/corefx/issues/33115)
-  * [すべての system.string の問題](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json)
-  * [Json のラベル付きの問題-doc](https://github.com/dotnet/corefx/labels/json-functionality-doc)
+  * [System.string の開発についての説明](https://github.com/dotnet/corefx/issues/33115) <!-- TODO: Issues are still not moved to the new repo-->
+  * [すべての system.string の問題](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json)
+  * [Json のラベル付きの問題-doc](https://github.com/dotnet/runtime/labels/json-functionality-doc)

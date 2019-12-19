@@ -30,12 +30,12 @@ ms.locfileid: "74345873"
 ## <a name="remarks"></a>コメント  
 `Implements` キーワードは[Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)と同じではありません。 `Implements` ステートメントを使用して、クラスまたは構造体が1つ以上のインターフェイスを実装することを指定し、各メンバーに対して `Implements` キーワードを使用して、実装するインターフェイスとメンバーを指定します。
 
-クラスまたは構造体がインターフェイスを実装する場合は、[クラスステートメント](../../../visual-basic/language-reference/statements/class-statement.md)または[構造体ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)の直後に `Implements` ステートメントを含める必要があります。また、インターフェイスで定義されているすべてのメンバーを実装する必要があります。
+クラスまたは構造体がインターフェイスを実装する場合は、[Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)または [Structure ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)の直後に `Implements` ステートメントを含める必要があります。また、インターフェイスで定義されているすべてのメンバーを実装する必要があります。
 
 ## <a name="reimplementation"></a>再実装  
 派生クラスでは、基底クラスに既に実装されているインターフェイスメンバーを再実装できます。 これは、次の点で基底クラスのメンバーをオーバーライドすることとは異なります。
 
-- 基底クラスのメンバーは、再実装として[オーバーライド](../../../visual-basic/language-reference/modifiers/overridable.md)可能である必要はありません。
+- 基底クラスのメンバーを再実装するのに、[Overridable](../../../visual-basic/language-reference/modifiers/overridable.md) とする必要はありません。
 - 別の名前を使用してメンバーを再実装できます。
 
 `Implements` キーワードは、次のコンテキストで使用できます。

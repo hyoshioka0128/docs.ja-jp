@@ -47,9 +47,9 @@ ms.locfileid: "74349848"
 |ハイパーボリックの正割 (x)|2 / (Exp(x) + Exp(-x))|  
 |ハイパーボリック余割 (Csch (x))|2 / (Exp(x) – Exp(-x))|  
 |ハイパーボリックコタンジェント (Coth (x))|(Exp(x) + Exp(-x)) / (Exp(x) – Exp(-x))|  
-|逆双曲線正弦 (Asinh (x))|ログ (x + Sqrt (x * x + 1))|  
-|逆双曲線余弦 (Acosh (x))|ログ (x + Sqrt (x * x-1))|  
-|逆双曲線正接 (Atanh (x))|ログ ((1 + x)/(1-x))/2|  
+|逆双曲線正弦 (Asinh (x))|Log (x + Sqrt (x * x + 1))|  
+|逆双曲線余弦 (Acosh (x))|Log (x + Sqrt (x * x-1))|  
+|逆双曲線正接 (Atanh (x))|Log ((1 + x)/(1-x))/2|  
 |逆双曲線正割 (AsecH (x))|Log ((Sqrt (-x * x + 1) + 1)/x)|  
 |逆双曲線余割 (Acsch (x))|Log ((Sign (x) * Sqrt (x \* x + 1) + 1)/x|  
 |逆双曲線コタンジェント (Acoth (x))|Log ((x + 1)/(x – 1))/2|  

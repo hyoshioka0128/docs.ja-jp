@@ -2,16 +2,16 @@
 title: WCF 開発者向け Kubernetes-gRPC
 description: Kubernetes クラスターで ASP.NET Core gRPC サービスを実行しています。
 ms.date: 09/02/2019
-ms.openlocfilehash: 503b582ae9fdcf8c72c87558de3a8ddd898489aa
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 22271343f8f0d0454469b2f35e717f5b7e939294
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967563"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711288"
 ---
 # <a name="kubernetes"></a>Kubernetes
 
-Docker ホストでコンテナーを手動で実行することもできますが、信頼性の高い運用システムでは、コンテナーオーケストレーションエンジンを使用して、クラスター内の複数のサーバーで実行されている複数のインスタンスを管理することをお勧めします。 Kubernetes、Docker の群れ、Apache のシステムなど、さまざまなコンテナーオーケストレーションエンジンを利用できます。 しかし、これらのエンジンでは、Kubernetes ははるかに広く使用されているので、この章で重点的に説明します。
+Docker ホストでコンテナーを手動で実行することもできますが、信頼性の高い運用システムの場合は、コンテナーオーケストレーションエンジンを使用して、クラスター内の複数のサーバーで実行されている複数のインスタンスを管理することをお勧めします。 さまざまなコンテナーオーケストレーションエンジンが用意されています。これには、Kubernetes、Docker の群れ、Apache のシステムなどがあります。 しかし、これらのエンジンでは、Kubernetes ははるかに広く使用されているので、この章で重点的に説明します。
 
 Kubernetes には、次の機能が含まれています。
 
@@ -21,11 +21,11 @@ Kubernetes には、次の機能が含まれています。
 - 受信は、選択したサービスを外部**に公開し**、一般にこれらのサービスのインスタンス間で負荷分散を行います。
 - **リソース管理**は、ストレージなどの外部リソースをコンテナーにアタッチします。
 
-この章では、ASP.NET Core gRPC サービスと、サービスを使用する web サイトを Kubernetes クラスターにデプロイする方法について詳しく説明します。 使用されているサンプルアプリケーションは、GitHub の[dotnet/grpc-wcf 開発者](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/KubernetesSample)リポジトリのから入手できます。
+この章では、ASP.NET Core gRPC サービスと、サービスを使用する web サイトを Kubernetes クラスターにデプロイする方法について詳しく説明します。 使用されるサンプルアプリケーションは、GitHub の[dotnet/grpc-wcf 開発者](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/KubernetesSample)リポジトリで入手できます。
 
 ## <a name="kubernetes-terminology"></a>Kubernetes の用語
 
-Kubernetes は*desired state configuration*を使用します。*ポッド*、*デプロイ*、*サービス*などのオブジェクトを記述するために API が使用され、*コントロールプレーン*は*クラスター*内のすべての*ノード*で目的の状態を実装します。 Kubernetes クラスターには、 *KUBERNETES API*を実行する*マスター*ノードがあります。このノードはプログラムによって、または `kubectl` コマンドラインツールを使用して通信できます。 `kubectl` は、コマンドライン引数を使用してオブジェクトを作成および管理できますが、Kubernetes オブジェクトの宣言データを含む YAML ファイルで最適に機能します。
+Kubernetes は*desired state configuration*を使用します。この API は*ポッド*、*デプロイ*、*サービス*などのオブジェクトを表すために使用され、*コントロールプレーン*は*クラスター*内のすべての*ノード*で目的の状態を実装します。 Kubernetes クラスターには、 *KUBERNETES API*を実行する*マスター*ノードがあります。このノードはプログラムによって、または `kubectl` コマンドラインツールを使用して通信できます。 `kubectl` は、コマンドライン引数を使用してオブジェクトを作成および管理できますが、Kubernetes オブジェクトの宣言データを含む YAML ファイルで最適に動作します。
 
 ### <a name="kubernetes-yaml-files"></a>Kubernetes YAML ファイル
 
@@ -46,31 +46,31 @@ metadata:
 
 ポッドは、Kubernetes での実行の基本単位です。 複数のコンテナーを実行できますが、1つのコンテナーを実行するためにも使用されます。 ポッドには、コンテナーに必要なすべてのストレージリソースと、ネットワークの IP アドレスも含まれています。
 
-### <a name="services"></a>サービス
+### <a name="services"></a>Services
 
 サービスは、ポッド (またはポッドのセット) を記述し、クラスター内でそれらにアクセスする手段を提供するメタオブジェクトです。たとえば、クラスター DNS サービスを使用して、サービス名をポッド IP アドレスのセットにマップすることができます。
 
 ### <a name="deployments"></a>展開
 
-展開とは、ポッドの*状態*オブジェクトです。 ポッドを手動で作成した場合、そのポッドを終了すると、再起動されません。 デプロイは、現在の時点で実行する必要があるポッド、およびそれらのポッドのレプリカの数をクラスターに伝えるために使用されます。
+展開は、ポッドに*必要な状態*オブジェクトです。 ポッドを手動で作成した場合は、終了時に再起動されません。 デプロイは、現在の時点で実行する必要があるポッド、およびそれらのポッドのレプリカの数をクラスターに伝えるために使用されます。
 
 ### <a name="other-objects"></a>その他のオブジェクト
 
-ポッド、サービス、および展開は、最も基本的なオブジェクトの種類のうちの3つにすぎません。 Kubernetes クラスターによって管理されるオブジェクトには、他にも多数の種類があります。 詳細については、 [Kubernetes の概念](https://kubernetes.io/docs/concepts/)に関するドキュメントを参照してください。
+ポッド、サービス、および展開は、最も基本的なオブジェクトの種類のうちの3つにすぎません。 Kubernetes クラスターによって管理されるオブジェクトの種類は他にも多数あります。 詳細については、 [Kubernetes の概念](https://kubernetes.io/docs/concepts/)に関するドキュメントを参照してください。
 
 ### <a name="namespaces"></a>名前空間
 
-Kubernetes クラスターは、数百または数千のノードに拡張し、同様の数のサービスを実行するように設計されています。 オブジェクト名が競合しないようにするために、名前空間を使用して、大きなアプリケーションの一部としてオブジェクトをグループ化します。 Kubernetes 独自のサービスは、`default` 名前空間で実行されます。 既定のオブジェクトまたはクラスター内の他のテナントとの潜在的な競合を避けるために、すべてのユーザーオブジェクトを独自の名前空間に作成する必要があります。
+Kubernetes クラスターは、数百または数千のノードに拡張し、同様の数のサービスを実行するように設計されています。 オブジェクト名が競合しないようにするために、名前空間を使用して、大きなアプリケーションの一部としてオブジェクトをグループ化します。 Kubernetes の独自のサービスは `default` 名前空間で実行されます。 既定のオブジェクトまたはクラスター内の他のテナントとの潜在的な競合を避けるために、すべてのユーザーオブジェクトを独自の名前空間に作成する必要があります。
 
 ## <a name="get-started-with-kubernetes"></a>Kubernetes を使ってみる
 
-Windows または macOS 用の Docker Desktop を実行している場合、Kubernetes は既に使用できます。 [設定] ウィンドウの [Kubernetes] セクションで有効にするだけです。
+Windows 用の Docker Desktop または Mac 用 Docker デスクトップを実行している場合、Kubernetes は既に使用可能です。 **[設定]** ウィンドウの **[Kubernetes]** セクションで有効にするだけです。
 
 ![Docker Desktop で Kubernetes を有効にする](media/kubernetes/enable-kubernetes-docker-desktop.png)
 
-Linux でローカル Kubernetes クラスターを実行するには、 [minikube](https://github.com/kubernetes/minikube)を参照するか、linux ディストリビューションで[スナップ](https://snapcraft.io/)がサポートされ[ているかどうかを](https://microk8s.io/)確認してください。
+Linux でローカル Kubernetes クラスターを実行する場合は、Linux ディストリビューションで[スナップ](https://snapcraft.io/)がサポートされている場合は[Minikube](https://github.com/kubernetes/minikube)または[MicroK8s](https://microk8s.io/)を検討してください。
 
-クラスターが実行中で、アクセス可能であることを確認するには、`kubectl version` コマンドを実行します。
+クラスターが実行されていて、アクセス可能であることを確認するには、`kubectl version` コマンドを実行します。
 
 ```console
 kubectl version
@@ -84,13 +84,13 @@ Server Version: version.Info{Major:"1", Minor:"14", GitVersion:"v1.14.6", GitCom
 
 サンプルアプリケーションには、3つの YAML ファイルを含む `kube` ディレクトリがあります。 `namespace.yml` ファイルは、`stocks`カスタム名前空間を宣言します。 `stockdata.yml` ファイルは、gRPC アプリケーションのデプロイとサービスを宣言し、`stockweb.yml` ファイルは、gRPC サービスを使用する ASP.NET Core 3.0 MVC web アプリケーションのデプロイとサービスを宣言します。
 
-`kubectl`で `YAML` ファイルを使用するには、`apply -f` コマンドを使用します。
+`kubectl`で `YAML` ファイルを使用するには、`apply -f` のコマンドを実行します。
 
 ```console
 kubectl apply -f object.yml
 ```
 
-`apply` コマンドは、YAML ファイルの有効性を確認し、API から受信したすべてのエラーを表示しますが、ファイルで宣言されたすべてのオブジェクトが作成されるまで待機しません。これには時間がかかる場合があるためです。 `kubectl get` コマンドと関連するオブジェクトの種類を使用して、クラスターでのオブジェクトの作成を確認します。
+`apply` コマンドは、YAML ファイルの有効性を確認し、API から受信したすべてのエラーを表示しますが、ファイルで宣言されたすべてのオブジェクトが作成されるまで待機しません。これは時間がかかることがあるためです。 `kubectl get` コマンドと関連するオブジェクトの種類を使用して、クラスターでのオブジェクトの作成を確認します。
 
 ### <a name="the-namespace-declaration"></a>名前空間の宣言
 
@@ -120,7 +120,7 @@ stocks            Active   2m53s
 
 #### <a name="the-stockdata-deployment"></a>StockData のデプロイ
 
-デプロイ部分には、必要なレプリカの数や、デプロイによって作成および管理される Pod オブジェクトの `template` など、デプロイ自体の `spec` が用意されています。 配置オブジェクトは、メインの Kubernetes API ではなく `apiVersion`で指定されている `apps` API を使用して管理されることに注意してください。
+YAML ファイルの配置部分には、必要なレプリカの数や、デプロイによって作成および管理される Pod オブジェクトの `template` など、デプロイ自体の `spec` が用意されています。 配置オブジェクトは、メインの Kubernetes API ではなく `apiVersion`で指定されている `apps` API によって管理されることに注意してください。
 
 ```yaml
 apiVersion: apps/v1
@@ -152,17 +152,17 @@ spec:
 
 `spec.selector` プロパティは、実行中のポッドをデプロイと照合するために使用されます。 ポッドの `metadata.labels` プロパティが `matchLabels` プロパティと一致している必要があります。一致しない場合、API 呼び出しは失敗します。
 
-`template.spec` セクションでは、実行するコンテナーを宣言します。 Docker Desktop によって提供されるものなど、ローカルの Kubernetes クラスターを使用する場合、バージョンタグがある限り、ローカルでビルドされたイメージを指定できます。
+`template.spec` セクションでは、実行するコンテナーを宣言します。 Docker Desktop によって提供されるものなど、ローカル Kubernetes クラスターを使用している場合は、バージョンタグがある限り、ローカルでビルドされたイメージを指定できます。
 
 > [!IMPORTANT]
 > 既定では、Kubernetes は常にを確認し、新しいイメージをプルしようとします。 既知のリポジトリにイメージが見つからない場合、ポッドの作成は失敗します。 ローカルイメージを操作するには、`imagePullPolicy` を `Never`に設定します。
 
-`ports` プロパティは、ポッドで公開するコンテナーポートを指定します。  `stockservice` イメージは標準の HTTP ポートでサービスを実行するので、ポート80が発行されます。
+`ports` プロパティは、ポッドで公開するコンテナーポートを指定します。 `stockservice` イメージは標準の HTTP ポートでサービスを実行するので、ポート80が発行されます。
 
-`resources` セクションでは、ポッド内で実行されているコンテナーにリソースの制限を適用します。 これは、個々のポッドがノード上の使用可能なすべての CPU またはメモリを消費しないようにするため、推奨される方法です。
+`resources` セクションでは、ポッド内で実行されているコンテナーにリソースの制限を適用します。 これは、個々のポッドがノード上の使用可能な CPU またはメモリをすべて消費しないようにするため、この方法が適しています。
 
 > [!NOTE]
-> ASP.NET Core 3.0 は、リソース制限のあるコンテナーで実行されるように最適化およびチューニングされています。 `dotnet/core/aspnet` の Docker イメージは、`dotnet` ランタイムにコンテナー内にあることを通知する環境変数を設定します。
+> ASP.NET Core 3.0 は、リソースが制限されたコンテナーで実行するように最適化およびチューニングされています。 `dotnet/core/aspnet` Docker イメージは、`dotnet` ランタイムにコンテナー内にあることを通知する環境変数を設定します。
 
 #### <a name="the-stockdata-service"></a>StockData サービス
 
@@ -181,7 +181,7 @@ spec:
     run: stockdata
 ```
 
-サービス仕様では、`selector` プロパティを使用して実行中の `Pods`を照合します。この例では、`run: stockdata`ラベルを持つポッドを探しています。 一致するポッドに対して指定された `port` は、名前付きサービスによって発行されます。 `stocks` 名前空間で実行されている他のポッドは、アドレスとして `http://stockdata` を使用して、このサービスの HTTP にアクセスできます。 他の名前空間で実行されているポッドでは、`http://stockdata.stocks` のホスト名を使用できます。 [ネットワークポリシー](https://kubernetes.io/docs/concepts/services-networking/network-policies/)を使用して、名前空間間サービスアクセスを制御できます。
+サービス `spec` は、`selector` プロパティを使用して実行中の `Pods`を照合します。この例では、ラベル `run: stockdata`を持つポッドを探しています。 一致するポッドに対して指定された `port` は、名前付きサービスによって発行されます。 `stocks` 名前空間で実行されている他のポッドは、アドレスとして `http://stockdata` を使用して、このサービスの HTTP にアクセスできます。 他の名前空間で実行されているポッドは、`http://stockdata.stocks` ホスト名を使用できます。 [ネットワークポリシー](https://kubernetes.io/docs/concepts/services-networking/network-policies/)を使用して、名前空間間サービスアクセスを制御できます。
 
 #### <a name="deploy-the-stockdata-application"></a>StockData アプリケーションをデプロイする
 
@@ -258,23 +258,23 @@ Deployment オブジェクトの `env` セクションでは、`stockweb:1.0.0` 
 
 EnvironmentVariables 構成プロバイダーにより、 **`StockData__Address`** 環境変数が `StockData:Address` 構成設定にマップされます。 この設定では、名前の間に2つのアンダースコアを使用し、セクションを区切ります。 このアドレスは、同じ Kubernetes 名前空間で実行されている `stockdata` サービスのサービス名を使用します。
 
-**`DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT`** 環境変数は、<xref:System.Net.Http.HttpClient>に対して暗号化されていない HTTP/2 接続を有効にする <xref:System.AppContext> スイッチを設定します。 この環境変数は、次に示すように、コードでスイッチを設定することに相当します。
+**`DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT`** 環境変数は、<xref:System.Net.Http.HttpClient>に対して暗号化されていない HTTP/2 接続を有効にする <xref:System.AppContext> スイッチを設定します。 この環境変数は、次に示すように、コードでスイッチを設定するのと同じことを行います。
 
 ```csharp
 AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 ```
 
-スイッチに環境変数を使用すると、アプリケーションが実行されているコンテキストに応じて、設定を簡単に変更できます。
+スイッチに環境変数を使用すると、アプリケーションが実行されているコンテキストに応じてコンテキストを簡単に変更できます。
 
 #### <a name="service-types"></a>サービスの種類
 
-クラスターの外部から Web アプリケーションにアクセスできるようにするには、`type: NodePort` プロパティを使用します。 このプロパティの種類を Kubernetes と、サービスのポート80がクラスターの外部ネットワークソケットの任意のポートに発行されます。 割り当てられたポートは、`kubectl get service` コマンドを使用して見つけることができます。
+`type: NodePort` プロパティは、クラスターの外部から web アプリケーションにアクセスできるようにするために使用されます。 このプロパティの種類を Kubernetes と、サービスのポート80がクラスターの外部ネットワークソケットの任意のポートに発行されます。 割り当てられたポートは、`kubectl get service` コマンドを使用して見つけることができます。
 
-`stockdata` サービスにはクラスターの外部からアクセスできないため、既定の種類である `ClusterIP`が使用されています。
+`stockdata` サービスにはクラスターの外部からアクセスできないため、既定の種類である `ClusterIP`が使用されます。
 
 実稼働システムでは、通常、統合されたロードバランサーを使用して、パブリックアプリケーションを外部のコンシューマーに公開します。 この方法で公開されるサービスでは、`LoadBalancer` の種類を使用する必要があります。
 
-サービスの種類の詳細については、 [Kubernetes の公開サービス](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)に関するドキュメントを参照してください。
+サービスの種類の詳細については、 [Kubernetes Publishing Services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)のドキュメントを参照してください。
 
 #### <a name="deploy-the-stockweb-application"></a>StockWeb アプリケーションをデプロイする
 
@@ -294,23 +294,23 @@ NAME       TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 stockweb   NodePort   10.106.141.5   <none>        80:32564/TCP   13s
 ```
 
-`get service` コマンドからの出力は、HTTP ポートが外部ネットワーク上のポート `32564` に発行されていることを示しています。Docker Desktop の場合、これは localhost になります。 アプリケーションにアクセスするには、`http://localhost:32564`を参照してください。
+`get service` コマンドの出力は、HTTP ポートが外部ネットワーク上のポート32564に発行されていることを示しています。 Docker Desktop の場合、これは localhost になります。 アプリケーションにアクセスするには、`http://localhost:32564`を参照してください。
 
-### <a name="testing-the-application"></a>アプリケーションのテスト
+### <a name="test-the-application"></a>アプリのテスト
 
-StockWeb アプリケーションでは、単純な要求/応答サービスから取得された NASDAQ 株式の一覧が表示されます。 デモンストレーションを目的として、各行には、それを返したサービスインスタンスの一意の ID も表示されます。
+StockWeb アプリケーションでは、単純な要求/応答サービスから取得された NASDAQ 株式の一覧が表示されます。 このデモでは、各行には、それを返したサービスインスタンスの一意の ID も表示されます。
 
 ![StockWeb スクリーンショット](media/kubernetes/stockweb-screenshot.png)
 
 `stockdata` サービスのレプリカの数が増加した場合は、**サーバー**の値が行ごとに変更されることが予想されますが、実際には、100のすべてのレコードが常に同じインスタンスから返されます。 数秒ごとにページを更新した場合、サーバー ID は変わりません。 なぜですか。 ここでは2つの要素について説明します。
 
-まず、Kubernetes service discovery システムは、既定で "ラウンドロビン" の負荷分散を使用します。 最初に DNS サーバーにクエリを実行すると、サービスに対して最初に一致する IP アドレスが返されます。 次に、リスト内の次の IP アドレス、最後まで、その時点で、ループが開始されます。
+まず、Kubernetes Service discovery システムは、既定でラウンドロビンの負荷分散を使用します。 最初に DNS サーバーにクエリを実行すると、サービスに対して最初に一致する IP アドレスが返されます。 次に、リスト内の次の IP アドレスを返します。これは最後まで続きます。 その時点で、開始にループバックします。
 
-次に、StockWeb アプリケーションの gRPC クライアントに使用される `HttpClient` が[ASP.NET Core HttpClientFactory](../microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests.md)によって作成および管理され、このクライアントの1つのインスタンスがページの呼び出しごとに使用されます。 クライアントは DNS 参照を1つだけ行うため、すべての要求が同じ IP アドレスにルーティングされます。 さらに、パフォーマンス上の理由から `HttpClientHandler` がキャッシュされているので、キャッシュされた DNS エントリの有効期限が切れるか、何らかの理由でハンドラーインスタンスが破棄されるまで、複数の要求が同時に同じ IP アドレス*を使用し*ます。
+次に、StockWeb アプリケーションの gRPC クライアントに使用される `HttpClient` が[ASP.NET Core HttpClientFactory](../microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests.md)によって作成および管理され、このクライアントの1つのインスタンスがページの呼び出しごとに使用されます。 クライアントは DNS 参照を1つだけ行うため、すべての要求が同じ IP アドレスにルーティングされます。 また、パフォーマンス上の理由により、`HttpClientHandler` がキャッシュされているため、複数の要求が同時に同じ IP アドレスを使用します。キャッシュ*された*DNS エントリの有効期限が切れるか、ハンドラーインスタンスが何らかの理由で破棄されるまでです。
 
-つまり、既定では、gRPC サービスへの要求は、クラスター内のそのサービスのすべてのインスタンスでバランスが取れていません。 コンシューマーによって使用されるインスタンスは異なりますが、要求の配布とリソースのバランスの取れた使用は保証されません。
+その結果、既定では、gRPC サービスへの要求は、クラスター内のそのサービスのすべてのインスタンスでバランスが取れていないことになります。 コンシューマーによって使用されるインスタンスは異なりますが、要求の配布やリソースのバランスの取れた使用は保証されません。
 
-次の章「[サービスメッシュ](service-mesh.md)」では、この問題に対処する方法を見ていきます。
+次の章「[サービスメッシュ](service-mesh.md)」では、この問題に対処します。
 
 >[!div class="step-by-step"]
 >[前へ](docker.md)

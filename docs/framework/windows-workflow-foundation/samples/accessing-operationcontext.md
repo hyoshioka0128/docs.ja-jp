@@ -2,20 +2,20 @@
 title: OperationContext へのアクセス
 ms.date: 03/30/2017
 ms.assetid: 4e92efe8-7e79-41f3-b50e-bdc38b9f41f8
-ms.openlocfilehash: dea990e275125dc1cd2255b88e506d363c3ac78e
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: b8a09aff7b5a30b5267fbdbd7bd6391996f359c7
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989387"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715101"
 ---
 # <a name="accessing-operationcontext"></a>OperationContext へのアクセス
-このサンプルでは、メッセージングアクティビティ (<xref:System.ServiceModel.Activities.Receive>および<xref:System.ServiceModel.Activities.Send>) をカスタムスコープアクティビティと共に使用して<xref:System.ServiceModel.OperationContext.Current%2A> 、送信メッセージまたは受信メッセージ内のカスタムメッセージヘッダーにアクセスして接続または取得する方法を示します。  
+このサンプルでは、メッセージングアクティビティ (<xref:System.ServiceModel.Activities.Receive> と <xref:System.ServiceModel.Activities.Send>) をカスタムスコープアクティビティと共に使用して <xref:System.ServiceModel.OperationContext.Current%2A> にアクセスし、送信メッセージまたは受信メッセージ内のカスタムメッセージヘッダーを添付または取得する方法を示します。  
   
-## <a name="demonstrates"></a>使用例  
+## <a name="demonstrates"></a>例  
  メッセージング アクティビティ、<xref:System.ServiceModel.Activities.ISendMessageCallback>、<xref:System.ServiceModel.Activities.IReceiveMessageCallback>。  
   
-## <a name="discussion"></a>説明  
+## <a name="discussion"></a>ディスカッション  
  このサンプルでは、メッセージング アクティビティで拡張ポイント (<xref:System.ServiceModel.Activities.ISendMessageCallback> および <xref:System.ServiceModel.Activities.IReceiveMessageCallback>) を使用して <xref:System.ServiceModel.OperationContext.Current%2A> にアクセスする方法を示します。 これらのコールバックは、実行時にメッセージング アクティビティによって取得される <xref:System.Activities.IExecutionProperty> の実装としてワークフロー ランタイム内に登録されます。 その <xref:System.Activities.IExecutionProperty> 実装と同じスコープ内のメッセージング アクティビティはすべて影響を受けます。 具体的には、このサンプルでは、カスタムのスコープ アクティビティを使用してコールバック動作を適用します。 <xref:System.ServiceModel.Activities.ISendMessageCallback> は、ワークフローの <xref:System.Activities.WorkflowApplication.Id%2A> を送信 <xref:System.ServiceModel.Channels.MessageHeader> として含めるためにクライアント ワークフローで使用されます。 このヘッダーはサービスで <xref:System.ServiceModel.Activities.IReceiveMessageCallback> を使用して取得され、ヘッダーの値がコンソールに出力されます。  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
@@ -41,6 +41,6 @@ ms.locfileid: "70989387"
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780)にアクセスして、すべての[!INCLUDE[wf1](../../../../includes/wf1-md.md)] Windows Communication Foundation (wcf) とサンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\Accessing Operation Context`

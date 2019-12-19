@@ -17,13 +17,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/14/2019
 ms.locfileid: "74089142"
 ---
-# <a name="remove-element-for-webrequestmodules-network-settings"></a>webRequestModules の > 要素を削除する \<(ネットワーク設定)
+# <a name="remove-element-for-webrequestmodules-network-settings"></a>webRequestModules の \<remove> 要素 (ネットワーク設定)
 アプリケーションからカスタム Web 要求モジュールを削除します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**削除**>
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<webRequestModules>**](webrequestmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
   
 ## <a name="syntax"></a>構文  
   

@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346957"
 ---
-# <a name="exception-visual-basic"></a>\<例外 > (Visual Basic)
+# <a name="exception-visual-basic"></a>\<exception> (Visual Basic)
 スローできる例外を指定します。  
   
 ## <a name="syntax"></a>構文  

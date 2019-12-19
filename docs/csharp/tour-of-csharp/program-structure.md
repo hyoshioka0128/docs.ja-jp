@@ -3,12 +3,12 @@ title: C# プログラムの構造 - C# 言語のツアー
 description: C# プログラムの基本的な構造について説明します
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.openlocfilehash: 5102c72d68108f698a0456b9c14e6713778f4325
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 5e095e71549ed3eec6c73e6a134fdb5a64fb63c0
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834162"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884385"
 ---
 # <a name="program-structure"></a>プログラムの構造
 
@@ -27,7 +27,7 @@ csc /t:library acme.cs
 このコマンド ラインは例をライブラリ (`Main` エントリ ポイントがないコード) としてコンパイルし、`acme.dll` という名前のアセンブリを生成します。
 
 > [!IMPORTANT]
-> 上記の例では `csc` をコマンド ライン C# コンパイラとして使用します。 このコンパイラは Windows で実行可能です。 C# を他のプラットフォームでも使用するには、.NET Core のツールを使用する必要があります。 .NET Core エコシステムでは、`dotnet` CLI を使用してコマンド ラインのビルドを管理します。 これには、依存関係の管理、および C# コンパイラの呼び出しが含まれます。 .NET Core でサポートされているプラットフォームでのこれらのツールに関する完全な説明については、[こちらのチュートリアル](../../core/tutorials/using-with-xplat-cli.md)を参照してください。
+> 上記の例では `csc` をコマンド ライン C# コンパイラとして使用します。 このコンパイラは Windows で実行可能です。 C# を他のプラットフォームでも使用するには、.NET Core のツールを使用する必要があります。 .NET Core エコシステムでは、`dotnet` CLI を使用してコマンド ラインのビルドを管理します。 これには、依存関係の管理、および C# コンパイラの呼び出しが含まれます。 .NET Core でサポートされているプラットフォームでのこれらのツールに関する完全な説明については、[こちらのチュートリアル](../../core/tutorials/cli-create-console-app.md)を参照してください。
 
 アセンブリには実行可能なコードが中間言語 (IL) の形式で含まれていて、シンボル情報がメタデータの形式で含まれています。 アセンブリの IL コードは実行前に、.NET 共通言語ランタイムの Just-In-Time (JIT) コンパイラによって、プロセッサ固有のコードに自動的に変換されます。
 

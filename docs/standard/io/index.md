@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 889271ca41fb84b44757adfffc61ffbfbc0a03a8
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: d59ff7f66076fc56ebb27841105fad07a7c7fee1
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204795"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716269"
 ---
 # <a name="file-and-stream-io"></a>ファイルおよびストリーム入出力
 
@@ -143,11 +143,11 @@ ms.locfileid: "74204795"
 
 ## <a name="io-operations-in-windows-store-apps"></a>Windows ストア アプリの I/O 操作
 
-[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] には、ストリームの読み取りと書き込みを行うための型の多くが含まれています。ただし、このセットにすべての .NET Framework I/O 型が含まれているわけではありません。
+Windows 8.x ストア アプリ用 .NET には、ストリームの読み取りと書き込みを行う型が多数あります。ただし、.NET Framework のすべての I/O 型がこのセットに含まれているわけではありません。
 
 次に、I/O 操作を Windows 8.x ストア アプリで使用する場合に注意する必要がある重要な違いを示します。
 
-- <xref:System.IO.File>、<xref:System.IO.FileInfo>、<xref:System.IO.Directory>、<xref:System.IO.DirectoryInfo> など、特にファイル操作に関連する型は、[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] に含まれていません。 代わりに、Windows ランタイムの名前空間 <xref:Windows.Storage?displayProperty=nameWithType> の型 (<xref:Windows.Storage.StorageFile> や <xref:Windows.Storage.StorageFolder> など) を使用します。
+- <xref:System.IO.File>、<xref:System.IO.FileInfo>、<xref:System.IO.Directory>、<xref:System.IO.DirectoryInfo> など、特にファイル操作に関連する型は、Windows 8.x ストア アプリ用 .NET には含まれていません。 代わりに、Windows ランタイムの名前空間 <xref:Windows.Storage?displayProperty=nameWithType> の型 (<xref:Windows.Storage.StorageFile> や <xref:Windows.Storage.StorageFolder> など) を使用します。
 
 - 分離ストレージは使用できません。代わりに、[アプリケーション データ](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10))を使用します。
 

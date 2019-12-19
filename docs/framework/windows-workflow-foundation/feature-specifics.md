@@ -2,12 +2,12 @@
 title: Windows Workflow Foundation の機能仕様
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: 0c312eed1a5ba064771e7cc4c260b43d97b16315
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 869d6108edaa7f32101b6fe8d077e4eba7eef6b5
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141872"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802597"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation の機能仕様
 
@@ -53,7 +53,7 @@ ms.locfileid: "74141872"
 
 BestPriceFinder サービスは、複数の航空会社サービスを呼び出して、特定のルートに最適なチケット価格を探します。 このシナリオを実装するには、<xref:System.ServiceModel.WorkflowServiceHost>でワークフローをホストする必要があります。 また、メッセージアクティビティを使用して、価格要求を受信し、バックエンドサービスから価格を取得し、価格要求に最高価格で応答します。
 
-## <a name="correlation"></a>相関関係
+## <a name="correlation"></a>相関
 
 相関関係は次の 2 つのいずれかです。
 
@@ -95,15 +95,15 @@ WCF 構成スキーマは複雑であり、ユーザーはさまざまな機能�
 
 ### <a name="getting-started"></a>作業の開始
 
-- [WCF 4.0 の開発者ガイド](https://go.microsoft.com/fwlink/?LinkId=204940)
+- [WCF 4.0 の開発者ガイド](https://docs.microsoft.com/previous-versions/dotnet/articles/ee354381(v=msdn.10))
 
-- [構成チャネル ファクトリ](https://go.microsoft.com/fwlink/?LinkId=204941)
+- [構成チャネル ファクトリ](xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601)
 
-- [標準エンドポイント要素](https://go.microsoft.com/fwlink/?LinkId=204942)
+- [標準エンドポイント要素](xref:System.ServiceModel.Configuration.StandardEndpointElement)
 
-- [.NET Framework 4 のサービス構成の機能強化](https://go.microsoft.com/fwlink/?LinkId=204943)
+- [.NET Framework 4 のサービス構成の機能強化](https://blogs.msdn.microsoft.com/endpoint/2009/06/30/service-configuration-improvements-in-net-4/)
 
-- [.NET 4 でのユーザーミスの間違い: WF/WCF サービス構成名の誤り](https://go.microsoft.com/fwlink/?LinkId=204944)
+- [.NET 4 でのユーザーミスの間違い: WF/WCF サービス構成名の誤り](https://blogs.msdn.microsoft.com/endpoint/2009/11/09/common-user-mistake-in-net-4-mistyping-the-wfwcf-service-configuration-name/)
 
 ### <a name="simplified-configuration-scenarios"></a>簡略化された構成のシナリオ
 
@@ -125,9 +125,9 @@ WCF 構成スキーマは複雑であり、ユーザーはさまざまな機能�
 
 ### <a name="getting-started"></a>作業の開始
 
-- [データコントラクトリゾルバー API のドキュメント](https://go.microsoft.com/fwlink/?LinkId=204946)
+- [データコントラクトリゾルバー API のドキュメント](xref:System.Runtime.Serialization.DataContractResolver)
 
-- [データコントラクトリゾルバーの概要](https://go.microsoft.com/fwlink/?LinkId=204947)
+- [データコントラクトリゾルバーの概要](https://blogs.msdn.microsoft.com/youssefm/2009/06/05/configuring-known-types-dynamically-introducing-the-datacontractresolver/)
 
 - サンプル:
 
@@ -287,7 +287,7 @@ WCF 構成スキーマは複雑であり、ユーザーはさまざまな機能�
 
 2. サンプル:[ルーティングサービス&#91;の WCF&#93;サンプル](../wcf/samples/routing-services.md)
 
-3. ブログ:[ルーティングルール](https://go.microsoft.com/fwlink/?LinkId=204956)
+3. ブログ:[ルーティングルール](https://blogs.msdn.microsoft.com/RoutingRules/)
 
 ### <a name="routing-scenarios"></a>ルーティング シナリオ
 
@@ -325,7 +325,7 @@ WCF Discovery は、アプリケーションインフラストラクチャに検
 
 サービスがいつ使用可能になるかが不明なため、開発者はエンドポイントのハードコーディングを望みません。 代わりに、開発者は実行時にサービスを選択することを望んでいます。 アプリケーションのコンポーネント間に、切り離し、堅牢性、および自動構成がさらに必要です。
 
-## <a name="tracking"></a>追跡
+## <a name="tracking"></a>Tracking
 
 ワークフロー追跡は、ワークフローインスタンスの実行に関する洞察を提供します。 追跡イベントは、ワークフローインスタンスレベルでワークフローから生成され、ワークフロー内のアクティビティが実行されます。 追跡レコードを定期受信するにはワークフロー追跡参加要素をワークフロー ホストに追加する必要があります。 追跡レコードは、追跡プロファイルを使用してフィルター処理されます。 .NET Framework には ETW (Windows イベントトレーシング) 追跡参加要素が用意されており、基本プロファイルは machine.config ファイルにインストールされます。
 

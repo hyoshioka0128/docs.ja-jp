@@ -10,12 +10,12 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-ms.openlocfilehash: 5ead3d1ac37b3c7ee50f18a81530720205678de2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0ce7182af33a795188d01ac457b9d45b8ad305dd
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122006"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960386"
 ---
 # <a name="managed-execution-process"></a>マネージド実行プロセス
 <a name="introduction"></a> マネージド実行プロセスで実行される主な手順を次に示します。詳細については、後で説明します。  
@@ -95,7 +95,7 @@ ms.locfileid: "73122006"
   
  実行時に、マネージド コードは、ガベージ コレクション、セキュリティ、アンマネージド コードとの相互運用性、言語間デバッグ サポート、強化された配置とバージョン管理のサポートなどのさまざまなサービスを利用できます。  
   
- Microsoft [!INCLUDE[winxp](../../includes/winxp-md.md)] および [!INCLUDE[windowsver](../../includes/windowsver-md.md)]では、オペレーティング システム ローダーが COFF ヘッダー内のビットを調べることにより、マネージド モジュールをチェックします。 設定されたビットはマネージド モジュールを意味します。 ローダーがマネージド モジュールを検出すると、mscoree.dll が読み込まれます。マネージド モジュール イメージが読み込まれるときとアンロードされるときには、 `_CorValidateImage` および `_CorImageUnloading` がローダーに通知します。 `_CorValidateImage` は、次のアクションを実行します。  
+ Microsoft Windows Vista では、オペレーティング システム ローダーによって、COFF ヘッダー内のビットを調べることでマネージド モジュールがチェックされます。 設定されたビットはマネージド モジュールを意味します。 ローダーがマネージド モジュールを検出すると、mscoree.dll が読み込まれます。マネージド モジュール イメージが読み込まれるときとアンロードされるときには、 `_CorValidateImage` および `_CorImageUnloading` がローダーに通知します。 `_CorValidateImage` は、次のアクションを実行します。  
   
 1. コードが有効なマネージド コードであることを確認します。  
   

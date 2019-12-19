@@ -27,7 +27,7 @@ ms.locfileid: "74350171"
   
  [Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
  [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
@@ -37,9 +37,9 @@ ms.locfileid: "74350171"
   
  [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [...次のステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [For...Next ステートメント](../../../visual-basic/language-reference/statements/for-next-statement.md)  
   
- [各...次のステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
   
  [From 句](../../../visual-basic/language-reference/queries/from-clause.md)  
   
@@ -49,7 +49,7 @@ ms.locfileid: "74350171"
   
  [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Operator ステートメント](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
  [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)  
   
@@ -57,7 +57,7 @@ ms.locfileid: "74350171"
   
  [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
- [お試しください...キャッチ...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [Try...Catch...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
   
 ## <a name="see-also"></a>参照
 

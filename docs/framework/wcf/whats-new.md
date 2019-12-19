@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: 0a065676d81b36f32729bb08c23025825e94d3bc
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: e01b3a39a004e963e5bb66c5fa71433cb4e7204a
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320455"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802376"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Windows Communication Foundation 4.5 の新機能
 
@@ -48,7 +48,7 @@ WCF には ASP.NET 互換性モードが用意されています。これによ�
 
 ### <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 
-<xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーによって使用されるメモリの量を制限する、XML ディクショナリリーダーの構成可能なクォータ値が含まれています。 これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。 詳細については、「 [WCF の単純化機能](wcf-simplification-features.md)」を参照してください。
+<xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーで使用されるメモリの量を制限する XML ディクショナリ リーダーの構成可能なクォータ値が格納されます。 これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。 詳細については、「 [WCF の単純化機能](wcf-simplification-features.md)」を参照してください。
 
 ### <a name="wcf-configuration-validation"></a>WCF 構成検証
 
@@ -78,7 +78,7 @@ Websocket は、TCP と同様のパフォーマンス特性を持つポート 80
 
 次の表は、変更された設定と追加情報の場所を示しています。
 
-|プロパティ|オン|新しい既定値|参照先|
+|property|On|新しい既定値|詳細については、「」を参照してください。|
 |--------------|--------|-----------------|------------------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 秒|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * プロセッサの数|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
@@ -126,7 +126,7 @@ HTTP トランスポートとトランスポート セキュリティを使用�
 
 ## <a name="httpclient"></a>HttpClient
 
-HTTP 要求の処理が容易になるように <xref:System.Net.Http.HttpClient> という新しいクラスが追加されました。 詳細については、「[アプリをソーシャルに](https://go.microsoft.com/fwlink/?LinkId=231886)する」および「http サービスと http[クライアントのサンプル](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)」を参照してください。
+HTTP 要求の処理が容易になるように <xref:System.Net.Http.HttpClient> という新しいクラスが追加されました。 詳細については、「[アプリをソーシャルに](https://channel9.msdn.com/Events/BUILD/BUILD2011/PLAT-581T)する」および「http サービスと http[クライアントのサンプル](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)」を参照してください。
 
 ## <a name="configuration-intellisense"></a>構成の Intellisense
 

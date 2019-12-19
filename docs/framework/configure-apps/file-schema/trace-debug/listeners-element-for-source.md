@@ -14,14 +14,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/01/2019
 ms.locfileid: "71697299"
 ---
-# <a name="listeners-element-for-source"></a>\<ソース > の \<listeners > 要素
+# <a name="listeners-element-for-source"></a>\<listeners> の \<source> 要素
 <xref:System.Diagnostics.TraceSource>の <xref:System.Diagnostics.TraceSource.Listeners%2A> コレクション内のリスナーを追加または削除します。 リスナーは、ログ、ウィンドウ、テキストファイルなど、適切なターゲットにトレース出力を送信します。  
   
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<の >** ](system-diagnostics-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;[**ソース\<** ](sources-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**ソース >** ](source-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**リスナー >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<sources>**](sources-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<source>**](source-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<listeners>**  
   
 ## <a name="syntax"></a>構文  
   

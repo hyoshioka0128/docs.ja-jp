@@ -9,12 +9,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-ms.openlocfilehash: f3cddcd6cd90e7e43ea6af67725e709673f7650f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 46d8f00f9328e9c0a4df596b709195ae42d651bf
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978339"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960131"
 ---
 # <a name="troubleshooting-hybrid-applications"></a>ハイブリッド アプリケーションのトラブルシューティング
 <a name="introduction"></a>このトピックでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] と [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] の両方のテクノロジを使用するハイブリッドアプリケーションを作成するときに発生する可能性がある一般的な問題をいくつか紹介します。  
@@ -36,11 +36,11 @@ ms.locfileid: "73978339"
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] と [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] には、異なるスケーリングモデルがあります。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] スケーリング変換には、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールにとって意味があるものもあれば、そうでないものもあります。 たとえば、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールのスケーリングを0に設定した場合は機能しますが、同じコントロールを0以外の値にスケーリングしようとすると、コントロールのサイズは0のままになります。 詳細については、「 [WindowsFormsHost 要素のレイアウトに関する考慮事項](layout-considerations-for-the-windowsformshost-element.md)」を参照してください。  
   
 <a name="adapter"></a>   
-## <a name="adapter"></a>アダプター  
+## <a name="adapter"></a>アダプタ  
  <xref:System.Windows.Forms.Integration.WindowsFormsHost> クラスと <xref:System.Windows.Forms.Integration.ElementHost> クラスを操作するときに混乱が生じる可能性があります。これは、非表示のコンテナーが含まれているためです。 <xref:System.Windows.Forms.Integration.WindowsFormsHost> クラスと <xref:System.Windows.Forms.Integration.ElementHost> クラスには、コンテンツをホストするために使用する*アダプター*と呼ばれる非表示のコンテナーがあります。 <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の場合、アダプターは <xref:System.Windows.Forms.ContainerControl?displayProperty=nameWithType> クラスから派生します。 <xref:System.Windows.Forms.Integration.ElementHost> コントロールの場合、アダプターは <xref:System.Windows.Controls.DockPanel> 要素から派生します。 他の相互運用のトピックでアダプターへの参照が表示されている場合は、このコンテナーについて説明します。  
   
 <a name="nesting"></a>   
-## <a name="nesting"></a>巣  
+## <a name="nesting"></a>入れ子  
  <xref:System.Windows.Forms.Integration.ElementHost> コントロール内での <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の入れ子はサポートされていません。 <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素内の <xref:System.Windows.Forms.Integration.ElementHost> コントロールの入れ子もサポートされていません。  
   
 <a name="focus"></a>   
@@ -86,7 +86,7 @@ ms.locfileid: "73978339"
   
 <a name="enabling_visual_styles"></a>   
 ## <a name="enabling-visual-styles"></a>視覚スタイルを有効にする  
- [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールの [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] の視覚スタイルが有効になっていない可能性があります。 <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> メソッドは、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] アプリケーションのテンプレートで呼び出されます。 このメソッドは既定では呼び出されませんが、Visual Studio を使用してプロジェクトを作成すると、Comctl32.dll のバージョン6.0 が使用可能な場合に、コントロールの視覚スタイルが [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] 表示されます。 スレッドでハンドルが作成される前に、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A> メソッドを呼び出す必要があります。 詳細については、「[方法: ハイブリッドアプリケーションで Visual スタイルを有効](how-to-enable-visual-styles-in-a-hybrid-application.md)にする」を参照してください。  
+ [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールの Microsoft Windows XP visual スタイルが有効になっていない可能性があります。 <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> メソッドは、[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] アプリケーションのテンプレートで呼び出されます。 このメソッドは既定では呼び出されませんが、Visual Studio を使用してプロジェクトを作成する場合、Comctl32.dll のバージョン6.0 が使用可能な場合は、Microsoft Windows XP visual スタイルのコントロールが表示されます。 スレッドでハンドルが作成される前に、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A> メソッドを呼び出す必要があります。 詳細については、「[方法: ハイブリッドアプリケーションで Visual スタイルを有効](how-to-enable-visual-styles-in-a-hybrid-application.md)にする」を参照してください。  
   
 <a name="licensed_controls"></a>   
 ## <a name="licensed-controls"></a>ライセンスされたコントロール  
@@ -112,7 +112,7 @@ ms.locfileid: "73978339"
 ## <a name="elementhost-and-ime"></a>[エンティティと IME]  
  現在、<xref:System.Windows.Forms.Integration.ElementHost> でホストされている WPF コントロールは、<xref:System.Windows.Forms.Control.ImeMode%2A> プロパティをサポートしていません。 <xref:System.Windows.Forms.Control.ImeMode%2A> への変更は、ホストされているコントロールによって無視されます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>

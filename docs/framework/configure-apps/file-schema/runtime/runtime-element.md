@@ -95,7 +95,7 @@ ms.locfileid: "74430462"
 
 構成ファイルの[\<runtime >](runtime-element.md)セクションの子要素は、アプリケーションの実行方法を構成するために共通言語ランタイムによって使用されます。 たとえば、 [\<gcServer >](gcserver-element.md)要素は、ガベージコレクターがワークステーションのガベージコレクションまたはサーバーのガベージコレクションを使用するかどうかを決定します。 [\<UseRandomizedStringHashAlgorithm >](userandomizedstringhashalgorithm-element.md)要素は、共通言語ランタイムが、アプリケーションごとまたはアプリケーションドメインごとに文字列のハッシュコードを計算するかどうかを決定 `AppContextSwitchOverrides` します
 
-[\<runtime >](runtime-element.md)セクションの要素は、アプリケーションの起動時に共通言語ランタイムによって自動的に読み取られます。 <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> プロパティに名前を指定して、既定以外のアプリケーションドメインの構成ファイルを定義することもできます。アプリケーションドメインが読み込まれると、その設定が自動的に読み取られます。 アプリケーションの構成ファイルの[\<runtime >](runtime-element.md)セクションの設定を直接読み取る必要があることはほとんどありません。
+[\<runtime >](runtime-element.md)セクションの要素は、アプリケーションの起動時に共通言語ランタイムによって自動的に読み取られます。 <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> プロパティに名前を指定して、既定以外のアプリケーションドメインの構成ファイルを定義することもできます。アプリケーションドメインが読み込まれると、その設定が自動的に読み取られます。 ほとんどの場合、アプリケーションの構成ファイルの [ [ \<runtime>](runtime-element.md) ] セクションの設定を直接読み取る必要があります。
 
 ## <a name="see-also"></a>参照
 

@@ -2,12 +2,12 @@
 title: ワークフローの追跡の構成
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: 25edef2edc23a3823a892c64809df21f333478db
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 97b25873e9f20d5d390b7a59531b3a5af32296df
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458903"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802675"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>ワークフローの追跡の構成
 
@@ -134,7 +134,7 @@ if (null != workflowServiceHost)
 ```
 
 > [!NOTE]
-> 追跡プロファイルの詳細については、「[追跡プロファイル](https://go.microsoft.com/fwlink/?LinkId=201310)」を参照してください。
+> 追跡プロファイルの詳細については、「[追跡プロファイル](tracking-profiles.md)」を参照してください。
 
 ### <a name="configuring-tracking-using-workflowinvoker"></a>WorkflowInvoker を使用した追跡の構成
 
@@ -196,7 +196,7 @@ WF 4 には、追跡レコードを ETW (Event Tracing for Windows) セッショ
     </system.serviceModel>
     ```
 
-2. マニフェストファイルを%windir%\Microsoft.NET\Framework\\\<最新バージョンの [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man から一時的な場所にコピーし、名前をに変更します。ApplicationServer. Applications_Provider1.
+2. マニフェストファイルを%windir%\Microsoft.NET\Framework\\\<最新バージョンの [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man から一時的な場所にコピーし、名前を Applications_Provider1 ApplicationServer に変更します。
 
 3. マニフェスト ファイルの GUID を新しい GUID に変更します。
 
@@ -222,7 +222,7 @@ WF 4 には、追跡レコードを ETW (Event Tracing for Windows) セッショ
 
 6. 次の手順に従ってリソース DLL を生成します。
 
-    1. Windows SDK をインストールします。 Windows SDK には、メッセージコンパイラ ([mc](https://go.microsoft.com/fwlink/?LinkId=184606)) とリソースコンパイラ ([rc .exe](https://go.microsoft.com/fwlink/?LinkId=184605)) が含まれています。
+    1. Windows SDK をインストールします。 Windows SDK には、メッセージコンパイラ ([mc](/windows/win32/wes/message-compiler--mc-exe-)) とリソースコンパイラ ([rc .exe](/windows/win32/menurc/using-rc-the-rc-command-line-)) が含まれています。
 
     2. Windows SDK コマンド プロンプトで、新しいマニフェスト ファイルに対して mc.exe を実行します。
 
@@ -250,13 +250,13 @@ WF 4 には、追跡レコードを ETW (Event Tracing for Windows) セッショ
         <provider name="Microsoft-Windows-Application Server-Applications_Provider1" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}" symbol="Microsoft_Windows_ApplicationServer_ApplicationEvents" resourceFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" messageFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll">
         ```
 
-    7. [Wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608)を使用してマニフェストを登録します。
+    7. [Wevtutil](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732848(v=ws.10))を使用してマニフェストを登録します。
 
         ```console
         wevtutil im Microsoft.Windows.ApplicationServer.Applications_Provider1.man
         ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [Windows Server App Fabric の監視](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [App Fabric を使用したアプリケーションの監視](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [Windows Server App Fabric の監視](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
+- [App Fabric を使用したアプリケーションの監視](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))

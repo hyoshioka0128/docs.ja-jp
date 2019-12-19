@@ -1,5 +1,5 @@
 ---
-title: Property Statement
+title: Property ステートメント
 ms.date: 05/12/2018
 f1_keywords:
 - vb.PropertySet
@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346758"
 ---
-# <a name="property-statement"></a>Property Statement
+# <a name="property-statement"></a>Property ステートメント
 
 プロパティの名前、およびプロパティの値を格納および取得するために使用されるプロパティプロシージャを宣言します。
 
@@ -67,7 +67,7 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
   - [Private Protected](../modifiers/private-protected.md)
 
-  「 [Access levels in Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
+  「[Visual Basic でのアクセス レベル](../../programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。
 
 - `propertymodifiers`
 
@@ -89,27 +89,27 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
 - `Shared`
 
-  任意。 「[共有](../modifiers/shared.md)」を参照してください。
+  任意。 「[Shared](../modifiers/shared.md)」を参照してください。
 
 - `Shadows`
 
-  任意。 「[シャドウ](../modifiers/shadows.md)」を参照してください。
+  任意。 「[Shadows](../modifiers/shadows.md)」を参照してください。
 
 - `ReadOnly`
 
-  任意。 「 [ReadOnly](../modifiers/readonly.md)」を参照してください。
+  任意。 「[ReadOnly](../modifiers/readonly.md)」を参照してください。
 
 - `WriteOnly`
 
-  任意。 「 [WriteOnly](../modifiers/writeonly.md)」を参照してください。
+  任意。 「[WriteOnly](../modifiers/writeonly.md)」を参照してください。
 
 - `Iterator`
 
-  任意。 「[反復子](../modifiers/iterator.md)」を参照してください。
+  任意。 「[Iterator](../modifiers/iterator.md)」を参照してください。
 
 - `name`
 
-  必須。 プロパティ名。 「 [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。
+  必須。 プロパティ名。 「[Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)」を参照してください。
 
 - `parameterlist`
 
@@ -121,7 +121,7 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
 - `Implements`
 
-  任意。 このプロパティが1つ以上のプロパティを実装することを示します。各プロパティは、このプロパティのクラスまたは構造体を含むインターフェイスで定義されています。 「 [Implements ステートメント](implements-statement.md)」を参照してください。
+  任意。 このプロパティが1つ以上のプロパティを実装することを示します。各プロパティは、このプロパティのクラスまたは構造体を含むインターフェイスで定義されています。 「[Implements ステートメント](implements-statement.md)」を参照してください。
 
 - `implementslist`
 

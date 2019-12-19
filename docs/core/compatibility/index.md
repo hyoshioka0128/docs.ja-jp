@@ -1,15 +1,15 @@
 ---
-title: 破壊的変更を評価する - .NET Core
-description: .NET Core が開発者のために .NET バージョンをまたいで互換性を維持するために試行している方法について説明します。
+title: 破壊的変更の種類 - .NET Core
+description: .NET Core が .NET のバージョン間で開発者向けの互換性をどのように維持しようとしているか、およびどのような変更が重大な変更と見なされるかについて説明します。
 ms.date: 06/10/2019
-ms.openlocfilehash: 3ad3cbe36ee09d371e26dc7da36a31207a6c1b25
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 5624a35a0d71224faf9adc5df2b02a529e650314
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973651"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567720"
 ---
-# <a name="evaluate-breaking-changes-in-net-core"></a>.NET Core の破壊的変更を評価する
+# <a name="changes-that-affect-compatibility"></a>互換性に影響を与える変更点
 
 .NET は、その歴史を通じて、バージョンからバージョンへ、.NET のさまざまなフレーバー間で高いレベルの互換性を維持しようと試行してきました。 これは .NET Core でも引き続き同様の状況です。 .NET Core は、.NET Framework から独立した新しいテクノロジと見なすことができますが、.NET Core が .NET Framework から逸脱する能力を制限する主な要因が 2 つあります。
 
@@ -19,7 +19,7 @@ ms.locfileid: "73973651"
 
 .NET 実装間の互換性と共に、開発者は .NET Core バージョン間の高いレベルの互換性を期待しています。 特に、以前のバージョンの .NET Core 用に書かれたコードは、新しいバージョンの .NET Core でもシームレスに動作するはずです。 実際、多くの開発者は、新しくリリースされたバージョンの .NET Core にある新しい API が、それらの API が導入されたプレリリース バージョンとも互換性があると期待します。
 
-この記事では、互換性の変更 (つまり破壊的変更) のカテゴリと、.NET チームがこれらの各カテゴリの変更をどのように評価するかについて説明します。 既存の API の動作を変更する [dotnet/corefx](https://github.com/dotnet/corefx) GitHub リポジトリで、プル要求を開く開発者の場合、考えられる破壊的変更に .NET チームがどのように対処しているかを理解することは特に役立ちます。
+この記事では、互換性の変更 (つまり破壊的変更) のカテゴリと、.NET チームがこれらの各カテゴリの変更をどのように評価するかについて説明します。 既存の API の動作を変更する [dotnet/corefx](https://github.com/dotnet/corefx) GitHub リポジトリで、pull request を開く開発者の場合、考えられる破壊的変更に .NET チームがどのように対処しているかを理解することは特に役立ちます。
 
 > [!NOTE]
 > バイナリ互換性や下位互換性などの互換性カテゴリの定義については、「[Breaking change categories (破壊的変更のカテゴリ)](categories.md)」を参照してください。
@@ -31,7 +31,7 @@ ms.locfileid: "73973651"
 
 ## <a name="modifications-to-the-public-contract"></a>パブリック コントラクトの変更
 
-このカテゴリの変更によって、型のパブリック セキュリティが "*変わります*"。 このカテゴリの変更のほとんどは、"*後方互換性*" に違反しているため、許可されません (以前のバージョンの API で開発されたアプリケーションが新しいバージョン上で再コンパイルすることなく実行できること)。
+このカテゴリの変更によって、型のパブリック セキュリティ、外部からのアクセスが変わります。 このカテゴリの変更のほとんどは、"*後方互換性*" に違反しているため、許可されません (以前のバージョンの API で開発されたアプリケーションが新しいバージョン上で再コンパイルすることなく実行できること)。
 
 ### <a name="types"></a>型
 

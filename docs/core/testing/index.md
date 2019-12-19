@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: 9fbffea82d75fc06a5aa3b11beffdd2cb540da83
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 63bbe2981f70093c94dde47510fd7786a1cc950b
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74282255"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74835461"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>.NET Core と .NET Standard の単体テスト
 
@@ -40,8 +40,8 @@ C#、F#、Visual Basic 向けに組み込まれている .NET Core 2.0 以降の
 次に対する .NET Core 単体テスト プロジェクトがサポートされます。
 
 - [C#](../../csharp/index.yml)
-- [F#](../../fsharp/index.md)
-- [Visual Basic](../../visual-basic/index.md) 
+- [F#](../../fsharp/index.yml)
+- [Visual Basic](../../visual-basic/index.yml) 
 
 また、次から選択することもできます。
 

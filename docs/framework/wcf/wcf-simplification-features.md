@@ -2,12 +2,12 @@
 title: WCF の単純化機能
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: 85c50e5939a5e63202d57bca08393b9b79308f57
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: dd944ad2963e29fd3aa9254f3a37f2c2b98ce70d
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321227"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802389"
 ---
 # <a name="wcf-simplification-features"></a>WCF の単純化機能
 
@@ -88,13 +88,13 @@ WCF には ASP.NET 互換性モードが用意されています。これによ�
 
 - 非同期ストリーミングに対する新しいサポートが WCF に追加されました。 非同期ストリーミングを有効にするには、エンドポイントの <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> 動作をサービス ホストに追加し、その <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> プロパティを `true` に設定します。 これにより、読み取りに時間のかかる複数のクライアントに対してサービスがストリーム メッセージを送信するときにスケーラビリティが得られます。 WCF では、クライアントごとに 1 つのスレッドがブロックされなくなり、別のクライアントにサービスを提供するためにスレッドを解放します。
 
-- サービスが IIS でホストされるときのメッセージのバッファー処理に関する制限がなくなりました。 以前のバージョンの WCF では、ストリーム メッセージ転送を使用する IIS でホストされるサービスに対するメッセージを受信すると、ASP.NET はメッセージ全体を WCF に送信する前にバッファー処理しました。 これにより、メモリの大量消費が発生しました。 このバッファー処理は .NET 4.5 で削除されました。現在は、IIS でホストされる WCF サービスが、メッセージ全体が受信される前に着信ストリームの処理を開始できるため、実際のストリーミングが可能になります。 これにより、WCF は、メッセージにすぐに応答できるようになり、パフォーマンスは向上します。 さらに、着信要求に対する ASP.NET のサイズ制限である `maxRequestLength` の値を指定する必要がなくなりました。 このプロパティを設定した場合、このプロパティは無視されます。 `maxRequestLength` の詳細については、「 [\<httpRuntime > configuration 要素](https://go.microsoft.com/fwlink/?LinkId=223344)」を参照してください。 MaxAllowedContentLength を構成する必要があります。詳細については、「 [IIS 要求の制限](https://go.microsoft.com/fwlink/?LinkId=225908)」を参照してください。
+- サービスが IIS でホストされるときのメッセージのバッファー処理に関する制限がなくなりました。 以前のバージョンの WCF では、ストリーム メッセージ転送を使用する IIS でホストされるサービスに対するメッセージを受信すると、ASP.NET はメッセージ全体を WCF に送信する前にバッファー処理しました。 これにより、メモリの大量消費が発生しました。 このバッファー処理は .NET 4.5 で削除されました。現在は、IIS でホストされる WCF サービスが、メッセージ全体が受信される前に着信ストリームの処理を開始できるため、実際のストリーミングが可能になります。 これにより、WCF は、メッセージにすぐに応答できるようになり、パフォーマンスは向上します。 さらに、着信要求に対する ASP.NET のサイズ制限である `maxRequestLength` の値を指定する必要がなくなりました。 このプロパティを設定した場合、このプロパティは無視されます。 `maxRequestLength` の詳細については、「 [\<httpRuntime > configuration 要素](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/e1f13641(v=vs.71))」を参照してください。 MaxAllowedContentLength を構成する必要があります。詳細については、「 [IIS 要求の制限](https://docs.microsoft.com/previous-versions/iis/settings-schema/ms689462(v=vs.90))」を参照してください。
 
 ## <a name="new-transport-default-values"></a>トランスポートの新しい既定値
 
 次の表は、変更された設定と追加情報の場所を示しています。
 
-|プロパティ|オン|新しい既定値|詳細|
+|property|On|新しい既定値|その他の情報|
 |--------------|--------|-----------------|----------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 秒|このプロパティは、TCP 接続が .NET フレーミングプロトコルを使用して自身を認証するために実行できる時間を決定します。 クライアントは、サーバーが認証を実行するための十分な情報を得る前に初期データを送信する必要があります。 このタイムアウトは意図的に ReceiveTimeout (10 分) よりも小さい値に設定されます。これにより、悪意のある認証されていないクライアントは、長時間にわたってサーバーへの接続を保持できません。 既定値は 30 秒です。 詳細については <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A> を参照してください。|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * プロセッサの数|このソケット レベルのプロパティは、キューに入れられる "受入保留中の" 要求の数を示します。 リッスン バックログ キューがいっぱいになると、新しいソケット要求は拒否されます。 詳細については <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A> を参照してください。|
@@ -107,13 +107,13 @@ WCF には ASP.NET 互換性モードが用意されています。これによ�
 
 ## <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 
-<xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーによって使用されるメモリの量を制限する、XML ディクショナリリーダーの構成可能なクォータ値が含まれています。 これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。 `MaxReceivedMessageSize` クォータが変更されていないため、メモリ消費が制限され、<xref:System.Xml.XmlDictionaryReaderQuotas>の複雑さに対処する必要がなくなります。 次の表に、クォータ、クォータの新しい既定値、および各クォータの用途の簡単な説明を示します。
+<xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーで使用されるメモリの量を制限する XML ディクショナリ リーダーの構成可能なクォータ値が格納されます。 これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。 `MaxReceivedMessageSize` クォータは変更されていないため、メモリ使用量を引き続き制限して、<xref:System.Xml.XmlDictionaryReaderQuotas> の複雑さを処理する必要性を回避できます。 次の表に、クォータ、クォータの新しい既定値、および各クォータの用途の簡単な説明を示します。
 
 |クォータの名前|既定値|説明|
 |----------------|-------------------|-----------------|
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>|Int32.MaxValue|許される最大配列長を取得または設定します。 このクォータは、XML リーダーが返すプリミティブ配列 (バイト配列など) の最大サイズを制限します。 このクォータは、XML リーダー自体のメモリ消費は制限しませんが、このリーダーを使用するコンポーネントのメモリ消費を制限します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> が <xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>でセキュリティ保護されたリーダーを使用するときは、このクォータを超えるバイト配列を逆シリアル化することはありません。|
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>|Int32.MaxValue|1 回の読み取りで返すことができる最大バイト数を取得または設定します。 このクォータは、要素の開始タグとその属性を読み取るときに、1 回の読み取り操作で読み取るバイト数を制限します (ストリーミングを使用しない場合、要素名自体がクォータに照らし合わせてカウントされることはありません)。 XML 属性が多すぎると、属性名は一意かどうかを確認する必要があるため、処理時間が大幅に増加する可能性があります。 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> によってこの脅威を軽減できます。|
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>|128 ノードの深さ|このクォータは、XML 要素の入れ子の深さの最大値を制限します。 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> は <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>と相互に関係しています。リーダーは常に、現在の要素とそのすべての先祖に関するデータをメモリ内に維持します。このため、リーダーのメモリ消費の最大値は、この 2 つの設定値の積に比例します。 深く入れ子になったオブジェクト グラフを逆シリアル化する場合、デシリアライザーはスタック全体にアクセスし、回復不可能な <xref:System.StackOverflowException>をスローするしかありません。 <xref:System.Runtime.Serialization.DataContractSerializer> の場合も <xref:System.Xml.Serialization.XmlSerializer>の場合も、XML の入れ子構造とオブジェクトの入れ子構造との間に直接的な相関関係が存在します。 この脅威を軽減するために <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> を使用します。|
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>|128 ノードの深さ|このクォータは、XML 要素の入れ子の深さの最大値を制限します。 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> は <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>と相互に関係しています。リーダーは常に、現在の要素とそのすべての先祖に関するデータをメモリ内に維持します。このため、リーダーのメモリ消費の最大値は、この 2 つの設定値の積に比例します。 深く入れ子になったオブジェクト グラフを逆シリアル化する場合、デシリアライザーはスタック全体にアクセスし、回復不可能な <xref:System.StackOverflowException>をスローするしかありません。 <xref:System.Runtime.Serialization.DataContractSerializer> の場合も <xref:System.Xml.Serialization.XmlSerializer>の場合も、XML の入れ子構造とオブジェクトの入れ子構造との間に直接的な相関関係が存在します。 この脅威を軽減するには、<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> を使用します。|
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>|Int32.MaxValue|このクォータは、nametable で使用できる最大文字数を制限します。 nametable には、XML ドキュメントを処理するときに出現する特定の文字列 (名前空間やプレフィックスなど) が入っています。 これらの文字列はメモリ内でバッファー化されるので、ストリーミングが予想されるときは、このクォータを使用して過度のバッファーを防止します。|
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>|Int32.MaxValue|このクォータは、XML リーダーが返す文字列の最大サイズを制限します。 このクォータは、XML リーダー自体のメモリ消費は制限しませんが、このリーダーを使用するコンポーネントのメモリ消費を制限します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> が <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>でセキュリティ保護されたリーダーを使用するときは、このクォータを超える文字列を逆シリアル化することはありません。|
 

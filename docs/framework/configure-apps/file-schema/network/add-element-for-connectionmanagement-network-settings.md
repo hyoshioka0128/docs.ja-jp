@@ -17,13 +17,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/14/2019
 ms.locfileid: "74088528"
 ---
-# <a name="add-element-for-connectionmanagement-network-settings"></a>connectionManagement の > 要素を追加 \<(ネットワーク設定)
+# <a name="add-element-for-connectionmanagement-network-settings"></a>connectionManagement の \<add> 要素 (ネットワーク設定)
 IP アドレスまたは DNS 名を接続管理リストに追加します。  
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<connectionManagement >** ](connectionmanagement-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**追加 >**
+&nbsp;&nbsp;[ **\<system.net>** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<connectionManagement>** ](connectionmanagement-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**add>**
 
 ## <a name="syntax"></a>構文  
   

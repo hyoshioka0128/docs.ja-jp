@@ -6,12 +6,12 @@ ms.date: 07/29/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 2f1ad5cc029b93261153e46d854cd8bf3e31ce92
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 48aa294fa9e37e2e138444e493faa5474011097e
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428528"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551823"
 ---
 # <a name="default-values-table-c-reference"></a>既定値の一覧表 (C# リファレンス)
 
@@ -22,7 +22,7 @@ ms.locfileid: "74428528"
 |すべての参照型|`null`|
 |任意の[組み込み整数数値型](../builtin-types/integral-numeric-types.md)|0 (ゼロ)|
 |任意の[組み込み浮動小数点数値型](../builtin-types/floating-point-numeric-types.md)|0 (ゼロ)|
-|[bool](bool.md)|`false`|
+|[bool](../builtin-types/bool.md)|`false`|
 |[char](../builtin-types/char.md)|`'\0'` (U+0000)|
 |[enum](enum.md)|式 `(E)0` によって生成される値。`E` は列挙型識別子です。|
 |[struct](struct.md)|すべての値型フィールドが既定値に設定され、すべての参照型フィールドが `null` に設定された値。|

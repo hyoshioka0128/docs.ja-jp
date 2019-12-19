@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351524"
 ---
-# <a name="iterator-visual-basic"></a>反復子 (Visual Basic)
+# <a name="iterator-visual-basic"></a>Iterator (Visual Basic)
 関数または `Get` アクセサーが反復子であることを指定します。  
   
 ## <a name="remarks"></a>コメント  
@@ -29,7 +29,7 @@ ms.locfileid: "74351524"
   
  反復子を、イベント、インスタンス コンストラクター、静的コンストラクター、静的デストラクターで指定することはできません。  
   
- 反復子は、匿名関数にすることができます。 詳細については、「[反復子](../../programming-guide/concepts/iterators.md)」をご覧ください。  
+ 反復子は、匿名関数にすることができます。 詳細については、「[Iterator](../../programming-guide/concepts/iterators.md)」をご覧ください。  
   
 ## <a name="usage"></a>使用方法  
  `Iterator` 修飾子は、次のコンテキストで使用できます。  
@@ -48,10 +48,10 @@ ms.locfileid: "74351524"
   
  [!code-vb[VbVbalrStatements#99](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class2.vb#99)]  
   
- その他の例については、「[反復子](../../programming-guide/concepts/iterators.md)」をご覧ください。  
+ その他の例については、「[Iterator](../../programming-guide/concepts/iterators.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Runtime.CompilerServices.IteratorStateMachineAttribute>
-- [反復子](../../programming-guide/concepts/iterators.md)
+- [Iterator](../../programming-guide/concepts/iterators.md)
 - [Yield ステートメント](../../../visual-basic/language-reference/statements/yield-statement.md)

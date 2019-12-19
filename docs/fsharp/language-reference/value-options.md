@@ -1,13 +1,13 @@
 ---
 title: 値のオプション
 description: F# Value オプションの型について説明します。これは、オプションの型の構造体のバージョンです。
-ms.date: 02/06/2019
-ms.openlocfilehash: 4dc3f7217943345b7aaf1165fd648ab2e01bd727
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 12/04/2019
+ms.openlocfilehash: 0e9882ab4acdf2757705ef6022516d3572d87ef2
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424013"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837117"
 ---
 # <a name="value-options"></a>値のオプション
 
@@ -18,7 +18,7 @@ ms.locfileid: "73424013"
 
 すべてのパフォーマンスを重視するシナリオは、構造体を使用して "解決" されるわけではありません。 参照型の代わりに使用する場合は、コピーにかかる追加コストを考慮する必要があります。 ただし、大F#規模なプログラムでは、多くの場合、ホットパスを通過する多くの省略可能な型がインスタンス化されるため、多くの場合、構造体はプログラムの有効期間全体のパフォーマンスを向上させることができます。
 
-## <a name="definition"></a>定義
+## <a name="definition"></a>Definition
 
 Value オプションは、参照オプションの型に似た[構造体の判別共用体](discriminated-unions.md#struct-discriminated-unions)として定義されます。 その定義は、次のように考えることができます。
 
@@ -63,16 +63,14 @@ match (result1, result2) with
 
 ## <a name="value-option-functions"></a>Value オプションの関数
 
-現時点では、値のオプションにはモジュールバインド関数が1つ `defaultValueArg`。
+Fsharp.core の `ValueOption` モジュールには、`Option` モジュールと同等の機能が含まれています。 `defaultValueArg`のように、名前にはいくつかの違いがあります。
 
 ```fsharp
 val defaultValueArg : arg:'T voption -> defaultValue:'T -> 'T
 ```
 
-`defaultArg` 関数と同様に、`defaultValueArg` は、指定された Value オプションが存在する場合は、基になる値を返します。それ以外の場合は、指定された既定値を返します。
+これは、`Option` モジュールの `defaultArg` と同じように動作しますが、代わりに値オプションを操作します。
 
-現時点では、値オプション用のモジュールバインド関数は他にありません。
-
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Options](options.md)

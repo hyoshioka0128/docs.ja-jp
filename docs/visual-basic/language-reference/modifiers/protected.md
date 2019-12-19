@@ -1,5 +1,5 @@
 ---
-title: プロテクト
+title: Protected
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Protected
@@ -49,7 +49,7 @@ ms.locfileid: "74351299"
 
 - [Const ステートメント](../../../visual-basic/language-reference/statements/const-statement.md)
 
-- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare ステートメント](../../../visual-basic/language-reference/statements/declare-statement.md)
 
 - [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)
 
@@ -77,6 +77,6 @@ ms.locfileid: "74351299"
 - [Private Protected](private-protected.md)
 - [Protected Friend](protected-friend.md)
 - [Visual Basic のアクセスレベル](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
-- [手順](../../../visual-basic/programming-guide/language-features/procedures/index.md)
+- [Visual Basic におけるプロシージャ](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [構造体](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [クラスとオブジェクト](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
