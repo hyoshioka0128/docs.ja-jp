@@ -57,7 +57,7 @@ Friend stringForThisProject As String
 
 ## <a name="protected-friend"></a>Protected Friend
 
-宣言ステートメントで[Protected Friend](../../../language-reference/modifiers/protected-friend.md)キーワードを組み合わせると、派生クラスまたは同じアセンブリ内、またはその両方から要素にアクセスできることが指定されます。 次のコードは、`Protected Friend` の宣言の例を示しています。
+宣言ステートメントで [Protected Friend](../../../language-reference/modifiers/protected-friend.md) キーワードを組み合わせると、派生クラスまたは同じアセンブリ内、またはその両方から要素にアクセスできることが指定されます。 次のコードは、`Protected Friend` の宣言の例を示しています。
 
 ```vb
 Protected Friend stringForProjectAndHeirs As String
@@ -79,7 +79,7 @@ Private _numberForMeOnly As Integer
 
 ## <a name="private-protected"></a>Private Protected
 
-宣言ステートメント内の[Private Protected](../../../language-reference/modifiers/private-protected.md)キーワードの組み合わせは、同じクラス内から、および親クラスと同じアセンブリ内にある派生クラスからのみ、要素にアクセスできることを指定します。 `Private Protected` アクセス修飾子は Visual Basic 15.5 以降でサポートされています。
+宣言ステートメント内の [Private Protected](../../../language-reference/modifiers/private-protected.md) キーワードの組み合わせは、同じクラス内から、および親クラスと同じアセンブリ内にある派生クラスからのみ、要素にアクセスできることを指定します。 `Private Protected` アクセス修飾子は Visual Basic 15.5 以降でサポートされています。
 
 次の例は、`Private Protected` 宣言を示しています。
 
@@ -105,7 +105,7 @@ Private Protected internalValue As Integer
 </PropertyGroup>
 ```
 
-詳細について[は、「Visual Basic 言語バージョンの設定](../../../language-reference/configure-language-version.md)」を参照してください。
+詳細については、「[Visual Basic 言語バージョンの設定](../../../language-reference/configure-language-version.md)」を参照してください。
 
 ## <a name="access-modifiers"></a>アクセス修飾子
 
@@ -128,7 +128,7 @@ Private Protected internalValue As Integer
 - [宣言された要素の参照](references-to-declared-elements.md)
 - [宣言された要素の特性](declared-element-characteristics.md)
 - [Visual Basic の有効期間](lifetime.md)
-- [Visual Basic 内のスコープ](scope.md)
+- [Visual Basic におけるスコープ](scope.md)
 - [方法: 変数の可用性を制御する](how-to-control-the-availability-of-a-variable.md)
 - [変数](../variables/index.md)
 - [変数宣言](../variables/variable-declaration.md)
