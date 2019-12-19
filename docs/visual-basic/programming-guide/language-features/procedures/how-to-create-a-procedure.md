@@ -57,7 +57,7 @@ ms.locfileid: "74344907"
 
 ## <a name="see-also"></a>参照
 
-- [手順](index.md)
+- [Visual Basic におけるプロシージャ](index.md)
 - [Sub プロシージャ](sub-procedures.md)
 - [Function プロシージャ](function-procedures.md)
 - [Property プロシージャ](property-procedures.md)
