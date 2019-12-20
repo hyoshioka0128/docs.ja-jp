@@ -91,4 +91,4 @@ Hello!!!!
 - [拡張メソッド](extension-methods.md)
 - [Module ステートメント](../../../language-reference/statements/module-statement.md)
 - [プロシージャのパラメーターと引数](procedure-parameters-and-arguments.md)
-- [Visual Basic 内のスコープ](../declared-elements/scope.md)
+- [Visual Basic におけるスコープ](../declared-elements/scope.md)
