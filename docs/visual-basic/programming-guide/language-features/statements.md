@@ -34,7 +34,7 @@ Visual Basic のステートメントは完全な命令です。 キーワード
 
 ## <a name="declaration-statements"></a>宣言ステートメント
 
-宣言ステートメントを使用して、プロシージャ、変数、プロパティ、配列、および定数に名前を指定し、定義します。 プログラミング要素を宣言するときに、そのデータ型、アクセスレベル、およびスコープを定義することもできます。 詳細については、「宣言された[要素の特性](./declared-elements/declared-element-characteristics.md)」を参照してください。
+宣言ステートメントを使用して、プロシージャ、変数、プロパティ、配列、および定数に名前を指定し、定義します。 プログラミング要素を宣言するときに、そのデータ型、アクセスレベル、およびスコープを定義することもできます。 詳細については、「[宣言された要素の特性](./declared-elements/declared-element-characteristics.md)」を参照してください。
 
 次の例には、3つの宣言が含まれています。
 
@@ -48,7 +48,7 @@ Visual Basic のステートメントは完全な命令です。 キーワード
 
 ### <a name="initial-values"></a>初期値
 
-宣言ステートメントを含むコードを実行すると、Visual Basic は、宣言された要素に必要なメモリを予約します。 要素が値を保持している場合は、Visual Basic そのデータ型の既定値に初期化します。 詳細については、「 [Dim ステートメント](../../language-reference/statements/dim-statement.md)」の「動作」を参照してください。
+宣言ステートメントを含むコードを実行すると、Visual Basic は、宣言された要素に必要なメモリを予約します。 要素が値を保持している場合は、Visual Basic そのデータ型の既定値に初期化します。 詳細については、「[Dim ステートメント](../../language-reference/statements/dim-statement.md)」の「動作」を参照してください。
 
 次の例に示すように、変数に初期値を宣言の一部として割り当てることができます。
 
@@ -82,7 +82,7 @@ Visual Basic のステートメントは完全な命令です。 キーワード
 
 ### <a name="eligible-programming-elements"></a>対象となるプログラミング要素
 
-代入演算子の左側のプログラミング要素は、値を受け入れて格納できる必要があります。 これは、[読み取り専用](../../../visual-basic/language-reference/modifiers/readonly.md)ではない変数またはプロパティであるか、配列要素である必要があることを意味します。 代入ステートメントのコンテキストでは、このような要素は "左辺値" として*左辺*値と呼ばれることもあります。
+代入演算子の左側のプログラミング要素は、値を受け入れて格納できる必要があります。 これは、[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)ではない変数またはプロパティであるか、配列要素である必要があることを意味します。 代入ステートメントのコンテキストでは、このような要素は "左辺値" として*左辺*値と呼ばれることもあります。
 
 代入演算子の右側の値は、式によって生成されます。式は、リテラル、定数、変数、プロパティ、配列要素、他の式、または関数呼び出しの任意の組み合わせで構成されます。 これを次の例に示します。
 
@@ -122,7 +122,7 @@ Visual Basic のステートメントは完全な命令です。 キーワード
 
 変数、プロパティ、または配列要素に割り当てる値は、そのターゲット要素に適したデータ型である必要があります。 一般に、destination 要素と同じデータ型の値を生成することをお勧めします。 ただし、割り当て時に他の型に変換できる型もあります。
 
-データ型間の変換の詳細については、「 [Visual Basic での型変換](./data-types/type-conversions.md)」を参照してください。 簡単に言えば、Visual Basic は、指定された型の値を、拡大変換先の他の型に自動的に変換します。 *拡大変換*は、常に実行時に成功し、データを失うことのないの1つです。 たとえば、Visual Basic は、`Integer` が `Double`に拡大変換されるため、必要に応じて `Integer` 値を `Double` に変換します。 詳細については、「 [Widening and Narrowing Conversions](./data-types/widening-and-narrowing-conversions.md)」を参照してください。
+データ型間の変換の詳細については、「[Visual Basic での型変換](./data-types/type-conversions.md)」を参照してください。 簡単に言えば、Visual Basic は、指定された型の値を、拡大変換先の他の型に自動的に変換します。 *拡大変換*は、常に実行時に成功し、データを失うことのないの1つです。 たとえば、Visual Basic は、`Integer` が `Double`に拡大変換されるため、必要に応じて `Integer` 値を `Double` に変換します。 詳細については、「 [Widening and Narrowing Conversions](./data-types/widening-and-narrowing-conversions.md)」を参照してください。
 
 *縮小変換*(拡大されていないもの) は、実行時またはデータ損失のリスクを発生させます。 型変換関数を使用して縮小変換を明示的に実行することも、`Option Strict Off`を設定することによって暗黙的にすべての変換を実行するようにコンパイラに指示することもできます。 詳細については、「[暗黙的な変換と明示的な変換](./data-types/implicit-and-explicit-conversions.md)」を参照してください。
 
