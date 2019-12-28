@@ -70,7 +70,7 @@ ms.locfileid: "74350513"
 
 ## <a name="boolean-type-does-not-convert-to-numeric-type-accurately"></a>Boolean データで正確な数値型に変換されません。
 
-[ブールデータ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)の値は数値として格納されず、格納されている値は数値と等価であるとは見なされません。 以前のバージョンとの互換性のために、Visual Basic では、`Boolean` と数値型の間で変換を行うための変換キーワード ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、`CBool`、`CInt`など) が用意されています。 ただし、その他の言語では、.NET Framework メソッドと同様に、これらの変換が異なる方法で実行されることがあります。
+[Boolean データ型](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)の値は数値として格納されず、格納されている値は数値と等価であるとは見なされません。 以前のバージョンとの互換性のために、Visual Basic では、`Boolean` と数値型の間で変換を行うための変換キーワード ([CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)、`CBool`、`CInt`など) が用意されています。 ただし、その他の言語では、.NET Framework メソッドと同様に、これらの変換が異なる方法で実行されることがあります。
 
 `True` と `False`の等価の数値に依存するコードを記述することは避けてください。 可能な限り、`Boolean` 変数の使用は、設計対象の論理値に制限する必要があります。 `Boolean` 値と数値を混在させる必要がある場合は、選択した変換方法を理解していることを確認してください。
 
