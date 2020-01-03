@@ -86,7 +86,7 @@ ms.locfileid: "74335844"
  次のコマンドラインは、`COMData1.dll` と `COMData2.dll` からソースファイル `OfficeApp.vb` と参照アセンブリをコンパイルして `OfficeApp.exe`を生成します。  
   
 ```console  
-vbc -link:COMData1.dll,COMData2.dll /out:OfficeApp.exe OfficeApp.vb  
+vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb  
 ```  
   
 ## <a name="see-also"></a>関連項目
