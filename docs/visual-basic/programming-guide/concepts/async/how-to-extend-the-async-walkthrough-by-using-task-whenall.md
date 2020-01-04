@@ -11,7 +11,7 @@ ms.locfileid: "74354243"
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-visual-basic"></a>方法: Task.whenall を使用して非同期のチュートリアルを拡張する (Visual Basic)
 
-「[チュートリアル: async と Await を使用した Web へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) 」の非同期ソリューションのパフォーマンスを向上させるには、<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> メソッドを使用します。 このメソッドは、タスクのコレクションとして表される、複数の非同期操作を非同期に待機します。
+「[チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) 」の非同期ソリューションのパフォーマンスを向上させるには、<xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> メソッドを使用します。 このメソッドは、タスクのコレクションとして表される、複数の非同期操作を非同期に待機します。
 
 このチュートリアルでは、Web サイトが異なる速度でダウンロードされることに気付きます。 Web サイトの 1 つが非常に低速な場合があります。これは残りのすべてのダウンロードを遅延させます。 このチュートリアルで構築した非同期ソリューションを実行すると、プログラムを待たない場合には簡単に終了することができますが、よりよい方法は、すべてのダウンロードを同時に開始して、遅延したダウンロードを待たずに早いダウンロードが継続できるようにすることです。
 
@@ -63,7 +63,7 @@ ms.locfileid: "74354243"
     'Next
     ```
 
-3. タスクのコレクションを作成します。 次のコードは、[ メソッドによって実行されるときに、各 Web サイトのコンテンツをダウンロードするタスクのコレクションを作成する](../../../../visual-basic/programming-guide/concepts/linq/index.md)クエリ<xref:System.Linq.Enumerable.ToArray%2A>を定義します。 タスクは、クエリが評価されるときに開始されます。
+3. タスクのコレクションを作成します。 次のコードは、<xref:System.Linq.Enumerable.ToArray%2A> メソッドによって実行されると、各Webサイトのコンテンツをダウンロードするタスクのコレクションを作成する[クエリ](../../../../visual-basic/programming-guide/concepts/linq/index.md) を定義します。 クエリが評価されると、タスクが開始されます。
 
      `SumPageSizesAsync` の宣言の後の `urlList` メソッドに、次のコードを追加します。
 
@@ -136,7 +136,7 @@ ms.locfileid: "74354243"
     'Next
     ```
 
-3. [ メソッドによって実行されるときに、各 Web サイトのコンテンツをダウンロードするタスクのコレクションを作成する](../../../../visual-basic/programming-guide/concepts/linq/index.md)クエリ<xref:System.Linq.Enumerable.ToArray%2A>を定義します。 タスクは、クエリが評価されるときに開始されます。
+3. <xref:System.Linq.Enumerable.ToArray%2A> メソッドによって実行されると、各Webサイトのコンテンツをダウンロードするタスクのコレクションを作成する[クエリ](../../../../visual-basic/programming-guide/concepts/linq/index.md)を定義します。 クエリが評価されると、タスクが開始されます。
 
      `SumPageSizesAsync` および `client` の宣言の後の `urlList` メソッドに、次のコードを追加します。
 
@@ -170,7 +170,7 @@ ms.locfileid: "74354243"
 
 ### <a name="to-test-the-taskwhenall-solutions"></a>Task.WhenAll ソリューションをテストするには
 
-各ソリューションで、F5 キーを押してプログラムを実行し、 **[Start]** を複数回クリックします。 出力は、「[チュートリアル: async と Await を使用した Web へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」の非同期ソリューションの出力に似ています。 ただし、Web サイトは毎回、異なる順序で表示されることに注意してください。
+各ソリューションで、F5 キーを押してプログラムを実行し、 **[Start]** を複数回クリックします。 出力は、「[チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」の非同期ソリューションの出力に似ています。 ただし、Web サイトは毎回、異なる順序で表示されることに注意してください。
 
 ## <a name="example"></a>例
 
