@@ -15,7 +15,7 @@ ms.locfileid: "74332938"
 # <a name="how-to-embed-expressions-in-xml-literals-visual-basic"></a>方法: XML リテラルに式を埋め込む (Visual Basic)
 XML リテラルと埋め込み式を組み合わせて、実行時に作成されたコンテンツを含む XML ドキュメント、フラグメント、または要素を作成できます。 次の例では、埋め込み式を使用して、実行時に要素の内容、属性、および要素名を設定する方法を示します。  
   
- 埋め込み式の構文は `%>``exp` `<%=` ます。これは、ASP.NET が使用する構文と同じです。 詳細については、「 [XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)」を参照してください。  
+ 埋め込み式の構文は `%>``exp` `<%=` ます。これは、ASP.NET が使用する構文と同じです。 詳細については、「[XML での埋め込み式](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)」を参照してください。  
   
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Api を使用して、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] オブジェクトを作成することもできます。 詳細については、「 <xref:System.Xml.Linq.XElement>」を参照してください。  
   
