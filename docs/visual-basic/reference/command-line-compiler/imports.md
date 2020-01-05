@@ -33,12 +33,12 @@ ms.locfileid: "74332967"
   
  `-imports` で指定された名前空間のメンバーは、コンパイル時にすべてのソースコードファイルで使用できます。 [Imports ステートメント (.NET 名前空間および型)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)を使用して、1 つのソースコードファイルで名前空間を使用します。  
   
-|Visual Studio 統合開発環境で/imports を設定するには|  
+|Visual Studio 統合開発環境で-imports を設定するには|  
 |---|  
 |1.**ソリューションエクスプローラー**でプロジェクトを選択します。 **[プロジェクト]** メニューの **[プロパティ]** をクリックします。 <br />2. **[参照]** タブをクリックします。<br />3. **[ユーザーインポートの追加]** ボタンの横にあるボックスに名前空間名を入力します。<br />4. **[ユーザーインポートの追加]** ボタンをクリックします。|  
   
 ## <a name="example"></a>例  
- `/imports:system.globalization` を指定すると、次のコードがコンパイルされます。 それがない場合、コンパイルが成功するには、ソースコードファイルの先頭に `Imports System.Globalization` ステートメントが含まれているか、プロパティが `System.Globalization.CultureInfo.CurrentCulture.Name`として完全に修飾されている必要があります。
+ `-imports:system.globalization` を指定すると、次のコードがコンパイルされます。 それがない場合、コンパイルが成功するには、ソースコードファイルの先頭に `Imports System.Globalization` ステートメントが含まれているか、プロパティが `System.Globalization.CultureInfo.CurrentCulture.Name`として完全に修飾されている必要があります。
 
 ```vb
 Module Example
