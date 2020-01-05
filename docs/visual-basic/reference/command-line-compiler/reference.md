@@ -52,7 +52,7 @@ ms.locfileid: "74348592"
   
  Vbc.exe ファイルは、一般的に使用される .NET Framework アセンブリを参照します。既定では、このファイルが使用されます。 コンパイラで Vbc.exe を使用しない場合は、`-noconfig` を使用します。  
   
- `-reference` の省略形は `/r` です。  
+ `-reference` の省略形は `-r` です。  
   
 ## <a name="example"></a>例  
  次のコマンドは、`Metad1.dll` と `Metad2.dll` からソースファイル `Input.vb` と参照アセンブリをコンパイルして `Out.exe`を生成します。  
