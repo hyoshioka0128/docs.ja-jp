@@ -38,11 +38,11 @@ ms.locfileid: "74344012"
 
 ## <a name="programming-tips"></a>プログラミングのヒント
 
-- **精度.** 浮動小数点数を使用する場合は、メモリ内に常に正確な表現がないという点に注意してください。 これにより、値の比較や `Mod` 演算子など、特定の操作によって予期しない結果が生じる可能性があります。 詳細については、「[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)」を参照してください。
+- **有効桁数。** 浮動小数点数を使用する場合は、メモリ内に常に正確な表現がないという点に注意してください。 これにより、値の比較や `Mod` 演算子など、特定の操作によって予期しない結果が生じる可能性があります。 詳細については、「[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)」を参照してください。
 
 - **後続のゼロ。** 浮動小数点データ型には、後続のゼロ文字の内部表現がありません。 たとえば、4.2000 と4.2 を区別しません。 そのため、浮動小数点値を表示または印刷するときに、後続のゼロ文字は表示されません。
 
-- **文字を入力します。** あるリテラルにリテラルの型文字 `R` を付けると、そのリテラルは `Double` に変換されます。 たとえば、整数値の後に `R`がある場合、値は `Double`に変更されます。
+- **型文字。** あるリテラルにリテラルの型文字 `R` を付けると、そのリテラルは `Double` に変換されます。 たとえば、整数値の後に `R`がある場合、値は `Double`に変更されます。
 
   ```vb
   ' Visual Basic expands the 4 in the statement Dim dub As Double = 4R to 4.0:
@@ -55,7 +55,7 @@ ms.locfileid: "74344012"
   Dim num# = 3
   ```
 
-- **フレームワークの種類。** .NET Framework において対応する型は、<xref:System.Double?displayProperty=nameWithType> 構造体です。
+- **Framework のデータ型。** .NET Framework において対応する型は、<xref:System.Double?displayProperty=nameWithType> 構造体です。
 
 ## <a name="see-also"></a>関連項目
 
