@@ -37,7 +37,7 @@ ms.locfileid: "74348314"
 新しいインスタンスを作成するためのメモリが不足している場合、共通言語ランタイム (CLR) は <xref:System.OutOfMemoryException> エラーをスローします。
 
 > [!NOTE]
-> `New` キーワードは、指定された型がアクセス可能なパラメーターなしのコンストラクターを公開する必要があることを指定するために、型パラメーターリストでも使用されます。 型パラメーターと制約の詳細については、「 [Type List](../statements/type-list.md)」を参照してください。
+> `New` キーワードは、指定された型がアクセス可能なパラメーターなしのコンストラクターを公開する必要があることを指定するために、型パラメーターリストでも使用されます。 型パラメーターと制約の詳細については、「[型リスト](../statements/type-list.md)」を参照してください。
 
 クラスのコンストラクタープロシージャを作成するには、`Sub` プロシージャの名前を `New` キーワードに設定します。 詳細については、「[オブジェクトの有効期間: オブジェクトの作成方法と破棄方法](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)」を参照してください。
 
