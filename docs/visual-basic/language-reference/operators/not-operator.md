@@ -40,14 +40,14 @@ result = Not expression
 ## <a name="remarks"></a>コメント  
  `Boolean` 式の場合、次の表に `result` の決定方法を示します。  
   
-|`expression` の場合|`result` の値はです。|  
+|`expression` の値|`result` の型|  
 |------------------------|------------------------------|  
 |`True`|`False`|  
 |`False`|`True`|  
   
  数値式の場合、`Not` 演算子は、任意の数値式のビット値を反転し、次の表に従って `result` に対応するビットを設定します。  
   
-|`expression` のビットがの場合|`result` のビットはです。|  
+|`expression` のビット|`result` 内のビット|  
 |-------------------------------|----------------------------|  
 |1|0|  
 |0|1|  
@@ -59,7 +59,7 @@ result = Not expression
  ブール否定の場合、結果のデータ型は `Boolean`になります。 ビットごとの否定の場合、結果のデータ型は `expression`のデータ型と同じになります。 ただし、expression が `Decimal`場合、結果は `Long`になります。  
   
 ## <a name="overloading"></a>オーバーロード  
- `Not` 演算子は*オーバーロード*することができます。つまり、クラスまたは構造体がそのクラスまたは構造体の型を持つ場合に、クラスまたは構造体がその動作を再定義できます。 コードでこのようなクラスまたは構造体に対してこの演算子を使用する場合は、再定義された動作を理解していることを確認してください。 詳細については、「 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+ `Not` 演算子は*オーバーロード*することができます。つまり、クラスまたは構造体がそのクラスまたは構造体の型を持つ場合に、クラスまたは構造体がその動作を再定義できます。 コードでこのようなクラスまたは構造体に対してこの演算子を使用する場合は、再定義された動作を理解していることを確認してください。 詳細については、「[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、`Not` 演算子を使用して、`Boolean` 式で論理否定を実行します。 結果は、式の値の逆を表す `Boolean` 値になります。  
