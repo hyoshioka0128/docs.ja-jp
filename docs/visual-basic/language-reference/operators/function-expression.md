@@ -28,7 +28,7 @@ End Function
   
 ## <a name="parts"></a>のコンポーネント  
   
-|用語|説明|  
+|用語|定義|  
 |---|---|  
 |`parameterlist`|省略可。 このプロシージャのパラメーターを表すローカル変数名の一覧です。 リストが空の場合でも、かっこは存在する必要があります。 「[パラメーターリスト](../../../visual-basic/language-reference/statements/parameter-list.md)」を参照してください。|  
 |`expression`|必ず指定します。 1つの式。 式の型は、関数の戻り値の型です。|  
