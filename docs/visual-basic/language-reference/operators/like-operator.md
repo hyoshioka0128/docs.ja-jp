@@ -1,5 +1,5 @@
 ---
-title: Like 演算子
+title: Like 演算子 (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - Like
@@ -98,7 +98,7 @@ result = string Like pattern
  Digraph 文字を使用する言語がシステムのロケール設定で指定されている場合、`pattern` または `string` の1つの digraph 文字が、他の文字列の等価の2文字シーケンスと一致します。 同様に、角かっこで囲まれた `pattern` の digraph 文字 (単独、リスト、または範囲内) は、`string`内の等価の2文字シーケンスと一致します。  
   
 ## <a name="overloading"></a>オーバーロード  
- `Like` 演算子は*オーバーロード*することができます。つまり、クラスまたは構造体がそのクラスまたは構造体の型を持つ場合に、クラスまたは構造体がその動作を再定義できます。 コードでこのようなクラスまたは構造体に対してこの演算子を使用する場合は、再定義された動作を理解していることを確認してください。 詳細については、「 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+ `Like` 演算子は*オーバーロード*することができます。つまり、クラスまたは構造体がそのクラスまたは構造体の型を持つ場合に、クラスまたは構造体がその動作を再定義できます。 コードでこのようなクラスまたは構造体に対してこの演算子を使用する場合は、再定義された動作を理解していることを確認してください。 詳細については、「[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  この例では、`Like` 演算子を使用して、文字列をさまざまなパターンと比較します。 結果は、各文字列がパターンを満たすかどうかを示す `Boolean` 変数に入ります。  
