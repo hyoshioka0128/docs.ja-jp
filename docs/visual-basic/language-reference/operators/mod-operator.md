@@ -102,7 +102,7 @@ End Module
 
 ## <a name="overloading"></a>オーバーロード
 
-`Mod` 演算子は*オーバーロード*することができます。つまり、クラスまたは構造体で動作を再定義できます。 コードが、そのようなオーバーロードを含むクラスまたは構造体のインスタンスに `Mod` 適用される場合は、再定義された動作を理解していることを確認してください。 詳細については、「 [演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。
+`Mod` 演算子は*オーバーロード*することができます。つまり、クラスまたは構造体で動作を再定義できます。 コードが、そのようなオーバーロードを含むクラスまたは構造体のインスタンスに `Mod` 適用される場合は、再定義された動作を理解していることを確認してください。 詳細については、「[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。
 
 ## <a name="example"></a>例
 
