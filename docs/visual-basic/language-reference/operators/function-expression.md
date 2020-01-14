@@ -1,5 +1,5 @@
 ---
-title: Function 式
+title: Function 式 (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Function expression [Visual Basic]
@@ -32,10 +32,10 @@ End Function
 |---|---|  
 |`parameterlist`|省略可。 このプロシージャのパラメーターを表すローカル変数名の一覧です。 リストが空の場合でも、かっこは存在する必要があります。 「[パラメーターリスト](../../../visual-basic/language-reference/statements/parameter-list.md)」を参照してください。|  
 |`expression`|必ず指定します。 1つの式。 式の型は、関数の戻り値の型です。|  
-|`statements`|必ず指定します。 `Return` ステートメントを使用して値を返すステートメントの一覧。 ( [Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)を参照してください)。返される値の型は、関数の戻り値の型です。|  
+|`statements`|必ず指定します。 `Return` ステートメントを使用して値を返すステートメントの一覧。 ([Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)を参照してください)。返される値の型は、関数の戻り値の型です。|  
   
 ## <a name="remarks"></a>コメント  
- *ラムダ式*は、値を計算して返す名前のない関数です。 ラムダ式は、デリゲート型を使用できる場所であればどこでも使用できます。ただし、`RemoveHandler`の引数として使用することはできません。 デリゲートの詳細と、デリゲートでのラムダ式の使用については、「[デリゲートステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)」および「厳密でない[デリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)」を参照してください。  
+ *ラムダ式*は、値を計算して返す名前のない関数です。 ラムダ式は、デリゲート型を使用できる場所であればどこでも使用できます。ただし、`RemoveHandler`の引数として使用することはできません。 デリゲートの詳細と、デリゲートでのラムダ式の使用については、「[デリゲートステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)」および「[厳密でないデリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)」を参照してください。  
   
 ## <a name="lambda-expression-syntax"></a>ラムダ式の構文  
  ラムダ式の構文は、標準関数の構文に似ています。 相違点は、次のとおりです。  
