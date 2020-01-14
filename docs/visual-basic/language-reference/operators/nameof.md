@@ -1,5 +1,5 @@
 ---
-title: この操作
+title: NameOf 演算子 (Visual Basic)
 description: Visual Basic での参照演算子の使用方法について説明します。
 ms.date: 10/27/2019
 helpviewer_keywords:
@@ -11,7 +11,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75347017"
 ---
-# <a name="nameof-operator---visual-basic"></a>Visual Basic の NameOf 演算子
+# <a name="nameof-operator---visual-basic"></a>NameOf 演算子 (Visual Basic)
 
 `NameOf` 演算子を使うと、変数、型、またはメンバーの名前を文字列定数として取得できます。
 
