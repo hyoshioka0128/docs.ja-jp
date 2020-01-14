@@ -42,7 +42,7 @@ result = expression1 OrElse expression2
   
  いずれかまたは両方の式が `True`に評価される場合、`result` は `True`です。 次の表は、`result` がどのように決定されるかを示しています。  
   
-|`expression1` の場合|`expression2`|`result` の値はです。|  
+|`expression1` の値|`expression2` の値|`result` の値|  
 |-------------------------|--------------------------|------------------------------|  
 |`True`|(評価なし)|`True`|  
 |`False`|`True`|`True`|  
@@ -53,7 +53,7 @@ result = expression1 OrElse expression2
 詳細については、「[ブール型変換](../data-types/boolean-data-type.md#type-conversions)」を参照してください。
   
 ## <a name="overloading"></a>オーバーロード  
- [Or 演算子](../../../visual-basic/language-reference/operators/or-operator.md)と[IsTrue 演算子](../../../visual-basic/language-reference/operators/istrue-operator.md)を*オーバーロード*することができます。つまり、クラスまたは構造体が、そのクラスまたは構造体の型を持つ場合に、その動作を再定義できます。 `Or` 演算子と `IsTrue` 演算子のオーバーロードは、`OrElse` 演算子の動作に影響します。 コードで `Or` と `IsTrue`をオーバーロードするクラスまたは構造体の `OrElse` を使用する場合は、再定義された動作を理解していることを確認してください。 詳細については、「 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+ [Or 演算子](../../../visual-basic/language-reference/operators/or-operator.md)と[IsTrue 演算子](../../../visual-basic/language-reference/operators/istrue-operator.md)を*オーバーロード*することができます。つまり、クラスまたは構造体が、そのクラスまたは構造体の型を持つ場合に、その動作を再定義できます。 `Or` 演算子と `IsTrue` 演算子のオーバーロードは、`OrElse` 演算子の動作に影響します。 コードで `Or` と `IsTrue`をオーバーロードするクラスまたは構造体の `OrElse` を使用する場合は、再定義された動作を理解していることを確認してください。 詳細については、「[演算子プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、`OrElse` 演算子を使用して、2つの式の論理和を実行します。 結果は、2つの式のいずれかが true であるかどうかを示す `Boolean` 値になります。 最初の式が `True`場合、2番目の式は評価されません。  
