@@ -1,5 +1,5 @@
 ---
-title: AndAlso 演算子
+title: AndAlso 演算子 (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.AndAlso
@@ -40,7 +40,7 @@ result = expression1 AndAlso expression2
   
  両方の式が `True`に評価される場合、`result` は `True`ます。 次の表は、`result` がどのように決定されるかを示しています。  
   
-|`expression1` の場合|`expression2`|`result` の値はです。|  
+|`expression1` の値|`expression2` の値|`result` の値|  
 |---|---|---|  
 |`True`|`True`|`True`|  
 |`True`|`False`|`False`|  
