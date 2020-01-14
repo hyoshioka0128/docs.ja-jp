@@ -21,7 +21,7 @@ ms.locfileid: "74712351"
 `Await` を使用するメソッドには、 [Async](../../../visual-basic/language-reference/modifiers/async.md)修飾子が必要です。 このようなメソッド (`Async` 修飾子を使用して定義され、通常 1 つ以上の `Await` 式を含むメソッド) を "*非同期メソッド*" と呼びます。
 
 > [!NOTE]
-> `Async` キーワードおよび `Await` キーワードは、Visual Studio 2012 で導入されました。 非同期プログラミングの概要については、「[async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)」を参照してください。
+> `Async` キーワードおよび `Await` キーワードは、Visual Studio 2012 で導入されました。 非同期プログラミングの概要については、「[Async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)」を参照してください。
 
 通常、`Await` 演算子を適用するタスクは、[タスクベースの非同期パターン](https://www.microsoft.com/download/details.aspx?id=19957)、つまり、<xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601>を実装するメソッドの呼び出しからの戻り値です。
 
