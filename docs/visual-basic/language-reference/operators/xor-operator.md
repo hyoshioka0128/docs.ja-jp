@@ -1,5 +1,5 @@
 ---
-title: Xor 演算子
+title: Xor 演算子 (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Xor
@@ -43,7 +43,7 @@ result = expression1 Xor expression2
 ## <a name="remarks"></a>コメント  
  ブール値の比較の場合、`result` は、`expression1` と `expression2` の1つだけが `True`に評価される場合にのみ `True` ます。 つまり、`expression1` と `expression2` が逆の `Boolean` 値に評価される場合に限ります。 次の表は、`result` がどのように決定されるかを示しています。  
   
-|`expression1` の場合|`expression2`|`result` の値はです。|  
+|`expression1` の値|`expression2` の値|`result` の値|  
 |-------------------------|--------------------------|------------------------------|  
 |`True`|`True`|`False`|  
 |`True`|`False`|`True`|  
@@ -55,7 +55,7 @@ result = expression1 Xor expression2
   
  ビットごとの演算の場合、`Xor` 演算子は2つの数値式で同一の位置ビットのビットごとの比較を実行し、次の表に従って `result` に対応するビットを設定します。  
   
-|`expression1` のビットがの場合|`expression2` のビットは|`result` のビットはです。|  
+|`expression1` のビット|`expression2` のビット|`result` のビット|  
 |--------------------------------|---------------------------------|----------------------------|  
 |1|1|0|  
 |1|0|1|  
