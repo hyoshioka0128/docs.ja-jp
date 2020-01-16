@@ -100,7 +100,7 @@ End Class
   
 - **共有メンバー。** クラスのメンバーが共有メンバーまたはインスタンスメンバーであるかどうかを制御できます。  
   
-- **オブジェクトの向き。** クラスはオブジェクト指向ですが、モジュールはそうではありません。 クラスの1つ以上のインスタンスを作成できます。 詳細については、「[オブジェクトとクラス](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」を参照してください。  
+- **オブジェクト指向。** クラスはオブジェクト指向ですが、モジュールはそうではありません。 クラスの1つ以上のインスタンスを作成できます。 詳細については、「[オブジェクトとクラス](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、`Class` ステートメントを使用して、クラスと複数のメンバーを定義しています。  
