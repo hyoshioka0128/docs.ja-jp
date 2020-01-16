@@ -46,19 +46,19 @@ datTyp = Type.GetTypeCode(myObject.GetType())
 
 ## <a name="programming-tips"></a>プログラミングのヒント
 
-- **相互運用に関する考慮事項。** .NET Framework 用に作成されていないコンポーネント (オートメーションや COM オブジェクトなど) とやり取りする場合は、他の環境のポインター型が Visual Basic `Object` 型と互換性がないことに注意してください。
+- **相互運用のための注意事項。** .NET Framework 用に作成されていないコンポーネント (オートメーションや COM オブジェクトなど) とやり取りする場合は、他の環境のポインター型が Visual Basic `Object` 型と互換性がないことに注意してください。
 
 - **パフォーマンス。** `Object` 型で宣言する変数は、任意のオブジェクトへの参照を格納するのに十分な柔軟性があります。 ただし、このような変数に対してメソッドまたはプロパティを呼び出すと、常に*遅延バインディング*(実行時) が発生します。 (コンパイル時に)*事前バインディング*を強制的に実行し、パフォーマンスを向上させるには、特定のクラス名を持つ変数を宣言するか、特定のデータ型にキャストします。
 
   オブジェクト変数を宣言するときは、一般化された `Object` 型ではなく、<xref:System.OperatingSystem>などの特定のクラス型を使用してみてください。 また、<xref:System.Windows.Forms.Control>ではなく <xref:System.Windows.Forms.TextBox> など、使用可能な最も具体的なクラスを使用して、そのプロパティとメソッドにアクセスできるようにする必要があります。 通常は、**オブジェクトブラウザー**の**クラス**の一覧を使用して、使用可能なクラス名を検索できます。
 
-- **広げ.** すべてのデータ型とすべての参照型は、`Object` データ型に拡大変換されます。 これは、<xref:System.OverflowException?displayProperty=nameWithType> エラーが発生することなく、任意の型を `Object` に変換できることを意味します。
+- **拡大変換。** すべてのデータ型とすべての参照型は、`Object` データ型に拡大変換されます。 これは、<xref:System.OverflowException?displayProperty=nameWithType> エラーが発生することなく、任意の型を `Object` に変換できることを意味します。
 
   ただし、値型と `Object`の間で変換を行う場合、Visual Basic によって、*ボックス*化と*ボックス化解除*と呼ばれる操作が実行され、実行速度が低下します。
 
-- **文字を入力します。** `Object` には、リテラルの型文字または識別子の型文字がありません。
+- **型文字。** `Object` には、リテラルの型文字または識別子の型文字がありません。
 
-- **フレームワークの種類。** .NET Framework 内の対応する型は、<xref:System.Object?displayProperty=nameWithType> クラスです。
+- **Framework のデータ型。** .NET Framework 内の対応する型は、<xref:System.Object?displayProperty=nameWithType> クラスです。
 
 ## <a name="example"></a>例
 
