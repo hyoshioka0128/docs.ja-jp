@@ -66,11 +66,11 @@ Dim number As SByte = &H_F9
 
 - **CLS 準拠。** `SByte` のデータ型は[共通言語仕様](https://www.ecma-international.org/publications/standards/Ecma-335.htm)(cls) の一部ではないため、cls 準拠のコードはそれを使用するコンポーネントを使用できません。
 
-- **広げ.** `SByte` のデータ型は、`Short`、`Integer`、`Long`、`Decimal`、`Single`、および `Double`に拡大変換されます。 つまり、<xref:System.OverflowException?displayProperty=nameWithType> エラーが発生することなく、`SByte` をこれらの型のいずれかに変換できます。
+- **広げ。** `SByte` のデータ型は、`Short`、`Integer`、`Long`、`Decimal`、`Single`、および `Double`に拡大変換されます。 つまり、<xref:System.OverflowException?displayProperty=nameWithType> エラーが発生することなく、`SByte` をこれらの型のいずれかに変換できます。
 
-- **文字を入力します。** `SByte` には、リテラルの型文字または識別子の型文字がありません。
+- **型文字。** `SByte` には、リテラルの型文字または識別子の型文字がありません。
 
-- **フレームワークの種類。** .NET Framework において対応する型は、<xref:System.SByte?displayProperty=nameWithType> 構造体です。
+- **Framework のデータ型。** .NET Framework において対応する型は、<xref:System.SByte?displayProperty=nameWithType> 構造体です。
 
 ## <a name="see-also"></a>参照
 
