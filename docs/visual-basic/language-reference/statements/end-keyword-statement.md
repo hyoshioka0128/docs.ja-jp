@@ -50,13 +50,13 @@ End With
 |---|---|
 |`End`|必須。 プログラミング要素の定義を終了します。|
 |`AddHandler`|カスタムの [Event ステートメント](event-statement.md)で、対応する `AddHandler` ステートメントによって開始された `AddHandler` アクセサを終了する場合に必要です。|
-|`Class`|一致する[クラスステートメント](class-statement.md)によって開始されたクラス定義を終了するために必要です。|
-|`Enum`|一致する列挙[ステートメント](enum-statement.md)によって開始された列挙型定義を終了するために必要です。|
-|`Event`|一致する[イベントステートメント](event-statement.md)によって開始された `Custom` イベント定義を終了するために必要です。|  
-|`Function`|一致する[Function ステートメント](function-statement.md)によって開始された `Function` プロシージャ定義を終了するために必要です。 実行時に `End Function` ステートメントが発生すると、呼び出し元のコードに制御が戻ります。|
+|`Class`|一致する[Class ステートメント (Visual Basic)](class-statement.md)によって開始されたクラス定義を終了するために必要です。|
+|`Enum`|一致する[Enum ステートメント (Visual Basic)](enum-statement.md)によって開始された列挙型定義を終了するために必要です。|
+|`Event`|一致する[Event ステートメント](event-statement.md)によって開始された `Custom` イベント定義を終了するために必要です。|  
+|`Function`|一致する[Function ステートメント (Visual Basic)](function-statement.md)によって開始された `Function` プロシージャ定義を終了するために必要です。 実行時に `End Function` ステートメントが発生すると、呼び出し元のコードに制御が戻ります。|
 |`Get`|一致する[Get ステートメント](get-statement.md)によって開始された `Property` プロシージャ定義を終了するために必要です。 実行時に `End Get` ステートメントが発生すると、プロパティの値を要求するステートメントに制御が戻ります。|
-|`If`|一致する `If` ステートメントによって開始された `If`...`Then``Else` ブロック定義を終了するために必要です。 参照してください.. [.そうしたら。。。Else ステートメント](if-then-else-statement.md)。|
-|`Interface`|一致する[インターフェイスステートメント](interface-statement.md)によって開始されたインターフェイス定義を終了するために必要です。|
+|`If`|一致する `If` ステートメントによって開始された `If`...`Then``Else` ブロック定義を終了するために必要です。 [If...Then...Else ステートメント (Visual Basic)](if-then-else-statement.md) を参照してください。|
+|`Interface`|一致する[Interface ステートメント (Visual Basic)](interface-statement.md)によって開始されたインターフェイス定義を終了するために必要です。|
 |`Module`|一致する[モジュールステートメント](module-statement.md)によって開始されたモジュール定義を終了するために必要です。|
 |`Namespace`|一致する [Namespace ステートメント](namespace-statement.md)で開始された名前空間定義を終了するために必要です。|
 |`Operator`|一致する[Operator ステートメント](operator-statement.md)によって開始された演算子定義を終了するために必要です。|
