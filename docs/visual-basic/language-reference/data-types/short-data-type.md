@@ -64,11 +64,11 @@ Dim number = &H_3264S
 
 ## <a name="programming-tips"></a>プログラミングのヒント
 
-- **広げ.** `Short` のデータ型は、`Integer`、`Long`、`Decimal`、`Single`、または `Double`に拡大変換されます。 これは、`Short` エラーを発生させることなく、これらの型のいずれかに <xref:System.OverflowException?displayProperty=nameWithType> を変換できることを意味します。  
+- **拡大変換。** `Short` のデータ型は、`Integer`、`Long`、`Decimal`、`Single`、または `Double`に拡大変換されます。 これは、`Short` エラーを発生させることなく、これらの型のいずれかに <xref:System.OverflowException?displayProperty=nameWithType> を変換できることを意味します。  
   
-- **文字を入力します。** あるリテラルにリテラルの型文字 `S` を付けると、そのリテラルは `Short` に変換されます。 `Short` に識別子の型文字がありません。  
+- **型文字。** あるリテラルにリテラルの型文字 `S` を付けると、そのリテラルは `Short` に変換されます。 `Short` に識別子の型文字がありません。  
   
-- **フレームワークの種類。** .NET Framework において対応する型は、<xref:System.Int16?displayProperty=nameWithType> 構造体です。  
+- **Framework の型。** .NET Framework において対応する型は、<xref:System.Int16?displayProperty=nameWithType> 構造体です。  
   
 ## <a name="see-also"></a>参照
 
