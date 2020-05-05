@@ -688,11 +688,11 @@ ms.locfileid: "73419710"
 
 申し訳ありませんが、このエラーに関する具体的な情報はありません。 Web でエラー番号とメッセージ テキストを検索して情報を探すことができます。 または、次のいずれかを使用して、他の開発者に問い合わせることもできます。
   
- [Msdn フォーラム-ビジュアルC#](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=csharpgeneral)  
- 他のフォーラムでは説明されていC#ない、ビジュアルに関する質問や問題に関するフォーラムを提供します。  
+ [MSDN フォーラム - Visual C#](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=csharpgeneral)  
+ 他のフォーラムでは説明されていない Visual C＃ に関する質問や問題に関するフォーラムを提供します。  
 
- [スタック オーバーフロー](https://stackoverflow.com/questions/tagged/c%23)  
-ビジュアルC#に関する質問や問題のための QA web サイトを提供します。  
+ [Stack Overflow](https://stackoverflow.com/questions/tagged/c%23)  
+Visual C# に関する質問や問題のための QA web サイトを提供します。  
 
  関連項目:  
  [Visual C# プログラマのための追加リソース](../getting-started/index.md)  
