@@ -32,7 +32,7 @@ ms.locfileid: "82506899"
 
 1. C# プロジェクトを初期化する
 
-    - Visual Studio Code からターミナルを開きます。メイン メニューで **[表示]**  >  **[端末]** の順に選択してください。
+    - Visual Studio Code からターミナルを開きます。メイン メニューで **[表示]** > **[ターミナル]** の順に選択してください。
     - ターミナル ウィンドウで「`dotnet new console`」と入力します。
 
       このコマンドは、*HelloWorld.csproj* という名前の C# プロジェクト ファイルと共に、単純な "Hello World" プログラムが既に書き込まれた *Program.cs* ファイルをフォルダーに作成します。
@@ -51,9 +51,9 @@ ms.locfileid: "82506899"
 
     ![Program.cs ファイルを開く](media/with-visual-studio-code/open-program-cs.png)
 
-1. Visual Studio Code で、アプリのビルドとデバッグに必要なアセットの追加を求められます。 **[はい]** を選択します。
+1. Visual Studio Code で、アプリのビルドとデバッグに必要なアセットの追加を求められます。 **[Yes]** を選択します。
 
-    ![足りない資産の入力を求める](media/with-visual-studio-code/missing-assets.png)
+    ![足りないアセットの入力を求める](media/with-visual-studio-code/missing-assets.png)
 
 1. デバッグ ビューを開くには、左側のメニューにある [デバッグ] アイコンをクリックします。
 
@@ -132,9 +132,9 @@ ms.locfileid: "82506899"
 
 ## <a name="faq"></a>よくあるご質問
 
-### <a name="im-missing-required-assets-to-build-and-debug-c-in-visual-studio-code-my-debugger-says-no-configuration"></a>Visual Studio Code 内で C# をビルドおよびデバッグするのに必要な資産が欠落しています。 デバッガーには、"構成がありません" と表示されます。
+### <a name="im-missing-required-assets-to-build-and-debug-c-in-visual-studio-code-my-debugger-says-no-configuration"></a>Visual Studio Code 内で Required assets to build and debug C#\(C# をビルドおよびデバッグするのに必要なアセットが欠落しています。\) デバッガーには、"No Configuration\(構成がありません\)" と表示されます。
 
-Visual Studio Code C# の拡張機能では、ビルドおよびデバッグする資産を自動的に作成することができます。 C# プロジェクトを初めて開くと、これらの資産を作成するように Visual Studio Code から求められます。 資産を作成しなかった場合でも、このコマンドを実行する方法はあります。コマンド パレットを開き ( **[表示] > [コマンド パレット]** )、「>.NET:Generate Assets for Build and Debug」 と入力します。 これを選択すると、必要としている *.vscode*、*launch.json* および *tasks.json* の各構成ファイルが作成されます。
+Visual Studio Code C# の拡張機能では、ビルドおよびデバッグするアセットを自動的に作成することができます。 C# プロジェクトを初めて開くと、これらのアセットを作成するように Visual Studio Code から求められます。 アセットを作成しなかった場合でも、このコマンドを実行する方法はあります。コマンド パレットを開き ( **[表示] > [コマンド パレット]** )、「>.NET:Generate Assets for Build and Debug」 と入力します。 これを選択すると、必要としている *.vscode*、*launch.json* および *tasks.json* の各構成ファイルが作成されます。
 
 ## <a name="see-also"></a>関連項目
 
