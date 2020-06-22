@@ -59,7 +59,7 @@ Azure Functions のサーバーレス環境を介して、HTTP 経由での予�
 1. 構築済みのモデルを *MLModels* フォルダーにコピーします。
 1. ソリューション エクスプローラーで、構築済みのモデルのファイルを右クリックし、 **[プロパティ]** を選択します。 **[詳細設定]** で、 **[出力ディレクトリにコピー]** の値を **[新しい場合はコピーする]** に変更します。
 
-## <a name="create-azure-function-to-analyze-sentiment"></a>Azure 関数を作成してセンチメントを分析する
+## <a name="create-azure-function-to-analyze-sentiment"></a>Azure Functions を作成してセンチメントを分析する
 
 センチメントを予測するクラスを作成します。 プロジェクトに新しいクラスを追加します。
 
@@ -198,7 +198,7 @@ Azure Functions のサーバーレス環境を介して、HTTP 経由での予�
     Negative
     ```
 
-おめでとうございます! Azure 関数を使用したインターネット経由での予測の実行に対して、モデルを正常に提供できました。
+おめでとうございます! Azure Functions を使用したインターネット経由での予測の実行に対して、モデルを正常に提供できました。
 
 ## <a name="next-steps"></a>次の手順
 
