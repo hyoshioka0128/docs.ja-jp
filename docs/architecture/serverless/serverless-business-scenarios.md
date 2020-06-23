@@ -28,7 +28,7 @@ ms.locfileid: "82158451"
 関数を使用してサーバー側のロジックを実行し、サーバーレス アーキテクチャを構築する方法について説明します。
 
 - ビジネスに最適な Azure サービスの選択
-- Azure 関数の作成
+- Azure Functions の作成
 - トリガーの使用
 - 関数のチェーン
 - 実行時間の長いワークフロー
@@ -39,15 +39,15 @@ ms.locfileid: "82158451"
 
 ## <a name="customer-reviews"></a>顧客レビュー
 
-このサンプルでは、Visual Studio の C# クラス ライブラリ用の新しい Azure Functions ツールを紹介します。 Azure Storage Blob および CosmosDB に格納される製品レビューを顧客が送信する Web サイトを作成します。 Azure Cognitive Services を使用して顧客レビューの自動モデレーションを実行する Azure 関数を追加します。 Azure ストレージ キューを使用して、Web サイトを関数から分離します。
+このサンプルでは、Visual Studio の C# クラス ライブラリ用の新しい Azure Functions ツールを紹介します。 Azure Storage Blob および CosmosDB に格納される製品レビューを顧客が送信する Web サイトを作成します。 Azure Cognitive Services を使用して顧客レビューの自動モデレーションを実行する Azure Functions を追加します。 Azure ストレージ キューを使用して、Web サイトを関数から分離します。
 
 [Cognitive Services による顧客レビュー アプリ](https://docs.microsoft.com/samples/azure-samples/functions-customer-reviews/customer-reviews-cognitive-services/)
 
 ## <a name="docker-linux-image-support"></a>Docker Linux イメージのサポート
 
-このサンプルでは、Linux Docker コンテナーで Azure 関数をビルドして実行するための `Dockerfile` を作成する方法を示します。
+このサンプルでは、Linux Docker コンテナーで Azure Functions をビルドして実行するための `Dockerfile` を作成する方法を示します。
 
-[Linux 上の Azure 関数](https://docs.microsoft.com/samples/azure-samples/functions-linux-custom-image/azure-functions-on-linux-custom-image-tutorial-sample-project/)
+[Linux 上の Azure Functions](https://docs.microsoft.com/samples/azure-samples/functions-linux-custom-image/azure-functions-on-linux-custom-image-tutorial-sample-project/)
 
 ## <a name="file-processing-and-validation"></a>ファイルの処理と検証
 
@@ -65,9 +65,9 @@ ms.locfileid: "82158451"
 
 ## <a name="graphql"></a>GraphQL
 
-GraphQL API を公開するサーバーレス関数を作成します。
+GraphQL API を公開するサーバーレス Functions を作成します。
 
-[GraphQL 用のサーバーレス関数](https://github.com/softchris/graphql-workshop-dotnet/blob/master/docs/workshop/4.md)
+[GraphQL 用のサーバーレス Functions](https://github.com/softchris/graphql-workshop-dotnet/blob/master/docs/workshop/4.md)
 
 ## <a name="internet-of-things-iot-reliable-edge-relay"></a>モノのインターネット (IoT) の高信頼性エッジ リレー
 
@@ -93,29 +93,29 @@ Relecloud (架空の会社) による Rideshare アプリケーションの設�
 
 ## <a name="serverless-for-mobile"></a>モバイル用のサーバーレス
 
-Azure Functions は実装と保守が簡単で、HTTP を介してアクセスできます。 モバイル アプリケーション用の API を実装する優れた方法です。 Microsoft では、iOS、Android、Windows 向けの優れたクロスプラットフォーム ツールが Xamarin で提供されています。 そのため、Xamarin と Azure Functions は連携して機能します。 この記事では、最初に Azure portal または Visual Studio で Azure 関数を実装してから、Android、iOS、Windows で実行される Xamarin.Forms を使用してクロスプラットフォーム クライアントを構築する方法について説明します。
+Azure Functions は実装と保守が簡単で、HTTP を介してアクセスできます。 モバイル アプリケーション用の API を実装する優れた方法です。 Microsoft では、iOS、Android、Windows 向けの優れたクロスプラットフォーム ツールが Xamarin で提供されています。 そのため、Xamarin と Azure Functions は連携して機能します。 この記事では、最初に Azure portal または Visual Studio で Azure Functions を実装してから、Android、iOS、Windows で実行される Xamarin.Forms を使用してクロスプラットフォーム クライアントを構築する方法について説明します。
 
-[Xamarin.Forms クライアントを使用するシンプルな Azure 関数の実装](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
+[Xamarin.Forms クライアントを使用するシンプルな Azure Functions の実装](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
 
 ## <a name="serverless-messaging"></a>サーバーレス メッセージング
 
-このサンプルでは、Durable Functions のファンアウト パターンを使用して、任意の数のセッションまたはパーティションから任意の数のメッセージを読み込む方法を示します。 Service Bus、Event Hubs、またはストレージ キューを対象としています。 また、このサンプルでは、それらのメッセージを別の Azure 関数で使用し、結果のタイミング データを別のイベント ハブに読み込む機能を追加します。 その後、データは、Azure Data Explorer などの分析サービスに取り込まれます。
+このサンプルでは、Durable Functions のファンアウト パターンを使用して、任意の数のセッションまたはパーティションから任意の数のメッセージを読み込む方法を示します。 Service Bus、Event Hubs、またはストレージ キューを対象としています。 また、このサンプルでは、それらのメッセージを別の Azure Functions で使用し、結果のタイミング データを別のイベント ハブに読み込む機能を追加します。 その後、データは、Azure Data Explorer などの分析サービスに取り込まれます。
 
 [Service Bus、Event Hubs、ストレージ キューと Azure Functions によりメッセージを生成して使用する](https://docs.microsoft.com/samples/azure-samples/durable-functions-producer-consumer/product-consume-messages-az-functions/)
 
 ## <a name="recommended-resources"></a>推奨リソース
 
-- [Linux 上の Azure 関数](https://docs.microsoft.com/samples/azure-samples/functions-linux-custom-image/azure-functions-on-linux-custom-image-tutorial-sample-project/)
+- [Linux 上の Azure Functions](https://docs.microsoft.com/samples/azure-samples/functions-linux-custom-image/azure-functions-on-linux-custom-image-tutorial-sample-project/)
 - [ビッグ データ処理: Azure でのサーバーレス MapReduce](https://docs.microsoft.com/samples/azure-samples/durablefunctions-mapreduce-dotnet/big-data-processing-serverless-mapreduce-on-azure/)
 - [サーバーレス アプリケーションの作成](https://docs.microsoft.com/learn/paths/create-serverless-applications/)
 - [Cognitive Services による顧客レビュー アプリ](https://docs.microsoft.com/samples/azure-samples/functions-customer-reviews/customer-reviews-cognitive-services/)
 - [Azure Functions、Logic Apps、Durable Functions を使用した、ファイルの処理と検証](https://docs.microsoft.com/samples/azure-samples/serverless-file-validation/file-processing-and-validation-using-azure-functions-logic-apps-and-durable-functions/)
-- [Xamarin.Forms クライアントを使用するシンプルな Azure 関数の実装](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
+- [Xamarin.Forms クライアントを使用するシンプルな Azure Functions の実装](https://docs.microsoft.com/samples/azure-samples/functions-xamarin-getting-started/implementing-a-simple-azure-function-with-a-xamarinforms-client/)
 - [エディター内でのゲーム テレメトリの視覚化](https://docs.microsoft.com/samples/azure-samples/gaming-in-editor-telemetry/in-editor-telemetry-visualization/)
 - [IoT 高信頼性エッジ リレー](https://docs.microsoft.com/samples/azure-samples/iot-reliable-edge-relay/iot-reliable-edge-relay/)
 - [Service Bus、Event Hubs、ストレージ キューと Azure Functions によりメッセージを生成して使用する](https://docs.microsoft.com/samples/azure-samples/durable-functions-producer-consumer/product-consume-messages-az-functions/)
 - [Azure Functions でコンソール アプリを実行する](https://docs.microsoft.com/samples/azure-samples/functions-dotnet-migrating-console-apps/run-console-apps-on-azure-functions/)
-- [GraphQL 用のサーバーレス関数](https://github.com/softchris/graphql-workshop-dotnet/blob/master/docs/workshop/4.md)
+- [GraphQL 用のサーバーレス Functions](https://github.com/softchris/graphql-workshop-dotnet/blob/master/docs/workshop/4.md)
 - [サーバーレス マイクロサービス参照アーキテクチャ](https://docs.microsoft.com/samples/azure-samples/serverless-microservices-reference-architecture/serverless-microservices-reference-architecture/)
 
 >[!div class="step-by-step"]
