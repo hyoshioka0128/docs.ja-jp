@@ -2,12 +2,12 @@
 title: シリアル化可能な型
 ms.date: 03/30/2017
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
-ms.openlocfilehash: 0913d523e93505934b1cf231284e356baba5ded3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e65fcb93c5c36bb289b825cef58b3adc6f5155f5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591674"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586105"
 ---
 # <a name="serializable-types"></a>シリアル化可能な型
 既定では、<xref:System.Runtime.Serialization.DataContractSerializer> は公開されている型をすべてシリアル化します。 その型の読み書き可能なパブリック プロパティおよびパブリック フィールドは、すべてシリアル化されます。  
@@ -36,7 +36,7 @@ ms.locfileid: "65591674"
 - パブリック メンバー、プロパティ、またはフィールドのシリアル化のプロセスを "取り消す" には、<xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> 属性をそのメンバーに適用します。  
   
 ## <a name="inheritance"></a>継承  
- マークされていない型 (<xref:System.Runtime.Serialization.DataContractAttribute> 属性のない型) は、この属性を持つ型から継承できます。ただし、その反対はできません。つまり、マークされていない型から属性を持つ型を継承することはできません。 このルールは、以前のバージョンの .NET Framework で記述されたコードの旧バージョンとの互換性を確保するには、主に適用されます。  
+ マークされていない型 (<xref:System.Runtime.Serialization.DataContractAttribute> 属性のない型) は、この属性を持つ型から継承できます。ただし、その反対はできません。つまり、マークされていない型から属性を持つ型を継承することはできません。 このルールは、以前のバージョンの .NET Framework で記述されたコードとの下位互換性を確保するために主に適用されます。  
   
 ## <a name="see-also"></a>関連項目
 
@@ -44,4 +44,4 @@ ms.locfileid: "65591674"
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [データ コントラクト シリアライザーでサポートされる型](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [データ コントラクト シリアライザーでサポートされる型](types-supported-by-the-data-contract-serializer.md)

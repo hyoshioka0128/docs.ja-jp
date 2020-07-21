@@ -7,34 +7,34 @@ dev_langs:
 ms.assetid: 1d26e0fb-f6e0-4afa-9a9c-b8d55b8f20dc
 ms.openlocfilehash: c13f0b802b2714a17ea4014625a65ebd1b0011f4
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70785852"
 ---
 # <a name="viewing-data-in-a-datatable"></a>DataTable 内のデータの表示
 
-の<xref:System.Data.DataTable>内容にアクセスするには、 **DataTable**の**Rows**コレクションと**Columns**コレクションを使用します。 また、 <xref:System.Data.DataTable.Select%2A>メソッドを使用して、検索条件、並べ替え順序、および行の状態などの条件に基づいて、 **DataTable**内のデータのサブセットを返すこともできます。 また、主キーの値<xref:System.Data.DataRowCollection.Find%2A>を使用して特定の行を検索するときに、 **DataRowCollection**のメソッドを使用することもできます。
+<xref:System.Data.DataTable> の内容には、**DataTable** の **Rows** コレクションと **Columns** コレクションを使用してアクセスできます。 また、<xref:System.Data.DataTable.Select%2A> メソッドを使用すると、検索条件、並べ替え順序、行の状態などの基準に基づいて **DataTable** 内のデータのサブセットを返すことができます。 さらに、主キー値を使用して特定の行を検索するときは、**DataRowCollection** の <xref:System.Data.DataRowCollection.Find%2A> メソッドを使用できます。
 
-**DataTable**オブジェクトの**Select**メソッドは、指定された<xref:System.Data.DataRow>条件に一致するオブジェクトのセットを返します。 **Select**は、フィルター式、並べ替え式、および**DataViewRowState**の省略可能な引数を受け取ります。 フィルター式は、 **DataColumn**値 (など) に基づいて`LastName = 'Smith'`返される行を識別します。 並べ替え式は、列の並べ替えについての標準 SQL 規則に基づく `LastName ASC, FirstName ASC` などの式です。 式の記述に関する規則につい<xref:System.Data.DataColumn.Expression%2A>ては、 **DataColumn**クラスのプロパティを参照してください。
+**DataTable** オブジェクトの **Select** メソッドからは、指定した条件と一致する <xref:System.Data.DataRow> オブジェクトのセットが返されます。 **Select** は、オプションの引数として、フィルター式、並べ替え式、**DataViewRowState** を受け取ります。 フィルター式では、**DataColumn** の値に基づいて返す行が特定されます (`LastName = 'Smith'` など)。 並べ替え式は、列の並べ替えについての標準 SQL 規則に基づく `LastName ASC, FirstName ASC` などの式です。 式の記述の規則については、**DataColumn** クラスの <xref:System.Data.DataColumn.Expression%2A> プロパティのトピックを参照してください。
 
 > [!TIP]
-> Datatable の**Select**メソッドに対して多数の呼び出しを実行している場合は、最初に<xref:System.Data.DataView> **datatable**のを作成することによってパフォーマンスを向上させることができます。 **DataView**を作成すると、テーブルの行にインデックスが作成されます。 次に、 **Select**メソッドはそのインデックスを使用して、クエリ結果の生成にかかる時間を大幅に短縮します。 **DataTable**の**DataView**の作成の詳細については、「 [dataviews](dataviews.md)」を参照してください。
+> **DataTable** の **Select** メソッドへの呼び出しを多数実行する場合は、最初に **DataTable** の <xref:System.Data.DataView> を作成することにより、パフォーマンスを向上させることができます。 **DataView** を作成すると、テーブルの行にインデックスが付けられます。 **Select** メソッドでそのインデックスを使用すると、クエリ結果を生成するまでの時間が大幅に短縮されます。 **DataTable** の **DataView** を作成する方法については、「[DataView](dataviews.md)」を参照してください。
 
-**Select**メソッドは、 <xref:System.Data.DataViewRowState>に基づいて表示または操作する行のバージョンを決定します。 次の表では、使用可能な**DataViewRowState**列挙値について説明します。
+**Select** メソッドでは、<xref:System.Data.DataViewRowState> に基づいて、表示または操作する行のバージョンが決定されます。 有効な **DataViewRowState** 列挙値の説明を次の表に示します。
 
 |DataViewRowState の値|説明|
 |----------------------------|-----------------|
 |**CurrentRows**|変更されていない行、追加された行、および変更された行を含む現在の行。|
-|**削除**|削除された行。|
-|**ModifiedCurrent**|元のデータを変更した後のバージョンである、現在のバージョン。 (「 **ModifiedOriginal**」を参照してください)。|
-|**ModifiedOriginal**|変更されたすべての行の元のバージョン。 現在のバージョンは、 **ModifiedCurrent**を使用して入手できます。|
-|**れ**|新しい行。|
+|**削除済み**|削除された行。|
+|**ModifiedCurrent**|元のデータを変更した後のバージョンである、現在のバージョン。 (**ModifiedOriginal** を参照)|
+|**ModifiedOriginal**|変更されたすべての行の元のバージョン。 現在のバージョンは、**ModifiedCurrent** を使用して取得できます。|
+|**追加**|新しい行。|
 |**None**|なし。|
 |**OriginalRows**|変更されていない行および削除された行を含む元の行。|
 |**Unchanged**|変更されていない行。|
 
-次の例では、**データセット**オブジェクトをフィルター処理して、 **DataViewRowState**が**currentrows**に設定されている行のみを処理するようにしています。
+次の例では、**DataSet** オブジェクトをフィルター処理して、**DataViewRowState** が **CurrentRows** に設定されている行だけを操作できるようにします。
 
 ```vb
 Dim column As DataColumn
@@ -87,7 +87,7 @@ else
 }
 ```
 
-**Select**メソッドを使用して、異なる**RowState**値またはフィールド値を持つ行を返すことができます。 次の例では、削除されたすべての行を参照する**datarow**配列を返し、 **custlname**によって並べ替えられた、 **CustID**列が5より大きいすべての行を参照する別の**datarow**配列を返します。 **削除さ**れた行の情報を表示する方法の詳細については、「[行の状態と行のバージョン](row-states-and-row-versions.md)」を参照してください。
+**Select** メソッドを使用して、異なる **RowState** 値またはフィールド値を持つ行を返すこともできます。 次の例では、削除されたすべての行を参照する **DataRow** 配列と、**CustID** 列が 5 より大きいすべての行 (**CustLName** の順に並べ替えられたもの) を参照する別の **DataRow** 配列が返されます。 **Deleted** 行の情報を表示する方法については、「[行の状態とバージョン](row-states-and-row-versions.md)」を参照してください。
 
 ```vb
 ' Retrieve all deleted rows.

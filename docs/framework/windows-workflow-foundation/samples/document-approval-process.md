@@ -1,13 +1,14 @@
 ---
 title: ドキュメント承認プロセス
+description: このサンプルでは、ドキュメント承認プロセスシナリオの多くの Windows Workflow Foundation と Windows Communication Foundation の機能を示します。
 ms.date: 03/30/2017
 ms.assetid: 9b240937-76a7-45cd-8823-7f82c34d03bd
-ms.openlocfilehash: cee43aff991f9482de7b3172174eb0e786ec1fe6
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 18b4f978e9234daf22395f0d2f6f0889d0edf966
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710843"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421411"
 ---
 # <a name="document-approval-process"></a>ドキュメント承認プロセス
 
@@ -18,7 +19,7 @@ ms.locfileid: "74710843"
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Application\DocumentApprovalProcess`
 
@@ -90,7 +91,7 @@ ms.locfileid: "74710843"
 
 2. ソリューションをビルドするには、Ctrl キーと Shift キーを押しながら B キーを押します。
 
-3. ソリューションを実行するには、**ソリューションエクスプローラー**で ApprovalManager プロジェクトを右クリックし、[->**デバッグ**] をクリックして右クリックメニューから [新しいインスタンスを**開始**] をクリックし、承認マネージャーアプリケーションを起動します。
+3. ソリューションを実行するには、**ソリューションエクスプローラー**で approvalmanager プロジェクトを右クリックし、 **Debug** -> 右クリックメニューから [デバッグ] [新しいインスタンス] の順にクリックして、承認マネージャーアプリケーション**を起動し**ます。
 
     準備完了のメッセージが表示されるまで待ちます。
 
@@ -102,13 +103,13 @@ ms.locfileid: "74710843"
 
 3. ApprovalClient\Bin\Debug フォルダーに移動して、ApprovalClient.exe のインスタンスを 2 つ実行します。
 
-4. **[検出]** をクリックし、 **[サブスクライブ]** ボタンが有効になるまで待ちます。
+4. [**検出**] をクリックし、[**サブスクライブ**] ボタンが有効になるまで待ちます。
 
-5. 任意のユーザー名を入力し、 **[サブスクライブ]** をクリックします。 一方のクライアントに対しては "`UserType1`" を使用し、もう一方のクライアントに対しては "`UserType2`" を使用します。
+5. 任意のユーザー名を入力し、[**サブスクライブ**] をクリックします。 一方のクライアントに対しては "`UserType1`" を使用し、もう一方のクライアントに対しては "`UserType2`" を使用します。
 
-6. `UserType1` クライアントで、ドロップダウン メニューから単一承認を選択し、ドキュメントの名前と内容を入力します。 **[Request Approval]** をクリックします。
+6. `UserType1` クライアントで、ドロップダウン メニューから単一承認を選択し、ドキュメントの名前と内容を入力します。 [ **Request Approval**] をクリックします。
 
-7. `UserType2` クライアントに承認待ちのドキュメントが表示されます。 それを選択し、 **[承認]** または **[拒否]** をクリックします。 `UserType1` クライアントに結果が表示されます。
+7. `UserType2` クライアントに承認待ちのドキュメントが表示されます。 それを選択し、[**承認**] または [**拒否**] をクリックします。 `UserType1` クライアントに結果が表示されます。
 
 ##### <a name="to-run-the-quorum-approval-scenario"></a>定足数承認のシナリオを実行するには
 
@@ -118,13 +119,13 @@ ms.locfileid: "74710843"
 
 3. ApprovalClient\Bin\Debug フォルダーに移動して、ApprovalClient.exe のインスタンスを 3 つ実行します。
 
-4. **[検出]** をクリックし、 **[サブスクライブ]** ボタンが有効になるまで待ちます。
+4. [**検出**] をクリックし、[**サブスクライブ**] ボタンが有効になるまで待ちます。
 
-5. 任意のユーザー名を入力し、 **[サブスクライブ]** をクリックします。 1 つのクライアントに対しては "`UserType1`" を使用し、残りの 2 つのクライアントに対しては "`UserType2`" を使用します。
+5. 任意のユーザー名を入力し、[**サブスクライブ**] をクリックします。 1 つのクライアントに対しては "`UserType1`" を使用し、残りの 2 つのクライアントに対しては "`UserType2`" を使用します。
 
-6. `UserType1` クライアントで、ドロップダウン メニューから定足数承認を選択し、ドキュメントの名前と内容を入力します。 **[Request Approval]** をクリックします。 これにより、2 つの `UserType2` クライアントが、ドキュメントを承認または却下するように要求されます。 両方の `UserType2` クライアントが応答する必要がありますが、いずれか一方のクライアントが承認すればドキュメントは承認されます。
+6. `UserType1` クライアントで、ドロップダウン メニューから定足数承認を選択し、ドキュメントの名前と内容を入力します。 [ **Request Approval**] をクリックします。 これにより、2 つの `UserType2` クライアントが、ドキュメントを承認または却下するように要求されます。 両方の `UserType2` クライアントが応答する必要がありますが、いずれか一方のクライアントが承認すればドキュメントは承認されます。
 
-7. 2 つの `UserType2` クライアントに承認待ちのドキュメントが表示されます。 それを選択し、 **[承認]** または **[拒否]** をクリックします。 `UserType1` クライアントに結果が表示されます。
+7. 2 つの `UserType2` クライアントに承認待ちのドキュメントが表示されます。 それを選択し、[**承認**] または [**拒否**] をクリックします。 `UserType1` クライアントに結果が表示されます。
 
 ##### <a name="to-run-the-complex-approval-scenario"></a>複合承認のシナリオを実行するには
 
@@ -134,13 +135,13 @@ ms.locfileid: "74710843"
 
 3. ApprovalClient\Bin\Debug フォルダーに移動して、ApprovalClient.exe のインスタンスを 4 つ実行します。
 
-4. **[検出]** をクリックし、 **[サブスクライブ]** ボタンが有効になるまで待ちます。
+4. [**検出**] をクリックし、[**サブスクライブ**] ボタンが有効になるまで待ちます。
 
-5. 任意のユーザー名を入力し、 **[サブスクライブ]** をクリックします。 1 つのクライアントに対して "`UserType1`" を、2 つのクライアントに対して "`UserType2`" を、最後のクライアントに対して "`UserType3`" を使用します。
+5. 任意のユーザー名を入力し、[**サブスクライブ**] をクリックします。 1 つのクライアントに対して "`UserType1`" を、2 つのクライアントに対して "`UserType2`" を、最後のクライアントに対して "`UserType3`" を使用します。
 
-6. `UserType1` クライアントで、ドロップダウン メニューから単一承認を選択し、ドキュメントの名前と内容を入力します。 **[Request Approval]** をクリックします。
+6. `UserType1` クライアントで、ドロップダウン メニューから単一承認を選択し、ドキュメントの名前と内容を入力します。 [ **Request Approval**] をクリックします。
 
-7. 2 つの `UserType2` クライアントに承認待ちのドキュメントが表示されます。 これを選択して **[承認]** を押すと、ドキュメントが `UserType3` クライアントに渡されます。
+7. 2 つの `UserType2` クライアントに承認待ちのドキュメントが表示されます。 これを選択して [**承認**] を押すと、ドキュメントがクライアントに渡され `UserType3` ます。
 
     ドキュメントは、最初の `UserType2` クライアントの定足数によって承認されると `UserType3` クライアントに渡されます。
 

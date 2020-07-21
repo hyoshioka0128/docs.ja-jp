@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3fb8e178-342b-4c89-9bcf-f7f834e6cb77
 topic_type:
 - apiref
-ms.openlocfilehash: acb772a64c8f13405f2836bb5f4f308986dce414
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cc3bc5140da0634b5172f6253de3de37bff487f1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447657"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492036"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers メソッド
 指定した型のメンバーを表す MemberDef トークンを列挙します。  
@@ -28,11 +28,11 @@ ms.locfileid: "74447657"
 ## <a name="syntax"></a>構文  
   
 ```cpp  
-HRESULT EnumMembers (   
-   [in, out]  HCORENUM    *phEnum,   
-   [in]  mdTypeDef   cl,   
-   [out] mdToken     rMembers[],   
-   [in]  ULONG       cMax,   
+HRESULT EnumMembers (
+   [in, out]  HCORENUM    *phEnum,
+   [in]  mdTypeDef   cl,
+   [out] mdToken     rMembers[],
+   [in]  ULONG       cMax,
    [out] ULONG       *pcTokens  
 );  
 ```  
@@ -51,30 +51,30 @@ HRESULT EnumMembers (
  [in] `rMembers` 配列の最大サイズ。  
   
  `pcTokens`  
- 入出力`rMembers`で返された MemberDef トークンの実際の数。  
+ 入出力で返された MemberDef トークンの実際の数 `rMembers` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMembers` が正常に返されました。|  
-|`S_FALSE`|列挙する MemberDef トークンがありません。 この場合、`pcTokens` は0になります。|  
+|`S_OK`|`EnumMembers`正常に返されました。|  
+|`S_FALSE`|列挙する MemberDef トークンがありません。 この場合、 `pcTokens` は0になります。|  
   
-## <a name="remarks"></a>コメント  
- クラスのメンバーのコレクションを列挙すると、`EnumMembers` は、クラスで直接定義されたメンバー (プロパティまたはイベントでは**ない**) のみを返します。 クラスが継承されたメンバーの実装を提供している場合でも、クラスが継承するメンバーは返しません。 継承されたメンバーを列挙するには、呼び出し元が継承チェーンを明示的にウォークする必要があります。 継承チェーンの規則は、元のメタデータを出力した言語またはコンパイラによって異なる場合があることに注意してください。
- 
- プロパティとイベントは、`EnumMembers`によって列挙されません。 これらを列挙するには、 [Enumproperties](imetadataimport-enumproperties-method.md)または[enumproperties](imetadataimport-enumevents-method.md)を使用します。
+## <a name="remarks"></a>解説  
+ クラスのメンバーのコレクションを列挙するときに、 `EnumMembers` クラスで直接定義されたメンバー (プロパティまたはイベントでは**ない**) のみを返します。 クラスが継承されたメンバーの実装を提供している場合でも、クラスが継承するメンバーは返しません。 継承されたメンバーを列挙するには、呼び出し元が継承チェーンを明示的にウォークする必要があります。 継承チェーンの規則は、元のメタデータを出力した言語またはコンパイラによって異なる場合があることに注意してください。
+
+ プロパティとイベントは、によって列挙されません `EnumMembers` 。 これらを列挙するには、 [Enumproperties](imetadataimport-enumproperties-method.md)または[enumproperties](imetadataimport-enumevents-method.md)を使用します。
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

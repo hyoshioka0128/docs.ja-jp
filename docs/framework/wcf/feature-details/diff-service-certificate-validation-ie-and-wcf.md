@@ -5,17 +5,17 @@ helpviewer_keywords:
 - service certificate validation [WCF]
 - certificates [WCF], service certificate validation
 ms.assetid: 9dffcab2-70a9-40f0-99fd-d3a0b296028f
-ms.openlocfilehash: 0bced548cdc9423d1907de09e8b52ebe078d7c19
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 151075f2894b895ab90418748df9face3aa70252
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857702"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599192"
 ---
 # <a name="differences-between-service-certificate-validation-done-by-internet-explorer-and-wcf"></a>Internet Explorer と WCF で実行されるサービス証明書の検証の相違点
-Internet Explorer と Windows Communication Foundation (WCF) HTTPS を使用するときにサービス証明書の検証方法の違いのためなっても、Internet Explorer は、ヘルプ ページまたは Web サービス記述言語にアクセスできません。(WSDL)、サービスの WCF クライアントが正常にできる場合でもメッセージ、サービス エンドポイントに送信します。 これは Internet Explorer のチェックがあるため、サービス証明書があるかどうか、 `ServerAuthentication` WCF では、このような制約は強制されませんが、オブジェクト識別子 (OID) の拡張使用法フラグ。 Internet Explorer がサービス ヘルプ ページまたはサービスの WSDL にアクセスできない場合は、使用、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)サービス メタデータにアクセスします。  
+HTTPS の使用時に Internet Explorer と Windows Communication Foundation (WCF) がサービス証明書を検証する方法が異なるため、WCF クライアントがサービスエンドポイントにメッセージを正常に送信できる場合でも、Internet Explorer がサービスのヘルプページまたは Web サービス記述言語 (WSDL) にアクセスできない可能性があります。 これは、Internet Explorer によって、サービス証明書の `ServerAuthentication` 拡張使用フラグにオブジェクト識別子 (OID) があるかどうかが確認されるのに対し、WCF ではこのような制約は適用されないためです。 Internet Explorer がサービスのヘルプページまたはサービスの WSDL にアクセスできない場合は、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)を使用してサービスメタデータにアクセスします。  
   
 ## <a name="see-also"></a>関連項目
 
-- [HTTPS、SSL Over TCP、SOAP セキュリティ間における証明書検証方法の相違点](../../../../docs/framework/wcf/feature-details/cert-val-diff-https-ssl-over-tcp-and-soap.md)
-- [方法: メタデータの取得および準拠サービスの実装](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)
+- [HTTPS、SSL Over TCP、SOAP セキュリティ間における証明書検証方法の相違点](cert-val-diff-https-ssl-over-tcp-and-soap.md)
+- [方法: メタデータの取得および準拠サービスの実装をする](how-to-retrieve-metadata-and-implement-a-compliant-service.md)

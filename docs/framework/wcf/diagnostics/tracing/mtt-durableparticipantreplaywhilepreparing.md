@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.DurableParticipantReplayWhilePreparing
 ms.date: 03/30/2017
 ms.assetid: 10ef3876-6f8e-4d4e-8444-f47847b64795
-ms.openlocfilehash: 93354fbdd0c1726280526ca07a8b3dd1c57c8a25
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 31fb8d466c76c7490aa80dfcab089332af4036a2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486768"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589133"
 ---
 # <a name="microsofttransactionstransactionbridgedurableparticipantreplaywhilepreparing"></a>Microsoft.Transactions.TransactionBridge.DurableParticipantReplayWhilePreparing
 WS-AT プロトコル サービスは、準備メッセージに応答していない永続的な参加要素から、リプレイ メッセージを受信しました。 そのため、トランザクションが中止されました。  
@@ -17,10 +17,10 @@ WS-AT プロトコル サービスは、準備メッセージに応答してい�
   
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-このエラーを受信 (下位トランザクション マネージャーを含む)、永続参加要素が障害から回復したことを示すことができますただし、トランザクションの結果がわからないし、その状態を要求します。  
+このエラーを受信すると、永続参加要素 (従属トランザクションマネージャーを含む) が障害から回復したことを示している可能性があります。ただし、トランザクションの結果が不明であるため、その状態を要求します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

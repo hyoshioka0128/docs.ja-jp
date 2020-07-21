@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 2d64315a-1af1-4c60-aedf-f8a781914aea
 topic_type:
 - apiref
-ms.openlocfilehash: 34ecfc2f01f22971e135358806adeea632e02f8b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: feb81b86190f953b50f43f244f4e58a0a482f86e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448030"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84003920"
 ---
 # <a name="imetadataemitmergeend-method"></a>IMetaDataEmit::MergeEnd メソッド
 
-[IMetaDataEmit:: Merge](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md)の1つ以上の前の呼び出しで指定されたすべてのメタデータスコープを現在のスコープにマージします。
+[IMetaDataEmit:: Merge](imetadataemit-merge-method.md)の1つ以上の前の呼び出しで指定されたすべてのメタデータスコープを現在のスコープにマージします。
 
 ## <a name="syntax"></a>構文
 
@@ -38,7 +38,7 @@ HRESULT MergeEnd ();
 
 ## <a name="remarks"></a>コメント
 
-このルーチンは、前の `IMetaDataEmit::Merge`の呼び出しで指定されたすべてのインポートスコープのメタデータの実際のマージを現在の出力スコープにトリガーします。
+このルーチンは、の前の呼び出しで指定されたすべてのインポートスコープのメタデータの実際のマージを `IMetaDataEmit::Merge` 現在の出力スコープにトリガーします。
 
 マージには、次の特殊な条件が適用されます。
 
@@ -48,31 +48,31 @@ HRESULT MergeEnd ();
 
   モジュールのプロパティが現在のスコープに対して既に設定されている場合は、モジュールのプロパティはインポートされません。 ただし、モジュールのプロパティが現在のスコープで設定されていない場合は、最初に検出されたときに1回だけインポートされます。 これらのモジュールのプロパティが再度検出された場合、それらは重複しています。 すべてのモジュールプロパティ (MVID を除く) の値が比較され、重複が見つからない場合は、エラーが発生します。
 
-- 型定義 (`TypeDef`) の場合、重複は現在のスコープにマージされません。 `TypeDef` オブジェクトの + *GUID* + *バージョン番号*の各*完全修飾オブジェクト名*に対して重複がチェックされます。 名前または GUID に一致するものがあり、他の2つの要素のいずれかが異なる場合は、エラーが発生します。 それ以外の場合、3つすべての項目が一致すると、`MergeEnd` は、エントリが実際に重複していることを確認するための大まかなチェックを行います。それ以外の場合は、エラーが発生します。 この大まかなチェックは次のようになります。
+- 型定義 () の場合 `TypeDef` 、重複は現在のスコープにマージされません。 `TypeDef`オブジェクトは、完全修飾された*オブジェクト名*  +  *GUID*の  +  *バージョン番号*ごとに重複しているかどうかをチェックします。 名前または GUID に一致するものがあり、他の2つの要素のいずれかが異なる場合は、エラーが発生します。 それ以外の場合、3つのすべての項目が一致すると、は、 `MergeEnd` エントリが実際に重複していることを確認するための大まかなチェックを行います。そうでない場合は、エラーが発生します。 この大まかなチェックは次のようになります。
 
-  - 同じ順序で発生する同じメンバー宣言。 `mdPrivateScope` としてフラグが設定されているメンバー (「 [CorMethodAttr](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md)列挙体」を参照) は、このチェックには含まれていません。これらは特別にマージされます。
+  - 同じ順序で発生する同じメンバー宣言。 としてフラグが設定されているメンバー `mdPrivateScope` ( [CorMethodAttr](cormethodattr-enumeration.md)列挙を参照) は、このチェックには含まれていません。これらは特別にマージされます。
 
   - 同じクラスレイアウト。
 
-  つまり、`TypeDef` オブジェクトは、宣言されているすべてのメタデータスコープで常に完全かつ一貫して定義される必要があります。メンバーの実装 (クラスの場合) が複数のコンパイル単位にわたって分散されている場合、完全な定義はすべてのスコープに存在すると見なされ、各スコープに増分されることはありません。 たとえば、パラメーター名がコントラクトに関連する場合は、すべてのスコープに同じ方法で出力する必要があります。これらが関連性のない場合は、メタデータに出力されません。
+  これは、 `TypeDef` オブジェクトが宣言されているすべてのメタデータスコープで常に完全かつ一貫して定義されている必要があることを意味します。そのメンバー実装 (クラスの場合) が複数のコンパイル単位にわたって分散されている場合、完全定義はすべてのスコープに存在し、各スコープに増分されません。 たとえば、パラメーター名がコントラクトに関連する場合は、すべてのスコープに同じ方法で出力する必要があります。これらが関連性のない場合は、メタデータに出力されません。
 
-  例外として、`TypeDef` オブジェクトは `mdPrivateScope`としてフラグが設定された増分メンバーを持つことができます。 これらの問題が発生すると、`MergeEnd` によって、重複の有無に関係なく、現在のスコープに増分的に追加されます。 コンパイラはプライベートスコープを認識しているため、コンパイラは規則の適用を行う必要があります。
+  例外は、オブジェクトが `TypeDef` というフラグが付けられた増分メンバーを持つことができることです `mdPrivateScope` 。 これらが検出さ `MergeEnd` れると、重複を考慮せずに、それらを現在のスコープに増分的に追加します。 コンパイラはプライベートスコープを認識しているため、コンパイラは規則の適用を行う必要があります。
 
 - 相対仮想アドレス (RVAs) はインポートまたはマージされません。コンパイラは、この情報を再生成する必要があります。
 
-- カスタム属性は、関連付けられているアイテムがマージされた場合にのみマージされます。 たとえば、クラスに関連付けられているカスタム属性は、クラスが最初に検出されたときにマージされます。 カスタム属性がコンパイル単位に固有の `TypeDef` または `MemberDef` に関連付けられている場合 (メンバーコンパイルのタイムスタンプなど) は、マージされず、そのようなメタデータを削除または更新するためにコンパイラによって行われます。
+- カスタム属性は、関連付けられているアイテムがマージされた場合にのみマージされます。 たとえば、クラスに関連付けられているカスタム属性は、クラスが最初に検出されたときにマージされます。 カスタム属性がに関連付けられている場合、 `TypeDef` または `MemberDef` コンパイル単位 (メンバーコンパイルのタイムスタンプなど) に固有の場合は、マージされず、そのようなメタデータを削除または更新するためにコンパイラによって行われます。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
-**:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
 
 **ヘッダー:** Cor
 
 **ライブラリ:** Mscoree.dll のリソースとして使用されます。
 
-**.NET Framework のバージョン:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
+**.NET Framework のバージョン:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit インターフェイス](imetadataemit-interface.md)
+- [IMetaDataEmit2 インターフェイス](imetadataemit2-interface.md)

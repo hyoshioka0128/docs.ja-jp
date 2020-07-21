@@ -11,17 +11,17 @@ helpviewer_keywords:
 ms.assetid: 48f1d25d-3820-4107-a4cc-d6c1e5664a44
 ms.openlocfilehash: 347c8502bd4c5fafcde7a142327f85bfb75b9954
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61699072"
 ---
 # <a name="how-to-use-the-attached-properties-of-canvas-to-position-child-elements"></a>方法: Canvas の添付プロパティを使用して子要素を配置する
-この例の添付プロパティを使用する方法を示しています。<xref:System.Windows.Controls.Canvas>子要素を配置します。  
+この例からは、<xref:System.Windows.Controls.Canvas> の添付プロパティを使用し、子要素を配置する方法がわかります。  
   
 ## <a name="example"></a>例  
- 次の例には、4 が加算されます<xref:System.Windows.Controls.Button>要素の親の子要素として<xref:System.Windows.Controls.Canvas>します。 各要素が表される、 <xref:System.Windows.Controls.Canvas.Bottom%2A>、 <xref:System.Windows.Controls.Canvas.Left%2A>、 <xref:System.Windows.Controls.Canvas.Right%2A>、および<xref:System.Windows.Controls.Canvas.Top%2A>します。
-各<xref:System.Windows.Controls.Button>が、親に対する相対的な配置されている<xref:System.Windows.Controls.Canvas>とその割り当てプロパティ値に従ってします。  
+ 次の例では、親 <xref:System.Windows.Controls.Canvas> の子要素として 4 つの <xref:System.Windows.Controls.Button> 要素が追加されます。 各要素は <xref:System.Windows.Controls.Canvas.Bottom%2A>、<xref:System.Windows.Controls.Canvas.Left%2A>、<xref:System.Windows.Controls.Canvas.Right%2A>、<xref:System.Windows.Controls.Canvas.Top%2A> で表されます。
+各 <xref:System.Windows.Controls.Button> は、親 <xref:System.Windows.Controls.Canvas> に相対となる関係で、かつ、割り当てられているプロパティ値に基づいて配置されます。  
   
  [!code-cpp[CanvasAttachedProperties#1](~/samples/snippets/cpp/VS_Snippets_Wpf/CanvasAttachedProperties/CPP/CanvasAttachedProps.cpp#1)]
  [!code-csharp[CanvasAttachedProperties#1](~/samples/snippets/csharp/VS_Snippets_Wpf/CanvasAttachedProperties/CSharp/CanvasAttachedProps.cs#1)]

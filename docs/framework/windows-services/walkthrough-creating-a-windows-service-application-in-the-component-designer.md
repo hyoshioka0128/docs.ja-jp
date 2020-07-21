@@ -11,7 +11,7 @@ ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
 ms.openlocfilehash: e5ff40d8413acf64e7a8a129a7b268f58780d591
 ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053480"
@@ -162,7 +162,7 @@ ms.locfileid: "71053480"
    Private eventId As Integer = 1
    ```
 
-すべての作業をメイン スレッド上で実行する代わりに、バックグラウンド ワーカー スレッドを使用してタスクを実行できます。 詳細については、「 <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName> 」を参照してください。
+すべての作業をメイン スレッド上で実行する代わりに、バックグラウンド ワーカー スレッドを使用してタスクを実行できます。 詳細については、「<xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>」を参照してください。
 
 ### <a name="define-what-occurs-when-the-service-is-stopped"></a>サービスの停止時の処理を定義する
 
@@ -489,7 +489,7 @@ Windows サービスを構築済みであるため、サービスをインスト
     - 属性が `true` に設定されていない。
     - `ProjectInstaller` クラスが `public` として定義されていない。
 
-詳細については、「[方法 :サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。
+詳細については、[サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。
 
 ## <a name="start-and-run-the-service"></a>サービスを開始して実行する
 
@@ -532,7 +532,7 @@ Windows サービス アプリが不要になったら、削除することが�
     installutil.exe /u MyNewService.exe
     ```
 
-   サービスが正常にアンインストールされると、サービスが正常に削除されたことが報告されます。 詳細については、「[方法 :サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。
+   サービスが正常にアンインストールされると、サービスが正常に削除されたことが報告されます。 詳細については、[サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 
@@ -542,7 +542,7 @@ Windows サービス アプリが不要になったら、削除することが�
 
 - インストールしたサービスにコマンドを送信できる <xref:System.ServiceProcess.ServiceController> コンポーネントの使用法を調べます。
 
-- アプリケーションの実行時にイベント ログを作成するのではなく、アプリケーションのインストール時にインストーラーを使用してイベント ログを作成します。 アプリケーションをアンインストールすると、イベント ログはインストーラーによって削除されます。 詳細については、「 <xref:System.Diagnostics.EventLogInstaller> 」を参照してください。
+- アプリケーションの実行時にイベント ログを作成するのではなく、アプリケーションのインストール時にインストーラーを使用してイベント ログを作成します。 アプリケーションをアンインストールすると、イベント ログはインストーラーによって削除されます。 詳細については、「<xref:System.Diagnostics.EventLogInstaller>」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

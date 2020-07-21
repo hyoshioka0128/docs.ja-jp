@@ -8,19 +8,19 @@ helpviewer_keywords:
 - ThrowUnobservedTaskExceptions element
 - <ThrowUnobservedTaskExceptions> element
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
-ms.openlocfilehash: 99eef6b8c264e21df7f4ecf9fc79dc607d484a0a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: de5a686bcbd88fc52173b488103f033575623d62
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73115420"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79153816"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions> 要素
 タスクがハンドルされない例外によって実行中のプロセスを終了するかどうかを指定します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<ThrowUnobservedTaskExceptions >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<ThrowUnobservedTaskExceptions>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -40,7 +40,7 @@ ms.locfileid: "73115420"
   
 ## <a name="enabled-attribute"></a>enabled 属性  
   
-|[値]|説明|  
+|値|Description|  
 |-----------|-----------------|  
 |`false`|は、未処理のタスク例外の実行中のプロセスを終了しません。 既定値です。|  
 |`true`|未処理のタスク例外の実行中のプロセスを終了します。|  
@@ -50,35 +50,35 @@ ms.locfileid: "73115420"
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|ランタイム初期化オプションに関する情報を含んでいます。|  
 |||  
   
-## <a name="remarks"></a>Remarks  
- <xref:System.Threading.Tasks.Task> に関連付けられている例外が確認されていない場合、<xref:System.Threading.Tasks.Task.Wait%2A> 操作がなく、親がアタッチされておらず、<xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> プロパティが読み取られていない場合、タスク例外は監視されと見なされます。  
+## <a name="remarks"></a>解説  
+ に関連付けられている例外がまだ <xref:System.Threading.Tasks.Task> 確認されていない場合、操作がなく、親がアタッチされておらず、プロパティが読み取られていない場合 <xref:System.Threading.Tasks.Task.Wait%2A> <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> 、タスクの例外は監視されと見なされます。  
   
- .NET Framework 4 では、監視され例外が発生した <xref:System.Threading.Tasks.Task> がガベージコレクションされた場合、ファイナライザーは例外をスローしてプロセスを終了します。 プロセスの終了は、ガベージコレクションと終了処理のタイミングによって決まります。  
+ .NET Framework 4 では、監視され例外が発生したが <xref:System.Threading.Tasks.Task> ガベージコレクションされた場合、ファイナライザーは例外をスローしてプロセスを終了します。 プロセスの終了は、ガベージコレクションと終了処理のタイミングによって決まります。  
   
  開発者がタスクに基づいて非同期コードを簡単に記述できるように、.NET Framework 4.5 では、監視され例外のこの既定の動作が変更されています。 監視され例外が発生しても <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> イベントは発生しますが、既定ではプロセスは終了しません。 代わりに、イベントハンドラーが例外を監視しているかどうかに関係なく、イベントが発生した後に例外が無視されます。  
   
- .NET Framework 4.5 では、アプリケーション構成ファイルで[\<ThrowUnobservedTaskExceptions > 要素](throwunobservedtaskexceptions-element.md)を使用して、例外をスローする .NET Framework 4 の動作を有効にすることができます。  
+ .NET Framework 4.5 では、アプリケーション構成ファイルの[ \<ThrowUnobservedTaskExceptions> 要素](throwunobservedtaskexceptions-element.md)を使用して、例外をスローする .NET Framework 4 つの動作を有効にすることができます。  
   
  例外の動作は、次のいずれかの方法で指定することもできます。  
   
-- 環境変数 `COMPlus_ThrowUnobservedTaskExceptions` (`set COMPlus_ThrowUnobservedTaskExceptions=1`) に設定します。  
+- 環境変数 () を設定する `COMPlus_ThrowUnobservedTaskExceptions` `set COMPlus_ThrowUnobservedTaskExceptions=1` 。  
   
-- レジストリの DWORD 値 ThrowUnobservedTaskExceptions = 1 を HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\に設定します。NETFramework キー。  
+- レジストリの DWORD 値 ThrowUnobservedTaskExceptions = 1 を HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft に設定し \\ ます。NETFramework キー。  
   
 ## <a name="example"></a>例  
  次の例では、アプリケーション構成ファイルを使用して、タスクで例外のスローを有効にする方法を示します。  
   
 ```xml  
-<configuration>   
-    <runtime>   
-        <ThrowUnobservedTaskExceptions enabled="true"/>   
-    </runtime>   
+<configuration>
+    <runtime>
+        <ThrowUnobservedTaskExceptions enabled="true"/>
+    </runtime>
 </configuration>  
 ```  
   

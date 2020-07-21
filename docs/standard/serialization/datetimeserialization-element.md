@@ -1,19 +1,20 @@
 ---
 title: <dateTimeSerialization> 要素
+description: この記事では、DateTime オブジェクトのシリアル化モードを決定する <dateTimeSerialization> 要素について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dateTimeSerialization element
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: 180a4942dd4b701b56fe4788d5f8cd8607faaedd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: a2684ab72c1fb109d711e333e01836d3399caf86
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459265"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84289643"
 ---
-# <a name="datetimeserialization-element"></a>\<dateTimeSerialization > 要素
+# <a name="datetimeserialization-element"></a>\<dateTimeSerialization> 要素
 <xref:System.DateTime> オブジェクトのシリアル化モードを決定します。  
   
  \<configuration>  
@@ -34,7 +35,7 @@ ms.locfileid: "73459265"
   
 |属性|説明|  
 |----------------|-----------------|  
-|`mode`|省略可能です。 シリアル化モードを指定します。 <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> 値のいずれかに設定します。 既定値は **RoundTrip** です。|  
+|`mode`|任意。 シリアル化モードを指定します。 <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> 値のいずれかに設定します。 既定値は **RoundTrip** です。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -55,7 +56,7 @@ ms.locfileid: "73459265"
 - <xref:System.DateTime>
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<Schema> Terextensions の要素を追加 \<](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<system.xml.serialization> 要素](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [構成ファイル スキーマ](../../framework/configure-apps/file-schema/index.md)
+- [\<schemaImporterExtensions> 要素](schemaimporterextensions-element.md)
+- [\<schemaImporterExtensions> の \<add> 要素](add-element-for-schemaimporterextensions.md)
+- [\<system.xml.serialization> 要素](system-xml-serialization-element.md)

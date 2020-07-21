@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: ccaf479fc4fb90007b4999e95ee03bdd0529321e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c9b4e6e5b36fe38b6c0ea78f6d1848d155008bcc
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922149"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420969"
 ---
 # <a name="isosdacinterface-interface"></a>ISOSDacInterface インターフェイス
 
-データにアクセスするヘルパー メソッドを提供します。`SOS`します。
+からデータにアクセスするためのヘルパーメソッドを提供 `SOS` します。
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -32,22 +32,22 @@ ms.locfileid: "61922149"
 
 | メソッド                                                                                                               | 説明                                                                                                                   |
 | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [GetMethodDescData](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmethoddescdata-method.md) | 指定した MethodDesc ポインターのデータを取得します。 |
-| [GetMethodDescPtrFromIP](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmethoddescptrfromip-method.md) | 指定されたネイティブ命令のアドレスを含むメソッドに対応する MethodDesc ポインターを取得します。 |
-| [GetModuleData](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmoduledata-method.md)| 指定したアドレスに読み込まれたモジュールに対応するデータをフェッチします。 |
+| [GetMethodDescData](isosdacinterface-getmethoddescdata-method.md) | 指定された MethodDesc ポインターのデータを取得します。 |
+| [GetMethodDescPtrFromIP](isosdacinterface-getmethoddescptrfromip-method.md) | 指定されたネイティブ命令アドレスを格納しているメソッドに対応する MethodDesc のポインターを取得します。 |
+| [GetModuleData](isosdacinterface-getmoduledata-method.md)| 指定したアドレスに読み込まれたモジュールに対応するデータをフェッチします。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-このインターフェイスは、ランタイム内に収めるを任意のヘッダーまたはライブラリ ファイルでは公開されません。 ただし、これは COM インターフェイスから派生した`IUnknown`GUID を持つ`436f00f2-b42a-4b9f-870c-e73db66ae930`を通常の COM メカニズムを通じて取得できます。
+このインターフェイスはランタイム内に存在し、ヘッダーまたはライブラリファイルを介して公開されることはありません。 ただし、これは、 `IUnknown` `436f00f2-b42a-4b9f-870c-e73db66ae930` 通常の com 機構を通じて取得できる GUID を使用してから派生する com インターフェイスです。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**プラットフォーム:**[システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
-**ヘッダー:** なし  
-**ライブラリ:** なし  
-**.NET Framework のバージョン:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
+**ヘッダー:** 存在  
+**ライブラリ:** 存在  
+**.NET Framework のバージョン:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>関連項目
 
-- [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [デバッグ](index.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)

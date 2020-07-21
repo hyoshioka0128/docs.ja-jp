@@ -8,16 +8,16 @@ helpviewer_keywords:
 - numeric conversions [C#], explicit
 - conversions [C#], implicit numeric
 - conversions [C#], explicit numeric
-ms.openlocfilehash: 5380e8480c39d1940df13b2ecb50a0f394367388
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: b7d53e508e4d585c746a3cc61824cdace7707deb
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776019"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121458"
 ---
 # <a name="built-in-numeric-conversions-c-reference"></a>組み込みの数値変換 (C# リファレンス)
 
-C# では、[整数](integral-numeric-types.md)数値型と[浮動小数点](floating-point-numeric-types.md)数値型のセットを提供します。 任意の 2 つの数値型の間で、暗黙的または明示的のいずれかの変換が存在します。 明示的な変換を呼び出すには、[キャスト演算子 `()`](../operators/type-testing-and-cast.md#cast-operator-) を使用する必要があります。
+C# では、[整数](integral-numeric-types.md)数値型と[浮動小数点](floating-point-numeric-types.md)数値型のセットを提供します。 任意の 2 つの数値型の間で、暗黙的または明示的のいずれかの変換が存在します。 明示的な変換を実行するには、[キャスト式](../operators/type-testing-and-cast.md#cast-expression)を使用する必要があります。
 
 ## <a name="implicit-numeric-conversions"></a>暗黙の数値変換
 

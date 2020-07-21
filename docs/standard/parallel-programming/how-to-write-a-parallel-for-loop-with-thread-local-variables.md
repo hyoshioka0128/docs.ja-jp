@@ -1,5 +1,6 @@
 ---
 title: '方法: スレッド ローカル変数を使用する Parallel.For ループを記述する'
+description: .NET でスレッド ローカル変数を使用する Parallel.For ループを記述する方法の例を確認します。これにより、ループ内の個々のタスクごとに状態が格納および取得されます。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallel for loops, how to use local state
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
-ms.openlocfilehash: 14f4f1402f564d38bb508e893521a3951c1509f4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9cff507757aab2e5676df2fabb02a237a2172c17
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139716"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599790"
 ---
 # <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>方法: スレッド ローカル変数を使用する Parallel.For ループを記述する
 次の例に、<xref:System.Threading.Tasks.Parallel.For%2A> ループによって生成される個別のタスクごとの状態を、スレッド ローカル変数を使用して格納および取得する方法を示します。 スレッド ローカル変数を使用することで、共有状態への多数のアクセスを同期するオーバーヘッドを回避できます。 反復処理ごとに共有リソースを作成する代わりに、タスクの反復処理のすべてが完了するまで、値を計算して格納します。 この場合、最終結果を共有リソースに 1 回書き込んだり、別のメソッドに渡したりすることができます。  
@@ -40,11 +41,11 @@ Function() new MyClass()
   
  5 番目のパラメーターが定義するメソッドは、特定のスレッドでのすべての反復処理が完了した時点で 1 回だけ呼び出されます。 この場合も、入力引数の型は <xref:System.Threading.Tasks.Parallel.For%60%601%28System.Int32%2CSystem.Int32%2CSystem.Func%7B%60%600%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Threading.Tasks.ParallelLoopState%2C%60%600%2C%60%600%7D%2CSystem.Action%7B%60%600%7D%29> メソッドの型引数、および本体のラムダ式によって返される型と一致します。 この例では、スレッド セーフな方法で、この値をクラス スコープで変数に追加するために、<xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> メソッドを呼び出します。 スレッド ローカル変数を使用することで、このクラス変数をループのすべての反復処理で作成する手間を省きました。  
   
- ラムダ式の使用方法の詳細については、「[PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)」を参照してください。  
+ ラムダ式の使用方法の詳細については、「[PLINQ および TPL のラムダ式](lambda-expressions-in-plinq-and-tpl.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
-- [データの並列化](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
-- [並列プログラミング](../../../docs/standard/parallel-programming/index.md)
-- [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
-- [PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)
+- [データの並列化](data-parallelism-task-parallel-library.md)
+- [並列プログラミング](index.md)
+- [タスク並列ライブラリ (TPL)](task-parallel-library-tpl.md)
+- [PLINQ および TPL のラムダ式](lambda-expressions-in-plinq-and-tpl.md)

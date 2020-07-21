@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 347d7e5c-c90f-45ad-bd1e-2c7912b0b19c
 topic_type:
 - apiref
-ms.openlocfilehash: 9d0f443b5b7d2d358534e888c3fc84ad3f554119
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 79b1493d262288c1d85a56538810e35a73441595
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450045"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491764"
 ---
 # <a name="imetadataimportenumpermissionsets-method"></a>IMetaDataImport::EnumPermissionSets メソッド
 指定したメタデータ スコープ内のオブジェクトのアクセス許可を列挙します。  
@@ -29,8 +29,8 @@ ms.locfileid: "74450045"
   
 ```cpp  
 HRESULT EnumPermissionSets  
-   [in, out] HCORENUM      *phEnum,   
-   [in]      mdToken       tk,   
+   [in, out] HCORENUM      *phEnum,
+   [in]      mdToken       tk,
    [in]      DWORD         dwActions,  
    [out]     mdPermission  rPermission[],  
    [in]      ULONG         cMax,  
@@ -46,7 +46,7 @@ HRESULT EnumPermissionSets
  から検索範囲を制限するメタデータトークン。または、可能な限り広い範囲を検索する場合は NULL。  
   
  `dwActions`  
- から`rPermission`に含める <xref:System.Security.Permissions.SecurityAction> 値を表すフラグ。すべてのアクションを返す場合は0。  
+ から<xref:System.Security.Permissions.SecurityAction>に含める値を表すフラグ `rPermission` 。すべてのアクションを返す場合は0。  
   
  `rPermission`  
  入出力アクセス許可トークンを格納するために使用される配列。  
@@ -55,25 +55,25 @@ HRESULT EnumPermissionSets
  [in] `rPermission` 配列の最大サイズ。  
   
  `pcTokens`  
- 入出力`rPermission`で返されるアクセス許可トークンの数。  
+ 入出力で返されたアクセス許可トークンの数 `rPermission` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumPermissionSets` が正常に返されました。|  
-|`S_FALSE`|列挙するトークンがありません。 この場合、`pcTokens` は0になります。|  
+|`S_OK`|`EnumPermissionSets`正常に返されました。|  
+|`S_FALSE`|列挙するトークンがありません。 この場合、 `pcTokens` は0になります。|  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 18217ba1-1776-4297-a3b9-f77e64b0fead
 topic_type:
 - apiref
-ms.openlocfilehash: 7e1605eede55360e72d65da6744bc1dcce4f107f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3890cb4236f113bc6efc23bfb606d19a525ec234
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130992"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210268"
 ---
 # <a name="icordebugilframegetip-method"></a>ICorDebugILFrame::GetIP メソッド
 命令ポインターの値と、命令ポインターの値が取得された方法を示すビットごとの組み合わせ値を取得します。  
@@ -29,7 +29,7 @@ ms.locfileid: "73130992"
   
 ```cpp  
 HRESULT GetIP (  
-    [out] ULONG32               *pnOffset,   
+    [out] ULONG32               *pnOffset,
     [out] CorDebugMappingResult *pMappingResult  
 );  
 ```  
@@ -46,11 +46,11 @@ HRESULT GetIP (
   
  このフレームが just-in-time (JIT) でコンパイルされたフレームである場合、命令ポインターの値は、実際のネイティブ命令ポインターから逆方向にマッピングすることによって決定されます。したがって、値は概数にすぎない可能性があります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

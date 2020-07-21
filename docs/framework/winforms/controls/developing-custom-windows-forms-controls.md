@@ -1,16 +1,17 @@
 ---
-title: .NET Framework を使用したカスタム Windows フォーム コントロールの開発
+title: カスタムコントロールの開発
+description: Windows フォームコントロールについて説明します。 具体的には、既存のコントロールの結合、既存のコントロールの拡張、独自のカスタムコントロールの作成について学習します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - custom controls [Windows Forms], developing using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 236cebc0-bd71-4f18-9fd6-5d0e592375df
-ms.openlocfilehash: 3d628d75b75c311c266648886b3b971c4833d172
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 12013496c9650489fdd7512206317000fc0ec78c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972251"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618377"
 ---
 # <a name="developing-custom-windows-forms-controls-with-the-net-framework"></a>.NET Framework を使用したカスタム Windows フォーム コントロールの開発
 Windows フォーム コントロールは、ユーザー インターフェイスの機能をカプセル化して、クライアント側の Windows ベースのアプリケーションで使用される再利用可能なコンポーネントです。 Windows フォームは、すぐに使用できる多数のコントロールを提供するだけでなく、独自のコントロールを開発するためのインフラストラクチャも提供します。 既存のコントロールの結合、既存のコントロールの拡張、または独自のカスタム コントロールの記述ができます。 このセクションでは、Windows フォーム コントロールの開発に役立つ背景情報とサンプルを提供します。  
@@ -43,7 +44,7 @@ Windows フォーム コントロールは、ユーザー インターフェイ�
  [Windows フォーム コントロールのマルチスレッド処理](multithreading-in-windows-forms-controls.md)  
  マルチスレッド コントロールを実装する方法を示します。  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>リファレンス  
  <xref:System.Windows.Forms.Control?displayProperty=nameWithType>  
  このクラスについて説明し、すべてのメンバーへのリンクの一覧を示します。  
   
@@ -57,7 +58,7 @@ Windows フォーム コントロールは、ユーザー インターフェイ�
  [デザイン時サポートの拡張](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))  
  デザイン時サポートを提供するエディターやデザイナーなどのクラスを実装する方法について説明します。  
   
- [方法: ライセンス コンポーネントとコントロール](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))  
+ [方法 : コンポーネントおよびコントロールのライセンス処理を行う](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))  
  コントロールやコンポーネントのライセンスを実装する方法について説明します。  
   
  「[デザイン時の Windows フォーム コントロールの開発](developing-windows-forms-controls-at-design-time.md)」も参照してください。

@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID442
 ms.assetid: 9e3544e2-cfc9-463a-8c0c-ed82e5e6462f
-ms.openlocfilehash: 76ad5129086f40e99ab94d308a519512baf37a89
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d442d582f392ea4e2a074136740f9705d50b8d55
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970314"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84376769"
 ---
 # <a name="connection-to-type-library-or-object-library-for-remote-process-has-been-lost"></a>リモート プロセス用のタイプ ライブラリまたはオブジェクト ライブラリへの接続が失われました
 リモート プロセスのオブジェクト ライブラリまたはタイプ ライブラリへの接続が失われました。  
@@ -26,4 +26,4 @@ ms.locfileid: "61970314"
   
 ## <a name="see-also"></a>関連項目
 
-- [エラーの種類](../../visual-basic/programming-guide/language-features/error-types.md)
+- [エラーの種類](../programming-guide/language-features/error-types.md)

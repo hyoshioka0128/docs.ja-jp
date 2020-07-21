@@ -1,17 +1,18 @@
 ---
 title: アプリケーション ドメインの使用
+description: 共通言語ランタイム (CLR) に使用できる分離の単位が用意されているアプリケーション ドメインを使用します。 アプリケーション ドメインは、プロセス内で作成され、実行されます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application domains, about
 - common language runtime, application domains
 - runtime, application domains
 ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
-ms.openlocfilehash: d6bbc2648608e9542158e0f281984174447633a4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: df2a63716904ebfc6ee163121a1f07e53aa07514
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119727"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105189"
 ---
 # <a name="using-application-domains"></a>アプリケーション ドメインの使用
 
@@ -48,7 +49,7 @@ ms.locfileid: "73119727"
 [アセンブリ読み込みの解決](../../standard/assembly/resolve-loads.md)  
 <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントを使用してアセンブリの読み込みエラーを解決する方法について説明します。  
   
-## <a name="reference"></a>辞書／辞典／その他  
+## <a name="reference"></a>関連項目  
 
 <xref:System.AppDomain>  
 アプリケーション ドメインを表現します。 アプリケーション ドメインの作成と制御に使用するメソッドについて説明します。  
@@ -57,7 +58,7 @@ ms.locfileid: "73119727"
 [.NET のアセンブリ](../../standard/assembly/index.md)  
 アセンブリで実行される関数の概要について説明します。  
   
-[アセンブリを使用したプログラミング](../../standard/assembly/program.md)  
+[アセンブリを使用したプログラミング](../../standard/assembly/index.md)  
 アセンブリを作成し、署名し、その属性を設定する方法を説明します。  
   
 [動的メソッドおよびアセンブリの出力](../reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  

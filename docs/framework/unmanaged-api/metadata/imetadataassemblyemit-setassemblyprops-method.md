@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 91b633d7-9e75-43c3-a8d2-2144984e5f9e
 topic_type:
 - apiref
-ms.openlocfilehash: f79320d5b7d2ad4ad44a79fae063ce6718490a70
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7c6adcbcfe64f63048078b4ccba6727a58531033
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431953"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008106"
 ---
 # <a name="imetadataassemblyemitsetassemblyprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyProps メソッド
 指定された `Assembly` メタデータ構造体を変更します。  
@@ -41,13 +41,13 @@ HRESULT SetAssemblyProps (
   
 ## <a name="parameters"></a>パラメーター  
  `pma`  
- から変更する `Assembly` メタデータ構造を指定するメタデータトークン。  
+ から変更するメタデータ構造を指定するメタデータトークン `Assembly` 。  
   
  `pbPublicKey`  
  からアセンブリの発行者の公開キーへのポインター。  
   
  `cbPublicKey`  
- から`pbPublicKey`のサイズ (バイト単位)。  
+ からのサイズ (バイト単位) `pbPublicKey` 。  
   
  `ulHashAlgId`  
  からアセンブリファイルのハッシュに使用されるハッシュアルゴリズムの識別子。  
@@ -59,20 +59,20 @@ HRESULT SetAssemblyProps (
  からアセンブリのバージョン、プラットフォーム、およびロケール情報を格納している ASSEMBLYMETADATA へのポインター。  
   
  `dwAssemblyFlags`  
- からアセンブリのさまざまな属性を指定する[Assemblyflags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md)値のビットごとの組み合わせ。  
+ からアセンブリのさまざまな属性を指定する[Assemblyflags](assemblyflags-enumeration.md)値のビットごとの組み合わせ。  
   
 ## <a name="remarks"></a>コメント  
- `Assembly` メタデータ構造を作成するには、 [IMetaDataAssemblyEmit::D efineAssembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md)メソッドを使用します。  
+ メタデータ構造を作成するには `Assembly` 、 [IMetaDataAssemblyEmit::D efineAssembly](imetadataassemblyemit-defineassembly-method.md)メソッドを使用します。  
   
-## <a name="requirements"></a>要件  
- **プラットフォーム:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **プラットフォーム:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataAssemblyEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit インターフェイス](imetadataassemblyemit-interface.md)

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: a3f5c266-3fcc-4ad1-aaf5-4cdbe26304ad
 topic_type:
 - apiref
-ms.openlocfilehash: 61aafb8dc99bb908fc603945ff6ea74054f812c4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d5eb225241f597baf7a0a5584f4aaf8bf8411ea2
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141417"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009471"
 ---
 # <a name="validatorflags-enumeration"></a>ValidatorFlags 列挙型
-[ICLRValidator:: Validate](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md)メソッドの呼び出しで実行する必要がある検証の種類を示す値を格納します。  
+[ICLRValidator:: Validate](iclrvalidator-validate-method.md)メソッドの呼び出しで実行する必要がある検証の種類を示す値を格納します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -46,16 +46,16 @@ enum ValidatorFlags {
 |`VALIDATOR_NOCHECK_PEFORMAT`|実行可能ファイルの形式を検証しないことを指定します。|  
 |`VALIDATOR_SHOW_SOURCE_LINES`|検証エラーメッセージに検証エラーを発生させるソースコード行を含めるように指定します。 このフィールド値は .NET Framework バージョン2.0 では無効です。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** IValidator、IValidator  
   
  **ライブラリ:** Mscoree.dll  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICLRErrorReportingManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
-- [ホスティングの列挙型](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ICLRErrorReportingManager インターフェイス](iclrerrorreportingmanager-interface.md)
+- [ホスティングの列挙型](hosting-enumerations.md)

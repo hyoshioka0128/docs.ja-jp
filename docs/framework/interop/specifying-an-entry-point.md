@@ -6,18 +6,18 @@ helpviewer_keywords:
 - platform invoke, attribute fields
 - attribute fields in platform invoke, EntryPoint
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
-ms.openlocfilehash: a55e460f565c33731c5b0b29ab42b8263d3690e2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: c5f8f735dd3e8c359f88044a532c29303237acc8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125167"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181308"
 ---
 # <a name="specifying-an-entry-point"></a>エントリ ポイントの指定
 
 エントリ ポイントは、DLL 内の関数の位置を識別します。 マネージド プロジェクト内では、対象となる関数の元の名前または序数エントリ ポイントによって、その関数が相互運用の境界にまたがって識別されます。 また、エントリ ポイントを別の名前に割り当てて、関数の名前を事実上変更できます。  
   
- DLL 関数の名前を変更する考えられる原因の一覧を次に示します。  
+ DLL 関数の名前を変更する理由を次に示します。  
   
 - 大文字と小文字が区別される API 関数名を使わないようにするため  
   
@@ -30,7 +30,7 @@ ms.locfileid: "73125167"
  このトピックでは、マネージド コード内の DLL 関数の名前を変更する方法について説明します。  
   
 ## <a name="renaming-a-function-in-visual-basic"></a>Visual Basic での関数名の変更  
- 
+
 Visual Basic で <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> フィールドを設定するには、**Declare** ステートメントで **Function** キーワードを使います。 基本的な宣言を次の例に示します。  
   
 ```vb

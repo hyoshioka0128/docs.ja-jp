@@ -3,15 +3,15 @@ title: <bindings>
 ms.date: 01/22/2018
 ms.assetid: b62cd369-5409-4030-8490-9759a462dd3a
 ms.openlocfilehash: fe8f620668e35183890b8bba1f254a74c962f8d3
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74139662"
 ---
-# <a name="bindings"></a>\<バインド >
+# \<bindings>
 
-`bindings` 要素を使用して、Windows Communication Foundation (WCF) の標準バインディングとカスタムバインディングのコレクションを構成できます。 各エントリは、その一意の `binding` 属性で識別できる `name` 要素です。 サービスは、`name` を使用してバインディングをリンクすることにより、バインディングを使用します。 .NET Framework 4 以降では、バインドと動作に名前を付ける必要はありません。 既定の構成と無名のバインドおよび動作の詳細については、「 [WCF サービスの](../../../wcf/samples/simplified-configuration-for-wcf-services.md)構成と簡略化された構成の[簡略化](../../../wcf/simplified-configuration.md)」を参照してください。
+要素を使用して、 `bindings` Windows Communication Foundation (WCF) の標準バインディングとカスタムバインディングのコレクションを構成できます。 各エントリは、その一意の `binding` 属性で識別できる `name` 要素です。 サービスは、`name` を使用してバインディングをリンクすることにより、バインディングを使用します。 .NET Framework 4 以降では、バインドと動作に名前を付ける必要はありません。 既定の構成と無名のバインドおよび動作の詳細については、「 [WCF サービスの](../../../wcf/samples/simplified-configuration-for-wcf-services.md)構成と簡略化された構成の[簡略化](../../../wcf/simplified-configuration.md)」を参照してください。
 
 ## <a name="system-provided-bindings"></a>システム指定のバインド
 
@@ -37,7 +37,7 @@ ms.locfileid: "74139662"
 
 4. エンコーダー  
 
-5. Transport  
+5. トランスポート  
 
  カスタム バインドは、`name` 属性によって識別されます。 カスタムバインディングの詳細については、「[カスタムバインド](../../../wcf/extending/custom-bindings.md)」を参照してください。
 
@@ -46,6 +46,6 @@ ms.locfileid: "74139662"
 - <xref:System.ServiceModel.Configuration.BindingsSection?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>
-- [バインディング](../../../wcf/bindings.md)
+- [バインド](../../../wcf/bindings.md)
 - [カスタム バインディング](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding >](custombinding.md)
+- [\<customBinding>](custombinding.md)

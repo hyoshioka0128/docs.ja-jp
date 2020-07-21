@@ -9,10 +9,10 @@ helpviewer_keywords:
 - connection pooling
 ms.assetid: 2ec502e8-4ba0-4c22-9410-f28eaf4eee63
 ms.openlocfilehash: 007366764a7b8e1208e22ef5895e6a9093b090e4
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "71048641"
 ---
 # <a name="connection-grouping"></a>接続のグループ化
@@ -20,7 +20,7 @@ ms.locfileid: "71048641"
   
  要求を特定の接続グループに割り当てるには、要求を行う前に、<xref:System.Net.WebRequest> の <xref:System.Net.WebRequest.ConnectionGroupName%2A> プロパティに名前を割り当てる必要があります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [接続の管理](managing-connections.md)
 - [方法: グループの接続にユーザー情報を割り当てる](how-to-assign-user-information-to-group-connections.md)

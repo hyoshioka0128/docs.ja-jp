@@ -1,28 +1,30 @@
 ---
 title: char 型 - C# リファレンス
-ms.date: 11/22/2019
+ms.date: 05/11/2020
 f1_keywords:
 - char
 - char_CSharpKeyword
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: ab49b8cbddac2569d6063a5f312105bef3033e84
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: f771626e9777deab30e798559d847615d6124e6d
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552299"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205780"
 ---
 # <a name="char-c-reference"></a>char (C# リファレンス)
 
 `char` 型のキーワードは、Unicode UTF-16 文字を表す .NET <xref:System.Char?displayProperty=nameWithType> 構造体型のエイリアスです。
 
-|型|範囲|サイズ|.NET 型|
+|種類|範囲|サイズ|.NET 型|
 |----------|-----------|----------|-------------------------|
 |`char`|U+0000 ～ U+FFFF|16 ビット|<xref:System.Char?displayProperty=nameWithType>|
 
 `char` 型の既定値は `\0` (つまり U+0000) です。
+
+`char` 型では、[比較](../operators/comparison-operators.md)演算子、[等値](../operators/equality-operators.md)演算子、[インクリメント](../operators/arithmetic-operators.md#increment-operator-)演算子、および[デクリメント](../operators/arithmetic-operators.md#decrement-operator---)演算子がサポートされています。 さらに、`char` オペランドの場合、[算術](../operators/arithmetic-operators.md)演算子および[ビット論理](../operators/bitwise-and-shift-operators.md)演算子によって、対応する文字コードに対する演算が実行され、`int` 型の結果が生成されます。
 
 [string](reference-types.md#the-string-type) 型では、`char` 値のシーケンスとしてテキストを表わします。
 
@@ -34,9 +36,9 @@ ms.locfileid: "74552299"
 - Unicode エスケープシーケンス。これは `\u` の後に文字コードの 16 進数表現 (4 つの記号) を続けたものになります。
 - 16 進数エスケープシーケンス。これは `\x` の後に文字コードの 16 進数表現を続けたものになります。
 
-[!code-csharp-interactive[char literals](~/samples/csharp/language-reference/builtin-types/CharType.cs#Literals)]
+[!code-csharp-interactive[char literals](snippets/CharType.cs#Literals)]
 
-前の例のように、文字コードの値をそれに対応する `char` 値に型変換することもできます。
+前の例に示したように、文字コードの値をそれに対応する `char` 値に型変換することもできます。
 
 > [!NOTE]
 > Unicode エスケープ シーケンスの場合、4 つの 16 進数をすべて指定する必要があります。 つまり、`\u006A` は有効なエスケープ シーケンスであり、`\u06A` と `\u6A` は有効ではありません。
@@ -56,5 +58,7 @@ ms.locfileid: "74552299"
 ## <a name="see-also"></a>関連項目
 
 - [C# リファレンス](../index.md)
-- [組み込み型の一覧表](../keywords/built-in-types-table.md)
+- [値型](value-types.md)
 - [文字列](../../programming-guide/strings/index.md)
+- <xref:System.Text.Rune?displayProperty=nameWithType>
+- [.NET での文字エンコード](../../../standard/base-types/character-encoding-introduction.md)

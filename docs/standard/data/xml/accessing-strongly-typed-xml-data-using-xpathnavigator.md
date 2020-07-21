@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2bc33d27d48267f5b74f1baf67a49bdf0b55c839
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 61957ff88ef57703aff1861238ee10b23c2f16ff
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647983"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291605"
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>厳密に型指定された XML データへの XPathNavigator を使用したアクセス
 XPath 2.0 データ モデルの一例として、<xref:System.Xml.XPath.XPathNavigator> クラスは、共通言語ランタイム (CLR) 型に対応した厳密に型指定されたデータを含むことができます。 XPath 2.0 のデータ モデルに従い、要素と属性のみが厳密に型指定されたデータを含むことができます。 <xref:System.Xml.XPath.XPathNavigator> クラスは、データ型を変換する機構に加えて、厳密に型指定されたデータとして <xref:System.Xml.XPath.XPathDocument> または <xref:System.Xml.XmlDocument> オブジェクト内のデータにアクセスする機構を提供します。  
@@ -21,11 +19,11 @@ XPath 2.0 データ モデルの一例として、<xref:System.Xml.XPath.XPathNa
 ## <a name="type-information-exposed-by-xpathnavigator"></a>XPathNavigator が公開する型情報  
  DTD、XML スキーマ定義言語 (XSD) のスキーマ、または他の機構を使用して処理しない限り、XML 1.0 データに型はありません。 XML 要素や属性と関連付けられる型情報のカテゴリは多数あります。  
   
-- 単純な CLR 型: XML スキーマ言語で共通言語ランタイム (CLR) 型を直接サポートするものはありません。 要素や属性の単純コンテンツを最適な CLR 型として見ることができると便利なので、コンテンツをさらに適切な型に細分化する追加のスキーマ情報がない場合、すべての単純コンテンツは <xref:System.String> として型指定できます。 <xref:System.Xml.XPath.XPathNavigator.ValueType%2A> プロパティを使用することにより、要素と属性の単純コンテンツに最も一致する CLR 型を見つけることができます。 スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)」を参照してください。  
+- 単純な CLR 型: XML スキーマ言語で共通言語ランタイム (CLR) 型を直接サポートするものはありません。 要素や属性の単純コンテンツを最適な CLR 型として見ることができると便利なので、コンテンツをさらに適切な型に細分化する追加のスキーマ情報がない場合、すべての単純コンテンツは <xref:System.String> として型指定できます。 <xref:System.Xml.XPath.XPathNavigator.ValueType%2A> プロパティを使用することにより、要素と属性の単純コンテンツに最も一致する CLR 型を見つけることができます。 スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](type-support-in-the-system-xml-classes.md)」を参照してください。  
   
-- 単純 (CLR) 型のリスト: 単純コンテンツを持つ要素と属性には、空白で区切られた値のリストを含めることができます。 値は XML スキーマで "リスト型" として指定します。 XML スキーマがない場合、こうした単純型は 1 つのテキスト ノードとして取り扱われます。 XML スキーマが使用可能な場合、この単純コンテンツは、各項が CLR オブジェクトの 1 つのコレクションに対応した単純型を持つ、これ以上分割不可能な一連の値として取り扱うことができます。 スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)」を参照してください。  
+- 単純 (CLR) 型のリスト: 単純コンテンツを持つ要素と属性には、空白で区切られた値のリストを含めることができます。 値は XML スキーマで "リスト型" として指定します。 XML スキーマがない場合、こうした単純型は 1 つのテキスト ノードとして取り扱われます。 XML スキーマが使用可能な場合、この単純コンテンツは、各項が CLR オブジェクトの 1 つのコレクションに対応した単純型を持つ、これ以上分割不可能な一連の値として取り扱うことができます。 スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](type-support-in-the-system-xml-classes.md)」を参照してください。  
   
-- 型指定された値: スキーマにより検証された単純型の属性と要素は、型指定された値を持ちます。 この値は、数値型、文字列型、または日付型などのプリミティブ型です。 XSD のすべての組み込みの単純型は、単に <xref:System.String> としてでなく、さらに適当な型としてノードの値にアクセスできる CLR 型と対応をとることができます。 属性や子要素を持つ要素は複合型と考えられます。 単純コンテンツ (子としてテキスト ノードのみ) を持つ複合型の型指定された値は、そのコンテンツの単純型のそれと同じです。 複合コンテンツ (1 つ以上の子要素) を持つ複合型の型指定された値は、<xref:System.String> として返されたすべての子テキスト ノードの連結された文字列値です。 スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)」を参照してください。  
+- 型指定された値: スキーマにより検証された単純型の属性と要素は、型指定された値を持ちます。 この値は、数値型、文字列型、または日付型などのプリミティブ型です。 XSD のすべての組み込みの単純型は、単に <xref:System.String> としてでなく、さらに適当な型としてノードの値にアクセスできる CLR 型と対応をとることができます。 属性や子要素を持つ要素は複合型と考えられます。 単純コンテンツ (子としてテキスト ノードのみ) を持つ複合型の型指定された値は、そのコンテンツの単純型のそれと同じです。 複合コンテンツ (1 つ以上の子要素) を持つ複合型の型指定された値は、<xref:System.String> として返されたすべての子テキスト ノードの連結された文字列値です。 スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](type-support-in-the-system-xml-classes.md)」を参照してください。  
   
 - スキーマ言語固有の型名: 多くの場合、ノードの値へのアクセスに使用されるのは (外部スキーマを適用したため設定された) CLR 型です。 しかし、XML ドキュメントに適用された特定のスキーマに関連付けられた型を調べる必要がある場合もあります。 たとえば、XML ドキュメントを検索して、添付されたスキーマに従って "PurchaseOrder" 型の内容を持つすべての要素を抽出したいが場合があります。 このような型情報はスキーマ検証の結果としてのみ設定され、この情報には <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> クラスの <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> プロパティと <xref:System.Xml.XPath.XPathNavigator> プロパティを通じてアクセスできます。 詳細については、下の「スキーマ検証後の情報セット (PSVI)」のセクションを参照してください。  
   
@@ -47,7 +45,7 @@ XPath 2.0 データ モデルの一例として、<xref:System.Xml.XPath.XPathNa
 |<xref:System.Xml.XPath.XPathNavigator.ValueAsLong%2A>|XPath 2.0 の <xref:System.String> のキャスト規則に従って、<xref:System.Int64> 値にキャストされた現在のノードの `xs:integer` 値。|  
 |<xref:System.Xml.XPath.XPathNavigator.ValueAs%2A>|XPath 2.0 のキャスト規則に従って、変換先の型にキャストされたノードのコンテンツ。|  
   
- スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)」を参照してください。  
+ スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](type-support-in-the-system-xml-classes.md)」を参照してください。  
   
 ## <a name="the-post-schema-validation-infoset-psvi"></a>スキーマ検証後の情報セット (PSVI)  
  XML スキーマ プロセッサは、XML 情報セットを入力として受け入れ、それをスキーマ検証後の情報セット (PSVI) に変換します。 PSVI は、元の入力 XML 情報セットに新しい情報項目を追加し、新しいプロパティを追加したものです。 <xref:System.Xml.XPath.XPathNavigator> によって公開される PSVI 中の XML 情報セットに追加される情報には 3 つの広範なクラスがあります。  
@@ -113,9 +111,9 @@ Console.WriteLine(navigator.SchemaInfo.SchemaElement.MinOccurs);
  また、`books.xsd` スキーマも入力として使用します。  
   
 ```xml  
-<xs:schema xmlns="http://www.contoso.com/books"   
-attributeFormDefault="unqualified" elementFormDefault="qualified"   
-targetNamespace="http://www.contoso.com/books"   
+<xs:schema xmlns="http://www.contoso.com/books"
+attributeFormDefault="unqualified" elementFormDefault="qualified"
+targetNamespace="http://www.contoso.com/books"
 xmlns:xs="http://www.w3.org/2001/XMLSchema">  
     <xs:simpleType name="publishedType">  
         <xs:restriction base="xs:date">  
@@ -183,15 +181,15 @@ Decimal price = (decimal)navigator.ValueAs(typeof(decimal));
 Console.WriteLine("The price of the book has been dropped 20% from {0:C} to {1:C}", navigator.Value, (price - price * (decimal)0.20));  
 ```  
   
- スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)」を参照してください。  
+ スキーマの組み込み型から CLR 型への対応の詳細については、「[System.Xml クラスでの型のサポート](type-support-in-the-system-xml-classes.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)
-- [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [XPathNavigator を使用するノード セットのナビゲーション](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)
-- [XPathNavigator を使用する属性と名前空間のナビゲーション](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)
-- [XpathNavigator を使用した XML データの抽出](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)
+- [System.Xml クラスでの型のサポート](type-support-in-the-system-xml-classes.md)
+- [XPath データ モデルを使用した XML データの処理](process-xml-data-using-the-xpath-data-model.md)
+- [XPathNavigator を使用するノード セットのナビゲーション](node-set-navigation-using-xpathnavigator.md)
+- [XPathNavigator を使用する属性と名前空間のナビゲーション](attribute-and-namespace-node-navigation-using-xpathnavigator.md)
+- [XpathNavigator を使用した XML データの抽出](extract-xml-data-using-xpathnavigator.md)

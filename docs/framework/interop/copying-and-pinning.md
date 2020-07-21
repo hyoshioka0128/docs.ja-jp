@@ -1,5 +1,6 @@
 ---
 title: コピーと固定
+description: 相互運用マーシャラーで、マーシャリングされているデータがコピーまたは固定される方法を確認します。 データをコピーすると、あるメモリ位置から別の位置にデータのコピーが配置されます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - pinning, interop marshaling
@@ -7,12 +8,11 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-ms.openlocfilehash: f6db7d37293015911c1285d39e19bf7542a7ac59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: b7931813cd5254375eda81515f388c85c78fa284
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123642"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618780"
 ---
 # <a name="copying-and-pinning"></a>コピーと固定
 
@@ -31,7 +31,7 @@ ms.locfileid: "73123642"
 書式指定された [blittable](blittable-and-non-blittable-types.md) クラスは、マネージド メモリとアンマネージド メモリの両方で、固定レイアウト (書式指定されている) と共通のデータ表現を持ちます。 このような型でマーシャリングが必要な場合は、ヒープ内のオブジェクトへのポインターが呼び出し先に直接渡されます。 呼び出し先はポインターによって参照されるメモリ位置の内容を変更できます。
 
 > [!NOTE]
-> パラメーターが Out または In/Out としてマークされている場合、呼び出し先はメモリの内容を変更できます。これに対して、呼び出し先は、パラメーターがとしてマーシャリングするように設定されている場合に、コンテンツを変更しないようにします。これは、書式設定された blittable 型の既定値です。 同じクラスをタイプ ライブラリにエクスポートし、アパートメント間呼び出しのために使用した場合に、In オブジェクトを変更すると問題が発生します。
+> パラメーターに Out または In/Out のマークが付いている場合、呼び出し先はメモリの内容を変更できます。逆に、In としてマーシャリングするようにパラメーターが設定されている場合、呼び出し先は内容の変更を避ける必要があります。In は書式指定された blittable 型に対する既定の設定です。 同じクラスをタイプ ライブラリにエクスポートし、アパートメント間呼び出しのために使用した場合に、In オブジェクトを変更すると問題が発生します。
 
 ## <a name="formatted-non-blittable-classes"></a>書式指定された blittable でないクラス
 

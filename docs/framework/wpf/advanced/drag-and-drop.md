@@ -10,21 +10,21 @@ helpviewer_keywords:
 ms.assetid: 77c48920-8c8b-41eb-8fe8-b411962c8623
 ms.openlocfilehash: a610d41d9db7f205d868713a6e1cd59c311ea916
 ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/22/2019
 ms.locfileid: "69964824"
 ---
 # <a name="drag-and-drop"></a>ドラッグ アンド ドロップ
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]は、柔軟性の高いドラッグアンドドロップインフラストラクチャを提供します。このインフラストラクチャは[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 、両方のアプリケーションおよび他の Windows アプリケーション内のデータのドラッグアンドドロップをサポートします。  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションとその他の Windows アプリケーションの両方でのデータのドラッグ アンド ドロップをサポートする、柔軟性の高いドラッグ アンド ドロップ インフラストラクチャを利用できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ドラッグ アンド ドロップの概要](drag-and-drop-overview.md)  
  [データとデータ オブジェクト](data-and-data-objects.md)  
- [チュートリアル: ユーザーコントロールでのドラッグアンドドロップの有効化](walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
+ [チュートリアル: ユーザー コントロールでのドラッグ アンド ドロップの有効化](walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
  [方法トピック](drag-and-drop-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.DataFormat>  
   <xref:System.Windows.DataObject>  
   <xref:System.Windows.DragDrop>  

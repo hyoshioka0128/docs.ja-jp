@@ -1,5 +1,6 @@
 ---
-title: IPictureDisp インターフェイス (最)
+title: IPictureDisp インターフェイス (stdole)
+description: .NET の IPictureDisp インターフェイスに関する情報を参照してください。 このインターフェイスは、stdole 名前空間と、(stdole.dll ライブラリ内の) stdole アセンブリにあります。
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: eb5db8598780a18d2bd65b08964f5df84fc9b8af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 54f2139500bfa62a6c862157283079f05d69215b
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706014"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105299"
 ---
 # <a name="ipicturedisp-interface"></a>IPictureDisp インターフェイス
 
@@ -28,4 +29,4 @@ public interface IPictureDisp
 
 **名前空間:** `stdole`
 
-**アセンブリ:** stdole.dll) の「最
+**アセンブリ:** stdole (stdole.dll)

@@ -1,16 +1,17 @@
 ---
 title: フレンド アセンブリ
+description: フレンド アセンブリ とは、別のアセンブリの internal (C#) または Friend (Visual Basic) 型およびメンバーにアクセスできる .NET アセンブリです。
 ms.date: 08/20/2019
 ms.assetid: b65ea7de-0801-477a-a39c-e914c2cc107c
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: a74d4b74ead8492028a092e090f9281231802a87
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 105621da2bd418c6294fa2bbec474809599cb6a5
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348178"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378933"
 ---
 # <a name="friend-assemblies"></a>フレンド アセンブリ
 
@@ -20,7 +21,7 @@ ms.locfileid: "74348178"
 
 - クラス ライブラリの開発中、そのライブラリへの追加機能が別のアセンブリにある状況で、C# では `internal`、または Visual Basic では `Friend` としてマークされる、既存アセンブリ内のメンバーにアクセスしなければならないとき。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性を利用し、特定のアセンブリの 1 つまたは複数のフレンド アセンブリを特定できます。 次の例では、*Assembly A* において <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性が使用され、フレンド アセンブリとしてアセンブリ *AssemblyB* が指定されています。 これにより、アセンブリ *AssemblyB* では、*Assembly A* の中で `internal` (C#) または `Friend` (Visual Basic) としてマークされているすべての型とメンバーにアクセスすることができます。
 

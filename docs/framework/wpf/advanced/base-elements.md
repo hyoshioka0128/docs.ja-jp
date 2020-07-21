@@ -8,21 +8,21 @@ helpviewer_keywords:
 ms.assetid: 55034aa5-3c1d-442a-8293-f4692d8ea6ae
 ms.openlocfilehash: d0d3c5198c6c4146cf92201b08781041043c4a72
 ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73453600"
 ---
 # <a name="base-elements"></a>基本要素
-4つの主要なクラス (<xref:System.Windows.UIElement>、<xref:System.Windows.ContentElement>、<xref:System.Windows.FrameworkElement>、および <xref:System.Windows.FrameworkContentElement>) は、WPF プログラミングで使用できる共通の要素機能のかなりの割合を実装します。 この SDK では、この4つのクラスが基本要素クラスとして参照されています。  
+4 つの主要なクラス (<xref:System.Windows.UIElement>、<xref:System.Windows.ContentElement>、<xref:System.Windows.FrameworkElement>、<xref:System.Windows.FrameworkContentElement>) では、WPF プログラミングで使用できる共通の要素機能のかなりの割合が実装されます。 これらの 4 つのクラスは、この SDK で基本要素クラスとして参照されています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [基本要素の概要](base-elements-overview.md)  
  [Freezable オブジェクトの概要](freezable-objects-overview.md)  
  [配置、余白、パディングの概要](alignment-margins-and-padding-overview.md)  
- [方法のトピック](base-elements-how-to-topics.md)  
+ [方法トピック](base-elements-how-to-topics.md)  
   
-## <a name="reference"></a>参照先  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.ContentElement>  

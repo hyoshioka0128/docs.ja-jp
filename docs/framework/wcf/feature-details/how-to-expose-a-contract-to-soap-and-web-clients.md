@@ -1,24 +1,25 @@
 ---
 title: '方法: コントラクトを SOAP クライアントおよび Web クライアントに公開する'
+description: SOAP と SOAP 以外のクライアントの両方で WFC サーバーエンドポイントを使用できるようにする方法について説明します。 既定では、エンドポイントは SOAP クライアントでのみ使用できます。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: bb765a48-12f2-430d-a54d-6f0c20f2a23a
-ms.openlocfilehash: 303367c85e311ac5c07c11b849b5586354980a3c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b1bdb7af51e0e2795c36865058fbeb34a716e3e2
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636150"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246975"
 ---
 # <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>方法: コントラクトを SOAP クライアントおよび Web クライアントに公開する
 
-既定では、Windows Communication Foundation (WCF) エンドポイント使用できるようにする SOAP クライアントにのみです。 [方法。基本的な WCF Web HTTP サービス作成](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)、SOAP 以外のクライアントに利用可能になってエンドポイント。 状況によっては、同じコントラクトを Web エンドポイントと SOAP エンドポイントのどちらとしても利用できることが望ましい場合があります。 ここでは、これを実現する方法の例について示します。
+既定では、Windows Communication Foundation (WCF) は、エンドポイントを SOAP クライアントのみに使用できるようにします。 [「方法: 基本的な WCF WEB HTTP サービスを作成](how-to-create-a-basic-wcf-web-http-service.md)する」では、SOAP 以外のクライアントがエンドポイントを使用できるようにします。 状況によっては、同じコントラクトを Web エンドポイントと SOAP エンドポイントのどちらとしても利用できることが望ましい場合があります。 ここでは、これを実現する方法の例について示します。
 
 ## <a name="to-define-the-service-contract"></a>サービス コントラクトを定義するには
 
-1. マークされたインターフェイスを使用してサービス コントラクトを定義、 <xref:System.ServiceModel.ServiceContractAttribute>、<xref:System.ServiceModel.Web.WebInvokeAttribute>と<xref:System.ServiceModel.Web.WebGetAttribute>属性を次のコードに示すようにします。
+1. <xref:System.ServiceModel.ServiceContractAttribute> <xref:System.ServiceModel.Web.WebInvokeAttribute> 次のコードに示すように、、、および属性でマークされたインターフェイスを使用して、サービスコントラクトを定義し <xref:System.ServiceModel.Web.WebGetAttribute> ます。
 
     [!code-csharp[htSoapWeb#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#0)]
     [!code-vb[htSoapWeb#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#0)]
@@ -26,36 +27,36 @@ ms.locfileid: "65636150"
     > [!NOTE]
     > 既定では、<xref:System.ServiceModel.Web.WebInvokeAttribute> は POST 呼び出しを操作にマッピングします。 ただし、"method=" パラメーターを指定することで、操作にマッピングするメソッドを指定できます。 <xref:System.ServiceModel.Web.WebGetAttribute> には "method=" パラメーターがないため、サービス操作には GET 呼び出しのみがマッピングされます。
 
-2. 次のコードに示すように、サービス コントラクトを実装します。
+2. 次のコードに示すように、サービスコントラクトを実装します。
 
      [!code-csharp[htSoapWeb#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#1)]
      [!code-vb[htSoapWeb#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#1)]
 
 ## <a name="to-host-the-service"></a>サービスをホストするには
 
-1. 作成、<xref:System.ServiceModel.ServiceHost>オブジェクト、次のコードに示すようにします。
+1. 次の <xref:System.ServiceModel.ServiceHost> コードに示すように、オブジェクトを作成します。
 
      [!code-csharp[htSoapWeb#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#2)]
      [!code-vb[htSoapWeb#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#2)]
 
-2. 追加、<xref:System.ServiceModel.Description.ServiceEndpoint>で<xref:System.ServiceModel.BasicHttpBinding>SOAP エンドポイントの場合、次のコードに示すようにします。
+2. 次の <xref:System.ServiceModel.Description.ServiceEndpoint> <xref:System.ServiceModel.BasicHttpBinding> コードに示すように、SOAP エンドポイントに対してを追加します。
 
      [!code-csharp[htSoapWeb#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#3)]
      [!code-vb[htSoapWeb#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#3)]
 
-3. 追加、<xref:System.ServiceModel.Description.ServiceEndpoint>で<xref:System.ServiceModel.WebHttpBinding>SOAP 以外のエンドポイントの追加と、<xref:System.ServiceModel.Description.WebHttpBehavior>次のコードに示すように、エンドポイントに。
+3. 次の <xref:System.ServiceModel.Description.ServiceEndpoint> <xref:System.ServiceModel.WebHttpBinding> コードに示すように、SOAP 以外のエンドポイントに対してを追加し、 <xref:System.ServiceModel.Description.WebHttpBehavior> エンドポイントにを追加します。
 
      [!code-csharp[htSoapWeb#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#4)]
      [!code-vb[htSoapWeb#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#4)]
 
-4. 呼び出す`Open()`上、<xref:System.ServiceModel.ServiceHost>インスタンスを次のコードに示すように、サービス ホストを開きます。
+4. `Open()` <xref:System.ServiceModel.ServiceHost> 次のコードに示すように、インスタンスでを呼び出して、サービスホストを開きます。
 
      [!code-csharp[htSoapWeb#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#5)]
      [!code-vb[htSoapWeb#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#5)]
 
 ## <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>Internet Explorer で GET にマッピングされたサービス操作を呼び出すには
 
-1. Internet Explorer を開き「"`http://localhost:8000/Web/EchoWithGet?s=Hello, world!`"ENTER キーを押します。 URL には、サービスのベース アドレスが含まれています (`http://localhost:8000/`)、エンドポイントの相対アドレス ("")、アンパサンドで区切られた名前付きパラメーターの一覧の後にサービス操作呼び出し ("EchoWithGet") と疑問符 () (&)。
+1. Internet Explorer を開き、「 `http://localhost:8000/Web/EchoWithGet?s=Hello, world!` 」と入力して、enter キーを押します。 URL には、サービスのベースアドレス ( `http://localhost:8000/` )、エンドポイントの相対アドレス ("")、呼び出すサービス操作 ("EchoWithGet")、アンパサンド (&) で区切られた名前付きパラメーターのリストが含まれています。
 
 ## <a name="to-call-service-operations-on-the-web-endpoint-in-code"></a>コードから Web エンドポイントにあるサービス操作を呼び出すには
 
@@ -93,7 +94,7 @@ ms.locfileid: "65636150"
 
 ## <a name="example"></a>例
 
-このトピックの一覧を表示する完全なコードを次に示します。
+このトピックの完全なコードリストを次に示します。
 
 [!code-csharp[htSoapWeb#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#13)]
 [!code-vb[htSoapWeb#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#13)]
@@ -110,4 +111,4 @@ ms.locfileid: "65636150"
 - <xref:System.ServiceModel.Web.WebServiceHost>
 - <xref:System.ServiceModel.ChannelFactory>
 - <xref:System.ServiceModel.Description.WebHttpBehavior>
-- [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [WCF Web HTTP プログラミング モデル](wcf-web-http-programming-model.md)

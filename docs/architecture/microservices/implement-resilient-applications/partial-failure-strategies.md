@@ -2,12 +2,12 @@
 title: 部分的なエラーを処理するための戦略
 description: 部分的なエラーを適切に処理するための戦略をいくつか紹介します。
 ms.date: 10/16/2018
-ms.openlocfilehash: e96fe99ab44b924460e01abaad30aa3e2432117a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: abf87df5afed02b4d794a1307a0ed943cafb4db3
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674509"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988805"
 ---
 # <a name="strategies-to-handle-partial-failure"></a>部分的なエラーを処理する戦略
 

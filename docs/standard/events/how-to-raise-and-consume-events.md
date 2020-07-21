@@ -1,5 +1,6 @@
 ---
 title: '方法: イベントを発生させる/処理する'
+description: .NET でイベントを発生させ、使用します。 EventHandler デリゲート、EventHandler<TEventArgs> デリゲート、カスタム デリゲートを使用する例を参照します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,17 +12,17 @@ helpviewer_keywords:
 - raising events
 - events [.NET Framework], samples
 ms.assetid: 42afade7-3a02-4f2e-868b-95845f302f8f
-ms.openlocfilehash: 256b5ae9ac2145e339136985872dfa5423aca730
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4054e1a26c3392870af994a6eceafae92176a332
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131594"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769276"
 ---
 # <a name="how-to-raise-and-consume-events"></a>方法: イベントを発生させる/処理する
 このトピックの例では、イベントを使用する方法を示します。 ここでは、<xref:System.EventHandler> デリゲートと <xref:System.EventHandler%601> デリゲート、およびカスタム デリゲートの例を使用して、データを持つイベントと持たないイベントを示します。  
   
- この例では、「[イベント](../../../docs/standard/events/index.md)」で説明されている概念を使用します。  
+ この例では、「[イベント](index.md)」で説明されている概念を使用します。  
   
 ## <a name="example"></a>例  
  最初の例は、データを持たないイベントを発生させて処理する方法を示しています。 この例には、`Counter` という名前のイベントを持つ、`ThresholdReached` という名前のクラスが含まれます。 このイベントは、カウンター値がしきい値と等しいか、またはそれを超えた場合に発生します。 イベントのデータが指定されていないため、<xref:System.EventHandler> デリゲートはイベントに関連付けられます。  
@@ -44,4 +45,4 @@ ms.locfileid: "73131594"
   
 ## <a name="see-also"></a>関連項目
 
-- [イベント](../../../docs/standard/events/index.md)
+- [イベント](index.md)

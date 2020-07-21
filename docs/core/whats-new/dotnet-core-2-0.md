@@ -3,11 +3,11 @@ title: .NET Core 2.0 の新機能
 description: .NET Core の新機能について。
 ms.date: 08/13/2017
 ms.openlocfilehash: 115b3adc72b6798c6a7bac9cc18044a8822808a6
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801894"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79397843"
 ---
 # <a name="whats-new-in-net-core-20"></a>.NET Core 2.0 の新機能
 

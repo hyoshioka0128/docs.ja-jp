@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
 ms.openlocfilehash: ebf96bc575ef68e1190c5b9be7111902c0f69fef
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70780990"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>チュートリアル: リレーションシップを介したクエリの実行 (C#)
-このチュートリアルでは、データベース[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]内の外部キーリレーションシップを表すための*関連付け*の使用方法について説明します。  
+このチュートリアルでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の "*関連付け*" を使用してデータベース内の外部キー リレーションシップを表現する方法について説明します。  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
  このチュートリアルは、Visual C# 開発設定を使用して記述されています。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
- チュートリアルを完了し[ている必要があります。単純なオブジェクトモデルとクエリC#(](walkthrough-simple-object-model-and-query-csharp.md))。 このチュートリアルは前のチュートリアルに基づいて作成されており、c:\linqtest5 に northwnd.mdf ファイルがあることが前提です。  
+ 「[チュートリアル:簡単なオブジェクト モデルとクエリ (C#)](walkthrough-simple-object-model-and-query-csharp.md)」を終了している必要があります。 このチュートリアルは前のチュートリアルに基づいて作成されており、c:\linqtest5 に northwnd.mdf ファイルがあることが前提です。  
   
 ## <a name="overview"></a>概要  
  このチュートリアルは、主に次の 3 つの手順で構成されています。  
@@ -47,7 +47,7 @@ ms.locfileid: "70780990"
      [!code-csharp[DLinqWalk2CS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk2CS/cs/Program.cs#2)]  
   
 ## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Customer-Order リレーションシップ間のクエリを作成および実行する  
- `Order` オブジェクトから `Customer` オブジェクトに、またはその逆の順序で、直接アクセスできます。 顧客と注文の間に明示的な*結合*は必要ありません。  
+ `Order` オブジェクトから `Customer` オブジェクトに、またはその逆の順序で、直接アクセスできます。 Customer と Order の間に、明示的な "*結合*" は必要ありません。  
   
 ### <a name="to-access-order-objects-by-using-customer-objects"></a>Customer オブジェクトを使用して Order オブジェクトにアクセスするには  
   
@@ -86,7 +86,7 @@ ms.locfileid: "70780990"
 4. コンソール ウィンドウで Enter キーを押して、デバッグを停止します。  
   
 ## <a name="next-steps"></a>次の手順  
- 次のチュートリアル ([チュートリアル:データの操作C#(](walkthrough-manipulating-data-csharp.md)): データを操作する方法を示します。 そのチュートリアルを実行するのに、既に終了したこのシリーズの 2 つのチュートリアルを保存する必要はありません。  
+ 次のチュートリアル ([チュートリアル:データの操作 (C#)](walkthrough-manipulating-data-csharp.md)) では、データの操作方法について説明します。 そのチュートリアルを実行するのに、既に終了したこのシリーズの 2 つのチュートリアルを保存する必要はありません。  
   
 ## <a name="see-also"></a>関連項目
 

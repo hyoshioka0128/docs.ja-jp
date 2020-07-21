@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual Basic code, walkthroughs
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
-ms.openlocfilehash: a6e45e31e2678ce05dc0f637ed1121b54d8d6cbb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 76f9b428bc5f613296e24d893f49f124bb13c089
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352843"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "75636043"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Visual Basic 言語のチュートリアル
 
@@ -35,7 +35,7 @@ ms.locfileid: "74352843"
  クラスとそのフィールド、プロパティ、メソッド、およびイベントを宣言する方法について説明します。
 
 - [Visual Basic でのクエリの作成](programming-guide/concepts/linq/walkthrough-writing-queries.md)  
- Visual Basic 言語の機能を使用して [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] クエリ式を記述する方法を示します。
+ Visual Basic 言語の機能を使用して統合言語クエリ (LINQ) クエリ式を記述する方法を示します。
 
 - [Visual Basic での IEnumerable(Of T) の実装](programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)  
  `IEnumerable(Of String)` インターフェイスを実装するクラスと `IEnumerator(Of String)` インターフェイスを実装するクラスを作成して、テキスト ファイルを 1 行ずつ読み取る方法について説明します。

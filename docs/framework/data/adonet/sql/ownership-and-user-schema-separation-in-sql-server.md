@@ -1,19 +1,20 @@
 ---
 title: SQL Server における所有権とユーザーとスキーマの分離
+description: ユーザーとスキーマの分離により、SQL Server データベース オブジェクトのアクセス許可を柔軟に管理できるようになるしくみについて説明します。 スキーマは、複数のオブジェクトを個別の名前空間にグループ化します。
 ms.date: 03/30/2017
 ms.assetid: 242830c1-31b5-4427-828c-cc22ff339f30
-ms.openlocfilehash: 5ad3d927bcf3534e134db2c98b79842b0e6148f3
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
-ms.translationtype: MT
+ms.openlocfilehash: 97e742979785fedd922dc887295b63e2d93bd147
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894425"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286263"
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>SQL Server における所有権とユーザーとスキーマの分離
 オブジェクトの所有者は、それを管理するための取り消し不可能な権限を持ちます。これは SQL Server のセキュリティの核となる概念です。 オブジェクトの所有者から権限を削除することはできません。また、特定のユーザーがデータベース内のオブジェクトを所有しているときに、そのユーザーをデータベースから削除することもできません。  
   
 ## <a name="user-schema-separation"></a>ユーザーとスキーマの分離  
- ユーザーとスキーマの分離により、データベース オブジェクトの権限をより柔軟に管理できるようになりました。 *スキーマ*は、データベースオブジェクトの名前付きコンテナーであり、オブジェクトを個別の名前空間にグループ化することができます。 たとえば、AdventureWorks サンプル データベースには、Production、Sales、および HumanResources というスキーマが格納されています。  
+ ユーザーとスキーマの分離により、データベース オブジェクトの権限をより柔軟に管理できるようになりました。 "*スキーマ*" は、データベース オブジェクトの名前付きのコンテナーです。これにより、複数のオブジェクトを個別の名前空間にグループ化できます。 たとえば、AdventureWorks サンプル データベースには、Production、Sales、および HumanResources というスキーマが格納されています。  
   
  オブジェクトを参照する 4 つの部分から成る命名構文では、スキーマ名が指定されます。  
   

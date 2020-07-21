@@ -4,12 +4,12 @@ description: .NET Core でのサテライト アセンブリ読み込みアル�
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: bfdc1d8179d46a13b3d137a87397fa3e573da33c
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 17f29a9aca79019daa91736e586bf1b6b753a9ec
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "72303624"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859530"
 ---
 # <a name="satellite-assembly-loading-algorithm"></a>サテライト アセンブリの読み込みアルゴリズム
 
@@ -29,7 +29,7 @@ ms.locfileid: "72303624"
 
 .NET Core リソース フォールバック プロセスには次の手順が含まれます。
 
-1. `active` <xref:System.Runtime.Loader.AssemblyLoadContext> インスタンスを決定します。 いずれの場合も、`active` インスタンスは実行中のアセンブリの <xref:System.Runtime.Loader.AssemblyLoadContext> です。
+1. `active`<xref:System.Runtime.Loader.AssemblyLoadContext> インスタンスを決定します。 いずれの場合も、`active` インスタンスは実行中のアセンブリの <xref:System.Runtime.Loader.AssemblyLoadContext> です。
 
 2. `active` インスタンスは、要求されたカルチャのサテライト アセンブリの読み込みを、以下の優先順位で試行します。
     - キャッシュを調べます。
@@ -40,6 +40,7 @@ ms.locfileid: "72303624"
         >
         > [!NOTE]
         > Linux と macOS では、サブディレクトリは大文字と小文字が区別されるため、次のいずれかでなければなりません。
+        >
         > - 大文字と小文字が完全に一致している。
         > - 小文字になっている。
 

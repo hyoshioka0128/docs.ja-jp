@@ -1,16 +1,16 @@
 ---
 title: Blittable 型と非 Blittable 型
+description: Blittable 型と非 Blittable 型について説明します。 Blittable データ型の表現は、マネージド メモリとアンマネージド メモリで共通しており、特別な処理は必要ありません。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interop marshaling, blittable types
 - blittable types, interop marshaling
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
-ms.openlocfilehash: 816b854120f09efef69bd8ceb2d3650e5a8e7af0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 68f4197a2710b6825c83bbc51daaf8f6b5a2c81f
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123727"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621536"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Blittable 型と非 Blittable 型
 ほとんどのデータ型の表現はマネージド メモリとアンマネージド メモリの両方で共通しているため、相互運用マーシャラーによる特別な処理は必要ありません。 これらの型は、マネージド コードとアンマネージド コード間での受け渡しの際に変換が必要でないため、*blittable 型*と呼ばれます。  

@@ -2,12 +2,12 @@
 title: 安全なデータ アクセス
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: c08f41be67f5d87635021e86ba5a5b33af9304cd
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
-ms.translationtype: MT
+ms.openlocfilehash: ede8b1a2e840b56d6e7f45e6d26e09fa5e8bcc25
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73735269"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337523"
 ---
 # <a name="secure-data-access"></a>安全なデータ アクセス
 セキュリティで保護された ADO.NET コードを作成するには、基になるデータ ストア、つまりデータベースで利用可能なセキュリティ機構を理解しておく必要があります。 さらに、アプリケーションに含まれる他の機能またはコンポーネントのセキュリティへの影響も考慮する必要があります。  
@@ -24,7 +24,7 @@ ms.locfileid: "73735269"
 |リソース|説明|  
 |--------------|-----------------|  
 |[接続情報の保護](protecting-connection-information.md)|保護構成を使用して接続文字列を暗号化する方法など、セキュリティのベスト プラクティスと接続情報を保護する手法について説明します。|  
-|[データアクセス戦略に関する推奨事項](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|データへのアクセスおよびデータベース操作の実行に関連した推奨事項について説明します。|  
+|[データ アクセス戦略に関する推奨事項](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|データへのアクセスおよびデータベース操作の実行に関連した推奨事項について説明します。|  
 |[接続文字列ビルダー](connection-string-builders.md)|実行時にユーザー入力から接続文字列を構築する方法について説明します。|  
 |[SQL Server セキュリティの概要](./sql/overview-of-sql-server-security.md)|SQL Server のセキュリティ アーキテクチャについて説明します。|  
   
@@ -65,9 +65,8 @@ ms.locfileid: "73735269"
   
 |リソース|説明|  
 |--------------|-----------------|  
-|[アクセス2007のセキュリティに関する考慮事項とガイダンス](https://go.microsoft.com/fwlink/?LinkId=98354)|Access 2007 のセキュリティ手法 (ファイルの暗号化、パスワードの管理、新しい ACCDB 形式および ACCDE 形式へのデータベースの変換、他のセキュリティ オプションの使用など) について説明します。|  
-|[アクセスセキュリティにおけるワークグループ情報ファイルの役割について](https://support.microsoft.com/kb/305542)|Access 2003 のセキュリティの作業グループ情報ファイルのロールおよびリレーションシップについて説明します。|  
-|[Microsoft access セキュリティについてよく寄せられる質問 2.0 ~ 2000](https://go.microsoft.com/fwlink/?LinkId=47698)|ダウンロード可能なバージョンの Microsoft Access セキュリティ FAQ です。|  
+|[Access 2007 のセキュリティの考慮事項と指針](https://docs.microsoft.com/previous-versions/office/developer/office-2007/bb421308(v=office.12))|Access 2007 のセキュリティ手法 (ファイルの暗号化、パスワードの管理、新しい ACCDB 形式および ACCDE 形式へのデータベースの変換、他のセキュリティ オプションの使用など) について説明します。|  
+|[Access 2010 のセキュリティの概要](https://support.office.com/article/Introduction-to-Access-2010-security-CAE6D764-0318-4622-955F-68D9F186D6CA)|Access 2010 によって提供されるセキュリティ機能の概要について説明します。|  
 ## <a name="enterprise-services"></a>Enterprise Services  
  COM+ は、Windows NT アカウントおよびプロセスやスレッドの偽装に基づく独自のセキュリティ モデルを備えています。 <xref:System.EnterpriseServices> 名前空間は、.NET アプリケーションが、<xref:System.EnterpriseServices.ServicedComponent> クラスを使用して、マネージド コードと COM+ セキュリティ サービスを統合できるようにするラッパーを提供します。  
   
@@ -91,7 +90,7 @@ ms.locfileid: "73735269"
 
 - [ADO.NET アプリケーションのセキュリティ保護](securing-ado-net-applications.md)
 - [SQL Server のセキュリティ](./sql/sql-server-security.md)
-- [データアクセス戦略に関する推奨事項](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
+- [データ アクセス戦略に関する推奨事項](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
 - [接続情報の保護](protecting-connection-information.md)
 - [接続文字列ビルダー](connection-string-builders.md)
 - [ADO.NET の概要](ado-net-overview.md)

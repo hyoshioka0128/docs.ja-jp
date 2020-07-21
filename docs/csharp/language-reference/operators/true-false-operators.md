@@ -1,17 +1,16 @@
 ---
 title: true 演算子と false 演算子 - C# リファレンス
-ms.custom: seodec18
 ms.date: 12/10/2018
 helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: f65ed3b362080d7a8afe89e22bd132d1fc190b06
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 5ccd08a348478902bbbac36e99acf7ffc1fc814b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552465"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78846220"
 ---
 # <a name="true-and-false-operators-c-reference"></a>true 演算子と false 演算子 (C# リファレンス)
 
@@ -26,13 +25,13 @@ ms.locfileid: "74552465"
 
 ## <a name="user-defined-conditional-logical-operators"></a>ユーザー定義の条件付き論理演算子
 
-`true` と `false` 演算子が定義された型によって、[論理 OR 演算子](boolean-logical-operators.md#logical-or-operator-) `|` または[論理 AND 演算子](boolean-logical-operators.md#logical-and-operator-) `&` が特定の方法で[オーバーロード](operator-overloading.md)される場合、[条件付き論理 OR 演算子](boolean-logical-operators.md#conditional-logical-or-operator-) `||` または [条件付き論理 AND 演算子](boolean-logical-operators.md#conditional-logical-and-operator-) `&&` を、それぞれ、その型のオペランドに対して評価することができます。 詳細については、「[C# 言語仕様](~/_csharplang/spec/introduction.md)」の[ユーザー定義型条件論理演算子](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators)に関するセクションを参照してください。
+`true` と `false` 演算子が定義された型によって、[論理 OR 演算子](operator-overloading.md) [ または](boolean-logical-operators.md#logical-or-operator-)論理 AND 演算子`|` [ が特定の方法で](boolean-logical-operators.md#logical-and-operator-)オーバーロード`&`される場合、[条件付き論理 OR 演算子](boolean-logical-operators.md#conditional-logical-or-operator-) `||` または [条件付き論理 AND 演算子](boolean-logical-operators.md#conditional-logical-and-operator-) `&&` を、それぞれ、その型のオペランドに対して評価することができます。 詳細については、「[C# 言語仕様](~/_csharplang/spec/introduction.md)」の[ユーザー定義型条件論理演算子](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators)に関するセクションを参照してください。
 
 ## <a name="example"></a>例
 
 次の例では、`true` と `false` 演算子の両方を定義する型を示します。 この型により、論理 AND 演算子 `&` もオーバーロードされ、演算子 `&&` もその型のオペランドで評価できるようになります。
 
-[!code-csharp[true and false operators example](~/samples/csharp/language-reference/operators/TrueFalseOperators.cs)]
+[!code-csharp[true and false operators example](snippets/TrueFalseOperators.cs)]
 
 `&&` 演算子のショートサーキット動作に注意してください。 `GetFuelLaunchStatus` メソッドから `LaunchStatus.Red` が返されると、`&&` 演算子の右側のオペランドは評価されません。 これは、`LaunchStatus.Red` が確実に false であるためです。 したがって、論理 AND の結果は右側のオペランドの値に依存しません。 この例の出力は次のとおりです。
 
@@ -41,7 +40,7 @@ Getting fuel launch status...
 Wait!
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# リファレンス](../index.md)
 - [C# 演算子](index.md)

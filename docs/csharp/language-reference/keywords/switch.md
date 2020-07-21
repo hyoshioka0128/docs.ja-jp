@@ -12,14 +12,16 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 6f0a2cfd5a6de9c8c05bc3daea1e242183ebf03e
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 9335399be2d4909a02fecbf2959c6f5608664732
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552340"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493670"
 ---
 # <a name="switch-c-reference"></a>switch (C# リファレンス)
+
+この記事では、`switch` ステートメントについて説明します。 `switch` 式 (C# 8.0 で導入) については、[式と演算子](../operators/index.md)のセクションの [`switch` 式](../operators/switch-expression.md)に関する記事をご覧ください。
 
 `switch` ステートメントは選択ステートメントです。このステートメントは、実行する 1 つの "*switch セクション*" を候補のリストから "*match 式*" によるパターン マッチに基づいて選択します。
 
@@ -47,7 +49,7 @@ C# 6 以前では、match 式は、次の型の値を返す必要があります
 - [string](../builtin-types/reference-types.md)。
 - [bool](../builtin-types/bool.md)。
 - [integral](../builtin-types/integral-numeric-types.md) 値。`int` や `long` など。
-- [enum](enum.md)値。
+- [enum](../builtin-types/enum.md)値。
 
 C# 7.0 以降は、match 式は NULL 以外の式にできます。
 
@@ -59,7 +61,7 @@ C# 7.0 以降は、match 式は NULL 以外の式にできます。
 
 [!code-csharp[switch#2](~/samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-1 つの switch ステートメントでは、1 つの switch セクションのみが実行されます。 C# では 1 つの switch セクションから次のセクションへ実行が連続することが許可されません。 このため、次のコードでは、コンパイラ エラー CS0163:"コントロールは 1 つの case ラベル (\<case label>) から別の case ラベルへフォールスルーすることはできません。"
+1 つの switch ステートメントでは、1 つの switch セクションのみが実行されます。 C# では 1 つの switch セクションから次のセクションへ実行が連続することが許可されません。 このため、次のコードでは、コンパイラ エラー CS0163:"コントロールは 1 つの case ラベルから別のラベル (\<case label>) へ流れ落ちることはできません。" が生成されます。
 
 ```csharp
 switch (caseSwitch)
@@ -84,7 +86,7 @@ match 式に一致する case ラベルが含まれた switch セクションに
 
 各 case ラベルで、match 式と比較するためのパターンを指定します (前の例では `caseSwitch` 変数)。 一致すると、**最初の**一致 case を含む switch セクションに制御が移ります。 match 式と一致する case ラベル パターンがない場合は、`default` case ラベルがあれば、制御はそのラベルを含むセクションに移ります。 `default` case がない場合は、どの switch セクションのステートメントも実行されず、制御は `switch` ステートメント外に移ります。
 
-`switch` ステートメントとパターン マッチングの詳細については、「[`switch` ステートメントによるパターン マッチング](#pattern)」を参照してください。
+`switch` ステートメントとパターン マッチングの詳細については、「[`switch` ステートメントによるパターン マッチング](#pattern-matching with-the-switch-statement)」を参照してください。
 
 C# 6 でサポートされるのは定数パターンのみで、定数値の繰り返しは許可されません。このため、case ラベルでは相互に排他的な値が定義され、match 式と一致するのは 1 つのパターンだけです。 そのため、`case` ステートメントが表示される順序は重要ではありません。
 
@@ -98,7 +100,7 @@ C# 6 でサポートされるのは定数パターンのみで、定数値の繰
 
 - switch セクションの順序を変更する。
 
-- `case` ラベルで [when 句](#when) を使用する。
+- `case` ラベルで [when 句](#the-case-statement-and-the-when-clause) を使用する。
 
 ## <a name="the-default-case"></a>`default` case
 
@@ -106,7 +108,7 @@ C# 6 でサポートされるのは定数パターンのみで、定数値の繰
 
 `default` case は、`switch` ステートメントで任意の順序で指定できます。 この case は、ソース コード内での順序に関係なく、すべての `case` ラベルが評価された後、最後に評価されます。
 
-## <a name="a-namepattern--pattern-matching-with-the-switch-statement"></a>`switch` ステートメントによる <a name="pattern" /> パターン マッチング
+## <a name="pattern-matching-with-the-switch-statement"></a>`switch` ステートメントによるパターン マッチング
 
 各 `case` ステートメントで定義されたパターンが match 式と一致した場合に、switch セクションが実行されます。 定数パターンは、すべてのバージョンの C# でサポートされます。 それ以外のパターンは、C# 7.0 以降でサポートされています。
 
@@ -183,7 +185,7 @@ case null:
 
 [!code-csharp[type-pattern2#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
 
-## <a name="a-namewhen--the-case-statement-and-the-when-clause"></a><a name="when" /> `case`ステートメントおよび `when` 句
+## <a name="the-case-statement-and-the-when-clause"></a>`case` ステートメントおよび `when` 句
 
 C# 7.0 以降では、case ステートメントは相互に排他的である必要がないため、`when` 句を追加して、case ステートメントを true に評価するために満たされなければならない条件を指定できます。 `when` 句には、ブール値を返す任意の式を指定できます。
 

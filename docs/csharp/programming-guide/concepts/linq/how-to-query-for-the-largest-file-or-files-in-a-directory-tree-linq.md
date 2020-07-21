@@ -1,15 +1,15 @@
 ---
-title: 方法:ディレクトリ ツリー内で最もサイズの大きいファイルを照会する (LINQ) (C#)
+title: ディレクトリ ツリー内で最もサイズの大きいファイルを照会する方法 (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: 966138795dca53db99a0752b9bb7b85cc4601ee3
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ed7d610bd292be4062db89f3c94af280e851141f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592756"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168766"
 ---
-# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>方法:ディレクトリ ツリー内で最もサイズの大きいファイルを照会する (LINQ) (C#)
+# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>ディレクトリ ツリー内で最もサイズの大きいファイルを照会する方法 (LINQ) (C#)
 この例では、ファイル サイズ (バイト単位) に関連した 5 つのクエリを紹介しています。  
   
 - 最もサイズ (バイト単位) の大きいファイルを取得する方法。  
@@ -96,7 +96,7 @@ class QueryBySize
         }  
   
         // Group the files according to their size, leaving out  
-        // files that are less than 200000 bytes.   
+        // files that are less than 200000 bytes.
         var querySizeGroups =  
             from file in fileList  
             let len = GetFileLength(file)  
@@ -144,8 +144,8 @@ class QueryBySize
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
 System.Linq 名前空間と System.IO 名前空間に `using` ディレクティブを使用して、C# コンソール アプリケーション プロジェクトを作成します。
- 
-## <a name="see-also"></a>関連項目
+
+## <a name="see-also"></a>参照
 
 - [LINQ to Objects (C#)](./linq-to-objects.md)
 - [LINQ とファイル ディレクトリ (C#)](./linq-and-file-directories.md)

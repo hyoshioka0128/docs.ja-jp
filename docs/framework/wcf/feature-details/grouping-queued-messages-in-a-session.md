@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
-ms.openlocfilehash: 995697e618ff5d56a719efc5d69b97583733d980
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 66f51267f20f8cdad8feeedf37435ccfa733146e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70892737"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597359"
 ---
 # <a name="grouping-queued-messages-in-a-session"></a>セッションでキューに置かれたメッセージのグループ化
 Windows Communication Foundation (WCF) は、1つの受信アプリケーションで処理するために、一連の関連メッセージをまとめてグループ化できるセッションを提供します。 セッションに含まれるメッセージは、同じトランザクションに含まれる必要があります。 すべてのメッセージが同じトランザクションに含まれるため、1 つのメッセージの処理が失敗すると、セッション全体がロールバックされます。 各セッションは、配信不能キューや有害キューに関してよく似た動作をします。 キューに置かれたバインディングに設定される有効期間 (TTL: Time To Live) プロパティがセッションに構成されている場合は、セッション全体に適用されます。 したがって、TTL が切れる前にセッション内の一部のメッセージが送信された場合は、セッション全体が配信不能キューに配置されます。 同様に、アプリケーション キューからアプリケーションにセッション内のメッセージを送信できなかった場合は、セッション全体が有害キューに配置されます (有害キューを使用できる場合)。  
@@ -24,13 +24,13 @@ Windows Communication Foundation (WCF) は、1つの受信アプリケーショ�
   
 #### <a name="to-set-up-a-service-contract-to-use-sessions"></a>セッションを使用するようにサービス コントラクトを設定するには  
   
-1. セッションを必要とするサービス コントラクトを定義します。 次のように<xref:System.ServiceModel.ServiceContractAttribute>指定して、属性を使用してこれを行います。  
+1. セッションを必要とするサービス コントラクトを定義します。 次のように指定して、属性を使用してこれを行い <xref:System.ServiceModel.ServiceContractAttribute> ます。  
   
     ```csharp
     SessionMode=SessionMode.Required  
     ```  
   
-2. これらのメソッドは何も返さないため、コントラクト内の操作を一方向としてマークします。 これを行うには<xref:System.ServiceModel.OperationContractAttribute> 、次のように指定します。  
+2. これらのメソッドは何も返さないため、コントラクト内の操作を一方向としてマークします。 これを行うには、 <xref:System.ServiceModel.OperationContractAttribute> 次のように指定します。  
   
     ```csharp  
     [OperationContract(IsOneWay = true)]  
@@ -45,7 +45,7 @@ Windows Communication Foundation (WCF) は、1つの受信アプリケーショ�
 4. 各サービス操作には、トランザクションが必要になります。 これを指定するには <xref:System.ServiceModel.OperationBehaviorAttribute> 属性を使用します。 トランザクションを完了する操作では、<xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete> を `true` に設定する必要があります。  
   
     ```csharp  
-    [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]   
+    [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
     ```  
   
 5. システム指定の `NetMsmqBinding` バインディングを使用するエンドポイントを構成します。  
@@ -62,7 +62,7 @@ Windows Communication Foundation (WCF) は、1つの受信アプリケーショ�
   
 1. トランザクションのスコープを作成してトランザクション キューに書き込みます。  
   
-2. [ServiceModel メタデータユーティリティツール (svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)ツールを使用して、WCF クライアントを作成します。  
+2. [ServiceModel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)ツールを使用して、WCF クライアントを作成します。  
   
 3. 注文を行います。  
   
@@ -83,5 +83,5 @@ Windows Communication Foundation (WCF) は、1つの受信アプリケーショ�
 
 ## <a name="see-also"></a>関連項目
 
-- [セッションとキュー](../../../../docs/framework/wcf/samples/sessions-and-queues.md)
-- [キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+- [セッションとキュー](../samples/sessions-and-queues.md)
+- [キューの概要](queues-overview.md)

@@ -3,19 +3,19 @@ title: <idn> 要素 (Uri 設定)
 ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
 ms.openlocfilehash: 533b2562f6e5c8d6c2bf452e56dff9a8bf8ab376
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71698171"
 ---
 # <a name="idn-element-uri-settings"></a>\<idn> 要素 (Uri 設定)
 
 国際化ドメイン名 (IDN) の解析がドメイン名に適用されるかどうかを指定します。
   
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<uri >** ](uri-element-uri-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<idn >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<uri>**](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<idn>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -25,8 +25,8 @@ ms.locfileid: "71698171"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a>属性と要素  
- 次のセクションでは、属性、子要素、親要素について説明します。  
+## <a name="attributes-and-elements"></a>属性および要素  
+ 以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
 
@@ -44,7 +44,7 @@ ms.locfileid: "71698171"
 |-----------------|---------------------|  
 |[uri](uri-element-uri-settings.md)|.NET Framework が、uniform resource identifier (Uri) を使用して表された web アドレスを処理する方法を指定する設定が含まれます。|  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 既存の <xref:System.Uri> クラスは .NET Framework 3.5 で拡張されています。 3.0 SP1 および 2.0 SP1 (国際リソース識別子 (IRI) と国際化ドメイン名 (IDN) をサポート)。 現在のユーザーには、IRI と IDN のサポートを明示的に有効にしない限り、.NET Framework 2.0 の動作からの変更は表示されません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。
 
@@ -62,7 +62,7 @@ IRI のサポートを有効にするには、次の2つの変更が必要です
 
 - idn enabled = すべて  
 
-     この値により、すべての Unicode ドメイン名が Punycode に相当する (IDN 名) に変換されます。
+     この値は、Unicode のドメイン名があれば、それを等価の Punycode (IDN 名) に変換します。
 
 - idn enabled = AllExceptIntranet
 
@@ -70,7 +70,7 @@ IRI のサポートを有効にするには、次の2つの変更が必要です
 
 - idn enabled = なし
 
-     この値では、Unicode ドメイン名を変換して Punycode を使用することはできません。 これは、.NET Framework 2.0 の動作と一貫性のある既定値です。
+     この値は、どの Unicode のドメイン名も、Punycode を使用するように変換しません。 これは、.NET Framework 2.0 の動作と一貫した既定値です。
 
  IDN を有効にすると、ドメイン名に含まれるすべての Unicode のラベルが Punycode のラベルに変換されます。 Punycode 名には ASCII 文字のみが含まれ、常に xn-- プレフィックスで始まります。 この理由は、ほとんどの DNS サーバーは ASCII 文字しかサポートしていないため、インターネットで既存の DNS サーバーをサポートするためです (RFC 3940 を参照)。
 
@@ -80,7 +80,7 @@ IRI のサポートを有効にするには、次の2つの変更が必要です
 
 ## <a name="example"></a>例
 
-次の例は、IRI 解析と IDN 名をサポートするために <xref:System.Uri> クラスによって使用される構成を示しています。
+次の例は、 <xref:System.Uri> IRI 解析と IDN 名をサポートするためにクラスによって使用される構成を示しています。
 
 ```xml
 <configuration>
@@ -91,7 +91,7 @@ IRI のサポートを有効にするには、次の2つの変更が必要です
 </configuration>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Configuration.IdnElement?displayProperty=nameWithType>
 - <xref:System.Configuration.UriSection?displayProperty=nameWithType>

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7580d546-a709-40c5-ad02-aa70d774fd0b
 topic_type:
 - apiref
-ms.openlocfilehash: 4009f8988c90ed090c0cc3d86164af347055722f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e6248aba1c41b2815f2806942d419da869ed94b4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446422"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614917"
 ---
 # <a name="isymunmanagedreader2getsymattributepreremap-method"></a>ISymUnmanagedReader2::GetSymAttributePreRemap メソッド
 名前に基づいてカスタム属性を取得します。 メタデータのカスタム属性とは異なり、これらの属性はシンボルストアに保持されます。  
@@ -42,13 +42,13 @@ HRESULT GetSymAttributePreRemap(
  から親のメタデータトークン。  
   
  `name`  
- から名前を格納している `WCHAR` へのポインター。  
+ から名前を格納し `WCHAR` ているへのポインター。  
   
  `cBuffer`  
- から`buffer` 配列のサイズを示す `ULONG32`。  
+ から`ULONG32`配列のサイズを示す `buffer` 。  
   
  `pcBuffer`  
- 入出力属性バイトを格納するために必要なバッファーのサイズを受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`属性バイトを格納するために必要なバッファーのサイズを受け取るへのポインター。  
   
  `buffer`  
  入出力属性バイトを受け取るバッファーへのポインター。  
@@ -59,6 +59,6 @@ HRESULT GetSymAttributePreRemap(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedReader2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)
+- [ISymUnmanagedReader2 インターフェイス](isymunmanagedreader2-interface.md)

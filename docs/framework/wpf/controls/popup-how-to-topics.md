@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 9488a245-0168-4650-b9ab-d075a108cc8f
 ms.openlocfilehash: 80f0d8bb3f78e80868d5294b5893ef409fdf478c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61770579"
 ---
 # <a name="popup-how-to-topics"></a>ポップアップに関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.Primitives.Popup>コントロールを現在のアプリケーション ウィンドウから浮遊した別のウィンドウの内容を表示します。  
+このセクションのトピックでは、<xref:System.Windows.Controls.Primitives.Popup> コントロールを使用し、現在のアプリケーション ウィンドウの上にフローティングする別ウィンドウにコンテンツを表示する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ポップアップをアニメーション化する](how-to-animate-a-popup.md)  
  [ポップアップのカスタム位置を指定する](how-to-specify-a-custom-popup-position.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.Popup>  
   
 ## <a name="related-sections"></a>関連項目  

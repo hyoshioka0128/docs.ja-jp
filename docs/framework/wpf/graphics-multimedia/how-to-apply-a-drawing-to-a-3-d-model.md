@@ -1,25 +1,25 @@
 ---
-title: '方法 : 3-D モデルに描画を適用する'
+title: '方法: 3D モデルに描画を適用する'
 ms.date: 03/30/2017
 helpviewer_keywords:
-- drawings [WPF], applying to 3-D models
-- 3-D models [WPF], applying drawings to
+- drawings [WPF], applying to 3D models
+- 3D models [WPF], applying drawings to
 ms.assetid: 68357577-b7fc-446e-8be9-a8cc7df3a350
-ms.openlocfilehash: 311a3ac1d9fa219a3a365d506d9d0c3e8b6bc229
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: 5b10630ab674fa9489cdf7ad53516a680f19da08
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459371"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112181"
 ---
-# <a name="how-to-apply-a-drawing-to-a-3-d-model"></a>方法 : 3-D モデルに描画を適用する
+# <a name="how-to-apply-a-drawing-to-a-3d-model"></a>方法: 3D モデルに描画を適用する
 
-この例では、<xref:System.Windows.Media.DrawingBrush> を3-d モデルに適用する <xref:System.Windows.Media.Media3D.Material> として使用する方法を示します。
+この例では、3D モデルに適用される <xref:System.Windows.Media.Media3D.Material> として <xref:System.Windows.Media.DrawingBrush> を使用する方法を示します。
 
-次のコードは、<xref:System.Windows.Media.DrawingBrush>のコンテンツとして <xref:System.Windows.Media.DrawingGroup> を定義します。  <xref:System.Windows.Media.DrawingBrush> は、3-d 平面に適用される <xref:System.Windows.Media.Media3D.DiffuseMaterial> の <xref:System.Windows.Media.Media3D.DiffuseMaterial.Brush%2A> プロパティとして設定されます。
+次のコードでは、<xref:System.Windows.Media.DrawingGroup> を <xref:System.Windows.Media.DrawingBrush> のコンテンツとして定義しています。  <xref:System.Windows.Media.DrawingBrush> は、3D 平面に適用される <xref:System.Windows.Media.Media3D.DiffuseMaterial> の <xref:System.Windows.Media.Media3D.DiffuseMaterial.Brush%2A> プロパティとして設定します。
 
 > [!NOTE]
-> 多くの場合、次の図のような複雑なオブジェクトと値をリソースとして定義することをお勧めします。これは、コードを再利用し、簡略化することができます。 詳細については、「 [XAML リソース](../../../desktop-wpf/fundamentals/xaml-resources-define.md)」を参照してください。
+> 次の図のような複雑なオブジェクトと値は、できるだけ再利用できるリソースとして定義し、コードを単純化するようにしてください。 詳細については、「[XAML リソース](../../../desktop-wpf/fundamentals/xaml-resources-define.md)」を参照してください。
 
 [!code-xaml[3DGallery_snip#ApplyDrawingToMaterialInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_snip/CS/ApplyDrawingToMaterialExample.xaml#applydrawingtomaterialinline1)]
 
@@ -32,6 +32,6 @@ ms.locfileid: "73459371"
 ## <a name="see-also"></a>関連項目
 
 - [XAML リソース](../../../desktop-wpf/fundamentals/xaml-resources-define.md)
-- [3-D シーンを作成する](how-to-create-a-3-d-scene.md)
+- [3D シーンを作成する](how-to-create-a-3-d-scene.md)
 - [Drawing オブジェクトの概要](drawing-objects-overview.md)
-- [3-D グラフィックスの概要](3-d-graphics-overview.md)
+- [3D グラフィックスの概要](3-d-graphics-overview.md)

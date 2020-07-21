@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Span<T>
 - buffers"
 - pipeline processing
-ms.openlocfilehash: b61b1dbbedf4658fe113986fbb4a792a2f574534
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c60c08d27c0e41228a15e8acdf01a9af28a23762
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121986"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201964"
 ---
 # <a name="memory--and-span-related-types"></a>メモリおよびスパンに関連する型
 
@@ -43,7 +43,7 @@ ms.locfileid: "73121986"
 
 ## <a name="working-with-memory-and-span"></a>メモリとスパンを使った作業
 
-通常、メモリおよびスパンに関連する型は処理パイプラインにデータを格納するために使われます。そのため開発者は、<xref:System.Span%601>、<xref:System.Memory%601>、および関連する型を使う場合に、一連のベスト プラクティスに従うことが重要です。 これらのベスト プラクティスは、「[Memory\<T> and Span\<T> usage guidelines](memory-t-usage-guidelines.md)」(Memory<T> および Span <T> の使用ガイドライン) でドキュメント化されています。
+通常、メモリおよびスパンに関連する型は処理パイプラインにデータを格納するために使われます。そのため開発者は、<xref:System.Span%601>、<xref:System.Memory%601>、および関連する型を使う場合に、一連のベスト プラクティスに従うことが重要です。 これらのベスト プラクティスは、「[Memory\<T>T> と Span\<T>T> の使用ガイドライン](memory-t-usage-guidelines.md)」でドキュメント化されています。
 
 ## <a name="see-also"></a>関連項目
 

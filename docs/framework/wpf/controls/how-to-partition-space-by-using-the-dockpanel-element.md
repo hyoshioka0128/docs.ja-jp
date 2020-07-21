@@ -12,16 +12,16 @@ helpviewer_keywords:
 ms.assetid: a219b9e5-b205-4438-89b5-0a137ac463ab
 ms.openlocfilehash: d22a808ce3ab95e3b351408bf4cc372a335da553
 ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/22/2019
 ms.locfileid: "69960198"
 ---
 # <a name="how-to-partition-space-by-using-the-dockpanel-element"></a>方法: DockPanel 要素を使用して領域を分割する
-次の例では、 [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] <xref:System.Windows.Controls.DockPanel>要素を使用して単純なフレームワークを作成します。 は<xref:System.Windows.Controls.DockPanel> 、子要素に使用できる領域をパーティション分割します。  
+次の例では、<xref:System.Windows.Controls.DockPanel> 要素を使用して、単純なユーザー インターフェイス (UI)[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] フレームワークを作成します。 <xref:System.Windows.Controls.DockPanel> は、子要素に使用可能な領域を分割します。  
   
 ## <a name="example"></a>例  
- この例では<xref:System.Windows.Controls.DockPanel.Dock%2A> 、添付プロパティであるプロパティを使用して、パーティション<xref:System.Windows.Controls.Border>分割され<xref:System.Windows.Controls.Dock.Top>た領域のに同一の2つの要素をドッキングします。 3番<xref:System.Windows.Controls.Border>目の要素は<xref:System.Windows.Controls.Dock.Left>にドッキングされ、幅は200ピクセルに設定されます。 4番<xref:System.Windows.Controls.Border>目のは画面<xref:System.Windows.Controls.Dock.Bottom>のにドッキングされます。 最後<xref:System.Windows.Controls.Border>の要素は、残りの領域を自動的に入力します。  
+ この例では、添付プロパティである <xref:System.Windows.Controls.DockPanel.Dock%2A> プロパティを使用して、分割された領域の <xref:System.Windows.Controls.Dock.Top> に、2 つの同一の <xref:System.Windows.Controls.Border> 要素をドッキングします。 3 番目の <xref:System.Windows.Controls.Border> 要素は、<xref:System.Windows.Controls.Dock.Left> にドッキングされ、幅は 200 ピクセルに設定されます。 4 番目の <xref:System.Windows.Controls.Border> は、画面の <xref:System.Windows.Controls.Dock.Bottom> にドッキングされます。 最後の <xref:System.Windows.Controls.Border> 要素は、残りの領域を自動的に塗りつぶします。  
   
  [!code-cpp[DockPanelOvwSample#1](~/samples/snippets/cpp/VS_Snippets_Wpf/DockPanelOvwSample/CPP/DockPanel_Ovw_Sample.cpp#1)]
  [!code-csharp[DockPanelOvwSample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DockPanelOvwSample/CSharp/DockPanel_Ovw_Sample.cs#1)]
@@ -29,7 +29,7 @@ ms.locfileid: "69960198"
  [!code-xaml[DockPanelOvwSample#1](~/samples/snippets/xaml/VS_Snippets_Wpf/DockPanelOvwSample/XAML/default.xaml#1)]  
   
 > [!NOTE]
-> 既定では、 <xref:System.Windows.Controls.DockPanel>要素の最後の子が残りの未割り当て領域を塗りつぶします。 この動作にしない場合は、`LastChildFill="False"`を設定します。  
+> 既定では、<xref:System.Windows.Controls.DockPanel> 要素の最後の子が、残りの未割り当て領域を塗りつぶします。 この動作にしない場合は、`LastChildFill="False"`を設定します。  
   
  コンパイル済みのアプリケーションでは、次のような新しい UI を生成します。  
   

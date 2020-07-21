@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4d834721-ad8d-439d-b356-c6b4aef022fc
 topic_type:
 - apiref
-ms.openlocfilehash: 3bdc79a6b6d81f6f0998f052f8bea1bf8af55402
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ff888d3e2b86efeea3f4e3d33528f731d85886bf
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446109"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615268"
 ---
 # <a name="isymunmanagedvariablegetaddressfield3-method"></a>ISymUnmanagedVariable::GetAddressField3 メソッド
 この変数の3番目のアドレスフィールドを取得します。 その意味は、アドレスの種類によって異なります。  
@@ -34,7 +34,7 @@ HRESULT GetAddressField3(
   
 ## <a name="parameters"></a>パラメーター  
  `pRetVal`  
- 入出力3番目のアドレスフィールドを受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`3 番目のアドレスフィールドを受け取るへのポインター。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK。それ以外の場合は、E_FAIL またはその他のエラーコードを指定します。  
@@ -42,9 +42,9 @@ HRESULT GetAddressField3(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedVariable インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
-- [GetAddressField1 メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddressfield1-method.md)
-- [GetAddressField2 メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddressfield2-method.md)
-- [GetAddressKind メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddresskind-method.md)
+- [ISymUnmanagedVariable インターフェイス](isymunmanagedvariable-interface.md)
+- [GetAddressField1 メソッド](isymunmanagedvariable-getaddressfield1-method.md)
+- [GetAddressField2 メソッド](isymunmanagedvariable-getaddressfield2-method.md)
+- [GetAddressKind メソッド](isymunmanagedvariable-getaddresskind-method.md)

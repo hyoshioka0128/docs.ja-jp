@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 16dc49cb-2c60-4ac8-9c35-020e9afba3f8
 topic_type:
 - apiref
-ms.openlocfilehash: 4590d2734ea89bc1bc8a30db1c7ecac5effafd7b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 637e1aed003e211654141ab397c9c0b4724753c2
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429759"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615489"
 ---
 # <a name="isymunmanagedreadergetvariables-method"></a>ISymUnmanagedReader::GetVariables メソッド
 親と名前を指定して、ローカルでない変数を返します。  
@@ -44,7 +44,7 @@ HRESULT GetVariables (
  [in] `pVars` 配列のサイズ。  
   
  `pcVars`  
- 入出力`pVars`で返された変数の数を受け取る変数へのポインター。  
+ 入出力で返された変数の数を受け取る変数へのポインター `pVars` 。  
   
  `pVars`  
  入出力変数を受け取る変数へのポインター。  
@@ -55,6 +55,6 @@ HRESULT GetVariables (
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedReader インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader インターフェイス](isymunmanagedreader-interface.md)

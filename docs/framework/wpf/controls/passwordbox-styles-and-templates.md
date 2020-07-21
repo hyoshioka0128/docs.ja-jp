@@ -11,39 +11,39 @@ helpviewer_keywords:
 ms.assetid: deb52107-959f-4a60-b303-d21a0a933060
 ms.openlocfilehash: 4ba90182468466773644c7375059f0cc01675b33
 ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74283458"
 ---
 # <a name="passwordbox-styles-and-templates"></a>PasswordBox のスタイルとテンプレート
 
-このトピックでは、<xref:System.Windows.Controls.PasswordBox> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」を参照してください。
+このトピックでは、<xref:System.Windows.Controls.PasswordBox> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのためにテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」をご覧ください。
 
 ## <a name="passwordbox-parts"></a>PasswordBox のパーツ
 
-次の表に、<xref:System.Windows.Controls.PasswordBox> コントロールの名前付きの部分を示します。
+次の表は、<xref:System.Windows.Controls.PasswordBox> コントロールの名前付きパーツの一覧を示します。
 
-|要素|型|説明|
+|パーツ|種類|説明|
 |-|-|-|
-|PART_ContentHost|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.FrameworkElement>を含むことができるビジュアル要素。 <xref:System.Windows.Controls.PasswordBox> のテキストがこの要素に表示されます。|
+|PART_ContentHost|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.FrameworkElement> を含めることができるビジュアル要素。 <xref:System.Windows.Controls.PasswordBox> のテキストがこの要素に表示されます。|
 
 ## <a name="passwordbox-states"></a>PasswordBox の状態
 
-次の表は、<xref:System.Windows.Controls.PasswordBox> コントロールの表示状態を示しています。
+次の表は、<xref:System.Windows.Controls.PasswordBox> コントロールの表示状態の一覧を示します。
 
 |VisualState 名|VisualStateGroup 名|説明|
 |-|-|-|
 |標準|CommonStates|既定の状態です。|
 |MouseOver|CommonStates|マウス ポインターがコントロール上に配置されます。|
-|Disabled|CommonStates|コントロールが無効になっています。|
+|無効|CommonStates|コントロールが無効になっています。|
 |フォーカスされている|FocusStates|コントロールにフォーカスがあります。|
 |フォーカスされていない|FocusStates|コントロールにフォーカスがありません。|
-|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|
+|有効|ValidationStates|このコントロールで <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false` です。|
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|
 
-## <a name="passwordbox-controltemplate-example"></a>PasswordBox ControlTemplate の例
+## <a name="passwordbox-controltemplate-example"></a>PasswordBox の ControlTemplate の例
 
 次の例は、<xref:System.Windows.Controls.PasswordBox> コントロールの <xref:System.Windows.Controls.ControlTemplate> を定義する方法を示しています。
 
@@ -62,4 +62,4 @@ ms.locfileid: "74283458"
 - [コントロールのスタイルとテンプレート](control-styles-and-templates.md)
 - [コントロールのカスタマイズ](control-customization.md)
 - [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)
+- [コントロールのためのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)

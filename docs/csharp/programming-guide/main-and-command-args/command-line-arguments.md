@@ -1,16 +1,15 @@
 ---
 title: コマンド ライン引数 - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: f74f374f13aef5135b81d59f94bc2c6913766763
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c203716d9bb8298c934a999a496793c294949ddb
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039310"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007755"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>コマンド ライン引数 (C# プログラミング ガイド)
 
@@ -26,6 +25,9 @@ ms.locfileid: "73039310"
 `Main` メソッドのパラメーターは <xref:System.String> の配列で、コマンド ライン引数を表しています。 通常は、`Length` プロパティを調べて引数があるかどうかを確認します。次はその例です。
 
 [!code-csharp[csProgGuideMain#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#4)]
+
+> [!TIP]
+> `args` 配列を null にすることはできません。 そのため、null チェックを行わずに `Length` プロパティに安全にアクセスできます。
 
 また、<xref:System.Convert> クラスまたは `Parse` メソッドを使って、文字列型の引数を数値型に変換できます。 たとえば、次のステートメントでは、`string` メソッドを使用して `long` を <xref:System.Int64.Parse%2A> 値に変換します。
 
@@ -79,6 +81,6 @@ long num = Convert.ToInt64(s);
 - <xref:System.Environment?displayProperty=nameWithType>
 - [C# プログラミング ガイド](../index.md)
 - [Main() とコマンドライン引数](index.md)
-- [方法: コマンド ライン引数を表示する](how-to-display-command-line-arguments.md)
+- [コマンド ライン引数を表示する方法](how-to-display-command-line-arguments.md)
 - [Main() の戻り値](main-return-values.md)
 - [クラス](../classes-and-structs/classes.md)

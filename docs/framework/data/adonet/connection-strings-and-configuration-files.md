@@ -1,18 +1,20 @@
 ---
 title: 接続文字列と構成ファイル
+description: セキュリティとメンテナンスのためのベスト プラクティスとして、ADO.NET アプリケーションの接続文字列をアプリケーション構成ファイルに格納する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: a98239886d6745bbb6e13e71a12764008460cdd7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 572c5be1bd639e8d4b38935f5be49782f0b0316e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785674"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287039"
 ---
 # <a name="connection-strings-and-configuration-files"></a>接続文字列と構成ファイル
+
 接続文字列をアプリケーションのコードに組み込むと、セキュリティ上の脆弱性やメンテナンスの問題を引き起こす可能性があります。 アプリケーションのソース コード内にコンパイルされた暗号化されていない接続文字列は、[Ildasm.exe (IL 逆アセンブラー)](../../tools/ildasm-exe-il-disassembler.md) ツールを使用して参照することができます。 さらに、接続文字列が変わるたびにアプリケーションを再コンパイルする必要性が生じます。 そのため、接続文字列はアプリケーション構成ファイルに保存することをお勧めします。  
   
 ## <a name="working-with-application-configuration-files"></a>アプリケーション構成ファイルの使用  
@@ -28,8 +30,8 @@ ms.locfileid: "70785674"
   <configuration>  
     <connectionStrings>  
       <clear />  
-      <add name="Name"   
-       providerName="System.Data.ProviderName"   
+      <add name="Name"
+       providerName="System.Data.ProviderName"
        connectionString="Valid Connection String;" />  
     </connectionStrings>  
   </configuration>  
@@ -45,8 +47,8 @@ ms.locfileid: "70785674"
   
 ```xml  
 <connectionStrings>  
-  <add name="Name"   
-   providerName="System.Data.ProviderName"   
+  <add name="Name"
+   providerName="System.Data.ProviderName"
    connectionString="Valid Connection String;" />  
 </connectionStrings>  
 ```  
@@ -81,7 +83,7 @@ ms.locfileid: "70785674"
 |<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A>|接続文字列。 **connectionString** 属性にマップされています。|  
   
 ### <a name="example-listing-all-connection-strings"></a>例:すべての接続文字列を一覧表示する  
- この例では、 <xref:System.Configuration.ConnectionStringSettingsCollection>を反復処理<xref:System.Configuration.ConnectionStringSettings.Name%2A?displayProperty=nameWithType>し、、 <xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A?displayProperty=nameWithType> 、およびの各プロパティをコンソールウィンドウに表示<xref:System.Configuration.ConnectionStringSettings.ProviderName%2A?displayProperty=nameWithType>します。  
+ この例では、<xref:System.Configuration.ConnectionStringSettingsCollection> を反復処理しながら、<xref:System.Configuration.ConnectionStringSettings.Name%2A?displayProperty=nameWithType>、<xref:System.Configuration.ConnectionStringSettings.ProviderName%2A?displayProperty=nameWithType>、<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A?displayProperty=nameWithType> の各プロパティをコンソール ウィンドウに表示します。  
   
 > [!NOTE]
 > プロジェクトの種類によっては System.Configuration.dll がインクルードされていない場合があります。構成クラスを使用する場合は、必要に応じて参照設定するようにしてください。 特定のアプリケーションの構成ファイルの名前と場所は、アプリケーションの種類やホストしているプロセスによって異なります。  
@@ -124,10 +126,10 @@ ms.locfileid: "70785674"
 ```xml  
 <configProtectedData defaultProvider="RsaProtectedConfigurationProvider">  
   <providers>  
-    <add name="RsaProtectedConfigurationProvider"   
-      type="System.Configuration.RsaProtectedConfigurationProvider, ... />  
-    <add name="DataProtectionConfigurationProvider"   
-      type="System.Configuration.DpapiProtectedConfigurationProvider, ... />  
+    <add name="RsaProtectedConfigurationProvider"
+      type="System.Configuration.RsaProtectedConfigurationProvider" />  
+    <add name="DataProtectionConfigurationProvider"
+      type="System.Configuration.DpapiProtectedConfigurationProvider" />  
   </providers>  
 </configProtectedData>  
 ```  
@@ -167,7 +169,7 @@ ms.locfileid: "70785674"
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- ASP.NET アプリケーションのセキュリティ保護の詳細については、ASP.NET websites の[セキュリティ保護](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100))に関するページを参照してください。  
+ ASP.NET アプリケーションのセキュリティ保護について詳しくは、「[ASP.NET Web サイトのセキュリティ保護](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100))」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目
 

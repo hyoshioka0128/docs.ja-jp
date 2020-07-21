@@ -6,34 +6,34 @@ helpviewer_keywords:
 - unmanaged coclasses [.NET Framework], hosting
 - coclasses [.NET Framework hosting]
 ms.assetid: e32d8667-58ee-4760-814f-d22963881622
-ms.openlocfilehash: f23d2c9828a2ccce058fbb4829a41f1af5b25a11
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8eb8702c29b6f9655de7ba9d48e2722674e34fe6
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127010"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616139"
 ---
 # <a name="hosting-coclasses"></a>ホスト コクラス
 このセクションでは、ホスト API が使用するアンマネージ API コクラスについて説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [CLRRuntimeHost コクラス](../../../../docs/framework/unmanaged-api/hosting/clrruntimehost-coclass.md)  
+ [CLRRuntimeHost コクラス](clrruntimehost-coclass.md)  
  ランタイムによるコード実行を管理するためのインターフェイスを提供します。  
   
- [ComCallUnmarshal コクラス](../../../../docs/framework/unmanaged-api/hosting/comcallunmarshal-coclass.md)  
+ [ComCallUnmarshal コクラス](comcallunmarshal-coclass.md)  
  インターフェイスポインターのマーシャリングを管理するためのインターフェイスを提供します。  
   
- [CorRuntimeHost コクラス](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)  
+ [CorRuntimeHost コクラス](corruntimehost-coclass.md)  
  共通言語ランタイムによって実行されるアプリケーションを管理するためのインターフェイスを提供します。  
   
- [TypeNameFactory コクラス](../../../../docs/framework/unmanaged-api/hosting/typenamefactory-coclass.md)  
+ [TypeNameFactory コクラス](typenamefactory-coclass.md)  
  型名の分解を管理するためのインターフェイスを提供します。  
   
 ## <a name="related-sections"></a>関連項目  
- [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
+ [ホスト インターフェイス](hosting-interfaces.md)  
   
- [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
+ [非推奨の CLR ホスト関数](deprecated-clr-hosting-functions.md)  
   
- [ホスティングの列挙型](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)  
+ [ホスティングの列挙体](hosting-enumerations.md)  
   
- [ホスト構造体](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+ [ホスト構造体](hosting-structures.md)

@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::GetAppDomainByUniqueId メソッド
+title: 'IXCLRDataProcess:: GetAppDomainByUniqueId メソッド'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::GetAppDomainByUniqueId Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 8b468d40ef8eb523ba8881627fae15cf9b7c7b80
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb02ffed09cbcc31e653bfd3165050c247908c5d
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775266"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420786"
 ---
-# <a name="ixclrdataprocessgetappdomainbyuniqueid-method"></a>IXCLRDataProcess::GetAppDomainByUniqueId メソッド
+# <a name="ixclrdataprocessgetappdomainbyuniqueid-method"></a>IXCLRDataProcess:: GetAppDomainByUniqueId メソッド
 
-取得、`AppDomain`の一意の識別子に基づくプロセスにします。
+一意の `AppDomain` 識別子に基づいて、プロセス内のを取得します。
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -40,19 +40,19 @@ HRESULT GetAppDomainByUniqueID(
 ## <a name="parameters"></a>パラメーター
 
 `id`\
-[in]AppDomain の一意の識別子
+からAppDomain の一意識別子
 
 `appDomain`\
-[out]AppDomain
+入出力AppDomain
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-指定されたメソッドは、`IXCLRDataProcess`インターフェイスし、仮想メソッド テーブルの 20 のスロットに対応しています。 `IXCLRDataAppDomain*`返されるその他の Api との対話のために使用します。
+指定されたメソッドはインターフェイスの一部で `IXCLRDataProcess` あり、仮想メソッドテーブルの20番目のスロットに対応します。 返されるは、 `IXCLRDataAppDomain*` 他の api との対話に使用されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**プラットフォーム:**[システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。
-**ヘッダー:** None**ライブラリ。** None **.NET Framework のバージョン。** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
+**ヘッダー:** None **Library:** None **.NET Framework バージョン:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>関連項目
 

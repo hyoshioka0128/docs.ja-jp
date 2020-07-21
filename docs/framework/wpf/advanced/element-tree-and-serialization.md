@@ -10,7 +10,7 @@ helpviewer_keywords:
 ms.assetid: 8f57e879-180b-421f-b3d0-ac007ff2ce80
 ms.openlocfilehash: afddaab6a7f5e9ef445da48d013ace59b84611cd
 ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73460475"
@@ -22,9 +22,9 @@ WPF プログラミングの各要素は、多くの場合、ある種の相互�
  [WPF のツリー](trees-in-wpf.md)  
  [XamlWriter.Save のシリアル化の制限](serialization-limitations-of-xamlwriter-save.md)  
  [オブジェクト ツリーに存在しないオブジェクト要素の初期化](initialization-for-object-elements-not-in-an-object-tree.md)  
- [方法のトピック](element-tree-and-serialization-how-to-topics.md)  
+ [方法トピック](element-tree-and-serialization-how-to-topics.md)  
   
-## <a name="reference"></a>参照先  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Markup>  
   
  <xref:System.Windows.LogicalTreeHelper>  

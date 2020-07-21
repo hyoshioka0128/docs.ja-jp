@@ -1,15 +1,15 @@
 ---
-title: '例: 動的プログラミングのトラブルシューティング'
+title: 例:動的プログラミングのトラブルシューティング
 ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 ms.openlocfilehash: ff179854066d024a89cb5a84a19d0b9bb054d6e5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128437"
 ---
-# <a name="example-troubleshooting-dynamic-programming"></a>例: 動的プログラミングのトラブルシューティング
+# <a name="example-troubleshooting-dynamic-programming"></a>例:動的プログラミングのトラブルシューティング
 > [!NOTE]
 > このトピックでは、プレリリース ソフトウェアである .NET Native Developer Preview について述べています。 プレビュー版は、[Microsoft Connect Web サイト](https://go.microsoft.com/fwlink/?LinkId=394611)からダウンロードできます (登録が必要です)。  
   
@@ -48,7 +48,7 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
   
  この場合、`App.Core.ViewModels` のランタイム ディレクティブを追加すると、問題が解決します。 根本原因は、**null** を返した <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> メソッドへの API 呼び出しで、アプリではクラッシュが発生するまでエラーを出さずにこの問題を無視していました。  
   
- 動的プログラミングでは、.NET ネイティブでリフレクション Api を使用する場合は、エラー発生時に例外をスローする <xref:System.Type.GetType%2A?displayProperty=nameWithType> オーバーロードを使用することをお勧めします。  
+ 動的プログラミングでは、.NET ネイティブでリフレクション Api を使用する場合は、 <xref:System.Type.GetType%2A?displayProperty=nameWithType> エラー発生時に例外をスローするオーバーロードを使用することをお勧めします。  
   
 ## <a name="is-this-an-isolated-case"></a>特殊なケースかどうか  
  `App.Core.ViewModels` を使用する際に、その他の問題が発生することもあります。  メタデータの欠落例外すべてを特定して修正する意味があるかどうか、または大きい型のクラスにディレクティブを追加して時間を節約するかを決定する必要があります。  この場合は、出力バイナリのサイズ増大が問題になるのでなければ、`dynamic` の `App.Core.ViewModels` メタデータを追加するのが最適な方法でしょう。  
@@ -59,4 +59,4 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
 ## <a name="see-also"></a>関連項目
 
 - [はじめに](getting-started-with-net-native.md)
-- [例: データ バインディング時の例外の処理](example-handling-exceptions-when-binding-data.md)
+- [例:データ バインド時の例外の処理](example-handling-exceptions-when-binding-data.md)

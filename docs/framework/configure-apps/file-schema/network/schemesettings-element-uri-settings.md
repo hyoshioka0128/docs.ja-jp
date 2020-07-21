@@ -2,29 +2,29 @@
 title: <schemeSettings> 要素 (Uri 設定)
 ms.date: 03/30/2017
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-ms.openlocfilehash: 498aef77a1dfd8cffcac73b704b8d1bb6df5d165
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: c745c90bb61b9ee393687d7f6db4fd11565c7dc7
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697769"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79154648"
 ---
-# <a name="schemesettings-element-uri-settings"></a>\<schemeSettings > 要素 (Uri 設定)
+# <a name="schemesettings-element-uri-settings"></a>\<schemeSettings> 要素 (Uri 設定)
 <xref:System.Uri> が特定のスキームに解析される方法を指定します。  
   
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<uri >** ](uri-element-uri-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<schemeSettings >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<uri>**](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<schemeSettings>**  
   
 ## <a name="syntax"></a>構文  
   
 ```xml  
-<schemeSettings>   
+<schemeSettings>
 </schemeSettings>  
 ```  
   
-## <a name="attributes-and-elements"></a>属性と要素  
- 次のセクションでは、属性、子要素、親要素について説明します。  
+## <a name="attributes-and-elements"></a>属性および要素  
+ 以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
  なし  
@@ -34,7 +34,7 @@ ms.locfileid: "71697769"
 |**要素**|**説明**|  
 |-----------------|---------------------|  
 |[add](add-element-for-schemesettings-uri-settings.md)|スキーム名のスキーム設定を追加します。|  
-|[clear](clear-element-for-schemesettings-uri-settings.md)|既存のスキーム設定をすべてクリアします。|  
+|[オフ](clear-element-for-schemesettings-uri-settings.md)|既存のスキーム設定をすべてクリアします。|  
 |[remove](remove-element-for-schemesettings-uri-settings.md)|スキーム名のスキーム設定を削除します。|  
   
 ### <a name="parent-elements"></a>親要素  
@@ -43,8 +43,8 @@ ms.locfileid: "71697769"
 |-----------------|---------------------|  
 |[uri](uri-element-uri-settings.md)|.NET Framework が、uniform resource identifier (Uri) を使用して表された web アドレスを処理する方法を指定する設定が含まれます。|  
   
-## <a name="remarks"></a>コメント  
- 既定では、<xref:System.Uri?displayProperty=nameWithType> クラスは、パスの圧縮を実行する前に、エンコードされたパス区切り記号のエスケープを解除します。 これは、次のような攻撃に対するセキュリティメカニズムとして実装されています。  
+## <a name="remarks"></a>解説  
+ 既定では、 <xref:System.Uri?displayProperty=nameWithType> クラスは、パスの圧縮を実行する前に、エンコードされたパス区切り記号のエスケープを解除します。 これは、次のような攻撃に対するセキュリティメカニズムとして実装されています。  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -52,7 +52,7 @@ ms.locfileid: "71697769"
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- このため、<xref:System.Uri?displayProperty=nameWithType> クラスはまずパスの区切り記号をエスケープ解除し、次にパスの圧縮を適用します。 上の悪意のある URL を <xref:System.Uri?displayProperty=nameWithType> クラスコンストラクターに渡すと、次の URI になります。  
+ このため、 <xref:System.Uri?displayProperty=nameWithType> クラスはまずパスの区切り記号をエスケープ解除し、次にパスの圧縮を適用します。 上の悪意のある URL をクラスコンストラクターに渡すと、次の URI が生成され <xref:System.Uri?displayProperty=nameWithType> ます。  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -62,7 +62,7 @@ ms.locfileid: "71697769"
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
 ## <a name="example"></a>例  
- 次の例は、http スキームに対してパーセントでエンコードされたパス区切り記号をエスケープしないようにするために <xref:System.Uri> クラスによって使用される構成を示しています。  
+ 次の例は、 <xref:System.Uri> http スキームに対してパーセントでエンコードされたパス区切り記号をエスケープしないようにするために、クラスによって使用される構成を示しています。  
   
 ```xml  
 <configuration>  
@@ -78,12 +78,12 @@ ms.locfileid: "71697769"
   
 |||
 |-|-|  
-|Namespace|システム|  
+|名前空間|System|  
 |スキーマ名||  
 |検証ファイル||  
 |空にすることができます||  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>

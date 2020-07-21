@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cc1a823a-3ff3-4a33-b641-96edc93d2b17
 topic_type:
 - apiref
-ms.openlocfilehash: 057b901337ded7b5336ef673624d8d6c827c8932
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d096101189d52401c407a4108c9c81e201d3f30d
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448672"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441943"
 ---
 # <a name="isymencunmanagedmethodgetdocumentsformethodcount-method"></a>ISymENCUnmanagedMethod::GetDocumentsForMethodCount メソッド
 このメソッドに行があるドキュメントの数を取得します。  
@@ -34,7 +34,7 @@ HRESULT GetDocumentsForMethodCount(
   
 ## <a name="parameters"></a>パラメーター  
  `pRetVal`  
- 入出力ドキュメントを格納するために必要なバッファーのサイズを受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`ドキュメントを格納するために必要なバッファーのサイズを受け取るへのポインター。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK。それ以外の場合は、E_FAIL またはその他のエラーコードを指定します。  
@@ -42,6 +42,6 @@ HRESULT GetDocumentsForMethodCount(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymENCUnmanagedMethod インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [ISymENCUnmanagedMethod インターフェイス](isymencunmanagedmethod-interface.md)

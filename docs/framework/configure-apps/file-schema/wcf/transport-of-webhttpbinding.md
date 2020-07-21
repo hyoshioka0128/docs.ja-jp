@@ -3,22 +3,22 @@ title: <transport> の <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
 ms.openlocfilehash: e8016eb9058f132722587368f1f8c7c03220af4a
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73732791"
 ---
-# <a name="transport-of-webhttpbinding"></a>\<webHttpBinding > の \<トランスポート >
+# <a name="transport-of-webhttpbinding"></a>\<transport> の \<webHttpBinding>
 HTTP 要求を受信するように構成されたサービス エンドポイントのトランスポート レベルのセキュリティ設定を定義します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<system >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;\<[**バインド**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webHttpBinding >** ](webhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**バインド >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**セキュリティ >** ](security-of-webhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**トランスポート >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<webHttpBinding>**](webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<transport>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -40,7 +40,7 @@ HTTP 要求を受信するように構成されたサービス エンドポイ�
 </webHttpBinding>
 ```  
   
-## <a name="type"></a>[種類]  
+## <a name="type"></a>Type  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>属性および要素  
@@ -57,7 +57,7 @@ HTTP 要求を受信するように構成されたサービス エンドポイ�
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType 属性  
   
-|[値]|説明|  
+|値|Description|  
 |-----------|-----------------|  
 |`None`|セキュリティを無効にします。|  
 |`Basic`|基本認証を使用します。|  
@@ -68,7 +68,7 @@ HTTP 要求を受信するように構成されたサービス エンドポイ�
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType 属性  
   
-|[値]|説明|  
+|値|Description|  
 |-----------|-----------------|  
 |`None`|セキュリティを無効にします。|  
 |`Basic`|基本認証を使用します。|  
@@ -81,9 +81,9 @@ HTTP 要求を受信するように構成されたサービス エンドポイ�
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
-|[\< セキュリティ >](security-of-webhttpbinding.md)|[\<wsHttpBinding >](wshttpbinding.md)要素のセキュリティ機能を表します。|  
+|[\<security>](security-of-webhttpbinding.md)|要素のセキュリティ機能を表し [\<wsHttpBinding>](wshttpbinding.md) ます。|  
   
 ## <a name="see-also"></a>関連項目
 
@@ -92,8 +92,8 @@ HTTP 要求を受信するように構成されたサービス エンドポイ�
 - <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>
 - <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
 - [サービスおよびクライアントのセキュリティ保護](../../../wcf/feature-details/securing-services-and-clients.md)
-- [バインディング](../../../wcf/bindings.md)
+- [バインド](../../../wcf/bindings.md)
 - [システムが提供するバインディングの構成](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [サービスとクライアントを構成するためのバインディングの使用](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)
 - [WCF Web HTTP プログラミング モデル](../../../wcf/feature-details/wcf-web-http-programming-model.md)

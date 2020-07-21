@@ -10,7 +10,7 @@ helpviewer_keywords:
 - debugview
 ms.openlocfilehash: 98ceba37aa226fab68ae1c1028e2a1139b3b8e7e
 ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346876"
@@ -19,7 +19,7 @@ ms.locfileid: "74346876"
 
 `DebugView` プロパティ (デバッグ時にのみ利用可能) により、式ツリーが文字列でレンダリングされます。 構文の大部分はかなりわかりやすいです。特別なケースについて以降のセクションで説明します。
 
-各例には、`DebugView`を含むコメントブロックが続きます。
+各例の後ろに `DebugView` を含むコメント ブロックが続きます。
 
 ## <a name="parameterexpression"></a>ParameterExpression
 
@@ -43,11 +43,11 @@ Dim numParam As ParameterExpression = Expression.Parameter(GetType(Integer))
 
 ## <a name="constantexpressions"></a>ConstantExpressions
 
-整数値、文字列、および <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> を表す `null` オブジェクトの場合、定数の値が表示されます。
+整数値、文字列、および `null` を表す <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> オブジェクトの場合、定数の値が表示されます。
 
-数値型によっては、次のような値にサフィックスが追加されます。
+一部の数値型では、値にサフィックスが追加されます。
 
-| 型 | Keyword | Suffix |
+| 種類 | キーワード | サフィックス |
 |--|--|--|
 | <xref:System.UInt32> | [UInteger](../../../language-reference/data-types/uinteger-data-type.md) | U |
 | <xref:System.Int64> | [Long](../../../language-reference/data-types/long-data-type.md) | L |

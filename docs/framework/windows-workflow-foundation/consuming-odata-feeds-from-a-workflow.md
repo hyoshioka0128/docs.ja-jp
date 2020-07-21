@@ -2,12 +2,12 @@
 title: ワークフローからの OData フィードの使用-WF
 ms.date: 03/30/2017
 ms.assetid: 1b26617c-53e9-476a-81af-675c36d95919
-ms.openlocfilehash: c9780200d9b7c7bc89797b3c16b22bc38440fccc
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ceac2c2d07351fcb79e2345068f07fa22f356411
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802662"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743794"
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>ワークフローからの OData フィードの使用
 
@@ -15,7 +15,7 @@ WCF Data Services は、Representational State Transfer (REST) のセマンテ�
 
 ## <a name="using-the-sample-northwind-odata-service"></a>サンプルの Northwind OData サービスの使用
 
-このトピックの例では、<https://services.odata.org/Northwind/Northwind.svc/>にあるサンプルの Northwind データサービスを使用します。 このサービスは [OData SDK](https://www.odata.org/wp-content/uploads/sites/21/odatasdkcodesamples.zip) に含まれており、Northwind データベース サンプルへの読み取り専用アクセスを提供します。 書き込みアクセスが必要な場合、またはローカルの WCF Data Service が必要な場合は、「 [クイック スタート (WCF Data Services)](../data/wcf/quickstart-wcf-data-services.md) 」の手順に従って、Northwind データベースへのアクセスを提供するローカルの OData サービスを作成できます。 クイックスタートの手順に従う場合は、このトピックのコード例に指定されている URI をローカルの URI に置き換えてください。
+このトピックの例では、<https://services.odata.org/Northwind/Northwind.svc/>にあるサンプルの Northwind データサービスを使用します。 このサービスは [OData SDK](https://www.odata.org/ecosystem/#sdk) に含まれており、Northwind データベース サンプルへの読み取り専用アクセスを提供します。 書き込みアクセスが必要な場合、またはローカルの WCF Data Service が必要な場合は、「 [クイック スタート (WCF Data Services)](../data/wcf/quickstart-wcf-data-services.md) 」の手順に従って、Northwind データベースへのアクセスを提供するローカルの OData サービスを作成できます。 クイックスタートの手順に従う場合は、このトピックのコード例に指定されている URI をローカルの URI に置き換えてください。
 
 ## <a name="consuming-an-odata-feed-using-the-client-libraries"></a>クライアントライブラリを使用した OData フィードの使用
 
@@ -41,9 +41,9 @@ Web のリソースにアクセスするときに発生することのある、�
 
 ### <a name="using-client-library-asynchronous-methods"></a>クライアントライブラリの非同期メソッドの使用
 
-<xref:System.Data.Services.Client.DataServiceQuery%601> クラスには、OData サービスを非同期で照会するための <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> メソッドと <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドが用意されています。 これらのメソッドは、 <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> 派生クラスの <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> オーバーライドと <xref:System.Activities.AsyncCodeActivity> オーバーライドから呼び出すことができます。 <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> オーバーライドが戻ると、ワークフローはアイドル状態になることができ (永続化はされない)、非同期操作が完了すると、 <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> がランタイムによって呼び出されます。
+<xref:System.Data.Services.Client.DataServiceQuery%601> クラスには、OData サービスを非同期で照会するための <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> メソッドと <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドが用意されています。 これらのメソッドは、 <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> 派生クラスの <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> オーバーライドと <xref:System.Activities.AsyncCodeActivity> オーバーライドから呼び出すことができます。 <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> のオーバーライドが返されると、ワークフローはアイドル状態になることがあります (永続化はできません)。また、非同期処理が完了すると、ランタイムによって <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> が呼び出されます。
 
-次の例では、2 つの入力引数がある `OrdersByCustomer` アクティビティが定義されています。 引数 `CustomerId` は、返す注文を識別する顧客を表し、引数 `ServiceUri` は、照会する OData サービスの URI を表します。 アクティビティは `AsyncCodeActivity<IEnumerable<Order>>` から派生するので、クエリ結果を返すために使用される <xref:System.Activities.Activity%601.Result%2A> 出力引数も存在します。 <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> オーバーライドは、指定された顧客の注文をすべて選択する LINQ クエリを作成します。 このクエリは、渡された <xref:System.Activities.AsyncCodeActivityContext.UserState%2A> の <xref:System.Activities.AsyncCodeActivityContext>として指定され、その後クエリの <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> メソッドが呼び出されます。 クエリの <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> に渡されるコールバックと状態は、アクティビティの <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> メソッドに渡されるものであることに注意してください。 クエリの実行が完了すると、アクティビティの <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> メソッドが呼び出されます。 クエリは <xref:System.Activities.AsyncCodeActivityContext.UserState%2A>から取得され、その後クエリの <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドが呼び出されます。 このメソッドは、指定されたエンティティ型の <xref:System.Collections.Generic.IEnumerable%601> を返します。この場合は `Order`になります。 `IEnumerable<Order>` は <xref:System.Activities.AsyncCodeActivity%601>のジェネリック型であるので、この <xref:System.Collections.IEnumerable> はアクティビティの <xref:System.Activities.Activity%601.Result%2A> <xref:System.Activities.OutArgument%601> として設定されます。
+次の例では、2 つの入力引数がある `OrdersByCustomer` アクティビティが定義されています。 引数 `CustomerId` は、返す注文を識別する顧客を表し、引数 `ServiceUri` は、照会する OData サービスの URI を表します。 アクティビティは `AsyncCodeActivity<IEnumerable<Order>>` から派生するので、クエリ結果を返すために使用される <xref:System.Activities.Activity%601.Result%2A> 出力引数も存在します。 <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> オーバーライドは、指定された顧客の注文をすべて選択する LINQ クエリを作成します。 このクエリは、渡された <xref:System.Activities.AsyncCodeActivityContext.UserState%2A> の <xref:System.Activities.AsyncCodeActivityContext>として指定され、その後クエリの <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> メソッドが呼び出されます。 クエリの <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> に渡されるコールバックと状態は、アクティビティの <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> メソッドに渡されるものであることに注意してください。 クエリの実行が完了すると、アクティビティの <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> メソッドが呼び出されます。 クエリは <xref:System.Activities.AsyncCodeActivityContext.UserState%2A>から取得され、その後クエリの <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドが呼び出されます。 このメソッドは、指定されたエンティティ型の <xref:System.Collections.Generic.IEnumerable%601> を返します。この場合は `Order`になります。 `IEnumerable<Order>` は <xref:System.Activities.AsyncCodeActivity%601>のジェネリック型であるため、この <xref:System.Collections.IEnumerable> はアクティビティの <xref:System.Activities.Activity%601.Result%2A> <xref:System.Activities.OutArgument%601> として設定されます。
 
 [!code-csharp[CFX_WCFDataServicesActivityExample#100](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_WCFDataServicesActivityExample/cs/Program.cs#100)]
 

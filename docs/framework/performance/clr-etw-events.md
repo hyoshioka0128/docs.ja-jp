@@ -1,19 +1,18 @@
 ---
 title: CLR ETW イベント
+description: 共通言語ランタイム (CLR) event tracing for Windows (ETW) イベントに関する記事を参照してください。 イベントプロバイダーには、ランタイムプロバイダーとランダウンプロバイダーの2つがあります。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR ETW events
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 951941af2568e72fe093860801bd2595b3037e41
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 22a2f027462d67d5a933972a7420c5f0e38353e5
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428171"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309834"
 ---
 # <a name="clr-etw-events"></a>CLR ETW イベント
 このセクションのトピックでは、Windows イベント トレーシング (ETW) イベントについて説明します。 各イベントは、キーワードとレベルに関連付けられています。詳細については、「[CLR ETW のキーワードとレベル](clr-etw-keywords-and-levels.md)」トピックを参照してください。 CLR には、イベントのプロバイダーが 2 つあります。  
@@ -55,16 +54,15 @@ ms.locfileid: "74428171"
  [ARM のイベント](application-domain-resource-monitoring-arm-etw-events.md)  
  アプリケーション ドメインの状態に関する詳細な診断情報をキャプチャします。  
   
- [セキュリティ イベント](security-etw-events.md)  
+ [セキュリティイベント](security-etw-events.md)  
  厳密な名前と Authenticode の検証に関する情報をキャプチャします。  
   
  [スタック イベント](stack-etw-event.md)  
  イベントが発生した後に、他のイベントでスタック トレースの生成に使用された情報をキャプチャします。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ETW によるデバッグとパフォーマンスチューニングの向上](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
-- [Windows パフォーマンスブログ](https://blogs.msdn.microsoft.com/pigscanfly/tag/xperf/)
+- [ETW によりデバッグおよびパフォーマンス調整を改善する](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
 - [.NET Framework のログ記録の制御](controlling-logging.md)
 - [CLR ETW プロバイダー](clr-etw-providers.md)
 - [CLR ETW キーワードおよびレベル](clr-etw-keywords-and-levels.md)

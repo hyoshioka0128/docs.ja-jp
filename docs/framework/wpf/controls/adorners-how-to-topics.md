@@ -8,13 +8,13 @@ helpviewer_keywords:
 ms.assetid: e29d7516-d5e6-4500-bd4f-775e6f830984
 ms.openlocfilehash: 930d0834570529bd958006818cddb8f5692066d7
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61981683"
 ---
 # <a name="adorners-how-to-topics"></a>装飾に関する「方法」トピック
-次の例を使用して一般的なタスクを実行する方法を示します、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]装飾フレームワーク。  
+次の例では、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 装飾フレームワークを使用して一般的なタスクを実行する方法を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [装飾を実装する](how-to-implement-an-adorner.md)  
@@ -23,7 +23,7 @@ ms.locfileid: "61981683"
  [要素から装飾を削除する](how-to-remove-an-adorner-from-an-element.md)  
  [要素からすべての装飾を削除する](how-to-remove-all-adorners-from-an-element.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.AdornedElementPlaceholder>  
   
  <xref:System.Windows.Documents.Adorner>  

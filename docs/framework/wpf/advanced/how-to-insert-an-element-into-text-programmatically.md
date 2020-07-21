@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: 97bd950a-25ac-4e42-a311-94b6420d4136
 ms.openlocfilehash: ea9850c8490ec37032d4565c6b3375e3116d4313
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61757116"
 ---
 # <a name="how-to-insert-an-element-into-text-programmatically"></a>方法: プログラムでテキストに要素を挿入する
-次の例は、2 つを使用する方法を示しています。<xref:System.Windows.Documents.TextPointer>を適用するテキスト内の範囲を指定するオブジェクト、<xref:System.Windows.Documents.Span>する要素。  
+次の例では、<xref:System.Windows.Documents.TextPointer> オブジェクトを 2 つ使用し、<xref:System.Windows.Documents.Span> 要素の適用対象とする範囲をテキスト内で指定する方法を示します。  
   
 ## <a name="example"></a>例  
  [!code-csharp[FlowMiscSnippets_procedural_snip#InsertInlineIntoTextExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowMiscSnippets_procedural_snip/CSharp/InsertInlineIntoTextExample.cs#insertinlineintotextexamplewholepage)]

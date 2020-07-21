@@ -8,19 +8,19 @@ helpviewer_keywords:
 ms.assetid: 5d5f656b-8e05-4839-9d53-b0324d902aa9
 ms.openlocfilehash: b422294095425d163665f59f2bfb451da3158c8a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "71263366"
 ---
 # <a name="adorners"></a>装飾
-このセクションでは、装飾と[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]装飾フレームワークについて説明します。  
+このセクションでは、装飾と [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 装飾フレームワークについて説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [装飾の概要](adorners-overview.md)  
  [方法トピック](adorners-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.AdornedElementPlaceholder>  
   
  <xref:System.Windows.Documents.Adorner>  

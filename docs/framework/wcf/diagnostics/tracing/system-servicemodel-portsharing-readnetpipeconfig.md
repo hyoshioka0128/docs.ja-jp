@@ -2,12 +2,12 @@
 title: System.ServiceModel.PortSharing.ReadNetPipeConfig
 ms.date: 03/30/2017
 ms.assetid: a782f971-0195-4bad-a151-55d35656ae86
-ms.openlocfilehash: f8d2cf502a14a368a8244ec0cffc1332b7a94c05
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ea57354df04f2c24a3f68067c63a9cabebd79674
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997283"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601622"
 ---
 # <a name="systemservicemodelportsharingreadnetpipeconfig"></a>System.ServiceModel.PortSharing.ReadNetPipeConfig
 System.ServiceModel.PortSharing.ReadNetPipeConfig  
@@ -17,6 +17,6 @@ System.ServiceModel.PortSharing.ReadNetPipeConfig
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

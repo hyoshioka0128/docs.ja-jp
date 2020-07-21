@@ -10,24 +10,24 @@ helpviewer_keywords:
 ms.assetid: 08c945a7-8ab0-4320-acf3-0b4955a344c2
 ms.openlocfilehash: 5c9e6931f6addb62a51e44b06a159d4e7b1e5f8a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61776676"
 ---
 # <a name="how-to-change-the-cursor-type"></a>方法: カーソルの種類を変更する
-この例では、変更、<xref:System.Windows.Input.Cursor>とアプリケーションの特定の要素をマウス ポインターの。  
+この例では、特定の要素とアプリケーションでマウスポインターの <xref:System.Windows.Input.Cursor> を変更する方法を示しています。  
   
- この例は、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]ファイルと分離コード ファイル。  
+ この例は、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイルとコード ビハインド ファイルで構成されています。  
   
 ## <a name="example"></a>例  
- ユーザー インターフェイスを作成するから構成される、<xref:System.Windows.Controls.ComboBox>目的を選択する<xref:System.Windows.Input.Cursor>、1 組の<xref:System.Windows.Controls.RadioButton>カーソルの変更は 1 つの要素のみに適用されますか、アプリケーション全体に適用されますかを判断するオブジェクトと<xref:System.Windows.Controls.Border>これは、新しいカーソルに適用される要素です。  
+ 希望の <xref:System.Windows.Input.Cursor> を選択する <xref:System.Windows.Controls.ComboBox>、カーソルの変更が 1 つの要素に適用されるかアプリケーション全体に適用されるかを決定する <xref:System.Windows.Controls.RadioButton> の組み、新しいカーソルが適用される <xref:System.Windows.Controls.Border> 要素で構成される、ユーザー インターフェイスが作成されます。  
   
  [!code-xaml[cursors#ChangeCursorsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml#changecursorsxaml)]  
   
- 次のコードを作成、<xref:System.Windows.Controls.Primitives.Selector.SelectionChanged>で、カーソルの種類が変更されたときに呼び出されるイベント ハンドラー、<xref:System.Windows.Controls.ComboBox>します。  Switch ステートメントのセットとカーソルの名前でフィルター処理、<xref:System.Windows.FrameworkElement.Cursor%2A>プロパティを<xref:System.Windows.Controls.Border>名前は*DisplayArea*します。  
+ 次のコード ビハインドは、<xref:System.Windows.Controls.ComboBox> でカーソルの種類が変更されたときに呼び出される <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> イベントハンドラーを作成します。  switch ステートメントにより、カーソル名がフィルター処理され、*DisplayArea* という名前の <xref:System.Windows.Controls.Border> が <xref:System.Windows.FrameworkElement.Cursor%2A> プロパティに設定されます。  
   
- カーソルの変更は、"全体 Application"に設定されている場合、<xref:System.Windows.Input.Mouse.OverrideCursor%2A>プロパティに設定されて、<xref:System.Windows.FrameworkElement.Cursor%2A>のプロパティ、<xref:System.Windows.Controls.Border>コントロール。  これにより、アプリケーション全体を変更するカーソル。  
+ カーソルの変更が "アプリケーション全体" に設定されている場合、<xref:System.Windows.Input.Mouse.OverrideCursor%2A> プロパティは <xref:System.Windows.Controls.Border> コントロールの <xref:System.Windows.FrameworkElement.Cursor%2A> プロパティに設定されます。  これにより、アプリケーション全体のカーソルが強制的に変更されます。  
   
  [!code-csharp[cursors#ChangeCursorsSample](~/samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml.cs#changecursorssample)]
  [!code-vb[cursors#ChangeCursorsSample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/cursors/VisualBasic/Window1.xaml.vb#changecursorssample)]  

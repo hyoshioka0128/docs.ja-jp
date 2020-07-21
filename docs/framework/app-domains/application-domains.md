@@ -1,5 +1,6 @@
 ---
 title: アプリケーション ドメイン
+description: .NET でセキュリティ、信頼性、バージョン管理、およびアセンブリをアンロードするためのアプリケーション間に分離の境界を提供するアプリケーション ドメインについて確認します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - process boundaries for isolation
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-ms.openlocfilehash: a5c9f4248e060d231941269f39cadbc7147ce27f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: d6accd11e33c0556fdd7596b2790f4787dce7ae1
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119970"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903481"
 ---
 # <a name="application-domains"></a>アプリケーション ドメイン
 

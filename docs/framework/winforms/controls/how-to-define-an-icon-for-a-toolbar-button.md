@@ -1,5 +1,5 @@
 ---
-title: '方法: ツール バー ボタンのアイコンを定義する'
+title: '方法 : ツール バー ボタンのアイコンを定義する'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,30 +13,30 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: 84db98b4-8566-49ce-b2c8-1fd66a5eb3a0
-ms.openlocfilehash: 2b85f734a5f8b31531cfe48f87681d98304db09b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 84c67c7d2584390ba3e48cb83820c65c6bb45d1f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929628"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182205"
 ---
-# <a name="how-to-define-an-icon-for-a-toolbar-button"></a>方法: ツール バー ボタンのアイコンを定義する
+# <a name="how-to-define-an-icon-for-a-toolbar-button"></a>方法 : ツール バー ボタンのアイコンを定義する
 > [!NOTE]
 > <xref:System.Windows.Forms.ToolStrip> コントロールは、<xref:System.Windows.Forms.ToolBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ToolBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
   
- <xref:System.Windows.Forms.ToolBar>ボタンは、ユーザーが簡単に識別できるように、それらの中にアイコンを表示できます。 これは、 [ImageList コンポーネント](imagelist-component-windows-forms.md)コンポーネントにイメージを追加し、 <xref:System.Windows.Forms.ImageList>コンポーネントを<xref:System.Windows.Forms.ToolBar>コントロールに関連付けることによって実現されます。  
+ <xref:System.Windows.Forms.ToolBar>ボタンは、ユーザーが簡単に識別できるように、それらの中にアイコンを表示することができます。 これは[、ImageList コンポーネント コンポーネント](imagelist-component-windows-forms.md)にイメージを追加し、<xref:System.Windows.Forms.ImageList>コンポーネントをコントロールに関連付けることによって実現<xref:System.Windows.Forms.ToolBar>されます。  
   
-### <a name="to-set-an-icon-for-a-toolbar-button-programmatically"></a>プログラムによってツールバーボタンのアイコンを設定するには  
+### <a name="to-set-an-icon-for-a-toolbar-button-programmatically"></a>ツール バー ボタンのアイコンをプログラムで設定するには  
   
-1. プロシージャでは、 <xref:System.Windows.Forms.ImageList>コンポーネント<xref:System.Windows.Forms.ToolBar>とコントロールをインスタンス化します。  
+1. プロシージャで、コンポーネントと<xref:System.Windows.Forms.ImageList><xref:System.Windows.Forms.ToolBar>コントロールをインスタンス化します。  
   
-2. 同じ手順で、 <xref:System.Windows.Forms.ImageList>コンポーネントにイメージを割り当てます。  
+2. 同じ手順で、<xref:System.Windows.Forms.ImageList>コンポーネントにイメージを割り当てます。  
   
-3. 同じ手順で、コントロール<xref:System.Windows.Forms.ImageList> <xref:System.Windows.Forms.ToolBar>をコントロールに割り当て、個々のツールバー <xref:System.Windows.Forms.ToolBarButton.ImageIndex%2A>ボタンのプロパティを割り当てます。  
+3. 同じ手順で、<xref:System.Windows.Forms.ImageList><xref:System.Windows.Forms.ToolBar>コントロールをコントロールに割り当て、<xref:System.Windows.Forms.ToolBarButton.ImageIndex%2A>個々のツール バー ボタンのプロパティを割り当てます。  
   
-     次のコード例では、イメージの場所に設定されたパスが **[マイドキュメント**] フォルダーです。 これは、Windows オペレーティングシステムを実行しているほとんどのコンピューターにこのディレクトリが含まれると想定できるためです。 また、このようにすることで、最小限のシステム アクセス レベルしか持たないユーザーもアプリケーションを安全に実行できるようになります。 次の例では、フォームに<xref:System.Windows.Forms.PictureBox>コントロールが既に追加されていることを前提としています。  
+     次のコード例では、イメージの場所に設定されているパスは**マイ ドキュメント**フォルダーです。 これは、Windows オペレーティング システムを実行しているほとんどのコンピュータにこのディレクトリが含まれると仮定できるためです。 また、このようにすることで、最小限のシステム アクセス レベルしか持たないユーザーもアプリケーションを安全に実行できるようになります。 次の例では、コントロールが既<xref:System.Windows.Forms.PictureBox>に追加されているフォームを想定しています。  
   
-     上記の手順に従うと、次のようなコードを記述する必要があります。  
+     上記の手順に従って、以下のようなコードを記述する必要があります。  
   
     ```vb  
     Public Sub InitializeMyToolBar()  
@@ -46,7 +46,7 @@ ms.locfileid: "69929628"
     ' Assign an image to the ImageList component.  
     ' You should replace the bold image  
     ' in the sample below with an icon of your own choosing.  
-       Dim myImage As System.Drawing.Image = _   
+       Dim myImage As System.Drawing.Image = _
           Image.FromFile Image.FromFile _  
           (System.Environment.GetFolderPath _  
           (System.Environment.SpecialFolder.Personal) _  
@@ -67,10 +67,10 @@ ms.locfileid: "69929628"
     public void InitializeMyToolBar()  
     {  
        // Instantiate an ImageList component and a ToolBar control.  
-       ToolBar toolBar1 = new  ToolBar();   
+       ToolBar toolBar1 = new  ToolBar();
        ImageList imageList1 = new ImageList();  
        // Assign an image to the ImageList component.  
-       // You should replace the bold image   
+       // You should replace the bold image
        // in the sample below with an icon of your own choosing.  
        // Note the escape character used (@) when specifying the path.  
        Image myImage = Image.FromFile  
@@ -94,10 +94,10 @@ ms.locfileid: "69929628"
        void InitializeMyToolBar()  
        {  
           // Instantiate an ImageList component and a ToolBar control.  
-          ToolBar ^ toolBar1 = gcnew  ToolBar();   
+          ToolBar ^ toolBar1 = gcnew  ToolBar();
           ImageList ^ imageList1 = gcnew ImageList();  
           // Assign an image to the ImageList component.  
-          // You should replace the bold image   
+          // You should replace the bold image
           // in the sample below with an icon of your own choosing.  
           Image ^ myImage = Image::FromFile(String::Concat  
              (System::Environment::GetFolderPath  
@@ -118,6 +118,6 @@ ms.locfileid: "69929628"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Windows.Forms.ToolBar>
-- [方法: ツールバーボタンのトリガーメニューイベント](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [方法: ツール バー ボタンのメニュー イベントをトリガーする](how-to-trigger-menu-events-for-toolbar-buttons.md)
 - [ToolBar コントロール](toolbar-control-windows-forms.md)
 - [ImageList コンポーネント](imagelist-component-windows-forms.md)

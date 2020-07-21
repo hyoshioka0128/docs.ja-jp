@@ -230,45 +230,45 @@
               href: how-to-improve-rendering-performance-by-caching-an-element.md
             - name: '方法: キャッシュされた要素をブラシとして使用する'
               href: how-to-use-a-cached-element-as-a-brush.md
-    - name: 3-D グラフィックスの概要
+    - name: 3D グラフィックスの概要
       href: 3-d-graphics-overview.md
       items:
-        - name: 3-D 変換の概要
+        - name: 3D 変換の概要
           href: 3-d-transformations-overview.md
         - name: WPF の 3D パフォーマンスの最大化
           href: maximize-wpf-3d-performance.md
         - name: 方法のトピック
           href: 3-d-graphics-how-to-topics.md
           items:
-            - name: 3-D シーンを作成する
+            - name: 3D シーンを作成する
               href: how-to-create-a-3-d-scene.md
-            - name: 3-D モデルに描画を適用する
+            - name: 3D モデルに描画を適用する
               href: how-to-apply-a-drawing-to-a-3-d-model.md
-            - name: 3-D オブジェクトの前面および背面に素材を適用する
+            - name: 3D オブジェクトの前面および背面に素材を適用する
               href: how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md
-            - name: 3-D モデルに発色マテリアルを適用する
+            - name: 3D モデルに放射性素材を適用する
               href: how-to-apply-emissive-material-to-a-3-d-object.md
-            - name: 3-D モデルのスケールを変換する
+            - name: 3D モデルのスケールを変換する
               href: how-to-transform-the-scale-of-a-3-d-model.md
-            - name: 複数の変換を 3-D モデルに適用する
+            - name: 複数の変換を 3D モデルに適用する
               href: how-to-apply-multiple-transformations-to-a-3-d-model.md
-            - name: 3-D 変換をアニメーション化する
+            - name: 3D 翻訳をアニメーション化する
               href: how-to-animate-3-d-translations.md
-            - name: ストーリーボードを使用して 3-D 回転をアニメーション化する
+            - name: ストーリーボードを使用して 3D 回転をアニメーション化する
               href: how-to-animate-a-3-d-rotation-using-storyboards.md
-            - name: Rotation3DAnimation を使用して 3-D 回転をアニメーション化する
+            - name: Rotation3DAnimation を使用して 3D 回転をアニメーション化する
               href: how-to-animate-a-3-d-rotation-using-rotation3danimation.md
-            - name: 四元数を使用して 3-D 回転をアニメーション化する
+            - name: 四元数を使用して 3D 回転をアニメーション化する
               href: how-to-animate-a-3-d-rotation-using-quaternions.md
-            - name: キー フレーム (Rotation3DAnimationUsingKeyFrames) を使用して 3-D 回転をアニメーション化する
+            - name: キー フレーム (Rotation3DAnimationUsingKeyFrames) を使用して 3D 回転をアニメーション化する
               href: how-to-animate-a-3-d-rotation-using-key-frames.md
-            - name: キー フレーム (QuaternionAnimationUsingKeyFrames) を使用して 3-D 回転をアニメーション化する
+            - name: キー フレーム (QuaternionAnimationUsingKeyFrames) を使用して 3D 回転をアニメーション化する
               href: animate-a-3-d-rotation-quaternionanimationusingkeyframes.md
             - name: 3D シーンでカメラの位置および方向をアニメーション化する
               href: how-to-animate-camera-position-and-direction-in-a-3d-scene.md
             - name: キー フレームを使用してカメラの位置および方向をアニメーション化する
               href: how-to-animate-camera-position-and-direction-using-key-frames.md
-            - name: 3-D シーンで素材プロパティをアニメーション化する
+            - name: 3D シーンで素材プロパティをアニメーション化する
               href: how-to-animate-material-properties-in-a-3-d-scene.md
             - name: Viewport3D でヒット テストを実行する
               href: how-to-hit-test-in-a-viewport3d.md

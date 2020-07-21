@@ -1,5 +1,6 @@
 ---
 title: '方法: ストーリーボードを使用して MediaElement を制御する'
+description: Windows Presentation Foundation (WPF) でストーリーボードを使用してメディアの再生を制御します。 単純なメディア プレーヤーを作成する場合は、この例を検討してください。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,26 +12,25 @@ helpviewer_keywords:
 - media [WPF], controlling playback with Storyboards
 - playback of media [WPF], controlling with Storyboards
 ms.assetid: 6128ca77-b826-4e36-b968-6f237157c543
-ms.openlocfilehash: ae785e11b1da0f2c408b24021ad46ab071419378
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 5a5e41b9a28211495fd3374c1a51a655dd867bca
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032233"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853739"
 ---
 # <a name="how-to-control-a-mediaelement-by-using-a-storyboard"></a>方法: ストーリーボードを使用して MediaElement を制御する
-この例を制御する方法を示しています、<xref:System.Windows.Controls.MediaElement>を使用して、<xref:System.Windows.Media.MediaTimeline>で、 <xref:System.Windows.Media.Animation.Storyboard>。  
+この例では、<xref:System.Windows.Media.Animation.Storyboard> で <xref:System.Windows.Media.MediaTimeline> を使用し、<xref:System.Windows.Controls.MediaElement> を制御する方法を示します。  
   
 ## <a name="example"></a>例  
- 使用すると、<xref:System.Windows.Media.MediaTimeline>で、<xref:System.Windows.Media.Animation.Storyboard>のタイミングを制御する、 <xref:System.Windows.Controls.MediaElement>、機能が他の機能と同じです。<xref:System.Windows.Media.Animation.Timeline>アニメーションなどのオブジェクト。 たとえば、<xref:System.Windows.Media.MediaTimeline>を使用して<xref:System.Windows.Media.Animation.Timeline>などのプロパティ、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>を開始するタイミングを指定するプロパティを<xref:System.Windows.Controls.MediaElement>(メディアの再生を開始)。 また、使用、<xref:System.Windows.Media.Animation.Timeline.Duration%2A>プロパティを指定するどのくらいの期間、<xref:System.Windows.Controls.MediaElement>がアクティブ (メディアの再生の継続時間)。 使用しての詳細については<xref:System.Windows.Media.Animation.Timeline>オブジェクトを<xref:System.Windows.Media.Animation.Storyboard>を参照してください[ストーリー ボードの概要](storyboards-overview.md)します。  
+ <xref:System.Windows.Media.Animation.Storyboard> で <xref:System.Windows.Media.MediaTimeline> を使用して <xref:System.Windows.Controls.MediaElement> のタイミングを制御するとき、機能は、アニメーションなど、他の <xref:System.Windows.Media.Animation.Timeline> オブジェクトの機能と同じになります。 たとえば、<xref:System.Windows.Media.MediaTimeline> では、<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> プロパティなどの <xref:System.Windows.Media.Animation.Timeline> プロパティを使用し、<xref:System.Windows.Controls.MediaElement> を起動するタイミングを指定します (メディア再生開始)。 また、<xref:System.Windows.Media.Animation.Timeline.Duration%2A> プロパティを使用し、<xref:System.Windows.Controls.MediaElement> がアクティブになる時間を指定します (メディア再生時間)。 <xref:System.Windows.Media.Animation.Storyboard> で <xref:System.Windows.Media.Animation.Timeline> オブジェクトを使用する方法の詳細については、「[ストーリーボードの概要](storyboards-overview.md)」を参照してください。  
   
- この例を使用する簡単なメディア プレーヤーを作成する方法を示しています、<xref:System.Windows.Media.MediaTimeline>再生を制御します。 メディア プレーヤーには、再生、一時停止、再開、およびボタンを停止します。 また、<xref:System.Windows.Controls.Slider>進行状況バーとして機能するコントロール。  
+ この例では、<xref:System.Windows.Media.MediaTimeline> を使用して再生を制御する単純なメディア プレーヤーを作成する方法を示します。 メディア プレーヤーには、再生、一時停止、再開、停止のボタンがあります。 プレーヤーにはまた、進行状況バーとして機能する <xref:System.Windows.Controls.Slider> コントロールがあります。  
   
- 次の例では、作成、 [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] media player 用です。  
+ 次の例では、メディア プレーヤーの [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] が作成されます。  
   
  [!code-xaml[MediaGallery_snip#MediaTimelineExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml#mediatimelineexamplewholepage)]  
   
- 次の例では、進行状況バーの機能を作成します。  
+ 次の例では、進行状況バーの機能が作成されます。  
   
  [!code-csharp[MediaGallery_snip#CodeBehindMediaTimelineExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snip/CSharp/MediaTimelineExample.xaml.cs#codebehindmediatimelineexamplewholepage)]
  [!code-vb[MediaGallery_snip#CodeBehindMediaTimelineExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/MediaTimelineExample.xaml.vb#codebehindmediatimelineexamplewholepage)]  

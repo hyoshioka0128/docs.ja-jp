@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f0d7e49b-2394-4ae0-8820-1b64cae0cfe8
 topic_type:
 - apiref
-ms.openlocfilehash: da14d159b1933112e95a9a8973b2fad62f25288f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b3c5fc4731029561129609601b8e0635f6a9516c
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126851"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617036"
 ---
 # <a name="icatalogservices-interface"></a>ICatalogServices インターフェイス
 サービスのカタログ化を行うためのメソッドを提供します。  
@@ -30,9 +30,9 @@ ms.locfileid: "73126851"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[Autodone メソッド](../../../../docs/framework/unmanaged-api/hosting/icatalogservices-autodone-method.md)|内部使用専用に予約されています。|  
-|[NotAutodone メソッド](../../../../docs/framework/unmanaged-api/hosting/icatalogservices-notautodone-method.md)|内部使用専用に予約されています。|  
+|[Autodone メソッド](icatalogservices-autodone-method.md)|内部使用専用に予約されています。|  
+|[NotAutodone メソッド](icatalogservices-notautodone-method.md)|内部使用専用に予約されています。|  
   
 ## <a name="see-also"></a>関連項目
 
-- [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ホスト インターフェイス](hosting-interfaces.md)

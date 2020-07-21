@@ -6,10 +6,10 @@ author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
 ms.openlocfilehash: e3cebe979b5c279ce8cb90db5510f8758c24c2b4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73977005"
 ---
 # <a name="save-and-load-trained-models"></a>トレーニング済みモデルの保存と読み込み
@@ -67,7 +67,7 @@ mlContext.Model.Save(trainedModel, data.Schema, "model.zip");
 モデルを保存するときには、以下の 2 つが必要です。
 
 1. モデルの [`ITransformer`](xref:Microsoft.ML.ITransformer)。
-2. [`ITransformer`](xref:Microsoft.ML.ITransformer) の想定される入力の [`DataViewSchema`](xref:Microsoft.ML.DataViewSchema)。
+2. [`DataViewSchema`](xref:Microsoft.ML.DataViewSchema) の想定される入力の [`ITransformer`](xref:Microsoft.ML.ITransformer)。
 
 モデルのトレーニング後、[`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) メソッドを使用し、入力データの `DataViewSchema` を使用してトレーニング済みモデルを `model.zip` というファイルに保存します。
 

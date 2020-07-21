@@ -1,21 +1,22 @@
 ---
-title: ワークフローとワークフロー サービスの永続化を有効にする方法
+title: '方法: ワークフローとワークフロー サービスの永続化を有効にする'
+description: ワークフローとワークフローサービスの永続化をプログラムおよび構成ファイルを使用して有効にするように SQL Workflow Instance Store を構成する方法について説明します。
 ms.date: 03/30/2017
 ms.assetid: 2b1c8bf3-9866-45a4-b06d-ee562393e503
-ms.openlocfilehash: 5d0eeb8ad40f2f4f3349ab48487316014a561a1b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 31fe6e3f06989e9a42254747565342cf97e4b9f1
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460896"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421515"
 ---
-# <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>ワークフローとワークフロー サービスの永続化を有効にする方法
+# <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>方法: ワークフローとワークフロー サービスの永続化を有効にする
 
 ここでは、ワークフローとワークフロー サービスの永続化を有効にする方法について説明します。
 
 ## <a name="enable-persistence-for-workflows"></a>ワークフローの永続化を有効にする
 
-<xref:System.Activities.WorkflowApplication> クラスの <xref:System.Activities.WorkflowApplication.InstanceStore%2A> プロパティを使用して、インスタンスストアを**WorkflowApplication**に関連付けることができます。 <xref:System.Activities.WorkflowApplication.Persist%2A> メソッドは、アプリケーションに関連付けられたインスタンス ストアにワークフローを保存または永続化します。 <xref:System.Activities.WorkflowApplication.Unload%2A> メソッドは、ワークフローをインスタンス ストアに永続化し、メモリからインスタンスをアンロードします。 **Load**メソッドは、インスタンスの永続化ストアに格納されているワークフローデータを使用して、ワークフローをメモリに読み込みます。
+クラスのプロパティを使用して、インスタンスストアを**WorkflowApplication**に関連付けることができ <xref:System.Activities.WorkflowApplication.InstanceStore%2A> <xref:System.Activities.WorkflowApplication> ます。 <xref:System.Activities.WorkflowApplication.Persist%2A> メソッドは、アプリケーションに関連付けられたインスタンス ストアにワークフローを保存または永続化します。 <xref:System.Activities.WorkflowApplication.Unload%2A> メソッドは、ワークフローをインスタンス ストアに永続化し、メモリからインスタンスをアンロードします。 **Load**メソッドは、インスタンスの永続化ストアに格納されているワークフローデータを使用して、ワークフローをメモリに読み込みます。
 
 **Persist**メソッドは、次の手順を実行します。
 
@@ -37,7 +38,7 @@ ms.locfileid: "73460896"
 
 ## <a name="enable-persistence-for-workflow-services-in-code"></a>コードでのワークフロー サービスの永続化を有効にする
 
-<xref:System.ServiceModel.WorkflowServiceHost> クラスの**DurableInstancingOptions**メンバーには、インスタンスストアと**WorkflowServiceHost**を関連付けるために使用できる、 **InstanceStore**という名前のプロパティがあります。
+クラスの**DurableInstancingOptions**メンバーに <xref:System.ServiceModel.WorkflowServiceHost> は、インスタンスストアと**WorkflowServiceHost**を関連付けるために使用できる、 **InstanceStore**という名前のプロパティがあります。
 
 ```csharp
 // wsh is an instance of WorkflowServiceHost class

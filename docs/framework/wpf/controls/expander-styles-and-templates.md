@@ -11,38 +11,38 @@ helpviewer_keywords:
 ms.assetid: da2e5a1c-5230-4c21-98a5-59c7895facd7
 ms.openlocfilehash: 39f81aacb24b0b68b550da622b1e3038eb9eac9b
 ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74283521"
 ---
 # <a name="expander-styles-and-templates"></a>エクスパンダーのスタイルとテンプレート
-このトピックでは、<xref:System.Windows.Controls.Expander> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」を参照してください。  
+このトピックでは、<xref:System.Windows.Controls.Expander> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのためにテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」をご覧ください。  
   
-## <a name="expander-parts"></a>エキスパンダーパーツ  
- <xref:System.Windows.Controls.Expander> コントロールには、名前付きの部分がありません。  
+## <a name="expander-parts"></a>Expander のパーツ  
+ <xref:System.Windows.Controls.Expander> コントロールに名前付きパーツはありません。  
   
-## <a name="expander-states"></a>展開の状態  
- 次の表は、<xref:System.Windows.Controls.Expander> コントロールの表示状態を示しています。  
+## <a name="expander-states"></a>Expander の状態  
+ 次の表は、<xref:System.Windows.Controls.Expander> コントロールの表示状態の一覧を示します。  
   
 |VisualState 名|VisualStateGroup 名|説明|  
 |-|-|-|  
 |標準|CommonStates|既定の状態です。|  
 |MouseOver|CommonStates|マウス ポインターがコントロール上に配置されます。|  
-|Disabled|CommonStates|コントロールが無効になっています。|  
+|無効|CommonStates|コントロールが無効になっています。|  
 |フォーカスされている|FocusStates|コントロールにフォーカスがあります。|  
 |フォーカスされていない|FocusStates|コントロールにフォーカスがありません。|  
-|[展開済み]|すべての状態|コントロールが展開されます。|  
-|Collapsed|すべての状態|コントロールが展開されていません。|  
-|ExpandDown|Expanddirection の状態|コントロールが下方向に拡張されます。|  
-|ExpandUp|Expanddirection の状態|コントロールが拡張されます。|  
-|ExpandLeft|Expanddirection の状態|コントロールが左に展開されます。|  
-|ExpandRight|Expanddirection の状態|コントロールが右に展開されます。|  
-|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|  
+|[展開済み]|ExpansionStates|コントロールが展開されています。|  
+|Collapsed|ExpansionStates|コントロールが展開されていません。|  
+|ExpandDown|ExpandDirectionStates|コントロールが下方向に展開しています。|  
+|ExpandUp|ExpandDirectionStates|コントロールが上方向に展開しています。|  
+|ExpandLeft|ExpandDirectionStates|コントロールが左方向に展開しています。|  
+|ExpandRight|ExpandDirectionStates|コントロールが右方向に展開しています。|  
+|有効|ValidationStates|このコントロールで <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false` です。|  
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|  
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|  
   
-## <a name="expander-controltemplate-example"></a>エキスパンダー ControlTemplate の例  
+## <a name="expander-controltemplate-example"></a>Expander の ControlTemplate の例  
  次の例は、<xref:System.Windows.Controls.Expander> コントロールの <xref:System.Windows.Controls.ControlTemplate> を定義する方法を示しています。  
   
  [!code-xaml[ControlTemplateExamples#Expander](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/expander.xaml#expander)]  
@@ -60,4 +60,4 @@ ms.locfileid: "74283521"
 - [コントロールのスタイルとテンプレート](control-styles-and-templates.md)
 - [コントロールのカスタマイズ](control-customization.md)
 - [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)
+- [コントロールのためのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)

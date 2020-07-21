@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ffbb3caf-20da-4a4b-8983-77376e72b990
 topic_type:
 - apiref
-ms.openlocfilehash: a76a7a2d4ad68e367e38e175377aff40ce399346
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b32e8f0b03ef6d550c384f3d932cc295a7270028
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450201"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007664"
 ---
 # <a name="cormethodimpl-enumeration"></a>CorMethodImpl 列挙型
 メソッド実装の機能を記述する値が格納されます。  
@@ -71,15 +71,15 @@ typedef enum CorMethodImpl {
 |`miNoInlining`|メソッドがインライン化できないことを指定します。|  
 |`miAggressiveInlining`|可能な場合は、メソッドをインライン展開することを指定します。|  
 |`miNoOptimization`|メソッドを最適化しないことを指定します。|  
-|`miMaxMethodImplVal`|`CorMethodImpl`の有効な最大値。|  
+|`miMaxMethodImplVal`|の最大有効値 `CorMethodImpl` 。|  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

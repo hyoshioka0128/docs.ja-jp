@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6ddb0631-4569-41b3-93e4-50fdfaa486dc
 topic_type:
 - apiref
-ms.openlocfilehash: d5f42e5ed3ce7829cfcf921f3002c238985710a9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 60fbccabd21fb8bee118689a524efa9031bb2124
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426748"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614995"
 ---
 # <a name="isymunmanagedreadergetmethodbyversion-method"></a>ISymUnmanagedReader::GetMethodByVersion メソッド
 メソッドトークンと編集およびコピーバージョン番号を指定して、シンボルリーダーメソッドを取得します。 バージョン番号は1から始まり、編集とコピー操作の結果としてメソッドが変更されるたびに増分されます。  
@@ -50,6 +50,6 @@ HRESULT GetMethodByVersion (
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedReader インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [ISymUnmanagedReader インターフェイス](isymunmanagedreader-interface.md)

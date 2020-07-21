@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC42319
 ms.assetid: 62eeeba3-6811-48be-b1ef-c2e4feda3177
-ms.openlocfilehash: 54965f3796b6c5ef0e387cd354abcb5740476257
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.openlocfilehash: c498675ab6ae616fb63d3d76ef60bcac7e247145
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321171"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406509"
 ---
 # <a name="xml-comment-exception-must-have-a-cref-attribute"></a>XML コメントの例外には 'cref' 属性を指定しなければなりません
 
-@No__t 0exception > タグは、メソッドによってスローされる可能性のある例外を文書化する方法を提供します。 必須の `cref` 属性は、ドキュメントジェネレーターによってチェックされるメンバーの名前を指定します。 メンバーが存在する場合は、ドキュメントファイル内の正規要素名に変換されます。
+\<exception> タグは、メソッドによってスローされる可能性のある例外を文書化する方法を提供します。 必須の `cref` 属性は、ドキュメント生成機能によってチェックされるメンバーの名前を指定します。 メンバーが存在する場合、そのメンバーはドキュメント ファイル内の正規要素名に変換されます。
 
 **エラー ID:** BC42319
 
@@ -30,6 +30,6 @@ ms.locfileid: "72321171"
 
 ## <a name="see-also"></a>関連項目
 
-- [\<exception>](../../../visual-basic/language-reference/xmldoc/exception.md)
-- [方法: XML ドキュメントを作成する](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
-- [XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/index.md)
+- [\<exception>](../xmldoc/exception.md)
+- [方法: XML ドキュメントを作成する](../../programming-guide/program-structure/how-to-create-xml-documentation.md)
+- [XML のコメント用タグ](../xmldoc/index.md)

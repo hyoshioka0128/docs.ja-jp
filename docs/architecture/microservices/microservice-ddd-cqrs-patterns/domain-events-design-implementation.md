@@ -2,12 +2,12 @@
 title: 'ドメイン イベント: 設計と実装'
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 集約間の通信を確立するための重要な概念であるドメイン イベントの詳細を表示する。
 ms.date: 10/08/2018
-ms.openlocfilehash: 3bba18d4a77b47abee55c16bae8a64ed27ac9aba
-ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
+ms.openlocfilehash: 630bd0a0b060431e565df98faa77f452e2045fa2
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884229"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144306"
 ---
 # <a name="domain-events-design-and-implementation"></a>ドメイン イベント: 設計と実装
 
@@ -71,7 +71,7 @@ ms.locfileid: "74884229"
 2. コマンド ハンドラーでコマンドを受信します。
    - 1 つの集約のトランザクションを実行します。
    - (省略可能) 副作用のドメイン イベントを発生させます (例: OrderStartedDomainEvent)。
-3. 複数の集約またはアプリケーション アクションにおいて開放された数の副作用を実行する (現在のプロセス内の) ドメイン ベントを処理します。 例:
+3. 複数の集約またはアプリケーション アクションにおいて開放された数の副作用を実行する (現在のプロセス内の) ドメイン ベントを処理します。 次に例を示します。
    - 購入者および支払方法を確認または作成します。
    - 関連する統合イベントを作成してイベント バスに送信し、複数のマイクロサービスに状態を伝達するか、購入者へのメール送信のような外部アクションをトリガーします。
    - 他の副作用を処理します。
@@ -136,7 +136,7 @@ Udi Dahan がもともと提案しているのは (たとえば、「[Domain Eve
 
 #### <a name="the-deferred-approach-to-raise-and-dispatch-events"></a>イベントを生成し、ディスパッチする遅延アプローチ
 
-ドメイン イベント ハンドラーにすぐにディスパッチするよりよい方法は、ドメイン イベントをコレクションに追加した後、トランザクションを (EF の SaveChanges で) コミットする "*直前*" または "*直* *後*" に、それらのドメイン イベントをディスパッチすることです (このアプローチについては、Jimmy Bogard の「[A better domain events pattern](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)」(よりよいドメイン イベント パターン) を参照)。
+ドメイン イベント ハンドラーにすぐにディスパッチするよりよい方法は、ドメイン イベントをコレクションに追加した後、トランザクションを (EF の SaveChanges で) コミットする "*直前*" または "*直* *後*" に、それらのドメイン イベントをディスパッチすることです。 (このアプローチについては、Jimmy Bogard の「[A better domain events pattern](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)」(よりよいドメイン イベント パターン) を参照)。
 
 ドメイン イベントの送信をトランザクションのコミットの直前または直後のどちらにするかは、副作用を同じトランザクションまたは別のトランザクションのどちらに含めればよいかに影響するので、重要な決定です。 後者の場合は、複数の集約の間の最終的な整合性に対処する必要があります。 これについては、次のセクションで説明します。
 
@@ -365,13 +365,13 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
   <https://www.tonytruong.net/domain-events-pattern-example/>
 
 - **Udi Dahan。完全にカプセル化されたドメイン モデルを作成する方法** \
-  <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
+  <https://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 - **Udi Dahan。ドメイン イベント – テイク 2** \
-  <http://udidahan.com/2008/08/25/domain-events-take-2/>
+  <https://udidahan.com/2008/08/25/domain-events-take-2/>
 
 - **Udi Dahan。ドメイン イベント – 救済** \
-  <http://udidahan.com/2009/06/14/domain-events-salvation/>
+  <https://udidahan.com/2009/06/14/domain-events-salvation/>
 
 - **Jan Kronquist。ドメイン イベントを発行しないで返す** \
   <https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/>

@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル: カスタム データ フロー ブロックの型の作成'
+title: 'チュートリアル: カスタム データフロー ブロックの型の作成'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,18 +10,18 @@ helpviewer_keywords:
 - TPL dataflow library, creating custom dataflow blocks
 - dataflow blocks, creating custom in TPL
 ms.assetid: a6147146-0a6a-4d9b-ab0f-237b3c1ac691
-ms.openlocfilehash: cb953952bbed90edd2db799e92d44ec9f062babf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 37857e465bf4089dbeecc4cfd532d0702f795495
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139884"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284703"
 ---
-# <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>チュートリアル: カスタム データ フロー ブロックの型の作成
+# <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>チュートリアル: カスタム データフロー ブロックの型の作成
 TPL データ フロー ライブラリには、さまざまな機能が有効になるいくつかのデータフロー ブロックの種類が用意されていますが、カスタム ブロックの種類を作成することもできます。 このドキュメントでは、カスタム動作を実装するデータフロー ブロックの種類を作成する方法について説明します。  
   
-## <a name="prerequisites"></a>必須コンポーネント  
- [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)に関するページを読んでからこのドキュメントをお読みください。  
+## <a name="prerequisites"></a>前提条件  
+ [データフロー](dataflow-task-parallel-library.md)に関するページを読んでからこのドキュメントをお読みください。  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
   
@@ -50,6 +50,6 @@ TPL データ フロー ライブラリには、さまざまな機能が有効�
  [!code-csharp[TPLDataflow_SlidingWindowBlock#100](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_slidingwindowblock/cs/slidingwindowblock.cs#100)]
  [!code-vb[TPLDataflow_SlidingWindowBlock#100](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_slidingwindowblock/vb/slidingwindowblock.vb#100)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [データフロー](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [データフロー](dataflow-task-parallel-library.md)

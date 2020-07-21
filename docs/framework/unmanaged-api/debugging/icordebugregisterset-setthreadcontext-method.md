@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: 73afa930-32cb-4c40-81f8-83e8e6fbe213
 topic_type:
 - apiref
-ms.openlocfilehash: 8731b57206f7987efc2498a5abe62295cd1cfae5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 63ddce2f299133fcfe0da17897eaf0c6a9509a55
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131323"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378239"
 ---
 # <a name="icordebugregistersetsetthreadcontext-method"></a>ICorDebugRegisterSet::SetThreadContext メソッド
-`SetThreadContext` は .NET Framework バージョン2.0 では実装されていません。 このメソッドを呼び出さないでください。  
+`SetThreadContext`は .NET Framework バージョン2.0 では実装されていません。 このメソッドは呼び出さないでください。  
   
 > [!NOTE]
-> スレッドのコンテキストを設定するには、高レベルの操作の[テキストフレーム:: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md)を使用します。  
+> スレッドのコンテキストを設定するには、高レベルの操作の[テキストフレーム:: SetIP](icordebugnativeframe-setip-method.md)を使用します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -38,8 +38,8 @@ HRESULT SetThreadContext (
 );  
 ```  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
@@ -49,5 +49,5 @@ HRESULT SetThreadContext (
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugRegisterSet インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
-- [ICorDebugRegisterSet2 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet インターフェイス](icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2 インターフェイス](icordebugregisterset2-interface.md)

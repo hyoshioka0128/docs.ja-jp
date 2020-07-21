@@ -9,26 +9,26 @@ helpviewer_keywords:
 - container tags, <assemblyIdentity> element
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
-ms.openlocfilehash: 7cce12f6fb4b957d740cd590bd84851fa16a117d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: b026dafbde796bbd8726de56b532ed6710ba2290
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252794"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79154310"
 ---
 # <a name="assemblyidentity-element-for-runtime"></a>\<runtime> の \<assemblyIdentity> 要素
 アセンブリに関する識別情報を格納します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<ランタイム >** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<dependentAssembly >** ](dependentassembly-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<assemblyIdentity >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<assemblyBinding>**](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<dependentAssembly>**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<assemblyIdentity>**  
   
 ## <a name="syntax"></a>構文  
   
 ```xml  
-   <assemblyIdentity    
+   <assemblyIdentity
 name="assembly name"  
 publicKeyToken="public key token"  
 culture="assembly culture"/>  
@@ -44,15 +44,15 @@ culture="assembly culture"/>
 |`name`|必須の属性です。<br /><br /> アセンブリの名前|  
 |`culture`|省略可能な属性です。<br /><br /> アセンブリの言語と国/地域を指定する文字列。|  
 |`publicKeyToken`|省略可能な属性です。<br /><br /> アセンブリの厳密な名前を指定する16進値。|  
-|`processorArchitecture`|省略可能な属性です。<br /><br /> プロセッサ固有のコードを含むアセンブリのプロセッサアーキテクチャを指定する、"x86"、"amd64"、"msil"、または "ia64" のいずれかの値。 値の大文字と小文字は区別されません。 属性に他の値が割り当てられている`<assemblyIdentity>`場合は、要素全体が無視されます。 以下を参照してください。<xref:System.Reflection.ProcessorArchitecture>|  
+|`processorArchitecture`|省略可能な属性です。<br /><br /> プロセッサ固有のコードを含むアセンブリのプロセッサアーキテクチャを指定する、"x86"、"amd64"、"msil"、または "ia64" のいずれかの値。 値の大文字と小文字は区別されません。 属性に他の値が割り当てられている場合は、 `<assemblyIdentity>` 要素全体が無視されます。 以下を参照してください。<xref:System.Reflection.ProcessorArchitecture>|  
   
 ## <a name="processorarchitecture-attribute"></a>processorArchitecture 属性  
   
-|値|説明|  
+|値|Description|  
 |-----------|-----------------|  
 |`amd64`|AMD x86-64 アーキテクチャのみ。|  
 |`ia64`|Intel Itanium アーキテクチャのみ。|  
-|`msil`|プロセッサとワードあたりのビット数に関して中立的です。|  
+|`msil`|プロセッサおよびワードあたりのビット数に関して中立|  
 |`x86`|64ビットプラットフォーム上のネイティブまたは Windows on Windows (WOW) 環境の32ビット x86 プロセッサ。|  
   
 ### <a name="child-elements"></a>子要素  
@@ -60,19 +60,19 @@ culture="assembly culture"/>
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`assemblyBinding`|アセンブリ バージョンのリダイレクトおよびアセンブリの位置に関する情報が含まれます。|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
-|`dependentAssembly`|各アセンブリのバインディング ポリシーとアセンブリの場所をカプセル化します。 アセンブリごと`<dependentAssembly>`に1つの要素を使用します。|  
+|`dependentAssembly`|各アセンブリのバインディング ポリシーとアセンブリの場所をカプセル化します。 `<dependentAssembly>`アセンブリごとに1つの要素を使用します。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
- **すべて\<の dependentAssembly >** 要素には、1つ **\<の assemblyIdentity >** 子要素が必要です。  
+## <a name="remarks"></a>解説  
+ すべて **\<dependentAssembly>** の要素には1つ **\<assemblyIdentity>** の子要素が必要です。  
   
- 属性が存在する場合、要素`<assemblyIdentity>`は、対応するプロセッサアーキテクチャを持つアセンブリにのみ適用されます。 `processorArchitecture` 属性が存在しない場合、要素`<assemblyIdentity>`は、任意のプロセッサアーキテクチャを持つアセンブリに適用できます。 `processorArchitecture`  
+ `processorArchitecture`属性が存在する場合、要素は、 `<assemblyIdentity>` 対応するプロセッサアーキテクチャを持つアセンブリにのみ適用されます。 `processorArchitecture`属性が存在しない場合、要素は、 `<assemblyIdentity>` 任意のプロセッサアーキテクチャを持つアセンブリに適用できます。  
   
- 次の例では、2つの異なる2つのプロセッサアーキテクチャを対象とする同じ名前の2つのアセンブリの構成ファイルを示しています。これらのバージョンは、同期中に保持されていません。X86 プラットフォームでアプリケーションを実行すると、最初`<assemblyIdentity>`の要素が適用され、もう一方の要素は無視されます。 アプリケーションが x86 または ia64 以外のプラットフォームで実行されている場合は、両方とも無視されます。  
+ 次の例では、2つの異なる2つのプロセッサアーキテクチャを対象とする同じ名前の2つのアセンブリの構成ファイルを示しています。これらのバージョンは、同期中に保持されていません。X86 プラットフォームでアプリケーションを実行すると、最初の `<assemblyIdentity>` 要素が適用され、もう一方の要素は無視されます。 アプリケーションが x86 または ia64 以外のプラットフォームで実行されている場合は、両方とも無視されます。  
   
 ```xml  
 <configuration>  
@@ -83,15 +83,15 @@ culture="assembly culture"/>
                   publicKeyToken="14a739be0244c389"  
                   culture="neutral"  
                   processorArchitecture="x86" />  
-            <bindingRedirect oldVersion= "1.0.0.0"   
+            <bindingRedirect oldVersion= "1.0.0.0"
                   newVersion="1.1.0.0" />  
          </dependentAssembly>  
          <dependentAssembly>  
             <assemblyIdentity name="MyAssembly"  
                   publicKeyToken="14a739be0244c389"  
-                  culture="neutral"   
+                  culture="neutral"
                   processorArchitecture="ia64" />  
-            <bindingRedirect oldVersion="1.0.0.0"   
+            <bindingRedirect oldVersion="1.0.0.0"
                   newVersion="2.0.0.0" />  
          </dependentAssembly>  
       </assemblyBinding>  
@@ -99,7 +99,7 @@ culture="assembly culture"/>
 </configuration>  
 ```  
   
- 属性のない`processorArchitecture`要素が構成`<assemblyIdentity>`ファイルに含まれており、プラットフォームに一致する要素が含まれていない場合、 `processorArchitecture`属性のない要素が使用されます。  
+ 属性のない要素が構成ファイルに含まれて `<assemblyIdentity>` `processorArchitecture` おり、プラットフォームに一致する要素が含まれていない場合、属性のない要素 `processorArchitecture` が使用されます。  
   
 ## <a name="example"></a>例  
  次の例は、アセンブリに関する情報を提供する方法を示しています。  

@@ -2,12 +2,12 @@
 title: エンコードは Nothing に設定できません
 ms.date: 07/20/2015
 ms.assetid: 59f7c731-8291-4a85-bf51-c225e48cdc84
-ms.openlocfilehash: 492db7755e8b2b75ea8c60d7f4e1ccc1a5ded865
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 41565d1aa3b69f6ad92d4bbf2b2f2170014aef87
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598361"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84394480"
 ---
 # <a name="encoding-cannot-be-set-to-nothing"></a>エンコードは Nothing に設定できません
 パラメーター `encoding` が `Nothing` に設定されていますが、正しい値が必要なため、ファイルへの読み取りまたは書き込みに失敗しました。  
@@ -20,8 +20,8 @@ ms.locfileid: "64598361"
   
 ## <a name="see-also"></a>関連項目
 
-- [ファイル エンコーディング](../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)
-- [ファイルの読み取り](../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [ファイルへの書き込み](../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
-- [My.Computer.FileSystem.ReadAllText](xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A)
-- [My.Computer.FileSystem.WriteAllText](xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A)
+- [ファイル エンコーディング](../developing-apps/programming/drives-directories-files/file-encodings.md)
+- [ファイルの読み取り](../developing-apps/programming/drives-directories-files/reading-from-files.md)
+- [ファイルへの書き込み](../developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [My. System.io.file.readalltext](xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A)
+- [My. Microsoft.visualbasic.fileio.filesystem.writealltext](xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A)

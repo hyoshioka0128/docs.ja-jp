@@ -9,17 +9,17 @@ helpviewer_keywords:
 ms.assetid: 1756cabf-59b4-47a7-883d-1bdf2e5abe00
 ms.openlocfilehash: d5839a75434f71ff6dd91b86474aeab2e8b0ad64
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62052665"
 ---
 # <a name="bulletdecorator"></a>BulletDecorator
-<xref:System.Windows.Controls.Primitives.BulletDecorator> 2 つのコンテンツ プロパティがあります:<xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A>と<xref:System.Windows.Controls.Decorator.Child%2A>します。 <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A>プロパティを定義、<xref:System.Windows.UIElement>行頭文字として使用します。 <xref:System.Windows.Controls.Decorator.Child%2A>プロパティを定義、<xref:System.Windows.UIElement>行頭文字にする視覚的に揃えて配置します。  
+<xref:System.Windows.Controls.Primitives.BulletDecorator> には、<xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> と <xref:System.Windows.Controls.Decorator.Child%2A> という 2 つのコンテンツ プロパティがあります。 <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> プロパティにより、箇条書きリストとして使用する <xref:System.Windows.UIElement> が定義されます。 <xref:System.Windows.Controls.Decorator.Child%2A> プロパティにより、箇条書きリストに揃えて表示される <xref:System.Windows.UIElement> が定義されます。  
   
- 次の図は、使用するコントロールの例として、<xref:System.Windows.Controls.Primitives.BulletDecorator>します。  
+ 次の図は、<xref:System.Windows.Controls.Primitives.BulletDecorator> を使用するコントロールの例を示しています。  
   
- ![チェック ボックス、RadioButton、TextBox の行頭文字デコレーターの例です。](./media/bulletdecorator/three-bullet-decorators.png)  
+ ![箇条書きデコレーター Checkbox、RadioButton、TextBox の例。](./media/bulletdecorator/three-bullet-decorators.png)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.BulletDecorator>

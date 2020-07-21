@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a71563c0-62f2-4eb4-970c-825d61827613
 topic_type:
 - apiref
-ms.openlocfilehash: 4d2de38e5e506873a6db262dcec19c7af9d8a0d0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 093c5e3e64395c8946acd9201990d132e8111fc7
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446093"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610588"
 ---
 # <a name="isymunmanagedvariablegetaddresskind-method"></a>ISymUnmanagedVariable::GetAddressKind メソッド
 この変数のアドレスの種類を取得します。  
@@ -34,7 +34,7 @@ HRESULT GetAddressKind(
   
 ## <a name="parameters"></a>パラメーター  
  `pRetVal`  
- 入出力値を受け取る `ULONG32` へのポインター。 使用可能な値は、 [Corsymaddrkind](../../../../docs/framework/unmanaged-api/diagnostics/corsymaddrkind-enumeration.md)列挙体で定義されています。  
+ 入出力値を受け取るへのポインター `ULONG32` 。 使用可能な値は、 [Corsymaddrkind](corsymaddrkind-enumeration.md)列挙体で定義されています。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK。それ以外の場合は、E_FAIL またはその他のエラーコードを指定します。  
@@ -42,6 +42,6 @@ HRESULT GetAddressKind(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedVariable インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
+- [ISymUnmanagedVariable インターフェイス](isymunmanagedvariable-interface.md)

@@ -6,10 +6,10 @@ author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
 ms.openlocfilehash: 735782a4a0877a917b6e1885f009aa49d834170f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73976964"
 ---
 # <a name="re-train-a-model"></a>モデルを再トレーニングする
@@ -121,7 +121,7 @@ for(int i=0;i < weightDiffs.Count();i++)
 
 以下の表は、出力がどのようになるかを示しています。
 
-|元 | 再トレーニング済み | 相違点 |
+|変更元 | 再トレーニング済み | 相違点 |
 |---|---|---|
 | 33039.86 | 56293.76 | -23253.9 |
 | 29099.14 | 49586.03 | -20486.89 |

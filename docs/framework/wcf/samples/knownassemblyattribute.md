@@ -2,12 +2,12 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: 6e3708fb386760ae067de0e86e4315114c85113c
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 3aacc7c73167771a632bb31164f2c551d60ce8f0
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714903"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345245"
 ---
 # <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
 このサンプルでは、<xref:System.Runtime.Serialization.DataContractResolver> クラスを使用して、シリアル化プロセスおよび逆シリアル化プロセスをカスタマイズする方法を示します。 このサンプルで示すのは、シリアル化および逆シリアル化時に既知の型を動的に追加する方法です。  
@@ -245,7 +245,7 @@ public class MyDataContractResolver : DataContractResolver
        }  
   
        // Used at deserialization  
-        // Allows users to map xsi:type name to any Type   
+        // Allows users to map xsi:type name to any Type
         public override Type ResolveName(string typeName, string typeNamespace, DataContractResolver knownTypeResolver)  
        {  
            XmlDictionaryString tName;  
@@ -277,7 +277,7 @@ public class MyDataContractResolver : DataContractResolver
   
  このサンプルで使用する型のライブラリを次の例に示します。  
   
-```csharp 
+```csharp
  [DataContract]  
  public class ComplexNumber  
  {  
@@ -346,27 +346,27 @@ Lists combined:
   
 #### <a name="to-set-up-run-and-build-the-sample"></a>サンプルを設定、実行、およびビルドするには  
   
-1. ソリューションの**Knownassemblyattribute**を右クリックし、 **[プロパティ]** を選択します。  
+1. ソリューションの **[既知のアセンブリ属性**] を右クリックし、[**プロパティ]** を選択します。  
   
-2. **[共通プロパティ]** で、 **[スタートアッププロジェクト]** を選択し、 **[マルチスタートアッププロジェクト]** をクリックします。  
+2. [**共通のプロパティ]** で [**スタートアップ プロジェクト**] をクリックし、[**複数のスタートアップ プロジェクト**] をクリックします。  
   
-3. **サービス**プロジェクトと**クライアント**プロジェクトに**開始**アクションを追加します。  
+3. **サービス**プロジェクトおよび**クライアント**プロジェクトに**開始**アクションを追加します。  
   
-4. **[OK]** をクリックし、 **F5**キーを押してサンプルを実行します。  
+4. **[OK]** をクリックし **、F5**キーを押してサンプルを実行します。  
   
 5. アプリケーションが正しく動作しない場合は、次の手順に従って環境設定が適切であることを確認してください。  
   
-6. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](https://go.microsoft.com/fwlink/?LinkId=150774)を実行したことを確認します。  
+6. [Windows コミュニケーションファウンデーション サンプルのワンタイム セットアップ手順を](https://docs.microsoft.com/dotnet/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples)実行したことを確認します。  
   
-7. ソリューションをビルドするには、「 [Windows Communication Foundation サンプルのビルド](https://go.microsoft.com/fwlink/?LinkId=150775)」の手順に従います。  
+7. ソリューションをビルドするには[、「Windows コミュニケーション ファウンデーションの構築サンプル」の指示に](https://docs.microsoft.com/dotnet/framework/wcf/samples/building-the-samples)従います。  
   
-8. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](https://go.microsoft.com/fwlink/?LinkId=150776)」の手順に従います。  
+8. 単一または複数のコンピューターにまたがる構成でサンプルを実行するには[、「Windows コミュニケーション ファウンデーション サンプルの実行」の手順に](https://docs.microsoft.com/dotnet/framework/wcf/samples/running-the-samples)従います。  
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は[、.NET Framework 4 の Windows コミュニケーション ファウンデーション (WCF) および Windows ワークフローファウンデーション (WF) サンプル](https://www.microsoft.com/download/details.aspx?id=21459)に移動して、すべての Windows 通信基盤 (WCF) とサンプルを[!INCLUDE[wf1](../../../../includes/wf1-md.md)]ダウンロードします。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  

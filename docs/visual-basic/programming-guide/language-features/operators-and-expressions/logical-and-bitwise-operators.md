@@ -21,41 +21,41 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 - logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
-ms.openlocfilehash: 55a246c0d56501a409ebbc7d0d0aa39ae9fa1770
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 19d3511363f19319c2bd8ce872b62c1462b1370f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343595"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403409"
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Visual Basic の論理演算子とビット処理演算子
-論理演算子は `Boolean` 式を比較し、`Boolean` の結果を返します。 `And`、`Or`、`AndAlso`、`OrElse`、および `Xor` の各演算子は2つのオペランドを受け取りますが、`Not` 演算子は*単項*演算であるため、*二項*演算子です。 これらの演算子の一部では、整数値に対してビットごとの論理演算を実行することもできます。  
+論理演算子を使用すると、`Boolean` 式を比較し、`Boolean` の結果を返すことができます。 `And`、`Or`、`AndAlso`、`OrElse`、および `Xor` の各演算子は、2 つのオペランドを受け取るため、"*二項*" です。`Not` 演算子は、1 つのオペランドを受け取るため、"*単項*" です。 これらの演算子の一部を使用して、整数値に対してビットごとの論理演算を実行することもできます。  
   
 ## <a name="unary-logical-operator"></a>単項論理演算子  
- [Not 演算子](../../../../visual-basic/language-reference/operators/not-operator.md)は、`Boolean` 式の論理*否定*を実行します。 これにより、オペランドの論理逆が生成されます。 式が `True`に評価された場合、`Not` は `False`を返します。式が `False`に評価された場合、`Not` は `True`を返します。 次に例を示します。  
+ [Not 演算子](../../../language-reference/operators/not-operator.md)を使用すると、`Boolean` 式に対して論理的な "*否定*" を実行できます。 これにより、そのオペランドの反対の論理値が生成されます。 式が `True` に評価される場合、`Not` からは `False` が返されます。式が `False` に評価される場合、`Not` からは `True` が返されます。 次の例を使って説明します。  
   
  [!code-vb[VbVbalrOperators#77](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#77)]  
   
 ## <a name="binary-logical-operators"></a>二項論理演算子  
- [And 演算子](../../../../visual-basic/language-reference/operators/and-operator.md)は、2つの `Boolean` 式の論理*積*を実行します。 両方の式が `True`に評価される場合、`And` は `True`を返します。 少なくとも1つの式が `False`に評価された場合、`And` は `False`を返します。  
+ [And 演算子](../../../language-reference/operators/and-operator.md)を使用すると、2 つの `Boolean` 式に対して "*論理積*" を実行できます。 両方の式が `True` に評価される場合、`And` からは `True` が返されます。 式の少なくとも 1 つが `False` に評価される場合、`And` からは `False` が返されます。  
   
- [Or 演算子](../../../../visual-basic/language-reference/operators/or-operator.md)は、2つの `Boolean` 式に論理*和* *を実行*します。 いずれかの式が `True`に評価されるか、両方とも `True`に評価される場合、`Or` は `True`を返します。 どちらの式も `True`に評価されない場合、`Or` は `False`を返します。  
+ [Or 演算子](../../../language-reference/operators/or-operator.md)を使用すると、2 つの `Boolean` 式に対して "*論理和*" または "*論理包含*" を実行できます。 いずれかの式が `True` に評価されるか、または両方が `True` に評価される場合、`Or` からは `True` が返されます。 どちらの式も `True` に評価されない場合、`Or` からは `False` が返されます。  
   
- [Xor 演算子](../../../../visual-basic/language-reference/operators/xor-operator.md)は、2つの `Boolean` 式に対して論理的な*除外*を実行します。 1つの式だけが `True`に評価され、両方ではない場合、`Xor` は `True`を返します。 両方の式が `True` に評価されるか、両方とも `False`に評価される場合、`Xor` は `False`を返します。  
+ [Xor 演算子](../../../language-reference/operators/xor-operator.md)を使用すると、2 つの `Boolean` 式に対して "*排他的論理和*" を実行できます。 両方ではなく 1 つの式のみが `True` に評価される場合、`Xor` からは `True` が返されます。 両方の式が `True` に評価されるか、両方が `False` に評価される場合、`Xor` からは `False` が返されます。  
   
- 次の例は、`And`、`Or`、および `Xor` 演算子を示しています。  
+ 次の例は、`And`、`Or`、および `Xor` の各演算子を示しています。  
   
  [!code-vb[VbVbalrOperators#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#78)]  
   
-## <a name="short-circuiting-logical-operations"></a>ショートサーキット論理操作  
- [AndAlso 演算子](../../../../visual-basic/language-reference/operators/andalso-operator.md)は、2つの `Boolean` 式に対して論理積も実行するという点で、`And` 演算子と非常によく似ています。 2つの間の主な違いは、`AndAlso` が*ショートサーキット*動作を示す点です。 `AndAlso` 式の最初の式が `False`に評価される場合、最終的な結果を変更することはできず、`AndAlso` は `False`を返すため、2番目の式は評価されません。  
+## <a name="short-circuiting-logical-operations"></a>短絡論理演算  
+ [AndAlso 演算子](../../../language-reference/operators/andalso-operator.md)を使用すると、2 つの `Boolean` 式に対して論理積も実行されるという点で、`And` 演算子とよく似ています。 この 2 つの主な違いは、`AndAlso` が "*短絡*" 動作を示すことです。 `AndAlso` 式の 1 つ目の式が `False` に評価される場合、最終結果を変更できないため、2 つ目の式は評価されず、`AndAlso` からは `False` が返されます。  
   
- 同様に、 [OrElse 演算子](../../../../visual-basic/language-reference/operators/orelse-operator.md)は、2つの `Boolean` 式のショートサーキット論理和を実行します。 `OrElse` 式の最初の式が `True`に評価される場合、最終的な結果を変更することはできず、`OrElse` は `True`を返すため、2番目の式は評価されません。  
+ 同様に、[OrElse 演算子](../../../language-reference/operators/orelse-operator.md)を使用すると、2 つの `Boolean` 式に対して短絡論理和を実行できます。 `OrElse` 式の 1 つ目の式が `True` に評価される場合、最終結果を変更できないため、2 つ目の式は評価されず、`OrElse` からは `True` が返されます。  
   
-### <a name="short-circuiting-trade-offs"></a>ショートサーキットトレードオフ  
- ショートサーキットを使用すると、論理演算の結果を変更できない式を評価しないことで、パフォーマンスを向上させることができます。 ただし、その式が追加のアクションを実行する場合、ショートサーキットはこれらのアクションをスキップします。 たとえば、式に `Function` プロシージャへの呼び出しが含まれている場合、式がサーキットの場合、そのプロシージャは呼び出されず、`Function` に含まれる追加のコードは実行されません。 このため、関数は、ときどき実行される場合があり、正しくテストされない可能性があります。 または、プログラムロジックが `Function`のコードに依存している場合もあります。  
+### <a name="short-circuiting-trade-offs"></a>短絡のトレードオフ  
+ 短絡を使用すると、論理演算の結果を変更できない式が評価されないため、パフォーマンスを向上させることができます。 ただし、その式で追加のアクションが実行される場合、短絡によってそれらのアクションはスキップされます。 たとえば、式に `Function` プロシージャへの呼び出しが含まれている場合、式が短絡されると、そのプロシージャは呼び出されず、`Function` に含まれる追加のコードは実行されません。 そのため、この関数はたまにしか実行されず、正しくテストされない可能性があります。 また、プログラム ロジックは `Function` のコードに依存する場合があります。  
   
- 次の例は、`And`、`Or`、および対応するショートサーキットの違いを示しています。  
+ 次の例は、`And`、`Or`、およびそれらに対応する短絡演算の違いを示しています。  
   
  [!code-vb[VbVbalrOperators#81](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#81)]  
   
@@ -63,43 +63,43 @@ ms.locfileid: "74343595"
   
  [!code-vb[VbVbalrOperators#79](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#79)]  
   
- 前の例では、`checkIfValid()` 内のいくつかの重要なコードは、サーキットの呼び出しでは実行されないことに注意してください。 最初の `If` ステートメントは、`And` がショートサーキットではないため、`12 > 45` が `False`を返す場合でも `checkIfValid()` を呼び出します。 2番目の `If` ステートメントでは `checkIfValid()`が呼び出されません。これは、`12 > 45` が `False`を返し `AndAlso`、2番目の式をショートサーキットするためです。 3番目の `If` ステートメントは、`Or` がショートサーキットではないため、`12 < 45` が `True`を返す場合でも `checkIfValid()` を呼び出します。 4番目の `If` ステートメントでは `checkIfValid()`が呼び出されません。これは、`12 < 45` が `True`を返し `OrElse`、2番目の式をショートサーキットするためです。  
+ 前の例では、呼び出しが短絡されると、`checkIfValid()` 内の一部の重要なコードが実行されないことに注意してください。 `12 > 45` から `False` が返される場合でも、1 つ目の `If` ステートメントでは `checkIfValid()` が呼び出されます。これは、`And` では短絡が実行されないためです。 2 つ目の `If` ステートメントでは `checkIfValid()` が呼び出されません。これは、`12 > 45` から `False` が返されると、`AndAlso` によって 2 つ目の式が短絡されるためです。 `12 < 45` から `True` が返される場合でも、3 つ目の `If` ステートメントでは `checkIfValid()` が呼び出されます。これは、`Or` では短絡が実行されないためです。 4 つ目の `If` ステートメントでは `checkIfValid()` が呼び出されません。これは、`12 < 45` から `True` が返されると、`OrElse` によって 2 つ目の式が短絡されるためです。  
   
 ## <a name="bitwise-operations"></a>ビットごとの演算  
- ビットごとの演算では、2つの整数値が binary (base 2) 形式で評価されます。 これらは、対応する位置のビットを比較し、比較に基づいて値を割り当てます。 `And` 演算子の例を次に示します。  
+ ビットごとの演算では、2 つの整数値がバイナリ (base 2) 形式で評価されます。 対応する位置にあるビットが比較され、比較に基づいて値が割り当てられます。 `And` 演算子の例を次に示します。  
   
  [!code-vb[VbVbalrConcepts#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConcepts/VB/Class1.vb#2)]  
   
- 前の例では、`x` の値を1に設定しています。 これは、次の理由で発生します。  
+ 前の例では、`x` の値を 1 に設定しています。 これは次の理由によるものです。  
   
 - 値はバイナリとして扱われます。  
   
-     3バイナリ形式の 3 = 011  
+     バイナリ形式の 3 = 011  
   
-     5バイナリ形式 = 101  
+     バイナリ形式の 5 = 101  
   
-- `And` 演算子は、一度に1つのバイナリ位置 (ビット) をバイナリ表現と比較します。 指定された位置にある両方のビットが1の場合、結果内のその位置に1が配置されます。 どちらかのビットが0の場合は、結果内のその位置に0が配置されます。 前の例では、これは次のように動作します。  
+- `And` 演算子を使用すると、バイナリ表現を一度に 1 つのバイナリ位置 (ビット) ずつ比較できます。 特定の位置の両方のビットが 1 の場合、結果のその位置に 1 が配置されます。 いずれかのビットが 0 の場合、結果のその位置に 0 が配置されます。 前の例では、これは次のように機能します。  
   
-     011 (バイナリ形式の場合は 3)  
+     011 (バイナリ形式の 3)  
   
-     101 (バイナリ形式で 5)  
+     101 (バイナリ形式の 5)  
   
      001 (バイナリ形式の結果)  
   
-- 結果は decimal として扱われます。 値001は1のバイナリ表現であるため、`x` = 1 です。  
+- 結果は 10 進として扱われます。 値 001 は 1 のバイナリ表現であるため、`x` = 1 です。  
   
- ビットごとの `Or` 演算は似ていますが、比較対象のビットのいずれかまたは両方が1の場合、結果ビットに1が割り当てられる点が異なります。 比較したビットの1つ (両方ではない) が1の場合、`Xor` は結果ビットに1を割り当てます。 `Not` は1つのオペランドを受け取り、符号ビットを含むすべてのビットを反転し、その値を結果に代入します。 つまり、符号付き正の数値の場合、`Not` は常に負の値を返します。負の数値の場合、`Not` は常に正の値または0を返します。  
+ ビットごとの `Or` 演算は似ていますが、比較されるビットのいずれか、または両方が 1 の場合、結果ビットに 1 が割り当てられる点が異なります。 `Xor` を使用すると、比較されたビットの (両方ではなく) いずれかが 1 の場合、結果ビットに 1 が割り当てられます。 `Not` を使用すると、1 つのオペランドを受け取り、符号ビットを含むすべてのビットが反転され、その値が結果に割り当てられます。 つまり、符号付き正数の場合、`Not` からは常に負の値が返され、負数の場合、`Not` からは常に正または 0 の値が返されます。  
   
- `AndAlso` 演算子と `OrElse` 演算子では、ビットごとの演算がサポートされていません。  
+ `AndAlso` 演算子と `OrElse` 演算子はビットごとの演算をサポートしていません。  
   
 > [!NOTE]
-> ビットごとの演算は、整数型に対してのみ実行できます。 浮動小数点値は、ビットごとの演算を続行する前に、整数型に変換する必要があります。  
+> ビットごとの演算は、整数型に対してのみ実行できます。 ビットごとの演算を進める前に、浮動小数点値を整数型に変換する必要があります。  
   
 ## <a name="see-also"></a>関連項目
 
-- [論理/ビット演算子 (Visual Basic)](../../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
-- [ブール式](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)
-- [Visual Basic の算術演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
-- [Visual Basic の比較演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Visual Basic での連結演算子](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
-- [演算子の効率のよい組み合わせ](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)
+- [論理/ビット演算子 (Visual Basic)](../../../language-reference/operators/logical-bitwise-operators.md)
+- [ブール式](boolean-expressions.md)
+- [Visual Basic における算術演算子](arithmetic-operators.md)
+- [Visual Basic における比較演算子](comparison-operators.md)
+- [Visual Basic の連結演算子](concatenation-operators.md)
+- [演算子の効率のよい組み合わせ](efficient-combination-of-operators.md)

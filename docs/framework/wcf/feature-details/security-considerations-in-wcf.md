@@ -6,39 +6,39 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: 42055ee0-6d0c-443d-9d89-788dfc345d6d
-ms.openlocfilehash: 16b3afe9540f3e2953311f602408fce5412be2eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed0f018e0151e68afeb9a4747bf8a260faa184b1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62000767"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601037"
 ---
 # <a name="security-considerations-in-wcf"></a>WCF でのセキュリティの考慮事項
-このセクションのトピックでは、Windows Communication Foundation (WCF) アプリケーションを設計するときに考慮すべきさまざまなセキュリティ関連の項目を一覧表示します。  
+このセクションのトピックでは、Windows Communication Foundation (WCF) アプリケーションを設計する際に考慮する必要があるさまざまなセキュリティ関連の項目を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [情報の漏えい](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
+ [情報の公開](information-disclosure.md)  
  情報が開示または攻撃されるさまざまな方法、およびそれを軽減する方法について説明します。  
   
- [権限の昇格](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [特権の昇格](elevation-of-privilege.md)  
  最初に付与されたものよりも高い承認アクセス許可を攻撃者に与えることの影響、およびそれを軽減する方法について説明します。  
   
- [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [サービス拒否](denial-of-service.md)  
  システムがメッセージを適切に処理できない場合の影響、およびそれを軽減する方法について説明します。  
   
- [改変](../../../../docs/framework/wcf/feature-details/tampering.md)  
+ [改ざん](tampering.md)  
  メッセージの改ざんやメッセージの配信先の変更、およびそれを軽減する方法について説明します。  
   
- [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
+ [リプレイ攻撃](replay-attacks.md)  
  攻撃者がメッセージのストリームを送受信者間でコピーし、そのストリームを 1 つ以上の第三者に対してリプレイすることによる影響、およびそれを軽減する方法について説明します。  
   
- [セキュリティで保護されたセッションに関するセキュリティの検討](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)  
+ [セキュリティで保護されたセッションに関するセキュリティの検討](security-considerations-for-secure-sessions.md)  
  セキュリティで保護されたセッションを実装する場合に、セキュリティに影響を及ぼす次の項目について説明します。  
   
- [サポートされていないシナリオ:](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)  
+ [サポートされていないシナリオ](unsupported-scenarios.md)  
  セキュリティの特定の側面がサポートされないため、避けたり配慮したりする必要のあるさまざまなシナリオを示します。  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.IdentityModel.Tokens>  
   
  <xref:System.IdentityModel.Claims>  
@@ -48,8 +48,8 @@ ms.locfileid: "62000767"
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>関連項目  
- [セキュリティ ガイドラインとベスト プラクティス](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
+ [セキュリティ ガイドラインとベスト プラクティス](security-guidance-and-best-practices.md)  
   
 ## <a name="see-also"></a>関連項目
 
-- [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)
+- [セキュリティ](security.md)

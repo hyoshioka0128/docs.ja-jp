@@ -2,12 +2,12 @@
 title: '方法: フィルターの使用'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-ms.openlocfilehash: 6c357f2f410362d56fc931529a9fe731df0a477e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 434171138e75a0f4c336cd80cc2beb574b10001e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968766"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598893"
 ---
 # <a name="how-to-use-filters"></a>方法: フィルターの使用
 ここでは、複数のフィルターを使用したルーティング構成を作成するために必要な基本手順について説明します。 この例では、メッセージが、電卓サービスの 2 つの実装である regularCalc および roundingCalc にルーティングされます。 これらの実装は両方とも同じ操作をサポートしますが、片方のサービスでは、値を返す前にすべての計算を最も近い整数値に丸めます。 クライアント アプリケーションが、丸め処理を行うバージョンのサービスを使用するかどうかを表示可能である必要がありますが、優先するサービスが示されていない場合は、メッセージが 2 つのサービス間で負荷分散されます。 次の操作が両方のサービスによって公開されます。  
@@ -29,7 +29,7 @@ ms.locfileid: "69968766"
      この例では、クライアント アプリケーションで丸め処理を行う電卓を使ってメッセージを処理する必要がある場合に、次のコードを使用してカスタム ヘッダーを追加します。  
   
     ```csharp  
-    messageHeadersElement.Add(MessageHeader.CreateHeader("RoundingCalculator",   
+    messageHeadersElement.Add(MessageHeader.CreateHeader("RoundingCalculator",
                                    "http://my.custom.namespace/", "rounding"));  
     ```  
   
@@ -91,7 +91,7 @@ ms.locfileid: "69968766"
   
      これらのエンドポイントは、特定のフィルターと一致したメッセージの送信先エンドポイントを示すために、フィルター テーブルで使用されます。  
   
-### <a name="define-filters"></a>フィルターを定義する  
+### <a name="define-filters"></a>[フィルターの定義]  
   
 1. クライアントアプリケーションによってメッセージに追加される "RoundingCalculator" カスタムヘッダーに基づいてメッセージをルーティングするには、XPath クエリを使用してこのヘッダーの存在を確認するフィルターを定義します。 このヘッダーはカスタム名前空間を使用して定義されるため、XPath クエリで使用されるカスタム名前空間プレフィックス "custom" を定義する名前空間エントリも追加します。 次の例では、必要なルーティング セクション、名前空間のテーブル、および XPath フィルターを定義します。  
   
@@ -104,7 +104,7 @@ ms.locfileid: "69968766"
           <filters>  
             <!--define the different message filters-->  
             <!--define an xpath message filter to look for the custom header coming from the client-->  
-            <filter name="XPathFilter" filterType="XPath"   
+            <filter name="XPathFilter" filterType="XPath"
                     filterData="/s12:Envelope/s12:Header/custom:RoundingCalculator = 'rounding'"/>  
           </filters>  
     </routing>  
@@ -113,7 +113,7 @@ ms.locfileid: "69968766"
      この**Messagefilter**は、メッセージ内で "丸め処理" の値を含む RoundingCalculator ヘッダーを検索します。 このヘッダーは、メッセージを roundingCalc サービスにルーティングする必要があることを示すために、クライアント側で設定されたものです。  
   
     > [!NOTE]
-    > S12 名前空間プレフィックスは、既定で名前空間テーブルに定義され、名前`http://www.w3.org/2003/05/soap-envelope`空間を表します。
+    > S12 名前空間プレフィックスは、既定で名前空間テーブルに定義され、名前空間を表し `http://www.w3.org/2003/05/soap-envelope` ます。
   
 2. また、2 つの仮想エンドポイントで受信したメッセージがあるかどうかを検索するフィルターも定義する必要があります。 最初の仮想エンドポイントは、"regular/calculator" エンドポイントです。 クライアントは、メッセージを regularCalc サービスにルーティングする必要があることを示すために、このエンドポイントに要求を送信できます。 次の構成では、<xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> を使用するフィルターを定義して、filterData で指定された名前のエンドポイントでメッセージが受信されたかどうかを確認します。  
   
@@ -122,9 +122,9 @@ ms.locfileid: "69968766"
     <filter name="EndpointNameFilter" filterType="EndpointName" filterData="calculatorEndpoint"/>  
     ```  
   
-     "電卓 Atorendpoint" という名前のサービスエンドポイントによってメッセージが受信され`true`た場合、このフィルターはに評価されます。  
+     "電卓 Atorendpoint" という名前のサービスエンドポイントによってメッセージが受信された場合、このフィルターはに評価さ `true` れます。  
   
-3. 次に、roundingEndpoint のアドレスに送信されたメッセージがあるかどうかを検索するフィルターを定義します。 クライアントは、メッセージを roundingCalc サービスにルーティングする必要があることを示すために、このエンドポイントに要求を送信できます。 次の構成では、を使用し<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>て、"丸め処理/計算" エンドポイントでメッセージが到着したかどうかを判断するフィルターを定義します。  
+3. 次に、roundingEndpoint のアドレスに送信されたメッセージがあるかどうかを検索するフィルターを定義します。 クライアントは、メッセージを roundingCalc サービスにルーティングする必要があることを示すために、このエンドポイントに要求を送信できます。 次の構成では、を使用して、 <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> "丸め処理/計算" エンドポイントでメッセージが到着したかどうかを判断するフィルターを定義します。  
   
     ```xml  
     <!--define a filter looking for messages that show up with the address prefix.  The corresponds to the rounding calc virtual endpoint-->  
@@ -132,11 +132,11 @@ ms.locfileid: "69968766"
             filterData="http://localhost/routingservice/router/rounding/"/>  
     ```  
   
-     で始まるアドレスでメッセージが受信された場合`http://localhost/routingservice/router/rounding/` 、このフィルターは**true**と評価されます。 この構成で使用されるベースアドレスが`http://localhost/routingservice/router`で、roundingEndpoint に指定されたアドレスが "丸め/計算" であるため、このエンドポイントとの`http://localhost/routingservice/router/rounding/calculator`通信に使用される完全なアドレスは、このフィルターに一致します。  
+     で始まるアドレスでメッセージが受信された場合、 `http://localhost/routingservice/router/rounding/` このフィルターは**true**と評価されます。 この構成で使用されるベースアドレスがで、 `http://localhost/routingservice/router` roundingEndpoint に指定されたアドレスが "丸め/計算" であるため、このエンドポイントとの通信に使用される完全なアドレスは `http://localhost/routingservice/router/rounding/calculator` 、このフィルターに一致します。  
   
     > [!NOTE]
     > PrefixEndpointAddress フィルターは、一致するメッセージの確認を行う際にホスト名を評価しません。これは、1 つのホストへの参照を表す際に使用できるホスト名にはさまざまな種類があり、そのすべてが、クライアント アプリケーションからホストを参照するための正しい方法であるためです。 たとえば、次の例はすべて、同じホストを参照します。  
-    >   
+    >
     > - localhost  
     > - 127.0.0.1  
     > - `www.contoso.com`  
@@ -156,7 +156,7 @@ ms.locfileid: "69968766"
                     filterData="group1"/>  
     ```  
   
-     実行中に、このフィルターの種類は、同じグループで 1 つのコレクションとして構成されている、この種類の定義済みフィルター インスタンスすべてを相次いで使用します。 これにより、このカスタムフィルターによって処理さ`true`れ`RoundRobinFilter1`た`RoundRobinFilter2`メッセージは、とのどちらを返すかによって異なります。  
+     実行中に、このフィルターの種類は、同じグループで 1 つのコレクションとして構成されている、この種類の定義済みフィルター インスタンスすべてを相次いで使用します。 これにより、このカスタムフィルターによって処理されたメッセージは、とのどちらを返すかによって異なり `true` `RoundRobinFilter1` `RoundRobinFilter2` ます。  
   
 ### <a name="define-filter-tables"></a>フィルター テーブルを定義する  
   
@@ -165,7 +165,7 @@ ms.locfileid: "69968766"
     > [!NOTE]
     > フィルターの優先順位を指定すると、フィルターが処理される順序を制御できますが、ルーティング サービスのパフォーマンスに影響を与える場合があります。 可能な場合は、フィルターの優先順位設定が不要になるようにフィルター ロジックを構築します。  
   
-     次の例では、フィルターテーブルを定義し、前に定義した "Xpath フィルター" を優先度が2のテーブルに追加します。 このエントリは、が`XPathFilter`メッセージと一致する場合に、メッセージが`roundingCalcEndpoint`にルーティングされることも指定します。  
+     次の例では、フィルターテーブルを定義し、前に定義した "Xpath フィルター" を優先度が2のテーブルに追加します。 このエントリは、がメッセージと一致する場合に、メッセージがにルーティングされることも指定し `XPathFilter` `roundingCalcEndpoint` ます。  
   
     ```xml  
     <routing>  
@@ -180,7 +180,7 @@ ms.locfileid: "69968766"
                 <add filterName="XPathFilter" endpointName="roundingCalcEndpoint" priority="2"/>  
               </entries>  
             </table>  
-          <filterTables>  
+          </filterTables>  
     </routing>  
     ```  
   
@@ -327,4 +327,4 @@ ms.locfileid: "69968766"
   
 ## <a name="see-also"></a>関連項目
 
-- [ルーティング サービス](../../../../docs/framework/wcf/samples/routing-services.md)
+- [ルーティング サービス](../samples/routing-services.md)

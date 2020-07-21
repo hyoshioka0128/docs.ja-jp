@@ -147,7 +147,7 @@
                   href: how-to-crop-an-image.md
                 - name: イメージを回転させる
                   href: how-to-rotate-an-image.md
-        - name: group1
+        - name: ラベル
           href: label.md
           items:
             - name: アクセス キーおよびテキスト折り返し機能を持つコントロールを作成する
@@ -393,7 +393,7 @@
       href: styles-and-templates.md
       items:
         - name: スタイルとテンプレート
-          href: styling-and-templating.md
+          href: ../../../desktop-wpf/fundamentals/styles-templates-overview.md
         - name: ControlTemplate を使用した既存のコントロールのカスタマイズ
           href: ../../../desktop-wpf/themes/how-to-create-apply-template.md
         - name: '方法: ControlTemplate によって生成された要素を検索する'

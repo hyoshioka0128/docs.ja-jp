@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: bc2d600afabbac9783e8fb12e3bd47e83a3495b7
-  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+  ms.openlocfilehash: a82fe645524e526d0373a4e4733c2fef9ca7c14f
+  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 11/12/2019
-  ms.locfileid: "73969443"
+  ms.lasthandoff: 07/09/2020
+  ms.locfileid: "86174115"
 items:
 - durationInMinutes: 2
   content: >
@@ -40,25 +40,20 @@ items:
     上記の例には、すべての挿入文字列式に含める必要がある次の 2 つの要素が含まれています。
 
 
-    - 始まりの引用符文字の前の `$` で始まる文字列リテラル。 `$` シンボルと引用符文字の間にスペースを挿入することはできません (スペースが含まれている場合の動作を確認したい場合は、対話型ウィンドウで `$` 文字の後にスペースを挿入し、更新されたコードを実行します。 C# コンパイラには "予期しない '$' 文字です" と示されます)。
+    - 始まりの引用符文字の前の `$` で始まる文字列リテラル。 `$` シンボルと引用符文字の間にスペースを挿入することはできません  (スペースが含まれている場合の動作を確認したい場合は、対話型ウィンドウで `$` 文字の後にスペースを挿入し、更新されたコードを実行します。 C# コンパイラには "予期しない '$' 文字です" と示されます)。
 
 
     - 1 つ以上の*補間式*。 補間式は、始めかっこと終わりかっこ (`{` と `}`) で示されます。 かっこ内に (`null` を含む) 値を返す C# 式を配置できます。
 
 
     その他のいくつかのデータ型を持つ文字列補間の例をさらにいくつか試してみましょう。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: さまざまなデータ型を含める
   durationInMinutes: 5
   content: >
     前の手順では、文字列補間を使用して、1 つの文字列内に別の文字列を挿入しましたが、 ただし、挿入文字列式に含まれる各補間式にはあらゆるデータ型を指定できます。 挿入文字列にさまざまなデータ型式の値を含めてみましょう。
 
 
-    次の例では、最初に `Name`、`Price`、`perPackage` というメンバーを持つ[タプル](../../tuples.md)を定義します。 対話型ウィンドウで次のコードを実行します。
+    次の例では、最初に `Name`、`Price`、`perPackage` というメンバーを持つ[タプル](../../language-reference/builtin-types/value-tuples.md)を定義します。 対話型ウィンドウで次のコードを実行します。
 
 
     ```csharp
@@ -67,7 +62,7 @@ items:
 
     var date = DateTime.Now;
 
-    Console.WriteLine($"On {date}, the price of {item.Name} was {item.Price:C2} per {item.perPackage} items.");
+    Console.WriteLine($"On {date}, the price of {item.Name} was {item.Price} per {item.perPackage} items.");
 
     ```
 
@@ -82,11 +77,6 @@ items:
 
 
     この例の出力では、日付の精度が高すぎ ("eggplant" の価格は毎秒変更されることはありません)、価格の値は通貨の単位を示していません。 次の手順では、式の結果における文字列表現の書式を制御することで、こうした問題を修正する方法について説明します。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 補間式の書式設定を制御する
   durationInMinutes: 5
   content: >
@@ -95,7 +85,7 @@ items:
 
     ```csharp
 
-    Console.WriteLine($"On {date:d}, the price of {item.Name} was {item.Price} per {item.perPackage} items");
+    Console.WriteLine($"On {date:d}, the price of {item.Name} was {item.Price:C2} per {item.perPackage} items");
 
     ```
 
@@ -110,11 +100,6 @@ items:
 
 
     書式設定を制御するだけでなく、結果の文字列に含まれる書式指定された文字列のフィールドの幅と配置を制御することもできます。 次の手順では、この方法を説明します。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 補間式のフィールドの幅と配置を制御する
   durationInMinutes: 6
   content: >
@@ -151,11 +136,6 @@ items:
     Console.WriteLine($"[{DateTime.Now,-20:d}] Hour [{DateTime.Now,-10:HH}] [{1063.342,15:N2}] feet");
 
     ```
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - content: >-
     文字列補間の対話式チュートリアルはこれで終了です。 [.NET サイト](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)にアクセスして、.NET Core SDK をダウンロードし、お使いのコンピューター上にプロジェクトを作成し、コーディングを続けることができます。
 

@@ -1,42 +1,43 @@
 ---
 title: SqlDependency を使用した変更の検出
+description: SqlDependency オブジェクトを SqlCommand に関連付けて、クエリ結果が ADO.NET で最初に取得したものと異なる場合を検出することができます。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e6a58316-f005-4477-92e1-45cc2eb8c5b4
-ms.openlocfilehash: 3719188064388b00c756dd037d4a475ca6debd13
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: b196d42477e1778c45df64b1390502645fdd649d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782425"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286469"
 ---
 # <a name="detecting-changes-with-sqldependency"></a>SqlDependency を使用した変更の検出
 
-クエリ結果が最初に取得されたクエリ結果と異なることを検出するために、<xref:System.Data.SqlClient.SqlDependency> オブジェクトを <xref:System.Data.SqlClient.SqlCommand> に関連付けることができます。 さらに、`OnChange` イベントにデリゲートを割り当てることができます。このイベントは、関連付けられたコマンドの結果が変わったときに発生します。 コマンドを実行する前に、コマンドを <xref:System.Data.SqlClient.SqlDependency> に関連付ける必要があります。 また、`HasChanges` の <xref:System.Data.SqlClient.SqlDependency> プロパティを使用しても、データが最初に取得されて以降にクエリ結果が変化したかどうかを判別できます。
+クエリ結果が最初に取得されたクエリ結果と異なることを検出するために、<xref:System.Data.SqlClient.SqlDependency> オブジェクトを <xref:System.Data.SqlClient.SqlCommand> に関連付けることができます。 `OnChange` イベントにデリゲートを割り当てることもできます。これは、関連付けられたコマンドの結果が変更されたときに実行されます。 コマンドを実行する前に、<xref:System.Data.SqlClient.SqlDependency> をコマンドに関連付ける必要があります。 また、`HasChanges` の <xref:System.Data.SqlClient.SqlDependency> プロパティを使用しても、データが最初に取得されて以降にクエリ結果が変化したかどうかを判別できます。
 
 ## <a name="security-considerations"></a>セキュリティの考慮事項
 
-指定されたコマンドについて基になるデータが変更されたという通知を受け取るために、依存関係を持つインフラストラクチャでは <xref:System.Data.SqlClient.SqlConnection> が呼び出されると、<xref:System.Data.SqlClient.SqlDependency.Start%2A> が開かれることを利用します。 クライアントが `SqlDependency.Start` の呼び出しを開始できるかどうかは、<xref:System.Data.SqlClient.SqlClientPermission> を使用し、コード アクセス セキュリティ属性を利用することで制御します。 詳細については、「[クエリ通知の有効化](enabling-query-notifications.md)」および「[コードアクセスセキュリティと ADO.NET](../code-access-security.md)」を参照してください。
+指定されたコマンドについて基になるデータが変更されたという通知を受け取るために、依存関係を持つインフラストラクチャでは <xref:System.Data.SqlClient.SqlConnection> が呼び出されると、<xref:System.Data.SqlClient.SqlDependency.Start%2A> が開かれることを利用します。 クライアントが `SqlDependency.Start` の呼び出しを開始できるかどうかは、<xref:System.Data.SqlClient.SqlClientPermission> を使用し、コード アクセス セキュリティ属性を利用することで制御します。 詳しくは、「[クエリ通知の有効化](enabling-query-notifications.md)」および「[コード アクセス セキュリティと ADO.NET](../code-access-security.md)」をご覧ください。
 
 ### <a name="example"></a>例
 
-次の手順に従って、依存関係を宣言し、コマンドを実行して、結果セットが変更された場合に通知を受け取ります。
+次の手順では、依存関係を宣言し、コマンドを実行し、結果セットが変更されたときに通知を受け取る方法について説明します。
 
 1. サーバーへの `SqlDependency` 接続を開始します。
 
-2. <xref:System.Data.SqlClient.SqlConnection> および <xref:System.Data.SqlClient.SqlCommand> オブジェクトを作成し、サーバーに接続して、Transact-SQL ステートメントを定義します。
+2. サーバーに接続して Transact-SQL ステートメントを定義するための <xref:System.Data.SqlClient.SqlConnection> および <xref:System.Data.SqlClient.SqlCommand> オブジェクトを作成します。
 
-3. `SqlDependency` オブジェクトを新しく作成するか、既存のものを使用して、それを `SqlCommand` オブジェクトにバインドします。 内部的には、これによって <xref:System.Data.Sql.SqlNotificationRequest> オブジェクトが作成され、必要に応じてコマンド オブジェクトにバインドされます。 この通知要求には、この `SqlDependency` オブジェクトを一意に識別する内部 ID が含まれます。 クライアント リスナーがまだアクティブでない場合、それも起動されます。
+3. 新しい `SqlDependency` オブジェクトを作成するか、既存のオブジェクトを使用して、それを `SqlCommand` オブジェクトにバインドします。 内部では、これによって <xref:System.Data.Sql.SqlNotificationRequest> オブジェクトが作成され、必要に応じてコマンド オブジェクトにバインドされます。 この通知要求には、この `SqlDependency` オブジェクトを一意に識別する内部識別子が含まれます。 また、これにより、クライアント リスナーがまだアクティブになっていない場合に起動されます。
 
-4. `OnChange` オブジェクトの `SqlDependency` イベントにイベント ハンドラーを定期受信します。
+4. イベント ハンドラーを `SqlDependency` オブジェクトの `OnChange` イベントにサブスクライブします。
 
-5. `Execute` オブジェクトの任意の `SqlCommand` メソッドを使用して、コマンドを実行します。 このコマンドは通知オブジェクトにバインドされているため、サーバーは通知を生成する必要があることを認識し、キュー情報が依存関係を持つキューにポイントされます。
+5. `SqlCommand` オブジェクトの任意の `Execute` メソッドを使用して、コマンドを実行します。 コマンドは通知オブジェクトにバインドされているため、サーバーで通知を生成する必要があることが認識され、キュー情報が依存関係キューを指します。
 
 6. サーバーへの `SqlDependency` 接続を停止します。
 
-その後、基になるデータをユーザーが変更すると、Microsoft SQL Server ではその変更に対する保留通知を検出し、通知を送信します。その通知は、`SqlConnection` を呼び出すことで作成された基になる `SqlDependency.Start` を利用して処理され、クライアントに転送されます。 クライアント リスナーは無効なメッセージを受け取ります。 クライアント リスナーでは、関連付けられている `SqlDependency` オブジェクトを特定し、`OnChange` イベントを発生させます。
+その後ユーザーが基になるデータを変更した場合、Microsoft SQL Server でその変更に対して保留中の通知があることが検出され、`SqlDependency.Start` を呼び出して作成された、基になる `SqlConnection` を介して処理され、クライアントに転送される通知が送信されます。 クライアント リスナーで、無効化メッセージが受信されます。 次にクライアント リスナーで、関連付けられている `SqlDependency` オブジェクトが検索され、`OnChange` イベントが起動されます。
 
 次のコード フラグメントに、サンプル アプリケーションの作成に利用されるデザイン パターンを示します。
 

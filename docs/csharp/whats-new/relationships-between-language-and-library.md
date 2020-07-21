@@ -2,12 +2,12 @@
 title: 言語機能とライブラリ型間のリレーションシップ | Microsoft Docs
 description: 言語機能は多くの場合、実装のためにライブラリ型に依存します。 そのリレーションシップを理解します。
 ms.date: 07/20/2017
-ms.openlocfilehash: dfae7972af0a251a92700d7d33bd6f971eb1870e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: abf15385da3756c35db2df822cc2e11e9edf5758
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33360084"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174102"
 ---
 # <a name="relationships-between-language-features-and-library-types"></a>言語機能とライブラリ型間のリレーションシップ
 
@@ -21,7 +21,7 @@ C# 言語の定義は、標準ライブラリが特定の型とその型にア�
 
 その最初のバージョンは単純でした。コンパイラと標準ライブラリは共に出荷され、それぞれ 1 つのバージョンしかありませんでした。
 
-C# の以降のバージョンでは、随時、依存関係に新しい型またはメンバーが追加されています。 例として、<xref:System.Runtime.CompilerServices.INotifyCompletion>、<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>、<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute> があります。 C# 7.0 では、 [タプル](../tuples.md)言語機能を実装するために<xref:System.ValueTuple>への依存関係が追加されます。
+C# の以降のバージョンでは、随時、依存関係に新しい型またはメンバーが追加されています。 例として、<xref:System.Runtime.CompilerServices.INotifyCompletion>、<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>、<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute> があります。 C# 7.0 では、 [タプル](../language-reference/builtin-types/value-tuples.md)言語機能を実装するために<xref:System.ValueTuple>への依存関係が追加されます。
 
 言語設計チームは、準拠している標準ライブラリで必要な型およびメンバーのアクセス領域を最小限に抑えることに取り組んでいます。 その目標は、新しいライブラリ機能が言語にシームレスに組み込まれているクリーン設計と両立させることです。 将来、標準ライブラリ内の新しい型とメンバーを必要とする C# の新バージョンが登場するでしょう。 自分の作業でこれらの依存関係を管理する方法を理解することが重要です。
 

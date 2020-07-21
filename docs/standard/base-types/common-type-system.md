@@ -1,6 +1,6 @@
 ---
 title: 共通型システム
-description: .NET での型システムについて説明します。
+description: .NET での型システムについて確認します。 .NET での型 (値型または参照型)、型定義、型のメンバー、型のメンバーの特性について確認します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,15 +16,15 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.custom: seodec18
-ms.openlocfilehash: 5590bb07c3927ba50000d7f9d99f11e30373343d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: db0ecd59f122228d33b74be6dec51371413d68b3
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73105708"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767833"
 ---
 # <a name="common-type-system"></a>共通型システム
+
 共通型システム (CTS: Common Type System) は、共通言語ランタイムにおける型の宣言、使用、および管理の方法を定義しており、ランタイムによる言語間統合のサポートにおいても重要な役割を果たします。 共通型システムには次のような機能があります。  
   
 - 言語間の統合、タイプ セーフ、およびパフォーマンスの高いコードの実行を可能にするフレームワークを確立します。  
@@ -33,20 +33,10 @@ ms.locfileid: "73105708"
   
 - 異なる言語で記述されたオブジェクトが相互に対話できるように、各言語が準拠すべき規則を定義します。  
   
-- アプリケーション開発に使用されるプリミティブ データ型 (<xref:System.Boolean>、<xref:System.Byte>、<xref:System.Char>、<xref:System.Int32>、<xref:System.UInt64> など) を含んだライブラリを提供します。  
+- アプリケーション開発に使用されるプリミティブ データ型 (<xref:System.Boolean>、<xref:System.Byte>、<xref:System.Char>、<xref:System.Int32>、<xref:System.UInt64> など) を含んだライブラリを提供します。
   
- このトピックは、次のセクションで構成されています。  
-  
-- [.NET の型](#types_in_the_net_framework)  
-  
-- [型定義](#type_definitions)  
-  
-- [型のメンバー](#type_members)  
-  
-- [型のメンバーの特性](#characteristics_of_type_members)  
-  
-<a name="types_in_the_net_framework"></a>   
-## <a name="types-in-net"></a>.NET の型  
+## <a name="types-in-net"></a>.NET の型
+
  .NET に存在するすべての型は、値型と参照型のどちらかに区別されます。  
   
  値型は、オブジェクトがその実際の値で表されるデータ型です。 変数に値型のインスタンスが割り当てられると、その変数には値の新しいコピーが代入されます。  
@@ -55,18 +45,18 @@ ms.locfileid: "73105708"
   
  .NET の共通型システムは、次の 5 つの型のカテゴリをサポートしています。  
   
-- [クラス](#Classes)  
+- [クラス](#classes)  
   
-- [構造体](#Structures)  
+- [構造体](#structures)  
   
-- [列挙型](#Enumerations)  
+- [列挙型](#enumerations)  
   
-- [インターフェイス](#Interfaces)  
+- [インターフェイス](#interfaces)  
   
-- [デリゲート](#Delegates)  
+- [デリゲート](#delegates)  
   
-<a name="Classes"></a>   
-### <a name="classes"></a>クラス  
+### <a name="classes"></a>クラス
+
  クラスは参照型であり、他のクラスから直接派生させることも、<xref:System.Object?displayProperty=nameWithType> から暗黙的に派生させることもできます。 クラスは、オブジェクト (クラスのインスタンス) が実行できる操作 (メソッド、イベント、またはプロパティ) およびオブジェクトが保持するデータ (フィールド) を定義するものです。 通常、クラスは、たとえば定義のみを持ち実装は持たないインターフェイスとは対照的に、定義と実装の両方を持ちます。しかし、実装を持たないメンバーが 1 つ以上存在するクラスもあります。  
   
  クラスが持つことのできる特性のいくつかを次の表で説明します。 ランタイムをサポートする言語にはそれぞれ、クラスまたはクラス メンバーに対し、こうした特性の 1 つ以上を指定する手段が用意されています。 ただし、.NET を対象とするすべてのプログラミング言語で、これらすべての特性を利用できるわけではありません。  
@@ -80,15 +70,15 @@ ms.locfileid: "73105708"
 |exported または not exported|クラスが定義されているアセンブリの外部から、そのクラスを参照できるかどうかを示します。 この特性は、最上位のクラスにのみ適用され、入れ子にされたクラスには適用されません。|  
   
 > [!NOTE]
-> クラスは、親クラスまたは構造体で入れ子にすることもできます。 入れ子にされたクラスにも、メンバー特性を適用できます。 詳細については、「[入れ子にされた型](#NestedTypes)」を参照してください。  
+> クラスは、親クラスまたは構造体で入れ子にすることもできます。 入れ子にされたクラスにも、メンバー特性を適用できます。 詳細については、「[入れ子にされた型](#nested-types)」を参照してください。  
   
  実装を持たないクラス メンバーは抽象メンバーです。 1 つ以上の抽象メンバーを持つクラスは、それ自体が抽象クラスとなり、新しいインスタンスを作成できません。 ランタイムに対応する言語の中には、抽象メンバーを持たないクラスも抽象クラスとしてマークできるものがあります。 抽象クラスは、派生クラスが必要に応じて継承したりオーバーライドしたりできる基本的な一連の機能をカプセル化する必要がある場合に使用できます。 抽象クラスでないクラスを具象クラスと呼びます。  
   
  クラスで実装できるインターフェイスの数に制限はありませんが、すべてのクラスが暗黙的に継承する <xref:System.Object?displayProperty=nameWithType> を除き、継承できる基底クラスは 1 つだけです。 すべてのクラスには少なくとも 1 つのコンストラクターが必要で、このコンストラクターにより、各クラスの新しいインスタンスが初期化されます。 コンストラクターを明示的に定義しなかった場合、ほとんどのコンパイラでは、自動的にパラメーターなしのコンストラクターが使用されます。  
   
-<a name="Structures"></a>   
-### <a name="structures"></a>構造体  
- 構造体は、<xref:System.ValueType?displayProperty=nameWithType> から派生する <xref:System.Object?displayProperty=nameWithType> から暗黙的に派生する値型です。 構造体は、メモリ要件が小さい値を表す場合や、厳密に型指定されたパラメーターを持つメソッドに対してパラメーターを値渡しする場合などに、非常に便利です。 .NET では、すべてのプリミティブ データ型 (<xref:System.Boolean>、<xref:System.Byte>、<xref:System.Char>、<xref:System.DateTime>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64>) が構造体として定義されています。  
+### <a name="structures"></a>構造体
+
+ 構造体は、<xref:System.ValueType?displayProperty=nameWithType> から派生する <xref:System.Object?displayProperty=nameWithType> から暗黙的に派生する値型です。 構造体は、メモリ要件が小さい値を表す場合や、厳密に型指定されたパラメーターを持つメソッドに対してパラメーターを値渡しする場合などに便利です。 .NET では、すべてのプリミティブ データ型 (<xref:System.Boolean>、<xref:System.Byte>、<xref:System.Char>、<xref:System.DateTime>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64>) が構造体として定義されています。  
   
  クラスと同様、構造体にもデータ (構造体のフィールド) と、そのデータに対して実行できる操作 (構造体のメソッド) が定義されます。 これは、<xref:System.Object?displayProperty=nameWithType> クラスと <xref:System.ValueType?displayProperty=nameWithType> クラスで定義されている仮想メソッドなどのメソッドと、値型そのものに定義されているすべてのメソッドを、構造体に対して呼び出すことができることを意味します。 言い換えれば、構造体には、静的メソッドと非静的メソッドに加え、フィールド、プロパティ、およびイベントを持たせることができます。 構造体のインスタンスを作成したり、構造体をパラメーターとして渡したりできるほか、構造体をローカル変数として格納することも、別の値型または参照型のフィールドに格納することもできます。 構造体でインターフェイスを実装することもできます。  
   
@@ -96,9 +86,9 @@ ms.locfileid: "73105708"
   
  共通言語ランタイムは、それぞれの値型に対応するボックス化された型を提供します。ボックス化された型とは、値型と同じ状態および動作を備えたクラスのことです。 値型のインスタンスは、<xref:System.Object?displayProperty=nameWithType> 型のパラメーターを受け入れるメソッドに渡されると、ボックス化されます。 参照渡しのパラメーターとして値型を受け入れるメソッドの呼び出しから制御が返されると、ボックス化が解除 (つまり、クラスのインスタンスから値型のインスタンスに変換) されます。 言語によっては、ボックス化された型が必要なときに特別な構文を使用する必要がありますが、ボックス化された型を必要に応じて自動的に使用する言語もあります。 値型を定義するときには、ボックス化された型とボックス化解除された型の両方を定義します。  
   
-<a name="Enumerations"></a>   
-### <a name="enumerations"></a>列挙  
- 列挙型 (enum) は、<xref:System.Enum?displayProperty=nameWithType> から直接継承される値型で、基になるプリミティブ型の値に対して別名を割り当てます。 列挙型には名前、基になる型、および一連のフィールドが存在します。基になる型は、組み込みの符号付きまたは符号なし整数型 (<xref:System.Byte>、<xref:System.Int32>、<xref:System.UInt64> など) であることが必要です。 フィールドは静的リテラル フィールドで、各フィールドが 1 つの定数を表します。 複数のフィールドに同じ値を割り当てることもできます。 その場合は、リフレクションや文字列変換を行うために、いずれかの値をプライマリ列挙値としてマークしておく必要があります。  
+### <a name="enumerations"></a>列挙
+
+ 列挙型は、<xref:System.Enum?displayProperty=nameWithType> から直接継承される値型で、基になるプリミティブ型の値に対して別名を割り当てます。 列挙型には名前、基になる型、および一連のフィールドが存在します。基になる型は、組み込みの符号付きまたは符号なし整数型 (<xref:System.Byte>、<xref:System.Int32>、<xref:System.UInt64> など) であることが必要です。 フィールドは静的リテラル フィールドで、各フィールドが 1 つの定数を表します。 複数のフィールドに同じ値を割り当てることもできます。 その場合は、リフレクションや文字列変換を行うために、いずれかの値をプライマリ列挙値としてマークしておく必要があります。  
   
  基になる型の値を列挙型に割り当てることも、その逆も可能です (キャストは必要ありません)。 列挙型のインスタンスを作成し、<xref:System.Enum?displayProperty=nameWithType> のメソッドや、その列挙型の基となる型に定義されている任意のメソッドを呼び出すことができます。 しかし、言語によっては、基になる型のインスタンスが必要とされるときに、列挙型をパラメーターとして渡すことが許可されていない場合もあります (またはその逆)。  
   
@@ -121,9 +111,9 @@ ms.locfileid: "73105708"
   
  [!code-csharp[Conceptual.Types.Enum#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.enum/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Enum#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.enum/vb/example.vb#1)]  
-  
-<a name="Interfaces"></a>   
-### <a name="interfaces"></a>インターフェイス  
+
+### <a name="interfaces"></a>インターフェイス
+
  インターフェイスは、"can do" 関係または "has a" 関係を指定するコントラクトを定義します。 インターフェイスは、多くの場合、比較と並べ替え (<xref:System.IComparable> インターフェイスや <xref:System.IComparable%601> インターフェイス)、等価テスト (<xref:System.IEquatable%601> インターフェイス)、コレクション内の項目の列挙 (<xref:System.Collections.IEnumerable> インターフェイスや <xref:System.Collections.Generic.IEnumerable%601> インターフェイス) などの機能を実装するために使用されます。 インターフェイスには、プロパティ、メソッド、およびイベント (すべて抽象メンバー) を設定できます。つまり、インターフェイスは、メンバーとメンバーの署名を定義しますが、インターフェイス メンバーの機能を定義するインターフェイスを実装する型に依存します。 これは、インターフェイスを実装するクラスまたは構造体が、そのインターフェイスで宣言されている抽象メンバーの定義を提供する必要があることを意味します。 インターフェイスは、そのインターフェイスを実装するクラスまたは構造体に対して、1 つ以上の他のインターフェイスも同時に実装するように要求できます。  
   
  インターフェイスには、次のような制限があります。  
@@ -137,9 +127,9 @@ ms.locfileid: "73105708"
 - インターフェイスで定義できるのはインスタンスのメンバーだけです。 静的メンバーを定義することはできません。  
   
  各言語には、メンバーの実装をそのメンバーを要求するインターフェイスに割り当てるための規則があります。これは、複数のインターフェイスで同じシグネチャを持つメンバーを宣言でき、それらのメンバーが別個の実装を持つことができるためです。  
-  
-<a name="Delegates"></a>   
-### <a name="delegates"></a>デリゲート  
+
+### <a name="delegates"></a>デリゲート
+
  デリゲートは、C++ の関数ポインターと類似の目的で使用される参照型です。 これらは、.NET のイベント ハンドラーとコールバック関数に使用されます。 関数ポインターとは異なり、デリゲートは安全で、検証可能で、タイプ セーフです。 デリゲート型は、互換性のあるシグネチャを持つすべてのインスタンス メソッドまたは静的メソッドを表すことができます。  
   
  デリゲートのパラメーターにメソッドのパラメーターよりも限定的な型が指定された場合、両者のパラメーター間に型の互換性があると見なされます。これによって、デリゲートに渡された引数が、メソッドに対して安全に渡されることが保証されます。  
@@ -164,8 +154,8 @@ ms.locfileid: "73105708"
 > [!NOTE]
 > C#、C++、および Visual Basic では、イベント ハンドラー デリゲートに対して、これらのメソッドを使用する必要はありません。これらの言語には、イベント ハンドラーの追加および削除に使用する構文が用意されているためです。  
 
-<a name="type_definitions"></a>   
-## <a name="type-definitions"></a>型定義  
+## <a name="type-definitions"></a>型定義
+
  型定義には、次のものが含まれます。  
   
 - 型に対して定義される属性  
@@ -223,24 +213,24 @@ ms.locfileid: "73105708"
   
  型は任意の数のインターフェイスを実装できます。 型にインターフェイスを実装するには、そのインターフェイスのすべての仮想メンバーをその型に実装する必要があります。 仮想メソッドは派生型によって実装でき、静的または動的に呼び出すことができます。  
 
-<a name="type_members"></a>   
-## <a name="type-members"></a>型のメンバー  
+## <a name="type-members"></a>型のメンバー
+
  ランタイムでは、型の動作と状態を指定する型のメンバーを定義できます。 型のメンバーには、次のようなものがあります。  
   
-- [フィールド](#Fields)  
+- [フィールド](#fields)  
   
-- [プロパティ](#Properties)  
+- [プロパティ](#properties)  
   
-- [メソッド](#Methods)  
+- [メソッド](#methods)  
   
-- [コンストラクター](#Constructors)  
+- [コンストラクター](#constructors)  
   
-- [イベント](#Events)  
+- [イベント](#events)  
   
-- [入れ子にされた型](#NestedTypes)  
-  
-<a name="Fields"></a>   
-### <a name="fields"></a>フィールド  
+- [入れ子にされた型](#nested-types)  
+
+### <a name="fields"></a>フィールド
+
  フィールドは、型の状態の一部を表し、格納するものです。 フィールドは、ランタイムがサポートする任意の型にすることができます。 通常、フィールドは、同じクラスまたはその派生クラスからしかアクセスできないように、`private` または `protected` のいずれかに設定されます。 フィールドの値を型の外部から変更できるようにする場合は、プロパティの set アクセサーを使用するのが一般的です。 パブリックに公開されたフィールドは、通常、読み取り専用であり、次の 2 種類に分けることができます。  
   
 - 定数。その値は、デザイン時に割り当てられます。 これらはクラスの静的メンバーですが、`static` (Visual Basic では `Shared`) キーワードを使用して定義されません。  
@@ -251,42 +241,42 @@ ms.locfileid: "73105708"
   
  [!code-csharp[Conceptual.Types.Members.Fields#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.members.fields/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Members.Fields#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.members.fields/vb/example.vb#1)]  
-  
-<a name="Properties"></a>   
-### <a name="properties"></a>プロパティ  
+
+### <a name="properties"></a>プロパティ
+
  プロパティは、型の値または状態に名前を付け、そのプロパティの値を取得または設定するためのメソッドを定義します。 プロパティは、プリミティブ型、プリミティブ型のコレクション、ユーザー定義型、ユーザー定義型のコレクションにすることができます。 多くの場合、プロパティは、型のパブリックなインターフェイスを、その型の個々の実装とは切り離すために使用されます。 これにより、クラスに直接格納されていない値をプロパティに反映させたり (プロパティが計算後の値を返す場合など)、プライベート フィールドに割り当てる値を事前に検証したりすることが可能です。 後者のパターンを説明する例を次に示します。  
   
  [!code-csharp[Conceptual.Types.Members.Properties#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.members.properties/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Members.Properties#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.members.properties/vb/example.vb#1)]  
   
  読み取り可能なプロパティを含んだ型の Microsoft Intermediate Language (MSIL) には、プロパティそのもののほかに、`get_`*propertyname* メソッドが含まれています。また、書き込み可能なプロパティを含んだ型の MSIL には、`set_`*propertyname* メソッドが含まれています。  
-  
-<a name="Methods"></a>   
-### <a name="methods"></a>メソッド  
+
+### <a name="methods"></a>メソッド
+
  メソッドは、その型で利用できる操作を表します。 メソッドのシグネチャは、そのメソッドのパラメーターの型および戻り値の型として許可される型を示します。  
   
  ほとんどのメソッドでは、メソッド呼び出しに必要なパラメーターの厳密な個数が定義されていますが、いくつかのメソッドは可変個のパラメーターをサポートしています。 このようなメソッドで最後に宣言されるパラメーターには、<xref:System.ParamArrayAttribute> 属性が適用されます。 通常、言語コンパイラには、C# の `params` や Visual Basic の `ParamArray` など、<xref:System.ParamArrayAttribute> の明示的な使用を不要にするキーワードがあります。  
-  
-<a name="Constructors"></a>   
-### <a name="constructors"></a>コンストラクター  
+
+### <a name="constructors"></a>コンストラクター
+
  コンストラクターは、クラスまたは構造体の新しいインスタンスを作成する特殊なメソッドです。 他のメソッドと同様に、コンストラクターには、パラメーターを指定することができます。ただし、コンストラクターには戻り値はありません (つまり、`void` が返されます)。  
   
  クラスのソース コードに明示的にコンストラクターが定義されていない場合は、コンパイラによってパラメーターなしのコンストラクターが追加されます。 ただし、パラメーター化されたコンストラクターのみがクラスのソース コードで定義されている場合は、Visual Basic および C# のコンパイラが、パラメーターなしのコンストラクターを生成しません。  
   
  構造体のソース コードでコンストラクターが定義される場合は、それらのコンストラクターがパラメーター化されている必要があります。構造体ではパラメーターなしのコンストラクターを定義できず、コンパイラは、構造体および他の値型のいずれに対しても、パラメーターなしのコンストラクターを生成しません。 すべての値の型には暗黙的なパラメーターなしのコンストラクターがあります。 このコンストラクターは、共通言語ランタイムによって実装され、構造体のすべてのフィールドを既定の値に初期化します。  
-  
-<a name="Events"></a>   
-### <a name="events"></a>イベント  
- イベントは、応答可能な事象 (イベント) を定義し、イベントへのサブスクライブ、イベントからのサブスクライブ解除、およびイベントの発生用のメソッドを定義します。 多くの場合、イベントは、他の型に対して状態の変更を通知するために使用されます。 詳細については、「[イベント](../../../docs/standard/events/index.md)」を参照してください。  
-  
-<a name="NestedTypes"></a>   
-### <a name="nested-types"></a>入れ子にされた型  
+
+### <a name="events"></a>イベント
+
+ イベントは、応答可能な事象 (イベント) を定義し、イベントへのサブスクライブ、イベントからのサブスクライブ解除、およびイベントの発生用のメソッドを定義します。 多くの場合、イベントは、他の型に対して状態の変更を通知するために使用されます。 詳細については、「[イベント](../events/index.md)」を参照してください。  
+
+### <a name="nested-types"></a>入れ子にされた型
+
  入れ子にされた型とは、他の型のメンバーである型です。 入れ子にされた型はその親の型と密に結合されているため、汎用型としては使用できません。 入れ子にされた型は、宣言型で、入れ子にされた型のインスタンスを使用したり作成したりする場合に便利で、入れ子にされた型の使用はパブリック メンバーに公開されません。  
   
  入れ子にされた型は、混乱を招くおそれがあるため、特別な理由がない限り、パブリックに参照可能にすることはお勧めできません。 適切にデザインされたライブラリでは、入れ子にされた型を使ってオブジェクトをインスタンス化したり、変数を宣言したりすることが必要になることはほとんどありません。  
 
-<a name="characteristics_of_type_members"></a>   
-## <a name="characteristics-of-type-members"></a>型のメンバーの特性  
+## <a name="characteristics-of-type-members"></a>型のメンバーの特性
+
  共通型システムでは、型のメンバーにさまざまな特性を適用できますが、各言語で、これらの特性がすべてサポートされている必要はありません。 メンバーの特性について次の表で説明します。  
   
 |特徴|適用対象|説明|  
@@ -307,7 +297,7 @@ ms.locfileid: "73105708"
 > [!NOTE]
 > 戻り値の型は、メソッドのシグネチャの一部として見なされません。 つまり、戻り値の型が異なっているだけでは、メソッドをオーバーロードすることはできません。  
   
-### <a name="inheriting-overriding-and-hiding-members"></a>メンバーの継承、オーバーライド、および隠ぺい  
+### <a name="inherit-override-and-hide-members"></a>メンバーの継承、オーバーライド、および非表示  
  派生型は、その基本型のすべてのメンバーを継承します。つまり、基本型のすべてのメンバーは、派生型に対しても定義されており、使用可能です。 継承されたメンバーの動作または特性は、次の 2 つの方法で変更できます。  
   
 - 派生型で、同じシグネチャを持つ新しいメンバーを定義することによって、継承されたメンバーを隠ぺいできます。 この方法は、public のメンバーを private に変更したり、`final` としてマークされている継承メソッドに新しい動作を定義したりするために使用します。  
@@ -317,5 +307,5 @@ ms.locfileid: "73105708"
 ## <a name="see-also"></a>関連項目
 
 - [.NET API ブラウザー](/dotnet/api)
-- [共通言語ランタイム](../../../docs/standard/clr.md)
-- [.NET での型変換](../../../docs/standard/base-types/type-conversion.md)
+- [共通言語ランタイム](../clr.md)
+- [.NET での型変換](type-conversion.md)

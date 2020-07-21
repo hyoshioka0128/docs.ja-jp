@@ -2,29 +2,29 @@
 title: 非同期タスクまたはタスクの一覧のキャンセル
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: 2956582cd0c8e044fcd37ffab13686489a7c854c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 932bf46f1e3aee220d0412f1688e961faaef3459
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347960"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396702"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>非同期タスクまたはタスクの一覧のキャンセル (Visual Basic)
 
 非同期のアプリケーションが終了するまで待機しない場合、それを取り消すために使用できるボタンを設定できます。 このトピックの例に従うと、1 つの Web サイトのコンテンツまたは Web サイトのリストをダウンロードするアプリケーションにキャンセル ボタンを追加できます。
 
-この例では、[非同期アプリケーションを微調整する UI (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)を使用します。
+例では、「[非同期アプリケーションの微調整 (Visual Basic)](fine-tuning-your-async-application.md)」で説明している UI を使用しています。
 
 > [!NOTE]
-> この例を実行するには、Visual Studio 2012 以降および .NET Framework 4.5 以降が、コンピューターにインストールされている必要があります。
+> この例を実行するには、コンピューターに Visual Studio 2012 以降および .NET Framework 4.5 以降がインストールされている必要があります。
 
-## <a name="BKMK_CancelaTask"></a>タスクのキャンセル
+## <a name="cancel-a-task"></a><a name="BKMK_CancelaTask"></a>タスクのキャンセル
 
 最初の例では、**キャンセル** ボタンを単一のダウンロード タスクと関連付けます。 アプリケーションがコンテンツをダウンロード中にボタンをクリックすると、ダウンロードは取り消されます。
 
 ### <a name="downloading-the-example"></a>例をダウンロードする
 
-完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)」からダウンロードできます。ダウンロード後、次の手順に従います。
+完全な Windows Presentation Foundation (WPF) プロジェクトは、「[Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)」(非同期のサンプル: アプリケーションの微調整) からダウンロードできます。その後、次の手順に従います。
 
 1. ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。
 
@@ -38,7 +38,7 @@ ms.locfileid: "74347960"
 
      Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。
 
- プロジェクトをダウンロードしない場合は、このトピックの最後にある Mainwindow.xaml ファイルを確認してください。
+ プロジェクトをダウンロードしない場合は、このトピックの最後の MainWindow.xaml.vb ファイルをレビューできます。
 
 ### <a name="building-the-example"></a>例のビルド
 
@@ -46,7 +46,7 @@ ms.locfileid: "74347960"
 
 この例を自分でビルドするには、「例をダウンロードする」のセクションの詳細な手順の指示に従いますが、 **[スタートアップ プロジェクト]** として、 **[CancelATask]** の代わりに **[StarterCode]** を選択します。
 
-次に、そのプロジェクトの Mainwindow.xaml ファイルに次の変更を追加します。
+次の変更点をプロジェクトの MainWindow.xaml.vb ファイルに追加します。
 
 1. アクセスするすべてのメソッドのスコープである `CancellationTokenSource` 変数、`cts` を宣言します。
 
@@ -124,27 +124,27 @@ ms.locfileid: "74347960"
     End Function
     ```
 
-5. プログラムをキャンセルしない場合は、次の出力が生成されます。
+5. プログラムの取り消しをしない場合、次の出力を生成します。
 
     ```console
     Ready to download.
     Length of the downloaded string: 158125.
     ```
 
-    プログラムがコンテンツのダウンロードを完了する前に **[キャンセル**] ボタンをクリックすると、次の出力が生成されます。
+    プログラムがコンテンツのダウンロードを終了する前に**キャンセル** ボタンをクリックすると、プログラムは次の出力を生成します。
 
     ```console
     Ready to download.
     Download canceled.
     ```
 
-## <a name="BKMK_CancelaListofTasks"></a>タスクの一覧を取り消す
+## <a name="cancel-a-list-of-tasks"></a><a name="BKMK_CancelaListofTasks"></a>タスクの一覧を取り消す
 
 前の例を拡張すると、同じ `CancellationTokenSource` のインスタンスを各タスクに関連付けることによって、多数のタスクを取り消すことができます。 **キャンセル** ボタンをクリックすると、完了していないすべてのタスクを取り消します。
 
 ### <a name="downloading-the-example"></a>例をダウンロードする
 
-完全な Windows Presentation Foundation (WPF) プロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)」からダウンロードできます。ダウンロード後、次の手順に従います。
+完全な Windows Presentation Foundation (WPF) プロジェクトは、「[Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)」(非同期のサンプル: アプリケーションの微調整) からダウンロードできます。その後、次の手順に従います。
 
 1. ダウンロードしたファイルを圧縮解除し、Visual Studio を起動します。
 
@@ -158,7 +158,7 @@ ms.locfileid: "74347960"
 
      Ctrl + F5 キーを押して、デバッグを行わずにプロジェクトを実行します。
 
- プロジェクトをダウンロードしない場合は、このトピックの最後にある Mainwindow.xaml ファイルを確認してください。
+ プロジェクトをダウンロードしない場合は、このトピックの最後の MainWindow.xaml.vb ファイルをレビューできます。
 
 ### <a name="building-the-example"></a>例のビルド
 
@@ -209,7 +209,7 @@ ms.locfileid: "74347960"
     Next
     ```
 
-4. `AccessTheWebAsync` は長さを表示するため、メソッドは何も返す必要はありません。 return ステートメントを削除し、メソッドの戻り値の型を <xref:System.Threading.Tasks.Task> ではなく <xref:System.Threading.Tasks.Task%601> に変更します。
+4. `AccessTheWebAsync` は長さを表示するため、メソッドは何も返す必要はありません。 return ステートメントを削除し、メソッドの戻り値の型を <xref:System.Threading.Tasks.Task%601> ではなく <xref:System.Threading.Tasks.Task> に変更します。
 
     ```vb
     Async Function AccessTheWebAsync(ct As CancellationToken) As Task
@@ -221,7 +221,7 @@ ms.locfileid: "74347960"
     Await AccessTheWebAsync(cts.Token)
     ```
 
-5. プログラムをキャンセルしない場合は、次の出力が生成されます。
+5. プログラムの取り消しをしない場合、次の出力を生成します。
 
     ```console
     Length of the downloaded string: 35939.
@@ -253,15 +253,15 @@ ms.locfileid: "74347960"
     Downloads canceled.
     ```
 
-## <a name="BKMK_CompleteExamples"></a>コード例全体
+## <a name="complete-examples"></a><a name="BKMK_CompleteExamples"></a>コード例全体
 
 次のセクションには、前の例の各コードが含まれています。 <xref:System.Net.Http> の参照を追加する必要があることに注意してください。
 
-このプロジェクトは「[Async Sample: Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)」からダウンロードできます。
+プロジェクトは、「[Async Sample:Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)」 (非同期のサンプル: アプリケーションの微調整) からダウンロードできます。
 
 ### <a name="cancel-a-task-example"></a>タスクを取り消す例
 
-次のコードは、単一のタスクをキャンセルする例の完全な Mainwindow.xaml ファイルです。
+次のコードは、単一のタスクを取り消す例での MainWindow.xaml.vb ファイルの全体です。
 
 ```vb
 ' Add an Imports directive and a reference for System.Net.Http.
@@ -346,7 +346,7 @@ End Class
 
 ### <a name="cancel-a-list-of-tasks-example"></a>タスクの一覧を取り消す例
 
-次のコードは、タスクの一覧をキャンセルする例の完全な Mainwindow.xaml ファイルです。
+次のコードは、タスクの一覧を取り消す例での MainWindow.xaml.vb ファイルの全体です。
 
 ```vb
 ' Add an Imports directive and a reference for System.Net.Http.
@@ -463,10 +463,10 @@ End Class
 ' Downloads canceled.
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Threading.CancellationTokenSource>
 - <xref:System.Threading.CancellationToken>
-- [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [非同期アプリケーションの微調整 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [非同期のサンプル: アプリケーションの微調整](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Async および Await を使用した非同期プログラミング (Visual Basic)](index.md)
+- [非同期アプリケーションの微調整 (Visual Basic)](fine-tuning-your-async-application.md)
+- [Async Sample:Fine Tuning Your Application (非同期のサンプル: アプリケーションの微調整)](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

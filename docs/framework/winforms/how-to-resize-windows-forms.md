@@ -1,5 +1,6 @@
 ---
-title: '方法: Windows フォームのサイズ変更'
+title: フォームのサイズ変更
+description: '[サイズ] プロパティに新しい値を設定してフォームの高さと幅の両方を変更する方法、または [高さ] プロパティと [幅] プロパティを個別に調整する方法について説明します。'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,18 +10,18 @@ helpviewer_keywords:
 - resizing Windows Forms
 - Windows Forms, resizing
 ms.assetid: 5d9dd47e-e68c-48c9-a0a3-a9ff34ba009d
-ms.openlocfilehash: aa7ee2bbbf6983a371ea71edc0dfd0cc12cd0c9d
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 0d6383e4d29d9407d3da97bf8b94761f06d99748
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211664"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903273"
 ---
 # <a name="how-to-resize-windows-forms"></a>方法: Windows フォームのサイズ変更
 
-Windows フォームのサイズは、いくつかの方法で指定できます。 <xref:System.Windows.Forms.Form.Size%2A> プロパティに新しい値を設定したり、<xref:System.Windows.Forms.Control.Height%2A> プロパティまたは <xref:System.Windows.Forms.Control.Width%2A> プロパティを個別に調整したりすることで、フォームの高さと幅の両方をプログラムで変更できます。 Visual Studio を使用している場合は、Windows フォーム デザイナーを使用してサイズを変更できます。 参照してください[方法。デザイナーを使用して Windows フォームのサイズを変更](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37k2zkwx(v=vs.100))します。
+Windows フォームのサイズは、いくつかの方法で指定できます。 <xref:System.Windows.Forms.Form.Size%2A> プロパティに新しい値を設定したり、<xref:System.Windows.Forms.Control.Height%2A> プロパティまたは <xref:System.Windows.Forms.Control.Width%2A> プロパティを個別に調整したりすることで、フォームの高さと幅の両方をプログラムで変更できます。 Visual Studio を使用している場合は、Windows フォームデザイナーを使用してサイズを変更できます。 「[方法: デザイナーを使用して Windows フォームのサイズを変更する](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37k2zkwx(v=vs.100))」も参照してください。
 
-## <a name="resize-a-form-programmatically"></a>フォームのサイズをプログラムで変更します。
+## <a name="resize-a-form-programmatically"></a>プログラムによるフォームのサイズ変更
 
 フォームの <xref:System.Windows.Forms.Form.Size%2A> プロパティを設定して、実行時にフォームのサイズを定義します。
 
@@ -38,7 +39,7 @@ Form1.Size = new System.Drawing.Size(100, 100);
 Form1->Size = System::Drawing::Size(100, 100);
 ```
 
-## <a name="change-form-width-and-height-programmatically"></a>フォームの幅と高さをプログラムで変更します。
+## <a name="change-form-width-and-height-programmatically"></a>フォームの幅と高さをプログラムによって変更する
 
 <xref:System.Windows.Forms.Form.Size%2A> を定義した後で、<xref:System.Windows.Forms.Control.Width%2A> プロパティまたは <xref:System.Windows.Forms.Control.Height%2A> プロパティを使用して、フォームの高さと幅のいずれかを変更します。
 
@@ -56,7 +57,7 @@ Form1.Width = 300;
 Form1->Width = 300;
 ```
 
-- または -
+または
 
 <xref:System.Windows.Forms.Form.Size%2A> プロパティを設定して、<xref:System.Drawing.Size.Width%2A> または <xref:System.Drawing.Size.Height%2A> を変更します。
 
@@ -74,7 +75,7 @@ Form1.Size = new Size(300, Form1.Size.Height);
 Form1->Size = System::Drawing::Size(300, Form1->Size.Height);
 ```
 
-## <a name="change-form-size-by-increments-programmatically"></a>フォームのサイズをプログラムで増分して変更します。
+## <a name="change-form-size-by-increments-programmatically"></a>プログラムによってフォームのサイズをインクリメントして変更する
 
 フォームのサイズを増分するには、<xref:System.Drawing.Size.Width%2A> プロパティと <xref:System.Drawing.Size.Height%2A> プロパティを設定します。
 
@@ -113,7 +114,7 @@ Form^ f = gcnew Form();
 f->Size->X += 100;
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-- [Windows フォームについて](getting-started-with-windows-forms.md)
+- [Windows フォームでのはじめに](getting-started-with-windows-forms.md)
 - [Windows フォーム アプリケーションの拡張](./advanced/index.md)

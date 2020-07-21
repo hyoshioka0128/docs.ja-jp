@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
 ms.openlocfilehash: 0f65bbf2534eb7167baacb1405a8ce6e9769c23f
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70794335"
 ---
 # <a name="sql-server-schema-collections"></a>SQL Server スキーマ コレクション
-Microsoft .NET Framework Data Provider for SQL Server は、共通のスキーマ コレクションに加えて追加のスキーマ コレクションをサポートしています。 スキーマ コレクションは、使用している SQL Server のバージョンによって多少異なります。 サポートされているスキーマコレクションの一覧を確認するには、引数を指定せずに、またはスキーマコレクション名を "MetaDataCollections" にして、 **GetSchema**メソッドを呼び出します。 これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。  
+Microsoft .NET Framework Data Provider for SQL Server は、共通のスキーマ コレクションに加えて追加のスキーマ コレクションをサポートしています。 スキーマ コレクションは、使用している SQL Server のバージョンによって多少異なります。 サポートされるスキーマ コレクションの一覧を確認するには、引数を指定しないで、またはスキーマ コレクション名に "MetaDataCollections" を指定して、**GetSchema** メソッドを呼び出します。 これにより、サポートされるスキーマ コレクションの一覧、それぞれがサポートする制限数、および使用する識別子部分の数と共に、<xref:System.Data.DataTable> が返されます。  
   
 ## <a name="databases"></a>データベース  
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
-|database_name|String|データベースの名前です。|  
+|database_name|String|データベース名。|  
 |dbid|Int16|データベース ID。|  
 |create_date|DateTime|データベースの作成日。|  
   
@@ -34,13 +34,13 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |IS_DEFERRABLE|String|制約を遅延可能にするかどうかを指定します。 NO が返されます。|  
 |INITIALLY_DEFERRED|String|制約を最初に遅延可能にするかどうかを指定します。 NO が返されます。|  
   
-## <a name="indexes"></a>インデックス  
+## <a name="indexes"></a>Indexes  
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
 |constraint_catalog|String|インデックスが属するカタログ。|  
 |constraint_schema|String|インデックスを含むスキーマ。|  
-|constraint_name|String|インデックスの名前です。|  
+|constraint_name|String|インデックス名。|  
 |table_catalog|String|インデックスが関連付けられているテーブル名。|  
 |table_schema|String|インデックスが関連付けられているテーブルを含むスキーマ。|  
 |table_name|String|テーブル名。|  
@@ -51,7 +51,7 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
-|type_desc|String|インデックスの種類。次のいずれかの値になります。<br /><br /> -ヒープ<br />-クラスター化<br />-   NONCLUSTERED<br />-XML<br />-空間|  
+|type_desc|String|インデックスの種類。次のいずれかの値になります。<br /><br /> -   HEAP<br />-   CLUSTERED<br />-   NONCLUSTERED<br />-   XML<br />-   SPATIAL|  
   
 ## <a name="indexcolumns"></a>IndexColumns  
   
@@ -59,7 +59,7 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |----------------|--------------|-----------------|  
 |constraint_catalog|String|インデックスが属するカタログ。|  
 |constraint_schema|String|インデックスを含むスキーマ。|  
-|constraint_name|String|インデックスの名前です。|  
+|constraint_name|String|インデックス名。|  
 |table_catalog|String|インデックスが関連付けられているテーブル名。|  
 |table_schema|String|インデックスが関連付けられているテーブルを含むスキーマ。|  
 |table_name|String|テーブル名。|  
@@ -68,7 +68,7 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |KeyType|Byte|オブジェクトの型。|  
 |index_name|String|インデックス名。|  
   
-## <a name="procedures"></a>手順  
+## <a name="procedures"></a>プロシージャ  
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
@@ -107,26 +107,26 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |NUMERIC_PRECISION_RADIX|Int16|数値データの概数、正確な数値データ、整数データ、または通貨データの有効桁数の基数。 その他の場合は NULL が返されます。|  
 |NUMERIC_SCALE|Int32|数値データの概数、正確な数値データ、整数データ、または通貨データの桁数。 その他の場合は NULL が返されます。|  
 |DATETIME_PRECISION|Int16|パラメーターの型が datetime または smalldatetime である場合の秒数の小数部の有効桁数。 その他の場合は NULL が返されます。|  
-|INTERVAL_TYPE|String|NULL: 将来 SQL Server で使用するために予約されています。|  
-|INTERVAL_PRECISION|Int16|NULL: 将来 SQL Server で使用するために予約されています。|  
+|INTERVAL_TYPE|String|NULL。 将来 SQL Server で使用するために予約されています。|  
+|INTERVAL_PRECISION|Int16|NULL。 将来 SQL Server で使用するために予約されています。|  
   
-## <a name="tables"></a>テーブル  
+## <a name="tables"></a>[テーブル]  
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|テーブルのカタログ。|  
 |TABLE_SCHEMA|String|テーブルを含むスキーマ。|  
-|TABLE_NAME|String|テーブル名です。|  
+|TABLE_NAME|String|テーブル名。|  
 |TABLE_TYPE|String|テーブルの型。 VIEW または BASE TABLE のいずれかです。|  
   
-## <a name="columns"></a>[列]  
+## <a name="columns"></a>列  
   
 |ColumnName|DataType|説明|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|テーブルのカタログ。|  
 |TABLE_SCHEMA|String|テーブルを含むスキーマ。|  
-|TABLE_NAME|String|テーブル名です。|  
-|COLUMN_NAME|String|列名|  
+|TABLE_NAME|String|テーブル名。|  
+|COLUMN_NAME|String|列名。|  
 |ORDINAL_POSITION|Int32|列の識別番号。|  
 |COLUMN_DEFAULT|String|列の既定値。|  
 |IS_NULLABLE|String|列に NULL 値が許容されるかどうかを指定します。 この列に NULL が許容される場合は、YES が返されます。 その他の場合は NO が返されます。|  
@@ -140,7 +140,7 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |CHARACTER_SET_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、文字セットがあるデータベースを示すマスターが返されます。 その他の場合は NULL が返されます。|  
 |CHARACTER_SET_SCHEMA|String|常に NULL が返されます。|  
 |CHARACTER_SET_NAME|String|この列が文字データ型またはテキスト データ型である場合、文字セットの一意の名前が返されます。 その他の場合は NULL が返されます。|  
-|COLLATION_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、照合順序が定義されているデータベースを示すマスターが返されます。 それ以外は、この列は NULL です。|  
+|COLLATION_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、照合順序が定義されているデータベースを示すマスターが返されます。 その他の場合、この列は NULL になります。|  
   
 ### <a name="columns-sql-server-2008"></a>Columns (SQL Server 2008)  
  .NET Framework version 3.5 SP1 および SQL Server 2008 以降では、新しい空間型、filestream、およびスパース列をサポートするために、以下の列が Columns スキーマ コレクションに追加されています。 これらの列は、以前のバージョンの .NET Framework および SQL Server ではサポートされません。  
@@ -160,8 +160,8 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|テーブルのカタログ。|  
 |TABLE_SCHEMA|String|テーブルを含むスキーマ。|  
-|TABLE_NAME|String|テーブル名です。|  
-|COLUMN_NAME|String|列名|  
+|TABLE_NAME|String|テーブル名。|  
+|COLUMN_NAME|String|列名。|  
 |ORDINAL_POSITION|Int32|列の識別番号。|  
 |COLUMN_DEFAULT|String|列の既定値。|  
 |IS_NULLABLE|String|列に NULL 値が許容されるかどうかを指定します。 この列に NULL が許容される場合は、YES が返されます。 その他の場合は NO が返されます。|  
@@ -175,7 +175,7 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |CHARACTER_SET_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、文字セットがあるデータベースを示すマスターが返されます。 その他の場合は NULL が返されます。|  
 |CHARACTER_SET_SCHEMA|String|常に NULL が返されます。|  
 |CHARACTER_SET_NAME|String|この列が文字データ型またはテキスト データ型である場合、文字セットの一意の名前が返されます。 その他の場合は NULL が返されます。|  
-|COLLATION_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、照合順序が定義されているデータベースを示すマスターが返されます。 それ以外は、この列は NULL です。|  
+|COLLATION_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、照合順序が定義されているデータベースを示すマスターが返されます。 その他の場合、この列は NULL になります。|  
 |IS_FILESTREAM|String|列に FILESTREAM 属性がある場合は YES。<br /><br /> 列には FILESTREAM 属性がない場合は NO。|  
 |IS_SPARSE|String|列がスパース列である場合は YES。<br /><br /> 列がスパース列でない場合は NO。|  
 |IS_COLUMN_SET|String|列が列セットの列である場合は YES。<br /><br /> 列が列セットの列でない場合は NO。|  
@@ -187,8 +187,8 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|テーブルのカタログ。|  
 |TABLE_SCHEMA|String|テーブルを含むスキーマ。|  
-|TABLE_NAME|String|テーブル名です。|  
-|COLUMN_NAME|String|列名|  
+|TABLE_NAME|String|テーブル名。|  
+|COLUMN_NAME|String|列名。|  
 |ORDINAL_POSITION|Int32|列の識別番号。|  
 |COLUMN_DEFAULT|String|列の既定値。|  
 |IS_NULLABLE|String|列に NULL 値が許容されるかどうかを指定します。 この列に NULL が許容される場合は、YES が返されます。 その他の場合は NO が返されます。|  
@@ -202,7 +202,7 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |CHARACTER_SET_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、文字セットがあるデータベースを示すマスターが返されます。 その他の場合は NULL が返されます。|  
 |CHARACTER_SET_SCHEMA|String|常に NULL が返されます。|  
 |CHARACTER_SET_NAME|String|この列が文字データ型またはテキスト データ型である場合、文字セットの一意の名前が返されます。 その他の場合は NULL が返されます。|  
-|COLLATION_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、照合順序が定義されているデータベースを示すマスターが返されます。 それ以外は、この列は NULL です。|  
+|COLLATION_CATALOG|String|列が文字データ型またはテキスト データ型である場合は、照合順序が定義されているデータベースを示すマスターが返されます。 その他の場合、この列は NULL になります。|  
 |IS_FILESTREAM|String|列に FILESTREAM 属性がある場合は YES。<br /><br /> 列には FILESTREAM 属性がない場合は NO。|  
 |IS_SPARSE|String|列がスパース列である場合は YES。<br /><br /> 列がスパース列でない場合は NO。|  
 |IS_COLUMN_SET|String|列が列セットの列である場合は YES。<br /><br /> 列が列セットの列でない場合は NO。|  
@@ -236,7 +236,7 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |TABLE_CATALOG|String|このビューに関連付けられているテーブルのカタログ。|  
 |TABLE_SCHEMA|String|このビューに関連付けられているテーブルを含むスキーマ。|  
 |TABLE_NAME|String|ビューに関連付けられているテーブルの名前。 ベース テーブルになります。|  
-|COLUMN_NAME|String|列名|  
+|COLUMN_NAME|String|列名。|  
   
 ## <a name="userdefinedtypes"></a>UserDefinedTypes  
   
@@ -244,13 +244,13 @@ Microsoft .NET Framework Data Provider for SQL Server は、共通のスキー�
 |----------------|--------------|-----------------|  
 |assembly_name|String|アセンブリのファイル名。|  
 |udt_name|String|アセンブリのクラス名。|  
-|version_major|オブジェクト|メジャー バージョン番号。|  
-|version_minor|オブジェクト|マイナー バージョン番号。|  
-|version_build|オブジェクト|ビルド番号。|  
-|version_revision|オブジェクト|リビジョン番号。|  
-|culture_info|オブジェクト|この UDT に関連付けられているカルチャ情報。|  
-|public_key|オブジェクト|このアセンブリで使用される公開キー。|  
-|is_fixed_length|Boolean|型の長さを max_length と常に同じにするかどうかを指定します。|  
+|version_major|Object|メジャー バージョン番号。|  
+|version_minor|Object|マイナー バージョン番号。|  
+|version_build|Object|ビルド番号。|  
+|version_revision|Object|リビジョン番号。|  
+|culture_info|Object|この UDT に関連付けられているカルチャ情報。|  
+|public_key|Object|このアセンブリで使用される公開キー。|  
+|is_fixed_length|ブール型|型の長さを max_length と常に同じにするかどうかを指定します。|  
 |max_length|Int16|型の最大長 (バイト単位)。|  
 |Create_Date|DateTime|アセンブリが作成/登録された日付。|  
 |Permission_set_desc|String|アセンブリのアクセス許可セット/セキュリティ レベルのフレンドリ名。|  

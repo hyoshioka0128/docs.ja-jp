@@ -5,12 +5,12 @@ author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: bfa9c24ef4cd2c418c91e00318aa47b889078d40
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: d4444b6d080afa92a4e7fd9f30c5f9358f02f0ef
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552658"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "78159235"
 ---
 # <a name="framework-libraries"></a>フレームワーク ライブラリ
 
@@ -52,7 +52,7 @@ BCL は最も基本的な型およびユーティリティの機能を提供し�
 
 * <xref:System.Net.Http.HttpClient>: URI で識別されるリソースに HTTP 要求を送信し、そのリソースから HTTP 応答を受信するための基底クラスを提供する API です。
 * <xref:System.Xml.Linq.XDocument>: LINQ を使用して XML ドキュメントのロードと照会をするための API です。
-* <xref:System.IO.StreamReader>: ファイルを読み取るための API です。 
+* <xref:System.IO.StreamReader>: ファイルを読み取るための API です。
 * <xref:System.IO.StreamWriter>: ファイルを書き込むための API です。
 
 ## <a name="app-model-apis"></a>アプリ モデル API

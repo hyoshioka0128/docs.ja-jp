@@ -13,12 +13,12 @@ helpviewer_keywords:
 - parsing strings, other strings
 - Boolean data type, parsing strings
 ms.assetid: d139bc00-3c4e-4d78-ac9a-5c951b258d28
-ms.openlocfilehash: 08e891501bbefcf8b32eff10dd7294af9d81adac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a3503e0e499c6010fcc3d8669fa5c1eaf2dbf570
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127569"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277545"
 ---
 # <a name="parsing-other-strings-in-net"></a>.NET でのその他の文字列の解析
 数値および <xref:System.DateTime> 文字列だけでなく、<xref:System.Char>、<xref:System.Boolean>、<xref:System.Enum> 型を表す文字列をデータ型に解析することもできます。  
@@ -30,7 +30,7 @@ ms.locfileid: "73127569"
  [!code-csharp[Conceptual.String.Parse#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.parse/cs/parse.cs#2)]
  [!code-vb[Conceptual.String.Parse#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.parse/vb/parse.vb#2)]  
   
-## <a name="boolean"></a>ブール型  
+## <a name="boolean"></a>Boolean  
  **Boolean** データ型には、**Parse** メソッドが含まれ、Boolean 値を示す文字列を実際の **Boolean** 型に変換するために使用できます。 このメソッドは大文字と小文字を区別しません。また、"True" または "False" を含む文字列を正常に解析することができます。 **Boolean** 型に関連付けられる **Parse** メソッドは、空白で囲まれた文字列を解析することもできます。 その他の文字列が渡された場合、<xref:System.FormatException> がスローされます。  
   
  次のコードの例では、**Parse** メソッドを使用して、文字列を Boolean 値に変換します。  
@@ -39,7 +39,7 @@ ms.locfileid: "73127569"
  [!code-csharp[Conceptual.String.Parse#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.parse/cs/parse.cs#3)]
  [!code-vb[Conceptual.String.Parse#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.parse/vb/parse.vb#3)]  
   
-## <a name="enumeration"></a>列挙  
+## <a name="enumeration"></a>Enumeration  
  静的 **Parse** メソッドを使用して、列挙型を文字列の値に初期化できます。 このメソッドでは、解析している列挙型、解析する文字列、および解析が大文字小文字を区別するかどうかを示す省略可能な Boolean フラグを受け入れます。 解析している文字列は、コンマで区切られた複数の値を含めることができます。これは、1 つ以上の空の領域 (空白とも呼ばれます) が前後にある場合があります。 文字列に複数の値がある場合、返されたオブジェクトの値は、ビット演算 OR 演算と組み合わされたすべての指定された値の値です。  
   
  次の例では、**Parse** メソッドを使用して、文字列形式を列挙値に変換します。 <xref:System.DayOfWeek> 列挙体は、文字列から **Thursday** に初期化されます。  
@@ -48,8 +48,8 @@ ms.locfileid: "73127569"
  [!code-csharp[Conceptual.String.Parse#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.parse/cs/parse.cs#4)]
  [!code-vb[Conceptual.String.Parse#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.parse/vb/parse.vb#4)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [文字列の解析](../../../docs/standard/base-types/parsing-strings.md)
-- [型の書式設定](../../../docs/standard/base-types/formatting-types.md)
-- [.NET での型変換](../../../docs/standard/base-types/type-conversion.md)
+- [文字列の解析](parsing-strings.md)
+- [型の書式設定](formatting-types.md)
+- [.NET での型変換](type-conversion.md)

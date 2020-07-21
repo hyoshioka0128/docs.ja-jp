@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2b936bef-9b75-48bf-859f-42e419c65f1c
 topic_type:
 - apiref
-ms.openlocfilehash: da440b7d2da57511545d3b63700662eb544660fd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 611091d39da6d7f646457457f20ce1eaf37db361
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137775"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213206"
 ---
 # <a name="icordebugfunction2-interface"></a>ICorDebugFunction2 インターフェイス
 
@@ -29,25 +29,25 @@ ms.locfileid: "73137775"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[EnumerateNativeCode メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-enumeratenativecode-method.md)|(実装されていません。)この ICorDebugFunction2 オブジェクトによって参照されている関数内のネイティブコードステートメントを含む、コードの型の列挙体へのインターフェイスポインターを取得します。|  
-|[GetJMCStatus メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getjmcstatus-method.md)|この関数がユーザーコードとしてマークされているかどうかを示す値を取得します。|  
-|[GetVersionNumber メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getversionnumber-method.md)|この関数のエディットコンティニュバージョンを取得します。|  
-|[SetJMCStatus メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-setjmcstatus-method.md)|マイコードのみのステップ実行のために、この関数をマークします。|  
+|[EnumerateNativeCode メソッド](icordebugfunction2-enumeratenativecode-method.md)|(実装されていません。)この ICorDebugFunction2 オブジェクトによって参照されている関数内のネイティブコードステートメントを含む、コードの型の列挙体へのインターフェイスポインターを取得します。|  
+|[GetJMCStatus メソッド](icordebugfunction2-getjmcstatus-method.md)|この関数がユーザーコードとしてマークされているかどうかを示す値を取得します。|  
+|[GetVersionNumber メソッド](icordebugfunction2-getversionnumber-method.md)|この関数のエディットコンティニュバージョンを取得します。|  
+|[SetJMCStatus メソッド](icordebugfunction2-setjmcstatus-method.md)|マイコードのみのステップ実行のために、この関数をマークします。|  
   
 ## <a name="remarks"></a>Remarks  
   
 > [!NOTE]
 > このインターフェイスは、コンピューター間またはプロセス間でのリモート呼び出しをサポートしていません。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)

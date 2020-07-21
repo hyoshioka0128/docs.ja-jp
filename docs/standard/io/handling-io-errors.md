@@ -1,5 +1,6 @@
 ---
 title: .NET での I/O エラーの処理
+description: .NET で I/O エラーを処理する方法について学習します。 エラー コードを例外にマップし、I/O 操作で例外を処理して、IOException を処理します。
 ms.date: 08/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 51eb0e758f1ae8fb41c842ef9b32a9f8928af9ac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 45f3951b727d3b615d8384541ff169e8840acab0
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120742"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599803"
 ---
 # <a name="handling-io-errors-in-net"></a>.NET での I/O エラーの処理
 
@@ -39,7 +40,7 @@ ms.locfileid: "73120742"
 
 たとえば、Windows オペレーティング システムでは、エラー コード`ERROR_FILE_NOT_FOUND` (または 0x02) を返すメソッドの呼び出しは <xref:System.IO.FileNotFoundException> にマップされ、エラー コード `ERROR_PATH_NOT_FOUND` (または 0x03) は <xref:System.IO.DirectoryNotFoundException> にマップされます。
 
-ただし、オペレーティング システムが特定のエラー コードが返す正確な条件は、多くの場合、文書化されていないか、適切に文書化されていません。 その結果、予期しない例外が発生する可能性があります。 たとえば、ファイルではなくディレクトリを操作している場合、無効なディレクトリ パスを <xref:System.IO.DirectoryInfo.%23ctor%2A?displayProperty=nameWithType> に提供すると、<xref:System.IO.DirectoryNotFoundException> コンストラクターがスローされることが想定されます。 ただし、<xref:System.IO.FileNotFoundException> がスローされる場合もあります。
+ただし、オペレーティング システムが特定のエラー コードが返す正確な条件は、多くの場合、文書化されていないか、適切に文書化されていません。 その結果、予期しない例外が発生する可能性があります。 たとえば、ファイルではなくディレクトリを操作している場合、無効なディレクトリ パスを <xref:System.IO.DirectoryInfo.%23ctor%2A> に提供すると、<xref:System.IO.DirectoryNotFoundException> コンストラクターがスローされることが想定されます。 ただし、<xref:System.IO.FileNotFoundException> がスローされる場合もあります。
 
 ## <a name="exception-handling-in-io-operations"></a>I/O 操作の例外処理
 
@@ -53,10 +54,10 @@ ms.locfileid: "73120742"
 | <xref:System.IO.DriveNotFoundException?> | はい | はい |
 | <xref:System.IO.PathTooLongException> | はい | はい |
 | <xref:System.OperationCanceledException> | はい | はい |
-| <xref:System.UnauthorizedAccessException> | はい | [はい] |
+| <xref:System.UnauthorizedAccessException> | はい | はい |
 | <xref:System.ArgumentException> | .NET Core 2.0 以前| はい |
 | <xref:System.NotSupportedException> | × | はい |
-| <xref:System.Security.SecurityException> | × | 限定的な信頼のみ |
+| <xref:System.Security.SecurityException> | いいえ | 限定的な信頼のみ |
 
 ## <a name="handling-ioexception"></a>IOException の処理
 

@@ -7,13 +7,13 @@ dev_langs:
 ms.assetid: 8b1f9070-d032-48c7-b030-bd8fbb2ca59a
 ms.openlocfilehash: 5ede6e2cd52ad55f8c35a42d137044dd1ceea400
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70785961"
 ---
 # <a name="row-error-information"></a>行エラー情報
-<xref:System.Data.DataTable> の値を編集しているときに、行エラーに対処する必要をなくすために、エラー情報を行に追加して後で使用することができます。 <xref:System.Data.DataRow> オブジェクトは、この目的のために各行に <xref:System.Data.DataRow.RowError%2A> プロパティを提供します。 **Datarow**の**RowError**プロパティにデータを追加すると、 <xref:System.Data.DataRow.HasErrors%2A> **datarow**のプロパティが**true**に設定されます。 **Datarow**が**DataTable**の一部であり、 **datarow**が**True**の場合、 **datatable. haserrors**プロパティも**true**になります。 これは、 **DataTable**が属している**データセット**にも適用されます。 エラーをテストするときに、 **Haserrors**プロパティを確認して、エラー情報がどの行に追加されたかを確認できます。 **Haserrors**が**true**の場合は、次の<xref:System.Data.DataTable.GetErrors%2A>例に示すように、 **DataTable**のメソッドを使用して、エラーのある行だけを返して調べることができます。  
+<xref:System.Data.DataTable> の値を編集しているときに、行エラーに対処する必要をなくすために、エラー情報を行に追加して後で使用することができます。 <xref:System.Data.DataRow> オブジェクトは、この目的のために各行に <xref:System.Data.DataRow.RowError%2A> プロパティを提供します。 **DataRow** の **RowError** プロパティにデータを追加すると、その **DataRow** の <xref:System.Data.DataRow.HasErrors%2A> プロパティが **true** に設定されます。 **DataRow** が **DataTable** の一部であり、**DataRow.HasErrors** が **true** である場合は、**DataTable.HasErrors** プロパティも **true** になります。 これは、**DataTable** が属している **DataSet** に対しても適用されます。 エラーの有無を確認する場合は、**HasErrors** プロパティをチェックして、エラー情報が追加された行があるかどうかを判断できます。 **HasErrors** が **true** の場合は、次の例に示すように、**DataTable** の <xref:System.Data.DataTable.GetErrors%2A> メソッドを使用して、エラーのある行だけを返してチェックすることができます。  
   
 ```vb  
 Dim workTable As DataTable = New DataTable("Customers")  

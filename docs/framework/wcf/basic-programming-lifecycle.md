@@ -1,15 +1,16 @@
 ---
 title: 基本的なプログラミング ライフサイクル
+description: WCF アプリケーションを構築するためのタスクについて説明します。 WCF を使用すると、アプリは、同じコンピューター、ネットワーク、または異なるアプリケーションプラットフォーム上で通信できます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
-ms.openlocfilehash: fe578ba3c655c9c9ea8398b9b2e4d4f974153c8e
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c672827fff780fd263f5355520bb6ccf02bb902e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320824"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245532"
 ---
 # <a name="basic-programming-lifecycle"></a>基本的なプログラミング ライフサイクル
 Windows Communication Foundation (WCF) を使用すると、アプリケーションは、同じコンピューター上、インターネット上、または異なるアプリケーションプラットフォーム上にあるかどうかを通信できます。 このトピックでは、WCF アプリケーションの構築に必要なタスクの概要を示します。 実際のサンプルアプリケーションについては、[はじめにチュートリアル](getting-started-tutorial.md)を参照してください。  
@@ -17,9 +18,9 @@ Windows Communication Foundation (WCF) を使用すると、アプリケーシ�
 ## <a name="the-basic-tasks"></a>基本的なタスク  
  基本的な作業は、次の順序で行います。  
   
-1. サービス コントラクトを定義します。 サービス コントラクトでは、サービスの署名、交換するデータ、およびコントラクトに必要なその他のデータを指定します。 詳細については、 「[サービス コントラクトの設計](designing-service-contracts.md)」を参照してください。  
+1. サービス コントラクトを定義します。 サービス コントラクトでは、サービスの署名、交換するデータ、およびコントラクトに必要なその他のデータを指定します。 詳細については、「[サービスコントラクトの設計](designing-service-contracts.md)」を参照してください。  
   
-2. コントラクトを実装します。 サービス コントラクトを実装するには、そのコントラクトを実装するクラスを作成し、ランタイムに必要なカスタム動作を指定します。 詳細については、「[サービス コントラクトの実装](implementing-service-contracts.md)」を参照してください。  
+2. コントラクトを実装します。 サービス コントラクトを実装するには、そのコントラクトを実装するクラスを作成し、ランタイムに必要なカスタム動作を指定します。 詳細については、「[サービスコントラクトの実装](implementing-service-contracts.md)」を参照してください。  
   
 3. エンドポイントおよびその他の動作情報を指定して、サービスを構成します。 詳細については、「[サービスの構成](configuring-services.md)」を参照してください。  
   

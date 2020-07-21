@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 45763504c2d25596b0adfb4b8a0236b332d89e8c
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: a9bac04a7839796229a2e1c61771ca32573f8fcd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802053"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374513"
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic の新機能
 
@@ -186,7 +186,7 @@ Visual Basic はタプルに対応しているため、簡単にタプルを定�
 
 C# 7.0 以降の C# は参照戻り値に対応しています。 つまり、メソッドを呼び出して、参照により返された値を受け取るとき、参照の値が変わることがあります。 Visual Basic の場合、参照戻り値でメソッドを作成することはできませんが、参照戻り値を利用したり、変更したりすることはできます。
 
-たとえば、C# で記述された次の `Sentence` クラスには、指定された部分文字列で始まる文の次の単語を探す `FindNext` メソッドが含まれています。 文字列は参照戻り値として返され、参照によりメソッドに渡される `Boolean` 変数は検索が成功したかどうかを示します。 つまり、呼び出すことで戻り値を読めるだけでなく、変更することもできます。その変更は `Sentence` クラスで反映されます。
+たとえば、C# で記述された次の `Sentence` クラスには、指定された部分文字列で始まる文の次の単語を探す `FindNext` メソッドが含まれています。 文字列は参照戻り値として返され、参照によりメソッドに渡される `Boolean` 変数は検索が成功したかどうかを示します。 これは、返された値を読み取ることに加えて、呼び出し元がそれを変更することもでき、その変更が `Sentence` クラスに反映されることを意味します。
 
 [!code-csharp[Ref-Return](../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
 
@@ -210,7 +210,7 @@ C# 7.0 以降の C# は参照戻り値に対応しています。 つまり、�
 
 文字列をハードコーディングせずにエラー メッセージで使用するための型またはメンバーの非修飾文字列名を取得できます。  これにより、リファクタリングするときにコードは正しい状態を保てます。  この機能は、またモデル-ビュー-コントローラーの MVC のリンクをフックし、プロパティ変更イベントを発生させるためにも役立ちます。
 
-[文字列補間](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
+[文字列補間](../programming-guide/language-features/strings/interpolated-strings.md)
 
 文字列補間式を使用して、文字列を構築することができます。  補間文字列式は、式が含まれているテンプレート文字列のように見えます。  引数に関しては、補間文字列は[複合書式指定](../../standard/base-types/composite-formatting.md)より理解しやすくなっています。
 
@@ -218,7 +218,7 @@ C# 7.0 以降の C# は参照戻り値に対応しています。 つまり、�
 
 メンバー アクセス (`?.`) またはインデックス (`?[]`) 操作を実行する前に、構文的に非常に簡単な方法で null をテストできます。  これらの演算子を使用すると、null チェックの処理のために記述するコードを少なくすることができます (特に、データ構造を下っていく場合)。  左のオペランドまたはオブジェクト参照が null の場合、操作は null を返します。
 
-[複数行の文字列リテラル](../../visual-basic/programming-guide/language-features/strings/string-basics.md)
+[複数行の文字列リテラル](../programming-guide/language-features/strings/string-basics.md)
 
 文字列リテラルには、改行文字のシーケンスを含めることができます。  `<xml><![CDATA[...text with newlines...]]></xml>.Value` の使用に関する以前の次善策は不要になりました
 
@@ -238,11 +238,11 @@ C# 7.0 以降の C# は参照戻り値に対応しています。 つまり、�
 
 readwrite プロパティを使用して readonly インターフェイスのプロパティを実装できます。 このインターフェイスでは、最小限の機能が保証されています。これによって、実装するクラスでプロパティーが設定できなくなるということはありません。
 
-[TypeOf \<expr> IsNot \<type>](../../visual-basic/language-reference/operators/typeof-operator.md)
+[TypeOf \<expr> IsNot \<type>](../language-reference/operators/typeof-operator.md)
 
 コードを見やすくするために、`TypeOf` を `IsNot` とともに使用できるようになりました。
 
-[#Disable Warning \<ID> と #Enable Warning \<ID>](../../visual-basic/language-reference/directives/index.md)
+[#Disable Warning \<ID> と #Enable Warning \<ID>](../language-reference/directives/index.md)
 
 ソース ファイル内の領域の特定の警告を無効化および有効化することができます。
 
@@ -250,15 +250,15 @@ readwrite プロパティを使用して readonly インターフェイスのプ
 
 ドキュメント コメントを記述する際、スマート エディターを取得し、パラメーター名の検証、`crefs` の適切な処理 (ジェネリック、演算子など)、色分け、リファクタリングのためのサポートを構築します。
 
-[部分モジュールとインターフェイスの定義](../../visual-basic/language-reference/modifiers/partial.md)
+[部分モジュールとインターフェイスの定義](../language-reference/modifiers/partial.md)
 
 クラスと構造体に加えて、部分モジュールとインターフェイスを宣言できます。
 
-[メソッド本体内の #Region ディレクティブ](../../visual-basic/language-reference/directives/region-directive.md)
+[メソッド本体内の #Region ディレクティブ](../language-reference/directives/region-directive.md)
 
 #Region…#End Region 区切り記号をファイルの任意の場所に挿入できます。関数内に装入することも、複数の関数本体に渡って挿入することもできます。
 
-[オーバーライドの定義は暗黙的オーバーロードです](../../visual-basic/language-reference/modifiers/overrides.md)
+[オーバーライドの定義は暗黙的オーバーロードです](../language-reference/modifiers/overrides.md)
 
 `Overrides` 修飾子を定義に追加する場合には、コンパイラが `Overloads`  を暗黙的に追加し、共通のケースで入力するコードを少なくできるようにします。
 

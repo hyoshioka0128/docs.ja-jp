@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 4dcb357570cb6597fde86c9e8f2acb74364cfaa3
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198485"
 ---
 ### <a name="session-state-obsolete-apis-removed"></a>セッション状態: 古い API が削除された
@@ -18,7 +18,7 @@ ms.locfileid: "73198485"
 
 この変更により、Cookie を使用する機能を構成するための API 間の一貫性が適用されます。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 削除された API の使用箇所を、置換された新しい API に移行します。 `Startup.ConfigureServices` での次の例を検討してください。
 

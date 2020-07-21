@@ -9,22 +9,22 @@ helpviewer_keywords:
 ms.assetid: 5702b603-95e6-438a-88c0-76509367e876
 ms.openlocfilehash: d1eaaaae2e42bc366d6859ad72a90b149341eef0
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61971133"
 ---
 # <a name="repeatbutton"></a>RepeatButton
-<xref:System.Windows.Controls.Primitives.RepeatButton>に似ていますが、<xref:System.Windows.Controls.Button>します。 ただし、<xref:System.Windows.Controls.Primitives.RepeatButton>タイミングを制御する要素のことする方法と、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントが発生します。  
+<xref:System.Windows.Controls.Primitives.RepeatButton> は <xref:System.Windows.Controls.Button> に似ています。 ただし、<xref:System.Windows.Controls.Primitives.RepeatButton> 要素を使用すると、<xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントが発生するタイミングと方法を制御できます。  
   
- 次の図は、[繰り返し] ボタン コントロール、既定、PointerFocused、および Pressed の 3 つの状態の例を示します。 最初のボタンの既定の状態を示しています、<xref:System.Windows.Controls.Primitives.RepeatButton>します。 2 つ目は、フォーカスを付けること、ボタン、マウス ポインターを置いたときに、ボタンの外観がどのように変化するかを示します。 最後のボタンの外観を示しています、<xref:System.Windows.Controls.Primitives.RepeatButton>ユーザーがコントロール上でマウス ボタンを押すとします。  
+ 次の図は、[繰り返し] ボタン コントロールの 3 つの状態の例 (Default (既定の状態)、PointerFocused (ポインターでフォーカスした状態)、Pressed (押した状態)) を示しています。 最初のボタンは、<xref:System.Windows.Controls.Primitives.RepeatButton> の既定の状態を示しています。 2 つ目のボタンは、マウス ポインターがボタンの上に置かれて、フォーカスが設定されたときに、ボタンの外観がどのように変化するかを示しています。 最後のボタンは、ユーザーがコントロール上でマウス ボタンを押したときの <xref:System.Windows.Controls.Primitives.RepeatButton> の外観を示しています。  
   
- ![ボタンの状態を繰り返す](./media/ss-ctl-repeatbutton.png "SS_CTL_repeatbutton")  
+ ![[繰り返し] ボタンの状態](./media/ss-ctl-repeatbutton.png "SS_CTL_repeatbutton")  
 一般的な RepeatButton  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.RepeatButton>  
   
 ## <a name="related-sections"></a>関連項目

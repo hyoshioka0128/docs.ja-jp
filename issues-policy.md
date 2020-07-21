@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 33178637c4fcfb21e8190c3d2593f09326ea5995
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73166636"
 ---
 # <a name="github-issues-process-and-policy"></a>GitHub イシューのプロセスとポリシー

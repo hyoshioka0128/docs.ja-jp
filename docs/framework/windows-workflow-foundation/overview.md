@@ -1,13 +1,14 @@
 ---
 title: Windows Workflow の概要
+description: この記事では、実際のプロセスを記述するモデルである Workflow Foundation ワークフローについて説明します。
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: ada5ec75d130c9c518c5129db6c12b61c3acbf45
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ec1a00b37abe2cb842735fb98e1c113a97943758
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802532"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421476"
 ---
 # <a name="windows-workflow-overview"></a>Windows Workflow の概要
 ワークフローは、実際のプロセスを記述するモデルとして格納される*アクティビティ*と呼ばれる一連のエレメンタルです。 ワークフローでは、短期間だけ行われる業務や長期間にわたって行われる業務の各部分の実行順序と、それらの間の依存関係を表すことができます。 このような業務はモデルの最初から最後まで通して行われます。アクティビティには、人間によって実行されるものと、システム機能によって実行されるものがあります。  
@@ -23,9 +24,9 @@ ms.locfileid: "74802532"
   
  これらの各クラスは、アクティビティの実行に関与する <xref:System.Activities.ActivityInstance> として表されるコアのアクティビティ ランタイムをラップします。 実行するアプリケーション ドメイン内では、同時に複数の <xref:System.Activities.ActivityInstance> オブジェクトを使用できます。  
   
- 前述のホストと対話する 3 つのオブジェクトは、それぞれワークフロー プログラムと呼ばれるアクティビティのツリーから作成されます。 これらの型または <xref:System.Activities.ActivityInstance>をラップするカスタムホストを使用すると、ワークフローは、コンソールアプリケーション、フォームベースのアプリケーション、Windows サービス、ASP.NET websites、Windows Communication Foundation (WCF) サービスを含む任意の Windows プロセス内で実行できます。  
+ 前述のホストと対話する 3 つのオブジェクトは、それぞれワークフロー プログラムと呼ばれるアクティビティのツリーから作成されます。 これらの型またはをラップするカスタムホストを使用すると <xref:System.Activities.ActivityInstance> 、コンソールアプリケーション、フォームベースのアプリケーション、Windows サービス、ASP.NET websites、および Windows Communication Foundation (WCF) サービスを含む任意の Windows プロセス内でワークフローを実行できます。  
   
- ![ホストプロセスのワークフローコンポーネント](./media/44c79d1d-178b-4487-87ed-3e33015a3842.gif "44c79d1d-178b-4487-87ed-3e33015a3842")  
+ ![ホスト プロセス内のワークフローのコンポーネント](./media/44c79d1d-178b-4487-87ed-3e33015a3842.gif "44c79d1d-178b-4487-87ed-3e33015a3842")  
 ホスト プロセス内のワークフローのコンポーネント  
   
 ## <a name="interaction-between-workflow-components"></a>ワークフロー コンポーネント間の対話  
@@ -41,6 +42,6 @@ ms.locfileid: "74802532"
   
 - <xref:System.Activities.CodeActivity> 抽象クラスから派生するカスタム アクティビティ。 <xref:System.Activities.CodeActivity> は、<xref:System.Activities.CodeActivityContext> メソッドのパラメーターとして使用可能な <xref:System.Activities.CodeActivity.Execute%2A> を使用して、ランタイム機能 (追跡やプロパティなど) にアクセスできます。 これらの実行時機能の詳細については、「[ワークフローの追跡とトレース](workflow-tracking-and-tracing.md)」と「[ワークフロー実行のプロパティ](workflow-execution-properties.md)」を参照してください。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [BizTalk Server 2006 または WF ですか?プロジェクトに適したワークフローツールを選択する](https://docs.microsoft.com/previous-versions/dotnet/articles/cc303238(v=msdn.10))

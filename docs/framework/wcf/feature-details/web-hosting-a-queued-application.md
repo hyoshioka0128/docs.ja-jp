@@ -2,19 +2,19 @@
 title: キューに置かれたアプリケーションの Web ホスト
 ms.date: 03/30/2017
 ms.assetid: c7a539fa-e442-4c08-a7f1-17b7f5a03e88
-ms.openlocfilehash: 36c35fe0590ad9fc728641313d4175a432d7ccaa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 17c3d2167d3f98017c5f366ab0d700d9fb889f82
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951578"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600141"
 ---
 # <a name="web-hosting-a-queued-application"></a>キューに置かれたアプリケーションの Web ホスト
-Windows プロセスアクティブ化サービス (WAS) は、Windows Communication Foundation (WCF) サービスをホストするアプリケーションを含むワーカープロセスのアクティブ化と有効期間を管理します。 WAS プロセスモデルは、http への依存関係を削除することによって、HTTP サーバーの IIS 6.0 プロセスモデルを一般化します。 これにより、WCF サービスは、メッセージベースのアクティブ化をサポートし、特定のコンピューターで多数のアプリケーションをホストする機能を提供するホスティング環境で、HTTP プロトコルと非 HTTP プロトコルの両方を使用できます。  
+Windows プロセス アクティブ化サービス (WAS) は、Windows Communication Foundation (WCF) サービスをホストするアプリケーションが含まれているワーカー プロセスのアクティブ化と有効期間を管理します。 WAS プロセス モデルは、HTTP への依存性を取り除くことで、HTTP サーバーの IIS 6.0 プロセス モデルを一般化します。 これにより、WCF サービスは、メッセージベースのアクティブ化をサポートし、特定のコンピューターで多数のアプリケーションをホストする機能を提供するホスティング環境で、HTTP プロトコルと非 HTTP プロトコルの両方を使用できます。  
   
  WAS にはメッセージ キュー (MSMQ) アクティブ化サービスが含まれており、アプリケーションで使用されるキューのいずれかに 1 つ以上のメッセージが置かれると、キュー アプリケーションがアクティブ化されます。 MSMQ アクティブ化サービスは、既定で自動的に開始される NT サービスです。  
   
- WAS とその利点の詳細については、「 [Windows プロセスアクティブ化サービスでのホスト](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)」を参照してください。 MSMQ の詳細については、「[キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)」を参照してください。
+ WAS とその利点の詳細については、「 [Windows プロセスアクティブ化サービスでのホスト](hosting-in-windows-process-activation-service.md)」を参照してください。 MSMQ の詳細については、「[キューの概要](queues-overview.md)」を参照してください。
   
 ## <a name="queue-addressing-in-was"></a>WAS でのキュー アドレス指定  
  WAS アプリケーションには URI (Uniform Resource Identifier) アドレスがあります。 アプリケーション アドレスは、ベース URI プレフィックスとアプリケーション固有の相対アドレス (パス) の 2 つの部分に分かれます。 この 2 つの部分を結合すると、アプリケーションの外部アドレスになります。 ベース URI プレフィックスはサイトバインドから構築され、サイトのすべてのアプリケーションに使用されます。たとえば、"net.tcp:/localhost"、"msmq. formatname:/localhost"、"net.tcp:/localhost" などです。 アプリケーションアドレスは、アプリケーション固有のパスフラグメント ("/applicationone" など) を取得し、それをベース URI プレフィックスに付加して、完全なアプリケーション URI (例: "net.tcp://") に追加することによって作成されます。  
@@ -43,5 +43,5 @@ Windows プロセスアクティブ化サービス (WAS) は、Windows Communica
   
 ## <a name="see-also"></a>関連項目
 
-- [有害メッセージ処理](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)
-- [サービス エンドポイントとキューのアドレス指定](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)
+- [有害メッセージ処理](poison-message-handling.md)
+- [サービス エンドポイントとキューのアドレス指定](service-endpoints-and-queue-addressing.md)

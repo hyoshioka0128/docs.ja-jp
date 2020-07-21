@@ -4,12 +4,12 @@ description: .NET Core での AssemblyLoadContext の用途と動作を理解す
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: 8a73a432bf8cc72cced77cf6c62a785b72032913
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 43fb0d792ddeb20b8a141af452a86dd50f37ba43
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72303708"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523609"
 ---
 # <a name="understanding-systemruntimeloaderassemblyloadcontext"></a>System.Runtime.Loader.AssemblyLoadContext について
 
@@ -103,8 +103,8 @@ ms.locfileid: "72303708"
 a.GetType().Assembly
 b.GetType().Assembly
 // In debugger look at each AssemblyLoadContext's instance and name
-System.Runtime.AssemblyLoadContext.GetLoadContext(a.GetType().Assembly)
-System.Runtime.AssemblyLoadContext.GetLoadContext(b.GetType().Assembly)
+System.Runtime.Loader.AssemblyLoadContext.GetLoadContext(a.GetType().Assembly)
+System.Runtime.Loader.AssemblyLoadContext.GetLoadContext(b.GetType().Assembly)
 ```
 
 ### <a name="resolving-type-conversion-issues"></a>型変換の問題の解決

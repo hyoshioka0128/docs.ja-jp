@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ca2af325-eb9d-4a91-90e4-267e45b98611
 topic_type:
 - apiref
-ms.openlocfilehash: bab215a8221696a0e43e228278085fcef52a40e9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1572c206f4a5a5fe0fd189ca84d0bcda2249c6d4
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442817"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007651"
 ---
 # <a name="cormethodsemanticsattr-enumeration"></a>CorMethodSemanticsAttr 列挙型
 メソッドとそれに関連付けられているプロパティまたはイベントとの関係を記述する値が格納されます。  
@@ -43,20 +43,20 @@ typedef enum CorMethodSemanticsAttr {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`msSetter`|メソッドがプロパティの `set` アクセサーであることを指定します。|  
-|`msGetter`|メソッドがプロパティの `get` アクセサーであることを指定します。|  
+|`msSetter`|メソッドがプロパティのアクセサーであることを指定し `set` ます。|  
+|`msGetter`|メソッドがプロパティのアクセサーであることを指定し `get` ます。|  
 |`msOther`|メソッドが、ここで定義されたプロパティ以外のプロパティまたはイベントへのリレーションシップを持つことを指定します。|  
 |`msAddOn`|メソッドがイベントのハンドラーメソッドを追加することを指定します。|  
 |`msRemoveOn`|メソッドがイベントのハンドラーメソッドを削除することを指定します。|  
 |`msFire`|メソッドがイベントを発生させることを指定します。|  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

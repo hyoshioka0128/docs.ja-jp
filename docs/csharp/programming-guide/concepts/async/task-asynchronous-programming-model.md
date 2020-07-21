@@ -2,12 +2,12 @@
 title: Async および Await を使用したタスク非同期プログラミング モデル (TAP) (C#)
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 8f88ecc05fd21a3526478cf564dc4fa97f309f7e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 90bee745a393ac35ac968e9f4f6b6c83ad8fbb46
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73969963"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990071"
 ---
 # <a name="task-asynchronous-programming-model"></a>非同期プログラミング モデル
 
@@ -17,7 +17,7 @@ ms.locfileid: "73969963"
 
 このトピックでは、非同期プログラミングをいつ、どのように使用するかの概要を紹介します。詳細と例を含むをサポート トピックへのリンクもあります。
 
-## <a name="BKMK_WhentoUseAsynchrony"></a>非同期による応答性の改善
+## <a name="async-improves-responsiveness"></a><a name="BKMK_WhentoUseAsynchrony"></a>非同期による応答性の改善
 
 Web アクセスなど、ブロックされる可能性がある操作には、非同期が必要となります。 Web リソースへのアクセスには、遅延が発生することがあります。 このような操作が同期処理内でブロックされた場合、アプリケーション全体が待機する必要があります。 非同期処理では、ブロックする可能性のあるタスク終了するまで、アプリケーションは Web リソースに依存しない他の操作を続行できます。
 
@@ -27,7 +27,7 @@ Web アクセスなど、ブロックされる可能性がある操作には、�
 |---------------------|-----------------------------------|-------------------------------------------|
 |Web アクセス|<xref:System.Net.Http.HttpClient>|<xref:Windows.Web.Syndication.SyndicationClient>|
 |ファイルの処理|<xref:System.IO.StreamWriter>、 <xref:System.IO.StreamReader>、 <xref:System.Xml.XmlReader>|<xref:Windows.Storage.StorageFile>|
-|イメージの処理||<xref:Windows.Media.Capture.MediaCapture>、 <xref:Windows.Graphics.Imaging.BitmapEncoder>、 <xref:Windows.Graphics.Imaging.BitmapDecoder>|
+|イメージの処理||<xref:Windows.Media.Capture.MediaCapture>、<xref:Windows.Graphics.Imaging.BitmapEncoder>、<xref:Windows.Graphics.Imaging.BitmapDecoder>|
 |WCF プログラミング|[同期操作と非同期操作](../../../../framework/wcf/synchronous-and-asynchronous-operations.md)||
 
 非同期性は、UI スレッドにアクセスするアプリケーションに対して特に有効です。これは、すべての UI 関連のアクティビティが一般的に 1 つのスレッドを共有するためです。 同期アプリケーションでは、1 つのプロセスがブロックされるとすべてがブロックされます。 アプリケーションが応答を停止するため、待機状態であるとは考えずに失敗したと結論付けることもあります。
@@ -36,7 +36,7 @@ Web アクセスなど、ブロックされる可能性がある操作には、�
 
 非同期ベースの方法は、非同期操作を設計する場合に選択できるオプションの一覧に、自動送信に相当するものを追加します。 つまり、開発者の少しの作業量で、従来の非同期プログラミングのすべての利点を取得できます。
 
-## <a name="BKMK_HowtoWriteanAsyncMethod"></a>非同期メソッドの作成の簡素化
+## <a name="async-methods-are-easier-to-write"></a><a name="BKMK_HowtoWriteanAsyncMethod"></a>非同期メソッドの作成の簡素化
 
 C# の [async](../../../language-reference/keywords/async.md) キーワードと [await](../../../language-reference/operators/await.md) キーワードは、非同期プログラミングの中核です。 これら 2 つのキーワードを使用すると、同期メソッドの作成とほぼ同様の容易さで、.NET Framework、.NET Core または Windows ランタイムのリソースを使用して非同期メソッドを作成できます。 `async` キーワードを使用して定義する非同期メソッドは、"*async メソッド*" として参照されます。
 
@@ -106,7 +106,7 @@ string urlContents = await client.GetStringAsync("https://docs.microsoft.com/dot
 
 .NET Framework の以前のバージョンでの非同期性の詳細については、「[TPL と従来の .NET Framework 非同期プログラミング](../../../../standard/parallel-programming/tpl-and-traditional-async-programming.md)」を参照してください。
 
-## <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a>非同期メソッドでの動作
+## <a name="what-happens-in-an-async-method"></a><a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a>非同期メソッドでの動作
 
 非同期プログラミングでは理解が必要な最も重要なことは、コントロール フローがどのようにメソッドからのメソッドに移動するかということです。 次の図では、このプロセスについて説明します。
 
@@ -142,13 +142,13 @@ string urlContents = await client.GetStringAsync("https://docs.microsoft.com/dot
 
 制御フローの詳細については、「[非同期プログラムにおける制御フロー (C#)](control-flow-in-async-programs.md)」を参照してください。
 
-## <a name="BKMK_APIAsyncMethods"></a> API の非同期メソッド
+## <a name="api-async-methods"></a><a name="BKMK_APIAsyncMethods"></a> API の非同期メソッド
 
 非同期のプログラミングをサポートする `GetStringAsync` などのメソッドがどこにあるのかということです。 .NET Framework 4.5 以降および .NET Core には、`async` および `await` で使用する多くのメンバーが含まれています。 メンバー名に付記されている "Async" というサフィックスと、その戻り値の型である <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> から識別できます。 たとえば、`System.IO.Stream` のクラスには、同期メソッドの <xref:System.IO.Stream.CopyTo%2A>、<xref:System.IO.Stream.Read%2A>、および <xref:System.IO.Stream.Write%2A> と共に、<xref:System.IO.Stream.CopyToAsync%2A>、<xref:System.IO.Stream.ReadAsync%2A> および <xref:System.IO.Stream.WriteAsync%2A> という同期メソッドが含まれています。
 
 Windows ランタイムにも、Windows アプリの `async` と `await` で使用できる多くのメソッドが含まれています。 詳しくは、UWP 開発について「[Threading and async programming](/windows/uwp/threading-async/)」(スレッドと非同期プログラミング) を、以前のバージョンの Windows ランタイムを使用している場合は「[非同期プログラミング (Windows ストア アプリ)](https://docs.microsoft.com/previous-versions/windows/apps/hh464924(v=win.10))」と「[クイック スタート: C# または Visual Basic での非同期 API の呼び出し](https://docs.microsoft.com/previous-versions/windows/apps/hh452713(v=win.10))」をご覧ください。
 
-## <a name="BKMK_Threads"></a>スレッド
+## <a name="threads"></a><a name="BKMK_Threads"></a>スレッド
 
 非同期のメソッドは非ブロッキング操作を意図しています。 非同期のメソッドの `await` 式では、待機中のタスクの実行時に現在のスレッドはブロックされません。 代わりに、式はメソッドの残りの部分の継続を登録し、非同期のメソッドの呼び出し元にコントロールを戻します。
 
@@ -156,7 +156,7 @@ Windows ランタイムにも、Windows アプリの `async` と `await` で使�
 
 非同期プログラミングへの非同期ベースのアプローチは、ほぼすべてのケースの既存のアプローチに推奨されます。 特に、このアプローチはコードがシンプルで競合状態からの保護の必要がないため、I/O バウンドの操作では、<xref:System.ComponentModel.BackgroundWorker> クラスよりも優れています。 <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> メソッドと組み合わせると、非同期のプログラミングは CPU バインディングの操作に関して <xref:System.ComponentModel.BackgroundWorker> よりも優れています。非同期のプログラミングは、`Task.Run` がスレッド プールから移動する作業から、実行するコードの調整の詳細を分離するためです。
 
-## <a name="BKMK_AsyncandAwait"></a>async と await
+## <a name="async-and-await"></a><a name="BKMK_AsyncandAwait"></a>async と await
 
 [async](../../../language-reference/keywords/async.md) 修飾子を使用して、メソッドが非同期メソッドであることを指定すると、次の 2 つの機能が有効になります。
 
@@ -173,7 +173,7 @@ Windows ランタイムにも、Windows アプリの `async` と `await` で使�
 - [async](../../../language-reference/keywords/async.md)
 - [await](../../../language-reference/operators/await.md)
 
-## <a name="BKMK_ReturnTypesandParameters"></a>戻り値の型およびパラメーター
+## <a name="return-types-and-parameters"></a><a name="BKMK_ReturnTypesandParameters"></a>戻り値の型およびパラメーター
 
 非同期メソッドは、通常 <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601> を返します。 非同期のメソッド内で、`await` 演算子は、他の非同期のメソッドへの呼び出しから戻されたタスクに適用されます。
 
@@ -232,13 +232,13 @@ Windows ランタイム プログラミングの非同期 API には、タスク
 - <xref:Windows.Foundation.IAsyncActionWithProgress%601>
 - <xref:Windows.Foundation.IAsyncOperationWithProgress%602>
 
-## <a name="BKMK_NamingConvention"></a>名前付け規則
+## <a name="naming-convention"></a><a name="BKMK_NamingConvention"></a>名前付け規則
 
 慣例により、一般的に待機可能な型 (たとえば `Task`、`Task<T>`、`ValueTask`、`ValueTask<T>`) を返すメソッドについては、その名前の末尾に "Async" を付けます。 非同期操作を開始するメソッドであっても、そのメソッドが待機可能な型を返さない場合は、メソッド名の末尾に "Async" を付けてはなりませんが、このメソッドが操作の結果を返したりスローしたりしないことを示す "Begin" や "Start" などの動詞を先頭に付けることはかまいません。
 
 イベント、基底クラス、またはインターフェイスのコントラクトが別の名前を表示している場合は、この慣例を無視できます。 たとえば、`Button1_Click` などの共通のイベント ハンドラーの名前は、変更しないことをお勧めします。
 
-## <a name="BKMK_RelatedTopics"></a>関連トピックとサンプル (Visual Studio)
+## <a name="related-topics-and-samples-visual-studio"></a><a name="BKMK_RelatedTopics"></a>関連トピックとサンプル (Visual Studio)
 
 |Title|説明|サンプル|
 |-----------|-----------------|------------|
@@ -255,11 +255,11 @@ Windows ランタイム プログラミングの非同期 API には、タスク
 |[タスク ベースの非同期パターン (TAP)](../../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)|.NET Framework での非同期性の新しいパターンについて説明します。 パターンは <xref:System.Threading.Tasks.Task> および <xref:System.Threading.Tasks.Task%601> の型に基づいています。||
 |[Channel 9 の非同期に関するビデオ](https://channel9.msdn.com/search?term=async%20&type=All#pubDate=year&ch9Search&lang-en=en)|非同期のプログラミングに関するさまざまなビデオへのリンクを示します。||
 
-## <a name="BKMK_CompleteExample"></a> コード例全体
+## <a name="complete-example"></a><a name="BKMK_CompleteExample"></a> コード例全体
 
 次のコードは、この記事で説明する WPF アプリケーションの *MainWindow.xaml.cs* ファイルです。 「[Async Sample:Example from "Asynchronous Programming with Async and Await" (非同期のサンプル: 「Async および Await を使用した非同期プログラミング」の例)](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-cs/)」からサンプルをダウンロードできます。
 
-[!code-csharp[async](~/samples/async/async-and-await/cs/MainWindow.xaml.cs)]
+[!code-csharp[async](~/samples/snippets/standard/async/async-and-await/cs/MainWindow.xaml.cs)]
 
 ## <a name="see-also"></a>関連項目
 

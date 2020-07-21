@@ -3,10 +3,10 @@ title: .NET ネイティブの一般的なトラブルシューティング
 ms.date: 03/30/2017
 ms.assetid: ee8c5e17-35ea-48a1-8767-83298caac1e8
 ms.openlocfilehash: 2bea81e380fed6c456898e9883658ef874c8dd97
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128241"
 ---
 # <a name="net-native-general-troubleshooting"></a>.NET ネイティブの一般的なトラブルシューティング
@@ -27,13 +27,13 @@ ms.locfileid: "73128241"
 
 - **問題:** アプリが .NET ネイティブを使用してコンパイルされたかどうかはわかりません。
 
-  **解決策:** .NET ネイティブコンパイラが呼び出されると、ビルド時間が長くなり、タスクマネージャーによって、ILC や nutc_driver などのさまざまな .NET ネイティブコンポーネントプロセスが表示されます。
+  **解決策:**.NET ネイティブコンパイラが呼び出されると、ビルド時間が長くなり、タスクマネージャーによって、ILC や nutc_driver などのさまざまな .NET ネイティブコンポーネントプロセスが表示されます。
 
-  .NET ネイティブでプロジェクトを正常にビルドすると、obj\\*config*\ *arch*\\*projectname*. ilc\out の下に出力が表示されます。 最終的なネイティブパッケージの内容については、「bin\\*arch*\\*config*\appx」を参照してください。 アプリを配置した場合、最終的なネイティブ パッケージ コンテンツは \bin\\*arch*\\*config*\AppX にあります。
+  .NET ネイティブでプロジェクトを正常にビルドすると、obj \\ *config* \  *arch* \\ *projectname*. ilc\out の下に出力が表示されます。 最終的なネイティブパッケージコンテンツは、bin \\ *arch* \\ *config*\appx にあります。 \\*arch* \\ アプリをデプロイしている場合、最終的なネイティブパッケージコンテンツは \bin アーキテクチャ*config*/AppX の下にあります。
 
 - **問題:** .NET Native を使用してアプリをコンパイルすると、.NET Native を使用せずにコンパイルしたときにはスローされないランタイム例外 (通常は [MissingMetadataException](missingmetadataexception-class-net-native.md) または [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) 例外) がスローされる。
 
-  **解決方法:** これらの例外は、リフレクションを介して使用できるはずのメタデータまたは実装コードが .NET Native では提供されなかったためにスローされます (詳細については、「 [.NET ネイティブとコンパイル](net-native-and-compilation.md)」を参照してください)。この例外を回避するには、ランタイム[ディレクティブ (unattend.xml) ファイル](runtime-directives-rd-xml-configuration-file-reference.md)にエントリを追加する必要があります。これにより、.NET ネイティブツールチェーンが実行時にメタデータまたは実装コードを使用できるようになります。 次の 2 つのトラブルシューティング ツールを使用して、ランタイム ディレクティブ ファイルに追加する必要があるエントリを生成できます。
+  **解決方法:** これらの例外は、リフレクションを介して使用できるはずのメタデータまたは実装コードが .NET Native では提供されなかったためにスローされます  (詳細については、「 [.NET ネイティブとコンパイル](net-native-and-compilation.md)」を参照してください)。この例外を回避するには、ランタイム[ディレクティブ (unattend.xml) ファイル](runtime-directives-rd-xml-configuration-file-reference.md)にエントリを追加する必要があります。これにより、.NET ネイティブツールチェーンが実行時にメタデータまたは実装コードを使用できるようになります。 次の 2 つのトラブルシューティング ツールを使用して、ランタイム ディレクティブ ファイルに追加する必要があるエントリを生成できます。
 
   - [MissingMetadataException トラブルシューティング ツール](https://dotnet.github.io/native/troubleshooter/type.html) (型の場合)。
 

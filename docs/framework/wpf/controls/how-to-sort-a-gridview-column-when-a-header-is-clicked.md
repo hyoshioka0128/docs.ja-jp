@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 4865d720-d147-40ed-83a7-af7587f8aad8
 ms.openlocfilehash: 3438ab91045a144a7fa1d531e9d7d55ad30e89ea
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62052028"
 ---
 # <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>方法: ヘッダーがクリックされたときに GridView 列を並べ替える
 
-この例は、作成する方法を示します、<xref:System.Windows.Controls.ListView>を実装するコントロールを<xref:System.Windows.Controls.GridView>モードと並べ替えをユーザーが列ヘッダーをクリックすると、データがコンテンツを表示します。
+この例では、<xref:System.Windows.Controls.GridView> 表示モードを実装し、ユーザーが列ヘッダーをクリックしたときにデータ コンテンツを並べ替える <xref:System.Windows.Controls.ListView> コントロールを作成する方法を示します。
 
 ## <a name="example"></a>例
 
-次の例では、定義、 <xref:System.Windows.Controls.GridView> 3 つの列にバインドを持つ、 <xref:System.DateTime.Year%2A>、 <xref:System.DateTime.Month%2A>、および<xref:System.DateTime.Day%2A>のプロパティ、<xref:System.DateTime>構造体。
+次の例では、<xref:System.DateTime> 構造のプロパティである <xref:System.DateTime.Year%2A>、<xref:System.DateTime.Month%2A>、<xref:System.DateTime.Day%2A> にバインドされる 3 つの列で <xref:System.Windows.Controls.GridView> が定義されます。
 
 ```xaml
 <GridView>
@@ -39,7 +39,7 @@ ms.locfileid: "62052028"
 </GridView>
 ```
 
-次の例は、データ項目として定義されている、<xref:System.Collections.ArrayList>の<xref:System.DateTime>オブジェクト。 <xref:System.Collections.ArrayList>として定義されている場合は、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.ListView>コントロール。
+次の列では、<xref:System.DateTime> オブジェクトの <xref:System.Collections.ArrayList> として定義されるデータ項目を示します。 <xref:System.Collections.ArrayList> は、<xref:System.Windows.Controls.ListView> コントロールの <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> として定義されます。
 
 ```xaml
 <ListView.ItemsSource>
@@ -71,7 +71,7 @@ ms.locfileid: "62052028"
     xmlns:p="clr-namespace:System;assembly=mscorlib">
 ```
 
-処理するイベント ハンドラーを定義している例では、列の内容に従ってデータを並べ替える、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>列ヘッダーのボタンを押したときに発生するイベントです。 次の例のイベント ハンドラーを指定する方法を示しています、<xref:System.Windows.Controls.GridViewColumnHeader>コントロール。
+この例では列の内容に従ってデータを並べ替えるために、列ヘッダーのボタンを押したときに発生する <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントを処理するイベント ハンドラーを定義します。 次の例では、<xref:System.Windows.Controls.GridViewColumnHeader> コントロールのイベント ハンドラーを指定する方法を示します。
 
 ```xaml
 <ListView x:Name='lv' Height="150" HorizontalAlignment="Center"
@@ -199,7 +199,7 @@ Partial Public Class Window1
 End Class
 ```
 
-次の例では、データを並べ替えるためにイベント ハンドラーにより呼び出される並べ替えアルゴリズムを示します。  並べ替えは、新しいを作成して<xref:System.ComponentModel.SortDescription>構造体。
+次の例では、データを並べ替えるためにイベント ハンドラーにより呼び出される並べ替えアルゴリズムを示します。 並べ替えは、新しい <xref:System.ComponentModel.SortDescription> 構造体を作成することで実行されます。
 
 ```csharp
 private void Sort(string sortBy, ListSortDirection direction)

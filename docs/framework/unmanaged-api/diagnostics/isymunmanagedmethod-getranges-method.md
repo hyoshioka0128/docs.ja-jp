@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a85283d8-379c-417a-9736-ddeeef9bcf50
 topic_type:
 - apiref
-ms.openlocfilehash: 1f1bd9c33f24847eae4ff7d26c5b996cd34afb72
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cd5d1f2d59d3e55ba454f23d2e5dd4b1316c0df4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448928"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615177"
 ---
 # <a name="isymunmanagedmethodgetranges-method"></a>ISymUnmanagedMethod::GetRanges メソッド
 ドキュメント内の位置が指定されている場合、は、位置がこのメソッド内でカバーする Microsoft 中間言語 (MSIL) の範囲に対応する開始オフセットと終了オフセットのペアの配列を返します。 配列は整数の配列であり、[開始、終了、開始、終了] の形式です。 範囲ペアの数は、配列の長さを2で除算した値です。  
@@ -52,7 +52,7 @@ HRESULT GetRanges(
  [in] `ranges` 配列のサイズ。  
   
  `pcRanges`  
- 入出力範囲を格納するために必要なバッファーのサイズを受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`範囲を格納するために必要なバッファーのサイズを受け取るへのポインター。  
   
  `ranges`  
  入出力範囲を受け取るバッファーへのポインター。  
@@ -63,6 +63,6 @@ HRESULT GetRanges(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedMethod インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod インターフェイス](isymunmanagedmethod-interface.md)

@@ -1,4 +1,4 @@
-- name: 厳密な名前付け
+- name: 厳密な名前
   href: index.md
   items:
     - name: GetHashFromAssemblyFile 関数

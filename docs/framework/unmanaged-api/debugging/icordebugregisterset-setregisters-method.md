@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: ac6244b9-54ba-475f-b72a-abed6afc46ec
 topic_type:
 - apiref
-ms.openlocfilehash: 7af3109c822dfe945a60c16d4bd3b764f7550492
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: eba86c09197aad6bac284c52fe164432e197c6f7
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131340"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378258"
 ---
 # <a name="icordebugregistersetsetregisters-method"></a>ICorDebugRegisterSet::SetRegisters メソッド
-`SetRegisters` は .NET Framework バージョン2.0 では実装されていません。 このメソッドを呼び出さないでください。  
+`SetRegisters`は .NET Framework バージョン2.0 では実装されていません。 このメソッドは呼び出さないでください。  
   
 > [!NOTE]
-> 「いいね!: [: setip](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) 」や「いいね!: [: setip](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md)」などの上位レベルの操作を使用します。  
+> 「いいね!: [: setip](icordebugilframe-setip-method.md) 」や「いいね!: [: setip](icordebugnativeframe-setip-method.md)」などの上位レベルの操作を使用します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -38,8 +38,8 @@ HRESULT SetRegisters (
 );  
 ```  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
@@ -49,5 +49,5 @@ HRESULT SetRegisters (
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugRegisterSet インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
-- [ICorDebugRegisterSet2 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet インターフェイス](icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2 インターフェイス](icordebugregisterset2-interface.md)

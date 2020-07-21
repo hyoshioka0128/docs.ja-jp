@@ -1,5 +1,6 @@
 ---
-title: HttpWebRequest._CoreResponse フィールド
+title: _CoreResponse HttpWebRequest フィールド
+description: .NET の _CoreResponse HttpWebRequest フィールドについて確認します。 このフィールドは、HTTP 応答解析の結果を含む CoreResponseData または Exception オブジェクトです。
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: 3627c9bf0d72ccec3a0d6d9c7c89b62f83dcd4b4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5093ec7ed2c3b94931dcd622ae9ccdb42feffa18
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706066"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989751"
 ---
-# <a name="httpwebrequestcoreresponse-field"></a>HttpWebRequest します。\_CoreResponse フィールド
+# <a name="httpwebrequest_coreresponse-field"></a>HttpWebRequest。 \_CoreResponse フィールド
 
-`HttpWebRequest._CoreResponse` オブジェクトは、(いずれかを[CoreResponseData](coreresponsedata.md)または<xref:System.Exception>) HTTP 応答の解析の結果を格納します。
+`HttpWebRequest._CoreResponse`は、 [CoreResponseData](coreresponsedata.md) <xref:System.Exception> HTTP 応答の解析結果を含むオブジェクト (CoreResponseData または) です。
 
 ## <a name="syntax"></a>構文
   
@@ -28,14 +29,14 @@ private object _CoreResponse
 ```
 
 > [!WARNING]
-> この API は、コード内で直接使用するものではありません。 代わりに、使用する必要があります、<xref:System.Diagnostics.DiagnosticSource>ネットワーク用のコードをフックします。 参照してください[DiagnosticSource ユーザー ガイド](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)します。
-> 
-> Microsoft はいかなる運用アプリケーションでこのクラスの使用をサポートしていません。
+> この API は、コード内で直接使用するためのものではありません。 代わりに、を使用して <xref:System.Diagnostics.DiagnosticSource> ネットワークコードをフックする必要があります。 「 [DiagnosticSource User'S Guide](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)」を参照してください。
+>
+> Microsoft では、どのような状況でも、実稼働アプリケーションでのこのクラスの使用はサポートしていません。
 
 ## <a name="requirements"></a>必要条件
 
 **名前空間:** <xref:System.Net>
 
-**アセンブリ:**(System.dll) のシステム
+**アセンブリ:** システム (System.dll)
 
-**.NET framework のバージョン:** 2.0 以降で使用可能です。
+**.NET Framework のバージョン:** 2.0 以降で使用できます。

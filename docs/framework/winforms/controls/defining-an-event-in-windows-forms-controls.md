@@ -1,5 +1,5 @@
 ---
-title: Windows フォーム コントロールのイベントの定義
+title: コントロールでのイベントの定義
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - events [Windows Forms], defining within Windows Forms custom controls
 - custom controls [Windows Forms], events using code
 ms.assetid: d89f1096-8061-42e2-a855-a1f053f1940a
-ms.openlocfilehash: 4235c8b3c513509023388112071e78cfd079ec6f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a4738373b10fbcb1d2406406d30f10b795aeb914
+ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972342"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80228844"
 ---
 # <a name="defining-an-event-in-windows-forms-controls"></a>Windows フォーム コントロールのイベントの定義
-カスタム イベントを定義する方法の詳細については、次を参照してください。[イベント](../../../standard/events/index.md)します。 関連データがないイベントを定義する場合、イベント データの基本型である <xref:System.EventArgs> を使用し、イベント デリゲートとして <xref:System.EventHandler> を使用します。 イベント メンバーとプロテクトを定義する操作は、すべて`On` *EventName*イベントを発生させるメソッド。  
+カスタム イベントの定義の詳細については、「[イベント](../../../standard/events/index.md)」を参照してください。 関連データがないイベントを定義する場合、イベント データの基本型である <xref:System.EventArgs> を使用し、イベント デリゲートとして <xref:System.EventHandler> を使用します。 残りは、イベント メンバーと、イベントを発生させる保護`On`された*EventName*メソッドを定義することだけです。  
   
- `FlashTrackBar` カスタム コントロールによる `ValueChanged` カスタム イベントの定義方法を示すコードを次に示します。 完全なコード、`FlashTrackBar`サンプルを参照してください、[方法。進行状況を示す Windows フォーム コントロールを作成する](how-to-create-a-windows-forms-control-that-shows-progress.md)します。  
+ `FlashTrackBar` カスタム コントロールによる `ValueChanged` カスタム イベントの定義方法を示すコードを次に示します。 `FlashTrackBar`サンプルの完全なコードについては、「 方法[: 進行状況を示す Windows フォーム コントロールを作成する](how-to-create-a-windows-forms-control-that-shows-progress.md)」を参照してください。  
   
 ```vb  
 Option Explicit  
@@ -31,15 +31,15 @@ Imports System.Drawing
 Public Class FlashTrackBar  
    Inherits Control  
   
-   ' The event does not have any data, so EventHandler is adequate   
-   ' as the event delegate.          
+   ' The event does not have any data, so EventHandler is adequate
+   ' as the event delegate.
    ' Define the event member using the event keyword.  
-   ' In this case, for efficiency, the event is defined   
+   ' In this case, for efficiency, the event is defined
    ' using the event property construct.  
    Public Event ValueChanged As EventHandler  
-   ' The protected method that raises the ValueChanged   
-   ' event when the value has actually   
-   ' changed. Derived controls can override this method.    
+   ' The protected method that raises the ValueChanged
+   ' event when the value has actually
+   ' changed. Derived controls can override this method.
    Protected Overridable Sub OnValueChanged(e As EventArgs)  
       RaiseEvent ValueChanged(Me, e)  
    End Sub  
@@ -52,11 +52,11 @@ using System.Windows.Forms;
 using System.Drawing;  
   
 public class FlashTrackBar : Control {  
-   // The event does not have any data, so EventHandler is adequate   
+   // The event does not have any data, so EventHandler is adequate
    // as the event delegate.  
    private EventHandler onValueChanged;  
    // Define the event member using the event keyword.  
-   // In this case, for efficiency, the event is defined   
+   // In this case, for efficiency, the event is defined
    // using the event property construct.  
    public event EventHandler ValueChanged {  
             add {  
@@ -67,11 +67,11 @@ public class FlashTrackBar : Control {
             }  
         }  
    // The protected method that raises the ValueChanged  
-   // event when the value has actually   
-   // changed. Derived controls can override this method.    
-   protected virtual void OnValueChanged(EventArgs e) 
+   // event when the value has actually
+   // changed. Derived controls can override this method.
+   protected virtual void OnValueChanged(EventArgs e)
    {  
-       ValueChanged?.Invoke(this, e);  
+       onValueChanged?.Invoke(this, e);  
    }  
 }  
 ```  

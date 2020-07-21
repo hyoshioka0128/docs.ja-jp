@@ -1,5 +1,6 @@
 ---
 title: 透過的セキュリティ コード、レベル 2
+description: レベル2の透過的なコードについて説明します。 使用例と動作、オーバーライドパターン、継承規則などを参照してください。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - transparency
@@ -7,14 +8,12 @@ helpviewer_keywords:
 - security-transparent code
 - security-critical code
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ea782b346f6c53664a8aeb736c7d7a4509d83985
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 3b87a48ac3f9925fd868be9e58d5904014ca6c09
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974943"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309210"
 ---
 # <a name="security-transparent-code-level-2"></a>透過的セキュリティ コード、レベル 2
 
@@ -56,7 +55,7 @@ ms.locfileid: "73974943"
 [assembly: SecurityRules(SecurityRuleSet.Level1)]
 ```
 
-アセンブリに注釈を設定しない場合は、既定で .NET Framework 4 ルールが使用されます。 ただし、推奨されるベストプラクティスは、既定に応じてではなく、<xref:System.Security.SecurityRulesAttribute> 属性を使用することです。
+アセンブリに注釈を設定しない場合は、既定で .NET Framework 4 ルールが使用されます。 ただし、推奨されるベストプラクティスは、 <xref:System.Security.SecurityRulesAttribute> 既定値に応じてではなく、属性を使用することです。
 
 ### <a name="assembly-wide-annotation"></a>アセンブリ全体の注釈
 
@@ -72,12 +71,12 @@ ms.locfileid: "73974943"
 
 次の表は、レベル2のアセンブリレベルの動作とレベル1を比較したものです。
 
-|Assembly 属性|レベル 2|レベル 1|
+|Assembly 属性|[レベル 2]|[レベル 1]|
 |------------------------|-------------|-------------|
 |部分的に信頼されたアセンブリで属性なし|型およびメンバーは既定で透過的になりますが、セキュリティ クリティカルまたはセキュリティ セーフ クリティカルにすることもできます。|すべての型およびメンバーは透過的です。|
 |属性なし|属性を指定しない場合、透過性規則は共通言語ランタイムによって自動的に判断されます。 すべての型およびメンバーはセキュリティ クリティカルになります (ただし、セキュリティ クリティカルになると継承ルールに違反する場所を除く)。|完全に信頼されたアセンブリ (グローバル アセンブリ キャッシュ内に存在するか、`AppDomain` で完全に信頼と指定されている) では、すべての型は透過的であり、すべてのメンバーはセキュリティ セーフ クリティカルです。|
 |`SecurityTransparent`|すべての型およびメンバーは透過的です。|すべての型およびメンバーは透過的です。|
-|`SecurityCritical(SecurityCriticalScope.Everything)`|該当しない。|すべての型およびメンバーはセキュリティ クリティカルです。|
+|`SecurityCritical(SecurityCriticalScope.Everything)`|適用不可。|すべての型およびメンバーはセキュリティ クリティカルです。|
 |`SecurityCritical`|このアセンブリ内の型によって導入されるすべてのコードはクリティカルになり、その他のすべてのコードは透過的になります。 仮想メソッドまたは抽象メソッドをオーバーライドしたり、インターフェイス メソッドを実装したりする場合は、メソッドに `SecurityCritical` または `SecuritySafeCritical` の注釈を明示的に付ける必要があります。|すべてのコードは既定で透過的になります。 ただし、個々の型やメンバーに他の属性を設定することもできます。|
 
 ### <a name="type-and-member-annotation"></a>型およびメンバーの注釈
@@ -167,7 +166,7 @@ ms.locfileid: "73974943"
 <xref:System.Reflection> 名前空間に追加された <xref:System.Type.IsSecurityCritical%2A>、<xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>、および <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A> の各プロパティを使用すると、型、メソッド、またはフィールドが `SecurityCritical`、`SecuritySafeCritical`、または `SecurityTransparent` のどれであるかを判断できます。 属性の存在を確認する代わりに、リフレクションを使用して透過性を判断するには、これらのプロパティを使用します。 透過性の規則は複雑なので、属性のチェックでは不十分なことがあります。
 
 > [!NOTE]
-> `SafeCritical` メソッドは、<xref:System.Type.IsSecurityCritical%2A> と <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>の両方に対して `true` を返します。これは、`SafeCritical` は実際には重要です (クリティカルコードと同じ機能を持ちますが、透過的なコードから呼び出すことができます)。
+> `SafeCritical`メソッドは、 `true` との両方に対してを返し <xref:System.Type.IsSecurityCritical%2A> <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A> `SafeCritical` ます。は実際には重要です (クリティカルなコードと同じ機能を持ちますが、透過的なコードから呼び出すことができます)。
 
 動的メソッドは、関連付けられているモジュールの透過性を継承します。型の透過性は継承しません (型に関連付けられている場合)。
 
@@ -177,9 +176,9 @@ ms.locfileid: "73974943"
 
 `[assembly: SecurityRules(SecurityRuleSet.Level2, SkipVerificationInFullTrust = true)]`
 
-<xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> プロパティは既定では `false` であるため、検証をスキップするにはこのプロパティを `true` に設定する必要があります。 これをするのは、最適化のためだけにしてください。 [PEVerify ツール](../tools/peverify-exe-peverify-tool.md)の `transparent` オプションを使用して、アセンブリ内の透過的なコードが検証可能であることを確認する必要があります。
+<xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> プロパティは既定では `false` であるため、検証をスキップするにはこのプロパティを `true` に設定する必要があります。 これをするのは、最適化のためだけにしてください。 PEVerify ツールのオプションを使用して、アセンブリ内の透過的なコードが検証可能であることを確認する必要があり `transparent` ます。 [PEVerify tool](../tools/peverify-exe-peverify-tool.md)
 
 ## <a name="see-also"></a>関連項目
 
 - [透過的セキュリティコード、レベル1](security-transparent-code-level-1.md)
-- [セキュリティの変更](../security/security-changes.md)
+- [セキュリティの変更](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)

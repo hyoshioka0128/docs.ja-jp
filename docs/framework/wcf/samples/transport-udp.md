@@ -1,15 +1,15 @@
 ---
-title: 'トランスポート: UDP'
+title: トランスポート:UDP
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: f7dea8a95490377226acd09a3463b102d42834d6
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 44e47dd2d291ffc27d1777a04b645d57984919cd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711923"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591437"
 ---
-# <a name="transport-udp"></a>トランスポート: UDP
+# <a name="transport-udp"></a>トランスポート:UDP
 UDP トランスポートのサンプルでは、カスタム Windows Communication Foundation (WCF) トランスポートとして UDP ユニキャストとマルチキャストを実装する方法を示します。 このサンプルでは、チャネルフレームワークと次の WCF のベストプラクティスを使用して、WCF でカスタムトランスポートを作成するための推奨手順について説明します。 カスタム トランスポートを作成する手順は、次のとおりです。  
   
 1. ChannelFactory と ChannelListener がサポートするチャネル[メッセージ交換パターン](#MessageExchangePatterns)(Ioutputchannel、IInputChannel、IDuplexChannel、ioutputchannel、または IReplyChannel) を決定します。 次に、こうしたインターフェイスのセッションフル バリエーションをサポートするかどうかを決定します。  
@@ -18,7 +18,7 @@ UDP トランスポートのサンプルでは、カスタム Windows Communicat
   
 3. ネットワーク固有の例外が、<xref:System.ServiceModel.CommunicationException> の適切な派生クラスに標準化されていることを確認します。  
   
-4. チャネルスタックにカスタムトランスポートを追加する[\<バインド >](../../configure-apps/file-schema/wcf/bindings.md)要素を追加します。 詳細については、「[バインド要素の追加](#AddingABindingElement)」を参照してください。  
+4. [\<binding>](../../configure-apps/file-schema/wcf/bindings.md)チャネルスタックにカスタムトランスポートを追加する要素を追加します。 詳細については、「[バインド要素の追加](#AddingABindingElement)」を参照してください。  
   
 5. バインド要素拡張セクションを追加して、新しいバインド要素を構成システムに公開します。  
   
@@ -28,7 +28,7 @@ UDP トランスポートのサンプルでは、カスタム Windows Communicat
   
 8. 構成システムにバインディングを開示する、バインディング セクションおよびバインド構成要素を追加します。 詳細については、「[構成サポートの追加](#AddingConfigurationSupport)」を参照してください。  
   
-<a name="MessageExchangePatterns"></a>   
+<a name="MessageExchangePatterns"></a>
 ## <a name="message-exchange-patterns"></a>メッセージ交換パターン  
  カスタム トランスポートを記述する最初の手順として、どのメッセージ交換パターン (MEP) がトランスポートに必要かを判断します。 次の 3 つの MEP から選択できます。  
   
@@ -50,7 +50,7 @@ UDP トランスポートのサンプルでは、カスタム Windows Communicat
 > UDP トランスポートでは、サポートされている MEP はデータグラムだけです。これは、UDP が "ファイア アンド フォーゲット (撃ち放し)" のプロトコルだからです。  
   
 ### <a name="the-icommunicationobject-and-the-wcf-object-lifecycle"></a>ICommunicationObject および WCF オブジェクトのライフサイクル  
- WCF には、通信に使用される <xref:System.ServiceModel.Channels.IChannel>、<xref:System.ServiceModel.Channels.IChannelFactory>、<xref:System.ServiceModel.Channels.IChannelListener> などのオブジェクトのライフサイクルを管理するために使用される共通のステートマシンがあります。 これらの通信オブジェクトには、5 つの状態があります。 これらの状態は、<xref:System.ServiceModel.CommunicationState> 列挙値で表され、次のようになります。  
+ WCF には <xref:System.ServiceModel.Channels.IChannel> 、 <xref:System.ServiceModel.Channels.IChannelFactory> <xref:System.ServiceModel.Channels.IChannelListener> 通信に使用される、、などのオブジェクトのライフサイクルを管理するために使用される共通のステートマシンがあります。 これらの通信オブジェクトには、5 つの状態があります。 これらの状態は、<xref:System.ServiceModel.CommunicationState> 列挙値で表され、次のようになります。  
   
 - Created: <xref:System.ServiceModel.ICommunicationObject> が初めてインスタンス化されたときの状態です。 この状態では、入出力 (I/O) は行われません。  
   
@@ -62,19 +62,19 @@ UDP トランスポートのサンプルでは、カスタム Windows Communicat
   
 - Closed: Closed 状態では、オブジェクトは使用できません。 通常、ほとんどの構成には検査中もアクセスできますが、通信が発生することはありません。 この状態は、破棄されるのと同じです。  
   
-- Faulted: Faulted 状態では、オブジェクトにアクセスして検査できますが、使用することはできません。 回復不可能なエラーが発生した場合、オブジェクトはこの状態に移行します。 この状態からの有効な遷移は、`Closed` 状態のみです。  
+- Faulted: Faulted 状態では、オブジェクトにアクセスして検査できますが、使用することはできません。 回復不可能なエラーが発生した場合、オブジェクトはこの状態に移行します。 この状態からの有効な遷移は、状態のみです `Closed` 。  
   
  各状態移行には、発生するイベントがあります。 <xref:System.ServiceModel.ICommunicationObject.Abort%2A> メソッドはいつでも呼び出すことができます。このメソッドを呼び出すことにより、オブジェクトは現在の状態から直ちに Closed 状態に移行します。 <xref:System.ServiceModel.ICommunicationObject.Abort%2A> を呼び出すと、完了していない作業が終了します。  
   
-<a name="ChannelAndChannelListener"></a>   
+<a name="ChannelAndChannelListener"></a>
 ## <a name="channel-factory-and-channel-listener"></a>チャネル ファクトリとチャネル リスナー  
  カスタム トランスポートを記述する次の手順では、クライアント チャネルでの <xref:System.ServiceModel.Channels.IChannelFactory> の実装とサービス チャネルでの <xref:System.ServiceModel.Channels.IChannelListener> の実装を作成します。 チャネル レイヤーでは、チャネルの構築にファクトリ パターンが使用されます。 WCF には、このプロセスの基底クラスヘルパーが用意されています。  
   
-- <xref:System.ServiceModel.Channels.CommunicationObject> クラスには <xref:System.ServiceModel.ICommunicationObject> が実装され、前述の手順 2. で説明したステート マシンが強制実行されます。 
+- <xref:System.ServiceModel.Channels.CommunicationObject> クラスには <xref:System.ServiceModel.ICommunicationObject> が実装され、前述の手順 2. で説明したステート マシンが強制実行されます。
 
 - <xref:System.ServiceModel.Channels.ChannelManagerBase> クラスには <xref:System.ServiceModel.Channels.CommunicationObject> が実装され、<xref:System.ServiceModel.Channels.ChannelFactoryBase> と <xref:System.ServiceModel.Channels.ChannelListenerBase> の統合基本クラスが提供されます。 <xref:System.ServiceModel.Channels.ChannelManagerBase> クラスは、<xref:System.ServiceModel.Channels.ChannelBase> を実装する基本クラスである <xref:System.ServiceModel.Channels.IChannel> との組み合わせによって動作します。  
   
-- <xref:System.ServiceModel.Channels.ChannelFactoryBase> クラスは <xref:System.ServiceModel.Channels.ChannelManagerBase> と <xref:System.ServiceModel.Channels.IChannelFactory> を実装し、`CreateChannel` のオーバーロードを1つの `OnCreateChannel` 抽象メソッドに統合します。  
+- <xref:System.ServiceModel.Channels.ChannelFactoryBase>クラスは <xref:System.ServiceModel.Channels.ChannelManagerBase> 、とを実装し、オーバーロードを <xref:System.ServiceModel.Channels.IChannelFactory> `CreateChannel` 1 つの抽象メソッドに統合し `OnCreateChannel` ます。  
   
 - <xref:System.ServiceModel.Channels.ChannelListenerBase> クラスは、<xref:System.ServiceModel.Channels.IChannelListener> を実装しています。 基本状態管理を行います。  
   
@@ -96,7 +96,7 @@ this.socket = new Socket(this.remoteEndPoint.AddressFamily, SocketType.Dgram, Pr
 this.socket.Close(0);  
 ```  
   
- 次に、`Send()` と `BeginSend()`/`EndSend()`を実装します。 この実装は、2 つの主要セクションに分かれます。 最初に、メッセージを次のようにシリアル化してバイト配列で表します。  
+ 次に `Send()` 、とを実装し `BeginSend()` / `EndSend()` ます。 この実装は、2 つの主要セクションに分かれます。 最初に、メッセージを次のようにシリアル化してバイト配列で表します。  
   
 ```csharp
 ArraySegment<byte> messageBuffer = EncodeMessage(message);  
@@ -109,20 +109,20 @@ this.socket.SendTo(messageBuffer.Array, messageBuffer.Offset, messageBuffer.Coun
 ```  
   
 ### <a name="the-udpchannellistener"></a>UdpChannelListener  
- サンプルが実装する `UdpChannelListener` は、<xref:System.ServiceModel.Channels.ChannelListenerBase> クラスから派生します。 単一の UDP ソケットを使用して、データグラムを受信します。 `OnOpen` メソッドは、非同期ループ内で UDP ソケットを使用してデータを受信します。 その後、メッセージ エンコーディング フレームワークを使用して、データを次のようにメッセージに変換します。  
+ `UdpChannelListener`サンプルが実装するは、クラスから派生し <xref:System.ServiceModel.Channels.ChannelListenerBase> ます。 単一の UDP ソケットを使用して、データグラムを受信します。 `OnOpen` メソッドは、非同期ループ内で UDP ソケットを使用してデータを受信します。 その後、メッセージ エンコーディング フレームワークを使用して、データを次のようにメッセージに変換します。  
   
 ```csharp
 message = MessageEncoderFactory.Encoder.ReadMessage(new ArraySegment<byte>(buffer, 0, count), bufferManager);  
 ```  
   
- 複数のソースから到着するメッセージが同じデータグラム チャネルで表されるので、`UdpChannelListener` はシングルトン リスナーです。 このリスナーには、一度に1つのアクティブな <xref:System.ServiceModel.Channels.IChannel> が関連付けられています。 このサンプルでは、`AcceptChannel` メソッドによって返されるチャネルがその後破棄される場合のみ、もう 1 つ生成されます。 メッセージが受信されると、このシングルトン チャネルのキューに置かれます。  
+ 複数のソースから到着するメッセージが同じデータグラム チャネルで表されるので、`UdpChannelListener` はシングルトン リスナーです。 このリスナーには、一度に1つのアクティブなが <xref:System.ServiceModel.Channels.IChannel> 関連付けられています。 このサンプルでは、`AcceptChannel` メソッドによって返されるチャネルがその後破棄される場合のみ、もう 1 つ生成されます。 メッセージが受信されると、このシングルトン チャネルのキューに置かれます。  
   
 #### <a name="udpinputchannel"></a>UdpInputChannel  
  `UdpInputChannel` クラスは、`IInputChannel` を実装しています。 このクラスは `UdpChannelListener` のソケットによって設定される受信メッセージのキューで構成されています。 これらのメッセージは、`IInputChannel.Receive` メソッドによってキューから削除されます。  
   
-<a name="AddingABindingElement"></a>   
+<a name="AddingABindingElement"></a>
 ## <a name="adding-a-binding-element"></a>バインド要素の追加  
- ファクトリおよびチャネルを作成したので、バインディングを使用してそれらを ServiceModel ランタイムに開示する必要があります。 バインディングは、サービス アドレスに関連する通信スタックを表すバインド要素のコレクションです。 スタック内の各要素は、 [\<binding >](../../configure-apps/file-schema/wcf/bindings.md)要素によって表されます。  
+ ファクトリおよびチャネルを作成したので、バインディングを使用してそれらを ServiceModel ランタイムに開示する必要があります。 バインディングは、サービス アドレスに関連する通信スタックを表すバインド要素のコレクションです。 スタック内の各要素は、要素によって表され [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) ます。  
   
  このサンプルでは、バインド要素は `UdpTransportBindingElement` で、<xref:System.ServiceModel.Channels.TransportBindingElement> から派生しています。 バインディングに関連したファクトリを作成すると、次のメソッドがオーバーライドされます。  
   
@@ -141,7 +141,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
  また、この要素には、`BindingElement` を複製したり、スキーム (soap.udp) を返したりするためのメンバーも含まれます。  
   
 ## <a name="adding-metadata-support-for-a-transport-binding-element"></a>トランスポート バインド要素のメタデータ サポートの追加  
- トランスポートをメタデータ システムに統合するには、ポリシーのインポートとエクスポートの両方をサポートする必要があります。 これにより、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、バインドのクライアントを生成できます。  
+ トランスポートをメタデータ システムに統合するには、ポリシーのインポートとエクスポートの両方をサポートする必要があります。 これにより、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、バインドのクライアントを生成できます。  
   
 ### <a name="adding-wsdl-support"></a>WSDL サポートの追加  
  バインディングのトランスポート バインド要素は、メタデータのアドレス指定情報のインポートとエクスポートを行います。 SOAP バインディングを使用する場合は、トランスポート バインド要素によっても、メタデータの正しいトランスポート URI がエクスポートされます。  
@@ -174,7 +174,7 @@ if (soapBinding != null)
   <system.serviceModel>  
     <client>  
       <metadata>  
-        <wsdlImporters>  
+        <policyImporters>  
           <extension type=" Microsoft.ServiceModel.Samples.UdpBindingElementImporter, UdpTransport" />  
         </policyImporters>  
       </metadata>  
@@ -185,7 +185,7 @@ if (soapBinding != null)
   
  Svcutil.exe を実行する場合、Svcutil.exe に WSDL インポートの拡張を読み込ませるために次の 2 つのオプションがあります。  
   
-1. /SvcutilConfig:\<ファイル > を使用して、Svcutil.exe に構成ファイルをポイントします。  
+1. /SvcutilConfig を使用して、Svcutil.exe に構成ファイルをポイントし \<file> ます。  
   
 2. Svcutil.exe と同じディレクトリにある Svcutil.exe.config に構成セクションを追加します。  
   
@@ -204,7 +204,7 @@ if (transportBindingElement is UdpTransportBindingElement)
  カスタム バインド要素では、WSDL バインディング内のポリシー アサーションをエクスポートして、サービス エンドポイントでそのバインド要素の機能を表現します。  
   
 #### <a name="policy-export"></a>ポリシーのエクスポート  
- `UdpTransportBindingElement` の種類は `IPolicyExportExtension` を実装して、ポリシーのエクスポートのサポートを追加します。 その結果、`System.ServiceModel.MetadataExporter` には、これを含む任意のバインディングでのポリシーの生成時に `UdpTransportBindingElement` が含まれます。  
+ この `UdpTransportBindingElement` 型は、 `IPolicyExportExtension` ポリシーをエクスポートするためのサポートを追加するためにを実装します。 その結果、`System.ServiceModel.MetadataExporter` には、これを含む任意のバインディングでのポリシーの生成時に `UdpTransportBindingElement` が含まれます。  
   
  マルチキャスト モードの場合、`IPolicyExportExtension.ExportPolicy` には UDP のアサーションや他のアサーションが追加されます。 これは、マルチキャスト モードは通信スタックの構築方法に影響を与えるため、両方の側において調整される必要があるためです。  
   
@@ -216,8 +216,8 @@ UdpPolicyStrings.Prefix, UdpPolicyStrings.TransportAssertion, UdpPolicyStrings.U
 if (Multicast)  
 {  
     bindingAssertions.Add(xmlDocument.CreateElement(
-        UdpPolicyStrings.Prefix, 
-        UdpPolicyStrings.MulticastAssertion, 
+        UdpPolicyStrings.Prefix,
+        UdpPolicyStrings.MulticastAssertion,
         UdpPolicyStrings.UdpNamespace));  
 }  
 ```  
@@ -247,23 +247,23 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
   
  次に、登録されたクラス (`IPolicyImporterExtension`) から `UdpBindingElementImporter` を実装します。 `ImportPolicy()` で、名前空間内のアサーションを調べ、そのアサーションを処理してトランスポートを生成し、マルチキャストであるかどうかをチェックします。 さらに、処理したアサーションをバインディング アサーションの一覧から削除する必要もあります。 Svcutil.exe を実行する場合、ここでも、統合用に次の 2 つのオプションがあります。  
   
-1. /SvcutilConfig:\<ファイル > を使用して、Svcutil.exe に構成ファイルをポイントします。  
+1. /SvcutilConfig を使用して、Svcutil.exe に構成ファイルをポイントし \<file> ます。  
   
 2. Svcutil.exe と同じディレクトリにある Svcutil.exe.config に構成セクションを追加します。  
   
-<a name="AddingAStandardBinding"></a>   
+<a name="AddingAStandardBinding"></a>
 ## <a name="adding-a-standard-binding"></a>標準バインド要素の追加  
  バインディング要素は、次の 2 つの方法で使用できます。  
   
 - カスタム バインドの使用 : カスタム バインドを使用すれば、バインド要素の任意のセットに基づいて独自のバインディングを作成できます。  
   
-- バインディング要素が含まれるシステム指定のバインディングを使用することによって、 WCF には、`BasicHttpBinding`、`NetTcpBinding`、`WsHttpBinding`など、これらのシステム定義のバインディングが多数用意されています。 これらの各バインドは、適切に定義されたプロファイルに関連付けられます。  
+- バインディング要素が含まれるシステム指定のバインディングを使用することによって、 WCF では、、、などのシステム定義のバインディングが多数用意されて `BasicHttpBinding` `NetTcpBinding` `WsHttpBinding` います。 これらの各バインドは、適切に定義されたプロファイルに関連付けられます。  
   
  このサンプルでは、プロファイル バインディングを、`SampleProfileUdpBinding` から派生した <xref:System.ServiceModel.Channels.Binding> に実装します。 `SampleProfileUdpBinding` は、`UdpTransportBindingElement`、`TextMessageEncodingBindingElement CompositeDuplexBindingElement`、および `ReliableSessionBindingElement` の、最大 4 つのバインド要素を格納します。  
   
 ```csharp
 public override BindingElementCollection CreateBindingElements()  
-{     
+{
     BindingElementCollection bindingElements = new BindingElementCollection();  
     if (ReliableSessionEnabled)  
     {  
@@ -301,7 +301,7 @@ if (context.Endpoint.Binding is CustomBinding)
   
  一般に、カスタムの標準バインディング インポーターを実装すると、インポートしたバインド要素のプロパティを調べて、標準バインディングによって設定されたプロパティのみが変更され、その他のすべてのプロパティは既定のままであることが検証されます。 標準バインディング インポーターを実装する場合の基本的な方法は、標準バインディングのインスタンスを作成し、標準バインディングがサポートするバインド要素のプロパティを標準バインディング インスタンスに反映し、標準バインディングのバインド要素とインポートしたバインド要素とを比較します。  
   
-<a name="AddingConfigurationSupport"></a>   
+<a name="AddingConfigurationSupport"></a>
 ## <a name="adding-configuration-support"></a>構成サポートの追加  
  構成を通じてトランスポートを公開するには、2 つの構成セクションを実装する必要があります。 1 つ目のクラスは、`BindingElementExtensionElement` の `UdpTransportBindingElement` です。 これは、`CustomBinding` の実装がバインディング要素を参照するためのものです。 2 つ目のクラスは、`Configuration` の `SampleProfileUdpBinding` です。  
   
@@ -313,7 +313,7 @@ if (context.Endpoint.Binding is CustomBinding)
   <system.serviceModel>  
     <extensions>  
       <bindingElementExtensions>  
-        <add name="udpTransport" type="Microsoft.ServiceModel.Samples.UdpTransportElement, UdpTransport />  
+        <add name="udpTransport" type="Microsoft.ServiceModel.Samples.UdpTransportElement, UdpTransport" />  
       </bindingElementExtensions>  
     </extensions>  
   </system.serviceModel>  
@@ -337,7 +337,7 @@ if (context.Endpoint.Binding is CustomBinding)
 ```  
   
 ### <a name="binding-section"></a>バインディング セクション  
- セクション `SampleProfileUdpBindingCollectionElement` は `StandardBindingCollectionElement` で、`SampleProfileUdpBinding` を構成システムに公開します。 実装の大部分は `SampleProfileUdpBindingConfigurationElement` で代行されます。これは `StandardBindingElement` の派生です。 `SampleProfileUdpBindingConfigurationElement` には、`SampleProfileUdpBinding`のプロパティに対応するプロパティと、`ConfigurationElement` binding からマップする関数があります。 最後に、`OnApplyConfiguration` 内で `SampleProfileUdpBinding` メソッドをオーバーライドします。次のサンプル コードを参照してください。  
+ セクション `SampleProfileUdpBindingCollectionElement` は `StandardBindingCollectionElement` で、`SampleProfileUdpBinding` を構成システムに公開します。 実装の大部分は `SampleProfileUdpBindingConfigurationElement` で代行されます。これは `StandardBindingElement` の派生です。 `SampleProfileUdpBindingConfigurationElement`には、のプロパティに対応するプロパティ `SampleProfileUdpBinding` と、バインディングからマップする関数があり `ConfigurationElement` ます。 最後に、`OnApplyConfiguration` 内で `SampleProfileUdpBinding` メソッドをオーバーライドします。次のサンプル コードを参照してください。  
   
 ```csharp
 protected override void OnApplyConfiguration(string configurationName)  
@@ -369,7 +369,7 @@ protected override void OnApplyConfiguration(string configurationName)
   <configSections>  
      <sectionGroup name="system.serviceModel">  
         <sectionGroup name="bindings">  
-          <section name="sampleProfileUdpBinding" type="Microsoft.ServiceModel.Samples.SampleProfileUdpBindingCollectionElement, UdpTransport />  
+          <section name="sampleProfileUdpBinding" type="Microsoft.ServiceModel.Samples.SampleProfileUdpBindingCollectionElement, UdpTransport" />  
         </sectionGroup>  
      </sectionGroup>  
   </configSections>  
@@ -383,9 +383,9 @@ protected override void OnApplyConfiguration(string configurationName)
   <system.serviceModel>  
     <client>  
       <endpoint configurationName="calculator"  
-                address="soap.udp://localhost:8001/"   
+                address="soap.udp://localhost:8001/"
                 bindingConfiguration="CalculatorServer"  
-                binding="sampleProfileUdpBinding"   
+                binding="sampleProfileUdpBinding"
                 contract= "Microsoft.ServiceModel.Samples.ICalculatorContract">  
       </endpoint>  
     </client>  
@@ -394,7 +394,7 @@ protected override void OnApplyConfiguration(string configurationName)
 ```  
   
 ## <a name="the-udp-test-service-and-client"></a>UDP テスト サービスとクライアント  
- このサンプルのトランスポートを使用するテスト コードは、UdpTestService ディレクトリと UdpTestClient ディレクトリで使用できます。 サービス コードは 2 つのテストで構成されています。1 つ目はコードからバインディングとエンドポイントをセットアップするテストで、2 つ目は構成を使用してバインディングとエンドポイントをセットアップするテストです。 両方のテストで、2 つのエンドポイントを使用します。 1つのエンドポイントは、 [\<reliableSession >](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))を `true`に設定した `SampleUdpProfileBinding` を使用します。 もう 1 つのエンドポイントでは、 `UdpTransportBindingElement` が含まれるカスタム バインドを使用します。 これは、 [\<reliableSession >](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))を `false`に設定して `SampleUdpProfileBinding` を使用することと同じです。 両方のテストでサービスが作成され、各バインドのエンドポイントが追加されてサービスが開きます。その後 Enter キーを押すと、サービスが閉じます。  
+ このサンプルのトランスポートを使用するテスト コードは、UdpTestService ディレクトリと UdpTestClient ディレクトリで使用できます。 サービス コードは 2 つのテストで構成されています。1 つ目はコードからバインディングとエンドポイントをセットアップするテストで、2 つ目は構成を使用してバインディングとエンドポイントをセットアップするテストです。 両方のテストで、2 つのエンドポイントを使用します。 1つのエンドポイントは、 `SampleUdpProfileBinding` [\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) をに設定してを使用し `true` ます。 もう 1 つのエンドポイントでは、 `UdpTransportBindingElement` が含まれるカスタム バインドを使用します。 これは、をに設定してを使用することと同じです `SampleUdpProfileBinding` [\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) `false` 。 両方のテストでサービスが作成され、各バインドのエンドポイントが追加されてサービスが開きます。その後 Enter キーを押すと、サービスが閉じます。  
   
  このサービス テスト アプリケーションを開始すると、次の出力が表示されます。  
   
@@ -453,7 +453,7 @@ svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTranspor
   
 ```xml
 <configuration>  
-  <system.serviceModel>      
+  <system.serviceModel>
     <extensions>  
       <!-- This was added manually because svcutil.exe does not add this extension to the file -->  
       <bindingExtensions>  
@@ -466,17 +466,17 @@ svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTranspor
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1. ソリューションをビルドするには、「 [Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+1. ソリューションをビルドするには、「 [Windows Communication Foundation サンプルのビルド](building-the-samples.md)」の手順に従います。  
   
-2. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+2. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](running-the-samples.md)」の手順に従います。  
   
 3. 前の「UDP テスト サービスとクライアント」セクションを参照してください。  
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\Udp`

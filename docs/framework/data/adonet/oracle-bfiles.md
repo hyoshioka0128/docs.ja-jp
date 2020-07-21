@@ -2,36 +2,36 @@
 title: Oracle BFILE
 ms.date: 03/30/2017
 ms.assetid: 341bbf84-4734-4d44-8723-ccedee954e21
-ms.openlocfilehash: 214140bb8fcf43154b014ea3db609d355a27af7c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 40060a7ea8576e08140d972072d086606d640366
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794634"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149441"
 ---
 # <a name="oracle-bfiles"></a>Oracle BFILE
 .NET Framework Data Provider for Oracle には、<xref:System.Data.OracleClient.OracleBFile> クラスが含まれています。このクラスは、Oracle <xref:System.Data.OracleClient.OracleType.BFile> データ型で使用されます。  
   
- Oracle **BFILE**データ型は、最大サイズが 4 gb のバイナリデータへの参照を含む oracle **LOB**データ型です。 Oracle **BFILE**は、データがサーバー上ではなくオペレーティングシステムの物理ファイルに格納されるという点で、他の oracle **LOB**データ型とは異なります。 **BFILE**データ型は、データへの読み取り専用アクセスを提供することに注意してください。  
+ Oracle の **BFILE** データ型は、最大 4 GB までのバイナリ データへの参照を含む Oracle の **LOB** データ型です。 Oracle の **BFILE** は、データがサーバー上にではなくオペレーティング システムの物理ファイルに保存されるという点で、他の Oracle の **LOB** データ型と異なります。 **BFILE** データ型のデータ アクセスは読み取り専用であることに注意してください。  
   
- **LOB**データ型と区別する、 **BFILE**データ型のその他の特性は次のとおりです。  
+ **LOB** データ型と異なる **BFILE** データ型のその他の特徴としては、次のものがあります。  
   
 - 非構造化データの保持。  
   
 - サーバー側チャンキングのサポート。  
   
-- 参照コピーのセマンティクスの使用。 たとえば、 **bfile**に対してコピー操作を実行すると、ファイルへの参照である**bfile**ロケーターだけがコピーされます。 ファイル内のデータはコピーされません。  
+- 参照コピーのセマンティクスの使用。 たとえば、**BFILE** 上でコピー操作を行う場合、ファイルへの参照である **BFILE** ロケーターだけがコピーされます。 ファイル内のデータはコピーされません。  
   
- **BFILE**データ型は、サイズが大きい lob を参照するために使用する必要があります。したがって、データベースに格納するのは現実的ではありません。 **LOB**データ型と比較して、 **BFILE**データ型を使用する場合は、クライアント、サーバー、および通信のオーバーヘッドが増加します。 少量のデータだけを取得する必要がある場合は、 **BFILE**にアクセスする方が効率的です。 オブジェクト全体を取得したい場合は、データベースに常駐する LOB へのアクセスがいっそう効果的です。  
+ **BFILE** データ型は、大きいサイズの LOB の参照用として使用してください。データベースへの保存には適しません。 **BFILE** データ型を使用すると、クライアント、サーバー、および通信において、**LOB** データ型よりも、いっそう多くのオーバーヘッドを必要とします。 少量のデータを取得するだけの場合は、**BFILE** へのアクセスがいっそう効果的です。 オブジェクト全体を取得したい場合は、データベースに常駐する LOB へのアクセスがいっそう効果的です。  
   
- NULL 以外の各**OracleBFile**オブジェクトは、基になる物理ファイルの場所を定義する2つのエンティティに関連付けられています。  
+ NULL 以外の **OracleBFile** オブジェクトは、基になる物理ファイルの場所を定義する次の 2 つのエンティティに関連付けられます。  
   
 1. Oracle DIRECTORY オブジェクト。ファイル システムのディレクトリに対するデータベースのエイリアスです。  
   
 2. 基になる物理ファイルのファイル名。このファイルは、DIRECTORY オブジェクトに関連付けられたディレクトリに配置されています。  
   
 ## <a name="example"></a>例  
- 次C#の例では、Oracle テーブルで**BFILE**を作成し、 **OracleBFile**オブジェクトの形式で取得する方法を示します。 この例では、 <xref:System.Data.OracleClient.OracleDataReader>オブジェクトと**OracleBFile** **Seek**メソッドと**Read**メソッドを使用する方法を示します。 このサンプルを使用するには、まず、"c:\\\bfiles" という名前のディレクトリを作成し、Oracle サーバーに "myfile.txt" という名前のファイルを作成する必要があることに注意してください。  
+ 次の C# の例では、Oracle テーブルに **BFILE** を作成し、**OracleBFile** オブジェクトの形式で取得する方法について説明します。 この例では、<xref:System.Data.OracleClient.OracleDataReader> オブジェクトと **OracleBFile** の **Seek** および **Read** メソッドを使用する方法について説明します。 このサンプルを使用するには、はじめに "c:\\\bfiles" というディレクトリと "MyFile.jpg" というファイルを Oracle サーバーに作成する必要があります。  
   
 ```csharp  
 using System;  
@@ -48,20 +48,20 @@ public class Sample
       connection.Open();  
   
       OracleCommand command = connection.CreateCommand();  
-      command.CommandText =   
+      command.CommandText =
         "CREATE or REPLACE DIRECTORY MyDir as 'c:\\bfiles'";  
       command.ExecuteNonQuery();  
-      command.CommandText =   
+      command.CommandText =
         "DROP TABLE MyBFileTable";  
       try {  
         command.ExecuteNonQuery();  
       }  
       catch {  
       }  
-      command.CommandText =   
+      command.CommandText =
         "CREATE TABLE MyBFileTable(col1 number, col2 BFILE)";  
       command.ExecuteNonQuery();  
-      command.CommandText =   
+      command.CommandText =
         "INSERT INTO MyBFileTable values ('2', BFILENAME('MyDir', " +  
         "'MyFile.jpg'))";  
       command.ExecuteNonQuery();  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-ms.openlocfilehash: d567674baa92ad096b10a1199fa3f04f05939df5
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 0d69af40e4b9a0133e44b64b45466f9aac84ffe2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991169"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598750"
 ---
 # <a name="one-way-services"></a>一方向サービス
 サービス操作の既定の動作は、要求/応答パターンです。 要求/応答パターンでは、サービス操作がコードで `void` 型のメソッドとして表される場合であっても、クライアントは応答メッセージを待機します。 一方向操作では、メッセージが 1 つ送信されるだけです。 受信者は応答メッセージを送信せず、送信者もこれを待機しません。  
@@ -20,7 +20,7 @@ ms.locfileid: "70991169"
   
 - クライアントが操作を呼び出す必要があり、操作レベルで操作の結果に影響を受けない場合。  
   
-- <xref:System.ServiceModel.NetMsmqBinding> クラスまたは <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> クラスを使用している場合 (このシナリオの詳細については、「 [WCF のキュー](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)」を参照してください)。  
+- <xref:System.ServiceModel.NetMsmqBinding> クラスまたは <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> クラスを使用している場合  (このシナリオの詳細については、「 [WCF のキュー](queues-in-wcf.md)」を参照してください)。  
   
  操作が一方向の場合、エラー情報をクライアントに伝達する応答メッセージはありません。 エラー状態を検出するには、信頼できるセッションのような基になるバインディングの機能を使用できます。また、2 つの一方向操作 (1 つは、サービス操作を呼び出すための、クライアントからサービスへの一方向コントラクト、もう 1 つは、クライアントが実装するコールバックを使用してサービスがエラーを返せるようにする、サービスとクライアントの間の一方向コントラクト) を使用する双方向サービス コントラクトをデザインすることもできます。  
   
@@ -41,7 +41,7 @@ public interface IOneWayCalculator
 }  
 ```  
   
- 完全な例については、[一方向](../../../../docs/framework/wcf/samples/one-way.md)のサンプルを参照してください。  
+ 完全な例については、[一方向](../samples/one-way.md)のサンプルを参照してください。  
   
 ## <a name="clients-blocking-with-one-way-operations"></a>一方向操作でのクライアントのブロック  
  一部の一方向アプリケーションは、送信データがネットワーク接続に書き込まれるとすぐに戻りますが、いくつかのシナリオでは、バインディングまたはサービスの実装によって、WCF クライアントが一方向の操作を使用してブロックされる可能性があることに注意してください。 WCF クライアントアプリケーションでは、送信データがネットワーク接続に書き込まれるまで、WCF クライアントオブジェクトは返されません。 これは一方向操作を含め、すべてのメッセージ交換パターンについて当てはまることで、トランスポートへのデータの書き込みに何らかの問題があると、クライアントが処理を終了できなくなることを意味します。 問題の種類によっては、例外が発生したりサービスへのメッセージの送信に遅延が発生したりする結果となることがあります。  
@@ -56,4 +56,4 @@ public interface IOneWayCalculator
   
 ## <a name="see-also"></a>関連項目
 
-- [一方向](../../../../docs/framework/wcf/samples/one-way.md)
+- [一方向](../samples/one-way.md)

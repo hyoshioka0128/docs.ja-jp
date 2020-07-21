@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: e4ef38db-b7d1-4bda-87ab-8bb738440ddc
 ms.openlocfilehash: 38f9a9c79bfda9abb46181f433d28268b8a37762
 ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/07/2019
 ms.locfileid: "72004567"
 ---
 # <a name="typography"></a>タイポグラフィ
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、テキストコンテンツのリッチ表示のサポートが含まれています。 @No__t-0 のテキストは Microsoft ClearType を使用して表示されます。これにより、テキストの明瞭さと読みやすさが向上します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は OpenType フォントもサポートしており、TrueType®形式で定義されているもの以外の追加機能を提供します。  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] には、テキスト コンテンツのリッチな表現のサポートが含まれています。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のテキストは、テキストのわかりやすさと読みやすさを高める Microsoft ClearType を使用して描画されます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、TrueType® 形式で定義されている以外の追加の機能を提供する OpenType フォントもサポートされています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [WPF のタイポグラフィ](typography-in-wpf.md)  

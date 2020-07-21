@@ -2,17 +2,17 @@
 title: '方法: WAS で WCF サービスをホストする'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: b6d3ace054260de1ca649fbf4bd54156bbea24ce
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 40460baeb136345f2532ec6ad5035bd5d3a40254
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972209"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051988"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>方法: WAS で WCF サービスをホストする
 このトピックでは、Windows プロセスアクティブ化サービス (WAS) でホストされる Windows Communication Foundation (WCF) サービスを作成するために必要な基本的な手順について説明します。 WAS は、HTTP 以外のトランスポート プロトコルで動作するインターネット インフォメーション サービス (IIS) 機能を一般化した新しいプロセス アクティブ化サービスです。 WCF では、リスナーアダプターインターフェイスを使用して、WCF でサポートされている HTTP 以外のプロトコル (TCP、名前付きパイプ、メッセージキューなど) を介して受信されるアクティブ化要求を伝達します。  
   
- このホスト オプションでは、WAS アクティブ化コンポーネントのインストールと構成が正しく行われている必要がありますが、アプリケーションの一部としてホスト コードを記述する必要はありません。 WAS のインストールと構成の詳細について[は、「」を参照してください。WCF アクティブ化コンポーネント](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)をインストールして構成します。  
+ このホスト オプションでは、WAS アクティブ化コンポーネントのインストールと構成が正しく行われている必要がありますが、アプリケーションの一部としてホスト コードを記述する必要はありません。 WAS のインストールと構成の詳細については、「[方法: WCF アクティブ化コンポーネントをインストールおよび構成](how-to-install-and-configure-wcf-activation-components.md)する」を参照してください。  
   
 > [!WARNING]
 > Web サーバーの要求処理パイプラインをクラシック モードに設定すると、WAS のアクティブ化がサポートされません。 WAS のアクティブ化を使用する場合は、Web サーバーの要求処理パイプラインを統合モードに設定する必要があります。  
@@ -35,7 +35,7 @@ ms.locfileid: "70972209"
   
  バインディングの設定が一致しない場合、これらのプロパティの値は常に最初に初期化されたエンドポイントによって決定されるため、後で追加されるエンドポイントは <xref:System.ServiceModel.ServiceActivationException> をスローします。  
   
- この例のソースコピーについては、「 [TCP Activation](../../../../docs/framework/wcf/samples/tcp-activation.md)」を参照してください。  
+ この例のソースコピーについては、「 [TCP Activation](../samples/tcp-activation.md)」を参照してください。  
   
 ### <a name="to-create-a-basic-service-hosted-by-was"></a>WAS でホストされる基本サービスを作成するには  
   
@@ -66,7 +66,7 @@ ms.locfileid: "70972209"
   
 4. 次のコードを含む Service.svc ファイルを作成します。  
   
-   ```
+   ```aspx-csharp
    <%@ServiceHost language=c# Service="CalculatorService" %>
    ```
   
@@ -74,7 +74,7 @@ ms.locfileid: "70972209"
   
 ### <a name="to-create-a-client-to-use-the-service"></a>サービスを使用するクライアントを作成するには  
   
-1. コマンドラインから[ServiceModel メタデータユーティリティツール (svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、サービスメタデータからコードを生成します。  
+1. コマンドラインから[ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、サービスメタデータからコードを生成します。  
   
     ```console
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -90,7 +90,7 @@ ms.locfileid: "70972209"
   
 4. <xref:System.ServiceModel.NetTcpBinding> を使用するクライアントの構成は、Svcutil.exe で生成することもできます。 Visual Studio を使用する場合は、このファイルの名前は App.config ファイル内で指定する必要があります。  
   
-     [!code-xml[C_HowTo_HostInWAS#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/common/app.config#2211)]   
+     [!code-xml[C_HowTo_HostInWAS#2211](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinwas/common/app.config#2211)]
   
 5. アプリケーションで `ClientCalculator` のインスタンスを作成し、サービス操作を呼び出します。  
   
@@ -100,5 +100,5 @@ ms.locfileid: "70972209"
   
 ## <a name="see-also"></a>関連項目
 
-- [TCP アクティベーション](../../../../docs/framework/wcf/samples/tcp-activation.md)
-- [AppFabric のホスティング機能](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [TCP のアクティブ化](../samples/tcp-activation.md)
+- [AppFabric のホスティング機能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

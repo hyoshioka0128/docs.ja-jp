@@ -1,6 +1,5 @@
 ---
 title: where 句 - C# リファレンス
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - whereclause_CSharpKeyword
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - where keyword [C#]
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
-ms.openlocfilehash: 15df6339cec9eabadf5aa4c184d7504c4e065032
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 33616e4eacb484b9c6eda3862cd86fdd1e6df165
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421925"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79173485"
 ---
 # <a name="where-clause-c-reference"></a>where 句 (C# リファレンス)
 
@@ -41,15 +40,15 @@ ms.locfileid: "73421925"
 
 `where` 句はフィルター メカニズムです。 クエリ式のほぼどこにでも指定できますが、最初の句や最後の句にすることはできません。 `where` 句は、ソース要素のフィルター処理をグループ化の前に行うか後に行うかによって、[group](group-clause.md) 句の前または後に指定できます。
 
-指定した述語がデータ ソース内の要素に対して有効でない場合は、コンパイル時エラーが発生します。 これは、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] で提供される厳密な型チェックの 1 つの利点です。
+指定した述語がデータ ソース内の要素に対して有効でない場合は、コンパイル時エラーが発生します。 これは、LINQ で提供される厳密な型チェックの 1 つの利点です。
 
 コンパイル時に、`where` キーワードは <xref:System.Linq.Enumerable.Where%2A> 標準クエリ演算子メソッドの呼び出しに変換されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [クエリ キーワード (LINQ)](query-keywords.md)
 - [from 句](from-clause.md)
 - [select 句](select-clause.md)
 - [データのフィルター処理](../../programming-guide/concepts/linq/filtering-data.md)
 - [C# での LINQ](../../linq/index.md)
-- [C# の LINQ の概要](/dotnet/csharp/programming-guide/concepts/linq/)
+- [統合言語クエリ (LINQ)](../../programming-guide/concepts/linq/index.md)

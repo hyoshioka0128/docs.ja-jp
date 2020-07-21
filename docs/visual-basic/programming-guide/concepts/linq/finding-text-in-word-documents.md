@@ -2,12 +2,12 @@
 title: Word 文書内のテキストの検索
 ms.date: 07/20/2015
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
-ms.openlocfilehash: a9af050abe13bfd2f0af0a31c102f8a6ab026128
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 546703e3dbead64fd10c04fe52cb1dd98ba53049
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353472"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398091"
 ---
 # <a name="finding-text-in-word-documents-visual-basic"></a>Word 文書内のテキストの検索 (Visual Basic)
 
@@ -17,7 +17,7 @@ ms.locfileid: "74353472"
 
 この例では、WordprocessingML ドキュメントを処理して、ドキュメント内で特定のテキストの出現箇所をすべて検索します。 ここではそのために、"Hello" という文字列を検索するクエリを使用します。 この例は、このチュートリアルのこれまでの例に基づいています。 新しいクエリについては、以下のコード内にあるコメントで説明が示されています。
 
-この例のソースドキュメントを作成する手順については、「[ソースとなる Office OPEN XML ドキュメントを作成する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)」を参照してください。
+この例のソース ドキュメントを作成する方法の詳細については、「[ソースとなる Office Open XML ドキュメントの作成 (Visual Basic)](creating-the-source-office-open-xml-document.md)」を参照してください。
 
 この例では、WindowsBase アセンブリに含まれるクラスを使用します。 また、<xref:System.IO.Packaging?displayProperty=nameWithType> 名前空間内の型を使用します。
 
@@ -69,7 +69,7 @@ Module Module1
         Return (e.<w:r>.<w:t>).StringConcatenate(Function(element) CStr(element))
     End Function
 
-    ' Following function is required because VB does not support short circuit evaluation
+    ' Following function is required because Visual Basic does not support short circuit evaluation
     Private Function GetStyleOfParagraph(ByVal styleNode As XElement, ByVal defaultStyle As String) As String
         If (styleNode Is Nothing) Then
             Return defaultStyle
@@ -211,7 +211,7 @@ Module Module1
         Return (e.<w:r>.<w:t>).StringConcatenate(Function(element) CStr(element))
     End Function
 
-    ' Following function is required because VB does not support short circuit evaluation
+    ' Following function is required because Visual Basic does not support short circuit evaluation
     Private Function GetStyleOfParagraph(ByVal styleNode As XElement, ByVal defaultStyle As String) As String
         If (styleNode Is Nothing) Then
             Return defaultStyle
@@ -302,16 +302,16 @@ StyleName:Code ><
 
 この例はさまざまな形で強化できます。 たとえば、正規表現を使用してテキストを検索したり、特定のディレクトリにあるすべての Word ファイルを反復処理したりすることができます。
 
-この例は、1 つのクエリとして記述された場合とほぼ同程度のパフォーマンスを発揮します。 各クエリはレイジー遅延方式で実装されているため、反復処理されるまで結果は生成されません。 実行とレイジー評価の詳細については、「 [LINQ to XML での遅延実行とレイジー評価」 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)を参照してください。
+この例は、1 つのクエリとして記述された場合とほぼ同程度のパフォーマンスを発揮します。 各クエリはレイジー遅延方式で実装されているため、反復処理されるまで結果は生成されません。 実行とレイジー評価について詳しくは、「[LINQ to XML における遅延実行とレイジー評価 (Visual Basic)](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 
 次のセクションでは、WordprocessingML ドキュメントについて詳細に説明します。
 
-- [Office Open XML WordprocessingML ドキュメントの詳細 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [Office Open XML WordprocessingML ドキュメントの詳細 (Visual Basic)](details-of-office-open-xml-wordprocessingml-documents.md)
 
 ## <a name="see-also"></a>関連項目
 
-- [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [純粋関数によるリファクタリング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
-- [LINQ to XML での遅延実行とレイジー評価 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [純粋関数によるリファクタリング (Visual Basic)](refactoring-using-a-pure-function.md)
+- [LINQ to XML における遅延実行とレイジー評価 (Visual Basic)](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

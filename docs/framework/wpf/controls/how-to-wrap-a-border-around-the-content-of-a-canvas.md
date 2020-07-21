@@ -9,16 +9,16 @@ helpviewer_keywords:
 ms.assetid: caf0404f-f4e7-484f-9928-5dae1238d8ef
 ms.openlocfilehash: 5d33af798d2e626cea08fa71c9b2c88acb22b5e2
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61696159"
 ---
 # <a name="how-to-wrap-a-border-around-the-content-of-a-canvas"></a>方法: Canvas のコンテンツを Border で囲む
-この例では、ラップ、<xref:System.Windows.Controls.Canvas>を持つ要素を<xref:System.Windows.Controls.Border>。  
+この例は、<xref:System.Windows.Controls.Border> を使用して <xref:System.Windows.Controls.Canvas> 要素をラップする方法を示します。  
   
 ## <a name="example"></a>例  
- 次の例は、表示する方法を示しています。`Hello World!`内で、<xref:System.Windows.Controls.Canvas>要素。 <xref:System.Windows.Controls.Canvas>要素がによってラップされた、<xref:System.Windows.Controls.Border>要素罫線要素は、ようにします。  
+ 次の例は、<xref:System.Windows.Controls.Canvas> 要素内での `Hello World!` の表示方法を示しています。 <xref:System.Windows.Controls.Canvas> 要素は、枠線によって要素のアウトラインが示されるように <xref:System.Windows.Controls.Border> 要素によってラップされています。  
   
  [!code-xaml[CanvasHelloWorldBorder#1](~/samples/snippets/csharp/VS_Snippets_Wpf/CanvasHelloWorldBorder/CS/default.xaml#1)]  
   

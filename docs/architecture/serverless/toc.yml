@@ -16,7 +16,7 @@
     - name: Azure のサーバーレス プラットフォーム
       href: azure-serverless-platform.md
       items:
-        - name: Azure Functions
+        - name: 'Azure Functions '
           href: azure-functions.md
         - name: Application Insights
           href: application-insights.md

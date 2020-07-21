@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c7ba51a1-0dd5-4452-b471-232febe0f897
 topic_type:
 - apiref
-ms.openlocfilehash: b55bd41039fce84a21c5d651d93b56f5d84b7611
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 12dc5466d5be73b327f171c389c41c55901f2915
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088180"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894952"
 ---
 # <a name="icordebugassemblyenumeratemodules-method"></a>ICorDebugAssembly::EnumerateModules メソッド
-`ICorDebugAssembly`に格納されているモジュールの列挙子を取得します。  
+に格納されているモジュールの列挙`ICorDebugAssembly`子を取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -37,11 +37,11 @@ HRESULT EnumerateModules (
  `ppModules`  
  入出力列挙子である、モジュールの列挙型インターフェイスのアドレスへのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

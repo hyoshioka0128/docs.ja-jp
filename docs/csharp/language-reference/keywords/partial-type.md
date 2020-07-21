@@ -1,6 +1,5 @@
 ---
 title: partial 型 - C# リファレンス
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - partialtype
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-ms.openlocfilehash: 7af43a25f88ff0a53e5fa257b13bb1dc8a6d55eb
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 551145b9cdf5fa24f3ae365665e8ff06cf5e9307
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422610"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75715205"
 ---
 # <a name="partial-type-c-reference"></a>partial 型 (C# リファレンス)
 
@@ -35,9 +34,9 @@ ms.locfileid: "73422610"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# リファレンス](../index.md)
-- [C# プログラミング ガイド](../../programming-guide/index.md)
+- [C# プログラミングガイド](../../programming-guide/index.md)
 - [修飾子](index.md)
 - [ジェネリックの概要](../../programming-guide/generics/index.md)

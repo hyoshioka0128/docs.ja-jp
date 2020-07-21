@@ -8,24 +8,24 @@ helpviewer_keywords:
 ms.assetid: fa32b866-5ca1-4e73-85e7-2ac64b80d194
 ms.openlocfilehash: 60ae7c4e95801036c5deb0c485645297509b830c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61911054"
 ---
 # <a name="how-to-customize-the-thumb-size-on-a-scrollbar"></a>方法: ScrollBar のつまみのサイズをカスタマイズする
-このトピックでは、設定する方法を説明します、<xref:System.Windows.Controls.Primitives.Thumb>の<xref:System.Windows.Controls.Primitives.ScrollBar>固定サイズの最小サイズを指定する方法を<xref:System.Windows.Controls.Primitives.Thumb>の<xref:System.Windows.Controls.Primitives.ScrollBar>します。  
+このトピックでは、<xref:System.Windows.Controls.Primitives.ScrollBar> の <xref:System.Windows.Controls.Primitives.Thumb> を固定サイズに設定する方法と、<xref:System.Windows.Controls.Primitives.ScrollBar> の <xref:System.Windows.Controls.Primitives.Thumb> に最小サイズを指定する方法について説明します。  
   
 ## <a name="example"></a>例  
   
 ## <a name="description"></a>説明  
- 次の例では、作成、<xref:System.Windows.Controls.Primitives.ScrollBar>を持つ、<xref:System.Windows.Controls.Primitives.Thumb>固定サイズです。 例のセット、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Thumb>に<xref:System.Double.NaN>の高さを設定し、<xref:System.Windows.Controls.Primitives.Thumb>します。  水平方向を作成する<xref:System.Windows.Controls.Primitives.ScrollBar>で、<xref:System.Windows.Controls.Primitives.Thumb>固定幅を持つの幅を設定、<xref:System.Windows.Controls.Primitives.Thumb>します。  
+ 次の例では、<xref:System.Windows.Controls.Primitives.Thumb> が固定サイズの <xref:System.Windows.Controls.Primitives.ScrollBar> が作成されます。 この例では、<xref:System.Windows.Controls.Primitives.Thumb> の <xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A> プロパティが <xref:System.Double.NaN> に設定され、高さ <xref:System.Windows.Controls.Primitives.Thumb> が設定されています。  <xref:System.Windows.Controls.Primitives.Thumb> の幅を固定して水平 <xref:System.Windows.Controls.Primitives.ScrollBar> を作成するには、幅 <xref:System.Windows.Controls.Primitives.Thumb> を設定します。  
   
 ## <a name="code"></a>コード  
  [!code-xaml[ScrollBarCustomThumbSize#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarCustomThumbSize/CS/Window1.xaml#1)]  
   
 ## <a name="description"></a>説明  
- 次の例では、作成、<xref:System.Windows.Controls.Primitives.ScrollBar>を持つ、<xref:System.Windows.Controls.Primitives.Thumb>最小サイズ。 値を設定する例では、<xref:System.Windows.SystemParameters.VerticalScrollBarButtonHeightKey%2A>します。 水平方向を作成する<xref:System.Windows.Controls.Primitives.ScrollBar>で、<xref:System.Windows.Controls.Primitives.Thumb>幅の最小値を持つ、設定、<xref:System.Windows.SystemParameters.HorizontalScrollBarButtonWidthKey%2A>します。  
+ 次の例では、<xref:System.Windows.Controls.Primitives.Thumb> が最小サイズの <xref:System.Windows.Controls.Primitives.ScrollBar> が作成されます。 この例では、値 <xref:System.Windows.SystemParameters.VerticalScrollBarButtonHeightKey%2A> が設定されています。 <xref:System.Windows.Controls.Primitives.Thumb> の幅を最小にして水平 <xref:System.Windows.Controls.Primitives.ScrollBar> を作成するには、<xref:System.Windows.SystemParameters.HorizontalScrollBarButtonWidthKey%2A> を設定します。  
   
 ## <a name="code"></a>コード  
  [!code-xaml[ScrollBarCustomThumbSize#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarCustomThumbSize/CS/Window1.xaml#2)]  

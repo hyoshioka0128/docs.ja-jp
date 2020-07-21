@@ -1,13 +1,14 @@
 ---
 title: IPv6 の自動構成
+description: ノードが IPv6 ネットワークに参加し、人間の介入なしで設定されるノード Plug and Play が IPv6 でサポートされるしくみについて説明します。
 ms.date: 03/30/2017
 ms.assetid: 581c1d21-1013-43a3-bf3e-2d9ead62b79c
-ms.openlocfilehash: 95d9dce36c70b8f6c6b9f963c0842305a111d436
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 9d65bc453478ac4679556e931b1758c18cfedcf3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047817"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502328"
 ---
 # <a name="ipv6-auto-configuration"></a>IPv6 の自動構成
 IPv6 用の 1 つの重要な目標は、ノードのプラグ アンド プレイをサポートすることです。 つまり、IPv6 ネットワークにノードを接続して、それを人間の操作なしに自動的に構成できる必要があります。  

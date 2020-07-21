@@ -12,7 +12,7 @@ helpviewer_keywords:
 ms.assetid: 7b8dfc9b-46ac-4ce8-b7bb-035734d688b7
 ms.openlocfilehash: 1a1d956ee7f41ac1ac0fc9bd051a18b9ff438930
 ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73459836"
@@ -25,15 +25,15 @@ ms.locfileid: "73459836"
   
  このプロセスには、ビジュアル ツリーも関与します。 テンプレートによってビジュアル ツリーに組み込まれる要素も、接続されるまでは完全にインスタンス化されません。  
   
- この動作の影響で、要素の視覚的特性がすべて揃っていることを前提とする特定の操作には、追加の手順が必要になります。 構築されているが、まだツリーに適用されていないクラスの視覚的特性を取得しようとする場合などが、その例です。 たとえば、<xref:System.Windows.Media.Imaging.RenderTargetBitmap> で <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> を呼び出す必要があり、渡しているビジュアルがツリーに接続されていない要素である場合、追加の初期化手順が完了するまで、その要素は視覚的には完了しません。  
+ この動作の影響で、要素の視覚的特性がすべて揃っていることを前提とする特定の操作には、追加の手順が必要になります。 構築されているが、まだツリーに適用されていないクラスの視覚的特性を取得しようとする場合などが、その例です。 たとえば、<xref:System.Windows.Media.Imaging.RenderTargetBitmap> で <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> を呼び出す必要があり、渡そうとしているビジュアルがツリーに接続されていない要素である場合は、追加の初期化手順が完了するまで、その要素は視覚的に完成されません。  
   
 ### <a name="using-begininit-and-endinit-to-initialize-the-element"></a>BeginInit と EndInit を使用して要素を初期化する  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のさまざまなクラスは、<xref:System.ComponentModel.ISupportInitialize> インターフェイスを実装します。 インターフェイスの <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> および <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> メソッドを使用して、初期化手順を含むコード内の領域を示します (表示に影響を与えるプロパティ値の設定など)。 シーケンス内で <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> が呼び出されると、レイアウトシステムは要素を処理し、暗黙的なスタイルの検索を開始できます。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のさまざまなクラスでは、<xref:System.ComponentModel.ISupportInitialize> インターフェイスが実装されます。 このインターフェイスの <xref:System.ComponentModel.ISupportInitialize.BeginInit%2A> メソッドと <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> メソッドを使用して、初期化手順を含むコード内の領域を表します (たとえば、レンダリングに影響を与えるプロパティ値の設定)。 シーケンス内で <xref:System.ComponentModel.ISupportInitialize.EndInit%2A> が呼び出された後に、レイアウト システムは要素を処理し、暗黙的スタイルの検索を開始します。  
   
- プロパティを設定する要素が <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> 派生クラスである場合は、<xref:System.ComponentModel.ISupportInitialize>にキャストするのではなく、<xref:System.Windows.FrameworkElement.BeginInit%2A> と <xref:System.Windows.FrameworkElement.EndInit%2A> のクラスバージョンを呼び出すことができます。  
+ プロパティの設定しようとしている要素が <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> 派生クラスである場合は、<xref:System.ComponentModel.ISupportInitialize> にキャストするのではなく、<xref:System.Windows.FrameworkElement.BeginInit%2A> と <xref:System.Windows.FrameworkElement.EndInit%2A> のクラス バージョンを呼び出すことができます。  
   
 ### <a name="sample-code"></a>サンプル コード  
- 次の例は、レンダリング Api を使用するコンソールアプリケーションのサンプルコードと、表示に影響を与えるプロパティを調整するその他の API 呼び出しの周囲の <xref:System.Windows.FrameworkElement.EndInit%2A> <xref:System.Windows.FrameworkElement.BeginInit%2A> の適切な配置を示すために [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルの <xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=nameWithType> を使用するコンソールアプリケーションのサンプルコードです。  
+ 次の例は、ルーズ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルのレンダリング API と <xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%29?displayProperty=nameWithType> を使用して、レンダリングに影響を与えるプロパティを調整する他の API 呼び出しの周辺への <xref:System.Windows.FrameworkElement.BeginInit%2A> と <xref:System.Windows.FrameworkElement.EndInit%2A> の適切な配置を示すコンソール アプリケーションのサンプル コードです。  
   
  この例では、main 関数のみを示します。 関数 `Rasterize` および `Save` (この例には示していません) は、イメージ処理および入出力を扱うユーティリティ関数です。  
   

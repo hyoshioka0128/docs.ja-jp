@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: 31096ca510c868cf43ca6ef60126c98a8832d2c5
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 3fb4b31038845d223248e72d32b3e7413f2aef63
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895114"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597177"
 ---
 # <a name="how-to-configure-com-service-settings"></a>方法: COM+ サービス設定を構成する
-COM+ サービス構成ツールを使用してアプリケーション インターフェイスを追加または削除すると、アプリケーション構成ファイル内の Web サービス構成が更新されます。 Com + でホストされるモードでは、アプリケーションのルートディレクトリに app.config ファイルが配置され\\ます (%programfiles%\complus applications\ Applications {appid} が既定値です)。 いずれの Web ホスト モードでも、Web.config ファイルは指定した vroot ディレクトリに配置されます。  
+COM+ サービス構成ツールを使用してアプリケーション インターフェイスを追加または削除すると、アプリケーション構成ファイル内の Web サービス構成が更新されます。 COM + でホストされるモードでは、アプリケーションのルートディレクトリに app.config ファイルが配置されます (%Programfiles%\complus applications\ Applications \\ {appid} が既定値です)。 いずれの Web ホスト モードでも、Web.config ファイルは指定した vroot ディレクトリに配置されます。  
   
 > [!NOTE]
 > クライアントとサーバー間のメッセージの改ざんを防止するには、メッセージの署名を使用する必要があります。 また、クライアントとサーバー間のメッセージから情報が漏えいするのを防止するには、メッセージまたはトランスポート層の暗号化を使用する必要があります。 Windows Communication Foundation (WCF) サービスと同様に、同時呼び出し、接続、インスタンス、および保留中の操作の数を制限するには、調整を使用する必要があります。 これによりリソースの過剰消費を防ぐことができます。 調整の動作は、サービス構成ファイルの設定で指定します。  
@@ -55,7 +55,7 @@ public interface IFinancesContract : IDisposable
   
 - エンドポイント アドレスを既定の ApplicationName/ComponentName/InterfaceName という形式から、より利用しやすい形式に変更する。  
   
-- サービスの名前空間を既定`http://tempuri.org/InterfaceID`のフォームからより適切な形式に変更します。  
+- サービスの名前空間を既定のフォームから `http://tempuri.org/InterfaceID` より適切な形式に変更します。  
   
 - 異なるトランスポート バインディングを使用するようにエンドポイントを変更する。  
   
@@ -98,4 +98,4 @@ public interface IFinancesContract : IDisposable
   
 ## <a name="see-also"></a>関連項目
 
-- [COM+ アプリケーションとの統合](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
+- [COM + アプリケーションとの統合](integrating-with-com-plus-applications.md)

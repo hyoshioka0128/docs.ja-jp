@@ -1,16 +1,17 @@
 ---
 title: Windows Communication Foundation
+description: サービス指向アプリケーションのプログラミングモデルである WCF を使用して、セキュリティで保護された信頼性の高いトランザクションソリューションを構築する方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation [WCF]
 - WCF [WCF]
 ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
-ms.openlocfilehash: 836913dd35d127d181c753341a7c39c453242a8f
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: dc4218e830c34e44536bbb816af9c1b35b4b5b07
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552681"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244297"
 ---
 # <a name="develop-service-oriented-applications-with-wcf"></a>WCF を使用したサービス指向アプリケーションの開発
 
@@ -18,7 +19,7 @@ ms.locfileid: "74552681"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
- [Windows Communication Foundation 4.5\ の新機能](whats-new.md)
+ [Windows Communication Foundation 4.5 の新機能](whats-new.md)\
  Windows Communication Foundation の新機能について説明します。
 
  [WCF の単純化機能](wcf-simplification-features.md)\
@@ -39,22 +40,22 @@ ms.locfileid: "74552681"
  [WCF 機能の詳細](./feature-details/index.md)\
  使用する必要がある WCF 機能を選択するためのトピックを示します。
 
- [WCF](./extending/index.md)\ の拡張
+ [WCF の拡張](./extending/index.md)\
  WCF ランタイム コンポーネントを変更および拡張する方法について説明します。
 
  [ガイドラインとベストプラクティス](guidelines-and-best-practices.md)\
  Windows Communication Foundation (WCF) アプリケーションの作成のガイドラインを提供します。
 
- [管理と診断の](./diagnostics/index.md)\
+ [管理と診断](./diagnostics/index.md)\
  WCF の診断機能について説明します。
 
- [WCF\ に必要なオペレーティングシステムリソース](operating-system-resources-required-by-wcf.md)
+ [WCF で必要なオペレーティングシステムリソース](operating-system-resources-required-by-wcf.md)\
  WCF に必要なオペレーティング システム リソースについて説明します。
 
  [セットアップに関する問題のトラブルシューティング](troubleshooting-setup-issues.md)\
  WCF のセットアップの問題に対処するためのガイダンスを示します。
 
- [.Net リモート処理から WCF\ への移行](migrating-from-net-remoting-to-wcf.md)
+ [.NET リモート処理から WCF への移行](migrating-from-net-remoting-to-wcf.md)\
  .NET リモート処理と WCF を比較し、一般的なシナリオ用の移行のガイダンスを提供します。
 
  [WCF 開発ツールの使用](using-the-wcf-development-tools.md)\
@@ -63,7 +64,7 @@ ms.locfileid: "74552681"
  [Windows Communication Foundation ツール](tools.md)\
  WCF アプリケーションの作成、展開、および管理を簡単に行えるように設計されている WCF ツールについて説明します。
 
- [Windows Communication Foundation サンプル](./samples/index.md)\
+ [Windows Communication Foundation のサンプル](./samples/index.md)\
  Windows Communication Foundation のさまざまな特性について説明するサンプルがあります。
 
  [Windows Communication Foundation 用語集](glossary.md)\

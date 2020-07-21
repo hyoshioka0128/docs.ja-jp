@@ -37,6 +37,9 @@
             - name: WCF 開発者向け ASP.NET Core gRPC
               tocHref: /dotnet/architecture/grpc-for-wcf-developers/
               topicHref: /dotnet/architecture/grpc-for-wcf-developers/index
+            - name: デスクトップ アプリの最新化
+              tocHref: /dotnet/architecture/modernize-desktop/
+              topicHref: /dotnet/architecture/modernize-desktop/index
         - name: .NET ガイド
           tocHref: /dotnet/standard/
           topicHref: /dotnet/standard/index
@@ -66,6 +69,9 @@
             - name: .NET での複数のプラットフォームでの開発
               tocHref: /dotnet/standard/cross-platform/
               topicHref: /dotnet/standard/cross-platform/index
+            - name: Microsoft.Data.Sqlite
+              tocHref: /dotnet/standard/data/sqlite/
+              topicHref: /dotnet/standard/data/sqlite/index
             - name: XML ドキュメントと XML データ
               tocHref: /dotnet/standard/data/xml/
               topicHref: /dotnet/standard/data/xml/index
@@ -151,6 +157,9 @@
             - name: バージョン管理
               tocHref: /dotnet/core/versions/
               topicHref: /dotnet/core/versions/index
+            - name: SDK プロジェクト
+              tocHref: /dotnet/core/project-sdk/
+              topicHref: /dotnet/core/project-sdk/overview
             - name: ツール
               tocHref: /dotnet/core/tools/
               topicHref: /dotnet/core/tools/index
@@ -163,9 +172,6 @@
             - name: 依存関係の読み込み
               tocHref: /dotnet/core/dependency-loading/
               topicHref: /dotnet/core/dependency-loading/overview
-            - name: .NET Core でのビルド
-              tocHref: /dotnet/core/build/
-              topicHref: /dotnet/core/build/index
         - name: .NET Framework
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index
@@ -173,7 +179,7 @@
             - name: アドインおよび拡張機能
               tocHref: /dotnet/framework/add-ins/
               topicHref: /dotnet/framework/add-ins/index
-            - name: 追加の API
+            - name: その他の API
               tocHref: /dotnet/framework/additional-apis/
               topicHref: /dotnet/framework/additional-apis/index
             - name: アプリケーション ドメインとアセンブリ
@@ -223,7 +229,7 @@
                     - name: Windows フォームの構成セクション
                       tocHref: /dotnet/framework/configure-apps/file-schema/winforms/
                       topicHref: /dotnet/framework/configure-apps/file-schema/winforms/index
-            - name: .NET Framework におけるデータとモデリング
+            - name: データとモデリング
               tocHref: /dotnet/framework/data/
               topicHref: /dotnet/framework/data/index
               items:
@@ -281,13 +287,13 @@
             - name: .NET ネイティブによるアプリのコンパイル
               tocHref: /dotnet/framework/net-native/
               topicHref: /dotnet/framework/net-native/index
-            - name: .NET Framework でのネットワーク プログラミング
+            - name: ネットワーク プログラミング
               tocHref: /dotnet/framework/network-programming/
               topicHref: /dotnet/framework/network-programming/index
             - name: .NET Framework のパフォーマンス
               tocHref: /dotnet/framework/performance/
               topicHref: /dotnet/framework/performance/index
-            - name: .NET Framework での動的プログラミング
+            - name: 動的プログラミング
               tocHref: /dotnet/framework/reflection-and-codedom/
               topicHref: /dotnet/framework/reflection-and-codedom/index
             - name: デスクトップ アプリのリソース
@@ -429,11 +435,11 @@
             - name: データ バインディング
               tocHref: /dotnet/desktop-wpf/data
               topicHref: /dotnet/desktop-wpf/data/index
-        - name: 'C# ガイド'
+        - name: C# ガイド
           tocHref: /dotnet/csharp/
           topicHref: /dotnet/csharp/index
           items:
-            - name: 'C# の概要'
+            - name: C# の概要
               tocHref: /dotnet/csharp/tutorials/intro-to-csharp/
               topicHref: /dotnet/csharp/tutorials/intro-to-csharp/index
             - name: 作業開始
@@ -448,12 +454,6 @@
             - name: 新機能
               tocHref: /dotnet/csharp/whats-new/
               topicHref: /dotnet/csharp/whats-new/index
-            - name: Interactive
-              tocHref: /dotnet/csharp/interactive/
-              topicHref: /dotnet/csharp/interactive/index
-            - name: 概念
-              tocHref: /dotnet/csharp/concepts/
-              topicHref: /dotnet/csharp/concepts/index
             - name: .NET Compiler Platform SDK
               tocHref: /dotnet/csharp/roslyn-sdk/
               topicHref: /dotnet/csharp/roslyn-sdk/index
@@ -461,7 +461,7 @@
               tocHref: /dotnet/csharp/programming-guide/
               topicHref: /dotnet/csharp/programming-guide/index
               items:
-                - name: 'インサイド C# プログラム'
+                - name: インサイド C# プログラム
                   tocHref: /dotnet/csharp/programming-guide/inside-a-program/
                   topicHref: /dotnet/csharp/programming-guide/inside-a-program/index
                 - name: 配列
@@ -494,18 +494,12 @@
                 - name: 相互運用性
                   tocHref: /dotnet/csharp/programming-guide/interop/
                   topicHref: /dotnet/csharp/programming-guide/interop/index
-                - name: LINQ
-                  tocHref: /dotnet/csharp/programming-guide/linq/
-                  topicHref: /dotnet/csharp/programming-guide/linq/index
                 - name: Main() とコマンド ライン引数
                   tocHref: /dotnet/csharp/programming-guide/main-and-command-args/
                   topicHref: /dotnet/csharp/programming-guide/main-and-command-args/index
                 - name: 名前空間
                   tocHref: /dotnet/csharp/programming-guide/namespaces/
                   topicHref: /dotnet/csharp/programming-guide/namespaces/index
-                - name: Null 許容型
-                  tocHref: /dotnet/csharp/programming-guide/nullable-types/
-                  topicHref: /dotnet/csharp/programming-guide/nullable-types/index
                 - name: プログラミングの概念
                   tocHref: /dotnet/csharp/programming-guide/concepts/
                   topicHref: /dotnet/csharp/programming-guide/concepts/index
@@ -537,7 +531,7 @@
                 - name: 文字列
                   tocHref: /dotnet/csharp/programming-guide/strings/
                   topicHref: /dotnet/csharp/programming-guide/strings/index
-                - name: 種類
+                - name: 型
                   tocHref: /dotnet/csharp/programming-guide/types/
                   topicHref: /dotnet/csharp/programming-guide/types/index
                 - name: アンセーフ コードとポインター
@@ -568,25 +562,25 @@
                 - name: コンパイラ エラー
                   tocHref: /dotnet/csharp/language-reference/compiler-messages/
                   topicHref: /dotnet/csharp/language-reference/compiler-messages/index
-                - name: 'C# 6.0 のドラフト仕様'
+                - name: C# 6.0 のドラフト仕様
                   tocHref: /dotnet/csharp/language-reference/language-specification/
                   topicHref: /dotnet/csharp/language-reference/language-specification/index
-                - name: 'C# 7.0 の言語提案'
+                - name: C# 7.0 の言語提案
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-7.0/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-7.0/index
-                - name: 'C# 7.1 の言語提案'
+                - name: C# 7.1 の言語提案
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-7.1/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-7.1/index
-                - name: 'C# 7.2 の言語提案'
+                - name: C# 7.2 の言語提案
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-7.2/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-7.2/index
-                - name: 'C# 7.3 の言語提案'
+                - name: C# 7.3 の言語提案
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-7.3/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-7.3/index
-                - name: 'C# 8.0 の言語提案'
+                - name: C# 8.0 の言語提案
                   tocHref: /dotnet/csharp/language-reference/proposals/csharp-8.0/
                   topicHref: /dotnet/csharp/language-reference/proposals/csharp-8.0/index
-        - name: 'F# のガイド'
+        - name: F# のガイド
           tocHref: /dotnet/fsharp/
           topicHref: /dotnet/fsharp/index
         - name: Visual Basic ガイド
@@ -682,7 +676,7 @@
             - name: 言語リファレンス
               tocHref: /dotnet/visual-basic/language-reference/
               topicHref: /dotnet/visual-basic/language-reference/index
-            - name: 辞書／辞典／その他
+            - name: 関連項目
               tocHref: /dotnet/visual-basic/reference/
               topicHref: /dotnet/visual-basic/reference/index
         - name: ML.NET ガイド
@@ -701,3 +695,10 @@
         - name: .NET for Apache Spark ガイド
           tocHref: /dotnet/spark/
           topicHref: /dotnet/spark/index
+        - name: Azure
+          tocHref: /dotnet/azure/
+          topicHref: /dotnet/azure/index
+          items:
+            - name: .NET 開発者向けの Azure
+              tocHref: /dotnet/azure/
+              topicHref: /dotnet/azure/index

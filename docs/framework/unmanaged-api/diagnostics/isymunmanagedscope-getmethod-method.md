@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a61866ee-221a-45b9-a1b7-395825b77872
 topic_type:
 - apiref
-ms.openlocfilehash: 348a8cebe0fd746f3ae490484ffcca2fcb77684b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cdbffe71540b51ff539a45861546efd761761892
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446318"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615372"
 ---
 # <a name="isymunmanagedscopegetmethod-method"></a>ISymUnmanagedScope::GetMethod メソッド
 このスコープを格納しているメソッドを取得します。  
@@ -34,7 +34,7 @@ HRESULT GetMethod(
   
 ## <a name="parameters"></a>パラメーター  
  `pRetVal`  
- 入出力返された[ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)インターフェイスへのポインター。  
+ 入出力返された[ISymUnmanagedMethod](isymunmanagedmethod-interface.md)インターフェイスへのポインター。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK。それ以外の場合は、E_FAIL またはその他のエラーコードを指定します。  
@@ -42,6 +42,6 @@ HRESULT GetMethod(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedScope インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+- [ISymUnmanagedScope インターフェイス](isymunmanagedscope-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: '方法: 双方向コントラクトを作成する'
+description: WCF クライアントとサーバーが互いに独立して通信できるようにする、双方向コントラクトを作成する方法について説明します。 どちらも、もう一方の呼び出しを開始できます。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,15 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 500a75b6-998a-47d5-8e3b-24e3aba2a434
-ms.openlocfilehash: c603694bca82cfc5852c875946f18f9782209e48
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9320e5b36b8faba3602fbe1df1b95c05dcc7fa7e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638777"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247092"
 ---
 # <a name="how-to-create-a-duplex-contract"></a>方法: 双方向コントラクトを作成する
-ここでは、双方向コントラクトを使用するメソッドを作成するための基本手順を示します。 双方向コントラクトでは、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 双方向コントラクトでは、Windows Communication Foundation (WCF) サービスで使用できる 3 つのメッセージ パターンの 1 つです。 他の 2 つのメッセージ パターンは、一方向および要求/応答です。 双方向コントラクトは、クライアントとサーバー間の 2 つの一方向コントラクトで構成され、メソッドの呼び出しが相互に関連付けられている必要はありません。 サービスでクライアントに詳細を照会したり、クライアントで明示的にイベントを発生させたりする必要がある場合は、この種のコントラクトを使用します。 双方向コントラクトのクライアント アプリケーションの作成の詳細については、次を参照してください。[方法。双方向コントラクトでサービスへのアクセス](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)します。 実際のサンプルでは、次を参照してください。、[双方向](../../../../docs/framework/wcf/samples/duplex.md)サンプル。  
+ここでは、双方向コントラクトを使用するメソッドを作成するための基本手順を示します。 双方向コントラクトでは、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 双方向コントラクトは、Windows Communication Foundation (WCF) サービスで使用可能な3つのメッセージパターンのうちの1つです。 他の 2 つのメッセージ パターンは、一方向および要求/応答です。 双方向コントラクトは、クライアントとサーバー間の 2 つの一方向コントラクトで構成され、メソッドの呼び出しが相互に関連付けられている必要はありません。 サービスでクライアントに詳細を照会したり、クライアントで明示的にイベントを発生させたりする必要がある場合は、この種のコントラクトを使用します。 双方向コントラクト用のクライアントアプリケーションを作成する方法の詳細については、「[方法: 双方向コントラクトを使用してサービスにアクセスする](how-to-access-services-with-a-duplex-contract.md)」を参照してください。 実際のサンプルについては、[二重](../samples/duplex.md)サンプルを参照してください。  
   
 ### <a name="to-create-a-duplex-contract"></a>双方向コントラクトを作成するには  
   
@@ -63,7 +64,7 @@ ms.locfileid: "64638777"
   
 - <xref:System.ServiceModel.ServiceContractAttribute> 属性と <xref:System.ServiceModel.OperationContractAttribute> 属性を適用すると、サービス コントラクトの定義を Web サービス記述言語 (WSDL) で自動的に生成できます。  
   
-- 使用して、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) WSDL ドキュメントと (省略可能) コードとクライアントの構成を取得します。  
+- [ServiceModel メタデータユーティリティツール (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、クライアントの WSDL ドキュメントおよび (省略可能な) コードと構成を取得します。  
   
 - 双方向サービスを公開しているエンドポイントは、セキュリティで保護されている必要があります。 サービスが双方向メッセージを受信すると、その受信メッセージの ReplyTo を参照して応答の送信先を決定します。 チャネルがセキュリティで保護されていない場合、信頼関係のないクライアントが対象コンピューターの ReplyTo を使用して悪意のあるメッセージを送信し、その対象コンピューターのサービス拒否 (DOS: Denial Of Service) を引き起こす可能性があります。 通常の要求/応答メッセージでは、ReplyTo は無視され、元のメッセージを受信したチャネルで応答が送信されます。したがって、この問題は発生しません。  
   
@@ -71,8 +72,8 @@ ms.locfileid: "64638777"
 
 - <xref:System.ServiceModel.ServiceContractAttribute>
 - <xref:System.ServiceModel.OperationContractAttribute>
-- [方法: Access Services と双方向コントラクト](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)
-- [二重](../../../../docs/framework/wcf/samples/duplex.md)
-- [サービスの設計と実装](../../../../docs/framework/wcf/designing-and-implementing-services.md)
-- [方法: サービス コントラクトを定義します。](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)
-- [セッション](../../../../docs/framework/wcf/samples/session.md)
+- [方法: 双方向コントラクトを使用してサービスにアクセスする](how-to-access-services-with-a-duplex-contract.md)
+- [二重](../samples/duplex.md)
+- [サービスの設計と実装](../designing-and-implementing-services.md)
+- [方法: サービス コントラクトを定義する](../how-to-define-a-wcf-service-contract.md)
+- [セッション](../samples/session.md)

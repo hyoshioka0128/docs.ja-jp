@@ -10,16 +10,16 @@ helpviewer_keywords:
 ms.assetid: 2a556fc0-748b-417f-a58a-0d05a7afb66f
 ms.openlocfilehash: 25a0dbbc609c7b6f8f2878d2068e61e492a59c7e
 ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/18/2019
 ms.locfileid: "72582538"
 ---
 # <a name="how-to-navigate-to-a-page"></a>方法: ページに移動する
-この例では、<xref:System.Windows.Navigation.NavigationWindow> からページを移動するいくつかの方法を示します。  
+この例では、<xref:System.Windows.Navigation.NavigationWindow> からページに移動するいくつかの方法を示します。  
   
 ## <a name="example"></a>例  
- @No__t_0 は、次のいずれかを使用してページに移動できます。  
+ 次のいずれかを使用して、<xref:System.Windows.Navigation.NavigationWindow> からページに移動できます。  
   
 - <xref:System.Windows.Navigation.NavigationWindow.Source%2A> プロパティ。  
   
@@ -29,7 +29,7 @@ ms.locfileid: "72582538"
  [!code-vb[HOWTONavigationSnippets#NavigateToPageCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/mainwindow.xaml.vb#navigatetopagecode)]  
   
 > [!NOTE]
-> Uniform resource identifier (Uri) には、相対パスまたは絶対 Uri を指定できます。 詳細については、「[WPF におけるパック URI](pack-uris-in-wpf.md)」を参照してください。  
+> Uniform Resource Identifier (URI) は、相対または絶対で指定できます。 詳細については、「[WPF におけるパック URI](pack-uris-in-wpf.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

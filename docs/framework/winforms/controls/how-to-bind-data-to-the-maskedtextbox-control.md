@@ -1,5 +1,5 @@
 ---
-title: '方法: MaskedTextBox コントロールにデータをバインドする'
+title: '方法 : MaskedTextBox コントロールにデータをバインドする'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,29 +10,29 @@ helpviewer_keywords:
 - data binding [Windows Forms], MaskedTextBox control [Windows Forms]
 - MaskedTextBox control [Windows Forms], binding data
 ms.assetid: 34b29f07-e8df-48d4-b08b-53fcca524708
-ms.openlocfilehash: f10a19433c70eb0a1dacf99925f70d6796727da9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0cbb239e24b254c37c453486590185e934adf482
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64612409"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142174"
 ---
-# <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>方法: MaskedTextBox コントロールにデータをバインドする
-データをバインドすることができます、<xref:System.Windows.Forms.MaskedTextBox>他の Windows フォーム コントロールと同様に制御します。 ただし、データベース内のデータの形式で、マスクの定義で予期される形式が一致しない場合は、データの書式を変更する必要があります。 次の手順を使用してこれを行う方法を示して、<xref:System.Windows.Forms.Binding.Format>と<xref:System.Windows.Forms.Binding.Parse>のイベント、<xref:System.Windows.Forms.Binding>クラスを別の電話番号を表示および編集可能なフィールドを 1 つとして、拡張データベースのフィールドを電話します。  
+# <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>方法 : MaskedTextBox コントロールにデータをバインドする
+他の<xref:System.Windows.Forms.MaskedTextBox>Windows フォーム コントロールと同じように、コントロールにデータをバインドできます。 ただし、データベース内のデータの形式がマスク定義で指定された形式と一致しない場合は、データを再フォーマットする必要があります。 次の手順では、<xref:System.Windows.Forms.Binding.Format><xref:System.Windows.Forms.Binding.Parse><xref:System.Windows.Forms.Binding>クラスの and イベントを使用して、個別の電話番号と電話内線データベース フィールドを単一の編集可能フィールドとして表示する方法を示します。  
   
- 次の手順では、インストールされている Northwind サンプル データベースで SQL Server データベースへのアクセスが必要です。  
+ 次の手順では、ノースウィンド サンプル データベースがインストールされている SQL Server データベースにアクセスできる必要があります。  
   
-### <a name="to-bind-data-to-a-maskedtextbox-control"></a>MaskedTextBox コントロールにデータをバインドするには  
+### <a name="to-bind-data-to-a-maskedtextbox-control"></a>データをマスクテキスト ボックス コントロールにバインドするには  
   
 1. 新しい Windows フォーム プロジェクトを作成します。  
   
-2. 2 つをドラッグ<xref:System.Windows.Forms.TextBox>コントロールをフォームに名前を付けます`FirstName`と`LastName`します。  
+2. 2<xref:System.Windows.Forms.TextBox>つのコントロールをフォームにドラッグします。名前`FirstName`と`LastName`.  
   
-3. ドラッグ、<xref:System.Windows.Forms.MaskedTextBox>コントロールをフォームには、名前を付けます`PhoneMask`します。  
+3. コントロールを<xref:System.Windows.Forms.MaskedTextBox>フォームにドラッグします。名前を`PhoneMask`付けます。  
   
-4. 設定、<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>プロパティの`PhoneMask`に`(000) 000-0000 x9999`します。  
+4. の<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>`PhoneMask`プロパティを に`(000) 000-0000 x9999`設定します。  
   
-5. 次の名前空間のインポートをフォームに追加します。  
+5. フォームに次の名前空間インポートを追加します。  
   
     ```csharp  
     using System.Data.SqlClient;  
@@ -42,7 +42,7 @@ ms.locfileid: "64612409"
     Imports System.Data.SqlClient  
     ```  
   
-6. フォームを右クリックし **コードの表示**します。 このコードをフォーム クラスに置きます。  
+6. フォームを右クリックし、[**コードの表示 ]** を選択します。 このコードはフォーム クラスの任意の場所に配置します。  
   
     ```csharp  
     Binding currentBinding, phoneBinding;  
@@ -72,8 +72,8 @@ ms.locfileid: "64612409"
         dataConnect.Fill(employeesTable, "Employees");  
   
         // Now bind MaskedTextBox to appropriate field. Note that we must create the Binding objects  
-        // before adding them to the control - otherwise, we won't get a Format event on the   
-        // initial load.   
+        // before adding them to the control - otherwise, we won't get a Format event on the
+        // initial load.
         try  
         {  
             currentBinding = new Binding("Text", employeesTable, "Employees.FirstName");  
@@ -120,7 +120,7 @@ ms.locfileid: "64612409"
         DataConnect.Fill(EmployeesTable, "Employees")  
   
         ' Now bind MaskedTextBox to appropriate field. Note that we must create the Binding objects  
-        ' before adding them to the control - otherwise, we won't get a Format event on the   
+        ' before adding them to the control - otherwise, we won't get a Format event on the
         ' initial load.  
         Try  
             CurrentBinding = New Binding("Text", EmployeesTable, "Employees.FirstName")  
@@ -136,7 +136,7 @@ ms.locfileid: "64612409"
     End Sub  
     ```  
   
-7. イベント ハンドラーを追加、<xref:System.Windows.Forms.Binding.Format>と<xref:System.Windows.Forms.Binding.Parse>したり分割したりするイベント、`PhoneNumber`と`Extension`、バインドからフィールド<xref:System.Data.DataSet>します。  
+7. イベントと<xref:System.Windows.Forms.Binding.Format>イベント<xref:System.Windows.Forms.Binding.Parse>のイベント ハンドラを追加して、 `PhoneNumber` `Extension`および フィールドと<xref:System.Data.DataSet>フィールドをバインドされた フィールドとを結合および分離します。  
   
     ```csharp  
     private void phoneBinding_Format(Object sender, ConvertEventArgs e)  
@@ -144,10 +144,10 @@ ms.locfileid: "64612409"
         String ext;  
   
         DataRowView currentRow = (DataRowView)BindingContext[employeesTable, "Employees"].Current;  
-        if (currentRow["Extension"] == null)   
+        if (currentRow["Extension"] == null)
         {  
             ext = "";  
-        } else   
+        } else
         {  
             ext = currentRow["Extension"].ToString();  
         }  
@@ -163,7 +163,7 @@ ms.locfileid: "64612409"
         String ext = phoneNumberAndExt.Substring(extIndex).Trim();  
         String phoneNumber = phoneNumberAndExt.Substring(0, extIndex).Trim();  
   
-        //Get the current binding object, and set the new extension manually.   
+        //Get the current binding object, and set the new extension manually.
         DataRowView currentRow = (DataRowView)BindingContext[employeesTable, "Employees"].Current;  
         // Remove the "x" from the extension.  
         currentRow["Extension"] = ext.Substring(1);  
@@ -194,7 +194,7 @@ ms.locfileid: "64612409"
         Dim Ext As String = PhoneNumberAndExt.Substring(ExtIndex).Trim()  
         Dim PhoneNumber As String = PhoneNumberAndExt.Substring(0, ExtIndex).Trim()  
   
-        ' Get the current binding object, and set the new extension manually.   
+        ' Get the current binding object, and set the new extension manually.
         Dim CurrentRow As DataRowView = CType(Me.BindingContext(EmployeesTable, "Employees").Current, DataRowView)  
         ' Remove the "x" from the extension.  
         CurrentRow("Extension") = CObj(Ext.Substring(1))  
@@ -204,7 +204,7 @@ ms.locfileid: "64612409"
     End Sub  
     ```  
   
-8. 2 つ追加<xref:System.Windows.Forms.Button>フォームのコントロール。 名前を付けます`previousButton`と`nextButton`します。 追加するには、各ボタンをダブルクリックして、<xref:System.Windows.Forms.Control.Click>イベント ハンドラー、およびイベント ハンドラーに次のコード例で示すように入力します。  
+8. フォームに<xref:System.Windows.Forms.Button>2 つのコントロールを追加します。 名前と`previousButton` `nextButton`. 各ボタンをダブルクリックしてイベント ハンドラー<xref:System.Windows.Forms.Control.Click>を追加し、次のコード例に示すようにイベント ハンドラーを入力します。  
   
     ```csharp  
     private void previousButton_Click(object sender, EventArgs e)  
@@ -228,10 +228,10 @@ ms.locfileid: "64612409"
     End Sub  
     ```  
   
-9. サンプルを実行します。 データを編集して、**前**と**次**ボタンのデータが適切に保持されることを確認、 <xref:System.Data.DataSet>。  
+9. サンプルを実行します。 データを編集し、[**前**へ] ボタンと **[次へ**] ボタンを使用して、<xref:System.Data.DataSet>データが .  
   
 ## <a name="example"></a>例  
- 次のコード例は、コード全体を前の手順を完了には、その結果の一覧です。  
+ 次のコード例は、前の手順を完了した結果の完全なコードの一覧です。  
   
  [!code-cpp[MaskedTextBoxData#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MaskedTextBoxData/cpp/form1.cpp#1)]
  [!code-csharp[MaskedTextBoxData#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MaskedTextBoxData/CS/form1.cs#1)]
@@ -239,16 +239,16 @@ ms.locfileid: "64612409"
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
   
-- ビジュアルを作成するC#または Visual Basic プロジェクト。  
+- Visual C# プロジェクトまたは Visual Basic プロジェクトを作成します。  
   
-- 追加、<xref:System.Windows.Forms.TextBox>と<xref:System.Windows.Forms.MaskedTextBox>フォームにコントロールを前の手順で説明します。  
+- 前の<xref:System.Windows.Forms.TextBox>手順<xref:System.Windows.Forms.MaskedTextBox>で説明したように、 および コントロールをフォームに追加します。  
   
 - プロジェクトの既定のフォームのソース コード ファイルを開きます。  
   
-- このファイル内のソース コードを前の"Code"セクションに記載されているコードに置き換えます。  
+- このファイルのソース コードを、前の「コード」セクションに記載されているコードに置き換えます。  
   
 - アプリケーションをコンパイルします。  
   
 ## <a name="see-also"></a>関連項目
 
-- [チュートリアル: MaskedTextBox コントロールの操作](walkthrough-working-with-the-maskedtextbox-control.md)
+- [チュートリアル : MaskedTextBox コントロールの使用](walkthrough-working-with-the-maskedtextbox-control.md)

@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: 04e9cc831ae520e0929818e6dc16c57b03a1d0f0
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d396ccdaca81eab74de5e20d7ba7a9a00acbf7a6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045994"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597476"
 ---
-# <a name="configuring-ws-atomic-transaction-support"></a>WS-AtomicTransaction サポートの構成
+# <a name="configure-ws-atomic-transaction-support"></a>WS-ATOMICTRANSACTION のサポートを構成する
 
 ここでは、WS-AtomicTransaction (WS-AT) 構成ユーティリティを使用して WS-AT サポートを構成する方法について説明します。
 
-## <a name="using-the-ws-at-configuration-utility"></a>WS-AT 構成ユーティリティの使用
+## <a name="use-the-ws-at-configuration-utility"></a>WS-AT 構成ユーティリティを使用する
 
 WS-AT 構成ユーティリティ (wsatConfig.exe) は、WS-AT 設定の構成に使用されます。 WS-AT プロトコル サービスを有効にするには、この構成ユーティリティを使用して、WS-AT の HTTPS ポートを構成し、X.509 証明書をその HTTPS ポートにバインドし、証明書のサブジェクト名または拇印を指定して、承認されたパートナーの証明書を構成する必要があります。 この構成ユーティリティでは、トレース モードを選択して、送信トランザクションの既定のタイムアウト値と受信トランザクションの最大タイムアウト値を設定することもできます。
 
@@ -23,11 +23,11 @@ WS-AT 構成ユーティリティ (wsatConfig.exe) は、WS-AT 設定の構成�
 
 コマンド ライン ウィンドウは、Windows SDK のインストール場所の "%WINDIR%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation" で使用できます。
 
-コマンドラインツールの詳細については、「ws-atomictransaction[構成ユーティリティ (wsatConfig .exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)」を参照してください。
+コマンドラインツールの詳細については、「ws-atomictransaction[構成ユーティリティ (wsatConfig .exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md)」を参照してください。
 
-または[!INCLUDE[wxp](../../../../includes/wxp-md.md)] [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]を実行している場合、MMC スナップインにアクセスするには、 **[コントロールパネル]** 、管理ツール、コンポーネントサービス の順に移動し、**マイコンピューター**を右クリックして、 **[プロパティ]** を選択します。 この場所では、Microsoft 分散トランザクション コーディネーター (MSDTC) を構成することもできます。 構成できるオプションは、グループ化されて、 **WS-AT**タブです。Windows Vista また[!INCLUDE[lserver](../../../../includes/lserver-md.md)]はを実行している場合は、 **[スタート]** ボタンをクリックし、**検索**ボックスに「 `dcomcnfg.exe` 」と入力すると、MMC スナップインが表示されます。 MMC が開いているときに移動、**マイ Computer\Distributed トランザクション コーディネーター DTC**ノードを右クリックし、**プロパティ**です。 構成できるオプションは、グループ化されて、 **WS-AT**タブです。
+Windows XP または Windows Server 2003 を実行している場合、MMC スナップインにアクセスするには、[コントロールパネル]、[管理ツール]、[**コンポーネントサービス**] の順に移動し、**マイコンピューター**を右クリックして、[**プロパティ**] を選択します。 この場所では、Microsoft 分散トランザクション コーディネーター (MSDTC) を構成することもできます。 構成に使用できるオプションは、[ **ws-at** ] タブの下にグループ化されています。Windows Vista または Windows Server 2008 を実行している場合は、[**スタート**] ボタンをクリックし、 `dcomcnfg.exe` **検索**ボックスに「」と入力すると、MMC スナップインが表示されます。 MMC が開いたら、 **My Computer\Distributed Transaction COORDINATOR\LOCAL DTC**ノードに移動し、右クリックして、[**プロパティ**] を選択します。 構成に使用できるオプションは、[ **ws-at** ] タブの下にグループ化されています。
 
-スナップインの詳細については、「ws-atomictransaction[構成 MMC スナップ](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)イン」を参照してください。
+スナップインの詳細については、「ws-atomictransaction[構成 MMC スナップ](../ws-atomictransaction-configuration-mmc-snap-in.md)イン」を参照してください。
 
 ツールのユーザー インターフェイスを有効にするには、WsatUI.dll ファイルを登録しておく必要があります。このファイルは、次のパスにあります。
 
@@ -37,7 +37,7 @@ WS-AT 構成ユーティリティ (wsatConfig.exe) は、WS-AT 設定の構成�
 
 `regasm.exe /codebase WsatUI.dll`
 
-## <a name="enabling-ws-at"></a>WS-AT の有効化
+## <a name="enable-ws-at"></a>WS-AT を有効にする
 
 ポート 443 と、ローカル コンピューター ストアにインストールされている秘密キーを持つ X.509 証明書を使用して、MSDTC 内部で WS-AT プロトコル サービスを有効にするには、wsatConfig.exe ツールを使用して次のコマンドを実行します。
 
@@ -49,19 +49,19 @@ MSDTC 内部で WS-AT プロトコル サービスを無効にするには、wsa
 
 `WsatConfig.exe –network:disable -restart`
 
-## <a name="configuring-trust-between-two-machines"></a>2 台のコンピューター間での信頼の確立
+## <a name="configure-trust-between-two-machines"></a>2台のコンピューター間の信頼を構成する
 
 WS-AT プロトコル サービスでは、管理者が、分散トランザクションに参加する個々のアカウントを明示的に承認する必要があります。 2 台のコンピューターの管理者である場合は、両方のコンピューターを構成して、相互の信頼関係を確立することができます。それには、コンピューター間で適切な証明書を交換し、その証明書を適切な証明書ストアにインストールし、wsatConfig.exe ツールを使用して各コンピューターの証明書をお互いの承認済み参加者の証明書リストに追加します。 この手順は、WS-AT を使用する 2 台のコンピューター間で分散トランザクションを実行するために必要です。
 
 次の例では、A と B という 2 台のコンピューター間で信頼を確立する手順を示します。
 
-### <a name="creating-and-exporting-certificates"></a>証明書の作成とエクスポート
+### <a name="create-and-export-certificates"></a>証明書の作成とエクスポート
 
-この手順では、MMC 証明書スナップインを使用する必要があります。 このスナップインにアクセスするには、[スタート] ボタンをクリックして [ファイル名を指定して実行] をクリックし、入力ボックスに「mmc」と入力して [OK] をクリックします。 次に、**コンソール**1 ウィンドウで、**ファイル、追加**、削除 スナップインの順に移動し、追加 をクリックして、**使用可能なスタンドアロンスナップイン** ボックスの一覧から **証明書** を選択します。 最後に、管理する **[コンピューターアカウント]** を選択し、 **[OK]** をクリックします。 スナップインコンソールに **[証明書]** ノードが表示されます。
+この手順では、MMC 証明書スナップインを使用する必要があります。 このスナップインにアクセスするには、[スタート] ボタンをクリックして [ファイル名を指定して実行] をクリックし、入力ボックスに「mmc」と入力して [OK] をクリックします。 次に、[**コンソール**1] ウィンドウで、[**ファイル]、[追加**]、[削除] スナップインの順に移動し、[追加] をクリックして、[**使用可能なスタンドアロンスナップイン**] ボックスの一覧から [**証明書**] を選択します。 最後に、[管理する**コンピューターアカウント**] を選択し、[ **OK**] をクリックします。 スナップインコンソールに [**証明書**] ノードが表示されます。
 
-信頼を確立するために必要な証明書は、あらかじめ用意されている必要があります。 次の手順の前に新しい証明書を作成してインストールする方法[については、「」を参照してください。開発](https://go.microsoft.com/fwlink/?LinkId=158925)時に WCF に一時的なクライアント証明書を作成してインストールします。
+信頼を確立するために必要な証明書は、あらかじめ用意されている必要があります。 次の手順の前に新しい証明書を作成してインストールする方法については、「[方法: 開発時に WCF に一時的なクライアント証明書を作成してインストール](https://docs.microsoft.com/previous-versions/msp-n-p/ff650751(v=pandp.10))する」を参照してください。
 
-1. コンピューター A で、MMC 証明書スナップインを使用して、既存の証明書 (certA) を LocalMachine\MY (Personal Node) ストアと LocalMachine\ROOT (信頼されたルート証明機関のノード) ストアにインポートします。 特定のノードに証明書をインポートするノードを右クリックし **すべてのタスク/インポート**です。
+1. コンピューター A で、MMC 証明書スナップインを使用して、既存の証明書 (certA) を LocalMachine\MY (Personal Node) ストアと LocalMachine\ROOT (信頼されたルート証明機関のノード) ストアにインポートします。 証明書を特定のノードにインポートするには、ノードを右クリックし、[**すべてのタスク**]、[インポート] の順に選択します。
 
 2. コンピューター B で、MMC 証明書スナップインを使用して、秘密キーを持つ証明書 certB を作成するか取得し、LocalMachine\MY (Personal Node) ストアと LocalMachine\ROOT (信頼されたルート証明機関のノード) ストアにインポートします。
 
@@ -69,7 +69,7 @@ WS-AT プロトコル サービスでは、管理者が、分散トランザク�
 
 4. certB の秘密キーをファイルにエクスポートします (エクスポートしていない場合)。
 
-### <a name="establishing-mutual-trust-between-machines"></a>コンピューター間での相互の信頼関係の確立
+### <a name="establish-mutual-trust-between-machines"></a>マシン間の相互の信頼を確立する
 
 1. コンピューター A で、certB のファイルを LocalMachine\MY ストアと LocalMachine\ROOT ストアにインポートします。 これによって、コンピューター A が certB を信頼して通信することを宣言します。
 
@@ -77,11 +77,11 @@ WS-AT プロトコル サービスでは、管理者が、分散トランザク�
 
 この手順が完了すると、2 台のコンピューター間に信頼が確立されるので、WS-AT を使用して相互に通信するように構成できます。
 
-### <a name="configuring-msdtc-to-use-certificates"></a>MSDTC での証明書の使用の構成
+### <a name="configure-msdtc-to-use-certificates"></a>MSDTC で証明書を使用するように構成する
 
 WS-AT プロトコル サービスは、クライアントとサーバーの両方として機能するので、このサービスは、受信接続のリッスンと送信接続の開始を実行する必要があります。 このため、外部の通信相手と通信するときに使用する証明書と、受信接続を受け入れるときに承認する証明書を MSDTC に設定する必要があります。
 
-これを構成するには、MMC WS-AT スナップインを使用します。 このツールの詳細については、「ws-atomictransaction[構成 MMC スナップ](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)イン」を参照してください。 次の手順では、MSDTC を実行している 2 台のコンピューター間に信頼を確立する方法を説明します。
+これを構成するには、MMC WS-AT スナップインを使用します。 このツールの詳細については、「ws-atomictransaction[構成 MMC スナップ](../ws-atomictransaction-configuration-mmc-snap-in.md)イン」を参照してください。 次の手順では、MSDTC を実行している 2 台のコンピューター間に信頼を確立する方法を説明します。
 
 1. コンピューター A の設定を構成します。 [エンドポイント証明書] で、[certA] を選択します。 "承認された証明書" の場合は、certB を選択します。
 
@@ -94,23 +94,23 @@ WS-AT プロトコル サービスは、クライアントとサーバーの両�
 >
 > ワークグループ コンピューターがドメインに参加するときなどにコンピューターの名前を変更した場合は、証明書を再発行するか、DNS サフィックスを手動で構成する必要があります。
 
-## <a name="security"></a>セキュリティ
+## <a name="security"></a>Security
 
-一部の MSDTC と WS-AT 関連の設定はそれぞれ、レジストリ HKLM\Software\Microsoft\MSDTC と HKLM\Software\Microsoft\WSAT に格納されるので、必ずこのレジストリ キーをセキュリティで保護し、管理者だけがそのキーに書き込めるようにします。 レジストリエディターツールで、セキュリティで保護するキーを右クリックし、 **[アクセス許可]** を選択して適切なアクセス制御を設定します。 重要なキーを特権の低いユーザーに対して読み取り専用にしておくことが、システムのセキュリティと整合性を確保するために重要です。
+一部の MSDTC と WS-AT 関連の設定はそれぞれ、レジストリ HKLM\Software\Microsoft\MSDTC と HKLM\Software\Microsoft\WSAT に格納されるので、必ずこのレジストリ キーをセキュリティで保護し、管理者だけがそのキーに書き込めるようにします。 レジストリエディターツールで、セキュリティで保護するキーを右クリックし、[**アクセス許可**] を選択して適切なアクセス制御を設定します。 重要なキーを特権の低いユーザーに対して読み取り専用にしておくことが、システムのセキュリティと整合性を確保するために重要です。
 
 MSDTC を展開する場合、管理者は、すべての MSDTC データの交換がセキュリティで保護されるようにする必要があります。 ワークグループの展開では、トランザクションのインフラストラクチャを悪質なユーザーから隔離してください。クラスターの展開では、クラスター レジストリをセキュリティで保護してください。
 
 ## <a name="tracing"></a>トレース
 
-WS-AT プロトコルサービスは、ws-atomictransaction[構成 MMC スナップ](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)インツールを使用して有効化および管理できる、統合されたトランザクション固有のトレースをサポートしています。  トレースには、特定のトランザクションに参加した時刻、トランザクションが終了状態に到達した時刻、各トランザクション参加で受け取った結果などを示すデータを含めることができます。 すべてのトレースは、[サービストレースビューアーツール (svctraceviewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)ツールを使用して表示できます。
+WS-AT プロトコルサービスは、ws-atomictransaction[構成 MMC スナップ](../ws-atomictransaction-configuration-mmc-snap-in.md)インツールを使用して有効化および管理できる、トランザクション固有の統合トレースをサポートしています。 トレースには、特定のトランザクションに参加した時刻、トランザクションが終了状態に到達した時刻、各トランザクション参加で受け取った結果などを示すデータを含めることができます。 すべてのトレースは、[サービストレースビューアーツール (svctraceviewer.exe)](../service-trace-viewer-tool-svctraceviewer-exe.md)ツールを使用して表示できます。
 
 WS-AT プロトコル サービスは、ETW トレース セッションを通じて統合 ServiceModel トレースもサポートします。 これにより、既存のトランザクション トレースに加えて、より詳細な通信固有のトレースが得られます。  これらの追加トレースを有効にするには、次の手順を実行します。
 
-1. 開く、**開始/実行** メニューの [入力] ボックスに「regedit」を入力し、、選択**OK**です。
+1. [**開始/実行**] メニューを開き、入力ボックスに「regedit」と入力して、[ **OK**] を選択します。
 
-2. **レジストリエディター**で、左ペインの次のフォルダー Hkey_Local_Machine\SOFTWARE\Microsoft\WSAT\3.0\ に移動します。
+2. **レジストリエディター**で、左側のウィンドウにある次のフォルダーに移動し、Hkey_Local_Machine \software\microsoft\wsat\3.0\ を開きます。
 
-3. 右ペインで`ServiceModelDiagnosticTracing`値を右クリックし、 **[変更]** を選択します。
+3. `ServiceModelDiagnosticTracing`右ペインで値を右クリックし、[**変更**] を選択します。
 
 4. [**値のデータ**入力] ボックスに、次の有効な値のいずれかを入力して、有効にするトレースレベルを指定します。
 
@@ -118,7 +118,7 @@ WS-AT プロトコル サービスは、ETW トレース セッションを通�
 
 - 1 : クリティカル
 
-- 3 : エラー ( 既定値)
+- 3 : エラー ( これは、既定値です。
 
 - 7 : 警告
 
@@ -128,5 +128,5 @@ WS-AT プロトコル サービスは、ETW トレース セッションを通�
 
 ## <a name="see-also"></a>関連項目
 
-- [WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
-- [WS-AtomicTransaction 構成 MMC スナップイン](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)
+- [WS-AtomicTransaction 構成ユーティリティ (wsatConfig.exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [WS-AtomicTransaction 構成 MMC スナップイン](../ws-atomictransaction-configuration-mmc-snap-in.md)

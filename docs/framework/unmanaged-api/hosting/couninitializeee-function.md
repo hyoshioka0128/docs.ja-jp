@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5f5a311a-839a-465f-89d9-ff1c74da9736
 topic_type:
 - apiref
-ms.openlocfilehash: 3531cfc0815c3f8a9479e35b2df60b2825801b39
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fa6297e926d53c02bb0d1af7b59b45b8ee152399
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136851"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616464"
 ---
 # <a name="couninitializeee-function"></a>CoUninitializeEE 関数
-`CoUninitializeEE` は互換性のために残されていますが、機能はありません。  
+`CoUninitializeEE`は互換性のために残されており、機能を提供しません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -33,10 +33,10 @@ void CoUninitializeEE (
 );  
 ```  
   
-## <a name="remarks"></a>Remarks  
- 共通言語ランタイムの実行エンジンをプロセスからアンロードできません。 実行エンジンをシャットダウンするには、 [CorExitProcess](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md)を呼び出します。  
+## <a name="remarks"></a>解説  
+ 共通言語ランタイムの実行エンジンをプロセスからアンロードできません。 実行エンジンをシャットダウンするには、 [CorExitProcess](corexitprocess-function.md)を呼び出します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [CoInitializeEE 関数](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md)
-- [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [CoInitializeEE 関数](coinitializeee-function.md)
+- [メタデータ グローバル静的関数](../metadata/metadata-global-static-functions.md)

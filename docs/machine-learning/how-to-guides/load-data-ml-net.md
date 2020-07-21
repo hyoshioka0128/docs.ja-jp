@@ -6,10 +6,10 @@ author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
 ms.openlocfilehash: 83aaae2d2e75b3076841750bf5d505390a538bc0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74344754"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>ファイルとその他のソースからデータを読み込む
@@ -18,7 +18,7 @@ API を利用し、処理とトレーニング用のデータを ML.NET に読�
 
 モデル ビルダーを使用している場合、「[モデル ビルダーにトレーニング データを読み込む](load-data-model-builder.md)」を参照してください。
 
-## <a name="create-the-data-model"></a>データ モデルを作成する
+## <a name="create-the-data-model"></a>データ モデルの作成
 
 ML.NET を使用すると、クラスを介してデータ モデルを定義できます。 たとえば、次のような入力データがあるとします。
 
@@ -200,7 +200,7 @@ HousingData[] inMemoryCollection = new HousingData[]
 };
 ```
 
-[`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) メソッドを使用してメモリ内コレクションを [`IDataView`](xref:Microsoft.ML.IDataView) に読み込みます。
+[`IDataView`](xref:Microsoft.ML.IDataView) メソッドを使用してメモリ内コレクションを [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) に読み込みます。
 
 > [!IMPORTANT]
 > [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) では、この読み込み元の [`IEnumerable`](xref:System.Collections.IEnumerable) がスレッドセーフであると想定されています。
@@ -213,7 +213,7 @@ MLContext mlContext = new MLContext();
 IDataView data = mlContext.Data.LoadFromEnumerable<HousingData>(inMemoryCollection);
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - データを消去するか、消去以外の処理を行う方法については、「[モデル構築用のデータを準備する](prepare-data-ml-net.md)」を参照してください。
 - モデルを構築する用意ができたら、「[モデルのトレーニングと評価](train-machine-learning-model-ml-net.md)」を参照してください。

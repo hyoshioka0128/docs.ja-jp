@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 79901d0b57816915ca7ea73cfe7fa3d40820434e
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74568104"
 ---
 ### <a name="jsonelement-api-changes"></a>JsonElement API の変更
@@ -47,7 +47,7 @@ ms.locfileid: "74568104"
 
 3.0 Preview 7
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 これらの変更の影響をコードが受ける場合、次を行うことができます。
 

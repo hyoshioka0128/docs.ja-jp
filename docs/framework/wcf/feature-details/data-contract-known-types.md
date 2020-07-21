@@ -1,5 +1,6 @@
 ---
 title: 既知のデータ コントラクト型
+description: データコントラクトモデルが KnownTypeAttribute クラスを使用して、WCF で逆シリアル化中に含める型を指定する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,23 +10,23 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: 2ab0a41e87a9b14d1beac9fb0c39586f0ea16a4a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 52b0caaaac976893dcf5ef5c228ccc4f53bdbe9e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040196"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247482"
 ---
 # <a name="data-contract-known-types"></a>既知のデータ コントラクト型
-<xref:System.Runtime.Serialization.KnownTypeAttribute> クラスを使用すると、逆シリアル化において考慮する必要のある型を事前に指定できます。 実施例については、「[既知の型](../../../../docs/framework/wcf/samples/known-types.md)」の例を参照してください。  
+<xref:System.Runtime.Serialization.KnownTypeAttribute> クラスを使用すると、逆シリアル化において考慮する必要のある型を事前に指定できます。 実施例については、「 [Known Types](../samples/known-types.md) 」の例を参照してください。  
   
  通常は、クライアントとサービス間でパラメーターを渡したり、値を返したりするときに、転送するデータのデータ コントラクトのすべてが両方のエンドポイントで共有されます。 ただし、次の場合はこれが該当しません。  
   
-- 送信データ コントラクトが、予想データ コントラクトから派生する場合。 詳細については、「[データコントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)の継承について」を参照してください。 この場合、送信されるデータには、受信エンドポイントで予想しているデータ コントラクトが含まれません。  
+- 送信データ コントラクトが、予想データ コントラクトから派生する場合。 詳細については、「[データコントラクトの等価性](data-contract-equivalence.md)の継承について」を参照してください。 この場合、送信されるデータには、受信エンドポイントで予想しているデータ コントラクトが含まれません。  
   
 - クラス、構造体、または列挙とは対照的に、送信される情報の宣言型がインターフェイスである場合。 したがって、インターフェイスを実装するどの型が実際に送信されるかを事前に知ることができないため、受信エンドポイントでは送信されるデータのデータ コントラクトを事前に確認することができません。  
   
-- 送信される情報の宣言型が <xref:System.Object>である場合。 すべての型が <xref:System.Object>から継承され、どの型が実際に送信されるかを事前に知ることができないため、受信エンドポイントでは送信されるデータのデータ コントラクトを事前に確認することができません。 これは、最初の項目の特殊なケースです。すべてのデータコントラクトは、既定値であるに対して<xref:System.Object>生成される空のデータコントラクトから派生します。  
+- 送信される情報の宣言型が <xref:System.Object>である場合。 すべての型が <xref:System.Object>から継承され、どの型が実際に送信されるかを事前に知ることができないため、受信エンドポイントでは送信されるデータのデータ コントラクトを事前に確認することができません。 これは最初の項目についての特殊なケースです。すべてのデータ コントラクトは既定で、 <xref:System.Object>に対して生成された空のデータ コントラクトから派生します。  
   
 - .NET Framework 型を含む一部の型には、前の3つのカテゴリのいずれかに属するメンバーがあります。 たとえば、 <xref:System.Collections.Hashtable> は <xref:System.Object> を使用して、ハッシュ テーブルに実際のオブジェクトを保存します。 これらの型をシリアル化する場合、受信側ではこれらのメンバーのデータ コントラクトを事前に確認することができません。  
   
@@ -100,7 +101,7 @@ ms.locfileid: "70040196"
 ## <a name="known-types-using-open-generic-methods"></a>オープン ジェネリック メソッドを使用する既知の型  
  既知の型としてジェネリック型の追加が必要な場合があります。 ただし、オープン ジェネリック型をパラメーターとして `KnownTypeAttribute` 属性に渡すことはできません。  
   
- この問題は、別のメカニズムを使用して解決できます。既知の型のコレクションに追加する型のリストを返すメソッドを記述します。 次に、いくつかの制限事項があるため、このメソッドの名前を `KnownTypeAttribute` 属性への文字列引数として指定します。  
+ この問題は、型の一覧を返すメソッドを作成して既知の型のコレクションに追加するという代替機構を使用することで解決できます。 次に、いくつかの制限事項があるため、このメソッドの名前を `KnownTypeAttribute` 属性への文字列引数として指定します。  
   
  このメソッドは、 `KnownTypeAttribute` 属性を適用する型上に存在し、静的で、パラメーターを必要とせず、 <xref:System.Collections.IEnumerable> の <xref:System.Type>に代入可能なオブジェクトを返す必要があります。  
   
@@ -174,6 +175,6 @@ ms.locfileid: "70040196"
 - <xref:System.Object>
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.DataContractSerializer.KnownTypes%2A>
-- [既知の型](../../../../docs/framework/wcf/samples/known-types.md)
-- [データ コントラクトの等価性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
-- [サービス コントラクトの設計](../../../../docs/framework/wcf/designing-service-contracts.md)
+- [既知の型](../samples/known-types.md)
+- [データ コントラクトの等価性](data-contract-equivalence.md)
+- [サービス コントラクトの設計](../designing-service-contracts.md)

@@ -9,38 +9,38 @@ helpviewer_keywords:
 ms.assetid: 2e7eb2b9-eda6-4bdb-95cc-72c7f0be7528
 ms.openlocfilehash: 5776755a57fbc2b0086b1c9b6cfbb2f2b7eb03fa
 ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2019
 ms.locfileid: "73197275"
 ---
-# <a name="unable-to-emit-assembly-error-message"></a>アセンブリを生成できません: \<エラーメッセージ >
+# <a name="unable-to-emit-assembly-error-message"></a>アセンブリを作成できません: \<error message>
 
-Visual Basic コンパイラは、アセンブリリンカー (Al.exe、Alink とも呼ばれ*ます*) を呼び出してマニフェストを持つアセンブリを生成します。リンカーは、アセンブリの作成の出力段階でエラーを報告します。
+Visual Basic コンパイラは、マニフェストを伴うアセンブリを生成するためにアセンブリ リンカー (*Al.exe*、Alink とも呼ばれます) を呼び出し、アセンブリを作成する出力段階でリンカーからエラーが報告されます。
 
 **エラー ID:** BC30145
 
 ## <a name="to-correct-this-error"></a>このエラーを解決するには
 
-1. 引用符で囲まれたエラーメッセージを調べ、詳細な説明とアドバイスについては、「 [al.exe](../../../framework/tools/al-exe-assembly-linker.md) 」を参照してください。
+1. 引用符で囲まれたエラー メッセージを調べ、トピック「[Al.exe](../../../framework/tools/al-exe-assembly-linker.md)」でより詳細な説明とアドバイスを参照します。
 
-2. [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)または[Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md)を使用して、手動でアセンブリに署名してみます。
+2. [Al.exe](../../../framework/tools/al-exe-assembly-linker.md) または [Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md) を使用して、手動でアセンブリに署名してみてください。
 
 3. エラーが続く場合は、状況に関する情報を収集し、マイクロソフト プロダクト サポート サービスに通知してください。
 
 ### <a name="to-sign-the-assembly-manually"></a>アセンブリを手動で署名するには
 
-1. [Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md)) を使用して、公開キーと秘密キーのペアファイルを作成します。
+1. [Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md) を使用して、公開キーと秘密キーのペア ファイルを作成します。
 
-   このファイルの拡張子は *.snk*です。
+   このファイルは *.snk* の拡張子を持ちます。
 
 2. エラーが発生している COM 参照をプロジェクトから削除します。
 
-3. [Visual Studio の開発者コマンドプロンプト](../../../framework/tools/developer-command-prompt-for-vs.md)を開きます。
+3. [Visual Studio の開発者コマンド プロンプト](../../../framework/tools/developer-command-prompt-for-vs.md)を開きます。
 
-   Windows 10 では、タスクバーの検索ボックスに「**開発者コマンドプロンプト**」と入力します。 次に、結果一覧から**開発者コマンドプロンプト [FOR VS 2017** ] を選択します。
+   Windows 10 で、タスク バーの検索ボックスに「**開発者コマンド プロンプト**」と入力します。 次に、結果の一覧から **VS 2017 用開発者コマンド プロンプト**を選択します。
 
-4. ディレクトリを、アセンブリラッパーを配置するディレクトリに変更します。
+4. アセンブリ ラッパーを格納するディレクトリに、ディレクトリを変更します。
 
 5. 次のコマンドを入力します。
 
@@ -48,16 +48,16 @@ Visual Basic コンパイラは、アセンブリリンカー (Al.exe、Alink �
     tlbimp <path to COM reference file> /out:<output assembly name> /keyfile:<path to .snk file>
     ```
 
-   実際に入力するコマンドの例を次に示します。
+   入力できる実際のコマンドの例を次に示します。
 
     ```cmd
     tlbimp c:\windows\system32\msi.dll /out:Interop.WindowsInstaller.dll /keyfile:"c:\documents and settings\mykey.snk"
     ```
 
    > [!TIP]
-   > パスまたはファイルにスペースが含まれている場合は、二重引用符を使用します。
+   > パスやファイルに空白が含まれている場合には、二重引用符を使用します。
 
-6. Visual Studio で、先ほど作成したファイルに .NET アセンブリ参照を追加します。
+6. Visual Studio で、作成したファイルに .NET アセンブリへの参照を追加します。
 
 ## <a name="see-also"></a>関連項目
 

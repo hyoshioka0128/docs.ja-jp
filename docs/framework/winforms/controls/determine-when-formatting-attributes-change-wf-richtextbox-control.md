@@ -1,5 +1,5 @@
 ---
-title: '方法: Windows フォームの RichTextBox コントロールにおける書式属性の変更を確認する'
+title: リッチテキスト ボックス コントロールで書式属性が変更されるタイミングを決定する
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,21 +11,21 @@ helpviewer_keywords:
 - text boxes [Windows Forms], determining font changes
 - SelChange event
 ms.assetid: bdfed015-f77a-41e5-b38f-f8629b2fa166
-ms.openlocfilehash: a90affde9de36f1c83d5b7c21b40580cdf53402e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a190c3479b58464763e0eefdd32d14e88a1f05e1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972290"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142265"
 ---
-# <a name="how-to-determine-when-formatting-attributes-change-in-the-windows-forms-richtextbox-control"></a>方法: Windows フォームの RichTextBox コントロールにおける書式属性の変更を確認する
-Windows フォームの一般的な用途<xref:System.Windows.Forms.RichTextBox>コントロールがフォントのオプションや段落スタイルなどの属性を持つテキストを書式設定します。 アプリケーションは、多くのワード プロセッシング アプリケーションと同様に、ツールバーを表示できるように書式設定文字列のすべての変更を追跡する必要があります。  
+# <a name="how-to-determine-when-formatting-attributes-change-in-the-windows-forms-richtextbox-control"></a>方法 : Windows フォームの RichTextBox コントロールにおける書式属性の変更を確認する
+Windows フォーム<xref:System.Windows.Forms.RichTextBox>コントロールの一般的な用途は、フォント オプションや段落スタイルなどの属性を使用してテキストを書式設定することです。 多くのワープロ アプリケーションのように、ツールバーを表示するために、アプリケーションでテキストの書式設定の変更を追跡する必要がある場合があります。  
   
-### <a name="to-respond-to-changes-in-formatting-attributes"></a>属性の書式設定の変更に応答するには  
+### <a name="to-respond-to-changes-in-formatting-attributes"></a>書式属性の変更に応答するには  
   
-1. コードを記述、<xref:System.Windows.Forms.RichTextBox.SelectionChanged>属性の値に応じて適切なアクションを実行するイベント ハンドラー。 次の例の値に応じて、ツール バー ボタンの外観を変更する、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>プロパティ。 ツール バー ボタンは、コントロールのカーソルが移動したときにのみ更新されます。  
+1. イベント ハンドラーに<xref:System.Windows.Forms.RichTextBox.SelectionChanged>コードを記述して、属性の値に応じて適切なアクションを実行します。 次の使用例は、プロパティの値に応じてツール バー ボタン<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>の外観を変更します。 ツール バー ボタンは、コントロール内でカーソルが移動したときにのみ更新されます。  
   
-     次の例でフォームを前提としています、<xref:System.Windows.Forms.RichTextBox>コントロールと<xref:System.Windows.Forms.ToolBar>ツール バー ボタンを格納しているコントロール。 ツールバーとツールバー ボタンの詳細については、次を参照してください。[方法。ツール バー コントロールにボタンを追加](how-to-add-buttons-to-a-toolbar-control.md)します。  
+     次の例では、コントロールとツール<xref:System.Windows.Forms.RichTextBox>バー<xref:System.Windows.Forms.ToolBar>ボタンを含むコントロールを持つフォームを想定しています。 ツールバーとツールバー ボタンの詳細については、「方法[: ツール バー コントロールにボタンを追加する](how-to-add-buttons-to-a-toolbar-control.md)」を参照してください。  
   
     ```vb  
     ' The following code assumes the existence of a toolbar control  
@@ -47,12 +47,12 @@ Windows フォームの一般的な用途<xref:System.Windows.Forms.RichTextBox>
     private void richTextBox1_SelectionChanged(object sender,  
     System.EventArgs e)  
     {  
-       if (richTextBox1.SelectionBullet == true)   
+       if (richTextBox1.SelectionBullet == true)
        {  
           // Bullet button on toolbar should appear pressed  
           toolBarButton1.Pushed = true;  
        }  
-       else   
+       else
        {  
           // Bullet button on toolbar should appear unpressed  
           toolBarButton1.Pushed = false;  

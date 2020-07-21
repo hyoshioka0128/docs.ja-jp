@@ -1,16 +1,17 @@
 ---
 title: '方法: Web ページを要求し、ストリームとして結果を取得する'
+description: この例では、.NET Framework で Web ページを要求し、ストリームで結果を取得する方法を示します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d32b7f35-29d8-4fb7-ad71-d219edc5e359
-ms.openlocfilehash: 65bda268cd77959dbcd786c365d0a30c324b89ce
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: bd57f9af6be29c783d044e785ebb36aaa8592df2
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393108"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502484"
 ---
 # <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a>方法: Web ページを要求し、ストリームとして結果を取得する
 

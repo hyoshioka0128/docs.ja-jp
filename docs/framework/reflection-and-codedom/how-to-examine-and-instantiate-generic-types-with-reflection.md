@@ -1,5 +1,5 @@
 ---
-title: '方法 : リフレクションを使用してジェネリック型をチェックおよびインスタンス化する'
+title: '方法: リフレクションを使用してジェネリック型をチェックおよびインスタンス化する'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
 ms.openlocfilehash: 62e4e066740d0422f8f7045b043a5725278c209c
 ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73130129"
 ---
-# <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>方法 : リフレクションを使用してジェネリック型をチェックおよびインスタンス化する
+# <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>方法: リフレクションを使用してジェネリック型をチェックおよびインスタンス化する
 ジェネリック型の情報は、他の型の情報と同じ方法で取得します。つまり、ジェネリック型を表す <xref:System.Type> オブジェクトをチェックすることによって取得します。 根本的な違いとして、ジェネリック型には、そのジェネリック型パラメーターを表す <xref:System.Type> オブジェクトの一覧が含まれています。 このセクションでは、まず、ジェネリック型をチェックする手順を示します。  
   
  ジェネリック型の定義の型パラメーターに型引数をバインドすることにより、構築された型を表す <xref:System.Type> オブジェクトを作成できます。 2 番目の手順でこの方法を示します。  

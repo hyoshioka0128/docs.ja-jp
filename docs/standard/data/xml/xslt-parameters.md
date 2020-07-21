@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fe60aaa0-ae43-4b1c-9be1-426af66ba757
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e76e0f35dd95c34d3a6fc81c2f6f3504591387cf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 7651360b375071c48ba0d23b64881ac794e51e86
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306314"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282533"
 ---
 # <a name="xslt-parameters"></a>XSLT パラメーター
 XSLT パラメーターを <xref:System.Xml.Xsl.XsltArgumentList> に追加するには、<xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> メソッドを使用します。 その時点で、修飾名と名前空間 URI がそのパラメーター オブジェクトに関連付けられます。  
@@ -38,7 +36,7 @@ XSLT パラメーターを <xref:System.Xml.Xsl.XsltArgumentList> に追加す�
 |`Node*`|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|XPath|  
 |`Node Set`|<xref:System.Xml.XPath.XPathNodeIterator><br /><br /> **XPathNavigator[]**|XPath|  
   
- * これは単一のノードを含むノード セットに相当します。  
+ \* これは単一のノードを含むノード セットに相当します。  
   
  パラメーター オブジェクトが上記のクラスのいずれでもない場合、次の規則に従って型が変換されます。 共通言語ランタイム (CLR) の数値型は、<xref:System.Double> に変換されます。 <xref:System.DateTime> 型は <xref:System.String> に変換されます。 <xref:System.Xml.XPath.IXPathNavigable> 型は <xref:System.Xml.XPath.XPathNavigator> に変換されます。 **XPathNavigator[]** は <xref:System.Xml.XPath.XPathNodeIterator> に変換されます。  
   
@@ -70,4 +68,4 @@ XSLT パラメーターを <xref:System.Xml.Xsl.XsltArgumentList> に追加す�
   
 ## <a name="see-also"></a>関連項目
 
-- [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)
+- [XSLT 変換](xslt-transformations.md)

@@ -2,13 +2,13 @@
 title: C# の歴史 - C# ガイド
 description: この言語の最初のバージョンがどのようなものであったか、そしてそれ以降どのように進化してきたかについて説明します。
 author: erikdietrich
-ms.date: 09/20/2017
-ms.openlocfilehash: 83934d9c8194d5109cea0e847d287c01c32a2955
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 04/08/2020
+ms.openlocfilehash: ed9555bcef1c71964937c2bc18fedbc7da94f0db
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739104"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738149"
 ---
 # <a name="the-history-of-c"></a>C\# の歴史
 
@@ -37,7 +37,7 @@ C# バージョン 1.0 は、現在のバージョンと比べると、機能が
 C# 1.0 の主な機能:
 
 - [クラス](../programming-guide/classes-and-structs/classes.md)
-- [構造体](../programming-guide/classes-and-structs/structs.md)
+- [構造体](../language-reference/builtin-types/struct.md)
 - [インターフェイス](../programming-guide/interfaces/index.md)
 - [イベント](../events-overview.md)
 - [プロパティ](../properties.md)
@@ -120,7 +120,7 @@ Visual Studio 2010 でリリースされた C# バージョン 4.0 は、バー�
 Visual Studio 2012 でリリースされた C# バージョン 5.0 は、この言語の専心的なバージョンでした。 このバージョンに対するほぼすべての努力が、非同期プログラミングの `async` および `await` モデルというもう一つの革新的な言語の概念に注がれました。  主要な機能の一覧を次に示します。
 
 - [非同期メンバー](../async.md)
-- [呼び出し元情報属性](../programming-guide/concepts/caller-information.md)
+- [呼び出し元情報属性](../language-reference/attributes/caller-information.md)
 
 ### <a name="see-also"></a>関連項目
 
@@ -154,7 +154,7 @@ C# バージョン 3.0 と 5.0 では、主要な新機能がオブジェクト�
 
 ## <a name="c-version-70"></a>C# バージョン 7.0
 
-Visual Studio 2017 でリリースされた最新のメジャー バージョンが C# バージョン 7.0 です。 このバージョンには、C# 6.0 から続くいくつかの革新的で優れた機能がありますが、サービスとしてのコンパイラはありません。 新機能の一部を次に示します。
+C# バージョン 7.0 は、Visual Studio 2017 でリリースされました。 このバージョンには、C# 6.0 から続くいくつかの革新的で優れた機能がありますが、サービスとしてのコンパイラはありません。 新機能の一部を次に示します。
 
 - [out 変数](./csharp-7.md#out-variables)
 - [タプルと分解](./csharp-7.md#tuples)
@@ -172,5 +172,86 @@ Visual Studio 2017 でリリースされた最新のメジャー バージョン
 これらすべての機能が素晴らしい新機能を開発者に提供し、これまでよりもさらにクリーンなコードを記述する機会を提供します。 ハイライトは、`out` キーワードで使用するために変数の宣言を凝縮することと、タプルを通じて複数の戻り値を許可することです。
 
 しかし C# はさらに広範に使用されています。 .NET Core は現在、任意のオペレーティング システムを対象としており、クラウドと移植性をしっかりと見据えています。  この言語の設計者たちは、新機能を考え出すことに加え、こうした新たな能力についても多くの思考と時間を費やしています。
+
+## <a name="c-version-71"></a>C# バージョン 7.1
+
+C# は、C#7.1 で "*ポイント リリース*" のリリースを開始しました。 このバージョンでは、[言語バージョン選択](../language-reference/configure-language-version.md)構成要素、3 つの新しい言語機能、新しいコンパイラ動作が追加されます。
+
+このリリースの新しい言語機能は次のとおりです。
+
+- [`async` `Main`メソッド](./csharp-7-1.md#async-main)
+  - アプリケーションのエントリ ポイントに `async` 修飾子を設定できます。
+- [`default` リテラル式](./csharp-7-1.md#default-literal-expressions)
+  - ターゲットの種類を推論できるとき、既定の値式で既定のリテラル式を使用できます。
+- [推論されたタプル要素の名前](./csharp-7-1.md#inferred-tuple-element-names)
+  - タプル要素の名前は、多くの場合、タプル初期化から推論できます。
+- [ジェネリック型パラメーターのパターン マッチ](./csharp-7-1.md#pattern-matching-on-generic-type-parameters)
+  - 型がジェネリック型パラメーターである変数にパターン マッチ式を使用できます。
+
+最後に、コンパイラには、[参照アセンブリ生成](./csharp-7-1.md#reference-assembly-generation)を制御する 2 つのオプション、`-refout` と `-refonly` があります。
+
+## <a name="c-version-72"></a>C# バージョン 7.2
+
+C# 7.2 では、いくつかの小規模な言語機能が追加されました。
+
+- [安全で効率的なコードを記述するための手法](./csharp-7-2.md#safe-efficient-code-enhancements)
+  - 参照セマンティクスを使用したさまざまな値の型の使用を有効にする、構文の機能強化の組み合わせ。
+- [末尾以外の名前付き引数](./csharp-7-2.md#non-trailing-named-arguments)
+  - 名前付き引数の後ろに位置引数を続けることができます。
+- [数値リテラルでの先頭のアンダースコア (_)](./csharp-7-2.md#leading-underscores-in-numeric-literals)
+  - 数値リテラルの印刷桁の前に先頭のアンダースコア(_) を含めることができるようになりました。
+- [`private protected` アクセス修飾子](./csharp-7-2.md#private-protected-access-modifier)
+  - `private protected` アクセス修飾子によって、同じアセンブリ内の派生クラスのアクセスが有効になります。
+- [条件付きの `ref` 式](./csharp-7-2.md#conditional-ref-expressions)
+  - 条件式 (`?:`) の結果を参照にすることができるようになりました。
+
+## <a name="c-version-73"></a>C# バージョン 7.3
+
+C# 7.3 リリースには 2 つの主要なテーマがあります。 1 つ目のテーマは、アンセーフ コードと同様のパフォーマンスをセーフ コードで確保するための機能の提供です。 2 つ目のテーマは、既存の機能のインクリメンタルな改善の提供です。 また、新しいコンパイラ オプションがこのリリースで追加されました。
+
+次の新機能は、セーフ コードのパフォーマンス向上のテーマをサポートします。
+
+- [ピン留めを使用せずに fixed フィールドにアクセスできます。](csharp-7-3.md#indexing-fixed-fields-does-not-require-pinning)
+- [`ref` ローカル変数を再割り当てできます。](csharp-7-3.md#ref-local-variables-may-be-reassigned)
+- [`stackalloc` 配列で初期化子を使用できます。](csharp-7-3.md#stackalloc-arrays-support-initializers)
+- [パターンをサポートする型と共に `fixed` ステートメントを使用できます。](csharp-7-3.md#more-types-support-the-fixed-statement)
+- [追加のジェネリック制約を使用できます。](csharp-7-3.md#enhanced-generic-constraints)
+
+既存の機能が次のように強化されました。
+
+- [タプル型を使用して `==` と `!=` をテストできます。](csharp-7-3.md#tuples-support--and-)
+- [式の変数をより多くの場所で使用できます。](csharp-7-3.md#extend-expression-variables-in-initializers)
+- [自動実装プロパティのバッキング フィールドに属性をアタッチできます。](csharp-7-3.md#attach-attributes-to-the-backing-fields-for-auto-implemented-properties)
+- [引数が `in` によって異なる場合のメソッド解決が改善されました。](csharp-7-3.md#in-method-overload-resolution-tiebreaker)
+- [オーバーロードの解決のあいまいなケースが削減されました。](csharp-7-3.md#improved-overload-candidates)
+
+新しいコンパイラ オプションは次のとおりです。
+
+- [`-publicsign`: オープン ソース ソフトウェア (OSS) のアセンブリの署名を可能にします。](csharp-7-3.md#public-or-open-source-signing)
+- [`-pathmap`: ソース ディレクトリのマッピングを提供します。](csharp-7-3.md#pathmap)
+
+## <a name="c-version-80"></a>C# バージョン 8.0
+
+C# 8.0 は、特に C# .NET Core をターゲットとする最初のメジャー リリースです。 新しい CLR 機能に依存する機能と、.NET Core にのみ追加されたライブラリの型に依存する機能があります。 C# 8.0 では、C# 言語に次の機能と機能強化が追加されています。
+
+- [読み取り専用メンバー](./csharp-8.md#readonly-members)
+- [既定のインターフェイス メソッド](./csharp-8.md#default-interface-methods)
+- [パターン マッチングの拡張機能](./csharp-8.md#more-patterns-in-more-places):
+  - [switch 式](./csharp-8.md#switch-expressions)
+  - [プロパティのパターン](./csharp-8.md#property-patterns)
+  - [タプル パターン](./csharp-8.md#tuple-patterns)
+  - [位置指定パターン](./csharp-8.md#positional-patterns)
+- [using 宣言](./csharp-8.md#using-declarations)
+- [静的ローカル関数](./csharp-8.md#static-local-functions)
+- [破棄可能な ref 構造体](./csharp-8.md#disposable-ref-structs)
+- [Null 許容参照型](../language-reference/builtin-types/nullable-reference-types.md)
+- [非同期ストリーム](./csharp-8.md#asynchronous-streams)
+- [インデックスと範囲](./csharp-8.md#indices-and-ranges)
+- [null 合体割り当て](./csharp-8.md#null-coalescing-assignment)
+- [構築されたアンマネージド型](./csharp-8.md#unmanaged-constructed-types)
+- [入れ子になった式の stackalloc](./csharp-8.md#stackalloc-in-nested-expressions)
+- [verbatim 補間文字列の拡張](./csharp-8.md#enhancement-of-interpolated-verbatim-strings)
+
+既定のインターフェイス メンバーには、CLR の拡張機能が必要です。 これらの機能は、CLR for .NET Core 3.0 で追加されました。 範囲とインデックス、および非同期ストリームには、.NET Core 3.0 ライブラリの新しい型が必要です。 null 許容参照型は、コンパイラに実装されていますが、引数と戻り値の null 状態に関するセマンティック情報を提供する注釈がライブラリに付けられている場合に非常に役立ちます。 このような注釈は .NET Core ライブラリに追加されています。
 
 _記事_は、[_NDepend ブログで元々公開されていたものです_](https://blog.ndepend.com/c-versions-look-language-history/) _(提供: Erik Dietrich および Patrick Smacchia)。_

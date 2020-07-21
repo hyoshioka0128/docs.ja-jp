@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: aa26df07-e0a6-4608-bdef-d4afafec89aa
 topic_type:
 - apiref
-ms.openlocfilehash: 418ebb51df3f2d86011ee2e77022c3ee5c7ac0b0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e6e8eb91bbc41faf0dcea010da9aa54995058653
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088229"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894975"
 ---
 # <a name="icordebugarrayvaluehasbaseindicies-method"></a>ICorDebugArrayValue::HasBaseIndicies メソッド
 この配列のどの次元にも0以外のベースインデックスがあるかどうかを示す値を取得します。  
@@ -35,13 +35,13 @@ HRESULT HasBaseIndicies (
   
 ## <a name="parameters"></a>パラメーター  
  `pbHasBaseIndicies`  
- 入出力この `ICorDebugArrayValue` オブジェクトの1つ以上の次元のベースインデックスが0以外の場合に `true` されるブール値へのポインター。それ以外の場合、ブール値は `false`です。  
+ 入出力この`ICorDebugArrayValue`オブジェクトの1つ以上の次元`true`に0以外のベースインデックスがある場合は、ブール値へのポインター。それ以外の場合、ブール`false`値はです。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]

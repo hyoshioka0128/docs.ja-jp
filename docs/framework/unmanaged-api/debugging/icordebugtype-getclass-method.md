@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2644f48b-db3c-429f-ae62-76f1c98a1af5
 topic_type:
 - apiref
-ms.openlocfilehash: 3a895f432ed640cc35a492df0c91cece34893062
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 878a57514af34730049864f17f4853c1237904c2
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122363"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379959"
 ---
 # <a name="icordebugtypegetclass-method"></a>ICorDebugType::GetClass メソッド
 インスタンスジェネリック型を表す、のクラスへのインターフェイスポインターを取得します。  
@@ -35,16 +35,16 @@ HRESULT GetClass (
   
 ## <a name="parameters"></a>パラメーター  
  `ppClass`  
- 入出力インスタンスジェネリック型を表す `ICorDebugClass` インターフェイスのアドレスへのポインター。  
+ 入出力`ICorDebugClass`インスタンスジェネリック型を表すインターフェイスのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- `GetClass` は、特定の条件下でのみ呼び出すことができます。 `GetClass`を呼び出す前に、を呼び出し[てください。](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) `ICorDebugType::GetType` が ELEMENT_TYPE_CLASS または ELEMENT_TYPE_VALUETYPE の CorElementType 値を返す場合、`GetClass` を呼び出して、ジェネリック型のインスタンス型を取得できます。  
+ `GetClass`は、特定の条件下でのみ呼び出すことができます。 を[呼び出す前に](icordebugtype-gettype-method.md)、を呼び出して `GetClass` ください。 `ICorDebugType::GetType`が ELEMENT_TYPE_CLASS または ELEMENT_TYPE_VALUETYPE の CorElementType 値を返す場合は、を呼び出して、 `GetClass` ジェネリック型のインスタンス型を取得できます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

@@ -1,17 +1,15 @@
 ---
 title: 監視と正常性
 description: 監視と正常性
-ms.date: 09/23/2019
-ms.openlocfilehash: 6274040318b5442478e9cc291c4f223bdf533110
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 05/13/2020
+ms.openlocfilehash: 28e98bbdb39a68d8961d4f3ab48cde5a07a4762b
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73842021"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613799"
 ---
 # <a name="monitoring-and-health"></a>監視と正常性
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 マイクロサービスとクラウドネイティブアプリケーションは、適切な DevOps プラクティスで手に入ります。 DevOps は多くの人にとって多くのことですが、クラウドの代弁者や DevOps エバンジェリスト Donovan Brown の方が優れた定義の1つです。
 

@@ -9,15 +9,15 @@ helpviewer_keywords:
 ms.assetid: 8a95d759-c298-4291-aa7e-ecdeffaae6ab
 ms.openlocfilehash: 5acb5d96a9c8a1ce2d2c0c842be0e57e62eb538f
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61790820"
 ---
 # <a name="toolbar"></a>ToolBar
-<xref:System.Windows.Controls.ToolBar>コントロールは、コマンドまたは一般にそれぞれの機能に関連するコントロールのグループのコンテナー。  
+<xref:System.Windows.Controls.ToolBar> コントロールとは、通常はその機能に関連するコマンドまたはコントロール グループのコンテナーです。  
   
- 水平および垂直方向に次の図が示して<xref:System.Windows.Controls.ToolBar>コントロール。  
+ 次の図では、水平および垂直の <xref:System.Windows.Controls.ToolBar> コントロールを示しています。  
   
  ![水平ツールバー](./media/ss-ctl-horztoolbar.GIF "SS_CTL_horztoolbar")  
 水平ツールバー  
@@ -29,7 +29,7 @@ ms.locfileid: "61790820"
  [ToolBar の概要](toolbar-overview.md)  
   [ToolBar のコントロールのスタイルを設定する](how-to-style-controls-on-a-toolbar.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.ToolBar>  
   <xref:System.Windows.Controls.ToolBarTray>  
   

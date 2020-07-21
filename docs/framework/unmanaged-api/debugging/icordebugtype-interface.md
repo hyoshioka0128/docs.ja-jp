@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 94e02e31-67ea-4b00-8148-a46740a4571d
 topic_type:
 - apiref
-ms.openlocfilehash: 4f3f553ed5dc93433610365e0dae5bee54863de5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5e88652ff75223e30e6abc454f1e1af91494c7b2
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129625"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396703"
 ---
 # <a name="icordebugtype-interface"></a>ICorDebugType インターフェイス
 基本または複合 (つまり、ユーザー定義) のいずれかの型を表します。 型がジェネリックの場合、`ICorDebugType` はインスタンス化されたジェネリック型を表します。  
@@ -28,31 +28,31 @@ ms.locfileid: "73129625"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[EnumerateTypeParameters メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-enumeratetypeparameters-method.md)|この `ICorDebugType`によって参照されるクラスのジェネリック <xref:System.Type> パラメーターを参照する、ツールのインターフェイスポインターを取得します。|  
-|[GetBase メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getbase-method.md)|この `ICorDebugType`によって参照されるクラスの基底クラスが存在する場合は、その基底クラスを参照する `ICorDebugType` へのインターフェイスポインターを取得します。|  
-|[GetClass メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md)|この `ICorDebugType`の型指定されたコンストラクターを参照する、のクラスへのインターフェイスポインターを取得します。|  
-|[GetFirstTypeParameter メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getfirsttypeparameter-method.md)|この `ICorDebugType`によって参照されるクラスのコンストラクターの最初のジェネリック <xref:System.Type> パラメーターを参照する `ICorDebugType` へのインターフェイスポインターを取得します。|  
-|[GetRank メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getrank-method.md)|配列型の次元数を取得します。|  
-|[GetStaticFieldValue メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getstaticfieldvalue-method.md)|指定したスタックフレーム内の指定したフィールドトークンによって参照される静的フィールドの値を格納する、ICorDebugValue へのインターフェイスポインターを取得します。|  
-|[GetType メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md)|この `ICorDebugType`によって参照される共通言語ランタイム <xref:System.Type> のネイティブ型を記述する CorElementType 値を取得します。|  
+|[EnumerateTypeParameters メソッド](icordebugtype-enumeratetypeparameters-method.md)|このによって参照されるクラスのジェネリックパラメーターを参照する、ツールのインターフェイスポインターを取得し <xref:System.Type> `ICorDebugType` ます。|  
+|[GetBase メソッド](icordebugtype-getbase-method.md)|`ICorDebugType`このによって参照されるクラス `ICorDebugType` (存在する場合) の基本クラスを参照するへのインターフェイスポインターを取得します。|  
+|[GetClass メソッド](icordebugtype-getclass-method.md)|このの型指定されたコンストラクターを参照する、によるクラスへのインターフェイスポインターを取得し `ICorDebugType` ます。|  
+|[GetFirstTypeParameter メソッド](icordebugtype-getfirsttypeparameter-method.md)|`ICorDebugType` <xref:System.Type> このによって参照されるクラスのコンストラクターの最初のジェネリックパラメーターを参照するへのインターフェイスポインターを取得し `ICorDebugType` ます。|  
+|[GetRank メソッド](icordebugtype-getrank-method.md)|配列型の次元数を取得します。|  
+|[GetStaticFieldValue メソッド](icordebugtype-getstaticfieldvalue-method.md)|指定したスタックフレーム内の指定したフィールドトークンによって参照される静的フィールドの値を格納する、ICorDebugValue へのインターフェイスポインターを取得します。|  
+|[GetType メソッド](icordebugtype-gettype-method.md)|このによって参照される共通言語ランタイムのネイティブ型を記述する CorElementType 値を取得し <xref:System.Type> `ICorDebugType` ます。|  
   
-## <a name="remarks"></a>Remarks  
- 型がジェネリックの場合、`ICorDebugClass` はインスタンス型を表します。 `ICorDebugType` インターフェイスは、インスタンス化されたジェネリック型を表します。 たとえば、Hashtable\<K、V > は `ICorDebugClass`によって表されますが、Hashtable\<Int32、String > は `ICorDebugType`によって表されます。  
+## <a name="remarks"></a>解説  
+ 型がジェネリックの場合、は `ICorDebugClass` インスタンス型を表します。 インターフェイスは、 `ICorDebugType` インスタンス化されたジェネリック型を表します。 たとえば、ハッシュテーブル \< K、V> はで表さ `ICorDebugClass` れますが、hashtable \< Int32、String> はによって表さ `ICorDebugType` れます。  
   
- 非ジェネリック型は、`ICorDebugClass` と `ICorDebugType`の両方で表されます。 後者のインターフェイスは、型のインスタンス化を処理するために .NET Framework バージョン2.0 で導入されました。  
+ 非ジェネリック型は、との両方で表され `ICorDebugClass` `ICorDebugType` ます。 後者のインターフェイスは、型のインスタンス化を処理するために .NET Framework バージョン2.0 で導入されました。  
   
 > [!NOTE]
 > このインターフェイスは、コンピューター間またはプロセス間でのリモート呼び出しをサポートしていません。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)

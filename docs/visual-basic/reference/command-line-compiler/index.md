@@ -1,5 +1,5 @@
 ---
-title: コマンドラインコンパイラ
+title: Visual Basic コマンドラインコンパイラ
 ms.date: 02/20/2018
 helpviewer_keywords:
 - compilers [Visual Basic], Visual Basic options

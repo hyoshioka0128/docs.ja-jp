@@ -6,52 +6,52 @@ helpviewer_keywords:
 ms.assetid: 789652fb-1951-4217-934a-7843e355adf4
 ms.openlocfilehash: b3d0f5c77ebf8527e4854d4edf12d6fa8a4b5f0c
 ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64614626"
 ---
 # <a name="how-to-handle-the-contextmenuopening-event"></a>方法: ContextMenuOpening イベントを処理する
-<xref:System.Windows.FrameworkElement.ContextMenuOpening>か、既存のコンテキスト メニューの前を表示するかを設定して表示されるメニューを抑制するを調整するアプリケーションでイベントを処理すること、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティを`true`イベント データ。 設定の一般的な理由<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`メニューを置き換えるだけで、新しいデータのイベントは<xref:System.Windows.Controls.ContextMenu>オブジェクト、操作を取り消すと、新しいオープンを開始することもあります必要があります。 ハンドラーを記述する場合、<xref:System.Windows.FrameworkElement.ContextMenuOpening>イベント、注意すべきタイミングの問題との間の<xref:System.Windows.Controls.ContextMenu>コントロールとサービスを開くと、コントロールのコンテキスト メニューを通常配置を担当します。 このトピックでは、コンテキスト メニューのさまざまなシナリオを開くコードの手法の一部を示していて、タイミングの問題が関係する状況を示しています。  
+アプリケーションで <xref:System.Windows.FrameworkElement.ContextMenuOpening> イベントを処理して、既存のコンテキスト メニューを表示する前に調整する、またはイベント データで <xref:System.Windows.RoutedEventArgs.Handled%2A> プロパティを `true` に設定して、表示されるはずのメニューを非表示にすることができます。 イベント データで <xref:System.Windows.RoutedEventArgs.Handled%2A> を `true` に設定する一般的な理由は、メニューを新しい <xref:System.Windows.Controls.ContextMenu> オブジェクトに完全に置き換えるためです。この場合、操作をキャンセルして、新しいオープンの開始が必要になる場合があります。 <xref:System.Windows.FrameworkElement.ContextMenuOpening> イベント用のハンドラーを記述する場合は、<xref:System.Windows.Controls.ContextMenu> コントロールと、コントロール全般のコンテキスト メニューを開いて配置する役割を担うサービスの間のタイミングの問題に注意する必要があります。 このトピックでは、さまざまなコンテキスト メニューを開くシナリオのコード手法をいくつか紹介し、タイミングの問題が発生するケースを示します。  
   
- 処理のためのいくつかのシナリオ、<xref:System.Windows.FrameworkElement.ContextMenuOpening>イベント。  
+ <xref:System.Windows.FrameworkElement.ContextMenuOpening> イベントの処理には、次のようにいくつかのシナリオがあります。  
   
-- 表示する前に、メニュー項目を調整します。  
+- 表示する前にメニュー項目を調整する。  
   
-- 表示する前にメニュー全体を置き換えます。  
+- 表示する前にメニュー全体を置換する。  
   
-- 完全に任意の既存のコンテキスト メニューを抑制して、コンテキスト メニューを表示していません。  
+- 既存のコンテキスト メニューを完全に非表示にし、コンテキスト メニューを表示しない。  
   
 ## <a name="example"></a>例  
   
-## <a name="adjusting-the-menu-items-before-display"></a>表示する前に、メニュー項目を調整します。  
- 既存のメニュー項目を調整することは非常に単純と、最も一般的なシナリオでは可能性があります。 追加するか、アプリケーションの現在の状態情報またはコンテキスト メニューが要求されているオブジェクトのプロパティとして使用できる特定の状態情報への応答のコンテキスト メニュー オプションを減算するためにこれを行う場合があります。  
+## <a name="adjusting-the-menu-items-before-display"></a>表示する前にメニュー項目を調整する  
+ 既存のメニュー項目の調整は非常にシンプルであり、おそらく最も一般的なシナリオです。 これは、アプリケーションの現在の状態情報、またはコンテキスト メニューが要求されているオブジェクトのプロパティとして使用できる特定の状態情報に応じて、コンテキスト メニュー オプションを追加または削除するために行う場合があります。  
   
- 一般的な技法は、ある特定のコントロールを右クリックすると、イベントのソースを取得し、<xref:System.Windows.FrameworkElement.ContextMenu%2A>からプロパティ。 チェックする通常、<xref:System.Windows.Controls.ItemsControl.Items%2A>既にメニューで、存在し、追加し、削除適切な新しいコンテキスト メニュー項目を表示するコレクション<xref:System.Windows.Controls.MenuItem>にまたはコレクションから項目。  
+ 一般的な手法は、ある特定のコントロールが右クリックされたとき、そのイベントのソースを取得し、そこから <xref:System.Windows.FrameworkElement.ContextMenu%2A> プロパティを取得することです。 通常は、<xref:System.Windows.Controls.ItemsControl.Items%2A> コレクションをチェックして、メニューに既に存在するコンテキスト メニュー項目を確認し、コレクションに対して適切な新しい <xref:System.Windows.Controls.MenuItem> 項目を追加または削除します。  
   
  [!code-csharp[ContextMenuOpeningHandlers#AddItemNoHandle](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenuOpeningHandlers/CSharp/Pane1.xaml.cs#additemnohandle)]  
   
-## <a name="replacing-the-entire-menu-before-display"></a>表示する前にメニュー全体を置き換える  
- 別のシナリオでは、全体のコンテキスト メニューを置換するかどうかです。 既存のコンテキスト メニューのすべての項目を削除し、項目の 0 から始まる新しいものを追加する上記のコードのバリエーションも使用してもちろんでした。 コンテキスト メニューのすべての項目を置換するためより直感的なアプローチが新たに作成するには<xref:System.Windows.Controls.ContextMenu>、項目では、そこに設定して、<xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType>に新しいコントロールのプロパティの<xref:System.Windows.Controls.ContextMenu>します。  
+## <a name="replacing-the-entire-menu-before-display"></a>表示する前にメニュー全体を置換する  
+ 別のシナリオは、コンテキスト メニュー全体を置き換えることです。 もちろん、前述のコードのバリエーションを使用して、既存のコンテキスト メニューのすべての項目を削除し、項目なしの状態から新しい項目を追加することもできます。 しかし、コンテキスト メニューのすべての項目をより直感的に置き換える方法は、新しい <xref:System.Windows.Controls.ContextMenu> を作成し、それに項目を設定して、コントロールの <xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType> プロパティを新しい <xref:System.Windows.Controls.ContextMenu> に設定することです。  
   
- 置換するための単純なハンドラー コードを次に、<xref:System.Windows.Controls.ContextMenu>します。 このコードでカスタム参照`BuildMenu`メソッドが呼び出されるためによって分離例ハンドラーの 1 つ以上。  
+ <xref:System.Windows.Controls.ContextMenu> を置き換える単純なハンドラー コードを次に示します。 このコードは、カスタム `BuildMenu` メソッドを参照しています。この例では複数のハンドラーから呼び出されるため、このメソッドは分離されています。  
   
  [!code-csharp[ContextMenuOpeningHandlers#ReplaceNoReopen](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenuOpeningHandlers/CSharp/Pane1.xaml.cs#replacenoreopen)]  
   
  [!code-csharp[ContextMenuOpeningHandlers#BuildMenu](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenuOpeningHandlers/CSharp/Pane1.xaml.cs#buildmenu)]  
   
- ただし、このスタイルのハンドラーを使用する場合<xref:System.Windows.FrameworkElement.ContextMenuOpening>場合、可能性のあるタイミングの問題を公開することができます、オブジェクトを設定している、<xref:System.Windows.Controls.ContextMenu>既存のコンテキスト メニューはありません。 ユーザーがコントロールを右クリックしたとき<xref:System.Windows.FrameworkElement.ContextMenuOpening>が発生した場合でも、既存<xref:System.Windows.Controls.ContextMenu>が空または null。 ここでは、任意の新しい<xref:System.Windows.Controls.ContextMenu>ソースを設定して表示する要素が遅すぎますが到着します。 また、ユーザーをもう一度を右クリックする場合に、今回は、新しい<xref:System.Windows.Controls.ContextMenu>が表示されたら、値が null 以外と、ハンドラーが正しく置換ハンドラーを 2 回目の実行時にメニューを表示します。 これは、2 つの方法を示しています。  
+ しかしながら、このスタイルのハンドラーを <xref:System.Windows.FrameworkElement.ContextMenuOpening> に使用すると、<xref:System.Windows.Controls.ContextMenu> を設定しようとしているオブジェクトに既存のコンテキスト メニューがない場合にタイミングの問題が発生する可能性があります。 ユーザーがコントロールを右クリックしたとき、既存の <xref:System.Windows.Controls.ContextMenu> が空または null であっても <xref:System.Windows.FrameworkElement.ContextMenuOpening> が発生します。 しかしこの場合は、ソース要素に設定する新しい <xref:System.Windows.Controls.ContextMenu> が何であれ、表示するには遅すぎます。 また、ユーザーが 2 回目に右クリックすると、今度は新しい <xref:System.Windows.Controls.ContextMenu> が表示され、値が null でないため、ハンドラーが 2 回目に実行されるときに、ハンドラーにより、メニューが適切に置換され、表示されます。 このことは、次の 2 つの可能な回避策を示唆しています。  
   
-1. できることが保証<xref:System.Windows.FrameworkElement.ContextMenuOpening>常に、少なくともプレース ホルダーを持つコントロールに対して実行ハンドラー <xref:System.Windows.Controls.ContextMenu> 、使用可能なハンドラー コードによって置き換えられる対象。 この場合は、前の例に示すようにハンドラーを使用することもできますが、通常のプレース ホルダーを指定する<xref:System.Windows.Controls.ContextMenu>初期のマークアップで。  
+1. <xref:System.Windows.FrameworkElement.ContextMenuOpening> ハンドラーが、少なくともハンドラー コードで置き換える予定のプレース ホルダー <xref:System.Windows.Controls.ContextMenu> がある使用可能なコントロールに対して、常に実行されることを確実にします。 この場合にも、前述の例で示したハンドラーを使用することはできますが、通常は最初のマークアップ内に <xref:System.Windows.Controls.ContextMenu> プレースホルダーを指定することができます。  
   
      [!code-xaml[ContextMenuOpeningHandlers#XAMLWithInitCM](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenuOpeningHandlers/CSharp/Pane1.xaml#xamlwithinitcm)]  
   
-2. ある初期<xref:System.Windows.Controls.ContextMenu>値が null で、いくつかの暫定版のロジックに基づいて。 いずれかのチェックをでした<xref:System.Windows.Controls.ContextMenu>を少なくとも 1 回の null の場合、またはハンドラーがされているかどうかをチェックするコードのフラグを使用して実行します。 想定していますので、<xref:System.Windows.Controls.ContextMenu>に表示される、ハンドラーの詳細については、設定<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`イベント データ。 <xref:System.Windows.Controls.ContextMenuService>コンテキスト メニューの表示を担当するが、`true`値<xref:System.Windows.RoutedEventArgs.Handled%2A>イベントのデータが、コンテキスト メニューの表示を取り消す/イベントを発生させたの組み合わせを制御する要求を表します。  
+2. <xref:System.Windows.Controls.ContextMenu> の初期値が、何らかの予備ロジックに基づいて、null の可能性があると仮定します。 <xref:System.Windows.Controls.ContextMenu> が null であるかチェックすることも、またはコードでフラグを使用して、ハンドラーが少なくとも 1 回実行されているかどうかをチェックすることもできます。 <xref:System.Windows.Controls.ContextMenu> が表示されることを仮定しているため、ハンドラーで、イベント データの <xref:System.Windows.RoutedEventArgs.Handled%2A> を `true` に設定します。 コンテキスト メニューの表示を担う <xref:System.Windows.Controls.ContextMenuService> にとって、イベント データ内の <xref:System.Windows.RoutedEventArgs.Handled%2A> の値が `true` であることは、イベントが発生したコンテキスト メニューとコントロールの組み合わせの表示をキャンセルする要求を表します。  
   
- 次の手順は、新しくを指定するは、可能性のある問題のあるコンテキスト メニューは表示されませんが、これで、それを表示します。 以前のハンドラーと同じ 1 つは基本的に新しい設定: 新しいをビルドする<xref:System.Windows.Controls.ContextMenu>コントロールのソースの設定と<xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType>プロパティにします。 追加の手順は、最初の試行を抑制するため、コンテキスト メニューの表示を今すぐ強制する必要があります。 表示を強制的に設定する、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A?displayProperty=nameWithType>プロパティを`true`ハンドラー内で。 注意、これを行うときに発生、ハンドラーで、コンテキスト メニューを開くため、<xref:System.Windows.FrameworkElement.ContextMenuOpening>もう一度イベント。 ハンドラーを再入力する再帰を無限になります。 これは、常に確認する必要がある理由`null`または内からコンテキスト メニューを開く場合にフラグを使用して、<xref:System.Windows.FrameworkElement.ContextMenuOpening>イベント ハンドラー。  
+ これで問題がある可能性のあるコンテキスト メニューを非表示にしました。次の手順では、新しいものを指定して表示します。 新しいものの設定は、基本的には前のハンドラーと同じです。新しい <xref:System.Windows.Controls.ContextMenu> を作成し、それを使用してコントロール ソースの <xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType> プロパティを設定します。 最初の試行を非表示にしたため、ここでは追加の手順として、コンテキスト メニューを強制的に表示する必要があります。 強制的に表示するには、ハンドラー内で <xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A?displayProperty=nameWithType> プロパティを `true` に設定します。 これを行うときは、ハンドラー内でコンテキスト メニューを開くと、<xref:System.Windows.FrameworkElement.ContextMenuOpening> イベントが再度発生すことにご注意ください。 再度ハンドラーに入ると、無限再帰になります。 このため、<xref:System.Windows.FrameworkElement.ContextMenuOpening> イベント ハンドラー内からコンテキスト メニューを開く場合は常に、`null` であるかチェックするか、フラグを使用する必要があります。  
   
-## <a name="suppressing-any-existing-context-menu-and-displaying-no-context-menu"></a>既存のどのコンテキスト メニューを抑制して、コンテキスト メニューを表示していません  
- 最後のシナリオでは、完全には、メニューを抑制するハンドラーの記述は一般的ではありません。 場合は、特定のコントロールは、コンテキスト メニューを表示することはできません、ユーザーが要求するときに、メニューを抑制することでこのことを保証するために方が適切な方法があります。 コンテキスト メニューを抑制して、何も表示するハンドラーを使用する場合、ハンドラーを設定するだけですが、<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`イベント データ。 <xref:System.Windows.Controls.ContextMenuService>を担当コンテキスト メニューを表示するは、コントロールが発生したイベントのイベント データを確認します。 イベントが設定されていた場合<xref:System.Windows.RoutedEventArgs.Handled%2A>任意の場所、経路上、イベントが発生したコンテキスト メニュー オープン操作は抑制されます。  
+## <a name="suppressing-any-existing-context-menu-and-displaying-no-context-menu"></a>既存のコンテキスト メニューを非表示にし、コンテキスト メニューを表示しない  
+ 最後のシナリオでは、メニューを完全に非表示にするハンドラーを記述しますが、これは一般的ではありません。 特定のコントロールでコンテキスト メニューが表示されないことになっている場合はおそらく、ユーザーが要求したときにのみメニューを非表示にするよりもこれを確実にする適切な方法があるでしょう。 しかし、ハンドラーを使用してコンテキスト メニューを非表示にし、何も表示しないようにしたいのであれば、ハンドラーで、イベント データの <xref:System.Windows.RoutedEventArgs.Handled%2A> を `true` に設定する必要があるだけです。 コンテキスト メニューの表示を担う <xref:System.Windows.Controls.ContextMenuService> で、コントロールで発生したイベントのイベント データがチェックされます。 イベントがルート上のどこかで <xref:System.Windows.RoutedEventArgs.Handled%2A> とマークされた場合、イベントを開始したコンテキスト メニューのアクションが抑制されます。  
   
  [!code-csharp[ContextMenuOpeningHandlers#ReplaceReopen](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenuOpeningHandlers/CSharp/Pane1.xaml.cs#replacereopen)]  
   

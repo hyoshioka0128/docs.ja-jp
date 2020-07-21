@@ -7,21 +7,21 @@ helpviewer_keywords:
 ms.assetid: d4cd5a13-c20d-4a6f-a2ba-14f2c9ce4cef
 ms.openlocfilehash: d1995deec5ab2c9bf405911af43b4d242d599119
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61776910"
 ---
 # <a name="how-to-animate-the-size-of-a-frameworkelement"></a>方法: FrameworkElement のサイズをアニメーション化する
-サイズをアニメーション化する、 <xref:System.Windows.FrameworkElement>、アニメーション化することができますか、その<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>プロパティまたは使用してアニメーション化された<xref:System.Windows.Media.ScaleTransform>します。  
+<xref:System.Windows.FrameworkElement> のサイズをアニメーション化するには、その <xref:System.Windows.FrameworkElement.Width%2A> プロパティと <xref:System.Windows.FrameworkElement.Height%2A> プロパティをアニメーション化するか、またはアニメーション化された <xref:System.Windows.Media.ScaleTransform> を使用します。  
   
- 次の例では、これら 2 つのアプローチを使用して 2 つのボタンのサイズをアニメーション化します。 アニメーション化して 1 つのボタンのサイズが変更されたその<xref:System.Windows.FrameworkElement.Width%2A>プロパティと別のアニメーション化してサイズを変更、<xref:System.Windows.Media.ScaleTransform>に適用されるその<xref:System.Windows.UIElement.RenderTransform%2A>プロパティ。 各ボタンには、いくつかのテキストが含まれています。 最初に、両方のボタンで同じテキストが表示されますが、2 番目のボタンのテキストにゆがみが生じるように、ボタン サイズを変更する。  
+ 次の例では、2 つの方法を使用して、2 つのボタンのサイズがアニメーション化されています。 1 つのボタンはその <xref:System.Windows.FrameworkElement.Width%2A> プロパティをアニメーション化してサイズ変更し、もう 1 つは、その <xref:System.Windows.UIElement.RenderTransform%2A> プロパティに適用された <xref:System.Windows.Media.ScaleTransform> をアニメーション化してサイズ変更しています。 各ボタンには、テキストがいくつか含まれます。 初期状態では、両ボタンのテキストは同じに表示されますが、ボタンのサイズが変更されると、2 番目のボタンのテキストはゆがんで表示されます。  
   
 ## <a name="example"></a>例  
  [!code-xaml[transformanimations_snip#1](~/samples/snippets/xaml/VS_Snippets_Wpf/transformanimations_snip/XAML/AnimatingSizeExample.xaml#1)]  
   
- 要素を変換する場合は、要素全体とその内容が変換されます。 場合の最初のボタンのように、要素のサイズを直接変更するとき、そのサイズと位置がそれぞれの親要素のサイズに依存しない限り、要素の内容はサイズ変更されません。  
+ 要素を変換すると、その要素全体とそのコンテンツが変換されます。 最初のボタンの場合のように、要素のサイズが直接変更されると、親要素のサイズにそのサイズと位置が依存していない限り、要素のコンテンツのサイズは変更されません。  
   
- 要素のサイズをアニメーション化するアニメーションの変換を適用することでその<xref:System.Windows.UIElement.RenderTransform%2A>プロパティがアニメーション化されるより優れたパフォーマンスを提供しますその<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>を直接ため、<xref:System.Windows.UIElement.RenderTransform%2A>プロパティでレイアウト パスがトリガーされません。  
+ 要素の <xref:System.Windows.UIElement.RenderTransform%2A> プロパティにアニメーション化された変換を適用してサイズをアニメーション化する場合、<xref:System.Windows.UIElement.RenderTransform%2A> プロパティはレイアウト パスをトリガーしないため、<xref:System.Windows.FrameworkElement.Width%2A> と <xref:System.Windows.FrameworkElement.Height%2A> を直接アニメーション化する場合よりもパフォーマンスが向上します。  
   
- プロパティをアニメーション化の詳細については、次を参照してください。、[アニメーションの概要](../graphics-multimedia/animation-overview.md)します。 変換の詳細については、次を参照してください。、[変換の概要](../graphics-multimedia/transforms-overview.md)します。
+ プロパティのアニメーション化の詳細については、「[アニメーションの概要](../graphics-multimedia/animation-overview.md)」を参照してください。 変換の詳細については「[変換の概要](../graphics-multimedia/transforms-overview.md)」を参照してください。

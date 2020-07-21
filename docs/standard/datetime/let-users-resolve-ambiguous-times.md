@@ -6,16 +6,16 @@ helpviewer_keywords:
 - time zones [.NET Framework], ambiguous time
 - ambiguous time [.NET Framework]
 ms.assetid: bca874ee-5b68-4654-8bbd-3711220ef332
-ms.openlocfilehash: f988616a4b2a5d8202c87e3be3cb23c7f9f1f130
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ac723738d80a2f686a5fcaf279cec791b3c58619
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122276"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84281584"
 ---
 # <a name="how-to-let-users-resolve-ambiguous-times"></a>方法: ユーザーがあいまいな時刻を解決できるようにする
 
-あいまいな時刻とは、複数の世界協定時刻 (UTC) にマップされる時刻です。 これは、あるタイム ゾーンの夏時間から標準時間に移行する際など、時計の時刻を前に戻すときに発生します。 あいまいな時刻を処理する場合は、次のいずれかの操作を行います。
+あいまいな時刻は複数の世界協定時刻 (UTC) にマップされる時刻です。 あいまいな時刻は、あるタイム ゾーンの夏時間から標準時間に移行する際など、時計の時刻を前に戻すときに発生します。 あいまいな時刻を処理する場合は、次のいずれかの操作を行います。
 
 - あいまいな時刻が、ユーザーによって入力されたデータ項目である場合は、あいまいさの解決をユーザーに任せることができます。
 
@@ -27,15 +27,15 @@ ms.locfileid: "73122276"
 
 1. ユーザーによって入力された日付と時刻を取得します。
 
-2. <xref:System.TimeZoneInfo.IsAmbiguousTime%2A> メソッドを呼び出して、時刻があいまいであるかどうかを確認します。
+2. メソッドを呼び出して <xref:System.TimeZoneInfo.IsAmbiguousTime%2A> 、時刻があいまいであるかどうかを確認します。
 
-3. 時刻があいまいな場合は、<xref:System.TimeZoneInfo.GetAmbiguousTimeOffsets%2A> メソッドを呼び出して、<xref:System.TimeSpan> オブジェクトの配列を取得します。 配列の各要素には、あいまいな時刻をマップできる UTC オフセットが含まれています。
+3. 時刻があいまいな場合は、メソッドを呼び出して <xref:System.TimeZoneInfo.GetAmbiguousTimeOffsets%2A> オブジェクトの配列を取得し <xref:System.TimeSpan> ます。 配列の各要素には、あいまいな時刻をマップできる UTC オフセットが含まれています。
 
 4. ユーザーに目的のオフセットを選択させます。
 
 5. ローカル時刻からユーザーによって選択されたオフセットを減算して、UTC の日時を取得します。
 
-6. `static` (Visual Basic .NET で`Shared`) <xref:System.DateTime.SpecifyKind%2A> メソッドを呼び出して、UTC の日付と時刻の値の <xref:System.DateTime.Kind%2A> プロパティを <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>に設定します。
+6. `static`( `Shared` Visual Basic .net で) メソッドを呼び出して、 <xref:System.DateTime.SpecifyKind%2A> UTC の日付と時刻の値の <xref:System.DateTime.Kind%2A> プロパティをに設定し <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> ます。
 
 ## <a name="example"></a>例
 
@@ -44,17 +44,17 @@ ms.locfileid: "73122276"
 [!code-csharp[System.TimeZone2.Concepts#11](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#11)]
 [!code-vb[System.TimeZone2.Concepts#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#11)]
 
-この例のコードの中核となるのは、<xref:System.TimeSpan> オブジェクトの配列を使用して、UTC からのあいまいな時刻のオフセットを示すことです。 ただし、これらのオフセットは、ユーザーにとって意味がない可能性があります。 オフセットの意味を明確にするには、コードで、オフセットがローカル タイム ゾーンの標準時刻を表すか、または夏時間を表すかに注意します。 このコードでは、オフセットと <xref:System.TimeZoneInfo.BaseUtcOffset%2A> プロパティの値を比較することによって、標準の時間と夏時間の時間を決定します。 このプロパティは、UTC とタイム ゾーンの標準時間の差を示します。
+この例のコードの中核となるのは、オブジェクトの配列を使用して、 <xref:System.TimeSpan> UTC からのあいまいな時刻のオフセットを示すことです。 ただし、これらのオフセットは、ユーザーにとって意味がない可能性があります。 オフセットの意味を明確にするには、コードで、オフセットがローカル タイム ゾーンの標準時刻を表すか、または夏時間を表すかに注意します。 このコードでは、オフセットをプロパティの値と比較することによって、標準の時間と夏時間を判断し <xref:System.TimeZoneInfo.BaseUtcOffset%2A> ます。 このプロパティは、UTC とタイム ゾーンの標準時間の差を示します。
 
-この例では、ローカルタイムゾーンへのすべての参照は、<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> プロパティを使用して作成されます。ローカルタイムゾーンがオブジェクト変数に割り当てられることはありません。 これは、<xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> メソッドを呼び出すと、ローカルタイムゾーンが割り当てられているすべてのオブジェクトが無効になるため、推奨される方法です。
+この例では、ローカルタイムゾーンへのすべての参照は、プロパティを使用して行われ <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> ます。ローカルタイムゾーンは、オブジェクト変数に割り当てられることはありません。 メソッドを呼び出すと、 <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> ローカルタイムゾーンが割り当てられているオブジェクトが無効になるため、この方法をお勧めします。
 
 ## <a name="compiling-the-code"></a>コードのコンパイル
 
 この例で必要な要素は次のとおりです。
 
-- <xref:System> 名前空間は、`using` ステートメント (コードでC#必要) を使用してインポートされます。
+- <xref:System> `using` ステートメント (C# コードでは必須) を使用して名前空間をインポートする。
 
 ## <a name="see-also"></a>関連項目
 
-- [日付、時刻およびタイム ゾーン](../../../docs/standard/datetime/index.md)
-- [方法: あいまいな時刻を解決する](../../../docs/standard/datetime/resolve-ambiguous-times.md)
+- [日付、時刻、およびタイム ゾーン](index.md)
+- [方法: あいまいな時刻を解決する](resolve-ambiguous-times.md)

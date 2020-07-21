@@ -15,12 +15,12 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-ms.openlocfilehash: a4f4c0e1af379d31c5b478472780d5c7de813bf6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5327bd70b05bac8970fa9802fb15e94ba5f686c8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121934"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290059"
 ---
 # <a name="metadata-and-self-describing-components"></a>メタデータと自己言及的なコンポーネント
 
@@ -64,11 +64,11 @@ ms.locfileid: "73121934"
 
 - 属性。
 
-  .NET Framework を使用すると、コンパイル済みファイル内で "属性" と呼ばれる特定の種類のメタデータを宣言できます。 属性は、.NET Framework 全体で使用され、実行時のプログラムの動作を詳細に制御します。 また、ユーザー定義のカスタム属性によって、独自に作成したメタデータを .NET Framework のファイルに挿入できます。 詳細については、「[属性](../../docs/standard/attributes/index.md)」を参照してください。
+  .NET Framework を使用すると、コンパイル済みファイル内で "属性" と呼ばれる特定の種類のメタデータを宣言できます。 属性は、.NET Framework 全体で使用され、実行時のプログラムの動作を詳細に制御します。 また、ユーザー定義のカスタム属性によって、独自に作成したメタデータを .NET Framework のファイルに挿入できます。 詳細については、「[属性](attributes/index.md)」を参照してください。
 
 ## <a name="metadata-and-the-pe-file-structure"></a>メタデータと PE ファイルの構造
 
-メタデータと Microsoft Intermediate Language (MSIL) は、それぞれ、.NET Framework のポータブル実行可能 (PE) ファイルの別のセクションに格納されます。 ファイルのメタデータ部分には、一連のテーブルとヒープ データの構造が格納されています。 MSIL 部分には、PE ファイルのメタデータ部分を参照する MSIL とメタデータ トークンが格納されています。 コードの MSIL を表示する [MSIL 逆アセンブラー (Ildasm.exe)](../../docs/framework/tools/ildasm-exe-il-disassembler.md) のようなツールを使用すると、メタデータ トークンが表示される場合があります。
+メタデータと Microsoft Intermediate Language (MSIL) は、それぞれ、.NET Framework のポータブル実行可能 (PE) ファイルの別のセクションに格納されます。 ファイルのメタデータ部分には、一連のテーブルとヒープ データの構造が格納されています。 MSIL 部分には、PE ファイルのメタデータ部分を参照する MSIL とメタデータ トークンが格納されています。 コードの MSIL を表示する [MSIL 逆アセンブラー (Ildasm.exe)](../framework/tools/ildasm-exe-il-disassembler.md) のようなツールを使用すると、メタデータ トークンが表示される場合があります。
 
 ### <a name="metadata-tables-and-heaps"></a>メタデータのテーブルおよびヒープ
 
@@ -134,7 +134,7 @@ public class MyApp
 
 このコードを実行すると、ランタイムがモジュールをメモリに読み込み、このクラスのメタデータを調べます。 モジュールを読み込んだ後、ランタイムはメソッドの Microsoft Intermediate Language (MSIL) ストリームを詳細に分析して、そのストリームを高速のネイティブ機械語命令に変換します。 ランタイムはジャスト イン タイム (JIT) コンパイラを使用して、それぞれのメソッドを必要なときに 1 つずつ、MSIL 命令からネイティブ マシン語コードに変換します。
 
-上記のコードの `Main` 関数によって生成された MSIL の一部の例を次に示します。 MSIL とメタデータは、[MSIL 逆アセンブラー (Ildasm.exe)](../../docs/framework/tools/ildasm-exe-il-disassembler.md) を使用することにより、任意の .NET Framework アプリケーションから表示できます。
+上記のコードの `Main` 関数によって生成された MSIL の一部の例を次に示します。 MSIL とメタデータは、[MSIL 逆アセンブラー (Ildasm.exe)](../framework/tools/ildasm-exe-il-disassembler.md) を使用することにより、任意の .NET Framework アプリケーションから表示できます。
 
 ```console
 .entrypoint
@@ -157,11 +157,11 @@ JIT コンパイラはこのメソッド全体の MSIL を読み取って詳細�
 
 **メソッドが記述されているメタデータ トークンによって参照される、** MethodDef`Add` テーブルの一部の例を次の表に示します。 このアセンブリにはほかにもメタデータ テーブルが存在し、それぞれ独自の値を持っていますが、ここでは、このテーブルだけを参照します。
 
-|行|Relative Virtual Address (RVA)|ImplFlags|フラグ|name<br /><br /> (文字列ヒープを指す)|Signature (BLOB ヒープを指す)|
+|行|Relative Virtual Address (RVA)|ImplFlags|フラグ|名前<br /><br /> (文字列ヒープを指す)|Signature (BLOB ヒープを指す)|
 |---------|--------------------------------------|---------------|-----------|-----------------------------------------|----------------------------------------|
 |1|0x00002050|IL<br /><br /> マネージド|Public<br /><br /> ReuseSlot<br /><br /> SpecialName<br /><br /> RTSpecialName<br /><br /> .ctor|.ctor (コンストラクター)||
-|2|0x00002058|IL<br /><br /> マネージド|Public<br /><br /> スタティック<br /><br /> ReuseSlot|メイン|String|
-|3|0x0000208c|IL<br /><br /> マネージド|Public<br /><br /> スタティック<br /><br /> ReuseSlot|追加|int, int, int|
+|2|0x00002058|IL<br /><br /> マネージド|Public<br /><br /> Static<br /><br /> ReuseSlot|メイン|String|
+|3|0x0000208c|IL<br /><br /> マネージド|Public<br /><br /> Static<br /><br /> ReuseSlot|追加|int, int, int|
 
 このテーブルの各列には、コードについての重要な情報が格納されています。 ランタイムは **RVA** 列を使用して、このメソッドを定義する MSIL の開始メモリ アドレスを計算します。 **ImplFlags** および **Flags** 列には、このメソッドを記述するビットマスク (たとえば、メソッドがパブリックかプライベートかを記述するビットマスク) が格納されています。 **Name** 列は、文字列ヒープからメソッドの名前へのインデックスとなります。 **Signature** 列は、BLOB ヒープ内のメソッドのシグネチャ定義へのインデックスとなります。
 
@@ -173,4 +173,4 @@ JIT コンパイラはこのメソッド全体の MSIL を読み取って詳細�
 
 |Title|説明|
 |-----------|-----------------|
-|[属性](../../docs/standard/attributes/index.md)|属性の適用方法、カスタム属性の記述方法、および属性に格納されている情報の取得方法を説明します。|
+|[属性](attributes/index.md)|属性の適用方法、カスタム属性の記述方法、および属性に格納されている情報の取得方法を説明します。|

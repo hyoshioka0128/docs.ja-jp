@@ -5,10 +5,10 @@ ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
 ms.openlocfilehash: 12093e9c9246c87cc5ea3aedaca6ba34acacce4d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73036993"
 ---
 # <a name="expression-trees-explained"></a>式ツリーの説明
@@ -70,4 +70,4 @@ var finalAnswer = this.SecretSauceFunction(
 
 実行できないことの 1 つが式ツリーの変更です。  式ツリーは不変のデータ構造です。 式ツリーを変更するには、元の式ツリーのコピーに変更を加えた新しいツリーを作成する必要があります。
 
-[次回 -- 式ツリーをサポートするフレームワークの型](expression-classes.md)
+[次へ -- 式ツリーをサポートするフレームワークの型](expression-classes.md)

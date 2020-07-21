@@ -3,10 +3,10 @@ title: 式ツリーを実行する方法 (C#)
 ms.date: 07/20/2015
 ms.assetid: b8c40db5-2464-4bb9-9001-8c2bc7f006c5
 ms.openlocfilehash: e7d408ea154572dc8b45d2e67bca3f05837868d2
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73969891"
 ---
 # <a name="how-to-execute-expression-trees-c"></a>式ツリーを実行する方法 (C#)
@@ -46,7 +46,7 @@ Console.WriteLine(result);
   
 - System.Linq.Expressions 名前空間をインクルードします。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [式ツリー (C#)](./index.md)
 - [式ツリーを変更する方法 (C#)](./how-to-modify-expression-trees.md)

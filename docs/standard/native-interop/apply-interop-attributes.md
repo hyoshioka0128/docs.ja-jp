@@ -1,5 +1,6 @@
 ---
 title: 相互運用固有の属性の適用
+description: この記事では、System.Runtime.InteropServices 名前空間の COM 相互運用属性の概要を示します。これには、デザイン時および変換ツールの属性が含まれます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - design-time attributes
@@ -13,17 +14,17 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: 78f89c3c8784467d3ec396106de7bbb34a2022f6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: f9ccf59e52c1ef27649cd70a57f7b24bb5a8e9bf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121952"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291332"
 ---
 # <a name="applying-interop-attributes"></a>相互運用固有の属性の適用
 <xref:System.Runtime.InteropServices> 名前空間では、デザイン時にユーザーが適用する属性、変換処理中に COM 相互運用ツールおよび API によって適用される属性、ユーザーまたは COM 相互運用機能によって適用される属性という 3 つのカテゴリの相互運用固有の属性が提供されます。  
   
- マネージド コードに属性を適用する作業に慣れていない場合は、「[属性を使用したメタデータの拡張](../../../docs/standard/attributes/index.md)」を参照してください。 他のカスタム属性の場合と同様に、相互運用固有の属性は、型、メソッド、プロパティ、パラメーター、フィールド、およびその他のメンバーに対して適用できます。  
+ マネージド コードに属性を適用する作業に慣れていない場合は、「[属性を使用したメタデータの拡張](../attributes/index.md)」を参照してください。 他のカスタム属性の場合と同様に、相互運用固有の属性は、型、メソッド、プロパティ、パラメーター、フィールド、およびその他のメンバーに対して適用できます。  
   
 ## <a name="design-time-attributes"></a>デザイン時属性  
  COM 相互運用ツールおよび API によって実行された変換処理の結果を調整するには、デザイン時属性を使用します。 マネージド ソース コードに適用できる属性の説明を次の表に示します。 COM 相互運用ツールで、この表に示す属性を適用できる場合もあります。  
@@ -38,8 +39,8 @@ ms.locfileid: "73121952"
 |<xref:System.Runtime.InteropServices.ComSourceInterfacesAttribute>|クラスのイベントの発生元になるインターフェイスを識別します。<br /><br /> COM 相互運用ツールでは、この属性を適用できます。|  
 |<xref:System.Runtime.InteropServices.ComUnregisterFunctionAttribute>|アセンブリが COM から登録解除されるときにメソッドが呼び出されるようにします。これで、処理中にユーザー作成コードを実行できます。|  
 |<xref:System.Runtime.InteropServices.ComVisibleAttribute>|属性値が **false** の場合、型は COM から参照できなくなります。 この属性は、COM の参照可能範囲を制御するために、個別の型またはアセンブリ全体に適用できます。 既定では、すべてのパブリックなマネージド型は参照可能なので、この属性でこれらの型を参照可能にする必要はありません。|  
-|<xref:System.Runtime.InteropServices.DispIdAttribute>|メソッドまたはフィールドの COM ディスパッチ識別子 (DISPID) を指定します。 この属性には、対象のメソッド、フィールド、またはプロパティの DISPID が含まれています。<br /><br /> COM 相互運用ツールでは、この属性を適用できます。| 
-|<xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute>|.NET で実装されている COM クラスの既定のインターフェイスを示します。<br /><br /> COM 相互運用ツールでは、この属性を適用できます。|
+|<xref:System.Runtime.InteropServices.DispIdAttribute>|メソッドまたはフィールドの COM ディスパッチ識別子 (DISPID) を指定します。 この属性には、対象のメソッド、フィールド、またはプロパティの DISPID が含まれています。<br /><br /> COM 相互運用ツールでは、この属性を適用できます。|
+|<xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute>|.NET に実装されている COM クラスの既定のインターフェイスを示します。<br /><br /> COM 相互運用ツールでは、この属性を適用できます。|
 |<xref:System.Runtime.InteropServices.FieldOffsetAttribute>|**StructLayoutAttribute** と共に使用される場合は、クラス内の各フィールドの物理的位置を示します。**LayoutKind** は Explicit に設定されます。|  
 |<xref:System.Runtime.InteropServices.GuidAttribute>|クラス、インターフェイス、またはタイプ ライブラリ全体のグローバル一意識別子 (GUID) を指定します。 属性に渡される文字列は、**System.Guid** 型の受け入れ可能なコンストラクター引数の形式である必要があります。<br /><br /> COM 相互運用ツールでは、この属性を適用できます。|  
 |<xref:System.Runtime.InteropServices.IDispatchImplAttribute>|COM にデュアル インターフェイスやディスパッチ インターフェイスを公開するときに、共通言語ランタイムで使用する **IDispatch** インターフェイスの実装の種類を示します。|  
@@ -69,7 +70,7 @@ ms.locfileid: "73121952"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Runtime.InteropServices>
-- [COM への .NET Framework コンポーネントの公開](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
-- [属性](../../../docs/standard/attributes/index.md)
-- [要件 (相互運用のための .NET 型の)](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)
-- [COM 用の .NET Framework アセンブリのパッケージ化](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+- [COM への .NET Framework コンポーネントの公開](../../framework/interop/exposing-dotnet-components-to-com.md)
+- [属性](../attributes/index.md)
+- [要件 (相互運用のための .NET 型の)](qualify-net-types-for-interoperation.md)
+- [COM 用の .NET Framework アセンブリのパッケージ化](../../framework/interop/packaging-an-assembly-for-com.md)

@@ -5,10 +5,10 @@ ms.date: 10/15/2019
 ms.topic: conceptual
 ms.custom: mvc
 ms.openlocfilehash: 653f355d09a045feabb3dee0f5737cb691cf2dc4
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73458169"
 ---
 # <a name="what-is-apache-spark"></a>Apache Spark とは
@@ -23,10 +23,10 @@ ms.locfileid: "73458169"
 
 [抽出、変換、読み込み (ETL)](/azure/architecture/data-guide/relational-data/etl) は、1 つまたは複数のソースからデータを収集し、データを変更し、データを新しいデータ ストアに移動するプロセスです。 データの変換にはいくつかの方法があります。
 
-* フィルター処理
+* Filtering
 * 並べ替え
 * 集計
-* 結合
+* 参加
 * 消去
 * 重複除去
 * Validating
@@ -73,7 +73,7 @@ Apache Spark では、マスター/ワーカー アーキテクチャが利用�
 * プログラム分割を管理する
 * プログラム実行を管理する
 
-## <a name="language-support"></a>言語サポート
+## <a name="language-support"></a>言語のサポート
 
 Apache Spark では、次のプログラミング言語がサポートされています。
 
@@ -94,7 +94,7 @@ Apache Spark では次の API がサポートされています。
 * [Spark R API](https://spark.apache.org/docs/2.2.0/api/R/index.html)
 * [Spark SQL](https://spark.apache.org/docs/latest/api/sql/index.html)、組み込み関数
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 自分の .NET アプリケーションで Apache Spark を使用する方法について学習します。 .NET の経験がある開発者は、ビジネス ロジックが与えられたとき、.NET for Apache Spark を利用し、C# と F# でビッグ データ クエリを記述できます。
 > [!div class="nextstepaction"]

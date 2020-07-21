@@ -1,5 +1,6 @@
 ---
-title: Windows フォーム DataGridView コントロールの列フィル モード
+title: DataGridView コントロールの列の塗りつぶしモード
+description: '[列フィル] モードの Windows フォーム DataGridView コントロールが、使用可能な表示領域の幅に合わせて列のサイズを自動的に変更する方法について説明します。'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], column fill mode
 - data grids [Windows Forms], column fill mode
 ms.assetid: b4ef7411-ebf4-4e26-bb33-aecec90de80c
-ms.openlocfilehash: f9eb45e9b96ccb97938c7396d177ccedbea329e6
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 766a58954250d78ce6e44404730332b3158e1fad
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590374"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622823"
 ---
 # <a name="column-fill-mode-in-the-windows-forms-datagridview-control"></a>Windows フォーム DataGridView コントロールの列フィル モード
 列フィル モードでは、<xref:System.Windows.Forms.DataGridView> コントロールの列は、コントロールの表示領域の幅を満たすように自動的にサイズ変更されます。 すべての列の幅を <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> プロパティの値以上にするために水平スクロール バーが必要な場合を除き、コントロールに水平スクロール バーは表示されません。  
@@ -42,7 +43,7 @@ ms.locfileid: "65590374"
  [!code-csharp[System.Windows.Forms.DataGridViewFillColumnsDemo#00](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/CS/fillcolumns.cs#00)]
  [!code-vb[System.Windows.Forms.DataGridViewFillColumnsDemo#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/vb/fillcolumns.vb#00)]  
   
-### <a name="comments"></a>コメント  
+### <a name="comments"></a>説明  
  このデモ アプリケーションは、次のようにして使用します。  
   
 - フォームのサイズを変更します。 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> プロパティの値で示される比率が維持されたまま、列の幅が変わることを確認します。  

@@ -1,5 +1,5 @@
 ---
-title: '方法: ファイルをアップロードする'
+title: '方法 : ファイルをアップロードする'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - networks, uploading files
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - UploadFile method [Visual Basic]
 - My.Computer.Network.UploadFile method
 ms.assetid: a8b37924-c523-4fd3-b5ca-cb0074df29cd
-ms.openlocfilehash: 52b731606c74ab7ff06a42dfdbe078616ba33d88
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: cee6811d6b6d295c28eb683c5d2f7bcbb5fe94ab
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345553"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401811"
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a>方法: Visual Basic でファイルをアップロードする
 
@@ -47,9 +47,9 @@ ms.locfileid: "74345553"
   
 - 接続がタイムアウトしました (<xref:System.TimeoutException>)。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>
-- [方法: ファイルをダウンロードする](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)
-- [方法: ファイル パスを解析する](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [方法 : ファイルをダウンロードする](how-to-download-a-file.md)
+- [方法: ファイル パスを解析する](../drives-directories-files/how-to-parse-file-paths.md)

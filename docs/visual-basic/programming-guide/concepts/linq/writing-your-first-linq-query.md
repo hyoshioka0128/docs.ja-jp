@@ -6,33 +6,33 @@ helpviewer_keywords:
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: a9fe4241972815a04ec9c6a51a45760d72a8bbb2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 9d85f9c0390a659e59e372ad949cffdd17715189
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349345"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413259"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>初めての LINQ クエリの作成 (Visual Basic)
-"*クエリ*" は、データ ソースからデータを取得する式です。 クエリは専用のクエリ言語で表現されます。 時間の経過と共に、さまざまな種類のデータソースに対してさまざまな言語が開発されています。たとえば、リレーショナルデータベース用の SQL や XML 用の XQuery などです。 これにより、アプリケーション開発者は、サポートされているデータソースの種類やデータ形式ごとに新しいクエリ言語を習得する必要があります。  
+"*クエリ*" は、データ ソースからデータを取得する式です。 クエリは、専用のクエリ言語で表されます。 これまでに、リレーショナル データベース用の SQL や XML 用の XQuery など、各種データ ソースに合わせてさまざまな言語が開発されてきました。 このため、アプリケーション開発者は、サポートするデータ ソースの種類やデータ形式ごとに、新しいクエリ言語を習得する必要がありました。  
   
- [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] は、さまざまな種類のデータソースと形式でデータを操作するための一貫したモデルを提供することで、状況を単純化します。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリでは、操作の対象は常にオブジェクトになります。 同じ基本的なコーディングパターンを使用して、XML ドキュメント、SQL データベース、ADO.NET データセットとエンティティ、.NET Framework コレクション、および [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーが使用可能なその他のソースまたは形式のデータのクエリと変換を行います。 このドキュメントでは、基本的な [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリの作成と使用に関する3つのフェーズについて説明します。  
+ 統合言語クエリ (LINQ) は、さまざまな種類のデータ ソースやデータ形式のデータを操作するための一貫したモデルを提供することにより、この負担を軽減します。 LINQ クエリでは、操作の対象は常にオブジェクトになります。 共通の基本的なコーディング パターンを使用することで、XML ドキュメント、SQL データベース、ADO.NET データセットおよびエンティティ、.NET Framework のコレクションなど、LINQ プロバイダーを利用できるあらゆるソースまたは形式のデータを照会したり変換したりすることができます。 このドキュメントでは、基本的な LINQ クエリの作成と使用の 3 つのフェーズについて説明しています。  
   
-## <a name="three-stages-of-a-query-operation"></a>クエリ操作の3つの段階  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] のクエリ操作は、次の3つのアクションで構成されます。  
+## <a name="three-stages-of-a-query-operation"></a>クエリ操作の 3 つのステージ  
+ LINQ クエリ操作はすべて、次の 3 つのアクションで構成されます。  
   
-1. データソースを取得します。  
+1. データ ソースまたはソースを取得します。  
   
 2. クエリを作成します。  
   
 3. クエリを実行します。  
   
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]では、クエリの実行はクエリの作成とは異なります。 クエリを作成するだけでは、データを取得しません。 この点については、後で詳しく説明します。  
+ LINQ では、クエリの実行とクエリの作成が区別されます。 クエリを作成するだけでは、データは取得されません。 この点については、後で詳しく説明します。  
   
- 次の例では、クエリ操作の3つの部分について説明します。 この例では、デモンストレーション用の便利なデータソースとして整数の配列を使用します。 ただし、同じ概念が他のデータソースにも適用されます。  
+ 以下の例は、クエリ操作を構成する 3 つの要素を示しています。 この例では、デモンストレーション用に便利なデータ ソースとして整数の配列を使用しています。 ただし同じ概念は、他のデータ ソースにも当てはまります。  
   
 > [!NOTE]
-> [[コンパイル] ページのプロジェクトデザイナー (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)で、[**推定]** が **[オン**] に設定されていることを確認します。  
+> [プロジェクト デザイナー (Visual Basic) の [コンパイル] ページ](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)で、 **[Option infer]** が **[On]** に設定されていることを確認します。  
   
  [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
@@ -41,15 +41,15 @@ ms.locfileid: "74349345"
  `0 2 4 6`  
   
 ## <a name="the-data-source"></a>データ ソース  
- 前の例のデータソースは配列であるため、ジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスを暗黙的にサポートしています。 これは、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリのデータソースとして配列を使用できるようにするためのものです。 <xref:System.Collections.Generic.IEnumerable%601> をサポートする型や、ジェネリック <xref:System.Linq.IQueryable%601> などの派生インターフェイスは、*クエリ可能型*と呼ばれます。  
+ 前の例では、データ ソースが配列であるため、暗黙的にジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスがサポートされます。 配列を LINQ クエリのデータ ソースとして使用できるのは、そのためです。 <xref:System.Collections.Generic.IEnumerable%601> をサポートする型や、ジェネリック <xref:System.Linq.IQueryable%601> などの派生インターフェイスは、*クエリ可能型*と呼ばれます。  
   
- 暗黙的にクエリ可能な型として、配列は [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データソースとして機能するための変更や特別な処理を必要としません。 これは、<xref:System.Collections.Generic.IEnumerable%601>をサポートする任意のコレクション型 (ジェネリック <xref:System.Collections.Generic.List%601>、<xref:System.Collections.Generic.Dictionary%602>、および .NET Framework クラスライブラリ内のその他のクラスを含む) にも当てはまります。  
+ 配列は、暗黙的なクエリ可能型として、変更や特別な処理を行わなくても、LINQ データ ソースとして使用できます。 同じことは、ジェネリックである <xref:System.Collections.Generic.List%601> や <xref:System.Collections.Generic.Dictionary%602>、その他 .NET Framework クラス ライブラリのクラスなど、<xref:System.Collections.Generic.IEnumerable%601> をサポートするすべてのコレクション型に言えます。  
   
- ソースデータに <xref:System.Collections.Generic.IEnumerable%601>がまだ実装されていない場合は、そのデータソースの*標準クエリ演算子*の機能を実装するために [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーが必要になります。 たとえば、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] は、次の例に示すように、クエリ可能な <xref:System.Xml.Linq.XElement> 型に XML ドキュメントを読み込む作業を処理します。 標準クエリ演算子の詳細については、「[標準クエリ演算子の概要 (Visual Basic)](standard-query-operators-overview.md)」を参照してください。  
+ ソース データにまだ <xref:System.Collections.Generic.IEnumerable%601> が実装されていない場合、そのデータ ソースに "*標準クエリ演算子*" の機能を実装するためには、LINQ プロバイダーが必要となります。 たとえば、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] は、XML ドキュメントを、クエリ可能な <xref:System.Xml.Linq.XElement> 型に読み込む処理を担います (以下の例を参照)。 標準クエリ演算子について詳しくは、「[標準クエリ演算子の概要 (Visual Basic)](standard-query-operators-overview.md)」を参照してください。  
   
  [!code-vb[VbLINQFirstQuery#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#2)]  
   
- [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]では、最初に、手動で、または visual studio の[Visual studio の LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)を使用して、デザイン時にオブジェクトリレーショナルマッピングを作成します。 オブジェクトに対するクエリを記述すると、実行時には、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] によってデータベースとの通信が処理されます。 次の例では、`customers` はデータベース内の特定のテーブルを表し、<xref:System.Data.Linq.Table%601> は汎用 <xref:System.Linq.IQueryable%601>をサポートしています。  
+ [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] では、まず、デザイン時に手動で、または Visual Studioで [Visual Studio の LINQ to SQL ツール](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)を使用して、オブジェクト リレーショナル マッピングを作成します。 オブジェクトに対するクエリを記述すると、実行時には、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] によってデータベースとの通信が処理されます。 次の例の `customers` は、データベース内の特定のテーブルを表し、<xref:System.Data.Linq.Table%601> はジェネリックの <xref:System.Linq.IQueryable%601> をサポートします。  
   
 ```vb  
 ' Create a data source from a SQL table.  
@@ -57,33 +57,33 @@ Dim db As New DataContext("C:\Northwind\Northwnd.mdf")
 Dim customers As Table(Of Customer) = db.GetTable(Of Customer)  
 ```  
   
- それぞれの種類のデータ ソースを作成する方法の詳細については、対応する [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] プロバイダーのドキュメントを参照してください。 (これらのプロバイダーの一覧については、「 [LINQ (統合言語クエリ)](../../../../visual-basic/programming-guide/concepts/linq/index.md)」を参照してください)。基本的な規則は単純です。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データソースは、ジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスをサポートする任意のオブジェクト、またはそれを継承するインターフェイスです。  
+ それぞれの種類のデータ ソースを作成する方法の詳細については、対応する LINQ プロバイダーのドキュメントを参照してください。 (該当するプロバイダーの一覧については、[LINQ (統合言語クエリ)](index.md) に関するページを参照してください)。基本的な規則は単純です。LINQ データ ソースは、ジェネリック <xref:System.Collections.Generic.IEnumerable%601> インターフェイスか、これを継承するインターフェイスをサポートする任意のオブジェクトです。  
   
 > [!NOTE]
-> 非ジェネリック <xref:System.Collections.IEnumerable> インターフェイスをサポートする <xref:System.Collections.ArrayList> などの型は、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] データソースとしても使用できます。 <xref:System.Collections.ArrayList>を使用する例については、「[方法: LINQ を使用して ArrayList をクエリする (Visual Basic)](how-to-query-an-arraylist-with-linq.md)」を参照してください。  
+> 非ジェネリック <xref:System.Collections.IEnumerable> インターフェイスをサポートする <xref:System.Collections.ArrayList> などの型も、LINQ データ ソースとして使用できます。 <xref:System.Collections.ArrayList> の使用例については、「[方法: LINQ を使用して ArrayList を照会する (Visual Basic)](how-to-query-an-arraylist-with-linq.md)」を参照してください。  
   
 ## <a name="the-query"></a>クエリ  
- このクエリでは、データソースから取得する情報を指定します。 また、返される前に、その情報を並べ替え、グループ化、または構造化する方法を指定することもできます。 クエリの作成を有効にするために、Visual Basic は新しいクエリ構文を言語に組み込みました。  
+ クエリには、データ ソースまたはソースから取得したい情報を指定します。 また、どのように情報を並べ替え、グループ化、または構造化して返されるようにするかをオプションで指定することもできます。 Visual Basic 言語には、クエリの作成に対応するために、新しいクエリ構文が導入されています。  
   
- 次の例のクエリを実行すると、整数配列のすべての偶数が返されます (`numbers`)。  
+ 次の例のクエリを実行すると、整数の配列 `numbers` からすべての偶数が返されます。  
   
  [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
- クエリ式には、`From`、`Where`、および `Select`の3つの句が含まれています。 各クエリ式句の特定の関数と目的については、 [「基本的なクエリ操作 (Visual Basic)](basic-query-operations.md)」で説明されています。 詳細については、「[クエリ](../../../../visual-basic/language-reference/queries/index.md)」を参照してください。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]では、多くの場合、クエリ定義は変数に格納され、後で実行されることに注意してください。 前の例の `evensQuery` などのクエリ変数は、クエリ可能な型である必要があります。 `evensQuery` の型が `IEnumerable(Of Integer)`、ローカル型推論を使用してコンパイラによって割り当てられています。  
+ このクエリ式には、`From`、`Where`、`Select` の 3 つの句が含まれています。 クエリ式の各句の具体的な関数と目的は、「[基本的なクエリ操作 (Visual Basic)](basic-query-operations.md)」で説明しています。 詳細については、「[クエリ](../../../language-reference/queries/index.md)」を参照してください。 LINQ では多くの場合、クエリの定義はまず変数に格納され、その後実行されます。 前の例の `evensQuery` のように、クエリ変数はクエリ可能型であることが必要です。 `evensQuery` の型は `IEnumerable(Of Integer)` で、コンパイラによってローカル型推論を使用して割り当てられます。  
   
- クエリ変数自体は何も処理を行わず、データを返さないことに注意する必要があります。 クエリ定義だけが格納されます。 前の例では、クエリを実行する `For Each` ループです。  
+ クエリ変数自体は何も処理を行わず、データを返さないという点に注意してください。 あくまでクエリの定義が格納されるだけです。 前の例で、クエリを実行するのは `For Each` ループです。  
   
 ## <a name="query-execution"></a>クエリの実行  
- クエリの実行は、クエリの作成とは別のものです。 クエリの作成ではクエリを定義しますが、実行は別のメカニズムによってトリガーされます。 クエリは、定義直後 (*即時実行*) に実行することも、定義を保存し、後でクエリを実行することもできます (*遅延実行*)。  
+ クエリの実行とクエリの作成は分離しています。 クエリを作成することによってクエリは定義されますが、その実行をトリガーするのは別のメカニズムになります。 クエリは、定義後すぐに実行 ("*即時実行*)" することも、定義を保存しておき、後でクエリを実行 ("*遅延実行*") することもできます。  
   
 ### <a name="deferred-execution"></a>遅延実行  
- 一般的な [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリは、`evensQuery` が定義されている前の例のクエリに似ています。 クエリは作成されますが、すぐには実行されません。 代わりに、クエリ定義は `evensQuery`クエリ変数に格納されます。 後でクエリを実行します。通常は、値のシーケンスを返す `For Each` ループを使用するか、`Count` や `Max`などの標準クエリ演算子を適用します。 このプロセスを*遅延実行*と呼びます。  
+ 一般的な LINQ クエリは、前の例のようなものです。前の例には `evensQuery` が定義されています。 クエリは作成されても、すぐには実行されません。 その代わりに、クエリ変数 `evensQuery` にクエリの定義が格納されます。 通常は、一連の値を返す `For Each` ループを使用するか、標準クエリ演算子 (`Count`、`Max` など) を適用することによって、クエリを後から実行することになります。 この処理を "*遅延実行*" と呼びます。  
   
  [!code-vb[VbLINQFirstQuery#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#7)]  
   
- 値のシーケンスの場合は、`For Each` ループの繰り返し変数 (前の例では`number`) を使用して、取得したデータにアクセスします。 クエリ変数 `evensQuery`では、クエリの結果ではなくクエリの定義が保持されるので、クエリ変数を複数回使用して、クエリを必要なだけ実行することができます。 たとえば、アプリケーション内に、別のアプリケーションによって継続的に更新されるデータベースがあるとします。 そのデータベースからデータを取得するクエリを作成したら、`For Each` ループを使用してクエリを繰り返し実行し、毎回最新のデータを取得することができます。  
+ 一連の値を得るには、`For Each` ループの反復変数 (前の例では `number`) を使用して、取得したデータにアクセスします。 クエリ変数 `evensQuery` が保持するのはクエリの結果ではなくクエリの定義であるため、繰り返しクエリ変数を使用することで、必要に応じて何度でもクエリを実行できます。 たとえばアプリケーションに使用しているデータベースが、別のアプリケーションによって絶えず更新されているとします。 データベースからデータを取得するクエリを作成しておき、`For Each` ループを使用して繰り返しクエリを実行すれば、毎回最新のデータを取得できます。  
   
- 次の例は、遅延実行のしくみを示しています。 前の例のように、`evensQuery2` を定義して実行 `For Each` すると、データソース `numbers` 内の一部の要素が変更されます。 次に、2番目の `For Each` ループが `evensQuery2` 実行されます。 `For Each` ループでは `numbers`の新しい値を使用してクエリが再実行されるため、結果は2回目に異なります。  
+ 以下の例は、遅延実行の動作を示したものです。 まず、前の例のように `evensQuery2` を定義し、`For Each` ループで実行した後、データ ソース `numbers` 内のいくつかの要素に変更を加えています。 その後、2 つ目の `For Each` ループで `evensQuery2` を再実行します。 `For Each` ループでクエリを再実行するときは、`numbers` 内の新しい値が使用されるため、2 回目は異なる結果が得られます。  
   
  [!code-vb[VbLINQFirstQuery#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#3)]  
   
@@ -98,31 +98,31 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  `0  10  2  22  8`  
   
 ### <a name="immediate-execution"></a>即時実行  
- クエリの遅延実行では、クエリ定義は、後で実行するためにクエリ変数に格納されます。 即時実行では、クエリは定義時に実行されます。 クエリ結果の個々の要素へのアクセスを必要とするメソッドを適用すると、実行がトリガーされます。 即時実行は、通常、単一の値を返す標準クエリ演算子の1つを使用することによって強制されます。 例として、`Count`、`Max`、`Average`、および `First`があります。 これらの標準クエリ演算子は、シングルトンの結果を計算して返すために、適用されるとすぐにクエリを実行します。 単一の値を返す標準クエリ演算子の詳細については、「[集計操作](aggregation-operations.md)、[要素の操作](element-operations.md)、および[量指定子の操作](quantifier-operations.md)」を参照してください。  
+ クエリの遅延実行では、クエリの定義がクエリ変数に格納され、後から実行されます。 即時実行では、クエリがその定義時に実行されます。 クエリ結果の個々の要素にアクセスする必要があるメソッドを適用したときに、実行がトリガーされます。 即時実行は多くの場合、単一の値を返すいずれかの標準クエリ演算子を使用することで強制的に発生します。 たとえば、`Count`、`Max`、`Average`、`First` が該当します。 これらの標準クエリ演算子では、シングルトンの結果を算出して返すために、適用された時点ですぐにクエリが実行されます。 単一の値を返す標準クエリ演算子の詳細については、「[集計操作](aggregation-operations.md)」、「[要素の操作](element-operations.md)」、「[量指定子操作](quantifier-operations.md)」を参照してください。  
   
- 次のクエリでは、整数の配列に含まれる偶数の数が返されます。 クエリ定義は保存されず、`numEvens` は単純な `Integer`です。  
+ 次のクエリからは、整数の配列に格納されている偶数の数が返されます。 クエリの定義は保存されません。`numEvens` は単純な `Integer` です。  
   
  [!code-vb[VbLINQFirstQuery#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#4)]  
   
- `Aggregate` メソッドを使用すると、同じ結果を得ることができます。  
+ 同じ結果は、`Aggregate` メソッドを使用して取得することもできます。  
   
  [!code-vb[VbLINQFirstQuery#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#5)]  
   
- また、次のコードに示すように、クエリ (イミディエイト) またはクエリ変数 (遅延) で `ToList` または `ToArray` メソッドを呼び出すことによって、クエリの実行を強制することもできます。  
+ 次のコードに示すとおり、クエリ (即時) またはクエリ変数 (遅延) の `ToList` メソッドまたは `ToArray` メソッドを呼び出すことによって、クエリの実行を強制することもできます。  
   
  [!code-vb[VbLINQFirstQuery#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#6)]  
   
- 前の例では、`evensQuery3` はクエリ変数ですが、`evensList` はリストであり、`evensArray` は配列です。  
+ 前の例で、`evensQuery3` はクエリ変数ですが、`evensList` はリストで、`evensArray` は配列です。  
   
- `ToList` または `ToArray` を使用して即時実行を強制するのは、クエリをすぐに実行し、結果を単一のコレクションオブジェクトにキャッシュする場合に特に便利です。 これらのメソッドの詳細については、「[データ型の変換](converting-data-types.md)」を参照してください。  
+ `ToList` または `ToArray` を使用して即時実行を強制する手法は、クエリを直ちに実行してその結果を単一のコレクション オブジェクトにキャッシュしておくようなシナリオで特に便利です。 これらのメソッドの詳細については、「[データ型の変換](converting-data-types.md)」を参照してください。  
   
- また、<xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A> メソッドなどの `IEnumerable` メソッドを使用してクエリを実行することもできます。  
+ また、`IEnumerable` メソッド (<xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A> メソッドなど) を使用してクエリの実行を生じさせることもできます。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [Visual Basic の LINQ の概要](getting-started-with-linq.md)
-- [ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [ローカル型の推論](../../language-features/variables/local-type-inference.md)
 - [標準クエリ演算子の概要 (Visual Basic)](standard-query-operators-overview.md)
-- [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [クエリ](../../../../visual-basic/language-reference/queries/index.md)
+- [Visual Basic における LINQ の概要](../../language-features/linq/introduction-to-linq.md)
+- [LINQ](../../language-features/linq/index.md)
+- [クエリ](../../../language-reference/queries/index.md)

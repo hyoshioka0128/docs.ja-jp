@@ -1,5 +1,6 @@
 ---
-title: '方法 : バインディング ソースを指定する'
+title: '方法: バインディング ソースを指定する'
+description: この例では、Windows Presentation Foundation (WPF) でバインディング ソースを指定する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +10,13 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 55d47757-2648-4a52-987f-b767953f168c
-ms.openlocfilehash: 4fde66b22bac6b4a2cfeb4eceb50027daadee387
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: 02f27da007ebe8c5985f91b83adfba7d3d00219a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454369"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621666"
 ---
-# <a name="how-to-specify-the-binding-source"></a>方法 : バインディング ソースを指定する
+# <a name="how-to-specify-the-binding-source"></a>方法: バインディング ソースを指定する
 データ バインディングでは、バインド ソース オブジェクトとは、そこからデータを取得するオブジェクトを指します。 このトピックでは、バインド ソースを指定するさまざまな方法について説明します。  
   
 ## <a name="example"></a>例  
@@ -37,9 +37,9 @@ ms.locfileid: "73454369"
   
  個々のバインドでソースを明示的に指定する場合は、次のオプションを使用できます。 これらは、継承されたデータ コンテキストに優先します。  
   
-|property|説明|  
+|プロパティ|説明|  
 |--------------|-----------------|  
-|<xref:System.Windows.Data.Binding.Source%2A>|オブジェクトのインスタンスにソースを設定するには、このプロパティを使用します。 複数のプロパティが同じデータコンテキストを継承するスコープを確立する機能が必要ない場合は、`DataContext` プロパティの代わりに <xref:System.Windows.Data.Binding.Source%2A> プロパティを使用できます。 詳細については、「<xref:System.Windows.Data.Binding.Source%2A>」を参照してください。|  
+|<xref:System.Windows.Data.Binding.Source%2A>|オブジェクトのインスタンスにソースを設定するには、このプロパティを使用します。 複数のプロパティが同じデータ コンテキストを継承するスコープを確立する機能が不要な場合は、`DataContext` プロパティの代わりに <xref:System.Windows.Data.Binding.Source%2A> プロパティを使用できます。 詳細については、「<xref:System.Windows.Data.Binding.Source%2A>」を参照してください。|  
 |<xref:System.Windows.Data.Binding.RelativeSource%2A>|これは、バインディング ターゲットの場所を基準としてソースを指定する場合に便利です。 このプロパティを使用できる一般的なシナリオとして、要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合や、スタイルまたはテンプレート内のバインドを定義する場合があります。 詳細については、「<xref:System.Windows.Data.Binding.RelativeSource%2A>」を参照してください。|  
 |<xref:System.Windows.Data.Binding.ElementName%2A>|バインド先の要素を表す文字列を指定します。 これは、アプリケーションの別の要素のプロパティにバインドする場合に便利です。 たとえば、<xref:System.Windows.Controls.Slider> を使用してアプリケーション内の別のコントロールの高さを制御する場合、またはコントロールの <xref:System.Windows.Controls.ContentControl.Content%2A> を <xref:System.Windows.Controls.ListBox> コントロールの <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> プロパティにバインドする場合などです。 詳細については、「<xref:System.Windows.Data.Binding.ElementName%2A>」を参照してください。|  
   

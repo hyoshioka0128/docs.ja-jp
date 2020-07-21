@@ -1,22 +1,22 @@
 ---
-title: Permutation Feature Importance を使用したモデル予測の説明
+title: Permutation Feature Importance を使用して ML.NET モデルを解釈する
 description: ML.NET の Permutation Feature Importance を使ってモデルの特徴の重要度を理解する
-ms.date: 08/29/2019
+ms.date: 01/30/2020
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 4bad8b0ed17a34ba290bf9c00d65cc3f000a2acf
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ed0d6736f1f2e988d96a397cad77a7fc743489da
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976680"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174232"
 ---
-# <a name="explain-model-predictions-using-permutation-feature-importance"></a>Permutation Feature Importance を使用してモデル予測を説明する
+# <a name="interpret-model-predictions-using-permutation-feature-importance"></a>Permutation Feature Importance を使用してモデル予測を解釈する
 
-Permutation Feature Importance (PFI) を使用した予測に対する特徴のコントリビューションを理解して、ML.NET の機械学習モデル予測を説明する方法について学習します。
+Permutation Feature Importance (PFI) を使用して、ML.NET 機械学習モデルの予測を解釈する方法について学習します。 PFI によって、各特徴がもたらす予測への相対的な貢献度が示されます。
 
-機械学習モデルは、入力を受け取り、出力を生成するブラック ボックスと考えられることがよくあります。 出力に影響する中間手順や特徴間の相互作用は、あまり理解されていません。 医療など、日常生活の多くの側面に機械学習が導入されるにつれて、機械学習モデルが決定を下す理由を理解することの重要度が最も高くなりました。 たとえば、機械学習モデルによって診断が行われる場合、医療従事者には、その診断が下された要因を調べる方法が必要です。 適切な診断を提供することは、患者が迅速に回復するかどうかに大きな違いをもたらす可能性があります。 そのため、モデル内の説明可能性のレベルが高いほど、モデルによって行われた決定を医療従事者が承認または拒否する必要がある場合の信頼性が高くなります。
+機械学習モデルは、入力を受け取り、出力を生成する不透明なボックスと考えられることがよくあります。 出力に影響する中間手順や特徴間の相互作用は、あまり理解されていません。 医療など、日常生活の多くの側面に機械学習が導入されるにつれて、機械学習モデルが決定を下す理由を理解することの重要度が最も高くなりました。 たとえば、機械学習モデルによって診断が行われる場合、医療従事者には、その診断が下された要因を調べる方法が必要です。 適切な診断を提供することは、患者が迅速に回復するかどうかに大きな違いをもたらす可能性があります。 そのため、モデル内の説明可能性のレベルが高いほど、モデルによって行われた決定を医療従事者が承認または拒否する必要がある場合の信頼性が高くなります。
 
 モデルの説明にはさまざまな手法が使用されており、その 1 つに PFI があります。 PFI は、[Breiman の「*Random Forests*」(ランダム フォレスト) 論文](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf) (セクション 10 を参照してください) にインスパイアされた、分類および回帰モデルの説明に使用される手法です。 概要を説明すると、データセット全体に対して一度に 1 つの特徴のデータをランダムにシャッフルし、関心のあるパフォーマンス メトリックがどのくらい低下するかを計算するしくみです。 変更が大きいほど、その特徴の重要度は高くなります。
 

@@ -9,15 +9,15 @@ helpviewer_keywords:
 ms.assetid: c21eb322-d6b3-474b-ab05-94527bd1b0fa
 ms.openlocfilehash: 6f27b07b77fc05c548b724aaf2c905c6a9f5d420
 ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/30/2019
 ms.locfileid: "66378267"
 ---
 # <a name="documentviewer"></a>DocumentViewer
-<xref:System.Windows.Controls.DocumentViewer>コントロールを使用する表示<xref:System.Windows.Documents.FixedDocument>改ページ調整された形式 (XML Paper Specification (XPS) ドキュメント) などのコンテンツ。  
+<xref:System.Windows.Controls.DocumentViewer> コントロールは、<xref:System.Windows.Documents.FixedDocument> コンテンツ (XML Paper Specification (XPS) ドキュメントなど) をページ分割された形式で表示するために使用されます。  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.DocumentViewer>  
   
  <xref:System.Windows.Documents.FixedDocument>  

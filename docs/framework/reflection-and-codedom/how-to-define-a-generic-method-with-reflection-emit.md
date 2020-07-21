@@ -11,7 +11,7 @@ helpviewer_keywords:
 ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
 ms.openlocfilehash: d16f6728b01583fe3ffb8d892522f3892444c537
 ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73130168"
@@ -25,7 +25,7 @@ ms.locfileid: "73130168"
 3 番目の手順では、ジェネリック メソッドを呼び出す方法を示します。
 
 > [!IMPORTANT]
-> メソッドはジェネリック型に属し、その型の型パラメーターを使用するだけであるため、ジェネリックではありません。 メソッドがジェネリックになるのは、そのメソッドが独自の型パラメーター リストを持つ場合だけです。 この例のように、ジェネリック メソッドは非ジェネリック型で表すことができます。 ジェネリック型の非ジェネリック メソッド例については、「[方法: リフレクション出力を使用してジェネリック型を定義する](how-to-define-a-generic-type-with-reflection-emit.md)」を参照してください。
+> メソッドはジェネリック型に属し、その型の型パラメーターを使用するだけであるため、ジェネリックではありません。 メソッドがジェネリックになるのは、そのメソッドが独自の型パラメーター リストを持つ場合だけです。 この例のように、ジェネリック メソッドは非ジェネリック型で表すことができます。 ジェネリック型の非ジェネリック メソッドの例については、「[方法:リフレクション出力を使用してジェネリック型を定義する](how-to-define-a-generic-type-with-reflection-emit.md)」をご覧ください。
 
 ### <a name="to-define-a-generic-method"></a>ジェネリック メソッドを定義するには
 

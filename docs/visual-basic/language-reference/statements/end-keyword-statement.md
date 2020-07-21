@@ -8,14 +8,14 @@ helpviewer_keywords:
 ms.assetid: 42d6e088-ab0f-4cda-88e8-fdce3e5fcf4f
 ms.openlocfilehash: 87f4724cc036e6e0bdf0b558854a4034f45b9ab5
 ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343733"
 ---
-# <a name="end-keyword-statement-visual-basic"></a>End \<keyword > ステートメント (Visual Basic)
+# <a name="end-keyword-statement-visual-basic"></a>End \<キーワード> ステートメント (Visual Basic)
 
-その後に追加のキーワードが続くと、は、そのキーワードによって導入されたステートメントブロックの定義を終了します。
+追加のキーワードが後に続く場合に、そのキーワードによって導入されたステートメント ブロックの定義を終了します。
 
 ## <a name="syntax"></a>構文
 
@@ -46,36 +46,36 @@ End With
   
 ## <a name="parts"></a>指定項目
 
-|要素|説明|
+|パーツ|説明|
 |---|---|
-|`End`|必須。 プログラミング要素の定義を終了します。|
-|`AddHandler`|カスタム[イベントステートメント](event-statement.md)内の一致する `AddHandler` ステートメントによって開始された `AddHandler` アクセサーを終了するために必要です。|
-|`Class`|一致する[クラスステートメント](class-statement.md)によって開始されたクラス定義を終了するために必要です。|
-|`Enum`|一致する列挙[ステートメント](enum-statement.md)によって開始された列挙型定義を終了するために必要です。|
-|`Event`|一致する[イベントステートメント](event-statement.md)によって開始された `Custom` イベント定義を終了するために必要です。|  
-|`Function`|一致する[Function ステートメント](function-statement.md)によって開始された `Function` プロシージャ定義を終了するために必要です。 実行時に `End Function` ステートメントが発生すると、呼び出し元のコードに制御が戻ります。|
-|`Get`|一致する[Get ステートメント](get-statement.md)によって開始された `Property` プロシージャ定義を終了するために必要です。 実行時に `End Get` ステートメントが発生すると、プロパティの値を要求するステートメントに制御が戻ります。|
-|`If`|一致する `If` ステートメントによって開始された `If`...`Then``Else` ブロック定義を終了するために必要です。 参照してください.. [.そうしたら。。。Else ステートメント](if-then-else-statement.md)。|
-|`Interface`|一致する[インターフェイスステートメント](interface-statement.md)によって開始されたインターフェイス定義を終了するために必要です。|
-|`Module`|一致する[モジュールステートメント](module-statement.md)によって開始されたモジュール定義を終了するために必要です。|
-|`Namespace`|一致する[名前空間ステートメント](namespace-statement.md)で開始された名前空間定義を終了するために必要です。|
-|`Operator`|一致する[Operator ステートメント](operator-statement.md)によって開始された演算子定義を終了するために必要です。|
-|`Property`|一致する[プロパティステートメント](property-statement.md)によって開始されたプロパティ定義を終了するために必要です。|
-|`RaiseEvent`|カスタム[イベントステートメント](event-statement.md)内の一致する `RaiseEvent` ステートメントによって開始された `RaiseEvent` アクセサーを終了するために必要です。|
-|`RemoveHandler`|カスタム[イベントステートメント](event-statement.md)内の一致する `RemoveHandler` ステートメントによって開始された `RemoveHandler` アクセサーを終了するために必要です。|
-|`Select`|一致する `Select` ステートメントによって開始された `Select`...`Case` ブロック定義を終了するために必要です。 参照してください.. [.Case ステートメント](select-case-statement.md)。  
-|`Set`|一致する[Set ステートメント](set-statement.md)によって開始される `Property` プロシージャの定義を終了するために必要です。 実行時に `End Set` ステートメントが発生した場合、プロパティの値を設定するステートメントに制御が戻ります。  
-|`Structure`|一致する[構造ステートメント](structure-statement.md)によって開始された構造体定義を終了するために必要です。  
-|`Sub`|一致する[サブステートメント](sub-statement.md)によって開始された `Sub` プロシージャ定義を終了するために必要です。 実行時に `End Sub` ステートメントが発生すると、呼び出し元のコードに制御が戻ります。  
-|`SyncLock`|一致する `SyncLock` ステートメントによって開始された `SyncLock` ブロック定義を終了するために必要です。 「 [SyncLock ステートメント](synclock-statement.md)」を参照してください。  
-|`Try`|一致する `Try` ステートメントによって開始された `Try`...`Catch``Finally` ブロック定義を終了するために必要です。 [試してみる...キャッチ...Finally ステートメント](try-catch-finally-statement.md)。  
-|`While`|一致する `While` ステートメントによって開始された `While` ループ定義を終了するために必要です。 しばらくお待ちください.. [.End While ステートメント](while-end-while-statement.md)。  
-|`With`| 一致する `With` ステートメントによって開始された `With` ブロック定義を終了するために必要です。 参照[してください...End With ステートメント](with-end-with-statement.md)。  
+|`End`|必須です。 プログラミング要素の定義を終了します。|
+|`AddHandler`|カスタム [Event ステートメント](event-statement.md)で、一致する `AddHandler` ステートメントによって開始された `AddHandler` アクセサーを終了するために必要です。|
+|`Class`|一致する [Class ステートメント](class-statement.md)によって開始されたクラス定義を終了するために必要です。|
+|`Enum`|一致する [Enum ステートメント](enum-statement.md)によって開始された列挙型定義を終了するために必要です。|
+|`Event`|一致する [Event ステートメント](event-statement.md)によって開始された `Custom` イベント定義を終了するために必要です。|  
+|`Function`|一致する [Function ステートメント](function-statement.md)によって開始された `Function` プロシージャ定義を終了するために必要です。 実行時に `End Function` ステートメントが発生すると、呼び出し元のコードに制御が戻ります。|
+|`Get`|一致する [Get ステートメント](get-statement.md)によって開始された `Property` プロシージャ定義を終了するために必要です。 実行時に `End Get` ステートメントが発生すると、プロパティの値を要求するステートメントに制御が戻ります。|
+|`If`|一致する `If` ステートメントによって開始された `If`...`Then`...`Else` ブロック定義を終了するために必要です。 「[If...Then...Else ステートメント](if-then-else-statement.md)」を参照してください。|
+|`Interface`|一致する [Interface ステートメント](interface-statement.md)によって開始されたインターフェイス定義を終了するために必要です。|
+|`Module`|一致する [Module ステートメント](module-statement.md)によって開始されたモジュール定義を終了するために必要です。|
+|`Namespace`|一致する [Namespace ステートメント](namespace-statement.md)によって開始された名前空間定義を終了するために必要です。|
+|`Operator`|一致する [Operator ステートメント](operator-statement.md)によって開始された演算子定義を終了するために必要です。|
+|`Property`|一致する [Property ステートメント](property-statement.md)によって開始されたプロパティ定義を終了するために必要です。|
+|`RaiseEvent`|カスタム [Event ステートメント](event-statement.md)で、一致する `RaiseEvent` ステートメントによって開始された `RaiseEvent` アクセサーを終了するために必要です。|
+|`RemoveHandler`|カスタム [Event ステートメント](event-statement.md)で、一致する `RemoveHandler` ステートメントによって開始された `RemoveHandler` アクセサーを終了するために必要です。|
+|`Select`|一致する `Select` ステートメントによって開始された `Select`...`Case` ブロック定義を終了するために必要です。 「[Select...Case ステートメント](select-case-statement.md)」を参照してください。  
+|`Set`|一致する [Set ステートメント](set-statement.md)によって開始された `Property` プロシージャ定義を終了するために必要です。 実行時に `End Set` ステートメントが発生すると、プロパティの値を設定するステートメントに制御が戻ります。  
+|`Structure`|一致する [Structure ステートメント](structure-statement.md)によって開始された構造体定義を終了するために必要です。  
+|`Sub`|一致する [Sub ステートメント](sub-statement.md)によって開始された `Sub` プロシージャ定義を終了するために必要です。 実行時に `End Sub` ステートメントが発生すると、呼び出し元のコードに制御が戻ります。  
+|`SyncLock`|一致する `SyncLock` ステートメントによって開始された `SyncLock` ブロック定義を終了するために必要です。 「[SyncLock ステートメント](synclock-statement.md)」を参照してください。  
+|`Try`|一致する `Try` ステートメントによって開始された `Try`...`Catch`...`Finally` ブロック定義を終了するために必要です。 「[Try...Catch...Finally ステートメント](try-catch-finally-statement.md)」を参照してください。  
+|`While`|一致する `While` ステートメントによって開始された `While` ループ定義を終了するために必要です。 「[While...End While ステートメント](while-end-while-statement.md)」を参照してください。  
+|`With`| 一致する `With` ステートメントによって開始された `With` ブロック定義を終了するために必要です。 「[With...End With ステートメント](with-end-with-statement.md)」を参照してください。  
 |||
   
 ## <a name="directives"></a>ディレクティブ
 
-先頭に番号記号 (`#`) がある場合、`End` キーワードは、対応するディレクティブによって導入された前処理ブロックを終了します。  
+先頭に番号記号 (`#`) がある場合は、`End` キーワードにより、対応するディレクティブによって導入された前処理ブロックが終了します。  
 
 ```vb
 #End ExternalSource
@@ -83,22 +83,22 @@ End With
 #End Region
 ```
 
-|要素|説明|
+|パーツ|説明|
 |---|---|
-|`#End`|必須。 プリプロセスブロックの定義を終了します。|
-|`ExternalSource`|一致する[#ExternalSource ディレクティブ](../directives/externalsource-directive.md)で開始された外部ソースブロックを終了するために必要です。|
-|`If`|一致する `#If` ディレクティブで開始された条件付きコンパイルブロックを終了するために必要です。 #If を参照してください.. [.次に、ディレクティブ #Else](../directives/if-then-else-directives.md)ます。|
-|`Region`|一致する[#Region ディレクティブ](../directives/region-directive.md)で開始されたソースリージョンブロックを終了するために必要です。|
+|`#End`|必須です。 前処理ブロックの定義を終了します。|
+|`ExternalSource`|一致する [#ExternalSource ディレクティブ](../directives/externalsource-directive.md)によって開始された外部ソース ブロックを終了するために必要です。|
+|`If`|一致する `#If` ディレクティブによって開始された条件付きコンパイル ブロックを終了するために必要です。 「[#If...Then...#Else ディレクティブ](../directives/if-then-else-directives.md)」を参照してください。|
+|`Region`|一致する [#Region ディレクティブ](../directives/region-directive.md)によって開始されたソース リージョン ブロックを終了するために必要です。|
 |||
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
-追加のキーワードを指定せずに[End ステートメント](end-statement.md)を実行すると、すぐに実行が終了します。
+追加のキーワードを使用しない [End ステートメント](end-statement.md)では、すぐに実行が終了します。
 
-## <a name="smart-device-developer-notes"></a>スマートデバイスの開発者向けメモ  
+## <a name="smart-device-developer-notes"></a>スマート デバイス開発者向けのメモ  
 
 追加のキーワードを使用しない `End` ステートメントはサポートされていません。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [End ステートメント](end-statement.md)

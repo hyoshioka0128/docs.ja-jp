@@ -2,31 +2,31 @@
 title: 入れ子になっているスキーマ要素間の暗黙的なリレーションの割り当て
 ms.date: 03/30/2017
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
-ms.openlocfilehash: 25fc2c427727273038f7b4267376d6ba6446b811
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: dc5b81fd06f2860283c8c5fa028af4b945e2b1e9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040382"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150964"
 ---
 # <a name="map-implicit-relations-between-nested-schema-elements"></a>入れ子になっているスキーマ要素間の暗黙的なリレーションの割り当て
 XML スキーマ言語定義 (XSD) スキーマでは、複数の複合型を入れ子にして指定できます。 この場合、割り当て処理には既定の割り当てが適用されます。その際、<xref:System.Data.DataSet> に作成される内容を次に示します。  
   
 - 複合型 (親および子) それぞれに対して 1 つのテーブル。  
   
-- 親に unique 制約が存在しない場合は、 *tablename*_Id という名前のテーブル定義ごとに主キー列が1つ追加されます。 *tablename*は親テーブルの名前です。  
+- 親に一意制約がない場合、テーブル定義ごとに 1 つの、*TableName*_Id という名前の追加主キー列。*TableName* は親テーブルの名前です、  
   
-- 親テーブルの primary key 制約で、追加の列を主キーとして識別します ( **IsPrimaryKey**プロパティを**True**に設定します)。 制約には、Constraint\# (\# は、1、2、3 など) という名前が付けられます。 たとえば、最初の制約の既定の名前は Constraint1 となります。  
+- 追加された列を主キーとする、親テーブルに対する主キー制約 (**IsPrimaryKey** プロパティを **True** に設定することで)。 制約には、Constraint\# (\# は、1、2、3 など) という名前が付けられます。 たとえば、最初の制約の既定の名前は Constraint1 となります。  
   
-- 子テーブルの外部キー制約により、追加された列が親テーブルの主キーを参照する外部キーとして認識されます。 制約には*ParentTable_ChildTable*という名前が付けられます。 *parenttable*は親テーブルの名前、 *childtable*は子テーブルの名前です。  
+- 子テーブルの外部キー制約により、追加された列が親テーブルの主キーを参照する外部キーとして認識されます。 制約には *ParentTable_ChildTable* という名前が付けられます。ここで、*ParentTable* は親テーブルの名前、*ChildTable* は子テーブルの名前です。  
   
 - その結果、親テーブルと子テーブル間のデータが関連付けられます。  
   
- 次の例は、 **Orderdetail**が**Order**の子要素であるスキーマを示しています。  
+ **OrderDetail** が **Order** 要素の子要素であるスキーマの例を次に示します。  
   
 ```xml  
-<xs:schema id="MyDataSet" xmlns=""   
-            xmlns:xs="http://www.w3.org/2001/XMLSchema"   
+<xs:schema id="MyDataSet" xmlns=""
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   
  <xs:element name="MyDataSet" msdata:IsDataSet="true">  
@@ -54,43 +54,43 @@ XML スキーマ言語定義 (XSD) スキーマでは、複数の複合型を入
 </xs:schema>  
 ```  
   
- XML スキーマの割り当て処理では、**データセット**に次のものが作成されます。  
+ XML スキーマ マッピング処理によって **DataSet** に作成される内容は、次のとおりです。  
   
-- **Order**および**orderdetail**テーブル。  
+- **Order** および **OrderDetail** テーブル。  
   
     ```text  
     Order(OrderNumber, EmpNumber, Order_Id)  
     OrderDetail(OrderNo, ItemNo, Order_Id)  
     ```  
   
-- **Order**テーブルに対する unique 制約です。 **IsPrimaryKey**プロパティが**True**に設定されていることに注意してください。  
+- **Order** テーブルの一意制約。 **IsPrimaryKey** プロパティが **True** に設定されることに注意してください。  
   
     ```text  
     ConstraintName: Constraint1  
     Type: UniqueConstraint  
     Table: Order  
-    Columns: Order_Id   
+    Columns: Order_Id
     IsPrimaryKey: True  
     ```  
   
-- **Orderdetail**テーブルの foreign key 制約。  
+- **OrderDetail** テーブルの外部キー制約。  
   
     ```text  
     ConstraintName: Order_OrderDetail  
     Type: ForeignKeyConstraint  
     Table: OrderDetail  
-    Columns: Order_Id   
+    Columns: Order_Id
     RelatedTable: Order  
-    RelatedColumns: Order_Id   
+    RelatedColumns: Order_Id
     ```  
   
-- **Order**テーブルと**orderdetail**テーブル間のリレーションシップ。 **Order**および**orderdetail**要素がスキーマで入れ子になっているため、このリレーションシップの**nested**プロパティは**True**に設定されています。  
+- **Order** テーブルと **OrderDetail** テーブルの間のリレーションシップ。 スキーマの **Order** 要素と **OrderDetail** 要素が入れ子になっているため、このリレーションシップの **Nested** プロパティは **True** に設定されます。  
   
     ```text  
     ParentTable: Order  
-    ParentColumns: Order_Id   
+    ParentColumns: Order_Id
     ChildTable: OrderDetail  
-    ChildColumns: Order_Id   
+    ChildColumns: Order_Id
     ParentKeyConstraint: Constraint1  
     ChildKeyConstraint: Order_OrderDetail  
     RelationName: Order_OrderDetail  

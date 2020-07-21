@@ -4,18 +4,18 @@ description: 組み込み C# の反復子を使用して、独自のカスタム
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: 1933ecf83e9fa234f9b88c815d8ab527997c97f2
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: efa755c2243c18fb51b653abccb2bfc702bbc055
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036415"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507378"
 ---
 # <a name="iterators"></a>Iterators
 
 プログラムを記述するうえで、ほとんどのプログラムに必要になるのがコレクションの反復処理です。 反復処理が必要な場合は、コレクション内のすべての項目を調べるコードを記述します。
 
-また、クラスの要素に対して反復子を生成するメソッドである、反復子メソッドも作成することになります。 反復子メソッドは以下のような目的に使用できます。
+また、クラスの要素に対して反復子 (コンテナーを横断するオブジェクト。特にリスト) を生成するメソッドである、反復子メソッドも作成することになります。 反復子メソッドは以下のような目的に使用できます。
 
 + コレクション内の各項目に対するアクションの実行。
 + カスタム コレクションの列挙。

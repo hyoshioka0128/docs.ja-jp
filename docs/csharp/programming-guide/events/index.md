@@ -1,23 +1,22 @@
 ---
 title: イベント - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [C#], events
 - C# language, events
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
-ms.openlocfilehash: d70ec5784d56bad60fbc33ae0b992de1bebfce38
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: e15c3d124b4d1c30e2f9bb9f44b40e25b6a72346
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417950"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240723"
 ---
 # <a name="events-c-programming-guide"></a>イベント (C# プログラミング ガイド)
 [クラス](../../language-reference/keywords/class.md) やオブジェクトは、何か重要なことが起こった場合に、イベントを使用して他のクラスまたはオブジェクトに通知を送ります。 イベントを送信する ( *発生させる*) クラスを *パブリッシャー* 、イベントを受信する ( *処理する*) クラスを *サブスクライバー*と呼びます。  
   
- 一般的な C# Windows フォームまたは Web アプリケーションでは、ボタンやリスト ボックスなどのコントロールによって発生したイベントを定期受信します。 Visual C# 統合開発環境 (IDE) を使用して、コントロールによって発行されるイベントを参照し、処理するイベントを選択できます。 IDE は、空のイベント ハンドラー メソッドとイベントを定期受信するためのコードを自動的に追加する方法を提供します。 詳細については、[イベント サブスクリプションとサブスクリプションの解除](./how-to-subscribe-to-and-unsubscribe-from-events.md)」を参照してください。  
+一般的な C# Windows フォームまたは Web アプリケーションでは、ボタンやリスト ボックスなどのコントロールによって発生したイベントを定期受信します。 Visual C# 統合開発環境 (IDE) を使用して、コントロールによって発行されるイベントを参照し、処理するイベントを選択できます。 IDE は、空のイベント ハンドラー メソッドとイベントを定期受信するためのコードを自動的に追加する方法を提供します。 詳細については、「[イベントのサブスクリプションとサブスクリプション解除を行う方法](./how-to-subscribe-to-and-unsubscribe-from-events.md)」を参照してください。
   
 ## <a name="events-overview"></a>イベントの概要  
  イベントには次のようなプロパティがあります。  
@@ -37,16 +36,16 @@ ms.locfileid: "73417950"
 ## <a name="related-sections"></a>関連項目  
  詳細については次を参照してください:  
   
-- [方法: イベント サブスクリプションとサブスクリプションの解除](./how-to-subscribe-to-and-unsubscribe-from-events.md)  
-  
-- [方法: .NET Framework ガイドラインに準拠したイベントを発行する](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)  
-  
-- [方法: 派生クラスから基本クラス イベントを発生させる](./how-to-raise-base-class-events-in-derived-classes.md)  
-  
-- [方法: インターフェイス イベントを実装する](./how-to-implement-interface-events.md)  
-  
-- [方法: カスタム イベント アクセサーを実装する](./how-to-implement-custom-event-accessors.md)  
-  
+- [イベントのサブスクリプションとサブスクリプション解除を行う方法](./how-to-subscribe-to-and-unsubscribe-from-events.md)
+
+- [.NET ガイドラインに準拠したイベントを発行する方法](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+
+- [派生クラスから基本クラス イベントを発生させる方法](./how-to-raise-base-class-events-in-derived-classes.md)
+
+- [インターフェイス イベントを実装する方法](./how-to-implement-interface-events.md)
+
+- [カスタム イベント アクセサーを実装する方法](./how-to-implement-custom-event-accessors.md)
+
 ## <a name="c-language-specification"></a>C# 言語仕様  
 
 詳細については、「[C# 言語の仕様](/dotnet/csharp/language-reference/language-specification/introduction)」の「[イベント](~/_csharplang/spec/classes.md#events)」を参照してください。 言語仕様は、C# の構文と使用法に関する信頼性のある情報源です。

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9395a8a0-ffb9-475f-8da6-890999ae4bb6
 topic_type:
 - apiref
-ms.openlocfilehash: 7bb52d499faa83bd05ac0e6c817582f229ae183c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cced0ec7e7dd03f5531392039bb1e9247fd60f40
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133192"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83805320"
 ---
 # <a name="idebuggerinfo-interface"></a>IDebuggerInfo Iインターフェイス
 デバッグサービスの状態に関する情報を取得するためのメソッドを提供します。  
@@ -28,18 +28,18 @@ ms.locfileid: "73133192"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[IsDebuggerAttached メソッド](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-isdebuggerattached-method.md)|マネージデバッガーがこのプロセスにアタッチされているかどうかを示す値を取得します。|  
+|[IsDebuggerAttached メソッド](idebuggerinfo-isdebuggerattached-method.md)|マネージデバッガーがこのプロセスにアタッチされているかどうかを示す値を取得します。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [CorRuntimeHost コクラス](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)
+- [ホスト インターフェイス](hosting-interfaces.md)
+- [CorRuntimeHost コクラス](corruntimehost-coclass.md)

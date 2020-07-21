@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.PeerNodeAuthenticationTimeout
 ms.date: 03/30/2017
 ms.assetid: f294ee94-be83-426c-b40d-6e8a4e5e987c
-ms.openlocfilehash: 7c5f859deb2d9156b819f1fb92164a4c05437192
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: caa98464c76b0f9330419d89407734681c8901bf
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61917099"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84577293"
 ---
 # <a name="systemservicemodelchannelspeernodeauthenticationtimeout"></a>System.ServiceModel.Channels.PeerNodeAuthenticationTimeout
 セキュリティ ハンドシェイクが、指定した時間内に正常に終了しませんでした。  
@@ -20,6 +20,6 @@ ms.locfileid: "61917099"
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

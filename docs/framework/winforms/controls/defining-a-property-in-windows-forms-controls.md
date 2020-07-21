@@ -1,5 +1,5 @@
 ---
-title: Windows フォーム コントロールのプロパティの定義
+title: コントロールのプロパティを定義する
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - properties [Windows Forms], defining in code
 - custom controls [Windows Forms], defining properties in code
 ms.assetid: c2eb8277-a842-4d99-89a9-647b901a0434
-ms.openlocfilehash: a641b1e7565842a1edf6aeec88bdc37ee0786ab4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7223f8c88bee4ee9c1db621cc39bbcf70d0c4589
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969118"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182379"
 ---
 # <a name="defining-a-property-in-windows-forms-controls"></a>Windows フォーム コントロールのプロパティの定義
 プロパティの概要については、「[プロパティの概要](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120))」を参照してください。 プロパティを定義するときには、いくつかの重要な考慮事項があります。  
   
 - 定義するプロパティに属性を適用する必要があります。 属性によって、デザイナーでプロパティがどのように表示されるかが指定されます。 詳細については、「[コンポーネントのデザイン時属性](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120))」を参照してください。  
   
-- プロパティを変更してコントロールのビジュアル表示に影響を与える場合<xref:System.Windows.Forms.Control.Invalidate%2A>は、 `set`アクセサーから (コントロールが<xref:System.Windows.Forms.Control>継承する) メソッドを呼び出します。 <xref:System.Windows.Forms.Control.Invalidate%2A>さらに、 <xref:System.Windows.Forms.Control.OnPaint%2A>メソッドを呼び出して、コントロールを再描画します。 を<xref:System.Windows.Forms.Control.Invalidate%2A>複数回呼び出すと、 <xref:System.Windows.Forms.Control.OnPaint%2A>効率が向上します。  
+- プロパティを変更すると、コントロールの表示に影響する場合は、<xref:System.Windows.Forms.Control.Invalidate%2A><xref:System.Windows.Forms.Control>`set`アクセサーからメソッド ( コントロールが継承する ) を呼び出します。 <xref:System.Windows.Forms.Control.Invalidate%2A>次に、コントロール<xref:System.Windows.Forms.Control.OnPaint%2A>を再描画するメソッドを呼び出します。 効率を高<xref:System.Windows.Forms.Control.Invalidate%2A>めるために単一の呼び<xref:System.Windows.Forms.Control.OnPaint%2A>出しを行うために複数の呼び出し。  
   
 - .NET Framework クラス ライブラリでは、整数、10 進数、ブール値など、一般的なデータ型に対応する型コンバーターを使用できます。 型コンバーターは、一般に文字列から値への変換を行うために使用されます (文字列データから他のデータ型に変換)。 一般的なデータ型は、値を文字列に変換し、文字列を適切なデータ型に変換する既定の型コンバーターに関連付けられています。 カスタム (つまり、非標準的な) データ型であるプロパティを定義する場合、そのプロパティに関連付けられる型コンバーターを指定する属性を適用する必要があります。 また、属性を使用してカスタム UI 型エディターとプロパティを関連付けることもできます。 UI 型エディターには、プロパティやデータ型を編集するためのユーザー インターフェイスが備わっています。 たとえば、カラー ピッカーなどの UI 型エディターがあります。 属性の例は、このトピックの最後に記載されています。  
   
@@ -37,9 +37,9 @@ Public Class FlashTrackBar
    Private _endColor As Color = Color.LimeGreen  
   
    ' The Category attribute tells the designer to display  
-   ' it in the Flash grouping.   
+   ' it in the Flash grouping.
    ' The Description attribute provides a description of  
-   ' the property.   
+   ' the property.
    <Category("Flash"), _  
    Description("The ending color of the bar.")>  _  
    Public Property EndColor() As Color  
@@ -53,7 +53,7 @@ Public Class FlashTrackBar
             baseBackground.Dispose()  
             baseBackground = Nothing  
          End If  
-         ' The Invalidate method calls the OnPaint method, which redraws    
+         ' The Invalidate method calls the OnPaint method, which redraws
          ' the control.  
          Invalidate()  
       End Set  
@@ -68,9 +68,9 @@ public class FlashTrackBar : Control {
    // Private data member that backs the EndColor property.  
    private Color endColor = Color.LimeGreen;  
    // The Category attribute tells the designer to display  
-   // it in the Flash grouping.   
+   // it in the Flash grouping.
    // The Description attribute provides a description of  
-   // the property.   
+   // the property.
    [  
    Category("Flash"),  
    Description("The ending color of the bar.")  
@@ -86,7 +86,7 @@ public class FlashTrackBar : Control {
             baseBackground.Dispose();  
             baseBackground = null;  
          }  
-         // The Invalidate method calls the OnPaint method, which redraws   
+         // The Invalidate method calls the OnPaint method, which redraws
          // the control.  
          Invalidate();  
       }  
@@ -95,7 +95,7 @@ public class FlashTrackBar : Control {
 }  
 ```  
   
- 次のコード フラグメントは、型コンバーターと UI 型エディターをプロパティ `Value` に関連付けます。 この場合`Value` 、は整数であり、既定の型コンバーターを持ちます<xref:System.ComponentModel.TypeConverterAttribute>が、属性は、デザイナーが`FlashTrackBarValueConverter`パーセンテージとして表示できるようにするカスタム型コンバーター () を適用します。 UI 型エディター `FlashTrackBarValueEditor` により、そのパーセントを視覚的に表示できます。 <xref:System.ComponentModel.TypeConverterAttribute>また、この例では、または<xref:System.ComponentModel.EditorAttribute>属性で指定された型コンバーターまたはエディターが既定のコンバーターをオーバーライドしていることも示しています。  
+ 次のコード フラグメントは、型コンバーターと UI 型エディターをプロパティ `Value` に関連付けます。 この場合`Value`は整数で、既定の<xref:System.ComponentModel.TypeConverterAttribute>型コンバーターを持ちますが、属性は、デザイナーがパーセント値`FlashTrackBarValueConverter`として表示できるようにするカスタム型コンバーター ( ) を適用します。 UI 型エディター `FlashTrackBarValueEditor` により、そのパーセントを視覚的に表示できます。 また、この例では、<xref:System.ComponentModel.TypeConverterAttribute>または<xref:System.ComponentModel.EditorAttribute>属性で指定された型コンバーターまたはエディターが既定のコンバーターをオーバーライドする場合も示します。  
   
 ```vb  
 <Category("Flash"), _  
@@ -110,7 +110,7 @@ End Property
   
 ```csharp  
 [  
-Category("Flash"),   
+Category("Flash"),
 TypeConverter(typeof(FlashTrackBarValueConverter)),  
 Editor(typeof(FlashTrackBarValueEditor), typeof(UITypeEditor)),  
 Description("The current value of the track bar.  You can enter an actual value or a percentage.")  

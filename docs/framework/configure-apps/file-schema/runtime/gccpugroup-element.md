@@ -5,20 +5,20 @@ helpviewer_keywords:
 - GCCpuGroup element
 - <GCCpuGroup> element
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
-ms.openlocfilehash: ae9c96c9d49cf3f6be94da3f77b91423cab12e0b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f1cbe5a7109d6e4aae2e92710920a1c6b3a40d00
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430483"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "82102893"
 ---
-# <a name="gccpugroup-element"></a>\<GCCpuGroup > 要素
+# <a name="gccpugroup-element"></a>\<GCCpuGroup> 要素
 
 ガベージ コレクションが複数の CPU グループをサポートするかどうかを指定します。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<GCCpuGroup>**
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +27,9 @@ ms.locfileid: "74430483"
    enabled="true|false"/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、属性、子要素、親要素について説明します。
+以降のセクションでは、属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -39,28 +39,28 @@ ms.locfileid: "74430483"
 
 ## <a name="enabled-attribute"></a>enabled 属性
 
-|値|説明|
+|値|Description|
 |-----------|-----------------|
 |`false`|ガベージ コレクションは複数の CPU グループをサポートしていません。 既定値です。|
 |`true`|ガベージ コレクションは、サーバーのガベージ コレクションが有効な場合に複数の CPU グループをサポートします。|
 
 ### <a name="child-elements"></a>子要素
 
-[なし]。
+なし。
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-コンピューターに複数の CPU グループがあり、サーバーのガベージコレクションが有効になっている場合 ( [\<gcServer >](gcserver-element.md)要素を参照)、この要素を有効にすると、すべての cpu グループにわたってガベージコレクションが拡張され、ヒープを作成および分散するときにすべてのコアが考慮されます。
+コンピューターに複数の CPU グループがあり、サーバーのガベージコレクションが有効になっている場合 (要素を参照 [\<gcServer>](gcserver-element.md) )、この要素を有効にすると、すべての cpu グループにわたってガベージコレクションが拡張され、ヒープを作成および分散するときにすべてのコアが考慮されます。
 
 > [!NOTE]
-> この要素は、ガベージ コレクション スレッドにのみ適用されます。 ランタイムがすべての CPU グループにユーザースレッドを分散できるようにするには、 [\<Thread_UseAllCpuGroups >](thread-useallcpugroups-element.md)要素を有効にする必要もあります。
+> この要素は、ガベージ コレクション スレッドにのみ適用されます。 ランタイムがすべての CPU グループにユーザースレッドを分散できるようにするには、要素も有効にする必要があり [\<Thread_UseAllCpuGroups>](thread-useallcpugroups-element.md) ます。
 
 ## <a name="example"></a>例
 
@@ -75,9 +75,9 @@ ms.locfileid: "74430483"
 </configuration>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [ランタイム設定スキーマ](index.md)
 - [構成ファイル スキーマ](../index.md)
-- [同時実行ガベージコレクションを無効にするには](gcconcurrent-element.md#to-disable-background-garbage-collection)
-- [ワークステーションとサーバーのガベージ コレクション](../../../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection)
+- [同時実行ガベージコレクションを無効にする](gcconcurrent-element.md#to-disable-background-garbage-collection)
+- [ワークステーションとサーバーのガベージ コレクション](../../../../standard/garbage-collection/workstation-server-gc.md)

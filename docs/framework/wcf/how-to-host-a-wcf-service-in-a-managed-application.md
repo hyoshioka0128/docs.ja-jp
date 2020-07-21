@@ -1,16 +1,17 @@
 ---
-title: '方法 : マネージド アプリケーションで WCF サービスをホストする'
+title: '方法: マネージド アプリケーションで WCF サービスをホストする'
+description: 自己ホスト型サービスを作成してテストすることによって、マネージアプリケーション内で WCF サービスをホストする方法について説明します。
 ms.date: 09/17/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
-ms.openlocfilehash: e3adcad6ba70aa64b797325cd45a043301d7e680
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 7d1d61b683f60a6c643d2a2f03d367a6ae6c6c15
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320979"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246169"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-app"></a>方法: マネージアプリで WCF サービスをホストする
 
@@ -28,16 +29,16 @@ ms.locfileid: "72320979"
 
 1. 新しいコンソールアプリケーションを作成します。
 
-   1. Visual Studio を開き、 **[ファイル]** メニューの [**新規** > **プロジェクト**] を選択します。
+   1. Visual Studio を開き**New**  >  、[**ファイル**] メニューの [新しい**プロジェクト**] をクリックします。
 
-   2. **[インストールされたテンプレート]** の一覧で **[ビジュアルC# ]** または **[Visual Basic]** を選択し、 **[Windows デスクトップ]** を選択します。
+   2. [**インストールされたテンプレート**] の一覧で [ **Visual C#** ] または [ **Visual Basic**] を選択し、[ **Windows デスクトップ**] を選択します。
 
-   3. **[コンソールアプリケーション]** テンプレートを選択します。 **[名前]** ボックスに「`SelfHost`」と入力し、[ **OK]** をクリックします。
+   3. [**コンソールアプリケーション**] テンプレートを選択します。 [ `SelfHost` **名前**] ボックスに「」と入力し、[ **OK]** をクリックします。
 
-2. **ソリューションエクスプローラー**で **[selfhost]** を右クリックし、 **[参照の追加]** を選択します。 **[.Net]** タブで **[system.servicemodel]** を選択し、 **[OK]** を選択します。
+2. **ソリューションエクスプローラー**で [ **selfhost** ] を右クリックし、[**参照の追加**] を選択します。 [ **.Net** ] タブで [ **system.servicemodel** ] を選択し、[ **OK**] を選択します。
 
     > [!TIP]
-    > **ソリューションエクスプローラー**ウィンドウが表示されていない場合は、 **[表示]** メニューの **[ソリューションエクスプローラー]** を選択します。
+    > **ソリューションエクスプローラー**ウィンドウが表示されていない場合は、[**表示**] メニューの [**ソリューションエクスプローラー** ] を選択します。
 
 3. **ソリューションエクスプローラー**で**Program.cs**または module1.vb をダブルクリックして、まだ開いていない**場合はコード**ウィンドウで開きます。 ファイルの先頭に次のステートメントを追加します。
 
@@ -65,25 +66,25 @@ ms.locfileid: "72320979"
     > [!NOTE]
     > この例では、既定のエンドポイントを使用するので、このサービスには構成ファイルは必要ありません。 エンドポイントが構成されていない場合、ランタイムは、サービスによって実装されたサービス コントラクトごとに 1 つのエンドポイントを各ベース アドレスに作成します。 既定のエンドポイントの詳細については、「 [WCF サービスの](./samples/simplified-configuration-for-wcf-services.md)構成と簡略化された構成の[簡略化](simplified-configuration.md)」を参照してください。
 
-7. **Ctrl**+**Shift**+**B**キーを押して、ソリューションをビルドします。
+7. **Ctrl** + **Shift** + **B**キーを押して、ソリューションをビルドします。
 
 ## <a name="test-the-service"></a>サービスをテストする
 
-1. **Ctrl**+**F5**キーを押してサービスを実行します。
+1. **Ctrl**F5 キーを押して + **F5**サービスを実行します。
 
 2. **WCF テストクライアント**を開きます。
 
     > [!TIP]
-    > **WCF テストクライアント**を開くには、Visual Studio の開発者コマンドプロンプトを開き、 **wcftestclient.exe**を実行します。
+    > **WCF テストクライアント**を開くには、Visual Studio の開発者コマンドプロンプトを開き、 **WcfTestClient.exe**を実行します。
 
-3. **[ファイル]** メニューの **[サービスの追加]** を選択します。
+3. [**ファイル**] メニューの [**サービスの追加**] を選択します。
 
-4. [アドレス] ボックスに「`http://localhost:8080/hello`」と入力し、[ **OK]** をクリックします。
+4. `http://localhost:8080/hello`[アドレス] ボックスに「」と入力し、[ **OK]** をクリックします。
 
     > [!TIP]
     > サービスが実行していることを確認してください。サービスが実行していない場合、この手順は失敗します。 コードでベース アドレスを変更した場合は、この手順で、変更したアドレスを使用します。
 
-5. **[マイサービスプロジェクト]** ノードの下にある **[SayHello]** をダブルクリックします。 **要求**一覧の **[値]** 列に名前を入力し、 **[呼び出し]** をクリックします。
+5. [**マイサービスプロジェクト**] ノードの下にある [ **SayHello** ] をダブルクリックします。 **要求**一覧の [**値**] 列に名前を入力し、[**呼び出し**] をクリックします。
 
    **応答**の一覧に応答メッセージが表示されます。
 
@@ -99,7 +100,7 @@ ms.locfileid: "72320979"
 - <xref:System.Uri>
 - <xref:System.Configuration.ConfigurationManager.AppSettings%2A>
 - <xref:System.Configuration.ConfigurationManager>
-- [方法 : IIS で WCF サービスをホストする](./feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [方法: IIS で WCF サービスをホストする](./feature-details/how-to-host-a-wcf-service-in-iis.md)
 - [自己ホスト](./samples/self-host.md)
 - [ホスティング サービス](hosting-services.md)
 - [方法: サービス コントラクトを定義する](how-to-define-a-wcf-service-contract.md)

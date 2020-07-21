@@ -16,7 +16,7 @@ helpviewer_keywords:
 ms.assetid: d90b1e39-9115-4f2a-81c0-05e7e74e5580
 ms.openlocfilehash: 707c71482196d789ed9a88db34af048ec57734fb
 ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73130028"
@@ -126,7 +126,7 @@ IDENTIFIER の一部として使用する場合、次のトークンを区切る
 |\\*|ポインター型。|
 |\\[|配列次元の区切り文字。|
 |\\]|配列次元の区切り文字。|
-|\\.|配列の指定内にピリオドを使用する場合にのみ、ピリオドの前にバックスラッシュを使用します。 NamespaceSpec 内のピリオドにはバックスラッシュを使用できません。|
+|\\。|配列の指定内にピリオドを使用する場合にのみ、ピリオドの前にバックスラッシュを使用します。 NamespaceSpec 内のピリオドにはバックスラッシュを使用できません。|
 |\\\|文字列リテラルとして必要な場合のバックスラッシュ。|
 
 AssemblyNameSpec を除くすべての TypeSpec コンポーネントで、スペースは関係があります。 AssemblyNameSpec の場合、',' 区切り文字の前にあるスペースは関係がありますが、',' の後のスペースは無視されます。

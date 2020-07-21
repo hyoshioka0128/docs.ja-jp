@@ -9,46 +9,45 @@ helpviewer_keywords:
 - Equals method
 - == operator (equality) [.NET Framework]
 ms.assetid: bc496a91-fefb-4ce0-ab4c-61f09964119a
-author: KrzysztofCwalina
-ms.openlocfilehash: ef1a0aff1ac59434d9d9a6f0371bf236f637050e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd36b98af25db2921c164ac359188997d379a270
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960333"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280051"
 ---
 # <a name="equality-operators"></a>等値演算子
-このセクションでは、等値演算子のオーバー ロードをについて説明しを指す`operator==`と`operator!=`として等値演算子。  
-  
- **X DO NOT** 等値演算子および以外のいずれかのオーバー ロードします。  
-  
- **✓ DO** いることを確認<xref:System.Object.Equals%2A?displayProperty=nameWithType>等値演算子は、同じセマンティクスと同様のパフォーマンス特性があるとします。  
-  
- 多くの場合、つまり`Object.Equals`等値演算子はオーバー ロード時にオーバーライドする必要があります。  
-  
- **X AVOID** 等値演算子から例外をスローします。  
-  
- たとえば、引数のいずれかがスローする代わりに null の場合は false を返す`NullReferenceException`します。  
-  
-## <a name="equality-operators-on-value-types"></a>値の型で等値演算子  
- **✓ DO** 等しいかどうかがわかりやすい場合は、値型で等値演算子をオーバー ロードします。  
-  
- ほとんどのプログラミング言語での既定の実装がない`operator==`値の型。  
-  
-## <a name="equality-operators-on-reference-types"></a>参照型で等値演算子  
- **X AVOID** 変更可能な参照型で等値演算子のオーバー ロードします。  
-  
- 多くの言語では、参照型の組み込みの等値演算子があります。 組み込みの演算子は、通常は参照の等価性を実装し、値の等価性を既定の動作が変更されたときに、多くの開発者は驚かします。  
-  
- この問題は、不変性をより参照の等価性と値の等価性の間の違いに注意をはるかに困難になるために、変更不可の参照型の軽減されます。  
-  
- **X AVOID** 実装では、参照の等価性の場合よりもはるかに低速になる場合は、参照型で等値演算子をオーバー ロードします。  
-  
- *Portions © 2005, 2009 Microsoft Corporation.All rights reserved.*  
-  
- *Pearson Education, Inc. からのアクセス許可によって了承を得て転載[Framework デザイン ガイドライン。規則、手法、および再利用可能な .NET ライブラリの第 2 版のパターン](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)Krzysztof Cwalina、Brad 内容では、Microsoft Windows の開発シリーズの一部として、Addison-wesley Professional、2008 年 10 月 22日を公開します。*  
-  
+このセクションでは、等値演算子のオーバーロードについて説明し、 `operator==` 等値演算子としてとを参照し `operator!=` ます。
+
+ ❌等値演算子の1つをオーバーロードしないでください。
+
+ ✔️、 <xref:System.Object.Equals%2A?displayProperty=nameWithType> 等値演算子のセマンティクスと同様のパフォーマンス特性がまったく同じであることを確認します。
+
+ これは多くの場合 `Object.Equals` 、等値演算子がオーバーロードされるときにをオーバーライドする必要があることを意味します。
+
+ ❌等値演算子から例外をスローしないようにします。
+
+ たとえば、引数のいずれかがスローではなく null の場合は、false を返し `NullReferenceException` ます。
+
+## <a name="equality-operators-on-value-types"></a>値型の等値演算子
+ 等しい場合は、値型に対して等値演算子をオーバーロード✔️ます。
+
+ ほとんどのプログラミング言語では、値型にの既定の実装はありません `operator==` 。
+
+## <a name="equality-operators-on-reference-types"></a>参照型の等値演算子
+ ❌変更可能な参照型に対する等値演算子のオーバーロードは避けてください。
+
+ 多くの言語には、参照型の等価演算子が組み込まれています。 これらの組み込み演算子は、通常、参照の等価性を実装します。多くの開発者は、既定の動作が値の等価性に変更されると驚かれます。
+
+ 不変性によって参照の等価性と値の等価性の違いが非常に困難になるため、この問題は変更できない参照型に対しては緩和されます。
+
+ ❌実装が参照の等価性よりも大幅に遅くなる場合は、参照型に対する等値演算子のオーバーロードを避けてください。
+
+ *©2005、2009 Microsoft Corporation の部分。すべての権限が予約されています。*
+
+ *2008 年 10 月 22 日に Microsoft Windows Development シリーズの一部として、Addison-Wesley Professional によって発行された、Krzysztof Cwalina および Brad Abrams による「[Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)」 (フレームワーク デザイン ガイドライン: 再利用可能な .NET ライブラリの規則、用法、パターン、第 2 版) から Pearson Education, Inc. の許可を得て再印刷されています。*
+
 ## <a name="see-also"></a>関連項目
 
-- [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)
-- [使用方法のガイドライン](../../../docs/standard/design-guidelines/usage-guidelines.md)
+- [フレームワークデザインのガイドライン](index.md)
+- [使用に関するガイドライン](usage-guidelines.md)

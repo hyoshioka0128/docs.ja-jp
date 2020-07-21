@@ -1,17 +1,19 @@
 ---
-ms.openlocfilehash: f34938b0dadce7da0e7d27f0a6a84185522e312e
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: d19ed4c74b0ca25edb19c05a987ef2e3a6610628
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67802567"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622002"
 ---
 ### <a name="keyboard-navigation-improvement-in-listbox-with-hyperlinks"></a>ハイパーリンクを使用した ListBox のキーボード ナビゲーションの機能強化
 
-|   |   |
-|---|---|
-|説明|親 <xref:System.Windows.Controls.ItemsControl> の選択項目ではない項目内のハイパーリンクにフォーカスがあるときに矢印キーを押すと不適切な結果になる問題を修正しました。|
-|スコープ|Major|
-|Version|4.8|
-|型|ランタイム|
+#### <a name="details"></a>説明
 
+親 <xref:System.Windows.Controls.ItemsControl> の選択項目ではない項目内のハイパーリンクにフォーカスがあるときに矢印キーを押すと不適切な結果になる問題を修正しました。
+
+| 名前    | [値]       |
+|:--------|:------------|
+| スコープ   |Major|
+|バージョン|4.8|
+|種類|ランタイム|

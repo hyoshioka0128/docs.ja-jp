@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished
 ms.date: 03/30/2017
 ms.assetid: 54b677f7-03ad-40f2-9c5d-297a8ad9bf90
-ms.openlocfilehash: 7f37cb5d9ee3d2d9d56519f785388f278b3333b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0652b3b76c155431b68c5ee0dc8f83977f9845a5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997881"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594362"
 ---
 # <a name="microsofttransactionstransactionbridgeparticipantstatemachinefinished"></a>Microsoft.Transactions.TransactionBridge.ParticipantStateMachineFinished
 参加要素の登録リストのステート マシンは完了状態になりました。  
@@ -17,6 +17,6 @@ ms.locfileid: "61997881"
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

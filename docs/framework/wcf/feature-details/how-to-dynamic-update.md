@@ -1,15 +1,15 @@
 ---
-title: '方法: 動的な更新'
+title: 動的な更新を行う方法
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: 95d99afd09daf4d9bf3937a71d7773332ff1bc14
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: aaeb4d9d42c289cf34a6aee9212fc2d74b8f8c01
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834718"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184962"
 ---
-# <a name="how-to-dynamic-update"></a>方法: 動的な更新
+# <a name="how-to-dynamic-update"></a>動的な更新を行う方法
 ここでは、ルーティング構成の作成および動的な更新に必要な基本的手順について説明します。 この例では、ルーティングの初期構成を構成ファイルから取得し、すべてのメッセージを regularCalc 電卓サービスにルーティングします。ただし、これは、roundingCalc のサービスの提供先となるエンドポイントを変更するために、後でプログラムによって更新されます。  
   
 > [!NOTE]
@@ -64,7 +64,7 @@ ms.locfileid: "71834718"
     </filterTables>  
     ```  
   
-3. フィルター テーブルに含まれているフィルターと照合して受信メッセージを評価するには、ルーティング動作を使用して、フィルター テーブルをサービス エンドポイントと関連付ける必要があります。 次の例は、"filterTable1" をサービスエンドポイントに関連付ける方法を示しています。  
+3. フィルター テーブルに含まれているフィルターと照合して受信メッセージを評価するには、ルーティング動作を使用して、フィルター テーブルをサービス エンドポイントと関連付ける必要があります。 "filterTable1" をサービス エンドポイントに関連付ける例を次に示します。  
   
     ```xml  
     <behaviors>  
@@ -102,7 +102,7 @@ ms.locfileid: "71834718"
         using (ServiceHost serviceHost =  
             new ServiceHost(typeof(RoutingService)))  
         {  
-            // Open the ServiceHost to create listeners           
+            // Open the ServiceHost to create listeners
             // and start listening for messages.  
             Console.WriteLine("The Routing Service configured, opening....");  
             serviceHost.Open();  
@@ -164,7 +164,7 @@ ms.locfileid: "71834718"
   
 ## <a name="example"></a>例  
 
-この例で使用されているコンソールアプリケーションの完全な一覧を次に示します。
+この例で使用するコンソール アプリケーションの完全な一覧を次に示します。
   
 ```csharp
 //-----------------------------------------------------------------  
@@ -185,12 +185,12 @@ namespace Microsoft.Samples.AdvancedFilters
     {  
         // Host the service within this EXE console application.  
         public static void Main()  
-        {             
+        {
             // Create a ServiceHost for the CalculatorService type.  
             using (ServiceHost serviceHost =  
                 new ServiceHost(typeof(RoutingService)))  
             {  
-                // Open the ServiceHost to create listeners           
+                // Open the ServiceHost to create listeners
                 // and start listening for messages.  
                 Console.WriteLine("The Routing Service configured, opening....");  
                 serviceHost.Open();  
@@ -242,8 +242,8 @@ namespace Microsoft.Samples.AdvancedFilters
 ```  
   
 ## <a name="example"></a>例  
- 
-この例で使用される構成ファイルの完全な一覧を次に示します。
+
+この例で使用されている構成ファイルの完全な一覧を次に示します。
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

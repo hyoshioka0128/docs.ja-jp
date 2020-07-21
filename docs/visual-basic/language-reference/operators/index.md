@@ -6,7 +6,7 @@ helpviewer_keywords:
 ms.assetid: 3d3421df-fcc5-4888-9249-d78f16774ce6
 ms.openlocfilehash: d980621ed493bbe5f243062238f4b87e1e44003b
 ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2019
 ms.locfileid: "74838170"
@@ -15,17 +15,17 @@ ms.locfileid: "74838170"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-- [Visual Basic での演算子の優先順位](operator-precedence.md)
+- [Visual Basic における演算子の優先順位](operator-precedence.md)
 - [機能別の演算子一覧](operators-listed-by-functionality.md)
 - [演算子の結果のデータ型](data-types-of-operator-results.md)
 - [DirectCast 演算子](directcast-operator.md)
 - [TryCast 演算子](trycast-operator.md)
-- [この操作](nameof.md)
+- [NameOf 演算子](nameof.md)
 - [[新しいオペレーター]](new-operator.md)
 - [Null 条件演算子](null-conditional-operators.md)
 - [算術演算子](arithmetic-operators.md)
 - [代入演算子](assignment-operators.md)
-- [ビットシフト演算子](bit-shift-operators.md)
+- [ビット シフト演算子](bit-shift-operators.md)
 - [比較演算子](comparison-operators.md)
 - [連結演算子](concatenation-operators.md)
 - [論理/ビット演算子](logical-bitwise-operators.md)

@@ -1,5 +1,6 @@
 ---
 title: SAML トークンとクレーム
+description: WFC が SAML トークンを使用して、別のエンティティに関する1つのエンティティによって作成されたクレームのセットであるステートメントを実行する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - issued tokens
 - SAML token
 ms.assetid: 930b6e34-9eab-4e95-826c-4e06659bb977
-ms.openlocfilehash: 7037daf299d7c750ab398c21c1d7ccb541620701
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c054e594af69def96879852a5145675b3123614a
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943072"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244947"
 ---
 # <a name="saml-tokens-and-claims"></a>SAML トークンとクレーム
 セキュリティアサーションマークアップ言語 (SAML)*トークン*は、クレームの XML 表現です。 既定では、フェデレーションセキュリティシナリオで使用される SAML トークン Windows Communication Foundation (WCF) では、*トークンが発行*されます。  
@@ -31,13 +32,13 @@ ms.locfileid: "69943072"
 4. SAML トークンの署名は、そのトークンがセキュリティ トークン サービスによって発行されたことを証明書利用者に示します。 また、証明キーを使用して作成されたメッセージ署名は、トークンがそのクライアントに対して発行されたことを示します。  
   
 ## <a name="from-claims-to-samlattributes"></a>クレームから SamlAttributes  
- WCF では、SAML トークン内のステートメントは<xref:System.IdentityModel.Tokens.SamlAttribute>オブジェクトとしてモデル化され<xref:System.IdentityModel.Claims.Claim>ます。オブジェクトの<xref:System.IdentityModel.Claims.Claim> <xref:System.IdentityModel.Claims.Claim.Right%2A>プロパティ<xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> <xref:System.IdentityModel.Claims.Claim.Resource%2A>がで、プロパティがである場合は、オブジェクトから直接データを設定できます。「 <xref:System.String>」と入力します。 例:  
+ WCF では、SAML トークン内のステートメントはオブジェクトとしてモデル化されます。オブジェクトのプロパティがで、 <xref:System.IdentityModel.Tokens.SamlAttribute> <xref:System.IdentityModel.Claims.Claim> <xref:System.IdentityModel.Claims.Claim> <xref:System.IdentityModel.Claims.Claim.Right%2A> <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> <xref:System.IdentityModel.Claims.Claim.Resource%2A> プロパティが型 <xref:System.String> である場合は、オブジェクトから直接データを設定できます。 次に例を示します。  
   
  [!code-csharp[c_CreateSTS#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#8)]
  [!code-vb[c_CreateSTS#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#8)]  
   
 > [!NOTE]
-> セキュリティ トークン サービスによって発行されたか、または認証の一部としてクライアントからサービスに提示されたときに、SAML トークンがメッセージ内にシリアル化される場合、メッセージの最大クォータ サイズが、SAML トークンおよびメッセージの他の部分を格納できるだけの大きさである必要があります。 通常は、既定のメッセージ クォータ サイズで十分です。 ただし、何百ものクレームを含んでいるために SAML トークンのサイズが大きい場合には、シリアル化されたトークンを格納できるように、クォータを増やす必要が生じることがあります。 詳細については、「[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)」を参照してください。  
+> セキュリティ トークン サービスによって発行されたか、または認証の一部としてクライアントからサービスに提示されたときに、SAML トークンがメッセージ内にシリアル化される場合、メッセージの最大クォータ サイズが、SAML トークンおよびメッセージの他の部分を格納できるだけの大きさである必要があります。 通常は、既定のメッセージ クォータ サイズで十分です。 ただし、何百ものクレームを含んでいるために SAML トークンのサイズが大きい場合には、シリアル化されたトークンを格納できるように、クォータを増やす必要が生じることがあります。 詳細については、「[データのセキュリティに関する考慮事項](security-considerations-for-data.md)」を参照してください。  
   
 ## <a name="from-samlattributes-to-claims"></a>SamlAttributes からクレーム  
  SAML トークンがメッセージで受信されると、SAML トークン内のさまざまなステートメントは、 <xref:System.IdentityModel.Policy.IAuthorizationPolicy> オブジェクトに変換され、<xref:System.IdentityModel.Policy.AuthorizationContext> に配置されます。 各 SAML ステートメントのクレームは <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> の <xref:System.IdentityModel.Policy.AuthorizationContext> プロパティによって返され、これを調べることによってユーザーの認証と承認を行うかどうかを決定できます。  
@@ -47,10 +48,10 @@ ms.locfileid: "69943072"
 - <xref:System.IdentityModel.Policy.AuthorizationContext>
 - <xref:System.IdentityModel.Policy.IAuthorizationPolicy>
 - <xref:System.IdentityModel.Claims.ClaimSet>
-- [フェデレーション](../../../../docs/framework/wcf/feature-details/federation.md)
-- [方法: フェデレーションクライアントを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [方法: フェデレーションサービスで資格情報を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
-- [ID モデルを使用したクレームと承認の管理](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
-- [クレームとトークン](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)
-- [クレームの作成とリソース値](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)
-- [方法: カスタム要求の作成](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)
+- [フェデレーション](federation.md)
+- [方法: フェデレーション クライアントを作成する](how-to-create-a-federated-client.md)
+- [方法: フェデレーション サービスで資格情報を設定する](how-to-configure-credentials-on-a-federation-service.md)
+- [ID モデルを使用したクレームと承認の管理](managing-claims-and-authorization-with-the-identity-model.md)
+- [クレームとトークン](claims-and-tokens.md)
+- [クレームの作成とリソース値](claim-creation-and-resource-values.md)
+- [方法: カスタム クレームを作成する](../extending/how-to-create-a-custom-claim.md)

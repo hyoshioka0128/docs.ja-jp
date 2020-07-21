@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7e99879-421f-43ce-b193-34733cf30085
 topic_type:
 - apiref
-ms.openlocfilehash: dbf876a514ce106c566a168f688eb3a22d3a1ea2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 06a331e24622e0a155d974ca869818a6532baa1f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449048"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615541"
 ---
 # <a name="isymunmanageddocumentwritersetchecksum-method"></a>ISymUnmanagedDocumentWriter::SetCheckSum メソッド
 チェックサム情報を設定します。  
@@ -39,7 +39,7 @@ HRESULT SetCheckSum(
  からアルゴリズム識別子を表す GUID。  
   
  `checkSumSize`  
- から`checkSum` バッファーのサイズ (バイト単位) を示す `ULONG32`。  
+ から`ULONG32`バッファーのサイズ (バイト単位) を示す `checkSum` 。  
   
  `checkSum`  
  からチェックサム情報を格納するバッファー。  
@@ -50,6 +50,6 @@ HRESULT SetCheckSum(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedDocumentWriter インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
+- [ISymUnmanagedDocumentWriter インターフェイス](isymunmanageddocumentwriter-interface.md)

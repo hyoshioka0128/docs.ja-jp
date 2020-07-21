@@ -11,31 +11,31 @@ helpviewer_keywords:
 ms.assetid: 6c8bdbf2-19e0-4fbb-bf89-c1252b2ebc61
 ms.openlocfilehash: 8bed7784b00f49178c9a87def74b62f7ce620ec7
 ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/22/2019
 ms.locfileid: "69923404"
 ---
 # <a name="how-to-hit-test-using-geometry-as-a-parameter"></a>方法: パラメーターとしてジオメトリを使用してヒット テストを実行する
-この例では、をヒットテストパラメーターとして使用して<xref:System.Windows.Media.Geometry> 、ビジュアルオブジェクトに対してヒットテストを実行する方法を示します。  
+この例では、<xref:System.Windows.Media.Geometry> をヒット テスト パラメーターとして使用して、ビジュアル オブジェクトに対してヒット テストを実行する方法を示します。  
   
 ## <a name="example"></a>例  
- 次の例では、 <xref:System.Windows.Media.GeometryHitTestParameters> <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>メソッドに対してを使用してヒットテストを設定する方法を示します。 メソッドに渡される<xref:System.Windows.Media.Geometry>値は、ヒットテストの範囲を拡張するためにオブジェクトを作成するために使用されます。 <xref:System.Windows.Point> `OnMouseDown`  
+ 次の例では、<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> メソッドの <xref:System.Windows.Media.GeometryHitTestParameters> を使用してヒット テストを設定する方法を示します。 `OnMouseDown` メソッドに渡される <xref:System.Windows.Point> 値は、<xref:System.Windows.Media.Geometry> オブジェクトを作成してヒット テストの範囲を拡張するために使用されます。  
   
  [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet10](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet10)]
  [!code-vb[HitTestingOverview#HitTestingOverviewSnippet10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet10)]  
   
- <xref:System.Windows.Media.Geometry>の<xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A> プロパティ<xref:System.Windows.Media.GeometryHitTestResult>は、をヒットテストパラメーターとして使用するヒットテストの結果に関する情報を提供します。 ヒット テストのジオメトリ (青い円) と対象のビジュアル オブジェクト (赤い正方形) の描画されるコンテンツとの関係を次の図に示します。  
+ <xref:System.Windows.Media.GeometryHitTestResult> の <xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A> プロパティは、<xref:System.Windows.Media.Geometry> をヒット テスト パラメーターとして使用するヒット テストの結果に関する情報を提供します。 ヒット テストのジオメトリ (青い円) と対象のビジュアル オブジェクト (赤い正方形) の描画されるコンテンツとの関係を次の図に示します。  
   
- ![ヒットテストで使用される IntersectionDetail を示す図。](./media/how-to-hit-test-using-geometry-as-a-parameter/intersectiondetail-hit-test.png)  
+ ![ヒット テストで使用される IntersectionDetail を示す図。](./media/how-to-hit-test-using-geometry-as-a-parameter/intersectiondetail-hit-test.png)  
   
- 次の例は、 <xref:System.Windows.Media.Geometry>がヒットテストパラメーターとして使用されている場合にヒットテストコールバックを実装する方法を示しています。 パラメーターは、 <xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A>プロパティの値<xref:System.Windows.Media.GeometryHitTestResult>を取得するためににキャストされます。 `result` プロパティ値を使用すると、ヒットテスト<xref:System.Windows.Media.Geometry>のターゲットのレンダリングされたコンテンツ内でヒットテストパラメーターが完全または部分的に含まれるかどうかを判断できます。 ここに示すサンプル コードでは、完全に対象の境界内に含まれるビジュアルについてのみ、ヒット テストの結果をリストに追加しています。  
+ <xref:System.Windows.Media.Geometry> をヒット テスト パラメーターとして使用する場合に、ヒット テストのコールバックを実装する方法を次の例に示します。 `result` パラメーターは、<xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A> プロパティの値を取得するために、<xref:System.Windows.Media.GeometryHitTestResult> にキャストされます。 このプロパティ値を使用すると、<xref:System.Windows.Media.Geometry> ヒット テスト パラメーターの全体または一部が、ヒット テストの対象の、レンダリングされるコンテンツ内に含まれるかどうかを判別することができます。 ここに示すサンプル コードでは、完全に対象の境界内に含まれるビジュアルについてのみ、ヒット テストの結果をリストに追加しています。  
   
  [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet11)]
  [!code-vb[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet11)]  
   
 > [!NOTE]
-> 交差<xref:System.Windows.Media.HitTestResult>の詳細が<xref:System.Windows.Media.IntersectionDetail.Empty>の場合は、コールバックを呼び出さないでください。  
+> 交差の詳細が <xref:System.Windows.Media.IntersectionDetail.Empty> の場合は、<xref:System.Windows.Media.HitTestResult> コールバックを呼び出さないでください。  
   
 ## <a name="see-also"></a>関連項目
 

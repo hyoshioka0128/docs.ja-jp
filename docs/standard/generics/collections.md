@@ -11,18 +11,16 @@ helpviewer_keywords:
 - generic collections [.NET]
 - generic types [.NET]
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 21d8ef3abfd16e11c9251edfc4f39b02e93eaab5
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 5767bac0bb1e3ae9e586e9a10d8452d421519447
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740929"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287572"
 ---
 # <a name="generic-collections-in-net"></a>.NET の汎用コレクション
 
- .NET クラス ライブラリでは、<xref:System.Collections.Generic> および <xref:System.Collections.ObjectModel> の名前空間に多数のジェネリック コレクション クラスが用意されています。 各クラスについて詳しくは、「[一般的に使用されるコレクション型](../../../docs/standard/collections/commonly-used-collection-types.md)」を参照してください。  
+ .NET クラス ライブラリでは、<xref:System.Collections.Generic> および <xref:System.Collections.ObjectModel> の名前空間に多数のジェネリック コレクション クラスが用意されています。 各クラスについて詳しくは、「[一般的に使用されるコレクション型](../collections/commonly-used-collection-types.md)」を参照してください。  
   
 ## <a name="systemcollectionsgeneric"></a>System.Collections.Generic
 
@@ -57,6 +55,6 @@ ms.locfileid: "73740929"
 
 - <xref:System.Collections.Generic?displayProperty=nameWithType>
 - <xref:System.Collections.ObjectModel?displayProperty=nameWithType>
-- [ジェネリック](../../../docs/standard/generics/index.md)
-- [配列とリストの操作に使用する汎用デリゲート](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)
-- [ジェネリック インターフェイス](../../../docs/standard/generics/interfaces.md)
+- [ジェネリック](index.md)
+- [配列とリストの操作に使用する汎用デリゲート](delegates-for-manipulating-arrays-and-lists.md)
+- [ジェネリック インターフェイス](interfaces.md)

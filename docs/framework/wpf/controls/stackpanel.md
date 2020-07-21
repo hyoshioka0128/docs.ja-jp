@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: a82b824c-1b98-49a9-b7fd-2d9c154dd002
 ms.openlocfilehash: df78e1037f0bc444d5ae3820eda5d461a415e265
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61791028"
 ---
 # <a name="stackpanel"></a>StackPanel
-<xref:System.Windows.Controls.StackPanel>要素の子要素を水平方向または垂直方向にスタックを使用します。  
+<xref:System.Windows.Controls.StackPanel> 要素は、子要素を水平方向または垂直方向に積み重ねるために使用します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法トピック](stackpanel-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

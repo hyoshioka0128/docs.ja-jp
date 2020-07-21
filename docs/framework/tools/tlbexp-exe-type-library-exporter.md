@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Type Library Exporter
 - type libraries [.NET Framework], exporting
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
-ms.openlocfilehash: f421a9865e457a4e8e08644671efb55c731db28b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1d2380ff607836b5dc15e7194b90dd3a53d1d2c0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104346"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180271"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (タイプ ライブラリ エクスポーター)
 タイプ ライブラリ エクスポーターは、共通言語ランタイム アセンブリで定義されている型を記述するタイプ ライブラリを生成します。  
@@ -54,7 +54,7 @@ tlbexp assemblyName [options]
 > [!NOTE]
 > Tlbexp.exe のコマンド ライン オプションでは、大文字と小文字が区別されません。また、これらのオプションは任意の順序で指定できます。 オプションを一意に識別するために十分である場合は、オプションの一部を指定するだけでもかまいません。 たとえば、 **/n** を指定した場合は **/nologo**、 **/o:** *outfile.tlb* と指定した場合は **/out:** *outfile.tlb* であると見なされます。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>Remarks  
  Tlbexp.exe は、アセンブリで定義されている型の定義を含む、タイプ ライブラリを生成します。 Visual Basic 6.0 などのアプリケーションは、このツールで生成されたタイプ ライブラリを使用して、アセンブリ内で定義されている .NET 型にバインドできます。  
   
 > [!IMPORTANT]
@@ -79,7 +79,7 @@ tlbexp assemblyName [options]
   
  次のタイプ ライブラリが生成されます。  
   
-```cpp 
+```cpp
 [id(0x60020004)]  
 HRESULT StructUnkSafe([out, retval] SAFEARRAY(IUnknown*)* pRetVal);  
 [id(0x60020005)]  

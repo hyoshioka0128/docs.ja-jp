@@ -3,14 +3,12 @@ title: スキーマのノード型および構造を推論するときの規則
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6c68cd98b496143e6b964383f8fa0c3af5d2c87d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 381c5fbd3823514de98b38840b8259a417e48fb8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939640"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289084"
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>スキーマのノード型および構造を推論するときの規則
 このトピックでは、スキーマ推論プロセスで、XML ドキュメント内のノード型を XML スキーマ定義言語 (XSD) 構造に変換する方法を説明します。  
@@ -37,12 +35,12 @@ ms.locfileid: "69939640"
 > [!NOTE]
 > すべての `complexType` 宣言は匿名型として推論されます。 推論されるグローバル要素はルート要素だけであり、その他すべての要素はローカル要素です。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 ### <a name="simple-typed-element"></a>単純型要素  
  <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> メソッドへの XML 入力と、生成される XML スキーマを次の表に示します。 太字になっている要素は、単純型要素から推論されるスキーマです。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -51,7 +49,7 @@ ms.locfileid: "69939640"
 ### <a name="empty-element"></a>空の要素  
  <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> メソッドへの XML 入力と、生成される XML スキーマを次の表に示します。 太字になっている要素は、空要素から推論されるスキーマです。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -60,7 +58,7 @@ ms.locfileid: "69939640"
 ### <a name="empty-element-with-attributes"></a>属性を持つ空要素  
  <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> メソッドへの XML 入力と、生成される XML スキーマを次の表に示します。 太字になっている要素は、属性を持つ空要素から推論されるスキーマです。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -69,7 +67,7 @@ ms.locfileid: "69939640"
 ### <a name="element-with-attributes-and-simple-content"></a>属性と単純内容を持つ要素  
  <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> メソッドへの XML 入力と、生成される XML スキーマを次の表に示します。 太字になっている要素は、属性と単純内容を持つ要素から推論されるスキーマです。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -81,7 +79,7 @@ ms.locfileid: "69939640"
 > [!NOTE]
 > 要素が子要素を 1 つしか持っていない場合でも、子要素はシーケンスとして扱われます。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -93,7 +91,7 @@ ms.locfileid: "69939640"
 > [!NOTE]
 > 要素が子要素を 1 つしか持っていない場合でも、子要素はシーケンスとして扱われます。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -105,7 +103,7 @@ ms.locfileid: "69939640"
 > [!NOTE]
 > `maxOccurs` 要素の `xs:choice` 属性は、推論されるスキーマでは `"unbounded"` に設定されます。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -117,7 +115,7 @@ ms.locfileid: "69939640"
 > [!NOTE]
 > `maxOccurs` 要素の `xs:choice` 属性は、推論されるスキーマでは `"unbounded"` に設定されます。  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 |XML|Schema|  
 |---------|------------|  
@@ -144,12 +142,12 @@ ms.locfileid: "69939640"
 |ドキュメント型|無視されます。|  
 |名前空間|無視されます。|  
   
- スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)」を参照してください。  
+ スキーマ推論プロセスの詳細については、「[XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Xml.Schema.XmlSchemaInference>
-- [XML スキーマ オブジェクト モデル (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [XML スキーマの推論](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
-- [XML ドキュメントからのスキーマの推論](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
-- [単純型を推論するときの規則](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)
+- [XML スキーマ オブジェクト モデル (SOM)](xml-schema-object-model-som.md)
+- [XML スキーマの推論](inferring-an-xml-schema.md)
+- [XML ドキュメントからのスキーマの推論](inferring-schemas-from-xml-documents.md)
+- [単純型を推論するときの規則](rules-for-inferring-simple-types.md)

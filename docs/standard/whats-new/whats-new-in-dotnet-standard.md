@@ -4,18 +4,18 @@ description: この記事では、.NET Standard の新しいバージョンご�
 ms.custom: updateeachrelease
 ms.date: 04/12/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: ebf656c4a5499fff54cb5a70a93c4e8cc9c82d0a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 28d6a3546e08bbc3a7d4a26f08ba9cc5e16a901b
+ms.sourcegitcommit: 2ff49dcf9ddf107d139b4055534681052febad62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73101765"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438203"
 ---
-# <a name="whats-new-in-the-net-standard"></a>.NET Standard の新機能
+# <a name="whats-new-in-net-standard"></a>.NET Standard の新機能
 
-.NET Standard は、バージョン管理されており、各バージョンの標準に準拠した .NET 実装で利用できる必要がある一連の API が定義された正式な仕様です。 .NET Standard はライブラリ開発者を対象としています。 あるバージョンの .NET Standard をターゲットとするライブラリは、そのバージョンの標準をサポートする .NET Framework、.NET Core、または Xamarin 実装で使用できます。
+.NET Standard は、各バージョンの標準に準拠した .NET 実装で利用できる必要がある一連の API がバージョン管理され、定義された正式な仕様です。 .NET Standard はライブラリ開発者を対象としています。 あるバージョンの .NET Standard をターゲットとするライブラリは、そのバージョンの標準をサポートする .NET Framework、.NET Core、または Xamarin 実装で使用できます。
 
-.NET Standard の最新バージョンは 2.0 です。 .NET Core 2.0 SDK に加えて、.NET Core ワークロードがインストールされた Visual Studio 2017 Version 15.3 にも含まれています。
+.NET Standard は、.NET Core SDK に加えて、.NET Core ワークロードを選択する場合は Visual Studio にも含まれています。
 
 ## <a name="supported-net-implementations"></a>サポートされている .NET 実装
 
@@ -29,13 +29,13 @@ ms.locfileid: "73101765"
 - Xamarin.Android 8.0 以降
 - ユニバーサル Windows プラットフォーム 10.0.16299 以降
 
-## <a name="whats-new-in-the-net-standard-20"></a>.NET Standard 2.0 の新機能
+## <a name="whats-new-in-net-standard-20"></a>.NET Standard 2.0 の新機能
 
 .NET Standard 2.0 には、次の新機能が含まれています。
 
 ### <a name="a-vastly-expanded-set-of-apis"></a>大幅に拡張された一連の API
 
-.NET Standard バージョン 1.6 には、比較的少数の API が含まれました。 除外された API の中には、.NET Framework または Xamarin で一般的に使用されていた多くの API がありました。 その結果、複数の .NET 実装をターゲットとするアプリケーションやライブラリを開発する場合に、使い慣れた API に適した代替のものを開発者が見つけなければならないので、開発は複雑になります。 .NET Standard 2.0 では、以前のバージョンの標準である .NET Standard 1.6 で使用できる API に 20,000 個を超える API を追加して、この制限に対処しています。 .NET Standard 2.0 に追加された API の一覧については、「[.NET Standard 2.0 vs 1.6](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md)」(.NET Standard 2.0 と 1.6) を参照してください。
+.NET Standard バージョン 1.6 には、比較的少数の API のサブセットが含まれていました。 除外された API の中には、.NET Framework または Xamarin で一般的に使用されていた多くの API がありました。 その結果、複数の .NET 実装をターゲットとするアプリケーションやライブラリを開発する場合に、使い慣れた API に適した代替のものを開発者が見つけなければならないので、開発は複雑になります。 .NET Standard 2.0 では、以前のバージョンの標準である .NET Standard 1.6 で使用できる API に 20,000 個を超える API を追加して、この制限に対処しています。 .NET Standard 2.0 に追加された API の一覧については、「[.NET Standard 2.0 と 1.6 の比較](https://raw.githubusercontent.com/dotnet/standard/master/docs/versions/netstandard2.0_diff.md)」を参照してください。
 
 .NET Standard 2.0 の <xref:System> 名前空間には、以下のような追加がありました。
 
@@ -53,37 +53,37 @@ ms.locfileid: "73101765"
 
 ### <a name="support-for-net-framework-libraries"></a>.NET Framework ライブラリのサポート
 
-大部分のライブラリは、.NET Standard ではなく .NET Framework をターゲットとしています。 ただし、このようなライブラリの呼び出しのほとんどは、.NET Standard 2.0 に含まれている API に対する呼び出しです。 .NET Standard 2.0 以降、[互換性 shim](https://github.com/dotnet/standard/blob/master/docs/planning/netstandard-2.0/README.md#assembly-unification) を使用して .NET Standard ライブラリから .NET Framework ライブラリにアクセスできるようになりました。 この互換レイヤーは開発者に対して透過的です。 .NET Framework ライブラリを利用するために必要なことはありません。
+ライブラリの圧倒的多数が、.NET Standard ではなく .NET Framework をターゲットとしています。 ただし、このようなライブラリの呼び出しのほとんどは、.NET Standard 2.0 に含まれている API に対するものです。 .NET Standard 2.0 以降、[互換性 shim](https://github.com/dotnet/standard/blob/master/docs/planning/netstandard-2.0/README.md#assembly-unification) を使用して .NET Standard ライブラリから .NET Framework ライブラリにアクセスできるようになりました。 この互換レイヤーは開発者に対して透過的です。 .NET Framework ライブラリを利用するために必要なことはありません。
 
 唯一の要件は、.NET Framework クラス ライブラリから呼び出される API が .NET Standard 2.0 に含まれている必要があることです。
 
 ### <a name="support-for-visual-basic"></a>Visual Basic のサポート
 
-Visual Basic で .NET Standard ライブラリを開発できるようになりました。 .NET Core ワークロードがインストールされた Visual Studio 2017 Version 15.3 以降を使用している Visual Basic 開発者向けに、Visual Studio には .NET Standard Class Library テンプレートが含まれるようになりました。 他の開発ツールと環境を使用している Visual Basic 開発者の場合、[dotnet new](../../core/tools/dotnet-new.md) コマンドを使用して .NET Standard ライブラリ プロジェクトを作成できます。 詳細については、「[.NET Standard ライブラリのツールのサポート](#tooling-support-for-net-standard-libraries)」を参照してください。
+Visual Basic で .NET Standard ライブラリを開発できるようになりました。 .NET Core ワークロードがインストールされた Visual Studio 2019 と Visual Studio 2017 バージョン 15.3 以降には、.NET Standard クラス ライブラリ テンプレートが含まれています。 他の開発ツールと環境を使用している Visual Basic 開発者の場合、[dotnet new](../../core/tools/dotnet-new.md) コマンドを使用して .NET Standard ライブラリ プロジェクトを作成できます。 詳細については、「[.NET Standard ライブラリのツールのサポート](#tooling-support-for-net-standard-libraries)」を参照してください。
 
 ### <a name="tooling-support-for-net-standard-libraries"></a>.NET Standard ライブラリのツールのサポート
 
-.NET Core 2.0 と .NET Standard 2.0 がリリースされ、Visual Studio 2017 と [.NET Core コマンドライン インターフェイス (CLI) ツール](../../core/tools/index.md) には .NET Standard ライブラリの作成をサポートするツールが追加されました。
+.NET Core 2.0 と .NET Standard 2.0 がリリースされ、Visual Studio 2017 と [.NET Core CLI](../../core/tools/index.md) の両方に .NET Standard ライブラリの作成をサポートするツールが追加されました。
 
 **.NET Core クロスプラットフォーム開発**ワークロードを使用して Visual Studio をインストールする場合は、次の図に示すように、プロジェクト テンプレートを使用して .NET Standard 2.0 ライブラリ プロジェクトを作成できます。
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ![新しい .NET Standard ライブラリ プロジェクトを追加する](./media/std-project-cs.png)
 
-.NET Core CLI を使用している場合、次の [dotnet new](../../core/tools/dotnet-new.md) コマンドを実行すると、.NET Standard 2.0 をターゲットとするクラス ライブラリ プロジェクトが作成されます。
+.NET Core CLI を使用している場合、次の [dotnet new](../../core/tools/dotnet-new.md) コマンドによって、.NET Standard 2.0 をターゲットとするクラス ライブラリ プロジェクトが作成されます。
 
 ```dotnetcli
 dotnet new classlib
 ```
 
-# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+# <a name="visual-basic"></a>[Visual Basic](#tab/vb)
 
 ![新しい .NET Standard ライブラリ プロジェクトを追加する](./media/std-project-vb.png)
 
-.NET Core CLI を使用している場合、次の [dotnet new](../../core/tools/dotnet-new.md) コマンドを実行すると、.NET Standard 2.0 をターゲットとするクラス ライブラリ プロジェクトが作成されます。
+.NET Core CLI を使用している場合、次の [dotnet new](../../core/tools/dotnet-new.md) コマンドによって、.NET Standard 2.0 をターゲットとするクラス ライブラリ プロジェクトが作成されます。
 
 ```dotnetcli
 dotnet new classlib -lang vb

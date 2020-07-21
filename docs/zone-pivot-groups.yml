@@ -1,0 +1,29 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: operating-systems-set-one
+  title: オペレーティング システム
+  prompt: オペレーティング システムの選択
+  pivots:
+  - id: os-windows
+    title: Windows
+  - id: os-linux
+    title: Linux
+  - id: os-macos
+    title: macOS
+- id: unit-testing-framework-set-one
+  title: 単体テスト フレームワーク
+  prompt: 単体テスト フレームワークを選択する
+  pivots:
+  - id: mstest
+    title: MSTest
+  - id: xunit
+    title: xUnit
+  - id: nunit
+    title: NUnit
+metadata:
+  ms.openlocfilehash: 91fc1110fbbec2e8435b701014630159ab3077d7
+  ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 05/20/2020
+  ms.locfileid: "83703618"

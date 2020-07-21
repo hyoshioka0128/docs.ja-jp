@@ -1,5 +1,6 @@
 ---
-title: DataGridView コントロール (Windows フォーム)
+title: DataGridView コントロール
+description: コントロールを使用し `DataGridView` て、少量のデータの読み取り専用ビューを表示したり、非常に大きなデータセットの編集可能なビューを表示するようにスケーリングしたりする方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - tables [Windows Forms]
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - datasets [Windows Forms], displaying in DataGridView control
 - DataGridView control [Windows Forms]
 ms.assetid: dbee73f2-bba6-4874-9389-cd21d44309be
-ms.openlocfilehash: 86e96045b7de580b7cefd0262369ce860d00e234
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f9a45e8be7975697ca5c0d019c6bc4119f562aea
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61909195"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325902"
 ---
 # <a name="datagridview-control-windows-forms"></a>DataGridView コントロール (Windows フォーム)
 `DataGridView` コントロールには、データを表形式で表示するための強力で柔軟な機能が用意されています。 `DataGridView` コントロールを使用すると、読み取り専用のビューに少量のデータを表示したり、拡大して非常に大量のデータのセットの編集可能なビューを表示したりできます。  
@@ -73,9 +74,9 @@ ms.locfileid: "61909195"
  [Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)  
  `DataGridView` コントロールが <xref:System.Windows.Forms.DataGrid> コントロールより改良され、これに代わるものである点について説明します。  
   
- 参照してください[デザイナーを使用して Windows フォーム DataGridView コントロールで](using-the-designer-with-the-windows-forms-datagridview-control.md)します。  
+ 「[デザイナーと Windows フォーム DataGridView コントロールの使用](using-the-designer-with-the-windows-forms-datagridview-control.md)」も参照してください。  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>リファレンス  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridView> コントロールのリファレンス ドキュメントを提供します。  
   

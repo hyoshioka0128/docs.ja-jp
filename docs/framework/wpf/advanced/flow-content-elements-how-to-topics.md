@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: ef5175df-6ab9-4096-be0c-804003b44c64
 ms.openlocfilehash: 241f3736eef55fcca13d4cb9994bb04aaf4eda66
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61962527"
 ---
 # <a name="flow-content-elements-how-to-topics"></a>フロー コンテンツ要素に関する「方法」トピック
-このセクションのトピックでは、さまざまなフロー コンテンツ要素および関連機能を使用して一般的なタスクを実行する方法について説明します。  
+このセクションのトピックでは、さまざまなフロー コンテンツ要素と関連する機能を使用して一般的なタスクを実行する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [段落間の間隔を調整する](how-to-adjust-spacing-between-paragraphs.md)  
@@ -34,7 +34,7 @@ ms.locfileid: "61962527"
  [フロー コンテンツ要素を使用する](how-to-use-flow-content-elements.md)  
  [FlowDocument の列区切り属性を使用する](how-to-use-flowdocument-column-separating-attributes.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Documents.FlowDocument>  
   <xref:System.Windows.Documents.Block>  
   <xref:System.Windows.Documents.Inline>  

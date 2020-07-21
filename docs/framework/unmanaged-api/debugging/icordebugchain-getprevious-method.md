@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 58eed4c8-d80c-4c6a-a875-967a90dd926c
 topic_type:
 - apiref
-ms.openlocfilehash: c7598a9d93631ca93187886fd8929ba10726dad7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a57e73495ac22a25a5f13c06d4c75dee7dde41e0
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124729"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894630"
 ---
 # <a name="icordebugchaingetprevious-method"></a>ICorDebugChain::GetPrevious メソッド
 スレッドの前のフレームのチェーンを取得します。  
@@ -35,13 +35,13 @@ HRESULT GetPrevious (
   
 ## <a name="parameters"></a>パラメーター  
  `ppChain`  
- 入出力このスレッドのフレームの前のチェーンを表す、のオブジェクトのアドレスへのポインター。 このチェーンが最初のチェーンの場合、`ppChain` は null になります。  
+ 入出力このスレッドのフレームの前のチェーンを表す、のオブジェクトのアドレスへのポインター。 このチェーンが最初のチェーンの場合`ppChain` 、は null です。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

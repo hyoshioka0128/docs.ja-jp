@@ -7,13 +7,13 @@ dev_langs:
 ms.assetid: 7ab28021-4d15-4d9c-bf2e-6ccc0daa7d1a
 ms.openlocfilehash: 515a8477b3a9c72934e0ad11d7b1bf599e8b16a2
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70793505"
 ---
 # <a name="how-to-represent-columns-as-class-members"></a>方法: クラス メンバーとして列を表す
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 属性を使用して、フィールドまたはプロパティをデータベース<xref:System.Data.Linq.Mapping.ColumnAttribute>列に関連付けます。  
+フィールドまたはプロパティをデータベース列に関連付けるには、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の <xref:System.Data.Linq.Mapping.ColumnAttribute> 属性を使用します。  
   
 ### <a name="to-map-a-field-or-property-to-a-database-column"></a>フィールドまたはプロパティをデータベース列に対応付けるには  
   
@@ -30,4 +30,4 @@ ms.locfileid: "70793505"
 ## <a name="see-also"></a>関連項目
 
 - [LINQ to SQL オブジェクト モデル](the-linq-to-sql-object-model.md)
-- [方法: コードエディターを使用してエンティティクラスをカスタマイズする](how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [方法: コード エディターを使用してエンティティ クラスをカスタマイズする](how-to-customize-entity-classes-by-using-the-code-editor.md)

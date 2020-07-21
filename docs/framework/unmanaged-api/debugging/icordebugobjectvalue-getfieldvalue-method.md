@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c96770b0-3e09-47bb-bd29-20353b043459
 topic_type:
 - apiref
-ms.openlocfilehash: 002c6cccb3ddf29b831ba5e14baa5e51f1b82433
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 660bc13e8109994f59444c0adebbc97f54de0b43
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73095889"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83207589"
 ---
 # <a name="icordebugobjectvaluegetfieldvalue-method"></a>ICorDebugObjectValue::GetFieldValue メソッド
 このオブジェクト値について、指定したクラスの指定したフィールドの値を取得します。  
@@ -40,23 +40,23 @@ HRESULT GetFieldValue (
  からフィールド値を取得する対象のクラスを表す "表示クラス" オブジェクトへのポインター。  
   
  `fieldDef`  
- からフィールドを記述するメタデータを参照する `mdFieldDef` トークン。  
+ から`mdFieldDef`フィールドを記述するメタデータを参照するトークン。  
   
  `ppValue`  
  入出力指定したフィールドの値を表す "ICorDebugValue" オブジェクトへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- `pClass` パラメーターで指定されたクラスは、オブジェクト値のクラスの階層内に存在する必要があり、フィールドはそのクラスのフィールドである必要があります。  
+ パラメーターで指定されたクラスは、 `pClass` オブジェクト値のクラスの階層内に存在する必要があり、フィールドはそのクラスのフィールドである必要があります。  
   
- `GetFieldValue` メソッドは、ジェネリックオブジェクトおよびジェネリッククラスでも成功します。 たとえば、MyDictionary\<V > が Dictionary\<string, V > から継承され、オブジェクト値が MyDictionary\<int32 > 型である場合、Dictionary `ICorDebugClass` K の\<オブジェクトを渡すと、V > は次のフィールドを正常に取得します。Dictionary\<string、int32 >。  
+ `GetFieldValue`ジェネリックオブジェクトとジェネリッククラスでは、メソッドは引き続き成功します。 たとえば、MyDictionary \< v> \< がディクショナリ文字列 v> から継承し、オブジェクト値が mydictionary int32> 型である場合、 \< `ICorDebugClass` ディクショナリ K のオブジェクトを渡すと、 \< V> は dictionary 文字列, int32> のフィールドを正常に取得し \< ます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目

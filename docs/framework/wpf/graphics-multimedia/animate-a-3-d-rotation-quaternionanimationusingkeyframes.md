@@ -1,35 +1,35 @@
 ---
-title: '方法: キー フレーム (QuaternionAnimationUsingKeyFrames) を使用して 3-D 回転をアニメーション化する'
+title: '方法: キー フレーム (QuaternionAnimationUsingKeyFrames) を使用して 3D 回転をアニメーション化する'
 ms.date: 03/30/2017
 helpviewer_keywords:
-- 3-D translations [WPF], animating [WPF], with key frames (QuaternionAnimationUsingKeyFrames)
+- 3D translations [WPF], animating [WPF], with key frames (QuaternionAnimationUsingKeyFrames)
 - key frames [WPF], QuaternionAnimationUsingKeyFrames
-- animation [WPF], 3-D translations [WPF], with key frames (QuaternionAnimationUsingKeyFrames)
+- animation [WPF], 3D translations [WPF], with key frames (QuaternionAnimationUsingKeyFrames)
 ms.assetid: 09e5707b-7523-4a08-9aa7-bb13cbedccdf
-ms.openlocfilehash: 87176df26405a69cb2c3d63620def0575b750b52
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 5273183aaa49a743cc401dec0b4b16bae09e3129
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010268"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112298"
 ---
-# <a name="how-to-animate-a-3-d-rotation-using-key-frames-quaternionanimationusingkeyframes"></a>方法: キー フレーム (QuaternionAnimationUsingKeyFrames) を使用して 3-D 回転をアニメーション化する
-次の例では、<xref:System.Windows.Media.Animation.QuaternionAnimationUsingKeyFrames>回転 3D オブジェクトを作成するために使用します。 このアニメーションは、次のキー フレームを使用します。  
+# <a name="how-to-animate-a-3d-rotation-using-key-frames-quaternionanimationusingkeyframes"></a>方法: キー フレーム (QuaternionAnimationUsingKeyFrames) を使用して 3D 回転をアニメーション化する
+次の例では、3D オブジェクトを回転させるために <xref:System.Windows.Media.Animation.QuaternionAnimationUsingKeyFrames> が使用されています。 このアニメーションでは、次のキー フレームが使用されます。  
   
-1. <xref:System.Windows.Media.Animation.LinearRotation3DKeyFrame> 作成する滑らかな線形補間値の間に使用されます。  
+1. <xref:System.Windows.Media.Animation.LinearRotation3DKeyFrame> は、値間に滑らかな線形補間を作成するために使用されます。  
   
-2. <xref:System.Windows.Media.Animation.DiscreteRotation3DKeyFrame> (補間) の値の間で突然「ジャンプ」の作成に使用されます。  
+2. <xref:System.Windows.Media.Animation.DiscreteRotation3DKeyFrame> は、ある値から別の値への突然の "変化" を作成するために使用されます (補間なし)。  
   
-3. <xref:System.Windows.Media.Animation.SplineRotation3DKeyFrame> によって値の間に可変遷移を作成するために使用、<xref:System.Windows.Media.Animation.SplineRotation3DKeyFrame.KeySpline%2A>プロパティ。 次の例で、アニメーションのこの部分は低速と始まりますが、時間セグメントの末尾に向かって、急激に速くなります。  
+3. <xref:System.Windows.Media.Animation.SplineRotation3DKeyFrame> は、<xref:System.Windows.Media.Animation.SplineRotation3DKeyFrame.KeySpline%2A> プロパティに応じて、値間に可変遷移を作成するために使用されます。 以下の例では、アニメーションのこの部分は、ゆっくりと始まりますが、時間セグメントの終点に向かって急激に速くなります。  
   
 ## <a name="example"></a>例  
  [!code-xaml[Animation3DGallery_snip#QuaternionAnimationUsingKeyFramesExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/QuaternionAnimationUsingKeyFramesExample.xaml#quaternionanimationusingkeyframesexamplewholepage)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ストーリーボードを使用して 3-D 回転をアニメーション化する](how-to-animate-a-3-d-rotation-using-storyboards.md)
-- [Rotation3DAnimation を使用して 3-D 回転をアニメーション化する](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)
-- [四元数を使用して 3-D 回転をアニメーション化する](how-to-animate-a-3-d-rotation-using-quaternions.md)
-- [キー フレーム (Rotation3DAnimationUsingKeyFrames) を使用して 3-D 回転をアニメーション化する](how-to-animate-a-3-d-rotation-using-key-frames.md)
-- [3-D グラフィックスの概要](3-d-graphics-overview.md)
+- [ストーリーボードを使用して 3D 回転をアニメーション化する](how-to-animate-a-3-d-rotation-using-storyboards.md)
+- [Rotation3DAnimation を使用して 3D 回転をアニメーション化する](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)
+- [四元数を使用して 3D 回転をアニメーション化する](how-to-animate-a-3-d-rotation-using-quaternions.md)
+- [キー フレーム (Rotation3DAnimationUsingKeyFrames) を使用して 3D 回転をアニメーション化する](how-to-animate-a-3-d-rotation-using-key-frames.md)
+- [3D グラフィックスの概要](3-d-graphics-overview.md)
 - [キー フレーム アニメーションの概要](key-frame-animations-overview.md)

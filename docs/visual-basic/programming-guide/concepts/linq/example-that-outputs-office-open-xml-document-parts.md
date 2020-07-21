@@ -2,14 +2,14 @@
 title: Office Open XML ドキュメント パーツを出力する例
 ms.date: 07/20/2015
 ms.assetid: a951925b-c985-48ed-b215-2a68b58f1ae5
-ms.openlocfilehash: 47a4ac649fb370145962247e07e1d8841411cac0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: f374967ec633dcb0dd0fab3ac77de669c65a219c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353499"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375188"
 ---
-# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>Office Open XML ドキュメントパーツを出力する例 (Visual Basic)
+# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>Office Open XML ドキュメント パーツを出力する例 (Visual Basic)
 このトピックでは、Office Open XML ドキュメントを開き、ドキュメント内のパーツにアクセスする方法について説明します。  
   
 ## <a name="example"></a>例  
@@ -66,4 +66,4 @@ End Using
   
 ## <a name="see-also"></a>関連項目
 
-- [Office Open XML WordprocessingML ドキュメントの詳細 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [Office Open XML WordprocessingML ドキュメントの詳細 (Visual Basic)](details-of-office-open-xml-wordprocessingml-documents.md)

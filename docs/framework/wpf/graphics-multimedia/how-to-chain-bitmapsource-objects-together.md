@@ -11,13 +11,13 @@ helpviewer_keywords:
 ms.assetid: 32d88853-395b-4855-9685-51a482a3b421
 ms.openlocfilehash: 403a2a8683e65fd71df89befd59744ac3fe6200c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61785659"
 ---
 # <a name="how-to-chain-bitmapsource-objects-together"></a>方法: BitmapSource オブジェクトをチェーンする
-この例では連鎖させることにより、イメージ ソースにさまざまな効果を適用する方法複数<xref:System.Windows.Media.Imaging.BitmapSource>派生オブジェクト。  
+この例では、<xref:System.Windows.Media.Imaging.BitmapSource> 派生オブジェクトを複数相互にチェーンすることで、イメージ ソースにさまざまな効果を適用する方法を示しています。  
   
  次の例では、チェーンを使用して、イメージのソースを反転してピクセル形式を変更します。  
   

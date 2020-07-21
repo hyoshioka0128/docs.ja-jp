@@ -1,13 +1,13 @@
 ---
 title: サーキット ブレーカー パターンの実装
 description: サーキット ブレーカー パターンを HTTP 再試行の補助システムとして実装する方法について説明します。
-ms.date: 10/16/2018
-ms.openlocfilehash: 00ca39b4b6fac37ff60adf128c3f4e22c5fc14e2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 03/03/2020
+ms.openlocfilehash: bebe0b4a622db928175f78f8d3e303d3d7adf170
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73732825"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988886"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>サーキット ブレーカー パターンを実装する
 
@@ -25,11 +25,11 @@ HTTP 再試行を不注意に使用すると、自分のソフトウェアにサ
 
 サーキット ブレーカー パターンの目的は、"再試行パターン" とは異なります。 "再試行パターン" では、操作が最終的には成功するとの見込みをもってアプリケーションに操作を再試行させます。 サーキット ブレーカー パターンにより、失敗する可能性の高い操作がアプリケーションで実行されなくなります。 アプリケーションでは、これら 2 つのパターンを組み合わせることができます。 しかしながら、再試行のロジックはサーキット ブレーカーが返す例外に対応できる必要があり、障害が一時的ではないことをサーキット ブレーカーが示す場合、再試行を中止する必要があります。
 
-## <a name="implement-circuit-breaker-pattern-with-httpclientfactory-and-polly"></a>HttpClientFactory と Polly でサーキット ブレーカー パターンを実装する
+## <a name="implement-circuit-breaker-pattern-with-ihttpclientfactory-and-polly"></a>`IHttpClientFactory` と Polly よるサーキット ブレーカー パターンの実装
 
-再試行の実装と同じように、サーキット ブレーカーの推奨されるアプローチは、Polly など実績のある .NET ライブラリを活用し、HttpClientFactory とネイティブ統合することです。
+再試行の実装と同じように、サーキット ブレーカーの推奨されるアプローチは、Polly など実績のある .NET ライブラリを活用し、`IHttpClientFactory` とネイティブ統合することです。
 
-サーキット ブレーカー ポリシーを HttpClientFactory の外向きミドルウェア パイプラインに追加することは、HttpClientFactory の使用時、既にあるものにコードの増分を 1 つ分追加することと同じくらい簡単です。
+サーキット ブレーカー ポリシーをご利用の `IHttpClientFactory` の外向きミドルウェア パイプラインに追加することは、`IHttpClientFactory` の使用時、既にあるものにコードの増分を 1 つ分追加することと同じくらい簡単です。
 
 HTTP 呼び出しの再試行に使用されるコードに追加する必要があるのは、ConfigureServices() メソッドから抜粋された次の増分コードで示されているように、使用するポリシーのリストにサーキット ブレーカー ポリシーを追加するコードだけです。
 
@@ -61,7 +61,7 @@ static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
 
 これらすべての機能は、位置を意識することなく Azure に自動的にフェールオーバーを管理させるのとは対照的に、フェールオーバーを .NET コード内から管理する場合のためのものです。
 
-使用という観点からは、HttpClient を使用するとき、ここで新しいものは何も追加する必要がありません。前のセクションで示したように、HttpClient と HttpClientFactory の使用時とコードが同じであるからです。
+使用という観点からは、HttpClient を使用するとき、ここで新しいものは何も追加する必要がありません。前のセクションで示したように、`HttpClient` と `IHttpClientFactory` の使用時とコードが同じであるからです。
 
 ## <a name="test-http-retries-and-circuit-breakers-in-eshoponcontainers"></a>eShopOnContainers 内で HTTP の再試行とサーキット ブレーカーをテストする
 
@@ -132,7 +132,7 @@ public class CartController : Controller
 }
 ```
 
-まとめます。 再試行ポリシーは、HTTP 要求の実行を数回試行し、HTTP エラーが発生します。 再試行回数がサーキット ブレーカー ポリシーに設定された最大回数に達すると (この場合は 5 回)、アプリケーションは BrokenCircuitException をスローします。 結果として、図 8-6 に示されているようなメッセージが表示されます。
+次に概要を示します。 再試行ポリシーは、HTTP 要求の実行を数回試行し、HTTP エラーが発生します。 再試行回数がサーキット ブレーカー ポリシーに設定された最大回数に達すると (この場合は 5 回)、アプリケーションは BrokenCircuitException をスローします。 結果として、図 8-6 に示されているようなメッセージが表示されます。
 
 ![バスケット サービスが機能しないというエラーを含む MVC Web アプリのスクリーンショット。](./media/implement-circuit-breaker-pattern/basket-service-inoperative.png)
 

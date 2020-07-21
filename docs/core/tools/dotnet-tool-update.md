@@ -1,84 +1,150 @@
 ---
 title: dotnet tool update コマンド
-description: dotnet tool update コマンドは、マシン上の指定された .NET Core グローバル ツールを更新します。
-ms.date: 05/29/2018
-ms.openlocfilehash: b10ce39c8b9d4df23243bcf672454a455e34eec1
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+description: dotnet tool update コマンドでは、お使いのコンピューター上の指定された .NET Core ツールを更新します。
+ms.date: 07/08/2020
+ms.openlocfilehash: 7c4bde44ac9964828074baeb1a697ba64ed17887
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117529"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226622"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
-[!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
+**この記事の対象:** ✔️ .NET Core 2.1 SDK 以降のバージョン
 
-## <a name="name"></a>name
+## <a name="name"></a>名前
 
-`dotnet tool update` - マシン上の指定された [.NET Core グローバル ツール](global-tools.md) を更新します。
+`dotnet tool update` - お使いのコンピューター上の指定された [.NET Core ツール](global-tools.md)を更新します。
 
 ## <a name="synopsis"></a>構文
 
 ```dotnetcli
-dotnet tool update <PACKAGE_NAME> <-g|--global> [--configfile] [--framework] [-v|--verbosity]
-dotnet tool update <PACKAGE_NAME> <--tool-path> [--configfile] [--framework] [-v|--verbosity]
-dotnet tool update <-h|--help>
+dotnet tool update <PACKAGE_ID> -g|--global
+    [--configfile <FILE>] [--framework <FRAMEWORK>]
+    [--add-source <SOURCE>] [--disable-parallel]
+    [--ignore-failed-sources] [--interactive] [--no-cache]
+    [-v|--verbosity <LEVEL>] [--version <VERSION>]
+
+dotnet tool update <PACKAGE_ID> --tool-path <PATH>
+    [--configfile <FILE>] [--framework <FRAMEWORK>]
+    [--add-source <SOURCE>] [--disable-parallel]
+    [--ignore-failed-sources] [--interactive] [--no-cache]
+    [-v|--verbosity <LEVEL>] [--version <VERSION>]
+
+dotnet tool update <PACKAGE_ID> --local
+    [--configfile <FILE>] [--framework <FRAMEWORK>]
+    [--add-source <SOURCE>] [--disable-parallel]
+    [--ignore-failed-sources] [--interactive] [--no-cache]
+    [--tool-manifest <PATH>]
+    [-v|--verbosity <LEVEL>] [--version <VERSION>]
+
+dotnet tool update -h|--help
 ```
 
 ## <a name="description"></a>説明
 
-`dotnet tool update` コマンドは、マシン上の指定された .NET Core グローバル ツールをパッケージの最新の安定バージョンに更新するための手段を提供します。 このコマンドは、ツールをアンインストールして再インストールして、効果的に更新します。 コマンドを使用するには、`--global` オプションを使用してユーザー全体のインストールからツールを更新することを指定するか、`--tool-path` オプションを使用してツールがインストールされている場所へのパスを指定する必要があります。
+`dotnet tool update` コマンドでは、お使いのコンピューター上の .NET Core ツールをパッケージの最新の安定バージョンに更新するための方法を提供します。 このコマンドは、ツールをアンインストールして再インストールして、効果的に更新します。 コマンドを使用するには、次のいずれかのオプションを指定します。
+
+* 既定の場所にインストールされたグローバル ツールを更新するには、`--global` オプションを使用します
+* カスタムの場所にインストールされたグローバル ツールを更新するには、`--tool-path` オプションを使用します。
+* ローカル ツールを更新するには、`--local` オプションを使用します。
+
+**ローカル ツールは .NET Core SDK 3.0 以降で使用できます。**
 
 ## <a name="arguments"></a>引数
 
-`PACKAGE_NAME`
+- **`PACKAGE_ID`**
 
-更新する .NET Core グローバル ツールが格納されている NuGet パッケージの名前または ID。 パッケージを見つけるには、[dotnet tool list](dotnet-tool-list.md) コマンドを使用できます。
+  更新する .NET Core グローバル ツールが格納されている NuGet パッケージの名前または ID。 パッケージを見つけるには、[dotnet tool list](dotnet-tool-list.md) コマンドを使用できます。
 
 ## <a name="options"></a>オプション
 
-`--add-source <SOURCE>`
+- **`--add-source <SOURCE>`**
 
-インストール時に使用するために追加の NuGet パッケージ ソースを追加します。
+  インストール時に使用するために追加の NuGet パッケージ ソースを追加します。
 
-`--configfile <FILE>`
+- **`--configfile <FILE>`**
 
-使用する NuGet 構成 (*nuget.config*) ファイル。
+  使用する NuGet 構成 (*nuget.config*) ファイル。
 
-`--framework <FRAMEWORK>`
+- **`--disable-parallel`**
 
-ツールを更新する[ターゲット フレームワーク](../../standard/frameworks.md)を指定します。
+  複数のプロジェクトを並行して復元できないようにします。
 
-`-g|--global`
+- **`--framework <FRAMEWORK>`**
 
-更新プログラムがユーザー全体のツール用であることを指定します。 `--tool-path` オプションと組み合わせることはできません。 このオプションを指定しない場合は、`--tool-path` オプションを指定する必要があります。
+  ツールを更新する[ターゲット フレームワーク](../../standard/frameworks.md)を指定します。
 
-`-h|--help`
+- **`--ignore-failed-sources`**
 
-コマンドの短いヘルプを印刷します。
+  パッケージ ソース エラーを警告として処理します。
 
-`--tool-path <PATH>`
+- **`--interactive`**
 
-グローバル ツールがインストールされている場所を指定します。 パスは絶対パスでも相対パスでもかまいません。 `--global` オプションと組み合わせることはできません。 このオプションを指定しない場合は、`--global` オプションを指定する必要があります。
+  コマンドを停止して、ユーザーの入力または操作のために待機させることができます (たとえば、認証を完了する場合)。
 
-`-v|--verbosity <LEVEL>`
+- **`--local`**
 
-コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
+  ツールとローカル ツール マニフェストを更新します。 `--global` オプションと組み合わせることはできません。
+
+- **`--no-cache`**
+
+  パッケージと HTTP 要求はキャッシュしないでください。
+
+- **`--tool-manifest <PATH>`**
+
+  マニフェスト ファイルへのパス。
+
+- **`--tool-path <PATH>`**
+
+  グローバル ツールがインストールされている場所を指定します。 PATH は絶対パスでも相対パスでもかまいません。 `--global` オプションと組み合わせることはできません。 `--global` と `--tool-path` の両方を省略すると、更新されるツールはローカル ツールであると指定されます。
+
+- **`--version <VERSION>`**
+
+  更新対象のツール パッケージのバージョン範囲。 これはバージョンのダウングレードに使用できません。その前に新しいバージョンを `uninstall` する必要があります。
+
+- **`-g|--global`**
+
+  更新プログラムがユーザー全体のツール用であることを指定します。 `--tool-path` オプションと組み合わせることはできません。 `--global` と `--tool-path` の両方を省略すると、更新されるツールはローカル ツールであると指定されます。
+
+- **`-h|--help`**
+
+  コマンドの短いヘルプを印刷します。
+
+- **`-v|--verbosity <LEVEL>`**
+
+  コマンドの詳細レベルを設定します。 指定できる値は、`q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]`、および `diag[nostic]` です。
 
 ## <a name="examples"></a>使用例
 
-[dotnetsay](https://www.nuget.org/packages/dotnetsay/) グローバル ツールを更新します。
+- **`dotnet tool update -g dotnetsay`**
 
-`dotnet tool update -g dotnetsay`
+  [dotnetsay](https://www.nuget.org/packages/dotnetsay/) グローバル ツールを更新します。
 
-特定の Windows フォルダーに配置されている [dotnetsay](https://www.nuget.org/packages/dotnetsay/) グローバル ツールを更新します。
+- **`dotnet tool update dotnetsay --tool-path c:\global-tools`**
 
-`dotnet tool update dotnetsay --tool-path c:\global-tools`
+  特定の Windows ディレクトリに配置されている [dotnetsay](https://www.nuget.org/packages/dotnetsay/) グローバル ツールを更新します。
 
-特定の Linux/macOS フォルダーに配置されている [dotnetsay](https://www.nuget.org/packages/dotnetsay/) グローバル ツールを更新します。
+- **`dotnet tool update dotnetsay --tool-path ~/bin`**
 
-`dotnet tool update dotnetsay --tool-path ~/bin`
+  特定の Linux/macOS ディレクトリに配置されている [dotnetsay](https://www.nuget.org/packages/dotnetsay/) グローバル ツールを更新します。
+
+- **`dotnet tool update dotnetsay`**
+
+  現在のディレクトリに対してインストールされている [dotnetsay](https://www.nuget.org/packages/dotnetsay/) ローカル ツールを更新します。
+
+- **`dotnet tool update -g dotnetsay --version 2.0.*`**
+
+  [dotnetsay](https://www.nuget.org/packages/dotnetsay/) グローバル ツールを最新パッチ バージョンに更新します。メジャー バージョンが `2` で、マイナー バージョンが `0` です。
+
+- **`dotnet tool update -g dotnetsay --version (2.0.*,2.1.4)`**
+
+  指定の範囲 `(> 2.0.0 && < 2.1.4)` 内で [dotnetsay](https://www.nuget.org/packages/dotnetsay/) グローバル ツールを一番下のバージョンに更新します。バージョン `2.1.0` がインストールされます。 セマンティック バージョン管理の範囲に関する詳細については、[NuGet パッケージのバージョン管理範囲](/nuget/concepts/package-versioning#version-ranges)に関するページを参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-- [.NET Core グローバル ツール](global-tools.md)
+- [.NET Core ツール](global-tools.md)
+- [セマンティック バージョン管理](https://semver.org)
+- [チュートリアル: .NET Core CLI を使って .NET Core グローバル ツールをインストールして使用する](global-tools-how-to-use.md)
+- [チュートリアル: .NET Core CLI を使って .NET Core ローカル ツールをインストールして使用する](local-tools-how-to-use.md)

@@ -4,37 +4,37 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID54
 ms.assetid: 74891e96-884b-4c8d-872d-cd11ae272372
-ms.openlocfilehash: 9a59faf1b6f845858e36efcabdf0758e41ad75dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 534ea2d8316dc29cace798c5ad9b7697a290026f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619744"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409870"
 ---
 # <a name="bad-file-mode"></a>ファイル モードが正しくありません。
-ファイルの内容を操作するときに使用するステートメントは、ファイルを開いたモードに適切なである必要があります。 以下の原因が考えられます。  
+ファイルの内容を操作するために使用されるステートメントは、ファイルが開かれたモードに適している必要があります。 以下の原因が考えられます。  
   
-- A`FilePutObject`または`FileGetObject`ステートメントがシーケンシャル ファイルを指定します。  
+- `FilePutObject` または `FileGetObject` ステートメントがシーケンシャル ファイルを指定しています。  
   
-- A`Print`ステートメント以外のアクセス モードで開かれたファイルを指定する`Output`または`Append`します。  
+- `Print` ステートメントが、`Output` または `Append` 以外のアクセス モード用に開かれたファイルを指定しています。  
   
-- `Input`ステートメント以外のアクセス モードで開かれたファイルを指定します `Input`  
+- `Input` ステートメントが、`Input` 以外のアクセス モードで開かれたファイルを指定しています  
   
-- 読み取り専用ファイルに書き込むしようとしました。  
+- 読み取り専用ファイルに書き込もうとしました。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 確認します`FilePutObject`と`FileGetObject`の開いているファイルを参照することはのみ`Random`または`Binary`アクセスします。  
+- `FilePutObject` および `FileGetObject` が、`Random` または `Binary` アクセス用に開かれたファイルのみを参照していることを確認します。  
   
-- 必ず`Print`のいずれかに開かれたファイルを指定します`Output`または`Append`アクセス モード。 ない場合は、さまざまなステートメントを使用して、ファイルにデータを配置または適切なモードでファイルを再び開きます。  
+- `Print` が `Output` または `Append` アクセス モードのいずれかで開かれているファイルを指定していることを確認します。 そうでない場合は、別のステートメントを使用してファイルにデータを格納するか、適切なモードでファイルを再度開きます。  
   
-- 必ず`Input`用に開かれたファイルを指定します`Input`します。 有効でない場合は、さまざまなステートメントを使用して、データ ファイル内に配置または適切なモードでファイルを再び開きます。  
+- `Input` が `Input` で開かれているファイルを指定していることを確認します。 そうでない場合は、別のステートメントを使用してファイルにデータを格納するか、適切なモードでファイルを再度開きます。  
   
-- 読み取り専用ファイルを作成する場合は、ファイルの読み取り/書き込み状態を変更したりへの書き込みをしないでください。  
+- 読み取り専用ファイルに書き込む場合は、ファイルの読み取り/書き込みの状態を変更するか、ファイルへの書き込みを試みないようにします。  
   
 - `My.Computer.FileSystem` オブジェクトで利用できる機能を使用します。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:Microsoft.VisualBasic.FileSystem>
-- [トラブルシューティング : テキスト ファイルの読み取りと書き込み](../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
+- [トラブルシューティング : テキスト ファイルの読み取りと書き込み](../../developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

@@ -1,5 +1,6 @@
 ---
-title: HttpWebRequest. _HttpResponse フィールド
+title: _HttpResponse HttpWebRequest フィールド
+description: .NET の _HttpResponse HttpWebRequest フィールドについて説明します。 このフィールドは、http 要求からの HTTP 応答の詳細を含む HttpWebResponse 型です。
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,18 +11,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: eab9b789-beb4-4c28-b2d8-78debc7ba129
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d993021ccb87ccafb5f6f2fc4c6c7c288288adae
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 70058e1183abf5b6bfd172497f65a3ceb2344060
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120075"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989958"
 ---
-# <a name="httpwebrequest_httpresponse-field"></a>HttpWebRequest.\_Httpresponse.cache フィールド
+# <a name="httpwebrequest_httpresponse-field"></a>HttpWebRequest。 \_Httpresponse.cache フィールド
 
-`HttpWebRequest._HttpResponse` は、http 要求からの HTTP 応答の詳細を含む <xref:System.Net.HttpWebResponse> です。 HTTP 応答を受信するまで `null` できます。
+`HttpWebRequest._HttpResponse`<xref:System.Net.HttpWebResponse>http 要求からの http 応答の詳細を格納している。 `null`HTTP 応答が受信されるまでの間でもかまいません。
 
 ## <a name="syntax"></a>構文
   
@@ -30,14 +29,14 @@ internal HttpWebResponse _HttpResponse
 ```
 
 > [!WARNING]
-> `HttpWebRequest._HttpResponse` フィールドは内部であり、コード内で直接使用するためのものではありません。
-> 
+> `HttpWebRequest._HttpResponse`フィールドは内部であり、コードで直接使用するためのものではありません。
+>
 > Microsoft では、どのような状況でも、実稼働アプリケーションでのこのフィールドの使用はサポートしていません。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
 **名前空間:** <xref:System.Net>
 
-**アセンブリ:** システム (.dll 内)
+**アセンブリ:** システム (System.dll)
 
 **.NET Framework のバージョン:** 2.0 以降で使用できます。

@@ -1,16 +1,17 @@
 ---
 title: '方法: 開発中に使用する一時的な証明書を作成する'
+description: PowerShell コマンドレットを使用して、セキュリティで保護された WCF サービスまたはクライアントの開発に使用する2つの一時 x.509 証明書を作成する方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: e2df35959f9821c65d694079aefa0ae6ba01897f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0a21548386639a9f6a8c8572e5d7928ffdb270d6
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053303"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247040"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>方法: 開発中に使用する一時的な証明書を作成する
 
@@ -21,7 +22,7 @@ Windows Communication Foundation (WCF) を使用してセキュリティで保�
 >
 > 既定では、[新しい-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate)コマンドレットは、自己署名の証明書を作成しますが、これらの証明書は安全ではありません。 自己署名証明書を信頼されたルート証明機関ストアに配置すると、展開環境をより厳密にシミュレートする開発環境を作成できます。
 
- 証明書の作成と使用の詳細については、「[証明書の使用](working-with-certificates.md)使用」を参照してください。 証明書を資格情報として使用する方法の詳細については、「[サービスおよびクライアントのセキュリティ保護](securing-services-and-clients.md)」を参照してください。 Microsoft Authenticode テクノロジの使用方法については、「 [Authenticode Overviews and Tutorials (Authenticode の概要とチュートリアル)](https://go.microsoft.com/fwlink/?LinkId=88919)」を参照してください。
+ 証明書の作成と使用の詳細については、「[証明書の](working-with-certificates.md)使用」を参照してください。 証明書を資格情報として使用する方法の詳細については、「[サービスとクライアントのセキュリティ保護](securing-services-and-clients.md)」を参照してください。 Microsoft Authenticode テクノロジの使用方法については、「 [Authenticode Overviews and Tutorials (Authenticode の概要とチュートリアル)](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85))」を参照してください。
 
 ## <a name="to-create-a-self-signed-root-authority-certificate-and-export-the-private-key"></a>自己署名ルート証明書を作成して秘密キーをエクスポートするには
 
@@ -31,7 +32,7 @@ Windows Communication Foundation (WCF) を使用してセキュリティで保�
 $rootcert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName "RootCA" -TextExtension @("2.5.29.19={text}CA=true") -KeyUsage CertSign,CrlSign,DigitalSignature
 ```
 
-証明書を PFX ファイルにエクスポートして、後の手順で必要な場所にインポートできるようにする必要があります。 証明書を秘密キーと共にエクスポートする場合は、パスワードを保護するためにパスワードが必要です。 パスワード`SecureString`をに保存し、 [get-pfxcertificate](/powershell/module/pkiclient/export-pfxcertificate)コマンドレットを使用して、関連付けられている秘密キーを持つ証明書を PFX ファイルにエクスポートします。 また、[証明書のエクスポート](/powershell/module/pkiclient/export-certificate)コマンドレットを使用して、公開証明書のみを CRT ファイルに保存します。
+証明書を PFX ファイルにエクスポートして、後の手順で必要な場所にインポートできるようにする必要があります。 証明書を秘密キーと共にエクスポートする場合は、パスワードを保護するためにパスワードが必要です。 パスワードをに保存し、 `SecureString` [get-pfxcertificate](/powershell/module/pkiclient/export-pfxcertificate)コマンドレットを使用して、関連付けられている秘密キーを持つ証明書を PFX ファイルにエクスポートします。 また、[証明書のエクスポート](/powershell/module/pkiclient/export-certificate)コマンドレットを使用して、公開証明書のみを CRT ファイルに保存します。
 
 ```powershell
 [System.Security.SecureString]$rootcertPassword = ConvertTo-SecureString -String "password" -Force -AsPlainText
@@ -42,7 +43,7 @@ Export-Certificate -Cert $rootCertPath -FilePath 'RootCA.crt'
 
 ## <a name="to-create-a-new-certificate-signed-by-a-root-authority-certificate"></a>ルート証明書によって署名された新しい証明書を作成するには
 
-発行者の秘密キーを使用して`RootCA` 、サブジェクト名が "signedbyrootca" で署名された証明書を作成するコマンドを次に示します。
+`RootCA`発行者の秘密キーを使用して、サブジェクト名が "SignedByRootCA" で署名された証明書を作成するコマンドを次に示します。
 
 ```powershell
 $testCert = New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName "SignedByRootCA" -KeyExportPolicy Exportable -KeyLength 2048 -KeyUsage DigitalSignature,KeyEncipherment -Signer $rootCert
@@ -62,7 +63,7 @@ Export-Certificate -Cert $testCertPath -FilePath testcert.crt
 
 ### <a name="to-install-a-self-signed-certificate-in-the-trusted-root-certification-authorities"></a>自己署名証明書を信頼されたルート証明機関としてインストールするには
 
-1. 証明書スナップインを開きます。 詳細については、「[方法 :MMC スナップ](how-to-view-certificates-with-the-mmc-snap-in.md)インを使用して証明書を表示します。
+1. 証明書スナップインを開きます。 詳細については、「 [方法: MMC スナップインを使用して証明書を参照する](how-to-view-certificates-with-the-mmc-snap-in.md)」をご覧ください。
 
 2. 証明書の格納先となる、 **[ローカル コンピューター]** または **[現在のユーザー]** のフォルダーを開きます。
 
@@ -106,7 +107,7 @@ Export-Certificate -Cert $testCertPath -FilePath testcert.crt
     </behaviors>
     ```
 
-WCF での証明書の使用に関する詳細については、「 [証明書の使用](working-with-certificates.md)」を参照してください。
+WCF での証明書の使用に関する詳細については、「 [Working with Certificates](working-with-certificates.md)」を参照してください。
 
 ## <a name="net-framework-security"></a>.NET Framework のセキュリティ
 
@@ -115,5 +116,5 @@ WCF での証明書の使用に関する詳細については、「 [証明書�
 ## <a name="see-also"></a>関連項目
 
 - [証明書の使用](working-with-certificates.md)
-- [方法: MMC スナップインを使用して証明書を表示する](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [方法: MMC スナップインを使用して証明書を参照する](how-to-view-certificates-with-the-mmc-snap-in.md)
 - [サービスおよびクライアントのセキュリティ保護](securing-services-and-clients.md)

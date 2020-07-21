@@ -1,5 +1,7 @@
 - name: ようこそ
   href: welcome.md
+- name: .NET の新機能に関するドキュメント
+  href: whats-new/index.yml
 - name: .NET ガイド
   href: standard/
 - name: .NET Core ガイド

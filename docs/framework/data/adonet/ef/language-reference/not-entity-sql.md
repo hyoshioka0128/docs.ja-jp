@@ -2,12 +2,12 @@
 title: '! (NOT) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: a1447a34-df06-4393-93c3-0612ebd41abc
-ms.openlocfilehash: 7755219c5238f78e59332c508643fe2ae1f5096f
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.openlocfilehash: 0b69d4cb64adc1f9232631d50ec42af0d1ba47e3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319515"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150130"
 ---
 # <a name="-not-entity-sql"></a>! (NOT) (Entity SQL)
 `Boolean` 型の式を否定します。  
@@ -18,7 +18,7 @@ ms.locfileid: "72319515"
 NOT boolean_expression  
 -- or  
 ! boolean_expression  
-``` 
+```
   
 ## <a name="arguments"></a>引数  
  `boolean_expression`  
@@ -30,7 +30,7 @@ NOT boolean_expression
 ## <a name="example"></a>例  
  次の Entity SQL クエリでは、NOT 演算子を使用して `Boolean` 型の式を否定します。 このクエリは、AdventureWorks Sales Model に基づいています。 このクエリをコンパイルして実行するには、次の手順を実行します。  
   
-1. 「 [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。  
+1. 「[方法: StructuralType 結果を返すクエリを実行する](../how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。  
   
 2. 次のクエリを引数として `ExecuteStructuralTypeQuery` メソッドに渡します。  
   

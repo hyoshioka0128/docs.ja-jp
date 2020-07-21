@@ -1,17 +1,17 @@
 ---
 title: '方法: Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する'
+description: Windows SDK によって提供されるタイプ ライブラリ インポーター (Tlbimp.exe) を使用してプライマリ相互運用機能アセンブリを生成する方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - primary interop assemblies, generating
 - Tlbimp.exe
 - Type Library Importer
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
-ms.openlocfilehash: e46295b89b042452cb6e303302a8b88d68d58426
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 779b4863b6f1513f3566d4ab31660d88cda1039b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123911"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619131"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>方法: Tlbimp.exe を使用してプライマリ相互運用機能アセンブリを生成する
 
@@ -45,7 +45,7 @@ ms.locfileid: "73123911"
 
 元のタイプ ライブラリとは異なるバージョン番号の依存プライマリ相互運用機能アセンブリは、現在のディレクトリにインストールされている場合、検出できません。 依存プライマリ相互運用機能アセンブリを Windows レジストリに登録するか、または **/reference** オプションを使用して、Tlbimp.exe が依存 DLL を検出できるようにする必要があります。
 
-複数のバージョンのタイプ ライブラリをラップすることもできます。 その方法については、「[方法: 複数のバージョンのタイプ ライブラリをラップする](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100))」を参照してください。
+複数のバージョンのタイプ ライブラリをラップすることもできます。 手順については、「[方法:複数のバージョンのタイプ ライブラリをラップする](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100))」を参照してください。
 
 ## <a name="example"></a>例
 

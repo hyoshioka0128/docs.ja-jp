@@ -7,14 +7,12 @@ helpviewer_keywords:
 - tools [.NET Framework]
 - running .NET Framework tools
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2fd602901955be218379386d8ed1b7c14b30078c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 60a9cb241f289cacc7437174f112114e843aca47
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974516"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645559"
 ---
 # <a name="net-framework-tools"></a>.NET Framework ツール
 
@@ -38,7 +36,7 @@ ms.locfileid: "73974516"
 ActiveX コントロール用の COM タイプ ライブラリに属する型定義を Windows フォーム コントロールに変換します。
 
 - [Caspol.exe (コード アクセス セキュリティ ポリシー ツール)](caspol-exe-code-access-security-policy-tool.md)  
-コンピューター ポリシー レベル、ユーザー ポリシー レベル、およびエンタープライズ ポリシー レベルのセキュリティ ポリシーを表示および構成できます。 .NET Framework 4 以降では、[\<legacyCasPolicy> 要素](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)が `true` に設定されていない限り、このツールがコード アクセス セキュリティ (CAS) ポリシーに影響を与えることはありません。 詳細については、「[セキュリティの変更点](../security/security-changes.md)」を参照してください。
+コンピューター ポリシー レベル、ユーザー ポリシー レベル、およびエンタープライズ ポリシー レベルのセキュリティ ポリシーを表示および構成できます。 .NET Framework 4 以降では、[\<legacyCasPolicy> 要素](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)が `true` に設定されていない限り、このツールがコード アクセス セキュリティ (CAS) ポリシーに影響を与えることはありません。 詳細については、「[セキュリティの変更点](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)」を参照してください。
 
 - [Cert2spc.exe (ソフトウェア発行元証明書テスト ツール)](cert2spc-exe-software-publisher-certificate-test-tool.md)  
 1 つ以上の X.509 証明書からソフトウェア発行元証明書 (SPC: Software Publisher's Certificate) を作成します。 このツールはテスト専用です。

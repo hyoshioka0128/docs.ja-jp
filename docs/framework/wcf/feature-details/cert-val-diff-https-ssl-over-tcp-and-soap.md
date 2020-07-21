@@ -1,5 +1,6 @@
 ---
 title: HTTPS、SSL Over TCP、SOAP セキュリティ間における証明書検証方法の相違点
+description: HTTPS または TCP に加えて WCF が提供するメッセージ層 (SOAP) セキュリティを使用した証明書と、そのような証明書を WCF で検証する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,23 +8,23 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF], validation differences
 ms.assetid: 953a219f-4745-4019-9894-c70704f352e6
-ms.openlocfilehash: 0ab343da821e8994ac3a652bfc55db261d5e48f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97d51e5b65ebf20e80a69512370b68a51eeb28a7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857650"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245272"
 ---
 # <a name="certificate-validation-differences-between-https-ssl-over-tcp-and-soap-security"></a>HTTPS、SSL Over TCP、SOAP セキュリティ間における証明書検証方法の相違点
-できます証明書使用する Windows Communication Foundation (WCF) でトランスポート層セキュリティ (TLS) だけでなく、メッセージ層 (SOAP) セキュリティで HTTP (HTTPS) または TCP 経由で。 ここでは、このような証明書の検証方法の違いについて説明します。  
+Windows Communication Foundation (WCF) の証明書は、トランスポート層セキュリティ (TLS) over HTTP (HTTPS) または TCP に加えて、メッセージ層 (SOAP) セキュリティと共に使用できます。 ここでは、このような証明書の検証方法の違いについて説明します。  
   
 ## <a name="validation-of-https-client-certificates"></a>HTTPS クライアント証明書の検証  
- HTTPS を使用してクライアントとサービス間で通信を行う場合、サービスに対して認証を行うためにクライアントが使用する証明書はチェーン信頼をサポートしている必要があります。 つまり、信頼されたルート証明機関にチェーンされている必要があります。 そうでない HTTP レイヤーが発生した場合、<xref:System.Net.WebException>メッセージで"リモート サーバーがエラーを返しました。「(403) 許可されていません。" WCF のサーフェスとしては、この例外を<xref:System.ServiceModel.Security.MessageSecurityException>します。  
+ HTTPS を使用してクライアントとサービス間で通信を行う場合、サービスに対して認証を行うためにクライアントが使用する証明書はチェーン信頼をサポートしている必要があります。 つまり、信頼されたルート証明機関にチェーンされている必要があります。 それ以外の場合は、HTTP 層によってが発生し、 <xref:System.Net.WebException> "リモートサーバーがエラーを返しました: (403) 許可されていません" というメッセージが表示されます。 WCF は、この例外をとして公開 <xref:System.ServiceModel.Security.MessageSecurityException> します。  
   
 ## <a name="validation-of-https-service-certificates"></a>HTTP サービス証明書の検証  
  HTTPS を使用してクライアントとサービス間で通信を行う場合、サーバーが認証に使用する証明書は既定でチェーン信頼をサポートしている必要があります。 つまり、信頼されたルート証明機関にチェーンされている必要があります。 証明書が失効しているかどうかを確認するためのオンライン チェックは行われません。 この動作は、<xref:System.Net.Security.RemoteCertificateValidationCallback> コールバックを登録することによってオーバーライドできます。コードは次のようになります。  
   
- [!code-csharp[c_CertificateValidationDifferences#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#1)] 
+ [!code-csharp[c_CertificateValidationDifferences#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#1)]
  [!code-vb[c_CertificateValidationDifferences#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#1)]  
   
  `ValidateServerCertificate` の署名は次のようになります。  
@@ -50,4 +51,4 @@ ms.locfileid: "61857650"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Net.Security.RemoteCertificateValidationCallback>
-- [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [証明書の使用](working-with-certificates.md)

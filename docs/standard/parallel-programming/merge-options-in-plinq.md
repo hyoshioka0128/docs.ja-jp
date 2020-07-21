@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, merge options
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
-ms.openlocfilehash: 18f233ac4c5afa63ec31e83d5fff8f0a57f9146f
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: a2c238cb66c5018cd1dd4085c6541ef3c9371beb
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74203999"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290643"
 ---
 # <a name="merge-options-in-plinq"></a>PLINQ のマージ オプション
 クエリが並列として実行される場合、PLINQ はソース シーケンスをパーティション分割し、複数のスレッドが同時に異なる部分 (通常は別個のスレッド) で動作できるようにします。 結果を 1 つのスレッドで、たとえば、`foreach` (Visual Basic では `For Each`) ループで使用する場合、すべてのスレッドからの結果を 1 つのシーケンスに再マージする必要があります。 PLINQ で実行されるマージの種類は、クエリに存在する演算子によって異なります。 たとえば、結果に新しい順序を適用する演算子は、すべてのスレッドのすべての要素をバッファリングする必要があります。 消費スレッド (アプリケーション ユーザーのものでもある) 観点から、完全にバッファリングされたクエリは、最初の結果が生成される前に非常に長い期間実行される可能性があります。 既定では、その他の演算子は部分的にバッファリングされ、結果はバッチ単位で生成されます。 既定では、1 つの演算子 <xref:System.Linq.ParallelEnumerable.ForAll%2A> がバッファリングされることはありません。 すべてのスレッドのすべての要素はすぐに生成されます。  
@@ -23,7 +23,7 @@ ms.locfileid: "74203999"
  [!code-csharp[PLINQ#26](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#26)]
  [!code-vb[PLINQ#26](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#26)]  
   
- コード例全体については、「[方法:PLINQ のマージ オプションを指定する](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)」を参照してください。  
+ コード例全体については、「[方法:PLINQ のマージ オプションを指定する](how-to-specify-merge-options-in-plinq.md)」を参照してください。  
   
  特定のクエリで要求されたオプションをサポートできない場合は、オプションが無視されるだけです。 ほとんどの場合、PLINQ クエリのマージ オプションを指定する必要はありません。 ただし、場合によっては、テストや測定を行うことで、クエリが既定以外のモードで最適に実行されることがわかることもあります。 このオプションは、より応答性の高いユーザー インターフェイスを提供するために、チャンク マージ演算子で結果を強制的にストリーミングする場合に一般的に使用されます。  
   
@@ -47,17 +47,17 @@ ms.locfileid: "74203999"
   
 |演算子|制約|  
 |--------------|------------------|  
-|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|なし|  
-|<xref:System.Linq.ParallelEnumerable.Cast%2A>|なし|  
+|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|None|  
+|<xref:System.Linq.ParallelEnumerable.Cast%2A>|None|  
 |<xref:System.Linq.ParallelEnumerable.Concat%2A>|配列またはリスト ソースのみがある順序付けされていないクエリ。|  
-|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|なし|  
-|<xref:System.Linq.ParallelEnumerable.OfType%2A>|なし|  
+|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|None|  
+|<xref:System.Linq.ParallelEnumerable.OfType%2A>|None|  
 |<xref:System.Linq.ParallelEnumerable.Reverse%2A>|配列またはリスト ソースのみがある順序付けされていないクエリ。|  
-|<xref:System.Linq.ParallelEnumerable.Select%2A>|なし|  
-|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|なし|  
-|<xref:System.Linq.ParallelEnumerable.Skip%2A>|なし|  
-|<xref:System.Linq.ParallelEnumerable.Take%2A>|なし|  
-|<xref:System.Linq.ParallelEnumerable.Where%2A>|なし|  
+|<xref:System.Linq.ParallelEnumerable.Select%2A>|None|  
+|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|None|  
+|<xref:System.Linq.ParallelEnumerable.Skip%2A>|None|  
+|<xref:System.Linq.ParallelEnumerable.Take%2A>|None|  
+|<xref:System.Linq.ParallelEnumerable.Where%2A>|None|  
   
  他のすべての PLINQ クエリ演算子では、ユーザー指定のマージ オプションが無視される場合があります。 一部のクエリ演算子 (<xref:System.Linq.ParallelEnumerable.Reverse%2A> や <xref:System.Linq.ParallelEnumerable.OrderBy%2A> など) では、すべて生成されて並べ替えられるまで要素を譲渡できません。 したがって、<xref:System.Linq.ParallelEnumerable.Reverse%2A> などの演算子も含むクエリで <xref:System.Linq.ParallelMergeOptions> を使用すると、演算子でその結果が生成されるまでクエリではマージ動作が適用されません。  
   
@@ -65,5 +65,5 @@ ms.locfileid: "74203999"
   
 ## <a name="see-also"></a>関連項目
 
-- [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
-- [方法: PLINQ のマージ オプションを指定する](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)
+- [Parallel LINQ (PLINQ)](introduction-to-plinq.md)
+- [方法: PLINQ のマージ オプションを指定する](how-to-specify-merge-options-in-plinq.md)

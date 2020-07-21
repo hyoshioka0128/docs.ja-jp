@@ -1,5 +1,5 @@
 ---
-title: '方法 : プロシージャの複数のバージョンを定義する'
+title: '方法: プロシージャの複数のバージョンを定義する'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], defining
@@ -8,46 +8,46 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure overloading [Visual Basic], multiple versions
 ms.assetid: 71ccdd66-1b00-4b66-bee4-6926c0d696f4
-ms.openlocfilehash: 83e96e271f6613aa325d59a0ca2fce9fc69fe059
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 870a18dbf3a7e28b7d7b612e853beeec6908cf6f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350488"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387934"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>方法: プロシージャの複数のバージョンを定義する (Visual Basic)
-複数のバージョンでプロシージャを定義*するには*、各バージョンに対して同じ名前を使用し、異なるパラメーターリストを使用します。 オーバーロードの目的は、プロシージャの名前を区別せずに、密接に関連する複数のバージョンを定義することです。  
+同じ名前を使用し、バージョンごとに異なるパラメーター リストを使用して、"*オーバーロード*" することにより、複数のバージョンのプロシージャを定義できます。 オーバーロードの目的は、名前で区別する必要なく、プロシージャの密接に関連する複数のバージョンを定義することです。  
   
  詳細については、「 [Procedure Overloading](./procedure-overloading.md)」を参照してください。  
   
 ### <a name="to-define-multiple-versions-of-a-procedure"></a>プロシージャの複数のバージョンを定義するには  
   
-1. 定義するプロシージャの各バージョンに対して、`Sub` または `Function` 宣言ステートメントを記述します。 すべての宣言で同じプロシージャ名を使用します。  
+1. 定義するプロシージャのバージョンごとに、`Sub` または `Function` 宣言ステートメントを記述します。 すべての宣言で同じプロシージャ名を使用します。  
   
-2. [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) キーワードを使用して、各宣言内の `Sub` または `Function` キーワードの前に配置します。 必要に応じて、宣言で `Overloads` を省略できますが、宣言のいずれかに含める場合は、すべての宣言に含める必要があります。  
+2. 各宣言の `Sub` または `Function` キーワードの前に [Overloads](../../../language-reference/modifiers/overloads.md) キーワードを指定します。 必要に応じて、宣言で `Overloads` を省略することもできますが、宣言のいずれかに含めた場合は、すべての宣言に含める必要があります。  
   
-3. 各宣言ステートメントの後にプロシージャコードを記述し、呼び出し元のコードがそのバージョンのパラメーターリストに一致する引数を指定した場合に処理します。 呼び出し元のコードがどのパラメーターを指定したかをテストする必要はありません。 Visual Basic は、プロシージャの一致するバージョンに制御を渡します。  
+3. 各宣言ステートメントの後に、呼び出し元のコードでそのバージョンのパラメーター リストと一致する引数が指定されたときにそのケースを処理するプロシージャ コードを記述します。 呼び出し元のコードでどのパラメーターが指定されているかをテストする必要はありません。 Visual Basic は、プロシージャの一致するバージョンに制御を渡します。  
   
-4. 必要に応じて、`End Sub` または `End Function` ステートメントを使用して、プロシージャの各バージョンを終了します。  
+4. プロシージャの各バージョンを、必要に応じて `End Sub` または `End Function` ステートメントで終了します。  
   
 ## <a name="example"></a>例  
- 次の例では、顧客の残高に対してトランザクションを投稿するための `Sub` プロシージャを定義します。 この例では、`Overloads` キーワードを使用して2つのバージョンのプロシージャを定義しています。1つは顧客を名前で受け取り、もう1つはアカウント番号で指定します。  
+ 次の例では、顧客の残高に対してトランザクションを転記する `Sub` プロシージャを定義します。 `Overloads` キーワードを使用して、プロシージャの 2 つのバージョンを定義します。1 つは顧客を名前で受け入れ、もう 1 つは口座番号で受け入れます。  
   
  [!code-vb[VbVbcnProcedures#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#72)]  
   
- 呼び出し元のコードは、`String` または `Integer`として顧客 id を取得し、どちらの場合も同じ呼び出しステートメントを使用できます。  
+ 呼び出し元のコードは、`String` または `Integer` として顧客 ID を取得し、どちらの場合も同じ呼び出しステートメントを使用できます。  
   
- これらのバージョンの `post` プロシージャを呼び出す方法については、「[方法: オーバーロードされたプロシージャを呼び出す](./how-to-call-an-overloaded-procedure.md)」を参照してください。  
+ `post` プロシージャのこれらのバージョンを呼び出す方法については、「[How to: Call an Overloaded Procedure (方法: オーバーロードされたプロシージャを呼び出す)](./how-to-call-an-overloaded-procedure.md)」をご覧ください。  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- オーバーロードされた各バージョンのプロシージャ名が同じで、パラメーターリストが異なることを確認してください。  
+## <a name="compile-the-code"></a>コードのコンパイル  
+ オーバーロードされた各バージョンのプロシージャ名が同じであり、パラメーター リストが異なることを確認します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [手順](./index.md)
 - [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)
 - [プロシージャのトラブルシューティング](./troubleshooting-procedures.md)
-- [方法 : 省略可能なパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
-- [方法 : 不特定数のパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [方法: 省略可能なパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
+- [方法: 不特定数のパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [プロシージャのオーバーロードに関する注意事項](./considerations-in-overloading-procedures.md)
 - [オーバーロードの解決](./overload-resolution.md)

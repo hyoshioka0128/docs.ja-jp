@@ -1,24 +1,25 @@
 ---
-title: Windows ワークフロー シナリオ
+title: Windows Workflow のシナリオ
+description: 組み込みのアクティビティライブラリを使用するシナリオや、ワークフローサービスのアクティビティを使用するシナリオなど、Windows Workflow Foundation シナリオのサンプルを表示します。
 ms.date: 03/30/2017
 ms.assetid: cb678fda-79aa-4495-833b-ef570539d4c3
-ms.openlocfilehash: 9e4d4023ee18305b843c62785fa454bb1cbe2787
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c758d8f98380084886ab5e4465c8109e074e7d6f
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785932"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421359"
 ---
 # <a name="scenario"></a>シナリオ
 
-このセクションでは、Windows Workflow Foundation (WF) のシナリオの例を示します。  
+このセクションには、Windows Workflow Foundation (WF) シナリオの例が含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容
 
-[アクティビティ ライブラリ](activity-library.md)のビルトイン アクティビティ ライブラリを使用してシナリオを示すサンプルが含まれています。  
+[アクティビティライブラリ](activity-library.md)-組み込みのアクティビティライブラリを使用するシナリオを示すサンプルが含まれています。  
   
-[サービス](accessing-operationcontext.md)-ワークフロー サービスのアクティビティを使用してシナリオを示すサンプルが含まれています。  
+[サービス](accessing-operationcontext.md)-ワークフローサービスのアクティビティを使用するシナリオを示すサンプルが含まれています。  
   
-[WPF と WF の統合を XAML で](wpf-and-wf-integration-in-xaml.md)-単一の XAML ドキュメントで Windows Presentation Foundation (WPF) および Windows Workflow Foundation (WF) の機能を使用するアプリケーションを作成する方法を示します。 これを行うには、サンプルは、Windows Workflow Foundation (WF) と XAML 機能拡張を使用します。  
+[Xaml での wpf と wf の統合](wpf-and-wf-integration-in-xaml.md)-1 つの xaml ドキュメントで WINDOWS PRESENTATION FOUNDATION (wpf) および WINDOWS WORKFLOW FOUNDATION (wf) 機能を使用するアプリケーションを作成する方法を示します。 これを実現するために、このサンプルでは Windows Workflow Foundation (WF) と XAML 拡張機能を使用します。  
   
-[外部ルールセット ツールキット](external-ruleset-toolkit.md) - 管理およびデータベースで Ruleset を編集する方法について説明し、それらの Ruleset を実行時にワークフローからアクセスします。
+[外部のルールセットツールキット](external-ruleset-toolkit.md)-データベース内のルールセットを管理および編集し、実行時にワークフローからそれらのルールセットにアクセスする方法を示します。

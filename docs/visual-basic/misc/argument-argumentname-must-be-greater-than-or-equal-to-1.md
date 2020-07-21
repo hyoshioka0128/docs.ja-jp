@@ -1,17 +1,17 @@
 ---
-title: 引数 '<argumentname>' 1 以上にする必要があります
+title: 引数 '<argumentname>' は 1 と同じかそれ以上でなければなりません。
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_GEOne1
 ms.assetid: e7769937-5227-4530-89ca-3d6ffc505005
-ms.openlocfilehash: da5042efc692e2d3501d59c18df266d68aa46451
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26328a6454ec6741244615a0c45c20bc0a834629
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025146"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412833"
 ---
-# <a name="argument-argumentname-must-be-greater-than-or-equal-to-1"></a>引数 '\<argumentname >' 1 以上にする必要があります
+# <a name="argument-argumentname-must-be-greater-than-or-equal-to-1"></a>引数 '\<argumentname>' は 1 と同じかそれ以上でなければなりません。
 引数の値が 1 未満です。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -22,4 +22,4 @@ ms.locfileid: "62025146"
   
 ## <a name="see-also"></a>関連項目
 
-- [引数の値渡しと参照渡し](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [引数の値渡しと参照渡し](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

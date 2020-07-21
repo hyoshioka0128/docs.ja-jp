@@ -1,16 +1,17 @@
 ---
 title: Windows Communication Foundation 4.5 の新機能
+description: この記事では、Windows Communication Foundation (WCF) バージョン4.5 の新機能と、その他のリソースへのリンクについて説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: e01b3a39a004e963e5bb66c5fa71433cb4e7204a
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: b6ce7fe19a8d7cc00823502e322ee53a1bd0a931
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802376"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245623"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Windows Communication Foundation 4.5 の新機能
 
@@ -32,15 +33,15 @@ Visual Studio でサービス参照を追加したり、SvcUtil.exe ツールを
 
 ### <a name="contract-first-development"></a>コントラクト優先の開発
 
-WCF では、コントラクト優先の開発がサポートされるようになりました。 Svcutil.exe には、WSDL ドキュメントからサービスコントラクトとデータコントラクトを生成するための/serviceContract スイッチが用意されています。
+WCF では、コントラクト優先の開発がサポートされるようになりました。 svcutil.exe には、WSDL ドキュメントからサービスコントラクトとデータコントラクトを生成するための/serviceContract スイッチがあります。
 
 ### <a name="add-service-reference-from-a-portable-subset-project"></a>ポータブル サブセット プロジェクトからのサービス参照の追加
 
-ポータブル サブセット プロジェクトにより、.NET アセンブリ プログラマは 1 つのソース ツリーを保持しつつ、システムを構築できるようになります。また、ポータブル サブセット プロジェクトは、複数の .NET プラットフォーム (デスクトップ、Silverlight、Windows Phone、および XBOX) をサポートしています。 ポータブルサブセットプロジェクトは、.net プラットフォームで使用できる .net framework アセンブリである .net ポータブルライブラリのみを参照します。 開発者から見れば、他の WCF クライアント アプリケーション内でサービス参照を追加するのと同じです。 詳細については、「[ポータブルサブセットプロジェクトでのサービス参照の追加](add-service-reference-in-a-portable-subset-project.md)」を参照してください。
+ポータブルサブセットプロジェクトを使用すると、.NET アセンブリプログラマは、1つのソースツリーとビルドシステムを維持しながら、複数の .NET プラットフォーム (デスクトップ、Silverlight、Windows Phone、Xbox) をサポートできます。 ポータブルサブセットプロジェクトは、任意の .NET プラットフォームで使用できるアセンブリである .NET ポータブルライブラリのみを参照します。 開発者から見れば、他の WCF クライアント アプリケーション内でサービス参照を追加するのと同じです。 詳細については、「[ポータブルサブセットプロジェクトでのサービス参照の追加](add-service-reference-in-a-portable-subset-project.md)」を参照してください。
 
 ### <a name="aspnet-compatibility-mode-default-changed"></a>ASP.NET 互換性モードの既定値の変更
 
-WCF には ASP.NET 互換性モードが用意されています。これにより、開発者は WCF サービスを作成する際に ASP.NET HTTP パイプラインの機能へのフル アクセスが付与されます。 このモードを使用するには、web.config の[\<serviceHostingEnvironment >](../configure-apps/file-schema/wcf/servicehostingenvironment.md)セクションで `aspNetCompatibilityEnabled` 属性を true に設定する必要があります。また、この appDomain のすべてのサービスは、その <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> の `RequirementsMode` プロパティを <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> または <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>に設定する必要があります。 既定では <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> は <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>に設定されています。 詳細については、「 [WCF Services と ASP.NET](./feature-details/wcf-services-and-aspnet.md)」を参照してください。
+WCF には ASP.NET 互換性モードが用意されています。これにより、開発者は WCF サービスを作成する際に ASP.NET HTTP パイプラインの機能へのフル アクセスが付与されます。 このモードを使用するには、 `aspNetCompatibilityEnabled` web.config のセクションで属性を true に設定する必要があり [\<serviceHostingEnvironment>](../configure-apps/file-schema/wcf/servicehostingenvironment.md) ます。また、この appDomain のすべてのサービス `RequirementsMode` <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> は、をまたはに設定して、プロパティを持つ必要があり <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required> ます。 既定で <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> は、はに設定されて <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> います。 詳細については、「 [WCF Services と ASP.NET](./feature-details/wcf-services-and-aspnet.md)」を参照してください。
 
 ### <a name="new-transport-default-values"></a>トランスポートの新しい既定値
 
@@ -68,21 +69,21 @@ HTTPS 上のエンドポイントの公開を簡単にするため、HTTPS の�
 
 ## <a name="generating-a-single-wsdl-document"></a>単一の WSDL ドキュメントの生成
 
-サード パーティの WSDL の処理スタックには、xsd:import を使用して他のドキュメントに依存している WSDL ドキュメントを処理できないものもあります。 WCF により、すべての WSDL 情報が 1 つのドキュメントで返されるように指定できるようになりました。 単一 WSDL ドキュメントをリクエストするには、サービスからメタデータを要求するときに、その URI に "?singleWSDL" を追加します。
+サード パーティの WSDL の処理スタックには、xsd:import を使用して他のドキュメントに依存している WSDL ドキュメントを処理できないものもあります。 WCF により、すべての WSDL 情報が 1 つのドキュメントで返されるように指定できるようになりました。 単一の WSDL ドキュメントを要求するには、サービスからメタデータを要求するときに、URI に "? singleWSDL" を追加します。
 
 ## <a name="websocket-support"></a>WebSocket のサポート
 
-Websocket は、TCP と同様のパフォーマンス特性を持つポート 80 と 443 で真の双方向通信を実現するテクノロジです。 WebSocket トランスポート経由の通信をサポートするために 2 つの新しいバインドが追加されました。 <xref:System.ServiceModel.NetHttpBinding> および <xref:System.ServiceModel.NetHttpsBinding>。 詳細については[、「システム指定のバインディング](system-provided-bindings.md)」を参照してください。
+Websocket は、TCP と同様のパフォーマンス特性を持つポート 80 と 443 で真の双方向通信を実現するテクノロジです。 WebSocket トランスポート経由の通信をサポートするために 2 つの新しいバインドが追加されました。 <xref:System.ServiceModel.NetHttpBinding> と <xref:System.ServiceModel.NetHttpsBinding>。 詳細については[、「システム指定のバインディング](system-provided-bindings.md)」を参照してください。
 
 ## <a name="new-transport-default-values"></a>トランスポートの新しい既定値
 
 次の表は、変更された設定と追加情報の場所を示しています。
 
-|property|On|新しい既定値|詳細については、「」を参照してください。|
+|プロパティ|オン|新しい既定値|詳細については、「|
 |--------------|--------|-----------------|------------------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 秒|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * プロセッサの数|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * トランスポート用のプロセッサの数<br /><br /> 4 \* SMSvcHost のプロセッサ数|[Net.tcp ポート共有サービスの構成](./feature-details/configuring-the-net-tcp-port-sharing-service.md)<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A>|
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * トランスポート用のプロセッサの数<br /><br /> 4 \* SMSvcHost.exe のプロセッサ数|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [Net.TCP ポート共有サービスを構成する](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * プロセッサの数|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|
 |receiveTimeout|SMSvcHost.exe|30 秒|[Net.TCP ポート共有サービスを構成する](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 
@@ -92,7 +93,7 @@ Websocket は、TCP と同様のパフォーマンス特性を持つポート 80
 
 ## <a name="configuring-wcf-services-in-code"></a>コード内での WCF サービスの構成
 
-Windows Communication Foundation (WCF) を使用すると、開発者は構成ファイルまたはコードを使用してサービスを構成できます。 構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 WCF では、コードでサービスを構成することもできます。 以前のバージョンの WCF (4.0 以前) では、自己ホスト型のシナリオでサービスを構成するのは簡単でした。 <xref:System.ServiceModel.ServiceHost> クラスを使用すると、ServiceHost. Open を呼び出す前にエンドポイントと動作を構成できました。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスにアクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降、WCF では、自己ホスト型サービスと web ホステッドサービスの両方をコード内で簡単に構成できます。 詳細については、「[コードでの WCF サービスの構成](configuring-wcf-services-in-code.md)」を参照してください。
+Windows Communication Foundation (WCF) を使用すると、開発者は構成ファイルまたはコードを使用してサービスを構成できます。 構成ファイルは、サービスを配置した後に構成する必要がある場合に便利です。 構成ファイルを使用する場合、IT 専門家は構成ファイルを更新するだけで、再コンパイルの必要はありません。 ただし、構成ファイルの管理は複雑で難しくなる場合があります。 構成ファイルのデバッグはサポートされていません。また、構成要素は名前で参照されるため、構成ファイルの作成時にエラーが発生しやすく、構成ファイルの作成が困難になります。 WCF では、コードでサービスを構成することもできます。 以前のバージョンの WCF (4.0 およびそれ以前) では、自己ホスト型のシナリオでは、コード内のサービスの構成は簡単でした <xref:System.ServiceModel.ServiceHost> 。クラスは、ServiceHost を呼び出す前にエンドポイントと動作を構成することを許可していました。 ただし、Web ホストのシナリオでは、<xref:System.ServiceModel.ServiceHost> クラスにアクセスできません。 Web ホスト サービスを構成するには、`System.ServiceModel.ServiceHostFactory` を作成して必要な構成を実行する <xref:System.ServiceModel.Activation.ServiceHostFactory> を作成する必要がありました。 .NET 4.5 以降、WCF では、自己ホスト型サービスと web ホステッドサービスの両方をコード内で簡単に構成できます。 詳細については、「[コードでの WCF サービスの構成](configuring-wcf-services-in-code.md)」を参照してください。
 
 ## <a name="channelfactory-caching"></a>ChannelFactory のキャッシュ
 

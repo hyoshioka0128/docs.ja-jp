@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: dc2b3281-3820-487e-930d-350b66dc6417
 topic_type:
 - apiref
-ms.openlocfilehash: ec2972605c40f4ba292f5a5f58d6d3efed53f966
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e22b390271a7813dd1d34aecf5f8a62d7eb81005
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443561"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007439"
 ---
 # <a name="coreventattr-enumeration"></a>CorEventAttr 列挙型
 イベントのメタデータを記述する値が格納されます。  
@@ -45,13 +45,13 @@ typedef enum CorEventAttr {
 |`evReservedMask`|共通言語ランタイムによる内部使用のために予約されています。|  
 |`evRTSpecialName`|共通言語ランタイムがイベント名のエンコーディングを確認する必要があることを指定します。|  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

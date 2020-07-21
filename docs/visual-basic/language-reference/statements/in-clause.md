@@ -6,27 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - In keyword [Visual Basic]
 ms.assetid: 2f003a85-8fb6-4280-822b-6ac12839b915
-ms.openlocfilehash: bf7a21e694b245ea72916e0930f11c332a3c9726
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: ad3a1281cfaf366f1f28a847d3c3831ad11b0a20
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353578"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404525"
 ---
 # <a name="in-clause-visual-basic"></a>In 句 (Visual Basic)
-ループ変数が `For Each` ループ内を走査するグループを指定します。または、`From`、`Join`、または `Group Join` 句でクエリを実行するコレクションを指定します。  
+ループ変数によって `For Each` ループで走査するグループを指定するか、`From`、`Join`、または `Group Join` 句でクエリするコレクションを指定します。  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
  `In` キーワードは、次のコンテキストで使用できます。  
   
- [For Each...Next ステートメント](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [For Each...Next ステートメント](for-each-next-statement.md)  
   
- [From 句](../../../visual-basic/language-reference/queries/from-clause.md)  
+ [From 句](../queries/from-clause.md)  
   
- [Join 句](../../../visual-basic/language-reference/queries/join-clause.md)  
+ [Join 句](../queries/join-clause.md)  
   
- [Group Join 句](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [Group Join 句](../queries/group-join-clause.md)  
   
 ## <a name="see-also"></a>関連項目
 
-- [キーワード](../../../visual-basic/language-reference/keywords/index.md)
+- [キーワード](../keywords/index.md)

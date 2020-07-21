@@ -7,35 +7,35 @@ f1_keywords:
 helpviewer_keywords:
 - BC30002
 ms.assetid: b0faf204-57fd-44de-8c05-9db027eea663
-ms.openlocfilehash: 1f66b86a61fb0344a449bf0aa46b7655813c7c30
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 89e2d1d18b456c96f62d6b9ee1dd8dc9d41bf665
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664254"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84386933"
 ---
-# <a name="type-typename-is-not-defined"></a>型 '\<typename >' が定義されていません
-ステートメントは定義されていない型への参照をされています。 などの宣言ステートメントで型を定義できる`Enum`、 `Structure`、 `Class`、または`Interface`します。  
+# <a name="type-typename-is-not-defined"></a>型 '\<typename>' が定義されていません。
+ステートメントで、定義されていない型の参照が行われました。 `Enum`、`Structure`、`Class`、`Interface` などの宣言ステートメントで型を定義できます。  
   
  **エラー ID:** BC30002  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 型の定義とその参照の両方で同じスペル チェックを使用していることを確認します。  
+- 型定義とその参照の両方で同じスペルが使用されていることを確認します。  
   
-- 型定義が参照にアクセスできることを確認します。 たとえば、種類別のモジュールし、は宣言されています`Private`、型定義を参照しているモジュールに移動または宣言`Public`します。  
+- 参照から型定義にアクセスできることを確認してください。 たとえば、型が別のモジュールにあり、`Private` と宣言されている場合は、型定義を参照元のモジュールに移動するか、それを `Public` と宣言します。  
   
-- 型の名前空間がプロジェクト内で再定義されていないことを確認します。 場合を使用して、`Global`完全型名を修飾するキーワード。 たとえば、プロジェクトに名前空間が定義されている場合`System`、<xref:System.Object?displayProperty=nameWithType>で完全修飾である場合を除き、型にアクセスできません、`Global`キーワード:`Global.System.Object`します。  
+- 型の名前空間がプロジェクト内で再定義されていないことを確認します。 その場合は、`Global` キーワードを使用して、型名を完全修飾します。 たとえば、プロジェクトで `System` という名前の名前空間を定義している場合、`Global` キーワード: `Global.System.Object` で完全修飾していない限り、<xref:System.Object?displayProperty=nameWithType> 型にアクセスできません。  
   
-- 型が定義されている場合、オブジェクト ライブラリまたはタイプ ライブラリが定義されているが、Visual Basic、クリックに登録されていない場合**参照の追加**上、**プロジェクト**メニューのおよび適切なオブジェクトを選択ライブラリまたはタイプ ライブラリ。  
+- 型が定義されていても、それが定義されているオブジェクト ライブラリまたはタイプ ライブラリが Visual Basic に登録されていない場合は、 **[プロジェクト]** メニューの **[参照の追加]** クリックし、該当するオブジェクト ライブラリまたはタイプ ライブラリを選択します。  
   
-- 型が対象となる .NET Framework プロファイルの一部であるアセンブリであることを確認します。 詳細については、「[.NET Framework を対象とするエラーのトラブルシューティング](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors)」を参照してください。  
+- 型が、対象の .NET Framework プロファイルの一部であるアセンブリに含まれていることを確認してください。 詳細については、「[.NET Framework を対象とするエラーのトラブルシューティング](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
-- [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Enum ステートメント](../../../visual-basic/language-reference/statements/enum-statement.md)
-- [Structure ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)
-- [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)
-- [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)
+- [Visual Basic における名前空間](../../programming-guide/program-structure/namespaces.md)
+- [Enum ステートメント](../statements/enum-statement.md)
+- [Structure ステートメント](../statements/structure-statement.md)
+- [Class ステートメント](../statements/class-statement.md)
+- [Interface ステートメント](../statements/interface-statement.md)
 - [プロジェクト内の参照の管理](/visualstudio/ide/managing-references-in-a-project)

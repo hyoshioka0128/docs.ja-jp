@@ -4,10 +4,10 @@ description: C# での LINQ について詳しく説明したトピックへの�
 ms.date: 11/30/2016
 ms.assetid: 8eb3284f-0ab9-4cad-9216-2da58d9761a5
 ms.openlocfilehash: 0b9301074996528cd1fbcfebde3a0a57b15e2f15
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73421763"
 ---
 # <a name="linq-in-c"></a>C\# での LINQ
@@ -37,7 +37,7 @@ LINQ をサポートする C# の言語構造について説明します。
 ## <a name="related-sections"></a>関連項目
 
 [LINQ クエリ式](index.md)  
-LINQ でのクエリの概要を説明し、他のリソースへのリンクを示します。
+LINQ でのクエリの概要を説明し、他のリソースへのリンクを提供します。
 
 [標準クエリ演算子の概要](../programming-guide/concepts/linq/standard-query-operators-overview.md)  
-LINQ で使われる標準的なメソッドを紹介します。
+LINQ で使われる標準的な方法を紹介します。

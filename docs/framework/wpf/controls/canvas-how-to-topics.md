@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: 5c8f5bca-7ba9-4526-a9bf-0852351dbe8a
 ms.openlocfilehash: 5c07039a66b40a6ecb54eda674bf2be396fc3e68
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61912523"
 ---
 # <a name="canvas-how-to-topics"></a>キャンバスに関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.Canvas>要素を子要素を絶対的に配置します。  
+このセクションのトピックでは、<xref:System.Windows.Controls.Canvas> 要素を使用して、子要素を絶対位置に配置する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Canvas のコンテンツを Border で囲む](how-to-wrap-a-border-around-the-content-of-a-canvas.md)  
@@ -24,7 +24,7 @@ ms.locfileid: "61912523"
  [Canvas の添付プロパティを使用して子要素を配置する](how-to-use-the-attached-properties-of-canvas-to-position-child-elements.md)  
  [つまみを使用したキャンバスのサイズ変更](how-to-resize-a-canvas-by-using-a-thumb.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

@@ -8,40 +8,40 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-ms.openlocfilehash: 9a09908a2a998d5da739b28aefda3d5aecdc08e0
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
-ms.translationtype: MT
+ms.openlocfilehash: aa3e58d559121aaca401e7b851a4b4fd8e7753cd
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568744"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900845"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>バイナリ データの操作 (WCF Data Services)
 
-WCF Data Services クライアントライブラリを使用すると、次のいずれかの方法で、Open Data Protocol (OData) フィードからバイナリデータを取得および更新できます。
+WCF Data Services クライアント ライブラリを使用すると、次のいずれかの方法で、Open Data Protocol (OData) フィードからバイナリ データを取得して更新できます。
 
 - エンティティのプリミティブ型のプロパティとして。 メモリに容易に読み込むことができる小さいバイナリ データ オブジェクトを操作する場合は、この方法が適しています。 この場合、バイナリ プロパティは、データ モデルによって公開されるエンティティ プロパティです。データ サービスは、応答メッセージの Base-64 バイナリ エンコード XML としてバイナリ データをシリアル化します。
 
 - 個別のバイナリ リソース ストリームとして。 写真、ビデオ、またはその他の種類のバイナリ エンコード データを表すバイナリ ラージ オブジェクト (BLOB) データにアクセスしたり、変更したりする場合は、この方法が適しています。
 
-WCF Data Services は、OData で定義されている HTTP を使用したバイナリデータのストリーミングを実装します。 このメカニズムでは、バイナリデータはとは別のメディアリソースとして扱われます。これは、メディアリンクエントリと呼ばれるエンティティに関連付けられています。 詳細については、「 [Streaming Provider](streaming-provider-wcf-data-services.md)」を参照してください。
+OData で定義されているように、WCF Data Services では HTTP を使用してバイナリ データのストリーミングが実装されます。 この場合、バイナリ データは、エンティティに関連しているものの、エンティティとは切り離されたメディア リソースとして処理されます。これをメディア リンク エントリといいます。 詳細については、「[ストリーミング プロバイダー](streaming-provider-wcf-data-services.md)」を参照してください。
 
 > [!TIP]
-> 写真を格納する OData サービスからバイナリイメージファイルをダウンロードする Windows Presentation Foundation (WPF) クライアントアプリケーションを作成する手順の例については、「 [Data Services ストリーミングプロバイダーシリーズ-パート 2: クライアントからのメディアリソースストリームへのアクセス](https://go.microsoft.com/fwlink/?LinkId=201637)」を参照してください。 ブログ記事で取り上げているストリーミングフォトデータサービスのサンプルコードをダウンロードするには、MSDN コードギャラリーの[ストリーミングフォトデータサービスのサンプル](https://go.microsoft.com/fwlink/?LinkId=198988)を参照してください。
+> 写真を格納している OData サービスからバイナリ画像ファイルをダウンロードする Windows Presentation Foundation (WPF) クライアント アプリケーションの作成方法の例については、ブログの記事「[Data Services ストリーミング プロバイダー シリーズ - パート 2: クライアントからメディア リソース ストリームへのアクセス](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)」を参照してください。 このブログ記事で取り上げられているストリーミング フォト データ サービスのサンプル コードをダウンロードするには、GitHub の「[ストリーミング フォト データ サービスのサンプル](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample)」を参照してください。
 
 ## <a name="entity-metadata"></a>エンティティ メタデータ
 
-メディア リソース ストリームが関連付けられているエンティティは、データ サービス メタデータで `HasStream` 属性によって示されます。この属性は、メディア リンク エントリであるエンティティ型に適用されます。 次の例では、`PhotoInfo` エンティティは、`HasStream` 属性で示される、関連するメディアリソースを持つメディアリンクエントリです。
+メディア リソース ストリームが関連付けられているエンティティは、データ サービス メタデータで `HasStream` 属性によって示されます。この属性は、メディア リンク エントリであるエンティティ型に適用されます。 次の例の `PhotoInfo` エンティティは、メディア リソースが関連付けられているメディア リンク エントリであり、`HasStream` 属性によってそのことが示されています。
 
 [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]
 
-このトピックのその他の例では、メディア リソース ストリームにアクセスし変更する方法を紹介します。 WCF Data Services クライアントライブラリを使用して .NET Framework クライアントアプリケーションでメディアリソースストリームを使用する方法の完全な例については、「[クライアントからメディアリソースストリームにアクセス](https://go.microsoft.com/fwlink/?LinkID=201637)する」を参照してください。
+このトピックのその他の例では、メディア リソース ストリームにアクセスし変更する方法を紹介します。 .NET Framework クライアント アプリケーションで WCF Data Services クライアント ライブラリを使用してメディア リソース ストリームを使用する方法の完全な例については、ブログの記事「[クライアントからメディア リソース ストリームへのアクセス](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)」を参照してください。
 
 ## <a name="accessing-the-binary-resource-stream"></a>バイナリ リソース ストリームへのアクセス
 
-WCF Data Services クライアントライブラリには、OData ベースのデータサービスからバイナリリソースストリームにアクセスするためのメソッドが用意されています。 メディア リソースをダウンロードするときには、メディア リソースの URI を使用することも、メディア リソース データ自体を含むバイナリ ストリームを取得することもできます。 メディア リソース データをバイナリ ストリームとしてアップロードすることもできます。
+WCF Data Services クライアント ライブラリには、OData ベースのデータ サービスからのバイナリ リソース ストリームにアクセスするためのメソッドが用意されています。 メディア リソースをダウンロードするときには、メディア リソースの URI を使用することも、メディア リソース データ自体を含むバイナリ ストリームを取得することもできます。 メディア リソース データをバイナリ ストリームとしてアップロードすることもできます。
 
 > [!TIP]
-> 写真を格納する OData サービスからバイナリイメージファイルをダウンロードする Windows Presentation Foundation (WPF) クライアントアプリケーションを作成する手順の例については、「 [Data Services ストリーミングプロバイダーシリーズ-パート 2: クライアントからのメディアリソースストリームへのアクセス](https://go.microsoft.com/fwlink/?LinkId=201637)」を参照してください。 ブログ記事で取り上げているストリーミングフォトデータサービスのサンプルコードをダウンロードするには、MSDN コードギャラリーの[ストリーミングフォトデータサービスのサンプル](https://go.microsoft.com/fwlink/?LinkId=198988)を参照してください。
+> 写真を格納している OData サービスからバイナリ画像ファイルをダウンロードする Windows Presentation Foundation (WPF) クライアント アプリケーションの作成方法の例については、ブログの記事「[Data Services ストリーミング プロバイダー シリーズ - パート 2: クライアントからメディア リソース ストリームへのアクセス](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)」を参照してください。 このブログ記事で取り上げられているストリーミング フォト データ サービスのサンプル コードをダウンロードするには、GitHub の「[ストリーミング フォト データ サービスのサンプル](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample)」を参照してください。
 
 ### <a name="getting-the-uri-of-the-binary-stream"></a>バイナリ ストリームの URI の取得
 
@@ -72,7 +72,7 @@ WCF Data Services クライアントライブラリには、OData ベースの�
 > [!NOTE]
 > <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> を呼び出すときには、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> が呼び出されるまでストリームはデータ サービスに送信されないことに注意してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [WCF Data Services クライアント ライブラリ](wcf-data-services-client-library.md)
 - [コントロールへのデータのバインド](binding-data-to-controls-wcf-data-services.md)

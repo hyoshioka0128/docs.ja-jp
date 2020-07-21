@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: e4412dc2-c338-4cfb-94d8-f682095dd2b1
 topic_type:
 - apiref
-ms.openlocfilehash: e76800316885c27c697421d454341d5f0789c611
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4a65a98ee04c3870dae2f49b3da2a8e72b1ffae4
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73097947"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82795834"
 ---
 # <a name="cordebuginternalframetype-enumeration"></a>CorDebugInternalFrameType 列挙型
-スタック フレームの型を示します。 この列挙体は、 [GetFrameType](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md)メソッドによって使用されます。  
+スタック フレームの型を示します。 この列挙体は、 [GetFrameType](icordebuginternalframe-getframetype-method.md)メソッドによって使用されます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -47,7 +47,7 @@ typedef enum CorDebugInternalFrameType {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`STUBFRAME_NONE`|null 値。 `ICorDebugInternalFrame::GetFrameType` メソッドは、この値を返しません。|  
+|`STUBFRAME_NONE`|null 値です。 メソッド`ICorDebugInternalFrame::GetFrameType`は、この値を返しません。|  
 |`STUBFRAME_M2U`|アンマネージスタブフレーム。|  
 |`STUBFRAME_U2M`|アンマネージスタブフレーム。|  
 |`STUBFRAME_APPDOMAIN_TRANSITION`|アプリケーションドメイン間の移行。|  
@@ -59,15 +59,15 @@ typedef enum CorDebugInternalFrameType {
 |`STUBFRAME_SECURITY`|コードアクセスセキュリティに使用されるフレーム。|  
 |`STUBFRAME_JIT_COMPILATION`|ランタイムは、メソッドを JIT コンパイルしています。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [列挙型のデバッグ](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [列挙体のデバッグ](debugging-enumerations.md)

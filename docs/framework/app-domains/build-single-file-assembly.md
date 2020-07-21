@@ -1,5 +1,6 @@
 ---
-title: '方法: .NET Framework 単一ファイルアセンブリをビルドする'
+title: '方法: .NET Framework シングルファイル アセンブリをビルドする'
+description: .NET のシングルファイル アセンブリをビルドする方法について確認します。 シングルファイル アセンブリは、.NET を対象とするライブラリ (.dll) または実行可能ファイル (.exe) を指定できます。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, single-file assemblies
@@ -13,14 +14,14 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a6063221-43a5-4d3e-814c-288a4ec69aec
-ms.openlocfilehash: af1bfb89b01a316a858cbb45bf19a26a16d90016
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 482a973631e899b8d4bfc4640eef1ea26173605e
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119951"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104929"
 ---
-# <a name="how-to-build-a-net-framework-single-file-assembly"></a>方法: .NET Framework 単一ファイルアセンブリをビルドする
+# <a name="how-to-build-a-net-framework-single-file-assembly"></a>方法: .NET Framework シングルファイル アセンブリをビルドする
 
 アセンブリの最も単純な形式であるシングルファイル アセンブリには、型の情報、実装、[アセンブリ マニフェスト](../../standard/assembly/manifest.md)が含まれています。 コマンド ライン コンパイラや Visual Studio を利用し、.NET Framework を対象とするシングルファイル アセンブリを作成できます。 既定では、コンパイラでは *.exe* 拡張子でアセンブリ ファイルが作成されます。
 
@@ -33,7 +34,7 @@ ms.locfileid: "73119951"
 
 コマンド プロンプトに次のコマンドを入力します。
 
-\<*コンパイラ コマンド*> \<*モジュール名*>
+\<*compiler command*> \<*module name*>
 
 このコマンドでは、*コンパイラ コマンド*はお使いのコード モジュールで使用されている言語のコンパイラ コマンドで、*モジュール名*はアセンブリにコンパイルするコード モジュールの名前です。
 
@@ -51,7 +52,7 @@ vbc myCode.vb
 
 コマンド プロンプトに次のコマンドを入力します。
 
-\<*コンパイラ コマンド*>  **/out:** \<*ファイル名*> \<*モジュール名*>
+\<*compiler command*> **/out:** \<*file name*> \<*module name*>
 
 このコマンドでは、*コンパイラ コマンド*はお使いのコード モジュールで使用されている言語のコンパイラ コマンド、*ファイル名*は出力ファイル名、*モジュール名*はアセンブリにコンパイルするコード モジュールの名前です。
 
@@ -70,7 +71,7 @@ vbc -out:myAssembly.exe myCode.vb
 
 ライブラリ アセンブリを作成するには、コマンド プロンプトで次のコマンドを入力します。
 
-\<*コンパイラ コマンド*>  **/t:library** \<*モジュール名*>
+\<*compiler command*> **-t:library** \<*module name*>
 
 このコマンドでは、*コンパイラ コマンド*はお使いのコード モジュールで使用されている言語のコンパイラ コマンドで、*モジュール名*はアセンブリにコンパイルするコード モジュールの名前です。 **/out:** オプションなど、他のコンパイラ オプションも使用できます。
 
@@ -88,5 +89,5 @@ vbc -out:myCodeLibrary.dll -t:library myCode.vb
 
 - [アセンブリを作成する](../../standard/assembly/create.md)
 - [マルチファイル アセンブリ](multifile-assemblies.md)
-- [方法: マルチファイルアセンブリをビルドする](build-multifile-assembly.md)
-- [アセンブリを使用したプログラム](../../standard/assembly/program.md)
+- [方法: マルチファイル アセンブリをビルドする](build-multifile-assembly.md)
+- [アセンブリを使用したプログラム](../../standard/assembly/index.md)

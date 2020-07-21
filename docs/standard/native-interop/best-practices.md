@@ -1,15 +1,13 @@
 ---
 title: ネイティブ相互運用性のベスト プラクティス - .NET
 description: .NET でネイティブ コンポーネントとやり取りするためのベスト プラクティスについて説明します。
-author: jkoritzinsky
-ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 0405fd5aef9d89fc1f47123ed358e6358656d95b
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
-ms.translationtype: MT
+ms.openlocfilehash: e5d96471e796dca712d25d2d9e2609508180d83f
+ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923762"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391222"
 ---
 # <a name="native-interoperability-best-practices"></a>ネイティブ相互運用性のベスト プラクティス
 
@@ -19,38 +17,38 @@ ms.locfileid: "70923762"
 
 このセクションのガイダンスは、すべての相互運用シナリオに適用されます。
 
-- **✔️ 実行**: メソッドとパラメーターには、呼び出すネイティブ メソッドと同じ名前付けと大文字/小文字の設定を使用します。
-- **✔️ 推奨**: 定数値に対して同じ名前付けと大文字/小文字の設定を使用するようにします。
-- **✔️ 実行**: ネイティブ型に最も近い .NET 型を使用します。 たとえば、C# では、ネイティブ型が `unsigned int` の場合は `uint` を使用します。
-- **✔️ 実行**: 目的の動作が既定の動作と異なる場合にのみ `[In]` および `[Out]` 属性を使用します。
-- **✔️ 推奨**: <xref:System.Buffers.ArrayPool%601?displayProperty=nameWithType> を使用してネイティブ配列バッファーをプールするようにします。
-- **✔️ 推奨**: P/Invoke 宣言をネイティブ ライブラリと同じ名前と大文字/小文字の設定を使用してクラスにラップするようにします。
+- ✔️ 実行: メソッドとパラメーターには、呼び出すネイティブ メソッドと同じ名前付けと大文字/小文字の設定を使用します。
+- ✔️ 推奨: 定数値に対して同じ名前付けと大文字/小文字の設定を使用するようにします。
+- ✔️ 実行: ネイティブ型に最も近い .NET 型を使用します。 たとえば、C# では、ネイティブ型が `unsigned int` の場合は `uint` を使用します。
+- ✔️ 実行: 目的の動作が既定の動作と異なる場合にのみ `[In]` および `[Out]` 属性を使用します。
+- ✔️ 推奨: <xref:System.Buffers.ArrayPool%601?displayProperty=nameWithType> を使用してネイティブ配列バッファーをプールするようにします。
+- ✔️ 推奨: P/Invoke 宣言をネイティブ ライブラリと同じ名前と大文字/小文字の設定を使用してクラスにラップするようにします。
   - これにより、`[DllImport]` 属性で C# `nameof` 言語機能を使用してネイティブ ライブラリの名前を渡し、ネイティブ ライブラリの名前のスペルを間違えないようにすることができます。
 
 ## <a name="dllimport-attribute-settings"></a>dllImport 属性の設定
 
-| 設定 | 既定値 | 推奨事項 | 説明 |
+| 設定 | Default | 推奨事項 | 説明 |
 |---------|---------|----------------|---------|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  既定値のままにします  | これが明示的に false に設定されている場合、失敗した HRESULT の戻り値は例外になります (そして結果として定義内の戻り値は null になります)。|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | API によって異なります  | API が GetLastError を使用し、Marshal.GetLastWin32Error を使用して値を取得する場合は、true に設定します。 API がエラーがあるという条件を設定している場合は、誤って上書きされないように他の呼び出しを行う前にエラーを取得します。|
-| <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> | `CharSet.None` (`CharSet.Ansi` の動作にフォールバックします)  | 定義内に文字列または文字が存在する場合は、明示的に `CharSet.Unicode` または `CharSet.Ansi` を使用します | これは、文字列のマーシャリング動作と `false` の場合の `ExactSpelling` の動作を指定します。 Unix では `CharSet.Ansi` は実際には UTF8 である点に注意してください。 "_ほとんど_" の場合、Windows では Unicode が使用され、Unix では UTF8 が使用されます。 詳細については、[文字セットのドキュメント](./charset.md)を参照してください。 |
+| <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> | `CharSet.None` (`CharSet.Ansi` の動作にフォールバックします)  | 定義内に文字列または文字が存在する場合は、明示的に `CharSet.Unicode` または `CharSet.Ansi` を使用します。 | これは、文字列のマーシャリング動作と `false` の場合の `ExactSpelling` の動作を指定します。 Unix では `CharSet.Ansi` は実際には UTF8 である点に注意してください。 "_ほとんど_" の場合、Windows では Unicode が使用され、Unix では UTF8 が使用されます。 詳細については、[文字セットのドキュメント](./charset.md)を参照してください。 |
 | <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling> | `false` | `true`             | ランタイムで `CharSet` 設定の値に応じてサフィックスが "A" または "W" (`CharSet.Ansi` の場合は "A"、`CharSet.Unicode` の場合は "W") の代替の関数名が検索されないときに、これを true に設定し、わずかなパフォーマンス上のメリットを得ます。 |
 
 ## <a name="string-parameters"></a>文字列パラメーター
 
-CharSet が Unicode の場合または引数が `[MarshalAs(UnmanagedType.LPWSTR)]` であり、"_かつ_" 文字列が (`ref` または `out` ではなく) 値で渡される場合、設定は固定され、ネイティブ コードから (コピーではなく) 直接使用されます。
+CharSet が Unicode の場合、または引数が明示的に `[MarshalAs(UnmanagedType.LPWSTR)]` とマークされていて、"_かつ_" 文字列が (`ref` または `out` ではなく) 値で渡される場合、文字列は固定され、ネイティブ コードから (コピーではなく) 直接使用されます。
 
 文字列の ANSI 処理が明示的に必要ではない限り、必ず `[DllImport]` を `Charset.Unicode` としてマークしてください。
 
-**❌ 禁止**: `[Out] string` パラメーターを使用しないでください。 文字列がインターン処理された文字列で、文字列パラメーターが `[Out]` 属性の値で渡された場合、ランタイムが不安定になる可能性があります。 文字列のインターン処理の詳細については、<xref:System.String.Intern%2A?displayProperty=nameWithType> のドキュメントを参照してください。
+❌ 禁止: `[Out] string` パラメーターを使用しないでください。 文字列がインターン処理された文字列で、文字列パラメーターが `[Out]` 属性の値で渡された場合、ランタイムが不安定になる可能性があります。 文字列のインターン処理の詳細については、<xref:System.String.Intern%2A?displayProperty=nameWithType> のドキュメントを参照してください。
 
-**❌ 回避**: `StringBuilder` パラメーターを使用しないようにします。 `StringBuilder` のマーシャリングによって "*常に*" ネイティブ バッファー コピーが作成されます。 そのため、非常に非能率的になる場合もあります。 その典型的なシナリオとして、文字列を受け取る Windows API を呼び出す場合があります。
+❌ 回避: `StringBuilder` パラメーターを使用しないようにします。 `StringBuilder` のマーシャリングによって "*常に*" ネイティブ バッファー コピーが作成されます。 そのため、非常に非能率的になる場合もあります。 その典型的なシナリオとして、文字列を受け取る Windows API を呼び出す場合があります。
 
 1. 目的の容量の SB を作成します (管理容量を割り当てます) **{1}**
 2. 呼び出し
-   1. ネイティブ バッファーを割り当てます **{2}**  
-   2. `[In]` " _(`StringBuilder` パラメーターの既定値)_ " の場合、内容をコピーします  
-   3. `[Out]` **{3}** " _(`StringBuilder` の既定値でもあります)_ " の場合、ネイティブ バッファーを新しく割り当てられたマネージド配列にコピーします。  
+   1. ネイティブ バッファーを割り当てます **{2}**
+   2. `[In]` " _(`StringBuilder` パラメーターの既定値)_ " の場合、内容をコピーします。
+   3. `[Out]` **{3}** " _(`StringBuilder` の既定値でもあります)_ " の場合、ネイティブ バッファーを新しく割り当てられたマネージド配列にコピーします。
 3. `ToString()` でさらに別のマネージド配列を割り当てます **{4}**
 
 これは、ネイティブ コードから文字列を取得する *{4}* の割り当てです。 これを制限するために最適な方法は、`StringBuilder` を別の呼び出しで再利用することですが、それでも *1* つの割り当てが節約されるだけです。 `ArrayPool` から文字バッファーを使用してキャッシュする方がはるかにお勧めです。以降の呼び出しでは `ToString()` の割り当てのみで済むようになります。
@@ -59,17 +57,15 @@ CharSet が Unicode の場合または引数が `[MarshalAs(UnmanagedType.LPWSTR
 
 `StringBuilder` を "*使用する*" 場合、最後の問題は、相互運用のために常に考慮される非表示の null が容量に "**含まれない**" ことです。ます。 ほとんどの API はバッファー サイズに null が "*含まれる*" ことを想定しているため、これを誤りと考えられることがよくあります。 その結果、無駄な、または不要な割り当てが行われる可能性があります。 さらに、この問題によって、ランタイムでコピーを最小化する `StringBuilder` のマーシャリングを最適化できなくなります。
 
-**✔️ 推奨**: `ArrayPool` から `char[]` を使用するようにします。
+✔️ 推奨: `ArrayPool` から `char[]` を使用するようにします。
 
-文字列のマーシャリングの詳細については、「[文字列に対する既定のマーシャリング](../../framework/interop/default-marshaling-for-strings.md)」と「[文字列パラメーターのカスタマイズ](customize-parameter-marshaling.md#customizing-string-parameters)」を参照してください。
+文字列のマーシャリングの詳細については、「[文字列に対する既定のマーシャリング](../../framework/interop/default-marshaling-for-strings.md)」と「[Customizing string marshalling (文字列のマーシャリングのカスタマイズ)](customize-parameter-marshaling.md#customizing-string-parameters)」を参照してください。
 
-> __Windows 固有__  
-> `[Out]` 文字列の場合、CLR は文字列を解放するために既定で `CoTaskMemFree` を使用します。また、`UnmanagedType.BSTR` とマークされている文字列の場合は `SysStringFree` を使用します。  
-**出力文字列バッファーがあるほとんどの API の場合:**  
-> 渡される文字数には、常に null が含まれています。 返された値が、渡される文字数より少ない場合、呼び出しは成功し、値は末尾の null を ''*除いた*'' 文字数になります。 それ以外の場合、カウントは null 文字を "*含む*" バッファーの必要なサイズになります。  
+> __Windows 固有__: `[Out]` 文字列の場合、CLR は文字列を解放するために既定で `CoTaskMemFree` を使用します。また、`UnmanagedType.BSTR` とマークされている文字列の場合は `SysStringFree` を使用します。
+> **出力文字列バッファーがあるほとんどの API の場合:** 渡される文字数には、常に null が含まれています。 返された値が、渡された文字数より少ない場合、呼び出しは成功し、値は末尾の null を "*除いた*" 文字数になります。 それ以外の場合、カウントは null 文字を "*含む*" バッファーの必要なサイズになります。
 >
 > - 5 を渡し、4 を受け取る:文字列の長さは 4 文字であり、末尾に null が付きます。
-> - 5 を渡し、6 を受け取る:文字列の長さは 5 文字であり、null を保持するために 6 文字のバッファーが必要です。  
+> - 5 を渡し、6 を受け取る:文字列の長さは 5 文字であり、null を保持するために 6 文字のバッファーが必要です。
 > [Windows の文字列のデータ型](/windows/desktop/Intl/windows-data-types-for-strings)
 
 ## <a name="boolean-parameters-and-fields"></a>ブール型のパラメーターとフィールド
@@ -84,7 +80,7 @@ GUID はシグネチャに直接使用できます。 多くの Windows API は�
 |------|-------------|
 | `KNOWNFOLDERID` | `REFKNOWNFOLDERID` |
 
-**❌ 禁止**: `ref` GUID パラメーター以外に `[MarshalAs(UnmanagedType.LPStruct)]` を使用しないでください。
+❌ 禁止: `ref` GUID パラメーター以外に `[MarshalAs(UnmanagedType.LPStruct)]` を使用しないでください。
 
 ## <a name="blittable-types"></a>blittable 型
 
@@ -104,7 +100,7 @@ blittable 型は、マネージド コードとネイティブ コードで同�
 
 **blittable の場合がある:**
 
-- `char`、 `string`
+- `char`、`string`
 
 blittable 型が参照渡しされると、中間バッファーにコピーされるのではなく、マーシャラーによって単純に固定されます (クラスは本質的に参照渡しされ、構造体は `ref` または `out` と共に使用されるときに参照渡しされます)。
 
@@ -122,11 +118,11 @@ public struct UnicodeCharStruct
 
 固定された `GCHandle` を作成しようとすることで、型が blittable かどうかを確認できます。 型が文字列ではない場合、または blittable と見なされる場合、`GCHandle.Alloc` は `ArgumentException` をスローします。
 
-**✔️ 実行**: 可能な限り、構造体を blittable にします。
+✔️ 実行: 可能な限り、構造体を blittable にします。
 
 詳細については次を参照してください:
 
-- [Blittable 型と非 Blittable 型](../../framework/interop/blittable-and-non-blittable-types.md)  
+- [Blittable 型と非 Blittable 型](../../framework/interop/blittable-and-non-blittable-types.md)
 - [型のマーシャリング](type-marshaling.md)
 
 ## <a name="keeping-managed-objects-alive"></a>マネージド オブジェクトのキープ アライブ
@@ -135,7 +131,7 @@ public struct UnicodeCharStruct
 
 [`HandleRef`](xref:System.Runtime.InteropServices.HandleRef) を使用すると、マーシャラーは P/Invoke の期間、オブジェクトの有効性を維持することができます。 メソッドのシグネチャで `IntPtr` の代わりに使用できます。 事実上、`SafeHandle` によってこのクラスは置き換えられるため、代わりに使用するようにします。
 
-[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle) を使用すると、マネージド オブジェクトを固定し、そのオブジェクトへのネイティブ ポインターを取得できます。 次に基本的なパターンを示します。  
+[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle) を使用すると、マネージド オブジェクトを固定し、そのオブジェクトへのネイティブ ポインターを取得できます。 次に基本的なパターンを示します。
 
 ```csharp
 GCHandle handle = GCHandle.Alloc(obj, GCHandleType.Pinned);
@@ -217,9 +213,15 @@ blittable 型の構造体は、単純にマーシャリング層から直接使�
 
 定義内の構造体へのポインターは、`ref` で渡すか、`unsafe` と `*` を使用する必要があります。
 
-**✔️ 実行**: マネージド構造体を、公式のプラットフォーム ドキュメントまたはヘッダーで使用されているシェイプと名前にできるだけ厳密に一致させます。
+✔️ 実行: マネージド構造体を、公式のプラットフォーム ドキュメントまたはヘッダーで使用されているシェイプと名前にできるだけ厳密に一致させます。
 
-**✔️ 実行**: パフォーマンスを向上するには、blittable 型の構造体に `Marshal.SizeOf<MyStruct>()` ではなく C# の `sizeof()` を使用します。
+✔️ 実行: パフォーマンスを向上させるには、blittable 型の構造体に `Marshal.SizeOf<MyStruct>()` ではなく C# の `sizeof()` を使用します。
+
+❌ 回避: 構造体の関数ポインター フィールドを表すために `System.Delegate` または `System.MulticastDelegate` フィールドを使用しないようにしてください。
+
+<xref:System.Delegate?displayProperty=fullName> と <xref:System.MulticastDelegate?displayProperty=fullName> には必要なシグネチャがないため、渡されるデリゲートがネイティブ コードで想定されるシグネチャと一致するとは限りません。 さらに、.NET Framework と .NET Core では、`System.Delegate` または `System.MulticastDelegate` を含む構造体をそのネイティブ表現からマネージド オブジェクトにマーシャリングすると、ネイティブ表現のフィールドの値がマネージド デリゲートをラップする関数ポインターでない場合、ランタイムが不安定になる可能性があります。 .NET 5 以降のバージョンでは、ネイティブ表現からマネージ オブジェクトへの `System.Delegate` または `System.MulticastDelegate` フィールドのマーシャリングはサポートされていません。 `System.Delegate` または `System.MulticastDelegate` ではなく、特定のデリゲート型を使用してください。
+
+### <a name="fixed-buffers"></a>固定バッファー
 
 `INT_PTR Reserved1[2]` のような配列は、2 つの `IntPtr` フィールド、`Reserved1a` と `Reserved1b` にマーシャリングする必要があります。 ネイティブ配列がプリミティブ型の場合、`fixed` キーワードを使用すると、もう少しわかりやすく記述できます。 たとえば、ネイティブ ヘッダーでは `SYSTEM_PROCESS_INFORMATION` は次のようになります。
 

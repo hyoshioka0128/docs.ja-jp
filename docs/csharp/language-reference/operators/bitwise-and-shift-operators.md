@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 27f7cf46bd3e344503f74527df34506d38ad4545
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 54198368672e0c9324210a232c7851b5a90402cb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428439"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79398071"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>ビットごとの演算子とシフト演算子 (C# リファレンス)
 
@@ -54,49 +54,49 @@ ms.locfileid: "74428439"
 
 `~` 演算子では、各ビットを反転させることにより、オペランドのビットごとの補数が生成されます。
 
-[!code-csharp-interactive[bitwise NOT](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseComplement)]
+[!code-csharp-interactive[bitwise NOT](snippets/BitwiseAndShiftOperators.cs#BitwiseComplement)]
 
 `~` シンボルはファイナライザーの宣言にも使用できます。 詳細については、「[Finalizers](../../programming-guide/classes-and-structs/destructors.md)」 (ファイナライザー) を参照してください。
 
 ## <a name="left-shift-operator-"></a>左シフト演算子 \<\<
 
-`<<` 演算子では、左側のオペランドが、右側のオペランドで定義されたビット数だけ左にシフトされます。
+`<<` 演算子では、左側のオペランドが、[右側のオペランドで定義されたビット数](#shift-count-of-the-shift-operators)だけ左にシフトされます。
 
 次の例に示すように、左シフト演算子では、結果の型の範囲外にある上位ビットは破棄され、空の下位ビット位置は、ゼロに設定されます。
 
-[!code-csharp-interactive[left shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LeftShift)]
+[!code-csharp-interactive[left shift](snippets/BitwiseAndShiftOperators.cs#LeftShift)]
 
 シフト演算子は `int`、`uint`、`long`、`ulong` 型に対してのみ定義されるので、演算の結果には常に少なくとも 32 ビットが含まれます。 左側のオペランドが別の整数型 (`sbyte`、`byte`、`short`、`ushort`、`char`) の場合、次の例で示すように、その値は `int` 型に変換されます。
 
-[!code-csharp-interactive[left shift with promotion](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LeftShiftPromoted)]
+[!code-csharp-interactive[left shift with promotion](snippets/BitwiseAndShiftOperators.cs#LeftShiftPromoted)]
 
 `<<` 演算子の右側のオペランドでのシフト数の定義方法については、「[シフト演算子のシフト数](#shift-count-of-the-shift-operators)」セクションをご覧ください。
 
 ## <a name="right-shift-operator-"></a>右シフト演算子 >>
 
-`>>` 演算子では、左側のオペランドが、右側のオペランドで定義されたビット数だけ右にシフトされます。
+`>>` 演算子では、左側のオペランドが、[右側のオペランドで定義されたビット数](#shift-count-of-the-shift-operators)だけ右にシフトされます。
 
 次の例で示すように、右シフト演算では、下位ビットが破棄されます。
 
-[!code-csharp-interactive[right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#RightShift)]
+[!code-csharp-interactive[right shift](snippets/BitwiseAndShiftOperators.cs#RightShift)]
 
 空の上位ビット位置は、左側のオペランドの型に基づいて次のように設定されます。
 
 - 左側のオペランドの型が `int` または `long` である場合、右シフト演算子では、"*算術*" シフトが実行されます: 左側のオペランドの最上位ビット (符号ビット) の値が空の上位ビット位置に反映されます。 つまり、左側のオペランドが負でない場合は空の上位ビット位置が 0 に設定され、負の場合は 1 に設定されます。
 
-  [!code-csharp-interactive[arithmetic right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ArithmeticRightShift)]
+  [!code-csharp-interactive[arithmetic right shift](snippets/BitwiseAndShiftOperators.cs#ArithmeticRightShift)]
 
 - 左側のオペランドの型が `uint` または `ulong` である場合、右シフト演算子では、"*論理*" シフトが実行されます: 空の上位ビット位置は常に 0 に設定されます。
 
-  [!code-csharp-interactive[logical right shift](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#LogicalRightShift)]
+  [!code-csharp-interactive[logical right shift](snippets/BitwiseAndShiftOperators.cs#LogicalRightShift)]
 
 `>>` 演算子の右側のオペランドでのシフト数の定義方法については、「[シフト演算子のシフト数](#shift-count-of-the-shift-operators)」セクションをご覧ください。
 
-## <a name="logical-and-operator-"></a> 論理 AND 演算子 &amp;
+## <a name="logical-and-operator-amp"></a><a name="logical-and-operator-"></a> 論理 AND 演算子 &amp;
 
 `&` 演算子では、そのオペランドのビットごとの論理 AND が計算されます。
 
-[!code-csharp-interactive[bitwise AND](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseAnd)]
+[!code-csharp-interactive[bitwise AND](snippets/BitwiseAndShiftOperators.cs#BitwiseAnd)]
 
 `bool` オペランドの場合、`&` 演算子がそのオペランドの[論理 AND](boolean-logical-operators.md#logical-and-operator-) を計算します。 単項 `&` 演算子は[アドレス演算子](pointer-related-operators.md#address-of-operator-)です。
 
@@ -104,7 +104,7 @@ ms.locfileid: "74428439"
 
 `^` 演算子では、そのオペランドのビットごとの論理排他的 OR (ビットごとの論理 XOR とも呼ばれます) が計算されます。
 
-[!code-csharp-interactive[bitwise XOR](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseXor)]
+[!code-csharp-interactive[bitwise XOR](snippets/BitwiseAndShiftOperators.cs#BitwiseXor)]
 
 `bool` オペランドの場合、`^` 演算子がそのオペランドの[論理排他的 OR](boolean-logical-operators.md#logical-exclusive-or-operator-) を計算します。
 
@@ -112,7 +112,7 @@ ms.locfileid: "74428439"
 
 `|` 演算子では、そのオペランドのビットごとの論理 OR が計算されます。
 
-[!code-csharp-interactive[bitwise OR](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#BitwiseOr)]
+[!code-csharp-interactive[bitwise OR](snippets/BitwiseAndShiftOperators.cs#BitwiseOr)]
 
 `bool` オペランドの場合、`|` 演算子がそのオペランドの[論理 OR](boolean-logical-operators.md#logical-or-operator-) を計算します。
 
@@ -134,11 +134,11 @@ x = x op y
 
 次の例では、ビットごとの演算子およびシフト演算子を使った複合代入の使用方法を示します。
 
-[!code-csharp-interactive[compound assignment](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#CompoundAssignment)]
+[!code-csharp-interactive[compound assignment](snippets/BitwiseAndShiftOperators.cs#CompoundAssignment)]
 
 [数値の上位変換](~/_csharplang/spec/expressions.md#numeric-promotions)のため、`op` 演算の結果は、`x` の型 `T` に暗黙的に変換できない可能性があります。 そのような場合、`op` が定義済みの演算子であり、演算の結果が `x` の型 `T` に明示的に変換できる場合、`x op= y` の形式の複合代入式は、`x` が 1 回だけ評価される点を除き、`x = (T)(x op y)` と等価です。 次の例は、その動作を示します。
 
-[!code-csharp-interactive[compound assignment with cast](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#CompoundAssignmentWithCast)]
+[!code-csharp-interactive[compound assignment with cast](snippets/BitwiseAndShiftOperators.cs#CompoundAssignmentWithCast)]
 
 ## <a name="operator-precedence"></a>演算子の優先順位
 
@@ -152,9 +152,9 @@ x = x op y
 
 演算子の優先順位によって定められた評価の順序を変更するには、かっこ `()` を使用します。
 
-[!code-csharp-interactive[operator precedence](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#Precedence)]
+[!code-csharp-interactive[operator precedence](snippets/BitwiseAndShiftOperators.cs#Precedence)]
 
-優先度順に並べられた C# 演算子の完全な一覧については、「[C# 演算子](index.md)」の記事の「[演算子の優先順位](index.md#operator-precedence)」のセクションを参照してください。
+優先度順に並べられた C# 演算子の完全な一覧については、[C# 演算子](index.md)に関する記事の「[演算子の優先順位](index.md#operator-precedence)」セクションを参照してください。
 
 ## <a name="shift-count-of-the-shift-operators"></a>シフト演算子のシフト数
 
@@ -168,13 +168,16 @@ x = x op y
 
 次の例は、その動作を示します。
 
-[!code-csharp-interactive[shift count example](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ShiftCount)]
+[!code-csharp-interactive[shift count example](snippets/BitwiseAndShiftOperators.cs#ShiftCount)]
+
+> [!NOTE]
+> 前の例で示したように、右側のオペランドの値が左側のオペランドのビット数よりも大きい場合でも、シフト演算の結果が 0 以外になることがあります。
 
 ## <a name="enumeration-logical-operators"></a>列挙論理演算子
 
-`~`、`&`、`|`、`^` の演算子は、任意の[列挙](../keywords/enum.md)型でもサポートされます。 オペランドが同じ列挙型の場合、基になっている整数型の対応する値に対して、論理演算が実行されます。 たとえば、基になる型が `U` である列挙型 `T` の任意の `x` と `y` に対して、式 `x & y` では式 `(T)((U)x & (U)y)` と同じ結果が生成されます。
+`~`、`&`、`|`、`^` の演算子は、任意の[列挙](../builtin-types/enum.md)型でもサポートされます。 オペランドが同じ列挙型の場合、基になっている整数型の対応する値に対して、論理演算が実行されます。 たとえば、基になる型が `U` である列挙型 `T` の任意の `x` と `y` に対して、式 `x & y` では式 `(T)((U)x & (U)y)` と同じ結果が生成されます。
 
-通常、ビットごとの論理演算子は、[Flags](xref:System.FlagsAttribute) 属性で定義されている列挙型で使います。 詳しくは、「[列挙型](../../programming-guide/enumeration-types.md)」記事の「[ビット フラグとしての列挙型](../../programming-guide/enumeration-types.md#enumeration-types-as-bit-flags)」セクションをご覧ください。
+通常、ビットごとの論理演算子は、[Flags](xref:System.FlagsAttribute) 属性で定義されている列挙型で使います。 詳しくは、「[列挙型](../builtin-types/enum.md)」記事の「[ビット フラグとしての列挙型](../builtin-types/enum.md#enumeration-types-as-bit-flags)」セクションをご覧ください。
 
 ## <a name="operator-overloadability"></a>演算子のオーバーロード可/不可
 
@@ -192,7 +195,7 @@ x = x op y
 - [複合代入](~/_csharplang/spec/expressions.md#compound-assignment)
 - [数値の上位変換](~/_csharplang/spec/expressions.md#numeric-promotions)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# リファレンス](../index.md)
 - [C# 演算子](index.md)

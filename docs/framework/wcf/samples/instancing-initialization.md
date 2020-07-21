@@ -2,15 +2,15 @@
 title: 初期化のインスタンス化
 ms.date: 03/30/2017
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-ms.openlocfilehash: ee7d470cb80e913707ae6e92039061efde8fcb7f
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 06a8dfe571b652ded236df3097b37861c03a858d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715803"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596657"
 ---
 # <a name="instancing-initialization"></a>初期化のインスタンス化
-このサンプルは、インターフェイスを定義することで[プール](../../../../docs/framework/wcf/samples/pooling.md)のサンプルを拡張します。 `IObjectControl`は、オブジェクトのアクティブ化と非アクティブ化によってオブジェクトの初期化をカスタマイズします。 クライアントは、オブジェクトをプールに返すメソッドや、プールに返さないメソッドを呼び出します。  
+このサンプルでは、[プール](pooling.md)のサンプルを拡張し `IObjectControl` ます。これは、をアクティブ化して非アクティブ化することによって、オブジェクトの初期化をカスタマイズするインターフェイスを定義します。 クライアントは、オブジェクトをプールに返すメソッドや、プールに返さないメソッドを呼び出します。  
   
 > [!NOTE]
 > このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。  
@@ -21,7 +21,7 @@ ms.locfileid: "74715803"
  EndpointDispatcher は <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> クラスを使用して、(サービスによって送受信されるすべてのメッセージの) エンドポイント スコープ拡張を提供します。 このクラスにより、EndpointDispatcher の動作を制御するさまざまなプロパティをカスタマイズできます。 このサンプルでは、サービス クラスのインスタンスを提供するオブジェクトをポイントする <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティに焦点を当てています。  
   
 ## <a name="iinstanceprovider"></a>IInstanceProvider  
- WCF では、EndpointDispatcher は、<xref:System.ServiceModel.Dispatcher.IInstanceProvider> インターフェイスを実装するインスタンスプロバイダーを使用して、サービスクラスのインスタンスを作成します。 このインターフェイスに含まれるメソッドは、次の 2 つのみです。  
+ WCF では、EndpointDispatcher は、インターフェイスを実装するインスタンスプロバイダーを使用して、サービスクラスのインスタンスを作成し <xref:System.ServiceModel.Dispatcher.IInstanceProvider> ます。 このインターフェイスに含まれるメソッドは、次の 2 つのみです。  
   
 - <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>: メッセージが到着すると、このディスパッチャは <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドを呼び出し、メッセージを処理するためのサービス クラスのインスタンスを作成します。 このメソッドの呼び出し頻度は <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティで決まります。 たとえば <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティが <xref:System.ServiceModel.InstanceContextMode.PerCall?displayProperty=nameWithType> に設定されている場合、サービス クラスの新しいインスタンスが作成され、到着する各メッセージが処理されます。したがって、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> はメッセージが到着するたびに呼び出されます。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "74715803"
 ```csharp
 private object GetObjectFromThePool()  
 {  
-    bool didNotTimeout =   
+    bool didNotTimeout =
        availableCount.WaitOne(creationTimeout, true);  
     if(didNotTimeout)  
     {  
@@ -56,7 +56,7 @@ private object GetObjectFromThePool()
                         WritePoolMessage(  
                              ResourceHelper.GetString("MsgNewObject"));  
                        #endif  
-                   }                          
+                   }
             }  
            idleTimer.Stop();  
       }  
@@ -79,7 +79,7 @@ public void ReleaseInstance(InstanceContext instanceContext, object instance)
 {  
     lock (poolLock)  
     {  
-        // Check whether the object can be pooled.   
+        // Check whether the object can be pooled.
         // Call the Deactivate method if possible.  
         if (instance is IObjectControl)  
         {  
@@ -93,7 +93,7 @@ public void ReleaseInstance(InstanceContext instanceContext, object instance)
                 #if(DEBUG)  
                 WritePoolMessage(  
                     ResourceHelper.GetString("MsgObjectPooled"));  
-                #endif                          
+                #endif
             }  
             else  
             {  
@@ -110,14 +110,14 @@ public void ReleaseInstance(InstanceContext instanceContext, object instance)
             #if(DEBUG)  
             WritePoolMessage(  
                 ResourceHelper.GetString("MsgObjectPooled"));  
-            #endif   
+            #endif
         }  
   
         activeObjectsCount--;  
   
         if (activeObjectsCount == 0)  
         {  
-            idleTimer.Start();                       
+            idleTimer.Start();
         }  
     }  
   
@@ -125,12 +125,12 @@ public void ReleaseInstance(InstanceContext instanceContext, object instance)
 }  
 ```  
   
- `ReleaseInstance` メソッドは、*初期化のクリーンアップ*機能を提供します。 通常は、プールにはその有効期間中に最小限の数のオブジェクトが保持されます。 ただし、使用率が非常に高くなり、プールでオブジェクトを追加作成する必要が生じて、その数が構成に指定されている上限に達する可能性があります。 プールが最終的にアクティブでなくなると、そうした過剰なオブジェクトは余分なオーバーヘッドになります。 したがって、`activeObjectsCount` がゼロに達すると、アイドル タイマが起動し、クリーンアップ サイクルがトリガされて実行されます。  
+ メソッドは、 `ReleaseInstance` *初期化のクリーンアップ*機能を提供します。 通常は、プールにはその有効期間中に最小限の数のオブジェクトが保持されます。 ただし、使用率が非常に高くなり、プールでオブジェクトを追加作成する必要が生じて、その数が構成に指定されている上限に達する可能性があります。 プールが最終的にアクティブでなくなると、そうした過剰なオブジェクトは余分なオーバーヘッドになります。 したがって、`activeObjectsCount` がゼロに達すると、アイドル タイマが起動し、クリーンアップ サイクルがトリガされて実行されます。  
   
 ```csharp  
 if (activeObjectsCount == 0)  
 {  
-    idleTimer.Start();   
+    idleTimer.Start();
 }  
 ```  
   
@@ -154,7 +154,7 @@ if (activeObjectsCount == 0)
   
  このサンプルではカスタム属性を使用します。 <xref:System.ServiceModel.ServiceHost> が構築されると、サービスの種類の定義で使用されている属性が調べられ、使用可能な動作がサービス説明の動作コレクションに追加されます。  
   
- <xref:System.ServiceModel.Description.IServiceBehavior> インターフェイスには、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>`,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>`,` と <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>の3つのメソッドがあります。 これらのメソッドは、<xref:System.ServiceModel.ServiceHost> の初期化時に WCF によって呼び出されます。 最初に、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> が呼び出されます。このメソッドによってサービスの不整合性を検査できます。 次に、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> が呼び出されます。このメソッドは、非常に高度なシナリオでのみ必要です。 最後に、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> が呼び出されます。このメソッドはランタイムを構成します。 次のパラメータは、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> に渡されます。  
+ <xref:System.ServiceModel.Description.IServiceBehavior>インターフェイスには <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,` 、とという3つのメソッドがあり <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> ます。 これらのメソッドは、の初期化時に WCF によって呼び出され <xref:System.ServiceModel.ServiceHost> ます。 最初に、<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> が呼び出されます。このメソッドによってサービスの不整合性を検査できます。 次に、<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> が呼び出されます。このメソッドは、非常に高度なシナリオでのみ必要です。 最後に、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> が呼び出されます。このメソッドはランタイムを構成します。 次のパラメータは、<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> に渡されます。  
   
 - `Description` : このパラメータは、サービス全体のサービスの説明を提供します。 これを使用すると、サービスのエンドポイント、コントラクト、バインディング、およびサービスに関連するその他のデータに関する説明データを検査できます。  
   
@@ -171,7 +171,7 @@ public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBas
         instanceProvider = new ObjectPoolInstanceProvider(description.ServiceType,  
         maxPoolSize, minPoolSize, creationTimeout);  
   
-        // Assign our instance provider to Dispatch behavior in each   
+        // Assign our instance provider to Dispatch behavior in each
         // endpoint.  
         foreach (ChannelDispatcherBase cdb in serviceHostBase.ChannelDispatchers)  
         {  
@@ -185,15 +185,15 @@ public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBas
              }  
          }  
      }  
-}   
+}
 ```  
   
  <xref:System.ServiceModel.Description.IServiceBehavior> 実装のほかにも、`ObjectPoolingAttribute` クラスには属性引数を使用してオブジェクト プールをカスタマイズするいくつかのメンバがあります。 こうしたメンバには `MaxSize`、`MinSize`、`Enabled`、`CreationTimeout` などがあり、.NET Enterprise Services で提供されるオブジェクト プール機能のセットに一致します。  
   
- 新しく作成されたカスタム `ObjectPooling` 属性を使用してサービス実装に注釈を付けることにより、オブジェクトプール動作を WCF サービスに追加できるようになりました。  
+ 新しく作成されたカスタム属性を使用してサービス実装に注釈を付けることにより、オブジェクトプール動作を WCF サービスに追加できるようになりました `ObjectPooling` 。  
   
 ```csharp  
-[ObjectPooling(MaxSize=1024, MinSize=10, CreationTimeout=30000]      
+[ObjectPooling(MaxSize=1024, MinSize=10, CreationTimeout=30000]
 public class PoolService : IPoolService  
 {  
   // …  
@@ -205,7 +205,7 @@ public class PoolService : IPoolService
   
  オブジェクト プールは、オブジェクトがプールから返される直前に `Activate` メソッドを呼び出します。 オブジェクトがプールに返される際には `Deactivate` メソッドが呼び出されます。 <xref:System.EnterpriseServices.ServicedComponent> ベース クラスには、`boolean` という `CanBePooled` プロパティもあります。このプロパティを使用すると、オブジェクトをさらにプールできるかどうかをプールに通知できます。  
   
- このサンプルではこの機能に似た動作が行われるように、前述のメンバを持つパブリック インターフェイス (`IObjectControl`) を宣言しています。 このインターフェイスは、コンテキスト固有の初期化を提供するためのサービス クラスによって実装されます。 <xref:System.ServiceModel.Dispatcher.IInstanceProvider> の実装は、これらの要件を満たすように変更する必要があります。 次に、`GetInstance` メソッドを呼び出してオブジェクトを取得するたびに、オブジェクトが `IObjectControl.` を実装しているかどうかを確認する必要があります。実行されている場合は、`Activate` メソッドを適切に呼び出す必要があります。  
+ このサンプルではこの機能に似た動作が行われるように、前述のメンバを持つパブリック インターフェイス (`IObjectControl`) を宣言しています。 このインターフェイスは、コンテキスト固有の初期化を提供するためのサービス クラスによって実装されます。 <xref:System.ServiceModel.Dispatcher.IInstanceProvider> の実装は、これらの要件を満たすように変更する必要があります。 ここで、メソッドを呼び出してオブジェクトを取得するたびに、オブジェクトがを `GetInstance` 実装しているかどうかを確認する必要があり `IObjectControl.` ます。その場合は、メソッドを適切に呼び出す必要があり `Activate` ます。  
   
 ```csharp  
 if (obj is IObjectControl)  
@@ -235,7 +235,7 @@ if (instance is IObjectControl)
 if (pool.Count > minPoolSize)  
 {  
   // Clean the surplus objects.  
-}                      
+}
 else if (pool.Count < minPoolSize)  
 {  
   // Reinitialize the missing objects.  
@@ -250,17 +250,17 @@ else if (pool.Count < minPoolSize)
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。  
+1. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。  
   
-2. ソリューションをビルドするには、「 [Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2. ソリューションをビルドするには、「 [Windows Communication Foundation サンプルのビルド](building-the-samples.md)」の手順に従います。  
   
-3. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](running-the-samples.md)」の手順に従います。  
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Initialization`  

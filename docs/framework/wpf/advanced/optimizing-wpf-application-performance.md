@@ -1,5 +1,5 @@
 ---
-title: WPF アプリケーションのパフォーマンスの最適化
+title: アプリのパフォーマンスを最適化する
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application rendering [WPF], performance
@@ -7,18 +7,18 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: ac8c6aa3-3c68-4a24-9827-3b6c829c1ebf
-ms.openlocfilehash: 98c7022eab9153808d47d7da69c23349032165c3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: 54d69e87ef2a9c5318e394422e3bcfcabcc76210
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460851"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646249"
 ---
 # <a name="optimizing-wpf-application-performance"></a>WPF アプリケーションのパフォーマンスの最適化
-このセクションは、アプリケーションのパフォーマンスを向上させる方法を探している [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーション開発者を対象としています。 Microsoft .NET Framework および [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]を初めて使用する開発者は、まず、両方のプラットフォームについて理解しておく必要があります。 このセクションでは、両方の実用的な知識を前提としており、アプリケーションを稼働させるために十分に理解しているプログラマ向けに書かれています。  
+このセクションは、アプリケーションのパフォーマンスを向上させる方法を探している [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーション開発者を対象としています。 Microsoft .NET Framework および [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] を初めて使用する開発者は、まず、両方のプラットフォームについて理解しておく必要があります。 このセクションは、両方の実用的な知識を持つことを前提として、アプリケーションを稼働させるために十分に理解しているプログラマ向けに書かれています。  
   
 > [!NOTE]
-> このセクションで提供されるパフォーマンスデータは、512 RAM と ATI Radeon 9700 グラフィックスカードを搭載した 2.8 GHz PC で実行されている [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションに基づいています。  
+> このセクションで提供されているパフォーマンス データは、512 RAM と ATI Radeon 9700 グラフィックス カードを搭載した 2.8 GHz PC で実行されている [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションに基づいています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [アプリケーション パフォーマンスの計画](planning-for-application-performance.md)  
@@ -55,7 +55,7 @@ ms.locfileid: "73460851"
 - [DrawingVisual オブジェクトの使用](../graphics-multimedia/using-drawingvisual-objects.md)
 - [依存関係プロパティの概要](dependency-properties-overview.md)
 - [Freezable オブジェクトの概要](freezable-objects-overview.md)
-- [XAML リソース](xaml-resources.md)
+- [XAML リソース](../../../desktop-wpf/fundamentals/xaml-resources-define.md)
 - [WPF のドキュメント](documents-in-wpf.md)
 - [書式設定されたテキストの描画](drawing-formatted-text.md)
 - [WPF のタイポグラフィ](typography-in-wpf.md)

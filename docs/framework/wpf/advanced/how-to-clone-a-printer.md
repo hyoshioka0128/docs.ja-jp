@@ -13,44 +13,44 @@ helpviewer_keywords:
 ms.assetid: dd6997c9-fe04-40f8-88a6-92e3ac0889eb
 ms.openlocfilehash: e6af8d6410c4e383990bdaa27f97cc698be71719
 ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64649199"
 ---
 # <a name="how-to-clone-a-printer"></a>方法: プリンターを複製する
-ほとんどの企業が、ある時点で、購入、同じモデルの複数のプリンターです。 通常、これらがすべてインストールと実質的に同じ構成設定。 かかることがあります各プリンターをインストールしてエラーが発生します。 <xref:System.Printing.IndexedProperties?displayProperty=nameWithType>名前空間と<xref:System.Printing.PrintServer.InstallPrintQueue%2A>Microsoft .NET Framework で公開されているクラスでは、すぐに既存の印刷キューから任意の数の複製がその他の印刷キューをインストールすることです。  
+ほとんどの企業は、ある時点で同じモデルのプリンターを複数購入します。 通常、これらはすべて、ほぼ同一の構成設定でインストールされます。 各プリンターのインストールには時間がかかり、エラーが発生しやすくなります。 <xref:System.Printing.IndexedProperties?displayProperty=nameWithType> 名前空間と、Microsoft .NET Framework で公開されている <xref:System.Printing.PrintServer.InstallPrintQueue%2A> クラスを使用すると、既存の印刷キューから複製された任意の数の追加の印刷キューをすぐにインストールすることができます。  
   
 ## <a name="example"></a>例  
- 次の例では、2 番目の印刷キューは既存の印刷キューから複製されました。 最初の 2 つ目とは異なる、名前、場所、ポート、および共有状態でのみです。 これを行うための主要な手順は次のとおりです。  
+ 次の例では、2 番目の印刷キューが既存の印刷キューから複製されています。 2 番目と最初の違いは、名前、場所、ポート、および共有状態のみです。 これを行うための主な手順は次のとおりです。  
   
-1. 作成、<xref:System.Printing.PrintQueue>クローンを作成することは、既存のプリンターのオブジェクト。  
+1. 複製する既存のプリンターの <xref:System.Printing.PrintQueue> オブジェクトを作成します。  
   
-2. 作成、<xref:System.Printing.IndexedProperties.PrintPropertyDictionary>から、<xref:System.Printing.PrintSystemObject.PropertiesCollection%2A>の<xref:System.Printing.PrintQueue>します。 <xref:System.Collections.DictionaryEntry.Value%2A>このディクショナリ内の各エントリのプロパティから派生した型の 1 つのオブジェクトである<xref:System.Printing.IndexedProperties.PrintProperty>します。 このディクショナリ内のエントリの値を設定する 2 つの方法はあります。  
+2. <xref:System.Printing.PrintQueue> の <xref:System.Printing.PrintSystemObject.PropertiesCollection%2A> から <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> を作成します。 この辞書内の各エントリの <xref:System.Collections.DictionaryEntry.Value%2A> プロパティは、<xref:System.Printing.IndexedProperties.PrintProperty> から派生したいずれかの型のオブジェクトです。 この辞書内のエントリの値を設定するには、2 つの方法があります。  
   
-    - 使用して、辞書の**削除**と<xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A>エントリを削除し、目的の値に再び追加する方法。  
+    - 辞書の **Remove** と <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A> メソッドを使用してエントリを削除し、目的の値で再度追加します。  
   
-    - 使用して、辞書の<xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A>メソッド。  
+    - 辞書の <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A> メソッドを使用します。  
   
-     次の例では、両方の方法を示します。  
+     次の例では、両方の方法を示しています。  
   
-3. 作成、<xref:System.Printing.IndexedProperties.PrintBooleanProperty>オブジェクトし、設定、 <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> 「とき」にし、その<xref:System.Printing.IndexedProperties.PrintBooleanProperty.Value%2A>に`true`。  
+3. <xref:System.Printing.IndexedProperties.PrintBooleanProperty> オブジェクトを作成し、その <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> を "IsShared" に、またその <xref:System.Printing.IndexedProperties.PrintBooleanProperty.Value%2A> を `true` に設定します。  
   
-4. 使用して、<xref:System.Printing.IndexedProperties.PrintBooleanProperty>オブジェクトの値を<xref:System.Printing.IndexedProperties.PrintPropertyDictionary>の「とき」のエントリ。  
+4. <xref:System.Printing.IndexedProperties.PrintBooleanProperty> オブジェクトを使用して、<xref:System.Printing.IndexedProperties.PrintPropertyDictionary> の "IsShared" エントリの値にします。  
   
-5. 作成、<xref:System.Printing.IndexedProperties.PrintStringProperty>オブジェクトし、設定、 <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> "ShareName"にし、その<xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A>に適切な<xref:System.String>。  
+5. <xref:System.Printing.IndexedProperties.PrintStringProperty> オブジェクトを作成し、その <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> を "ShareName" に、またその <xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> を適切な <xref:System.String> に設定します。  
   
-6. 使用して、<xref:System.Printing.IndexedProperties.PrintStringProperty>オブジェクトの値を<xref:System.Printing.IndexedProperties.PrintPropertyDictionary>の"ShareName"エントリ。  
+6. <xref:System.Printing.IndexedProperties.PrintStringProperty> オブジェクトを使用して、<xref:System.Printing.IndexedProperties.PrintPropertyDictionary> の "ShareName" エントリの値にします。  
   
-7. 別の作成<xref:System.Printing.IndexedProperties.PrintStringProperty>オブジェクトし、設定、 <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> 「場所」にし、その<xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A>に適切な<xref:System.String>。  
+7. 別の <xref:System.Printing.IndexedProperties.PrintStringProperty> オブジェクトを作成し、その <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> を "Location" に、またその <xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> を適切な <xref:System.String> に設定します。  
   
-8. もう 1 つを使用して、<xref:System.Printing.IndexedProperties.PrintStringProperty>オブジェクトの値を<xref:System.Printing.IndexedProperties.PrintPropertyDictionary>の「場所」のエントリ。  
+8. 2 番目の <xref:System.Printing.IndexedProperties.PrintStringProperty> オブジェクトを使用して、<xref:System.Printing.IndexedProperties.PrintPropertyDictionary> の "Location" エントリの値にします。  
   
-9. 配列を作成する<xref:System.String>秒。 各項目は、サーバー上のポートの名前です。  
+9. <xref:System.String> の配列を作成します。 各項目は、サーバー上のポートの名前です。  
   
-10. 使用<xref:System.Printing.PrintServer.InstallPrintQueue%2A>を新しい値で、新しいプリンターをインストールします。  
+10. <xref:System.Printing.PrintServer.InstallPrintQueue%2A> を使用して、新しいプリンターを新しい値を使用してインストールします。  
   
- 例を次にします。  
+ 次に例を示します。  
   
  [!code-csharp[ClonePrinter#ClonePrinter](~/samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
  [!code-vb[ClonePrinter#ClonePrinter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  

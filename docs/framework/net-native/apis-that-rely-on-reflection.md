@@ -2,12 +2,12 @@
 title: リフレクションに依存する API
 ms.date: 03/30/2017
 ms.assetid: f9532629-6594-4a41-909f-d083f30a42f3
-ms.openlocfilehash: 7329ac339912042fc5d2fb335faa3bf74ed03b8d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1d8daceb6b744b984f86b011ad7952d0da583a79
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128538"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79181085"
 ---
 # <a name="apis-that-rely-on-reflection"></a>リフレクションに依存する API
 場合によっては、コードでのリフレクションの使用は明確ではないため、.NET ネイティブツールチェーンは実行時に必要なメタデータを保持しません。 このトピックでは、リフレクション API の一部であるとは見なされないが、正常に実行するためにリフレクションを必要とする、一般的な API と一般的なプログラミング パターンについて説明します。 これらをソース コードで使用している場合、これらに関する情報をランタイム ディレクティブ (.rd.xml) ファイルに追加して、これらの API を呼び出しても [MissingMetadataException](missingmetadataexception-class-net-native.md) 例外やその他の例外が実行時にスローされないようにできます。  
@@ -29,12 +29,12 @@ ms.locfileid: "73128538"
   
 パフォーマンス上の理由から、次の種類のメタデータが削除されたため、この操作を実行できません:  
   
-`App1.AppClass`1 < system.string > ' です。  
+`App1.AppClass`1<system.string>'。  
   
  次のランタイム ディレクティブをランタイム ディレクティブ ファイルに追加すると、`Activate` の `AppClass<T>` に対する特定のインスタンス化の <xref:System.Int32?displayProperty=nameWithType> メタデータを追加できます。  
   
 ```xml  
-<TypeInstantiation Name="App1.AppClass" Arguments="System.Int32"   
+<TypeInstantiation Name="App1.AppClass" Arguments="System.Int32"
                    Activate="Required Public" />  
 ```  
   

@@ -1,5 +1,6 @@
 ---
-title: '方法: スプラッシュ スクリーンを WPF アプリケーションに追加する'
+title: スプラッシュ スクリーンを追加する方法
+description: Windows Presentation Foundation (WPF) アプリケーションにスタートアップ ウィンドウまたはスプラッシュ スクリーンを追加する方法について説明します。
 ms.date: 08/18/2018
 helpviewer_keywords:
 - WPF [WPF], splash screen
@@ -7,44 +8,43 @@ helpviewer_keywords:
 - SplashScreen class [WPF]
 - splash screen [WPF]
 ms.assetid: d70a25c4-5fb9-4c27-b01d-b1b8ef39b3fd
-ms.openlocfilehash: 3120ee64d65822d323800a89466c6b707169aaaa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 0d0cf2e2a550320650c3b4a0c257071a0403c32b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947902"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617961"
 ---
 # <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a>方法: スプラッシュ スクリーンを WPF アプリケーションに追加する
 
-このトピックでは、スタートアップ ウィンドウを追加する方法または*スプラッシュ スクリーン*、Windows Presentation Foundation (WPF) アプリケーションにします。
+このトピックでは、Windows Presentation Foundation (WPF) アプリケーションにスタートアップ ウィンドウ ("*スプラッシュ スクリーン*") を追加する方法について説明します。
 
-## <a name="to-add-an-existing-image-as-a-splash-screen"></a>スプラッシュ スクリーンとして既存のイメージを追加するには
+## <a name="to-add-an-existing-image-as-a-splash-screen"></a>既存の画像をスプラッシュ スクリーンとして追加するには
 
-1. スプラッシュ スクリーンを使用するイメージを作成または選択します。 Windows Imaging Component (WIC) ではサポートされている任意のイメージ形式を使用することができます。 たとえば、BMP、GIF、JPEG、PNG、または TIFF の形式を使用することができます。
+1. スプラッシュ スクリーンとして使用する画像を作成または検索します。 Windows Imaging Component (WIC) でサポートされている任意の画像形式を使用できます。 たとえば、BMP、GIF、JPEG、PNG、または TIFF 形式を使用できます。
 
-2. WPF アプリケーション プロジェクトにイメージ ファイルを追加します。
+2. WPF アプリケーション プロジェクトに画像ファイルを追加します。
 
-3. **ソリューション エクスプ ローラー**イメージを選択します。
+3. **ソリューション エクスプローラー**で、画像を選択します。
 
-4. [プロパティ] ウィンドウで、ドロップダウン矢印をクリックします。、**ビルド アクション**プロパティ。
+4. プロパティ ウィンドウで、 **[ビルド アクション]** プロパティのドロップダウン矢印をクリックします。
 
-5. 選択**SplashScreen**ドロップダウン リストから。
+5. ドロップダウン リストから **[スプラッシュスクリーン]** を選択します。
 
 6. **F5** キーを押してアプリケーションをビルドし、実行します。
 
-     スプラッシュ スクリーンのイメージは、画面の中央に表示され、メイン アプリケーション ウィンドウが表示されたらをフェードアウトします。
+     スプラッシュ スクリーンの画像が画面の中央に表示された後、メイン アプリケーション ウィンドウが表示されると消えます。
 
-## <a name="to-exclude-the-splash-screen-from-build"></a>スプラッシュ スクリーンをビルドから除外するには
+## <a name="to-exclude-the-splash-screen-from-build"></a>ビルドからスプラッシュ スクリーンを除外するには
 
-1. **ソリューション エクスプ ローラー**、スプラッシュ スクリーン イメージを選択します。
+1. **ソリューション エクスプローラー**で、スプラッシュ スクリーンの画像を選択します。
 
-2. **プロパティ**ウィンドウで、設定、**ビルド アクション**に**None**します。
+2. **[プロパティ]** ウィンドウで、 **[ビルド アクション]** を **[なし]** に設定します。
 
-## <a name="to-remove-the-splash-screen-from-an-application"></a>スプラッシュ スクリーンをアプリケーションから削除するには
+## <a name="to-remove-the-splash-screen-from-an-application"></a>アプリケーションからスプラッシュ スクリーンを削除するには
 
-**ソリューション エクスプ ローラー**、スプラッシュ スクリーン イメージを削除します。
+**ソリューション エクスプローラー**で、スプラッシュ スクリーンの画像を削除します。
 
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Windows.SplashScreen>
-- [方法: 既存の項目をプロジェクトに追加します。](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))
+- [方法: 既存の項目をプロジェクトに追加する](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))

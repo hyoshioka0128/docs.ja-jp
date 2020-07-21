@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: db0da67a-954f-42e6-bbf7-4e16b8cbb210
 ms.openlocfilehash: 800898a4b6fc655785c7db0d9463c34e5eeaa0b7
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62054875"
 ---
 # <a name="gridsplitter-how-to-topics"></a>GridSplitter に関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.GridSplitter>コントロール。  
+このセクションのトピックでは、<xref:System.Windows.Controls.GridSplitter> コントロールの使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [GridSplitter を使用して行のサイズを変更する](how-to-resize-rows-with-a-gridsplitter.md)  
  [GridSplitter を使用して列のサイズを変更する](how-to-resize-columns-with-a-gridsplitter.md)  
  [GridSplitter を表示されるようにする](how-to-make-sure-that-a-gridsplitter-is-visible.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.GridSplitter>  
   
  <xref:System.Windows.Controls.Grid>  

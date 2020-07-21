@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 85084cd9-31cc-4e95-b667-42ef01336622
-ms.openlocfilehash: cc777da65ce1c0d425404b1cc8d47e8189684a7f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 42c056c9b56ed1245290cd66833cc6565f517b66
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62039404"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593452"
 ---
 # <a name="how-to-create-a-one-way-contract"></a>方法: 一方向コントラクトを作成する
-ここでは、一方向コントラクトを使用するメソッドを作成するための基本手順を示します。 このようなメソッドは、クライアントからの Windows Communication Foundation (WCF) サービスで操作を呼び出すが、応答を予期しません。 この種のコントラクトは、たとえば、多数のサブスクライバーに対して通知を発行するために使用できます。 一方向コントラクトは、二重のコントラクトを作成する場合にも使用できます。その場合は、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 これにより、特にサーバーは、クライアントがイベントとして処理できる一方向の呼び出しをクライアントに対して実行できます。 一方向メソッドの指定の詳細については、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プロパティおよび <xref:System.ServiceModel.OperationContractAttribute> クラスのトピックを参照してください。  
+ここでは、一方向コントラクトを使用するメソッドを作成するための基本手順を示します。 このようなメソッドは、クライアントから Windows Communication Foundation (WCF) サービスに対して操作を呼び出しますが、応答を想定していません。 この種のコントラクトは、たとえば、多数のサブスクライバーに対して通知を発行するために使用できます。 一方向コントラクトは、二重のコントラクトを作成する場合にも使用できます。その場合は、クライアントとサーバーが互いに独立して通信できるため、どちらからでも相手の呼び出しを開始できます。 これにより、特にサーバーは、クライアントがイベントとして処理できる一方向の呼び出しをクライアントに対して実行できます。 一方向メソッドの指定の詳細については、<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> プロパティおよび <xref:System.ServiceModel.OperationContractAttribute> クラスのトピックを参照してください。  
   
- 双方向コントラクトのクライアント アプリケーションの作成の詳細については、次を参照してください。[方法。一方向のサービスにアクセスし、要求/応答コントラクト](../../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)します。 実際のサンプルでは、次を参照してください。、[一方向](../../../../docs/framework/wcf/samples/one-way.md)サンプル。  
+ 双方向コントラクト用のクライアントアプリケーションを作成する方法の詳細については、「[方法: 一方向コントラクトと要求/応答コントラクトを使用してサービスにアクセスする](how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)」を参照してください。 実際のサンプルについては、[一方向](../samples/one-way.md)のサンプルを参照してください。  
   
 ### <a name="to-create-a-one-way-contract"></a>一方向コントラクトを作成するには  
   
@@ -35,7 +35,7 @@ ms.locfileid: "62039404"
 
 - <xref:System.ServiceModel.ServiceContractAttribute>
 - <xref:System.ServiceModel.OperationContractAttribute>
-- [サービスの設計と実装](../../../../docs/framework/wcf/designing-and-implementing-services.md)
-- [方法: サービス コントラクトを定義します。](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)
-- [セッション](../../../../docs/framework/wcf/samples/session.md)
-- [方法: 双方向コントラクトを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
+- [サービスの設計と実装](../designing-and-implementing-services.md)
+- [方法: サービス コントラクトを定義する](../how-to-define-a-wcf-service-contract.md)
+- [セッション](../samples/session.md)
+- [方法: 双方向コントラクトを作成する](how-to-create-a-duplex-contract.md)

@@ -16,34 +16,34 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], naming conflicts
 - namespaces
 ms.assetid: cffac744-ab8c-4f1f-ba50-732c22ab4b88
-ms.openlocfilehash: ec892167f30a7ded739dc188ab4096cb3a5d154c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 087c6f02e1fca9cf2664ca76581c08a9b1a5e447
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347331"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398358"
 ---
 # <a name="namespaces-in-visual-basic"></a>Visual Basic における名前空間
 アセンブリ内で定義されているオブジェクトは、名前空間によって編成されています。 アセンブリには複数の名前空間を含めることができます。さらに、名前空間の中に他の名前空間を含めることもできます。 名前空間を使用するとあいまいさがなくなるため、クラス ライブラリを使用する場合など、多数のオブジェクトを使用する場合に参照が簡単になります。  
   
- たとえば、.NET Framework は <xref:System.Windows.Forms?displayProperty=nameWithType> 名前空間の <xref:System.Windows.Forms.ListBox> クラスを定義します。 次のコードは、このクラスの完全修飾名を使用して変数を宣言する方法を示しています。  
+ たとえば、.NET Framework では、<xref:System.Windows.Forms?displayProperty=nameWithType> 名前空間に <xref:System.Windows.Forms.ListBox> クラスが定義されています。 次のコードは、このクラスの完全修飾名を使用して変数を宣言する方法を示しています。  
   
  [!code-vb[VbVbalrApplication#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#6)]  
   
 ## <a name="avoiding-name-collisions"></a>名前の競合の回避  
- .NET Framework 名前空間は、*名前空間の汚染*と呼ばれる問題に対処します。このような場合、クラスライブラリの開発者は、別のライブラリで類似した名前を使用することによって妨げられます。 このような既存コンポーネントとの競合は、 *名前の競合*とも呼ばれます。  
+ .NET Framework の名前空間は、別のライブラリで似た名前が使用されている場合にクラス ライブラリの開発者が遭遇する、"*名前空間の汚染*" と呼ばれる問題に対処しています。 このような既存コンポーネントとの競合は、 *名前の競合*とも呼ばれます。  
   
- たとえば、 `ListBox`という名前の新しいクラスを作成した場合、プロジェクト内ではこのクラスを修飾子を付けずに使用できます。 ただし、同じプロジェクトで .NET Framework <xref:System.Windows.Forms.ListBox> クラスを使用する場合は、参照を一意にするために完全修飾参照を使用する必要があります。 参照が一意でない場合、Visual Basic によって、名前があいまいであることを示すエラーが生成されます。 次のコード例では、これらのオブジェクトを宣言する方法を示しています。  
+ たとえば、 `ListBox`という名前の新しいクラスを作成した場合、プロジェクト内ではこのクラスを修飾子を付けずに使用できます。 ただし、同じプロジェクトで .NET Framework の <xref:System.Windows.Forms.ListBox> クラスを使用する場合は、完全修飾参照を使用して参照を一意にする必要があります。 参照が一意でない場合、Visual Basic では名前があいまいであることを示すエラーが生成されます。 次のコード例では、これらのオブジェクトを宣言する方法を示しています。  
   
  [!code-vb[VbVbalrApplication#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#7)]  
   
- 次の図は、2つの名前空間階層を示しています。どちらも `ListBox`という名前のオブジェクトを含んでいます。  
+ 次の図は、どちらも `ListBox` いう名前のオブジェクトを含む、2 つの名前空間階層を示しています。  
   
- ![2つの名前空間階層を示すスクリーンショット。](./media/namespaces/visual-basic-namespace-hierarchy.gif)  
+ ![2 つの名前空間階層を示すスクリーンショット](./media/namespaces/visual-basic-namespace-hierarchy.gif)  
   
  既定では、Visual Basic で作成するすべての実行可能ファイルには、プロジェクトと同じ名前の名前空間が含まれます。 たとえば、 `ListBoxProject`という名前のプロジェクト内でオブジェクトを定義した場合、実行可能ファイル ListBoxProject.exe には `ListBoxProject`という名前空間が含まれます。  
   
- 複数のアセンブリで同じ名前空間を使用することができます。 Visual Basic は、これらを1つの名前のセットとして扱います。 たとえば、 `SomeNameSpace` というアセンブリの `Assemb1`という名前空間のクラスを定義した後に、 `Assemb2`というアセンブリの同じ名前空間のクラスを定義できます。  
+ 複数のアセンブリで同じ名前空間を使用することができます。 Visual Basic では、これらは 1 つの名前セットとして扱われます。 たとえば、 `SomeNameSpace` というアセンブリの `Assemb1`という名前空間のクラスを定義した後に、 `Assemb2`というアセンブリの同じ名前空間のクラスを定義できます。  
   
 ## <a name="fully-qualified-names"></a>完全修飾名  
  完全修飾名は、オブジェクトが定義されている名前空間の名前で始まるオブジェクト参照です。 他のプロジェクトで定義されているオブジェクトを使用するには、 **[プロジェクト]** メニューの **[参照の追加]** をクリックしてそのクラスへの参照を作成し、コード内でそのオブジェクトの完全修飾名を使用します。 次のコードは、別のプロジェクトの名前空間のオブジェクトを使用して完全修飾名を使用する方法を示しています。  
@@ -60,7 +60,7 @@ ms.locfileid: "74347331"
   
  [!code-vb[VbVbalrApplication#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#11)]  
   
- 完全修飾なしで `Class1` を使用しようとすると、Visual Basic `Class1` 名前があいまいであることを示すエラーが生成されます。  
+ `Class1` を完全修飾せずに使用しようとすると、`Class1` という名前があいまいであることを示すエラーが生成されます。  
   
 ## <a name="namespace-level-statements"></a>名前空間レベルのステートメント  
  名前空間内では、モジュール、インターフェイス、クラス、デリゲート、列挙体、構造体、他の名前空間などの項目を定義できます。 プロパティ、プロシージャ、変数、イベントなどの項目を名前空間のレベルで定義することはできません。 これらの項目は、モジュール、構造体、クラスなどのコンテナー内で宣言する必要があります。  
@@ -81,7 +81,7 @@ Namespace SpecialSpace
 End Namespace  
 ```  
   
- この場合、 <xref:System.Int32?displayProperty=nameWithType>に `SpecialSpace.System` が定義されていないため、Visual Basic コンパイラは `Int32`への参照を正しく解決できません。 `Global` キーワードを使用すると、修飾チェーンを .NET Framework クラス ライブラリの最も外側のレベルで開始できます。 これにより、クラス ライブラリの <xref:System?displayProperty=nameWithType> 名前空間や、その他のあらゆる名前空間を指定できるようになります。 これを次の例に示します。  
+ この場合、 <xref:System.Int32?displayProperty=nameWithType>に `SpecialSpace.System` が定義されていないため、Visual Basic コンパイラは `Int32`への参照を正しく解決できません。 `Global` キーワードを使用すると、修飾チェーンを .NET Framework クラス ライブラリの最も外側のレベルで開始できます。 これにより、クラス ライブラリの <xref:System?displayProperty=nameWithType> 名前空間や、その他のあらゆる名前空間を指定できるようになります。 次に例を示します。  
   
 ```vb  
 Namespace SpecialSpace  
@@ -99,7 +99,7 @@ End Namespace
  `Global` を使用して、 <xref:Microsoft.VisualBasic?displayProperty=nameWithType>などの他のルート レベルの名前空間、およびプロジェクトに関連する任意の名前空間にアクセスできます。  
   
 ## <a name="global-keyword-in-namespace-statements"></a>名前空間のステートメントでの Global キーワード  
- また、 [Namespace ステートメント](../../../visual-basic/language-reference/statements/namespace-statement.md)で `Global` キーワードを使用することもできます。 これにより、プロジェクトのルート名前空間から名前空間を定義できます。  
+ [Namespace ステートメント](../../language-reference/statements/namespace-statement.md)で `Global` キーワードを使用することもできます。 これにより、プロジェクトのルート名前空間から名前空間を定義できます。  
   
  プロジェクト内のすべての名前空間は、プロジェクトのルート名前空間に基づいています。  Visual Studio では、プロジェクト内のすべてのコードで、既定のルート名前空間としてプロジェクト名が割り当てられます。 たとえば、プロジェクト名が `ConsoleApplication1`である場合、そのプログラミング要素は `ConsoleApplication1`名前空間に属します。 `Namespace Magnetosphere`を宣言すると、プロジェクトの `Magnetosphere` への参照は `ConsoleApplication1.Magnetosphere`にアクセスします。  
   
@@ -119,7 +119,7 @@ End Namespace
   
  [!code-vb[VbVbalrApplication#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/module1.vb#21)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Windows.Forms.ListBox>
 - <xref:System.Windows.Forms?displayProperty=nameWithType>

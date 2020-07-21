@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.PeerNeighborNotFound
 ms.date: 03/30/2017
 ms.assetid: 0aeb51a1-b82f-4008-920c-8604c5cbf600
-ms.openlocfilehash: a2ced64640eda203b09f5f33c731b38cda6bbb15
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 220698f97f5a7cf3b891a1db6841339217fed984
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61950021"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84577423"
 ---
 # <a name="systemservicemodelchannelspeerneighbornotfound"></a>System.ServiceModel.Channels.PeerNeighborNotFound
 近隣ノードに対する操作は、その近隣ノードが近隣ノード一覧になかったので実行できませんでした。  
@@ -17,6 +17,6 @@ ms.locfileid: "61950021"
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

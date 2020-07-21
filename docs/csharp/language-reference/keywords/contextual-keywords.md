@@ -1,22 +1,21 @@
 ---
 title: コンテキスト キーワード - C# リファレンス
-ms.custom: seodec18
 ms.date: 03/07/2017
 helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-ms.openlocfilehash: 9197ebb1fa48011c60a6d224497e57a604870fc3
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1de8fbccfa9485a546689233ea8a601a8bd697a5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422869"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75713655"
 ---
 # <a name="contextual-keywords-c-reference"></a>コンテキスト キーワード (C# リファレンス)
 
 コンテキスト キーワードを使用して、コード内で特定の意味を付与することができます。ただし C# ではコンテキスト キーワードは予約語ではありません。 このセクションでは、次のコンテキスト キーワードを紹介します。  
   
-|キーワード|説明|  
+|キーワード|[説明]|  
 |-------------|-----------------|  
 |[add](./add.md)|クライアント コードがイベントをサブスクライブするときに呼び出されるカスタム イベント アクセサーを定義します。|  
 |[async](./async.md)|修飾されたメソッド、ラムダ式、または匿名メソッドが非同期であることを示します。|  
@@ -35,8 +34,8 @@ ms.locfileid: "73422869"
   
  C# 3.0 で導入されたすべてのクエリ キーワードもコンテキスト キーワードです。 詳細については「[クエリ キーワード (LINQ)](./query-keywords.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# リファレンス](../index.md)
-- [C# プログラミング ガイド](../../programming-guide/index.md)
+- [C# プログラミングガイド](../../programming-guide/index.md)
 - [C# のキーワード](./index.md)

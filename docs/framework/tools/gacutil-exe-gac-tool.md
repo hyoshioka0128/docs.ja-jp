@@ -18,10 +18,10 @@ helpviewer_keywords:
 - Global Assembly Cache tool
 ms.assetid: 4c7be9c8-72ae-481f-a01c-1a4716806e99
 ms.openlocfilehash: 87f3cb799ba4e406906759e1facd19d00c8bdace
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73107501"
 ---
 # <a name="gacutilexe-global-assembly-cache-tool"></a>Gacutil.exe (グローバル アセンブリ キャッシュ ツール)
@@ -68,7 +68,7 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 |**/ur**  *assemblyName*<br /><br /> *scheme*<br /><br /> *ID*<br /><br /> *description*|指定したアセンブリへの参照をグローバル アセンブリ キャッシュからアンインストールします。 アセンブリへの参照を削除するには、アセンブリをインストールしたときに **/i** オプションおよび **/r** (または **/ir**) オプションと共に指定したのと同じ *scheme*、*id* および *description* の各パラメーターを指定する必要があります。 これらのパラメーターとして指定できる有効な値については、 **/r** オプションを参照してください。<br /><br /> このオプションを指定するのは、 **/u** オプションと **/r** オプションを一緒に指定するのと同じです。|
 |**/?**|このツールのコマンド構文とオプションを表示します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 > [!NOTE]
 > Gacutil.exe を使用するには管理者権限が必要です。

@@ -1,13 +1,13 @@
 ---
-title: '方法 : 式ツリーを変更する'
+title: '方法: 式ツリーを変更する'
 ms.date: 07/20/2015
 ms.assetid: d1309fff-28bd-4d8e-a2cf-75725999e8f2
-ms.openlocfilehash: 12ccad6df7d6c7d91ebc290163db362eae173209
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 1f052120a2e7e12f5a985adce3ae193afec0e9af
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353746"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410993"
 ---
 # <a name="how-to-modify-expression-trees-visual-basic"></a>方法: 式ツリーを変更する (Visual Basic)
 
@@ -17,7 +17,7 @@ ms.locfileid: "74353746"
 
 1. 新しい**コンソール アプリケーション** プロジェクトを作成します。
 
-2. `System.Linq.Expressions` 名前空間のファイルに `Imports` ステートメントを追加します。
+2. ファイルに `System.Linq.Expressions` 名前空間の `Imports` ステートメントを追加します。
 
 3. `AndAlsoModifier` クラスをプロジェクトに追加します。
 
@@ -45,11 +45,11 @@ ms.locfileid: "74353746"
     End Class
     ```
 
-    このクラスは、<xref:System.Linq.Expressions.ExpressionVisitor> 条件演算を表す式を変更するための特別なクラスで、`AND` クラスを継承します。 このクラスによって条件 `AND` が条件 `OR` に変更されます。 そのために、クラスは基本データ型の <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> メソッドをオーバーライドします。`AND` 条件式は二項式で表されるためです。 `VisitBinary` メソッドでは、渡される式が `AND` 条件演算を表す場合、`OR` 条件演算子ではなく `AND` 条件演算子を含む新しい式がコードによって作成されます。 `VisitBinary` に渡される式が `AND` 条件演算を表さない場合は、基底クラスの実装が延期されます。 基底クラスのメソッドによって、渡された式ツリーに似たノードが作成されますが、そのノードのサブツリーは、ビジターによって再帰的に作成される式ツリーに置き換えられます。
+    このクラスは、`AND` 条件演算を表す式を変更するための特別なクラスで、<xref:System.Linq.Expressions.ExpressionVisitor> クラスを継承します。 このクラスによって条件 `AND` が条件 `OR` に変更されます。 そのために、クラスは基本データ型の <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> メソッドをオーバーライドします。`AND` 条件式は二項式で表されるためです。 `VisitBinary` メソッドでは、渡される式が `AND` 条件演算を表す場合、`AND` 条件演算子ではなく `OR` 条件演算子を含む新しい式がコードによって作成されます。 `VisitBinary` に渡される式が `AND` 条件演算を表さない場合は、基底クラスの実装が延期されます。 基底クラスのメソッドによって、渡された式ツリーに似たノードが作成されますが、そのノードのサブツリーは、ビジターによって再帰的に作成される式ツリーに置き換えられます。
 
-4. `System.Linq.Expressions` 名前空間のファイルに `Imports` ステートメントを追加します。
+4. ファイルに `System.Linq.Expressions` 名前空間の `Imports` ステートメントを追加します。
 
-5. Module1.vb ファイルの `Main` メソッドにコードを追加して、式ツリーを作成し、それを変更するメソッドに渡します。
+5. 式ツリーを作成し、それをメソッドに渡して変更するコードを、Module1.vb ファイルの `Main` メソッドに追加します。
 
     ```vb
     Dim expr As Expression(Of Func(Of String, Boolean)) = _
@@ -71,7 +71,7 @@ ms.locfileid: "74353746"
 
 6. アプリケーションをコンパイルして実行します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [方法: 式ツリーを実行する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
-- [式ツリー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
+- [方法: 式ツリーを実行する (Visual Basic)](how-to-execute-expression-trees.md)
+- [式ツリー (Visual Basic)](index.md)

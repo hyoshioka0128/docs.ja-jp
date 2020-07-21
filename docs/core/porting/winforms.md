@@ -3,13 +3,13 @@ title: Windows フォーム アプリを .NET Core に移植する
 description: .NET Framework Windows フォーム アプリケーションを .NET Core for Windows に移植する方法について説明します。
 author: Thraka
 ms.author: adegeo
-ms.date: 03/01/2019
-ms.openlocfilehash: 959b506fe23691e160d7e88e0ae61cc71c1f3421
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.date: 01/24/2020
+ms.openlocfilehash: efa73428c816eddc00c62c2275d3457c92284388
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567275"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83206134"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Windows フォーム デスクトップ アプリを .NET Core に移植する方法
 
@@ -26,18 +26,20 @@ ms.locfileid: "74567275"
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-- 実行したいデザイナー作業用の [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)。
+- デザイナー作業を行う必要がある場合、[Visual Studio 2019 16.5 Preview 1](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&ch=pre&rel=16) 以降。 最新の[プレビュー バージョンの Visual Studio](https://visualstudio.microsoft.com/vs/preview/) に更新することをお勧めします。
 
   次の Visual Studio ワークロードをインストールします。
+  
   - .NET デスクトップ開発
   - .NET Core クロスプラットフォームの開発
 
 - 問題なくビルドされて実行されているソリューション内の作業用 Windows Forms プロジェクト。
 - C# でコードを書いたプロジェクト。
-- [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) 3.0 以降
 
 > [!NOTE]
-> **Visual Studio 2017** では、.NET Core 3.0 プロジェクトはサポートされていません。 **Visual Studio 2019** では .NET Core 3.0 プロジェクトはサポートされていますが、.NET Core 3.0 Windows Forms プロジェクト用のビジュアル デザイナーはまだサポートされていません。 ビジュアル デザイナーを使用するには、.NET Core プロジェクトとフォーム ファイルを共有するソリューション内に .NET Windows フォーム プロジェクトを配置する必要です。
+> .NET Core 3.0 プロジェクトは、**Visual Studio 2019** 以降のバージョンでのみサポートされています。 **Visual Studio 2019 version 16.5 Preview 1** 以降では、.NET Core Windows フォーム デザイナーもサポートされています。
+>
+> デザイナーを有効にするには、 **[ツール]**  >  **[オプション]**  >  **[環境]**  >  **[プレビュー機能]** に移動し、 **[Use the preview Windows Forms designer for .NET Core apps]\(プレビュー版 Windows フォーム デザイナー (.NET Core アプリ) を使用する\)** オプションを選択します。
 
 ### <a name="consider"></a>次の例を考えてみましょう
 
@@ -58,10 +60,6 @@ ms.locfileid: "74567275"
 01. 自分のプロジェクトで使用されている NuGet パッケージを更新する。
 
     移行する前に、常に NuGet パッケージの最新バージョンを使用することをお勧めします。 アプリケーションで NuGet パッケージを参照している場合は、最新バージョンに更新してください。 アプリケーションが正常にビルドされることを確認します。 アップグレード後にパッケージ エラーが発生した場合は、コードを壊さない最新のバージョンにパッケージをダウングレードします。
-
-01. Visual Studio 2019 では、.NET Core 3.0 のフォーム デザイナーはまだサポートされていない
-
-    現時点では、Visual Studio のフォーム デザイナーを使用する場合は、既存の .NET Framework Windows Forms プロジェクト ファイルを保持する必要があります。
 
 ## <a name="create-a-new-sdk-project"></a>新しい SDK プロジェクトを作成する
 
@@ -106,7 +104,7 @@ SolutionFolder
     └───MyFormsCore.csproj
 ```
 
-**SolutionFolder** ディレクトリから Visual Studio または .NET Core CLI を使用して、**MyFormsCore.csproj** プロジェクトを **MyApps.sln** に追加できます。
+**SolutionFolder** ディレクトリから Visual Studio または .NET Core CLI を使用して、**MyFormsCore.csproj** プロジェクトを **MyApps.sln** に追加します。
 
 ```dotnetcli
 dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
@@ -261,7 +259,7 @@ SolutionFolder
 
 ご覧のとおり、`<OutputType>` ノードが削除され、コンパイラでは、実行可能ファイルではなくライブラリが既定で生成されます。 `<AssemblyName>` と `<RootNamespace>` が変更されました。 具体的には、`<RootNamespace>` が、移植する Windows Forms 制御ライブラリの名前空間と一致するようになりました。 最後に、`<Compile>` と `<EmbeddedResource>` ノードが、移植する Windows Forms 制御ライブラリのフォルダーを指すように調整されました。
 
-次に、メインの .NET Core **MyFormsCore.csproj** プロジェクトに、新しい .NET Core Windows Forms 制御ライブラリへの参照を追加します。 **SolutionFolder** ディレクトリから、Visual Studio または .NET Core CLI のいずれかを使用して、参照を追加します。
+次に、メインの .NET Core **MyFormsCore.csproj** プロジェクトに、新しい .NET Core Windows フォーム コントロール ライブラリへの参照を追加します。 **SolutionFolder** ディレクトリから、Visual Studio または .NET Core CLI のいずれかを使用して、参照を追加します。
 
 ```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj reference .\MyFormsControlsCore\MyControlsCore.csproj
@@ -287,7 +285,7 @@ dotnet add .\MyFormsAppCore\MyFormsCore.csproj package Microsoft.Windows.Compati
 
 ```xml
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.1.0" />
   </ItemGroup>
 ```
 
@@ -299,6 +297,7 @@ Visual Studio 2019 で Windows Forms デザイナーがサポートされるよ�
 
 ## <a name="next-steps"></a>次の手順
 
+- [.NET Framework から .NET Core への破壊的変更](../compatibility/fx-core.md)について学習する。
 - [Windows 互換機能パック][compat-pack]の詳細を確認する。
 - .NET Framework Windows Forms プロジェクトの .NET Core への[移植に関するビデオ](https://www.youtube.com/watch?v=upVQEUc_KwU)を視聴する。
 

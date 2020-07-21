@@ -1,13 +1,13 @@
 ---
-title: '方法 : 注釈を使用して XSLT スタイルの LINQ to XML ツリーを変換する'
+title: '方法: 注釈を使用して XSLT スタイルの LINQ to XML ツリーを変換する'
 ms.date: 07/20/2015
 ms.assetid: 08e91fa2-dac2-4463-9ef1-87b1ac3fa890
-ms.openlocfilehash: d9cb32462535f099107343bd9069b4da3508c5b0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 099457eaab8c80605138d7e67d7bc2823e316234
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348356"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364449"
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>方法: 注釈を使用して XSLT スタイルの LINQ to XML ツリーを変換する (Visual Basic)
 
@@ -19,7 +19,7 @@ XML ドキュメントには、"ドキュメント中心で混合コンテンツ
 <text>A phrase with <b>bold</b> and <i>italic</i> text.</text>
 ```
 
-どのテキスト ノードにも、任意の数の `<b>` と `<i>` が子要素として存在する可能性があります。 この方法は、他の多くの状況にまで拡張されています。たとえば、通常の段落、箇条書きの段落、ビットマップなど、さまざまな子要素を含むことができるページなどです。 テーブルのセルには、テキスト、ドロップダウン リスト、またはビットマップが含まれている場合があります。 ドキュメント中心の XML の主要な特性の 1 つは、特定の要素がどの子要素を持つかがわからない点です。
+どのテキスト ノードにも、任意の数の `<b>` と `<i>` が子要素として存在する可能性があります。 この方法は、その他の複数の状況にも適用されます。たとえば、通常の段落、箇条書きの段落、ビットマップといったさまざまな子要素を含む可能性のあるページなどです。 テーブルのセルには、テキスト、ドロップダウン リスト、またはビットマップが含まれている場合があります。 ドキュメント中心の XML の主要な特性の 1 つは、特定の要素がどの子要素を持つかがわからない点です。
 
 ツリー内の要素を変換するとき、その要素の子について詳しく理解している必要がない場合は、注釈を使用するこの方法が効果的です。
 
@@ -43,7 +43,7 @@ XML ドキュメントには、"ドキュメント中心で混合コンテンツ
 
 ## <a name="transforming-a-tree"></a>ツリーの変換
 
-最初の例では、すべての `Paragraph` ノードの名前を `para`に変更します。
+最初の例では、`Paragraph` ノードの名前をすべて `para` に変更します。
 
 ```vb
 Imports <xmlns:xf="http://www.microsoft.com/LinqToXmlTransform/2007">
@@ -158,29 +158,29 @@ After Transform
 </Root>
 ```
 
-## <a name="effecting-the-transform"></a>変換の影響
+## <a name="effecting-the-transform"></a>変換の実施
 
 小さな関数 `XForm` によって、元の注釈付きツリーから変換された新しいツリーが作成されます。
 
 この関数の擬似コードはかなり単純です。
 
-> 関数は、引数として XElement を受け取り、XElement を返します。
+> この関数は、引数として XElement を受け取り、XElement を返します。
 >
 > 要素に XElement 注釈がある場合は、新しい XElement を返します。
 >
-> - 新しい XElement の名前は、annotation 要素の名前です。
+> - 新しい XElement の名前は、注釈要素の名前です。
 > - すべての属性が注釈から新しいノードにコピーされます。
-> - すべての子ノードは注釈からコピーされます。ただし、特殊なノード xf: ApplyTransforms が認識され、ソース要素の子ノードが反復処理される点が異なります。 ソースの子ノードが XElement でない場合は、新しいツリーにコピーされます。 ソースの子が XElement の場合は、この関数を再帰的に呼び出して変換されます。
+> - すべての子ノードが注釈からコピーされます (特殊なノード xf:ApplyTransforms が認識されて、ソース要素の子ノードが反復処理される場合を除く)。 ソースの子ノードが XElement ではない場合、そのノードは、新しいツリーにコピーされます。 ソースの子が XElement である場合、この関数を再帰的に呼び出すことによって変換されます。
 >
-> 要素に注釈が付いていない場合は、次のようになります。
+> 要素に注釈が付いていない場合は次のようになります。
 >
-> - 新しい XElement を返す
+> - 新しい XElement を返します。
 >   - 新しい XElement の名前は、ソース要素の名前です。
->   - すべての属性は、ソース要素からコピー先の要素にコピーされます。
->   - すべての子ノードは、ソース要素からコピーされます。
->   - ソースの子ノードが XElement でない場合は、新しいツリーにコピーされます。 ソースの子が XElement の場合は、この関数を再帰的に呼び出して変換されます。
+>   - すべての属性がソース要素からターゲットの要素にコピーされます。
+>   - すべての子ノードがソース要素からコピーされます。
+>   - ソースの子ノードが XElement ではない場合、そのノードは、新しいツリーにコピーされます。 ソースの子が XElement である場合、この関数を再帰的に呼び出すことによって変換されます。
 
-この関数の実装を次のコードに示します。
+この関数を実装したものが次のコードです。
 
 ```vb
 ' Build a transformed XML tree per the annotations.
@@ -222,7 +222,7 @@ Private Function GetExpandedNodes(ByVal n2 As XNode) As XNode
 End Function
 ```
 
-## <a name="complete-example"></a>完全な例
+## <a name="complete-example"></a>コード例全体
 
 次に示すのは、`XForm` 関数を含んだ完全なサンプル コードです。 ここには、この種の変換の一般的な使用方法がいくつか示されています。
 
@@ -374,6 +374,6 @@ After Transform
 </Root>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [高度な LINQ to XML プログラミング (Visual Basic)](advanced-linq-to-xml-programming.md)

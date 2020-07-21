@@ -2,12 +2,12 @@
 title: 分散データ管理に関する課題と解決策
 description: マイクロサービスの世界における分散データ管理に関する課題と解決策について説明します。
 ms.date: 09/20/2018
-ms.openlocfilehash: c30de24591d5a73fd34087f34a69e9c7ed54cd35
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 8b91879e879db293ed61bd5f3c49dc391b9d8f5a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834456"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144319"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>分散データ管理に関する課題と解決策
 
@@ -79,7 +79,7 @@ Basket テーブルは Basket マイクロサービスによって所有され�
 
 したがって、マイクロサービスの自律性を適用して復元性を向上させるには、マイクロサービス間の要求/応答通信のチェーンの使用を最小限にする必要があります。 非同期メッセージとイベント ベースの通信を使うか、元の HTTP 要求/応答サイクルとは独立して (非同期) HTTP ポーリングを使うことにより、マイクロサービス間の通信には非同期対話のみを使うことをお勧めします。
 
-非同期通信の使用については、「[マイクロ サービスの自律性を強制する非同期マイクロ サービスの統合](communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy)」および「[Asynchronous message-based communication](asynchronous-message-based-communication.md)」 (非同期メッセージ ベースの通信) を参照してください。
+非同期通信の使用については、「[マイクロ サービスの自律性を強制する非同期マイクロ サービスの統合](communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy)」および「[メッセージベースの非同期通信](asynchronous-message-based-communication.md)」を参照してください。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
@@ -105,7 +105,7 @@ Basket テーブルは Basket マイクロサービスによって所有され�
   <https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction>
 
 - **Udi Dahan。サービス指向のコンポジション** \
-  <http://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
+  <https://udidahan.com/2014/07/30/service-oriented-composition-with-video/>
 
 >[!div class="step-by-step"]
 >[前へ](logical-versus-physical-architecture.md)

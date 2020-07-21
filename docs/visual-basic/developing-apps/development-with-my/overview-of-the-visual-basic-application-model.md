@@ -5,58 +5,58 @@ helpviewer_keywords:
 - My.Application object [Visual Basic], Visual Basic application model
 - Visual Basic application model
 ms.assetid: 17538984-84fe-43c9-82c8-724c9529fe8b
-ms.openlocfilehash: aa47304cf2bded93bdb95ffe7dfa35bb37d9a643
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: 46177d0af7e5df767eb8421caf424880baac615e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976457"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411728"
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Visual Basic アプリケーション モデルの概要
 
-Visual Basic は、Windows フォームアプリケーション (Visual Basic アプリケーションモデル) の動作を制御するための適切に定義されたモデルを提供します。 このモデルには、アプリケーションの起動とシャットダウンを処理するためのイベントと、未処理の例外をキャッチするためのイベントが含まれています。 また、単一インスタンスアプリケーションを開発するためのサポートも提供します。 アプリケーションモデルは拡張可能であるため、より多くの制御を必要とする開発者は、オーバーライド可能なメソッドをカスタマイズできます。  
+Visual Basic は、Windows フォーム アプリケーションの動作を制御するための正しく定義されたモデル (Visual Basic アプリケーション モデル) を提供します。 このモデルには、アプリケーションのスタートアップとシャットダウンを処理するためのイベントと、ハンドルされない例外をキャッチするためのイベントが含まれます。 さらに、単一インスタンス アプリケーションを開発するためのサポートも提供します。 このアプリケーション モデルは拡張可能であるため、より多くのコントロールを必要とする開発者は、オーバーライド可能なメソッドをカスタマイズできます。  
   
-## <a name="uses-for-the-application-model"></a>アプリケーションモデルの使用  
+## <a name="uses-for-the-application-model"></a>アプリケーション モデルの使用  
 
- 一般的なアプリケーションでは、起動時およびシャットダウン時にタスクを実行する必要があります。 たとえば、起動時にアプリケーションでスプラッシュスクリーンの表示、データベース接続の確立、保存された状態の読み込みなどを行うことができます。 アプリケーションがシャットダウンされると、データベース接続を閉じたり、現在の状態を保存したりできます。 また、アプリケーションは、ハンドルされない例外の発生中など、アプリケーションが予期せずシャットダウンしたときに、特定のコードを実行できます。  
+ 一般的なアプリケーションは、スタートアップ時とシャットダウン時にタスクを実行する必要があります。 たとえば、そのスタートアップ時には、スプラッシュ スクリーンの表示、データベース接続の確立、保存された状態の読み込みなどが行われます。 また、アプリケーションのシャットダウン時には、データベース接続が閉じられたり、現在の状態が保存されたりします。 さらに、ハンドルされない例外などのために予期せずシャットダウンした場合、アプリケーションにより特定のコードが実行されます。  
   
- Visual Basic アプリケーションモデルを使用すると、*単一インスタンス*アプリケーションを簡単に作成できます。 単一インスタンスアプリケーションは、アプリケーションの1つのインスタンスだけを同時に実行できるという点で、通常のアプリケーションとは異なります。 単一インスタンスアプリケーションの別のインスタンスを起動しようとすると、元のインスタンスに対して、別の起動が試行されたことを `StartupNextInstance` イベントによって通知されます。 通知には、後続のインスタンスのコマンドライン引数が含まれます。 その後、アプリケーションの後続のインスタンスは、初期化が発生する前に閉じられます。  
+ Visual Basic アプリケーション モデルを使用すると、"*単一インスタンス*" アプリケーションを簡単に作成できます。 単一インスタンス アプリケーションは、一度に実行できるアプリケーションのインスタンスが 1 つのみであるという点で、通常のアプリケーションとは異なります。 単一インスタンス アプリケーションの別のインスタンスを起動しようとすると、`StartupNextInstance` イベントを使用して、別の起動が試行されたことが元のインスタンスに通知されます。 通知には、後続のインスタンスのコマンドライン引数が含まれます。 この後、アプリケーションの後続のインスタンスは、初期化が発生する前に閉じられます。  
   
- 単一インスタンスアプリケーションが開始され、それが最初のインスタンスであるか、またはアプリケーションの後続のインスタンスであるかが確認されます。  
+ 単一インスタンス アプリケーションは、起動されると、それがアプリケーションの最初のインスタンスであるか、または後続のインスタンスであるかを確認します。  
   
-- 最初のインスタンスの場合は、通常どおりに起動します。  
+- 最初のインスタンスである場合、通常どおり起動されます。  
   
-- その後、最初のインスタンスの実行中にアプリケーションを起動しようとするたびに、動作が大きく異なります。 後続の試行では、最初のインスタンスに対してコマンドライン引数について通知した後、すぐに終了します。 最初のインスタンスは、`StartupNextInstance` イベントを処理して、後続のインスタンスのコマンドライン引数を判別し、実行を継続します。  
+- 最初のインスタンスの実行中にアプリケーションを起動しようとするたびに、後続の試行ではまったく異なる動作が発生します。 後続の試行は、最初のインスタンスにコマンドライン引数が通知された後、即座に終了します。 最初のインスタンスは、`StartupNextInstance` イベントを処理して、後続のインスタンスのコマンドライン引数を判別して、実行を継続します。  
   
-     次の図は、後続のインスタンスが最初のインスタンスを通知する方法を示しています。  
+     次の図は、後続のインスタンスが最初のインスタンスに通知する方法を示しています。  
   
-     ![単一インスタンスアプリケーションイメージを示す図。](./media/overview-of-the-visual-basic-application-model/single-instance-application.gif)  
+     ![単一インスタンス アプリケーションのイメージを示す図。](./media/overview-of-the-visual-basic-application-model/single-instance-application.gif)  
   
- `StartupNextInstance` イベントを処理することによって、単一インスタンスアプリケーションの動作を制御できます。 たとえば、Microsoft Outlook は通常、単一インスタンスのアプリケーションとして実行されます。Outlook の実行中に Outlook を再度起動しようとすると、元のインスタンスにフォーカスが移りますが、別のインスタンスは開かれません。  
+ `StartupNextInstance` イベントを処理することにより、単一インスタンス アプリケーションの動作を制御することができます。 たとえば、Microsoft Outlook は、通常、単一インスタンス アプリケーションとして実行されます。Outlook の実行中に、Outlook を再度起動しようとすると、フォーカスは元のインスタンスに移りますが、別のインスタンスは開かれません。  
   
-## <a name="events-in-the-application-model"></a>アプリケーションモデルのイベント  
+## <a name="events-in-the-application-model"></a>アプリケーション モデル内のイベント  
 
- アプリケーションモデルには、次のイベントがあります。  
+ アプリケーション モデルには、次のイベントが含まれます。  
   
-- **アプリケーションの起動**。 アプリケーションは、起動時に <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> イベントを発生させます。 このイベントを処理することにより、メインフォームが読み込まれる前にアプリケーションを初期化するコードを追加できます。 また、`Startup` イベントは、必要に応じて、スタートアッププロセスのそのフェーズ中にアプリケーションの実行をキャンセルするためにも提供します。  
+- **アプリケーションのスタートアップ**: アプリケーションは、起動時に、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> イベントを発生させます。 このイベントを処理することにより、メイン フォームが読み込まれる前にアプリケーションを初期化するコードを追加できます。 `Startup` イベントは、必要に応じて、スタートアップ プロセスのそのフェーズ中にアプリケーションの実行をキャンセルするためにも提供されます。  
   
-     アプリケーションのスタートアップコードの実行中にスプラッシュスクリーンを表示するようにアプリケーションを構成できます。 既定では、`/nosplash` または `-nosplash` のいずれかのコマンドライン引数を使用すると、アプリケーションモデルによってスプラッシュスクリーンが抑制されます。  
+     アプリケーションのスタートアップ コードの実行中にスプラッシュ スクリーンを表示するようにアプリケーションを構成できます。 アプリケーション モデルでは、既定により、`/nosplash` または `-nosplash` のいずれかのコマンドライン引数が使用されている場合、スプラッシュ スクリーンを表示しません。  
   
-- **単一インスタンスアプリケーション**。 <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> イベントは、単一インスタンスアプリケーションの後続のインスタンスが開始されたときに発生します。 イベントは、後続のインスタンスのコマンドライン引数を渡します。  
+- **単一インスタンス アプリケーション**: 単一インスタンス アプリケーションの後続のインスタンスが開始されると、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance> イベントが発生します。 このイベントは、後続のインスタンスのコマンドライン引数を渡します。  
   
-- **未処理の例外**。 アプリケーションでハンドルされない例外が発生すると、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> イベントが発生します。 そのイベントのハンドラーは、例外を調べて、実行を継続するかどうかを判断できます。  
+- **ハンドルされない例外**: アプリケーションは、ハンドルされない例外を検出すると、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> イベントを発生させます。 そのイベントのハンドラーは、例外を調べて、実行を継続するかどうかを判断できます。  
   
-     `UnhandledException` イベントは、状況によっては発生しません。 詳細については、「<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>」を参照してください。  
+     `UnhandledException` イベントは、場合によっては発生しないことがあります。 詳細については、「<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>」を参照してください。  
   
-- **ネットワーク接続の変更**。 コンピューターのネットワークの可用性が変更されると、アプリケーションによって <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged> イベントが発生します。  
+- **ネットワーク接続の変更**: コンピューターのネットワークの可用性が変更されると、アプリケーションは <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged> イベントを発生させます。  
   
-     `NetworkAvailabilityChanged` イベントは、状況によっては発生しません。 詳細については、「<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>」を参照してください。  
+     `NetworkAvailabilityChanged` イベントは、場合によっては発生しないことがあります。 詳細については、「<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>」を参照してください。  
   
-- **アプリケーションをシャットダウン**します。 アプリケーションは、シャットダウンしようとしているときに通知する <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> イベントを提供します。 このイベントハンドラーでは、アプリケーションが実行する必要のある操作 (たとえば、終了と保存など) が完了していることを確認できます。 メインフォームが閉じられたときにシャットダウンするようにアプリケーションを構成することも、すべてのフォームが閉じるときにのみシャットダウンするように構成することもできます。  
+- **アプリケーションのシャットダウン**: アプリケーションは、シャットダウンしようとしていることを通知する <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> イベントを提供します。 そのイベント ハンドラーでは、アプリケーションが実行する必要がある操作 (たとえば、終了と保存など) が完了していることを確認できます。 アプリケーションを、メイン フォールが閉じられたときにシャットダウンするように構成することも、すべてのフォームが閉じられたときにのみシャットダウンするように構成することもできます。  
   
 ## <a name="availability"></a>可用性  
 
- 既定では、Visual Basic アプリケーションモデルは Windows フォームプロジェクトで使用できます。 別のスタートアップオブジェクトを使用するようにアプリケーションを構成した場合、またはカスタム `Sub Main`を使用してアプリケーションコードを開始する場合は、そのオブジェクトまたはクラスが、アプリケーションモデルを使用するための <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> クラスの実装を提供する必要がある場合があります。 スタートアップオブジェクトの変更の詳細については、「 [[アプリケーション] ページ (プロジェクトデザイナー) (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
+ 既定では、Visual Basic アプリケーション モデルは、Windows フォーム プロジェクトで使用できます。 別のスタートアップ オブジェクトを使用するようにアプリケーションを構成する場合、またはカスタムの `Sub Main` を使用してアプリケーション コードを開始する場合、このアプリケーション モデルを使用するために、そのオブジェクトまたはクラスで <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> クラスの実装を提供する必要があります。 スタートアップ オブジェクトの変更については、「[アプリケーション ページ、プロジェクト デザイナー (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
@@ -67,4 +67,4 @@ Visual Basic は、Windows フォームアプリケーション (Visual Basic �
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
-- [Visual Basic アプリケーション モデルの拡張](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)
+- [Visual Basic アプリケーション モデルの拡張](../customizing-extending-my/extending-the-visual-basic-application-model.md)

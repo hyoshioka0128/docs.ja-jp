@@ -1,5 +1,6 @@
 ---
 title: '方法: Windows フォームに直線を描画する'
+description: 描画イベントを処理してフォーム上に線を描画し、PaintEventArgs の Graphics プロパティを使用して描画を実行する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,15 +13,15 @@ helpviewer_keywords:
 - lines [Windows Forms], drawing
 - drawing lines
 ms.assetid: 55c1dbeb-75d0-430c-9814-a24b8971ad8c
-ms.openlocfilehash: aab04b9236175cedd154b817db5a6f6450503105
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8e92dc265c63413275561d0e2e3aa820eaec724
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004160"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621627"
 ---
 # <a name="how-to-draw-a-line-on-a-windows-form"></a>方法: Windows フォームに直線を描画する
-この例では、フォームで線を描画します。 通常は、フォームに描画するときに、フォームを処理<xref:System.Windows.Forms.Control.Paint>イベント、描画を使用して実行し、<xref:System.Windows.Forms.PaintEventArgs.Graphics%2A>のプロパティ、<xref:System.Windows.Forms.PaintEventArgs>この例で示すように、  
+この例では、フォーム上に線を描画します。 通常、フォームで描画する場合は、フォームのイベントを処理 <xref:System.Windows.Forms.Control.Paint> し、のプロパティを使用して描画を実行します。 <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> <xref:System.Windows.Forms.PaintEventArgs> 次に例を示します。  
   
 ## <a name="example"></a>例  
  [!code-csharp[System.Drawing.UsingAPen#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingAPen/CS/Class1.cs#11)]
@@ -30,7 +31,7 @@ ms.locfileid: "62004160"
  前の例は、Windows フォームで使用するために設計されていて、<xref:System.Windows.Forms.PaintEventArgs> イベント ハンドラーのパラメーターである `e`<xref:System.Windows.Forms.Control.Paint> を必要とします。  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
- 常に呼び出す必要があります<xref:System.IDisposable.Dispose%2A>などのシステム リソースを消費するすべてのオブジェクトに対する<xref:System.Drawing.Pen>オブジェクト。  
+ <xref:System.IDisposable.Dispose%2A>オブジェクトなどのシステムリソースを消費するオブジェクトに対しては、常にを呼び出す必要があり <xref:System.Drawing.Pen> ます。  
   
 ## <a name="see-also"></a>関連項目
 

@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: f0dbf7b0-0292-4e31-9ae4-b98288336dc1
 ms.openlocfilehash: 7a2b201e5690c4304e663e9429c54f377e05f556
 ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/28/2019
 ms.locfileid: "74568904"
 ---
 # <a name="object-materialization-wcf-data-services"></a>オブジェクトの具体化 (WCF Data Services)
 
-.NET Framework ベースのクライアントアプリケーションで **[サービス参照の追加]** ダイアログボックスを使用して Open Data Protocol (OData) フィードを使用すると、フィードによって公開されるデータモデル内の各エンティティ型に対して同等のデータクラスが生成されます。 詳細については、「[データサービスクライアントライブラリの生成](generating-the-data-service-client-library-wcf-data-services.md)」を参照してください。 クエリによって返されるエンティティ データは、これらの生成されたクライアント データ サービス クラスのいずれかのインスタンスに具体化されます。 追跡オブジェクトのマージオプションと id 解決の詳細については、「[データサービスコンテキストの管理](managing-the-data-service-context-wcf-data-services.md)」を参照してください。
+**[サービス参照の追加]** ダイアログを使用して .NET Framework ベースのクライアント アプリケーションの Open Data Protocol (OData) フィードを使用すると、フィードによって公開されるデータ モデルの各エンティティ型に対して同等のデータ クラスが生成されます。 詳しくは、「[データ サービス クライアント ライブラリの生成](generating-the-data-service-client-library-wcf-data-services.md)」をご覧ください。 クエリによって返されるエンティティ データは、これらの生成されたクライアント データ サービス クラスのいずれかのインスタンスに具体化されます。 マージ オプションおよび追跡オブジェクトの ID 解決については、「[データ サービス コンテキストの管理](managing-the-data-service-context-wcf-data-services.md)」を参照してください。
 
-WCF Data Services では、ツールで生成されたデータクラスを使用するのではなく、独自のクライアントデータサービスクラスを定義することもできます。 これにより、"plain-old CLR object" (POCO) データ クラスとして知られる独自のデータ クラスを使用できます。 これらの種類のカスタムデータクラスを使用する場合は、<xref:System.Data.Services.Common.DataServiceKeyAttribute> または <xref:System.Data.Services.Common.DataServiceEntityAttribute> のいずれかを使用してデータクラスの属性を設定し、クライアントの型名がデータサービスのデータモデルの型名と一致することを確認する必要があります。
+さらに WCF Data Services では、ツールによって生成されたデータ クラスを使用する代わりに、独自のクライアント データ サービス クラスを定義できます。 これにより、"plain-old CLR object" (POCO) データ クラスとして知られる独自のデータ クラスを使用できます。 これらの型のカスタム データ クラスを使用するときは、データ クラスを <xref:System.Data.Services.Common.DataServiceKeyAttribute> または <xref:System.Data.Services.Common.DataServiceEntityAttribute> で属性化し、クライアント上のその型名がデータ サービスのデータ モデル内の型名と一致するようにする必要があります。
 
-ライブラリは、クエリ応答メッセージを受信すると、OData フィードから返されたデータを、クエリの種類のクライアントデータサービスクラスのインスタンスに具体化します。 これらのオブジェクトを具体化する一般的なプロセスは次のとおりです。
+ライブラリではクエリ応答メッセージを受け取ると、OData フィードから返されたデータが、クエリの型のクライアント データ サービス クラスのインスタンスに具体化されます。 これらのオブジェクトを具体化する一般的なプロセスは次のとおりです。
 
 1. クライアント ライブラリは、応答メッセージ フィード内の `entry` 要素からシリアル化された型を読み取り、次のいずれかの方法で正しい型の新しいインスタンスの作成を試みます。
 
@@ -38,16 +38,16 @@ WCF Data Services では、ツールで生成されたデータクラスを使�
 
     - 複合プロパティは、新しい複合型インスタンスに設定されます。このインスタンスは、応答からの複合型のプロパティとともに設定されます。
 
-    - 関連するエンティティのコレクションを返すナビゲーション プロパティは、<xref:System.Collections.Generic.ICollection%601> の新しいまたは既存のインスタンスに設定されます。ここで、`T` は関連エンティティの型です。 このコレクションは、関連オブジェクトが <xref:System.Data.Services.Client.DataServiceContext> に読み込まれていない限り空になります。 詳細については、「[遅延コンテンツの読み込み](loading-deferred-content-wcf-data-services.md)」を参照してください。
+    - 関連するエンティティのコレクションを返すナビゲーション プロパティは、<xref:System.Collections.Generic.ICollection%601> の新しいまたは既存のインスタンスに設定されます。ここで、`T` は関連エンティティの型です。 このコレクションは、関連オブジェクトが <xref:System.Data.Services.Client.DataServiceContext> に読み込まれていない限り空になります。 詳しくは、「[遅延コンテンツの読み込み](loading-deferred-content-wcf-data-services.md)」をご覧ください。
 
       > [!NOTE]
-      > 生成されたクライアント データ クラスでデータ バインディングがサポートされる場合、ナビゲーション プロパティは代わりに <xref:System.Data.Services.Client.DataServiceCollection%601> クラスのインスタンスを返します。 詳細については、「[コントロールへのデータのバインド](binding-data-to-controls-wcf-data-services.md)」を参照してください。
+      > 生成されたクライアント データ クラスでデータ バインディングがサポートされる場合、ナビゲーション プロパティは代わりに <xref:System.Data.Services.Client.DataServiceCollection%601> クラスのインスタンスを返します。 詳しくは、「[コントロールへのデータのバインド](binding-data-to-controls-wcf-data-services.md)」をご覧ください。
 
 4. <xref:System.Data.Services.Client.DataServiceContext.ReadingEntity> イベントが発生します。
 
 5. クライアント ライブラリは <xref:System.Data.Services.Client.DataServiceContext> にオブジェクトをアタッチします。 <xref:System.Data.Services.Client.MergeOption> が <xref:System.Data.Services.Client.MergeOption.NoTracking> の場合は、オブジェクトはアタッチされません。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [データ サービスに対するクエリ](querying-the-data-service-wcf-data-services.md)
 - [クエリ射影](query-projections-wcf-data-services.md)

@@ -8,13 +8,13 @@ helpviewer_keywords:
 ms.assetid: 559c0804-c62a-4640-b6b9-cbd2aa9fb99c
 ms.openlocfilehash: 87c1425e6eaf03b900e07cfd9fc489ef01b1607a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62010437"
 ---
 # <a name="drag-and-drop-how-to-topics"></a>ドラッグ アンド ドロップに関する「方法」トピック
-次の例を使用して一般的なタスクを実行する方法を示します、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]フレームワークのドラッグ アンド ドロップします。  
+次の例では、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ドラッグ アンド ドロップ フレームワークを使用して一般的なタスクを実行する方法を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [RichTextBox コントロール上にドロップしたファイルを開く](how-to-open-a-file-that-is-dropped-on-a-richtextbox-control.md)  

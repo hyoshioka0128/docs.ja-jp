@@ -4,33 +4,33 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - statements [Visual Basic]
 ms.assetid: 1cbd7703-8d3b-48fd-831e-14c9cc85675a
-ms.openlocfilehash: 78a1bac0eea8aa3f9596077b311ccc1b4e58da79
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
-ms.translationtype: MT
+ms.openlocfilehash: 8c7d5de52632a8482d19dda60f56eadeb750406c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838274"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "85503801"
 ---
 # <a name="statements-visual-basic"></a>ステートメント (Visual Basic)
 このセクションのトピックには、Visual Basic の宣言および実行可能ステートメントと、多くのステートメントに適用される重要なリストのテーブルが含まれます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [ステートメント A ～ E](../../../visual-basic/language-reference/statements/a-e-statements.md)  
+ [ステートメント A ～ E](a-e-statements.md)  
   
- [ステートメント F ～ P](../../../visual-basic/language-reference/statements/f-p-statements.md)  
+ [ステートメント F ～ P](f-p-statements.md)  
   
- [ステートメント Q ～ Z](../../../visual-basic/language-reference/statements/q-z-statements.md)  
+ [ステートメント Q ～ Z](q-z-statements.md)  
   
- [句](../../../visual-basic/language-reference/statements/clauses.md)  
+ [句](clauses.md)  
   
- [宣言コンテキストと既定のアクセス レベル](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)  
+ [宣言コンテキストと既定のアクセス レベル](declaration-contexts-and-default-access-levels.md)  
   
- [属性リスト](../../../visual-basic/language-reference/statements/attribute-list.md)  
+ [属性リスト](attribute-list.md)  
   
- [パラメーター リスト](../../../visual-basic/language-reference/statements/parameter-list.md)  
+ [パラメーター リスト](parameter-list.md)  
   
- [型リスト](../../../visual-basic/language-reference/statements/type-list.md)  
+ [型リスト](type-list.md)  
   
-## <a name="related-sections"></a>関連セクション  
- [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
+## <a name="related-sections"></a>関連項目  
+ [Visual Basic の言語リファレンス](../index.md)  
   

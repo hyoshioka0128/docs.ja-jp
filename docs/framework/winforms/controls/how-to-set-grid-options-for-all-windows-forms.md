@@ -1,5 +1,5 @@
 ---
-title: '方法 : すべての Windows フォームにグリッド オプションを設定する'
+title: グリッドのオプションを設定する
 ms.date: 03/30/2017
 helpviewer_keywords:
 - snap to grid [Windows Forms], Windows Forms Designer
@@ -11,12 +11,12 @@ ms.assetid: 36967466-1dfd-4fae-a7f1-7bf2cbc94048
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 5a69bbd25677e91d0a0c792a1e3c67f948fc90cb
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 14934763e6f17948dfc0494adae2a22d8352580d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460827"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744844"
 ---
 # <a name="how-to-set-grid-options-for-all-windows-forms"></a>方法: すべての Windows フォームのグリッドオプションを設定する
 
@@ -30,6 +30,6 @@ Visual Studio 開発環境で作業する際には、Windows フォームデザ�
 
    右側のウィンドウの **[レイアウト設定]** 見出しの下で、作成するすべての新しいフォームに対して既定のグリッド設定を設定できます。 これらの設定には、グリッドのサイズ、コントロールにスナップするかどうか、および既定でオンになっているかどうかが含まれます。 さらに、 **SnapToGrid**と**スナップ線**の両方のレイアウトモードを選択できます。 スナップガイドラインの詳細については、「[チュートリアル: スナップ線を使用した Windows フォームでのコントロールの配置](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [オプション: Windows フォームデザイナー](/visualstudio/ide/reference/options-windows-forms-designer)

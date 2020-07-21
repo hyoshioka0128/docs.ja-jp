@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 47132dda-fa92-4bd1-ae4b-24cd9a60665a
 topic_type:
 - apiref
-ms.openlocfilehash: efc627619d9abf9cfa6010e1c0ca709989b9cad3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 220556ec130c7bff7c413405820c4fee0582b051
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445456"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008015"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps メソッド
 指定したフィールドトークンによって参照されるフィールドの既定値を設定または更新します。  
@@ -29,11 +29,11 @@ ms.locfileid: "74445456"
   
 ```cpp  
 HRESULT SetFieldProps (  
-    [in]  mdFieldDef  fd,   
-    [in]  DWORD       dwFieldFlags,   
-    [in]  DWORD       dwCPlusTypeFlag,   
-    [in]  void const  *pValue,   
-    [in]  ULONG       cchValue   
+    [in]  mdFieldDef  fd,
+    [in]  DWORD       dwFieldFlags,
+    [in]  DWORD       dwCPlusTypeFlag,
+    [in]  void const  *pValue,
+    [in]  ULONG       cchValue
 );  
 ```  
   
@@ -42,27 +42,27 @@ HRESULT SetFieldProps (
  からターゲットフィールドのトークン。  
   
  `dwFieldFlags`  
- からフィールド属性。 これは `CorFieldAttr` 値のビットマスクです。  
+ からフィールド属性。 これは、値のビットマスクです `CorFieldAttr` 。  
   
  `dwCPlusTypeFlag`  
- から定数値の `ELEMENT_TYPE_` *\** 。 これは `CorElementType` の値です。 定数が定義されていない場合は、この値を `ELEMENT_TYPE_END`に設定します。  
+ から`ELEMENT_TYPE_` *\** 定数値の。 これは `CorElementType` 値です。 定数が定義されていない場合は、この値をに設定 `ELEMENT_TYPE_END` します。  
   
  `pValue`  
  からフィールドの定数値。  
   
  `cchValue`  
- から`pValue`のサイズ (Unicode 文字)。  
+ からのサイズ (Unicode 文字) `pValue` 。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit インターフェイス](imetadataemit-interface.md)
+- [IMetaDataEmit2 インターフェイス](imetadataemit2-interface.md)

@@ -2,26 +2,26 @@
 title: 方法に関する記事 (C# ガイド)
 description: 簡単なヒントと、焦点を絞った短いコード サンプルのコレクション
 ms.date: 12/20/2017
-ms.openlocfilehash: 855ea90d22174c2b7c0b53a526c47a5edbe5496d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 81ef8106add757cf3c83aa7dc130f5474b936461
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736881"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82794703"
 ---
 # <a name="how-to-c"></a>方法 (C#)
 
-C# ガイドの方法に関するセクションでは、よく寄せられる質問に対する簡単な回答が見つかります。 場合によっては、記事が複数のセクションで表示されることもあります。 複数の検索パスで見つけやすいようにしました。
+C# ガイドの方法に関するセクションでは、一般的な質問に対する簡単な回答が見つかります。 場合によっては、記事が複数のセクションで表示されることもあります。 複数の検索パスで見つけやすいようにしました。
 
 ## <a name="general-c-concepts"></a>一般的な C# の概念
 
-C# の開発者には常識といえるヒントやコツがいくつかあります。
+C# の開発者には一般的な方法といえるヒントやコツがいくつかあります。
 
 - [オブジェクト初期化子を使用してオブジェクトを初期化する](../programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md)。
 - [メソッドに構造体を渡す場合とクラスを渡す場合の違いについて理解する](../programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md)。
 - [演算子のオーバーロードを使用する](../language-reference/operators/operator-overloading.md)。
 - [カスタム拡張メソッドを実装して呼び出す](../programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md)。
-- C# のプログラマでも[ VB の `My` 名前空間を使用できる場合がある](../programming-guide/namespaces/how-to-use-the-my-namespace.md)。
+- C# のプログラマでも[ Visual Basic の `My` 名前空間を使用する場合がある](../programming-guide/namespaces/how-to-use-the-my-namespace.md)。
 - [拡張メソッドを使用して `enum` 型の新しいメソッドを作成する](../programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md)。
 
 ### <a name="class-and-struct-members"></a>クラスと構造体のメンバー
@@ -63,7 +63,7 @@ C# の開発者には常識といえるヒントやコツがいくつかあり�
 - [文字列を `DateTime` に変換する](../../standard/base-types/parsing-datetime.md)。
 - [バイト配列を int に変換する](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md)。
 - [文字列を数値に変換する](../programming-guide/types/how-to-convert-a-string-to-a-number.md)。
-- [パターン マッチングで `as` と `is` の演算子を使用して異なる型に安全にキャストする](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)。
+- [パターン マッチングで `as` と `is` の演算子を使用して異なる型に安全にキャストする](safely-cast-using-pattern-matching-is-and-as-operators.md)。
 - [カスタムの型変換を定義する](../language-reference/operators/user-defined-conversion-operators.md)。
 - [型が null 許容値型であるかを判断する](../language-reference/builtin-types/nullable-value-types.md#how-to-identify-a-nullable-value-type)。
 - [null 許容値型と null 非許容値型の間で変換する](../language-reference/builtin-types/nullable-value-types.md#conversion-from-a-nullable-value-type-to-an-underlying-type)。

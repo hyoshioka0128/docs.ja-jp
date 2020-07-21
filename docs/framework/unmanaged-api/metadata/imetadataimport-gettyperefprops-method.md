@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 01837955-ce1e-4068-b338-fd473bd77d1d
 topic_type:
 - apiref
-ms.openlocfilehash: 6ea7605e062eb77e0488b3a9561c4d83be16fa7d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 273922e00c3e5319d5a03652cc77b69f4479ea67
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436714"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503524"
 ---
 # <a name="imetadataimportgettyperefprops-method"></a>IMetaDataImport::GetTypeRefProps メソッド
-指定した TypeRef トークンによって参照される <xref:System.Type> に関連付けられているメタデータを取得します。  
+<xref:System.Type>指定した TypeRef トークンによって参照されるに関連付けられているメタデータを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -48,21 +48,21 @@ HRESULT GetTypeRefProps (
  入出力型名を格納しているバッファー。  
   
  `cchName`  
- から`szName`のワイド文字で要求されたサイズ。  
+ からのワイド文字で要求されたサイズ `szName` 。  
   
  `pchName`  
- 入出力`szName`のワイド文字で返されたサイズ。  
+ 入出力のワイド文字で返されたサイズ `szName` 。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

@@ -1,10 +1,10 @@
 ---
-title: LINQ to XML 動的プロパティのリファレンス
+title: LINQ to XML の動的プロパティ リファレンス
 ms.date: 10/22/2019
 ms.topic: reference
 ms.openlocfilehash: 48b51e92eb78786b2cc189e3e7daa00875b41585
 ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2019
 ms.locfileid: "73197055"
@@ -23,7 +23,7 @@ ms.locfileid: "73197055"
 
 <xref:System.Collections.Generic.IEnumerable%601> 型のインデックス値を返す動的プロパティはすべて遅延実行を使用します。 遅延実行について詳しくは、「[LINQ クエリの概要 (C#)](../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)」をご覧ください。
 
-## <a name="reference"></a>辞書／辞典／その他
+## <a name="reference"></a>関連項目
 
 - <xref:System.Xml.Linq>
 - <xref:System.Xml.Linq.XElement?displayProperty=fullName>

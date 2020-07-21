@@ -1,5 +1,6 @@
 ---
 title: '方法: 例外を明示的にスローする'
+description: C# の Throw ステートメントまたは Visual Basic の Throw ステートメントを使用して、.NET で明示的に例外をスローする方法について説明します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,14 +13,12 @@ helpviewer_keywords:
 - exceptions, throwing
 - implicitly throwing exceptions
 ms.assetid: 72bdd157-caa9-4478-9ee3-cb4500b84528
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a71cefc0a6483dbbe6513a64d8111a07a2e5af42
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 2dd939f9edd58ba91ea74df5d6930087849f0560
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696741"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662785"
 ---
 # <a name="how-to-explicitly-throw-exceptions"></a>例外を明示的にスローする方法
 

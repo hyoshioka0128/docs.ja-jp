@@ -1,26 +1,27 @@
 ---
 title: SQL Server データ型と ADO.NET
+titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 81b43550-23e8-43bb-b460-7eb8ac825c33
-ms.openlocfilehash: 642fe0d541aca01d6ffb2d9279c4d0fa91eadb63
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: f727c69b1dd5c23c6a89911005256de70255fd4c
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780855"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452332"
 ---
 # <a name="sql-server-data-types-and-adonet"></a>SQL Server データ型と ADO.NET
 SQL Server と .NET Framework は異なる型システムに基づいているので、両者間でデータ損失が発生する可能性があります。 データの整合性を維持するために、.NET Framework Data Provider for SQL Server (<xref:System.Data.SqlClient>) では、SQL Server データを処理するための型指定されたアクセサー メソッドが提供されています。 <xref:System.Data.SqlDbType> クラスの列挙値を使用して、<xref:System.Data.SqlClient.SqlParameter> データ型を指定できます。  
   
- SQL Server と .NET Framework のデータ型の間のデータ型マッピングについては、「[データ型のマッピングの SQL Server](../sql-server-data-type-mappings.md)」を参照してください。  
+ SQL Server と .NET Framework の間のデータ型マッピングがわかる詳細な説明と表については、「[SQL Server データ型のマッピング](../sql-server-data-type-mappings.md)」をご覧ください。  
   
  SQL Server 2008 では、業務上のニーズに対応して、日時データ、構造化データ、半構造化データ、および非構造化データを扱うための新しいデータ型が導入されました。 新しいデータ型は、SQL Server 2008 オンライン ブックで説明されています。  
   
  アプリケーションで使用可能な SQL Server のデータ型は、使用する SQL Server のバージョンによって異なります。 詳細については、次の表にある各バージョンの SQL Server オンライン ブックを参照してください。  
   
- **SQL Server オンライン ブック**  
+ **SQL Server のドキュメント**  
   
-1. [データ型 (データベースエンジン)](https://go.microsoft.com/fwlink/?LinkID=107468)  
+1. [データ型 (Transact-SQL)](/sql/t-sql/data-types/data-types-transact-sql)  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [SqlTypes と DataSet](sqltypes-and-the-dataset.md)  
@@ -41,7 +42,7 @@ SQL Server と .NET Framework は異なる型システムに基づいている�
  [SQL Server における XML データ](xml-data-in-sql-server.md)  
  SQL Server から取得した XML データを使用する方法について説明します。  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Data.DataSet>  
  `DataSet` クラスおよびそのすべてのメンバーについて説明します。  
   
@@ -49,7 +50,7 @@ SQL Server と .NET Framework は異なる型システムに基づいている�
  `SqlTypes` 名前空間およびそのすべてのメンバーについて説明します。  
   
  <xref:System.Data.SqlDbType>  
- `SqlDbType` 列挙型およびそのすべてのメンバーについて説明します。  
+ `SqlDbType` 列挙体およびそのすべてのメンバーについて説明します。  
   
  <xref:System.Data.DbType>  
  `DbType` 列挙型およびそのすべてのメンバーについて説明します。  

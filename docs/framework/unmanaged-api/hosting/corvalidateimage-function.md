@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0117e080-05f9-4772-885d-e1847230947c
 topic_type:
 - apiref
-ms.openlocfilehash: 42da5bb761ba8ce388bd41d46e8fdc4561ad0290
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 426b39aa3d1ada5ae44565a742b70681a7bcf6d3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136881"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493475"
 ---
 # <a name="_corvalidateimage-function"></a>_CorValidateImage 関数
 マネージド モジュール イメージを検証し、それらが読み込まれると、オペレーティング システム ローダーに通知します。  
@@ -27,7 +27,7 @@ ms.locfileid: "73136881"
 ## <a name="syntax"></a>構文  
   
 ```cpp  
-STDAPI _CorValidateImage (   
+STDAPI _CorValidateImage (
    [in] PVOID* ImageBase,  
    [in] LPCWSTR FileName  
 );  
@@ -41,15 +41,15 @@ STDAPI _CorValidateImage (
  からイメージのファイル名。  
   
 ## <a name="return-value"></a>戻り値  
- この関数は、`E_INVALIDARG`、`E_OUTOFMEMORY`、`E_UNEXPECTED`、および `E_FAIL`の標準値と、次の値を返します。  
+ この関数は、標準値、、 `E_INVALIDARG` `E_OUTOFMEMORY` 、およびを返し `E_UNEXPECTED` `E_FAIL` ます。次の値も返されます。  
   
 |戻り値|説明|  
 |------------------|-----------------|  
 |`STATUS_INVALID_IMAGE_FORMAT`|イメージが無効です。 この値には HRESULT 0xC000007BL があります。|  
 |`STATUS_SUCCESS`|イメージは有効です。 この値には、HRESULT 0x00000000L が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
- Windows XP 以降のバージョンでは、オペレーティングシステムローダーは、Common Object File Format (COFF) ヘッダーの COM 記述子ディレクトリビットを調べて、マネージモジュールをチェックします。 セットビットはマネージモジュールを示します。 ローダーがマネージモジュールを検出すると、Mscoree.dll を読み込み、`_CorValidateImage`を呼び出します。これにより、次のアクションが実行されます。  
+## <a name="remarks"></a>解説  
+ Windows XP 以降のバージョンでは、オペレーティングシステムローダーは、Common Object File Format (COFF) ヘッダーの COM 記述子ディレクトリビットを調べて、マネージモジュールをチェックします。 セットビットはマネージモジュールを示します。 ローダーがマネージモジュールを検出すると、Mscoree.dll を読み込み、を呼び出します `_CorValidateImage` 。これにより、次のアクションが実行されます。  
   
 - イメージが有効なマネージモジュールであることを確認します。  
   
@@ -59,9 +59,9 @@ STDAPI _CorValidateImage (
   
 - マネージモジュールイメージが読み込まれると、ローダーに戻ります。  
   
- 実行可能イメージの場合、オペレーティングシステムローダーは、実行可能ファイルで指定されたエントリポイントに関係なく、 [_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md)関数を呼び出します。 DLL アセンブリイメージの場合、ローダーは[Cordllmain](../../../../docs/framework/unmanaged-api/hosting/cordllmain-function.md)関数を呼び出します。  
+ 実行可能イメージの場合、オペレーティングシステムローダーは、実行可能ファイルで指定されたエントリポイントに関係なく、 [_CorExeMain](corexemain-function.md)関数を呼び出します。 DLL アセンブリイメージの場合、ローダーは[_CorDllMain](cordllmain-function.md)関数を呼び出します。  
   
- `_CorExeMain` または `_CorDllMain` は、次の操作を実行します。  
+ `_CorExeMain`またはは `_CorDllMain` 、次の操作を実行します。  
   
 - CLR を初期化します。  
   
@@ -69,17 +69,17 @@ STDAPI _CorValidateImage (
   
 - 実行を開始します。  
   
- ローダーは、マネージモジュールイメージがアンロードされるときに、 [Corimageアンロード](../../../../docs/framework/unmanaged-api/hosting/corimageunloading-function.md)関数を呼び出します。 ただし、この関数は何のアクションも実行しません。これはだけを返します。  
+ ローダーは、マネージモジュールイメージがアンロードされるときに[_CorImageUnloading](corimageunloading-function.md)関数を呼び出します。 ただし、この関数は何のアクションも実行しません。これはだけを返します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [メタデータ グローバル静的関数](../metadata/metadata-global-static-functions.md)

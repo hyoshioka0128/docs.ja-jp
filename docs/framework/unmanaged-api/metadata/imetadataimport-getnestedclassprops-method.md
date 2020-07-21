@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 704d19f1-bdef-4745-af8c-6476eb246fb3
 topic_type:
 - apiref
-ms.openlocfilehash: 0adf4f91e1bc7bfb72f634cb3bf038710198b74f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 82cf5e14520f0e677c2d274cf013d8a0020e8fa2
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437144"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503537"
 ---
 # <a name="imetadataimportgetnestedclassprops-method"></a>IMetaDataImport::GetNestedClassProps メソッド
-指定した入れ子にされた型の親 <xref:System.Type> の TypeDef トークンを取得します。  
+<xref:System.Type>指定した入れ子にされた型の親の TypeDef トークンを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -36,21 +36,21 @@ HRESULT GetNestedClassProps (
   
 ## <a name="parameters"></a>パラメーター  
  `tdNestedClass`  
- から親クラストークンを返す <xref:System.Type> を表す TypeDef トークン。  
+ から親クラストークンを返すを表す TypeDef トークン <xref:System.Type> 。  
   
  `ptdEnclosingClass`  
- 入出力`tdNestedClass` が入れ子になっている <xref:System.Type> の TypeDef トークンへのポインター。  
+ 入出力で入れ子になっているの TypeDef トークンへのポインター <xref:System.Type> `tdNestedClass` 。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

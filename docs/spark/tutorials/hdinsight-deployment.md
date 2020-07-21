@@ -1,15 +1,15 @@
 ---
 title: .NET for Apache Spark アプリケーションを Azure HDInsight にデプロイする
 description: .NET for Apache Spark アプリケーションを Azure HDInsight にデプロイする方法を説明します。
-ms.date: 05/17/2019
+ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 3604aff5d1f138071c941ea85546af03185d722d
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e6b2fdd1818250c47ce6cb64439ecab58ae99ad8
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460721"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617640"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>チュートリアル: .NET for Apache Spark アプリケーションを Azure HDInsight にデプロイする
 
@@ -25,11 +25,13 @@ ms.locfileid: "73460721"
 > * HDInsight スクリプト アクションを作成する。
 > * HDInsight クラスターで .NET for Apache Spark アプリケーションを実行する。
 
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
+
 ## <a name="prerequisites"></a>必須コンポーネント
 
 開始する前に、以下の作業を行います。
 
-* Azure サブスクリプションをお持ちでない場合は、[無料アカウント](https://azure.microsoft.com/free/)を作成してください。
+* Azure サブスクリプションをお持ちでない場合は、[無料アカウント](https://azure.microsoft.com/free/dotnet/)を作成してください。
 * [Azure Portal](https://portal.azure.com/) にサインインします。
 * Azure Storage Explorer を [Windows](https://go.microsoft.com/fwlink/?LinkId=708343&clcid=0x409)、[Linux](https://go.microsoft.com/fwlink/?LinkId=722418&clcid=0x409)、または [MacOS](https://go.microsoft.com/fwlink/?LinkId=708342&clcid=0x409) コンピューターにインストールします。
 * チュートリアル「[.NET for Apache Spark - Get Started in 10-Minutes](https://dotnet.microsoft.com/learn/data/spark-tutorial/intro)」 (.NET for Apache Spark - 10 分で開始する) を完了します。
@@ -69,7 +71,7 @@ ms.locfileid: "73460721"
     |クラスター ログイン パスワード| ログイン パスワードを入力します。 |
     |Secure Shell (SSH) ユーザー名| SSH ユーザー名を入力します。 既定では、このアカウントは "*クラスター ログイン ユーザー名*" アカウントと同じパスワードを共有します。 |
 
-4. **[次へ:ストレージ >>]** を選択して **[ストレージ]** ページに進みます。 **[ストレージ]** で次の値を指定します。
+4. **ストレージ >>** を選択して **ストレージ** ページに進みます。 **[ストレージ]** で次の値を指定します。
 
     |プロパティ  |説明  |
     |---------|---------|
@@ -88,7 +90,7 @@ ms.locfileid: "73460721"
 
    **Windows の場合:**
 
-   ```console
+   ```dotnetcli
    cd mySparkApp
    dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x64
    ```
@@ -151,8 +153,8 @@ ms.locfileid: "73460721"
    |プロパティ  |説明  |
    |---------|---------|
    | スクリプトの種類 |カスタム|
-   | name | Install Worker|
-   | Bash スクリプト URI |https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh </br> この URI を確認するには、Azure Storage Explorer で install-worker.sh を右クリックして、[プロパティ] を選択します。 |
+   | 名前 | Install Worker|
+   | Bash スクリプト URI |`https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh` </br> この URI を確認するには、Azure Storage Explorer で install-worker.sh を右クリックして、[プロパティ] を選択します。 |
    | ノードの種類| ワーカー|
    | パラメーター | azure </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin
 
@@ -169,7 +171,7 @@ ms.locfileid: "73460721"
    ```bash
    $SPARK_HOME/bin/spark-submit \
    --master yarn \
-   --class org.apache.spark.deploy.DotnetRunner \
+   --class org.apache.spark.deploy.dotnet.DotnetRunner \
    wasbs://mycontainer@mystorageaccount.blob.core.windows.net/microsoft-spark-2.3.x-0.6.0.jar \
    wasbs://mycontainer@mystorageaccount.blob.core.windows.net/publish.zip mySparkApp
    ```

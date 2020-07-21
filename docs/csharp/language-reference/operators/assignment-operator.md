@@ -1,18 +1,17 @@
 ---
 title: 代入演算子 - C# リファレンス
-ms.custom: seodec18
 ms.date: 09/10/2019
 f1_keywords:
 - =_CSharpKeyword
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 103bc823ab6a56d53a3f2ec05b8de9295f1de400
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 420b41f586a6980d40cf1171eef00dad37bf5abf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039080"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79398059"
 ---
 # <a name="assignment-operators-c-reference"></a>代入演算子 (C# リファレンス)
 
@@ -32,13 +31,13 @@ a = (b = c)
 
 次の例では、左側のオペランドとしてローカル変数、プロパティ、およびインデクサー要素を使用する代入演算子の使用方法を示します。
 
-[!code-csharp-interactive[simple assignment](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#Simple)]
+[!code-csharp-interactive[simple assignment](snippets/AssignmentOperator.cs#Simple)]
 
 ## <a name="ref-assignment-operator"></a>ref 代入演算子
 
 C# 7.3 以降では、ref 代入演算子 `= ref` を使用して、[ref ローカル](../keywords/ref.md#ref-locals)変数または [ref 読み取り専用ローカル](../keywords/ref.md#ref-readonly-locals)変数を割り当てることができます。 次の例は、ref 代入演算子の使用方法を示しています。
 
-[!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
+[!code-csharp[ref assignment operator](snippets/AssignmentOperator.cs#RefAssignment)]
 
 ref 代入演算子の場合、その両方のオペランドの型が同じである必要があります。
 
@@ -62,7 +61,7 @@ x = x op y
 
 ## <a name="null-coalescing-assignment"></a>null 合体割り当て
 
-C# 8.0 以降では、null 合体割り当て演算子 `??=` を使用して、左側のオペランドが `null` に評価された場合にのみ、右側のオペランドの値を左側のオペランドに割り当てることができます。 詳細については、[?? および ??= 演算子](null-coalescing-operator.md)の記事を参照してください。
+C# 8.0 以降では、null 合体割り当て演算子 `??=` を使用して、左側のオペランドが `null` に評価された場合にのみ、右側のオペランドの値を左側のオペランドに割り当てることができます。 詳細については、「[?? and ??= 演算子](null-coalescing-operator.md)」の記事を参照してください。
 
 ## <a name="operator-overloadability"></a>演算子のオーバーロード可/不可
 
@@ -76,7 +75,7 @@ C# 8.0 以降では、null 合体割り当て演算子 `??=` を使用して、�
 
 ref 代入演算子 `= ref` の詳細については、[機能提案メモ](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md)を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# リファレンス](../index.md)
 - [C# 演算子](index.md)

@@ -1,41 +1,41 @@
 ---
-title: '方法: 要素を拡大縮小する'
+title: '方法: 要素をスケーリングする'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - scaling [WPF], elements
 - graphics [WPF], scaling elements
 ms.assetid: 18158d94-bbe7-4f6a-814e-84d27fa748bf
-ms.openlocfilehash: 607b3a11085f746503c1b82552f1740b49d9ef5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 34d954f68747be9eedc0ef71634e0c18b411d260
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942073"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80112051"
 ---
-# <a name="how-to-scale-an-element"></a>方法: 要素を拡大縮小する
-この例は、使用する方法を示します、<xref:System.Windows.Media.ScaleTransform>に要素をスケーリングします。  
+# <a name="how-to-scale-an-element"></a>方法: 要素をスケーリングする
+この例では、<xref:System.Windows.Media.ScaleTransform> を使用して要素を拡大縮小する方法を示します。  
   
- 使用して、<xref:System.Windows.Media.ScaleTransform.ScaleX%2A>と<xref:System.Windows.Media.ScaleTransform.ScaleY%2A>プロパティを指定する係数を使用して、要素のサイズを変更します。 たとえば、 <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> 1.5 の値が元の幅の 150 パーセントに要素を拡大します。 A<xref:System.Windows.Media.ScaleTransform.ScaleY%2A>値 0.5 は 50% 要素の高さを縮小します。  
+ <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> プロパティと <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> プロパティは、指定した係数で要素のサイズを変更します。 たとえば、<xref:System.Windows.Media.ScaleTransform.ScaleX%2A> 値が 1.5 の場合、要素は元の幅の 150% に拡大します。 <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> 値が 0.5 の場合は、要素の高さが 50% 縮小します。  
   
- 使用して、<xref:System.Windows.Media.ScaleTransform.CenterX%2A>と<xref:System.Windows.Media.ScaleTransform.CenterY%2A>プロパティをスケール操作の中心点を指定します。 既定で、<xref:System.Windows.Media.ScaleTransform>四角形の左上隅に対応するポイント (0, 0) で中央揃えで配置します。 これは、要素の移動およびも適用するため、サイズが大きくなるように見えるのでの効果を<xref:System.Windows.Media.Transform>オブジェクトが存在する座標空間を変更します。  
+ <xref:System.Windows.Media.ScaleTransform.CenterX%2A> プロパティと <xref:System.Windows.Media.ScaleTransform.CenterY%2A> プロパティを使用して、拡大縮小操作の中心となる点を指定します。 既定では、<xref:System.Windows.Media.ScaleTransform> の中心点は (0, 0) であり、四角形の左上隅に該当します。 <xref:System.Windows.Media.Transform> を適用すると、オブジェクトが存在する座標空間が変更されるため、要素が移動するという効果に加え、大きくなるように見えるという効果が起こります。  
   
- 次の例では、 <xref:System.Windows.Media.ScaleTransform> 50 での 50 のサイズを 2 倍に<xref:System.Windows.Shapes.Rectangle>します。 <xref:System.Windows.Media.ScaleTransform>両方の 0 (既定値) の値を持つ<xref:System.Windows.Media.ScaleTransform.CenterX%2A>と<xref:System.Windows.Media.ScaleTransform.CenterY%2A>します。  
+ 次の例は、<xref:System.Windows.Media.ScaleTransform> を使用して、50 × 50 の <xref:System.Windows.Shapes.Rectangle> のサイズを 2 倍にします。 <xref:System.Windows.Media.ScaleTransform> の値は、<xref:System.Windows.Media.ScaleTransform.CenterX%2A> と <xref:System.Windows.Media.ScaleTransform.CenterY%2A> の両方に対して 0 (既定) に設定されています。  
   
 ## <a name="example"></a>例  
  [!code-xaml[transformsSample#21](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/ScaleTransformExample.xaml#21)]  
   
- 通常、設定<xref:System.Windows.Media.ScaleTransform.CenterX%2A>と<xref:System.Windows.Media.ScaleTransform.CenterY%2A>スケール オブジェクトの中心を: (<xref:System.Windows.FrameworkElement.Width%2A>/2、  <xref:System.Windows.FrameworkElement.Height%2A> /2)。  
+ 通常は、<xref:System.Windows.Media.ScaleTransform.CenterX%2A> と <xref:System.Windows.Media.ScaleTransform.CenterY%2A> を、拡大縮小するオブジェクトの中心、つまり (<xref:System.Windows.FrameworkElement.Width%2A>/2, <xref:System.Windows.FrameworkElement.Height%2A>/2) に設定します。  
   
- 次の例では別<xref:System.Windows.Shapes.Rectangle>; のサイズが倍増するただし、この<xref:System.Windows.Media.ScaleTransform>両方の 25 の値を持つ<xref:System.Windows.Media.ScaleTransform.CenterX%2A>と<xref:System.Windows.Media.ScaleTransform.CenterY%2A>、四角形の中心に対応します。  
+ 次の例に、サイズを 2 倍にしたもう 1 つの <xref:System.Windows.Shapes.Rectangle> を示します。ただし、この <xref:System.Windows.Media.ScaleTransform> では、<xref:System.Windows.Media.ScaleTransform.CenterX%2A> と <xref:System.Windows.Media.ScaleTransform.CenterY%2A>の両方の値が 25 に設定されており、これは長方形の中心に相当します。  
   
  [!code-xaml[transformsSample#22](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/ScaleTransformExample.xaml#22)]  
   
- 次の図は、2 つの違いを示しています。<xref:System.Windows.Media.ScaleTransform>操作。 点線は、拡大/縮小する前の四角形のサイズと位置を示しています。  
+ 次の図は、2 つの <xref:System.Windows.Media.ScaleTransform> 操作間の相違を示しています。 点線は、拡大/縮小する前の四角形のサイズと位置を示しています。  
   
- ![中心点が異なる 2 倍のスケール](./media/wcpsdk-graphicsmm-scalecenter.gif "wcpsdk_graphicsmm_scalecenter")  
+ ![中心点が異なる 2 倍の拡大](./media/wcpsdk-graphicsmm-scalecenter.gif "wcpsdk_graphicsmm_scalecenter")  
 2 つの ScaleTransform 操作では、ScaleX と ScaleY の値は同じですが、中心点が異なっています。  
   
- 完全なサンプルについては、「[2-D 変換のサンプル](https://go.microsoft.com/fwlink/?LinkID=158252)」をご覧ください。  
+ サンプル全体については、「[2D 変換のサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/2DTransforms)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目
 

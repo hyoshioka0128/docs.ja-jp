@@ -2,12 +2,12 @@
 title: '方法: 複数のソースからオブジェクト コレクションにデータを設定する (LINQ)'
 ms.date: 06/22/2018
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-ms.openlocfilehash: 74a2a0f71e575136f1758f72f9a8db72549a9489
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 9c6d8ff5165bf886d8aad87b64305819e65361ab
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346980"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396520"
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>方法: 複数のソースからオブジェクトコレクションにデータを設定する (LINQ) (Visual Basic)
 
@@ -18,7 +18,7 @@ ms.locfileid: "74346980"
 
 ## <a name="to-create-the-data-file"></a>データ ファイルを作成するには
 
-- 「[方法: 異種ファイルのコンテンツを結合する (LINQ)」 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)の説明に従って、.csv ファイルとスコア .csv ファイルをプロジェクトフォルダーにコピーします。
+- names.csv ファイルと scores.csv ファイルをプロジェクト フォルダーにコピーします。このとき、「[方法:異種ファイルのコンテンツを結合する (LINQ) (Visual Basic)](how-to-join-content-from-dissimilar-files-linq.md)」の説明に従います。
 
 ## <a name="example"></a>例
 
@@ -100,7 +100,7 @@ End Class
 ' The average score of Michael Tucker is 92
 ```
 
-[Select 句](../../../../visual-basic/language-reference/queries/select-clause.md)の句では、オブジェクト初期化子を使用して、2つのソースのデータを使用して新しい `Student` オブジェクトをインスタンス化します。
+[Select 句](../../../language-reference/queries/select-clause.md)では、オブジェクト初期化子を使用し、2 つのソースのデータを使用して新しい `Student` オブジェクトそれぞれをインスタンス化しています。
 
 クエリの結果を格納する必要がない場合は、名前付きの型よりも匿名型の方が便利です。 クエリが実行されたメソッドの外部にクエリ結果を渡す場合は、名前付きの型が必要になります。 次の例では、前の例と同じタスクを実行しますが、名前付きの型ではなく匿名型が使用します。
 
@@ -128,6 +128,6 @@ For Each s In queryNamesScores2
 Next
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [LINQ と文字列 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ と文字列 (Visual Basic)](linq-and-strings.md)

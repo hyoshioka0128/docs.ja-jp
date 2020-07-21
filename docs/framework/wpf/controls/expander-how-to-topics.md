@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: c31e85e3-963f-4693-b463-a29adc433fcd
 ms.openlocfilehash: 6ab53f0164c5623c93132d29045498ccffaf9712
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61911785"
 ---
 # <a name="expander-how-to-topics"></a>エキスパンダーに関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.Expander>コントロール。  
+このセクションのトピックでは、<xref:System.Windows.Controls.Expander> コントロールの使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ScrollViewer を持つエキスパンダーを作成する](how-to-create-an-expander-with-a-scrollviewer.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Expander>  
   
 ## <a name="related-sections"></a>関連項目  

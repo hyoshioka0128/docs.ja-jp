@@ -1,5 +1,6 @@
 ---
-title: WPF におけるパッケージの URI
+title: パック URI
+description: Uniform Resource Identifier (URI) を使用して Windows Presentation Foundation (WPF) でファイルを識別して読み込む多くの方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - pack URI scheme [WPF]
@@ -9,18 +10,17 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: efaf55220a41526b8952f01b8225f8336a4e8657
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: 1d19dec0d846659f8de6ed518a7f98d224354a82
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459673"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621692"
 ---
 # <a name="pack-uris-in-wpf"></a>WPF におけるパッケージの URI
 
-Windows Presentation Foundation (WPF) では、次のようなさまざまな方法でファイルを識別し、読み込むために uniform resource identifier (Uri) が使用されます。
+Windows Presentation Foundation (WPF) では、Uniform Resource Identifier (URI) は、次のようなさまざまな用途でファイルを識別し、読み込むために使用されます。
 
-- アプリケーションを初めて起動するときに表示する [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] を指定します。
+- アプリケーションが初めて起動するときに表示する [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] の指定。
 
 - イメージの読み込み。
 
@@ -28,7 +28,7 @@ Windows Presentation Foundation (WPF) では、次のようなさまざまな方
 
 - 実行可能でないデータ ファイルの読み込み。
 
-さらに、Uri を使用して、次のようなさまざまな場所からファイルを識別し、読み込むことができます。
+さらに、URI は、次のようなさまざまな場所からファイルを識別し、読み込むために使用できます。
 
 - 現在のアセンブリ。
 
@@ -38,23 +38,23 @@ Windows Presentation Foundation (WPF) では、次のようなさまざまな方
 
 - アプリケーションの起点サイト。
 
-これらの場所からこれらの種類のファイルを識別し、読み込むための一貫したメカニズムを提供するために、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、*パック URI スキーム*の機能拡張を活用します。 このトピックでは、スキームの概要について説明します。また、マークアップとコードの両方からパック Uri を使用する方法を説明する前に、さまざまなシナリオ用のパック Uri を作成する方法について説明します。
+これらの位置からこれらの種類のファイルを識別し、読み込むための一貫性のあるメカニズムを提供するために、WPF では "*パック URI スキーム*" の拡張性が利用されます。 このトピックでは、このスキームの概要を説明し、さまざまなシナリオに応じたパック URI を構築する方法を述べ、絶対および相対 URI と URI の解決について説明した後、マークアップとコードの両方からパック URI を使用する方法を示します。
 
 <a name="The_Pack_URI_Scheme"></a>
 
 ## <a name="the-pack-uri-scheme"></a>パック URI スキーム
 
-パッケージ URI スキームは、コンテンツを整理および識別するためのモデルを記述する[Open パッケージング規則](https://go.microsoft.com/fwlink/?LinkID=71255)(OPC) 仕様によって使用されます。 このモデルの主要な要素はパッケージとパーツで、*パッケージ*は1つ以上の論理*部分*の論理コンテナーです。 この概念を次の図に示します。
+パック URI スキームは、[Open Packaging Conventions](https://www.ecma-international.org/publications/standards/Ecma-376.htm) (OPC) 仕様によって使用されます。この仕様は、コンテンツを編成し、識別するためのモデルを規定しています。 このモデルの主な要素は、パッケージとパーツであり、"*パッケージ*" は、1 つ以上の論理 "*パーツ*" の論理的なコンテナーです。 この概念を次の図に示します。
 
 ![パッケージとパーツのダイアグラム](./media/pack-uris-in-wpf/wpf-package-parts-diagram.png)
 
-パーツを識別するために、OPC 仕様は、RFC 2396 (Uniform Resource Identifier (URI): Generic 構文) の機能拡張を利用して、パック URI スキームを定義します。
+パーツを識別するために、OPC 仕様では、RFC 2396 (Uniform Resource Identifier (URI): 一般構文) の拡張性を利用して、パック URI スキームが定義されます。
 
-URI によって指定されるスキームは、そのプレフィックスによって定義されます。http、ftp、および file は、よく知られている例です。 パック URI スキームでは、スキームとして "pack" が使用され、authority と path の2つのコンポーネントが含まれています。 パック URI の形式を次に示します。
+URI によって指定されるスキームは、そのプレフィックスによって定義されます。http、ftp、および file は、よく知られている例です。 パック URI スキームでは、スキームとして "pack" が使用され、オーソリティとパスの 2 つのコンポーネントが含まれます。 パック URI の形式は、次のとおりです。
 
-pack://*authority* /*パス*
+pack://*authority*/*path*
 
-*Authority*は、パーツが含まれているパッケージの種類を指定し、*パス*はパッケージ内のパーツの場所を指定します。
+*authority* は、パーツが含まれるパッケージの種類を指定し、*path* は、パッケージ内のパーツの位置を指定します。
 
 この概念を次の図に示します。
 
@@ -72,36 +72,36 @@ pack://*authority* /*パス*
 
 - 起点サイト ファイル。
 
-これらの種類のファイルにアクセスするために [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では、application:///と siteoforigin:///の2つの機関がサポートされています。 application:/// オーソリティは、リソース ファイルやコンテンツ ファイルなど、コンパイル時に既知のアプリケーション データ ファイルを識別します。 siteoforigin:/// オーソリティは、起点サイト ファイルを識別します。 各オーソリティのスコープを次の図に示します。
+これらの種類のファイルにアクセスするために、WPF では、application:/// と siteoforigin:/// という 2 つのオーソリティがサポートされます。 application:/// オーソリティは、リソース ファイルやコンテンツ ファイルなど、コンパイル時に既知のアプリケーション データ ファイルを識別します。 siteoforigin:/// オーソリティは、起点サイト ファイルを識別します。 各オーソリティのスコープを次の図に示します。
 
 ![Pack URI のダイアグラム](./media/pack-uris-in-wpf/wpf-pack-uri-scheme.png)
 
 > [!NOTE]
-> パック URI の機関コンポーネントは、パッケージを指す埋め込み URI であり、RFC 2396 に準拠している必要があります。 さらに、"/" 文字は "," 文字に置き換える必要があり、"%" や "?" などの予約文字はエスケープする必要があります。 詳細については、OPC を参照してください。
+> パック URI のオーソリティ コンポーネントは、パッケージを指す埋め込み URI であり、RFC 2396 に準拠する必要があります。 さらに、"/" 文字は "," 文字に置き換える必要があり、"%" や "?" などの予約文字はエスケープする必要があります。 詳細については、OPC を参照してください。
 
-以下のセクションでは、これらの2つの機関を使用して、リソース、コンテンツ、および起点サイトファイルを識別するための適切なパスと共に、パック Uri を作成する方法について説明します。
+以下のセクションでは、この 2 つのオーソリティと、リソース ファイル、コンテンツ ファイル、および起点サイト ファイルを識別する適切なパスとを組み合わせてパック URI を構築する方法について説明します。
 
 <a name="Resource_File_Pack_URIs___Local_Assembly"></a>
 
 ## <a name="resource-file-pack-uris"></a>リソース ファイルのパック URI
 
-リソースファイルは MSBuild `Resource` 項目として構成され、アセンブリにコンパイルされます。 WPF は、ローカルアセンブリにコンパイルされるか、ローカルアセンブリから参照されるアセンブリにコンパイルされるリソースファイルを識別するために使用できる、パック Uri の構築をサポートしています。
+リソース ファイルは、MSBuild の`Resource` 項目として構成され、アセンブリにコンパイルされます。 WPF では、ローカル アセンブリにコンパイルされるか、ローカル アセンブリから参照されるアセンブリにコンパイルされるリソース ファイルを識別するために使用できるパック URI の構築がサポートされています。
 
 <a name="Local_Assembly_Resource_File"></a>
 
 ### <a name="local-assembly-resource-file"></a>ローカル アセンブリ リソース ファイル
 
-ローカルアセンブリにコンパイルされるリソースファイルのパック URI は、次の権限とパスを使用します。
+ローカル アセンブリにコンパイルされるリソース ファイルのパック URI では、次のオーソリティとパスを使用します。
 
 - **オーソリティ**: application:///。
 
-- **パス**: ローカル アセンブリのプロジェクト フォルダーのルートに対して相対的なパスを含むリソース ファイルの名前。
+- **パス**:ローカル アセンブリのプロジェクト フォルダーのルートに対して相対的なパスを含むリソース ファイルの名前。
 
-次の例は、ローカルアセンブリのプロジェクトフォルダーのルートにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソースファイルのパック URI を示しています。
+次の例では、ローカル アセンブリのプロジェクト フォルダーのルートにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソース ファイルのパック URI を示します。
 
 `pack://application:,,,/ResourceFile.xaml`
 
-次の例は、ローカルアセンブリのプロジェクトフォルダーのサブフォルダーにある、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソースファイルのパック URI を示しています。
+次の例では、ローカル アセンブリのプロジェクト フォルダーのサブフォルダーにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソース ファイルのパック URI を示します。
 
 `pack://application:,,,/Subfolder/ResourceFile.xaml`
 
@@ -109,13 +109,13 @@ pack://*authority* /*パス*
 
 ### <a name="referenced-assembly-resource-file"></a>参照アセンブリ リソース ファイル
 
-参照アセンブリにコンパイルされるリソースファイルのパック URI は、次の権限とパスを使用します。
+参照アセンブリにコンパイルされるリソース ファイルのパック URI では、次のオーソリティとパスを使用します。
 
 - **オーソリティ**: application:///。
 
-- **パス**: 参照アセンブリにコンパイルされるリソース ファイルの名前。 パスは、次の書式に従う必要があります。
+- **パス**:参照アセンブリにコンパイルされるリソース ファイルの名前。 パスは、次の書式に従う必要があります。
 
-  *Assemblyshortname*{ *;バージョン*] { *;PublicKey*]、コンポーネント/*パス*
+  *AssemblyShortName*{ *;Version*]{ *;PublicKey*];component/*Path*
 
   - **AssemblyShortName**: 参照アセンブリの短い名前。
 
@@ -127,19 +127,19 @@ pack://*authority* /*パス*
 
   - **/Path**: 参照アセンブリのプロジェクト フォルダーのルートに対して相対的なパスを含むリソース ファイルの名前。
 
-次の例は、参照アセンブリのプロジェクトフォルダーのルートにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソースファイルのパック URI を示しています。
+次の例では、参照アセンブリのプロジェクト フォルダーのルートにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソース ファイルのパック URI を示します。
 
 `pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml`
 
-次の例は、参照アセンブリのプロジェクトフォルダーのサブフォルダーにある、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソースファイルのパック URI を示しています。
+次の例では、参照アセンブリのプロジェクト フォルダーのサブフォルダーにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソース ファイルのパック URI を示します。
 
 `pack://application:,,,/ReferencedAssembly;component/Subfolder/ResourceFile.xaml`
 
-次の例では、バージョン固有の参照アセンブリのプロジェクトフォルダーのルートフォルダーにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソースファイルのパック URI を示しています。
+次の例では、バージョン固有の参照アセンブリのプロジェクト フォルダーのルートにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] リソース ファイルのパック URI を示します。
 
 `pack://application:,,,/ReferencedAssembly;v1.0.0.1;component/ResourceFile.xaml`
 
-参照されるアセンブリリソースファイルのパック URI 構文は、application:///authority でのみ使用できます。 たとえば、次のは [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ではサポートされていません。
+参照アセンブリ リソース ファイルのパック URI 構文は、application:/// オーソリティでのみ使用できます。 たとえば、WPF では、次はサポートされません。
 
 `pack://siteoforigin:,,,/SomeAssembly;component/ResourceFile.xaml`
 
@@ -147,38 +147,38 @@ pack://*authority* /*パス*
 
 ## <a name="content-file-pack-uris"></a>コンテンツ ファイルのパック URI
 
-コンテンツファイルのパック URI は、次の証明機関とパスを使用します。
+コンテンツ ファイルのパック URI では、次のオーソリティとパスを使用します。
 
 - **オーソリティ**: application:///。
 
-- **パス**: アプリケーションのメインの実行可能アセンブリのファイル システム位置に対して相対的なパスを含む、コンテンツ ファイルの名前。
+- **パス**:アプリケーションのメインの実行可能アセンブリのファイル システム位置に対して相対的なパスを含む、コンテンツ ファイルの名前。
 
-次の例は、実行可能アセンブリと同じフォルダーにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] コンテンツファイルのパック URI を示しています。
+次の例では、実行可能アセンブリと同じフォルダーにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] コンテンツ ファイルのパック URI を示します。
 
 `pack://application:,,,/ContentFile.xaml`
 
-次の例は、アプリケーションの実行可能アセンブリに対して相対的なサブフォルダーにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] コンテンツファイルのパック URI を示しています。
+次の例では、アプリケーションの実行可能アセンブリに対して相対的なサブフォルダーにある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] コンテンツ ファイルのパック URI を示します。
 
 `pack://application:,,,/Subfolder/ContentFile.xaml`
 
 > [!NOTE]
-> HTML コンテンツファイルに移動することはできません。 URI スキームでは、起点サイトにある HTML ファイルへの移動のみがサポートされています。
+> HTML コンテンツ ファイルにナビゲートすることはできません。 URI スキームでは、起点サイトにある HTML ファイルへのナビゲーションのみがサポートされます。
 
 <a name="The_siteoforigin_____Authority"></a>
 
 ## <a name="site-of-origin-pack-uris"></a>起点サイトのパック URI
 
-起点サイトファイルのパック URI は、次の権限とパスを使用します。
+起点サイト ファイルのパック URI では、次のオーソリティとパスを使用します。
 
 - **オーソリティ**: siteoforigin:///。
 
-- **パス**: 実行可能アセンブリの起動元の位置に対して相対的なパスを含む起点サイト ファイルの名前。
+- **パス**:実行可能アセンブリの起動元の位置に対して相対的なパスを含む起点サイト ファイルの名前。
 
-次の例は、実行可能アセンブリの起動元の場所に格納されている元の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] サイトのパッケージ URI を示しています。
+次の例では、実行可能アセンブリの起動元の位置に格納された [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 起点サイト ファイルのパック URI を示します。
 
 `pack://siteoforigin:,,,/SiteOfOriginFile.xaml`
 
-次の例は、アプリケーションの実行可能アセンブリの起動元の場所を基準としたサブフォルダーに格納されている、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] サイトの起点サイトファイルのパック URI を示しています。
+次の例では、アプリケーションの実行可能アセンブリの起動元の位置に対して相対的なサブフォルダーに格納された [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 起点サイト ファイルのパック URI を示します。
 
 `pack://siteoforigin:,,,/Subfolder/SiteOfOriginFile.xaml`
 
@@ -186,9 +186,9 @@ pack://*authority* /*パス*
 
 ## <a name="page-files"></a>ページ ファイル
 
-MSBuild `Page` 項目として構成された XAML ファイルは、リソースファイルと同じ方法でアセンブリにコンパイルされます。 そのため、リソースファイルのパック Uri を使用して、MSBuild `Page` 項目を識別できます。
+MSBuild の `Page` 項目として構成される XAML ファイルは、リソース ファイルと同じようにアセンブリにコンパイルされます。 したがって、MSBuild の`Page` 項目は、リソース ファイルのパック URI を使用して識別できます。
 
-通常、MSBuild`Page` 項目として構成される [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルの種類は、次のいずれかのルート要素となります。
+一般に MSBuild の `Page` 項目として構成される [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイルの種類は、次のいずれかをルート要素として持ちます。
 
 - <xref:System.Windows.Window?displayProperty=nameWithType>
 
@@ -204,22 +204,22 @@ MSBuild `Page` 項目として構成された XAML ファイルは、リソー�
 
 <a name="Absolute_vs_Relative_Pack_URIs"></a>
 
-## <a name="absolute-vs-relative-pack-uris"></a>絶対パック Uri と相対パッケージ Uri
+## <a name="absolute-vs-relative-pack-uris"></a>絶対および相対パック URI
 
-完全修飾パック URI には、スキーム、権限、およびパスが含まれており、これは絶対パック URI と見なされます。 開発者のための単純化として、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の要素では、通常、パスのみを含む、相対パック URI を使用して適切な属性を設定できます。
+完全修飾されたパック URI は、スキーム、オーソリティ、およびパスを含み、絶対パック URI とみなされます。 開発者にとっての簡便さを考慮して、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 要素では、一般に、パスのみを含む相対パック URI で適切な属性を設定できます。
 
-たとえば、ローカルアセンブリ内のリソースファイルの次の絶対パック URI について考えてみます。
+たとえば、ローカル アセンブリ内のリソース ファイルに対する次のような絶対パック URI を考えてみます。
 
 `pack://application:,,,/ResourceFile.xaml`
 
-このリソースファイルを参照する相対パック URI は、次のようになります。
+このリソース ファイルを参照する相対パック URI は、次のようになります。
 
 `/ResourceFile.xaml`
 
 > [!NOTE]
-> 起点サイトファイルはアセンブリに関連付けられていないため、絶対パック Uri でのみ参照できます。
+> 起点サイト ファイルはアセンブリに関連付けられていないため、絶対パック URI でのみ参照できます。
 
-既定では、相対パック URI は、参照を含むマークアップまたはコードの位置を基準として相対的に見なされます。 ただし、先頭に円記号が使用されている場合、相対パック URI 参照は、アプリケーションのルートを基準として相対的に考慮されます。 たとえば、次のようなプロジェクト構造を考えてみます。
+既定では、相対パック URI は、参照を含んでいるマークアップまたはコードの位置に対して相対的とみなされます。 ただし、先頭にバック スラッシュが使用された場合、相対パック URI 参照は、アプリケーションのルートに対して相対的とみなされます。 たとえば、次のようなプロジェクト構造を考えてみます。
 
 `App.xaml`
 
@@ -231,11 +231,11 @@ MSBuild `Page` 項目として構成された XAML ファイルは、リソー�
 
 `+ Page2.xaml`
 
-Page1 に*ルート*\SubFolder\Page2.xaml を参照する uri が含まれている場合、参照は次の相対パック URI を使用できます。
+Page1.xaml に、*Root*\SubFolder\Page2.xaml を参照する URI が含まれる場合、参照で次のような相対パック URI を使用することができます。
 
 `Page2.xaml`
 
-Page1 に、*ルート*の url が含まれている場合、この参照では、次の相対パック uri を使用できます。
+Page1.xaml に、*Root*\Page2.xaml を参照する URI が含まれる場合、参照で次のような相対パック URI を使用することができます。
 
 `/Page2.xaml`
 
@@ -243,41 +243,41 @@ Page1 に、*ルート*の url が含まれている場合、この参照では�
 
 ## <a name="pack-uri-resolution"></a>パック URI の解決
 
-パック Uri の形式により、さまざまな種類のファイルのパック Uri を同じように表示できます。 たとえば、次の絶対パック URI を考えてみます。
+パック URI の書式では、異なる種類のファイルのパック URI が同じに見えることがあります。 たとえば、次のような絶対パック URI を考えてみます。
 
 `pack://application:,,,/ResourceOrContentFile.xaml`
 
-この絶対パック URI は、ローカルアセンブリまたはコンテンツファイル内のリソースファイルを参照できます。 これは、次の相対 URI にも当てはまります。
+この絶対パック URI では、ローカル アセンブリ内のリソース ファイルまたはコンテンツ ファイルが参照されている可能性があります。 次の相対 URI も同様です。
 
 `/ResourceOrContentFile.xaml`
 
-パック URI が参照するファイルの種類を特定するために、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は次のヒューリスティックを使用して、ローカルアセンブリおよびコンテンツファイル内のリソースファイルの Uri を解決します。
+パック URI で参照されているファイルの種類を判断するため、WPF では、次のヒューリスティックを使用して、ローカル アセンブリ内のリソース ファイルとコンテンツ ファイルの URI が解決されます。
 
-1. パッケージの URI に一致する <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> 属性のアセンブリメタデータをプローブします。
+1. アセンブリ メタデータに、パック URI に一致する <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> 属性があるかどうかを調べます。
 
-2. <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> 属性が見つかった場合、パック URI のパスはコンテンツファイルを参照します。
+2. <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> 属性が見つかった場合、パック URI ではコンテンツ ファイルが参照されています。
 
-3. <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> 属性が見つからない場合は、ローカルアセンブリにコンパイルされる set リソースファイルを調べます。
+3. <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> 属性が見つからなかった場合は、ローカル アセンブリにコンパイルされる設定リソース ファイルを調べます。
 
-4. パック URI のパスに一致するリソースファイルが見つかった場合、パック URI のパスはリソースファイルを参照します。
+4. パック URI のパスに一致するリソース ファイルが見つかった場合、パック URI のパスではリソース ファイルが参照されています。
 
-5. リソースが見つからない場合、内部で作成された <xref:System.Uri> は無効です。
+5. リソースが見つからなかった場合、内部で作成された <xref:System.Uri> は無効です。
 
-URI 解決は、次を参照する Uri には適用されません。
+URI 解決は、次を参照する URI には適用されません。
 
-- 参照アセンブリ内のコンテンツファイル: これらのファイルの種類は、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ではサポートされていません。
+- 参照アセンブリ内のコンテンツ ファイル: この種類のファイルは、WPF ではサポートされません。
 
-- 参照アセンブリ内の埋め込みファイル: 参照されるアセンブリの名前と `;component` サフィックスの両方が含まれているため、それらを識別する Uri は一意です。
+- 参照アセンブリ内の埋め込みファイル: これらは参照アセンブリの名前と `;component` サフィックスの両方を含むため、これらを示す URI は一意です。
 
-- 起点サイトファイル: siteoforigin:///機関を含むパック Uri によって識別できる唯一のファイルであるため、それらを識別する Uri は一意です。
+- 起点サイト ファイル: これらは siteoforigin:/// オーソリティを含むパック URI によって識別できる唯一のファイルであるため、これらを示す URI は一意です。
 
-パッケージ URI 解決が可能な1つの単純化は、コードがリソースファイルとコンテンツファイルの場所から多少独立していることです。 たとえば、ローカルアセンブリ内のリソースファイルがコンテンツファイルとして再構成されている場合、そのリソースのパック URI は、パック URI を使用するコードと同じように変わりません。
+パック URI の解決によってもたらされる単純化の 1 つは、コードがリソース ファイルやコンテンツ ファイルの位置にあまり依存しなくなることです。 たとえば、ローカル アセンブリ内のリソース ファイルがコンテンツ ファイルに再構成される場合、リソースのパック URI は同じままであり、パック URI を使用するコードも変わりません。
 
 <a name="Programming_with_Pack_URIs"></a>
 
 ## <a name="programming-with-pack-uris"></a>パック URI を使用したプログラミング
 
-多くの [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] クラスには、次のようなパック Uri で設定できるプロパティが実装されています。
+多くの WPF クラスでは、次のように、パック URI で設定できるプロパティが実装されます。
 
 - <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType>
 
@@ -297,13 +297,13 @@ URI 解決は、次を参照する Uri には適用されません。
 
 ### <a name="using-pack-uris-in-markup"></a>マークアップでのパック URI の使用
 
-パック URI をマークアップで指定するには、属性の要素にパック URI を設定します。 (例:
+パック URI は、マークアップでは、属性の要素にパック URI を設定することによって指定されます。 次に例を示します。
 
 `<element attribute="pack://application:,,,/File.xaml" />`
 
-表1は、マークアップで指定できるさまざまな絶対パック Uri を示しています。
+表 1 では、マークアップで指定できるさまざまな絶対パック URI を示します。
 
-表 1: マークアップでの絶対パック URI
+表 1:マークアップでの絶対パック URI
 
 |ファイル|絶対パック URI|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
@@ -317,9 +317,9 @@ URI 解決は、次を参照する Uri には適用されません。
 |起点サイト ファイル|`"pack://siteoforigin:,,,/SOOFile.xaml"`|
 |サブフォルダー内の起点サイト ファイル|`"pack://siteoforigin:,,,/Subfolder/SOOFile.xaml"`|
 
-表2は、マークアップで指定できるさまざまな相対パック Uri を示しています。
+表 2 では、マークアップで指定できるさまざまな相対パック URI を示します。
 
-表 2: マークアップでの相対パック URI
+表 2:マークアップでの相対パック URI
 
 |ファイル|相対パック URI|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
@@ -334,19 +334,19 @@ URI 解決は、次を参照する Uri には適用されません。
 
 ### <a name="using-pack-uris-in-code"></a>コードでのパック URI の使用
 
-コードでパック URI を指定するには、<xref:System.Uri> クラスをインスタンス化し、パック URI をパラメーターとしてコンストラクターに渡します。 このコード例を次に示します。
+コードでパック URI を指定するには、<xref:System.Uri> クラスをインスタンス化して、コンストラクターのパラメーターとしてパック URI を渡します。 このコード例を次に示します。
 
 ```csharp
 Uri uri = new Uri("pack://application:,,,/File.xaml");
 ```
 
-既定では、<xref:System.Uri> クラスは、パック Uri を絶対値と見なします。 その結果、<xref:System.Uri> クラスのインスタンスが、相対パック URI を使用して作成されたときに例外が発生します。
+既定では、<xref:System.Uri> クラスではパック URI は絶対とみなされます。 そのため、相対パック URI で <xref:System.Uri> クラスのインスタンスが作成されると、例外が発生します。
 
 ```csharp
 Uri uri = new Uri("/File.xaml");
 ```
 
-幸いにも、<xref:System.Uri> クラスコンストラクターの <xref:System.Uri.%23ctor%28System.String%2CSystem.UriKind%29> オーバーロードは <xref:System.UriKind> 型のパラメーターを受け取り、パック URI が絶対か相対かを指定できます。
+幸いにも、<xref:System.Uri> クラス コンストラクターの <xref:System.Uri.%23ctor%28System.String%2CSystem.UriKind%29> オーバーロードでは、<xref:System.UriKind> 型のパラメーターを受け入れるため、パック URI が絶対か相対かを指定できます。
 
 ```csharp
 // Absolute URI (default)
@@ -356,7 +356,7 @@ Uri relativeUri = new Uri("/File.xaml",
                         UriKind.Relative);
 ```
 
-指定されたパック URI がいずれかであることが確実である場合は、<xref:System.UriKind.Absolute> または <xref:System.UriKind.Relative> のみを指定する必要があります。 実行時にユーザーがパック URI を入力したときなど、使用されているパック URI の種類がわからない場合は、代わりに <xref:System.UriKind.RelativeOrAbsolute> を使用します。
+提供されたパック URI がどちらであるかわかっているときには、<xref:System.UriKind.Absolute> または <xref:System.UriKind.Relative> のみを指定する必要があります。 ユーザーが実行時にパック URI を入力するときなど、使用されるパック URI の種類がわからない場合は、代わりに <xref:System.UriKind.RelativeOrAbsolute> を使用します。
 
 ```csharp
 // Relative or Absolute URI provided by user via a text box
@@ -364,9 +364,9 @@ TextBox userProvidedUriTextBox = new TextBox();
 Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
 ```
 
-表3は、<xref:System.Uri?displayProperty=nameWithType> を使用してコードで指定できる、さまざまな相対パック Uri を示しています。
+表 3 では、<xref:System.Uri?displayProperty=nameWithType> を使用してコードで指定できるさまざまな相対パック URI を示します。
 
-表 3: コードでの絶対パック URI
+表 3:コードでの絶対パック URI
 
 |ファイル|絶対パック URI|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
@@ -380,9 +380,9 @@ Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
 |起点サイト ファイル|`Uri uri = new Uri("pack://siteoforigin:,,,/SOOFile.xaml", UriKind.Absolute);`|
 |サブフォルダー内の起点サイト ファイル|`Uri uri = new Uri("pack://siteoforigin:,,,/Subfolder/SOOFile.xaml", UriKind.Absolute);`|
 
-表4は、<xref:System.Uri?displayProperty=nameWithType> を使用してコードで指定できる、さまざまな相対パック Uri を示しています。
+表 4 では、<xref:System.Uri?displayProperty=nameWithType> を使用してコードで指定できるさまざまな相対パック URI を示します。
 
-表 4: コードでの相対パック URI
+表 4:コードでの相対パック URI
 
 |ファイル|相対パック URI|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
@@ -397,21 +397,21 @@ Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
 
 ### <a name="common-pack-uri-scenarios"></a>一般的なパック URI のシナリオ
 
-前のセクションでは、リソース、コンテンツ、および起点サイトファイルを識別するために、パック Uri を作成する方法について説明しました。 [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]では、これらの構造はさまざまな方法で使用されます。次のセクションでは、いくつかの一般的な使用方法について説明します。
+以前のセクションでは、パック URI を構築して、リソース ファイル、コンテンツ ファイル、および起点サイト ファイルを識別する方法を説明しました。 WPF では、このような構築はさまざまな方法で使用されますが、以下のセクションでは、いくつかの一般的な用途について説明します。
 
 <a name="Specifying_the_UI_to_Show_when_an_Application_Starts"></a>
 
 #### <a name="specifying-the-ui-to-show-when-an-application-starts"></a>アプリケーションの起動時に表示する UI の指定
 
-<xref:System.Windows.Application.StartupUri%2A> は、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションが起動されたときに表示する最初の [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を指定します。 スタンドアロンアプリケーションの場合は、次の例に示すように、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] をウィンドウにすることができます。
+<xref:System.Windows.Application.StartupUri%2A> では、WPF アプリケーションの起動時に表示する最初の [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を指定します。 スタンドアロン アプリケーションの場合、次の例に示されているように、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] としてウィンドウを使用できます。
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriWindow](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/Copy of App.xaml#startupuriwindow)]
 
-次の例に示すように、スタンドアロンアプリケーションと XAML ブラウザーアプリケーション (Xbap) では、初期 UI としてページを指定することもできます。
+スタンドアロン アプリケーションと XAML ブラウザー アプリケーション (XBAP) では、次の例に示されているように、最初の UI としてページを指定することもできます。
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriPage](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/App.xaml#startupuripage)]
 
-アプリケーションがスタンドアロンアプリケーションであり、<xref:System.Windows.Application.StartupUri%2A>でページが指定されている場合、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] はページをホストするための <xref:System.Windows.Navigation.NavigationWindow> を開きます。 Xbap の場合、ページはホストブラウザーに表示されます。
+アプリケーションがスタンドアロン アプリケーションであり、ページが <xref:System.Windows.Application.StartupUri%2A> で指定されている場合、WPF は <xref:System.Windows.Navigation.NavigationWindow> を開いて、ページをホストします。 XBAP の場合、ページはホスト ブラウザーに表示されます。
 
 <a name="Navigating_to_a_Page"></a>
 
@@ -423,7 +423,7 @@ Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml2)]
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml3)]
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]内で移動するさまざまな方法の詳細については、「[ナビゲーションの概要](navigation-overview.md)」を参照してください。
+WPF でのさまざまなナビゲートの方法については、「[ナビゲーションの概要](navigation-overview.md)」を参照してください。
 
 <a name="Specifying_a_Window_Icon"></a>
 
@@ -439,7 +439,7 @@ Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
 
 #### <a name="loading-image-audio-and-video-files"></a>イメージ ファイル、オーディオ ファイル、およびビデオ ファイルの読み込み
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] では、次の例に示すように、アプリケーションでさまざまな種類のメディアを使用して、そのすべてを識別し、パック Uri で読み込むことができます。
+WPF では、アプリケーションはさまざまな種類のメディアを使用でき、次の例に示されているように、そのすべてをパック URI で示して、読み込むことができます。
 
 [!code-xaml[MediaPlayerVideoSample#VideoPackURIAtSOO](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaPlayerVideoSample/CS/HomePage.xaml#videopackuriatsoo)]
 
@@ -447,17 +447,17 @@ Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
 
 [!code-xaml[ImageSample#ImagePackURIContent](~/samples/snippets/csharp/VS_Snippets_Wpf/ImageSample/CS/HomePage.xaml#imagepackuricontent)]
 
-メディアコンテンツの操作の詳細については、「[グラフィックスとマルチメディア](../graphics-multimedia/index.md)」を参照してください。
+メディア コンテンツの操作方法の詳細については、「[グラフィックスとマルチ メディア](../graphics-multimedia/index.md)」を参照してください。
 
 <a name="Loading_a_Resource_Dictionary_from_the_Site_of_Origin"></a>
 
 #### <a name="loading-a-resource-dictionary-from-the-site-of-origin"></a>起点サイトからのリソース ディクショナリの読み込み
 
-リソースディクショナリ (<xref:System.Windows.ResourceDictionary>) は、アプリケーションテーマをサポートするために使用できます。 テーマを作成し、管理する方法の 1 つは、複数のテーマをリソース ディクショナリとして作成して、アプリケーションの起点サイトに配置することです。 これにより、アプリケーションを再コンパイルして再配置しなくても、テーマの追加と交信が可能です。 これらのリソースディクショナリは、次の例に示すように、パック Uri を使用して識別および読み込むことができます。
+リソース ディクショナリ (<xref:System.Windows.ResourceDictionary>) を使用して、アプリケーションのテーマをサポートできます。 テーマを作成し、管理する方法の 1 つは、複数のテーマをリソース ディクショナリとして作成して、アプリケーションの起点サイトに配置することです。 これにより、アプリケーションを再コンパイルして再配置しなくても、テーマの追加と交信が可能です。 これらのリソース ディクショナリは、次の例に示されているように、パック URI を使用して示し、読み込むことができます。
 
 [!code-xaml[ResourceDictionarySnippets#ResourceDictionaryPackURI](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceDictionarySnippets/CS/App.xaml#resourcedictionarypackuri)]
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]のテーマの概要については、「[スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)」を参照してください。
+WPF でのテーマの概要については、「[スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

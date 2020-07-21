@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 50a95b8b-9766-470e-bb29-2c7ecddfd4a1
 topic_type:
 - apiref
-ms.openlocfilehash: eddc2f29da0efd9e56df710203b1d7621ffc27a0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8a8c2764398d737192190f91646d45f4edf3a0e4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136866"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616479"
 ---
 # <a name="couninitializecor-function"></a>CoUninitializeCor 関数
 `CoUninitializeCor` は互換性のために残されています。  
@@ -31,9 +31,9 @@ ms.locfileid: "73136866"
 STDAPI_(void) CoUninitializeCor(void);  
 ```  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>解説  
  共通言語ランタイムをプロセスからアンロードすることはできません。 実行中のプロセスからランタイムを完全に削除するには、そのプロセスをシャットダウンする必要があります。  
   
 ## <a name="see-also"></a>関連項目
 
-- [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [メタデータ グローバル静的関数](../metadata/metadata-global-static-functions.md)

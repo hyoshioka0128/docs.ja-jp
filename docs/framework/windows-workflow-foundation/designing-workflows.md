@@ -1,15 +1,16 @@
 ---
 title: ワークフローの設計
+description: フロー制御パラダイム (フローチャート、手続き、ステートマシンなど)、ワークフロー開発、および命令型コードを使用したワークフローの作成について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], designing workflows
 ms.assetid: 41f727b5-b142-4c1b-b046-492b96135ae6
-ms.openlocfilehash: c774161fb5adbc5fc8e44b22d994d15fa0d2e489
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 07ccd1de6648438ad65f88bada3e055e1e2a4134
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141911"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419929"
 ---
 # <a name="designing-workflows"></a>ワークフローの設計
 このセクションの各トピックでは、ワークフローの開発で使用するフロー制御パラダイムについて説明します。  

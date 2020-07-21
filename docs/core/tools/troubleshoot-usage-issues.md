@@ -2,13 +2,13 @@
 title: .NET Core ツールの使用に関する問題のトラブルシューティング
 description: .NET Core ツールを実行するときの一般的な問題と考えられる解決策について説明します。
 author: kdollard
-ms.date: 09/23/2019
-ms.openlocfilehash: df896405a122050acba220923eee58e87e0b75b6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.date: 02/14/2020
+ms.openlocfilehash: ed6243f802c4d3ce56a742916a1a28676e3cd876
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74282499"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146451"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>.NET Core ツールの使用に関する問題のトラブルシューティング
 
@@ -42,16 +42,16 @@ Possible reasons for this include:
 
 * グローバル ツール
 
-    グローバル ツールは、既定のディレクトリ内または特定の場所にインストールすることができます。 既定のディレクトリは次のとおりです。
+  グローバル ツールは、既定のディレクトリ内または特定の場所にインストールすることができます。 既定のディレクトリは次のとおりです。
 
-    | OS          | パス                          |
-    |-------------|-------------------------------|
-    | Linux/macOS | `$HOME/.dotnet/tools`         |
-    | Windows     | `%USERPROFILE%\.dotnet\tools` |
+  | OS          | パス                          |
+  |-------------|-------------------------------|
+  | Linux/macOS | `$HOME/.dotnet/tools`         |
+  | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
-    グローバル ツールを実行しようとしている場合は、コンピューター上の `PATH` 環境変数にグローバル ツールをインストールしたパスが含まれること、およびそのパスに実行可能ファイルが存在することを確認してください。
+  グローバル ツールを実行しようとしている場合は、コンピューター上の `PATH` 環境変数にグローバル ツールをインストールしたパスが含まれること、およびそのパスに実行可能ファイルが存在することを確認してください。
 
-    .NET Core CLI は、初めて使用したときに既定の場所を PATH 環境変数に追加しようとします。 ただし、場所が PATH に自動的に追加されないシナリオがいくつかあるため、次のような場合は PATH を編集して構成する必要があります。
+  .NET Core CLI は、初めて使用したときに既定の場所を PATH 環境変数に追加しようとします。 ただし、次のようなシナリオでは、その場所が PATH に自動的に追加されない場合があります。
 
   * Linux を使用していて、apt-get または rpm ではなく *.tar.gz* ファイルを使用して .NET Core SDK をインストールしている場合。
   * macOS 10.15 "Catalina" またはそれ以降のバージョンを使用している場合。
@@ -59,7 +59,7 @@ Possible reasons for this include:
   * .NET Core 3.0 SDK をインストールしてあり、`DOTNET_ADD_GLOBAL_TOOLS_TO_PATH` 環境変数を `false` に設定している場合。
   * .NET Core 2.2 SDK 以前のバージョンをインストールしてあり、`DOTNET_SKIP_FIRST_TIME_EXPERIENCE` 環境変数を `true` に設定している場合。
 
-  グローバル ツールの詳細については、「[.NET Core グローバル ツールの概要](global-tools.md)」を参照してください。
+  これらのシナリオでは、または `--tool-path` オプションを指定した場合、ご利用のコンピューター上の `PATH` 環境変数には、グローバル ツールをインストールしたパスが自動的に含められません。 その場合は、ご利用のシェルで提供されている、環境変数を更新するための任意の方法を使用して、ツールの場所 (たとえば、`$HOME/.dotnet/tools`) を `PATH` 環境変数に追加します。 詳細については、[.NET Core ツール](global-tools.md)に関する記事を参照してください。
 
 * ローカル ツール
 
@@ -73,7 +73,7 @@ Possible reasons for this include:
 
 ### <a name="runtime-not-found"></a>ランタイムが見つからない
 
-.NET Core ツールは、[フレームワークに依存するアプリケーション](../deploying/index.md#framework-dependent-deployments-fdd)です。つまり、お使いのマシンにインストールされている .NET Core ランタイムに依存します。 予定していたランタイムが見つからない場合、ツールは次のような通常の .NET Core ランタイムのロール フォワード ルールに従います。
+.NET Core ツールは、[フレームワークに依存するアプリケーション](../deploying/index.md#publish-runtime-dependent)です。つまり、お使いのマシンにインストールされている .NET Core ランタイムに依存します。 予定していたランタイムが見つからない場合、ツールは次のような通常の .NET Core ランタイムのロール フォワード ルールに従います。
 
 * アプリケーションは、指定されたメジャー バージョンおよびマイナー バージョンの最上位の修正プログラム リリースにロール フォワードされます。
 * 一致するメジャー バージョン番号とマイナー バージョン番号と一致するランタイムがない場合は、次に高いマイナー バージョンが使用されます。
@@ -137,9 +137,6 @@ dotnet tool install -g <toolName>
 dotnet tool install -g --version 1.1.0-pre <toolName>
 ```
 
-> [!NOTE]
-> .NET Core CLI チームは、これを簡単にするために、今後のリリースで `--preview` スイッチを追加することを計画しています。
-
 ### <a name="package-isnt-a-net-core-tool"></a>パッケージが .NET Core ツールではない
 
 * この名前の NuGet パッケージは見つかりましたが、.NET Core ツールではありませんでした。
@@ -162,4 +159,4 @@ dotnet tool install -g --version 1.1.0-pre <toolName>
 
 ## <a name="see-also"></a>関連項目
 
-* [.NET Core グローバル ツールの概要](global-tools.md)
+* [.NET Core ツール](global-tools.md)

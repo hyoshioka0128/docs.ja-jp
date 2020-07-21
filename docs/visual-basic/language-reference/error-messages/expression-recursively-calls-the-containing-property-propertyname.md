@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-ms.openlocfilehash: 42177f22e632e4a05b1f0b4d934f3e56ab9ff0f2
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
-ms.translationtype: MT
+ms.openlocfilehash: e3a9f4cf2f4105d2c449813bf0c593860df7d1f0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698567"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409531"
 ---
-# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>式は、含んでいるプロパティ '\<propertyname > ' を再帰的に呼び出します
+# <a name="expression-recursively-calls-the-containing-property-propertyname"></a>式は、含んでいるプロパティ '\<propertyname>' を再帰的に呼び出します。
 プロパティ定義の `Set` プロシージャ内のステートメントは、プロパティの名前に値を格納します。  
   
- プロパティの値を保持するには、プロパティのコンテナーで `Private` 変数を定義し、`Get` と `Set` の両方のプロシージャで使用することをお勧めします。 `Set` プロシージャは、この `Private` 変数に入力値を格納する必要があります。  
+ プロパティの値を保持するために推奨される方法は、プロパティのコンテナーで `Private` 変数を定義し、それを `Get` と `Set` の両方のプロシージャで使用することです。 `Set` プロシージャは、この `Private` 変数に受け取った値を格納する必要があります。  
   
- `Get` プロシージャは、`Function` プロシージャと同じように動作するので、`End Get` ステートメントを使用して、プロパティ名に値を割り当て、制御を返すことができます。 ただし、`Private` 変数を[Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)の値として含めることをお勧めします。  
+ `Get` プロシージャは `Function` プロシージャと同じように動作するため、プロパティ名に値を代入し、`End Get` ステートメントに遭遇することで制御を返すことができます。 ただし、推奨される方法は、[Return ステートメント](../statements/return-statement.md)に値として `Private` 変数を含めることです。  
   
- `Set` プロシージャは、値を返さない `Sub` プロシージャと同じように動作します。 したがって、プロシージャまたはプロパティの名前は `Set` プロシージャ内で特別な意味を持たず、値を格納することはできません。  
+ `Set` プロシージャは、値を返さない `Sub` プロシージャと同じように動作します。 そのため、プロシージャまたはプロパティの名前は `Set` プロシージャ内で特別な意味を持たず、値を格納することはできません。  
   
- 次の例では、このエラーの原因となる可能性がある方法を示し、その後に推奨される方法を示します。  
+ 次の例では、このエラーの原因となる可能性がある方法と、その後に推奨される方法を示します。  
   
 ```vb  
 Public Class illustrateProperties  
@@ -63,8 +63,8 @@ End Class
   
 - 前の例に示されているように、推奨される方法を使用するようにプロパティ定義を書き直してください。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Property プロシージャ](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
-- [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Set ステートメント](../../../visual-basic/language-reference/statements/set-statement.md)
+- [Property プロシージャ](../../programming-guide/language-features/procedures/property-procedures.md)
+- [Property ステートメント](../statements/property-statement.md)
+- [Set ステートメント](../statements/set-statement.md)

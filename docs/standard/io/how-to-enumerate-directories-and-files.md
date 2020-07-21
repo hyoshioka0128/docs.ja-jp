@@ -1,5 +1,6 @@
 ---
 title: '方法: ディレクトリとファイルを列挙する'
+description: 列挙可能なコレクションを使用してディレクトリとファイルを列挙する方法について説明します。これにより、.NET の配列よりも優れたパフォーマンスが得られます。
 ms.date: 12/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - I/O [.NET Framework], enumerating directories and files
 ms.assetid: 86b69a08-3bfa-4e5f-b4e1-3b7cb8478215
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 863335cf080dbccd76b38c7222b74637b99ae2f0
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: 276668f4a3eee89610a81b1256820770d1f72dc3
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55758665"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662577"
 ---
 # <a name="how-to-enumerate-directories-and-files"></a>方法: ディレクトリとファイルを列挙する
 列挙可能なコレクションでは、ディレクトリとファイルの大きなコレクションを操作する際に配列よりも優れたパフォーマンスが得られます。 ディレクトリとファイルを列挙するには、列挙可能なディレクトリ名またはファイル名のコレクション、またはその <xref:System.IO.DirectoryInfo>、<xref:System.IO.FileInfo>、または <xref:System.IO.FileSystemInfo> オブジェクトを返すメソッドを使用します。  
@@ -65,4 +64,4 @@ ms.locfileid: "55758665"
   
 ## <a name="see-also"></a>関連項目
 
-- [ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)
+- [ファイルおよびストリーム入出力](index.md)

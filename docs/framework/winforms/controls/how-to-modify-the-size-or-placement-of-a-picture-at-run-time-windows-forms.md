@@ -1,5 +1,5 @@
 ---
-title: '方法: 実行時 (Windows フォーム) にサイズまたは画像の配置を変更します。'
+title: '方法 : 実行時にピクチャのサイズまたは配置を変更する'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,38 +11,38 @@ helpviewer_keywords:
 - PictureBox control [Windows Forms], picture size and alignment
 - pictures [Windows Forms], controlling placement in PictureBox control [Windows Forms]
 ms.assetid: d0b332a3-fae2-4891-957c-dc3e17743326
-ms.openlocfilehash: 695abf51870ef9164e4543a91b3183e801eee55f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fea813d7b9fe585e35b729b8b64e3a5f414ef76d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649248"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141967"
 ---
-# <a name="how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms"></a>方法: 実行時 (Windows フォーム) にサイズまたは画像の配置を変更します。
-Windows フォームを使用する場合<xref:System.Windows.Forms.PictureBox>コントロール、フォームで設定することができます、<xref:System.Windows.Forms.PictureBox.SizeMode%2A>をプロパティ。  
+# <a name="how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms"></a>方法 : 実行時にピクチャのサイズまたは配置を変更する (Windows フォーム)
+フォームで Windows フォーム<xref:System.Windows.Forms.PictureBox>コントロールを使用する場合は、その<xref:System.Windows.Forms.PictureBox.SizeMode%2A>コントロールのプロパティを次の値に設定できます。  
   
-- コントロールの左上隅で、画像の左上を揃え  
+- 画像の左上隅をコントロールの左上隅に合わせます。  
   
-- コントロール内で画像を中央揃え  
+- コントロール内の画像の中央に配置する  
   
-- 表示の画像に合わせてコントロールのサイズを調整します。  
+- 表示される画像に合わせてコントロールのサイズを調整する  
   
-- コントロールに合わせて、表示される任意の画像を拡大します。  
+- 表示される画像をコントロールに合わせて拡大縮小する  
   
- (特にビットマップ形式の 1 つ) 画像を拡大すると、イメージの品質の損失を生成できます。 実行時にイメージを描画するためのグラフィックス命令リストのメタファイルはストレッチ ビットマップよりも適しています。  
+ 画像を伸ばす (特にビットマップ形式の画像) は、画質が低下する可能性があります。 メタファイルは、実行時にイメージを描画するためのグラフィックス命令のリストであり、ビットマップよりもストレッチに適しています。  
   
-### <a name="to-set-the-sizemode-property-at-run-time"></a>実行時に、SizeMode プロパティを設定するには  
+### <a name="to-set-the-sizemode-property-at-run-time"></a>実行時に SizeMode プロパティを設定するには  
   
-1. 設定<xref:System.Windows.Forms.PictureBox.SizeMode%2A>に<xref:System.Windows.Forms.PictureBoxSizeMode.Normal>(既定)、 <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>、 <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>、または<xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>します。 <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> コントロールの左上隅にある; で、イメージが格納されることを意味します。イメージがコントロールよりも大きい場合は、その右下隅、クリッピングされます。 <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage> イメージがコントロールの中央に配置する方法イメージがコントロールよりも大きい場合は、画像の外側の縁が切り取られます。 <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize> コントロールのサイズは、イメージのサイズに調整されることを意味します。 <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage> 逆の場合は、イメージのサイズは、コントロールのサイズに調整されることを意味します。  
+1. <xref:System.Windows.Forms.PictureBoxSizeMode.Normal>に<xref:System.Windows.Forms.PictureBox.SizeMode%2A>設定 (既定値)、、、<xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage><xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>または<xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>に設定します。 <xref:System.Windows.Forms.PictureBoxSizeMode.Normal>イメージがコントロールの左上隅に配置されることを意味します。イメージがコントロールよりも大きい場合は、その下端と右端がクリップされます。 <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>イメージがコントロール内で中央に配置されていることを意味します。イメージがコントロールよりも大きい場合、画像の外側の端はクリップされます。 <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>コントロールのサイズがイメージのサイズに合わせて調整されることを意味します。 <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>は逆で、イメージのサイズがコントロールのサイズに合わせて調整されることを意味します。  
   
-     次の例では、イメージの場所に設定されているパスは、My Documents フォルダーです。 これは、Windows オペレーティング システムを実行しているほとんどのコンピューターにはでこのディレクトリが含まれていると想定できます。 また、このようにすることで、最小限のシステム アクセス レベルしか持たないユーザーもアプリケーションを安全に実行できるようになります。 次の例でフォームを前提としています、<xref:System.Windows.Forms.PictureBox>コントロールが既に追加されています。  
+     次の例では、イメージの場所に設定されているパスは[マイ ドキュメント]フォルダです。 これは、Windows オペレーティング システムを実行しているほとんどのコンピュータにこのディレクトリが含まれると仮定できるためです。 また、このようにすることで、最小限のシステム アクセス レベルしか持たないユーザーもアプリケーションを安全に実行できるようになります。 次の例では、コントロールが既<xref:System.Windows.Forms.PictureBox>に追加されているフォームを想定しています。  
   
     ```vb  
     Private Sub StretchPic()  
        ' Stretch the picture to fit the control.  
        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage  
        ' Load the picture into the control.  
-       ' You should replace the bold image   
+       ' You should replace the bold image
        ' in the sample below with an icon of your own choosing.  
        PictureBox1.Image = Image.FromFile _  
        (System.Environment.GetFolderPath _  
@@ -56,7 +56,7 @@ Windows フォームを使用する場合<xref:System.Windows.Forms.PictureBox>�
        // Stretch the picture to fit the control.  
        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;  
        // Load the picture into the control.  
-       // You should replace the bold image   
+       // You should replace the bold image
        // in the sample below with an icon of your own choosing.  
        // Note the escape character used (@) when specifying the path.  
        PictureBox1.Image = Image.FromFile _  
@@ -73,7 +73,7 @@ Windows フォームを使用する場合<xref:System.Windows.Forms.PictureBox>�
           // Stretch the picture to fit the control.  
           pictureBox1->SizeMode = PictureBoxSizeMode::StretchImage;  
           // Load the picture into the control.  
-          // You should replace the bold image   
+          // You should replace the bold image
           // in the sample below with an icon of your own choosing.  
           pictureBox1->Image = Image::FromFile(String::Concat(  
              System::Environment::GetFolderPath(  
@@ -85,7 +85,7 @@ Windows フォームを使用する場合<xref:System.Windows.Forms.PictureBox>�
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Windows.Forms.PictureBox>
-- [方法: デザイナーを使用してピクチャを読み込む.](how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [方法 : デザイナーを使用してピクチャを読み込む](how-to-load-a-picture-using-the-designer-windows-forms.md)
 - [PictureBox コントロールの概要](picturebox-control-overview-windows-forms.md)
-- [方法: 実行時にピクチャを設定します。](how-to-set-pictures-at-run-time-windows-forms.md)
+- [方法 : 実行時にピクチャを設定する](how-to-set-pictures-at-run-time-windows-forms.md)
 - [PictureBox コントロール](picturebox-control-windows-forms.md)

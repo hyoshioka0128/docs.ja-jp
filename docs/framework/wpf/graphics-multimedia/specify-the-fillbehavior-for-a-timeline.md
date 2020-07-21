@@ -5,26 +5,26 @@ helpviewer_keywords:
 - FillBehavior property for inactive timelines [WPF]
 - Timelines [WPF], FillBehavior property
 ms.assetid: db805f59-d513-4dac-af15-47005dae3199
-ms.openlocfilehash: 9f03c5b8d4585c32e0a9f119649dd15a23523033
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 1f54f2c1bb49bb7a0301f112a109194ab1a8658e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973668"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141174"
 ---
 # <a name="how-to-specify-the-fillbehavior-for-a-timeline-that-has-reached-the-end-of-its-active-period"></a>方法: アクティブな期間の末尾に到達したタイムラインの FillBehavior を指定する
-この例は、指定する方法を示します、 <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> 、非アクティブの<xref:System.Windows.Media.Animation.Timeline>アニメーション プロパティの。  
+この例では、アニメーション化対象のプロパティの非アクティブな <xref:System.Windows.Media.Animation.Timeline> の <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> を指定する方法を示します。  
   
 ## <a name="example"></a>例  
- <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>のプロパティを<xref:System.Windows.Media.Animation.Timeline>されていないときにアニメーション化されたプロパティの値に動作を決定します、アニメーション化は、ときに、<xref:System.Windows.Media.Animation.Timeline>がその親がアクティブでない<xref:System.Windows.Media.Animation.Timeline>アクティブまたは保留期間。 たとえばはアニメーション化されたプロパティのまま、最後に、アニメーションが終了またはその後の値がアニメーションの開始前に、の値に戻すか。  
+ <xref:System.Windows.Media.Animation.Timeline> の <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> プロパティは、アニメーション化対象のプロパティの値がアニメーション化されていないとき、つまり、<xref:System.Windows.Media.Animation.Timeline> は非アクティブであるが、その親 <xref:System.Windows.Media.Animation.Timeline> がアクティブな期間つまり保持期間内のときに、その値がどのように処理されるかを決定します。 たとえば、アニメーション化対象のプロパティが、アニメーションの終了後にその終了値のままになるか、アニメーションが開始される前の値に戻るかなどです。  
   
- 次の例では、<xref:System.Windows.Media.Animation.DoubleAnimation>をアニメーション化する、<xref:System.Windows.FrameworkElement.Width%2A>の 2 つの四角形。 各四角形を使用して、異なる<xref:System.Windows.Media.Animation.Timeline>オブジェクト。  
+ 次の例では、<xref:System.Windows.Media.Animation.DoubleAnimation> を使用して、2 つの四角形の <xref:System.Windows.FrameworkElement.Width%2A> をアニメーション化します。 それぞれの四角形は、別個の <xref:System.Windows.Media.Animation.Timeline> オブジェクトを使用します。  
   
- 1 つ<xref:System.Windows.Media.Animation.Timeline>が、<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>に設定されている<xref:System.Windows.Media.Animation.FillBehavior.Stop>、そのアニメーション化されていないに戻すに四角形の幅を停止するときの値、<xref:System.Windows.Media.Animation.Timeline>が終了します。 他の<xref:System.Windows.Media.Animation.Timeline>が、<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>の<xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>、これにより、幅、末端を維持するときの値、<xref:System.Windows.Media.Animation.Timeline>が終了します。  
+ 一方の <xref:System.Windows.Media.Animation.Timeline> の <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> は <xref:System.Windows.Media.Animation.FillBehavior.Stop> に設定されています。これにより、<xref:System.Windows.Media.Animation.Timeline> の終了時に四角形の幅がアニメーション化されていない値に戻ります。 もう一方の <xref:System.Windows.Media.Animation.Timeline> の <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> は <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd> であり、<xref:System.Windows.Media.Animation.Timeline> の終了時に幅が終了値のままになります。  
   
  [!code-xaml[timingbehaviors_snip#FillBehaviorWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/FillBehaviorExample.xaml#fillbehaviorwholepage)]  
   
- サンプル全体については、次を参照してください。[アニメーション サンプル ギャラリー](https://go.microsoft.com/fwlink/?LinkID=159969)します。  
+ サンプル全体については、「[アニメーション サンプル ギャラリー](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/AnimationExamples)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目
 
@@ -35,4 +35,4 @@ ms.locfileid: "61973668"
 - <xref:System.Windows.Media.Animation.FillBehavior.Stop>
 - <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>
 - [アニメーションの概要](animation-overview.md)
-- [アニメーションとタイミングに関するトピック](animation-and-timing-how-to-topics.md)
+- [アニメーションおよびタイミングに関する「方法」トピック](animation-and-timing-how-to-topics.md)

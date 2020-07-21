@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8d6d3a1a-fef6-4f2f-a22c-3bdd30d70e07
 topic_type:
 - apiref
-ms.openlocfilehash: d623893bd77e46832b0bd823ed60c23e4eee29ba
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 843c6df1ef41fdd3227b92275182432ad4cc43b1
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133540"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379724"
 ---
 # <a name="icordebugthreadgetactiveframe-method"></a>ICorDebugThread::GetActiveFrame メソッド
 このテキストスレッドオブジェクトのアクティブな (最新の) フレームへのインターフェイスポインターを取得します。  
@@ -38,13 +38,13 @@ HRESULT GetActiveFrame (
  入出力フレームを表す、テキストフレームインターフェイスオブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- 現在アクティブになっているフレームがない場合、`ppFrame` パラメーターは null になります。  
+ `ppFrame`現在アクティブなフレームがない場合、パラメーターは null になります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

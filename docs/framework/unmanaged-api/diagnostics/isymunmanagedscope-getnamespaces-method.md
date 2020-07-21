@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c44b0440-04bd-460a-84fb-41afecf44503
 topic_type:
 - apiref
-ms.openlocfilehash: b765294826a5da4010cdd2db79b50667a6f1cdb4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6f11a69671864ba4627c2bb8c86e0c9beb27eeb1
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446306"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83611121"
 ---
 # <a name="isymunmanagedscopegetnamespaces-method"></a>ISymUnmanagedScope::GetNamespaces メソッド
 このスコープ内で使用されている名前空間を取得します。  
@@ -41,7 +41,7 @@ HRESULT GetNamespaces(
  [in] `namespaces` 配列のサイズ。  
   
  `pcNameSpaces`  
- 入出力名前空間を格納するために必要なバッファーのサイズを受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`名前空間を格納するために必要なバッファーのサイズを受け取るへのポインター。  
   
  `namespaces`  
  入出力名前空間を受け取る配列。  
@@ -52,6 +52,6 @@ HRESULT GetNamespaces(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedScope インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+- [ISymUnmanagedScope インターフェイス](isymunmanagedscope-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1edd1670-976a-4fc8-bef7-7c41e60ad989
 topic_type:
 - apiref
-ms.openlocfilehash: 411fad0accb59431f776c5bd66e8bd3027ddd907
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e8065a5492884a4b7f5d662737e4beddc6fca5b3
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450146"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007599"
 ---
 # <a name="cornotificationfortokenmovement-enumeration"></a>CorNotificationForTokenMovement 列挙型
 トークンの再マップが発生したときにメタデータ API クライアントに送信される通知を指定します。  
@@ -63,40 +63,40 @@ typedef enum CorNotificationForTokenMovement {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`MDNotifyDefault`|`mdTypeRef`、`mdMethodDef`、`mdMemberRef`、または `mdFieldDef` のトークンが移動したときに通知します。|  
+|`MDNotifyDefault`|、、 `mdTypeRef` `mdMethodDef` `mdMemberRef` 、またはトークンが移動したときに通知 `mdFieldDef` します。|  
 |`MDNotifyAll`|任意のトークンが移動したときに通知します。|  
 |`MDNotifyNone`|トークンの移動時に通知しません。|  
-|`MDNotifyMethodDef`|`mdMethodDef` トークンが移動したときに通知します。|  
-|`MDNotifyMemberRef`|`mdMemberRef` トークンが移動したときに通知します。|  
-|`MDNotifyFieldDef`|`mdFieldDef` トークンが移動したときに通知します。|  
-|`MDNotifyTypeRef`|`mdTypeRef` トークンが移動したときに通知します。|  
-|`MDNotifyTypeDef`|`mdTypeDef` トークンが移動したときに通知します。|  
-|`MDNotifyParamDef`|`mdParamDef` トークンが移動したときに通知します。|  
-|`MDNotifyInterfaceImpl`|`mdInterfaceImpl` トークンが移動したときに通知します。|  
-|`MDNotifyProperty`|`mdProperty` トークンが移動したときに通知します。|  
-|`MDNotifyEvent`|`mdEvent` トークンが移動したときに通知します。|  
-|`MDNotifySignature`|`mdSignature` トークンが移動したときに通知します。|  
-|`MDNotifyTypeSpec`|`mdTypeSpec` トークンが移動したときに通知します。|  
-|`MDNotifyCustomAttribute`|`mdCustomAttribute` トークンが移動したときに通知します。|  
-|`MDNotifySecurityValue`|`mdSecurityValue` トークンが移動したときに通知します。|  
-|`MDNotifyPermission`|`mdPermission` トークンが移動したときに通知します。|  
-|`MDNotifyModuleRef`|`mdModuleRef` トークンが移動したときに通知します。|  
-|`MDNotifyNameSpace`|`mdNameSpace` トークンが移動したときに通知します。|  
-|`MDNotifyAssemblyRef`|`mdAssemblyRef` トークンが移動したときに通知します。|  
-|`MDNotifyFile`|`mdFile` トークンが移動したときに通知します。|  
-|`MDNotifyExportedType`|`mdExportedType` トークンが移動したときに通知します。|  
-|`MDNotifyResource`|`mdManifestResource` トークンが移動したときに通知します。|  
+|`MDNotifyMethodDef`|トークンが移動したときに通知 `mdMethodDef` します。|  
+|`MDNotifyMemberRef`|トークンが移動したときに通知 `mdMemberRef` します。|  
+|`MDNotifyFieldDef`|トークンが移動したときに通知 `mdFieldDef` します。|  
+|`MDNotifyTypeRef`|トークンが移動したときに通知 `mdTypeRef` します。|  
+|`MDNotifyTypeDef`|トークンが移動したときに通知 `mdTypeDef` します。|  
+|`MDNotifyParamDef`|トークンが移動したときに通知 `mdParamDef` します。|  
+|`MDNotifyInterfaceImpl`|トークンが移動したときに通知 `mdInterfaceImpl` します。|  
+|`MDNotifyProperty`|トークンが移動したときに通知 `mdProperty` します。|  
+|`MDNotifyEvent`|トークンが移動したときに通知 `mdEvent` します。|  
+|`MDNotifySignature`|トークンが移動したときに通知 `mdSignature` します。|  
+|`MDNotifyTypeSpec`|トークンが移動したときに通知 `mdTypeSpec` します。|  
+|`MDNotifyCustomAttribute`|トークンが移動したときに通知 `mdCustomAttribute` します。|  
+|`MDNotifySecurityValue`|トークンが移動したときに通知 `mdSecurityValue` します。|  
+|`MDNotifyPermission`|トークンが移動したときに通知 `mdPermission` します。|  
+|`MDNotifyModuleRef`|トークンが移動したときに通知 `mdModuleRef` します。|  
+|`MDNotifyNameSpace`|トークンが移動したときに通知 `mdNameSpace` します。|  
+|`MDNotifyAssemblyRef`|トークンが移動したときに通知 `mdAssemblyRef` します。|  
+|`MDNotifyFile`|トークンが移動したときに通知 `mdFile` します。|  
+|`MDNotifyExportedType`|トークンが移動したときに通知 `mdExportedType` します。|  
+|`MDNotifyResource`|トークンが移動したときに通知 `mdManifestResource` します。|  
   
 ## <a name="remarks"></a>コメント  
  メタデータのマージ中に、トークンが再マップ (移動) される場合があります。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

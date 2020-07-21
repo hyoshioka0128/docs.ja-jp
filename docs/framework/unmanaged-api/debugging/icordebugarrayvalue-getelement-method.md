@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7ac3cba5-c282-402e-b7ef-b46634f5176b
 topic_type:
 - apiref
-ms.openlocfilehash: 3d45caae56403d77776f1a8adbb5fb9c368ff105
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7a52e61f41bd1d7f68523dd16f70010ffbba401e
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088487"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895033"
 ---
 # <a name="icordebugarrayvaluegetelement-method"></a>ICorDebugArrayValue::GetElement メソッド
 指定された配列要素の値を取得します。  
@@ -30,7 +30,7 @@ ms.locfileid: "73088487"
 ```cpp  
 HRESULT GetElement (  
     [in]  ULONG32          cdim,  
-    [in, size_is(cdim), length_is(cdim)]   
+    [in, size_is(cdim), length_is(cdim)]
          ULONG32           indices[],  
     [out] ICorDebugValue   **ppValue  
 );  
@@ -38,23 +38,23 @@ HRESULT GetElement (
   
 ## <a name="parameters"></a>パラメーター  
  `cdim`  
- からこの `ICorDebugArrayValue` オブジェクトの次元数。  
+ からこの`ICorDebugArrayValue`オブジェクトの次元数。  
   
- この値は、サイズが `ICorDebugArrayValue` オブジェクトの次元数と同じであるため、`indices` 配列のサイズでもあります。  
+ この値は、 `indices`配列のサイズが`ICorDebugArrayValue`オブジェクトの次元数と同じであるため、配列のサイズでもあります。  
   
  `indices`  
- からインデックス値の配列。それぞれが `ICorDebugArrayValue` オブジェクトのディメンション内の位置を指定します。  
+ からインデックス値の配列。それぞれが`ICorDebugArrayValue`オブジェクトのディメンション内の位置を指定します。  
   
  この値を null にすることはできません。  
   
  `ppValue`  
  入出力指定した要素の値を表す ICorDebugValue オブジェクトのアドレスへのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

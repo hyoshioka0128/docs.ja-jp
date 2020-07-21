@@ -1,5 +1,6 @@
 ---
-title: '方法 : Windows 資格情報でサービスをセキュリティで保護する'
+title: '方法: Windows 資格情報でサービスをセキュリティで保護する'
+description: Windows ドメイン内に存在し、同じドメイン内のクライアントによって呼び出される WCF サービスでトランスポートセキュリティを有効にする方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
-ms.openlocfilehash: d02e697b23b6c745a59f3c9c37dd9c565f2f710e
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 8ef164e1475bfd5f047a99426a2bed43a7aa7353
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320922"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244634"
 ---
-# <a name="how-to-secure-a-service-with-windows-credentials"></a>方法 : Windows 資格情報でサービスをセキュリティで保護する
+# <a name="how-to-secure-a-service-with-windows-credentials"></a>方法: Windows 資格情報でサービスをセキュリティで保護する
 
 このトピックでは、Windows ドメインに存在し、同じドメイン内のクライアントによって呼び出される Windows Communication Foundation (WCF) サービスでトランスポートセキュリティを有効にする方法について説明します。 このシナリオの詳細については、「 [Windows 認証を使用したトランスポートセキュリティ](./feature-details/transport-security-with-windows-authentication.md)」を参照してください。 サンプルアプリケーションについては、 [WSHttpBinding](./samples/wshttpbinding.md)サンプルを参照してください。
 
@@ -53,11 +54,11 @@ Windows 資格情報によるサービスのセキュリティ保護は、完全
 
 1. 前の手順のコードの後に、この手順のコードを挿入します。
 
-2. <xref:System.Type> という名前の `contractType` 変数を作成し、その変数にインターフェイスの型 (`ICalculator`) を割り当てます。 Visual Basic を使用する場合は、`GetType` 演算子を使用します。を使用C#する場合は、`typeof` キーワードを使用します。
+2. <xref:System.Type> という名前の `contractType` 変数を作成し、その変数にインターフェイスの型 (`ICalculator`) を割り当てます。 Visual Basic を使用する場合は、演算子を使用します `GetType` 。 C# を使用する場合は、キーワードを使用し `typeof` ます。
 
 3. <xref:System.Type> という名前の 2 つ目の `serviceType` 変数を作成し、その変数に実装されたコントラクトの型 (`Calculator`) を割り当てます。
 
-4. <xref:System.Uri> という名前で、サービスのベース アドレスが指定された `baseAddress` クラスのインスタンスを作成します。 ベース アドレスには、トランスポートに一致するスキームを指定する必要があります。 この場合、トランスポートスキームは HTTP であり、アドレスには、特別な Uniform Resource Identifier (URI) "localhost" とポート番号 (8036)、およびベースエンドポイントアドレス ("serviceModelSamples/): `http://localhost:8036/serviceModelSamples/`が含まれます。
+4. <xref:System.Uri> という名前で、サービスのベース アドレスが指定された `baseAddress` クラスのインスタンスを作成します。 ベース アドレスには、トランスポートに一致するスキームを指定する必要があります。 この場合、トランスポートスキームは HTTP であり、アドレスには、特別な Uniform Resource Identifier (URI) "localhost" とポート番号 (8036)、およびベースエンドポイントアドレス ("serviceModelSamples/") が含まれます `http://localhost:8036/serviceModelSamples/` 。
 
 5. <xref:System.ServiceModel.ServiceHost> 変数と `serviceType` 変数を指定して、`baseAddress` クラスのインスタンスを作成します。
 
@@ -70,7 +71,7 @@ Windows 資格情報によるサービスのセキュリティ保護は、完全
 
 ### <a name="using-the-binding-in-a-client"></a>クライアントでのバインディングの使用
 
-この手順では、サービスと通信するプロキシの生成方法を示します。 プロキシは、サービスメタデータを使用してプロキシを作成する[ServiceModel Metadata Utility Tool (svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して生成されます。
+この手順では、サービスと通信するプロキシの生成方法を示します。 プロキシは、サービスメタデータを使用してプロキシを作成する[ServiceModel Metadata Utility Tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)で生成されます。
 
 この手順では、サービスと通信するための <xref:System.ServiceModel.WSHttpBinding> クラスのインスタンスも作成され、サービスが呼び出されます。
 
@@ -78,7 +79,7 @@ Windows 資格情報によるサービスのセキュリティ保護は、完全
 
 #### <a name="to-use-a-binding-in-a-client-with-code"></a>コードによってクライアントでバインディングを使用するには
 
-1. SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードを生成します。 詳細については、「[方法: クライアントを作成](how-to-create-a-wcf-client.md)する」を参照してください。 生成されたプロキシコードは <xref:System.ServiceModel.ClientBase%601> クラスから継承されます。これにより、すべてのクライアントに、WCF サービスと通信するために必要なコンストラクター、メソッド、およびプロパティが確実に与えられます。 この例では、生成されたコードに、`CalculatorClient` インターフェイスを実装した `ICalculator` クラスが追加されるので、サービス コードとの互換が可能になります。
+1. SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードを生成します。 詳細については、「[方法: クライアントを作成](how-to-create-a-wcf-client.md)する」を参照してください。 生成されたプロキシコードはクラスを継承します <xref:System.ServiceModel.ClientBase%601> 。これにより、すべてのクライアントに、WCF サービスと通信するために必要なコンストラクター、メソッド、およびプロパティが確実に与えられます。 この例では、生成されたコードに、`CalculatorClient` インターフェイスを実装した `ICalculator` クラスが追加されるので、サービス コードとの互換が可能になります。
 
 2. この手順のコードは、クライアント プログラムの `Main` メソッドの先頭に挿入します。
 
@@ -106,13 +107,13 @@ Windows 資格情報によるサービスのセキュリティ保護は、完全
 
 #### <a name="to-enable-transfer-security-on-a-service-in-a-windows-domain-using-configuration"></a>構成を使用して Windows ドメインのサービスで転送セキュリティを有効にするには
 
-1. 構成ファイルの[\<binding >](../configure-apps/file-schema/wcf/bindings.md) element セクションに[\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md)要素を追加します。
+1. [\<wsHttpBinding>](../configure-apps/file-schema/wcf/wshttpbinding.md) [\<bindings>](../configure-apps/file-schema/wcf/bindings.md) 構成ファイルの要素セクションに要素を追加します。
 
-2. <`WSHttpBinding`> 要素に <`binding`> 要素を追加し、`configurationName` 属性をアプリケーションに適した値に設定します。
+2. `binding`<> 要素に <> 要素を追加 `WSHttpBinding` し、属性を `configurationName` アプリケーションに適した値に設定します。
 
-3. > 要素`security`< を追加し、`mode` 属性を Message に設定します。
+3. <`security`> 要素を追加し、 `mode` 属性を Message に設定します。
 
-4. > 要素`message`< を追加し、`clientCredentialType` 属性を Windows に設定します。
+4. <`message`> 要素を追加し、属性を `clientCredentialType` Windows に設定します。
 
 5. サービスの構成ファイルで、`<bindings>` セクションを次のコードに置き換えます。 サービス構成ファイルがまだない場合は、「Using binding [To Configure service and](using-bindings-to-configure-services-and-clients.md)client」を参照してください。
 
@@ -136,7 +137,7 @@ Windows 資格情報によるサービスのセキュリティ保護は、完全
 
 1. SvcUtil.exe ツールを使用して、サービスのメタデータからプロキシ コードと構成ファイルを生成します。 詳細については、「[方法: クライアントを作成](how-to-create-a-wcf-client.md)する」を参照してください。
 
-2. 生成された構成ファイルの[\<バインド >](../configure-apps/file-schema/wcf/bindings.md)セクションを、前のセクションの構成コードに置き換えます。
+2. [\<bindings>](../configure-apps/file-schema/wcf/bindings.md)生成された構成ファイルのセクションを、前のセクションの構成コードに置き換えます。
 
 3. 手順コードは、クライアント プログラムの `Main` メソッドの先頭に挿入します。
 
@@ -155,7 +156,7 @@ Windows 資格情報によるサービスのセキュリティ保護は、完全
 [!code-csharp[c_SecureWindowsClient#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsclient/cs/secureclient.cs#0)]
 [!code-vb[c_SecureWindowsClient#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsclient/vb/secureclient.vb#0)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.ServiceModel.WSHttpBinding>
 - [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)

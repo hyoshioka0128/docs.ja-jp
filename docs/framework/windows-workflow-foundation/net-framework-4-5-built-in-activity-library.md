@@ -1,13 +1,14 @@
 ---
 title: .NET Framework 4.5 ビルトイン アクティビティ ライブラリ
+description: この記事では、.NET Framework 4.5 に含まれる拡張された機能を備えた新しいアクティビティライブラリについて説明します。
 ms.date: 03/30/2017
 ms.assetid: e559e87b-6aed-491d-9546-e92bcec16fdf
-ms.openlocfilehash: 6d47c36a55829684a0eefb2a560e65f7b91462a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4ce4420759512ec3adfff70bf0c365014d96ec7b
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786010"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421489"
 ---
 # <a name="net-framework-45-built-in-activity-library"></a>.NET Framework 4.5 ビルトイン アクティビティ ライブラリ
 
@@ -23,7 +24,7 @@ ms.locfileid: "61786010"
 
 - [ランタイム](runtime-activities-in-wf.md)
 
-- [Primitives](primitives-activities-in-wf.md)
+- [プリミティブ](primitives-activities-in-wf.md)
 
 - [トランザクション](transaction-activities-in-wf.md)
 
@@ -33,4 +34,4 @@ ms.locfileid: "61786010"
 
 - [移行](migration-activity-in-wf.md)
 
-ビルトイン アクティビティ ライブラリ内のアクティビティを構成して、ワークフローまたはカスタム アクティビティと一緒に使用できます。 組み込みのアクティビティ ライブラリのアクティビティはシールされています。これらの使用目的は、継承によって新しい機能を作成することではありません。
+組み込みのアクティビティライブラリのアクティビティは、ワークフローに構成することも、カスタムアクティビティと共に使用することもできます。 組み込みのアクティビティ ライブラリのアクティビティはシールされています。これらの使用目的は、継承によって新しい機能を作成することではありません。

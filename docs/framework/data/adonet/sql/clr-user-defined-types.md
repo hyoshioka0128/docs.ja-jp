@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 9f70e0b0-3a0d-4eb1-b914-07a5d0c167c2
 ms.openlocfilehash: e3b087124773db592b349e07cd022b0f642bdbe3
 ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/29/2019
 ms.locfileid: "64910729"
@@ -18,7 +18,7 @@ Microsoft SQL Server では、Microsoft .NET Framework 共通言語ランタイ�
   
 - 他の関連するサーバー機能との緊密な統合。 独自の UDT を定義すると、列定義、変数、パラメーター、関数の結果、カーソル、トリガー、およびレプリケーションなど、SQL Server のシステム型を利用できるすべてのコンテキストでその UDT を使用できます。  
   
- 詳細についてを参照してください、 [SQL Server のドキュメント](/sql)を使用する SQL Server のバージョン。
+ 詳細については、ご使用中の SQL Server のバージョンに対応する [SQL Server ドキュメント](/sql)を参照してください。
   
  **SQL Server のドキュメント**
   

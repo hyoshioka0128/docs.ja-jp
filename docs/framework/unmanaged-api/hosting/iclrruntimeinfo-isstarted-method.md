@@ -13,15 +13,15 @@ helpviewer_keywords:
 - IsStarted method [.NET Framework hosting]
 - ICLRRuntimeInfo::IsStarted method [.NET Framework hosting]
 ms.assetid: ef6f2662-323b-4534-aa82-6d1afb7b9309
-ms.openlocfilehash: 34590744407b25d7d53c06c452fff5bac2a95246
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 85a7adddf395e07297c8fb6ceab4aa81e0aaf012
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136386"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762202"
 ---
 # <a name="iclrruntimeinfoisstarted-method"></a>ICLRRuntimeInfo::IsStarted メソッド
-ランタイムが開始されたかどうか (つまり、 [ICLRRuntimeHost:: Start メソッド](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md)が呼び出され、成功したかどうか) を示します。  
+ランタイムが開始されたかどうか (つまり、 [ICLRRuntimeHost:: Start メソッド](iclrruntimehost-start-method.md)が呼び出され、成功したかどうか) を示します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -33,7 +33,7 @@ HRESULT IsStarted(
   
 ## <a name="parameters"></a>パラメーター  
  `pbStarted`  
- [out] このランタイムが開始されている場合は `true`。それ以外の場合は、`false`ます。  
+ [出力] `true`このランタイムが開始されている場合は。それ以外の場合は `false` 。  
   
  `pdwStartupFlags`  
  入出力ランタイムを開始するために使用されたフラグを返します。  
@@ -46,20 +46,20 @@ HRESULT IsStarted(
 |S_OK|メソッドは正常に完了しました。|  
 |E_NOTIMPL|共通言語ランタイム (CLR) のバージョンは、.NET Framework 4 の CLR バージョンよりも前のバージョンです。|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>解説  
  このメソッドは、.NET Framework 4 の CLR バージョンより前の CLR バージョンでは機能しません。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** メタホスト .h  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICLRRuntimeInfo インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [ホスティング](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRRuntimeInfo インターフェイス](iclrruntimeinfo-interface.md)
+- [ホスト インターフェイス](hosting-interfaces.md)
+- [ホスティング](index.md)

@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugSymbolProvider2:: GetGenericDictionaryInfo メソッド'
+title: ICorDebugSymbolProvider2::GetGenericDictionaryInfo メソッド
 ms.date: 03/30/2017
 ms.assetid: ba28fe4e-5491-4670-bff7-7fde572d7593
-ms.openlocfilehash: c9f7206cac54d64c28eb50d81fea00a6f3c494d4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a6c32b72c5924399aeb13d56ddf9242fe7990f35
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133629"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379321"
 ---
-# <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>ICorDebugSymbolProvider2:: GetGenericDictionaryInfo メソッド
+# <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>ICorDebugSymbolProvider2::GetGenericDictionaryInfo メソッド
 
 汎用のディクショナリ マップを取得します。
 
@@ -24,7 +24,7 @@ HRESULT GetGenericDictionaryInfo(
 ## <a name="parameters"></a>パラメーター
 
 `ppMemoryBuffer`\
-入出力ジェネリックディクショナリマップを格納している、[のオブジェクトの](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md)アドレスへのポインター。 詳細については、次の「解説」を参照してください。
+入出力ジェネリックディクショナリマップを格納している、[のオブジェクトの](icordebugmemorybuffer-interface.md)アドレスへのポインター。 詳細については、「解説」を参照してください。
 
 ## <a name="remarks"></a>Remarks
 
@@ -57,7 +57,7 @@ HRESULT GetGenericDictionaryInfo(
 
 ## <a name="the-heap"></a>ヒープ
 
-ヒープのサイズは、ストリーム リーダーにより、ディレクトリ サイズ + 4 の値からストリームの長さを差し引くことで算出されます。 つまり、次のようになります。
+ヒープのサイズは、ストリーム リーダーにより、ディレクトリ サイズ + 4 の値からストリームの長さを差し引くことで算出されます。 つまり、以下の要件が適用されます。
 
 ```csharp
 Heap Size = Stream.Length – (Directory Size + 4)
@@ -75,17 +75,17 @@ Heap Size = Stream.Length – (Directory Size + 4)
 
 各ヒープ要素の長さを含めることで、ヒープに影響を与えずに、ディレクトリ セクションの単純な並べ替えを実行できるようになります。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
-**:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
 
 **ヘッダー:** CorDebug.idl、CorDebug.h
 
 **ライブラリ:** CorGuids.lib
 
-**.NET Framework のバージョン:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]
+**.NET Framework のバージョン:**[!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]
 
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugSymbolProvider2 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider2 インターフェイス](icordebugsymbolprovider2-interface.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)

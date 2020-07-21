@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d23a3408-b525-4aec-a186-2ac7ca65d7a4
 topic_type:
 - apiref
-ms.openlocfilehash: 6bbb41f8fd3ac37f1c21fe8b4f6159e3d303777c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1b973cdeaffbec0dad1f2d082c44e8001647fdcc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445183"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500456"
 ---
 # <a name="icorprofilercallbackappdomainshutdownstarted-method"></a>ICorProfilerCallback::AppDomainShutdownStarted メソッド
 アプリケーションドメインがプロセスからアンロードされていることをプロファイラーに通知します。  
@@ -32,22 +32,24 @@ HRESULT AppDomainShutdownStarted(
     [in] AppDomainID appDomainId);  
 ```  
   
-## <a name="parameters"></a>パラメーター  
- `appDomainId`  
- からアプリケーションのアセンブリが格納されているドメインを識別します。  
-  
-## <a name="remarks"></a>コメント  
- `appDomainId` の値は、`AppDomainShutdownStarted` メソッドから返された後の情報要求に対して無効です。これは、このアプリケーションドメインに関する情報を取得するためのプロファイラーの最後の機会です。  
+## <a name="parameters"></a>パラメーター
+
+- `appDomainId`
+
+  \[in] は、アプリケーションのアセンブリが格納されているドメインを識別します。
+
+## <a name="remarks"></a>解説  
+ の値は、 `appDomainId` メソッドが返された後の情報要求に対して有効ではありません `AppDomainShutdownStarted` 。これは、このアプリケーションドメインに関する情報を取得する最後の機会です。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback インターフェイス](icorprofilercallback-interface.md)

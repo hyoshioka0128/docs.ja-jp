@@ -2,12 +2,12 @@
 title: REF CURSOR の例
 ms.date: 03/30/2017
 ms.assetid: c257da03-c6c9-4cf8-b591-b7740a962c40
-ms.openlocfilehash: 24830452e6d1ab11605ffa88a925fbc55c80b9bf
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: dc82648ff5a565c9b4d6fa593433ee1e22249d93
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794708"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149136"
 ---
 # <a name="ref-cursor-examples"></a>REF CURSOR の例
 REF CURSOR の例は、REF CURSOR の使い方を説明する、次の 3 つの Microsoft Visual Basic の例によって構成されています。  
@@ -15,7 +15,7 @@ REF CURSOR の例は、REF CURSOR の使い方を説明する、次の 3 つの 
 |サンプル|説明|  
 |------------|-----------------|  
 |[OracleDataReader の REF CURSOR パラメーター](ref-cursor-parameters-in-an-oracledatareader.md)|この例では、REF CURSOR パラメーターを返し、<xref:System.Data.OracleClient.OracleDataReader> として値を読み込む PL/SQL ストアド プロシージャを実行します。|  
-|[OracleDataReader を使用した複数の REF CURSOR からのデータの取得](retrieving-data-from-multiple-ref-cursors.md)|この例では、2つの REF CURSOR パラメーターを返す PL/SQL ストアドプロシージャを実行し、 **OracleDataReader**を使用して値を読み取ります。|  
+|[OracleDataReader を使用した複数の REF CURSOR からのデータの取得](retrieving-data-from-multiple-ref-cursors.md)|この例では、2 つの REF CURSOR パラメーターを返し、**OracleDataReader** を使用して値を読み込む PL/SQL ストアド プロシージャを実行します。|  
 |[1 つまたは複数の REF CURSOR を使用した DataSet の値の設定](filling-a-dataset-using-one-or-more-ref-cursors.md)|この例では、2 つの REF CURSOR パラメーターを返し、返された行を <xref:System.Data.DataSet> に入力する PL/SQL ストアド プロシージャを実行します。|  
   
  これらの例を使用するには、必要に応じて Oracle テーブルを作成し、さらに PL/SQL パッケージとパッケージ本体を作成する必要があります。  
@@ -27,14 +27,14 @@ REF CURSOR の例は、REF CURSOR の使い方を説明する、次の 3 つの 
  これらの例では、次の PL/SQL パッケージとパッケージ本体がサーバー上に必要になります。 次の Oracle パッケージを Oracle サーバー上に作成します。  
   
 ```sql
-CREATE OR REPLACE PACKAGE CURSPKG AS   
-    TYPE T_CURSOR IS REF CURSOR;   
-    PROCEDURE OPEN_ONE_CURSOR (N_EMPNO IN NUMBER,   
-                               IO_CURSOR IN OUT T_CURSOR);   
-    PROCEDURE OPEN_TWO_CURSORS (EMPCURSOR OUT T_CURSOR,   
+CREATE OR REPLACE PACKAGE CURSPKG AS
+    TYPE T_CURSOR IS REF CURSOR;
+    PROCEDURE OPEN_ONE_CURSOR (N_EMPNO IN NUMBER,
+                               IO_CURSOR IN OUT T_CURSOR);
+    PROCEDURE OPEN_TWO_CURSORS (EMPCURSOR OUT T_CURSOR,
                                 DEPTCURSOR OUT T_CURSOR);  
 END CURSPKG;  
-/   
+/
 ```  
   
  Oracle サーバーで、次の Oracle パッケージ本体を作成します。  
@@ -43,38 +43,38 @@ END CURSPKG;
 CREATE OR REPLACE PACKAGE BODY CURSPKG AS  
     PROCEDURE OPEN_ONE_CURSOR (N_EMPNO IN NUMBER,  
                                IO_CURSOR IN OUT T_CURSOR)  
-    IS   
-        V_CURSOR T_CURSOR;   
-    BEGIN   
-        IF N_EMPNO <> 0   
+    IS
+        V_CURSOR T_CURSOR;
+    BEGIN
+        IF N_EMPNO <> 0
         THEN  
-             OPEN V_CURSOR FOR   
-             SELECT EMP.EMPNO, EMP.ENAME, DEPT.DEPTNO, DEPT.DNAME   
-                  FROM EMP, DEPT   
-                  WHERE EMP.DEPTNO = DEPT.DEPTNO   
+             OPEN V_CURSOR FOR
+             SELECT EMP.EMPNO, EMP.ENAME, DEPT.DEPTNO, DEPT.DNAME
+                  FROM EMP, DEPT
+                  WHERE EMP.DEPTNO = DEPT.DEPTNO
                   AND EMP.EMPNO = N_EMPNO;  
   
-        ELSE   
-             OPEN V_CURSOR FOR   
-             SELECT EMP.EMPNO, EMP.ENAME, DEPT.DEPTNO, DEPT.DNAME   
-                  FROM EMP, DEPT   
+        ELSE
+             OPEN V_CURSOR FOR
+             SELECT EMP.EMPNO, EMP.ENAME, DEPT.DEPTNO, DEPT.DNAME
+                  FROM EMP, DEPT
                   WHERE EMP.DEPTNO = DEPT.DEPTNO;  
   
         END IF;  
-        IO_CURSOR := V_CURSOR;   
-    END OPEN_ONE_CURSOR;   
+        IO_CURSOR := V_CURSOR;
+    END OPEN_ONE_CURSOR;
   
     PROCEDURE OPEN_TWO_CURSORS (EMPCURSOR OUT T_CURSOR,  
                                 DEPTCURSOR OUT T_CURSOR)  
-    IS   
-        V_CURSOR1 T_CURSOR;   
-        V_CURSOR2 T_CURSOR;   
-    BEGIN   
+    IS
+        V_CURSOR1 T_CURSOR;
+        V_CURSOR2 T_CURSOR;
+    BEGIN
         OPEN V_CURSOR1 FOR SELECT * FROM EMP;  
         OPEN V_CURSOR2 FOR SELECT * FROM DEPT;  
-        EMPCURSOR  := V_CURSOR1;   
-        DEPTCURSOR := V_CURSOR2;   
-    END OPEN_TWO_CURSORS;   
+        EMPCURSOR  := V_CURSOR1;
+        DEPTCURSOR := V_CURSOR2;
+    END OPEN_TWO_CURSORS;
 END CURSPKG;  
 /  
 ```  

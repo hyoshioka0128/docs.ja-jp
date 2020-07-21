@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 54b5f97aca131f52b9b5d9f54d7fa5ec00ba3d5b
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8822e731ae805e83d4072c5bd78dff3fcf9a31a1
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423672"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81462524"
 ---
 # <a name="systemiopipelines-in-net"></a>.NET の System.IO.Pipelines
 
@@ -67,6 +67,8 @@ async Task ProcessLinesAsync(NetworkStream stream)
 [!code-csharp[](~/samples/snippets/csharp/pipelines/ProcessLinesAsync.cs?name=snippet)]
 
 上記のコードは複雑で、特定されたすべての問題には対処していません。 ハイ パフォーマンス ネットワークは、通常、パフォーマンスを最大化するために非常に複雑なコードを記述することを意味します。 `System.IO.Pipelines` は、この種のコードをより簡単に記述できるように設計されています。
+
+[!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
 
 ## <a name="pipe"></a>パイプ
 
@@ -163,7 +165,7 @@ I/O を行う場合は、I/O が実行される場所をきめ細かく制御す
 
 ## <a name="pipereader"></a>PipeReader
 
-<xref:System.IO.Pipelines.PipeReader> では、呼び出し元の代わりにメモリを管理します。 <xref:System.IO.Pipelines.PipeReader.ReadAsync%2A?displayProperty=nameWithType> を呼び出した後に、**常に** <xref:System.IO.Pipelines.PipeReader.AdvanceTo%2A?displayProperty=nameWithType> を呼び出します。 これにより、`PipeReader` では、呼び出し元がメモリを使用して実行されるタイミングを把握し、追跡できるようになります。 `PipeReader.ReadAsync` から返された `ReadOnlySequence<byte>` が有効なのは、`PipeReader.AdvanceTo` が呼び出されるまでのみとなります。 `PipeReader.AdvanceTo` を呼び出した後、`ReadOnlySequence<byte>` を使用することはできません。
+<xref:System.IO.Pipelines.PipeReader> では、呼び出し元の代わりにメモリを管理します。 <xref:System.IO.Pipelines.PipeReader.ReadAsync%2A?displayProperty=nameWithType> を呼び出した後に、**常に**<xref:System.IO.Pipelines.PipeReader.AdvanceTo%2A?displayProperty=nameWithType> を呼び出します。 これにより、`PipeReader` では、呼び出し元がメモリを使用して実行されるタイミングを把握し、追跡できるようになります。 `PipeReader.ReadAsync` から返された `ReadOnlySequence<byte>` が有効なのは、`PipeReader.AdvanceTo` が呼び出されるまでのみとなります。 `PipeReader.AdvanceTo` を呼び出した後、`ReadOnlySequence<byte>` を使用することはできません。
 
 `PipeReader.AdvanceTo` では、次の 2 つの <xref:System.SequencePosition> 引数を受け取ります。
 

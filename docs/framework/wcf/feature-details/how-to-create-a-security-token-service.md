@@ -8,29 +8,29 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
-ms.openlocfilehash: 39c54c5d91c38e43fd7d0b1205537948e84a0782
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1cfcca524e5dd2b0c1560eb7600795766e2db1d6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587530"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598958"
 ---
 # <a name="how-to-create-a-security-token-service"></a>方法: セキュリティ トークン サービスを作成する
 セキュリティ トークン サービスは、WS-Trust 仕様に定義されているプロトコルを実装します。 このプロトコルでは、セキュリティ トークンの発行、更新、キャンセル、および検証を行うためのメッセージ形式とメッセージ交換パターンが定義されています。 セキュリティ トークン サービスでは、これらの機能が 1 つ以上提供されます。 ここでは、最も一般的なシナリオであるトークンの発行の実装について説明します。  
   
 ## <a name="issuing-tokens"></a>トークンの発行  
- WS-Trust は、トークンを発行するための `RequestSecurityToken` XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマ要素および `RequestSecurityTokenResponse` XSD スキーマ要素に基づいたメッセージ形式を定義しています。 また、関連するアクション URI (Uniform Resource Identifier) も定義しています。 URI に関連付けられたアクション、`RequestSecurityToken`メッセージは `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue` します。 URI に関連付けられたアクション、`RequestSecurityTokenResponse`メッセージは `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue` します。  
+ WS-Trust は、トークンを発行するための `RequestSecurityToken` XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマ要素および `RequestSecurityTokenResponse` XSD スキーマ要素に基づいたメッセージ形式を定義しています。 また、関連するアクション URI (Uniform Resource Identifier) も定義しています。 メッセージに関連付けられているアクション URI `RequestSecurityToken` は `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue` です。 メッセージに関連付けられているアクション URI `RequestSecurityTokenResponse` は `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue` です。  
   
 ### <a name="request-message-structure"></a>要求メッセージの構造  
  発行要求メッセージの構造は、通常、次の項目で構成されます。  
   
-- 要求の値は、URI を入力する`http://schemas.xmlsoap.org/ws/2005/02/trust/Issue`します。
+- 値がである要求の種類の URI `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue` 。
   
-- "トークンの種類" URI。 この URI の値は、Security Assertions Markup Language (SAML) 1.1 トークンの `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1` します。  
+- "トークンの種類" URI。 Security Assertion Markup Language (SAML) 1.1 トークンの場合、この URI の値はに `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1` なります。  
   
 - 発行済みトークンに関連付けられるキーのビット数を示すキー サイズの値。  
   
-- "キーの種類" URI。 対称キーは、この URI の値は `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey` します。  
+- "キーの種類" URI。 対称キーの場合、この URI の値はに `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey` なります。  
   
  さらに、2 つの項目が含まれている必要があります。  
   
@@ -98,7 +98,7 @@ ms.locfileid: "64587530"
  [!code-csharp[c_CreateSTS#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#4)]
  [!code-vb[c_CreateSTS#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#4)]  
   
- 詳細については、次を参照してください。[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)します。  
+ 詳細については、「 [Federation Sample](../samples/federation-sample.md)」を参照してください。  
   
 ## <a name="creating-response-messages"></a>応答メッセージの作成  
  セキュリティ トークン サービスによって発行要求が処理され、発行されるトークンと証明キーが作成されたら、少なくとも、要求されたトークン、証明トークン、および発行されたトークンの参照を含む応答メッセージを作成する必要があります。 発行済みトークンは、通常、<xref:System.IdentityModel.Tokens.SamlSecurityToken> から作成された <xref:System.IdentityModel.Tokens.SamlAssertion> です。次の例を参照してください。  
@@ -111,7 +111,7 @@ ms.locfileid: "64587530"
  [!code-csharp[c_CreateSTS#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#6)]
  [!code-vb[c_CreateSTS#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#6)]  
   
- クライアントとセキュリティ トークン サービスは、共有キーのキー マテリアルを提供するときに、証明トークンを構成する方法の詳細については、次を参照してください。[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)します。  
+ クライアントと Security Token Service の両方が共有キーのキーマテリアルを提供するときに証明トークンを作成する方法の詳細については、「 [Federation Sample](../samples/federation-sample.md)」を参照してください。  
   
  発行済みトークンの参照を作成するには、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> クラスのインスタンスを作成します。  
   
@@ -121,7 +121,7 @@ ms.locfileid: "64587530"
  最後に、これらの値を、クライアントに返される応答メッセージにシリアル化します。  
   
 ## <a name="example"></a>例  
- セキュリティ トークン サービスの完全なコードは、次を参照してください。[フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)します。  
+ Security Token Service の完全なコードについては、「 [Federation Sample](../samples/federation-sample.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
@@ -132,4 +132,4 @@ ms.locfileid: "64587530"
 - <xref:System.IdentityModel.Tokens.SamlAssertion>
 - <xref:System.ServiceModel.Security.Tokens.BinarySecretSecurityToken>
 - <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>
-- [フェデレーション サンプル](../../../../docs/framework/wcf/samples/federation-sample.md)
+- [フェデレーション サンプル](../samples/federation-sample.md)

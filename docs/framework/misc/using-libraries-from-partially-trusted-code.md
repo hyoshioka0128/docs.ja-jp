@@ -1,5 +1,6 @@
 ---
 title: 部分信頼コードからのライブラリの使用
+description: 部分的に信頼されているコードからライブラリを使用する方法について説明します。 AllowPartiallyTrustedCallersAttribute 属性を使用して、共有マネージライブラリを呼び出します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - security [.NET Framework], partially trusted code
@@ -9,20 +10,18 @@ helpviewer_keywords:
 - code access security, partially trusted code
 - APTCA
 ms.assetid: dd66cd4c-b087-415f-9c3e-94e3a1835f74
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 50428e4e28df812a3a0c985d0d1876dab7b5279c
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d2e015e381a3778bbab9977af20897ce9f1955c1
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70206035"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309223"
 ---
 # <a name="using-libraries-from-partially-trusted-code"></a>部分信頼コードからのライブラリの使用
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
 > [!NOTE]
-> このトピックでは、厳密な名前付きアセンブリの動作について説明し、[レベル 1](security-transparent-code-level-1.md)のアセンブリにのみ適用します。 [セキュリティ透過的なコード、](security-transparent-code-level-2.md) .NET Framework 4 以降のレベル2のアセンブリは、厳密な名前の影響を受けません。 セキュリティシステムへの変更の詳細については、「[セキュリティの変更](../security/security-changes.md)」を参照してください。  
+> このトピックでは、厳密な名前付きアセンブリの動作について説明し、[レベル 1](security-transparent-code-level-1.md)のアセンブリにのみ適用します。 [セキュリティ透過的なコード、](security-transparent-code-level-2.md) .NET Framework 4 以降のレベル2のアセンブリは、厳密な名前の影響を受けません。 セキュリティシステムへの変更の詳細については、「[セキュリティの変更](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)」を参照してください。  
   
  ホストまたはサンドボックスから不完全な信頼を受けているアプリケーションは、ライブラリの作成者が <xref:System.Security.AllowPartiallyTrustedCallersAttribute> 属性を使用して具体的に許可しない限り、共有マネージド ライブラリを呼び出せません。 そのため、アプリケーションの作成者は、ライブラリによっては部分的に信頼されたコンテキストから使用できないことを認識する必要があります。 既定では、部分信頼[サンドボックス](how-to-run-partially-trusted-code-in-a-sandbox.md)で実行され、完全に信頼されたアセンブリの一覧にないすべてのコードは、部分的に信頼されています。 部分的に信頼されたコンテキストからコードを実行する、または部分的に信頼されたコードによってコードが呼び出されることはないと考えられる場合は、このセクションの情報を考慮する必要はありません。 ただし、部分的に信頼されたコードと対話する必要があるコード、または部分的に信頼されたコンテキストから操作するコードを記述する場合は、次の要因を考慮する必要があります。  
   
@@ -46,7 +45,7 @@ ms.locfileid: "70206035"
   
 - 部分的に信頼されたシナリオ用に特に記述された厳密な名前のコード ライブラリ。  
   
-- インターネットからダウンロードしたコードによって呼び出される、厳密な名前で署名された (部分的に信頼された、または完全に信頼された) すべてのコンポーネント。  
+- インターネットからダウンロードしたコードによって呼び出される、厳密な名前で署名された (部分的に信頼された、または完全に信頼された) すべてのコンポーネント。   
   
 > [!NOTE]
 > .NET Framework クラスライブラリ内の一部のクラスには**AllowPartiallyTrustedCallersAttribute**属性がないため、部分的に信頼されたコードから呼び出すことはできません。  

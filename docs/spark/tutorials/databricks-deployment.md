@@ -1,15 +1,15 @@
 ---
 title: .NET for Apache Spark アプリケーションを Databricks にデプロイする
 description: .NET for Apache Spark アプリケーションを Databricks にデプロイする方法を説明します。
-ms.date: 05/17/2019
+ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: dfd33e83c04428b7a6a72e4992c40f00982b1958
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 9e0b99b6706bf51adaa6e3795d1c81179e14cb7a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960462"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618338"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>チュートリアル: .NET for Apache Spark アプリケーションを Databricks にデプロイする
 
@@ -24,11 +24,13 @@ ms.locfileid: "74960462"
 > - Spark ジョブと Spark クラスターを作成する。
 > - Spark クラスターでアプリを実行する。
 
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
+
 ## <a name="prerequisites"></a>必須コンポーネント
 
 開始する前に、以下の作業を行います。
 
-* Azure アカウントがない場合は、[無料アカウント](https://azure.microsoft.com/free/)を作成します。
+* Azure アカウントがない場合は、[無料アカウント](https://azure.microsoft.com/free/dotnet/)を作成します。
 * [Azure Portal](https://portal.azure.com/) にサインインします。
 * 「[.NET for Apache Spark - 10 分で開始する](https://dotnet.microsoft.com/learn/data/spark-tutorial/intro)」のチュートリアルを完了します。
 
@@ -36,7 +38,7 @@ ms.locfileid: "74960462"
 
 > [!Note]
 > **Azure 無料試用版サブスクリプション**を使用してこのチュートリアルを実行することはできません。
-> 無料アカウントをお持ちの場合は、お使いのプロファイルにアクセスし、サブスクリプションを **[従量課金制]** に変更します。 詳細については、[Azure 無料アカウント](https://azure.microsoft.com/free/)に関するページをご覧ください。 次に、リージョン内の vCPU について[使用制限を削除し](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit)、[クォータの増加を依頼](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request)します。 Azure Databricks ワークスペースを作成するときに、 **[Trial (Premium - 14-Days Free DBUs)]\(試用版 (Premium - 14 日間の無料 DBU)\)** の価格レベルを選択し、ワークスペースから 14 日間無料の Premium Azure Databricks DBU にアクセスできるようにします。
+> 無料アカウントをお持ちの場合は、お使いのプロファイルにアクセスし、サブスクリプションを **[従量課金制]** に変更します。 詳細については、[Azure 無料アカウント](https://azure.microsoft.com/free/dotnet/)に関するページをご覧ください。 次に、リージョン内の vCPU について[使用制限を削除し](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit)、[クォータの増加を依頼](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request)します。 Azure Databricks ワークスペースを作成するときに、 **[Trial (Premium - 14-Days Free DBUs)]\(試用版 (Premium - 14 日間の無料 DBU)\)** の価格レベルを選択し、ワークスペースから 14 日間無料の Premium Azure Databricks DBU にアクセスできるようにします。
 
 このセクションでは、Azure Portal を使って Azure Databricks ワークスペースを作成します。
 
@@ -52,7 +54,7 @@ ms.locfileid: "74960462"
     |**サブスクリプション**     | ドロップダウンから Azure サブスクリプションを選択します。        |
     |**リソース グループ**     | 新しいリソース グループを作成するか、既存のリソース グループを使用するかを指定します。 リソース グループは、Azure ソリューションの関連するリソースを保持するコンテナーです。 詳しくは、[Azure リソース グループの概要](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)に関するページをご覧ください。 |
     |**場所**     | 優先リージョンを選択します。 使用可能なリージョンについては、[リージョン別の利用可能な Azure サービス](https://azure.microsoft.com/regions/services/)に関するページを参照してください。        |
-    |**Pricing Tier**     |  **Standard**、**Premium**、**Trial** のいずれかを選択します。 これらのレベルの詳細については、[Databricks の価格に関するページ](https://azure.microsoft.com/pricing/details/databricks/)を参照してください。       |
+    |**価格レベル**     |  **Standard**、**Premium**、**Trial** のいずれかを選択します。 これらのレベルの詳細については、[Databricks の価格に関するページ](https://azure.microsoft.com/pricing/details/databricks/)を参照してください。       |
     |**Virtual Network**     |   いいえ       |
 
 3. **[作成]** を選択します。 ワークスペースの作成には数分かかります。 ワークスペースの作成中に、 **[通知]** でデプロイの状態を表示できます。
@@ -87,7 +89,7 @@ Databricks CLI がインストールされたので、認証の詳細を設定�
 
 1. Databricks CLI コマンド `databricks configure --token` を実行します。
 
-2. 構成コマンドの実行後、ホストを入力するように求められます。 ホスト URL には、**https://<\Location>.azuredatabricks.net** の形式を使用します。 たとえば、Azure Databricks サービスの作成時に **eastus2** を選択した場合、ホストは **https://eastus2.azuredatabricks.net** となります。
+2. 構成コマンドの実行後、ホストを入力するように求められます。 ホスト URL では、`https://<Location>.azuredatabricks.net` の形式が使用されます。 たとえば、Azure Databricks サービスの作成時に **eastus2** を選択した場合、ホストは `https://eastus2.azuredatabricks.net` となります。
 
 3. ホストの入力後、トークンを入力するように求められます。 Azure portal で **[ワークスペースの起動]** を選択して、Azure Databricks ワークスペースを起動します。
 
@@ -126,25 +128,16 @@ Databricks CLI がインストールされたので、認証の詳細を設定�
 
 1. 次のコマンドを実行して、*mySparkApp* を発行します。
 
-   **Windows の場合:**
-
-   ```console
+   ```dotnetcli
    cd mySparkApp
-   dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x64
-   ```
-
-   **Linux の場合:**
-
-   ```bash
-   cd mySparkApp
-   dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x64
+   dotnet publish -c Release -f netcoreapp3.1 -r ubuntu.16.04-x64
    ```
 
 2. 発行したアプリケーション ファイルを Databricks Spark クラスターに簡単にアップロードできるように、次のタスクを実行してファイルを圧縮します。
 
    **Windows の場合:**
 
-   mySparkApp/bin/Release/netcoreapp3.0/ubuntu.16.04-x64 に移動します。 次に、**発行**フォルダーを右クリックして、 **[送信先] > [圧縮 (zip 形式) フォルダー]** の順に選択します。 新しいフォルダーに **publish.zip** という名前を付けます。
+   mySparkApp/bin/Release/netcoreapp3.1/ubuntu.16.04-x64 に移動します。 次に、**発行**フォルダーを右クリックして、 **[送信先] > [圧縮 (zip 形式) フォルダー]** の順に選択します。 新しいフォルダーに **publish.zip** という名前を付けます。
 
    **Linux の場合は、次のコマンドを実行します。**
 
@@ -161,21 +154,21 @@ Databricks CLI がインストールされたので、認証の詳細を設定�
    ```console
    databricks fs cp db-init.sh dbfs:/spark-dotnet/db-init.sh
    databricks fs cp install-worker.sh dbfs:/spark-dotnet/install-worker.sh
-   databricks fs cp Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/   Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
+   databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/   Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
    ```
 
-2. 次のコマンドを実行して、アプリを実行するためにクラスターに必要な残りのファイル (zip 形式の発行フォルダー、*input.txt*、*microsoft-spark-2.4.x-0.3.0.jar*) をアップロードします。
+2. 次のコマンドを実行して、アプリを実行するためにクラスターに必要な残りのファイル (zip 形式の発行フォルダー、*input.txt*、*microsoft-spark-2.4.x-0.3.1.jar*) をアップロードします。
 
    ```console
    cd mySparkApp
    databricks fs cp input.txt dbfs:/input.txt
 
-   cd mySparkApp\bin\Release\netcoreapp3.0\ubuntu.16.04-x64 directory
+   cd mySparkApp\bin\Release\netcoreapp3.1\ubuntu.16.04-x64 directory
    databricks fs cp mySparkApp.zip dbfs:/spark-dotnet/publish.zip
    databricks fs cp microsoft-spark-2.4.x-0.6.0.jar dbfs:/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar
    ```
 
-## <a name="create-a-job"></a>ジョブを作成する
+## <a name="create-a-job"></a>ジョブの作成
 
 アプリは、**spark-submit** を実行するジョブを介して Azure Databricks で実行されます。spark-submit は、.NET for Apache Spark ジョブを実行するために使用するコマンドです。
 
@@ -190,7 +183,7 @@ Databricks CLI がインストールされたので、認証の詳細を設定�
 3. ジョブ構成に次のパラメーターを貼り付けます。 次に、 **[確認]** を選択します。
 
    ```
-   ["--class","org.apache.spark.deploy.DotnetRunner","/dbfs/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar","/dbfs/spark-dotnet/publish.zip","mySparkApp"]
+   ["--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar","/dbfs/spark-dotnet/publish.zip","mySparkApp"]
    ```
 
 ## <a name="create-a-cluster"></a>クラスターの作成

@@ -3,14 +3,12 @@ title: 保持されるエンティティ参照
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 000a6cae-5972-40d6-bd6c-a9b7d9649b3c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e512f2077c2e6b9feba5024c4eabc2568357ecab
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e4c902df1b0cd2bd9e97b49c0ec1d10df91ef1c7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965912"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290345"
 ---
 # <a name="entity-references-are-preserved"></a>保持されるエンティティ参照
 エンティティ参照を展開せずに保持する場合、XML ドキュメント オブジェクト モデル (DOM) は、エンティティ参照を検出すると **XmlEntityReference** ノードを構築します。  
@@ -24,7 +22,7 @@ ms.locfileid: "69965912"
   
  DOM は、`&publisher;` 参照を検出すると **XmlEntityReference** ノードを構築します。 **XmlEntityReference** には、エンティティ宣言のコンテンツからコピーされた子ノードが格納されます。 上記のコード サンプルでは、エンティティ宣言にテキストが含まれているため、エンティティ参照ノードの子ノードとして **XmlText** ノードが作成されます。  
   
- ![保持されているエンティティ参照のツリー構造](../../../../docs/standard/data/xml/media/xmlentityref-notexpanded-nodes.gif "xmlentityref_notexpanded_nodes")  
+ ![保持されているエンティティ参照のツリー構造](media/xmlentityref-notexpanded-nodes.gif "xmlentityref_notexpanded_nodes")  
 エンティティ参照が保持される場合のツリー構造  
   
  **XmlEntityReference** の子ノードは、エンティティ宣言が検出されたときに **XmlEntity** ノードから作成されたすべての子ノードのコピーです。  
@@ -36,4 +34,4 @@ ms.locfileid: "69965912"
   
 ## <a name="see-also"></a>関連項目
 
-- [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML ドキュメント オブジェクト モデル (DOM)](xml-document-object-model-dom.md)

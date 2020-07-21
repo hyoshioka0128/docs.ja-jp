@@ -1,23 +1,24 @@
 ---
 title: DataTable への列の追加
+description: DataTable には、テーブルの Columns プロパティによって参照される DataColumn オブジェクトが格納されます。 次のコード例を使用して、ADO.NET のテーブルに列を追加します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
-ms.openlocfilehash: 6e0dcd819dc354e1fd23b244692dff5091142004
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 9d6d21696acd7a6b63cfd6d2ea7e906ec2acd7c9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784859"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286948"
 ---
 # <a name="adding-columns-to-a-datatable"></a>DataTable への列の追加
-に<xref:System.Data.DataTable>は、テーブルの<xref:System.Data.DataColumn> **Columns**プロパティによって参照されるオブジェクトのコレクションが含まれています。 この列のコレクションと制約によって、テーブルのスキーマ (構造) が定義されます。  
+<xref:System.Data.DataTable> には、テーブルの **Columns** プロパティによって参照される <xref:System.Data.DataColumn> オブジェクトのコレクションが格納されます。 この列のコレクションと制約によって、テーブルのスキーマ (構造) が定義されます。  
   
- テーブル内に**datacolumn**オブジェクトを作成するには、 **datacolumn**コンストラクターを使用するか、テーブル<xref:System.Data.DataColumnCollection>の**Columns**プロパティの**Add**メソッド () を呼び出します。 **Add**メソッドは、オプションの**ColumnName**、 **DataType**、および**Expression**引数を受け取り、コレクションのメンバーとして新しい**DataColumn**を作成します。 また、既存の**datacolumn**オブジェクトを受け取り、それをコレクションに追加し、要求された場合は追加された**datacolumn**への参照を返します。 **DataTable**オブジェクトはどのデータソースにも固有ではないため、 **DataColumn**のデータ型を指定するときに .NET Framework 型が使用されます。  
+ テーブル内に **DataColumn** オブジェクトを作成するには、**DataColumn** コンストラクターを使用するか、または <xref:System.Data.DataColumnCollection> であるテーブルの **Columns** プロパティの **Add** メソッドを呼び出します。 **Add** メソッドは、オプションの **ColumnName**、**DataType**、**Expression** の各引数を受け取り、新しい **DataColumn** をコレクションのメンバーとして作成します。 また、このメソッドは既存の **DataColumn** オブジェクトを受け取り、それをコレクションに追加して、要求された場合は、追加された **DataColumn** への参照を返します。 **DataTable** オブジェクトはデータ ソースに固有ではないため、**DataColumn** のデータ型を指定するときには、.NET Framework 型が使用されます。  
   
- 次の例では、 **DataTable**に4つの列を追加します。  
+ **DataTable** に 4 つの列を追加する例を次に示します。  
   
 ```vb  
 Dim workTable As DataTable = New DataTable("Customers")  
@@ -44,10 +45,10 @@ workTable.Columns.Add("CustFName", typeof(String));
 workTable.Columns.Add("Purchases", typeof(Double));  
 ```  
   
- この例では、 **CustID**列のプロパティが**DBNull**値を許可しないように設定されていて、値が一意になるように制約されていることに注意してください。 ただし、 **CustID**列をテーブルの主キー列として定義すると、 **allowdbnull**プロパティが自動的に**false**に設定され、 **Unique**プロパティが自動的に**true**に設定されます。 詳細については、「[主キーの定義](defining-primary-keys.md)」を参照してください。  
+ この例では、**DBNull** 値を許可せずに値を一意の値に制約するように、**CustID** 列のプロパティが設定されていることに注意してください。 ただし、**CustID** 列をテーブルの主キー列として定義した場合、**AllowDBNull** プロパティは自動的に **false** に設定され、**Unique** プロパティは自動的に **true** に設定されます。 詳しくは、「[主キーの定義](defining-primary-keys.md)」をご覧ください。  
   
 > [!CAUTION]
-> 列名が列に指定されていない場合、列には、 **DataColumnCollection**に追加されると、"Column1" で始まる列*N*の増分既定名が指定されます。 列名を指定するときは、"Column*N*" の命名規則を使用しないことをお勧めします。これは、指定した名前が**DataColumnCollection**内の既存の既定の列名と競合する可能性があるためです。 指定した名前が既に存在する場合は、例外がスローされます。  
+> 列名が指定されていない列を **DataColumnCollection** に追加する場合、この列には "Column1" から始まって増分される既定名 Column*N* が割り当てられます。 列名を指定するときには、"Column*N*" の命名規則を使用しないことをお勧めします。これは、指定した名前が **DataColumnCollection** に既に存在する既定の列名と競合しないようにするためです。 指定した名前が既に存在する場合は、例外がスローされます。  
   
  <xref:System.Xml.Linq.XElement> を、<xref:System.Data.DataColumn.DataType%2A> 内の <xref:System.Data.DataColumn> の <xref:System.Data.DataTable> として使用すると、データを読み取るときに XML シリアル化が機能しません。 たとえば、<xref:System.Xml.XmlDocument> メソッドを使用して `DataTable.WriteXml` を書き込むと、XML へのシリアル化で <xref:System.Xml.Linq.XElement> に親ノードが追加されます。 この問題に対処するには、<xref:System.Data.SqlTypes.SqlXml> の代わりに <xref:System.Xml.Linq.XElement> 型を使用します。 `ReadXml` および `WriteXml` は、<xref:System.Data.SqlTypes.SqlXml> で適切に機能します。  
   

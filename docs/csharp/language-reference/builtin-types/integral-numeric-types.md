@@ -32,16 +32,16 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 058e75c81c18f0ec73140f6fc13a91f4e0012a61
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 51ea64065ea8422e5885022105545780bc916f06
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036356"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739005"
 ---
 # <a name="integral-numeric-types--c-reference"></a>整数数値型 (C# リファレンス)
 
-**整数数値型**は**単純型**のサブセットであり、[*リテラル*](#integer-literals)を使用して初期化できます。 すべての整数型は、値型でもあります。 すべての整数数値型では、[算術](../operators/arithmetic-operators.md)、[ビット論理](../operators/bitwise-and-shift-operators.md)、[比較](../operators/comparison-operators.md)、[等値](../operators/equality-operators.md)演算子がサポートされています。
+"*整数数値型*" は、整数値を表します。 すべての整数数値型は、[値の型](value-types.md)です。 また、[単純型](value-types.md#built-in-value-types)でもあり、[リテラル](#integer-literals)を使用して初期化することができます。 すべての整数数値型では、[算術](../operators/arithmetic-operators.md)、[ビット論理](../operators/bitwise-and-shift-operators.md)、[比較](../operators/comparison-operators.md)、[等値](../operators/equality-operators.md)演算子がサポートされています。
 
 ## <a name="characteristics-of-the-integral-types"></a>整数型の特性
 
@@ -118,7 +118,7 @@ var longVariable = (long)42;
 
 ## <a name="conversions"></a>変換
 
-任意の整数数値型を他の整数数値型に変換することができます。 変換先の型に変換元の型のすべての値を格納できる場合、変換は暗黙的に実行されます。 それ以外の場合、明示的な変換を呼び出すには、[キャスト演算子 `()`](../operators/type-testing-and-cast.md#cast-operator-) を使用する必要があります。 詳細については、「[Built-in numeric conversions](numeric-conversions.md)」(組み込みの数値変換) を参照してください。
+任意の整数数値型を他の整数数値型に変換することができます。 変換先の型に変換元の型のすべての値を格納できる場合、変換は暗黙的に実行されます。 それ以外の場合は、[キャスト式](../operators/type-testing-and-cast.md#cast-expression)を使用して明示的な変換を実行する必要があります。 詳細については、「[組み込みの数値変換](numeric-conversions.md)」に関するページを参照してください。
 
 ## <a name="c-language-specification"></a>C# 言語仕様
 
@@ -130,7 +130,7 @@ var longVariable = (long)42;
 ## <a name="see-also"></a>関連項目
 
 - [C# リファレンス](../index.md)
-- [組み込み型の一覧表](../keywords/built-in-types-table.md)
+- [値型](value-types.md)
 - [浮動小数点型](floating-point-numeric-types.md)
-- [数値結果テーブルの書式設定](../keywords/formatting-numeric-results-table.md)
+- [標準の数値書式指定文字列](../../../standard/base-types/standard-numeric-format-strings.md)
 - [.NET における数値](../../../standard/numerics.md)

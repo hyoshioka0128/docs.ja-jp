@@ -22,10 +22,10 @@ helpviewer_keywords:
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
 ms.openlocfilehash: 35ed53fc480e218df595794f80af2458f3ecec38
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73039160"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>.NET Framework の構成ファイル スキーマ
@@ -39,13 +39,13 @@ ms.locfileid: "73039160"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[ **\<構成 >** 要素](configuration-element.md)\
+[**\<configuration>** Element](configuration-element.md)\
 すべての構成ファイルの最上位要素。
 
-[ **\<assemblybinding >** 要素](assemblybinding-element-for-configuration.md)\
+[**\<assemblyBinding>** Element](assemblybinding-element-for-configuration.md)\
 構成レベルでのアセンブリ バインディング ポリシーを指定します。
 
-[ **\<linkedconfiguration >** 要素](linkedconfiguration-element.md)\
+[**\<linkedConfiguration>** Element](linkedconfiguration-element.md)\
 インクルードする構成ファイルを指定します。
 
 [スタートアップ設定スキーマ](./startup/index.md)\
@@ -60,7 +60,7 @@ ms.locfileid: "73039160"
 [暗号化設定スキーマ](./cryptography/index.md)\
 アルゴリズムのフレンドリ名を、暗号化アルゴリズムを実装するクラスにマップする要素。
 
-[構成セクションスキーマ](configuration-sections-schema.md)\
+[構成セクションのスキーマ](configuration-sections-schema.md)\
 カスタム設定の構成セクションを作成して使用するために使用される要素。
 
 [トレースおよびデバッグ設定のスキーマ](./trace-debug/index.md)\
@@ -85,7 +85,7 @@ Windows フォームアプリケーション構成セクション内のすべて
 WCF サービスおよびクライアントアプリケーションを構成できるすべての要素。
 
 [WCF ディレクティブの構文](./wcf-directive/index.md)\
-.Svc コンパイラによって使用されるページ固有の属性を定義する `@ServiceHost` ディレクティブについて説明します。
+`@ServiceHost`.Svc コンパイラによって使用されるページ固有の属性を定義するディレクティブについて説明します。
 
 [WIF 構成スキーマ](windows-identity-foundation/index.md)\
 Windows Identity Foundation (WIF) 構成スキーマのすべての要素。
@@ -95,7 +95,7 @@ Windows Identity Foundation (WIF) 構成スキーマのすべての要素。
 [リモート処理設定スキーマ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100))\
 リモート処理を実装するクライアント アプリケーションとサーバー アプリケーションを構成する要素について説明します。
 
-[ASP.NET Settings スキーマ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))\
+[ASP.NET 設定スキーマ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))\
 ASP.NET Web アプリケーションの動作を制御する要素について説明します。
 
 [Web サービス設定スキーマ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))\

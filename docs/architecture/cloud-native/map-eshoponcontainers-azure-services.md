@@ -1,24 +1,22 @@
 ---
 title: eShopOnContainers を Azure サービスにマッピングする
 description: Azure Kubernetes Service、API Gateway、Azure Service Bus などの Azure サービスへの eShopOnContainers のマッピング。
-ms.date: 06/30/2019
-ms.openlocfilehash: 67430da18c0a12c694426214de33e85c2113e454
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.date: 05/13/2020
+ms.openlocfilehash: 271707404f7fb51aec59c6f682ddaefd0bac82cc
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "73841193"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613838"
 ---
 # <a name="mapping-eshoponcontainers-to-azure-services"></a>eShopOnContainers を Azure サービスにマッピングする
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 必須ではありませんが、Azure は eShopOnContainers のサポートに適しています。これは、プロジェクトがクラウドネイティブアプリケーションとして構築されたためです。 アプリケーションは .NET Core を使用して構築されているため、Docker ホストに応じて Linux または Windows コンテナーで実行できます。 アプリケーションは複数の自律マイクロサービスで構成され、それぞれに独自のデータがあります。 さまざまなマイクロサービスは、単純な CRUD 操作から複雑な DDD や CQRS パターンまで、さまざまなアプローチを紹介しています。 マイクロサービスは、HTTP 経由でクライアントと通信し、メッセージベースの通信を介して相互に通信します。 アプリケーションでは、標準の通信プロトコルとして HTTP を採用し、Android、iOS、Windows の各プラットフォームで実行される ASP.NET Core および Xamarin mobile アプリを含むため、クライアントの複数のプラットフォームもサポートしています。
 
 図2-5 に、アプリケーションのアーキテクチャを示します。 左側にはクライアントアプリがあり、モバイル、従来の Web、および Web シングルページアプリケーション (SPA) のフレーバーに分割されています。 右側には、システムを構成するサーバー側コンポーネントがあります。各コンポーネントは、Docker コンテナーと Kubernetes クラスターでホストできます。 従来の web アプリには、黄色で示されている ASP.NET Core MVC アプリケーションが搭載されています。 このアプリとモバイルおよび web SPA アプリケーションは、1つまたは複数の API ゲートウェイを介して個々のマイクロサービスと通信します。 API ゲートウェイは、"バックエンドのフロントエンド" (BFF) パターンに従います。つまり、各ゲートウェイは、特定のフロントエンドクライアントをサポートするように設計されています。 個々のマイクロサービスは API ゲートウェイの右側に一覧表示され、ビジネスロジックといくつかの永続化ストアが含まれます。 さまざまなサービスで、SQL Server データベース、Redis cache インスタンス、および MongoDB/CosmosDB ストアを使用します。 一番右には、マイクロサービス間の通信に使用されるシステムのイベントバスがあります。
 
-![eShopOnContainers アーキテクチャ](./media/eshoponcontainers-architecture.png)
-**図 2-5**。 EShopOnContainers アーキテクチャ。
+![eShopOnContainers アーキテクチャ ](./media/eshoponcontainers-architecture.png)
+ **図 2-5**。 EShopOnContainers アーキテクチャ。
 
 このアーキテクチャのサーバー側コンポーネントはすべて、Azure サービスに簡単にマップできます。
 
@@ -60,20 +58,9 @@ EShopOnContainers アプリケーションでは、ユーザーの現在の買�
 
 アプリケーションでは、イベントを使用して異なるサービス間で変更を通知します。 この機能は、さまざまな実装で実装できます。また、ローカルの eShopOnContainers アプリケーションでは、 [RabbitMQ](https://www.rabbitmq.com/)を使用します。 Azure でホストされている場合、アプリケーションはメッセージングのために[Azure Service Bus](https://docs.microsoft.com/azure/service-bus/)を活用します。 Azure Service Bus は、アプリケーションとサービスが分離された信頼性の高い非同期方式で相互に通信できるようにする、完全に管理された統合メッセージブローカーです。 Azure Service Bus は、個々のキューと、パブリッシャーとサブスクライバーのシナリオをサポートするための個別の*トピック*をサポートしています。 EShopOnContainers アプリケーションでは、Azure Service Bus のトピックを活用して、あるマイクロサービスから特定のメッセージに応答するために必要なその他のマイクロサービスへのメッセージの配布をサポートしています。
 
-## <a name="resiliency"></a>柔軟性
+## <a name="resiliency"></a>回復性
 
 運用環境にデプロイされると、eShopOnContainers アプリケーションは、回復性を向上させるために使用できる複数の Azure サービスを活用できるようになります。 アプリケーションは、Application Insights と統合できる正常性チェックを発行して、アプリの可用性に基づいてレポートとアラートを提供します。 Azure リソースには、バグやパフォーマンスの問題を特定して修正するために使用できる診断ログも用意されています。 リソースログは、アプリケーションでさまざまな Azure リソースがどのように使用されているか、およびその方法に関する詳細情報を提供します。 クラウドネイティブの回復性機能の詳細については、[第6章](resiliency.md)を参照してください。
-
-## <a name="references"></a>参照
-
-- [EShopOnContainers アーキテクチャ](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Architecture)
-- [高いスケーラビリティと可用性のためにマイクロサービスと複数のコンテナー アプリケーションを調整する](https://docs.microsoft.com/dotnet/architecture/microservices/architect-microservice-container-applications/scalable-available-multi-container-microservice-applications)
-- [Azure API Management](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)
-- [Azure SQL Database の概要](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-- [Redis 用 Azure キャッシュ](https://azure.microsoft.com/services/cache/)
-- [MongoDB 用の Azure Cosmos DB の API](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
-- [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)
-- [Azure Monitor の概要](https://docs.microsoft.com/azure/azure-monitor/overview)
 
 >[!div class="step-by-step"]
 >[前へ](introduce-eshoponcontainers-reference-app.md)

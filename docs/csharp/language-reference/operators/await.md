@@ -1,6 +1,5 @@
 ---
 title: await 演算子 - C# リファレンス
-ms.custom: seodec18
 ms.date: 11/08/2019
 f1_keywords:
 - await_CSharpKeyword
@@ -8,20 +7,20 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 36cb4a5def6b75281edbe878d89af0c18ab226ec
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 83ee51fcbcc5911c688e30542cefb1c56578a578
+ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140656"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141025"
 ---
 # <a name="await-operator-c-reference"></a>await 演算子 (C# リファレンス)
 
-`await` 演算子では、そのオペランドによって表わされる非同期操作が完了するまで、外側の [async](../keywords/async.md) メソッドの評価が保留になります。 非同期操作が完了すると、`await` 演算子から演算の結果が返されます (結果がある場合)。 既に完了している操作を表わすオペランドに `await` 演算子が適用されると、外側のメソッドを保留にすることなく、演算の結果がすぐに返されます。 `await` 演算子では、async メソッドを評価するスレッドがブロックされません。 `await` 演算子によって外側の async メソッドが保留になるとき、メソッドの呼び出し元にコントロールが戻ります。
+`await` 演算子では、そのオペランドによって表わされる非同期操作が完了するまで、外側の [async](../keywords/async.md) メソッドの評価が保留になります。 非同期操作が完了すると、`await` 演算子から演算の結果が返されます (結果がある場合)。 既に完了している操作を表すオペランドに `await` 演算子が適用されると、外側のメソッドを保留にすることなく、演算の結果がすぐに返されます。 `await` 演算子では、async メソッドを評価するスレッドがブロックされません。 `await` 演算子によって外側の async メソッドが保留になるとき、メソッドの呼び出し元にコントロールが戻ります。
 
 次の例では、完了時にバイト配列を生成する非同期操作を表わす `Task<byte[]>` インスタンスが、<xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A?displayProperty=nameWithType> メソッドから返されます。 操作が完了するまで、`await` 演算子によって `DownloadDocsMainPageAsync` メソッドが保留になります。 `DownloadDocsMainPageAsync` が保留になると、`DownloadDocsMainPageAsync` の呼び出し元である `Main` メソッドにコントロールが返されます。 `DownloadDocsMainPageAsync` メソッドで実行される非同期操作の結果が必要になるまで `Main` メソッドが実行されます。 <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> ですべてのバイトが得られると、`DownloadDocsMainPageAsync` メソッドの残りが評価されます。 その後、`Main` メソッドの残りが評価されます。
 
-[!code-csharp[await example](~/samples/csharp/language-reference/operators/AwaitOperator.cs)]
+[!code-csharp[await example](snippets/AwaitOperator.cs)]
 
 前の例では、[async `Main` メソッド](../../programming-guide/main-and-command-args/index.md)が使用されています。これは C# 7.1 以降で可能です。 詳細は、「[await operator in the Main method](#await-operator-in-the-main-method)」 (Main メソッドの await 演算子) セクションを参照してください。
 
@@ -32,7 +31,7 @@ ms.locfileid: "74140656"
 
 .NET の型として <xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.ValueTask>、<xref:System.Threading.Tasks.ValueTask%601> がありますが、`await` 演算子のオペランドはそのいずれかになります。 ただし、待機可能な式であれば `await` 演算子のオペランドになります。 詳細については、「[C# 言語仕様](~/_csharplang/spec/introduction.md)」の「[待機可能な式](~/_csharplang/spec/expressions.md#awaitable-expressions)」セクションを参照してください。
 
-C# 8.0 以降では、`await foreach` ステートメントを使用して、データの非同期ストリームを利用できます。 詳細については、「[C# 8.0 の新機能](../../whats-new/csharp-8.md)」記事の「[非同期ストリーム](../../whats-new/csharp-8.md#asynchronous-streams)」セクションを参照してください。
+C# 8.0 以降では、`await foreach` ステートメントを使用して、データの非同期ストリームを利用できます。 詳細については、[`foreach` ステートメント](../keywords/foreach-in.md)に関する記事、および記事「[C# 8.0 の新機能](../../whats-new/csharp-8.md)」の「[非同期ストリーム](../../whats-new/csharp-8.md#asynchronous-streams)」セクションを参照してください。
 
 式 `t` の型が <xref:System.Threading.Tasks.Task%601> または <xref:System.Threading.Tasks.ValueTask%601> の場合、式 `await t` の型は `TResult` になります。 `t` の型が <xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.ValueTask> の場合、`await t` の型は `void` になります。 いずれの場合も、`t` で例外がスローされる場合、`await t` で再び例外がスローされます。 例外処理の詳細については、[try-catch ステートメント](../keywords/try-catch.md)に関する記事の「[非同期メソッドの例外](../keywords/try-catch.md#exceptions-in-async-methods)」を参照してください。
 

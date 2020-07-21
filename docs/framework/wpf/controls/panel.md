@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: 792943c5-335d-49dd-aa5b-ec1582a10088
 ms.openlocfilehash: 6471aebf4a510c63084f8da733fb3dfe2300c1aa
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61770670"
 ---
 # <a name="panel"></a>パネル
-<xref:System.Windows.Controls.Panel> アプリケーションのレイアウトをサポートするすべての要素の基本クラスは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]します。  
+<xref:System.Windows.Controls.Panel> は、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のアプリケーション レイアウトをサポートするすべての要素の基底クラスです。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [パネルの概要](panels-overview.md)  
  [方法トピック](panel-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

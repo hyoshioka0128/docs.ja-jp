@@ -1,5 +1,6 @@
 ---
-title: '方法 : Windows フォーム上のタブ オーダーを設定する'
+title: コントロールのタブオーダーを設定する
+description: Windows フォームのコントロールのタブオーダーを設定する方法について説明します。 タブオーダーを Visual Studio で設定するか、プロパティウィンドウの TabIndex プロパティを使用します。
 ms.date: 03/30/2017
 f1_keywords:
 - TabStop
@@ -13,12 +14,12 @@ ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 026cff06a8d662cb40107fa76cf6d7989fe30cf1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 3d16da1ac73cc030b92bb36c4bfa3a79985339bf
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458526"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903363"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>方法: Windows フォームのタブオーダーを設定する
 
@@ -26,37 +27,37 @@ ms.locfileid: "73458526"
 
 ## <a name="to-set-the-tab-order-of-a-control"></a>コントロールのタブオーダーを設定するには
 
-1. Visual Studio の **[表示]** メニューで、 **[タブオーダー]** を選択します。
+1. Visual Studio の [**表示**] メニューで、[**タブオーダー**] を選択します。
 
-   これにより、フォームのタブオーダー選択モードがアクティブになります。 各コントロールの左上隅に、(<xref:System.Windows.Forms.Control.TabIndex%2A> のプロパティを表す) 数値が表示されます。
+   これにより、フォームのタブオーダー選択モードがアクティブになります。 <xref:System.Windows.Forms.Control.TabIndex%2A>各コントロールの左上隅に、(プロパティを表す) 数値が表示されます。
 
 2. コントロールを順番にクリックして、目的のタブオーダーを設定します。
 
    > [!NOTE]
    > タブオーダー内のコントロールの位置は、0以上の任意の値に設定できます。 重複が発生すると、2つのコントロールの z オーダーが評価され、上のコントロールが最初にタブになります。 (Z オーダーは、フォームの z 軸の [奥行] に沿ったフォーム上のコントロールの視覚的なレイヤーです。 Z オーダーは、他のコントロールの前にあるコントロールを決定します。)Z オーダーの詳細については、「 [Windows フォームのオブジェクトのレイヤー](how-to-layer-objects-on-windows-forms.md)化」を参照してください。
 
-3. 終了したら、 **[表示]** メニューの **[タブオーダー]** をもう一度選択して、タブオーダーモードを終了します。
+3. 終了したら、[**表示**] メニューの [**タブオーダー** ] をもう一度選択して、タブオーダーモードを終了します。
 
    > [!NOTE]
-   > フォーカスを取得できないコントロール、および無効になったコントロールと非表示のコントロールには、<xref:System.Windows.Forms.Control.TabIndex%2A> プロパティはなく、タブオーダーには含まれません。 ユーザーが Tab キーを押すと、これらのコントロールはスキップされます。
+   > フォーカスを取得できず、無効になったコントロールや非表示のコントロールでも、プロパティはなく、 <xref:System.Windows.Forms.Control.TabIndex%2A> タブオーダーには含まれません。 ユーザーが Tab キーを押すと、これらのコントロールはスキップされます。
 
-または、[<xref:System.Windows.Forms.Control.TabIndex%2A>] プロパティを使用して、プロパティウィンドウにタブオーダーを設定することもできます。 コントロールの <xref:System.Windows.Forms.Control.TabIndex%2A> プロパティは、タブオーダー内での位置を決定します。 既定では、描画された最初のコントロールの <xref:System.Windows.Forms.Control.TabIndex%2A> 値は0、2番目のコントロールの <xref:System.Windows.Forms.Control.TabIndex%2A> は1のようになります。
+また、プロパティを使用して、プロパティウィンドウでタブオーダーを設定することもでき <xref:System.Windows.Forms.Control.TabIndex%2A> ます。 <xref:System.Windows.Forms.Control.TabIndex%2A>コントロールのプロパティは、タブオーダー内での位置を決定します。 既定では、描画された最初のコントロールの <xref:System.Windows.Forms.Control.TabIndex%2A> 値は0、2番目のコントロールのは <xref:System.Windows.Forms.Control.TabIndex%2A> 1、などです。
 
-また、既定では、<xref:System.Windows.Forms.GroupBox> コントロールには、整数である独自の <xref:System.Windows.Forms.Control.TabIndex%2A> 値があります。 <xref:System.Windows.Forms.GroupBox> コントロール自体には、実行時にフォーカスを設定することはできません。 したがって、<xref:System.Windows.Forms.GroupBox> 内の各コントロールには、0から始まる独自の decimal <xref:System.Windows.Forms.Control.TabIndex%2A> 値があります。 当然ながら、<xref:System.Windows.Forms.GroupBox> コントロールの <xref:System.Windows.Forms.Control.TabIndex%2A> がインクリメントされると、そのコントロール内のコントロールがそれに応じてインクリメントされます。 <xref:System.Windows.Forms.Control.TabIndex%2A> 値を5から6に変更した場合、そのグループの最初のコントロールの <xref:System.Windows.Forms.Control.TabIndex%2A> 値は自動的に6.0 に変更されます。
+また、既定では、コントロールには、整数である <xref:System.Windows.Forms.GroupBox> 独自の値があり <xref:System.Windows.Forms.Control.TabIndex%2A> ます。 コントロール自体には、 <xref:System.Windows.Forms.GroupBox> 実行時にフォーカスを設定することはできません。 したがって、内の各コントロール <xref:System.Windows.Forms.GroupBox> には、 <xref:System.Windows.Forms.Control.TabIndex%2A> 0 から始まる独自の10進値があります。 当然ながら、コントロールのがインクリメントされると、 <xref:System.Windows.Forms.Control.TabIndex%2A> <xref:System.Windows.Forms.GroupBox> その中のコントロールがそれに応じてインクリメントされます。 <xref:System.Windows.Forms.Control.TabIndex%2A>値を5から6に変更した場合、 <xref:System.Windows.Forms.Control.TabIndex%2A> そのグループの最初のコントロールの値は自動的に6.0 に変更されます。
 
-最後に、フォーム上の多くのコントロールは、タブオーダーではスキップできます。 通常、実行時に Tab キーを連続して押すと、各コントロールがタブオーダーで選択されます。 <xref:System.Windows.Forms.Control.TabStop%2A> プロパティをオフにすると、フォームのタブオーダーでコントロールを渡すことができます。
+最後に、フォーム上の多くのコントロールは、タブオーダーではスキップできます。 通常、実行時に Tab キーを連続して押すと、各コントロールがタブオーダーで選択されます。 プロパティをオフに <xref:System.Windows.Forms.Control.TabStop%2A> すると、フォームのタブオーダーでコントロールを渡すことができます。
 
 ## <a name="to-remove-a-control-from-the-tab-order"></a>タブオーダーからコントロールを削除するには
 
-**[プロパティ]** ウィンドウで、コントロールの <xref:System.Windows.Forms.Control.TabStop%2A> プロパティを**false**に設定します。
+<xref:System.Windows.Forms.Control.TabStop%2A>[**プロパティ**] ウィンドウで、コントロールのプロパティを**false**に設定します。
 
-Tab キーを使用してコントロールを巡回するときにコントロールがスキップされた場合でも、<xref:System.Windows.Forms.Control.TabStop%2A> プロパティが `false` に設定されているコントロールは、タブオーダー内でその位置を維持します。
+<xref:System.Windows.Forms.Control.TabStop%2A>Tab キーを使用してコントロールを `false` 巡回するときにコントロールがスキップされる場合でも、プロパティがに設定されているコントロールは、タブオーダーの位置を維持します。
 
 > [!NOTE]
-> ラジオボタングループには、実行時に1つのタブストップがあります。 選択したボタン ([<xref:System.Windows.Forms.RadioButton.Checked%2A>] プロパティが [`true`] に設定されているボタン) では、[<xref:System.Windows.Forms.Control.TabStop%2A>] プロパティが [`true`] に自動的に設定されます。一方、他のボタンでは <xref:System.Windows.Forms.Control.TabStop%2A> プロパティが `false`に設定されています。 <xref:System.Windows.Forms.RadioButton> コントロールのグループ化の詳細については、「 [Set Windows フォーム RadioButton コントロールをセットとして機能させる](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md)」を参照してください。
+> ラジオボタングループには、実行時に1つのタブストップがあります。 選択したボタン (プロパティがに設定されているボタン) では、プロパティが自動的にに設定され、 <xref:System.Windows.Forms.RadioButton.Checked%2A> `true` <xref:System.Windows.Forms.Control.TabStop%2A> `true` 他のボタンの <xref:System.Windows.Forms.Control.TabStop%2A> プロパティはに設定され `false` ます。 コントロールのグループ化の詳細については <xref:System.Windows.Forms.RadioButton> 、「 [Set Windows フォーム RadioButton コントロールをセットとして機能させる](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-- [Windows フォーム コントロール](index.md)
+- [Windows フォームコントロール](index.md)
 - [Windows フォームで使用するコントロール](controls-to-use-on-windows-forms.md)
 - [Windows フォーム コントロールの機能別一覧](windows-forms-controls-by-function.md)

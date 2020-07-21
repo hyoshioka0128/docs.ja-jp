@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: 45f3e0b4-8820-45a7-b865-b8ea5b17b0c8
 ms.openlocfilehash: 134236c5beca806b747d45f20764cc82ddd8a4e8
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61699052"
 ---
 # <a name="how-to-apply-a-guidelineset-to-a-drawing"></a>方法: 描画に GuidelineSet を適用する
-この例では、適用、<xref:System.Windows.Media.GuidelineSet>を<xref:System.Windows.Media.DrawingGroup>。  
+この例では、<xref:System.Windows.Media.GuidelineSet> を <xref:System.Windows.Media.DrawingGroup> に適用する方法を示します。  
   
- <xref:System.Windows.Media.DrawingGroup>クラスは、唯一の種類の<xref:System.Windows.Media.Drawing>を持つ、<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>プロパティ。 適用する、<xref:System.Windows.Media.GuidelineSet>の別の型に<xref:System.Windows.Media.Drawing>、追加、<xref:System.Windows.Media.DrawingGroup>し、適用、<xref:System.Windows.Media.GuidelineSet>を<xref:System.Windows.Media.DrawingGroup>。  
+ <xref:System.Windows.Media.DrawingGroup> クラスは、<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A> プロパティを持つ唯一の <xref:System.Windows.Media.Drawing> 型です。 別の <xref:System.Windows.Media.Drawing> 型に <xref:System.Windows.Media.GuidelineSet> を適用するには、それを <xref:System.Windows.Media.DrawingGroup> に追加し、<xref:System.Windows.Media.GuidelineSet> を <xref:System.Windows.Media.DrawingGroup> に適用します。  
   
 ## <a name="example"></a>例  
- 次の例では、2 つ作成されます<xref:System.Windows.Media.DrawingGroup>はほとんど同じです。 唯一の違いは、オブジェクト: 2 つ目<xref:System.Windows.Media.DrawingGroup>が、<xref:System.Windows.Media.GuidelineSet>と 1 つ目はありません。  
+ 次の例では、ほとんど同じである 2 つの <xref:System.Windows.Media.DrawingGroup> オブジェクトが作成されます。唯一の違いは、2 つ目の <xref:System.Windows.Media.DrawingGroup> に <xref:System.Windows.Media.GuidelineSet> があり、1 つ目にはそれがないことです。  
   
- この例からの出力を次の図に示します。 2 つの間の差。 レンダリングため<xref:System.Windows.Media.DrawingGroup>オブジェクトは、あまり目立たない、図面の特定の部分を拡大します。  
+ この例からの出力を次の図に示します。 2 つの <xref:System.Windows.Media.DrawingGroup> オブジェクトではレンダリングの違いが微妙であるため、図の一部を拡大してあります。  
   
  ![GuidelineSet が有効/無効な DrawingGroup](./media/graphicsmm-drawinggroup-guidelineset.png "graphicsmm_drawinggroup_guidelineset")  
   

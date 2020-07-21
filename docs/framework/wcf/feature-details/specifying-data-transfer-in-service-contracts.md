@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], data transfer
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
-ms.openlocfilehash: 47544cf74b4fa09fd8ee868ea940ef24a453840e
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: ae05fb5ea0ee4962d9889e2a29399a3913a0d9d5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834647"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600297"
 ---
 # <a name="specifying-data-transfer-in-service-contracts"></a>サービス コントラクトでのデータ転送の指定
 Windows Communication Foundation (WCF) は、メッセージングインフラストラクチャと考えることができます。 サービス操作では、メッセージを受信し、それらのメッセージを処理し、送信することができます。 メッセージは、操作コントラクトを使用して記述されます。 たとえば、次のようなコントラクトがあるとします。  
@@ -52,7 +52,7 @@ float GetAirfare(string fromCity, string toCity, out string currency);
     Function GetAirfare(fromCity As String, toCity As String) As Double  
 ```  
   
- また、参照パラメーターを使用すると、要求メッセージと応答メッセージの両方のパラメーター部分を作成できます。 パラメーターは、シリアル化 (XML への変換) が可能な型にする必要があります。 既定では、WCF は <xref:System.Runtime.Serialization.DataContractSerializer> クラスと呼ばれるコンポーネントを使用して、この変換を実行します。 ほとんどのプリミティブ型 (`int`、`string`、`float`、`DateTime` など) がサポートされます。 ユーザー定義型には、通常、データ コントラクトが存在する必要があります。 詳細については、「[データコントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)」を参照してください。  
+ また、参照パラメーターを使用すると、要求メッセージと応答メッセージの両方のパラメーター部分を作成できます。 パラメーターは、シリアル化 (XML への変換) が可能な型にする必要があります。 既定では、WCF はクラスと呼ばれるコンポーネントを使用して、 <xref:System.Runtime.Serialization.DataContractSerializer> この変換を実行します。 ほとんどのプリミティブ型 (`int`、`string`、`float`、`DateTime` など) がサポートされます。 ユーザー定義型には、通常、データ コントラクトが存在する必要があります。 詳細については、「[データコントラクトの使用](using-data-contracts.md)」を参照してください。  
   
 ```csharp
 public interface IAirfareQuoteService  
@@ -87,7 +87,7 @@ Public Interface IAirfareQuoteService
 End Interface  
 ```  
   
- 場合によっては、使用する型のシリアル化に `DataContractSerializer` が適さないことがあります。 WCF では、代替のシリアル化エンジンである <xref:System.Xml.Serialization.XmlSerializer>をサポートしています。これは、パラメーターをシリアル化するためにも使用できます。 <xref:System.Xml.Serialization.XmlSerializer> では、`XmlAttributeAttribute` などの属性を使用することによって、結果の XML をより細かく制御できます。 特定の操作やサービス全体で <xref:System.Xml.Serialization.XmlSerializer> を使用するように切り替えるには、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を操作またはサービスに適用します。 例 :  
+ 場合によっては、使用する型のシリアル化に `DataContractSerializer` が適さないことがあります。 WCF では、別のシリアル化エンジンであるをサポートしてい <xref:System.Xml.Serialization.XmlSerializer> ます。これは、パラメーターをシリアル化するためにも使用できます。 <xref:System.Xml.Serialization.XmlSerializer> では、`XmlAttributeAttribute` などの属性を使用することによって、結果の XML をより細かく制御できます。 特定の操作やサービス全体で <xref:System.Xml.Serialization.XmlSerializer> を使用するように切り替えるには、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を操作またはサービスに適用します。 次に例を示します。  
   
 ```csharp  
 [ServiceContract]  
@@ -124,7 +124,7 @@ Class Itinerary
 End Class  
 ```  
   
- 詳細については、「 [XmlSerializer クラスの使用](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)」を参照してください。 「XmlSerializer の使用」で説明するような明確な理由がある場合を除き、ここで示す <xref:System.Xml.Serialization.XmlSerializer> への手動での切り替えはお勧めしません。  
+ 詳細については、「 [XmlSerializer クラスの使用](using-the-xmlserializer-class.md)」を参照してください。 「XmlSerializer の使用」で説明するような明確な理由がある場合を除き、ここで示す <xref:System.Xml.Serialization.XmlSerializer> への手動での切り替えはお勧めしません。  
   
  .NET パラメーター名をコントラクト名から分離するには、<xref:System.ServiceModel.MessageParameterAttribute> 属性を使用し、`Name` プロパティを使用してコントラクト名を設定します。 たとえば、次の操作コントラクトは、このトピックの最初の例に相当します。  
   
@@ -141,13 +141,13 @@ public float GetAirfare(
 ```  
   
 ## <a name="describing-empty-messages"></a>空のメッセージの記述  
- 空の要求メッセージを記述するには、入力パラメーターや参照パラメーターを一切指定しません。 C# の場合:  
+ 空の要求メッセージを記述するには、入力パラメーターや参照パラメーターを一切指定しません。 たとえば、C# では、次のようになります。  
   
  `[OperationContract]`  
   
  `public int GetCurrentTemperature();`  
   
- VB の場合:  
+ たとえば、Visual Basic の場合は次のようになります。  
   
  `<OperationContract()>`  
   
@@ -221,7 +221,7 @@ End Interface
   
 <MessageContract()>  
 Public Class GetAirfareRequest  
-    <MessageHeader()>   
+    <MessageHeader()>
     Public Property date as DateTime  
     <MessageBodyMember()>  
     Public Property itinerary As Itinerary  
@@ -241,7 +241,7 @@ Public Class Itinerary
 End Class  
 ```  
   
- 詳細については、「[メッセージコントラクトの使用](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)」を参照してください。  
+ 詳細については、「[メッセージコントラクトの使用](using-message-contracts.md)」を参照してください。  
   
  前の例でも <xref:System.Runtime.Serialization.DataContractSerializer> クラスが既定で使用されます。 メッセージ コントラクトで、<xref:System.Xml.Serialization.XmlSerializer> クラスを使用することもできます。 これを行うには、操作またはコントラクトに <xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性を適用し、メッセージ ヘッダーと本文メンバーで <xref:System.Xml.Serialization.XmlSerializer> クラスと互換性のある型を使用します。  
   
@@ -301,7 +301,7 @@ Public Class UploadFileMessage
 End Class  
 ```  
   
- 詳細については、「 [Large Data And Streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)」を参照してください。  
+ 詳細については、「 [Large Data And Streaming](large-data-and-streaming.md)」を参照してください。  
   
 ## <a name="using-the-message-class"></a>メッセージ クラスの使用  
  送受信されるメッセージをプログラムによって完全に制御するには、次のコード例に示すように <xref:System.ServiceModel.Channels.Message> クラスを直接使用します。  
@@ -316,7 +316,7 @@ public void LogMessage(Message m);
 Sub LogMessage(m As Message)  
 ```  
   
- これは高度なシナリオです。詳細については、「 [Message クラスの使用](../../../../docs/framework/wcf/feature-details/using-the-message-class.md)」を参照してください。  
+ これは高度なシナリオです。詳細については、「 [Message クラスの使用](using-the-message-class.md)」を参照してください。  
   
 ## <a name="describing-fault-messages"></a>エラー メッセージの記述  
  一方向ではない操作では、戻り値と出力パラメーターまたは参照パラメーターによって記述されるメッセージに加え、通常の応答メッセージとエラー メッセージの少なくとも 2 つのメッセージを返すことができます。 たとえば、次の操作コントラクトがあるとします。  
@@ -368,7 +368,7 @@ Public Class
 End Class  
 ```  
   
- これらの追加エラーは、適切なデータ コントラクト型の <xref:System.ServiceModel.FaultException%601> をスローすることによって生成できます。 詳細については、「[例外とエラーの処理](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)」を参照してください。  
+ これらの追加エラーは、適切なデータ コントラクト型の <xref:System.ServiceModel.FaultException%601> をスローすることによって生成できます。 詳細については、「[例外とエラーの処理](../extending/handling-exceptions-and-faults.md)」を参照してください。  
   
  <xref:System.Xml.Serialization.XmlSerializer> クラスを使用してエラーを記述することはできません。 <xref:System.ServiceModel.XmlSerializerFormatAttribute> は、エラー コントラクトに影響を及ぼしません。  
   
@@ -401,7 +401,7 @@ public bool IsLibraryItemAvailable(LibraryItem item);
 [OperationContract]  
 public bool IsLibraryItemAvailable(LibraryItem item);  
   
-// code omitted   
+// code omitted
   
 [DataContract]  
 [KnownType(typeof(Book))]  
@@ -427,12 +427,12 @@ End Class
   
  <xref:System.Xml.Serialization.XmlIncludeAttribute> を使用する場合は、<xref:System.Xml.Serialization.XmlSerializer> 属性を使用できます。  
   
- <xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性は、操作に適用することもサービス全体に適用することもできます。 この属性は、<xref:System.Runtime.Serialization.KnownTypeAttribute> 属性と同様に、型を受け取るか、既知の型の一覧を取得するために呼び出すメソッドの名前を受け取ります。 詳細については、「[データコントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)」を参照してください。  
+ <xref:System.ServiceModel.ServiceKnownTypeAttribute> 属性は、操作に適用することもサービス全体に適用することもできます。 この属性は、<xref:System.Runtime.Serialization.KnownTypeAttribute> 属性と同様に、型を受け取るか、既知の型の一覧を取得するために呼び出すメソッドの名前を受け取ります。 詳細については、「[データコントラクトの既知の型](data-contract-known-types.md)」を参照してください。  
   
 ## <a name="specifying-the-use-and-style"></a>Use と Style の指定  
  Web サービス記述言語 (WSDL: Web Services Description Language) を使用してサービスを記述するときは、一般にドキュメントとリモート プロシージャ コール (RPC: Remote Procedure Call) の 2 つのスタイルが使用されます。 ドキュメント スタイルでは、スキーマを使用してメッセージ本文全体が記述されます。WSDL では、該当するスキーマの中の要素を参照して、メッセージ本文のさまざまな部分を記述します。 RPC スタイルでは、WSDL は、要素ではなく、メッセージの各部を表すスキーマ型を参照します。 場合によっては、これらのスタイルのいずれかを手動で選択することが必要になります。 これを行うには、<xref:System.ServiceModel.DataContractFormatAttribute> 属性を適用し、`Style` プロパティを設定するか (<xref:System.Runtime.Serialization.DataContractSerializer> を使用している場合)、`Style` 属性の <xref:System.ServiceModel.XmlSerializerFormatAttribute> を設定します (<xref:System.Xml.Serialization.XmlSerializer> を使用している場合)。  
   
- また、<xref:System.Xml.Serialization.XmlSerializer> はシリアル化された XML の形式を 2 とおり (`Literal` および `Encoded`) サポートしています。 `Literal` は、最も一般的に受け入れられるフォームであり、<xref:System.Runtime.Serialization.DataContractSerializer> がサポートする唯一の形式です。 `Encoded` は、SOAP 仕様のセクション5で説明されている従来の形式であり、新しいサービスにはお勧めできません。 `Encoded` モードに切り替えるには、`Use` 属性の <xref:System.ServiceModel.XmlSerializerFormatAttribute> プロパティを `Encoded` に設定します。  
+ また、<xref:System.Xml.Serialization.XmlSerializer> はシリアル化された XML の形式を 2 とおり (`Literal` および `Encoded`) サポートしています。 `Literal` は最も一般に受け入れられたフォームであり、<xref:System.Runtime.Serialization.DataContractSerializer> がサポートする唯一のフォームです。 `Encoded` は SOAP 仕様のセクション 5 に記載されたレガシ フォームであり、新しいサービスにはお勧めしません。 `Encoded` モードに切り替えるには、`Use` 属性の <xref:System.ServiceModel.XmlSerializerFormatAttribute> プロパティを `Encoded` に設定します。  
   
  ほとんどの場合、`Style` プロパティと `Use` プロパティの既定の設定は変更しないでください。  
   
@@ -440,7 +440,7 @@ End Class
  データをシリアル化する方法をカスタマイズする場合、さまざまな設定を行うことができます。  
   
 ### <a name="changing-server-serialization-settings"></a>サーバーのシリアル化設定の変更  
- 既定の <xref:System.Runtime.Serialization.DataContractSerializer> を使用している場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性をサービスに適用することで、サービスでのシリアル化プロセスの一部の側面を制御できます。 具体的には、`MaxItemsInObjectGraph` プロパティを使用して、<xref:System.Runtime.Serialization.DataContractSerializer> が逆シリアル化するオブジェクトの最大数を制限するクォータを設定できます。 また、`IgnoreExtensionDataObject` プロパティを使用すると、ラウンド トリップ バージョン管理機能を無効にできます。 クォータの詳細については、「[セキュリティに関するデータの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)」を参照してください。 ラウンドトリップの詳細については、「[上位互換性のあるデータコントラクト](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)」を参照してください。  
+ 既定の <xref:System.Runtime.Serialization.DataContractSerializer> を使用している場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性をサービスに適用することで、サービスでのシリアル化プロセスの一部の側面を制御できます。 具体的には、`MaxItemsInObjectGraph` プロパティを使用して、<xref:System.Runtime.Serialization.DataContractSerializer> が逆シリアル化するオブジェクトの最大数を制限するクォータを設定できます。 また、`IgnoreExtensionDataObject` プロパティを使用すると、ラウンド トリップ バージョン管理機能を無効にできます。 クォータの詳細については、「[セキュリティに関するデータの考慮事項](security-considerations-for-data.md)」を参照してください。 ラウンドトリップの詳細については、「[上位互換性のあるデータコントラクト](forward-compatible-data-contracts.md)」を参照してください。  
   
 ```csharp  
 [ServiceBehavior(MaxItemsInObjectGraph=100000)]  
@@ -464,9 +464,9 @@ End Interface
 ```  
   
 ### <a name="serialization-behaviors"></a>シリアル化の動作  
- WCF では、特定の操作に使用されているシリアライザーに応じて自動的に接続される、<xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> と <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> の2つの動作が使用できます。 これらの動作は自動的に適用されるため、通常、これらの動作を意識する必要はありません。  
+ WCF では、 <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> 特定の操作に使用されているシリアライザーに応じて自動的に接続されるとの2つの動作が使用できます。 これらの動作は自動的に適用されるため、通常、これらの動作を意識する必要はありません。  
   
- ただし、`DataContractSerializerOperationBehavior` には、`MaxItemsInObjectGraph`、`IgnoreExtensionDataObject`、および `DataContractSurrogate` の 3 つのプロパティがあり、これらを使用してシリアル化プロセスをカスタマイズできます。 最初の 2 つのプロパティの意味は、前のセクションの説明と同じです。 `DataContractSurrogate` プロパティを使用すると、シリアル化プロセスをカスタマイズおよび拡張するための強力な機構であるデータ コントラクト サロゲートを有効にできます。 詳細については、「[データコントラクトサロゲート](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)」を参照してください。  
+ ただし、`DataContractSerializerOperationBehavior` には、`MaxItemsInObjectGraph`、`IgnoreExtensionDataObject`、および `DataContractSurrogate` の 3 つのプロパティがあり、これらを使用してシリアル化プロセスをカスタマイズできます。 最初の 2 つのプロパティの意味は、前のセクションの説明と同じです。 `DataContractSurrogate` プロパティを使用すると、シリアル化プロセスをカスタマイズおよび拡張するための強力な機構であるデータ コントラクト サロゲートを有効にできます。 詳細については、「[データコントラクトサロゲート](../extending/data-contract-surrogates.md)」を参照してください。  
   
  `DataContractSerializerOperationBehavior` を使用すると、クライアントとサーバーの両方のシリアル化をカスタマイズできます。 クライアントで `MaxItemsInObjectGraph` クォータを増やす方法を次の例に示します。  
   
@@ -549,7 +549,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
         <client>  
             <endpoint address="http://example.com/myservice"  
                   behaviorConfiguration="LargeQuotaBehavior"  
-                binding="basicHttpBinding" bindingConfiguration=""   
+                binding="basicHttpBinding" bindingConfiguration=""
                             contract="IDataService"  
                 name="" />  
         </client>  
@@ -564,7 +564,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
   
  シナリオによっては、組み込みのシリアライザーでは不十分な場合があります。 ただし、ほとんどの場合、<xref:System.Runtime.Serialization.XmlObjectSerializer> と <xref:System.Runtime.Serialization.DataContractSerializer> の派生元である <xref:System.Runtime.Serialization.NetDataContractSerializer> 抽象クラスを使用できます。  
   
- 前の 3 つのケース (.NET 型の保存、オブジェクト グラフの保存、および `XmlObjectSerializer` ベースの完全なカスタム シリアル化) では、必ずカスタム シリアライザーをプラグインする必要があります。 具体的には、次の手順を実行します。  
+ 前の 3 つのケース (.NET 型の保存、オブジェクト グラフの保存、および `XmlObjectSerializer` ベースの完全なカスタム シリアル化) では、必ずカスタム シリアライザーをプラグインする必要があります。 この操作を行うには、次の手順に従います。  
   
 1. <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> から派生する独自の動作を記述します。  
   
@@ -572,10 +572,10 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
   
 3. サービス ホストを開いたり、クライアント チャネルを作成したりする前に、既存の <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> 動作を削除し、前の手順で作成したカスタム派生クラスをプラグインします。  
   
- 高度なシリアル化の概念の詳細については、「[シリアル化と逆シリアル](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)化」を参照してください。  
+ 高度なシリアル化の概念の詳細については、「[シリアル化と逆シリアル](serialization-and-deserialization.md)化」を参照してください。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [XmlSerializer クラスの使用](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)
-- [方法 : ストリーミングを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
-- [方法 : クラスまたは構造体に基本的なデータ コントラクトを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)
+- [XmlSerializer クラスの使用](using-the-xmlserializer-class.md)
+- [方法: ストリーミングを有効にする](how-to-enable-streaming.md)
+- [方法: クラスまたは構造体に基本的なデータ コントラクトを作成する](how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

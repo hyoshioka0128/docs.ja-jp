@@ -3,16 +3,16 @@ title: .NET for Apache Spark を使用した構造化ストリーミングのチ
 description: このチュートリアルでは、Spark 構造化ストリーミング用の .NET for Apache Spark の使用方法について説明します。
 author: mamccrea
 ms.author: mamccrea
-ms.date: 12/04/2019
+ms.date: 06/25/2020
 ms.topic: tutorial
-ms.openlocfilehash: d0fe79ef79125c06be9acd8ba80001a33e150adb
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 5420fe081db1704d7af647e8c88826c1bcf614d9
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802859"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617844"
 ---
-# <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>チュートリアル: .NET for Apache Spark を使用した構造化ストリーミング 
+# <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>チュートリアル: .NET for Apache Spark を使用した構造化ストリーミング
 
 このチュートリアルでは、.NET for Apache Spark を使用して Spark 構造化ストリーミングを呼び出す方法について説明します。 Spark 構造化ストリーミングは、リアルタイム データ ストリームを処理するための Apache Spark のサポートです。 ストリーム処理とは、ライブ データの生成中にそれを分析することを意味します。
 
@@ -24,6 +24,8 @@ ms.locfileid: "74802859"
 > * netcat を使用してデータ ストリームを作成する
 > * ユーザー定義関数と SparkSQL を使用してストリーミング データを分析する
 
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
+
 ## <a name="prerequisites"></a>必須コンポーネント
 
 これが初めての .NET for Apache Spark アプリケーションである場合は、基本について理解を深めるために、[概要のチュートリアル](get-started.md)に関する記事から始めてください。
@@ -32,7 +34,7 @@ ms.locfileid: "74802859"
 
 1. コマンド プロンプトで、次のコマンドを実行して、新しいコンソール アプリケーションを作成します。
 
-   ```console
+   ```dotnetcli
    dotnet new console -o mySparkStreamingApp
    cd mySparkStreamingApp
    ```
@@ -41,13 +43,13 @@ ms.locfileid: "74802859"
 
 1. アプリで .NET for Apache Spark を使用するには、Microsoft.Spark パッケージをインストールします。 コンソールで、次のコマンドを実行します。
 
-   ```console
+   ```dotnetcli
    dotnet add package Microsoft.Spark
    ```
 
 ## <a name="establish-and-connect-to-a-data-stream"></a>データ ストリームを確立して接続する
 
-ストリーム処理をテストする一般的な方法の 1 つとして、**netcat** を使用する方法があります。 netcat (*nc* とも呼ばれます) を使用すると、ネットワーク接続に対する読み取りと書き込みを行うことができます。 netcat とのネットワーク接続を確立するには、ターミナル ウィンドウを使用します。 
+ストリーム処理をテストする一般的な方法の 1 つとして、**netcat** を使用する方法があります。 netcat (*nc* とも呼ばれます) を使用すると、ネットワーク接続に対する読み取りと書き込みを行うことができます。 netcat とのネットワーク接続を確立するには、ターミナル ウィンドウを使用します。
 
 ### <a name="create-a-data-stream-with-netcat"></a>netcat を使用してデータ ストリームを作成する
 
@@ -108,14 +110,14 @@ DataFrame lines = spark
 
 Spark アプリケーションで UDF ("*ユーザー定義関数*") を使用して、データの計算と分析を実行できます。
 
-`udfArray` という名前の UDF を登録するために、次のコードを `Main` メソッドに追加します。 
+`udfArray` という名前の UDF を登録するために、次のコードを `Main` メソッドに追加します。
 
 ```csharp
 Func<Column, Column> udfArray =
     Udf<string, string[]>((str) => new string[] { str, $"{str} {str.Length}" });
 ```
 
-この UDF によって、netcat ターミナルから受け取った各文字列を処理して、元の文字列 (*str* に含まれています) と、その後ろに元の文字列の長さに連結された元の文字列が続く配列が生成されます。 
+この UDF によって、netcat ターミナルから受け取った各文字列を処理して、元の文字列 (*str* に含まれています) と、その後ろに元の文字列の長さに連結された元の文字列が続く配列が生成されます。
 
 たとえば、netcat ターミナルに *Hello world* と入力すると、次のような配列が生成されます。
 

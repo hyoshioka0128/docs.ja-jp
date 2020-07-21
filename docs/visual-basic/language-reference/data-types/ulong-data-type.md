@@ -16,39 +16,39 @@ helpviewer_keywords:
 - ULong data type
 - UL literal type characters [Visual Basic]
 ms.assetid: 017e0702-774e-44ae-bedc-786b424ca84e
-ms.openlocfilehash: 3c6cd4086e08b808c158948756b4806f098196b9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: ee9297ae917345d44d8e630bd09beea2245b56da
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343881"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415519"
 ---
 # <a name="ulong-data-type-visual-basic"></a>ULong データ型 (Visual Basic)
 
-0 ~ 18446744073709551615 (1.84 倍以上 10 ^ 19) の値の範囲内で、符号なし64ビット (8 バイト) の整数を保持します。
+0 から 18,446,744,073,709,551,615 (1.84 x 10 ^ 19 以上) までの値の範囲の符号なし 64 ビット (8 バイト) の整数を保持します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
-`ULong` データ型を使用して、`UInteger`に対して大きすぎるバイナリデータや、可能性のある最大の符号なし整数値を格納します。
+`ULong` データ型は、`UInteger` には大きすぎるバイナリ データや、可能な限り最大の符号なし整数値を格納する場合に使用します。
 
 `ULong` の既定値は 0 です。
 
 ## <a name="literal-assignments"></a>リテラルの代入
 
-`ULong` 変数は、10進リテラル、16進リテラル、8進数リテラル、または (Visual Basic 2017 で始まる) バイナリリテラルを割り当てることによって、宣言および初期化できます。 整数リテラルが `ULong` の範囲外にある場合 (つまり、<xref:System.UInt64.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.UInt64.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。
+`ULong` 変数を宣言し、10 進リテラル、16 進リテラル、8 進リテラル、または (Visual Basic 2017 以降) バイナリ リテラルを代入することによって初期化できます。 整数リテラルが `ULong` の範囲外にある場合 (つまり、<xref:System.UInt64.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.UInt64.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。
 
 次の例では、整数 7,934,076,125 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`ULong` 値に割り当てられています。
 
 [!code-vb[ULong](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ULong)]
 
 > [!NOTE]
-> プレフィックス `&h` または `&H` を使用して、16進リテラル、プレフィックス `&b` または `&B` がバイナリリテラルを示すようにし、プレフィックス `&o` または `&O` を使用して8進数リテラルを表します。 10 進リテラルには、プレフィックスはありません。
+> 16 進リテラルを表すにはプレフィックス `&h` または `&H` を使い、バイナリ リテラルを表すにはプレフィックス `&b` または `&B` を使い、8 進リテラルを表すにはプレフィックス `&o` または `&O` を使います。 10 進リテラルには、プレフィックスはありません。
 
-Visual Basic 2017 以降では、次の例に示すように、アンダースコア文字 (`_`) を桁区切り記号として使用して、読みやすくすることもできます。
+Visual Basic 2017 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
 
 [!code-vb[ULong](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#LongS)]
 
-Visual Basic 15.5 以降では、アンダースコア文字 (`_`) をプレフィックスと16進数、バイナリ、または8進数の間の先頭の区切り記号として使用することもできます。 例 :
+Visual Basic 15.5 以降では、プレフィックスと 16 進数、2 進数、または 8 進数の間に先頭の区切り記号としてアンダースコア文字 (`_`) を使用することもできます。 次に例を示します。
 
 ```vb
 Dim number As ULong = &H_F9AC_0326_1489_D68C
@@ -56,7 +56,7 @@ Dim number As ULong = &H_F9AC_0326_1489_D68C
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-数値リテラルには、次の例に示すように、`ULong` データ型を示す `UL` または `ul`[型の文字](../../programming-guide/language-features/data-types/type-characters.md)を含めることもできます。
+数値リテラルには、次の例に示すように、`UL` または `ul` [型文字](../../programming-guide/language-features/data-types/type-characters.md)を含めて、`ULong` データ型を表すこともできます。
 
 ```vb
 Dim number = &H_00_00_0A_96_2F_AC_14_D7ul
@@ -64,25 +64,25 @@ Dim number = &H_00_00_0A_96_2F_AC_14_D7ul
 
 ## <a name="programming-tips"></a>プログラミングのヒント
 
-- **負の数値。** `ULong` は符号なしの型であるため、負の数を表すことはできません。 `ULong`型に評価される式に対して単項マイナス記号 (`-`) 演算子を使用すると、Visual Basic 式が最初に `Decimal` に変換されます。
+- **負の数値。** `ULong` は符号なしの型であるため、負の数を表すことはできません。 `ULong` 型に評価される式で、単項マイナス (`-`) 演算子を使用すると、Visual Basic で式が最初に `Decimal` に変換されます。
 
-- **CLS 準拠。** `ULong` のデータ型は[共通言語仕様](https://www.ecma-international.org/publications/standards/Ecma-335.htm)(cls) の一部ではないため、cls 準拠のコードはそれを使用するコンポーネントを使用できません。
+- **CLS 準拠。** `ULong` データ型は[共通言語仕様](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS) に含まれないため、CLS に準拠しているコードではそれを使用するコンポーネントを使用できません。
 
-- **相互運用に関する考慮事項。** .NET Framework 用に作成されていないコンポーネント (オートメーションや COM オブジェクトなど) とやり取りしている場合は、`ulong` などの型が他の環境で異なるデータ幅 (32 ビット) を持つ可能性があることに注意してください。 このようなコンポーネントに32ビットの引数を渡す場合は、マネージ Visual Basic コードで `ULong` の代わりに `UInteger` として宣言します。
+- **相互運用の考慮事項。** オートメーション オブジェクトや COM オブジェクトなど、.NET Framework 用に作成されていないコンポーネントとやり取りする場合、`ulong` などの型は、他の環境ではデータ幅 (32 ビット) が異なる可能性があることに注意してください。 そのようなコンポーネントに 32 ビットの引数を渡す場合は、Visual Basic のマネージド コードで、`ULong` ではなく `UInteger` として宣言します。
 
-  さらに、オートメーションでは、Windows 95、Windows 98、Windows ME、または Windows 2000 で64ビットの整数はサポートされません。 これらのプラットフォームのオートメーションコンポーネントに Visual Basic `ULong` 引数を渡すことはできません。
+  さらに、オートメーションでは、Windows 95、Windows 98、Windows ME、または Windows 2000 での 64 ビットの整数はサポートされません。 これらのプラットフォームのオートメーション コンポーネントに Visual Basic の `ULong` 引数を渡すことはできません。
 
-- **広げ.** `ULong` のデータ型は、`Decimal`、`Single`、および `Double`に拡大変換されます。 つまり、<xref:System.OverflowException?displayProperty=nameWithType> エラーが発生することなく、`ULong` をこれらの型のいずれかに変換できます。
+- **拡大変換。** `ULong` データ型は、`Decimal`、`Single`、および `Double` に拡大変換されます。 これは、<xref:System.OverflowException?displayProperty=nameWithType> エラーを発生させることなく、これらの型のいずれかに `ULong` を変換できることを意味します。
 
-- **文字を入力します。** リテラルに `UL` リテラル型文字を追加すると、`ULong` データ型に強制されます。 `ULong` に識別子の型文字がありません。
+- **型文字。** あるリテラルにリテラルの型文字 `UL` を付けると、そのリテラルは `ULong` データ型に変換されます。 `ULong` には識別子の型文字がありません。
 
-- **フレームワークの種類。** .NET Framework において対応する型は、<xref:System.UInt64?displayProperty=nameWithType> 構造体です。
+- **Framework の型。** .NET Framework において対応する型は、<xref:System.UInt64?displayProperty=nameWithType> 構造体です。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.UInt64>
-- [データの種類](../../../visual-basic/language-reference/data-types/index.md)
-- [CString](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [方法 : 符号なしの型を使用する Windows の機能を呼び出す](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
-- [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [データの種類](index.md)
+- [データ型変換関数](../functions/type-conversion-functions.md)
+- [変換の概要](../keywords/conversion-summary.md)
+- [方法: 符号なしの型を使用する Windows の機能を呼び出す](../../programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
+- [データ型の有効な使用方法](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)

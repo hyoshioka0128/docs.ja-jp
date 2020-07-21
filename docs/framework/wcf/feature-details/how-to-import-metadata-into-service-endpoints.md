@@ -2,15 +2,15 @@
 title: '方法: メタデータをサービス エンドポイントにインポートする'
 ms.date: 03/30/2017
 ms.assetid: b69dbe20-92a1-4911-89d8-ffbc3dad4663
-ms.openlocfilehash: dce65c31134c211c134cbae2b9bd8296f74b1627
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1de316b8e91739d5e3e24ff960e2cdfb33cc7fab
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69930726"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597060"
 ---
 # <a name="how-to-import-metadata-into-service-endpoints"></a>方法: メタデータをサービス エンドポイントにインポートする
-このトピックでは、サービスエンドポイントのコレクションにメタデータをインポートし、[はじめに](../../../../docs/framework/wcf/samples/getting-started-sample.md)で定義されているサービスを使用する方法について説明します。 また、サービスからメタデータをインポートし、次にそのサービスに対して `Add` メソッドを呼び出すクライアント アプリケーションを作成する方法についても説明します。  
+このトピックでは、サービスエンドポイントのコレクションにメタデータをインポートし、[はじめに](../samples/getting-started-sample.md)で定義されているサービスを使用する方法について説明します。 また、サービスからメタデータをインポートし、次にそのサービスに対して `Add` メソッドを呼び出すクライアント アプリケーションを作成する方法についても説明します。  
   
 ### <a name="to-import-metadata-into-service-endpoints"></a>メタデータをサービス エンドポイントにインポートするには  
   
@@ -27,7 +27,7 @@ ms.locfileid: "69930726"
      [!code-csharp[UE_ImportMetadata#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/ue_importmetadata/cs/client.cs#2)]  
   
     > [!NOTE]
-    > メタデータのインポートが完了すると、クライアント チャネルの作成もメタデータのエクスポートもできなくなります。 これは、この時点で型情報を使用できないためです。 型情報は、サービスと実際に対話する場合またはメタデータをエクスポートする場合に必要です。 型情報を生成するには、コードを生成する必要があります。これについては、手順 4. ～ 5. で説明します。 別の方法として、<xref:System.ServiceModel.Description.MetadataResolver> ヘルパー クラスを使用することもできます。 詳細については、「[方法 :MetadataResolver を使用して、バインド](../../../../docs/framework/wcf/feature-details/how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)メタデータを動的に取得します。  
+    > メタデータのインポートが完了すると、クライアント チャネルの作成もメタデータのエクスポートもできなくなります。 これは、この時点で型情報を使用できないためです。 型情報は、サービスと実際に対話する場合またはメタデータをエクスポートする場合に必要です。 型情報を生成するには、コードを生成する必要があります。これについては、手順 4. ～ 5. で説明します。 別の方法として、<xref:System.ServiceModel.Description.MetadataResolver> ヘルパー クラスを使用することもできます。 詳細については、「[方法: MetadataResolver を使用してバインディングメタデータを動的に取得する](how-to-use-metadataresolver-to-obtain-binding-metadata-dynamically.md)」を参照してください。  
   
 4. 各コントラクトに型情報を生成します。  
   
@@ -39,5 +39,5 @@ ms.locfileid: "69930726"
   
 ## <a name="see-also"></a>関連項目
 
-- [メタデータ](../../../../docs/framework/wcf/feature-details/metadata.md)
-- [はじめに](../../../../docs/framework/wcf/samples/getting-started-sample.md)
+- [Metadata](metadata.md)
+- [はじめに](../samples/getting-started-sample.md)

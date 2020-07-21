@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 6f452da8-6ef8-41fd-9ab8-6f681cf7d433
 ms.openlocfilehash: d0600c7acdb138e363dcbece392bf4b8122cb250
 ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/31/2019
 ms.locfileid: "73191924"
@@ -21,9 +21,9 @@ ms.locfileid: "73191924"
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1. 入力したコードが正しいことを確認します。  
+1. 入力したコードが正しいことを確認してください。  
   
-2. 実行時間が短くなるように式を単純化します。  
+2. 実行時間が短くなるように式を単純化してください。  
   
 ## <a name="see-also"></a>関連項目
 

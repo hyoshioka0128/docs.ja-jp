@@ -64,3 +64,5 @@
   href: load-unload.md
 - name: 'チュートリアル: Visual Studio でマネージド アセンブリからの型を埋め込む'
   href: embed-types-visual-studio.md
+- name: MetadataLoadContext を使用してアセンブリの内容を検査する
+  href: inspect-contents-using-metadataloadcontext.md

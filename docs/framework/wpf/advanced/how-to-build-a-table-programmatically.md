@@ -9,25 +9,25 @@ helpviewer_keywords:
 ms.assetid: e3ca88f3-6e94-4b61-82fc-42104c10b761
 ms.openlocfilehash: 9c9061d3c4d6b3de5e1ab42a6b98c20813835ba8
 ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/22/2019
 ms.locfileid: "69964157"
 ---
 # <a name="how-to-build-a-table-programmatically"></a>方法: プログラムによってテーブルをビルドする
-次の例は、を<xref:System.Windows.Documents.Table>プログラムで作成し、コンテンツを設定する方法を示しています。 テーブルの内容は、 <xref:System.Windows.Documents.TableRow> <xref:System.Windows.Documents.Table.RowGroups%2A>オブジェクトに含まれるオブジェクトによって表される5つの行と、オブジェクトによって<xref:System.Windows.Documents.TableColumn>表される6つの列に分配されます。 たとえば、タイトル行はテーブル全体のタイトルの設定に使用され、ヘッダー行はテーブル内のデータ列の説明、フッター行は要約情報の格納に使用されます。  "タイトル"、"ヘッダー"、"フッター" 行の概念はテーブルに固有のものではなく、単純に異なる特性を持つ行です。 テーブルのセルには実際のコンテンツが含まれます。これは、テキスト、画像、 [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]またはその他のほとんどすべての要素で構成できます。  
+次の例は、プログラムで <xref:System.Windows.Documents.Table> を作成して内容を格納する方法を示しています。 テーブルの内容は 5 つの行 (<xref:System.Windows.Documents.Table.RowGroups%2A> オブジェクトに含まれる <xref:System.Windows.Documents.TableRow> オブジェクトにより表される) と 6 つの列 (<xref:System.Windows.Documents.TableColumn> オブジェクトにより表される) に配分されます。 たとえば、タイトル行はテーブル全体のタイトルの設定に使用され、ヘッダー行はテーブル内のデータ列の説明、フッター行は要約情報の格納に使用されます。  "タイトル"、"ヘッダー"、"フッター" 行の概念はテーブルに固有のものではなく、単純に異なる特性を持つ行です。 テーブルのセルには実際の内容が格納されます。テキスト、画像、またはその他のほとんどすべての [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] 要素を格納できます。  
   
 ## <a name="example"></a>例  
- まず、を<xref:System.Windows.Documents.Table>ホストするための<xref:System.Windows.Documents.Table> <xref:System.Windows.Documents.FlowDocument>が作成され、新しいが作成され、の内容に追加<xref:System.Windows.Documents.FlowDocument>されます。  
+ まず、<xref:System.Windows.Documents.Table> をホストする <xref:System.Windows.Documents.FlowDocument> が作成され、新しい <xref:System.Windows.Documents.Table> が作成され、<xref:System.Windows.Documents.FlowDocument> の内容に追加されます。  
   
  [!code-csharp[TableSnippets#_TableCreate](~/samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tablecreate)]
  [!code-vb[TableSnippets#_TableCreate](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tablecreate)]  
   
 ## <a name="example"></a>例  
- 次に、 <xref:System.Windows.Documents.TableColumn>いくつかの書式設定を適用して<xref:System.Windows.Documents.Table.Columns%2A> 、6つのオブジェクトが作成され、テーブルのコレクションに追加されます。  
+ 次に、6 つの <xref:System.Windows.Documents.TableColumn> オブジェクトが作成されてテーブルの <xref:System.Windows.Documents.Table.Columns%2A> に追加され、いくつかの書式設定が適用されます。  
   
 > [!NOTE]
-> テーブルの<xref:System.Windows.Documents.Table.Columns%2A>コレクションでは、0から始まる標準のインデックス作成が使用されていることに注意してください。  
+> テーブルの <xref:System.Windows.Documents.Table.Columns%2A> コレクションでは、0 から始まる標準インデックス作成が使用されることに注意してください。  
   
  [!code-csharp[TableSnippets#_TableCreateColumns](~/samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets/CSharp/Table.cs#_tablecreatecolumns)]
  [!code-vb[TableSnippets#_TableCreateColumns](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets/VisualBasic/Table.vb#_tablecreatecolumns)]  

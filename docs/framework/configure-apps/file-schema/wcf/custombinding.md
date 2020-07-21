@@ -3,20 +3,20 @@ title: <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
 ms.openlocfilehash: cdaaacf0dfa75209d001f6e8d6ac7175816048aa
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74140796"
 ---
-# <a name="custombinding"></a>\<customBinding >
+# \<customBinding>
 
 ユーザーのメッセージ スタックを完全に制御できます。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<system >** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;\<[**バインド**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**customBinding >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<customBinding>**  
 
 ## <a name="syntax"></a>構文
 
@@ -189,23 +189,23 @@ ms.locfileid: "74140796"
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
-|[\<compositeDuplex >](compositeduplex.md)|カスタム バインドの双方向のメッセージングを指定します。 たとえば HTTP のように、ネイティブでの二重通信を許可しないトランスポートで使用されます。 これとは対照的に、TCP では、二重通信がネイティブで許可されているので、クライアントにメッセージを返信するためにこのバインディング要素をサービスで使用する必要はありません。<br /><br /> クライアントは、サービスのアドレスを公開して、アクセスおよび接続の確立ができるようにする必要があります。 このクライアント アドレスは、`ClientBaseAddress` 属性によって提供されます。<br /><br /> この要素は <xref:System.ServiceModel.Configuration.CompositeDuplexElement> 型です。|
-|[\<の >](pnrppeerresolver.md)|PNRP (Peer Name Resolution Protocol) ピア名リゾルバーを指定します。 この要素は <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement> 型です。|
-|[\<reliableSession >](reliablesession.md)|WS-ReliableMessaging の設定を指定します。 この要素がカスタム バインディングに追加される場合、その結果となるチャネルにより、正確に 1 回の配信保証をサポートできます。 この要素は <xref:System.ServiceModel.Configuration.ReliableSessionElement> 型です。|
-|[\<セキュリティ >](security-of-custombinding.md)|カスタム バインドのセキュリティ オプションを指定します。 この要素は <xref:System.ServiceModel.Configuration.SecurityElement> 型です。|
-|[\<sslStreamSecurity >](sslstreamsecurity.md)|SSL ストリーム バインディングのセキュリティ設定を指定します。 この要素は <xref:System.ServiceModel.Configuration.SslStreamSecurityElement> 型です。|
-|[\<transactionFlow >](transactionflow.md)|バインディングがトランザクション フローをサポートし、プロトコルが `transactionProtocol` 属性によって使用される必要があることを指定します。 この要素は <xref:System.ServiceModel.Configuration.TransactionFlowElement> 型です。|
-|[windowsStreamSecurity > の \<](windowsstreamsecurity.md)|カスタム バインドのストリーミング セキュリティのオプションを指定します。 この要素は <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement> 型です。|
+|[\<compositeDuplex>](compositeduplex.md)|カスタム バインドの双方向のメッセージングを指定します。 たとえば HTTP のように、ネイティブでの二重通信を許可しないトランスポートで使用されます。 これとは対照的に、TCP では、二重通信がネイティブで許可されているので、クライアントにメッセージを返信するためにこのバインディング要素をサービスで使用する必要はありません。<br /><br /> クライアントは、サービスのアドレスを公開して、アクセスおよび接続の確立ができるようにする必要があります。 このクライアント アドレスは、`ClientBaseAddress` 属性によって提供されます。<br /><br /> この要素は <xref:System.ServiceModel.Configuration.CompositeDuplexElement> 型です。|
+|[\<pnrpPeerResolver>](pnrppeerresolver.md)|PNRP (Peer Name Resolution Protocol) ピア名リゾルバーを指定します。 この要素は <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement> 型です。|
+|[\<reliableSession>](reliablesession.md)|WS-ReliableMessaging の設定を指定します。 この要素がカスタム バインディングに追加される場合、その結果となるチャネルにより、正確に 1 回の配信保証をサポートできます。 この要素は <xref:System.ServiceModel.Configuration.ReliableSessionElement> 型です。|
+|[\<security>](security-of-custombinding.md)|カスタム バインドのセキュリティ オプションを指定します。 この要素は <xref:System.ServiceModel.Configuration.SecurityElement> 型です。|
+|[\<sslStreamSecurity>](sslstreamsecurity.md)|SSL ストリーム バインディングのセキュリティ設定を指定します。 この要素は <xref:System.ServiceModel.Configuration.SslStreamSecurityElement> 型です。|
+|[\<transactionFlow>](transactionflow.md)|バインディングがトランザクション フローをサポートし、プロトコルが `transactionProtocol` 属性によって使用される必要があることを指定します。 この要素は <xref:System.ServiceModel.Configuration.TransactionFlowElement> 型です。|
+|[\<windowsStreamSecurity>](windowsstreamsecurity.md)|カスタム バインドのストリーミング セキュリティのオプションを指定します。 この要素は <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement> 型です。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
 |バインディング|Windows Communication Foundation アプリケーションのすべてのバインディングを含みます。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
 カスタム バインディングを使用すると、WCF メッセージ スタックのフル コントロールが可能になります。 特定のエンティティの構成要素を追加した、特別にカスタマイズされたバインディングを作成できます。 たとえば、ユーザーは `httpsTransport` セクション、`reliableSession` セクション、および `security` セクションを組み合わせて、信頼できるセキュリティで保護された HTTPS ベースのバインディングを作成できます。
 
@@ -219,7 +219,7 @@ ms.locfileid: "74140796"
 
 3. セキュリティ (省略可能)
 
-4. Transport
+4. トランスポート
 
 5. エンコーダー (省略可能)
 
@@ -279,15 +279,15 @@ ms.locfileid: "74140796"
 
 各層のオプションの概要を次の表に示します。
 
-|レイヤー|オプション|必要|
+|レイヤー|Options|必須|
 |-----------|-------------|--------------|
-|トランザクション フロー|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|Ｘ|
-|信頼性|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|Ｘ|
-|セキュリティ|同期、非同期、トランスポート レベル|Ｘ|
-|形状の変更|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|Ｘ|
-|トランスポートのアップグレード|SSL ストリーム、Windows ストリーム、ピア リゾルバー|Ｘ|
-|エンコード|テキスト、バイナリ、MTOM、カスタム|[はい]|
-|Transport|TCP、名前付きパイプ、HTTP、HTTPS、MSMQ のフレーバー、カスタム|[はい]|
+|トランザクション フロー|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|いいえ|
+|[信頼性]|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|いいえ|
+|セキュリティ|同期、非同期、トランスポート レベル|いいえ|
+|形状の変更|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|いいえ|
+|トランスポートのアップグレード|SSL ストリーム、Windows ストリーム、ピア リゾルバー|いいえ|
+|エンコード|テキスト、バイナリ、MTOM、カスタム|はい|
+|トランスポート|TCP、名前付きパイプ、HTTP、HTTPS、MSMQ のフレーバー、カスタム|はい|
 
 さらに、独自のバインド要素を定義し、それを定義済みの層のいずれかの間に挿入できます。
 
@@ -299,11 +299,11 @@ ms.locfileid: "74140796"
 - <xref:System.ServiceModel.Channels.BindingElement>
 - <xref:System.ServiceModel.Configuration.BindingsSection>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [\<バインド >](bindings.md)
-- [バインディング](../../../wcf/bindings.md)
+- [\<binding>](bindings.md)
+- [バインド](../../../wcf/bindings.md)
 - [バインディングの拡張](../../../wcf/extending/extending-bindings.md)
 - [カスタム バインディング](../../../wcf/extending/custom-bindings.md)
 - [customBinding 要素](custombinding.md)
-- [バインディング](../../../wcf/bindings.md)
+- [バインド](../../../wcf/bindings.md)
 - [システムが提供するバインディングの構成](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [サービスとクライアントを構成するためのバインディングの使用](../../../wcf/using-bindings-to-configure-services-and-clients.md)

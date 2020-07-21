@@ -8,22 +8,22 @@ helpviewer_keywords:
 - line segments [WPF], creating
 - graphics [WPF], line segments
 ms.assetid: 0155ed47-a20d-49a7-a306-186d8e07fbc4
-ms.openlocfilehash: a50c98ccc3f6d517e0917cb774af4d49d2bfa7a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: fc7fbad1e534988a36d85c55c1b6a8249692ad67
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054550"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452085"
 ---
 # <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a>方法: PathGeometry で LineSegment を作成する
 
-この例では、線分を作成する方法を示します。 直線セグメントを作成するには、使用、 <xref:System.Windows.Media.PathGeometry>、 <xref:System.Windows.Media.PathFigure>、および<xref:System.Windows.Media.LineSegment>クラス。
+この例では、線分を作成する方法を示します。 線分を作成するには、<xref:System.Windows.Media.PathGeometry>、<xref:System.Windows.Media.PathFigure>、および <xref:System.Windows.Media.LineSegment> の各クラスを使用します。
 
 ## <a name="example"></a>例
 
-次の例では、描画、<xref:System.Windows.Media.LineSegment>から (10, 50) を (200, 70)。 次の図は、その結果<xref:System.Windows.Media.LineSegment>; 座標系を表示するグリッドの背景色が追加されました。
+次の例では、(10, 50) から (200, 70) までの <xref:System.Windows.Media.LineSegment> を描画します。 結果として得られる <xref:System.Windows.Media.LineSegment> を次の図に示します。座標を示すために、グリッド背景を追加しています。
 
-![PathFigure 内の LineSegment](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment") (10, 50) から (200, 70) まで描画 A LineSegment
+![PathFigure 内の LineSegment](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment") (10,50) から (200,70) まで描画された LineSegment
 
 [xaml]
 
@@ -36,7 +36,7 @@ ms.locfileid: "62054550"
 
 [xaml]
 
-(この属性の構文が実際に作成するメモを<xref:System.Windows.Media.StreamGeometry>の軽量バージョンを<xref:System.Windows.Media.PathGeometry>します。 詳細については、「[パス マークアップ構文](path-markup-syntax.md)」のページを参照してください。)
+(この属性構文では、実際には <xref:System.Windows.Media.PathGeometry> の軽量バージョンである <xref:System.Windows.Media.StreamGeometry> が作成されることに注意してください。 詳細については、「[パス マークアップ構文](path-markup-syntax.md)」のページを参照してください。)
 
 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、オブジェクト要素構文を使用して線分を描画することもできます。 次の例は、前の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の例と同じです。
 
@@ -100,7 +100,7 @@ myPath.StrokeThickness = 1
 myPath.Data = myPathGeometry
 ```
 
-この例は、より大きなサンプルの一部です。完全なサンプルについては、「[ジオメトリのサンプル](https://go.microsoft.com/fwlink/?LinkID=159989)」を参照してください。
+この例は、より大きなサンプルの一部です。完全なサンプルについては、「[ジオメトリのサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Geometry)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

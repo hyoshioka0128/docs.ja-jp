@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7c39fe7ffd59fa7a5564bb45f32a6a2fbe0ddb33
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 13da0ef6155d65fbc894c5747cc36bb3483ba518
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568196"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721557"
 ---
 ### <a name="change-in-semantics-of-stringnull-in-utf8jsonwriter"></a>Utf8JsonWriter での `(string)null` のセマンティクスの変更
 
@@ -58,7 +58,7 @@ using (Utf8JsonWriter writer = new Utf8JsonWriter(stream))
 
 3.0 Preview 8
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 <xref:System.Text.Json.Utf8JsonWriter> クラスを使用してプロパティ名および値を作成する場合、次のようになります。
 
@@ -70,7 +70,7 @@ using (Utf8JsonWriter writer = new Utf8JsonWriter(stream))
 
 #### <a name="category"></a>カテゴリ
 
-CoreFx
+Core .NET ライブラリ
 
 #### <a name="affected-apis"></a>影響を受ける API
 
@@ -98,7 +98,7 @@ CoreFx
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `M:System.Text.Json.Utf8JsonWriter.WriteBase64String(System.String,System.ReadOnlySpan{System.Byte})`
 - `M:System.Text.Json.Utf8JsonWriter.WriteBoolean(System.String,System.Boolean)`

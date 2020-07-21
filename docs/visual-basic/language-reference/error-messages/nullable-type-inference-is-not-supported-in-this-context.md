@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC36629
 ms.assetid: 0a1e2dbc-d9a4-433d-9306-c5540782b81d
-ms.openlocfilehash: 3ab8028062402e33b787a5a8649d93d975918393
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 52e5391fbcf30a4dada4d64a0e810c900ea85806
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665701"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409388"
 ---
 # <a name="nullable-type-inference-is-not-supported-in-this-context"></a>Null 許容型の推論はこのコンテキストではサポートされていません
-値型と構造体が null 許容宣言できます。  
+値の型と構造体は、Null 許容と宣言できます。  
   
 ```vb  
 Dim a? As Integer  
 Dim b As Integer?  
 ```  
   
- ただし、型の推定と組み合わせて、null 許容型の宣言を使用することはできません。 次の例では、このエラーが発生します。  
+ ただし、Null 許容の宣言を型の推定と組み合わせて使用することはできません。 次の例では、このエラーが発生します。  
   
 ```vb  
 ' Not valid.  
@@ -34,9 +34,9 @@ Dim b As Integer?
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 使用して、 `As` null 許容型として変数を宣言する句。  
+- `As` 句を使用して、変数を null 許容値型として宣言します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [null 許容値型](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [ローカル型の推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [null 許容値型](../../programming-guide/language-features/data-types/nullable-value-types.md)
+- [ローカル型の推論](../../programming-guide/language-features/variables/local-type-inference.md)

@@ -4,20 +4,20 @@ ms.date: 11/08/2019
 helpviewer_keywords:
 - gcNoAffinitize element
 - <gcNoAffinitize> element
-ms.openlocfilehash: 4031ff19131c905072696837d1622dbb6e54ae61
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 16d6e5adefe2b632d7251669650058d7df7cea70
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978415"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84004739"
 ---
-# <a name="gcnoaffinitize-element"></a>\<GCNoAffinitize > 要素
+# <a name="gcnoaffinitize-element"></a>\<GCNoAffinitize> 要素
 
 Cpu を使用してサーバー GC スレッドを関係付けするかどうかを指定します。
 
-\<構成 > \
-&nbsp;&nbsp;\<ランタイム > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCNoAffinitize >
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCNoAffinitize>
 
 ## <a name="syntax"></a>構文
 
@@ -38,7 +38,7 @@ Cpu を使用してサーバー GC スレッドを関係付けするかどうか
 
 #### <a name="enabled-attribute"></a>enabled 属性
 
-|[値]|説明|
+|値|Description|
 |-----------|-----------------|
 |`false`|アフィニティ化する server GC スレッドと Cpu。 既定値です。|
 |`true`|では、Cpu を使用してサーバー GC スレッドを関係付けません。|
@@ -49,18 +49,18 @@ Cpu を使用してサーバー GC スレッドを関係付けするかどうか
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-既定では、サーバー GC スレッドはそれぞれの Cpu とハード関係があります。 システムの使用可能な各プロセッサには、独自の GC ヒープとスレッドがあります。 これは、キャッシュの使用を最適化するため、通常は推奨される設定です。 .NET Framework 4.6.2 以降では、 **GCNoAffinitize**要素の `enabled` 属性を `false`に設定することにより、サーバー GC スレッドと cpu を密結合しないように指定できます。
+既定では、サーバー GC スレッドはそれぞれの Cpu とハード関係があります。 システムの使用可能な各プロセッサには、独自の GC ヒープとスレッドがあります。 これは、キャッシュの使用を最適化するため、通常は推奨される設定です。 4.6.2 .NET Framework 以降では、 **GCNoAffinitize**要素の属性をに設定することにより、 `enabled` `true` サーバー GC スレッドと cpu を密に結合しないように指定できます。
 
 Cpu を使用してサーバー GC スレッドを関係付けしないように、 **GCNoAffinitize**構成要素のみを指定できます。 また、アプリケーションで使用される GC ヒープとスレッドの数を制御するために、この要素を[Gの Apcount](gcheapcount-element.md)要素と共に使用することもできます。
 
-**GCNoAffinitize**要素の `enabled` 属性が `false` (既定値) の場合は、 [g apcount](gcheapcount-element.md)要素を使用して gc スレッドとヒープの数を指定することもできます。また、 [GCHeapAffinitizeMask](gcheapaffinitizemask-element.md)要素を使用して、gc スレッドとヒープが関連付けられるプロセッサを指定することもできます。
+`enabled` **GCNoAffinitize**要素の属性が `false` (既定値) の場合は、 [g apcount](gcheapcount-element.md)要素を使用して gc スレッドとヒープの数を指定することもできます。また、 [GCHEAPAFFINITIZEMASK](gcheapaffinitizemask-element.md)要素を使用して、gc スレッドとヒープが関連付けられているプロセッサを指定することもできます。
 
 ## <a name="example"></a>例
 

@@ -1,5 +1,6 @@
 ---
 title: マルチ ドキュメント インターフェイス (MDI) アプリケーション
+description: マルチドキュメントインターフェイス (MDI) アプリケーションを使用して複数のドキュメントを同時に表示する Windows フォーム方法について説明します。各ドキュメントは、それぞれのウィンドウに表示されます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - forms [Windows Forms], MDI
@@ -7,18 +8,18 @@ helpviewer_keywords:
 - Windows Forms, MDI applications
 - MDI
 ms.assetid: 599faf75-13cf-49cc-ad3c-255545e5cb97
-ms.openlocfilehash: 23e0275d5e6b081ec02d669a78e8695453360637
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0912a989ac1710d72c9db1cceb0e695f0ca85dee
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956558"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174654"
 ---
 # <a name="multiple-document-interface-mdi-applications"></a>マルチ ドキュメント インターフェイス (MDI) アプリケーション
 マルチドキュメントインターフェイス (MDI) アプリケーションを使用すると、複数のドキュメントを同時に表示することができ、各ドキュメントは独自のウィンドウに表示されます。 MDI アプリケーションには、多くの場合、ウィンドウまたはドキュメントを切り替えるためのサブメニューを含む [ウィンドウ] メニュー項目があります。  
   
 > [!NOTE]
-> Windows フォームの MDI フォームとシングルドキュメントインターフェイス (SDI) ウィンドウには、いくつかの動作の違いがあります。 プロパティ`Opacity`は、MDI 子フォームの外観には影響しません。 また、メソッドは、MDI 子フォームの動作には影響しません。 <xref:System.Windows.Forms.Form.CenterToParent%2A>  
+> Windows フォームの MDI フォームとシングルドキュメントインターフェイス (SDI) ウィンドウには、いくつかの動作の違いがあります。 プロパティは、 `Opacity` MDI 子フォームの外観には影響しません。 また、メソッドは、 <xref:System.Windows.Forms.Form.CenterToParent%2A> MDI 子フォームの動作には影響しません。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法: MDI 親フォームを作成する](how-to-create-mdi-parent-forms.md)  

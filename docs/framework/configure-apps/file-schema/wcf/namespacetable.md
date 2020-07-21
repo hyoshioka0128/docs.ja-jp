@@ -3,20 +3,20 @@ title: <namespaceTable>
 ms.date: 03/30/2017
 ms.assetid: 64801766-01b7-4c65-9ce6-70ad5af67689
 ms.openlocfilehash: aefe7beec7335d80341e670961800907c2bd0200
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855101"
 ---
-# <a name="namespacetable"></a>\<namespaceTable >
+# \<namespaceTable>
 
 名前空間とプレフィックスのマッピングを含む要素セットを定義する構成セクションを表します。これは、ルーティングの XPath フィルターで使用されます。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ルーティング >** ](routing.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<namespaceTable >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<routing>**](routing.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<namespaceTable>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -41,15 +41,15 @@ ms.locfileid: "70855101"
 
 ### <a name="child-elements"></a>子要素
 
-|     | 説明 |
+|     | Description |
 | --- | ----------- |
-| [ **\<フィルター >** ](filter.md) | XPath 式に使用される名前空間とプレフィックスのマッピングを定義します。 |
+| [**\<filter>**](filter.md) | XPath 式に使用される名前空間とプレフィックスのマッピングを定義します。 |
 
 ### <a name="parent-elements"></a>親要素
 
-|     | 説明 |
+|     | Description |
 | --- | ----------- |
-| [ **\<ルーティング >** ](routing.md) | 一連のルーティングフィルターを定義するための構成セクションを表します。これにより、受信メッセージ<xref:System.ServiceModel.Dispatcher.MessageFilter>を評価するときに使用する Windows Communication Foundation (WCF) の種類、およびターゲットエンドポイントを定義するルーティングテーブルを決定します。フィルターが一致したときにメッセージをに送信します。 |
+| [**\<routing>**](routing.md) | 一連のルーティングフィルターを定義するための構成セクションを表します。これにより、受信メッセージを評価するときに使用される Windows Communication Foundation (WCF) の種類、 <xref:System.ServiceModel.Dispatcher.MessageFilter> およびフィルターが一致したときにメッセージを送信するターゲットエンドポイントを定義するルーティングテーブルが決定されます。 |
 
 ## <a name="see-also"></a>関連項目
 

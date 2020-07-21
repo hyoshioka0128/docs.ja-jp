@@ -1,5 +1,6 @@
 ---
 title: '方法: WebRequest クラスを使用してデータを送信する'
+description: .NET Framework の WebRequest クラスを使用してサーバーにデータを送信する方法について学習します。 この手順は、通常、Web ページにデータを投稿するときに使用されます。
 ms.date: 03/25/2019
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - WebRequest class, sending data to a host
 - Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
-ms.openlocfilehash: 2467b289df7a0361b51ad91d4458d32742c42275
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 4b353250fec778ee8b352f13de6d7faaf15c13ee
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040828"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502445"
 ---
 # <a name="how-to-send-data-by-using-the-webrequest-class"></a>方法: WebRequest クラスを使用してデータを送信する
 

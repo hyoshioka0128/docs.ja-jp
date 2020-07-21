@@ -8,7 +8,7 @@
     - name: 新しい Windows フォームの作成
       href: creating-a-new-windows-form.md
       items:
-        - name: '方法:コマンド ラインから Windows フォーム アプリケーションを作成する'
+        - name: '方法: コマンド ラインから Windows フォーム アプリケーションを作成する'
           href: how-to-create-a-windows-forms-application-from-the-command-line.md
         - name: Windows フォームの座標
           href: windows-forms-coordinates.md
@@ -19,28 +19,28 @@
           href: events-overview-windows-forms.md
         - name: イベント ハンドラーの概要
           href: event-handlers-overview-windows-forms.md
-        - name: '方法:Windows フォームで実行時にイベント ハンドラーを作成する'
+        - name: '方法: Windows フォームで実行時にイベント ハンドラーを作成する'
           href: how-to-create-event-handlers-at-run-time-for-windows-forms.md
-        - name: '方法:Windows フォームの 1 つのイベント ハンドラーに複数のイベントを関連付ける'
+        - name: '方法: Windows フォームの 1 つのイベント ハンドラーに複数のイベントを関連付ける'
           href: how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md
         - name: Windows フォームのイベントの順序
           href: order-of-events-in-windows-forms.md
     - name: Windows フォームのサイズとスケールを調整する
       href: adjusting-the-size-and-scale-of-windows-forms.md
       items:
-        - name: '方法:Windows フォームのサイズ変更'
+        - name: '方法: Windows フォームのサイズ変更'
           href: how-to-resize-windows-forms.md
         - name: Windows フォームにおける自動スケーリング
           href: automatic-scaling-in-windows-forms.md
           items:
-            - name: '方法:Windows フォーム アプリケーションでのフォント パターンの変更に応答する'
+            - name: '方法: Windows フォーム アプリケーションでのフォント パターンの変更に応答する'
               href: how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md
         - name: Windows フォームの高 DPI サポート
           href: high-dpi-support-in-windows-forms.md
     - name: Windows フォームの表示形式の変更
       href: changing-the-appearance-of-windows-forms.md
       items:
-        - name: '方法:Windows フォームの境界線を変更する'
+        - name: '方法: Windows フォームの境界線を変更する'
           href: how-to-change-the-borders-of-windows-forms.md
     - name: Windows フォーム コントロール
       href: ./controls/
@@ -56,11 +56,11 @@
               href: how-keyboard-input-works.md
             - name: キーボード イベントの使用
               href: using-keyboard-events.md
-            - name: '方法:キーボード入力を標準コントロールに変更する'
+            - name: '方法: キーボード入力を標準コントロールに変更する'
               href: how-to-modify-keyboard-input-to-a-standard-control.md
-            - name: '方法:どの修飾子キーが押されたかを判断する'
+            - name: '方法: どの修飾子キーが押されたかを判断する'
               href: how-to-determine-which-modifier-key-was-pressed.md
-            - name: '方法:キーボード入力をフォーム レベルで処理する'
+            - name: '方法: キーボード入力をフォーム レベルで処理する'
               href: how-to-handle-keyboard-input-at-the-form-level.md
         - name: Windows フォーム アプリケーションにおけるマウス入力
           href: mouse-input-in-a-windows-forms-application.md
@@ -69,7 +69,7 @@
               href: how-mouse-input-works-in-windows-forms.md
             - name: Windows フォームにおけるマウス イベント
               href: mouse-events-in-windows-forms.md
-            - name: '方法:クリックとダブルクリックを識別する'
+            - name: '方法: クリックとダブルクリックを識別する'
               href: how-to-distinguish-between-clicks-and-double-clicks.md
             - name: Windows フォームにおけるマウス ポインター
               href: mouse-pointers-in-windows-forms.md
@@ -77,16 +77,16 @@
               href: mouse-capture-in-windows-forms.md
             - name: Windows フォームにおけるドラッグ アンド ドロップ機能
               href: drag-and-drop-functionality-in-windows-forms.md
-        - name: '方法:マウス イベントとキーボード イベントをコードでシミュレートする'
+        - name: '方法: マウス イベントとキーボード イベントをコードでシミュレートする'
           href: how-to-simulate-mouse-and-keyboard-events-in-code.md
-        - name: '方法:Windows フォーム コントロールでユーザー入力イベントを処理する'
+        - name: '方法: Windows フォーム コントロールでユーザー入力イベントを処理する'
           href: how-to-handle-user-input-events-in-windows-forms-controls.md
         - name: Windows フォームでのユーザー入力の検証
           href: user-input-validation-in-windows-forms.md
     - name: Windows フォームのダイアログ ボックス
       href: dialog-boxes-in-windows-forms.md
       items:
-        - name: '方法:Windows フォームのダイアログ ボックスを表示する'
+        - name: '方法: Windows フォームのダイアログ ボックスを表示する'
           href: how-to-display-dialog-boxes-for-windows-forms.md
     - name: Windows フォームでのデータ バインディング
       href: windows-forms-data-binding.md
@@ -99,23 +99,23 @@
           href: interfaces-related-to-data-binding.md
         - name: Windows フォーム データ バインディングの変更通知
           href: change-notification-in-windows-forms-data-binding.md
-        - name: '方法:PropertyNameChanged パターンを適用する'
+        - name: '方法: PropertyNameChanged パターンを適用する'
           href: how-to-apply-the-propertynamechanged-pattern.md
-        - name: '方法:バインド コントロールを作成して表示データの書式を設定する'
+        - name: '方法: バインド コントロールを作成して表示データの書式を設定する'
           href: how-to-create-a-bound-control-and-format-the-displayed-data.md
-        - name: '方法:Windows フォームに単純バインド コントロールを作成する'
+        - name: '方法: Windows フォームに単純バインド コントロールを作成する'
           href: how-to-create-a-simple-bound-control-on-a-windows-form.md
-        - name: '方法:複数のコントロールを 1 つのデータ ソースにバインドして同期状態を保つ'
+        - name: '方法: 複数のコントロールを 1 つのデータ ソースにバインドして同期状態を保つ'
           href: multiple-controls-bound-to-data-source-synchronized.md
-        - name: '方法:子テーブルの選択行が現在位置を保持することを保証する'
+        - name: '方法: 子テーブルの選択行が現在位置を保持することを保証する'
           href: ensure-the-selected-row-in-a-child-table-correct.md
-        - name: '方法:IListSource インターフェイスを実装する'
+        - name: '方法: IListSource インターフェイスを実装する'
           href: how-to-implement-the-ilistsource-interface.md
-        - name: '方法:INotifyPropertyChanged インターフェイスを実装する'
+        - name: '方法: INotifyPropertyChanged インターフェイスを実装する'
           href: how-to-implement-the-inotifypropertychanged-interface.md
-        - name: '方法:ITypedList インターフェイスを実装する'
+        - name: '方法: ITypedList インターフェイスを実装する'
           href: how-to-implement-the-itypedlist-interface.md
-        - name: '方法:Windows フォームでデータ間を移動する'
+        - name: '方法: Windows フォームでデータ間を移動する'
           href: how-to-navigate-data-in-windows-forms.md
     - name: Windows フォームのセキュリティ
       href: windows-forms-security.md
@@ -130,7 +130,9 @@
           href: additional-security-considerations-in-windows-forms.md
     - name: Windows フォームの ClickOnce 配置
       href: clickonce-deployment-for-windows-forms.md
-    - name: '方法:Windows フォームのコレクションにアクセス キーを指定する'
+    - name: .NET Core 3.0 でのアクセシビリティの向上
+      href: windows-forms-accessibility-improvements.md
+    - name: '方法: Windows フォームのコレクションにアクセス キーを指定する'
       href: how-to-access-keyed-collections-in-windows-forms.md
     - name: Windows フォーム アプリケーションの拡張
       href: ./advanced/

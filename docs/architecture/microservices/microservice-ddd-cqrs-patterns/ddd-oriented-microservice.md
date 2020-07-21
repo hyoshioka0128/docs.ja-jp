@@ -2,12 +2,12 @@
 title: DDD 指向マイクロサービスの設計
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | DDD 指向の注文マイクロサービスの設計とそのアプリケーション レイヤーを理解する
 ms.date: 10/08/2018
-ms.openlocfilehash: c5ac55978ca979a3ae055d9b0cd2d3c6b3187b4e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 583e103c8bd9d828731a658ea2fd2aa0758e7a12
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739949"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988740"
 ---
 # <a name="design-a-ddd-oriented-microservice"></a>DDD 指向マイクロサービスの設計
 

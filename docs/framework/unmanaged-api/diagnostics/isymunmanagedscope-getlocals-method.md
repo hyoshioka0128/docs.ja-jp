@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 17c45f15-8c44-44da-b070-f902077b36e4
 topic_type:
 - apiref
-ms.openlocfilehash: bf932b63973f93c56883f099ddaadd9d1519f337
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0acd31d85504688427cace0222a657885035c537
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446331"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615385"
 ---
 # <a name="isymunmanagedscopegetlocals-method"></a>ISymUnmanagedScope::GetLocals メソッド
 このスコープ内で定義されているローカル変数を取得します。  
@@ -37,10 +37,10 @@ HRESULT GetLocals(
   
 ## <a name="parameters"></a>パラメーター  
  `cLocals`  
- から`locals` 配列のサイズを示す `ULONG32`。  
+ から`ULONG32`配列のサイズを示す `locals` 。  
   
  `pcLocals`  
- 入出力ローカル変数を格納するために必要なバッファーのサイズを受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`ローカル変数を格納するために必要なバッファーのサイズを受け取るへのポインター。  
   
  `locals`  
  入出力ローカル変数を受け取る配列。  
@@ -51,6 +51,6 @@ HRESULT GetLocals(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedScope インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+- [ISymUnmanagedScope インターフェイス](isymunmanagedscope-interface.md)

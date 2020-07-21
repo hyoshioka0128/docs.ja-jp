@@ -2,21 +2,17 @@
 title: Windows Workflow Foundation (WF) への移行のガイドライン
 ms.date: 06/19/2017
 ms.assetid: 1da7f5ff-5a67-44ba-b165-f3e5de008e4a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8ece4c7d6addd10b4a626dc9e9dcb9f1dc5abfc8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5a6ad061392631ca003e47b249cd2e331c1c68fa
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140361"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142473"
 ---
 # <a name="windows-workflow-foundation-wf-migration-guidance"></a>Windows Workflow Foundation (WF) への移行のガイドライン
 
-このセクションには、以前のバージョンの Windows Workflow Foundation (WF) からのワークフローの移行に関するトピックが含まれています。
+このセクションでは、以前のバージョンの Windows ワークフロー ファウンデーション (WF) からのワークフローの移行に関するトピックを示します。
 
-[移行のガイダンス](migration-guidance.md)   
-移行に関するトピックが記載されたホワイトペーパーへのリンクの一覧を含んでいます。
+[移行のガイダンス](migration-guidance.md)移行に関するトピックに関するホワイト ペーパーへのリンクの一覧を示します。
 
-[Interop アクティビティを使用した .NET Framework 4 での .NET Framework 3.0 WF 活動の使用](net-framework-3-0-wf-in-net-framework-4-interop.md)   
-Interop アクティビティを使用して、.NET Framework 4.6.1 ワークフロー内に .NET Framework 3.5 アクティビティを埋め込む方法について説明します。
+[NET Framework 3.0 WF アクティビティを相互運用アクティビティで使用する .NET Framework 4](net-framework-3-0-wf-in-net-framework-4-interop.md)相互運用アクティビティを使用して .NET Framework 3.5 アクティビティを .NET Framework 4.6.1 ワークフロー内に埋め込む方法について説明します。

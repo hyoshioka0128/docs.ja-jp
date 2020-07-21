@@ -1,7 +1,7 @@
 - name: 共変性と反変性
   href: index.md
   items:
-    - name: ジェネリック インターフェイスの変性
+    - name: ジェネリック インターフェイスの分散
       href: variance-in-generic-interfaces.md
       items:
         - name: バリアント ジェネリック インターフェイスの作成
@@ -13,5 +13,5 @@
       items:
         - name: デリゲートの変性の使用
           href: using-variance-in-delegates.md
-        - name: Func および Action 汎用デリゲートでの変性の使用
+        - name: ' Func および Action 汎用デリゲートでの変性の使用'
           href: using-variance-for-func-and-action-generic-delegates.md

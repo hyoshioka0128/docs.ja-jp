@@ -1,5 +1,5 @@
 ---
-title: '方法: Windows フォーム TreeView コントロールでノードを追加および削除する'
+title: ツリー ビュー コントロールを使用したノードの追加と削除
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,19 +11,19 @@ helpviewer_keywords:
 - tree nodes in TreeView control
 - TreeView control [Windows Forms], adding nodes
 ms.assetid: de1b82db-4905-449a-9f59-af271a6b6673
-ms.openlocfilehash: 4cbb5fbdb24790a7ddbce5c38060703c7ba7024a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: f1e74e6d2f827167c32a6955b3010b59cb2f85b8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326893"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142213"
 ---
-# <a name="how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control"></a>方法: Windows フォーム TreeView コントロールでノードを追加および削除する
-Windows フォーム<xref:System.Windows.Forms.TreeView>コントロール内の最上位ノードを保存します。 その<xref:System.Windows.Forms.TreeView.Nodes%2A>コレクション。 各<xref:System.Windows.Forms.TreeNode>独自もが<xref:System.Windows.Forms.TreeNode.Nodes%2A>その子ノードを格納するコレクション。 両方のコレクション プロパティは型<xref:System.Windows.Forms.TreeNodeCollection>、高を追加するための標準的なコレクションのメンバーを削除して、ノード階層の 1 つのレベルにあるノードの再配置します。  
+# <a name="how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control"></a>方法 : Windows フォーム TreeView コントロールでノードを追加および削除する
+Windows フォーム<xref:System.Windows.Forms.TreeView>コントロールは、最上位のノードを<xref:System.Windows.Forms.TreeView.Nodes%2A>コレクションに格納します。 また<xref:System.Windows.Forms.TreeNode>、子ノードを<xref:System.Windows.Forms.TreeNode.Nodes%2A>格納する独自のコレクションも用意されています。 どちらのコレクション プロパティも<xref:System.Windows.Forms.TreeNodeCollection>type で、ノード階層の単一レベルでノードを追加、削除、および再配置できる標準コレクション メンバーを提供します。  
   
 ### <a name="to-add-nodes-programmatically"></a>プログラムでノードを追加するには  
   
-1. 使用して、<xref:System.Windows.Forms.TreeNodeCollection.Add%2A>のツリー ビューのメソッド<xref:System.Windows.Forms.TreeView.Nodes%2A>プロパティ。  
+1. ツリー<xref:System.Windows.Forms.TreeNodeCollection.Add%2A>ビューのプロパティの<xref:System.Windows.Forms.TreeView.Nodes%2A>メソッドを使用します。  
   
     ```vb  
     ' Adds new node as a child node of the currently selected node.  
@@ -43,9 +43,9 @@ Windows フォーム<xref:System.Windows.Forms.TreeView>コントロール内の
     treeView1->SelectedNode->Nodes->Add(newNode);  
     ```  
   
-### <a name="to-remove-nodes-programmatically"></a>プログラムでノードを削除するには  
+### <a name="to-remove-nodes-programmatically"></a>プログラムによってノードを削除するには  
   
-1. 使用して、<xref:System.Windows.Forms.TreeNodeCollection.Remove%2A>のツリー ビューのメソッド<xref:System.Windows.Forms.TreeView.Nodes%2A>1 つのノードを削除するプロパティまたは<xref:System.Windows.Forms.TreeNodeCollection.Clear%2A>メソッドをすべてのノードをオフにします。  
+1. ツリー<xref:System.Windows.Forms.TreeNodeCollection.Remove%2A>ビューのプロパティのメソッドを使用<xref:System.Windows.Forms.TreeView.Nodes%2A>して単一のノードを削除するか、<xref:System.Windows.Forms.TreeNodeCollection.Clear%2A>すべてのノードをクリアするメソッドを使用します。  
   
     ```vb  
     ' Removes currently selected node, or root if nothing is selected.  
@@ -55,7 +55,7 @@ Windows フォーム<xref:System.Windows.Forms.TreeView>コントロール内の
     ```  
   
     ```csharp  
-    // Removes currently selected node, or root if nothing   
+    // Removes currently selected node, or root if nothing
     // is selected.  
     treeView1.Nodes.Remove(treeView1.SelectedNode);  
     // Clears all nodes.  
@@ -74,7 +74,7 @@ Windows フォーム<xref:System.Windows.Forms.TreeView>コントロール内の
 
 - [TreeView コントロール](treeview-control-windows-forms.md)
 - [TreeView コントロールの概要](treeview-control-overview-windows-forms.md)
-- [方法: Windows フォーム TreeView コントロールのアイコンを設定します。](how-to-set-icons-for-the-windows-forms-treeview-control.md)
-- [方法: Windows フォーム TreeView コントロールのすべてのノードを反復処理します。](how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)
-- [方法: クリックしてされた TreeView ノードを決定します。](how-to-determine-which-treeview-node-was-clicked-windows-forms.md)
-- [方法: TreeView コントロールまたは ListView コントロール (Windows フォーム) にカスタム情報を追加します。](add-custom-information-to-a-treeview-or-listview-control-wf.md)
+- [方法: Windows フォーム TreeView コントロールのアイコンを設定する](how-to-set-icons-for-the-windows-forms-treeview-control.md)
+- [方法 : Windows フォーム TreeView コントロールのすべてのノードを反復処理する](how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)
+- [方法 : クリックされた TreeView ノードを判別する](how-to-determine-which-treeview-node-was-clicked-windows-forms.md)
+- [方法 : TreeView コントロールまたは ListView コントロール (Windows フォーム) にカスタム情報を追加する](add-custom-information-to-a-treeview-or-listview-control-wf.md)

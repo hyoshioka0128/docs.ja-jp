@@ -1,16 +1,17 @@
 ---
 title: DataAdapter によるデータ ソースの更新
+description: DataAdapter の Update メソッドが、DataSet からの変更を ADO.NET アプリケーションのデータ ソースに反映させて解決する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-ms.openlocfilehash: 4a6e22352a309f9d624c6922abc531cb31a5baf1
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
-ms.translationtype: MT
+ms.openlocfilehash: e2348a3a89aa1c28856bfc21aaa25f2c8327aac7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736685"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286185"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>DataAdapter によるデータ ソースの更新
 
@@ -21,12 +22,12 @@ ms.locfileid: "71736685"
 > [!NOTE]
 > SQL Server のストアド プロシージャで、`DataAdapter` を使用してデータを編集または削除する場合、ストアド プロシージャの定義に SET NOCOUNT ON は使用しないでください。 処理された行数がゼロとして返され、`DataAdapter` によってコンカレンシーの競合として解釈されてしまいます。 この場合、<xref:System.Data.DBConcurrencyException> がスローされます。
 
-Command パラメーターを使用して、`DataSet` 内の各変更行に対する SQL ステートメントまたはストアド プロシージャに入力値と出力値を指定できます。 詳細については、「 [DataAdapter Parameters](dataadapter-parameters.md)」を参照してください。
+Command パラメーターを使用して、`DataSet` 内の各変更行に対する SQL ステートメントまたはストアド プロシージャに入力値と出力値を指定できます。 詳しくは、「[DataAdapter パラメーター](dataadapter-parameters.md)」をご覧ください。
 
 > [!NOTE]
 > <xref:System.Data.DataTable> の行を Delete することと、行を Remove することの違いを理解することが大切です。 `Remove` メソッドまたは `RemoveAt` メソッドを呼び出した場合、行は直ちに削除されます。 その後、`DataTable` または `DataSet` を `DataAdapter` に渡し、`Update` を呼び出しても、バックエンド データ ソースの対応する行には影響しません。 `Delete` メソッドを使用した場合、行はそのまま `DataTable` 内に維持され、削除対象としてマークされます。 その後、`DataTable` または `DataSet` を `DataAdapter` に渡し、`Update` を呼び出すと、バックエンド データ ソースから対応する行が削除されます。
 
-`DataTable` を単一データベース テーブルに割り当てたり、単一データベースから生成する場合は、<xref:System.Data.Common.DbCommandBuilder> オブジェクトを利用して自動的に `DeleteCommand` の `InsertCommand` オブジェクト、`UpdateCommand` オブジェクト、および `DataAdapter` オブジェクトを生成できます。 詳細については、「 [CommandBuilders を使用したコマンドの生成](generating-commands-with-commandbuilders.md)」を参照してください。
+`DataTable` を単一データベース テーブルに割り当てたり、単一データベースから生成する場合は、<xref:System.Data.Common.DbCommandBuilder> オブジェクトを利用して自動的に `DeleteCommand` の `InsertCommand` オブジェクト、`UpdateCommand` オブジェクト、および `DataAdapter` オブジェクトを生成できます。 詳細については、「[CommandBuilder でのコマンドの生成](generating-commands-with-commandbuilders.md)」を参照してください。
 
 ## <a name="using-updatedrowsource-to-map-values-to-a-dataset"></a>UpdatedRowSource を使用した値の DataSet への割り当て
 
@@ -44,23 +45,23 @@ Command パラメーターを使用して、`DataSet` 内の各変更行に対�
 `Update` メソッドは変更点を元のデータ ソースに反映させますが、`DataSet` に最後にデータを格納した後、他のクライアントがデータ ソースのデータを変更した可能性もあります。 `DataSet` を現在のデータで更新するには、`DataAdapter` および `Fill` メソッドを使用します。 新しい行がテーブルに追加され、更新された情報が既存の行に取り込まれます。 `Fill` メソッドは、`DataSet` の行と `SelectCommand` によって返された行の主キーの値を調べて、新しい行が追加されたか、または既存の行が更新されたかを判断します。 `Fill` メソッドは、`DataSet` によって返された結果の行に一致する主キーの値を持つ `SelectCommand` の行を見つけた場合、`SelectCommand` によって返された行の情報で既存の行を更新して、既存の行の <xref:System.Data.DataRow.RowState%2A> を `Unchanged` に設定します。 `SelectCommand` によって返された行の主キーの値が、`DataSet` のどの行の主キーの値にも一致しない場合、`Fill` メソッドは、`RowState` が `Unchanged` の新しい行を追加します。
 
 > [!NOTE]
-> `SelectCommand` が OUTER JOIN の結果を返す場合、`DataAdapter` は、生成される `PrimaryKey` に `DataTable` 値を設定しません。 自分で `PrimaryKey` を定義して、重複行が正しく反映されるようにする必要があります。 詳細については、「[主キーの定義](./dataset-datatable-dataview/defining-primary-keys.md)」を参照してください。
+> `SelectCommand` が OUTER JOIN の結果を返す場合、`DataAdapter` は、生成される `PrimaryKey` に `DataTable` 値を設定しません。 自分で `PrimaryKey` を定義して、重複行が正しく反映されるようにする必要があります。 詳しくは、「[主キーの定義](./dataset-datatable-dataview/defining-primary-keys.md)」をご覧ください。
 
-`Update`メソッドの呼び出し時に発生する可能性のある例外を処理するため`RowUpdated`に、イベントを使用して、発生した行の更新エラーに応答することができます`true` ( [DataAdapter イベントの処理](handling-dataadapter-events.md)に関するを参照してください)。または、の前にを設定`DataAdapter.ContinueUpdateOnError`することもできます。更新`Update`の完了時に、を呼び出し、特定の`RowError`行のプロパティに格納されているエラー情報に応答します ([行のエラー情報](./dataset-datatable-dataview/row-error-information.md)を参照してください)。
+`Update` メソッド呼び出すときに発生する可能性がある例外を処理するには、行更新エラーが発生したときに `RowUpdated` イベントを使用して応答するか (「[DataAdapter のイベント処理](handling-dataadapter-events.md)」を参照)、または `Update` メソッドを呼び出す前に `DataAdapter.ContinueUpdateOnError` を `true` に設定し、更新が完了した時点で特定の行の `RowError` プロパティに格納されているエラー情報に応答します (「[行エラー情報](./dataset-datatable-dataview/row-error-information.md)」を参照)。
 
 > [!NOTE]
-> `DataSet`、 `AcceptChanges` `Original` `DataRow` 、また`Current`はでを呼び出すと、のすべての値がの値で上書きされます。`DataRow` `DataTable` `DataRow` 行を一意に識別するフィールド値が変更された場合は、`AcceptChanges` 呼び出しの後に `Original` 値がデータ ソースの値と一致しなくなります。 `AcceptChanges` は、`DataAdapter` の Update メソッドを呼び出す間に、各行について自動的に呼び出されます。 Update メソッドの呼び出し中に元の値を維持するには、まず `AcceptChangesDuringUpdate` の `DataAdapter` プロパティを false に設定するか、`RowUpdated` イベントのイベント ハンドラーを作成し、その <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> を <xref:System.Data.UpdateStatus.SkipCurrentRow> に設定します。 詳細については、「[データセットの内容のマージ](./dataset-datatable-dataview/merging-dataset-contents.md)と[DataAdapter イベントの処理](handling-dataadapter-events.md)」を参照してください。
+> `DataSet`、`DataTable`、または `DataRow` に対して `AcceptChanges` を呼び出すと、`DataRow` に対するすべての `Original` の値が、`DataRow` に対する `Current` の値で上書きされます。 行を一意に識別するフィールド値が変更された場合は、`AcceptChanges` 呼び出しの後に `Original` 値がデータ ソースの値と一致しなくなります。 `AcceptChanges` は、`DataAdapter` の Update メソッドを呼び出す間に、各行について自動的に呼び出されます。 Update メソッドの呼び出し中に元の値を維持するには、まず `AcceptChangesDuringUpdate` の `DataAdapter` プロパティを false に設定するか、`RowUpdated` イベントのイベント ハンドラーを作成し、その <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> を <xref:System.Data.UpdateStatus.SkipCurrentRow> に設定します。 詳しくは、「[DataSet の内容のマージ](./dataset-datatable-dataview/merging-dataset-contents.md)」および「[DataAdapter のイベント処理](handling-dataadapter-events.md)」をご覧ください。
 
 ## <a name="example"></a>例
 
-次の例では`UpdateCommand` `DataAdapter` 、のを明示的に設定し、その`Update`メソッドを呼び出すことで、変更された行に対する更新を実行する方法を示します。 UPDATE ステートメントの WHERE 句に指定したパラメーターが `Original` の `SourceColumn` 値を使用するように設定されていることに注意してください。 `Current` 値が既に変更されている可能性、そしてデータ ソースの値と一致していない可能性があるため、この設定は重要です。 `Original` 値は、データ ソースから `DataTable` にデータを取得するために使用された値です。
+次の例では、`DataAdapter` の `UpdateCommand` を明示的に設定し、その `Update` メソッドを呼び出すことにより、変更済みの行に対して更新を実行する方法を示します。 UPDATE ステートメントの WHERE 句に指定したパラメーターが `Original` の `SourceColumn` 値を使用するように設定されていることに注意してください。 `Current` 値が既に変更されている可能性、そしてデータ ソースの値と一致していない可能性があるため、この設定は重要です。 `Original` 値は、データ ソースから `DataTable` にデータを取得するために使用された値です。
 
 [!code-csharp[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/CS/source.cs#1)]
 [!code-vb[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/VB/source.vb#1)]
 
 ## <a name="autoincrement-columns"></a>AutoIncrement 列
 
-データ ソースから取得したテーブルに自動インクリメント列がある場合、自動インクリメント値をストアド プロシージャの出力パラメーターとして取得してそれをテーブルの列に割り当てるか、ストアド プロシージャまたは SQL ステートメントによって返された結果セットの最初の行の自動インクリメント値を取得するか、または `DataSet` の `RowUpdated` イベントを使用して追加の SELECT コマンドを実行することによって、`DataAdapter` の列に値を格納できます。 詳細と例については、「 [id またはオートナンバー値の取得](retrieving-identity-or-autonumber-values.md)」を参照してください。
+データ ソースから取得したテーブルに自動インクリメント列がある場合、自動インクリメント値をストアド プロシージャの出力パラメーターとして取得してそれをテーブルの列に割り当てるか、ストアド プロシージャまたは SQL ステートメントによって返された結果セットの最初の行の自動インクリメント値を取得するか、または `DataSet` の `RowUpdated` イベントを使用して追加の SELECT コマンドを実行することによって、`DataAdapter` の列に値を格納できます。 詳細と例については、「[ID 値および Autonumber 値の取得](retrieving-identity-or-autonumber-values.md)」をご覧ください。
 
 ## <a name="ordering-of-inserts-updates-and-deletes"></a>挿入、更新、削除の順序
 
@@ -180,7 +181,7 @@ ALTER TABLE [dbo].[Course] CHECK CONSTRAINT [FK_Course_Department]
 GO
 ```
 
-C#このコードサンプルを含むプロジェクト Visual Basic は、[開発者コードサンプル](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D)を参照してください。
+このコード サンプルを含む C# プロジェクトと Visual Basic プロジェクトは、[開発者コード サンプル](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D)のページにあります。
 
 ```csharp
 using System;

@@ -1,13 +1,13 @@
 ---
 title: F# のツアー
 description: このツアーのF#プログラミング言語の主な機能のいくつかを、コードサンプルで確認します。
-ms.date: 11/06/2018
-ms.openlocfilehash: cfea2827dcec65f9e3606e8528179029e1f2db84
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 02/09/2020
+ms.openlocfilehash: ac2eef40e2dbc494e41a9760f0a70edb0f7ce399
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423805"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124573"
 ---
 # <a name="tour-of-f"></a>F\# のツアー
 
@@ -17,7 +17,7 @@ F# について学習する最善の方法は、F# コードを読み書きす�
 
 ## <a name="executing-the-code-online"></a>コードをオンラインで実行する
 
-コンピューターに F# がインストールされていない場合は、[WebAssembly におけるF# の使用](https://tryfsharp.fsbolero.io/) をブラウザーですべてのサンプルを実行します。 Fable は、ブラウザーで直接実行されるF# の言語です。 REPL の後に続くサンプルを確認するには、Fable REPL の左側のメニューバーにある  **サンプル> 学習 > F＃のツアー** を参照してください。
+コンピューターに F# がインストールされていない場合は、[WebAssembly におけるF# の使用](https://tryfsharp.fsbolero.io/) をブラウザーですべてのサンプルを実行します。 Fable は、ブラウザーで直接実行されるF# の言語です。 REPL の後に続くサンプルを確認するには、Fable REPL の左側のメニューバーにある **サンプル> 学習 > F＃のツアー** を参照してください。
 
 ## <a name="functions-and-modules"></a>関数とモジュール
 
@@ -45,13 +45,13 @@ F# について学習する最善の方法は、F# コードを読み書きす�
 
 [!code-fsharp[Strings](~/samples/snippets/fsharp/tour.fs#L158-L180)]
 
-## <a name="tuples"></a>タプル
+## <a name="tuples"></a>Tuples
 
 [タプル](./language-reference/tuples.md)は F# の大きな問題です。  これらは名前のない、順序付けされた値をグループ化したもので、値自体として扱うことができます。  これらは、他の値から集計された値と考えることができます。  多くの用途があります。たとえば、関数から複数の値を返すことができるようにしたり、特別な便宜を行うために値をグループ化したりします。
 
 [!code-fsharp[Tuples](~/samples/snippets/fsharp/tour.fs#L186-L203)]
 
-4\.1 のF#ように、`struct` 組を作成することもできます。  これらは、C# 7/Visual Basic 15 組で完全に相互運用することもできます。タプルも `struct` ます。
+`struct` 組を作成することもできます。  これらは、C# 7/Visual Basic 15 組で完全に相互運用することもできます。タプルも `struct` ます。
 
 [!code-fsharp[Tuples](~/samples/snippets/fsharp/tour.fs#L205-L218)]
 
@@ -100,7 +100,7 @@ F#では、末尾呼び出しの最適化も完全にサポートされていま
 
 [!code-fsharp[Records](~/samples/snippets/fsharp/tour.fs#L507-L559)]
 
-4\.1 のF#ように、レコードを `struct`s として表すこともできます。  これは、`[<Struct>]` 属性を使用して行います。
+レコードを構造体として表すこともできます。 これは、`[<Struct>]` 属性を使用して行います。
 
 [!code-fsharp[Records](~/samples/snippets/fsharp/tour.fs#L561-L568)]
 
@@ -138,6 +138,10 @@ Du では、データ型のツリーの再帰構造を表すことができる�
 [!code-fsharp[PatternMatching](~/samples/snippets/fsharp/tour.fs#L705-L742)]
 
 ご存知かもしれませんが、`_` パターンを使用しています。  これは、[ワイルドカードパターン](./language-reference/pattern-matching.md#wildcard-pattern)と呼ばれます。これは、"何が何であるかを気にしない" と言うことができます。  便利ですが、`_`を使用することに注意していない場合は、完全なパターンマッチングを誤ってバイパスし、コンパイル時の実施からメリットを得られなくなりました。  パターンマッチングの際に分解された型の特定の部分を気にしない場合、またはパターン一致式ですべての意味のあるケースを列挙した場合は final 句を使用することをお勧めします。
+
+次の例では、解析操作が失敗した場合に `_` ケースが使用されます。
+
+[!code-fsharp[PatternMatching](~/samples/snippets/fsharp/tour.fs#L744-L762)]
 
 [アクティブパターン](./language-reference/active-patterns.md)は、パターンマッチングで使用するもう1つの強力な構成要素です。  これにより、入力データをカスタムフォームに分割し、パターンマッチ呼び出しサイトで分解することができます。  また、パラメーター化して、がパーティションを関数として定義できるようにすることもできます。  アクティブなパターンをサポートするために前の例を拡張すると、次のようになります。
 
@@ -189,7 +193,7 @@ F#では、.NET クラス、[インターフェイス](./language-reference/inte
 
 クラスは、情報を表す必要がある場合や、その情報を機能に関連付けている場合など、膨大な数の理由で非常に優れています。  経験則として、概念的に一部のデータに関連付けられている機能がある場合は、クラスとオブジェクト指向プログラミングの原則を使用することが大きな利点です。  これらの言語はほぼすべての言語でクラスC#を使用するため、および Visual Basic と相互運用する場合は、クラスも推奨されるデータ型です。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 言語の主な機能のいくつかを確認したらには、最初の F# プログラムを作成できるようにする必要があります。  開発環境を設定してコードを記述する方法については、[はじめに](get-started/index.md)を参照してください。
 

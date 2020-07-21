@@ -2,12 +2,12 @@
 title: Windows フォームの構成セクション
 ms.date: 04/07/2017
 ms.assetid: 6eb142d5-fc98-40e2-9d90-84733f2a27ba
-ms.openlocfilehash: 4a54df0b6301f1aae14d5561c91c6792cb0a1620
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4de61ae3cb5eb8a3fc226881e2b7f842030dfddf
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73109809"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79151833"
 ---
 # <a name="windows-forms-configuration-section"></a>Windows フォームの構成セクション
 Windows フォームの構成設定により、カスタマイズされたアプリケーション設定に関する情報 (マルチ モニターや高 DPI のサポート、その他の定義済みの構成設定など) を Windows フォームのアプリで格納したり、取得したりできます。
@@ -44,13 +44,13 @@ Windows フォームのアプリケーション構成設定は、アプリケー
 ---------|---------|
 [\<configuration>](../configuration-element.md) | 共通言語ランタイムと Windows フォームのアプリケーションで使用されるすべての構成ファイルのルート要素です |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-.NET Framework 4.7 を使用すれば、.NET Framework の最近のリリースで追加された機能が利用できる Windows フォームのアプリケーションを、`<System.Windows.Forms.ApplicationConfigurationSection>` 要素で構成できます。 
+.NET Framework 4.7 を使用すれば、.NET Framework の最近のリリースで追加された機能が利用できる Windows フォームのアプリケーションを、`<System.Windows.Forms.ApplicationConfigurationSection>` 要素で構成できます。
 
-`<System.Windows.Forms.ApplicationConfigurationSection>` 要素には 1 つまたは複数の子の [`<add>`](windows-forms-add-configuration-element.md) 要素を含めることができ、各要素には特定の構成設定が定義されます。
+要素には `<System.Windows.Forms.ApplicationConfigurationSection>` 1 つ以上の子要素を含めることができ [`<add>`](windows-forms-add-configuration-element.md) 、それぞれが特定の構成設定を定義します。
 
 ## <a name="see-also"></a>関連項目
 
 - [構成ファイル スキーマ](../index.md)
-- [Windows フォームの高 DPI サポート](../../../winforms/high-dpi-support-in-windows-forms.md)
+- [Windows フォームでの高 DPI サポート](../../../winforms/high-dpi-support-in-windows-forms.md)

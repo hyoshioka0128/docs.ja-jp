@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4f043594-0c45-4bc6-988e-a6793f0d8d06
 topic_type:
 - apiref
-ms.openlocfilehash: 1799e0af91fa6074f174120b29e2302a27230c62
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b4694efffa0a3dd6fed1f97fc2359c5eb335d440
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141455"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84006416"
 ---
 # <a name="startup_flags-enumeration"></a>STARTUP_FLAGS 列挙型
 共通言語ランタイム (CLR: Common Language Runtime) の起動動作を示す値を含みます。 既定では、ガベージ コレクションは非同時実行で、基底クラス ライブラリだけがドメイン中立領域に読み込まれます。  
@@ -68,19 +68,19 @@ typedef enum {
 |`STARTUP_LEGACY_IMPERSONATION`|既定として偽装が非同期ポイント間をフローしないように指定します。|  
 |`STARTUP_DISABLE_COMMITTHREADSTACK`|スレッドが実行を開始するときにスレッド スタック全体をコミットしないことを指定します。|  
 |`STARTUP_ALWAYSFLOW_IMPERSONATION`|マネージド偽装およびプラットフォーム呼び出しによって実行された偽装が非同期ポイント間をフローするように指定します。 既定では、マネージド偽装だけが非同期ポイント間をフローします。|  
-|`STARTUP_TRIM_GC_COMMIT`|システム メモリが少ないときに、ガベージ コレクションによるコミットされた領域の使用量を抑えることを指定します。 「[共有 Web ホスティングの最適化」の](../../../standard/garbage-collection/optimization-for-shared-web-hosting.md)`gcTrimCommitOnLowMemory` を参照してください。|  
-|`STARTUP_ETW`|共通言語ランタイム イベントで Windows イベント トレーシング (ETW) が有効になっていることを指定します。 Windows Vista 以降では、イベントのトレースは常に有効になっているため、このフラグによる影響はありません。 「 [.NET Framework のログ記録の制御](../../../../docs/framework/performance/controlling-logging.md)」を参照してください。|  
-|`STARTUP_ARM`|アプリケーション ドメインのリソース監視が有効になっていることを指定します。 <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> プロパティと[\<appDomainResourceMonitoring > 要素](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)を参照してください。|  
+|`STARTUP_TRIM_GC_COMMIT`|システム メモリが少ないときに、ガベージ コレクションによるコミットされた領域の使用量を抑えることを指定します。 `gcTrimCommitOnLowMemory`[共有 Web ホスティングの最適化](../../../standard/garbage-collection/optimization-for-shared-web-hosting.md)については、「」を参照してください。|  
+|`STARTUP_ETW`|共通言語ランタイム イベントで Windows イベント トレーシング (ETW) が有効になっていることを指定します。 Windows Vista 以降、イベント トレーシングは常に有効になっているため、このフラグの効果はありません。 「 [.NET Framework のログ記録の制御](../../performance/controlling-logging.md)」を参照してください。|  
+|`STARTUP_ARM`|アプリケーション ドメインのリソース監視が有効になっていることを指定します。 <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>プロパティと[ \<appDomainResourceMonitoring> 要素](../../configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)を参照してください。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ホスティングの列挙型](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [ホスティングの列挙型](hosting-enumerations.md)

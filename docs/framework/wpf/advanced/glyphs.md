@@ -12,17 +12,17 @@ helpviewer_keywords:
 ms.assetid: d5d9274c-23b3-4859-8869-6e64403c9ca7
 ms.openlocfilehash: a887e83babd6126d298170c6aead45c5370c1916
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62010255"
 ---
 # <a name="glyphs"></a>グリフ
-グリフは、画面上に描画される文字の低レベルの表現です。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 使用し、書式設定後のテキストを保持する必要があるお客様のグリフに直接アクセスを提供します。  
+グリフは、スクリーン上に描画される文字を低レベルで表現したものです。 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では、書式設定後にテキストをインターセプトして保持する必要がある顧客のグリフに直接アクセスできます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [GlyphRun オブジェクトと Glyphs 要素の概要](introduction-to-the-glyphrun-object-and-glyphs-element.md)  
-  [方法: グリフを使用してテキストを描画します。](draw-text-using-glyphs.md)  
+  [方法: グリフを使用したテキストの描画](draw-text-using-glyphs.md)  
   
 ## <a name="see-also"></a>関連項目
 

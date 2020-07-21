@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル : Padding、Margin、および AutoSize プロパティを使用した Windows フォーム コントロールのレイアウト'
+title: 余白、余白、および AutoSize プロパティを使用してコントロールをレイアウトします
 ms.date: 03/30/2017
 f1_keywords:
 - Margin.Bottom
@@ -18,12 +18,12 @@ ms.assetid: f8ae2a6b-db13-4630-8e25-d104091205c7
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 76c880c208355b01d0fbaf46cf58091ad147846b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ca7942c04434592f2541252c47ac3dd17e03dbac
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460601"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742376"
 ---
 # <a name="walkthrough-lay-out-controls-with-padding-margins-and-the-autosize-property"></a>チュートリアル: padding、margin、および AutoSize プロパティを使用してコントロールをレイアウトする
 
@@ -39,11 +39,11 @@ ms.locfileid: "73460601"
 
 <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティは、コントロールの内容に合わせて自動的にサイズを変更するようにコントロールに指示します。 元の <xref:System.Windows.Forms.Control.Size%2A> プロパティの値よりも小さいサイズになることはなく、<xref:System.Windows.Forms.Control.Padding%2A> プロパティの値が考慮されます。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>前提条件
 
 このチュートリアルを完了するには、Visual Studio が必要です。
 
-## <a name="create-the-project"></a>プロジェクトの作成
+## <a name="create-the-project"></a>プロジェクトを作成する
 
 1. Visual Studio で、`LayoutExample`という名前の**Windows アプリケーション**プロジェクトを作成します。
 
@@ -174,7 +174,7 @@ Windows フォームアプリケーションにコントロールを配置する
 
 - <xref:System.Windows.Forms.Panel> コントロールにドッキングされた子コントロールを試してみてください。 <xref:System.Windows.Forms.Control.Padding%2A> プロパティは、<xref:System.Windows.Forms.ScrollableControl.DockPadding%2A> プロパティの一般的な実現方法であり、<xref:System.Windows.Forms.Panel> コントロールに子コントロールを配置し、子コントロールの <xref:System.Windows.Forms.Control.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle.Fill>に設定することによって、このことを満たすことができます。 <xref:System.Windows.Forms.Panel> コントロールの <xref:System.Windows.Forms.Control.Padding%2A> プロパティをさまざまな値に設定し、効果を確認します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.Forms.Control.AutoSize%2A>
 - <xref:System.Windows.Forms.ScrollableControl.DockPadding%2A>

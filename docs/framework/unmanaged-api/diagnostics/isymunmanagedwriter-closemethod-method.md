@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b8025e04-f0e5-40c8-849c-8cd51323420e
 topic_type:
 - apiref
-ms.openlocfilehash: a6a6aa937078ed0627688a4eed3d9142a2e6e0ac
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fdf24bb8533da7914128f9477987c427442383bb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428107"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83610120"
 ---
 # <a name="isymunmanagedwriterclosemethod-method"></a>ISymUnmanagedWriter::CloseMethod メソッド
 現在のメソッドを閉じます。 メソッドを閉じると、それ以上シンボルを定義することはできません。  
@@ -37,7 +37,7 @@ HRESULT CloseMethod();
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedWriter インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [OpenMethod メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)
+- [ISymUnmanagedWriter インターフェイス](isymunmanagedwriter-interface.md)
+- [OpenMethod メソッド](isymunmanagedwriter-openmethod-method.md)

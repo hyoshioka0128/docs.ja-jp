@@ -1,5 +1,6 @@
 ---
 title: IPv6 アドレス指定
+description: インターネット プロトコル バージョン 6 (IPv6) のアドレス (テキスト表現やアドレスの種類など) について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Internet Protocol version 6, addresses in
@@ -26,12 +27,12 @@ helpviewer_keywords:
 - IPv6, addresses in
 - IPv6, disabling
 ms.assetid: 20a104ae-1649-4649-a005-531a5cf74c93
-ms.openlocfilehash: 1bad43b96fc6f66724e5e40cdf0ae6d76b46d867
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: fbf68cb5f40450c2f9ecf4900801ee55e326fcb4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047850"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502341"
 ---
 # <a name="ipv6-addressing"></a>IPv6 アドレス指定
 

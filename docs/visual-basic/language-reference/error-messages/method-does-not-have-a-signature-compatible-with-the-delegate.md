@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC36563
 ms.assetid: 3ca8b873-e98d-419b-95f2-d75bd2a9eb6c
-ms.openlocfilehash: 925a17bef5147a5679a076af1801bdd305dd5bad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 8e5e94bbde016ec7342a9933905977dac85fb035
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921031"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397247"
 ---
 # <a name="method-does-not-have-a-signature-compatible-with-the-delegate"></a>メソッドに、デリゲートと互換性のあるシグネチャがありません。
-メソッドのシグネチャとデリゲートを使用しようとすると、非互換性があります。 `Delegate` ステートメントでは、デリゲート クラスのパラメーターの型と戻り値の型を定義します。 プロシージャが互換性のある型パラメーターに一致して、戻り値の型は、このデリゲート型のインスタンスを作成する使用できます。  
+使用しようとしているメソッドとデリゲートのシグネチャに互換性がありません。 `Delegate` ステートメントでは、デリゲート クラスのパラメーターの型と戻り値の型を定義します。 互換性のある型と戻り値の型の一致するパラメーターを持つ任意のプロシージャを使用して、このデリゲート型のインスタンスを作成できます。  
   
- **エラー ID**:BC36563  
+ **エラー ID**: BC36563  
   
 ## <a name="see-also"></a>関連項目
 
-- [AddressOf 演算子](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [Delegate ステートメント](../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [オーバーロードの解決](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
-- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [AddressOf 演算子](../operators/addressof-operator.md)
+- [Delegate ステートメント](../statements/delegate-statement.md)
+- [オーバーロードの解決](../../programming-guide/language-features/procedures/overload-resolution.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)

@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - BC42326
 ms.assetid: 63214dc6-0112-4245-8ebf-7c9e8f5a5782
-ms.openlocfilehash: 52107589c6bbebbd34ecbb090845f4031612c276
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
-ms.translationtype: MT
+ms.openlocfilehash: 07ace3f1b9c5e512227dc1f718ef768b631c8303
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72578936"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397377"
 ---
 # <a name="lambda-expression-will-not-be-removed-from-this-event-handler"></a>ラムダ式はこのイベント ハンドラーから削除されません
 
-ラムダ式はこのイベントハンドラーから削除されません。 変数にラムダ式を割り当て、変数を使用してイベントを追加および削除します。
+ラムダ式はこのイベント ハンドラーから削除されません。 ラムダ式に変数を割り当て、その変数を使用してイベントを追加または削除します。
 
-ラムダ式をイベントハンドラーと共に使用すると、期待どおりの動作が得られない場合があります。 コンパイラは、ラムダ式の定義が同一であっても、新しいメソッドを生成します。 したがって、次のコードでは `False` が表示されます。
+ラムダ式をイベント ハンドラーと共に使用すると、期待どおりの動作が見られない場合があります。 コンパイラは、定義が同一であっても、ラムダ式ごとに新しいメソッドを生成します。 そのため、次のコードは `False` を表示します。
 
 ```vb
 Module Module1
@@ -34,7 +34,7 @@ Module Module1
 End Module
 ```
 
-ラムダ式をイベントハンドラーと共に使用すると、予期しない結果が発生する可能性があります。 次の例では、`AddHandler` によって追加されたラムダ式は、`RemoveHandler` ステートメントによって削除されません。
+ラムダ式をイベント ハンドラーと共に使用すると、予期しない結果が発生する可能性があります。 次の例では、`AddHandler` によって追加されたラムダ式は、`RemoveHandler` ステートメントによって削除されません。
 
 ```vb
 Module Module1
@@ -87,6 +87,6 @@ End Module
 
 ## <a name="see-also"></a>関連項目
 
-- [ラムダ式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
-- [厳密でないデリゲート変換](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
-- [イベント](../../../visual-basic/programming-guide/language-features/events/index.md)
+- [ラムダ式](../../programming-guide/language-features/procedures/lambda-expressions.md)
+- [厳密でないデリゲート変換](../../programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+- [イベント](../../programming-guide/language-features/events/index.md)

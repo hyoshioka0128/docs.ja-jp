@@ -1,16 +1,17 @@
 ---
-title: 自動バインディング リダイレクトを有効/無効にする方法
+title: 自動生成バインドリダイレクトを有効または無効にする
+description: 自動バインドリダイレクトを有効または無効にする方法を参照してください。 この機能は、.NET 4.5.1 以降を対象とするデスクトップアプリと web アプリに影響します。
 ms.date: 10/30/2018
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
-ms.openlocfilehash: 178d5070dd7018bbc0fce474cdd0b31ba3d17f77
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: edee95f6c3b2c2d74c4f1b68e0a65e5cb0e85f54
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "69913033"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105390"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>方法: 自動バインディング リダイレクトを有効/無効にする
 
@@ -26,16 +27,16 @@ Visual Studio 2017 バージョン15.7 以降を使用している場合は、�
 
 1. **ソリューション エクスプローラー**でプロジェクトを右クリックして、 **[プロパティ]** を選択します。
 
-2. **[アプリケーション]** ページで、 **[バインドリダイレクトを自動生成]** する オプションをオフにします。
+2. [**アプリケーション**] ページで、[**バインドリダイレクトを自動生成**する] オプションをオフにします。
 
-3. **Ctrl**+**S**キーを押して変更を保存します。
+3. **Ctrl** + **S**キーを押して変更を保存します。
 
 ### <a name="disable-manually-in-the-project-file"></a>プロジェクトファイルで手動で無効にする
 
 1. 次のいずれかの方法を使用して、プロジェクトファイルを編集用に開きます。
 
-   - Visual Studio で**ソリューションエクスプローラー**でプロジェクトを選択し、ショートカットメニューの **[エクスプローラーでフォルダーを開く]** をクリックします。 ファイルエクスプローラーで、プロジェクト (.csproj または .vbproj) ファイルを見つけ、メモ帳で開きます。
-   - Visual Studio の**ソリューションエクスプローラー**で、プロジェクトを右クリックし、 **[プロジェクトのアンロード]** を選択します。 アンロードされたプロジェクトをもう一度右クリックし、[**編集] [projectname. .csproj]** の順に選択します。
+   - Visual Studio で**ソリューションエクスプローラー**でプロジェクトを選択し、ショートカットメニューの [**エクスプローラーでフォルダーを開く**] をクリックします。 ファイルエクスプローラーで、プロジェクト (.csproj または .vbproj) ファイルを見つけ、メモ帳で開きます。
+   - Visual Studio の**ソリューションエクスプローラー**で、プロジェクトを右クリックし、[**プロジェクトのアンロード**] を選択します。 アンロードされたプロジェクトをもう一度右クリックし、[**編集] [projectname. .csproj]** の順に選択します。
 
 2. プロジェクト ファイルで、次のプロパティ エントリを検索します。
 
@@ -43,7 +44,7 @@ Visual Studio 2017 バージョン15.7 以降を使用している場合は、�
    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
    ```
 
-3. `true` を `false` に変更します。
+3. 以下のように [`true`] \(SSL 有効) を `false` に変えます。
 
    ```xml
    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
@@ -55,10 +56,10 @@ Visual Studio 2017 バージョン15.7 以降を使用している場合は、�
 
 1. 次のいずれかの方法を使用して、プロジェクトファイルを編集用に開きます。
 
-   - Visual Studio で**ソリューションエクスプローラー**でプロジェクトを選択し、ショートカットメニューの **[エクスプローラーでフォルダーを開く]** をクリックします。 ファイルエクスプローラーで、プロジェクト (.csproj または .vbproj) ファイルを見つけ、メモ帳で開きます。
-   - Visual Studio の**ソリューションエクスプローラー**で、プロジェクトを右クリックし、 **[プロジェクトのアンロード]** を選択します。 アンロードされたプロジェクトをもう一度右クリックし、[**編集] [projectname. .csproj]** の順に選択します。
+   - Visual Studio で**ソリューションエクスプローラー**でプロジェクトを選択し、ショートカットメニューの [**エクスプローラーでフォルダーを開く**] をクリックします。 ファイルエクスプローラーで、プロジェクト (.csproj または .vbproj) ファイルを見つけ、メモ帳で開きます。
+   - Visual Studio の**ソリューションエクスプローラー**で、プロジェクトを右クリックし、[**プロジェクトのアンロード**] を選択します。 アンロードされたプロジェクトをもう一度右クリックし、[**編集] [projectname. .csproj]** の順に選択します。
 
-2. 最初の構成プロパティグループ (PropertyGroup > タグの\<下) に次の要素を追加します。
+2. 最初の構成プロパティグループ (タグの下) に次の要素を追加し \<PropertyGroup> ます。
 
    ```xml
    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -87,19 +88,19 @@ Visual Studio 2017 バージョン15.7 以降を使用している場合は、�
 
 自動バインド リダイレクトは、Web アプリでは異なる方法で実装されます。 ソース構成 (**web.config**) ファイルは web apps 用に変更する必要があるため、バインドリダイレクトは構成ファイルに自動的に追加されません。 ただし、Visual Studio によってバインドの競合が通知されるため、バインド リダイレクトを追加して競合を解決できます。 バインドリダイレクトを追加するように求められるので、web アプリに対してこの機能を明示的に無効にする必要はありません。
 
-**Web.config** ファイルにバインドリダイレクトを追加するには、次のようにします。
+**web.config**ファイルにバインドリダイレクトを追加するには、次のようにします。
 
 1. Visual Studio で、アプリをコンパイルし、ビルドの警告を確認します。
 
-   ![アセンブリ参照の競合に関するビルド警告](./media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")
+   ![アセンブリ参照の競合のビルド警告](./media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")
 
-2. アセンブリ バインドの競合がある場合、警告が表示されます。 警告をダブルクリックするか、警告を選択して**enter** キーを押します。
+2. アセンブリ バインドの競合がある場合、警告が表示されます。 警告をダブルクリックするか、警告を選択**して enter キーを**押します。
 
-   ソースの**web.config**ファイルに必要なバインドリダイレクトを自動的に追加できるダイアログボックスが表示されます。
+   ソース**web.config**ファイルに必要なバインドリダイレクトを自動的に追加できるダイアログボックスが表示されます。
 
-   ![バインドリダイレクトのアクセス許可ダイアログ](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
+   ![バインディング リダイレクトのアクセス許可ダイアログ](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
 
 ## <a name="see-also"></a>関連項目
 
-- [\<bindingRedirect > 要素](./file-schema/runtime/bindingredirect-element.md)
+- [\<bindingRedirect> 要素](./file-schema/runtime/bindingredirect-element.md)
 - [アセンブリ バージョンのリダイレクト](redirect-assembly-versions.md)

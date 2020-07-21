@@ -1,5 +1,6 @@
 ---
 title: 同期メソッドの非同期呼び出し
+description: BeginInvoke メソッドと EndInvoke メソッドを使用して、.NET で同期メソッドを非同期的に呼び出す方法について説明します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -20,12 +21,12 @@ helpviewer_keywords:
 - waiting for asynchronous calls
 - status information [.NET Framework], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-ms.openlocfilehash: 06df584f0120fbd4978e18647854a3ee844a2095
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ff2d30c00e7b6becb0c3ff910d825c2e9d6f78e3
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73105125"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662642"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>同期メソッドの非同期呼び出し
 
@@ -39,7 +40,7 @@ ms.locfileid: "73105125"
 `EndInvoke` メソッドは、非同期呼び出しの結果を取得します。 このメソッドは、 `BeginInvoke`の後であればいつでも呼び出すことができます。 非同期呼び出しがまだ完了していない場合は、 `EndInvoke` は非同期呼び出しが完了するまで呼び出し元スレッドをブロックします。 `EndInvoke` のパラメーターには、非同期実行するメソッドの `out` パラメーターと `ref` パラメーター (Visual Basic では `<Out>` `ByRef` と `ByRef`) と、`BeginInvoke` によって返された <xref:System.IAsyncResult> が含まれます。
 
 > [!NOTE]
-> Visual Studio の IntelliSense 機能によって `BeginInvoke` と `EndInvoke` のパラメーターが表示されます。 Visual Studio や類似のツールを使っていない場合や、Visual Studio で C# を使っている場合、これらのメソッドについて定義されているパラメーターについては、「[非同期プログラミング モデル (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)」を参照してください。
+> Visual Studio の IntelliSense 機能によって `BeginInvoke` と `EndInvoke` のパラメーターが表示されます。 Visual Studio や類似のツールを使っていない場合や、Visual Studio で C# を使っている場合、これらのメソッドについて定義されているパラメーターについては、「[非同期プログラミング モデル (APM)](asynchronous-programming-model-apm.md)」を参照してください。
 
 このトピックのコード例では、 `BeginInvoke` と `EndInvoke` を使用して非同期呼び出しを行う 4 つの一般的な方法を示します。 `BeginInvoke` を呼び出した後、次の処理を行うことができます。
 
@@ -112,4 +113,4 @@ ms.locfileid: "73105125"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Delegate>
-- [イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
+- [イベント ベースの非同期パターン (EAP)](event-based-asynchronous-pattern-eap.md)

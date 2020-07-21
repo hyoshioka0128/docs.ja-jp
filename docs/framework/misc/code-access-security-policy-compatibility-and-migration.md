@@ -1,18 +1,17 @@
 ---
 title: コード アクセス セキュリティ ポリシーの互換性と移行
+description: 概要を確認し、「.NET 4 でのコードアクセスセキュリティポリシーの互換性と移行に関するリンク」を参照してください。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - policy migration, compatibility
 - CLR policy migration
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9563dae9ba5d144300549e7f33f5f5a9feb1d410
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: e5affd9d16635fa28342b5b7390a083185975f2b
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205638"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281733"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>コード アクセス セキュリティ ポリシーの互換性と移行
 
@@ -24,21 +23,21 @@ ms.locfileid: "70205638"
 
 - 互換性のために残されている呼び出しの .NET Framework 4 の置換に[移行](#migration)しています。
 
-   \- または -
+   \- または
 
-- NetFx40_LegacySecurityPolicy > 構成要素を使用して、従来の CAS ポリシーの動作を選択します。 [ \<](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)
+- [ \<NetFx40_LegacySecurityPolicy> Configuration 要素](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)を使用して、従来の CAS ポリシーの動作を選択します。
 
 このトピックは、次のセクションで構成されています。
 
 - [明示的な使用](#explicit_use)
 
-- [暗黙の使用](#implicit_use)
+- [暗黙的な使用](#implicit_use)
 
 - [エラーと警告](#errors_and_warnings)
 
-- [移動互換性のために残されている呼び出しの置換](#migration)
+- [移行: 廃止された呼び出しの代替方法](#migration)
 
-- [確保CAS ポリシーレガシオプションの使用](#compatibility)
+- [互換性: CAS ポリシーのレガシー オプションを使用する](#compatibility)
 
 <a name="explicit_use"></a>
 
@@ -46,7 +45,7 @@ ms.locfileid: "70205638"
 
 直接セキュリティ ポリシーを操作するメンバー、または CAS ポリシーをサンドボックス化することが必要なメンバーは廃止され、既定ではエラーを発生するようになりました。
 
-以下に例を示します。
+次に例を示します。
 
 - <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType>
 
@@ -74,7 +73,7 @@ ms.locfileid: "70205638"
 
 アセンブリの読み込みオーバーロードの中にはエラーを生成するものがあります。CAS ポリシーを暗黙的に使用することが原因です。 これらのオーバーロードはCAS ポリシーを解決するために <xref:System.Security.Policy.Evidence> パラメーターを取り、アセンブリにアクセス許可セットを提供します。
 
-例をいくつか紹介します。 パラメーターとして <xref:System.Security.Policy.Evidence> を取るオーバーロードが廃止されました。
+次に例をいくつか示します。 パラメーターとして <xref:System.Security.Policy.Evidence> を取るオーバーロードが廃止されました。
 
 - <xref:System.Activator.CreateInstanceFrom%2A?displayProperty=nameWithType>
 
@@ -96,7 +95,7 @@ ms.locfileid: "70205638"
 
 <a name="errors_and_warnings"></a>
 
-## <a name="errors-and-warnings"></a>エラーおよび警告
+## <a name="errors-and-warnings"></a>エラーと警告
 
 廃止された種類とメンバーが使用されると、以下のエラー メッセージが生成されます。 <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> 型自体は廃止されていないことに注意してください。
 
@@ -110,7 +109,7 @@ ms.locfileid: "70205638"
 
 <a name="migration"></a>
 
-## <a name="migration-replacement-for-obsolete-calls"></a>移動互換性のために残されている呼び出しの置換
+## <a name="migration-replacement-for-obsolete-calls"></a>移行: 廃止された呼び出しの代替方法
 
 ### <a name="determining-an-assemblys-trust-level"></a>アセンブリの信頼レベルの判別
 
@@ -126,23 +125,23 @@ CAS ポリシーは多くの場合、アセンブリ、アプリケーション 
 
 ### <a name="application-domain-sandboxing"></a>アプリケーション ドメインのサンドボックス化
 
-通常 <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> メソッドは、アプリケーション ドメイン内のアセンブリをサンド ボックス化するために使用します。 .NET Framework 4 は、この目的で使用<xref:System.Security.Policy.PolicyLevel>する必要のないメンバーを公開します。 詳細については、「[方法 :Run Partially Trusted Code in a Sandbox](how-to-run-partially-trusted-code-in-a-sandbox.md)」 (方法: サンドボックスで部分信頼コードを実行する) を参照してください。
+通常 <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> メソッドは、アプリケーション ドメイン内のアセンブリをサンド ボックス化するために使用します。 .NET Framework 4 は、この目的で使用する必要のないメンバーを公開 <xref:System.Security.Policy.PolicyLevel> します。 詳細については、「[方法: サンドボックスで部分信頼コードを実行する](how-to-run-partially-trusted-code-in-a-sandbox.md)」を参照してください。
 
 ### <a name="determining-a-safe-or-reasonable-permission-set-for-partially-trusted-code"></a>部分的に信頼できるコードに対する安全なまたは適切なアクセス許可セットの決定
 
-多くの場合ホストでは、ホストされているコードをサンドボックス化するための適切なアクセス許可を判別する必要があります。 .NET Framework 4 より前の CAS ポリシーでは、 <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType>メソッドを使用してこれを行う方法が提供されていました。 代替として、.NET Framework 4 は<xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType>メソッドを提供します。このメソッドは、指定された証拠の安全な標準のアクセス許可セットを返します。
+多くの場合ホストでは、ホストされているコードをサンドボックス化するための適切なアクセス許可を判別する必要があります。 .NET Framework 4 より前の CAS ポリシーでは、メソッドを使用してこれを行う方法が提供されていま <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType> した。 代替として、.NET Framework 4 は <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType> メソッドを提供します。このメソッドは、指定された証拠の安全な標準のアクセス許可セットを返します。
 
-### <a name="non-sandboxing-scenarios-overloads-for-assembly-loads"></a>サンドボックスではないシナリオ:アセンブリ読み込みのオーバーロード
+### <a name="non-sandboxing-scenarios-overloads-for-assembly-loads"></a>サンドボックス化以外のシナリオ: アセンブリ読み込みのオーバーロード
 
-アセンブリ読み込みオーバーロードを使用する目的は、アセンブリのサンドボックス化の代わりに、アセンブリ読み込みオーバーロードでないと使用できないパラメーターを指定することです。 .NET Framework 4 以降では、パラメーターとしてオブジェクトを<xref:System.Security.Policy.Evidence?displayProperty=nameWithType>必要としないアセンブリ読み込みオーバーロード ( <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>たとえば、) を使用して、このシナリオを有効にします。
+アセンブリ読み込みオーバーロードを使用する目的は、アセンブリのサンドボックス化の代わりに、アセンブリ読み込みオーバーロードでないと使用できないパラメーターを指定することです。 .NET Framework 4 以降では、パラメーターとしてオブジェクトを必要としないアセンブリ読み込みオーバーロード (たとえば、) を使用して、 <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType> このシナリオを有効にします。
 
 アセンブリをサンドボックス化する場合には、<xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> オーバー ロードを使用します。
 
 <a name="compatibility"></a>
 
-## <a name="compatibility-using-the-cas-policy-legacy-option"></a>確保CAS ポリシーレガシオプションの使用
+## <a name="compatibility-using-the-cas-policy-legacy-option"></a>互換性: CAS ポリシーのレガシー オプションを使用する
 
-[ \<NetFx40_LegacySecurityPolicy > configuration 要素](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)を使用して、プロセスまたはライブラリが従来の CAS ポリシーを使用するように指定できます。 この要素を有効にすると、ポリシーと証拠のオーバーロードは、framework の以前のバージョンの場合と同様に動作します。
+[ \<NetFx40_LegacySecurityPolicy> 構成要素](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)では、プロセスまたはライブラリが従来の CAS ポリシーを使用するように指定できます。 この要素を有効にすると、ポリシーと証拠のオーバーロードは、framework の以前のバージョンの場合と同様に動作します。
 
 > [!NOTE]
 > CAS ポリシーの動作は特定のランタイム バージョンに固有なので、そのランタイム バージョンの CAS ポリシーを変更しても、別のバージョンの CAS ポリシーには影響しません。

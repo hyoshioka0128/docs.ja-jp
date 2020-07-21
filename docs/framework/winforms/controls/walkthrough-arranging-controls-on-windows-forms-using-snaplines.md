@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置'
+title: スナップ線を使用したコントロールの配置
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], arranging with snaplines
@@ -10,12 +10,12 @@ ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 04bef7162662f4fbefdaa151de13468d88530914
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 0b68a70b55cbf03d480fd388a637a4caf78b6eaa
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460646"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628801"
 ---
 # <a name="walkthrough-arrange-controls-on-windows-forms-using-snaplines"></a>チュートリアル: スナップ線を使用した Windows フォームでのコントロールの配置
 
@@ -25,11 +25,11 @@ ms.locfileid: "73460646"
 
 スナップ線を使用すると、コントロールの配置が簡単になり、プロフェッショナルな外観と動作 (ルックアンドフィール) がわかりやすくなります。
 
-## <a name="create-the-project"></a>プロジェクトの作成
+## <a name="create-the-project"></a>プロジェクトを作成する
 
 1. Visual Studio で、"SnaplineExample" という名前の Windows ベースのアプリケーションプロジェクトを作成します。
 
-2. フォームデザイナーでフォームを選択します。
+2. フォーム デザイナーでフォームを選びます。
 
 ## <a name="space-and-align-controls"></a>[スペースとコントロールの整列]
 
@@ -124,7 +124,7 @@ ms.locfileid: "73460646"
 
 ## <a name="align-a-label-to-a-controls-text"></a>コントロールのテキストにラベルを揃える
 
-1. <xref:System.Windows.Forms.TextBox> ツールボックス **から** コントロールをフォームにドラッグします。 フォームに <xref:System.Windows.Forms.TextBox> コントロールをドロップする場合は、スマートタググリフをクリックし、 **[テキストを textBox1 に設定]** オプションを選択します。 詳細については、「[チュートリアル: Windows フォームコントロールのスマートタグを使用した一般的なタスクの実行](performing-common-tasks-using-smart-tags-on-wf-controls.md)」を参照してください。
+1. <xref:System.Windows.Forms.TextBox> ツールボックス **から** コントロールをフォームにドラッグします。 フォームに <xref:System.Windows.Forms.TextBox> コントロールをドロップする場合は、スマートタググリフをクリックし、 **[テキストを textBox1 に設定]** オプションを選択します。 詳細については、「[チュートリアル: デザイナーアクションを使用した一般的なタスクの実行](perform-common-tasks-design-actions.md)」を参照してください。
 
 2. <xref:System.Windows.Forms.Label> ツールボックス **から** コントロールをフォームにドラッグします。
 
@@ -180,15 +180,15 @@ ms.locfileid: "73460646"
 
 4. フォーム上のコントロールを選択し、他のコントロールの周囲に移動します。 スナップ線が表示されないことに注意してください。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
-スナップ線は、フォーム上にコントロールを配置するための直感的な手段を提供します。 さらに詳しく調べるための推奨事項を次に示します。
+スナップ線は、フォーム上にコントロールを配置するための直感的な手段を提供します。 さらに理解を深めるには、次の操作を行うことをお勧めします。
 
 - <xref:System.Windows.Forms.GroupBox> コントロールを別の <xref:System.Windows.Forms.GroupBox> コントロール内に入れ子にしてみてください。 子 <xref:System.Windows.Forms.GroupBox> コントロールに <xref:System.Windows.Forms.Button> コントロールを配置し、親 <xref:System.Windows.Forms.GroupBox> コントロール内で別のコントロールを配置します。 <xref:System.Windows.Forms.Button> コントロールを移動して、スナップ線がコンテナーの境界を越えていることを確認します。
 
 - <xref:System.Windows.Forms.TextBox> コントロールの列と、<xref:System.Windows.Forms.Label> コントロールの対応する列を作成します。 <xref:System.Windows.Forms.Label> コントロールの <xref:System.Windows.Forms.Control.AutoSize%2A> プロパティの値を `true`に設定します。 スナップ線を使用して <xref:System.Windows.Forms.Label> コントロールを移動し、表示されているテキストが <xref:System.Windows.Forms.TextBox> コントロール内のテキストに合わせて調整されるようにします。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.Forms.Design.Behavior.SnapLine>
 - [チュートリアル: FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)

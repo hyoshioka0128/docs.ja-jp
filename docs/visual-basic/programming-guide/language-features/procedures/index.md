@@ -1,5 +1,5 @@
 ---
-title: 手順
+title: プロシージャ
 ms.date: 04/28/2017
 helpviewer_keywords:
 - procedures [Visual Basic], structured code
@@ -8,21 +8,21 @@ helpviewer_keywords:
 - structured code [Visual Basic], procedures
 - procedures
 ms.assetid: 9effbcf0-80a0-4d1a-98f4-2c6920592766
-ms.openlocfilehash: b959f4b6986bc325c97c7cbe9aeee0341832f6cc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: c0d9921704570c6984b203817aed8f5546b2f936
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345994"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "85503813"
 ---
 # <a name="procedures-in-visual-basic"></a>Visual Basic におけるプロシージャ
-*プロシージャ*は、宣言ステートメント (`Function`、`Sub`、`Operator`、`Get`、`Set`)、および一致する `End` 宣言で囲まれた Visual Basic ステートメントのブロックです。 Visual Basic 内のすべての実行可能なステートメントは、何らかのプロシージャ内になければなりません。  
+*プロシージャ*は、宣言ステートメント (`Function`、`Sub`、`Operator`、`Get`、`Set`) とこれに一致する `End` 宣言で囲まれた、Visual Basic ステートメントのブロックです。 Visual Basic のすべての実行可能なステートメントは何らかのプロシージャに含まれている必要があります。  
   
 ## <a name="calling-a-procedure"></a>プロシージャの呼び出し  
  コード内の他の場所からプロシージャを呼び出します。 これは、*プロシージャ コール*と呼ばれています。 プロシージャの実行が終了すると、それを呼び出したコード (*呼び出しコード*と呼ばれます) に制御が戻ります。 呼び出しコードは、名前でプロシージャを指定して、これに制御を転送するステートメント、またはステートメント内の式です。  
   
 ## <a name="returning-from-a-procedure"></a>プロシージャからの復帰  
- プロシージャは、実行が終了すると、呼び出しコードに制御を戻します。 これを行うには、[Return ステートメント](../../../../visual-basic/language-reference/statements/return-statement.md)、プロシージャに適した [Exit ステートメント](../../../../visual-basic/language-reference/statements/exit-statement.md)、またはプロシージャの [End \<キーワード> ステートメント](../../../../visual-basic/language-reference/statements/end-keyword-statement.md)を使用することができます。 これで、プロシージャ コールの次の時点で、制御が呼び出しコードに渡されます。  
+ プロシージャは、実行が終了すると、呼び出しコードに制御を戻します。 これを行うには、[Return ステートメント](../../../language-reference/statements/return-statement.md)、プロシージャに適した [Exit ステートメント](../../../language-reference/statements/exit-statement.md)、またはプロシージャの [End \<keyword> ステートメント](../../../language-reference/statements/end-keyword-statement.md)を使用することができます。 これで、プロシージャ コールの次の時点で、制御が呼び出しコードに渡されます。  
   
 - `Return` ステートメントでは、ただちに呼び出しコードに制御が戻ります。 `Return` ステートメントより後のステートメントは実行されません。 同じプロシージャ内に複数の `Return` ステートメントを含めることができます。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "74345994"
  プロシージャは、ほとんどの場合、呼び出すたびにデータごとに動作する必要があります。 この情報は、プロシージャ コールの一部としてプロシージャに渡すことができます。 プロシージャは、*パラメーター*を 0 個、またはそれ以上でも定義することができ、それぞれが渡す必要がある値を表しています。 プロシージャ定義の各パラメーターに相当するのが、プロシージャ コールの*引数*です。 引数は、指定したプロシージャ コールの対応するパラメーターに渡される値を表しています。  
   
 ## <a name="types-of-procedures"></a>プロシージャの種類  
- Visual Basic は、次のようないくつかの種類のプロシージャを使用します。  
+ Visual Basic では、次のような種類のプロシージャを使用します。  
   
 - [Sub プロシージャ](./sub-procedures.md)はアクションを実行しますが、呼び出しコードに値を返しません。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "74345994"
   
 - [演算子プロシージャ](./operator-procedures.md)は、オペランドの一方または両方が新しく定義されたクラスまたは構造体である場合に、標準の演算子の動作を定義します。  
   
-- [Visual Basic におけるジェネリック プロシージャ](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)は、標準のパラメーターだけでなく 1 つまたは複数の*型パラメーター*も定義するため、呼び出しコードが呼び出しのたびに特定のデータ型を渡すことができます。  
+- [Visual Basic におけるジェネリック プロシージャ](../data-types/generic-procedures.md)は、標準のパラメーターだけでなく 1 つまたは複数の*型パラメーター*も定義するため、呼び出しコードが呼び出しのたびに特定のデータ型を渡すことができます。  
   
 ## <a name="procedures-and-structured-code"></a>プロシージャと構造化されたコード  
  アプリケーションの実行可能コードのすべての行が、`Main`、 `calculate`、`Button1_Click` などの何らかのプロシージャの内部にある必要があります。 大きなプロシージャを小さなプロシージャに分割すると、アプリケーションが読みやすくなります。  
@@ -61,9 +61,9 @@ ms.locfileid: "74345994"
   
 - 1 つのプログラムで使用するために開発したプロシージャを、他のプログラムでも使用できます。多くの場合、プログラムをほとんどまたはまったく変更せずに使用できます。 これにより、コードの重複を避けることができます。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [方法 : プロシージャを作成する](./how-to-create-a-procedure.md)
+- [方法: プロシージャを作成する](./how-to-create-a-procedure.md)
 - [Sub プロシージャ](./sub-procedures.md)
 - [Function プロシージャ](./function-procedures.md)
 - [Property プロシージャ](./property-procedures.md)
@@ -71,5 +71,5 @@ ms.locfileid: "74345994"
 - [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)
 - [再帰プロシージャ](./recursive-procedures.md)
 - [プロシージャのオーバーロード](./procedure-overloading.md)
-- [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
-- [クラスとオブジェクト](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Generic Procedures in Visual Basic](../data-types/generic-procedures.md)
+- [クラスとオブジェクト](../objects-and-classes/index.md)

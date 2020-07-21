@@ -12,15 +12,15 @@ helpviewer_keywords:
 ms.assetid: e9dfc8d6-4555-47b9-a4de-0acd64f8770a
 ms.openlocfilehash: a7dc0d2cc32d387f87221748ab94ac82c2dfc8b0
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61911829"
 ---
 # <a name="expander"></a>Expander
-<xref:System.Windows.Controls.Expander>ヘッダーを表示し、詳細は、さらに参照してください。 または、ヘッダーまでのセクションを折りたたむには、そのヘッダーを展開できます。  
+<xref:System.Windows.Controls.Expander> を使用すると、ユーザーはヘッダーを表示したり、展開して詳細を表示したり、ヘッダーまでセクションを折りたたむことができます。  
   
- 次の図は、展開された位置では、このコントロールの例を示します。  
+ 次の図では、このコントロールが展開された状態の例を示しています。  
   
  ![Expander の例](./media/expander/expander-control-example.jpg)
   
@@ -28,7 +28,7 @@ ms.locfileid: "61911829"
  [エキスパンダーの概要](expander-overview.md)  
  [方法トピック](expander-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Expander>  
   
 ## <a name="related-sections"></a>関連項目

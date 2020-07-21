@@ -2,17 +2,17 @@
 title: ワークフロー サービス内でのシリアル化の構成
 ms.date: 03/30/2017
 ms.assetid: aa70b290-a2ee-4c3c-90ea-d0a7665096ae
-ms.openlocfilehash: 0e0f03a30aa8e8679cf849aa75948e0bc2314fe5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5076f3d377a656cb96909cf8df01591dc6ab72b7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857512"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597541"
 ---
 # <a name="configuring-serialization-in-a-workflow-service"></a>ワークフロー サービス内でのシリアル化の構成
-ワークフロー サービスは、Windows Communication Foundation (WCF) サービスをそのため、オプションのいずれかを使用して、、 <xref:System.Runtime.Serialization.DataContractSerializer> (既定値) または<xref:System.Xml.Serialization.XmlSerializer>します。 ワークフロー以外のサービスを記述する場合、使用するシリアライザーの型はサービスまたは操作コントラクトで指定されます。 WCF ワークフロー サービスを作成するときに、コードでは、これらのコントラクトを指定しないが、コントラクト推論で実行時に生成されます。 コントラクト推論の詳細については、次を参照してください。[ワークフローを使用してコントラクト](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md)します。  シリアライザーは、<xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> プロパティを使用して指定されます。 これは、次の図に示すようにデザイナーで設定できます。  
+ワークフローサービスは Windows Communication Foundation (WCF) サービスであるため、 <xref:System.Runtime.Serialization.DataContractSerializer> (既定値) またはを使用することも <xref:System.Xml.Serialization.XmlSerializer> できます。 ワークフロー以外のサービスを記述する場合、使用するシリアライザーの型はサービスまたは操作コントラクトで指定されます。 WCF ワークフローサービスを作成する場合、これらのコントラクトはコードで指定せずに、コントラクト推論によって実行時に生成されます。 コントラクト推論の詳細については、「[ワークフローでのコントラクトの使用](using-contracts-in-workflow.md)」を参照してください。  シリアライザーは、<xref:System.ServiceModel.Activities.Receive.SerializerOption%2A> プロパティを使用して指定されます。 これは、次の図に示すようにデザイナーで設定できます。  
   
- ![[プロパティ] ウィンドウには、SerializerOption プロパティを設定します。](./media/configuring-serialization-in-a-workflow-service/setting-serializer-property.png)  
+ ![[プロパティ] ウィンドウで SerializerOption プロパティを設定します。](./media/configuring-serialization-in-a-workflow-service/setting-serializer-property.png)  
   
  シリアライザーは、次の例に示すようにコードで設定することもできます。  
   
@@ -27,15 +27,15 @@ Receive approveExpense = new Receive
             };  
 ```  
   
-  ワークフロー サービスにも既知の型を指定できます。 既知の型の詳細については、「[データコントラクトの既知の型](data-contract-known-types.md)」を参照してください。 既知の型は、デザイナーまたはコードで指定できます。 デザイナーで既知の型を指定するで KnownTypes プロパティの横にある省略記号ボタンをクリックして、**プロパティ ウィンドウ**の<xref:System.ServiceModel.Activities.Receive>アクティビティの次の図に示すようにします。   
+  ワークフロー サービスにも既知の型を指定できます。 既知の型の詳細については、「[データコントラクトの既知の型](data-contract-known-types.md)」を参照してください。 既知の型は、デザイナーまたはコードで指定できます。 デザイナーで既知の型を指定するには、次の図に示すように、アクティビティの [**プロパティ] ウィンドウ**で knowntypes プロパティの横にある省略記号ボタンをクリックし <xref:System.ServiceModel.Activities.Receive> ます。
   
- ![KnownTypes プロパティのダイアログ ボックスのスクリーン ショット。](./media/configuring-serialization-in-a-workflow-service/known-types-properties.png)  
+ ![KnownTypes プロパティダイアログボックスのスクリーンショット。](./media/configuring-serialization-in-a-workflow-service/known-types-properties.png)  
   
- これと既知の型を指定して検索することができる型コレクション エディターが表示されます。  
+ これにより、既知の型を検索して指定するための型コレクションエディターが表示されます。  
   
- ![型のコレクション エディターのスクリーン ショット。](./media/configuring-serialization-in-a-workflow-service/type-collection-editor.gif)  
+ ![型コレクションエディターのスクリーンショット。](./media/configuring-serialization-in-a-workflow-service/type-collection-editor.gif)  
   
- をクリックして、**新しいタイプの追加**リンクし、既知の型のコレクションに追加する型の選択や検索ドロップダウンを使用します。 既知の型をコードで指定するには、次の例に示すように <xref:System.ServiceModel.Activities.Receive.KnownTypes%2A> プロパティを使用します。  
+ [**新しい型の追加**] リンクをクリックし、ドロップダウンを使用して、既知の型のコレクションに追加する型を選択または検索します。 既知の型をコードで指定するには、次の例に示すように <xref:System.ServiceModel.Activities.Receive.KnownTypes%2A> プロパティを使用します。  
   
 ```csharp
 Receive approveExpense = new Receive  

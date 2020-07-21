@@ -1,19 +1,20 @@
 ---
 title: 接続文字列ビルダー
+description: ADO.NET のさまざまなプロバイダー向けに使用される接続文字列ビルダー クラスについて説明します。これらはすべて DbConnectionStringBuilder から継承されます。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
-ms.openlocfilehash: e1f8d636e793b2d8b984fe1aa0b823fa58a4981d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: e493140b4cf5a939e8ae8f42b617fb739ed09dec
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040175"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287065"
 ---
 # <a name="connection-string-builders"></a>接続文字列ビルダー
-以前のバージョンの ADO.NET では、文字列値が連結された接続文字列のコンパイル時チェックは行われませんでした。そのため、実行時には、正しくないキーワードによって <xref:System.ArgumentException>が生成されます。 各 .NET Framework データプロバイダーでは、接続文字列キーワードに対して異なる構文がサポートされていたため、手動で有効な接続文字列を構築することは困難です。 この問題に対処するために、ADO.NET 2.0 では、.NET Framework データプロバイダーごとに新しい接続文字列ビルダーが導入されました。 各データ プロバイダーは、<xref:System.Data.Common.DbConnectionStringBuilder> を継承した、厳密に型指定された接続文字列ビルダー クラスを提供しています。 次の表に、.NET Framework データプロバイダーとそれに関連付けられている接続文字列ビルダークラスを示します。  
+以前のバージョンの ADO.NET では、文字列値の連結によって構築された接続文字列がコンパイル時にはチェックされません。そのため、不適切なキーワードが使用された場合、実行時に <xref:System.ArgumentException> が発生します。 接続文字列のキーワードの構文は .NET Framework データ プロバイダーごとに異なるため、有効な接続文字列を手動で作成するのが難しいという問題がありました。 この問題に対処するため、ADO.NET 2.0 では、各 .NET Framework データ プロバイダー用の新しい接続文字列ビルダーが導入されました。 各データ プロバイダーは、<xref:System.Data.Common.DbConnectionStringBuilder> を継承した、厳密に型指定された接続文字列ビルダー クラスを提供しています。 次の表は、各 .NET Framework データ プロバイダーおよび対応する接続文字列ビルダー クラスの一覧です。  
   
 |プロバイダー|ConnectionStringBuilder クラス|  
 |--------------|-----------------------------------|  
@@ -59,7 +60,7 @@ initial catalog="AdventureWorks;NewValue=Bad"
  接続文字列ビルダーには、<xref:System.String> を引数として受け取るオーバーロード コンストラクターがあります。この引数に対して接続文字列を部分的に指定しておき、それ以外の部分をユーザー入力で補完することも可能です。 部分的な接続文字列は構成ファイルに保存し、実行時に取得できます。  
   
 > [!NOTE]
-> 構成ファイルへのプログラム アクセスは <xref:System.Configuration> 名前空間によって実現できます。Web アプリケーションの場合は <xref:System.Web.Configuration.WebConfigurationManager> を、Windows アプリケーションの場合は <xref:System.Configuration.ConfigurationManager> を使用します。 接続文字列と構成ファイルの操作の詳細については、「[接続文字列と構成ファイル](connection-strings-and-configuration-files.md)」を参照してください。  
+> 構成ファイルへのプログラム アクセスは <xref:System.Configuration> 名前空間によって実現できます。Web アプリケーションの場合は <xref:System.Web.Configuration.WebConfigurationManager> を、Windows アプリケーションの場合は <xref:System.Configuration.ConfigurationManager> を使用します。 接続文字列と構成ファイルの使用について詳しくは、「[接続文字列と構成ファイル](connection-strings-and-configuration-files.md)」をご覧ください。  
   
 ### <a name="example"></a>例  
  この例では、接続文字列の一部を構成ファイルから取得し、<xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A> の <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserID%2A> プロパティ、<xref:System.Data.SqlClient.SqlConnectionStringBuilder.Password%2A> プロパティ、および <xref:System.Data.SqlClient.SqlConnectionStringBuilder> プロパティを設定することによって接続文字列全体を作成します。 構成ファイルは次のように定義されています。  
@@ -67,7 +68,7 @@ initial catalog="AdventureWorks;NewValue=Bad"
 ```xml  
 <connectionStrings>  
   <clear/>  
-  <add name="partialConnectString"   
+  <add name="partialConnectString"
     connectionString="Initial Catalog=Northwind;"  
     providerName="System.Data.SqlClient" />  
 </connectionStrings>  

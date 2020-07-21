@@ -9,21 +9,21 @@ helpviewer_keywords:
 ms.assetid: aba45aed-7953-4b2c-bc29-315a9be6c440
 ms.openlocfilehash: 8998eba8a713cada62c8defc8d7500bf3bc036a3
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61791051"
 ---
 # <a name="statusbar"></a>StatusBar
-A<xref:System.Windows.Controls.Primitives.StatusBar>は、アプリケーションが状態情報を表示できるウィンドウの下部にある水平方向の領域です。  
+<xref:System.Windows.Controls.Primitives.StatusBar> は、アプリケーションがステータス情報を表示する、ウィンドウ下部の水平の領域です。  
   
- 次の図の例を示します、<xref:System.Windows.Controls.Primitives.StatusBar>します。  
+ 次の図に <xref:System.Windows.Controls.Primitives.StatusBar>の例を示します。  
   
  ![ステータス バー](./media/ss-ctl-statusbar.GIF "SS_CTL_statusbar")  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.StatusBar>  
   <xref:System.Windows.Controls.Primitives.StatusBarItem>  
   

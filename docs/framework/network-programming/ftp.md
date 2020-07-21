@@ -1,15 +1,16 @@
 ---
 title: FTP - .NET
+description: FtpWebRequest と FtpWebResponse クラスを使用することで .NET Framework によって提供される、FTP の包括的なサポートについて学習します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - FTP
 ms.assetid: 9b43f8b4-89d7-46a7-89fc-71aca916dd32
-ms.openlocfilehash: d945f03077a863d9e1baa6b59fe8a908566aba5a
-ms.sourcegitcommit: 90775b20343b6ad831af6f5380f8ab7553abb16b
+ms.openlocfilehash: d21ca43cd1041df358dc5e2add9560fb33e85d83
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54186151"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502588"
 ---
 # <a name="ftp"></a>FTP
 

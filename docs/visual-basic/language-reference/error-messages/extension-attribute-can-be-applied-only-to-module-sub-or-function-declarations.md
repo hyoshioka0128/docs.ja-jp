@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
-ms.openlocfilehash: 2ed3a10cdf941bb8d1d7c00379736e04e8cad4d7
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
-ms.translationtype: MT
+ms.openlocfilehash: 9b8f49c498699a8f7d1c4b329e82258501aa0c47
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583179"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363099"
 ---
 # <a name="extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations"></a>'Extension' 属性は 'Module'、'Sub'、または 'Function' の各宣言にのみ適用できます
 
-Visual Basic でデータ型を拡張する唯一の方法は、標準モジュール内で拡張メソッドを定義することです。 拡張メソッドには、`Sub` プロシージャまたは `Function` プロシージャを指定できます。 すべての拡張メソッドは、<xref:System.Runtime.CompilerServices?displayProperty=nameWithType> 名前空間の拡張属性 `<Extension()>` でマークする必要があります。 必要に応じて、拡張メソッドを含むモジュールを同じ方法でマークすることもできます。 その他の拡張属性の使用は有効ではありません。
+Visual Basic でデータ型を拡張する唯一の方法は、標準モジュール内で拡張メソッドを定義することです。 拡張メソッドになるのは、`Sub` プロシージャまたは `Function` プロシージャです。 すべての拡張メソッドは、<xref:System.Runtime.CompilerServices?displayProperty=nameWithType> 名前空間の拡張属性 `<Extension()>` でマークする必要があります。 必要に応じて、拡張メソッドを含むモジュールを同じ方法でマークすることもできます。 その他の拡張属性の使用は有効ではありません。
 
 **エラー ID:** BC36550
 
@@ -24,11 +24,11 @@ Visual Basic でデータ型を拡張する唯一の方法は、標準モジュ�
 
 - 拡張属性を削除します。
 
-- 外側のモジュールで定義されているメソッドとして拡張機能を再設計します。
+- それを囲むモジュールに定義されているメソッドとして拡張機能を再設計します。
 
 ## <a name="example"></a>例
 
-次の例では、`String` データ型の `Print` メソッドを定義します。
+`String` データ型の `Print` メソッドを定義する例を次に示します。
 
 ```vb
 Imports StringUtility
@@ -46,6 +46,6 @@ End Namespace
 
 ## <a name="see-also"></a>関連項目
 
-- [属性の概要](../../../visual-basic/programming-guide/concepts/attributes/index.md)
-- [拡張メソッド](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
-- [Module ステートメント](../../../visual-basic/language-reference/statements/module-statement.md)
+- [属性の概要](../../programming-guide/concepts/attributes/index.md)
+- [拡張メソッド](../../programming-guide/language-features/procedures/extension-methods.md)
+- [Module ステートメント](../statements/module-statement.md)

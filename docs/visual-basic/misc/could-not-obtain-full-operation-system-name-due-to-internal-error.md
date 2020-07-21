@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrDiagnosticInfo_FullOSName
 ms.assetid: f69da02b-eb9a-4284-bb9e-3025517ae6c1
-ms.openlocfilehash: ecbed5b59d36b1984c0b0ae161821ea99d28e090
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 67e8fb5e906800d28bf15714463b7ff6ae585693
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970587"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402279"
 ---
 # <a name="could-not-obtain-full-operation-system-name-due-to-internal-error"></a>内部エラーのために完全な運用システム名を取得できませんでした
 内部エラーのために完全な運用システム名を取得できませんでした。 これは、現在のコンピューターに WMI が存在しないことが原因である場合があります。  
@@ -20,10 +20,10 @@ ms.locfileid: "61970587"
   
 1. `Try...Catch` プロパティの呼び出しの周囲に `My.Computer.Info.OSFullName` ブロックを追加します。  
   
-2. WMI とそのインストール方法の詳細については、「Windows Management Instrumentation Core」を検索してに移動します。  
+2. WMI とそのインストール方法の詳細については、「」にアクセスし、「Windows Management Instrumentation Core」を検索してください。  
   
 ## <a name="see-also"></a>関連項目
 
-- [My.Computer.Info.OSFullName](xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSFullName)
+- [マイ. Computer. Info. OSFullName](xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSFullName)
 - [.NET での例外の処理とスロー](../../standard/exceptions/index.md)
-- [Try...Catch...Finally ステートメント](../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [Try...Catch...Finally ステートメント](../language-reference/statements/try-catch-finally-statement.md)

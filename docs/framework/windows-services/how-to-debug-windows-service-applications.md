@@ -11,7 +11,7 @@ ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
 ms.openlocfilehash: 860f2ae22eb6510dc1f1a454ae3e51ccb366078b
 ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053619"
@@ -38,9 +38,9 @@ ms.locfileid: "71053619"
   
 1. サービスをデバッグ構成で構築します。  
   
-2. サービスをインストールします。 詳細については、「[方法 :サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。  
+2. サービスをインストールします。 詳細については、[サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。  
   
-3. **サービス コントロール マネージャー**、**サーバー エクスプローラー**、またはコードで、サービスを起動します。 詳細については、「[方法 :サービスを開始する](how-to-start-services.md)」を参照してください。  
+3. **サービス コントロール マネージャー**、**サーバー エクスプローラー**、またはコードで、サービスを起動します。 詳細については、[サービスを開始する](how-to-start-services.md)」を参照してください。  
   
 4. システム プロセスにアタッチすることができるように、管理者資格情報を使用して Visual Studio を起動します。  
   

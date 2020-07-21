@@ -1,16 +1,17 @@
 ---
-title: Windows フォームで使用するコントロール
+title: 使用するコントロール
+description: Windows フォームで使用できるコントロールとコンポーネントについて説明します。 また、ActiveX コントロールとカスタムコントロールを Windows フォームに追加することもできます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: bedfaef9a3d0cc81641006d254926f7bf9861c10
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f70c2df9fc9decb811124f0106ff56682e8efc5b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69930204"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622836"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Windows フォームで使用するコントロール
 Windows フォームで使うことができるコントロールとコンポーネントのアルファベット順の一覧を次に示します。 このセクションで説明する Windows フォーム コントロールに加えて、ActiveX コントロールとカスタム コントロールを Windows フォームに追加できます。 必要なコントロールがここで見つからない場合は、独自に作成することもできます。 詳しくは、「[デザイン時の Windows フォーム コントロールの開発](developing-windows-forms-controls-at-design-time.md)」をご覧ください。 必要なコントロールの選択について詳しくは、「[Windows フォーム コントロールの機能別一覧](windows-forms-controls-by-function.md)」をご覧ください。  
@@ -50,10 +51,10 @@ Windows フォームで使うことができるコントロールとコンポー
  ドロップダウン コンボ ボックスにデータを表示します。  
   
  [ContextMenu コンポーネント](contextmenu-component-windows-forms.md)  
- 選択したオブジェクトに関連付けられた、頻繁に使われるコマンドに簡単にアクセスできるメニューをユーザーを提供します。 は、以前のバージョンの<xref:System.Windows.Forms.ContextMenu>コントロールに<xref:System.Windows.Forms.ContextMenu> 代わる機能を追加しますが、必要に応じて、下位互換性と将来の使用の両方のために保持されます。<xref:System.Windows.Forms.ContextMenuStrip>  
+ 選択したオブジェクトに関連付けられた、頻繁に使われるコマンドに簡単にアクセスできるメニューをユーザーを提供します。 <xref:System.Windows.Forms.ContextMenuStrip>は、以前のバージョンのコントロールに代わる機能を追加し <xref:System.Windows.Forms.ContextMenu> <xref:System.Windows.Forms.ContextMenu> ますが、必要に応じて、下位互換性と将来の使用の両方のために保持されます。  
   
  [ContextMenuStrip コントロール](contextmenustrip-control.md)  
- ショートカット メニューを表します。 は、以前のバージョンの<xref:System.Windows.Forms.ContextMenu>コントロールに<xref:System.Windows.Forms.ContextMenu> 代わる機能を追加しますが、必要に応じて、下位互換性と将来の使用の両方のために保持されます。<xref:System.Windows.Forms.ContextMenuStrip>  
+ ショートカット メニューを表します。 <xref:System.Windows.Forms.ContextMenuStrip>は、以前のバージョンのコントロールに代わる機能を追加し <xref:System.Windows.Forms.ContextMenu> <xref:System.Windows.Forms.ContextMenu> ますが、必要に応じて、下位互換性と将来の使用の両方のために保持されます。  
   
  [DataGrid コントロール](datagrid-control-windows-forms.md)  
  データセットの表形式データを表示し、データ ソースを更新できます。  
@@ -96,7 +97,7 @@ Windows フォームで使うことができるコントロールとコンポー
  [ImageList コンポーネント](imagelist-component-windows-forms.md)  
  他のコントロールにイメージを表示します。  
   
- [Label コントロール](label-control-windows-forms.md)  
+ [ラベルコントロール](label-control-windows-forms.md)  
  ユーザーが編集できないテキストを表示します。  
   
  [LinkLabel コントロール](linklabel-control-windows-forms.md)  
@@ -109,13 +110,13 @@ Windows フォームで使うことができるコントロールとコンポー
  Windows エクスプローラーの形式で、アイコン付きの項目一覧を表示します。  
   
  [MainMenu コンポーネント](mainmenu-component-windows-forms.md)  
- 実行時にメニューを表示します。 は、以前のバージョンの<xref:System.Windows.Forms.MainMenu>コントロールに<xref:System.Windows.Forms.MainMenu> 代わる機能を追加していますが、旧バージョンとの互換性を保つために残されています。<xref:System.Windows.Forms.MenuStrip>  
+ 実行時にメニューを表示します。 <xref:System.Windows.Forms.MenuStrip> コントロールは、以前のバージョンの <xref:System.Windows.Forms.MainMenu> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.MainMenu> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
   
  [MaskedTextBox コントロール](maskedtextbox-control-windows-forms.md)  
  フォームでのユーザー入力の形式を制限します。  
   
  [MenuStrip コントロール](menustrip-control-windows-forms.md)  
- フォーム用のメニュー システムを提供します。 は、以前のバージョンの<xref:System.Windows.Forms.MainMenu>コントロールに<xref:System.Windows.Forms.MainMenu> 代わる機能を追加していますが、旧バージョンとの互換性を保つために残されています。<xref:System.Windows.Forms.MenuStrip>  
+ フォーム用のメニュー システムを提供します。 <xref:System.Windows.Forms.MenuStrip> コントロールは、以前のバージョンの <xref:System.Windows.Forms.MainMenu> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.MainMenu> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
   
  [MonthCalendar コントロール](monthcalendar-control-windows-forms.md)  
  ユーザーが日付情報を表示して設定するための直感的なグラフィカル インターフェイスを提供します。  
@@ -189,19 +190,19 @@ Windows フォームで使うことができるコントロールとコンポー
  一定の間隔でイベントを発生させます。  
   
  [ToolBar コントロール](toolbar-control-windows-forms.md)  
- コマンドをアクティブ化するメニューとビットマップのボタンを表示します。 コントロールの機能を拡張し、その外観と動作を変更できます。 は、以前のバージョンの<xref:System.Windows.Forms.ToolBar>コントロールに<xref:System.Windows.Forms.ToolBar> 代わる機能を追加していますが、旧バージョンとの互換性を保つために残されています。<xref:System.Windows.Forms.ToolStrip>  
+ コマンドをアクティブ化するメニューとビットマップのボタンを表示します。 コントロールの機能を拡張し、その外観と動作を変更できます。 <xref:System.Windows.Forms.ToolStrip> コントロールは、以前のバージョンの <xref:System.Windows.Forms.ToolBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ToolBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
   
  [ToolStrip コントロール](toolstrip-control-windows-forms.md)  
- Windows フォーム アプリケーションにカスタムのツールバーとメニューを作成します。 は、以前のバージョンの<xref:System.Windows.Forms.ToolBar>コントロールに<xref:System.Windows.Forms.ToolBar> 代わる機能を追加していますが、旧バージョンとの互換性を保つために残されています。<xref:System.Windows.Forms.ToolStrip>  
+ Windows フォーム アプリケーションにカスタムのツールバーとメニューを作成します。 <xref:System.Windows.Forms.ToolStrip> コントロールは、以前のバージョンの <xref:System.Windows.Forms.ToolBar> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.ToolBar> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。  
   
  [ToolStripContainer コントロール](toolstripcontainer-control.md)  
- ドッキング、ラフティング、および配置<xref:System.Windows.Forms.ToolStrip>を行うためのフォームの各面にパネルを用意し、従来のコントロールの中心<xref:System.Windows.Forms.ToolStripContentPanel>となるようにします。  
+ ドッキング、ラフティング、および配置を行うためのフォームの各面にパネルを用意 <xref:System.Windows.Forms.ToolStrip> し、従来のコントロールの中心となるようにし <xref:System.Windows.Forms.ToolStripContentPanel> ます。  
   
  [ToolStripPanel コントロール](toolstrippanel-control.md)  
- ドッキング、ラフティング、および配置<xref:System.Windows.Forms.ToolStrip>のコントロールに1つのパネルを提供します。  
+ ドッキング、ラフティング、および配置のコントロールに1つのパネルを提供し <xref:System.Windows.Forms.ToolStrip> ます。  
   
  [ToolStripProgressBar コントロールの概要](toolstripprogressbar-control-overview.md)  
- 処理の進行状況をグラフィカルに示します。 は<xref:System.Windows.Forms.ToolStripProgressBar> 、通常、 <xref:System.Windows.Forms.StatusStrip>に含まれています。  
+ 処理の進行状況をグラフィカルに示します。 は、 <xref:System.Windows.Forms.ToolStripProgressBar> 通常、に含まれてい <xref:System.Windows.Forms.StatusStrip> ます。  
   
  [ToolStripStatusLabel コントロール](toolstripstatuslabel-control.md)  
  <xref:System.Windows.Forms.StatusStrip> コントロールのパネルを表します。  
@@ -222,7 +223,7 @@ Windows フォームで使うことができるコントロールとコンポー
  選択できるオプションの一覧をユーザーに提供するために使用するコントロールのセットについて説明します。  
   
 ## <a name="related-sections"></a>関連項目  
- [Windows フォーム コントロール](index.md)  
+ [Windows フォームコントロール](index.md)  
  Windows フォーム コントロールの使用、それらを操作するための重要な概念について説明します。  
   
  [デザイン時の Windows フォーム コントロールの開発](developing-windows-forms-controls-at-design-time.md)  

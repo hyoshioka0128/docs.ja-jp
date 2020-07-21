@@ -1,6 +1,5 @@
 ---
 title: $ - 文字列補間 - C# リファレンス
-ms.custom: seodec18
 description: 文字列補間では、従来の複合文字列の書式設定よりも読み取りやすく、便利な構文を書式指定文字列の出力に提供します。
 ms.date: 09/02/2019
 f1_keywords:
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
-ms.openlocfilehash: cda8582da9ca8262ec2ce6bcfbb76e2e2f5f6006
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 2b95fa5fe5cecd4825e8c17a33f7795c6c9480c6
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421850"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738368"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ - 文字列補間 (C# リファレンス)
 
@@ -85,7 +84,7 @@ verbatim 補間文字列は、`$` 文字で始まり、`@` 文字が続きます
 
 ## <a name="additional-resources"></a>その他の技術情報
 
-文字列補間を初めてお使いの場合は、[C# の文字列補完](../../tutorials/exploration/interpolated-strings.yml)に関する対話形式チュートリアルを参照してください。 また、補完された文字列を使用して書式設定された文字列を生成する方法を示したもう 1 つのチュートリアル「[C# における文字列補完](../../tutorials/string-interpolation.md)」も確認してください。
+文字列補間を初めてお使いの場合は、[C# の文字列補完](../../tutorials/exploration/interpolated-strings.yml)に関する対話形式チュートリアルを参照してください。 また、補間された文字列を使用して書式設定された文字列を生成する方法を示したもう 1 つのチュートリアル「[C# における文字列補間](../../tutorials/string-interpolation.md)」を確認することもできます。
 
 ## <a name="compilation-of-interpolated-strings"></a>補完文字列のコンパイル
 
@@ -102,6 +101,6 @@ verbatim 補間文字列は、`$` 文字で始まり、`@` 文字が続きます
 - [C# リファレンス](../index.md)
 - [C# 特殊文字](index.md)
 - [文字列](../../programming-guide/strings/index.md)
-- [数値結果テーブルの書式設定](../keywords/formatting-numeric-results-table.md)
+- [標準の数値書式指定文字列](../../../standard/base-types/standard-numeric-format-strings.md)
 - [複合書式指定](../../../standard/base-types/composite-formatting.md)
 - <xref:System.String.Format%2A?displayProperty=nameWithType>

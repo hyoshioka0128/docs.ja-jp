@@ -1,17 +1,17 @@
 ---
-title: 演算子は無効です '<name1>'と'<name2>'
+title: 演算子は ' <name1> ' および ' ' に対して有効ではありません。 <name2>
 ms.date: 07/20/2015
 f1_keywords:
 - vbrNoValidOperator_TwoOperands
 ms.assetid: b2b1e6ce-d262-4644-8085-e48a2e2f06a6
-ms.openlocfilehash: c13638d7be3081ceaddd6ff7096ba670b39d173a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 037cb035c98c70dd39a7056fed8f42b9c508a780
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944795"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375914"
 ---
-# <a name="operator-is-not-valid-for-name1-and-name2"></a>演算子は無効です '\<name1 >' と'\<name2 >'
+# <a name="operator-is-not-valid-for-name1-and-name2"></a>演算子は ' \<name1> ' および ' ' に対して有効ではありません。 \<name2>
 演算子は演算対象の型に適していません。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -20,4 +20,4 @@ ms.locfileid: "61944795"
   
 ## <a name="see-also"></a>関連項目
 
-- [演算子](../../visual-basic/language-reference/operators/index.md)
+- [演算子](../language-reference/operators/index.md)

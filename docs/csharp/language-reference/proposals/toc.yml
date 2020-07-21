@@ -1,6 +1,6 @@
 - name: 最新の機能仕様
   items:
-    - name: 'C# 7.0 仕様の提案'
+    - name: C# 7.0 仕様の提案
       items:
         - name: パターン マッチング
           href: ../../../../_csharplang/proposals/csharp-7.0/pattern-matching.md
@@ -14,7 +14,7 @@
           href: ../../../../_csharplang/proposals/csharp-7.0/binary-literals.md
         - name: 桁区切り文字
           href: ../../../../_csharplang/proposals/csharp-7.0/digit-separators.md
-    - name: 'C# 7.1 仕様の提案'
+    - name: C# 7.1 仕様の提案
       items:
         - name: 非同期 main メソッド
           href: ../../../../_csharplang/proposals/csharp-7.1/async-main.md
@@ -24,7 +24,7 @@
           href: ../../../../_csharplang/proposals/csharp-7.1/infer-tuple-names.md
         - name: ジェネリックを使用したパターン マッチング
           href: ../../../../_csharplang/proposals/csharp-7.1/generics-pattern-match.md
-    - name: 'C# 7.2 仕様の提案'
+    - name: C# 7.2 仕様の提案
       items:
         - name: 読み取り専用の参照
           href: ../../../../_csharplang/proposals/csharp-7.2/readonly-ref.md
@@ -38,7 +38,7 @@
           href: ../../../../_csharplang/proposals/csharp-7.2/conditional-ref.md
         - name: 先頭の桁区切り文字
           href: ../../../../_csharplang/proposals/csharp-7.2/leading-separator.md
-    - name: 'C# 7.3 仕様の提案'
+    - name: C# 7.3 仕様の提案
       items:
         - name: アンマネージド ジェネリック型制約
           href: ../../../../_csharplang/proposals/csharp-7.3/blittable.md
@@ -58,7 +58,7 @@
           href: ../../../../_csharplang/proposals/csharp-7.3/tuple-equality.md
         - name: オーバーロード候補の改善
           href: ../../../../_csharplang/proposals/csharp-7.3/improved-overload-candidates.md
-    - name: 'C# 8.0 仕様の提案'
+    - name: C# 8.0 仕様の提案
       items:
         - name: Null 許容参照型 - 提案
           href: ../../../../_csharplang/proposals/csharp-8.0/nullable-reference-types.md
@@ -74,7 +74,11 @@
           href: ../../../../_csharplang/proposals/csharp-8.0/ranges.md
         - name: パターン ベース using および using 宣言
           href: ../../../../_csharplang/proposals/csharp-8.0/using.md
+        - name: 静的ローカル関数
+          href: ../../../../_csharplang/proposals/csharp-8.0/static-local-functions.md
         - name: Null 合体演算子割り当て
           href: ../../../../_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md
         - name: 読み取り専用インスタンス メンバー
           href: ../../../../_csharplang/proposals/csharp-8.0/readonly-instance-members.md
+        - name: 入れ子になった stackalloc
+          href: ../../../../_csharplang/proposals/csharp-8.0/nested-stackalloc.md

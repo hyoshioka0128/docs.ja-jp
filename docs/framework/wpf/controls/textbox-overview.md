@@ -5,65 +5,65 @@ helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF], about TextBox control
 ms.assetid: 1ba6dc5b-11a7-4247-9213-36c6729ee35f
-ms.openlocfilehash: 46600fd1a3023a80d49fae6f020279be6131916a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.openlocfilehash: 86b2cf8cb0c72186fd92bdad0af6bf5bd3fa9f3f
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951489"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174433"
 ---
 # <a name="textbox-overview"></a>TextBox の概要
-クラス<xref:System.Windows.Controls.TextBox>を使用すると、書式設定されていないテキストを表示または編集できます。 の一般的な使用方法<xref:System.Windows.Controls.TextBox>は、書式設定されていないテキストをフォームで編集することです。 たとえば、ユーザーの名前や電話番号などを要求するフォームは、テキスト入力に<xref:System.Windows.Controls.TextBox>コントロールを使用します。 このトピックでは<xref:System.Windows.Controls.TextBox> 、クラスについて説明し、とC#の両方[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]で使用する方法の例を示します。  
+<xref:System.Windows.Controls.TextBox> クラスでは、書式設定されていないテキストを表示または編集できます。 <xref:System.Windows.Controls.TextBox> の一般的な用途は、フォームで書式設定されていないテキストを編集することです。 たとえば、ユーザーの名前、電話番号などの入力を求めるフォームでは、テキスト入力用に <xref:System.Windows.Controls.TextBox> コントロールを使用します。 このトピックでは、<xref:System.Windows.Controls.TextBox> クラスを紹介し、それを [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] と C# の両方で使用する方法の例を示します。  
 
-<a name="textbox_or_richtextbox"></a>   
+<a name="textbox_or_richtextbox"></a>
 ## <a name="textbox-or-richtextbox"></a>TextBox か RichTextBox か  
- と<xref:System.Windows.Controls.TextBox>は<xref:System.Windows.Controls.RichTextBox>どちらも、ユーザーがテキストを入力できるようにしますが、2つのコントロールはさまざまなシナリオで使用されます。 で<xref:System.Windows.Controls.TextBox>は、必要な<xref:System.Windows.Controls.RichTextBox>システムリソースが少なくて済みます。そのため、プレーンテキストのみを編集する必要がある場合 (つまり、フォーム内で使用する場合) に最適です。 <xref:System.Windows.Controls.RichTextBox>は、ユーザーが書式設定されたテキスト、画像、テーブル、またはその他のサポートされるコンテンツを編集する必要がある場合に適しています。 たとえば、書式設定や画像などを必要とするドキュメント、記事、ブログを編集する場合は、を<xref:System.Windows.Controls.RichTextBox>使用することをお勧めします。 次の表は、と<xref:System.Windows.Controls.TextBox> <xref:System.Windows.Controls.TextBox>の主な機能をまとめたものです。  
+ <xref:System.Windows.Controls.TextBox> と <xref:System.Windows.Controls.RichTextBox> のどちらを使用しても、ユーザーはテキストを入力できますが、この 2 つのコントロールは異なるシナリオで使用されます。 <xref:System.Windows.Controls.TextBox> は、必要なシステム リソースが <xref:System.Windows.Controls.RichTextBox> より少ないため、プレーンテキストのみを編集する必要がある場合に理想的です (つまりフォームでの使用)。 <xref:System.Windows.Controls.RichTextBox> は、書式設定されたテキスト、イメージ、テーブルなどのサポート対象コンテンツを編集する必要がある場合に適しています。 たとえば、書式設定やイメージなどを必要とするドキュメント、記事、またはブログを編集する場合は、<xref:System.Windows.Controls.RichTextBox> を使用することをお勧めします。 次の表は、<xref:System.Windows.Controls.TextBox> と <xref:System.Windows.Controls.RichTextBox> の主な機能をまとめたものです。  
   
-|コントロール|リアルタイム スペル チェック|コンテキスト メニュー|(Ctr + <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> B) のような書式設定コマンド|<xref:System.Windows.Documents.FlowDocument>画像、段落、テーブルなどのコンテンツ|  
+|Control|リアルタイム スペル チェック|コンテキスト メニュー|<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> (Ctrl + B) のような書式設定コマンド|イメージ、段落、テーブルのような <xref:System.Windows.Documents.FlowDocument> コンテンツ|  
 |-------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
-|<xref:System.Windows.Controls.TextBox>|[はい]|[はい]|いいえ|No.|  
-|<xref:System.Windows.Controls.RichTextBox>|[はい]|[はい]|はい (「[RichTextBox の概要](richtextbox-overview.md)」を参照)|はい (「[RichTextBox の概要](richtextbox-overview.md)」を参照)|  
+|<xref:System.Windows.Controls.TextBox>|はい|はい|いいえ|いいえ。|  
+|<xref:System.Windows.Controls.RichTextBox>|はい|はい|はい (「[RichTextBox の概要](richtextbox-overview.md)」を参照)|はい (「[RichTextBox の概要](richtextbox-overview.md)」を参照)|  
   
 > [!NOTE]
-> は (Ctr + B) のような<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>書式設定関連の編集コマンドをサポートしていませんが、の<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A>ような多くの基本的なコマンドが両方のコントロールでサポートされています。 <xref:System.Windows.Controls.TextBox> 詳細については、「<xref:System.Windows.Documents.EditingCommands>」を参照してください。  
+> <xref:System.Windows.Controls.TextBox> では <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> (Ctrl + B) のような書式設定関連の編集コマンドはサポートされていませんが、<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A> などの多くの基本的なコマンドは両方のコントロールでサポートされています。 詳細については、「<xref:System.Windows.Documents.EditingCommands>」を参照してください。  
   
- で<xref:System.Windows.Controls.TextBox>サポートされている機能については、以下のセクションで説明します。 の詳細<xref:System.Windows.Controls.RichTextBox>については、「 [RichTextBox の概要](richtextbox-overview.md)」を参照してください。  
+ <xref:System.Windows.Controls.TextBox> でサポートされる機能については、以下の各セクションで説明します。 <xref:System.Windows.Controls.RichTextBox> の詳細については、「[RichTextBox の概要](richtextbox-overview.md)」を参照してください。  
   
 ### <a name="real-time-spellchecking"></a>リアルタイム スペル チェック  
- リアルタイムスペルチェックは、 <xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>で有効にすることができます。 スペル チェックをオンにすると、スペル ミスの語句の下に赤色の線が表示されます (下図を参照)。  
+ <xref:System.Windows.Controls.TextBox> または <xref:System.Windows.Controls.RichTextBox> で、リアルタイム スペル チェックを有効にすることができます。 スペル チェックをオンにすると、スペル ミスの語句の下に赤色の線が表示されます (下図を参照)。  
   
- ![スペル チェックを含む Textbox](./media/editing-textbox-with-spellchecking.png "Editing_TextBox_with_Spellchecking")  
+ ![スペル チェックを含む TextBox](./media/editing-textbox-with-spellchecking.png "Editing_TextBox_with_Spellchecking")  
   
  スペル チェックを有効にする方法については、「[テキスト編集コントロールでスペル チェックを有効にする](how-to-enable-spell-checking-in-a-text-editing-control.md)」を参照してください。  
   
 ### <a name="context-menu"></a>コンテキスト メニュー  
- 既定では、 <xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.RichTextBox>の両方に、ユーザーがコントロール内を右クリックしたときに表示されるコンテキストメニューがあります。 コンテキスト メニューでは、切り取り、コピー、または貼り付けをできます (下図を参照)。  
+ 既定では、<xref:System.Windows.Controls.TextBox> と <xref:System.Windows.Controls.RichTextBox> の両方に、ユーザーがコントロール内を右クリックしたときに表示されるコンテキスト メニューがあります。 コンテキスト メニューでは、切り取り、コピー、または貼り付けをできます (下図を参照)。  
   
  ![コンテキスト メニューを含む TextBox](./media/editing-textbox-with-context-menu.png "Editing_TextBox_with_Context_Menu")  
   
  既定の動作をオーバーライドする独自のカスタム コンテキスト メニューを作成できます。 詳細については、「[TextBox でカスタム コンテキスト メニューを使用する](how-to-use-a-custom-context-menu-with-a-textbox.md)」を参照してください。  
   
-<a name="creating_textboxes"></a>   
+<a name="creating_textboxes"></a>
 ## <a name="creating-textboxes"></a>TextBox の作成  
- は<xref:System.Windows.Controls.TextBox> 、1行の高さにすることも、複数の行を構成することもできます。 単一行<xref:System.Windows.Controls.TextBox>は、少量のプレーンテキストを入力する場合に最適です (つまり、「名前」、「電話番号」などのフォームへの入力)。 次の例では、単一行<xref:System.Windows.Controls.TextBox>を作成する方法を示します。  
+ <xref:System.Windows.Controls.TextBox> は、1 行の高さにしたり、複数行で構成したりできます。 単一行の <xref:System.Windows.Controls.TextBox> は、少量のプレーン テキストの入力に最適です (たとえば、「名前」、「電話番号」などのフォームへの入力)。 次の例では、単一行の <xref:System.Windows.Controls.TextBox> を作成する方法を示します。  
   
  [!code-xaml[TextBoxMiscSnippets_snip#BasicTextBoxExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/basictextboxexample.xaml#basictextboxexamplewholepage)]  
   
- また、ユーザーが複数<xref:System.Windows.Controls.TextBox>行のテキストを入力できるようにするを作成することもできます。 たとえば、ユーザーの経歴スケッチを求めるフォームが表示された場合は、複数行のテキスト<xref:System.Windows.Controls.TextBox>をサポートするを使用します。 次の例は、を使用[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]して、 <xref:System.Windows.Controls.TextBox>複数行のテキストに合わせて自動的に拡張されるコントロールを定義する方法を示しています。  
+ ユーザーが複数行のテキストを入力できる <xref:System.Windows.Controls.TextBox> を作成することもできます。 たとえば、ユーザーの経歴の入力を求めるフォームの場合、複数行のテキストをサポートする <xref:System.Windows.Controls.TextBox> を使用できます。 次の例では、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を使用して複数行のテキストに合わせて自動的に拡張する <xref:System.Windows.Controls.TextBox> コントロールを定義する方法を示します。  
   
  [!code-xaml[TextBox_MiscCode#_MultilineTextBoxXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_multilinetextboxxaml)]  
   
- 属性をに設定`Wrap`すると、 <xref:System.Windows.Controls.TextBox>コントロールの端に達したときにテキストが新しい行に折り返され、必要<xref:System.Windows.Controls.TextBox>に応じて、新しい行のスペースが含まれるようにコントロールが自動的に拡張されます。 <xref:System.Windows.Controls.TextBox.TextWrapping%2A>  
+ <xref:System.Windows.Controls.TextBox.TextWrapping%2A> 属性を `Wrap` に設定すると、テキストは <xref:System.Windows.Controls.TextBox> コントロールの端に達すると新しい行に折り返され、必要に応じて新しい行の空間が含まれるように <xref:System.Windows.Controls.TextBox> コントロールが自動的に拡張されます。  
   
- 属性をに設定`true`すると、RETURN キーが押されたときに新しい行が挿入されます。 <xref:System.Windows.Controls.TextBox>また、必要に応じて、を自動的に拡張して、新しい行にスペースが含まれるようにします。 <xref:System.Windows.Controls.Primitives.TextBoxBase.AcceptsReturn%2A>  
+ <xref:System.Windows.Controls.Primitives.TextBoxBase.AcceptsReturn%2A> 属性を `true` に設定すると、RETURN キーが押されると新しい行が挿入され、必要に応じて新しい行の空間が含まれるようにもう一度 <xref:System.Windows.Controls.TextBox> が自動的に拡張されます。  
   
- 属性<xref:System.Windows.Controls.Primitives.TextBoxBase.VerticalScrollBarVisibility%2A>は、 <xref:System.Windows.Controls.TextBox>にスクロールバーを追加します。これにより、 <xref:System.Windows.Controls.TextBox>が、フレームまたはウィンドウ<xref:System.Windows.Controls.TextBox>のサイズを超えて拡大した場合に、の内容をスクロールできるようになります。  
+ <xref:System.Windows.Controls.Primitives.TextBoxBase.VerticalScrollBarVisibility%2A> 属性によってスクロール バーが <xref:System.Windows.Controls.TextBox> に追加されるため、<xref:System.Windows.Controls.TextBox> がこれを囲むフレームまたはウィンドウのサイズよりも大きくなった場合、スクロール バーを使用して <xref:System.Windows.Controls.TextBox> の内容をスクロールできます。  
   
- の<xref:System.Windows.Controls.TextBox>使用に関連するさまざまなタスクの詳細については、「[操作方法に関するトピック](textbox-how-to-topics.md)」を参照してください。  
+ <xref:System.Windows.Controls.TextBox> の使用に関係するさまざまなタスクの詳細については、「[方法のトピック](textbox-how-to-topics.md)」を参照してください。  
   
-<a name="editing_commands"></a>   
+<a name="editing_commands"></a>
 ## <a name="detect-when-content-changes"></a>内容が変更されたときに検出する  
- 通常、 <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>イベントは<xref:System.Windows.Controls.RichTextBox> 、または<xref:System.Windows.Controls.TextBox>のテキストが必要に応じて変更されるたびに検出するために使用します。<xref:System.Windows.UIElement.KeyDown> 例については、「[TextBox のテキストがいつ変更されたかを検出する](how-to-detect-when-text-in-a-textbox-has-changed.md)」を参照してください。  
+ 通常、<xref:System.Windows.Controls.TextBox> または <xref:System.Windows.Controls.RichTextBox> のテキストが変更されたときには常に、予想されるような <xref:System.Windows.UIElement.KeyDown> ではなく、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントを使用して検出する必要があります。 例については、「[TextBox のテキストがいつ変更されたかを検出する](how-to-detect-when-text-in-a-textbox-has-changed.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

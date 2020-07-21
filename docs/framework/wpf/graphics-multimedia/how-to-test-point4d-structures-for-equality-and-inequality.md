@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: e004a67e-db7f-4af8-a31f-e6b2a44ccf34
 ms.openlocfilehash: ce1188e99ef2b0682427cc2e227aaccd27f7c4f4
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62050637"
 ---
 # <a name="how-to-test-point4d-structures-for-equality-and-inequality"></a>方法: Point4D 構造体が等価かどうかをテストする
-この例は、テストする方法を示しています。<xref:System.Windows.Media.Media3D.Point4D>構造体が等しいかどうか。  
+この例では、<xref:System.Windows.Media.Media3D.Point4D> 構造体の等価性と非等価性をテストする方法を示します。  
   
- 次のコードをテストする方法を示しています。<xref:System.Windows.Media.Media3D.Point4D>構造体が等しいかどうかと非等値を使用して、<xref:System.Windows.Media.Media3D.Point4D>等しいかどうかの方法です。  <xref:System.Windows.Media.Media3D.Point4D>オーバー ロードされた等値を使用して等しいかどうかの構造を検査 (`==`) 演算子をオーバー ロードされた不等値を使用して非等値の (`!=`) 演算子、および最後に、<xref:System.Windows.Media.Media3D.Point3D>構造と<xref:System.Windows.Media.Media3D.Point4D>構造体は、静的 using に等しいかどうかチェックされます<xref:System.Windows.Media.Media3D.Point4D.Equals%2A>メソッド。  
+ 次のコードは、<xref:System.Windows.Media.Media3D.Point4D> 等価性メソッドを利用し、<xref:System.Windows.Media.Media3D.Point4D> 構造体の等価性と非等価性をテストする方法を示すものです。  <xref:System.Windows.Media.Media3D.Point4D> 構造体の等価性がオーバーロードされた等価性 (`==`) 演算子でテストされ、その後、オーバーロードされた非等価性 (`!=`) 演算子で非等価性がテストされ、最後に、静的 <xref:System.Windows.Media.Media3D.Point4D.Equals%2A> メソッドを利用し、<xref:System.Windows.Media.Media3D.Point3D> 構造体と <xref:System.Windows.Media.Media3D.Point4D> 構造体の等価性が確認されます。  
   
 ## <a name="example"></a>例  
  [!code-csharp[3DGallery_procedural_snip#Point4DEqualityExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/Misc3DOperationsExample.cs#point4dequalityexample_csharp)]  

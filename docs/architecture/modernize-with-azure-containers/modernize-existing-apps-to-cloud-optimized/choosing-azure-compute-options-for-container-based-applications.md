@@ -1,13 +1,13 @@
 ---
 title: コンテナー ベース アプリケーション用の Azure コンピューティング プラットフォームの選択
 description: Azure Cloud および Windows コンテナーで既存の .NET アプリケーションを最新化する |コンテナー ベース アプリケーション用の Azure コンピューティング プラットフォームの選択
-ms.date: 05/04/2018
-ms.openlocfilehash: 079c9c5ca02b6dc75214d63cb59afdead03d3190
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 02/18/2020
+ms.openlocfilehash: 4bc72fb5a5be30d47cffe73d53a82b3237a959a6
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73737001"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987817"
 ---
 # <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>コンテナー ベース アプリケーション用の Azure コンピューティング プラットフォームの選択
 
@@ -21,13 +21,23 @@ ms.locfileid: "73737001"
 - **サーバーレス関数とイベント ハンドラー:** Azure Functions を選ぶ
 - **大規模なバッチ:** Azure Batch を選ぶ
 
-しかし、この推奨事項は、特定のアプリケーションのニーズと特性によって製品の選択が異なるため、完全には信じないことをお勧めします。 すべてのアプリケーションが同様の種類のように見えても、すべてが同じというわけではありません。
+ただし、製品の選択は、特定のアプリケーションのニーズと特性によって異なるため、この推奨事項が全面的に該当するとは限りません。 すべてのアプリケーションが同様の種類のように見えても、すべてが同じというわけではありません。
 
-アプリケーションのニーズをより詳しく分析した後、選択した製品が違っている場合があります。 しかし、出発点として、特定の優先順位に基づいて評価とテストを開始できる最初のガイダンスを用意することをお勧めします。
+アプリケーションのニーズをより詳しく分析した後、選択した製品がニーズとは異なる場合があります。 しかし、出発点として、特定の優先順位に基づいて評価とテストを開始できる最初のガイダンスを用意することをお勧めします。
 
-図 1 では、さまざまな種類のアプリの内訳と Azure ホスティングの理想的なシナリオを確認できます。
+次の図で、さまざまな種類のアプリの内訳と、実行可能な推奨される Azure ホスティング シナリオを確認できます。
 
-![さまざまなアプリに最適な Azure ホスティング シナリオの表。](./media/choosing-azure-compute-options-for-container-based-applications/azure-hosting-scenarios-for-apps.png)
+| アプリケーションのアーキテクチャ | VM - Azure Virtual Machines | ACI - Azure Container Instances | Azure App Service (コンテナーあり/なし) | AKS - Azure Kubernetes Services | Azure Functions | Azure Batch |
+|:------------------------:|:--:|:--:|:--:|:--:|:--:|:--:|
+| **Web アプリ (モノリシック)**         | ![VM で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![ACI で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![App Service で推奨](media/choosing-azure-compute-options-for-container-based-applications/recommended.png) | ![AKS で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | | |
+| **N 層アプリ (サービス)**        | ![VM で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![ACI で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![App Service で推奨](media/choosing-azure-compute-options-for-container-based-applications/recommended.png) | ![AKS で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![Azure Fuctions で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | |
+| **クラウドネイティブ (マイクロサービス)**  | | ![ACI で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | | ![AKS で推奨](media/choosing-azure-compute-options-for-container-based-applications/recommended.png) <br/> (Linux&nbsp;コンテナー)| ![Azure Functions で推奨](media/choosing-azure-compute-options-for-container-based-applications/recommended.png) <br/> (イベントドリブン) | |
+| **バッチ/ジョブ (バックグラウンド タスク)** | ![VM で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![ACI で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![App Service で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![AKS で可能](media/choosing-azure-compute-options-for-container-based-applications/possible.png) | ![Azure Functions で推奨](media/choosing-azure-compute-options-for-container-based-applications/recommended.png) <br/> (バックグラウンド&nbsp;タスク) | ![Azure Batch で推奨](media/choosing-azure-compute-options-for-container-based-applications/recommended.png) <br/> (大規模) |
+
+**凡例**
+
+![推奨アイコン](media/choosing-azure-compute-options-for-container-based-applications/recommended.png) 推奨 \
+![可能アイコン](media/choosing-azure-compute-options-for-container-based-applications/possible.png) 可能
 
 > [!div class="step-by-step"]
 > [前へ](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)

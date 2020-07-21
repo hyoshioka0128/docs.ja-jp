@@ -5,19 +5,19 @@ helpviewer_keywords:
 - gcHeapCount element
 - <gcHeapCount> element
 ms.openlocfilehash: 3d6cac4185af182758cb82e6bfd9d96ed24869b4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74283070"
 ---
-# <a name="gcheapcount-element"></a>\<G> 要素
+# <a name="gcheapcount-element"></a>\<GCHeapCount> 要素
 
 サーバーのガベージコレクションに使用するヒープまたはスレッドの数を指定します。
 
-\<構成 > \
-&nbsp;&nbsp;\<ランタイム > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<>
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapCount>
 
 ## <a name="syntax"></a>構文
 
@@ -38,7 +38,7 @@ ms.locfileid: "74283070"
 
 #### <a name="enabled-attribute"></a>enabled 属性
 
-|値|説明|
+|値|Description|
 |-----------|-----------------|
 |`nn`|サーバー GC に使用するヒープの数。|
 
@@ -48,12 +48,12 @@ ms.locfileid: "74283070"
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 既定では、サーバー GC スレッドはそれぞれの CPU とハード関係があるため、1つの GC ヒープ、1つのサーバー GC スレッド、および各プロセッサにつき1つのバックグラウンドサーバー GC スレッドが存在するようになります。 .NET Framework 4.6.2 以降では、 **g Apcount**要素を使用して、アプリケーションでサーバー GC に使用されるヒープの数を制限することができます。 サーバー GC に使用されるヒープの数を制限することは、サーバーアプリケーションの複数のインスタンスを実行するシステムに特に役立ちます。
 
@@ -63,9 +63,9 @@ ms.locfileid: "74283070"
 
 - [GCHeapAffinitizeMask](gcheapaffinitizemask-element.md)。 cpu との GC スレッド/ヒープの関係を制御します。
 
-**GGCNoAffinitize**が設定されていて、が無効になっている場合 (既定の設定)、 *nn* GC スレッド/ヒープと最初の*nn*プロセッサの間に関係があります。 **GCHeapAffinitizeMask**要素を使用して、プロセスのサーバー GC ヒープによって使用されるプロセッサを指定できます。 それ以外の場合、システムで複数のサーバープロセスが実行されていると、プロセッサの使用率が重複します。
+**GGCNoAffinitize**が設定されていて、 **GCNoAffinitize**が無効になっている場合 (既定の設定)、 *nn* GC スレッド/ヒープと最初の*nn*プロセッサの間に関係があります。 **GCHeapAffinitizeMask**要素を使用して、プロセスのサーバー GC ヒープによって使用されるプロセッサを指定できます。 それ以外の場合、システムで複数のサーバープロセスが実行されていると、プロセッサの使用率が重複します。
 
-**GGCNoAffinitize**が有効になっている場合、ガベージコレクターはサーバー gc に使用されるプロセッサの数を制限しますが、gc ヒープとプロセッサを関係付けしません。
+**GGCNoAffinitize**が有効になっている**GCNoAffinitize**場合、ガベージコレクターはサーバー gc に使用されるプロセッサの数を制限しますが、gc ヒープとプロセッサを関係付けしません。
 
 ## <a name="example"></a>例
 

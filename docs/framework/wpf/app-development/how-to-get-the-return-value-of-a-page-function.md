@@ -12,7 +12,7 @@ helpviewer_keywords:
 ms.assetid: 75470af6-256c-4c46-87e7-705080723a1c
 ms.openlocfilehash: 054ffe16690425e118fcac481b2a5ff63f9450f2
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61947720"
@@ -21,7 +21,7 @@ ms.locfileid: "61947720"
 この例では、ページ関数によって返される結果を取得する方法を示します。  
   
 ## <a name="example"></a>例  
- ページ関数から返される結果を取得するには、処理する必要があります<xref:System.Windows.Navigation.PageFunction%601.Return>ページ関数を呼び出しているのです。  
+ ページ関数から返される結果を取得するには、呼び出しているページ関数の <xref:System.Windows.Navigation.PageFunction%601.Return> を処理する必要があります。  
   
  [!code-xaml[HOWTOPageFunctionSnippets#CallAPageFunctionXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/CSharp/CallingPage.xaml#callapagefunctionxaml)]  
   

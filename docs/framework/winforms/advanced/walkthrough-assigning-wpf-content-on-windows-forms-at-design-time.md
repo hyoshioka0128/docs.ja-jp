@@ -1,5 +1,6 @@
 ---
-title: 'チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て'
+title: Windows フォームの WPF コントロールを選択する
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF content [Windows Forms], assigning at design time
@@ -11,22 +12,22 @@ ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 0c1e0c91b7ab8bded677a86b597b02b9cb442d98
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 19f1dfec282b025f5a1fa367ec5fa9a52472c691
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460670"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746802"
 ---
 # <a name="walkthrough-assign-wpf-content-on-windows-forms-at-design-time"></a>チュートリアル: デザイン時の Windows フォームでの WPF コンテンツの割り当て
 
-この記事では、フォームに表示する Windows Presentation Foundation (WPF) コントロールの種類を選択する方法について説明します。 プロジェクトに含まれている WPF コントロール型であれば、どれでも選択できます。
+この記事では、フォームに表示する Windows Presentation Foundation (WPF) コントロールの種類を選択する方法について説明します。 プロジェクトに含まれている WPF コントロールの種類を選択できます。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>前提条件
 
 このチュートリアルを完了するには Visual Studio が必要です。
 
-## <a name="create-the-project"></a>プロジェクトの作成
+## <a name="create-the-project"></a>プロジェクトを作成する
 
 Visual Studio を開き、Visual Basic または `SelectingWpfContent`C#という名前の新しい Windows フォームアプリケーションプロジェクトを作成します。
 
@@ -64,7 +65,7 @@ Visual Studio を開き、Visual Basic または `SelectingWpfContent`C#とい�
 
 2. **ツールボックス**の [`UserControl1`] をダブルクリックして、フォームに `UserControl1` のインスタンスを作成します。
 
-   `UserControl1` のインスタンスは、`elementHost1` という名前の新しい <xref:System.Windows.Forms.Integration.ElementHost> コントロールでホストされます。
+   `UserControl1` のインスタンスは、<xref:System.Windows.Forms.Integration.ElementHost> という名前の新しい `elementHost1` コントロールでホストされます。
 
 3. `elementHost1`のスマートタグパネルで、 **[ホスト**されているコンテンツの選択] ドロップダウンリストを開きます。
 
@@ -84,7 +85,7 @@ Visual Studio を開き、Visual Basic または `SelectingWpfContent`C#とい�
 
 9. これで、`elementHost2` コントロールが `UserControl1` 型のインスタンスをホストするようになりました。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>

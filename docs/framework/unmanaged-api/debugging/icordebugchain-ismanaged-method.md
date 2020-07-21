@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 17b389a0-1a4d-4e8a-8613-9bc1769930f9
 topic_type:
 - apiref
-ms.openlocfilehash: 481f6d08e11a5f315c64b3d58df4ab291fa42e78
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 55036fcdbd186f91c0e94fb05f3023cf614751f7
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123848"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894248"
 ---
 # <a name="icordebugchainismanaged-method"></a>ICorDebugChain::IsManaged メソッド
 このチェーンでマネージコードが実行されているかどうかを示す値を取得します。  
@@ -35,13 +35,13 @@ HRESULT IsManaged (
   
 ## <a name="parameters"></a>パラメーター  
  `pManaged`  
- [out] このチェーンでマネージコードが実行されている場合は `true`。それ以外の場合は、`false`ます。  
+ 入出力`true`このチェーンでマネージコードが実行されている場合は。それ以外`false`の場合は。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

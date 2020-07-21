@@ -40,7 +40,7 @@
               href: how-to-listen-for-cancellation-requests-that-have-wait-handles.md
             - name: '方法: 複数のキャンセル要求を待機する'
               href: how-to-listen-for-multiple-cancellation-requests.md
-    - name: マネージド スレッド処理の実施
+    - name: マネージド スレッド処理のベスト プラクティス
       href: managed-threading-best-practices.md
     - name: スレッド処理オブジェクトと機能
       href: threading-objects-and-features.md

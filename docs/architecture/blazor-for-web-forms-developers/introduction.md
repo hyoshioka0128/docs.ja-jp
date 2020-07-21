@@ -1,17 +1,20 @@
 ---
-title: ASP.NET Web フォーム開発者向けの Blazor の概要
-description: .NET を使用した Blazor とフルスタック web アプリの作成の概要
+title: BlazorASP.NET Web フォーム開発者向けの概要
+description: Blazor.Net を使用したフルスタック web アプリの概要と作成
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 6c045cd9c4378bd19f97dd722db054c969491d0b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8ef2c7d66d50abb34e536b6333e3aa68ee2bb07d
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73841931"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173134"
 ---
-# <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>ASP.NET Web フォーム開発者向けの Blazor の概要
+# <a name="an-introduction-to-blazor-for-aspnet-web-forms-developers"></a>BlazorASP.NET Web フォーム開発者向けの概要
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
@@ -34,7 +37,7 @@ ASP.NET Web Forms framework は、2002に最初に出荷された .NET Framework
 
 .NET コミュニティでは、クロスプラットフォームのサポートとオープンソースの両方が採用されています。 .NET Core は、Windows、macOS、およびさまざまな Linux ディストリビューションを含む多数のプラットフォームで動作する .NET のオープンソースおよびクロスプラットフォームの実装です。 Xamarin には、オープンソースバージョンの .NET という Mono が用意されています。 Mono は、Android、iOS、およびウォッチやスマートテレビなどの他のさまざまなフォームファクターで実行されます。 [.Net 5](https://devblogs.microsoft.com/dotnet/introducing-net-5/)では、.net Core と Mono を "1 つの .net ランタイムおよびフレームワークに整合させることにより、共通のランタイム動作と開発者エクスペリエンスを持つことができる" ということが発表されました。
 
-Web フォームの特典は、オープンソースとクロスプラットフォームのサポートに移行することによって ASP.NET ますか。 残念ながら、この答えは、プラットフォームの他の部分と同じ程度ではありません。 .NET チームは[最近](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/)、ASP.NET Web フォームが .net Core または .net 5 に移植されないことを明確にしました。 これはどうしてでしょうか。
+Web フォームの特典は、オープンソースとクロスプラットフォームのサポートに移行することによって ASP.NET ますか。 残念ながら、この答えは、プラットフォームの他の部分と同じ程度ではありません。 .NET チームは[最近](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/)、ASP.NET Web フォームが .net Core または .net 5 に移植されないことを明確にしました。 なぜですか?
 
 ASP.NET Web フォームを移植するために .NET Core の初期の時代に取り組みました。 必要な重大な変更の数が少なすぎることが検出されました。 ここでも、Microsoft の場合でも、同時にサポートできる web フレームワークの数に制限があります。 コミュニティ内のだれかが、オープンソースでクロスプラットフォームバージョンの ASP.NET Web フォームを作成する原因となる可能性があります。 [ASP.NET Web フォームのソースコード](https://github.com/microsoft/referencesource)は、参照形式で公開されています。 しかし、このような場合は、ASP.NET Web フォームが Windows のみを保持し、オープンソースの貢献度モデルは存在しないように見えます。 クロスプラットフォームサポートまたはオープンソースがシナリオにとって重要である場合は、新しいものを探す必要があります。
 
@@ -50,17 +53,17 @@ ASP.NET Web フォームを移植するために .NET Core の初期の時代に
 
 しかし、2つの異なるプラットフォームとエコシステム (.NET と JavaScript) の橋渡しにはコストが伴います。 言語、フレームワーク、およびツールが異なる2つの並列処理では、専門知識が必要です。 クライアントとサーバーの間でコードとロジックを簡単に共有することはできません。その結果、重複とエンジニアリングのオーバーヘッドが発生します。 また、JavaScript エコシステムを使い続けることが困難な場合もあります。これには、猛烈な速さ速度で進化する歴史があります。 フロントエンドフレームワークとビルドツールの設定がすばやく変更されます。 業界では、Grunt から Gulp への移行などについて見てきました。 JQuery、ノックアウト、角度、反応、Vue などのフロントエンドフレームワークでも、同じ restless チャーンが発生しました。 しかし、JavaScript のブラウザー monopoly を指定すると、そのような選択肢はほとんどありませんでした。 つまり、web コミュニティが集まって、*妙薬*が発生します。
 
-## <a name="webassembly-fulfills-a-need"></a>WebAssembly ニーズを満たす
+## <a name="webassembly-fulfills-a-need"></a>WebAssemblyニーズを満たす
 
-2015では、大手ブラウザーベンダーは、W3C コミュニティグループに対して、WebAssembly いう名前の新しいオープン web 標準を強制的に作成します。 WebAssembly、Web のバイトコードです。 コードをコンパイルできるようになった場合は、ほぼネイティブの速度で任意のプラットフォーム上の任意のブラウザーで実行できます。 最初の取り組みは、CC++/に重点を置いていました。 その結果、ネイティブ3D グラフィックスエンジンをプラグインなしで直接ブラウザーで実行することが、非常に大きなデモでした。 WebAssembly、すべての主要なブラウザーによって標準化および実装されてきました。
+2015では、結合された主要なブラウザーベンダーが、W3C コミュニティグループに、という名前の新しいオープン web 標準を強制的に作成し WebAssembly ます。 WebAssemblyは、Web のバイトコードです。 コードをにコンパイルできる場合は WebAssembly 、ほぼネイティブの速度で任意のプラットフォーム上の任意のブラウザーで実行できます。 最初の取り組みは、C/c + + に重点を置いています。 その結果、ネイティブ3D グラフィックスエンジンをプラグインなしで直接ブラウザーで実行することが、非常に大きなデモでした。 WebAssemblyは、すべての主要なブラウザーによって標準化および実装されています。
 
-WebAssembly 実行されている .NET での作業は2017後期に発表され、.NET 5 からのサポートを含む2020に出荷される予定です。 ブラウザーで直接 .NET コードを実行する機能により、.NET を使用したフルスタックの web 開発が可能になります。
+での .NET の実行に関する作業 WebAssembly は、2017の遅延で発表され、.net 5 からのサポートを含む2020に出荷される予定です。 ブラウザーで直接 .NET コードを実行する機能により、.NET を使用したフルスタックの web 開発が可能になります。
 
 ## <a name="blazor-full-stack-web-development-with-net"></a>Blazor: .NET を使用したフルスタック web 開発
 
-ブラウザーで .NET コードを実行する機能は、クライアント側の web アプリを作成するためのエンドツーエンドのエクスペリエンスを提供するものではありません。 Blazor が登場します。 Blazor は、JavaScript ではなく、C# を基盤とするクライアント側の Web UI フレームワークです。 Blazor はブラウザーで直接実行できます。 ブラウザープラグインは必要ありません。 また、Blazor アプリでは、.NET Core でサーバー側を実行し、ブラウザーとのリアルタイム接続ですべてのユーザーの操作を処理することもできます。
+ブラウザーで .NET コードを実行する機能は、クライアント側の web アプリを作成するためのエンドツーエンドのエクスペリエンスを提供するものではありません。 このような場所が Blazor あります。 Blazorは、JavaScript ではなく、C# に基づくクライアント側の web UI フレームワークです。 Blazorは、を使用してブラウザーで直接実行でき WebAssembly ます。 ブラウザープラグインは必要ありません。 また、 Blazor アプリは .Net Core でサーバー側を実行し、ブラウザーとのリアルタイム接続ですべてのユーザーの操作を処理することもできます。
 
-Blazor には、Visual Studio と Visual Studio Code に優れたツールがサポートされています。 フレームワークには、完全な UI コンポーネントモデルが含まれています。また、次の機能が組み込まれています。
+Blazorには、Visual Studio と Visual Studio Code に優れたツールがサポートされています。 フレームワークには、完全な UI コンポーネントモデルが含まれています。また、次の機能が組み込まれています。
 
 - フォームと検証
 - 依存関係の挿入
@@ -69,18 +72,18 @@ Blazor には、Visual Studio と Visual Studio Code に優れたツールがサ
 - ブラウザー内デバッグ
 - JavaScript 相互運用
 
-Blazor は、ASP.NET Web フォームとよく似ています。 どちらのフレームワークも、コンポーネントベースのイベントドリブンのステートフルな UI プログラミングモデルを提供します。 アーキテクチャの主な違いは、ASP.NET Web フォームはサーバー上でのみ実行されるという点です。 Blazor は、ブラウザーでクライアントで実行できます。 しかし、ASP.NET の Web フォームの背景から来ている場合、Blazor には非常になじみのあるものがあります。 Blazor は、ASP.NET の Web フォーム開発者向けの自然なソリューションであり、クライアント側の開発と、.NET のオープンソースのクロスプラットフォームの未来を活用する手段を模索しています。
+Blazorは、ASP.NET Web フォームとよく似ています。 どちらのフレームワークも、コンポーネントベースのイベントドリブンのステートフルな UI プログラミングモデルを提供します。 アーキテクチャの主な違いは、ASP.NET Web フォームはサーバー上でのみ実行されるという点です。 Blazorブラウザーでクライアントで実行できます。 しかし、ASP.NET の Web フォームの背景を使用している場合は、非常になじみがあり Blazor ます。 Blazorは、.NET のクライアント側開発とオープンソースのクロスプラットフォームの未来を活用する手段を模索する ASP.NET Web フォーム開発者向けの自然なソリューションです。
 
-この本では、Web フォームの開発者を ASP.NET ために特化した Blazor の概要について説明します。 各 Blazor の概念は、類似した ASP.NET Web フォームの機能とプラクティスのコンテキストで示されています。 この書籍の終わりまでに、次のことを理解できます。
+この本は、 Blazor Web フォームの開発者を ASP.NET ために特化したものであるの概要を示しています。 各 Blazor 概念は、類似した ASP.NET Web フォームの機能およびプラクティスのコンテキストで示されています。 この書籍の終わりまでに、次のことを理解できます。
 
-- Blazor アプリをビルドする方法。
-- Blazor のしくみ。
-- Blazor が .NET Core にどのように関連しているかを説明します。
-- 必要に応じて、既存の ASP.NET Web フォームアプリを Blazor に移行するための合理的な戦略。
+- アプリを構築する方法 Blazor 。
+- しくみ Blazor 。
+- Blazorが .Net Core にどのように関連しているか。
+- 既存の ASP.NET Web フォームアプリを適切な場所に移行するための合理的 Blazor な戦略。
 
-## <a name="get-started-with-blazor"></a>Blazor を使ってみる
+## <a name="get-started-with-blazor"></a>Blazorの使用を開始する
 
-Blazor の概要は簡単です。 <https://blazor.net> にアクセスし、リンクに従って、適切な .NET Core SDK および Blazor プロジェクトテンプレートをインストールします。 また、Visual Studio または Visual Studio Code で Blazor ツールを設定するための手順も紹介します。
+では、簡単に作業を開始 Blazor できます。 にアクセス <https://blazor.net> し、リンクに従って、適切な .NET Core SDK とプロジェクトテンプレートをインストールし Blazor ます。 Blazorまた、Visual Studio または Visual Studio Code でツールを設定するための手順も紹介します。
 
 >[!div class="step-by-step"]
 >[前へ](index.md)

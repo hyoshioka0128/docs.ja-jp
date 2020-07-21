@@ -1,16 +1,17 @@
 ---
-ms.openlocfilehash: d384aa2daea17581402dc45dc3104a0d97f77f3a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: b90821d0d3495f6006d1d97b3d3377e984c74c5e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035441"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613591"
 ---
 # <a name="net-docs"></a>.NET ドキュメント
 
+![Markdownlint](https://github.com/dotnet/docs/workflows/Markdownlint/badge.svg)
+
 このリポジトリには、.NET の概念に関するドキュメントが含まれています。 [.NET ドキュメント サイト](https://docs.microsoft.com/dotnet)は次のものに加え、複数のリポジトリから構築されています。
 
-- [コード サンプルとスニペット](https://github.com/dotnet/samples)
 - [API リファレンス](https://github.com/dotnet/dotnet-api-docs)
 - [.NET Compiler Platform SDK リファレンス](https://github.com/dotnet/roslyn-api-docs)
 
@@ -18,11 +19,9 @@ API リファレンス リポジトリ以外のすべての問題とタスクに
 
 .NET ドキュメントの改善と完成に役立つご協力をお待ちしています。これは非常に大きなリポジトリで、大きな領域をカバーしています。 初めてアクセスする場合は、[ラベルとプロジェクトのロードマップ](styleguide/labels-projects.md)を参照してください。このリポジトリ内の問題とプロジェクトのナビゲートに役立ちます。
 
-ご投稿いただく場合は、[.NET コミュニティの共同作成者用のプロジェクト](https://github.com/dotnet/docs/projects/35)でさまざまなアイデアをご覧ください。 [共同作成ガイド](CONTRIBUTING.md)に、使用されている手順に関する説明があります。 
+ご投稿いただく場合は、[.NET コミュニティの共同作成者用のプロジェクト](https://github.com/dotnet/docs/projects/35)でさまざまなアイデアをご覧ください。 [共同作成ガイド](CONTRIBUTING.md)に、使用されている手順に関する説明があります。
 
-[Code Gallery](https://code.msdn.microsoft.com) から[サンプル リポジトリ](https://github.com/dotnet/samples)に格納されている .NET Core アプリケーションへの .NET Framework を対象とする既存のコードの移行をサポートすることに関心があり、[サンプル ブラウザー](https://docs.microsoft.com/samples/browse)からダウンロードできる場合、[Code Gallery の移行](https://github.com/dotnet/docs/projects/88)プロジェクトを参照してください。 
-
-[Xamarin](https://docs.microsoft.com/xamarin)、[Mono](http://docs.go-mono.com/?link=root%3a%2fclasslib) および [Unity](https://docs.unity3d.com/Manual/index.html) でもこのドキュメントが使用される予定です。
+.NET Framework を対象とする既存のコードを、[提供終了したコード ギャラリー](https://docs.microsoft.com/teamblog/msdn-code-gallery-retired) サイトから、[サンプル リポジトリ](https://github.com/dotnet/samples)に格納されていて[サンプル ブラウザー](https://docs.microsoft.com/samples/browse)からダウンロードできる .NET Core アプリケーションに移行するのをサポートすることに関心がある場合は、[コード ギャラリーの移行](https://github.com/dotnet/docs/projects/88)プロジェクトを参照してください。 コード ギャラリーのサンプルは、[Microsoft アーカイブ](https://github.com/microsoftarchive?q=msdn-code-gallery)組織に移動しました。
 
 このプロジェクトでは、当コミュニティで期待される動作を明らかにするために共同作成者契約で定義された倫理規定を採用しています。
 詳細については、「[.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct)」(.NET Foundation の倫理規定) を参照してください。

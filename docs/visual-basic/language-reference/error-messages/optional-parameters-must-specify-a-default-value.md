@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 5091a250-be66-413b-98a3-2a9974c4d600
 ms.openlocfilehash: eb782b2fa1fb73c7407b57a0942e5eebb30474ff
 ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73040937"
@@ -22,7 +22,7 @@ ms.locfileid: "73040937"
 
 ## <a name="example"></a>例
 
-次の例では、BC30812 が生成されます。
+次の例では BC30812 が生成されます。
 
 ```vb
 Sub Proc1(x As Integer, Optional y As String)
@@ -32,7 +32,7 @@ End Sub
 
 ## <a name="to-correct-this-error"></a>このエラーを解決するには
 
-省略可能なパラメーターの既定値を指定します:
+省略可能なパラメーターの既定値を指定します。
 
 ```vb
 Sub Proc1(x As Integer, Optional y As String = "Default Value")

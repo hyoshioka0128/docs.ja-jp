@@ -2,12 +2,12 @@
 title: Oracle シーケンス
 ms.date: 03/30/2017
 ms.assetid: 27cd371d-8252-414d-b5b2-5d31fa44b585
-ms.openlocfilehash: 772aeda94215ccc8e1eff0e1145ed0399791197d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: d6e6bb51b8bd317c7161500b89993be689659fad
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794586"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149415"
 ---
 # <a name="oracle-sequences"></a>Oracle シーケンス
 .NET Framework Data Provider for Oracle では、<xref:System.Data.OracleClient.OracleDataAdapter> を使用して挿入操作を実行した後、サーバーによって生成されたキー値 (Oracle シーケンス) を取得できます。  
@@ -20,7 +20,7 @@ ms.locfileid: "70794586"
   
  Oracle データベースにシーケンスを作成する場合は、初期値と増分値を定義できます。 新しい行を送信する前に、新しい値のシーケンスを照会することもできます。 つまり、コードでデータベースに行を挿入する前に、新しい行のキー値を調べることができます。  
   
- SQL Server と ADO.NET を使用した自動増分列の作成の詳細については、「 [id またはオートナンバー値の取得](retrieving-identity-or-autonumber-values.md)」および「 [AutoIncrement 列の作成](./dataset-datatable-dataview/creating-autoincrement-columns.md)」を参照してください。  
+ SQL Server と ADO.NET を使用した自動増加列の作成について詳しくは、「[ID 値および Autonumber 値の取得](retrieving-identity-or-autonumber-values.md)」および「[AutoIncrement 列の作成](./dataset-datatable-dataview/creating-autoincrement-columns.md)」をご覧ください。  
   
 ## <a name="example"></a>例  
  次の C# コードは、Oracle データベースから新しいシーケンス値を取得する例です。 新しい行を送信する INSERT INTO クエリでシーケンスを参照した後、Oracle10g で導入された RETURNING 句を使って、生成されたシーケンス値を返します。 この例では、保留状態の一連の新しい行を、ADO.NET の自動増分機能を使って <xref:System.Data.DataTable> に追加し、"プレースホルダー" の主キー値を生成します。 ADO.NET が新しい行に対して生成した増分値は、単なる "プレースホルダー" である点に注意してください。 つまり、データベースで生成される値は、ADO.NET によって生成された値とは必ずしも一致しません。  
@@ -30,7 +30,7 @@ ms.locfileid: "70794586"
 ```csharp  
 public void OracleSequence(String connectionString)  
 {  
-   String insertString =   
+   String insertString =
       "INSERT INTO SequenceTest_Table (ID, OtherColumn)" +  
       "VALUES (SequenceTest_Sequence.NEXTVAL, :OtherColumn)" +  
       "RETURNING ID INTO :ID";  
@@ -75,7 +75,7 @@ public void OracleSequence(String connectionString)
       }  
       Console.WriteLine();  
   
-      cmd.CommandText =   
+      cmd.CommandText =
         "SELECT ID, OtherColumn FROM SequenceTest_Table";  
       OracleDataAdapter da = new OracleDataAdapter(cmd);  
       da.InsertCommand = new OracleCommand(insertString, conn);  

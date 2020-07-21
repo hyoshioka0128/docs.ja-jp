@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrMouse_NoMouseIsPresent
 ms.assetid: 4472fd57-4217-4463-9d3c-dc4a8fe88f1b
-ms.openlocfilehash: 5493cea8c87a40b0c9663aaa7f36ce6cb423d346
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 748661cae35292968aae989789a96d1df855b6ce
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624860"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84376125"
 ---
 # <a name="no-mouse-is-present"></a>マウスが存在しません
 `My.Computer.Mouse` オブジェクトのいずれかのプロパティが呼び出されましたが、コンピューターにマウスが接続されていないか、マウス ポートが取り付けられていません。  
@@ -26,4 +26,4 @@ ms.locfileid: "64624860"
 
 - [My.Computer.Mouse](xref:Microsoft.VisualBasic.Devices.Mouse)
 - [.NET での例外の処理とスロー](../../standard/exceptions/index.md)
-- [Try...Catch...Finally ステートメント](../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [Try...Catch...Finally ステートメント](../language-reference/statements/try-catch-finally-statement.md)

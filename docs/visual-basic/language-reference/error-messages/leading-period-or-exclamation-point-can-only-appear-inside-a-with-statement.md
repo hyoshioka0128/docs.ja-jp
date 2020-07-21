@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30157
 ms.assetid: 70daaee1-14f9-45b7-9f30-53794310b95e
-ms.openlocfilehash: 15390fb506fe9bca10f6917f5b26451a5569bece
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 149acc2baac0f45fa971a11f254d694526d140d7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921122"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397325"
 ---
 # <a name="leading--or--can-only-appear-inside-a-with-statement"></a>先頭の '.' または '!' は、'With' ステートメント内でのみ使用できます。
-ピリオド (.) または感嘆符 (!) でない内部、`With`左の式がブロックされます。 メンバー アクセス (`.`) およびディクショナリ メンバー アクセス (`!`) メンバーを含む要素を指定する式が必要です。 これは、アクセサーのまたはのターゲットとしての左側にすぐに表示する必要があります、`With`メンバー アクセスを含むブロックします。  
+`With` ブロック内にないピリオド (.) または感嘆符 (!) が、左側に式がない状態で指定されています。 メンバー アクセス (`.`) とディクショナリ メンバー アクセス (`!`) には、メンバーが含まれている要素を指定した式が必要になります。 これは、アクセサーのすぐ左側、またはメンバー アクセスを含む `With` ブロックのターゲットとして指定されている必要があります。  
   
  **エラー ID:** BC30157  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1. いることを確認、`With`ブロックが正しく書式設定します。  
+1. `With` ブロックが正しく書式設定されていることを確認します。  
   
-2. 存在する場合ありません`With`ブロック、メンバーを含む定義の要素に評価されるアクセサーの左側に式を追加します。  
+2. `With` ブロックがない場合は、アクセサーの左側に、メンバーを含む定義済みの要素に評価される式を追加します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [コード内の特殊文字](../../../visual-basic/programming-guide/program-structure/special-characters-in-code.md)
-- [With...End With ステートメント](../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [コード内の特殊文字](../../programming-guide/program-structure/special-characters-in-code.md)
+- [With...End With ステートメント](../statements/with-end-with-statement.md)

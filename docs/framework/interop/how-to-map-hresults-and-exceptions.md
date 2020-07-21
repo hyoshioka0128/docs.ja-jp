@@ -1,5 +1,6 @@
 ---
 title: '方法: HRESULT に例外を割り当てる'
+description: COM メソッドから返された HRESULT 値を .NET メソッドによってスローされる例外にマップする方法を確認します。 ランタイムは、COM と .NET の間の遷移を処理します。
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -11,12 +12,11 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-ms.openlocfilehash: 13dcca5f35750ad3e8bd6ea4f6dd443fe9a8ee94
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 827e79bdefcde7ae94567e5341ade76097dc8eaa
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123876"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619105"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>方法: HRESULT に例外を割り当てる
 COM メソッドでは、HRESULT を返してエラーを報告します。 .NET メソッドでは、例外をスローしてエラーを報告します。 ランタイムは、この 2 つの間の遷移を処理します。 .NET Framework の例外クラスはそれぞれ HRESULT に割り当てられます。  
@@ -35,7 +35,7 @@ COM メソッドでは、HRESULT を返してエラーを報告します。 .NET
     Class NoAccessException : public ApplicationException  
     {  
         NoAccessException () {  
-        HResult = E_ACCESSDENIED;   
+        HResult = E_ACCESSDENIED;
     }  
     }  
     CMyClass::MethodThatThrows  
@@ -133,8 +133,8 @@ CMyClass::MethodThatThrows
 |**ErrorCode**|呼び出しから返された HRESULT。|  
 |**HelpLink**|**IErrorInfo->HelpContext** が 0 以外の場合、文字列は **IErrorInfo->GetHelpFile**、"#"、および **IErrorInfo->GetHelpContext** を連結して形成されます。 それ以外の場合、文字列は **IErrorInfo->GetHelpFile** から返されます。|  
 |**InnerException**|常に null 参照 (Visual Basic では **Nothing**)。|  
-|**[メッセージ]**|**IErrorInfo->GetDescription** から返された文字列。|  
-|**Source**|**IErrorInfo->GetSource** から返された文字列。|  
+|**メッセージ**|**IErrorInfo->GetDescription** から返された文字列。|  
+|**ソース**|**IErrorInfo->GetSource** から返された文字列。|  
 |**StackTrace**|スタック トレース。|  
 |**TargetSite**|失敗を示す HRESULT を返したメソッドの名前。|  
   

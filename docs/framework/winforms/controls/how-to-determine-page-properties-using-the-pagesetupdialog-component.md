@@ -1,5 +1,5 @@
 ---
-title: '方法: PageSetupDialog コンポーネントを使用してページのプロパティを決定する'
+title: '方法 : PageSetupDialog コンポーネントを使用してページのプロパティを決定する'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - page setup
 - PageSetupDialog component
 ms.assetid: 6dae05bc-c0fd-4357-bb93-841a1631d98f
-ms.openlocfilehash: 306e0dbf7fb819d1214d7d5d93d335b5d2db75e6
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 8a015c199193dfd9c43bec53cc93cbf9dc201413
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053611"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142044"
 ---
-# <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>方法: PageSetupDialog コンポーネントを使用してページのプロパティを決定する
+# <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>方法 : PageSetupDialog コンポーネントを使用してページのプロパティを決定する
 [PageSetupDialog](pagesetupdialog-component-windows-forms.md) コンポーネントは、レイアウト、用紙サイズ、およびその他のページ レイアウトの選択肢をドキュメントのユーザーに示します。  
   
  <xref:System.Drawing.Printing.PrintDocument> クラスのインスタンスを指定する必要があります。これは、印刷するドキュメントです。 さらに、ユーザーはコンピューターにローカル プリンターまたはネットワーク プリンターをインストールしておく必要があります。これを基にして、 <xref:System.Windows.Forms.PageSetupDialog> コンポーネントはユーザーに示すページ書式設定選択肢の一部を決定します。  
@@ -30,7 +30,7 @@ ms.locfileid: "66053611"
   
      次の例では、 <xref:System.Windows.Forms.Button> コントロールの <xref:System.Windows.Forms.Control.Click> イベント ハンドラーが、 <xref:System.Windows.Forms.PageSetupDialog> コンポーネントのインスタンスを開きます。 既存のドキュメントは <xref:System.Windows.Forms.PageSetupDialog.Document%2A> プロパティで指定され、その <xref:System.Drawing.Printing.PageSettings.Color%2A?displayProperty=nameWithType> プロパティは `false`に設定されます。  
   
-     この例では、フォームに、<xref:System.Windows.Forms.Button>コントロール、<xref:System.Drawing.Printing.PrintDocument>という名前のコンポーネント`myDocument`と<xref:System.Windows.Forms.PageSetupDialog>コンポーネント。  
+     この例では、フォーム<xref:System.Windows.Forms.Button>にコントロール、というコンポーネント<xref:System.Drawing.Printing.PrintDocument>`myDocument`、および コンポーネントが<xref:System.Windows.Forms.PageSetupDialog>含まれています。  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -76,19 +76,19 @@ ms.locfileid: "66053611"
        }  
     ```  
   
-     (VisualC#とビジュアルC++)イベント ハンドラーを登録するフォームのコンス トラクターでは、次のコードを配置します。  
+     (ビジュアル C# およびビジュアル C++)フォームのコンストラクターに次のコードを配置して、イベント ハンドラーを登録します。  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
     ```  
   
     ```cpp  
-    this->button1->Click += gcnew   
+    this->button1->Click += gcnew
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Windows.Forms.PageSetupDialog>
-- [方法: 標準の Windows フォーム印刷ジョブを作成します。](../advanced/how-to-create-standard-windows-forms-print-jobs.md)
-- [PageSetupDialog コンポーネント](pagesetupdialog-component-windows-forms.md)
+- [方法: 標準の Windows フォーム印刷ジョブを作成する](../advanced/how-to-create-standard-windows-forms-print-jobs.md)
+- [PageSetupDialog Component](pagesetupdialog-component-windows-forms.md)

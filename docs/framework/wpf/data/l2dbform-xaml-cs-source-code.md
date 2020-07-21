@@ -4,14 +4,14 @@ ms.date: 10/22/2019
 ms.topic: sample
 ms.openlocfilehash: 882699a76eab3c291cd92c298287bc5d28fb08e1
 ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2019
 ms.locfileid: "72921156"
 ---
 # <a name="l2dbformxamlcs-source-code"></a>L2DBForm.xaml.cs sauce コード
 
-このページには、 *L2DBForm.xaml.cs*ファイル内のC#ソースコードの内容と説明が表示されます。 このファイルに含まれている L2XDBForm 部分クラスは、3 つの論理的な部分、つまりデータ メンバー、`OnRemove`、`OnAddBook` ボタン クリック イベント ハンドラーに分けることができます。
+このページには、*L2DBForm.xaml.cs* ファイル内の C# ソース コードの内容と説明が含まれます。 このファイルに含まれている L2XDBForm 部分クラスは、3 つの論理的な部分、つまりデータ メンバー、`OnRemove`、`OnAddBook` ボタン クリック イベント ハンドラーに分けることができます。
 
 ## <a name="data-members"></a>データ メンバー
 
@@ -132,5 +132,5 @@ namespace LinqToXmlDataBinding {
 
 ## <a name="see-also"></a>関連項目
 
-- [チュートリアル : LinqToXmlDataBinding の例](linq-to-xml-data-binding-sample.md)
+- [チュートリアル: LinqToXmlDataBinding の例](linq-to-xml-data-binding-sample.md)
 - [L2DBForm.xaml ソース コード](l2dbform-xaml-source-code.md)

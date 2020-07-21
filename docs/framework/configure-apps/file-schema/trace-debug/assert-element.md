@@ -9,18 +9,18 @@ helpviewer_keywords:
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
 ms.openlocfilehash: f3c1a1670139a8262dea449bfff99c7c1c19f088
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088949"
 ---
-# <a name="assert-element"></a>\<assert > 要素
+# <a name="assert-element"></a>\<assert> 要素
 <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> メソッドの呼び出し時にメッセージ ボックスを表示するかどうかを指定し、メッセージの書き込み先のファイルの名前も指定します。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<** ](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<assert >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<assert>**
 
 ## <a name="syntax"></a>構文  
   
@@ -40,7 +40,7 @@ ms.locfileid: "74088949"
   
 ## <a name="assertuienabled-attribute"></a>assertuienabled 属性  
   
-|[値]|説明|  
+|値|Description|  
 |-----------|-----------------|  
 |`true`|メッセージボックスを表示します。 既定値です。|  
 |`false`|では、メッセージボックスは表示されません。|  
@@ -50,16 +50,16 @@ ms.locfileid: "74088949"
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`system.diagnostics`|メッセージを収集、格納、およびルーティングするトレース リスナーとトレース スイッチを設定するレベルを指定します。|  
   
-## <a name="remarks"></a>Remarks  
- **\<assert >** 要素の両方の属性は省略可能です。 メッセージを書き込むファイルを指定せずにメッセージボックスを無効にすることも、メッセージを有効にしたままメッセージを書き込むファイルを指定することもできます。  
+## <a name="remarks"></a>解説  
+ 要素の両方の属性 **\<assert>** は省略可能です。 メッセージを書き込むファイルを指定せずにメッセージボックスを無効にすることも、メッセージを有効にしたままメッセージを書き込むファイルを指定することもできます。  
   
 ## <a name="example"></a>例  
- 次の例は、 **Assert**を呼び出し、メッセージを `c:\log.txt`に書き込むときに、メッセージボックスの表示を無効にする方法を示しています。  
+ 次の例は、 **Assert**を呼び出し、メッセージをに書き込むときに、メッセージボックスの表示を無効にする方法を示して `c:\log.txt` います。  
   
 ```xml  
 <configuration>  

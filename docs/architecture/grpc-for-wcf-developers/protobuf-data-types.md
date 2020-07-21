@@ -1,19 +1,19 @@
 ---
-title: Protobuf スカラーデータ型-gRPC (WCF 開発者向け)
-description: .NET Core の Protobuf と gRPC でサポートされている基本的なデータ型と既知のデータ型について説明します。
+title: プロトブーフ スカラー データ型 - WCF 開発者向け gRPC
+description: NET Core で Protobuf および gRPC がサポートする基本的なデータ型と既知のデータ型について説明します。
 ms.date: 09/09/2019
-ms.openlocfilehash: ae7f5f48099000dff0eefb36e23cb9b9f2ac517c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ea3b53426ecf6f50f3bae22a537e227b07248508
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971545"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249436"
 ---
 # <a name="protobuf-scalar-data-types"></a>Protobuf スカラー データ型
 
-Protobuf は、ネイティブスカラー値型の範囲をサポートしています。 次の表に、それらのすべてのC#型に対応する型を示します。
+プロトコル バッファ (Protobuf) は、ネイティブスカラー値の種類の範囲をサポートします。 次の表は、それらすべてを同等の C# 型と共に示しています。
 
-| Protobuf 型 | C# 型      | 説明 |
+| プロトブーフタイプ | C# 型      | Notes |
 | ------------- | ------------ | ----- |
 | `double`      | `double`     |       |
 | `float`       | `float`      |       |
@@ -31,20 +31,22 @@ Protobuf は、ネイティブスカラー値型の範囲をサポートして�
 | `string`      | `string`     | 3     |
 | `bytes`       | `ByteString` | 4     |
 
-## <a name="notes"></a>説明
+注:
 
-1. `int32` および `int64` の標準エンコードは、署名された値を使用する場合には非効率的です。 フィールドに負の数値が含まれている可能性がある場合は、代わりに `sint32` または `sint64` を使用します。 両方の型はC# 、それぞれ `int` と `long` 型にマップされます。
-2. `fixed` のフィールドでは、値が何であるかにかかわらず、常に同じバイト数を使用します。 この動作により、シリアル化と逆シリアル化がより大きな値に対して高速化されます。
-3. Protobuf 文字列は UTF-8 (または7ビット ASCII) でエンコードされ、エンコードされた長さは 2<sup>32</sup>を超えることはできません。
-4. Protobuf ランタイムには、`byte[]` 配列との間C#で簡単にマップできる `ByteString` 型が用意されています。
+1. 署名付`int32`き`int64`の値を使用する場合は、標準エンコードは非効率的です。 フィールドに負の数が含まれる可能性がある場合`sint32`は`sint64`、またはを使用します。 これらの型は、それぞれ`int`C#`long`と型にマップされます。
+2. フィールド`fixed`は、値が何であるかに関係なく、常に同じバイト数を使用します。 この動作により、シリアル化と逆シリアル化が大きい値に対して高速になります。
+3. プロトブフ文字列は UTF-8 (または 7 ビット ASCII) でエンコードされています。 エンコードされた長さは 2<sup>32</sup>より大きくすることはできません。
+4. Protobuf ランタイムは、C#`ByteString``byte[]`配列との間で簡単にマップする型を提供します。
 
 ## <a name="other-net-primitive-types"></a>その他の .NET プリミティブ型
 
 ### <a name="dates-and-times"></a>日付と時刻
 
-ネイティブスカラー型では、日付と時刻の値が提供さC#れません。これは、の <xref:System.DateTimeOffset>、<xref:System.DateTime>、および <xref:System.TimeSpan>と同じです。 これらの型は、Google の "既知の型" 拡張機能の一部を使用して指定できます。これにより、サポートされているプラットフォーム全体で、より複雑なフィールド型に対するコード生成とランタイムサポートが提供されます。 次の表は、日付と時刻の型を示しています。
+ネイティブ スカラー型は、日付<xref:System.DateTimeOffset>と時刻の値<xref:System.DateTime>を提供しません。 <xref:System.TimeSpan> Google の「よく知られているタイプ」の拡張機能を使用して、これらのタイプを指定できます。 これらの拡張機能は、サポートされているプラットフォーム全体で、複雑なフィールド型のコード生成とランタイムサポートを提供します。
 
-| C# 型 | Protobuf 既知の型 |
+次の表は、日付と時刻の種類を示しています。
+
+| C# 型 | プロトブーフの有名なタイプ |
 | ------- | ------------------------ |
 | `DateTimeOffset` | `google.protobuf.Timestamp` |
 | `DateTime` | `google.protobuf.Timestamp` |
@@ -65,7 +67,7 @@ message Meeting {
 }  
 ```
 
-C#クラスで生成されるプロパティは、.net の日付型と時刻型ではありません。 プロパティは、`DateTimeOffset`、`DateTime`、および `TimeSpan`との間で変換を行うためのメソッドを提供する、`Google.Protobuf.WellKnownTypes` 名前空間の `Timestamp` クラスと `Duration` クラスを使用します。
+C# クラスで生成されるプロパティは、.NET の日付と時刻の型ではありません。 プロパティは、名前空間`Timestamp`内`Duration`の クラス`Google.Protobuf.WellKnownTypes`と クラスを使用します。 これらのクラスは、 `DateTimeOffset`、 `DateTime`、および との`TimeSpan`間で変換するためのメソッドを提供します。
 
 ```csharp
 // Create Timestamp and Duration from .NET DateTimeOffset and TimeSpan
@@ -81,15 +83,21 @@ TimeSpan? duration = meeting.Duration?.ToTimeSpan();
 ```
 
 > [!NOTE]
-> `Timestamp` 型は UTC 時刻で動作します。`DateTimeOffset` 値は常に0のオフセットを持ち、`DateTime.Kind` プロパティは常に `DateTimeKind.Utc`になります。
+> この`Timestamp`型は UTC 時刻で動作します。 `DateTimeOffset`値は常にゼロのオフセットを`DateTime.Kind`持ち、プロパティは`DateTimeKind.Utc`常に です。
 
 ### <a name="systemguid"></a>System.Guid
 
-他のプラットフォームで `UUID` として知られている <xref:System.Guid> の種類は、Protobuf によって直接サポートされておらず、既知の型もありません。 最適な方法は、標準 `8-4-4-4-12` 16 進数形式 (`45a9fda3-bd01-47a9-8460-c1cd7484b0b3`など) を使用して `Guid` 値を `string` フィールドとして処理することです。これは、すべての言語とプラットフォームで解析できます。 `Guid` 値には `bytes` フィールドを使用しないでください。これにより、エンディアンの問題により、Java などの他のプラットフォームとの対話で動作が不安定になる可能性があります。
+Protobuf は、他のプラットフォーム<xref:System.Guid>と呼ばれる`UUID`型を直接サポートしていません。 よく知られているタイプはありません。
+
+最適な方法は、標準`Guid``string``8-4-4-4-12`の 16 進形式 (たとえば)`45a9fda3-bd01-47a9-8460-c1cd7484b0b3`を使用して、値をフィールドとして処理することです。 すべての言語とプラットフォームは、その形式を解析できます。
+
+`Guid`値にフィールドを`bytes`使用しないでください。 Protobuf が Java などの他のプラットフォームと対話しているとき、*エンディアンネス*([Wikipedia 定義](https://en.wikipedia.org/wiki/Endianness)) の問題は、不安定な動作を引き起こす可能性があります。
 
 ### <a name="nullable-types"></a>Null 許容型
 
-のC# Protobuf コード生成では、`int32`の `int` などのネイティブ型を使用します。 つまり、値は常に含まれ、null にすることはできません。 C#コードで `int?` を使用するなど、明示的な null を必要とする値の場合、Protobuf の "既知の型" にはC# 、null 許容型にコンパイルされるラッパーが含まれます。 これらを使用するには、次のように `wrappers.proto` を `.proto` ファイルにインポートします。
+C# の Protobuf コード生成では、`int`ネイティブ型を使用`int32`します。 したがって、値は常に含まれ、null にすることはできません。
+
+C# コードでの使用`int?`など、明示的な null を必要とする値の場合、Protobuf の "既知の型" には、null 許容 C# 型にコンパイルされるラッパーが含まれます。 これらを使用するには、次`wrappers.proto`のように`.proto`ファイルにインポートします。
 
 ```protobuf  
 syntax = "proto3"
@@ -104,11 +112,11 @@ message Person {
 }
 ```
 
-Protobuf は、生成されたメッセージプロパティに simple `T?` (`int?`など) を使用します。
+Protobuf は、生成`T?`されたメッセージ プロパティ`int?`に単純な ( など ) を使用します。
 
-次の表に、ラッパー型とそれに対応C#する型の完全な一覧を示します。
+次の表は、同等の C# 型を持つラッパー型の完全な一覧を示しています。
 
-| C# 型   | 既知の型ラッパー       |
+| C# 型   | よく知られている型ラッパー       |
 | --------- | ----------------------------- |
 | `double?` | `google.protobuf.DoubleValue` |
 | `float?`  | `google.protobuf.FloatValue`  |
@@ -117,17 +125,17 @@ Protobuf は、生成されたメッセージプロパティに simple `T?` (`in
 | `uint?`   | `google.protobuf.UInt32Value` |
 | `ulong?`  | `google.protobuf.UInt64Value` |
 
-既知の型 `Timestamp` と `Duration` は、クラスとして .NET で表現されるため、null 許容バージョンを必要としませんが `DateTimeOffset` または `TimeSpan`に変換するときに、これらの型のプロパティで null をチェックすることが重要です。
+よく知られている型`Timestamp`と`Duration`クラスとして .NET で表されます。 C# 8 以降では、null 許容参照型を使用できます。 しかし、これらの型のプロパティを null に変換する場合は、これらの型のプロパティ`DateTimeOffset`を`TimeSpan`チェックすることが重要です。
 
-## <a name="decimals"></a>10 進
+## <a name="decimals"></a>10 進数
 
-Protobuf は、.NET `decimal` 型をネイティブでサポートしていません。 `double` と `float`だけです。 Protobuf プロジェクトでは、標準 `Decimal` 型を既知の型に追加することができますが、それをサポートする言語とフレームワークはプラットフォームでサポートされていますが、まだ実装されていません。
+Protobuf は.NET`decimal`型を`double`ネイティブにサポートしていません。 `float` Protobuf プロジェクトでは、標準型をサポートする言語やフレームワークのプラットフォームサポートを`Decimal`使用して、既知の型に標準型を追加する可能性について、継続的な議論が行われています。 まだ何も実装されていません。
 
-.NET クライアントとサーバー間の安全なシリアル化に使用できる `decimal` 型を表すメッセージ定義を作成することはできますが、他のプラットフォームの開発者は、使用されている形式を理解し、独自の処理を実装する必要があります。
+.NET クライアントとサーバー間の安全なシリアル化`decimal`に使用する型を表すメッセージ定義を作成できます。 しかし、他のプラットフォームの開発者は、使用されている形式を理解し、独自の処理を実装する必要があります。
 
-### <a name="creating-a-custom-decimal-type-for-protobuf"></a>Protobuf のカスタム Decimal 型の作成
+### <a name="creating-a-custom-decimal-type-for-protobuf"></a>Protobuf のカスタム 10 進型の作成
 
-非常に単純な実装は、一部の Google Api で使用される非標準の `Money` 型に似ていますが、`currency` フィールドはありません。
+単純な実装は、フィールドを使用しない一`Money`部の Google API が使用する`currency`非標準型に似ている可能性があります。
 
 ```protobuf
 package CustomTypes;
@@ -144,12 +152,12 @@ message Decimal {
 }
 ```
 
-`nanos` フィールドは、`0.999_999_999` から `-0.999_999_999`までの値を表します。 たとえば、`decimal` 値 `1.5m` は `{ units = 1, nanos = 500_000_000 }` として表されます (この例の `nanos` フィールドでは、より大きな値に対して `sfixed32` よりも効率的にエンコードされる `int32` 型を使用しています)。 `units` フィールドが負の値の場合、`nanos` フィールドにも負の値を指定する必要があります。
+この`nanos`フィールドは、`0.999_999_999`から`-0.999_999_999`から への値を表します。 たとえば、`decimal`値`1.5m`は`{ units = 1, nanos = 500_000_000 }`として表されます。 この例の`nanos`フィールドでは、大きな値よりも`sfixed32``int32`効率的にエンコードされる型を使用するのはこのためです。 フィールドが`units`負の場合、`nanos`フィールドも負の値にする必要があります。
 
 > [!NOTE]
-> `decimal` 値をバイト文字列としてエンコードするためのアルゴリズムは他にもいくつかありますが、このメッセージはどのようなものでも理解しやすく、異なるプラットフォームの *[エンディアン](https://en.wikipedia.org/wiki/Endianness)* の影響を受けません。
+> バイト文字列として値をエンコード`decimal`するためのアルゴリズムは他に複数ありますが、このメッセージはそれらよりも理解しやすいです。 値は、異なるプラットフォームでのエンディアンの影響を受けません。
 
-この型と BCL `decimal` 型の間の変換は、次C#のようにで実装できます。
+この型と BCL`decimal`型の間の変換は、C# で次のように実装できます。
 
 ```csharp
 namespace CustomTypes
@@ -182,8 +190,8 @@ namespace CustomTypes
 ```
 
 > [!IMPORTANT]
-> このようなカスタムユーティリティメッセージ型を使用する場合は常に、他の開発者が独自の言語またはフレームワークで同等の型との間で変換を実装できるように、`.proto` にコメントを付けて文書化**する必要があり**ます。
+> このようなカスタム メッセージタイプを*使用する場合*は、常に`.proto`. その後、他の開発者は、対応する型との変換を、独自の言語またはフレームワークで実装できます。
 
 >[!div class="step-by-step"]
->[前へ](protobuf-messages.md)
->[次へ](protobuf-nested-types.md)
+>[前次](protobuf-messages.md)
+>[Next](protobuf-nested-types.md)

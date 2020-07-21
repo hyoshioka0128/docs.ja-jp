@@ -1,19 +1,17 @@
 ---
 title: .NET Framework の初期化エラー:ユーザー エクスペリエンスの管理
+description: アクティブ化システムで、読み込む適切な CLR バージョンを検出できない場合など、.NET 初期化エラーが発生したときのユーザー エクスペリエンスを制御します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - no framework found experience
 - initialization errors [.NET Framework]
 - .NET Framework, initialization errors
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: cadcb5c2e85f046b5c1c561c17663b7c94829f4f
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
-ms.translationtype: HT
+ms.openlocfilehash: 6db68b43381dfe275c93cae5610386e10a6f09ae
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802244"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619690"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>.NET Framework の初期化エラー:ユーザー エクスペリエンスの管理
 
@@ -73,7 +71,7 @@ CLR にはさまざまなシナリオ向けの一連のホストが含まれて�
 
 |CLR ホスト|説明|エラー メッセージ ポリシー|エラー メッセージを無効にできるか|
 |--------------|-----------------|--------------------------|------------------------------------|
-|マネージド EXE ホスト|マネージド EXE を起動します。|.NET Framework のバージョンが見つからない場合に表示される|×|
+|マネージド EXE ホスト|マネージド EXE を起動します。|.NET Framework のバージョンが見つからない場合に表示される|いいえ|
 |マネージド COM ホスト|マネージド COM コンポーネントをプロセスに読み込みます。|.NET Framework のバージョンが見つからない場合に表示される|はい (SEM_FAILCRITICALERRORS フラグを設定すると可能)|
 |ClickOnce ホスト|ClickOnce アプリケーションを起動します。|.NET Framework 4.5 以降で、.NET Framework のバージョンが見つからない場合に表示される|いいえ|
 |XBAP ホスト|WPF XBAP アプリケーションを起動します。|.NET Framework 4.5 以降で、.NET Framework のバージョンが見つからない場合に表示される|いいえ|
@@ -89,7 +87,7 @@ CLR アクティベーション システムでは、他のバージョンの Wi
 
 .NET Framework 3.5 がインストールされている場合、ユーザーは Windows 8 コンピューター上で .NET Framework 2.0、3.0、または 3.5 に依存するアプリケーションを実行できます。 また、アプリケーションが .NET Framework 1.0 または 1.1 でのみ実行するように明示的に構成されていなければ、.NET Framework 1.0 および 1.1 のアプリケーションを実行することもできます。 「[.NET Framework 1.1 からの移行](../migration-guide/migrating-from-the-net-framework-1-1.md)」をご覧ください。
 
-.NET Framework 4.5 以降では、CLR アクティベーション ログは、初期化エラー メッセージが表示された日時とその理由を記録するログ エントリを含むように強化されています。 詳細については、[CLR のアクティブ化に関する問題をデバッグする](how-to-debug-clr-activation-issues.md)」で説明されているように、CLR のアクティベーションに関する問題のデバッグに役立つログ インフラストラクチャが用意されています。
+.NET Framework 4.5 以降では、CLR アクティベーション ログは、初期化エラー メッセージが表示された日時とその理由を記録するログ エントリを含むように強化されています。 詳細については、「[方法:CLR のアクティブ化に関する問題をデバッグする](how-to-debug-clr-activation-issues.md)」で説明されているように、CLR のアクティベーションに関する問題のデバッグに役立つログ インフラストラクチャが用意されています。
 
 ## <a name="see-also"></a>関連項目
 

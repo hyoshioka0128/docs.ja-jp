@@ -1,5 +1,6 @@
 ---
-title: '方法 : マウス イベントとキーボード イベントをコードでシミュレートする'
+title: '方法: マウス イベントとキーボード イベントをコードでシミュレートする'
+description: Windows フォームが提供するオプションを使用して、マウスとキーボードの入力をプログラムでシミュレートする方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +13,14 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: 52f89df8d7f28f0e00c3becd9005b46e52b5532c
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 3c60533479352151ac4f28690413ebc7d8e5879d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960205"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619248"
 ---
-# <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>方法 : マウス イベントとキーボード イベントをコードでシミュレートする
+# <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>方法: マウス イベントとキーボード イベントをコードでシミュレートする
 
 Windows フォームは、プログラムでマウスおよびキーボード入力をシミュレートするためのいくつかのオプションを提供します。 ここでは、これらのオプションの概要について説明します。
 
@@ -78,7 +79,7 @@ Windows フォームは、プログラムでマウスおよびキーボード入
     [!code-csharp[System.Windows.Forms.SimulateKeyPress#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/CS/form1.cs#5)]
     [!code-vb[System.Windows.Forms.SimulateKeyPress#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/VB/form1.vb#5)]
 
-## <a name="example"></a>使用例
+## <a name="example"></a>例
 
 次のコード例は、前のコード例の完全なアプリケーションです。
 
@@ -86,12 +87,12 @@ Windows フォームは、プログラムでマウスおよびキーボード入
 [!code-csharp[System.Windows.Forms.SimulateKeyPress#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/CS/form1.cs#0)]
 [!code-vb[System.Windows.Forms.SimulateKeyPress#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/VB/form1.vb#0)]
 
-## <a name="compiling-the-code"></a>コードのコンパイル方法
+## <a name="compiling-the-code"></a>コードのコンパイル
 
 この例で必要な要素は次のとおりです。
 
 - System、System.Drawing、および System.Windows.Forms の各アセンブリへの参照。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [Windows フォームでのユーザー入力](user-input-in-windows-forms.md)

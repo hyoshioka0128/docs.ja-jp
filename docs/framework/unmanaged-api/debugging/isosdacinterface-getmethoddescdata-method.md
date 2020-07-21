@@ -1,5 +1,5 @@
 ---
-title: ISOSDacInterface::GetMethodDescData メソッド
+title: 'ISOSDacInterface:: GetMethodDescData メソッド'
 ms.date: 01/16/2019
 api.name:
 - ISOSDacInterface::GetMethodDescData Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: ea54fdd83b9470db4a08daceaa695e450f5ca1af
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 105149d0abf312c33a8498e7428e3a8b23d6ae7d
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764827"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421021"
 ---
-# <a name="isosdacinterfacegetmethoddescdata-method"></a>ISOSDacInterface::GetMethodDescData メソッド
+# <a name="isosdacinterfacegetmethoddescdata-method"></a>ISOSDacInterface:: GetMethodDescData メソッド
 
-指定した MethodDesc ポインターのデータを取得します。
+指定された MethodDesc ポインターのデータを取得します。
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -44,33 +44,33 @@ HRESULT GetMethodDescData(
 ## <a name="parameters"></a>パラメーター
 
 `methodDesc`\
-[in]MethodDesc アドレス。
+からMethodDesc のアドレス。
 
 `ip`\
-[in]メソッドの IP アドレス。
+からメソッドの IP アドレス。
 
 `data`\
-[out]関連付けられている、MethodDesc 内部 Api から返されるデータ。
+入出力内部 Api から返される MethodDesc に関連付けられたデータ。
 
 `cRevertedRejitVersions`\
-[out]元に戻された rejit バージョンの数。
+入出力戻された再 jit バージョンの数。
 
 `rgRevertedRejitData`\
-[out]内部 Api から返されるように、元に戻された rejit バージョンに関連付けられたデータ。
+入出力内部 Api から返された、元に戻された rejit バージョンに関連付けられたデータ。
 
 `pcNeededRevertedRejitData`\
-[out]元に戻された ReJit バージョンに関連付けられたデータを格納するために必要なバイト数。
+入出力戻された ReJit バージョンに関連付けられたデータを格納するために必要なバイト数。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-指定されたメソッドは、`ISOSDacInterface`インターフェイスし、仮想メソッド テーブルの 20 のスロットに対応しています。 それを使用できる[ `CLRDATA_ADDRESS` ](../common-data-types-unmanaged-api-reference.md) 64 ビット符号なし整数として定義する必要があります。
+指定されたメソッドはインターフェイスの一部で `ISOSDacInterface` あり、仮想メソッドテーブルの21スロットに対応します。 これらを使用できるようにするには、を [`CLRDATA_ADDRESS`](../common-data-types-unmanaged-api-reference.md) 64 ビット符号なし整数として定義する必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
-**ヘッダー:** なし  
-**ライブラリ:** なし  
-**.NET Framework のバージョン:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
+**ヘッダー:** 存在  
+**ライブラリ:** 存在  
+**.NET Framework のバージョン:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>関連項目
 

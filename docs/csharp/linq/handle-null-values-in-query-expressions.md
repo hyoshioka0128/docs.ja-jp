@@ -3,12 +3,12 @@ title: クエリ式の null 値の処理 (C# での LINQ)
 description: C# の LINQ クエリ式で null 値を処理する方法について説明します。
 ms.date: 12/01/2016
 ms.assetid: ac63ae8b-724d-4251-9334-528f4e884ae7
-ms.openlocfilehash: c9a3aaec05fa029a8db66826bdcb4a1d106176e3
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3da490b72bd518df7be8c14b34655af8c6f84929
+ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736858"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249306"
 ---
 # <a name="handle-null-values-in-query-expressions"></a>クエリ式の null 値の処理
 
@@ -24,7 +24,7 @@ ms.locfileid: "73736858"
 
 ## <a name="example"></a>例
 
-join 句で、比較キーの一方だけが null 許容値型である場合、クエリ式でもう一方のキーを null 許容型にキャストできます。 次の例では、`EmployeeID` は `int?` 型の値を含む列であるとします。
+join 句で、比較キーの一方だけが null 許容値型である場合、クエリ式でもう一方のキーを null 許容値型にキャストできます。 次の例では、`EmployeeID` は `int?` 型の値を含む列であるとします。
 
 [!code-csharp[csProgGuideLINQ#83](~/samples/snippets/csharp/concepts/linq/how-to-handle-null-values-in-query-expressions_2.cs)]
 

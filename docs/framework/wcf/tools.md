@@ -1,16 +1,17 @@
 ---
 title: Windows Communication Foundation ツール
+description: WCF アプリケーションを簡単に作成、デプロイ、および管理できるように設計された WCF ツールについて説明します。 これらのツールは、コマンドプロンプトから実行します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF, tools
 - Windows Communication Foundation, tools
 ms.assetid: 399a47b4-bfea-434b-8e83-f76b5063d79d
-ms.openlocfilehash: edd54c93207456156ef2520a00ad567cd087d89c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: acc142e8e3108a827b63cf013b818d30b5dcaa52
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321372"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245971"
 ---
 # <a name="windows-communication-foundation-tools"></a>Windows Communication Foundation ツール
 Microsoft Windows Communication Foundation (WCF) ツールは、WCF アプリケーションの作成、展開、および管理を容易にするように設計されています。 このセクションには、これらのツールに関する詳細な情報があります。 ツールはサポートされていません。  

@@ -1,5 +1,6 @@
 ---
 title: <system.serviceModel>
+description: Wcf ServiceModel 構成要素について説明します。これにより、WCF サービスとクライアントアプリケーションを構成できます。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.ServiceModel
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - <system.serviceModel> element
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
-ms.openlocfilehash: 2125ce00b0e23f2e93ff251549f9c1276892b16b
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: 567cbd2cc07ee82e795daa067b9034b2b8dc1974
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399454"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243959"
 ---
-# <a name="systemservicemodel"></a>\<system.serviceModel>
+# \<system.serviceModel>
 この構成セクションには、すべての Windows Communication Foundation (WCF) ServiceModel 構成要素が含まれています。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp; **\<System.servicemodel >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;**\<system.serviceModel>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -58,7 +59,7 @@ ms.locfileid: "70399454"
  以降のセクションでは、属性、子要素、および親要素について説明します。  
   
 ### <a name="attributes"></a>属性  
- なし  
+ None  
   
 ### <a name="child-elements"></a>子要素  
   
@@ -66,14 +67,14 @@ ms.locfileid: "70399454"
 |-------------|-----------------|  
 |[\<behaviors>](behaviors.md)|このセクションは、`endpointBehaviors` と`serviceBehaviors` という 2 つの子コレクションを定義します。  各コレクションは、エンドポイントとサービスによって使用されるそれぞれの動作要素を定義します。 各動作要素は、その一意の `name` 属性で識別されます。|  
 |[\<bindings>](bindings.md)|このセクションには、標準バインディングおよびカスタム バインドのコレクションが保持されます。 各エントリは、その一意の `name` により識別されます。 サービスは、`name` を使用してバインディングをリンクすることにより、バインディングを使用します。|  
-|[\<クライアント >](client.md)|このセクションは、クライアントがサービスの接続に使用するエンドポイントの一覧を含みます。|  
+|[\<client>](client.md)|このセクションは、クライアントがサービスの接続に使用するエンドポイントの一覧を含みます。|  
 |[\<comContracts>](comcontracts.md)|このセクションは、WCF と COM 相互運用が有効な COM コントラクトを定義します。|  
-|[\<commonBehaviors>](commonbehaviors.md)|このセクションは、machine.config ファイルでだけ定義できます。 このセクションは、`endpointBehaviors` と`serviceBehaviors` という 2 つの子コレクションを定義します。  各コレクションは、コンピューター上のすべての WCF エンドポイントとサービスによって使用される動作要素を定義します。  動作がセクションと`<commonBehaviors>` `<behaviors>`セクションの両方で定義されている場合\<は、[動作 >] セクションの動作が優先されます。|  
-|[\<診断 >](diagnostics.md)|このセクションには、WCF の診断機能の設定が含まれます。 ユーザーはトレース、パフォーマンス カウンター、および WMI プロバイダーを有効または無効にしたり、カスタム メッセージ フィルターを追加したりできます。|  
+|[\<commonBehaviors>](commonbehaviors.md)|このセクションは、machine.config ファイルでだけ定義できます。 このセクションは、`endpointBehaviors` と`serviceBehaviors` という 2 つの子コレクションを定義します。  各コレクションは、コンピューター上のすべての WCF エンドポイントとサービスによって使用される動作要素を定義します。  ある動作が `<commonBehaviors>` と `<behaviors>` の両方のセクションで定義されている場合は、\<behaviors> セクション内の動作が優先されます。|  
+|[\<diagnostics>](diagnostics.md)|このセクションには、WCF の診断機能の設定が含まれます。 ユーザーはトレース、パフォーマンス カウンター、および WMI プロバイダーを有効または無効にしたり、カスタム メッセージ フィルターを追加したりできます。|  
 |[\<extensions>](extensions-section.md)|このセクションには、拡張のコレクションが含まれています。これにより、ユーザー定義のバインディング、動作、およびその他の拡張機能を作成できるようになります。|  
-|[\<protocolMapping >](protocolmapping.md)|このセクションでは、トランスポートプロトコルスキーム (http、net.tcp、net.pipe など) と WCF バインドとの一連の既定のプロトコルマッピングを定義します。|  
-|[\<ルーティング >](routing.md)|このセクションでは、受信メッセージを評価するときに使用される Windows Communication Foundation (WCF<xref:System.ServiceModel.Dispatcher.MessageFilter> ) の種類を決定するルーティングフィルターのセットと、次のような場合にメッセージを送信するターゲットエンドポイントを定義するルーティングテーブルを定義します。フィルターが一致します。|  
-|[\<serviceHostingEnvironment >](servicehostingenvironment.md)|このセクションは、環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義します。 このセクションが空の場合は、既定の型が使用されます。|  
+|[\<protocolMapping>](protocolmapping.md)|このセクションは、トランスポート プロトコル スキーム (http、net.tcp、net.pipe など) と WCF バインディング間の既定のプロトコル マッピング セットを定義します。|  
+|[\<routing>](routing.md)|このセクションでは、受信メッセージを評価するときに使用する Windows Communication Foundation (WCF) の種類を決定するルーティングフィルターのセットと、 <xref:System.ServiceModel.Dispatcher.MessageFilter> フィルターが一致したときにメッセージを送信するターゲットエンドポイントを定義するルーティングテーブルを定義します。|  
+|[\<serviceHostingEnvironment>](servicehostingenvironment.md)|このセクションは、環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義します。 このセクションが空の場合は、既定の型が使用されます。|  
 |[\<services>](services.md)|このセクションには、サービスのコレクションが含まれています。 アセンブリで定義された各サービスの場合、この要素は、サービスの設定を指定する `service` 要素を含みます。|  
 |[\<standardEndpoints>](standardendpoints.md)|このセクションは、再使用可能な構成済みのエンドポイントである標準エンドポイントのコレクションを定義します。 標準エンドポイントは、固定値に設定されたアドレス、バインディング、およびコントラクトの 1 つ以上の属性を持ちます。 たとえば、探索エンドポイントでは、コントラクトが固定されています。 標準エンドポイントを使用して、カスタム バインドの定義と同様に新しいプロパティを指定して、サービス エンドポイントを拡張することもできます。|
 |[\<tracking>](tracking-of-wcf.md)|このセクションでは、ワークフローサービスの追跡設定を定義します。|
@@ -87,7 +88,7 @@ ms.locfileid: "70399454"
 ## <a name="remarks"></a>Remarks  
  WCF では、他の製品の構成セクションに要素を追加しません。  
   
- WCF サービスは、構成ファイル`services`のセクションで定義されています。 アセンブリには、任意の数のサービスを含めることができます。 各サービスには、独自の `service` 設定セクションがあります。 セクションとその内容は、サービス コントラクト、動作、および特定のサービスのエンドポイントを定義します。  
+ WCF サービスは、構成ファイルのセクションで定義されてい `services` ます。 アセンブリには、任意の数のサービスを含めることができます。 各サービスには、独自の `service` 設定セクションがあります。 セクションとその内容は、サービス コントラクト、動作、および特定のサービスのエンドポイントを定義します。  
   
  サービスの `name` 属性だけが必須項目です。  既定では、サービスの名前は、サービスの実装に使用される、基になる CLR 型を示します。ただし、<xref:System.ServiceModel.ServiceContractAttribute> の ConfigurationName プロパティを変更して、CLR 型要件をオーバーライドすることもできます。  
   

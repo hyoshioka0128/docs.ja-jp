@@ -7,7 +7,7 @@ apiname:
 apitype: Assembly
 ms.openlocfilehash: 32c15a89a976b5f9af12f040c43e724a25357ead
 ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2019
 ms.locfileid: "72920976"

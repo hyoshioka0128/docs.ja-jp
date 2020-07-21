@@ -1,17 +1,17 @@
 ---
 title: XML コメントによるコードの文書化
 description: XML ドキュメント コメントを含むコードを文書化し、コンパイル時に XML ドキュメント ファイルを生成する方法を説明します。
-ms.date: 02/14/2017
+ms.date: 01/21/2020
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 92a64a8f7a652f8b957013fc05f426e6b983655d
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 1ed39c4733c36b3932fcb85bf50d4f4c0e53aa6f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710990"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146318"
 ---
-# <a name="documenting-your-code-with-xml-comments"></a>XML コメントによるコードの文書化
+# <a name="document-your-code-with-xml-comments"></a>XML コメントを含むコードの文書化
 
 XML 文書化コメントは、ユーザー定義型またはユーザー定義メンバーの定義の上に追加する特殊なコメントです。
 このコメントが特殊な理由は、コンパイル時にコンパイラで処理して、XML 文書化ファイルを生成できることです。
@@ -26,9 +26,9 @@ XML 文書化コメントは、その他すべてのコメントと同じよう�
    ```xml
    <GenerateDocumentationFile>true</GenerateDocumentationFile>
    ```
-   
+
    これは、次の指定と同じです。
-   
+
    ```xml
    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
    ```
@@ -49,7 +49,7 @@ XML 文書化コメントには、3 つのスラッシュ (`///`) と、XML 形�
 
 [!code-csharp[Sample Library](../../samples/snippets/csharp/concepts/codedoc/sample-library.cs)]
 
-この例のライブラリは、4 つの主要な算術演算である `add`、 `subtract`、`multiply`、`divide` を、`int` と `double` のデータ型でサポートします。
+サンプル ライブラリでは、4 つの主要な算術演算 (`add`、`subtract`、`multiply`、`divide`) が、`int` と `double` のデータ型でサポートされています。
 
 このライブラリを使用するがそのソース コードにはアクセスできないサード パーティの開発者向けに、コードから API リファレンス ドキュメントを作成できるようにする必要があります。
 前述のように、このために XML ドキュメント タグを使用できます。 そこで、C# コンパイラがサポートする標準の XML タグを紹介します。
@@ -61,7 +61,7 @@ XML 文書化コメントには、3 つのスラッシュ (`///`) と、XML 形�
 
 [!code-csharp[Summary Tag](~/samples/snippets/csharp/concepts/codedoc/summary-tag.cs)]
 
-`<summary>` は非常に重要なタグです。IntelliSense や API のリファレンス ドキュメントでは、このタグの内容が型やメンバーに関する主要な情報源であるため、このタグを記述に含めることをお勧めします。
+`<summary>` は重要なタグです。IntelliSense や API のリファレンス ドキュメントでは、このタグの内容が型やメンバーに関する主要な情報源であるため、このタグを含めることをお勧めします。
 
 ## <a name="remarks"></a>\<remarks>
 
@@ -150,7 +150,7 @@ XML 文書化コメントには、3 つのスラッシュ (`///`) と、XML 形�
 
 ## <a name="paramref"></a>\<paramref>
 
-場合によって、`<summary>` タグでメソッドの動作を記述している最中に、パラメーターを参照することが必要になることがあります。 そのような場合は、`<paramref>` タグがまさに適しています。 double 型に基づく `Add` メソッドの概要を更新しましょう。 `<param>` タグと同様に、パラメーター名は**必須**`name`属性で指定されます。
+場合によって、`<summary>` タグでメソッドの動作を記述している最中に、パラメーターを参照することが必要になることがあります。 そのような場合は、`<paramref>` タグがまさに適しています。 double 型に基づく `Add` メソッドの概要を更新しましょう。 `<param>` タグと同様に、パラメーター名は**必須** `name` 属性で指定されます。
 
 [!code-csharp[Paramref Tag](~/samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
 
@@ -163,14 +163,19 @@ XML 文書化コメントには、3 つのスラッシュ (`///`) と、XML 形�
 
 ## <a name="list"></a>\<list>
 
-`<list>` タグは、文書化の情報を順序付きリスト、順不同のリスト、または表として書式設定するために使用します。
-`Math` ライブラリがサポートするそれぞれの算術演算の順不同のリストを作成します。
+`<list>` タグを使用して、ドキュメント情報を、順序指定済みリスト、順序指定されていないリスト、または表として書式設定します。 `Math` ライブラリがサポートするそれぞれの算術演算の順不同のリストを作成します。
 
 [!code-csharp[List Tag](~/samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
 
 `type` 属性を `number` または `table` に変更することで、順序付きリストまたは表をそれぞれ作成できます。
 
-### <a name="putting-it-all-together"></a>まとめ
+## <a name="inheritdoc"></a>\<inheritdoc>
+
+`<inheritdoc>` タグを使用して、基底クラス、インターフェイス、および同様のメソッドから XML コメントを継承できます。 これにより、重複する XML コメントの不要なコピーと貼り付けを行う必要がなくなり、XML コメントが自動的に同期されたままになります。
+
+[!code-csharp-interactive[InheritDoc Tag](~/samples/snippets/csharp/concepts/codedoc/inheritdoc-tag.cs)]
+
+### <a name="put-it-all-together"></a>まとめ
 
 ここまで、チュートリアルに沿ってコードに必要なタグを適用し、コードは次のようになっています。
 
@@ -203,10 +208,10 @@ XML コメントを別のファイルに移動したので、`<include>` タグ�
 
 `id` 属性は、`name` の代わりに使用でき、コメントの前にあるタグの ID を表します。
 
-### <a name="user-defined-tags"></a>ユーザー定義のタグ
+### <a name="user-defined-tags"></a>ユーザー定義タグ
 
 上に示したすべてのタグは、C# コンパイラで認識されるタグを表します。 ただし、ユーザー独自のタグも自由に定義できます。
-Sandcastle などのツールを使用すると、[`<event>`](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm)、[`<note>`](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm) などの追加のタグや、[名前空間の文書化](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm)もサポートされます。
+Sandcastle などのツールを使用すると、[\<event>](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm)、[\<note>](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm) などの追加のタグや、[名前空間の文書化](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm)もサポートされます。
 カスタムまたは社内ドキュメント生成ツールを標準タグと共に使用して、HTML から PDF への複数の出力形式をサポートできます。
 
 ## <a name="recommendations"></a>推奨事項

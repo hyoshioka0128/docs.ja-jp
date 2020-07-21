@@ -1,16 +1,17 @@
 ---
 title: 実行時間の長いワークフローを作成および実行する方法
+description: この記事では、複数のワークフローインスタンスとワークフローの永続化の開始と再開をサポートする Windows フォームホストアプリケーションを作成する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
-ms.openlocfilehash: 10eb4e2947bed9cea89f1cda05272aa3fa0fadaa
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 557b3512e534198d47c0c6f6b0a7c5f92bb71739
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204892"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419552"
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>実行時間の長いワークフローを作成および実行する方法
 
@@ -24,42 +25,42 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
 
 ## <a name="to-create-the-persistence-database"></a>永続性データベースを作成するには
 
-1. SQL Server Management Studio を開き、 **.\SQLEXPRESS**などのローカルサーバーに接続します。 ローカルサーバーの **[データベース]** ノードを右クリックし、 **[新しいデータベース]** をクリックします。 新しいデータベースに**WF45GettingStartedTutorial**という名前を指定し、他のすべての値をそのまま使用して、[ **OK]** を選択します。
+1. SQL Server Management Studio を開き、 **.\SQLEXPRESS**などのローカルサーバーに接続します。 ローカルサーバーの [**データベース**] ノードを右クリックし、[**新しいデータベース**] をクリックします。 新しいデータベースに**WF45GettingStartedTutorial**という名前を指定し、他のすべての値をそのまま使用して、[ **OK]** を選択します。
 
     > [!NOTE]
     > データベースを作成する前に、ローカルサーバーに対する**Create Database**権限があることを確認してください。
 
-2. **[ファイル]** メニューの [**開く** **] をクリック**します。 次のフォルダーを参照します: *C:\Windows\Microsoft.NET\Framework\v4.0.30319\sql\en*
+2. [**ファイル**] メニューの [**開く** **] をクリック**します。 次のフォルダーを参照します: *C:\Windows\Microsoft.NET\Framework\v4.0.30319\sql\en*
 
-    次の2つのファイルを選択し、 **[開く]** をクリックします。
+    次の2つのファイルを選択し、[**開く**] をクリックします。
 
-    - *SqlWorkflowInstanceStoreLogic .sql*
+    - *SqlWorkflowInstanceStoreLogic.sql*
 
-    - *Sqlworkflowinstancestoreschema.sql*
+    - *SqlWorkflowInstanceStoreSchema.sql*
 
-3. **[ウィンドウ]** メニューの **[sqlworkflowinstancestoreschema.sql]** をクリックします。 **[使用できるデータベース]** ドロップダウンで**WF45GettingStartedTutorial**が選択されていることを確認し、 **[クエリ]** メニューの **[実行]** を選択します。
+3. [**ウィンドウ**] メニューの [ **sqlworkflowinstancestoreschema.sql** ] をクリックします。 [**使用できるデータベース**] ドロップダウンで**WF45GettingStartedTutorial**が選択されていることを確認し、[**クエリ**] メニューの [**実行**] を選択します。
 
-4. **[ウィンドウ]** メニューの **[Sqlworkflowinstancestorelogic .sql]** をクリックします。 **[使用できるデータベース]** ドロップダウンで**WF45GettingStartedTutorial**が選択されていることを確認し、 **[クエリ]** メニューの **[実行]** を選択します。
+4. [**ウィンドウ**] メニューの [ **Sqlworkflowinstancestorelogic .sql** ] をクリックします。 [**使用できるデータベース**] ドロップダウンで**WF45GettingStartedTutorial**が選択されていることを確認し、[**クエリ**] メニューの [**実行**] を選択します。
 
     > [!WARNING]
     > 前の 2 つの手順を正しい順序で実行することが重要です。 クエリが正しい順序で実行されないと、エラーが発生し、永続性データベースは正しく構成されません。
 
 ## <a name="to-add-the-reference-to-the-durableinstancing-assemblies"></a>DurableInstancing アセンブリへの参照を追加するには
 
-1. **ソリューションエクスプローラー**で **[NumberGuessWorkflowHost]** を右クリックし、 **[参照の追加]** を選択します。
+1. **ソリューションエクスプローラー**で [ **NumberGuessWorkflowHost** ] を右クリックし、[**参照の追加**] を選択します。
 
-2. **[参照の追加]** ボックスの一覧から **[アセンブリ]** を選択し、 **[アセンブリの検索]** ボックスに「`DurableInstancing`」と入力します。 これにより、アセンブリがフィルター処理され、目的の参照を簡単に選択できます。
+2. [**参照の追加**] ボックスの一覧から [**アセンブリ**] を選択し、[ `DurableInstancing` **アセンブリの検索**] ボックスに「」と入力します。 これにより、アセンブリがフィルター処理され、目的の参照を簡単に選択できます。
 
 3. **検索結果**の一覧で**system.activities.durableinstancing.instances**と**system.activities.durableinstancing.instances**の横のチェックボックスをオンにし、[ **OK]** をクリックします。
 
 ## <a name="to-create-the-workflow-host-form"></a>ワークフロー ホスト フォームを作成するには
 
 > [!NOTE]
-> この手順では、フォームを手動で追加して構成する方法について説明します。 必要に応じて、チュートリアルのソリューション ファイルをダウンロードし、完成したフォームをプロジェクトに追加できます。 チュートリアルファイルをダウンロードするには、 [Windows Workflow Foundation (WF45)-はじめにチュートリアル](https://go.microsoft.com/fwlink/?LinkID=248976)を参照してください。 ファイルがダウンロードされたら、 **NumberGuessWorkflowHost**を右クリックし、 **[参照の追加]** を選択します。 System.string および system.string への**参照を追加** **します。** これらの参照は、 **[追加]** 、 **[新しい項目]** メニューから新しいフォームを追加した場合に自動的に追加されますが、フォームをインポートするときに手動で追加する必要があります。 参照が追加されたら、**ソリューションエクスプローラー**で **[NumberGuessWorkflowHost]** を右クリックし、 **[追加]** 、 **[既存の項目]** の順に選択します。 プロジェクトファイルの `Form` フォルダーに移動し、 **WorkflowHostForm.cs** (または**WorkflowHostForm**) を選択し、 **[追加]** をクリックします。 フォームをインポートする場合は、次のセクションに進んで、[フォームのプロパティとヘルパーメソッドを追加](#to-add-the-properties-and-helper-methods-of-the-form)することができます。
+> この手順では、フォームを手動で追加して構成する方法について説明します。 必要に応じて、チュートリアルのソリューション ファイルをダウンロードし、完成したフォームをプロジェクトに追加できます。 チュートリアルファイルをダウンロードするには、 [Windows Workflow Foundation (WF45)-はじめにチュートリアル](https://go.microsoft.com/fwlink/?LinkID=248976)を参照してください。 ファイルがダウンロードされたら、 **NumberGuessWorkflowHost**を右クリックし、[**参照の追加**] を選択します。 System.string および system.string への**参照を追加****します。** これらの参照は、[**追加**]、[**新しい項目**] メニューから新しいフォームを追加した場合に自動的に追加されますが、フォームをインポートするときに手動で追加する必要があります。 参照が追加されたら、**ソリューションエクスプローラー**で [ **NumberGuessWorkflowHost** ] を右クリックし、[**追加**]、[**既存の項目**] の順に選択します。 `Form`プロジェクトファイル内のフォルダーを参照し、 **WorkflowHostForm.cs** (または**WorkflowHostForm**) を選択して、[**追加**] をクリックします。 フォームをインポートする場合は、次のセクションに進んで、[フォームのプロパティとヘルパーメソッドを追加](#to-add-the-properties-and-helper-methods-of-the-form)することができます。
 
-1. **ソリューションエクスプローラー**で **[NumberGuessWorkflowHost]** を右クリックし、 **[追加]** 、 **[新しい項目]** の順に選択します。
+1. **ソリューションエクスプローラー**で [ **NumberGuessWorkflowHost** ] を右クリックし、[**追加**]、[**新しい項目**] の順に選択します。
 
-2. **[インストールされ]** たテンプレート の一覧で **[Windows フォーム]** を選択し、 **[名前]** ボックスに「`WorkflowHostForm`」と入力して、 **[追加]** をクリックします。
+2. [**インストールされ**たテンプレート] の一覧で [ **Windows フォーム**] を選択し、 `WorkflowHostForm` [**名前**] ボックスに「」と入力して、[**追加**] をクリックします。
 
 3. フォームの次のプロパティを構成します。
 
@@ -73,12 +74,12 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
 
     |Control|プロパティ: 値|
     |-------------|---------------------|
-    |**Button**|名前: NewGame<br /><br /> 場所:13、13<br /><br /> サイズ:75、23<br /><br /> テキスト: 新しいゲーム|
-    |**group1**|場所:94、18<br /><br /> Text: 1 からまでの数値を推測します。|
+    |**ボタン**|名前: NewGame<br /><br /> 場所:13、13<br /><br /> サイズ:75、23<br /><br /> テキスト: 新しいゲーム|
+    |**ラベル**|場所:94、18<br /><br /> Text: 1 からまでの数値を推測します。|
     |**ComboBox**|名前: NumberRange<br /><br /> DropDownStyle: DropDownList<br /><br /> 項目:10、100、1000<br /><br /> 場所: 228、12<br /><br /> サイズ: 143、21|
-    |**group1**|場所:13、43<br /><br /> Text: ワークフローの種類|
+    |**ラベル**|場所:13、43<br /><br /> Text: ワークフローの種類|
     |**ComboBox**|名前: WorkflowType<br /><br /> DropDownStyle: DropDownList<br /><br /> Items: Statemachinenumberguessworkflow.xaml、Flowchartnumberguessworkflow.xaml、Sequentialnumberguessworkflow.xaml<br /><br /> 場所:94、40<br /><br /> サイズ: 277、21|
-    |**group1**|名前: WorkflowVersion<br /><br /> 場所:13、362<br /><br /> テキスト: ワークフローバージョン|
+    |**ラベル**|名前: WorkflowVersion<br /><br /> 場所:13、362<br /><br /> テキスト: ワークフローバージョン|
     |**GroupBox**|場所:13、67<br /><br /> サイズ: 358、287<br /><br /> テキスト: ゲーム|
 
     > [!NOTE]
@@ -86,12 +87,12 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
 
     |Control|プロパティ: 値|
     |-------------|---------------------|
-    |**group1**|場所: 7、20<br /><br /> テキスト: ワークフローインスタンス Id|
+    |**ラベル**|場所: 7、20<br /><br /> テキスト: ワークフローインスタンス Id|
     |**ComboBox**|名前: InstanceId<br /><br /> DropDownStyle: DropDownList<br /><br /> 場所: 121、17<br /><br /> サイズ: 227、21|
-    |**group1**|場所: 7、47<br /><br /> Text: Guess|
+    |**ラベル**|場所: 7、47<br /><br /> Text: Guess|
     |**TextBox**|名前: Guess<br /><br /> 場所:50、44<br /><br /> サイズ:65、20|
-    |**Button**|名前: EnterGuess<br /><br /> 場所: 121、42<br /><br /> サイズ:75、23<br /><br /> Text: 「Guess」と入力します。|
-    |**Button**|名前: QuitGame<br /><br /> 場所: 274、42<br /><br /> サイズ:75、23<br /><br /> テキスト: 終了|
+    |**ボタン**|名前: EnterGuess<br /><br /> 場所: 121、42<br /><br /> サイズ:75、23<br /><br /> Text: 「Guess」と入力します。|
+    |**ボタン**|名前: QuitGame<br /><br /> 場所: 274、42<br /><br /> サイズ:75、23<br /><br /> テキスト: 終了|
     |**TextBox**|名前: WorkflowStatus<br /><br /> 場所:10、73<br /><br /> 複数行: True<br /><br /> ReadOnly: True<br /><br /> スクロールバー: 縦<br /><br /> サイズ: 338、208|
 
 5. フォームの**Acceptbutton**プロパティを**enterguess**に設定します。
@@ -104,7 +105,7 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
 
 このセクションの手順では、フォーム クラスに、数値推測ワークフローの実行と再開をサポートするようフォームの UI を構成するプロパティとヘルパー メソッドを追加します。
 
-1. **ソリューションエクスプローラー**で **[WorkflowHostForm]** を右クリックし、 **[コードの表示]** を選択します。
+1. **ソリューションエクスプローラー**で [ **WorkflowHostForm** ] を右クリックし、[**コードの表示**] を選択します。
 
 2. 次の `using` (または `Imports`) ステートメントを、他の `using` (または `Imports`) ステートメントを含むファイルの先頭に追加します。
 
@@ -165,9 +166,9 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
     }
     ```
 
-    `InstanceId` コンボボックスには、永続化されたワークフローインスタンス id の一覧が表示され、`WorkflowInstanceId` プロパティは現在選択されているワークフローを返します。
+    コンボボックスには、 `InstanceId` 永続化されたワークフローインスタンス id の一覧が表示され、 `WorkflowInstanceId` プロパティは現在選択されているワークフローを返します。
 
-5. フォームの `Load` イベントのハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、 **[プロパティ]** ウィンドウの上部にある **[イベント]** アイコンをクリックして、 **[読み込み]** をダブルクリックします。
+5. フォームの `Load` イベントのハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、[**プロパティ**] ウィンドウの上部にある [**イベント**] アイコンをクリックして、[**読み込み**] をダブルクリックします。
 
     ```vb
     Private Sub WorkflowHostForm_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -212,7 +213,7 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
 
     フォームの読み込み時に、`SqlWorkflowInstanceStore` が構成され、範囲とワークフローの種類のコンボ ボックスが既定値に設定されます。さらに、永続化されたワークフロー インスタンスが `InstanceId` コンボ ボックスに追加されます。
 
-7. `SelectedIndexChanged` の `InstanceId` ハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替えて、[`InstanceId`] コンボボックスを選択し、 **[プロパティ]** ウィンドウの上部にある **[イベント]** アイコンをクリックして、 **[selectedindexchanged]** をダブルクリックします。
+7. `SelectedIndexChanged` の `InstanceId` ハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、コンボボックスを選択し `InstanceId` 、[**プロパティ**] ウィンドウの上部にある [**イベント**] アイコンをクリックして、[ **selectedindexchanged**] をダブルクリックします。
 
     ```vb
     Private Sub InstanceId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InstanceId.SelectedIndexChanged
@@ -321,7 +322,7 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
     }
     ```
 
-    `ListPersistedWorkflows` は、永続化されたワークフローインスタンスのインスタンスストアを照会し、`cboInstanceId` コンボボックスにインスタンス id を追加します。
+    `ListPersistedWorkflows` は、永続化されたワークフロー インスタンスのインスタンス ストアに対してクエリを実行し、`cboInstanceId` コンボ ボックスにインスタンス ID を追加します。
 
 10. 次の `UpdateStatus` メソッドと対応するデリゲートをフォーム クラスに追加します。 このメソッドは、現在実行中のワークフローのステータスでフォーム上のステータス ウィンドウを更新します。
 
@@ -432,7 +433,7 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
     wfApp.InstanceStore = store;
     ```
 
-3. 次に、`StringWriter` インスタンスを作成して `Extensions` の `WorkflowApplication` コレクションに追加します。 拡張機能に `StringWriter` が追加されると、`WriteLine` アクティビティの出力がすべてキャプチャされます。 ワークフローがアイドル状態になると、`WriteLine` の出力を `StringWriter` から抽出してフォームに表示できます。
+3. 次に、`StringWriter` インスタンスを作成して `Extensions` の `WorkflowApplication` コレクションに追加します。 `StringWriter`が拡張機能に追加されると、すべてのアクティビティの出力がキャプチャされ `WriteLine` ます。 ワークフローがアイドル状態になると、`WriteLine` の出力を `StringWriter` から抽出してフォームに表示できます。
 
     ```vb
     ' Add a StringWriter to the extensions. This captures the output
@@ -542,7 +543,7 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
     };
     ```
 
-    <xref:System.Activities.PersistableIdleAction> 列挙体には、<xref:System.Activities.PersistableIdleAction.None>、<xref:System.Activities.PersistableIdleAction.Persist>、および <xref:System.Activities.PersistableIdleAction.Unload> の 3 つの値があります。 <xref:System.Activities.PersistableIdleAction.Persist> によってワークフローは永続化されますが、ワークフローのアンロードは行われません。 <xref:System.Activities.PersistableIdleAction.Unload> によって、ワークフローが永続化され、アンロードされます。
+    <xref:System.Activities.PersistableIdleAction> 列挙体には、<xref:System.Activities.PersistableIdleAction.None>、<xref:System.Activities.PersistableIdleAction.Persist>、および <xref:System.Activities.PersistableIdleAction.Unload> の 3 つの値があります。 <xref:System.Activities.PersistableIdleAction.Persist> により、ワークフローは永続化されますが、ワークフローがアンロードされることはありません。 <xref:System.Activities.PersistableIdleAction.Unload> により、ワーク フローが永続化され、アンロードされます。
 
     完成した `ConfigureWorkflowApplication` メソッドは次のようになります。
 
@@ -649,9 +650,9 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
 
 ## <a name="to-enable-starting-and-resuming-multiple-workflow-types"></a>複数のワークフローの種類を開始および再開できるようにするには
 
-ワークフロー インスタンスを再開するには、ホストはワークフロー定義を指定する必要があります。 このチュートリアルには 3 種類のワークフローがあり、以降の手順では、これらの種類の複数のバージョンを指定します。 `WorkflowIdentity` を使用すると、ホストアプリケーションは、永続化されたワークフローインスタンスに識別情報を関連付けることができます。 このセクションの手順では、永続化されたワークフロー インスタンスから対応するワークフロー定義へのワークフロー ID のマッピングに役立つユーティリティ クラスの作成方法を示します。 `WorkflowIdentity` とバージョン管理の詳細については、「 [WorkflowIdentity とバージョン管理の使用](using-workflowidentity-and-versioning.md)」を参照してください。
+ワークフロー インスタンスを再開するには、ホストはワークフロー定義を指定する必要があります。 このチュートリアルには 3 種類のワークフローがあり、以降の手順では、これらの種類の複数のバージョンを指定します。 `WorkflowIdentity` を使用すると、ホスト アプリケーションは、識別情報を永続化されたワークフロー インスタンスに関連付けることができます。 このセクションの手順では、永続化されたワークフロー インスタンスから対応するワークフロー定義へのワークフロー ID のマッピングに役立つユーティリティ クラスの作成方法を示します。 とのバージョン管理の詳細について `WorkflowIdentity` は、「 [WorkflowIdentity とバージョン管理の使用](using-workflowidentity-and-versioning.md)」を参照してください。
 
-1. **ソリューションエクスプローラー**で **[NumberGuessWorkflowHost]** を右クリックし、 **[追加]** 、 **[クラス]** の順に選択します。 **[名前]** ボックスに「`WorkflowVersionMap`」と入力し、 **[追加]** をクリックします。
+1. **ソリューションエクスプローラー**で [ **NumberGuessWorkflowHost** ] を右クリックし、[**追加**]、[**クラス**] の順に選択します。 `WorkflowVersionMap`[**名前**] ボックスに「」と入力し、[**追加**] をクリックします。
 
 2. 次の `using` または `Imports` ステートメントを、他の `using` または `Imports` ステートメントを含むファイルの先頭に追加します。
 
@@ -763,11 +764,11 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
     }
     ```
 
-    `WorkflowVersionMap` には、このチュートリアルの3つのワークフロー定義にマップされる3つのワークフロー id が含まれています。ワークフローが開始され、再開されるときに、次のセクションで使用します。
+    `WorkflowVersionMap` は、このチュートリアルの 3 つのワークフロー定義にマップされる 3 つのワークフロー ID を格納しており、以降のセクションでワークフローが開始および再開されるときに使用されます。
 
 ## <a name="to-start-a-new-workflow"></a>新しいワークフローを開始するには
 
-1. `Click` の `NewGame` ハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、[`NewGame`] をダブルクリックします。 `NewGame_Click` ハンドラーが追加され、ビューがフォームのコード ビューに切り替わります。 ユーザーがこのボタンをクリックするたびに、新しいワークフローが開始されます。
+1. `Click` の `NewGame` ハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、をダブルクリックし `NewGame` ます。 `NewGame_Click` ハンドラーが追加され、ビューがフォームのコード ビューに切り替わります。 ユーザーがこのボタンをクリックするたびに、新しいワークフローが開始されます。
 
     ```vb
     Private Sub NewGame_Click(sender As Object, e As EventArgs) Handles NewGame.Click
@@ -962,7 +963,7 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
 
 ## <a name="to-resume-a-workflow"></a>ワークフローを再開するには
 
-1. `Click` の `EnterGuess` ハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、[`EnterGuess`] をダブルクリックします。 ユーザーがこのボタンをクリックするたびに、ワークフローが再開されます。
+1. `Click` の `EnterGuess` ハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、をダブルクリックし `EnterGuess` ます。 ユーザーがこのボタンをクリックするたびに、ワークフローが再開されます。
 
     ```vb
     Private Sub EnterGuess_Click(sender As Object, e As EventArgs) Handles EnterGuess.Click
@@ -1174,7 +1175,7 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
 
 ## <a name="to-terminate-a-workflow"></a>ワークフローを終了するには
 
-1. `Click` の `QuitGame` ハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、[`QuitGame`] をダブルクリックします。 ユーザーがこのボタンをクリックするたびに、現在選択されているワークフローが終了します。
+1. `Click` の `QuitGame` ハンドラーを追加します。 ハンドラーを追加するには、フォームの**デザインビュー**に切り替え、をダブルクリックし `QuitGame` ます。 ユーザーがこのボタンをクリックするたびに、現在選択されているワークフローが終了します。
 
     ```vb
     Private Sub QuitGame_Click(sender As Object, e As EventArgs) Handles QuitGame.Click
@@ -1275,14 +1276,14 @@ Windows Workflow Foundation (WF) の中心的な機能の1つは、アイドル�
     }
     ```
 
-4. **ソリューションエクスプローラー**で **[NumberGuessWorkflowHost]** を右クリックし、 **[プロパティ]** を選択します。 **[アプリケーション]** タブで、 **[出力の種類]** に **[Windows アプリケーション]** を指定します。 この手順は省略可能ですが、省略した場合は、フォームに加えてコンソール ウィンドウが表示されます。
+4. **ソリューションエクスプローラー**で [ **NumberGuessWorkflowHost** ] を右クリックし、[**プロパティ**] を選択します。 [**アプリケーション**] タブで、[**出力の種類**] に [ **Windows アプリケーション**] を指定します。 この手順は省略可能ですが、省略した場合は、フォームに加えてコンソール ウィンドウが表示されます。
 
 5. Ctrl キーと Shift キーを押しながら B キーを押してアプリケーションをビルドします。
 
 6. **NumberGuessWorkflowHost**がスタートアップアプリケーションとして設定されていることを確認し、Ctrl キーを押しながら F5 キーを押してアプリケーションを起動します。
 
-7. 推測ゲームの範囲と開始するワークフローの種類を選択し、 **[新しいゲーム]** をクリックします。 **[推定]** ボックスに推測を入力し、 **[ジャンプ]** をクリックして推測を送信します。 `WriteLine` アクティビティからの出力がフォームに表示されることに注意してください。
+7. 推測ゲームの範囲と開始するワークフローの種類を選択し、[**新しいゲーム**] をクリックします。 [**推定**] ボックスに推測を入力し、[**ジャンプ**] をクリックして推測を送信します。 `WriteLine` アクティビティからの出力がフォームに表示されることに注意してください。
 
-8. さまざまなワークフローの種類と数値の範囲を使用して複数のワークフローを開始し、いくつかの推測を入力して、 **[ワークフローインスタンス Id]** リストから選択してワークフローを切り替えます。
+8. さまざまなワークフローの種類と数値の範囲を使用して複数のワークフローを開始し、いくつかの推測を入力して、[**ワークフローインスタンス Id** ] リストから選択してワークフローを切り替えます。
 
     新しいワークフローに切り替えると、前の推定値とワークフローの進行状況はステータス ウィンドウに表示されません。 ステータスが利用できない理由は、ステータスがキャプチャされず、どこにも保存されないためです。 チュートリアルの次の手順「[方法: カスタム追跡参加要素を作成](how-to-create-a-custom-tracking-participant.md)する」では、この情報を保存するカスタム追跡参加要素を作成します。

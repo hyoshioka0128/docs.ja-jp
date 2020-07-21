@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4c0c7477-05ba-461b-b21b-cbfba95f1db1
 topic_type:
 - apiref
-ms.openlocfilehash: 9b3a6bab8672f3ef3fca5f89c60b03a43477cce5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0c60631b5e034bc46d74412440d35d526359d043
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123307"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008574"
 ---
 # <a name="ivalidatorformateventinfo-method"></a>IValidator::FormatEventInfo メソッド
 指定した検証エラーに対応するエラーメッセージを取得します。  
@@ -42,7 +42,7 @@ HRESULT FormatEventInfo(
  から検証エラーハンドラーに渡された HRESULT 値。  
   
  `Context`  
- から検証エラーに関するコンテキスト情報を格納している `VEContext` インスタンス。  
+ から`VEContext`検証エラーに関するコンテキスト情報を格納しているインスタンス。  
   
  `msg`  
  [入力、出力]返されたエラーメッセージを含む文字列。  
@@ -53,11 +53,11 @@ HRESULT FormatEventInfo(
  `psa`  
  からエラーを説明する追加のパラメーターを格納しているセーフ配列。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** IValidator、IValidator  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

@@ -1,5 +1,6 @@
 ---
 title: '方法: バックグラウンドで操作を実行する'
+description: BackgroundWorker クラスを使用して、バックグラウンドで時間のかかる Windows フォーム操作を実行する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 5b56e2aa-dc05-444f-930c-2d7b23f9ad5b
-ms.openlocfilehash: 77f75a7eb1d7cc536df7110ef55727fbdf789f23
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6b2a97f5acf1e906dfe141aee62e99a4e50dca9f
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591604"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621575"
 ---
 # <a name="how-to-run-an-operation-in-the-background"></a>方法: バックグラウンドで操作を実行する
 完了に長い時間がかかる操作を実行しており、ユーザー インターフェイスで遅延が発生しないようにするには<xref:System.ComponentModel.BackgroundWorker> クラスを使用して別のスレッドで操作を実行できます。  
@@ -27,7 +28,7 @@ ms.locfileid: "65591604"
   
  Visual Studio では、このタスクに対する広範なサポートが用意されています。  
   
- [チュートリアル: バック グラウンドで操作を実行する](walkthrough-running-an-operation-in-the-background.md)します。  
+ 「[チュートリアル: 操作をバックグラウンドで実行する](walkthrough-running-an-operation-in-the-background.md)」も参照してください。  
   
 ## <a name="example"></a>例  
  [!code-csharp[System.ComponentModel.BackgroundWorker.Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.Example/CS/Form1.cs#1)]

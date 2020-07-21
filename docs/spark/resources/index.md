@@ -1,15 +1,17 @@
 ---
 title: .NET for Apache Spark のリソース
 description: これらの .NET for Apache Spark リソースを確認し、カスタム データ サイエンス ソリューションの作成と、お使いの .NET アプリケーションへの統合にお役立てください。
-ms.date: 05/06/2019
-ms.openlocfilehash: 96ee1246d5322a1c62b4cbf30392010e6b4d70fd
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/25/2020
+ms.openlocfilehash: 399a90b89fd619bf7faf740b9f61b625a8f28469
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "69620044"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618273"
 ---
 # <a name="net-for-apache-spark-resources"></a>.NET for Apache Spark のリソース
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 次の [.NET for Apache Spark](../index.yml) リソースは、お使いの .NET アプリケーションで Apache Spark にアクセスするのに役立つ場合があります。
 

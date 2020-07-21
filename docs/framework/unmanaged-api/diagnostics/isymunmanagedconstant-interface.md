@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e11c9baa-4cf1-4bb4-a95f-b1908893b46c
 topic_type:
 - apiref
-ms.openlocfilehash: ca5afa8c0cf0198dbc8ab65824605f18c22dcdbb
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 58d81fd150684f254333c17374d06f7dd5b95823
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449250"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441415"
 ---
 # <a name="isymunmanagedconstant-interface"></a>ISymUnmanagedConstant インターフェイス
 アンマネージ定数へのアクセスを提供します。  
@@ -28,13 +28,13 @@ ms.locfileid: "74449250"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[GetName メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)|定数の名前を取得します。|  
-|[GetSignature メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)|定数の署名を取得します。|  
-|[GetValue メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)|定数の値を取得します。|  
+|[GetName メソッド](isymunmanagedconstant-getname-method.md)|定数の名前を取得します。|  
+|[GetSignature メソッド](isymunmanagedconstant-getsignature-method.md)|定数の署名を取得します。|  
+|[GetValue メソッド](isymunmanagedconstant-getvalue-method.md)|定数の値を取得します。|  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [シンボル ストア診断インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [シンボル ストア診断インターフェイス](diagnostics-symbol-store-interfaces.md)

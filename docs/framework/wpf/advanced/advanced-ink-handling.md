@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: abc8481a-f983-416f-b051-9168ac8b2ba3
 ms.openlocfilehash: 840ab08faebe760a38ef344fd1c41818a838250b
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62008942"
 ---
 # <a name="advanced-ink-handling"></a>高度なインク処理
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]が付属しています、 <xref:System.Windows.Controls.InkCanvas>、あり、要素を収集し、インクの表示をすぐに開始、アプリケーションで配置することができます。 ただし場合、<xref:System.Windows.Controls.InkCanvas>コントロールがコントロールを十分に適切なレベルを提供していないより高いレベルで制御を維持するには、独自のインクの収集とを使用してインク レンダリング クラスをカスタマイズすることで<xref:System.Windows.Input.StylusPlugIns>します。  
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、<xref:System.Windows.Controls.InkCanvas> が付属しており、アプリケーションに配置して、インクの収集と表示をすぐに開始することができる要素です。 ただし、<xref:System.Windows.Controls.InkCanvas> コントロールに十分なレベルの制御が用意されていない場合は、<xref:System.Windows.Input.StylusPlugIns> を使用して独自のインク コレクション クラスとインク レンダリング クラスをカスタマイズすることで、より高いレベルで制御を維持できます。  
   
- <xref:System.Windows.Input.StylusPlugIns>クラス経由での低レベルの制御を実装するためのメカニズムを提供する<xref:System.Windows.Input.Stylus>入力とインクを動的にレンダリングします。 <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>クラスがカスタム動作を実装し、最適なパフォーマンスのスタイラス デバイスからのデータのストリームに適用するためのメカニズムを提供します。 <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>、特殊な<xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>、つまりレンダリング インク データをリアルタイムでの動的にカスタマイズすることができます、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>デジタル インクを描画しますとしてすぐに<xref:System.Windows.Input.StylusPoint>スタイラスを"flow"に表示されるため、データの生成デバイスです。  
+ <xref:System.Windows.Input.StylusPlugIns> クラスには、<xref:System.Windows.Input.Stylus> 入力および動的レンダリング インクに対する低レベルの制御を実装するためのメカニズムが用意されています。 <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> クラスには、パフォーマンスを最適にするために、カスタム動作を実装し、スタイラス デバイスから送信されるデータ ストリームにそれを適用するためのメカニズムが用意されています。 特殊な <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> である <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> を使用すると、レンダリング インク データをリアルタイムで動的にカスタマイズできます。つまり、<xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> では、<xref:System.Windows.Input.StylusPoint> データが生成されるとすぐにデジタル インクを描画するため、スタイラス デバイスからは "フロー" として表示されます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [カスタム レンダリング インク](custom-rendering-ink.md)  

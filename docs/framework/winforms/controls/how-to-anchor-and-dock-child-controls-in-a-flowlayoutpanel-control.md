@@ -1,5 +1,6 @@
 ---
 title: '方法: FlowLayoutPanel コントロールで子コントロールを固定およびドッキングする'
+description: Windows フォーム FlowLayoutPanel コントロールで子コントロールをプログラムによって固定およびドッキングする方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - layout [Windows Forms], child controls
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - controls [Windows Forms], child
 - child controls [Windows Forms], anchoring and docking
 ms.assetid: a2bcdfca-9b63-45e6-9c0e-3411015cba98
-ms.openlocfilehash: 3e9a5be944e199254ddb9cee0772c4d55be8fb77
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b4fb3bf6d148a526a75926bd67c1f967286332bf
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046067"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174537"
 ---
 # <a name="how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control"></a>方法: FlowLayoutPanel コントロールで子コントロールを固定およびドッキングする
 
@@ -22,11 +23,11 @@ ms.locfileid: "70046067"
 
 1. フォームで <xref:System.Windows.Forms.FlowLayoutPanel> コントロールを作成します。
 
-2. <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> <xref:System.Windows.Forms.FlowDirection.TopDown>コントロールのを300に設定し、をに設定します。 <xref:System.Windows.Forms.Control.Width%2A> <xref:System.Windows.Forms.FlowLayoutPanel>
+2. <xref:System.Windows.Forms.Control.Width%2A>コントロールのを <xref:System.Windows.Forms.FlowLayoutPanel> **300**に設定し、 <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> をに設定し <xref:System.Windows.Forms.FlowDirection.TopDown> ます。
 
 3. 2 つの <xref:System.Windows.Forms.Button> コントロールを作成し、<xref:System.Windows.Forms.FlowLayoutPanel> コントロールに配置します。
 
-4. 最初のボタンのを200に設定します。 <xref:System.Windows.Forms.Control.Width%2A>
+4. <xref:System.Windows.Forms.Control.Width%2A>最初のボタンのを**200**に設定します。
 
 5. 2 番目のボタンの <xref:System.Windows.Forms.Control.Dock%2A> プロパティを <xref:System.Windows.Forms.DockStyle.Fill> に設定します。
 
@@ -42,11 +43,11 @@ ms.locfileid: "70046067"
 
 ## <a name="example"></a>例
 
-次の図は、<xref:System.Windows.Forms.FlowLayoutPanel> 内の青のボタンを基準とする相対位置に固定されてドッキングされる 4 つのボタンを示しています。 <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> が <xref:System.Windows.Forms.FlowDirection.LeftToRight> です。
+次の図は、<xref:System.Windows.Forms.FlowLayoutPanel> 内の青のボタンを基準とする相対位置に固定されてドッキングされる 4 つのボタンを示しています。 <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> は <xref:System.Windows.Forms.FlowDirection.LeftToRight> です。
 
 ![FlowLayoutPanel アンカー](./media/net-flpanchorexp.gif "NET_FLPanchorExp")
 
-次の図は、<xref:System.Windows.Forms.FlowLayoutPanel> 内の青のボタンを基準とする相対位置に固定されてドッキングされる 4 つのボタンを示しています。 <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> が <xref:System.Windows.Forms.FlowDirection.TopDown> です。
+次の図は、<xref:System.Windows.Forms.FlowLayoutPanel> 内の青のボタンを基準とする相対位置に固定されてドッキングされる 4 つのボタンを示しています。 <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> は <xref:System.Windows.Forms.FlowDirection.TopDown> です。
 
 ![FlowLayoutPanel アンカー](./media/vs-flpanchor2.gif "VS_FLPanchor2")
 

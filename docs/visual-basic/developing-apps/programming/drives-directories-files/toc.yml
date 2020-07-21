@@ -1,5 +1,5 @@
 - name: ドライブ、ディレクトリ、およびファイルの処理
-  href: processing.md
+  href: index.md
   items:
     - name: Visual Basic におけるファイル アクセス
       href: file-access.md

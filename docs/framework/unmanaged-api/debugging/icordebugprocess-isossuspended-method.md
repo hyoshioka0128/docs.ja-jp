@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 83406cb2-5797-4402-872d-89c9516aefec
 topic_type:
 - apiref
-ms.openlocfilehash: 21da69d4bff0f17eb607dda45fb7dbafea8c59f7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9452f238bd84c9c185ca8e007acac563474d29df
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128767"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212062"
 ---
 # <a name="icordebugprocessisossuspended-method"></a>ICorDebugProcess::IsOSSuspended メソッド
 デバッガーがこのプロセスを停止した結果として、指定されたスレッドが中断されたかどうかを示す値を取得します。  
@@ -38,18 +38,18 @@ HRESULT IsOSSuspended(
  から対象のスレッドの ID。  
   
  `pbSuspended`  
- 入出力指定したスレッドが中断された場合に `true` されるブール値へのポインター。それ以外の場合、*`pbSuspended` は `false`です。  
+ 入出力`true`指定したスレッドが中断された場合は、それ以外の場合 `pbSuspended` はとなるブール値へのポインター。 `false`  
   
 ## <a name="remarks"></a>Remarks  
  デバッガーがこのプロセスを停止した結果として、指定されたスレッドが中断された場合、指定されたスレッドの Win32 中断カウントは1だけインクリメントされます。 デバッガーのユーザーインターフェイス (UI) では、ユーザーに対してスレッドのオペレーティングシステム (OS) の中断カウントを表示すると、この情報を考慮に入れることができます。  
   
- `IsOSSuspended` メソッドは、アンマネージデバッグのコンテキストでのみ意味があります。 マネージデバッグ中に、スレッドは、OS が中断するのではなく協調的に中断されます。  
+ メソッドは、 `IsOSSuspended` アンマネージデバッグのコンテキストでのみ意味があります。 マネージデバッグ中に、スレッドは、OS が中断するのではなく協調的に中断されます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

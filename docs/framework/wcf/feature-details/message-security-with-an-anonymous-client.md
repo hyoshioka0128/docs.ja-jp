@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cad53e1a-b7c9-4064-bc87-508c3d1dce49
-ms.openlocfilehash: 613b85e18109faa2a4386090e91aaddcfd8e0b68
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 058163c96bba036c3183695bf986b4d0424271ac
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038585"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595220"
 ---
 # <a name="message-security-with-an-anonymous-client"></a>メッセージ セキュリティと匿名クライアント
 
-次のシナリオでは、クライアントと Windows Communication Foundation (WCF) メッセージ セキュリティで保護されたサービスを説明します。 設計目標は、トランスポート セキュリティではなくメッセージ セキュリティを使用することです。これによって将来、多様なクレームに基づくモデルをサポートできます。 承認に多様なクレームの使用に関する詳細については、次を参照してください。[管理クレームと Id モデルでの承認](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)します。
+次のシナリオは、Windows Communication Foundation (WCF) メッセージセキュリティによってセキュリティ保護されたクライアントとサービスを示しています。 設計目標は、トランスポート セキュリティではなくメッセージ セキュリティを使用することです。これによって将来、多様なクレームに基づくモデルをサポートできます。 高度な要求を使用した承認の詳細については、「 [Id モデルを使用したクレームと承認の管理](managing-claims-and-authorization-with-the-identity-model.md)」を参照してください。
 
-サンプル アプリケーションでは、次を参照してください。[メッセージ セキュリティ匿名](../../../../docs/framework/wcf/samples/message-security-anonymous.md)します。
+サンプルアプリケーションについては、「[メッセージセキュリティ匿名](../samples/message-security-anonymous.md)」を参照してください。
 
-![メッセージ セキュリティと匿名クライアント](../../../../docs/framework/wcf/feature-details/media/b361a565-831c-4c10-90d7-66d8eeece0a1.gif "b361a565-831c-4c10-90d7-66d8eeece0a1")
+![匿名クライアントを使用したメッセージセキュリティ](media/b361a565-831c-4c10-90d7-66d8eeece0a1.gif "b361a565-831c-4c10-90d7-66d8eeece0a1")
 
 |特徴|説明|
 |--------------------|-----------------|
-|セキュリティ モード|メッセージ|
+|セキュリティ モード|Message|
 |相互運用性|WCF のみ|
 |認証 (サーバー)|初期ネゴシエーションには、サーバー認証が必要ですが、クライアント認証は不要です|
 |認証 (クライアント)|なし|
 |整合性|はい、共有のセキュリティ コンテキストを使用します|
-|機密性|はい、共有のセキュリティ コンテキストを使用します|
-|Transport|HTTP|
+|機密情報|はい、共有のセキュリティ コンテキストを使用します|
+|トランスポート|HTTP|
 
 ## <a name="service"></a>サービス
 
@@ -88,7 +88,7 @@ ms.locfileid: "62038585"
 </configuration>
 ```
 
-## <a name="client"></a>Client
+## <a name="client"></a>クライアント
 
 次のコードと構成は、別々に実行します。 次のいずれかの操作を行います。
 
@@ -140,8 +140,8 @@ ms.locfileid: "62038585"
 
 ## <a name="see-also"></a>関連項目
 
-- [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [分散アプリケーションのセキュリティ](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)
-- [メッセージ セキュリティ匿名](../../../../docs/framework/wcf/samples/message-security-anonymous.md)
-- [サービス ID と認証](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Windows Server App Fabric のセキュリティ モデル](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [セキュリティの概要](security-overview.md)
+- [分散アプリケーションのセキュリティ](distributed-application-security.md)
+- [メッセージ セキュリティ匿名](../samples/message-security-anonymous.md)
+- [サービス ID と認証](service-identity-and-authentication.md)
+- [Windows Server AppFabric のセキュリティ モデル](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

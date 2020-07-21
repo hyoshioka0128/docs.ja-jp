@@ -1,5 +1,6 @@
 ---
 title: WCF クライアントの概要
+description: クライアントアプリケーションの機能、WCF クライアントを構成、作成、および使用する方法、およびクライアントアプリケーションをセキュリティで保護する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], architecture
 ms.assetid: f60d9bc5-8ade-4471-8ecf-5a07a936c82d
-ms.openlocfilehash: 180de3f571426441155a19b98ab750fcdbb3888e
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c66541f95d04373a9a29fafe58528872335936c4
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420658"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245913"
 ---
 # <a name="wcf-client-overview"></a>WCF クライアントの概要
+
 このセクションでは、クライアントアプリケーションの動作、Windows Communication Foundation (WCF) クライアントを構成、作成、および使用する方法、およびクライアントアプリケーションをセキュリティで保護する方法について説明します。  
   
 ## <a name="using-wcf-client-objects"></a>WCF クライアント オブジェクトの使用  
@@ -28,9 +30,9 @@ ms.locfileid: "73420658"
   
 4. WCF クライアントオブジェクトを閉じます。  
   
- この後の各セクションでは、これらの手順について詳しく説明します。また、次の内容についても簡単に説明します。  
+この後の各セクションでは、これらの手順について詳しく説明します。また、次の内容についても簡単に説明します。  
   
-- エラー処理  
+- エラーの処理  
   
 - クライアントの構成とセキュリティ保護  
   
@@ -41,7 +43,7 @@ ms.locfileid: "73420658"
 - クライアント チャネルを使用したサービスの呼び出し  
   
 ## <a name="obtain-the-service-contract-bindings-and-addresses"></a>サービス コントラクト、バインディング、およびアドレスを取得する  
- WCF では、サービスとクライアントは、マネージ属性、インターフェイス、およびメソッドを使用してコントラクトをモデル化します。 クライアント アプリケーションからサービスに接続するには、そのサービス コントラクトの型情報を取得する必要があります。 通常は、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、サービスからメタデータをダウンロードし、それを任意の言語でマネージソースコードファイルに変換し、クライアントアプリケーション構成ファイルを作成します。WCF クライアントオブジェクトを構成するために使用できます。 たとえば、`MyCalculatorService`を呼び出す WCF クライアントオブジェクトを作成し、そのサービスのメタデータが `http://computerName/MyCalculatorService/Service.svc?wsdl`で公開されていることがわかっている場合は、次のコード例では、Svcutil.exe を使用してサービスを含む `ClientCode.vb` ファイルを取得する方法を示します。 マネージコード内のコントラクト。  
+ WCF では、サービスとクライアントは、マネージ属性、インターフェイス、およびメソッドを使用してコントラクトをモデル化します。 クライアント アプリケーションからサービスに接続するには、そのサービス コントラクトの型情報を取得する必要があります。 通常、 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、サービスコントラクトの型情報を取得します。 ユーティリティは、サービスからメタデータをダウンロードし、任意の言語でマネージソースコードファイルに変換し、WCF クライアントオブジェクトを構成するために使用できるクライアントアプリケーション構成ファイルを作成します。 たとえば、を呼び出す WCF クライアントオブジェクトを作成 `MyCalculatorService` し、そのサービスのメタデータがで公開されていることがわかっている場合は、 `http://computerName/MyCalculatorService/Service.svc?wsdl` 次のコード例では、Svcutil.exe を使用し `ClientCode.vb` て、マネージコード内のサービスコントラクトを含むファイルを取得する方法を示します。  
   
 ```console  
 svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/MyCalculatorService/Service.svc?wsdl  
@@ -52,7 +54,7 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
  このプロセスの例については、「[方法: クライアントを作成](how-to-create-a-wcf-client.md)する」を参照してください。 コントラクトの詳細については、「[コントラクト](./feature-details/contracts.md)」を参照してください。  
   
 ## <a name="create-a-wcf-client-object"></a>WCF クライアント オブジェクトを作成する  
- WCF クライアントは、クライアントがリモートサービスとの通信に使用できる形式で WCF サービスを表すローカルオブジェクトです。 WCF クライアント型はターゲットサービスコントラクトを実装するので、作成して構成するときに、クライアントオブジェクトを直接使用してサービス操作を呼び出すことができます。 WCF ランタイムは、メソッド呼び出しをメッセージに変換し、サービスに送信し、応答をリッスンして、これらの値を、戻り値として、または `out` または `ref` のパラメーターとして WCF クライアントオブジェクトに返します。  
+ WCF クライアントは、クライアントがリモートサービスとの通信に使用できる形式で WCF サービスを表すローカルオブジェクトです。 WCF クライアント型はターゲットサービスコントラクトを実装するので、作成して構成するときに、クライアントオブジェクトを直接使用してサービス操作を呼び出すことができます。 WCF ランタイムは、メソッド呼び出しをメッセージに変換し、サービスに送信し、応答をリッスンして、これらの値を、戻り値またはパラメーターとして WCF クライアントオブジェクトに返し `out` `ref` ます。  
   
  WCF クライアントチャネルオブジェクトを使用して、サービスに接続し、サービスを使用することもできます。 詳細については、「 [WCF クライアントアーキテクチャ](./feature-details/client-architecture.md)」を参照してください。  
   
@@ -64,22 +66,22 @@ svcutil /language:vb /out:ClientCode.vb /config:app.config http://computerName/M
   
  [!code-csharp[C_GeneratedCodeFiles#12](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#12)]  
   
- Visual Studio を使用していない場合は、生成されたコントラクトコードを調べて、<xref:System.ServiceModel.ClientBase%601> およびサービスコントラクトインターフェイス `ISampleService`を拡張する型を見つけます。 この場合、この型は次のようなコードになります。  
+ Visual Studio を使用していない場合は、生成されたコントラクトコードを調べて、およびサービスコントラクトインターフェイスを拡張する型を見つけ <xref:System.ServiceModel.ClientBase%601> `ISampleService` ます。 この場合、この型は次のようなコードになります。  
   
  [!code-csharp[C_GeneratedCodeFiles#14](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#14)]  
   
  このクラスを、コンストラクターの 1 つを使用してローカル オブジェクトとして作成し、構成して、型 `ISampleService` のサービスへの接続に使用できます。  
   
- まず、WCF クライアントオブジェクトを作成し、それを使用して単一の try/catch ブロック内で閉じることをお勧めします。 特定のエラーモードで例外がマスクされる可能性があるため、`using` ステートメント (Visual Basic の `Using`) は使用しないでください。 詳細については、次のセクションを参照してください。[また、Close と Abort を使用して WCF クライアントリソースを解放](./samples/use-close-abort-release-wcf-client-resources.md)してください。  
+ まず、WCF クライアントオブジェクトを作成し、それを使用して単一の try/catch ブロック内で閉じることをお勧めします。 `using` `Using` 特定のエラーモードで例外をマスクできるので、ステートメント (Visual Basic) は使用しないでください。 詳細については、次のセクションを参照してください。[また、Close と Abort を使用して WCF クライアントリソースを解放](./samples/use-close-abort-release-wcf-client-resources.md)してください。  
   
 ### <a name="contracts-bindings-and-addresses"></a>コントラクト、バインディング、およびアドレス  
- WCF クライアントオブジェクトを作成する前に、クライアントオブジェクトを構成する必要があります。 具体的には、使用するサービス*エンドポイント*が必要です。 エンドポイントは、サービス コントラクト、バインディング、およびアドレスの組み合わせです (エンドポイントの詳細については、「[エンドポイント: アドレス、バインディング、およびコントラクト](./feature-details/endpoints-addresses-bindings-and-contracts.md)」を参照してください)。通常、この情報は、クライアントアプリケーション構成ファイルの[\<endpoint >](../configure-apps/file-schema/wcf/endpoint-of-client.md)要素 (svcutil.exe ツールによって生成されるものなど) にあり、クライアントオブジェクトの作成時に自動的に読み込まれます。 どちらの WCF クライアントタイプにも、この情報をプログラムで指定できるようにするオーバーロードがあります。  
+ WCF クライアントオブジェクトを作成する前に、クライアントオブジェクトを構成する必要があります。 具体的には、使用するサービス*エンドポイント*が必要です。 エンドポイントは、サービス コントラクト、バインディング、およびアドレスの組み合わせです  (エンドポイントの詳細については、「[エンドポイント: アドレス、バインディング、およびコントラクト](./feature-details/endpoints-addresses-bindings-and-contracts.md)」を参照してください)。通常、この情報は、 [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-of-client.md) クライアントアプリケーション構成ファイルの要素 (Svcutil.exe ツールによって生成されたものなど) にあり、クライアントオブジェクトの作成時に自動的に読み込まれます。 どちらの WCF クライアントタイプにも、この情報をプログラムで指定できるようにするオーバーロードがあります。  
   
  たとえば、上記の例で使用した `ISampleService` 用に生成された構成ファイルには、次のエンドポイント情報が含まれます。  
   
  [!code-xml[C_GeneratedCodeFiles#19](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/common/client.exe.config#19)]  
   
- この構成ファイルの `<client>` 要素には、ターゲット エンドポイントが指定されます。 複数のターゲットエンドポイントの使用の詳細については、<xref:System.ServiceModel.ClientBase%601.%23ctor%2A?displayProperty=nameWithType> または <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A?displayProperty=nameWithType> コンストラクターを参照してください。  
+ この構成ファイルの `<client>` 要素には、ターゲット エンドポイントが指定されます。 複数のターゲットエンドポイントの使用の詳細については、またはのコンストラクターを参照してください <xref:System.ServiceModel.ClientBase%601.%23ctor%2A> <xref:System.ServiceModel.ChannelFactory%601.%23ctor%2A> 。  
   
 ## <a name="calling-operations"></a>操作の呼び出し  
  クライアントオブジェクトの作成と構成が完了したら、try/catch ブロックを作成し、オブジェクトがローカルである場合と同じ方法で操作を呼び出して、WCF クライアントオブジェクトを閉じます。 クライアントアプリケーションが最初の操作を呼び出すと、WCF によって基になるチャネルが自動的に開き、オブジェクトがリサイクルされるときに基になるチャネルが閉じられます。 (また、他の操作を呼び出す前後にチャネルを明示的に開いたり閉じたりすることもできます)。  
@@ -114,24 +116,24 @@ Namespace Microsoft.ServiceModel.Samples
     Imports System.ServiceModel  
   
     <ServiceContract(Namespace:= _  
-    "http://Microsoft.ServiceModel.Samples")> _   
+    "http://Microsoft.ServiceModel.Samples")> _
    Public Interface ICalculator  
-        <OperationContract> _   
+        <OperationContract> _
         Function Add(n1 As Double, n2 As Double) As Double  
-        <OperationContract> _   
+        <OperationContract> _
         Function Subtract(n1 As Double, n2 As Double) As Double  
-        <OperationContract> _   
+        <OperationContract> _
         Function Multiply(n1 As Double, n2 As Double) As Double  
-        <OperationContract> _   
+        <OperationContract> _
      Function Divide(n1 As Double, n2 As Double) As Double  
 End Interface  
 ```  
   
- 次のコード例に示すように、WCF クライアントオブジェクトを作成し、そのメソッドを呼び出すことによって、操作を呼び出すことができます。 WCF クライアントオブジェクトのオープン、呼び出し、および終了は、単一の try/catch ブロック内で行われることに注意してください。 詳細については、「 [Wcf クライアントを使用したサービスへのアクセス](./feature-details/accessing-services-using-a-client.md)」および「 [Close と Abort を使用して wcf クライアントリソースを解放する](./samples/use-close-abort-release-wcf-client-resources.md)」を参照してください。  
+ 次のコード例に示すように、WCF クライアントオブジェクトを作成し、そのメソッドを呼び出すことによって、操作を呼び出すことができます。 WCF クライアントオブジェクトのオープン、呼び出し、および終了は、単一の try/catch ブロック内で発生します。 詳細については、「 [Wcf クライアントを使用したサービスへのアクセス](./feature-details/accessing-services-using-a-client.md)」および「 [Close と Abort を使用して wcf クライアントリソースを解放する](./samples/use-close-abort-release-wcf-client-resources.md)」を参照してください。  
   
  [!code-csharp[C_GeneratedCodeFiles#20](../../../samples/snippets/csharp/VS_Snippets_CFX/c_generatedcodefiles/cs/proxycode.cs#20)]  
   
-## <a name="handling-errors"></a>エラー処理  
+## <a name="handling-errors"></a>エラーの処理  
  基になるクライアント チャネルを開いたとき (明示的に開いた場合、または操作を呼び出すことによって自動的に開いた場合)、クライアントまたはチャネル オブジェクトを使用して操作を呼び出したとき、基になるクライアント チャネルを閉じたときときに、クライアント アプリケーションで例外が発生する可能性があります。 少なくともアプリケーションでは、操作から返される SOAP エラーの結果としてスローされる <xref:System.TimeoutException?displayProperty=nameWithType> オブジェクトに加え、可能性のある <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType> 例外と <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 例外を処理することをお勧めします。 操作コントラクトで指定されている SOAP エラーは、<xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> としてクライアント アプリケーションに送信されます。ここで、型パラメーターは SOAP エラーの詳細な型です。 クライアントアプリケーションでのエラー条件の処理の詳細については、「エラーの[送受信](sending-and-receiving-faults.md)」を参照してください。 クライアントでのエラーの処理方法を示す完全なサンプルについては、「[予期される例外](./samples/expected-exceptions.md)」を参照してください。  
   
 ## <a name="configuring-and-securing-clients"></a>クライアントの構成とセキュリティ保護  
@@ -148,7 +150,7 @@ End Interface
   
 - コールバック コントラクト クラスを実装します。  
   
-- コールバックコントラクト実装クラスのインスタンスを作成し、それを使用して、WCF クライアントコンストラクターに渡す <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> オブジェクトを作成します。  
+- コールバックコントラクト実装クラスのインスタンスを作成し、それを使用して、 <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> WCF クライアントコンストラクターに渡すオブジェクトを作成します。  
   
 - 操作を呼び出し、操作のコールバックを処理します。  
   
@@ -169,7 +171,7 @@ End Interface
  操作の呼び出し方法は、クライアント開発者に完全に依存します。 これは、操作を構成するメッセージは、マネージド コードで表現するときに同期メソッドまたは非同期メソッドのどちらかにマップできるためです。 したがって、操作を非同期に呼び出すクライアントを作成する場合、Svcutil.exe の `/async` オプションを使用して非同期クライアント コードを生成できます。 詳細については、「[方法: サービス操作を非同期に呼び出す](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)」を参照してください。  
   
 ## <a name="calling-services-using-wcf-client-channels"></a>WCF クライアント チャネルを使用したサービスの呼び出し  
- WCF クライアント型は <xref:System.ServiceModel.ClientBase%601>を拡張し、それ自体が <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> インターフェイスから派生して、基になるチャネルシステムを公開します。 ターゲットのサービス コントラクトと <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> クラスを使用して、サービスを呼び出すことができます。 詳細については、「 [WCF クライアントアーキテクチャ](./feature-details/client-architecture.md)」を参照してください。  
+ WCF クライアント型は <xref:System.ServiceModel.ClientBase%601> を拡張し、それ自体がインターフェイスから派生し <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> て、基になるチャネルシステムを公開します。 ターゲットのサービス コントラクトと <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> クラスを使用して、サービスを呼び出すことができます。 詳細については、「 [WCF クライアントアーキテクチャ](./feature-details/client-architecture.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

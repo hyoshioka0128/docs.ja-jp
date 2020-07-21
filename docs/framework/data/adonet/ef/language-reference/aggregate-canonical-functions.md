@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 3bcff826-ca90-41b3-a791-04d6ff0e5085
 ms.openlocfilehash: 3f4bb84c45e503fc0018e7869f3b41ddab4581a6
 ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70251353"
@@ -13,9 +13,9 @@ ms.locfileid: "70251353"
 
 集計とは、一連の入力値をまとまった値 (単一の値など) に変換する式を指します。 集計は SELECT 式の GROUP BY 句と組み合わせて使用されるのが一般的であり、どこで使用できるかについては制約があります。
 
-## <a name="aggregate-entity-sql-canonical-functions"></a>正規関数の集計 Entity SQL
+## <a name="aggregate-entity-sql-canonical-functions"></a>集計 Entity SQL 正規関数
 
-次に、Entity SQL 正規関数の集計を示します。
+集計 Entity SQL 正規関数を次に示します。
 
 ### <a name="avgexpression"></a>Avg(expression)
 
@@ -23,11 +23,11 @@ NULL 以外の値の平均を返します。
 
 **引数**
 
-、、、および`Decimal`。 `Int32` `Int64` `Double`
+`Int32`、`Int64`、`Double`、および `Decimal`。
 
 **戻り値**
 
-の型、 `expression`または`null`すべての入力値が`null`値の場合は。
+`expression` の型、またはすべての入力値が `null` の場合は `null` です。
 
 **例**
 
@@ -78,7 +78,7 @@ NULL 以外の値の最大値を返します。
 
 **戻り値**
 
-の型、 `expression`または`null`すべての入力値が`null`値の場合は。
+`expression` の型、またはすべての入力値が `null` の場合は `null` です。
 
 **例**
 
@@ -95,7 +95,7 @@ NULL 以外の値の最小値を返します。
 
 **戻り値**
 
-の型、 `expression`または`null`すべての入力値が`null`値の場合は。
+`expression` の型、またはすべての入力値が `null` の場合は `null` です。
 
 **例**
 
@@ -129,7 +129,7 @@ NULL 以外の値の標準偏差を返します。
 
 **戻り値**
 
-。すべての入力値が`null`値の場合は`null`。 `Double`
+`Double`、またはすべての入力値が `null` の場合は `null` です。
 
 **例**
 
@@ -146,7 +146,7 @@ NULL 以外の値の合計を返します。
 
 **戻り値**
 
-。すべての入力値が`null`値の場合は`null`。 `Double`
+`Double`、またはすべての入力値が `null` の場合は `null` です。
 
 **例**
 
@@ -163,7 +163,7 @@ NULL 以外の値の合計を返します。
 
 **戻り値**
 
-。すべての入力値が`null`値の場合は`null`。 `Double`
+`Double`、またはすべての入力値が `null` の場合は `null` です。
 
 **例**
 
@@ -180,18 +180,18 @@ NULL 以外の値の合計を返します。
 
 **戻り値**
 
-。すべての入力値が`null`値の場合は`null`。 `Double`
+`Double`、またはすべての入力値が `null` の場合は `null` です。
 
 **例**
 
 [!code-csharp[DP EntityServices Concepts#EDM_VARP](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_varp)]
 [!code-sql[DP EntityServices Concepts#EDM_VARP](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_varp)]
 
-同等の機能は、Microsoft SQL クライアント マネージド プロバイダーでも利用できます。 詳細については、「 [SqlClient for Entity Framework Functions](../sqlclient-for-ef-functions.md)」を参照してください。
+同等の機能は、Microsoft SQL クライアント マネージド プロバイダーでも利用できます。 詳細については、「[Entity Framework 用 SqlClient 関数](../sqlclient-for-ef-functions.md)」を参照してください。
 
 ## <a name="collection-based-aggregates"></a>コレクションベースの集計
 
-コレクションベースの集計 (コレクション関数) は、コレクションに対して演算を実行して、値を返します。 たとえば、ORDERS がすべての注文のコレクションである場合は、次の式を使用して、最も古い出荷日を計算できます。
+コレクションベースの集計 (コレクション関数) は、コレクションに対して演算を実行して、値を返します。 たとえば、ORDERS がすべての注文のコレクションである場合、次の式を使って、最も早い出荷日を計算できます。
 
 ```sql
 min(select value o.ShipDate from LOB.Orders as o)
@@ -210,7 +210,7 @@ select p, avg(ol.Quantity) from LOB.OrderLines as ol
   group by ol.Product as p
 ```
 
-SELECT 式に明示的な group by 句を指定せずに、グループベースの集計を行うことができます。 この場合、すべての要素が1つのグループとして扱われます。 これは、定数に基づいてグループ化を指定することと同じです。 たとえば、次のような式があったとします。
+SELECT 式に明示的な group by 句を指定せずに、グループベースの集計を行うこともできます。 この場合、すべての要素が単一のグループとして扱われます。 これは、定数に基づくグループ化の指定と同等です。 たとえば、次のような式があったとします。
 
 ```sql
 select avg(ol.Quantity) from LOB.OrderLines as ol
@@ -224,7 +224,7 @@ select avg(ol.Quantity) from LOB.OrderLines as ol group by 1
 
 グループベースの集計内の式は、WHERE 句式から可視である名前解決スコープ内で評価されます。
 
-Transact-sql と同様に、グループベースの集計では、ALL 修飾子または DISTINCT 修飾子を指定することもできます。 DISTINCT 修飾子が指定された場合、集計を計算する前に、集計の入力コレクションから重複が除外されます。 ALL 修飾子が指定された場合 (または修飾子が指定されなかった場合)、重複は除外されません。
+Transact-SQL の場合と同様、グループベースの集計には、ALL または DISTINCT の修飾子を指定することもできます。 DISTINCT 修飾子が指定された場合、集計を計算する前に、集計の入力コレクションから重複が除外されます。 ALL 修飾子が指定された場合 (または修飾子が指定されなかった場合)、重複は除外されません。
 
 ## <a name="see-also"></a>関連項目
 

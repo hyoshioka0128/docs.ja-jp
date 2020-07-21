@@ -6,7 +6,7 @@ helpviewer_keywords:
 ms.assetid: c4d37ecd-065a-4d1c-9e6c-26804ae968ca
 ms.openlocfilehash: 4fc7a5021f9f8d9e6badcd3e13266fb8f4bfe7a4
 ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/14/2019
 ms.locfileid: "70991757"
@@ -23,12 +23,12 @@ HRESULT GetRawInputDevices( [out] IEnumRAWINPUTDEVICE **ppEnum );
 ## <a name="parameters"></a>パラメーター  
  `ppEnum`  
   
- 入出力未加工の入力デバイスを列挙するための[IEnumRAWINPUTDEVICE](ienumrawinputdevice.md)へのポインター。  
+ [out] 未加工入力デバイスを列挙するための [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md) へのポインター。  
   
 ## <a name="property-valuereturn-value"></a>プロパティ値/戻り値  
  HRESULT:  
   
- S_ok が返される場合にのみ、 [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md)が使用されます。  
+ S_OK - [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md) は、S_OK が返された場合に、PresentationHost.exe によってのみ使用されます。  
   
  E_NOTIMPL  
   

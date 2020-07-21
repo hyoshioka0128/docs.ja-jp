@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 0af3bd64-92a2-4b47-ae62-f5df35f131a6
 ms.openlocfilehash: 1c4e0b368a8eb154207382ae70b9767f5a5fe64d
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70785439"
@@ -19,11 +19,11 @@ ms.locfileid: "70785439"
   
 |式の種類|例|  
 |---------------------|-------------|  
-|条件式|"Total > = 500"|  
+|比較|"Total >= 500"|  
 |計算|"UnitPrice * Quantity"|  
 |集約|Sum(Price)|  
   
- 次の例に示すように、既存の**DataColumn**オブジェクトで<xref:System.Data.DataColumn> **Expression**プロパティを設定するか、コンストラクターに渡す3番目の引数としてプロパティを含めることができます。  
+ 次の例に示すように、既存の **DataColumn** オブジェクトの **Expression** プロパティを設定したり、このプロパティを <xref:System.Data.DataColumn> コンストラクターに渡す 3 番目の引数として使用したりできます。  
   
 ```vb  
 workTable.Columns.Add("Total",Type.GetType("System.Double"))  
@@ -36,7 +36,7 @@ workTable.Columns.Add("Total", typeof(Double));
 workTable.Columns.Add("SalesTax", typeof(Double), "Total * 0.086");  
 ```  
   
- 式は他の式列を参照できます。ただし、2 つの式が相互に参照し合う循環参照の場合は、例外が生成されます。 式の記述に関する規則につい<xref:System.Data.DataColumn.Expression%2A>ては、 **DataColumn**クラスのプロパティを参照してください。  
+ 式は他の式列を参照できます。ただし、2 つの式が相互に参照し合う循環参照の場合は、例外が生成されます。 式の記述の規則については、**DataColumn** クラスの <xref:System.Data.DataColumn.Expression%2A> プロパティのトピックを参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

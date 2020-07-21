@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3367166f-31fe-43d0-8107-2e786f984e50
 topic_type:
 - apiref
-ms.openlocfilehash: ce8129c2a6cc29717743f255c0aac86a0836fa31
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e1b8cf3e8d78c8ef4715467760805cc50975d014
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448478"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442138"
 ---
 # <a name="ibindingdisplay-interface"></a>IBindingDisplay インターフェイス
 実行中のアプリケーションに関する現在のバインド情報を表示するメソッドを提供します。  
@@ -28,18 +28,18 @@ ms.locfileid: "74448478"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[GetCurrentDisplay メソッド](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-getcurrentdisplay-method.md)|現在のバインディング表示情報を返します。|  
-|[InitializeForProcess メソッド](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)|`IBindingDisplay` オブジェクトを初期化します。|  
+|[GetCurrentDisplay メソッド](ibindingdisplay-getcurrentdisplay-method.md)|現在のバインディング表示情報を返します。|  
+|[InitializeForProcess メソッド](ibindingdisplay-initializeforprocess-method.md)|`IBindingDisplay` オブジェクトを初期化します。|  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** BindingDisplay. h  
   
  **ライブラリ:** BindingDisplay .idl  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [シンボル ストア診断インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [シンボル ストア診断インターフェイス](diagnostics-symbol-store-interfaces.md)

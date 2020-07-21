@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: bbcc9928-36ea-4dff-9e31-96549ffed958
 ms.openlocfilehash: f8ca9e2027e82db89e91287fda02d2014d53f325
 ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/10/2019
 ms.locfileid: "70854516"
@@ -18,9 +18,9 @@ ms.locfileid: "70854516"
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリで正規関数を使用すると、適切な関数がデータ ソースで呼び出されます。  
   
- すべての正規関数は、NULL が入力された場合の動作と明示的に指定されたエラー状況の両方を含んでいます。 ストアプロバイダーはその動作に従う必要がありますが、Entity Framework ではこの動作は強制されません。  
+ すべての正規関数は、NULL が入力された場合の動作と明示的に指定されたエラー状況の両方を含んでいます。 ストア プロバイダーはその動作に従う必要がありますが、Entity Framework にはこの動作が適用されません。  
   
- LINQ のシナリオでは、Entity Framework に対するクエリには、基になるデータソースのメソッドへの CLR メソッドのマッピングが含まれます。 特定の一連のメソッドが適切にマップされるように、CLR メソッドはデータ ソースに関係なく正規関数にマップされます。  
+ LINQ のシナリオの場合、Entity Framework に対するクエリでは、基になるデータ ソース内のメソッドへの CLR メソッドのマッピングも行われます。 特定の一連のメソッドが適切にマップされるように、CLR メソッドはデータ ソースに関係なく正規関数にマップされます。  
   
 ## <a name="canonical-functions-namespace"></a>正規関数の名前空間  
  正規関数の名前空間は <xref:System.Data.Metadata.Edm> です。 <xref:System.Data.Metadata.Edm> 名前空間は、自動的にすべてのクエリに含まれます。 ただし、<xref:System.Data.Metadata.Edm> 名前空間に正規関数と同じ名前の関数を含む別の名前空間がインポートされている場合は、名前空間を指定する必要があります。  

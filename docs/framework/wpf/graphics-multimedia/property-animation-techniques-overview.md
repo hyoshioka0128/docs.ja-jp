@@ -9,21 +9,21 @@ helpviewer_keywords:
 - animation [WPF], properties [WPF], methods for
 - properties [WPF], methods for animating
 ms.assetid: 74f61413-f8c0-4e75-bf04-951886426c8b
-ms.openlocfilehash: ebee350f69b5c5e4f9d38c452b9c87bf003528ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 0b4bf6d4963f32ad83f762fce73c805197ff9c9b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002262"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181844"
 ---
 # <a name="property-animation-techniques-overview"></a>プロパティ アニメーションの手法の概要
 このトピックでは、ストーリーボード、ローカル アニメーション、クロック、フレームごとのアニメーションなど、プロパティをアニメーション化するさまざまなアプローチについて説明します。  
   
-<a name="prerequisites"></a>   
+<a name="prerequisites"></a>
 ## <a name="prerequisites"></a>必須コンポーネント  
  このトピックを理解するには、「[アニメーションの概要](animation-overview.md)」で説明されている基本のアニメーション機能に精通している必要があります。  
   
-<a name="summary"></a>   
+<a name="summary"></a>
 ## <a name="different-ways-to-animate"></a>さまざまなアニメーション化方法  
  プロパティをアニメーション化するには多数のシナリオがあるため、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ではプロパティをアニメーション化するいくつかの方法が提供されます。  
   
@@ -31,95 +31,95 @@ ms.locfileid: "62002262"
   
 |アニメーションの手法|シナリオ|XAML のサポート|対話的に制御可能|  
 |-------------------------|---------------|-------------------|--------------------------------|  
-|ストーリー ボード アニメーション|インスタンスごとの<xref:System.Windows.Style>、 <xref:System.Windows.Controls.ControlTemplate>、 <xref:System.Windows.DataTemplate>|[はい]|[はい]|  
+|ストーリー ボード アニメーション|インスタンス単位、<xref:System.Windows.Style>、<xref:System.Windows.Controls.ControlTemplate>、 <xref:System.Windows.DataTemplate>|はい|はい|  
 |ローカル アニメーション|インスタンス単位|いいえ|いいえ|  
-|クロック アニメーション|インスタンス単位|いいえ|[はい]|  
+|クロック アニメーション|インスタンス単位|いいえ|はい|  
 |フレーム単位のアニメーション|インスタンス単位|いいえ|N/A|  
   
-<a name="storyboard_animations"></a>   
+<a name="storyboard_animations"></a>
 ## <a name="storyboard-animations"></a>ストーリー ボード アニメーション  
- 使用して、<xref:System.Windows.Media.Animation.Storyboard>を定義し、アニメーションを適用する場合[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]対話形式で、開始、アニメーションの複雑なツリーを作成またはでアニメーション化した後に、アニメーションを制御、 <xref:System.Windows.Style>、<xref:System.Windows.Controls.ControlTemplate>または<xref:System.Windows.DataTemplate>します。 によってアニメーション化するオブジェクトの<xref:System.Windows.Media.Animation.Storyboard>、する必要があります、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>、設定するために使用する必要がありますか、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>します。 詳しくは、「[ストーリーボードの概要](storyboards-overview.md)」をご覧ください。  
+ <xref:System.Windows.Media.Animation.Storyboard> は、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] でアニメーションを定義および適用する場合、アニメーションを開始後に対話的に制御する場合、複雑なアニメーション ツリーを作成する場合、あるいは <xref:System.Windows.Style>、<xref:System.Windows.Controls.ControlTemplate> または <xref:System.Windows.DataTemplate> でアニメーション化する場合に使用します。 <xref:System.Windows.Media.Animation.Storyboard> によってアニメーション化されるオブジェクトは、<xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> であるか、<xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> を設定するために使用される必要があります。 詳しくは、「[ストーリーボードの概要](storyboards-overview.md)」をご覧ください。  
   
- A<xref:System.Windows.Media.Animation.Storyboard>特殊な種類のコンテナーは、<xref:System.Windows.Media.Animation.Timeline>が含まれているアニメーションのターゲットの情報を提供します。 使用してアニメーション化、 <xref:System.Windows.Media.Animation.Storyboard>、次の 3 つの手順を完了します。  
+ <xref:System.Windows.Media.Animation.Storyboard> は、特殊な種類のコンテナー <xref:System.Windows.Media.Animation.Timeline> であり、その中に含まれているアニメーションのターゲット情報を提供します。 <xref:System.Windows.Media.Animation.Storyboard> を使用してアニメーション化するには、次の 3 つのステップを実行します。  
   
-1. 宣言を<xref:System.Windows.Media.Animation.Storyboard>と 1 つまたは複数のアニメーション。  
+1. <xref:System.Windows.Media.Animation.Storyboard> と 1 つ以上のアニメーションを宣言します。  
   
-2. 使用して、<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>と<xref:System.Windows.Media.Animation.Storyboard.TargetProperty>ターゲット オブジェクトを指定するプロパティとそれぞれのアニメーションのプロパティをアタッチします。  
+2. <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> 添付プロパティおよび <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> 添付プロパティを使用して、各アニメーションのターゲット オブジェクトおよびプロパティを指定します。  
   
-3. (コードのみ)定義、<xref:System.Windows.NameScope>の<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>します。 使用してアニメーション化するオブジェクトの名前を登録<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>します。  
+3. (コードのみ) <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> の <xref:System.Windows.NameScope> を定義します。 <xref:System.Windows.FrameworkElement> または <xref:System.Windows.FrameworkContentElement> を使用してアニメーション化するオブジェクトの名前を登録します。  
   
-4. 開始、<xref:System.Windows.Media.Animation.Storyboard>します。  
+4. <xref:System.Windows.Media.Animation.Storyboard> を開始します。  
   
- 以降、<xref:System.Windows.Media.Animation.Storyboard>アニメーション化するプロパティにアニメーションを適用し、それらを開始します。 開始する 2 つの方法がある、 <xref:System.Windows.Media.Animation.Storyboard>: 使用することができます、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドによって提供される、<xref:System.Windows.Media.Animation.Storyboard>クラス、またはを使用できる、<xref:System.Windows.Media.Animation.BeginStoryboard>アクション。 唯一の方法でアニメーション化する[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を使用して、<xref:System.Windows.Media.Animation.BeginStoryboard>アクション。 A<xref:System.Windows.Media.Animation.BeginStoryboard>でアクションを使用できます、 <xref:System.Windows.EventTrigger>、プロパティ<xref:System.Windows.Trigger>、または<xref:System.Windows.DataTrigger>します。  
+ <xref:System.Windows.Media.Animation.Storyboard> を開始すると、アニメーションが、アニメーション化されるプロパティに適用され、開始されます。 <xref:System.Windows.Media.Animation.Storyboard> を開始するには、2 つの方法があります。<xref:System.Windows.Media.Animation.Storyboard> クラスによって提供される <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> メソッドを使用するか、<xref:System.Windows.Media.Animation.BeginStoryboard> アクションを使用します。 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] でアニメーション化する唯一の方法は、<xref:System.Windows.Media.Animation.BeginStoryboard> アクションを使用することです。 <xref:System.Windows.Media.Animation.BeginStoryboard> アクションは、<xref:System.Windows.EventTrigger>、<xref:System.Windows.Trigger> プロパティ、または <xref:System.Windows.DataTrigger> で使用できます。  
   
- 次の表に、さまざまな場所を各<xref:System.Windows.Media.Animation.Storyboard>開始手法がサポートされています: インスタンス単位、スタイル、コントロール テンプレート、およびデータ テンプレート。  
+ 次の表は、<xref:System.Windows.Media.Animation.Storyboard> の開始方法それぞれがサポートされているさまざまな場所 (インスタンス単位、スタイル、コントロール テンプレート、データ テンプレート) を示しています。  
   
 |ストーリーボードが開始される場所|インスタンス単位|スタイル|コントロール テンプレート|データ テンプレート|例|  
 |--------------------------------|-------------------|-----------|----------------------|-------------------|-------------|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> および <xref:System.Windows.EventTrigger>|[はい]|はい|はい|[はい]|[ストーリーボードを使ってプロパティをアニメーション化する](how-to-animate-a-property-by-using-a-storyboard.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> プロパティと、 <xref:System.Windows.Trigger>|いいえ|[はい]|はい|[はい]|[プロパティ値が変化したときにアニメーションをトリガーする](how-to-trigger-an-animation-when-a-property-value-changes.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> および <xref:System.Windows.DataTrigger>|いいえ|[はい]|はい|[はい]|[方法: データが変更されたときにアニメーションをトリガーします。](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa970679(v=vs.90))|  
-|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> メソッド|[はい]|×|×|いいえ|[ストーリーボードを使ってプロパティをアニメーション化する](how-to-animate-a-property-by-using-a-storyboard.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> および <xref:System.Windows.EventTrigger>|はい|はい|はい|はい|[ストーリーボードを使ってプロパティをアニメーション化する](how-to-animate-a-property-by-using-a-storyboard.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> およびプロパティ <xref:System.Windows.Trigger>|いいえ|はい|はい|はい|[プロパティ値が変化したときにアニメーションをトリガーする](how-to-trigger-an-animation-when-a-property-value-changes.md)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> および <xref:System.Windows.DataTrigger>|いいえ|はい|はい|はい|[方法: データが変化したときにアニメーションをトリガーする](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa970679(v=vs.90))|  
+|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> メソッド|はい|いいえ|いいえ|いいえ|[ストーリーボードを使ってプロパティをアニメーション化する](how-to-animate-a-property-by-using-a-storyboard.md)|  
   
- 詳細については<xref:System.Windows.Media.Animation.Storyboard>、オブジェクトを参照してください、[ストーリー ボードの概要](storyboards-overview.md)します。  
+ <xref:System.Windows.Media.Animation.Storyboard> オブジェクトの詳細については、「[ストーリーボードの概要](storyboards-overview.md)」をご覧ください。  
   
 ## <a name="local-animations"></a>ローカル アニメーション  
- ローカル アニメーションは、いずれかの依存関係プロパティをアニメーション化する便利な手段を提供<xref:System.Windows.Media.Animation.Animatable>オブジェクト。 プロパティに適用するアニメーションが 1 つだけであり、アニメーションを開始後に対話的に制御する必要がない場合は、ローカル アニメーションを使用します。 異なり、<xref:System.Windows.Media.Animation.Storyboard>アニメーション、ローカル アニメーションに関連付けられていないオブジェクトのアニメーションできます、<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>します。 定義することも必要はありません、<xref:System.Windows.NameScope>この種類のアニメーション。  
+ ローカル アニメーションは、任意の <xref:System.Windows.Media.Animation.Animatable> オブジェクトの依存関係プロパティをアニメーション化する場合に使用すると便利です。 プロパティに適用するアニメーションが 1 つだけであり、アニメーションを開始後に対話的に制御する必要がない場合は、ローカル アニメーションを使用します。 ローカル アニメーションは、<xref:System.Windows.Media.Animation.Storyboard> アニメーションとは異なり、<xref:System.Windows.FrameworkElement> にも <xref:System.Windows.FrameworkContentElement> にも関連付けられていないオブジェクトをアニメーション化できます。 また、この種類のアニメーションには <xref:System.Windows.NameScope> を定義する必要がありません。  
   
  ローカル アニメーションはコードだけで使用できます。スタイル、コントロール テンプレート、またはデータ テンプレート内では定義できません。 ローカル アニメーションは、開始後に対話的に制御できません。  
   
  ローカル アニメーションを使用してアニメーション化するには、次の手順を実行します。  
   
-1. 作成、<xref:System.Windows.Media.Animation.AnimationTimeline>オブジェクト。  
+1. <xref:System.Windows.Media.Animation.AnimationTimeline> オブジェクトを作成します。  
   
-2. 使用して、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>を適用するアニメーション化するオブジェクトのメソッド、<xref:System.Windows.Media.Animation.AnimationTimeline>を指定するプロパティ。  
+2. アニメーション化するオブジェクトの <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> メソッドを使用して、指定したプロパティに <xref:System.Windows.Media.Animation.AnimationTimeline> を適用します。  
   
- 次の例の幅と背景色をアニメーション化する方法を示しています、<xref:System.Windows.Controls.Button>します。  
+ 次の例は、<xref:System.Windows.Controls.Button> の幅と背景色をアニメーション化する方法を示しています。  
   
  [!code-cpp[animateproperty#11](~/samples/snippets/cpp/VS_Snippets_Wpf/animateproperty/CPP/LocalAnimationExample.cpp#11)]
  [!code-csharp[animateproperty#11](~/samples/snippets/csharp/VS_Snippets_Wpf/animateproperty/CSharp/LocalAnimationExample.cs#11)]
  [!code-vb[animateproperty#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animateproperty/VisualBasic/LocalAnimationExample.vb#11)]  
   
 ## <a name="clock-animations"></a>クロック アニメーション  
- 使用<xref:System.Windows.Media.MediaPlayer.Clock%2A>オブジェクトを使用せずにアニメーション化するときに、<xref:System.Windows.Media.Animation.Storyboard>複雑なタイミング ツリーを作成または起動後に、アニメーションを対話的に制御したいとします。 Clock オブジェクトを使用するには任意の依存関係プロパティをアニメーション化<xref:System.Windows.Media.Animation.Animatable>オブジェクト。  
+ <xref:System.Windows.Media.MediaPlayer.Clock%2A> オブジェクトは、<xref:System.Windows.Media.Animation.Storyboard> を使用せずにアニメーション化するときに、複雑なタイミング ツリーを作成する場合またはアニメーションを開始後に対話的に制御する場合に使用します。 クロック オブジェクトを使用して、任意の <xref:System.Windows.Media.Animation.Animatable> オブジェクトの依存関係プロパティをアニメーション化できます。  
   
- 使用することはできません<xref:System.Windows.Media.Animation.Clock>テンプレート、またはデータ テンプレートに、直接、スタイルのアニメーション化するコントロールにオブジェクト。 (実際にアニメーションとタイミング システムを使用して<xref:System.Windows.Media.Animation.Clock>それでは、スタイル、コントロール テンプレート、およびデータのテンプレートが、アニメーション化するオブジェクトを作成する必要があります<xref:System.Windows.Media.Animation.Clock>からオブジェクトを<xref:System.Windows.Media.Animation.Storyboard>します。 間のリレーションシップの詳細については<xref:System.Windows.Media.Animation.Storyboard>オブジェクトと<xref:System.Windows.Media.Animation.Clock>、オブジェクトを参照してください、[アニメーションとタイミング システムの概要](animation-and-timing-system-overview.md))。  
+ <xref:System.Windows.Media.Animation.Clock> オブジェクトは、スタイル、コントロール テンプレート、またはデータ テンプレート内でアニメーション化するために直接使用することはできません。 (アニメーションとタイミング システムは、実際に <xref:System.Windows.Media.Animation.Clock> オブジェクトを使用してスタイル、コントロール テンプレート、およびデータ テンプレート内でアニメーション化しますが、このような <xref:System.Windows.Media.Animation.Clock> オブジェクトを <xref:System.Windows.Media.Animation.Storyboard> から作成する必要があります。 <xref:System.Windows.Media.Animation.Storyboard> オブジェクトと <xref:System.Windows.Media.Animation.Clock> オブジェクトの間のリレーションシップについて詳しくは、「[アニメーションとタイミング システムの概要](animation-and-timing-system-overview.md)」をご覧ください。)  
   
- 1 つを適用する<xref:System.Windows.Media.Animation.Clock>プロパティには、次の手順を完了します。  
+ 1 つの <xref:System.Windows.Media.Animation.Clock> をプロパティに適用するには、次の手順を実行します。  
   
-1. 作成、<xref:System.Windows.Media.Animation.AnimationTimeline>オブジェクト。  
+1. <xref:System.Windows.Media.Animation.AnimationTimeline> オブジェクトを作成します。  
   
-2. 使用して、<xref:System.Windows.Media.Animation.AnimationTimeline.CreateClock%2A>のメソッド、<xref:System.Windows.Media.Animation.AnimationTimeline>を作成する、<xref:System.Windows.Media.Animation.AnimationClock>します。  
+2. <xref:System.Windows.Media.Animation.AnimationTimeline> の <xref:System.Windows.Media.Animation.AnimationTimeline.CreateClock%2A> メソッドを使用して、<xref:System.Windows.Media.Animation.AnimationClock> を作成します。  
   
-3. 使用して、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%2A>を適用するアニメーション化するオブジェクトのメソッド、<xref:System.Windows.Media.Animation.AnimationClock>を指定するプロパティ。  
+3. アニメーション化するオブジェクトの <xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%2A> メソッドを使用して、指定したプロパティに <xref:System.Windows.Media.Animation.AnimationClock> を適用します。  
   
- 次の例を作成する方法を示しています、<xref:System.Windows.Media.Animation.AnimationClock>同様の 2 つのプロパティに適用されます。  
+ 次の例は、<xref:System.Windows.Media.Animation.AnimationClock> を作成して、それを 2 つの類似したプロパティに適用する方法を示しています。  
   
  [!code-csharp[timingbehaviors_procedural_snip#GraphicsMMCreateAnimationClockWholeClass](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp/AnimationClockExample.cs#graphicsmmcreateanimationclockwholeclass)]
  [!code-vb[timingbehaviors_procedural_snip#GraphicsMMCreateAnimationClockWholeClass](~/samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic/animationclockexample.vb#graphicsmmcreateanimationclockwholeclass)]  
   
  タイミング ツリーを作成し、これを使用してプロパティをアニメーション化するには、次の手順を実行します。  
   
-1. 使用<xref:System.Windows.Media.Animation.ParallelTimeline>と<xref:System.Windows.Media.Animation.AnimationTimeline>タイミング ツリーを作成するオブジェクト。  
+1. <xref:System.Windows.Media.Animation.ParallelTimeline> オブジェクトおよび <xref:System.Windows.Media.Animation.AnimationTimeline> オブジェクトを使用して、タイミング ツリーを作成します。  
   
-2. 使用して、<xref:System.Windows.Media.Animation.TimelineGroup.CreateClock%2A>ルートの<xref:System.Windows.Media.Animation.ParallelTimeline>を作成する、<xref:System.Windows.Media.Animation.ClockGroup>します。  
+2. ルート <xref:System.Windows.Media.Animation.ParallelTimeline> の <xref:System.Windows.Media.Animation.TimelineGroup.CreateClock%2A> を使用して、<xref:System.Windows.Media.Animation.ClockGroup> を作成します。  
   
-3. 反復処理、<xref:System.Windows.Media.Animation.ClockGroup.Children%2A>の<xref:System.Windows.Media.Animation.ClockGroup>し、その子を適用<xref:System.Windows.Media.Animation.Clock>オブジェクト。 各<xref:System.Windows.Media.Animation.AnimationClock>子を使用して、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%2A>を適用するアニメーション化するオブジェクトのメソッド、<xref:System.Windows.Media.Animation.AnimationClock>プロパティを指定します。  
+3. <xref:System.Windows.Media.Animation.ClockGroup> の <xref:System.Windows.Media.Animation.ClockGroup.Children%2A> を反復処理し、その子 <xref:System.Windows.Media.Animation.Clock> オブジェクトを適用します。 子 <xref:System.Windows.Media.Animation.AnimationClock> ごとに、アニメーション化するオブジェクトの <xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%2A> メソッドを使用して、指定したプロパティに <xref:System.Windows.Media.Animation.AnimationClock> を適用します  
   
  Clock オブジェクトについて詳しくは、「[アニメーションとタイミング システムの概要](animation-and-timing-system-overview.md)」をご覧ください。  
   
-## <a name="per-frame-animation-bypass-the-animation-and-timing-system"></a>フレーム単位アニメーション:アニメーションとタイミング システムをバイパスします。  
+## <a name="per-frame-animation-bypass-the-animation-and-timing-system"></a>フレーム単位のアニメーション:アニメーションとタイミング システムをバイパスする  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アニメーション システムを完全にバイパスする必要があるときは、この方法を使います。 この方法の 1 つのシナリオは、アニメーションの各ステップで、オブジェクトの最後の一連のやり取りに基づいてオブジェクトの再計算が必要になる物理アニメーションです。  
   
  フレーム単位アニメーションは、スタイル、コントロール テンプレート、またはデータ テンプレート内で定義できません。  
   
- 登録のフレームに、アニメーション化する、<xref:System.Windows.Media.CompositionTarget.Rendering>をアニメーション化するオブジェクトを含むオブジェクトのイベント。 このイベント ハンドラー メソッドは、フレームごとに 1 回呼び出されます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] がビジュアル ツリーの永続化されたレンダリング データを構成ツリーにマーシャリングするたびに、イベント ハンドラー メソッドが呼び出されます。  
+ フレームごとにアニメーション化するには、アニメーション化するオブジェクトを格納しているオブジェクトの <xref:System.Windows.Media.CompositionTarget.Rendering> イベントを登録します。 このイベント ハンドラー メソッドは、フレームごとに 1 回呼び出されます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] がビジュアル ツリーの永続化されたレンダリング データを構成ツリーにマーシャリングするたびに、イベント ハンドラー メソッドが呼び出されます。  
   
  イベント ハンドラーでは、アニメーション効果に必要なあらゆる計算を実行し、これらの値を使用してアニメーション化するオブジェクトのプロパティを設定します。  
   
- 現在のフレームの表現時間を取得する、<xref:System.EventArgs>これに関連付けられているイベントとしてキャストできる<xref:System.Windows.Media.RenderingEventArgs>、提供、<xref:System.Windows.Media.RenderingEventArgs.RenderingTime%2A>現在のフレームを取得するのに使用できるプロパティの表示時間。  
+ 現在のフレームの表現時間を取得するために、このイベントに関連付けられている <xref:System.EventArgs> を、<xref:System.Windows.Media.RenderingEventArgs> としてキャストできます。これにより、現在のフレームのレンダリング時間を取得するために使用できる <xref:System.Windows.Media.RenderingEventArgs.RenderingTime%2A> プロパティが提供されます。  
   
- 詳細については、次を参照してください。、<xref:System.Windows.Media.CompositionTarget.Rendering>ページ。  
+ 詳細については、<xref:System.Windows.Media.CompositionTarget.Rendering> に関するページをご覧ください。  
   
 ## <a name="see-also"></a>関連項目
 

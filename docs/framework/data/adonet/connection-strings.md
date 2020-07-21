@@ -1,63 +1,64 @@
 ---
-title: ADO.NET での接続文字列
+title: 接続文字列
+description: ADO.NET の接続文字列について説明します。これには、データ プロバイダーからデータ ソースにパラメーターとして渡される初期化情報が含まれています。
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: bf053c7c26435bea5b2368c81c89b73e8949b74a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: baa6599a532746895cbb3920f2c623dd4c2be864
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040143"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287026"
 ---
 # <a name="connection-strings-in-adonet"></a>ADO.NET での接続文字列
 
-接続文字列には、データ プロバイダーからデータ ソースにパラメーターとして渡す初期化情報が含まれています。 データプロバイダーは、<xref:System.Data.Common.DbConnection.ConnectionString?displayProperty=nameWithType> プロパティの値として接続文字列を受け取ります。 プロバイダーは接続文字列を解析して、構文が正しいことと、キーワードがサポートされていることを確認します。 次に、<xref:System.Data.Common.DbConnection.Open?displayProperty=nameWithType> メソッドは、解析された接続パラメーターをデータソースに渡します。 データソースは、さらに検証を実行し、接続を確立します。
+接続文字列には、データ プロバイダーからデータ ソースにパラメーターとして渡す初期化情報が含まれています。 データ プロバイダーでは、<xref:System.Data.Common.DbConnection.ConnectionString?displayProperty=nameWithType> プロパティの値として接続文字列を受け取ります。 プロバイダーによって接続文字列が解析されて、構文が正しいことと、キーワードがサポートされていることが確認されます。 その後、<xref:System.Data.Common.DbConnection.Open?displayProperty=nameWithType> メソッドにより、解析された接続パラメーターがデータ ソースに渡されます。 データ ソースでは、さらに検証が行われて、接続が確立されます。
 
 ## <a name="connection-string-syntax"></a>接続文字列の構文
 
-接続文字列は、キーと値のパラメーターのペアをセミコロンで区切ったリストです。
+接続文字列は、キーと値パラメーターのペアをセミコロンで区切ったリストです。
 
 ```csharp
 keyword1=value; keyword2=value;
 ```
 
-キーワードでは、大文字と小文字は区別されません。 ただし、データソースによっては、値によって大文字と小文字が区別されることがあります。 キーワードと値の両方に[空白文字](https://en.wikipedia.org/wiki/Whitespace_character#Unicode)を含めることができます。 キーワードおよび引用符で囲まれていない値では、先頭と末尾の空白文字は無視されます。
+キーワードの大文字と小文字は区別されません。 ただし、データ ソースによっては、値の大文字小文字が区別されます。 キーワードと値はどちらも、[空白文字](https://en.wikipedia.org/wiki/Whitespace_character#Unicode)が含まれていてもかまいません。 キーワードおよび引用符で囲まれていない値では、先頭と末尾の空白文字は無視されます。
 
-値にセミコロン、 [Unicode 制御文字](https://en.wikipedia.org/wiki/Unicode_control_characters)、または先頭または末尾の空白が含まれている場合は、一重引用符または二重引用符で囲む必要があります。 (例:
+値にセミコロン、[Unicode 制御文字](https://en.wikipedia.org/wiki/Unicode_control_characters)、先頭または末尾の空白が含まれている場合は、単一引用符または二重引用符で囲む必要があります。 次に例を示します。
 
 ```csharp
 Keyword=" whitespace  ";
 Keyword='special;character';
 ```
 
-囲んでいる文字が、囲まれた値内に出現しない可能性があります。 したがって、単一引用符を含む値は、二重引用符で囲むことができます。また、その逆も可能です。
+囲んでいる文字が、囲まれた値内に出現することはできません。 したがって、単一引用符が含まれる値は、二重引用符でのみ囲むことができます。その逆も同様です。
 
 ```csharp
 Keyword='double"quotation;mark';
 Keyword="single'quotation;mark";
 ```
 
-また、2つの文字を一緒に使用して、囲み文字をエスケープすることもできます。
+また、囲んでいる文字を 2 つ続けて使用することにより、エスケープすることもできます。
 
 ```csharp
 Keyword="double""quotation";
 Keyword='single''quotation';
 ```
 
-引用符自体と等号だけでは、エスケープは必要ないため、次の接続文字列が有効です。
+引用符自体と等号は、エスケープする必要がないため、次の接続文字列は有効です。
 
 ```csharp
 Keyword=no "escaping" 'required';
 Keyword=a=b=c
 ```
 
-各値は、次のセミコロンまたは文字列の末尾まで読み取られるため、後者の例の値は `a=b=c`、最後のセミコロンは省略可能です。
+各値は、次のセミコロンまたは文字列の末尾まで読み取られるため、後者の例の値は `a=b=c` であり、最後のセミコロンは省略可能です。
 
-すべての接続文字列は、上記で説明したのと同じ基本的な構文を共有します。 認識されるキーワードのセットはプロバイダーによって異なり、 *ODBC*などの以前の api から長年にわたって進化しています。 *.NET Framework* data provider for *SQL Server* (`SqlClient`) は、古い api から多くのキーワードをサポートしていますが、一般的には、多くの一般的な接続文字列キーワードに対して、より柔軟で、シノニムを使用できます。
+すべての接続文字列の基本的な構文は、上で説明したものと同じです。 ただし、認識されるキーワードのセットはプロバイダーによって異なり、*ODBC* などの以前の API から長年にわたって進化しています。 *.NET Framework* Data Provider for *SQL Server* (`SqlClient`) では、古い API の多くのキーワードがサポートされていますが、一般に、より柔軟性が高く、多くの一般的な接続文字列キーワードに対してシノニムを受け付けます。
 
-入力ミスによってエラーが発生する可能性があります。 たとえば、`Integrated Security=true` は有効ですが、`IntegratedSecurity=true` によってエラーが発生します。
+入力ミスによってエラーが発生する可能性があります。 たとえば、`Integrated Security=true` は有効ですが、`IntegratedSecurity=true` ではエラーが発生します。
 
-実行時に未検証ユーザー入力から手動で構築された接続文字列は、文字列インジェクション攻撃に対して脆弱で、データソースのセキュリティが危険にさらされます。 これらの問題に対処するために、 *ADO.NET* 2.0 では *.NET Framework*データプロバイダーごとに[接続文字列ビルダー](connection-string-builders.md)が導入されました。 これらの接続文字列ビルダーは、パラメーターを厳密に型指定されたプロパティとして公開し、データソースに送信される前に接続文字列を検証できるようにします。
+実行時に検証されていないユーザー入力から接続文字列を手動で構築すると、文字列のインジェクション攻撃に弱くなり、データ ソースのセキュリティが脅かされます。 こうした問題に対処するため、*ADO.NET* 2.0 では、各 *.NET Framework* データ プロバイダー用の[接続文字列ビルダー](connection-string-builders.md)が導入されました。 これらの接続文字列ビルダーでは、厳密に型指定されたプロパティとしてパラメーターが公開され、データ ソースに送信される前に接続文字列を検証できます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

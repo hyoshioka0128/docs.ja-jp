@@ -1,6 +1,6 @@
 ---
 title: LINQ (統合言語クエリ)
-description: LINQ が言語レベルのクエリ機能と、表現力豊かな宣言コードを記述する方法として C# および VB に API を提供する方法を説明します。
+description: LINQ が言語レベルのクエリ機能と、表現力豊かな宣言コードを記述する方法として C# および Visual Basic に API を提供する方法を説明します。
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
@@ -9,18 +9,18 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 2e4b23b7bf197c9984c53b2f4cc2acaa61731d38
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: cd0260de3facdd37c46e9fb2f09ddc4cac08e71b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238633"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291072"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (統合言語クエリ)
 
-## <a name="what-is-it"></a>LINQ とは
+## <a name="what-is-it"></a>紹介
 
-LINQ では、言語レベルのクエリ機能と、表現力豊かな宣言コードを記述する方法として C# および VB に[高階関数](https://en.wikipedia.org/wiki/Higher-order_function) API が提供されます。
+LINQ では、言語レベルのクエリ機能と、表現力豊かな宣言コードを記述する方法として C# および Visual Basic に[高階関数](https://en.wikipedia.org/wiki/Higher-order_function) API が提供されます。
 
 言語レベルのクエリ構文:
 
@@ -113,7 +113,7 @@ End Function
 
 コードを記述して XML ドキュメントを手動でスキャンし、このタスクを実行するのはとても難しいことです。
 
-XML との対話が、LINQ プロバイダーでできる唯一のことではありません。 [Linq to SQL](../../docs/framework/data/adonet/sql/linq/index.md) は、MSSQL Server データベースの必要最低限のオブジェクト リレーショナル マッパー (ORM) です。 [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) ライブラリでは、LINQ を使用して効率的に JSON ドキュメントをトラバースできます。 さらに、必要な作業を行うライブラリがない場合は、[独自の LINQ プロバイダーを記述する](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110))こともできます。
+XML との対話が、LINQ プロバイダーでできる唯一のことではありません。 [Linq to SQL](../framework/data/adonet/sql/linq/index.md) は、MSSQL Server データベースの必要最低限のオブジェクト リレーショナル マッパー (ORM) です。 [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) ライブラリでは、LINQ を使用して効率的に JSON ドキュメントをトラバースできます。 さらに、必要な作業を行うライブラリがない場合は、[独自の LINQ プロバイダーを記述する](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110))こともできます。
 
 ## <a name="why-use-the-query-syntax"></a>クエリ構文を使用する理由
 
@@ -161,7 +161,7 @@ API 構文は単に、クエリ構文を実行するより簡潔な方法であ�
 
 ## <a name="essential-samples"></a>重要なサンプル
 
-LINQ サンプルの一覧については、「[101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)」 (101 個の LINQ サンプル) を参照してください。
+LINQ サンプルの一覧については、「[101 LINQ Samples](https://docs.microsoft.com/samples/dotnet/try-samples/101-linq-samples/)」 (101 個の LINQ サンプル) を参照してください。
 
 以下に、LINQ の重要な要素をいくつか簡単に示します。 これは決して包括的なものではありません。LINQ ではここで紹介するものよりはるかに多くの機能が提供されます。
 
@@ -257,7 +257,7 @@ var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthCompa
 ```
 
 ```vb
-Public Class DogHairLengthComparer 
+Public Class DogHairLengthComparer
   Inherits IEqualityComparer(Of Dog)
 
   Public Function Equals(a As Dog,b As Dog) As Boolean
@@ -321,7 +321,7 @@ public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params st
     {
         return self == to;
     }
-    
+
     // Selects the properties which have unequal values into a sequence of those properties.
     var unequalProperties = from property in typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance)
                             where !ignore.Contains(property.Name)
@@ -334,14 +334,14 @@ public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params st
 ```
 
 ```vb
-<System.Runtime.CompilerServices.Extension()> 
+<System.Runtime.CompilerServices.Extension()>
 Public Function PublicInstancePropertiesEqual(Of T As Class)(self As T, [to] As T, ParamArray ignore As String()) As Boolean
     If self Is Nothing OrElse [to] Is Nothing Then
         Return self Is [to]
     End If
 
     ' Selects the properties which have unequal values into a sequence of those properties.
-    Dim unequalProperties = From [property] In GetType(T).GetProperties(BindingFlags.Public Or BindingFlags.Instance) 
+    Dim unequalProperties = From [property] In GetType(T).GetProperties(BindingFlags.Public Or BindingFlags.Instance)
                             Where Not ignore.Contains([property].Name)
                             Let selfValue = [property].GetValue(self, Nothing)
                             Let toValue = [property].GetValue([to], Nothing)
@@ -354,7 +354,7 @@ End Function
 
 PLINQ (Parallel LINQ) は、LINQ 式の並列実行エンジンです。 つまり、LINQ の正規表現は、任意の数のスレッドで普通に並列化できます。 これは、式の前に `AsParallel()` を指定して呼び出すことで実行できます。
 
-次に例を示します。
+次の点を考慮します。
 
 ```csharp
 public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> facebookUsers)
@@ -394,6 +394,6 @@ LINQ で簡単に表すことができる (つまり、純粋関数で副作用�
 
 ## <a name="further-resources"></a>他のリソース:
 
-* [101 個の LINQ サンプル](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
-* [Linqpad](https://www.linqpad.net/)。プレイグラウンド環境とデータベース クエリ エンジン (C#/F#/VB 用)
+* [101 個の LINQ サンプル](https://docs.microsoft.com/samples/dotnet/try-samples/101-linq-samples/)
+* [Linqpad](https://www.linqpad.net/)。プレイグラウンド環境とデータベース クエリ エンジン (C#/F#/Visual Basic 用)
 * [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/)。LINQ to Objects の実装方法を学習するための電子書籍

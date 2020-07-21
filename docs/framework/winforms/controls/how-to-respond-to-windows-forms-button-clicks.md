@@ -1,5 +1,6 @@
 ---
-title: '方法: Windows フォームのボタンのクリックに応答する'
+title: Button のクリックに応答する
+description: Windows フォームボタンのクリックに応答する方法について説明します。 Windows フォームボタンコントロールの最も基本的な用途は、ボタンがクリックされたときにコードを実行することです。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,23 +16,23 @@ helpviewer_keywords:
 - examples [Windows Forms], controls
 - Click event [Windows Forms], responding to
 ms.assetid: 7a4951bd-369c-4662-b246-28ad83eda484
-ms.openlocfilehash: ebcde2b5e749c5a3621c623a864578b2a654ce63
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5c458d56dbd6f1cab8e88bdbb86ede958367e5c4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638384"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619729"
 ---
-# <a name="how-to-respond-to-windows-forms-button-clicks"></a>方法: Windows フォームのボタンのクリックに応答する
-Windows フォームの最も基本的な使用<xref:System.Windows.Forms.Button>コントロールのボタンがクリックされたときに、いくつかのコードを実行します。  
+# <a name="how-to-respond-to-windows-forms-button-clicks"></a>方法 : Windows フォームのボタンのクリックに応答する
+Windows フォームコントロールの最も基本的な用途 <xref:System.Windows.Forms.Button> は、ボタンがクリックされたときにコードを実行することです。  
   
- クリックすると、<xref:System.Windows.Forms.Button>コントロールもなどが生成されるその他のイベント数、 <xref:System.Windows.Forms.Control.MouseEnter>、 <xref:System.Windows.Forms.Control.MouseDown>、および<xref:System.Windows.Forms.Control.MouseUp>イベント。 これらの関連イベントのイベント ハンドラーをアタッチする場合は、そのアクションが競合しないことを確認します。 たとえば場合、ユーザーがテキスト ボックスに入力した情報をクリア ボタンをクリックして、ボタンの上にマウス ポインターを置く必要があります表示されません現時点で存在しない情報をツール ヒント。  
+ コントロールをクリックすると <xref:System.Windows.Forms.Button> 、、、イベントなどの他のイベントも多数生成さ <xref:System.Windows.Forms.Control.MouseEnter> <xref:System.Windows.Forms.Control.MouseDown> <xref:System.Windows.Forms.Control.MouseUp> れます。 これらの関連イベントにイベントハンドラーをアタッチする場合は、それらのアクションが競合していないことを確認してください。 たとえば、ボタンをクリックすると、ユーザーがテキストボックスに入力した情報がクリアされた場合、ボタンの上にマウスポインターを置くと、その時点で存在しない情報を示すツールヒントが表示されません。  
   
- ユーザーをダブルクリックする場合、<xref:System.Windows.Forms.Button>コントロール、1 回のクリックを個別に処理されます。 これは、コントロールがダブルクリック イベントをサポートしません。  
+ ユーザーがコントロールをダブルクリックしようとすると <xref:System.Windows.Forms.Button> 、各クリックは個別に処理されます。つまり、コントロールはダブルクリックイベントをサポートしていません。  
   
 ### <a name="to-respond-to-a-button-click"></a>ボタンのクリックに応答するには  
   
-- ボタンの`Click`<xref:System.EventHandler>を実行するコードを記述します。 `Button1_Click` コントロールにバインドする必要があります。 詳細については、「[方法 :Windows フォームの実行時にイベント ハンドラーを作成](../how-to-create-event-handlers-at-run-time-for-windows-forms.md)です。  
+- ボタンの [実行するコードを記述してください] をクリックし `Click` <xref:System.EventHandler> ます。 `Button1_Click`コントロールにバインドされている必要があります。 詳細については、「[方法: Windows フォームの実行時にイベントハンドラーを作成](../how-to-create-event-handlers-at-run-time-for-windows-forms.md)する」を参照してください。  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  

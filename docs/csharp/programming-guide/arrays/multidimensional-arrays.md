@@ -1,17 +1,16 @@
 ---
 title: 多次元配列 - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-ms.openlocfilehash: 63b8729a14e4c309e85a588c5cddc692fb6a6fad
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ee5fae36ff844fadad7e1b6a766020319b67a83c
+ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597408"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82021751"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>多次元配列 (C# プログラミング ガイド)
 

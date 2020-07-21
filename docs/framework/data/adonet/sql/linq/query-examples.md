@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 ms.assetid: 137f8677-494c-4d49-95ce-c17742f2d01f
 ms.openlocfilehash: 8f86c4aa94dcc70ce79526b0f4a3685cfef3f389
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70781139"
 ---
 # <a name="query-examples"></a>クエリの例
-ここでは、一般的C# [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]なクエリの Visual Basic と例について説明します。 Visual Studio を使用する開発者は、「サンプル」セクションで紹介されているサンプルソリューションの多くの例を見つけることができます。 詳細については、「[サンプル](samples.md)」を参照してください。  
+このセクションでは、Visual Basic および C# で一般的な [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリの例を示して説明します。 Visual Studio を使用している場合は、「サンプル」セクションに多数のサンプル ソリューションが用意されています。 詳細については、「[サンプル](samples.md)」を参照してください。  
   
 > [!IMPORTANT]
-> *db*は、ドキュメントの[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]コード例でよく使用されます。 *db*は、から<xref:System.Data.Linq.DataContext>継承される*Northwind*クラスのインスタンスであると見なされます。  
+> *db* は、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ドキュメントのコード サンプルでよく使用されます。 *db* は、*Northwind* クラスのインスタンスであることが前提です。このクラスは、<xref:System.Data.Linq.DataContext> から継承されます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [集計クエリ](aggregate-queries.md)  
@@ -62,11 +62,11 @@ ms.locfileid: "70781139"
  `from` 句、`where` 句、および `select` 句で外部キーを移動する方法の例を示して説明します。  
   
  [射影の作成](formulate-projections.md)  
- クエリプロジェクションを形成`select`するために、他の機能 (*匿名型*など) と組み合わせて使用する例を示します。  
+ `select` と他の機能 (*匿名型*など) を組み合わせてクエリ射影を作成する方法の例を示して説明します。  
   
 ## <a name="related-sections"></a>関連項目  
  [標準クエリ演算子の概要 (C#)](../../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- を使用C#した標準クエリ演算子の概念について説明します。  
+ C# を使用した標準クエリ演算子の概念について説明します。  
   
  [標準クエリ演算子の概要 (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
  Visual Basic を使用した標準クエリ演算子の概念について説明します。  

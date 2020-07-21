@@ -1,17 +1,16 @@
 ---
 title: デリゲート - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: a0c5592f2f4cca8173f9b777f2c3f14fe468feac
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c0f28716926d4c9d74cde58fd00e27d1fdfa7ce1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423315"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "75705367"
 ---
 # <a name="delegates-c-programming-guide"></a>デリゲート (C# プログラミング ガイド)
 [デリゲート](../../language-reference/builtin-types/reference-types.md)は、特定のパラメーター リストおよび戻り値の型を使用して、メソッドへの参照を表す型です。 デリゲートをインスタンス化するときは、互換性のあるシグネチャと戻り値の型を持つ任意のメソッドにそのインスタンスを関連付けることができます。 メソッドは、デリゲート インスタンスを使用して起動する (呼び出す) ことができます。  
@@ -52,9 +51,9 @@ ms.locfileid: "73423315"
   
 - [デリゲートの変性の使用](../concepts/covariance-contravariance/using-variance-in-delegates.md)  
   
-- [方法: デリゲートを結合する (マルチキャスト デリゲート)](./how-to-combine-delegates-multicast-delegates.md)  
+- [デリゲートを結合する方法 (マルチキャスト デリゲート)](./how-to-combine-delegates-multicast-delegates.md)  
   
-- [方法: デリゲートを宣言し、インスタンス化して使用する](./how-to-declare-instantiate-and-use-a-delegate.md)  
+- [デリゲートを宣言し、インスタンス化して、使用する方法](./how-to-declare-instantiate-and-use-a-delegate.md)
 
 ## <a name="c-language-specification"></a>C# 言語仕様  
 

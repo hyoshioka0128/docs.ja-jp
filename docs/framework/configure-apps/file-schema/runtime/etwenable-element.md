@@ -6,18 +6,18 @@ helpviewer_keywords:
 - <etwEnable> element
 ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
 ms.openlocfilehash: 14cea171a4a25e148ea32f75a8ef09b83a4ec8ad
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73117390"
 ---
-# <a name="etwenable-element"></a>\<etwEnable > 要素
+# <a name="etwenable-element"></a>\<etwEnable> 要素
 共通言語ランタイム イベントで Windows イベント トレーシング (ETW) を有効にするかどうかを指定します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<etwEnabled>**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<etwEnabled>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -36,22 +36,22 @@ ms.locfileid: "73117390"
   
 ## <a name="enabled-attribute"></a>enabled 属性  
   
-|[値]|説明|  
+|値|Description|  
 |-----------|-----------------|  
-|TRUE|ETW を有効にします。 Windows Vista および Windows Server 2008 オペレーティングシステム以降のバージョンの Windows では、これが既定です。|  
-|False|ETW を無効にします。 これは、以前のバージョンの Windows では既定です。|  
+|true|ETW を有効にします。 Windows Vista および Windows Server 2008 オペレーティングシステム以降のバージョンの Windows では、これが既定です。|  
+|false|ETW を無効にします。 これは、以前のバージョンの Windows では既定です。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>解説  
  Windows Vista 以降では、ETW は既定で有効になっています。 アプリケーションの ETW を無効にするには、この要素を使用します。 以前のバージョンの Windows では、この要素を使用して、アプリケーションの ETW を有効にします。  
   
 > [!NOTE]

@@ -1,5 +1,6 @@
 ---
 title: .NET での数値文字列の解析
+description: .NET での数値文字列の解析について学習します。 書式プロバイダー、NumberStyles 列挙値、Unicode 数字で解析する方法について学習します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,15 +12,15 @@ helpviewer_keywords:
 - enumerations [.NET Framework], parsing strings
 - base types, parsing strings
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
-ms.openlocfilehash: ac44282a06b2b3710d3a9e5390c7a514c1632c3a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b184bad10b816c1eae798302337b5c901732ad7f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127598"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589540"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>.NET での数値文字列の解析
-すべての数値型には、2 つの静的解析メソッド (`Parse` と `TryParse`) があり、数字の文字列形式を数値型に変換するために使用できます。 これらのメソッドでは、[標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)で記述されている書式指定文字列を使用して、生成された文字列を解析できます。 既定では、`Parse` と `TryParse` メソッドは、10 進数の整数を含む文字列を整数値のみに正常に変換することができます。 これらのメソッドは、整数部と小数部、グループ区切り、および小数点記号を含む文字列を浮動小数点値に正常に変換できます。 `TryParse` メソッドが `false` を返すのに対して、`Parse` メソッドは操作が失敗した場合に例外をスローします。  
+すべての数値型には、2 つの静的解析メソッド (`Parse` と `TryParse`) があり、数字の文字列形式を数値型に変換するために使用できます。 これらのメソッドでは、[標準の数値書式指定文字列](standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](custom-numeric-format-strings.md)で記述されている書式指定文字列を使用して、生成された文字列を解析できます。 既定では、`Parse` と `TryParse` メソッドは、10 進数の整数を含む文字列を整数値のみに正常に変換することができます。 これらのメソッドは、整数部と小数部、グループ区切り、および小数点記号を含む文字列を浮動小数点値に正常に変換できます。 `TryParse` メソッドが `false` を返すのに対して、`Parse` メソッドは操作が失敗した場合に例外をスローします。  
   
 ## <a name="parsing-and-format-providers"></a>解析と書式プロバイダー  
  通常、数値の文字列形式はカルチャによって異なります。 通貨記号、グループ (または千単位) 区切り、および小数点記号などの数値文字列の要素は、カルチャによって大きく異なります。 暗黙的または明示的のいずれかの解析メソッドでは、これらのカルチャ固有のバリエーションを認識する書式プロバイダーを使用します。 書式プロバイダーが `Parse` または `TryParse` メソッドの呼び出しで指定されない場合、現在のスレッド カルチャ (<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType> プロパティで返された <xref:System.Globalization.NumberFormatInfo> オブジェクト) と関連付けられた書式プロバイダーが使用されます。  
@@ -84,5 +85,5 @@ ms.locfileid: "73127598"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Globalization.NumberStyles>
-- [文字列の解析](../../../docs/standard/base-types/parsing-strings.md)
-- [型の書式設定](../../../docs/standard/base-types/formatting-types.md)
+- [文字列の解析](parsing-strings.md)
+- [型の書式設定](formatting-types.md)

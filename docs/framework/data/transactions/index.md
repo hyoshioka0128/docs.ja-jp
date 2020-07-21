@@ -1,13 +1,14 @@
 ---
 title: トランザクション処理
+description: .NET でトランザクション処理をレビューします。 トランザクションによって、すべての処理が正常に完了しない限り、データ指向のリソースは永続的に更新されないことになります。
 ms.date: 03/30/2017
 ms.assetid: effdc8e6-accf-41eb-98a5-431603ba218b
-ms.openlocfilehash: de88247e5916ab6e080c4de361efecee0b193e18
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: MT
+ms.openlocfilehash: 30d69c55d968865cc80b8633bdbc2442f6d216de
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205909"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85503848"
 ---
 # <a name="transaction-processing"></a>トランザクション処理
 オンライン書店で書籍を購入する場合、書籍と代金 (クレジット形式) を交換します。 クレジットに問題がなければ、一連の処理によって顧客は書籍を入手し、書店には代金が入金されます。 ただし、一連の取引処理の 1 つでも失敗すると取引全体が失敗し、 顧客は書籍を入手できず、書店は代金を受け取れません。  
@@ -25,6 +26,6 @@ ms.locfileid: "70205909"
  [System.Transactions により提供される機能](features-provided-by-system-transactions.md)  
  System.Transactions の機能を使用して、独自のトランザクション アプリケーションを作成する方法について説明します。  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Transactions>  
  コードのトランザクションへの参加を許可するクラスを提供します。 このクラスは、複数の分散参加要素、複数のフェーズ通知、および永続参加リストを使用するトランザクションをサポートします。

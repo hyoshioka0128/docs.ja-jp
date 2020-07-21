@@ -4,11 +4,11 @@ description: C# で LINQ を使用して、内部結合を実行する方法に�
 ms.date: 12/01/2016
 ms.assetid: 45bceed6-f549-4114-a9b1-b44feb497742
 ms.openlocfilehash: a3e8e9bd97ec630797bc48a3302b27ed45d9103e
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857958"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "61659840"
 ---
 # <a name="perform-inner-joins"></a>内部結合の実行
 
@@ -64,7 +64,7 @@ C# の 2 番目の `join` 句では、`Person` 型の `Owner` プロパティと
 
 [!code-csharp[CsLINQProgJoining#4](~/samples/snippets/csharp/concepts/linq/how-to-perform-inner-joins_4.cs)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Linq.Enumerable.Join%2A>
 - <xref:System.Linq.Enumerable.GroupJoin%2A>

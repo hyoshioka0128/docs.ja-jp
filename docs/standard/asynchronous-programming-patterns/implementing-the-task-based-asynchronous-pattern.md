@@ -1,5 +1,6 @@
 ---
 title: タスク ベースの非同期パターンの実装
+description: この記事では、タスク ベースの非同期パターンを実装する方法について説明します。 これを使用し、計算主体の非同期操作と I/O バインドの非同期操作を実装できます。
 ms.date: 06/14/2017
 dev_langs:
 - csharp
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
-ms.openlocfilehash: 6218aa1a7b813601e9b718abf862e20a7cbcd313
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1f2f44b6b92f66f95816778c6dc8e893f1291abe
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124293"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289357"
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>タスク ベースの非同期パターンの実装
 タスク ベースの非同期パターン (TAP) は、3 つの方法 (Visual Studio の C# および Visual Basic コンパイラを使用する方法、手動で行う方法、またはコンパイラと手動による方法を組み合わせた方法) で実装できます。 以下のセクションでは、それぞれの方法について詳しく説明します。 TAP パターンを使用し、計算主体の非同期操作と I/O バインドの非同期操作の両方を実装できます。 [[ワークロード]](#workloads) セクションでは、操作の各種類を確認します。
@@ -24,7 +25,7 @@ ms.locfileid: "73124293"
 ## <a name="generating-tap-methods"></a>TAP メソッドを生成する
 
 ### <a name="using-the-compilers"></a>コンパイラを使用する
-.NET Framework 4.5 以降、`async` キーワード (Visual Basic では `Async`) を使用して属性設定されているメソッドは、非同期メソッドと見なされ、TAP を使用して非同期にメソッドを実装するために必要となる変換が C# コンパイラおよび Visual Basic コンパイラによって行われます。 非同期メソッドは、<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> オブジェクトまたは <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> オブジェクトを返す必要があります。 後者の場合、関数の本体は `TResult` を返す必要があり、コンパイラによって、結果として得られるタスク オブジェクトでこの結果が利用可能になっていることが確認されます。 同様に、メソッド本体で処理されない例外は、出力タスクにマーシャリングされ、結果として得られるタスクが <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType> 状態で終了する原因となります。 例外は、<xref:System.OperationCanceledException> (または派生型) がハンドルされない場合で、結果として得られるタスクは <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> 状態で終了します。
+.NET Framework 4.5 以降、`async` キーワード (Visual Basic では `Async`) を使用して属性設定されているメソッドは、非同期メソッドと見なされ、TAP を使用して非同期にメソッドを実装するために必要となる変換が C# コンパイラおよび Visual Basic コンパイラによって行われます。 非同期メソッドは、<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> オブジェクトまたは <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> オブジェクトを返す必要があります。 後者の場合、関数の本体は `TResult` を返す必要があり、コンパイラによって、結果として得られるタスク オブジェクトでこの結果が利用可能になっていることが確認されます。 同様に、メソッド本体で処理されない例外は、出力タスクにマーシャリングされ、結果として得られるタスクが <xref:System.Threading.Tasks.TaskStatus.Faulted?displayProperty=nameWithType> 状態で終了する原因となります。 この規則に対する例外は、<xref:System.OperationCanceledException> (または派生型) がハンドルされない場合で、結果として得られるタスクは <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> 状態で終了します。
 
 ### <a name="generating-tap-methods-manually"></a>手動で TAP メソッドを生成する
 TAP パターンは、実装の制御を強化するために手動で実装することができます。 コンパイラは、<xref:System.Threading.Tasks?displayProperty=nameWithType> 名前空間から公開されるパブリック アクセス機能および <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> 名前空間でサポートされている型に依存します。 TAP を実装するには、<xref:System.Threading.Tasks.TaskCompletionSource%601> オブジェクトを作成して非同期操作を実行し、それが完了したら、<xref:System.Threading.Tasks.TaskCompletionSource%601.SetResult%2A>、<xref:System.Threading.Tasks.TaskCompletionSource%601.SetException%2A>、または <xref:System.Threading.Tasks.TaskCompletionSource%601.SetCanceled%2A> メソッド、またはそのいずれかのメソッドの `Try` バージョンを呼び出します。 TAP メソッドを手動で実装する場合には、表現されている非同期操作の完了時に、結果として得られるタスクを完了する必要があります。 次に例を示します。
@@ -97,10 +98,10 @@ TAP パターンは、実装の制御を強化するために手動で実装す�
 [!code-csharp[Conceptual.TAP_Patterns#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#7)]
 [!code-vb[Conceptual.TAP_Patterns#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#7)]
 
-また、この例では、単一のキャンセル トークンが複数の非同期操作でどのようにスレッド化されるかも示します。 詳細については、「[タスク ベースの非同期パターンの利用](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)」のキャンセルの使用セクションをご覧ください。
+また、この例では、単一のキャンセル トークンが複数の非同期操作でどのようにスレッド化されるかも示します。 詳細については、「[タスク ベースの非同期パターンの利用](consuming-the-task-based-asynchronous-pattern.md)」のキャンセルの使用セクションをご覧ください。
 
 ## <a name="see-also"></a>関連項目
 
-- [タスク ベースの非同期パターン (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)
-- [T:System.Threading.Tasks.Task](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)
-- [他の非同期パターンと型との相互運用](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)
+- [タスク ベースの非同期パターン (TAP)](task-based-asynchronous-pattern-tap.md)
+- [T:System.Threading.Tasks.Task](consuming-the-task-based-asynchronous-pattern.md)
+- [他の非同期パターンと型との相互運用](interop-with-other-asynchronous-patterns-and-types.md)

@@ -1,5 +1,6 @@
 ---
 title: '方法: コンテンツに合わせてウィンドウのサイズを自動的に変更する'
+description: Windows Presentation Foundation (WPF) で、ウィンドウをそのコンテンツに合わせてサイズ変更する方法を指定するプロパティの設定方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +10,14 @@ helpviewer_keywords:
 - windows [WPF], resizing to fit content
 - sizing windows to fit content [WPF]
 ms.assetid: 333ca72a-c2f3-4414-9303-3fdabaaa1b32
-ms.openlocfilehash: 920a7deac8efffe52a4837841b6327575e41b331
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: a04089c737102895f1ff6da19fa6a0d17cc60ab6
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947850"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617948"
 ---
 # <a name="how-to-automatically-size-a-window-to-fit-its-content"></a>方法: コンテンツに合わせてウィンドウのサイズを自動的に変更する
-この例は、設定する方法を示します、<xref:System.Windows.Window.SizeToContent%2A>プロパティ ウィンドウのコンテンツに合わせてサイズ変更する方法を指定します。  
+この例では、ウィンドウのサイズをそのコンテンツに合わせて変更する方法を指定するため、<xref:System.Windows.Window.SizeToContent%2A> プロパティを設定する方法を示します。  
   
 ## <a name="example"></a>例  
  [!code-csharp[HOWTOWindowManagementSnippets#SetWindowSizeToContentPropertyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/CSharp/MainWindow.xaml.cs#setwindowsizetocontentpropertycode)]

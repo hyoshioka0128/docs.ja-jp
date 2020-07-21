@@ -2,12 +2,12 @@
 title: インターネット インフォメーション サービス ホスティングのベスト プラクティス
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: e09a42f0f4a98728e588961425d8b6f5b50e6ccb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e62fed4f6a711ecc317b8f758d4948a477d136e1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957215"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595272"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>インターネット インフォメーション サービス ホスティングのベスト プラクティス
 このトピックでは、Windows Communication Foundation (WCF) サービスをホストするためのいくつかのベストプラクティスについて説明します。  
@@ -16,7 +16,7 @@ ms.locfileid: "69957215"
  WCF サービスを Web アプリケーションの \bin ディレクトリに配置されている DLL として実装すると、Web アプリケーションモデルの外部でサービスを再利用できます。たとえば、インターネットインフォメーションサービス (IIS) が配置されていない可能性のあるテスト環境などです。  
   
 ## <a name="service-hosts-in-iis-hosted-applications"></a>IIS でホストされるアプリケーションでのサービス ホスト  
- 強制的な自己ホスト Api を使用して、iis ホスト環境でネイティブにサポートされていないネットワークトランスポートをリッスンする新しいサービスホストを作成しないでください (TCP 通信は IIS 6.0 ではネイティブにサポートされていないため、iis 6.0 では TCP サービスをホストします)。 この方法はお勧めしません。 強制的に作成されたサービス ホストは、IIS ホスト環境内で認識されないからです。 重要な点は、IIS がホスト アプリケーション プールがアイドル状態であるかどうかを判断するときに、強制的に作成されたサービスによって実行される処理が IIS によって考慮されないことです。 この結果、強制的に作成されたサービス ホストを持つアプリケーションは、IIS ホスト プロセスを積極的に廃棄する IIS ホスト環境を持つことになります。  
+ 強制的な自己ホスト Api を使用して、iis ホスト環境でネイティブにサポートされていないネットワークトランスポートをリッスンする新しいサービスホストを作成しないでください (TCP 通信は IIS 6.0 ではネイティブにサポートされていないため、iis 6.0 では TCP サービスをホストします)。 この方法は推奨されません。 強制的に作成されたサービス ホストは、IIS ホスト環境内で認識されないからです。 重要な点は、IIS がホスト アプリケーション プールがアイドル状態であるかどうかを判断するときに、強制的に作成されたサービスによって実行される処理が IIS によって考慮されないことです。 この結果、強制的に作成されたサービス ホストを持つアプリケーションは、IIS ホスト プロセスを積極的に廃棄する IIS ホスト環境を持つことになります。  
   
 ## <a name="uris-and-iis-hosted-endpoints"></a>URI と IIS でホストされるエンドポイント  
  IIS でホストされるサービスのエンドポイントは、絶対アドレスではなく、相対 URI (Uniform Resource Identifier) を使用して構成する必要があります。 これにより、エンドポイント アドレスが、ホスト アプリケーションに属する URI アドレスのセット内に確実に含まれ、メッセージに基づくアクティベーションが正常に行われるようになります。  
@@ -25,24 +25,24 @@ ms.locfileid: "69957215"
  IIS ホスト環境は、メモリにローカル状態を保持しないサービスに最適化されています。 IIS は、さまざまな外部および内部イベントに応答してホスト プロセスをリサイクルするため、メモリのみに格納される揮発性の状態はすべて失われます。 IIS でホストされるサービスは、それぞれの状態をプロセスの外部 (データベースなど)、またはアプリケーションのリサイクル イベントが発生した場合に簡単に再作成できるメモリ内キャッシュに格納する必要があります。  
   
 > [!NOTE]
-> WCF がメッセージ層の信頼性とセキュリティのために使用するプロトコルによって、揮発性のメモリ内状態が使用されます。 WCF の信頼できるセッションとセキュリティセッションは、アプリケーションのリサイクルによって予期せず終了することがあります。 これらのプロトコルを使用する IIS でホストされるアプリケーションは、アプリケーション層の状態を関連付けるために WCF によって提供されるセッションキー以外のもの (アプリケーションレイヤーコンストラクトやカスタム関連付けヘッダーなど) に依存するか、無効にする必要があります。ホストされるアプリケーションの IIS プロセスのリサイクル。  
+> WCF がメッセージ層の信頼性とセキュリティのために使用するプロトコルによって、揮発性のメモリ内状態が使用されます。 WCF の信頼できるセッションとセキュリティセッションは、アプリケーションのリサイクルによって予期せず終了することがあります。 これらのプロトコルを使用する IIS でホストされるアプリケーションは、アプリケーション層の状態 (アプリケーションレイヤー構成やカスタム関連付けヘッダーなど) を関連付けるために WCF によって提供されるセッションキー以外のものに依存するか、ホストされるアプリケーションの IIS プロセスのリサイクルを無効にする必要があります。  
   
 ## <a name="optimizing-performance-in-middle-tier-scenarios"></a>中間層シナリオでのパフォーマンスの最適化  
  *中間層シナリオ*で最適なパフォーマンスを実現するために、受信メッセージへの応答として他のサービスを呼び出すサービスは、WCF サービスクライアントをリモートサービスに1回インスタンス化して、複数の受信要求にわたって再利用します。 WCF サービスクライアントのインスタンス化は、既存のクライアントインスタンスでのサービス呼び出しを行う場合に比べてコストのかかる操作であり、中間層シナリオでは、複数の要求にわたってリモートクライアントをキャッシュすることによって、パフォーマンスが個別に向上します。 WCF サービスクライアントはスレッドセーフであるため、複数のスレッドにわたってクライアントへのアクセスを同期する必要はありません。  
   
- また、中間層シナリオでは、`svcutil /a` オプションによって生成された非同期 API を使用してパフォーマンスを向上させます。 オプション`/a`を指定すると、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)に`BeginXXX/EndXXX`よって各サービス操作のメソッドが生成されます。これにより、バックグラウンドスレッドでリモートサービスへの実行時間の長い呼び出しが行われる可能性があります。  
+ また、中間層シナリオでは、`svcutil /a` オプションによって生成された非同期 API を使用してパフォーマンスを向上させます。 `/a`オプションを指定すると、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)によって `BeginXXX/EndXXX` 各サービス操作のメソッドが生成されます。これにより、バックグラウンドスレッドでリモートサービスへの実行時間の長い呼び出しが行われる可能性があります。  
   
 ## <a name="wcf-in-multi-homed-or-multi-named-scenarios"></a>マルチホーム シナリオまたはマルチネーム シナリオでの WCF  
- IIS Web ファーム内に WCF サービスを展開できます。この場合、一連のコンピューターが共通の外部名 (など`http://www.contoso.com`) を共有していても、異なるホスト名`http://www.contoso.com`によって個別にアドレス指定されます (たとえば、2つの異なるコンピューターにトラフィックを転送する可能性があります)。`http://machine1.internal.contoso.com` と`http://machine2.internal.contoso.com`の名前が付けられます)。 この展開シナリオは WCF で完全にサポートされていますが、サービスのメタデータ (Web サービス記述言語) に正しい (外部の) ホスト名を表示するには、WCF サービスをホストする IIS Web サイトの特別な構成が必要です。  
+ WCF サービスは、一連のコンピューターが共通の外部名 (など) を共有し、 `http://www.contoso.com` 異なるホスト名によって個別にアドレス指定される IIS Web ファーム内に配置できます (たとえば、 `http://www.contoso.com` とという名前の2つの異なるコンピューターにトラフィックを転送する場合があり `http://machine1.internal.contoso.com` `http://machine2.internal.contoso.com` ます)。 この展開シナリオは WCF で完全にサポートされていますが、サービスのメタデータ (Web サービス記述言語) に正しい (外部の) ホスト名を表示するには、WCF サービスをホストする IIS Web サイトの特別な構成が必要です。  
   
- WCF によって生成されるサービスメタデータに正しいホスト名が表示されるようにするには、明示的なホスト名を使用するように WCF サービスをホストする IIS Web サイトの既定の id を構成します。 たとえば、 `www.contoso.com`ファーム内に存在するコンピューターでは、HTTP の場合は *:80: www. contoso .com、HTTPS の場合は 443 \*: www. contoso .com という IIS サイトバインドを使用する必要があります。  
+ WCF によって生成されるサービスメタデータに正しいホスト名が表示されるようにするには、明示的なホスト名を使用するように WCF サービスをホストする IIS Web サイトの既定の id を構成します。 たとえば、ファーム内に存在するコンピューターで `www.contoso.com` は、HTTP の場合は *:80: www. contoso .com、HTTPS の場合は 443: www. contoso .com という IIS サイトバインドを使用する必要があり \* ます。  
   
  Microsoft 管理コンソール (MMC) スナップインを使用して、IIS Web サイト バインディングを構成できます。  
   
 ## <a name="application-pools-running-in-different-user-contexts-overwrite-assemblies-from-other-accounts-in-the-temporary-folder"></a>異なるユーザー コンテキストで実行されるアプリケーション プールが、一時フォルダー内の他のアカウントのアセンブリを上書きする  
  異なるユーザーコンテキストで実行されているアプリケーションプールが、一時的な ASP.NET files フォルダー内の他のアカウントのアセンブリを上書きできないようにするには、アプリケーションごとに異なる id と一時フォルダーを使用します。 たとえば、/Application1 と /Application2 という 2 つの仮想アプリケーションがある場合は、2 つの異なる ID を使用して、A と B の 2 つのアプリケーション プールを作成できます。 アプリケーション プール A は、一方のユーザー ID (user1) の下で、アプリケーション プール B は、もう一方のユーザー ID (user2) の下で実行でき、/Application1 が A を、/Application2 が B を使用するように構成します。  
   
- Web.config では、> を使用して\< system.web/compilation/@tempFolder一時フォルダーを構成できます。 /Application1 の場合、"c:\tempForUser1" にすることができ、アプリケーション2起動には "c:\tempForUser2" を指定できます。 これらのフォルダーに対応する書き込みアクセス許可を 2 つの ID に与えます。  
+ Web.config では、を使用して一時フォルダーを構成でき \<system.web/compilation/@tempFolder> ます。 /Application1 の場合、"c:\tempForUser1" にすることができ、アプリケーション2起動には "c:\tempForUser2" を指定できます。 これらのフォルダーに対応する書き込みアクセス許可を 2 つの ID に与えます。  
   
  これで、user2 は、(c:\tempForUser1 の下にある) /Application2 のコード生成フォルダーを変更できなくなります。  
   
@@ -51,13 +51,13 @@ ms.locfileid: "69957215"
   
 ```xml  
 <system.serviceModel>  
-    <serviceHostingEnvironment aspNetCompatibilityEnabled="false" />      
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="false" />
   </system.serviceModel>  
   <system.webServer>  
     <modules>  
       <remove name="ServiceModel"/>  
-      <add name="ServiceModel"   
-           preCondition="integratedMode,runtimeVersionv2.0"   
+      <add name="ServiceModel"
+           preCondition="integratedMode,runtimeVersionv2.0"
            type="System.ServiceModel.Activation.ServiceHttpModule, System.ServiceModel,Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>  
     </modules>  
     </system.webServer>  
@@ -67,21 +67,21 @@ ms.locfileid: "69957215"
   
 ```xml  
 <system.serviceModel>  
-    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" />      
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" />
   </system.serviceModel>  
   <system.webServer>  
     <handlers>  
           <clear/>  
-          <add name="TestAsyncHttpHandler"   
-               path="*.svc"   
-               verb="*"   
-               type="System.ServiceModel.Activation.ServiceHttpHandlerFactory, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"           
+          <add name="TestAsyncHttpHandler"
+               path="*.svc"
+               verb="*"
+               type="System.ServiceModel.Activation.ServiceHttpHandlerFactory, System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
                />  
-    </handlers>      
+    </handlers>
   </system.webServer>  
 ```  
   
 ## <a name="see-also"></a>関連項目
 
-- [サービスホスティングのサンプル](../samples/hosting.md)
-- [AppFabric のホスティング機能](https://go.microsoft.com/fwlink/?LinkId=201276)
+- [サービス ホスト サンプル](../samples/hosting.md)
+- [AppFabric のホスティング機能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

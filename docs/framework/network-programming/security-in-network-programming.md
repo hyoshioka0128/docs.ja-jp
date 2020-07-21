@@ -1,5 +1,6 @@
 ---
 title: ネットワーク プログラミングにおけるセキュリティ - .NET Framework
+description: .NET Framework System.Net 名前空間クラスでサポートされている人気のアプリケーション認証メカニズムとコード アクセス許可について説明します。
 ms.date: 03/14/2018
 helpviewer_keywords:
 - sending data, Internet security
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
 ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
-ms.openlocfilehash: ae8451089dc645c925848489a61c5fb55c468032
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 546e7223ba4af3029a798fb3edfb503c07e1ab4a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047303"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502172"
 ---
 # <a name="security-in-network-programming"></a>ネットワーク プログラミングにおけるセキュリティ
 
@@ -26,8 +27,8 @@ ms.locfileid: "71047303"
 ## <a name="in-this-section"></a>このセクションの内容
 
 [.NET Framework でのトランスポート層セキュリティ (TLS) のベスト プラクティス](tls.md)  
-.NET Framwork での TLS ベスト プラクティスについて説明します。
- 
+.NET Framework での TLS ベスト プラクティスについて説明します。
+
 [Secure Sockets Layer の使用](using-secure-sockets-layer.md)  
 SSL (Secure Sockets Layer) 接続を使用する方法について説明します。  
   

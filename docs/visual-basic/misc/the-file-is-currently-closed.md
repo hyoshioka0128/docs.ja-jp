@@ -2,12 +2,12 @@
 title: ファイルは現在閉じられています。
 ms.date: 07/20/2015
 ms.assetid: 095c38ae-a741-4b46-b099-bc6826a49c83
-ms.openlocfilehash: 79d08fc8f970ded7a616e576f73c295ab8414bb8
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: cbe432175a437ad4fc87c9528397985e04d9f18c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912628"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357674"
 ---
 # <a name="the-file-is-currently-closed"></a>ファイルは現在閉じられています。
 ファイルが開いているときにのみ実行できる操作を実行しようとしますが、現在、ファイルは閉じられています。  
@@ -18,5 +18,5 @@ ms.locfileid: "64912628"
   
 ## <a name="see-also"></a>関連項目
 
-- [My.Computer.FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)
-- [Visual Basic におけるファイル アクセス](../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)
+- [マイファイル (コンピューター)](xref:Microsoft.VisualBasic.FileIO.FileSystem)
+- [Visual Basic におけるファイル アクセス](../developing-apps/programming/drives-directories-files/file-access.md)

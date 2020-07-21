@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 535a6839-c443-405b-a6f4-e2af90725d5b
 topic_type:
 - apiref
-ms.openlocfilehash: 25c208c98802be540bde7532c53798e6f7b35446
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 48ac09e1862ae58e79707235e891f72920de1251
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445954"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500560"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler メソッド
 指定されたプロファイラーを、指定されたプロセスにアタッチします。  
@@ -37,25 +37,32 @@ HRESULT AttachProfiler(
   [in] UINT cbClientData);                          // optional  
 ```  
   
-## <a name="parameters"></a>パラメーター  
- `dwProfileeProcessID`  
- [in] プロファイラーをアタッチする必要があるプロセスのプロセス ID。 64 ビット コンピューターでは、プロファイル対象のプロセスのビット数は `AttachProfiler` を呼び出しているトリガー プロセスのビット数に一致する必要があります。 `AttachProfiler` が呼び出されるユーザー アカウントに管理特権がある場合は、システム上のどのプロセスもターゲット プロセスにすることができます。 それ以外の場合は、同じユーザー アカウントがターゲット プロセスを所有している必要があります。  
+## <a name="parameters"></a>パラメーター
+
+- `dwProfileeProcessID`
+
+  \[in] プロファイラーをアタッチするプロセスのプロセス ID。 64 ビット コンピューターでは、プロファイル対象のプロセスのビット数は `AttachProfiler` を呼び出しているトリガー プロセスのビット数に一致する必要があります。 `AttachProfiler` が呼び出されるユーザー アカウントに管理特権がある場合は、システム上のどのプロセスもターゲット プロセスにすることができます。 それ以外の場合は、同じユーザー アカウントがターゲット プロセスを所有している必要があります。
+
+- `dwMillisecondsMax`
+
+  \[では、が完了するまでの時間 (ミリ秒単位) `AttachProfiler` 。 トリガー プロセスは、特定のプロファイラーが初期化を完了するために十分であることがわかっているタイムアウトを渡す必要があります。
   
- `dwMillisecondsMax`  
- [in] `AttachProfiler` が完了するまでの時間 (ミリ秒単位)。 トリガー プロセスは、特定のプロファイラーが初期化を完了するために十分であることがわかっているタイムアウトを渡す必要があります。  
-  
- `pClsidProfiler`  
- [in] 読み込まれるプロファイラーの CLSID へのポインター。 トリガー プロセスでは、`AttachProfiler` が戻った後にこのメモリを再利用できます。  
-  
- `wszProfilerPath`  
- [in] 読み込まれるプロファイラーの DLL ファイルへの完全パス。 この文字列に含める文字数は、null 終端文字も含めて 260 文字以内にする必要があります。 `wszProfilerPath` が null または空の文字列である場合、共通言語ランタイム (CLR: Common Language Runtime) は、`pClsidProfiler` が示す CLSID のレジストリ内を探してプロファイラーの DLL ファイルの場所を見つけることを試みます。  
-  
- `pvClientData`  
- から[ICorProfilerCallback3:: InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md)メソッドによってプロファイラーに渡されるデータへのポインター。 トリガー プロセスでは、`AttachProfiler` が戻った後にこのメモリを再利用できます。 `pvClientData` が null の場合、`cbClientData` を 0 (ゼロ) にする必要があります。  
-  
- `cbClientData`  
- [in] `pvClientData` がポイントするデータのサイズ (バイト単位)。  
-  
+- `pClsidProfiler`
+
+  \[) 読み込まれるプロファイラーの CLSID へのポインター。 トリガー プロセスでは、`AttachProfiler` が戻った後にこのメモリを再利用できます。
+
+- `wszProfilerPath`
+
+  \[in] 読み込まれるプロファイラーの DLL ファイルへの完全パス。 この文字列に含める文字数は、null 終端文字も含めて 260 文字以内にする必要があります。 `wszProfilerPath` が null または空の文字列である場合、共通言語ランタイム (CLR: Common Language Runtime) は、`pClsidProfiler` が示す CLSID のレジストリ内を探してプロファイラーの DLL ファイルの場所を見つけることを試みます。
+
+- `pvClientData`
+
+  \[では、 [ICorProfilerCallback3:: InitializeForAttach](icorprofilercallback3-initializeforattach-method.md)メソッドによってプロファイラーに渡されるデータへのポインター。 トリガー プロセスでは、`AttachProfiler` が戻った後にこのメモリを再利用できます。 `pvClientData` が null の場合、`cbClientData` を 0 (ゼロ) にする必要があります。
+
+- `cbClientData`
+
+  \[in] が指すデータのサイズ (バイト単位) `pvClientData` 。
+
 ## <a name="return-value"></a>戻り値  
  このメソッドは、次の特定の HRESULT を返します。  
   
@@ -72,25 +79,25 @@ HRESULT AttachProfiler(
 |HRESULT_FROM_WIN32(ERROR_TIMEOUT)|プロファイラーの読み込みを開始せずにタイムアウトの時間切れになりました。 アタッチ操作は再試行できます。 ターゲット プロセスのファイナライザーがタイムアウト値よりも長く実行されると、タイムアウトが発生します。|  
 |E_INVALIDARG|1 つ以上のパラメーターの値が無効です。|  
 |E_FAIL|他の何らかの未指定のエラーが発生しました。|  
-|その他のエラー コード|プロファイラーの[ICorProfilerCallback3:: InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md)メソッドが失敗を示す hresult を返した場合、`AttachProfiler` は同じ hresult を返します。 この場合、E_NOTIMPL は CORPROF_E_PROFILER_NOT_ATTACHABLE に変換されます。|  
+|その他のエラー コード|プロファイラーの[ICorProfilerCallback3:: InitializeForAttach](icorprofilercallback3-initializeforattach-method.md)メソッドが失敗を示す hresult を返した場合、は `AttachProfiler` その同じ hresult を返します。 この場合、E_NOTIMPL は CORPROF_E_PROFILER_NOT_ATTACHABLE に変換されます。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
   
 ## <a name="memory-management"></a>メモリ管理  
- COM 規則に従うと、`AttachProfiler` パラメーターが示すデータのメモリの割り当てと割り当て解除の責任は `pvClientData` の呼び出し元 (たとえば、プロファイラーの開発者が作成したトリガー コード) にあります。 CLR は `AttachProfiler` の呼び出しを実行するときに、`pvClientData` が示すメモリをコピーし、それを対象プロセスに送信します。 対象プロセス内の CLR が `pvClientData` ブロックのコピーを受信すると、`InitializeForAttach` メソッドを通じてプロファイラーにそのブロックを渡してから、対象プロセスから `pvClientData` ブロックのコピーを解放します。  
+ COM 規則に従うと、`pvClientData` パラメーターが示すデータのメモリの割り当てと割り当て解除の責任は `AttachProfiler` の呼び出し元 (たとえば、プロファイラーの開発者が作成したトリガー コード) にあります。 CLR は `AttachProfiler` の呼び出しを実行するときに、`pvClientData` が示すメモリをコピーし、それを対象プロセスに送信します。 対象プロセス内の CLR が `pvClientData` ブロックのコピーを受信すると、`InitializeForAttach` メソッドを通じてプロファイラーにそのブロックを渡してから、対象プロセスから `pvClientData` ブロックのコピーを解放します。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerInfo3 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [プロファイル](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerCallback インターフェイス](icorprofilercallback-interface.md)
+- [ICorProfilerInfo3 インターフェイス](icorprofilerinfo3-interface.md)
+- [プロファイリングのインターフェイス](profiling-interfaces.md)
+- [プロファイル](index.md)

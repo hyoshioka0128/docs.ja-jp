@@ -1,6 +1,7 @@
 ---
 title: 例外処理 (タスク並列ライブラリ)
-ms.date: 03/30/2017
+description: .NET のタスク並列ライブラリ (TPL) を使用した例外処理について確認します。 入れ子にされた例外集計、内部例外、監視されていないタスクの例外などを参照します。
+ms.date: 04/20/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, exceptions
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
-ms.openlocfilehash: 12777a5f34b8aadcc80977b8796fc2cd53c626a8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f1c1a994f4b3a8df0556a0190bc4eacb63f2921e
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134251"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662538"
 ---
 # <a name="exception-handling-task-parallel-library"></a>例外処理 (タスク並列ライブラリ)
 
@@ -63,7 +64,7 @@ ms.locfileid: "73134251"
 
 ## <a name="exceptions-that-indicate-cooperative-cancellation"></a>他の処理との連携によるキャンセル処理を示す例外
 
-タスク内のユーザー コードがキャンセル要求に応答する場合の正しいプロシージャは、その要求が伝えられたキャセル トークンに渡すために <xref:System.OperationCanceledException> をスローすることです。 例外が反映される前に、タスク インスタンスによって、例外内のトークンがそのタスクが作成されたときに渡されたトークンと比較されます。 それらが同じである場合、タスクは <xref:System.Threading.Tasks.TaskCanceledException> でラップされた <xref:System.AggregateException>を反映します。これは、内部例外を調べると確認できます。 ただし、呼び出し元のスレッドがタスクを待機していない場合、このような特定の例外は反映されません。 詳細については、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」をご覧ください。
+タスク内のユーザー コードがキャンセル要求に応答する場合の正しいプロシージャは、その要求が伝えられたキャセル トークンに渡すために <xref:System.OperationCanceledException> をスローすることです。 例外が反映される前に、タスク インスタンスによって、例外内のトークンがそのタスクが作成されたときに渡されたトークンと比較されます。 それらが同じである場合、タスクは <xref:System.Threading.Tasks.TaskCanceledException> でラップされた <xref:System.AggregateException>を反映します。これは、内部例外を調べると確認できます。 ただし、呼び出し元のスレッドがタスクを待機していない場合、このような特定の例外は反映されません。 詳細については、「[タスクのキャンセル](task-cancellation.md)」をご覧ください。
 
 [!code-csharp[TPL_Exceptions#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_exceptions/cs/exceptions.cs#4)]
 [!code-vb[TPL_Exceptions#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_exceptions/vb/tpl_exceptions.vb#4)]
@@ -89,7 +90,14 @@ ms.locfileid: "73134251"
 [!code-csharp[TPL_Exceptions#27](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_exceptions/cs/exceptionprop21.cs#27)]
 [!code-vb[TPL_Exceptions#27](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_exceptions/vb/exceptionprop21.vb#27)]
 
-実際のアプリケーションでは、継続のデリゲートで例外に関する詳細情報を記録して、新しいタスクを作成して例外から回復することが考えられます。
+重要なアプリケーションでは、継続のデリゲートで例外に関する詳細情報を記録して、新しいタスクを作成して例外から回復することが考えられます。 タスクで障害が発生した場合は、次の式によって例外をスローします。
+
+- `await task`
+- `task.Wait()`
+- `task.Result`
+- `task.GetAwaiter().GetResult()`
+
+スローされた例外を処理したり観察したりするには、[`try-catch`](../../csharp/language-reference/keywords/try-catch.md) ステートメントを使用します。 <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> プロパティにアクセスして例外を観察する方法もあります。
 
 ## <a name="unobservedtaskexception-event"></a>UnobservedTaskException イベント
 
@@ -97,4 +105,4 @@ ms.locfileid: "73134251"
 
 ## <a name="see-also"></a>関連項目
 
-- [タスク並列ライブラリ (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+- [タスク並列ライブラリ (TPL)](task-parallel-library-tpl.md)

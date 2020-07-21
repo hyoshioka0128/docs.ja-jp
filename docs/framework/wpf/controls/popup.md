@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 36a4320f-91ce-4f5f-9621-7934de3eff77
 ms.openlocfilehash: 3b43456de1b161763c6197956003c9e7f07135fc
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61770609"
 ---
 # <a name="popup"></a>ポップアップ
-<xref:System.Windows.Controls.Primitives.Popup>コントロールは、現在のアプリケーション ウィンドウから浮遊した別のウィンドウにコンテンツを表示します。  
+<xref:System.Windows.Controls.Primitives.Popup> コントロールによって、現在のアプリケーション ウィンドウの上でフローティングする別ウィンドウにコンテンツが表示されます。  
   
- 次の図は、<xref:System.Windows.Controls.Primitives.Popup>コントロールを配置した、<xref:System.Windows.Controls.Button>その親は。  
+ 次の図では、その親である <xref:System.Windows.Controls.Button> との相対で配置される <xref:System.Windows.Controls.Primitives.Popup> コントロールを示します。  
   
  ![ポップアップの図](./media/popup/popup-picture-button.jpg)  
   
@@ -28,7 +28,7 @@ ms.locfileid: "61770609"
  [ポップアップの配置動作](popup-placement-behavior.md)  
  [方法トピック](popup-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.Popup>  
   
 ## <a name="related-sections"></a>関連項目

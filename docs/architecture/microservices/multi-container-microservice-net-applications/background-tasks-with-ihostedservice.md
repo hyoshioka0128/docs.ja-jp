@@ -1,13 +1,13 @@
 ---
 title: IHostedService と BackgroundService クラスを使ってマイクロサービスのバックグラウンド タスクを実装する
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | マイクロサービスの .NET Core でバックグラウンド タスクを実装する IHostedService と BackgroundService を使用する新しいオプションについて理解します。
-ms.date: 01/07/2019
-ms.openlocfilehash: d289d8ccc737fa9fc13b95da44e4b617b431f96a
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: fd26d0444312d3525ad95b2273f28a6ceaa27911
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737199"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988337"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>IHostedService と BackgroundService クラスを使ってマイクロサービスのバックグラウンド タスクを実装する
 
@@ -21,15 +21,15 @@ ms.locfileid: "73737199"
 
 **図 6-26**。 WebHost と Host で IHostedService を使用した場合の比較
 
-ASP.NET Core 1.x および 2.x では、Web アプリのバックグラウンド プロセスの IWebHost をサポートしています。 .NET Core 2.1 では、プレーンなコンソール アプリを使用したバックグラウンド プロセス用の IHost をサポートしています。 `WebHost` と `Host` の違いに注目してください。
+ASP.NET Core 1.x および 2.x では、Web アプリのバックグラウンド プロセスの `IWebHost` がサポートされています。 .NET Core 2.1 以降のバージョンでは、プレーンなコンソール アプリを使用したバックグラウンド プロセス用の `IHost` がサポートされています。 `WebHost` と `Host` の違いに注目してください。
 
-ASP.NET Core 2.0 の `WebHost` (`IWebHost` を実装する基底クラス) は、MVC Web アプリや Web API サービスを実装している場合など、HTTP サーバー機能をプロセスに提供するために使用するインフラストラクチャ成果物です。 ASP.NET Core での新しいインフラストラクチャのすべての長所を提供することで、依存関係の挿入を使用、要求パイプラインなどへのミドルウェアの挿入、およびこれらの `IHostedServices` をバックグラウンド タスクに正確に使用することを可能にします。
+ASP.NET Core 2.0 の `WebHost` (`IWebHost` を実装する基底クラス) は、MVC Web アプリや Web API サービスを実装する場合など、HTTP サーバー機能をプロセスに提供するために使用されるインフラストラクチャ成果物です。 ASP.NET Core の新しいインフラストラクチャのすべての長所を提供することで、依存関係の挿入の使用や、要求パイプラインへのミドルウェアの挿入などを実行できます。 `WebHost` では、これらが、バックグラウンド タスク用の `IHostedServices` を同じように使用されます。
 
 `Host` (`IHost` を実装する基底クラス) は .NET Core 2.1 で実装されました。 基本的に、`Host` を使用すると、`WebHost` を使用した場合と同様のインフラストラクチャ (依存関係の挿入、ホステッド サービスなど) ができますが、このケースでは、ホストとしてシンプルでより軽量なプロセスが必要なだけで、MVC、Web API または HTTP サーバー機能は関係ありません。
 
-そのため、IHost を使用して特殊化されたホスト プロセスを作成してホステッド サービス以外 (`IHostedServices` をホスティングするためだけに作成されたマイクロサービスなど) は処理しないことを選択するか、または代わりに既存の ASP.NET Core `WebHost` (既存の ASP.NET Core Web API または MVC アプリ) を拡張することを選択できます。
+そのため、`IHost` を使用して特殊化されたホスト プロセスを作成してホステッド サービス以外 (`IHostedServices` をホスティングするためだけに作成されたマイクロサービスなど) は処理しないことを選択するか、代わりに既存の ASP.NET Core `WebHost` (既存の ASP.NET Core Web API または MVC アプリ) を拡張することを選択できます。
 
-ビジネスと拡張性のニーズに応じて、いずれの方法にも長所と短所があります。 つまり、基本的には、バックグラウンド タスクが HTTP (IWebHost) と関係ない場合、IHost を使用する必要があります。
+ビジネスと拡張性のニーズに応じて、いずれの方法にも長所と短所があります。 つまり、基本的には、バックグラウンド タスクが HTTP (`IWebHost`) と関係ない場合は、`IHost` を使用する必要があります。
 
 ## <a name="registering-hosted-services-in-your-webhost-or-host"></a>WebHost または Host でホステッド サービスを登録する
 
@@ -43,7 +43,7 @@ SignalR はホステッド サービスを使用している成果物の一例�
 - `ILogger` などの共通サービスを共有しながら、Web アプリのバックグラウンドでメッセージ キューからのメッセージの処理。
 - `Task.Run()` で開始されるバックグラウンド タスク。
 
-基本的に、IHostedService に基づいて、これらのアクションのいずれかをバックグラウンド タスクにオフロードできます。
+基本的に、`IHostedService` を実装するバックグラウンド タスクにこれらのアクションのいずれかをオフロードできます。
 
 1 つまたは複数の `IHostedServices` を `WebHost` または `Host` に追加するには、<xref:Microsoft.Extensions.DependencyInjection.ServiceCollectionHostedServiceExtensions.AddHostedService%2A> ASP.NET Core `WebHost` (または .NET Core 2.1 以降の `Host`) の拡張メソッドでそれらを登録します。 基本的に、次のコードのように、一般的な ASP.NET WebHost から、`Startup` クラスの使い慣れた `ConfigureServices()` メソッド内でホステッド サービスを登録する必要があります。
 
@@ -64,7 +64,7 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 
 `IHostedService` バックグラウンド タスクの実行は、アプリケーション (さらに言えば、ホストまたはマイクロサービス) の有効期間に合わせて調整されます。 アプリケーションの起動時にタスクを登録して、いくつかの正常なアクションを行うか、アプリケーションのシャットダウン時にクリーンアップすることができます。
 
-`IHostedService` を使用しない場合は、いつでもバックグラウンド スレッドを開始して任意のタスクを実行することができます。 正常なクリーンアップ アクションを実行する機会を持たずにスレッドが単に強制終了されるときは、差はちょうどアプリのシャットダウン時間になります。
+`IHostedService` を使用しない場合は、いつでもバックグラウンド スレッドを開始して任意のタスクを実行することができます。 正常なクリーンアップ アクションを実行する機会がないままスレッドが単に強制終了される場合、差はちょうどアプリのシャットダウン時間になります。
 
 ## <a name="the-ihostedservice-interface"></a>IHostedService インターフェイス
 
@@ -178,7 +178,7 @@ public class GracePeriodManagerService : BackgroundService
                                      IEventBus eventBus,
                                      ILogger<GracePeriodManagerService> logger)
     {
-        //Constructor’s parameters validations...
+        // Constructor's parameters validations...
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -232,23 +232,23 @@ WebHost.CreateDefaultBuilder(args)
 
 ### <a name="deployment-considerations-and-takeaways"></a>展開に関する注意事項と習得事項
 
-ASP.NET Core `WebHost` または .NET Core `Host` を展開する方法が最終的なソリューションに影響を与える可能性があることに注意してください。 たとえば、`WebHost` を IIS または正規の Azure App Service に展開する場合、アプリ プールのリサイクルが原因でホストがシャットダウンされる場合があります。 ただし、ホストをコンテナーとして Kubernetes や Service Fabric などのオーケストレーターに展開する場合は、ご利用のホストのライブ インスタンスの確実な数を制御することができます。 さらに、Azure Functions のように、これらのシナリオ用に特別に作成されたクラウド内で、他の方法を検討することができます。 最後になりますが、サービスを常時実行する必要があるとき、および Windows Server にデプロイする場合、Windows Service を使用できることがあります。
+ASP.NET Core `WebHost` または .NET Core `Host` を展開する方法が最終的なソリューションに影響を与える可能性があることに注意してください。 たとえば、`WebHost` を IIS または正規の Azure App Service に展開する場合、アプリ プールのリサイクルが原因でホストがシャットダウンされる場合があります。 ただし、ホストをコンテナーとして Kubernetes などのオーケストレーターに展開する場合は、ご利用のホストのライブ インスタンスの確実な数を制御することができます。 さらに、Azure Functions のように、これらのシナリオ用に特別に作成されたクラウド内で、他の方法を検討することができます。 最後になりますが、サービスを常時実行する必要があるとき、および Windows Server にデプロイする場合、Windows Service を使用できることがあります。
 
 ただし、アプリ プールに展開された `WebHost` に対しても、適用可能なアプリケーションのメモリ内キャッシュの再作成またはフラッシュのようなシナリオがあります。
 
-`IHostedService` インターフェイスでは、(.NET Core 2.0 の) ASP.NET Core Web アプリケーションで、または (`IHost` を使用して .NET Core 2.1 で開始する) 任意のプロセス/ホストでバックグラウンド タスクを開始する便利な方法が提供されます。 その主な利点は、ホスト自体がシャットダウンするときに、バックグラウンド タスクのコードをクリーンアップするため、適切にキャンセルする機会が得られることです。
+`IHostedService` インターフェイスには、(.NET Core 2.0 以降のバージョンの) ASP.NET Core Web アプリケーションで、または (`IHost` を使用して .NET Core 2.1 で開始する) 任意のプロセス/ホストでバックグラウンド タスクを開始する便利な方法が用意されています。 その主な利点は、ホスト自体がシャットダウンするときに、バックグラウンド タスクのコードをクリーンアップするため、適切にキャンセルする機会が得られることです。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
-- **ASP.NET Core/Standard 2.0 でスケジュールされたタスクをビルドする**
+- **ASP.NET Core/Standard 2.0 でスケジュールされたタスクをビルドする** \
   <https://blog.maartenballiauw.be/post/2017/08/01/building-a-scheduled-cache-updater-in-aspnet-core-2.html>
 
-- **ASP.NET Core 2.0 で IHostedService を実装する**
+- **ASP.NET Core 2.0 で IHostedService を実装する** \
   <https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice>
 
-- **ASP.NET Core 2.1 を使用した GenericHost サンプル**
+- **ASP.NET Core 2.1 を使用した GenericHost サンプル** \
   <https://github.com/aspnet/Hosting/tree/release/2.1/samples/GenericHostSample>
 
->[!div class="step-by-step"]
->[前へ](test-aspnet-core-services-web-apps.md)
->[次へ](implement-api-gateways-with-ocelot.md)
+> [!div class="step-by-step"]
+> [前へ](test-aspnet-core-services-web-apps.md)
+> [次へ](implement-api-gateways-with-ocelot.md)

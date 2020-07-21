@@ -4,27 +4,27 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: e22e5812-89c6-41f0-9302-bb899a46dbff
-ms.openlocfilehash: da0695aff9447355b1fc44a033c1b4a1cc224435
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: f1c819333225c22efb85946001a1fc8340d57989
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785886"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150728"
 ---
 # <a name="the-load-method"></a>Load メソッド
-<xref:System.Data.DataTable.Load%2A> メソッドを使用して、データ ソースの行を <xref:System.Data.DataTable> に読み込むことができます。 これはオーバーロードされたメソッドであり、最も単純な形式で、1つのパラメーターである**DataReader**を受け取ります。 この形式では、単に行を含む**DataTable**が読み込まれます。 必要に応じて、 **LoadOption**パラメーターを指定して、データを**DataTable**に追加する方法を制御できます。  
+<xref:System.Data.DataTable.Load%2A> メソッドを使用して、データ ソースの行を <xref:System.Data.DataTable> に読み込むことができます。 これはオーバーロードされたメソッドで、最も単純な形式で単一の **DataReader** パラメーターを受け取ります。 この形式により、このメソッドでは **DataTable** に対する行の読み込みのみが行われます。 または、**LoadOption** パラメーターを指定して **DataTable** へのデータの追加方法を制御することもできます。  
   
- **LoadOption**パラメーターは、 **DataTable**に既にデータ行が含まれている場合に特に便利です。これは、データソースからの受信データをテーブル内の既存のデータと結合する方法を記述するためです。 たとえば、 **PreserveCurrentValues** (既定値) は、行が**DataTable**に**追加さ**れたとしてマークされている場合に、**元**の値または各列がデータソースの一致する行の内容に設定されることを指定します。 **現在**の値は、行が追加されたときに割り当てられた値を保持し、その行の**RowState**は**Changed**に設定されます。  
+ **LoadOption** パラメーターは、データ ソースからの受信データをテーブルに既に格納されているデータと組み合わせる方法が記述されているため、**DataTable** に既にデータ行が含まれている場合に特に便利です。 たとえば、**PreserveCurrentValues** (既定値) は、**DataTable** の行が **Added** としてマークされ、データ ソースの行に一致する内容に対して **Original** 値または各列が設定されている場合に指定します。 **Current** 値は、行が追加されたときに割り当てられた値が保持され、その行の **RowState** は **Changed** に設定されます。  
   
  <xref:System.Data.LoadOption> 列挙値の簡単な説明を次の表に示します。  
   
 |LoadOption の値|説明|  
 |----------------------|-----------------|  
-|**OverwriteRow**|受信した行の**PrimaryKey**値が**DataTable**に既に存在する行と同じ場合、各列の**元**の値と**現在**の値は、受信した行の値に置き換えられ、 **RowState**プロパティはに設定されます。**変更なし**。<br /><br /> **DataTable**にまだ存在しないデータソースからの行は、 **RowState**値が**Unchanged のまま**追加されます。<br /><br /> このオプションを有効にすると、データソースの内容と一致するように**DataTable**の内容が更新されます。|  
-|**PreserveCurrentValues (既定値)**|入力方向の行の**PrimaryKey**値が**DataTable**に既に存在する行と同じ場合、**元**の値は受信した行の内容に設定され、**現在**の値は変更されません。<br /><br /> **RowState**が**追加**または**変更**されると、 **[変更済み]** に設定されます。<br /><br /> **RowState**が**削除**された場合、**削除**されたままになります。<br /><br /> **DataTable**にまだ存在しないデータソースからの行が追加され、 **RowState**は**Unchanged**に設定されます。|  
-|**UpdateCurrentValues**|受信した行の**PrimaryKey**値が**DataTable**内の既存の行と同じ場合、**現在**の値が**元**の値にコピーされ、**現在**の値が受信した行の内容に設定されます。<br /><br /> **DataTable**の**RowState**が**追加**された場合、 **RowState**は**追加さ**れたままになります。 **変更**または**削除済み**としてマークされた行については、 **RowState**が**変更**されます。<br /><br /> **DataTable**に存在しないデータソースの行が追加され、 **RowState**が**追加**されるように設定されます。|  
+|**OverwriteRow**|読み込まれる行と **DataTable** に既に存在する行で **PrimaryKey** 値が同じ場合、各列の **Original** 値と **Current** 値は読み込まれる行の値に置き換えられ、**RowState** プロパティは **Unchanged** に設定されます。<br /><br /> **DataTable** に存在していなかった行がデータ ソースから読み込まれ、その行の **RowState** 値は **Unchanged** に設定されます。<br /><br /> このオプションは **DataTable** の内容を更新して、データ ソースの内容と一致するようにします。|  
+|**PreserveCurrentValues (既定値)**|読み込まれる行と **DataTable** に既に存在する行の **PrimaryKey** 値が同じ場合、**Original** 値には読み込まれる行の内容が設定されますが、**Current** 値は変更されません。<br /><br /> **RowState** が **Added** または **Modified** の場合、この値は **Modified** に設定されます。<br /><br /> **RowState** が **Deleted** であった場合、この値は **Deleted** のままとなります。<br /><br /> **DataTable** に存在していなかった行がデータ ソースから読み込まれ、その行の **RowState** は **Unchanged** に設定されます。|  
+|**UpdateCurrentValues**|読み込まれる行と **DataTable** に既に存在する行の **PrimaryKey** 値が同じ場合、**Current** 値が **Original** 値にコピーされ、**Current** 値には読み込まれる行の内容が設定されます。<br /><br /> **DataTable** の **RowState** が **Added** の場合、**RowState** は **Added** のままとなります。 **Modified** または **Deleted** としてマークされた行の **RowState** は **Modified** になります。<br /><br /> **DataTable** に存在していなかった行がデータ ソースから読み込まれ、その行の **RowState** は **Added** に設定されます。|  
   
- 次のサンプルでは、 **Load**メソッドを使用して、 **Northwind**データベース内の従業員の誕生日の一覧を表示します。  
+ **Load** メソッドを使用して **Northwind** データベースに従業員の誕生日リストを表示する例を次に示します。  
   
 ```vb  
 Private Sub LoadBirthdays(ByVal connectionString As String)  
@@ -35,7 +35,7 @@ Private Sub LoadBirthdays(ByVal connectionString As String)
       " FROM dbo.Employees " & _  
       "ORDER BY BirthDate, LastName, FirstName"  
   
-    ' Open and fill a DataSet.   
+    ' Open and fill a DataSet.
     Dim adapter As SqlDataAdapter = New SqlDataAdapter( _  
         queryString, connectionString)  
     Dim employees As New DataSet  

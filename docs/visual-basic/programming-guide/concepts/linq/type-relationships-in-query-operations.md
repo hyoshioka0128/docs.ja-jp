@@ -11,55 +11,55 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-ms.openlocfilehash: 8c201abef924766d52b1adb084970a24ebea2b50
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 73a287541ddf115510bf6ab5c830eafac370cc3a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350564"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406730"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>クエリ操作での型の関係 (Visual Basic)
 
-[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] クエリ操作で使用される変数は厳密に型指定され、相互に互換性がある必要があります。 厳密な型指定は、データソース、クエリ自体、およびクエリの実行で使用されます。 次の図は、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリを記述するために使用される用語を示しています。 クエリの各部分の詳細については、「[クエリの基本操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)」を参照してください。
+統合言語クエリ (LINQ) のクエリ操作で使用される変数は厳密に型指定されており、互いに互換性がなければなりません。 厳密な型指定は、データ ソースで使用されるほか、クエリそのものや、クエリの実行でも使用されます。 次の図は、LINQ クエリの説明で用いられる用語を示したものです。 クエリの構成要素について詳しくは、「[基本的なクエリ操作 (Visual Basic)](basic-query-operations.md)」を参照してください。
 
-![要素が強調表示されている擬似コードクエリを示すスクリーンショット。](./media/type-relationships-in-query-operations/linq-query-description-terms.png)
+![要素が強調表示された擬似コード クエリを示すスクリーンショット](./media/type-relationships-in-query-operations/linq-query-description-terms.png)
 
-クエリ内の範囲変数の型は、データソース内の要素の型と互換性がある必要があります。 クエリ変数の型は、`Select` 句で定義されている sequence 要素と互換性がある必要があります。 最後に、シーケンス要素の型も、クエリを実行する `For Each` ステートメントで使用されるループコントロール変数の型と互換性がある必要があります。 この厳密な型指定により、コンパイル時に型エラーの識別が容易になります。
+クエリの範囲変数の型には、データ ソース内の要素の型との互換性が必要です。 クエリ変数の型は、`Select` 句で定義されているシーケンス要素と互換性がある必要があります。 最後に、シーケンス要素の型も、クエリを実行する `For Each` ステートメントで使用されるループ制御変数の型と互換性がある必要があります。 この厳密な型指定によって、コンパイル時に発生する型エラーが特定しやすくなります。
 
-Visual Basic は、*暗黙的*な型指定とも呼ばれるローカル型推論を実装することによって、厳密な型指定を容易にします。 この機能は、前の例で使用されており、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] のサンプルとドキュメント全体で使用されています。 Visual Basic では、ローカル型の推論は、`As` 句を指定せずに `Dim` ステートメントを使用するだけで行われます。 次の例では、`city` が文字列として厳密に型指定されています。
+Visual Basic は、ローカル型推論 ("*暗黙の型指定*" とも呼ばれます) を実装することで、厳密な型指定の利便性を高めています。 その機能は、前の例で使用されているほか、LINQ のサンプルやドキュメントの至る所で目にすることができます。 Visual Basic では、単に `As` 句のない `Dim` ステートメントを使用すれば、ローカル型推論が行われます。 次の例の `city` は、文字列として厳密に型指定されます。
 
 [!code-vb[VbLINQTypeRels#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#1)]
 
 > [!NOTE]
-> ローカル型の推論は、`Option Infer` が `On`に設定されている場合にのみ機能します。 詳細については、「 [Option 推論ステートメント](../../../../visual-basic/language-reference/statements/option-infer-statement.md)」を参照してください。
+> ローカル型推論が機能するのは、`Option Infer` が `On` に設定されているときだけです。 詳細については、「[Option Infer ステートメント](../../../language-reference/statements/option-infer-statement.md)」を参照してください。
 
-ただし、クエリでローカル型の推論を使用する場合でも、データソース内の変数、クエリ変数、およびクエリ実行ループの間に同じ型のリレーションシップが存在します。 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] のクエリを記述する場合や、ドキュメントのサンプルやコード例を使用する場合は、これらの型の関係を基本的に理解しておくと便利です。
+ただし、クエリでローカル型推論を使用した場合でも、データ ソース内の変数、クエリ変数、クエリの実行ループの間に存在する型の関係は同じです。 こうした型の関係についての基本的な知識は、LINQ クエリを記述するときや、ドキュメント内のサンプルまたはコード例を扱うときに役立ちます。
 
-データソースから返される型と一致しない範囲変数には、明示的な型を指定する必要がある場合があります。 `As` 句を使用して、範囲変数の型を指定できます。 ただし、変換が[縮小変換](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)であり、`Option Strict` が `On`に設定されている場合、エラーが発生します。 したがって、データソースから取得した値に対して変換を実行することをお勧めします。 <xref:System.Linq.Enumerable.Cast%2A> メソッドを使用して、データソースの値を明示的な範囲変数型に変換できます。 また、`Select` 句で選択した値を、範囲変数の型とは異なる明示的な型にキャストすることもできます。 これらの点を次のコードに示します。
+データ ソースから返された型と一致しない範囲変数には、明示的な型の指定が必要になる場合もあります。 範囲変数の型は、`As` 句を使用して指定できます。 ただし、変換が[縮小変換](../../language-features/data-types/widening-and-narrowing-conversions.md)で、なおかつ `Option Strict` が `On` に設定されているとエラーになります。 したがって変換は、データ ソースから取得された値に対して実行することをお勧めします。 <xref:System.Linq.Enumerable.Cast%2A> メソッドを使用すると、データ ソースから取得された値を、明示的な範囲変数の型に変換することができます。 また、`Select` 句で選択した値を、範囲変数の型とは異なる明示的な型にキャストすることもできます。 以上の点については、次のコードで説明しています。
 
 [!code-vb[VbLINQTypeRels#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#4)]
 
-## <a name="queries-that-return-entire-elements-of-the-source-data"></a>ソースデータの要素全体を返すクエリ
+## <a name="queries-that-return-entire-elements-of-the-source-data"></a>ソース データの要素全体を返すクエリ
 
-次の例は、ソースデータから選択された一連の要素を返す [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] クエリ操作を示しています。 Source、`names`には文字列の配列が含まれており、クエリ出力は、文字 M で始まる文字列を含むシーケンスです。
+次の例は、ソース データから選択された要素のシーケンスを返す LINQ クエリ操作を示しています。 ソース (`names`) には、文字列の配列が格納されます。アルファベットの M で始まる文字列を含んだシーケンスがクエリの出力となります。
 
 [!code-vb[VbLINQTypeRels#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#2)]
 
-これは次のコードと同じですが、はるかに短く、簡単に記述できます。 クエリでのローカル型の推定への依存は、Visual Basic で推奨されるスタイルです。
+次のコードに相当しますが、こちらの方がはるかに短く、記述しやすくなっています。 Visual Basic では、クエリにローカル型推論を使うのが、推奨されるスタイルです。
 
 [!code-vb[VbLINQTypeRels#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#3)]
 
-前のコード例では、型が暗黙的または明示的に決定されているかどうかに関係があります。
+型の指定が暗黙的であれ明示的であれ、前出のコード例には、どちらも次の関係が存在します。
 
-1. データソース内の要素の型である `names`は、クエリ内の範囲変数の型 `name`です。
+1. データ ソース (`names`) に含まれる要素の型は、クエリの範囲変数 (`name`) の型です。
 
-2. 選択されているオブジェクトの種類 (`name`) によって、クエリ変数の型 `mNames`が決まります。 ここで `name` は文字列なので、クエリ変数は Visual Basic の IEnumerable (Of String) です。
+2. 選択したオブジェクト (`name`) の型によって、クエリ変数 (`mNames`) の型が決まります。 ここでは `name` が文字列であるため、クエリ変数は Visual Basic の IEnumerable(Of String) となります。
 
-3. `mNames` で定義されたクエリは、`For Each` ループで実行されます。 ループは、クエリの実行結果を反復処理します。 `mNames`実行すると、は文字列のシーケンスを返し、ループ反復変数、`nm`も文字列になります。
+3. `mNames` で定義されたクエリは、`For Each` ループで実行されます。 このループによって、クエリの実行結果が反復処理されます。 `mNames` は、実行されたときに文字列のシーケンスを返すため、ループの反復変数 (`nm`) も文字列になります。
 
-## <a name="queries-that-return-one-field-from-selected-elements"></a>選択した要素から1つのフィールドを返すクエリ
+## <a name="queries-that-return-one-field-from-selected-elements"></a>選択された要素から 1 つのフィールドを返すクエリ
 
-次の例は、データソースから選択された各要素の1つの部分のみを含むシーケンスを返す [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] クエリ操作を示しています。 このクエリは、データソースとして `Customer` オブジェクトのコレクションを取得し、結果の `Name` プロパティのみを射影します。 顧客名は文字列であるため、クエリは文字列のシーケンスを出力として生成します。
+次の例は、データ ソースから選択された各要素の一部分のみを含んだシーケンスを返す [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] クエリ操作を示しています。 このクエリは、`Customer` オブジェクトのコレクションをそのデータ ソースとして受け取って、`Name` プロパティのみを結果に投影します。 顧客名は文字列なので、クエリは出力として文字列のシーケンスを作成します。
 
 ```vb
 ' Method GetTable returns a table of Customer objects.
@@ -73,15 +73,15 @@ For Each custName In custNames
 Next
 ```
 
-変数間のリレーションシップは、単純な例の場合と似ています。
+単純な方の例と同様、変数間の関係は次のようになります。
 
-1. データソース内の要素の型である `customers`は、クエリ内の範囲変数の型 `cust`です。 この例では、この型は `Customer`です。
+1. データ ソース (`customers`) に含まれる要素の型は、クエリの範囲変数 (`cust`) の型です。 この例では、`Customer` 型が該当します。
 
-2. `Select` ステートメントは、オブジェクト全体ではなく、各 `Customer` オブジェクトの `Name` プロパティを返します。 `Name` が文字列であるため、クエリ変数の `custNames`は、`Customer`ではなく、IEnumerable (Of String) になります。
+2. `Select` ステートメントから返されるのは、オブジェクト全体ではなく、各 `Customer` オブジェクトの `Name` プロパティです。 `Name` は文字列であるため、この場合もクエリ変数 (`custNames`) は IEnumerable(Of String) であって、`Customer` ではありません。
 
-3. `custNames` は文字列のシーケンスを表すため、`For Each` ループの反復変数 `custName`は文字列である必要があります。
+3. `custNames` は文字列のシーケンスを表すので、`For Each` ループの反復変数 (`custName`) も文字列である必要があります。
 
-次の例に示すように、ローカル型の推定を使用しない場合、前の例では記述と理解が煩雑になります。
+ローカル型推論がなければ、前出の例は、もっと書きづらく、また理解しにくいものになるでしょう。その例を次に示します。
 
 ```vb
 ' Method GetTable returns a table of Customer objects.
@@ -98,7 +98,7 @@ Next
 
 ## <a name="queries-that-require-anonymous-types"></a>匿名型を必要とするクエリ
 
-次の例は、より複雑な状況を示しています。 前の例では、すべての変数の型を明示的に指定するのは不便でした。 この例では、これは不可能です。 このクエリの `Select` 句は、データソースの `Customer` 要素全体、または各要素の1つのフィールドを選択するのではなく、元の `Customer` オブジェクトの2つのプロパティ `Name` と `City`を返します。 `Select` 句に対する応答として、コンパイラは、これら2つのプロパティを含む匿名型を定義します。 `For Each` ループで `nameCityQuery` を実行した結果は、新しい匿名型のインスタンスのコレクションになります。 匿名型には使用可能な名前がないため、`nameCityQuery` の型や `custInfo` 明示的に指定することはできません。 つまり、匿名型の場合、`IEnumerable(Of String)`の `String` の代わりに使用する型名はありません。 詳細については、「[匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)」を参照してください。
+次に示したのは、より複雑な状況の例です。 前の例では、すべての変数に対して明示的に型を指定するのは、容易ではありませんでした。 この例では、それが不可能となります。 このクエリの `Select` 句は、データ ソースから `Customer` 要素全体を選択したり、各要素から 1 つのフィールドだけを選択したりするのではなく、元の `Customer` オブジェクトから `Name` と `City` の 2 つのプロパティを返します。 `Select` 句に対する応答として、それら 2 つのプロパティを含んだ匿名型がコンパイラによって定義されます。 `For Each` ループで `nameCityQuery` を実行した結果は、新しい匿名型のインスタンスのコレクションです。 匿名型には有効な名前がないため、`nameCityQuery` と `custInfo` の型を明示的に指定することができません。 つまり、匿名型では、`IEnumerable(Of String)` の `String` の代わりに使用できる型名がないのです。 詳細については、「[匿名型](../../language-features/objects-and-classes/anonymous-types.md)」を参照してください。
 
 ```vb
 ' Method GetTable returns a table of Customer objects.
@@ -112,19 +112,19 @@ For Each custInfo In nameCityQuery
 Next
 ```
 
-前の例のすべての変数の型を指定することはできませんが、リレーションシップは同じままです。
+前の例のすべての変数に型を指定することはできませんが、その関係は変わりません。
 
-1. データソース内の要素の型は、クエリ内の範囲変数の型になります。 この例では、`cust` は `Customer`のインスタンスです。
+1. この場合も、データ ソースに含まれる要素の型は、クエリの範囲変数の型です。 この例の `cust` は、`Customer` のインスタンスです。
 
-2. `Select` ステートメントによって匿名型が生成されるため、クエリ変数の `nameCityQuery`は、匿名型として暗黙的に型指定する必要があります。 匿名型には使用可能な名前がないため、明示的に指定することはできません。
+2. `Select` ステートメントによって匿名型が生成されるため、クエリ変数 (`nameCityQuery`) は、匿名型として暗黙的に型指定する必要があります。 匿名型は、有効な名前を持たないため、明示的に指定することはできません。
 
-3. `For Each` ループ内の反復変数の型は、手順 2. で作成した匿名型です。 型には使用可能な名前がないため、ループ反復変数の型を暗黙的に決定する必要があります。
+3. `For Each` ループにおける反復変数の型は、手順 2. で作成した匿名型です。 この型には有効な名前がないため、ループの反復変数の型は、必然的に暗黙的に指定されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Visual Basic の LINQ の概要](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
-- [匿名型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
-- [ローカル型の推論](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [クエリ](../../../../visual-basic/language-reference/queries/index.md)
+- [Visual Basic の LINQ の概要](getting-started-with-linq.md)
+- [匿名型](../../language-features/objects-and-classes/anonymous-types.md)
+- [ローカル型の推論](../../language-features/variables/local-type-inference.md)
+- [Visual Basic における LINQ の概要](../../language-features/linq/introduction-to-linq.md)
+- [LINQ](../../language-features/linq/index.md)
+- [クエリ](../../../language-reference/queries/index.md)

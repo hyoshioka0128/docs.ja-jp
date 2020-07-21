@@ -2,12 +2,12 @@
 title: シリアル化とメタデータ
 ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
-ms.openlocfilehash: 1805b6ca06d584237303d1366222419da3e8b9ef
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cc9adf0e6627ef3190e74fea5d4f0f3afd581811
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128123"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "81389228"
 ---
 # <a name="serialization-and-metadata"></a>シリアル化とメタデータ
 
@@ -15,7 +15,7 @@ ms.locfileid: "73128123"
   
 - リフレクション ベースのサードパーティ シリアライザー。 この場合、ランタイム ディレクティブ ファイルの変更が必要です。詳細については次のセクションで説明します。  
   
-- .NET Framework クラス ライブラリにある非リフレクション ベースのシリアライザー。 この場合、ランタイム ディレクティブ ファイルの変更が必要なことがあります。詳細については、「[Microsoft のシリアライザー](#Microsoft)」セクションで説明します。  
+- .NET Framework クラスライブラリで、非リフレクションベースのシリアライザーが見つかりました。 この場合、ランタイム ディレクティブ ファイルの変更が必要なことがあります。詳細については、「[Microsoft のシリアライザー](#Microsoft)」セクションで説明します。  
   
 <a name="ThirdParty"></a>
 ## <a name="third-party-serializers"></a>サードパーティ シリアライザー
@@ -28,7 +28,7 @@ ms.locfileid: "73128123"
 <Namespace Name="App.Models" Serialize="Required PublicAndInternal" />  
 ```  
   
- この例で使用されている構文の詳細については、「[\<Namespace> 要素](namespace-element-net-native.md)」を参照してください。  
+ この例で使用されている構文の詳細については、「 [ \<Namespace> Element](namespace-element-net-native.md)」を参照してください。  
   
 <a name="Microsoft"></a>
 ## <a name="microsoft-serializers"></a>Microsoft のシリアライザー
@@ -37,7 +37,7 @@ ms.locfileid: "73128123"
   
 ### <a name="typeof-used-in-the-constructor"></a>コンストラクターで使用される typeof
 
- これらのシリアル化クラスのコンストラクターを呼び出し、メソッド呼び出しC#に[typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator)演算子を含めると、**追加の作業を行う必要はありません**。 たとえば、シリアル化クラス コンストラクターに対する次の各呼び出しでは、`typeof` キーワードがコンストラクターに渡される式の一部として使用されます。  
+ これらのシリアル化クラスのコンストラクターを呼び出し、メソッド呼び出しに C# [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator)演算子を含める場合は、**追加の作業を行う必要はありません**。 たとえば、シリアル化クラス コンストラクターに対する次の各呼び出しでは、`typeof` キーワードがコンストラクターに渡される式の一部として使用されます。  
   
  [!code-csharp[ProjectN#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#5)]  
   
@@ -45,7 +45,7 @@ ms.locfileid: "73128123"
   
 ### <a name="typeof-used-outside-the-constructor"></a>コンストラクターの外部で使用される typeof
 
- 次のコードのように、これらのシリアル化クラスC#のコンストラクターを呼び出し、コンストラクターの <xref:System.Type> パラメーターに指定された式の外側で[typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator)演算子を使用すると、.NET ネイティブコンパイラは型を解決できません。  
+ 次のコードのように、これらのシリアル化クラスのコンストラクターを呼び出し、コンストラクターのパラメーターに指定された式の外部で C# [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator)演算子を使用した場合、 <xref:System.Type> .NET ネイティブコンパイラは型を解決できません。  
   
  [!code-csharp[ProjectN#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#6)]  
   
@@ -55,21 +55,21 @@ ms.locfileid: "73128123"
 <Type Name="DataSet" Browse="Required Public" />  
 ```  
   
- 同様に、次のコードのように、<xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29?displayProperty=nameWithType> などのコンストラクターを呼び出して、シリアル化する追加の <xref:System.Type> オブジェクトの配列を指定すると、.NET ネイティブコンパイラはこれらの型を解決できません。  
+ 同様に、のようなコンストラクターを呼び出し、次のコードのよう <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29> に、シリアル化する追加のオブジェクトの配列を指定すると、 <xref:System.Type> .NET ネイティブコンパイラはこれらの型を解決できません。  
   
  [!code-csharp[ProjectN#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#7)]  
   
- 型ごとに次のようなエントリをランタイム ディレクティブ ファイルに追加する必要があります。  
+各型について、次のようなエントリをランタイムディレクティブファイルに追加します。  
   
 ```xml  
 <Type Name="t" Browse="Required Public" />  
 ```  
   
- この例で使用されている構文の詳細については、「[\<Type> 要素](type-element-net-native.md)」を参照してください。  
+この例で使用されている構文の詳細については、「 [ \<Type> Element](type-element-net-native.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
 - [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](runtime-directives-rd-xml-configuration-file-reference.md)
 - [ランタイム ディレクティブ要素](runtime-directive-elements.md)
-- [\<Type > 要素](type-element-net-native.md)
-- [\<Namespace > 要素](namespace-element-net-native.md)
+- [\<Type>Element](type-element-net-native.md)
+- [\<Namespace>Element](namespace-element-net-native.md)

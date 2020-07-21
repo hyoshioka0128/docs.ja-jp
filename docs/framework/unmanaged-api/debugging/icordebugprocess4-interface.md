@@ -15,38 +15,38 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 1bdc958f2516bcd7c2eb74312fbf478e6d49535a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fcf725ea98fa4351e72cf592f92968ee2233ecb0
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948806"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213583"
 ---
 # <a name="icordebugprocess4-interface"></a>ICorDebugProcess4 インターフェイス
 
-プロセス実行の制御外のサポートを提供します。
+アウトプロセス実行制御のサポートを提供します。
 
 ## <a name="methods"></a>メソッド
 
 | メソッド                                                                 | 説明                                                                                             |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| [ProcessStateChanged](icordebugprocess4-processstatechanged-method.md) | デバッガーをプロセスの出力がデバッグ対象の実行を続行は ICorDebug パイプラインに通知します。 |
+| [ProcessStateChanged](icordebugprocess4-processstatechanged-method.md) | アウトプロセスデバッガーがデバッグ対象の実行を継続していることを ICorDebug パイプラインに通知します。 |
 
 ## <a name="remarks"></a>Remarks
 
-このインターフェイスは、ランタイム内に収めるを任意のヘッダーまたはライブラリ ファイルを通じて公開されていません。 ただし、これは COM インターフェイスから派生した`IUnknown`GUID を持つ`E930C679-78AF-4953-8AB7-B0AABF0F9F80`を通常の COM メカニズムを通じて取得できます。
+このインターフェイスはランタイム内に存在し、ヘッダーまたはライブラリファイルを介して公開されることはありません。 ただし、これは、 `IUnknown` `E930C679-78AF-4953-8AB7-B0AABF0F9F80` 通常の com 機構を通じて取得できる GUID を使用してから派生する com インターフェイスです。
 
 ## <a name="requirements"></a>必要条件
 
-**プラットフォーム:**[システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
 
-**ヘッダー:** なし
+**ヘッダー:** 存在
 
-**ライブラリ:** なし
+**ライブラリ:** 存在
 
-**.NET Framework のバージョン:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
+**.NET Framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>関連項目
 
-- [デバッグ インターフェイス](debugging-interfaces.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)
 - [デバッグ](index.md)

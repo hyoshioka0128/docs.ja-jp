@@ -1,13 +1,13 @@
 ---
-title: サンプル XML ファイル:3 内の一般的な購買発注
+title: サンプル XML ファイル:名前空間内の一般的な購買発注書 3
 ms.date: 07/20/2015
 ms.assetid: 38260901-c9f9-4240-9cbf-652c8b05021d
-ms.openlocfilehash: de0ac574b0f7b086592bc2d6afa3db3fdcebda78
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: e753d0a4d6bea3e4a01221258e1f5de3862c4ecb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786920"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360840"
 ---
 # <a name="sample-xml-file-typical-purchase-order-in-a-namespace"></a>サンプル XML ファイル:名前空間内の一般的な購買発注書
 次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルは、一般的な購買発注書です。 XML は名前空間に含まれています。  
@@ -56,4 +56,4 @@ ms.locfileid: "61786920"
   
 ## <a name="see-also"></a>関連項目
 
-- [サンプル XML ドキュメント (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [サンプル XML ドキュメント (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

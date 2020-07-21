@@ -9,22 +9,22 @@ helpviewer_keywords:
 ms.assetid: f6d66c7f-906c-4f65-a55a-0ede9d00e26a
 ms.openlocfilehash: b09d5ad11b0961febf524cec1e19cb1e59832e44
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61910781"
 ---
 # <a name="how-to-create-listviewitems-with-a-checkbox"></a>方法: CheckBox を持つ ListViewItem を作成する
-この例の列を表示する方法を示しています。<xref:System.Windows.Controls.CheckBox>でコントロールを、<xref:System.Windows.Controls.ListView>を使用するコントロールを<xref:System.Windows.Controls.GridView>。  
+この例では、<xref:System.Windows.Controls.GridView> を使用する <xref:System.Windows.Controls.ListView> コントロールに <xref:System.Windows.Controls.CheckBox> コントロールの列を表示する方法を示します。  
   
 ## <a name="example"></a>例  
- 含む列を作成する<xref:System.Windows.Controls.CheckBox>でコントロールを<xref:System.Windows.Controls.ListView>、作成、<xref:System.Windows.DataTemplate>を格納している、<xref:System.Windows.Controls.CheckBox>します。 設定し、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>の<xref:System.Windows.Controls.GridViewColumn>を<xref:System.Windows.DataTemplate>します。  
+ <xref:System.Windows.Controls.ListView> に <xref:System.Windows.Controls.CheckBox> コントロールが含まれる列を作成するには、<xref:System.Windows.Controls.CheckBox> が含まれる <xref:System.Windows.DataTemplate> を作成します。 次に、<xref:System.Windows.Controls.GridViewColumn> の <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> を <xref:System.Windows.DataTemplate> に設定します。  
   
- 次の例は、<xref:System.Windows.DataTemplate>を格納している、<xref:System.Windows.Controls.CheckBox>します。 例では、バインド、<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A>のプロパティ、<xref:System.Windows.Controls.CheckBox>を<xref:System.Windows.Controls.ListBoxItem.IsSelected%2A>プロパティの値、<xref:System.Windows.Controls.ListViewItem>含まれています。 そのため、ときに、<xref:System.Windows.Controls.ListViewItem>を格納している、<xref:System.Windows.Controls.CheckBox>が選択されている、<xref:System.Windows.Controls.CheckBox>がチェックされます。  
+ 次は、<xref:System.Windows.Controls.CheckBox> が含まれる <xref:System.Windows.DataTemplate> の例です。 この例では、<xref:System.Windows.Controls.CheckBox> の <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> プロパティを、それが含まれる <xref:System.Windows.Controls.ListViewItem> の <xref:System.Windows.Controls.ListBoxItem.IsSelected%2A> プロパティ値にバインドしています。 そのため、<xref:System.Windows.Controls.CheckBox> が含まれる <xref:System.Windows.Controls.ListViewItem> が選択されると、<xref:System.Windows.Controls.CheckBox> にチェックマークが入ります。  
   
  [!code-xaml[ListViewChkBox#CheckBoxDataTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewChkBox/CS/window1.xaml#checkboxdatatemplate)]  
   
- 次の例の列を作成する方法を示しています。<xref:System.Windows.Controls.CheckBox>コントロール。 、、の例のセットの列に設定、<xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>のプロパティ、<xref:System.Windows.Controls.GridViewColumn>を、<xref:System.Windows.DataTemplate>します。  
+ 次の例では、<xref:System.Windows.Controls.CheckBox> コントロールの列を作成する方法を示します。 列を作成するため、この例では、<xref:System.Windows.Controls.GridViewColumn> の <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A> プロパティが <xref:System.Windows.DataTemplate> に設定されています。  
   
  [!code-xaml[ListViewChkBox#GridViewColumnCheckBox](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewChkBox/CS/window1.xaml#gridviewcolumncheckbox)]  
   

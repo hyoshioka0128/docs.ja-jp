@@ -13,7 +13,7 @@ ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
 author: ghogen
 ms.openlocfilehash: 99e2376c50f0b47cc21002b2926818707188805e
 ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053649"
@@ -47,11 +47,11 @@ Visual Studio には、サービス アプリケーションに関連付けら�
   
     |[値]|結果|  
     |-----------|------------|  
-    |<xref:System.ServiceProcess.ServiceStartMode.Manual>|インストールの後、サービスを手動で開始する必要があります。 詳細については、「[方法 :サービスを開始する](how-to-start-services.md)」を参照してください。|  
+    |<xref:System.ServiceProcess.ServiceStartMode.Manual>|インストールの後、サービスを手動で開始する必要があります。 詳細については、[サービスを開始する](how-to-start-services.md)」を参照してください。|  
     |<xref:System.ServiceProcess.ServiceStartMode.Automatic>|サービスは、コンピューターが再起動されるたびに、自動的に開始します。|  
     |<xref:System.ServiceProcess.ServiceStartMode.Disabled>|サービスは開始できません。|  
   
-6. サービスが実行するセキュリティ コンテキストを決定するには、<xref:System.ServiceProcess.ServiceProcessInstaller> コンポーネントをクリックし、適切なプロパティ値を設定します。 詳細については、「[方法 :サービスのセキュリティ コンテキストを指定する](how-to-specify-the-security-context-for-services.md)」を参照してください。  
+6. サービスが実行するセキュリティ コンテキストを決定するには、<xref:System.ServiceProcess.ServiceProcessInstaller> コンポーネントをクリックし、適切なプロパティ値を設定します。 詳細については、[サービスのセキュリティ コンテキストを指定する](how-to-specify-the-security-context-for-services.md)」を参照してください。  
   
 7. カスタム処理を実行する必要があるメソッドをオーバーライドします。  
   

@@ -1,5 +1,5 @@
 ---
-title: Windows フォームアプリケーションのグローバル化
+title: アプリのグローバライズ
 description: このトピックでは、Windows フォームアプリケーションのグローバライズに関連するトピックの一覧を示します。
 ms.date: 06/08/2018
 helpviewer_keywords:
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - world-ready applications
 - global applications [Windows Forms], creating Windows Forms
 ms.assetid: 72f6cd92-83be-45ec-aa37-9cb8e3ebc3c5
-ms.openlocfilehash: 0e7794b731294e03515265ff33e82af4fde40efa
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: b4034f2269f99498e7058c1fa83e2d006ae7569c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956438"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742057"
 ---
 # <a name="globalizing-windows-forms-applications"></a>Windows フォームアプリケーションのグローバル化
 

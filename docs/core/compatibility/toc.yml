@@ -1,29 +1,47 @@
 - name: 破壊的変更とは
   href: index.md
-- name: 破壊的変更のカテゴリ
+- name: 互換性
   href: categories.md
 - name: ページ セレクター
   href: breaking-changes.md
 - name: バージョン別
+  expanded: true
   items:
+    - name: 3.1 から 5.0
+      href: 3.1-5.0.md
     - name: 3.0 から 3.1 へ
       href: 3.0-3.1.md
     - name: 2.2 から 3.1
       href: 2.2-3.1.md
     - name: 2.2 から 3.0
       href: 2.2-3.0.md
-- name: 領域別
+    - name: 2.0 から 2.1
+      href: 2.0-2.1.md
+    - name: .NET Framework から .NET Core へ
+      items:
+        - name: 互換性に影響する変更
+          href: fx-core.md
+        - name: 利用できないテクノロジ
+          href: ../porting/net-framework-tech-unavailable.md?toc=/dotnet/core/compatibility/toc.json&bc=/dotnet/breadcrumb/toc.json
+        - name: 常にスローする API
+          href: unsupported-apis.md
+- name: テクノロジ領域別
+  expanded: true
   items:
     - name: ASP.NET Core
       href: aspnetcore.md
-    - name: CoreFx
+    - name: Core .NET ライブラリ
       href: corefx.md
     - name: 暗号
       href: cryptography.md
     - name: Entity Framework Core
-      href: /ef/core/what-is-new/ef-core-3.0/breaking-changes
+      href: /ef/core/what-is-new/ef-core-3.0/breaking-changes?toc=/dotnet/core/compatibility/toc.json&bc=/dotnet/breadcrumb/toc.json
     - name: グローバリゼーション
       href: globalization.md
+    - name: Interop
+      href: interop.md
+    - name: MSBuild
+      href: msbuild.md
     - name: ネットワーキング
       href: networking.md
     - name: Visual Basic

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c0765321-656c-441e-bab5-58176292be1e
 topic_type:
 - apiref
-ms.openlocfilehash: 2cf490bcd167b7a498ae21f479f616694ccb5521
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8345d85502087568cb05dd262cccf181e3ca07ac
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139484"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83803702"
 ---
 # <a name="ihostsemaphore-interface"></a>IHostSemaphore インターフェイス
 スレッド処理のためのセマフォのホストの実装を表します。  
@@ -28,22 +28,22 @@ ms.locfileid: "73139484"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[ReleaseSemaphore メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)|現在の `IHostSemaphore` インスタンスのカウントを、指定した量だけ増やします。|  
-|[Wait メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md)|現在の `IHostSemaphore` インスタンスが所有されるか、指定された時間が経過するまで待機するようにします。|  
+|[ReleaseSemaphore メソッド](ihostsemaphore-releasesemaphore-method.md)|現在のインスタンスの数を `IHostSemaphore` 指定された量だけ増やします。|  
+|[Wait メソッド](ihostsemaphore-wait-method.md)|現在の `IHostSemaphore` インスタンスが所有されるか、指定された時間が経過するまで待機するようにします。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICLRSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [IHostAutoEvent インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
-- [IHostManualEvent インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)
-- [IHostSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
-- [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRSyncManager インターフェイス](iclrsyncmanager-interface.md)
+- [IHostAutoEvent インターフェイス](ihostautoevent-interface.md)
+- [IHostManualEvent インターフェイス](ihostmanualevent-interface.md)
+- [IHostSyncManager インターフェイス](ihostsyncmanager-interface.md)
+- [ホスト インターフェイス](hosting-interfaces.md)

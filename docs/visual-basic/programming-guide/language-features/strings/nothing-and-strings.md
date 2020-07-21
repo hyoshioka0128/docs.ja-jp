@@ -4,23 +4,23 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - strings [Visual Basic], Nothing
 ms.assetid: 261380af-2024-4ecf-823b-43b1034d92cd
-ms.openlocfilehash: dfc43748d0754f0a6a29763c42ab82d9937f89f8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 392de45b0ee1688224f3e8170b0144f1acdb0912
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344296"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360567"
 ---
 # <a name="nothing-and-strings-in-visual-basic"></a>Visual Basic の Nothing と文字列
-Visual Basic ランタイムと .NET Framework は、文字列に関して異なる `Nothing` を評価します。  
+Visual Basic ランタイムと .NET Framework では、文字列に関する `Nothing` の評価が異なります。  
   
 ## <a name="visual-basic-runtime-and-the-net-framework"></a>Visual Basic ランタイムと .NET Framework  
  次に例を示します。  
   
  [!code-vb[VbVbalrStrings#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#47)]  
   
- Visual Basic ランタイムは通常、`Nothing` を空の文字列 ("") として評価します。 ただし、.NET Framework は、`Nothing`で文字列操作を実行しようとしたときに、例外をスローします。  
+ 通常、Visual Basic ランタイムでは、`Nothing` が空の文字列 ("") として評価されます。 ただし、.NET Framework では実行されず、`Nothing` に対して文字列操作を実行しようとするたびに例外がスローされます。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Visual Basic の文字列の概要](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+- [Visual Basic の文字列の概要](introduction-to-strings.md)

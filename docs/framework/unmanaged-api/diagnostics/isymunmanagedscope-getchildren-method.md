@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0bed524e-cc48-4bf0-b9fa-25d665e63ddb
 topic_type:
 - apiref
-ms.openlocfilehash: c7e9d2fe94c33127d8b105333ad6dac9d6cc5af6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c6d21f40c260890c9c88dcdfccd7e31161024ba3
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446365"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614865"
 ---
 # <a name="isymunmanagedscopegetchildren-method"></a>ISymUnmanagedScope::GetChildren メソッド
 このスコープの子を取得します。  
@@ -37,10 +37,10 @@ HRESULT GetChildren(
   
 ## <a name="parameters"></a>パラメーター  
  `cChildren`  
- から`children` 配列のサイズを示す `ULONG32`。  
+ から`ULONG32`配列のサイズを示す `children` 。  
   
  `pcChildren`  
- 入出力子を格納するために必要なバッファーのサイズを受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`子を格納するために必要なバッファーのサイズを受け取るへのポインター。  
   
  `children`  
  入出力返された子の配列。  
@@ -51,7 +51,7 @@ HRESULT GetChildren(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedScope インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
-- [GetParent メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-getparent-method.md)
+- [ISymUnmanagedScope インターフェイス](isymunmanagedscope-interface.md)
+- [GetParent メソッド](isymunmanagedscope-getparent-method.md)

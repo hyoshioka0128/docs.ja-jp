@@ -2,12 +2,12 @@
 title: インターネット インフォメーション サービス (IIS) サーバー証明書インストール手順
 ms.date: 03/30/2017
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-ms.openlocfilehash: 300d689925d60998ef475ad63f3878bf6d066850
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 301a10c615a13a42e1a6e1b89d2724476ca4fbae
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989856"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594661"
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>インターネット インフォメーション サービス (IIS) サーバー証明書インストール手順
 インターネット インフォメーション サービス (IIS) と安全に通信するこのサンプルを実行するには、サーバー証明書を作成してインストールする必要があります。  
@@ -26,17 +26,17 @@ makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exc
   
 1. インターネット インフォメーション サービス マネージャー MMC スナップインを開きます。  
   
-2. 既定の Web サイト を右クリックし、**プロパティ** をクリックします。  
+2. [既定の Web サイト] を右クリックし、[**プロパティ**] をクリックします。  
   
-3. **[ディレクトリセキュリティ]** タブを選択します。  
+3. [**ディレクトリセキュリティ**] タブを選択します。  
   
-4. **[サーバー証明書]** ボタンをクリックします。 Web サーバー証明書ウィザードが起動します。  
+4. [**サーバー証明書**] ボタンをクリックします。 Web サーバー証明書ウィザードが起動します。  
   
 5. ウィザードを完了します。 証明書を割り当てるオプションを選択します。 表示される証明書の一覧から ServiceModelSamples-HTTPS-Server 証明書を選択します。  
   
-     ![IIS 証明書ウィザード](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")  
+     ![IIS 証明書ウィザード](media/iiscertificate-wizard.GIF "IISCertificate_Wizard")  
   
-6. HTTPS アドレス`https://localhost/servicemodelsamples/service.svc`を使用して、ブラウザーでサービスへのアクセスをテストします。  
+6. HTTPS アドレスを使用して、ブラウザーでサービスへのアクセスをテストし `https://localhost/servicemodelsamples/service.svc` ます。  
   
 #### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a>Httpcfg.exe であらかじめ SSL が構成されている場合  
   
@@ -55,17 +55,17 @@ PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");
   
 #### <a name="to-install-iis-on-iis-70-windows-vista-and-windows-server-2008"></a>IIS 7.0 (Windows Vista および Windows Server 2008) に証明書をインストールするには  
   
-1. **[スタート]** メニューの ファイルの **[実行]** をクリックし、「 **inetmgr.exe** 」と入力して、インターネットインフォメーションサービス (IIS) MMC スナップインを開きます。  
+1. [**スタート**] メニューの [ファイルの**実行**] をクリックし、「 **inetmgr.exe** 」と入力して、インターネットインフォメーションサービス (IIS) MMC スナップインを開きます。  
   
-2. **[既定の Web サイト]** を右クリックし、 **[バインドの編集...]** を選択します。  
+2. [**既定の Web サイト**] を右クリックし、[**バインドの編集...** ] を選択します。  
   
-3. **[サイトバインド]** ダイアログボックスの **[追加]** ボタンをクリックします。  
+3. [**サイトバインド**] ダイアログボックスの [**追加**] ボタンをクリックします。  
   
-4. **[種類]** ドロップダウンリストから **[HTTPS]** を選択します。  
+4. [**種類**] ドロップダウンリストから [ **HTTPS** ] を選択します。  
   
-5. **[SSL 証明書]** ボックスの一覧から**ServiceModelSamples**を選択し、[ **OK]** をクリックします。  
+5. [ **SSL 証明書**] ボックスの一覧から**ServiceModelSamples**を選択し、[ **OK]** をクリックします。  
   
-6. HTTPS アドレス`https://localhost/servicemodelsamples/service.svc`を使用して、ブラウザーでサービスへのアクセスをテストします。  
+6. HTTPS アドレスを使用して、ブラウザーでサービスへのアクセスをテストし `https://localhost/servicemodelsamples/service.svc` ます。  
   
 > [!NOTE]
 > 先ほどインストールしたテスト証明書は信頼された証明書ではないので、この証明書でセキュリティ保護されたローカル Web アドレスを参照した場合、Internet Explorer のセキュリティ警告がさらに発生する場合があります。  

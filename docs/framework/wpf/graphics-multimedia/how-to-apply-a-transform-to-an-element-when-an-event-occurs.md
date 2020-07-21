@@ -13,21 +13,21 @@ helpviewer_keywords:
 ms.assetid: 71e4327e-ca57-444c-a3cf-09fb381491a0
 ms.openlocfilehash: 8f04db274432c0e89c6839bef825976c8a2f853c
 ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64630753"
 ---
 # <a name="how-to-apply-a-transform-to-an-element-when-an-event-occurs"></a>方法: イベントの発生時に要素に変換を適用する
-この例は、適用する方法を示します、<xref:System.Windows.Media.ScaleTransform>イベントが発生します。 ここで示される概念は、他の種類の変換を適用する場合に使用するものと同じです。 使用可能な種類の変換の詳細については、次を参照してください。、<xref:System.Windows.Media.Transform>クラスまたは[変換の概要](transforms-overview.md)します。  
+この例では、イベントが発生したときに <xref:System.Windows.Media.ScaleTransform> を適用する方法を示します。 ここで示される概念は、他の種類の変換を適用する場合に使用するものと同じです。 使用可能な変換の種類の詳細については、「<xref:System.Windows.Media.Transform> クラス」または「[変換の概要](transforms-overview.md)」を参照してください。  
   
  要素に変換を適用するには、次の 2 つの方法があります。  
   
-- 操作を行う場合*いない*レイアウトに影響を使用して変換する、<xref:System.Windows.UIElement.RenderTransform%2A>要素のプロパティ。  
+- 変換がレイアウトに影響 "*しない*" ようにする場合は、要素の <xref:System.Windows.UIElement.RenderTransform%2A> プロパティを使用します。  
   
-- レイアウトに影響する変換をする場合は、使用、<xref:System.Windows.FrameworkElement.LayoutTransform%2A>要素のプロパティ。  
+- 変換がレイアウトに影響するようにする場合は、要素の <xref:System.Windows.FrameworkElement.LayoutTransform%2A> プロパティを使用します。  
   
- 次の例では、適用、<xref:System.Windows.Media.ScaleTransform>を<xref:System.Windows.UIElement.RenderTransform%2A>ボタンのプロパティ。 マウスがボタンの上に移動したときに、<xref:System.Windows.Media.ScaleTransform.ScaleX%2A>と<xref:System.Windows.Media.ScaleTransform.ScaleY%2A>のプロパティ、<xref:System.Windows.Media.ScaleTransform>に設定されている`2`、ボタンのサイズが大きくなります。 オフにする、ボタン、マウスが移動したときに<xref:System.Windows.Media.ScaleTransform.ScaleX%2A>と<xref:System.Windows.Media.ScaleTransform.ScaleY%2A>に設定されて`1`、ボタンの元のサイズに戻ります。  
+ 次の例では、ボタンの <xref:System.Windows.UIElement.RenderTransform%2A> プロパティに <xref:System.Windows.Media.ScaleTransform> を適用します。 マウスをボタンの上に移動すると、<xref:System.Windows.Media.ScaleTransform> の <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> プロパティと <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> プロパティが `2` に設定され、ボタンが大きくなります。 マウスがボタンから離れると、<xref:System.Windows.Media.ScaleTransform.ScaleX%2A> と <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> が `1` に設定され、ボタンは元のサイズに戻ります。  
   
 ## <a name="example"></a>例  
  [!code-xaml[ButtonTransform#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ButtonTransform/CSharp/ButtonTransformExample.xaml#1)]  

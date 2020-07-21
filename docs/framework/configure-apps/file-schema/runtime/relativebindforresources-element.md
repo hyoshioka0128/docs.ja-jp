@@ -5,24 +5,24 @@ helpviewer_keywords:
 - RelativeBindForResources element
 - <relativeBindForResources> element
 ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
-ms.openlocfilehash: 6a418fc546313b74bb965a0b223eca9c2e5acc08
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cd49d424019a4e8422fee0ae16217d49cfc456b1
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73115801"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79153907"
 ---
-# <a name="relativebindforresources-element"></a>\<Relativebindforresources> > 要素
+# <a name="relativebindforresources-element"></a>\<relativeBindForResources> 要素
 サテライト アセンブリのプローブを最適化します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<relativebindforresources> >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<relativeBindForResources>**  
   
 ## <a name="syntax"></a>構文  
   
 ```xml
-<relativeBindForResources    
+<relativeBindForResources
    enabled="true|false" />  
 ```  
   
@@ -37,9 +37,9 @@ ms.locfileid: "73115801"
   
 ## <a name="enabled-attribute"></a>enabled 属性  
   
-|[値]|説明|  
+|値|Description|  
 |-----------|-----------------|  
-|`false`|ランタイムは、サテライトアセンブリのプローブを最適化しません。 これは既定値です。|  
+|`false`|ランタイムは、サテライトアセンブリのプローブを最適化しません。 これが既定値です。|  
 |`true`|ランタイムは、サテライトアセンブリのプローブを最適化します。|  
   
 ### <a name="child-elements"></a>子要素  
@@ -47,27 +47,27 @@ ms.locfileid: "73115801"
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|ランタイム初期化オプションに関する情報を含んでいます。|  
   
-## <a name="remarks"></a>Remarks  
- 一般に、リソースの[パッケージ化とデプロイ](../../../resources/packaging-and-deploying-resources-in-desktop-apps.md)に関するトピックで説明されているように、Resource Manager はリソースをプローブします。 これは、resource Manager が特定のローカライズされたバージョンのリソースをプローブするときに、グローバルアセンブリキャッシュを検索し、アプリケーションのコードベースでカルチャ固有のフォルダーを検索し、サテライトアセンブリに対してクエリ Windows インストーラーを実行し、<xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベント。 `<relativeBindForResources>` 要素は、リソースマネージャーがサテライトアセンブリをプローブする方法を最適化します。 次の条件下でリソースを調査するときにパフォーマンスを向上させることができます。  
+## <a name="remarks"></a>解説  
+ 一般に、リソースの[パッケージ化とデプロイ](../../../resources/packaging-and-deploying-resources-in-desktop-apps.md)に関するトピックで説明されているように、Resource Manager はリソースをプローブします。 これは、resource Manager が特定のローカライズされたバージョンのリソースをプローブするときに、グローバルアセンブリキャッシュを検索し、アプリケーションのコードベースでカルチャ固有のフォルダーを検索し、サテライトアセンブリの Windows インストーラーを照会して、イベントを発生させることができることを意味し <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> ます。 要素は、 `<relativeBindForResources>` リソースマネージャーがサテライトアセンブリをプローブする方法を最適化します。 次の条件下でリソースを調査するときにパフォーマンスを向上させることができます。  
   
 - サテライトアセンブリがコードアセンブリと同じ場所に配置されている場合。 つまり、コードアセンブリがグローバルアセンブリキャッシュにインストールされている場合は、サテライトアセンブリもインストールする必要があります。 コードアセンブリがアプリケーションのコードベースにインストールされている場合は、サテライトアセンブリをコードベースのカルチャ固有のフォルダーにもインストールする必要があります。  
   
 - Windows インストーラーが使用されていない場合、またはサテライトアセンブリのオンデマンドインストールではあまり使用されない場合。  
   
-- アプリケーションコードが <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントを処理しない場合。  
+- アプリケーションコードがイベントを処理しない場合 <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> 。  
   
- `<relativeBindForResources>` 要素の `enabled` 属性を `true` に設定すると、次のように、サテライトアセンブリのリソースマネージャーのプローブが最適化されます。  
+ `enabled`要素の属性 `<relativeBindForResources>` をに設定すると、次のように、 `true` サテライトアセンブリのリソースマネージャーのプローブが最適化されます。  
   
 - 親コードアセンブリの場所を使用して、サテライトアセンブリをプローブします。  
   
 - サテライトアセンブリの Windows インストーラーに対してはクエリを実行しません。  
   
-- <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントは発生しません。  
+- イベントは発生しません <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> 。  
   
 ## <a name="see-also"></a>関連項目
 

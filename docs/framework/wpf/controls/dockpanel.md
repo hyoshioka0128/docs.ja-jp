@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: 8d3d290b-d38c-47d0-918e-cee2baeb92ae
 ms.openlocfilehash: 92dc0d9982e8ef92f4aa99e2bdd694a8585237cf
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61911873"
 ---
 # <a name="dockpanel"></a>DockPanel
-<xref:System.Windows.Controls.DockPanel>要素はレイアウト コンテナーの端に沿って子コンテンツの配置に使用します。  
+<xref:System.Windows.Controls.DockPanel> 要素は、レイアウト コンテナーの端に沿って子コンテンツを配置するために使用します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法トピック](dockpanel-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

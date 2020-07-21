@@ -1,17 +1,18 @@
 ---
-title: Windows フォーム コントロール
+title: コントロール
+description: Windows フォームコントロールを追加して配置する方法について説明します。 また、デザイナーでコントロールを操作し、実行時にコントロールを動的に追加するコードを記述することもできます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms controls
 - controls [Windows Forms]
 - Windows Forms controls, about Windows Forms controls
 ms.assetid: f050de8f-4ebd-4042-94b8-edf9a1dbd52a
-ms.openlocfilehash: 1088781a7780df71773b01a3816f024562abfcaf
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 9ca4a2a1205663ae0ff4537a58cc1991a15da5d8
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69986984"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324037"
 ---
 # <a name="windows-forms-controls"></a>Windows フォーム コントロール
 
@@ -19,7 +20,7 @@ Windows フォーム アプリケーションのユーザー インターフェ�
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[Windows フォームへのコントロールの追加](putting-controls-on-windows-forms.md)\
+[Windows フォームにコントロールを配置する](putting-controls-on-windows-forms.md)\
 フォームへのコントロールの追加に関連するリンクを提供します。
 
 [Windows フォーム上のコントロールの配置](how-to-align-multiple-controls-on-windows-forms.md)\
@@ -31,10 +32,10 @@ Windows フォーム アプリケーションのユーザー インターフェ�
 [Windows フォームで使用するコントロール](controls-to-use-on-windows-forms.md)\
 Windows フォームで使うことができるコントロールの一覧、および各コントロールで実行できる基本的な事柄を示します。
 
-[.NET Framework を使用したカスタム Windows フォーム コントロールの開発](developing-custom-windows-forms-controls.md)\
+[.NET Framework を使用したカスタム Windows フォームコントロールの開発](developing-custom-windows-forms-controls.md)\
 カスタム Windows フォーム コントロールの開発に役立つ背景情報とサンプルを提供します。
 
-[デザイン時の Windows フォーム コントロールの開発](developing-windows-forms-controls-at-design-time.md)\
+[デザイン時の Windows フォームコントロールの開発](developing-windows-forms-controls-at-design-time.md)\
 デザインと継承を使ってカスタム コントロールを作成するための手法について説明します。
 
 ## <a name="related-sections"></a>関連項目

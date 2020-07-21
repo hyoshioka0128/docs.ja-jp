@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: 03e06271-a946-4810-88ea-3fb4cfa9e0f1
 ms.openlocfilehash: 8ac55346ac83ee94318de90655bde6053ef20687
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61651234"
 ---
 # <a name="how-to-seek-a-storyboard-synchronously"></a>方法: ストーリーボードを同期的にシークする
-次の例は、使用する方法を示します、<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>のメソッドを<xref:System.Windows.Media.Animation.Storyboard>を同期的に、ストーリー ボード アニメーションの任意の位置をシークします。  
+次の例は、<xref:System.Windows.Media.Animation.Storyboard> の <xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A> メソッドを使用して、ストーリーボード アニメーション内の任意の位置を同期的にシークする方法を示しています。  
   
 ## <a name="example"></a>例  
  サンプルの XAML マークアップを次に示します。  

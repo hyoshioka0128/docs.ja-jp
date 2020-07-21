@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 503d61cb86c83e2f32ad40c60a127ae255ef71b0
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 58b1190e3e6a3168d35700eed655f6756e076a29
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198487"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75901942"
 ---
-### <a name="mvc-async-suffix-trimmed-from-controller-action-names"></a>MVC: コントローラー アクション名から Async サフィックスを削除
+### <a name="mvc-async-suffix-trimmed-from-controller-action-names"></a>MVC:コントローラー アクション名から Async サフィックスを削除
 
-[aspnet/AspNetCore#4849](https://github.com/aspnet/AspNetCore/issues/4849) への対処の一環として、ASP.NET Core MVC では、アクション名から `Async` サフィックスが既定で削除されます。 ASP.NET Core 3.0 以降、この変更はルーティングとリンク生成の両方に影響します。
+[dotnet/aspnetcore#4849](https://github.com/dotnet/aspnetcore/issues/4849) への対処の一環として、ASP.NET Core MVC では、アクション名から `Async` サフィックスが既定で削除されます。 ASP.NET Core 3.0 以降、この変更はルーティングとリンク生成の両方に影響します。
 
 #### <a name="version-introduced"></a>導入されたバージョン
 
@@ -56,7 +56,7 @@ services.AddMvc(options =>
 
 規則に従い、非同期 .NET メソッドには `Async` サフィックスを付加します。 ただし、メソッドで MVC アクションを定義する場合、`Async` サフィックスを使用するのは望ましくありません。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 アプリが、名前の `Async` サフィックスを保持する MVC アクションに依存している場合、次のいずれかの軽減策を選択します。
 
@@ -76,7 +76,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>影響を受ける API
 
-なし
+None
 
 <!-- 
 

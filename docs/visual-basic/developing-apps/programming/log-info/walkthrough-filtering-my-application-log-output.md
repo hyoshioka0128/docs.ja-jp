@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: f18556bbe1ca2d77925482319246d403892d31ef
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: aa63e7d23641ad71b135f15236e29399a535784f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353587"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398254"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>チュートリアル: My.Application.Log の出力のフィルター処理 (Visual Basic)
 
@@ -43,7 +43,7 @@ ms.locfileid: "74353587"
 
 6. アプリケーションを終了します。
 
-     アプリケーションのデバッグ出力ウィンドウを表示する方法について詳しくは、「[出力ウィンドウ](/visualstudio/ide/reference/output-window)」をご覧ください。 アプリケーションのログ ファイルの場所については、「[チュートリアル:My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)」を参照してください。
+     アプリケーションのデバッグ出力ウィンドウを表示する方法について詳しくは、「[出力ウィンドウ](/visualstudio/ide/reference/output-window)」をご覧ください。 アプリケーションのログ ファイルの場所について詳しくは、「[チュートリアル: My.Application.Log による情報の書き込み先の確認](walkthrough-determining-where-my-application-log-writes-information.md)」をご覧ください。
 
     > [!NOTE]
     > 既定では、アプリケーションはアプリケーションの終了時にログ ファイルの出力をフラッシュします。
@@ -60,7 +60,7 @@ ms.locfileid: "74353587"
 |---|---|
 |`Critical`|`Critical`|
 |`Error`|`Critical` または `Error`|
-|`Warning`|`Critical`、 `Error`、または `Warning`|
+|`Warning`|`Critical`、`Error`、または `Warning`|
 |`Information`|`Critical`、`Error`、`Warning`、または `Information`|
 |`Verbose`|`Critical`、`Error`、`Warning`、`Information`、または `Verbose`|
 |`ActivityTracing`|`Start`、`Stop`、`Suspend`、`Resume`、または `Transfer`|
@@ -249,13 +249,13 @@ ms.locfileid: "74353587"
 
 10. アプリケーションを終了します。
 
-配置後にログの設定を変更する方法については、「[アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。
+配置後にログの設定を変更する方法については、「[アプリケーション ログの使用](working-with-application-logs.md)」をご覧ください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [チュートリアル: My.Application.Log による情報の書き込み先の確認](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
-- [チュートリアル: My.Application.Log による情報の書き込み先の変更](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
-- [チュートリアル: カスタム ログ リスナーの作成](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)
-- [方法: ログ メッセージを書き込む](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
+- [チュートリアル : My.Application.Log による情報の書き込み先の確認](walkthrough-determining-where-my-application-log-writes-information.md)
+- [チュートリアル : My.Application.Log による情報の書き込み先の変更](walkthrough-changing-where-my-application-log-writes-information.md)
+- [チュートリアル : カスタム ログ リスナーの作成](walkthrough-creating-custom-log-listeners.md)
+- [方法: ログ メッセージを書き込む](how-to-write-log-messages.md)
 - [トレース スイッチ](../../../../framework/debug-trace-profile/trace-switches.md)
-- [アプリケーションからの情報のログ記録](../../../../visual-basic/developing-apps/programming/log-info/index.md)
+- [アプリケーションからの情報のログ記録](index.md)

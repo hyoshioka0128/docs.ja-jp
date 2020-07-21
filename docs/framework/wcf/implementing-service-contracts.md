@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - implementing service contracts [WCF]
 ms.assetid: aefb6f56-47e3-4f24-ab0a-9bc07bf9885f
-ms.openlocfilehash: ac27329278edc2b9ca693aa15bcc5bb58edffe05
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: aefe146a8941d98d7d9138e4ece83c330c967034
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320161"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184000"
 ---
 # <a name="implementing-service-contracts"></a>サービス コントラクトの実装
-サービスは、1 つ以上のエンドポイントでクライアントが使用できる機能を公開するクラスです。 サービスを作成するには、Windows Communication Foundation (WCF) コントラクトを実装するクラスを記述します。 2 つの方法のいずれかでこれを行うことができます。 コントラクトを個別にインターフェイスとして定義し、そのインターフェイスを実装するクラスを作成できます。 または、クラスに <xref:System.ServiceModel.ServiceContractAttribute> 属性を配置し、サービスのクライアントが使用できるメソッドに <xref:System.ServiceModel.OperationContractAttribute> 属性を配置することによって、クラスとコントラクトを直接作成することもできます。  
+サービスは、1 つ以上のエンドポイントでクライアントが使用できる機能を公開するクラスです。 サービスを作成するには、WCF (WCF) コントラクトを実装するクラスを記述します。 2 つの方法のいずれかでこれを行うことができます。 コントラクトを個別にインターフェイスとして定義し、そのインターフェイスを実装するクラスを作成できます。 または、クラスに <xref:System.ServiceModel.ServiceContractAttribute> 属性を配置し、サービスのクライアントが使用できるメソッドに <xref:System.ServiceModel.OperationContractAttribute> 属性を配置することによって、クラスとコントラクトを直接作成することもできます。  
   
 ## <a name="creating-a-service-class"></a>サービス クラスの作成  
  個別に定義された `IMath` コントラクトを実装するサービスの例を次に示します。  
@@ -22,7 +22,7 @@ ms.locfileid: "72320161"
 [ServiceContract]  
 public interface IMath  
 {  
-    [OperationContract]   
+    [OperationContract]
     double Add(double A, double B);  
   
     [OperationContract]  
@@ -55,7 +55,7 @@ class MathService
   
  コンカレンシーやインスタンス化など、いくつかの項目は、サービス実装レベルと操作実装レベルで設定できます。 詳細については、「[サービスの設計と実装](designing-and-implementing-services.md)」を参照してください。  
   
- サービス コントラクトを実装したら、そのサービスに 1 つ以上のエンドポイントを作成する必要があります。 詳細については、「[エンドポイントの作成の概要](endpoint-creation-overview.md)」を参照してください。 サービスの実行方法の詳細については、「[ホスティングサービス](hosting-services.md)」を参照してください。  
+ サービス コントラクトを実装したら、そのサービスに 1 つ以上のエンドポイントを作成する必要があります。 詳細については、「[エンドポイントの作成の概要](endpoint-creation-overview.md)」を参照してください。 サービスの実行方法の詳細については、「 サービスの[ホスティング](hosting-services.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

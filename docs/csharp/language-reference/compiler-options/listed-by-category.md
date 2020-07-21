@@ -1,17 +1,17 @@
 ---
 title: カテゴリ別の C# コンパイラ オプションの一覧
-ms.date: 05/15/2018
+ms.date: 06/04/2020
 helpviewer_keywords:
 - Visual C# compiler, options listed by category
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 5cd5607c25dabd8f56ebb58366116666e8e649ea
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 1e78b920eb6a1eae870a425b91711ac9d87b6530
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972714"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84811680"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>カテゴリ別の C# コンパイラ オプションの一覧
 
@@ -56,6 +56,7 @@ ms.locfileid: "73972714"
 |-additionalfile|コードの生成に直接影響はないが、エラーまたは警告を生成するためにアナライザーが使用できる追加のファイルを指定します。|
 |-embed|すべてのソース ファイルを PDB に埋め込みます。|
 |-embed:\<file list>|特定のファイルを PDB に埋め込みます。|
+
 ## <a name="debuggingerror-checking"></a>デバッグ/エラー チェック
 
 |オプション|目的|
@@ -66,6 +67,7 @@ ms.locfileid: "73972714"
 |[-errorreport](errorreport-compiler-option.md)|エラー報告の動作を設定します。|
 |[/fullpaths](fullpaths-compiler-option.md)|コンパイラ出力に含まれるファイルの絶対パスを指定します。|
 |[-nowarn](nowarn-compiler-option.md)|指定した警告がコンパイラで生成されないようにします。|
+|[-nullable](nullable-compiler-option.md)|Null 許容コンテキスト オプションを指定します。|
 |[/warn](warn-compiler-option.md)|警告レベルを設定します。|
 |[-warnaserror](warnaserror-compiler-option.md)|警告をエラーに昇格します。|
 |-ruleset:\<file>|特定の診断を無効にするルールセット ファイルを指定します。|
@@ -105,7 +107,7 @@ ms.locfileid: "73972714"
 |[/unsafe](unsafe-compiler-option.md)|[unsafe](../keywords/unsafe.md) キーワードを使用するコードのコンパイルを有効にします。|
 |[-utf8output](utf8output-compiler-option.md)|UTF-8 エンコードを使用してコンパイラ出力を表示します。|
 |-parallel[+&#124;-]|同時実行ビルドを使用する (+) かどうかを指定します。|
-|-checksumalgorithm:\<alg>|PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。  サポートされる値は SHA1 (既定値) または SHA256 です。<br>SHA1 との競合問題のため、Microsoft では SHA256 を推奨しています。|
+|-checksumalgorithm:\<alg>|PDB に格納されているソース ファイルのチェックサムを計算するためのアルゴリズムを指定します。  サポートされる値は SHA256 (既定) または SHA1 です。<br>SHA1 との競合問題のため、Microsoft では SHA256 を推奨しています。|
 
 ## <a name="obsolete-options"></a>廃止されたオプション
 

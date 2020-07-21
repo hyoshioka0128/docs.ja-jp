@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 36605067-33d3-4579-9c72-fb0e551ab0f1
 topic_type:
 - apiref
-ms.openlocfilehash: 0c622e0eba27f501446d2b7d9d264ee0834e869c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f66ef88646c314502dcb610cec8ce822cab1fca2
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133613"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379282"
 ---
 # <a name="icordebugthreadcreateeval-method"></a>ICorDebugThread::CreateEval メソッド
 このスレッドの機能を収集して公開する、表示されるオブジェクトを作成します。  
@@ -35,16 +35,16 @@ HRESULT CreateEval (
   
 ## <a name="parameters"></a>パラメーター  
  `ppEval`  
- 入出力このスレッドの機能を収集して公開する `ICorDebugEval` オブジェクトのアドレスへのポインター。  
+ 入出力`ICorDebugEval`このスレッドの機能を収集して公開するオブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
  評価オブジェクトは、計算を実行する前に、スレッドに新しいチェーンをプッシュします。 これにより、評価が完了するまで、スレッドで現在実行されている計算が中断されます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

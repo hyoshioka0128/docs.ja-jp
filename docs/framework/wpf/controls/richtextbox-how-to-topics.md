@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: 36e9f98e-f968-42d8-adb6-9e78c814aec0
 ms.openlocfilehash: f4f0cb15e1dc50fee7ca76e8cfbf31e6eaccd02b
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61971081"
 ---
 # <a name="richtextbox-how-to-topics"></a>RichTextBox に関する「方法」トピック
-このセクションを使用して一般的なタスクを実行する方法を示す例を示します、<xref:System.Windows.Controls.RichTextBox>コントロール。  
+このセクションでは、<xref:System.Windows.Controls.RichTextBox> コントロールを使用して一般的なタスクを実行する方法を示す例を紹介します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [RichTextBox からテキスト コンテンツを抽出する](how-to-extract-the-text-content-from-a-richtextbox.md)  

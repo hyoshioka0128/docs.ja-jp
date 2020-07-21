@@ -1,5 +1,5 @@
 ---
-title: メソッド ベースのクエリ構文例:フィルター
+title: メソッド ベースのクエリ構文例:フィルター処理
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,22 +7,22 @@ dev_langs:
 ms.assetid: e40e314c-eb30-4f44-a054-41e511e35832
 ms.openlocfilehash: 8bc8f46a1afa6afad0b1893dfd0f09878be0e7a2
 ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/06/2019
 ms.locfileid: "70397476"
 ---
-# <a name="method-based-query-syntax-examples-filtering"></a>メソッド ベースのクエリ構文例:フィルター
-このトピックの例では、メソッドベースの`Where`クエリ`Where…Contains`構文を使用して、メソッドとメソッドを使用して、 [AdventureWorks Sales Model](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)に対してクエリを実行する方法を示します。 注意:`Contains` は、[コンパイル済みクエリ](compiled-queries-linq-to-entities.md)の一部として使用できません。  
+# <a name="method-based-query-syntax-examples-filtering"></a>メソッド ベースのクエリ構文例:フィルター処理
+このトピックでは、メソッド ベースのクエリ構文で、`Where` メソッドと `Where…Contains` メソッドを使用して、[AdventureWorks Sales Model](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) を照会する例を取り上げます。 Where…`Contains` を[コンパイル済みクエリ](compiled-queries-linq-to-entities.md)の一部として使用することはできないことに注意してください。  
   
  これらの例で使用されている、AdventureWorks Sales Model は、AdventureWorks サンプル データベースの Contact、Address、Product、SalesOrderHeader、SalesOrderDetail の各テーブルから作成されています。  
   
- このトピックの例では、次`using` / `Imports`のステートメントを使用します。  
+ このトピックの例には、次の `using`/`Imports` ステートメントが使用されています。  
   
  [!code-csharp[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#importsusing)]  
   
-## <a name="where"></a>場所  
+## <a name="where"></a>Where  
   
 ### <a name="example"></a>例  
  次の例では、すべてのオンライン注文が返されます。  

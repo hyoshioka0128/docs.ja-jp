@@ -7,23 +7,23 @@ dev_langs:
 ms.assetid: 307d2809-208b-4cf8-b6a9-5d16f15fc16c
 ms.openlocfilehash: 267d6489d39f86fc06b35de8cf30dad74f501b0b
 ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/17/2019
 ms.locfileid: "72523240"
 ---
 # <a name="adding-existing-constraints-to-a-dataset"></a>DataSet への既存の制約の追加
 
-**DataAdapter**の**Fill**メソッドは、データソースのテーブルの列と行のみを含む <xref:System.Data.DataSet> にデータを格納します。制約は通常、データソースによって設定されますが、 **Fill**メソッドは、既定ではこのスキーマ情報をデータ**セット**に追加しません。 データソースからの既存の primary key 制約情報を**DataSet**に設定するには、 **dataadapter**の**FillSchema**メソッドを呼び出すか、 **dataadapter**の**MissingSchemaAction**プロパティを設定します。**Fill**を呼び出す前に、 **addwithkey**に設定します。 これにより、データ**セット**内の primary key 制約がデータソースの主キー制約を反映するようになります。 外部キー制約情報は含まれていません。 [DataTable 制約](./dataset-datatable-dataview/datatable-constraints.md)に示すように、明示的に作成する必要があります。  
+**DataAdapter** の **Fill** メソッドを使うと、<xref:System.Data.DataSet> にデータ ソースからのテーブルの列および行だけが格納されます。制約は一般にデータ ソースで設定されますが、既定では **Fill** メソッドによって **DataSet** にこのスキーマ情報は追加されません。 データ ソースからの既存の主キー制約情報を **DataSet** に設定するには、**DataAdapter** の **FillSchema** メソッドを呼び出すか、または **Fill** を呼び出す前に **DataAdapter** の **MissingSchemaAction** プロパティを **AddWithKey** に設定します。 これにより、データ ソースの主キー制約が **DataSet** の主キー制約に反映されます。 外部キー制約情報はインクルードされないため、「[DataTable の制約](./dataset-datatable-dataview/datatable-constraints.md)」で示されているように明示的に作成する必要があります。  
   
-データを格納する前に、データ**セット**にスキーマ情報を追加することで、データ**セット**内の <xref:System.Data.DataTable> オブジェクトに主キー制約が確実に含まれるようになります。 その結果、データ**セット**への追加の呼び出しが行われたときに、主キー列の情報が使用され、データソースからの新しい行と各**DataTable**の現在の行が一致します。テーブル内の現在のデータは、データソース。 スキーマ情報がない場合、データソースからの新しい行がデータ**セット**に追加され、行が重複します。  
+データを格納する前に **DataSet** にスキーマ情報を追加すると、**DataSet** 内の <xref:System.Data.DataTable> オブジェクトに主キー制約が含まれるようになります。 その結果、**DataSet** に対して格納を行う追加の呼び出しを行うと、主キー列の情報を使用して、データ ソースからの新しい行と、各 **DataTable** の現在の行が照合されて、テーブルの現在のデータがデータ ソースのデータで上書きされます。 スキーマ情報がないと、**DataSet** にデータ ソースからの新しい行が付け加えられ、重複行が発生します。  
   
 > [!NOTE]
-> データソース内の列が自動インクリメントとして識別された場合、 **FillSchema**メソッド、または**MissingSchemaAction**が**Addwithkey**である**Fill**メソッドによって、 **autoincrement**プロパティを持つ**DataColumn**が作成されます。を `true` に設定します。 ただし、 **AutoIncrementStep**と**AutoIncrementSeed**の値を自分で設定する必要があります。 自動インクリメント列の詳細については、「自動[インクリメント列の作成](./dataset-datatable-dataview/creating-autoincrement-columns.md)」を参照してください。  
+> データ ソースの列が自動インクリメントとして指定されている場合、**FillSchema** メソッドまたは **MissingSchemaAction** が **AddWithKey** に設定された **Fill** メソッドでは、**AutoIncrement** プロパティが `true` に設定された **DataColumn** が作成されます。 ただし、**AutoIncrementStep** 値と **AutoIncrementSeed** 値は開発者自身が明示的に設定する必要があります。 自動インクリメント列について詳しくは、「[AutoIncrement 列の作成](./dataset-datatable-dataview/creating-autoincrement-columns.md)」をご覧ください。  
   
-**FillSchema**を使用するか、 **MissingSchemaAction**を**addwithkey**に設定するには、主キー列の情報を決定するためにデータソースで追加の処理が必要です。 この追加の処理によりパフォーマンスが低下する場合があります。 デザイン時に主キー情報がわかっている場合は、最適のパフォーマンスを得るために主キー列 (複数の場合もある) を明示的に指定することをお勧めします。 テーブルの主キー情報を明示的に設定する方法については、「[主キーの定義](./dataset-datatable-dataview/defining-primary-keys.md)」を参照してください。
+**FillSchema** を使用したり、**MissingSchemaAction** を **AddWithKey** に設定したりすると、データ ソースで主キー列情報を確認するための追加の処理が必要になります。 この追加の処理によりパフォーマンスが低下する場合があります。 デザイン時に主キー情報がわかっている場合は、最適のパフォーマンスを得るために主キー列 (複数の場合もある) を明示的に指定することをお勧めします。 テーブルに関する主キー情報を明示的に設定する方法については、「[主キーの定義](./dataset-datatable-dataview/defining-primary-keys.md)」をご覧ください。
   
-次のコード例は、 **FillSchema**を使用して**データセット**にスキーマ情報を追加する方法を示しています。
+次のコード例では、**FillSchema** を使用して **DataSet** にスキーマ情報を追加する方法を示します。
   
 ```vb  
 Dim custDataSet As New DataSet()  
@@ -39,7 +39,7 @@ custAdapter.FillSchema(custDataSet, SchemaType.Source, "Customers");
 custAdapter.Fill(custDataSet, "Customers");  
 ```  
   
-次のコード例では、 **Fill**メソッドの**MissingSchemaAction**プロパティを使用して、**データセット**にスキーマ情報を追加する方法を示します。
+次のコード例では、**Fill** メソッドの **MissingSchemaAction.AddWithKey** プロパティを使用して **DataSet** にスキーマ情報を追加する方法を示します。
   
 ```vb  
 Dim custDataSet As New DataSet()  
@@ -57,10 +57,10 @@ custAdapter.Fill(custDataSet, "Customers");
   
 ## <a name="handling-multiple-result-sets"></a>複数の結果セットの処理  
 
-データ**アダプター**が**SelectCommand**から返された複数の結果セットを検出すると、**データセット**内に複数のテーブルが作成されます。 テーブルには、インデックス番号が0から始まる既定の**テーブル** *N*が割り当てられます。この名前は、"Table0" の代わりに**table**で始まります。 テーブル名が**FillSchema**メソッドに引数として渡された場合、テーブルには、"TableName0" ではなく**Tablename**で始まる**tablename** *N*の0から始まる増分名が割り当てられます。  
+**DataAdapter** では、**SelectCommand** から複数の結果セットが返された場合、**DataSet** に複数のテーブルが作成されます。 テーブルには、**Table** *N* という既定の名前が設定されます。N は 0 から始まりインクリメントされますが、"Table0" ではなく **Table** から始まります。 テーブル名が **FillSchema** メソッドに引数として渡された場合は、テーブルには、**TableName** *N* という名前が設定されます。N は 0 から始まりインクリメントされますが、"TableName0" ではなく **TableName** から始まります。  
   
 > [!NOTE]
-> 複数の結果セットを返すコマンドに対して**OleDbDataAdapter**オブジェクトの**FillSchema**メソッドを呼び出すと、最初の結果セットのスキーマ情報のみが返されます。 **OleDbDataAdapter**を使用して複数の結果セットのスキーマ情報を返す場合は、 **addwithkey**の**MissingSchemaAction**を指定し、 **Fill**を呼び出すときにスキーマ情報を取得することをお勧めします。b.  
+> **OleDbDataAdapter** オブジェクトの **FillSchema** メソッドが、複数の結果セットを返すコマンドに対して呼び出された場合は、最初の結果セットのスキーマ情報のみが返されます。 **OleDbDataAdapter** を使用して複数の結果セットに対するスキーマ情報を返すときは、**Fill** メソッドを呼び出すときに **AddWithKey** に設定した **MissingSchemaAction** を指定して、スキーマ情報を取得することをお勧めします。  
   
 ## <a name="see-also"></a>関連項目
 

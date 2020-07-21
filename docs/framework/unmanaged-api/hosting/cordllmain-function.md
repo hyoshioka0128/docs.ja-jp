@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc7b51cf-39d3-48ec-a5cb-2f179fbefff8
 topic_type:
 - apiref
-ms.openlocfilehash: f60f159ab4770023cee7123b39109040243e1ccd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3b2322f708afed08172f87e843c225aa9c60d9d3
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136972"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616607"
 ---
 # <a name="_cordllmain-function"></a>\_CorDllMain 関数
 
@@ -40,33 +40,33 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
  から読み込まれたモジュールのインスタンスハンドル。  
   
  `dwReason`  
- からDLL のエントリポイント関数が呼び出される理由を示します。 このパラメーターには、次のいずれかの値を指定できます: DLL\_PROCESS_ATTACH、DLL\_スレッド\_アタッチ、DLL\_スレッド\_アタッチ、または DLL\_プロセス\_デタッチします。 これらの値の詳細については、Platform SDK の `DllMain` のドキュメントを参照してください。  
+ からDLL のエントリポイント関数が呼び出される理由を示します。 このパラメーターには、DLL \_ PROCESS_ATTACH、dll \_ スレッド \_ のアタッチ、dll \_ スレッドの \_ アタッチ、または dll プロセスの \_ \_ デタッチのいずれかの値を指定できます。 これらの値の詳細については、Platform SDK のドキュメントを参照してください `DllMain` 。  
   
  `lpReserved`  
  から未使用.  
   
 ## <a name="return-value"></a>戻り値  
- このメソッドは、成功した場合は `true` を返し、エラーが発生した場合は `false` を返します。  
+ このメソッドは `true` 、成功し `false` た場合はを返し、エラーが発生した場合はを返します。  
   
-## <a name="remarks"></a>Remarks  
- この関数は、DLL アセンブリのオペレーティングシステムローダーによって呼び出されます。 実行可能アセンブリの場合、ローダーは代わりに[\_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md)関数を呼び出します。  
+## <a name="remarks"></a>解説  
+ この関数は、DLL アセンブリのオペレーティングシステムローダーによって呼び出されます。 実行可能アセンブリの場合、ローダーは代わりに[ \_ CorExeMain](corexemain-function.md)関数を呼び出します。  
   
  オペレーティングシステムローダーは、DLL ファイルで指定されたエントリポイントに関係なく、このメソッドを呼び出します。  
   
-`_CorDllMain` 関数は、オペレーティングシステムローダーによって直接呼び出されます。
+`_CorDllMain`関数は、オペレーティングシステムローダーによって直接呼び出されます。
   
- 詳細については、 [\_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md)トピックの「解説」セクションを参照してください。  
+ 詳細については、 [ \_ corvalidateimage](corvalidateimage-function.md)トピックの「解説」を参照してください。  
   
-## <a name="requirements"></a>［要件］  
+## <a name="requirements"></a>要件  
 
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [メタデータ グローバル静的関数](../metadata/metadata-global-static-functions.md)

@@ -1,13 +1,13 @@
 ---
 title: 関数
-description: での関数とF# 、でF#共通の関数型プログラミングコンストラクトをサポートする方法について説明します。
+description: F# での関数と、F# で共通の関数型プログラミング コンストラクトをサポートする方法について説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: c6b8307f51ffcdc77fe4352b2305fca1f247ccbb
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: e49183e0634dee1750757abadbfe9e9c824f51a8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423951"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596475"
 ---
 # <a name="functions"></a>関数
 
@@ -36,9 +36,9 @@ let f x = x + 1
 
 この例では、関数の名前は `f`、引数は `x`、引数の型は `int`、関数本体は `x + 1`、戻り値の型は `int` です。
 
-関数は、`inline` としてマークできます。 `inline` の詳細については、「[Inline Functions](../functions/inline-functions.md)」(インライン関数) を参照してください。
+関数は、`inline` としてマークできます。 `inline` の詳細については、「[Inline Functions](inline-functions.md)」(インライン関数) を参照してください。
 
-## <a name="scope"></a>[スコープ]
+## <a name="scope"></a>スコープ
 
 モジュール スコープ以外のスコープの任意のレベルでは、値または関数の名前を再利用してもエラーになりません。 名前を再利用する場合、後から宣言した名前が前に宣言した名前をシャドウします。 ただし、モジュールの最上位のスコープでは名前が一意である必要があります。 たとえば次のコードは、モジュール スコープではエラーになりますが、関数内ではエラーになりません。
 
@@ -112,7 +112,7 @@ let vol = cylinderVolume 2.0 3.0
 
 ## <a name="recursive-functions"></a>再帰関数
 
-*再帰関数*はそれらの関数自体を呼び出す関数です。 再帰関数を使用するには、**let** キーワードの後に **rec** キーワードを指定する必要があります。 関数の本体から再帰関数を呼び出す方法は、他の関数呼び出しの場合と変わりません。 次の再帰関数は、 *n*<sup>番目</sup>のフィボナッチ数列を計算します。 フィボナッチ数列は、古代から知られている数列で、数例の各数値が、前の 2 つの連続する数値の和になります。
+*再帰関数*はそれらの関数自体を呼び出す関数です。 再帰関数を使用するには、**let** キーワードの後に **rec** キーワードを指定する必要があります。 関数の本体から再帰関数を呼び出す方法は、他の関数呼び出しの場合と変わりません。 次の再帰関数は、*n*<sup></sup> 番目のフィボナッチ数を計算します。 フィボナッチ数列は、古代から知られている数列で、数例の各数値が、前の 2 つの連続する数値の和になります。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
 
@@ -142,7 +142,7 @@ F# では、すべての関数が値と見なされ、実際に、*関数値*と
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet112.fs)]
 
-ラムダ式を定義するには、`fun` キーワードを使用します。 ラムダ式は関数定義に似ていますが、引数リストと関数本体の区切りに `=` トークンではなく `->` トークンを使用する点が異なります。 通常の関数定義と同様に、引数の型は、推論されるようにすることも、明示的に指定することもできます。ラムダ式の戻り値の型も、本体の最後の式の型から推論されます。 詳細については、「[ラムダ式: `fun` キーワード](../functions/lambda-expressions-the-fun-keyword.md)」を参照してください。
+ラムダ式を定義するには、`fun` キーワードを使用します。 ラムダ式は関数定義に似ていますが、引数リストと関数本体の区切りに `=` トークンではなく `->` トークンを使用する点が異なります。 通常の関数定義と同様に、引数の型は、推論されるようにすることも、明示的に指定することもできます。ラムダ式の戻り値の型も、本体の最後の式の型から推論されます。 詳細については、「[ラムダ式: `fun` キーワード](lambda-expressions-the-fun-keyword.md)」を参照してください。
 
 ## <a name="function-composition-and-pipelining"></a>関数合成とパイプライン処理
 

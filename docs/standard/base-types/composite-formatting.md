@@ -1,5 +1,6 @@
 ---
 title: 複合書式指定
+description: .NET の複合書式指定について説明します。これは入力として、オブジェクトのリストと複合書式指定文字列を受け取ります。これには、インデックス付きプレースホルダーを持つ固定テキストが含まれます。
 ms.date: 10/26/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: 12666ca5ad8f223f2fba4a63a7cc7525601367a2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 36197b382c449a2570e1d5530f307c4e66b0d983
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73091571"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447265"
 ---
 # <a name="composite-formatting"></a>複合書式指定
 
@@ -31,7 +32,7 @@ ms.locfileid: "73091571"
   
 - <xref:System.String.Format%2A?displayProperty=nameWithType>。書式設定された結果文字列を返します。  
   
-- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>。書式設定された結果文字列を <xref:System.Text.StringBuilder> オブジェクトに追加します。   
+- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>。書式設定された結果文字列を <xref:System.Text.StringBuilder> オブジェクトに追加します。
 - <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> メソッドの一部のオーバーロード。書式設定された結果文字列をコンソールに表示します。  
   
 - <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType> メソッドの一部のオーバーロード。書式設定された結果文字列をストリームまたはファイルに書き込みます。 <xref:System.IO.TextWriter> から派生したクラス (<xref:System.IO.StreamWriter>、<xref:System.Web.UI.HtmlTextWriter> など) も、この機能を共有します。  
@@ -70,7 +71,7 @@ ms.locfileid: "73091571"
  [!code-csharp[Formatting.Composite#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#10)]
  [!code-vb[Formatting.Composite#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#10)]  
   
- 各書式指定項目は、リスト内のどのオブジェクトでも参照できます。 たとえば、3 つのオブジェクトがある場合は、"{1} {0} {2}" などの複合書式文字列を指定して、2 番目、1 番目、3 番目のオブジェクトの書式を指定できます。 書式指定項目で参照されないオブジェクトは無視されます。 パラメーター指定子がオブジェクトのリストの範囲外の項目を指定する場合は、ランタイムに <xref:System.FormatException> がスローされます。  
+ 各書式指定項目は、リスト内のどのオブジェクトでも参照できます。 たとえば、3 つのオブジェクトがある場合は、"{1} {0} {2}" などの複合書式文字列を指定して、2 番目、1 番目、3 番目のオブジェクトの書式を指定できます。 書式指定項目で参照されないオブジェクトは無視されます。 パラメーター指定子がオブジェクトのリストの範囲外の項目を指定する場合は、実行時に <xref:System.FormatException> がスローされます。  
   
 ### <a name="alignment-component"></a>Alignment コンポーネント  
  省略可能な *alignment* コンポーネントは、書式設定フィールドの幅を指定する符号付き整数です。 *alignment* の値が書式設定する文字列の長さよりも小さい場合、*alignment* は無視され、書式設定する文字列の長さがフィールドの幅として使用されます。 フィールド内の書式設定されたデータは、*alignment* が正の場合は右揃え、*alignment* が負の場合は左揃えされます。 埋め込みが必要な場合は、空白が使用されます。 *alignment* を指定する場合は、コンマが必要です。  
@@ -81,17 +82,17 @@ ms.locfileid: "73091571"
  [!code-vb[Formatting.Composite#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/alignment1.vb#8)]  
   
 ### <a name="format-string-component"></a>Format String コンポーネント  
- オプションの *formatString* コンポーネントは、書式設定されるオブジェクトの種類に適した書式指定文字列です。 対応するオブジェクトが数値の場合は標準またはカスタムの数値書式指定文字列を指定し、対応するオブジェクトが <xref:System.DateTime> オブジェクトの場合は標準またはカスタムの日時書式指定文字列を指定し、対応するオブジェクトが列挙値の場合は[列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)を指定します。 *formatString* が指定されない場合は、数値、日付と時刻、または列挙型の汎用 ("G") 書式指定子が使用されます。 *formatString* を指定する場合はコロンが必要です。  
+ オプションの *formatString* コンポーネントは、書式設定されるオブジェクトの種類に適した書式指定文字列です。 対応するオブジェクトが数値の場合は標準またはカスタムの数値書式指定文字列を指定し、対応するオブジェクトが <xref:System.DateTime> オブジェクトの場合は標準またはカスタムの日時書式指定文字列を指定し、対応するオブジェクトが列挙値の場合は[列挙型書式指定文字列](enumeration-format-strings.md)を指定します。 *formatString* が指定されない場合は、数値、日付と時刻、または列挙型の汎用 ("G") 書式指定子が使用されます。 *formatString* を指定する場合はコロンが必要です。  
   
  次の表は、定義済みの一連の書式指定文字列をサポートする .NET Framework クラス ライブラリ内の型または型のカテゴリの一覧です。サポートされている書式指定文字列が示されているトピックへのリンクも含まれています。 文字列の書式設定とは拡張可能な機構で、既存のすべての型に対する新しい書式指定文字列を定義できるだけでなく、アプリケーション定義の型でサポートされる一連の書式指定文字列も定義できます。 詳しくは、<xref:System.IFormattable> および <xref:System.ICustomFormatter> のインターフェイスに関するトピックを参照してください。  
   
 |型または型のカテゴリ|解決方法については、|  
 |---------------------------|---------|  
-|日付と時刻の型 (<xref:System.DateTime>、<xref:System.DateTimeOffset>)|[標準の日時形式文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [カスタム日時形式文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
-|列挙型 (<xref:System.Enum?displayProperty=nameWithType> から派生したすべての型)|[列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|数値型 (<xref:System.Numerics.BigInteger>、<xref:System.Byte>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64>)|[標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [カスタム数値形式文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|日付と時刻の型 (<xref:System.DateTime>、<xref:System.DateTimeOffset>)|[標準の日時形式文字列](standard-date-and-time-format-strings.md)<br /><br /> [カスタム日時形式文字列](custom-date-and-time-format-strings.md)|  
+|列挙型 (<xref:System.Enum?displayProperty=nameWithType> から派生したすべての型)|[列挙型書式指定文字列](enumeration-format-strings.md)|  
+|数値型 (<xref:System.Numerics.BigInteger>、<xref:System.Byte>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、<xref:System.UInt32>、<xref:System.UInt64>)|[標準の数値書式指定文字列](standard-numeric-format-strings.md)<br /><br /> [カスタム数値形式文字列](custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
-|<xref:System.TimeSpan>|[標準の時間間隔書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [カスタム時間間隔書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
+|<xref:System.TimeSpan>|[標準の時間間隔書式指定文字列](standard-timespan-format-strings.md)<br /><br /> [カスタム時間間隔書式指定文字列](custom-timespan-format-strings.md)|  
   
 ### <a name="escaping-braces"></a>エスケープ中かっこ ({})  
  左中かっこ ({) および右中かっこ (}) は、書式指定項目の開始および終了として解釈されます。 したがって、左中かっこおよび右中かっこを文字として表示するためには、エスケープ シーケンスを使用する必要があります。 左中かっこを 1 つ ("{") 表示するには、左中かっこ 2 つ ("{{") を固定テキストに指定します。また、右中かっこを 1 つ ("}") 表示するには、右中かっこ 2 つ ("}}") を指定します。 書式指定項目に使用されている中かっこは、指定されている順序に従って解釈されます。 入れ子になった中かっこを解釈する機能はサポートされていません。  
@@ -163,11 +164,11 @@ ms.locfileid: "73091571"
 - <xref:System.String.Format%2A?displayProperty=nameWithType>
 - [文字列補間 (C#)](../../csharp/language-reference/tokens/interpolated.md)
 - [文字列補間 (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
-- [型の書式設定](../../../docs/standard/base-types/formatting-types.md)
-- [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [標準の日時形式文字列](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [カスタム日時形式文字列](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
-- [標準の時間間隔書式指定文字列](../../../docs/standard/base-types/standard-timespan-format-strings.md)
-- [カスタム時間間隔書式指定文字列](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [列挙型書式指定文字列](../../../docs/standard/base-types/enumeration-format-strings.md)
+- [型の書式設定](formatting-types.md)
+- [標準の数値書式指定文字列](standard-numeric-format-strings.md)
+- [カスタム数値書式指定文字列](custom-numeric-format-strings.md)
+- [標準の日時形式文字列](standard-date-and-time-format-strings.md)
+- [カスタム日時形式文字列](custom-date-and-time-format-strings.md)
+- [標準の時間間隔書式指定文字列](standard-timespan-format-strings.md)
+- [カスタム時間間隔書式指定文字列](custom-timespan-format-strings.md)
+- [列挙型書式指定文字列](enumeration-format-strings.md)

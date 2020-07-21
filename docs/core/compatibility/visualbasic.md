@@ -1,17 +1,22 @@
 ---
-title: Visual Basic に関する破壊的変更 - .NET Core
+title: Visual Basic に関する破壊的変更
 description: .NET Core で使用される Visual Basic での破壊的変更の一覧を示します。
 ms.date: 09/20/2019
-ms.openlocfilehash: e06f7a3d896a1f40f64c083f51997a231bc2f29d
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 00c88b4d6609f26ad6f2c3f90c8145e4d2eabaa9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567403"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "77092955"
 ---
 # <a name="visual-basic-breaking-changes"></a>Visual Basic に関する破壊的変更
 
-.NET Core のバージョンごとに Visual Basic に関する破壊的変更の一覧を次に示します。
+Visual Basic に関する破壊的変更の一覧を次に示します。
+
+- [Microsoft.VisualBasic.ApplicationServices 名前空間の型は使用できない](#types-in-microsoftvisualbasicapplicationservices-namespace-not-available)
+- [Microsoft.VisualBasic.Devices 名前空間の型は使用できない](#types-in-microsoftvisualbasicdevices-namespace-not-available)
+- [Microsoft.VisualBasic.MyServices 名前空間の型は使用できない](#types-in-microsoftvisualbasicmyservices-namespace-not-available)
+- [Microsoft.VisualBasic.Constants.vbNewLine は古い](#microsoftvisualbasicconstantsvbnewline-is-obsolete)
 
 ## <a name="net-core-30-preview-9"></a>.NET Core 3.0 Preview 9
 
@@ -24,6 +29,8 @@ ms.locfileid: "74567403"
 ***
 
 [!INCLUDE[Types in Microsoft.VisualBasic.MyServices namespace not available](~/includes/core-changes/visualbasic/3.0/microsoft.visualbasic.myservices-unavailable.md)]
+
+***
 
 ## <a name="net-core-30-preview-8"></a>.NET Core 3.0 Preview 8
 

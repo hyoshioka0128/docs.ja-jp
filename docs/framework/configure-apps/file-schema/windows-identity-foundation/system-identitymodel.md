@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
 author: BrucePerlerMS
 ms.openlocfilehash: a54f5ce86aee1a5e831c0b10aa1471d4a82f40a5
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70251792"
 ---
-# <a name="systemidentitymodel"></a>\<system.identityModel>
+# \<system.identityModel>
 アプリケーションで Windows Identity Foundation (WIF) オプションを有効にするための構成を提供します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp; **\<システムの >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;**\<system.identityModel>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -41,11 +41,11 @@ ms.locfileid: "70251792"
 |-------------|-----------------|  
 |`<configuration>`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
   
-## <a name="remarks"></a>Remarks  
- 構成ファイル`<system.identityModel>`にセクションを追加して、Windows Identity Foundation (WIF) を使用するようにサービスまたはアプリケーションを構成します。 要素は、 <xref:System.IdentityModel.Configuration.SystemIdentityModelSection>クラスによって表されます。 `<system.identityModel>`  
+## <a name="remarks"></a>解説  
+ `<system.identityModel>`構成ファイルにセクションを追加して、Windows Identity Foundation (WIF) を使用するようにサービスまたはアプリケーションを構成します。 `<system.identityModel>`要素は、クラスによって表され <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> ます。  
   
 ## <a name="example"></a>例  
- 次の例は、構成ファイルに`<system.identityModel>`セクションを追加する方法を示しています。 最初に、構成セクションと名前空間の宣言を要素`<configSections>`の下に追加する必要があります。 次に、要素を`<system.IdentityModel>`構成ファイルに追加して、1つまたは複数の id 構成を指定できます。  
+ 次の例は、構成ファイルにセクションを追加する方法を示して `<system.identityModel>` います。 最初に、構成セクションと名前空間の宣言を要素の下に追加する必要があり `<configSections>` ます。 次に、要素を `<system.IdentityModel>` 構成ファイルに追加して、1つまたは複数の id 構成を指定できます。  
   
 ```xml  
 <configuration>  

@@ -10,26 +10,26 @@ helpviewer_keywords:
 - <connectionManagement>, remove element
 - remove element, connectionManagement
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
-ms.openlocfilehash: 287e36dce65be7a002499d2cd22481018a1f4742
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 39ce85c3c15a2d4bdfce801a35e9ca088bd5091b
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089165"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79154739"
 ---
-# <a name="remove-element-for-connectionmanagement-network-settings"></a>connectionManagement の > 要素を削除 \<には (ネットワーク設定)
+# <a name="remove-element-for-connectionmanagement-network-settings"></a>connectionManagement の \<remove> 要素 (ネットワーク設定)
 接続管理リストから IP アドレスまたは DNS 名を削除します。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<connectionManagement >** ](connectionmanagement-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**削除**>
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<connectionManagement>**](connectionmanagement-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
 
 ## <a name="syntax"></a>構文  
   
 ```xml  
-<remove   
-  address="server name or IP address"   
+<remove
+  address="server name or IP address"
 />  
 ```  
   
@@ -51,16 +51,16 @@ ms.locfileid: "74089165"
 |-----------------|---------------------|  
 |[connectionManagement](connectionmanagement-element-network-settings.md)|ネットワーク ホストへの接続の最大数を指定します。|  
   
-## <a name="remarks"></a>Remarks  
- `remove` 要素は、指定されたサーバーの接続管理リストのエントリを削除します。  
+## <a name="remarks"></a>解説  
+ 要素は、 `remove` 指定されたサーバーの接続管理リストのエントリを削除します。  
   
- `address` 属性の値には、有効な IP アドレスまたはホスト名を指定する必要があります。  
+ 属性の値は、 `address` 有効な IP アドレスまたはホスト名である必要があります。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
 ## <a name="example"></a>例  
- 次の例では、サーバー `www.adventure-works.com` の接続管理リストのエントリをすべて削除してから、サーバー `www.contoso.com` への4つの接続と、他のすべてのサーバーへの2つの接続を使用するようにアプリケーションを構成します。  
+ 次の例では、サーバーに対する接続管理の一覧のエントリをすべて削除し、 `www.adventure-works.com` サーバーへの接続を4つ、 `www.contoso.com` 他のすべてのサーバーへの接続を2つ使用するようにアプリケーションを構成します。  
   
 ```xml  
 <configuration>  

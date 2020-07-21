@@ -2,12 +2,12 @@
 title: キューに置かれたメッセージングのトラブルシューティング
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 2999d1ab4129c72c231b6dc80480d8bfef5186fa
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: f695af3d2ad498e1f5975e1a396f1e7b05bf63bc
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837312"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595129"
 ---
 # <a name="troubleshooting-queued-messaging"></a>キューに置かれたメッセージングのトラブルシューティング
 
@@ -17,17 +17,17 @@ ms.locfileid: "74837312"
 
 **Q:** WCF Beta 1 を使用し、MSMQ 修正プログラムをインストールしました。 この修正プログラムを削除する必要がありますか。
 
-**A:** できます。 この修正プログラムのサポートは終了しています。 WCF は、修正プログラムの要件を伴わずに MSMQ で動作するようになりました。
+**A:** はい。 この修正プログラムのサポートは終了しています。 WCF は、修正プログラムの要件を伴わずに MSMQ で動作するようになりました。
 
-**Q:** MSMQ には、<xref:System.ServiceModel.NetMsmqBinding> と <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>の2つのバインドがあります。 それぞれの用途を教えてください。
+**Q:** MSMQ には、との2つのバインドがあり <xref:System.ServiceModel.NetMsmqBinding> <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> ます。 それぞれの用途を教えてください。
 
-**A:** 2つの WCF アプリケーション間でキューに置かれた通信のトランスポートとして MSMQ を使用する場合は、<xref:System.ServiceModel.NetMsmqBinding> を使用します。 既存の MSMQ アプリケーションを使用して新しい WCF アプリケーションと通信する場合は、<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> を使用します。
+**A:**<xref:System.ServiceModel.NetMsmqBinding>2 つの WCF アプリケーション間でキューに置かれた通信のトランスポートとして MSMQ を使用する場合は、を使用します。 既存の <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> MSMQ アプリケーションを使用して新しい WCF アプリケーションと通信する場合は、を使用します。
 
-**Q:** <xref:System.ServiceModel.NetMsmqBinding> バインドと `MsmqIntegration` バインドを使用するには、MSMQ をアップグレードする必要がありますか。
+**Q:** バインドとバインドを使用するには、MSMQ をアップグレードする必要があり <xref:System.ServiceModel.NetMsmqBinding> `MsmqIntegration` ますか。
 
-**A:** いいえ。 これらは共に [!INCLUDE[wxp](../../../../includes/wxp-md.md)] および [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] 上の MSMQ 3.0 で使用できます。 Windows Vista で MSMQ 4.0 にアップグレードすると、バインドの特定の機能が使用できるようになります。
+**A:** いいえ。 どちらのバインドも、Windows XP と Windows Server 2003 の MSMQ 3.0 で動作します。 Windows Vista で MSMQ 4.0 にアップグレードすると、バインドの特定の機能が使用できるようになります。
 
-**Q:** Msmq 4.0 では、<xref:System.ServiceModel.NetMsmqBinding> バインドと <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> バインドのどの機能を使用できますが、MSMQ 3.0 では使用できませんか。
+**Q:** Msmq 4.0 では、およびバインドのどの機能を <xref:System.ServiceModel.NetMsmqBinding> <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> 使用できますが、msmq 3.0 では使用できませんか。
 
 **A:** Msmq 4.0 では、次の機能は使用できますが、MSMQ 3.0 では使用できません。
 
@@ -37,11 +37,11 @@ ms.locfileid: "74837312"
 
 - MSMQ 4.0 のみが、リモート トランザクション読み取りをサポートします。
 
-詳細については、「 [Windows Vista、Windows Server 2003、および WINDOWS XP のキュー機能の相違点](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)」を参照してください。
+詳細については、「 [Windows Vista、Windows Server 2003、および WINDOWS XP のキュー機能の相違点](diff-in-queue-in-vista-server-2003-windows-xp.md)」を参照してください。
 
 **Q:** キューに置かれた通信の片側で MSMQ 3.0 を使用し、もう一方の側で MSMQ 4.0 を使用できますか。
 
-**A:** できます。
+**A:** はい。
 
 **Q:** 既存の MSMQ アプリケーションを新しい WCF クライアントまたはサーバーに統合します。 使用している MSMQ インフラストラクチャの両方の側をアップグレードする必要がありますか。
 
@@ -51,51 +51,51 @@ ms.locfileid: "74837312"
 
 ここでは、一般的なトラブルシューティングの問題に対する解答を示します。 既知の制限である一部の問題は、リリース ノートにも記載されています。
 
-**Q:** プライベートキューを使用しようとしていますが、次の例外が発生しました: `System.InvalidOperationException`: URL が無効です。 キューの URL に '$' 文字を使用することはできません。 net.msmq://machine/private/queueName の構文を使用して、プライベート キューをアドレス指定してください。
+**Q:** プライベートキューを使用しようとしていますが、次の例外が発生しました: `System.InvalidOperationException` : URL が無効です。 キューの URL に '$' 文字を使用することはできません。 net.msmq://machine/private/queueName の構文を使用して、プライベート キューをアドレス指定してください。
 
-**A:** 構成とコードのキュー Uniform Resource Identifier (URI) を確認してください。 URI では、"$" 文字を使用できません。 たとえば、OrdersQueue という名前のプライベート キューのアドレスを指定する場合は、URI を net.msmq://localhost/private/ordersQueue と指定してください。
+**A:** 構成とコードでキュー Uniform Resource Identifier (URI) を確認します。 URI では、"$" 文字を使用できません。 たとえば、OrdersQueue という名前のプライベートキューをアドレス指定するには、URI としてを指定し `net.msmq://localhost/private/ordersQueue` ます。
 
-**Q:** キューに置かれたアプリケーションで `ServiceHost.Open()` を呼び出すと、次の例外がスローされます。 `System.ArgumentException`: ベースアドレスに URI クエリ文字列を含めることはできません。 その理由については、
+**Q:**`ServiceHost.Open()`キューに置かれたアプリケーションでを呼び出すと、次の例外がスローされます: `System.ArgumentException` : ベースアドレスに URI クエリ文字列を含めることはできません。 なぜでしょうか。
 
 **A:** 構成ファイルとコード内のキューの URI を確認します。 MSMQ のキューでは '?' 文字の使用がサポートされていますが、URI はこれを文字列クエリの開始と解釈します。 この問題を回避するには、'?' 文字を含まないキュー名を使用してください。
 
-**Q:** 送信は成功しましたが、受信側でサービス操作が呼び出されていません。 その理由については、
+**Q:** 送信は成功しましたが、受信側でサービス操作が呼び出されていません。 なぜでしょうか。
 
 **A:** 回答を確認するには、次のチェックリストを使用します。
 
 - トランザクション キューの要件と指定済みの保証が適合することを確認します。 次の原則に注意してください。
 
-  - 永続的なメッセージ (データグラムとセッション) は、トランザクションキューにのみ "厳密に1回" 保証 (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`) を使用して送信できます。
+  - "厳密に1回" 保証 () を使用して <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `true` 、トランザクションキューにのみ永続的なメッセージ (データグラムとセッション) を送信できます。
 
   - "1 回限りの" 配信の保証付きのセッションのみを送信できます。
 
   - セッションでトランザクション キューからメッセージを受け取るには、1 つのトランザクションが必要です。
 
-  - 非トランザクションキューに対してのみ、(<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`) 保証なしで、揮発性または永続的なメッセージ (データグラムのみ) を送信または受信できます。
+  - 保証なし () では <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `false` 、非トランザクションキューに対してのみ、揮発性または永続的なメッセージ (データグラムのみ) を送信または受信できます。
 
 - 配信不能キューを確認します。 このキューにメッセージが置かれている場合は、メッセージが配信されなかった理由を特定してください。
 
 - 送信キューを確認して、接続性またはアドレス指定の問題を特定します。
 
-**Q:** カスタム配信不能キューを指定しましたが、送信側アプリケーションを開始すると、配信不能キューが見つからないか、送信元アプリケーションに配信不能キューへのアクセス許可がないという例外が発生します。 なぜ、こうなるのでしょうか。
+**Q:** カスタム配信不能キューを指定しましたが、送信側アプリケーションを開始すると、配信不能キューが見つからないか、送信元アプリケーションに配信不能キューへのアクセス許可がないという例外が発生します。 パフォーマンスが低下しているのはなぜですか。
 
 **A:** カスタム配信不能キューの URI には、最初のセグメント (例://localhost/private/myAppdead-letter queue) に "localhost" またはコンピューター名が含まれている必要があります。
 
 **Q:** カスタム配信不能キューを定義する必要があるか、既定の配信不能キューがあるか。
 
-**A:** 保証が "厳密に1回" (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `true`) であり、カスタム配信不能キューを指定しない場合、既定値はシステム全体のトランザクション配信不能キューになります。
+**A:** 保証が "厳密に1回" ( <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `true` ) であり、カスタム配信不能キューを指定しない場合、既定値はシステム全体のトランザクション配信不能キューになります。
 
-保証が none (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`) の場合、既定では配信不能キュー機能はありません。
+保証が none () の場合 <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>  =  `false` 、既定値は配信不能キュー機能になりません。
 
-**Q:** サービスが Svchost.exe でスローします。 "EndpointListener の要件を ListenerFactory が満たすことができません" というメッセージが表示されます。 その理由については、
+**Q:** サービスが Svchost.exe でスローします。 "EndpointListener の要件を ListenerFactory が満たすことができません" というメッセージが表示されます。 なぜでしょうか。
 
-A: サービス コントラクトを確認してください。 すべてのサービス操作に "IsOneWay =`true`" を配置し忘れた可能性があります。 キューは、一方向のサービス操作しかサポートしません。
+A. サービス コントラクトを確認してください。 すべてのサービス操作に "IsOneWay =" を配置し忘れた可能性があり `true` ます。 キューは、一方向のサービス操作しかサポートしません。
 
-**Q:** キューにメッセージがありますが、サービス操作が呼び出されていません。 何が問題なのでしょうか。
+**Q:** キューにメッセージがありますが、サービス操作が呼び出されていません。 問題は何ですか?
 
 **A:** サービスホストに障害が発生していないかどうかを確認します。 確認するには、トレースを調べるか、`IErrorHandler` を実装します。 既定では、有害メッセージが検出された場合、サービス ホストはエラーになります。
 
-**Q:** キューにメッセージがありますが、Web でホストされているキューに登録されたサービスがアクティブ化されていません。 その理由については、
+**Q:** キューにメッセージがありますが、Web でホストされているキューに登録されたサービスがアクティブ化されていません。 なぜでしょうか。
 
 **A:** 最も一般的な理由はアクセス許可です。
 
@@ -107,17 +107,13 @@ A: サービス コントラクトを確認してください。 すべてのサ
     sc sidtype NetMsmqActivator unrestricted
     ```
 
-セキュリティに関連しない Web ホストの問題については、「キューに登録され[たアプリケーションを web でホスト](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)する」を参照してください。
+セキュリティに関連しない Web ホストの問題については、「キューに登録され[たアプリケーションを web でホスト](web-hosting-a-queued-application.md)する」を参照してください。
 
 **Q:** セッションにアクセスする最も簡単な方法は何ですか。
 
-**A:** セッションの最後のメッセージに対応する操作に対して AutoComplete =`true` を設定し、残りのすべてのサービス操作に対して AutoComplete =`false` を設定します。
+**A:**`true`セッションの最後のメッセージに対応する操作で autocomplete = を設定し、 `false` 残りのすべてのサービス操作で autocomplete = を設定します。
 
-**Q:** MSMQ に関してよく寄せられる質問に対する回答はどこで確認できますか。
-
-**A:** MSMQ の詳細については、「 [Microsoft Message Queuing](https://go.microsoft.com/fwlink/?LinkId=87810)」を参照してください。
-
-**Q:** キューに登録されたセッションメッセージとキューに置かれたデータグラムメッセージの両方を含むキューから読み取るときに、サービスが `ProtocolException` をスローするのはなぜですか。
+**Q:** キュー `ProtocolException` に登録されたセッションメッセージとキューに置かれたデータグラムメッセージの両方を含むキューから読み取るときに、サービスがをスローするのはなぜですか。
 
 **A:** キューに登録されたセッションメッセージとキューに置かれたデータグラムメッセージの構成方法には、基本的な違いがあります。 このため、キューを使用するセッション メッセージを読み取ろうとするサービスは、キューを使用するデータグラム メッセージを受信できず、キューを使用するデータグラム メッセージを読み取ろうとするサービスは、セッション メッセージを受信できません。 これら両方の種類のメッセージを同じキューから読み取ろうとすると、次の例外がスローされます。
 
@@ -130,15 +126,15 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
 
 ### <a name="msmq-integration-specific-troubleshooting"></a>MSMQ 統合 : 固有のトラブルシューティング
 
-**Q:** メッセージを送信したとき、またはサービスホストを開いたときに、スキームが間違っていることを示すエラーが表示されます。 その理由については、
+**Q:** メッセージを送信したとき、またはサービスホストを開いたときに、スキームが間違っていることを示すエラーが表示されます。 なぜでしょうか。
 
 **A:** MSMQ 統合バインドを使用する場合は、msmq-mqseries スキームを使用する必要があります。 たとえば、msmq.formatname:DIRECT=OS:.\private$\OrdersQueue などです。 ただし、カスタム配信不能キューを指定するときは、net.msmq スキームを使用する必要があります。
 
-**Q:** パブリックまたはプライベート形式名を使用して Windows Vista でサービスホストを開くと、エラーが表示されます。 その理由については、
+**Q:** パブリックまたはプライベート形式名を使用して Windows Vista でサービスホストを開くと、エラーが表示されます。 なぜでしょうか。
 
-**A:** Windows Vista の WCF 統合チャネルは、有害なメッセージを処理するためにメインアプリケーションキューのサブキューを開くことができるかどうかを確認します。 サブキューの名前は、リスナーに渡される msmq.formatname URI から派生します。 MSMQ でのサブキュー名は、直接形式名に限定されます。 そのためにエラーが発生します。 キュー URI を直接形式名に変更してください。
+**A:** Windows Vista の WCF 統合チャネルは、有害なメッセージを処理するためにメインアプリケーションキューのサブキューを開くことができるかどうかを確認します。 サブキュー名は、リスナーに渡された、formatname URI から派生します。 MSMQ のサブキュー名に使用できるのは、直接形式名のみです。 そのためにエラーが発生します。 キュー URI を直接形式名に変更してください。
 
-**Q:** MSMQ アプリケーションからメッセージを受信すると、メッセージはキューに置かれ、受信側の WCF アプリケーションによって読み取られることはありません。 その理由については、
+**Q:** MSMQ アプリケーションからメッセージを受信すると、メッセージはキューに置かれ、受信側の WCF アプリケーションによって読み取られることはありません。 なぜでしょうか。
 
 **A:** メッセージに本文があるかどうかを確認します。 メッセージに本文がない場合、MSMQ 統合チャネルはメッセージを無視します。 例外を通知する `IErrorHandler` を実装し、トレースを確認してください。
 
@@ -148,31 +144,31 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
 
 **A:** 既定では、メッセージは、Active Directory Directory サービスを必要とする MSMQ 内部証明書を使用して署名されます。 ワークグループ モードでは、Active Directory が使用できないため、メッセージに署名できません。 このため、メッセージは配信不能キューにあり、"署名が正しくありません" などのエラーの原因が示されます。
 
-この問題を回避するには、セキュリティを無効にします。 これを行うには <xref:System.ServiceModel.NetMsmqSecurity.Mode%2A> = <xref:System.ServiceModel.NetMsmqSecurityMode.None> を設定して、ワークグループモードで動作するようにします。
+この問題を回避するには、セキュリティを無効にします。 これを行うには <xref:System.ServiceModel.NetMsmqSecurity.Mode%2A>  =  <xref:System.ServiceModel.NetMsmqSecurityMode.None> 、ワークグループモードで動作するようにを設定します。
 
 また、<xref:System.ServiceModel.MsmqTransportSecurity> プロパティから <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A> を取得し、それを <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> に設定して、クライアント証明書を設定する方法もあります。
 
 さらに、MSMQ と Active Directory 統合をインストールして回避することもできます。
 
-**Q:** Active Directory で既定のバインド (トランスポートセキュリティが有効) を使用してメッセージをキューに送信すると、"内部証明書が見つかりません" というメッセージが表示されます。 この問題を解決するにはどうすればよいですか。
+**Q:** Active Directory で既定のバインド (トランスポートセキュリティが有効) を使用してメッセージをキューに送信すると、"内部証明書が見つかりません" というメッセージが表示されます。 これをどのように修正すればよいですか?
 
-**A:** これは、送信側の Active Directory の証明書を更新する必要があることを意味します。 これを行うには、 **[コントロールパネル]** 、 **[管理ツール]** 、 **[コンピューターの管理]** の順に開き、 **[MSMQ]** を右クリックして、 **[プロパティ]** を選択します。 **[ユーザー証明書]** タブを選択し、 **[更新]** ボタンをクリックします。
+**A:** これは、送信側の Active Directory の証明書を更新する必要があることを意味します。 これを行うには、[**コントロールパネル**]、[**管理ツール**]、[**コンピューターの管理**] の順に開き、[ **MSMQ**] を右クリックして、[**プロパティ**] を選択します。 [**ユーザー証明書**] タブを選択し、[**更新**] ボタンをクリックします。
 
-**Q:** <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> を使用してメッセージを送信し、使用する証明書を指定すると、"証明書が無効です" というメッセージが表示されます。 この問題を解決するにはどうすればよいですか。
+**Q:** を使用してメッセージを送信 <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> し、使用する証明書を指定すると、"証明書が無効です" というメッセージが表示されます。 これをどのように修正すればよいですか?
 
 **A:** 証明書モードでローカルコンピューターの証明書ストアを使用することはできません。 証明書スナップインを使用して、コンピューターの証明書ストアから現在のユーザー ストアに証明書をコピーする必要があります。 証明書スナップインを開くには、以下を実行します。
 
-1. **[スタート]** をクリックし、 **[実行]** を選択して `mmc`を入力し、[ **OK]** をクリックします。
+1. [**スタート**] をクリックし、[**実行**] を選択して「」と入力し、 `mmc` [ **OK]** をクリックします
 
-2. **Microsoft 管理コンソール**で、 **[ファイル]** メニューを開き、 **[スナップインの追加と削除]** を選択します。
+2. **Microsoft 管理コンソール**で、[**ファイル**] メニューを開き、[**スナップインの追加と削除**] を選択します。
 
-3. スナップインの **[追加と削除]** ダイアログボックスで、 **[追加]** ボタンをクリックします。
+3. [スナップインの**追加と削除**] ダイアログボックスで、[**追加**] ボタンをクリックします。
 
-4. **[スタンドアロンスナップ]** インの追加 ダイアログボックスで、証明書 を選択し、 **[追加]** をクリックします。
+4. [**スタンドアロンスナップ**インの追加] ダイアログボックスで、[証明書] を選択し、[**追加**] をクリックします。
 
-5. **[証明書]** スナップイン ダイアログボックスで、 **[ユーザーアカウント]** を選択し、 **[完了]** をクリックします。
+5. [**証明書**スナップイン] ダイアログボックスで、[**ユーザーアカウント**] を選択し、[**完了**] をクリックします。
 
-6. 次に、前の手順を使用して2番目の証明書スナップインを追加しますが、今度は **[コンピューターアカウント]** を選択し、 **[次へ]** をクリックします。
+6. 次に、前の手順を使用して2番目の証明書スナップインを追加しますが、今度は [**コンピューターアカウント**] を選択し、[**次へ**] をクリックします。
 
 7. **[ローカル コンピューター]** を選択して **[完了]** をクリックします。 これで、コンピューターの証明書ストアから現在のユーザー ストアに証明書をドラッグ アンド ドロップできます。
 
@@ -180,7 +176,7 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
 
 **A:** ワークグループモードでは、リモートアプリケーションがキューにアクセスできるようにするには、そのキューにアクセスする権限が必要です。 キューのアクセス制御リスト (ACL) に "Anonymous login" を追加し、読み取りアクセス許可を付与します。
 
-**Q:** ネットワークサービスクライアント (またはドメインアカウントを持たないクライアント) がキューに置かれたメッセージを送信する場合、送信は無効な証明書で失敗します。 この問題を解決するにはどうすればよいですか。
+**Q:** ネットワークサービスクライアント (またはドメインアカウントを持たないクライアント) がキューに置かれたメッセージを送信する場合、送信は無効な証明書で失敗します。 これをどのように修正すればよいですか?
 
 **A:** バインドの構成を確認します。 既定のバインディングでは、メッセージに署名するために MSMQ トランスポート セキュリティを有効にしています。 これを無効にしてください。
 
@@ -190,15 +186,15 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
 
 **A:** これには、次の3つの原因が考えられます。
 
-- ドメイン モードの場合、リモート トランザクション受信には、Microsoft 分散トランザクション コーディネーター (MSDTC) ネットワーク アクセスが必要です。 これは、 **[コンポーネントの追加と削除]** を使用して有効にすることができます。
+- ドメイン モードの場合、リモート トランザクション受信には、Microsoft 分散トランザクション コーディネーター (MSDTC) ネットワーク アクセスが必要です。 これは、[**コンポーネントの追加と削除**] を使用して有効にすることができます。
 
   ![ネットワーク DTC アクセスの有効化を示すスクリーンショット。](./media/troubleshooting-queued-messaging/enable-distributed-transaction-coordinator-access.jpg)
 
 - トランザクション マネージャーと通信するための認証モードを確認します。 ワークグループモードの場合は、[認証は必要ありません] を選択する必要があります。 ドメインモードの場合は、[相互認証が必要] を選択する必要があります。
 
-  ![XA トランザクションの有効化](../../../../docs/framework/wcf/feature-details/media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")
+  ![XA トランザクションの有効化](media/4f3695e0-fb0b-4c5b-afac-75f8860d2bb0.jpg "4f3695e0-fb0b-4c5b-afac-75f8860d2bb0")
 
-- **[インターネット接続ファイアウォール]** 設定で、MSDTC が例外の一覧に含まれていることを確認します。
+- [**インターネット接続ファイアウォール**] 設定で、MSDTC が例外の一覧に含まれていることを確認します。
 
 - Windows Vista を使用していることを確認します。 Windows Vista の MSMQ は、リモートトランザクション読み取りをサポートしています。 以前の Windows リリース上の MSMQ は、リモート トランザクション読み取りをサポートしません。
 
@@ -208,8 +204,8 @@ System.ServiceModel.MsmqPoisonMessageException: The transport channel detected a
 
 **Q:** MSMQ アクティブ化サービスを使用して、リモートコンピューター上のキュー内のメッセージに基づいてアプリケーションをアクティブ化することはできますか。
 
-**A:** できます。 これには、ネットワーク サービスとして動作するように MSMQ アクティベーション サービスを構成し、リモート コンピューター上のキューへのネットワーク サービス アクセスを追加する必要があります。
+**A:** はい。 これには、ネットワーク サービスとして動作するように MSMQ アクティベーション サービスを構成し、リモート コンピューター上のキューへのネットワーク サービス アクセスを追加する必要があります。
 
 ## <a name="using-custom-msmq-bindings-with-receivecontext-enabled"></a>ReceiveContext を有効にしたカスタム MSMQ バインディングの使用
 
-<xref:System.ServiceModel.Channels.ReceiveContext> を有効にしてカスタム MSMQ バインディングを使用すると、ネイティブの MSMQ が非同期の <xref:System.ServiceModel.Channels.ReceiveContext> 受信の I/O 完了をサポートしないために、着信メッセージの処理にスレッド プール内のスレッドが使用されます。 これは、このようなメッセージの処理に <xref:System.ServiceModel.Channels.ReceiveContext> の内部トランザクションが使用され、MSMQ が非同期処理をサポートしないためです。 この問題を回避するには、<xref:System.ServiceModel.Description.SynchronousReceiveBehavior> をエンドポイントに追加して同期処理を強制するか、<xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> を 1 に設定します。
+が有効なカスタム MSMQ バインディングを使用する場合 <xref:System.ServiceModel.Channels.ReceiveContext> 、ネイティブ MSMQ では非同期受信の i/o 完了がサポートされないため、受信メッセージの処理でスレッドプールスレッドが使用さ <xref:System.ServiceModel.Channels.ReceiveContext> れます。 これは、このようなメッセージの処理では内部トランザクションが使用され、 <xref:System.ServiceModel.Channels.ReceiveContext> MSMQ は非同期処理をサポートしないためです。 この問題を回避するには、を <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> エンドポイントに追加して、同期処理を強制的に実行するか、 <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A> を1に設定します。

@@ -7,13 +7,13 @@ dev_langs:
 ms.assetid: 7dd6829e-79a5-4480-9023-9e588cb0bf2e
 ms.openlocfilehash: 40caa07488cb40ca8e9e3eb3a570c325b92de491
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70793308"
 ---
 # <a name="how-to-retrieve-member-conflict-information"></a>方法: メンバーの競合情報を取得する
-<xref:System.Data.Linq.MemberChangeConflict> クラスを使用すると、競合する個々のメンバーに関する情報を取得できます。 この同じコンテキストで、メンバーの競合の処理をカスタマイズできます。 詳細については[、「オプティミスティック同時実行制御」を参照してください。概要](optimistic-concurrency-overview.md)。  
+<xref:System.Data.Linq.MemberChangeConflict> クラスを使用すると、競合する個々のメンバーに関する情報を取得できます。 この同じコンテキストで、メンバーの競合の処理をカスタマイズできます。 詳しくは、「[オプティミスティック コンカレンシー: 概要)](optimistic-concurrency-overview.md) の下のステートメントを右クリックします。  
   
 ## <a name="example"></a>例  
  次のコードでは、<xref:System.Data.Linq.ObjectChangeConflict> オブジェクトを反復処理します。 オブジェクトごとに、次に <xref:System.Data.Linq.MemberChangeConflict> オブジェクトを反復処理します。  

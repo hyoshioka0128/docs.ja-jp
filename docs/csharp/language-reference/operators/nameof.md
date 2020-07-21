@@ -1,35 +1,38 @@
 ---
-title: nameof 演算子 - C# リファレンス
-ms.custom: seodec18
-ms.date: 07/12/2019
+title: nameof 式 - C# リファレンス
+ms.date: 04/23/2020
 f1_keywords:
 - nameof_CSharpKeyword
 - nameof
 helpviewer_keywords:
-- nameof operator [C#]
+- nameof expression [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: fa858db918cdaf04c757f2741265e359acb74f7b
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: d71acf0cf7d5cdcfa5310455af2120fa1f82d567
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036353"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135920"
 ---
-# <a name="nameof-operator-c-reference"></a>nameof 演算子 (C# リファレンス)
+# <a name="nameof-expression-c-reference"></a>nameof 式 (C# リファレンス)
 
-`nameof` 演算子を使うと、変数、型、またはメンバーの名前を文字列定数として取得できます。
+`nameof` 式を使うと、変数、型、またはメンバーの名前が文字列定数として生成されます。
 
-[!code-csharp-interactive[nameof operator](~/samples/csharp/language-reference/operators/NameOfOperator.cs#Examples)]
+[!code-csharp-interactive[nameof expression](snippets/NameOfOperator.cs#Examples)]
 
 前の例で示されているように、型と名前空間の場合、生成される名前は通常[完全修飾](~/_csharplang/spec/basic-concepts.md#fully-qualified-names)ではありません。
 
-`nameof` 演算子はコンパイル時に評価され、実行時には影響を与えません。
+[逐語的識別子](../tokens/verbatim.md)の場合、次の例に示すように、`@` 文字は名前の一部ではありません。
 
-`nameof` 演算子を使って、引数をチェックするコードを保守しやすくすることができます。
+[!code-csharp-interactive[nameof verbatim](snippets/NameOfOperator.cs#Verbatim)]
 
-[!code-csharp[nameof and argument check](~/samples/csharp/language-reference/operators/NameOfOperator.cs#ExceptionMessage)]
+`nameof` 式はコンパイル時に評価され、実行時には影響を与えません。
 
-`nameof` 演算子は C# 6 以降で使用できます。
+`nameof` 式を使って、引数をチェックするコードの保守性を高めることができます。
+
+[!code-csharp[nameof and argument check](snippets/NameOfOperator.cs#ExceptionMessage)]
+
+`nameof` 式は C# 6 以降で使用できます。
 
 ## <a name="c-language-specification"></a>C# 言語仕様
 

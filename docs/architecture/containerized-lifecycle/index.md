@@ -3,10 +3,10 @@ title: コンテナーと Docker の概要
 description: Docker を使用することの主な利点を概説します。
 ms.date: 02/15/2019
 ms.openlocfilehash: 9ac08a64cd2465b4b88a266c1ec0925f37680bf9
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73738172"
 ---
 # <a name="introduction-to-containers-and-docker"></a>コンテナーと Docker の概要

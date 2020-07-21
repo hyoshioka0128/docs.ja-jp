@@ -10,19 +10,19 @@ helpviewer_keywords:
 - container tags, <requiredRuntime> element
 ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
 ms.openlocfilehash: fe96673b95f48cb75d36662a680bf56a59363f9f
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71697495"
 ---
 # <a name="requiredruntime-element"></a>\<requiredRuntime> 要素
 
-バージョン 1.0 の共通言語ランタイムのみがアプリケーションでサポートされることを指定します。 この要素は非推奨とされ、使用できなくなります。 代わりに、 [`supportedRuntime`](supportedruntime-element.md)要素を使用する必要があります。
+バージョン 1.0 の共通言語ランタイムのみがアプリケーションでサポートされることを指定します。 この要素は非推奨とされ、使用できなくなります。 [`supportedRuntime`](supportedruntime-element.md)代わりに、要素を使用してください。
 
-[ **\<configuration>** ](../configuration-element.md)  
-&nbsp;&nbsp;[ **\<startup>** ](startup-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<requiredRuntime>**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<startup>**](startup-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<requiredRuntime>**  
 
 ## <a name="syntax"></a>構文
 
@@ -45,32 +45,32 @@ safemode="true|false"/>
 
 ## <a name="safemode-attribute"></a>セーフ属性
 
-|値|説明|
+|値|Description|
 |-----------|-----------------|
-|`false`|ランタイムスタートアップコードによって、レジストリが検索されます。 これは既定値です。|
+|`false`|ランタイムスタートアップコードによって、レジストリが検索されます。 これが既定値です。|
 |`true`|ランタイムスタートアップコードでは、レジストリが検索されません。|
 
 ### <a name="child-elements"></a>子要素
 
-[なし] :
+なし。
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
-|`startup`|`<requiredRuntime>`要素を含んでいます。|
+|`startup`|要素が含まれてい `<requiredRuntime>` ます。|
 
-## <a name="remarks"></a>コメント
- ランタイムのバージョン1.0 のみをサポートするようにビルドされたアプリケーションでは、`<requiredRuntime>` 要素を使用する必要があります。 ランタイムのバージョン1.1 以降を使用してビルドされたアプリケーションでは、`<supportedRuntime>` 要素を使用する必要があります。
-
-> [!NOTE]
-> [Corbindtoruntimebycfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)関数を使用して構成ファイルを指定する場合は、すべてのバージョンのランタイムに対して `<requiredRuntime>` 要素を使用する必要があります。 [Corbindtoruntimebycfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)を使用する場合、`<supportedRuntime>` 要素は無視されます。
-
- @No__t-0 属性文字列は、.NET Framework の指定したバージョンのインストールフォルダー名と一致している必要があります。 この文字列は解釈されません。 ランタイムスタートアップコードが一致するフォルダーを見つけられない場合、ランタイムは読み込まれません。スタートアップコードによってエラーメッセージが表示され、終了します。
+## <a name="remarks"></a>解説
+ ランタイムのバージョン1.0 のみをサポートするようにビルドされたアプリケーションでは、要素を使用する必要があり `<requiredRuntime>` ます。 ランタイムのバージョン1.1 以降を使用してビルドされたアプリケーションでは、要素を使用する必要があり `<supportedRuntime>` ます。
 
 > [!NOTE]
-> Microsoft Internet Explorer でホストされているアプリケーションのスタートアップコードは、`<requiredRuntime>` 要素を無視します。
+> [Corbindtoruntimebycfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)関数を使用して構成ファイルを指定する場合は、すべてのバージョンのランタイムで要素を使用する必要があり `<requiredRuntime>` ます。 `<supportedRuntime>` [Corbindtoruntimebycfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)を使用する場合、要素は無視されます。
+
+ `version`属性文字列は、.NET Framework の指定したバージョンのインストールフォルダー名と一致している必要があります。 この文字列は解釈されません。 ランタイムスタートアップコードが一致するフォルダーを見つけられない場合、ランタイムは読み込まれません。スタートアップコードによってエラーメッセージが表示され、終了します。
+
+> [!NOTE]
+> Microsoft Internet Explorer でホストされているアプリケーションのスタートアップコードは、要素を無視し `<requiredRuntime>` ます。
 
 ## <a name="example"></a>例
 
@@ -88,4 +88,4 @@ safemode="true|false"/>
 
 - [スタートアップ設定スキーマ](index.md)
 - [構成ファイル スキーマ](../index.md)
-- [2 つのオブジェクトが等しいかどうかをテストする方法.NET Framework 4 以降のバージョンをサポートするアプリを構成する](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [方法: .NET Framework 4 以降のバージョンをサポートするアプリを構成する](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

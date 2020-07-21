@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: e9b71017-bac4-40d7-858b-326939442cb1
 ms.openlocfilehash: 714303569111f30d4cc03ab0ab7cb2acec4276c2
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61973694"
 ---
 # <a name="path-animation-how-to-topics"></a>パス アニメーションに関する「方法」トピック
-このセクションのトピックでは、パスに沿ってオブジェクトをアニメーション化する方法を示します。  
+このセクションのトピックでは、パスに沿ってオブジェクトをアニメーション化する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [パスに沿ってオブジェクトをアニメーション化する (ダブル アニメーション)](how-to-animate-an-object-along-a-path-double-animation.md)  
@@ -25,7 +25,7 @@ ms.locfileid: "61973694"
  [ジオメトリック パスを使用してオブジェクトを回転させる (行列アニメーション)](how-to-rotate-an-object-by-using-a-geometric-path-matrix-animation.md)  
  [ジオメトリック パスを使用してオブジェクトを回転させる](how-to-rotate-an-object-by-using-a-geometric-path.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Media.Animation.PathAnimationSource>  
   
  <xref:System.Windows.Media.Animation.Storyboard>  

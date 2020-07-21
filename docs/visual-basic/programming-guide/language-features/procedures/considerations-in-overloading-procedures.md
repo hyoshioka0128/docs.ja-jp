@@ -25,65 +25,65 @@ helpviewer_keywords:
 - restrictions [Visual Basic], overloading procedures
 - procedures [Visual Basic], parameter lists
 ms.assetid: a2001248-10d0-42c5-b0ce-eeedc987319f
-ms.openlocfilehash: 4a0cfe176a59b3f90f5850ae8b4e34784c400c6b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: c4075c87df8b9daa56ca1d35e0d6661598895fdc
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351010"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403370"
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>プロシージャのオーバーロードに関する注意事項 (Visual Basic)
-プロシージャをオーバーロードする場合は、オーバーロードされたバージョンごとに異なる*シグネチャ*を使用する必要があります。 これは通常、各バージョンで別のパラメーターリストを指定する必要があることを意味します。 詳細については、「[プロシージャのオーバーロード](./procedure-overloading.md)」の「別の署名」を参照してください。  
+プロシージャをオーバーロードするときは、オーバーロードされたバージョンごとに異なる "*シグネチャ*" を使用する必要があります。 通常、これはバージョンごとに異なるパラメーター リストを指定する必要があることを意味します。 詳細については、「[プロシージャのオーバーロード](./procedure-overloading.md)」の「異なるシグネチャ」をご覧ください。  
   
- `Sub` プロシージャを使用して `Function` プロシージャをオーバーロードすることができます。また、シグネチャが異なる場合は、その逆も可能です。 2つのオーバーロードは、一方が戻り値を持ち、もう一方が戻り値を持たない場合にのみ、異なることはできません。  
+ シグネチャが異なるという前提で、`Function` プロシージャを `Sub` プロシージャでオーバーロードすることができ、その逆も可能です。 一方に戻り値があり、もう一方にはないという点だけでは、2 つのオーバーロードが異なると見なすことはできません。  
   
- 同じ制限を使用して、プロシージャをオーバーロードするのと同じ方法でプロパティをオーバーロードすることができます。 ただし、プロパティを使用してプロシージャをオーバーロードすることはできません。また、その逆もできません。  
+ プロパティは、プロシージャをオーバーロードする場合と同じ方法で、同じ制限を適用してオーバーロードすることができます。 ただし、プロパティでプロシージャをオーバーロードすることはできません。その逆も同様です。  
   
-## <a name="alternatives-to-overloaded-versions"></a>オーバーロードされたバージョンの代替手段  
- オーバーロードされたバージョンに代わる選択肢がある場合があります。特に、引数の存在が省略可能な場合や、その数値が可変である場合です。  
+## <a name="alternatives-to-overloaded-versions"></a>オーバーロードされたバージョンの代替  
+ 特に、引数が省略可能である場合やその数が可変である場合は、オーバーロードされたバージョンに代わるものを使用することがあります。  
   
- 省略可能な引数は、必ずしもすべての言語でサポートされているとは限らず、パラメーター配列は Visual Basic に制限されていることに注意してください。 複数の異なる言語で記述されたコードから呼び出される可能性のあるプロシージャを作成する場合は、オーバーロードされたバージョンによって最大限の柔軟性が得られます。  
+ 省略可能な引数はすべての言語で必ずしもサポートされているわけではなく、パラメーター配列は Visual Basic に限定されていることに注意してください。 さまざまな言語のいずれかで記述されたコードから呼び出される可能性が高いプロシージャを作成する場合は、オーバーロードされたバージョンが最も優れた柔軟性を提供します。  
   
 ### <a name="overloads-and-optional-arguments"></a>オーバーロードと省略可能な引数  
- 呼び出し元のコードが必要に応じて1つ以上の引数を指定または省略できる場合は、オーバーロードされた複数のバージョンを定義したり、省略可能なパラメーターを使用したりできます。  
+ 呼び出し元のコードが、1 つ以上の引数を必要に応じて指定または省略できる場合は、複数のオーバーロードされたバージョンを定義することも、省略可能なパラメーターを使用することもできます。  
   
 #### <a name="when-to-use-overloaded-versions"></a>オーバーロードされたバージョンを使用する場合  
  次の場合は、一連のオーバーロードされたバージョンを定義することを検討してください。  
   
-- プロシージャコードのロジックは、呼び出し元のコードがオプションの引数を提供するかどうかによって大きく異なります。  
+- 呼び出し元のコードが省略可能な引数を指定するかどうかによって、プロシージャ コードのロジックが大きく異なる場合。  
   
-- プロシージャコードは、呼び出し元のコードが省略可能な引数を指定しているかどうかを確実にテストすることはできません。 これは、たとえば、呼び出し元のコードが提供する必要のない既定値の候補がない場合などです。  
+- プロシージャ コードで、呼び出し元のコードが省略可能な引数を指定しているかどうかを確実にテストすることができない場合。 たとえば、呼び出し元のコードが指定することを期待できない既定値の候補が存在しない場合は、これに該当します。  
   
 #### <a name="when-to-use-optional-parameters"></a>省略可能なパラメーターを使用する場合  
- 次の場合には、省略可能なパラメーターを1つ以上使用することができます。  
+ 次の場合には、1 つ以上の省略可能なパラメーターを使用することをお勧めします。  
   
-- 呼び出し元のコードがオプションの引数を指定しない場合に必要な操作は、パラメーターを既定値に設定することだけです。 このような場合、1つ以上の `Optional` パラメーターを使用して1つのバージョンを定義すると、プロシージャコードが複雑になる可能性があります。  
+- 呼び出し元のコードが省略可能な引数を指定しない場合に必要な唯一のアクションが、パラメーターを既定値に設定することである場合。 このような場合、1 つ以上の `Optional` パラメーターを持つ単一のバージョンを定義すると、プロシージャー コードの複雑さを軽減できます。  
   
- 詳細については、「[省略可能なパラメーター](./optional-parameters.md)」を参照してください。  
+ 詳細については、「[省略可能なパラメーター](./optional-parameters.md)」をご覧ください。  
   
-### <a name="overloads-and-paramarrays"></a>オーバーロードと ParamArrays  
- 呼び出し元のコードが可変個の引数を渡すことができる場合は、オーバーロードされた複数のバージョンを定義することも、パラメーター配列を使用することもできます。  
+### <a name="overloads-and-paramarrays"></a>オーバーロードと ParamArray  
+ 呼び出し元のコードが可変数の引数を渡すことができる場合は、複数のオーバーロードされたバージョンを定義することも、パラメーター配列を使用することもできます。  
   
 #### <a name="when-to-use-overloaded-versions"></a>オーバーロードされたバージョンを使用する場合  
  次の場合は、一連のオーバーロードされたバージョンを定義することを検討してください。  
   
-- 呼び出し元のコードは、少数の値をパラメーター配列に渡すことはないことがわかっています。  
+- 呼び出し元のコードがパラメーター配列に渡す値が常に少数であることがわかっている場合。  
   
-- プロシージャコードのロジックは、呼び出し元のコードが渡す値の数によって大きく異なります。  
+- 呼び出し元のコードが渡す値の数によって、プロシージャ コードのロジックが大きく異なる場合。  
   
-- 呼び出し元のコードは、さまざまなデータ型の値を渡すことができます。  
+- 呼び出し元のコードがさまざまなデータ型の値を渡すことができる場合。  
   
 #### <a name="when-to-use-a-parameter-array"></a>パラメーター配列を使用する場合  
- 次の場合には、`ParamArray` パラメーターによって適切に処理されます。  
+ 次の場合は、`ParamArray` パラメーターの方が適しています。  
   
-- 呼び出し元のコードがパラメーター配列に渡すことができる値の数を予測することはできません。また、数値が大きい可能性もあります。  
+- 呼び出し元のコードがパラメーター配列に渡すことができる値の数を予測できず、数が多くなる可能性がある場合。  
   
-- プロシージャロジックは、呼び出し元のコードが渡すすべての値を反復処理するために使用され、実質的にすべての値に対して同じ操作を実行します。  
+- プロシージャのロジックが、すべての値に対して基本的に同じ操作を実行するものであり、呼び出し元のコードから渡されるすべての値を反復処理するのに適している場合。  
   
- 詳細については、「[パラメーター配列](./parameter-arrays.md)」を参照してください。  
+ 詳細については、「[パラメーター配列](./parameter-arrays.md)」をご覧ください。  
   
-## <a name="implicit-overloads-for-optional-parameters"></a>省略可能なパラメーターの暗黙のオーバーロード  
- [省略可能](../../../../visual-basic/language-reference/modifiers/optional.md)なパラメーターを持つプロシージャは、2つのオーバーロードされたプロシージャに相当します。1つは省略可能なパラメーターで、もう1つは使用しません。 このようなプロシージャは、これらのいずれかに対応するパラメーターリストを使用してオーバーロードすることはできません。 次の宣言はこれを示しています。  
+## <a name="implicit-overloads-for-optional-parameters"></a>Optional パラメーターの暗黙的なオーバーロード  
+ [Optional](../../../language-reference/modifiers/optional.md) パラメーターを持つプロシージャは、省略可能なパラメーターを持つものと持たないものの 2 つのオーバーロードされたプロシージャと同等です。 これらのいずれかに対応するパラメーター リストでこのようなプロシージャをオーバーロードすることはできません。 次の宣言はこれを示しています。  
   
  [!code-vb[VbVbcnProcedures#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#58)]  
   
@@ -91,16 +91,16 @@ ms.locfileid: "74351010"
   
  [!code-vb[VbVbcnProcedures#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#61)]  
   
- 省略可能なパラメーターを複数持つプロシージャの場合は、前の例のようにロジックによって受信された一連の暗黙的なオーバーロードがあります。  
+ 複数の省略可能なパラメーターを持つプロシージャでは、前の例と同様のロジックで到達する一連の暗黙的なオーバーロードがあります。  
   
-## <a name="implicit-overloads-for-a-paramarray-parameter"></a>ParamArray パラメーターの暗黙のオーバーロード  
- コンパイラは、 [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)パラメーターを持つプロシージャが、次のように、呼び出し元のコードがパラメーター配列に渡すものとは異なる無限のオーバーロードを持つと見なします。  
+## <a name="implicit-overloads-for-a-paramarray-parameter"></a>ParamArray パラメーターの暗黙的なオーバーロード  
+ コンパイラは、[ParamArray](../../../language-reference/modifiers/paramarray.md) パラメーターを持つプロシージャを、次のように、呼び出し元のコードがパラメーター配列に渡す内容が相互に異なる無数のオーバーロードを持つものと見なします。  
   
-- 呼び出し元のコードが `ParamArray` に引数を指定しない場合の1つのオーバーロード  
+- 呼び出し元のコードが `ParamArray` に引数を指定しない場合に対応する 1 つのオーバーロード  
   
-- 呼び出し元のコードが `ParamArray` 要素型の1次元配列を提供する場合の1つのオーバーロード  
+- 呼び出し元のコードが `ParamArray` 要素型の 1 次元配列を指定した場合に対応する 1 つのオーバーロード  
   
-- すべての正の整数に対して、呼び出し元のコードが引数の数を指定する場合の1つのオーバーロード (`ParamArray` 要素型)  
+- すべての正の整数について、呼び出し元のコードがその数の引数を各 `ParamArray` 要素型に指定した場合に対応する 1 つのオーバーロード  
   
  次の宣言は、これらの暗黙的なオーバーロードを示しています。  
   
@@ -108,27 +108,27 @@ ms.locfileid: "74351010"
   
  [!code-vb[VbVbcnProcedures#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#70)]  
   
- パラメーター配列の1次元配列を受け取るパラメーターリストを使用して、このようなプロシージャをオーバーロードすることはできません。 ただし、他の暗黙的なオーバーロードのシグネチャを使用することもできます。 次の宣言はこれを示しています。  
+ パラメーター配列に対して 1 次元配列を受け取るパラメーター リストでそのようなプロシージャをオーバーロードすることはできません。 ただし、他の暗黙的なオーバーロードのシグネチャを使用できます。 次の宣言はこれを示しています。  
   
  [!code-vb[VbVbcnProcedures#71](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#71)]  
   
-## <a name="typeless-programming-as-an-alternative-to-overloading"></a>オーバーロードの代替手段としてのタイプレスプログラミング  
- 呼び出し元のコードが異なるデータ型をパラメーターに渡すことを許可する場合は、別の方法として、型指定のないプログラミングがあります。 [Option Strict ステートメント](../../../../visual-basic/language-reference/statements/option-strict-statement.md)または[-optionstrict](../../../../visual-basic/reference/command-line-compiler/optionstrict.md)コンパイラオプションのいずれかを使用して、型チェックスイッチを `Off` に設定できます。 その後、パラメーターのデータ型を宣言する必要はありません。 ただし、この方法には、オーバーロードと比較して次の欠点があります。  
+## <a name="typeless-programming-as-an-alternative-to-overloading"></a>オーバーロードの代替手段としての型宣言を省略したプログラミング  
+ 呼び出し元のコードがパラメーターにさまざまなデータ型を渡すことができるようにする場合、別の方法として、型宣言を省略したプログラミングがあります。 [Option Strict ステートメント](../../../language-reference/statements/option-strict-statement.md)または [-optionstrict](../../../reference/command-line-compiler/optionstrict.md) コンパイラ オプションで、型チェック スイッチを `Off` に設定できます。 その後、パラメーターのデータ型を宣言する必要はありません。 ただし、オーバーロードと比較して、この方法には次の欠点があります。  
   
-- タイプレスプログラミングでは、実行コードの効率が低下します。  
+- 型宣言を省略したプログラミングでは、効率的ではない実行コードが生成されます。  
   
-- このプロシージャでは、渡されると予想されるすべてのデータ型をテストする必要があります。  
+- プロシージャは、渡されることが予想されるすべてのデータ型をテストする必要があります。  
   
-- 呼び出し元のコードが、プロシージャがサポートしていないデータ型を渡した場合、コンパイラはエラーを通知できません。  
+- 呼び出し元のコードが、プロシージャでサポートされていないデータ型を渡した場合、コンパイラはエラーを通知できません。  
   
 ## <a name="see-also"></a>関連項目
 
 - [手順](./index.md)
 - [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)
 - [プロシージャのトラブルシューティング](./troubleshooting-procedures.md)
-- [方法 : プロシージャの複数のバージョンを定義する](./how-to-define-multiple-versions-of-a-procedure.md)
-- [方法 : オーバーロードされたプロシージャを呼び出す](./how-to-call-an-overloaded-procedure.md)
-- [方法 : 省略可能なパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
-- [方法 : 不特定数のパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [方法: プロシージャの複数のバージョンを定義する](./how-to-define-multiple-versions-of-a-procedure.md)
+- [方法: オーバーロードされたプロシージャを呼び出す](./how-to-call-an-overloaded-procedure.md)
+- [方法: 省略可能なパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
+- [方法: 不特定数のパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [オーバーロードの解決](./overload-resolution.md)
-- [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Overloads](../../../language-reference/modifiers/overloads.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-ms.openlocfilehash: 7b611e93119dc66a9404cf271ea201676d7b5318
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5a140607a4fe7e1e13de54e8d56cab53e52aaa2a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353622"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398267"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>チュートリアル: カスタム ログ リスナーの作成 (Visual Basic)
 
@@ -45,7 +45,7 @@ ms.locfileid: "74353622"
 
 3. **[アセンブリの署名]** ボックスを選択します。
 
-4. **[厳密な名前のキー ファイルを選択してください]** ドロップダウン リストから **[\<新規作成>]** を選択します。
+4. **[厳密な名前のキー ファイルを選択してください]** ドロップダウン リストから **[\<New>]** を選択します。
 
      **[厳密な名前キーの作成]** ダイアログ ボックスが開きます。
 
@@ -63,7 +63,7 @@ ms.locfileid: "74353622"
 
 厳密な名前を持つ型の書式は次のとおりです。
 
-\<型名>, \<アセンブリ名>, \<バージョン番号>, \<カルチャ>, \<厳密な名前>
+\<type name>, \<assembly name>, \<version number>, \<culture>, \<strong name>
 
 #### <a name="to-determine-the-strong-name-of-the-listener"></a>リスナーの厳密な名前を確認するには
 
@@ -79,7 +79,7 @@ ms.locfileid: "74353622"
 
 1. **ソリューション エクスプローラー** で app.config を右クリックし、 **[開く]** を選択します。
 
-     または
+     \- または -
 
      app.config ファイルがある場合は、次の操作を行います。
 
@@ -110,7 +110,7 @@ ms.locfileid: "74353622"
 ## <a name="see-also"></a>関連項目
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [アプリケーション ログの使用](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [方法: 例外をログに記録する](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [方法: ログ メッセージを書き込む](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [チュートリアル: My.Application.Log による情報の書き込み先の変更](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [アプリケーション ログの使用](working-with-application-logs.md)
+- [方法: 例外をログに記録する](how-to-log-exceptions.md)
+- [方法: ログ メッセージを書き込む](how-to-write-log-messages.md)
+- [チュートリアル: My.Application.Log による情報の書き込み先の変更](walkthrough-changing-where-my-application-log-writes-information.md)

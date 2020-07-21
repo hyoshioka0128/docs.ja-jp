@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 97f15656-8677-4079-8553-a1d8603355d6
 topic_type:
 - apiref
-ms.openlocfilehash: e7b3d5bd53bb9e4d6b897bfbf109c1f7307224cd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ce0e192a9d7d5abf56a55f844cf886c386f1c563
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442509"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441995"
 ---
 # <a name="inotifysink2onsynccallout-method"></a>INotifySink2::OnSyncCallOut メソッド
 呼び出しがタイムアウトしたときに呼び出されます。  
@@ -38,7 +38,7 @@ HRESULT OnSyncCallOut
   
 ## <a name="parameters"></a>パラメーター  
  `in_CallID`  
- から発信する呼び出しの ID。「 [CALL_ID 構造](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md)」を参照してください。  
+ から発信する呼び出しの ID。「 [CALL_ID 構造](call-id-structure.md)」を参照してください。  
   
  `out_ppBuffer`  
  入出力呼び出しバッファー。  
@@ -54,6 +54,6 @@ HRESULT OnSyncCallOut
   
 ## <a name="see-also"></a>関連項目
 
-- [INotifySink2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [INotifySource2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
-- [INotifyConnection2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+- [INotifySink2 インターフェイス](inotifysink2-interface.md)
+- [INotifySource2 インターフェイス](inotifysource2-interface.md)
+- [INotifyConnection2 インターフェイス](inotifyconnection2-interface.md)

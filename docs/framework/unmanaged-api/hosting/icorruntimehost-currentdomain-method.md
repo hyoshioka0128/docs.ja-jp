@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: dd2afb38-675b-4c3c-a9f3-8ab3b133eb02
 topic_type:
 - apiref
-ms.openlocfilehash: f2249d10159b1ff0be7ead0783efb8a2742d26b2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 38042876cf4397418d2e6e6ed2bfbeb2df2d62d8
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139609"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762293"
 ---
 # <a name="icorruntimehostcurrentdomain-method"></a>ICorRuntimeHost::CurrentDomain メソッド
-現在のスレッドに読み込まれているドメインを表す <xref:System.AppDomain?displayProperty=nameWithType> 型のインターフェイスポインターを取得します。  
+<xref:System.AppDomain?displayProperty=nameWithType>現在のスレッドに読み込まれているドメインを表す型のインターフェイスポインターを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -35,19 +35,19 @@ HRESULT CurrentDomain (
   
 ## <a name="parameters"></a>パラメーター  
  `pAppDomain`  
- 入出力スレッドの現在のアプリケーションドメインを表す <xref:System.AppDomain?displayProperty=nameWithType> 型のポインター。 このポインターは `IUnknown`型であるため、呼び出し元は通常、`QueryInterface` を呼び出して <xref:System._AppDomain>型のポインターを取得する必要があります。  
+ 入出力<xref:System.AppDomain?displayProperty=nameWithType>スレッドの現在のアプリケーションドメインを表す型のポインター。 このポインターは型指定されている `IUnknown` ため、呼び出し元は、通常、 `QueryInterface` 型のポインターを取得するためにを呼び出す必要があり <xref:System._AppDomain> ます。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|操作は成功しました。|  
+|S_OK|操作に成功しました。|  
 |S_FALSE|操作を完了できませんでした。|  
-|E_FAIL|不明な重大なエラーが発生しました。 メソッドから E_FAIL が返された場合、そのプロセスでは共通言語ランタイム (CLR) は使用できなくなります。 後続のホスト Api への呼び出しでは、HOST_E_CLRNOTAVAILABLE が返されます。|  
+|E_FAIL|不明な重大なエラーが発生しました。 メソッドが E_FAIL を返す場合、このプロセスでは共通言語ランタイム (CLR) は使用できなくなります。 後続のホスト Api への呼び出しでは HOST_E_CLRNOTAVAILABLE が返されます。|  
 |HOST_E_CLRNOTAVAILABLE|CLR がプロセスに読み込まれていないか、CLR がマネージドコードを実行できない状態であるか、または呼び出しが正常に処理されていません。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
@@ -59,4 +59,4 @@ HRESULT CurrentDomain (
 
 - <xref:System._AppDomain>
 - <xref:System.AppDomain>
-- [ICorRuntimeHost インターフェイス](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+- [ICorRuntimeHost インターフェイス](icorruntimehost-interface.md)

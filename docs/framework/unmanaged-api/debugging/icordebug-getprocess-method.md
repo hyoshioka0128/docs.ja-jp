@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 10a40ba0-1b65-4721-bd11-cf12d57b280d
 topic_type:
 - apiref
-ms.openlocfilehash: 64ed875059730e91e28ff0903ab93fb25c68910b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 59afc8ae7d66e81e4dca3923f9c6f7ff3a3a6605
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134111"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895384"
 ---
 # <a name="icordebuggetprocess-method"></a>ICorDebug::GetProcess メソッド
 指定されたプロセスの "いいプロセス" インスタンスへのポインターを取得します。  
@@ -39,17 +39,17 @@ HRESULT GetProcess (
  からプロセスの ID。  
   
  `ppProcess`  
- 入出力指定されたプロセスの `ICorDebugProcess` インスタンスのアドレスへのポインター。  
+ 入出力指定されたプロセスの`ICorDebugProcess`インスタンスのアドレスへのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebug インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug インターフェイス](icordebug-interface.md)

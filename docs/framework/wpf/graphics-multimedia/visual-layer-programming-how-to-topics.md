@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: ac550423-60a3-43e6-a0bc-d65ef026e0cb
 ms.openlocfilehash: f41f9cf2b6deb30f5f1960cfab6e898f7032901e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61762086"
 ---
 # <a name="visual-layer-programming-how-to-topics"></a>ビジュアル層プログラミングに関する「方法」トピック
-このセクションのトピックでは、ビジュアル層でヒット テストの低レベルの構成に使用する方法を示します。  
+このセクションのトピックでは、ヒットテストと下位構成にビジュアル レイヤーを使用する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ビジュアルのオフセットを取得する](how-to-get-the-offset-of-a-visual.md)  

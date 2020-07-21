@@ -10,12 +10,12 @@ helpviewer_keywords:
 - type libraries
 - converting type definitions
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
-ms.openlocfilehash: fcbbc99c06e7c9666d58133bef20b84ef40c98d5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d942378888b06049022188c75456f438d4b187e3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104330"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180243"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (タイプ ライブラリ インポーター)
 タイプ ライブラリ インポーターは、COM タイプ ライブラリにある型定義を共通言語ランタイム アセンブリで等価な定義に変換します。 Tlbimp.exe の出力は、元のタイプ ライブラリで定義された型のランタイム メタデータを格納するバイナリ ファイル (アセンブリ) です。 このファイルは [ildasm.exe](ildasm-exe-il-disassembler.md) などのツールでチェックできます。  
@@ -71,22 +71,22 @@ tlbimp tlbFile [options]
 > [!NOTE]
 > Tlbimp.exe のコマンド ライン オプションでは、大文字と小文字が区別されません。また、これらのオプションは任意の順序で指定できます。 オプションを一意に識別するために十分である場合は、オプションの一部を指定するだけでもかまいません。 したがって、 **/n** と指定した場合は **/nologo**、 **/ou:** *outfile.dll* と指定した場合は **/out:** *outfile.dll* であると見なされます。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>Remarks  
  Tlbimp.exe は、タイプ ライブラリ全体の変換を一括して実行します。 このツールを使用しても、単一のタイプ ライブラリで定義されている型のサブセットに関する型情報は生成できません。  
   
  アセンブリへの[厳密な名前](../../standard/assembly/strong-named.md)の割り当てを許可しておくと、さまざまな場合に役立ちます。この割り当てが必須であることもあります。 このため、Tlbimp.exe には、厳密な名前を持つアセンブリを生成するために必要な情報を提供するオプションが用意されています。 **/keyfile:** オプションと **/keycontainer:** オプションは、両方ともアセンブリに厳密な名前で署名します。 したがって、これらのオプションを両方同時に指定しないでください。  
   
  **/reference** オプションを複数回使用すると、複数の参照アセンブリを指定できます。
- 
+
  Tlbimp.exe によるアセンブリの生成方法のため、アセンブリのターゲットを `mscorlib` の別のバージョンに変更することはできません。 たとえば、.NET Framework 2.0 をターゲットとするアセンブリを生成したい場合は、.NET Framework 2.0/3.0/3.5 SDK に付属する Tlbimp.exe を使用する必要があります。 .NET Framework 4.x をターゲットにするには、.NET Framework 4.x SDK に付属する Tlbimp.exe を使用する必要があります。
- 
+
  複数のタイプ ライブラリを格納するモジュールから 1 つのタイプ ライブラリをインポートするときに、タイプ ライブラリ ファイルにリソース ID を追加することもできます。 Tlbimp.exe は、このファイルが現在のディレクトリにあるか、ユーザーが完全パスを指定した場合にだけこのファイルを認識できます。 このトピックの下記の例を参照してください。  
   
 ## <a name="examples"></a>使用例  
  `myTest.tlb` 内で見つかったタイプ ライブラリと同じ名前で、.dll 拡張子を持つアセンブリを生成するコマンドを次に示します。  
   
 ```console  
-tlbimp myTest.tlb   
+tlbimp myTest.tlb
 ```  
   
  `myTest.dll` という名前を持つアセンブリを生成するコマンドを次に示します。  

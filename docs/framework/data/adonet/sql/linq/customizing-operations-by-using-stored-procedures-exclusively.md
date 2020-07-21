@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 441e8ef3-998c-4d12-8825-ce66a178f90f
 ms.openlocfilehash: a242ecdc774d67721aee640e75847317c1b815d6
 ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70247547"
@@ -18,7 +18,7 @@ ms.locfileid: "70247547"
 ## <a name="example"></a>例  
   
 ### <a name="description"></a>説明  
- 「[ストアドプロシージャを使用した操作のカスタマイズ](customizing-operations-by-using-stored-procedures.md)」で提供されている例を変更するには、ストアドプロシージャをラップするメソッド呼び出しを使用して、最初のクエリ (動的 SQL 実行の原因となるクエリ) を置き換えます。  
+ 最初のクエリ (動的に SQL を実行するクエリ) をストアド プロシージャのラップ メソッド呼び出しで置き換えることで、「[ストアド プロシージャによる操作のカスタマイズ](customizing-operations-by-using-stored-procedures.md)」に用意されたサンプル コードを変更できます。  
   
  次の例に示すように、`CustomersByCity` がこのメソッドであることを前提とします。  
   

@@ -9,33 +9,33 @@ helpviewer_keywords:
 - animation [WPF], opacity of SolidColorBrush
 - SolidColorBrush [WPF], animating opacity of
 ms.assetid: d9154354-843f-4713-bad1-35bb0ba6eaeb
-ms.openlocfilehash: 610a7c4879b4ffe54940e8bc744dcca0711e84d2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 08b85935e0cb1ababd1fb63b9d02518ea3fcfa17
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593398"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452884"
 ---
 # <a name="how-to-animate-the-color-or-opacity-of-a-solidcolorbrush"></a>方法: SolidColorBrush の色または不透明度をアニメーション化する
-この例は、アニメーション化する方法を示しています、<xref:System.Windows.Media.SolidColorBrush.Color%2A>と<xref:System.Windows.Media.Brush.Opacity%2A>の<xref:System.Windows.Media.SolidColorBrush>します。  
+この例では、<xref:System.Windows.Media.SolidColorBrush> の <xref:System.Windows.Media.SolidColorBrush.Color%2A> および <xref:System.Windows.Media.Brush.Opacity%2A> をアニメーション化する方法を示します。  
   
 ## <a name="example"></a>例  
- 次の例では、アニメーション化する 3 つのアニメーションを使用して、<xref:System.Windows.Media.SolidColorBrush.Color%2A>と<xref:System.Windows.Media.Brush.Opacity%2A>の<xref:System.Windows.Media.SolidColorBrush>します。  
+ 次の例では、3 つのアニメーションを使用して、<xref:System.Windows.Media.SolidColorBrush> の <xref:System.Windows.Media.SolidColorBrush.Color%2A> および <xref:System.Windows.Media.Brush.Opacity%2A> をアニメーション化します。  
   
-- 最初のアニメーションを<xref:System.Windows.Media.Animation.ColorAnimation>、ブラシの色を変更<xref:System.Windows.Media.Colors.Gray%2A>マウスが四角形に入ったとき。  
+- 最初のアニメーションの <xref:System.Windows.Media.Animation.ColorAnimation> では、マウスが四角形の中に入ると、ブラシの色が <xref:System.Windows.Media.Colors.Gray%2A> に変わります。  
   
-- [次へ] のアニメーションでは、もう 1 つ<xref:System.Windows.Media.Animation.ColorAnimation>、ブラシの色を変更<xref:System.Windows.Media.Colors.Orange%2A>マウスから離したときに四角形。  
+- 次のアニメーション (別の <xref:System.Windows.Media.Animation.ColorAnimation>) では、マウスが四角形の外に出ると、ブラシの色が <xref:System.Windows.Media.Colors.Orange%2A> に変わります。  
   
-- 最後のアニメーションを<xref:System.Windows.Media.Animation.DoubleAnimation>マウスの左ボタンが押されたときに、ブラシの不透明度を 0.0 に変更します。  
+- 最後のアニメーションの <xref:System.Windows.Media.Animation.DoubleAnimation> では、マウスの左ボタンを押すと、ブラシの不透明度が 0.0 に変わります。  
   
  [!code-csharp[brushanimations_snip#SolidColorBrushAnimationExample](~/samples/snippets/csharp/VS_Snippets_Wpf/brushanimations_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushanimationexample)]  
   
- さまざまな種類のブラシをアニメーション化する方法を示していますより完全なサンプルを参照してください、[ブラシのサンプル](https://go.microsoft.com/fwlink/?LinkID=159973)します。 アニメーションの詳細については、次を参照してください。、[アニメーションの概要](animation-overview.md)します。  
+ さまざまな種類のブラシをアニメーション化する方法を示した、より完全なサンプルについては、[ブラシのサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes)を参照してください。 アニメーション化の詳細については、「[アニメーションの概要](animation-overview.md)」を参照してください。  
   
- この例のコードを使用して、他のアニメーション例と一貫性を保つのため、<xref:System.Windows.Media.Animation.Storyboard>アニメーションを適用するオブジェクト。 ただし、コード内で 1 つのアニメーションを適用する場合は使いやすく、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを使用してではなく、<xref:System.Windows.Media.Animation.Storyboard>します。 例については、「[ストーリーボードを使用せずにプロパティをアニメーション化する](how-to-animate-a-property-without-using-a-storyboard.md)」を参照してください。  
+ 他のアニメーション例との一貫性を保つために、この例のコード バージョンでは、<xref:System.Windows.Media.Animation.Storyboard> オブジェクトを使用してアニメーションを適用しています。 ただし、コード内で 1 つのアニメーションを適用する場合は、<xref:System.Windows.Media.Animation.Storyboard> よりも <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> メソッドを使用する方が簡単です。 例については、「[ストーリーボードを使用せずにプロパティをアニメーション化する](how-to-animate-a-property-without-using-a-storyboard.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
 - [アニメーションの概要](animation-overview.md)
 - [ストーリーボードの概要](storyboards-overview.md)
-- [ブラシのサンプル](https://go.microsoft.com/fwlink/?LinkID=159973)
+- [ブラシのサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Brushes)

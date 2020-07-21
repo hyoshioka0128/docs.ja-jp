@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8dc29c6a-e2ba-41d8-a1e0-0fdd21421e0b
 topic_type:
 - apiref
-ms.openlocfilehash: d8c0f69ce407638aed6475c4d84d0e032cc6a8f5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b48b782b7c8be35bfb815d72758f0bc316fb2114
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435982"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494723"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a>ICorProfilerModuleEnum::Skip メソッド
 指定した数の要素がスキップされるように、この列挙子のカーソルを現在の位置から進めます。  
@@ -40,22 +40,22 @@ HRESULT Skip([in] ULONG celt);
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|`celt` の要素はスキップされました。|  
-|S_FALSE|`celt` 要素がスキップされました。これは、要素がこれ以上存在しないことを示します。|  
+|S_OK|`celt`要素はスキップされました。|  
+|S_FALSE|より小さい `celt` 要素がスキップされました。これは、要素がこれ以上存在しないことを示します。|  
   
-## <a name="remarks"></a>コメント  
- この列挙子のカーソルの新しい位置は、(現在位置) + `celt`です。  
+## <a name="remarks"></a>解説  
+ この列挙子のカーソルの新しい位置は、(現在位置) + `celt` です。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorProfilerModuleEnum インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)
-- [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerModuleEnum インターフェイス](icorprofilermoduleenum-interface.md)
+- [プロファイリングのインターフェイス](profiling-interfaces.md)

@@ -1,14 +1,13 @@
 ---
 title: ML.NET 使い方ガイド
 description: カスタム AI ソリューションの作成と、.NET アプリケーションへの Machine Learning 統合を支援するための、特定のタスクを実行する方法について説明します。
-ms.custom: seodec18
 ms.date: 03/01/2019
-ms.openlocfilehash: e2b4ff77c7f76282d70c06b5ef534306fe4e93a6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: e83db6f1f754357b7e204485ea545feef9ad4a95
+ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977111"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82102451"
 ---
 # <a name="net-machine-learning-how-to-guides"></a>.NET の機械学習に関するハウツー ガイド
 
@@ -20,7 +19,7 @@ ML.NET ガイドの方法に関するセクションには、よく寄せられ�
 
 ### <a name="prepare-the-data"></a>データを準備する
 
-* [データ処理で使うためにノーマライザーでトレーニング データを前処理します。](normalizers-preprocess-data-ml-net.md)
+* [データ処理で使うためにノーマライザーでトレーニング データを前処理します。](prepare-data-ml-net.md)
 
 ## <a name="train-the-model"></a>モデルをトレーニングする
 
@@ -28,15 +27,9 @@ ML.NET ガイドの方法に関するセクションには、よく寄せられ�
 
 * [ML.NET を使って値を予測する回帰モデルをトレーニングします。](train-machine-learning-model-ml-net.md)
 
-### <a name="evaluate-the-model-quality"></a>モデルの品質を評価する
-
-* [メトリックを計算してモデルの品質を評価します。](verify-model-quality-ml-net.md)
-
 ### <a name="model-explainability"></a>モデルの説明可能性
 
 * [Permutation Feature Importance を使ってモデルの特徴の重要度を判断します。](explain-machine-learning-model-permutation-feature-importance-ml-net.md)
-
-* [モデルの説明可能性のために一般化加法モデルと形状関数を使います。](use-gams-for-model-explainability.md)
 
 ## <a name="run"></a>実行
 

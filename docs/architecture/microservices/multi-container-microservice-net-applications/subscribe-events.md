@@ -1,21 +1,21 @@
 ---
 title: イベントへのサブスクライブ
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 統合イベントの発行とサブスクライブについて。
-ms.date: 10/02/2018
-ms.openlocfilehash: c607f8b980f7dffacf3564688c6c9bb498264d96
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: 426dcebe175e9db9a02bcdb2f21ad039154a7bda
+ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737072"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80888216"
 ---
 # <a name="subscribing-to-events"></a>イベントへのサブスクライブ
 
 イベント バスを使用するための最初のステップは、受信したいイベントにマイクロサービスをサブスクライブすることです。 これは、受信側マイクロサービスで行う必要があります。
 
-次の単純なコードは、各受信側マイクロサービスが (`Startup` クラスで) サービスを起動して必要なイベントにサブスクライブするために実装する必要があるコードを示しています。 このケースでは、`basket.api` マイクロサービスが `ProductPriceChangedIntegrationEvent` メッセージと `OrderStartedIntegrationEvent` メッセージにサブスクライブする必要があります。
+次の単純なコードは、各受信側マイクロサービスが (`Startup` クラスで) サービスを起動して必要なイベントにサブスクライブするために実装する必要があるコードを示しています。 このケースでは、`basket-api` マイクロサービスが `ProductPriceChangedIntegrationEvent` メッセージと `OrderStartedIntegrationEvent` メッセージにサブスクライブする必要があります。
 
-たとえば、`ProductPriceChangedIntegrationEvent` イベントにサブスクライブした場合、買い物かごマイクロサービスは商品価格に加えられた変更を認識し、その商品がユーザーの買い物かごに入っている場合は変更に関する警告をユーザーに表示できるようになります。
+たとえば、`ProductPriceChangedIntegrationEvent` イベントにサブスクライブした場合、商品価格に加えられた変更が買い物かごマイクロサービスによって認識され、その商品がユーザーの買い物かごに入っている場合は変更に関する警告をユーザーに表示できるようになります。
 
 ```csharp
 var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
@@ -97,7 +97,7 @@ CQRS アプローチを使用する場合など、より高度なマイクロサ
 
 マイクロサービス ベースのアーキテクチャでは、可用性と耐性を選択して、厳密な一貫性は重視しないようにする必要があります。 したがって、最近のほとんどのマイクロサービス ベースのアプリケーションでは、[MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx) を使用して Windows の分散トランザクション コーディネーター (DTC) に基づく[分散トランザクション](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85))を実装する場合と同じく、メッセージングに分散トランザクションを使用しないのが普通です。
 
-最初の問題とその例に話を戻しましょう。 データベースが更新された後 (このケースでは、\_context.SaveChangesAsync() を含むコード行の直後) で、統合イベントが発行される前にサービスがクラッシュした場合、システム全体の一貫性が失われる可能性があります。 これは、処理しているビジネス操作によっては、ビジネスに重大な問題を生じさせるおそれがあります。
+最初の問題とその例に話を戻しましょう。 データベースが更新された後 (このケースでは、`_context.SaveChangesAsync()` を含むコード行の直後) で、統合イベントが発行される前にサービスがクラッシュした場合、システム全体の一貫性が失われる可能性があります。 これは、処理しているビジネス操作によっては、ビジネスに重大な問題を生じさせるおそれがあります。
 
 前のアーキテクチャのセクションで説明したように、この問題に対処するためのアプローチはいくつかあります。
 
@@ -109,15 +109,15 @@ CQRS アプローチを使用する場合など、より高度なマイクロサ
 
 このシナリオでは、完全なイベント ソーシング (ES) パターンを使用することが、*最良*とは言わないまでも適切なアプローチの 1 つです。 ただし、多くのアプリケーション シナリオでは、完全な ES システムを実装できない場合があります。 ES とは、現在の状態データを格納するのではなく、ドメイン イベントのみをトランザクション データベースに格納することを意味します。 ドメイン イベントのみを格納する方法には、システムの履歴を保持できる、過去の任意の時点におけるシステムの状態を確認できるなどの大きなメリットがあります。 しかし、完全な ES システムを実装するにはシステムの大部分を再構築する必要があり、それ以外にも多くの複雑さと要件が生じます。 たとえば、イベント ソーシング用に特別に作成されたデータベース ([イベント ストア](https://eventstore.org/)など) や、Azure Cosmos DB、MongoDB、Cassandra、CouchDB、RavenDB といったドキュメント指向のデータベースの使用が必要になる場合があります。 ES はこの問題に対する優れたアプローチですが、イベント ソーシングに精通している人以外には最も簡単なソリューションではありません。
 
-トランザクション ログ マイニングを使用するという選択肢は、一見すると透明性の高い方法のように思われます。 しかし、このアプローチを使用するには、マイクロサービスを SQL Server トランザクション ログなどの RDBMS トランザクション ログと結合する必要があります。 これはおそらく望ましくないでしょう。 もう 1 つの欠点は、トランザクション ログに記録された低レベルの更新が、高レベルの統合イベントと同じレベルではない可能性があるという点です。 その場合、それらのトランザクション ログ操作をリバース エンジニアリングするプロセスが難しくなるおそれがあります。
+トランザクション ログ マイニングを使用するという選択肢は、一見すると透明性のある方法のように思われます。 しかし、このアプローチを使用するには、マイクロサービスを SQL Server トランザクション ログなどの RDBMS トランザクション ログと結合する必要があります。 これはおそらく望ましくないでしょう。 もう 1 つの欠点は、トランザクション ログに記録された低レベルの更新が、高レベルの統合イベントと同じレベルではない可能性があるという点です。 その場合、それらのトランザクション ログ操作をリバース エンジニアリングするプロセスが難しくなるおそれがあります。
 
-バランスの取れたアプローチは、トランザクション データベース テーブルと単純化された ES パターンを組み合わせることです。 “イベント発行準備完了” のような状態を使用できます。これは、元のイベントを統合イベント テーブルにコミットするときに、元のイベントで設定します。 その後、イベント バスへのイベントの発行を試みます。 イベント発行アクションが成功した場合は、発行元のサービスで別のトランザクションを開始し、状態を “イベント発行準備完了” から “イベント発行済み” に移行します。
+バランスの取れたアプローチは、トランザクション データベース テーブルと単純化された ES パターンを組み合わせることです。 "イベント発行準備完了" のような状態を使用できます。これは、元のイベントを統合イベント テーブルにコミットするときに、元のイベントで設定します。 その後、イベント バスへのイベントの発行を試みます。 イベント発行アクションが成功した場合は、発行元のサービスで別のトランザクションを開始し、状態を "イベント発行準備完了" から "イベント発行済み" に移行します。
 
-イベント バス内でイベント発行アクションが失敗した場合、発行元のマイクロサービス内ではデータの一貫性がまだ維持されており (“イベント発行準備完了” とマークされたままの状態)、サービスの残りの部分に関しても一貫性が維持されます。 トランザクションや統合イベントの状態は、バックグラウンド ジョブによって常に確認できます。 ジョブが “イベント発行準備完了” 状態のイベントを検出した場合、イベント バスに対するそのイベントの再発行を試みることができます。
+イベント バス内でイベント発行アクションが失敗した場合、発行元のマイクロサービス内ではデータの一貫性がまだ維持されており ("イベント発行準備完了" とマークされたままの状態)、サービスの残りの部分に関しても一貫性が維持されます。 トランザクションや統合イベントの状態は、バックグラウンド ジョブによって常に確認できます。 ジョブで "イベント発行準備完了" 状態のイベントが検出された場合、ジョブによってイベント バスに対するそのイベントの再発行を試みることができます。
 
 このアプローチでは、各発行元マイクロサービスの統合イベントと、他のマイクロサービスまたは外部システムに伝達したいイベントのみを保持するという点に注意してください。 これに対して、完全な ES システムでは、すべてのドメイン イベントも格納します。
 
-したがって、このバランスの取れたアプローチは、単純化された ES システムということになります。 統合イベントとその現在の状態 (“発行準備完了” または “発行済み”) の一覧が必要です。 しかし、必要なのは、統合イベントのこれらの状態を実装することだけです。 また、このアプローチでは、完全な ES システムの場合のように、すべてのドメイン データをイベントとしてトランザクション データベースに格納する必要はありません。
+したがって、このバランスの取れたアプローチは、単純化された ES システムということになります。 統合イベントとその現在の状態 ("発行準備完了" または "発行済み") の一覧が必要です。 しかし、必要なのは、統合イベントのこれらの状態を実装することだけです。 また、このアプローチでは、完全な ES システムの場合のように、すべてのドメイン データをイベントとしてトランザクション データベースに格納する必要はありません。
 
 既にリレーショナル データベースを使用している場合は、トランザクション テーブルを使用して統合イベントを格納できます。 アプリケーションで原子性を実現するには、ローカル トランザクションに基づく 2 ステップのプロセスを使用します。 基本的には、ドメイン エンティティを保持しているのと同じデータベースで IntegrationEvent テーブルを保持します。 そのテーブルが原子性を実現するための保証として機能して、保持された統合イベントを、ドメイン データをコミットしているのと同じトランザクションに格納できるようにします。
 
@@ -151,15 +151,15 @@ CQRS アプローチを使用する場合など、より高度なマイクロサ
 
 **図 6-23**。 ワーカー マイクロサービスを使用してイベント バスにイベントを発行するときの原子性
 
-わかりやすくするために、eShopOnContainers サンプルでは、1 番目のアプローチ (追加のプロセスまたはチェッカー マイクロサービスなし) とイベント バスを使用しています。 ただし、eShopOnContainers は、考えられるすべてのエラー ケースに対応しません。 クラウドにデプロイされた実際のアプリケーションでは、将来的に問題が発生して、チェックと再送信のロジックを実装しなければならなくなることを承知しておく必要があります。 テーブルをキューとして使用する方法は、そのテーブルをイベント バスを通じて (ワーカーで) イベントを発行するときの単一のイベント ソースとする場合には、1 番目のアプローチよりも効果的な可能性があります。
+わかりやすくするために、eShopOnContainers サンプルでは、1 番目のアプローチ (追加のプロセスまたはチェッカー マイクロサービスなし) とイベント バスを使用しています。 ただし、eShopOnContainers サンプルは、考えられるすべてのエラー ケースに対応しません。 クラウドにデプロイされた実際のアプリケーションでは、将来的に問題が発生して、チェックと再送信のロジックを実装しなければならなくなることを承知しておく必要があります。 テーブルをキューとして使用する方法は、そのテーブルをイベント バスを通じて (ワーカーで) イベントを発行するときの単一のイベント ソースとする場合には、1 番目のアプローチよりも効果的な可能性があります。
 
 ### <a name="implementing-atomicity-when-publishing-integration-events-through-the-event-bus"></a>イベント バスを通じて統合イベントを発行するときの原子性の実装
 
 次のコードは、複数の DbContext オブジェクト (更新される元のデータに関連する 1 つのコンテキストと、IntegrationEventLog テーブルに関連するもう 1 つのコンテキスト) を含む単一のトランザクションを作成する方法を示しています。
 
-下のサンプル コードに示したトランザクションは、コードの実行時にデータベースへの接続に問題が発生した場合の回復性を備えていないことに注意してください。 これは、サーバー間でデータベースを移動する可能性がある Azure SQL DB のようなクラウドベースのシステムで発生する可能性があります。 複数のコンテキストにわたる回復性を備えたトランザクションの実装については、このガイドの後のセクション「[回復性の高い Entity Framework Core SQL 接続の実装](../implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md)」をご覧ください。
+下のサンプル コードに示したトランザクションは、コードの実行時にデータベースへの接続に問題が発生した場合の回復性を備えていません。 これは、サーバー間でデータベースを移動する可能性がある Azure SQL DB のようなクラウドベースのシステムで発生する可能性があります。 複数のコンテキストにわたる回復性を備えたトランザクションの実装については、このガイドの後のセクション「[回復性の高い Entity Framework Core SQL 接続の実装](../implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md)」をご覧ください。
 
-わかりやすくするために、次の例では、プロセス全体を 1 つのコード片で示しています。 ただし、eShopOnContainers の実装は実際にはリファクターされ、このロジックは管理しやすいように複数のクラスに分割されます。
+わかりやすくするために、次の例では、プロセス全体を 1 つのコード片で示しています。 ただし、eShopOnContainers の実装はリファクターされ、このロジックは管理しやすいように複数のクラスに分割されます。
 
 ```csharp
 // Update Product from the Catalog microservice
@@ -211,7 +211,7 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem productToUp
       // Publish the integration event through the event bus
       _eventBus.Publish(priceChangedEvent);
 
-      integrationEventLogService.MarkEventAsPublishedAsync(
+      _integrationEventLogService.MarkEventAsPublishedAsync(
                                                 priceChangedEvent);
   }
 
@@ -285,7 +285,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 ## <a name="idempotency-in-update-message-events"></a>更新メッセージ イベントでのべき等
 
-更新メッセージ イベントにおける重要な側面の 1 つは、通信のどの時点でエラーが発生しても、メッセージが再試行される必要があるという点です。 そうでない場合、バックグラウンド タスクが発行済みのイベントを発行しようと試みて、競合状態が発生するおそれがあります。 更新がべき等であるか、または、確実に重複を検出し、破棄し、1 つの応答のみを送信するために十分な情報が更新によって提供されることを確認する必要があります。
+更新メッセージ イベントにおける重要な側面の 1 つは、通信のどの時点でエラーが発生しても、メッセージが再試行される必要があるという点です。 そうでない場合、バックグラウンド タスクが発行済みのイベントを発行しようと試みて、競合状態が発生するおそれがあります。 更新がべき等であるか、または、確実に重複を検出し、破棄し、1 つの応答のみを送信するために十分な情報が更新によって提供されることを確認してください。
 
 前述のように、べき等とは、操作を複数回実行しても結果が変わらないことを意味します。 メッセージング環境では、イベントを通信する際に、イベントを複数回送信しても受信側マイクロサービスにとっての結果が変わらない場合、イベントはべき等であるといえます。 これは、イベント自体の性質、またはシステムがイベント処理する方法により、必要となります。 メッセージのべき等性は、イベント バス パターンを実装するアプリケーションだけでなく、メッセージングを使用するすべてのアプリケーションにおいて重要です。
 
@@ -293,7 +293,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 べき等なメッセージを設計することは可能です。 たとえば、"商品価格を $25 に設定する" というイベントを、"商品価格に $5 を追加する" というイベントの代わりに作成できます。 最初のメッセージを何回でも安全に処理することができ、結果は同じになります。 2 番目のメッセージでは、そうではありません。 しかし、1 番目のケースであっても、システムが新しい価格変更イベントを送信済みでその新しい価格を上書きする可能性もあるため、1 番目のイベントを処理することは望ましくありません。
 
-もう 1 つの例は、複数のサブスクライバーに伝達される注文完了イベントです。 同じ注文完了イベントに対する重複したメッセージ イベントがある場合でも、他のシステムで注文情報が 1 回だけ更新されることが重要です。
+もう 1 つの例は、複数のサブスクライバーに伝達される注文完了イベントです。 アプリで、同じ注文完了イベントに対する重複したメッセージ イベントがある場合でも、他のシステムで注文情報が 1 回だけ更新されるようにする必要があります。
 
 各イベントが各受信者に対して 1 回のみ処理されるように強制するロジックを作成できるように、何らかの ID があると便利です。
 
@@ -301,7 +301,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 ### <a name="additional-resources"></a>その他の技術情報
 
-- **メッセージのべき等性に従う**  
+- **メッセージのべき等性に従う** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/jj591565(v=pandp.10)#honoring-message-idempotency>
 
 ## <a name="deduplicating-integration-event-messages"></a>統合イベント メッセージの重複除去
@@ -310,15 +310,15 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 
 ### <a name="deduplicating-message-events-at-the-eventhandler-level"></a>EventHandler レベルでのメッセージ イベントの重複除去
 
-イベントが受信者によって 1 回だけ処理されたことを確認する 1 つの方法は、イベント ハンドラーでメッセージ イベントを処理する際に特定のロジックを実装することです。 たとえば、それは eShopOnContainers アプリケーションで使用されるアプローチで、UserCheckoutAcceptedIntegrationEvent 統合イベントを受け取るときに [UserCheckoutAcceptedIntegrationEventHandler クラスのソース コード](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs)で確認できます (この場合、コマンド ハンドラーに送信する前に、識別子として eventMsg.RequestId を使用し、IdentifiedCommand で CreateOrderCommand をラップします。)。
+イベントが受信者によって 1 回だけ処理されたことを確認する 1 つの方法は、イベント ハンドラーでメッセージ イベントを処理する際に特定のロジックを実装することです。 たとえば、それは eShopOnContainers アプリケーションで使用されるアプローチで、`UserCheckoutAcceptedIntegrationEvent` 統合イベントを受け取るときに [UserCheckoutAcceptedIntegrationEventHandler クラスのソース コード](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs)で確認できます (この場合、`CreateOrderCommand` は、コマンド ハンドラーに送信される前に、`eventMsg.RequestId` を識別子として使用して `IdentifiedCommand` でラップされます)。
 
 ### <a name="deduplicating-messages-when-using-rabbitmq"></a>RabbitMQ を使用するときのメッセージの重複除去
 
 断続的なネットワーク エラーが発生する場合、メッセージが重複している可能性があり、メッセージ受信側はこれらの重複したメッセージを処理する準備ができている必要があります。 受信側は、可能な場合、べき等な方法でメッセージを処理する必要があります。これは、重複除去でメッセージを明示的に処理する方法よりも優れています。
 
-[RabbitMQ のドキュメント](https://www.rabbitmq.com/reliability.html#consumer)によると、メッセージがコンシューマーに配信された後で (コンシューマーとの接続が切断される前に受信確認されなかったなどの理由で) キューに再登録された場合、RabbitMQ は、メッセージが再配信されるときに (配信先が同じコンシューマーか別のコンシューマーかにかかわらず) 再配信フラグをメッセージに設定します。
+[RabbitMQ のドキュメント](https://www.rabbitmq.com/reliability.html#consumer)によると、メッセージがコンシューマーに配信された後で (コンシューマーとの接続が切断される前に受信確認されなかったなどの理由で) キューに再登録された場合、RabbitMQ により、メッセージが再配信されるときに (配信先が同じコンシューマーか別のコンシューマーかにかかわらず) 再配信フラグがメッセージに設定されます。
 
-“再配信” フラグが設定されている場合、受信側はそれを考慮する必要があります。なぜなら、メッセージが既に処理されている可能性があるためです。 しかしそれは保証されているわけではありません。メッセージはメッセージ ブローカーから送信された後、ネットワークの問題が原因で一度も受信側に到達していない可能性もあります。 その一方で、“再配信” フラグが設定されていない場合、メッセージが複数回送信されていないことが保証されます。 したがって、受信側は、“再配信” フラグがメッセージに設定されている場合にのみ、メッセージを重複除去するか、べき等な方法でメッセージを処理する必要があります。
+"再配信" フラグが設定されている場合、受信側はそれを考慮する必要があります。なぜなら、メッセージが既に処理されている可能性があるためです。 しかしそれは保証されているわけではありません。メッセージはメッセージ ブローカーから送信された後、ネットワークの問題が原因で一度も受信側に到達していない可能性もあります。 その一方で、"再配信" フラグが設定されていない場合、メッセージが複数回送信されていないことが保証されます。 したがって、受信側は、"再配信" フラグがメッセージに設定されている場合にのみ、メッセージを重複除去するか、べき等な方法でメッセージを処理する必要があります。
 
 ### <a name="additional-resources"></a>その他の技術情報
 
@@ -338,7 +338,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
     <https://docs.microsoft.com/previous-versions/msp-n-p/jj591572(v=pandp.10)>
 
 - **最終的な整合性** \
-    [https://en.wikipedia.org/wiki/Eventual\_consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
+    <https://en.wikipedia.org/wiki/Eventual_consistency>
 
 - **Philip Brown。境界コンテキストを統合するための戦略** \
     <https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/>
@@ -359,7 +359,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
     <https://dzone.com/articles/event-driven-data-management-for-microservices-1>
 
 - **CAP 定理** \
-    [https://en.wikipedia.org/wiki/CAP\_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+    <https://en.wikipedia.org/wiki/CAP_theorem>
 
 - **CAP 定理とは?** \
     <https://www.quora.com/What-Is-CAP-Theorem-1>
@@ -367,8 +367,8 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 - **データ整合性の概要** \
     <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
-- **Rick Saling。CAP 定理: クラウドとインターネットでは "すべてが異なる" 理由** \
-    <https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/>
+- **Rick Saling。CAP 定理: クラウドとインターネットとでは "すべてが異なる" 理由** \
+    <https://docs.microsoft.com/archive/blogs/rickatmicrosoft/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/>
 
 - **Eric Brewer。12 年後の CAP: "規則" はどのように変わったか** \
     <https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed>
@@ -377,7 +377,7 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
     <https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25>
 
 - **信頼性ガイド** (RabbitMQ ドキュメント) \
-    [https://www.rabbitmq.com/reliability.html\#consumer](https://www.rabbitmq.com/reliability.html#consumer)
+    <https://www.rabbitmq.com/reliability.html#consumer>
 
 > [!div class="step-by-step"]
 > [前へ](rabbitmq-event-bus-development-test-environment.md)

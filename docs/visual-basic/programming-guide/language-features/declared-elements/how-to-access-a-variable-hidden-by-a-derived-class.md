@@ -9,26 +9,26 @@ helpviewer_keywords:
 - declared elements [Visual Basic], referencing
 - variables [Visual Basic], accessing hidden
 ms.assetid: ae21a8ac-9cd4-4fba-a3ec-ecc4321ef93c
-ms.openlocfilehash: 276cb1411c66e1f7205507a1b1053cc8642c7cb0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: c5ff802a0f6e081acd00d7cdfab4a8296b4daad9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345407"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392858"
 ---
 # <a name="how-to-access-a-variable-hidden-by-a-derived-class-visual-basic"></a>方法: 派生クラスによって非表示になっている変数にアクセスする (Visual Basic)
 
-派生クラスのコードが変数にアクセスすると、コンパイラは通常、最も近いアクセス可能なバージョン (アクセス可能なバージョン) への参照を解決します。これは、アクセスしているクラスからさかのぼって最も少ない derivational 手順です。 変数が派生クラスで定義されている場合、コードは通常、その定義にアクセスします。
+派生クラスのコードで変数にアクセスすると、コンパイラでは、通常、最も近いアクセス可能なバージョン、つまり、アクセスするクラスからさかのぼって最も少ない派生ステップでアクセス可能なバージョンに参照が解決されます。 変数が派生クラスに定義されている場合、コードでは通常、その定義にアクセスします。
 
-派生クラス変数が基底クラスの変数をシャドウすると、基底クラスのバージョンが非表示になります。 ただし、基底クラスの変数にアクセスするには、`MyBase` キーワードを使用して修飾する必要があります。
+派生クラス変数で基底クラスの変数をシャドウする場合、基底クラスのバージョンが隠されます。 ただし、`MyBase` キーワードを使用して修飾することによって、基底クラスの変数にアクセスできます。
 
-### <a name="to-access-a-base-class-variable-hidden-by-a-derived-class"></a>派生クラスによって非表示にされた基本クラス変数にアクセスするには
+### <a name="to-access-a-base-class-variable-hidden-by-a-derived-class"></a>派生クラスによって隠された基底クラスの変数にアクセスするには
 
-- 式または代入ステートメントでは、変数名の前に `MyBase` キーワードとピリオド (`.`) を指定します。
+- 式または代入ステートメントで、変数名の前に `MyBase` キーワードとピリオド (`.`) を指定します。
 
-    コンパイラは、変数の基本クラスバージョンへの参照を解決します。
+    コンパイラでは、変数の基底クラス バージョンに参照が解決されます。
 
-    次の例は、継承によるシャドウ処理を示しています。 2つの参照が作成されます。1つはシャドウを行う変数にアクセスし、もう1つはシャドウ処理をバイパスします。
+    次の例に、継承によるシャドウ処理を示しています。 それによって、2 つの参照が作成されます。シャドウする変数にアクセスするものと、シャドウ処理をバイパスするものです。
 
     ```vb
     Public Class shadowBaseClass
@@ -45,20 +45,20 @@ ms.locfileid: "74345407"
     End Class
     ```
 
-    前の例では、基底クラスで `shadowString` 変数を宣言し、派生クラスでそれをシャドウしています。 派生クラスのプロシージャ `showStrings` は、名前 `shadowString` が修飾されていない場合に、文字列のシャドウバージョンを表示します。 `shadowString` が `MyBase` キーワードで修飾されている場合は、シャドウされたバージョンが表示されます。
+    前の例では、基底クラスで `shadowString` 変数を宣言し、派生クラスでそれをシャドウしています。 派生クラスのプロシージャ `showStrings` では、名前 `shadowString` が修飾されていない場合に、文字列のシャドウしているバージョンが表示されます。 さらに、`shadowString` が `MyBase` キーワードで修飾されている場合は、シャドウされたバージョンが表示されます。
 
 ## <a name="robust-programming"></a>信頼性の高いプログラミング
 
-シャドウされた変数の意図しないバージョンを参照する危険性を低くするために、シャドウされた変数へのすべての参照を完全修飾することができます。 シャドウでは、同じ名前の変数の複数のバージョンが導入されます。 コードステートメントが変数名を参照する場合、コンパイラが参照を解決するバージョンは、コードステートメントの場所や修飾文字列の存在などの要因によって異なります。 これにより、変数の間違ったバージョンを参照するリスクが増加する可能性があります。
+シャドウされた変数の意図しないバージョンを参照するリスクを低減するために、シャドウされた変数へのすべての参照を完全修飾することができます。 シャドウによって、同じ名前の変数の複数のバージョンが取り込まれます。 コード ステートメントで変数名を参照する場合、コンパイラによる参照の解決先のバージョンは、コード ステートメントの場所や修飾文字列の存在などの要因によって異なります。 これにより、変数の誤ったバージョンを参照するリスクが高まる可能性があります。
 
 ## <a name="see-also"></a>関連項目
 
-- [宣言された要素の参照](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Visual Basic でのシャドウ処理](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
-- [シャドウとオーバーライドの違い](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md)
-- [方法: 自分で宣言した変数と同じ名前の変数を隠す](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
-- [方法: 継承された変数を隠す](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)
-- [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)
-- [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)
-- [Me、My、MyBase、および MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
-- [継承の基本](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [宣言された要素の参照](references-to-declared-elements.md)
+- [Visual Basic におけるシャドウ](shadowing.md)
+- [シャドウとオーバーライドの違い](differences-between-shadowing-and-overriding.md)
+- [方法: 自分で宣言した変数と同じ名前の変数を隠す](how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
+- [方法: 継承された変数を隠す](how-to-hide-an-inherited-variable.md)
+- [Shadows](../../../language-reference/modifiers/shadows.md)
+- [Overrides](../../../language-reference/modifiers/overrides.md)
+- [Me、My、MyBase、および MyClass](../../program-structure/me-my-mybase-and-myclass.md)
+- [継承の基本](../objects-and-classes/inheritance-basics.md)

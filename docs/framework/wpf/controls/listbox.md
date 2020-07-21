@@ -9,23 +9,23 @@ helpviewer_keywords:
 ms.assetid: b91bb352-4f51-44e0-9017-a041f216c852
 ms.openlocfilehash: 69f93b902fc3c35749871a187e57d45a404c6602
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61766985"
 ---
 # <a name="listbox"></a>ListBox
-A<xref:System.Windows.Controls.ListBox>コントロールが選択可能な項目の一覧をユーザーに提供します。  
+<xref:System.Windows.Controls.ListBox> コントロールからは、選択可項目の一覧がユーザーに与えられます。  
   
- 次の図は、一般的な示します<xref:System.Windows.Controls.ListBox>します。  
+ 典型的な <xref:System.Windows.Controls.ListBox> を示したのが次の画像です。  
   
- ![ListBox スクリーン ショット](./media/ss-ctl-listbox.gif "SS_CTL_listbox")  
-一般的なリスト ボックス  
+ ![ListBox スクリーンショット](./media/ss-ctl-listbox.gif "SS_CTL_listbox")  
+典型的な ListBox  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法トピック](listbox-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.ListBox>  
   <xref:System.Windows.Controls.ListBoxItem>  
   

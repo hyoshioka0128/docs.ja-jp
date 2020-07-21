@@ -2,16 +2,15 @@
 title: .NET アセンブリ ファイルの形式
 description: .NET アプリおよびライブラリを記述する場合や含める場合に使用する .NET アセンブリ ファイル形式について説明します。
 author: richlander
-ms.author: mairaw
 ms.date: 08/20/2019
 ms.technology: dotnet-standard
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
-ms.openlocfilehash: c9396c45e3c6cdbc9360485f6286a1746bf81fdd
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: b4aa961c3a6f2d4fa1580ff608aaf2a40d462fa0
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970151"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288512"
 ---
 # <a name="net-assembly-file-format"></a>.NET アセンブリ ファイルの形式
 

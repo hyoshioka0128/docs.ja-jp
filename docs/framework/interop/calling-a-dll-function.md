@@ -1,5 +1,6 @@
 ---
 title: DLL 関数の呼び出し
+description: 紛らわしく見える可能性のある DLL 関数の呼び出しに関する問題を検討します。 この関数呼び出しのプロセスは、戻り値の型が blittable かどうかによって異なります。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - unmanaged functions, calling
@@ -9,12 +10,11 @@ helpviewer_keywords:
 - interoperation with unmanaged code, platform invoke
 - DLL functions
 ms.assetid: 113646de-7ea0-4f0e-8df0-c46dab3e8733
-ms.openlocfilehash: 14589544e05f6c59f4f58f7723fef40e75af9823
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 90f8f47148e652a9942a35be1564bed94c155216
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123712"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620899"
 ---
 # <a name="calling-a-dll-function"></a>DLL 関数の呼び出し
 アンマネージド DLL 関数の呼び出しは、他のマネージド コードの呼び出しとほとんど同じですが、最初のうちは DLL 関数がわかりづらいと感じる違いがあります。 ここでは、通常とは異なる呼び出しに関連するいくつかの問題について説明しているトピックを紹介します。  

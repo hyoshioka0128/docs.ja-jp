@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a13ec8a6-8e18-4acb-8054-77f5b1a0e0b9
 topic_type:
 - apiref
-ms.openlocfilehash: b24f8ed4f5e2c6e0022f5599f2ab8c44a30a561a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 969d74933e908674225684a2e77d5c4804b86122
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129274"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615645"
 ---
 # <a name="iclrerrorreportingmanagergetbucketparametersforcurrentexception-method"></a>ICLRErrorReportingManager::GetBucketParametersForCurrentException メソッド
 呼び出し元のスレッドで現在の例外の Watson バケットを取得します。  
@@ -37,17 +37,17 @@ HRESULT GetBucketParametersForCurrentException(
   
 ## <a name="parameters"></a>パラメーター  
  `pParams`  
- 入出力例外のエラーデータを格納している[BucketParameters](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md)構造体へのポインター。  
+ 入出力例外のエラーデータを格納している[BucketParameters](bucketparameters-structure.md)構造体へのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICLRErrorReportingManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
+- [ICLRErrorReportingManager インターフェイス](iclrerrorreportingmanager-interface.md)

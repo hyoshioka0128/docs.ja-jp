@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-ms.openlocfilehash: 09b21c9483b4f2716409b560dbbb478fe5a6badd
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 7da7ba1b680bae2b29eeff8fe669e097ea8eda32
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972220"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595376"
 ---
 # <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>方法: WCF エンドポイントを使用してキューに置かれたメッセージを交換する
 キューを使用すると、通信時にサービスを利用できない場合でも、クライアントと Windows Communication Foundation (WCF) サービスの間で信頼できるメッセージングを行うことができます。 次の手順では、WCF サービスを実装するときに、標準のキューに登録されたバインディングを使用して、クライアントとサービス間の永続的な通信を確保する方法を示します。  
   
- このセクションでは、wcf <xref:System.ServiceModel.NetMsmqBinding>クライアントと wcf サービスの間のキュー通信にを使用する方法について説明します。  
+ このセクションでは、 <xref:System.ServiceModel.NetMsmqBinding> wcf クライアントと wcf サービスの間のキュー通信にを使用する方法について説明します。  
   
 ### <a name="to-use-queuing-in-a-wcf-service"></a>WCF サービスでキューを使用するには  
   
@@ -24,7 +24,7 @@ ms.locfileid: "70972220"
      [!code-csharp[S_Msmq_Transacted#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/service.cs#1)]
      [!code-vb[S_Msmq_Transacted#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/service.vb#1)]  
   
-2. サービス コントラクトがユーザー定義型を渡す場合は、その型のデータ コントラクトを定義する必要があります。 次のコードは、2 つのデータ コントラクト (`PurchaseOrder` および `PurchaseOrderLineItem`) を示します。 これらの 2 つの型は、サービスに送信されるデータを定義します (このデータ コントラクトを定義するクラスによって多数のメソッドが定義されることに注意してください)。 これらのメソッドは、データ コントラクトの一部とは見なされません。 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性で宣言されているメンバーだけがデータ コントラクトに含まれます。  
+2. サービス コントラクトがユーザー定義型を渡す場合は、その型のデータ コントラクトを定義する必要があります。 次のコードは、2 つのデータ コントラクト (`PurchaseOrder` および `PurchaseOrderLineItem`) を示します。 これらの 2 つの型は、サービスに送信されるデータを定義します  (このデータ コントラクトを定義するクラスによって多数のメソッドが定義されることに注意してください)。 これらのメソッドは、データ コントラクトの一部とは見なされません。 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性で宣言されているメンバーだけがデータ コントラクトに含まれます。  
   
      [!code-csharp[S_Msmq_Transacted#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/service.cs#2)]
      [!code-vb[S_Msmq_Transacted#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/service.vb#2)]  
@@ -58,7 +58,7 @@ ms.locfileid: "70972220"
   
 2. 次の例に示すように、アドレスを指定し、標準の <xref:System.ServiceModel.Description.ServiceEndpoint> バインディングを使用する <xref:System.ServiceModel.NetMsmqBinding> を構成で定義します。  
 
-3. トランザクションキューに書き込むトランザクションスコープを作成し、 `SubmitPurchaseOrder`操作を呼び出して、WCF クライアントを閉じます。次に例を示します。  
+3. トランザクションキューに書き込むトランザクションスコープを作成し、操作を呼び出して、 `SubmitPurchaseOrder` WCF クライアントを閉じます。次に例を示します。  
   
      [!code-csharp[S_Msmq_Transacted#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#8)]
      [!code-vb[S_Msmq_Transacted#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#8)]  
@@ -78,10 +78,10 @@ ms.locfileid: "70972220"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.ServiceModel.NetMsmqBinding>
-- [トランザクション MSMQ バインディング](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)
-- [WCF でのキュー](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [方法: WCF エンドポイントとメッセージキューアプリケーションを使用したメッセージの交換](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Windows Communication Foundation でのメッセージ キュー](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
-- [メッセージ キュー (MSMQ) のインストール](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [Windows Communication Foundation へのメッセージ キュー](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
-- [メッセージ キューを介したメッセージ セキュリティ](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
+- [トランザクション MSMQ バインディング](../samples/transacted-msmq-binding.md)
+- [WCF でのキュー](queuing-in-wcf.md)
+- [方法: WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Windows Communication Foundation でのメッセージ キュー](../samples/wcf-to-message-queuing.md)
+- [メッセージ キュー (MSMQ) のインストール](../samples/installing-message-queuing-msmq.md)
+- [Windows Communication Foundation へのメッセージ キュー](../samples/message-queuing-to-wcf.md)
+- [メッセージ キューを介したメッセージ セキュリティ](../samples/message-security-over-message-queuing.md)

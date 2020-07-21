@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6562bbe7-0d67-4c50-a958-3a18cf680375
 topic_type:
 - apiref
-ms.openlocfilehash: de264135450190fd028eb8cf12017d94cc65ffac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 74ffc5c92402808ae566d7cb014d9d920c384ae8
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134720"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804946"
 ---
 # <a name="ihostcontrolsetappdomainmanager-method"></a>IHostControl::SetAppDomainManager メソッド
 アプリケーションドメインが作成されたことをホストに通知します。  
@@ -36,38 +36,38 @@ HRESULT SetAppDomainManager (
   
 ## <a name="parameters"></a>パラメーター  
  `dwAppDomainID`  
- から選択された <xref:System.AppDomain>の数値識別子。  
+ から選択されたの数値識別子 <xref:System.AppDomain> 。  
   
  `pUnkAppDomainManager`  
- からホストが `IUnknown`として実装する <xref:System.AppDomainManager> オブジェクトへのポインター。  
+ から<xref:System.AppDomainManager>ホストがとして実装しているオブジェクトへのポインター `IUnknown` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|`SetAppDomainManager` が正常に返されました。|  
+|S_OK|`SetAppDomainManager`正常に返されました。|  
 |HOST_E_CLRNOTAVAILABLE|共通言語ランタイム (CLR) がプロセスに読み込まれていないか、CLR がマネージコードを実行できない状態であるか、または呼び出しが正常に処理されていません。|  
 |HOST_E_TIMEOUT|呼び出しがタイムアウトしました。|  
 |HOST_E_NOT_OWNER|呼び出し元がロックを所有していません。|  
 |HOST_E_ABANDONED|ブロックされたスレッドまたはファイバーが待機しているときに、イベントが取り消されました。|  
-|E_FAIL|原因不明の致命的なエラーが発生しました。 メソッドから E_FAIL が返された場合、そのプロセス内で CLR は使用できなくなります。 後続のホストメソッドの呼び出しでは、HOST_E_CLRNOTAVAILABLE が返されます。|  
+|E_FAIL|原因不明の致命的なエラーが発生しました。 メソッドが E_FAIL を返すと、そのプロセス内で CLR が使用できなくなります。 後続のホストメソッドの呼び出しでは HOST_E_CLRNOTAVAILABLE が返されます。|  
   
-## <a name="remarks"></a>Remarks  
- <xref:System.AppDomainManager> によって、ホストは、マネージコードにブートストラップし、各 <xref:System.AppDomain>の作成と設定を制御するメカニズムを提供します。 この <xref:System.AppDomain> が作成されると、<xref:System.AppDomainManager> が各 <xref:System.AppDomain> に読み込まれます。 このオプションを選択した場合、CLR は `pUnkAppDomainManager` パラメーターの値を設定することによって、アプリケーションドメインが作成されたことをホストに通知します。  
+## <a name="remarks"></a>解説  
+ は、 <xref:System.AppDomainManager> マネージコードにブートストラップし、それぞれの作成と設定を制御するためのメカニズムをホストに提供し <xref:System.AppDomain> ます。 は、作成される <xref:System.AppDomainManager> ときにそれぞれに読み込まれ <xref:System.AppDomain> <xref:System.AppDomain> ます。 このオプションを選択した場合、CLR は、パラメーターの値を設定することによって、アプリケーションドメインが作成されたことをホストに通知 `pUnkAppDomainManager` します。  
   
- `SetAppDomainManager` メソッドの実装では、ホストはアプリケーションドメインマネージャーのアセンブリ名と型を設定できます。  
+ メソッドの実装では、 `SetAppDomainManager` ホストはアプリケーションドメインマネージャーのアセンブリ名と型を設定できます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.AppDomain>
 - <xref:System.AppDomainManager>
-- [IHostControl インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+- [IHostControl インターフェイス](ihostcontrol-interface.md)

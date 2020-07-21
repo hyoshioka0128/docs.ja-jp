@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9432487e-f276-45d6-9a13-9a68024dbd46
 topic_type:
 - apiref
-ms.openlocfilehash: 80623bdec939b0ae5fc13008c1c4001c613ac435
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7037065be138c369b847e7f86de7b46fc5ae601a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73195959"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616880"
 ---
 # <a name="bucketparameters-structure"></a>BucketParameters 構造体
 イベントの型名と、イベントに関連付けられている現在の例外のパラメーターを格納します。  
@@ -28,9 +28,9 @@ ms.locfileid: "73195959"
   
 ```cpp  
 typedef struct _BucketParameters {  
-    BOOL  fInited;                    
-    WCHAR pszEventTypeName[255];      
-    WCHAR pszParams[10][255];         
+    BOOL  fInited;
+    WCHAR pszEventTypeName[255];
+    WCHAR pszParams[10][255];
 } BucketParameters;  
 ```  
   
@@ -38,17 +38,17 @@ typedef struct _BucketParameters {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`fInited`|この構造体の残りの部分が有効である場合は `true`。それ以外の場合は、`false`ます。|  
+|`fInited`|`true`この構造体の残りの部分が有効な場合は。それ以外の場合は `false` 。|  
 |`pszEventTypeName`|イベントの種類の名前。|  
 |`pszParams`|文字列の配列。各文字列は、イベントに関連付けられている現在の例外のパラメーターを指定します。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ホスト構造体](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+- [ホスト構造体](hosting-structures.md)

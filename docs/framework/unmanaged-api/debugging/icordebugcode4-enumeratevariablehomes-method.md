@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 802c01ff-8b80-4733-b6dd-03ab6ff7fa11
 topic_type:
 - apiref
-ms.openlocfilehash: 850cbd2367dddd9f46375817e271cb8e7183cf64
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5f731b1459542c3f5378790b21f2ea576e89ad97
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121097"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893338"
 ---
 # <a name="icordebugcode4enumeratevariablehomes-method"></a>ICorDebugCode4:: EnumerateVariableHomes メソッド
 関数のローカル変数および引数に対する列挙子を取得します。  
@@ -35,21 +35,21 @@ HRESULT EnumerateVariableHomes(
   
 ## <a name="parameters"></a>パラメーター  
  `ppEnum`  
- 関数内のローカル変数および引数の列挙子である、の[型](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)のオブジェクトのアドレスへのポインター。  
+ 関数内のローカル変数および引数の列挙子である、の[型](icordebugvariablehomeenum-interface.md)のオブジェクトのアドレスへのポインター。  
   
-## <a name="remarks"></a>Remarks  
- "ICorDebugEnum" インターフェイスから派生した標準列挙子で[ある、表示変数](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)[ホーム](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)オブジェクトを列挙できます。 コレクションには、同じスロットまたは引数インデックスに対して、関数内の異なるポイントに異なる[ホーム](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)オブジェクトが含まれている場合があります。  
+## <a name="remarks"></a>解説  
+ "ICorDebugEnum" インターフェイスから派生した標準列挙子で[ある、表示変数](icordebugvariablehomeenum-interface.md)[ホーム](icordebugvariablehome-interface.md)オブジェクトを列挙できます。 コレクションには、同じスロットまたは引数インデックスに対して、関数内の異なるポイントに異なる[ホーム](icordebugvariablehome-interface.md)オブジェクトが含まれている場合があります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugCode4 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-interface.md)
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugCode4 インターフェイス](icordebugcode4-interface.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)

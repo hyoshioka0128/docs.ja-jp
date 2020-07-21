@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataModule::Request メソッド
+title: 'IXCLRDataModule:: Request メソッド'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataModule::Request Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 7d04e5630bd196ef534f72a0c3924019315f3774
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3c18fc5c947cbb89fc4e9aed60d3cedcbe22d749
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632223"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420813"
 ---
-# <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule::Request メソッド
+# <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule:: Request メソッド
 
-要求をモジュールのデータで指定されたバッファーを設定します。
+モジュールのデータで指定されたバッファーへの読み込みを要求します。
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -41,28 +41,28 @@ HRESULT Request([in] ULONG32 reqCode,
 ## <a name="parameters"></a>パラメーター
 
 `reqCode`\
-[in]要求の種類を送信します。
+から送信される要求の種類。
 
 `inBufferSize`\
-[in] で渡される入力バッファーのサイズ。
+[in] 渡される入力バッファーのサイズ。
 
 `inBuffer`\
-[in、size_is(inBufferSize)]要求で送信される生データのバッファー ポインター。
+[in、size_is (inBufferSize)]要求で送信される生データのバッファーポインター。
 
 `outBufferSize`\
-[in]出力バッファーのサイズ。
+から出力バッファーのサイズ。
 
 `outBuffer`\
-[out, size_is(outBufferSize)]要求の応答を格納するために使用するバッファーのポインター。
+[out、size_is (outBufferSize)]要求応答を格納するために使用するバッファーポインター。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-指定されたメソッドは、`IXCLRDataModule`インターフェイスし、仮想メソッド テーブルの 36th スロットに対応しています。
+指定されたメソッドはインターフェイスの一部で `IXCLRDataModule` あり、仮想メソッドテーブルの37th スロットに対応します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**プラットフォーム:**[システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。
-**ヘッダー:** None**ライブラリ。** None **.NET Framework のバージョン。** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
+**ヘッダー:** None **Library:** None **.NET Framework バージョン:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>関連項目
 

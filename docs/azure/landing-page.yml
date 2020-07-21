@@ -1,0 +1,223 @@
+### YamlMime:Landing
+title: .NET 開発者向けの Azure
+summary: これらの .NET 開発者向けのチュートリアルとツールを使用して、クラウドに対応したアプリの開発を開始しましょう。 .NET ❤ Azure
+metadata:
+  title: .NET 開発者向けの Azure
+  description: .NET と Azure で開発するためのドキュメント、サンプル、リンク。
+  ms.date: 06/12/2020
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.technology: azure
+  ms.service: multiple
+  ms.prod: azure-dotnet
+  ms.openlocfilehash: a7b9b909e500979750d57cc6047153123cd192e5
+  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 07/09/2020
+  ms.locfileid: "86174862"
+landingContent:
+- title: Azure で .NET の使用を開始する
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure と .NET の概要
+      url: intro.md
+  - linkListType: get-started
+    links:
+    - text: .NET 開発者ツール
+      url: tools.md
+    - text: アプリを認証する
+      url: authentication.md
+    - text: ログの記録
+      url: logging.md
+    - text: SDK の例
+      url: /samples/dotnet/samples/azure-identity-resource-management-storage/
+  - linkListType: learn
+    links:
+    - text: Azure 基礎
+      url: /learn/paths/azure-fundamentals/
+  - linkListType: download
+    links:
+    - text: サンプル コード
+      url: /samples/browse/?products=azure&languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb
+  - linkListType: reference
+    links:
+    - text: .NET 用の Azure ライブラリの API リファレンス
+      url: /dotnet/api/overview/azure/?view=azure-dotnet
+- title: Web アプリの構築
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: App Service
+      url: /azure/app-service/overview
+    - text: Azure Functions
+      url: /azure/azure-functions/functions-overview
+  - linkListType: quickstart
+    links:
+    - text: ASP.NET Web アプリをデプロイする
+      url: /azure/app-service/app-service-web-get-started-dotnet
+    - text: サーバーレス関数を構築する
+      url: /azure/azure-functions/functions-create-your-first-function-visual-studio
+  - linkListType: learn
+    links:
+    - text: Azure App Service を使用して Web アプリをホストする
+      url: /learn/modules/host-a-web-app-with-azure-app-service/
+    - text: Visual Studio を使用した Azure 関数の開発、テスト、デプロイ
+      url: /learn/modules/develop-test-deploy-azure-functions-with-visual-studio/
+    - text: Azure API Management を使用して API を公開および管理する
+      url: /learn/modules/publish-manage-apis-with-azure-api-management/
+  - linkListType: tutorial
+    links:
+    - text: App Service と Azure SQL Database を使用した ASP.NET Core Web アプリ
+      url: /azure/app-service/app-service-web-tutorial-dotnet-sqldatabase
+    - text: ASP.NET と Azure SQL Database を使用したマネージド ID
+      url: /azure/app-service/app-service-web-tutorial-connect-msi
+    - text: Azure App Service の CORS を使用した Web API
+      url: /azure/app-service/app-service-web-tutorial-rest-api
+- title: クラウド ネイティブ アプリの構築
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Kubernetes でマイクロサービスを実行してデバッグする
+      url: /azure/dev-spaces/quickstart-netcore-visualstudio
+  - linkListType: learn
+    links:
+    - text: クラウドネイティブの ASP.NET Core マイクロサービスを作成してデプロイする
+      url: /learn/modules/microservices-aspnet-core/
+  - linkListType: how-to-guide
+    links:
+    - text: .NET Core アプリを Azure Container Registry にデプロイする
+      url: /visualstudio/containers/hosting-web-apps-in-docker
+  - linkListType: tutorial
+    links:
+    - text: Visual Studio コンテナー ツールを使用した ASP.NET Core アプリ
+      url: /visualstudio/containers/container-tools
+    - text: AKS で複数のコンテナーをデプロイおよびデバッグする
+      url: /azure/dev-spaces/multi-service-netcore-visualstudio
+    - text: Azure App Configuration を使用した動的な構成と機能フラグ
+      url: /azure/azure-app-configuration/use-feature-flags-dotnet-core
+- title: 認証とセキュリティ
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Microsoft ID プラットフォーム (Azure AD)
+      url: /azure/active-directory/develop/
+  - linkListType: learn
+    links:
+    - text: OpenID Connect と Azure AD を使用してアプリケーションをセキュリティで保護する
+      url: /learn/modules/secure-app-with-oidc-and-azure-ad/
+    - text: Microsoft Identity を使用してカスタム API をセキュリティで保護する
+      url: /learn/modules/identity-secure-custom-api/
+    - text: ASP.NET ID フレームワークを使用して ASP.NET Core Web アプリをセキュリティで保護する
+      url: /learn/modules/secure-aspnet-core-identity/
+  - linkListType: tutorial
+    links:
+    - text: ASP.NET Web アプリに Microsoft へのサインインを追加する
+      url: /azure/active-directory/develop/tutorial-v2-asp-webapp
+    - text: ASP.NET Core で Azure Key Vault を使用する
+      url: /azure/key-vault/tutorial-net-create-vault-azure-web-app
+    - text: Azure AD B2C と Web API を統合する
+      url: /azure/active-directory-b2c/tutorial-single-page-app-webapi
+  - linkListType: reference
+    links:
+    - text: .NET 用 Azure ID クライアント ライブラリ
+      url: /dotnet/api/overview/azure/identity-readme?view=azure-dotnet
+- title: ストレージとデータの操作
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 適切なデータ ストレージ オプションを選択する
+      url: /azure/architecture/guide/technology-choices/data-store-overview
+  - linkListType: quickstart
+    links:
+    - text: .NET を使用して Azure SQL Database または Azure SQL Managed Instance にクエリを実行する
+      url: /azure/azure-sql/database/connect-query-dotnet-core
+    - text: .NET を使用して Azure PostgreSQL にクエリを実行する
+      url: /azure/postgresql/connect-csharp
+  - linkListType: learn
+    links:
+    - text: Azure SQL データベースのクエリを実行する ASP.NET アプリケーションを開発して構成する
+      url: /learn/modules/develop-app-that-queries-azure-sql/
+    - text: Visual Studio Code で Azure Cosmos DB 用の .NET Core アプリをビルドする
+      url: /learn/modules/build-cosmos-db-app-with-vscode/
+    - text: Azure Blob ストレージを使用してアプリケーション データを格納する
+      url: /learn/modules/store-app-data-with-azure-blob-storage/
+    - text: Entity Framework Core でリレーショナル データを保持および取得する
+      url: /learn/modules/persist-data-ef-core/
+  - linkListType: tutorial
+    links:
+    - text: Azure Database for PostgreSQL データベースに接続してクエリを追加する
+      url: /azure/postgresql/connect-csharp
+- title: Azure でのメッセージング
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure キューを使用してメッセージを格納する
+      url: /azure/storage/queues/storage-queues-introduction
+    - text: Azure Service Bus を使用したアプリケーション間メッセージング
+      url: /azure/service-bus-messaging
+    - text: Event Hubs を使用したビッグ データのストリーム配信
+      url: /azure/event-hubs/event-hubs-about
+    - text: Event Grid を使用してイベントベースのアプリケーションを作成する
+      url: /azure/event-grid/overview
+  - linkListType: quickstart
+    links:
+    - text: Azure Queue storage の使用
+      url: /azure/storage/queues/storage-dotnet-how-to-use-queues?tabs=dotnet
+    - text: Azure Service Bus キューの使用
+      url: /azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues
+    - text: Azure Event Hubs を使用してリアルタイムでデータを取り込む
+      url: /azure/event-hubs/event-hubs-dotnet-standard-getstarted-send
+    - text: Event Grid を使ったカスタム イベントのルーティング
+      url: /azure/event-grid/custom-event-quickstart
+- title: 診断および監視
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Monitor
+      url: /azure/azure-monitor/overview
+  - linkListType: learn
+    links:
+    - text: Azure Web アプリでページ読み込み時間をキャプチャして表示する
+      url: /learn/modules/capture-page-load-times-application-insights/
+  - linkListType: how-to-guide
+    links:
+    - text: Azure App Service および IIS での ASP.NET Core のトラブルシューティング
+      url: /aspnet/core/test/troubleshoot-azure-iis
+    - text: .NET Core ILogger を使用した Application Insights
+      url: /azure/azure-monitor/app/ilogger
+    - text: ワーカー サービス アプリケーション向け Application Insights
+      url: /azure/azure-monitor/app/worker-service
+    - text: Visual Studio を使用した Azure App Service のアプリのトラブルシューティング
+      url: /azure/app-service/troubleshoot-dotnet-visual-studio
+- title: 移行
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Azure ホスティング オプションを選択する
+      url: ./migration/choose.md
+  - linkListType: how-to-guide
+    links:
+    - text: .NET Web アプリまたはサービスを Azure App Service に移行する
+      url: ./migration/app-service.md
+    - text: ASP.NET アプリを Azure VM に移行する
+      url: ./migration/vm.md
+    - text: SQL Server データベースを Azure に移行する
+      url: ./migration/sql.md
+- title: .NET アーキテクチャ ガイド
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Azure での最新のアプリケーションの設計
+      url: /learn/paths/architect-modern-apps/
+  - linkListType: architecture
+    links:
+    - text: '.NET マイクロサービス: コンテナー化された .NET アプリのアーキテクチャ'
+      url: /dotnet/architecture/microservices/
+    - text: ASP.NET Core および Azure での最新の Web アプリケーションの設計
+      url: /dotnet/architecture/modern-web-apps-azure/
+    - text: Microsoft プラットフォームとツールでのコンテナー化された Docker アプリケーションのライフサイクル
+      url: /dotnet/architecture/containerized-lifecycle/
+    - text: Azure クラウドおよび Windows コンテナーを使用して既存の .NET アプリケーションを最新化する
+      url: /dotnet/architecture/modernize-with-azure-containers/

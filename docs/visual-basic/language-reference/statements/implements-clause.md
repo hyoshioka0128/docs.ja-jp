@@ -17,37 +17,37 @@ helpviewer_keywords:
 - members [Visual Basic], Implements keyword
 - reimplementation
 ms.assetid: 5252cdf9-964d-4fc6-af0f-0449b7126b5a
-ms.openlocfilehash: f114aee75356e59eafd9d3ba6af9c64402cb374f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 46ab1a1148e8d73d91293aedfc407e5efdc7cfb4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345873"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404564"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements 句 (Visual Basic)
-クラスまたは構造体のメンバーが、インターフェイスで定義されているメンバーの実装を提供していることを示します。  
+クラスまたは構造体のメンバーがインターフェイスで定義されているメンバーの実装を提供していることを示します。  
   
-## <a name="remarks"></a>コメント  
-`Implements` キーワードは[Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)と同じではありません。 `Implements` ステートメントを使用して、クラスまたは構造体が1つ以上のインターフェイスを実装することを指定し、各メンバーに対して `Implements` キーワードを使用して、実装するインターフェイスとメンバーを指定します。
+## <a name="remarks"></a>Remarks  
+`Implements` キーワードは、[Implements ステートメント](implements-statement.md)と同じではありません。 `Implements` ステートメントを使用して、クラスまたは構造体が 1 つ以上のインターフェイスを実装することを指定し、メンバーごとに `Implements` キーワードを使用して、実装するインターフェイスとメンバーを指定します。
 
-クラスまたは構造体がインターフェイスを実装する場合は、[クラスステートメント](../../../visual-basic/language-reference/statements/class-statement.md)または[構造体ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)の直後に `Implements` ステートメントを含める必要があります。また、インターフェイスで定義されているすべてのメンバーを実装する必要があります。
+クラスまたは構造体がインターフェイスを実装する場合は、[Class ステートメント](class-statement.md)または [Structure ステートメント](structure-statement.md)の直後に `Implements` ステートメントを含める必要があります。また、インターフェイスによって定義されたすべてのメンバーを実装する必要があります。
 
 ## <a name="reimplementation"></a>再実装  
-派生クラスでは、基底クラスに既に実装されているインターフェイスメンバーを再実装できます。 これは、次の点で基底クラスのメンバーをオーバーライドすることとは異なります。
+派生クラスでは、基底クラスによって既に実装されているインターフェイス メンバーを再実装できます。 これは、基底クラスのメンバーのオーバーライドとは、次の点で異なります。
 
-- 基底クラスのメンバーを再実装するのに、[Overridable](../../../visual-basic/language-reference/modifiers/overridable.md) とする必要はありません。
+- 基底クラスのメンバーは、再実装するために [Overridable](../modifiers/overridable.md) である必要はありません。
 - 別の名前を使用してメンバーを再実装できます。
 
 `Implements` キーワードは、次のコンテキストで使用できます。
 
-- [Event ステートメント](../../../visual-basic/language-reference/statements/event-statement.md)
-- [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)
-- [Property ステートメント](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)  
+- [Event ステートメント](event-statement.md)
+- [Function ステートメント](function-statement.md)
+- [Property ステートメント](property-statement.md)
+- [Sub ステートメント](sub-statement.md)  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)
-- [Interface ステートメント](../../../visual-basic/language-reference/statements/interface-statement.md)
-- [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)
-- [Structure ステートメント](../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Implements ステートメント](implements-statement.md)
+- [Interface ステートメント](interface-statement.md)
+- [Class ステートメント](class-statement.md)
+- [Structure ステートメント](structure-statement.md)

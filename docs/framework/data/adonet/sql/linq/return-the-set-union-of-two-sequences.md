@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 8b8bd3cb-86d4-4a3b-9906-61f68726dd1f
 ms.openlocfilehash: 058856243b2a8daaecd653a9b5999013de5407a8
 ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/23/2019
 ms.locfileid: "71182528"
@@ -16,14 +16,14 @@ ms.locfileid: "71182528"
 2 つのシーケンスの和集合を返すには、<xref:System.Linq.Queryable.Union%2A> 演算子を使用します。  
   
 ## <a name="example"></a>例  
- この例で<xref:System.Linq.Queryable.Union%2A>は、を使用して、または`Employees`のいずれか`Customers`の国/地域のシーケンスを返します。  
+ この例では、<xref:System.Linq.Queryable.Union%2A> を使用して、`Customers` と `Employees` のいずれかが居住しているすべての国と地域のシーケンスを返します。  
   
  [!code-csharp[DLinqQueryExamples#43](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#43)]
  [!code-vb[DLinqQueryExamples#43](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#43)]  
   
- で[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]は、 [`UNION ALL`](/sql/t-sql/language-elements/set-operators-union-transact-sql)演算子は、マルチセットに対して、マルチセットの順序なしの連結 (実質的には SQL の句の結果) として定義されます。 <xref:System.Linq.Queryable.Union%2A>
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、<xref:System.Linq.Queryable.Union%2A> 演算子は、マルチセットの順序なし連結演算子として、マルチセットに対して定義されます (事実上、SQL の [`UNION ALL`](/sql/t-sql/language-elements/set-operators-union-transact-sql) 句の結果)。
 
-詳細と例については<xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>、「」を参照してください。
+詳細な情報と例については、「<xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>」を参照してください。
   
 ## <a name="see-also"></a>関連項目
 

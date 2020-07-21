@@ -3,10 +3,10 @@ title: まとめ
 description: Azure Cloud と Windows コンテナーで既存の .NET アプリケーションを最新化する | 結論
 ms.date: 10/26/2017
 ms.openlocfilehash: c7c4042b224577238ae74bd786d4803e487998e7
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69578485"
 ---
 # <a name="conclusions"></a>まとめ
@@ -28,4 +28,4 @@ ms.locfileid: "69578485"
 - Microsoft Azure により、Windows コンテナー、クラウド インフラストラクチャ、PaaS サービスを使用して既存の .NET Framework アプリケーションを最新化するための最も包括的で完全な環境が提供されます。
 
 >[!div class="step-by-step"]
->[前へ](walkthroughs-technical-get-started-overview.md)
+>[[戻る]](walkthroughs-technical-get-started-overview.md)

@@ -7,15 +7,15 @@ helpviewer_keywords:
 - arrays [Visual Basic], initializing
 - arrays [Visual Basic], declaring
 ms.assetid: aadd7a60-7ca4-4608-b986-091f19e7fc10
-ms.openlocfilehash: 509859cbec41ca31b3abaa1c739e2975ec93bc0e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 7feaf71fa1c59c24aa751f2b9e28328d47ba357c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351878"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413067"
 ---
 # <a name="how-to-initialize-an-array-variable-in-visual-basic"></a>方法: Visual Basic で配列変数を初期化する
-配列リテラルを `New` 句に含めること、および配列の初期値を指定することで、配列変数を初期化します。 型を指定するか、配列リテラル内の値から推論することを許可できます。 型の推論方法の詳細については、 [「配列」](../../../../visual-basic/programming-guide/language-features/arrays/index.md)の「配列に初期値を設定する」を参照してください。  
+配列リテラルを `New` 句に含めること、および配列の初期値を指定することで、配列変数を初期化します。 型を指定するか、配列リテラル内の値から推論することを許可できます。 型の推論方法の詳細については、[配列](index.md)に関するページで、配列への初期値の取り込みに関するトピックをご覧ください。  
   
 ### <a name="to-initialize-an-array-variable-by-using-an-array-literal"></a>配列リテラルを使用して配列変数を初期化するには  
   
@@ -45,7 +45,7 @@ ms.locfileid: "74351878"
   
 ### <a name="to-initialize-a-jagged-array-variable-by-using-array-literals"></a>配列リテラルを使用してジャグ配列変数を初期化するには  
   
-- 中かっこ (`{}`) で囲んだオブジェクトの値を入れ子にします。 さまざまな長さの配列を指定する配列リテラルを入れ子にすることもできますが、ジャグ配列の場合は、入れ子になった配列リテラルがかっこ (`()`) で囲まれていることを確認してください。 かっこで囲むことで、入れ子になった配列リテラルが強制的に評価され、結果の配列がジャグ配列の初期値として使用されるようになります。 ジャグ配列を初期化する 2 つの例を次に示します。  
+- 中かっこ (`{}`) で囲んだオブジェクトの値を入れ子にします。 ジャグ配列の場合、長さが異なる配列を指定する配列リテラルを入れ子にすることもできますが、入れ子になった配列リテラルがかっこ (`()`) で囲まれていることを確認してください。 かっこで囲むことで、入れ子になった配列リテラルが強制的に評価され、結果の配列がジャグ配列の初期値として使用されるようになります。 ジャグ配列を初期化する 2 つの例を次に示します。  
   
      [!code-vb[VbVbalrArrays#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#19)]  
   
@@ -55,5 +55,5 @@ ms.locfileid: "74351878"
   
 ## <a name="see-also"></a>関連項目
 
-- [配列](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [配列のトラブルシューティング](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
+- [配列](index.md)
+- [配列のトラブルシューティング](troubleshooting-arrays.md)

@@ -1,31 +1,33 @@
 ---
 title: ML.NET コマンドライン インターフェイス (CLI) ツールをインストールする方法
-description: ML.NET コマンドライン インターフェイス (CLI) ツールの概要とインストール。
-ms.date: 04/16/2019
-ms.custom: ''
-ms.openlocfilehash: feeb4832b5bbd39f28ac2c6f6caa40d60b4f3aa9
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+description: ML.NET コマンド ライン インターフェイス (CLI) ツールをインストール、アップグレード、ダウングレード、およびアンインストールする方法を説明します。
+ms.date: 06/08/2020
+ms.custom: mlnet-tooling
+ms.openlocfilehash: 13203246411deadf3ab13a5eba0d2c8e6e9027c5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977075"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602272"
 ---
 # <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>ML.NET コマンドライン インターフェイス (CLI) ツールをインストールする方法
 
-ML.NET CLI (コマンドライン インターフェイス) は、用意したトレーニング データセットに基づいて高品質の ML.NET モデルとソース コードを生成するための、コマンドプロンプト (Windows、Mac、または Linux) 上で実行できるツールです。
+Windows、Mac、または Linux で ML.NET CLI (コマンド ライン インターフェイス) ツールをインストールする方法を説明します。
+
+ML.NET CLI では、自動機械学習 (AutoML) とトレーニング データセットを使用して、高品質 ML.NET モデルとソース コードが生成されます。
 
 > [!NOTE]
 > このトピックは、現在プレビュー段階の ML.NET CLI と ML.NET AutoML について述べており、内容が変更される場合があります。
 
 ## <a name="pre-requisites"></a>前提条件
 
-- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
-- (省略可能) [Visual Studio 2017 または 2019](https://visualstudio.microsoft.com/vs/)
+- (省略可能) [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 
-生成された C# コード プロジェクトは、Visual Studio で F5 キーまたは `dotnet run` (.NET Core CLI) を使用して実行できます。
+生成された C# コード プロジェクトを Visual Studio で実行するには、`F5` キーを押すか、`dotnet run` (.NET Core CLI) を使用します。
 
-メモ:[.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2) のインストール後に `dotnet tool` コマンドが機能しない場合は、Windows からサインアウトしてから再度サインインします。
+メモ:.NET Core SDK のインストール後に `dotnet tool` コマンドが機能しない場合は、Windows からサインアウトしてから再度サインインします。
 
 ## <a name="install"></a>インストール
 
@@ -52,7 +54,7 @@ Tool 'mlnet' (version 'X.X.X') was successfully installed.
 mlnet
 ```
 
-"auto-train" コマンドなど、mlnet ツールに利用できるコマンドのヘルプを参照することをお勧めします。
+"classification" コマンドなど、mlnet ツールに利用できるコマンドのヘルプを参照することをお勧めします。
 
 ## <a name="install-a-specific-release-version"></a>特定のリリース バージョンをインストールする
 
@@ -134,7 +136,7 @@ ML.NET CLI は、既定のディレクトリまたは特定の場所にインス
 
 ## <a name="see-also"></a>関連項目
 
-- ["ML.NET CLI ツールの概要" のチュートリアル](../tutorials/mlnet-cli.md)
-- [ML.NET CLI ツールを使用してモデルを自動的にトレーニングする方法](../automate-training-with-cli.md)
+- [ML.NET CLI の概要](../automate-training-with-cli.md)
+- [チュートリアル: ML.NET CLI を使用してセンチメントを分析する](../tutorials/sentiment-analysis-cli.md)
 - [ML.NET CLI auto-train コマンド リファレンス ガイド](../reference/ml-net-cli-reference.md)
 - [ML.NET CLI のテレメトリ](../resources/ml-net-cli-telemetry.md)

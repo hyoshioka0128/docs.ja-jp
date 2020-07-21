@@ -6,28 +6,28 @@ helpviewer_keywords:
 - animation [WPF], size changes with key frames
 - size changes [WPF], animating with key frames
 ms.assetid: 86bd2950-d4c9-4ec4-aa8d-7dc3ccadded4
-ms.openlocfilehash: 0629b6600444bd172af451fd7e970bff894d8047
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 42cecfc9df4304be4033ea39edc0517016de4a92
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789260"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344647"
 ---
 # <a name="how-to-animate-size-changes-by-using-key-frames"></a>方法: キー フレームを使用してサイズの変更をアニメーション化する
 この例では、キー フレームを使用してサイズの変更をアニメーション化する方法を示します。  
   
 ## <a name="example"></a>例  
- 次の例では、<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>をアニメーション化するクラス、<xref:System.Windows.Media.ArcSegment.Size%2A>のプロパティ、<xref:System.Windows.Media.ArcSegment>します。 このアニメーションは、次の方法で 3 つのキー フレームを使用します。  
+ 次の例では、<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames> クラスを使用して、<xref:System.Windows.Media.ArcSegment> の <xref:System.Windows.Media.ArcSegment.Size%2A> プロパティをアニメーション化します。 このアニメーションは、次の方法で 3 つのキー フレームを使用します。  
   
-1. インスタンスを使用して、アニメーションの最初の 0.5 秒、<xref:System.Windows.Media.Animation.LinearSizeKeyFrame>クラスは、円弧のサイズを徐々 に増やします。などの線形キーフレーム<xref:System.Windows.Media.Animation.LinearSizeKeyFrame>値の間の滑らかな線形トランジションを作成します。  
+1. アニメーションの最初の 0.5 秒間は、<xref:System.Windows.Media.Animation.LinearSizeKeyFrame> クラスのインスタンスを使用して、円弧のサイズを徐々に大きくします。<xref:System.Windows.Media.Animation.LinearSizeKeyFrame> のような線形キー フレームは、ある値から次の値への滑らかで直線的な遷移を作成します。  
   
-2. インスタンスを使用している 0.5 秒は、次の最後に、<xref:System.Windows.Media.Animation.DiscreteSizeKeyFrame>クラスを突然、円弧のサイズを大ききます。などの不連続のキーフレーム<xref:System.Windows.Media.Animation.DiscreteSizeKeyFrame>されている値の間に急なジャンプを作成、サイズの変更が突然発生してはなく。  
+2. 次の 0.5 秒間の終わりに、<xref:System.Windows.Media.Animation.DiscreteSizeKeyFrame> クラスのインスタンスを使用して、円弧のサイズを突然大きくします。<xref:System.Windows.Media.Animation.DiscreteSizeKeyFrame> のような不連続キー フレームは、ある値から次の値への突然の変化を作成します。つまり、サイズが滑らかに変化するのではなく、急に変化します。  
   
-3. インスタンスが使用する最後の 2 秒、<xref:System.Windows.Media.Animation.SplineSizeKeyFrame>円弧のサイズを大きくクラス。スプライン キー フレームのような<xref:System.Windows.Media.Animation.SplineSizeKeyFrame>の値に基づいて値の間に可変遷移を作成、<xref:System.Windows.Media.Animation.SplineSizeKeyFrame.KeySpline%2A>プロパティ。 この例では、円弧のサイズは最初はゆっくり大きくなりますが、時間セグメントの終点に向かって急激に大きくなります。  
+3. 最後の 2 秒間は、<xref:System.Windows.Media.Animation.SplineSizeKeyFrame> クラスのインスタンスを使用して、円弧のサイズを大きくします。<xref:System.Windows.Media.Animation.SplineSizeKeyFrame> のようなスプライン キー フレームは、<xref:System.Windows.Media.Animation.SplineSizeKeyFrame.KeySpline%2A> プロパティの値に従って、ある値から次の値への可変遷移を作成します。 この例では、円弧のサイズは最初はゆっくり大きくなりますが、時間セグメントの終点に向かって急激に大きくなります。  
   
  [!code-xaml[keyframes_snip#SizeAnimationUsingKeyFramesWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/SizeAnimationUsingKeyFramesExample.xaml#sizeanimationusingkeyframeswholepage)]  
   
- サンプル全体については、「[キーフレーム アニメーションのサンプル](https://go.microsoft.com/fwlink/?LinkID=160012)」を参照してください。  
+ サンプル全体については、「[キーフレーム アニメーションのサンプル](https://github.com/microsoft/WPF-Samples/tree/master/Animation/KeyFrameAnimation)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

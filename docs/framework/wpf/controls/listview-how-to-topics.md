@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: aafce40c-9bfe-45ec-86a3-599616a11276
 ms.openlocfilehash: 2665fc60e1366f30fb7f3621bb0669db1ea3db0a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61932250"
 ---
 # <a name="listview-how-to-topics"></a>ListView に関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.ListView>データ項目のセットを表示するコントロール。  
+このセクションのトピックでは、<xref:System.Windows.Controls.ListView> コントロールを使用し、データ項目のセットを表示する方法を説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ヘッダーがクリックされたときに GridView 列を並べ替える](how-to-sort-a-gridview-column-when-a-header-is-clicked.md)  
@@ -31,7 +31,7 @@ ms.locfileid: "61932250"
  [ListView の列の水平方向の配置を変更する](how-to-change-the-horizontal-alignment-of-a-column-in-a-listview.md)  
  [ListView の各項目の MouseDoubleClick イベントを処理する](how-to-handle-the-mousedoubleclick-event-for-each-item-in-a-listview.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.ListView>  
   
  <xref:System.Windows.Controls.ListViewItem>  

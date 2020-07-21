@@ -4,13 +4,13 @@ description: ML.NET 用のモデル ビルダー シナリオのいずれかで�
 ms.date: 10/29/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to
-ms.openlocfilehash: cc93b3f77284ed283a8d7cbd52b8cd02b4fd9066
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.custom: mvc, how-to, mlnet-tooling
+ms.openlocfilehash: 64e366b3c66427ccd2810324abeb880f6cb9ebc1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977052"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602207"
 ---
 # <a name="load-training-data-into-model-builder"></a>モデル ビルダーにトレーニング データを読み込む
 
@@ -109,6 +109,6 @@ SQL Server データベースからモジュール ビルダーにデータを�
 次のチュートリアルに従って、モデル ビルダーを使用した機械学習アプリの作成を行います。
 
 - [回帰を使用して価格を予測する](../tutorials/predict-prices-with-model-builder.md)
-- [バイナリ分類を使用して Web アプリケーションのセンチメントを分析する](../tutorials/sentiment-analysis-model-builder.md )
+- [バイナリ分類を使用して Web アプリケーションのセンチメントを分析する](../tutorials/sentiment-analysis-model-builder.md)
 
 コードを使用してモデルをトレーニングする場合は、[ML.NET API を使用したデータ読み込みの方法](load-data-ml-net.md)に関するページを参照してください。

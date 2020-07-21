@@ -2,55 +2,55 @@
 title: WSDL とポリシー
 ms.date: 03/30/2017
 ms.assetid: cea87440-3519-4640-8494-b8a2b0e88c84
-ms.openlocfilehash: caaa54f04bbb10ed3b3dd65b53ace633b88f9126
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 201920a8ebf639c74acfb20b2e990c8bbc0c5b55
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929663"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600102"
 ---
 # <a name="wsdl-and-policy"></a>WSDL とポリシー
-このトピックでは、Windows Communication Foundation (WCF) の WSDL 1.1、Ws-policy と Ws-policyattachment の実装の詳細だけでなく追加の Ws-policy アサーションおよび WCF で導入された WSDL 1.1 拡張について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) WSDL 1.1、WS-POLICY および WS-POLICY 添付の実装の詳細、および WCF によって導入された追加の WS-POLICY アサーションと WSDL 1.1 拡張について説明します。  
   
- WCF では、制約と明確にするこのドキュメントで説明されている W3C に提出された Ws-policy と Ws-policyattachment 仕様を実装します。  
+ WCF は、このドキュメントで説明されている制約と説明に従って、W3C に送信される WS-POLICY および WS-POLICY 添付仕様を実装します。  
   
  このドキュメントでは、次の表に示すプレフィックスと名前空間を使用します。  
   
-|プレフィックス|名前空間|  
+|Prefix|名前空間|  
 |------------|---------------|  
-|wsp (WS-Policy 1.2)|http://schemas.xmlsoap.org/ws/2004/09/policy|  
-|wsp (WS-Policy 1.5)|http://www.w3.org/ns/ws-policy|  
-|http|http://schemas.microsoft.com/ws/06/2004/policy/http|  
-|msmq|http://schemas.microsoft.com/ws/06/2004/mspolicy/msmq|  
-|msf|http://schemas.microsoft.com/ws/2006/05/framing/policy|  
-|mssp|http://schemas.microsoft.com/ws/2005/07/securitypolicy|  
-|msc|http://schemas.microsoft.com/ws/2005/12/wsdl/contract|  
-|cdp|http://schemas.microsoft.com/net/2006/06/duplex|  
+|wsp (WS-Policy 1.2)|`http://schemas.xmlsoap.org/ws/2004/09/policy`|  
+|wsp (WS-Policy 1.5)|`http://www.w3.org/ns/ws-policy`|  
+|http|`http://schemas.microsoft.com/ws/06/2004/policy/http`|  
+|msmq|`http://schemas.microsoft.com/ws/06/2004/mspolicy/msmq`|  
+|msf|`http://schemas.microsoft.com/ws/2006/05/framing/policy`|  
+|mssp|`http://schemas.microsoft.com/ws/2005/07/securitypolicy`|  
+|msc|`http://schemas.microsoft.com/ws/2005/12/wsdl/contract`|  
+|cdp|`http://schemas.microsoft.com/net/2006/06/duplex`|  
   
 ## <a name="wcf-wsdl11-extensions"></a>WCF WSDL1.1 の拡張  
- WCF では、次の WSDL1.1 拡張機能を使用して、コントラクト セッションの要件について説明します。  
+ WCF では、次の WSDL 1.1 拡張機能を使用して、コントラクトセッションの要件を記述します。  
   
  wsdl:portType/wsdl:operation/@msc:isInitiating  
- xs:boolean は、この操作が WCF セッションを開始することを示します既定値は`false`します。  
+ xs: boolean は、この操作が WCF セッションを開始することを示します。既定値は `false` です。  
   
  wsdl:portType/wsdl:operation/@msc:isTerminating  
- xs:boolean は、この操作には、WCF セッションが終了したことを示します既定値は`false`します。  
+ xs: boolean は、この操作が WCF セッションを終了することを示します。既定値は `false` です。  
   
  wsdl:portType/wsdl:operation/@msc:usingSession  
  xs:boolean は、このコントラクトでセッションを確立する必要があるかどうかを示します。  
   
 ### <a name="soap-1x-http-binding-transport-uris"></a>SOAP 1.x HTTP バインディング トランスポートの URI  
- WCF では、次の Uri を使用して、WSDL 1.1、SOAP 1.1 および SOAP 1.2 のバインディング拡張機能の要素に使用するトランスポートを示します。  
+ WCF では、次の Uri を使用して、WSDL 1.1、SOAP 1.1、および SOAP 1.2 バインド拡張要素に使用されるトランスポートを示します。  
   
-|Transport|URI|  
+|トランスポート|URI|  
 |---------------|---------|  
-|HTTP|http://schemas.xmlsoap.org/soap/http|  
-|TCP|http://schemas.microsoft.com/soap/tcp|  
-|MSMQ|http://schemas.microsoft.com/soap/msmq|  
-|名前付きパイプ|http://schemas.microsoft.com/soap/named-pipe|  
+|HTTP|`http://schemas.xmlsoap.org/soap/http`|  
+|TCP|`http://schemas.microsoft.com/soap/tcp`|  
+|MSMQ|`http://schemas.microsoft.com/soap/msmq`|  
+|名前付きパイプ|`http://schemas.microsoft.com/soap/named-pipe`|  
   
 ## <a name="policy-assertions-implemented-by-wcf"></a>WCF で実装されるポリシー アサーション  
- Web サービスの仕様で導入されたポリシー アサーションに加えて (ws-*) し、このドキュメントの他のセクションで説明したように、WCF は次のポリシー アサーションを実装します。  
+ Web サービス仕様 (WS-*) で導入されたポリシーアサーションに加えて、このドキュメントの他のセクションで説明したように、WCF では次のポリシーアサーションが実装されています。  
   
 |ポリシー アサーション|ポリシー サブジェクト|説明|  
 |----------------------|--------------------|-----------------|  
@@ -74,6 +74,6 @@ ms.locfileid: "61929663"
   
 ## <a name="see-also"></a>関連項目
 
-- [カスタム WSDL パブリケーション](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md)
-- [方法: カスタム WSDL をエクスポートします。](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)
-- [方法: カスタム WSDL をインポートします。](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)
+- [カスタム WSDL パブリケーション](../samples/custom-wsdl-publication.md)
+- [方法: カスタム WSDL をエクスポートする](../extending/how-to-export-custom-wsdl.md)
+- [方法: カスタム WSDL をインポートする](../extending/how-to-import-custom-wsdl.md)

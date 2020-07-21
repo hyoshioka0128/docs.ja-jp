@@ -3,18 +3,18 @@ title: <system.identityModel.services>
 ms.date: 03/30/2017
 ms.assetid: fa1624dd-2d74-4ae3-942e-498cee261ac5
 author: BrucePerlerMS
-ms.openlocfilehash: e9488c0681e1a5f0fe94112a36b65ec73bf9fd09
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 57757aaec39bc5c552e7ba12c9779cb3a92a9025
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251806"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79152505"
 ---
-# <a name="systemidentitymodelservices"></a>\<system.identityModel.services>
+# \<system.identityModel.services>
 WS-FEDERATION プロトコルを使用した認証の構成セクション。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp; **\<> のシステム**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;**\<system.identityModel.services>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -35,21 +35,21 @@ WS-FEDERATION プロトコルを使用した認証の構成セクション。
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<federationConfiguration>](federationconfiguration.md)|<xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (Wsfam) <xref:System.IdentityModel.Services.SessionAuthenticationModule>および (SAM) HTTP モジュールを構成する設定が含まれています。|  
+|[\<federationConfiguration>](federationconfiguration.md)|<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>(Wsfam) および <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) HTTP モジュールを構成する設定が含まれています。|  
   
 ### <a name="parent-elements"></a>親要素  
  なし  
   
-## <a name="remarks"></a>Remarks  
- アプリケーションの`<system.identityModel.services>`構成ファイルにセクションを追加して、SAM と wsfam の設定を指定します。  
+## <a name="remarks"></a>解説  
+ `<system.identityModel.services>`アプリケーションの構成ファイルにセクションを追加して、SAM と WSFAM の設定を指定します。  
   
 > [!IMPORTANT]
-> <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> `<identityConfiguration>`クラスまたはクラスを使用して、コード内にクレームベースのアクセス制御を提供する場合、<xref:System.Security.Claims.ClaimsAuthorizationManager>承認の決定に使用される要求承認マネージャー () とポリシーは、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>このセクションの`<federationConfiguration>`要素から暗黙的または明示的に参照される要素。 詳細については、「 [ \<federationConfiguration >](federationconfiguration.md)要素」の「**解説**」を参照してください。  
+> クラスまたはクラスを使用して、 <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> コード内にクレームベースのアクセス制御を提供する場合、承認の決定に使用される要求承認マネージャー ( <xref:System.Security.Claims.ClaimsAuthorizationManager> ) とポリシーは、 `<identityConfiguration>` `<federationConfiguration>` このセクションの要素から暗黙的または明示的に参照される要素によって構成されます。 詳細については、要素の「**解説**」を参照してください [\<federationConfiguration>](federationconfiguration.md) 。  
   
- セクションは、 <xref:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection>クラスによって表されます。 `<system.identityModel.services>` セクションで構成さ`<federationConfiguration>`れた子要素のコレクションは、 <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElementCollection>クラスによって表されます。  
+ `<system.identityModel.services>`セクションは、クラスによって表され <xref:System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection> ます。 `<federationConfiguration>`セクションで構成された子要素のコレクションは、クラスによって表され <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElementCollection> ます。  
   
 ## <a name="example"></a>例  
- 次の XML は、構成ファイルに`<system.identityModel.services>`セクションを追加する方法を示しています。 まず、セクション`<system.identityModel.services>` `<system.identityModel>`とセクションの両方にセクション宣言を追加する必要があります。 ( `<system.identityModel.services>`セクションを追加する場合は、必要に応じて、ランタイムが`<system.identityModel>`既定`<identityConfiguration>`のセクションを作成できるように、セクションの宣言も追加する必要があります)。セクション宣言を追加した後、要素の`<system.identityModel.services>`下にフェデレーション認証設定を構成できます。  
+ 次の XML は、構成ファイルにセクションを追加する方法を示して `<system.identityModel.services>` います。 まず、セクションとセクションの両方にセクション宣言を追加する必要があり `<system.identityModel.services>` `<system.identityModel>` ます。 (セクションを追加する場合は、必要に応じ `<system.identityModel.services>` `<system.identityModel>` て、ランタイムが既定のセクションを作成できるように、セクションの宣言も追加する必要があり `<identityConfiguration>` ます)。セクション宣言を追加した後、要素の下にフェデレーション認証設定を構成でき `<system.identityModel.services>` ます。  
   
 ```xml  
 <configuration>  
@@ -62,12 +62,12 @@ WS-FEDERATION プロトコルを使用した認証の構成セクション。
   
   <system.identityModel.services>  
     <federationConfiguration>  
-      <wsFederation passiveRedirectEnabled="true"   
-        issuer="http://localhost:15839/wsFederationSTS/Issue"   
-        realm="http://localhost:50969/" reply="http://localhost:50969/"   
-        requireHttps="false"   
-        signOutReply="http://localhost:50969/SignedOutPage.html"   
-        signOutQueryString="Param1=value2&Param2=value2"   
+      <wsFederation passiveRedirectEnabled="true"
+        issuer="http://localhost:15839/wsFederationSTS/Issue"
+        realm="http://localhost:50969/" reply="http://localhost:50969/"
+        requireHttps="false"
+        signOutReply="http://localhost:50969/SignedOutPage.html"
+        signOutQueryString="Param1=value2&Param2=value2"
         persistentCookiesOnPassiveRedirects="true" />  
       <cookieHandler requireSsl="false" />  
     </federationConfiguration>  

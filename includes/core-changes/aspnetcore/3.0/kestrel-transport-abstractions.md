@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f95c3916f4da8164cf927344f60f2845f04ddc5c
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: fb23418816abcae125106c93b339a546aa9bc2ee
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394045"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721105"
 ---
 ### <a name="kestrel-transport-abstractions-removed-and-made-public"></a>Kestrel: トランスポートの抽象化を削除して公開
 
@@ -29,7 +29,7 @@ ms.locfileid: "72394045"
 
 ASP.NET Core 3.0 は、"pubternal" API から移行しました。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 #### <a name="category"></a>カテゴリ
 
@@ -37,11 +37,11 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>影響を受ける API
 
-なし
+None
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 Not detectable via API analysis
 

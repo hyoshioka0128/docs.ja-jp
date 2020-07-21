@@ -1,5 +1,5 @@
 ---
-title: 型テストとキャスト演算子 - C# リファレンス
+title: 型のテスト演算子とキャスト式 - C# リファレンス
 description: 式の結果の型を確認し、必要に応じて別の型に変換することができる、C# の演算子について説明します。
 ms.date: 06/21/2019
 author: pkulikov
@@ -18,20 +18,20 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: c3550a593eafb9b50fa7e419e2f747c3e7a0e2ea
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: bc293c359af5744eebc63c0d0f94b4cebe3d450a
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972647"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "82021238"
 ---
-# <a name="type-testing-and-cast-operators-c-reference"></a>型テストとキャスト演算子 (C# リファレンス)
+# <a name="type-testing-operators-and-cast-expression-c-reference"></a>型のテスト演算子とキャスト式 (C# リファレンス)
 
-次の演算子を使って、型のチェックまたは型の変換を実行できます。
+次の演算子と式を使用して、型のチェックまたは型の変換を実行できます。
 
 - [is 演算子](#is-operator): 式のランタイム型と指定された型の間に互換性があるかどうかを確認します
 - [as 演算子](#as-operator): 式のランタイム型と指定された型の間に互換性がある場合、式を指定された型に明示的に変換します
-- [キャスト演算子 ()](#cast-operator-): 明示的な変換を実行します
+- [キャスト式](#cast-expression): 明示的な変換を実行します
 - [typeof 演算子](#typeof-operator): 型の <xref:System.Type?displayProperty=nameWithType> インスタンスを取得します
 
 ## <a name="is-operator"></a>is 演算子
@@ -50,11 +50,11 @@ E is T
 
 次の例で示す `is` 演算子では、式の結果のランタイム型が指定された型から派生する場合、つまり型の間に参照変換が存在する場合は、`true` が返されます。
 
-[!code-csharp[is with reference conversion](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#IsWithReferenceConversion)]
+[!code-csharp[is with reference conversion](snippets/TypeTestingAndConversionOperators.cs#IsWithReferenceConversion)]
 
 次の例で示す `is` 演算子では、ボックス化変換とボックス化解除変換は考慮されますが、[数値変換](../builtin-types/numeric-conversions.md)は考慮されません。
 
-[!code-csharp-interactive[is with int](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#IsWithInt)]
+[!code-csharp-interactive[is with int](snippets/TypeTestingAndConversionOperators.cs#IsWithInt)]
 
 C# の変換については、[C# 言語仕様](~/_csharplang/spec/introduction.md)の「[Conversions (変換)](~/_csharplang/spec/conversions.md)」の章をご覧ください。
 
@@ -70,13 +70,13 @@ E is T v
 
 次の例では、型パターンによる `is` 演算子の使用方法を示します。
 
-[!code-csharp-interactive[is with type pattern](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#IsTypePattern)]
+[!code-csharp-interactive[is with type pattern](snippets/TypeTestingAndConversionOperators.cs#IsTypePattern)]
 
 型パターンおよび他のサポートされるパターンについて詳しくは、「[is を使用したパターン マッチング](../keywords/is.md#pattern-matching-with-is)」をご覧ください。
 
 ## <a name="as-operator"></a>as 演算子
 
-`as` 演算子では、式の結果が、指定された参照型または null 許容値型に明示的に変換されます。 変換できない場合、`as` 演算子からは `null` が返されます。 [キャスト演算子 ()](#cast-operator-) とは異なり、`as` 演算子では例外はスローされません。
+`as` 演算子では、式の結果が、指定された参照型または null 許容値型に明示的に変換されます。 変換できない場合、`as` 演算子からは `null` が返されます。 [キャスト式](#cast-expression)とは異なり、`as` 演算子では例外はスローされません。
 
 式の形式は次のとおりです
 
@@ -92,28 +92,28 @@ E is T ? (T)(E) : (T)null
 
 ただし、`E` が評価されるのは 1 回だけです。
 
-`as` 演算子では、参照、null 許容、ボックス化、およびボックス化解除の各変換だけが考慮されます。 `as` 演算子を使って、ユーザー定義の変換を実行することはできません。 それを行うには、[キャスト演算子 ()](#cast-operator-) を使います。
+`as` 演算子では、参照、null 許容、ボックス化、およびボックス化解除の各変換だけが考慮されます。 `as` 演算子を使って、ユーザー定義の変換を実行することはできません。 これを行うには、[キャスト式](#cast-expression)を使用します。
 
 `as` 演算子の使用例を次に示します。
 
-[!code-csharp-interactive[as operator](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#AsOperator)]
+[!code-csharp-interactive[as operator](snippets/TypeTestingAndConversionOperators.cs#AsOperator)]
 
 > [!NOTE]
 > 上の例のように、変換が成功したかどうかを確認するには、`as` 式の結果を `null` と比較する必要があります。 C# 7.0 以降では、変換が成功するかどうかのテストと、成功する場合の新しい変数への結果の代入の両方を、[is 演算子](#type-testing-with-pattern-matching)を使って行うことができます。
 
-## <a name="cast-operator-"></a>キャスト演算子 ()
+## <a name="cast-expression"></a>キャスト式
 
 `(T)E` という形式のキャスト式では、式 `E` の結果が、型 `T` に明示的に変換されます。 型 `E` から型 `T` への明示的な変換が存在しない場合は、コンパイル時エラーが発生します。 実行時に、明示的な変換が成功せず、キャスト式で例外がスローされる可能性があります。
 
 次の例では、数値と参照の明示的な変換を示します。
 
-[!code-csharp-interactive[cast expression](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#Cast)]
+[!code-csharp-interactive[cast expression](snippets/TypeTestingAndConversionOperators.cs#Cast)]
 
 サポートされる明示的な変換については、[C# 言語仕様](~/_csharplang/spec/introduction.md)の「[Explicit conversions (明示的な変換)](~/_csharplang/spec/conversions.md#explicit-conversions)」セクションをご覧ください。 カスタムの明示的または暗黙的な型変換を定義する方法については、「[User-defined conversion operators](user-defined-conversion-operators.md)」(ユーザー定義の変換演算子) を参照してください。
 
 ### <a name="other-usages-of-"></a>() の他の使用方法
 
-かっこは、[メソッドまたはデリゲートを呼び出すとき](member-access-operators.md#invocation-operator-)にも使います。
+かっこは、[メソッドまたはデリゲートを呼び出すとき](member-access-operators.md#invocation-expression-)にも使います。
 
 他には、式に含まれる演算を評価する順序を調整する場合にもかっこを使います。 詳細については、[C# 演算子](index.md)に関するページを参照してください。
 
@@ -121,11 +121,11 @@ E is T ? (T)(E) : (T)null
 
 `typeof` 演算子では、型の <xref:System.Type?displayProperty=nameWithType> インスタンスが取得されます。 `typeof` 演算子への引数では、次の例で示すように、型または型パラメーターの名前を指定する必要があります。
 
-[!code-csharp-interactive[typeof operator](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#TypeOf)]
+[!code-csharp-interactive[typeof operator](snippets/TypeTestingAndConversionOperators.cs#TypeOf)]
 
 バインドされていないジェネリック型で `typeof` 演算子を使うこともできます。 バインドされていないジェネリック型の名前には、適切な数のコンマが含まれる必要があります。これは、型パラメーターの数より 1 だけ少ない数です。 次の例では、バインドされていないジェネリック型での `typeof` 演算子の使用方法を示します。
 
-[!code-csharp-interactive[typeof unbound generic](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#TypeOfUnboundGeneric)]
+[!code-csharp-interactive[typeof unbound generic](snippets/TypeTestingAndConversionOperators.cs#TypeOfUnboundGeneric)]
 
 式を `typeof` 演算子の引数にすることはできません。 式の結果のランタイム型に対する <xref:System.Type?displayProperty=nameWithType> インスタンスを取得するには、<xref:System.Object.GetType%2A?displayProperty=nameWithType> メソッドを使います。
 
@@ -133,13 +133,13 @@ E is T ? (T)(E) : (T)null
 
 `typeof` 演算子を使って、式の結果のランタイム型が指定された型と完全に一致するかどうかを調べます。 次の例では、`typeof` 演算子と [is 演算子](#is-operator)で実行される型チェックの違いを示します。
 
-[!code-csharp[typeof vs is](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#TypeCheckWithTypeOf)]
+[!code-csharp[typeof vs is](snippets/TypeTestingAndConversionOperators.cs#TypeCheckWithTypeOf)]
 
 ## <a name="operator-overloadability"></a>演算子のオーバーロード可/不可
 
 `is`、`as`、および `typeof` の各演算子はオーバーロードできません。
 
-ユーザー定義型で `()` 演算子をオーバーロードすることはできませんが、キャスト式で実行できるカスタム型変換を定義することはできます。 詳細については、「[User-defined conversion operators](user-defined-conversion-operators.md)」(ユーザー定義の変換演算子) を参照してください。
+ユーザー定義型で `()` 演算子をオーバーロードすることはできませんが、キャスト式で実行できるカスタム型変換を定義することはできます。 詳細については、「[ユーザー定義の変換演算子](user-defined-conversion-operators.md)」 に関するページを参照してください。
 
 ## <a name="c-language-specification"></a>C# 言語仕様
 

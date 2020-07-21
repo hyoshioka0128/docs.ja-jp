@@ -1,5 +1,6 @@
 ---
 title: タスク ベースの非同期プログラミング - .NET
+description: この記事では、.NET のタスク並列ライブラリ (TPL) を使用した、タスクベースの非同期プログラミングについて説明します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 51292d977f2be87cec7c3481f5004fe5fe756224
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: f7cb42c8982cb6a704b39730a4f7aa0ce781d506
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204537"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446380"
 ---
 # <a name="task-based-asynchronous-programming"></a>タスク ベースの非同期プログラミング
 
@@ -34,7 +35,7 @@ ms.locfileid: "74204537"
 <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> メソッドには、任意の数のステートメントを同時に実行する便利な方法が用意されています。 作業項目ごとに <xref:System.Action> デリゲートに渡すだけです。 これらのデリゲートを最も簡単に作成するには、ラムダ式を使用します。 ラムダ式では、名前付きメソッドを呼び出したり、コード インラインを指定したりできます。 次の例では、2 つのタスクを同時に作成および開始する基本の <xref:System.Threading.Tasks.Parallel.Invoke%2A> 呼び出しを示しています。 最初のタスクは `DoSomeWork` という名のメソッドを呼び出すラムダ式によって表され、2 番目のタスクは `DoSomeOtherWork` という名のメソッドを呼び出すラムダ式によって表されます。
 
 > [!NOTE]
-> ここでは、ラムダ式を使用して TPL でデリゲートを定義します。 C# または Visual Basic のラムダ式についての情報が必要な場合は、「[Lambda Expressions in PLINQ and TPL (PLINQ および TPL のラムダ式)](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)」を参照してください。
+> ここでは、ラムダ式を使用して TPL でデリゲートを定義します。 C# または Visual Basic のラムダ式についての情報が必要な場合は、「[Lambda Expressions in PLINQ and TPL (PLINQ および TPL のラムダ式)](lambda-expressions-in-plinq-and-tpl.md)」を参照してください。
 
 [!code-csharp[TPL#21](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl/cs/tpl.cs#21)]
 [!code-vb[TPL#21](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl/vb/tpl_vb.vb#21)]
@@ -42,7 +43,7 @@ ms.locfileid: "74204537"
 > [!NOTE]
 > <xref:System.Threading.Tasks.Task> によって背後で作成される <xref:System.Threading.Tasks.Parallel.Invoke%2A> インスタンスの数は、指定するデリゲートの数と等しくなくてもかまいません。 TPL では、特に多数のデリゲートによるさまざまな最適化方法を採用しています。
 
-詳細については、[Parallel.Invoke を使用して並列操作を実行する](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md)」を参照してください。
+詳細については、[Parallel.Invoke を使用して並列操作を実行する](how-to-use-parallel-invoke-to-execute-parallel-operations.md)」を参照してください。
 
 タスクの実行をさらに制御する場合、またはタスクから値を返す場合、<xref:System.Threading.Tasks.Task> オブジェクトをより明示的に操作する必要があります。
 
@@ -70,7 +71,7 @@ ms.locfileid: "74204537"
 [!code-csharp[TPL_TaskIntro#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/result1.cs#4)]
 [!code-vb[TPL_TaskIntro#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/result1.vb#4)]
 
-詳細については、[タスクから値を返す](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)」を参照してください。
+詳細については、[タスクから値を返す](how-to-return-a-value-from-a-task.md)」を参照してください。
 
 ラムダ式を使用してデリゲートを作成すると、ソース コード内の該当ポイントで参照できるすべての変数にアクセスできます。 ただし、特にループ内では、ラムダによって変数が予想どおりにキャプチャされない場合があります。 ラムダでは、反復処理が実行されるたびに変更された値をキャプチャするのではなく、最終値だけがキャプチャされます。 この問題を説明する例を次に示します。 これは `CustomData` オブジェクトをインスタンス化するラムダ式にループ カウンターを渡し、オブジェクトの識別子としてループ カウンターを使用します。 この例の出力結果が示すように、`CustomData` の各オブジェクトは同じ識別子を持ちます。
 
@@ -100,7 +101,7 @@ ms.locfileid: "74204537"
 |<xref:System.Threading.Tasks.TaskCreationOptions.None>|オプションを指定しなかった場合の既定値です。 スケジューラは既定のヒューリスティックを使用してタスクをスケジュールします。|
 |<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|先に作成されたタスクが先に実行され、後から作成されたタスクは後から実行されるように、タスクのスケジュールを指定します。|
 |<xref:System.Threading.Tasks.TaskCreationOptions.LongRunning>|実行に時間のかかる操作を表すタスクであることを示します。|
-|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|子が存在する場合、現在のタスクにアタッチされた子としてタスクを作成するように指定します。 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)」を参照してください。|
+|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|子が存在する場合、現在のタスクにアタッチされた子としてタスクを作成するように指定します。 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](attached-and-detached-child-tasks.md)」を参照してください。|
 |<xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach>|内側のタスクが `AttachedToParent` オプションを指定すると、そのタスクはアタッチされた子タスクにならないことを指定します。|
 |<xref:System.Threading.Tasks.TaskCreationOptions.HideScheduler>|<xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> または <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> などのメソッドを特定のタスクから呼び出して作成されたタスクのタスク スケジューラは、このタスクが実行されているスケジューラではなく、既定のスケジューラであることを指定します。|
 
@@ -145,7 +146,7 @@ Visual Studio を使用している場合、プロジェクトを **[新しい�
 
 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> メソッドおよび <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> メソッドを使用すると、複数のタスクから継続できます。
 
-詳細については、「[継続タスクを使用したタスクの連結](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)」を参照してください。
+詳細については、「[継続タスクを使用したタスクの連結](chaining-tasks-by-using-continuation-tasks.md)」を参照してください。
 
 ## <a name="creating-detached-child-tasks"></a>デタッチされた子タスクの作成
 
@@ -163,7 +164,7 @@ Visual Studio を使用している場合、プロジェクトを **[新しい�
 [!code-csharp[TPL_TaskIntro#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/child1.cs#8)]
 [!code-vb[TPL_TaskIntro#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/child1.vb#8)]
 
-親タスクは <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> オプションを使用して、他のタスクが親タスクにアタッチすることを防ぐことができます。 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)」を参照してください。
+親タスクは <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> オプションを使用して、他のタスクが親タスクにアタッチすることを防ぐことができます。 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](attached-and-detached-child-tasks.md)」を参照してください。
 
 ## <a name="waiting-for-tasks-to-finish"></a>タスクの完了を待機する
 
@@ -182,7 +183,7 @@ Visual Studio を使用している場合、プロジェクトを **[新しい�
 [!code-csharp[TPL_TaskIntro#06](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#06)]
 [!code-vb[TPL_TaskIntro#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#06)]
 
-例外処理を示す例については、[例外処理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)に関する記事を参照してください。
+例外処理を示す例については、[例外処理](exception-handling-task-parallel-library.md)に関する記事を参照してください。
 
 タイムアウトを指定できるオーバーロードおよび別の <xref:System.Threading.CancellationToken> を入力パラメーターとして受け取るオーバーロードの中には、プログラムによって、またはユーザーの入力に応答して待機自体を取り消すことができるものがあります。
 
@@ -214,7 +215,7 @@ Visual Studio を使用している場合、プロジェクトを **[新しい�
 
 ### <a name="tasktfromresult"></a>Task(T).FromResult
 
-<xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> メソッドを使用すると、あらかじめ計算された結果を保持する <xref:System.Threading.Tasks.Task%601> オブジェクトを作成できます。 このメソッドは <xref:System.Threading.Tasks.Task%601> オブジェクトの結果があらかじめ計算されている <xref:System.Threading.Tasks.Task%601> オブジェクトを返す、非同期操作を実行する場合に便利です。 キャッシュに保持されている非同期ダウンロード操作の結果を取得する <xref:System.Threading.Tasks.Task.FromResult%2A> の使用例の詳細については、「[方法:事前計算済みのタスクを作成する](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md)」を参照してください。
+<xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> メソッドを使用すると、あらかじめ計算された結果を保持する <xref:System.Threading.Tasks.Task%601> オブジェクトを作成できます。 このメソッドは <xref:System.Threading.Tasks.Task%601> オブジェクトの結果があらかじめ計算されている <xref:System.Threading.Tasks.Task%601> オブジェクトを返す、非同期操作を実行する場合に便利です。 キャッシュに保持されている非同期ダウンロード操作の結果を取得する <xref:System.Threading.Tasks.Task.FromResult%2A> の使用例の詳細については、「[方法:事前計算済みのタスクを作成する](how-to-create-pre-computed-tasks.md)」を参照してください。
 
 ## <a name="handling-exceptions-in-tasks"></a>タスクでの例外処理
 
@@ -230,7 +231,7 @@ Visual Studio を使用している場合、プロジェクトを **[新しい�
 
 連結しているスレッドでも、タスクがガベージ コレクトされる前に <xref:System.Threading.Tasks.Task.Exception%2A> プロパティにアクセスすることで例外を処理できます。 このプロパティにアクセスすると、ハンドルされない例外が、オブジェクトが最終処理されたときにプロセスを終了する例外の反映動作をトリガーしないようにできます。
 
-例外とタスクの詳細については、[例外処理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)に関する記事を参照してください。
+例外とタスクの詳細については、[例外処理](exception-handling-task-parallel-library.md)に関する記事を参照してください。
 
 ## <a name="canceling-tasks"></a>タスクの取り消し
 
@@ -238,7 +239,7 @@ Visual Studio を使用している場合、プロジェクトを **[新しい�
 
 <xref:System.Threading.CancellationTokenSource> クラスを使用すると、トークンを作成し、後でキャンセル要求を発行できます。 このトークンを <xref:System.Threading.Tasks.Task> に引数として渡し、同じトークンをキャンセル要求に応答するユーザー デリゲートで参照します。
 
-詳細については、「[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)」と「[方法:タスクとその子を取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)」を参照してください。
+詳細については、「[タスクのキャンセル](task-cancellation.md)」と「[方法:タスクとその子を取り消す](how-to-cancel-a-task-and-its-children.md)」を参照してください。
 
 ## <a name="the-taskfactory-class"></a>TaskFactory クラス
 
@@ -246,23 +247,23 @@ Visual Studio を使用している場合、プロジェクトを **[新しい�
 
 - 最も一般的なパターンは、1 つのステートメントで 1 つのタスクを作成および開始する <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> です。
 
-- 複数の継続元から継続タスクを作成する場合は、<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> メソッドまたは <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> メソッドを使用するか、<xref:System.Threading.Tasks.Task%601> クラスの同等のメソッドを使用します。 詳細については、「[継続タスクを使用したタスクの連結](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)」を参照してください。
+- 複数の継続元から継続タスクを作成する場合は、<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> メソッドまたは <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> メソッドを使用するか、<xref:System.Threading.Tasks.Task%601> クラスの同等のメソッドを使用します。 詳細については、「[継続タスクを使用したタスクの連結](chaining-tasks-by-using-continuation-tasks.md)」を参照してください。
 
-- `BeginX` インスタンスまたは `EndX` インスタンスで非同期プログラミング モデルの <xref:System.Threading.Tasks.Task> メソッドおよび <xref:System.Threading.Tasks.Task%601> メソッドをカプセル化するには、<xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> メソッドを使用します。 詳細については、「[TPL と従来の .NET Framework 非同期プログラミング](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md)」を参照してください。
+- `BeginX` インスタンスまたは `EndX` インスタンスで非同期プログラミング モデルの <xref:System.Threading.Tasks.Task> メソッドおよび <xref:System.Threading.Tasks.Task%601> メソッドをカプセル化するには、<xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> メソッドを使用します。 詳細については、「[TPL と従来の .NET Framework 非同期プログラミング](tpl-and-traditional-async-programming.md)」を参照してください。
 
 既定の <xref:System.Threading.Tasks.TaskFactory> へは、<xref:System.Threading.Tasks.Task> クラスまたは <xref:System.Threading.Tasks.Task%601> クラス上の静的なプロパティとしてアクセスできます。 <xref:System.Threading.Tasks.TaskFactory> を直接インスタンス化し、さまざまなオプションを指定することもできます。たとえば、<xref:System.Threading.CancellationToken>、<xref:System.Threading.Tasks.TaskCreationOptions> オプション、<xref:System.Threading.Tasks.TaskContinuationOptions> オプション、<xref:System.Threading.Tasks.TaskScheduler> などです。 タスク ファクトリを作成するときに指定されるオプションは、タスク ファクトリで作成したすべてのタスクに適用されます。ただし、<xref:System.Threading.Tasks.Task> が <xref:System.Threading.Tasks.TaskCreationOptions> 列挙型を使用して作成された場合は例外で、タスクのオプションによってタスク ファクトリのオプションがオーバーライドされます。
 
 ## <a name="tasks-without-delegates"></a>デリゲートなしのタスク
 
-<xref:System.Threading.Tasks.Task> を使用して、固有のユーザー デリゲートではなく外部コンポーネントによって実行される非同期操作をカプセル化する場合があります。 操作が非同期プログラミング モデルの Begin/End パターンに基づいている場合、<xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> メソッドを使用できます。 そうでない場合は、<xref:System.Threading.Tasks.TaskCompletionSource%601> オブジェクトを使用して、タスク内の操作をラップして、<xref:System.Threading.Tasks.Task> を外部からプログラミング可能にする利点を活用できます。たとえば、例外の反映および継続のサポートです。 詳細については、<xref:System.Threading.Tasks.TaskCompletionSource%601> を参照してください。
+<xref:System.Threading.Tasks.Task> を使用して、固有のユーザー デリゲートではなく外部コンポーネントによって実行される非同期操作をカプセル化する場合があります。 操作が非同期プログラミング モデルの Begin/End パターンに基づいている場合、<xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> メソッドを使用できます。 そうでない場合は、<xref:System.Threading.Tasks.TaskCompletionSource%601> オブジェクトを使用して、タスク内の操作をラップして、<xref:System.Threading.Tasks.Task> を外部からプログラミング可能にする利点を活用できます。たとえば、例外の反映および継続のサポートです。 詳細については、「<xref:System.Threading.Tasks.TaskCompletionSource%601>」を参照してください。
 
 ## <a name="custom-schedulers"></a>カスタム スケジューラ
 
-アプリケーションまたはライブラリのほとんどの開発者は、タスクを実行するプロセッサ、他のタスクと動作を同期する方法、<xref:System.Threading.ThreadPool?displayProperty=nameWithType> でスケジュールする方法などについては気にしません。 気にするのは、ホスト コンピューター上でできるだけ効率的に実行することだけです。 スケジュールの詳細についてより詳細に制御する必要がある場合、タスク並列ライブラリでは、既定のタスク スケジューラの設定を構成でき、さらにカスタム スケジューラを利用することもできます。 詳細については、<xref:System.Threading.Tasks.TaskScheduler> を参照してください。
+アプリケーションまたはライブラリのほとんどの開発者は、タスクを実行するプロセッサ、他のタスクと動作を同期する方法、<xref:System.Threading.ThreadPool?displayProperty=nameWithType> でスケジュールする方法などについては気にしません。 気にするのは、ホスト コンピューター上でできるだけ効率的に実行することだけです。 スケジュールの詳細についてより詳細に制御する必要がある場合、タスク並列ライブラリでは、既定のタスク スケジューラの設定を構成でき、さらにカスタム スケジューラを利用することもできます。 詳細については、「<xref:System.Threading.Tasks.TaskScheduler>」を参照してください。
 
 ## <a name="related-data-structures"></a>関連のデータ構造
 
-TPL には、並列のシナリオおよび順次的なシナリオの両方に役立つ複数の新しいパブリック型があります。 これらの型には、<xref:System.Collections.Concurrent?displayProperty=nameWithType> 名前空間における、スレッド セーフで、高速、スケーラブルなコレクション クラス、および新しい同期の型が含まれます。たとえば、<xref:System.Threading.Semaphore?displayProperty=nameWithType> および <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> は、特定の種類の作業負荷に関しては、先行タスクより効率的です。 その他の .NET Framework 4 の新しい型には、<xref:System.Threading.Barrier?displayProperty=nameWithType> と <xref:System.Threading.SpinLock?displayProperty=nameWithType> があり、以前のリリースでは利用できなかった機能が用意されています。 詳細については、「[並列プログラミング向けのデータ構造](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)」を参照してください。
+TPL には、並列のシナリオおよび順次的なシナリオの両方に役立つ複数の新しいパブリック型があります。 これらの型には、<xref:System.Collections.Concurrent?displayProperty=nameWithType> 名前空間における、スレッド セーフで、高速、スケーラブルなコレクション クラス、および新しい同期の型が含まれます。たとえば、<xref:System.Threading.Semaphore?displayProperty=nameWithType> および <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> は、特定の種類の作業負荷に関しては、先行タスクより効率的です。 その他の .NET Framework 4 の新しい型には、<xref:System.Threading.Barrier?displayProperty=nameWithType> と <xref:System.Threading.SpinLock?displayProperty=nameWithType> があり、以前のリリースでは利用できなかった機能が用意されています。 詳細については、「[並列プログラミング向けのデータ構造](data-structures-for-parallel-programming.md)」を参照してください。
 
 ## <a name="custom-task-types"></a>カスタムのタスクの型
 
@@ -274,20 +275,20 @@ TPL には、並列のシナリオおよび順次的なシナリオの両方に�
 
 |Title|説明|
 |-|-|
-|[継続タスクを使用したタスクの連結](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)|継続の機能について説明します。|
-|[アタッチされた子タスクとデタッチされた子タスク](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)|アタッチされた子タスクとデタッチされた子タスクの違いについて説明します。|
-|[タスクのキャンセル](../../../docs/standard/parallel-programming/task-cancellation.md)|<xref:System.Threading.Tasks.Task> オブジェクトに組み込まれているキャンセルのサポートについて説明します。|
-|[例外処理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)|同時実行スレッド上の例外を処理する方法について説明します。|
-|[方法: Parallel.Invoke を使用して並列操作を実行する](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md)|<xref:System.Threading.Tasks.Parallel.Invoke%2A> の使用方法について説明します。|
-|[方法: タスクから値を返す](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)|タスクから値を返す方法について説明します。|
-|[方法: タスクとその子を取り消す](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)|タスクを取り消す方法について説明します。|
-|[方法: 事前計算済みのタスクを作成する](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md)|キャッシュに保持されている非同期ダウンロード操作の結果を取得する <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> メソッドの使用例の詳細について説明します。|
-|[方法: 並列タスクでバイナリ ツリーを走査する](../../../docs/standard/parallel-programming/how-to-traverse-a-binary-tree-with-parallel-tasks.md)|タスクを使用してバイナリ ツリーを走査する方法について説明します。|
-|[方法: 入れ子のタスクのラップを解除する](../../../docs/standard/parallel-programming/how-to-unwrap-a-nested-task.md)|<xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> 拡張メソッドの使用方法を説明します。|
-|[データの並列化](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|<xref:System.Threading.Tasks.Parallel.For%2A> および <xref:System.Threading.Tasks.Parallel.ForEach%2A> を使用してデータを対象に並列ループを作成する方法について説明しています。|
-|[並列プログラミング](../../../docs/standard/parallel-programming/index.md)|.NET Framework 並列プログラミングのトップ レベル ノード。|
+|[継続タスクを使用したタスクの連結](chaining-tasks-by-using-continuation-tasks.md)|継続の機能について説明します。|
+|[アタッチされた子タスクとデタッチされた子タスク](attached-and-detached-child-tasks.md)|アタッチされた子タスクとデタッチされた子タスクの違いについて説明します。|
+|[タスクのキャンセル](task-cancellation.md)|<xref:System.Threading.Tasks.Task> オブジェクトに組み込まれているキャンセルのサポートについて説明します。|
+|[例外処理](exception-handling-task-parallel-library.md)|同時実行スレッド上の例外を処理する方法について説明します。|
+|[方法: Parallel.Invoke を使用して並列操作を実行する](how-to-use-parallel-invoke-to-execute-parallel-operations.md)|<xref:System.Threading.Tasks.Parallel.Invoke%2A> の使用方法について説明します。|
+|[方法: タスクから値を返す](how-to-return-a-value-from-a-task.md)|タスクから値を返す方法について説明します。|
+|[方法: タスクとその子を取り消す](how-to-cancel-a-task-and-its-children.md)|タスクを取り消す方法について説明します。|
+|[方法: 事前計算済みのタスクを作成する](how-to-create-pre-computed-tasks.md)|キャッシュに保持されている非同期ダウンロード操作の結果を取得する <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> メソッドの使用例の詳細について説明します。|
+|[方法: 並列タスクでバイナリ ツリーを走査する](how-to-traverse-a-binary-tree-with-parallel-tasks.md)|タスクを使用してバイナリ ツリーを走査する方法について説明します。|
+|[方法: 入れ子のタスクのラップを解除する](how-to-unwrap-a-nested-task.md)|<xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> 拡張メソッドの使用方法を説明します。|
+|[データの並列化](data-parallelism-task-parallel-library.md)|<xref:System.Threading.Tasks.Parallel.For%2A> および <xref:System.Threading.Tasks.Parallel.ForEach%2A> を使用してデータを対象に並列ループを作成する方法について説明しています。|
+|[並列プログラミング](index.md)|.NET Framework 並列プログラミングのトップ レベル ノード。|
 
 ## <a name="see-also"></a>関連項目
 
-- [並列プログラミング](../../../docs/standard/parallel-programming/index.md)
-- [.NET Framework による並列プログラミングのサンプル](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+- [並列プログラミング](index.md)
+- [.NET Core および .NET Standard による並列プログラミングのサンプル](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

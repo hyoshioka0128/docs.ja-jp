@@ -7,18 +7,18 @@ dev_langs:
 ms.assetid: ad712fa1-2baf-462a-b163-574cce6d376a
 ms.openlocfilehash: 55714c4dae73cd17a849cc35681797dfa4266e3b
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70782968"
 ---
-# <a name="query-typed-datasets"></a>型指定されたデータセットのクエリ
+# <a name="query-typed-datasets"></a>型指定されたデータセットのクエリを実行する
 
-アプリケーションのデザイン時に<xref:System.Data.DataSet>のスキーマがわかっている場合は、LINQ to DataSet を使用するとき<xref:System.Data.DataSet>に、型指定されたを使用することをお勧めします。 型指定<xref:System.Data.DataSet>されたは、 <xref:System.Data.DataSet>から派生するクラスです。 したがって、型指定されたデータセットは <xref:System.Data.DataSet> のすべてのメソッド、イベント、およびプロパティを継承します。 さらに、型<xref:System.Data.DataSet>指定されたは、厳密に型指定されたメソッド、イベント、およびプロパティを提供します。 つまり、コレクションベースのメソッドを使用せずに名前でテーブルおよび列にアクセスできます。 これによりクエリが簡素化され、読みやすくなります。 詳細については、「型指定された[データセット](./dataset-datatable-dataview/typed-datasets.md)」をご覧ください。
+アプリケーションの設計時に <xref:System.Data.DataSet> のスキーマがわかっている場合は、LINQ to DataSet を使用するときに、型指定された <xref:System.Data.DataSet> を用いることをお勧めします。 型指定された <xref:System.Data.DataSet> とは、<xref:System.Data.DataSet> から派生されたクラスのことです。 したがって、型指定されたデータセットは <xref:System.Data.DataSet> のすべてのメソッド、イベント、およびプロパティを継承します。 さらに、型指定された <xref:System.Data.DataSet> には、厳密に型指定されたメソッド、イベント、プロパティが用意されています。 つまり、コレクションベースのメソッドを使用せずに名前でテーブルおよび列にアクセスできます。 これによりクエリが簡素化され、読みやすくなります。 詳しくは、「[型指定されたデータセット](./dataset-datatable-dataview/typed-datasets.md)」をご覧ください。
 
-LINQ to DataSet は、型指定<xref:System.Data.DataSet>されたに対するクエリもサポートしています。 型指定<xref:System.Data.DataSet>されたを使用する場合、列データにアクセス<xref:System.Data.DataRowExtensions.SetField%2A>するためにジェネリック<xref:System.Data.DataRowExtensions.Field%2A>メソッドまたはメソッドを使用する必要はありません。 型情報はに<xref:System.Data.DataSet>含まれるため、コンパイル時にプロパティ名を使用できます。 LINQ to DataSet は、列の値へのアクセスを正しい型として提供するため、実行時ではなく、コードをコンパイルするときに型の不一致エラーがキャッチされます。
+LINQ to DataSet では、型指定された <xref:System.Data.DataSet> に対するクエリもサポートされています。 型指定された <xref:System.Data.DataSet> では、列データにアクセスするために、ジェネリック メソッドの <xref:System.Data.DataRowExtensions.Field%2A> または <xref:System.Data.DataRowExtensions.SetField%2A> を使用する必要はありません。 <xref:System.Data.DataSet> に型情報が含まれているため、プロパティ名をコンパイル時に利用できます。 LINQ to DataSet では、適切な型として列の値にアクセスできるため、実行時ではなくコードのコンパイル時に型の不一致エラーがキャッチされます。
 
-型指定<xref:System.Data.DataSet>されたのクエリを開始するには、Visual Studio の**データセットデザイナー**を使用してクラスを生成する必要があります。 詳細については、「[データセットの作成と構成](/visualstudio/data-tools/create-and-configure-datasets-in-visual-studio)」を参照してください。
+型指定された <xref:System.Data.DataSet> に対してクエリを実行するには、Visual Studio の**データセット デザイナー**を使用してあらかじめクラスを生成しておく必要があります。 詳しくは、「[データセットを作成および構成する](/visualstudio/data-tools/create-and-configure-datasets-in-visual-studio)」をご覧ください。
 
 ## <a name="example"></a>例
 

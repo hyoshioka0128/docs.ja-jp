@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC30685
 ms.assetid: 756add7a-23d5-4b4f-a48d-8297d6459c73
-ms.openlocfilehash: 06e0d8863c74041f81977b3187fe99a1d05bcd53
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
-ms.translationtype: MT
+ms.openlocfilehash: f242db9e02a1983e731dce280be0e8f8a8b12712
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700880"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397273"
 ---
 # <a name="membername-is-ambiguous-across-the-inherited-interfaces-interfacename1-and-interfacename2"></a>'\<membername>' は、継承インターフェイス '\<interfacename1>' および '\<interfacename2>' 間ではあいまいです。
-インターフェイスは、複数のインターフェイスから同じ名前を持つ2つ以上のメンバーを継承します。  
+このインターフェイスは、複数のインターフェイスからの同じ名前を持つ複数のメンバーを継承しています。  
   
  **エラー ID:** BC30685  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 使用する基本インターフェイスに値をキャストします。例えば：  
+- 使用する基底インターフェイスに値をキャストします。たとえば、次のようにします。  
   
     ```vb  
     Interface Left  
@@ -48,4 +48,4 @@ ms.locfileid: "71700880"
   
 ## <a name="see-also"></a>関連項目
 
-- [インターフェイス](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+- [インターフェイス](../../programming-guide/language-features/interfaces/index.md)

@@ -1,5 +1,5 @@
 ---
-title: WPF 部分信頼セキュリティ
+title: 部分信頼セキュリティ
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,17 +15,17 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: 907c1f02e07c60ac38c8e09e94fc96ae2573e97c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: 99c7d9cfae2b137053ca77d9e3d7055b4674ce5b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455310"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174577"
 ---
 # <a name="wpf-partial-trust-security"></a>WPF 部分信頼セキュリティ
-<a name="introduction"></a>一般に、インターネットアプリケーションは、重要なシステムリソースへの直接アクセスを制限して、悪意のある損害を防ぐ必要があります。 既定では、HTML およびクライアント側のスクリプト言語は、重要なシステムリソースにアクセスできません。 Windows Presentation Foundation (WPF) ブラウザーでホストされるアプリケーションは、ブラウザーから起動できるため、同様の制限のセットに準拠している必要があります。 これらの制限を適用するために、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] はコードアクセスセキュリティ (CAS) と ClickOnce の両方に依存します (「 [WPF のセキュリティ方針-プラットフォームセキュリティ](wpf-security-strategy-platform-security.md)」を参照してください)。 既定では、ブラウザーでホストされるアプリケーションは、インターネット、ローカルイントラネット、またはローカルコンピューターのどちらから起動するかに関係なく、インターネットゾーンの CA のアクセス許可セットを要求します。 すべてのアクセス許可のセットよりも少ないアプリケーションで実行されるアプリケーションは、部分信頼で実行されていると言います。  
+<a name="introduction"></a> 一般的に、インターネット アプリケーションでは、悪意による損害を防ぐため、重要なシステム リソースへの直接アクセスを制限する必要があります。 既定では、HTML およびクライアント側のスクリプト言語では、重要なシステム リソースにアクセスできません。 ブラウザーでホストされる Windows Presentation Foundation (WPF) アプリケーションは、ブラウザーから起動できるため、同様の一連の制限に準拠している必要があります。 これらの制限を適用するため、WPF ではコード アクセス セキュリティ (CAS) と ClickOnce の両方が使用されます (詳細については、「[WPF のセキュリティ方針 - プラットフォーム セキュリティ](wpf-security-strategy-platform-security.md)」を参照してください)。 既定では、ブラウザーでホストされるアプリケーションは、インターネット、ローカル イントラネット、またはローカル コンピューターのどこから起動するかに関係なく、インターネット ゾーンの一連の CAS 権限が要求されます。 アクセス許可がフルセットで付与されていないアプリケーションは、部分信頼で実行されている、と言います。  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] には、部分信頼で安全に使用できるできるだけ多くの機能を確保するためのさまざまなサポートがあり、CA と共に、部分信頼プログラミングの追加サポートを提供します。  
+ WPF には、可能な限り多くの機能を部分信頼で安全にできるようにするさまざまなサポートが用意されています。また、CAS と共に、部分信頼プログラミングのサポートが追加されています。  
   
  このトピックは、次のセクションで構成されています。  
   
@@ -35,50 +35,50 @@ ms.locfileid: "73455310"
   
 - [アクセス許可の管理](#Managing_Permissions)  
   
-<a name="WPF_Feature_Partial_Trust_Support"></a>   
+<a name="WPF_Feature_Partial_Trust_Support"></a>
 ## <a name="wpf-feature-partial-trust-support"></a>WPF 機能の部分信頼のサポート  
- 次の表は、インターネットゾーンのアクセス許可セットの制限内で安全に使用できる Windows Presentation Foundation (WPF) の高度な機能を示しています。  
+ 次の表は、インターネット ゾーンのアクセス許可セットの制限内で安全に使用できる Windows Presentation Foundation (WPF) の高度な機能を示しています。  
   
- 表 1: 部分信頼で安全な WPF 機能  
+ 表 1:部分信頼で安全な WPF 機能  
   
-|機能分野|特性|  
+|機能分野|機能|  
 |------------------|-------------|  
-|全般|ブラウザーウィンドウ<br /><br /> 起点サイトアクセス<br /><br /> & lt; (512 KB)<br /><br /> UIAutomation プロバイダー<br /><br /> コマンド実行<br /><br /> 入力方式エディター (IME)<br /><br /> タブレットのスタイラスとインク<br /><br /> マウスキャプチャイベントおよび移動イベントを使用した、シミュレートされたドラッグアンドドロップ<br /><br /> OpenFileDialog<br /><br /> XAML 逆シリアル化 (XamlReader 経由)|  
-|Web 統合|ブラウザーダウンロードダイアログ<br /><br /> 最上位レベルのユーザーが開始したナビゲーション<br /><br /> mailto: リンク<br /><br /> Uniform Resource Identifier パラメーター<br /><br /> HTTPWebRequest<br /><br /> IFRAME でホストされている WPF コンテンツ<br /><br /> Frame を使用した同一サイトの HTML ページのホスト<br /><br /> WebBrowser を使用した同じサイトの HTML ページのホスト<br /><br /> Web サービス (ASMX)<br /><br /> Web サービス (Windows Communication Foundation を使用)<br /><br /> [スクリプティング]<br /><br /> ドキュメント オブジェクト モデル|  
-|効果|2D と3D<br /><br /> アニメーション<br /><br /> メディア (起点サイトとクロスドメイン)<br /><br /> イメージング/オーディオ/ビデオ|  
-|リード|FlowDocument<br /><br /> XPS ドキュメント<br /><br /> 埋め込み & システムフォント<br /><br /> CFF & TrueType フォント|  
-|編集|スペルチェック<br /><br /> RichTextBox<br /><br /> プレーンテキストとインククリップボードのサポート<br /><br /> ユーザーが開始した貼り付け<br /><br /> 選択したコンテンツのコピー|  
+|全般|ブラウザー ウィンドウ<br /><br /> 起点サイト アクセス<br /><br /> IsolatedStorage (512KB 制限)<br /><br /> UIAutomation プロバイダー<br /><br /> コマンド実行<br /><br /> 入力方式エディター (IME)<br /><br /> タブレットのスタイラスとインク<br /><br /> マウス キャプチャおよび移動イベントを使用した、シミュレートされたドラッグ アンド ドロップ<br /><br /> OpenFileDialog<br /><br /> XAML 逆シリアル化 (XamlReader.Load 経由)|  
+|Web 統合|ブラウザーのダウンロード ダイアログ<br /><br /> ユーザーが開始したトップ レベルのナビゲーション<br /><br /> mailto: リンク<br /><br /> Uniform Resource Identifier パラメーター<br /><br /> HTTPWebRequest<br /><br /> IFRAME でホストされている WPF コンテンツ<br /><br /> Frame を使用した同一サイトの HTML ページのホスト<br /><br /> WebBrowser を使用した同一サイトの HTML ページのホスト<br /><br /> Web サービス (ASMX)<br /><br /> Web サービス (Windows Communication Foundation を使用)<br /><br /> [スクリプティング]<br /><br /> ドキュメント オブジェクト モデル|  
+|ビジュアル|2D と 3D<br /><br /> アニメーション<br /><br /> メディア (起点サイトとクロス ドメイン)<br /><br /> イメージング/オーディオ/動画|  
+|読み取り|FlowDocument<br /><br /> XPS ドキュメント<br /><br /> 埋め込みフォントとシステム フォント<br /><br /> CFF フォントと TrueType フォント|  
+|編集|スペル チェック<br /><br /> RichTextBox<br /><br /> プレーン テキストとインク クリップボードのサポート<br /><br /> ユーザーが開始した貼り付け<br /><br /> 選択したコンテンツのコピー|  
 |コントロール|一般的なコントロール|  
   
- この表では、[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] の機能について大まかに説明します。 詳細については、Windows SDK は [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]の各メンバーが必要とするアクセス許可を文書に記載しています。 また、次の機能には、特別な考慮事項など、部分的な信頼の実行に関する詳細情報が含まれています。  
+ この表では、大まかな WPF 機能について説明します。 より詳細な情報については、Windows SDK ドキュメントに記載されている、WPF の各メンバーで必要なアクセス許可を参照してください。 また、次の機能には、特別な考慮事項など、部分的な信頼の実行に関する詳細情報が含まれています。  
   
-- [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] (「 [XAML の概要 (WPF)](../../desktop-wpf/fundamentals/xaml.md)」を参照してください)。  
+- [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] ([XAML の概要 (WPF)](../../desktop-wpf/fundamentals/xaml.md) を参照)  
   
-- ポップアップ (<xref:System.Windows.Controls.Primitives.Popup?displayProperty=nameWithType>を参照)。  
+- ポップアップ (<xref:System.Windows.Controls.Primitives.Popup?displayProperty=nameWithType> を参照)  
   
-- ドラッグアンドドロップ ([ドラッグアンドドロップの概要を](./advanced/drag-and-drop-overview.md)参照)。  
+- ドラッグ アンド ドロップ (「[ドラッグ アンド ドロップの概要](./advanced/drag-and-drop-overview.md)」を参照)  
   
-- クリップボード (「<xref:System.Windows.Clipboard?displayProperty=nameWithType>)」を参照してください。  
+- クリップボード (<xref:System.Windows.Clipboard?displayProperty=nameWithType> を参照)  
   
-- イメージング (<xref:System.Windows.Controls.Image?displayProperty=nameWithType>を参照してください)。  
+- イメージング (<xref:System.Windows.Controls.Image?displayProperty=nameWithType>を参照)  
   
-- シリアル化 (「<xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>、<xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>)」を参照してください。  
+- シリアル化 (<xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType> および <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType> を参照)  
   
-- [ファイルを開く] ダイアログボックス (<xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>を参照)。  
+- [ファイルを開く] ダイアログ ボックス (<xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType> を参照)  
   
- 次の表は、インターネットゾーンのアクセス許可セットの制限内で実行するのが安全ではない [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] の機能の概要を示しています。  
+ 次の表は、インターネット ゾーンのアクセス許可セットの制限内で実行するのが安全ではない WPF 機能の概要を示しています。  
   
- 表 2: 部分信頼では安全でない WPF 機能  
+ 表 2:部分信頼では安全でない WPF 機能  
   
-|機能分野|特性|  
+|機能分野|機能|  
 |------------------|-------------|  
-|全般|ウィンドウ (アプリケーション定義のウィンドウおよびダイアログボックス)<br /><br /> SaveFileDialog<br /><br /> ファイル システム<br /><br /> レジストリへのアクセス<br /><br /> ドラッグ アンド ドロップ<br /><br /> XAML シリアル化 (XamlWriter 経由)<br /><br /> UIAutomation クライアント<br /><br /> ソースウィンドウへのアクセス (HwndHost)<br /><br /> 完全な音声サポート<br /><br /> Windows フォームの相互運用性|  
-|効果|ビットマップ効果<br /><br /> イメージのエンコード|  
-|編集|リッチテキスト形式のクリップボード<br /><br /> XAML の完全なサポート|  
+|全般|ウィンドウ (アプリケーション定義のウィンドウおよびダイアログ ボックス)<br /><br /> SaveFileDialog<br /><br /> ファイル システム<br /><br /> レジストリへのアクセス<br /><br /> ドラッグ アンド ドロップ<br /><br /> XAML シリアル化 (XamlWriter.Save 経由)<br /><br /> UIAutomation クライアント<br /><br /> ソース ウィンドウへのアクセス (HwndHost)<br /><br /> 完全な音声サポート<br /><br /> Windows フォームの相互運用性|  
+|ビジュアル|ビットマップ効果<br /><br /> 画像のエンコード|  
+|編集|リッチ テキスト形式のクリップボード<br /><br /> 完全な XAML サポート|  
   
-<a name="Partial_Trust_Programming"></a>   
+<a name="Partial_Trust_Programming"></a>
 ## <a name="partial-trust-programming"></a>部分信頼プログラミング  
- XBAP アプリケーションの場合、既定のアクセス許可セットを超えるコードの動作は、セキュリティゾーンによって異なります。 ユーザーがアプリケーションをインストールしようとすると警告が表示されることもあります。 ユーザーは、インストールを続行するか取り消すかを選択できます。 次の表は、各セキュリティ ゾーンのアプリケーション動作と、完全な信頼を受け取るアプリケーションで行う必要のある操作を示しています。  
+ XBAP アプリケーションの場合、既定のアクセス許可セットを超えるコードの動作は、セキュリティ ゾーンによって異なります。 ユーザーがアプリケーションをインストールしようとすると警告が表示されることもあります。 ユーザーは、インストールを続行するか取り消すかを選択できます。 次の表は、各セキュリティ ゾーンのアプリケーション動作と、完全な信頼を受け取るアプリケーションで行う必要のある操作を示しています。  
   
 |セキュリティ ゾーン|動作|完全信頼を受け取るための操作|  
 |-------------------|--------------|------------------------|  
@@ -87,13 +87,13 @@ ms.locfileid: "73455310"
 |インターネット|"信頼されていません" というメッセージが表示され、失敗する|証明書を使用して XBAP に署名します。|  
   
 > [!NOTE]
-> 前の表で説明した動作は、ClickOnce の信頼されたデプロイモデルに従っていない完全信頼 Xbap 用です。  
+> 前の表で説明した動作は、ClickOnce 信頼済み配置モデルに従わない完全な信頼の XBAP の動作です。  
   
- 一般に、許可されたアクセス許可を超える可能性のあるコードは、スタンドアロンとブラウザーの両方でホストされるアプリケーションの間で共有される共通コードである可能性があります。 CA と [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] は、このシナリオを管理するためのいくつかの手法を提供します。  
+ 一般に、許可されているアクセス許可を超える可能性のあるコードは、おそらく、スタンドアロン アプリケーション間、およびブラウザーでホストされるアプリケーション間の両方で共有される共通コードです。 CAS と WPF は、このシナリオを管理するためのいくつかの手法を提供します。  
   
-<a name="Detecting_Permissions_using_CAS"></a>   
-### <a name="detecting-permissions-using-cas"></a>CA を使用してアクセス許可を検出する  
- 場合によっては、ライブラリアセンブリ内の共有コードをスタンドアロンアプリケーションと Xbap の両方で使用できます。 このような場合、コードは、アプリケーションの付与されたアクセス許可セットよりも多くのアクセス許可を必要とする可能性がある機能を実行する可能性があります。 アプリケーションでは、Microsoft .NET Framework セキュリティを使用して特定のアクセス許可があるかどうかを検出できます。 具体的には、必要なアクセス許可のインスタンスの <xref:System.Security.CodeAccessPermission.Demand%2A> メソッドを呼び出すことによって、特定のアクセス許可があるかどうかをテストできます。 これを次の例に示します。これには、ファイルをローカルディスクに保存できるかどうかをクエリするコードが含まれています。  
+<a name="Detecting_Permissions_using_CAS"></a>
+### <a name="detecting-permissions-using-cas"></a>CAS を使用してアクセス許可を検出する  
+ 場合によっては、ライブラリ アセンブリの共有コードをスタンドアロン アプリケーションと XBAP の両方で使用できます。 このような場合、コードによって、アプリケーションに付与されているアクセス許可セットよりも多くのアクセス許可を必要とする機能が実行される可能性があります。 アプリケーションでは、Microsoft .NET Framework セキュリティを使用して特定のアクセス許可があるかどうかを検出できます。 具体的には、必要なアクセス許可のインスタンスで <xref:System.Security.CodeAccessPermission.Demand%2A> メソッドを呼び出すことによって、特定のアクセス許可があるかどうかをテストできます。 これを次の例に示します。この例には、ファイルをローカル ディスクに保存できるアクセス許可があるかどうかをクエリするコードが含まれています。  
   
  [!code-csharp[PartialTrustSecurityOverviewSnippets#DetectPermsCODE1](~/samples/snippets/csharp/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/CSharp/FileHandling.cs#detectpermscode1)]
  [!code-vb[PartialTrustSecurityOverviewSnippets#DetectPermsCODE1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/VisualBasic/FileHandling.vb#detectpermscode1)]  
@@ -102,69 +102,69 @@ ms.locfileid: "73455310"
   
  アプリケーションに必要なアクセス許可がない場合、<xref:System.Security.CodeAccessPermission.Demand%2A> を呼び出すと、セキュリティ例外がスローされます。 それ以外の場合は、アクセス許可が付与されています。 `IsPermissionGranted` はこの動作をカプセル化し、必要に応じて `true` または `false` を返します。  
   
-<a name="Graceful_Degradation_of_Functionality"></a>   
-### <a name="graceful-degradation-of-functionality"></a>機能の正常な低下  
- コードに必要な操作を実行するためのアクセス許可があるかどうかを検出するには、別のゾーンから実行できるコードを使用することが重要です。 ゾーンを検出することは、可能であれば、ユーザーに代替手段を提供する方がはるかに優れています。 たとえば、完全信頼アプリケーションでは、通常、ユーザーが必要な場所にファイルを作成できます。一方、部分信頼アプリケーションでは、分離ストレージ内のファイルのみを作成できます。 ファイルを作成するコードが、完全信頼 (スタンドアロン) アプリケーションと部分信頼 (ブラウザーホスト) アプリケーションの両方で共有されるアセンブリに存在し、両方のアプリケーションでユーザーにファイルの作成を許可する場合、共有コードは、適切な場所にファイルを作成する前に、部分的または完全な信頼で実行しています。 次のコードは、両方を示しています。  
+<a name="Graceful_Degradation_of_Functionality"></a>
+### <a name="graceful-degradation-of-functionality"></a>機能の適切な低下  
+ コードに必要な操作を実行するためのアクセス許可があるかどうかを検出することは、異なるゾーンから実行できるコードにおいては重要です。 ゾーンを検出することもできますが、可能であれば、ユーザーに代替手段を提供することをお勧めします。 たとえば、完全信頼アプリケーションでは、通常、ユーザーは任意の場所にファイルを作成できますが、一方で部分信頼アプリケーションでは、分離ストレージにのみファイルを作成できます。 ファイルを作成するコードが、完全信頼 (スタンドアロン) アプリケーションと部分信頼 (ブラウザーでホストされる) アプリケーションの両方で共有されるアセンブリに存在し、両方のアプリケーションでユーザーがファイルを作成できるようにする場合は、適切な場所にファイルを作成する前に、共有コードが部分信頼または完全な信頼のどちらで実行されているかどうかを検出する必要があります。 次のコードは、これら両方を示しています。  
   
  [!code-csharp[PartialTrustSecurityOverviewSnippets#DetectPermsGracefulCODE1](~/samples/snippets/csharp/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/CSharp/FileHandlingGraceful.cs#detectpermsgracefulcode1)]
  [!code-vb[PartialTrustSecurityOverviewSnippets#DetectPermsGracefulCODE1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/VisualBasic/FileHandlingGraceful.vb#detectpermsgracefulcode1)]  
 [!code-csharp[PartialTrustSecurityOverviewSnippets#DetectPermsGracefulCODE2](~/samples/snippets/csharp/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/CSharp/FileHandlingGraceful.cs#detectpermsgracefulcode2)]
 [!code-vb[PartialTrustSecurityOverviewSnippets#DetectPermsGracefulCODE2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PartialTrustSecurityOverviewSnippets/VisualBasic/FileHandlingGraceful.vb#detectpermsgracefulcode2)]  
   
- 多くの場合、部分信頼の代替を見つけることができます。  
+ 多くの場合、部分信頼の代替を見つけることができるはずです。  
   
- イントラネットなどの管理された環境では、カスタムマネージフレームワークをクライアントベース全体にグローバルアセンブリキャッシュ (GAC) にインストールできます。 これらのライブラリは、完全信頼を必要とするコードを実行できます。また、<xref:System.Security.AllowPartiallyTrustedCallersAttribute> を使用した部分信頼のみを許可されているアプリケーションから参照できます (詳細については、「[セキュリティ](security-wpf.md)と[WPF のセキュリティ方針-プラットフォームセキュリティ](wpf-security-strategy-platform-security.md)」を参照してください)。  
+ イントラネットなどの制御された環境では、カスタム マネージド フレームワークをクライアント ベース全体でグローバル アセンブリ キャッシュ (GAC) にインストールできます。 これらのライブラリでは、完全な信頼を必要とするコードを実行できます。また、<xref:System.Security.AllowPartiallyTrustedCallersAttribute> を使用して、部分信頼のみ許可されているアプリケーションから参照できます (詳細については、[セキュリティ](security-wpf.md)に関する記事と、「[WPF のセキュリティ方針 - プラットフォーム セキュリティ](wpf-security-strategy-platform-security.md)」を参照してください)。  
   
-<a name="Browser_Host_Detection"></a>   
-### <a name="browser-host-detection"></a>ブラウザーホストの検出  
- アクセス許可を確認する必要がある場合は、CA を使用してアクセス許可を確認することが適切な方法です。 ただし、この手法は通常の処理の一部として例外をキャッチすることに依存しますが、一般的には推奨されず、パフォーマンスの問題が発生する可能性があります。 代わりに、XAML ブラウザーアプリケーション (XBAP) がインターネットゾーンのサンドボックス内でのみ実行される場合は、<xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A?displayProperty=nameWithType> プロパティを使用できます。このプロパティは、XAML ブラウザーアプリケーション (Xbap) に対して true を返します。  
+<a name="Browser_Host_Detection"></a>
+### <a name="browser-host-detection"></a>ブラウザー ホストの検出  
+ アクセス許可ごとに確認する必要がある場合は、CAS を使用してアクセス許可を確認することが適切な方法です。 ただし、この手法では通常の処理の一部として例外をキャッチすることに依存していますが、これは一般的には推奨されず、パフォーマンスの問題が発生する可能性があります。 代わりに、XAML ブラウザー アプリケーション (XBAP) がインターネット ゾーンのサンドボックス内でのみ実行されている場合は、<xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A?displayProperty=nameWithType> プロパティを使用できます。このプロパティは、XAML ブラウザー アプリケーション (XBAP) に対して true を返します。  
   
 > [!NOTE]
-> <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A> は、アプリケーションがブラウザーで実行されているかどうかを識別するだけで、アプリケーションが実行されているアクセス許可のセットは区別されません。  
+> <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A> は、アプリケーションがブラウザーで実行されているかどうかを識別するだけで、アプリケーションで実行されている一連のアクセス許可は識別されません。  
   
-<a name="Managing_Permissions"></a>   
+<a name="Managing_Permissions"></a>
 ## <a name="managing-permissions"></a>アクセス許可の管理  
- 既定では、Xbap は部分信頼 (既定のインターネットゾーンアクセス許可セット) を使用して実行されます。 ただし、アプリケーションの要件によっては、アクセス許可のセットを既定値から変更することができます。 たとえば、Xbap がローカルイントラネットから起動した場合、次の表に示すように、拡張されたアクセス許可セットを利用できます。  
+ 既定では、XBAP は部分信頼 (既定のインターネット ゾーン アクセス許可セット) を使用して実行されます。 ただし、アプリケーションの要件によっては、一連のアクセス許可を既定値から変更することができます。 たとえば、XBAP をローカル イントラネットから起動した場合、次の表に示すように、引き上げられたアクセス許可セットを利用できます。  
   
- 表 3: LocalIntranet とインターネットのアクセス許可  
+ 表 3:LocalIntranet とインターネットのアクセス許可  
   
-|アクセス許可|属性|イントラネット|インターネット|  
+|アクセス許可|属性|LocalIntranet|インターネット|  
 |----------------|---------------|-------------------|--------------|  
-|DNS|DNS サーバーへのアクセス|[はい]|Ｘ|  
-|環境変数|読み取り|[はい]|Ｘ|  
-|ファイルダイアログ|開く|[はい]|[はい]|  
-|ファイルダイアログ|無制限|[はい]|Ｘ|  
-|分離ストレージ|ユーザーによるアセンブリの分離|[はい]|Ｘ|  
-|分離ストレージ|不明な分離|[はい]|[はい]|  
-|分離ストレージ|無制限のユーザークォータ|[はい]|Ｘ|  
-|メディア|安全なオーディオ、ビデオ、および画像|[はい]|[はい]|  
-|印刷|既定の印刷|[はい]|Ｘ|  
-|印刷|安全な印刷|[はい]|[はい]|  
-|リフレクション|Pdb|[はい]|Ｘ|  
-|セキュリティ|マネージコードの実行|[はい]|[はい]|  
-|セキュリティ|付与されたアクセス許可のアサート|[はい]|Ｘ|  
-|ユーザー インターフェイス|無制限|[はい]|Ｘ|  
-|ユーザー インターフェイス|セーフトップレベルウィンドウ|[はい]|[はい]|  
-|ユーザー インターフェイス|独自のクリップボード|[はい]|[はい]|  
-|Web ブラウザー|HTML への安全なフレームナビゲーション|[はい]|[はい]|  
+|DNS|DNS サーバーへのアクセス|はい|いいえ|  
+|環境変数|読み取り|はい|いいえ|  
+|ファイル ダイアログ|開く|はい|はい|  
+|ファイル ダイアログ|無制限|はい|いいえ|  
+|分離ストレージ|ユーザーによるアセンブリの分離|はい|いいえ|  
+|分離ストレージ|不明な分離|はい|はい|  
+|分離ストレージ|無制限のユーザー クォータ|はい|いいえ|  
+|Media|安全なオーディオ、動画、および画像|はい|はい|  
+|印刷|既定の印刷|はい|いいえ|  
+|印刷|安全な印刷|はい|はい|  
+|リフレクション|出力|はい|いいえ|  
+|セキュリティ|マネージド コードの実行|はい|はい|  
+|セキュリティ|付与されたアクセス許可のアサート|はい|いいえ|  
+|ユーザー インターフェイス|無制限|はい|いいえ|  
+|ユーザー インターフェイス|安全なトップ レベルのウィンドウ|はい|はい|  
+|ユーザー インターフェイス|独自のクリップボード|はい|はい|  
+|Web ブラウザー|HTML への安全なフレーム ナビゲーション|はい|はい|  
   
 > [!NOTE]
 > 切り取りと貼り付けは、ユーザーが開始したときに部分信頼でのみ許可されます。  
   
- アクセス許可を増やす必要がある場合は、プロジェクトの設定と ClickOnce アプリケーションマニフェストを変更する必要があります。 詳細については、「[WPF XAML ブラウザー アプリケーションの概要](./app-development/wpf-xaml-browser-applications-overview.md)」をご覧ください。 次のドキュメントも役に立つ場合があります。  
+ アクセス許可を引き上げる必要がある場合は、プロジェクトの設定と ClickOnce アプリケーション マニフェストを変更する必要があります。 詳細については、「[WPF XAML ブラウザー アプリケーションの概要](./app-development/wpf-xaml-browser-applications-overview.md)」をご覧ください。 次のドキュメントも参照してください。  
   
 - [Mage.exe (マニフェスト生成および編集ツール)](../tools/mage-exe-manifest-generation-and-editing-tool.md)。  
   
-- [Mageui.exe (マニフェスト生成および編集ツール、グラフィカルクライアント)](../tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)。  
+- [MageUI.exe (マニフェスト生成および編集ツール、グラフィカル クライアント)](../tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)。  
   
-- [ClickOnce アプリケーションをセキュリティで保護](/visualstudio/deployment/securing-clickonce-applications)する。  
+- [ClickOnce アプリケーションのセキュリティ保護](/visualstudio/deployment/securing-clickonce-applications)。  
   
- XBAP が完全な信頼を必要とする場合は、同じツールを使用して、要求されたアクセス許可を増やすことができます。 XBAP は、ローカルコンピューター、イントラネット、またはブラウザーの信頼されたサイトまたは許可されたサイトに記載されている URL から、完全な信頼を取得するだけです。 アプリケーションがイントラネットまたは信頼済みサイトからインストールされている場合、ユーザーは、昇格されたアクセス許可を通知する標準の ClickOnce プロンプトを受け取ります。 ユーザーは、インストールを続行するか取り消すかを選択できます。  
+ XBAP で完全な信頼が求められる場合は、同じツールを使用して、要求されたアクセス許可を引き上げることができます。 ただし、XBAP で完全な信頼が許可されるのは、ローカル コンピューター、イントラネット、またはブラウザーの信頼済みサイトまたは許可されたサイトに記載されている URL からこれがインストールされて起動している場合にのみです。 アプリケーションがイントラネットまたは信頼済みサイトからインストールされている場合、ユーザー向けに、アクセス許可が昇格された旨を通知する標準の ClickOnce プロンプトが表示されます。 ユーザーは、インストールを続行するか取り消すかを選択できます。  
   
- または、すべてのセキュリティゾーンからの完全信頼配置に ClickOnce 信頼された配置モデルを使用することもできます。 詳細については、「[信頼されたアプリケーションの展開の概要](/visualstudio/deployment/trusted-application-deployment-overview)と[セキュリティ](security-wpf.md)」を参照してください。  
+ または、ClickOnce 信頼済みのデプロイ モデルを使用して、任意のセキュリティ ゾーンから完全に信頼された配置を行うことができます。 詳細については、「[信頼されたアプリケーションの配置の概要](/visualstudio/deployment/trusted-application-deployment-overview)」および[セキュリティ](security-wpf.md)に関する記事を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
-- [Security](security-wpf.md)
+- [セキュリティ](security-wpf.md)
 - [WPF のセキュリティ方針 - プラットフォーム セキュリティ](wpf-security-strategy-platform-security.md)
 - [WPF のセキュリティ方針 - セキュリティ エンジニアリング](wpf-security-strategy-security-engineering.md)

@@ -2,12 +2,12 @@
 title: System.ServiceModel.PerformanceCountersFailedOnRelease
 ms.date: 03/30/2017
 ms.assetid: ec1a7bb1-c787-45ec-8292-73d104f3d7bb
-ms.openlocfilehash: d8d18dd0ed8ff254c1aec0b6d62a03bc978917a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cb7e8809a88ccdd189949d5962d8585c4c5b5873
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61860895"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598100"
 ---
 # <a name="systemservicemodelperformancecountersfailedonrelease"></a>System.ServiceModel.PerformanceCountersFailedOnRelease
 System.ServiceModel.PerformanceCountersFailedOnRelease  
@@ -17,6 +17,6 @@ System.ServiceModel.PerformanceCountersFailedOnRelease
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

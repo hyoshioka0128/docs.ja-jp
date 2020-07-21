@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 365cf0b2ef36dd0be624d022e3dea5e16a9eb58c
-  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+  ms.openlocfilehash: 025b3e0fcaf693be00f1ca396b92617d6faf31aa
+  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 11/12/2019
-  ms.locfileid: "73969406"
+  ms.lasthandoff: 05/06/2020
+  ms.locfileid: "82860970"
 items:
 - durationInMinutes: 1
   content: >
@@ -34,15 +34,10 @@ items:
     ```
 
 
-    おめでとうございます! 最初の C# プログラムを実行しました。 これは "Hello World!" というメッセージを出力する単純なプログラムです。 <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> メソッドを使用してこのメッセージを出力しました。 `Console` は、コンソール ウィンドウを表す型です。 `WriteLine` は、そのテキスト コンソールに 1 行のテキストを出力する `Console` 型の 1 つのメソッドです。
+    おめでとうございます!  最初の C# プログラムを実行しました。 これは "Hello World!" というメッセージを出力する単純なプログラムです。 <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> メソッドを使用してこのメッセージを出力しました。 `Console` は、コンソール ウィンドウを表す型です。 `WriteLine` は、そのテキスト コンソールに 1 行のテキストを出力する `Console` 型の 1 つのメソッドです。
 
 
     次に進んで、さらに詳しく見てみましょう。 このレッスンの残りの部分では、C# においてテキストを表す `string` 型の機能を確認します。 `Console` 型と同じように、`string` 型にもメソッドがあります。 `string` メソッドはテキストを処理します。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 変数の宣言と使用
   durationInMinutes: 3
   content: >
@@ -119,11 +114,6 @@ items:
 
 
     もう一度 **[実行]** を選択して結果を確認します。 メッセージは "Hello {aFriend}" ではなく、"Hello Maira" であるはずです。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 文字列の処理
   durationInMinutes: 5
   content: >
@@ -159,15 +149,10 @@ items:
     > [!TIP]
 
     > このあたりで、自分で試してみるといいでしょう。 `Console.WriteLine()` を使用して画面にテキストを出力できることを学習しました。 変数を宣言して文字列同士を連結する方法についても学習しました。 対話型ウィンドウで実際に確認してみてください。 このウィンドウには、実行できることの候補を作成する **IntelliSense** という機能があります。 `firstFriend` で `d` の後に `.` を入力します。 使用できるプロパティとメソッドの候補の一覧が表示されます。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 文字列の追加操作
   durationInMinutes: 5
   content: >
-    メッセージを出力するのに <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> **メソッド**を使用してきました。 **メソッド**は、何らかのアクションを実装したコードのブロックです。 メソッドに名前があることで、それにアクセスできます。
+    メッセージを出力するのに <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>**メソッド**を使用してきました。 **メソッド**は、何らかのアクションを実装したコードのブロックです。 メソッドに名前があることで、それにアクセスできます。
 
 
     文字列の先頭または末尾に表示したくないスペースがあるとします。 それらのスペースを文字列から**トリミング**したいと考えています。
@@ -199,6 +184,9 @@ items:
     ```
 
 
+    角括弧の `[` と `]` により、`Trim`、`TrimStart`、`TrimEnd` メソッドですることを目で確認できます。 この括弧により、空白の始まりと終わりが示されます。
+
+
     このサンプルでは、文字列を処理するための重要な概念のいくつかを説明しています。 文字列を操作するメソッドは、定位置に変更を加えるのではなく、新しい文字列オブジェクトを返します。 `Trim` メソッドのいずれかに対する各呼び出しは新しい文字列を返すが元のメッセージを変更しない、ということが確認できます。
 
 
@@ -228,11 +216,6 @@ items:
     Console.WriteLine(sayHello.ToLower());
 
     ```
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 検索文字列
   durationInMinutes: 10
   content: >
@@ -250,7 +233,7 @@ items:
     ```
 
 
-    <xref:System.String.Contains%2A> メソッドは**ブール値**を返し、検索した文字列が見つかったかどうかを知らせます。 **ブール値**は `true` か `false` どちらかの値を格納します。 **ブール値**については、この後のレッスンで詳しく学習します。
+    <xref:System.String.Contains%2A> メソッドは**ブール値**を返し、検索した文字列が見つかったかどうかを知らせます。 **ブール値**は `true` か `false` どちらかの値を格納します。 テキスト出力として表示される場合は、それぞれ大文字の `True`、`False` になります。 **ブール値**については、この後のレッスンで詳しく学習します。
 
 
     ***課題***
@@ -265,11 +248,6 @@ items:
 
 
     先頭が "You" で末尾が "hello" の場合は `true`、先頭または末尾が "goodbye" の場合は false になります。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 課題完了
   durationInMinutes: 3
   content: >
@@ -290,11 +268,6 @@ items:
     Console.WriteLine(songLyrics.EndsWith("goodbye"));
 
     ```
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - content: >-
     C# 概要の "Hello C#" チュートリアルはこれで終了です。 下の **[C# の数値]** リンクを選択することで次の対話式チュートリアルを開始することも、[.NET サイト](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)にアクセスして .NET Core SDK をダウンロードし、ご利用のマシン上でプロジェクトを作成し、コーディングを続けることもできます。 "次の手順" セクションでは、これらのチュートリアルに戻ります。
 

@@ -1,6 +1,6 @@
 ---
-title: VerifyClientKey 関数 (アンマネージ API リファレンス)
-description: VerifyClientKey 関数によって、クライアントキーのセキュリティが適切であることが確認されます。
+title: クライアントキー関数の確認 (アンマネージ API リファレンス)
+description: 検証クライアントキー機能は、クライアントキーに正しいセキュリティを保証します。
 ms.date: 11/06/2017
 api_name:
 - VerifyClientKey
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - VerifyClientKey function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 0a0680651eb192e2798ede00048599c5130e63f1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ebb794240494deb0c831b50e95461ec52017a215
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107357"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176709"
 ---
-# <a name="verifyclientkey-function"></a>VerifyClientKey 関数
+# <a name="verifyclientkey-function"></a>クライアントキー機能を確認します。
 クライアント キーに適切なセキュリティが確実に含められます。  
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -29,22 +29,22 @@ ms.locfileid: "73107357"
 ## <a name="syntax"></a>構文  
   
 ```cpp  
-LONG VerifyClientKey(); 
+LONG VerifyClientKey();
 ```  
 
 ## <a name="return-value"></a>戻り値
 
-関数が成功した場合、戻り値は `ERROR_SUCCESS` (0) になります。
+関数が成功した場合、戻り値は`ERROR_SUCCESS`(0) になります。
 
-関数が失敗した場合、戻り値は、 *winerror.h*で定義されている0以外のエラーコードです。
+関数が失敗した場合、戻り値は*WinError.h*で定義された 0 以外のエラー コードです。
 
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** WMINet_Utils  
+ **ヘッダー:** WMINet_Utilsデフ  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [WMI およびパフォーマンスカウンター (アンマネージ API リファレンス)](index.md)
+- [WMI およびパフォーマンス カウンター (アンマネージド API リファレンス)](index.md)

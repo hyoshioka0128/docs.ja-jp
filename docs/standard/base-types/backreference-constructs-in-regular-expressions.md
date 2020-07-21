@@ -12,13 +12,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, backreference constructs
 - regular expressions, backreference constructs
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
-ms.custom: seodec18
-ms.openlocfilehash: e41c333dc088c8f712866cb7a130c4f8e1c9722f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 87c3dbde2eb2b5a19b91f34bb2b088af5c0d1827
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140534"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290605"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>正規表現での前方参照コンストラクト
 
@@ -27,7 +26,7 @@ ms.locfileid: "73140534"
 > [!NOTE]
 > 別の構文を使用して、置換文字列内の名前付きおよび番号付きのキャプチャ グループを参照します。 詳細については、「 [置換](substitutions-in-regular-expressions.md)」を参照してください。
 
-.NET では、番号付きおよび名前付きのキャプチャ グループを参照する個別の言語要素が定義されています。 キャプチャ グループの詳細については、「[グループ化コンストラクト](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」を参照してください。
+.NET では、番号付きおよび名前付きのキャプチャ グループを参照する個別の言語要素が定義されています。 キャプチャ グループの詳細については、「[グループ化コンストラクト](grouping-constructs-in-regular-expressions.md)」を参照してください。
 
 ## <a name="numbered-backreferences"></a>番号付き前方参照
 
@@ -51,7 +50,7 @@ ms.locfileid: "73140534"
 
 次の例では、文字列内の単語に使用される重複した文字を検索します。 例で定義している正規表現 `(\w)\1` は、次の要素で構成されています。
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |`(\w)`|単語文字を検出し、最初のキャプチャ グループに割り当てます。|
 |`\1`|最初のキャプチャ グループの値と同じ次の文字を検出します。|
@@ -73,7 +72,7 @@ ms.locfileid: "73140534"
 
 次の例では、文字列内の単語に使用される重複した文字を検索します。 例で定義している正規表現 `(?<char>\w)\k<char>` は、次の要素で構成されています。
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |`(?<char>\w)`|単語文字を検出し、`char` という名前のキャプチャ グループに割り当てます。|
 |`\k<char>`|`char` キャプチャ グループの値と同じ次の文字を検出します。|
@@ -104,7 +103,7 @@ ms.locfileid: "73140534"
 
 次の例には、正規表現パターン `(?<1>a)(?<1>\1b)*` が含まれています。このパターンは \1 の名前付きグループを再定義します。 正規表現の各パターンは、次の表に示すように定義されています。
 
-|パターン|説明|
+|パターン|[説明]|
 |-------------|-----------------|
 |`(?<1>a)`|文字 "a" を検出し、結果を `1` という名前のキャプチャ グループに割り当てます。|
 |`(?<1>\1b)*`|`1` という名前のグループの 0 個以上の出現箇所を "b" と共に検出し、結果を `1` という名前のキャプチャ グループに割り当てます。|
@@ -124,7 +123,7 @@ ms.locfileid: "73140534"
 
 グループで部分文字列がキャプチャされなかった場合、そのグループへの前方参照は未定義になり、一致することはありません。 次のように定義されている正規表現パターン `\b(\p{Lu}{2})(\d{2})?(\p{Lu}{2})\b` を例として示します。
 
-|パターン|説明|
+|パターン|[説明]|
 |-------------|-----------------|
 |`\b`|ワード境界から照合を開始します。|
 |`(\p{Lu}{2})`|2 つの大文字と一致します。 これが最初のキャプチャ グループです。|
@@ -137,6 +136,6 @@ ms.locfileid: "73140534"
 [!code-csharp[RegularExpressions.Language.Backreferences#5](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference5.cs#5)]
 [!code-vb[RegularExpressions.Language.Backreferences#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference5.vb#5)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [正規表現言語 - クイック リファレンス](regular-expression-language-quick-reference.md)

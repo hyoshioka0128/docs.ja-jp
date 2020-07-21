@@ -3,25 +3,27 @@ title: モジュール、ハンドラー、ミドルウェア
 description: モジュール、ハンドラー、およびミドルウェアを使用した HTTP 要求の処理について説明します。
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
 ms.date: 10/11/2019
-ms.openlocfilehash: b0be6109b9226bddbb9cbe4cebf114fd2b2a6114
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: ff2b3fd41316a1c8c20a0eed9a585e5fd2733af3
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "73841205"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173186"
 ---
 # <a name="modules-handlers-and-middleware"></a>モジュール、ハンドラー、ミドルウェア
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-ASP.NET Core アプリは一連のミドルウェアに基づいて構築されています。 ミドルウェアはハンドラーであり、要求と応答を処理するためにパイプラインに配置されます。 Web フォームアプリでは、HTTP ハンドラーとモジュールは同様の問題を解決します。 ASP.NET Core では、モジュール、ハンドラー、 *Global.asax.cs*、およびアプリのライフサイクルはミドルウェアに置き換えられます。 この章では、Blazor アプリのコンテキストでのミドルウェアについて説明します。
+ASP.NET Core アプリは一連の*ミドルウェア*に基づいて構築されています。 ミドルウェアは、要求と応答を処理するためにパイプラインに配置されるハンドラーです。 Web フォームアプリでは、HTTP ハンドラーとモジュールは同様の問題を解決します。 ASP.NET Core では、モジュール、ハンドラー、 *Global.asax.cs*、およびアプリのライフサイクルはミドルウェアに置き換えられます。 この章では、アプリのコンテキストにおけるミドルウェアについて説明し Blazor ます。
 
 ## <a name="overview"></a>概要
 
 ASP.NET Core 要求パイプラインは、順番に呼び出される一連の要求デリゲートで構成されています。 次の図は、その概念を示しています。 実行のスレッドは黒い矢印をたどります。
 
-![パイプライン](media/middleware/request-delegate-pipeline.png)
+![pipeline](media/middleware/request-delegate-pipeline.png)
 
 上の図には、ライフサイクルイベントの概念がありません。 この概念は、ASP.NET Web フォーム要求がどのように処理されるかについての基礎となります。 このシステムにより、どのようなプロセスが発生しているかがわかりやすくなり、ミドルウェアをいつでも挿入できるようになります。 ミドルウェアは、要求パイプラインに追加された順序で実行されます。 また、構成ファイルではなくコードに追加されています (通常は*Startup.cs*)。
 
@@ -39,7 +41,7 @@ ASP.NET 4.x には多数のモジュールが含まれています。 同様に�
 |-----------------------|-----------------------------|-------------------|
 |HTTP エラー            |`CustomErrorModule`          |[状態コード ページ ミドルウェア](/aspnet/core/fundamentals/error-handling#usestatuscodepages)|
 |既定のドキュメント       |`DefaultDocumentModule`      |[既定のファイル ミドルウェア](/aspnet/core/fundamentals/static-files#serve-a-default-document)|
-|ディレクトリの参照     |`DirectoryListingModule`     |[ディレクトリ参照ミドルウェア](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
+|ディレクトリ参照     |`DirectoryListingModule`     |[ディレクトリ参照ミドルウェア](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
 |動的圧縮    |`DynamicCompressionModule`   |[応答圧縮ミドルウェア](/aspnet/core/performance/response-compression)|
 |失敗した要求のトレース|`FailedRequestsTracingModule`|[ASP.NET Core のログ](/aspnet/core/fundamentals/logging/index#tracesource-provider)|
 |ファイルのキャッシュ           |`FileCacheModule`            |[応答キャッシュ ミドルウェア](/aspnet/core/performance/caching/middleware)|
@@ -48,8 +50,8 @@ ASP.NET 4.x には多数のモジュールが含まれています。 同様に�
 |HTTP リダイレクト       |`HttpRedirectionModule`      |[URL リライト ミドルウェア](/aspnet/core/fundamentals/url-rewriting)|
 |ISAPI フィルター          |`IsapiFilterModule`          |[ミドルウェア](/aspnet/core/fundamentals/middleware/index)|
 |ISAPI                  |`IsapiModule`                |[ミドルウェア](/aspnet/core/fundamentals/middleware/index)|
-|要求のフィルター処理      |`RequestFilteringModule`     |[URL リライトミドルウェア IRule](/aspnet/core/fundamentals/url-rewriting#irule-based-rule)|
-|URL の書き換え&#8224;   |`RewriteModule`              |[URL リライト ミドルウェア](/aspnet/core/fundamentals/url-rewriting)|
+|要求のフィルタリング      |`RequestFilteringModule`     |[URL リライトミドルウェア IRule](/aspnet/core/fundamentals/url-rewriting#irule-based-rule)|
+|URL リライト&#8224;   |`RewriteModule`              |[URL リライト ミドルウェア](/aspnet/core/fundamentals/url-rewriting)|
 |静的な圧縮     |`StaticCompressionModule`    |[応答圧縮ミドルウェア](/aspnet/core/performance/response-compression)|
 |静的コンテンツ         |`StaticFileModule`           |[静的ファイル ミドルウェア](/aspnet/core/fundamentals/static-files)|
 |URL 承認      |`UrlAuthorizationModule`     |[ASP.NET Core ID](/aspnet/core/security/authentication/identity)|
@@ -88,7 +90,7 @@ public class Startup
 }
 ```
 
-ミドルウェアは、`IMiddleware` インターフェイスを実装するか、次のミドルウェア規則に従って、クラスとして定義することもできます。 詳細については、「[カスタム ASP.NET Core ミドルウェアを作成](/aspnet/core/fundamentals/middleware/write)する」を参照してください。
+ミドルウェアは、インターフェイスを実装するか、 `IMiddleware` 次のミドルウェア規約を使用して、クラスとして定義することもできます。 詳細については、「[カスタム ASP.NET Core ミドルウェアを作成](/aspnet/core/fundamentals/middleware/write)する」を参照してください。
 
 >[!div class="step-by-step"]
 >[前へ](data.md)

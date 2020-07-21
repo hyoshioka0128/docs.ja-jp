@@ -3,27 +3,26 @@ title: コードを .NET Core に移植するために依存関係を分析す�
 description: .NET Framework から .NET Core にプロジェクトを移植するために、外部の依存関係を分析する方法を説明します。
 author: cartermp
 ms.date: 10/22/2019
-ms.custom: seodec18
-ms.openlocfilehash: 5fa5a20e9a2b5427401835a0c1c6e1845d86c3ef
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: 2aa09e551a99358d3a6961fafcfc0aa8dbd976b1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72798796"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79397921"
 ---
 # <a name="analyze-your-dependencies-to-port-code-to-net-core"></a>コードを .NET Core に移植するために依存関係を分析する
 
-.NET Core または .NET Standard にコードを移植するには、依存関係を理解する必要があります。 外部の依存関係は、プロジェクトで参照する NuGet パッケージまたは `.dll` ですが、これはユーザーが構築するものではありません。
+.NET Core または .NET Standard にコードを移植するには、依存関係を理解する必要があります。 外部の依存関係は、プロジェクトで参照する NuGet パッケージまたは `.dll` ファイルですが、これはユーザーが構築するものではありません。
 
 ## <a name="migrate-your-nuget-packages-to-packagereference"></a>NuGet パッケージを `PackageReference` に移行する
 
-.NET Core は [PackageReference](/nuget/consume-packages/package-references-in-project-files) を使用してパッケージの依存関係を指定します。 [packages.config](/nuget/reference/packages-config) を使用してプロジェクトにパッケージを指定している場合は、.NET Core ではサポートされていないため、`packages.config` を `PackageReference` 形式に変換する必要があります。
+.NET Core は [PackageReference](/nuget/consume-packages/package-references-in-project-files) を使用してパッケージの依存関係を指定します。 [packages.config](/nuget/reference/packages-config) を使用してプロジェクトにパッケージを指定している場合は、`packages.config` は .NET Core ではサポートされていないため、`PackageReference` 形式に変換します。
 
 移行方法については、「[packages.config から PackageReference への移行](/nuget/reference/migrate-packages-config-to-package-reference)」を参照してください。
 
 ## <a name="upgrade-your-nuget-packages"></a>NuGet パッケージをアップグレードする
 
-プロジェクトを `PackageReference` 形式に移行した後、パッケージが .NET Core と互換性があるかどうかを確認する必要があります。
+プロジェクトを `PackageReference` 形式に移行した後、お使いのパッケージが .NET Core と互換性があるかどうかを確認します。
 
 まず、パッケージを使用可能な最新バージョンにアップグレードします。 これは、Visual Studio の NuGet パッケージマネージャーの UI で行うことができます。 パッケージの新しいバージョンの依存関係は、既に .NET Core と互換性がある可能性があります。
 
@@ -39,7 +38,7 @@ ms.locfileid: "72798796"
 
 ### <a name="analyze-nuget-packages-using-nuget-package-explorer"></a>NuGet パッケージ エクスプローラーを使用して NuGet パッケージを分析する
 
-NuGet パッケージ自体はフォルダーのセットであり、プラットフォーム固有のアセンブリが含まれます。 したがって、パッケージ内に互換性のあるアセンブリを含むフォルダーがあるかどうかを確認する必要があります。
+NuGet パッケージ自体はフォルダーのセットであり、プラットフォーム固有のアセンブリが含まれます。 パッケージ内に互換性のあるアセンブリを含むフォルダーがあるかどうかを確認します。
 
 NuGet パッケージ フォルダーを調べる最も簡単な方法は、[NuGet パッケージ エクスプローラー](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) ツールを使用することです。 これをインストールした後、次の手順を使用してフォルダー名を確認します。
 
@@ -83,21 +82,23 @@ Visual Studio でコンパイラ警告を非表示にする方法の詳細につ
 
 依存している NuGet パッケージが .NET Core で動作しない場合の対処方法はいくつかあります。
 
-1. プロジェクトがオープン ソースで、GitHub のような場所にホストされている場合、直接開発者に連絡することができます。
-2. [nuget.org](https://www.nuget.org/) で直接作成者に連絡することができます。パッケージを検索し、パッケージのページの左側にある **[Contact Owners]\(所有者に問い合わせる\)** をクリックします。
-3. 使用していたパッケージと同じタスクを実行する、.NET Core で実行される別のパッケージを検索することができます。
-4. パッケージが行っていたコードを自分で記述できます。
-5. 少なくともパッケージの互換バージョンが利用可能になるまでは、アプリの機能を変更することで、パッケージの依存関係を削除することができます。
+- プロジェクトがオープン ソースで、GitHub のような場所にホストされている場合、直接開発者に連絡することができます。
+- [nuget.org](https://www.nuget.org/) で直接作成者に連絡することができます。パッケージを検索し、パッケージのページの左側にある **[Contact Owners]\(所有者に問い合わせる\)** をクリックします。
+- 使用していたパッケージと同じタスクを実行する、.NET Core で実行される別のパッケージを検索することができます。
+- パッケージが行っていたコードを自分で記述できます。
+- 少なくともパッケージの互換バージョンが利用可能になるまでは、アプリの機能を変更することで、パッケージの依存関係を削除することができます。
 
-オープン ソース プロジェクトの保守管理者および NuGet パッケージの発行者の多くは、ボランティアであることを忘れないでください。 彼らは、その分野に関心があるために無償で作業を行っており、多くの場合、日中に別の仕事を抱えています。 したがって、.NET Core のサポートを求めるために連絡する際には、この点を考慮してください。
+オープン ソース プロジェクトの保守管理者および NuGet パッケージの発行者の多くは、ボランティアであることを忘れないでください。 彼らは、その分野に関心があるために無償で作業を行っており、多くの場合、日中に別の仕事を抱えています。 .NET Core のサポートを求めるために連絡する際には、この点を考慮してください。
 
-上記のいずれでも問題を解決できない場合、後日 .NET Core に移植しなければならない場合があります。
+これらの方法のいずれでも問題を解決できない場合、後日 .NET Core に移植しなければならない場合があります。
 
 .NET チームは .NET Core のサポートでどのライブラリが最も重要かを知りたいと考えています。 使用したいライブラリについて、dotnet@microsoft.com にメールを送ることができます。
 
 ## <a name="analyze-dependencies-that-arent-nuget-packages"></a>NuGet パッケージではない依存関係を分析する
 
-ファイル システム内の DLL など、NuGet パッケージではない依存関係がある場合もあります。 その依存関係の移植性を調べる唯一の方法が、[.NET Portability Analyzer](https://github.com/Microsoft/dotnet-apiport) ツールを実行することです。 このツールでは、.NET Framework をターゲットとするアセンブリを分析し、.NET Core などの他の .NET プラットフォームに移植できない API を特定できます。 このツールはコンソール アプリケーションまたは [Visual Studio 拡張機能](../../standard/analyzers/portability-analyzer.md)として実行できます。
+ファイル システム内の DLL など、NuGet パッケージではない依存関係がある場合もあります。 その依存関係の移植性を調べる唯一の方法が、[.NET Portability Analyzer](https://github.com/Microsoft/dotnet-apiport) ツールを実行することです。 このツールでは、.NET Framework をターゲットとするアセンブリを分析し、.NET Core などの他の .NET プラットフォームに移植できない API を特定します。 このツールはコンソール アプリケーションまたは [Visual Studio 拡張機能](../../standard/analyzers/portability-analyzer.md)として実行できます。
 
->[!div class="step-by-step"]
->[次へ](libraries.md)
+## <a name="next-steps"></a>次の手順
+
+>[!div class="nextstepaction"]
+>[ライブラリを移植する](libraries.md)

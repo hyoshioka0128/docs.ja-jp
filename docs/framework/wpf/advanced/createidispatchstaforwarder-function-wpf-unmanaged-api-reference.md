@@ -1,5 +1,6 @@
 ---
-title: CreateIDispatchSTAForwarder 関数 (WPF のアンマネージ API リファレンス)
+title: CreateIDispatchSTAForwarder 関数 - WPF のアンマネージ API リファレンス
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,23 +9,23 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: 57a02dfa-f091-4ace-9c06-1f4ab52b3527
-ms.openlocfilehash: a89b29cd459060c93d5ca77bb2154e1a10b02d03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: e151ffa6eb5f1dc7479c699e0d7f9f3f57833ebd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926452"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174720"
 ---
 # <a name="createidispatchstaforwarder-function-wpf-unmanaged-api-reference"></a>CreateIDispatchSTAForwarder 関数 (WPF のアンマネージ API リファレンス)
-この API は、Windows Presentation Foundation (WPF) インフラストラクチャをサポートしているし、コードから直接使用するものではありません。  
+この API は、Windows Presentation Foundation (WPF) インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。  
   
- Windows Presentation Foundation (WPF) インフラストラクチャによってスレッドと windows の管理に使用します。  
+ スレッドおよびウィンドウの管理のために Windows Presentation Foundation (WPF) インフラストラクチャによって使用されます。  
   
 ## <a name="syntax"></a>構文  
   
 ```cpp  
 HRESULT CreateIDispatchSTAForwarder(  
-   __in IDispatch *pDispatchDelegate,   
+   __in IDispatch *pDispatchDelegate,
    __deref_out IDispatch **ppForwarder  
 )  
 ```  
@@ -33,21 +34,21 @@ HRESULT CreateIDispatchSTAForwarder(
   
 ## <a name="property-valuereturn-value"></a>プロパティ値/戻り値  
  pDispatchDelegate  
- ポインター、`IDispatch`インターフェイス。  
+ `IDispatch` インターフェイスへのポインター。  
   
  ppForwarder  
- アドレスへのポインター、`IDispatch`インターフェイス。  
+ `IDispatch` インターフェイスのアドレスへのポインター。  
   
 ## <a name="requirements"></a>必要条件  
- **プラットフォーム:** 参照してください[.NET Framework システム要件](../../get-started/system-requirements.md)します。  
+ **プラットフォーム:** 「[.NET Framework システム要件](../../get-started/system-requirements.md)」をご覧ください。  
   
  **DLL:**  
   
- .NET framework 3.0 および 3.5。PresentationHostDLL.dll  
+ .NET Framework 3.0 および 3.5 の場合:PresentationHostDLL.dll  
   
- .NET framework 4 以降では。PresentationHost_v0400.dll  
+ .NET Framework 4 以降の場合:PresentationHost_v0400.dll  
   
- **.NET framework のバージョン:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
+ **.NET Framework のバージョン:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 

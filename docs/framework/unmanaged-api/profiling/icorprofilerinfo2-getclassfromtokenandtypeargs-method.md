@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: b25c88f0-71b9-443b-8eea-1c94db0a44b9
 topic_type:
 - apiref
-ms.openlocfilehash: 5b6c0159b432d2a70f583357bbcf714b27399633
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 702c5f9f2bc08c824bdc0607741a6afd65a3e89b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447169"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497258"
 ---
 # <a name="icorprofilerinfo2getclassfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetClassFromTokenAndTypeArgs メソッド
-指定されたメタデータトークンと任意の型引数の `ClassID` 値を使用して、型の `ClassID` を取得します。  
+`ClassID`指定されたメタデータトークンと `ClassID` 任意の型引数の値を使用して、型のを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -41,34 +41,34 @@ HRESULT GetClassFromTokenAndTypeArgs(
  から型が存在するモジュールの ID。  
   
  `typeDef`  
- から型を参照する `mdTypeDef` メタデータトークン。  
+ から`mdTypeDef`型を参照するメタデータトークン。  
   
  `cTypeArgs`  
  から指定された型の型パラメーターの数。 非ジェネリック型の場合、この値は0である必要があります。  
   
  `typeArgs`  
- から`ClassID` 値の配列。それぞれが型の引数です。 `cTypeArgs` が0に設定されている場合、`typeArgs` の値は NULL になります。  
+ から値の配列 `ClassID` 。それぞれが型の引数になります。 が0に設定されている場合、の値は `typeArgs` NULL `cTypeArgs` になります。  
   
  `pClassID`  
- 入出力指定した型の `ClassID` へのポインター。  
+ 入出力`ClassID`指定した型のへのポインター。  
   
-## <a name="remarks"></a>コメント  
- `mdTypeDef` メタデータトークンではなく `mdTypeRef` を使用して `GetClassFromTokenAndTypeArgs` メソッドを呼び出すと、予期しない結果が発生する可能性があります。呼び出し元は、`mdTypeRef` を渡すときに `mdTypeDef` に解決する必要があります。  
+## <a name="remarks"></a>解説  
+ メタデータトークンの代わりにを指定してメソッドを呼び出すと、 `GetClassFromTokenAndTypeArgs` `mdTypeRef` `mdTypeDef` 予期しない結果が発生する可能性があります。呼び出し元は、 `mdTypeRef` を `mdTypeDef` 渡すときにを解決する必要があります。  
   
- 型がまだ読み込まれていない場合は、`GetClassFromTokenAndTypeArgs` を呼び出すと読み込みがトリガーされます。これは、多くのコンテキストでは危険な操作です。 たとえば、モジュールまたはその他の型の読み込み中にこのメソッドを呼び出すと、ランタイムが循環読み込みを試みたときに無限ループが発生する可能性があります。  
+ 型がまだ読み込まれていない場合、を呼び出す `GetClassFromTokenAndTypeArgs` と読み込みがトリガーされます。これは、多くのコンテキストでは危険な操作です。 たとえば、モジュールまたはその他の型の読み込み中にこのメソッドを呼び出すと、ランタイムが循環読み込みを試みたときに無限ループが発生する可能性があります。  
   
- 一般に、`GetClassFromTokenAndTypeArgs` の使用は推奨されていません。 プロファイラーが特定の型のイベントに関心を持っている場合は、その型の `ModuleID` と `mdTypeDef` を格納し、 [ICorProfilerInfo2:: GetClassIDInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md)を使用して、特定の `ClassID` が目的の型であるかどうかを確認する必要があります。  
+ 一般に、の使用 `GetClassFromTokenAndTypeArgs` は推奨されていません。 プロファイラーが特定の型のイベントに関心を持っている場合は、その型のとを格納し、ICorProfilerInfo2:: GetClassIDInfo2 を使用して、特定の `ModuleID` `mdTypeDef` [ICorProfilerInfo2::GetClassIDInfo2](icorprofilerinfo2-getclassidinfo2-method.md) `ClassID` が目的の型であるかどうかを確認する必要があります。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorProfilerInfo インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo インターフェイス](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 インターフェイス](icorprofilerinfo2-interface.md)

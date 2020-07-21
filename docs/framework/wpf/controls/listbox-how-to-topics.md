@@ -9,21 +9,21 @@ helpviewer_keywords:
 ms.assetid: 15d58f1d-3db6-4cb5-88c7-8c45f19301e2
 ms.openlocfilehash: 0895b80f230d2c67ab0723c7935ae20443327a41
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61766741"
 ---
 # <a name="listbox-how-to-topics"></a>ListBox に関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.ListBox>項目の選択可能なリストを表示するコントロール。  
+このセクションのトピックでは、<xref:System.Windows.Controls.ListBox> コントロールを使用し、項目の選択可能一覧を表示する方法を説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ListBox にデータをバインドする](how-to-bind-a-listbox-to-data.md)  
  [ListBoxItem を取得する](how-to-get-a-listboxitem.md)  
- [方法: ItemsControl にデータを追加します。](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms743602(v=vs.90))  
+ [方法: ItemsControl にデータを追加する](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms743602(v=vs.90))  
  [ListBox のスクロール速度を向上させる](how-to-improve-the-scrolling-performance-of-a-listbox.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.ListBox>  
   
  <xref:System.Windows.Controls.ListBoxItem>  

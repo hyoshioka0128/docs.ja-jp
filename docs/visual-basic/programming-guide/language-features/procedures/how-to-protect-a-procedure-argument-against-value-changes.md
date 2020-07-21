@@ -14,20 +14,20 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: d2b7c766-ce16-4d2c-8d79-3fc0e7ba2227
-ms.openlocfilehash: 36092eb597b5b20e1da42cd9d15ab8633636cfb1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: b0504d9f7a8862274d5d71dc6a9c1570551629a5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344854"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414364"
 ---
-# <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>方法: プロシージャ引数の値が変化しないようにする (Visual Basic)
-プロシージャがパラメーターを[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)として宣言している場合、Visual Basic は、呼び出し元のコードの引数の基になるプログラミング要素への直接参照をプロシージャコードに付与します。 これにより、プロシージャは、呼び出し元のコードの引数の基になる値を変更できます。 場合によっては、呼び出し元のコードでこのような変更から保護することが必要になることがあります。  
+# <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>方法: プロシージャ引数の値が変更されないように保護する (Visual Basic)
+Visual Basic では、プロシージャでパラメーターが [ByRef](../../../language-reference/modifiers/byref.md) として宣言されている場合、引数の基になる呼び出し元のコードのプログラミング要素への直接参照がプロシージャ コードに渡されます。 これにより、プロシージャは引数の基になる呼び出し元のコードの値を変更できます。 呼び出し元のコードで、そのような変更から保護することが必要な場合もあります。  
   
- プロシージャ内で対応するパラメーター [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)を宣言することによって、変更から引数を常に保護することができます。 特定の引数を他のケース以外でも変更できるようにする場合は、その引数を `ByRef` 宣言し、呼び出し元のコードが各呼び出しで渡される機構を決定できるようにします。 これを行うには、対応する引数をかっこで囲み、値で渡します。または、かっこで囲まないようにして、参照渡しで渡すことができます。 詳細については、「[方法: 引数を強制的に値で渡す](./how-to-force-an-argument-to-be-passed-by-value.md)」を参照してください。  
+ プロシージャで対応するパラメーターを [ByVal](../../../language-reference/modifiers/byval.md) として宣言することで、引数を変更から常に保護できます。 特定の引数を一部のケースでは変更できるようにし、他のケースでは変更できないようにする場合は、その引数を `ByRef` として宣言し、呼び出し元のコードが呼び出しごとに引渡し方法を決定できるようにします。 これを行うには、対応する引数をかっこで囲んで値渡しにするか、かっこで囲まずに参照渡しにします。 詳細については、[方法: 引数の値渡しを強制する](./how-to-force-an-argument-to-be-passed-by-value.md)」をご覧ください。  
   
 ## <a name="example"></a>例  
- 次の例は、配列変数を受け取り、その要素を操作する2つのプロシージャを示しています。 `increase` の手順では、単に各要素に1つを追加します。 `replace` プロシージャは、新しい配列をパラメーター `a()` に割り当て、各要素に1つを追加します。 ただし、再割り当ては、呼び出し元のコード内の基になる配列変数には影響しません。  
+ 次の例は、配列変数を受け取り、その要素を操作する 2 つのプロシージャを示しています。 `increase` プロシージャは、各要素に 1 を加算するだけです。 `replace` プロシージャは、`a()` パラメーターに新しい配列を割り当ててから、各要素に 1 を加算します。 ただし、再割り当ては、呼び出し元のコードの基になる配列変数には影響しません。  
   
  [!code-vb[VbVbcnProcedures#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#35)]  
   
@@ -35,14 +35,14 @@ ms.locfileid: "74344854"
   
  [!code-vb[VbVbcnProcedures#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#37)]  
   
- 最初の `MsgBox` の呼び出しでは、"後に増加する (n):11, 21, 31, 41" と表示されます。 配列 `n` は参照型であるため、渡される機構が `ByVal`場合でも、`increase` はそのメンバーを変更できます。  
+ 最初の `MsgBox` 呼び出しでは、"After increase(n): 11, 21, 31, 41" と表示されます。 配列 `n` は参照型であるため、引渡し方法が `ByVal` であっても、`increase` はそのメンバーを変更できます。  
   
- 2番目の `MsgBox` 呼び出しでは、"After replace (n):11, 21, 31, 41" と表示されます。 `n` は `ByVal`渡されるので、`replace` 新しい配列を割り当てることによって、呼び出し元のコードの変数 `n` を変更することはできません。 `replace` によって新しい配列インスタンス `k` 作成され、それがローカル変数 `a`に代入されると、呼び出し元のコードによって渡された `n` への参照が失われます。 `a`のメンバーを変更すると、ローカル配列 `k` のみが影響を受けます。 したがって、`replace` では、呼び出し元のコードの配列 `n` の値はインクリメントされません。  
+ 2 番目の `MsgBox` 呼び出しでは、"After replace(n): 11, 21, 31, 41" と表示されます。 `n` は `ByVal` で渡されるため、`replace` は呼び出し元のコードの変数 `n` に新しい配列を割り当てて変更することはできません。 `replace` が新しい配列インスタンス `k` を作成し、ローカル変数 `a` に割り当てると、呼び出し元のコードによって渡された `n` への参照は失われます。 `a` のメンバーを変更すると、ローカル配列 `k` だけが影響を受けます。 したがって、`replace` は呼び出し元のコードの配列 `n` の値をインクリメントしません。  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- Visual Basic の既定では、値渡しで引数を渡します。 ただし、すべての宣言されたパラメーターに[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)キーワードまたは[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワードを含めることをお勧めします。 これにより、コードが読みやすくなります。  
+## <a name="compile-the-code"></a>コードのコンパイル  
+ Visual Basic の既定では、引数は値渡しになります。 ただし、宣言されるすべてのパラメーターに、[ByVal](../../../language-reference/modifiers/byval.md) または [ByRef](../../../language-reference/modifiers/byref.md) キーワードを含めることをお勧めします。 これにより、コードが読みやすくなります。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [手順](./index.md)
 - [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)
@@ -53,4 +53,4 @@ ms.locfileid: "74344854"
 - [方法: プロシージャ引数の値を変更する](./how-to-change-the-value-of-a-procedure-argument.md)
 - [方法: 引数の値渡しを強制する](./how-to-force-an-argument-to-be-passed-by-value.md)
 - [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)
-- [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Value Types and Reference Types](../data-types/value-types-and-reference-types.md)

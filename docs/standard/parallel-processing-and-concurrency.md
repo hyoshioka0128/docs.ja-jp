@@ -8,22 +8,22 @@ helpviewer_keywords:
 - concurrency [.NET]
 - asynchronous programming [.NET]
 ms.assetid: e573faa8-0212-44b1-a850-ce85dc54f47f
-ms.openlocfilehash: 08a1b45759b1b78368f867161a13cf2af4db1a60
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2f65d7ec317a12c933eda41c5fd957d21c332b42
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123197"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285873"
 ---
 # <a name="parallel-processing-concurrency-and-async-programming-in-net"></a>.NET での並列処理、コンカレンシー、および非同期プログラミング
 .NET で提供されている複数の方法を使用すると、ユーザーに対するアプリケーションの応答性を高くする非同期コードや、複数の実行スレッドを使用してユーザーのコンピューターのパフォーマンスを最大化する並列コードを、記述することができます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [非同期の概要](../../docs/standard/async.md)  
+ [非同期の概要](async.md)  
  .NET によって提供される非同期プログラミングのメカニズムについて説明します。  
   
- [並列プログラミング](../../docs/standard/parallel-programming/index.md)  
+ [並列プログラミング](parallel-programming/index.md)  
  並行開発を簡素化するタスクベースのプログラミング モデルについて説明します。このモデルにより、スレッドやスレッド プールを直接操作することなく、効率的で詳細な、拡張性のある並列コードを自然な表現方法で記述できるようになります。  
 
- [スレッド化](../../docs/standard/threading/index.md)  
+ [スレッド化](threading/index.md)  
  .NET によって提供される基本的なコンカレンシーおよび同期のためのメカニズムについて説明します。  

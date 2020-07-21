@@ -5,8 +5,6 @@
 - name: はじめに
   href: getting-started/index.md
   items:
-    - name: Visual Studio における Visual Basic の互換性に影響する変更点
-      href: getting-started/breaking-changes-in-visual-studio.md
     - name: Visual Basic プログラマのための追加リソース
       href: getting-started/additional-resources.md
 - name: アプリケーションの開発
@@ -31,7 +29,7 @@
         - name: Accessing Application Settings
           href: developing-apps/programming/app-settings/index.md
         - name: ドライブ、ディレクトリ、およびファイルの処理
-          href: developing-apps/programming/drives-directories-files/processing.md
+          href: developing-apps/programming/drives-directories-files/index.md
     - name: My による開発
       href: developing-apps/development-with-my/index.md
       items:
@@ -214,7 +212,7 @@
       href: programming-guide/language-features/objects-and-classes/index.md
     - name: 演算子および式
       href: programming-guide/language-features/operators-and-expressions/index.md
-    - name: 手順
+    - name: プロシージャ
       href: programming-guide/language-features/procedures/index.md
     - name: ステートメント
       href: programming-guide/language-features/statements.md
@@ -373,13 +371,13 @@
           href: language-reference/modifiers/assembly.md
         - name: Async
           href: language-reference/modifiers/async.md
-        - name: 自動
+        - name: Auto
           href: language-reference/modifiers/auto.md
         - name: ByRef
           href: language-reference/modifiers/byref.md
         - name: ByVal
           href: language-reference/modifiers/byval.md
-        - name: 既定値
+        - name: Default
           href: language-reference/modifiers/default.md
         - name: Friend
           href: language-reference/modifiers/friend.md
@@ -387,7 +385,7 @@
           href: language-reference/modifiers/in-generic-modifier.md
         - name: Iterator
           href: language-reference/modifiers/iterator.md
-        - name: キー
+        - name: Key
           href: language-reference/modifiers/key.md
         - name: Module
           href: language-reference/modifiers/module-keyword.md
@@ -409,17 +407,17 @@
           href: language-reference/modifiers/overloads.md
         - name: Overridable
           href: language-reference/modifiers/overridable.md
-        - name: オーバーライド
+        - name: Overrides
           href: language-reference/modifiers/overrides.md
         - name: ParamArray
           href: language-reference/modifiers/paramarray.md
-        - name: 部分的
+        - name: Partial
           href: language-reference/modifiers/partial.md
         - name: Private
           href: language-reference/modifiers/private.md
         - name: Private Protected
           href: language-reference/modifiers/private-protected.md
-        - name: プロテクト
+        - name: Protected
           href: language-reference/modifiers/protected.md
         - name: Protected Friend
           href: language-reference/modifiers/protected-friend.md
@@ -431,7 +429,7 @@
           href: language-reference/modifiers/shadows.md
         - name: Shared
           href: language-reference/modifiers/shared.md
-        - name: スタティック
+        - name: Static
           href: language-reference/modifiers/static.md
         - name: Unicode
           href: language-reference/modifiers/unicode.md
@@ -809,7 +807,7 @@
           href: language-reference/statements/attribute-list.md
         - name: パラメーター リスト
           href: language-reference/statements/parameter-list.md
-        - name: Type List
+        - name: 型リスト
           href: language-reference/statements/type-list.md
     - name: XML のコメント用タグ
       href: language-reference/xmldoc/index.md
@@ -1285,7 +1283,7 @@
           href: language-reference/error-messages/xml-literals-and-xml-properties-are-not-supported-in-embedded-code-in-aspnet.md
         - name: XML 名前空間 URI '<uri>' は 'xmlns' にのみバインドできます。
           href: language-reference/error-messages/xml-namespace-uri-uri-can-be-bound-only-to-xmlns.md
-- name: 辞書／辞典／その他
+- name: 関連項目
   href: reference/index.md
   items:
     - name: コマンド ライン コンパイラ
@@ -1325,7 +1323,7 @@
               href: reference/command-line-compiler/errorreport.md
             - name: '-filealign'
               href: reference/command-line-compiler/filealign.md
-            - name: '-help, /?'
+            - name: '-help, -?'
               href: reference/command-line-compiler/help.md
             - name: '-highentropyva'
               href: reference/command-line-compiler/highentropyva.md
@@ -1416,6 +1414,6 @@
     - name: 言語仕様
       href: reference/language-specification/
 - name: サンプル アプリケーション
-  href: sample-applications.md
+  href: 'https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic'
 - name: チュートリアル
   href: walkthroughs.md

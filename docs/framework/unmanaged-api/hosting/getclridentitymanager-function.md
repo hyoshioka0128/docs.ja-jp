@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 66eeca30-adb4-45f4-aff5-347564c95724
 topic_type:
 - apiref
-ms.openlocfilehash: 3c6def32c63e3557a4de72baf7b1c3e67feb4891
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8b1e918edf641d38dd6b91d790bcaff8020293a0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136526"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493267"
 ---
 # <a name="getclridentitymanager-function"></a>GetCLRIdentityManager 関数
 共通言語ランタイム (CLR) が id を管理できるようにするインターフェイスへのポインターを取得します。  
@@ -37,23 +37,23 @@ STDAPI GetCLRIdentityManager(
   
 ## <a name="parameters"></a>パラメーター  
  `riid`  
- から取得するインターフェイスを指定する `REFIID` (インターフェイス識別子)。 この値は、IID_ICLRAssemblyIdentityManager または IID_ICLRHostBindingPolicyManager のいずれかである必要があります。  
+ から`REFIID`取得するインターフェイスを指定する (インターフェイス識別子)。 この値は IID_ICLRAssemblyIdentityManager または IID_ICLRHostBindingPolicyManager のいずれかである必要があります。  
   
  `ppManager`  
- 入出力[ICLRAssemblyIdentityManager](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)または[ICLRHostBindingPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)オブジェクトのいずれかのアドレスへのポインター。  
+ 入出力[ICLRAssemblyIdentityManager](iclrassemblyidentitymanager-interface.md)または[ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md)オブジェクトのいずれかのアドレスへのポインター。  
   
-## <a name="remarks"></a>Remarks  
- `GetCLRIdentityManager` 関数へのポインターを取得するには、 [GetRealProcAddress](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md)関数を呼び出します。  
+## <a name="remarks"></a>解説  
+ 関数へのポインターを取得するには、 [GetRealProcAddress](getrealprocaddress-function.md)関数を呼び出し `GetCLRIdentityManager` ます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscorwks.dll  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [非推奨の CLR ホスト関数](deprecated-clr-hosting-functions.md)

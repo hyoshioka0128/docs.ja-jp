@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 84b6bfc32f5a73597b227098e5aee1e3450cf85b
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 97e38685777c7c418c0ccd91f4c433501ecf3aaa
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74643899"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721058"
 ---
-### <a name="switchsystemwindowsformsenablevisualstylevalidation-compatibility-switch-not-supported"></a>Switch.System.Windows.Forms.EnableVisualStyleValidation 互換性スイッチはサポートされていません
+### <a name="enablevisualstylevalidation-compatibility-switch-not-supported"></a>EnableVisualStyleValidation 互換性スイッチはサポートされていません
 
 `Switch.System.Windows.Forms.EnableVisualStyleValidation` 互換性スイッチは、.NET Core 3.0 上の Windows フォームではサポートされていません。
 
@@ -20,7 +20,7 @@ ms.locfileid: "74643899"
 
 3.0 Preview 9
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 スイッチを削除します。 そのスイッチはサポートされておらず、代替機能はありません。
 
@@ -34,7 +34,7 @@ Windows フォーム
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - Not detectable via API analysis
 

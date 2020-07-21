@@ -6,20 +6,20 @@ dev_langs:
 ms.assetid: a7da43e3-769f-4e07-bcd6-552b8bde66f4
 ms.openlocfilehash: 3164656bb183e7773b098cab79d8fe5e0dc5de34
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70792147"
 ---
 # <a name="walkthrough-querying-across-relationships-visual-basic"></a>チュートリアル: リレーションシップを介したクエリの実行 (Visual Basic)
-このチュートリアルでは、データベース[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]内の外部キーリレーションシップを表すための*関連付け*の使用方法について説明します。  
+このチュートリアルでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の "*関連付け*" を使用してデータベース内の外部キー リレーションシップを表現する方法について説明します。  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
  このチュートリアルは、Visual Basic 開発設定を使用して記述されています。  
   
 ## <a name="prerequisites"></a>必須コンポーネント  
- チュートリアルを完了し[ている必要があります。単純なオブジェクトモデルとクエリ (Visual Basic](walkthrough-simple-object-model-and-query-visual-basic.md))。 このチュートリアルは前のチュートリアルに基づいて作成されており、c:\linqtest に northwnd.mdf ファイルがあることが前提です。  
+ 「[チュートリアル:簡単なオブジェクト モデルとクエリ (Visual Basic)](walkthrough-simple-object-model-and-query-visual-basic.md)」を完了している必要があります。 このチュートリアルは前のチュートリアルに基づいて作成されており、c:\linqtest に northwnd.mdf ファイルがあることが前提です。  
   
 ## <a name="overview"></a>概要  
  このチュートリアルは、主に次の 3 つの手順で構成されています。  
@@ -49,7 +49,7 @@ ms.locfileid: "70792147"
      [!code-vb[DLinqWalk2VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk2VB/vb/Module1.vb#2)]  
   
 ## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Customer-Order リレーションシップ間のクエリを作成および実行する  
- `Order` オブジェクトから `Customer` オブジェクトに、またはその逆の順序で、直接アクセスできます。 顧客と注文の間に明示的な*結合*は必要ありません。  
+ `Order` オブジェクトから `Customer` オブジェクトに、またはその逆の順序で、直接アクセスできます。 Customer と Order の間に、明示的な "*結合*" は必要ありません。  
   
 #### <a name="to-access-order-objects-by-using-customer-objects"></a>Customer オブジェクトを使用して Order オブジェクトにアクセスするには  
   
@@ -86,10 +86,10 @@ ms.locfileid: "70792147"
   
 4. コンソール ウィンドウで Enter キーを押してアプリケーションを終了します。  
   
-5. このアプリケーションを保存する場合は、 **[ファイル]** メニューの **[すべてを保存]** をクリックします。  
+5. このアプリケーションを保存するには、 **[ファイル]** メニューの **[すべてを保存]** をクリックします。  
   
 ## <a name="next-steps"></a>次の手順  
- 次のチュートリアル ([チュートリアル:データの操作 (Visual Basic](walkthrough-manipulating-data-visual-basic.md))) データを操作する方法を示します。 そのチュートリアルを実行するのに、既に終了したこのシリーズの 2 つのチュートリアルを保存する必要はありません。  
+ 次のチュートリアル「[チュートリアル: データの操作 (Visual Basic)](walkthrough-manipulating-data-visual-basic.md)」では、データの操作方法について説明します。 そのチュートリアルを実行するのに、既に終了したこのシリーズの 2 つのチュートリアルを保存する必要はありません。  
   
 ## <a name="see-also"></a>関連項目
 

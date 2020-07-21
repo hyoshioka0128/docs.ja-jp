@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e0eed5a8-fa6d-4818-bd00-7babcea30325
 topic_type:
 - apiref
-ms.openlocfilehash: 39f5c1813b08f4d72c610820b1434e29eb4aec8e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ea7f7a9d4589e4f08b1b1e20b4d073bb5f822714
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121269"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212764"
 ---
 # <a name="icordebugprocess5gettypefortypeid-method"></a>ICorDebugProcess5::GetTypeForTypeID メソッド
 型識別子をの型の値に変換します。  
@@ -42,18 +42,18 @@ HRESULT GetTypeForTypeID(
  入出力テキストオブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- 場合によっては、型識別子を返すメソッドが null `COR_TYPEID` 値を返すことがあります。 この値が `id` 引数として渡された場合、`GetTypeForTypeID` メソッドは失敗し、`E_FAIL`が返されます。  
+ 場合によっては、型識別子を返すメソッドが null 値を返すことがあり `COR_TYPEID` ます。 この値が引数として渡された場合 `id` 、 `GetTypeForTypeID` メソッドは失敗し、を返し `E_FAIL` ます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugProcess5 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess5 インターフェイス](icordebugprocess5-interface.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)

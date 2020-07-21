@@ -6,22 +6,22 @@ helpviewer_keywords:
 - unmanaged API reference [.NET Framework], diagnostics symbol store
 - native API reference [.NET Framework], diagnostics symbol store
 ms.assetid: ee1fbb7a-b0f9-482f-8cd0-6df37e6586a2
-ms.openlocfilehash: 2bf393f1a2f44d265038282713265fefc80bc66f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 044ed9caaf0633e84c783103a338891017fd1ac1
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445504"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442099"
 ---
 # <a name="diagnostics-symbol-store-unmanaged-api-reference"></a>シンボル ストア診断 (アンマネージ API リファレンス)
 シンボル ストア診断 API を使うと、コンパイラにより、デバッガーで使うためのシンボル情報を生成できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [シンボル ストア診断インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
+ [シンボル ストア診断インターフェイス](diagnostics-symbol-store-interfaces.md)  
  シンボル ストア診断 API で使用されるアンマネージド インターフェイスについて説明します。  
   
- [シンボル ストア診断列挙型](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)  
+ [シンボル ストア診断列挙型](diagnostics-symbol-store-enumerations.md)  
  シンボル ストア診断 API で使用されるアンマネージド列挙型について説明します。  
   
- [シンボル ストア診断構造体](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)  
+ [シンボル ストア診断構造体](diagnostics-symbol-store-structures.md)  
  シンボル ストア診断 API で使用されるアンマネージド構造体について説明します。

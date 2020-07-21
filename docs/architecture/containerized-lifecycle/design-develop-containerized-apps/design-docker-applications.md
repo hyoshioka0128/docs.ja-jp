@@ -2,12 +2,12 @@
 title: Docker アプリケーションの設計
 description: このガイドではマイクロサービスについて詳しく説明していないため、ここでそのトピックについての詳しいガイドへの参照を確認してください。
 ms.date: 02/15/2019
-ms.openlocfilehash: b9539ff4edf405ab890d83be59a248ffa2360c99
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: b8a08658ec6c3df3e1aed596a0240223768dd647
+ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674039"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81738462"
 ---
 # <a name="design-docker-applications"></a>Docker アプリケーションの設計
 

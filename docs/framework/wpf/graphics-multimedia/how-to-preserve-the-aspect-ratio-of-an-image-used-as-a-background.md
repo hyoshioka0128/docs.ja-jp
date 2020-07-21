@@ -6,38 +6,38 @@ helpviewer_keywords:
 - brushes [WPF], preserving aspect ratios of background images
 - background images [WPF], preserving aspect ratios
 ms.assetid: 28c39478-13d7-4011-80a3-8b9cc3e54478
-ms.openlocfilehash: 4ae6f1242548038bcd54b7218783e5063fa67872
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: b467fcd353994faef19b5a997e03d6582789eac1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921762"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79186030"
 ---
 # <a name="how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background"></a>方法: 背景として使用するイメージの縦横比を保持する
-この例は、使用する方法を示します、<xref:System.Windows.Media.TileBrush.Stretch%2A>のプロパティ、<xref:System.Windows.Media.ImageBrush>イメージの縦横比を維持するためにします。  
+この例では、イメージの縦横比を保持するために <xref:System.Windows.Media.ImageBrush> の <xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティを使用する方法を示します。  
   
- 既定で使用すると、<xref:System.Windows.Media.ImageBrush>出力領域を完全に埋めるように領域を塗りつぶすにそのコンテンツが拡大します。 出力領域とイメージの縦横比が異なる場合は、この引き伸ばしによってイメージがゆがめられます。  
+ 既定では、<xref:System.Windows.Media.ImageBrush> を使用して領域を塗りつぶすと、出力領域が完全に塗りつぶされるようにコンテンツが引き伸ばされます。 出力領域とイメージの縦横比が異なる場合は、この引き伸ばしによってイメージがゆがめられます。  
   
- させる、<xref:System.Windows.Media.ImageBrush>そのイメージの縦横比を保持、設定、<xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティを<xref:System.Windows.Media.Stretch.Uniform>または<xref:System.Windows.Media.Stretch.UniformToFill>します。  
+ <xref:System.Windows.Media.ImageBrush> がそのイメージの縦横比を保持するようにするには、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティを <xref:System.Windows.Media.Stretch.Uniform> または <xref:System.Windows.Media.Stretch.UniformToFill> に設定します。  
   
 ## <a name="example"></a>例  
- 次の例を使用して 2 つ<xref:System.Windows.Media.ImageBrush>2 つの四角形を描画するオブジェクト。 これらの四角形は 300 × 150 ピクセルで、どちらも 300 × 300 ピクセルのイメージを保持しています。 <xref:System.Windows.Media.TileBrush.Stretch%2A>最初のブラシのプロパティに設定されて<xref:System.Windows.Media.Stretch.Uniform>、および<xref:System.Windows.Media.TileBrush.Stretch%2A>2 番目のブラシのプロパティに設定されて<xref:System.Windows.Media.Stretch.UniformToFill>します。  
+ 次の例では、2 つの <xref:System.Windows.Media.ImageBrush> オブジェクトを使用して、2 つの四角形を塗りつぶしています。 これらの四角形は 300 × 150 ピクセルで、どちらも 300 × 300 ピクセルのイメージを保持しています。 最初のブラシの <xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティは <xref:System.Windows.Media.Stretch.Uniform> に設定され、2 番目のブラシの <xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティは <xref:System.Windows.Media.Stretch.UniformToFill> に設定されています。  
   
  [!code-csharp[UsingImageBrush_snip#ImageBrushStretchModesExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/UsingImageBrush_snip/CSharp/StretchModes.cs#imagebrushstretchmodesexamplewholepage)]  
   
- 次の図は、最初のブラシの出力を<xref:System.Windows.Media.TileBrush.Stretch%2A>設定<xref:System.Windows.Media.Stretch.Uniform>します。  
+ <xref:System.Windows.Media.TileBrush.Stretch%2A> を <xref:System.Windows.Media.Stretch.Uniform> に設定した最初のブラシの出力を次の図に示します。  
   
- ![ImageBrush with Uniform stretching](./media/graphicsmm-imagebrushuniformstretch.jpg "graphicsmm_ImageBrushUniformStretch")  
+ ![Uniform 拡大を使用した ImageBrush](./media/graphicsmm-imagebrushuniformstretch.jpg "graphicsmm_ImageBrushUniformStretch")  
   
- 次の図は、2 番目のブラシの出力を示しています、<xref:System.Windows.Media.TileBrush.Stretch%2A>設定<xref:System.Windows.Media.Stretch.UniformToFill>します。  
+ <xref:System.Windows.Media.TileBrush.Stretch%2A> を <xref:System.Windows.Media.Stretch.UniformToFill> に設定した 2 番目のブラシの出力を次の図に示します。  
   
- ![ImageBrush with UniformToFill stretching](./media/graphicsmm-imagebrushuniformtofillstretch.jpg "graphicsmm_ImageBrushUniformToFillStretch")  
+ ![UniformToFill 拡大を使用した ImageBrush](./media/graphicsmm-imagebrushuniformtofillstretch.jpg "graphicsmm_ImageBrushUniformToFillStretch")  
   
- なお、<xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティは、他の動作と同じ<xref:System.Windows.Media.TileBrush>オブジェクト、つまりの<xref:System.Windows.Media.DrawingBrush>と<xref:System.Windows.Media.VisualBrush>します。 詳細については<xref:System.Windows.Media.ImageBrush>およびその他、 <xref:System.Windows.Media.TileBrush> 、オブジェクトを参照してください[イメージ、描画、およびビジュアル](painting-with-images-drawings-and-visuals.md)します。  
+ <xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティは、他の <xref:System.Windows.Media.TileBrush> オブジェクト、つまり <xref:System.Windows.Media.DrawingBrush> と <xref:System.Windows.Media.VisualBrush> に対してもまったく同じように動作することに注意してください。 <xref:System.Windows.Media.ImageBrush> と他の <xref:System.Windows.Media.TileBrush> オブジェクトの詳細については、「[イメージ、描画、およびビジュアルによる塗りつぶし](painting-with-images-drawings-and-visuals.md)」を参照してください。  
   
- なおが、<xref:System.Windows.Media.TileBrush.Stretch%2A>を指定するプロパティが表示される方法、<xref:System.Windows.Media.TileBrush>コンテンツは、その出力領域に合わせて拡大、実際に指定する方法、<xref:System.Windows.Media.TileBrush>端まで拡大する基本タイルのコンテンツします。 詳細については、「 <xref:System.Windows.Media.TileBrush> 」を参照してください。  
+ また、<xref:System.Windows.Media.TileBrush.Stretch%2A> プロパティは、<xref:System.Windows.Media.TileBrush> コンテンツを出力領域に合わせて引き伸ばす方法を指定するように見えますが、実際には基本タイルを塗りつぶすように <xref:System.Windows.Media.TileBrush> コンテンツを引き伸ばす方法を指定することにも注意してください。 詳細については、「<xref:System.Windows.Media.TileBrush>」を参照してください。  
   
- このコード例はに対して提供されている例の一部、<xref:System.Windows.Media.ImageBrush>クラス。 サンプル全体については、次を参照してください。 [ImageBrush のサンプル](https://go.microsoft.com/fwlink/?LinkID=160005)します。  
+ このコード例は、<xref:System.Windows.Media.ImageBrush> クラスで提供されている、より大きな例の一部です。 完全なサンプルについては、「[ImageBrush のサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ImageBrush)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

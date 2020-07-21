@@ -5,13 +5,12 @@ ms.date: 09/03/2018
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: f80b483fedc600a1e1a48d36ce9b7b95c6de9f27
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: HT
+ms.custom: vs-dotnet
+ms.openlocfilehash: 7a4ffd5b1b58e6ea7fd46c676e139b77a126aa2b
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428898"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803028"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Visual Studio を使用して .NET Core アプリを展開する
 
@@ -24,11 +23,11 @@ ms.locfileid: "74428898"
 - 自己完結型の展開
 - サードパーティの依存関係を含む、自己完結型の展開
 
-Visual Studio を使用して、.NET Core アプリケーションを開発する方法の詳細については、[.NET Core の依存関係と要件](../install/dependencies.md?tabs=netcore30&pivots=os-windows)に関する記事を参照してください。
+Visual Studio を使用して、.NET Core アプリケーションを開発する方法の詳細については、[.NET Core の依存関係と要件](../install/dependencies.md?pivots=os-windows)に関する記事を参照してください。
 
 ## <a name="framework-dependent-deployment"></a>フレームワークに依存する展開
 
-サードパーティの依存関係を含まない、フレームワークに依存する展開を展開するプロセスには、アプリのビルド、テスト、および発行が含まれます。 C# で記述された次の単純な例は、このプロセスを示しています。  
+サードパーティの依存関係を含まない、フレームワークに依存する展開を展開するプロセスには、アプリのビルド、テスト、および発行が含まれます。 C# で記述された次の単純な例は、このプロセスを示しています。
 
 1. プロジェクトを作成します。
 
@@ -38,8 +37,8 @@ Visual Studio を使用して、.NET Core アプリケーションを開発す�
 
    エディターで *Program.cs* または *Program.vb* ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
 
-   [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
-   [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
+   [!code-csharp[deployment#1](./snippets/deploy-with-vs/csharp/deployment-example.cs)]
+   [!code-vb[deployment#1](./snippets/deploy-with-vs/vb/deployment-example.vb)]
 
 1. アプリのデバッグ ビルドを作成します。
 
@@ -75,9 +74,9 @@ Visual Studio を使用して、.NET Core アプリケーションを開発す�
 
 1. `Newtonsoft.Json` が既にシステムにインストールされている場合、 **[ソリューション パッケージの管理]** タブの右のウィンドウからプロジェクトを選択し、プロジェクトに追加します。
 
-サードパーティの依存関係を含む、フレームワークに依存する展開は、サードパーティの依存関係と同じ移植性を持つことに注意してください。 たとえば、サードパーティ ライブラリが macOS のみをサポートする場合、そのアプリを Windows システムに移植することはできません。 この状況は、サードパーティの依存関係自体がネイティブ コードに依存する場合に生じる可能性があります。 このよい例は、[libuv](https://github.com/libuv/libuv) に対してネイティブの依存関係が必要な [Kestrel サーバー](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel)です。 このようなサードパーティの依存関係を含むアプリケーションに対して FDD が作成されると、発行された出力には、ネイティブの依存関係がサポートする (そして、その NuGet パッケージ内に存在する) 各[ランタイム識別子 (RID)](../rid-catalog.md) のフォルダーが含まれます。
+サードパーティの依存関係を含む、フレームワークに依存する展開は、サードパーティの依存関係と同じ移植性を持ちます。 たとえば、サードパーティ ライブラリが macOS のみをサポートする場合、そのアプリを Windows システムに移植することはできません。 この状況は、サードパーティの依存関係自体がネイティブ コードに依存する場合に生じる可能性があります。 このよい例は、[libuv](https://github.com/libuv/libuv) に対してネイティブの依存関係が必要な [Kestrel サーバー](/aspnet/core/fundamentals/servers/kestrel)です。 このようなサードパーティの依存関係を含むアプリケーションに対して FDD が作成されると、発行された出力には、ネイティブの依存関係がサポートする (そして、その NuGet パッケージ内に存在する) 各[ランタイム識別子 (RID)](../rid-catalog.md) のフォルダーが含まれます。
 
-## <a name="simpleSelf"></a> サードパーティの依存関係を含まない、自己完結型の展開
+## <a name="self-contained-deployment-without-third-party-dependencies"></a><a name="simpleSelf"></a> サードパーティの依存関係を含まない、自己完結型の展開
 
 サードパーティの依存関係を含まない自己完結型の展開を展開するプロセスには、プロジェクトの作成、*csproj*ファイルの変更、アプリのビルド、テスト、および発行が含まれます。 C# で記述された次の単純な例は、このプロセスを示しています。 フレームワーク依存の展開の場合と同じように、ご自分のプロジェクトの作成、コーディング、テストを開始します。
 
@@ -89,16 +88,16 @@ Visual Studio を使用して、.NET Core アプリケーションを開発す�
 
    エディターで *Program.cs* または *Program.vb* ファイルを開き、自動生成されたコードを次のコードに置き換えます。 テキストの入力を求めるプロンプトが表示されてから、ユーザーが入力した個々の単語が表示されます。 正規表現 `\w+` を使用して、入力テキストの単語を分離します。
 
-   [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
-   [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
+   [!code-csharp[deployment#1](./snippets/deploy-with-vs/csharp/deployment-example.cs)]
+   [!code-vb[deployment#1](./snippets/deploy-with-vs/vb/deployment-example.vb)]
 
 1. グローバリゼーション インバリアント モードを使用するかどうかを決定します。
 
-   特にアプリの対象が Linux の場合、[グローバリゼーション インバリアント モード](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md)を活用することで展開の合計サイズを減らすことができます。 グローバリゼーション インバリアント モードは、全世界を意識するものではなく、[インバリアント カルチャ](xref:System.Globalization.CultureInfo.InvariantCulture)の書式設定規則、大文字/小文字の区別規則、文字列比較、並べ替え順序を使用できるアプリケーションにとって便利です。
+   特にアプリの対象が Linux の場合、[グローバリゼーション インバリアント モード](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md)を活用することで展開の合計サイズを減らすことができます。 グローバリゼーション インバリアント モードは、全世界を意識するものではなく、[インバリアント カルチャ](xref:System.Globalization.CultureInfo.InvariantCulture)の書式設定規則、大文字/小文字の区別規則、文字列比較、並べ替え順序を使用できるアプリケーションにとって便利です。
 
    インバリアント モードを有効にするには、**ソリューション エクスプローラー**で (ソリューションではなく) プロジェクトを右クリックし、 **[SCD.csproj の編集]** または **[SCD.vbproj の編集]** を選択します。 次の強調表示された行をファイルに追加します。
 
-   [!code-xml[globalization-invariant-mode](~/samples/snippets/core/deploying/xml/invariant.csproj?highlight=6-8)]
+   [!code-xml[globalization-invariant-mode](./snippets/deploy-with-vs/xml/invariant.csproj?highlight=7-9)]
 
 1. アプリケーションのデバッグ ビルドを作成します。
 
@@ -110,7 +109,7 @@ Visual Studio を使用して、.NET Core アプリケーションを開発す�
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15.6 以前](#tab/vs156)
+# <a name="visual-studio-156-and-earlier"></a>[Visual Studio 15.6 以前](#tab/vs156)
 
 プログラムをデバッグしてテストしたら、アプリと共に展開するファイルをアプリの対象のプラットフォームごとに作成します。
 
@@ -120,7 +119,7 @@ Visual Studio でアプリを発行するには、次の操作を行います。
 
    1. **ソリューション エクスプローラー**で (ソリューションではなく) プロジェクトを右クリックし、 **[Edit SCD.csproj]\(SCD.csproj の編集\)** を選択します。
 
-   1. *csproj* ファイルの `<PropertyGroup>` セクションに、アプリの対象のプラットフォームを定義する `<RuntimeIdentifiers>` タグを作成し、対象とするプラットフォームごとにランタイム識別子 (RID) を指定します。 なお、RID の分離にはセミコロンを追加する必要があることに注意してください。 ランタイム識別子の一覧については、「[ランタイム識別子のカタログ](../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。
+   1. *csproj* ファイルの `<PropertyGroup>` セクションに、アプリの対象のプラットフォームを定義する `<RuntimeIdentifiers>` タグを作成し、対象とするプラットフォームごとにランタイム識別子 (RID) を指定します。 なお、RID を分離するにはセミコロンを追加する必要があります。 ランタイム識別子の一覧については、「[ランタイム識別子のカタログ](../rid-catalog.md)」 (ランタイム識別子のカタログ) を参照してください。
 
    たとえば、次の例は、アプリが 64 ビット Windows 10 オペレーティング システムおよび 64 ビット OS X バージョン 10.11 オペレーティング システムで実行されることを示します。
 
@@ -130,7 +129,7 @@ Visual Studio でアプリを発行するには、次の操作を行います。
    </PropertyGroup>
    ```
 
-   なお、`<RuntimeIdentifiers>` 要素は、*csproj* ファイルの任意の `<PropertyGroup>` に入れることが可能です。 *csproj* ファイルの完全なサンプルは、このセクションの後の部分で示しています。
+   `<RuntimeIdentifiers>` 要素は、*csproj* ファイルの任意の `<PropertyGroup>` に入れることが可能です。 *csproj* ファイルの完全なサンプルは、このセクションの後の部分で示しています。
 
 1. アプリケーションを発行します。
 
@@ -176,7 +175,7 @@ Visual Studio でアプリを発行するには、次の操作を行います。
 </Project>
 ```
 
-# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15.7 以降](#tab/vs157)
+# <a name="visual-studio-157-and-later"></a>[Visual Studio 15.7 以降](#tab/vs157)
 
 プログラムをデバッグしてテストしたら、アプリと共に展開するファイルをアプリの対象のプラットフォームごとに作成します。 これを行う場合、対象のプラットフォームごとに別のプロファイルも作成します。
 
@@ -189,12 +188,12 @@ Visual Studio でアプリを発行するには、次の操作を行います。
    プロファイルを既に作成している場合、そのプロファイルを右クリックし、 **[発行]** ダイアログを開きます (まだ開いていない場合)。 **[新しいプロファイル]** を選択します。
 
    **[発行先を選択]** ダイアログ ボックスが開きます。
-  
+
 1. Visual Studio によってアプリケーションが発行される場所を選択します。
 
    発行先のプラットフォームが 1 つだけの場合、 **[フォルダーを選択してください]** テキスト ボックスで既定値をそのまま選択しても問題ありません。これでアプリケーションのフレームワーク依存展開が *\<project-directory>\bin\Release\netcoreapp2.1\publish* ディレクトリに発行されます。
 
-   発行先のプラットフォームが複数になる場合、ターゲット プラットフォームを識別する文字列を追加します。 たとえば、文字列 "linux" をファイル パスに追加する場合、Visual Studio によって、アプリケーションのフレームワーク依存展開が *\<project-directory>\bin\Release\netcoreapp2.1\publish\linux* ディクショナリに発行されます。
+   発行先のプラットフォームが複数になる場合、ターゲット プラットフォームを識別する文字列を追加します。 たとえば、文字列 "linux" をファイル パスに追加する場合、Visual Studio によって、アプリケーションのフレームワーク依存展開が *\<project-directory>\bin\Release\netcoreapp2.1\publish\linux* ディレクトリに発行されます。
 
 1. **[発行]** ボタンの隣にあるドロップダウン リスト アイコンを選択し、 **[プロファイルの作成]** を選択してプロファイルを作成します。 次に、 **[プロファイルの作成]** ボタンを選択し、プロファイルを作成します。
 
@@ -210,7 +209,7 @@ Visual Studio でアプリを発行するには、次の操作を行います。
 
 1. プロファイルに名前を付けます。
 
-   1. **[アクション]** 、 **[プロファイル名の変更]** の順に選択し、プロファイルに名前を付けます。
+   1. **[アクション]**  >  **[プロファイル名の変更]** の順に選択し、プロファイルに名前を付けます。
 
    2. ターゲット プラットフォームを識別する名前をプロファイルに割り当て、* *[保存]* を選択します。
 
@@ -244,7 +243,7 @@ Visual Studio でアプリを発行するには、次の操作を行います。
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-https://go.microsoft.com/fwlink/?LinkID=208121. 
+https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
@@ -274,7 +273,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 
 このプロジェクトの完全な *csproj* ファイルを次に示します。
 
-# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15.6 以前](#tab/vs156)
+# <a name="visual-studio-156-and-earlier"></a>[Visual Studio 15.6 以前](#tab/vs156)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -289,7 +288,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 </Project>
 ```
 
-# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15.7 以降](#tab/vs157)
+# <a name="visual-studio-157-and-later"></a>[Visual Studio 15.7 以降](#tab/vs157)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

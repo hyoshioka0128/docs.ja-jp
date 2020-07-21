@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: be3f5985-b1e4-4036-8602-c16e8508d4af
 topic_type:
 - apiref
-ms.openlocfilehash: e5eb735acac73d694a0719c206bd22711a8c0333
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 1c9d9647084aa729817eeeb17ee3f5cd320c0d29
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437542"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491245"
 ---
 # <a name="imetadataimportgetinterfaceimplprops-method"></a>IMetaDataImport::GetInterfaceImplProps メソッド
-指定したメソッドを実装する <xref:System.Type> のメタデータトークンへのポインターと、そのメソッドを宣言するインターフェイスを取得します。
+指定したメソッドを実装するのメタデータトークンへのポインター <xref:System.Type> と、そのメソッドを宣言するインターフェイスを取得します。
   
 ## <a name="syntax"></a>構文  
   
@@ -45,11 +45,11 @@ HRESULT GetInterfaceImplProps (
  `ptkIface`  
  入出力実装されたメソッドを定義するインターフェイスを表すメタデータトークン。  
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
- `iImpl` の値を取得するには、 [EnumInterfaceImpls](imetadataimport-enuminterfaceimpls-method.md)メソッドを呼び出します。
- 
- たとえば、クラスの `mdTypeDef` トークン値が0x02000007 で、型にトークンが含まれている3つのインターフェイスを実装しているとします。 
+ の値を取得する `iImpl` には、 [EnumInterfaceImpls](imetadataimport-enuminterfaceimpls-method.md)メソッドを呼び出します。
+
+ たとえば、クラスの `mdTypeDef` トークン値が0x02000007 で、型がトークンを持つ3つのインターフェイスを実装しているとします。
 
 - 0x02000003 (TypeDef)
 - 0x0100000A (TypeRef)
@@ -68,20 +68,20 @@ HRESULT GetInterfaceImplProps (
 これは、トークンが4バイトの値であることを思い出してください。
 
 - 下位3バイトは、行番号 (RID) を保持します。
-- 上位バイトは、`mdtInterfaceImpl`のトークンの種類 (0x09) を保持します。
+- 上位バイトは、のトークンの種類 (0x09) を保持し `mdtInterfaceImpl` ます。
 
-`GetInterfaceImplProps` は、`iImpl` 引数で指定したトークンを持つ行に保持されている情報を返します。 
+`GetInterfaceImplProps`引数で指定したトークンを持つ行に保持されている情報を返し `iImpl` ます。
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: アセンブリ属性を設定する
+description: アセンブリ ID 属性、情報属性、アセンブリ マニフェスト属性、厳密な名前の属性など、.NET アセンブリのアセンブリ属性を設定できます。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], attributes
@@ -10,12 +11,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 0e4e2e595ed4f95511bd23ab0ed00139f71b2c8b
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: e3a077dcd1b62a4676a3ac6492a90e38c548e41b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740471"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378644"
 ---
 # <a name="set-assembly-attributes"></a>アセンブリ属性を設定する
 

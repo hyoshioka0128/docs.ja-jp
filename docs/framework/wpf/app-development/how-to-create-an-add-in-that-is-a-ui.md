@@ -12,85 +12,85 @@ helpviewer_keywords:
 - implementing UI add-ins [WPF]
 - pipeline segments [WPF], creating add-ins
 ms.assetid: 86375525-282b-4039-8352-8680051a10ea
-ms.openlocfilehash: b0e847061a30e93d36997ab603c52715e2730765
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
-ms.translationtype: MT
+ms.openlocfilehash: 339231031b9e57b9f00a2aeb6fbbde8ad66c1ad9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182637"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141030"
 ---
 # <a name="how-to-create-an-add-in-that-is-a-ui"></a>方法: UI であるアドインを作成する
-この例では、WPF スタンドアロンアプリケーションによってホストされる Windows Presentation Foundation (WPF) であるアドインを作成する方法を示します。  
+この例では、WPF スタンドアロン アプリケーションによってホストされる、Windows Presentation Foundation (WPF) であるアドインを作成する方法を示します。  
   
- アドインは、WPF ユーザーコントロールである UI です。 ユーザー コントロールの中身は 1 つのボタンであり、クリックすると、メッセージ ボックスを表示します。 WPF スタンドアロンアプリケーションは、アドイン UI をメインアプリケーションウィンドウのコンテンツとしてホストします。  
+ このアドインは、WPF ユーザー コントロール である UI です。 ユーザー コントロールの中身は 1 つのボタンであり、クリックすると、メッセージ ボックスを表示します。 WPF スタンドアロン アプリケーションでは、メイン アプリケーション ウィンドウのコンテンツとして、アドイン UI がホストされます。  
   
  **必須コンポーネント**  
   
- この例では、このシナリオを有効にする .NET Framework アドインモデルの WPF 拡張機能に焦点を当て、次のことを前提としています。  
+ この例では、このシナリオを実現する .NET Framework アドイン モデルの WPF 拡張機能に焦点を当てます。前提条件は、次のとおりです。  
   
-- パイプライン、アドイン、およびホスト開発を含む .NET Framework アドインモデルに関する知識。 これらの概念についてよく知らない場合は、「[アドインと拡張機能](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))」を参照してください。 パイプライン、アドイン、およびホストアプリケーションの実装方法を示すチュートリアルについては、「 [チュートリアル:拡張可能なアプリケーション](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb788290(v%3dvs.100))を作成する。  
+- パイプライン、アドイン、ホスト環境など、.NET Framework アドイン モデルの知識。 これらの概念については、「[アドインおよび拡張機能](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))」を参照してください。 パイプライン、アドイン、およびホスト アプリケーションの実装例を示すチュートリアルについては、「[チュートリアル: 拡張性のあるアプリケーションの作成](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb788290(v%3dvs.100))」を参照してください。  
   
-- .NET Framework アドインモデルに対する WPF 拡張機能に関する知識。 「 [WPF アドインの概要](wpf-add-ins-overview.md)」を参照してください。  
+- .NET Framework アドイン モデルに対する WPF 拡張機能の知識。 「[WPF のアドインの概要](wpf-add-ins-overview.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- WPF UI であるアドインを作成するには、各パイプラインセグメント、アドイン、およびホストアプリケーションに特定のコードが必要です。  
+ WPF UI であるアドインを作成するには、各パイプライン セグメント、アドイン、およびホスト アプリケーションに特定のコードが必要です。  
 
-<a name="Contract"></a>   
+<a name="Contract"></a>
 ## <a name="implementing-the-contract-pipeline-segment"></a>コントラクト パイプライン セグメントの実装
 
-アドインが UI の場合、アドインのコントラクトはを実装<xref:System.AddIn.Contract.INativeHandleContract>する必要があります。 この例`IWPFAddInContract`では、 <xref:System.AddIn.Contract.INativeHandleContract>次のコードに示すように、がを実装しています。  
+アドインが UI のときは、アドインのコントラクトで <xref:System.AddIn.Contract.INativeHandleContract> を実装する必要があります。 次のコードに示すように、この例では、`IWPFAddInContract` で <xref:System.AddIn.Contract.INativeHandleContract> が実装されています。  
   
 [!code-csharp[SimpleAddInIsAUISample#ContractCode](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/Contracts/IWPFAddInContract.cs#contractcode)]
 [!code-vb[SimpleAddInIsAUISample#ContractCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInIsAUISample/VisualBasic/Contracts/IWPFAddInContract.vb#contractcode)]
 
-<a name="AddInViewPipeline"></a>   
+<a name="AddInViewPipeline"></a>
 ## <a name="implementing-the-add-in-view-pipeline-segment"></a>アドイン ビュー パイプライン セグメントの実装
 
-アドインは<xref:System.Windows.FrameworkElement>型のサブクラスとして実装されるため、アドインビューでもサブクラス<xref:System.Windows.FrameworkElement>を指定する必要があります。 次のコードは、 `WPFAddInView`クラスとして実装されているコントラクトのアドインビューを示しています。  
+アドインは <xref:System.Windows.FrameworkElement> 型のサブクラスとして実装されるため、アドイン ビューも <xref:System.Windows.FrameworkElement> のサブクラスである必要があります。 次のコードでは、`WPFAddInView` クラスとして実装されるコントラクトのアドイン ビューを示します。  
   
 [!code-csharp[SimpleAddInIsAUISample#AddInViewCode](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/AddInViews/WPFAddInView.cs#addinviewcode)]  
 [!code-vb[SimpleAddInIsAUISample#AddInViewCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInIsAUISample/VisualBasic/AddInViews/WPFAddInView.vb#AddInViewCode)]  
   
-ここでは、アドインビューはから<xref:System.Windows.Controls.UserControl>派生しています。 そのため、アドインの UI もから<xref:System.Windows.Controls.UserControl>派生する必要があります。  
+ここでは、アドイン ビューは <xref:System.Windows.Controls.UserControl> から派生します。 したがって、アドイン UI も <xref:System.Windows.Controls.UserControl> から派生する必要があります。  
   
 <a name="AddInSideAdapter"></a>
 ## <a name="implementing-the-add-in-side-adapter-pipeline-segment"></a>アドイン側アダプター パイプライン セグメントの実装
 
-コントラクトが<xref:System.AddIn.Contract.INativeHandleContract>の場合、アドイン<xref:System.Windows.FrameworkElement>は (アドインビューのパイプラインセグメントで指定されている) です。 したがって、 <xref:System.Windows.FrameworkElement>分離境界を越える<xref:System.AddIn.Contract.INativeHandleContract>前に、をに変換する必要があります。 この作業は、次のコードに示すように、を呼び<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>出すことによってアドイン側のアダプターによって実行されます。  
+コントラクトは <xref:System.AddIn.Contract.INativeHandleContract> ですが、アドインは <xref:System.Windows.FrameworkElement> です (アドイン ビュー パイプライン セグメントによって指定されたように)。 したがって、<xref:System.Windows.FrameworkElement> は、分離境界を越える前に <xref:System.AddIn.Contract.INativeHandleContract> に変換される必要があります。 この作業は、次のコードで示されているように、アドイン側のアダプターで <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> を呼び出すことによって行われます。  
   
 [!code-csharp[SimpleAddInIsAUISample#AddInSideAdapterCode](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/AddInSideAdapters/WPFAddIn_ViewToContractAddInSideAdapter.cs#addinsideadaptercode)]  
 [!code-vb[SimpleAddInIsAUISample#AddInSideAdapterCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInIsAUISample/VisualBasic/AddInSideAdapters/WPFAddIn_ViewToContractAddInSideAdapter.vb#addinsideadaptercode)]
 
-アドインが ui を返すアドインモデル (「 [ui を返すアドインを作成](how-to-create-an-add-in-that-returns-a-ui.md)する」を参照) では、アドインアダプターはを<xref:System.Windows.FrameworkElement>呼び出し<xref:System.AddIn.Contract.INativeHandleContract> <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>て、をに変換します。 <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>このモデルでも呼び出される必要がありますが、呼び出すコードを記述するメソッドを実装する必要があります。 これを行うには<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> 、を呼び出すコードがを<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>必要<xref:System.AddIn.Contract.INativeHandleContract>とする場合<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>に、を呼び出すコードをオーバーライドして実装します。 この場合、呼び出し元はホスト側のアダプターであり、これについては、後で説明します。  
+アドインで UI が返されるアドイン モデルでは (「[UI を返すアドインを作成する](how-to-create-an-add-in-that-returns-a-ui.md)」を参照)、アドイン アダプターで <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> を呼び出すことによって、<xref:System.Windows.FrameworkElement> から <xref:System.AddIn.Contract.INativeHandleContract> に変換されます。 このモデルでは、<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> も呼び出す必要がありますが、これを呼び出すコードを記述するメソッドを実装する必要があります。 このためには、<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> を呼び出すコードで <xref:System.AddIn.Contract.INativeHandleContract> が予期されている場合は、<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> をオーバーライドして、<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A> を呼び出すコードを実装します。 この場合、呼び出し元はホスト側のアダプターであり、これについては、後で説明します。  
   
 > [!NOTE]
-> また、このモデルで<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>をオーバーライドして、ホストアプリケーション ui とアドイン ui 間のタブ移動を有効にする必要もあります。 詳細については、「Wpf アドインの[概要](wpf-add-ins-overview.md)」の「wpf アドインの制限事項」を参照してください。  
+> このモデルでは、<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> もオーバーライドして、ホスト アプリケーション UI とアドイン UI の間を Tab キーで移動できるようにする必要があります。 詳細については、「[WPF アドインの概要](wpf-add-ins-overview.md)」の「WPF アドインの制約」を参照してください。  
   
-アドイン側アダプターはから<xref:System.AddIn.Contract.INativeHandleContract>派生するインターフェイスを実装するため、を実装<xref:System.AddIn.Contract.INativeHandleContract.GetHandle%2A>する必要もあります。ただし、をオーバーライドし<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>た場合は無視されます。  
+アドイン側のアダプターでは <xref:System.AddIn.Contract.INativeHandleContract> から派生するインターフェイスを実装するため、<xref:System.AddIn.Contract.INativeHandleContract.GetHandle%2A> を実装する必要もありますが、<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> がオーバーライドされるときは、これは無視されます。  
   
-<a name="HostViewPipeline"></a>   
+<a name="HostViewPipeline"></a>
 ## <a name="implementing-the-host-view-pipeline-segment"></a>ホスト ビュー パイプライン セグメントの実装
 
-このモデルでは、ホストアプリケーションは通常、ホストビューが<xref:System.Windows.FrameworkElement>サブクラスであることを想定しています。 が分離境界を<xref:System.AddIn.Contract.INativeHandleContract> <xref:System.AddIn.Contract.INativeHandleContract>越え<xref:System.Windows.FrameworkElement>た後、ホスト側アダプターはをに変換する必要があります。 メソッドは、 <xref:System.Windows.FrameworkElement>を取得するためにホストアプリケーションによって呼び出されないため、ホストビューはそれ<xref:System.Windows.FrameworkElement>を含むを "返す" 必要があります。 そのため、ホストビューは、などの他の<xref:System.Windows.FrameworkElement> ui を<xref:System.Windows.Controls.UserControl>含むことができるのサブクラスから派生する必要があります。 次のコードは、 `WPFAddInHostView`クラスとして実装されているコントラクトのホストビューを示しています。  
+このモデルのホスト アプリケーションでは、通常、ホスト ビューが <xref:System.Windows.FrameworkElement> サブクラスであることが予期されています。 ホスト側アダプターでは、<xref:System.AddIn.Contract.INativeHandleContract> が分離境界を越えた後で、<xref:System.AddIn.Contract.INativeHandleContract> を <xref:System.Windows.FrameworkElement> に変換する必要があります。 <xref:System.Windows.FrameworkElement> を取得するためにホスト アプリケーションによってメソッドは呼び出されていないため、ホスト ビューでは、<xref:System.Windows.FrameworkElement> を格納することによって、"返す" 必要があります。 したがって、ホスト ビューは、<xref:System.Windows.Controls.UserControl> など、他の UI を格納できる <xref:System.Windows.FrameworkElement> のサブクラスから派生する必要があります。 次のコードでは、`WPFAddInHostView` クラスとして実装されるコントラクトのホスト ビューを示します。  
 
 [!code-csharp[WPFAddInHostView class](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/HostViews/WPFAddInHostView.cs#HostViewCode)]
 [!code-vb[WPFAddInHostView class](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInIsAUISample/VisualBasic/HostViews/WPFAddInHostView.vb#HostViewCode)]
 
-<a name="HostSideAdapter"></a>   
+<a name="HostSideAdapter"></a>
 ## <a name="implementing-the-host-side-adapter-pipeline-segment"></a>ホスト側アダプター パイプライン セグメントの実装
 
-コントラクトが<xref:System.AddIn.Contract.INativeHandleContract>の場合、ホストアプリケーションは (ホストビュー <xref:System.Windows.Controls.UserControl>で指定されているように) を必要とします。 そのため、分離境界を越え<xref:System.Windows.FrameworkElement>た後にをに変換してから、ホストビュー (から<xref:System.Windows.Controls.UserControl>派生) のコンテンツとして設定する必要があります。<xref:System.AddIn.Contract.INativeHandleContract>  
+コントラクトは <xref:System.AddIn.Contract.INativeHandleContract> ですが、ホスト アプリケーションでは <xref:System.Windows.Controls.UserControl> が予期されています (ホスト ビューによって指定されたように)。 したがって、<xref:System.AddIn.Contract.INativeHandleContract> は、分離境界を越えた後、ホスト ビューのコンテンツ (<xref:System.Windows.Controls.UserControl> から派生) として設定される前に、<xref:System.Windows.FrameworkElement> に変換される必要があります。  
   
 この作業は、次のコードに示されているように、ホスト側アダプターによって行われます。  
 
 [!code-csharp[Host-side adapter](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/HostSideAdapters/WPFAddIn_ContractToViewHostSideAdapter.cs#HostSideAdapterCode)]
 [!code-vb[Host-side adapter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInIsAUISample/VisualBasic/HostSideAdapters/WPFAddIn_ContractToViewHostSideAdapter.vb#HostSideAdapterCode)]
 
-ご覧のように、ホスト側アダプターは、アドイン側<xref:System.AddIn.Contract.INativeHandleContract>アダプターの<xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A>メソッドを呼び出すことによってを取得します (これ<xref:System.AddIn.Contract.INativeHandleContract>はが分離境界を越える点です)。  
+このことからもわかるように、ホスト側のアダプターは、アドイン側のアダプターの <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> メソッドを呼び出すことによって、<xref:System.AddIn.Contract.INativeHandleContract> を取得します (ここが <xref:System.AddIn.Contract.INativeHandleContract> が分離境界を越えるポイントです)。  
   
-次に、を呼び出し<xref:System.AddIn.Contract.INativeHandleContract> <xref:System.Windows.FrameworkElement> <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>て、をに変換します。 最後に<xref:System.Windows.FrameworkElement> 、はホストビューのコンテンツとして設定されます。  
+その後、ホスト側のアダプターでは、<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> を呼び出すことによって、<xref:System.AddIn.Contract.INativeHandleContract> が <xref:System.Windows.FrameworkElement> に変換されます。 最後に、<xref:System.Windows.FrameworkElement> がホスト ビューのコンテンツとして設定されます。  
   
-<a name="AddIn"></a>   
+<a name="AddIn"></a>
 ## <a name="implementing-the-add-in"></a>アドインの実装
 
 アドイン側アダプターとアドイン ビューが用意できると、次のコードに示されているように、アドイン ビューから派生することでアドインを実装できます。  
@@ -98,23 +98,23 @@ ms.locfileid: "71182637"
 [!code-csharp[Add-in implementation](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/WPFAddIn1/AddInUI.xaml.cs#AddInCodeBehind)]
 [!code-vb[Add-in implementation](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInIsAUISample/VisualBasic/WPFAddIn1/AddInUI.xaml.vb#AddInCodeBehind)]
 
-この例では、このモデルの1つの興味深い利点を確認できます。アドインの開発者は、アドインとアドインの UI の両方ではなく、アドインのみを実装する必要があります (UI でもあるため)。  
+この例から、このモデルの興味深い利点がわかります。つまり、アドイン開発者は、アドインだけを実装すればよく (これが UI でもあるため)、アドイン クラスとアドイン UI の両方を実装する必要はありません。  
   
 <a name="HostApp"></a>
 ## <a name="implementing-the-host-application"></a>ホスト アプリケーションの実装
 
-ホスト側アダプターとホストビューを作成すると、ホストアプリケーションは .NET Framework アドインモデルを使用して、パイプラインを開き、アドインのホストビューを取得できます。 これらの手順を次のコードに示します。  
+ホスト側のアダプターとホスト ビューが作成されると、ホスト アプリケーションは .NET Framework アドイン モデルを使用して、パイプラインを開き、アドインのホスト ビューを取得できます。 これらの手順を次のコードに示します。  
 
 [!code-csharp[Acquiring a host view of the add-in](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInIsAUISample/CSharp/Host/MainWindow.xaml.cs#GetUICode)]
 [!code-vb[Acquiring a host view of the add-in](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInIsAUISample/VisualBasic/Host/MainWindow.xaml.vb#GetUICode)]
 
-ホストアプリケーションは、一般的な .NET Framework アドインモデルコードを使用してアドインをアクティブ化します。これにより、ホストビューが暗黙的にホストアプリケーションに返されます。 その後、ホストアプリケーションでは、 <xref:System.Windows.Controls.UserControl> <xref:System.Windows.Controls.Grid>からのホストビュー () が表示されます。  
+ホスト アプリケーションでは、一般的な .NET Framework アドイン モデル コードを使用して、アドインをアクティブ化し、このアドインは、ホスト ビューをホスト アプリケーションに暗黙的に返します。 その後、ホスト アプリケーションはホスト ビュー (<xref:System.Windows.Controls.UserControl>) を <xref:System.Windows.Controls.Grid> から表示します。  
   
- アドインの UI との対話処理のコードは、アドインのアプリケーションドメインで実行されます。 このような対話には、次のようなものがあります。  
+ アドイン UI との対話を処理するコードは、アドインのアプリケーション ドメインで実行します。 このような対話には、次のようなものがあります。  
   
-- イベントの<xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.Primitives.ButtonBase.Click>処理。  
+- <xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントの処理。  
   
-- を表示<xref:System.Windows.MessageBox>しています。  
+- <xref:System.Windows.MessageBox> の表示。  
   
  このアクティビティは、ホスト アプリケーションから完全に分離されています。  
   

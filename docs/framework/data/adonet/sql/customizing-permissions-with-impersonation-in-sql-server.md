@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
 ms.openlocfilehash: 0d5e62019ae8806a7a182919fa06819a08d01301
 ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73040445"
@@ -54,16 +54,16 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
 ### <a name="using-execute-as-with-revert"></a>REVERT での EXECUTE AS の使用  
  Transact-SQL REVERT ステートメントを使用して、元の実行コンテキストに戻ることができます。  
   
- 省略可能な句 (NO REVERT COOKIE = @variableName) を使用すると、@variableName 変数に正しい値が含まれている場合に、実行コンテキストを呼び出し元に切り替えることができます。 これにより、接続プールが使用されている環境では実行コンテキストを呼び出し元に切り替えることができます。 @variableName の値は EXECUTE AS ステートメントの呼び出し元にのみ認識されるので、呼び出し元は、アプリケーションを呼び出すエンドユーザーが実行コンテキストを変更できないことを保証できます。 接続は、閉じられるとプールに返されます。 ADO.NET での接続プールの詳細については、「 [SQL Server 接続プール」 (ADO.NET)](../sql-server-connection-pooling.md)を参照してください。  
+ オプションの句である WITH NO REVERT COOKIE = @variableName を使用すると、@variableName 変数に正しい値が含まれていれば、実行コンテキストを呼び出し元に切り替えることができます。 これにより、接続プールが使用されている環境では実行コンテキストを呼び出し元に切り替えることができます。 @variableName の値は、EXECUTE AS ステートメントの呼び出し元のみが把握しているため、実行コンテキストがアプリケーションを呼び出したエンド ユーザーによって変更されることはありません。 接続は、閉じられるとプールに返されます。 ADO.NET での接続プールについて詳しくは、「[SQL Server の接続プール (ADO.NET)](../sql-server-connection-pooling.md)」をご覧ください。  
   
 ### <a name="specifying-the-execution-context"></a>実行コンテキストの指定  
  EXECUTE AS は、ユーザーを指定するだけでなく、次のキーワードを指定して使用することもできます。  
   
-- CALLER : 既定で、CALLER として実行されます。他にオプションが指定されていない場合、プロシージャは呼び出し元のセキュリティ コンテキストで実行されます。  
+- CALLER :  既定で、CALLER として実行されます。他にオプションが指定されていない場合、プロシージャは呼び出し元のセキュリティ コンテキストで実行されます。  
   
-- OWNER : OWNER として実行すると、プロシージャがプロシージャ所有者のコンテキストで実行されます。 `dbo` すなわちデータベース所有者が所有するスキーマでプロシージャが作成されている場合、プロシージャは権限無制限で実行されます。  
+- OWNER :  OWNER として実行すると、プロシージャがプロシージャ所有者のコンテキストで実行されます。 `dbo` すなわちデータベース所有者が所有するスキーマでプロシージャが作成されている場合、プロシージャは権限無制限で実行されます。  
   
-- SELF : SELF として実行すると、ストアド プロシージャの作成者のセキュリティ コンテキストで実行されます。 これは、指定されたユーザーとして実行することと同じです。指定されたユーザーとは、プロシージャを作成または変更した人物です。  
+- SELF :  SELF として実行すると、ストアド プロシージャの作成者のセキュリティ コンテキストで実行されます。 これは、指定されたユーザーとして実行することと同じです。指定されたユーザーとは、プロシージャを作成または変更した人物です。  
   
 ## <a name="see-also"></a>関連項目
 

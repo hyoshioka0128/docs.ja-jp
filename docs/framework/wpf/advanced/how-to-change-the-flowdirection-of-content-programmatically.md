@@ -10,21 +10,21 @@ helpviewer_keywords:
 ms.assetid: 02f5a8ba-f8c0-4e5a-84b9-4c5bf12922a2
 ms.openlocfilehash: ec159ed0efce8b5514788331e8715a55e7a8a638
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61776559"
 ---
 # <a name="how-to-change-the-flowdirection-of-content-programmatically"></a>方法: プログラムによってコンテンツの FlowDirection を変更する
-この例は、プログラムで変更する方法を示します、<xref:System.Windows.FrameworkElement.FlowDirection%2A>のプロパティを<xref:System.Windows.Controls.FlowDocumentReader>します。  
+この例では、<xref:System.Windows.Controls.FlowDocumentReader> の <xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティをプログラムで変更する方法を示します。  
   
 ## <a name="example"></a>例  
- 2 つ<xref:System.Windows.Controls.Button>要素が作成可能な値のいずれかを表す各<xref:System.Windows.FlowDirection>します。 内容に関連付けられているプロパティ値を適用するボタンがクリックされたときに、<xref:System.Windows.Controls.FlowDocumentReader>という`tf1`します。  プロパティの値に書き込まれます、<xref:System.Windows.Controls.TextBlock>という`txt1`します。  
+ 2 つの <xref:System.Windows.Controls.Button> 要素が作成され、それぞれが <xref:System.Windows.FlowDirection> の使用できる値の 1 つを表します。 ボタンがクリックされると、関連付けられているプロパティ値が `tf1` という名前の <xref:System.Windows.Controls.FlowDocumentReader> のコンテンツに適用されます。  プロパティ値は、`txt1` という名前の <xref:System.Windows.Controls.TextBlock> にも書き込まれます。  
   
  [!code-xaml[FlowDirectionSnippets#_FlowDirectionXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDirectionSnippets/CSharp/Window1.xaml#_flowdirectionxaml)]  
   
 ## <a name="example"></a>例  
- 上記で定義されたボタンのクリックに関連付けられているイベントで処理をC#分離コード ファイル。  
+ 上で定義されているボタン クリックに関連付けられているイベントは、C# 分離コード ファイルで処理されます。  
   
  [!code-csharp[FlowDirectionSnippets#_FlowDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDirectionSnippets/CSharp/Window1.xaml.cs#_flowdirection)]
  [!code-vb[FlowDirectionSnippets#_FlowDirection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDirectionSnippets/VisualBasic/Window1.xaml.vb#_flowdirection)]

@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: fc3784a7-c9e8-4e2b-909a-7af37cef9b43
 ms.openlocfilehash: 45f5b054b946e746e490c64b2b051bec80fc6b17
 ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73459334"
@@ -17,15 +17,15 @@ ms.locfileid: "73459334"
 # <a name="listview"></a>ListView
 <xref:System.Windows.Controls.ListView> コントロールには、さまざまなレイアウトまたはビューにデータ項目のセットを表示するためのインフラストラクチャが用意されています。  
   
- 次の図は、<xref:System.Windows.Controls.ListView>を示しています。  
+ 次の図は、<xref:System.Windows.Controls.ListView> を示しています。  
   
- ![GridView の出力を含む ListView を示すスクリーンショット。](./media/gridview-overview/listview-gridview-output.jpg)  
+ ![GridView の出力が表示された ListView のスクリーンショット。](./media/gridview-overview/listview-gridview-output.jpg)  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [概要](listview-overviews.md)  
  [方法トピック](listview-how-to-topics.md)  
   
-## <a name="reference"></a>辞書／辞典／その他  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.ListView>  
   <xref:System.Windows.Controls.ListViewItem>  
   <xref:System.Windows.Controls.GridView>  

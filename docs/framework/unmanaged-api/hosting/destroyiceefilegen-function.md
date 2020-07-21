@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: dc1e2235-e721-4cb2-a0b8-6b0c030d7bab
 topic_type:
 - apiref
-ms.openlocfilehash: 4eb878b61b72378bc6870af7f2cd09f0b6943b13
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ff7e7b299d185b8db263d2076c1e075b87b487fc
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136499"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616399"
 ---
 # <a name="destroyiceefilegen-function"></a>DestroyICeeFileGen 関数
-[ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md)オブジェクトを破棄します。  
+[ICeeFileGen](iceefilegen-class.md)オブジェクトを破棄します。  
   
  この関数は .NET Framework 4 で非推奨とされました。  
   
@@ -38,23 +38,23 @@ HRESULT DestroyICeeFileGen (
   
 ## <a name="parameters"></a>パラメーター  
  `ceeFileGen`  
- から破棄する `ICeeFileGen` オブジェクト。  
+ から`ICeeFileGen`破棄するオブジェクト。  
   
 ## <a name="return-value"></a>戻り値  
  このメソッドは、標準の COM エラーコードを返します。  
   
-## <a name="remarks"></a>Remarks  
- `DestroyICeeFileGen` は、 [CreateICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/createiceefilegen-function.md)関数によって作成された `ICeeFileGen` オブジェクトを破棄します。  
+## <a name="remarks"></a>解説  
+ `DestroyICeeFileGen``ICeeFileGen` [CreateICeeFileGen](createiceefilegen-function.md)関数によって作成されたオブジェクトを破棄します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** ICeeFileGen  
   
  **ライブラリ:** MSCorPE  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [非推奨の CLR ホスト関数](deprecated-clr-hosting-functions.md)

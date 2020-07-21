@@ -2,12 +2,12 @@
 title: 本文要素別のディスパッチ
 ms.date: 03/30/2017
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-ms.openlocfilehash: 307d6bbbab118392ef079942eae367a4c6792c22
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 19913cdaa47d766f62a313e216a653ac69633a99
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74712029"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594700"
 ---
 # <a name="dispatch-by-body-element"></a>本文要素別のディスパッチ
 このサンプルでは、入力メッセージを操作に割り当てるための代替アルゴリズムを実装する方法を示します。  
@@ -59,7 +59,7 @@ public string SelectOperation(ref System.ServiceModel.Channels.Message message)
  <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A>、またはメッセージ本文のコンテンツへのアクセスを提供する他のメソッドを使用してメッセージ本文にアクセスすると、そのメッセージは "read" とマークされます。つまり、メッセージは以降の処理に対して無効になります。 したがって、操作セレクタは次のコードに示すメソッドを使用して入力メッセージのコピーを作成します。 リーダーの位置は検査中には変更されていないので、新しく作成されたメッセージはこれを参照できます。入力メッセージのプロパティとヘッダーもこの新しいメッセージにコピーされるので、その結果、元のメッセージの完全な複製ができあがります。  
   
 ```csharp
-private Message CreateMessageCopy(Message message,   
+private Message CreateMessageCopy(Message message,
                                      XmlDictionaryReader body)  
 {  
     Message copy = Message.CreateMessage(message.Version,message.Headers.Action,body);  
@@ -82,7 +82,7 @@ private Message CreateMessageCopy(Message message,
 [AttributeUsage(AttributeTargets.Class|AttributeTargets.Interface)]  
 class DispatchByBodyElementBehaviorAttribute : Attribute, IContractBehavior  
 {  
-    // public void AddBindingParameters(...)   
+    // public void AddBindingParameters(...)
     // public void ApplyClientBehavior(...)  
     // public void Validate(...)  
 ```  
@@ -96,22 +96,22 @@ class DispatchByBodyElementBehaviorAttribute : Attribute, IContractBehavior
 ```csharp
 public void ApplyDispatchBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.DispatchRuntime dispatchRuntime)  
 {  
-    Dictionary<XmlQualifiedName,string> dispatchDictionary =   
+    Dictionary<XmlQualifiedName,string> dispatchDictionary =
                      new Dictionary<XmlQualifiedName,string>();  
-    foreach( OperationDescription operationDescription in   
+    foreach( OperationDescription operationDescription in
                               contractDescription.Operations )  
     {  
-        DispatchBodyElementAttribute dispatchBodyElement =   
+        DispatchBodyElementAttribute dispatchBodyElement =
    operationDescription.Behaviors.Find<DispatchBodyElementAttribute>();  
         if ( dispatchBodyElement != null )  
         {  
-             dispatchDictionary.Add(dispatchBodyElement.QName,   
+             dispatchDictionary.Add(dispatchBodyElement.QName,
                               operationDescription.Name);  
         }  
     }  
-    dispatchRuntime.OperationSelector =   
+    dispatchRuntime.OperationSelector =
             new DispatchByBodyElementOperationSelector(  
-               dispatchDictionary,   
+               dispatchDictionary,
                dispatchRuntime.UnhandledDispatchOperation.Name);  
     }  
 }  
@@ -120,19 +120,19 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
 ## <a name="implementing-the-service"></a>サービスの実装  
  このサンプルに実装されている動作は、通信回線からのメッセージの解釈方法とディスパッチ方法に直接影響します。これはサービス コントラクトの機能です。 そのため、この動作を使用することを選択したサービス実装では、この動作をサービス コントラクト レベルで宣言する必要があります。  
   
- サンプルプロジェクトサービスは、`DispatchByBodyElementBehaviorAttribute` コントラクト動作を `IDispatchedByBody` サービスコントラクトに適用し、2つの操作のそれぞれに `OperationForBodyA()` と、`DispatchBodyElementAttribute` 操作の動作を `OperationForBodyB()` します。 このコントラクトを実装しているサービスのサービス ホストが開かれると、このメタデータは前で説明したようにディスパッチャ ビルダによって取得されます。  
+ サンプルプロジェクトサービスは、 `DispatchByBodyElementBehaviorAttribute` コントラクトの動作を `IDispatchedByBody` サービスコントラクトに適用し、2つの操作のそれぞれに操作の動作をラベル `OperationForBodyA()` 付けし `OperationForBodyB()` `DispatchBodyElementAttribute` ます。 このコントラクトを実装しているサービスのサービス ホストが開かれると、このメタデータは前で説明したようにディスパッチャ ビルダによって取得されます。  
   
- 操作セレクタはメッセージ本文の要素のみに基づいてディスパッチし、"Action" を無視するので、返された応答の "Action" ヘッダーをチェックしないようランタイムに通知する必要があります。これを行うには、ワイルドカード "*" を `ReplyAction` の <xref:System.ServiceModel.OperationContractAttribute> プロパティに割り当てます。 さらに、"Action" プロパティがワイルドカード "\*" に設定されている既定の操作が必要です。 既定の操作は、ディスパッチできず、`DispatchBodyElementAttribute` を持たないすべてのメッセージを受信します。  
+ 操作セレクタはメッセージ本文の要素のみに基づいてディスパッチし、"Action" を無視するので、返された応答の "Action" ヘッダーをチェックしないようランタイムに通知する必要があります。これを行うには、ワイルドカード "*" を `ReplyAction` の <xref:System.ServiceModel.OperationContractAttribute> プロパティに割り当てます。 さらに、"Action" プロパティがワイルドカード "" に設定されている既定の操作が必要です \* 。 既定の操作は、ディスパッチできず、`DispatchBodyElementAttribute` を持たないすべてのメッセージを受信します。  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),  
                             DispatchByBodyElementBehavior]  
 public interface IDispatchedByBody  
 {  
-    [OperationContract(ReplyAction="*"),   
+    [OperationContract(ReplyAction="*"),
      DispatchBodyElement("bodyA","http://tempuri.org")]  
     Message OperationForBodyA(Message msg);  
-    [OperationContract(ReplyAction = "*"),   
+    [OperationContract(ReplyAction = "*"),
      DispatchBodyElement("bodyB", "http://tempuri.org")]  
     Message OperationForBodyB(Message msg);  
     [OperationContract(Action="*", ReplyAction="*")]  
@@ -164,17 +164,17 @@ public interface IDispatchedByBody
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには  
   
-1. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。  
+1. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。  
   
-2. ソリューションをビルドするには、「 [Windows Communication Foundation サンプルのビルド](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2. ソリューションをビルドするには、「 [Windows Communication Foundation サンプルのビルド](building-the-samples.md)」の手順に従います。  
   
-3. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+3. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](running-the-samples.md)」の手順に従います。  
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\AdvancedDispatchByBody`  

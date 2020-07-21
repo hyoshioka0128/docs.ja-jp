@@ -1,17 +1,17 @@
 ---
-title: 引数 '<argumentname>' 範囲 0 ~ 99 でなければなりません
+title: 引数 '<argumentname>' は 0 から 99 までの範囲内になければなりません。
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_Range0to99_1
 ms.assetid: d9d9a15e-c5ee-4104-9504-b48a4a191415
-ms.openlocfilehash: a582559c4914e6c05f1aef2a78a49adbb244aa59
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5713ab586aa0fc69a520ab75ff285886f9a24e8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024543"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412794"
 ---
-# <a name="argument-argumentname-must-be-within-the-range-0-to-99"></a>引数 '\<argumentname >' 範囲 0 ~ 99 でなければなりません
+# <a name="argument-argumentname-must-be-within-the-range-0-to-99"></a>引数 '\<argumentname>' は 0 から 99 までの範囲内になければなりません。
 引数は、0 ~ 99 の範囲外であるため無効です。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -22,4 +22,4 @@ ms.locfileid: "62024543"
   
 ## <a name="see-also"></a>関連項目
 
-- [引数の値渡しと参照渡し](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [引数の値渡しと参照渡し](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

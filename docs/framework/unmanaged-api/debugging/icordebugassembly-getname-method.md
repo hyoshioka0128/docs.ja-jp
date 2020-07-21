@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cdeda721-b214-4503-a291-c70b68b5f36b
 topic_type:
 - apiref
-ms.openlocfilehash: 5e3619d12b9377a8482254703d3d97d0348a013b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: daf5319f5d57f44cb20ce9f28d3c7b84c7015ff6
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127168"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894915"
 ---
 # <a name="icordebugassemblygetname-method"></a>ICorDebugAssembly::GetName メソッド
-この `ICorDebugAssembly` インスタンスが表すアセンブリの名前を取得します。  
+この`ICorDebugAssembly`インスタンスが表すアセンブリの名前を取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -45,14 +45,14 @@ HRESULT GetName (
  `szName`  
  入出力名前を格納する配列。  
   
-## <a name="remarks"></a>Remarks  
- `GetName` メソッドは、アセンブリの完全なパスとファイル名を返します。  
+## <a name="remarks"></a>解説  
+ メソッド`GetName`は、アセンブリの完全なパスとファイル名を返します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

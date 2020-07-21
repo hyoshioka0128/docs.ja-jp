@@ -2,12 +2,12 @@
 title: 文字列補間 - C# チュートリアル
 description: このチュートリアルでは、C# で文字列補間機能を使用して、大きい文字列で書式設定された計算式の結果を含める方法を示します。
 ms.date: 10/23/2018
-ms.openlocfilehash: 53b9afa4c5ccdcb1f18d2947981aee6571b73134
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d1b78670361e8b333499d12b68c0364ad9e40a85
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120120"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796055"
 ---
 # <a name="use-string-interpolation-to-construct-formatted-strings"></a>文字列補間を使用し、書式設定された文字列を作成する
 
@@ -46,7 +46,7 @@ Console.WriteLine($"Hello, {name}. It's a pleasure to meet you!");
 
 前のセクションでは、文字列補間を使用して、1 つの文字列内に別の文字列を挿入しましたが、 補間式の結果を任意のデータ型にすることもできます。 挿入文字列にさまざまなデータ型の値を含めてみましょう。
 
-次の例では、最初に、`Name` [プロパティ](../../properties.md)と `ToString` [メソッド](../../methods.md)を持つ[クラス](../../programming-guide/classes-and-structs/classes.md) データ型 `Vegetable` を定義します。このメソッドは、<xref:System.Object.ToString?displayProperty=nameWithType> メソッドの動作を[オーバーライド](../../language-reference/keywords/override.md)します。 [`public` アクセス修飾子](../../language-reference/keywords/public.md)により、そのメソッドは、すべてのクライアント コードで `Vegetable` インスタンスの文字列表現を取得するために使用できるようになります。 この例の `Vegetable.ToString` メソッドでは、`Vegetable` [コンストラクター](../../programming-guide/classes-and-structs/constructors.md)で初期化される `Name` プロパティの値を返します。
+次の例では、最初に、`Name` [プロパティ](../../properties.md)と `ToString` [メソッド](../../methods.md)を持つ[クラス](../../programming-guide/classes-and-structs/classes.md) データ型 `Vegetable` を定義します。このメソッドは、<xref:System.Object.ToString?displayProperty=nameWithType> メソッドのビヘイビアーを[オーバーライド](../../language-reference/keywords/override.md)します。 [`public` アクセス修飾子](../../language-reference/keywords/public.md)により、そのメソッドは、すべてのクライアント コードで `Vegetable` インスタンスの文字列表現を取得するために使用できるようになります。 この例の `Vegetable.ToString` メソッドでは、`Vegetable` [コンストラクター](../../programming-guide/classes-and-structs/constructors.md)で初期化される `Name` プロパティの値を返します。
 
 ```csharp
 public Vegetable(string name) => Name = name;
@@ -58,7 +58,7 @@ public Vegetable(string name) => Name = name;
 var item = new Vegetable("eggplant");
 ```
 
-最後に、`item` 変数を挿入文字列に含めます。ここには、<xref:System.DateTime> 値、<xref:System.Decimal> 値、`Unit` [列挙](../../programming-guide/enumeration-types.md)値も含まれます。 エディターのすべての C# コードを以下のコードに置き換えてから、`dotnet run` コマンドを使用して実行します。
+最後に、`item` 変数を挿入文字列に含めます。ここには、<xref:System.DateTime> 値、<xref:System.Decimal> 値、`Unit` [列挙](../../language-reference/builtin-types/enum.md)値も含まれます。 エディターのすべての C# コードを以下のコードに置き換えてから、`dotnet run` コマンドを使用して実行します。
 
 ```csharp
 using System;
@@ -165,4 +165,4 @@ Console.WriteLine($"[{DateTime.Now,-20:d}] Hour [{DateTime.Now,-10:HH}] [{1063.3
 
 文字列補間のチュートリアルはこれで終了です。
 
-詳細については、[文字列補間](../../language-reference/tokens/interpolated.md)に関するトピックと「[C# における文字列補間](../../tutorials/string-interpolation.md)」チュートリアルを参照してください。
+詳細については、[文字列補間](../../language-reference/tokens/interpolated.md)に関するトピックと「[C# における文字列補間](../string-interpolation.md)」チュートリアルを参照してください。

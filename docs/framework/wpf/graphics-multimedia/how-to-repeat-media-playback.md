@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 02ab486d-c6b6-4918-9edd-45a12aca4683
 ms.openlocfilehash: 788bc6f31d61626f15548791135adb8c60258b49
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61942052"
@@ -18,7 +18,7 @@ ms.locfileid: "61942052"
 この例では、メディアを無制限に再生する (無限ループで再生されるようにメディアを設定する) 方法を示します。  
   
 ## <a name="example"></a>例  
- 次の例では<xref:System.Windows.Controls.MediaElement>と<xref:System.Windows.Media.MediaTimeline>で、<xref:System.Windows.Media.Animation.Storyboard>無限ループにメディア クリップを再生します。  
+ 次の例では、<xref:System.Windows.Media.Animation.Storyboard> で <xref:System.Windows.Controls.MediaElement> と <xref:System.Windows.Media.MediaTimeline> を使用して、無限ループでメディア クリップを再生します。  
   
  [!code-xaml[MediaGallery_snippet#SoundRepeatExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snippet/CSharp/SoundRepeatExample.xaml#soundrepeatexamplewholepage)]  
   

@@ -1,18 +1,17 @@
 ---
 title: JIT アタッチ デバッグの有効化
+description: エラーが発生したときにデバッガーをプロセスにアタッチするには、just-in-time (JIT) アタッチデバッグを有効にします。 特定のメソッドまたは関数によってトリガーされる場合があります。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT-attach debugging
 - debugging [.NET Framework], JIT-attach debugging
 ms.assetid: f91fc5f7-de5a-4f23-b6ac-f450e63c662e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: be619f8e84b176872361fdd43faa9c704832c8e0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: d1190c51a9cc6b5322ec832e0d35bc01dc855b12
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975598"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416045"
 ---
 # <a name="enabling-jit-attach-debugging"></a>JIT アタッチ デバッグの有効化
 JIT アタッチ デバッグとは、エラーが発生したとき、または特定のメソッドまたは関数によってトリガーすることで、プロセスにデバッガーをアタッチすることを表すために使用される語句です。  

@@ -1,5 +1,6 @@
 ---
 title: MEF (Managed Extensibility Framework)
+description: アプリケーション開発者が .NET 4 以降で拡張機能を検出し、構成なしで使用できるようにする Managed Extensibility Framework (MEF) について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - Managed Extensibility Framework, overview
 - MEF, overview
 ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
-ms.openlocfilehash: add2b1320e80ccbe1b4bfac94c051148d86a4722
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 00ed48f2202d4c04039ac264b1fe71474a02432e
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837026"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281252"
 ---
 # <a name="managed-extensibility-framework-mef"></a>MEF (Managed Extensibility Framework)
 
@@ -339,7 +340,7 @@ public String Calculate(string input)
     int right;
     char operation;
     // Finds the operator.
-    int fn = FindFirstNonDigit(input); 
+    int fn = FindFirstNonDigit(input);
     if (fn < 0) return "Could not parse command.";
 
     try

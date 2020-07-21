@@ -4,12 +4,12 @@ description: すべての C# プログラムの中核となる型 (数値、文�
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: e1cb5b103459ff691bf6ed8f8ebc1fa3fd8487c3
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 93a0023969bb8bb089922a9e30fbf599eddc7203
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552314"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174180"
 ---
 # <a name="types-variables-and-values"></a>型、変数、および値
 
@@ -54,11 +54,11 @@ C# は、厳密に型指定された言語です。 すべての変数および�
 
 ## <a name="built-in-types"></a>組み込み型
 
-C# には、整数、浮動小数点値、ブール式、テキスト文字、10 進数値などのデータを表現するための標準的な組み込みの数値型が用意されています。 また、組み込みの **string** 型と **object** 型もあります。 これらの型は、すべての C# プログラムで使用できます。 組み込み型の詳細については、[組み込み型のリファレンス表](language-reference/keywords/built-in-types-table.md)に関する記事を参照してください。  
+C# には、整数、浮動小数点値、ブール式、テキスト文字、10 進数値などのデータを表現するための標準的な組み込みの数値型が用意されています。 また、組み込みの **string** 型と **object** 型もあります。 これらの型は、すべての C# プログラムで使用できます。 組み込み型の完全な一覧については、[組み込みの型](language-reference/builtin-types/built-in-types.md)に関するページを参照してください。
   
 ## <a name="custom-types"></a>カスタム型
 
-カスタムの型を独自に作成するには、[struct](language-reference/keywords/class.md)、[class](language-reference/keywords/class.md)、[interface](language-reference/keywords/interface.md)、[enum](language-reference/keywords/enum.md) の各構成要素を使用します。 .NET Framework のクラス ライブラリ自体が、マイクロソフトによって提供された、ユーザーが独自のアプリケーションで使用できるカスタムの型のコレクションです。 既定では、クラス ライブラリで最も頻繁に使用される型は任意の C# プログラムで使用可能になっています。 その他の型は、その型が定義されているアセンブリへのプロジェクト参照を明示的に追加した場合にのみ使用可能になります。 コンパイラがアセンブリを参照できるようになると、そのアセンブリ内で宣言されている型の変数 (および定数) をソース コード内で宣言できるようになります。
+カスタムの型を独自に作成するには、[struct](language-reference/builtin-types/struct.md)、[class](language-reference/keywords/class.md)、[interface](language-reference/keywords/interface.md)、[enum](language-reference/builtin-types/enum.md) の各構成要素を使用します。 .NET Framework のクラス ライブラリ自体が、マイクロソフトによって提供された、ユーザーが独自のアプリケーションで使用できるカスタムの型のコレクションです。 既定では、クラス ライブラリで最も頻繁に使用される型は任意の C# プログラムで使用可能になっています。 その他の型は、その型が定義されているアセンブリへのプロジェクト参照を明示的に追加した場合にのみ使用可能になります。 コンパイラがアセンブリを参照できるようになると、そのアセンブリ内で宣言されている型の変数 (および定数) をソース コード内で宣言できるようになります。
   
 ## <a name="generic-types"></a>ジェネリック型
 
@@ -74,7 +74,7 @@ C# には、整数、浮動小数点値、ブール式、テキスト文字、10
   
 場合によっては、メソッドの境界を越えて格納したり受け渡したりする予定のない単純な一連の関連値に名前付きの型を作成するのは便利ではないこともあります。 このような場合は、*匿名型*を作成できます。 詳細については、「[匿名型](programming-guide/classes-and-structs/anonymous-types.md)」を参照してください。
 
-１ つのメソッドから複数の値を返したいというのはよくあることです。 そのような場合は、１ つのメソッド呼び出しで複数の値を返す*タプル型*を作成できます。 詳細については、「[タプル](tuples.md)」を参照してください
+１ つのメソッドから複数の値を返したいというのはよくあることです。 そのような場合は、１ つのメソッド呼び出しで複数の値を返す*タプル型*を作成できます。 詳細については、[タプル型](language-reference/builtin-types/value-tuples.md)に関するページを参照してください。
 
 ## <a name="the-common-type-system"></a>共通型システム
 
@@ -82,9 +82,10 @@ C# には、整数、浮動小数点値、ブール式、テキスト文字、10
   
 - 継承の原則がサポートされています。 他の型から型を派生させることができます。派生元の型は "*基本型*" と呼ばれます。 派生した型は、基本型のメソッド、プロパティ、およびその他のメンバーを (若干の制限付きで) 継承します。 基本型もなんらかの他の型から派生できます。この場合、派生した型はその継承階層内の両方の基本型のメンバーを継承します。 <xref:System.Int32> (C# のキーワード: `int`) などの組み込み数値型を含むすべての型は、最終的に <xref:System.Object> (C# のキーワード: `object`) という単一の基本型から派生します。 この一元化された型階層は、[共通型システム](../standard/common-type-system.md) (CTS) と呼ばれます。 C# での継承の詳細については、「[継承](programming-guide/classes-and-structs/inheritance.md)」を参照してください。  
   
-- CTS の各型は、"*値型*" または "*参照型*" として定義されます。 これは、.NET Framework クラス ライブラリのすべてのカスタムの型や、ユーザーが独自に定義した型にも当てはまります。 [struct](language-reference/keywords/struct.md) キーワードを使用して定義した型は値型であり、すべての組み込み数値型が **structs** です。 値型の詳細については、「[Structs](structs.md)」を参照してください。 [class](language-reference/keywords/class.md) キーワードを使用して定義した型は参照型です。 参照型の詳細については、「[Classes](programming-guide/classes-and-structs/classes.md)」を参照してください。 参照型と値型では、コンパイル時の規則や実行時の動作が異なります。
+- CTS の各型は、"*値型*" または "*参照型*" として定義されます。 これは、.NET クラス ライブラリのすべてのカスタムの型や、ユーザーが独自に定義した型にも当てはまります。 `struct` または `enum` キーワードを使用して定義する型は値型です。 値型の詳細については、[値型](language-reference/builtin-types/value-types.md)に関するページを参照してください。 [class](language-reference/keywords/class.md) キーワードを使用して定義した型は、参照型です。 参照型の詳細については、「[Classes](programming-guide/classes-and-structs/classes.md)」を参照してください。 参照型と値型では、コンパイル時の規則や実行時の動作が異なります。
 
 ## <a name="see-also"></a>関連項目
 
-- [構造体](structs.md)
+- [構造体型](language-reference/builtin-types/struct.md)
+- [列挙型](language-reference/builtin-types/enum.md)
 - [クラス](programming-guide/classes-and-structs/classes.md)

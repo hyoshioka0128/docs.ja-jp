@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: d09c344e-3548-4944-a3ed-051880e3f5b8
 ms.openlocfilehash: 944d0b2efe1e74f901a493d1c3202d0f180d599d
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70792707"
@@ -16,7 +16,7 @@ ms.locfileid: "70792707"
 2 つのシーケンスの積集合を返すには、<xref:System.Linq.Queryable.Intersect%2A> 演算子を使用します。  
   
 ## <a name="example"></a>例  
- この例で<xref:System.Linq.Queryable.Intersect%2A>は、を使用して、と`Employees`の両方`Customers`がライブであるすべての国/地域のシーケンスを返します。  
+ この例では、<xref:System.Linq.Queryable.Intersect%2A> を使用して、`Customers` と `Employees` の両方が居住しているすべての国や地域のシーケンスが返されます。  
   
  [!code-csharp[DLinqQueryExamples#42](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#42)]
  [!code-vb[DLinqQueryExamples#42](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#42)]  

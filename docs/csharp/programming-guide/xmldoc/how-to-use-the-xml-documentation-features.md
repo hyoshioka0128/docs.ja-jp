@@ -1,19 +1,18 @@
 ---
-title: '方法: XML ドキュメント機能を使用する - C# プログラミング ガイド'
-ms.custom: seodec18
+title: XML ドキュメント機能を使用する方法 - C# プログラミング ガイド
 ms.date: 06/01/2018
 helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 3e59783a7f306d3d2a510fe3337a4c6490dcb3e8
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: b7c5a8a895271f067505496c0d13f98b66a393d9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523451"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287364"
 ---
-# <a name="how-to-use-the-xml-documentation-features"></a>方法: XML ドキュメント機能を使用する
+# <a name="how-to-use-the-xml-documentation-features"></a>XML ドキュメント機能を使用する方法
 
 次の例では、ドキュメント化された型の基本的な概要について説明します。
 
@@ -21,7 +20,7 @@ ms.locfileid: "72523451"
 
 [!code-csharp[csProgGuideDocComments#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#15)]
 
-この例では、次の内容の .xml ファイルが生成されます。
+この例では、次の内容を含む *.xml* ファイルが生成されます。
 
 ```xml
 <?xml version="1.0"?>
@@ -63,7 +62,7 @@ ms.locfileid: "72523451"
             </summary>
             <param name="s"> Parameter description for s goes here.</param>
             <seealso cref="T:System.String">
-            You can use the cref attribute on any tag to reference a type or member 
+            You can use the cref attribute on any tag to reference a type or member
             and the compiler will check that the reference exists.
             </seealso>
         </member>
@@ -109,28 +108,28 @@ ms.locfileid: "72523451"
 
 ## <a name="compiling-the-code"></a>コードのコンパイル
 
-この例をコンパイルするには、次のコマンド行を入力します。
+この例をコンパイルするには、次のコマンドを入力します。
 
 `csc XMLsample.cs /doc:XMLsample.xml`
 
-このコマンドによって作成される XML ファイル *XMLsample.xml* は、ブラウザーで、または TYPE コマンドを使って、表示できます。
+このコマンドによって作成される XML ファイル *XMLsample.xml* は、ブラウザーで、または `TYPE` コマンドを使って、表示できます。
 
 ## <a name="robust-programming"></a>信頼性の高いプログラミング
 
-XML ドキュメントは、/// で始まります。 新しいプロジェクトを作成すると、開始の /// 行がいくつか自動的に挿入されます。 これらのコメントの処理にはいくつか制限があります。
+XML ドキュメントは、`///` で始まります。 新しいプロジェクトを作成すると、開始の `///` 行がいくつか自動的に挿入されます。 これらのコメントの処理にはいくつか制限があります。
 
 - ドキュメントは整形式の XML である必要があります。 XML が整形式ではない場合は、警告が生成され、エラーが発生したことを示すコメントがドキュメント ファイルに追加されます。
 
-- 開発者は、独自のタグ セットを自由に作成できます。 推奨されるタグのセットがあります (「[ドキュメント コメントとして推奨されるタグ](recommended-tags-for-documentation-comments.md)」を参照)。 推奨されるタグの一部には特別な意味があります。
+- 開発者は、独自のタグ セットを自由に作成できます。 [推奨されるタグのセット](recommended-tags-for-documentation-comments.md)があります。 推奨されるタグの一部には特別な意味があります。
 
-  - \<param> タグは、パラメーターの記述に使われます。 このタグがあると、コンパイラは、パラメーターが存在すること、およびすべてのパラメーターがドキュメントで記述されていることを確認します。 検証で問題がある場合、コンパイラは警告を生成します。
+  - `<param>` タグは、パラメーターの記述に使用します。 このタグがあると、コンパイラは、パラメーターが存在すること、およびすべてのパラメーターがドキュメントで記述されていることを確認します。 検証が失敗する場合は、コンパイラが警告を生成します。
 
-  - `cref` 属性は任意のタグにアタッチでき、コード要素への参照を提供します。 コンパイラは、このコード要素が存在することを確認します。 検証で問題がある場合、コンパイラは警告を生成します。 コンパイラは、`cref` 属性で記述されている型を探すとき、`using` ステートメントに従います。
+  - `cref` 属性は任意のタグにアタッチされて、コード要素を参照することができます。 コンパイラは、このコード要素が存在することを確認します。 検証が失敗する場合は、コンパイラが警告を生成します。 コンパイラは、`cref` 属性で記述されている型を探すとき、`using` ステートメントに従います。
 
-  - \<summary> タグは、型またはメンバーに関する追加情報を表示するために、Visual Studio の IntelliSense によって使われます。
+  - `<summary>` タグは、型またはメンバーに関する追加情報を表示するために、Visual Studio 内の IntelliSense によって使用されます。
 
     > [!NOTE]
-    > XML ファイルでは、型とメンバーに関する完全な情報は提供されません (たとえば、型の情報は含まれません)。 型またはメンバーの完全な情報を取得するには、ドキュメント ファイルと併せて、実際の型またはメンバーでリフレクションを使う必要があります。
+    > XML ファイルでは、型とメンバーに関する完全な情報は提供されません (たとえば、型の情報は含まれません)。 型またはメンバーに関する完全な情報を取得するには、ドキュメント ファイルと併せて、実際の型またはメンバーでリフレクションを使う必要があります。
 
 ## <a name="see-also"></a>関連項目
 

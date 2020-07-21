@@ -1,17 +1,15 @@
 ---
 title: ID
 description: Azure 向けのクラウドネイティブ .NET アプリの設計 |アイデンティティ
-ms.date: 09/23/2019
-ms.openlocfilehash: 4cc7c04bf323d2589777df466321f6801f511b6f
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 05/13/2020
+ms.openlocfilehash: 9fa48977e58e2ca5a5f3e231372a4791640a85fd
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "73840347"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614020"
 ---
 # <a name="identity"></a>ID
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 ほとんどのソフトウェアアプリケーションは、それらを呼び出すユーザーまたはプロセスに関する知識を持っている必要があります。 アプリケーションと対話するユーザーまたはプロセスはセキュリティプリンシパルと呼ばれ、これらのプリンシパルを認証および承認するプロセスは、id 管理または単に*id*と呼ばれます。 単純なアプリケーションには、アプリケーション内のすべての id 管理を含めることができますが、この方法は、多くのアプリケーションやさまざまな種類のセキュリティプリンシパルには適していません。 Windows では、Active Directory を使用して、一元的な認証と承認を行うことができます。
 
@@ -27,9 +25,9 @@ ms.locfileid: "73840347"
 
 通常、STS はプリンシパルの認証のみを行います。 リソースへのアクセスレベルを決定することは、アプリケーションの他の部分に残されます。
 
-## <a name="references"></a>参照
+## <a name="references"></a>References
 
-- [Microsoft id プラットフォーム](https://docs.microsoft.com/azure/active-directory/develop/)
+- [Microsoft ID プラットフォーム](https://docs.microsoft.com/azure/active-directory/develop/)
 
 >[!div class="step-by-step"]
 >[前へ](azure-monitor.md)

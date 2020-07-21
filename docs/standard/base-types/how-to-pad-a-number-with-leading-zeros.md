@@ -1,5 +1,6 @@
 ---
 title: '方法: 数値に先行するゼロを埋め込む'
+description: 数値に先行するゼロを埋め込む方法について説明します。 整数値または数値に対して、指定した合計の長さまで先行するゼロを追加するか、先行するゼロの数を指定します。
 ms.date: 02/25/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,16 +12,16 @@ helpviewer_keywords:
 - number formatting [.NET Framework]
 - numbers [.NET Framework], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-ms.openlocfilehash: bc3c4b75c484274c214141d8fbfcf8ac592b0b99
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6ef0ddb37f1bc73254aa639d7c018ec6a01abd9b
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131975"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447187"
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>方法: 数値に先行するゼロを埋め込む
 
-整数値に先行ゼロを追加するには、精度指定子と[標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md) "D" を使用します。 整数値と浮動小数点数値の両方に先行ゼロを追加するには、[カスタム数値書式指定文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)を使用します。 この記事では、この両方の方法を使用して数値に先行ゼロを埋め込む方法を示します。
+整数値に先行ゼロを追加するには、精度指定子と[標準の数値書式指定文字列](standard-numeric-format-strings.md) "D" を使用します。 整数値と浮動小数点数値の両方に先行ゼロを追加するには、[カスタム数値書式指定文字列](custom-numeric-format-strings.md)を使用します。 この記事では、この両方の方法を使用して数値に先行ゼロを埋め込む方法を示します。
 
 ## <a name="to-pad-an-integer-with-leading-zeros-to-a-specific-length"></a>特定の長さになるまで整数値に先行ゼロを埋め込むには
 
@@ -32,7 +33,7 @@ ms.locfileid: "73131975"
 
     - 整数値を 16 進数値として表示するには、`ToString(String)` メソッドを呼び出し、format パラメーターの値として文字列 "X*n*" を渡します。この *n* は、文字列の最小長を表します。
 
-また、[C#](../../csharp/language-reference/tokens/interpolated.md) と [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) の両方で挿入文字列に書式指定文字列を使用することも、[複合書式指定](../../../docs/standard/base-types/composite-formatting.md)を使用するメソッド (<xref:System.String.Format%2A?displayProperty=nameWithType> や <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> など) を呼び出すこともできます。
+また、[C#](../../csharp/language-reference/tokens/interpolated.md) と [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) の両方で挿入文字列に書式指定文字列を使用することも、[複合書式指定](composite-formatting.md)を使用するメソッド (<xref:System.String.Format%2A?displayProperty=nameWithType> や <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> など) を呼び出すこともできます。
 
 次の例は、書式指定された数値全体の長さが 8 文字以上になるように、先行ゼロを使用してさまざまな数値を書式指定します。
 
@@ -83,7 +84,7 @@ ms.locfileid: "73131975"
 
     1. 小数点記号を含める場合は、整数部分の文字数を決定します。
 
-         または
+         \- または -
 
          小数点記号を含めない場合は、文字列の長さを決定します。
 
@@ -102,6 +103,6 @@ ms.locfileid: "73131975"
 
 ## <a name="see-also"></a>関連項目
 
-- [カスタム数値形式文字列](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [標準の数値書式指定文字列](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [複合書式指定](../../../docs/standard/base-types/composite-formatting.md)
+- [カスタム数値形式文字列](custom-numeric-format-strings.md)
+- [標準の数値書式指定文字列](standard-numeric-format-strings.md)
+- [複合書式指定](composite-formatting.md)

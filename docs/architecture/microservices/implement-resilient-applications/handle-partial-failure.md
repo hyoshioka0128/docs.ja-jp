@@ -2,12 +2,12 @@
 title: 部分的なエラーの処理
 description: 部分的なエラーを適切に処理する方法について説明します。 マイクロサービスは完全には機能していませんが、一部の役に立つ作業を実行できる場合があります。
 ms.date: 10/16/2018
-ms.openlocfilehash: f00e5349df74b543deb6ac941c751cb130b3837c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 0300719360e1a2500db0af8454c91fdfe2e5b09b
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73732966"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988871"
 ---
 # <a name="handle-partial-failure"></a>部分的なエラーを処理する
 

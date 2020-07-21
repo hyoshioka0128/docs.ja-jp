@@ -1,13 +1,13 @@
 ---
 title: 属性
 description: 属性がF#プログラミングコンストラクトにメタデータを適用できるようにする方法について説明します。
-ms.date: 05/16/2016
-ms.openlocfilehash: 223263f5789b0fc7eb2b3ef2905f6436980bd14a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 02/19/2020
+ms.openlocfilehash: 77b84713ab9360166b3634d406993cf209c8a623
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424797"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543639"
 ---
 # <a name="attributes"></a>属性
 
@@ -19,7 +19,7 @@ ms.locfileid: "73424797"
 [<target:attribute-name(arguments)>]
 ```
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>コメント
 
 前の構文では、*ターゲット*は省略可能であり、存在する場合は、属性が適用されるプログラムエンティティの種類を指定します。 *Target*の有効な値は、このドキュメントの後半で示す表に示されています。
 
@@ -39,7 +39,7 @@ property-name = property-value
 
 属性は、*属性*と呼ばれるオブジェクトが型または他のプログラム要素に関連付けられるようにする .net プログラミングコンストラクトです。 属性が適用されるプログラム要素は、*属性ターゲット*と呼ばれます。 属性には、通常、ターゲットに関するメタデータが含まれます。 このコンテキストでは、メタデータは、フィールドやメンバー以外の型に関する任意のデータにすることができます。
 
-のF#属性は、関数、メソッド、アセンブリ、モジュール、型 (クラス、レコード、構造体、インターフェイス、デリゲート、列挙体、共用体など)、コンストラクター、プロパティ、フィールド、およびの各プログラミング構成要素に適用できます。パラメーター、型パラメーター、および戻り値。 属性は、クラス、式、またはワークフロー式内の `let` バインドでは許可されていません。
+のF#属性は、関数、メソッド、アセンブリ、モジュール、型 (クラス、レコード、構造体、インターフェイス、デリゲート、列挙体、共用体など)、コンストラクター、プロパティ、フィールド、パラメーター、型パラメーター、および戻り値に適用できます。 属性は、クラス、式、またはワークフロー式内の `let` バインドでは許可されていません。
 
 通常、属性の宣言は、属性ターゲットの宣言の直前に記述されます。 複数の属性宣言は、次のように組み合わせて使用できます。
 
@@ -69,39 +69,39 @@ property-name = property-value
     <th>例</td>
   </tr>
   <tr>
-    <td>アセンブリ</td>
-    <td><pre lang="fsharp"><code>[&lt;assembly: AssemblyVersionAttribute("1.0.0.0")&gt;]</code></pre></td>
+    <td>アセンブリ (assembly)</td>
+    <td><pre><code class="lang-fsharp">[&lt;assembly: AssemblyVersion("1.0.0.0")&gt;]</code></pre></td>
   </tr>
   <tr>
     <td>return</td>
-    <td><pre lang="fsharp"><code>let function1 x : [&lt;return: Obsolete&gt;] int = x + 1</code></pre></td>
+    <td><pre><code class="lang-fsharp">let function1 x : [&lt;return: MyCustomAttributeThatWorksOnReturns&gt;] int = x + 1</code></pre></td>
   </tr>
   <tr>
-    <td>のフィールド</td>
-    <td><pre lang="fsharp"><code>[&lt;field: DefaultValue&gt;] val mutable x: int</code></pre></td>
+    <td>フィールド</td>
+    <td><pre><code class="lang-fsharp">[&lt;DefaultValue&gt;] val mutable x: int</code></pre></td>
   </tr>
   <tr>
-    <td>プロパティ</td>
-    <td><pre lang="fsharp"><code>[&lt;property: Obsolete&gt;] this.MyProperty = x</code></pre></td>
+    <td>property</td>
+    <td><pre><code class="lang-fsharp">[&lt;Obsolete&gt;] this.MyProperty = x</code></pre></td>
   </tr>
   <tr>
     <td>param</td>
-    <td><pre lang="fsharp"><code>member this.MyMethod([&lt;param: Out&gt;] x : ref&lt;int&gt;) = x := 10</code></pre></td>
+    <td><pre><code class="lang-fsharp">member this.MyMethod([&lt;Out&gt;] x : ref&lt;int&gt;) = x := 10</code></pre></td>
   </tr>
   <tr>
-    <td>type</td>
+    <td>型</td>
     <td>
-        <pre lang="fsharp"><code>
-[&lt;type: StructLayout(Sequential)&gt;]
+        <pre><code class="lang-fsharp">
+[&lt;type: StructLayout(LayoutKind.Sequential)&gt;]
 type MyStruct =
-struct
-x : byte
-y : int
-end</code></pre>
+  struct
+    val x : byte
+    val y : int
+  end</code></pre>
     </td>
   </tr>
 </table>
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [F# 言語リファレンス](index.md)

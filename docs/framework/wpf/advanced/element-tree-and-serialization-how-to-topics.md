@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 2d8ef436-d559-4c3e-86de-5a160d5f87d2
 ms.openlocfilehash: 7227e61dd8140ec9b1560fbc12e4ba4dd3e0d843
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61962477"
 ---
 # <a name="element-tree-and-serialization-how-to-topics"></a>要素のツリーおよびシリアル化に関する「方法」トピック
-このセクションのトピックでは、WPF の要素ツリーを使用する方法について説明します。  
+このセクションのトピックでは、WPF 要素ツリーの使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [要素を名前で検索する](how-to-find-an-element-by-its-name.md)  
  [論理ツリーをオーバーライドする](how-to-override-the-logical-tree.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.LogicalTreeHelper>  
   
  <xref:System.Windows.Media.VisualTreeHelper>  

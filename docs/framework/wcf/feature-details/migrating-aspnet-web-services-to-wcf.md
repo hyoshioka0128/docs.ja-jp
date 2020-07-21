@@ -2,12 +2,12 @@
 title: ASP.NET Web サービスを WCF に移行する
 ms.date: 03/30/2017
 ms.assetid: 1adbb931-f0b1-47f3-9caf-169e4edc9907
-ms.openlocfilehash: 52e0e499b5338e20377c14b598c045a5173df7d3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fa707a4246d5bc9940417072c098b2973140f878
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965339"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598802"
 ---
 # <a name="migrating-aspnet-web-services-to-wcf"></a>ASP.NET Web サービスを WCF に移行する
 ASP.NET には Web サービスを構築するための .NET Framework クラス ライブラリとツールが用意されています。また、インターネット インフォメーション サービス (IIS) 内でサービスをホストする機能も用意されています。 Windows Communication Foundation (WCF) には、ソフトウェアエンティティが任意のプロトコル (Web サービスで使用されるプロトコルを含む) を使用して通信できるようにするための、.NET Framework クラスライブラリ、ツール、およびホスト機能が用意されています。  ASP.NET Web サービスを WCF に移行することで、アプリケーションは WCF に固有の新機能と機能強化を利用できます。  
@@ -18,7 +18,7 @@ ASP.NET には Web サービスを構築するための .NET Framework クラス
   
  WCF では、ASP.NET ウェブサービスよりも多くのプロトコルをサポートしています。 ASP.NET Web サービスでは、HTTP (ハイパーテキスト転送プロトコル) を使用したメッセージの送信しかサポートしていません。 WCF では、HTTP、伝送制御プロトコル (TCP)、名前付きパイプ、および Microsoft Message Queuing (MSMQ) を使用したメッセージの送信をサポートしています。 さらに重要なのは、追加のトランスポートプロトコルをサポートするように WCF を拡張できることです。 そのため、WCF を使用して開発されたソフトウェアは、他のさまざまなソフトウェアと連携して動作するように調整できるため、投資収益率を高めることができます。  
   
- WCF では、ASP.NET Web サービスで提供されるアプリケーションを展開および管理するための豊富な機能が提供されます。 ASP.NET にも含まれる構成システムに加えて、WCF では、構成エディター、送信者から受信者へのアクティビティトレース、任意の数の中継局、トレースビューアー、メッセージログ、膨大な数のパフォーマンスカウンターを使用したバックログを提供しています。Windows Management Instrumentation のサポート。  
+ WCF では、ASP.NET Web サービスで提供されるアプリケーションを展開および管理するための豊富な機能が提供されます。 ASP.NET にも含まれる構成システムに加えて、WCF では、構成エディター、送信者から受信者へのアクティビティトレース、任意の数の中継局、トレースビューアー、メッセージログ、膨大な数のパフォーマンスカウンター、Windows Management Instrumentation のサポートが提供されています。  
   
  ASP.NET ウェブサービスに関連する WCF の潜在的な利点を考えて、を使用している場合、または ASP.NET Web サービスの使用を検討している場合は、いくつかのオプションがあります。  
   
@@ -37,8 +37,8 @@ ASP.NET には Web サービスを構築するための .NET Framework クラス
   
 ## <a name="see-also"></a>関連項目
 
-- [Windows Communication Foundation の導入を予測する:将来の移行を容易に](../../../../docs/framework/wcf/feature-details/anticipating-adopting-wcf-migration.md)
-- [Windows Communication Foundation の導入を予測する:将来の統合を容易に](../../../../docs/framework/wcf/feature-details/anticipating-adopting-the-wcf-easing-future-integration.md)
-- [Windows Communication Foundation の採用](../../../../docs/framework/wcf/feature-details/adopting-wcf.md)
-- [使用目的と使用標準に基づく ASP.NET Web サービスと WCF との比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)
-- [開発者の視点から見た ASP.NET Web サービスと WCF との比較](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-development.md)
+- [Windows Communication Foundation 導入の準備:将来の移行の簡略化](anticipating-adopting-wcf-migration.md)
+- [Windows Communication Foundation 導入の準備:将来的な統合の容易化](anticipating-adopting-the-wcf-easing-future-integration.md)
+- [Windows Communication Foundation の採用](adopting-wcf.md)
+- [使用目的と使用標準に基づく ASP.NET Web サービスと WCF との比較](comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)
+- [開発者の視点から見た ASP.NET Web サービスと WCF との比較](comparing-aspnet-web-services-to-wcf-based-on-development.md)

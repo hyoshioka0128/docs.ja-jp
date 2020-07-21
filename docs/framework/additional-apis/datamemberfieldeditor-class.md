@@ -1,5 +1,5 @@
 ---
-title: DataMemberFieldEditor クラス
+title: クラスをフィールドに追加する
 ms.date: 03/30/2017
 ms.technology: dotnet-winforms
 api_name:
@@ -11,18 +11,16 @@ api_type:
 ms.assetid: 27ae39b7-3491-40f9-9b33-2de798f123ad
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 52c95c5977dafb6d348e69f3c2f5280bafc3b342
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8539cea6697cee5b008be18192d9dee52842d8bd
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706118"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79156039"
 ---
-# <a name="datamemberfieldeditor-class"></a>DataMemberFieldEditor クラス
+# <a name="datamemberfieldeditor-class"></a>クラスをフィールドに追加する
 
-すべてのプロパティを一覧表示してデータ バインド オブジェクトのプロパティを編集するためのユーザー インターフェイスを提供、`DataSource`から値のソースを選択するオブジェクト。  
+値のソースを選択する`DataSource`オブジェクトのすべてのプロパティを一覧表示することによって、データ バインド オブジェクトのプロパティを編集するためのユーザー インターフェイスを提供します。  
   
 ## <a name="syntax"></a>構文
   
@@ -31,17 +29,17 @@ internal class DataMemberFieldEditor : UITypeEditor
 ```
 
 > [!WARNING]
-> `DataMemberFieldEditor`クラスは内部であり、コード内で直接使用するものではありません。
-> 
-> Microsoft はいかなる運用アプリケーションでこのクラスの使用をサポートしていません。
+> クラス`DataMemberFieldEditor`は内部クラスであり、コード内で直接使用するためのものではありません。
+>
+> マイクロソフトでは、どのような状況でも、運用環境のアプリケーションでこのクラスを使用することはできません。
 
 ## <a name="requirements"></a>必要条件
 
-**名前空間:** <xref:System.Windows.Forms.Design?displayProperty=nameWithType>  
+**名前空間:**<xref:System.Windows.Forms.Design?displayProperty=nameWithType>  
   
-**アセンブリ:** System.Design.dll) の「System.Design  
+**アセンブリ:** システム設計 (システムデザイン.dll 内)  
   
-**.NET framework のバージョン:** 2.0 以降で使用可能です。  
+**.NET フレームワークのバージョン:** 2.0 以降で利用可能。  
   
 ## <a name="see-also"></a>関連項目
 

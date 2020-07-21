@@ -1,17 +1,17 @@
 ---
 title: タプル
-description: 名前のないF#が順序付けられた値 (場合によっては異なる型) をグループ化したタプルについて説明します。
+description: '名前のないが順序付けられた値をグループ化する F # のタプルについて説明します。型は異なる可能性があります。'
 ms.date: 05/16/2016
-ms.openlocfilehash: 7a15d7e0c6c9b42118dd75066f02cbb2e05335fc
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5d26fd5d7ec5b4939a895a6d2a6a0d7fc6c6c733
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630238"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173290"
 ---
 # <a name="tuples"></a>タプル
 
-*タプル*は、名前はないが順序付けられた値のさまざまな種類のグループです。  タプルは参照型か構造体のどちらかです。
+*組*は、名前のないが順序付けられた値をグループ化したものであり、型が異なる可能性があります。  タプルは、参照型または構造体にすることができます。
 
 ## <a name="syntax"></a>構文
 
@@ -20,11 +20,11 @@ ms.locfileid: "68630238"
 struct(element, ... ,element )
 ```
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-各*要素*前の構文では有効な F# 式を指定できます。
+前の構文の各*要素*は、任意の有効な F # 式にすることができます。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 組の例としては、同じ型または異なる型のペア、3要素などがあります。 次のコードに例をいくつか示します。
 
@@ -36,7 +36,7 @@ struct(element, ... ,element )
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L27-L29)]
 
-また、binding を使用`match` `let`して、式の外側にあるパターン一致を使用してタプルを分解することもできます。
+また、binding を使用して、式の外側にあるパターン一致を使用してタプルを分解することもでき `match` `let` ます。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L34-L37)]
 
@@ -52,7 +52,7 @@ struct(element, ... ,element )
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L62-L66)]
 
-関数`fst` と`snd` (参照タプルのみ) は、組の1番目と2番目の要素をそれぞれ返します。
+関数 `fst` と `snd` (参照タプルのみ) は、組の1番目と2番目の要素をそれぞれ返します。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L72-L73)]
 
@@ -72,7 +72,7 @@ struct(element, ... ,element )
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L88-L88)]
 
-関数`let sum a b = a + b`を定義するための通常の構文を使用すると、次のコードに示すように、関数の最初の引数の部分的なアプリケーションである関数を定義できます。
+関数を定義するための通常の構文を使用すると、 `let sum a b = a + b` 次のコードに示すように、関数の最初の引数の部分的なアプリケーションである関数を定義できます。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L90-L94)]
 
@@ -80,17 +80,17 @@ struct(element, ... ,element )
 
 ## <a name="names-of-tuple-types"></a>タプル型の名前
 
-組である型の名前を記述する場合は、 `*`記号を使用して要素を区切ります。 `int`、、および`string`などので構成される組の場合、型は次のように書き込まれます。 `(10, 10.0, "ten")` `float`
+組である型の名前を記述する場合は、記号を使用して `*` 要素を区切ります。 、、およびなどので構成される組の場合、 `int` 型は次のように `float` 書き込まれ `string` `(10, 10.0, "ten")` ます。
 
 ```fsharp
 int * float * string
 ```
 
-## <a name="interoperation-with-c-tuples"></a>組とC#の相互運用
+## <a name="interoperation-with-c-tuples"></a>C# タプルとの相互運用
 
-C#7.0 では、言語にタプルが導入されました。  C# のタプルは構造体と F# の構造体のタプルに同じです。  とC#相互運用する必要がある場合は、構造体の組を使用する必要があります。
+C# 7.0 では、言語にタプルが導入されました。  C# の組は構造体であり、F # の構造体のタプルに相当します。  C# と相互運用する必要がある場合は、構造体の組を使用する必要があります。
 
-これは簡単に行うことができます。  たとえば、C# クラスに組を渡すし、これは、タプルでも、その結果を消費する必要があるとします。
+これは簡単に行うことができます。  たとえば、組を C# クラスに渡して、その結果を使用する必要があるとします。これは組でもあります。
 
 ```csharp
 namespace CSharpTupleInterop
@@ -103,7 +103,7 @@ namespace CSharpTupleInterop
 }
 ```
 
-F#コードでは、パラメーターとして構造体のタプルを渡し、その結果を構造体のタプルとして使用できます。
+F # コードでは、パラメーターとして構造体のタプルを渡し、その結果を構造体のタプルとして使用できます。
 
 ```fsharp
 open TupleInterop
@@ -118,7 +118,7 @@ let struct (newX, newY) = Example.AddOneToXAndY(struct (1, 2))
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/interop.fsx#L5-L12)]
 
-1つのタプルに対してパターン一致をパターン化し、構成要素を使用してもう一方を構築する必要があります。  例:
+1つのタプルに対してパターン一致をパターン化し、構成要素を使用してもう一方を構築する必要があります。  次に例を示します。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/interop.fsx#L18-L22)]
 
@@ -126,11 +126,11 @@ let struct (newX, newY) = Example.AddOneToXAndY(struct (1, 2))
 
 このセクションでは、コンパイル時の組の形式について説明します。  ここに記載されている情報は、.NET Framework 3.5 以下を対象としている場合を除き、読み取る必要はありません。
 
-組は、複数のジェネリック型のいずれかのオブジェクトにコンパイル`System.Tuple`され、アリティでオーバーロードされます。また、型パラメーターの数も示されます。 タプル型は、C# または Visual Basic の場合など、別の言語からそれらを表示するとき、またはを F# の構成要素に対応していないツールを使用しているときに、このフォームに表示されます。 これら`Tuple`の型は .NET Framework 4 で導入されました。 コンパイラのバージョンを使用して .NET Framework の以前のバージョンをターゲットにする場合[System.Tuple](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3) F# コア ライブラリのバージョン 2.0 から。 このライブラリの型は、.NET Framework の2.0、3.0、3.5 の各バージョンを対象とするアプリケーションにのみ使用されます。 型の転送を使用して、.NET Framework 2.0 と .NET Framework 4 F# コンポーネント間のバイナリの互換性を確保します。
+組は、複数のジェネリック型のいずれかのオブジェクトにコンパイルされ、 `System.Tuple` アリティでオーバーロードされます。また、型パラメーターの数も示されます。 タプル型は、C# や Visual Basic などの別の言語から表示する場合や、F # コンストラクトを認識しないツールを使用する場合に、この形式で表示されます。 これらの `Tuple` 型は .NET Framework 4 で導入されました。 以前のバージョンの .NET Framework を対象としている場合、コンパイラは、F # コアライブラリの2.0 バージョンの[system.string のバージョンを使用](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3)します。 このライブラリの型は、.NET Framework の2.0、3.0、3.5 の各バージョンを対象とするアプリケーションにのみ使用されます。 型の転送は、.NET Framework 2.0 と .NET Framework 4 F # のコンポーネント間のバイナリの互換性を確保するために使用されます。
 
 ### <a name="compiled-form-of-struct-tuples"></a>構造体のコンパイルされた形式のタプル
 
-構造体のタプル (たとえば、 `struct (x, y)`)は、参照タプルとは根本的に異なります。  それらは<xref:System.ValueTuple>型にコンパイルされるか、アリティによってオーバーロードされるか、または型パラメーターの数になります。  これらは [C# 7.0 のタプル](../../csharp/tuples.md)および[Visual Basic 2017のタプル](../../visual-basic/programming-guide/language-features/data-types/tuples.md)と同等であり、双方向で相互運用できます。
+構造体の組 (たとえば、 `struct (x, y)` ) は、参照タプルとは基本的に異なります。  これらは、型、 <xref:System.ValueTuple> アリティによってオーバーロードされる、または型パラメーターの数にコンパイルされます。  これらは、 [C# 7.0 の組](../../csharp/language-reference/builtin-types/value-tuples.md)と[Visual Basic 2017 のタプル](../../visual-basic/programming-guide/language-features/data-types/tuples.md)に相当し、双方向の相互運用が可能です。
 
 ## <a name="see-also"></a>関連項目
 

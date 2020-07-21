@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
 ms.openlocfilehash: 3edafa6c6a1bc3da2abc0598f329caf0e2f21e8b
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70786252"
@@ -15,7 +15,7 @@ ms.locfileid: "70786252"
 # <a name="handling-datatable-events"></a>DataTable イベントの処理
 <xref:System.Data.DataTable> オブジェクトは、アプリケーションが処理できる一連のイベントを提供します。 `DataTable` のイベントを次の表に示します。  
   
-|イベント|説明|  
+|event|説明|  
 |-----------|-----------------|  
 |<xref:System.Data.DataTable.Initialized>|<xref:System.Data.DataTable.EndInit%2A> の `DataTable` メソッドが呼び出された後に発生します。 このイベントは、主にデザイン時のシナリオをサポートすることを目的としています。|  
 |<xref:System.Data.DataTable.ColumnChanged>|<xref:System.Data.DataColumn> で値が正常に変更された後に発生します。|  

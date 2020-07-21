@@ -1,33 +1,33 @@
 ---
-title: '方法 : XML リテラルの変更'
+title: '方法: XML リテラルの変更'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML axis [Visual Basic], Value
 - XML literals [Visual Basic]
 - XML literals [Visual Basic], modifying
 ms.assetid: 4e864522-a37a-43a2-8236-af80277c5482
-ms.openlocfilehash: 99ec35addcb9fc8d886c9151cde87227b5113eb9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: a2ac2e9802d4c8ab522bb430d15cce5616430437
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330857"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374900"
 ---
-# <a name="how-to-modify-xml-literals-visual-basic"></a>方法 : XML リテラルを変更する (Visual Basic)
+# <a name="how-to-modify-xml-literals-visual-basic"></a>方法: XML リテラルの変更 (Visual Basic)
 
-Visual Basic には、XML リテラルを変更する便利な方法が用意されています。 要素と属性を追加したり削除したりできます。また、既存の要素を新しい XML 要素に置き換えることもできます。 このトピックでは、既存の XML リテラルを変更する方法の例をいくつか紹介します。
+Visual Basic には、XML リテラルを変更する便利な方法が用意されています。 要素と属性を追加したり削除したりでき、既存の要素を新しい XML 要素に置き換えることもできます。 このトピックでは、既存の XML リテラルを変更する方法の例をいくつか紹介します。
 
 ### <a name="to-modify-the-value-of-an-xml-literal"></a>XML リテラルの値を変更するには
 
 1. XML リテラルの値を変更するには、XML リテラルへの参照を取得し、`Value` プロパティを目的の値に設定します。
 
-    次のコード例では、XML ドキュメント内のすべての \<Price > 要素の値を更新します。
+    次のコード例では、XML ドキュメント内のすべての \<Price> 要素の値が更新されます。
 
     [!code-vb[VbXmlSamples2#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#4)]
 
-    次に、このコード例のソース XML と変更された XML の例を示します。
+    次に、このコード例のソースの XML と変更後の XML の例を示します。
 
-    ソース XML:
+    ソースの XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -45,7 +45,7 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
     </Catalog>
     ```
 
-    変更された XML:
+    変更後の XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -64,17 +64,17 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
     ```
 
     > [!NOTE]
-    > `Value` プロパティは、コレクション内の最初の XML 要素を参照します。 コレクション内に同じ名前の要素が複数ある場合、`Value` プロパティの設定は、コレクション内の最初の要素にのみ影響します。
+    > `Value` プロパティを使用して、コレクション内の最初の XML 要素を参照します。 コレクション内に同じ名前の要素が複数ある場合、`Value` プロパティの設定は、コレクション内の最初の要素にのみ影響します。
 
 ### <a name="to-add-an-attribute-to-an-xml-literal"></a>XML リテラルに属性を追加するには
 
-1. XML リテラルに属性を追加するには、最初に XML リテラルへの参照を取得します。 その後、新しい XML 属性軸プロパティを追加して、属性を追加できます。 また、<xref:System.Xml.Linq.XContainer.Add%2A> メソッドを使用して、新しい <xref:System.Xml.Linq.XAttribute> オブジェクトを XML リテラルに追加することもできます。 次の例では、両方のオプションを示します。
+1. XML リテラルに属性を追加するには、最初に XML リテラルへの参照を取得します。 次に、新しい XML 属性軸プロパティを追加して、属性を追加できます。 また、<xref:System.Xml.Linq.XContainer.Add%2A> メソッドを使用して、新しい <xref:System.Xml.Linq.XAttribute> オブジェクトを XML リテラルに追加することもできます。 次の例は、両方のオプションを示しています。
 
     [!code-vb[VbXmlSamples2#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#5)]
 
-    次に、このコード例のソース XML と変更された XML の例を示します。
+    次に、このコード例のソースの XML と変更後の XML の例を示します。
 
-    ソース XML:
+    ソースの XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -92,7 +92,7 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
     </Catalog>
     ```
 
-    変更された XML:
+    変更後の XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -110,21 +110,21 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
     </Catalog>
     ```
 
-    XML 属性軸のプロパティの詳細については、「 [Xml 属性軸](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)のプロパティ」を参照してください。
+    XML 属性軸プロパティの詳細については、[XML 属性軸プロパティ](../../../language-reference/xml-axis/xml-attribute-axis-property.md)に関する記事をご覧ください。
 
 ### <a name="to-add-an-element-to-an-xml-literal"></a>XML リテラルに要素を追加するには
 
-1. XML リテラルに要素を追加するには、最初に XML リテラルへの参照を取得します。 次に、<xref:System.Xml.Linq.XContainer.Add%2A> メソッドを使用して、新しい <xref:System.Xml.Linq.XElement> オブジェクトを要素の最後のサブ要素として追加できます。 <xref:System.Xml.Linq.XContainer.AddFirst%2A> メソッドを使用して、新しい <xref:System.Xml.Linq.XElement> オブジェクトを最初のサブ要素として追加できます。
+1. XML リテラルに要素を追加するには、最初に XML リテラルへの参照を取得します。 次に、<xref:System.Xml.Linq.XContainer.Add%2A> メソッドを使用すると、新しい <xref:System.Xml.Linq.XElement> オブジェクトを要素の最後のサブ要素として追加できます。 <xref:System.Xml.Linq.XContainer.AddFirst%2A> メソッドを使用すると、新しい <xref:System.Xml.Linq.XElement> オブジェクトを最初のサブ要素として追加できます。
 
-    他のサブ要素を基準として、特定の位置に新しい要素を追加するには、最初に隣接するサブ要素への参照を取得します。 次に、<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A> メソッドを使用して、隣接するサブ要素の前に新しい <xref:System.Xml.Linq.XElement> オブジェクトを追加できます。 <xref:System.Xml.Linq.XNode.AddAfterSelf%2A> メソッドを使用して、隣接するサブ要素の後に新しい <xref:System.Xml.Linq.XElement> オブジェクトを追加することもできます。
+    他のサブ要素を基準として特定の位置に新しい要素を追加するには、最初に隣接するサブ要素への参照を取得します。 次に、<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A> メソッドを使用して、隣接するサブ要素の前に新しい <xref:System.Xml.Linq.XElement> オブジェクトを追加できます。 また、<xref:System.Xml.Linq.XNode.AddAfterSelf%2A> メソッドを使用して、隣接するサブ要素の後に新しい <xref:System.Xml.Linq.XElement> オブジェクトを追加することもできます。
 
     次の例は、これらの各手法の例を示しています。
 
     [!code-vb[VbXmlSamples2#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#6)]
 
-    次に、このコード例のソース XML と変更された XML の例を示します。
+    次に、このコード例のソースの XML と変更後の XML の例を示します。
 
-    ソース XML:
+    ソースの XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -142,7 +142,7 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
     </Catalog>
     ```
 
-    変更された XML:
+    変更後の XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -170,9 +170,9 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
 
     [!code-vb[VbXmlSamples2#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#7)]
 
-    次に、このコード例のソース XML と変更された XML の例を示します。
+    次に、このコード例のソースの XML と変更後の XML の例を示します。
 
-    ソース XML:
+    ソースの XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -192,7 +192,7 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
     </Catalog>
     ```
 
-    変更された XML:
+    変更後の XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -214,17 +214,17 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
 
 ### <a name="to-modify-an-xml-literal"></a>XML リテラルを変更するには
 
-1. XML 要素の名前を変更するには、最初に要素への参照を取得します。 次に、新しい名前を持つ新しい <xref:System.Xml.Linq.XElement> オブジェクトを作成し、新しい <xref:System.Xml.Linq.XElement> オブジェクトを既存の <xref:System.Xml.Linq.XElement> オブジェクトの <xref:System.Xml.Linq.XNode.ReplaceWith%2A> メソッドに渡すことができます。
+1. XML 要素の名前を変更するには、最初に要素への参照を取得します。 次に、新しい名前を持つ新しい <xref:System.Xml.Linq.XElement> オブジェクトを作成し、この新しい <xref:System.Xml.Linq.XElement> オブジェクトを既存の <xref:System.Xml.Linq.XElement> オブジェクトの <xref:System.Xml.Linq.XNode.ReplaceWith%2A> メソッドに渡すことができます。
 
-    置換する要素に保持する必要があるサブ要素がある場合は、新しい <xref:System.Xml.Linq.XElement> オブジェクトの値を既存の要素の <xref:System.Xml.Linq.XContainer.Nodes%2A> プロパティに設定します。 これにより、新しい要素の値が既存の要素の内部 XML に設定されます。 それ以外の場合は、新しい要素の値を、既存の要素の `Value` プロパティに設定できます。
+    置換する要素に、保持が必要なサブ要素がある場合は、新しい <xref:System.Xml.Linq.XElement> オブジェクトの値を既存の要素の <xref:System.Xml.Linq.XContainer.Nodes%2A> プロパティに設定します。 これにより、新しい要素の値が既存の要素の内部 XML に設定されます。 それ以外の場合は、新しい要素の値を、既存の要素の `Value` プロパティに設定できます。
 
-    次のコード例では、すべての \<Description > 要素を \<抽象 > 要素に置き換えます。 \<Description > 要素の内容は、<xref:System.Xml.Linq.XContainer.Nodes%2A> の説明 \<オブジェクトの > のプロパティを使用して、新しい \<抽象 > 要素に保持されます。<xref:System.Xml.Linq.XElement>
+    次のコード例では、すべての \<Description> 要素が \<Abstract> 要素に置き換えられます。 \<Description> 要素の内容は、\<Description> <xref:System.Xml.Linq.XElement> オブジェクトの <xref:System.Xml.Linq.XContainer.Nodes%2A> プロパティを使用して、新しい \<Abstract> 要素に保持されます。
 
     [!code-vb[VbXmlSamples2#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#8)]
 
-    次に、このコード例のソース XML と変更された XML の例を示します。
+    次に、このコード例のソースの XML と変更後の XML の例を示します。
 
-    ソース XML:
+    ソースの XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -256,7 +256,7 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
     </Catalog>
     ```
 
-    変更された XML:
+    変更後の XML:
 
     ```xml
     <?xml version="1.0"?>
@@ -286,10 +286,10 @@ Visual Basic には、XML リテラルを変更する便利な方法が用意さ
     </Catalog>
     ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Visual Basic での XML の操作](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
-- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [方法 : ファイル、文字列、またはストリームからの XML の読み込み](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Visual Basic における LINQ の概要](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Visual Basic での XML の操作](manipulating-xml.md)
+- [XML](index.md)
+- [方法: ファイル、文字列、またはストリームからの XML の読み込み](how-to-load-xml-from-a-file-string-or-stream.md)
+- [LINQ](../linq/index.md)
+- [Visual Basic における LINQ の概要](../linq/introduction-to-linq.md)

@@ -1,5 +1,6 @@
 ---
-title: CoreResponseData.m_ResponseHeaders フィールド
+title: M_ResponseHeaders CoreResponseData フィールド
+description: .NET の m_ResponseHeaders CoreResponseData フィールドについて説明します。 このフィールドは、サーバー応答に関連付けられたヘッダーを持つ WebHeaderCollection 型です。
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: ea93b70ae8e1a710b4208050d7ec823a28b218b7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c7b896193cb81e9fc9e3ec28110359003a36728
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705975"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989784"
 ---
-# <a name="coreresponsedatamresponseheaders-field"></a>CoreResponseData.m\_ResponseHeaders フィールド
+# <a name="coreresponsedatam_responseheaders-field"></a>CoreResponseData \_ ResponseHeaders フィールド
 
-`CoreResponseData.m_ResponseHeaders` <xref:System.Net.WebHeaderCollection>のサーバーの応答に関連付けられたヘッダー。
+`CoreResponseData.m_ResponseHeaders`は、 <xref:System.Net.WebHeaderCollection> サーバーの応答に関連付けられているヘッダーのです。
 
 ## <a name="syntax"></a>構文
   
@@ -28,14 +29,14 @@ public WebHeaderCollection m_ResponseHeaders
 ```
 
 > [!WARNING]
-> この API は、コード内で直接使用するものではありません。 代わりに、使用する必要があります、<xref:System.Diagnostics.DiagnosticSource>ネットワーク用のコードをフックします。 参照してください[DiagnosticSource ユーザー ガイド](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)します。
-> 
-> Microsoft はいかなる運用アプリケーションでこのクラスの使用をサポートしていません。
+> この API は、コード内で直接使用するためのものではありません。 代わりに、を使用して <xref:System.Diagnostics.DiagnosticSource> ネットワークコードをフックする必要があります。 「 [DiagnosticSource User'S Guide](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)」を参照してください。
+>
+> Microsoft では、どのような状況でも、実稼働アプリケーションでのこのクラスの使用はサポートしていません。
 
 ## <a name="requirements"></a>必要条件
 
 **名前空間:** <xref:System.Net>
 
-**アセンブリ:**(System.dll) のシステム
+**アセンブリ:** システム (System.dll)
 
-**.NET framework のバージョン:** 2.0 以降で使用可能です。
+**.NET Framework のバージョン:** 2.0 以降で使用できます。

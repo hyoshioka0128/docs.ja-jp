@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC36564
 ms.assetid: 21312807-e1cd-4ac1-ae1c-c28a9c25164d
-ms.openlocfilehash: 3e2902da7fe9d8fa2194db681df098f0148cbbaf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: f29e92c8245e33c0418d9a387070b03f645c331e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64584260"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84362749"
 ---
 # <a name="type-arguments-could-not-be-inferred-from-the-delegate"></a>型引数をデリゲートから推論できませんでした
 代入ステートメントは、 `AddressOf` を使用してジェネリック プロシージャのアドレスをデリゲートに割り当てますが、ジェネリック プロシージャに型引数を指定していません。  
@@ -27,8 +27,8 @@ ms.locfileid: "64584260"
   
 ## <a name="see-also"></a>関連項目
 
-- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [AddressOf 演算子](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [Generic Procedures in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
-- [型リスト](../../../visual-basic/language-reference/statements/type-list.md)
-- [拡張メソッド](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [AddressOf 演算子](../operators/addressof-operator.md)
+- [Generic Procedures in Visual Basic](../../programming-guide/language-features/data-types/generic-procedures.md)
+- [型リスト](../statements/type-list.md)
+- [拡張メソッド](../../programming-guide/language-features/procedures/extension-methods.md)

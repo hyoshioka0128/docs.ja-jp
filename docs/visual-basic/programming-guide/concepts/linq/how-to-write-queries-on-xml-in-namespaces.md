@@ -1,10 +1,10 @@
 ---
-title: '方法 : 名前空間内の XML に対するクエリを記述する'
+title: '方法: 名前空間内の XML に対するクエリを記述する'
 ms.date: 07/20/2015
 ms.assetid: 7d4131b5-3288-414f-b77c-b2edc2a1f465
 ms.openlocfilehash: 496cf8daf5136e8aafff000312bbd730a5152e9f
 ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344472"

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e2fd423-f643-4c27-ba5f-41b5ebc3b416
 topic_type:
 - apiref
-ms.openlocfilehash: 01c7cb2e4359a477c26f995602dbf29668e567c0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d715f5842bb7f75da5311d34bf7d4596f0801a92
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131019"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210281"
 ---
 # <a name="icordebugilframegetargument-method"></a>ICorDebugILFrame::GetArgument メソッド
 この MSIL (Microsoft 中間言語) スタックフレーム内の指定された引数の値を取得します。  
@@ -39,16 +39,16 @@ HRESULT GetArgument (
  からこの MSIL スタックフレーム内の引数のインデックス。  
   
  `ppValue`  
- 入出力取得した値を表す ICorDebugValue オブジェクトのアドレスへのポインター。  
+ [out] 取得した値を表す ICorDebugValue オブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- `GetArgument` メソッドは、MSIL スタックフレーム内または just-in-time (JIT) コンパイルフレームで使用できます。  
+ メソッドは、 `GetArgument` MSIL スタックフレーム内または just-in-time (JIT) コンパイルフレームで使用できます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

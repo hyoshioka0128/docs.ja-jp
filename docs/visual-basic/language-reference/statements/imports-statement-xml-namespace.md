@@ -1,5 +1,5 @@
 ---
-title: Imports ステートメント-XML 名前空間
+title: Imports ステートメント - XML 名前空間
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ImportsXmlns
@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Imports statement [Visual Basic]
 - namespaces [Visual Basic], importing
 ms.assetid: 1f4d50a6-08c7-4c2e-8206-ccae35fcd1b4
-ms.openlocfilehash: 52864e4d1c8183b6243025e72368d23627049c84
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: a3184d68b0e4cdff5d4296a5a638e22b4e83bcde
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351060"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404538"
 ---
 # <a name="imports-statement-xml-namespace"></a>Imports ステートメント (XML 名前空間)
 
-Xml リテラルおよび XML 軸プロパティで使用する XML 名前空間プレフィックスをインポートします。
+XML リテラルおよび XML 軸プロパティで使用するために、XML 名前空間プレフィックスをインポートします。
 
 ## <a name="syntax"></a>構文
 
@@ -29,28 +29,28 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
 ## <a name="parts"></a>指定項目
 
 `xmlNamespacePrefix`  
-省略可。 XML 要素と属性が `xmlNamespaceName`を参照できる文字列。 `xmlNamespacePrefix` が指定されていない場合、インポートされた XML 名前空間が既定の XML 名前空間になります。 有効な XML 識別子である必要があります。 詳細については、「宣言され[た XML 要素と属性の名前](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)」を参照してください。
+任意。 XML 要素と属性で `xmlNamespaceName` を参照できる文字列。 `xmlNamespacePrefix` を指定していない場合、インポートされた XML 名前空間が既定の XML 名前空間になります。 有効な XML 識別子である必要があります。 詳細については、「[宣言する XML 要素と属性の名前](../../programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)」を参照してください。
 
 `xmlNamespaceName`  
-必須。 インポートされる XML 名前空間を識別する文字列。
+必須です。 インポートされる XML 名前空間を識別する文字列。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
-`Imports` ステートメントを使用して、XML リテラルおよび XML 軸プロパティで使用できるグローバル XML 名前空間、または `GetXmlNamespace` 演算子に渡されるパラメーターとして定義できます。 (`Imports` ステートメントを使用して、コードで型名を使用するときに使用できるエイリアスをインポートする方法については、「 [Imports ステートメント (.Net 名前空間と型)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)」を参照してください。`Imports` ステートメントを使用して XML 名前空間を宣言する構文は、XML で使用される構文と同じです。 したがって、XML ファイルから名前空間宣言をコピーし、それを `Imports` ステートメントで使用することができます。
+`Imports` ステートメントを使用して、XML リテラルおよび XML 軸プロパティで、または `GetXmlNamespace` 演算子に渡されるパラメーターとして、使用できるグローバル XML 名前空間を定義できます。 (`Imports` ステートメントを使用して、コードで型名を使用する場所で使用できる別名をインポートする方法については、「[Imports ステートメント (.NET 名前空間および型)](imports-statement-net-namespace-and-type.md)」を参照してください。)`Imports` ステートメントを使用して XML 名前空間を宣言する構文は、XML で使用する構文と同じです。 そのため、XML ファイルから名前空間宣言をコピーし、それを `Imports` ステートメントで使用できます。
 
-XML 名前空間プレフィックスは、同じ名前空間にある XML 要素を繰り返し作成する場合に便利です。 `Imports` ステートメントで宣言された XML 名前空間プレフィックスは、ファイル内のすべてのコードで使用できるという意味でグローバルです。 Xml 要素リテラルを作成するとき、および XML 軸プロパティにアクセスするときに使用できます。 詳細については、「 [Xml 要素リテラル](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)および[Xml 軸のプロパティ](../../../visual-basic/language-reference/xml-axis/index.md)」を参照してください。
+XML 名前空間プレフィックスは、同じ名前空間にある XML 要素を繰り返し作成する場合に便利です。 `Imports` ステートメントで宣言された XML 名前空間プレフィックスは、ファイル内のすべてのコードで使用できるという意味でグローバルです。 XML 要素リテラルを作成するとき、および XML 軸プロパティにアクセスするときにそれを使用できます。 詳細については、「[XML 要素リテラル](../xml-literals/xml-element-literal.md)」と「[XML 軸プロパティ](../xml-axis/index.md)」を参照してください。
 
-名前空間プレフィックスを使用せずにグローバル XML 名前空間を定義した場合 (`Imports <xmlns="http://SomeNameSpace>"`など)、その名前空間は既定の XML 名前空間と見なされます。 既定の XML 名前空間は、名前空間を明示的に指定していない XML 要素リテラルまたは XML 属性軸プロパティに使用されます。 既定の名前空間は、指定された名前空間が空の名前空間 (つまり、`xmlns=""`) の場合にも使用されます。 既定の XML 名前空間は、xml リテラルの XML 属性、または名前空間を持たない xml 属性軸プロパティには適用されません。
+名前空間プレフィックスを指定せずにグローバル XML 名前空間を定義した場合 (`Imports <xmlns="http://SomeNameSpace>"` など)、その名前空間は既定の XML 名前空間と見なされます。 既定の XML 名前空間は、名前空間を明示的に指定していない XML 要素リテラルまたは XML 属性軸プロパティに使用されます。 さらに既定の名前空間は、指定された名前空間が空の名前空間 (つまり、`xmlns=""`) の場合にも使用されます。 既定の XML 名前空間は、XML リテラルの XML 属性、または名前空間を持たない XML 属性軸プロパティには適用されません。
 
-Xml リテラルで定義されている xml 名前空間 (*ローカル xml 名前空間*と呼ばれます) は、`Imports` ステートメントでグローバルとして定義されている xml 名前空間よりも優先されます。 `Imports` ステートメントで定義された XML 名前空間は、Visual Basic プロジェクト用にインポートされた XML 名前空間よりも優先されます。 Xml リテラルで XML 名前空間が定義されている場合、そのローカル名前空間は埋め込み式には適用されません。
+XML リテラルに定義されている XML 名前空間は、*ローカル XML 名前空間*と呼ばれ、`Imports` ステートメントでグローバルとして定義されている XML 名前空間よりも優先されます。 `Imports` ステートメントで定義された XML 名前空間は、Visual Basic プロジェクトにインポートされた XML 名前空間よりも優先されます。 XML リテラルで XML 名前空間を定義している場合、そのローカル名前空間は埋め込み式に適用されません。
 
-グローバル XML 名前空間は .NET Framework 名前空間と同じスコープおよび定義規則に従います。 その結果、.NET Framework 名前空間をインポートできる場所であればどこでも、`Imports` ステートメントを使用してグローバル XML 名前空間を定義できます。 これには、コードファイルとプロジェクトレベルでインポートされた名前空間の両方が含まれます。 プロジェクトレベルでインポートされた名前空間の詳細については、「[プロジェクトデザイナー (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)」を参照してください。
+グローバル XML 名前空間は .NET Framework 名前空間と同じスコープおよび定義ルールに従います。 そのため、.NET Framework 名前空間をインポート可能などこでも、`Imports` ステートメントを含めてグローバル XML 名前空間を定義できます。 これには、コード ファイルとプロジェクトレベルの両方でインポートされた名前空間が含まれます。 プロジェクトレベルでインポートされた名前空間については、「[[参照設定] ページ (プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)」を参照してください。
 
-各ソースファイルには、任意の数の `Imports` ステートメントを含めることができます。 これらは、`Option Strict` ステートメントなどのオプション宣言に従う必要があります。また、`Module` や `Class` ステートメントなどのプログラミング要素の宣言の前に記述する必要があります。
+各ソース ファイルには、任意の数の `Imports` ステートメントを含めることができます。 これらは、`Option Strict` ステートメントなど、オプションの宣言の後に続く必要があり、`Module` や `Class` ステートメントなどのプログラミング要素の宣言の前に記述する必要があります。
 
 ## <a name="example"></a>例
 
-次の例では、既定の XML 名前空間と、プレフィックス `ns`で識別される XML 名前空間をインポートします。 次に、両方の名前空間を使用する XML リテラルを作成します。
+次の例では、既定の XML 名前空間と、プレフィックス `ns` で識別される XML 名前空間をインポートしています。 次に、両方の名前空間を使用する XML リテラルを作成しています。
 
 [!code-vb[VbXMLSamples#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/Module1.vb#45)]
 
@@ -67,7 +67,7 @@ Xml リテラルで定義されている xml 名前空間 (*ローカル xml 名
 
 ## <a name="example"></a>例
 
-次の例では、XML 名前空間プレフィックス `ns`をインポートします。 次に、名前空間プレフィックスを使用する XML リテラルを作成し、要素の最終的な形式を表示します。
+次の例では、名前空間プレフィックス `ns` をインポートしています。 次に、名前空間プレフィックスを使用する XML リテラルを作成し、要素の最終形式を表示します。
 
 [!code-vb[VbXMLSamples#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples10.vb#22)]
 
@@ -82,11 +82,11 @@ Xml リテラルで定義されている xml 名前空間 (*ローカル xml 名
 </ns:outer>
 ```
 
-コンパイラによって、XML 名前空間プレフィックスがグローバルプレフィックスからローカルプレフィックス定義に変換されたことに注意してください。
+コンパイラによって、XML 名前空間プレフィックスがグローバル プレフィックスからローカル プレフィックス定義に変換されていることに注意してください。
 
 ## <a name="example"></a>例
 
-次の例では、XML 名前空間プレフィックス `ns`をインポートします。 その後、この名前空間のプレフィックスを使用して XML リテラルを作成し、修飾名 `ns:name` を持つ最初の子ノードにアクセスします。
+次の例では、名前空間プレフィックス `ns` をインポートしています。 その後、この名前空間のプレフィックスを使用して XML リテラルを作成し、修飾名 `ns:name` を持つ最初の子ノードにアクセスします。
 
 [!code-vb[VbXMLSamples#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples8.vb#19)]
 
@@ -94,9 +94,9 @@ Xml リテラルで定義されている xml 名前空間 (*ローカル xml 名
 
 `Patrick Hines`
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [XML 要素リテラル](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
-- [XML 軸プロパティ](../../../visual-basic/language-reference/xml-axis/index.md)
-- [宣言する XML 要素と属性の名前](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)
-- [GetXmlNamespace 演算子](../../../visual-basic/language-reference/operators/getxmlnamespace-operator.md)
+- [XML 要素リテラル](../xml-literals/xml-element-literal.md)
+- [XML 軸プロパティ](../xml-axis/index.md)
+- [宣言する XML 要素と属性の名前](../../programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)
+- [GetXmlNamespace 演算子](../operators/getxmlnamespace-operator.md)

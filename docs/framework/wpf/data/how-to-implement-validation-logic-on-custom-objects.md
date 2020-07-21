@@ -12,7 +12,7 @@ helpviewer_keywords:
 ms.assetid: 751fda9b-44f9-4d63-b4f2-1df07ac41e0f
 ms.openlocfilehash: 8520504757e9e9ec9557b84ca2608b4cb99daf62
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61931399"
@@ -21,16 +21,16 @@ ms.locfileid: "61931399"
 この例では、カスタム オブジェクトに検証ロジックを実装し、それにバインドする方法を示します。  
   
 ## <a name="example"></a>例  
- ソース オブジェクトが実装されている場合、ビジネス層の検証ロジックを行うことができます<xref:System.ComponentModel.IDataErrorInfo>を定義する次の例のように、`Person`を実装するオブジェクト<xref:System.ComponentModel.IDataErrorInfo>:  
+ ソース オブジェクトで <xref:System.ComponentModel.IDataErrorInfo> が実装されている場合、ビジネス レイヤーで検証ロジックを提供できます。次に示す例では、<xref:System.ComponentModel.IDataErrorInfo> を実装する `Person` オブジェクトが定義されています、  
   
  [!code-csharp[BusinessLayerValidation#IDataErrorInfo](~/samples/snippets/csharp/VS_Snippets_Wpf/BusinessLayerValidation/CSharp/Data.cs#idataerrorinfo)]
  [!code-vb[BusinessLayerValidation#IDataErrorInfo](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BusinessLayerValidation/VisualBasic/Data.vb#idataerrorinfo)]  
   
- 次の例で、テキスト ボックスのテキスト プロパティにバインド、`Person.Age`バインドが指定されたリソースの宣言で使用可能なされていますが、プロパティ、 `x:Key` `data`します。 <xref:System.Windows.Controls.DataErrorValidationRule>によって発生した検証エラーをチェック、<xref:System.ComponentModel.IDataErrorInfo>実装します。  
+ 次の例では、テキスト ボックスのテキスト プロパティが、`Person.Age` プロパティにバインドされています。このプロパティは、`x:Key` `data` が指定されているリソースによって、バインドに使用できるようになっています。 <xref:System.Windows.Controls.DataErrorValidationRule> では、<xref:System.ComponentModel.IDataErrorInfo> の実装によって発生する検証エラーがチェックされます。  
   
  [!code-xaml[BusinessLayerValidation#BoundTextBox](~/samples/snippets/csharp/VS_Snippets_Wpf/BusinessLayerValidation/CSharp/Window1.xaml?highlight=8,11-19,25-42)]  
   
- 使用する代わりに、代わりに、 <xref:System.Windows.Controls.DataErrorValidationRule>、設定することができます、<xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A>プロパティを`true`します。  
+ または、<xref:System.Windows.Controls.DataErrorValidationRule> を使用する代わりに、<xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A> プロパティを `true` に設定してもかまいません。  
   
 ## <a name="see-also"></a>関連項目
 

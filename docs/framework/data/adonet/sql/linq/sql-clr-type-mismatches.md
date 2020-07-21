@@ -7,14 +7,14 @@ dev_langs:
 ms.assetid: 0a90c33f-7ed7-4501-ad5f-6224c5da8e9b
 ms.openlocfilehash: 27708f4bb8e191156f578132602570bc4a6337b0
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70781206"
 ---
 # <a name="sql-clr-type-mismatches"></a>SQL と CLR の型の不一致
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] はオブジェクト モデルと SQL Server 間の変換のほとんどを自動化します。 ただし、正確な変換が実行されない場合もあります。 以下のセクションでは、共通言語ランタイム (CLR) の型と SQL Server データベースの型の主な不一致について概要を示します。 特定の型マッピングと関数変換の詳細については、「 [SQL CLR 型のマッピング](sql-clr-type-mapping.md)と[データ型および関数](data-types-and-functions.md)」を参照してください。
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] はオブジェクト モデルと SQL Server 間の変換のほとんどを自動化します。 ただし、正確な変換が実行されない場合もあります。 以下のセクションでは、共通言語ランタイム (CLR) の型と SQL Server データベースの型の主な不一致について概要を示します。 特定の型のマッピングと関数の変換については、「[SQL と CLR の型マッピング](sql-clr-type-mapping.md)」と「[データ型と関数](data-types-and-functions.md)」で詳しく説明しています。
 
 ## <a name="data-types"></a>データの種類
 
@@ -34,26 +34,26 @@ SQL Server にクエリを実行する前に、Transact-SQL パラメーター�
 
   - **符号なし整数**。 通常、この型はオーバーフローを避けるため、大きいサイズの符号付きの型に変換されます。 リテラルは、値に基づいて、同じサイズまたはより小さいサイズの符号付きの型に変換されます。
 
-  - **ブール値**。 この型は、1 ビット以上の数値型または文字列型に変換できます。 リテラルは、同じ値に評価される式に (たとえば SQL の `1=1` は CLS の `True` に) 変換できます。
+  - **[Boolean]** 。 この型は、1 ビット以上の数値型または文字列型に変換できます。 リテラルは、同じ値に評価される式に (たとえば SQL の `1=1` は CLS の `True` に) 変換できます。
 
   - **TimeSpan**。 この型は、2 つの `DateTime` 値の差分を表します。SQL Server の `timestamp` には相当しません。 CLR の <xref:System.TimeSpan?displayProperty=nameWithType> は、場合によっては SQL Server の `TIME` 型にもマッピングします。 SQL Server の `TIME` 型は、24 時間未満の正の値を表すだけが目的でした。 CLR の <xref:System.TimeSpan> の範囲はこれよりずっと大きくなります。
 
   > [!NOTE]
-  > の<xref:System.Data.SqlTypes> SQL Server 固有の .NET Framework 型は、この比較には含まれていません。
+  > <xref:System.Data.SqlTypes> にある SQL Server に固有の .NET Framework 型は、この比較には含まれていません。
 
 - SQL Server の不一致 :
 
-  - **固定長の文字型**。 Transact-sql では、unicode カテゴリと非 unicode カテゴリが区別され、各カテゴリには`nchar`固定長`varchar` / `char`、可変長`nvarchar` /、およびの3つの異なる型があります。大きいサイズ`ntext`。 / `text` 固定長文字型は、文字を取得するために CLR の <xref:System.Char?displayProperty=nameWithType> 型に変換できますが、この型の変換と動作に正確には対応していません。
+  - **固定長文字型**。 Transact-SQL では、Unicode カテゴリと Unicode 以外のカテゴリが区別され、それぞれのカテゴリに 3 つの型 (固定長 `nchar`/`char`、可変長 `nvarchar`/`varchar`、および大きいサイズの `ntext`/`text`) があります。 固定長文字型は、文字を取得するために CLR の <xref:System.Char?displayProperty=nameWithType> 型に変換できますが、この型の変換と動作に正確には対応していません。
 
-  - **Bit**。 `bit` ドメインに格納される値の数は `Nullable<Boolean>` と同じですが、両者の型は異なります。 `Bit`は、 `1`の`0` 代わりに`true`値を受け取り、ブール式に相当するものとして使用することはできません。 / `false`
+  - **ビット**。 `bit` ドメインに格納される値の数は `Nullable<Boolean>` と同じですが、両者の型は異なります。 `Bit` が受け取る値は `1` と `0` であり、`true`/`false` ではありません。また、ブール式に相当する型としては使用できません。
 
-  - **タイムスタンプ**。 CLR の <xref:System.TimeSpan?displayProperty=nameWithType> 型とは異なり、SQL Server の `TIMESTAMP` 型は、各更新に固有のデータベースで生成される 8 バイトの数字を表し、<xref:System.DateTime> の値の差異に基づくものではありません。
+  - **Timestamp**。 CLR の <xref:System.TimeSpan?displayProperty=nameWithType> 型とは異なり、SQL Server の `TIMESTAMP` 型は、各更新に固有のデータベースで生成される 8 バイトの数字を表し、<xref:System.DateTime> の値の差異に基づくものではありません。
 
-  - **Money**と**SmallMoney**。 これらの値は <xref:System.Decimal> に変換できますが、基本的には異なる型であり、サーバーベースの関数や変換では異なる型として扱われます。
+  - **Money** および **SmallMoney**。 これらの値は <xref:System.Decimal> に変換できますが、基本的には異なる型であり、サーバーベースの関数や変換では異なる型として扱われます。
 
 ### <a name="multiple-mappings"></a>複数のマッピング
 
-SQL Server のデータ型には CLR の 1 つ以上のデータ型にマッピングできるものが多くあります。 また、CLR のデータ型にも SQL Server の 1 つ以上のデータ型にマッピングできるものが多くあります。 マッピングは LINQ to SQL でサポートされている場合がありますが、CLR と SQL Server 間でマッピングされる 2 つの型が有効桁数、範囲、セマンティクスにおいて完全に一致するとは限りません。 これらの要素の一部または全部が異なるマッピングもあります。 これらの潜在的な相違点の詳細については、 [「SQL CLR 型のマッピング](sql-clr-type-mapping.md)」を参照してください。
+SQL Server のデータ型には CLR の 1 つ以上のデータ型にマッピングできるものが多くあります。 また、CLR のデータ型にも SQL Server の 1 つ以上のデータ型にマッピングできるものが多くあります。 マッピングは LINQ to SQL でサポートされている場合がありますが、CLR と SQL Server 間でマッピングされる 2 つの型が有効桁数、範囲、セマンティクスにおいて完全に一致するとは限りません。 これらの要素の一部または全部が異なるマッピングもあります。 さまざまなマッピング パターンで生じる違いの詳細については、「[SQL と CLR の型マッピング](sql-clr-type-mapping.md)」を参照してください。
 
 ### <a name="user-defined-types"></a>ユーザー定義型
 
@@ -114,7 +114,7 @@ or col1 != col2
 
 この例では、生成される SQL の動作は同等ですが、意図したとおりに正確に変換されない可能性があります。
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]では、 C# `null` SQL の`nothing`比較セマンティクスが強制または Visual Basic されません。 比較演算子は、対応する SQL の演算子に構文上は変換されます。 セマンティクスには、サーバーまたは接続の設定で定義された SQL セマンティクスが反映されます。 既定の SQL Server 設定では、2 つの null 値は一致しないと見なされます (この設定を変更するとセマンティクスを変更できます)。 いずれにしても、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ではクエリの変換時にサーバーの設定は考慮されません。
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] では、C# の `null` または Visual Basic `nothing` の比較セマンティクスが SQL に強制されません。 比較演算子は、対応する SQL の演算子に構文上は変換されます。 セマンティクスには、サーバーまたは接続の設定で定義された SQL セマンティクスが反映されます。 既定の SQL Server 設定では、2 つの null 値は一致しないと見なされます (この設定を変更するとセマンティクスを変更できます)。 いずれにしても、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ではクエリの変換時にサーバーの設定は考慮されません。
 
 リテラルの `null` (`nothing`) による比較は適切な SQL バージョンの (`is null` または `is not null`) に変換されます。
 
@@ -132,7 +132,7 @@ SQL では、式における暗黙の型変換が豊富にサポートされて�
 
 単純なケースでは、これらの違いによって、CLR 式には SQL 式では冗長となるキャストがあります。 さらに重要なことは、SQL 式が評価される過程で中間結果として、正確に対応するものが C# に存在しない型に上位変換される (またはその逆) 可能性があることです。 このような式のテスト、デバッグ、および検証には多大な労力を要します。
 
-### <a name="collation"></a>Collation
+### <a name="collation"></a>照合順序
 
 Transact-SQL では、明示的な照合順序が文字列型の注釈としてサポートされます。 この照合順序に従って、特定の比較の有効性が決定されます。 たとえば、明示的な照合順序の異なる 2 つの列を比較するとエラーになります。 CTS の文字列型はこれよりも単純なため、このようなエラーは起こりません。 次に例を示します。
 
@@ -153,9 +153,9 @@ Where Col1 = Col2
 -- Error, collation conflict.
 ```
 
-実際には、collation 句は、置換できない*制限付きの型*を作成します。
+ここでは、collation サブ句で、代用できない "*制限がある型*" を作成しています。
 
-同様に、並べ替え順序も型システムによって顕著に異なります。 この相違は、結果の並べ替えに影響します。 <xref:System.Guid> は、すべての 16 バイトを辞書の編集順序 (`IComparable()`) で並べ替えますが、T-SQL は、node(10-15)、clock-seq(8-9)、time-high(6-7)、time-mid(4-5)、time-low(0-3) の順序で GUID を比較します。 この順序は、NT 生成の GUID がこのようなオクテット順になった SQL 7.0 で採用されました。 この方法により、同じノード クラスターで生成された GUID がタイムスタンプに従って順番に並ぶことが保証されていました。 また、この方法はインデックスの作成にも便利でした (挿入時にランダムな入出力の代わりに追加が発生します)。 この順番はプライバシーを考慮して後に Windows で暗号化されましたが、SQL では互換性を維持する必要があります。 回避策は、の<xref:System.Data.SqlTypes.SqlGuid> <xref:System.Guid>代わりにを使用することです。
+同様に、並べ替え順序も型システムによって顕著に異なります。 この相違は、結果の並べ替えに影響します。 <xref:System.Guid> は、すべての 16 バイトを辞書の編集順序 (`IComparable()`) で並べ替えますが、T-SQL は、node(10-15)、clock-seq(8-9)、time-high(6-7)、time-mid(4-5)、time-low(0-3) の順序で GUID を比較します。 この順序は、NT 生成の GUID がこのようなオクテット順になった SQL 7.0 で採用されました。 この方法により、同じノード クラスターで生成された GUID がタイムスタンプに従って順番に並ぶことが保証されていました。 また、この方法はインデックスの作成にも便利でした (挿入時にランダムな入出力の代わりに追加が発生します)。 この順番はプライバシーを考慮して後に Windows で暗号化されましたが、SQL では互換性を維持する必要があります。 この問題を回避するには、<xref:System.Guid> ではなく <xref:System.Data.SqlTypes.SqlGuid> を使用します。
 
 ### <a name="operator-and-function-differences"></a>演算子と関数の相違
 
@@ -163,11 +163,11 @@ Where Col1 = Col2
 
 - C# の論理演算子 `&&` と `||` については、オペランドの辞書編集上の順序に基づいてショート サーキットのセマンティクスが指定されます。 一方 SQL では、セットベースのクエリの対象となるため、実行の順序を決定する際の自由度が高くなります。 次に、これの具体例をいくつか示します。
 
-  - 意味的に同等の変換`CASE`には、"... `WHEN` … `THEN`オペランドの実行の並べ替えを避けるために、SQL で構築してください。
+  - セマンティクスが等価になるように変換するには、SQL の "`CASE` … `WHEN` … `THEN`" 構造でオペランドの実行順序が変更されないようにする必要があります。
 
-  - 式が`AND` C#評価に依存している場合、最初のオペランドの評価の結果に基づいて2番目のオペランドが評価に依存していると、演算子へ/ `OR`の厳密でない変換によって予期しないエラーが発生する可能性があります。
+  - C# の式が最初のオペランドの評価結果に基づく 2 番目のオペランドの評価に依存している場合は、`AND`/`OR` 演算子へのルーズな変換によって予期しないエラーが発生する可能性があります。
 
-- `Round()`関数のセマンティクスは .NET Framework と T-sql で異なります。
+- `Round()` 関数のセマンティクスは、.NET Framework と T-SQL で異なります。
 
 - 文字列のインデックスは、CLR では 0 から始まりますが、SQL では 1 から始まります。 したがって、インデックスのある関数にはインデックスの変換が必要です。
 
@@ -178,7 +178,7 @@ Where Col1 = Col2
     > [!NOTE]
     > この `Like` 演算子の動作は C# のみに当てはまります。Visual Basic の `Like` キーワードは以前と変わりません。
 
-- オーバーフローは常に SQL でチェックされますが、折り返しをC#避けるために (Visual Basic ではなく) で明示的に指定する必要があります。 たとえば、整数の列 C1、C2、および C3 があり、C1+C2 が C3 (Update T Set C3 = C1 + C2) に保存されるとします。
+- SQL では常にオーバーフローがチェックされますが、C# ではこのチェックを明示的に指定して折り返しを回避する必要があります (Visual Basic では不要です)。 たとえば、整数の列 C1、C2、および C3 があり、C1+C2 が C3 (Update T Set C3 = C1 + C2) に保存されるとします。
 
     ```sql
     create table T3 (
@@ -194,9 +194,9 @@ Where Col1 = Col2
 [!code-csharp[DLinqMismatch#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#5)]
 [!code-vb[DLinqMismatch#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqMismatch/vb/Module1.vb#5)]
 
-- SQL では、対称的な算術丸めが実行されますが、.NET Framework は銀行型丸めを使用します。 詳細については、サポート技術情報の文書「丸めを行うカスタム プロシージャを実装する方法」(196652) を参照してください。
+- SQL では対称的な算術型丸めが実行されますが、.NET Framework では銀行型丸めが使用されます。 詳細については、サポート技術情報の文書「丸めを行うカスタム プロシージャを実装する方法」(196652) を参照してください。
 
-- 既定で、共通ロケールの SQL で文字や文字列を比較する場合に大文字と小文字は区別されません。 Visual Basic と C# では、大文字と小文字は区別されます。 たとえば、( `s == "Food"` `s = "Food"` Visual Basic) `s == "Food"`は、 `s` が`food`の場合に異なる結果を生成できます。
+- 既定で、共通ロケールの SQL で文字や文字列を比較する場合に大文字と小文字は区別されません。 Visual Basic と C# では、大文字と小文字は区別されます。 たとえば、`s` が `food` の場合、`s == "Food"` (Visual Basic では `s = "Food"`) と `s == "Food"` の結果は異なります。
 
     ```sql
     -- Assume default US-English locale (case insensitive).
@@ -269,7 +269,7 @@ Where Col1 + Col2 > 4
 
 ## <a name="performance-issues"></a>パフォーマンスの問題
 
-SQL Server CLR 型の違いによっては、CLR と SQL Server 型システムの間でのパフォーマンスが低下する場合があります。 次のような状況でパフォーマンスに影響が現れます。
+SQL Server と CLR の型の相違が原因となり、CLR と SQL Server の型システムの境界を越えるときにパフォーマンスが低下する可能性があります。 次のような状況でパフォーマンスに影響が現れます。
 
 - 論理積/和演算子の評価順序の強制
 
@@ -277,7 +277,7 @@ SQL Server CLR 型の違いによっては、CLR と SQL Server 型システム�
 
 - 型変換は、CLR コンパイラで導入される場合も、オブジェクト リレーショナル クエリ実装で導入される場合も、インデックスの使用を抑制することがあります。
 
-     次に例を示します。
+     たとえば、オブジェクトに適用された
 
     ```sql
     -- Table DDL

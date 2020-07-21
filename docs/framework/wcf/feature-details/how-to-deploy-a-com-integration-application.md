@@ -2,19 +2,19 @@
 title: '方法: COM+ 統合アプリケーションを展開する'
 ms.date: 03/30/2017
 ms.assetid: 2e5a0510-db3c-4988-a09c-696285836650
-ms.openlocfilehash: fcf525943e6e453253c6f4d3bcfa8a1a08df6909
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4ae7f730296d54debc1cf2971b61e5700503430
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778327"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595428"
 ---
 # <a name="how-to-deploy-a-com-integration-application"></a>方法: COM+ 統合アプリケーションを展開する
 COM+ 統合アプリケーションを作成した後、これを別のコンピューターに展開する必要が生じる場合があります。 ここでは、COM+ 統合アプリケーションをコンピューター間で移動する方法を説明します。  
   
 ### <a name="moving-a-com-hosted-integration-app"></a>COM+ ホスト統合アプリケーションの移動  
   
-1. WCF が両方のコンピューターにインストールされていることを確認します。  
+1. 両方のコンピューターに WCF がインストールされていることを確認します。  
   
 2. コンピューター A からアプリケーションをエクスポートします。  
   
@@ -28,7 +28,7 @@ COM+ 統合アプリケーションを作成した後、これを別のコンピ
   
 ### <a name="moving-a-web-hosted-integration-application"></a>Web ホスト統合アプリケーションの移動  
   
-1. WCF が両方のコンピューターにインストールされていることを確認します。  
+1. 両方のコンピューターに WCF がインストールされていることを確認します。  
   
 2. コンピューター A からアプリケーションをエクスポートします。  
   
@@ -40,6 +40,6 @@ COM+ 統合アプリケーションを作成した後、これを別のコンピ
   
 ## <a name="see-also"></a>関連項目
 
-- [COM+ アプリケーションとの統合の概要](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)
-- [方法: COM + サービス設定を構成します。](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
-- [方法: COM + サービス モデル構成ツールを使用します。](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)
+- [COM + アプリケーションとの統合の概要](integrating-with-com-plus-applications-overview.md)
+- [方法: COM+ サービス設定を構成する](how-to-configure-com-service-settings.md)
+- [方法: COM+ サービス モデル構成ツールを使用する](how-to-use-the-com-service-model-configuration-tool.md)

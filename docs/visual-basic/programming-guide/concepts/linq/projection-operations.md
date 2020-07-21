@@ -2,14 +2,14 @@
 title: 射影操作
 ms.date: 07/20/2015
 ms.assetid: b8d38e6d-21cf-4619-8dbb-94476f4badc7
-ms.openlocfilehash: d7efb46ccfe3208ae6c58043a64c236171d0c147
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 4795bdaba53949b34fe380ea9c51025ce43c40db
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346628"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396338"
 ---
-# <a name="projection-operations-visual-basic"></a>プロジェクション操作 (Visual Basic)
+# <a name="projection-operations-visual-basic"></a>射影操作 (Visual Basic)
 
 射影とは、オブジェクトを、必要なプロパティだけで構成された別の形式に変換する操作のことをいいます。 射影を使用することにより、個々のオブジェクトから構築された新しい型を作成できます。 プロパティを投影し、それに対して数値演算関数を実行できます。 また、元のオブジェクトを変更せずに射影することもできます。
 
@@ -17,14 +17,14 @@ ms.locfileid: "74346628"
 
 ## <a name="methods"></a>メソッド
 
-|メソッド名|説明|Visual Basic クエリ式の構文|詳細|
+|メソッド名|説明|Visual Basic のクエリ式の構文|説明|
 |-----------------|-----------------|------------------------------------------|----------------------|
-|[選択]|変換関数に基づいて値を射影します。|`Select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|
+|選択|変換関数に基づいて値を射影します。|`Select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|
 |SelectMany|変換関数に基づいて値のシーケンスを射影し、それを 1 つのシーケンスに平坦化します。|複数の `From` 句を使用|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|
 
 ## <a name="query-expression-syntax-examples"></a>クエリ式の構文例
 
-### <a name="select"></a>[選択]
+### <a name="select"></a>選択
 
 次の例では、`Select` 句を使って、文字列リストにある各文字列の最初の文字を射影します。
 
@@ -52,7 +52,7 @@ MsgBox(sb.ToString())
 
 ### <a name="selectmany"></a>SelectMany
 
-次の例では、複数の `From` 句を使用して、文字列のリスト内の各文字列の各単語を射影します。
+次の例では、`From` 句を複数使用して、文字列リストにある各文字列の各単語を射影します。
 
 ```vb
 Dim phrases = New List(Of String) From {"an apple a day", "the quick brown fox"}
@@ -175,12 +175,12 @@ Sub SelectVsSelectMany()
 End Sub
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Linq>
-- [標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Select 句](../../../../visual-basic/language-reference/queries/select-clause.md)
-- [方法 : 結合を使用したデータの結合](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)
-- [方法: 複数のソースからオブジェクトコレクションにデータを設定する (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
-- [方法 : 特定の型での LINQ クエリ結果の取得](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)
-- [方法: グループを使用してファイルを複数のファイルに分割する (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [標準クエリ演算子の概要 (Visual Basic)](standard-query-operators-overview.md)
+- [Select 句](../../../language-reference/queries/select-clause.md)
+- [方法: 結合を使用したデータの結合](../../language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)
+- [方法: 複数のソースからオブジェクトコレクションにデータを設定する (LINQ) (Visual Basic)](how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [方法: 特定の型での LINQ クエリ結果の取得](../../language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)
+- [方法: グループを使用してファイルを複数のファイルに分割する (LINQ) (Visual Basic)](how-to-split-a-file-into-many-files-by-using-groups-linq.md)

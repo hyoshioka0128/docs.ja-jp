@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: d8072ede-0521-4670-9bec-1778ceeb875b
 ms.openlocfilehash: 002a644ff5d48b25351228dcd74330707491d6c8
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70782096"
@@ -16,30 +16,30 @@ ms.locfileid: "70782096"
 次の例は、複数のテーブルからの結果を組み合わせる方法を示しています。  
   
 ## <a name="example"></a>例  
- 次の例では、Visual Basic ( `From` `from`のC#句) の句で外部キーナビゲーションを使用して、ロンドンの顧客のすべての注文を選択します。  
+ 次の例では、Visual Basic の `From` 句 (C# の `from` 句) で外部キー ナビゲーションを使用して、London の顧客の注文をすべて選択します。  
   
  [!code-csharp[DLinqQueryExamples#47](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#47)]
  [!code-vb[DLinqQueryExamples#47](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#47)]  
   
 ## <a name="example"></a>例  
- 次の例`Where`で`Supplier`は、Visual Basic (`where`のC#句) の句で外部キーナビゲーションを使用して、米国内`Products`にがある在庫切れをフィルター処理します。  
+ 次の例では、Visual Basic の `Where` 句 (C# の `where` 句) で外部キー ナビゲーションを使用して、`Supplier` が米国にあり、在庫切れになっている `Products` をフィルター処理します。  
   
  [!code-csharp[DLinqQueryExamples#48](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#48)]
  [!code-vb[DLinqQueryExamples#48](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#48)]  
   
 ## <a name="example"></a>例  
- 次の例では、Visual Basic ( `From` `from`のC#句) の句で外部キーナビゲーションを使用して、シアトルの従業員をフィルター処理し、その担当区域を一覧表示します。  
+ 次の例では、Visual Basic の `From` 句 (C# の `from` 句) で外部キー ナビゲーションを使用して、シアトルの従業員をフィルター処理し、その担当区域を表示します。  
   
  [!code-csharp[DLinqQueryExamples#49](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#49)]  
   
 ## <a name="example"></a>例  
- 次の例で`Select`は、句で外部キーナビゲーションを使用して、Visual Basic (`select`のC#句) では、1人の従業員が別の従業員を報告し、両方`City`の従業員が同じである従業員のペアをフィルター処理します。  
+ 次の例では、Visual Basic の `Select` 句 (C# の `select` 句) で外部キー ナビゲーションを使用して、上司と部下の関係にあり、同じ `City` 出身の 2 人の従業員の組み合わせをフィルター処理します。  
   
  [!code-csharp[DLinqQueryExamples#50](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#50)]
  [!code-vb[DLinqQueryExamples#50](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50)]  
   
 ## <a name="example"></a>例  
- 次の Visual Basic 例では、すべての顧客と注文を検索し、注文が顧客と一致していることを確認し、そのリスト内のすべての顧客に対して連絡先名が提供されることを保証します。  
+ 次の Visual Basic の例では、すべての顧客と注文を調べ、注文と顧客が一致すること、およびリスト内のすべての顧客に連絡先名が指定されていることを確認します。  
   
  [!code-vb[DLinqQueryExamples#50v](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50v)]  
   

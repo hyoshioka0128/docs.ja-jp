@@ -14,39 +14,39 @@ helpviewer_keywords:
 - data types [Visual Basic], integral
 - SByte data type
 ms.assetid: 5c38374a-18a1-4cc2-b493-299e3dcaa60f
-ms.openlocfilehash: 01a0a4a261213d7e6e2016bf49128092e5b22308
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: e7d45c74056ce5b6aa66674c99e48b5ab60015f0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343950"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415571"
 ---
 # <a name="sbyte-data-type-visual-basic"></a>SByte データ型 (Visual Basic)
 
--128 ~ 127 の範囲の値を範囲とする、符号付き8ビット (1 バイト) の整数を保持します。
+-128 から 127 までの符号付き 8 ビット (1 バイト) の整数を保持します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
-`SByte` データ型を使用して、`Integer` の完全なデータ幅または `Short`の半分のデータ幅を必要としない整数値を格納します。 場合によっては、共通言語ランタイムが `SByte` 変数をまとめてパックし、メモリ消費量を節約できることがあります。
+完全なデータ幅の `Integer` や半分のデータ幅の `Short` も必要としない整数値を格納するには、`SByte` データ型を使用します。 場合によっては、共通言語ランタイムで `SByte` 変数を緊密にパックし、メモリ消費を節約できる可能性があります。
 
 `SByte` の既定値は 0 です。
 
 ## <a name="literal-assignments"></a>リテラルの代入
 
-`SByte` 変数は、10進リテラル、16進リテラル、8進数リテラル、または (Visual Basic 2017 で始まる) バイナリリテラルを割り当てることによって、宣言および初期化できます。
+`SByte` 変数を宣言し、10 進リテラル、16 進リテラル、8 進リテラル、または (Visual Basic 2017 以降) バイナリ リテラルを代入することによって初期化できます。
 
-次の例では、10進リテラル、16進リテラル、バイナリリテラルとして表される-102 と等しい整数が `SByte` 値に割り当てられています。 この例では、`/removeintchecks` コンパイラスイッチを使用してコンパイルする必要があります。
+次の例では、整数 -102 を 10 進リテラル、16 進リテラル、バイナリ リテラルで表したものが、`SByte` 値に代入されています。 この例では、`/removeintchecks` コンパイラ スイッチを使用してコンパイルする必要があります。
 
 [!code-vb[SByte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#SByte)]
 
 > [!NOTE]
-> プレフィックス `&h` または `&H` を使用して、16進リテラル、プレフィックス `&b` または `&B` がバイナリリテラルを示すようにし、プレフィックス `&o` または `&O` を使用して8進数リテラルを表します。 10 進リテラルには、プレフィックスはありません。
+> 16 進リテラルを表すにはプレフィックス `&h` または `&H` を使い、バイナリ リテラルを表すにはプレフィックス `&b` または `&B` を使い、8 進リテラルを表すにはプレフィックス `&o` または `&O` を使います。 10 進リテラルには、プレフィックスはありません。
 
-Visual Basic 2017 以降では、次の例に示すように、アンダースコア文字 (`_`) を桁区切り記号として使用して、読みやすくすることもできます。
+Visual Basic 2017 以降では、次の例に示すように、アンダースコア文字 `_` を桁区切り記号として使って読みやすくすることもできます。
 
 [!code-vb[SByteSeparator](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#SByteS)]
 
-Visual Basic 15.5 以降では、アンダースコア文字 (`_`) をプレフィックスと16進数、バイナリ、または8進数の間の先頭の区切り記号として使用することもできます。 例 :
+Visual Basic 15.5 以降では、プレフィックスと 16 進数、2 進数、または 8 進数の間に先頭の区切り記号としてアンダースコア文字 (`_`) を使用することもできます。 次に例を示します。
 
 ```vb
 Dim number As SByte = &H_F9
@@ -54,31 +54,31 @@ Dim number As SByte = &H_F9
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-整数リテラルが `SByte` の範囲外にある場合 (つまり、<xref:System.SByte.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.SByte.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。 整数リテラルにサフィックスがない場合、[整数](integer-data-type.md)が推論されます。 整数リテラルが `Integer` 型の範囲外の場合は、 [Long](long-data-type.md)が推定されます。 これは、前の例では、`0x9A` と `0b10011010` の数値リテラルが32ビット符号付き整数として解釈されることを意味し、156は <xref:System.SByte.MaxValue?displayProperty=nameWithType>を超えています。 10進数以外の整数を `SByte`に割り当てる次のようなコードを正常にコンパイルするには、次のいずれかの操作を行います。
+整数リテラルが `SByte` の範囲外にある場合 (つまり、<xref:System.SByte.MinValue?displayProperty=nameWithType> より小さいか、<xref:System.SByte.MaxValue?displayProperty=nameWithType> より大きい場合)、コンパイル エラーが発生します。 整数リテラルにサフィックスがない場合は、[Integer](integer-data-type.md) が推定されます。 整数リテラルが `Integer` 型の範囲外の場合は、[Long](long-data-type.md) が推定されます。 つまり、前の例では、数値リテラル `0x9A` と `0b10011010` は値が 156 の 32 ビット符号付き整数として解釈され、これは <xref:System.SByte.MaxValue?displayProperty=nameWithType> を超えています。 `SByte` に 10 進数以外の整数を代入する次のようなコードを正常にコンパイルするには、次のいずれかの操作を行います。
 
-- `/removeintchecks` コンパイラスイッチを使用してコンパイルすることにより、整数範囲のチェックを無効にします。
+- `/removeintchecks` コンパイラ スイッチを使用してコンパイルすることにより、整数境界のチェックを無効にします。
 
-- `SByte`に割り当てるリテラル値を明示的に定義するには、[型文字](../../programming-guide/language-features/data-types/type-characters.md)を使用します。 次の例では、負のリテラル `Short` 値を `SByte`に割り当てます。 負の数値の場合は、数値リテラルの上位ワードの上位ビットを設定する必要があることに注意してください。 この例の場合、これはリテラル `Short` 値のビット15です。
+- `SByte` に代入するリテラル値を明示的に定義するには、[型文字](../../programming-guide/language-features/data-types/type-characters.md)を使用します。 次の例では、負のリテラル `Short` 値を `SByte` に代入します。 負の数値の場合は、数値リテラルの上位ワードの上位ビットを設定する必要があることに注意してください。 この例の場合、これはリテラル `Short` 値のビット 15 です。
 
    [!code-vb[SByteTypeChars](../../../../samples/snippets/visualbasic/language-reference/data-types/sbyte-assignment.vb#1)]
 
 ## <a name="programming-tips"></a>プログラミングのヒント
 
-- **CLS 準拠。** `SByte` のデータ型は[共通言語仕様](https://www.ecma-international.org/publications/standards/Ecma-335.htm)(cls) の一部ではないため、cls 準拠のコードはそれを使用するコンポーネントを使用できません。
+- **CLS 準拠。** `SByte` データ型は[共通言語仕様](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS) に含まれないため、CLS に準拠しているコードではそれを使用するコンポーネントを使用できません。
 
-- **広げ.** `SByte` のデータ型は、`Short`、`Integer`、`Long`、`Decimal`、`Single`、および `Double`に拡大変換されます。 つまり、<xref:System.OverflowException?displayProperty=nameWithType> エラーが発生することなく、`SByte` をこれらの型のいずれかに変換できます。
+- **拡大変換。** `SByte` データ型は、`Short`、`Integer`、`Long`、`Decimal`、`Single`、および `Double` に拡大変換されます。 これは、<xref:System.OverflowException?displayProperty=nameWithType> エラーを発生させることなく、これらの型のいずれかに `SByte` を変換できることを意味します。
 
-- **文字を入力します。** `SByte` には、リテラルの型文字または識別子の型文字がありません。
+- **型文字。** `SByte` には、リテラルの型文字も識別子の型文字も含まれません。
 
-- **フレームワークの種類。** .NET Framework において対応する型は、<xref:System.SByte?displayProperty=nameWithType> 構造体です。
+- **Framework の型。** .NET Framework において対応する型は、<xref:System.SByte?displayProperty=nameWithType> 構造体です。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.SByte?displayProperty=nameWithType>
-- [データの種類](../../../visual-basic/language-reference/data-types/index.md)
-- [CString](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Short データ型](../../../visual-basic/language-reference/data-types/short-data-type.md)
-- [Integer データ型](../../../visual-basic/language-reference/data-types/integer-data-type.md)
-- [Long データ型](../../../visual-basic/language-reference/data-types/long-data-type.md)
-- [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [データの種類](index.md)
+- [データ型変換関数](../functions/type-conversion-functions.md)
+- [変換の概要](../keywords/conversion-summary.md)
+- [Short データ型](short-data-type.md)
+- [Integer データ型](integer-data-type.md)
+- [Long データ型](long-data-type.md)
+- [データ型の有効な使用方法](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)

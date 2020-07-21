@@ -2,16 +2,16 @@
 title: Wcf 開発者向けの WCF と gRPC-gRPC の比較
 description: 分散アプリケーションを構築するための WCF および gRPC フレームワークの比較。
 ms.date: 09/02/2019
-ms.openlocfilehash: 312492dcce4bdef61feff0bf924c6df287b9c676
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4f54db76c9512b770b4dd993496d95437dd89753
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966951"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503335"
 ---
 # <a name="comparing-wcf-to-grpc"></a>WCF と gRPC の比較
 
-前の章では、Protobuf と gRPC がメッセージを処理する方法について詳しく説明しました。 WCF から gRPC への詳細な変換を実行する前に、現在 WCF で利用できる機能の範囲が gRPC でどのように処理されるか、および同等の gRPC でないと思われる場合に使用できる回避策について確認することが重要です。 特に、この章では次の項目について説明します。
+前の章では、Protobuf と gRPC がメッセージを処理する方法について詳しく説明しました。 Windows Communication Foundation (WCF) から gRPC への詳細な変換を行う前に、gRPC で WCF で利用可能な機能がどのように処理されるか、および同等の gRPC がない場合に使用できる回避策について理解しておく必要があります。 特に、この章では次の項目について説明します。
 
 - 操作とメソッド
 - バインドとトランスポート
@@ -37,12 +37,12 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
 
-// The request message containing the user's name.
+// The request message that contains the user's name.
 message HelloRequest {
   string name = 1;
 }
 
-// The response message containing the greetings.
+// The response message that contains the greetings.
 message HelloReply {
   string message = 1;
 }

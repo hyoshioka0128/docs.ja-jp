@@ -4,13 +4,13 @@ ms.date: 03/30/2017
 ms.assetid: 262d8e60-8e71-42d7-8340-1b5276a0ad35
 ms.openlocfilehash: f4f9b3f5060a2fdeaed98617175fa595dd7c667a
 ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70247074"
 ---
 # <a name="debugging-support"></a>デバッグのサポート
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]プロジェクトの一般的なデバッグ[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]サポートを提供します。  「 [Linq のデバッグ](/visualstudio/debugger/debugging-linq)」または「 [linq のデバッグ](/visualstudio/debugger/debugging-linq)」も参照してください。  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] プロジェクトのデバッグを全般的にサポートします。  「[LINQ のデバッグ](/visualstudio/debugger/debugging-linq)」または「[LINQ のデバッグ](/visualstudio/debugger/debugging-linq)」も参照してください。  
   
  また、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は SQL コードを表示する特別なツールも備えています。 詳細については、このセクションの各トピックを参照してください。  
   

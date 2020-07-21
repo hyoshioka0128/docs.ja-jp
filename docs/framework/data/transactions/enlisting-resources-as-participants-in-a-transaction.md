@@ -1,26 +1,27 @@
 ---
 title: トランザクションの参加要素としてのリソースの参加
+description: .NET トランザクションで参加要素としてリソースを参加させる トランザクションの各リソースは、リソース マネージャーによって管理され、トランザクション マネージャーによって調整されます。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 786a12c2-d530-49f4-9c59-5c973e15a11d
-ms.openlocfilehash: 83d83df0f747198e93dd64308b904cad5c7439ec
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: MT
+ms.openlocfilehash: c3c777593750b3a4f05ae97ed6e26e19f58e4d72
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205981"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141876"
 ---
 # <a name="enlisting-resources-as-participants-in-a-transaction"></a>トランザクションの参加要素としてのリソースの参加
 
 トランザクションに参加する各リソースは、リソース マネージャーによって管理され、その動作はトランザクション マネージャーによって調整されます。 この調整は、トランザクション マネージャーを介してトランザクションに参加したサブスクライバーへの通知によって行われます。
 
-ここでは、単一または複数のリソースがトランザクションに参加する方法と、さまざまな種類の参加について説明します。 「[単一フェーズおよびマルチフェーズでのトランザクションのコミット」で](committing-a-transaction-in-single-phase-and-multi-phase.md)は、参加しているリソース間でトランザクションコミットメントを調整する方法について説明します。
+ここでは、単一または複数のリソースがトランザクションに参加する方法と、さまざまな種類の参加について説明します。 「[フェーズおよび複数フェーズでのトランザクションのコミット](committing-a-transaction-in-single-phase-and-multi-phase.md)」のトピックでは、参加リソース間でトランザクションのコミットメントを調整する方法について説明しています。
 
 ## <a name="enlisting-resources-in-a-transaction"></a>トランザクションへのリソースの参加
 
-リソースをトランザクションに参加させるには、リソースをトランザクションに登録する必要があります。 クラス<xref:System.Transactions.Transaction>は、この機能を提供する、**登録**で始まる名前を持つ一連のメソッドを定義します。 さまざまな**参加**メソッドは、リソースマネージャーが持つことのできるさまざまな種類の参加リストに対応します。 具体的には、揮発性リソースには <xref:System.Transactions.Transaction.EnlistVolatile%2A> メソッド、永続性リソースには <xref:System.Transactions.Transaction.EnlistDurable%2A> メソッドを使用します。 リソース マネージャーの永続性または揮発性とは、リソース マネージャーがエラーの回復をサポートするかどうかを意味します。 リソース マネージャーがエラーの回復をサポートする場合、フェーズ 1 (準備) 中にデータが永続ストレージに保存されます。したがって、リソース マネージャーがダウンした場合でも、回復時にトランザクションへの再参加を行い、TM から受信した通知に基づいて適切な動作を実行できます。 一般に、揮発性リソース マネージャーは、メモリ内のデータ構造 (たとえば、メモリ内のトランザクション ハッシュ テーブル) などの揮発性リソースを管理し、永続的リソース マネージャーは、より永続的なバッキング ストアを持つリソース (たとえば、バッキング ストアがディスクであるデータベース) を管理します。
+リソースをトランザクションに参加させるには、リソースをトランザクションに登録する必要があります。 <xref:System.Transactions.Transaction> クラスは、この機能を提供する一連のメソッドを定義しています。これらのメソッドの名前は **Enlist** で始まります。 さまざまな **Enlist** メソッドは、リソース マネージャーが持つ各種の参加リストにそれぞれ対応しています。 具体的には、揮発性リソースには <xref:System.Transactions.Transaction.EnlistVolatile%2A> メソッド、永続性リソースには <xref:System.Transactions.Transaction.EnlistDurable%2A> メソッドを使用します。 リソース マネージャーの永続性または揮発性とは、リソース マネージャーがエラーの回復をサポートするかどうかを意味します。 リソース マネージャーがエラーの回復をサポートする場合、フェーズ 1 (準備) 中にデータが永続ストレージに保存されます。したがって、リソース マネージャーがダウンした場合でも、回復時にトランザクションへの再参加を行い、TM から受信した通知に基づいて適切な動作を実行できます。 一般に、揮発性リソース マネージャーは、メモリ内のデータ構造 (たとえば、メモリ内のトランザクション ハッシュ テーブル) などの揮発性リソースを管理し、永続的リソース マネージャーは、より永続的なバッキング ストアを持つリソース (たとえば、バッキング ストアがディスクであるデータベース) を管理します。
 
 簡単に説明すると、リソースが永続性をサポートするかどうかに応じて、<xref:System.Transactions.Transaction.EnlistDurable%2A> メソッドまたは <xref:System.Transactions.Transaction.EnlistVolatile%2A> メソッドのどちらを使用するかを決定した後、リソース マネージャーに <xref:System.Transactions.IEnlistmentNotification> インターフェイスを実装して、2 フェーズ コミット (2PC) に参加するようにリソースを登録する必要があります。 2PC の詳細については、「[単一フェーズおよび複数フェーズでのトランザクションのコミット](committing-a-transaction-in-single-phase-and-multi-phase.md)」を参照してください。
 
@@ -32,7 +33,7 @@ ms.locfileid: "70205981"
 
 すべての <xref:System.Transactions.Transaction.EnlistDurable%2A> メソッドは、最初のパラメーターとして <xref:System.Guid> オブジェクトを使用します。 トランザクション マネージャーは、この <xref:System.Guid> を使用して、永続参加リストと特定のリソース マネージャーを関連付けます。 そのため、リソース マネージャーが再起動時に自身を他のリソース マネージャーと識別できるように、一貫して同じ <xref:System.Guid> を使用することが不可欠です。そうでない場合、回復が失敗する可能性があります。
 
-<xref:System.Transactions.Transaction.EnlistDurable%2A> メソッドの第 2 パラメーターは、トランザクション通知を受信するためにリソース マネージャーが実装するオブジェクトへの参照です。 使用するオーバーロードにより、リソース マネージャーが単一フェーズ コミット (SPC) の最適化をサポートするかどうかがトランザクション マネージャーに通知されます。 ほとんどの場合、2 フェーズ コミット (2PC) に参加するために <xref:System.Transactions.IEnlistmentNotification> インターフェイスを実装します。 ただし、コミット プロセスを最適化する場合は、SPC 用の <xref:System.Transactions.ISinglePhaseNotification> インターフェイスの実装を検討することもできます。 SPC の詳細については、単一フェーズ[コミットと昇格可能単一フェーズ通知を使用し](optimization-spc-and-promotable-spn.md)[た単一フェーズおよびマルチフェーズ](committing-a-transaction-in-single-phase-and-multi-phase.md)および最適化でのトランザクションのコミットに関する説明を参照してください。
+<xref:System.Transactions.Transaction.EnlistDurable%2A> メソッドの第 2 パラメーターは、トランザクション通知を受信するためにリソース マネージャーが実装するオブジェクトへの参照です。 使用するオーバーロードにより、リソース マネージャーが単一フェーズ コミット (SPC) の最適化をサポートするかどうかがトランザクション マネージャーに通知されます。 ほとんどの場合、2 フェーズ コミット (2PC) に参加するために <xref:System.Transactions.IEnlistmentNotification> インターフェイスを実装します。 ただし、コミット プロセスを最適化する場合は、SPC 用の <xref:System.Transactions.ISinglePhaseNotification> インターフェイスの実装を検討することもできます。 SPC の詳細については、「[フェーズおよび複数フェーズでのトランザクションのコミット](committing-a-transaction-in-single-phase-and-multi-phase.md)」および「[単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化](optimization-spc-and-promotable-spn.md)」を参照してください。
 
 第 3 パラメーターは <xref:System.Transactions.EnlistmentOptions> 列挙体であり、その値は <xref:System.Transactions.EnlistmentOptions.None> または <xref:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired> のいずれかです。 この値が <xref:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired> に設定されている場合、トランザクション マネージャーから Prepare 通知を受信したときに、参加リストが追加リソース マネージャーを参加させる可能性があります。 ただし、この種類の参加リストは単一フェーズ コミットの最適化の条件を満たさないことに注意してください。
 
@@ -40,7 +41,7 @@ ms.locfileid: "70205981"
 
 キャッシュなどの揮発性リソースを管理する参加要素は、<xref:System.Transactions.Transaction.EnlistVolatile%2A> メソッドを使用して参加させる必要があります。 このようなオブジェクトは、トランザクションの結果を取得したり、システム障害の後で、参加しているトランザクションの状態を回復したりできない場合があります。
 
-前に述べたように、リソース マネージャーはメモリ内の揮発性リソースを管理する場合、揮発性参加リストを作成します。 <xref:System.Transactions.Transaction.EnlistVolatile%2A> を使用する利点の 1 つに、トランザクションの不要なエスカレーションを強制しないことがあります。 トランザクションのエスカレーションの詳細については、「[トランザクション管理のエスカレーション](transaction-management-escalation.md)」を参照してください。 揮発性のデータを参加させると、トランザクションマネージャーによって参加が処理される方法と、トランザクションマネージャーによってリソースマネージャーに期待されることが異なります。 これは、揮発性リソース マネージャーが回復を実行しないためです。 揮発性リソース マネージャーが回復を実行せず、<xref:System.Transactions.Transaction.EnlistVolatile%2A> を必要とする <xref:System.Guid> メソッドを呼び出さないため、<xref:System.Transactions.TransactionManager.Reenlist%2A> メソッドは <xref:System.Guid> パラメーターを取得しません。
+前に述べたように、リソース マネージャーはメモリ内の揮発性リソースを管理する場合、揮発性参加リストを作成します。 <xref:System.Transactions.Transaction.EnlistVolatile%2A> を使用する利点の 1 つに、トランザクションの不要なエスカレーションを強制しないことがあります。 トランザクションのエスカレーションの詳細については、「[トランザクション管理のエスカレーション](transaction-management-escalation.md)」のトピックを参照してください。 揮発的な参加を行うことは、トランザクション マネージャーによる参加リストの処理方法、およびトランザクション マネージャーがリソース マネージャーに期待することの両方に相違が生じることを意味します。 これは、揮発性リソース マネージャーが回復を実行しないためです。 揮発性リソース マネージャーが回復を実行せず、<xref:System.Transactions.Transaction.EnlistVolatile%2A> を必要とする <xref:System.Guid> メソッドを呼び出さないため、<xref:System.Transactions.TransactionManager.Reenlist%2A> メソッドは <xref:System.Guid> パラメーターを取得しません。
 
 永続的参加リストの場合と同様に、どのオーバーロード メソッドを使用して参加する場合でも、リソース マネージャーが単一フェーズ コミットの最適化をサポートするかどうかがトランザクション マネージャーに示されます。 揮発性リソース マネージャーが回復を実行できないため、準備フェーズ中、回復情報は揮発性参加リストに書き込まれません。 したがって、<xref:System.Transactions.PreparingEnlistment.RecoveryInformation%2A> メソッドを呼び出すと、<xref:System.InvalidOperationException> になります。
 
@@ -51,7 +52,7 @@ ms.locfileid: "70205981"
 
 ### <a name="optimizing-performance"></a>パフォーマンスの最適化
 
-<xref:System.Transactions.Transaction> クラスは、PSPE (Promotable Single Phase Enlistment) を参加させるための <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> メソッドも提供しています。 これにより、永続的リソース マネージャー (RM) は、MSDTC による管理のために後で必要に応じてエスカレートできるトランザクションをホストおよび "所有" できます。 詳細については、「[単一フェーズコミットと昇格可能単一フェーズ通知を使用した最適化](optimization-spc-and-promotable-spn.md)」を参照してください。
+<xref:System.Transactions.Transaction> クラスは、PSPE (Promotable Single Phase Enlistment) を参加させるための <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> メソッドも提供しています。 これにより、永続的リソース マネージャー (RM) は、MSDTC による管理のために後で必要に応じてエスカレートできるトランザクションをホストおよび "所有" できます。 詳細については、「[単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化](optimization-spc-and-promotable-spn.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7ae84d6-81e8-4cb7-a1f9-d48b6cde5d79
 topic_type:
 - apiref
-ms.openlocfilehash: 70c1d87ae32fb70f8d9f6e32b527394022459526
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 68a0f9ec8793d465a6fa3b1cb6936eddd7be4c8f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446430"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615411"
 ---
 # <a name="isymunmanagedreader2getmethodsindocument-method"></a>ISymUnmanagedReader2::GetMethodsInDocument メソッド
 指定されたドキュメントに行情報が含まれるすべてのメソッドを取得します。  
@@ -41,10 +41,10 @@ HRESULT GetMethodsInDocument(
  からドキュメントへのポインター。  
   
  `cMethod`  
- から`pRetVal` 配列のサイズを示す `ULONG32`。  
+ から`ULONG32`配列のサイズを示す `pRetVal` 。  
   
  `pcMethod`  
- 入出力メソッドを格納するために必要なバッファーのサイズを受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`メソッドを格納するために必要なバッファーのサイズを受け取るへのポインター。  
   
  `pRetVal`  
  入出力メソッドを受け取るバッファーへのポインター。  
@@ -57,4 +57,4 @@ HRESULT GetMethodsInDocument(
   
 ## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedReader2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)
+- [ISymUnmanagedReader2 インターフェイス](isymunmanagedreader2-interface.md)

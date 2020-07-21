@@ -1,21 +1,23 @@
 ---
 title: 大規模データとストリーミング
+description: WCF XML ベースの通信、エンコーダー、およびストリーミングデータ (バイナリデータの転送など) に関する考慮事項について説明します。
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 70e43eaf4dc77e07af8ec65faf9cf0fa9a7a0fe4
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 2eb57e2f57bebb2e765ea798b3dff27e0187e8c7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991514"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246585"
 ---
 # <a name="large-data-and-streaming"></a>大規模データとストリーミング
-Windows Communication Foundation (WCF) は、XML ベースの通信インフラストラクチャです。 XML データは通常、 [xml 1.0 仕様](https://go.microsoft.com/fwlink/?LinkId=94838)で定義されている標準のテキスト形式でエンコードされているため、接続されたシステムの開発者および設計者は、通常、ネットワークを介して送信されるメッセージのワイヤフットプリント (またはサイズ) について考慮します。XML のテキストベースのエンコードでは、バイナリデータを効率的に転送するための特別な課題があります。  
+
+Windows Communication Foundation (WCF) は、XML ベースの通信インフラストラクチャです。 Xml データは通常、 [xml 1.0 仕様](https://www.w3.org/TR/REC-xml/)で定義されている標準のテキスト形式でエンコードされているため、接続されたシステムの開発者および設計者は、通常、ネットワークを介して送信されるメッセージのワイヤフットプリント (またはサイズ) を考慮します  
   
 ## <a name="basic-considerations"></a>基本的な考慮事項  
  WCF に関する次の情報についての背景情報を提供するために、このセクションでは、接続されたシステムインフラストラクチャに一般的に適用されるエンコーディング、バイナリデータ、およびストリーミングに関する一般的な懸念事項と考慮事項について説明します。  
   
-### <a name="encoding-data-text-vs-binary"></a>データのエンコード:テキストと2 項  
+### <a name="encoding-data-text-vs-binary"></a>データのエンコーディング : テキストとバイナリ  
  開発者が揃って口にする懸念には、開始タグと終了タグが繰り返し使用される XML では、バイナリ形式と比較してオーバーヘッドが大きくなるのではないか、数値のエンコーディングは、数値をテキスト値で表現するのでサイズが膨れ上がるのではないか、バイナリ データをテキスト形式に埋め込むためには特別なエンコーディングが必要なので、バイナリ データを効率的に表現することはできないのではないか、などがあります。  
   
  このような懸念の多くは当然ではありますが、XML Web サービス環境で XML のテキスト エンコードされたメッセージと、従来のリモート プロシージャ コール (RPC) 環境でバイナリ エンコードされたメッセージとの間の実際の相違は、それほど大きくありません。  
@@ -56,10 +58,10 @@ Windows Communication Foundation (WCF) は、XML ベースの通信インフラ�
   
  通常、データにこのような制約がない場合は、1 つの大きいメッセージではなく、セッションの有効範囲内でメッセージ シーケンスを送信することをお勧めします。 詳細については、このトピックで後述する「ストリーミングデータ」セクションを参照してください。  
   
- 大量のデータを送信する場合は、 `maxAllowedContentLength` iis 設定を設定する必要があります (詳細については、「 `maxReceivedMessageSize` [iis 要求の制限の構成](https://go.microsoft.com/fwlink/?LinkId=253165)」を参照してください)。 [MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A)または<xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>) を行います。 プロパティ`maxAllowedContentLength`の既定値は 28.6 M で`maxReceivedMessageSize` 、プロパティの既定値は 64 kb です。  
+ 大量のデータを送信する場合は、iis 設定を設定する必要があります `maxAllowedContentLength` (詳細については、「 [iis 要求の制限の構成](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/)」を参照してください) `maxReceivedMessageSize` 。また、バインド設定 (たとえば、 [MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A)または) を設定する必要があり <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A> ます。 `maxAllowedContentLength`プロパティの既定値は 28.6 MB で、 `maxReceivedMessageSize` プロパティの既定値は 64 kb です。  
   
 ## <a name="encodings"></a>エンコーディング  
- *エンコーディング*は、ネットワーク上でメッセージを表示する方法に関する一連のルールを定義します。 *エンコーダー*は、このようなエンコーディングを実装し、送信側では、インメモリ<xref:System.ServiceModel.Channels.Message>をバイトストリームまたはネットワーク経由で送信できるバイトバッファーに変換します。 受信側では、バイト シーケンスがエンコーダーによってメモリ内メッセージに変換されます。  
+ *エンコーディング*は、ネットワーク上でメッセージを表示する方法に関する一連のルールを定義します。 *エンコーダー*は、このようなエンコーディングを実装し、送信側では、インメモリを <xref:System.ServiceModel.Channels.Message> バイトストリームまたはネットワーク経由で送信できるバイトバッファーに変換します。 受信側では、バイト シーケンスがエンコーダーによってメモリ内メッセージに変換されます。  
   
  WCF には3つのエンコーダーが含まれており、必要に応じて独自のエンコーダーを記述してプラグインできます。  
   
@@ -67,16 +69,16 @@ Windows Communication Foundation (WCF) は、XML ベースの通信インフラ�
   
 |エンコーダー バインド要素|説明|  
 |-----------------------------|-----------------|  
-|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|テキスト メッセージ エンコーダーは、すべての HTTP ベースのバインディングに対する既定のエンコーダーで、相互運用性が特に重要になるカスタムのバインディングにも適しています。 このエンコーダーで入出力が行われるのは、標準の SOAP 1.1/SOAP 1.2 テキスト メッセージであり、バイナリ データに対して特別な処理は行われません。 <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType>メッセージの<xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType>プロパティがに設定されている場合、SOAP エンベロープラッパーは出力から除外され、メッセージ本文の内容のみがシリアル化されます。|  
+|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|テキスト メッセージ エンコーダーは、すべての HTTP ベースのバインディングに対する既定のエンコーダーで、相互運用性が特に重要になるカスタムのバインディングにも適しています。 このエンコーダーで入出力が行われるのは、標準の SOAP 1.1/SOAP 1.2 テキスト メッセージであり、バイナリ データに対して特別な処理は行われません。 <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType>メッセージのプロパティがに設定されている場合 <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> 、SOAP エンベロープラッパーは出力から除外され、メッセージ本文の内容のみがシリアル化されます。|  
 |<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>|MTOM メッセージ エンコーダーは、バイナリ データに対する特別な処理を実装したテキスト エンコーダーです。このエンコーダーは、状況に応じた最適化を要するユーティリティなので、どの標準バインディングでも既定では使用されません。 MTOM エンコーディングのメリットを生じるしきい値より大きいバイナリ データがメッセージにある場合、そのデータは、メッセージ エンベロープの後に続く MIME パートとして外部化されます。 このセクションの「MTOM の有効化」を参照してください。|  
-|<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>|通信を行う双方が WCF に基づくバイナリ メッセージ エンコーダーは、既定のエンコーダーで Net* のバインディングと適切な選択肢です。 バイナリ メッセージ エンコーダーでは、XML 情報セット (Infoset) を対象とした Microsoft 固有のバイナリ表現である .NET Binary XML 形式が使用されます。この形式ではバイナリ データがバイト ストリームとしてエンコードされ、通常は、同等の XML 1.0 表現よりもフットプリントが小さくなりきます。|  
+|<xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>|バイナリメッセージエンコーダーは、Net * バインドの既定のエンコーダーであり、両方の通信パーティが WCF に基づいている場合は、適切な選択肢です。 バイナリ メッセージ エンコーダーでは、XML 情報セット (Infoset) を対象とした Microsoft 固有のバイナリ表現である .NET Binary XML 形式が使用されます。この形式ではバイナリ データがバイト ストリームとしてエンコードされ、通常は、同等の XML 1.0 表現よりもフットプリントが小さくなりきます。|  
   
  相互運用性が要求される通信パスでは一般的にテキスト メッセージ エンコーディングが最適であり、それ以外の通信パスではバイナリ メッセージ エンコーディングが最適です。 バイナリ メッセージ エンコーディングで生成されるメッセージのサイズは、単一のメッセージであればテキストより小さくなることが普通ですが、通信セッションの間に、さらに小さくなっていきます。 テキスト エンコーディングと異なり、バイナリ エンコーディングでは、Base64 を使用するなど、バイナリ データに対する特別な処理を行う必要がありません。このエンコーディングでは、バイトがバイトとして表現されます。  
   
  ソリューションで、相互運用性は必要ではないが、HTTP トランスポートを使用する場合は、トランスポートとして <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> クラスを使用するカスタム バインディングに <xref:System.ServiceModel.Channels.HttpTransportBindingElement> を組み込むことができます。 サービスを利用する多数のクライアントが相互運用性を必要とする場合は、両者にとって適切な種類のトランスポートとエンコーディングがそれぞれに有効化された並行エンドポイントを公開することをお勧めします。  
   
 ### <a name="enabling-mtom"></a>MTOM の有効化  
- 相互運用性が必須である一方で、大きなバイナリ データを送信する必要がある場合、エンコーディング方法のもう 1 つの選択肢に、MTOM メッセージ エンコーディングがあります。このエンコーディングを有効化するには、標準の <xref:System.ServiceModel.BasicHttpBinding> バインディングまたは <xref:System.ServiceModel.WSHttpBinding> バインディングでそれぞれの `MessageEncoding` プロパティを <xref:System.ServiceModel.WSMessageEncoding.Mtom> に設定するか、<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> に <xref:System.ServiceModel.Channels.CustomBinding> を組み込みます。 [Mtom エンコード](../../../../docs/framework/wcf/samples/mtom-encoding.md)サンプルから抽出された次のコード例は、構成で mtom を有効にする方法を示しています。  
+ 相互運用性が必須である一方で、大きなバイナリ データを送信する必要がある場合、エンコーディング方法のもう 1 つの選択肢に、MTOM メッセージ エンコーディングがあります。このエンコーディングを有効化するには、標準の <xref:System.ServiceModel.BasicHttpBinding> バインディングまたは <xref:System.ServiceModel.WSHttpBinding> バインディングでそれぞれの `MessageEncoding` プロパティを <xref:System.ServiceModel.WSMessageEncoding.Mtom> に設定するか、<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> に <xref:System.ServiceModel.Channels.CustomBinding> を組み込みます。 [Mtom エンコード](../samples/mtom-encoding.md)サンプルから抽出された次のコード例は、構成で mtom を有効にする方法を示しています。  
   
 ```xml  
 <system.serviceModel>  
@@ -87,7 +89,7 @@ Windows Communication Foundation (WCF) は、XML ベースの通信インフラ�
       </wsHttpBinding>  
     </bindings>  
      …  
-<system.serviceModel>  
+</system.serviceModel>  
 ```  
   
  前述のように、MTOM エンコーディングの使用が適しているかどうかは、送信するデータ量によって異なります。 また、MTOM はバインディング レベルで有効になるので、MTOM を有効にすると、個々のエンドポイント上のすべての操作に作用します。  
@@ -107,7 +109,7 @@ class MyData
     byte[] binaryBuffer;  
     [DataMember]  
     string someStringData;  
-}   
+}
 ```  
   
  MTOM を使用する場合、上記のデータ コントラクトは次の規則に従ってシリアル化されます。  
@@ -152,7 +154,7 @@ class MyData
  ストリーミングは、ピア チャネル トランスポートを使用している場合も利用できないため、<xref:System.ServiceModel.NetPeerTcpBinding> と共に使用することはできません。  
   
 #### <a name="streaming-and-sessions"></a>ストリーミングとセッション  
- セッション ベースのバインディングでストリーミングを呼び出すと、予期しない動作を引き起こすことがあります。 すべてのストリーミング呼び出しは単一のチャネル (データグラム チャネル) を通じて行われますが、このチャネルは使用されるバインディングがセッションを使用するように構成されている場合であっても、セッションをサポートしません。 セッション ベースのバインディングによって複数のクライアントが同一のサービス オブジェクトに対してストリーミング呼び出しを行う場合、このサービス オブジェクトのコンカレンシー モードが単一に設定され、インスタンス コンテキスト モードが PerSession に設定されていると、すべての呼び出しがこのデータグラム チャネルを通過する必要があるため、同時に処理される呼び出しは 1 つに限られることになります。 そのため、1 つ以上のクライアントがタイムアウトとなる可能性があります。サービス オブジェクトのインスタンス コンテキスト モードを呼び出しごと (PerCall) に設定するか、またはコンカレンシー モードを複数に設定することで、この問題を回避できます。  
+ セッション ベースのバインディングでストリーミングを呼び出すと、予期しない動作を引き起こすことがあります。 すべてのストリーミング呼び出しは単一のチャネル (データグラム チャネル) を通じて行われますが、このチャネルは使用されるバインディングがセッションを使用するように構成されている場合であっても、セッションをサポートしません。 セッション ベースのバインディングによって複数のクライアントが同一のサービス オブジェクトに対してストリーミング呼び出しを行う場合、このサービス オブジェクトのコンカレンシー モードが単一に設定され、インスタンス コンテキスト モードが PerSession に設定されていると、すべての呼び出しがこのデータグラム チャネルを通過する必要があるため、同時に処理される呼び出しは 1 つに限られることになります。 その後、1つまたは複数のクライアントがタイムアウトする可能性があります。この問題を回避するには、サービスオブジェクトのインスタンスコンテキストモードを PerCall または Concurrency から Multiple に設定します。  
   
 > [!NOTE]
 > この場合、利用可能になる "セッション" は 1 つしかないため、MaxConcurrentSessions は効力を失います。  
@@ -164,7 +166,7 @@ class MyData
   
 - バッファー モードで要求の送信および受け入れを行い、ストリーミング モードで応答の受け入れおよび返信を行う (<xref:System.ServiceModel.TransferMode.StreamedResponse>)。  
   
-- 両方向の要求および応答をストリーミング モードで送受信する (<xref:System.ServiceModel.TransferMode.Streamed>).  
+- 両方向の要求および応答をストリーミング モードで送受信する  (<xref:System.ServiceModel.TransferMode.Streamed>).  
   
  ストリーミングを無効化するには、転送モードを <xref:System.ServiceModel.TransferMode.Buffered> (すべてのバインディングでの既定の設定) に設定します。 構成で転送モードを設定する方法を次のコードに示します。  
   
@@ -177,7 +179,7 @@ class MyData
       </basicHttpBinding>  
     </bindings>  
      …  
-<system.serviceModel>  
+</system.serviceModel>  
 ```  
   
  コード内でバインディングをインスタンス化するときは、そのバインディングの `TransferMode` プロパティ (またはカスタム バインドを作成している場合は、トランスポート バインド要素) をそれぞれ上記の値のいずれかに設定する必要があります。  
@@ -217,27 +219,27 @@ public class UploadStreamMessage
    public string appRef;  
    [MessageBodyMember]  
    public Stream data;  
-}   
+}
 ```  
   
- ストリームがファイルの末尾 (EOF) に達すると、ストリーミング転送は終了し、メッセージが閉じられます。 メッセージを送信する (値を返すか、操作を呼び出す) と、を<xref:System.IO.FileStream>渡すことができます。その後、WCF インフラストラクチャは、ストリームが完全に読み取られ、EOF に到達するまで、そのストリームからすべてのデータを取得します。 ストリーム化されたデータを転送する際に、このような <xref:System.IO.Stream> のビルド済み派生クラスがそのデータのソースに存在しない場合は、対応するクラスを作成し、そのクラスでストリーム ソースを覆ったうえで、これを引数または戻り値として使用する必要があります。  
+ ストリームがファイルの末尾 (EOF) に達すると、ストリーミング転送は終了し、メッセージが閉じられます。 メッセージを送信する (値を返すか、操作を呼び出す) と、を渡すことができます <xref:System.IO.FileStream> 。その後、WCF インフラストラクチャは、ストリームが完全に読み取られ、EOF に到達するまで、そのストリームからすべてのデータを取得します。 ストリーム化されたデータを転送する際に、このような <xref:System.IO.Stream> のビルド済み派生クラスがそのデータのソースに存在しない場合は、対応するクラスを作成し、そのクラスでストリーム ソースを覆ったうえで、これを引数または戻り値として使用する必要があります。  
   
  WCF は、メッセージを受信するときに、Base64 でエンコードされたメッセージ本文のコンテンツ (MTOM を使用している場合はそれぞれの MIME パート) にストリームを構築し、コンテンツが読み取られたときにストリームが EOF に到達します。  
   
  トランスポート レベルのストリーミングは、その他のメッセージ コントラクト型 (パラメーター リスト、データ コントラクトの引数、明示的なメッセージ コントラクト) でも使用できますが、このような型指定メッセージのシリアル化および逆シリアル化には、シリアライザーによるバッファー化が必要なので、これらの使用は適切ではありません。  
   
 ### <a name="special-security-considerations-for-large-data"></a>大規模データに関するセキュリティの考慮事項  
- すべてのバインディングで、受信メッセージのサイズを制限して、サービス拒否攻撃を防止できます。 たとえば<xref:System.ServiceModel.BasicHttpBinding>、は、受信メッセージのサイズを範囲とする[MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A)プロパティを公開します。また、次のように処理するときにアクセスされるメモリの最大量を範囲とします。メッセージ。 この単位はバイトで設定されます。既定値は 65,536 バイトです。  
+ すべてのバインディングで、受信メッセージのサイズを制限して、サービス拒否攻撃を防止できます。 たとえば、は、 <xref:System.ServiceModel.BasicHttpBinding> 受信メッセージのサイズを範囲とする[MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A)プロパティを公開します。また、メッセージを処理するときにアクセスされる最大メモリ量も制限します。 この単位はバイトで設定されます。既定値は 65,536 バイトです。  
   
  大きなデータのストリーミングを行うシナリオに特有のセキュリティの脅威は、受信側が、データがストリーミングされることを想定しているときに、データをバッファーさせることで、サービス拒否が誘発されることです。 たとえば、WCF は常にメッセージの SOAP ヘッダーをバッファーします。そのため、攻撃者は、すべてのヘッダーで構成される大規模な悪意のあるメッセージを作成して、データを強制的にバッファーに配置することができます。 ストリーミングが有効になっている場合は、`MaxReceivedMessageSize` を極端に大きい値に設定できます。これは、受信側が、一度にメッセージ全体をメモリにバッファーすることを想定していないためです。 WCF によってメッセージが強制的にバッファー処理される場合、メモリオーバーフローが発生します。  
   
- そのため、この場合は、受信メッセージの最大サイズを制限するだけでは不十分です。 プロパティ`MaxBufferSize`は、WCF によってバッファーされるメモリを制限するために必要です。 ストリーミングを使用する場合は、これを安全な値に設定する (または既定値のままにしておく) ことが重要です。 たとえば、サービスでは、サイズが 4 GB までのファイルを受信し、それをローカル ディスクに格納する必要があるとします。 また、一度に 64 KB のデータしかバッファーできないようにメモリが制限されているとします。 その場合、`MaxReceivedMessageSize` を 4 GB、`MaxBufferSize` を 64 KB に設定します。 また、サービス実装において、64 KB ずつ受信ストリームから読み取り、前のデータがディスクに書き込まれ、メモリから破棄されるまで次のデータを読み取らないようにする必要があります。  
+ そのため、この場合は、受信メッセージの最大サイズを制限するだけでは不十分です。 `MaxBufferSize`プロパティは、WCF によってバッファーされるメモリを制限するために必要です。 ストリーミングを使用する場合は、これを安全な値に設定する (または既定値のままにしておく) ことが重要です。 たとえば、サービスでは、サイズが 4 GB までのファイルを受信し、それをローカル ディスクに格納する必要があるとします。 また、一度に 64 KB のデータしかバッファーできないようにメモリが制限されているとします。 その場合、`MaxReceivedMessageSize` を 4 GB、`MaxBufferSize` を 64 KB に設定します。 また、サービス実装において、64 KB ずつ受信ストリームから読み取り、前のデータがディスクに書き込まれ、メモリから破棄されるまで次のデータを読み取らないようにする必要があります。  
   
- また、このクォータは、WCF によって実行されるバッファリングを制限するだけで、独自のサービスまたはクライアント実装で行われるバッファリングを防ぐことができないことを理解しておくことも重要です。 セキュリティに関するその他の考慮事項の詳細については、「[データのセキュリティに関する考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)」を参照してください。  
+ また、このクォータは、WCF によって実行されるバッファリングを制限するだけで、独自のサービスまたはクライアント実装で行われるバッファリングを防ぐことができないことを理解しておくことも重要です。 セキュリティに関するその他の考慮事項の詳細については、「[データのセキュリティに関する考慮事項](security-considerations-for-data.md)」を参照してください。  
   
 > [!NOTE]
 > バッファー転送とストリーミング転送のどちらを使用するかは、エンドポイントごとにローカルに決定します。 HTTP トランスポートの場合、転送モードは、接続、つまりプロキシ サーバーなどの中継局に伝達されません。 転送モードの設定は、サービス インターフェイスの記述に反映されません。 サービスに対して WCF クライアントを生成した後、ストリーミング転送で使用することを目的としたサービスの構成ファイルを編集して、モードを設定する必要があります。 TCP トランスポートと名前付きパイプ トランスポートの場合、転送モードはポリシー アサーションとして伝達されます。  
   
 ## <a name="see-also"></a>関連項目
 
-- [方法: ストリーミングを有効にする](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
+- [方法: ストリーミングを有効にする](how-to-enable-streaming.md)

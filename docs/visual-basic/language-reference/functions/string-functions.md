@@ -4,21 +4,21 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - string functions
 ms.assetid: f1bf9ac2-cbcf-4298-ae51-53182076bdc8
-ms.openlocfilehash: 2608159e28ee63a0fdb10c82054fd65efe79ac62
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 778e57eadd75baf1aabd100f9d8d41a490f79a04
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349979"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406289"
 ---
 # <a name="string-functions-visual-basic"></a>文字列関数 (Visual Basic)
 
-次の表は、文字列を検索して操作するために <xref:Microsoft.VisualBasic.Strings?displayProperty=nameWithType> クラスで提供 Visual Basic れる関数を示しています。 これらは Visual Basic 組み込み関数と見なすことができます。つまり、例に示すように、クラスの明示的なメンバーとして呼び出す必要はありません。 <xref:System.String?displayProperty=nameWithType> クラスでは、追加のメソッド、および場合によっては補完メソッドを使用できます。
+Visual Basic で、文字列の検索と操作のために <xref:Microsoft.VisualBasic.Strings?displayProperty=nameWithType> クラスに用意されている関数の一覧を次の表に示します。 これらは Visual Basic 組み込み関数と見なすことができます。つまり、例に示すように、クラスの明示的なメンバーとしてそれらを呼び出す必要はありません。 <xref:System.String?displayProperty=nameWithType> クラスでは、追加のメソッド、および場合によっては補完的メソッドを使用できます。
 
 |.NET Framework メソッド|説明|
 |---------------------------|-----------------|
-|<xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>|文字に対応する文字コードを表す `Integer` 値を返します。|
-|<xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>|指定された文字コードに対応する文字を返します。|
+|<xref:Microsoft.VisualBasic.Strings.Asc%2A>、<xref:Microsoft.VisualBasic.Strings.AscW%2A>|文字に対応する文字コードを表す `Integer` 値を返します。|
+|<xref:Microsoft.VisualBasic.Strings.Chr%2A>、<xref:Microsoft.VisualBasic.Strings.ChrW%2A>|指定された文字コードに対応する文字を返します。|
 |<xref:Microsoft.VisualBasic.Strings.Filter%2A>|指定されたフィルター条件に基づいた文字列 (`String`) 配列のサブセットを含むゼロ ベースの配列を返します。|
 |<xref:Microsoft.VisualBasic.Strings.Format%2A>|書式指定文字列 (`String`) 式に含まれる指示に従って書式設定された文字列を返します。|
 |<xref:Microsoft.VisualBasic.Strings.FormatCurrency%2A>|システムの [コントロール パネル] で定義されている通貨記号を使って通貨形式の文字列に書式設定して返す文字列処理関数です。|
@@ -47,38 +47,38 @@ ms.locfileid: "74349979"
 |<xref:Microsoft.VisualBasic.Strings.Trim%2A>|指定された文字列から、先頭または末尾の空白を除いたコピーを格納する文字列を返します。|
 |<xref:Microsoft.VisualBasic.Strings.UCase%2A>|指定された文字列を大文字に変換して文字列型または char 型の値を返します。|
 
-[Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)ステートメントを使用すると、システムのロケール (`Text`) または文字の内部バイナリ表現 (`Binary`) によって決定される、大文字と小文字を区別しないテキストの並べ替え順序を使用して文字列を比較するかどうかを設定できます。 既定のテキスト比較方法は `Binary` です。
+[Option Compare](../statements/option-compare-statement.md) ステートメントを使用して、文字列の比較方法を設定できます。比較方法は、システムのロケールで決定される、大文字と小文字を区別しないテキストの並べ替え順序 (`Text`)、または文字の内部バイナリ表現 (`Binary`) です。 既定のテキスト比較方法は `Binary` です。
 
-## <a name="example-ucase"></a>例: UCase
+## <a name="example-ucase"></a>例:UCase
 
 `UCase` 関数を使って文字列を大文字に変換して返す例を次に示します。
 [!code-vb[VbVbalrStrings#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#31)]
 
-## <a name="example-ltrim"></a>例: LTrim
+## <a name="example-ltrim"></a>例:LTrim
 
 この例では、文字列変数から、`LTrim` 関数を使って先頭の空白を除去し、`RTrim` 関数を使って後続の空白を除去しています。 また、`Trim` 関数を使って両方のタイプの空白を除去しています。
 
 [!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]
 
-## <a name="example-mid"></a>例: Mid
+## <a name="example-mid"></a>例:Mid
 
 `Mid` 関数を使って、文字列から指定された字数を返す例を次に示します。
 
 [!code-vb[VbVbalrStrings#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#17)]
 
-## <a name="example-len"></a>例: Len
+## <a name="example-len"></a>例:Len
 
 `Len` 関数を使って文字列の文字数を返す例を次に示します。
 
 [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]
 
-## <a name="example-instr"></a>例: InStr
+## <a name="example-instr"></a>例:InStr
 
 `InStr` 関数を使って、ある文字列の中から指定された文字列を検索し、最初に見つかった文字位置を返す例を次に示します。
 
 [!code-vb[VbVbalrStrings#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#8)]
 
-## <a name="example-format"></a>例: 形式
+## <a name="example-format"></a>例:形式
 
 `Format` の書式指定とユーザー定義の書式指定の両方を使って値の書式を指定する、`String` 関数のさまざまな使用例を次に示します。 日付の区切り記号 (`/`)、時刻の区切り記号 (`:`)、および午前/午後を示す文字 (`t` および `tt`) について、システムで実際に表示される書式は、コードが使用するロケール設定によって決まります。 時刻と日付を開発環境で表示する場合は、コード ロケールの短い時刻書式と短い日付書式が使用されます。
 
@@ -87,9 +87,9 @@ ms.locfileid: "74349979"
 
 [!code-vb[VbVbalrStrings#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#27)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [キーワード](../../../visual-basic/language-reference/keywords/index.md)
-- [Visual Basic ランタイム ライブラリのメンバー](../../../visual-basic/language-reference/runtime-library-members.md)
-- [文字列操作の概要](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)
-- [System.string クラスのメソッド](xref:System.String#methods)
+- [キーワード](../keywords/index.md)
+- [Visual Basic ランタイム ライブラリのメンバー](../runtime-library-members.md)
+- [文字列操作の概要](../keywords/string-manipulation-summary.md)
+- [System.String クラスのメソッド](xref:System.String#methods)

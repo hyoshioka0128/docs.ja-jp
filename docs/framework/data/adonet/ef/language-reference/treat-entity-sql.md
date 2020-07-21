@@ -2,12 +2,12 @@
 title: TREAT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 5b77f156-55de-4cb4-8154-87f707d4c635
-ms.openlocfilehash: 38099fa83ed78b40d46faeb5e617157f7aa7c1a1
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.openlocfilehash: 06c4200434f443446e8981dcefe2baf43b1af4b0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319264"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149896"
 ---
 # <a name="treat-entity-sql"></a>TREAT (Entity SQL)
 特定の基本データ型のオブジェクトを指定の派生型のオブジェクトとして処理します。  
@@ -42,13 +42,13 @@ TREAT ( expression as type)
 ```sql  
 SELECT TREAT(p AS NamespaceName.Employee)  
 FROM ContainerName.Person AS p  
-WHERE p IS OF (NamespaceName.Employee)   
+WHERE p IS OF (NamespaceName.Employee)
 ```  
   
  このクエリは、 `Person` エンティティを `Employee` 型にキャストします。 p の値が実際には `Employee`型でない場合、この式は `null`値を返します。  
   
 > [!NOTE]
-> 指定された式 `Employee` は、指定されたデータ型のサブタイプである必要があります `Person`、またはデータ型が式のサブタイプである必要があります。 そうでない場合は、コンパイル時にエラーが発生します。  
+> 指定する式 `Employee` は、指定するデータ型 `Person` のサブタイプである必要があります。または、データ型は式のサブタイプである必要があります。 そうでない場合は、コンパイル時にエラーが発生します。  
   
  次の表に、いくつかの通常パターンと一般的でないパターンにおける TREAT の動作を示します。 すべての例外はクライアント側にスローされてから、プロバイダーが呼び出されます。  
   

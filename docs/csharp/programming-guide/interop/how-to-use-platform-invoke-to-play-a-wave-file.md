@@ -1,6 +1,5 @@
 ---
-title: '方法: プラットフォーム呼び出しを使用して Wave ファイルを再生する - C# プログラミング ガイド'
-ms.custom: seodec18
+title: プラットフォーム呼び出しを使用して WAV ファイルを再生する方法 - C# プログラミング ガイド
 ms.date: 07/20/2015
 helpviewer_keywords:
 - platform invoke, sound files
@@ -8,16 +7,16 @@ helpviewer_keywords:
 - wav files
 - .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
-ms.openlocfilehash: 6c2313f7b600bc1670c944f6a93868c1bc4c7c16
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 3ea90f0739ad45c31e4f25836c9de8e708dff2cc
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039326"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75700823"
 ---
-# <a name="how-to-use-platform-invoke-to-play-a-wave-file-c-programming-guide"></a>方法: プラットフォーム呼び出しを使用して Wave ファイルを再生する (C# プログラミング ガイド)
+# <a name="how-to-use-platform-invoke-to-play-a-wav-file-c-programming-guide"></a>プラットフォーム呼び出しを使用して WAV ファイルを再生する方法 (C# プログラミング ガイド)
 
-以下の C# コードの例では、プラットフォーム呼び出しサービスを使用して、Windows オペレーティング システム上の .wav サウンド ファイルを再生する方法を示します。
+以下の C# コードの例では、プラットフォーム呼び出しサービスを使用して、Windows オペレーティング システム上の WAV サウンド ファイルを再生する方法を示します。
 
 ## <a name="example"></a>例
 
@@ -41,9 +40,9 @@ ms.locfileid: "73039326"
 
 4. コードをコンパイルして実行します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [C# プログラミング ガイド](../index.md)
+- [C# プログラミングガイド](../index.md)
 - [相互運用性の概要](interoperability-overview.md)
 - [プラットフォーム呼び出しの詳細](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
 - [プラットフォーム呼び出しによるデータのマーシャリング](../../../framework/interop/marshaling-data-with-platform-invoke.md)

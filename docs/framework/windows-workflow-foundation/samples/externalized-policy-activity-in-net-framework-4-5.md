@@ -2,20 +2,20 @@
 title: .NET Framework 4.5 の外部化されたポリシー アクティビティ
 ms.date: 03/30/2017
 ms.assetid: 92fd6f92-23a1-4adf-b96a-2754ea93ad3e
-ms.openlocfilehash: 9184386751bb44e89dfdcedd34ab0ab84a27323e
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 8fd08c9c29f7a268170aaa101a9bdb85250157dc
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710927"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094632"
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>.NET Framework 4.5 の外部化されたポリシー アクティビティ
 
-このサンプルでは、ExternalizedPolicy4 アクティビティを使用して、WF 3.5 に同梱されているルールエンジンを使用して、[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Windows Workflow Foundation (WF 4.5) の既存の .NET Framework 3.5 Windows Workflow Foundation (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> オブジェクトを直接実行する方法を示します。 このアクティビティを使用すると、既存の WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet> を開いて実行できます。 Windows Workflow Foundation の一部として含まれる WF 3.5 ルールエンジンの詳細については、「 [Windows Workflow Foundation ルールエンジンの概要](https://go.microsoft.com/fwlink/?LinkId=166079)」を参照してください。 [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]の [!INCLUDE[wf1](../../../../includes/wf1-md.md)] に規則を移行する方法の詳細については、[移行のガイダンス](../migration-guidance.md)を参照してください。
+このサンプルでは、ExternalizedPolicy4 アクティビティを使用して、WF 3.5 に同梱されているルールエンジンを使用して、[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Windows Workflow Foundation (WF 4.5) の既存の .NET Framework 3.5 Windows Workflow Foundation (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> オブジェクトを直接実行する方法を示します。 このアクティビティを使用すると、既存の WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet> を開いて実行できます。 Windows Workflow Foundation の一部として含まれる WF 3.5 ルールエンジンの詳細については、「 [Windows Workflow Foundation ルールエンジンの概要](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480193(v=msdn.10))」を参照してください。 [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]の [!INCLUDE[wf1](../../../../includes/wf1-md.md)] に規則を移行する方法の詳細については、[移行のガイダンス](../migration-guidance.md)を参照してください。
 
 ## <a name="projects-in-this-sample"></a>このサンプルのプロジェクト
 
-|プロジェクト名|説明|メイン ファイル|
+|プロジェクト名|[説明]|メイン ファイル|
 |-|-|-|
 |ExternalizedPolicy4|ExternalizedPolicy4 アクティビティとその WF 4.5 デザイナーが含まれます。|**ExternalizedPolicy4.cs**: アクティビティ定義。<br /><br /> **ExternalizedPolicy4Designer**: ExternalizedPolicy4 アクティビティのカスタムデザイナー。 WF 3.5 ルール エンジンからルール エディター (<xref:System.Workflow.Activities.Rules.Design.RuleSetDialog>) を使用します。|
 |ImperativeCodeClientSample|命令型 C# コードで、ExternalizedPolicy4 アプリケーションを使用してワークフローを構成および実行するサンプル クライアント アプリケーションです (デザイナーは不使用)。|**Applydiscount。 rules**: [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ルール定義を含むファイル。<br /><br /> **Order.cs**: 顧客の注文を表す型。 ルールはこの型のオブジェクトに適用されます。<br /><br /> **Program.cs**: Policy4 アクティビティを持つワークフローを構成および実行して、applydiscount で定義されたルールを適用します。ルールオブジェクトのインスタンスにルールを適用します。<br /><br /> App.config: ルール ファイルのパスが記述された構成ファイルです。|
@@ -42,7 +42,7 @@ public class ExternalizedPolicy4Activity<TResult>: CodeActivity
 }
 ```
 
-|property|説明|
+|プロパティ|[説明]|
 |-|-|
 |RuleSetFilePath|アクティビティが実行されるときに評価される .NET Framework 3.5 <xref:System.Workflow.Activities.Rules.RuleSet> ファイルのパスです。|
 |RuleSetName|.rules ファイル内で使用される <xref:System.Workflow.Activities.Rules.RuleSet> の名前です。|

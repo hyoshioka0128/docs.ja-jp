@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 52118dc9-fe6e-4b39-aa48-c3cc3ea4214d
 topic_type:
 - apiref
-ms.openlocfilehash: e5fa3647c86d97730e7ad6a2576dd34af75251d6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f9a58a70b5264d7f1eb33fb0e09c702c94a13e85
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433960"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491765"
 ---
 # <a name="imetadataimportenumparams-method"></a>IMetaDataImport::EnumParams メソッド
 指定した MethodDef トークンによって参照されるメソッドのパラメーターを表す ParamDef トークンを列挙します。  
@@ -51,25 +51,25 @@ HRESULT EnumParams (
  [in] `rParams` 配列の最大サイズ。  
   
  `pcTokens`  
- 入出力`rParams`で返される ParamDef トークンの数。  
+ 入出力で返された ParamDef トークンの数 `rParams` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumParams` が正常に返されました。|  
-|`S_FALSE`|列挙するトークンがありません。 この場合、`pcTokens` は0になります。|  
+|`S_OK`|`EnumParams`正常に返されました。|  
+|`S_FALSE`|列挙するトークンがありません。 この場合、 `pcTokens` は0になります。|  
   
 ## <a name="requirements"></a>要件  
- **プラットフォーム:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **プラットフォーム:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

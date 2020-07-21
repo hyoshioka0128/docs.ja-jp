@@ -3,12 +3,12 @@ title: .NET 用語集
 description: .NET のドキュメントで使われている用語からいくつか選択してその意味を説明します。
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: e1894d57a613531fecba6786529a735431d01423
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 11ab0de4757a23c940ae04418a5a82ea79f71761
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929078"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287455"
 ---
 # <a name="net-glossary"></a>.NET 用語集
 
@@ -18,21 +18,21 @@ ms.locfileid: "70929078"
 
 Ahead Of Time コンパイラ。
 
-[JIT](#jit) と同様に、このコンパイラも [IL](#il) をマシン コードに変換します。 JIT コンパイルとは異なり、AOT コンパイルはアプリケーションが実行される前に行われ、通常は、別のコンピューターで実行されます。 AOT ツール チェーンは実行時にコンパイルしないので、コンパイルに費やされる時間を最小限に抑える必要はありません。 つまり、より多くの時間を最適化に費やすことができます。 AOT のコンテキストはアプリケーション全体であるため、AOT コンパイラはモジュール間のリンクとプログラム全体の分析も実行します。これは、すべての参照が追跡されて、1 つの実行可能ファイルが生成されることを意味します。
+[JIT](#jit) と同様に、このコンパイラも [IL](#il) をマシン コードに変換します。 JIT コンパイルとは異なり、AOT コンパイルはアプリケーションが実行される前に行われ、通常は、別のコンピューターで実行されます。 AOT ツール チェーンは実行時にコンパイルされないので、コンパイルに費やされる時間を最小限に抑える必要はありません。 つまり、より多くの時間を最適化に費やすことができます。 AOT のコンテキストはアプリケーション全体であるため、AOT コンパイラはモジュール間のリンクとプログラム全体の分析も実行します。これは、すべての参照が追跡されて、1 つの実行可能ファイルが生成されることを意味します。
 
 「[CoreRT](#corert)」と「[.NET Native](#net-native)」を参照してください。
 
-## <a name="aspnet"></a>ASP.NET 
+## <a name="aspnet"></a>ASP.NET
 
 .NET Framework に付属している ASP.NET の元の実装。
 
-ASP.NET は、ASP.NET Core を含む ASP.NET の両方の実装を指す包括的な用語として使われることがあります。 どちらを意味するかはコンテキストによって決まります。 両方の実装を意味するために ASP.NET を使っているのではないことを明確にしたい場合は、ASP.NET 4.x を参照してください。 
+ASP.NET は、ASP.NET Core を含む ASP.NET の両方の実装を指す包括的な用語として使われることがあります。 どちらを意味するかはコンテキストによって決まります。 両方の実装を意味するために ASP.NET を使っているのではないことを明確にしたい場合は、ASP.NET 4.x を参照してください。
 
 [ASP.NET のドキュメント](/aspnet/#pivot=aspnet)をご覧ください。
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
-.NET Core 上に構築された ASP.NET のクロスプラットフォームで高パフォーマンスなオープン ソースの実装。
+.NET Core 上に構築された ASP.NET のクロスプラットフォームで高パフォーマンスなオープンソースの実装。
 
 [ASP.NET Core のドキュメント](/aspnet/#pivot=core)をご覧ください。
 
@@ -46,7 +46,7 @@ ASP.NET は、ASP.NET Core を含む ASP.NET の両方の実装を指す包括�
 
 共通言語ランタイム (Common Language Runtime)。
 
-厳密な意味はコンテキストによって異なりますが、通常は、.NET Framework のランタイムを指します。 CLR は、メモリの割り当てと管理を行います。 CLR は、アプリの実行だけでなく、[JIT](#jit) コンパイラを使って実行時にコードを生成してコンパイルする仮想マシンでもあります。 現在の Microsoft CLR の実装は Windows だけです。
+厳密な意味はコンテキストによって異なりますが、通常、共通言語ランタイムは .NET Framework のランタイムを指します。 CLR は、メモリの割り当てと管理を行います。 CLR は、アプリの実行だけでなく、[JIT](#jit) コンパイラを使って実行時にコードを生成してコンパイルする仮想マシンでもあります。 現在の Microsoft CLR の実装は Windows だけです。
 
 ## <a name="coreclr"></a>CoreCLR
 
@@ -54,19 +54,22 @@ ASP.NET は、ASP.NET Core を含む ASP.NET の両方の実装を指す包括�
 
 この CLR は、CLR と同じコード ベースから作成されます。 もともと、CoreCLR は Silverlight のランタイムであり、複数のプラットフォーム (具体的には Windows と OS X) で実行するように設計されていました。現在の CoreCLR は .NET Core の一部であり、CLR の簡素化されたバージョンを表します。 まだ[クロスプラットフォーム](#cross-platform) ランタイムであり、多くの Linux ディストリビューションのサポートを含むようになっています。 CoreCLR は、JIT とコード実行機能を備えた仮想マシンでもあります。
 
-## <a name="corefx"></a>CoreFX
+## <a name="corefx"></a>CoreFx
 
 .NET Core 基本クラス ライブラリ (BCL)
 
-System.* (および限られた範囲の Microsoft.*) 名前空間を構成するライブラリのセット。 BCL は汎用の下位レベル フレームワークであり、ASP.NET Core などの上位レベル アプリケーション フレームワークはそれを基にして構築されています。 .NET Core BCL のソース コードは [CoreFX リポジトリ](https://github.com/dotnet/corefx)に含まれます。 ただし、.NET Core API の大部分は .NET Framework でも使うことができるため、CoreFX は .NET Framework BCL が分岐したものと考えることができます。
+> [!TIP]
+> *Fx* は "*フレームワーク*" を表します。
+
+System.\* (および限られた範囲の Microsoft.\*) 名前空間を構成するライブラリのセット。 BCL は汎用の下位レベル フレームワークであり、ASP.NET Core などの上位レベル アプリケーション フレームワークはそれを基にして構築されています。 .NET Core BCL のソース コードは [.NET Core ランタイム リポジトリ](https://github.com/dotnet/runtime)に含まれます。 ただし、.NET Core API の大部分は .NET Framework でも使うことができるため、CoreFX は .NET Framework BCL が分岐したものと考えることができます。
 
 ## <a name="corert"></a>CoreRT
 
 .NET Core ランタイム。
 
-CLR/CoreCLR とは異なり、CoreRT は仮想マシンではありません。つまり、[JIT](#jit) が含まれないため、実行時にコードを生成して実行する機能はありません。 ただし、[GC](#gc) およびランタイム型識別 (RTTI) とリフレクションの機能は備えています。 ただ、CoreRT の型システムはリフレクション用のメタデータが必要ないように設計されています。 これにより、[AOT](#aot) ツール チェーンで余分なメタデータのリンクを削除し、(さらに重要なこととして) アプリが使っていないコードを特定することができます。 CoreRT は開発中です。
+CLR/CoreCLR とは異なり、CoreRT は仮想マシンではありません。つまり、[JIT](#jit) が含まれないため、実行時にコードを生成して実行する機能はありません。 ただし、[GC](#gc) およびランタイム型識別 (RTTI) とリフレクションの機能は備えています。 ただ、CoreRT の型システムはリフレクション用のメタデータが必要ないように設計されています。 メタデータが必要ないと、[AOT](#aot) ツール チェーンで余分なメタデータのリンクを削除し、(さらに重要なこととして) アプリが使っていないコードを特定することができます。 CoreRT は開発中です。
 
-「[Intro to .NET Native and CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)」(.NET Native と CoreRT の概要) をご覧ください。
+[.NET Native と CoreRT の概要](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)をご覧ください。
 
 ## <a name="cross-platform"></a>クロスプラットフォーム
 
@@ -78,7 +81,7 @@ Linux、Windows、iOS など、複数の異なるオペレーティング シス
 
 ".NET エコシステム" という用語は ".NET スタック" などの用語と似ていますが、サードパーティのアプリとライブラリを含む点が異なります。 文章での使用例を次に示します。
 
-- "[.NET Standard](#net-standard) の背後にある意図は、.NET エコシステムの高度な統一性を確立することです。" 
+- "[.NET Standard](#net-standard) の背後にある意図は、.NET エコシステムの高度な統一性を確立することです。"
 
 ## <a name="framework"></a>フレームワーク
 
@@ -96,7 +99,7 @@ Linux、Windows、iOS など、複数の異なるオペレーティング シス
 
 ガベージ コレクター (Garbage Collector)。
 
-ガベージ コレクターは、自動メモリ管理の実装です。  GC は、使われなくなったオブジェクトによって占有されているメモリを解放します。 
+ガベージ コレクターは、自動メモリ管理の実装です。  GC は、使われなくなったオブジェクトによって占有されているメモリを解放します。
 
 「[ガベージ コレクション](garbage-collection/index.md)」をご覧ください。
 
@@ -137,11 +140,11 @@ Just-In-Time コンパイラ。
 
 それ自体のライブラリを持たず、依存するもののリストのみを含む NuGet パッケージ。 含まれるパッケージは、必要に応じて、ターゲット フレームワーク用の API を確立できます。
 
-「[パッケージ、メタパッケージ、フレームワーク](../core/packages.md)」をご覧ください。
+「[パッケージ、メタパッケージ、フレームワーク](../core/packages.md)」をご覧ください
 
 ## <a name="mono"></a>Mono
 
-Mono はオープン ソースであり、主に小規模なランタイムが必要な場合に使用される[クロスプラットフォーム](#cross-platform)の .NET 実装です。 Android、Mac、iOS、tvOS、および watchOS 上の Xamarin アプリケーションで利用されるランタイムで、フットプリントが小さいアプリに重点を置いています。
+Mono はオープン ソースであり、主に小規模なランタイムが必要な場合に使用される[クロスプラットフォーム](#cross-platform)の .NET 実装です。 Android、Mac、iOS、tvOS、および watchOS 上の Xamarin アプリケーションで利用されるランタイムであり、フットプリントの小さいアプリに重点が置かれています。
 
 現在公開されているすべての .NET Standard バージョンをサポートしています。
 
@@ -155,19 +158,19 @@ Mono について詳しくは、[Mono のドキュメント](https://www.mono-pr
 
 [.NET Standard](#net-standard) とすべての [.NET の実装](#implementation-of-net)およびワークロードを表す包括的な用語。 常にすべて大文字で表し、".Net" とは表記されません。
 
-「[.NET ガイド](index.md)」をご覧ください。
+「[.NET ガイド](index.yml)」をご覧ください。
 
-## <a name="net-core"></a>.NET Core 
+## <a name="net-core"></a>.NET Core
 
-.NET のクロスプラットフォームで高パフォーマンスなオープン ソースの実装。 Core 共通言語ランタイム (CoreCLR)、Core AOT ランタイム (CoreRT、開発中)、Core 基本クラス ライブラリ、Core SDK が含まれます。
+.NET のクロスプラットフォームで高パフォーマンスなオープンソースの実装。 Core 共通言語ランタイム (CoreCLR)、Core AOT ランタイム (CoreRT、開発中)、Core 基本クラス ライブラリ、Core SDK が含まれます。
 
-「[.NET Core](../core/index.md)」をご覧ください。
+「[.NET Core](../core/index.yml)」をご覧ください。
 
 ## <a name="net-core-cli"></a>.NET Core CLI
 
 .NET Core アプリケーション開発用のクロスプラットフォーム ツールチェーン。
 
-「[.NET Core コマンドライン インターフェイス (CLI) ツール](../core/tools/index.md)」をご覧ください。
+[.NET Core CLI](../core/tools/index.md) に関する記事をご覧ください。
 
 ## <a name="net-core-sdk"></a>.NET Core SDK
 
@@ -179,7 +182,7 @@ Mono について詳しくは、[Mono のドキュメント](https://www.mono-pr
 
 Windows でのみ動作する .NET の実装。 共通言語ランタイム (CLR)、基本クラス ライブラリ、および ASP.NET、Windows フォーム、WPF などのアプリケーション フレームワーク ライブラリが含まれます。
 
-「[.NET Framework ガイド](../framework/index.md)」をご覧ください。
+「[.NET Framework ガイド](../framework/index.yml)」をご覧ください。
 
 ## <a name="net-native"></a>.NET Native
 
@@ -217,7 +220,7 @@ NuGet パッケージ &mdash; または単にパッケージ &mdash; は、同�
 
 文章での使用例を次に示します。
 
-- ".NET Core は、.NET のクロスプラットフォームの実装です。" 
+- ".NET Core は、.NET のクロスプラットフォームの実装です。"
 - "PCL プロファイルは Microsoft のプラットフォームを表し、.NET Standard はプラットフォームに依存しません。"
 
 .NET のドキュメントでは、.NET の実装またはすべての実装を含む .NET スタックの意味で ".NET プラットフォーム" が使われることがよくあります。 これらの使用法はどちらも本来の (OS/ハードウェア) の意味と紛らわしい場合があるので、ドキュメントから削除される予定です。
@@ -239,15 +242,15 @@ OS は、ランタイム環境の一部ですが、.NET ランタイムの一部
 - "複数のランタイムでの実行を意図したライブラリは、このフレームワークを対象とする必要があります。" (.NET Standard を指している場合)
 - "さまざまな .NET ランタイムで、.NET Standard の特定のバージョンが実装されます。 … .NET ランタイムの各バージョンは、サポートしている .NET Standard の最高のバージョンをアドバタイズします …"
 
-このような一貫性のない使用法は除去される予定です。 
+このような一貫性のない使用法は除去される予定です。
 
 ## <a name="stack"></a>スタック
 
 全体としてアプリケーションの構築と実行に使われるプログラミング テクノロジのセット。
 
-".NET スタック" は、.NET Standard および .NET のすべての実装を指します。 ".NET スタック" という語句が .NET の 1 つの実装を示すこともあります。 
+".NET スタック" は、.NET Standard および .NET のすべての実装を指します。 ".NET スタック" という語句が .NET の 1 つの実装を示すこともあります。
 
-## <a name="target-framework"></a>対象フレーム
+## <a name="target-framework"></a>ターゲット フレームワーク
 
 .NET アプリまたはライブラリが依存する API のコレクション。
 
@@ -269,12 +272,12 @@ OS は、ランタイム環境の一部ですが、.NET ランタイムの一部
 
 ユニバーサル Windows プラットフォーム (Universal Windows Platform)。
 
-モノのインターネット (IoT) のために最新のタッチ対応の Windows アプリケーションとソフトウェアを構築するために使われる .NET の実装。 PC、タブレット、ファブレット、携帯電話、Xbox など、ターゲットにする可能性があるさまざまな種類のデバイスを統一するように設計されています。 UWP は、一元的なアプリ ストア、実行環境 (AppContainer)、Win32 の代わりに使う Windows API のセット (WinRT) など、多くのサービスを提供します。 アプリは、C++、C#、VB.NET、および JavaScript で記述することができます。 C# と VB.NET を使うときは、.NET Core によって .NET API が提供されます。
+モノのインターネット (IoT) のために最新のタッチ対応の Windows アプリケーションとソフトウェアを構築するために使われる .NET の実装。 PC、タブレット、携帯電話、Xbox など、ターゲットにされる可能性があるさまざまな種類のデバイスを統一するように設計されています。 UWP は、一元的なアプリ ストア、実行環境 (AppContainer)、Win32 の代わりに使う Windows API のセット (WinRT) など、多くのサービスを提供します。 アプリは、C++、C#、Visual Basic、および JavaScript で記述することができます。 C# と Visual Basic を使うときは、.NET Core によって .NET API が提供されます。
 
 ## <a name="see-also"></a>関連項目
 
-- [.NET のガイド](index.md)
-- [.NET Framework ガイド](../framework/index.md)
-- [.NET Core](../core/index.md)
+- [.NET のガイド](index.yml)
+- [.NET Framework ガイド](../framework/index.yml)
+- [.NET Core](../core/index.yml)
 - [ASP.NET の概要](/aspnet/index#pivot=aspnet)
 - [ASP.NET Core の概要](/aspnet/index#pivot=core)

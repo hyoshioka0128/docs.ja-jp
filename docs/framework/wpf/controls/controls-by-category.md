@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-ms.openlocfilehash: 41cbe57f1e3711bb4e18b2b4da28c26ebbd2bc60
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
-ms.translationtype: MT
+ms.openlocfilehash: 5958793015d409678b67cdc7eedcb4289f5e885c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005694"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636212"
 ---
 # <a name="controls-by-category"></a>カテゴリ別のコントロール
-Windows Presentation Foundation (WPF) コントロールは、複数のカテゴリに論理的にグループ化できます。 これらのカテゴリを使用すると、類似の使用パターンや機能を持つコントロールを見つけやすくなり、シナリオに適したコントロールを選択できます。  
+Windows Presentation Foundation (WPF) コントロールは、論理的にいくつかのカテゴリにグループ化できます。 これらのカテゴリを使用すると、類似の使用パターンや機能を持つコントロールを見つけやすくなり、シナリオに適したコントロールを選択できます。  
   
-## <a name="layout"></a>[レイアウト]  
+## <a name="layout"></a>レイアウト  
  レイアウト コントロールを使用して、子要素のサイズ、ディメンション、位置、および配置を制御します。  
   
 - <xref:System.Windows.Controls.Border>  
@@ -56,7 +56,7 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
 - <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="buttons"></a>ボタン  
- ボタンは、最も基本的なユーザー インターフェイス コントロールの 1 つです。 通常、アプリケーションは、ユーザーがクリックしたときに、<xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントの一部のタスクを実行します。  
+ ボタンは、最も基本的なユーザー インターフェイス コントロールの 1 つです。 通常、アプリケーションによって <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベントの何らかのタスクが実行されるのは、ユーザーがそれらをクリックしたときです。  
   
 - <xref:System.Windows.Controls.Button>  
   
@@ -87,7 +87,7 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
   
 - <xref:System.Windows.Controls.ToolBar>  
   
-## <a name="selection"></a>選択内容  
+## <a name="selection"></a>選択ツール  
  選択コントロールを使用すると、ユーザーは 1 つ以上のオプションを選択できます。  
   
 - <xref:System.Windows.Controls.CheckBox>  
@@ -140,7 +140,7 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
 - <xref:System.Windows.Controls.ToolTip>  
   
 ## <a name="documents"></a>ドキュメント  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] には、ドキュメントの表示に特化したコントロールがいくつかあります。 これらのコントロールは、対象となるユーザーのシナリオに応じて、読みやすさを最適化します。  
+ WPF には、ドキュメントの表示に特化したコントロールがいくつかあります。 これらのコントロールは、対象となるユーザーのシナリオに応じて、読みやすさを最適化します。  
   
 - <xref:System.Windows.Controls.DocumentViewer>  
   
@@ -161,8 +161,8 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
   
 - <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="media"></a>メディア  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] は、最も一般的なイメージ形式の [コーデック] と共に、オーディオ コンテンツとビデオ コンテンツのホストを統合的にサポートします。  
+## <a name="media"></a>Media  
+ WPF は、最も一般的なイメージ形式の [コーデック] と共に、オーディオ コンテンツとビデオ コンテンツのホストを統合的にサポートします。  
   
 - <xref:System.Windows.Controls.Image>  
   
@@ -171,12 +171,12 @@ Windows Presentation Foundation (WPF) コントロールは、複数のカテゴ
 - <xref:System.Windows.Controls.SoundPlayerAction>  
   
 ## <a name="digital-ink"></a>デジタル インク  
- デジタルインクコントロールは、インクの表示やインク入力など、Tablet PC の機能の統合サポートを提供します。  
+ デジタル インク コントロールは、インク表示やインク入力などのタブレット PC 機能を統合的にサポートします。  
   
 - <xref:System.Windows.Controls.InkCanvas>  
   
 - <xref:System.Windows.Controls.InkPresenter>  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [コントロール ライブラリ](control-library.md)

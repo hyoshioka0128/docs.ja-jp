@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7d68666a-fb73-4455-bebd-908d49a16abc
 topic_type:
 - apiref
-ms.openlocfilehash: 8ae47eac713fbee30ea543538957b12460b8e1fc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 688abd210cca193bf03c40f000b74ecb66eb8ede
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123280"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008548"
 ---
 # <a name="ivalidatorvalidate-method"></a>IValidator::Validate メソッド
 指定された移植可能な実行可能 (PE) ファイルまたは MSIL (Microsoft 中間言語) ファイルを検証します。  
@@ -42,13 +42,13 @@ HRESULT Validate (
   
 ## <a name="parameters"></a>パラメーター  
  `veh`  
- から検証エラーを処理する `IVEHandler` インスタンスへのポインター。  
+ から`IVEHandler`検証エラーを処理するインスタンスへのポインター。  
   
  `pAppDomain`  
  からファイルが読み込まれるアプリケーションドメインへのポインター。  
   
  `ulFlags`  
- から実行する必要のある検証を示す、 [Validatorflags](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md)値のビットごとの組み合わせ。  
+ から実行する必要のある検証を示す、 [Validatorflags](validatorflags-enumeration.md)値のビットごとの組み合わせ。  
   
  `ulMaxError`  
  から検証を終了するまでに許容されるエラーの最大数。  
@@ -65,11 +65,11 @@ HRESULT Validate (
  `ulSize`  
  から検証するファイルのサイズ (バイト単位)。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** IValidator、IValidator  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  

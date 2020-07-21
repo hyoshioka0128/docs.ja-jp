@@ -1,5 +1,6 @@
 ---
 title: '方法: 文字列からの文字の読み取り'
+description: .Net で文字列から文字を読み取る方法について学習します。 同期的および非同期的に文字を読み取る方法の例を参照してください。
 ms.date: 01/21/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,19 +14,17 @@ helpviewer_keywords:
 - reading data, strings
 - streams, reading characters from string
 ms.assetid: 27ea5e52-6db8-42d8-980a-50bcfc7fd270
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e890e4172e645e9919ea88ec5835aaed7432c0c6
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 40ff144e0899f3560805a31fa76f391afaeccd67
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835201"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594843"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>方法: 文字列からの文字の読み取り
 次のコード例は、文字列から同期的または非同期的に文字を読み取る方法を示しています。  
   
-## <a name="example-read-characters-synchronously"></a>例:同期的に文字を読み取る 
+## <a name="example-read-characters-synchronously"></a>例:同期的に文字を読み取る
  この例では、文字列から同期的に 13 文字を読み取り、配列に格納し、これらを表示します。 次に、この例では、文字列の残りの文字を読み取り、6 番目の要素で始まる配列に格納し、配列の内容を表示します。  
   
  [!code-csharp[Conceptual.StringReader#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.stringreader/cs/source.cs#1)]
@@ -41,11 +40,11 @@ ms.locfileid: "56835201"
 
 - <xref:System.IO.StringReader>  
 - <xref:System.IO.StringReader.Read%2A?displayProperty=nameWithType>  
-- [非同期ファイル I/O](../../../docs/standard/io/asynchronous-file-i-o.md)  
+- [非同期ファイル I/O](asynchronous-file-i-o.md)  
 - [方法: ディレクトリ一覧を作成する](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100))  
-- [方法: 新しく作成されたデータ ファイルに対して読み書きする](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
-- [方法: ログ ファイルを開いて情報を追加する](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
-- [方法: ファイルからテキストを読み取る](../../../docs/standard/io/how-to-read-text-from-a-file.md)  
-- [方法: テキストのファイルへの書き込み](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
-- [方法: 文字列への文字の書き込み](../../../docs/standard/io/how-to-write-characters-to-a-string.md)  
-- [ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)
+- [方法: 新しく作成されたデータ ファイルに対して読み書きする](how-to-read-and-write-to-a-newly-created-data-file.md)  
+- [方法: ログ ファイルを開いて情報を追加する](how-to-open-and-append-to-a-log-file.md)  
+- [方法: ファイルからテキストを読み取る](how-to-read-text-from-a-file.md)  
+- [方法: テキストのファイルへの書き込み](how-to-write-text-to-a-file.md)  
+- [方法: 文字列への文字の書き込み](how-to-write-characters-to-a-string.md)  
+- [ファイルおよびストリーム入出力](index.md)

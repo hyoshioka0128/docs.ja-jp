@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 2a751acc129ebd1c917b87f8083ffef72c7d8c17
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: bb264e406c6604c3606e564d99018eda0f9e8d89
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568207"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721735"
 ---
 ### <a name="apis-that-report-version-now-report-product-and-not-file-version"></a>バージョンをレポートする API が、ファイル バージョンではなく製品をレポートするようになりました
 
-.NET Core のバージョンを返す API の多くは、ファイル バージョンではなく製品バージョンを返しました。
+.NET Core のバージョンを返す API の多くは、ファイル バージョンではなく製品バージョンを返すようになりました。
 
 #### <a name="change-description"></a>変更の説明
 
@@ -22,13 +22,13 @@ ms.locfileid: "74568207"
 
 3.0
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 なし。 この変更により、機能性ではなく、バージョン検出を直感的に行う必要があります。
 
 #### <a name="category"></a>カテゴリ
 
-CoreFx
+Core .NET ライブラリ
 
 #### <a name="affected-apis"></a>影響を受ける API
 
@@ -37,7 +37,7 @@ CoreFx
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `P:System.Environment.Version`
 - `P:System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription`

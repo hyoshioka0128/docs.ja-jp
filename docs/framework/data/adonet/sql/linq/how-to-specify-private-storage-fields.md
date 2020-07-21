@@ -4,13 +4,13 @@ ms.date: 03/30/2017
 ms.assetid: 5a40e816-cc6e-43a0-b32a-9caaa0ab6912
 ms.openlocfilehash: e6e6a4e28fbfb327f25874844f28bcbafa6d2805
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70793209"
 ---
 # <a name="how-to-specify-private-storage-fields"></a>方法: プライベート ストレージ フィールドを指定する
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 属性のプロパティを使用して、基になるストレージフィールドの名前<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A>を指定します<xref:System.Data.Linq.Mapping.DataAttribute> 。  
+基になるストレージ フィールドの名前を指定するには、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] の <xref:System.Data.Linq.Mapping.DataAttribute> 属性の <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A> プロパティを使用します。  
   
  コード例については、「<xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A>」を参照してください。  
   
@@ -23,4 +23,4 @@ ms.locfileid: "70793209"
 ## <a name="see-also"></a>関連項目
 
 - [LINQ to SQL オブジェクト モデル](the-linq-to-sql-object-model.md)
-- [方法: コードエディターを使用してエンティティクラスをカスタマイズする](how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [方法: コード エディターを使用してエンティティ クラスをカスタマイズする](how-to-customize-entity-classes-by-using-the-code-editor.md)

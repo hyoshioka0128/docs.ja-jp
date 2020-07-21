@@ -1,46 +1,47 @@
 ---
 title: 追加のクラス ライブラリと API
-ms.date: 11/19/2019
+description: 帯域外 (OOB) プロジェクト、プラットフォーム固有のライブラリ、プライベート Api など、.NET で追加のクラスライブラリと Api を探索します。
+ms.date: 06/12/2020
 helpviewer_keywords:
 - Additional class libraries
 - Additional managed libraries
 - .NET Framework out-of-band releases
 - out-of-band releases
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
-author: mairaw
-ms.author: mairaw
 ms.topic: conceptual
-ms.openlocfilehash: e1e2af584c73b1c0b2548cdd3fcbd8517dfa330d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0b888d2f0e80685ba993682b2f3067cf8aee15bc
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429345"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989738"
 ---
 # <a name="additional-class-libraries-and-apis"></a>追加のクラス ライブラリと API
 
-.NET Framework は絶えず進化しています。 クロスプラットフォームの開発を改善し、新しい機能を早期に導入するために、新機能がアウトオブバンド (OOB) でリリースされます。 ここでは、ドキュメントが用意されている OOB プロジェクトの一覧を示します。  
-  
-さらに、いくつかのライブラリは、特定のプラットフォームまたは .NET Framework の実装を対象にしています。 たとえば、<xref:System.Text.CodePagesEncodingProvider> クラスは、.NET Framework を使用して開発された UWP アプリでコードページエンコーディングを使用できるようにします。 ここでは、これらのライブラリの一覧も示します。  
-  
+この記事では、帯域外でリリースされた Api、特定のプラットフォームを対象とする Api、またはプライベート型または内部型の Api .NET Framework を示します。
+
 ## <a name="oob-projects"></a>OOB プロジェクト
-  
-| プロジェクト | 説明 |  
+
+クロスプラットフォームの開発を改善し、新しい機能を早期に導入するために、一部の .NET Framework 機能がアウトオブバンド (OOB) でリリースされました。
+
+| Project | 説明 |  
 | ------- | ----------- |  
 | <xref:System.Collections.Immutable> | スレッド セーフであり、内容が変更されないことが保証されているコレクションを提供します。 |
 | <xref:System.Net.Http.WinHttpHandler> | Windows の WinHTTP インターフェイスに基づいた <xref:System.Net.Http.HttpClient> のメッセージ ハンドラーを提供します。 |
-| <xref:System.Numerics> | SIMD ハードウェア ベースのアクセラレータを利用できるベクター型のライブラリを提供します。| 
+| <xref:System.Numerics> | SIMD ハードウェア ベースのアクセラレータを利用できるベクター型のライブラリを提供します。|
 | <xref:System.Threading.Tasks.Dataflow> | TPL データフロー ライブラリはデータ フロー コンポーネントを提供し、コンカレンシー対応アプリケーションの堅牢性を強化します。 |  
 
 ## <a name="platform-specific-libraries"></a>プラットフォーム固有のライブラリ
+
+一部のライブラリは特定のプラットフォームを対象としています。 たとえば、クラスを <xref:System.Text.CodePagesEncodingProvider> 使用すると、.NET Framework を使用して開発された UWP アプリでコードページエンコーディングを使用できるようになります。
   
-| プロジェクト | 説明 |  
+| Project | 説明 |  
 | ------- | ----------- |  
-| <xref:System.Text.CodePagesEncodingProvider> | <xref:System.Text.EncodingProvider> クラスを拡張して、ユニバーサル Windows プラットフォームを対象とするアプリでコードページエンコーディングを使用できるようにします。 |  
+| <xref:System.Text.CodePagesEncodingProvider> | クラスを拡張して <xref:System.Text.EncodingProvider> 、ユニバーサル Windows プラットフォームを対象とするアプリでコードページエンコーディングを使用できるようにします。 |  
   
 ## <a name="private-apis"></a>プライベート API  
 
-この API は製品インフラストラクチャをサポートします。コードから直接使用することはできません。  
+これらの Api は製品インフラストラクチャをサポートします。コードから直接使用するためのものでも、サポートもされていません。  
   
 * [SmiOrderProperty プロパティの値です。](microsoft.sqlserver.server.smiorderproperty.item.md)
 * [PrepForRemoting メソッド](system.exception.prepforremoting.md)
@@ -57,29 +58,39 @@ ms.locfileid: "74429345"
 * [SetLength メソッドを SqlTypes しています。](system.data.sqltypes.sqlstreamchars.setlength.md)
 * [SqlTypes メソッドを作成してください。](system.data.sqltypes.sqlstreamchars.write.md)
 * [MemoryStream メソッドの呼び出しを行います。](system.io.memorystream.internalgetoriginandlength.md)
+* [System .Net. ComNetOS クラス](system.net.comnetos.md)
 * [System .Net. Connection クラス](connection.md)
-* [System .Net. Connection. m\_WriteList フィールド](m_writelist.md)
+* [System .Net. 接続. m \_ writelist フィールド](m_writelist.md)
 * [システム .Net. ConnectionGroup クラス](connectiongroup.md)
-* [システム .Net. ConnectionGroup. m\_Connectiongroup フィールド](m_connectionlist.md)
+* [System .Net. ConnectionGroup. m \_ connectiongroup フィールド](m_connectionlist.md)
 * [System .Net. ConnectStream. 接続プロパティ](system.net.connectstream.connection.md)
 * [CoreResponseData クラス](coreresponsedata.md)
-* [CoreResponseData. m\_ResponseHeaders フィールド](coreresponsedata_m_responseheaders.md)
-* [CoreResponseData\_の StatusCode フィールド](coreresponsedata_m_statuscode.md)
-* [HttpWebRequest AutoRedirects フィールドを\_します。](_autoredirects.md)
-* [HttpWebRequest.\_CoreResponse フィールド](httpwebrequest__coreresponse.md)
-* [HttpWebRequest.\_Httpresponse.cache フィールド](_httpresponse.md)
+* [System CoreResponseData \_ ResponseHeaders フィールド](coreresponsedata_m_responseheaders.md)
+* [CoreResponseData の \_ StatusCode フィールド](coreresponsedata_m_statuscode.md)
+* [System .Net. ExceptionHelper クラス](system.net.exceptionhelper.md)
+* [System .Net. HttpStatusDescription クラス](system.net.httpstatusdescription.md)
+* [HttpWebRequest。 \_AutoRedirects フィールド](_autoredirects.md)
+* [HttpWebRequest。 \_CoreResponse フィールド](httpwebrequest__coreresponse.md)
+* [HttpWebRequest。 \_Httpresponse.cache フィールド](_httpresponse.md)
+* [System .Net. Logging クラス](system.net.logging.md)
+* [System .Net. Mail. Mailaddressparc クラス](system.net.mail.mailaddressparser.md)
+* [System QuotedPairReader クラス](system.net.mail.quotedpairreader.md)
+* [System .Net (Mime) のヘルパークラス](system.net.mime.mailbnfhelper.md)
 * [System .Net. PooledStream. NetworkStream プロパティ](system.net.pooledstream.networkstream.md)
 * [システム .Net. RtcState クラス](system.net.rtcstate.md)
-* [System .Net. ServicePoint. m\_ConnectionGroupList フィールド](m_connectiongrouplist.md)
-* [System .Net. ServicePointManager. s\_Servicepointmanager フィールド](s_servicepointtable.md)
-* [M_Worker TlsStream (システム) フィールド](system.net.tlsstream.m_worker.md)
 * [System .Net. Security. Sslstate プロパティ](system.net.security.sslstate.sslprotocol.md)
+* [System .Net. ServicePoint. m \_ connectiongrouplist フィールド](m_connectiongrouplist.md)
+* [System .Net. ServicePointManager. CloseConnectionGroups メソッド](system.net.servicepointmanager.closeconnectiongroups.md)
+* [System .Net. ServicePointManager. s \_ servicepointmanager フィールド](s_servicepointtable.md)
+* [M_Worker TlsStream (システム) フィールド](system.net.tlsstream.m_worker.md)
+* [UnsafeNclNativeMethods クラス](system.net.unsafenclnativemethods.md)
+* [System .Net. WebHeaderCollection. AddInternal メソッド](system.net.webheadercollection.addinternal.md)
 * [System.servicemodel. Channels. Message. BodyToString メソッド](system.servicemodel.channels.message.bodytostring.md)
 * [WriteStartHeaders メソッド (System.servicemodel.)](system.servicemodel.channels.message.writestartheaders.md)
-* [IsDebuggerCheckDisabledForTestPurposes フィールドの\_システム ()](s-isdebuggercheckdisabledfortestpurposes-field.md)
+* [IsDebuggerCheckDisabledForTestPurposes (システムの診断の \_ フィールド)](s-isdebuggercheckdisabledfortestpurposes-field.md)
 * [System.string クラス (DataMemberFieldEditor クラス)](datamemberfieldeditor-class.md)
 * [System.string クラス (DataMemberListEditor クラス)](datamemberlisteditor-class.md)
-* [System.xml. .Xml...。](system.xml.xmlreader.createsqlreader.md)
+* [System.Xml.XmlReader メソッド](system.xml.xmlreader.createsqlreader.md)
 * [adodb.recordset.接続インターフェイス](adodb.connection.md)
 * [adodb.recordset.EventReason 列挙型](adodb.eventreasonenum.md)
 * [adodb.recordset.EventStatus 列挙型](adodb.eventstatusenum.md)
@@ -92,6 +103,6 @@ ms.locfileid: "74429345"
 * [stdole.StdFont インターフェイス](stdole.stdfont.md)
 * [stdole.StdPicture インターフェイス](stdole.stdpicture.md)
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-* [NET Framework および特別なリリース](../get-started/the-net-framework-and-out-of-band-releases.md)
+* [.NET Framework および特別なリリース](../get-started/the-net-framework-and-out-of-band-releases.md)

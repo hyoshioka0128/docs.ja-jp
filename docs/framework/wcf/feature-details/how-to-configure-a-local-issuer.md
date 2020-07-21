@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 15263371-514e-4ea6-90fb-14b4939154cd
-ms.openlocfilehash: 0028a0522447588ee0fb183b5b2f93d334a7b2b2
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 7da3cd34d0840eea48c9ef0bb89fb6580b87623b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972077"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601245"
 ---
 # <a name="how-to-configure-a-local-issuer"></a>方法: ローカル発行者を設定する
 
@@ -21,10 +21,10 @@ ms.locfileid: "68972077"
 
 クライアントがフェデレーション サービスと通信する場合、クライアントが自分をフェデレーション サービスに対して認証するときに使用するトークンの発行元となるセキュリティ トークン サービスのアドレスが、サービスによって指定されることがよくあります。 特定の状況では、クライアントが*ローカル発行者*を使用するように構成されている場合があります。
 
-フェデレーションバインディングの発行者アドレスが`http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous`または`null`の場合、Windows Communication Foundation (WCF) はローカル発行者を使用します。 そのような場合は、ローカルの発行者およびバインディングのアドレスと共に <xref:System.ServiceModel.Description.ClientCredentials> を構成し、その発行者との通信に使用する必要があります。
+フェデレーションバインディングの発行者アドレスがまたはの場合、Windows Communication Foundation (WCF) はローカル発行者を使用し `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` `null` ます。 そのような場合は、ローカルの発行者およびバインディングのアドレスと共に <xref:System.ServiceModel.Description.ClientCredentials> を構成し、その発行者との通信に使用する必要があります。
 
 > [!NOTE]
-> クラスのプロパティがに`true`設定されている場合、ローカル発行者のアドレスが指定されておらず、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)またはその他のフェデレーションバインドによって指定された発行者のアドレスはです。 <xref:System.ServiceModel.Description.ClientCredentials.SupportInteractive%2A> `ClientCredentials` `http://schemas.xmlsoap.org/ws/2005/05/identity/issuer/self` 、`http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous`、または`null`がである場合は、Windows CardSpace 発行者が使用されます。
+> <xref:System.ServiceModel.Description.ClientCredentials.SupportInteractive%2A>クラスのプロパティがに設定されている場合 `ClientCredentials` `true` 、ローカル発行者のアドレスが指定されておらず、または他のフェデレーションバインドによって指定された発行者のアドレスが、、またはである場合は、 [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) `http://schemas.xmlsoap.org/ws/2005/05/identity/issuer/self` `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` `null` Windows CardSpace 発行者が使用されます。
 
 ## <a name="to-configure-the-local-issuer-in-code"></a>コードでローカル発行者を構成するには
 
@@ -45,12 +45,12 @@ ms.locfileid: "68972077"
      [!code-csharp[c_CreateSTS#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#11)]
      [!code-vb[c_CreateSTS#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#11)]
 
-     パラメーターは、のように<xref:System.ServiceModel.Channels.AddressHeader> 、インスタンスの配列です。 `addressHeaders`
+     パラメーターは、 `addressHeaders` のように、インスタンスの配列です <xref:System.ServiceModel.Channels.AddressHeader> 。
 
      [!code-csharp[c_CreateSTS#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#12)]
      [!code-vb[c_CreateSTS#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#12)]
 
-4. <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A>プロパティを使用して、ローカル発行者のバインディングを設定します。
+4. プロパティを使用して、ローカル発行者のバインディングを設定し <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A> ます。
 
      [!code-csharp[c_CreateSTS#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#13)]
      [!code-vb[c_CreateSTS#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#13)]
@@ -62,15 +62,15 @@ ms.locfileid: "68972077"
 
 ## <a name="to-configure-the-local-issuer-in-configuration"></a>構成でローカル発行者を構成するには
 
-1. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) [IssuedToken > 要素の子として localissuer > 要素を作成します。これ自体がエンドポイント動作の clientCredentials > 要素\<](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)の子になります。 [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md)
+1. 要素の [\<localIssuer>](../../configure-apps/file-schema/wcf/localissuer.md) 子要素として、 [\<issuedToken>](../../configure-apps/file-schema/wcf/issuedtoken.md) [\<clientCredentials>](../../configure-apps/file-schema/wcf/clientcredentials.md) エンドポイント動作の要素の子である要素を作成します。
 
 2. `address` 属性を、トークン要求を受け入れるローカル発行者のアドレスに設定します。
 
 3. `binding` および `bindingConfiguration` 属性を、ローカル発行者のエンドポイントと通信するときに使用する適切なバインディングを参照する値に設定します。
 
-4. 任意。 Id > 要素を <`localIssuer`> 要素の子として設定し、ローカル発行者の id 情報を指定します。 [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
+4. 任意。 要素を [\<identity>](../../configure-apps/file-schema/wcf/identity.md) <> 要素の子として設定 `localIssuer` し、ローカル発行者の id 情報を指定します。
 
-5. 任意。 ヘッダー > 要素を <`localIssuer`> 要素の子として設定し、ローカル発行者を正しくアドレス指定するために必要な追加のヘッダーを指定します。 [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)
+5. 任意。 要素を [\<headers>](../../configure-apps/file-schema/wcf/headers.md) <> 要素の子として設定 `localIssuer` し、ローカル発行者を正しくアドレス指定するために必要な追加のヘッダーを指定します。
 
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ
 
@@ -78,6 +78,6 @@ ms.locfileid: "68972077"
 
 ## <a name="see-also"></a>関連項目
 
-- [方法: フェデレーションサービスで資格情報を構成する](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
-- [方法: フェデレーションクライアントを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [方法: WSFederationHttpBinding を作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [方法: フェデレーション サービスで資格情報を設定する](how-to-configure-credentials-on-a-federation-service.md)
+- [方法: フェデレーション クライアントを作成する](how-to-create-a-federated-client.md)
+- [方法: WSFederationHttpBinding を作成する](how-to-create-a-wsfederationhttpbinding.md)

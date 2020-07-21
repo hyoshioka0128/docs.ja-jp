@@ -1,5 +1,6 @@
 ---
-title: System.windows.xps.xpsdocumentwriter> (raise__WritingCompleted) メソッド (system.string)
+title: Raise__WritingCompleted System.windows.xps.xpsdocumentwriter> メソッド (System. Windows. .Xps)
+description: .NET で XML Paper Specification (XPS) ドキュメントの WritingCompleted イベントを発生させる raise__WritingCompleted System.windows.xps.xpsdocumentwriter> メソッドについて説明します。
 TOCTitle: raise__WritingCompleted Method
 ms.date: 12/12/2007
 api_location:
@@ -10,36 +11,36 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 642c7188b135427bc7fe32260802f47517d93350
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 287fa2286c7acd5061672453c5be11c3ff34ca80
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72525059"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105230"
 ---
-# <a name="xpsdocumentwriterraise__writingcompleted-method"></a>System.windows.xps.xpsdocumentwriter> \_ \_WritingCompleted メソッドの発生
+# <a name="xpsdocumentwriterraise__writingcompleted-method"></a>System.windows.xps.xpsdocumentwriter> \_ \_ WritingCompleted メソッド
 
 <xref:System.Windows.Xps.XpsDocumentWriter.WritingCompleted> イベントを発生させます。
 
 ## <a name="syntax"></a>構文
 
 ```csharp
-public void raise__WritingCompleted (object value0, 
+public void raise__WritingCompleted (object value0,
   System.Windows.Documents.Serialization.WritingCompletedEventArgs value1);
 ```
 
 ## <a name="parameters"></a>パラメーター
 
 - `value0` <xref:System.Object>  
-  イベントのソース。
+  イベントのソースです。
 
 - `value1`  <xref:System.Windows.Documents.Serialization.WritingCompletedEventArgs>  
   イベントのデータ。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
 **名前空間:** <xref:System.Windows.Xps>
 
-**アセンブリ:** システム印刷 ((system.string で))
+**アセンブリ:**[印刷] (system.printing.dll)
 
 **.NET Framework のバージョン:** 3.0

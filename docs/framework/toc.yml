@@ -1,42 +1,368 @@
-- name: .NET Framework ガイド
-  href: index.md
-- name: 新着記事
-  href: whats-new/
-- name: はじめに
-  href: get-started/
+- name: .NET Framework ドキュメント
+  href: index.yml
+- name: .NET Framework の概要
+  href: get-started/overview.md
+- name: 作業開始
+  items:
+    - name: 概要
+      href: get-started/index.md
+    - name: .NET Framework および特別なリリース
+      href: get-started/the-net-framework-and-out-of-band-releases.md
+    - name: .NET Core とオープン ソース
+      href: get-started/net-core-and-open-source.md
+    - name: システム要件
+      href: get-started/system-requirements.md
 - name: インストール ガイド
-  href: install/
+  items:
+    - name: 概要
+      href: install/index.md
+    - name: 開発者向け
+      href: install/guide-for-developers.md
+    - name: OS バージョン別
+      items:
+        - name: Windows 10 および Windows Server 2016
+          href: install/on-windows-10.md
+        - name: Windows 8.1 および Windows Server 2012 R2
+          href: install/on-windows-8-1.md
+        - name: Windows 8 と Windows Server 2012
+          href: install/on-windows-8.md
+        - name: Windows 7 SP1 および Windows Server 2008 R2
+          href: install/on-windows-7.md
+        - name: Windows Vista および Windows Server 2008
+          href: install/on-windows-vista.md
+        - name: Windows XP および Windows Server 2003
+          href: install/on-windows-xp.md
+    - name: .NET framework を修復する
+      href: install/repair.md
+    - name: トラブルシューティング
+      items:
+        - name: インストールとアンインストールのトラブルシューティング
+          href: install/troubleshoot-blocked-installations-and-uninstallations.md
+        - name: '"このアプリケーションを開始できませんでした" のトラブルシューティング'
+          href: install/application-not-started.md
+    - name: Windows 8 から Windows 10 での .NET Framework 3.5
+      href: install/dotnet-35-windows-10.md
+    - name: Windows 8 から Windows 10 での .NET Framework 1.1
+      href: install/run-net-framework-1-1-apps.md
 - name: 移行ガイド
-  href: migration-guide/
+  items:
+    - name: 概要
+      href: migration-guide/index.md
+    - name: 互換性
+      items:
+        - name: アプリケーションの互換性
+          items:
+            - name: 概要
+              displayName: App compatibility
+              href: migration-guide/application-compatibility.md
+            - name: ランタイムの変更
+              items:
+                - name: 4.0 から 4.5
+                  href: migration-guide/runtime/4.0-4.5.md
+                - name: 4.0 から 4.5.1
+                  href: migration-guide/runtime/4.0-4.5.1.md
+                - name: 4.0 から 4.5.2
+                  href: migration-guide/runtime/4.0-4.5.2.md
+                - name: 4.0 から 4.6
+                  href: migration-guide/runtime/4.0-4.6.md
+                - name: 4.0 から 4.6.1
+                  href: migration-guide/runtime/4.0-4.6.1.md
+                - name: 4.0 から 4.6.2
+                  href: migration-guide/runtime/4.0-4.6.2.md
+                - name: 4.0 から 4.7
+                  href: migration-guide/runtime/4.0-4.7.md
+                - name: 4.0 から 4.7.1
+                  href: migration-guide/runtime/4.0-4.7.1.md
+                - name: 4.0 から 4.7.2
+                  href: migration-guide/runtime/4.0-4.7.2.md
+                - name: 4.0 から 4.8
+                  href: migration-guide/runtime/4.0-4.8.md
+                - name: 4.5 から 4.5.1
+                  href: migration-guide/runtime/4.5-4.5.1.md
+                - name: 4.5 から 4.5.2
+                  href: migration-guide/runtime/4.5-4.5.2.md
+                - name: 4.5 から 4.6
+                  href: migration-guide/runtime/4.5-4.6.md
+                - name: 4.5 から 4.6.1
+                  href: migration-guide/runtime/4.5-4.6.1.md
+                - name: 4.5 から 4.6.2
+                  href: migration-guide/runtime/4.5-4.6.2.md
+                - name: 4.5 から 4.7
+                  href: migration-guide/runtime/4.5-4.7.md
+                - name: 4.5 から 4.7.1
+                  href: migration-guide/runtime/4.5-4.7.1.md
+                - name: 4.5 から 4.7.2
+                  href: migration-guide/runtime/4.5-4.7.2.md
+                - name: 4.5 から 4.8
+                  href: migration-guide/runtime/4.5-4.8.md
+                - name: 4.5.1 から 4.5.2
+                  href: migration-guide/runtime/4.5.1-4.5.2.md
+                - name: 4.5.1 から 4.6
+                  href: migration-guide/runtime/4.5.1-4.6.md
+                - name: 4.5.1 から 4.6.1
+                  href: migration-guide/runtime/4.5.1-4.6.1.md
+                - name: 4.5.1 から 4.6.2
+                  href: migration-guide/runtime/4.5.1-4.6.2.md
+                - name: 4.5.1 から 4.7
+                  href: migration-guide/runtime/4.5.1-4.7.md
+                - name: 4.5.1 から 4.7.1
+                  href: migration-guide/runtime/4.5.1-4.7.1.md
+                - name: 4.5.1 から 4.7.2
+                  href: migration-guide/runtime/4.5.1-4.7.2.md
+                - name: 4.5.1 から 4.8
+                  href: migration-guide/runtime/4.5.1-4.8.md
+                - name: 4.5.2 から 4.6
+                  href: migration-guide/runtime/4.5.2-4.6.md
+                - name: 4.5.2 から 4.6.1
+                  href: migration-guide/runtime/4.5.2-4.6.1.md
+                - name: 4.5.2 から 4.6.2
+                  href: migration-guide/runtime/4.5.2-4.6.2.md
+                - name: 4.5.2 から 4.7
+                  href: migration-guide/runtime/4.5.2-4.7.md
+                - name: 4.5.2 から 4.7.1
+                  href: migration-guide/runtime/4.5.2-4.7.1.md
+                - name: 4.5.2 から 4.7.2
+                  href: migration-guide/runtime/4.5.2-4.7.2.md
+                - name: 4.5.2 から 4.8
+                  href: migration-guide/runtime/4.5.2-4.8.md
+                - name: 4.6 から 4.6.1
+                  href: migration-guide/runtime/4.6-4.6.1.md
+                - name: 4.6 から 4.6.2
+                  href: migration-guide/runtime/4.6-4.6.2.md
+                - name: 4.6 から 4.7
+                  href: migration-guide/runtime/4.6-4.7.md
+                - name: 4.6 から 4.7.1
+                  href: migration-guide/runtime/4.6-4.7.1.md
+                - name: 4.6 から 4.7.2
+                  href: migration-guide/runtime/4.6-4.7.2.md
+                - name: 4.6 から 4.8
+                  href: migration-guide/runtime/4.6-4.8.md
+                - name: 4.6.1 から 4.6.2
+                  href: migration-guide/runtime/4.6.1-4.6.2.md
+                - name: 4.6.1 から 4.7
+                  href: migration-guide/runtime/4.6.1-4.7.md
+                - name: 4.6.1 から 4.7.1
+                  href: migration-guide/runtime/4.6.1-4.7.1.md
+                - name: 4.6.1 から 4.7.2
+                  href: migration-guide/runtime/4.6.1-4.7.2.md
+                - name: 4.6.1 から 4.8
+                  href: migration-guide/runtime/4.6.1-4.8.md
+                - name: 4.6.2 から 4.7
+                  href: migration-guide/runtime/4.6.2-4.7.md
+                - name: 4.6.2 から 4.7.1
+                  href: migration-guide/runtime/4.6.2-4.7.1.md
+                - name: 4.6.2 から 4.7.2
+                  href: migration-guide/runtime/4.6.2-4.7.2.md
+                - name: 4.6.2 から 4.8
+                  href: migration-guide/runtime/4.6.2-4.8.md
+                - name: 4.7 から 4.7.1
+                  href: migration-guide/runtime/4.7-4.7.1.md
+                - name: 4.7 から 4.7.2
+                  href: migration-guide/runtime/4.7-4.7.2.md
+                - name: 4.7 から 4.8
+                  href: migration-guide/runtime/4.7-4.8.md
+                - name: 4.7.1 から 4.7.2
+                  href: migration-guide/runtime/4.7.1-4.7.2.md
+                - name: 4.7.1 から 4.8
+                  href: migration-guide/runtime/4.7.1-4.8.md
+                - name: 4.7.2 から 4.8
+                  href: migration-guide/runtime/4.7.2-4.8.md
+            - name: 変更の再ターゲット
+              items:
+                - name: 4.0 から 4.5
+                  href: migration-guide/retargeting/4.0-4.5.md
+                - name: 4.0 から 4.5.1
+                  href: migration-guide/retargeting/4.0-4.5.1.md
+                - name: 4.0 から 4.5.2
+                  href: migration-guide/retargeting/4.0-4.5.2.md
+                - name: 4.0 から 4.6
+                  href: migration-guide/retargeting/4.0-4.6.md
+                - name: 4.0 から 4.6.1
+                  href: migration-guide/retargeting/4.0-4.6.1.md
+                - name: 4.0 から 4.6.2
+                  href: migration-guide/retargeting/4.0-4.6.2.md
+                - name: 4.0 から 4.7
+                  href: migration-guide/retargeting/4.0-4.7.md
+                - name: 4.0 から 4.7.1
+                  href: migration-guide/retargeting/4.0-4.7.1.md
+                - name: 4.0 から 4.7.2
+                  href: migration-guide/retargeting/4.0-4.7.2.md
+                - name: 4.0 から 4.8
+                  href: migration-guide/retargeting/4.0-4.8.md
+                - name: 4.5 から 4.5.1
+                  href: migration-guide/retargeting/4.5-4.5.1.md
+                - name: 4.5 から 4.5.2
+                  href: migration-guide/retargeting/4.5-4.5.2.md
+                - name: 4.5 から 4.6
+                  href: migration-guide/retargeting/4.5-4.6.md
+                - name: 4.5 から 4.6.1
+                  href: migration-guide/retargeting/4.5-4.6.1.md
+                - name: 4.5 から 4.6.2
+                  href: migration-guide/retargeting/4.5-4.6.2.md
+                - name: 4.5 から 4.7
+                  href: migration-guide/retargeting/4.5-4.7.md
+                - name: 4.5 から 4.7.1
+                  href: migration-guide/retargeting/4.5-4.7.1.md
+                - name: 4.5 から 4.7.2
+                  href: migration-guide/retargeting/4.5-4.7.2.md
+                - name: 4.5 から 4.8
+                  href: migration-guide/retargeting/4.5-4.8.md
+                - name: 4.5.1 から 4.5.2
+                  href: migration-guide/retargeting/4.5.1-4.5.2.md
+                - name: 4.5.1 から 4.6
+                  href: migration-guide/retargeting/4.5.1-4.6.md
+                - name: 4.5.1 から 4.6.1
+                  href: migration-guide/retargeting/4.5.1-4.6.1.md
+                - name: 4.5.1 から 4.6.2
+                  href: migration-guide/retargeting/4.5.1-4.6.2.md
+                - name: 4.5.1 から 4.7
+                  href: migration-guide/retargeting/4.5.1-4.7.md
+                - name: 4.5.1 から 4.7.1
+                  href: migration-guide/retargeting/4.5.1-4.7.1.md
+                - name: 4.5.1 から 4.7.2
+                  href: migration-guide/retargeting/4.5.1-4.7.2.md
+                - name: 4.5.1 から 4.8
+                  href: migration-guide/retargeting/4.5.1-4.8.md
+                - name: 4.5.2 から 4.6
+                  href: migration-guide/retargeting/4.5.2-4.6.md
+                - name: 4.5.2 から 4.6.1
+                  href: migration-guide/retargeting/4.5.2-4.6.1.md
+                - name: 4.5.2 から 4.6.2
+                  href: migration-guide/retargeting/4.5.2-4.6.2.md
+                - name: 4.5.2 から 4.7
+                  href: migration-guide/retargeting/4.5.2-4.7.md
+                - name: 4.5.2 から 4.7.1
+                  href: migration-guide/retargeting/4.5.2-4.7.1.md
+                - name: 4.5.2 から 4.7.2
+                  href: migration-guide/retargeting/4.5.2-4.7.2.md
+                - name: 4.5.2 から 4.8
+                  href: migration-guide/retargeting/4.5.2-4.8.md
+                - name: 4.6 から 4.6.1
+                  href: migration-guide/retargeting/4.6-4.6.1.md
+                - name: 4.6 から 4.6.2
+                  href: migration-guide/retargeting/4.6-4.6.2.md
+                - name: 4.6 から 4.7
+                  href: migration-guide/retargeting/4.6-4.7.md
+                - name: 4.6 から 4.7.1
+                  href: migration-guide/retargeting/4.6-4.7.1.md
+                - name: 4.6 から 4.7.2
+                  href: migration-guide/retargeting/4.6-4.7.2.md
+                - name: 4.6 から 4.8
+                  href: migration-guide/retargeting/4.6-4.8.md
+                - name: 4.6.1 から 4.6.2
+                  href: migration-guide/retargeting/4.6.1-4.6.2.md
+                - name: 4.6.1 から 4.7
+                  href: migration-guide/retargeting/4.6.1-4.7.md
+                - name: 4.6.1 から 4.7.1
+                  href: migration-guide/retargeting/4.6.1-4.7.1.md
+                - name: 4.6.1 から 4.7.2
+                  href: migration-guide/retargeting/4.6.1-4.7.2.md
+                - name: 4.6.1 から 4.8
+                  href: migration-guide/retargeting/4.6.1-4.8.md
+                - name: 4.6.2 から 4.7
+                  href: migration-guide/retargeting/4.6.2-4.7.md
+                - name: 4.6.2 から 4.7.1
+                  href: migration-guide/retargeting/4.6.2-4.7.1.md
+                - name: 4.6.2 から 4.7.2
+                  href: migration-guide/retargeting/4.6.2-4.7.2.md
+                - name: 4.6.2 から 4.8
+                  href: migration-guide/retargeting/4.6.2-4.8.md
+                - name: 4.7 から 4.7.1
+                  href: migration-guide/retargeting/4.7-4.7.1.md
+                - name: 4.7 から 4.7.2
+                  href: migration-guide/retargeting/4.7-4.7.2.md
+                - name: 4.7 から 4.8
+                  href: migration-guide/retargeting/4.7-4.8.md
+                - name: 4.7.1 から 4.7.2
+                  href: migration-guide/retargeting/4.7.1-4.7.2.md
+                - name: 4.7.1 から 4.8
+                  href: migration-guide/retargeting/4.7.1-4.8.md
+                - name: 4.7.2 から 4.8
+                  href: migration-guide/retargeting/4.7.2-4.8.md
+        - name: 動作の緩和
+          items:
+            - name: 概要
+              href: migration-guide/mitigations.md
+            - name: カスタムの IMessageFilter.PreFilterMessage 実装
+              href: migration-guide/mitigation-custom-imessagefilter-prefiltermessage-implementations.md
+            - name: アプリ ドメイン全体でのオブジェクトの逆シリアル化
+              href: migration-guide/mitigation-deserialization-of-objects-across-app-domains.md
+            - name: 新しい 64 ビット JIT コンパイラ
+              href: migration-guide/mitigation-new-64-bit-jit-compiler.md
+            - name: パスのコロン チェック
+              href: migration-guide/mitigation-path-colon-checks.md
+            - name: パスの正規化
+              href: migration-guide/mitigation-path-normalization.md
+            - name: icon オブジェクトの PNG フレーム
+              href: migration-guide/mitigation-png-frames-in-icon-objects.md
+            - name: ポインター ベースのタッチおよびスタイラスのサポート
+              href: migration-guide/mitigation-pointer-based-touch-and-stylus-support.md
+            - name: プールのブロック期間
+              href: migration-guide/mitigation-pool-blocking-period.md
+            - name: 製品のバージョン管理
+              href: migration-guide/mitigation-product-versioning.md
+            - name: 制御文字のシリアル化
+              href: migration-guide/mitigation-serialization-control-characters.md
+            - name: TLS プロトコル
+              href: migration-guide/mitigation-tls-protocols.md
+            - name: WCF サービスと証明書認証
+              href: migration-guide/mitigation-wcf-services-and-certificate-authentication.md
+            - name: WPF レイアウト
+              href: migration-guide/mitigation-wpf-layout.md
+            - name: WPF ウィンドウのレンダリング
+              href: migration-guide/mitigation-wpf-window-rendering.md
+            - name: X509CertificateClaimSet.FindClaims メソッド
+              href: migration-guide/mitigation-x509certificateclaimset-findclaims-method.md
+            - name: XML スキーマ検証
+              href: migration-guide/mitigation-xml-schema-validation.md
+            - name: ZipArchiveEntry.FullName パスの区切り文字
+              href: migration-guide/mitigation-ziparchiveentry-fullname-path-separator.md
+        - name: バージョンの互換性
+          href: migration-guide/version-compatibility.md
+    - name: .NET Framework のバージョン
+      items:
+        - name: バージョンと依存関係
+          href: migration-guide/versions-and-dependencies.md
+        - name: インストールされているバージョンを確認する
+          href: migration-guide/how-to-determine-which-versions-are-installed.md
+        - name: インストールされている更新プログラムを確認する
+          href: migration-guide/how-to-determine-which-net-framework-updates-are-installed.md
+    - name: .NET Framework 4 以降をサポートするようにアプリを構成する
+      href: migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md
+    - name: .NET Framework 1.1 からの移行
+      href: migration-guide/migrating-from-the-net-framework-1-1.md
+    - name: .NET Framework 4 への移行に関する問題
+      href: migration-guide/net-framework-4-migration-issues.md
 - name: 開発ガイド
   href: development-guide.md
   items:
     - name: アプリケーション ドメインとアセンブリ
       href: app-domains/
-    - name: デスクトップ アプリケーションのリソース
+    - name: デスクトップ アプリのリソース
       href: resources/
     - name: ユーザー補助
       href: ui-automation/
     - name: データとモデリング
       href: data/
-    - name: クライアント アプリケーション
-      href: develop-client-apps.md
+    - name: クライアント アプリ
       items:
+        - name: 概要
+          href: develop-client-apps.md
         - name: Windows Presentation Foundation
           href: wpf/
         - name: Windows フォーム
           href: winforms/
-    - name: WCF を使用したサービス指向アプリケーション
+    - name: WCF を使用したサービス指向アプリ
       href: wcf/
     - name: Windows Workflow Foundation
       href: windows-workflow-foundation/
-    - name: Windows サービス アプリケーション
+    - name: Windows サービス アプリ
       href: windows-services/
-    - name: 64 ビット アプリケーション
+    - name: 64 ビット アプリ
       href: 64-bit-apps.md
-    - name: ASP.NET を使用した Web アプリケーション
+    - name: ASP.NET を使用した Web アプリ
       href: develop-web-apps-with-aspnet.md
-    - name: .NET Framework のネットワーク プログラミング
+    - name: ネットワーク プログラミング
       href: network-programming/
     - name: アプリの構成
       href: configure-apps/
@@ -52,13 +378,303 @@
       href: reflection-and-codedom/
     - name: MEF (Managed Extensibility Framework)
       href: mef/
-    - name: アンマネージ コードとの相互運用
+    - name: アンマネージド コードとの相互運用
       href: interop/
     - name: アンマネージ API リファレンス
       href: unmanaged-api/
     - name: XAML サービス
-      href: xaml-services/
+      href: ../desktop-wpf/xaml-services/
 - name: ツール
-  href: tools/
-- name: 追加のクラス ライブラリおよび API
-  href: additional-apis/
+  items:
+    - name: 概要
+      href: tools/index.md
+    - name: Al.exe (アセンブリ リンカー)
+      href: tools/al-exe-assembly-linker.md
+    - name: Aximp.exe (Windows フォーム ActiveX コントロール インポーター)
+      href: tools/aximp-exe-windows-forms-activex-control-importer.md
+    - name: Caspol.exe (コード アクセス セキュリティ ポリシー ツール)
+      href: tools/caspol-exe-code-access-security-policy-tool.md
+    - name: Cert2spc.exe (ソフトウェア発行元証明書テスト ツール)
+      href: tools/cert2spc-exe-software-publisher-certificate-test-tool.md
+    - name: Certmgr.exe (証明書マネージャー ツール)
+      href: tools/certmgr-exe-certificate-manager-tool.md
+    - name: Clrver.exe (CLR バージョン ツール)
+      href: tools/clrver-exe-clr-version-tool.md
+    - name: コマンド プロンプト
+      href: tools/developer-command-prompt-for-vs.md
+    - name: CorFlags.exe (CorFlags 変換ツール)
+      href: tools/corflags-exe-corflags-conversion-tool.md
+    - name: Fuslogvw.exe (アセンブリ バインディング ログ ビューアー)
+      href: tools/fuslogvw-exe-assembly-binding-log-viewer.md
+    - name: Gacutil.exe (グローバル アセンブリ キャッシュ ツール)
+      href: tools/gacutil-exe-gac-tool.md
+    - name: Ilasm.exe (IL アセンブラー)
+      href: tools/ilasm-exe-il-assembler.md
+    - name: Ildasm.exe (IL 逆アセンブラー)
+      href: tools/ildasm-exe-il-disassembler.md
+    - name: Installutil.exe (インストーラー ツール)
+      href: tools/installutil-exe-installer-tool.md
+    - name: Lc.exe (ライセンス コンパイラ)
+      href: tools/lc-exe-license-compiler.md
+    - name: Mage.exe (マニフェスト生成および編集ツール)
+      href: tools/mage-exe-manifest-generation-and-editing-tool.md
+    - name: MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)
+      href: tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md
+    - name: MDbg.exe (.NET Framework コマンド ライン デバッガー)
+      href: tools/mdbg-exe.md
+    - name: Mgmtclassgen.exe (厳密型クラス ジェネレーター)
+      href: tools/mgmtclassgen-exe.md
+    - name: Mpgo.exe (マネージド プロファイル ガイド付き最適化ツール)
+      href: tools/mpgo-exe-managed-profile-guided-optimization-tool.md
+    - name: Ngen.exe (ネイティブ イメージ ジェネレーター)
+      href: tools/ngen-exe-native-image-generator.md
+    - name: Peverify.exe (PEVerify ツール)
+      href: tools/peverify-exe-peverify-tool.md
+    - name: Regasm.exe (アセンブリ登録ツール)
+      href: tools/regasm-exe-assembly-registration-tool.md
+    - name: Regsvcs.exe (.NET サービス インストール ツール)
+      href: tools/regsvcs-exe-net-services-installation-tool.md
+    - name: Resgen.exe (リソース ファイル ジェネレーター)
+      href: tools/resgen-exe-resource-file-generator.md
+    - name: SecAnnotate.exe (.NET Security Annotator ツール)
+      href: tools/secannotate-exe-net-security-annotator-tool.md
+    - name: SignTool.exe (署名ツール)
+      href: tools/signtool-exe.md
+    - name: Sn.exe (厳密名ツール)
+      href: tools/sn-exe-strong-name-tool.md
+    - name: SOS.dll (SOS デバッガー拡張)
+      href: tools/sos-dll-sos-debugging-extension.md
+    - name: SqlMetal.exe (コード生成ツール)
+      href: tools/sqlmetal-exe-code-generation-tool.md
+    - name: Storeadm.exe (分離ストレージ ツール)
+      href: tools/storeadm-exe-isolated-storage-tool.md
+    - name: Tlbexp.exe (タイプ ライブラリ エクスポーター)
+      href: tools/tlbexp-exe-type-library-exporter.md
+    - name: Tlbimp.exe (タイプ ライブラリ インポーター)
+      href: tools/tlbimp-exe-type-library-importer.md
+    - name: Winmdexp.exe (Windows ランタイム メタデータのエクスポート ツール)
+      href: tools/winmdexp-exe-windows-runtime-metadata-export-tool.md
+    - name: Winmdexp.exe のエラー メッセージ
+      href: tools/winmdexp-exe-error-messages.md
+    - name: Winres.exe (Windows フォーム リソース エディター)
+      href: tools/winres-exe-windows-forms-resource-editor.md
+- name: その他の API
+  items:
+    - name: 概要
+      href: additional-apis/index.md
+    - name: Microsoft.SqlServer.Server
+      items:
+        - name: SmiOrderProperty クラス
+          items:
+            - name: Item プロパティ
+              href: additional-apis/microsoft.sqlserver.server.smiorderproperty.item.md
+    - name: システム
+      items:
+        - name: 例外クラス
+          items:
+            - name: PrepForRemoting メソッド
+              href: additional-apis/system.exception.prepforremoting.md
+    - name: System.Data.SqlTypes
+      items:
+        - name: SqlChars クラス
+          items:
+            - name: Stream プロパティ
+              href: additional-apis/system.data.sqltypes.sqlchars.stream.md
+        - name: SqlStreamChars クラス
+          items:
+            - name: SqlStreamChars コンストラクター
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.-ctor.md
+            - name: CanSeek プロパティ
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.canseek.md
+            - name: IsNull プロパティ
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.isnull.md
+            - name: Length プロパティ
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.length.md
+            - name: Close メソッド
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.close.md
+            - name: Dispose メソッド
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.dispose.md
+            - name: Flush メソッド
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.flush.md
+            - name: Read メソッド
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.read.md
+            - name: Seek メソッド
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.seek.md
+            - name: SetLength メソッド
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.setlength.md
+            - name: Write メソッド
+              href: additional-apis/system.data.sqltypes.sqlstreamchars.write.md
+    - name: System.IO
+      items:
+        - name: MemoryStream クラス
+          items:
+            - name: InternalGetOriginAndLength メソッド
+              href: additional-apis/system.io.memorystream.internalgetoriginandlength.md
+    - name: System.Net
+      items:
+        - name: ComNetOS クラス
+          href: additional-apis/system.net.comnetos.md
+        - name: Connection クラス
+          href: additional-apis/connection.md
+          items:
+            - name: m_WriteList フィールド
+              href: additional-apis/m_writelist.md
+        - name: ConnectionGroup クラス
+          href: additional-apis/connectiongroup.md
+          items:
+            - name: m_ConnectionList フィールド
+              href: additional-apis/m_connectionlist.md
+        - name: ConnectStream クラス
+          items:
+            - name: Connection プロパティ
+              href: additional-apis/system.net.connectstream.connection.md
+        - name: CoreResponseData クラス
+          href: additional-apis/coreresponsedata.md
+          items:
+            - name: m_ResponseHeaders フィールド
+              href: additional-apis/coreresponsedata_m_responseheaders.md
+            - name: m_StatusCode フィールド
+              href: additional-apis/coreresponsedata_m_statuscode.md
+        - name: ExceptionHelper クラス
+          href: additional-apis/system.net.exceptionhelper.md
+        - name: HttpStatusDescription クラス
+          href: additional-apis/system.net.httpstatusdescription.md
+        - name: HttpWebRequest クラス
+          items:
+            - name: _AutoRedirects フィールド
+              href: additional-apis/_autoredirects.md
+            - name: _CoreResponse フィールド
+              href: additional-apis/httpwebrequest__coreresponse.md
+            - name: _HttpResponse フィールド
+              href: additional-apis/_httpresponse.md
+        - name: Logging クラス
+          href: additional-apis/system.net.logging.md
+        - name: MailAddressParser クラス
+          href: additional-apis/system.net.mail.mailaddressparser.md
+        - name: MailBnfHelper クラス
+          href: additional-apis/system.net.mime.mailbnfhelper.md
+        - name: PooledStream クラス
+          items:
+            - name: NetworkStream プロパティ
+              href: additional-apis/system.net.pooledstream.networkstream.md
+        - name: QuotedPairReader クラス
+          href: additional-apis/system.net.mail.quotedpairreader.md
+        - name: RtcState クラス
+          href: additional-apis/system.net.rtcstate.md
+        - name: ServicePoint クラス
+          items:
+            - name: m_ConnectionGroupList フィールド
+              href: additional-apis/m_connectiongrouplist.md
+        - name: ServicePointManager クラス
+          items:
+            - name: CloseConnectionGroups メソッド
+              href: additional-apis/system.net.servicepointmanager.closeconnectiongroups.md
+            - name: s_ServicePointTable フィールド
+              href: additional-apis/s_servicepointtable.md
+        - name: TlsStream クラス
+          items:
+            - name: m_Worker フィールド
+              href: additional-apis/system.net.tlsstream.m_worker.md
+        - name: UnsafeNclNativeMethods クラス
+          href: additional-apis/system.net.unsafenclnativemethods.md
+        - name: WebHeaderCollection クラス
+          items:
+            - name: AddInternal メソッド
+              href: additional-apis/system.net.webheadercollection.addinternal.md
+    - name: System.Net.Security
+      items:
+        - name: SslState クラス
+          items:
+            - name: SslProtocol プロパティ
+              href: additional-apis/system.net.security.sslstate.sslprotocol.md
+    - name: System.ServiceModel.Channels
+      items:
+        - name: message クラス
+          items:
+            - name: BodyToString メソッド
+              href: additional-apis/system.servicemodel.channels.message.bodytostring.md
+            - name: WriteStartHeaders メソッド
+              href: additional-apis/system.servicemodel.channels.message.writestartheaders.md
+    - name: System.Windows.Diagnostics
+      items:
+        - name: VisualDiagnostics クラス
+          items:
+            - name: s_isDebuggerCheckDisabledForTestPurposes フィールド
+              href: additional-apis/s-isdebuggercheckdisabledfortestpurposes-field.md
+    - name: System.Windows.Forms.Design
+      items:
+        - name: DataMemberFieldEditor クラス
+          href: additional-apis/datamemberfieldeditor-class.md
+        - name: DataMemberListEditor クラス
+          href: additional-apis/datamemberlisteditor-class.md
+    - name: System.Windows.Xps
+      items:
+        - name: XpsDocumentWriter クラス
+          items:
+            - name: raise__WritingCancelled メソッド
+              href: additional-apis/xpsdocumentwriter-raise-writingcancelled-method-system-windows-xps.md
+            - name: raise__WritingCompleted メソッド
+              href: additional-apis/xpsdocumentwriter-raise-writingcompleted-method-system-windows-xps.md
+            - name: raise__WritingPrintTicketRequired メソッド
+              href: additional-apis/xpsdocumentwriter-raise-writingprintticketrequired-method-system-windows-xps.md
+            - name: raise__WritingProgressChanged
+              href: additional-apis/xpsdocumentwriter-raise-writingprogresschanged-method-system-windows-xps.md
+            - name: _WritingCancelled
+              href: additional-apis/xpsdocumentwriter-writingcancelled-event-system-windows-xps.md
+            - name: _WritingCompleted
+              href: additional-apis/xpsdocumentwriter-writingcompleted-event-system-windows-xps.md
+            - name: _WritingProgressChanged
+              href: additional-apis/xpsdocumentwriter-writingprogresschanged-event-system-windows-xps.md
+    - name: System.Xml
+      items:
+        - name: XmlReader クラス
+          items:
+            - name: CreateSqlReader メソッド
+              href: additional-apis/system.xml.xmlreader.createsqlreader.md
+    - name: adodb 名前空間
+      items:
+        - name: Connection インターフェイス
+          href: additional-apis/adodb.connection.md
+        - name: EventReason 列挙型
+          href: additional-apis/adodb.eventreasonenum.md
+        - name: EventStatus 列挙型
+          href: additional-apis/adodb.eventstatusenum.md
+    - name: stdole 名前空間
+      items:
+        - name: DISPPARAMS 構造体
+          href: additional-apis/stdole.dispparams.md
+        - name: EXCEPINFO 構造体
+          href: additional-apis/stdole.excepinfo.md
+        - name: IFont クラス
+          items:
+            - name: Name プロパティ
+              href: additional-apis/stdole.ifont.name.md
+        - name: IFontDisp インターフェイス
+          href: additional-apis/stdole.ifontdisp.md
+        - name: IPicture クラス
+          items:
+            - name: Handle プロパティ
+              href: additional-apis/stdole.ipicture.handle.md
+        - name: IPictureDisp インターフェイス
+          href: additional-apis/stdole.ipicturedisp.md
+        - name: IPictureDisp クラス
+          items:
+            - name: Handle プロパティ
+              href: additional-apis/stdole.ipicturedisp.handle.md
+        - name: StdFont インターフェイス
+          href: additional-apis/stdole.stdfont.md
+        - name: StdPicture インターフェイス
+          href: additional-apis/stdole.stdpicture.md
+- name: 新機能と廃止された機能
+  items:
+    - name: 新機能
+      href: whats-new/index.md
+    - name: アクセシビリティの新機能
+      href: whats-new/whats-new-in-accessibility.md
+    - name: API リファレンスの廃止された機能
+      href: whats-new/whats-obsolete.md
+      items:
+        - name: 互換性のために残されている型
+          href: whats-new/obsolete-types.md
+        - name: 互換性のために残されているメンバー
+          href: whats-new/obsolete-members.md

@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 1bb126a5-ceec-4649-a4bc-8aa19e801046
 ms.openlocfilehash: f0240e99d2420b0956d3c144f837b39e094bb78a
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70794719"
@@ -15,15 +15,15 @@ ms.locfileid: "70794719"
 
 ## <a name="microsoft-sql-server-odbc-driver"></a>Microsoft SQL Server ODBC Driver
 
-Microsoft SQL Server ODBC ドライバーは、共通のスキーマコレクションに加えて次のスキーマコレクションをサポートしています。
+Microsoft SQL Server ODBC Driver では、共通のスキーマ コレクションに加えて次のスキーマ コレクションがサポートされています。
 
-- テーブル
+- [テーブル]
 
-- インデックス
+- Indexes
 
-- [列]
+- 列
 
-- 手順
+- プロシージャ
 
 - ProcedureColumns
 
@@ -31,7 +31,7 @@ Microsoft SQL Server ODBC ドライバーは、共通のスキーマコレクシ
 
 - Views
 
-### <a name="tables-and-views"></a>[テーブルとビュー]
+### <a name="tables-and-views"></a>Tables と Views
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -41,7 +41,7 @@ Microsoft SQL Server ODBC ドライバーは、共通のスキーマコレクシ
 |TABLE_TYPE|String|
 |REMARKS|String|
 
-### <a name="indexes"></a>インデックス
+### <a name="indexes"></a>Indexes
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -61,7 +61,7 @@ Microsoft SQL Server ODBC ドライバーは、共通のスキーマコレクシ
 |SS_TYPE_SCHEMA|String|
 |SS_DATA_TYPE|Byte|
 
-### <a name="columns"></a>[列]
+### <a name="columns"></a>列
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -87,7 +87,7 @@ Microsoft SQL Server ODBC ドライバーは、共通のスキーマコレクシ
 |SS_TYPE_SCHEMA|String|
 |SS_DATA_TYPE|Byte|
 
-### <a name="procedures"></a>手順
+### <a name="procedures"></a>プロシージャ
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -156,13 +156,13 @@ Microsoft SQL Server ODBC ドライバーは、共通のスキーマコレクシ
 
 ## <a name="microsoft-oracle-odbc-driver"></a>Microsoft Oracle ODBC Driver
 
-Microsoft SQL Server Oracle ODBC ドライバーは、共通のスキーマコレクションに加えて次のスキーマコレクションをサポートしています。
+Microsoft SQL Server Oracle ODBC Driver では、共通のスキーマ コレクションに加えて次のスキーマ コレクションがサポートされています。
 
-- テーブル
+- [テーブル]
 
-- [列]
+- 列
 
-- 手順
+- プロシージャ
 
 - ProcedureColumns
 
@@ -170,9 +170,9 @@ Microsoft SQL Server Oracle ODBC ドライバーは、共通のスキーマコ�
 
 - Views
 
-- インデックス
+- Indexes
 
-### <a name="tables-and-views"></a>[テーブルとビュー]
+### <a name="tables-and-views"></a>Tables と Views
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -182,7 +182,7 @@ Microsoft SQL Server Oracle ODBC ドライバーは、共通のスキーマコ�
 |TABLE_TYPE|String|
 |REMARKS|String|
 
-### <a name="columns"></a>[列]
+### <a name="columns"></a>列
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -200,7 +200,7 @@ Microsoft SQL Server Oracle ODBC ドライバーは、共通のスキーマコ�
 |REMARKS|String|
 |ORDINAL_POSITION|Int32|
 
-### <a name="procedures"></a>手順
+### <a name="procedures"></a>プロシージャ
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -237,13 +237,13 @@ Microsoft SQL Server Oracle ODBC ドライバーは、共通のスキーマコ�
 
 Microsoft Jet ODBC Driver は、共通のスキーマ コレクションに加えて次のスキーマ コレクションをサポートしています。
 
-- テーブル
+- [テーブル]
 
-- インデックス
+- Indexes
 
-- [列]
+- 列
 
-- 手順
+- プロシージャ
 
 - ProcedureColumns
 
@@ -251,7 +251,7 @@ Microsoft Jet ODBC Driver は、共通のスキーマ コレクションに加�
 
 - Views
 
-### <a name="tables-and-views"></a>[テーブルとビュー]
+### <a name="tables-and-views"></a>Tables と Views
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -261,7 +261,7 @@ Microsoft Jet ODBC Driver は、共通のスキーマ コレクションに加�
 |TABLE_TYPE|String|
 |REMARKS|String|
 
-### <a name="columns"></a>[列]
+### <a name="columns"></a>列
 
 |ColumnName|DataType|
 |----------------|--------------|
@@ -279,7 +279,7 @@ Microsoft Jet ODBC Driver は、共通のスキーマ コレクションに加�
 |REMARKS|String|
 |ORDINAL_POSITION|Int32|
 
-### <a name="procedures"></a>手順
+### <a name="procedures"></a>プロシージャ
 
 |ColumnName|DataType|
 |----------------|--------------|

@@ -7,15 +7,15 @@ helpviewer_keywords:
 ms.assetid: f02aac6f-3436-4f7c-b6ea-0452cba5332c
 ms.openlocfilehash: 7c59a205df5358daec101339cc6a308c8e38a9d6
 ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64640867"
 ---
 # <a name="how-to-add-custom-data-to-ink-data"></a>方法: インク データにカスタム データを追加する
-カスタム データは、インクはインクがシリアル化された形式 (ISF) として保存するときに保存されるインクを追加することができます。  カスタム データを保存することができます、 <xref:System.Windows.Ink.DrawingAttributes>、 <xref:System.Windows.Ink.StrokeCollection>、または<xref:System.Windows.Ink.Stroke>します。  次の 3 つのオブジェクトに対するカスタム データを保存することを使用するデータを保存する最適な場所を決定できます。  次の 3 つのすべてのクラスは、カスタム データを格納し、アクセスのようなメソッドを使用します。  
+インクが Ink Serialized Format (ISF) として保存されるときに、保存されるインクにカスタム データを追加できます。  カスタム データは、<xref:System.Windows.Ink.DrawingAttributes>、<xref:System.Windows.Ink.StrokeCollection>、または <xref:System.Windows.Ink.Stroke> に保存できます。  カスタム データは 3 つのオブジェクトに保存できるため、データを保存する最適な場所を決めることができます。  これら 3 つのクラスすべてで同様のメソッドを使用し、カスタム データの格納とアクセスが行われます。  
   
- カスタム データとしては、次の種類のみを保存できます。  
+ カスタム データとして保存できるのは、次の種類のみとなります。  
   
 - <xref:System.Boolean>  
   
@@ -72,11 +72,11 @@ ms.locfileid: "64640867"
 - <xref:System.UInt64>[]  
   
 ## <a name="example"></a>例  
- 次の例では、追加し、カスタム データを取得する方法、<xref:System.Windows.Ink.StrokeCollection>します。  
+ 次の例は、<xref:System.Windows.Ink.StrokeCollection> に対してカスタム データの追加および取得を行う方法を示しています。  
   
  [!code-csharp[HowToAddCustomDataToInk#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToAddCustomDataToInk/CSharp/Window1.xaml.cs#1)]  
   
- 次の例を表示するアプリケーションの作成、<xref:System.Windows.Controls.InkCanvas>と 2 つのボタン。  ボタン、 `switchAuthor`、2 人の作成者によって使用される 2 つのペンを使用します。  ボタン`changePenColors`で各ストロークの色を変更、<xref:System.Windows.Controls.InkCanvas>作成者に従ってします。  2 つのアプリケーション定義<xref:System.Windows.Ink.DrawingAttributes>オブジェクトし、著者の描画を示す 1 つずつにカスタム プロパティを追加、<xref:System.Windows.Ink.Stroke>します。  ユーザーがクリックすると`changePenColors`アプリケーションがカスタム プロパティの値に従ってストロークの外観を変更します。  
+ 次の例では、<xref:System.Windows.Controls.InkCanvas> と 2 つのボタンを表示するアプリケーションを作成します。  ボタン `switchAuthor` により、2 人の別々の作成者が 2 つのペンを使用できるようになります。  ボタン `changePenColors` により、<xref:System.Windows.Controls.InkCanvas> 上の各ストロークの色が作成者に応じて変更されます。  このアプリケーションでは、2 つの <xref:System.Windows.Ink.DrawingAttributes> オブジェクトが定義され、<xref:System.Windows.Ink.Stroke> を描画した作成者を示すカスタム プロパティがそれぞれに追加されます。  ユーザーが `changePenColors` をクリックすると、アプリケーションによって、ストロークの外観がカスタム プロパティの値に従って変更されます。  
   
  [!code-xaml[HowToAddCustomDataToInk#2](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToAddCustomDataToInk/CSharp/Window1.xaml#2)]  
   

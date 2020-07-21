@@ -8,15 +8,15 @@ helpviewer_keywords:
 - = operator [Visual Basic]
 - = assignment statements [Visual Basic]
 ms.assetid: 2dac2e49-86c8-42f8-80c1-458452fb5e29
-ms.openlocfilehash: 75f303219b9bf32613989f65f90a9096ef70e02e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 516cb21e02d9fb2cd4b8d72282bb74163e1fb14b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350202"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84371766"
 ---
 # <a name="-operator-visual-basic"></a>= 演算子 (Visual Basic)
-変数またはプロパティに値を割り当てます。  
+変数またはプロパティに値を代入します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -31,30 +31,30 @@ variableorproperty = value
  `value`  
  任意のリテラル、定数、または式。  
   
-## <a name="remarks"></a>コメント  
- 等号 (`=`) の左側の要素は、単純なスカラー変数、プロパティ、または配列の要素にすることができます。 変数またはプロパティを[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)にすることはできません。 `=` 演算子は、右辺の値を左側の変数またはプロパティに代入します。  
+## <a name="remarks"></a>Remarks  
+ 等号 (`=`) の左側の要素として、単純なスカラー変数、プロパティ、または配列の要素を指定できます。 変数またはプロパティを [ReadOnly](../modifiers/readonly.md) にすることはできません。 `=` 演算子は、右辺の値を左辺の変数またはプロパティに代入します。  
   
 > [!NOTE]
-> `=` 演算子は、比較演算子としても使用されます。 詳細については、「[比較演算子](../../../visual-basic/language-reference/operators/comparison-operators.md)」を参照してください。  
+> `=` 演算子は、比較演算子としても使用されます。 詳細については、「[比較演算子](comparison-operators.md)」を参照してください。  
   
 ## <a name="overloading"></a>オーバーロード  
- `=` 演算子は、代入演算子としてではなく、関係比較演算子としてのみオーバーロードできます。 詳細については、「 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
+ `=` 演算子は、代入演算子としてではなく、関係比較演算子としてのみオーバーロードできます。 詳細については、「 [Operator Procedures](../../programming-guide/language-features/procedures/operator-procedures.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次の例は、代入演算子を示しています。 右側の値は、左側の変数に割り当てられます。  
+ 代入演算子の例を次に示します。 右辺の値が左辺の変数に代入されます。  
   
  [!code-vb[VbVbalrOperators#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#9)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [& = 演算子](../../../visual-basic/language-reference/operators/and-assignment-operator.md)
-- [*= 演算子](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)
-- [+= 演算子](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)
-- [-= 演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)
-- [/= 演算子 (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)
-- [\\= 演算子](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
-- [^= 演算子](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)
-- [ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)
-- [比較演算子](../../../visual-basic/language-reference/operators/comparison-operators.md)
-- [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)
-- [ローカル型の推論](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [& = 演算子](and-assignment-operator.md)
+- [*= 演算子](multiplication-assignment-operator.md)
+- [+= 演算子](addition-assignment-operator.md)
+- [-= 演算子 (Visual Basic)](subtraction-assignment-operator.md)
+- [/= 演算子 (Visual Basic)](floating-point-division-assignment-operator.md)
+- [\\= 演算子](integer-division-assignment-operator.md)
+- [^= 演算子](exponentiation-assignment-operator.md)
+- [ステートメント](../../programming-guide/language-features/statements.md)
+- [比較演算子](comparison-operators.md)
+- [ReadOnly](../modifiers/readonly.md)
+- [ローカル型の推論](../../programming-guide/language-features/variables/local-type-inference.md)

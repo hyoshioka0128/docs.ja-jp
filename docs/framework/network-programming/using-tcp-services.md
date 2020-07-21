@@ -1,5 +1,6 @@
 ---
 title: TCP サービスの使用
+description: TcpClient クラスによって、TCP を使用してデータを要求し、受信するソケットを作成するための詳細が抽出されます。 .NET Framework ストリーム処理を使用してデータを読み書きします。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - protocols, TCP
 - Internet, TCP
 ms.assetid: d2811830-3bcb-495c-b82d-cda9cf919aad
-ms.openlocfilehash: 3678586647dcf9c47b4494197fbf56cab865b3d3
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 329701e8f11ca7f87c40ee8b2cc6a337435242b5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039487"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501964"
 ---
 # <a name="using-tcp-services"></a>TCP サービスの使用
 

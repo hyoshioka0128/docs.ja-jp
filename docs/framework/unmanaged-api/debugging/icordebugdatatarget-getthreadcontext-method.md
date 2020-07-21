@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c8954268-1821-4b23-b665-dbb55f2af31b
 topic_type:
 - apiref
-ms.openlocfilehash: 278320391615eddaa8ba878ef87f802f30cddb95
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 79708aa5a2abcb8d7465f82a8beb918484c193b9
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122022"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976552"
 ---
 # <a name="icordebugdatatargetgetthreadcontext-method"></a>ICorDebugDataTarget::GetThreadContext メソッド
 指定されたスレッドの現在のスレッドコンテキストを返します。  
@@ -49,19 +49,19 @@ HRESULT GetThreadContext(
  入出力スレッドコンテキストが格納されるバッファー。  
   
 ## <a name="remarks"></a>Remarks  
- Windows プラットフォームでは、`pContext` は、の `CONTEXT` 構造 (Winnt.h で定義されています) である必要があります。これは[、のコンピューター](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md)の種類に対応しています。 `contextFlags` には、`CONTEXT` 構造体の `ContextFlags` フィールドと同じ値を指定する必要があります。 `CONTEXT` 構造体はプロセッサに固有です。詳細については、「Winnt.h ファイル」を参照してください。  
+ Windows プラットフォームでは`pContext` 、は、 `CONTEXT`の構造体 (winnt.h で定義されています) である必要があります。これは[、の型](icordebugdatatarget-getplatform-method.md)によって指定されたコンピューターの種類に適しています。 `contextFlags``CONTEXT`構造体の`ContextFlags`フィールドと同じ値を持つ必要があります。 `CONTEXT`構造体はプロセッサ固有です。詳細については、「Winnt.h ファイル」を参照してください。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugDataTarget インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugDataTarget インターフェイス](icordebugdatatarget-interface.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)
+- [デバッグ](index.md)

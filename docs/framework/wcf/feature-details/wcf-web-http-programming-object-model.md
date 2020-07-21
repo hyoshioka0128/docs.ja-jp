@@ -2,12 +2,12 @@
 title: WCF Web HTTP プログラミング オブジェクト モデル
 ms.date: 03/30/2017
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
-ms.openlocfilehash: 43ec16927c703ca373eaa4299093503b2fab2266
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: ba3bca8950037a185b76deae4713170db3f4a75d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988570"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600154"
 ---
 # <a name="wcf-web-http-programming-object-model"></a>WCF Web HTTP プログラミング オブジェクト モデル
 WCF WEB HTTP プログラミングモデルを使用すると、開発者は SOAP を必要とすることなく、基本的な HTTP 要求を使用して Windows Communication Foundation (WCF) Web サービスを公開できます。 WCF WEB HTTP プログラミングモデルは、既存の WCF 拡張モデル上に構築されています。 Web HTTP プログラミング モデルでは、次のクラスが定義されます。  
@@ -22,13 +22,13 @@ WCF WEB HTTP プログラミングモデルを使用すると、開発者は SOA
   
 - <xref:System.ServiceModel.Web.WebServiceHost>  
   
- **チャネルとディスパッチャーインフラストラクチャ:**  
+ **チャネルおよびディスパッチャー インフラストラクチャ**  
   
 - <xref:System.ServiceModel.WebHttpBinding>  
   
 - <xref:System.ServiceModel.Description.WebHttpBehavior>  
   
- **ユーティリティクラスと機能拡張ポイント:**  
+ **ユーティリティ クラスと機能拡張ポイント**  
   
 - <xref:System.UriTemplate>  
   
@@ -68,7 +68,7 @@ WCF WEB HTTP プログラミングモデルを使用すると、開発者は SOA
 |`UriTemplate`|属性が適用されているサービス操作にマップされた GET 要求を制御する URI テンプレートを指定します。|  
   
 ## <a name="uritemplate"></a>UriTemplate  
- <xref:System.UriTemplate> クラスでは、構造が似ている URI のセットを定義できます。 テンプレートは、パスとクエリの 2 つの部分から構成されています。 パスは、スラッシュ (/) で区切られた一連のセグメントから構成されています。 各セグメントには、リテラル値、変数値 (中かっこ [{}] 内に記述)、1つのセグメントの内容と一致するように制約されている、ワイルドカード\*(アスタリスク [] として記述された、"その他のパス" と一致する)、またはパスの末尾。 クエリ式は、すべて省略することができます。 存在する場合、クエリ式は順序なしの一連の名前/値ペアを指定します。 クエリ式の要素には、リテラルペア (? x = 2) または変数ペア (? x = {*value*}) のいずれかを指定できます。 対になっていない値は使用できません。 <xref:System.UriTemplate>は、WCF WEB HTTP プログラミングモデルによって内部的に使用され、特定の Uri または Uri のグループをサービス操作にマップします。  
+ <xref:System.UriTemplate> クラスでは、構造が似ている URI のセットを定義できます。 テンプレートは、パスとクエリの 2 つの部分から構成されています。 パスは、スラッシュ (/) で区切られた一連のセグメントから構成されています。 各セグメントには、リテラル値、変数値 (中かっこ [{}] で記述)、1つのセグメントの内容と一致するように制約されている、またはワイルドカード (アスタリスク [] として記述され、パスの \* 末尾に出現する必要があります) を指定できます。 クエリ式は、すべて省略することができます。 存在する場合、クエリ式は順序なしの一連の名前/値ペアを指定します。 クエリ式の要素には、リテラルペア (? x = 2) または変数ペア (? x = {*value*}) のいずれかを指定できます。 対になっていない値は使用できません。 <xref:System.UriTemplate>は、WCF WEB HTTP プログラミングモデルによって内部的に使用され、特定の Uri または Uri のグループをサービス操作にマップします。  
   
 ## <a name="uritemplatetable"></a>UriTemplateTable  
  <xref:System.UriTemplateTable> クラスは、開発者が選択したオブジェクトにバインドされた <xref:System.UriTemplate> オブジェクトの結合セットを表します。 これにより、セット内のテンプレートと候補 URI (Uniform Resource Identifier) を照合し、一致したテンプレートに関連付けられているデータを取得することができます。 <xref:System.UriTemplateTable>は、WCF WEB HTTP プログラミングモデルによって内部的に使用され、特定の Uri または Uri のグループをサービス操作にマップします。  
@@ -85,7 +85,7 @@ WCF WEB HTTP プログラミングモデルを使用すると、開発者は SOA
 ### <a name="extending-webhttpbehavior"></a>WebHttpBehavior の拡張  
  <xref:System.ServiceModel.Description.WebHttpBehavior> は、仮想メソッド <xref:System.ServiceModel.Description.WebHttpBehavior.GetOperationSelector%28System.ServiceModel.Description.ServiceEndpoint%29>、<xref:System.ServiceModel.Description.WebHttpBehavior.GetReplyClientFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>、<xref:System.ServiceModel.Description.WebHttpBehavior.GetRequestClientFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>、<xref:System.ServiceModel.Description.WebHttpBehavior.GetReplyDispatchFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29>、および <xref:System.ServiceModel.Description.WebHttpBehavior.GetRequestDispatchFormatter%28System.ServiceModel.Description.OperationDescription%2CSystem.ServiceModel.Description.ServiceEndpoint%29> を使用して拡張できます。 開発者は、<xref:System.ServiceModel.Description.WebHttpBehavior> から派生クラスを作成し、そのメソッドをオーバーライドして既定の動作をカスタマイズすることができます。  
   
- <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> は、<xref:System.ServiceModel.Description.WebHttpBehavior> 拡張の一例です。 <xref:System.ServiceModel.Description.WebScriptEnablingBehavior>Windows Communication Foundation (WCF) エンドポイントがブラウザーベースの ASP.NET AJAX クライアントから HTTP 要求を受信できるようにします。 この機能拡張ポイントを使用する例として、 [HTTP POST を使用する AJAX サービス](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)が挙げられます。  
+ <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> は、<xref:System.ServiceModel.Description.WebHttpBehavior> 拡張の一例です。 <xref:System.ServiceModel.Description.WebScriptEnablingBehavior>Windows Communication Foundation (WCF) エンドポイントがブラウザーベースの ASP.NET AJAX クライアントから HTTP 要求を受信できるようにします。 この機能拡張ポイントを使用する例として、 [HTTP POST を使用する AJAX サービス](../samples/ajax-service-using-http-post.md)が挙げられます。  
   
 > [!WARNING]
 > <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> を使用する場合、<xref:System.UriTemplate> は、<xref:System.ServiceModel.Web.WebGetAttribute> または <xref:System.ServiceModel.Web.WebInvokeAttribute> 属性内でサポートされません。  
@@ -94,10 +94,11 @@ WCF WEB HTTP プログラミングモデルを使用すると、開発者は SOA
  <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector> クラスは、<xref:System.UriTemplate> クラスおよび <xref:System.UriTemplateTable> クラスを使用して、サービス操作に対して呼び出しをディスパッチします。  
   
 ## <a name="compatibility"></a>互換性  
- WCF WEB HTTP プログラミングモデルは、SOAP ベースのメッセージを使用しないため、WS-* プロトコルをサポートしていません。 ただし、SOAP を使用するエンドポイントと SOAP を使用しないその他のエンドポイントの 2 つの異なるエンドポイントを使用して、同じコントラクトを公開できます。 「[方法:例として、コントラクトを SOAP](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md)クライアントおよび Web クライアントに公開します。  
+ WCF WEB HTTP プログラミングモデルは、SOAP ベースのメッセージを使用しないため、WS-* プロトコルをサポートしていません。 ただし、SOAP を使用するエンドポイントと SOAP を使用しないその他のエンドポイントの 2 つの異なるエンドポイントを使用して、同じコントラクトを公開できます。 例については、「[方法: SOAP および Web クライアントにコントラクトを公開](how-to-expose-a-contract-to-soap-and-web-clients.md)する」を参照してください。  
   
-## <a name="security"></a>セキュリティ  
- WCF WEB HTTP プログラミングモデルでは WS-* プロトコルがサポートされていないため、WCF WEB HTTP プログラミングモデル上に構築された Web サービスをセキュリティで保護する唯一の方法は、SSL を使用してサービスを公開することです。 IIS 7.0 での SSL の設定の詳細については、「 [iis で ssl を実装する方法](https://go.microsoft.com/fwlink/?LinkId=131613)」を参照してください。  
+## <a name="security"></a>Security  
+
+WCF WEB HTTP プログラミングモデルでは WS-* プロトコルがサポートされていないため、WCF WEB HTTP プログラミングモデル上に構築された Web サービスをセキュリティで保護する唯一の方法は、SSL を使用してサービスを公開することです。 IIS 7.0 での SSL の設定の詳細については、「 [iis で ssl を実装する方法](https://support.microsoft.com/help/299875/how-to-implement-ssl-in-iis)」を参照してください。
   
 ## <a name="see-also"></a>関連項目
 
@@ -106,4 +107,4 @@ WCF WEB HTTP プログラミングモデルを使用すると、開発者は SOA
 - <xref:System.ServiceModel.Web.WebInvokeAttribute>
 - <xref:System.ServiceModel.Description.WebHttpBehavior>
 - <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector>
-- [WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [WCF Web HTTP プログラミング モデルの概要](wcf-web-http-programming-model-overview.md)

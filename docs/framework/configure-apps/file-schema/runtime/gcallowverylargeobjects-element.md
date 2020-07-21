@@ -5,24 +5,24 @@ helpviewer_keywords:
 - gcAllowVeryLargeObjects element
 - <gcAllowVeryLargeObjects> element
 ms.assetid: 5c7ea24a-39ac-4e5f-83b7-b9f9a1b556ab
-ms.openlocfilehash: b6230833808ec45d702502e36f929db4e03173e1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8b2f39a0867228474afdee788474fda11f14ca82
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73116798"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79154128"
 ---
-# <a name="gcallowverylargeobjects-element"></a>\<gcAllowVeryLargeObjects > 要素
+# <a name="gcallowverylargeobjects-element"></a>\<gcAllowVeryLargeObjects> 要素
 64 ビット プラットフォームで、合計サイズが 2 GB (ギガバイト) を超える配列を有効にします。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<gcAllowVeryLargeObjects >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<gcAllowVeryLargeObjects>**  
   
 ## <a name="syntax"></a>構文  
   
 ```xml  
-<gcAllowVeryLargeObjects    
+<gcAllowVeryLargeObjects
    enabled="true|false" />  
 ```  
   
@@ -37,7 +37,7 @@ ms.locfileid: "73116798"
   
 ## <a name="enabled-attribute"></a>enabled 属性  
   
-|[値]|説明|  
+|値|Description|  
 |-----------|-----------------|  
 |`false`|合計サイズが 2 GB を超える配列は有効ではありません。 既定値です。|  
 |`true`|64 ビット プラットフォームで、合計サイズが 2 GB を超える配列が有効になっています。|  
@@ -47,12 +47,12 @@ ms.locfileid: "73116798"
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|ランタイム初期化オプションに関する情報を含んでいます。|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>解説  
  アプリケーション構成ファイルで次の要素を使用すると 2 GB を超えるサイズの配列が有効になりますが、オブジェクトのサイズや配列のサイズに対するその他の制限は変更されません。  
   
 - 配列の要素の最大数は <xref:System.UInt32.MaxValue?displayProperty=nameWithType> です。  

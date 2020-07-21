@@ -1,5 +1,5 @@
 ---
-title: '方法: ColorDialog コンポーネントを使用してカラー パレットを表示する'
+title: '方法 : ColorDialog コンポーネントを使用してカラー パレットを表示する'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,25 +14,25 @@ helpviewer_keywords:
 - color palettes [Windows Forms], showing in ColorDialog component
 - colors [Windows Forms], showing palettes
 ms.assetid: ee050f61-dbc8-4436-ba22-51360981ab48
-ms.openlocfilehash: ff29df4ecfc90eabe8e3be0e5a6a126858799c16
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 0406ef7a32678bd149c0024348a7adf1f0b72926
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053420"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141784"
 ---
-# <a name="how-to-show-a-color-palette-with-the-colordialog-component"></a>方法: ColorDialog コンポーネントを使用してカラー パレットを表示する
-[ColorDialog](colordialog-component-windows-forms.md)コンポーネントは、色のパレットが表示され、ユーザーが選択した色を含むプロパティを返します。  
+# <a name="how-to-show-a-color-palette-with-the-colordialog-component"></a>方法 : ColorDialog コンポーネントを使用してカラー パレットを表示する
+[ColorDialog](colordialog-component-windows-forms.md)コンポーネントは、色のパレットを表示し、ユーザーが選択した色を含むプロパティを返します。  
   
-### <a name="to-choose-a-color-using-the-colordialog-component"></a>ColorDialog コンポーネントを使用して色を選択するには  
+### <a name="to-choose-a-color-using-the-colordialog-component"></a>色ダイアログ コンポーネントを使用して色を選択するには  
   
-1. 使用して、ダイアログ ボックスを表示、<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>メソッド。  
+1. メソッドを使用してダイアログ<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>ボックスを表示します。  
   
-2. 使用して、 <xref:System.Windows.Forms.DialogResult>  ダイアログ ボックスが閉じられた方法を決定するプロパティ。  
+2. このプロパティ<xref:System.Windows.Forms.DialogResult>を使用して、ダイアログ ボックスがどのように閉じられたかを調べます。  
   
-3. 使用して、<xref:System.Windows.Forms.ColorDialog.Color%2A>のプロパティ、<xref:System.Windows.Forms.ColorDialog>選択した色を設定するコンポーネント。  
+3. コンポーネントの<xref:System.Windows.Forms.ColorDialog.Color%2A>プロパティを使用<xref:System.Windows.Forms.ColorDialog>して、選択した色を設定します。  
   
-     次の例で、<xref:System.Windows.Forms.Button>コントロールの<xref:System.Windows.Forms.Control.Click>イベント ハンドラーが表示されます、<xref:System.Windows.Forms.ColorDialog>コンポーネント。 色が選択されると、ユーザーの場合、クリックした**OK**、<xref:System.Windows.Forms.Button>コントロールの背景色が、選択した色に設定されています。 この例では、フォームに、<xref:System.Windows.Forms.Button>コントロールと<xref:System.Windows.Forms.ColorDialog>コンポーネント。  
+     次の例では、コントロール<xref:System.Windows.Forms.Button>のイベント<xref:System.Windows.Forms.Control.Click>ハンドラーによってコンポーネントが<xref:System.Windows.Forms.ColorDialog>開きます。 色を選択し、ユーザーが **[OK]** を<xref:System.Windows.Forms.Button>クリックすると、コントロールの背景色が選択した色に設定されます。 この例では、フォームに<xref:System.Windows.Forms.Button>コントロールとコンポーネントが<xref:System.Windows.Forms.ColorDialog>含まれています。  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -55,7 +55,7 @@ ms.locfileid: "66053420"
   
     ```cpp  
     private:  
-       void button1_Click(System::Object ^ sender,   
+       void button1_Click(System::Object ^ sender,
           System::EventArgs ^ e)  
        {  
           if(colorDialog1->ShowDialog() == DialogResult::OK)  
@@ -65,14 +65,14 @@ ms.locfileid: "66053420"
        }  
     ```  
   
-     (Visual C#、Visual C)イベント ハンドラーを登録するフォームのコンス トラクターでは、次のコードを配置します。  
+     (ビジュアル C#、ビジュアル C++)フォームのコンストラクターに次のコードを配置して、イベント ハンドラーを登録します。  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
     ```  
   
     ```cpp  
-    this->button1->Click +=   
+    this->button1->Click +=
        gcnew System::EventHandler(this, &Form1::button1_Click);  
     ```  
   

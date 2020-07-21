@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.FailedAcceptFromPool
 ms.date: 03/30/2017
 ms.assetid: d535b1b5-ee58-45e8-b400-7d9570f4eb9a
-ms.openlocfilehash: de0bdd9e5ab922b09249bf550fde745042be8e58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5bfa31d0eaf3b00017512eddc60bfa99eda619e3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666756"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84582583"
 ---
 # <a name="systemservicemodelchannelsfailedacceptfrompool"></a>System.ServiceModel.Channels.FailedAcceptFromPool
 プールされた接続を再使用できませんでした。 指定されたタイムアウト期間内に再試行します。  
@@ -17,6 +17,6 @@ ms.locfileid: "61666756"
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

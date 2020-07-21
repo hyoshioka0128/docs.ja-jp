@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 64202baf-be6b-40ba-8162-8cc6c0c9b8e1
 topic_type:
 - apiref
-ms.openlocfilehash: 63ba108bc234e566450bb019afc63acb4e75ad1f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8889c412f414f38d1d18d33ec297e82fd052280d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427986"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614800"
 ---
 # <a name="isymunmanagedwriterdefinesequencepoints-method"></a>ISymUnmanagedWriter::DefineSequencePoints メソッド
 現在のメソッド内のシーケンス ポイントのグループを定義します。 開始行と開始列はそれぞれ、メソッド内のステートメントの開始を定義します。 各終了行と終了列は、メソッド内のステートメントの末尾を定義します。 配列は、オフセットの昇順で並べ替える必要があります。 オフセットは、常にメソッドの先頭からバイト単位で測定されます。  
@@ -43,7 +43,7 @@ HRESULT DefineSequencePoints(
  からシーケンスポイントが定義されているドキュメントオブジェクト。  
   
  `spCount`  
- から各 `offsets`、`lines`、`columns`、`endLines`、および `endColumns` バッファーのサイズを示す `ULONG32`。  
+ から、、 `ULONG32` `offsets` `lines` `columns` 、 `endLines` 、および `endColumns` の各バッファーのサイズを示す。  
   
  `offsets`  
  からメソッドの先頭から計測されたシーケンスポイントのオフセット。  
@@ -55,10 +55,10 @@ HRESULT DefineSequencePoints(
  からシーケンスポイントの開始列番号。  
   
  `endLines`  
- からシーケンスポイントの終了行番号。 このパラメーターはオプションです。  
+ からシーケンスポイントの終了行番号。 このパラメーターは省略可能です。  
   
  `endColumns`  
- からシーケンスポイントの終了列番号。 このパラメーターはオプションです。  
+ からシーケンスポイントの終了列番号。 このパラメーターは省略可能です。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK。それ以外の場合は、E_FAIL またはその他のエラーコードを指定します。  
@@ -68,4 +68,4 @@ HRESULT DefineSequencePoints(
   
 ## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedWriter インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter インターフェイス](isymunmanagedwriter-interface.md)

@@ -1,17 +1,17 @@
 ---
-title: 引数 '<argumentname>'型に変換することはできません'<typename>'
+title: 引数 ' <argumentname> ' を型 ' ' に変換することはできません。 <typename>
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_InvalidValueType2
 ms.assetid: 5b83a9cf-296b-479f-aa17-df655b8f51a0
-ms.openlocfilehash: 3000633f838be18d3d243c91fa9256f70ec4b65f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 841aca9d57afaff423a7065e9c6d9fc64f14ea2a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659961"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411357"
 ---
-# <a name="argument-argumentname-cannot-be-converted-to-type-typename"></a>引数 '\<argumentname >' 型に変換することはできません'\<typename >'
+# <a name="argument-argumentname-cannot-be-converted-to-type-typename"></a>引数 ' \<argumentname> ' を型 ' ' に変換することはできません。 \<typename>
 変換で、引数を正しくない型に変更しようとしています。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -20,4 +20,4 @@ ms.locfileid: "64659961"
   
 ## <a name="see-also"></a>関連項目
 
-- [変換関数](../../visual-basic/language-reference/functions/conversion-functions.md)
+- [変換関数](../language-reference/functions/conversion-functions.md)

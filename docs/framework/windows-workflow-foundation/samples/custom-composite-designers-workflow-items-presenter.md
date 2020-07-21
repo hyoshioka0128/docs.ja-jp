@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
-ms.openlocfilehash: 542440d6bf9d6809abee1ec37c85c44ce72fd132
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 081dce85946fab85cff474508c46770c762b9e76
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715158"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338721"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>カスタム複合デザイナー - Workflow Items Presenter
 
@@ -24,11 +24,13 @@ ms.locfileid: "74715158"
 
 - 再ホストされたアプリケーションでの既定のデザイナーのオーバーライド
 
-### <a name="to-set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行するには
+## <a name="set-up-build-and-run-the-sample"></a>サンプルをセットアップ、ビルド、および実行する
 
-1. Visual Studio 2010 で、 C#または VB 用の UsingWorkflowItemsPresenter サンプルソリューションを開きます。
+1. または Visual Studio 2010 の Visual Basic 用の UsingWorkflowItemsPresenter サンプルソリューションを開きます。 C#
 
-2. ソリューションをビルドして実行します。 再ホストされたワークフロー デザイナー アプリケーションが開き、アクティビティをキャンバスにドラッグできます。
+2. ソリューションをビルドして実行します。
+
+   再ホストされたワークフローデザイナーアプリケーションが開き、キャンバスにアクティビティをドラッグできるようになります。
 
 ## <a name="sample-highlights"></a>サンプルの詳細
 
@@ -159,7 +161,7 @@ ms.locfileid: "74715158"
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemsPresenter`
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Activities.Presentation.WorkflowItemsPresenter>
 - [ワークフロー デザイナーを使用したアプリケーションの開発](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)

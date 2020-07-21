@@ -1,5 +1,6 @@
 ---
 title: オブサーバー デザイン パターン
+description: .NET のオブザーバー デザイン パターンについて説明します。 このパターンでは、プロバイダーにサブスクライバーを登録して、プロバイダーから通知を受信できます。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 817337cec604a431f9f7d4eacb04378ee0d3c227
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4edcd2645b28095f4bd18f4918b9afa5c893bd39
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131573"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662733"
 ---
 # <a name="observer-design-pattern"></a>オブサーバー デザイン パターン
 
@@ -93,6 +94,6 @@ ms.locfileid: "73131573"
 
 |Title|説明|
 |-----------|-----------------|
-|[オブザーバー デザイン パターンのベスト プラクティス](../../../docs/standard/events/observer-design-pattern-best-practices.md)|オブザーバー デザイン パターンを実装するアプリケーションを開発するときのベスト プラクティスについて説明します。|
-|[方法: プロバイダーを実装する](../../../docs/standard/events/how-to-implement-a-provider.md)|温度監視アプリケーションのプロバイダーを実装するための手順について説明します。|
-|[方法: オブザーバーを実装する](../../../docs/standard/events/how-to-implement-an-observer.md)|温度監視アプリケーションのオブザーバーを実装するための手順について説明します。|
+|[オブザーバー デザイン パターンのベスト プラクティス](observer-design-pattern-best-practices.md)|オブザーバー デザイン パターンを実装するアプリケーションを開発するときのベスト プラクティスについて説明します。|
+|[方法: プロバイダーを実装する](how-to-implement-a-provider.md)|温度監視アプリケーションのプロバイダーを実装するための手順について説明します。|
+|[方法: オブザーバーを実装する](how-to-implement-an-observer.md)|温度監視アプリケーションのオブザーバーを実装するための手順について説明します。|

@@ -11,48 +11,49 @@ helpviewer_keywords:
 - linear gradient brush [WPF]
 - typography [WPF], outline effects
 ms.assetid: 4aa3cf6e-1953-4f26-8230-7c1409e5f28d
-ms.openlocfilehash: 237bdc097cd2a3fbfff6dd79bce401c2d091e211
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 86bfa396a2aa44eb511c014687501d60e170a396
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776739"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278926"
 ---
 # <a name="how-to-create-outlined-text"></a>方法: 中抜きの文字列を作成する
-ほとんどの場合、テキスト文字列内に装飾を追加するときに、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アプリケーションでは、一連の個別の文字とグリフの観点からテキストを使用しています。 たとえば、線状グラデーション ブラシを作成してに適用、<xref:System.Windows.Controls.Control.Foreground%2A>のプロパティを<xref:System.Windows.Controls.TextBox>オブジェクト。 表示またはテキスト ボックスを編集すると、線状グラデーション ブラシがテキスト文字列内の文字の現在のセットに自動的に適用します。  
+
+ほとんどの場合、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] アプリケーションでテキスト文字列に装飾を追加するときは、不連続の文字またはグリフのコレクションという観点でテキストを使用します。 たとえば、線状グラデーション ブラシを作成し、<xref:System.Windows.Controls.TextBox> オブジェクトの <xref:System.Windows.Controls.Control.Foreground%2A> プロパティにそれを適用します。 テキスト ボックスを表示または編集すると、テキスト文字列内の現在の文字セットに線状グラデーション ブラシが自動的に適用されます。  
   
- ![線形グラデーション ブラシで表示されるテキスト](./media/how-to-create-outlined-text/text-linear-gradient.jpg)    
+ ![線形グラデーション ブラシで表示されるテキスト](./media/how-to-create-outlined-text/text-linear-gradient.jpg)
   
- ただし、テキストに変換も<xref:System.Windows.Media.Geometry>オブジェクトを視覚的にリッチ テキストの他の種類を作成することができます。 たとえば、作成する、<xref:System.Windows.Media.Geometry>のテキスト文字列のアウトラインに基づいてオブジェクト。  
+ しかし、テキストを <xref:System.Windows.Media.Geometry> オブジェクトに変換し、他の種類の見た目がリッチなテキストを作成することもできます。 たとえば、テキスト文字列のアウトラインに基づいて <xref:System.Windows.Media.Geometry> オブジェクトを作成できます。  
   
  ![線形グラデーション ブラシを使用するテキスト アウトライン](./media/how-to-create-outlined-text/text-outline-linear-gradient.jpg)  
   
- テキストを変換するときに、<xref:System.Windows.Media.Geometry>文字のコレクションでは不要になったオブジェクト-テキスト文字列内の文字を変更することはできません。 ただし、変換されたテキストのストロークおよび塗りつぶしのプロパティを変更することで、テキストの外観を変えることができます。 ストロークは、変換したテキストのアウトラインを参照します。塗りつぶしは、変換したテキストのアウトラインの内側の領域を参照します。  
+ テキストを <xref:System.Windows.Media.Geometry> オブジェクトに変換すると、テキストは文字の集まりではなくなります。つまり、文字列内の文字を変更することはできません。 ただし、変換されたテキストのストロークおよび塗りつぶしのプロパティを変更することで、テキストの外観を変えることができます。 ストロークは、変換したテキストのアウトラインを参照します。塗りつぶしは、変換したテキストのアウトラインの内側の領域を参照します。  
   
- 次の例では、変換されたテキストの塗りつぶし、ストロークを変更して視覚効果を作成するいくつかの方法を示します。  
+ 変換されたテキストのストロークと塗りつぶしを変更することで、視覚効果を作成するいくつかの方法の例を次に示します。  
   
  ![塗りつぶしとストロークに別の色を使用するテキスト](./media/how-to-create-outlined-text/fill-stroke-text-effect.jpg)  
   
  ![ストロークに適用されるイメージ ブラシを含むテキスト](./media/how-to-create-outlined-text/image-brush-application.jpg)
   
- 境界ボックスの四角形、または変換後のテキストの強調表示を変更することもできます。 次の例では、ストロークと変換されたテキストの強調表示を変更することで視覚効果を作成する方法を示しています。  
+ また、変換されたテキストの境界ボックスの四角形 (強調表示) を変更することもできます。 変換されたテキストのストロークと強調表示を変更することで、視覚効果を作成する方法の例を次に示します。  
   
- ![ストロークし、強調表示に適用されるイメージ ブラシを含むテキスト](./media/how-to-create-outlined-text/image-brush-text-application.jpg)
+ ![ストロークと強調表示に適用されるイメージ ブラシを含むテキスト](./media/how-to-create-outlined-text/image-brush-text-application.jpg)
 
 ## <a name="example"></a>例  
- テキストを変換するキー、<xref:System.Windows.Media.Geometry>オブジェクトは、使用する、<xref:System.Windows.Media.FormattedText>オブジェクト。 使用することがこのオブジェクトを作成すると、<xref:System.Windows.Media.FormattedText.BuildGeometry%2A>と<xref:System.Windows.Media.FormattedText.BuildHighlightGeometry%2A>にテキストを変換するメソッドを<xref:System.Windows.Media.Geometry>オブジェクト。 最初のメソッドが書式設定されたテキストのジオメトリを返します2 番目のメソッドの境界ボックスの書式設定されたテキストのジオメトリを返します。 次のコード例を作成する方法を示しています、<xref:System.Windows.Media.FormattedText>オブジェクトと書式設定されたテキストとその境界ボックスのジオメトリを取得します。  
+ テキストを <xref:System.Windows.Media.Geometry> オブジェクトに変換するときに重要なのは、<xref:System.Windows.Media.FormattedText> オブジェクトを使用することです。 このオブジェクトを作成したら、<xref:System.Windows.Media.FormattedText.BuildGeometry%2A> メソッドと <xref:System.Windows.Media.FormattedText.BuildHighlightGeometry%2A> メソッドを使用して、テキストを <xref:System.Windows.Media.Geometry> オブジェクトに変換できます。 最初のメソッドでは、書式設定されたテキストのジオメトリが返されます。2 番目のメソッドでは、書式設定されたテキストの境界ボックスのジオメトリが返されます。 次のコード例では、<xref:System.Windows.Media.FormattedText> オブジェクトを作成し、書式設定されたテキストとその境界ボックスのジオメトリを取得する方法を示します。  
   
  [!code-csharp[OutlineTextControlViewer#CreateText](~/samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#createtext)]
  [!code-vb[OutlineTextControlViewer#CreateText](~/samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#createtext)]  
   
- 取得して、表示するために、<xref:System.Windows.Media.Geometry>オブジェクトにアクセスする必要がある、<xref:System.Windows.Media.DrawingContext>の変換後のテキストが表示されているオブジェクト。 これらのコード例では、ユーザー定義のレンダリングをサポートするクラスから派生したカスタム コントロール オブジェクトを作成してこれは、します。  
+ 取得した <xref:System.Windows.Media.Geometry> オブジェクトを表示するには、変換されたテキストを表示するオブジェクトの <xref:System.Windows.Media.DrawingContext> にアクセスする必要があります。 これらのコード例では、ユーザー定義のレンダリングをサポートするクラスから派生したカスタム コントロール オブジェクトを作成することによって、このアクセスを実現しています。  
   
- 表示する<xref:System.Windows.Media.Geometry>、カスタム コントロール内のオブジェクトのオーバーライドを提供する、<xref:System.Windows.UIElement.OnRender%2A>メソッド。 オーバーライドされたメソッドを使用する必要があります、<xref:System.Windows.Media.DrawingContext.DrawGeometry%2A>を描画するメソッド、<xref:System.Windows.Media.Geometry>オブジェクト。  
+ カスタム コントロールで <xref:System.Windows.Media.Geometry> オブジェクトを表示するには、<xref:System.Windows.UIElement.OnRender%2A> メソッドのオーバーライドを指定します。 オーバーライドされたメソッドでは、<xref:System.Windows.Media.DrawingContext.DrawGeometry%2A> メソッドを使用して、<xref:System.Windows.Media.Geometry> オブジェクトを描画する必要があります。  
   
  [!code-csharp[OutlineTextControlViewer#OnRender](~/samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#onrender)]
  [!code-vb[OutlineTextControlViewer#OnRender](~/samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#onrender)]  
   
-  カスタム ユーザー コントロール オブジェクトの例のソースを参照してください。[の OutlineTextControl.cs C# ](https://github.com/dotnet/samples/blob/master/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs)と[Visual basic の OutlineTextControl.vb](https://github.com/dotnet/samples/blob/master/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb)します。 
+  カスタム ユーザー コントロール オブジェクトの例のソースについては、[C# の場合は OutlineTextControl.cs](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs) を、[Visual Basic の場合は OutlineTextControl.vb](https://github.com/dotnet/docs/blob/master/samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb) を参照してください。
   
 ## <a name="see-also"></a>関連項目
 

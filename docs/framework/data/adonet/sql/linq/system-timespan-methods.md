@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 9333fee8-1454-4374-855b-8c14c002f48f
 ms.openlocfilehash: 9a7eb3c979219003d497ec752b36ec54ef081b43
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70781046"
@@ -17,7 +17,7 @@ ms.locfileid: "70781046"
 ## <a name="previous-limitations"></a>以前の制限  
  .NET Framework 3.5 SP1 より前のバージョンの .NET Framework で LINQ to SQL を使用すると、SQL Server のデータベース フィールドを <xref:System.TimeSpan?displayProperty=nameWithType> にマッピングできません。 ただし、<xref:System.TimeSpan> 値を <xref:System.TimeSpan> 減算から返したり、リテラル変数またはバインド変数として式に取り込んだりできるため、<xref:System.DateTime> の操作はサポートされています。  
   
-## <a name="supported-systemtimespan-member-support"></a>サポートされている TimeSpan メンバーサポート
+## <a name="supported-systemtimespan-member-support"></a>サポートされている System.TimeSpan メンバーのサポート
 
  LINQ to SQL でサポートされている以下のメソッド、演算子、およびプロパティは、LINQ to SQL のクエリで使用できます。 オブジェクト モデルまたは外部マッピング ファイルにマッピングされると、LINQ to SQL クエリ内で <xref:System.TimeSpan?displayProperty=nameWithType> メンバーの多くを呼び出すことができます。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "70781046"
 > LINQ to SQL で <xref:System.TimeSpan?displayProperty=nameWithType> を SQL の `TIME` 列にマッピングする機能を使用するには、.NET Framework 3.5 SP1 以降が必要です。 SQL の `TIME` データ型は Microsoft SQL Server 2008 以降でのみ使用可能です。  
   
 ### <a name="addition-and-subtraction"></a>加算と減算  
- 加算と減算は、CLR の <xref:System.TimeSpan?displayProperty=nameWithType> 型ではサポートされていますが、SQL の `TIME` 型ではサポートされていません。 そのため、LINQ to SQL クエリにより、SQL の `TIME` 型にマッピングしたときに加算や減算を試みると、エラーが発生します。 Sql の日付と時刻の型の使用に関するその他の考慮事項については、 [「SQL CLR 型のマッピング](sql-clr-type-mapping.md)」を参照してください。  
+ 加算と減算は、CLR の <xref:System.TimeSpan?displayProperty=nameWithType> 型ではサポートされていますが、SQL の `TIME` 型ではサポートされていません。 そのため、LINQ to SQL クエリにより、SQL の `TIME` 型にマッピングしたときに加算や減算を試みると、エラーが発生します。 SQL の日付/時刻型の操作に関するその他の注意点については、「[SQL と CLR の型マッピング](sql-clr-type-mapping.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

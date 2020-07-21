@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 7220de45-1d14-4aec-a29e-4a2ea8ac861f
 author: BrucePerlerMS
 ms.openlocfilehash: 6aad95033b99f1472284f838f3ede2e74ea8324c
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70252105"
 ---
-# <a name="chunkedcookiehandler"></a>\<chunkedCookieHandler>
-を<xref:System.IdentityModel.Services.ChunkedCookieHandler>構成します。 この要素は、 `mode` `<cookieHandler>`要素の属性が "Default" または "Chunked" の場合にのみ存在する可能性があります。  
+# \<chunkedCookieHandler>
+を構成 <xref:System.IdentityModel.Services.ChunkedCookieHandler> します。 この要素は `mode` 、要素の属性 `<cookieHandler>` が "Default" または "Chunked" の場合にのみ存在する可能性があります。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> のシステム**](system-identitymodel-services.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<federationConfiguration >** ](federationconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cookieHandler >** ](cookiehandler.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<chunkedCookieHandler >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel.services>**](system-identitymodel-services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<federationConfiguration>**](federationconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<cookieHandler>**](cookiehandler.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<chunkedCookieHandler>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -39,21 +39,21 @@ ms.locfileid: "70252105"
   
 |属性|説明|  
 |---------------|-----------------|  
-|chunkSize|1つの HTTP クッキーの HTTP クッキーデータの最大サイズ (文字数)。 チャンクサイズを調整する場合は注意が必要です。 Web ブラウザーでは、cookie のサイズとドメインごとに許可される数の制限が異なります。 たとえば、Netscape の元の仕様では、次の制限が規定されています。300クッキーの合計、cookie ヘッダーあたりの4096バイト (cookie 値だけでなく、メタデータを含む)、ドメインごとに20の cookie。 既定値は2000です。 必須。|  
+|chunkSize|1つの HTTP クッキーの HTTP クッキーデータの最大サイズ (文字数)。 チャンクサイズを調整する場合は注意が必要です。 Web ブラウザーでは、cookie のサイズとドメインごとに許可される数の制限が異なります。 たとえば、元の Netscape 仕様では、これらの制限が規定されています。これは、cookie の合計数は300クッキー、cookie ヘッダーあたりは4096バイト (cookie の値だけでなく、メタデータを含む)、ドメインごとに20の cookie です。 既定値は 2000 です。 必須。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
-|[\<cookieHandler >](cookiehandler.md)|(SAM) が<xref:System.IdentityModel.Services.SessionAuthenticationModule> cookie の読み取りと書き込みに使用するを構成します。<xref:System.IdentityModel.Services.CookieHandler>|  
+|[\<cookieHandler>](cookiehandler.md)|<xref:System.IdentityModel.Services.CookieHandler> <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) が cookie の読み取りと書き込みに使用するを構成します。|  
   
-## <a name="remarks"></a>Remarks  
- 要素の<xref:System.IdentityModel.Services.ChunkedCookieHandler> `mode`属性を "Default" または "Chunked" に設定してを指定した場合、 `<chunkedCookieHandler>`子要素を含めることによって cookie ハンドラーが cookie の読み取りと書き込みに使用するチャンクサイズを指定できます。 `<cookieHandler>``chunkSize`属性を設定しています。 `<chunkedCookieHandler>`要素が存在しない場合は、既定のチャンクサイズである2000バイトが使用されます。 属性が "Custom" に設定`mode`されている場合、この要素を指定することはできません。  
+## <a name="remarks"></a>解説  
+ <xref:System.IdentityModel.Services.ChunkedCookieHandler> `mode` 要素の属性を `<cookieHandler>` "Default" または "Chunked" に設定してを指定した場合、子要素を追加し、その属性を設定することにより、cookie ハンドラーが cookie の読み書きに使用するチャンクサイズを指定でき `<chunkedCookieHandler>` `chunkSize` ます。 `<chunkedCookieHandler>`要素が存在しない場合は、既定のチャンクサイズである2000バイトが使用されます。 `mode`属性が "Custom" に設定されている場合、この要素を指定することはできません。  
   
- 要素は、 <xref:System.IdentityModel.Services.ChunkedCookieHandlerElement>クラスによって表されます。 `<chunkedCookieHandler>`  
+ `<chunkedCookieHandler>`要素は、クラスによって表され <xref:System.IdentityModel.Services.ChunkedCookieHandlerElement> ます。  
   
 ## <a name="example"></a>例  
  次の例では、3000バイトのチャンク単位でクッキーを書き込むチャンク cookie ハンドラーを構成します。  

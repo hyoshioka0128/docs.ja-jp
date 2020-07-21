@@ -1,5 +1,6 @@
 ---
 title: デバッガー表示属性によるデバッグ機能の拡張
+description: .NET でのデバッガー表示属性の使用 .NET では、型の開発者は、デバッガーに表示されるときにどのような型を表示するかを指定することもできます。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,18 +14,16 @@ helpviewer_keywords:
 - display attributes for debugger
 - DebuggerBrowsableAttribute attribute
 ms.assetid: 72bb7aa9-459b-42c4-9163-9312fab4c410
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c27732de448e19c4227062706c7a7d73c98e5f19
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f266bf7278f472c51dd355df5ba04a123cbd7df0
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966873"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415967"
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>デバッガー表示属性によるデバッグ機能の拡張
 
-デバッガー表示属性は、型を指定し、その型の実行時の動作を最もよく理解している型の開発者が、デバッガーで表示されたときに、その型がどのように見えるかも指定できるようにします。 さらに、`Target` プロパティを提供するデバッガー表示属性は、ソース コードの知識がなくても、ユーザーがアセンブリ レベルで適用することができます。 <xref:System.Diagnostics.DebuggerDisplayAttribute> 属性は、デバッガーの変数ウィンドウで型やメンバーを表示する方法を制御します。 <xref:System.Diagnostics.DebuggerBrowsableAttribute> 属性は、デバッガーの変数ウィンドウにフィールドまたはプロパティを表示するかどうか、および表示方法を決定します。 <xref:System.Diagnostics.DebuggerTypeProxyAttribute> 属性は、型に対して代理の型 (プロキシ) を指定し、その型をデバッガー ウィンドウで表示する方法を変更します。 プロキシまたは代替の種類を持つ変数を表示すると、プロキシは、デバッガーの表示ウィンドウで元の型を表します。 デバッガーの変数ウィンドウには、プロキシ型のパブリック メンバーのみが表示されます。 プライベート メンバーは表示されません。  
+デバッガー表示属性は、型を指定し、その型の実行時の動作を最もよく理解している型の開発者が、デバッガーで表示されたときに、その型がどのように見えるかも指定できるようにします。 さらに、`Target` プロパティを提供するデバッガー表示属性は、ソース コードの知識がなくても、ユーザーがアセンブリ レベルで適用することができます。 <xref:System.Diagnostics.DebuggerDisplayAttribute> 属性は、デバッガーの変数ウィンドウで型やメンバーを表示する方法を制御します。 <xref:System.Diagnostics.DebuggerBrowsableAttribute> 属性は、デバッガーの変数ウィンドウにフィールドまたはプロパティを表示するかどうか、および表示方法を決定します。 <xref:System.Diagnostics.DebuggerTypeProxyAttribute> 属性は、型に対して代理の型 (プロキシ) を指定し、その型をデバッガー ウィンドウで表示する方法を変更します。 プロキシ (代理の型) を指定した変数を表示すると、元の型の代理としてプロキシがデバッガーの表示ウィンドウに表示されます。 デバッガーの変数ウィンドウには、プロキシ型のパブリック メンバーのみが表示されます。 プライベート メンバーは表示されません。  
   
 ## <a name="using-the-debuggerdisplayattribute"></a>DebuggerDisplayAttribute の使用  
 
@@ -97,7 +96,7 @@ class MyHashtable : Hashtable
 
 ### <a name="description"></a>説明
 
-次のコード例を Visual Studio で表示すると<xref:System.Diagnostics.DebuggerDisplayAttribute>、、 <xref:System.Diagnostics.DebuggerBrowsableAttribute>、および<xref:System.Diagnostics.DebuggerTypeProxyAttribute>の各属性を適用した結果を確認できます。
+次のコード例を Visual Studio で表示する <xref:System.Diagnostics.DebuggerDisplayAttribute> と、、、およびの各属性を適用した結果を確認でき <xref:System.Diagnostics.DebuggerBrowsableAttribute> <xref:System.Diagnostics.DebuggerTypeProxyAttribute> ます。
 
 ### <a name="code"></a>コード
 

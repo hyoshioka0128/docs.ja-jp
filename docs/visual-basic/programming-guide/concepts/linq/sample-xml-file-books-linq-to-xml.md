@@ -1,15 +1,15 @@
 ---
-title: 'サンプル XML ファイル : 書籍 (LINQ to XML)'
+title: サンプル XML ファイル:書籍 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 27ca5847-2289-40c0-8331-ede67ec59d1c
-ms.openlocfilehash: 2e6ef32e9f7e45b45b22390c1ce669638d0be9a1
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
-ms.translationtype: MT
+ms.openlocfilehash: 4bdf36aef90f56bfe3f2387c18bce69d5015cbb4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524087"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413363"
 ---
-# <a name="sample-xml-file-books-linq-to-xml"></a>サンプル XML ファイル : 書籍 (LINQ to XML)
+# <a name="sample-xml-file-books-linq-to-xml"></a>サンプル XML ファイル:書籍 (LINQ to XML)
 
 次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルには、書籍に関する情報が含まれています。
 
@@ -42,4 +42,4 @@ ms.locfileid: "72524087"
 
 ## <a name="see-also"></a>関連項目
 
-- [サンプル XML ドキュメント (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [サンプル XML ドキュメント (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

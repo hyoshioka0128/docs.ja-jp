@@ -3,15 +3,15 @@ title: .NET Core 3.0 の新機能
 description: .NET Core 3.0 の新機能について説明します。
 dev_langs:
 - csharp
-author: thraka
+author: adegeo
 ms.author: adegeo
-ms.date: 10/22/2019
-ms.openlocfilehash: 8c2d586a444412abd67198ad7f295e81cb3101fb
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.date: 01/27/2020
+ms.openlocfilehash: 9f553e9af16be0891f208832c5daa444a1b736e2
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567335"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281512"
 ---
 # <a name="whats-new-in-net-core-30"></a>.NET Core 3.0 の新機能
 
@@ -54,12 +54,40 @@ Visual Studio を使用している場合、Visual Studio 2017 では **.NET Sta
 
 ### <a name="default-executables"></a>既定の実行可能ファイル
 
-.NET Core では、既定で[フレームワーク依存の実行可能ファイル](../deploying/index.md#framework-dependent-executables-fde)が作成されるようになりました。 この動作は、グローバルにインストールされているバージョンの .NET Core を使用するアプリケーションの新機能です。 以前は、[自己完結型の配置](../deploying/index.md#self-contained-deployments-scd)でのみ実行可能ファイルが生成されました。
+.NET Core では、既定で[ランタイムに依存する実行可能ファイル](../deploying/index.md#publish-runtime-dependent)をビルドするようになりました。 この動作は、グローバルにインストールされているバージョンの .NET Core を使用するアプリケーションの新機能です。 以前は、[自己完結型の配置](../deploying/index.md#publish-self-contained)でのみ実行可能ファイルが生成されました。
 
-`dotnet build` または `dotnet publish` の実行中に、使用している SDK の環境およびプラットフォームと一致する実行可能ファイルが作成されます。 これらの実行可能ファイルでは、次のような他のネイティブ実行可能ファイルと同じことを期待できます。
+`dotnet build` または `dotnet publish` の間に、使用している SDK の環境とプラットフォームに合う実行可能ファイル (**appHost** と呼ばれます) が作成されます。 これらの実行可能ファイルでは、次のような他のネイティブ実行可能ファイルと同じことを期待できます。
 
 - 実行可能ファイルはダブルクリックすることができます。
 - Windows では `myapp.exe`、Linux と macOS では`./myapp` など、コマンド プロンプトからアプリケーションを直接起動できます。
+
+### <a name="macos-apphost-and-notarization"></a>macOS appHost と公証
+
+*macOS のみ*
+
+macOS の公証を受けた .NET Core SDK 3.0 以降では、既定の実行可能ファイル (appHost とも呼ばれます) を生成する設定が既定で無効になっています。 詳細については、「[macOS Catalina の公証と .NET Core のダウンロードとプロジェクトへの影響](../install/macos-notarization-issues.md)」を参照してください。
+
+appHost 設定が有効な場合、ビルド時または発行時に .NET Core によってネイティブの Mach-O 実行可能ファイルが生成されます。 `dotnet run` コマンドを使用してソース コードから実行するか、Mach-O 実行可能ファイルを直接起動すると、アプリは appHost のコンテキストで実行されます。
+
+appHost を使用しない場合、ユーザーが[ランタイムに依存する](../deploying/index.md#publish-runtime-dependent)アプリを起動できる唯一の方法は、`dotnet <filename.dll>` コマンドを使用することです。 [自己完結型](../deploying/index.md#publish-self-contained)のアプリを発行すると、常に appHost が作成されます。
+
+プロジェクト レベルで appHost を構成するか、`-p:UseAppHost` パラメーターを使用して特定の `dotnet` コマンドの appHost を切り替えることができます。
+
+- プロジェクト ファイル
+
+  ```xml
+  <PropertyGroup>
+    <UseAppHost>true</UseAppHost>
+  </PropertyGroup>
+  ```
+
+- コマンド ライン パラメーター
+
+  ```dotnetcli
+  dotnet run -p:UseAppHost=true
+  ```
+
+`UseAppHost` 設定の詳細については、[Microsoft.NET.Sdk の MSBuild プロパティ](../project-sdk/msbuild-props.md#useapphost)に関する記事を参照してください。
 
 ### <a name="single-file-executables"></a>単一ファイルの実行可能ファイル
 
@@ -74,13 +102,13 @@ Visual Studio を使用している場合、Visual Studio 2017 では **.NET Sta
 </PropertyGroup>
 ```
 
-または
+\- または -
 
 ```dotnetcli
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
 ```
 
-単一ファイルの発行の詳細については、[単一ファイル バンドラー設計のドキュメント](https://github.com/dotnet/designs/blob/master/accepted/single-file/design.md)を参照してください。
+単一ファイルの発行の詳細については、[単一ファイル バンドラー設計のドキュメント](https://github.com/dotnet/designs/blob/master/accepted/2020/single-file/design.md)を参照してください。
 
 ### <a name="assembly-linking"></a>アセンブリのリンク
 
@@ -112,20 +140,20 @@ IL リンカー ツールについて詳しくは、[ドキュメント](https:/
 
 ### <a name="tiered-compilation"></a>階層型コンパイル
 
-.NET Core 3.0 では、[階層型コンパイル](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) (TC) が既定で有効になりました。 この機能により、ランタイムが状況に応じて Just-In-Time (JIT) コンパイラを使用してパフォーマンスを向上できるようになりました。
+.NET Core 3.0 では、[階層型コンパイル](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation.md) (TC) が既定で有効になりました。 この機能により、ランタイムが状況に応じて Just-In-Time (JIT) コンパイラを使用してパフォーマンスを向上できるようになりました。
 
-TC の主な利点は、低品質で高速な階層または高品質で低速な階層を使った (再) JIT メソッドが可能になることです。 これは、起動から安定した状態まで、さまざまな実行段階を経るときに、アプリケーションのパフォーマンスを向上するために役立ちます。 これは、すべてのメソッドが 1 つの方法 (高品質階層と同じ) でコンパイルされ、起動時のパフォーマンスよりも安定した状態に偏っている非 TC アプローチとは対照的です。
+階層型コンパイルの主な利点は、2 とおりの JIT メソッドを与えることです。低品質で高速の階層と高品質で低速の階層です。 品質とは、メソッドの最適化の程度を指します。 TC は、起動から安定した状態まで、さまざまな実行段階を経るときに、アプリケーションのパフォーマンスを向上するために役立ちます。 階層型コンパイルが無効になっていると、すべてのメソッドが起動より安定した状態に偏る 1 つの方法でコンパイルされます。
 
-TC が有効になっている場合、起動時に呼び出されるメソッドは次のようになります。
+TC が有効になっていると、アプリの起動時、メソッド コンパイルは次のように動作します。
 
-- メソッドに AOT コンパイル済みコード (ReadyToRun) がある場合は、事前に生成されたコードが使用されます。
-- それ以外の場合、メソッドは Just-In-Time になります。 通常、これらのメソッドは現在、値型に対してジェネリックです。
-  - クイック JIT では、品質の低いコードがより迅速に生成されます。 クイック JIT は .NET Core 3.0 の、ループを含まないメソッドに対して既定で有効になっており、起動時に優先されます。
-  - 完全最適化 JIT では、高品質なコードが低速で生成されます。 クイック JIT が使用されないメソッド (たとえば、メソッドの属性が `[MethodImpl(MethodImplOptions.AggressiveOptimization)]` の場合) では、完全最適化 JIT が使用されます。
+- メソッドに Ahead Of Time コンパイル済みコード ([ReadyToRun](#readytorun-images)) がある場合、事前に生成されたコードが使用されます。
+- ない場合、メソッドは JIT になります。 通常、これらのメソッドは値の型を超えるジェネリックです。
+  - *クイック JIT* では、低品質 (最適化の程度が低い) コードが高速で生成されます。 .NET Core 3.0 では、ループを含まないメソッドに対してクイック JIT が既定で有効になり、起動時に優先されます。
+  - 完全最適化 JIT では、より高品質な (またはより最適化された) コードがより低速で生成されます。 クイック JIT が使用されないメソッド (たとえば、メソッドが属性 <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType> を持つ場合) では、完全最適化 JIT が使用されます。
 
-最終的に、メソッドが何回も呼び出されると、バックグラウンドの完全最適化 JIT によって Just-In-Time が再実行されます。
+頻繁に呼び出されるメソッドについては、JIT コンパイラにより最終的に、バックグラウンドで完全に最適化されたコードが生成されます。 この最適化されたコードがそのメソッドに対して事前コンパイルされたコードに取って代わります。
 
-クイック JIT によって生成されたコードは、実行速度が低下したり、より多くのメモリが割り当てられたり、より多くのスタック領域を使用したりすることがあります。 問題が発生した場合は、プロジェクト ファイルでこの設定を使用して、クイック JIT を無効にすることができます。
+クイック JIT によって生成されたコードは、実行速度が低下したり、より多くのメモリが割り当てられたり、より多くのスタック領域を使用したりすることがあります。 問題がある場合、プロジェクト ファイルのこの MSBuild プロパティを使用し、クイック JIT を無効にできます。
 
 ```xml
 <PropertyGroup>
@@ -133,7 +161,7 @@ TC が有効になっている場合、起動時に呼び出されるメソッ�
 </PropertyGroup>
 ```
 
-TC を完全に無効にするには、プロジェクト ファイルでこの設定を使用します。
+TC を完全に無効にするには、プロジェクト ファイルでこの MSBuild プロパティを使用します。
 
 ```xml
 <PropertyGroup>
@@ -141,7 +169,10 @@ TC を完全に無効にするには、プロジェクト ファイルでこの�
 </PropertyGroup>
 ```
 
-プロジェクト ファイルで上記の設定を変更した場合は、クリーン ビルドを反映する必要があります (`obj` と `bin` のディレクトリを削除してリビルドします)。
+> [!TIP]
+> プロジェクト ファイルでこれらの設定を変更するとき、場合によっては、新しい設定を反映させる目的でクリーン ビルドを実行する必要があります (`obj` ディレクトリと `bin` ディレクトリを削除し、リビルドします)。
+
+ランタイム時のコンパイル構成に関する詳細については、「[コンパイルのランタイム構成オプション](../run-time-config/compilation.md)」を参照してください。
 
 ### <a name="readytorun-images"></a>ReadyToRun イメージ
 
@@ -177,7 +208,7 @@ ReadyToRun としてプロジェクトをコンパイルするには、次の手
 
 ## <a name="runtimesdk"></a>ランタイム/SDK
 
-### <a name="major-version-roll-forward"></a>メジャーバージョンのロールフォワード
+### <a name="major-version-runtime-roll-forward"></a>メジャーバージョン ランタイムのロールフォワード
 
 .NET Core 3.0 では、アプリを最新メジャー バージョンの .NET Core にロールフォワードできるようにするオプトイン機能が導入されました。 さらに、ロールフォワードをアプリに適用する方法を制御する新しい設定が追加されました。 これは、以下の方法で構成できます。
 
@@ -203,6 +234,8 @@ ReadyToRun としてプロジェクトをコンパイルするには、次の手
 
 **Disable** の設定を除くすべての設定では、利用できる最新のパッチ バージョンが使用されます。
 
+既定では、(アプリケーションの `.runtimeconfig.json` で指定されているように) 要求されたバージョンがリリース バージョンである場合、リリース バージョンだけがロールフォワード対象と見なされます。 プレリリース バージョンはすべて無視されます。 一致するリリース バージョンがない場合は、プレリリース バージョンが考慮されます。 この動作は `DOTNET_ROLL_FORWARD_TO_PRERELEASE=1` を設定することによって変更できます。この場合、すべてのバージョンが常に考慮されます。
+
 ### <a name="build-copies-dependencies"></a>ビルドによる依存関係のコピー
 
 `dotnet build` コマンドでは、アプリケーションの NuGet 依存関係が NuGet キャッシュからビルド出力フォルダーにコピーされるようになりました。 以前は、依存関係のコピーは `dotnet publish` の一部としてのみ行われていました。
@@ -223,6 +256,15 @@ ReadyToRun としてプロジェクトをコンパイルするには、次の手
 ローカル ツールは、現在のディレクトリ内のマニフェスト ファイル名 `dotnet-tools.json` に依存しています。 このマニフェスト ファイルは、ツールをそのフォルダー下で使用できるように定義します。 コードを使用するすべての人が確実に同じツールを復元して使用できるように、自分のコードと一緒にマニフェスト ファイルを配布することができます。
 
 グローバル ツールとローカル ツールの両方で、ランタイムの互換バージョンが必要です。 現在 NuGet.org 上にある多くのツールは、.NET Core Runtime 2.1 をターゲットとしています。 グローバルにまたはローカルにこのようなツールをインストールするには、[NET Core 2.1 ランタイム](https://dotnet.microsoft.com/download/dotnet-core/2.1)をインストールする必要があります。
+
+### <a name="new-globaljson-options"></a>新しい global.json オプション
+
+*global.json* ファイルには、どのバージョンの .NET Core SD を使用するか定義する際にさらなる柔軟性をもたらす新しいオプションが含まれています。 新しいオプションは次のとおりです。
+
+- `allowPrerelease`:使用する SDK バージョンを選択するときに、SDK リゾルバーでプレリリース バージョンを考慮する必要があるかどうかを示します。
+- `rollForward`:SDK バージョンを選択するときに使用するロールフォワード ポリシーを示します。特定の SDK バージョンが不足している場合のフォールバックとして、またはより新しいバージョンを使用するためのディレクティブとして指定できます。
+
+既定値、サポートされている値、新しい照合ルールなどの変更について詳しくは、「[global.json の概要](../tools/global-json.md)」をご覧ください。
 
 ### <a name="smaller-garbage-collection-heap-sizes"></a>小さいガベージ コレクションのヒープ サイズ
 
@@ -289,7 +331,7 @@ Windows では、フラット C API、COM、および WinRT の形式で、質�
 
 [MSIX](https://docs.microsoft.com/windows/msix/) は新しい Windows アプリケーション パッケージ形式です。 これは、Windows 10 に .NET Core 3.0 のデスクトップ アプリケーションを展開するために使用できます。
 
-[Windows アプリケーション パッケージ プロジェクト](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)は、Visual Studio 2019 で使用でき、[自己完結型](../deploying/index.md#self-contained-deployments-scd)の .NET Core アプリケーションを使用して、MSIX パッケージを作成することができます。
+[Windows アプリケーション パッケージ プロジェクト](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)は、Visual Studio 2019 で使用でき、[自己完結型](../deploying/index.md#publish-self-contained)の .NET Core アプリケーションを使用して、MSIX パッケージを作成することができます。
 
 .NET Core プロジェクト ファイルの `<RuntimeIdentifiers>` プロパティで、サポートされているランタイムを指定する必要があります。
 
@@ -349,7 +391,7 @@ GPIO パッケージには、*GPIO*、*SPI*、*I2C*、および *PWM* デバイ�
 
 次の C# 8.0 の例は、<https://www.cloudflare.com> に接続している Ubuntu 18.10 上の .NET Core 3.0 を示しています。
 
-[!code-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
+[!code-csharp[TLSExample](./snippets/dotnet-core-3-0/csharp/TLS.cs#TLS)]
 
 ### <a name="cryptography-ciphers"></a>暗号化の暗号
 
@@ -357,7 +399,7 @@ GPIO パッケージには、*GPIO*、*SPI*、*I2C*、および *PWM* デバイ�
 
 次のコードは、`AesGcm` 暗号を使用してランダム データの暗号化と復号化を行う例です。
 
-[!code-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
+[!code-csharp[AesGcm](./snippets/dotnet-core-3-0/csharp/Cipher.cs#AesGcm)]
 
 ### <a name="cryptographic-key-importexport"></a>暗号化キーのインポート/エクスポート
 
@@ -382,7 +424,7 @@ RSA キーは以下もサポートしています。
 
 エクスポートメソッドからは、DER でエンコードされたバイナリ データが生成され、インポート メソッドもそのようなデータを期待します。 キーがテキストに適した PEM 形式で格納されている場合、呼び出し元は import メソッドを呼び出す前にコンテンツを base64 でデコードする必要があります。
 
-[!code-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
+[!code-csharp[RSA](./snippets/dotnet-core-3-0/csharp/RSA.cs#Rsa)]
 
 **PKCS#8** ファイルは <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> を使用して検査できます。また、 **PFX/PKCS#12** ファイルは <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType> を使用して検査できます。 **PFX/PKCS#12** ファイルは <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType> を使用して操作できます。
 
@@ -455,7 +497,7 @@ async IAsyncEnumerable<int> GetBigResultsAsync()
 `log2` IEEE 演算に相当します。2 を底とする対数を返します。 丸め誤差を最小限に抑えます。
 
 - <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
-`fma` IEEE 演算に相当します。融合型積和演算を実行します。 つまり、単一操作として `(x * y) + z` を実行することで、丸め誤差を最小限に抑えます。 例では、`FusedMultiplyAdd(1e308, 2.0, -1e308)` は `1e308` を返します。 正規の `(1e308 * 2.0) - 1e308` は `double.PositiveInfinity` を返します。
+`fma` IEEE 演算に相当します。融合型積和演算を実行します。 つまり、単一操作として `(x * y) + z` を実行することで、丸め誤差を最小限に抑えます。 たとえば、`FusedMultiplyAdd(1e308, 2.0, -1e308)` では `1e308` が返されます。 正規の `(1e308 * 2.0) - 1e308` は `double.PositiveInfinity` を返します。
 
 - <xref:System.Math.CopySign(System.Double,System.Double)>\
 `copySign` IEEE 演算に相当します。`x` の値を返しますが、`y` の符号と共に返されます。
@@ -466,7 +508,7 @@ async IAsyncEnumerable<int> GetBigResultsAsync()
 
 .NET ライブラリでは、必要に応じて、パフォーマンスを向上するためにこれらの命令が使用されるようになりました。
 
-詳細については、「[.NET Platform Dependent Intrinsics (.NET プラットフォーム依存性)](https://github.com/dotnet/designs/blob/master/accepted/platform-intrinsics.md)」を参照してください。
+詳細については、「[.NET プラットフォーム依存性](https://github.com/dotnet/designs/blob/master/accepted/2018/platform-intrinsics.md)」を参照してください。
 
 ### <a name="improved-net-core-version-apis"></a>強化された .NET Core バージョン API
 
@@ -497,9 +539,13 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### <a name="fast-built-in-json-support"></a>高速な組み込み JSON のサポート
 
-.NET ユーザーは、[**Json.NET**](https://www.newtonsoft.com/json) や他のよく使われている JSON ライブラリに大きく依存しています。これは今後も推奨されます。 **Json.NET** では .NET の文字列が基本のデータ型 (内部的には UTF-16) として使用されます。
+.NET ユーザーは、[Newtonsoft.Json](https://www.newtonsoft.com/json) や他のよく使われている JSON ライブラリに大きく依存しています。これは今後も推奨されます。 `Newtonsoft.Json` では .NET の文字列が基本のデータ型 (内部的には UTF-16) として使用されます。
 
-新しい組み込みの JSON サポートは、高パフォーマンス、低割り当てで、`Span<byte>` に基づいています。 <xref:System.Text.Json>名前空間と種類の詳細については、「[.NET での JSON のシリアル化 - 概要](../../standard/serialization/system-text-json-overview.md)」を参照してください。 JSON シリアル化の一般的なシナリオに関するチュートリアルについては、「[.NET で JSON をシリアル化および逆シリアル化する方法](../../standard/serialization/system-text-json-how-to.md)」を参照してください。参照してください。
+新しい組み込みの JSON サポートは、高パフォーマンス、低割り当てで、UTF-8 でエンコードされた JSON テキストを使用します。 <xref:System.Text.Json> 名前空間と種類の詳細については、次の記事をご覧ください。
+
+* [.NET での JSON のシリアル化 - 概要](../../standard/serialization/system-text-json-overview.md)
+* [.NET で JSON をシリアル化および逆シリアル化する方法](../../standard/serialization/system-text-json-how-to.md)。
+* [Newtonsoft. Json から System.Text.Json に移行する方法](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
 
 ### <a name="http2-support"></a>HTTP/2 のサポート
 
@@ -507,17 +553,17 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 既定のプロトコルは HTTP/1.1 のままですが、2 つの方法で HTTP/2 を有効にすることができます。 1 つ目として、HTTP/2 を使うように HTTP 要求メッセージを設定することができます。
 
-[!code-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
+[!code-csharp[Http2Request](./snippets/dotnet-core-3-0/csharp/http.cs#Request)]
 
 2 つ目として、既定で HTTP/2 を使うように <xref:System.Net.Http.HttpClient> を変更することができます。
 
-[!code-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
+[!code-csharp[Http2Client](./snippets/dotnet-core-3-0/csharp/http.cs#Client)]
 
 多くの場合、アプリケーションを開発しているときは、暗号化されていない接続を使います。 ターゲット エンドポイントで HTTP/2 が使われることがわかっている場合は、HTTP/2 用の暗号化されていない接続を有効にできます。 有効にするには、`DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` 環境変数を `1` に設定するか、またはアプリのコンテキストで有効にします。
 
-[!code-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
+[!code-csharp[Http2Context](./snippets/dotnet-core-3-0/csharp/http.cs#AppContext)]
 
 ## <a name="next-steps"></a>次の手順
 
 - [バージョン 2.2 から 3.0 への破壊的変更を確認する。](../compatibility/2.2-3.0.md)
-- [Windows フォーム アプリ用の .NET Framework と .NET Core 3.0 の間の破壊的変更を確認します。](../porting/winforms-breaking-changes.md)
+- [Windows フォーム アプリ用の .NET Core 3.0 における破壊的変更を確認します。](../compatibility/winforms.md#net-core-30)

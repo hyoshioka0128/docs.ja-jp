@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-ms.openlocfilehash: 0926e3c6513a698ae47b9983d0e6ad195394a4df
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 18bb03e17b19243ee1bc6e3f7ebd70afb4d4c60b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780615"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79174447"
 ---
 # <a name="updating-data-in-a-data-source"></a>データ ソースのデータの更新
-データを変更する SQL ステートメント (INSERT、UPDATE、DELETE など) は行を返しません。 同様に、多くのストアド プロシージャは、アクションを実行しても行を返しません。 行を返さないコマンドを実行するには、適切な SQL コマンドと**接続**(必要な**パラメーター**を含む) を指定して**command**オブジェクトを作成します。 **Command オブジェクトの** **ExecuteNonQuery**メソッドを使用してコマンドを実行します。  
+データを変更する SQL ステートメント (INSERT、UPDATE、DELETE など) は行を返しません。 同様に、多くのストアド プロシージャは、アクションを実行しても行を返しません。 行を返さないコマンドを実行するには、適切な SQL コマンドを使用して **Command** オブジェクトを作成し、必要な **Parameters** を含む **Connection** を作成します。 **Command** オブジェクトの **ExecuteNonQuery** メソッドでコマンドを実行します。  
   
- **ExecuteNonQuery**メソッドは、実行されたステートメントまたはストアドプロシージャの影響を受ける行の数を表す整数を返します。 複数のステートメントが実行された場合は、実行された各ステートメントの影響を受けたレコードの合計を示す値が返されます。  
+ **ExecuteNonQuery** メソッドからは、実行されたステートメントまたはストアド プロシージャの影響を受けた行数を表す整数が返されます。 複数のステートメントが実行された場合は、実行された各ステートメントの影響を受けたレコードの合計を示す値が返されます。  
   
 ## <a name="example"></a>例  
- 次のコード例では、INSERT ステートメントを実行して、 **ExecuteNonQuery**を使用してデータベースにレコードを挿入します。  
+ INSERT ステートメントを実行して、**ExecuteNonQuery** でデータベースにレコードを挿入するコードの例を次に示します。  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -42,9 +42,9 @@ SqlCommand command = new SqlCommand(queryString, connection);
 Int32 recordsAffected = command.ExecuteNonQuery();  
 ```  
   
- 次のコード例では、[カタログ操作の実行](performing-catalog-operations.md)時にサンプルコードによって作成されたストアドプロシージャを実行します。 ストアドプロシージャによって返される行は存在しないため、 **ExecuteNonQuery**メソッドが使用されますが、ストアドプロシージャは入力パラメーターを受け取り、出力パラメーターと戻り値を返します。  
+ 「[カタログ操作の実行](performing-catalog-operations.md)」と同じコードで作成されたストアド プロシージャを実行するコードの例を次に示します。 ストアド プロシージャは行を返さないため **ExecuteNonQuery** メソッドが使用されていますが、ストアド プロシージャは入力パラメーターを受け取り、出力パラメーターと戻り値を返します。  
   
- オブジェクトの場合は、最初に**パラメーター**コレクションに戻りパラメーターを追加する必要があります。 <xref:System.Data.OleDb.OleDbCommand>  
+ <xref:System.Data.OleDb.OleDbCommand> オブジェクトの場合は、最初に **Parameters** コレクションに **ReturnValue** パラメーターを追加する必要があります。  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -66,7 +66,7 @@ command.Parameters("@CategoryName").Value = "New Category"
 command.ExecuteNonQuery()  
   
 Dim categoryID As Int32 = CInt(command.Parameters("@Identity").Value)  
-Dim rowCount As Int32 = CInt(command.Parameters("@RowCount").Value)   
+Dim rowCount As Int32 = CInt(command.Parameters("@RowCount").Value)
 ```  
   
 ```csharp  

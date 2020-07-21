@@ -1,5 +1,6 @@
 ---
 title: openGenericCERCall MDA
+description: スレッドが中止されたとき、またはアプリケーションドメインがアンロードされたときに CER コードが実行されない場合は、openGenericCERCall マネージデバッグアシスタントを参照してください。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), CER calls
@@ -10,14 +11,12 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), CER calls
 - generics [.NET Framework], open generic CER calls
 ms.assetid: da3e4ff3-2e67-4668-9720-fa776c97407e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 44b6ee3e4f74a523c1e902a4eb48a64b11eb3937
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 4df33b0cdf9759edec47f02b3feb671d03284ec8
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960901"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803938"
 ---
 # <a name="opengenericcercall-mda"></a>openGenericCERCall MDA
 
@@ -31,13 +30,13 @@ ms.locfileid: "72960901"
 
 JIT コンパイル時には、処理結果のコードが共有され、オブジェクト参照型変数がそれぞれ任意のオブジェクト参照型になる可能性があるため、オブジェクト参照型を含むインスタンス化は代理にすぎません。 このため、一部のランタイム リソースを前もって準備することが妨げられる場合があります。
 
-特に、ジェネリック型変数を含むメソッドは、バックグラウンドでリソースを遅延割り当てする可能性があります。 このようなメソッドは、ジェネリック辞書エントリと呼ばれます。 たとえば、ステートメント `List<T> list = new List<T>();` `T` がジェネリック型の変数である場合、ランタイムは、実行時に正確なインスタンス化 (たとえば、`List<Object>, List<String>`など) を検索して作成する必要があります。 この操作は、メモリ不足など、開発者が制御できないさまざまな理由で失敗することがあります。
+特に、ジェネリック型変数を含むメソッドは、バックグラウンドでリソースを遅延割り当てする可能性があります。 このようなメソッドは、ジェネリック辞書エントリと呼ばれます。 たとえば、がジェネリック型の変数であるステートメントの場合、 `List<T> list = new List<T>();` `T` ランタイムはを検索し、実行時に正確なインスタンス化を作成する必要があります (たとえば、など) `List<Object>, List<String>` 。 この操作は、メモリ不足など、開発者が制御できないさまざまな理由で失敗することがあります。
 
 この MDA は、JIT コンパイル時にのみアクティブになり、正確なインスタンス化が存在するときにはアクティブになりません。
 
 この MDA がアクティブになるとき、正しくないインスタンス化に対して CER が機能しないという症状が発生する可能性があります。 実際、MDA がアクティブになる状況下では、ランタイムは CER の実装を試みません。 そのため、開発者が CER の共有インスタンス化を使用している場合、目的の CER の領域内で発生した JIT コンパイル エラー、ジェネリック型の読み込みエラー、スレッドの中止などはキャッチされません。
 
-## <a name="resolution"></a>解像度
+## <a name="resolution"></a>解決策
 
 CER が存在する可能性があるメソッドには、オブジェクト参照型であるジェネリック型変数を使用しないでください。
 
@@ -51,7 +50,7 @@ CER が存在する可能性があるメソッドには、オブジェクト参�
   
  ```output
  Method 'GenericMethodWithCer', which contains at least one constrained execution region, cannot be prepared automatically since it has one or more unbound generic type parameters.
- The caller must ensure this method is prepared explicitly at run time prior to execution. 
+ The caller must ensure this method is prepared explicitly at run time prior to execution.
  method name="GenericMethodWithCer"
  declaringType name="OpenGenericCERCall"
  ```
@@ -88,7 +87,7 @@ class Program
         MyClass.GenericMethodWithCer<int>();
 
         // This call is incorrect. A shared version of the method that
-        // cannot be completely analyzed will be JIT-compiled. The 
+        // cannot be completely analyzed will be JIT-compiled. The
         // MDA will be activated at JIT-compile time, not at run time.
         MyClass.GenericMethodWithCer<String>();
     }

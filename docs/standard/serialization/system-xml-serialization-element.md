@@ -1,21 +1,22 @@
 ---
 title: <system.xml.serialization> 要素
+description: この記事では、XML シリアル化を制御する最上位要素である <system.xml.serialization> 要素について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - system.xml.serialization element
 - XML serialization, configuration
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
-ms.openlocfilehash: 02027a238bc9a2f82963ea841584d2bb3c6446c6
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
-ms.translationtype: MT
+ms.openlocfilehash: f69e80592e9321de64421b977a63b83d8be2ad9e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410544"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84289487"
 ---
-# <a name="systemxmlserialization-element"></a>\<system.xml.serialization > 要素
+# <a name="systemxmlserialization-element"></a>\<system.xml.serialization> 要素
 
-XML シリアル化を制御する最上位の要素です。 構成ファイルの詳細については、「[構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)」を参照してください。
+XML シリアル化を制御する最上位の要素です。 構成ファイルの詳細については、「[構成ファイル スキーマ](../../framework/configure-apps/file-schema/index.md)」を参照してください。
 
 \<configuration>\
 \<system.xml.serialization>
@@ -39,14 +40,14 @@ XML シリアル化を制御する最上位の要素です。 構成ファイル
 
 |要素|説明|
 |-------------|-----------------|
-|[\<dateTimeSerialization> 要素](../../../docs/standard/serialization/datetimeserialization-element.md)|<xref:System.DateTime> オブジェクトのシリアル化モードを決定します。|
-|[\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)|XSD の型を .NET Framework の型にマッピングするために <xref:System.Xml.Serialization.XmlSchemaImporter> によって使用される型を含みます。|
+|[\<dateTimeSerialization> 要素](datetimeserialization-element.md)|<xref:System.DateTime> オブジェクトのシリアル化モードを決定します。|
+|[\<schemaImporterExtensions> 要素](schemaimporterextensions-element.md)|XSD の型を .NET Framework の型にマッピングするために <xref:System.Xml.Serialization.XmlSchemaImporter> によって使用される型を含みます。|
 
 ### <a name="parent-elements"></a>親要素
 
 |要素|説明|
 |-------------|-----------------|
-|[\<configuration> 要素](../../../docs/framework/configure-apps/file-schema/configuration-element.md)|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
+|[\<configuration> 要素](../../framework/configure-apps/file-schema/configuration-element.md)|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
 
 ## <a name="example"></a>例
 
@@ -70,7 +71,7 @@ XML シリアル化を制御する最上位の要素です。 構成ファイル
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [構成ファイル スキーマ](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<dateTimeSerialization> 要素](../../../docs/standard/serialization/datetimeserialization-element.md)
-- [\<schemaImporterExtensions> 要素](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<追加 > 要素の\<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
+- [構成ファイル スキーマ](../../framework/configure-apps/file-schema/index.md)
+- [\<dateTimeSerialization> 要素](datetimeserialization-element.md)
+- [\<schemaImporterExtensions> 要素](schemaimporterextensions-element.md)
+- [\<schemaImporterExtensions> の \<add> 要素](add-element-for-schemaimporterextensions.md)

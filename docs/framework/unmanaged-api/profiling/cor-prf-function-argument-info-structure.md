@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 07cf3bab-e193-4991-8205-3f41cf2d67b3
 topic_type:
 - apiref
-ms.openlocfilehash: 2b01acbd617b13a64ef3dca6c8661f1e6bb067ac
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9fca75ae59b95a226b51768b3e1bfb220d9926f1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447385"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500963"
 ---
 # <a name="cor_prf_function_argument_info-structure"></a>COR_PRF_FUNCTION_ARGUMENT_INFO 構造体
 関数の引数を左から右方向で表します。  
@@ -38,26 +38,26 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`numRanges`|引数のブロックの数。 つまり、この値は、`ranges` 配列内の[COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md)構造体の数です。|  
+|`numRanges`|引数のブロックの数。 つまり、この値は配列内の[COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md)構造体の数です `ranges` 。|  
 |`totalArgumentSize`|すべての引数の合計サイズ。 言い換えると、この値は引数の長さの合計になります。|  
-|`ranges`|`COR_PRF_FUNCTION_ARGUMENT_RANGE` 構造体の配列。それぞれが関数の引数の1つのブロックを表します。|  
+|`ranges`|`COR_PRF_FUNCTION_ARGUMENT_RANGE`構造体の配列。それぞれが関数の引数の1つのブロックを表します。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  関数には、多くの引数を含めることができます。 これらの引数は、連続してメモリに格納されていない可能性があります。 1つの場所に3つの引数のブロック、別の場所に2つの引数のブロック、および別の場所にある1つの引数の最後のブロックがある場合があります。 これらの引数はすべて同じ関数に対して使用されます。これらは、さまざまな場所に格納されています。  
   
- `COR_PRF_FUNCTION_ARGUMENT_INFO` 構造体は、1つの関数のすべての引数を表します。 配列を使用して、関数の引数のすべてのブロックを参照します。 そのため、1つの関数に対して、1つの `COR_PRF_FUNCTION_ARGUMENT_INFO` 構造体を使用して、それぞれが1つ以上の関数引数を指し示す複数の `COR_PRF_FUNCTION_ARGUMENT_RANGE` 構造体を参照します。  
+ `COR_PRF_FUNCTION_ARGUMENT_INFO`構造体は、1つの関数のすべての引数を表します。 配列を使用して、関数の引数のすべてのブロックを参照します。 そのため、1つの関数に対して1つの構造体を使用して、 `COR_PRF_FUNCTION_ARGUMENT_INFO` `COR_PRF_FUNCTION_ARGUMENT_RANGE` それぞれが1つ以上の関数引数を指し示す複数の構造体を参照します。  
   
  レジスタに格納されている引数は、構造体を構築するためにメモリに書き込まれます。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Corprof.idl  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [構造体のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [構造体のプロファイリング](profiling-structures.md)

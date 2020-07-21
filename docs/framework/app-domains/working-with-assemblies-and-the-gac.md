@@ -1,5 +1,6 @@
 ---
 title: アセンブリとグローバル アセンブリ キャッシュの使用
+description: .NET のアセンブリとグローバル アセンブリ キャッシュ (GAC) を使用します。 アセンブリを GAC にインストールする理由について確認します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), benefits
 - access control lists [.NET Framework]
 ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
-ms.openlocfilehash: 330555f907a5ee2ef9cfc11b0b5659a392c0dec7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 16cfd9faf02d5b58acad1cc0cf19be61c9814d35
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119719"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105153"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>アセンブリとグローバル アセンブリ キャッシュの使用
 
@@ -45,7 +46,7 @@ ms.locfileid: "73119719"
  アセンブリのグローバル アセンブリ キャッシュへのインストールを明示的に避けたい場合もあります。 アプリケーションを構成するアセンブリの 1 つをグローバル アセンブリ キャッシュに配置した場合は、アプリケーション ディレクトリをコピーする XCOPY を使用してアプリケーションをレプリケートしたりインストールしたりすることはできなくなります。 この場合は、グローバル アセンブリ キャッシュ内のアセンブリも移動する必要があります。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
-[方法: グローバル アセンブリ キャッシュにアセンブリをインストールする](install-assembly-into-gac.md)  
+[方法: アセンブリをグローバル アセンブリ キャッシュにインストールする](install-assembly-into-gac.md)  
 アセンブリをグローバル アセンブリ キャッシュにインストールする方法について説明します。  
   
 [方法: グローバル アセンブリ キャッシュの内容を表示する](how-to-view-the-contents-of-the-gac.md)  
@@ -71,5 +72,5 @@ ms.locfileid: "73119719"
 [ランタイムがアセンブリを検索する方法](../deployment/how-the-runtime-locates-assemblies.md)  
 共通言語ランタイムが、アプリケーションを構成するアセンブリを検出して読み込む方法について説明します。  
   
-[アセンブリを使用したプログラミング](../../standard/assembly/program.md)  
+[アセンブリを使用したプログラミング](../../standard/assembly/index.md)  
 マネージド アプリケーションを構成するブロックであるアセンブリについて説明します。

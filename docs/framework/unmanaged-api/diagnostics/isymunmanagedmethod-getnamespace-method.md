@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7fbbac42-b966-406d-9ae9-67bf3aea74ce
 topic_type:
 - apiref
-ms.openlocfilehash: b8bbedb4c60a2df6070373f2b6a104fff094869a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cda30f3c73bf75c37ff79fc415e02382b053807e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448970"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614488"
 ---
 # <a name="isymunmanagedmethodgetnamespace-method"></a>ISymUnmanagedMethod::GetNamespace メソッド
 このメソッドが定義されている名前空間を取得します。  
@@ -34,7 +34,7 @@ HRESULT GetNamespace(
   
 ## <a name="parameters"></a>パラメーター  
  `pRetVal`  
- 入出力返された[ISymUnmanagedNamespace](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)インターフェイスに設定されたポインター。  
+ 入出力返された[ISymUnmanagedNamespace](isymunmanagednamespace-interface.md)インターフェイスに設定されたポインター。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK。それ以外の場合は、E_FAIL またはその他のエラーコードを指定します。  
@@ -42,6 +42,6 @@ HRESULT GetNamespace(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedMethod インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [ISymUnmanagedMethod インターフェイス](isymunmanagedmethod-interface.md)

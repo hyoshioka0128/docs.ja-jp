@@ -1,0 +1,270 @@
+### YamlMime:Hub
+title: .NET 開発者向けの Azure
+summary: ".NET \U0001F49C Azure"
+brand: dotnet
+metadata:
+  title: .NET 開発者向けの Azure
+  description: Azure 上の .NET に関するサンプル、チュートリアル、および教育
+  ms.topic: hub-page
+  ms.prod: azure-dotnet
+  ms.date: 03/04/2020
+  ms.openlocfilehash: c92263407ab15bd78ec323bb417d2d9f37dd77bc
+  ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 07/15/2020
+  ms.locfileid: "86401955"
+highlightedContent:
+  items:
+  - itemType: overview
+    title: Azure と .NET の概要
+    url: intro.md
+  - itemType: quickstart
+    title: ASP.NET Web アプリをデプロイする
+    url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+  - itemType: quickstart
+    title: サーバーレス関数を構築する
+    url: /azure/azure-functions/functions-create-your-first-function-visual-studio
+  - itemType: tutorial
+    title: ASP.NET Core と Docker
+    url: /visualstudio/containers/container-tools?view=vs-2019
+  - itemType: deploy
+    title: Azure DevOps を使用して .NET アプリをデプロイする
+    url: https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops
+  - itemType: tutorial
+    title: App Service でのエンドツーエンドの認証
+    url: https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-auth-aad
+  - itemType: learn
+    title: Microsoft Identity を使用してカスタム API をセキュリティで保護する
+    url: https://docs.microsoft.com/learn/modules/identity-secure-custom-api/
+  - itemType: learn
+    title: Azure 基礎
+    url: https://docs.microsoft.com/learn/paths/azure-fundamentals/
+conceptualContent:
+  items:
+  - title: Web アプリを作成する
+    links:
+    - itemType: overview
+      text: App Service の概要
+      url: /azure/app-service/overview
+    - itemType: overview
+      text: Azure Functions の概要
+      url: /azure/azure-functions/functions-overview
+    - itemType: learn
+      text: Azure App Service を使用して Web アプリをホストする
+      url: /learn/modules/host-a-web-app-with-azure-app-service/
+    - itemType: learn
+      text: Visual Studio を使用した Azure 関数の開発、テスト、デプロイ
+      url: /learn/modules/develop-test-deploy-azure-functions-with-visual-studio/
+    - itemType: learn
+      text: Azure API Management を使用して API を公開および管理する
+      url: /learn/modules/publish-manage-apis-with-azure-api-management/
+    - itemType: tutorial
+      text: App Service と Azure SQL Database を使用した ASP.NET Core Web アプリ
+      url: /azure/app-service/app-service-web-tutorial-dotnet-sqldatabase
+    - itemType: tutorial
+      text: ASP.NET と Azure SQL Database を使用したマネージド ID
+      url: /azure/app-service/app-service-web-tutorial-connect-msi
+    - itemType: tutorial
+      text: Azure App Service の CORS を使用した Web API
+      url: /azure/app-service/app-service-web-tutorial-rest-api
+  - title: クラウド ネイティブ アプリを作成する
+    links:
+    - itemType: quickstart
+      text: Kubernetes でマイクロサービスを実行してデバッグする
+      url: /azure/dev-spaces/quickstart-netcore-visualstudio
+    - itemType: learn
+      text: クラウドネイティブの ASP.NET Core マイクロサービスを作成してデプロイする
+      url: /learn/modules/microservices-aspnet-core/
+    - itemType: tutorial
+      text: AKS で複数のコンテナーをデプロイおよびデバッグする
+      url: /azure/dev-spaces/multi-service-netcore-visualstudio
+    - itemType: tutorial
+      text: Azure App Configuration を使用した動的な構成と機能フラグ
+      url: /azure/azure-app-configuration/use-feature-flags-dotnet-core
+    - itemType: how-to-guide
+      text: .NET Core アプリを Azure Container Registry にデプロイする
+      url: /visualstudio/containers/hosting-web-apps-in-docker?view=vs-2019
+  - title: モバイル アプリの作成
+    links:
+    - itemType: learn
+      text: Xamarin アプリで Azure から REST サービスを使用する
+      url: /learn/modules/consume-rest-services/
+    - itemType: quickstart
+      text: .NET SDK と Azure Cosmos DB の MongoDB 用 API を使用して Xamarin.Forms アプリを作成する
+      url: /azure/cosmos-db/create-mongodb-xamarin
+    - itemType: quickstart
+      text: Azure Blob Storage クライアント ライブラリと Xamarin.Forms
+      url: /azure/storage/blobs/storage-quickstart-blobs-xamarin
+    - itemType: tutorial
+      text: ASP.NET Cor と Azure Notification Hubs を使用して Xamarin.Forms アプリにプッシュ通知を送信する
+      url: /azure/notification-hubs/notification-hubs-backend-service-xamarin-forms
+    - itemType: concept
+      text: ご利用のモバイル アプリに認証を追加し、ユーザー ID を管理する
+      url: /azure/developer/mobile-apps/authentication
+  - title: ストレージとデータの操作
+    links:
+    - itemType: concept
+      text: 適切なデータ ストレージ オプションを選択する
+      url: /azure/architecture/guide/technology-choices/data-store-overview
+    - itemType: quickstart
+      text: .NET を使用して Azure SQL Database または Azure SQL Managed Instance にクエリを実行する
+      url: /azure/azure-sql/database/connect-query-dotnet-core
+    - itemType: quickstart
+      text: .NET を使用して Azure PostgreSQL にクエリを実行する
+      url: /azure/postgresql/connect-csharp
+    - itemType: learn
+      text: Azure SQL データベースのクエリを実行する ASP.NET アプリケーションを開発して構成する
+      url: /learn/modules/develop-app-that-queries-azure-sql/
+    - itemType: learn
+      text: Visual Studio Code で Azure Cosmos DB 用の .NET Core アプリをビルドする
+      url: /learn/modules/build-cosmos-db-app-with-vscode/
+    - itemType: learn
+      text: Azure Blob ストレージを使用してアプリケーション データを格納する
+      url: /learn/modules/store-app-data-with-azure-blob-storage/
+    - itemType: learn
+      text: Entity Framework Core でリレーショナル データを保持および取得する
+      url: /learn/modules/persist-data-ef-core/
+    - itemType: tutorial
+      text: Azure Database for PostgreSQL データベースに接続してクエリを追加する
+      url: /azure/postgresql/connect-csharp
+  - title: 認証とセキュリティ
+    links:
+    - itemType: overview
+      text: Microsoft ID プラットフォーム (Azure AD) の概要
+      url: /azure/active-directory/develop/
+    - itemType: learn
+      text: OpenID Connect と Azure AD を使用してアプリケーションをセキュリティで保護する
+      url: /learn/modules/secure-app-with-oidc-and-azure-ad/
+    - itemType: learn
+      text: Microsoft Identity を使用してカスタム API をセキュリティで保護する
+      url: /learn/modules/identity-secure-custom-api/
+    - itemType: learn
+      text: ASP.NET ID フレームワークを使用して ASP.NET Core Web アプリをセキュリティで保護する
+      url: /learn/modules/secure-aspnet-core-identity/
+    - itemType: tutorial
+      text: ASP.NET Web アプリに Microsoft へのサインインを追加する
+      url: /azure/active-directory/develop/tutorial-v2-asp-webapp
+    - itemType: tutorial
+      text: App Service でのエンドツーエンドの認証
+      url: /azure/app-service/app-service-web-tutorial-auth-aad
+    - itemType: tutorial
+      text: ASP.NET Core で Azure Key Vault を使用する
+      url: /azure/key-vault/tutorial-net-create-vault-azure-web-app
+    - itemType: tutorial
+      text: Azure AD B2C と Web API を統合する
+      url: /azure/active-directory-b2c/tutorial-single-page-app-webapi
+    - itemType: reference
+      text: .NET 用 Azure ID クライアント ライブラリ
+      url: /dotnet/api/overview/azure/identity-readme?view=azure-dotnet
+  - title: Azure でのメッセージング
+    links:
+    - itemType: overview
+      text: Azure キューを使用してメッセージを格納する
+      url: /azure/storage/queues/storage-queues-introduction
+    - itemType: overview
+      text: Azure Service Bus を使用したアプリケーション間メッセージング
+      url: /azure/service-bus-messaging
+    - itemType: overview
+      text: Event Hubs を使用したビッグ データのストリーム配信
+      url: /azure/event-hubs/event-hubs-about
+    - itemType: overview
+      text: Event Grid を使用してイベントベースのアプリケーションを作成する
+      url: /azure/event-grid/overview
+    - itemType: quickstart
+      text: Azure Queue storage の使用
+      url: /azure/storage/queues/storage-dotnet-how-to-use-queues?tabs=dotnet
+    - itemType: quickstart
+      text: Azure Service Bus キューの使用
+      url: /azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues
+    - itemType: quickstart
+      text: Azure Event Hubs を使用してリアルタイムでデータを取り込む
+      url: /azure/event-hubs/event-hubs-dotnet-standard-getstarted-send
+    - itemType: quickstart
+      text: Event Grid を使ったカスタム イベントのルーティング
+      url: /azure/event-grid/custom-event-quickstart
+  - title: 診断および監視
+    links:
+    - itemType: overview
+      text: Azure Monitor
+      url: /azure/azure-monitor/overview
+    - itemType: learn
+      text: Azure Web アプリでページ読み込み時間をキャプチャして表示する
+      url: /learn/modules/capture-page-load-times-application-insights/
+    - itemType: how-to-guide
+      text: Azure App Service および IIS での ASP.NET Core のトラブルシューティング
+      url: /aspnet/core/test/troubleshoot-azure-iis
+    - itemType: how-to-guide
+      text: .NET Core ILogger を使用した Application Insights
+      url: /azure/azure-monitor/app/ilogger
+    - itemType: how-to-guide
+      text: ワーカー サービス アプリケーション向け Application Insights
+      url: /azure/azure-monitor/app/worker-service
+    - itemType: how-to-guide
+      text: Visual Studio を使用した Azure App Service のアプリのトラブルシューティング
+      url: /azure/app-service/troubleshoot-dotnet-visual-studio
+  - title: 移行
+    links:
+    - itemType: concept
+      text: Azure ホスティング オプションを選択する
+      url: ./migration/choose.md
+    - itemType: how-to-guide
+      text: .NET Web アプリまたはサービスを Azure App Service に移行する
+      url: ./migration/app-service.md
+    - itemType: how-to-guide
+      text: ASP.NET アプリを Azure VM に移行する
+      url: ./migration/vm.md
+    - itemType: how-to-guide
+      text: SQL Server データベースを Azure に移行する
+      url: ./migration/sql.md
+  - title: Azure SDK for .NET
+    links:
+    - itemType: download
+      text: リリース
+      url: https://azure.github.io/azure-sdk/releases/latest/index.html#net
+    - itemType: concept
+      text: アプリの認証
+      url: authentication.md
+    - itemType: concept
+      text: ログの記録
+      url: logging.md
+    - itemType: sample
+      text: SDK のサンプル アプリ
+      url: /samples/dotnet/samples/azure-identity-resource-management-storage/
+    - itemType: download
+      text: ツール
+      url: tools.md
+    - itemType: reference
+      text: API リファレンス
+      url: /dotnet/api/overview/azure/?view=azure-dotnet
+additionalContent:
+  sections:
+  - title: .NET および Azure のコミュニティ リソース
+    items:
+    - title: .NET
+      links:
+      - text: .NET のドキュメント
+        url: /dotnet
+      - text: ASP.NET ドキュメント
+        url: /aspnet
+    - title: Web キャストとショー
+      links:
+      - text: Azure Friday
+        url: https://azure.microsoft.com/resources/videos/azure-friday/
+      - text: クラウド ネイティブ ショー
+        url: https://channel9.msdn.com/Shows/The-Cloud-Native-Show
+      - text: オン .NET
+        url: https://channel9.msdn.com/Shows/On-NET
+      - text: ASP.NET コミュニティ スタンドアップ
+        url: https://dotnet.microsoft.com/platform/community/standup
+      - text: .NET ドキュメントの表示
+        url: https://dotnetdocs.dev
+    - title: オープン ソース
+      links:
+      - text: Azure SDK for .NET
+        url: https://github.com/Azure/azure-sdk-for-net
+      - text: Microsoft Identity Web
+        url: https://github.com/AzureAD/microsoft-identity-web
+      - text: .NET プラットフォーム
+        url: https://github.com/dotnet/
+  footer: Contribute to .NET docs. Read our [contributor guide](/contribute/dotnet/dotnet-contribute).

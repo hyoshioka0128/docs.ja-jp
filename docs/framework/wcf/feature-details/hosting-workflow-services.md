@@ -2,15 +2,16 @@
 title: ワークフロー サービスのホスティング
 ms.date: 03/30/2017
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-ms.openlocfilehash: 07e4f7779c06e6c95b45d59bcdd0890fb5a9cf55
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 908ef7ebb9bfb1e2c49d96e41c0df1d843c0454d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636138"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597281"
 ---
 # <a name="hosting-workflow-services"></a>ワークフロー サービスのホスティング
-ワークフロー サービスが受信メッセージに応答するには、ワークフロー サービスがホストされている必要があります。 ワークフロー サービスは WCF メッセージング インフラストラクチャを使用するため、これと似た方法でホストされます。 WCF のサービスと同様に、インターネット インフォメーション サービス (IIS)、または Windows プロセス アクティブ化サービス (WAS) の下で、任意の管理対象のアプリケーションでワークフロー サービスをホストできます。 さらに、ワークフロー サービスは、Windows Server Appfabric でホストできます。 Windows Server App Fabric の詳細については、次を参照してください。 [Windows Server App Fabric のドキュメント](https://go.microsoft.com/fwlink/?LinkId=193037)、 [AppFabric のホスティング機能](https://go.microsoft.com/fwlink/?LinkId=196494)、および[AppFabric ホスティングの概念](https://go.microsoft.com/fwlink/?LinkId=196495)します。 WCF をホストするさまざまな方法の詳細については、「」を参照をサービスの[ホスティング サービス](../../../../docs/framework/wcf/hosting-services.md)します。
+
+ワークフロー サービスが受信メッセージに応答するには、ワークフロー サービスがホストされている必要があります。 ワークフロー サービスは WCF メッセージング インフラストラクチャを使用するため、これと似た方法でホストされます。 WCF サービスと同様に、ワークフローサービスは、インターネットインフォメーションサービス (IIS) または Windows プロセスアクティブ化サービス (WAS) の下で、任意のマネージアプリケーションでホストできます。 また、ワークフローサービスは Windows Server App Fabric でホストできます。 Windows Server App Fabric の詳細については、「 [Windows Server App fabric のドキュメント](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10))」、「 [Appfabric のホスティング機能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))」、および「 [appfabric のホスティングの概念](https://docs.microsoft.com/previous-versions/appfabric/ee677371(v=azure.10))」を参照してください。 WCF サービスをホストするさまざまな方法の詳細については、「[ホスティングサービス](../hosting-services.md)」を参照してください。
 
 ## <a name="hosting-in-a-managed-application"></a>マネージド アプリケーションでのホスト
  マネージド アプリケーションでワークフロー サービスをホストするには、<xref:System.ServiceModel.Activities.WorkflowServiceHost> クラスを使用します。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> コンストラクターにより、シングルトン ワークフロー サービス インスタンス、ワークフロー サービス定義、またはワークフロー メッセージング アクティビティを使用するアクティビティを指定できます。 <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> の呼び出しによって、サービスが受信メッセージのリッスンを開始します。
@@ -42,18 +43,18 @@ ms.locfileid: "65636138"
 
 - WCF メッセージング アクティビティを使用するアクティビティを含むアセンブリを IIS/WAS 仮想ディレクトリに配置します。
 
- ワークフロー サービスを定義する .xamlx ファイルを含める必要があります、<`Service`> ルート要素、またはルート要素から派生する型を含む<xref:System.Workflow.ComponentModel.Activity>します。 Visual Studio の活動テンプレートを使用する場合は、.xamlx ファイルが作成されます。 WCF ワークフロー サービス テンプレートを使用する場合は、.xamlx ファイルが作成されます。
+ ワークフローサービスを定義する .xamlx ファイルには、<`Service`> ルート要素、またはから派生した任意の型を含むルート要素が含まれている必要があり <xref:System.Workflow.ComponentModel.Activity> ます。 Visual Studio アクティビティテンプレートを使用すると、.xamlx ファイルが作成されます。 WCF ワークフローサービステンプレートを使用すると、.xamlx ファイルが作成されます。
 
 ## <a name="hosting-workflow-services-under-windows-server-app-fabric"></a>Windows Server AppFabric でのワークフロー サービスのホスティング
  Windows Server AppFabric でのワークフロー サービスのホスティングは IIS/WAS でのホスティングと同じ方法で行われます。 唯一の違いは、Windows Server AppFabric がインストールされるということです。 Windows Server AppFabric には、PowerShell コマンドと同様に、インターネット インフォメーション サービス マネージャーに追加されるツールが用意されています。 これらのツールによって、ワークフロー サービスおよび WCF サービスの配置、管理、および追跡を簡略化することができます。
 
 ## <a name="referencing-custom-activities"></a>カスタム アクティビティの参照
- カスタム アクティビティへの参照を追加する必要があります、<`Assemblies`> セクション <`System.Web.Compilation`> のアプリケーション ドメインに読み込まれ、XAML デシリアライザーが型を見つけることができるようにします。 これらの設定をコンピューター上のすべてのアプリケーションに適用する必要がある場合は、アプリケーション レベルまたはルートの Web.config で設定できます。
+ カスタムアクティビティへの参照は、 `Assemblies` `System.Web.Compilation` アプリケーションドメインに読み込まれ、XAML デシリアライザーが型を見つけることができるように、<> の下の <> セクションに追加する必要があります。 これらの設定をコンピューター上のすべてのアプリケーションに適用する必要がある場合は、アプリケーション レベルまたはルートの Web.config で設定できます。
 
 ## <a name="deployment"></a>配置
- 配置作業を容易にするために、Web 配置ツールが作成されています。 このツールを使用すると、アプリケーションの IIS 6.0 および IIS 7.0 間での移行や、サーバー ファームの同期のほか、Web アプリケーションのパッケージ化、アーカイブ、および配置を実行できます。 詳細については、次を参照してください。 [MS 配置ツール](https://go.microsoft.com/fwlink/?LinkId=178690)します。
+ 配置作業を容易にするために、Web 配置ツールが作成されています。 このツールを使用すると、アプリケーションの IIS 6.0 および IIS 7.0 間での移行や、サーバー ファームの同期のほか、Web アプリケーションのパッケージ化、アーカイブ、および配置を実行できます。 詳細については、「 [MS Deployment Tool](https://go.microsoft.com/fwlink/?LinkId=178690)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-- [ワークフロー サービス ホストの内部](../../../../docs/framework/wcf/feature-details/workflow-service-host-internals.md)
-- [WorkflowServiceHost の構成](../../../../docs/framework/wcf/feature-details/configuring-workflowservicehost.md)
+- [ワークフロー サービス ホストの内部](workflow-service-host-internals.md)
+- [WorkflowServiceHost の構成](configuring-workflowservicehost.md)

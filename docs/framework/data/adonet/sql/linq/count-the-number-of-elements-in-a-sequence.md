@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: ccbe5d54-c9eb-4b14-b0ab-f628483c5f99
 ms.openlocfilehash: 74e24aeb64b0097cba3975e76475034e6bb9544d
 ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70247700"

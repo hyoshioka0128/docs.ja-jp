@@ -1,17 +1,17 @@
 ---
 title: 'チュートリアル: 自転車レンタル需要の予測 - 時系列'
 description: このチュートリアルでは、一変量時系列解析と ML.NET を使用して、自転車レンタル サービスの需要を予測する方法について説明します。
-ms.date: 11/07/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 2482709abfadad0505a40f4c37fd58cee4a2634c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: d93bdee8d5a057be0f405fe4334d7edbdc0649ec
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978198"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174407"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>チュートリアル: 時系列解析と ML.NET を使用して自転車レンタル サービスの需要を予測する
 
@@ -29,7 +29,7 @@ ML.NET を使用して SQL Server データベースに格納されているデ�
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-- [Visual Studio 2017 15.6 以降](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017)が ".NET Core クロスプラット フォーム開発" とともにインストールされていること。
+- ".NET Core クロスプラットフォーム開発" ワークロードがインストールされた [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) 以降または Visual Studio 2017 バージョン 15.6 以降。
 
 ## <a name="time-series-forecasting-sample-overview"></a>時系列予測のサンプルの概要
 
@@ -43,16 +43,19 @@ ML.NET を使用して SQL Server データベースに格納されているデ�
 
 このチュートリアルで使用されているアルゴリズムは、[特異スペクトル解析 (SSA: Singular Spectrum Analysis)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf) です。 SSA は、時系列を一連のプリンシパル コンポーネントに分解することによって機能します。 これらのコンポーネントは、傾向、ノイズ、季節性、およびその他の多くの要因に対応するシグナルの部分として解釈することができます。 その後、これらのコンポーネントは再構築され、将来の値の予測に使用されます。
 
-## <a name="create-console-application"></a>コンソール アプリケーションの作成
+## <a name="create-console-application"></a>コンソール アプリケーションを作成する
 
 1. "BikeDemandForecasting" という名前の新しい **C# .NET Core コンソール アプリケーション**を作成します。
-1. **Microsoft.ML** バージョン **1.4.0** NuGet パッケージをインストールします。
+1. **Microsoft.ML** バージョン NuGet パッケージをインストールします。
+
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
     1. ソリューション エクスプローラーで、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
     1. [パッケージ ソース] として "nuget.org" を選択し、 **[参照]** タブを選択し、"**Microsoft.ML**" を検索します。
     1. **[プレリリースを含める]** チェックボックスをオンにします。
     1. **[インストール]** ボタンを選択します。
     1. **[変更のプレビュー]** ダイアログで **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、[ライセンスの同意] ダイアログの **[同意する]** を選択します。
-    1. **System.Data.SqlClient** バージョン **4.7.0** および **Microsoft.ML.TimeSeries** バージョン **1.4.0** に対して、この手順を繰り返します。
+    1. **System.Data.SqlClient** と **Microsoft.ML.TimeSeries** に対して、この手順を繰り返します。
 
 ### <a name="prepare-and-understand-the-data"></a>データを準備して理解する
 
@@ -60,7 +63,7 @@ ML.NET を使用して SQL Server データベースに格納されているデ�
 1. [*DailyDemand.mdf* データベース ファイル](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Data/DailyDemand.mdf)をダウンロードし、*Data* ディレクトリに保存します。
 
 > [!NOTE]
-> このチュートリアルで使用されているデータは、[UCI Bike Sharing Dataset](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset) から取得したものです。 Fanaee-T, Hadi, and Gama, Joao, 'Event labeling combining ensemble detectors and background knowledge', Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg, [Web リンク](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3)。
+> このチュートリアルで使用されているデータは、[UCI Bike Sharing Dataset](http://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset) から取得したものです。 Fanaee-T, Hadi, and Gama, Joao, 'Event labeling combining ensemble detectors and background knowledge', Progress in Artificial Intelligence (2013): pp. 1-15, Springer Berlin Heidelberg, [Web リンク](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3)。
 
 元のデータセットには、季節性と天気に対応する複数の列が含まれています。 簡潔にするため、またこのチュートリアルで使用されているアルゴリズムには 1 つの数値列の値しか必要ないため、元のデータセットは次の列のみが含まれるように圧縮されています。
 

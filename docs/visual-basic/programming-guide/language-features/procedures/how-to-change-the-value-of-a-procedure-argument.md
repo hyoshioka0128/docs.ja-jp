@@ -13,49 +13,49 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-ms.openlocfilehash: e562c0f5ec01380c792b4dc064554171cfb007e7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 46cf9062d01e248b6e90882a923a48210780f7f4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74339953"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84388505"
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>方法: プロシージャ引数の値を変更する (Visual Basic)
-プロシージャを呼び出すと、指定した各引数は、プロシージャで定義されたパラメーターのいずれかに対応します。 場合によっては、プロシージャコードは、呼び出し元のコードの引数の基になる値を変更できます。 それ以外の場合、プロシージャは引数のローカルコピーだけを変更できます。  
+プロシージャを呼び出すときに、指定する引数は、プロシージャで定義されているパラメーターにそれぞれ対応しています。 プロシージャ コードが、呼び出し元のコードの引数の基になる値を変更できる場合があります。 また、プロシージャが引数のローカル コピーのみを変更できる場合もあります。  
   
- プロシージャを呼び出すと、Visual Basic によって、 [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)で渡されるすべての引数のローカルコピーが作成されます。 [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)で渡された引数ごとに、Visual Basic は、呼び出し元のコードの引数の基になるプログラミング要素への直接参照をプロシージャコードに付与します。  
+ Visual Basic では、プロシージャを呼び出すときに、[ByVal](../../../language-reference/modifiers/byval.md) で渡されるすべての引数のローカル コピーが作成されます。 [ByRef](../../../language-reference/modifiers/byref.md) で渡される各引数では、引数の基になる呼び出し元のコードのプログラミング要素への直接参照がプロシージャ コードに渡されます。  
   
- 呼び出し元のコード内の基になる要素が変更可能な要素であり、引数が `ByRef`渡される場合、プロシージャコードは直接参照を使用して、呼び出し元のコード内の要素の値を変更できます。  
+ 呼び出し元のコードの基になる要素が変更可能な要素であり、引数が `ByRef` で渡される場合、プロシージャ コードは直接参照を使用して呼び出し元のコードの要素の値を変更できます。  
   
-## <a name="changing-the-underlying-value"></a>基になる値の変更  
+## <a name="changing-the-underlying-value"></a>基になる値を変更する  
   
-#### <a name="to-change-the-underlying-value-of-a-procedure-argument-in-the-calling-code"></a>呼び出し元コードのプロシージャ引数の基になる値を変更するには  
+#### <a name="to-change-the-underlying-value-of-a-procedure-argument-in-the-calling-code"></a>呼び出し元のコードのプロシージャ引数の基になる値を変更するには  
   
-1. プロシージャの宣言で、引数に対応するパラメーターに[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)を指定します。  
+1. プロシージャの宣言で、引数に対応するパラメーターに [ByRef](../../../language-reference/modifiers/byref.md) を指定します。  
   
 2. 呼び出し元のコードで、変更可能なプログラミング要素を引数として渡します。  
   
-3. 呼び出し元のコードでは、引数リストのかっこで引数を囲まないでください。  
+3. 呼び出し元のコードでは、引数リストの引数をかっこで囲まないでください。  
   
-4. プロシージャコードでは、パラメーター名を使用して、呼び出し元のコードの基になる要素に値を割り当てます。  
+4. プロシージャ コードで、パラメーター名を使用して、呼び出し元のコードの基になる要素に値を割り当てます。  
   
- デモについては、「例」を参照してください。  
+ デモについては、後述の例を参照してください。  
   
-## <a name="changing-local-copies"></a>ローカルコピーの変更  
- 呼び出し元のコード内の基になる要素が変更不可能な要素である場合、または引数が `ByVal`渡される場合、プロシージャは呼び出し元のコード内の値を変更できません。 ただし、このプロシージャは、このような引数のローカルコピーを変更できます。  
+## <a name="changing-local-copies"></a>ローカル コピーを変更する  
+ 呼び出し元のコードの基になる要素が変更不可能な要素である場合や、引数が `ByVal` で渡される場合、プロシージャは呼び出し元のコードの値を変更することはできません。 ただし、プロシージャはそのような引数のローカル コピーを変更できます。  
   
-#### <a name="to-change-the-copy-of-a-procedure-argument-in-the-procedure-code"></a>プロシージャコードのプロシージャ引数のコピーを変更するには  
+#### <a name="to-change-the-copy-of-a-procedure-argument-in-the-procedure-code"></a>プロシージャ コードのプロシージャ引数のコピーを変更するには  
   
-1. プロシージャの宣言で、引数に対応するパラメーターに[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)を指定します。  
+1. プロシージャの宣言で、引数に対応するパラメーターに [ByVal](../../../language-reference/modifiers/byval.md) を指定します。  
   
-     または  
+     \- または -  
   
-     呼び出し元のコードの引数リストで、引数をかっこで囲みます。 これにより、対応するパラメーターで `ByRef`が指定されている場合でも、値渡しで引数を渡すことが Visual Basic されます。  
+     呼び出し元のコードで、引数リストの引数をかっこで囲みます。 これにより、対応するパラメーターに `ByRef` が指定されている場合でも、引数の値渡しが強制されます。  
   
-2. プロシージャコードでは、パラメーター名を使用して、引数のローカルコピーに値を割り当てます。 呼び出し元のコードの基になる値は変更されません。  
+2. プロシージャ コードで、パラメーター名を使用して、引数のローカル コピーに値を割り当てます。 呼び出し元のコードの基になる値は変更されません。  
   
 ## <a name="example"></a>例  
- 次の例は、配列変数を受け取り、その要素を操作する2つのプロシージャを示しています。 `increase` の手順では、単に各要素に1つを追加します。 `replace` プロシージャは、新しい配列をパラメーター `a()` に割り当て、各要素に1つを追加します。  
+ 次の例は、配列変数を受け取り、その要素を操作する 2 つのプロシージャを示しています。 `increase` プロシージャは、各要素に 1 を加算するだけです。 `replace` プロシージャは、`a()` パラメーターに新しい配列を割り当ててから、各要素に 1 を加算します。  
   
  [!code-vb[VbVbcnProcedures#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#35)]  
   
@@ -63,21 +63,21 @@ ms.locfileid: "74339953"
   
  [!code-vb[VbVbcnProcedures#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#37)]  
   
- 最初の `MsgBox` の呼び出しでは、"後に増加する (n):11, 21, 31, 41" と表示されます。 配列 `n` は参照型であるため、渡される機構が `ByVal`場合でも、`replace` はそのメンバーを変更できます。  
+ 最初の `MsgBox` 呼び出しでは、"After increase(n): 11, 21, 31, 41" と表示されます。 配列 `n` は参照型であるため、引渡し方法が `ByVal` であっても、`replace` はそのメンバーを変更できます。  
   
- 2番目の `MsgBox` 呼び出しでは、"置換後 (n): 101, 201, 301" と表示されます。 `n` は `ByRef`渡されるので、`replace` は呼び出し元のコードの変数 `n` を変更し、その変数に新しい配列を割り当てることができます。 `n` は参照型であるため、`replace` はそのメンバーを変更することもできます。  
+ 2 番目の `MsgBox` 呼び出しでは、"After replace(n): 101, 201, 301" と表示されます。 `n` は `ByRef` で渡されるため、`replace` は呼び出し元のコードの変数 `n` を変更して新しい配列を割り当てることができます。 `n` は参照型であるため、`replace` はそのメンバーを変更することもできます。  
   
- プロシージャが呼び出し元のコードで変数自体を変更しないようにすることができます。 「[方法: プロシージャ引数を値の変更に対して保護](./how-to-protect-a-procedure-argument-against-value-changes.md)する」を参照してください。  
+ プロシージャが、呼び出し元のコードの変数自体を変更できないようにすることができます。 「[方法:プロシージャ引数の値が変更されないように保護する](./how-to-protect-a-procedure-argument-against-value-changes.md)」をご覧ください。  
   
-## <a name="compiling-the-code"></a>コードのコンパイル  
- 変数を参照渡しで渡す場合は、`ByRef` キーワードを使用してこのメカニズムを指定する必要があります。  
+## <a name="compile-the-code"></a>コードのコンパイル  
+ 変数を参照渡しにするときは、`ByRef` キーワードを使用してこの方法を指定する必要があります。  
   
- Visual Basic の既定では、値渡しで引数を渡します。 ただし、すべての宣言されたパラメーターに[ByVal](../../../../visual-basic/language-reference/modifiers/byval.md)キーワードまたは[ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)キーワードを含めることをお勧めします。 これにより、コードが読みやすくなります。  
+ Visual Basic の既定では、引数は値渡しになります。 ただし、宣言されるすべてのパラメーターに、[ByVal](../../../language-reference/modifiers/byval.md) または [ByRef](../../../language-reference/modifiers/byref.md) キーワードを含めることをお勧めします。 これにより、コードが読みやすくなります。  
   
-## <a name="net-framework-security"></a>.NET Framework のセキュリティ  
- プロシージャが呼び出し元のコードの引数の基になる値を変更できるようにすると、常にリスクが発生する可能性があります。 この値が変更されることが予想されることを確認し、使用前に有効かどうかを確認できるように準備してください。  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ プロシージャが呼び出し元のコードの引数の基になる値を変更できるようにする場合、常に潜在的なリスクがあります。 この値が変更されることを想定し、使用前に有効性をチェックする準備をしておく必要があります。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [手順](./index.md)
 - [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)
@@ -85,7 +85,7 @@ ms.locfileid: "74339953"
 - [引数の値渡しと参照渡し](./passing-arguments-by-value-and-by-reference.md)
 - [変更できる引数と変更できない引数の違い](./differences-between-modifiable-and-nonmodifiable-arguments.md)
 - [引数の値渡しと参照渡しの違い](./differences-between-passing-an-argument-by-value-and-by-reference.md)
-- [方法: プロシージャ引数の値が変化しないようにする](./how-to-protect-a-procedure-argument-against-value-changes.md)
+- [方法: プロシージャ引数の値が変更されないように保護する](./how-to-protect-a-procedure-argument-against-value-changes.md)
 - [方法: 引数の値渡しを強制する](./how-to-force-an-argument-to-be-passed-by-value.md)
 - [位置と名前による引数渡し](./passing-arguments-by-position-and-by-name.md)
-- [値型と参照型](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Value Types and Reference Types](../data-types/value-types-and-reference-types.md)

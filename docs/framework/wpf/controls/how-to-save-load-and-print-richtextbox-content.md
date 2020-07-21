@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: ffb113d3-c68a-47ca-8ac0-882283f38326
 ms.openlocfilehash: 90581bee7815dafd44c3cae18a8af7394fee1e9a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61910599"
 ---
 # <a name="how-to-save-load-and-print-richtextbox-content"></a>方法: RichTextBox コンテンツの保存、読み込み、および印刷
-次の例の内容を保存する方法を示しています、<xref:System.Windows.Controls.RichTextBox>ファイルに読み込むにその内容を<xref:System.Windows.Controls.RichTextBox>、および内容を印刷します。  
+次の例では、<xref:System.Windows.Controls.RichTextBox> のコンテンツをファイルに保存し、そのコンテンツを <xref:System.Windows.Controls.RichTextBox> に再度読み込み、コンテンツを印刷する方法を示します。  
   
 ## <a name="example"></a>例  
  この例のマークアップを次に示します。  

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: add3ff8faed2e7fab245e5b6f1b9158b7bdd06f5
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 4a34a64eba72ea24c1d830566565ce4fbee8e5b7
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567373"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721454"
 ---
 ### <a name="cellformatting-event-not-raised-if-tooltip-is-shown"></a>ヒントが表示されていると CellFormatting が発生しない
 
@@ -20,7 +20,7 @@ ms.locfileid: "74567373"
 
 3.1
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 <xref:System.Windows.Forms.DataGridView> が編集モードのときに、<xref:System.Windows.Forms.DataGridView.CellFormatting> イベントに依存するすべてのコードをリファクターします。
 
@@ -30,12 +30,12 @@ Windows フォーム
 
 #### <a name="affected-apis"></a>影響を受ける API
 
-API 分析では検出できません。
+None
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
-- Not detectable via API analysis.
+Not detectable via API analysis.
 
 -->

@@ -6,7 +6,7 @@ apiname:
 - XElement.Xml
 ms.openlocfilehash: 9bac9797f397a0bea1dda36bf864f88293061893
 ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2019
 ms.locfileid: "72921036"

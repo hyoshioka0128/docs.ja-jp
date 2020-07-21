@@ -1,5 +1,6 @@
 ---
 title: '方法: アセンブリをグローバル アセンブリ キャッシュにインストールする'
+description: アセンブリを .NET のグローバル アセンブリ キャッシュ (GAC) にインストールして、多くのアプリケーションで共有できるようにします。 Windows インストーラーまたは GAC ユーティリティを使用します。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
@@ -9,22 +10,22 @@ helpviewer_keywords:
 - Global Assembly Cache tool
 - windows installer, global assembly cache
 ms.assetid: a7e6f091-d02c-49ba-b736-7295cb0eb743
-ms.openlocfilehash: e670f5dba47393b7df047fb4e6f7d92df8cb187c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 08a5475d74327265f28b65676ae56be15afb57d3
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119805"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104666"
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>方法: アセンブリをグローバル アセンブリ キャッシュにインストールする
 
-グローバル アセンブリ キャッシュ (GAC) には、複数のアプリケーションで共有されるアセンブリが格納されています。 次のコンポーネントのいずれかを使用して、アセンブリを[グローバル アセンブリ キャッシュ](gac.md)にインストールします。 
+グローバル アセンブリ キャッシュ (GAC) には、複数のアプリケーションで共有されるアセンブリが格納されています。 次のコンポーネントのいずれかを使用して、アセンブリを[グローバル アセンブリ キャッシュ](gac.md)にインストールします。
 
 - [Windows インストーラー](#windows-installer)
 - [グローバル アセンブリ キャッシュ ツール](#global-assembly-cache-tool)
 
 > [!IMPORTANT]
-> グローバル アセンブリ キャッシュにインストールできるのは、厳密な名前のアセンブリだけです。 厳密な名前付きアセンブリを作成する方法の詳細については、「[方法: 厳密な名前でアセンブリに署名](../../standard/assembly/sign-strong-name.md)する」を参照してください。
+> グローバル アセンブリ キャッシュにインストールできるのは、厳密な名前のアセンブリだけです。 厳密な名前付きのアセンブリを作成する方法については、「[方法:厳密な名前でアセンブリに署名する](../../standard/assembly/sign-strong-name.md)」を参照してください。
 
 ## <a name="windows-installer"></a>Windows インストーラー
 
@@ -43,9 +44,9 @@ ms.locfileid: "73119805"
 gacutil -i <assembly name>
 ```
 
-このコマンドの *\<assembly name>* は、グローバル アセンブリ キャッシュにインストールされるアセンブリの名前です。
+このコマンドで *\<assembly name>* は、グローバル アセンブリ キャッシュにインストールされるアセンブリの名前です。
 
-システム パスに *gacutil.exe* が含まれていない場合は、[開発者コマンド プロンプト for VS *\<バージョン>* ](../tools/developer-command-prompt-for-vs.md) を使用します。
+システム パスに *gacutil.exe* が含まれていない場合は、[VS 用開発者コマンド プロンプト *\<version>* ](../tools/developer-command-prompt-for-vs.md) を使用します。
 
 ファイル名 *hello.dll* のアセンブリをグローバル アセンブリ キャッシュにインストールする例を次に示します。
 
@@ -59,6 +60,6 @@ gacutil -i hello.dll
 ## <a name="see-also"></a>関連項目
 
 - [アセンブリとグローバル アセンブリ キャッシュの使用](working-with-assemblies-and-the-gac.md)
-- [方法: グローバルアセンブリキャッシュからアセンブリを削除する](how-to-remove-an-assembly-from-the-gac.md)
+- [方法: グローバル アセンブリ キャッシュからアセンブリを削除する](how-to-remove-an-assembly-from-the-gac.md)
 - [Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](../tools/gacutil-exe-gac-tool.md)
 - [方法: 厳密な名前でアセンブリに署名する](../../standard/assembly/sign-strong-name.md)

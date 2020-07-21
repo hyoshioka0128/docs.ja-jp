@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 62efb546-c898-408f-af21-36e7c6fed217
 ms.openlocfilehash: 92513ed33e2afb785edbdd462ba7bc14923aa6b0
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70781142"
@@ -16,7 +16,7 @@ ms.locfileid: "70781142"
 2 つのシーケンスの差集合を返すには、<xref:System.Linq.Queryable.Except%2A> 演算子を使用します。  
   
 ## <a name="example"></a>例  
- この例で<xref:System.Linq.Queryable.Except%2A>は、を使用して、 `Customers`住んでいてもライブではない`Employees`すべての国/地域のシーケンスを返します。  
+ この例では、<xref:System.Linq.Queryable.Except%2A> を使用して、`Customers` は居住しているが `Employees` は居住していないすべての国/リージョンのシーケンスを返します。  
   
  [!code-csharp[DLinqQueryExamples#41](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#41)]
  [!code-vb[DLinqQueryExamples#41](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#41)]  

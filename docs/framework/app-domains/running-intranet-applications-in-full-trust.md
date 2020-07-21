@@ -1,17 +1,18 @@
 ---
 title: イントラネット アプリケーションの完全信頼での実行
+description: .NET 3.5 SP1 を使用して、イントラネット アプリケーションを完全信頼で実行します。 アプリケーションとそのライブラリ アセンブリを、ネットワーク共有から完全信頼アセンブリとして実行できます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - full trust, running intranet applications in
 - intranet applications, running in full trust
 - running intranet applications in full trust
 ms.assetid: ee13c0a8-ab02-49f7-b8fb-9eab16c6c4f0
-ms.openlocfilehash: c93f84dc53abbb86cbfc4ae36e9cdcbe0bd50273
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: f4fb3b61e434154b1c7252377c234aeff49f0227
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119758"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104593"
 ---
 # <a name="running-intranet-applications-in-full-trust"></a>イントラネット アプリケーションの完全信頼での実行
 
@@ -37,4 +38,4 @@ ms.locfileid: "73119758"
   
 ## <a name="see-also"></a>関連項目
 
-- [アセンブリを使用したプログラミング](../../standard/assembly/program.md)
+- [アセンブリを使用したプログラミング](../../standard/assembly/index.md)

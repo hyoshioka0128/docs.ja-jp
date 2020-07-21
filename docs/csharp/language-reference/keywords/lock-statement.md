@@ -1,20 +1,19 @@
 ---
 title: lock ステートメント - C# リファレンス
-ms.custom: seodec18
 description: C# lock ステートメントを使用し、共有リソースへのスレッド アクセスを同期します
-ms.date: 10/01/2018
+ms.date: 04/02/2020
 f1_keywords:
 - lock_CSharpKeyword
 - lock
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: 70fcd8041946f2b1db3b37de79318b87771ee676
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 6e9a6975977588ba7692c925d7940cd2ec26671f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168776"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406691"
 ---
 # <a name="lock-statement-c-reference"></a>lock ステートメント (C# リファレンス)
 
@@ -49,7 +48,7 @@ finally
 
 `lock` ステートメントの本文で [await](../operators/await.md) 演算子を使用することはできません。
 
-## <a name="remarks"></a>解説
+## <a name="guidelines"></a>ガイドライン
 
 共有リソースへのスレッド アクセスを同期する場合、専用オブジェクト インスタンス (`private readonly object balanceLock = new object();` など) またはコードの関連のない部分によってロック オブジェクトとして使用される可能性がない別のインスタンスをロックします。 異なる共有リソースに対して同じロック オブジェクト インスタンスを使用することは避けてください。デッドロックやロックの競合が発生する可能性があります。 特に、以下をロック オブジェクトとして使用しないでください。
 
@@ -57,11 +56,13 @@ finally
 - <xref:System.Type> インスタンス。[typeof](../operators/type-testing-and-cast.md#typeof-operator) 演算子またはリフレクションによって取得される可能性があります。
 - 文字列リテラルを含む文字列インスタンス。[インターン処理](/dotnet/api/system.string.intern#remarks)される可能性があります。
 
+ロックの競合を減らすために、できるだけ短い時間ロックを保持します。
+
 ## <a name="example"></a>例
 
 次の例では、専用 `balanceLock` インスタンスをロックすることでそのプライベート `balance` フィールドへのアクセスを同期する `Account` クラスが定義されます。 ロッキングに同じインスタンスを使用すると、2 つのスレッドが `Debit` または `Credit` メソッドを同時に呼び出すことによって `balance` フィールドを同時に更新することができなくなります。
 
-[!code-csharp[lock-statement-example](~/samples/snippets/csharp/keywords/LockStatementExample.cs)]
+[!code-csharp[lock-statement-example](snippets/LockStatementExample.cs)]
 
 ## <a name="c-language-specification"></a>C# 言語仕様
 
@@ -69,9 +70,9 @@ finally
 
 ## <a name="see-also"></a>関連項目
 
+- [C# リファレンス](../index.md)
+- [C# キーワード](index.md)
 - <xref:System.Threading.Monitor?displayProperty=nameWithType>
 - <xref:System.Threading.SpinLock?displayProperty=nameWithType>
 - <xref:System.Threading.Interlocked?displayProperty=nameWithType>
-- [C# リファレンス](../index.md)
-- [C# キーワード](index.md)
 - [同期プリミティブの概要](../../../standard/threading/overview-of-synchronization-primitives.md)

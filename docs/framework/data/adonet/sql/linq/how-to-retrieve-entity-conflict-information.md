@@ -7,13 +7,13 @@ dev_langs:
 ms.assetid: 9a02b608-e7bb-4041-a452-a7fed26fd008
 ms.openlocfilehash: 766ede90b14f07e2799c2715daf62aaeeeaa83f4
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70782241"
 ---
 # <a name="how-to-retrieve-entity-conflict-information"></a>方法: エンティティの競合情報を取得する
-<xref:System.Data.Linq.ObjectChangeConflict> クラスのオブジェクトを使用して、<xref:System.Data.Linq.ChangeConflictException> 例外によって発生する競合に関する情報を提供できます。 詳細については[、「オプティミスティック同時実行制御」を参照してください。概要](optimistic-concurrency-overview.md)。  
+<xref:System.Data.Linq.ObjectChangeConflict> クラスのオブジェクトを使用して、<xref:System.Data.Linq.ChangeConflictException> 例外によって発生する競合に関する情報を提供できます。 詳しくは、「[オプティミスティック コンカレンシー: 概要)](optimistic-concurrency-overview.md) の下のステートメントを右クリックします。  
   
 ## <a name="example"></a>例  
  次の例では、累積した競合のリストを反復処理します。  

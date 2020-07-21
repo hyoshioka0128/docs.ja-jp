@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: 96834ee4-a5fc-4dd0-9948-b9bbc9437a5c
 ms.openlocfilehash: 70294aff4c40bd5ae14b61e6a847155a10d675a1
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61785711"
 ---
 # <a name="imaging-how-to-topics"></a>イメージングに関する「方法」トピック
-このセクションのトピックでは、使用する方法を示します[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]を表示またはビットマップ イメージを変更するためにします。  
+このセクションのトピックでは、ビットマップ イメージの表示または変更に [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] を使用する方法を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [XAML で BitmapImage を使用する](how-to-use-a-bitmapimage.md)  
@@ -36,7 +36,7 @@ ms.locfileid: "61785711"
  [ビットマップにメタデータを書き込む](how-to-write-metadata-to-a-bitmap.md)  
  [ビットマップからメタデータを読み取る](how-to-read-metadata-from-a-bitmap.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Image>  
   
  <xref:System.Windows.Media.Imaging.BitmapImage>  

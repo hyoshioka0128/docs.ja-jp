@@ -1,13 +1,13 @@
 ---
-title: ファイル、Textwriter、および XmlWriters3 へのシリアル化
+title: ファイル、TextWriter、および XmlWriter へのシリアル化 3
 ms.date: 07/20/2015
 ms.assetid: 7a0c24df-79ef-41a0-87f5-e6cf79382da9
-ms.openlocfilehash: 63577d955da89fde0a2320b4cf84414ccbb69c84
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: d8b929ef02b8fd9c6a9f29ea997a754699a6e1c4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786790"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403564"
 ---
 # <a name="serializing-to-files-textwriters-and-xmlwriters"></a>ファイル、TextWriter、および XmlWriter へのシリアル化
 
@@ -33,4 +33,4 @@ XML ツリーは、<xref:System.IO.File>、<xref:System.IO.TextWriter>、また�
 
 ## <a name="see-also"></a>関連項目
 
-- [シリアル化する XML ツリー (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)
+- [XML ツリーのシリアル化 (Visual Basic)](serializing-xml-trees.md)

@@ -2,12 +2,12 @@
 title: 署名または暗号化、あるいはその両方が行われたカスタム ヘッダーの作成
 ms.date: 03/30/2017
 ms.assetid: e8668b37-c79f-4714-9de5-afcb88b9ff02
-ms.openlocfilehash: d737647f8c0442a3d6fa0d077a1ffe2c251ea043
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 0adb4100bca1add2c23ff2c802ddb5e2cb1c368c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856176"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579659"
 ---
 # <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>署名または暗号化、あるいはその両方が行われたカスタム ヘッダーの作成
 WCF クライアントを使用して WCF 以外のサービスを呼び出す場合、状況によっては、カスタム SOAP ヘッダーが必要です。 WCF には正規化のバグがあり、署名および暗号化されたカスタム ヘッダーは、WCF 以外のサービスで使用できません。 この問題は、既定の XML 名前空間に対する正規化の誤りが原因で発生します。 この問題が生じるのは、署名または暗号化、あるいはその両方が行われたカスタム ヘッダーを持つ、WCF 以外のサービスを呼び出す場合のみです。  サービスは、受信したメッセージに署名または暗号化、あるいはその両方が行われたカスタム ヘッダーが含まれている場合、署名を検証できません。 この回避策では正規化のバグを回避し、WCF 以外のサービスとの相互運用が可能になりますが、WCF サービスとの相互運用性は妨げられません。  
@@ -58,6 +58,6 @@ public  class MyMessageContract
   
 ## <a name="see-also"></a>関連項目
 
-- [既定のメッセージ コントラクト](../../../../docs/framework/wcf/samples/default-message-contract.md)
-- [メッセージ コントラクト](../../../../docs/framework/wcf/samples/message-contracts.md)
-- [メッセージ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-message-contracts.md)
+- [既定のメッセージ コントラクト](../samples/default-message-contract.md)
+- [メッセージ コントラクト](../samples/message-contracts.md)
+- [メッセージ コントラクトの使用](using-message-contracts.md)

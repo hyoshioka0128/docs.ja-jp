@@ -3,13 +3,13 @@ title: Azure Event Grid - サーバーレス アプリ
 description: Azure Event Grid は、イベント単位の従量課金モデルで信頼性の高いイベント配信と大規模なルーティングを実現するサーバーレス ソリューションです。
 author: JEREMYLIKNESS
 ms.author: jeliknes
-ms.date: 06/26/2018
-ms.openlocfilehash: 3c577139c12567e762aabd58c9dc29457fa37aa1
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 04/06/2020
+ms.openlocfilehash: 408e1b9cd1b1e5316c7c6a17bb1b0c76a38f9e11
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "72522718"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135712"
 ---
 # <a name="event-grid"></a>Event Grid
 
@@ -132,14 +132,12 @@ Event Grid を使用する主な利点は、Azure によって生成される自
 - [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps)
 - [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging)
 - [Azure Table Storage](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
-- [Functions 1.x と 2.x の比較](https://docs.microsoft.com/azure/azure-functions/functions-versions)
 - [Azure のオンプレミス データ ゲートウェイを使用してオンプレミスのデータ ソースに接続する](https://docs.microsoft.com/azure/analysis-services/analysis-services-gateway)
 - [Azure portal で初めての関数を作成する](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function)
 - [Azure CLI での初めての関数の作成](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli)
 - [Visual Studio での初めての関数の作成](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)
 - [Functions でサポートされる言語](https://docs.microsoft.com/azure/azure-functions/supported-languages)
 - [Azure Functions の監視](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
-- [Azure Functions プロキシの操作](https://docs.microsoft.com/azure/azure-functions/functions-proxies)
 
 >[!div class="step-by-step"]
 >[前へ](logic-apps.md)

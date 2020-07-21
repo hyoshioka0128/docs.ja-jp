@@ -1,17 +1,15 @@
 ---
 title: CLR のアクティブ化に関する問題をデバッグする方法
+description: .NET で共通言語ランタイム (CLR) のアクティブ化に関する問題をデバッグする方法を説明します。 CLR アクティベーション ログを表示してデバッグします。これは、根本原因の特定に役立つ場合があります。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR activation, debugging issues
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2bed01a74c5b3338df958a3e178c06602bd69866
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: HT
+ms.openlocfilehash: 5215e82aebf93fa8d6d1937563ab348126a01d97
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052118"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622615"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>CLR のアクティブ化に関する問題をデバッグする方法
 

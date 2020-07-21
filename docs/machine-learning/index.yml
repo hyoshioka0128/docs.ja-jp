@@ -11,10 +11,10 @@ metadata:
   ms.author: nakersha
   ms.date: 10/30/2019
   ms.openlocfilehash: 05d357af2088321524841bfc05f94f816f1bc306
-  ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 11/01/2019
+  ms.lasthandoff: 03/15/2020
   ms.locfileid: "73423940"
 landingContent:
 - title: ML.NET の基礎
@@ -67,7 +67,7 @@ landingContent:
       url: tutorials/time-series-demand-forecasting.md
     - text: 映画の推奨機能を構築する (API)
       url: tutorials/movie-recommendation.md
-- title: 使い方ガイド
+- title: 操作方法ガイド
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -83,7 +83,7 @@ landingContent:
       url: how-to-guides/save-load-machine-learning-models-ml-net.md
     - text: モデルを再トレーニングする
       url: how-to-guides/retrain-model-ml-net.md
-- title: 関連項目
+- title: リファレンス
   linkLists:
   - linkListType: reference
     links:

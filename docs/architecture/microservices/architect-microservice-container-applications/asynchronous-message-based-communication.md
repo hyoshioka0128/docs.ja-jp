@@ -2,12 +2,12 @@
 title: メッセージベースの非同期通信
 description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | メッセージベースの非同期通信はマイクロサービスにとって極めて重要な概念です。マイクロサービス間の独立性を維持し、同時に、最終的には同期させる最良の方法であるためです。'
 ms.date: 09/20/2018
-ms.openlocfilehash: 84eaf70178cce91a86dae8a55badb0b4ddd6a7c1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a8af94540a7906c474b9b784c28aa60ebae0a6e3
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454234"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306969"
 ---
 # <a name="asynchronous-message-based-communication"></a>メッセージベースの非同期通信
 
@@ -35,7 +35,7 @@ ms.locfileid: "73454234"
 
 **図 4-18**. 非同期メッセージを受信する 1 つのマイクロサービス
 
-クライアント アプリケーションからコマンドが届くと、それらのコマンドは HTTP 同期コマンドとして実装できることに注意してください。 メッセージベースのコマンドを使用する必要があるのは、高いスケーラビリティが必要な場合、またはメッセージベースのビジネス プロセスを既に使用している場合です。
+クライアント アプリケーションからコマンドが届くと、それらのコマンドは HTTP 同期コマンドとして実装できます。 メッセージベースのコマンドは、高いスケーラビリティが必要な場合、またはメッセージベースのビジネス プロセスを既に使用している場合に使用します。
 
 ## <a name="multiple-receivers-message-based-communication"></a>複数受信者メッセージベースの通信
 
@@ -57,7 +57,7 @@ ms.locfileid: "73454234"
 
 **図 4-19** 非同期イベントドリブン メッセージ通信
 
-非同期イベント駆動型の通信では、1 つのマイクロサービスがイベントをイベント バスに発行し、たくさんのマイクロサービスがそれをサブスクライブし、通知を受け、対処できます。 ご使用の実装によって、イベントドリブンのメッセージベース通信で使用されるプロトコルが決まります。 [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) は、キューにある通信の信頼性を向上できます。
+非同期イベントドリブン通信では、1 つのマイクロサービスがイベントをイベント バスに発行します。多くのマイクロサービスは、それにサブスクライブして、それに関する通知を受けたり、それを処理したりすることができます。 ご使用の実装によって、イベントドリブンのメッセージベース通信で使用されるプロトコルが決まります。 [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) は、キューにある通信の信頼性を向上できます。
 
 イベント バスを使用する場合は、関連する実装に基づき、クラスにおいて抽象化レベル (イベント バス インターフェイスなど) を使用することができます。[RabbitMQ](https://www.rabbitmq.com/) のようなメッセージ ブローカーまたは「[Azure Service Bus with Topics](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)」(Azure Service Bus トピック) で説明したサービス バスの API をコードで使用します。 または、NServiceBus、MassTransit、Brighter のような高レベルのサービス バスを使用して、イベント バスとパブリッシュ/サブスクライブ システムを統合することもできます。
 
@@ -79,7 +79,7 @@ ms.locfileid: "73454234"
 
 - [送信トレイ パターン](https://www.kamilgrzybek.com/design/the-outbox-pattern/)を使用します。これは、イベントを作成してパブリッシュするイベントクリエーター コンポーネントの基盤となる、メッセージ キューとしてのトランザクション データベース テーブルです。
 
-非同期通信を使用する際に考慮する必要がある他のトピックは、メッセージのべき等性とメッセージの重複除去です。 これらのトピックについては、このガイドで後から説明する「[Implementing event-based communication between microservices (integration events)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md)」(マイクロサービス (統合イベント) 間でのイベントベース通信の実装) をご覧ください。
+非同期通信を使用する際に考慮する必要がある他のトピックは、メッセージのべき等性とメッセージの重複除去です。 これらのトピックについては、このガイドで後から説明する「[マイクロサービス間でイベント ベースの通信を実装する (統合イベント)](../multi-container-microservice-net-applications/integration-event-based-microservice-communications.md)」をご覧ください。
 
 ## <a name="additional-resources"></a>その他の技術情報
 
@@ -90,7 +90,7 @@ ms.locfileid: "73454234"
   <https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html>
 
 - **Udi Dahan。CQRS の明確化** \
-  <http://udidahan.com/2009/12/09/clarified-cqrs/>
+  <https://udidahan.com/2009/12/09/clarified-cqrs/>
 
 - **コマンド クエリ責務分離 (CQRS)**  \
   <https://docs.microsoft.com/azure/architecture/patterns/cqrs>

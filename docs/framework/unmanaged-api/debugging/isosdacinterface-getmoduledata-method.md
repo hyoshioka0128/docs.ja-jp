@@ -1,5 +1,5 @@
 ---
-title: ISOSDacInterface::GetModuleData メソッド
+title: 'ISOSDacInterface:: GetModuleData メソッド'
 ms.date: 02/01/2019
 api.name:
 - ISOSDacInterface::GetModuleData Method
@@ -15,14 +15,14 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 97b297def9fba329ff6d9573f7b2e7cc811273f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b302100eb6cbfa83896cd358762c496ea01f7509
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764722"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420982"
 ---
-# <a name="isosdacinterfacegetmoduledata-method"></a>ISOSDacInterface::GetModuleData メソッド
+# <a name="isosdacinterfacegetmoduledata-method"></a>ISOSDacInterface:: GetModuleData メソッド
 
 指定したアドレスに読み込まれたモジュールに対応するデータをフェッチします。
 
@@ -40,21 +40,21 @@ HRESULT GetModuleData(
 ## <a name="parameters"></a>パラメーター
 
 `moduleAddr`\
-[in]情報を取得するモジュールのアドレス。
+から情報を取得するモジュールのアドレス。
 
 `data`\
-[out][DacpModuleData 構造](dacpmoduledata-structure.md)読み込まれたモジュールの情報を保持します。
+入出力読み込まれたモジュールの情報を保持する[Dacpmoduledata 構造体](dacpmoduledata-structure.md)。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-指定されたメソッドは、`ISOSDacInterface`インターフェイスし、仮想メソッド テーブルの 13 のスロットに対応しています。
+指定されたメソッドはインターフェイスの一部で `ISOSDacInterface` あり、仮想メソッドテーブルの14番目のスロットに対応します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
-**ヘッダー:** なし  
-**ライブラリ:** なし  
-**.NET Framework のバージョン:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
+**ヘッダー:** 存在  
+**ライブラリ:** 存在  
+**.NET Framework のバージョン:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,13 +1,14 @@
 ---
 title: Windows Workflow のアーキテクチャ
+description: Windows Workflow Foundation は、フロー制御、例外処理、およびその他の機能を備えた環境で実行される作業単位をアクティビティとしてカプセル化します。
 ms.date: 03/30/2017
 ms.assetid: 1d4c6495-d64a-46d0-896a-3a01fac90aa9
-ms.openlocfilehash: e2effc0f53153057b8a9034e4dc80cb19bbe7685
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 22ebeb7d95342ad6843e0721da8b213ed4a4d9b6
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834858"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420137"
 ---
 # <a name="windows-workflow-architecture"></a>Windows Workflow のアーキテクチャ
 Windows Workflow Foundation (WF) は、実行時間の長い対話型アプリケーションを開発するための抽象化レベルを上げます。 作業単位はアクティビティとしてカプセル化されます。 アクティビティが実行される環境には、フロー制御、例外処理、エラー伝達、状態データの永続化、動作中のワークフローのメモリへの読み込みやアンロード、追跡、トランザクション フローに対応する機能が備わっています。  
@@ -43,10 +44,10 @@ xmlns="http://schemas.microsoft.com/2009/workflow">
 ## <a name="activity-life-cycle"></a>アクティビティ ライフ サイクル  
  アクティビティのインスタンスは <xref:System.Activities.ActivityInstanceState.Executing> 状態で開始します。 例外が検出された場合を除き、すべての子アクティビティが実行を終了し、他の保留中の作業 (<xref:System.Activities.Bookmark> オブジェクトなど) が完了するまでこの状態が維持されてから、<xref:System.Activities.ActivityInstanceState.Closed> 状態に移行します。 アクティビティ インスタンスの親は子にキャンセルを要求できます。子がキャンセル可能な場合、子は <xref:System.Activities.ActivityInstanceState.Canceled> 状態で完了します。 実行中に例外がスローされた場合は、ランタイムはアクティビティを <xref:System.Activities.ActivityInstanceState.Faulted> 状態にし、アクティビティの親チェーンの上方向へ例外を伝達します。 アクティビティの3つの完了状態を次に示します。
   
-- **開閉**アクティビティは作業を完了し、終了しました。  
+- **終了:** アクティビティは作業を完了し、終了しました。  
   
-- **Canceled**アクティビティは正常に作業を破棄し、終了しました。 この状態に移行した場合、作業は明示的にロール バックされません。  
+- **取り消されました:** アクティビティは正常に作業を破棄し、終了しました。 この状態に移行した場合、作業は明示的にロール バックされません。  
   
-- **発生**アクティビティでエラーが発生し、作業を完了せずに終了しました。  
+- **エラー:** アクティビティでエラーが発生し、作業を完了せずに終了しました。  
   
  アクティビティは、永続化またはアンロードされても <xref:System.Activities.ActivityInstanceState.Executing> 状態を維持します。

@@ -2,17 +2,17 @@
 title: プログラミング ガイド
 ms.date: 03/30/2017
 ms.assetid: ed1012d4-3ff2-4877-af27-93125c4180ea
-ms.openlocfilehash: c33c7749599de0450a9f969e5802485d154a61e1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 542567cf07e86b642a23a879fa6e5476253005b8
+ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781257"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78848939"
 ---
 # <a name="programming-guide"></a>プログラミング ガイド
-ここでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のオブジェクト モデルを作成および使用する方法について説明します。 Visual Studio を使用している場合は、同じタスクの多くを実行するためにオブジェクトリレーショナルデザイナーを使用することもできます。  
+ここでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のオブジェクト モデルを作成および使用する方法について説明します。 Visual Studio を使用している場合は、オブジェクト リレーショナル デザイナーを使用して、これらの同じタスクの多くを実行することもできます。  
   
- また、特定の問題について Microsoft Docs を検索したり、 [LINQ フォーラム](https://go.microsoft.com/fwlink/?LinkId=76488)に参加したりすることもできます。このトピックでは、より複雑なトピックについて、専門家に詳しく説明します。 最後に、「 [LINQ to SQL: リレーショナルデータに対する .net 統合言語クエリ](https://go.microsoft.com/fwlink/?LinkId=93205)」ホワイト[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]ペーパーでは、Visual Basic とC#コード例を使用したテクノロジについて詳しく説明しています。  
+ 特定の問題について Microsoft Docs を検索したり、[LINQ フォーラム](https://social.msdn.microsoft.com/forums/home?forum=linqtosql)に参加して、複雑なトピックについて専門家と検討したりすることもできます。 最後に、「[LINQ to SQL: リレーショナル データ用 .NET 統合言語クエリ](https://docs.microsoft.com/previous-versions/dotnet/articles/bb425822(v=msdn.10))」ホワイト ペーパーには、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] テクノロジの詳細と、Visual Basic および C# のコード例が記載されています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [オブジェクト モデルの作成](creating-the-object-model.md)  
@@ -40,8 +40,8 @@ ms.locfileid: "70781257"
  [ストアド プロシージャ](stored-procedures.md)  
  ストアド プロシージャの使用手順のトピックへのリンクを示します。  
   
- [LINQ (C#) の概要](../../../../../csharp/programming-guide/concepts/linq/index.md)  
- を使用C#した LINQ to SQL の学習を開始するのに役立つリソースを提供します。
+ [LINQ の概要 (C#)](../../../../../csharp/programming-guide/concepts/linq/index.md)  
+ C# を使用して LINQ to SQL に関する学習を始めるときに役立つリソースを示します。
 
  [LINQ の概要 (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)  
- Visual Basic を使用した LINQ to SQL の学習を開始するのに役立つリソースを提供します。
+ Visual Basic を使用して LINQ to SQL に関する学習を始めるときに役立つリソースを示します。

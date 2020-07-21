@@ -1,21 +1,20 @@
 ---
 title: XML ドキュメントでの名前空間の管理
+description: XML ドキュメントで名前空間を管理する方法について説明します。 XML 名前空間は、XML ドキュメントの要素名と属性名をカスタムの定義済み URI に関連付けます。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3befdd0ec96856a62e5c3c603935303498758710
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 3a3abd2e932b1afecab85e285b0e2c42eb1eb20f
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423923"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769263"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>XML ドキュメントでの名前空間の管理
 XML 名前空間は、XML ドキュメントの要素名と属性名をカスタムの定義済み URI に関連付けます。 この関係を作成するには、名前空間 URI のプレフィックスを定義し、そのプレフィックスを使用して XML データ内の要素名と属性名を修飾します。 名前空間は要素名や属性名の競合を防ぎ、同じ名前の要素や属性を個別に処理および評価できるようにします。  
   
-<a name="declare"></a>   
+<a name="declare"></a>
 ## <a name="declaring-namespaces"></a>名前空間の宣言  
  要素で名前空間を宣言するには、`xmlns:` 属性を使用します。  
   
@@ -27,12 +26,13 @@ XML 名前空間は、XML ドキュメントの要素名と属性名をカスタ
   
 ```xml  
 <mybook:BOOK xmlns:mybook="http://www.contoso.com/books.dtd">  
-<bb:BOOK xmlns:bb="urn:blueyonderairlines">  
+<bb:BOOK xmlns:bb="urn:blueyonderairlines" />
+</mybook>
 ```  
   
  ある要素が特定の名前空間の一部であることを指定するには、名前空間プレフィックスをその要素に追加します。 たとえば、`Author` 要素が `mybook` 名前空間に属する場合は、`<mybook:Author>` として宣言されます。  
   
-<a name="scope"></a>   
+<a name="scope"></a>
 ## <a name="declaration-scope"></a>宣言のスコープ  
  名前空間の有効な範囲は、宣言された位置から、宣言された要素の最後までです。 この例では、`BOOK` 要素で定義されている名前空間は、`BOOK` 要素など、`Publisher` 要素の外側にある要素には適用されません。  
   
@@ -55,6 +55,8 @@ XML 名前空間は、XML ドキュメントの要素名と属性名をカスタ
   
 ```xml  
 <BOOK xmlns="http://www.contoso.com/books.dtd">  
+...
+</BOOK>
 ```  
   
 ## <a name="managing-namespaces"></a>名前空間の管理  
@@ -67,7 +69,7 @@ XML 名前空間は、XML ドキュメントの要素名と属性名をカスタ
   
  <xref:System.Xml.XmlNamespaceManager> クラスを使用して実行できる管理タスクと検索タスクをいくつか次に示します。 使用例を含む詳細については、各メソッドまたはプロパティのリファレンス ページへのリンクをクリックしてください。  
   
-|終了|上限のファイル数を変更するには、|  
+|終了|使用|  
 |--------|---------|  
 |名前空間を追加する|<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A> メソッド|  
 |名前空間を削除する|<xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A> メソッド|  
@@ -82,4 +84,4 @@ XML 名前空間は、XML ドキュメントの要素名と属性名をカスタ
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Xml.XmlNamespaceManager>
-- [XML ドキュメントと XML データ](../../../../docs/standard/data/xml/index.md)
+- [XML ドキュメントと XML データ](index.md)

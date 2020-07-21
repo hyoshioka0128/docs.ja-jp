@@ -12,42 +12,42 @@ helpviewer_keywords:
 - True keyword [Visual Basic]
 - Boolean values [Visual Basic], True keyword
 ms.assetid: 4858e630-4813-4216-a55e-f4d0feb884e4
-ms.openlocfilehash: 5d05514207c5d07e81aab897f40f728570f6bd87
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 851c524a83c5f24b77a151634a96798249c5905e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347842"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374422"
 ---
-# <a name="boolean-data-type-visual-basic"></a>Boolean データ型 (Visual Basic)
+# <a name="boolean-data-type-visual-basic"></a>ブール型 (Boolean) (Visual Basic)
 
-`True` または `False`のみ可能な値を保持します。 キーワード `True` と `False` は `Boolean` 変数の2つの状態に対応しています。  
+`True` または `False` のみ可能な値を保持します。 キーワード `True` と `False` は `Boolean` 変数の 2 つの状態に対応しています。  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 
- [Boolean データ型 (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) を使用して、true/false、yes/no、on/off などの 2 つの状態の値を格納します。  
+ [ブール データ型 (Visual Basic)](boolean-data-type.md) を使用して、true/false、yes/no、on/off などの 2 つの状態の値を格納します。  
   
- `Boolean` の既定値は `False` です。  
+ `Boolean` の既定値は `False`です。  
   
- `Boolean` 値は数値として格納されず、格納されている値は数値と等価であるとは見なされません。 `True` と `False`の等価の数値に依存するコードを記述することは避けてください。 可能な限り、`Boolean` 変数の使用は、設計対象の論理値に制限する必要があります。  
+ `Boolean` 値は数値として格納されず、格納された値は数値と等価であると見なされません。 `True` と `False` に対して等価の数値に依存するコードを記述することは避けてください。 可能な限り、`Boolean` 変数には、仕様で定められている論理値以外の値を使用しないようにしてください。  
   
 ## <a name="type-conversions"></a>型変換  
 
- Visual Basic 数値データ型の値を `Boolean`に変換する場合、0は `False` になり、その他のすべての値は `True`になります。 `Boolean` 値を数値型に変換 Visual Basic 場合、`False` は0になり、`True` は-1 になります。  
+ Visual Basic で数値データ型の値を `Boolean` に変換すると、0 は `False` になり、その他のすべての値は `True` になります。 Visual Basic で `Boolean` 値を数値型に変換すると、`False` は 0 になり、`True` は -1 になります。  
   
- `Boolean` 値と数値データ型の間で変換を行う場合、.NET Framework の変換メソッドでは、必ずしも Visual Basic の変換キーワードと同じ結果が生成されないことに注意してください。 これは、Visual Basic 変換は、以前のバージョンと互換性のある動作を保持するためです。 詳細については、「[データ型のトラブルシューティング](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)」の「ブール型が数値型に正しく変換されない」を参照してください。  
+ `Boolean` 値と数値データ型の間で変換を行う場合、.NET Framework の変換メソッドでは、必ずしも Visual Basic の変換キーワードと同じ結果が生成されないことに注意してください。 これは、Visual Basic の変換では、以前のバージョンと互換性のある動作が保持されているためです。 詳細については、「[データ型のトラブルシューティング](../../programming-guide/language-features/data-types/troubleshooting-data-types.md)」の「Boolean Type Does Not Convert to Numeric Type Accurately」(ブール型で数値型に正確に変換されない) を参照してください。  
   
 ## <a name="programming-tips"></a>プログラミングのヒント  
   
-- **負の数値。** `Boolean` は数値型ではなく、負の値を表すことはできません。 どのような場合でも、`Boolean` を使用して数値を保持しないでください。  
+- **負の数値。** `Boolean` は数値型ではなく、負の値を表すことはできません。 いかなる場合でも、`Boolean` を使用して数値を保持しないでください。  
   
-- **文字を入力します。** `Boolean` には、リテラルの型文字または識別子の型文字がありません。  
+- **型文字。** `Boolean` には、リテラルの型文字も識別子の型文字も含まれません。  
   
-- **フレームワークの種類。** .NET Framework において対応する型は、<xref:System.Boolean?displayProperty=nameWithType> 構造体です。  
+- **Framework の型。** .NET Framework において対応する型は、<xref:System.Boolean?displayProperty=nameWithType> 構造体です。  
   
 ## <a name="example"></a>例  
 
- 次の例では、`runningVB` は、単純な yes/no 設定を格納する `Boolean` 変数です。  
+ 次の例で、`runningVB` は、シンプルな yes/no 設定を格納する `Boolean` 変数です。  
   
 ```vb  
 Dim runningVB As Boolean  
@@ -57,12 +57,12 @@ If scriptEngine = "VB" Then
 End If  
 ```  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Boolean?displayProperty=nameWithType>
-- [データの種類](../../../visual-basic/language-reference/data-types/index.md)
-- [CString](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [変換の概要](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [データ型の有効な使用方法](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
-- [トラブルシューティング (データ型)](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [CType Function](../../../visual-basic/language-reference/functions/ctype-function.md)
+- [データの種類](index.md)
+- [データ型変換関数](../functions/type-conversion-functions.md)
+- [変換の概要](../keywords/conversion-summary.md)
+- [データ型の有効な使用方法](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [トラブルシューティング (データ型)](../../programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [CType 関数](../functions/ctype-function.md)

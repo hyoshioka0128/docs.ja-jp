@@ -1,5 +1,6 @@
 ---
 title: 基本的なシリアル化
+description: この記事では、SerializableAttribute でクラスをシリアル化できるようにする方法について説明し、シリアル化と逆シリアル化の例を紹介します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - binary serialization, basic serialization
@@ -7,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d899d43c-335a-433e-a589-cd187192984f
 dev_langs:
 - CSharp
-ms.openlocfilehash: 9a7cdd0b9e5bd12d5730d92f39c2432bdc84a18e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 98ea6f23467b85dc270aa323e72a8a9b0934994a
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795032"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378424"
 ---
 # <a name="basic-serialization"></a>基本的なシリアル化
 
@@ -65,12 +66,10 @@ Console.WriteLine("str: {0}", obj.str);
 ```xml  
 <SOAP-ENV:Envelope  
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"   
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  
   xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"  
-  SOAP-ENV:encodingStyle=  
-  "http://schemas.microsoft.com/soap/encoding/clr/1.0"  
-  "http://schemas.xmlsoap.org/soap/encoding/"  
+  SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"  
   xmlns:a1="http://schemas.microsoft.com/clr/assem/ToFile">  
   
   <SOAP-ENV:Body>  
@@ -86,7 +85,7 @@ Console.WriteLine("str: {0}", obj.str);
 [Serializable](xref:System.SerializableAttribute) 属性は継承できないことに注意してください。 `MyObject` から新しいクラスを派生させる場合は、その新しいクラスもこの属性でマークする必要があります。マークしないと、このクラスをシリアル化できません。 たとえば、次に示すクラスのインスタンスをシリアル化しようとすると、`MyStuff` 型がシリアル化可能としてマークされていないことを通知する <xref:System.Runtime.Serialization.SerializationException> が表示されます。  
   
 ```csharp  
-public class MyStuff : MyObject   
+public class MyStuff : MyObject
 {  
   public int n3;  
 }  

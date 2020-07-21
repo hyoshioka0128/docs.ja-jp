@@ -1,5 +1,6 @@
 ---
 title: ネットワークのトレースの有効化
+description: .NET Framework でマネージド アプリケーションに対するメソッド呼び出しおよびネットワーク トラフィックについての情報を提供する、ネットワークのトレースを有効にする方法について学習します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - trace destinations
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-ms.openlocfilehash: 62a24e45339b93af2c62db440f0611f16705116d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4ad0b23fc93ddcdc11cebcc556d12148df5e8ae2
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048536"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502601"
 ---
 # <a name="enabling-network-tracing"></a>ネットワークのトレースの有効化
 ネットワークのトレースでは、メソッド呼び出しについての情報、およびマネージド アプリケーションによって生成されるネットワーク トラフィックについての情報にアクセスできます。 アプリケーションでネットワーク トレースを有効にするには、次のタスクを実行する必要があります。  
@@ -40,7 +41,7 @@ ms.locfileid: "71048536"
   <trace autoflush="true" indentsize="4">  
     <listeners>  
       <add name="file" type="System.Diagnostics.TextWriterTraceListener" initializeData="trace.log"/>  
-    </listeners>   
+    </listeners>
   </trace>  
 </system.diagnostics>  
 ```  

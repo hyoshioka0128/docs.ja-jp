@@ -2,16 +2,16 @@
 title: MSMQ アクティベーション
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: be33e3d9377c30058c7a2ee06543c11f10251ebd
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 0dbd24a612d56c0fe88066f625be2a8369b7df5b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714771"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602541"
 ---
 # <a name="msmq-activation"></a>MSMQ アクティベーション
 
-このサンプルでは、メッセージ キューから読み取ったアプリケーションを、Windows プロセス アクティブ化サービス (WAS) でホストする方法を示します。 このサンプルでは、`netMsmqBinding` を使用し、[双方向の通信](../../../../docs/framework/wcf/samples/two-way-communication.md)のサンプルに基づいています。 この場合、サービスは Web ホスト アプリケーションの 1 つであり、クライアントは自己ホスト型です。クライアントはコンソールに出力して、送信された発注書のステータスを確認します。
+このサンプルでは、メッセージ キューから読み取ったアプリケーションを、Windows プロセス アクティブ化サービス (WAS) でホストする方法を示します。 このサンプルでは、を使用し、 `netMsmqBinding` [双方向の通信](two-way-communication.md)サンプルに基づいています。 この場合、サービスは Web ホスト アプリケーションの 1 つであり、クライアントは自己ホスト型です。クライアントはコンソールに出力して、送信された発注書のステータスを確認します。
 
 > [!NOTE]
 > このサンプルのセットアップ手順とビルド手順については、このトピックの最後を参照してください。
@@ -19,13 +19,13 @@ ms.locfileid: "74714771"
 > [!NOTE]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。
 >
-> \<InstallDrive >:\ WF_WCF_Samples
+> \<InstallDrive>: \ WF_WCF_Samples
 >
-> このディレクトリが存在しない場合は、 [.NET Framework 4 の Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプル](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WCF と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] のサンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。
+> このディレクトリが存在しない場合は、 [.NET Framework 4 の Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプル](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WCF とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。
 >
-> \<InstallDrive >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
+> \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
 
-Windows プロセス アクティブ化サービス (WAS) は [!INCLUDE[lserver](../../../../includes/lserver-md.md)] の新しいプロセス アクティブ化機構です。WAS は、以前は HTTP ベースのアプリケーションでのみ使用できた IIS のような機能を、HTTP 以外のプロトコルを使用するアプリケーションに提供します。 Windows Communication Foundation (WCF) は、リスナーアダプターインターフェイスを使用して、WCF でサポートされている HTTP 以外のプロトコル (TCP、名前付きパイプ、MSMQ など) を介して受信されるアクティブ化要求を伝達します。 HTTP 以外のプロトコルを介して要求を受信する機能は、SMSvcHost.exe で実行されるマネージド Windows サービスによってホストされます。
+Windows プロセスアクティブ化サービス (WAS) は、Windows Server 2008 用の新しいプロセスアクティブ化機構であり、以前は HTTP ベースのアプリケーションのみが http 以外のプロトコルを使用するアプリケーションに対して使用できるようになった IIS に似た機能を提供しています。 Windows Communication Foundation (WCF) は、リスナーアダプターインターフェイスを使用して、WCF でサポートされている HTTP 以外のプロトコル (TCP、名前付きパイプ、MSMQ など) を介して受信されるアクティブ化要求を伝達します。 HTTP 以外のプロトコルを介して要求を受信する機能は、SMSvcHost.exe で実行されるマネージド Windows サービスによってホストされます。
 
 Net.Msmq リスナ アダプタ サービス (NetMsmqActivator) は、キュー内のメッセージに基づいてキューに置かれたアプリケーションをアクティブ化します。
 
@@ -214,33 +214,33 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
 1. WAS のアクティブ化に必要な IIS 7.0 がインストールされていることを確認します。
 
-2. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。 さらに、WCF 非 HTTP アクティブ化コンポーネントをインストールする必要があります。
+2. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。 さらに、WCF 非 HTTP アクティブ化コンポーネントをインストールする必要があります。
 
     1. **[スタート]** メニューの **[コントロール パネル]** をクリックします。
 
-    2. **[プログラムと機能]** を選択します。
+    2. [**プログラムと機能**] を選択します。
 
     3. [ **Windows の機能の有効化または無効化] を**クリックします。
 
-    4. **[機能の概要]** で、 **[機能の追加]** をクリックします。
+    4. [**機能の概要**] で、[**機能の追加**] をクリックします。
 
-    5. **[Microsoft .NET Framework 3.0]** ノードを展開し、 **[WINDOWS COMMUNICATION FOUNDATION の非 HTTP アクティブ化]** 機能をオンにします。
+    5. [ **Microsoft .NET Framework 3.0** ] ノードを展開し、[ **WINDOWS COMMUNICATION FOUNDATION の非 HTTP アクティブ化**] 機能をオンにします。
 
-3. ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。
+3. ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](building-the-samples.md)」の手順に従います。
 
 4. コマンド ウィンドウで client.exe を実行することにより、クライアントを実行します。 これによってキューが作成され、メッセージがそのキューに送信されます。 クライアントを実行しながら、メッセージを読み取るサービスの結果を表示します。
 
 5. MSMQ アクティベーション サービスは、既定では NETWORK SERVICE として動作します。 そのため、アプリケーションのアクティブ化に使用されるキューには、NETWORK SERVICE アカウントによる受信およびピーク権限が必要です。 この権限は、メッセージ キュー MMC を使用して追加できます。
 
-    1. **[スタート]** メニューの **[実行]** をクリックし、「`Compmgmt.msc`」と入力して、enter キーを押します。
+    1. [**スタート**] メニューの [**実行**] をクリックし、「」と入力して、 `Compmgmt.msc` enter キーを押します。
 
-    2. **[サービスとアプリケーション]** で、 **[メッセージキュー]** を展開します。
+    2. [**サービスとアプリケーション**] で、[**メッセージキュー**] を展開します。
 
-    3. **[専用キュー]** をクリックします。
+    3. [**専用キュー**] をクリックします。
 
-    4. キュー (servicemodelsamples/Service .svc) を右クリックし、 **[プロパティ]** を選択します。
+    4. キュー (servicemodelsamples/Service .svc) を右クリックし、[**プロパティ**] を選択します。
 
-    5. **セキュリティ** タブで **追加** をクリックし、ネットワークサービスに対して ピーク および 受信 アクセス許可を付与します。
+    5. [**セキュリティ**] タブで [**追加**] をクリックし、ネットワークサービスに対して [ピーク] および [受信] アクセス許可を付与します。
 
 6. MSMQ アクティブ化をサポートするよう Windows プロセス アクティブ化サービス (WAS) を設定します。
 
@@ -267,11 +267,11 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         > [!NOTE]
         > このコマンドはテキスト 1 行です。
 
-        このコマンドにより、`http://localhost/servicemodelsamples` と `net.msmq://localhost/servicemodelsamples`を使用して/servicemodelsamples アプリケーションにアクセスできるようになります。
+        このコマンドは、およびを使用して/servicemodelsamples アプリケーションにアクセスできるようにし `http://localhost/servicemodelsamples` `net.msmq://localhost/servicemodelsamples` ます。
 
-7. まだ確認していない場合は、MSMQ アクティベーション サービスが有効になっていることを確認します。 **[スタート]** メニューの **[実行]** をクリックし、「`Services.msc`」と入力します。 サービスの一覧で、 **Net.tcp リスナーアダプター**を検索します。 右クリックし、 **[プロパティ]** を選択します。 **[スタートアップの種類]** を **[自動]** に設定し、 **[適用]** をクリックして、 **[開始]** ボタンをクリックします。 この手順は、Net.Msmq リスナー アダプター サービスを初めて使用する前に 1 回だけ実行する必要があります。
+7. まだ確認していない場合は、MSMQ アクティベーション サービスが有効になっていることを確認します。 [**スタート**] メニューの [**実行**] をクリックし、「」と入力し `Services.msc` ます。 サービスの一覧で、 **Net.tcp リスナーアダプター**を検索します。 右クリックし、**[プロパティ]** を選択します。 [**スタートアップの種類**] を [**自動**] に設定し、[**適用**] をクリックして、[**開始**] ボタンをクリックします。 この手順は、Net.Msmq リスナー アダプター サービスを初めて使用する前に 1 回だけ実行する必要があります。
 
-8. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。 さらに、発注書を送信するときのキューの URI 内のコンピューター名を反映するように、発注書を送信するクライアントのコードを変更します。 次のコードを使用します。
+8. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](running-the-samples.md)」の手順に従います。 さらに、発注書を送信するときのキューの URI 内のコンピューター名を反映するように、発注書を送信するクライアントのコードを変更します。 次のコードを使用します。
 
     ```csharp
     client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");
@@ -329,7 +329,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
     1. Inetmgr.exe を実行します。
 
-    2. **[アプリケーションプール]** で、 **AppPool** (通常は**DefaultAppPool**) を右クリックし、 **[アプリケーションプールの既定値の設定]** を選択します。
+    2. [**アプリケーションプール**] で、 **AppPool** (通常は**DefaultAppPool**) を右クリックし、[**アプリケーションプールの既定値の設定**] を選択します。
 
     3. 特定のユーザー アカウントを使用するように、[ID] プロパティを変更します。
 
@@ -337,9 +337,9 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
     1. Services.msc を実行します。
 
-    2. **Net.tcp リスナーアダプター**を右クリックし、 **[プロパティ]** を選択します。
+    2. **Net.tcp リスナーアダプター**を右クリックし、[**プロパティ**] を選択します。
 
-4. **[ログオン]** タブでアカウントを変更します。
+4. [**ログオン**] タブでアカウントを変更します。
 
 5. ワークグループでは、無制限のトークンを使用してサービスを実行する必要もあります。 この操作を行うには、コマンド ウィンドウから次のコマンドを実行します。
 
@@ -347,6 +347,6 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
     sc sidtype netmsmqactivator unrestricted
     ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [AppFabric のホスティングと永続化のサンプル](https://go.microsoft.com/fwlink/?LinkId=193961)
+- [AppFabric のホストおよび永続化のサンプル](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: 60f27d35-8f7b-4285-89d2-28336a4c073a
 ms.openlocfilehash: 242dbdeeed5408815878aa30ef276019e1ccc2c4
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61971042"
 ---
 # <a name="scrollbar"></a>ScrollBar
-A<xref:System.Windows.Controls.Primitives.ScrollBar>スライドが現在の表示領域の外にあるコンテンツを表示することができます、<xref:System.Windows.Controls.Primitives.Thumb>コンテンツを表示します。  
+<xref:System.Windows.Controls.Primitives.ScrollBar> を使用すると、<xref:System.Windows.Controls.Primitives.Thumb> をスライドさせてコンテンツを表示できるようにすることで、現在の表示領域の外にあるコンテンツを表示できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ScrollBar のつまみのサイズをカスタマイズする](how-to-customize-the-thumb-size-on-a-scrollbar.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  
   <xref:System.Windows.Controls.Primitives.Track>  
   <xref:System.Windows.Controls.Primitives.Thumb>  

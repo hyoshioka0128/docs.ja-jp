@@ -1,5 +1,6 @@
 ---
 title: 共通言語ランタイムでの型の転送
+description: 型の転送を使用すると、別の .NET アセンブリに型を移動する際に、元のアセンブリを使用するアプリケーションを再コンパイルする必要がありません。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], type forwarding
@@ -8,12 +9,12 @@ ms.assetid: 51f8ffa3-c253-4201-a3d3-c4fad85ae097
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: 7b9fd4e89d1d3290dfc17f52de392c4ee9092d02
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f0be61bd4ce88569e22a350a9ea9490d67e74ff3
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138594"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378592"
 ---
 # <a name="type-forwarding-in-the-common-language-runtime"></a>共通言語ランタイムでの型の転送
 型の転送を使用すると、別のアセンブリに型を移動する際に、元のアセンブリを使用するアプリケーションを再コンパイルする必要がありません。  
@@ -29,19 +30,19 @@ ms.locfileid: "73138594"
  型の転送は 4 つの手順で行います。  
   
 1. 型のソース コードを、元のアセンブリから転送先のアセンブリに移動します。  
-   
+
 2. 配置に使用される型のアセンブリで、移動された型の <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> を追加します。 次のコードは、移動された `Example` という型の属性を示しています。  
-   
+
    ```cpp  
     [assembly:TypeForwardedToAttribute(Example::typeid)]  
    ```
-   
+
    ```csharp  
     [assembly:TypeForwardedToAttribute(typeof(Example))]  
    ```  
-   
+
 3. 型の現在の場所であるアセンブリをコンパイルします。  
-   
+
 4. 型の現在の場所であるアセンブリへの参照を指定して、型の元の場所であるアセンブリを再コンパイルします。 たとえば、C# ファイルをコマンド ラインからコンパイルする場合は、[-reference (C# コンパイラ オプション)](../../csharp/language-reference/compiler-options/reference-compiler-option.md) オプションを使用して、型の現在の場所であるアセンブリを指定します。 C++ では、ソース ファイルで [#using](/cpp/preprocessor/hash-using-directive-cpp) ディレクティブを使用して、型の現在の場所であるアセンブリを指定します。  
   
 ## <a name="see-also"></a>関連項目

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 32114ecf-8916-4ab2-a201-179c017344f1
 topic_type:
 - apiref
-ms.openlocfilehash: 6ed30f07fcec9c730e1514350c594399f0aa16e5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6d62739148280c7333cf7cdb6002b59a145496e3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437265"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503563"
 ---
 # <a name="imetadataimportgetnamefromtoken-method"></a>IMetaDataImport::GetNameFromToken メソッド
 指定したメタデータ トークンによって参照されるオブジェクトの UTF-8 名を取得します。 このメソッドは、互換性のために残されています。  
@@ -41,11 +41,11 @@ HRESULT GetNameFromToken (
  `pszUtf8NamePtr`  
  入出力ヒープ内の UTF-8 オブジェクト名へのポインター。  
   
-## <a name="remarks"></a>コメント  
- `GetNameFromToken` は互換性のために残されています。 別の方法として、メソッドを呼び出して、メソッドのフィールドまたは `GetMethodProps` の `GetFieldProps` など、必要な特定の種類のトークンのプロパティを取得します。  
+## <a name="remarks"></a>解説  
+ `GetNameFromToken` は互換性のために残されています。 別の方法として、フィールドやメソッドなど、必要な特定の種類のトークンのプロパティを取得するには、メソッドを呼び出し `GetFieldProps` `GetMethodProps` ます。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
@@ -53,7 +53,7 @@ HRESULT GetNameFromToken (
   
  **.NET Framework のバージョン:** 1.0  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

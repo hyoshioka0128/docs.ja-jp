@@ -9,16 +9,16 @@ helpviewer_keywords:
 ms.assetid: d36e944a-866e-4baf-98c4-fd6a75f6fdd0
 ms.openlocfilehash: 78df242c7f00b69e36ea4ab6751f51509d9e2220
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61769257"
 ---
 # <a name="how-to-use-a-cached-element-as-a-brush"></a>方法: キャッシュされた要素をブラシとして使用する
-使用して、<xref:System.Windows.Media.BitmapCacheBrush>を効率的にキャッシュされた要素を再利用するクラス。 要素をキャッシュするには、新しいインスタンスを作成、<xref:System.Windows.Media.BitmapCache>クラスし、要素に割り当てる<xref:System.Windows.UIElement.CacheMode%2A>プロパティ。  
+<xref:System.Windows.Media.BitmapCacheBrush> クラスを使用し、キャッシュされた要素を効率良く再利用します。 要素をキャッシュするには、<xref:System.Windows.Media.BitmapCache> クラスの新しいインスタンスを作成し、それを要素の <xref:System.Windows.UIElement.CacheMode%2A> プロパティに割り当てます。  
   
 ## <a name="example"></a>例  
- 次のコード例では、キャッシュされた要素を再利用する方法を示します。 キャッシュされた要素は、<xref:System.Windows.Controls.Image>大きな画像を表示するコントロール。 <xref:System.Windows.Controls.Image>を使用して、コントロールをビットマップとしてキャッシュ、<xref:System.Windows.Media.BitmapCache>クラス、さらに、キャッシュに割り当てることで再利用、<xref:System.Windows.Media.BitmapCacheBrush>します。 ブラシは、効率的に再利用を表示する、25 個のボタンの背景に割り当てられます。  
+ キャッシュされた要素を再利用する方法を次のコード例に示します。 キャッシュされた要素は、大きな画像を表示する <xref:System.Windows.Controls.Image> コントロールです。 <xref:System.Windows.Controls.Image> コントロールは <xref:System.Windows.Media.BitmapCache> クラスを使用することでビットマップとしてキャッシュされ、それを <xref:System.Windows.Media.BitmapCacheBrush> に割り当てることでキャッシュが再利用されます。 ブラシは 25 個のボタンの背景に割り当てられ、効率的な再利用を示します。  
   
  [!code-xaml[System.Windows.Media.BitmapCacheBrush#_BitmapCacheBrushXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcachebrush/cs/window1.xaml#_bitmapcachebrushxaml)]  
   

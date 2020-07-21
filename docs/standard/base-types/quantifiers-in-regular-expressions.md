@@ -1,5 +1,6 @@
 ---
 title: 量指定子 (正規表現)
+description: 一致する入力中に存在する必要がある文字、グループ、または文字クラスの出現数を指定する、正規表現の量指定子について説明します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: a7a870ac32385bf5015f1a95c0246fed6a5c9c05
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2fc47a834f8f5b18021aa4f321345b8d7e4e8459
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084244"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662889"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>量指定子 (正規表現)
 量指定子は、一致と見なされるために入力中に存在する必要がある文字、グループ、または文字クラスの出現数を指定します。  次の表に、.NET でサポートされている量指定子の一覧を示します。  
@@ -36,13 +37,13 @@ ms.locfileid: "73084244"
  量 `n` および `m` は整数の定数です。 通常、量指定子は最長一致です。最長一致の場合、正規表現エンジンでは、特定のパターンの繰り返しができるだけ多くなるように照合が行われます。 量指定子に `?` 文字を付けると最短一致になります。最短一致の場合、正規表現エンジンでは、特定のパターンの繰り返しができるだけ少なくなるように照合が行われます。 最長一致と最短一致の量指定子の違いの詳細については、このトピックの「[最長一致と最短一致の量指定子](#Greedy)」のセクションをご覧ください。  
   
 > [!IMPORTANT]
-> 量指定子を入れ子にすると (たとえば、正規表現パターン `(a*)*` など)、入力文字列の文字数に応じて指数関数的に、正規表現エンジンで実行する必要がある比較の回数が増加する可能性があります。 この動作と回避方法の詳細については、[バックトラッキング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)に関するページを参照してください。  
+> 量指定子を入れ子にすると (たとえば、正規表現パターン `(a*)*` など)、入力文字列の文字数に応じて指数関数的に、正規表現エンジンで実行する必要がある比較の回数が増加する可能性があります。 この動作と回避方法の詳細については、[バックトラッキング](backtracking-in-regular-expressions.md)に関するページを参照してください。  
   
 ## <a name="regular-expression-quantifiers"></a>正規表現の量指定子  
  以降のセクションでは、.NET の正規表現でサポートされている量指定子について説明します。  
   
 > [!NOTE]
-> 正規表現エンジンでは、正規表現パターンで *、+、?、{、および } の各文字を検出すると、[文字クラス](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)に含まれているもの以外は量指定子または量指定子コンストラクトの一部として解釈します。 文字クラスの外側でこれらをリテラル文字として解釈するには、文字の前に円記号を付けてエスケープする必要があります。 たとえば、正規表現パターン内の `\*` という文字列は、リテラルのアスタリスク ("\*") 文字と解釈されます。  
+> 正規表現エンジンでは、正規表現パターンで *、+、?、{、および } の各文字を検出すると、[文字クラス](character-classes-in-regular-expressions.md)に含まれているもの以外は量指定子または量指定子コンストラクトの一部として解釈します。 文字クラスの外側でこれらをリテラル文字として解釈するには、文字の前に円記号を付けてエスケープする必要があります。 たとえば、正規表現パターン内の `\*` という文字列は、リテラルのアスタリスク ("\*") 文字と解釈されます。  
   
 ### <a name="match-zero-or-more-times-"></a>0 回以上の繰り返しに一致: *  
  `*` 量指定子は、直前の要素の 0 回以上の繰り返しに一致します。 これは `{0,}` 量指定子と同じです。 `*` は最長一致の量指定子であり、最短一致でこれに対応するのは `*?` です。  
@@ -222,7 +223,7 @@ ms.locfileid: "73084244"
 |`{1,10}`|前のパターンの 1 回以上 10 回以下に一致します。|  
 |`[.!?]`|区切り文字 "."、"!"、"?" のいずれか 1 文字と一致します。|  
   
-<a name="Greedy"></a>   
+<a name="Greedy"></a>
 ## <a name="greedy-and-lazy-quantifiers"></a>最長一致と最短一致の量指定子  
  いくつかの量指定子には次の 2 つのバージョンがあります。  
   
@@ -271,5 +272,5 @@ ms.locfileid: "73084244"
   
 ## <a name="see-also"></a>関連項目
 
-- [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
-- [バックトラッキング](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)
+- [正規表現言語 - クイック リファレンス](regular-expression-language-quick-reference.md)
+- [バックトラッキング](backtracking-in-regular-expressions.md)

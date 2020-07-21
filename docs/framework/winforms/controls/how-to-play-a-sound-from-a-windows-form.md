@@ -1,5 +1,6 @@
 ---
 title: '方法: Windows フォームからサウンドを再生する'
+description: 実行時に特定のパスで Windows フォームからサウンドを再生する方法について説明します。 また、コードと .NET セキュリティフレームワークをコンパイルする方法についても説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - My.Computer.Audio object [Windows Forms], playing sounds
 - examples [Windows Forms], sounds
 ms.assetid: 3d3350b7-1ebd-4e05-a738-48ca1160a19d
-ms.openlocfilehash: 68a68f05b847877641132e540995f6b14bb6e065
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: beb17d994e224f41b2b590ecb1401988cdad314d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015799"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85613749"
 ---
 # <a name="how-to-play-a-sound-from-a-windows-form"></a>方法: Windows フォームからサウンドを再生する
 この例では、実行時に指定されたパスでサウンドを再生します。
@@ -42,7 +43,7 @@ private void playSimpleSound()
 
 - ファイル名 `"c:\Windows\Media\chimes.wav"` を有効なファイル名に置き換えます。
 
-- (C#) <xref:System.Media?displayProperty=nameWithType>名前空間への参照。
+- Visual名前空間への参照 <xref:System.Media?displayProperty=nameWithType> 。
 
 ## <a name="robust-programming"></a>信頼性の高いプログラミング
  ファイルの操作は、適切な構造の例外処理ブロックで囲む必要があります。
@@ -59,7 +60,7 @@ private void playSimpleSound()
 
 - パスが無効である場合 (<xref:System.IO.DirectoryNotFoundException> クラス)。
 
-- パスはコロン ":" (<xref:System.NotSupportedException>クラス) にすぎません。
+- パスはコロン ":" (クラス) にすぎ <xref:System.NotSupportedException> ません。
 
 ## <a name="net-framework-security"></a>.NET Framework セキュリティ
  ファイル名からファイルの内容を判断しないでください。 たとえば、`Form1.vb` というファイルは Visual Basic のソース ファイルではない可能性もあります。 アプリケーションでデータを使用する前に、入力をすべて検証してください。

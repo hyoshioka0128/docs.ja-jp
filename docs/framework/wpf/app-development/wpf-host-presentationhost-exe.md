@@ -1,29 +1,30 @@
 ---
 title: WPF ホスト (PresentationHost.exe)
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF Host application [WPF]
 - PresentationHost.exe
 ms.assetid: 3215bfa1-722c-4ac8-a7c5-bdd02d30afbd
-ms.openlocfilehash: 981e518a55f179c2fbf44534783c80fb230e4ecf
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: bda7efbb1b7a4760199215bdb58c12b3063e290c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421122"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743400"
 ---
 # <a name="wpf-host-presentationhostexe"></a>WPF ホスト (PresentationHost.exe)
-Windows Presentation Foundation (WPF) ホスト (プレゼンテーションホスト .exe) は、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] アプリケーションを互換性のあるブラウザー (Microsoft Internet Explorer 6 以降を含む) でホストできるようにするアプリケーションです。 既定では、Windows Presentation Foundation (WPF) ホストは、ブラウザーでホストされる [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] コンテンツのシェルおよび MIME ハンドラーとして登録されます。これには次のものが含まれます。  
+Windows Presentation Foundation (WPF) ホスト (PresentationHost.exe) は、互換性のあるブラウザー (Microsoft Internet Explorer 6 以降を含む) で WPF アプリケーションをホストできるようにするアプリケーションです。 既定では、Windows Presentation Foundation (WPF) ホストは、ブラウザーでホストされる WPF コンテンツのシェルおよび MIME ハンドラーとして登録されます。これには次のものが含まれます。  
   
 - Loose (コンパイルされていない) [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] ファイル (.xaml)。  
   
-- XAML ブラウザーアプリケーション (XBAP) (xbap)。  
+- XAML ブラウザー アプリケーション (XBAP) (.xbap)。  
   
- これらの種類のファイルについては、Windows Presentation Foundation (WPF) ホスト:  
+ これらの種類のファイルについて、Windows Presentation Foundation (WPF) ホストでは次のことが行われます。  
   
-- Windows Presentation Foundation (WPF) コンテンツをホストするために、登録されている HTML ハンドラーを起動します。  
+- 登録されている HTML ハンドラーを起動して、Windows Presentation Foundation (WPF) コンテンツをホストします。  
   
-- 必要な共通言語ランタイム (CLR) アセンブリと Windows Presentation Foundation (WPF) アセンブリの適切なバージョンを読み込みます。  
+- 適切なバージョンの必要な共通言語ランタイム (CLR) アセンブリと Windows Presentation Foundation (WPF) アセンブリを読み込みます。  
   
 - 展開のゾーンに適切なアクセス許可レベルが設定されるようにします。  
   
@@ -36,14 +37,14 @@ Windows Presentation Foundation (WPF) ホスト (プレゼンテーションホ�
   
 |パラメーター|説明|  
 |---------------|-----------------|  
-|ファイル名|アクティブにするファイルのパス。 は URI でもかまいません。|  
+|ファイル名|アクティブにするファイルのパス。 URI でもかまいません。|  
 |-debug|アプリケーションをアクティブにする場合に、このアプリケーションをストアにコミットしたり、ストアから実行しません。 これは、ローカル ファイルをアクティブにする場合に限って使用できます。|  
-|-debugSecurityZoneURL \<url>|指定された URL からアプリケーションが配置されているかのように、アプリケーションをデバッグする必要があることを示すために、URL 値と共に使用されます。 これは、展開ゾーンと起点サイトの両方を決定します。|  
+|-debugSecurityZoneURL \<url>|アプリケーションを、指定した URL から展開されたものとしてデバッグする必要があることを PresentationHost.exe に指示するために、URL 値と共に使用します。 これは、展開ゾーンと起点サイトの両方を決定します。|  
 |-embedding|OLE で必要になります。 `-event` パラメーターまたは `-debug` パラメーターを指定した場合、`-embedding` パラメーターは内部で設定されるため、指定する必要はありません。|  
-|-event \<eventname>|PresentationHost.exe が初期化され、[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] コンテンツをホストする準備ができた時点で、この名前のイベントを開き、シグナルを送信します。 PresentationHost.exe は、イベントを開く際にエラーが発生すると (そのイベントがまだ作成されていない場合など) 終了します。|  
-|-launchApplication \<url>|指定された URL からスタンドアロンの ClickOnce アプリケーションを起動します。 .NET アプリケーションに関する Internet Explorer と WinINet のセキュリティポリシーが適用されます。|  
+|-event \<eventname>|PresentationHost.exe が初期化され、WPF コンテンツをホストする準備ができた時点で、この名前のイベントを開き、シグナルを送信します。 PresentationHost.exe は、イベントを開く際にエラーが発生すると (そのイベントがまだ作成されていない場合など) 終了します。|  
+|-launchApplication \<url>|指定した URL から、スタンドアロンの ClickOnce アプリケーションを起動します。 .NET アプリケーションに関する Internet Explorer と WinINet のセキュリティ ポリシーが適用されます。|  
   
-## <a name="scenarios"></a>監視プロセス  
+## <a name="scenarios"></a>シナリオ  
   
 ### <a name="shell-handler"></a>シェル ハンドラー  
  `PresentationHost.exe example.xbap`  
@@ -59,4 +60,4 @@ Windows Presentation Foundation (WPF) ホスト (プレゼンテーションホ�
   
 ## <a name="see-also"></a>関連項目
 
-- [Security](../security-wpf.md)
+- [セキュリティ](../security-wpf.md)

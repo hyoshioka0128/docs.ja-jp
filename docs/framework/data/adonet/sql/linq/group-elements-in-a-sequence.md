@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 1d50c8b4-f550-4775-bbb6-eab6e874cb43
 ms.openlocfilehash: bc490b579e841a0e9b3724fe0e8789cc9411683d
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70782183"
@@ -16,7 +16,7 @@ ms.locfileid: "70782183"
 <xref:System.Linq.Enumerable.GroupBy%2A> 演算子はシーケンスの要素をグループ化します。 Northwind データベースを使用する例を次に示します。  
   
 > [!NOTE]
-> null 列値が <xref:System.Linq.Enumerable.GroupBy%2A> クエリに含まれると、<xref:System.InvalidOperationException> がスローされることがあります。 詳細については、[トラブルシューティング](troubleshooting.md)の「GroupBy InvalidOperationException」セクションを参照してください。  
+> null 列値が <xref:System.Linq.Enumerable.GroupBy%2A> クエリに含まれると、<xref:System.InvalidOperationException> がスローされることがあります。 詳しくは、「[トラブルシューティング](troubleshooting.md)」の「GroupBy InvalidOperationException」をご覧ください。  
   
 ## <a name="example"></a>例  
  次の例では、`Products` を基準として `CategoryID` をグループ化しています。  

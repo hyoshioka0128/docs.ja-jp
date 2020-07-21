@@ -2,12 +2,12 @@
 title: System.ServiceModel.Activation.MessageQueueDuplicatedPipeError
 ms.date: 03/30/2017
 ms.assetid: ebfe9af1-76f7-4416-abf9-1d777708e0f1
-ms.openlocfilehash: f44af8f7cd9efd5d627da06a30b3b124afaa9d6c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8701a8eb36befdafd1cc3a9ce402382791e47e4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792614"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599608"
 ---
 # <a name="systemservicemodelactivationmessagequeueduplicatedpipeerror"></a>System.ServiceModel.Activation.MessageQueueDuplicatedPipeError
 System.ServiceModel.Activation.MessageQueueDuplicatedPipeError  
@@ -17,6 +17,6 @@ System.ServiceModel.Activation.MessageQueueDuplicatedPipeError
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

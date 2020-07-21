@@ -2,12 +2,12 @@
 title: 永続的な二重の相関関係
 ms.date: 03/30/2017
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
-ms.openlocfilehash: efc647b8a39f419f2165fe355529ba145663b753
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: bb73cef5190a0b146e713ef1adae24219dc2eed8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291583"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185175"
 ---
 # <a name="durable-duplex-correlation"></a>永続的な二重の相関関係
 永続的な二重の相関関係 (コールバック相関関係) は、ワークフロー サービスがコールバックを最初の呼び出し元に送信する必要がある場合に便利です。 WCF の二重とは異なり、コールバックは、将来のどの時点でも発生する可能性があり、同じチャネルにも同じチャネルの有効期間にも関連付けられていません。唯一の要件は、呼び出し元にコールバック メッセージをリッスンするアクティブなエンドポイントを用意することです。 このため、2 つのワークフロー サービスが長時間のメッセージ交換を使用して通信できます。 このトピックでは、永続的な二重の相関関係について概説します。  
@@ -16,7 +16,7 @@ ms.locfileid: "72291583"
  永続的な二重の相関関係を使用するには、2 つのサービスが、<xref:System.ServiceModel.NetTcpContextBinding> や <xref:System.ServiceModel.WSHttpContextBinding> など、双方向の操作をサポートするコンテキスト対応バインドを使用する必要があります。 呼び出し側サービスは、クライアントの <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> で使用するバインドを指定して <xref:System.ServiceModel.Endpoint> を登録します。 受信側サービスは、このデータを最初の呼び出しで受信し、呼び出し側サービスへのコールバックを行う <xref:System.ServiceModel.Endpoint> アクティビティにおいて、受信側サービス自体の <xref:System.ServiceModel.Activities.Send> でこのデータを使用します。 次の例では、2 つのサービスが互いに通信しています。 1 つ目のサービスは、2 つ目のサービスに対してメソッドを呼び出し、応答を待機します。 2 つ目のサービスでは、コールバック メソッドの名前が認識されていますが、このメソッドを実装するサービスのエンドポイントは、設計時には認識されていません。  
   
 > [!NOTE]
-> エンドポイントの <xref:System.ServiceModel.Channels.AddressingVersion> が <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A> で構成される場合は、永続的な二重のみが使用できます。 そうでない場合は、次のメッセージと共に <xref:System.InvalidOperationException> 例外がスローされます。"メッセージには、 [AddressingVersion](http://schemas.xmlsoap.org/ws/2004/08/addressing)のエンドポイント参照を含むコールバックコンテキストヘッダーが含まれています。 コールバックコンテキストは、AddressingVersion が ' WSAddressing10 ' で構成されている場合にのみ送信できます。
+> エンドポイントの <xref:System.ServiceModel.Channels.AddressingVersion> が <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A> で構成される場合は、永続的な二重のみが使用できます。 それ以外の場合は、<xref:System.InvalidOperationException>次のメッセージで例外がスローされます: "メッセージには[、EndpointingVersion](http://schemas.xmlsoap.org/ws/2004/08/addressing)のエンドポイント参照を含むコールバック コンテキスト ヘッダーが含まれています。 コールバック コンテキストは、アドレスバージョンが 'WSAddressing10' で構成されている場合にのみ送信できます。
   
  次の例では、<xref:System.ServiceModel.Endpoint> を使用してコールバック <xref:System.ServiceModel.WSHttpContextBinding> を作成するワークフロー サービスがホストされます。  
   
@@ -51,7 +51,7 @@ Receive StartOrder = new Receive
   
 Send GetItems = new Send  
 {  
-    CorrelationInitializers =   
+    CorrelationInitializers =
     {  
         new CallbackCorrelationInitializer  
         {  
@@ -65,7 +65,7 @@ Send GetItems = new Send
         AddressUri = new Uri("http://localhost:8081/Service2"),  
         Binding = new WSHttpContextBinding  
         {  
-            ClientCallbackAddress = new Uri("http://localhost:8080/Service1/ItemsReady")                          
+            ClientCallbackAddress = new Uri("http://localhost:8080/Service1/ItemsReady")
         }  
     }  
 };  
@@ -127,7 +127,7 @@ Variable<CorrelationHandle> ItemsCallbackHandle = new Variable<CorrelationHandle
   
 Receive StartItems = new Receive  
 {  
-    CorrelationInitializers =   
+    CorrelationInitializers =
     {  
         new CallbackCorrelationInitializer  
         {  
@@ -189,7 +189,7 @@ Activity wf = new Sequence
 ```output  
 Service1 waiting at: http://localhost:8080/Service1  
 Service2 waiting at: http://localhost:8081/Service2  
-Press enter to exit.   
+Press enter to exit.
 WF1 - Started  
 WF2 - Request Received  
 WF1 - Request Submitted  

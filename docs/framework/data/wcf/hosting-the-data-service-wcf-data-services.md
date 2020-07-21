@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
 ms.openlocfilehash: 3abcd901bcb8a175aa6f30e53b142cbbde56a579
 ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/12/2019
 ms.locfileid: "73975239"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>データ サービスのホスティング (WCF Data Services)
-WCF Data Services を使用すると、データを Open Data Protocol (OData) フィードとして公開するサービスを作成できます。 このデータ サービスは、<xref:System.Data.Services.DataService%601> から継承されたクラスとして定義されます。 このクラスは、要求メッセージを処理し、データソースに対して更新を実行し、OData が必要とする応答メッセージを生成するために必要な機能を提供します。 ただし、データサービスは、受信 HTTP 要求のネットワークソケットにバインドしてリッスンすることはできません。 この機能要件のため、データ サービスはホスティング コンポーネントに依存します。
+WCF Data Services を使用すると、Open Data Protocol (OData) フィードとしてデータを公開するデータ サービスを作成できます。 このデータ サービスは、<xref:System.Data.Services.DataService%601> から継承されたクラスとして定義されます。 このクラスは、OData からの要件に応じて、要求メッセージを処理し、データ ソースに基づいて更新し、応答メッセージを生成するための機能を提供します。 ただし、データ サービスは、HTTP 要求を受け付けるネットワーク ソケットにバインドしたり、このソケットでリッスンしたりすることはできません。 この機能要件のため、データ サービスはホスティング コンポーネントに依存します。
 
  データ サービス ホストは、データ サービスに代わって次のタスクを実行します。
 
@@ -28,9 +28,9 @@ WCF Data Services を使用すると、データを Open Data Protocol (OData) �
 
 - データ サービスに代わって応答を送信する。
 
- データサービスのホスティングを簡単にするために、WCF Data Services は Windows Communication Foundation (WCF) と統合するように設計されています。 データサービスには、ASP.NET アプリケーションでデータサービスホストとして機能する既定の WCF 実装が用意されています。 そのため、次のいずれかの方法でデータ サービスをホストできます。
+ データ サービスのホスティングを簡素化するため、WCF Data Services は Windows Communication Foundation (WCF) と統合するように設計されています。 データ サービスでは、ASP.NET アプリケーションでデータ サービス ホストとして機能する既定の WCF 実装が提供されています。 そのため、次のいずれかの方法でデータ サービスをホストできます。
 
-- ASP.NET アプリケーション。
+- ASP.NET アプリケーション
 
 - 自己ホスト型 WCF サービスをサポートするマネージド アプリケーション
 
@@ -38,7 +38,7 @@ WCF Data Services を使用すると、データを Open Data Protocol (OData) �
 
 ## <a name="hosting-a-data-service-in-an-aspnet-application"></a>ASP.NET アプリケーションでのデータ サービスのホスト
 
-Visual Studio 2015 の **[新しい項目の追加]** ダイアログボックスを使用して ASP.NET アプリケーションでデータサービスを定義すると、このツールによってプロジェクトに2つの新しいファイルが生成されます。 そのうち一方のファイル (拡張子は `.svc`) は、データ サービスのインスタンス化方法を WCF ランタイムに指示します。 [クイックスタート](quickstart-wcf-data-services.md)を完了したときに作成された Northwind サンプルデータサービスのこのファイルの例を次に示します。
+Visual Studio 2015 の **[新しい項目の追加]** ダイアログを使用して ASP.NET アプリケーションにデータ サービスを定義すると、プロジェクトに 2 つの新しいファイルが生成されます。 そのうち一方のファイル (拡張子は `.svc`) は、データ サービスのインスタンス化方法を WCF ランタイムに指示します。 次に示すのば、[クイックスタート](quickstart-wcf-data-services.md)を完了したときに作成される Northwind サンプル データ サービスに対するこのファイルの例です。
 
 ```aspx-csharp
 <%@ ServiceHost Language="C#"
@@ -55,12 +55,12 @@ Visual Studio 2015 の **[新しい項目の追加]** ダイアログボック�
  [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#servicedefinition)]
  [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#servicedefinition)]
 
- データサービスは WCF サービスのように動作するため、データサービスは ASP.NET と統合され、WCF Web プログラミングモデルに従います。 詳細については、「 [Wcf サービスと ASP.NET](../../wcf/feature-details/wcf-services-and-aspnet.md) 」および「 [Wcf Web HTTP プログラミングモデル](../../wcf/feature-details/wcf-web-http-programming-model.md)」を参照してください。
+ データ サービスは WCF サービスと同様に動作するため、データ サービスは ASP.NET と統合され、WCF Web プログラミング モデルに従います。 詳細については、「[WCF サービスと ASP.NET](../../wcf/feature-details/wcf-services-and-aspnet.md)」および「[WCF Web HTTP プログラミング モデル](../../wcf/feature-details/wcf-web-http-programming-model.md)」を参照してください。
 
 ## <a name="self-hosted-wcf-services"></a>自己ホスト型 WCF サービス
- WCF 実装が組み込まれているため、WCF Data Services は、WCF サービスとしてのデータサービスの自己ホストをサポートします。 サービスは、コンソールアプリケーションなど、任意の .NET Framework アプリケーションで自己ホストすることができます。 <xref:System.Data.Services.DataServiceHost> を継承する <xref:System.ServiceModel.Web.WebServiceHost> クラスを使用して、特定のアドレスでデータ サービスをインスタンス化します。
+ WCF の実装が組み込まれている WCF Data Services では、WCF サービスとして自己ホスト型のデータ サービスがサポートされます。 サービスは、コンソール アプリケーションなどの任意の .NET Framework アプリケーションで自己ホスト型とすることができます。 <xref:System.Data.Services.DataServiceHost> を継承する <xref:System.ServiceModel.Web.WebServiceHost> クラスを使用して、特定のアドレスでデータ サービスをインスタンス化します。
 
- 自己ホストを使用するとサービスの配置とトラブルシューティングが容易になるので、開発時やテスト時に役立ちます。 ただし、この種のホストには、ASP.NET またはインターネットインフォメーションサービス (IIS) によって提供される高度なホスト機能や管理機能は用意されていません。 詳細については、「[マネージアプリケーションでのホスティング](../../wcf/feature-details/hosting-in-a-managed-application.md)」を参照してください。
+ 自己ホストを使用するとサービスの配置とトラブルシューティングが容易になるので、開発時やテスト時に役立ちます。 ただし、この種類のホスティングでは、ASP.NET またはインターネット インフォメーション サービス (IIS) に備わっている高度なホスト機能や管理機能を使用できません。 詳細については、「[マネージド アプリケーションのホスト](../../wcf/feature-details/hosting-in-a-managed-application.md)」をご覧ください。
 
 ## <a name="defining-a-custom-data-service-host"></a>カスタム データ サービス ホストの定義
  WCF ホストの実装の制限が厳格すぎる場合、データ サービスのカスタム ホストを定義することもできます。 <xref:System.Data.Services.IDataServiceHost> インターフェイスを実装する任意のクラスをデータ サービスのネットワーク ホストとして使用できます。 カスタム ホストは、<xref:System.Data.Services.IDataServiceHost> インターフェイスを実装し、データ サービス ホストの次の基本的な役割を果たすことができるようにする必要があります。

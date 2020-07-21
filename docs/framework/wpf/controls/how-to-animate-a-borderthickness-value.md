@@ -8,23 +8,23 @@ helpviewer_keywords:
 - border thickness [WPF], animating changes to
 - animation [WPF], changes to border thickness
 ms.assetid: fd021978-f74b-4e7b-a7f7-3987dcad9e0f
-ms.openlocfilehash: 10e177d1f6d6add4638ce14af900e75d7e363890
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 4533ce6f2a1fe7243267ee8d638e2ad0a4f9cf3a
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61911245"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124664"
 ---
 # <a name="how-to-animate-a-borderthickness-value"></a>方法: BorderThickness 値をアニメーション化する
-この例を使用して境界線の太さに変更をアニメーション化する方法を示しています、<xref:System.Windows.Media.Animation.ThicknessAnimation>クラス。  
+この例は、<xref:System.Windows.Media.Animation.ThicknessAnimation> クラスを使用して境界線の太さの変更をアニメーション化する方法を示しています。  
   
 ## <a name="example"></a>例  
- 次の例を使用して境界線の太さをアニメーション化<xref:System.Windows.Media.Animation.ThicknessAnimation>します。 この例では、<xref:System.Windows.Controls.Border.BorderThickness%2A>プロパティの<xref:System.Windows.Controls.Border>します。  
+ <xref:System.Windows.Media.Animation.ThicknessAnimation> を使用して境界線の太さをアニメーション化する例を次に示します。 この例では、<xref:System.Windows.Controls.Border> の <xref:System.Windows.Controls.Border.BorderThickness%2A> プロパティを使用しています。  
   
  [!code-csharp[BasicAnimations_snip#ThicknessAnimationWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/BasicAnimations_snip/CSharp/ThicknessAnimationExample.cs#thicknessanimationwholepage)]
  [!code-vb[BasicAnimations_snip#ThicknessAnimationWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BasicAnimations_snip/VisualBasic/ThicknessAnimationExample.vb#thicknessanimationwholepage)]  
   
- サンプル全体については、次を参照してください。[アニメーション サンプル ギャラリー](https://go.microsoft.com/fwlink/?LinkID=159969)します。  
+ サンプル全体については、[アニメーション サンプル ギャラリー](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/AnimationExamples)を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
@@ -32,5 +32,5 @@ ms.locfileid: "61911245"
 - <xref:System.Windows.Controls.Border.BorderThickness%2A>
 - <xref:System.Windows.Controls.Border>
 - [アニメーションの概要](../graphics-multimedia/animation-overview.md)
-- [アニメーションとタイミングに関するトピック](../graphics-multimedia/animation-and-timing-how-to-topics.md)
+- [アニメーションおよびタイミングに関する「方法」トピック](../graphics-multimedia/animation-and-timing-how-to-topics.md)
 - [キー フレームを使用して境界線の太さをアニメーション化する](../graphics-multimedia/how-to-animate-the-thickness-of-a-border-by-using-key-frames.md)

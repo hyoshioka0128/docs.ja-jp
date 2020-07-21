@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 71f362a9-8fe2-47ce-9302-05a645cf3d7d
 topic_type:
 - apiref
-ms.openlocfilehash: e01698d2d8491b2496bb664c13dca97964cd1481
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 031bfc3d7fcd9f1f04e616e460cb3201813eae55
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136946"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616555"
 ---
 # <a name="corlaunchapplication-function"></a>CorLaunchApplication 関数
 指定したネットワーク パスのアプリケーションを、指定したマニフェストとその他のアプリケーション データを使用して起動します。  
@@ -43,7 +43,7 @@ HRESULT CorLaunchApplication (
   
 ## <a name="parameters"></a>パラメーター  
  `dwClickOnceHost`  
- からアプリケーションを起動しているホストの種類を指定する[HOST_TYPE](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md)列挙体の値。  
+ からアプリケーションを起動しているホストの種類を指定する[HOST_TYPE](host-type-enumeration.md)列挙体の値。  
   
  `pwzAppFullName`  
  から起動されるアプリケーションの完全な名前。  
@@ -63,15 +63,15 @@ HRESULT CorLaunchApplication (
  `lpProcessInformation`  
  入出力アプリケーションが読み込まれたプロセスに関する情報へのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [非推奨の CLR ホスト関数](deprecated-clr-hosting-functions.md)

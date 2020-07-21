@@ -1,14 +1,13 @@
 ---
 title: ML.NET のチュートリアル
 description: ML.NET のチュートリアルでは、カスタム AI ソリューションを構築し、これを .NET アプリケーションに統合する方法について説明しています。
-ms.custom: seodec18
 ms.date: 07/08/2019
-ms.openlocfilehash: bf59efb4118d9d4fac24413d7568df412a0e9475
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 771ecd83d3f901af84da1f55d7b48152e8145205
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977170"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "75716618"
 ---
 # <a name="mlnet-tutorials"></a>ML.NET のチュートリアル
 

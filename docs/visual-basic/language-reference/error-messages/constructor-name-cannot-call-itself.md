@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30298
 ms.assetid: 2d77b7f4-0640-4f89-9c65-f101fd2847c0
-ms.openlocfilehash: 8459ee7fec6d761161a721c88ccdc88e513fc95f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 6abb6dde624e129b52fefecf8c51e6cde2567ae1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936696"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409804"
 ---
-# <a name="constructor-name-cannot-call-itself"></a>コンス トラクター '\<名 >' 自体を呼び出すことはできません
-A`Sub New`クラスまたは構造体でプロシージャを呼び出します。  
+# <a name="constructor-name-cannot-call-itself"></a>コンストラクター '\<name>' はそれ自体を呼び出すことはできません。
+クラスまたは構造体の `Sub New` プロシージャはそれ自体を呼び出します。  
   
- コンス トラクターの目的は、クラスのインスタンスを初期化するために、またはそのが最初に構造を作成します。 異なるパラメーター リストがすべて、クラスまたは構造体によって複数のコンス トラクター、することができます。 コンス トラクターは、独自に加え、その機能を実行する別のコンス トラクターを呼び出す許可されています。 コンス トラクターを呼び出す意味がありませんし、許可されている場合、無限再帰の結果が実際にします。  
+ コンストラクターの目的は、クラスまたは構造体が最初に作成されたときにそのインスタンスを初期化することです。 クラスまたは構造体には、すべてに異なるパラメーター リストが含まれていれば、複数のコンストラクターを含めることができます。 コンストラクターは、別のコンストラクターを呼び出して、独自の機能だけでなくその機能も実行することができます。 ただし、コンストラクターがそれ自体を呼び出す場合は意味がありません。許可されている場合、実際にはこれは無限再帰になります。  
   
  **エラー ID:** BC30298  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1. 呼び出されるコンス トラクターのパラメーター リストを確認します。 コンス トラクターの呼び出しを行うのと異なる場合があります。  
+1. 呼び出されるコンストラクターのパラメーター リストを確認します。 これは、呼び出しを行うコンストラクターのものと異なる必要があります。  
   
-2. 別のコンス トラクターを呼び出すしない場合は、削除、`Sub New`完全呼び出します。  
+2. 別のコンストラクターを呼び出さない場合は、`Sub New` 呼び出しを完全に削除します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [オブジェクトの有効期間:オブジェクトを作成および破棄する方法](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [オブジェクトの有効期間:オブジェクトの作成と破棄](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)

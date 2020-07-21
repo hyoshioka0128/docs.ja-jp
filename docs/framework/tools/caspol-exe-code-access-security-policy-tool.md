@@ -15,18 +15,18 @@ helpviewer_keywords:
 - security policy [.NET Framework], modifying
 - manually editing security configuration files
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
-ms.openlocfilehash: b5b5e1872af89417fbad6e95b7a8bee5e9b68925
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a5a4068d0bf6f6f158ea9b2880785e227f96243d
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129905"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81645573"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (コード アクセス セキュリティ ポリシー ツール)
 ユーザーと管理者は、コード アクセス セキュリティ (CAS) ポリシー ツール (Caspol.exe) を使用して、コンピューター ポリシー レベル、ユーザー ポリシー レベル、およびエンタープライズ ポリシー レベルのセキュリティ ポリシーを変更できます。  
   
 > [!IMPORTANT]
-> .NET Framework 4 以降では、[\<legacyCasPolicy> 要素](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)が `true` に設定されていない限り、Caspol.exe は CAS ポリシーに影響を与えません。 CasPol.exe によって表示または変更された設定は、CAS ポリシーの使用が選択されているアプリケーションにのみ影響します。 詳細については、「[セキュリティの変更点](../security/security-changes.md)」を参照してください。  
+> .NET Framework 4 以降では、[\<legacyCasPolicy> 要素](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md)が `true` に設定されていない限り、Caspol.exe は CAS ポリシーに影響を与えません。 CasPol.exe によって表示または変更された設定は、CAS ポリシーの使用が選択されているアプリケーションにのみ影響します。 詳細については、「[セキュリティの変更点](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)」を参照してください。  
   
 > [!NOTE]
 > 64 ビット コンピューターには、64 ビット バージョンと 32 ビット バージョンの両方のセキュリティ ポリシーが含まれます。 32 ビット アプリケーションと 64 ビット アプリケーションの両方にポリシーの変更を適用するには、Caspol.exe の 32 ビット バージョンと 64 ビット バージョンの両方を実行します。  
@@ -54,7 +54,7 @@ caspol [options]
 |**-customall**  *path*<br /><br /> or<br /><br /> **-ca**  *path*|このオプションの後に続くすべてのオプションを、コンピューター、エンタープライズ、指定したカスタム ユーザーの各ポリシーに適用します。 カスタム ユーザーのセキュリティ構成ファイルの位置を引数 *path* で指定する必要があります。|  
 |**-cu** **[stomuser]** *path*|現在実行中の Caspol.exe を実行したユーザーに属さないカスタム ユーザー ポリシーを管理できます。 カスタム ユーザーのセキュリティ構成ファイルの位置を引数 *path* で指定する必要があります。|  
 |**-enterprise**<br /><br /> or<br /><br /> **-en**|このオプションの後に続くすべてのオプションを、エンタープライズ レベル ポリシーに適用します。 エンタープライズ管理者ではないユーザーは、エンタープライズ ポリシーを変更するための十分な権限を持ちませんが、参照はできます。 エンタープライズ以外の場合、既定では、このポリシーがコンピューター ポリシーやユーザー ポリシーに干渉することはありません。|  
-|**-e** **[xecution]** {**on** &#124; **off**}|コードの実行が開始される前に実行許可を確認する機構のオンとオフを切り替えます。 **注:** このスイッチは、.NET Framework 4 以降のバージョンでは削除されています。 詳細については、「[セキュリティの変更点](../security/security-changes.md)」を参照してください。|  
+|**-e** **[xecution]** {**on** &#124; **off**}|コードの実行が開始される前に実行許可を確認する機構のオンとオフを切り替えます。 **注:** このスイッチは、.NET Framework 4 以降のバージョンでは削除されています。 詳細については、「[セキュリティの変更点](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)」を参照してください。|  
 |**-f** **[orce]**|ツールの自己破棄テストを行わず、ユーザーに指定されたとおりにポリシーを変更します。 通常、Caspol.exe は、ポリシーを変更した結果 Caspol.exe 自体の適切な動作が妨げられることにならないかどうかをチェックします。妨げられる場合は、Caspol.exe は変更されたポリシーを保存せず、エラー メッセージを表示します。 Caspol.exe の動作を妨げることになっても強制的に Caspol.exe にポリシーを変更する場合は、 **–force** オプションを使用します。|  
 |**-h** **[elp]**|Caspol.exe のコマンド構文とオプションを表示します。|  
 |**-l** **[ist]**|指定されたコンピューター、ユーザー、エンタープライズ、またはすべてのポリシー レベルにかかわる、コード グループの階層とアクセス許可セットの一覧を表示します。 Caspol.exe は、最初にコード グループのラベルを、次に (null でない場合) 名前を表示します。|  
@@ -73,7 +73,7 @@ caspol [options]
 |**-resetlockdown**<br /><br /> or<br /><br /> **-rsld**|ポリシーを既定の状態のより制限されたバージョンに戻してディスクに永続化します。前のコンピューター ポリシーのバックアップを作成し、`security.config.bac` というファイルに永続化します。  ロック ダウンされているポリシーは、`Local Intranet`、`Trusted Sites`、および `Internet` の各ゾーンに属し、対応するコード グループに子コード グループがないコードにアクセスを許可しないことを除いて、既定のポリシーと同じです。|  
 |**-resolvegroup** *assembly_file*<br /><br /> or<br /><br /> **-rsg**  *assembly_file*|特定のアセンブリ (*assembly_file*) が属するコード グループを表示します。 既定では、このオプションは、アセンブリが属するコンピューター、ユーザー、エンタープライズの各ポリシー レベルを表示します。 1 つのポリシー レベルだけを参照するには、このオプションと共に **-machine**、 **-user**、または **-enterprise** のいずれかのオプションを使用します。|  
 |**-resolveperm** *assembly_file*<br /><br /> or<br /><br /> **-rsp** *assembly_file*|アセンブリの実行が許可されていた場合は、指定した (または既定の) レベルのセキュリティ ポリシーによってそのアセンブリに与えられるすべてのアクセス許可を表示します。 引数 *assembly_file* はアセンブリを指定します。 **-all** オプションを指定すると、Caspol.exe は、ユーザー ポリシー、コンピューター ポリシー、およびエンタープライズ ポリシーに基づいて、アセンブリに与えられるアクセス許可を計算します。それ以外の場合は、既定の動作規則が適用されます。|  
-|**-s** **[ecurity]** {**on** &#124; **off**}|コード アクセス セキュリティのオンとオフを切り替えます。 **-s off** オプションを指定しても、ロール ベース セキュリティは無効になりません。 **注:** このスイッチは、.NET Framework 4 以降のバージョンでは削除されています。 詳細については、「[セキュリティの変更点](../security/security-changes.md)」を参照してください。 **注意:** コード アクセス セキュリティを無効にすると、すべてのコード アクセス要求が成功します。 コード アクセス セキュリティを無効にすると、システムは、ウイルスやワームなどの悪意のあるコードの攻撃を受けやすくなります。 セキュリティをオフにすると、パフォーマンスは多少向上しますが、他のセキュリティ対策を講じて、システム セキュリティ全体が損なわれていないことを確認した場合にだけ、オフにしてください。 その他のセキュリティ対策の例としては、公衆ネットワークからの切断、コンピューターの物理的な保護などがあります。|  
+|**-s** **[ecurity]** {**on** &#124; **off**}|コード アクセス セキュリティのオンとオフを切り替えます。 **-s off** オプションを指定しても、ロール ベース セキュリティは無効になりません。 **注:** このスイッチは、.NET Framework 4 以降のバージョンでは削除されています。 詳細については、「[セキュリティの変更点](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)」を参照してください。 **注意:** コード アクセス セキュリティを無効にすると、すべてのコード アクセス要求が成功します。 コード アクセス セキュリティを無効にすると、システムは、ウイルスやワームなどの悪意のあるコードの攻撃を受けやすくなります。 セキュリティをオフにすると、パフォーマンスは多少向上しますが、他のセキュリティ対策を講じて、システム セキュリティ全体が損なわれていないことを確認した場合にだけ、オフにしてください。 その他のセキュリティ対策の例としては、公衆ネットワークからの切断、コンピューターの物理的な保護などがあります。|  
 |**-u** **[ser]**|このオプションの後に続くすべてのオプションを、Caspol.exe を実行したユーザーにかかわるユーザー レベル ポリシーに適用します。 管理者以外のユーザーの場合は、 **-user** が既定値です。|  
 |**-?**|Caspol.exe のコマンド構文とオプションを表示します。|  
   
@@ -84,8 +84,8 @@ caspol [options]
 |**-allcode**|すべてのコードを指定します。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.AllMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
 |**-appdir**|アプリケーション ディレクトリを指定します。 メンバーシップ条件として **–appdir** を指定する場合は、コードの URL 証拠が、そのコードのアプリケーション ディレクトリ証拠と比較されます。 両方の証拠の値が同じである場合は、このメンバーシップ条件が成立します。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.ApplicationDirectoryMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
 |**-custom**  *xmlfile*|カスタム メンバーシップ条件を追加します。 必須引数の *xmlfile* は、XML シリアル化したカスタム メンバーシップ条件を含む .xml ファイルを指定します。|  
-|**-hash** *hashAlg* { **-hex** *hashValue* &#124; **-file** *assembly_file*}|指定されたアセンブリ ハッシュを持つコードを指定します。 コード グループのメンバーシップ条件としてハッシュを使用するには、ハッシュ値またはアセンブリ ファイルを指定する必要があります。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.HashMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
-|**-pub** { **-cert** *cert_file_name* &#124;<br /><br /> **-file** *signed_file_name* &#124; **-hex**  *hex_string*}|指定されたソフトウェア発行者を持つコードを、証明書ファイル、ファイル上の署名、または X509 証明書の 16 進表示で指定します。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.PublisherMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
+|**-hash** *hashAlg* { **-hex** *hashValue* &#124; **-file** *assembly_file* }|指定されたアセンブリ ハッシュを持つコードを指定します。 コード グループのメンバーシップ条件としてハッシュを使用するには、ハッシュ値またはアセンブリ ファイルを指定する必要があります。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.HashMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
+|**-pub** { **-cert** *cert_file_name* &#124;<br /><br /> **-file** *signed_file_name* &#124; **-hex**  *hex_string* }|指定されたソフトウェア発行者を持つコードを、証明書ファイル、ファイル上の署名、または X509 証明書の 16 進表示で指定します。 このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.PublisherMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
 |**-site** *website*|指定されたサイトがソースであるコードを指定します。 次に例を示します。<br /><br /> `-site** www.proseware.com`<br /><br /> このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.SiteMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
 |**-strong -file** *file_name* {*name* &#124; **-noname**} {*version* &#124; **-noversion**}|特定の厳密な名前を持つコードを、ファイル名、文字列としてのアセンブリ名、および *major*.*minor*.*build*.*revision* 形式のアセンブリ バージョンで指定します。 次に例を示します。<br /><br /> **-strong -file** myAssembly.exe myAssembly 1.2.3.4<br /><br /> このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.StrongNameMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
 |**-url** *URL*|指定された URL をソースとするコードを指定します。 URL には、`http://` や `ftp://` などのプロトコルを含める必要があります。 さらに、ワイルドカード文字 (\*) を使用して、特定の URL から複数のアセンブリを指定できます。 **注:** 複数の名前を使用して 1 つの URL を識別できるため、URL をメンバーシップ条件として使用する方法は、コードの識別情報を安全に確認できる方法ではありません。 できるだけ厳密な名前メンバーシップ条件、発行元メンバーシップ条件、またはハッシュ メンバーシップ条件を使用してください。 <br /><br /> このメンバーシップ条件の詳細については、「<xref:System.Security.Policy.UrlMembershipCondition?displayProperty=nameWithType>」を参照してください。|  
@@ -100,7 +100,7 @@ caspol [options]
 |**-levelfinal** {**on**&#124;**off**}|**on** に設定すると、追加または変更するコード グループが出現するレベルよりも下にあるポリシー レベルは考慮されなくなります。 通常、このオプションはコンピューター ポリシー レベルで使用されます。 たとえば、このフラグをコンピューター レベルでコード グループに設定し、なんらかのコードがこのコード グループのメンバーシップ条件に適合した場合、Caspol.exe はそのコードのユーザー レベル ポリシーの計算または適用を行いません。|  
 |**-name** "*name*"|**–addgroup** オプションと共に使用した場合、追加するコード グループのスクリプト名を指定します。 **-chggroup** オプションと共に使用した場合、編集するコード グループのスクリプト名を指定します。 引数 *name* を二重引用符で囲む必要があります。 引数 *name* には A-Z、0-9、およびアンダースコア文字だけを含めることができます。また、先頭には数字を使用できません。 コード グループは、数値のラベルではなくこの *name* によって参照できます。 *name* は、スクリプト目的で使用する場合にも便利です。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>Remarks  
  セキュリティ ポリシーは 3 種類のポリシー レベル、つまりコンピューター ポリシー、ユーザー ポリシー、エンタープライズ ポリシーによって表現されます。 アセンブリが受信するアクセス許可のセットは、これらの 3 種類のポリシー レベルで許可されるアクセス許可セットの積集合によって決定されます。 それぞれのポリシー レベルは、コード グループの階層で表現されます。 すべてのコード グループは、どのコードをそのグループのメンバーとするのかを決定するためのメンバーシップ条件を持ちます。 名前付きアクセス許可セットも、各コード グループと関連付けられます。 このアクセス許可セットは、メンバーシップ条件を満たすコードに対してランタイムから与えられるアクセス許可を指定します。 コード グループの階層、および関連する名前付きアクセス許可セットによって、各レベルのセキュリティ ポリシーの定義と保守が行われます。 **–user**、 **-customuser**、 **–machine**、 **-enterprise** の各オプションを使用して、セキュリティ ポリシーのレベルを設定できます。  
   
  セキュリティ ポリシーの詳細、およびランタイムがコードに与えるアクセス許可を決定する方法については、「[セキュリティ ポリシーの管理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))」を参照してください。  
@@ -119,7 +119,7 @@ caspol [options]
   
  Caspol.exe が正しく機能するには、**Everything** アクセス許可セットと等価の許可を与えられている必要があります。 Caspol.exe には防御機構があるため、Caspol.exe が動作するために必要なアクセス許可を得られなくなるような方法でポリシーを変更することはできません。 変更を実行しようとすると、Caspol.exe は、要求されたポリシーの変更で Caspol.exe の実行が中断されること、およびポリシーの変更が拒否されることをユーザーに通知します。 特定のコマンドについてこの防御機構をオフにするには、 **–force** オプションを使用します。  
   
-<a name="cpgrfcodeaccesssecuritypolicyutilitycaspolexeanchor1"></a>   
+<a name="cpgrfcodeaccesssecuritypolicyutilitycaspolexeanchor1"></a>
 ## <a name="manually-editing-the-security-configuration-files"></a>手動によるセキュリティ構成ファイルの編集  
  3 種類のセキュリティ構成ファイルは、Caspol.exe でサポートされる 3 種類のポリシー レベル、つまりコンピューター ポリシー、指定されたユーザーのポリシー、およびエンタープライズ ポリシーと対応します。 これらのファイルがディスク上に作成されるのは、コンピューター ポリシー、ユーザー ポリシー、またはエンタープライズ ポリシーが Caspol.exe によって変更される場合だけです。 必要な場合は、Caspol.exe の **–reset** オプションを使用して、既定のセキュリティ ポリシーをディスクに保存できます。  
   

@@ -12,32 +12,32 @@ helpviewer_keywords:
 - Seek function
 - FileOpen function
 ms.assetid: 4c145456-5453-4bda-aab5-578dc8bee59a
-ms.openlocfilehash: 958483be7eb200b5f3d3b46738df0a3c50c4f3c3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 3377d3192d14e1737d8a1a83dbff4b9cc26783ec
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347235"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415324"
 ---
 # <a name="mycomputerfilesystem-object"></a>My.Computer.FileSystem オブジェクト
 ドライブ、ファイル、ディレクトリを操作するためのプロパティとメソッドを提供します。  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
  `My.Computer.FileSystem` オブジェクトのメソッドとプロパティについては、「 <xref:Microsoft.VisualBasic.FileIO.FileSystem>」をご覧ください。  
   
- 詳細については、「 [Visual Basic を使用したファイルアクセス](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)」を参照してください。  
+ 詳しくは、「[Visual Basic におけるファイル アクセス](../../developing-apps/programming/drives-directories-files/file-access.md)」をご覧ください。  
   
 > [!NOTE]
-> <xref:System.IO?displayProperty=nameWithType> 名前空間のクラスを使用して、ドライブ、ファイル、およびディレクトリを操作することもできます。  
+> <xref:System.IO?displayProperty=nameWithType> 名前空間のクラスは、ドライブ、ファイル、ディレクトリの操作にも使用できます。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **名前空間:** <xref:Microsoft.VisualBasic.MyServices>  
   
- **クラス:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (<xref:Microsoft.VisualBasic.FileIO.FileSystem>へのアクセスを提供します)  
+ **クラス:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (<xref:Microsoft.VisualBasic.FileIO.FileSystem> へのアクセスを提供)  
   
- **アセンブリ:** Visual Basic ランタイムライブラリ (Microsoft... .dll)  
+ **アセンブリ:** Visual Basic ランタイム ライブラリ (Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>関連項目
 
-- [My.Computer.FileSystem.SpecialDirectories オブジェクト](../../../visual-basic/language-reference/objects/my-computer-filesystem-specialdirectories-object.md)
-- [My.Computer オブジェクト](../../../visual-basic/language-reference/objects/my-computer-object.md)
+- [My.Computer.FileSystem.SpecialDirectories オブジェクト](my-computer-filesystem-specialdirectories-object.md)
+- [My.Computer オブジェクト](my-computer-object.md)

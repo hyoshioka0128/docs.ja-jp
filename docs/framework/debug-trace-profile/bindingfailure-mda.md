@@ -1,5 +1,6 @@
 ---
 title: bindingFailure MDA
+description: BindingFailure マネージデバッグアシスタント (MDA) について説明します。これは、.NET でのアセンブリの読み込みに失敗したときにアクティブ化されます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - binding failure
@@ -9,20 +10,18 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), binding failures
 - BindingFailure MDA
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 93c426cce792c8f30a3551e2d4626736dd67278f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 98c7947c7e5d2a1f0af8c26744d3b292ed8cb4c4
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052951"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415629"
 ---
 # <a name="bindingfailure-mda"></a>bindingFailure MDA
 
 `bindingFailure` マネージド デバッグ アシスタント (MDA) は、アセンブリの読み込みに失敗したときにアクティブになります。
 
-## <a name="symptoms"></a>症状
+## <a name="symptoms"></a>現象
 
 コードは、静的参照またはいずれかのローダー メソッド (<xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> や <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> など) を使用して、アセンブリを読み込もうとしました。 アセンブリは読み込まれず、<xref:System.IO.FileNotFoundException> または <xref:System.IO.FileLoadException> 例外がスローされました。
 

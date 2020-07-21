@@ -10,25 +10,25 @@ helpviewer_keywords:
 ms.assetid: a3cb42d6-6ce3-4aa0-a557-2cc5b142f1e4
 ms.openlocfilehash: 9fbb2fa4d403f59619792271eb3b8046cfa23949
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61790713"
 ---
 # <a name="tooltip"></a>ヒント
-ツールヒントは、ユーザーが経由の要素の上にマウス ポインターを置いたときに表示される小さいポップアップ ウィンドウ、<xref:System.Windows.Controls.Button>します。  
+ツールヒントは、ユーザーが <xref:System.Windows.Controls.Button> などの要素上にマウス ポインターを置いたときに表示される小さなポップアップ ウィンドウです。  
   
- 次の図は、マウスのポインターを指す、**閉じる**<xref:System.Windows.Controls.Button>、しを表示、識別<xref:System.Windows.Controls.ToolTip>します。  
+ 次の図では、マウス ポインターで **[閉じる]** <xref:System.Windows.Controls.Button> をポイントした後に、指定した <xref:System.Windows.Controls.ToolTip> が表示されるところを示しています。  
   
- ツールヒントが表示された閉じるボタン  
+ [閉じる] ボタンとそのツールヒントの表示  
   
- ![ツールヒント スクリーン ショット](./media/ss-ctl-tooltip.png "SS_CTL_tooltip")  
+ ![ツールヒントのスクリーンショット](./media/ss-ctl-tooltip.png "SS_CTL_tooltip")  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ToolTip の概要](tooltip-overview.md)  
   [方法トピック](tooltip-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.ToolTip>  
   <xref:System.Windows.Controls.ToolTipService>  
   <xref:System.Windows.Controls.Primitives.Popup>  

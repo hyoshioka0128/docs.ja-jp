@@ -1,29 +1,29 @@
 ---
-title: '方法 : 簡単なバインディングを作成する'
+title: '方法: 簡単なバインディングを作成する'
+description: Windows Presentation Foundation (WPF) で、この操作方法の例を使用して、アプリケーションの簡単なバインディングを作成します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - simple binding [WPF], creating
 - data binding [WPF], creating simple bindings
 - binding data [WPF], creating
 ms.assetid: 69b80f72-6259-44cb-8294-5bdcebca1e08
-ms.openlocfilehash: faef59ed426059eb2d488d0584d3325c8d46d415
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: 63dc44b442bb4658382bf12faf57b51c8e0698bb
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453500"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618702"
 ---
-# <a name="how-to-create-a-simple-binding"></a>方法 : 簡単なバインディングを作成する
-この例では、単純な <xref:System.Windows.Data.Binding>を作成する方法を示します。  
+# <a name="how-to-create-a-simple-binding"></a>方法: 簡単なバインディングを作成する
+この例では、簡単な <xref:System.Windows.Data.Binding> を作成する方法を示します。  
   
 ## <a name="example"></a>例  
- この例では、`PersonName`という名前の文字列プロパティを持つ `Person` オブジェクトがあります。 `Person` オブジェクトは、`SDKSample`と呼ばれる名前空間で定義されています。  
+ この例では、`PersonName` という名前の文字列プロパティを持つ `Person` オブジェクトがあります。 `Person` オブジェクトは `SDKSample` という名前空間で定義されています。  
   
- 次の例の `<src>` 要素を含む強調表示された行では、`Joe`の `PersonName` プロパティ値を使用して `Person` オブジェクトをインスタンス化します。 これは `Resources` セクションで行い、`x:Key`を割り当てます。  
+ 次の例の `<src>` 要素を含む強調表示された行では、`PersonName` プロパティの値が `Joe` である `Person` オブジェクトがインスタンス化されています。 これは `Resources` セクションで行われ、`x:Key` が割り当てられます。  
   
  [!code-xaml[SimpleBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml?highlight=9,37)]  
   
- `<TextBlock>` 要素を含む強調表示された行は、<xref:System.Windows.Controls.TextBlock> コントロールを `PersonName` プロパティにバインドします。 その結果、<xref:System.Windows.Controls.TextBlock> に "Joe" という値が表示されます。  
+ `<TextBlock>` 要素を含む強調表示された行では、<xref:System.Windows.Controls.TextBlock> コントロールが `PersonName` プロパティにバインドされます。 その結果、<xref:System.Windows.Controls.TextBlock> に "Joe" という値が表示されます。  
   
 ## <a name="see-also"></a>関連項目
 

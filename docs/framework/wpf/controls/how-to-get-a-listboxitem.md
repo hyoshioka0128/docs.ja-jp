@@ -10,25 +10,25 @@ helpviewer_keywords:
 ms.assetid: da877c6f-5fd8-40cb-8909-225cbfd99aa5
 ms.openlocfilehash: 27a435feb4a941c77af221ab25bd63ea98b16e92
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61910326"
 ---
 # <a name="how-to-get-a-listboxitem"></a>方法: ListBoxItem を取得する
-特定を取得する必要がある場合<xref:System.Windows.Controls.ListBoxItem>で特定のインデックス位置にある、 <xref:System.Windows.Controls.ListBox>、使用することができます、<xref:System.Windows.Controls.ItemContainerGenerator>します。  
+<xref:System.Windows.Controls.ListBox> 内の特定のインデックスで特定の <xref:System.Windows.Controls.ListBoxItem> を取得する必要がある場合、<xref:System.Windows.Controls.ItemContainerGenerator> を利用できます。  
   
 ## <a name="example"></a>例  
- 次の例は、<xref:System.Windows.Controls.ListBox>とその項目。  
+ 次の例では、<xref:System.Windows.Controls.ListBox> とその項目を示します。  
   
  [!code-xaml[ListBoxItems#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml#1)]  
   
- 次の例は、内の項目のインデックスを指定することで、項目を取得する方法を示します、<xref:System.Windows.Controls.ItemContainerGenerator.ContainerFromIndex%2A>のプロパティ、<xref:System.Windows.Controls.ItemContainerGenerator>します。  
+ 次の例では、<xref:System.Windows.Controls.ItemContainerGenerator> の <xref:System.Windows.Controls.ItemContainerGenerator.ContainerFromIndex%2A> プロパティに項目のインデックスを指定することで項目を取得する方法を示します。  
   
  [!code-csharp[ListBoxItems#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml.cs#2)]
  [!code-vb[ListBoxItems#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxItems/VisualBasic/Window1.xaml.vb#2)]  
   
- リスト ボックスの項目を取得したら、次の例に示すように、項目の内容を表示できます。  
+ リスト ボックス項目を取得すると、次の例のように、項目のコンテンツを表示できます。  
   
  [!code-csharp[ListBoxItems#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml.cs#3)]
  [!code-vb[ListBoxItems#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxItems/VisualBasic/Window1.xaml.vb#3)]

@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f0e05b09d5ce788b9a3da262d5890a0694b49375
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 44850755c41b212e88e0b90dd3b016f96a0af96d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969025"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290228"
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>スキーマをコンパイルするための XmlSchemaSet
 XML スキーマ定義言語 (XSD) スキーマの格納と検証が可能なキャッシュである <xref:System.Xml.Schema.XmlSchemaSet> について説明します。  
@@ -249,7 +247,7 @@ foreach (XmlSchema schema in schemaSet.Schemas())
 ## <a name="validating-xml-documents"></a>XML ドキュメントの検証  
  XML ドキュメントは、<xref:System.Xml.Schema.XmlSchemaSet> 内のスキーマに対して検証できます。 スキーマを <xref:System.Xml.XmlReaderSettings> オブジェクトの <xref:System.Xml.Schema.XmlSchemaSet><xref:System.Xml.XmlReaderSettings.Schemas%2A> プロパティに追加するか、<xref:System.Xml.Schema.XmlSchemaSet> を <xref:System.Xml.XmlReaderSettings> オブジェクトの <xref:System.Xml.XmlReaderSettings.Schemas%2A> プロパティに追加することによって、XML ドキュメントを検証します。 次に、<xref:System.Xml.XmlReaderSettings> オブジェクトを作成して、XML ドキュメントを検証するために、<xref:System.Xml.XmlReader.Create%2A> オブジェクトが <xref:System.Xml.XmlReader> クラスの <xref:System.Xml.XmlReader> メソッドによって使用されます。  
   
- <xref:System.Xml.Schema.XmlSchemaSet> を利用して XML 文書を検証する方法については、「[XmlSchemaSet による XML スキーマ (XSD) 検証](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)」を参照してください。  
+ <xref:System.Xml.Schema.XmlSchemaSet> を利用して XML 文書を検証する方法については、「[XmlSchemaSet による XML スキーマ (XSD) 検証](xml-schema-xsd-validation-with-xmlschemaset.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
@@ -260,5 +258,5 @@ foreach (XmlSchema schema in schemaSet.Schemas())
 - <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>
 - <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>
 - <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>
-- [スキーマ キャッシュとしての XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [XmlSchemaSet による XML スキーマ (XSD) 検証](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)
+- [スキーマ キャッシュとしての XmlSchemaSet](xmlschemaset-for-schema-compilation.md)
+- [XmlSchemaSet による XML スキーマ (XSD) 検証](xml-schema-xsd-validation-with-xmlschemaset.md)

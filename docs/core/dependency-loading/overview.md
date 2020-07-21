@@ -5,12 +5,12 @@ ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
 ms.topic: overview
-ms.openlocfilehash: f6b5fc1f92171b61dcab162b782ca7212c602d76
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 34deb802183f20cc92449c21eb7e149cc002850f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416679"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284223"
 ---
 # <a name="dependency-loading-in-net-core"></a>.NET Core での依存関係の読み込み
 

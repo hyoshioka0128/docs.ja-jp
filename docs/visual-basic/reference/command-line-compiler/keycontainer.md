@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keycontainer compiler option [Visual Basic]
 - /keycontainer compiler option [Visual Basic]
 ms.assetid: 6a9bc861-1752-4db1-9f64-b5252f0482cc
-ms.openlocfilehash: be2ad1416e801398fb513593c7f3828e5488bfaf
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
-ms.translationtype: MT
+ms.openlocfilehash: 575b337c262fbb36a9e118aa293916c296cc2db3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005531"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408563"
 ---
 # <a name="-keycontainer"></a>-keycontainer
 アセンブリに厳密な名前を付けるキー ペアのキー コンテナー名を指定します。  
@@ -24,26 +24,26 @@ ms.locfileid: "72005531"
   
 ## <a name="arguments"></a>引数  
   
-|項目|定義|  
+|用語|定義|  
 |---|---|  
-|`container`|必須。 キーが格納されているコンテナーファイル。 名前にスペースが含まれている場合は、ファイル名を引用符 ("") で囲みます。|  
+|`container`|必須です。 キーが格納されているコンテナー ファイル。 ファイル名に空白が含まれている場合は、名前を二重引用符 ("") で囲みます。|  
   
-## <a name="remarks"></a>コメント  
- コンパイラは公開キーをアセンブリマニフェストに挿入し、最後のアセンブリに秘密キーで署名することによって、共有可能なコンポーネントを作成します。 キー ファイルを生成するには、コマンド ラインで「`sn -k file`」と入力します。 @No__t-0 オプションを指定すると、キーペアがコンテナーにインストールされます。 詳細については、「 [sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md)」を参照してください。  
+## <a name="remarks"></a>Remarks  
+ コンパイラにより、アセンブリ マニフェストに公開キーが挿入され、秘密キーで最終アセンブリに署名されて、共有可能なコンポーネントが作成されます。 キー ファイルを生成するには、コマンド ラインで「`sn -k file`」と入力します。 `-i` オプションでは、キー ペアがコンテナーにインストールされます。 詳細については、「[Sn.exe (厳密名ツール)](../../../framework/tools/sn-exe-strong-name-tool.md)」を参照してください。  
   
- @No__t-0 を指定してコンパイルすると、キーファイルの名前がモジュールに保持され、 [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)を使用してアセンブリをコンパイルするときに作成されるアセンブリに組み込まれます。  
+ `-target:module` を指定してコンパイルした場合は、キー ファイルの名前はモジュールに保持され、[-addmodule](addmodule.md) を使用してコンパイルして作成したアセンブリに組み込まれます。  
   
  このオプションは、任意の Microsoft Intermediate Language (MSIL) モジュールのソース コードで、カスタム属性 (<xref:System.Reflection.AssemblyKeyNameAttribute>) として指定することもできます。  
   
- また、暗号化情報を [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) でコンパイラに渡すことができます。 部分的に署名されたアセンブリを作成する場合は、[-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md) を使います。  
+ また、暗号化情報を [-keyfile](keyfile.md) でコンパイラに渡すことができます。 部分的に署名されたアセンブリを作成する場合は、[-delaysign](delaysign.md) を使います。  
   
- アセンブリに署名する方法の詳細については、「[厳密な名前付きアセンブリの作成と使用](../../../standard/assembly/create-use-strong-named.md)」を参照してください。  
+ アセンブリへの署名の詳細については、「[厳密な名前付きアセンブリの作成と使用](../../../standard/assembly/create-use-strong-named.md)」を参照してください。  
   
 > [!NOTE]
-> @No__t-0 オプションは、Visual Studio 開発環境内からは使用できません。これは、コマンドラインからコンパイルする場合にのみ使用できます。  
+> `-keycontainer` オプションは、Visual Studio 開発環境からは利用できません。これはコマンド ラインからコンパイルするときにのみ使用できます。  
   
 ## <a name="example"></a>例  
- 次のコードでは、ソースファイル `Input.vb` でコンパイルし、キーコンテナーを指定しています。  
+ 次のコードでは、ソース ファイル `Input.vb` がコンパイルされ、キー コンテナーが指定されます。  
   
 ```console  
 vbc -keycontainer:key1 input.vb  
@@ -52,6 +52,6 @@ vbc -keycontainer:key1 input.vb
 ## <a name="see-also"></a>関連項目
 
 - [.NET のアセンブリ](../../../standard/assembly/index.md)
-- [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)
-- [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic のコマンド ライン コンパイラ](index.md)
+- [-keyfile](keyfile.md)
+- [コンパイル コマンド ラインのサンプル](sample-compilation-command-lines.md)

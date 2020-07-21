@@ -2,12 +2,12 @@
 title: プログラミングの概念 (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 3fcb1ca76c49919b00b74d955b7aadaa2e882f2a
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: 96545d37697299983aab42d13c7f3bc054d64678
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168340"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240682"
 ---
 # <a name="programming-concepts-c"></a>プログラミングの概念 (C#)
 このセクションでは、C# 言語でのプログラミングの概念について説明します。  
@@ -19,8 +19,7 @@ ms.locfileid: "70168340"
 |[.NET のアセンブリ](../../../standard/assembly/index.md)|アセンブリを作成および使用する方法について説明します。|  
 |[Async および Await を使用した非同期プログラミング (C#)](./async/index.md)|C# の [async](../../language-reference/keywords/async.md) および [await](../../language-reference/operators/await.md) キーワードを使用して非同期ソリューションを記述する方法を説明します。 チュートリアルが含まれています。|  
 |[属性 (C#)](./attributes/index.md)|属性を使用して、型、フィールド、メソッド、プロパティなどのプログラミング要素に関する追加情報を指定する方法について説明します。|  
-|[呼び出し元情報 (C#)](./caller-information.md)|メソッドの呼び出し元に関する情報を取得する方法について説明します。 この情報には、ソース コードのファイル パスと行番号および呼び出し元のメンバー名が含まれます。|  
-|[コレクション (C#)](./collections.md)|.NET Framework で提供されているコレクションの種類のいくつかについて説明します。 単純なコレクションおよびキーと値のペアのコレクションを使用する方法を示します。|  
+|[コレクション (C#)](./collections.md)|.NET で提供されているコレクションの種類のいくつかについて説明します。 単純なコレクションおよびキーと値のペアのコレクションを使用する方法を示します。|  
 |[共変性と反変性 (C#)](./covariance-contravariance/index.md)|インターフェイスやデリゲートでのジェネリック型パラメーターの暗黙の型変換を有効にする方法について説明します。|  
 |[式ツリー (C#)](./expression-trees/index.md)|式ツリーを使用して、実行可能コードの動的変更を有効にする方法について説明します。|  
 |[反復子 (C#)](./iterators.md)|コレクションのステップ実行に使用し、要素を一度に 1 つずつ返す、反復子について説明します。|  

@@ -8,27 +8,27 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: 4516c8f9673052b521c1f0f594978236fef1e0ec
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 617b27923e96d9abc62ccbf158b076c6e45b20a8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136452"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175097"
 ---
 # <a name="icorprofilercallback8-interface"></a>ICorProfilerCallback8 インターフェイス
 [.NET Framework 4.7 以降のバージョンでサポートされています]  
 
- 動的メソッドの JIT コンパイルが開始および終了したことをプロファイラーに通知するために、共通言語ランタイムによって使用されるコールバックメソッドを提供する[ICorProfilerCallback7](icorprofilercallback7-interface.md)のサブクラスです。 
+ 動的メソッドの JIT コンパイルが開始および終了したことをプロファイラーに通知するために共通言語ランタイムによって使用されるコールバック メソッドを提供する[ICorProfilerCallback7](icorprofilercallback7-interface.md)のサブクラス。
   
 ## <a name="methods"></a>メソッド  
   
-|メソッド|説明|  
+|Method|説明|  
 |------------|-----------------|  
 |[DynamicMethodJITCompilationStarted メソッド](icorprofilercallback8-dynamicmethodjitcompilationstarted-method.md)|動的メソッドの JIT コンパイルが開始されたことをプロファイラーに通知します。|  
-|[DynamicMethodJITCompilationFinished メソッド](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)|動的メソッドの JIT コンパイルが終了したことをプロファイラーに通知します。|  
+|[DynamicMethodJITCompilationFinished メソッド](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)|動的メソッドの JIT コンパイルが完了したことをプロファイラーに通知します。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   

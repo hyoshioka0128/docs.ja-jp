@@ -2,12 +2,12 @@
 title: Linux コンテナーとして AKS/Kubernetes クラスターにデプロイされる ASP.NET Core 2.2 アプリケーションをビルドする
 description: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
 ms.date: 02/25/2019
-ms.openlocfilehash: ab64a0423ceceb8285c159af276d6d97e12379d8
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 83d4d0a60db4bdc112bb35bfbf61c0396646ad31
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70848753"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80989026"
 ---
 # <a name="build-aspnet-core-22-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Linux コンテナーとして AKS/Kubernetes オーケストレーターにデプロイされる ASP.NET Core 2.2 アプリケーションをビルドする
 

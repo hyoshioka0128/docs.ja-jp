@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e47a72f1-9609-48ed-bb34-97170d7f6890
 topic_type:
 - apiref
-ms.openlocfilehash: ef4788891e91608a394482319a89b8b0d258449f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: dd97c479f12e7bdb015b39a802b398ca2b0bcd3f
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436516"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007638"
 ---
 # <a name="cornativetype-enumeration"></a>CorNativeType 列挙型
 ネイティブのアンマネージ型を記述する値が格納されます。  
@@ -78,7 +78,7 @@ typedef enum CorNativeType {
     NATIVE_TYPE_IINSPECTABLE         = 0x2e,  
     NATIVE_TYPE_HSTRING              = 0x2f,  
   
-    NATIVE_TYPE_ERROR                = 0x2d,   
+    NATIVE_TYPE_ERROR                = 0x2d,
   
     NATIVE_TYPE_MAX                  = 0x50  
   
@@ -104,7 +104,7 @@ typedef enum CorNativeType {
 |`NATIVE_TYPE_R8`|8バイト浮動小数点数値。|  
 |`NATIVE_TYPE_SYSCHAR`|互換性のために残されています。|  
 |`NATIVE_TYPE_VARIANT`|互換性のために残されています。|  
-|`NATIVE_TYPE_CURRENCY`|マネージ <xref:System.Decimal> 型に対応する数値 COM 型。|  
+|`NATIVE_TYPE_CURRENCY`|マネージ型に対応する数値 COM 型 <xref:System.Decimal> 。|  
 |`NATIVE_TYPE_PTR`|互換性のために残されています。|  
 |`NATIVE_TYPE_DECIMAL`|互換性のために残されています。|  
 |`NATIVE_TYPE_DATE`|互換性のために残されています。|  
@@ -134,17 +134,17 @@ typedef enum CorNativeType {
 |`NATIVE_TYPE_CUSTOMMARSHALER`|カスタムマーシャラーネイティブ型。<br /><br /> この後には、"ネイティブ型名/0Custom marshaler 型名/0Custom cookie/0" または "{ネイティブ型 GUID}/0Custom marshaler 型名/0Custom cookie/0" という形式の文字列を指定する必要があります。|  
 |`NATIVE_TYPE_ERROR`|「COM 相互運用」を参照してください。<br /><br /> ELEMENT_TYPE_I4 この型は VT_HRESULT にマップされます。|  
 |`NATIVE_TYPE_IINSPECTABLE`|ネイティブ `IInspectable` 型。|  
-|`NATIVE_TYPE_HSTRING`|ネイティブ `HString`。|  
-|`NATIVE_TYPE_MAX`|無効な値です。|  
+|`NATIVE_TYPE_HSTRING`|ネイティブ `HString` 。|  
+|`NATIVE_TYPE_MAX`|無効な値。|  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Runtime.InteropServices.UnmanagedType>
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

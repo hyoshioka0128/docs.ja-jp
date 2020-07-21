@@ -1,20 +1,19 @@
 ---
 title: デリゲートの使用 - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], how to use
 ms.assetid: 99a2fc27-a32e-4a34-921c-e65497520eec
-ms.openlocfilehash: a0422b5cd3083f351bde44deae5871599a649140
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9a81ee5ccdc2697ca435d40be27568b651977f96
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423301"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241592"
 ---
 # <a name="using-delegates-c-programming-guide"></a>デリゲートの使用 (C# プログラミング ガイド)
 
-[デリゲート](../../language-reference/builtin-types/reference-types.md)は、C および C++ の関数ポインターのようなメソッドを安全にカプセル化する型です。 ただし、C 関数ポインターとは異なり、デリゲートはオブジェクト指向で、タイプ セーフで、安全です。 デリゲートの型は、デリゲートの名前によって定義されます。 次の例では、引数として[文字列](../../language-reference/builtin-types/reference-types.md)を受け取り、[void](../../language-reference/keywords/void.md) を返すメソッドをカプセル化できる `Del` という名前のデリゲートを宣言しています。
+[デリゲート](../../language-reference/builtin-types/reference-types.md)は、C および C++ の関数ポインターのようなメソッドを安全にカプセル化する型です。 ただし、C 関数ポインターとは異なり、デリゲートはオブジェクト指向で、タイプ セーフで、安全です。 デリゲートの型は、デリゲートの名前によって定義されます。 次の例では、引数として[文字列](../../language-reference/builtin-types/reference-types.md)を受け取り、[void](../../language-reference/builtin-types/void.md) を返すメソッドをカプセル化できる `Del` という名前のデリゲートを宣言しています。
 
 [!code-csharp[csProgGuideDelegates#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#21)]
 
@@ -24,7 +23,7 @@ ms.locfileid: "73423301"
 
 [!code-csharp[csProgGuideDelegates#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#23)]
 
-デリゲート型は、.NET Framework の <xref:System.Delegate> クラスから派生しています。 デリゲート型は [sealed](../../language-reference/keywords/sealed.md) (派生できません) であり、<xref:System.Delegate> からカスタム クラスを派生することはできません。 インスタンス化されたデリゲートはオブジェクトであるため、パラメーターとして渡したり、プロパティに割り当てたりすることができます。 これにより、メソッドは、パラメーターとしてデリゲートを受け入れ、後でデリゲートを呼び出すことができます。 これは非同期のコールバックと呼ばれ、長いプロセスの完了時に呼び出し元に通知する一般的な方法です。 デリゲートをこの方法で使用する場合、デリゲートを使用するコードは、使用されるメソッドの実装について認識している必要はありません。 機能は、カプセル化インターフェイスが提供する機能に似ています。
+デリゲート型は、.NET の <xref:System.Delegate> クラスから派生しています。 デリゲート型は [sealed](../../language-reference/keywords/sealed.md) (派生できません) であり、<xref:System.Delegate> からカスタム クラスを派生することはできません。 インスタンス化されたデリゲートはオブジェクトであるため、パラメーターとして渡したり、プロパティに割り当てたりすることができます。 これにより、メソッドは、パラメーターとしてデリゲートを受け入れ、後でデリゲートを呼び出すことができます。 これは非同期のコールバックと呼ばれ、長いプロセスの完了時に呼び出し元に通知する一般的な方法です。 デリゲートをこの方法で使用する場合、デリゲートを使用するコードは、使用されるメソッドの実装について認識している必要はありません。 機能は、カプセル化インターフェイスが提供する機能に似ています。
 
 コールバックの別の一般的な使用方法は、カスタム比較メソッドの定義およびそのデリゲートの並べ替えメソッドへの引き渡しです。 これにより、呼び出し元のコードを並べ替えアルゴリズムの一部にすることができます。 次の例のメソッドは `Del` 型をパラメーターとして使用しています。
 

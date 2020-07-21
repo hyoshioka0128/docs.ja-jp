@@ -1,5 +1,6 @@
 ---
 title: ネットワーク プログラミング方法のトピック
+description: .NET Framework のネットワーク プログラミングのさまざまなファセットについて学習するとき、以下のハウツー記事を使用してください。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - network resources
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - networking how-tos [.NET Framework]
 - network
 ms.assetid: 8fd6c675-9ea6-4fad-a412-e2c2c1f233d8
-ms.openlocfilehash: 5f8f1a3ca9aaf4bea56f342857d2df0bb18a9ba8
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: f091f0f675fcf22cb7c6be83a5766fcc8d279be7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047633"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502276"
 ---
 # <a name="network-programming-how-to-topics"></a>ネットワーク プログラミング方法のトピック
 概念を説明したドキュメントに用意されている、ネットワーク プログラミングに関する方法を説明したトピックへのリンクの一覧を次に示します。  

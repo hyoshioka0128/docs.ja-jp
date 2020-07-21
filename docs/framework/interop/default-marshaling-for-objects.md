@@ -1,5 +1,6 @@
 ---
 title: オブジェクトに対する既定のマーシャリング
+description: オブジェクトに対する既定のマーシャリングについて説明します。 マーシャリング オプションを確認します。 オブジェクトをインターフェイスまたはバリアントに、バリアントをオブジェクトに、および ByRef バリアントをマーシャリングします。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,11 @@ helpviewer_keywords:
 - objects, interop marshaling
 - interop marshaling, objects
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
-ms.openlocfilehash: e0de715a3ed33eedf212fc3e0e9930c9cbaa0a38
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 7b8f94f4dfd8e8b9e8e04df8de5f8266a8581a92
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123593"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618455"
 ---
 # <a name="default-marshaling-for-objects"></a>オブジェクトに対する既定のマーシャリング
 
@@ -310,7 +310,7 @@ COM からマネージド コードに渡された後で COM に返されるバ�
 
 バリアントとオブジェクトに関する反映規則を次の表にまとめます。
 
-|変換元|終了|変更内容の反映|
+|From|終了|変更内容の反映|
 |----------|--------|-----------------------------|
 |**Variant**  *v*|**Object**  *o*|Never|
 |**Object**  *o*|**Variant**  *v*|Never|

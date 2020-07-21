@@ -1,17 +1,19 @@
 ---
-ms.openlocfilehash: ad2f7bf981d56e06ec726942f1fd37dff6b5b09c
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: b90df72057594044458771f6824f7621a427725f
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67802604"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622003"
 ---
 ### <a name="performance-improvement-in-automation-tree-for-grouping-itemscontrols"></a>ItemsControl をグループ化するためのオートメーション ツリーのパフォーマンス向上
 
-|   |   |
-|---|---|
-|説明|グループ化が有効な ListBox や DataGrid などの <xref:System.Windows.Controls.ItemsControl> のオートメーション ツリーの再構築のパフォーマンスが向上しました。|
-|スコープ|Major|
-|Version|4.8|
-|型|ランタイム|
+#### <a name="details"></a>説明
 
+グループ化が有効な ListBox や DataGrid などの <xref:System.Windows.Controls.ItemsControl> のオートメーション ツリーの再構築のパフォーマンスが向上しました。
+
+| 名前    | [値]       |
+|:--------|:------------|
+| スコープ   |Major|
+|バージョン|4.8|
+|種類|ランタイム|

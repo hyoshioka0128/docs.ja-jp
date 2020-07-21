@@ -1,5 +1,6 @@
 ---
 title: アセンブリの読み込みのベスト プラクティス
+description: .NET でのアセンブリの読み込みに関するベスト プラクティスを紹介します。 無効なキャスト、メソッドの欠落、およびその他の例外につながる可能性のある型 ID の問題を回避します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies,binding
@@ -12,14 +13,11 @@ helpviewer_keywords:
 - LoadWithPartialName method
 - load-from context
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a95679f659f13956fd230f07e9401af9097a043c
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
-ms.translationtype: HT
+ms.openlocfilehash: 8ee5243258ea1b853b4690b79ec032c46d1b3777
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182470"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803506"
 ---
 # <a name="best-practices-for-assembly-loading"></a>アセンブリの読み込みのベスト プラクティス
 ここでは、<xref:System.InvalidCastException>、<xref:System.MissingMethodException>、およびその他のエラーの原因となることがある型 ID の問題を回避する方法について説明します。 また、次の推奨事項について説明します。  
@@ -36,7 +34,7 @@ ms.locfileid: "71182470"
   
  最初の推奨事項である「[読み込みコンテキストのメリットとデメリットについて理解する](#load_contexts)」では、その他の推奨事項の背景情報を提供します。他の推奨事項を理解するには、読み込みコンテキストに関する知識が必要となるためです。  
   
-<a name="load_contexts"></a>   
+<a name="load_contexts"></a>
 ## <a name="understand-the-advantages-and-disadvantages-of-load-contexts"></a>読み込みコンテキストの利点と欠点を理解する  
  アプリケーション ドメインでは、アセンブリは、3 つのコンテキストのいずれかに読み込まれるか、コンテキストなしで読み込まれる可能性があります。  
   
@@ -44,7 +42,7 @@ ms.locfileid: "71182470"
   
 - 読み込み元コンテキストには、ローダーによって検索されない場所から読み込まれたアセンブリが含まれます。 たとえば、アドインが、アプリケーション パスではないディレクトリにインストールされることがあります。 <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>、<xref:System.AppDomain.CreateInstanceFrom%2A?displayProperty=nameWithType>、<xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType> は、パスを使用して読み込むメソッドの例です。  
   
-- リフレクション専用コンテキストには、<xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> メソッドと <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> メソッドを使用して読み込まれたアセンブリが含まれます。 このコンテキスト内のコードは実行できないため、ここでは説明しません。 詳細については、「[方法 :リフレクションのみのコンテキストにアセンブリを読み込む](../reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)」を参照してください。  
+- リフレクション専用コンテキストには、<xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> メソッドと <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> メソッドを使用して読み込まれたアセンブリが含まれます。 このコンテキスト内のコードは実行できないため、ここでは説明しません。 詳細については、「[方法:リフレクションのみのコンテキストにアセンブリを読み込む](../reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)」を参照してください。  
   
 - リフレクション出力を使用して一時動的アセンブリを出力した場合、そのアセンブリはどのコンテキストにも含まれません。 また、<xref:System.Reflection.Assembly.LoadFile%2A> メソッドを使用して読み込まれる大部分のアセンブリは、コンテキストなしで読み込まれます。バイト配列から読み込まれるアセンブリは、(ポリシーが適用された後の) アセンブリの ID がグローバル アセンブリ キャッシュ内に存在するように確立される場合を除き、コンテキストなしで読み込まれます。  
   
@@ -97,7 +95,7 @@ ms.locfileid: "71182470"
   
 - .NET Framework Version 1.0 および 1.1 では、ポリシーが適用されません。  
   
-<a name="avoid_partial_names"></a>   
+<a name="avoid_partial_names"></a>
 ## <a name="avoid-binding-on-partial-assembly-names"></a>部分的なアセンブリ名をバインドしない  
  アセンブリを読み込むときにアセンブリの表示名 (<xref:System.Reflection.Assembly.FullName%2A>) の一部だけを指定すると、部分的な名前のバインディングが行われます。 たとえば、<xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> メソッドを呼び出すときに、アセンブリのバージョン、カルチャ、および公開キー トークンを省略して、簡易名だけを指定することがあります。 または、<xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType> メソッドを呼び出すこともあります。このメソッドは、最初に <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> メソッドを呼び出しますが、それでアセンブリが見つからなかった場合、グローバル アセンブリ キャッシュを検索し、使用可能な最新バージョンのアセンブリを読み込みます。  
   
@@ -117,7 +115,7 @@ ms.locfileid: "71182470"
   
  アセンブリの読み込みが簡単になるという理由で <xref:System.Reflection.Assembly.LoadWithPartialName%2A> メソッドを使用する場合は、アセンブリが見つからないことを示すエラー メッセージを表示してアプリケーションを終了する方が、未知のバージョンのアセンブリを自動的に使用するよりも望ましいユーザー エクスペリエンスになる可能性が高い点を考慮してください。未知のバージョンを使用すると、予測できない動作やセキュリティ ホールを引き起こす可能性があります。  
   
-<a name="avoid_loading_into_multiple_contexts"></a>   
+<a name="avoid_loading_into_multiple_contexts"></a>
 ## <a name="avoid-loading-an-assembly-into-multiple-contexts"></a>1 つのアセンブリを複数のコンテキストに読み込まない  
  1 つのアセンブリを複数のコンテキストに読み込むと、型 ID の問題が引き起こされることがあります。 2 つの異なるコンテキストに同じアセンブリから同じ型が読み込まれると、同じ名前を持つ 2 つの異なる型が読み込まれたような状態になります。 一方の型を別の型にキャストしようとした場合、<xref:System.InvalidCastException> がスローされ、型 `MyType` を型 `MyType` にキャストできないという混乱を招くメッセージが表示されます。  
   
@@ -133,7 +131,7 @@ ms.locfileid: "71182470"
   
  <xref:System.Reflection.Assembly.LoadFile%2A> や <xref:System.Reflection.Assembly.LoadFrom%2A> などのファイル パスからの読み込みに代わる代替手段については、「[既定の読み込みコンテキストへの切り替えを検討する](#switch_to_default)」で説明します。  
   
-<a name="avoid_loading_multiple_versions"></a>   
+<a name="avoid_loading_multiple_versions"></a>
 ## <a name="avoid-loading-multiple-versions-of-an-assembly-into-the-same-context"></a>複数のバージョンのアセンブリを同じコンテキストに読み込まない  
  複数のバージョンのアセンブリを 1 つの読み込みコンテキストに読み込むと、型 ID の問題が引き起こされることがあります。 同じアセンブリの 2 つのバージョンから同じ型が読み込まれると、同じ名前を持つ 2 つの異なる型が読み込まれたような状態になります。 一方の型を別の型にキャストしようとした場合、<xref:System.InvalidCastException> がスローされ、型 `MyType` を型 `MyType` にキャストできないという混乱を招くメッセージが表示されます。  
   
@@ -147,7 +145,7 @@ ms.locfileid: "71182470"
   
  コードをよく調べ、読み込まれるアセンブリのバージョンが 1 つだけであることを確認してください。 特定の時点で読み込まれているアセンブリを確認するには、<xref:System.AppDomain.GetAssemblies%2A?displayProperty=nameWithType> メソッドを使用できます。  
   
-<a name="switch_to_default"></a>   
+<a name="switch_to_default"></a>
 ## <a name="consider-switching-to-the-default-load-context"></a>既定の読み込みコンテキストへの切り替えを検討する  
  アプリケーションのアセンブリの読み込みと配置のパターンを調査してください。 バイト配列から読み込まれるアセンブリを取り除くことができるかどうかを検討します。 アセンブリをプローブ パスに移動できるかどうかを検討します。 アセンブリがグローバル アセンブリ キャッシュにある場合、またはアプリケーション ドメインのプローブ パス (つまり、アプリケーション ドメインの <xref:System.AppDomainSetup.ApplicationBase%2A> および <xref:System.AppDomainSetup.PrivateBinPath%2A>) にある場合は、ID を指定してアセンブリを読み込むことができます。  
   

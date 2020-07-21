@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: b0d093cc30a09b3248cc57a521b386bf581b5451
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 3cc07eef109b9096bc5a5fbcd1ea098a23b2155f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552164"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78968344"
 ---
 ### <a name="http-browser-samesite-changes-impact-authentication"></a>HTTP:ブラウザー SameSite の変更による認証への影響
 
 Chrome や Firefox などの一部のブラウザーでは、Cookie の `SameSite` の実装に破壊的変更が加えられました。 この変更は、OpenID Connect や WS-Federation などのリモート認証シナリオに影響します。これをオプトアウトするには、`SameSite=None` を送信します。 ただし、iOS 12 および一部の古いバージョンの他のブラウザーでは `SameSite=None` は中断します。 アプリはこれらのバージョンをスニッフィングし、`SameSite` を省略する必要があります。
 
-この問題に関するディスカッションについては、[aspnet/AspNetCore#14996](https://github.com/aspnet/AspNetCore/issues/14996) を参照してください。
+この問題に関するディスカッションについては、[dotnet/aspnetcore#14996](https://github.com/dotnet/aspnetcore/issues/14996) を参照してください。
 
 #### <a name="version-introduced"></a>導入されたバージョン
 
@@ -32,7 +32,7 @@ ASP.NET Core 3.1 は、新しい `SameSite` 動作を実装するように更新
 
 既に概要を説明したように、ブラウザーと仕様が変わっています。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 サードパーティ ログインなどを介してリモート サイトとやり取りするアプリは、以下を行う必要があります。
 
@@ -83,35 +83,35 @@ Electron の複数のバージョンには、Chromium の古いバージョン�
 ```csharp
 private void CheckSameSite(HttpContext httpContext, CookieOptions options)
 {
-    if (options.SameSite == SameSiteMode.None) 
-    { 
+    if (options.SameSite == SameSiteMode.None)
+    {
         var userAgent = httpContext.Request.Headers["User-Agent"].ToString();
-        // TODO: Use your User Agent library of choice here. 
-        if (/* UserAgent doesn't support new behavior */) 
-        { 
+        // TODO: Use your User Agent library of choice here.
+        if (/* UserAgent doesn't support new behavior */)
+        {
             options.SameSite = SameSiteMode.Unspecified;
         }
     }
 }
 
-public void ConfigureServices(IServiceCollection services) 
-{ 
-    services.Configure<CookiePolicyOptions>(options => 
-    { 
+public void ConfigureServices(IServiceCollection services)
+{
+    services.Configure<CookiePolicyOptions>(options =>
+    {
         options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
         options.OnAppendCookie = cookieContext =>
             CheckSameSite(cookieContext.Context, cookieContext.CookieOptions);
         options.OnDeleteCookie = cookieContext =>
             CheckSameSite(cookieContext.Context, cookieContext.CookieOptions);
-    }); 
-} 
+    });
+}
 
-public void Configure(IApplicationBuilder app) 
-{ 
+public void Configure(IApplicationBuilder app)
+{
     // Before UseAuthentication or anything else that writes cookies.
     app.UseCookiePolicy();
 
-    app.UseAuthentication(); 
+    app.UseAuthentication();
     // code omitted for brevity
 }
 ```
@@ -121,10 +121,10 @@ public void Configure(IApplicationBuilder app)
 `Microsoft.AspNetCore.SuppressSameSiteNone` 互換性スイッチを使用すると、新しい ASP.NET Core Cookie の動作を一時的にオプトアウトできます。 プロジェクトの *runtimeconfig.template.json* ファイルに次の JSON を追加します。
 
 ```json
-{ 
-  "configProperties": { 
-    "Microsoft.AspNetCore.SuppressSameSiteNone": "true" 
-  } 
+{
+  "configProperties": {
+    "Microsoft.AspNetCore.SuppressSameSiteNone": "true"
+  }
 }
 ```
 

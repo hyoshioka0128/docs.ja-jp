@@ -1,18 +1,16 @@
 ---
 title: .NET Framework アプリケーションの配置
+description: .NET アプリケーションのデプロイを開始します。 共通言語ランタイムによるアセンブリの検出方法と、アセンブリの読み込みでのベスト プラクティスに関する記事をご覧ください。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - deploying applications [.NET Framework]
 - .NET Framework, deploying apps
 ms.assetid: 139d4cb1-5972-40f4-bdd8-1ce68e4dfb80
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 92c7bbfe2c35aa1474c83eae49240af39b664714
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: HT
+ms.openlocfilehash: 894248b0a32984c8563dc5357451ea25c4926bea
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052045"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621549"
 ---
 # <a name="deploying-net-framework-applications"></a>.NET Framework アプリケーションの配置
 .NET Framework ドキュメントの本セクションでは、アセンブリの読み込み、アセンブリ参照の解決、およびネイティブ イメージの生成を使用したアプリケーションのパフォーマンス向上のためのガイドラインなど、.NET Framework アプリケーションを配置するための重要な情報を提供します。  

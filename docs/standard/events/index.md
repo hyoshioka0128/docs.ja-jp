@@ -1,5 +1,6 @@
 ---
 title: イベントの処理と発生
+description: デリゲート モデルに基づく .NET イベントを処理および発生させる方法について説明します。 このモデルを使用すると、サブスクライバーがプロバイダーに登録したり、プロバイダーから通知を受け取ったりすることができます。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: a53a8123db64948503bd6d2da9a27fc414dc1e1f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8cf0ff323e9bf7305e3d9cbb6dabd8f685059e97
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423535"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447109"
 ---
 # <a name="handling-and-raising-events"></a>イベントの処理と発生
 
@@ -78,7 +79,7 @@ ms.locfileid: "73423535"
 [!code-vb[EventsOverview#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
   
 ## <a name="static-and-dynamic-event-handlers"></a>静的および動的イベント ハンドラー  
- 
+
 .NET を使用すると、静的または動的にイベント通知のためのサブスクライバーを登録できます。 静的なイベント ハンドラーは、処理対象のイベントのクラスの有効期間にわたって有効になります。 動的なイベント ハンドラーは、プログラムの実行中、通常は条件付きのプログラム ロジックに応答する形で、明示的にアクティブ化または非アクティブ化されます。 たとえば、特定の条件下でのみイベント通知が必要な場合や、複数のイベント ハンドラーを持つアプリケーションで、実行時の条件に応じて適切なハンドラーを決定する場合などに使用できます。 前のセクションの例は、イベント ハンドラーを動的に追加する方法を示しています。 詳細については、[イベント](../../visual-basic/programming-guide/language-features/events/index.md) (Visual Basic の場合) と[イベント](../../csharp/programming-guide/events/index.md) (C# の場合) を参照してください。  
   
 ## <a name="raising-multiple-events"></a>複数のイベントの発生  

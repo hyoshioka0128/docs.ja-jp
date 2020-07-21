@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bf2bba24-d278-43bd-b1c5-35680e748d3e
 topic_type:
 - apiref
-ms.openlocfilehash: bd10af53d7803964ed6e699ce5328aa8a860216c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4ee055812eb8dce2dc86f834dde92d7de5e1fdf9
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73085018"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976214"
 ---
 # <a name="icordebugevalisactive-method"></a>ICorDebugEval::IsActive メソッド
 この、このオブジェクトが現在実行されているかどうかを示す値を取得します。  
@@ -37,11 +37,11 @@ HRESULT IsActive (
  `pbActive`  
  入出力この評価がアクティブかどうかを示す値へのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

@@ -8,7 +8,7 @@ helpviewer_keywords:
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
 ms.openlocfilehash: 36cd3a927d2fdf197e6b496d9308fc43a555d59b
 ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346153"
@@ -24,9 +24,9 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
 - コードが Visual Basic の "ベスト プラクティス" に従っていることを確認できます。  
   
-## <a name="naming-conventions"></a>名前付け規則  
+## <a name="naming-conventions"></a>命名規則  
   
-- 名前付けのガイドラインについては、「[名前付けのガイドライン](../../../standard/design-guidelines/naming-guidelines.md)」を参照してください。  
+- 名前付けのガイドラインについては、「[Naming Guidelines (名前付けのガイドライン)](../../../standard/design-guidelines/naming-guidelines.md)」をご覧ください。  
   
 - "My" または "my" を変数名の一部として使用しないようにします。 `My` オブジェクトとの混同を招くからです。  
   
@@ -36,7 +36,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
 - タブを空白として挿入し、4 文字インデントによるスマート インデントを使用します。  
   
-- コードエディターでコードを再フォーマットするには、**コードを簡単に一覧表示 (再フォーマット)** します。 詳細については、「[[オプション]、[テキストエディター]、[基本] (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic)」を参照してください。  
+- コード エディターで **[コードの再フォーマット]** を使用してコードの書式を再設定します。 詳細については、[[オプション]、[テキスト エディター]、[基本] (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic) に関する記事をご覧ください。  
   
 - 1 つの行には 1 つのステートメントのみを記述します。 Visual Basic の行区切り記号 (:) は使用しないでください。  
   
@@ -44,7 +44,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
 - 1 つの行には 1 つの宣言のみを記述します。  
   
-- **コードの一覧表示 (再フォーマット)** によって、継続行の書式が自動的に設定されない場合は、継続行を手動で1タブストップでインデントします。 ただし、リストの項目は常に左揃えにします。  
+- **[コードの再フォーマット]** で継続行が自動的に書式設定されない場合は、継続行のインデントを手動で 1 タブ ストップに設定します。 ただし、リストの項目は常に左揃えにします。  
   
     ```vb  
     a As Integer,  
@@ -63,7 +63,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
      [!code-vb[VbVbalrGuidelines#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#2)]  
   
-- 整形されたアスタリスク (*) のブロックでコメントを囲まないようにします。  
+- アスタリスク (*) を整形したブロックでコメントを囲まないようにします。  
   
 ## <a name="program-structure"></a>プログラムの構造  
   
@@ -159,7 +159,7 @@ Microsoft は、ここで示すガイドラインに従ってサンプルおよ�
   
      [!code-vb[VbVbalrGuidelines#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#26)]  
   
-- `Nothing` メソッドを呼び出す前にイベントが `RaiseEvent` (null) かどうか確認しないようにします。 `RaiseEvent` は、イベントを発生させる前に `Nothing` を確認します。  
+- `Nothing` メソッドを呼び出す前にイベントが `RaiseEvent` (null) かどうか確認しないようにします。 `RaiseEvent` は、イベントを発生させる前に `Nothing` かどうか確認します。  
   
 ### <a name="using-shared-members"></a>共有メンバーの使用  
  `Shared` メンバーの呼び出しにはクラス名を使用し、インスタンス変数からは行わないようにします。  

@@ -2,14 +2,14 @@
 title: ソースとなる Office Open XML ドキュメントの作成
 ms.date: 07/20/2015
 ms.assetid: 61ccd6fb-0c47-4075-afdf-5b5021330f21
-ms.openlocfilehash: 5f7a9baebd2d1db73ab17924e0ff8a7408637ee8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 9f44c8d0f4080224c461736fdbdf3acd854e4a89
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346418"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410839"
 ---
-# <a name="creating-the-source-office-open-xml-document-visual-basic"></a>ソース Office Open XML ドキュメントの作成 (Visual Basic)
+# <a name="creating-the-source-office-open-xml-document-visual-basic"></a>ソースとなる Office Open XML ドキュメントの作成 (Visual Basic)
 このトピックでは、このチュートリアルの他の例で使用する Office Open XML WordprocessingML ドキュメントを作成する方法について説明します。 この手順に従うと、それぞれの例に記載されているとおりの出力が得られます。  
   
  ただし、このチュートリアルの例では、任意の有効な WordprocessingML ドキュメントを使用できます。  
@@ -44,7 +44,7 @@ ms.locfileid: "74346418"
   
 3. "見出し 1" スタイルを使用して最初の行を書式設定します。  
   
-4. Visual Basic コードを含む行を選択します。 最初の行は `Imports` キーワードで始まります。 最後の行は、"End Class" です。 クーリエ フォントを使用してこれらの行を書式設定します。 これらの行を新しいスタイルで書式設定し、このスタイルに "Code" という名前を付けます。  
+4. Visual Basic コードを含む行を選択します。 最初の行は `Imports` キーワードで始まります。 最後の行は "End Class" です。 クーリエ フォントを使用してこれらの行を書式設定します。 これらの行を新しいスタイルで書式設定し、このスタイルに "Code" という名前を付けます。  
   
 5. 最後に、出力が含まれる行全体を選択し、`Code` スタイルを使用して書式設定します。  
   
@@ -53,6 +53,6 @@ ms.locfileid: "74346418"
     > [!NOTE]
     > Microsoft Word 2003 を使用している場合、 **[ファイルの種類]** ボックスの一覧の **[Word 2007 文書]** をクリックします。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)

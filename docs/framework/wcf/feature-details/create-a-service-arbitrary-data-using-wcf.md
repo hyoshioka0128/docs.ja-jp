@@ -2,19 +2,19 @@
 title: '方法: WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する'
 ms.date: 03/30/2017
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
-ms.openlocfilehash: a1c30491f6c5b0a91f93a6f26417f9dc2b996a48
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d908651f7815c102b45ea106f5bec4c07d869950
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614795"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601336"
 ---
 # <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>方法: WCF REST プログラミング モデルを使用して任意のデータを受け入れるサービスを作成する
-開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。 これは、サービス操作をする必要があります形式でデータがサポートされていません byWCF を返す場合に、ケースです。 このトピックでは、WCF REST プログラミング モデルを使用して、任意のデータを受信するサービスを作成するについて説明します。  
+開発者は、データがサービス操作から返される流れを完全に制御する必要が生じることがあります。 これは、サービス操作が、byWCF でサポートされていない形式でデータを返す必要がある場合に当てはまります。 このトピックでは、WCF REST プログラミングモデルを使用して、任意のデータを受信するサービスを作成する方法について説明します。  
   
 ### <a name="to-implement-the-service-contract"></a>サービス コントラクトを実装するには  
   
-1. サービス コントラクトを定義します。 任意のデータを受信する操作には、<xref:System.IO.Stream> 型のパラメーターが必要です。 さらに、このパラメーターは要求の本文に渡される唯一のパラメーターでなければなりません。 この例で説明されている操作では、filename パラメーターも使用できます。 このパラメーターは要求の URL に格納されて渡されます。 <xref:System.UriTemplate> で <xref:System.ServiceModel.Web.WebInvokeAttribute> を指定すると、パラメーターが URL に格納されて渡されるように指定できます。 この場合は、URI は、呼び出しに使用では、このメソッドは、「UploadFile/一部のファイル名」で終了します。 URI テンプレートの"{filename}"部分は、操作の呼び出しに使用される URI 内で操作の filename パラメーターが渡されることを指定します。  
+1. サービス コントラクトを定義します。 任意のデータを受信する操作には、<xref:System.IO.Stream> 型のパラメーターが必要です。 さらに、このパラメーターは要求の本文に渡される唯一のパラメーターでなければなりません。 この例で説明されている操作では、filename パラメーターも使用できます。 このパラメーターは要求の URL に格納されて渡されます。 <xref:System.UriTemplate> で <xref:System.ServiceModel.Web.WebInvokeAttribute> を指定すると、パラメーターが URL に格納されて渡されるように指定できます。 この場合、このメソッドの呼び出しに使用される URI は、"UploadFile/Some Filename" で終了します。 URI テンプレートの "{filename}" 部分では、操作の filename パラメーターが、操作の呼び出しに使用される URI 内で渡されることを指定します。  
   
     ```csharp  
      [ServiceContract]  
@@ -195,6 +195,6 @@ namespace ReceiveRawData
   
 ## <a name="see-also"></a>関連項目
 
-- [UriTemplate と UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)
-- [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
-- [WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [UriTemplate と UriTemplateTable](uritemplate-and-uritemplatetable.md)
+- [WCF Web HTTP プログラミング モデル](wcf-web-http-programming-model.md)
+- [WCF Web HTTP プログラミング モデルの概要](wcf-web-http-programming-model-overview.md)

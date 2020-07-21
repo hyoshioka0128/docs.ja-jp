@@ -10,12 +10,12 @@ helpviewer_keywords:
 - application resources, creating files
 - resource files, creating
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
-ms.openlocfilehash: 92e52fb130adecd6acdbeb8eac8d624d3c291094
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: b679539be1aeb593124eb35a235bcc578decb4c0
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129977"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111778"
 ---
 # <a name="create-resource-files-for-net-apps"></a>.NET アプリ用のリソース ファイルを作成する
 
@@ -25,7 +25,7 @@ ms.locfileid: "73129977"
 
 - 文字列、イメージ、またはオブジェクト データを格納する XML リソース (.resx) ファイルを作成します。 [リソース ファイル ジェネレーター (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) を使用すると、.resx ファイルをバイナリ リソース (.resources) ファイルに変換できます。 次に、そのバイナリ リソース ファイルを、言語コンパイラを使用してアプリケーションの実行可能ファイルまたはアプリケーション ライブラリに埋め込むか、[アセンブリ リンカー (Al.exe)](../tools/al-exe-assembly-linker.md) を使用してサテライト アセンブリに埋め込むことができます。 詳細については、「[.resx ファイル内のリソース](creating-resource-files-for-desktop-apps.md#ResxFiles)」を参照してください。
 
-- <xref:System.Resources> 名前空間の型を使用して、XML リソース (.resx) ファイルをプログラムによって作成します。 .resx ファイルを作成し、そのリソースを列挙して、特定のリソースを名前で取得することができます。 詳細については、「[プログラムによる .resx ファイルの使用](working-with-resx-files-programmatically.md)」のトピックを参照してください。
+- <xref:System.Resources> 名前空間の型を使用して、XML リソース (.resx) ファイルをプログラムによって作成します。 .resx ファイルを作成し、そのリソースを列挙して、特定のリソースを名前で取得することができます。 詳細については、「[プログラムによる .resx ファイルの使用](working-with-resx-files-programmatically.md)」を参照してください。
 
 - バイナリ リソース (.resources) ファイルをプログラムによって作成します。 次に、そのファイルを、言語コンパイラを使用してアプリケーションの実行可能ファイルまたはアプリケーション ライブラリに埋め込むか、[アセンブリ リンカー (Al.exe)](../tools/al-exe-assembly-linker.md) を使用してサテライト アセンブリに埋め込むことができます。 詳細については、「[.resources ファイル内のリソース](creating-resource-files-for-desktop-apps.md#ResourcesFiles)」を参照してください。
 
@@ -58,7 +58,7 @@ name2=value2
 
  .txt ファイルと .restext ファイルのリソース ファイル形式は同じです。 .restext ファイル拡張子は、テキスト ファイルがテキスト ベースのリソース ファイルであることをすぐに識別するために使用します。
 
- 文字列リソースは、*name/value* のペアとして表示されます。ここで、*name* はリソースを識別する文字列です。*value* は、リソース取得メソッド (<xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> など) に *name* を渡すときに返されるリソース文字列です。 *name* と *value* は等号 (=) で区切る必要があります。 (例:
+ 文字列リソースは、*name/value* のペアとして表示されます。ここで、*name* はリソースを識別する文字列です。*value* は、リソース取得メソッド (<xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> など) に *name* を渡すときに返されるリソース文字列です。 *name* と *value* は等号 (=) で区切る必要があります。 次に例を示します。
 
 ```text
 FileMenuName=File
@@ -70,7 +70,7 @@ HelpMenuName=Help
 > [!CAUTION]
 > パスワード、セキュリティの配慮が必要な情報、プライベートなデータなどの格納には、リソース ファイルを使用しないでください。
 
- 空の文字列 (つまり、値が <xref:System.String.Empty?displayProperty=nameWithType> であるリソース) はテキスト ファイルで使用できます。 (例:
+ 空の文字列 (つまり、値が <xref:System.String.Empty?displayProperty=nameWithType> であるリソース) はテキスト ファイルで使用できます。 次に例を示します。
 
 ```text
 EmptyString=
@@ -92,13 +92,13 @@ CancelButton=Cancel
 
  テキスト ファイルに *name* が重複して出現する場合、[リソース ファイル ジェネレーター (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) によって警告が表示され、2 番目の名前が無視されます。
 
- *値*に改行文字を含めることはできませんが、`\n` などの C 言語形式のエスケープ文字を使用すると、新しい行を表し、タブを表す `\t` ことができます。エスケープされている場合は、円記号を含めることもできます (たとえば、"\\\\")。 空の文字列を使用することもできます。
+ *value* に改行文字を含めることはできませんが、C 言語形式のエスケープ文字で、改行を表す `\n` やタブを表す `\t` は使用できます。エスケープする場合は、円記号を含めることができます (たとえば、"\\\\")。 空の文字列を使用することもできます。
 
- リトル エンディアンまたはビッグ エンディアンのバイト順の UTF-8 エンコーディングまたは UTF-16 エンコーディングを使用して、テキスト ファイル形式でリソースを保存する必要があります。 ただし、.txt ファイルを .resources ファイルに変換する[リソース ファイル ジェネレーター (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) では、ファイルを既定では UTF-8 として扱います。 UTF-16 でエンコードされたファイルを Resgen.exe が認識できるようにする場合は、ファイルの先頭に Unicode バイト順マーク (U+FEFF) を置く必要があります。
+ リトル エンディアンまたはビッグ エンディアンのバイト順の UTF-8 エンコードまたは UTF-16 エンコードを使用して、テキスト ファイル形式でリソースを保存します。 ただし、.txt ファイルを .resources ファイルに変換する[リソース ファイル ジェネレーター (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) では、ファイルを既定では UTF-8 として扱います。 UTF-16 でエンコードされたファイルを Resgen.exe が認識できるようにする場合は、ファイルの先頭に Unicode バイト順マーク (U+FEFF) を置く必要があります。
 
  テキスト形式のリソース ファイルを .NET アセンブリに埋め込むには、[リソース ファイル ジェネレーター (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) を使用してファイルをバイナリ リソース (.resources) ファイルに変換する必要があります。 次に、その .resources ファイルを、言語コンパイラを使用して .NET アセンブリに埋め込むか、[アセンブリ リンカー (Al.exe)](../tools/al-exe-assembly-linker.md) を使用してサテライト アセンブリに埋め込むことができます。
 
- 次の例では、単純な "Hello World" コンソール アプリケーションで、GreetingResources.txt という名前のテキスト形式のリソース ファイルを使用します。 このテキスト ファイルでは、ユーザーに名前の入力を求め、あいさつ文を表示する 2 つの文字列 (`prompt` および `greeting`) を定義します。
+ 次の例では、単純な "Hello World" コンソール アプリケーションで、GreetingResources.txt という名前のテキスト形式のリソース ファイルを使用します。 このテキスト ファイルでは、ユーザーに氏名の入力を求め、あいさつ文を表示する 2 つの文字列 (`prompt` および `greeting`) を定義します。
 
 ```text
 # GreetingResources.txt

@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 62210fd8-a372-4d55-ab9b-c99827d1885e
-ms.openlocfilehash: 7463f9cfc37c2bf4f271f6e59896a7d77f3f65cd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0775de90903aed27a8d0006614a4b6f2d857eee3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772945"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597099"
 ---
 # <a name="how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications"></a>方法: WCF エンドポイントとメッセージ キュー アプリケーションを使用してメッセージを交換する
-既存のメッセージ キュー (MSMQ) アプリケーションは、WCF メッセージから MSMQ メッセージの変換に、MSMQ 統合バインディングを使用して、Windows Communication Foundation (WCF) アプリケーションと統合できます。 これにより、WCF クライアントから MSMQ 受信側アプリケーションへの呼び出しと MSMQ の送信元アプリケーションから WCF サービスを呼び出すことができます。  
+Msmq 統合バインディングを使用して、既存のメッセージキュー (MSMQ) アプリケーションを Windows Communication Foundation (WCF) アプリケーションと統合し、msmq メッセージを WCF メッセージとの間で変換することができます。 これにより、WCF クライアントから MSMQ 受信アプリケーションを呼び出したり、MSMQ 送信者アプリケーションから WCF サービスを呼び出すことができます。  
   
- このセクションで使用する方法を説明します<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>(1)、WCF クライアントと System.Messaging と (2) MSMQ アプリケーション クライアントと WCF サービスを使用して記述された MSMQ アプリケーション サービスのキューに置かれた通信します。  
+ このセクションでは、 <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> (1) WCF クライアントと、(2) msmq アプリケーションクライアントと WCF サービスを使用して記述された msmq アプリケーションサービスの間で、キューに置かれた通信を使用する方法について説明します。  
   
- WCF クライアントから MSMQ 受信側のアプリケーションを呼び出す方法を示す完全なサンプルを参照してください、 [Windows Communication Foundation メッセージ キュー](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)サンプル。  
+ WCF クライアントから MSMQ 受信アプリケーションを呼び出す方法を示す完全なサンプルについては、「 [Windows Communication Foundation To Message Queuing](../samples/wcf-to-message-queuing.md) sample」を参照してください。  
   
- MSMQ クライアントから WCF サービスを呼び出す方法を示す完全なサンプルを参照してください、[メッセージ キューが Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)サンプル。  
+ MSMQ クライアントから WCF サービスを呼び出す方法を示す完全なサンプルについては、「 [Windows Communication Foundation サンプルのメッセージキュー](../samples/message-queuing-to-wcf.md) 」を参照してください。  
   
 ### <a name="to-create-a-wcf-service-that-receives-messages-from-a-msmq-client"></a>MSMQ クライアントからのメッセージを受信する WCF サービスを作成するには  
   
-1. 次のコード例に示すように、MSMQ の送信側アプリケーションからキューに置かれたメッセージを受信する WCF サービスのサービス コントラクトを定義するインターフェイスを定義します。  
+1. 次のコード例に示すように、MSMQ 送信者アプリケーションからキューに置かれたメッセージを受信する WCF サービスのサービスコントラクトを定義するインターフェイスを定義します。  
   
      [!code-csharp[S_MsmqToWcf#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmqtowcf/cs/service.cs#1)]
      [!code-vb[S_MsmqToWcf#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmqtowcf/vb/service.vb#1)]  
@@ -39,12 +39,12 @@ ms.locfileid: "61772945"
 
 ### <a name="to-create-a-wcf-client-that-sends-messages-to-a-msmq-receiver-application"></a>MSMQ の受信側アプリケーションにメッセージを送信する WCF クライアントを作成するには  
   
-1. 次のコード例に示すように送信しますが、MSMQ の受信側にメッセージをキューに置かれた WCF クライアントのサービス コントラクトを定義するインターフェイスを定義します。  
+1. 次のコード例に示すように、キューに置かれたメッセージを MSMQ 受信者に送信する WCF クライアントのサービスコントラクトを定義するインターフェイスを定義します。  
   
      [!code-csharp[S_WcfToMsmq#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wcftomsmq/cs/proxy.cs#6)]
      [!code-vb[S_WcfToMsmq#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_wcftomsmq/vb/proxy.vb#6)]  
   
-2. WCF クライアントが MSMQ の受信側の呼び出しに使用されるクライアント クラスを定義します。  
+2. WCF クライアントが MSMQ 受信者を呼び出すために使用するクライアントクラスを定義します。  
   
      [!code-csharp[S_WcfToMsmq#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wcftomsmq/cs/snippets.cs#2)]
      [!code-vb[S_WcfToMsmq#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_wcftomsmq/vb/snippets.vb#2)]  
@@ -60,9 +60,9 @@ ms.locfileid: "61772945"
   
 ## <a name="see-also"></a>関連項目
 
-- [キューの概要](../../../../docs/framework/wcf/feature-details/queues-overview.md)
-- [方法: WCF エンドポイントとキューに置かれたメッセージを交換します。](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)
-- [Windows Communication Foundation でのメッセージ キュー](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
-- [メッセージ キュー (MSMQ) のインストール](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [Windows Communication Foundation へのメッセージ キュー](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
-- [メッセージ キューを介したメッセージ セキュリティ](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
+- [キューの概要](queues-overview.md)
+- [方法: WCF エンドポイントを使用してキューに置かれたメッセージを交換する](how-to-exchange-queued-messages-with-wcf-endpoints.md)
+- [Windows Communication Foundation でのメッセージ キュー](../samples/wcf-to-message-queuing.md)
+- [メッセージ キュー (MSMQ) のインストール](../samples/installing-message-queuing-msmq.md)
+- [Windows Communication Foundation へのメッセージ キュー](../samples/message-queuing-to-wcf.md)
+- [メッセージ キューを介したメッセージ セキュリティ](../samples/message-security-over-message-queuing.md)

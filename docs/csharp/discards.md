@@ -4,10 +4,10 @@ description: C# の破棄のサポートについて説明します。破棄は�
 ms.technology: csharp-fundamentals
 ms.date: 07/21/2017
 ms.openlocfilehash: a76e7fc13f92ec0de87153bb35eb3924bb317616
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73100639"
 ---
 # <a name="discards---c-guide"></a>破棄 - C# ガイド
@@ -79,7 +79,7 @@ C# 7.0 では、破棄は次のコンテキストの割り当てでサポート�
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [タプルおよびその他の型の分解](deconstruct.md)
 - [`is` キーワード](language-reference/keywords/is.md)

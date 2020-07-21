@@ -1,6 +1,5 @@
 ---
 title: override 修飾子 - C# リファレンス
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - override
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
-ms.openlocfilehash: 699887d635ab074fc9ffa4cd7fa354372eb82f25
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: acad3aa3b196c184132ad1acdf52b18a799b0896
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422632"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75713249"
 ---
 # <a name="override-c-reference"></a>override (C# リファレンス)
 
@@ -47,10 +46,10 @@ ms.locfileid: "73422632"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# リファレンス](../index.md)
-- [C# プログラミング ガイド](../../programming-guide/index.md)
+- [C# プログラミングガイド](../../programming-guide/index.md)
 - [継承](../../programming-guide/classes-and-structs/inheritance.md)
 - [C# のキーワード](index.md)
 - [修飾子](index.md)

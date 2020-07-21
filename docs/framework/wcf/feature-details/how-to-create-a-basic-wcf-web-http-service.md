@@ -1,16 +1,17 @@
 ---
 title: '方法: 基本的な WCF Web HTTP サービスを作成する'
+description: WCF で web エンドポイントを公開するサービスを作成する方法について説明します。 Web エンドポイントは、XML または JSON を使用してデータを送信します。 SOAP エンベロープがありません。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 877662d3-d372-4e08-b417-51f66a0095cd
-ms.openlocfilehash: e9646235f9423f2a4df9cfe09a5e83a91dcdcace
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 7481367f27d973ba809dff5ca1c4a4f168fbbb98
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895180"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247105"
 ---
 # <a name="how-to-create-a-basic-wcf-web-http-service"></a>方法: 基本的な WCF Web HTTP サービスを作成する
 
@@ -77,7 +78,7 @@ Windows Communication Foundation (WCF) を使用すると、Web エンドポイ�
 
 ## <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>Internet Explorer で GET にマッピングされたサービス操作を呼び出すには
 
-1. Internet Explorer を開き、「`http://localhost:8000/EchoWithGet?s=Hello, world!`」と入力して、enter キーを押します。 URL には、サービスのベースアドレス (`http://localhost:8000/`)、エンドポイントの相対アドレス ("")、呼び出すサービス操作 ("EchoWithGet")、アンパサンド (&) で区切られた名前付きパラメーターのリストが含まれています。
+1. Internet Explorer を開き、「 `http://localhost:8000/EchoWithGet?s=Hello, world!` 」と入力して、enter キーを押します。 URL には、サービスのベースアドレス ( `http://localhost:8000/` )、エンドポイントの相対アドレス ("")、呼び出すサービス操作 ("EchoWithGet")、アンパサンド (&) で区切られた名前付きパラメーターのリストが含まれています。
 
 ## <a name="to-call-service-operations-in-code"></a>コードからサービス操作を呼び出すには
 

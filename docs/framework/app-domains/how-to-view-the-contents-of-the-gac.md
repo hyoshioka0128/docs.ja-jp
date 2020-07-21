@@ -1,5 +1,6 @@
 ---
-title: '方法 : グローバル アセンブリ キャッシュの内容を表示する'
+title: '方法: グローバル アセンブリ キャッシュの内容を表示する'
+description: グローバル アセンブリ キャッシュ (GAC) ツール (gacutil.exe) を使用して .NET でグローバル アセンブリ キャッシュの内容を表示する方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - list of assemblies in global assembly cache
 - Global Assembly Cache tool
 ms.assetid: c5f786a0-969b-4f14-9f02-e77c3384d9af
-ms.openlocfilehash: b5d8b31e7eb23789878da620f3a4517056a1ee3e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 4d775efc073f3aad745eff7a7707efdec06172c2
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119831"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104689"
 ---
 # <a name="how-to-view-the-contents-of-the-global-assembly-cache"></a>方法: グローバル アセンブリ キャッシュの内容を表示する
 
@@ -30,7 +31,7 @@ ms.locfileid: "73119831"
 gacutil -l
 ```
 
--または-
+\- または -
 
 ```shell
 gacutil /l

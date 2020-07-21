@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: d0fdeba3-c195-4ece-8caf-79b1f40025d2
 topic_type:
 - apiref
-ms.openlocfilehash: fc205e347fc39fd486d9b8a3fb256a5d29a980a2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 83adea3d659eea6d4af9ae364aad18df67e69c03
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73110060"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396619"
 ---
 # <a name="icordebugtypeenumnext-method"></a>ICorDebugTypeEnum::Next メソッド
-現在の位置から開始して、列挙体から `celt` によって指定された "の型" インスタンスの数を取得します。  
+によって指定された "の型" インスタンスの数を列挙から取得します。この数は `celt` 、現在の位置から開始します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -38,21 +38,21 @@ HRESULT Next (
   
 ## <a name="parameters"></a>パラメーター  
  `celt`  
- から取得する `ICorDebugType` インスタンスの数。  
+ から`ICorDebugType`取得するインスタンスの数。  
   
  `values`  
- 入出力ポインターの配列。それぞれが `ICorDebugType` オブジェクトを指します。  
+ 入出力ポインターの配列。それぞれがオブジェクトを指し `ICorDebugType` ます。  
   
  `pceltFetched`  
- 入出力実際に返された `ICorDebugType` インスタンスの数へのポインター。 `celt` が1の場合、この値は null になります。  
+ 入出力実際に返されたインスタンスの数へのポインター `ICorDebugType` 。 が1の場合、この値は null `celt` になります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目

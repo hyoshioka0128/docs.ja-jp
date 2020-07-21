@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC32124
 ms.assetid: 55aa8b2a-9ce3-4620-a710-2f9b0feb6143
-ms.openlocfilehash: 11cf4f8d9457ebff385a601786dc97334f274324
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 273ea592e73be5d76a4ffef077e691014a108347
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662068"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402928"
 ---
 # <a name="generic-parameters-used-as-optional-parameter-types-must-be-class-constrained"></a>省略可能なパラメーター型として使用されるジェネリック パラメーターは、クラスの制約がある型でなければなりません。
-プロシージャは、参照型に固定されていない型パラメーターを使用して、オプションのパラメーターで宣言されます。  
+プロシージャは、参照型に制限されていない型パラメーターを使用する省略可能なパラメーターで、宣言します。  
   
- 常に省略可能な各パラメーターの既定値を指定する必要があります。 省略可能な値がある必要があります、パラメーターが参照型である場合、 `Nothing`、任意の参照型の有効な値であります。 ただし、パラメーターの値型の場合、その型が定義済みの Visual Basic では基本データ型である必要があります。 これは、ユーザー定義の構造体などの複合型の値型は有効な既定値があるないためにです。  
+ 省略可能な各パラメーターには、常に既定値を指定する必要があります。 パラメーターが参照型の場合、省略可能な値は `Nothing` である必要があります。これはすべての参照型に有効な値です。 ただし、パラメーターが値型の場合、その型は Visual Basic によって事前に定義された基本データ型である必要があります。 これは、ユーザー定義構造体などの複合値型に有効な既定値がないためです。  
   
- 省略可能なパラメーターの型パラメーターを使用する場合、有効な既定値はありません値型の可能性を回避する参照型であることを保証する必要があります。 つまり、いずれかで型パラメーターを制限する必要があります、`Class`キーワードまたは特定のクラスの名前に置き換えます。  
+ 省略可能なパラメーターに型パラメーターを使用する場合は、有効な既定値を持たない値型の可能性を回避するために、それが参照型であることを保証する必要があります。 つまり、`Class` キーワードまたは特定のクラスの名前のいずれかによって、型パラメーターを制約する必要があります。  
   
  **エラー ID:** BC32124  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 参照型のみを受け入れるように型パラメーターを制限または省略可能なパラメーターを使用しないでください。  
+- 参照型のみを受け入れるように型パラメーターを制約するか、または省略可能なパラメーターにそれを使用しないでください。  
   
 ## <a name="see-also"></a>関連項目
 
-- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [型リスト](../../../visual-basic/language-reference/statements/type-list.md)
-- [Class ステートメント](../../../visual-basic/language-reference/statements/class-statement.md)
-- [省略可能なパラメーター](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
-- [構造体](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [Nothing](../../../visual-basic/language-reference/nothing.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [型リスト](../statements/type-list.md)
+- [Class ステートメント](../statements/class-statement.md)
+- [省略可能なパラメーター](../../programming-guide/language-features/procedures/optional-parameters.md)
+- [構造体](../../programming-guide/language-features/data-types/structures.md)
+- [Nothing](../nothing.md)

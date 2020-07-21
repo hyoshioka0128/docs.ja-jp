@@ -14,55 +14,55 @@ helpviewer_keywords:
 ms.assetid: 97c2d7a6-5376-45a1-ba65-146a249147cc
 topic_type:
 - apiref
-ms.openlocfilehash: db6f39119d143d27c0d3a80a9c65565d4dfd0d39
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9db583c7064cb910b29e84437f31143dac0d3ec9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140678"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175084"
 ---
 # <a name="gethashfromfilew-function"></a>GetHashFromFileW 関数
 Unicode 文字列で指定されたファイルの内容に対してハッシュが作成されます。  
   
- この関数は非推奨とされます。 代わりに[ICLRStrongName:: GetHashFromFileW](../hosting/iclrstrongname-gethashfromfilew-method.md)メソッドを使用してください。  
+ この関数は廃止されました。 代わりに[、メソッド](../hosting/iclrstrongname-gethashfromfilew-method.md)を使用します。  
   
 ## <a name="syntax"></a>構文  
   
 ```cpp  
-HRESULT GetHashFromFileW (   
+HRESULT GetHashFromFileW (
     [in]  LPCWSTR   wszFilePath,  
     [in, out] unsigned int   *piHashAlg,  
     [out] BYTE      *pbHash,  
     [in]  DWORD     cchHash,  
     [out] DWORD     *pchHash  
-);   
+);
 ```  
   
 ## <a name="parameters"></a>パラメーター  
  `wszFilePath`  
- からハッシュするファイルの Unicode 名。  
+ [in]ハッシュするファイルの Unicode 名。  
   
  `piHashAlg`  
- [入力、出力]ハッシュを生成するときに使用するアルゴリズム。 有効なアルゴリズムは、Win32 CryptoAPI によって定義されているものです。 `piHashAlg` が0に設定されている場合は、既定のアルゴリズム CALG_SHA が使用されます。  
+ [イン、アウト]ハッシュを生成するときに使用するアルゴリズム。 有効なアルゴリズムは、Win32 CryptoAPI によって定義されるアルゴリズムです。 0`piHashAlg`に設定すると、デフォルトのアルゴリズム CALG_SHA-1 が使用されます。  
   
  `pbHash`  
- 入出力生成されたハッシュを格納しているバイト配列。  
+ [アウト]生成されたハッシュを含むバイト配列。  
   
  `cchHash`  
- から`pbHash`が指すバッファーの最大サイズ。  
+ [in]が`pbHash`指すバッファの最大サイズ。  
   
  `pchHash`  
- 入出力`pbHash`のサイズ (バイト単位)。  
+ [アウト]のサイズ (バイト単位)`pbHash`です。  
   
-## <a name="remarks"></a>Remarks  
- この関数は[GetHashFromFile](gethashfromfile-function.md)と同じですが、ファイル名の指定は ANSI ではなく Unicode である点が異なります。  
+## <a name="remarks"></a>解説  
+ この関数は、ファイル名指定が ANSI ではなくユニコードであることを除けば[、GetHashFromFile](gethashfromfile-function.md)と同じです。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** StrongName  
+ **ヘッダー:** ストロングネーム.h  
   
- **ライブラリ:** Mscoree.dll にリソースとして含まれています  
+ **ライブラリ:** MsCorEE.dll にリソースとして含まれる  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

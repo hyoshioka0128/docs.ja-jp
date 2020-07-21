@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: e36e1fd8-8456-4359-bdc3-3ec1765f041f
 topic_type:
 - apiref
-ms.openlocfilehash: de27851b4afc3eccad46531848c68723bff346d5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 294b82efd66704014aab1b73171afe9165f17664
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136829"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616451"
 ---
 # <a name="createiceefilegen-function"></a>CreateICeeFileGen 関数
-[ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md)オブジェクトを作成します。  
+[ICeeFileGen](iceefilegen-class.md)オブジェクトを作成します。  
   
  この関数は .NET Framework 4 で非推奨とされました。  
   
@@ -38,25 +38,25 @@ HRESULT CreateICeeFileGen (
   
 ## <a name="parameters"></a>パラメーター  
  `ceeFileGen`  
- 入出力新しい `ICeeFileGen` オブジェクトのアドレスへのポインター。  
+ 入出力新しいオブジェクトのアドレスへのポインター `ICeeFileGen` 。  
   
 ## <a name="return-value"></a>戻り値  
  このメソッドは、標準の COM エラーコードを返します。  
   
-## <a name="remarks"></a>Remarks  
- `ICeeFileGen` オブジェクトは、共通言語ランタイム (CLR) の移植可能な実行可能 (PE) ファイルを作成するために使用されます。  
+## <a name="remarks"></a>解説  
+ `ICeeFileGen`オブジェクトは、共通言語ランタイム (CLR) の移植可能な実行可能 (PE) ファイルを作成するために使用されます。  
   
- [DestroyICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md)関数を呼び出して、完了時に `ICeeFileGen` オブジェクトを破棄します。  
+ 完了したら、 [DestroyICeeFileGen](destroyiceefilegen-function.md)関数を呼び出してオブジェクトを破棄し `ICeeFileGen` ます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** ICeeFileGen  
   
  **ライブラリ:** MSCorPE  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [非推奨の CLR ホスト関数](deprecated-clr-hosting-functions.md)

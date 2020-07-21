@@ -7,12 +7,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: e1f419dd57c1e90d7ebb57ef572f338a34d1c509
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 813558299b40e0b90e8047f22b788c8f1419eb5e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423633"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504655"
 ---
 # <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 
@@ -24,44 +24,6 @@ ms.locfileid: "73423633"
 任意の言語で記述された他のオブジェクトと完全に対話するには、すべての言語に共通の機能だけを呼び出し側に公開するようにオブジェクトを実装する必要があります。 この共通の機能セットは、生成されたアセンブリに適用される規則のセットである、共通言語仕様 (CLS: Common Language Specification) によって定義されます。 共通言語仕様は、「[ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm)」(標準の ECMA-335: 共通言語基盤) の第 1 部の第 7 ～ 11 項で定義されています。
 
 コンポーネントが共通言語仕様に準拠している場合は、CLS に準拠することが保証され、CLS をサポートするすべてのプログラミング言語で記述されたアセンブリのコードからアクセスできます。 コンパイル時にコンポーネントが共通言語仕様に準拠しているかどうかを確認するには、[CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 属性をソース コードに適用します。 詳細については、「[CLSCompliantAttribute 属性](#the-clscompliantattribute-attribute)」を参照してください。
-
-この記事の内容:
-
-* [CLS 準拠の規則](#cls-compliance-rules)
-
-  * [型および型メンバーのシグネチャ](#types-and-type-member-signatures)
-
-  * [名前付け規則](#naming-conventions)
-
-  * [型変換](#type-conversion)
-
-  * [配列](#arrays)
-
-  * [インターフェイス](#interfaces)
-
-  * [列挙型](#enumerations)
-
-  * [一般的な型メンバー](#type-members-in-general)
-
-  * [メンバーのアクセシビリティ](#member-accessibility)
-
-  * [ジェネリック型とメンバー](#generic-types-and-members)
-
-  * [コンストラクター](#constructors)
-
-  * [プロパティ](#properties)
-
-  * [イベント](#events)
-
-  * [Overloads](#overloads)
-
-  * [例外](#exceptions)
-
-  * [属性](#attributes)
-
-* [CLSCompliantAttribute 属性](#the-clscompliantattribute-attribute)
-
-* [言語間の相互運用性](#cross-language-interoperability)
 
 ## <a name="cls-compliance-rules"></a>CLS 準拠の規則
 
@@ -184,14 +146,14 @@ CLS 準拠の規則を次の表に示します。 これらの規則のテキス
 メンバー | [一般的な型メンバー](#type-members-in-general) | グローバルで静的な (static) フィールドとメソッドは CLS 準拠ではありません。 | 36
 メンバー | -- | 静的リテラル値の指定には、フィールド初期化メタデータを使用する。 CLS 準拠のリテラルには、そのリテラルと同じ型 (または、そのリテラルが `enum` の場合は基本型) の値がフィールド初期化メタデータに指定されている必要がある。 | 13
 メンバー | [一般的な型メンバー](#type-members-in-general) | vararg 制約は CLS の一部ではなく、CLS でサポートする呼び出し規則だけが標準のマネージド呼び出し規則である。 | 15
-名前付け規則 | [名前付け規則](#naming-conventions) | アセンブリは、識別子の頭文字および構成文字として使用できる文字セットを規定する Unicode Standard 3.0 の『Technical Report 15』の「Annex 7」に従う必要がある。詳細については、「[Unicode Normalization Forms](https://www.unicode.org/unicode/reports/tr15/tr15-18.html)」(Unicode 正規化形式) を参照。 識別子は、Unicode 正規形 C に定義されている標準形式で記述する必要がある。CLS で 2 つの識別子が同じと見なされるのは、小文字マッピング (Unicode のロケール非依存で 1 対 1 の小文字による対応付け) が同じ場合である。 つまり、CLS で 2 つの識別子が異なる場合、大文字小文字の違いだけではない。 ただし、継承された定義をオーバーライドする場合、CLI では元の宣言と厳密に同じエンコーディングの使用が求められる。 | 4
+名前付け規則 | [名前付け規則](#naming-conventions) | アセンブリは、識別子の頭文字および構成文字として使用できる文字セットを規定する Unicode Standard 3.0 の『Technical Report 15』の「Annex 7」に従う必要がある。詳細については、「[Unicode Normalization Forms](https://unicode.org/reports/tr15/)」(Unicode 正規化形式) を参照。 識別子は、Unicode 正規形 C に定義されている標準形式で記述する必要がある。CLS で 2 つの識別子が同じと見なされるのは、小文字マッピング (Unicode のロケール非依存で 1 対 1 の小文字による対応付け) が同じ場合である。 つまり、CLS で 2 つの識別子が異なる場合、大文字小文字の違いだけではない。 ただし、継承された定義をオーバーライドする場合、CLI では元の宣言と厳密に同じエンコーディングの使用が求められる。 | 4
 オーバーロード | [名前付け規則](#naming-conventions) | CLS 準拠のスコープに導入されるすべての名前は、完全に独立した種類である必要があります。ただし、名前が同じでオーバーロードによって解決できる場合を除きます。 CTS では 1 つの型でメソッドとフィールドに同じ名前を使用できるが、CLS では使用できない。 | 5
-オーバーロード | [名前付け規則](#naming-conventions) | フィールドおよび入れ子になった型について、CTS ではシグネチャでの区別が可能だが、CLS では識別子の比較だけで区別できる必要がある。 CLS 規則 39 の指定を除き、識別子の比較により名前が同じであるメソッド、プロパティ、およびイベントでは、相違点は戻り値の型だけに限定されない。 | 6
+オーバーロード | [名前付け規則](#naming-conventions) | フィールドおよび入れ子になった型について、CTS ではシグネチャでの区別が可能だが、CLS では識別子の比較だけで区別できる必要がある。 CLS 規則 39 の指定を除き、(識別子の比較により) 名前が同じであるメソッド、プロパティ、およびイベントでは、相違点は戻り値の型だけに限定されない | 6
 オーバーロード | [Overloads](#overloads) | プロパティおよびメソッドのみオーバーロードできる。 | 37
 オーバーロード | [Overloads](#overloads) |プロパティおよびメソッドは、パラメーターの数値と型にのみ基づいてオーバーロードできる。ただし、戻り値の型に基づいてオーバーロードできる変換演算子の `op_Implicit` と o`op_Explicit` は例外である。 | 38
 オーバーロード | -- | 型で宣言された複数の CLS 準拠のメソッドに同じ名前が指定されている場合、特定の一連の型のインスタンス化において、これらのメソッドのパラメーターと戻り値の型は同じである。また、これらの型のインスタンス化で、すべてのメソッドをセマンティクス レベルで等価にする必要がある。 | 48
 プロパティ | [プロパティ](#properties) | プロパティの getter メソッドおよび setter メソッドを実装するメソッドは、メタデータで `SpecialName` とマークする。 | 24
-プロパティ | [プロパティ](#properties) | プロパティ アクセサーはすべて静的、すべて仮想、またはすべてインスタンスになる。 | 26
+プロパティ | [プロパティ](#properties) | プロパティのアクセサーはすべて静的、すべて仮想、またはすべてインスタンスでなければならない。 | 26
 プロパティ | [プロパティ](#properties) | プロパティの型は、getter の戻り値の型であり、かつ setter の最後の引数の型でなければいけない。 プロパティのパラメーターの型は、getter へのパラメーターの型であり、かつ setter の最後のパラメーター以外のすべての型でなければいけない。 すべての型は CLS 準拠でなければならない。また、マネージド ポインターであってはいけない (つまり、参照渡しではいけない)。 | 27
 プロパティ | [プロパティ](#properties) | プロパティは、特定の名前付けパターンに従わなくてはいけない。 CLS 規則 24 で触れられている `SpecialName` 属性は、適切な名前比較で無視され、識別子規則に従わなければいけない。 プロパティには getter メソッド、setter メソッド、またはこの両方が必ずなければいけない。 | 28
 型変換 | [型変換](#type-conversion) | op_Implicit または op_Explicit が指定されている場合は、強制変換のための別の方法を用意する必要がある。 | 39
@@ -201,6 +163,24 @@ CLS 準拠の規則を次の表に示します。 これらの規則のテキス
 型 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | アンマネージ ポインター型は CLS 準拠ではない。 | 17
 型 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | CLS 準拠のクラス、値型、およびインターフェイスでは、CLS に準拠しないメンバーの実装は不要である。 | 20
 型 | [型および型メンバーのシグネチャ](#types-and-type-member-signatures) | [System.Object](xref:System.Object) は CLS 準拠である。 これ以外のあらゆる CLS 準拠クラスは CLS 準拠クラスの継承でなければならない。 | 23
+
+サブセクションのインデックス:
+
+* [型および型メンバーのシグネチャ](#types-and-type-member-signatures)
+* [名前付け規則](#naming-conventions)
+* [型変換](#type-conversion)
+* [配列](#arrays)
+* [インターフェイス](#interfaces)
+* [列挙型](#enumerations)
+* [一般的な型メンバー](#type-members-in-general)
+* [メンバーのアクセシビリティ](#member-accessibility)
+* [ジェネリック型とメンバー](#generic-types-and-members)
+* [コンストラクター](#constructors)
+* [プロパティ](#properties)
+* [イベント](#events)
+* [Overloads](#overloads)
+* [例外](#exceptions)
+* [属性](#attributes)
 
 ### <a name="types-and-type-member-signatures"></a>型および型メンバーのシグネチャ
 
@@ -341,7 +321,7 @@ CLS 準拠型 | 説明
 
 .NET Framework のクラス ライブラリまたはその他のクラス ライブラリには、CLS に準拠していない他の型が含まれる場合があります。次に例を示します。
 
-* ボックス化された値型。 次の C# コード例では、`Value` という名前の型 `int`* のパブリック プロパティを持つクラスを作成します。 `int`* はボックス化された値型であるため、コンパイラは CLS 非準拠としてフラグを設定します。
+* ボックス化された値型。 次の C# コード例では、`int*` という名前の型 `Value` のパブリック プロパティを持つクラスを作成します。 `int*` はボックス化された値型であるため、コンパイラは CLS 非準拠としてフラグを設定します。
 
 ```csharp
 using System;
@@ -607,13 +587,13 @@ public class person
 //    Naming1.cs(6,14): (Location of symbol related to previous warning)
 ```
 
-名前空間、型、メンバーの名前など、プログラミング言語の識別子は [Unicode Standard 3.0 の Technical Report 15 の Annex 7](https://www.unicode.org/reports/tr15/tr15-18.html) に準拠する必要があります。 これによって、次のことが起こります。
+名前空間、型、およびメンバーの名前など、プログラミング言語の識別子は、[Unicode 標準](https://unicode.org/reports/tr15/)に準拠する必要があります。 これによって、次のことが起こります。
 
 * 識別子の最初の文字は Unicode の大文字と小文字、大文字と小文字の組み合わせ、修飾子文字、その他の文字、または文字数の番号を指定できます。 Unicode 文字のカテゴリの詳細については、「[System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) 列挙体」を参照してください。
 
 * 2 文字目以降には、最初の文字で使用できる文字のほかに、非空白記号、空白結合記号、10 進数、接続符号、書式指定コードを使用できます。
 
-識別子を比較する場合は、その前に書式設定コードを除外してから、識別子を Unicode 正規形 C に変換する必要があります。これは 1 つの文字を、UTF-16 でエンコードされた複数のコード単位で表すことができるからです。 同じコード単位を Unicode 正規形 C で生成する文字シーケンスは CLS に準拠していません。 次の例では、オングストローム文字 (U+212B) である `Å` という名前のプロパティを定義し、次に、上に丸が付く LATIN の大文字 A (U+00C5) である `Å` という名前のプロパティを定義します。 C# コンパイラは、ソース コードを CLS 非準拠としてフラグします。
+識別子を比較する場合は、その前に書式設定コードを除外してから、識別子を Unicode 正規形 C に変換する必要があります。これは 1 つの文字を、UTF-16 でエンコードされた複数のコード単位で表すことができるからです。 同じコード単位を Unicode 正規形 C で生成する文字シーケンスは CLS に準拠していません。 次の例では、最初にオングストローム文字 (U+212B) である `Å` という名前のプロパティを定義し、次に、上に丸が付く LATIN の大文字 A (U+00C5) である `Å` という名前のプロパティを定義します。 C# コンパイラは、ソース コードを CLS 非準拠としてフラグします。
 
 ```csharp
 public class Size
@@ -2501,7 +2481,7 @@ End Module
 
 .NET Framework アセンブリでは、カスタム属性に拡張可能機構が用意されており、そのカスタム属性を格納し、アセンブリ、型、メンバー、メソッド パラメーターなどのプログラミング オブジェクトに関するメタデータを取得します。 カスタム属性は [System.Attribute](xref:System.Attribute)、または `System.Attribute` の派生型から派生する必要があります。
 
-規則に違反する例を次に示します。 この例では、`NumericAttribute` から派生していない `System.Attribute` クラスを定義します。 コンパイラ エラーは、CLS 非準拠の属性が適用されている場合にのみ発生します。クラスが定義されているときではありません。
+規則に違反する例を次に示します。 この例では、`NumericAttribute` から派生していない `System.Attribute` クラスを定義します。 コンパイラ エラーは、CLS 非準拠の属性が適用されるときにのみ発生します。クラスが定義されるときではありません。
 
 ```csharp
 using System;
@@ -2586,7 +2566,7 @@ CLS 準拠の属性のコンストラクターまたはプロパティは、次�
 
 * 基になる型が `Byte`、`Int16`、`Int32`、または `Int64` である列挙体の型。
 
-次の例では、[Attribute](xref:System.Attribute) から派生する `DescriptionAttribute` クラスを定義します。 クラス コンストラクターには型 `Descriptor` のパラメーターがあるので、クラスは CLS に準拠していません。 C# コンパイラが警告を生成しますが、コンパイルは成功することに注意してください。
+次の例では、[Attribute](xref:System.Attribute) から派生する `DescriptionAttribute` クラスを定義します。 クラス コンストラクターには型 `Descriptor` のパラメーターがあるので、クラスは CLS に準拠していません。 C# コンパイラから警告が出力されますが、コンパイルは成功します。
 
 ```csharp
 using System;
@@ -2895,7 +2875,7 @@ csc /t:module NumberUtil.cs
 link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll
 ```
 
-次の例では、その後 `NumericLib.NearZero` メソッドおよび `StringLib.ToTitleCase` メソッドを呼び出します。 Visual Basic コードと C# コードは、両方のクラスのメソッドにアクセスできることに注意してください。
+次の例では、その後 `NumericLib.NearZero` メソッドおよび `StringLib.ToTitleCase` メソッドを呼び出します。 Visual Basic コードと C# コードのどちらでも、両方のクラスのメソッドにアクセスできます。
 
 ```csharp
 using System;

@@ -1,6 +1,8 @@
 - name: DataSet、DataTable、および DataView
   href: index.md
   items:
+    - name: セキュリティ ガイダンス
+      href: security-guidance.md
     - name: DataSet の作成
       href: creating-a-dataset.md
     - name: DataSet への DataTable の追加

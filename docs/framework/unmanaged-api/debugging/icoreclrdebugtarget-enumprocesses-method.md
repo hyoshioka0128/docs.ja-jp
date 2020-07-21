@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: e00fd477-4f49-43d3-bd0e-3094824b1136
 topic_type:
 - apiref
-ms.openlocfilehash: 4d1404e3f7565ee26edd94e059b7f01f8edd4dd6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0c1b18f24fd30b5f6d5e85633fc0c25839aba6df
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121843"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396417"
 ---
 # <a name="icoreclrdebugtargetenumprocesses-method"></a>ICoreClrDebugTarget::EnumProcesses メソッド
 リモート コンピューターで実行されているプロセスを列挙します。  
@@ -31,7 +31,7 @@ ms.locfileid: "73121843"
   
 ```cpp  
 HRESULT EnumProcesses (  
-       [out]  DWORD*                  pcProcs,   
+       [out]  DWORD*                  pcProcs,
        [out]  CoreClrDebugProcInfo**  ppProcs  
 );  
 ```  
@@ -41,11 +41,11 @@ HRESULT EnumProcesses (
  [out] `ppProcs` に返されるプロセス数。 この値は 0 (ゼロ) になる可能性もあります。  
   
  `ppProcs`  
- 入出力リモートコンピューター上で実行されているプロセスを表す[CoreClrDebugProcInfo](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md)構造体の配列。  
+ 入出力リモートコンピューター上で実行されているプロセスを表す[CoreClrDebugProcInfo](coreclrdebugprocinfo-structure.md)構造体の配列。  
   
 ## <a name="return-value"></a>戻り値  
  S_OK  
- 成功。  
+ 成功しました。  
   
  E_OUTOFMEMORY  
  `ppProcs`  用に十分なメモリを割り当てることができません。  
@@ -53,18 +53,18 @@ HRESULT EnumProcesses (
  E_FAIL (またはその他の E_ リターン コード)  
  その他のエラーが発生しました。  
   
-## <a name="remarks"></a>Remarks  
- このメソッドによって割り当てられたメモリを解放するには、 [ICoreClrDebugTarget:: FreeMemory](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md)メソッドを呼び出します。  
+## <a name="remarks"></a>解説  
+ このメソッドによって割り当てられたメモリを解放するには、 [ICoreClrDebugTarget:: FreeMemory](icoreclrdebugtarget-freememory-method.md)メソッドを呼び出します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Coreclrremoteデバッグインターフェイス .h  
   
- **ライブラリ:** mscordbi_macx86  
+ **Library:** mscordbi_macx86 .dll  
   
  **.NET Framework のバージョン:** 3.5 SP1  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICoreClrDebugTarget インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md)
+- [ICoreClrDebugTarget インターフェイス](icoreclrdebugtarget-interface.md)

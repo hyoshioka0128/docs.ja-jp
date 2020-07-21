@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 798513a0-68b1-4d04-bc5b-782a4445ea68
 topic_type:
 - apiref
-ms.openlocfilehash: a43c1883038e41cac1b58c78bc26f20d436ebbd1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9b0da8a06259fe99da52497da3011da94289d301
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440236"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492318"
 ---
 # <a name="imetadataimportenumcustomattributes-method"></a>IMetaDataImport::EnumCustomAttributes メソッド
 指定した型またはメンバーに関連付けられているカスタム属性定義トークンを列挙します。  
@@ -28,11 +28,11 @@ ms.locfileid: "74440236"
 ## <a name="syntax"></a>構文  
   
 ```cpp  
-HRESULT EnumCustomAttributes (   
+HRESULT EnumCustomAttributes (
    [in, out] HCORENUM      *phEnum,  
-   [in]  mdToken            tk,   
-   [in]  mdToken            tkType,   
-   [out] mdCustomAttribute  rCustomAttributes[],   
+   [in]  mdToken            tk,
+   [in]  mdToken            tkType,
+   [out] mdCustomAttribute  rCustomAttributes[],
    [in]  ULONG              cMax,  
    [out, optional] ULONG   *pcCustomAttributes  
 );  
@@ -46,7 +46,7 @@ HRESULT EnumCustomAttributes (
  から列挙体のスコープのトークン、またはすべてのカスタム属性の0。  
   
  `tkType`  
- から列挙する属性の型のコンストラクターのトークン、またはすべての型の `null`。  
+ から列挙する属性の型のコンストラクター、またはすべての型のコンストラクターのトークン `null` 。  
   
  `rCustomAttributes`  
  入出力カスタム属性トークンの配列。  
@@ -55,25 +55,25 @@ HRESULT EnumCustomAttributes (
  [in] `rCustomAttributes` 配列の最大サイズ。  
   
  `pcCustomAttributes`  
- [out、省略可能]`rCustomAttributes`で返されるトークン値の実際の数。  
+ [out、省略可能]で返されるトークン値の実際の数 `rCustomAttributes` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumCustomAttributes` が正常に返されました。|  
-|`S_FALSE`|列挙するカスタム属性はありません。 この場合、`pcCustomAttributes` は0になります。|  
+|`S_OK`|`EnumCustomAttributes`正常に返されました。|  
+|`S_FALSE`|列挙するカスタム属性はありません。 この場合、 `pcCustomAttributes` は0になります。|  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

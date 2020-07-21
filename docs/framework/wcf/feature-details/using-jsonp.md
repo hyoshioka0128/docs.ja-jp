@@ -2,12 +2,12 @@
 title: JSONP の使用
 ms.date: 03/30/2017
 ms.assetid: f386718c-b4ba-4931-a610-40c27a46672a
-ms.openlocfilehash: 622fbdbf2674aea552cfd57f528d7cc5168cfda8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 82290319b5d8b58708f0b2ebf40522ee76127b84
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61932835"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594960"
 ---
 # <a name="using-jsonp"></a>JSONP の使用
 
@@ -17,7 +17,7 @@ JSONP (JSON with Padding) は、Web ブラウザーでクロスサイト スク�
 callback({"a" = \\"b\\"});
 ```
 
-上記の例では、JSON ペイロード `{"a" = \\"b\\"}` が、関数呼び出し `callback` にラップされています。 コールバック関数は、現在の Web ページで定義済みである必要があります。 JSONP 応答のコンテンツ タイプは`application/javascript`します。
+上記の例では、JSON ペイロード `{"a" = \\"b\\"}` が、関数呼び出し `callback` にラップされています。 コールバック関数は、現在の Web ページで定義済みである必要があります。 JSONP 応答のコンテンツタイプは `application/javascript` です。
 
 JSONP は自動的には有効化されません。 有効にするには、次の例のように、HTTP の標準エンドポイントのいずれか (`javascriptCallbackEnabled` または `true`) で、<xref:System.ServiceModel.Description.WebHttpEndpoint> 属性を <xref:System.ServiceModel.Description.WebScriptEndpoint> に設定する必要があります。
 
@@ -74,7 +74,7 @@ HTTP 状態コードが 200 以外の JSONP 応答には、次の例のように
 anotherFunction ({"root":"Something"}, 201);
 ```
 
-## <a name="validations"></a>検証
+## <a name="validations"></a>Validations (検証)
 
 JSONP が有効な場合、以下の検証が行われます。
 
@@ -86,4 +86,4 @@ JSONP が有効な場合、以下の検証が行われます。
 
 ## <a name="see-also"></a>関連項目
 
-- [WCF Web HTTP プログラミング モデルの概要](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [WCF Web HTTP プログラミング モデルの概要](wcf-web-http-programming-model-overview.md)

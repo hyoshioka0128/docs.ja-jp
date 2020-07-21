@@ -1,5 +1,6 @@
 ---
 title: クラス、構造体、および共用体のマーシャリング
+description: クラス、構造体、および共用体をマーシャリングする方法を確認します。 クラス、入れ子になった構造体を含む構造体、構造体の配列、および共用体のマーシャリング サンプルを表示します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,12 +19,11 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
-ms.openlocfilehash: d761d8ed7488e99f29d4844d061867915a624b96
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
-ms.translationtype: MT
+ms.openlocfilehash: 5e616b5bb513939cadd8fe5c72675ba0b6e070a3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960005"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621523"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>クラス、構造体、および共用体のマーシャリング
 
@@ -31,17 +31,18 @@ ms.locfileid: "74960005"
 
 次の表は、クラス、構造体、および共用体のマーシャリング オプションをリストし、それぞれの使用方法を説明し、対応するプラットフォーム呼び出しサンプルへのリンクを示しています。
 
-|の型|説明|［サンプル］|
+|種類|説明|サンプル|
 |----------|-----------------|------------|
 |値によるクラス。|整数のメンバーを含むクラスは、管理対象クラスと同じように、In/Out パラメーターとして渡します。|[SysTime サンプル](#systime-sample)|
-|値による構造体。|In パラメーターとして構造体を渡します。|[構造体のサンプル](#structures-sample)|
-|参照による構造体|In/Out パラメーターとして構造体を渡します。|[OSInfo のサンプル](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
+|値による構造体。|In パラメーターとして構造体を渡します。|[構造体サンプル](#structures-sample)|
+|参照による構造体|In/Out パラメーターとして構造体を渡します。|[OSInfo サンプル](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
 |入れ子になった構造体を含む構造体 (フラット化)。|アンマネージ関数で入れ子になった構造体を含む構造体を表すクラスを渡します。 マネージド プロトタイプで構造体は 1 つの大きな構造体にフラット化されます。|[FindFile サンプル](#findfile-sample)|
-|別の構造体へのポインターを持つ構造体。|2 番目の構造体へのポインターをメンバーとして含む構造体を渡します。|[構造体のサンプル](#structures-sample)|
-|値による整数のある構造体の配列。|In/Out パラメーターとして整数のみを含む構造体の配列を渡します。 配列のメンバーを変更することができます。|[配列のサンプル](marshaling-different-types-of-arrays.md)|
+|別の構造体へのポインターを持つ構造体。|2 番目の構造体へのポインターをメンバーとして含む構造体を渡します。|[構造体サンプル](#structures-sample)|
+|値による整数のある構造体の配列。|In/Out パラメーターとして整数のみを含む構造体の配列を渡します。 配列のメンバーを変更することができます。|[配列サンプル](marshaling-different-types-of-arrays.md)|
 |参照による整数と文字列のある構造体の配列。|Out パラメーターとして整数と文字列を含む構造体の配列を渡します。 呼び出された関数は、配列のメモリを割り当てます。|[OutArrayOfStructs サンプル](#outarrayofstructs-sample)|
-|値型の共用体。|値型 (整数および倍精度) の共用体を渡します。|[共用体のサンプル](#unions-sample)|
-|混合型の共用体。|混合型 (整数および文字列) の共用体を渡します。|[共用体のサンプル](#unions-sample)|
+|値型の共用体。|値型 (整数および倍精度) の共用体を渡します。|[Unions サンプル](#unions-sample)|
+|混合型の共用体。|混合型 (整数および文字列) の共用体を渡します。|[Unions サンプル](#unions-sample)|
+|プラットフォーム固有のレイアウトを持つ構造体。|ネイティブ パッキング定義を持つ型を渡します。|[プラットフォームのサンプル](#platform-sample)|
 |構造体の null 値。|値型への参照の代わりに null 参照 (Visual Basic では **Nothing**) を渡します。|[HandleRef サンプル](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
 
 ## <a name="structures-sample"></a>構造体のサンプル
@@ -68,7 +69,7 @@ Structs のサンプルで使用するアンマネージ関数とその元の関
     void TestArrayInStruct(MYARRAYSTRUCT* pStruct);
     ```
 
-[PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) はカスタム アンマネージ ライブラリであり、上記の関数および 4 つの構造体 **MYPERSON**、**MYPERSON2**、**MYPERSON3**、および **MYARRAYSTRUCT** に関する実装を含んでいます。 これらの構造体には次の要素が含まれます。
+[PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) はカスタム アンマネージ ライブラリであり、上記の関数および 4 つの構造体(**MYPERSON**、**MYPERSON2**、**MYPERSON3**、**MYARRAYSTRUCT**) に関する実装を含んでいます。 これらの構造体には次の要素が含まれます。
 
 ```cpp
 typedef struct _MYPERSON
@@ -222,6 +223,85 @@ union MYUNION2
 [!code-csharp[Conceptual.Interop.Marshaling#29](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/unions.cs#29)]
 [!code-vb[Conceptual.Interop.Marshaling#29](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/unions.vb#29)]
 
+## <a name="platform-sample"></a>プラットフォームのサンプル
+
+シナリオによっては、`struct` と `union` のレイアウトが、対象となるプラットフォームによって異なる場合があります。 たとえば、COM シナリオで定義された [`STRRET`](/windows/win32/api/shtypes/ns-shtypes-strret) 型について考えてみましょう。
+
+```c++
+#include <pshpack8.h> /* Defines the packing of the struct */
+typedef struct _STRRET
+    {
+    UINT uType;
+    /* [switch_is][switch_type] */ union
+        {
+        /* [case()][string] */ LPWSTR pOleStr;
+        /* [case()] */ UINT uOffset;
+        /* [case()] */ char cStr[ 260 ];
+        }  DUMMYUNIONNAME;
+    }  STRRET;
+#include <poppack.h>
+```
+
+上の `struct` は、型のメモリ レイアウトに影響を与える Windows のヘッダーを使用して宣言されています。 マネージド環境で定義されている場合、ネイティブ コードと適切に相互運用するには、これらのレイアウトの詳細が必要です。
+
+32 ビット プロセスでのこの型の正しいマネージド定義は次のとおりです。
+
+``` CSharp
+[StructLayout(LayoutKind.Explicit, Size = 264)]
+public struct STRRET_32
+{
+    [FieldOffset(0)]
+    public uint uType;
+
+    [FieldOffset(4)]
+    public IntPtr pOleStr;
+
+    [FieldOffset(4)]
+    public uint uOffset;
+
+    [FieldOffset(4)]
+    public IntPtr cStr;
+}
+```
+
+64 ビット プロセスでは、サイズとフィールドの "*両方の*" オフセットが異なります。 正しいレイアウトは次のとおりです。
+
+``` CSharp
+[StructLayout(LayoutKind.Explicit, Size = 272)]
+public struct STRRET_64
+{
+    [FieldOffset(0)]
+    public uint uType;
+
+    [FieldOffset(8)]
+    public IntPtr pOleStr;
+
+    [FieldOffset(8)]
+    public uint uOffset;
+
+    [FieldOffset(8)]
+    public IntPtr cStr;
+}
+```
+
+相互運用シナリオでネイティブ レイアウトを適切に考慮しないと、ランダムなクラッシュや、場合によっては不適切な計算が発生する可能性があります。
+
+既定では、.NET アセンブリは .NET ランタイムの 32 ビット バージョンと 64 ビット バージョンの両方で実行できます。 アプリは、実行時まで待機して、前のどの定義を使用するかを判断する必要があります。
+
+次のコード スニペットは、実行時に 32 ビットと 64 ビットの定義をどのようにして選択するかの例を示しています。
+
+```CSharp
+if (IntPtr.Size == 8)
+{
+    // Use the STRRET_64 definition
+}
+else
+{
+    Debug.Assert(IntPtr.Size == 4);
+    // Use the STRRET_32 definition
+}
+```
+
 ## <a name="systime-sample"></a>SysTime サンプル
 
 このサンプルでは、構造体へのポインターを要求する、クラスへのポインターをアンマネージ関数に渡す方法について説明します。
@@ -301,7 +381,7 @@ typedef struct _MYSTRSTRUCT2
 [!code-csharp[Conceptual.Interop.Marshaling#21](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/outarrayofstructs.cs#21)]
 [!code-vb[Conceptual.Interop.Marshaling#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/outarrayofstructs.vb#21)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [プラットフォーム呼び出しによるデータのマーシャリング](marshaling-data-with-platform-invoke.md)
 - [マーシャリング (文字列の)](marshaling-strings.md)

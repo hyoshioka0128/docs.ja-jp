@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - BC42017
 ms.assetid: 45f552c8-57c6-44c0-97d3-e510119b257a
-ms.openlocfilehash: 6b78dfed1d615ba865f136365eac1c9c131ed5a5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: f1dc656a09eee05080356892b280a79505f3b9cd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661948"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397351"
 ---
 # <a name="late-bound-resolution-runtime-errors-could-occur"></a>遅延バインドの解決です。ランタイム エラーが発生する可能性があります。
-オブジェクトが宣言する変数に割り当てられている、 [Object データ型](../../../visual-basic/language-reference/data-types/object-data-type.md)します。  
+オブジェクトは、[Object データ型](../data-types/object-data-type.md)として宣言された変数に代入されます。  
   
- として変数を宣言するときに`Object`、コンパイラを実行する必要があります*遅延バインディング*、実行時に余分な処理を停止します。 また、アプリケーションで実行時エラーが発生する可能性があります。 割り当てる場合など、<xref:System.Windows.Forms.Form>を`Object`変数にアクセスしようと、<xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=nameWithType>プロパティ、ランタイムは、スロー、<xref:System.MemberAccessException>ため、<xref:System.Windows.Forms.Form>クラスを公開しません、`NameTable`プロパティ。  
+ 変数を `Object` として宣言した場合、コンパイラでは*遅延バインディング*を実行する必要があり、これによって実行時に余分な処理が発生します。 また、アプリケーションで実行時エラーが発生する可能性があります。 たとえば、`Object` 変数に <xref:System.Windows.Forms.Form> を代入し、<xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=nameWithType> プロパティにアクセスしようとすると、<xref:System.Windows.Forms.Form> クラスが `NameTable` プロパティを公開しないため、ランタイムで <xref:System.MemberAccessException> がスローされます。  
   
- 特定の型の変数を宣言する場合、コンパイラを実行できます*事前バインディング*コンパイル時にします。 これは、結果、パフォーマンスの向上、特定の型のメンバーと、コードの読みやすさへのアクセスを制御します。  
+ 変数を特定の型として宣言する場合、コンパイラではコンパイル時に*事前バインディング*を実行できます。 これにより、パフォーマンスが向上し、特定の型のメンバーへのアクセスが制御され、コードが読みやすくなります。  
   
- 既定では、このメッセージは警告です。 警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、「[Visual Basic での警告の構成](/visualstudio/ide/configuring-warnings-in-visual-basic)」をご覧ください。  
+ 既定では、このメッセージは警告です。 警告を非表示にする方法や、警告をエラーとして扱う方法の詳細については、「 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)」をご覧ください。  
   
  **エラー ID:** BC42017  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 可能であれば、特定の型の変数を宣言します。  
+- 可能であれば、変数を特定の型として宣言します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [事前バインディングと遅延バインディング](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
-- [オブジェクト変数の宣言](../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
+- [事前バインディングと遅延バインディング](../../programming-guide/language-features/early-late-binding/index.md)
+- [オブジェクト変数の宣言](../../programming-guide/language-features/variables/object-variable-declaration.md)

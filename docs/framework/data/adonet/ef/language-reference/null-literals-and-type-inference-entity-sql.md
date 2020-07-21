@@ -4,13 +4,13 @@ ms.date: 03/30/2017
 ms.assetid: edd56afb-af1b-4e7d-b210-cb8998143426
 ms.openlocfilehash: bb2d9184e17ee2a9916a731eb20eefa105a73753
 ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70249817"
 ---
 # <a name="null-literals-and-type-inference-entity-sql"></a>NULL リテラルと型推論 (Entity SQL)
-NULL リテラルは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 型システムのすべての型と互換性があります。 ただし、null リテラルの型が正しく推論されるようにする[!INCLUDE[esql](../../../../../../includes/esql-md.md)]には、null リテラルを使用できる場所に特定の制約を設定します。  
+NULL リテラルは、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 型システムのすべての型と互換性があります。 ただし、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] では、NULL リテラルの型を正しく推論できるようにするために、NULL リテラルの使用場所に関して一定の制約が設けられています。  
   
 ## <a name="typed-nulls"></a>型指定された NULL  
  型指定された NULL は任意の場所で使用できます。 型指定された NULL の場合、型が不明であるため、型推論は必要ありません。 たとえば、次の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 構成要素を使用すると、Int16 型の NULL を作成できます。  

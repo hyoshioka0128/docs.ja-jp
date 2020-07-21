@@ -1,5 +1,6 @@
 ---
-title: 接続のインターフェイス (adodb)
+title: 接続インターフェイス (adodb)
+description: 「.NET での接続インターフェイスのリファレンス情報」を参照してください。 このインターフェイスは、adodb 名前空間と adodb アセンブリ (adodb.dll ライブラリ内) にあります。
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,18 +10,18 @@ api_location:
 - adodb.dll
 api_type:
 - Assembly
-ms.openlocfilehash: f5c2fba0224b7e457f45dd4b31cfbcd2d89d5d6b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e1889715b6cd11746056558b76e21f6226d4161f
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706261"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989942"
 ---
 # <a name="connection-interface"></a>接続のインターフェイス
 
 ```csharp
 [GuidAttribute("00000550-0000-0010-8000-00AA006D2EA4")]
-public interface Connection : _Connection, 
+public interface Connection : _Connection,
   ConnectionEvents_Event
 ```
 
@@ -28,4 +29,4 @@ public interface Connection : _Connection,
 
 **名前空間:** `adodb`
 
-**アセンブリ:** adodb (で adodb.dll)
+**アセンブリ:** adodb (adodb.dll)

@@ -6,32 +6,32 @@ helpviewer_keywords:
 - graphics [WPF], rectangles
 - rectangles [WPF], drawing
 ms.assetid: beeb57ef-fab5-4446-a38a-1588f97b4c2f
-ms.openlocfilehash: 261026b994b432565928b38ff1657115ff7cbe4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 95191e9d90bc2ac32902399125d9a51192e897bf
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947629"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452936"
 ---
 # <a name="how-to-draw-a-rectangle"></a>方法: 四角形を描画する
-この例を使用して四角形を描画する方法を示しています、<xref:System.Windows.Shapes.Rectangle>要素。  
+この例では、<xref:System.Windows.Shapes.Rectangle> 要素を使用して四角形を描画する方法を示します。  
   
- 四角形を描画するために作成、<xref:System.Windows.Shapes.Rectangle>要素を指定し、<xref:System.Windows.FrameworkElement.Width%2A>と<xref:System.Windows.FrameworkElement.Height%2A>します。 四角形の内部を描画するには、次のように設定します。 その<xref:System.Windows.Shapes.Shape.Fill%2A>します。 四角形にアウトラインを与えるを使用してその<xref:System.Windows.Shapes.Shape.Stroke%2A>と<xref:System.Windows.Shapes.Shape.StrokeThickness%2A>プロパティ。  
+ 四角形を描画するには、<xref:System.Windows.Shapes.Rectangle> 要素を作成し、その <xref:System.Windows.FrameworkElement.Width%2A> と <xref:System.Windows.FrameworkElement.Height%2A> を指定します。 四角形の内部を塗りつぶすには、その <xref:System.Windows.Shapes.Shape.Fill%2A> を設定します。 四角形に輪郭線を付けるには、その <xref:System.Windows.Shapes.Shape.Stroke%2A> と <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> プロパティを使用します。  
   
- 角の丸い四角形を提供する、省略可能な指定<xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>プロパティ。 <xref:System.Windows.Shapes.Rectangle.RadiusX%2A>と<xref:System.Windows.Shapes.Rectangle.RadiusY%2A>プロパティは、四角形の角を丸めるに使用される楕円の x 軸と y 軸半径を設定します。  
+ 四角形の角を丸くするには、オプションの <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> と <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> プロパティを指定します。 <xref:System.Windows.Shapes.Rectangle.RadiusX%2A> と <xref:System.Windows.Shapes.Rectangle.RadiusY%2A> プロパティは、四角形の角を丸めるために使用される楕円の X 軸と Y 軸の半径を設定します。  
   
- 次の例では、2 つ<xref:System.Windows.Shapes.Rectangle>で要素が描画される、<xref:System.Windows.Controls.Canvas>します。 最初の四角形が、<xref:System.Windows.Media.Brushes.Blue%2A>内部。 2 番目の四角形が、 <xref:System.Windows.Media.Brushes.Blue%2A> 、内部、<xref:System.Windows.Media.Brushes.Black%2A>アウトラインとの角が丸いします。  
+ 次の例では、2つの <xref:System.Windows.Shapes.Rectangle> 要素が <xref:System.Windows.Controls.Canvas> に描画されます。 最初の四角形には <xref:System.Windows.Media.Brushes.Blue%2A> の内部があります。 2 番目の四角形には、<xref:System.Windows.Media.Brushes.Blue%2A> の内部、<xref:System.Windows.Media.Brushes.Black%2A> の輪郭線、および角の丸みがあります。  
   
 ## <a name="example"></a>例  
  [!code-xaml[drawingwithshapeelements#Rectangle1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/rectangleexample.xaml#rectangle1)]  
   
- この例を使用しますが、<xref:System.Windows.Controls.Canvas>四角形を格納することができます使用する四角形要素 (およびその他のすべての図形要素) のいずれか<xref:System.Windows.Controls.Panel>または<xref:System.Windows.Controls.Control>テキスト以外のコンテンツをサポートします。 実際には、四角形の部分の背景を提供するために特に便利ですが<xref:System.Windows.Controls.Grid>パネル。 例については、次を参照してください。、[テーブルの概要](../advanced/table-overview.md)します。  
+ この例では、<xref:System.Windows.Controls.Canvas> を使用して四角形を格納していますが、テキスト以外のコンテンツをサポートする <xref:System.Windows.Controls.Panel> または <xref:System.Windows.Controls.Control> がある四角形要素 (およびその他のすべての図形要素) を使用できます。 実際に、四角形は、<xref:System.Windows.Controls.Grid> パネルの一部の背景を提供する場合に特に便利です。 例については、「[テーブルの概要](../advanced/table-overview.md)」を参照してください。  
   
- この例より大きなサンプルの一部です。サンプル全体については、次を参照してください。 [Shape 要素のサンプル](https://go.microsoft.com/fwlink/?LinkID=160037)します。  
+ この例は、より大きなサンプルの一部です。サンプル全体については、「[Shape 要素のサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ShapeElements)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Windows.Shapes.Rectangle>
-- [Shape 要素のサンプル](https://go.microsoft.com/fwlink/?LinkID=160037)
+- [Shape 要素のサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/ShapeElements)
 - [WPF での図形と基本描画の概要](shapes-and-basic-drawing-in-wpf-overview.md)
 - [テーブルの概要](../advanced/table-overview.md)

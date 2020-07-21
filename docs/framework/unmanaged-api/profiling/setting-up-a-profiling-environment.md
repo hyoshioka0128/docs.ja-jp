@@ -10,12 +10,12 @@ helpviewer_keywords:
 - COR_ENABLE_PROFILING environment variable
 - profiling API [.NET Framework], enabling
 ms.assetid: fefca07f-7555-4e77-be86-3c542e928312
-ms.openlocfilehash: 86720cb1739e3f193cd1d5081577d69bca1cf0f9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: adf790e0b2d2b72b5a1f0b2a41b80db6d5026869
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427052"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494021"
 ---
 # <a name="setting-up-a-profiling-environment"></a>プロファイル環境の設定
 > [!NOTE]
@@ -43,35 +43,35 @@ ms.locfileid: "74427052"
 ## <a name="environment-variable-scope"></a>環境変数名のスコープ  
  COR_ENABLE_PROFILING 環境変数と COR_PROFILER 環境変数をどのように設定するかによって、これらの変数が影響を及ぼすスコープが決定します。 これらの変数は、次のいずれかの方法で設定できます。  
   
-- [ICorDebug:: CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md)呼び出しで変数を設定した場合、その変数は、その時点で実行しているアプリケーションにのみ適用されます。 (そのアプリケーションから起動されて環境を継承する他のアプリケーションにも適用されます)。  
+- [ICorDebug:: CreateProcess](../debugging/icordebug-createprocess-method.md)呼び出しで変数を設定した場合、その変数は、その時点で実行しているアプリケーションにのみ適用されます。 (そのアプリケーションから起動されて環境を継承する他のアプリケーションにも適用されます)。  
   
 - コマンド プロンプト ウィンドウで設定した変数は、そのウィンドウから起動したすべてのアプリケーションに適用されます。  
   
-- ユーザー レベルで設定した変数は、エクスプローラーを使用して開始するすべてのアプリケーションに適用されます。 変数を設定した後にコマンド プロンプト ウィンドウを開くと、それらの環境設定が表示されます。そのウィンドウから起動するアプリケーションにも同じ設定が適用されます。 ユーザーレベルで環境変数を設定するには、**マイコンピューター**を右クリックし、**プロパティ** をクリックします。 **詳細設定** タブをクリックし、**環境変数** をクリックして、変数を **ユーザー変数** の一覧に追加します。  
+- ユーザー レベルで設定した変数は、エクスプローラーを使用して開始するすべてのアプリケーションに適用されます。 変数を設定した後にコマンド プロンプト ウィンドウを開くと、それらの環境設定が表示されます。そのウィンドウから起動するアプリケーションにも同じ設定が適用されます。 ユーザーレベルで環境変数を設定するには、[**マイコンピューター**を右クリックし、[**プロパティ**] をクリックします。 [**詳細設定**] タブをクリックし、[**環境変数**] をクリックして、変数を [**ユーザー変数**] の一覧に追加します。  
   
-- コンピューター レベルで設定した変数は、そのコンピューターで起動するすべてのアプリケーションに適用されます。 そのコンピューターでコマンド プロンプト ウィンドウを開くと、それらの環境設定が表示されます。そのウィンドウから起動するアプリケーションにも同じ設定が適用されます。 つまり、そのコンピューター上のすべてのマネージド プロセスがプロファイラーと共に起動します。 コンピューターレベルで環境変数を設定するには、**マイコンピューター**を右クリックし、 **[プロパティ]** をクリックします。次に、 **[詳細設定]** タブをクリックし、 **[環境変数]** をクリックします。次に、変数を **[システム変数]** の一覧に追加してから、コンピューターを再起動します。 再起動後、変数はシステム全体で試用できるようになります。  
+- コンピューター レベルで設定した変数は、そのコンピューターで起動するすべてのアプリケーションに適用されます。 そのコンピューターでコマンド プロンプト ウィンドウを開くと、それらの環境設定が表示されます。そのウィンドウから起動するアプリケーションにも同じ設定が適用されます。 つまり、そのコンピューター上のすべてのマネージド プロセスがプロファイラーと共に起動します。 コンピューターレベルで環境変数を設定するには、**マイコンピューター**を右クリックし、[**プロパティ**] をクリックします。次に、[**詳細設定**] タブをクリックし、[**環境変数**] をクリックします。次に、変数を [**システム変数**] の一覧に追加してから、コンピューターを再起動します。 再起動後、変数はシステム全体で試用できるようになります。  
   
  Windows サービスのプロファイリングを行う場合は、環境変数を設定した後、コンピューターを再起動してプロファイラー DLL を登録する必要があります。 これらの考慮事項の詳細については、「 [Windows サービスのプロファイリング](#windows_service)」セクションを参照してください。  
   
 ## <a name="additional-considerations"></a>その他の考慮事項  
   
-- プロファイラークラスは、 [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)インターフェイスと[ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)インターフェイスを実装します。 .NET Framework Version 2.0 では、プロファイラーは `ICorProfilerCallback2` を実装する必要があります。 実装していない場合、`ICorProfilerCallback2` は読み込まれません。  
+- プロファイラークラスは、 [ICorProfilerCallback](icorprofilercallback-interface.md)インターフェイスと[ICorProfilerCallback2](icorprofilercallback2-interface.md)インターフェイスを実装します。 .NET Framework Version 2.0 では、プロファイラーは `ICorProfilerCallback2` を実装する必要があります。 実装していない場合、`ICorProfilerCallback2` は読み込まれません。  
   
 - 一度に 1 つのプロファイラーのみが、指定された環境でプロセスのプロファイリングを行うことができます。 2 つの異なるプロファイラーを別々の環境に登録することはできますが、各プロファイラーは別々のプロセスのプロファイリングを行う必要があります。 プロファイラーは、インプロセス COM サーバー DLL として実装する必要があります。この DLL は、プロファイリング対象プロセスと同じアドレス領域にマップされます。 つまり、プロファイラーはインプロセスで実行されます。 .NET Framework では、これ以外の種類の COM サーバーはサポートしていません。 たとえば、プロファイラーがリモート コンピューターからアプリケーションを監視する場合は、各コンピューターにコレクター エージェントを実装する必要があります。 実装したエージェントは、結果をまとめて中央のデータ収集用コンピューターに送信します。  
   
 - プロファイラーはインプロセスでインスタンス化される COM オブジェクトであるため、プロファイリングされる各アプリケーションに専用のプロファイラーのコピーが存在します。 したがって、単一のプロファイラー インスタンスが複数のアプリケーションからのデータを処理する必要はありません。 ただし、プロファイラーのログ コードに、他のプロファイリング対象アプリケーションからのログ ファイルの上書きを回避するロジックを追加する必要があります。  
   
 ## <a name="initializing-the-profiler"></a>プロファイラーの初期化  
- 両方の環境変数のチェックに合格すると、CLR は COM `CoCreateInstance` 関数と同様の方法でプロファイルのインスタンスを作成します。 このプロファイルについては、`CoCreateInstance` の直接呼び出しによる読み込みは行われません。 そのため、スレッド処理モデルの設定が必要な `CoInitialize` の呼び出しが回避されます。 CLR は、プロファイラーで[ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)メソッドを呼び出します。 このメソッドのシグネチャは次のとおりです。  
+ 両方の環境変数のチェックに合格すると、CLR は COM `CoCreateInstance` 関数と同様の方法でプロファイルのインスタンスを作成します。 このプロファイルについては、`CoCreateInstance` の直接呼び出しによる読み込みは行われません。 そのため、スレッド処理モデルの設定が必要な `CoInitialize` の呼び出しが回避されます。 CLR は、プロファイラーで[ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md)メソッドを呼び出します。 このメソッドのシグネチャは次のとおりです。  
   
 ```cpp  
 HRESULT Initialize(IUnknown *pICorProfilerInfoUnk)  
 ```  
   
- プロファイラーは、 [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)または[ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)インターフェイスポインターの `pICorProfilerInfoUnk` に対してクエリを実行し、プロファイル中により多くの情報を要求できるように保存する必要があります。  
+ プロファイラーは、 `pICorProfilerInfoUnk` プロファイル中により多くの情報を要求できるように、 [ICorProfilerInfo](icorprofilerinfo-interface.md)または[ICorProfilerInfo2](icorprofilerinfo2-interface.md)インターフェイスポインターを照会して保存する必要があります。  
   
 ## <a name="setting-event-notifications"></a>イベント通知の設定  
- 次に、プロファイラーは[ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md)メソッドを呼び出して、関心のある通知のカテゴリを指定します。 たとえば、関数の Enter および Leave の通知とガベージ コレクションの通知のみを確認する場合は、次のように指定します。  
+ 次に、プロファイラーは[ICorProfilerInfo:: SetEventMask](icorprofilerinfo-seteventmask-method.md)メソッドを呼び出して、関心のある通知のカテゴリを指定します。 たとえば、関数の Enter および Leave の通知とガベージ コレクションの通知のみを確認する場合は、次のように指定します。  
   
 ```cpp  
 ICorProfilerInfo* pInfo;  
@@ -83,7 +83,7 @@ pInfo->SetEventMask(COR_PRF_MONITOR_ENTERLEAVE | COR_PRF_MONITOR_GC)
   
  特定のプロファイラー イベントは変更できません。 つまり、これらのイベントが `ICorProfilerCallback::Initialize` コールバックで設定されるとすぐに、イベントはオフにできなくなり、新しいイベントをオンにすることもできません。 変更できないイベントを変更しようとすると、失敗を表す HRESULT が `ICorProfilerInfo::SetEventMask` から返されます。  
   
-<a name="windows_service"></a>   
+<a name="windows_service"></a>
 ## <a name="profiling-a-windows-service"></a>Windows サービスのプロファイリング  
  Windows サービスのプロファイリングは、共通言語ランタイム アプリケーションのプロファイリングと同様です。 どちらのプロファイリング操作も環境変数で有効にできます。 Windows サービスはオペレーティング システムの起動時に開始されるため、前の環境変数をあらかじめ作成し、必要な値を設定しておく必要があります。 さらに、プロファイル DLL を事前にシステムに登録しておく必要もあります。  
   
@@ -91,8 +91,8 @@ pInfo->SetEventMask(COR_PRF_MONITOR_ENTERLEAVE | COR_PRF_MONITOR_GC)
   
  これらの変更を行うと、プロファイリングがシステム全体で有効になります。 以降に実行するすべてのマネージド アプリケーションがプロファイルされるのを避けるには、ターゲット コンピューターを再起動した後で、システム環境変数を削除します。  
   
- この方法では、すべての CLR プロセスもプロファイリングの対象になります。 プロファイラーは、現在のプロセスが対象であるかどうかを検出するために、 [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)コールバックにロジックを追加する必要があります。 プロファイリングの対象ではない場合、プロファイラーは、初期化を実行せずにコールバックからエラーを返すことができます。  
+ この方法では、すべての CLR プロセスもプロファイリングの対象になります。 プロファイラーは、現在のプロセスが対象であるかどうかを検出するために、 [ICorProfilerCallback:: Initialize](icorprofilercallback-initialize-method.md)コールバックにロジックを追加する必要があります。 プロファイリングの対象ではない場合、プロファイラーは、初期化を実行せずにコールバックからエラーを返すことができます。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [プロファイルの概要](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)
+- [プロファイリングの概要](profiling-overview.md)

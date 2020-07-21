@@ -1,7 +1,5 @@
 ---
 title: WriteStartHeaders メソッド (System.servicemodel. Channels)
-author: mairaw
-ms.author: mairaw
 ms.date: 11/01/2019
 topic_type:
 - apiref
@@ -11,12 +9,12 @@ api_location:
 - system.servicemodel.dll
 api_type:
 - Assembly
-ms.openlocfilehash: a2c82ee4029c7af0396219f5ded8c999fd01d65b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c826e6a3b976e5705e9815586441e8a25b64f76e
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74451288"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214865"
 ---
 # <a name="messagewritestartheaders-method"></a>WriteStartHeaders メソッド
 

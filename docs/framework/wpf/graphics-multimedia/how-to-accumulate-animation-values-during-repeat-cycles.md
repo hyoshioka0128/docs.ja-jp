@@ -7,28 +7,28 @@ helpviewer_keywords:
 ms.assetid: 548df369-c7cc-4dab-b569-08b95ced2e7e
 ms.openlocfilehash: bccdc9b7bf2d5a0ea476e39e8d54107854db7ae3
 ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64591468"
 ---
 # <a name="how-to-accumulate-animation-values-during-repeat-cycles"></a>方法: 反復サイクル中にアニメーション値を累積する
-この例は、使用する方法を示します、<xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A>プロパティを反復サイクル中にアニメーション値を累積します。  
+この例では、<xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> プロパティを使用して、反復サイクルでアニメーション値を累積する方法を示します。  
   
 ## <a name="example"></a>例  
- 使用して、<xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A>反復サイクル中、アニメーションの底の値を累積するプロパティ。 9 回繰り返すアニメーションを設定する場合など (<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> ="9 x") 10 から 15 までアニメーション化するプロパティを設定して (から 10 を = = 15)、プロパティは、15 ~ 20 2 つ目のサイクル中に、最初のサイクル中に 10 から 15 までアニメーション化、20 ~ 25 と 3 番目のサイクル中にから。 そのため、各アニメーション サイクルは、その基本値として前のアニメーション サイクルからの終了値を使用します。  
+ <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> プロパティを使用して、反復サイクル中のアニメーションの基本値を累積します。 たとえば、アニメーションを 9 回繰り返す (<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> = "9x") ように設定し、10 から 15 (From = 10 To = 15) の間でアニメーション化するようにプロパティを設定した場合、プロパティは、最初のサイクルで 10 から 15 まで、2 番目のサイクルで 15 から 20 まで、3 番目のサイクルで 20 から 25 まで (以下同様) アニメーション化されます。 したがって、各アニメーション サイクルでは、前のアニメーション サイクルの終了アニメーション値が基本値として使用されます。  
   
- 使用することができます、`IsCumulative`最も基本的なアニメーションとほとんどのキー フレーム アニメーションのプロパティ。 詳細については、次を参照してください。[アニメーションの概要](animation-overview.md)と[キー フレーム アニメーションの概要](key-frame-animations-overview.md)します。  
+ ほとんどの基本的なアニメーションと、ほとんどのキー フレーム アニメーションでは、`IsCumulative` プロパティを使用できます。 詳細については、「[アニメーションの概要](animation-overview.md)」と「[キーフレーム アニメーションの概要](key-frame-animations-overview.md)」を参照してください。  
   
- 次の例では、次の 4 つの四角形の幅をアニメーション化してこの動作を示します。 例:  
+ 次の例では、4 つの四角形の幅をアニメーション化することで、この動作を示しています。 この例では、次の処理を実行します。  
   
-- 最初の四角形をアニメーション化<xref:System.Windows.Media.Animation.DoubleAnimation>設定と、<xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A>プロパティを`true`します。  
+- 最初の四角形を <xref:System.Windows.Media.Animation.DoubleAnimation> でアニメーション化し、<xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> プロパティを `true` に設定します。  
   
-- 2 番目の四角形をアニメーション化<xref:System.Windows.Media.Animation.DoubleAnimation>設定と、<xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A>プロパティの既定値を`false`します。  
+- <xref:System.Windows.Media.Animation.DoubleAnimation> で 2 番目の四角形をアニメーション化し、<xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> プロパティを `false` の既定値に設定します。  
   
-- 含む 3 番目の四角形をアニメーション化<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>設定と、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A>プロパティを`true`します。  
+- 3 番目の四角形を <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> でアニメーション化し、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A> プロパティを `true` に設定します。  
   
-- 含む最後の四角形をアニメーション化<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>設定と、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A>プロパティを`false`します。  
+- 最後の四角形を <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> でアニメーション化し、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A> プロパティを `false` に設定します。  
   
  [!code-xaml[timingbehaviors_snip#IsCumulativeWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/IsCumulativeExample.xaml#iscumulativewholepage)]  
   

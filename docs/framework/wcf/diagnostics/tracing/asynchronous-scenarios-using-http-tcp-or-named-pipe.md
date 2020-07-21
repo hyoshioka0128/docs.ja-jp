@@ -2,12 +2,12 @@
 title: HTTP、TCP、または名前付きパイプを使用した非同期シナリオ
 ms.date: 03/30/2017
 ms.assetid: a4d62402-43a4-48a4-9ced-220633ebc4ce
-ms.openlocfilehash: 218887f7d09e234d0d02dfa1df5c1d4e114ddc11
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 6ae96c0aac5010adf37eb78ed57d1549885ece58
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422240"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185782"
 ---
 # <a name="asynchronous-scenarios-using-http-tcp-or-named-pipe"></a>HTTP、TCP、または名前付きパイプを使用した非同期シナリオ
 ここでは、マルチスレッド要求で HTTP、TCP、または名前付きパイプを使用したときの、さまざまな非同期要求/応答シナリオでのアクティビティおよび転送について説明します。  
@@ -22,49 +22,49 @@ ms.locfileid: "67422240"
 ### <a name="asynchronous-client-without-callback"></a>コールバックを伴わない非同期クライアント  
   
 #### <a name="propagation-is-enabled-on-both-sides-using-http"></a>HTTP を使用して、両方の側で伝達が有効になっている場合  
- ![PropagateActivity に設定されていないコールバックを伴う非同期クライアント両方の側では true。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-no-callback.gif)   
+ ![propagateActivity が両側で true に設定されているコールバックのない非同期クライアント。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-no-callback.gif)
   
- 場合`propagateActivity=true`ProcessMessage は ProcessAction アクティビティへの転送を示します。  
+ の`propagateActivity=true`場合、プロセス メッセージは、転送先のプロセス アクション アクティビティを示します。  
   
  HTTP ベースのシナリオでは、最初に送信するメッセージで "バイトを受信" が呼び出され、要求の有効期間だけ存在します。  
   
 #### <a name="propagation-is-disabled-on-either-sides-using-http"></a>HTTP を使用して、両方の側で伝達が無効になっている場合  
- 場合`propagateActivity=false`いずれかの側では、ProcessMessage は示しませんアクティビティへの転送を示しません。 したがって、新しい ID を使用して、新しい一時的な "アクションを処理" アクティビティが呼び出されます。 非同期応答と ServiceModel コード内の要求が一致する場合は、アクティビティ ID をローカル コンテキストから取得できます。 その ID を使用して、実際の "アクションを処理" アクティビティに転送できます。  
+ どちらの`propagateActivity=false`側でも、ProcessMessage はどのプロセスアクションアクティビティを転送するかを示しません。 したがって、新しい ID を使用して、新しい一時的な "アクションを処理" アクティビティが呼び出されます。 非同期応答と ServiceModel コード内の要求が一致する場合は、アクティビティ ID をローカル コンテキストから取得できます。 その ID を使用して、実際の "アクションを処理" アクティビティに転送できます。  
   
- ![非同期クライアント propagateActivity を右辺でも左辺でも false に設定されているコールバックなし。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-disabled-either-side.gif)  
-    
+ ![propagateActivity がどちらの側でも false に設定されているコールバックのない非同期クライアント。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-disabled-either-side.gif)  
+
  HTTP ベースのシナリオでは、最初に送信するメッセージで "バイトを受信" が呼び出され、要求の有効期間だけ存在します。  
   
- プロセスのアクション アクティビティが、非同期クライアントで作成されたときに`propagateActivity=false`呼び出し元または呼び出し先、および応答メッセージに Action ヘッダーが含まれていない場合。  
+ プロセス アクション アクティビティは、呼び出し`propagateActivity=false`元または呼び出し先で、応答メッセージに Action ヘッダーが含まれていない場合に、非同期クライアントで作成されます。  
   
 #### <a name="propagation-is-enabled-on-both-sides-using-tcp-or-named-pipe"></a>TCP または名前付きパイプを使用して、両方の側で伝達が有効になっている場合  
- ![非同期のクライアントにコールバックが propagateActivity が両方の側で true と名前付きに設定されていない/TCP パイプします。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-enabled-using-tcp.gif)  
+ ![propagateActivity が両側と名前付きパイプ/TCP のどちらで true に設定されているコールバックを持たない非同期クライアント。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-enabled-using-tcp.gif)  
   
  名前付きパイプまたは TCP ベースのシナリオでは、クライアントが開かれるときに "バイトを受信" が呼び出され、接続の有効期間だけ存在します。  
   
- 最初の図のような場合`propagateActivity=true`ProcessMessage は ProcessAction アクティビティへの転送を示します。  
+ 最初のイメージと同様に、 `propagateActivity=true`if を指定すると、ProcessMessage はどのプロセスアクションアクティビティを転送するかを示します。  
   
 #### <a name="propagation-is-disabled-on-either-sides-using-tcp-or-named-pipe"></a>TCP または名前付きパイプを使用して、両方の側で伝達が無効になっている場合  
  名前付きパイプまたは TCP ベースのシナリオでは、クライアントが開かれるときに "バイトを受信" が呼び出され、接続の有効期間だけ存在します。  
   
- 2 番目の図のような場合は`propagateActivity=false`いずれかの側では、ProcessMessage は示しませんアクティビティへの転送を示しません。 したがって、新しい ID を使用して、新しい一時的な "アクションを処理" アクティビティが呼び出されます。 非同期応答と ServiceModel コード内の要求が一致する場合は、アクティビティ ID をローカル コンテキストから取得できます。 その ID を使用して、実際の "アクションを処理" アクティビティに転送できます。  
+ 2 番目のイメージと同様`propagateActivity=false`に、どちらの側でも ProcessMessage は、どの ProcessAction アクティビティを転送するかを示しません。 したがって、新しい ID を使用して、新しい一時的な "アクションを処理" アクティビティが呼び出されます。 非同期応答と ServiceModel コード内の要求が一致する場合は、アクティビティ ID をローカル コンテキストから取得できます。 その ID を使用して、実際の "アクションを処理" アクティビティに転送できます。  
   
- ![非同期クライアント propagateActivity の右辺でも左辺でも false に設定し、パイプ/TCP という名前の場所、コールバックなし。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-disabled-using-tcp.gif)  
-    
+ ![propagateActivity がどちらの側でも、名前付きパイプ/TCP 側でも false に設定されているコールバックのない非同期クライアント。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-scenario-propagation-disabled-using-tcp.gif)  
+
 ### <a name="asynchronous-client-with-callback"></a>コールバックを伴う非同期クライアント  
  このシナリオでは、コールバックと `endCall` に対するアクティビティ G と A’、およびその転送 (送受信) が追加されています。  
   
- このセクションでは HTTP との使用方法を示しますのみ`propagateActivity` =`true`します。 ただし、それ以外の場合にも適用の他のアクティビティおよび転送 (つまり、 `propagateActivity` = `false`、TCP または名前付きパイプを使用して)。  
+ このセクションでは、 で HTTP`propagateActivity`=`true`を使用する方法のみを示します。 ただし、追加のアクティビティと転送は、他の場合にも適用されます (つまり`propagateActivity`=`false`、TCP または名前付きパイプを使用)。  
   
- クライアントがユーザー コードを呼び出して結果の準備が完了したことを通知すると、コールバックは新しいアクティビティ (G) を作成します。 ユーザー コードは、次に、コールバック内 (図 5 を参照) またはコールバック外 (図 6 を参照) で `endCall` を呼び出します。 どのユーザー アクティビティが不明なので`endCall`が呼び出されるから、このアクティビティがというラベルが付いた`A’`します。 A’ と A が同じである場合もありますし、異なる場合もあります。  
+ クライアントがユーザー コードを呼び出して結果の準備が完了したことを通知すると、コールバックは新しいアクティビティ (G) を作成します。 ユーザー コードは、次に、コールバック内 (図 5 を参照) またはコールバック外 (図 6 を参照) で `endCall` を呼び出します。 どのユーザー アクティビティ`endCall`が呼び出されたかは不明であるため、このアクティビティには`A’`というラベルが付けられます。 A’ と A が同じである場合もありますし、異なる場合もあります。  
   
- ![非同期コールバック、コールバックで endcall でクライアントを示しています。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-callback-endcall-in-callback.gif)  
-    
- ![非同期コールバック、endcall コールバック外でクライアントを示しています。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-callback-endcall-outside-callback.gif)  
-    
+ ![コールバック、コールバックのエンドコールを持つ非同期クライアントを示します。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-callback-endcall-in-callback.gif)  
+
+ ![コールバック、コールバックの外部呼び出しを含む非同期クライアントを示します。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-client-callback-endcall-outside-callback.gif)  
+
 ### <a name="asynchronous-server-with-callback"></a>コールバックを伴う非同期サーバー  
- ![コールバックを伴う非同期サーバーを示しています。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-server-callback.gif)  
-    
+ ![コールバックを使用して非同期サーバーを表示します。](./media/asynchronous-scenarios-using-http-tcp-or-named-pipe/asynchronous-server-callback.gif)  
+
  チャネル スタックは、"メッセージを受信" でクライアントをコールバックします。この処理のトレースは、"要求を処理" アクティビティ自体で出力されます。  
   
 ## <a name="asynchronous-requestreply-with-errors"></a>エラーを伴う非同期要求/応答  

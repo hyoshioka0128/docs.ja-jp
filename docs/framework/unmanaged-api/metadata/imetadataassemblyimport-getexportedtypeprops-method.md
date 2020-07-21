@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 25ca7623-5a55-4f09-b44a-36b03d142278
 topic_type:
 - apiref
-ms.openlocfilehash: 82302124828a2dab73b445128d7d847e112edd36
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 944941c2356cae93ecc85f1714b4b29aefcb50ad
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448213"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008405"
 ---
 # <a name="imetadataassemblyimportgetexportedtypeprops-method"></a>IMetaDataAssemblyImport::GetExportedTypeProps メソッド
 指定したメタデータシグネチャを持つ、エクスポートされた型のプロパティのセットを取得します。  
@@ -29,47 +29,47 @@ ms.locfileid: "74448213"
   
 ```cpp  
 HRESULT GetExportedTypeProps (  
-    [in]  mdExportedType    mdct,   
-    [out] LPWSTR            szName,   
-    [in]  ULONG             cchName,   
-    [out] ULONG             *pchName,   
-    [out] mdToken           *ptkImplementation,   
-    [out] mdTypeDef         *ptkTypeDef,   
+    [in]  mdExportedType    mdct,
+    [out] LPWSTR            szName,
+    [in]  ULONG             cchName,
+    [out] ULONG             *pchName,
+    [out] mdToken           *ptkImplementation,
+    [out] mdTypeDef         *ptkTypeDef,
     [out] DWORD             *pdwExportedTypeFlags  
 );  
 ```  
   
 ## <a name="parameters"></a>パラメーター  
  `mdct`  
- からエクスポートされた型を表す `mdExportedType` メタデータトークン。  
+ からエクスポートされた `mdExportedType` 型を表すメタデータトークン。  
   
  `szName`  
  入出力エクスポートされた型の名前。  
   
  `cchName`  
- から`szName`のサイズ (ワイド文字単位)。  
+ からのサイズ (ワイド文字単位) `szName` 。  
   
  `pchName`  
- 入出力実際に返されるワイド文字の数 `szName`  
+ 入出力実際に返されるワイド文字の数`szName`  
   
  `ptkImplementation`  
- 入出力エクスポートされた型のプロパティへのアクセスを格納または許可する、`mdFile`、`mdAssemblyRef`、または `mdExportedType` メタデータトークン。  
+ 入出力`mdFile` `mdAssemblyRef` エクスポートされた `mdExportedType` 型のプロパティへのアクセスを格納または許可する、、、またはメタデータトークン。  
   
  `ptkTypeDef`  
- 入出力ファイル内の型を表す `mdTypeDef` トークンへのポインター。  
+ 入出力`mdTypeDef`ファイル内の型を表すトークンへのポインター。  
   
  `pdwExportedTypeFlags`  
- 入出力エクスポートされた型に適用されるメタデータを記述するフラグへのポインター。 Flags 値には、1つまたは複数の[Cortypeattr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md)値を指定できます。  
+ 入出力エクスポートされた型に適用されるメタデータを記述するフラグへのポインター。 Flags 値には、1つまたは複数の[Cortypeattr](cortypeattr-enumeration.md)値を指定できます。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataAssemblyImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport インターフェイス](imetadataassemblyimport-interface.md)

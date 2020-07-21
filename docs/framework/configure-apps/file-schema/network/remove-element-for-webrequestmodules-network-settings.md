@@ -10,26 +10,26 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-ms.openlocfilehash: ca3a78a491c61b6e23dab0f96eebceb3157706ae
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: afa1aef8ea71f43a136987ec5b6e1925c6d9fb40
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089142"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79154726"
 ---
-# <a name="remove-element-for-webrequestmodules-network-settings"></a>webRequestModules の > 要素を削除する \<(ネットワーク設定)
+# <a name="remove-element-for-webrequestmodules-network-settings"></a>webRequestModules の \<remove> 要素 (ネットワーク設定)
 アプリケーションからカスタム Web 要求モジュールを削除します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system. net >** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**削除**>
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<webRequestModules>**](webrequestmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
   
 ## <a name="syntax"></a>構文  
   
 ```xml  
-<remove   
-  prefix="URI prefix"   
+<remove
+  prefix="URI prefix"
 />  
 ```  
   
@@ -51,17 +51,17 @@ ms.locfileid: "74089142"
 |-----------------|---------------------|  
 |[webRequestModules](webrequestmodules-element-network-settings.md)|ネットワークホストから情報を要求するために使用するモジュールを指定します。|  
   
-## <a name="remarks"></a>Remarks  
- `remove` 要素は、指定された URI プレフィックスの登録済み Web 要求モジュールを削除します。  
+## <a name="remarks"></a>解説  
+ 要素は、 `remove` 指定された URI プレフィックスの登録済み Web 要求モジュールを削除します。  
   
- `prefix` 属性の値は、有効な URI の先頭の文字 ("`http`"、"`http://www.contoso.com`" など) にする必要があります。  
+ 属性の値は、 `prefix` 有効な URI の先頭の文字 (""、"" など) にする必要があり `http` `http://www.contoso.com` ます。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
   
 ## <a name="example"></a>例  
 
-次の例では、HTTP 用の既存の Web 要求モジュールを削除し、HTTP 要求用の新しいカスタム Web 要求モジュールを `www.contoso.com`に登録します。
+次の例では、HTTP 用の既存の Web 要求モジュールを削除し、HTTP 要求用の新しいカスタム Web 要求モジュールをに登録し `www.contoso.com` ます。
   
 ```xml  
 <configuration>  

@@ -11,20 +11,20 @@ helpviewer_keywords:
 ms.assetid: c687b2a5-b151-41e2-9ade-df2fc1a16b04
 ms.openlocfilehash: bb625c116b1c58071ec0f51729df07f43600f36f
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61970964"
 ---
 # <a name="clocks-how-to-topics"></a>クロックに関する「方法」トピック
-次のトピックを使用する方法について説明する<xref:System.Windows.Media.Animation.Clock>のタイミング状態情報を保持するオブジェクト、<xref:System.Windows.Media.Animation.Timeline>します。  
+次のトピックでは、<xref:System.Windows.Media.Animation.Clock> オブジェクトを使用して <xref:System.Windows.Media.Animation.Timeline> のタイミング状態情報を保持する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [AnimationClock を使用してプロパティをアニメーション化する](how-to-animate-a-property-by-using-an-animationclock.md)  
  [クロックを対話的に制御する](how-to-interactively-control-a-clock.md)  
  [クロックを同期的にシークする](how-to-seek-a-clock-synchronously.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Media.Animation.Clock>  
   
  <xref:System.Windows.Media.Animation.Storyboard>  

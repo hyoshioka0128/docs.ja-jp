@@ -8,7 +8,7 @@ ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
 ms.openlocfilehash: 514675b3c3ce1f6701dff571361df672fb520c6a
 ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053667"
@@ -49,7 +49,7 @@ ms.locfileid: "71053667"
     |<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>|サービスがコンピューターのシャットダウン時に通知を受けて `True` プロシージャを呼び出す場合は、<xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> を設定します。|  
     |<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>|サービスが一時停止要求または再開要求を受け付ける場合は `True` を設定します。サービスを一時停止または再開しない場合は `false` を設定します。|  
     |<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>|コンピューターの電源状態の変化をサービスに通知する場合は `True` を設定します。サービスに電源状態の変化を通知しない場合は、`false` を設定します。|  
-    |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|サービスがアクションを実行したときにアプリケーション イベント ログに情報を入力する場合は `True` を設定します。この機能を無効にする場合は `false` を設定します。 詳細については、「[方法 :サービスに関する情報のログを記録する](how-to-log-information-about-services.md)」を参照してください。 **注:** 既定では、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A> は `true` に設定されています。|  
+    |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|サービスがアクションを実行したときにアプリケーション イベント ログに情報を入力する場合は `True` を設定します。この機能を無効にする場合は `false` を設定します。 詳細については、[サービスに関する情報のログを記録する](how-to-log-information-about-services.md)」を参照してください。 **注:** 既定では、<xref:System.ServiceProcess.ServiceBase.AutoLog%2A> は `true` に設定されています。|  
   
     > [!NOTE]
     > <xref:System.ServiceProcess.ServiceBase.CanStop%2A> または <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> を `false` に設定すると、**サービス コントロール マネージャー**は、対応するメニュー オプション (サービスの停止、一時停止、または継続) を無効にします。  
@@ -58,14 +58,14 @@ ms.locfileid: "71053667"
   
 5. ほかに動作を定義するメソッドがある場合は、それをオーバーライドします。  
   
-6. サービス アプリケーションの必要なインストーラーを追加します。 詳細については、「[方法 :サービス アプリケーションにインストーラーを追加する](how-to-add-installers-to-your-service-application.md)」を参照してください。  
+6. サービス アプリケーションの必要なインストーラーを追加します。 詳細については、[サービス アプリケーションにインストーラーを追加する](how-to-add-installers-to-your-service-application.md)」を参照してください。  
   
 7. **[ビルド]** メニューの **[ソリューションのビルド]** をクリックして、プロジェクトを作成します。  
   
     > [!NOTE]
     > F5 キーを押してプロジェクトを実行しないでください。この方法ではサービス プロジェクトを実行できません。  
   
-8. サービスをインストールします。 詳細については、「[方法 :サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。  
+8. サービスをインストールします。 詳細については、[サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

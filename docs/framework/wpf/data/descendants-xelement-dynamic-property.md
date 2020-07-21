@@ -4,7 +4,7 @@ ms.date: 10/22/2019
 ms.topic: reference
 ms.openlocfilehash: 8d14b0a94d1a2028a56f649a574f157264ba50fa
 ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/25/2019
 ms.locfileid: "72921180"

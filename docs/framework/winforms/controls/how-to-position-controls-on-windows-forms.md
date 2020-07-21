@@ -1,5 +1,6 @@
 ---
-title: '方法 : Windows フォーム上のコントロールを位置設定する'
+title: コントロールを配置する
+description: Visual Studio の Windows フォームデザイナー、または Location プロパティを使用してコントロールを配置する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,16 +19,16 @@ ms.assetid: 4693977e-34a4-4f19-8221-68c3120c2b2b
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: bb57d14397a4626e01c41dd687dfed7331282a10
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 0aa3faade71e0f7e0a9d5e676327a80747524b8c
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458328"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904300"
 ---
 # <a name="how-to-position-controls-on-windows-forms"></a>方法: Windows フォームにコントロールを配置する
 
-コントロールを配置するには、Visual Studio で Windows フォームデザイナーを使用するか、<xref:System.Windows.Forms.Control.Location%2A> プロパティを指定します。
+コントロールを配置するには、Visual Studio で Windows フォームデザイナーを使用するか、プロパティを指定し <xref:System.Windows.Forms.Control.Location%2A> ます。
 
 ## <a name="position-a-control-on-the-design-surface-of-the-windows-forms-designer"></a>Windows フォームデザイナーのデザインサーフェイスにコントロールを配置する
 
@@ -40,16 +41,16 @@ Visual Studio で、マウスを使用して適切な位置にコントロール
 
 1. Visual Studio で、配置するコントロールを選択します。
 
-2. **[プロパティ]** ウィンドウで、<xref:System.Windows.Forms.Control.Location%2A> プロパティの値をコンマで区切って入力し、そのコンテナー内にコントロールを配置します。
+2. [**プロパティ**] ウィンドウで、プロパティの値をコンマで区切って入力し、 <xref:System.Windows.Forms.Control.Location%2A> コンテナー内にコントロールを配置します。
 
    最初の数値 (X) は、コンテナーの左境界線からの距離です。2番目の数値 (Y) は、コンテナー領域の上境界からの距離をピクセル単位で表したものです。
 
    > [!NOTE]
-   > <xref:System.Windows.Forms.Control.Location%2A> プロパティを展開して、 **X**と**Y**の値を個別に入力できます。
+   > プロパティを展開して、 <xref:System.Windows.Forms.Control.Location%2A> **X**値と**Y**値を個別に入力できます。
 
 ## <a name="position-a-control-programmatically"></a>プログラムによるコントロールの配置
 
-1. コントロールの <xref:System.Windows.Forms.Control.Location%2A> プロパティを <xref:System.Drawing.Point>に設定します。
+1. <xref:System.Windows.Forms.Control.Location%2A>コントロールのプロパティをに設定 <xref:System.Drawing.Point> します。
 
     ```vb
     Button1.Location = New Point(100, 100)
@@ -63,7 +64,7 @@ Visual Studio で、マウスを使用して適切な位置にコントロール
     button1->Location = Point(100, 100);
     ```
 
-2. <xref:System.Windows.Forms.Control.Left%2A> サブプロパティを使用して、コントロールの位置の X 座標を変更します。
+2. サブプロパティを使用して、コントロールの位置の X 座標を変更 <xref:System.Windows.Forms.Control.Left%2A> します。
 
     ```vb
     Button1.Left = 300
@@ -79,7 +80,7 @@ Visual Studio で、マウスを使用して適切な位置にコントロール
 
 ## <a name="increment-a-controls-location-programmatically"></a>プログラムによってコントロールの位置をインクリメントする
 
-<xref:System.Windows.Forms.Control.Left%2A> サブプロパティを設定して、コントロールの X 座標をインクリメントします。
+サブプロパティを設定して、 <xref:System.Windows.Forms.Control.Left%2A> コントロールの X 座標をインクリメントします。
 
 ```vb
 Button1.Left += 200
@@ -94,12 +95,12 @@ button1->Left += 200;
 ```
 
 > [!NOTE]
-> コントロールの X 位置と Y 位置を同時に設定するには、<xref:System.Windows.Forms.Control.Location%2A> プロパティを使用します。 位置を個別に設定するには、コントロールの <xref:System.Windows.Forms.Control.Left%2A> (**X**) または <xref:System.Windows.Forms.Control.Top%2A> (**Y**) サブプロパティを使用します。 この構造体にはボタンの座標のコピーが含まれているため、ボタンの位置を表す <xref:System.Drawing.Point> 構造体の X 座標と Y 座標を暗黙的に設定することは避けてください。
+> <xref:System.Windows.Forms.Control.Location%2A>コントロールの X 位置と Y 位置を同時に設定するには、プロパティを使用します。 位置を個別に設定するには、コントロールの <xref:System.Windows.Forms.Control.Left%2A> (**X**) サブプロパティまたは <xref:System.Windows.Forms.Control.Top%2A> (**Y**) サブプロパティを使用します。 <xref:System.Drawing.Point>この構造体にはボタンの座標のコピーが含まれているため、ボタンの位置を表す構造体の X 座標と Y 座標は暗黙的に設定しないようにしてください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
-- [Windows フォーム コントロール](index.md)
-- [チュートリアル: スナップ線を使用した Windows フォーム上のコントロールの配置](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
+- [Windows フォームコントロール](index.md)
+- [チュートリアル : スナップ線を使用した Windows フォーム上のコントロールの配置](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
 - [チュートリアル: TableLayoutPanel を使用した Windows フォーム上のコントロールの配置](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)
 - [チュートリアル: FlowLayoutPanel を使用した Windows フォーム上のコントロールの配置](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
 - [各 Windows フォーム コントロールのラベル設定とショートカットの作成](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)

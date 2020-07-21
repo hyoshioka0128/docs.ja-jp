@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
 ms.openlocfilehash: 8368354049a77a56a5aa54ab500619576f41b0dc
 ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/10/2019
 ms.locfileid: "70854264"
@@ -17,7 +17,7 @@ SQL 生成モジュールは、指定された入力クエリ コマンド ツ�
 
 クエリ コマンド ツリーは、クエリのオブジェクト モデル表現です。 クエリ コマンド ツリーには、次の 2 つの目的があります。
 
-- Entity Framework に対して指定された入力クエリを表現します。
+- Entity Framework に対して指定された入力クエリを表現する。
 
 - プロバイダーに対して提供された出力クエリを表現し、バックエンドに対するクエリを記述する。
 
@@ -25,7 +25,7 @@ SQL 生成モジュールは、指定された入力クエリ コマンド ツ�
 
 DBQueryCommandTree.Query プロパティは、クエリのロジックを記述する式ツリーのルートです。 DBQueryCommandTree.Parameters プロパティには、クエリで使用されるパラメーターのリストが格納されます。 式ツリーは、DbExpression オブジェクトから構成されます。
 
-DbExpression オブジェクトは、計算を表します。 いくつかの種類の式は、クエリ式を作成するために Entity Framework によって提供されます。これには、定数、変数、関数、コンストラクター、およびフィルターや結合などの標準的な関係演算子が含まれます。 すべての DbExpression オブジェクトには、その式によって生成される結果の型を表す ResultType プロパティがあります。 この型は、TypeUsage として表されます。
+DbExpression オブジェクトは、計算を表します。 Entity Framework では、定数、変数、関数、コンストラクター、およびフィルターや結合のような標準の関係演算子など、クエリ式を構成するための式がいくつか用意されています。 すべての DbExpression オブジェクトには、その式によって生成される結果の型を表す ResultType プロパティがあります。 この型は、TypeUsage として表されます。
 
 ## <a name="shapes-of-the-output-query-command-tree"></a>出力クエリ コマンド ツリーの構造
 
@@ -75,9 +75,9 @@ DbExpression オブジェクトは、計算を表します。 いくつかの種
 
 - ユーザー定義関数
 
-正規関数 (詳細については、「[正規関数](./language-reference/canonical-functions.md)」を参照してください) が Entity Framework の一部として指定されます。プロバイダーは、これらの仕様に基づいて正規関数の実装を提供する必要があります。 ストア関数は、対応するプロバイダー マニフェスト内の仕様に基づいています。 ユーザー定義の関数は、SSDL 内の仕様に基づいています。
+正規関数は Entity Framework の一部として指定されています (詳細については、「[正規関数](./language-reference/canonical-functions.md)」を参照)。プロバイダーは、これらの指定に基づいて、正規関数の実装を提供する必要があります。 ストア関数は、対応するプロバイダー マニフェスト内の仕様に基づいています。 ユーザー定義の関数は、SSDL 内の仕様に基づいています。
 
-また、NiladicFunction 属性を持つ関数は引数を持たないため、末尾のかっこを省略して変換する必要があります。  つまり *、 \<functionName > ()* ではなく *\<> を functionName*します。
+また、NiladicFunction 属性を持つ関数は引数を持たないため、末尾のかっこを省略して変換する必要があります。  つまり、 *\<functionName>()* ではなく *\<functionName>* のようにします。
 
 #### <a name="dbnewinstanceexpression"></a>DbNewInstanceExpression
 
@@ -87,7 +87,7 @@ DbNewInstanceExpression は、次の 2 つのケースでのみ使用できま�
 
   - 結果型は行型である必要があります。
 
-  - それぞれの引数は、プリミティブ型の結果を生成する式です。 通常、それぞれの引数は、スカラー式 (たとえば、DbVariableReferenceExpression に対する PropertyExpression)、関数呼び出し、または DbVariableReferenceExpression に対する DbPropertyExpression や関数呼び出しの算術演算です。 ただし、スカラー サブクエリを表す式は、DbNewInstanceExpression の引数リスト内にも使用できます。 スカラーサブクエリを表す式は、DbElementExpression オブジェクトルートを持つプリミティブ型の1つの行と1つの列を返すサブクエリを表す式ツリーです。
+  - それぞれの引数は、プリミティブ型の結果を生成する式です。 通常、それぞれの引数は、スカラー式 (たとえば、DbVariableReferenceExpression に対する PropertyExpression)、関数呼び出し、または DbVariableReferenceExpression に対する DbPropertyExpression や関数呼び出しの算術演算です。 ただし、スカラー サブクエリを表す式は、DbNewInstanceExpression の引数リスト内にも使用できます。 スカラー サブクエリを表す式は、DbElementExpression オブジェクト ルートを含むプリミティブ型の 1 行および 1 列のみを返すサブクエリを表す式ツリーです。
 
 - 戻り値の型がコレクション型の場合。この場合は、引数として提供される式の新しいコレクションを定義します。
 
@@ -105,11 +105,11 @@ Limit プロパティには、DbConstantExpression または DbParameterReferenc
 
 #### <a name="dbscanexpression"></a>DbScanExpression
 
-DbScanExpression は、出力コマンドツリーで使用される場合、EntitySetBase:: Target によって表されるテーブル、ビュー、またはストアクエリのスキャンを効果的に表します。
+出力コマンド ツリー内で使用した場合、DbScanExpression は、EntitySetBase::Target によって表されるテーブル、ビュー、またはストア クエリに対するスキャンを効果的に表します。
 
-ターゲットのメタデータプロパティ "クエリの定義" が null 以外の場合は、クエリを表します。これは、ストアスキーマ定義で指定されたプロバイダー固有の言語 (または言語) のメタデータプロパティに含まれるクエリテキストです。
+ターゲットの "Defining Query" メタデータ プロパティが null 以外の場合、このプロパティはクエリを表します。クエリのクエリ テキストは、ストア スキーマ定義に指定されたプロバイダーの特定の言語 (またはダイアレクト) でメタデータ プロパティ内に提供されます。
 
-ターゲットの "Defining Query" メタデータ プロパティが null の場合、ターゲットは、テーブルまたはビューを表します。 スキーマプレフィックスは、null でない場合は "Schema" メタデータプロパティにあります。それ以外の場合は、エンティティコンテナー名になります。  テーブル名またはビュー名は、null でない場合は "Table" メタデータプロパティ、それ以外の場合はエンティティセットベースの Name プロパティです。
+ターゲットの "Defining Query" メタデータ プロパティが null の場合、ターゲットは、テーブルまたはビューを表します。 スキーマ プレフィックスは、null 以外の場合は "Schema" メタデータ プロパティに含まれています。null の場合は、エンティティ コンテナー名が使用されます。  テーブル名またはビュー名は、"Table" メタデータ プロパティに含まれています (このプロパティが null 以外の場合)。このプロパティが null の場合は、エンティティ セット ベースの Name プロパティに含まれています。
 
 これらのプロパティはすべて、ストア スキーマ定義ファイル (SSDL) 内の対応する EntitySet の定義に基づいています。
 

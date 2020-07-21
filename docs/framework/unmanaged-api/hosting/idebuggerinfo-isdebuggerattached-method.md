@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6e21872f-602f-411a-a423-bff5cdf27000
 topic_type:
 - apiref
-ms.openlocfilehash: cbd6fa5f7935a57799d695c3ebb617d856e6dbd9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 95b7a2f6d35104c3353853549dacc783355feb5b
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133177"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83805334"
 ---
 # <a name="idebuggerinfoisdebuggerattached-method"></a>IDebuggerInfo::IsDebuggerAttached メソッド
 マネージデバッガーがこのプロセスにアタッチされているかどうかを示す値を取得します。  
@@ -35,17 +35,17 @@ HRESULT IsDebuggerAttached (
   
 ## <a name="parameters"></a>パラメーター  
  `pbAttached`  
- 入出力マネージデバッガーがプロセスにアタッチされている場合に `true` される値へのポインター。それ以外の場合は、`false`ます。  
+ 入出力`true`マネージデバッガーがプロセスにアタッチされている場合は値を指すポインター。それ以外の場合は `false` 。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IDebuggerInfo インターフェイス](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-interface.md)
+- [IDebuggerInfo Iインターフェイス](idebuggerinfo-interface.md)

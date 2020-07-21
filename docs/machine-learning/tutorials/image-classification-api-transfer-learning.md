@@ -3,15 +3,14 @@ title: 'チュートリアル: 転移学習を利用した自動ビジュアル�
 description: このチュートリアルでは、転移学習を利用し、ML.NET で TensorFlow ディープ ラーニング モデルをトレーニングする方法を説明します。具体的には、画像検出 API を利用し、コンクリートの表面の画像をひび割れあり/ひび割れなしに分類します。
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 11/14/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 443f9e9a83ebf31bb6c62323015af4a554323b67
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
-ms.translationtype: HT
+ms.openlocfilehash: 17fbb8c6714f3af47c0b554aec2c53c8046021bb
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74205055"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803743"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>チュートリアル: 転移学習と ML.NET Image Classification API を利用した自動ビジュアル検査
 
@@ -28,7 +27,7 @@ ms.locfileid: "74205055"
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-- [Visual Studio 2017 15.6 以降](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017)が ".NET Core クロスプラット フォーム開発" とともにインストールされていること。
+- ".NET Core クロスプラットフォーム開発" ワークロードがインストールされた [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) 以降または Visual Studio 2017 バージョン 15.6 以降。
 
 ## <a name="image-classification-transfer-learning-sample-overview"></a>画像分類の転移学習の概要
 
@@ -76,12 +75,15 @@ Image Classification API のトレーニング プロセスは、事前トレー
 
 このチュートリアルで使用される事前トレーニング済みモデルは、Residual Network (ResNet) v2 モデルの 101 レイヤー型です。 元のモデルは、画像を 1,000 個のカテゴリに分類する目的でトレーニングされています。 このモデルでは、サイズ 224 x 224 の画像を入力として受け取り、トレーニングしたクラス別にクラス確率を出力します。 このモデルの一部は、2 つのクラス間で予測する目的でカスタム画像を利用して新しいモデルをトレーニングするために使用されます。
 
-## <a name="create-console-application"></a>コンソール アプリケーションの作成
+## <a name="create-console-application"></a>コンソール アプリケーションを作成する
 
 転移学習と Image Classification API の概要を理解できたところで、アプリケーションを構築しましょう。
 
 1. "DeepLearning_ImageClassification_Binary" という名前の **C# .NET Core コンソール アプリケーション**を作成します。
-1. **Microsoft.ML** バージョン **1.4.0** NuGet パッケージをインストールします。
+1. **Microsoft.ML** NuGet パッケージをインストールします。
+
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
     1. ソリューション エクスプローラーで、プロジェクトを右クリックし、 **[NuGet パッケージの管理]** を選択します。
     1. [パッケージ ソース] として [nuget.org] を選択します。
     1. **[参照]** タブを選択します。
@@ -89,12 +91,12 @@ Image Classification API のトレーニング プロセスは、事前トレー
     1. **Microsoft.ML** を探します。
     1. **[インストール]** ボタンを選択します。
     1. **[変更のプレビュー]** ダイアログの **[OK]** を選択します。表示されているパッケージのライセンス条項に同意する場合は、 **[ライセンスの同意]** ダイアログの **[同意する]** を選択します。
-    1. **Microsoft.ML.Vision** バージョン **1.4.0**、**SciSharp.TensorFlow.Redist** バージョン **1.15.0**、**Microsoft.ML.ImageAnalytics** バージョン **1.4.0** NuGet パッケージに対してもこれらの手順を繰り返します。
+    1. **Microsoft.ML.Vision**、**SciSharp.TensorFlow.Redist**、および **Microsoft.ML.ImageAnalytics** NuGet パッケージに対して、これらの手順を繰り返します。
 
 ### <a name="prepare-and-understand-the-data"></a>データを準備して理解する
 
 > [!NOTE]
-> このチュートリアルのデータセットの提供元: Maguire, Marc; Dorafshan, Sattar; and Thomas, Robert J., "SDNET2018:A concrete crack image dataset for machine learning applications" (2018). Browse all Datasets. Paper 48. https://digitalcommons.usu.edu/all_datasets/48
+> このチュートリアルのデータセットの提供元: Maguire, Marc; Dorafshan, Sattar; and Thomas, Robert J., "SDNET2018:A concrete crack image dataset for machine learning applications" (2018). Browse all Datasets. Paper 48. <https://digitalcommons.usu.edu/all_datasets/48>
 
 SDNET2018 は、ひび割れあり/ひび割れなしのコンクリート構造物 (橋床、壁、歩道) に関する注釈を含む画像データセットです。
 
@@ -140,10 +142,10 @@ SDNET2018 は、ひび割れあり/ひび割れなしのコンクリート構造
 
         `ModelInput` には次のプロパティが含まれます。
 
-        - `ImagePath` は、画像が保存されている完全修飾パスです。
-        - `Label` は、画像が属するカテゴリです。 これが予測する値です。
         - `Image` は画像の `byte[]` 表現です。 モデルでは、トレーニングのために画像データがこの種類になることが求められます。
         - `LabelAsKey` は `Label` の数値表現です。
+        - `ImagePath` は、画像が保存されている完全修飾パスです。
+        - `Label` は、画像が属するカテゴリです。 これが予測する値です。
 
         `Image` と `LabelAsKey` のみ、モデルのトレーニングと予測に使用されます。 `ImagePath` プロパティと `Label` プロパティは、元の画像ファイルの名前やカテゴリにアクセスするときに便利なため、維持されます。
 
@@ -171,7 +173,7 @@ SDNET2018 は、ひび割れあり/ひび割れなしのコンクリート構造
 
     [!code-csharp [DefinePaths](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L15-L17)]
 
-1. 次に、[MLContext](xref:Microsoft.ML.MLContext) の新しいインスタンスを使用して `mlContext` 変数を初期化します。
+1. [MLContext](xref:Microsoft.ML.MLContext) の新しいインスタンスを使用して `mlContext` 変数を初期化します。
 
     [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L19)]
 
@@ -253,7 +255,7 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
 モデル トレーニングはいくつかのステップから構成されます。 まず、Image Classification API を利用し、モデルがトレーニングされます。 次に、`PredictedLabel` 列のエンコード済みラベルが `MapKeyToValue` 変換により元のカテゴリ値に戻されます。
 
-1. `ImageClassificationTrainer` の必須パラメーターと省略可能なパラメーターのセットを格納するために、新しい変数を作成します。 
+1. `ImageClassificationTrainer` の必須パラメーターと省略可能なパラメーターのセットを格納するために、新しい変数を作成します。
 
     [!code-csharp [ClassifierOptions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L46-L57)]
 

@@ -1,18 +1,18 @@
 ---
 title: F# を使用した Azure Queue Storage の概要
-description: Azure キューは、アプリケーションコンポーネント間の信頼性の高い非同期メッセージングを提供します。 クラウドメッセージングを使用すると、アプリケーションコンポーネントを個別にスケーリングできます。
+description: Azure Queue は、アプリケーション コンポーネント間の信頼性の高い非同期メッセージングを提供します。 クラウド メッセージングにより、アプリケーション コンポーネントのスケールを個別に変更できます。
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: a09cbdd4b995e34177c110ce91b02162bb19dfa8
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 841068ac91aecc53811359e27d984907569a2c6d
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423847"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935491"
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>F\# を使用した Azure Queue storage の概要
 
-Azure Queue storage は、アプリケーションコンポーネント間のクラウドメッセージングを提供します。 大規模なアプリケーションの設計では、多くの場合、アプリケーションコンポーネントが分離され、個別に拡張できるようになっています。 Queue storage は、アプリケーションコンポーネントがクラウド、デスクトップ、オンプレミスサーバー、モバイルデバイスのいずれで実行されているかにかかわらず、アプリケーションコンポーネント間の通信に使用する非同期メッセージングを提供します。 Queue storage では、非同期タスクの管理とプロセスワークフローの構築もサポートされています。
+Azure Queue Storage は、アプリケーション コンポーネント間のクラウド メッセージングを提供します。 拡張性を重視してアプリケーションを設計する場合、通常、アプリケーション コンポーネントを個別に拡張できるように分離します。 Queue Storage は、アプリケーション コンポーネントがクラウド、デスクトップ、オンプレミスのサーバー、モバイル デバイスのいずれで実行されている場合でも、アプリケーション コンポーネント間の通信に非同期メッセージングを提供します。 Queue Storage ではまた、非同期タスクの管理とプロセス ワークフローの構築もサポートします。
 
 ### <a name="about-this-tutorial"></a>このチュートリアルについて
 
@@ -20,7 +20,7 @@ Azure Queue storage は、アプリケーションコンポーネント間のク
 
 Queue storage の概念の概要については、「 [.net のキューストレージに関するガイド](/azure/storage/storage-dotnet-how-to-use-queues)」を参照してください。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>[前提条件]
 
 このガイドを使用するには、最初に[Azure ストレージアカウントを作成](/azure/storage/storage-create-storage-account)する必要があります。
 また、このアカウントのストレージアクセスキーも必要になります。
@@ -31,9 +31,9 @@ Queue storage の概念の概要については、「 [.net のキュースト�
 
 次に、[パケット](https://fsprojects.github.io/Paket/)や[NuGet](https://www.nuget.org/)などの[パッケージマネージャー](package-management.md)を使用して、`#r` ディレクティブを使用してスクリプトに `WindowsAzure.Storage` パッケージと参照 `WindowsAzure.Storage.dll` をインストールします。
 
-### <a name="add-namespace-declarations"></a>名前空間宣言の追加
+### <a name="add-namespace-declarations"></a>名前空間宣言を追加する
 
-`queues.fsx` ファイルの先頭に、次の `open` ステートメントを追加します。
+次の `open` ステートメントを `queues.fsx` ファイルの先頭に追加します。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L1-L3)]
 
@@ -45,13 +45,13 @@ Queue storage の概念の概要については、「 [.net のキュースト�
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L9-L9)]
 
-ただし、実際のプロジェクトではこの方法は**お勧めできません**。 ストレージアカウントキーは、ストレージアカウントのルートパスワードに似ています。 ストレージアカウントキーは常に慎重に保護してください。 他のユーザーに配布したり、ハードコーディングしたり、他のユーザーがアクセスできるプレーンテキストファイルに保存したりしないでください。 侵害された可能性があると思われる場合は、Azure ポータルを使用してキーを再生成することができます。
+ただし、実際のプロジェクトではこの方法は**お勧めできません**。 ストレージ アカウント キーは、ストレージ アカウントの root パスワードに似ています。 ストレージ アカウント キーは常に慎重に保護してください。 このキーを他のユーザーに配布したり、ハードコーディングしたり、他のユーザーがアクセスできるプレーン テキスト ファイルに保存したりしないでください。 侵害された可能性があると思われる場合は、Azure ポータルを使用してキーを再生成することができます。
 
 実際のアプリケーションでは、ストレージ接続文字列を維持する最善の方法は構成ファイルにあります。 構成ファイルから接続文字列を取得するには、次の手順を実行します。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L11-L13)]
 
-Azure Configuration Manager の使用は省略可能です。 .NET Framework の `ConfigurationManager` の種類などの API を使用することもできます。
+Azure Configuration Manager の使用はオプションです。 .NET Framework の `ConfigurationManager` の種類などの API を使用することもできます。
 
 ### <a name="parse-the-connection-string"></a>接続文字列を解析する
 
@@ -61,13 +61,13 @@ Azure Configuration Manager の使用は省略可能です。 .NET Framework の
 
 これにより、`CloudStorageAccount`が返されます。
 
-### <a name="create-the-queue-service-client"></a>Queue サービスクライアントを作成する
+### <a name="create-the-queue-service-client"></a>Queue サービス クライアントを作成する
 
-`CloudQueueClient` クラスを使用すると、Queue storage に格納されているキューを取得できます。 サービスクライアントを作成する方法の1つを次に示します。
+`CloudQueueClient` クラスを使用すると、Queue storage に格納されているキューを取得できます。 サービス クライアントを作成する方法の 1 つを次に示します。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L26-L26)]
 
-これで、からデータを読み取り、キューストレージにデータを書き込むコードを記述する準備ができました。
+これで、Queue Storage に対してデータの読み取りと書き込みを実行するコードを記述する準備が整いました。
 
 ## <a name="create-a-queue"></a>キューを作成する
 
@@ -81,7 +81,7 @@ Azure Configuration Manager の使用は省略可能です。 .NET Framework の
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L42-L44)]
 
-## <a name="peek-at-the-next-message"></a>次のメッセージを見る
+## <a name="peek-at-the-next-message"></a>次のメッセージをピークする
 
 `PeekMessage` メソッドを呼び出すことにより、キューの先頭にあるメッセージをキューから削除せずにピークできます。
 
@@ -95,15 +95,15 @@ Azure Configuration Manager の使用は省略可能です。 .NET Framework の
 
 後で `DeleteMessage`を使用して、メッセージの処理が成功したことを示します。
 
-## <a name="change-the-contents-of-a-queued-message"></a>キューに置かれたメッセージの内容を変更する
+## <a name="change-the-contents-of-a-queued-message"></a>キューに配置されたメッセージの内容を変更する
 
-取得したメッセージの内容をキュー内のインプレースで変更できます。 メッセージが作業タスクを表している場合は、この機能を使用して作業タスクの状態を更新できます。 次のコードでは、キューメッセージを新しい内容で更新し、表示タイムアウトを別の60秒に拡張するように設定しています。 これにより、メッセージに関連付けられている作業の状態が保存され、メッセージの処理を続行するためにクライアントにもう1分の時間が与えられます。 この手法を使用すると、キューメッセージの複数ステップのワークフローを追跡できます。ハードウェアまたはソフトウェアの障害が原因で処理手順が失敗した場合、最初からやり直す必要はありません。 通常は、再試行回数も保持します。また、メッセージが何回も再試行される場合は、削除します。 これにより、処理されるたびにアプリケーションエラーをトリガーするメッセージから保護されます。
+取得したメッセージの内容をキュー内のインプレースで変更できます。 メッセージが作業タスクを表している場合は、この機能を使用して、作業タスクの状態を更新できます。 次のコードでは、キュー メッセージを新しい内容に更新し、表示タイムアウトを設定して、60 秒延長します。 これにより、メッセージに関連付けられている作業の状態が保存され、クライアントにメッセージの操作を続行する時間が 1 分与えられます。 この方法を使用すると、キュー メッセージに対する複数の手順から成るワークフローを追跡でき、ハードウェアまたはソフトウェアの問題が原因で処理手順が失敗した場合に最初からやり直す必要がなくなります。 通常は、再試行回数も保持します。また、メッセージが何回も再試行される場合は、削除します。 こうすることで、処理するたびにアプリケーション エラーをトリガーするメッセージから保護されます。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L65-L69)]
 
-## <a name="de-queue-the-next-message"></a>次のメッセージをキューから解除する
+## <a name="de-queue-the-next-message"></a>次のメッセージをデキューする
 
-コードでは、2つの手順でキューからメッセージをキューから除外します。 `GetMessage`を呼び出すと、キュー内の次のメッセージが取得されます。 `GetMessage` から返されたメッセージは、このキューからメッセージを読み取る他のコードからは見えなくなります。 既定では、このメッセージは30秒間非表示のままになります。 キューからのメッセージの削除を完了するには、`DeleteMessage`も呼び出す必要があります。 メッセージを削除するこの2段階のプロセスでは、ハードウェアまたはソフトウェアの障害によってコードがメッセージの処理に失敗した場合に、コードの別のインスタンスが同じメッセージを取得して、もう一度試すことができます。 このコードは、メッセージが処理された直後に `DeleteMessage` を呼び出します。
+コードでは、2 つの手順でキューからメッセージをデキューします。 `GetMessage`を呼び出すと、キュー内の次のメッセージが取得されます。 `GetMessage` から返されたメッセージは、このキューからメッセージを読み取る他のコードから参照できなくなります。 既定では、このメッセージを参照できない状態は 30 秒間続きます。 キューからのメッセージの削除を完了するには、`DeleteMessage`も呼び出す必要があります。 このようにメッセージを 2 つの手順で削除することで、ハードウェアまたはソフトウェアの問題が原因でコードによるメッセージの処理が失敗した場合に、コードの別のインスタンスで同じメッセージを取得し、もう一度処理することができます。 ご自分のコードで、メッセージが処理された直後に `DeleteMessage` を呼び出します。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L75-L76)]
 
@@ -113,31 +113,31 @@ Azure Configuration Manager の使用は省略可能です。 .NET Framework の
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L82-L91)]
 
-## <a name="additional-options-for-de-queuing-messages"></a>キューからメッセージを解除するための追加オプション
+## <a name="additional-options-for-de-queuing-messages"></a>メッセージのデキュー用の追加オプション
 
-キューからのメッセージの取得をカスタマイズするには、2つの方法があります。
-まず、メッセージのバッチを取得できます (最大 32)。 2つ目の方法として、非表示タイムアウトを長くまたは短くすることができます。これにより、コードで各メッセージを完全に処理できるようになります。 次のコード例では、`GetMessages` を使用して1回の呼び出しで20個のメッセージを取得し、各メッセージを処理します。 また、各メッセージの非表示タイムアウトを5分に設定します。 5分がすべてのメッセージに対して同時に開始されるため、`GetMessages`の呼び出しから5分が経過すると、削除されていないすべてのメッセージが再び表示されることに注意してください。
+キューからのメッセージの取得をカスタマイズする方法は 2 つあります。
+1 つ目の方法では、(最大 32 個の) メッセージのバッチを取得できます。 2 つ目の方法では、コードで各メッセージを完全に処理できるように、非表示タイムアウトの設定を長くまたは短くすることができます。 次のコード例では、`GetMessages` を使用して1回の呼び出しで20個のメッセージを取得し、各メッセージを処理します。 また、各メッセージの非表示タイムアウトを 5 分に設定します。 5分がすべてのメッセージに対して同時に開始されるため、`GetMessages`の呼び出しから5分が経過すると、削除されていないすべてのメッセージが再び表示されることに注意してください。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L97-L99)]
 
 ## <a name="get-the-queue-length"></a>キューの長さを取得する
 
-キュー内のメッセージ数の見積もりを取得できます。 `FetchAttributes` メソッドは、メッセージ数を含むキューの属性を取得するように Queue サービスに要求します。 `ApproximateMessageCount` プロパティは、Queue サービスを呼び出さずに、`FetchAttributes` メソッドによって取得された最後の値を返します。
+キュー内のメッセージの概数を取得できます。 `FetchAttributes` メソッドは、メッセージ数を含むキューの属性を取得するように Queue サービスに要求します。 `ApproximateMessageCount` プロパティは、Queue サービスを呼び出さずに、`FetchAttributes` メソッドによって取得された最後の値を返します。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L105-L106)]
 
-## <a name="delete-a-queue"></a>キューを削除する
+## <a name="delete-a-queue"></a>キューの削除
 
 キューおよびキューに格納されているすべてのメッセージを削除するには、キューオブジェクトの `Delete` メソッドを呼び出します。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L112-L113)]
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
-これで、Queue storage の基本を学習できました。さらに複雑なストレージタスクの詳細については、次のリンク先を参照してください。
+これで、Queue ストレージの基本を学習できました。さらに複雑なストレージ タスクを実行するには、次のリンク先を参照してください。
 
-- [.NET 用 Api の Azure Storage](/dotnet/api/overview/azure/storage)
+- [.NET 用 Azure Storage API](/dotnet/api/overview/azure/storage)
 - [Azure Storage 型プロバイダー](https://github.com/fsprojects/AzureStorageTypeProvider)
-- [Azure Storage チームのブログ](https://blogs.msdn.microsoft.com/windowsazurestorage/)
-- [Azure Storage 接続文字列を構成する](/azure/storage/common/storage-configure-connection-string)
-- [Azure Storage Services REST API リファレンス](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)
+- [Azure のストレージ チーム ブログ](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
+- [Azure Storage の接続文字列を構成する](/azure/storage/common/storage-configure-connection-string)
+- [Azure Storage サービスの REST API リファレンス](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)

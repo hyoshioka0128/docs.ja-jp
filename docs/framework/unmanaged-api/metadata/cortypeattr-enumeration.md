@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9bede0ec-5fdf-42a2-b5b7-bee64056acb6
 topic_type:
 - apiref
-ms.openlocfilehash: b1586184c91619994ba0dfc9d5dcc277c10f99cf
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b6936081ca3dbadb4f802a6856fafb53f6cef3fa
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436453"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008964"
 ---
 # <a name="cortypeattr-enumeration"></a>CorTypeAttr 列挙型
 メタデータ型を示す値が格納されます。  
@@ -103,7 +103,7 @@ typedef enum CorTypeAttr {
 |`tdAnsiClass`|この型が LPTSTR を ANSI と解釈することを指定します。|  
 |`tdUnicodeClass`|この型が LPTSTR を Unicode として解釈することを指定します。|  
 |`tdAutoClass`|この型が LPTSTR を自動的に解釈することを指定します。|  
-|`tdCustomFormatClass`|`CustomFormatMask`によって指定された標準以外のエンコーディングを型が持つことを指定します。|  
+|`tdCustomFormatClass`|によって指定された標準以外のエンコーディングを型が持つことを指定し `CustomFormatMask` ます。|  
 |`tdCustomFormatMask`|ネイティブ相互運用機能の非標準のエンコード情報を取得するには、このマスクを使用します。 これら2つのビットの値の意味は、指定されていません。|  
 |`tdBeforeFieldInit`|静的フィールドに最初にアクセスしようとする前に型を初期化する必要があることを指定します。|  
 |`tdForwarder`|型がエクスポートされ、型フォワーダーが指定されていることを示します。|  
@@ -111,13 +111,13 @@ typedef enum CorTypeAttr {
 |`tdRTSpecialName`|共通言語ランタイムが名前のエンコーディングを確認する必要があることを指定します。|  
 |`tdHasSecurity`|型にセキュリティが関連付けられていることを指定します。|  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

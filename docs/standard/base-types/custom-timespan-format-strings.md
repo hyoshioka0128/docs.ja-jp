@@ -1,5 +1,6 @@
 ---
-title: カスタム時間間隔書式指定文字列 - .NET
+title: カスタム TimeSpan 書式指定文字列
+description: .NET のカスタム TimeSpan 書式指定文字列について理解します。 カスタム書式指定文字列には、1 つ以上のカスタム TimeSpan 書式指定子と任意の数のリテラル文字が含まれます。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,16 +14,16 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - custom TimeSpan format strings
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
-ms.openlocfilehash: f38ea3a1e2d687044f862e5d6c0a78c6c12965d6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 54079975b9b73844f598a7c7a7fea1a64bd6450c
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126554"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768561"
 ---
 # <a name="custom-timespan-format-strings"></a>カスタム TimeSpan 書式指定文字列
 
-<xref:System.TimeSpan> 書式指定文字列は、書式設定操作によって生成される <xref:System.TimeSpan> 値の文字列形式を定義します。 カスタム書式指定文字列は、1 つ以上のカスタム <xref:System.TimeSpan> 書式指定子と任意の数のリテラル文字で構成されます。 [標準の時間間隔書式指定文字列](standard-timespan-format-strings.md)以外の文字列は、すべてカスタム <xref:System.TimeSpan> 書式指定文字列として解釈されます。
+<xref:System.TimeSpan> 書式指定文字列は、書式設定操作によって生成される <xref:System.TimeSpan> 値の文字列形式を定義します。 カスタム書式指定文字列は、1 つ以上のカスタム <xref:System.TimeSpan> 書式指定子と任意の数のリテラル文字で構成されます。 [標準の TimeSpan 書式指定文字列](standard-timespan-format-strings.md)以外の文字列は、すべてカスタム <xref:System.TimeSpan> 書式指定文字列として解釈されます。
 
 > [!IMPORTANT]
 > カスタム <xref:System.TimeSpan> 書式指定子には、日と時間、時間と分、または秒と秒の小数部を区切る記号などのプレースホルダー区切り記号は含まれません。 これらの記号は、カスタム書式指定文字列にリテラル文字列として含まれている必要があります。 たとえば、`"dd\.hh\:mm"` は、ピリオド (.) を日と時間の間の区切り記号として定義し、コロンを時間と分の間の区切り記号として定義します。
@@ -69,7 +70,7 @@ ms.locfileid: "73126554"
 |&#92;|エスケープ文字。<br /><br /> 詳細情報:[その他の文字](#other-characters)。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
 |その他の文字|エスケープされないその他の文字はすべて、カスタム書式指定子として解釈されます。<br /><br /> 詳細情報:[その他の文字](#other-characters)。|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
 
-## <a name="dSpecifier"></a> "d" カスタム書式指定子
+## <a name="the-d-custom-format-specifier"></a><a name="dSpecifier"></a> "d" カスタム書式指定子
 
 "d" カスタム書式指定子は、時間間隔の日数を表す <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> プロパティの値を出力します。 値が 1 桁を超える場合でも、<xref:System.TimeSpan> 値の完全な日数が出力されます。 <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> プロパティの値が 0 の場合、指定子は "0" を出力します。
 
@@ -85,7 +86,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="ddSpecifier"></a> "dd" - "dddddddd" カスタム書式指定子
+## <a name="the-dd-dddddddd-custom-format-specifiers"></a><a name="ddSpecifier"></a> "dd" - "dddddddd" カスタム書式指定子
 
 "dd"、"ddd"、"dddd"、"ddddd"、"dddddd"、"ddddddd"、および "dddddddd" カスタム書式指定子は、時間間隔の日数を表す <xref:System.TimeSpan.Days%2A?displayProperty=nameWithType> プロパティの値を出力します。
 
@@ -98,7 +99,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="hSpecifier"></a> "h" カスタム書式指定子
+## <a name="the-h-custom-format-specifier"></a><a name="hSpecifier"></a> "h" カスタム書式指定子
 
 "h" カスタム書式指定子は、日の部分の一部としてカウントされない、時間間隔の時間数を表す <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> プロパティの値を出力します。 <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> プロパティの値が 0 ～ 9 の場合は 1 桁の文字列値を返し、<xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> プロパティの値が 10 ～ 23 の場合は 2 桁の文字列値を返します。
 
@@ -119,7 +120,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="hhSpecifier"></a> "hh" カスタム書式指定子
+## <a name="the-hh-custom-format-specifier"></a><a name="hhSpecifier"></a> "hh" カスタム書式指定子
 
 "hh" カスタム書式指定子は、日の部分の一部としてカウントされない、時間間隔の時間数を表す <xref:System.TimeSpan.Hours%2A?displayProperty=nameWithType> プロパティの値を出力します。 0 ～ 9 の値の場合は、出力文字列に先行ゼロが含まれます。
 
@@ -135,7 +136,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="mSpecifier"></a> "m" カスタム書式指定子
+## <a name="the-m-custom-format-specifier"></a><a name="mSpecifier"></a> "m" カスタム書式指定子
 
 "m" カスタム書式指定子は、日の部分の一部としてカウントされない、時間間隔の分数を表す <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> プロパティの値を出力します。 <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> プロパティの値が 0 ～ 9 の場合は 1 桁の文字列値を返し、<xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> プロパティの値が 10 ～ 59 の場合は 2 桁の文字列値を返します。
 
@@ -156,7 +157,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="mmSpecifier"></a> "mm" カスタム書式指定子
+## <a name="the-mm-custom-format-specifier"></a><a name="mmSpecifier"></a> "mm" カスタム書式指定子
 
 "mm" カスタム書式指定子は、時間または日の部分の一部として含まれない、時間間隔の分数を表す <xref:System.TimeSpan.Minutes%2A?displayProperty=nameWithType> プロパティの値を出力します。 0 ～ 9 の値の場合は、出力文字列に先行ゼロが含まれます。
 
@@ -172,7 +173,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="sSpecifier"></a> "s" カスタム書式指定子
+## <a name="the-s-custom-format-specifier"></a><a name="sSpecifier"></a> "s" カスタム書式指定子
 
 "s" カスタム書式指定子は、時間、日、および分の部分のいずれの一部としても含まれない、時間間隔の秒数を表す <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> プロパティの値を出力します。 <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> プロパティの値が 0 ～ 9 の場合は 1 桁の文字列値を返し、<xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> プロパティの値が 10 ～ 59 の場合は 2 桁の文字列値を返します。
 
@@ -193,7 +194,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="ssSpecifier"></a> "ss" カスタム書式指定子
+## <a name="the-ss-custom-format-specifier"></a><a name="ssSpecifier"></a> "ss" カスタム書式指定子
 
 "ss" カスタム書式指定子は、時間、日、および分の部分のいずれの一部としても含まれない、時間間隔の秒数を表す <xref:System.TimeSpan.Seconds%2A?displayProperty=nameWithType> プロパティの値を出力します。 0 ～ 9 の値の場合は、出力文字列に先行ゼロが含まれます。
 
@@ -209,7 +210,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="fSpecifier"></a> "f" カスタム書式指定子
+## <a name="the-f-custom-format-specifier"></a><a name="fSpecifier"></a> "f" カスタム書式指定子
 
 "f" カスタム書式指定子は、時間間隔の秒部分の 1/10 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、入力文字列に 1 桁の小数部が含まれている必要があります。
 
@@ -222,7 +223,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="ffSpecifier"></a> "ff" カスタム書式指定子
+## <a name="the-ff-custom-format-specifier"></a><a name="ffSpecifier"></a> "ff" カスタム書式指定子
 
 "ff" カスタム書式指定子は、時間間隔の秒部分の 1/100 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、入力文字列に 2 桁の小数部が含まれている必要があります。
 
@@ -233,7 +234,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="f3Specifier"></a> "fff" カスタム書式指定子
+## <a name="the-fff-custom-format-specifier"></a><a name="f3Specifier"></a> "fff" カスタム書式指定子
 
 "fff" カスタム書式指定子 ("f" 文字が 3 つ) は、時間間隔の秒部分の 1/1000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、入力文字列に 3 桁の小数部が含まれている必要があります。
 
@@ -244,7 +245,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="f4Specifier"></a> "ffff" カスタム書式指定子
+## <a name="the-ffff-custom-format-specifier"></a><a name="f4Specifier"></a> "ffff" カスタム書式指定子
 
 "ffff" カスタム書式指定子 ("f" 文字が 4 つ) は、時間間隔の秒部分の 1/10000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、入力文字列に 4 桁の小数部が含まれている必要があります。
 
@@ -255,7 +256,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="f5Specifier"></a> "fffff" カスタム書式指定子
+## <a name="the-fffff-custom-format-specifier"></a><a name="f5Specifier"></a> "fffff" カスタム書式指定子
 
 "fffff" カスタム書式指定子 ("f" 文字が 5 つ) は、時間間隔の秒部分の 1/100000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、入力文字列に 5 桁の小数部が含まれている必要があります。
 
@@ -266,7 +267,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="f6Specifier"></a> "ffffff" カスタム書式指定子
+## <a name="the-ffffff-custom-format-specifier"></a><a name="f6Specifier"></a> "ffffff" カスタム書式指定子
 
 "ffffff" カスタム書式指定子 ("f" 文字が 6 つ) は、時間間隔の秒部分の 1/1000000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、入力文字列に 6 桁の小数部が含まれている必要があります。
 
@@ -277,7 +278,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="f7Specifier"></a> "fffffff" カスタム書式指定子
+## <a name="the-fffffff-custom-format-specifier"></a><a name="f7Specifier"></a> "fffffff" カスタム書式指定子
 
 "fffffff" カスタム書式指定子 ("f" 文字が 7 つ) は、時間間隔の秒部分の 1/10000000 (またはタイマー刻みの小数部) を出力します。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、入力文字列に 7 桁の小数部が含まれている必要があります。
 
@@ -288,7 +289,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="F_Specifier"></a> "F" カスタム書式指定子
+## <a name="the-f-custom-format-specifier"></a><a name="F_Specifier"></a> "F" カスタム書式指定子
 
 "F" カスタム書式指定子は、時間間隔の秒部分の 1/10 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 時間間隔の秒部分の 1/10 が 0 の場合、それは結果文字列に含まれません。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、秒の 1/10 の桁を使用するかどうかはオプションです。
 
@@ -301,7 +302,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="FF_Specifier"></a> "FF" カスタム書式指定子"ff" カスタム書式指定子。
+## <a name="the-ff-custom-format-specifier"></a><a name="FF_Specifier"></a> "FF" カスタム書式指定子"ff" カスタム書式指定子。
 
 "FF" カスタム書式指定子は、時間間隔の秒部分の 1/100 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、秒の 1/10 および 1/100 の桁を使用するかどうかはオプションです。
 
@@ -312,7 +313,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="F3_Specifier"></a> "FFF" カスタム書式指定子
+## <a name="the-fff-custom-format-specifier"></a><a name="F3_Specifier"></a> "FFF" カスタム書式指定子
 
 "FFF" カスタム書式指定子 ("F" 文字が 3 つ) は、時間間隔の秒部分の 1/1000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、秒の 1/10、1/100、および 1/1000 の桁を使用するかどうかはオプションです。
 
@@ -323,7 +324,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="F4_Specifier"></a> "FFFF" カスタム書式指定子
+## <a name="the-ffff-custom-format-specifier"></a><a name="F4_Specifier"></a> "FFFF" カスタム書式指定子
 
 "FFFF" カスタム書式指定子 ("F" 文字が 4 つ) は、時間間隔の秒部分の 1/10000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、秒の 1/10、1/100、1/1000、および 1/10000 の桁を使用するかどうかはオプションです。
 
@@ -334,7 +335,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="F5_Specifier"></a> "FFFFF" カスタム書式指定子
+## <a name="the-fffff-custom-format-specifier"></a><a name="F5_Specifier"></a> "FFFFF" カスタム書式指定子
 
 "FFFFF" カスタム書式指定子 ("F" 文字が 5 つ) は、時間間隔の秒部分の 1/100000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、秒の 1/10、1/100、1/1000、1/10000、および 1/100000 の桁を使用するかどうかはオプションです。
 
@@ -345,7 +346,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="F6_Specifier"></a> "FFFFFF" カスタム書式指定子
+## <a name="the-ffffff-custom-format-specifier"></a><a name="F6_Specifier"></a> "FFFFFF" カスタム書式指定子
 
 "FFFFFF" カスタム書式指定子 ("F" 文字が 6 つ) は、時間間隔の秒部分の 1/1000000 を出力します。 書式指定操作では、これより下位の小数桁は切り捨てられます。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、秒の 1/10、1/100、1/1000、1/10000、1/100000 および 1/1000000 の桁を使用するかどうかはオプションです。
 
@@ -356,7 +357,7 @@ ms.locfileid: "73126554"
 
 [表のトップへ](#table)
 
-## <a name="F7_Specifier"></a> "FFFFFFF" カスタム書式指定子
+## <a name="the-fffffff-custom-format-specifier"></a><a name="F7_Specifier"></a> "FFFFFFF" カスタム書式指定子
 
 "FFFFFFF" カスタム書式指定子 ("F" 文字が 7 つ) は、時間間隔の秒部分の 1/10000000 (またはタイマー刻みの小数部) を出力します。 後続の小数のゼロがある場合、それらの数字は結果文字列に含まれません。 <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> メソッドまたは <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> メソッドを呼び出す解析操作では、入力文字列の 7 桁の小数部を使用するかどうかはオプションです。
 

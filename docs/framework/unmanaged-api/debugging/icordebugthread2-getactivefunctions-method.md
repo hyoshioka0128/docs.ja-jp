@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 27fae01a-ecec-423a-973e-24f8de55826c
 topic_type:
 - apiref
-ms.openlocfilehash: 9b9a301714ea60b4e3220eb75721e56e39bd9659
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e064a7db131a671adc4d0b6df522f3456e3a31d5
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139935"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83377152"
 ---
 # <a name="icordebugthread2getactivefunctions-method"></a>ICorDebugThread2::GetActiveFunctions メソッド
 このスレッドの各フレームのアクティブな関数に関する情報を取得します。  
@@ -41,7 +41,7 @@ HRESULT GetActiveFunctions (
  [in] `pFunctions` 配列のサイズ。  
   
  `pcFunctions`  
- 入出力`pFunctions` 配列で返されたオブジェクトの数へのポインター。 返されるオブジェクトの数は、スタック上のマネージフレームの数と同じになります。  
+ 入出力配列で返されたオブジェクトの数へのポインター `pFunctions` 。 返されるオブジェクトの数は、スタック上のマネージフレームの数と同じになります。  
   
  `pFunctions`  
  [入力、出力]COR_ACTIVE_FUNCTION オブジェクトの配列。各オブジェクトには、このスレッドのフレーム内のアクティブな関数に関する情報が含まれています。  
@@ -49,15 +49,15 @@ HRESULT GetActiveFunctions (
  最初の要素はリーフフレームに使用され、その後スタックのルートに戻ります。  
   
 ## <a name="remarks"></a>Remarks  
- 入力時に null が `pFunctions` 場合、`GetActiveFunctions` はスタック上の関数の数のみを返します。 つまり、入力時に null が `pFunctions` 場合、`GetActiveFunctions` は `pcFunctions`でのみ値を返します。  
+ `pFunctions`入力時にが null の場合、 `GetActiveFunctions` スタック上の関数の数だけを返します。 つまり、 `pFunctions` 入力時にが null の場合、は `GetActiveFunctions` でのみ値を返し `pcFunctions` ます。  
   
- `GetActiveFunctions` メソッドは、スタックトレース内のフレームから同じ情報を取得することを目的とした最適化として使用されます。また、完全なスタックトレースでは、そのオブジェクトに対しては、表示されていないフレームだけが含まれています。  
+ この `GetActiveFunctions` メソッドは、スタックトレース内のフレームから同じ情報を取得することを目的とした最適化として使用されます。また、完全なスタックトレースでは、このメソッドに対しては、表示されないフレームオブジェクトを持つフレームだけを含みます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

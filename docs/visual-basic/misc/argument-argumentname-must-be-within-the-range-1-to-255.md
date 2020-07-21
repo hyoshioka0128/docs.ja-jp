@@ -1,17 +1,17 @@
 ---
-title: 引数 '<argumentname>' 1 ~ 255 の範囲内にする必要があります
+title: 引数 '<argumentname>' は 1 から 255 までの範囲内になければなりません。
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_Range1toFF1
 ms.assetid: a447f9a6-1c90-4c71-abff-81170331e4c5
-ms.openlocfilehash: 9c362c789cc2f06fe9e4560bfdd0dc0db4429e4b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ccc271067e890185fc8d1bb8b0a4c118e51d8448
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024522"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84368180"
 ---
-# <a name="argument-argumentname-must-be-within-the-range-1-to-255"></a>引数 '\<argumentname >' 1 ~ 255 の範囲内にする必要があります
+# <a name="argument-argumentname-must-be-within-the-range-1-to-255"></a>引数 '\<argumentname>' は 1 から 255 までの範囲内になければなりません。
 引数は、0 から 255 の範囲外であるため無効です。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -22,4 +22,4 @@ ms.locfileid: "62024522"
   
 ## <a name="see-also"></a>関連項目
 
-- [引数の値渡しと参照渡し](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [引数の値渡しと参照渡し](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

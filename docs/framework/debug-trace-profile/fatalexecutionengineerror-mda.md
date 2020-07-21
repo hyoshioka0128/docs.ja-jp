@@ -1,5 +1,6 @@
 ---
 title: fatalExecutionEngineError MDA
+description: .NET の fatalExecutionEngineError マネージデバッグアシスタント (MDA) を確認します。これは、予期しないプロセスの終了によってアクティブになる可能性があります。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - corrupted CLR
@@ -12,19 +13,17 @@ helpviewer_keywords:
 - FatalExecutionEngineError MDA
 - managed debugging assistants (MDAs), fatal errors
 ms.assetid: 8b559e44-2393-4e4e-8160-7558d37a4a89
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3fd58ae8f73fd932df641ea96a44ff618dd139e2
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0806d2eaa1752c88bebd03304fbe5c8094416a48
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052803"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415928"
 ---
 # <a name="fatalexecutionengineerror-mda"></a>fatalExecutionEngineError MDA
 `fatalExecutionEngineError` マネージド デバッグ アシスタント (MDA) は、共通言語ランタイム (CLR) で致命的なエラーが検出されたときにアクティブ化されます。 プロセスは終了されます。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
  予期せずにプロセスが終了します。 CLR エラーは、さまざまな理由により発生する可能性があるため、他の症状を特定できません。  
   
 ## <a name="cause"></a>原因  

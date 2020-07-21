@@ -16,46 +16,46 @@ helpviewer_keywords:
 - typography [WPF], text decorations
 - baseline type [WPF]
 ms.assetid: cf3cb4e7-782a-4be7-b2d4-e0935e21e4e0
-ms.openlocfilehash: d586eef8d1308070da38a0a54c63c3ba64d30c8b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: cf3b3c3bcb75153a0be4f7ced03b38134b79a930
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776638"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185924"
 ---
 # <a name="how-to-create-a-text-decoration"></a>方法: 文字の装飾を作成する
-A<xref:System.Windows.TextDecoration>オブジェクトがビジュアルの装飾をテキストに追加することができます。 文字装飾の 4 つの種類があります。 ベースライン、下線、取り消し線、および上線。 次の例では、テキストに対する文字装飾の位置を示します。  
+<xref:System.Windows.TextDecoration> オブジェクトは、テキストに追加できるビジュアルな装飾です。 文字の装飾には、下線、ベースライン、取り消し線、上線の 4 種類があります。 次の例では、テキストに対する相対的なテキスト装飾の位置を示します。  
   
- ![文字装飾の種類の図](./media/how-to-create-a-text-decoration/text-decoration-types.gif)  
+ ![テキスト装飾の種類の図](./media/how-to-create-a-text-decoration/text-decoration-types.gif)  
   
- テキストには、文字装飾を追加するには、作成、<xref:System.Windows.TextDecoration>オブジェクトし、そのプロパティを変更します。 使用して、<xref:System.Windows.TextDecoration.Location%2A>下線などの文字装飾を表示場所を指定するプロパティ。 使用して、<xref:System.Windows.TextDecoration.Pen%2A>塗りつぶしの純色のグラデーションなどの装飾の外観を指定するプロパティ。 値を指定しない場合、<xref:System.Windows.TextDecoration.Pen%2A>プロパティ、文字装飾の既定値は、テキストと同じ色。 定義した後、<xref:System.Windows.TextDecoration>オブジェクトに追加してください。、<xref:System.Windows.TextDecorations>目的のテキスト オブジェクトのコレクション。  
+ テキストにテキスト装飾を追加するには、<xref:System.Windows.TextDecoration> オブジェクトを作成して、そのプロパティを変更します。 テキスト装飾を表示する場所 (下線など) を指定するには、<xref:System.Windows.TextDecoration.Location%2A> プロパティを使用します。 塗りつぶしやグラデーションの色など、テキスト装飾の外観を指定するには、<xref:System.Windows.TextDecoration.Pen%2A> プロパティを使用します。 <xref:System.Windows.TextDecoration.Pen%2A> プロパティの値を指定しない場合、修飾は既定で、テキストと同じ色になります。 <xref:System.Windows.TextDecoration> オブジェクトを定義したら、それを対象のテキスト オブジェクトの <xref:System.Windows.TextDecorations> コレクションに追加します。  
   
- 次の例では、線状グラデーション ブラシと破線のペンによってスタイルが設定されている文字装飾を示します。  
+ 次の例では、線状グラデーション ブラシと破線ペンのスタイルに設定されたテキスト装飾を示します。  
   
  ![線形グラデーション下線を使用したテキスト装飾](./media/how-to-create-a-text-decoration/text-decoration-gradient.png)  
   
- <xref:System.Windows.Documents.Hyperlink>オブジェクトがインライン レベル フロー コンテンツ要素、フロー コンテンツ内のハイパーリンクをホストすることができます。 既定では、<xref:System.Windows.Documents.Hyperlink>を使用して、<xref:System.Windows.TextDecoration>下線を表示するオブジェクト。 <xref:System.Windows.TextDecoration> 多数ある場合は特に、オブジェクトは処理を要するインスタンスを作成すると、パフォーマンスにできる<xref:System.Windows.Documents.Hyperlink>オブジェクト。 広範に使用する場合<xref:System.Windows.Documents.Hyperlink>要素などのイベントをトリガーするときにのみ下線を表示するのにすることがあります、<xref:System.Windows.ContentElement.MouseEnter>イベント。  
+ <xref:System.Windows.Documents.Hyperlink> オブジェクトは、インライン レベルのフロー コンテンツ要素であり、フロー コンテンツ内のハイパーリンクをホストすることができます。 既定では、<xref:System.Windows.Documents.Hyperlink> では下線を表示するために <xref:System.Windows.TextDecoration> オブジェクトが使用されます。 <xref:System.Windows.TextDecoration> オブジェクトをインスタンス化するときは大きな負荷がかかる場合があり、<xref:System.Windows.Documents.Hyperlink> オブジェクトの数が多い場合は特にそうです。 <xref:System.Windows.Documents.Hyperlink> 要素を広範に使用する場合は、<xref:System.Windows.ContentElement.MouseEnter> イベントなどのイベントをトリガーするときにのみ下線を表示することを検討する必要があります。  
   
- 次の例では、"マイ MSN"リンクの下線が動的-にのみ表示されるときに、<xref:System.Windows.ContentElement.MouseEnter>イベントがトリガーされます。  
+ 次の例では、"My MSN" のリンクに対する下線は動的であり、<xref:System.Windows.ContentElement.MouseEnter> イベントがトリガーされたときにだけ表示されます。  
   
  ![TextDecorations を表示するハイパーリンク](./media/how-to-create-a-text-decoration/text-decorations-hyperlinks.png)  
-   
+
  詳細については、「[方法: ハイパーリンクに下線を引くかどうかを指定する](how-to-specify-whether-a-hyperlink-is-underlined.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次のコード例では、下線文字の装飾は、既定のフォント値を使用します。  
+ 次のコード例の下線テキスト装飾では、既定のフォント値が使用されています。  
   
  [!code-csharp[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets1)]
  [!code-vb[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets1)]
  [!code-xaml[TextDecorationSnippets#TextDecorationSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets1)]  
   
- 次のコード例では、ペンの純色ブラシを使用して下線の文字装飾が作成されます。  
+ 次のコード例の下線テキスト装飾は、ペンに対する単色ブラシで作成されています。  
   
  [!code-csharp[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets2)]
  [!code-vb[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets2)]
  [!code-xaml[TextDecorationSnippets#TextDecorationSnippets2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml#textdecorationsnippets2)]  
   
- 次のコード例では、下線文字の装飾は破線のペンの線状グラデーション ブラシで作成されます。  
+ 次のコード例の下線テキスト装飾は、破線のペンに対する線状グラデーション ブラシで作成されています。  
   
  [!code-csharp[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextDecorationSnippets/CSharp/Window1.xaml.cs#textdecorationsnippets3)]
  [!code-vb[TextDecorationSnippets#TextDecorationSnippets3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextDecorationSnippets/visualbasic/window1.xaml.vb#textdecorationsnippets3)]

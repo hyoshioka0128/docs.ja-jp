@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: a3d9930e-5597-470e-a636-dcf65eac500b
 ms.openlocfilehash: 946724cc388c9c9456973ef164b8b6f38fd85869
 ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73460750"
 ---
 # <a name="control-customization"></a>コントロールのカスタマイズ
-このカテゴリは、完全に機能する [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] コントロールの作成に使用される、さまざまな基本クラス、インターフェイス、およびその他の要素と概念について説明します。  
+このカテゴリでは、完全に機能する [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] コントロールの作成に使用する、さまざまな基本クラス、インターフェイス、およびその他の要素と概念について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [コントロールの作成の概要](control-authoring-overview.md)  

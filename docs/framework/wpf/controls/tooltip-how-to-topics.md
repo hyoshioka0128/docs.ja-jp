@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 2aa88347-c4cb-48d3-951d-a7072643283b
 ms.openlocfilehash: eb2450d13b7a247e9eb0cc0b802b2d758482c466
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61790697"
@@ -19,7 +19,7 @@ ms.locfileid: "61790697"
  [ToolTip を配置する](how-to-position-a-tooltip.md)  
   [BetweenShowDelay プロパティを使用する](how-to-use-the-betweenshowdelay-property.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.ToolTip>  
   
  <xref:System.Windows.Controls.ToolTipService>  

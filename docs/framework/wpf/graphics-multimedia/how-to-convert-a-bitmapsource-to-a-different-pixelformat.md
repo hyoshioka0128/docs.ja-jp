@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: cd9df1e4-d5dc-4f57-b67b-4ec67e086b33
 ms.openlocfilehash: ea042599369da8435198e4206f89f3fa356a80c2
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61910170"
 ---
 # <a name="how-to-convert-a-bitmapsource-to-a-different-pixelformat"></a>方法: BitmapSource を別の PixelFormat に変換する
-この例では、変換、<xref:System.Windows.Media.Imaging.BitmapSource>オブジェクト (<xref:System.Windows.Media.Imaging.BitmapImage>) を別<xref:System.Windows.Media.PixelFormat>を使用して、 <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>。  
+この例では、<xref:System.Windows.Media.Imaging.FormatConvertedBitmap> を利用し、<xref:System.Windows.Media.Imaging.BitmapSource> オブジェクト (<xref:System.Windows.Media.Imaging.BitmapImage>) を別の <xref:System.Windows.Media.PixelFormat> に変換する方法を示します。  
   
 ## <a name="example"></a>例  
  [!code-csharp[ImagingSnippetGallery_procedural_snip#PixelFormatConversion](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/PixelFormatsExample.cs#pixelformatconversion)]

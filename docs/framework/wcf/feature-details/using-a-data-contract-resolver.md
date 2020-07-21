@@ -2,15 +2,15 @@
 title: データ コントラクト リゾルバーの使用
 ms.date: 03/30/2017
 ms.assetid: 2e68a16c-36f0-4df4-b763-32021bff2b89
-ms.openlocfilehash: d9082d2979cf9bd0837635af567d69ef34c2e312
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 20abd4d928fc51eb359949ecbb216615e9659b7f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975975"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595025"
 ---
 # <a name="using-a-data-contract-resolver"></a>データ コントラクト リゾルバーの使用
-データ コントラクト リゾルバーでは、既知の型を動的に構成できます。 データ コントラクトが予期しない型をシリアル化または逆シリアル化するときには、既知の型が必要です。 既知の型の詳細については、「[データコントラクトの既知の型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)」を参照してください。 通常、既知の型は静的に指定されます。 これは、操作を実装する間に操作が受け取る可能性のあるすべての型を把握しておく必要があることを意味します。 これが当てはまらず、既知の型を動的に指定できることが重要である場合もあります。  
+データ コントラクト リゾルバーでは、既知の型を動的に構成できます。 データ コントラクトが予期しない型をシリアル化または逆シリアル化するときには、既知の型が必要です。 既知の型の詳細については、「[データコントラクトの既知の型](data-contract-known-types.md)」を参照してください。 通常、既知の型は静的に指定されます。 これは、操作を実装する間に操作が受け取る可能性のあるすべての型を把握しておく必要があることを意味します。 これが当てはまらず、既知の型を動的に指定できることが重要である場合もあります。  
   
 ## <a name="creating-a-data-contract-resolver"></a>データ コントラクト リゾルバーの作成  
  データ コントラクト リゾルバーを作成する際には、2 つのメソッド、<xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> および <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> を実装します。 これらの 2 つのメソッドは、シリアル化および逆シリアル化の際に使用されるコールバックを実装します。 <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> メソッドはシリアル化の際に呼び出されて、データ コントラクト型を受け取り、それを `xsi:type` の名前および名前空間にマップします。 <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> メソッドは逆シリアル化の際に呼び出されて、`xsi:type` の名前および名前空間を受け取り、それをデータ コントラクト型に解決します。 これらのメソッドの両方には `knownTypeResolver` パラメーターがあり、これを使用して、既定の既知の型のリゾルバーを実装で使用できます。  
@@ -85,10 +85,10 @@ if (serializerBehavior == null)
 SerializerBehavior.DataContractResolver = new MyCustomerResolver();  
 ```  
   
- サービスに適用できる属性を実装して、データ コントラクト リゾルバーを宣言によって指定できます。  詳細については、「 [Knownassemblyattribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)サンプル」を参照してください。 このサンプルでは、カスタムデータコントラクトリゾルバーをサービスの動作に追加する "KnownAssembly" という属性を実装します。  
+ サービスに適用できる属性を実装して、データ コントラクト リゾルバーを宣言によって指定できます。  詳細については、「 [Knownassemblyattribute](../samples/knownassemblyattribute.md)サンプル」を参照してください。 このサンプルでは、カスタムデータコントラクトリゾルバーをサービスの動作に追加する "KnownAssembly" という属性を実装します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [既知のデータ コントラクト型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [DataContractSerializer サンプル](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)
-- [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)
+- [既知のデータ コントラクト型](data-contract-known-types.md)
+- [DataContractSerializer サンプル](../samples/datacontractserializer-sample.md)
+- [KnownAssemblyAttribute](../samples/knownassemblyattribute.md)

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
 ms.openlocfilehash: 981f1b0b6ca9f708bb022a3662ab181a4f472040
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69606382"
 ---
 # <a name="-targetwinexe-c-compiler-options"></a>-target:winexe (C# コンパイラ オプション)
@@ -25,7 +25,7 @@ ms.locfileid: "69606382"
 ```  
   
 ## <a name="remarks"></a>解説  
- 実行可能ファイルは、.exe という拡張子で作成されます。 Windows プログラムは、.NET Framework ライブラリまたは Windows API のユーザー インターフェイスを提供するプログラムです。  
+ .exe 拡張子の実行可能ファイルが作成されます。 Windows プログラムは、.NET Framework ライブラリまたは Windows API のユーザー インターフェイスを提供するプログラムです。  
   
  コンソール アプリケーションを作成するには、[-target:exe](./target-exe-compiler-option.md) を使用します。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "69606382"
 csc -target:winexe in.cs  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [-target (C# コンパイラ オプション)](./target-compiler-option.md)
 - [C# コンパイラ オプション](./index.md)

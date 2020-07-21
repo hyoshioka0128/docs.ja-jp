@@ -1,5 +1,6 @@
 ---
-title: 'チュートリアル: Windows Communication Foundation サービスコントラクトを実装する'
+title: 'チュートリアル: Windows Communication Foundation サービスコントラクトの実装'
+description: Wcf アプリケーションの作成を開始する際に役立つ一連の記事の一部として、WCF サービスインターフェイスを実装するコードを追加する方法について説明します。
 ms.date: 03/19/2019
 dev_langs:
 - csharp
@@ -7,18 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF], implementing
 ms.assetid: d5ab51ba-61ae-403e-b3c8-e2669e326806
-ms.openlocfilehash: 05923dc0a2223da5e5fcda483abc1ee1dd2d643f
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 89f97610cccd42c2a5d298baa667327d077fd472
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928704"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244648"
 ---
-# <a name="tutorial-implement-a-windows-communication-foundation-service-contract"></a>チュートリアル: Windows Communication Foundation サービスコントラクトを実装する
+# <a name="tutorial-implement-a-windows-communication-foundation-service-contract"></a>チュートリアル: Windows Communication Foundation サービスコントラクトの実装
 
-このチュートリアルでは、基本的な Windows Communication Foundation (WCF) アプリケーションを作成するために必要な5つのタスクについて説明します。 チュートリアルの概要については、 [「チュートリアル:Windows Communication Foundation アプリケーション](getting-started-tutorial.md)の概要」をご覧ください。
+このチュートリアルでは、基本的な Windows Communication Foundation (WCF) アプリケーションを作成するために必要な5つのタスクについて説明します。 チュートリアルの概要については、「[チュートリアル: Windows Communication Foundation アプリケーションの](getting-started-tutorial.md)概要」を参照してください。
 
-WCF アプリケーションを作成するための次の手順では、前の手順で作成した WCF サービスインターフェイスを実装するコードを追加します。 この手順では、ユーザー定義`CalculatorService` `ICalculator`のインターフェイスを実装するという名前のクラスを作成します。 次のコードの各メソッドは、電卓操作を呼び出し、テキストをコンソールに書き込んでテストします。 
+WCF アプリケーションを作成するための次の手順では、前の手順で作成した WCF サービスインターフェイスを実装するコードを追加します。 この手順では、ユーザー定義のインターフェイスを実装するという名前のクラスを作成し `CalculatorService` `ICalculator` ます。 次のコードの各メソッドは、電卓操作を呼び出し、テキストをコンソールに書き込んでテストします。
 
 このチュートリアルでは、次の作業を行う方法について説明します。
 > [!div class="checklist"]
@@ -119,9 +120,9 @@ End Namespace
 
 ## <a name="edit-appconfig"></a>App.config の編集
 
-**Gettingstartedlib**で**app.config**を編集して、コードに加えた変更を反映します。
+**Gettingon lib**で**App.config**を編集して、コードに加えた変更を反映します。
 
-- Visual C#プロジェクトの場合:
+- Visual C# プロジェクトの場合:
   - 14行目をに変更します。`<service name="GettingStartedLib.CalculatorService">`
   - 17行目をに変更します。`<add baseAddress = "http://localhost:8000/GettingStarted/CalculatorService" />`
   - 22行目をに変更します。`<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.ICalculator">`
@@ -133,11 +134,11 @@ End Namespace
 
 ## <a name="compile-the-code"></a>コードのコンパイル
 
-ソリューションをビルドして、コンパイルエラーがないことを確認します。 Visual Studio を使用している場合は、 **[ビルド]** メニューの **[ソリューションのビルド]** を選択します (または、 **Ctrl**+**Shift**+**B**キーを押します)。
+ソリューションをビルドして、コンパイルエラーがないことを確認します。 Visual Studio を使用している場合は、[**ビルド**] メニューの [**ソリューションのビルド**] を選択します (または、 **Ctrl** + **Shift** + **B**キーを押します)。
 
 ## <a name="next-steps"></a>次の手順
 
-このチュートリアルでは、次の作業を行う方法を学びました。
+このチュートリアルでは、以下の内容を学習しました。
 > [!div class="checklist"]
 >
 > - WCF サービスコントラクトを実装するコードを追加します。

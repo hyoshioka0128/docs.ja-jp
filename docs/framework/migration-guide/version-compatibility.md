@@ -7,18 +7,18 @@ helpviewer_keywords:
 - .NET Framework, compatibility with earlier versions
 - .NET Framework versions, compatibility
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
-ms.openlocfilehash: e0de18b5a40875d1fec2633c16688111d8f4b9ee
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c3bc92b89a46fc947b4d7e67644930374eeab2e4
+ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974953"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82796003"
 ---
-# <a name="version-compatibility-in-the-net-framework"></a>.NET Framework のバージョンの互換性
+# <a name="version-compatibility"></a>バージョンの互換性
 
-下位互換とは、プラットフォームの特定のバージョンで開発されたアプリが、そのプラットフォームの新しいバージョンでも実行できることを意味します。 .NET Framework では、下位互換性が最大限に高め67られています。 .NET Framework のあるバージョンで記述されたソース コードは、.NET Framework の新しいバージョンでコンパイルでき、.NET Framework のあるバージョンで実行されるバイナリは、新しいバージョンの .NET Framework でも同じように動作します。
+下位互換とは、プラットフォームの特定のバージョンで開発されたアプリが、そのプラットフォームの新しいバージョンでも実行できることを意味します。  .NET Framework では、下位互換性が最大限に高められています。.NET Framework のあるバージョンで記述されたソース コードは、.NET Framework の新しいバージョンでコンパイルでき、.NET Framework のあるバージョンで実行されるバイナリは、新しいバージョンの .NET Framework でも同じように動作します。
 
-## <a name="Apps"></a> アプリのバージョンの互換性
+## <a name="version-compatibility-for-apps"></a><a name="Apps"></a> アプリのバージョンの互換性
 
 既定では、アプリは、ビルド対象の .NET Framework のバージョンで実行されます。 そのバージョンが存在せず、アプリの構成ファイルにサポートされるバージョンが定義されていない場合は、.NET Framework 初期化エラーが発生することがあります。 この場合、アプリは実行できません。
 
@@ -33,7 +33,7 @@ ms.locfileid: "73974953"
 </configuration>
 ```
 
-詳細については、[.NET Framework 4 以降のバージョンをサポートするアプリを構成する](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)」を参照してください。
+詳細については、[.NET Framework 4 以降のバージョンをサポートするアプリを構成する](how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)」を参照してください。
 
 ## <a name="version-compatibility-for-components"></a>コンポーネントのバージョンの互換性
 
@@ -41,7 +41,7 @@ ms.locfileid: "73974953"
 
 この制限のため、互換性の保証は、コンポーネントにとって特に重要です。 .NET Framework 4 以降、コンポーネントに <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute?displayProperty=nameWithType> 属性を適用することにより、複数のバージョンで想定されるコンポーネントの互換性の程度を指定できるようになりました。 ツールは、この属性を使用して、コンポーネントの将来のバージョンでの互換性保証の潜在的な違反を検出できます。
 
-## <a name="backward-compatibility-and-the-net-framework"></a>下位互換性と .NET Framework
+## <a name="backward-compatibility"></a>下位互換性
 
 .NET Framework 4.5 およびそれ以降のバージョンは、以前のバージョンの .NET Framework でビルドされたアプリと下位互換性があります。 つまり、旧バージョンの .NET Framework でビルドしたアプリとコンポーネントは、.NET Framework 4.5 およびそれ以降のバージョンを変更せずに動作します。 ただし、既定では、アプリは、開発された共通言語ランタイムのバージョンで動作するため、アプリを .NET Framework 4.5 以降のバージョンで実行するには構成ファイルを提供する必要がある場合があります。 詳細については、この記事の前半に記載した「[アプリのバージョンの互換性](#Apps)」を参照してください。
 
@@ -51,7 +51,7 @@ ms.locfileid: "73974953"
 
 - アプリが .NET Framework 4.0 以降の任意バージョンの .NET Framework で実行できるように開発されている場合、[アプリケーションの互換性](application-compatibility.md)に関する記事を参照して、ターゲットの .NET Framework バージョンとアプリを実行しているバージョン間の違いの一覧を作成します。
 
-- .NET Framework 3.5 のアプリがある場合、「[.NET Framework 4 の移行に関する問題](../migration-guide/net-framework-4-migration-issues.md)」も参照してください。
+- .NET Framework 3.5 のアプリがある場合、「[.NET Framework 4 の移行に関する問題](net-framework-4-migration-issues.md)」も参照してください。
 
 - .NET Framework 2.0 のアプリがある場合、「[.NET Framework 3.5 SP1 の変更点](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10))」も参照してください。
 
@@ -63,7 +63,7 @@ ms.locfileid: "73974953"
 
 - 説明されていない問題が発生した場合は、[.NET の開発者コミュニティ サイト](https://developercommunity.visualstudio.com/spaces/61/index.html)上で問題を提起するか、[Microsoft/dotnet GitHub リポジトリ](https://github.com/microsoft/dotnet/issues)で問題を作成してください。
 
-## <a name="compatibility-and-side-by-side-execution"></a>互換性と side-by-side 実行
+## <a name="side-by-side-execution"></a>side-by-side 実行
 
 問題の適切な解決策が見つからない場合は、.NET Framework 4.5 (またはそのポイント リリースのいずれか) はバージョン 1.1、2.0、3.5 と side-by-side で実行でき、バージョン 4 に置き換わるインプレース更新であることを思い出してください。 Version 1.1、2.0、3.5 を対象とするアプリでは、適切なバージョンの .NET Framework を対象コンピューターにインストールして、アプリを最良の環境で実行できます。 side-by-side 実行について詳しくは、[side-by-side 実行](../deployment/side-by-side-execution.md)に関するページを参照してください。
 
@@ -71,6 +71,6 @@ ms.locfileid: "73974953"
 
 - [新機能](../whats-new/index.md)
 - [クラス ライブラリ内にある旧版のもの](../whats-new/whats-obsolete.md)
-- [アプリケーションの互換性](../migration-guide/application-compatibility.md)
+- [アプリケーションの互換性](application-compatibility.md)
 - [.NET Framework の公式サポート ポリシー](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)
-- [.NET framework 4 への移行に関する問題](../migration-guide/net-framework-4-migration-issues.md)
+- [.NET framework 4 への移行に関する問題](net-framework-4-migration-issues.md)

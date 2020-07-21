@@ -3,16 +3,16 @@ title: イベントの概要
 description: この概要では、.NET Core のイベントと、イベントの言語上の設計目標について説明します。
 ms.date: 06/20/2016
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
-ms.openlocfilehash: ceae2b9319a1de9f01102987735c7db2c2883f18
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 4e660f85eecfd5668919baf21a0d26f858faf5a6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74138518"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146115"
 ---
 # <a name="introduction-to-events"></a>イベントの概要
 
-[前へ](delegates-patterns.md)
+[[戻る]](delegates-patterns.md)
 
 デリゲートのようなイベントは*遅延バインディング* メカニズムになっています。 実際、イベントはデリゲートの言語サポートに基づいて構築されます。
 
@@ -59,11 +59,11 @@ Progress?.Invoke(this, new FileListArgs(file));
 
 [デリゲート](delegates-patterns.md)に関するセクションで説明したように、
 ?. 演算子を利用すると、イベントのサブスクライバーが存在しないとき、そのイベントの発生を試行しないように容易に確保できます。
- 
+
 `+=` 演算子を利用し、イベントを受信登録します。
 
 ```csharp
-EventHandler<FileListArgs> onProgress = (sender, eventArgs) => 
+EventHandler<FileListArgs> onProgress = (sender, eventArgs) =>
     Console.WriteLine(eventArgs.FoundFile);
 
 fileLister.Progress += onProgress;

@@ -3,14 +3,12 @@ title: メモリ内の XML データの処理
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1bbb4d05-ead7-4bda-8ece-f86d35c57ad4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7fee2b5f4950efedc6ee335d5fbd417b8c178fbd
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 06863d162a9f9fbf67f41cb12ea4fbb1935b424d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424410"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291280"
 ---
 # <a name="processing-xml-data-in-memory"></a>メモリ内の XML データの処理
 Microsoft .NET Framework には、XML データを処理するための 3 つのモデルである <xref:System.Xml.XmlDocument> クラス、<xref:System.Xml.XPath.XPathDocument> クラス、および [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) と [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) が含まれています。  
@@ -22,14 +20,14 @@ Microsoft .NET Framework には、XML データを処理するための 3 つの
  [LINQ to XML](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) は、XML データの処理を目的として .NET Framework バージョン 3.5 で導入されたモデルです。 [統合言語クエリ (LINQ)](../../../csharp/programming-guide/concepts/linq/index.md) を活用するメモリ内モデルです。 LINQ では C# および Visual Basic の言語構文を拡張することで、新しいクエリ機能を実現しています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [DOM モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
+ [DOM モデルを使用した XML データの処理](process-xml-data-using-the-dom-model.md)  
  <xref:System.Xml.XmlDocument> とその関連クラスを使用した XML データの処理について説明します。  
   
- [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [XPath データ モデルを使用した XML データの処理](process-xml-data-using-the-xpath-data-model.md)  
  <xref:System.Xml.XPath.XPathDocument>、<xref:System.Xml.XmlDocument>、および <xref:System.Xml.XPath.XPathNavigator> クラスを使用した XML データの処理について説明します。  
   
- [LINQ to XML を使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-linq-to-xml.md)  
+ [LINQ to XML を使用した XML データの処理](process-xml-data-using-linq-to-xml.md)  
  LINQ to XML の概要を簡単に説明し、LINQ to XML に関する参照先のリンクを示します。  
   
 ## <a name="related-sections"></a>関連項目  
- [XML ドキュメントと XML データ](../../../../docs/standard/data/xml/index.md)
+ [XML ドキュメントと XML データ](index.md)

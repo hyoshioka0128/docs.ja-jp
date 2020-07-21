@@ -7,35 +7,35 @@ helpviewer_keywords:
 - Windows Forms, application settings schema
 - configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
-ms.openlocfilehash: 89a08434332b0242fe57e9dcaa3b3ebcc5692d06
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 90d471888950347c041b4824b659ce33fda512d7
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927761"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "81242830"
 ---
 # <a name="application-settings-schema"></a>アプリケーション設定スキーマ
 
 アプリケーション設定を使用すると、Windows フォームまたは ASP.NET アプリケーションで、アプリケーションスコープの設定とユーザースコープの設定を格納および取得できます。 このコンテキストでは、*設定*は、アプリケーションに固有の情報、または現在のユーザーに固有の情報です。データベース接続文字列からユーザーの優先される既定のウィンドウサイズに至るまでのあらゆるものです。
 
-既定では、Windows フォームアプリケーションのアプリケーション設定は<xref:System.Configuration.LocalFileSettingsProvider>クラスを使用します。このクラスは、.net 構成システムを使用して XML 構成ファイルに設定を格納します。 アプリケーション設定で使用されるファイルの詳細については、「[アプリケーション設定アーキテクチャ](../../winforms/advanced/application-settings-architecture.md)」を参照してください。
+既定では、Windows フォームアプリケーションのアプリケーション設定はクラスを使用します。このクラスは、 <xref:System.Configuration.LocalFileSettingsProvider> .net 構成システムを使用して XML 構成ファイルに設定を格納します。 アプリケーション設定で使用されるファイルの詳細については、「[アプリケーション設定アーキテクチャ](../../winforms/advanced/application-settings-architecture.md)」を参照してください。
 
 アプリケーション設定は、使用する構成ファイルの一部として、次の要素を定義します。
 
-| 要素                    | 説明                                                                           |
+| 要素                    | Description                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------- |
-| **\<applicationSettings>** | **\<applicationSettings>\< すべてを含む** \<setting> アプリケーションに固有のタグ                         |
-| **\<userSettings >**        | **\<userSettings>\<  すべてが含まれます** \<setting> タグは、現在のユーザーを特定します                        |
-| **\<setting>**             | 設定を定義します。 いずれかの子 **\<applicationSettings >** または **\<userSettings>** します。 |
-| **\<value>**               | 設定の値を定義します。 設定の値を定義します。 子 **\<setting>** します。                                   |
+| **\<applicationSettings>** | **\<setting>** アプリケーションに固有のすべてのタグが含まれます。                         |
+| **\<userSettings>**        | **\<setting>** 現在のユーザーに固有のすべてのタグが含まれます。                        |
+| **\<setting>**             | 設定を定義します。 **\<applicationSettings>** またはの子 **\<userSettings>** 。 |
+| **\<value>**               | 設定の値を定義します。 の子 **\<setting>** 。                                   |
 
 ## <a name="applicationsettings-element"></a>\<applicationSettings> 要素
 
-この要素には、すべてが含まれています **\<setting>** クライアント コンピューターにアプリケーションのインスタンスに固有のタグ 属性は定義されません。
+この要素に **\<setting>** は、クライアントコンピューター上のアプリケーションのインスタンスに固有のすべてのタグが含まれます。 属性は定義されません。
 
 ## <a name="usersettings-element"></a>\<userSettings> 要素
 
-この要素には、すべてが含まれています **\<設定>** アプリケーションが現在使用してユーザーに固有のタグ。 属性は定義されません。
+この要素 **\<setting>** には、アプリケーションを現在使用しているユーザーに固有のすべてのタグが含まれます。 属性は定義されません。
 
 ## <a name="setting-element"></a>\<setting> 要素
 
@@ -43,8 +43,8 @@ ms.locfileid: "69927761"
 
 | 属性        | 説明 |
 | ---------------- | ----------- |
-| **name**         | 必須。 設定の一意の ID。 Visual Studio で作成された設定は、 `ProjectName.Properties.Settings`という名前で保存されます。 |
-| **serializedAs** | 必須。 値をテキストにシリアル化するために使用する形式。 次の値を指定できます。<br><br>- `string`。 値は、を<xref:System.ComponentModel.TypeConverter>使用して文字列としてシリアル化されます。<br>- `xml`。 値は、XML シリアル化を使用してシリアル化されます。<br>- `binary`。 この値は、バイナリシリアル化を使用して、テキストエンコードバイナリとしてシリアル化されます。<br />- `custom`。 設定プロバイダーは、この設定に固有の情報を持ち、シリアル化および逆シリアル化を行います。 |
+| **name**         | 必須。 設定の一意の ID。 Visual Studio で作成された設定は、という名前で保存され `ProjectName.Properties.Settings` ます。 |
+| **serializeAs** | 必須。 値をテキストにシリアル化するために使用する形式。 有効な値は次のとおりです。<br><br>- `string`. 値は、を使用して文字列としてシリアル化され <xref:System.ComponentModel.TypeConverter> ます。<br>- `xml`. 値は、XML シリアル化を使用してシリアル化されます。<br>- `binary`. この値は、バイナリシリアル化を使用して、テキストエンコードバイナリとしてシリアル化されます。<br />- `custom`. 設定プロバイダーは、この設定に固有の情報を持ち、シリアル化および逆シリアル化を行います。 |
 
 ## <a name="value-element"></a>\<value> 要素
 

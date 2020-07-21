@@ -39,17 +39,19 @@
           href: front-end-communication.md
         - name: サービス間の通信
           href: service-to-service-communication.md
-        - name: REST と gRPC
-          href: rest-grpc.md
+        - name: gRPC
+          href: grpc.md
         - name: サービス メッシュ通信インフラストラクチャ
           href: service-mesh-communication-infrastructure.md
     - name: 分散データ
       href: distributed-data.md
       items:
-        - name: クラウドネイティブ データ パターン
-          href: data-patterns.md
-        - name: Azure のデータ ストレージ
-          href: azure-data-storage.md
+        - name: リレーショナル データ ソースとNoSQL データ
+          href: relational-vs-nosql-data.md
+        - name: クラウド ネイティブのアプリケーションでのキャッシュ
+          href: azure-caching.md
+        - name: Azure での Elasticsearch
+          href: elastic-search-in-azure.md
     - name: クラウドネイティブの回復性
       href: resiliency.md
       items:
@@ -84,10 +86,14 @@
       items:
         - name: クラウドネイティブ アプリ向け Azure セキュリティ
           href: azure-security.md
-    - name: クラウドネイティブ DevOps
+    - name: DevOps
       href: devops.md
       items:
+        - name: 機能フラグ
+          href: feature-flags.md
         - name: コードとしてのインフラストラクチャ
           href: infrastructure-as-code.md
         - name: クラウド ネイティブ アプリケーション バンドル
           href: application-bundles.md
+    - name: まとめ
+      href: summary.md

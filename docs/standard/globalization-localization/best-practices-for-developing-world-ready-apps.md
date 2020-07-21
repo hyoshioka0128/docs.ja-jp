@@ -8,12 +8,12 @@ helpviewer_keywords:
 - globalization [.NET Framework], best practices
 - international applications [.NET Framework], best practices
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
-ms.openlocfilehash: a2cd1039f95a763002922fc2fa24eff77838de80
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f0e5ccf999b6aa96b6317b88e25f3cd9d9fbc899
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141307"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279881"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>推奨される国際対応アプリケーション開発手順
 
@@ -49,7 +49,7 @@ ms.locfileid: "73141307"
 
 9. 国際対応オペレーティング システムで、国際対応データを使用してアプリケーションの機能をテストします。
 
-10. 文字列比較操作または大文字と小文字の変更操作の結果に基づいてセキュリティ上の決定を行う場合は、カルチャに依存しない文字列操作を使用してください。 こうすることで、`CultureInfo.CurrentCulture` の値が結果に影響を及ぼすことがなくなります。 カルチャに依存した文字列比較により矛盾した結果がどのように生成されるかを示す例については、「[文字列を使用するためのベスト プラクティス](../../../docs/standard/base-types/best-practices-strings.md)」の「[現在のカルチャを使用する文字列比較](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture)」を参照してください。
+10. 文字列比較操作または大文字と小文字の変更操作の結果に基づいてセキュリティ上の決定を行う場合は、カルチャに依存しない文字列操作を使用してください。 こうすることで、`CultureInfo.CurrentCulture` の値が結果に影響を及ぼすことがなくなります。 カルチャに依存した文字列比較により矛盾した結果がどのように生成されるかを示す例については、「[文字列を使用するためのベスト プラクティス](../base-types/best-practices-strings.md)」の「[現在のカルチャを使用する文字列比較](../base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture)」を参照してください。
 
 ## <a name="localization-best-practices"></a>推奨されるローカリゼーション手順
 
@@ -69,11 +69,11 @@ ms.locfileid: "73141307"
 
 8. カルチャに基づいてリソースを取得するには、<xref:System.Resources.ResourceManager?displayProperty=nameWithType> クラスを使用します。
 
-9. Windows フォームのダイアログ ボックスを作成するには [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) を使います。このように作成されたダイアログ ボックスは、[Windows フォーム リソース エディター (Winres.exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md) を使ってローカライズできます。 Windows フォームのダイアログ ボックスを手動でコーディングしないでください。
+9. Windows フォームのダイアログ ボックスを作成するには [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) を使います。このように作成されたダイアログ ボックスは、[Windows フォーム リソース エディター (Winres.exe)](../../framework/tools/winres-exe-windows-forms-resource-editor.md) を使ってローカライズできます。 Windows フォームのダイアログ ボックスを手動でコーディングしないでください。
 
 10. 専門的なローカライズ (翻訳) 作業を計画してください。
 
-11. リソースの作成とローカライズについて詳しくは、「[デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)」をご覧ください。
+11. リソースの作成とローカライズについて詳しくは、「[デスクトップ アプリケーションのリソース](../../framework/resources/index.md)」をご覧ください。
 
 ## <a name="globalization-best-practices-for-aspnet-applications"></a>推奨される ASP.NET アプリケーションのグローバライズ手順
 
@@ -91,7 +91,7 @@ ms.locfileid: "73141307"
 
 4. ASP.NET アプリケーション内の次の 3 か所で、requestEncoding、responseEncoding、fileEncoding、culture、uiCulture の各属性の値を指定します。
 
-    - Web.config ファイルのグローバリゼーション セクション。 Web.config ファイルは、ASP.NET アプリケーションの外部ファイルです。 詳しくは、「[\<globalization> 要素](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100))」をご覧ください。
+    - Web.config ファイルのグローバリゼーション セクション。 Web.config ファイルは、ASP.NET アプリケーションの外部ファイルです。 詳細については、[\<globalization> 要素](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100))に関するページを参照してください。
 
     - ページ ディレクティブ。 アプリケーションがページを処理している時点では、ファイルは既に読み取られています。 そのため、fileEncoding と requestEncoding を指定するには遅すぎます。 ページ ディレクティブでは uiCulture、Culture、および responseEncoding だけを指定できます。
 
@@ -101,5 +101,5 @@ ms.locfileid: "73141307"
 
 ## <a name="see-also"></a>関連項目
 
-- [グローバライズとローカライズ](../../../docs/standard/globalization-localization/index.md)
-- [デスクトップ アプリケーションのリソース](../../../docs/framework/resources/index.md)
+- [グローバライズとローカライズ](index.md)
+- [デスクトップ アプリケーションのリソース](../../framework/resources/index.md)

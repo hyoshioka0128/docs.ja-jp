@@ -11,13 +11,13 @@ helpviewer_keywords:
 ms.assetid: 941ace29-29c4-4c26-b75b-ea7d06aa0d69
 ms.openlocfilehash: 3f8e7233e1d28fec1f7dac114b04287aa3aff49f
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62052379"
 ---
 # <a name="how-to-store-multiple-data-formats-in-a-data-object"></a>方法: データ オブジェクトへ複数のデータ形式を格納する
-次の例は、使用する方法を示します、<xref:System.Windows.DataObject.SetData%28System.String%2CSystem.Object%29>メソッドを複数の形式でデータ オブジェクトにデータを追加します。  
+次の例では、<xref:System.Windows.DataObject.SetData%28System.String%2CSystem.Object%29> メソッドを使用して、複数の形式でデータ オブジェクトにデータを追加する方法を示します。  
   
 ## <a name="example"></a>例  
   

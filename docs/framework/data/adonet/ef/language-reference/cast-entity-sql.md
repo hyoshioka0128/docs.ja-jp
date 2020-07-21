@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 07b6d750-dfd4-48a9-b86c-3badcbba6f70
 ms.openlocfilehash: b7778d6a2e0b0dd15b2911f2d1cee36208e13328
 ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/07/2019
 ms.locfileid: "73738519"
@@ -29,7 +29,7 @@ CAST ( expression AS data_type )
  `data_type`と同じ値を返します。  
   
 ## <a name="remarks"></a>Remarks  
- キャスト式のセマンティクスは、Transact-sql の CONVERT 式と似ています。 キャスト式は、ある型の値を別の型の値に変換する場合に使用します。  
+ キャスト式のセマンティクスは、Transact-SQL の CONVERT 式と似ています。 キャスト式は、ある型の値を別の型の値に変換する場合に使用します。  
   
 ```csharp
 CAST( e as T )  
@@ -53,7 +53,7 @@ CAST( e as T )
 ## <a name="example"></a>例  
  次の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリは CAST 演算子を使用して、あるデータ型の式を別のデータ型にキャストします。 このクエリは、AdventureWorks Sales Model に基づいています。 このクエリをコンパイルして実行するには、次の手順を実行します。  
   
-1. [「方法: PrimitiveType の結果を返すクエリを実行](../how-to-execute-a-query-that-returns-primitivetype-results.md)する」の手順に従います。  
+1. 「[方法: PrimitiveType 結果を返すクエリを実行する](../how-to-execute-a-query-that-returns-primitivetype-results.md)」の手順に従います。  
   
 2. 次のクエリを引数として `ExecutePrimitiveTypeQuery` メソッドに渡します。  
   

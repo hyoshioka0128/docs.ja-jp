@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fe374932-67f5-487d-9325-f868812b92e4
-ms.openlocfilehash: f31f24cfc18f2c56539fe2b4623d54fe77a27797
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e4ce1fa7b494c2317a1bddc57ee6b150c84b9a96
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950597"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593147"
 ---
 # <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>方法: Atom および RSS の両方としてフィードを公開する
-Windows Communication Foundation (WCF) を使用すると、配信フィードを公開するサービスを作成できます。 このトピックでは、Atom 1.0 と RSS 2.0 の両方を使用して配信フィードを公開する配信サービスを作成する方法について説明します。 このサービスは、どちらかの配信フォーマットを返すエンドポイントを公開します。 簡略化のため、この例で使用するサービスは自己ホスト型です。 運用環境では、このタイプのサービスは IIS または WAS でホストされます。 さまざまな WCF ホスティングオプションの詳細については、「[ホスティング](../../../../docs/framework/wcf/feature-details/hosting.md)」を参照してください。  
+Windows Communication Foundation (WCF) を使用すると、配信フィードを公開するサービスを作成できます。 このトピックでは、Atom 1.0 と RSS 2.0 の両方を使用して配信フィードを公開する配信サービスを作成する方法について説明します。 このサービスは、どちらかの配信フォーマットを返すエンドポイントを公開します。 簡略化のため、この例で使用するサービスは自己ホスト型です。 運用環境では、このタイプのサービスは IIS または WAS でホストされます。 さまざまな WCF ホスティングオプションの詳細については、「[ホスティング](hosting.md)」を参照してください。  
   
 ### <a name="to-create-a-basic-syndication-service"></a>基本的な配信サービスを作成するには  
   
-1. <xref:System.ServiceModel.Web.WebGetAttribute> 属性でマークされたインターフェイスを使用して、サービス コントラクトを定義します。 配信フィードとして公開される各操作は、<xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> オブジェクトを返します。 <xref:System.ServiceModel.Web.WebGetAttribute> のパラメーターに注意してください。 `UriTemplate` は、このサービス操作を呼び出すために使用される URL を指定します。 このパラメーターの文字列には、リテラルと変数が中かっこ ({*format*}) で格納されています。 この変数は、サービス操作の `format` パラメーターに対応します。 詳細については、「 <xref:System.UriTemplate> 」を参照してください。 `BodyStyle` は、このサービス操作が送受信するメッセージの書き方に影響を与えます。 <xref:System.ServiceModel.Web.WebMessageBodyStyle.Bare> は、このサービス操作に送受信されるデータが、インフラストラクチャにより定義された XML 要素でラップされないことを指定します。 詳細については、「 <xref:System.ServiceModel.Web.WebMessageBodyStyle> 」を参照してください。  
+1. <xref:System.ServiceModel.Web.WebGetAttribute> 属性でマークされたインターフェイスを使用して、サービス コントラクトを定義します。 配信フィードとして公開される各操作は、<xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> オブジェクトを返します。 <xref:System.ServiceModel.Web.WebGetAttribute> のパラメーターに注意してください。 `UriTemplate` は、このサービス操作を呼び出すために使用される URL を指定します。 このパラメーターの文字列には、リテラルと変数が中かっこ ({*format*}) で格納されています。 この変数は、サービス操作の `format` パラメーターに対応します。 詳細については、「<xref:System.UriTemplate>」を参照してください。 `BodyStyle` は、このサービス操作が送受信するメッセージの書き方に影響を与えます。 <xref:System.ServiceModel.Web.WebMessageBodyStyle.Bare> は、このサービス操作に送受信されるデータが、インフラストラクチャにより定義された XML 要素でラップされないことを指定します。 詳細については、「<xref:System.ServiceModel.Web.WebMessageBodyStyle>」を参照してください。  
   
      [!code-csharp[htAtomRss#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#0)]
      [!code-vb[htAtomRss#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/program.vb#0)]  
@@ -64,9 +64,9 @@ Windows Communication Foundation (WCF) を使用すると、配信フィード�
   
 ### <a name="to-call-getblog-with-an-http-get"></a>HTTP GET を使用して GetBlog を呼び出すには  
   
-1. Internet Explorer を開き、次の URL を入力して、 `http://localhost:8000/BlogService/GetBlog`enter キーを押します。
+1. Internet Explorer を開き、次の URL を入力して、enter キーを押します `http://localhost:8000/BlogService/GetBlog` 。
   
-     URL には、サービスのベースアドレス (`http://localhost:8000/BlogService`)、エンドポイントの相対アドレス、および呼び出すサービス操作が含まれます。  
+     URL には、サービスのベースアドレス ( `http://localhost:8000/BlogService` )、エンドポイントの相対アドレス、および呼び出すサービス操作が含まれます。  
   
 ### <a name="to-call-getblog-from-code"></a>コードから GetBlog() を呼び出すには  
   

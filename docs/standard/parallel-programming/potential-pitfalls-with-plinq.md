@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, pitfalls
 ms.assetid: 75a38b55-4bc4-488a-87d5-89dbdbdc76a2
-ms.openlocfilehash: 3ddc0c013335e6a7b4708a5dd8be0b2247b2f60c
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: b4d58734fba4b834d5f5819a6bf19da0b7b7e8db
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716254"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285314"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>PLINQ の非利便性
 
@@ -44,7 +44,7 @@ PLINQ を使用すると、多くの場合、連続した LINQ to Objects クエ
 
 - 対象システムに、`cust.Orders` でクエリを並列化することで生成されるスレッドの数を十分に処理できるプロセッサが存在している。
 
-どの場合も、最適なクエリの形式を決定する最善の方法は、テストおよび測定することです。 詳細については、[PLINQ クエリのパフォーマンスを測定する](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md)」をご覧ください。
+どの場合も、最適なクエリの形式を決定する最善の方法は、テストおよび測定することです。 詳細については、[PLINQ クエリのパフォーマンスを測定する](how-to-measure-plinq-query-performance.md)」をご覧ください。
 
 ## <a name="avoid-calls-to-non-thread-safe-methods"></a>スレッド セーフでないメソッドの呼び出しを回避する
 
@@ -123,4 +123,4 @@ Enumerable.Range(0, Environment.ProcessorCount * 100).AsParallel().ForAll((j) =>
 
 ## <a name="see-also"></a>関連項目
 
-- [Parallel LINQ (PLINQ)](parallel-linq-plinq.md)
+- [Parallel LINQ (PLINQ)](introduction-to-plinq.md)

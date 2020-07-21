@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC31194
 ms.assetid: 03d50c31-addd-4c90-9c53-725b84f9782e
-ms.openlocfilehash: 4a0f3eb2b1603899e9acc1273c023ec5d0ed3132
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
-ms.translationtype: MT
+ms.openlocfilehash: f19f157bd4c76f481aa3232bc33c2a0c6ac21367
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913328"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400280"
 ---
 # <a name="value-of-type-type1-cannot-be-converted-to-type2"></a>型 'type1' の値を 'type2' に変換できません
-型 'type1' の値は、'type2' へ変換できません。 最初の要素の文字列値を取得する、'Value' プロパティを使用することができます '\<parentElement >'。  
+型 'type1' の値を 'type2' に変換できません。 '\<parentElement>' の最初の要素の文字列値は、'Value' プロパティを使用して取得できます。  
   
  XML リテラルを特定の型を暗黙的にキャストしようとしました。 XML リテラルは、指定した型に暗黙的にキャストできません。  
   
@@ -28,6 +28,6 @@ ms.locfileid: "64913328"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Convert>
-- [データ型変換関数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [XML リテラル](../../../visual-basic/language-reference/xml-literals/index.md)
-- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [データ型変換関数](../functions/type-conversion-functions.md)
+- [XML リテラル](../xml-literals/index.md)
+- [XML](../../programming-guide/language-features/xml/index.md)

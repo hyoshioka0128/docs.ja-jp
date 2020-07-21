@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 35588317-6184-485c-ab41-4b15fc1765d9
 topic_type:
 - apiref
-ms.openlocfilehash: 393984241412f543b6ac082484cf5e23edb2d9f4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f363bed8e7002bf898755b434c919f8722dea3fb
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448985"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614501"
 ---
 # <a name="isymunmanagedencupdateupdatesymbolstore2-method"></a>ISymUnmanagedENCUpdate::UpdateSymbolStore2 メソッド
 行情報が要件を満たしている場合に、コンパイラがプログラムデータベース (PDB) ストリームから変更されていない関数を省略できるようにします。 正しい行情報は、古い PDB 行情報と、関数内のすべての行に対して1つのデルタで判別できます。  
@@ -39,10 +39,10 @@ HRESULT UpdateSymbolStore2(
  から行情報を格納している[IStream](/windows/desktop/api/objidl/nn-objidl-istream)へのポインター。  
   
  `pDeltaLines`  
- から変更された行を含む[Symlinedelta](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md)構造体へのポインター。  
+ から変更された行を含む[Symlinedelta](symlinedelta-structure.md)構造体へのポインター。  
   
  `cDeltaLines`  
- から変更された行の数を表す `ULONG`。  
+ から`ULONG`変更された行の数を表す。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK。それ以外の場合は、E_FAIL またはその他のエラーコードを指定します。  
@@ -50,6 +50,6 @@ HRESULT UpdateSymbolStore2(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedENCUpdate インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)
+- [ISymUnmanagedENCUpdate インターフェイス](isymunmanagedencupdate-interface.md)

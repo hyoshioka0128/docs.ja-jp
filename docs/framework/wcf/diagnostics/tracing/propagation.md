@@ -2,15 +2,15 @@
 title: 伝達
 ms.date: 03/30/2017
 ms.assetid: f8181e75-d693-48d1-b333-a776ad3b382a
-ms.openlocfilehash: ab8b6c003f9e483dccd7b9c7b2687a409f27fdc3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 732ae5cb1ce311b78728f8d5de0fd9102bf32499
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600032"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578956"
 ---
 # <a name="propagation"></a>伝達
-このトピックでは、Windows Communication Foundation (WCF) トレース モデルでのアクティビティ伝達について説明します。  
+このトピックでは、Windows Communication Foundation (WCF) トレースモデルでのアクティビティの伝達について説明します。  
   
 ## <a name="using-propagation-to-correlate-activities-across-endpoints"></a>伝達を使用したエンドポイント間でのアクティビティの関連付け  
  伝達を使用することで、複数のアプリケーション エンドポイントについて、同じ処理単位 (要求など) のエラー トレースを直接関連付けることができます。 さまざまなエンドポイントで発生した同じ処理単位のエラーは、アプリケーション ドメインが異なる場合でも同じアクティビティとしてグループ化されます。 これは、メッセージ ヘッダーで特定のアクティビティ ID を伝達することによって実現されます。 したがって、サーバーの内部エラーによってクライアントがタイムアウトした場合、これらのエラーは直接関係しているので、どちらも同じアクティビティに表示されます。  
@@ -21,7 +21,7 @@ ms.locfileid: "64600032"
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing" propagateActivity="true" >  
 ```  
   
- アクティビティの伝達は、TLS のアクティビティ ID が含まれていますが、送信メッセージにヘッダーを追加する WCF の原因となる構成可能な機能です。 サーバー側の以降のトレースでこの ID を含めることにより、クライアントとサーバーのアクティビティを相互に関連付けることができます。  
+ アクティビティの伝達は構成可能な機能であり、WCF によって送信メッセージにヘッダーが追加されます。これには、TLS のアクティビティ ID が含まれます。 サーバー側の以降のトレースでこの ID を含めることにより、クライアントとサーバーのアクティビティを相互に関連付けることができます。  
   
 ## <a name="propagation-definition"></a>伝達の定義  
  次のすべての条件に該当する場合に、アクティビティ M の gAId がアクティビティ N に伝達されます。  
@@ -78,7 +78,7 @@ ms.locfileid: "64600032"
   
 ## <a name="see-also"></a>関連項目
 
-- [トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [エンドツーエンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [トレースの構成](configuring-tracing.md)
+- [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [エンドツーエンドのトレースのシナリオ](end-to-end-tracing-scenarios.md)
+- [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

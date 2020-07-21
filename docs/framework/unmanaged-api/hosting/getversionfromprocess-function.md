@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a9f7f824-64a1-408d-8607-91c7f19d21fe
 topic_type:
 - apiref
-ms.openlocfilehash: 76c033b11f3212241827d74f4fe18ee881f20b64
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fbaf45da0902ded8a2f7bf0d470aaed3b5f531aa
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127033"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617127"
 ---
 # <a name="getversionfromprocess-function"></a>GetVersionFromProcess 関数
 指定したプロセスハンドルに関連付けられている共通言語ランタイム (CLR) のバージョン番号を取得します。  
@@ -31,9 +31,9 @@ ms.locfileid: "73127033"
   
 ```cpp  
 HRESULT GetVersionFromProcess (  
-    [in]  HANDLE  hProcess,   
-    [out] LPWSTR  pVersion,   
-    [in]  DWORD   cchBuffer,   
+    [in]  HANDLE  hProcess,
+    [out] LPWSTR  pVersion,
+    [in]  DWORD   cchBuffer,
     [out] DWORD  *dwLength  
 );  
 ```  
@@ -57,21 +57,21 @@ HRESULT GetVersionFromProcess (
 |リターン コード|説明|  
 |-----------------|-----------------|  
 |S_OK|メソッドは正常に完了しました。|  
-|E_INVALIDARG|`pVersion` が null で `cchBuffer` が null ではないか、またはその逆です。<br /><br /> -または-<br /><br /> `hProcess` がプロセスに対して有効なハンドルではありません。<br /><br /> -または-<br /><br /> CLR が読み込まれていません。|  
-|ERROR_INSUFFICIENT_BUFFER|`cchBuffer` が null であるか、またはバージョン文字列の長さを下回っています。|  
+|E_INVALIDARG|`pVersion`が null で `cchBuffer` あり、が null ではないか、またはその逆です。<br /><br /> \- または -<br /><br /> `hProcess`は、プロセスへの有効なハンドルではありません。<br /><br /> \- または -<br /><br /> CLR が読み込まれていません。|  
+|ERROR_INSUFFICIENT_BUFFER|`cchBuffer`が null であるか、またはバージョン文字列の長さを下回っています。|  
 |E_NOTIMPL|この方法は、Microsoft Windows 95、Microsoft Windows 98、または Microsoft Windows Millennium Edition オペレーティングシステムでは使用できません。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [GetRequestedRuntimeInfo 関数](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)
-- [GetRequestedRuntimeVersion 関数](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)
-- [非推奨の CLR ホスト関数](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [GetRequestedRuntimeInfo 関数](getrequestedruntimeinfo-function.md)
+- [GetRequestedRuntimeVersion 関数](getrequestedruntimeversion-function.md)
+- [非推奨の CLR ホスト関数](deprecated-clr-hosting-functions.md)

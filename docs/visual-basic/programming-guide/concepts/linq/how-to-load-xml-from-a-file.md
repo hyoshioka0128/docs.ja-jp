@@ -1,13 +1,13 @@
 ---
-title: '方法 : ファイルから XML を読み込む'
+title: '方法: ファイルから XML を読み込む'
 ms.date: 07/20/2015
 ms.assetid: e2d337ad-8ac8-4671-b694-30e5ca1413b7
-ms.openlocfilehash: 72a5adb8c7165f8113584f27bea64efde4ec58fb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: faea93b8eea2b713a8beb7fe199be7d644a07706
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74336108"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398000"
 ---
 # <a name="how-to-load-xml-from-a-file-visual-basic"></a>方法: ファイルから XML を読み込む (Visual Basic)
 
@@ -17,7 +17,7 @@ ms.locfileid: "74336108"
 
 次の例では、ファイルから XML ドキュメントを読み込む方法を示します。 この例では、books.xml を読み込んで、XML ツリーをコンソールに出力します。
 
-この例では、「[サンプル XML ファイル: 書籍 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)」の XML ドキュメントを使用します。
+この例では、XML ドキュメント、「[サンプル XML ファイル:書籍 (LINQ to XML)](sample-xml-file-books-linq-to-xml.md) を使用します。
 
 ```vb
 Dim booksFromFile As XElement = XElement.Load("books.xml")
@@ -50,6 +50,6 @@ Console.WriteLine(booksFromFile)
 </Catalog>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [XML の解析 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [XML の解析 (Visual Basic)](parsing-xml.md)

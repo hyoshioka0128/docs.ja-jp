@@ -6,68 +6,70 @@ f1_keywords:
 helpviewer_keywords:
 - CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT [.NET Framework profiling]
 ms.assetid: f2fc441f-d62e-4f72-a011-354ea13c8c59
-ms.openlocfilehash: 4d835f749a33d21a13be307e1524671e36496899
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b4ab5c8f7cdca1303cb4fbbc4fa39db3c5977c15
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440829"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867010"
 ---
 # <a name="corprof_e_unsupported_call_sequence-hresult"></a>CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT
+
 CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT は .NET Framework バージョン2.0 で導入されました。 .NET Framework 4 は、次の2つのシナリオでこの HRESULT を返します。  
   
 - ハイジャックプロファイラーが任意のタイミングでスレッドのレジスタコンテキストを強制的にリセットすると、スレッドは不整合な状態にある構造体にアクセスしようとします。  
   
 - プロファイラーが、ガベージコレクションを禁止するコールバックメソッドからガベージコレクションをトリガーする情報メソッドを呼び出そうとしたとき。  
   
- これらの2つのシナリオについては、次のセクションで説明します。  
+これらの2つのシナリオについては、次のセクションで説明します。  
   
 ## <a name="hijacking-profilers"></a>プロファイラーのハイジャック  
- (このシナリオは、主にハイジャックプロファイラーの問題ですが、ハイジャックされていないプロファイラーでこの HRESULT が表示される場合もあります)。  
+
+  (このシナリオは、主にハイジャックプロファイラーの問題ですが、ハイジャックされていないプロファイラーでこの HRESULT が表示される場合もあります)。  
   
- このシナリオでは、ハイジャックプロファイラーは、スレッドがプロファイラーコードを入力したり、 [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)メソッドを使用して共通言語ランタイム (CLR) を再入力したりできるように、任意のタイミングでスレッドのレジスタコンテキストを強制的にリセットします。  
+ このシナリオでは、ハイジャックプロファイラーは、スレッドがプロファイラーコードを入力したり、 [ICorProfilerInfo](icorprofilerinfo-interface.md)メソッドを使用して共通言語ランタイム (CLR) を再入力したりできるように、任意のタイミングでスレッドのレジスタコンテキストを強制的にリセットします。  
   
- プロファイリング API が CLR のデータ構造をポイントするために使用する Id の多く。 多くの `ICorProfilerInfo` 呼び出しでは、これらのデータ構造から情報を読み取って戻すだけです。 ただし、CLR では、実行時にこれらの構造内の項目が変更される可能性があり、ロックを使用することもあります。 プロファイラーがスレッドをハイジャックしたときに、CLR がロックを既に保持している (または取得しようとしている) とします。 スレッドが CLR に再入力し、さらに多くのロックを取得しようとした場合、または変更処理中の構造を検査する場合、これらの構造は不整合な状態になる可能性があります。 このような状況では、デッドロックとアクセス違反が簡単に発生します。  
+ プロファイリング API が CLR のデータ構造をポイントするために使用する Id の多く。 多くの `ICorProfilerInfo` 呼び出しでは、これらのデータ構造から情報を読み取って戻すだけです。 ただし、CLR では、実行時にこれらの構造内の項目が変更される可能性があり、ロックを使用することもあります。 プロファイラーがスレッドをハイジャックしたときに、CLR がロックを既に保持している (または取得しようとしている) とします。 スレッドが CLR に再入力され、さらに多くのロックを取得しようとした場合、または変更処理中の構造を検査する場合、これらの構造は不整合な状態になる可能性があります。 このような状況では、デッドロックとアクセス違反が簡単に発生します。  
   
- 一般に、ハイジャックされていないプロファイラーが[ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)メソッド内でコードを実行し、有効なパラメーターを使用して `ICorProfilerInfo` メソッドを呼び出すと、デッドロックが発生したりアクセス違反が発生したりすることはありません。 たとえば、 [ICorProfilerCallback:: ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md)メソッド内で実行されるプロファイラーコードは、 [ICorProfilerInfo2:: GetClassIDInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md)メソッドを呼び出すことによって、クラスに関する情報を要求する場合があります。 このコードでは、情報が使用できないことを示すために CORPROF_E_DATAINCOMPLETE HRESULT が返される場合があります。ただし、デッドロックが発生したり、アクセス違反が発生したりすることはありません。 `ICorProfilerInfo` のこのクラス呼び出しは、`ICorProfilerCallback` メソッドから作成されるため、同期と呼ばれます。  
+ 一般に、ハイジャックされていないプロファイラーが[ICorProfilerCallback](icorprofilercallback-interface.md)メソッド内でコードを実行し、有効なパラメーターを使用して `ICorProfilerInfo` メソッドを呼び出すと、デッドロックが発生したりアクセス違反が発生したりすることはありません。 たとえば、 [ICorProfilerCallback:: ClassLoadFinished](icorprofilercallback-classloadfinished-method.md)メソッド内で実行されるプロファイラーコードは、 [ICorProfilerInfo2:: GetClassIDInfo2](icorprofilerinfo2-getclassidinfo2-method.md)メソッドを呼び出すことによって、クラスに関する情報を要求する場合があります。 このコードでは、情報が使用できないことを示す CORPROF_E_DATAINCOMPLETE HRESULT が返される場合があります。 ただし、デッドロックが発生したり、アクセス違反が発生したりすることはありません。 これらの呼び出しは、`ICorProfilerCallback` メソッドから作成されるため、`ICorProfilerInfo` の呼び出しは同期と見なされます。  
   
  ただし、`ICorProfilerCallback` メソッド内に含まれていないコードを実行するマネージスレッドは、非同期呼び出しを行うと見なされます。 .NET Framework バージョン1では、非同期呼び出しで発生する可能性があることを判断するのは困難でした。 この呼び出しは、デッドロック、クラッシュ、または無効な回答を与える可能性があります。 .NET Framework バージョン2.0 では、この問題を回避するための簡単なチェックがいくつか導入されました。 .NET Framework 2.0 では、unsafe `ICorProfilerInfo` 関数を非同期的に呼び出すと、CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT で失敗します。  
   
  一般に、非同期呼び出しは安全ではありません。 ただし、次のメソッドは安全であり、特に非同期呼び出しをサポートしています。  
   
-- [GetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md)  
+- [GetEventMask](icorprofilerinfo-geteventmask-method.md)  
   
-- [SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md)  
+- [SetEventMask](icorprofilerinfo-seteventmask-method.md)  
   
-- [GetCurrentThreadID](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getcurrentthreadid-method.md)  
+- [GetCurrentThreadID](icorprofilerinfo-getcurrentthreadid-method.md)  
   
-- [GetThreadContext](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getthreadcontext-method.md)  
+- [GetThreadContext](icorprofilerinfo-getthreadcontext-method.md)  
   
-- [GetThreadAppDomain](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getthreadappdomain-method.md)  
+- [GetThreadAppDomain](icorprofilerinfo2-getthreadappdomain-method.md)  
   
-- [GetFunctionFromIP](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md)  
+- [GetFunctionFromIP](icorprofilerinfo-getfunctionfromip-method.md)  
   
-- [GetFunctionInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctioninfo-method.md)  
+- [GetFunctionInfo](icorprofilerinfo-getfunctioninfo-method.md)  
   
-- [GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md)  
+- [GetFunctionInfo2](icorprofilerinfo2-getfunctioninfo2-method.md)  
   
-- [GetCodeInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getcodeinfo-method.md)  
+- [GetCodeInfo](icorprofilerinfo-getcodeinfo-method.md)  
   
-- [GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md)  
+- [GetCodeInfo2](icorprofilerinfo2-getcodeinfo2-method.md)  
   
-- [GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md)  
+- [GetModuleInfo](icorprofilerinfo-getmoduleinfo-method.md)  
   
-- [GetClassIDInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassidinfo-method.md)  
+- [GetClassIDInfo](icorprofilerinfo-getclassidinfo-method.md)  
   
-- [GetClassIDInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md)  
+- [GetClassIDInfo2](icorprofilerinfo2-getclassidinfo2-method.md)  
   
-- [IsArrayClass](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-isarrayclass-method.md)  
+- [IsArrayClass](icorprofilerinfo-isarrayclass-method.md)  
   
-- [SetFunctionIDMapper](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setfunctionidmapper-method.md)  
+- [SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md)  
   
-- [DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md)  
+- [DoStackSnapshot](icorprofilerinfo2-dostacksnapshot-method.md)  
   
- 詳細については、CLR プロファイル API のブログで[CORPROF_E_UNSUPPORTED_CALL_SEQUENCE した理由](https://go.microsoft.com/fwlink/?LinkId=169156)を参照してください。  
+ 詳細については、CLR プロファイル API のブログで[CORPROF_E_UNSUPPORTED_CALL_SEQUENCE した理由](https://docs.microsoft.com/archive/blogs/davbr/why-we-have-corprof_e_unsupported_call_sequence)を参照してください。  
   
 ## <a name="triggering-garbage-collections"></a>ガベージコレクションのトリガー  
  このシナリオでは、ガベージコレクションを禁止するコールバックメソッド (たとえば、`ICorProfilerCallback` メソッドの1つ) 内で実行されているプロファイラーを使用します。 プロファイラーが、ガベージコレクションをトリガーする可能性のある情報メソッド (`ICorProfilerInfo` インターフェイスのメソッドなど) を呼び出そうとすると、情報メソッドが CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT で失敗します。  
@@ -76,15 +78,15 @@ CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT は .NET Framework バージョン2.
   
 |ガベージコレクションを禁止するコールバックメソッド|ガベージコレクションをトリガーする情報メソッド|  
 |------------------------------------------------------|------------------------------------------------------------|  
-|[ThreadAssignedToOSThread](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threadassignedtoosthread-method.md)<br /><br /> [ExceptionUnwindFunctionEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfunctionenter-method.md)<br /><br /> [ExceptionUnwindFunctionLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfunctionleave-method.md)<br /><br /> [ExceptionUnwindFinallyEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyenter-method.md)<br /><br /> [ExceptionUnwindFinallyLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyleave-method.md)<br /><br /> [ExceptionCatcherEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md)<br /><br /> [RuntimeSuspendStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendstarted-method.md)<br /><br /> [RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md)<br /><br /> [RuntimeSuspendAborted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendaborted-method.md)<br /><br /> [RuntimeThreadSuspended](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadsuspended-method.md)<br /><br /> [RuntimeThreadResumed](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadresumed-method.md)<br /><br /> [MovedReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md)<br /><br /> [ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md)<br /><br /> [ObjectsAllocatedByClass](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectsallocatedbyclass-method.md)<br /><br /> [RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md)<br /><br /> [HandleCreated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-handlecreated-method.md)<br /><br /> [HandleDestroyed](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-handledestroyed-method.md)<br /><br /> [GarbageCollectionStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionstarted-method.md)<br /><br /> [GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md)|[GetILFunctionBodyAllocator](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md)<br /><br /> [SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md)<br /><br /> [SetILInstrumentedCodeMap](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md)<br /><br /> [ForceGC](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-forcegc-method.md)<br /><br /> [GetClassFromToken](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassfromtoken-method.md)<br /><br /> [GetClassFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassfromtokenandtypeargs-method.md)<br /><br /> [GetFunctionFromTokenAndTypeArgs](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md)<br /><br /> [GetAppDomainInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getappdomaininfo-method.md)<br /><br /> [EnumModules](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enummodules-method.md)<br /><br /> [RequestProfilerDetach](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-requestprofilerdetach-method.md)<br /><br /> [GetAppDomainsContainingModule](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getappdomainscontainingmodule-method.md)|  
+|[ThreadAssignedToOSThread](icorprofilercallback-threadassignedtoosthread-method.md)<br /><br /> [ExceptionUnwindFunctionEnter](icorprofilercallback-exceptionunwindfunctionenter-method.md)<br /><br /> [ExceptionUnwindFunctionLeave](icorprofilercallback-exceptionunwindfunctionleave-method.md)<br /><br /> [ExceptionUnwindFinallyEnter](icorprofilercallback-exceptionunwindfinallyenter-method.md)<br /><br /> [ExceptionUnwindFinallyLeave](icorprofilercallback-exceptionunwindfinallyleave-method.md)<br /><br /> [ExceptionCatcherEnter](icorprofilercallback-exceptioncatcherenter-method.md)<br /><br /> [RuntimeSuspendStarted](icorprofilercallback-runtimesuspendstarted-method.md)<br /><br /> [RuntimeSuspendFinished](icorprofilercallback-runtimesuspendfinished-method.md)<br /><br /> [RuntimeSuspendAborted](icorprofilercallback-runtimesuspendaborted-method.md)<br /><br /> [RuntimeThreadSuspended](icorprofilercallback-runtimethreadsuspended-method.md)<br /><br /> [RuntimeThreadResumed](icorprofilercallback-runtimethreadresumed-method.md)<br /><br /> [MovedReferences](icorprofilercallback-movedreferences-method.md)<br /><br /> [ObjectReferences](icorprofilercallback-objectreferences-method.md)<br /><br /> [ObjectsAllocatedByClass](icorprofilercallback-objectsallocatedbyclass-method.md)<br /><br /> [RootReferences2](icorprofilercallback-rootreferences-method.md)<br /><br /> [HandleCreated](icorprofilercallback2-handlecreated-method.md)<br /><br /> [HandleDestroyed](icorprofilercallback2-handledestroyed-method.md)<br /><br /> [GarbageCollectionStarted](icorprofilercallback2-garbagecollectionstarted-method.md)<br /><br /> [GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md)|[GetILFunctionBodyAllocator](icorprofilerinfo-getilfunctionbodyallocator-method.md)<br /><br /> [SetILFunctionBody](icorprofilerinfo-setilfunctionbody-method.md)<br /><br /> [SetILInstrumentedCodeMap](icorprofilerinfo-setilinstrumentedcodemap-method.md)<br /><br /> [ForceGC](icorprofilerinfo-forcegc-method.md)<br /><br /> [GetClassFromToken](icorprofilerinfo-getclassfromtoken-method.md)<br /><br /> [GetClassFromTokenAndTypeArgs](icorprofilerinfo2-getclassfromtokenandtypeargs-method.md)<br /><br /> [GetFunctionFromTokenAndTypeArgs](icorprofilerinfo2-getfunctionfromtokenandtypeargs-method.md)<br /><br /> [GetAppDomainInfo](icorprofilerinfo-getappdomaininfo-method.md)<br /><br /> [EnumModules](icorprofilerinfo3-enummodules-method.md)<br /><br /> [RequestProfilerDetach](icorprofilerinfo3-requestprofilerdetach-method.md)<br /><br /> [GetAppDomainsContainingModule](icorprofilerinfo3-getappdomainscontainingmodule-method.md)|  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ICorProfilerCallback インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
-- [ICorProfilerCallback3 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md)
-- [ICorProfilerInfo インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
-- [ICorProfilerInfo3 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [プロファイル](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerCallback インターフェイス](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 インターフェイス](icorprofilercallback2-interface.md)
+- [ICorProfilerCallback3 インターフェイス](icorprofilercallback3-interface.md)
+- [ICorProfilerInfo インターフェイス](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 インターフェイス](icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo3 インターフェイス](icorprofilerinfo3-interface.md)
+- [プロファイリングのインターフェイス](profiling-interfaces.md)
+- [プロファイル](index.md)

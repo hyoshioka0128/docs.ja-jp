@@ -3,19 +3,17 @@ title: 保持されずに展開されるエンティティ参照
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: ffd97806-ab43-4538-8de2-5828bfbbde57
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7a55aa71ff3976241b96dd12baef06a9a13ef9dd
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 1d26e9a35497bb0d5293e8a5b630bf4356325401
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45998423"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292047"
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a>保持されずに展開されるエンティティ参照
 エンティティ参照が展開され、それが表すテキストに置き換えられる場合には、**XmlEntityReference** ノードは作成されません。 この場合はエンティティ宣言が解析され、宣言のコンテンツから作成されたノードが **XmlEntityReference** の代わりにコピーされます。 したがって、`&publisher;` の例では、`&publisher;` は保存されず、代わりに **XmlText** ノードが作成されます。  
   
- ![展開されたツリー構造](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")  
+ ![展開されたツリー構造](media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")  
 エンティティ参照が展開される場合のツリー構造  
   
  `B` や `<` などの文字エンティティは保持されません。 文字エンティティは常に展開され、テキスト ノードとして表されます。  
@@ -42,4 +40,4 @@ ms.locfileid: "45998423"
   
 ## <a name="see-also"></a>関連項目
 
-- [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML ドキュメント オブジェクト モデル (DOM)](xml-document-object-model-dom.md)

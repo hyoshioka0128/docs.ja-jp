@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8bdd7f4c-19f2-4ede-875e-603773e8c128
 topic_type:
 - apiref
-ms.openlocfilehash: 47647bf0460507b4c88b47bf87bfcc3bf620aecc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 143eefd557511f80007c88c1678143a885377467
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137222"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212985"
 ---
 # <a name="icordebugprocess2getreferencevaluefromgchandle-method"></a>ICorDebugProcess2::GetReferenceValueFromGCHandle メソッド
 ガベージコレクションハンドルを持つ指定したマネージオブジェクトへの参照ポインターを取得します。  
@@ -36,7 +36,7 @@ HRESULT GetReferenceValueFromGCHandle (
   
 ## <a name="parameters"></a>パラメーター  
  `handle`  
- からガベージコレクションハンドルを持つマネージオブジェクトへのポインター。 この値は <xref:System.IntPtr> オブジェクトであり、マネージオブジェクトの <xref:System.Runtime.InteropServices.GCHandle> から取得できます。  
+ からガベージコレクションハンドルを持つマネージオブジェクトへのポインター。 この値はオブジェクトであり、 <xref:System.IntPtr> <xref:System.Runtime.InteropServices.GCHandle> マネージオブジェクトのから取得できます。  
   
  `pOutValue`  
  入出力指定したマネージオブジェクトへの参照を表す、値オブジェクトのアドレスへのポインター。  
@@ -47,13 +47,13 @@ HRESULT GetReferenceValueFromGCHandle (
  返される参照は、通常の参照のように動作します。 ブレークポイント後にコードの実行が続行される場合は無効になります。 ターゲットオブジェクトの有効期間は、参照値の有効期間の影響を受けません。  
   
 > [!NOTE]
-> `GetReferenceValueFromGCHandle` メソッドでは、ハンドルは検証されません。 したがって、`GetReferenceValueFromGCHandle` メソッドは、無効なハンドルが渡された場合に、デバッガーとデバッグされているコードの両方を破損する可能性があります。  
+> メソッドでは `GetReferenceValueFromGCHandle` 、ハンドルは検証されません。 したがって、 `GetReferenceValueFromGCHandle` メソッドは、無効なハンドルが渡された場合に、デバッガーとデバッグされているコードの両方を破損する可能性があります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

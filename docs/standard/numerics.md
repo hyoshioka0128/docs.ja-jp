@@ -11,12 +11,12 @@ helpviewer_keywords:
 - numerics
 - BigInteger
 ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
-ms.openlocfilehash: e5815058898cac165e7a47d761ee86bb9c4cb940
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3b95a322377e82249a0375af589df74c658fcbf4
+ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73091589"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82507417"
 ---
 # <a name="numerics-in-net"></a>.NET における数値
 
@@ -26,7 +26,7 @@ ms.locfileid: "73091589"
 
 .NET では、次の表にあるように、符号付きと符号なしの両方の 8 ビット、16 ビット、32 ビット、64 ビット整数型がサポートされています。
   
-|型|符号付き/符号なし|サイズ (バイト単位)|最小値|最大値|  
+|種類|符号付き/符号なし|サイズ (バイト単位)|最小値|最大値|  
 |----------|----------------------|--------------------|-------------------|-------------------|  
 |<xref:System.Byte?displayProperty=nameWithType>|符号なし|1|0|255|  
 |<xref:System.Int16?displayProperty=nameWithType>|符号付き|2|-32,768|32,767|  
@@ -52,9 +52,9 @@ ms.locfileid: "73091589"
 
 .NET には、次の表に示す 3 種類のプリミティブ浮動小数点型が含まれています。
   
-|型|サイズ (バイト単位)|おおよその範囲|有効桁数|  
+|種類|サイズ (バイト単位)|おおよその範囲|有効桁数|  
 |----------|--------|---------------------|--------------------|  
-|<xref:System.Single?displayProperty=nameWithType>|4|±1.5 x 10<sup>−45</sup> から ±3.4 x 10<sup>38</sup>|~6-9 桁|  
+|<xref:System.Single?displayProperty=nameWithType>|4|±1.5 x 10<sup>−45</sup> から ±3.4 x 10<sup>38</sup>|~6 ～9 桁|  
 |<xref:System.Double?displayProperty=nameWithType>|8|±5.0 × 10<sup>−324</sup> - ±1.7 × 10<sup>308</sup>|~15-17 桁|  
 |<xref:System.Decimal?displayProperty=nameWithType>|16|±1.0 x 10<sup>-28</sup> から ±7.9228 x 10<sup>28</sup>|28 から 29 桁の数字|  
   
@@ -62,9 +62,9 @@ ms.locfileid: "73091589"
 
 各浮動小数点型で標準的な算術演算子セットがサポートされています。 <xref:System.Math?displayProperty=nameWithType> クラスでは、広範囲の数学関数セットのためのメソッドが提供されます。 .NET Core 2.0 以降には、<xref:System.Single> 型の引数を受け取るメソッドを提供する <xref:System.MathF?displayProperty=nameWithType> クラスが含まれています。
 
-<xref:System.BitConverter?displayProperty=nameWithType> クラスを使用して、<xref:System.Double> および <xref:System.Single> の値の個々のビットを操作することもできます。 <xref:System.Decimal?displayProperty=nameWithType> 構造体には、10 進値の個々のビットを操作するための独自のメソッド (<xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> と <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29?displayProperty=nameWithType>)、および追加の数学演算を実行するための独自のメソッド セットがあります。
+<xref:System.BitConverter?displayProperty=nameWithType> クラスを使用して、<xref:System.Double> および <xref:System.Single> の値の個々のビットを操作することもできます。 <xref:System.Decimal?displayProperty=nameWithType> 構造体には、10 進値の個々のビットを操作するための独自のメソッド (<xref:System.Decimal.GetBits%2A?displayProperty=nameWithType> と <xref:System.Decimal.%23ctor%28System.Int32%5B%5D%29>)、および追加の数学演算を実行するための独自のメソッド セットがあります。
   
-<xref:System.Double> 型と <xref:System.Single> 型は、本来正確ではない値 (2 つの星の間の距離など) での使用と、高い精度や小さな丸め誤差の検出が必要ではないアプリケーションでの使用が想定されています。 より高い精度が必要とされ、丸め誤差を最小限に抑えるべきケースでは、<xref:System.Decimal?displayProperty=nameWithType> 型を使用します。
+<xref:System.Double> 型と <xref:System.Single> 型は、不正確な値 (2 つの星の間の距離など) での使用と、高い精度や小さな丸め誤差の検出が必要ではないアプリケーションでの使用が想定されています。 より高い精度が必要とされ、丸め誤差を最小限に抑えるべきケースでは、<xref:System.Decimal?displayProperty=nameWithType> 型を使用します。
 
 > [!NOTE]
 > <xref:System.Decimal> 型の場合、丸めの必要がなくなります。 丸めに起因するエラーが最小限に抑えられます。
@@ -93,7 +93,8 @@ ms.locfileid: "73091589"
   
 SIMD 対応の型は、それが SIMD 非対応のハードウェアや JIT コンパイラと共に使用できるように実装されます。 SIMD 命令を活用するために、64 ビット アプリは RyuJIT コンパイラを使用するランタイムで実行する必要があります。このコンパイラは .NET Core と 4.6 以降の .NET Framework に含まれています。 64 ビット プロセッサを対象にするとき、SIMD サポートが追加されます。
 
+詳細については、[SIMD アクセラレータの数値型の使用](simd.md)に関するページを参照してください。
+
 ## <a name="see-also"></a>関連項目
 
-- [アプリケーションの基本事項](application-essentials.md)
 - [標準の数値書式指定文字列](base-types/standard-numeric-format-strings.md)

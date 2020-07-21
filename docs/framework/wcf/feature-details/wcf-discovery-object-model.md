@@ -2,12 +2,12 @@
 title: WCF Discovery オブジェクト モデル
 ms.date: 03/30/2017
 ms.assetid: 8365a152-eacd-4779-9130-bbc48fa5c5d9
-ms.openlocfilehash: d305528c379bd4ded339854ee1f9fa55c76b40c0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: debcb08802894a34e16d9aa65bbbb1b0282794f6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614788"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184226"
 ---
 # <a name="wcf-discovery-object-model"></a>WCF Discovery オブジェクト モデル
 WCF Discovery は、実行時に探索可能なサービスと、これらのサービスを検索して使用するクライアントの作成を可能にする統合プログラミング モデルを提供する型のセットで構成されています。  
@@ -61,7 +61,7 @@ WCF Discovery は、実行時に探索可能なサービスと、これらのサ
 - <xref:System.ServiceModel.Discovery.ResolveResponse>  
   
 - <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>  
- 
+
 - <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>  
   
 - <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>  

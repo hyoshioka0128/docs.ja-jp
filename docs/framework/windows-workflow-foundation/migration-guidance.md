@@ -2,12 +2,12 @@
 title: 移行のガイドライン
 ms.date: 03/30/2017
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-ms.openlocfilehash: 672ed1a93b4409f491d76ffeeaaac5f67a1c4b6e
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: f0c21d32b745a51bada9133230dd0c87be9c915e
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802610"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937963"
 ---
 # <a name="migration-guidance"></a>移行のガイドライン
 
@@ -21,7 +21,8 @@ ms.locfileid: "74802610"
   
  したがって、.NET Framework 4 を採用するかどうかの決定は、WF3\*(\*WF4) から () に移動するかどうかの決定とは分離されています。 このトピックでは、WF の移行のガイドラインへのリンクを提供し、WF3 および WF4 での作業に関する情報を提供します。  
   
-## <a name="wf-migration-whitepapers-and-cookbooks"></a>WF の移行に関するホワイト ペーパーとクックブック  
+## <a name="wf-migration-white-papers-and-cookbooks"></a>WF の移行に関するホワイトペーパーと料理
+
  [WF の移行の概要](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10))に関するトピックでは、WF3 と WF4 の間の関係と移行戦略の概要について説明します。 関連トピックでは、特定のトピックを掘り下げて説明します。  
   
  [WF の移行の概要](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10))  
@@ -56,6 +57,6 @@ ms.locfileid: "74802610"
  [WF のガイダンス: ワークフローサービス](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10))  
  事前定義アクティビティの一般的なシナリオ向けに、WF3 で作成した Windows Communication Foundation (WCF) Web サービス (一般にワークフロー サービスと呼ばれます) を実装するワークフローを WF4 を使用するように再設計するための詳細な手順を例を中心として示します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Activities.Statements.Interop>

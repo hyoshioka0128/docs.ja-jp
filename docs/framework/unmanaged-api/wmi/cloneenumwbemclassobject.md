@@ -1,6 +1,6 @@
 ---
-title: CloneEnumWbemClassObject 関数 (アンマネージ API リファレンス)
-description: CloneEnumWbemClassObject 関数は、列挙子の論理コピーを作成します。
+title: 関数 (アンマネージ API リファレンス)
+description: 関数は列挙子の論理コピーを作成します。
 ms.date: 11/06/2017
 api_name:
 - CloneEnumWbemClassObject
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - CloneEnumWbemClassObject function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: 9d2442161aaa83693a33f9efc230c09b8c4426e2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f2a3a7e848108e50c04f0ec70cf42586755a0a88
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128733"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79175019"
 ---
 # <a name="cloneenumwbemclassobject-function"></a>CloneEnumWbemClassObject 関数
 列挙型内での位置を維持して、列挙子の論理コピーが作成されます。
@@ -30,69 +30,70 @@ ms.locfileid: "73128733"
 
 ```cpp
 HRESULT CloneEnumWbemClassObject (
-   [out] IEnumWbemClassObject**  ppEnum, 
+   [out] IEnumWbemClassObject**  ppEnum,
    [in] DWORD                    authLevel,
    [in] DWORD                    impLevel,
-   [in] IEnumWbemClassObject*    pCurrentEnumWbemClassObject, 
+   [in] IEnumWbemClassObject*    pCurrentEnumWbemClassObject,
    [in] BSTR                     strUser,
    [in] BSTR                     strPassword,
-   [in BSTR]                     strAuthority 
-); 
+   [in BSTR]                     strAuthority
+);
 ```
 
 ## <a name="parameters"></a>パラメーター
 
 `ppEnum`\
-入出力新しい[IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject)へのポインターを受け取ります。
+[アウト]新しい[IEnumWbemClass オブジェクト](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject)へのポインターを受け取ります。
 
 `authLevel`\
-から承認レベル。
+[in]権限レベル。
 
 `impLevel`\
-から偽装レベル。
+[in]偽装レベル。
 
 `pCurrentEnumWbemClassObject`\
-入出力複製する[IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject)インスタンスへのポインター。
+[アウト]複製される[インスタンス](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject)へのポインター。
 
 `strUser`\
-からユーザー名。 詳細については、「 [Connectserverwmi](connectserverwmi.md)関数」を参照してください。
+[in]ユーザー名。 詳細については、[関数](connectserverwmi.md)を参照してください。
 
 `strPassword`\
-からパスワード。 詳細については、「 [Connectserverwmi](connectserverwmi.md)関数」を参照してください。
+[in]パスワード。 詳細については、[関数](connectserverwmi.md)を参照してください。
 
-`strAuthority`\ [入力] ユーザーのドメイン名。 詳細については、「 [Connectserverwmi](connectserverwmi.md)関数」を参照してください。
+`strAuthority`\
+[in]ユーザーのドメイン名。 詳細については、[関数](connectserverwmi.md)を参照してください。
 
 ## <a name="return-value"></a>戻り値
 
-この関数によって返される次の値は、 *WbemCli*ヘッダーファイルで定義されています。また、コード内で定数として定義することもできます。
+この関数によって返される次の値は *、WbemCli.h*ヘッダー ファイルで定義されているか、コード内で定数として定義できます。
 
-|定数  |[値]  |説明  |
+|常時  |Value  |説明  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
-| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメーターが無効です。 |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | 使用可能なメモリが不足しているため、操作を完了できません。 |
-| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | 現在のプロセスと WMI の間のリモートプロシージャコール (RPC) リンクが失敗しました。 |
-| `WBEM_S_NO_ERROR` | 0 | 関数の呼び出しに成功しました。  |
+| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | パラメータが無効です。 |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | メモリ不足が発生し、操作を完了します。 |
+| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | 現在のプロセスと WMI 間のリモート プロシージャ コール (RPC) リンクに失敗しました。 |
+| `WBEM_S_NO_ERROR` | 0 | 関数呼び出しが正常に行われました。  |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-この関数は、 [IEnumWbemClassObject:: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone)メソッドの呼び出しをラップします。
+この関数は、メソッドの呼び出しをラップ[します](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone)。
 
-このメソッドは、"ベストエフォート" コピーだけを行います。 多くの CIM オブジェクトは動的な性質を持つため、新しい列挙子がソース列挙子と同じオブジェクトのセットを列挙しない可能性があります。
+この方法では、"ベスト エフォート" コピーのみが作成されます。 多くの CIM オブジェクトの動的な性質により、新しい列挙子がソース列挙子と同じオブジェクトのセットを列挙しない可能性があります。
 
-関数呼び出しが失敗した場合は、 [GetErrorInfo](geterrorinfo.md)関数を呼び出して追加のエラー情報を取得できます。
+関数呼び出しが失敗した場合は[、GetErrorInfo](geterrorinfo.md)関数を呼び出すことによって、追加のエラー情報を取得できます。
 
 ## <a name="example"></a>例
 
-例については、 [IEnumWbemClassObject:: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone)メソッドを参照してください。
+例については、[メソッド](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone)を参照してください。
 
-## <a name="requirements"></a>［要件］
- **:** 「[システム要件](../../get-started/system-requirements.md)」を参照してください。
+## <a name="requirements"></a>必要条件
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
 
- **ヘッダー:** WMINet_Utils
+ **ヘッダー:** WMINet_Utils.idl
 
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>関連項目
 
-- [WMI およびパフォーマンスカウンター (アンマネージ API リファレンス)](index.md)
+- [WMI およびパフォーマンス カウンター (アンマネージド API リファレンス)](index.md)

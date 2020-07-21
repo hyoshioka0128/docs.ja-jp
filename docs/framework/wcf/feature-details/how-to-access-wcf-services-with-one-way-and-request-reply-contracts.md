@@ -1,16 +1,16 @@
 ---
-title: '方法: 一方向の WCF サービスへのアクセスと要求/応答コントラクト'
+title: '方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする'
 ms.date: 03/30/2017
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-ms.openlocfilehash: 119a63978f6c45aa940ff999249c654c7cf96d91
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c8bd0d21be1d87d536eb6f943e782fc4da352a8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855115"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597190"
 ---
-# <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>方法: 一方向の WCF サービスへのアクセスと要求/応答コントラクト
-次の手順では、一方向コントラクトと要求/応答コントラクトを定義する Windows Communication Foundation (WCF) サービスにアクセスして、双方向通信パターンを使用しない方法について説明します。  
+# <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>方法 : 一方向コントラクトと要求/応答コントラクトを使用して WCF サービスにアクセスする
+次の手順では、一方向コントラクトと要求/応答コントラクトを定義し、双方向通信パターンを使用しない Windows Communication Foundation (WCF) サービスにアクセスする方法について説明します。  
   
 ### <a name="to-define-the-service"></a>サービスを定義するには  
   
@@ -109,7 +109,7 @@ ms.locfileid: "61855115"
   
 ### <a name="to-access-the-service"></a>サービスにアクセスするには  
   
-1. 実行、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)メタデータ交換エンドポイントのアドレスを使用して、次のコマンドラインを使用して、サービスのクライアント クラスを作成します。`Svcutil http://localhost:8000/Service` [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)の次のサンプル コードに示すように、インターフェイスとクラスのセットを生成します。  
+1. 次のサンプルコードに示すように、servicemodel メタデータユーティリティツール ( [svcutil.exe](../servicemodel-metadata-utility-tool-svcutil-exe.md) ) を実行して、メタデータ交換エンドポイントアドレスを使用してサービスのクライアントクラスを作成します。 `Svcutil http://localhost:8000/Service` また、 [Servicemodel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)によって、一連のインターフェイスとクラスが生成されます。  
   
     ```csharp  
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
@@ -147,22 +147,22 @@ ms.locfileid: "61855115"
         {  
         }  
   
-        public OneWayCalculatorClient(string endpointConfigurationName) :   
+        public OneWayCalculatorClient(string endpointConfigurationName) :
                 base(endpointConfigurationName)  
         {  
         }  
   
-        public OneWayCalculatorClient(string endpointConfigurationName, string remoteAddress) :   
+        public OneWayCalculatorClient(string endpointConfigurationName, string remoteAddress) :
                 base(endpointConfigurationName, remoteAddress)  
         {  
         }  
   
-        public OneWayCalculatorClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :   
+        public OneWayCalculatorClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(endpointConfigurationName, remoteAddress)  
         {  
         }  
   
-        public OneWayCalculatorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :   
+        public OneWayCalculatorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(binding, remoteAddress)  
         {  
         }  
@@ -258,7 +258,7 @@ using System.ServiceModel.Description;
   
 namespace Microsoft.ServiceModel.Samples  
 {  
-    // Define a service contract.   
+    // Define a service contract.
     [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
     public interface IOneWayCalculator  
     {  
@@ -341,7 +341,7 @@ namespace Microsoft.ServiceModel.Samples
             }  
         }  
     }  
-} 
+}
 ```
 
 ```csharp
@@ -402,4 +402,4 @@ namespace Microsoft.ServiceModel.Samples
   
 ## <a name="see-also"></a>関連項目
 
-- [一方向サービス](../../../../docs/framework/wcf/feature-details/one-way-services.md)
+- [一方向サービス](one-way-services.md)

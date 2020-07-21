@@ -7,23 +7,23 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: e0c617ce32f80bdde1bcfda31da40ae610e07452
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
-ms.translationtype: MT
+ms.openlocfilehash: 9d55ba82547dfcb0336c3a3fd12521c0dcb3eb58
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74712351"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84371831"
 ---
 # <a name="await-operator-visual-basic"></a>Await 演算子 (Visual Basic)
 
 `Await` 演算子は、非同期のメソッドまたはラムダ式のオペランドに適用されて、待機中のタスクが完了するまでメソッドの実行を中断します。 このタスクは、進行中の作業を表します。
 
-`Await` を使用するメソッドには、 [Async](../../../visual-basic/language-reference/modifiers/async.md)修飾子が必要です。 このようなメソッド (`Async` 修飾子を使用して定義され、通常 1 つ以上の `Await` 式を含むメソッド) を "*非同期メソッド*" と呼びます。
+`Await` が使用されるメソッドには [Async](../modifiers/async.md) 修飾子が必要です。 このようなメソッド (`Async` 修飾子を使用して定義され、通常 1 つ以上の `Await` 式を含むメソッド) を "*非同期メソッド*" と呼びます。
 
 > [!NOTE]
-> `Async` キーワードおよび `Await` キーワードは、Visual Studio 2012 で導入されました。 非同期プログラミングの概要については、「 [async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)」を参照してください。
+> `Async` キーワードおよび `Await` キーワードは、Visual Studio 2012 で導入されました。 非同期プログラミングの概要については、「[Async および Await を使用した非同期プログラミング](../../programming-guide/concepts/async/index.md)」をご覧ください。
 
-通常、`Await` 演算子を適用するタスクは、[タスクベースの非同期パターン](https://www.microsoft.com/download/details.aspx?id=19957)、つまり、<xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601>を実装するメソッドの呼び出しからの戻り値です。
+`Await` 演算子を適用するタスクは、通常、[タスク ベースの非同期パターン](https://www.microsoft.com/download/details.aspx?id=19957) (<xref:System.Threading.Tasks.Task> または <xref:System.Threading.Tasks.Task%601>) を実装するメソッド呼び出しの戻り値です。
 
 次のコードでは、<xref:System.Net.Http.HttpClient> メソッドの <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> が `getContentsTask` (`Task(Of Byte())`) を返します。 これにより、操作が完了したときに実際のバイト配列が生成されることが保証されます。 `Await` 演算子が `getContentsTask` に適用されているため、`SumPageSizesAsync` が完了するまで `getContentsTask` の実行が中断されます。 その間、コントロールは `SumPageSizesAsync` の呼び出し元に戻されます。 `getContentsTask` が終了すると、`Await` 式がバイト配列に評価されます。
 
@@ -44,7 +44,7 @@ End Function
 ```
 
 > [!IMPORTANT]
-> 完全な例については、「[チュートリアル: Async と Await を使用した Web へのアクセス](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」をご覧ください。 Microsoft Web サイトの[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)からサンプルをダウンロードできます。 この例は AsyncWalkthrough_HttpClient プロジェクトにあります。
+> 完全な例については、「[チュートリアル: Async と Await を使用した Web へのアクセス](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)」をご覧ください。 Microsoft Web サイトの[開発者コード サンプル](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)からサンプルをダウンロードできます。 この例は AsyncWalkthrough_HttpClient プロジェクトにあります。
 
 `Await` を返すメソッド呼び出しの結果に `Task(Of TResult)` が適用されている場合、`Await` 式の型は TResult になります。 `Await` を返すメソッド呼び出しの結果に `Task` が適用されている場合、`Await` 式は値を返しません。 この違いを次の例に示します。
 
@@ -58,7 +58,7 @@ Await AsyncMethodThatReturnsTask()
 
 `Await` 式またはステートメントは、自身が実行されているスレッドをブロックするのではなく、 非同期メソッドの残りの部分が待機中のタスクの継続として `Await` 式の後に登録されるようにします。 これによって、コントロールは非同期のメソッドの呼び出し元に戻されます。 タスクが完了すると、継続が呼び出され、中断したところから非同期メソッドの実行が再開されます。
 
-`Await` 式は、`Async` 修飾子で修飾されたすぐ外側のメソッドまたはラムダ式の本体でのみ使用できます。 *Await*という用語は、そのコンテキストでのみキーワードとして機能します。 他の場所では、識別子として解釈されます。 Async メソッドまたはラムダ式内では、クエリ式に `Await` 式を指定することはできません。そのためには、`catch` または `finally` ブロックを指定してください. [.キャッチ...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)ステートメント、`For` または `For Each` ループのループ制御変数式、または[SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md)ステートメントの本体。
+`Await` 式は、`Async` 修飾子で修飾されたすぐ外側のメソッドまたはラムダ式の本体でのみ使用できます。 *Await* という用語がキーワードとして機能するのはこのコンテキストだけです。 他の場所では、識別子として解釈されます。 `Async` メソッドまたはラムダ式内では、クエリ式、[Try…Catch…Finally ステートメント](../statements/try-catch-finally-statement.md)の `Catch` ブロックまたは `Finally` ブロック、`For` ループまたは `For Each` ループのループ コントロール変数式、または [SyncLock](../statements/synclock-statement.md) ステートメントの本体で `Await` 式を使用することはできません。
 
 ## <a name="exceptions"></a>例外
 
@@ -70,9 +70,9 @@ Await AsyncMethodThatReturnsTask()
 
 障害の発生した状態にある単一のタスクで、複数の例外が反映される場合があります。  たとえば、タスクは <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> の呼び出しの結果になることがあります。 このようなタスクを待機すると、await 操作によって 1 つの例外のみが再スローされます。 ただし、どの例外が再スローされるかを予測することはできません。
 
-非同期メソッドのエラー処理の例については、「Try...」を参照してください。 [キャッチ...Finally ステートメント](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)。
+非同期メソッドのエラー処理の例については、「[Try...Catch...Finally ステートメント](../statements/try-catch-finally-statement.md)」をご覧ください。
 
-## <a name="example"></a>使用例
+## <a name="example"></a>例
 
 次に示す Windows フォームの例では、`Await` という非同期メソッドで `WaitAsynchronouslyAsync` が使用されています。 このメソッドの動作と `WaitSynchronously` の動作の違いを確認します。 `WaitSynchronously` には `Await` 演算子がないため、定義で `Async` 修飾子が使用されていて、本体で <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> が呼び出されているにもかかわらず、同期的に実行されます。
 
@@ -106,8 +106,8 @@ Public Async Function WaitSynchronously() As Task(Of String)
 End Function
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Async および Await を使用した非同期プログラミング](../../../visual-basic/programming-guide/concepts/async/index.md)
-- [チュートリアル: Async と Await を使用した Web へのアクセス](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Async](../../../visual-basic/language-reference/modifiers/async.md)
+- [Async および Await を使用した非同期プログラミング](../../programming-guide/concepts/async/index.md)
+- [チュートリアル: Async と Await を使用した Web へのアクセス](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Async](../modifiers/async.md)

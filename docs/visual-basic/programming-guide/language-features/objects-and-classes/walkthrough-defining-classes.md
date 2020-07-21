@@ -15,16 +15,16 @@ helpviewer_keywords:
 - Terminate event [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 07018828-2d49-4cf5-a44b-19fb15d9efea
-ms.openlocfilehash: bd3f6e5cff41551240d9904ab93af8758eb104d2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 646c6ce307131f3edba194af19920eade9c1753c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346083"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84389115"
 ---
 # <a name="walkthrough-defining-classes-visual-basic"></a>チュートリアル: クラスの定義 (Visual Basic)
 
-このチュートリアルでは、クラスを定義する方法を示します。このクラスを使用してオブジェクトを作成できます。 また、新しいクラスにプロパティとメソッドを追加する方法と、オブジェクトを初期化する方法についても説明します。  
+このチュートリアルでは、クラスを定義する方法について説明します。このクラスを使用してオブジェクトを作成できます。 また、新しいクラスにプロパティとメソッドを追加する方法と、オブジェクトを初期化する方法についても説明します。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -32,24 +32,24 @@ ms.locfileid: "74346083"
   
 1. **[ファイル]** メニューの **[新しいプロジェクト]** をクリックして、プロジェクトを作成します。 **[新しいプロジェクト]** ダイアログ ボックスが表示されます。  
   
-2. Visual Basic プロジェクトテンプレートの一覧から [Windows アプリケーション] を選択して、新しいプロジェクトを表示します。  
+2. Visual Basic プロジェクト テンプレートの一覧から [Windows アプリケーション] を選択して、新しいプロジェクトを表示します。  
   
-3. **[プロジェクト]** メニューの **[クラスの追加]** をクリックして、新しいクラスをプロジェクトに追加します。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。  
+3. **[プロジェクト]** メニューの **[クラスの追加]** をクリックして、プロジェクトに新しいクラスを追加します。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。  
   
-4. **クラス**テンプレートを選択します。  
+4. **[クラス]** テンプレートを選択します。  
   
-5. 新しいクラスに `UserNameInfo.vb`という名前を指定し、 **[追加]** をクリックして新しいクラスのコードを表示します。  
+5. 新しいクラスに `UserNameInfo.vb` という名前を指定し、 **[追加]** をクリックして新しいクラスのコードを表示します。  
   
      [!code-vb[VbVbalrOOP#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#5)]
   
     > [!NOTE]
-    > Visual Basic**コードエディター**を使用して、`Class` キーワードに続けて新しいクラスの名前を入力することで、クラスをスタートアップフォームに追加できます。 **コードエディター**には、対応する `End Class` ステートメントが用意されています。  
+    > Visual Basic **コード エディター**を使用すると、`Class` キーワードに続けて新しいクラスの名前を入力することで、クラスをスタートアップ フォームに追加できます。 **コードエディター**には、対応する `End Class` ステートメントが用意されています。  
   
-6. `Class` と `End Class` ステートメントの間に次のコードを追加して、クラスのプライベートフィールドを定義します。  
+6. `Class` ステートメントと `End Class` ステートメントの間に次のコードを追加して、クラスのプライベート フィールドを定義します。  
   
      [!code-vb[VbVbalrOOP#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#7)]
   
-     フィールドを `Private` として宣言することは、クラス内でのみ使用できることを意味します。 より多くのアクセスを提供する `Public` などのアクセス修飾子を使用して、クラスの外部からフィールドを使用できるようにすることができます。 詳細については、「 [Visual Basic のアクセスレベル](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)」を参照してください。  
+     フィールドを `Private` として宣言すると、そのクラス内でのみ使用できます。 より多くのアクセスを提供する `Public` などのアクセス修飾子を使用すると、クラスの外部からフィールドを使用できるようにすることができます。 詳しくは、「[Visual Basic でのアクセス レベル](../declared-elements/access-levels.md)」を参照してください。  
   
 7. 次のコードを追加して、クラスのプロパティを定義します。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "74346083"
   
      [!code-vb[VbVbalrOOP#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#9)]
   
-9. `Sub New`という名前のプロシージャを追加して、新しいクラスのパラメーター化されたコンストラクターを定義します。  
+9. `Sub New` という名前のプロシージャを追加して、新しいクラスのパラメーター化されたコンストラクターを定義します。  
   
      [!code-vb[VbVbalrOOP#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#10)]
   
@@ -67,19 +67,19 @@ ms.locfileid: "74346083"
   
 ## <a name="to-create-a-button-to-test-the-class"></a>クラスをテストするボタンを作成するには
   
-1. **ソリューションエクスプローラー**で名前を右クリックし、 **[デザイナーの表示]** をクリックして、スタートアップフォームをデザインモードに変更します。 既定では、Windows アプリケーションプロジェクトのスタートアップフォームには、Form1.vb という名前が付けられています。 メインフォームが表示されます。  
+1. **ソリューション エクスプローラー**で名前を右クリックし、 **[ビュー デザイナー]** をクリックして、スタートアップ フォームをデザイン モードに変更します。 既定では、Windows アプリケーション プロジェクトのスタートアップ フォームには、Form1.vb という名前が付けられています。 メイン フォームが表示されます。  
   
-2. メインフォームにボタンを追加し、それをダブルクリックして、`Button1_Click` イベントハンドラーのコードを表示します。 次のコードを追加して、テストプロシージャを呼び出します。  
+2. メイン フォームにボタンを追加し、それをダブルクリックして、`Button1_Click` イベント ハンドラーのコードを表示します。 テスト プロシージャを呼び出す次のコードを追加します。  
   
      [!code-vb[VbVbalrOOP#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#12)]
   
 ## <a name="to-run-your-application"></a>アプリケーションを実行するには
   
-1. F5 キーを押してアプリケーションを実行します。 フォーム上のボタンをクリックして、テストプロシージャを呼び出します。 元の `UserName` が "真人, 村中" であることを示すメッセージが表示されます。これは、プロシージャがオブジェクトの `Capitalize` メソッドを呼び出したためです。  
+1. F5 キーを押してアプリケーションを実行します。 フォーム上のボタンをクリックして、テスト プロシージャを呼び出します。 元の `UserName` が "MOORE, BOBBY" であることを示すメッセージが表示されます。これは、プロシージャがオブジェクトの `Capitalize` メソッドを呼び出したためです。  
   
-2. **[OK]** をクリックしてメッセージ ボックスを閉じます。 `Button1 Click` プロシージャによって `UserName` プロパティの値が変更され、`UserName` の新しい値が "" という値であることを示すメッセージが表示されます。  
+2. **[OK]** をクリックしてメッセージ ボックスを閉じます。 `Button1 Click` プロシージャによって `UserName` プロパティの値が変更され、`UserName` の新しい値が "Worden, Joe" であることを示すメッセージが表示されます。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [オブジェクト指向プログラミング (Visual Basic)](../../concepts/object-oriented-programming.md)
-- [クラスとオブジェクト](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [クラスとオブジェクト](index.md)

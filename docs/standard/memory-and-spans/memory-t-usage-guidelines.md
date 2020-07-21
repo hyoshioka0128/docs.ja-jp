@@ -1,15 +1,16 @@
 ---
 title: Memory<T> と Span<T> の使用ガイドライン
+description: この記事では、Memory<T> および Span<T> について説明します。これらは、.NET Core の構造化データのバッファーであり、パイプラインで使用できます。
 ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: 0a614f628faa98be778c627573e4dddc462c9107
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d9a50fa18e027b6df7415438e1a5584003f7a094
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121962"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245597"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Memory\<T> と Span\<T> の使用ガイドライン
 
@@ -23,7 +24,7 @@ ms.locfileid: "73121962"
 
 - **所有権**。 バッファー インスタンスの所有者は、バッファーが使用されなくなったときにバッファーを破棄することを含め、有効期間の管理を担当します。 すべてのバッファーの所有者は 1 つです。 通常、所有者とは、バッファーを作成したコンポーネント、またはファクトリーからバッファーを受け取ったコンポーネントです。 所有権は譲渡することもできます。**コンポーネント A** はバッファーの制御を**コンポーネント B** に譲渡することができます。その時点で**コンポーネント A** はバッファーを使用できなくなり、**コンポーネント B** が、使用されなくなったバッファーの破棄を担当します。
 
-- **消費**。 バッファー インスタンスのコンシューマーは、読み取り、場合によっては書き込みでバッファー インスタンスを使用できます。 何らかの外部の同期メカニズムが提供されていない限り、バッファーは同時に持つことができるコンシューマーは 1 つです。 バッファーのアクティブなコンシューマーは必ずしもバッファーの所有者ではない点に注意してください。
+- **消費**。 バッファー インスタンスのコンシューマーは、読み取り、場合によっては書き込みでバッファー インスタンスを使用できます。 何らかの外部の同期メカニズムが提供されていない限り、バッファーは同時に持つことができるコンシューマーは 1 つです。 バッファーのアクティブなコンシューマーは必ずしもバッファーの所有者ではありません。
 
 - **リース**。 リースは、特定のコンポーネントがバッファーの消費者になることができる時間の長さです。
 
@@ -64,7 +65,7 @@ class Program
 
 メソッド呼び出しの開始からメソッドから返されるまでの間に、`WriteInt32ToBuffer` メソッドはバッファー上にリースを持ちます (消費することができます)。 同様に、`DisplayBufferToConsole` は実行中にバッファー上にリースを持ち、メソッドがアンワインドするとリースは解放されます (リース管理のための API はありません。"リース" は概念的なものです)。
 
-## <a name="memoryt-and-the-ownerconsumer-model"></a>Memory\<T> と所有者/コンシューマー モデル
+## <a name="memoryt-and-the-ownerconsumer-model"></a>Memory\<T> と所有者またはコンシューマー モデル
 
 「[所有者、コンシューマー、有効期間管理](#owners-consumers-and-lifetime-management)」セクションで説明したように、バッファーには常に所有者がいます。 .NET Core は 2 つの所有権モデルをサポートしています。
 
@@ -88,7 +89,7 @@ class Program
 
 `WriteInt32ToBuffer` メソッドはバッファーに値を書き込むことが意図されていますが、`DisplayBufferToConsole` メソッドではそうではありません。 これを反映するために、型 <xref:System.ReadOnlyMemory%601> の引数を受け入れておくことができます。 <xref:System.ReadOnlyMemory%601> の詳細については、「[規則 2:バッファーを読み取り専用にする場合は ReadOnlySpan\<T> または ReadOnlyMemory\<T> を使用する](#rule-2)」を参照してください。
 
-### <a name="ownerless-memoryt-instances"></a>"所有者なしの" Memory\<T> インスタンス
+### <a name="ownerless-memoryt-instances"></a>"所有者なし" の Memory\<T> インスタンス
 
 <xref:System.Buffers.IMemoryOwner%601> を使用せずに <xref:System.Memory%601> インスタンスを作成できます。 この場合、バッファーの所有権は明示的ではなく暗黙的であり、単一の所有者モデルのみがサポートされます。 これは次の方法で実行できます。
 
@@ -120,7 +121,7 @@ class Program
 
 完全に同期していても、<xref:System.Span%601> パラメーターではなく <xref:System.Memory%601> パラメーターの使用が必要な場合があります。 おそらく、利用している API は <xref:System.Memory%601> 引数のみを受け入れます。 これは問題ありませんが、<xref:System.Memory%601> を同期的に使用するときに伴うトレードオフに注意してください。
 
-<a name="rule-2" />
+<a name="rule-2"></a>
 
 **規則 2:バッファーを読み取り専用にする場合は ReadOnlySpan\<T> または ReadOnlyMemory\<T> を使用する。**
 
@@ -336,7 +337,7 @@ public unsafe Task<int> ManagedWrapperAsync(Memory<byte> data)
 private static void MyCompletedCallbackImplementation(IntPtr state, int result)
 {
     GCHandle handle = (GCHandle)state;
-    var actualState = (MyCompletedCallbackState)state;
+    var actualState = (MyCompletedCallbackState)(handle.Target);
     handle.Free();
     actualState.MemoryHandle.Dispose();
 

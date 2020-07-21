@@ -14,10 +14,10 @@ helpviewer_keywords:
 - reporting installation progress
 ms.assetid: 3f9d0533-f895-4897-b4ea-528284e0241d
 ms.openlocfilehash: caca946617c681ce6516b7184a9ea506cc67158d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73105074"
 ---
 # <a name="installutilexe-installer-tool"></a>Installutil.exe (インストーラー ツール)
@@ -46,8 +46,8 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
 
 |オプション|説明|
 |------------|-----------------|
-|`/h[elp]`<br /><br /> または<br /><br /> `/?`|このツールのコマンド構文とオプションを表示します。|
-|`/help` *assembly*<br /><br /> または<br /><br /> `/?` *assembly*|InstallUtil.exe のコマンド構文とオプションと共に、指定したアセンブリ内でそれぞれのインストーラーによって認識される追加オプションを表示します。 このオプションを指定すると、各インストーラー コンポーネントの <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> プロパティによって返されるテキストが InstallUtil.exe のヘルプ テキストに追加されます。|
+|`/h[elp]`<br /><br /> \- または -<br /><br /> `/?`|このツールのコマンド構文とオプションを表示します。|
+|`/help` *assembly*<br /><br /> \- または -<br /><br /> `/?` *assembly*|InstallUtil.exe のコマンド構文とオプションと共に、指定したアセンブリ内でそれぞれのインストーラーによって認識される追加オプションを表示します。 このオプションを指定すると、各インストーラー コンポーネントの <xref:System.Configuration.Install.Installer.HelpText%2A?displayProperty=nameWithType> プロパティによって返されるテキストが InstallUtil.exe のヘルプ テキストに追加されます。|
 |`/AssemblyName` "*assemblyName*<br /><br /> ,Version=*major.minor.build.revision*<br /><br /> ,Culture=*locale*<br /><br /> ,PublicKeyToken=*publicKeyToken*"|グローバル アセンブリ キャッシュに登録されている必要があるアセンブリの厳密な名前を指定します。 アセンブリ名は、バージョン、カルチャ、およびアセンブリの公開キー トークンによって完全修飾にする必要があります。 完全修飾名は、引用符で囲む必要があります。<br /><br /> たとえば、"myAssembly, Culture=neutral, PublicKeyToken=0038abc9deabfle5, Version=4.0.0.0" は、完全修飾のアセンブリ名です。|
 |`/InstallStateDir=[` *directoryName* `]`|アセンブリをアンインストールするために使用されるデータを格納する .InstallState ファイルのディレクトリを指定します。 既定のディレクトリは、アセンブリを格納しているディレクトリです。|
 |`/LogFile=`[*filename*]|インストールの進行状況を記録するログ ファイルの名前を指定します。 既定では、`/LogFile` オプションを省略した場合は、*assemblyname*.InstallLog という名前のログ ファイルが作成されます。 *filename* を省略した場合、ログ ファイルは生成されません。|
@@ -69,7 +69,7 @@ installutil [/u[ninstall]] [options] assembly [[options] assembly] ...
 > [!IMPORTANT]
 > インストーラーに渡されるパラメーターには機密情報または個人を特定できる情報が含まれる場合があり、既定ではプレーンテキスト ログ ファイルに書き込まれます。 この動作を回避するには、コマンド ラインで Installutil.exe の後に (*filename* 引数を指定せずに) `/LogFile=` を指定して、ログ ファイルが生成されないようにします。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 .NET Framework アプリケーションは、従来のプログラム ファイルと関連リソースで構成されます。関連リソースには、メッセージ キュー、イベント ログ、パフォーマンス カウンターなどがあり、アプリケーションを配置するときにこれらのリソースを作成する必要があります。 アセンブリのインストーラー コンポーネントを使用すると、アプリケーションのインストール時にこれらのリソースを作成したり、アプリケーションのアンインストール時に削除したりできます。 Installutil.exe は、これらのインストーラー コンポーネントを検出して実行します。
 

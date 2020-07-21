@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: 28d8faf2-490c-4e17-a447-df25a66f6679
 ms.openlocfilehash: 45a5b67edeea46a29e5c2fc3aea86d34fa4f5e7a
 ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/12/2019
 ms.locfileid: "67860069"
 ---
 # <a name="panel-how-to-topics"></a>パネルに関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.Panel>要素および関連する Api。  
+このセクションのトピックでは、<xref:System.Windows.Controls.Panel> 要素と関連する API の使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [カスタム パネル要素を作成する](how-to-create-a-custom-panel-element.md)  
@@ -23,7 +23,7 @@ ms.locfileid: "67860069"
  [要素の Height プロパティを設定する](how-to-set-the-height-properties-of-an-element.md)  
  [要素の Width プロパティを設定する](how-to-set-the-width-properties-of-an-element.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

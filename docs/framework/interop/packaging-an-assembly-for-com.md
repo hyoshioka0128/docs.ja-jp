@@ -1,5 +1,6 @@
 ---
 title: COM 向け .NET Framework アセンブリのパッケージ化
+description: .NET アセンブリを COM 向けに パッケージ化します。 COM アプリケーションで使用できる型の一覧、バージョン管理と配置の手順、およびタイプ ライブラリを収集します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - exposing .NET Framework components to COM
@@ -16,12 +17,11 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - Reqasm.exe
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
-ms.openlocfilehash: 6866da283cc7cdd180aada252007d67bd72cd862
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 4963892419fd1caec4483123f820d62967a87dd6
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124095"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620834"
 ---
 # <a name="packaging-a-net-framework-assembly-for-com"></a>COM 向け .NET Framework アセンブリのパッケージ化
 
@@ -59,7 +59,7 @@ COM 開発者がアプリケーションに組み込むときに役立つ、マ�
 
   どの機構を選択した場合でも、提供するアセンブリ内で定義されたパブリック型だけが、生成されるタイプ ライブラリに含まれます。
 
-手順については、「[How to: Embed Type Libraries as Win32 Resources in .NET-Based Applications](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))」(方法: タイプ ライブラリを Win32 リソースとして .NET ベースのアプリケーションに埋め込む) を参照してください。
+手順については、「[方法:タイプ ライブラリを Win32 リソースとして .NET ベースのアプリケーションに埋め込む](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))」を参照してください。
 
 <a name="cpconpackagingassemblyforcomanchor1"></a>
 

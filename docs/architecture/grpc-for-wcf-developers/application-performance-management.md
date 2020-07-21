@@ -2,12 +2,12 @@
 title: アプリケーションパフォーマンス管理-WCF 開発者向け gRPC
 description: ASP.NET Core gRPC アプリケーションのログ記録、メトリック、トレース。
 ms.date: 09/02/2019
-ms.openlocfilehash: e8ec701af69e8ced674183ce0afa25547713c647
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 98da6c5391f021011e281a57e8f775709fa128ef
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711558"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740974"
 ---
 # <a name="application-performance-management"></a>アプリケーション パフォーマンス管理
 
@@ -51,7 +51,7 @@ public class StockData : Stocks.StocksBase
 
 ## <a name="metrics-in-aspnet-core-grpc"></a>ASP.NET Core gRPC のメトリック
 
-.NET Core ランタイムには、メトリックを生成および監視するための一連のコンポーネントが用意されています。 これには、<xref:System.Diagnostics.Tracing.EventSource> や <xref:System.Diagnostics.Tracing.EventCounter> クラスなどの Api が含まれます。 これらの Api は、 [dotnet グローバルツール](../../core/diagnostics/dotnet-counters.md)や Windows イベントトレーシングなど、外部プロセスで使用できる基本的な数値データを生成できます。 独自のコードで `EventCounter` を使用する方法の詳細については、「 [Eventcounter の概要](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md)」を参照してください。
+.NET Core ランタイムには、メトリックを生成および監視するための一連のコンポーネントが用意されています。 これには、<xref:System.Diagnostics.Tracing.EventSource> や <xref:System.Diagnostics.Tracing.EventCounter> クラスなどの Api が含まれます。 これらの Api は、 [dotnet グローバルツール](../../core/diagnostics/dotnet-counters.md)や Windows イベントトレーシングなど、外部プロセスで使用できる基本的な数値データを生成できます。 独自のコードで `EventCounter` を使用する方法の詳細については、「 [Eventcounter の概要](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md)」を参照してください。
 
 より高度なメトリックのほか、広範なデータストアにメトリックデータを書き込む場合は、[アプリメトリック](https://www.app-metrics.io)と呼ばれるオープンソースプロジェクトを試すことができます。 この一連のライブラリには、コードをインストルメント化するための広範な種類のセットが用意されています。 また、Prometheus、InfluxDB、 [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview)などの時系列データベースを含むさまざまな種類のターゲットにメトリックを書き込むパッケージも提供します。 [AspNetCore](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) NuGet パッケージでは、ASP.NET Core framework との統合によって自動的に生成される、基本的なメトリックの包括的なセットも追加されます。 プロジェクトの web サイトには、 [Grafana](https://grafana.com/) visualization platform でこれらのメトリックを表示するための[テンプレート](https://www.app-metrics.io/samples/grafana/)が用意されています。
 
@@ -120,7 +120,7 @@ public class StockData : Stocks.StocksBase
 
 ### <a name="distributed-tracing-with-diagnosticsource"></a>`DiagnosticSource` を使用した分散トレース
 
-.NET Core には、分散トレースおよびスパン ( [DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide)) に適切にマップされる内部モジュールがあります。 また、プロセス内で診断を生成して使用する簡単な方法が用意されているだけでなく、`DiagnosticSource` モジュールには*アクティビティ*の概念があります。 アクティビティは、実質的には、分散トレースまたはトレース内のスパンの実装です。 モジュールの内部では、識別子の割り当てなど、親/子アクティビティが処理されます。 `Activity` の種類の使用方法の詳細については、 [GitHub のアクティビティユーザーガイド](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide)を参照してください。
+.NET Core には、分散トレースおよびスパン ( [DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide)) に適切にマップされる内部モジュールがあります。 また、プロセス内で診断を生成して使用する簡単な方法が用意されているだけでなく、`DiagnosticSource` モジュールには*アクティビティ*の概念があります。 アクティビティは、実質的には、分散トレースまたはトレース内のスパンの実装です。 モジュールの内部では、識別子の割り当てなど、親/子アクティビティが処理されます。 `Activity` の種類の使用方法の詳細については、 [GitHub のアクティビティユーザーガイド](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide)を参照してください。
 
 `DiagnosticSource` はコアフレームワークの一部であるため、いくつかのコアコンポーネントでサポートされています。 これには、gRPC フレームワークでの明示的なサポートを含む、<xref:System.Net.Http.HttpClient>、Entity Framework Core、ASP.NET Core が含まれます。 ASP.NET Core が要求を受信すると、 [W3C トレースコンテキスト](https://www.w3.org/TR/trace-context)標準に一致する HTTP ヘッダーのペアが確認されます。 ヘッダーが見つかった場合は、ヘッダーの id 値とコンテキストを使用してアクティビティが開始されます。 ヘッダーが見つからない場合は、標準形式に一致する生成された id 値を使用してアクティビティが開始されます。 このアクティビティの有効期間中に、フレームワークまたはアプリケーションコードによって生成される診断には、トレース id とスパン識別子をタグ付けできます。 `HttpClient` サポートは、すべての要求の現在のアクティビティを確認し、トレースヘッダーを送信要求に自動的に追加することで、これをさらに拡張します。
 
@@ -131,7 +131,7 @@ ASP.NET Core gRPC クライアントおよびサーバーライブラリには�
 
 ### <a name="add-your-own-diagnosticsource-and-activity"></a>独自の `DiagnosticSource` と `Activity` を追加する
 
-独自の診断を追加したり、アプリケーションコード内に明示的な範囲を作成したりするには、『 [DiagnosticSource User guide](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#instrumenting-with-diagnosticsourcediagnosticlistener) And [Activity user guide 』](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-usage)を参照してください。
+独自の診断を追加したり、アプリケーションコード内に明示的な範囲を作成したりするには、『 [DiagnosticSource User guide](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#instrumenting-with-diagnosticsourcediagnosticlistener) And [Activity user guide 』](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-usage)を参照してください。
 
 ### <a name="store-distributed-trace-data"></a>分散トレースデータを格納する
 

@@ -5,10 +5,10 @@ ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
 ms.openlocfilehash: 312a320676be6eb453697e0704ab771a6707618b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73973509"
 ---
 # <a name="managed-assembly-loading-algorithm"></a>マネージド アセンブリの読み込みアルゴリズム
@@ -43,7 +43,7 @@ ms.locfileid: "73973509"
 1. `active` <xref:System.Runtime.Loader.AssemblyLoadContext> を決定します。
 
     - 静的アセンブリ参照の場合、`active` <xref:System.Runtime.Loader.AssemblyLoadContext> は、参照元のアセンブリを読み込んだインスタンスです。
-    - 優先 API の場合、`active` <xref:System.Runtime.Loader.AssemblyLoadContext> は明示されます。
+    - 優先 API の場合、`active`<xref:System.Runtime.Loader.AssemblyLoadContext> は明示されます。
     - その他の API の場合、`active` <xref:System.Runtime.Loader.AssemblyLoadContext> は推論されます。 これらの API では、<xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext?displayProperty=nameWithType> プロパティが使用されます。 その値が `null` 場合、推論される <xref:System.Runtime.Loader.AssemblyLoadContext> インスタンスが使用されます。
     - 上記の表を参照してください。
 
@@ -58,7 +58,7 @@ ms.locfileid: "73973509"
 
     - <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> イベントを発生させます。
 
-3. その他の種類の読み込みでは、`active` <xref:System.Runtime.Loader.AssemblyLoadContext> がアセンブリを読み込みます。 優先順位は次のとおりです。
+3. その他の種類の読み込みでは、`active` <xref:System.Runtime.Loader.AssemblyLoadContext> によってアセンブリが読み込まれます。 優先順位は次のとおりです。
     - `cache-by-name` を検査します。
 
     - 指定されたパスまたは未加工のアセンブリ オブジェクトから読み込みます。

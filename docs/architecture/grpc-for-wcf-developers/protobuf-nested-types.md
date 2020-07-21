@@ -2,16 +2,16 @@
 title: Protobuf 入れ子になった型-gRPC (WCF 開発者向け)
 description: Protobuf と gRPC での入れ子になったメッセージの種類、およびでC#の生成方法について説明します。
 ms.date: 09/09/2019
-ms.openlocfilehash: bbc7ed41516d29f867bbc9da5b258f6a3c9ff261
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7b9a331336ebe1ca7bc75fdd164b7b88ae4f9db2
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967398"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77542847"
 ---
 # <a name="protobuf-nested-types"></a>Protobuf 入れ子型
 
-とC#同様に、Protobuf を使用すると、他のクラス内のクラスを宣言できます。これにより、メッセージ定義を他のメッセージ内に入れ子にすることができます。 次の例は、入れ子になったメッセージ型を作成する方法を示しています。
+と同様C#に、他のクラス内でクラスを宣言できるのと同じように、プロトコルバッファー (Protobuf) を使用すると、メッセージ定義を他のメッセージ内に入れ子にすることができます。 次の例は、入れ子になったメッセージ型を作成する方法を示しています。
 
 ```protobuf
 message Outer {

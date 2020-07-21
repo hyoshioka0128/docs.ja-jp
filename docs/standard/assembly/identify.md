@@ -1,16 +1,17 @@
 ---
 title: '方法: ファイルがアセンブリであるかどうかを確認する'
+description: この記事では、ファイルが .NET アセンブリであるかどうかを手動およびプログラムによって確認する方法について説明します。
 ms.date: 08/19/2019
 ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: f9bff86ac559e40136ed016b862eef8ba0863ce3
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: fb1bcfa50ec380f10ab67cc47331f91dc3e4b32d
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972691"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380140"
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly"></a>方法: ファイルがアセンブリであるかどうかを確認する
 
@@ -88,7 +89,7 @@ End Module
 ' Output (with .NET Framework 3.5 installed):  
 '        Yes, the file is an Assembly.  
 ```
- 
+
 <xref:System.Reflection.AssemblyName.GetAssemblyName%2A> メソッドはテスト ファイルを読み込み、情報が読み取られた時点で解放します。  
   
 ## <a name="see-also"></a>関連項目

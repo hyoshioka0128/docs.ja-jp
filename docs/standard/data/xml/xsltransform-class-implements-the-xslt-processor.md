@@ -6,19 +6,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 88373fe2-4a6b-44f9-8a62-8a3e348e3a46
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8cc3eb3e3f147d8ed15587946af743c96739a9b1
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
-ms.translationtype: MT
+ms.openlocfilehash: eec5d6588d907e2d12b588ab3bfe743d6d1eaff9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956865"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84281610"
 ---
 # <a name="xsltransform-class-implements-the-xslt-processor"></a>XslTransform クラスによる XSLT プロセッサの実装
 
 > [!NOTE]
-> .NET Framework 2.0 では <xref:System.Xml.Xsl.XslTransform> クラスが廃止されています。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。 詳しくは、「[XslCompiledTransform クラスの使用](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)」および「[XslTransform クラスからの移行](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)」をご覧ください。
+> .NET Framework 2.0 では <xref:System.Xml.Xsl.XslTransform> クラスが廃止されています。 <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用して XSLT (Extensible Stylesheet Language for Transformations) 変換を実行できます。 詳しくは、「[XslCompiledTransform クラスの使用](using-the-xslcompiledtransform-class.md)」および「[XslTransform クラスからの移行](migrating-from-the-xsltransform-class.md)」をご覧ください。
 
 <xref:System.Xml.Xsl.XslTransform> クラスは、『XSL Transformations (XSLT) Version 1.0』勧告を実装する XSLT プロセッサです。 <xref:System.Xml.Xsl.XslTransform.Load%2A> メソッドはスタイル シートを検索して読み込み、<xref:System.Xml.Xsl.XslTransform.Transform%2A> メソッドは渡されたソース ドキュメントを変換します。 <xref:System.Xml.XPath.IXPathNavigable> インターフェイスを実装している任意のストアを <xref:System.Xml.Xsl.XslTransform> のソース ドキュメントとして使用できます。 .NET Framework では、現在、<xref:System.Xml.XPath.IXPathNavigable> インターフェイスを <xref:System.Xml.XmlDocument>、<xref:System.Xml.XmlDataDocument>、および <xref:System.Xml.XPath.XPathDocument> に実装しているので、これらすべてを変換用の入力ソース ドキュメントとして使用できます。
 
@@ -78,9 +76,9 @@ URL パラメーターが含まれた <xref:System.Xml.Xsl.XslTransform.Load%2A>
 
 URI も証拠も指定されていない場合は、スタイル シートに対して設定されている証拠が完全に信頼されます。 信頼されていないソースからスタイル シートを読み込んだり、信頼されていない拡張オブジェクトを <xref:System.Xml.Xsl.XsltArgumentList> に追加したりしないでください。
 
-セキュリティ レベルと証拠、それがスクリプトに及ぼす影響の詳細については、「[\<msxsl:script> を使用する XSLT スタイルシート スクリプト](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)」 を参照してください。 セキュリティ レベルと証拠、それが拡張オブジェクトに与える影響の詳細については、「[スタイル シート パラメーターと拡張オブジェクト用の XsltArgumentList](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)」を参照してください。
+セキュリティ レベルと証拠、それがスクリプトに及ぼす影響の詳細については、「[\<msxsl:script> を使用した XSLT スタイルシートのスクリプト](xslt-stylesheet-scripting-using-msxsl-script.md)」を参照してください。 セキュリティ レベルと証拠、それが拡張オブジェクトに与える影響の詳細については、「[スタイル シート パラメーターと拡張オブジェクト用の XsltArgumentList](xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)」を参照してください。
 
-セキュリティ レベルと証拠、それが `document()` 関数に及ぼす影響については、「[外部の XSLT スタイル シートとドキュメントの解決](../../../../docs/standard/data/xml/resolving-external-xslt-style-sheets-and-documents.md)」を参照してください。
+セキュリティ レベルと証拠、それが `document()` 関数に及ぼす影響については、「[外部の XSLT スタイル シートとドキュメントの解決](resolving-external-xslt-style-sheets-and-documents.md)」を参照してください。
 
 スタイル シートに対しては、多くの入力パラメーターを指定できます。 スタイル シートでは、拡張オブジェクトの関数を呼び出すこともできます。 パラメーターおよび拡張オブジェクトのいずれも <xref:System.Xml.Xsl.XsltArgumentList> クラスを使用してスタイル シートに渡されます。 <xref:System.Xml.Xsl.XsltArgumentList> の詳細については、「<xref:System.Xml.Xsl.XsltArgumentList>」を参照してください。
 
@@ -180,7 +178,7 @@ Console.WriteLine("Passing " + tmpDoc.OuterXml + " to print_root.xsl");
 xslt.Transform(tmpDoc, null, Console.Out, null);
 ```
 
-この例では、入力としてライブラリ .xml と print_root ファイルを使用し、次の情報をコンソールに出力します。
+この例では、library.xml ファイルと print_root.xsl ファイルを入力として使用し、次の出力をコンソールに表示します。
 
 ```console
 Passing <book genre="novel" ISBN="1-861001-57-5"><title>Pride And Prejudice</title></book> to print_root.xsl
@@ -240,9 +238,9 @@ print_root.xsl
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Xml.Xsl.XslTransform>
-- [XslTransform クラスを使用した XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
-- [変換における XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)
-- [変換における XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)
-- [XslTransform への XPathDocument の入力](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)
-- [XslTransform への XmlDataDocument の入力](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)
-- [XslTransform への XmlDocument の入力](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)
+- [XslTransform クラスを使用した XSLT 変換](xslt-transformations-with-the-xsltransform-class.md)
+- [変換における XPathNavigator](xpathnavigator-in-transformations.md)
+- [変換における XPathNodeIterator](xpathnodeiterator-in-transformations.md)
+- [XslTransform への XPathDocument の入力](xpathdocument-input-to-xsltransform.md)
+- [XslTransform への XmlDataDocument の入力](xmldatadocument-input-to-xsltransform.md)
+- [XslTransform への XmlDocument の入力](xmldocument-input-to-xsltransform.md)

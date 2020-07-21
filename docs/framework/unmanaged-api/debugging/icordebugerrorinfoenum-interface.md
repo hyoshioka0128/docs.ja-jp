@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a5ff40b0-d04e-40d5-a007-cc6ee7c3a9ae
 topic_type:
 - apiref
-ms.openlocfilehash: de292b4631e1bcf9f0d31e2e2acaa5fdff96f4f8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8c5e00f7d6ebaba8ec680febf447775f3d045a64
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124227"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793505"
 ---
 # <a name="icordebugerrorinfoenum-interface"></a>ICorDebugErrorInfoEnum インターフェイス
 
@@ -27,4 +27,4 @@ ms.locfileid: "73124227"
   
 ## <a name="see-also"></a>関連項目
 
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [デバッグ インターフェイス](debugging-interfaces.md)

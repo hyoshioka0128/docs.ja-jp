@@ -1,21 +1,17 @@
 ---
 title: dotnet build-server コマンド
 description: dotnet build-server コマンドは、ビルドによって起動されたサーバーとやり取りします。
-ms.date: 04/24/2019
-ms.openlocfilehash: 1c6c6dcdb53d779426daf5daa470d2ad0470a7a1
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.date: 02/14/2020
+ms.openlocfilehash: 882b697c07aac0e20266f3ad4e6c11888a0b7acc
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523017"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463722"
 ---
 # <a name="dotnet-build-server"></a>dotnet build-server
 
-**この記事の対象: ✓** .NET Core 2.1 SDK 以降のバージョン
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-21plus](../../../includes/topic-appliesto-net-core-21plus.md)]
--->
+**この記事の対象:** ✔️ .NET Core 2.1 SDK 以降のバージョン
 
 ## <a name="name"></a>name
 
@@ -25,8 +21,10 @@ ms.locfileid: "72523017"
 
 ```dotnetcli
 dotnet build-server shutdown [--msbuild] [--razor] [--vbcscompiler]
-dotnet build-server shutdown [-h|--help]
-dotnet build-server [-h|--help]
+
+dotnet build-server shutdown -h|--help
+
+dotnet build-server -h|--help
 ```
 
 ## <a name="commands"></a>コマンド

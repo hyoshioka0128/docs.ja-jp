@@ -1,18 +1,17 @@
 ---
 title: Office プログラミングで名前付き引数と省略可能な引数を使用する方法 - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - named and optional arguments [C#], Office programming
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: d7efd13f26912f8cd944bcbc5568e9bbca92c3a0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 36b5c8b49404606c8240d24953c3677d5612d30e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970492"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75714871"
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Office プログラミングで名前付き引数と省略可能な引数を使用する方法 (C# プログラミング ガイド)
 
@@ -32,9 +31,9 @@ C# 4 で導入された名前付き引数と省略可能な引数を使うと、
 
 3. **[Templates Categories (テンプレート カテゴリ)]** ウィンドウで、 **[Visual C#]** を展開し、 **[Windows]** をクリックします。
 
-4. **[テンプレート]** ウィンドウの上部で、 **[ターゲット フレームワーク]** ボックスに **[.NET Framework 4]** が表示されていることを確認します。
+4. **[テンプレート]** ウィンドウの上部で、**[ターゲット フレームワーク]** ボックスに **[.NET Framework 4]** が表示されていることを確認します。
 
-5. **[テンプレート]** ウィンドウで **[コンソール アプリケーション]** をクリックします。
+5. **[テンプレート]** ペインの **[コンソール アプリケーション]** をクリックします。
 
 6. **[名前]** フィールドに、プロジェクトの名前を入力します。
 
@@ -74,7 +73,7 @@ C# 4 で導入された名前付き引数と省略可能な引数を使うと、
 
      [!code-csharp[csProgGuideNamedAndOptional#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#8)]
 
-2. <kbd>CTRL</kbd> + <kbd>F5</kbd> を押してプロジェクトを実行します。 指定したテキストを含む Word 文書が表示されます。
+2. <kbd>CTRL</kbd>+<kbd>F5</kbd> を押してプロジェクトを実行します。 指定したテキストを含む Word 文書が表示されます。
 
 ## <a name="to-change-the-text-to-a-table"></a>テキストをテーブルに変更するには
   
@@ -90,15 +89,15 @@ C# 4 で導入された名前付き引数と省略可能な引数を使うと、
   
      [!code-csharp[csProgGuideNamedAndOptional#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#14)]
 
-2. <kbd>CTRL</kbd> + <kbd>F5</kbd> を押してプロジェクトを実行します。
+2. <kbd>CTRL</kbd>+<kbd>F5</kbd> を押してプロジェクトを実行します。
 
 ## <a name="to-experiment-with-other-parameters"></a>他のパラメーターを調べるには
 
-1. テーブルを 1 列 3 行に変更するには、`DisplayInWord` の最後の行を次のステートメントに置き換えてから、<kbd>CTRL</kbd> + <kbd>F5</kbd> キーを押します。  
+1. テーブルを 1 列 3 行に変更するには、`DisplayInWord` の最後の行を次のステートメントに置き換えてから、<kbd>CTRL</kbd>+<kbd>F5</kbd> キーを押します。  
 
      [!code-csharp[csProgGuideNamedAndOptional#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#10)]
 
-2. テーブルに対して定義済みの書式を指定するには、`DisplayInWord` の最後の行を次のステートメントに置き換えてから、<kbd>CTRL</kbd> + <kbd>F5</kbd> キーを押します。 書式には、[WdTableFormat](<xref:Microsoft.Office.Interop.Word.WdTableFormat>) 定数のどれでも指定できます。
+2. テーブルに対して定義済みの書式を指定するには、`DisplayInWord` の最後の行を次のステートメントに置き換えてから、<kbd>CTRL</kbd>+<kbd>F5</kbd> キーを押します。 書式には、[WdTableFormat](<xref:Microsoft.Office.Interop.Word.WdTableFormat>) 定数のどれでも指定できます。
 
      [!code-csharp[csProgGuideNamedAndOptional#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#11)]
 
@@ -108,6 +107,6 @@ C# 4 で導入された名前付き引数と省略可能な引数を使うと、
 
  [!code-csharp[csProgGuideNamedAndOptional#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#12)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [名前付き引数と省略可能な引数](./named-and-optional-arguments.md)

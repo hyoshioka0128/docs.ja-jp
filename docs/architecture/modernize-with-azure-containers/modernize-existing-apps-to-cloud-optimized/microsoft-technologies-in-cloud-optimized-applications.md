@@ -2,12 +2,12 @@
 title: クラウド向けに最適化されたアプリケーションにおけるマイクロソフト テクノロジ
 description: Azure Cloud および Windows コンテナーを使用して既存の .NET アプリケーションを最新化する | クラウド向けに最適化されたアプリケーションの Microsoft テクノロジ
 ms.date: 04/28/2018
-ms.openlocfilehash: 915aa99d2331c5b9c46eabef3335fb809baa9370
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: c5222ba13258f9c8a40ca3b9ce240aeb9f41da63
+ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "69578225"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79546511"
 ---
 # <a name="microsoft-technologies-in-cloud-optimized-applications"></a>クラウド向けに最適化されたアプリケーションにおける Microsoft テクノロジ
 
@@ -19,7 +19,7 @@ ms.locfileid: "69578225"
 
 - **マネージド クラウド**:マネージド クラウドを選択すると、基礎インフラストラクチャ、VM、OS パッチ、ネットワーク設定の管理やサポートのための費用と複雑な作業がなくなります。 IaaS を使用して移行することを選択した場合、こうした作業をすべて行わなければならず、関連費用も発生します。 マネージド クラウド オプションでは、自分で開発したアプリケーションとサービスのみを管理します。 クラウド サービス プロバイダーは通常、他のすべてを管理します。 Azure のマネージド クラウド サービスの例には、[Azure SQL Database](https://azure.microsoft.com/services/sql-database)、[Azure Redis Cache](https://azure.microsoft.com/services/cache/)、[Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)、[Azure Storage](https://azure.microsoft.com/services/storage/)、[Azure Database for MySQL](https://azure.microsoft.com/services/mysql/)、[Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/)、[Azure Active Directory](https://azure.microsoft.com/services/active-directory/) に加え、[VM スケール セット](https://azure.microsoft.com/services/virtual-machine-scale-sets/)、[Azure App Service](https://azure.microsoft.com/services/app-service/)、[Azure Kubernetes Service](https://azure.microsoft.com/services/container-service/) などのマネージド コンピューティング サービスがあります。
 
-- **アプリケーション開発**:コンテナーで実行されるアプリケーションを構築するとき、さまざまな言語から選択できます。 このガイドでは [.NET](https://www.microsoft.com/net) に焦点を当てていますが、Node.js、Python、Spring/Java、Go など、他の言語を使用してコンテナーベースのアプリを開発できます。
+- **アプリケーション開発**:コンテナーで実行されるアプリケーションを構築するとき、さまざまな言語から選択できます。 このガイドでは [.NET](https://dotnet.microsoft.com) に焦点を当てていますが、Node.js、Python、Spring/Java、Go など、他の言語を使用してコンテナーベースのアプリを開発できます。
 
 - **監視、テレメトリ、ログ、監査**:クラウドで実行されているアプリケーションとコンテナーを監視し、監査する機能は、クラウド最適化アプリケーションにとって非常に重要です。 [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) と [Microsoft Operations Management Suite](https://www.microsoft.com/cloud-platform/operations-management-suite) は、クラウド最適化アプリの監視/監査機能を提供する Microsoft のメイン ツールです。
 

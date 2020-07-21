@@ -21,16 +21,16 @@ helpviewer_keywords:
 - discovering type information at run time
 - type system, reflection
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
-ms.openlocfilehash: 1768acd65b738af068cf98a8b8340c3179e9b885
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 90d9cf4c473d73d1eeeb5f2a1098f8626c20359f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130059"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180475"
 ---
 # <a name="reflection-in-net"></a>.NET のリフレクション
 
-<xref:System.Reflection> 名前空間のクラスを <xref:System.Type?displayProperty=nameWithType> と共に使用すると、読み込まれた[アセンブリ](../../standard/assembly/index.md)についての情報、およびそのアセンブリ内に定義されている[クラス](../../standard/base-types/common-type-system.md#classes)、[インターフェイス](../../standard/base-types/common-type-system.md#interfaces)、[値型](../../csharp/language-reference/keywords/value-types.md)などの型を取得できます。 また、リフレクションを使用すると、実行時に型インスタンスを作成したり、作成した型インスタンスを呼び出したり、アクセスしたりできます。 リフレクションのさまざまな面に関するトピックについては、この概要の最後の「[関連トピック](#related_topics)」を参照してください。
+<xref:System.Reflection> 名前空間内のクラスを <xref:System.Type?displayProperty=nameWithType> と共に使用すると、読み込まれた[アセンブリ](../../standard/assembly/index.md)についての情報、およびそのアセンブリ内に定義されている[クラス](../../standard/base-types/common-type-system.md#classes)、[インターフェイス](../../standard/base-types/common-type-system.md#interfaces)、値型 (つまり、[構造体](../../standard/base-types/common-type-system.md#structures)と[列挙](../../standard/base-types/common-type-system.md#enumerations)) などの型を取得できます。 また、リフレクションを使用すると、実行時に型インスタンスを作成したり、作成した型インスタンスを呼び出したり、アクセスしたりできます。 リフレクションのさまざまな面に関するトピックについては、この概要の最後の「[関連トピック](#related_topics)」を参照してください。
   
 [共通言語ランタイム](../../standard/clr.md) ローダーは、[アプリケーション ドメイン](../app-domains/application-domains.md)を管理します。アプリケーション ドメインは、同じアプリケーション スコープのオブジェクトの周りに定義された境界を構成します。 アプリケーション ドメインの管理には、該当アプリケーション ドメインへの各アセンブリの読み込み、および各アセンブリ内の型階層のメモリ レイアウトの制御などが含まれます。  
   
@@ -67,7 +67,7 @@ ms.locfileid: "73130059"
   
 これらのランタイム クラスは `internal` (Visual Basic では `Friend`) です。 それらは基本クラスと別のドキュメントでは説明していません。それらの動作は基本クラスのドキュメントで説明されています。  
   
-<a name="related_topics"></a>   
+<a name="related_topics"></a>
 
 ## <a name="related-topics"></a>関連トピック  
   
@@ -77,13 +77,13 @@ ms.locfileid: "73130059"
 |[リフレクションとジェネリック型](reflection-and-generic-types.md)|ジェネリック型およびジェネリック メソッドの型パラメーターと型引数がリフレクションでどのように処理されるかについて説明します。|  
 |[リフレクションに関するセキュリティ上の考慮事項](security-considerations-for-reflection.md)|型情報を探索し、型にアクセスするためにどの程度までリフレクションを使用できるかを決定する規則を説明します。|  
 |[型の動的な読み込みおよび使用](dynamically-loading-and-using-types.md)|遅延バインディングをサポートするリフレクション カスタム バインド インターフェイスについて説明します。|  
-|[方法: リフレクションのみのコンテキストにアセンブリを読み込む](how-to-load-assemblies-into-the-reflection-only-context.md)|リフレクションのみの読み込みのコンテキストについて説明します。 アセンブリを読み込む方法、そのコンテキストをテストする方法、およびリフレクションのみのコンテキストでアセンブリに適用されている属性を調べる方法を紹介します。|  
+|[方法:  リフレクションのみのコンテキストにアセンブリを読み込む](how-to-load-assemblies-into-the-reflection-only-context.md)」を参照してください。|リフレクションのみの読み込みのコンテキストについて説明します。 アセンブリを読み込む方法、そのコンテキストをテストする方法、およびリフレクションのみのコンテキストでアセンブリに適用されている属性を調べる方法を紹介します。|  
 |[カスタム属性へのアクセス](accessing-custom-attributes.md)|リフレクションを使用して、属性の有無および属性値を照会する方法を説明します。|  
 |[完全修飾型名の指定](specifying-fully-qualified-type-names.md)|Backus-Naur form (BNF) に基づく完全修飾型名の書式と、特殊文字、アセンブリ名、ポインター、参照、および配列を指定する際に必要な構文を説明します。|  
-|[方法 : リフレクションを使用してデリゲートをフックする](how-to-hook-up-a-delegate-using-reflection.md)|メソッドのデリゲートを作成し、デリゲートをイベントにフックする方法について説明します。 また、<xref:System.Reflection.Emit.DynamicMethod> を使用して実行時にイベント処理メソッドを作成する方法について説明します。|  
+|[方法: リフレクションを使用してデリゲートをフックする](how-to-hook-up-a-delegate-using-reflection.md)|メソッドのデリゲートを作成し、デリゲートをイベントにフックする方法について説明します。 また、<xref:System.Reflection.Emit.DynamicMethod> を使用して実行時にイベント処理メソッドを作成する方法について説明します。|  
 |[動的メソッドおよびアセンブリの出力](emitting-dynamic-methods-and-assemblies.md)|動的アセンブリや動的メソッドを生成する方法について説明します。|  
   
-## <a name="reference"></a>辞書／辞典／その他  
+## <a name="reference"></a>関連項目  
 
 <xref:System.Type?displayProperty=nameWithType>  
   

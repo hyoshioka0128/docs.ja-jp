@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3a59d31c-0ec5-4de6-a2a9-558531c8116e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0bcd45a97ab0f0b0ac462d50c18fb68f9d7bd386
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d38aea1a54c93b00ec14c6aac7ed11ceba288f7b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590024"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291501"
 ---
 # <a name="resolving-external-resources-during-xslt-processing"></a>XSLT 処理中の外部リソースの解決
 XSLT 変換中には、外部リソースの解決が必要になる場合があります。  
@@ -48,4 +46,4 @@ XSLT 変換中には、外部リソースの解決が必要になる場合があ
 
 - <xref:System.Xml.Xsl.XslCompiledTransform>
 - <xref:System.Xml.Xsl.XsltSettings>
-- [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)
+- [XSLT 変換](xslt-transformations.md)

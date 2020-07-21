@@ -1,22 +1,21 @@
 ---
 title: .NET Framework の開発ガイド
+description: .Net 開発ガイドを確認します。このガイドでは、.NET アプリの作成、構成、デバッグ、保護、および配置を行う方法について説明しています。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-ms.openlocfilehash: abc392116aec8ffd8aa94f46ef97887c48516ca0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 6e0051e3181e03070436b8d53d30326e8d71d096
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122464"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622576"
 ---
 # <a name="net-framework-development-guide"></a>.NET Framework の開発ガイド
+
 ここでは、.NET Framework アプリの作成、構成、デバッグ、保護、および配置を行う方法について説明します。 また、動的プログラミング、相互運用性、拡張性、メモリ管理、スレッド処理などの技術領域に関する情報も提供します。  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [アプリケーションの基本事項](../standard/application-essentials.md)  
- アプリ ドメインとアセンブリを利用したプログラミング、属性の使用、基本型の書式指定と解析、コレクションの使用、イベントおよび例外の処理、ファイルおよびデータ ストリームの使用、ジェネリックの使用など、基本的なアプリ開発タスクについて説明します。  
+## <a name="in-this-section"></a>このセクションの内容
   
  [データとモデリング](./data/index.md)  
  ADO.NET、統合言語クエリ (LINQ: Language-Integrated Query)、WCF Data Services、および XML を使用してデータにアクセスする方法について説明します。  
@@ -30,8 +29,7 @@ ms.locfileid: "73122464"
  [WCF を使用したサービス指向アプリケーション](./wcf/index.md)  
  Windows Communication Foundation (WCF) を使用して、安全で信頼できるサービス指向のアプリを構築する方法について説明します。  
   
- [Windows Workflow Foundation でワークフローを構築する](windows-workflow-foundation/index.md)     
- Windows Workflow Foundation (WF) を使用するためのプログラミング モデル、サンプル、およびツールについて説明します。  
+ [Windows Workflow Foundation でワークフローを構築する](windows-workflow-foundation/index.md) Windows Workflow Foundation (WF) を使用するためのプログラミング モデル、サンプル、およびツールについて説明します。  
 
  [Windows サービス アプリケーション](./windows-services/index.md)  
  Visual Studio および .NET Framework を使用して、サービスとしてインストールされるアプリを作成し、その動作を開始、停止、制御する方法について説明します。  
@@ -42,8 +40,7 @@ ms.locfileid: "73122464"
  [.NET Framework のネットワーク プログラミング](./network-programming/index.md)  
  アプリにすばやく簡単に統合できる、複数層の拡張可能なインターネット サービスのマネージド実装について説明します。  
   
- [.NET Framework アプリの構成](configure-apps/index.md)    
- 構成ファイルを使用して、.NET Framework アプリを再コンパイルすることなく設定を変更する方法を説明します。  
+ [.NET Framework アプリの構成](configure-apps/index.md) 構成ファイルを使用して、.NET Framework アプリを再コンパイルすることなく設定を変更する方法を説明します。  
   
  [.NET ネイティブによるアプリのコンパイル](./net-native/index.md)  
  .NET Native プリコンパイル テクノロジを使用して、Windows ストア アプリをビルドおよび配置する方法について説明します。 .NET Native は、マネージド コード (C#) で記述され、.NET Framework を対象とするアプリをネイティブ コードにコンパイルします。  
@@ -62,7 +59,7 @@ ms.locfileid: "73122464"
   
  [パフォーマンス](./performance/index.md)  
  キャッシュ、遅延初期化、信頼性、および ETW イベントについて説明します。  
- 
+
 ## <a name="reference"></a>関連項目  
  [.NET Framework クラス ライブラリ](/dotnet/api/?view=netframework-4.7)  
  .NET Framework の名前空間に含まれる各クラスの構文、コード例、および使用情報を示します。  

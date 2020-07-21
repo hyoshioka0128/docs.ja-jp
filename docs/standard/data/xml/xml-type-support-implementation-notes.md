@@ -3,14 +3,12 @@ title: XML 型サポートの実装に関するメモ
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 26b071f3-1261-47ef-8690-0717f5cd93c1
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 817d48e15f3a1d370e1953ca9c9aa8e10baa7f29
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 91a685f122ff846217ea7a8677b29df430b65363
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916027"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290280"
 ---
 # <a name="xml-type-support-implementation-notes"></a>XML 型サポートの実装に関するメモ
 このトピックでは、認識しておく必要があるいくつかの実装上の詳細について説明します。  
@@ -49,4 +47,4 @@ ms.locfileid: "69916027"
   
 ## <a name="see-also"></a>関連項目
 
-- [System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)
+- [System.Xml クラスでの型のサポート](type-support-in-the-system-xml-classes.md)

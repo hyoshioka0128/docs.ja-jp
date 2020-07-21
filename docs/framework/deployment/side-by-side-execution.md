@@ -1,15 +1,15 @@
 ---
 title: .NET Framework での side-by-side 実行
+description: .NET での side-by-side 実行を探索します。 side-by-side 実行を使用すると、アプリケーションまたはコンポーネントの多くのバージョンを同じコンピューターで実行できます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
-ms.openlocfilehash: 5202e4c26220bc9ea08d6d941ee5a7821cbbdefd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 6cd6fb73b27957fdea85cd9a92bf2aa3bafda1ce
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122234"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619404"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>.NET Framework での side-by-side 実行
 
@@ -28,7 +28,7 @@ side-by-side 実行は、アプリケーションまたはコンポーネント�
 side-by-side 実行により、アプリケーションがバインドするコンポーネントのバージョンやアプリケーションが使用するランタイムのバージョンをより詳細に制御できます。  
   
 ## <a name="benefits-of-side-by-side-execution"></a>side-by-side 実行の利点  
- 
+
 Windows XP および .NET Framework 以前では、アプリケーションは同じコードの非互換バージョンを識別できないため、DLL の競合が発生することがありました。 DLL に含まれる型情報は、ファイル名だけに関連付けられていました。 アプリケーションは、DLL に含まれている型とアプリケーションの作成に使用された型が同じであるかどうかを判断できませんでした。 この結果、新しいバージョンのコンポーネントが古いバージョンを書き変え、アプリケーションが壊れてしまうことがありました。  
   
 side-by-side 実行と .NET Framework によって、DLL の競合を防ぐ次の機能が得られます。  
@@ -43,7 +43,7 @@ side-by-side 実行と .NET Framework によって、DLL の競合を防ぐ次�
   
 - 分離。  
   
-     .NET Framework を使用すると、分離して実行できるアプリケーションとコンポーネントを作成できます。 分離は、side-by-side 実行に欠くことのできない構成要素です。 分離には、使用しているリソースを認識し、アプリケーションまたはコンポーネントの複数のバージョンでこれを確実に共有する処理も含まれます。 また、分離には、バージョンに固有の方法でファイルを格納する方法も含まれます。 分離の詳細については、「[Guidelines for Creating Components for Side-by-Side Execution](guidelines-for-creating-components-for-side-by-side-execution.md)」(side-by-side 実行用のコンポーネントを作成するためのガイドライン) を参照してください。  
+     .NET Framework を使用すると、分離して実行できるアプリケーションとコンポーネントを作成できます。 分離は、side-by-side 実行に欠くことのできない構成要素です。 分離には、使用しているリソースを認識し、アプリケーションまたはコンポーネントの複数のバージョンでこれを確実に共有する処理も含まれます。 また、分離には、バージョンに固有の方法でファイルを格納する方法も含まれます。 分離の詳細については、「[side-by-side 実行用のコンポーネントを作成するためのガイドライン](guidelines-for-creating-components-for-side-by-side-execution.md)」 を参照してください。  
   
 ## <a name="version-compatibility"></a>バージョンの互換性  
 
@@ -61,7 +61,7 @@ side-by-side 実行と .NET Framework によって、DLL の競合を防ぐ次�
   
 ### <a name="runtime-version-information-in-the-application-configuration-file"></a>アプリケーション構成ファイルのランタイム バージョン情報  
 
-PE ファイル ヘッダーの情報に加え、アプリケーションは、ランタイム バージョン情報が含まれるアプリケーション構成ファイルと共に配置できます。 アプリケーション構成ファイルは XML ベースのファイルで、アプリケーションの開発者によって作成され、アプリケーションと共に出荷されます。 このファイルに [\<startup> セクション](../configure-apps/file-schema/startup/startup-element.md)の [\<requiredRuntime> 要素](../configure-apps/file-schema/startup/requiredruntime-element.md)が存在する場合、この要素にアプリケーションでサポートするランタイムのバージョンとコンポーネントのバージョンを指定します。 また、このファイルを使用して、ランタイムの別のバージョンとアプリケーションの互換性をテストすることができます。  
+PE ファイル ヘッダーの情報に加え、アプリケーションは、ランタイム バージョン情報が含まれるアプリケーション構成ファイルと共に配置できます。 アプリケーション構成ファイルは XML ベースのファイルで、アプリケーションの開発者によって作成され、アプリケーションと共に出荷されます。 [\<startup> セクション](../configure-apps/file-schema/startup/startup-element.md)の [\<requiredRuntime> 要素](../configure-apps/file-schema/startup/requiredruntime-element.md) (このファイルに存在する場合) は、このアプリケーションでサポートされているランタイムのバージョンとコンポーネントのバージョンを指定します。 また、このファイルを使用して、ランタイムの別のバージョンとアプリケーションの互換性をテストすることができます。  
   
 COM アプリケーションおよび COM+ アプリケーションを含むアンマネージド コードは、ランタイムがマネージド コードとやり取りするときに使用するアプリケーション構成ファイルを持つことができます。 アプリケーション構成ファイルは、COM 経由で起動するどのマネージド コードにも適用されます。 このファイルは、サポートするランタイム バージョンやアセンブリのリダイレクトを指定できます。 既定では、マネージド コードを呼び出す COM 相互運用アプリケーションは、コンピューターにインストールされている最新のバージョンを使用します。  
   
@@ -81,7 +81,7 @@ COM アプリケーションおよび COM+ アプリケーションを含むア�
   
 アプリケーション構成ファイルが存在する場合は、次のプロセスの結果に基づいて、ランタイムは読み込むランタイムの適切なバージョンを決定します。  
   
-1. ランタイムは、アプリケーション構成ファイルの [\<supportedRuntime> 要素](../configure-apps/file-schema/startup/supportedruntime-element.md)を調べます。 **\<supportedRuntime>** 要素で指定されたサポートされるランタイム バージョンが 1 つ以上が見つかった場合、ランタイムは最初の **\<supportedRuntime>** 要素で指定されているランタイム バージョンを読み込みます。 このバージョンが利用できない場合、ランタイムは **\<supportedRuntime>** の次の要素を調べ、指定されているランタイム バージョンを読み込むようにしようとします。 このランタイム バージョンが利用できない場合は、 **\<supportedRuntime>** の後続の要素を調べます。 サポートされるランタイム バージョンがどれも利用できない場合、ランタイムはランタイム バージョンの読み込みに失敗し、ユーザーに対してメッセージが表示されます (手順 3. 参照)。  
+1. ランタイムは、アプリケーション構成ファイルの [\<supportedRuntime> 要素](../configure-apps/file-schema/startup/supportedruntime-element.md)を調べます。 **\<supportedRuntime>** 要素に指定されたサポートされるランタイム バージョンが 1 つ以上ある場合、ランタイムは最初の **\<supportedRuntime>** 要素によって指定されているランタイム バージョンを読み込みます。 このバージョンが利用できない場合、ランタイムは次の **\<supportedRuntime>** 要素を調べ、指定されているランタイム バージョンの読み込みを試行します。 このランタイム バージョンが利用できない場合は、後続の **\<supportedRuntime>** 要素を調べます。 サポートされるランタイム バージョンがどれも利用できない場合、ランタイムはランタイム バージョンの読み込みに失敗し、ユーザーに対してメッセージが表示されます (手順 3. 参照)。  
   
 2. ランタイムはアプリケーションの実行可能ファイルの PE ファイル ヘッダーを読み込みます。 PE ファイル ヘッダーで指定されたランタイム バージョンが利用できる場合、ランタイムはこのバージョンを読み込みます。 指定されたランタイム バージョンが利用できない場合は、PE ヘッダーのランタイム バージョンと互換性があると Microsoft によって決められたランタイム バージョンがランタイムによって検索されます。 このバージョンが見つからない場合、プロセスは手順 3. に進みます。  
   
@@ -97,18 +97,18 @@ COM アプリケーションおよび COM+ アプリケーションを含むア�
 
 部分限定アセンブリ参照は、side-by-side 実行の潜在的な問題の原因となり得るので、アプリケーション ディレクトリ内のアセンブリへのバインドだけで使用します。 開発するコード内では、部分限定アセンブリ参照は使用しないでください。  
   
-コードの部分修飾アセンブリ参照を軽減するには、アプリケーション構成ファイルで完全にコード内で発生する部分修飾アセンブリ参照を修飾するために [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) 要素を使用できます。 部分参照に設定されていないフィールドだけを指定するために **\<qualifyAssembly>** 要素を使用します。 **fullName** 属性で指定されているアセンブリ ID には、アセンブリ名を完全に修飾するのに必要なすべての情報 (つまり、アセンブリ名、公開キー、カルチャ、およびバージョン) が含まれている必要があります。  
+コード内での部分修飾アセンブリ参照を軽減するには、アプリケーション構成ファイルで [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) 要素を使用して、コード内で発生する部分修飾アセンブリ参照を完全修飾することができます。 部分参照に設定されていなかったフィールドのみを指定するには、 **\<qualifyAssembly>** 要素を使用します。 **fullName** 属性で指定されているアセンブリ ID には、アセンブリ名を完全に修飾するのに必要なすべての情報 (つまり、アセンブリ名、公開キー、カルチャ、およびバージョン) が含まれている必要があります。  
   
  `myAssembly` というアセンブリを完全に修飾する、アプリケーション構成ファイルのエントリの例を次に示します。  
   
 ```xml  
-<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">   
-<qualifyAssembly partialName="myAssembly"   
+<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+<qualifyAssembly partialName="myAssembly"
 fullName="myAssembly,  
-      version=1.0.0.0,   
-publicKeyToken=...,   
-      culture=neutral"/>   
-</assemblyBinding>   
+      version=1.0.0.0,
+publicKeyToken=...,
+      culture=neutral"/>
+</assemblyBinding>
 ```  
   
  アセンブリの読み込みステートメントが `myAssembly` を参照するたびに、構成ファイルのこれらの設定により、ランタイムは部分修飾された `myAssembly` 参照を完全限定参照に自動的に変換します。 たとえば、Assembly.Load("myAssembly") は Assembly.Load("myAssembly, version=1.0.0.0, publicKeyToken=..., culture=neutral") に変換されます。  

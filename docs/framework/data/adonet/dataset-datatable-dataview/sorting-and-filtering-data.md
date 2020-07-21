@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
 ms.openlocfilehash: 09cee2f2b2c3288c835912c9f311bf2511c7b0d0
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70785914"
@@ -17,28 +17,28 @@ ms.locfileid: "70785914"
   
 - <xref:System.Data.DataView.Sort%2A> プロパティを使用すれば、1 列または複数列の並べ替え順序を指定し、ASC (昇順) パラメーターと DESC (降順) パラメーターを含めることができます。  
   
-- <xref:System.Data.DataView.ApplyDefaultSort%2A> プロパティを使用すると、テーブルの主キー列 (1 列または複数列) に基づいて、昇順の並べ替え順序を自動的に作成できます。 <xref:System.Data.DataView.ApplyDefaultSort%2A>**Sort**プロパティが null 参照または空の文字列の場合、およびテーブルに主キーが定義されている場合にのみ適用されます。  
+- <xref:System.Data.DataView.ApplyDefaultSort%2A> プロパティを使用すると、テーブルの主キー列 (1 列または複数列) に基づいて、昇順の並べ替え順序を自動的に作成できます。 **Sort** プロパティが null 参照または空の文字列の場合、およびテーブルに主キーが定義されている場合は、<xref:System.Data.DataView.ApplyDefaultSort%2A> だけが適用されます。  
   
-- <xref:System.Data.DataView.RowFilter%2A> プロパティを使用すると、列の値に基づいて行のサブセットを指定できます。 **RowFilter**プロパティの有効な式の詳細については、 <xref:System.Data.DataColumn.Expression%2A> <xref:System.Data.DataColumn>クラスのプロパティの参照情報を参照してください。  
+- <xref:System.Data.DataView.RowFilter%2A> プロパティを使用すると、列の値に基づいて行のサブセットを指定できます。 **RowFilter** プロパティの有効な式の詳細については、<xref:System.Data.DataColumn> クラスの <xref:System.Data.DataColumn.Expression%2A> プロパティの情報を参照してください。  
   
-     データのサブセットの動的ビューを提供するのではなく、データに対する特定のクエリの結果を返す場合は、 **DataView**のメソッド<xref:System.Data.DataView.Find%2A>また<xref:System.Data.DataView.FindRows%2A>はメソッドを使用して、 **RowFilter**プロパティ。 **RowFilter**プロパティを設定すると、データのインデックスが再構築され、アプリケーションにオーバーヘッドが追加され、パフォーマンスが低下します。 **RowFilter**プロパティは、バインドされたコントロールがフィルター処理された結果を表示するデータバインドアプリケーションで最適に使用されます。 **Find**メソッドと**FindRows**メソッドは、インデックスの再構築を必要とせずに、現在のインデックスを利用します。 **Find**メソッドと**FindRows**メソッドの詳細については、「[行の検索](finding-rows.md)」を参照してください。  
+     データ サブセットの動的ビューの作成とは対照的に、データに対して特定のクエリの実行結果を返す場合、パフォーマンスを最大限に引き出すには、**RowFilter** プロパティを設定する代わりに **DataView** の <xref:System.Data.DataView.Find%2A> メソッドまたは <xref:System.Data.DataView.FindRows%2A> メソッドを使用します。 **RowFilter** プロパティを設定すると、データのインデックスが再作成され、アプリケーションのオーバーヘッドが増加してパフォーマンスの低下を招きます。 **RowFilter** プロパティは、データ連結アプリケーションでの使用に適しています。このアプリケーションでは、連結されたコントロールによってフィルター処理結果が表示されます。 **Find** メソッドと **FindRows** メソッドでは、現在のインデックスが使用されます。このため、インデックスを再作成する必要はありません。 **Find** メソッドと **FindRows** メソッドの詳細については、「[行の検索](finding-rows.md)」を参照してください。  
   
-- <xref:System.Data.DataView.RowStateFilter%2A> プロパティを使用して、表示する行バージョンを指定できます。 **DataView**は、基になる行の**RowState**に応じて、公開する行バージョンを暗黙的に管理します。 たとえば、 **Rowstatefilter**が DataViewRowState に設定されている場合、 **DataView**は、**現在**の行バージョンがないため、**削除さ**れたすべての行の**元**の行バージョンを公開し**ます**。 **DataRowView**の**RowVersion**プロパティを使用して、公開されている行バージョンを特定できます。  
+- <xref:System.Data.DataView.RowStateFilter%2A> プロパティを使用して、表示する行バージョンを指定できます。 **DataView** では、基になる行の **RowState** に応じて、公開する行バージョンが暗黙的に管理されます。 たとえば、**RowStateFilter** が **DataViewRowState.Deleted** に設定されている場合は、**Current** 行バージョンが存在しないため、**DataView** ではすべての **Deleted** 行の **Original** 行バージョンが公開されます。 **DataRowView** の **RowVersion** プロパティを使用すると、公開される行のバージョンを確認できます。  
   
-     次の表は、 **DataViewRowState**のオプションを示しています。  
+     **DataViewRowState** のオプションを次の表に示します。  
   
     |DataViewRowState のオプション|説明|  
     |------------------------------|-----------------|  
-    |**CurrentRows**|**変更** **され**ていない、追加、および**変更**されたすべての行の**現在**の行バージョン。 既定値です。|  
-    |**れ**|**追加された**すべての行の**現在**の行バージョン。|  
-    |**削除**|**削除された**すべての行の**元**の行バージョン。|  
-    |**ModifiedCurrent**|すべての**変更**された行の**現在**の行バージョン。|  
-    |**ModifiedOriginal**|**変更**されたすべての行の**元**の行バージョン。|  
+    |**CurrentRows**|すべての **Unchanged** 行、**Added** 行、**Modified** 行の **Current** 行バージョン。 既定値です。|  
+    |**追加**|すべての **Added** 行の **Current** 行バージョン。|  
+    |**削除済み**|すべての **Deleted** 行の **Original** 行バージョン。|  
+    |**ModifiedCurrent**|すべての **Modified** 行の **Current** 行バージョン。|  
+    |**ModifiedOriginal**|すべての **Modified** 行の **Original** 行バージョン。|  
     |**None**|行がありません。|  
-    |**OriginalRows**|**変更**されていない、**変更** **された、および削除された**すべての行の**元**の行バージョン。|  
-    |**Unchanged**|**変更**されていないすべての行の**現在**の行バージョン。|  
+    |**OriginalRows**|すべての **Unchanged** 行、**Modified** 行、**Deleted** 行の **Original** 行バージョン。|  
+    |**Unchanged**|すべての **Unchanged** 行の **Current** 行バージョン。|  
   
- 行の状態と行のバージョンの詳細については、「[行の状態と](row-states-and-row-versions.md)行のバージョン」を参照してください。  
+ 行の状態と行バージョンの詳細については、「[行の状態とバージョン](row-states-and-row-versions.md)」を参照してください。  
   
  在庫数が標準在庫数以下である製品を、仕入先 ID (supplier ID) で並べ替え、さらに製品名 (product name) で並べ替えたビューを作成するコード サンプルを次に示します。  
   

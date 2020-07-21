@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 249f9892-b5a9-41e1-b329-28a925904df6
 topic_type:
 - apiref
-ms.openlocfilehash: db3c3d38e0200f9849c84d7605a436816d56b813
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cb7e21e0c6aad5ebb328ae5d1a993716f96e8d47
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427428"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500573"
 ---
 # <a name="functiontailcall2-function"></a>FunctionTailcall2 関数
 現在実行中の関数が別の関数の末尾呼び出しを実行しようとしていることをプロファイラーに通知し、スタックフレームに関する情報を提供します。  
@@ -28,30 +28,34 @@ ms.locfileid: "74427428"
   
 ```cpp
 void __stdcall FunctionTailcall2 (  
-    [in] FunctionID         funcId,   
-    [in] UINT_PTR           clientData,   
+    [in] FunctionID         funcId,
+    [in] UINT_PTR           clientData,
     [in] COR_PRF_FRAME_INFO func  
 );  
 ```  
   
-## <a name="parameters"></a>パラメーター  
- `funcId`  
- から末尾呼び出しを実行しようとしている現在実行中の関数の識別子。  
+## <a name="parameters"></a>パラメーター
+
+- `funcId`
+
+  \[in] 末尾呼び出しを実行しようとしている現在実行中の関数の識別子。
+
+- `clientData`
+
+  \[では、現在実行中の関数の末尾呼び出しを実行しようとしているときに、プロファイラーが以前に[Functionidmapper](functionidmapper-function.md)を使用して指定したリマップ関数識別子。
   
- `clientData`  
- から末尾呼び出しを実行しようとしている現在実行中の関数の、プロファイラーが以前に[Functionidmapper](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md)を使用して指定した、再マップされた関数識別子。  
+- `func`
+
+  \[in] `COR_PRF_FRAME_INFO` スタックフレームに関する情報を示す値。
+
+  プロファイラーは、これを[ICorProfilerInfo2:: GetFunctionInfo2](icorprofilerinfo2-getfunctioninfo2-method.md)メソッドの実行エンジンに渡すことができる不透明なハンドルとして処理する必要があります。
+
+## <a name="remarks"></a>解説  
+ Tail 呼び出しの対象となる関数は、現在のスタックフレームを使用し、末尾呼び出しを行った関数の呼び出し元に直接戻ります。 つまり、 [FunctionLeave2](functionleave2-function.md)コールバックは、末尾呼び出しのターゲットである関数に対しては発行されません。  
   
- `func`  
- からスタックフレームに関する情報を指す `COR_PRF_FRAME_INFO` 値。  
+ `func` `FunctionTailcall2` 値が変更または破棄される可能性があるため、関数がを返すと、パラメーターの値が無効になります。  
   
- プロファイラーは、これを[ICorProfilerInfo2:: GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md)メソッドの実行エンジンに渡すことができる不透明なハンドルとして処理する必要があります。  
-  
-## <a name="remarks"></a>コメント  
- Tail 呼び出しの対象となる関数は、現在のスタックフレームを使用し、末尾呼び出しを行った関数の呼び出し元に直接戻ります。 つまり、 [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)コールバックは、末尾呼び出しのターゲットである関数に対しては発行されません。  
-  
- `func` パラメーターの値は、値が変更または破棄される可能性があるため、`FunctionTailcall2` 関数から制御が戻った後に有効ではありません。  
-  
- `FunctionTailcall2` 関数はコールバックです。実装する必要があります。 実装では、`__declspec`(`naked`) ストレージクラス属性を使用する必要があります。  
+ `FunctionTailcall2`関数はコールバックであるため、実装する必要があります。 実装では、 `__declspec` ( `naked` ) ストレージクラス属性を使用する必要があります。  
   
  この関数を呼び出す前に、実行エンジンはレジスタを保存しません。  
   
@@ -59,22 +63,22 @@ void __stdcall FunctionTailcall2 (
   
 - 終了時に、呼び出し元によってプッシュされたすべてのパラメーターをポップして、スタックを復元する必要があります。  
   
- `FunctionTailcall2` の実装では、ガベージコレクションが遅延するため、ブロックしないでください。 スタックがガベージコレクションに対応していない可能性があるため、この実装ではガベージコレクションを実行しないようにしてください。 ガベージコレクションを実行しようとすると、ランタイムは `FunctionTailcall2` が返されるまでブロックします。  
+ の実装は、 `FunctionTailcall2` ガベージコレクションを遅延させるため、ブロックしないでください。 スタックがガベージコレクションに対応していない可能性があるため、この実装ではガベージコレクションを実行しないようにしてください。 ガベージコレクションが試行された場合、ランタイムはが返されるまでブロックし `FunctionTailcall2` ます。  
   
- また、`FunctionTailcall2` 関数は、マネージコードを呼び出さないようにするか、マネージメモリ割り当てを発生させることはできません。  
+ また、 `FunctionTailcall2` 関数はマネージコードを呼び出さないようにするか、マネージメモリ割り当てを発生させることはできません。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Corprof.idl  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [FunctionEnter2 関数](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
-- [FunctionLeave2 関数](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
-- [SetEnterLeaveFunctionHooks2 メソッド](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [グローバル静的関数のプロファイル](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [FunctionEnter2 関数](functionenter2-function.md)
+- [FunctionLeave2 関数](functionleave2-function.md)
+- [SetEnterLeaveFunctionHooks2 メソッド](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [グローバル静的関数のプロファイル](profiling-global-static-functions.md)

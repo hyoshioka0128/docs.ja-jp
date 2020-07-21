@@ -1,22 +1,23 @@
 ---
-title: パラメーターおよびパラメーターのデータ型の構成
+title: パラメーターおよびパラメーター データ型の構成
+description: コマンド オブジェクトは、パラメーターを使用して SQL ステートメントまたはストアド プロシージャに値を渡すことによって、ADO.NET での型チェックと検証の機能を実現します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
-ms.openlocfilehash: 638e8177060c489a7469f80adde68cb9ba266365
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
-ms.translationtype: MT
+ms.openlocfilehash: a426eeae785274b0484a84a2fae2dce4572fb4c4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65879967"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287117"
 ---
-# <a name="configuring-parameters-and-parameter-data-types"></a>パラメーターおよびパラメーターのデータ型の構成
+# <a name="configuring-parameters-and-parameter-data-types"></a>パラメーターおよびパラメーター データ型の構成
 
 コマンド オブジェクトは、パラメーターを使用して SQL ステートメントまたはストアド プロシージャに値を渡すことによって、型チェックと検証の機能を実現します。 コマンド テキストとは異なり、パラメーターの入力は実行可能なコードとしてではなく、リテラル値として扱われます。 これにより、攻撃者がサーバーのセキュリティを侵害するコマンドを SQL ステートメントに "注入" する SQL インジェクション攻撃を防ぐことができます。
 
-パラメーター化コマンドによりクエリ実行パフォーマンスも向上します。これは、データベース サーバーが入力コマンドを適切なキャッシュ済みクエリ プランに正確に一致させるのに役立つためです。 詳細については、次を参照してください。[実行プランのキャッシュと再利用](/sql/relational-databases/query-processing-architecture-guide#execution-plan-caching-and-reuse)と[パラメーターと実行プランの再利用](/sql/relational-databases/query-processing-architecture-guide#PlanReuse)します。 セキュリティおよびパフォーマンス上の利点に加え、パラメーター化コマンドを使用すると、データ ソースに渡す値を簡単に扱うことができます。
+パラメーター化コマンドによりクエリ実行パフォーマンスも向上します。これは、データベース サーバーが入力コマンドを適切なキャッシュ済みクエリ プランに正確に一致させるのに役立つためです。 詳細については、「[実行プランのキャッシュと再利用](/sql/relational-databases/query-processing-architecture-guide#execution-plan-caching-and-reuse)」および「[パラメーターと実行プランの再利用](/sql/relational-databases/query-processing-architecture-guide#PlanReuse)」を参照してください。 セキュリティおよびパフォーマンス上の利点に加え、パラメーター化コマンドを使用すると、データ ソースに渡す値を簡単に扱うことができます。
 
 <xref:System.Data.Common.DbParameter> オブジェクトは、コンストラクターを使って作成できるほか、 <xref:System.Data.Common.DbCommand.DbParameterCollection%2A> コレクションの `Add` メソッドを呼び出し、 <xref:System.Data.Common.DbParameterCollection> にオブジェクトを追加することによって作成することもできます。 `Add` メソッドは、コンストラクター引数または既存のパラメーター オブジェクトを入力として受け取ります。この点はデータ プロバイダーによっても異なります。
 
@@ -31,7 +32,7 @@ ms.locfileid: "65879967"
 |<xref:System.Data.ParameterDirection.Output>|このパラメーターは出力パラメーターです。|
 |<xref:System.Data.ParameterDirection.ReturnValue>|パラメーターは、ストアド プロシージャ、組み込み関数、ユーザー定義関数などの操作からの戻り値を表します。|
 
-## <a name="working-with-parameter-placeholders"></a>パラメーターのプレース ホルダーの操作
+## <a name="working-with-parameter-placeholders"></a>パラメーターのプレースホルダーの使用
 
 パラメーターのプレースホルダーの構文はデータ ソースに依存します。 .NET Framework のデータ プロバイダーによって、パラメーターおよびパラメーターのプレースホルダーの名前付けや指定方法が異なります。 次の表に示すように、データ ソースごとに固有の構文が採用されています。
 
@@ -42,24 +43,24 @@ ms.locfileid: "65879967"
 |<xref:System.Data.Odbc>|疑問符 (`?`) で指定される位置パラメーター マーカーが使用されます。|
 |<xref:System.Data.OracleClient>|`:`*parmname* (または *parmname*) 形式の名前付きパラメーターが使用されます。|
 
-## <a name="specifying-parameter-data-types"></a>パラメーターのデータ型を指定します。
+## <a name="specifying-parameter-data-types"></a>パラメーターのデータ型の指定
 
-パラメーターのデータ型は、.NET Framework データ プロバイダーに固有です。 値を変換する種類を指定する、`Parameter`データ ソースに値を渡す前に .NET Framework データ プロバイダーの種類にします。 `Parameter` オブジェクトの `DbType` プロパティを特定の `Parameter` に設定する一般的な方法で <xref:System.Data.DbType>の型を指定することもできます。
+パラメーターのデータ型は .NET Framework データ プロバイダーに固有です。 型が指定されている場合は、`Parameter` の値がデータ ソースに渡される前に、その値が .NET Framework データ プロバイダー型に変換されます。 `Parameter` オブジェクトの `DbType` プロパティを特定の `Parameter` に設定する一般的な方法で <xref:System.Data.DbType>の型を指定することもできます。
 
-.NET Framework データ プロバイダーの種類、`Parameter`オブジェクトは、.NET Framework の型から推論されます、`Value`の`Parameter`オブジェクト、または、`DbType`の`Parameter`オブジェクト。 `Parameter` 値として渡されるオブジェクトまたは指定された `Parameter` に基づいて推論される `DbType`型を、次の表に示します。
+`Parameter` オブジェクトの .NET Framework データ プロバイダー型は、`Parameter` オブジェクトの `Value` の .NET Framework 型、または `Parameter` オブジェクトの `DbType` から推論されます。 `Parameter` 値として渡されるオブジェクトまたは指定された `Parameter` に基づいて推論される `DbType`型を、次の表に示します。
 
 |.NET Framework 型|DbType|SqlDbType|OleDbType|OdbcType|OracleType|
 |-------------------------|------------|---------------|---------------|--------------|----------------|
-|<xref:System.Boolean>|Boolean|ビット|ブール型|ビット|Byte|
+|<xref:System.Boolean>|ブール型|ビット|ブール型|ビット|Byte|
 |<xref:System.Byte>|Byte|TinyInt|UnsignedTinyInt|TinyInt|Byte|
-|byte[]|2 項|VarBinary です。 これは 8,000 バイトです。 バイト配列が VarBinary の最大サイズより大きい場合、この暗黙の変換は失敗します。8000 バイトを超えるバイト配列を明示的に設定、<xref:System.Data.SqlDbType>します。|VarBinary|2 項|Raw|
+|byte[]|2 項|VarBinary。 バイト配列が VarBinary の最大サイズ (8000 バイト) より大きい場合、この暗黙の変換はエラーになります。8000 バイトを超えるバイト配列の場合は、明示的に <xref:System.Data.SqlDbType> を設定してください。|VarBinary|2 項|Raw|
 |<xref:System.Char>| |char から <xref:System.Data.SqlDbType> への推論はサポートされていません。|Char|Char|Byte|
 |<xref:System.DateTime>|DateTime|DateTime|DBTimeStamp|DateTime|DateTime|
 |<xref:System.DateTimeOffset>|DateTimeOffset|SQL Server 2008 の DateTimeOffset。 SQL Server 2008 より前のバージョンの SQL Server では、DateTimeOffset から <xref:System.Data.SqlDbType> への推論はサポートされていません。|||DateTime|
-|<xref:System.Decimal>|Decimal (10 進数型)|Decimal (10 進数型)|Decimal (10 進数型)|数字|Number|
-|<xref:System.Double>|Double (倍精度浮動小数点型)|Float|Double (倍精度浮動小数点型)|倍精度浮動小数点型|Double (倍精度浮動小数点型)|
+|<xref:System.Decimal>|Decimal (10 進数型)|Decimal (10 進数型)|Decimal (10 進数型)|数字|数値|
+|<xref:System.Double>|Double|Float|Double|Double|Double|
 |<xref:System.Single>|Single|Real|Single|Real|Float|
-|<xref:System.Guid>|Guid|UniqueIdentifier|Guid|UniqueIdentifier|Raw|
+|<xref:System.Guid>|GUID|UniqueIdentifier|GUID|UniqueIdentifier|Raw|
 |<xref:System.Int16>|Int16|SmallInt|SmallInt|SmallInt|Int16|
 |<xref:System.Int32>|Int32|Int|Int|Int|Int32|
 |<xref:System.Int64>|Int64|BigInt|BigInt|BigInt|Number|
@@ -68,22 +69,22 @@ ms.locfileid: "65879967"
 |<xref:System.TimeSpan>|時刻|SQL Server 2008 の Time。 SQL Server 2008 より前のバージョンの SQL Server では、TimeSpan から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBTime|時刻|DateTime|
 |<xref:System.UInt16>|UInt16|UInt16 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedSmallInt|Int|UInt16|
 |<xref:System.UInt32>|UInt32|UInt32 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedInt|BigInt|UInt32|
-|<xref:System.UInt64>|UInt64|UInt64 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedBigInt|数字|Number|
+|<xref:System.UInt64>|UInt64|UInt64 から <xref:System.Data.SqlDbType> への推論はサポートされていません。|UnsignedBigInt|数字|数値|
 ||AnsiString|VarChar|VarChar|VarChar|VarChar|
 ||AnsiStringFixedLength|Char|Char|Char|Char|
-||通貨|通貨|通貨|`OdbcType` から `Currency` への推論はサポートされていません。|Number|
-||日付|SQL Server 2008 の Date。 SQL Server 2008 より前のバージョンの SQL Server では、Date から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBDate|日付|DateTime|
+||通貨|通貨|通貨|`OdbcType` から `Currency` への推論はサポートされていません。|数値|
+||Date|SQL Server 2008 の Date。 SQL Server 2008 より前のバージョンの SQL Server では、Date から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBDate|Date|DateTime|
 ||SByte|SByte から <xref:System.Data.SqlDbType> への推論はサポートされていません。|TinyInt|SByte から `OdbcType` への推論はサポートされていません。|SByte|
 ||StringFixedLength|NChar|WChar|NChar|NChar|
 ||時刻|SQL Server 2008 の Time。 SQL Server 2008 より前のバージョンの SQL Server では、Time から <xref:System.Data.SqlDbType> への推論はサポートされていません。|DBTime|時刻|DateTime|
-||VarNumeric|VarNumeric から <xref:System.Data.SqlDbType> への推論はサポートされていません。|VarNumeric|VarNumeric から `OdbcType` への推論はサポートされていません。|Number|
+||VarNumeric|VarNumeric から <xref:System.Data.SqlDbType> への推論はサポートされていません。|VarNumeric|VarNumeric から `OdbcType` への推論はサポートされていません。|数値|
 |ユーザー定義型 ( <xref:Microsoft.SqlServer.Server.SqlUserDefinedAggregateAttribute>を持つオブジェクト)|プロバイダーに応じて Object または String (SqlClient は常に Object を返し、Odbc は常に String を返します。OleDb マネージド データ プロバイダーはいずれかを表示できます)。|<xref:Microsoft.SqlServer.Server.SqlUserDefinedTypeAttribute> がある場合は SqlDbType.Udt、それ以外の場合は Variant。|OleDbType.VarWChar (値が null の場合)、それ以外の場合は OleDbType.Variant。|OdbcType.NVarChar|サポート外|
 
 > [!NOTE]
 > decimal から他の型への変換は縮小変換になるため、decimal 値は最も近い整数値に切り捨てられます。 変換結果が対象の型にならなかった場合、 <xref:System.OverflowException> がスローされます。
 
 > [!NOTE]
-> 指定する必要があります、サーバーに null パラメーター値を送信するときに<xref:System.DBNull>ではなく、 `null` (`Nothing` Visual Basic で)。 システムの null 値は、値のない空オブジェクトです。 <xref:System.DBNull> は、null 値を表すために使用します。 データベースの NULL 値の詳細については、「 [null 値の処理](./sql/handling-null-values.md)」を参照してください。
+> サーバーに NULL パラメーター値を送信する場合は、`null` (Visual Basic の場合は `Nothing`) ではなく、<xref:System.DBNull> を指定する必要があります。 システムの null 値は、値のない空オブジェクトです。 <xref:System.DBNull> は、null 値を表すために使用します。 データベースの NULL 値の詳細については、「 [Handling Null Values](./sql/handling-null-values.md)」を参照してください。
 
 ## <a name="deriving-parameter-information"></a>パラメーター情報の派生
 
@@ -92,16 +93,16 @@ ms.locfileid: "65879967"
 > [!NOTE]
 > パラメーター情報を派生させた場合、情報を取得するためにデータ ソースへのラウンド トリップが 1 つ増えるため、パフォーマンスが低下します。 パラメーター情報がデザイン時にわかっている場合は、パラメーターを明示的に設定することでアプリケーションのパフォーマンスを改善できます。
 
-詳細については、次を参照してください。 [Commandbuilder でのコマンドの生成](generating-commands-with-commandbuilders.md)します。
+詳細については、「[CommandBuilder でのコマンドの生成](generating-commands-with-commandbuilders.md)」を参照してください。
 
-## <a name="using-parameters-with-a-sqlcommand-and-a-stored-procedure"></a>SqlCommand およびストアド プロシージャでパラメーターの使用
+## <a name="using-parameters-with-a-sqlcommand-and-a-stored-procedure"></a>SqlCommand およびストアド プロシージャでのパラメーターの使用
 
-ストアド プロシージャは、データドリブンのアプリケーションに多くの利点を提供します。 ストアド プロシージャを使用すると、データベースの操作を単一のコマンドにカプセル化し、最大のパフォーマンスが得られるように最適化し、さらに追加のセキュリティ機能を使用して、セキュリティを強化することができます。 ストアド プロシージャは、ストアド プロシージャ名の後にパラメーター引数として、SQL ステートメントを使用して渡すことによって呼び出すことができますが、<xref:System.Data.Common.DbCommand.Parameters%2A>コレクション、ADO.NET の<xref:System.Data.Common.DbCommand>オブジェクトでは、ストアド プロシージャをより明示的に定義できます。パラメーターと戻り値を出力パラメーターにアクセスするとします。
+ストアド プロシージャは、データドリブンのアプリケーションに多くの利点を提供します。 ストアド プロシージャを使用すると、データベースの操作を単一のコマンドにカプセル化し、最大のパフォーマンスが得られるように最適化し、さらに追加のセキュリティ機能を使用して、セキュリティを強化することができます。 ストアド プロシージャは、ストアド プロシージャ名の後にパラメーター引数を記述して SQL ステートメントとして渡すことで呼び出すことができますが、ADO.NET の <xref:System.Data.Common.DbCommand> オブジェクトの <xref:System.Data.Common.DbCommand.Parameters%2A> コレクションを使用すると、ストアド プロシージャ パラメーターをより明示的に定義でき、出力パラメーターや戻り値にもアクセスできます。
 
 > [!NOTE]
-> パラメーター化ステートメントは、 `sp_executesql,` を使ってサーバー上で実行されるため、クエリ プランの再利用が可能になります。 `sp_executesql` バッチ内のローカル カーソルまたはローカル変数は、 `sp_executesql`を呼び出すバッチでは認識されません。 データベース コンテキストの変更は、 `sp_executesql` ステートメント終了時まで有効です。 詳細については、次を参照してください。 [sp_executesql (TRANSACT-SQL)](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql)します。
+> パラメーター化ステートメントは、 `sp_executesql,` を使ってサーバー上で実行されるため、クエリ プランの再利用が可能になります。 `sp_executesql` バッチ内のローカル カーソルまたはローカル変数は、 `sp_executesql`を呼び出すバッチでは認識されません。 データベース コンテキストの変更は、 `sp_executesql` ステートメント終了時まで有効です。 詳細については、「[sp_executesql (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql)」を参照してください。
 
-<xref:System.Data.SqlClient.SqlCommand> でパラメーターを使用して SQL Server のストアド プロシージャを実行する場合は、 <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> コレクションに追加したパラメーターの名前が、ストアド プロシージャ内のパラメーター マーカーの名前と一致している必要があります。 .NET Framework Data Provider for SQL Server は、SQL ステートメントまたはストアド プロシージャにパラメーターを渡す場合の疑問符 (?) プレース ホルダーをサポートしていません。 ストアド プロシージャ内のパラメーターは名前付きのパラメーターと見なされ、一致するパラメーター マーカーが検索されます。 たとえば、 `CustOrderHist` ストアド プロシージャが、 `@CustomerID`という名前のパラメーターで定義されているとします。 このストアド プロシージャを実行する場合、実行元のコードでも `@CustomerID`という名前のパラメーターを使用する必要があります。
+<xref:System.Data.SqlClient.SqlCommand> でパラメーターを使用して SQL Server のストアド プロシージャを実行する場合は、 <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> コレクションに追加したパラメーターの名前が、ストアド プロシージャ内のパラメーター マーカーの名前と一致している必要があります。 .NET Framework Data Provider for SQL Server は、SQL ステートメントまたはストアド プロシージャにパラメーターを渡す場合の疑問符 (?) プレースホルダーをサポートしていません。 ストアド プロシージャ内のパラメーターは名前付きのパラメーターと見なされ、一致するパラメーター マーカーが検索されます。 たとえば、 `CustOrderHist` ストアド プロシージャが、 `@CustomerID`という名前のパラメーターで定義されているとします。 このストアド プロシージャを実行する場合、実行元のコードでも `@CustomerID`という名前のパラメーターを使用する必要があります。
 
 ```sql
 CREATE PROCEDURE dbo.CustOrderHist @CustomerID varchar(5)
@@ -117,11 +118,11 @@ CREATE PROCEDURE dbo.CustOrderHist @CustomerID varchar(5)
 [!code-csharp[DataWorks SqlClient.StoredProcedure#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.StoredProcedure/CS/source.cs#1)]
 [!code-vb[DataWorks SqlClient.StoredProcedure#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.StoredProcedure/VB/source.vb#1)]
 
-## <a name="using-parameters-with-an-oledbcommand-or-odbccommand"></a>OleDbCommand または OdbcCommand でパラメーターの使用
+## <a name="using-parameters-with-an-oledbcommand-or-odbccommand"></a>OleDbCommand または OdbcCommand によるパラメーターの使用
 
-<xref:System.Data.OleDb.OleDbCommand> または <xref:System.Data.Odbc.OdbcCommand>でパラメーターを使用するときは、 `Parameters` コレクションにパラメーターが追加されている順序が、ストアド プロシージャ内でパラメーターが定義されている順序と一致している必要があります。 .NET Framework Data Provider for OLE DB と .NET Framework Data Provider for ODBC は、ストアド プロシージャのパラメーターをプレース ホルダーとして処理し、順序でパラメーター値を適用します。 また、戻り値パラメーターは、 `Parameters` コレクションに最初に追加されたパラメーターにする必要があります。
+<xref:System.Data.OleDb.OleDbCommand> または <xref:System.Data.Odbc.OdbcCommand>でパラメーターを使用するときは、 `Parameters` コレクションにパラメーターが追加されている順序が、ストアド プロシージャ内でパラメーターが定義されている順序と一致している必要があります。 .NET Framework Data Provider for OLE DB と .NET Framework Data Provider for ODBC は、ストアド プロシージャ内のパラメーターをプレースホルダーとして処理し、順にパラメーター値を適用します。 また、戻り値パラメーターは、 `Parameters` コレクションに最初に追加されたパラメーターにする必要があります。
 
-.NET Framework Data Provider for OLE DB と .NET Framework Data Provider for ODBC は、SQL ステートメントまたはストアド プロシージャにパラメーターを渡す場合の名前付きパラメーターの情報をサポートしません。 この場合は、次の例に示すように、疑問符 (?) プレースホルダーを使用する必要があります。
+.NET Framework Data Provider for OLE DB と .NET Framework Data Provider for ODBC は、SQL ステートメントまたはストアド プロシージャにパラメーターを渡す場合の名前付きのパラメーターをサポートしていません。 この場合は、次の例に示すように、疑問符 (?) プレースホルダーを使用する必要があります。
 
 ```sql
 SELECT * FROM Customers WHERE CustomerID = ?

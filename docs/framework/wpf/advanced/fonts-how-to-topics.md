@@ -8,13 +8,13 @@ helpviewer_keywords:
 ms.assetid: b4a97c97-7f88-4a89-b1d1-cf2c0d087955
 ms.openlocfilehash: b0f5ebdd6884c541c5d4c96cfeea33d378eeeca3
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61703588"
 ---
 # <a name="fonts-how-to-topics"></a>フォントに関する「方法」トピック
-このセクションのトピックに含まれているフォントの機能を使用する方法を示します[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]します。  
+このセクションのトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] に付属するフォント機能の使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [システム フォントを列挙する](how-to-enumerate-system-fonts.md)  

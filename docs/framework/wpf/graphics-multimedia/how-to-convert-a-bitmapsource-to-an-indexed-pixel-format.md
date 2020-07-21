@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: ccb03a83-8c72-4353-89da-48312d16548b
 ms.openlocfilehash: 69ccf82a42f6ec640106f554a10e7d2c86754220
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61910014"
 ---
 # <a name="how-to-convert-a-bitmapsource-to-an-indexed-pixel-format"></a>方法: BitmapSource をインデックス付きピクセル形式に変換する
-この例では、変換、<xref:System.Windows.Media.Imaging.BitmapSource>をインデックス付きピクセル形式にします。  
+この例では、インデックス付きピクセル形式に <xref:System.Windows.Media.Imaging.BitmapSource> を変換する方法を示します。  
   
 ## <a name="example"></a>例  
  [!code-csharp[ImagingSnippetGallery_procedural_snip#FormatConvertedBitmapCodeExample2WholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/FormatConvertedBitmapExample2.cs#formatconvertedbitmapcodeexample2wholepage)]

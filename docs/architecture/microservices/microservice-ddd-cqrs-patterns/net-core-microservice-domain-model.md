@@ -2,16 +2,16 @@
 title: .NET Core でマイクロサービス ドメイン モデルを実装する
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | DDD 指向ドメイン モデルの実装の詳細について
 ms.date: 10/08/2018
-ms.openlocfilehash: bff9cbda08e519038056268151a1721427f0ac01
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 0b42ecc2440faf5870b2d99e31d03cda00b21ce0
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972040"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306911"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>.NET Core でマイクロサービス ドメイン モデルを実装する
 
-前のセクションでは、ドメイン モデルの基本的な設計原則と設計パターンを説明しました。 ここでは、.NET Core (プレーンな C\# コード) と EF Core を使用してドメイン モデルを実装するために可能な手段を調べます。 ドメイン モデルを構成するのは自分が書くコードだけであることにご注目ください。 EF Core モデルの要件があるだけで、EF に対する実際の依存関係は存在しません。 ドメイン モデルには EF Core または他の ORM への緊密な依存関係や参照を含めないでください。
+前のセクションでは、ドメイン モデルの基本的な設計原則と設計パターンを説明しました。 ここでは、.NET Core (プレーンな C\# コード) と EF Core を使用してドメイン モデルを実装するために可能な手段を調べます。 ドメイン モデルは、自分が書くコードのみで構成されます。 EF Core モデルの要件があるだけで、EF に対する実際の依存関係は存在しません。 ドメイン モデルには EF Core または他の ORM への緊密な依存関係や参照を含めないでください。
 
 ## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>カスタム .NET Standard ライブラリのドメイン モデル構造
 
@@ -95,13 +95,13 @@ public class Order : Entity, IAggregateRoot
 }
 ```
 
-重要なこととして、これが POCO クラスとして実装されるドメイン エンティティである点にご注意ください。 Entity Framework Core または他のインフラストラクチャ フレームワークへの直接の依存関係はありません。 この実装は、DDD の場合と同様に、ドメイン モデルを実装する C\# コードに過ぎません。
+重要なこととして、これが POCO クラスとして実装されるドメイン エンティティである点にご注意ください。 Entity Framework Core または他のインフラストラクチャ フレームワークへの直接の依存関係はありません。 この実装は、DDD の場合と同様に、ドメイン モデルを実装する C# コードに過ぎません。
 
 また、このクラスは IAggregateRoot というインターフェイスで修飾されます。 このインターフェイスは、このエンティティ クラスが集約ルートでもあることを示すためだけに使用される空のインターフェイスであり、*マーカー インターフェイス*と呼ばれることもあります。
 
 マーカー インターフェイスはアンチ パターンと見なされることもありますが、このインターフェイスが進化していく可能性がある場合には特に、クラスをマークするためのわかりやすい方法ともなります。 属性はマーカーのもう 1 つの選択肢ですが、クラスの上に集約属性マーカーを配置するよりも、IAggregate インターフェイスの隣に基底クラス (Entity) を配置する方がより迅速に確認できます。 いずれにせよ、これは好みの問題です。
 
-集約ルートを設けるということは、その集約のエンティティの整合性やビジネス ルールに関連するコードのほとんどを注文集約ルート クラスでメソッドとして実装する必要があることを意味します (たとえば、OrderItem オブジェクトを集約に追加する場合の AddOrderItem など)。 独立的にであれ、直接的にであれ、OrderItems オブジェクトを作成も更新もしないでください。AggregateRoot クラスが、その子エンティティに対するすべての更新操作を制御し、整合性を保持する必要があります。
+集約ルートを設けるということは、その集約のエンティティの一貫性やビジネス ルールに関連するコードのほとんどを注文集約ルート クラスでメソッドとして実装する必要があることを意味します (たとえば、OrderItem オブジェクトを集約に追加する場合の AddOrderItem など)。 独立的にであれ、直接的にであれ、OrderItems オブジェクトを作成も更新もしないでください。AggregateRoot クラスが、その子エンティティに対するすべての更新操作を制御し、整合性を保持する必要があります。
 
 ## <a name="encapsulate-data-in-the-domain-entities"></a>ドメイン エンティティのデータをカプセル化する
 
@@ -139,7 +139,7 @@ Order 集約ルートのコードに示されているように、すべての�
 ```csharp
 // RIGHT ACCORDING TO DDD--CODE AT THE APPLICATION LAYER OR COMMAND HANDLERS
 // The code in command handlers or WebAPI controllers, related only to application stuff
-// There is NO code here related to OrderItem object’s business logic
+// There is NO code here related to OrderItem object's business logic
 myOrder.AddOrderItem(productId, productName, pictureUrl, unitPrice, discount, units);
 
 // The code related to OrderItem params validations or domain rules should
@@ -166,7 +166,7 @@ EF Core 1.0 以降を使用する場合、DbContext で、ゲッターによっ�
 
 EF Core 1.1 以降の機能で列をフィールドにマップすれば、プロパティを使用しないで済ませることもできます。 代わりに、テーブルからフィールドに列をマップするだけです。 この方法の一般的なユース ケースとしては、エンティティの外部からアクセスする必要のない、内部状態用のプライベート フィールドがあります。
 
-たとえば、前述の OrderAggregate コード例の場合、`_paymentMethodId` フィールドなどのいくつかのプライベート フィールドがあり、これにはセッターやゲッターに関連するプロパティがあません。 このフィールドは注文のビジネス ロジック内で計算でき、注文のメソッドから使用できますが、データベース内に保存することも必要です。 そのため EF Core (v1.1 以降) では、関連プロパティを使用しないでデータベース内の列にフィールドをマップする方法が備わっています。 これは、このガイドの[インフラストラクチャ レイヤー](ddd-oriented-microservice.md#the-infrastructure-layer)に関するセクションでも説明されています。
+たとえば、前述の OrderAggregate コード例の場合、`_paymentMethodId` フィールドなどのいくつかのプライベート フィールドがあり、これにはセッターやゲッターに関連するプロパティがあません。 このフィールドは注文のビジネス ロジック内で計算でき、注文のメソッドから使用できますが、データベース内に保存する必要もあります。 そのため EF Core (v1.1 以降) では、関連プロパティを使用しないでデータベース内の列にフィールドをマップする方法が備わっています。 これは、このガイドの[インフラストラクチャ レイヤー](ddd-oriented-microservice.md#the-infrastructure-layer)に関するセクションでも説明されています。
 
 ### <a name="additional-resources"></a>その他の技術情報
 
@@ -177,7 +177,7 @@ EF Core 1.1 以降の機能で列をフィールドにマップすれば、プ�
   <https://docs.microsoft.com/archive/msdn-magazine/2013/august/data-points-coding-for-domain-driven-design-tips-for-data-focused-devs>
 
 - **Udi Dahan。完全にカプセル化されたドメイン モデルを作成する方法** \
-  <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
+  <https://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 > [!div class="step-by-step"]
 > [前へ](microservice-domain-model.md)

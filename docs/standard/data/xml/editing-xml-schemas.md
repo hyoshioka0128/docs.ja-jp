@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: fa09c8e5-c2b9-49d2-bb0d-40330cd13e4d
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: bd40677b3b21a4ee1b237656ea2814badbbcd593
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b309c390ede3afc38122188337fa0dc3336e3ad5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040762"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292060"
 ---
 # <a name="editing-xml-schemas"></a>XML スキーマの編集
 
@@ -24,7 +22,7 @@ SOM に読み込まれたスキーマを編集する場合、最初にスキー�
 
 ## <a name="editing-an-xml-schema"></a>XML スキーマの編集
 
-このセクションには、2 種類のコード サンプルが用意されています。これらはいずれも「[XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)」トピックで作成したカスタム スキーマを編集します。 最初のコード サンプルは、`PhoneNumber` 要素に新しい `Customer` 要素を追加します。2 番目のコード サンプルは、`Title` 要素に新しい `FirstName` 属性を追加します。 また、最初のサンプルは、スキーマのコンパイル前の <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> コレクションをカスタム スキーマを走査する手段として使用しますが、2 番目のコード サンプルはスキーマのコンパイル後の <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> コレクションを使用します。
+このセクションには、2 種類のコード サンプルが用意されています。これらはいずれも「[XML スキーマの作成](building-xml-schemas.md)」トピックで作成したカスタム スキーマを編集します。 最初のコード サンプルは、`PhoneNumber` 要素に新しい `Customer` 要素を追加します。2 番目のコード サンプルは、`Title` 要素に新しい `FirstName` 属性を追加します。 また、最初のサンプルは、スキーマのコンパイル前の <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> コレクションをカスタム スキーマを走査する手段として使用しますが、2 番目のコード サンプルはスキーマのコンパイル後の <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> コレクションを使用します。
 
 ### <a name="phonenumber-element-example"></a>PhoneNumber 要素の例
 
@@ -50,7 +48,7 @@ SOM に読み込まれたスキーマを編集する場合、最初にスキー�
 [!code-csharp[XmlSchemaEditExample1#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaEditExample1/CS/XmlSchemaEditExample1.cs#1)]
 [!code-vb[XmlSchemaEditExample1#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaEditExample1/VB/XmlSchemaEditExample1.vb#1)]
 
-変更後のカスタム スキーマ (「[XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)」トピックで作成) を次に示します。
+変更後のカスタム スキーマ (「[XML スキーマの作成](building-xml-schemas.md)」トピックで作成) を次に示します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -62,8 +60,7 @@ SOM に読み込まれたスキーマを編集する場合、最初にスキー�
         <xs:element name="LastName" type="tns:LastNameType" />
         <xs:element name="PhoneNumber">           <xs:simpleType>             <xs:restriction base="xs:string">               <xs:pattern value="\d{3}-\d{3}-\d(4)" />             </xs:restriction>           </xs:simpleType>         </xs:element>
       </xs:sequence>
-      <xs:attribute name="CustomerId" type="xs:positiveInteger" use="required" /
->
+      <xs:attribute name="CustomerId" type="xs:positiveInteger" use="required" />
     </xs:complexType>
   </xs:element>
   <xs:simpleType name="LastNameType">
@@ -115,7 +112,7 @@ SOM に読み込まれたスキーマを編集する場合、最初にスキー�
 [!code-csharp[XmlSchemaEditExample2#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaEditExample2/CS/XmlSchemaEditExample2.cs#1)]
 [!code-vb[XmlSchemaEditExample2#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaEditExample2/VB/XmlSchemaEditExample2.vb#1)]
 
-変更後のカスタム スキーマ (「[XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)」トピックで作成) を次に示します。
+変更後のカスタム スキーマ (「[XML スキーマの作成](building-xml-schemas.md)」トピックで作成) を次に示します。
 
 ```xml
 <?xml version="1.0" encoding=" utf-8"?>
@@ -126,8 +123,7 @@ SOM に読み込まれたスキーマを編集する場合、最初にスキー�
         <xs:element name="FirstName" type="tns:FirstNameComplexType" />
         <xs:element name="LastName" type="tns:LastNameType" />
       </xs:sequence>
-      <xs:attribute name="CustomerId" type="xs:positiveInteger" use="required" /
->
+      <xs:attribute name="CustomerId" type="xs:positiveInteger" use="required" />
     </xs:complexType>
   </xs:element>
   <xs:simpleType name="LastNameType">
@@ -141,10 +137,10 @@ SOM に読み込まれたスキーマを編集する場合、最初にスキー�
 
 ## <a name="see-also"></a>関連項目
 
-- [XML スキーマ オブジェクト モデルの概要](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
-- [XML スキーマの読み取りと書き込み](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
-- [XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [XML スキーマの走査](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
-- [XML スキーマのインクルードまたはインポート](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
-- [スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [スキーマのコンパイル後の情報セット](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+- [XML スキーマ オブジェクト モデルの概要](xml-schema-object-model-overview.md)
+- [XML スキーマの読み取りと書き込み](reading-and-writing-xml-schemas.md)
+- [XML スキーマの作成](building-xml-schemas.md)
+- [XML スキーマの走査](traversing-xml-schemas.md)
+- [XML スキーマのインクルードまたはインポート](including-or-importing-xml-schemas.md)
+- [スキーマをコンパイルするための XmlSchemaSet](xmlschemaset-for-schema-compilation.md)
+- [スキーマのコンパイル後の情報セット](post-schema-compilation-infoset.md)

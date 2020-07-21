@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 306b204a-ade5-47ef-95b5-c785d2da4a7e
 ms.openlocfilehash: 35f660a66fd706b37187056830af5e06ac586caa
 ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72319250"
@@ -13,7 +13,7 @@ ms.locfileid: "72319250"
 型定義は、[!INCLUDE[esql](../../../../../../includes/esql-md.md)] Inline 関数の宣言ステートメントで使用されます。  
   
 ## <a name="remarks"></a>Remarks  
- インライン関数の宣言ステートメントは[、関数の](function-entity-sql.md)名前を表す識別子 (たとえば、"myavg") の後に、かっこ内のパラメーター定義リスト (たとえば、"待機中のコレクション (10進数) ")。  
+ インライン関数の宣言ステートメントは、[FUNCTION](function-entity-sql.md) キーワード、関数名を表す識別子 (例: "MyAvg")、かっこで囲まれたパラメーター定義リスト (例: "dues Collection(Decimal)") で構成されます。  
   
  パラメーター定義リストは、0 個以上のパラメーター定義で構成されます。 各パラメーター定義は、識別子 (関数のパラメーターの名前。例 : "dues") とそれに続く型定義 (例 : "Collection(Decimal)") で構成されます。  
   
@@ -23,7 +23,7 @@ ms.locfileid: "72319250"
   
 - キーワード `COLLECTION` とそれに続くかっこに囲まれた別の型定義 (例 : "Collection(AdventureWorks.Order)")。  
   
-- キーワード ROW とそれに続くかっこに囲まれたプロパティ定義リスト (例 : "Row(x AdventureWorks.Order)")。 プロパティ定義の形式は、"`identifier type_definition`, `identifier type_definition`,..." のようになります。  
+- キーワード ROW とそれに続くかっこに囲まれたプロパティ定義リスト (例 : "Row(x AdventureWorks.Order)")。 プロパティ定義の形式は、"`identifier type_definition`, `identifier type_definition`, ..." のようになります。  
   
 - キーワード REF とそれに続くかっこに囲まれた識別子の型 (例 : "Ref(AdventureWorks.Order)")。 REF 型定義演算子は、引数としてエンティティ型を必要とします。 引数としてプリミティブ型を指定することはできません。  
   
@@ -31,7 +31,7 @@ ms.locfileid: "72319250"
   
  型定義のオプションは、次のとおりです。  
   
-- `IdentifierName supported_type`、または  
+- `IdentifierName supported_type`、または   
   
 - `IdentifierName` COLLECTION(`type_definition`)、または  
   

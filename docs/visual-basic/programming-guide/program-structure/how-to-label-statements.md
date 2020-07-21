@@ -1,5 +1,5 @@
 ---
-title: '方法 : ステートメントへのラベル付け'
+title: '方法: ステートメントへのラベル付け'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - colons (:)
@@ -7,36 +7,36 @@ helpviewer_keywords:
 - ': separator character'
 - Visual Basic code, labeling statements
 ms.assetid: 38f1ff43-2054-42cb-963b-1998e60c6ed4
-ms.openlocfilehash: be116ac8046c43e89e44c2d9127c6131e4dfaa52
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 8f04d592c51b6a0630bfe623fd3574555aef9ff8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347379"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403214"
 ---
-# <a name="how-to-label-statements-visual-basic"></a>方法: ステートメントへのラベル付け (Visual Basic)
+# <a name="how-to-label-statements-visual-basic"></a>方法: ステートメントにラベルを付ける (Visual Basic)
 
-ステートメントブロックは、コロンで区切られたコード行で構成されます。 識別文字列または整数で始まるコード行には、ラベルが*付け*られています。 ステートメントラベルを使用して、コード行をマークし、`On Error Goto`などのステートメントで使用するように指定します。
+ステートメント ブロックは、コロンで区切られたコード行で構成されます。 行の前に識別文字列または整数が指定されたコード行は、"*ラベル付けされている*" といいます。 `On Error Goto` などのステートメントで使用するために、ステートメント ラベルでコード行をマークして識別します。
 
-ラベルは、プログラミング要素を識別する Visual Basic 識別子や、整数リテラルなど、有効な識別子である場合があります。 ラベルは、ソースコードの行の先頭に記述する必要があります。また、同じ行にステートメントが続くかどうかに関係なく、コロンで続ける必要があります。
+ラベルには、有効な Visual Basic 識別子 (プログラミング要素を識別するものなど) または整数リテラルを指定できます。 ラベルは、ソース コードの行の先頭に配置する必要があり、その後にコロンを指定する必要があります。同じ行でコロンの後にステートメントが続くかどうかは関係ありません。
 
-コンパイラは、行の先頭が既に定義されている識別子と一致するかどうかをチェックすることによって、ラベルを識別します。 そうでない場合、コンパイラはこれがラベルであると見なします。
+コンパイラは、行の先頭が既に定義されている識別子と一致するかどうかをチェックすることでラベルを識別します。 一致しない場合、コンパイラはそれをラベルと見なします。
 
-ラベルには独自の宣言領域があり、他の識別子に干渉することはありません。 ラベルのスコープは、メソッドの本体です。 ラベル宣言は、あいまいな状況で優先されます。
+ラベルには独自の宣言領域があり、他の識別子に干渉することはありません。 ラベルのスコープはメソッドの本体です。 あいまいな状況では、ラベルの宣言が優先されます。
 
 > [!NOTE]
 > ラベルは、メソッド内の実行可能なステートメントでのみ使用できます。
 
 ## <a name="to-label-a-line-of-code"></a>コード行にラベルを付けるには
 
-ソースコード行の先頭に、識別子、コロン、コロンの順に配置します。
+ソース コードの行の先頭に識別子を配置し、その後にコロンを配置します。
 
-たとえば、次のコード行には、`Jump` と `120`のラベルが付けられています。
+たとえば、次のコード行は、それぞれ `Jump` と `120` でラベル付けされています。
 
 [!code-vb[VbVbalrStatements#708](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#708)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ステートメント](../../../visual-basic/programming-guide/language-features/statements.md)
-- [宣言された要素の名前](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
-- [プログラム構造とコード規則](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
+- [ステートメント](../language-features/statements.md)
+- [宣言された要素の名前](../language-features/declared-elements/declared-element-names.md)
+- [プログラム構造とコード規則](program-structure-and-code-conventions.md)

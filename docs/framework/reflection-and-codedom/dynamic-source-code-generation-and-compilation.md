@@ -10,44 +10,53 @@ helpviewer_keywords:
 - source code in multiple languages
 - languages, multiple language support by CodeDOM
 ms.assetid: d077a3e8-bd81-4bdf-b6a3-323857ea30fb
-ms.openlocfilehash: a7e341bb5bfb5b4648a222409951275169a29b79
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 7379bac07de9b78369d3742fa3288f6fea6a573f
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130252"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544989"
 ---
-# <a name="dynamic-source-code-generation-and-compilation"></a>動的なソース コードの生成とコンパイル
+# <a name="compile-and-generate-dynamic-source-code"></a>動的なソース コードをコンパイルして生成する
+
 .NET Framework には、CodeDOM (Code Document Object Model) と呼ばれるメカニズムが備わっています。CodeDOM を使用すると、ソース コードを出力するプログラム開発者は、レンダリング対象となるコードを表す単一のモデルに基づいて、実行時に複数のプログラミング言語でソース コードを生成することができます。  
   
- ソース コードを表現する CodeDOM 要素は相互にリンクされ、CodeDOM グラフと呼ばれるデータ構造体を形成します。これは、ソース コードの構造をモデル化します。  
+ソース コードを表現する CodeDOM 要素は相互にリンクされ、CodeDOM グラフと呼ばれるデータ構造体を形成します。これは、ソース コードの構造をモデル化します。  
   
- `System.CodeDom` 名前空間は、特定のプログラミング言語に依存せずに、ソース コードの論理構造を表すことができる型を定義します。 `System.CodeDom.Compiler` 名前空間は、CodeDOM グラフからソース コードを生成し、サポートされている言語でソース コードのコンパイルを管理する型を定義します。 サポート対象の言語のセットは、コンパイラの販売元および開発者が拡張できます。  
+<xref:System.CodeDom?displayProperty=fullName> 名前空間は、特定のプログラミング言語に依存せずに、ソース コードの論理構造を表すことができる型を定義します。 <xref:System.CodeDom.Compiler?displayProperty=fullName> 名前空間は、CodeDOM グラフからソース コードを生成し、サポートされている言語でソース コードのコンパイルを管理する型を定義します。 サポート対象の言語のセットは、コンパイラの販売元および開発者が拡張できます。  
   
- 言語に依存しないソース コードのモデル化は、プログラムで複数の言語のプログラム モデルのソース コードを生成する必要がある場合や、対象言語が不明な場合に役立ちます。 たとえば、その言語が CodeDOM でサポートされている場合は、デザイン時に CodeDOM を言語抽象化インターフェイスとして使用し、適切なプログラミング言語でソース コードを生成できます。  
+言語に依存しないソース コードのモデル化は、プログラムで複数の言語のプログラム モデルのソース コードを生成する必要がある場合や、対象言語が不明な場合に役立ちます。 たとえば、その言語が CodeDOM でサポートされている場合は、デザイン時に CodeDOM を言語抽象化インターフェイスとして使用し、適切なプログラミング言語でソース コードを生成できます。  
   
- .NET Framework には、<xref:Microsoft.CSharp.CSharpCodeProvider> 用、<xref:Microsoft.JScript.JScriptCodeProvider> 用、および <xref:Microsoft.VisualBasic.VBCodeProvider> 用のコード ジェネレーターとコード コンパイラが用意されています。  
+.NET Framework には、<xref:Microsoft.CSharp.CSharpCodeProvider> 用、<xref:Microsoft.JScript.JScriptCodeProvider> 用、および <xref:Microsoft.VisualBasic.VBCodeProvider> 用のコード ジェネレーターとコード コンパイラが用意されています。  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [CodeDOM の使用方法](using-the-codedom.md)  
- CodeDOM の一般的な使用方法を説明し、CodeDOM を使って簡単なオブジェクト グラフを構築する例を示します。  
+## <a name="in-this-section"></a>このセクションの内容
+
+- [CodeDOM の使用方法](using-the-codedom.md)
+
+  CodeDOM の一般的な使用方法を説明し、CodeDOM を使って簡単なオブジェクト グラフを構築する例を示します。  
   
- [CodeDOM グラフからのソース コードの生成およびプログラムのコンパイル](generating-and-compiling-source-code-from-a-codedom-graph.md)  
- ソース コードを生成する方法と、生成されたコードを `System.CodeDom.Compiler` 名前空間で定義されているクラスを使って外部コンパイラでコンパイルする方法について説明します。  
+- [CodeDOM グラフからソース コードを生成してプログラムをコンパイルする](generating-and-compiling-source-code-from-a-codedom-graph.md)  
+
+  ソース コードを生成する方法と、生成されたコードを `System.CodeDom.Compiler` 名前空間で定義されているクラスを使って外部コンパイラでコンパイルする方法について説明します。  
   
- [方法: CodeDOM を使用して XML ドキュメント ファイルを作成する](how-to-create-an-xml-documentation-file-using-codedom.md)  
- CodeDOM を使用して XML ドキュメントのコメント付きのコードを生成する方法、および生成されたコードをコンパイルして XML ドキュメントとして出力する方法について説明します。  
+- [方法: CodeDOM を使用して XML ドキュメント ファイルを作成する](how-to-create-an-xml-documentation-file-using-codedom.md)  
+
+  CodeDOM を使用して XML ドキュメントのコメント付きのコードを生成する方法、および生成されたコードをコンパイルして XML ドキュメントとして出力する方法について説明します。  
   
- [方法 : CodeDOM を使用してクラスを作成する](how-to-create-a-class-using-codedom.md)  
- CodeDOM を使用してフィールド、プロパティ、メソッド、コンストラクター、およびエントリ ポイントを持つクラスを生成する方法を説明します。  
+- [方法: CodeDOM を使用してクラスを作成する](how-to-create-a-class-using-codedom.md)  
+
+  CodeDOM を使用してフィールド、プロパティ、メソッド、コンストラクター、およびエントリ ポイントを持つクラスを生成する方法を説明します。  
   
-## <a name="reference"></a>辞書／辞典／その他  
- <xref:System.CodeDom>  
- 共通言語ランタイムを対象とするプログラミング言語のコード要素を表す要素を定義します。  
+## <a name="reference"></a>関連項目  
+
+- <xref:System.CodeDom>  
+
+  共通言語ランタイムを対象とするプログラミング言語のコード要素を表す要素を定義します。  
   
- <xref:System.CodeDom.Compiler>  
- 実行時にコードを生成およびコンパイルするためのインターフェイスを定義します。  
+- <xref:System.CodeDom.Compiler>  
+
+  実行時にコードを生成およびコンパイルするためのインターフェイスを定義します。  
   
 ## <a name="related-sections"></a>関連項目  
- [CodeDOM クイック リファレンス](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))  
- ソース コードの要素を表す CodeDOM 要素を簡単に検索するための方法が用意されています。
+
+- 「[CodeDOM クイック リファレンス](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))」では、ソース コードの要素を表す CodeDOM 要素を簡単に検索するための方法が提供されています。

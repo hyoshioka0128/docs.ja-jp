@@ -1,35 +1,36 @@
 ---
-title: トランスポート セキュリティと匿名クライアントの WCF
+title: 匿名クライアントを使用したトランスポートセキュリティ
+description: この WCF シナリオを確認します。このシナリオでは、トランスポートセキュリティを使用して、クライアントが信頼する証明書を使用してサーバーを認証します。 クライアントは認証されていません。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: aac3b2ac6cfcca137bddaefafd290e744ee991eb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 08cfb8c1a5581f17a251224430018764bed80b0f
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637436"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245012"
 ---
-# <a name="transport-security-with-an-anonymous-client"></a>トランスポート セキュリティと匿名クライアント
+# <a name="transport-security-with-an-anonymous-client"></a>匿名クライアントを使用したトランスポートセキュリティ
 
-この Windows Communication Foundation (WCF) のシナリオでは、トランスポート セキュリティ (HTTPS) を使用して、機密性と整合性を確認します。 サーバーは SSL (Secure Sockets Layer) 証明書で認証される必要があり、クライアントはサーバーの証明書を信頼する必要があります。 クライアントを認証する機構はないため、匿名となります。
+この Windows Communication Foundation (WCF) シナリオでは、トランスポートセキュリティ (HTTPS) を使用して、機密性と整合性を確保します。 サーバーは SSL (Secure Sockets Layer) 証明書で認証される必要があり、クライアントはサーバーの証明書を信頼する必要があります。 クライアントを認証する機構はないため、匿名となります。
 
-サンプル アプリケーションでは、次を参照してください。 [WS トランスポート セキュリティ](../samples/ws-transport-security.md)します。 トランスポート セキュリティの詳細については、次を参照してください。[トランスポート セキュリティの概要](transport-security-overview.md)します。
+サンプルアプリケーションについては、「 [WS トランスポートセキュリティ](../samples/ws-transport-security.md)」を参照してください。 トランスポートセキュリティの詳細については、「[トランスポートセキュリティの概要](transport-security-overview.md)」を参照してください。
 
-サービスで証明書の使用に関する詳細については、次を参照してください。 [Working with Certificates](working-with-certificates.md)と[方法。SSL 証明書でポートを構成](how-to-configure-a-port-with-an-ssl-certificate.md)します。
+サービスで証明書を使用する方法の詳細については、「[証明書の操作](working-with-certificates.md)」および「[方法: SSL 証明書を使用してポートを構成する](how-to-configure-a-port-with-an-ssl-certificate.md)」を参照してください。
 
 ![匿名クライアントを使用する場合のトランスポート セキュリティ](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
 
 |特徴|説明|
 |--------------------|-----------------|
-|セキュリティ モード|Transport|
+|セキュリティ モード|トランスポート|
 |相互運用性|既存の Web サービスとクライアントを使用する|
-|認証 (サーバー)<br /><br /> 認証 (クライアント)|[はい]<br /><br /> アプリケーション レベル (WCF はサポートされません)|
-|整合性|はい|
-|機密性|はい|
-|Transport|HTTPS|
+|認証 (サーバー)<br /><br /> 認証 (クライアント)|Yes<br /><br /> アプリケーションレベル (WCF サポートなし)|
+|整合性|Yes|
+|機密情報|Yes|
+|トランスポート|HTTPS|
 |バインド|<xref:System.ServiceModel.WSHttpBinding>|
 
 ## <a name="service"></a>サービス
@@ -126,4 +127,4 @@ ms.locfileid: "65637436"
 - [セキュリティの概要](security-overview.md)
 - [WS トランスポート セキュリティ](../samples/ws-transport-security.md)
 - [トランスポート セキュリティの概要](transport-security-overview.md)
-- [Windows Server App Fabric のセキュリティ モデル](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server AppFabric のセキュリティ モデル](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

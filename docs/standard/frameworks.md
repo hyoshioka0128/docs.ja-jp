@@ -1,17 +1,15 @@
 ---
 title: SDK スタイル プロジェクトでのターゲット フレームワーク - .NET
 description: .NET Core アプリとライブラリのターゲット フレームワークについて説明します。
-author: mairaw
-ms.author: mairaw
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 957671644ae333180b0c1ba4aae6d6e17ae6478b
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 33beb5606cbf857cc41b739f256482b0298f1fb1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838217"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79398797"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>SDK スタイルのプロジェクトでのターゲット フレームワーク
 
@@ -29,9 +27,9 @@ ms.locfileid: "74838217"
 
 次の表では、最も一般的なターゲット フレームワーク、それらの参照方法、およびそれらが実装する [.NET Standard](net-standard.md) のバージョンを定義します。 これらのターゲット フレームワークのバージョンは、最新の安定したバージョンです。 プレリリース バージョンは記載されていません。 ターゲット フレームワーク モニカー (TFM) は、.NET アプリまたはライブラリのターゲット フレームワークを指定するための標準化されたトークン形式です。
 
-| [対象とする Framework]      | Latest <br/> 安定バージョン | ターゲット フレームワーク モニカー (TFM) | 実装済み <br/> .NET Standard バージョン |
+| [対象とする Framework]      | 最新 <br/> 安定バージョン | ターゲット フレームワーク モニカー (TFM) | 実装済み <br/> .NET Standard バージョン |
 | :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
-| .NET Standard         | 2.1                         | netstandard2.1                 | N/A                                     |
+| .NET Standard         | 2.1                         | netstandard2.1                 | 該当なし                                     |
 | .NET Core             | 3.1                         | netcoreapp3.1                  | 2.1                                     |
 | .NET Framework        | 4.8                         | net48                          | 2.0                                     |
 
@@ -129,7 +127,7 @@ SDK スタイル プロジェクトを使用する場合、ビルド システ�
 | win10                                                                                      | uap10.0     |
 | winrt                                                                                      | netcore45   |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [パッケージ、メタパッケージ、フレームワーク](../core/packages.md)
 - [クロス プラットフォーム ツールによるライブラリの開発](../core/tutorials/libraries.md)

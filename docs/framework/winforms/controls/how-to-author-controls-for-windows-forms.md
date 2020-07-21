@@ -1,5 +1,5 @@
 ---
-title: '方法 : Windows フォームのコントロールを作成する'
+title: '方法: コントロールを作成する'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], creating
@@ -9,12 +9,12 @@ ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 3776e47191d9b10431acbb9a2a7257996e531ba8
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 169104f51898f9bda08efa08685207e50406a7ff
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459415"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746721"
 ---
 # <a name="how-to-author-controls-for-windows-forms"></a>方法: Windows フォームのコントロールを作成する
 
@@ -50,10 +50,10 @@ ms.locfileid: "73459415"
 
 10. コントロールをパッケージ化してデプロイします。 詳細については、「 [Visual Studio での配置の概要](/visualstudio/deployment/deploying-applications-services-and-components)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [方法 : UserControl クラスを継承する](how-to-inherit-from-the-usercontrol-class.md)
 - [方法: コントロール クラスを継承する](how-to-inherit-from-the-control-class.md)
 - [方法: 既存の Windows フォーム コントロールから継承する](how-to-inherit-from-existing-windows-forms-controls.md)
-- [方法: UserControl の実行時の動作をテストする](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+- [方法 : UserControl の実行時の動作をテストする](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
 - [さまざまなカスタム コントロール](varieties-of-custom-controls.md)

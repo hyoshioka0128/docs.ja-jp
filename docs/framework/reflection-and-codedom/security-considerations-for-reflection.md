@@ -10,12 +10,12 @@ helpviewer_keywords:
 - reflection,partial trust
 - link demands
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
-ms.openlocfilehash: 1d5289ce15c213024af576c99fe039f5d6c1a247
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 1bdaf3abd39797274236ace4cb2967d2e7d199b2
+ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130064"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81644179"
 ---
 # <a name="security-considerations-for-reflection"></a>リフレクションに関するセキュリティ上の考慮事項
 
@@ -59,7 +59,7 @@ ms.locfileid: "73130064"
 
 コマンド ラインから実行されるアプリケーション コードは完全信頼で実行されます。 この場合、透過的とマークされていない限り、リフレクションを使用してセキュリティ クリティカルなメンバーにアクセスできます。 同じコードが部分信頼で実行される場合 (サンドボックス化されたアプリケーション ドメイン内など)、セキュリティ クリティカル コードにアクセスできるかどうかは、アセンブリの信頼レベルによって決まります。アセンブリが厳密な名前を持ち、グローバル アセンブリ キャッシュにインストールされている場合は、信頼されたアセンブリとして、セキュリティ クリティカルなメンバーを呼び出すことができます。 信頼されない場合は、透過的とマークされていなくても透過的として扱われ、セキュリティ クリティカルなメンバーにはアクセスできません。
 
-.NET Framework 4 のセキュリティ モデルの詳細については、「[.NET Framework におけるセキュリティの変更点](../security/security-changes.md)」を参照してください。
+.NET Framework 4 のセキュリティ モデルの詳細については、「[.NET Framework におけるセキュリティの変更点](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)」を参照してください。
 
 ## <a name="reflection-and-transparency"></a>リフレクションと透過
 
@@ -67,7 +67,7 @@ ms.locfileid: "73130064"
 
 |セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|
 |--------------------|------------------------|----------------------------|---------------------------|
-|Critical|`true`|`false`|`false`|
+|重大|`true`|`false`|`false`|
 |セーフ クリティカル|`true`|`true`|`false`|
 |透明|`false`|`false`|`true`|
 
@@ -115,7 +115,7 @@ ms.locfileid: "73130064"
 - <xref:System.Security.Permissions.ReflectionPermissionFlag>
 - <xref:System.Security.Permissions.ReflectionPermission>
 - <xref:System.Security.Permissions.SecurityPermission>
-- [セキュリティの変更](../security/security-changes.md)
+- [セキュリティの変更](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)
 - [コード アクセス セキュリティ](../misc/code-access-security.md)
 - [リフレクション出力のセキュリティ関連事項](security-issues-in-reflection-emit.md)
 - [型情報の表示](viewing-type-information.md)

@@ -3,19 +3,21 @@ title: 'サーバーレス アプリ: アーキテクチャ、パターン、お
 description: サーバーレス アーキテクチャについて説明します。 エンタープライズ アプリケーションにサーバーレス アーキテクチャ (サービスとしてのインフラストラクチャ [IaaS] またはサービスとしてのプラットフォーム [PaaS] ではなく) を実装するタイミング、理由、その方法を説明します。
 author: JEREMYLIKNESS
 ms.author: jeliknes
-ms.date: 06/26/2018
-ms.openlocfilehash: 9dea7dbccb5c9e125f792e6a7287a7dd2fad26f1
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 04/22/2020
+ms.openlocfilehash: 16e658a99feda6537189a45b53da514e67766999
+ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73093547"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82135693"
 ---
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>サーバーレス アプリ: アーキテクチャ、パターン、および Azure の実装
 
-![サーバーレス アプリの e-book のカバーを示すスクリーン ショット。](./media/index/serverless-apps-cover.jpg)
+![サーバーレス アプリの e-book のカバーを示すスクリーン ショット。](./media/index/serverless-apps-cover-v3.png)
 
-> 次の場所でダウンロードできます: <https://aka.ms/serverless-ebook>
+**エディション v3.0**-Azure Functions v3 に更新
+
+> 次の場所でダウンロードできます: <https://aka.ms/serverlessbookpdf>
 
 発行者
 
@@ -27,7 +29,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2018 by Microsoft Corporation
+Copyright &copy; 2018-2020 by Microsoft Corporation
 
 All rights reserved. 本書のいかなる部分も、書面による発行者の許可なしに、いかなる形式または方法によっても、複製または伝送することを禁じます。
 
@@ -43,7 +45,7 @@ Mac および macOS は Apple Inc. の商標です。
 
 作成者:
 
-> **[Jeremy Likness](https://twitter.com/jeremylikness)** 、上級クラウド アドボケイト、Microsoft Corp.
+> **[Jeremy Likness](https://twitter.com/jeremylikness)** 、上級 .NET データ プログラム マネージャー、Microsoft Corp.
 
 共同作成者:
 
@@ -97,7 +99,7 @@ Mac および macOS は Apple Inc. の商標です。
 - オペレーティング システムの最新の状態の維持。
 - アプリケーションの監視。
 
-次の進化の Platform as a Service (PaaS) により、オーバーヘッドが減りました。 PaaS でクラウドのプロバイダーは、オペレーティング システム、セキュリティ更新プログラムに対応するのみでなく、特定のプラットフォームをサポートするのに必要なパッケージさえにも対応します。 VM を構築して .NET Framework を構成して、Internet Information Services (IIS) サーバーを立ち上げる代わりに、開発者は "Web アプリケーション" や "API エンドポイント" などの "プラットフォーム ターゲット" を選択し、コードを直接展開すればよいだけになります。 これにより、インフラストラクチャの問題は以下に減りました。
+次の進化の Platform as a Service (PaaS) により、オーバーヘッドが減りました。 PaaS でクラウドのプロバイダーは、オペレーティング システム、セキュリティ更新プログラムに対応するのみでなく、特定のプラットフォームをサポートするのに必要なパッケージさえにも対応します。 VM を構築して .NET を構成して、Internet Information Services (IIS) サーバーを立ち上げる代わりに、開発者は "Web アプリケーション" や "API エンドポイント" などの "プラットフォーム ターゲット" を選択し、コードを直接展開すればよいだけになります。 これにより、インフラストラクチャの問題は以下に減りました。
 
 - どのようなサイズのサービスが必要か?
 - サービスはどのようにスケール アウトされるのか (サーバーやノードが追加されるのか)?

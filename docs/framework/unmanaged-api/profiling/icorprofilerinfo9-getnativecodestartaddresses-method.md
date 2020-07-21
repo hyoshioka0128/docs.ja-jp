@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 7593e8873c2714df85146903c0052a9909a95ccd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 99706fdc3d60a5e1a7f85400c1184d5acc808e42
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444716"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449731"
 ---
 # <a name="icorprofilerinfo9getnativecodestartaddresses-method"></a>ICorProfilerInfo9:: GetNativeCodeStartAddresses メソッド
 
@@ -32,22 +32,27 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
                                      [out] UINT_PTR codeStartAddresses[]);
 ```
 
-#### <a name="parameters"></a>パラメーター
+## <a name="parameters"></a>パラメーター
 
-`functionId` \
-からネイティブコードの開始アドレスを返す関数の ID。
+- `functionId`
 
-`reJitId` \
-[in] JIT 再コンパイルされた関数のID。
+  \[] には、ネイティブコードの開始アドレスを返す関数の ID を指定します。
 
-`cCodeStartAddresses` \
-[in] `codeStartAddresses` 配列の最大サイズ。
+- `reJitId`
 
-`pcCodeStartAddresses` \
-入出力使用可能なアドレスの数。
+  \[] JIT 再コンパイルされた関数の id。
 
-`codeStartAddresses` \
-入出力`UINT_PTR`の配列。各配列は、指定された関数のネイティブ本体の開始アドレスです。
+- `cCodeStartAddresses`
+
+  \[] `codeStartAddresses` 配列の最大サイズ。
+
+- `pcCodeStartAddresses`
+
+  \[out] 使用可能なアドレスの数。
+
+- `codeStartAddresses`
+
+  \[out] `UINT_PTR`の配列。それぞれが指定された関数のネイティブ本体の開始アドレスです。
 
 ## <a name="remarks"></a>コメント
 
@@ -55,7 +60,7 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
 
 ## <a name="requirements"></a>要件
 
-**プラットフォーム:** 「 [.Net Core でサポートされるオペレーティングシステム](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows)」を参照してください。
+**プラットフォーム:** 「 [.Net Core でサポートされるオペレーティングシステム](../../../core/install/dependencies.md?pivots=os-windows)」を参照してください。
 
 **ヘッダー** : CorProf.idl、CorProf.h
 
@@ -63,6 +68,6 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
 
 **.Net のバージョン:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [ICorProfilerInfo9 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md)
+- [ICorProfilerInfo9 インターフェイス](icorprofilerinfo9-interface.md)

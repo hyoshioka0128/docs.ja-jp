@@ -1,22 +1,23 @@
 ---
 title: 双方向サービス
+description: WCF で双方向サービスコントラクトを作成する方法について説明します。これにより、両方のエンドポイントが、クライアントによって作成されたチャネルを介して相互にメッセージを送信できるようになります。
 ms.date: 05/09/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: 4fd8b679dcd4ac9efce5fa915118736b15206068
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: a43bb63a0ccf1a34b79dce755c19f7ed4cb6c16c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834766"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247352"
 ---
 # <a name="duplex-services"></a>双方向サービス
 
 双方向サービス コントラクトは、両方のエンドポイントが互いに独立してメッセージを送信できるメッセージ交換パターンです。 双方向サービスでは、クライアントのエンドポイントにメッセージを返信できるため、イベントのような動作を実現できます。 双方向通信は、クライアントがサービスに接続し、サービスからクライアントにメッセージを返信できるチャネルがサービスに提供されると発生します。 双方向サービスにおけるイベントのような動作は、セッション内でのみ機能することに注意してください。
 
-双方向コントラクトを作成するには、インターフェイスのペアを作成します。 最初のインターフェイスは、クライアントから呼び出すことのできる操作を記述したサービス コントラクト インターフェイスです。 このサービスコントラクトは、 <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType>プロパティで*コールバックコントラクト*を指定する必要があります。 このコールバック コントラクトが、サービスがクライアント エンドポイントで呼び出すことのできる操作を定義するインターフェイスになります。 双方向コントラクトではセッションは必要ありませんが、システム指定の二重バインディングではセッションを利用します。
+双方向コントラクトを作成するには、インターフェイスのペアを作成します。 最初のインターフェイスは、クライアントから呼び出すことのできる操作を記述したサービス コントラクト インターフェイスです。 このサービスコントラクトは、プロパティで*コールバックコントラクト*を指定する必要があり <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> ます。 このコールバック コントラクトが、サービスがクライアント エンドポイントで呼び出すことのできる操作を定義するインターフェイスになります。 双方向コントラクトではセッションは必要ありませんが、システム指定の二重バインディングではセッションを利用します。
 
 双方向コントラクトの例を次に示します。
 
@@ -33,7 +34,7 @@ ms.locfileid: "71834766"
 [!code-csharp[c_DuplexServices#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/client.cs#2)]
 [!code-vb[c_DuplexServices#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/client.vb#2)]
 
-双方向コントラクト用に生成された WCF クライアントで<xref:System.ServiceModel.InstanceContext>は、構築時にクラスが提供される必要があります。 この <xref:System.ServiceModel.InstanceContext> クラスが、コールバック インターフェイスを実装するオブジェクトのサイトとして使用され、サービスから返信されるメッセージを処理します。 <xref:System.ServiceModel.InstanceContext> クラスは、`CallbackHandler` クラスのインスタンスを使用して構築されます。 このオブジェクトは、コールバック インターフェイスでサービスからクライアントに送信されるメッセージを処理します。
+双方向コントラクト用に生成された WCF クライアントでは、 <xref:System.ServiceModel.InstanceContext> 構築時にクラスが提供される必要があります。 この <xref:System.ServiceModel.InstanceContext> クラスが、コールバック インターフェイスを実装するオブジェクトのサイトとして使用され、サービスから返信されるメッセージを処理します。 <xref:System.ServiceModel.InstanceContext> クラスは、`CallbackHandler` クラスのインスタンスを使用して構築されます。 このオブジェクトは、コールバック インターフェイスでサービスからクライアントに送信されるメッセージを処理します。
 
 [!code-csharp[c_DuplexServices#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/client.cs#3)]
 [!code-vb[c_DuplexServices#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/client.vb#3)]
@@ -87,10 +88,10 @@ binding.ClientBaseAddress = New Uri("http://localhost:8000/DuplexTestUsingCode/C
 ```
 
 > [!WARNING]
-> 双方向モデルは、サービスまたはクライアントがチャネルを閉じるタイミングを自動的に検出しません。 クライアントが予期せず終了した場合、既定ではサービスに通知されません。また、サービスが予期せず終了した場合、クライアントには通知されません。 切断されているサービスを使用すると<xref:System.ServiceModel.CommunicationException> 、例外が発生します。 クライアントとサービスは、独自のプロトコルを実装して、互いに通知するように選択できます。 エラー処理の詳細については、「 [WCF エラー処理](../wcf-error-handling.md)」を参照してください。
+> 双方向モデルは、サービスまたはクライアントがチャネルを閉じるタイミングを自動的に検出しません。 クライアントが予期せず終了した場合、既定ではサービスに通知されません。また、サービスが予期せず終了した場合、クライアントには通知されません。 切断されているサービスを使用すると、 <xref:System.ServiceModel.CommunicationException> 例外が発生します。 クライアントとサービスは、独自のプロトコルを実装して、互いに通知するように選択できます。 エラー処理の詳細については、「 [WCF エラー処理](../wcf-error-handling.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 - [二重](../samples/duplex.md)
 - [クライアントのランタイム動作の指定](../specifying-client-run-time-behavior.md)
-- [2 つのオブジェクトが等しいかどうかをテストする方法チャネルファクトリを作成し、それを使用してチャネルを作成および管理する](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)
+- [方法: チャネル ファクトリを作成および使用して、チャネルを作成および管理する](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)

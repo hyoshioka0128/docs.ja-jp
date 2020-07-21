@@ -2,12 +2,12 @@
 title: System.ServiceModel.PortSharing.PortSharingListening
 ms.date: 03/30/2017
 ms.assetid: 05528126-de72-4801-93ab-397f3c32b809
-ms.openlocfilehash: 43507ce6f81a39287848a9727de0a307b450d065
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 70c9d778c0a5bca241768b3fbc2635b3c035f629
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949748"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601609"
 ---
 # <a name="systemservicemodelportsharingportsharinglistening"></a>System.ServiceModel.PortSharing.PortSharingListening
 System.ServiceModel.PortSharing.PortSharingListening  
@@ -17,6 +17,6 @@ System.ServiceModel.PortSharing.PortSharingListening
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 96c13903-ccb6-4a0e-ab6a-8ca955ca314d
 ms.openlocfilehash: d14b15f72bd196d8b3a61f22c614516e17d2e95b
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70781244"
@@ -20,7 +20,7 @@ ms.locfileid: "70781244"
  通常、LINQ to SQL で ID キャッシュからオブジェクトを取得するには、そのクエリがオブジェクトのプライマリ キーに基づき、1 つのオブジェクトを返すようにする必要があります。 特に、次に示す一般的な形式のいずれかでクエリを実行する必要があります。  
   
 > [!NOTE]
-> プリコンパイル済みクエリでは、ID キャッシュからオブジェクトが返されません。 プリコンパイル済みクエリの詳細については<xref:System.Data.Linq.CompiledQuery> 、 [「」および「方法:クエリ](how-to-store-and-reuse-queries.md)を保存して再利用します。  
+> プリコンパイル済みクエリでは、ID キャッシュからオブジェクトが返されません。 プリコンパイル済みクエリの詳細については、「<xref:System.Data.Linq.CompiledQuery>」および「[方法:クエリを格納および再利用する](how-to-store-and-reuse-queries.md)」を参照してください。  
   
  オブジェクトを ID キャッシュから取得するには、次に示す一般的な形式のいずれかでクエリを実行する必要があります。  
   

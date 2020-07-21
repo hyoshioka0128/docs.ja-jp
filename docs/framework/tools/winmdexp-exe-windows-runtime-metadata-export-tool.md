@@ -6,10 +6,10 @@ helpviewer_keywords:
 - Winmdexp.exe
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 ms.openlocfilehash: 52820b78f6ed7b02e80df66f90a01143b31d9b29
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "74447280"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Windows ランタイム メタデータのエクスポート ツール)
@@ -17,7 +17,7 @@ Windows ランタイム メタデータ エクスポート ツール (Winmdexp.e
   
  Visual Studio 2013 または Visual Studio 2012 で、C# および Visual Basic の **Windows ストア**にある **Windows ランタイム コンポーネント** テンプレートを使用する場合、コンパイラのターゲットは .winmdobj ファイルであり、後続のビルド ステップで Winmdexp.exe が呼び出され、.winmdobj ファイルが .winmd ファイルにエクスポートされます。 Windows ランタイム コンポーネントをビルドする場合は、この方法をお勧めします。 Visual Studio による制御より細かくビルド プロセスを制御する場合は、Winmdexp.exe ファイルを直接使用します。  
   
- このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、Visual Studio 用開発者コマンド プロンプト (または Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[Visual Studio 用開発者コマンド プロンプト](developer-command-prompt-for-vs.md)」を参照してください。  
+ このツールは、Visual Studio と共に自動的にインストールされます。 このツールを実行するには、Visual Studio 用開発者コマンド プロンプト (または Windows 7 の Visual Studio コマンド プロンプト) を使用します。 詳細については、「[コマンド プロンプト](developer-command-prompt-for-vs.md)」を参照してください。  
   
  コマンド プロンプトに次のように入力します。  
   
@@ -29,7 +29,7 @@ winmdexp [options] winmdmodule
   
 ## <a name="parameters"></a>パラメーター  
   
-|引数またはオプション|説明|  
+|引数またはオプション|[説明]|  
 |------------------------|-----------------|  
 |`winmdmodule`|エクスポートするモジュール (.winmdobj) を指定します。 指定できるのは 1 つのモジュールのみです。 このモジュールを作成するには、`/target` ターゲットと共に `winmdobj` コンパイラ オプションを使用します。 「[-target:winmdobj (C# コンパイラ オプション)](../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)」または「[-target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md)」を参照してください。|  
 |`/docfile:` `docfile`<br /><br /> `/d:` `docfile`|Winmdexp.exe が生成する出力 XML ドキュメント ファイルを指定します。 .NET Framework 4.5 では、出力ファイルは基本的に入力 XML ドキュメント ファイルと同じです。|  
@@ -48,7 +48,7 @@ winmdexp [options] winmdmodule
   
  C# または Visual Basic で Windows 8.x Store アプリまたは Windows ランタイム コンポーネントを作成する場合は、Windows ランタイムでのプログラミングをより自然にするためのサポートが .NET Framework で提供されています。 これは、記事「[Windows ストア アプリおよび Windows ランタイムのための .NET Framework サポート](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)」で解説されています。 プロセスでは、一般的に使用される Windows ランタイム型が .NET Framework 型にマップされます。 Winmdexp.exe では、このプロセスが反転され、対応する Windows ランタイム型を使用する API サーフェスが生成されます。 たとえば、<xref:System.Collections.Generic.IList%601> インターフェイスから構築された型は、Windows ランタイムの <xref:Windows.Foundation.Collections.IVector%601> インターフェイスから構築された型にマップされます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Windows ストア アプリおよび Windows ランタイムのための .NET Framework サポート](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
 - [C# および Visual Basic での Windows ランタイム コンポーネントの作成](https://docs.microsoft.com/previous-versions/br230301(v=vs.110))

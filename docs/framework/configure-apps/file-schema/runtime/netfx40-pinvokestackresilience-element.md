@@ -6,19 +6,19 @@ helpviewer_keywords:
 - NetFx40_PInvokeStackResilience element
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 ms.openlocfilehash: 86f50aafe0b21d5080288e09ac7118ca1e4c939a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73116158"
 ---
-# <a name="netfx40_pinvokestackresilience-element"></a>\<NetFx40_PInvokeStackResilience > 要素
+# <a name="netfx40_pinvokestackresilience-element"></a>\<NetFx40_PInvokeStackResilience> 要素
 
 ランタイムが実行時の不適切なプラットフォーム呼び出し宣言を自動的に修正するかどうかを指定します。これにより、マネージド コードとアンマネージド コード間の遷移が遅くなります。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<NetFx40_PInvokeStackResilience >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<NetFx40_PInvokeStackResilience>**  
 
 ## <a name="syntax"></a>構文
 
@@ -38,7 +38,7 @@ ms.locfileid: "73116158"
 
 ## <a name="enabled-attribute"></a>enabled 属性
 
-|[値]|説明|
+|値|Description|
 |-----------|-----------------|
 |`0`|ランタイムは、.NET Framework 4 で導入された高速な相互運用マーシャリングアーキテクチャを使用します。これは、不適切なプラットフォーム呼び出し宣言を検出して修正するものではありません。 既定値です。|
 |`1`|ランタイムは、不適切なプラットフォーム呼び出し宣言を検出して修正する低速の遷移を使用します。|
@@ -49,12 +49,12 @@ ms.locfileid: "73116158"
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
 |`runtime`|ランタイム初期化オプションに関する情報を含んでいます。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
 この要素を使用すると、不適切なプラットフォーム呼び出し宣言に対して実行時の回復性を高めるために、高速な相互運用マーシャリングを行うことができます。
 
@@ -62,7 +62,7 @@ ms.locfileid: "73116158"
 
 開発中に不適切な宣言を簡単に検出できるように、Visual Studio のデバッグエクスペリエンスが改善されました。 デバッガーがアタッチされた状態でアプリケーションを実行すると、 [pInvokeStackImbalance](../../../debug-trace-profile/pinvokestackimbalance-mda.md) managed デバッグアシスタント (MDA) によって、不適切なプラットフォーム呼び出し宣言が通知されます。
 
-再コンパイルできないコンポーネントがアプリケーションで使用されていて、不適切なプラットフォーム呼び出し宣言がある場合は、`NetFx40_PInvokeStackResilience` 要素を使用できます。 この要素をアプリケーション構成ファイルに追加すると `enabled="1"` が、以前のバージョンの .NET Framework の動作と互換性モードになり、移行速度が低下します。 以前のバージョンの .NET Framework に対してコンパイルされたアセンブリは、自動的にこの互換モードに設定され、この要素は必要ありません。
+再コンパイルできないコンポーネントをアプリケーションで使用していて、無効なプラットフォーム呼び出し宣言を持つシナリオに対処するには、要素を使用でき `NetFx40_PInvokeStackResilience` ます。 この要素をアプリケーション構成ファイルに追加するには、 `enabled="1"` 以前のバージョンの .NET Framework の動作で互換性モードを使用します。これにより、移行速度が低下します。 以前のバージョンの .NET Framework に対してコンパイルされたアセンブリは、自動的にこの互換モードに設定され、この要素は必要ありません。
 
 ## <a name="configuration-file"></a>構成ファイル
 

@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 10663fb6-434c-4c81-8178-ec894b9cf895
 ms.openlocfilehash: bf46d43f5ac9b0a385e9bc6da1546af1d67a282d
 ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73040245"
@@ -48,7 +48,7 @@ ALTER DATABASE Database2 SET DB_CHAINING ON;
   
 |リソース|説明|  
 |--------------|-----------------|  
-|[EXECUTE AS](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188304(v=sql.105))と[クロス DB の組み合わせ所有権](/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option)を使用して、データベースの権限借用を拡張します。|記事では、SQL Server のインスタンスに対して複数データベースの組み合わせ所有権を構成する方法について説明します。|  
+|「[EXECUTE AS の使用によるデータベースの権限借用の拡張](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188304(v=sql.105))」および「[cross db ownership chaining サーバー構成オプション](/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option)」。|SQL Server のインスタンスに対して、複数データベースの組み合わせ所有権を構成する方法が説明されています。|  
   
 ## <a name="see-also"></a>関連項目
 

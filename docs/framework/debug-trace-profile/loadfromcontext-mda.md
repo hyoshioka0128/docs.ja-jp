@@ -1,5 +1,6 @@
 ---
 title: loadFromContext MDA
+description: .NET の loadFromContext マネージデバッグアシスタント (MDA) について説明します。これは、アセンブリが LoadFrom コンテキストに読み込まれた場合にアクティブ化されます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), LoadFrom context
@@ -7,25 +8,23 @@ helpviewer_keywords:
 - LoadFrom context
 - LoadFromContext MDA
 ms.assetid: a9b14db1-d3a9-4150-a767-dcf3aea0071a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 89605a119e8251ffd577ff402366dff0fd4af4d7
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8d55268f2b2106dde4e488a6f0271fd3b17349da
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052519"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051650"
 ---
 # <a name="loadfromcontext-mda"></a>loadFromContext MDA
 アセンブリが `LoadFrom` コンテキストに読み込まれると、`loadFromContext` マネージド デバッグ アシスタント (MDA) がアクティブになります。 このような状況は、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> または他の同様のメソッドを呼び出した結果として発生する可能性があります。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
  一部のローダー メソッドは、使用すると、`LoadFrom` コンテキストでアセンブリが呼び出される結果になる可能性があります。 このコンテキストを使用すると、シリアル化、キャスティング、依存関係の解決について予期しない結果になる可能性があります。 一般的に、このような問題を回避するために、アセンブリを `Load` コンテキストに読み込むことをお勧めします。 この MDA を使用せずに、アセンブリが読み込まれたコンテキストを判断することは困難です。  
   
 ## <a name="cause"></a>原因  
  一般的に、アセンブリは `Load` コンテキスト以外のパス (グローバル アセンブリ キャッシュや <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=nameWithType> プロパティなど) から読み込まれた場合、`LoadFrom` コンテキストに読み込まれていました。  
   
-## <a name="resolution"></a>解決策  
+## <a name="resolution"></a>解決方法  
  <xref:System.Reflection.Assembly.LoadFrom%2A> の呼び出しが不要になるようにアプリケーションを構成します。 そのためには、次の手法を使用できます。  
   
 - グローバル アセンブリ キャッシュにアセンブリをインストールします。  
@@ -64,8 +63,8 @@ namespace ConsoleApplication1
         static void Main(string[] args)  
         {  
             // The following call caused the LoadFrom context to be used  
-            // because the assembly is loaded using LoadFrom and the path is   
-            // located outside of the Load context probing path.   
+            // because the assembly is loaded using LoadFrom and the path is
+            // located outside of the Load context probing path.
             Assembly.LoadFrom(@"C:\Text\Test.dll");  
         }  
     }  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8a11bfa4-cbb0-4082-82b5-f9fba66c93f5
 topic_type:
 - apiref
-ms.openlocfilehash: fa9608423456caeb6020e883a14f2c41583ac4d9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 04cb45cd021532b6cb3d74a195cbd62e1ab8d31d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126609"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615853"
 ---
 # <a name="iclrcontrolgetclrmanager-method"></a>ICLRControl::GetCLRManager メソッド
 ホストが共通言語ランタイム (CLR) を構成するために使用できる任意のマネージャー型のインスタンスへのインターフェイスポインターを取得します。  
@@ -36,21 +36,21 @@ HRESULT GetCLRManager (
   
 ## <a name="parameters"></a>パラメーター  
  `riid`  
- から返すマネージャー型の `IID`。 次の `IID` 値がサポートされています。  
+ から`IID`返されるマネージャーの型の。 次の `IID` 値がサポートされています。  
   
-- IID_ICLRDebugManager: `ppObject` が[ICLRDebugManager](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)型であることを指定します。  
+- IID_ICLRDebugManager: が ICLRDebugManager 型であることを指定し `ppObject` ます。 [ICLRDebugManager](iclrdebugmanager-interface.md)  
   
-- IID_ICLRErrorReportingManager: `ppObject` が[ICLRErrorReportingManager](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)型であることを指定します。  
+- IID_ICLRErrorReportingManager: が ICLRErrorReportingManager 型であることを指定し `ppObject` ます。 [ICLRErrorReportingManager](iclrerrorreportingmanager-interface.md)  
   
-- IID_ICLRGCManager: `ppObject` が[ICLRGCManager](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)型であることを指定します。  
+- IID_ICLRGCManager: が ICLRGCManager 型であることを指定し `ppObject` ます。 [ICLRGCManager](iclrgcmanager-interface.md)  
   
-- IID_ICLRHostProtectionManager: `ppObject` が[ICLRHostProtectionManager](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-interface.md)型であることを指定します。  
+- IID_ICLRHostProtectionManager: が ICLRHostProtectionManager 型であることを指定し `ppObject` ます。 [ICLRHostProtectionManager](iclrhostprotectionmanager-interface.md)  
   
-- IID_ICLROnEventManager: `ppObject` が[ICLROnEventManager](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-interface.md)型であることを指定します。  
+- IID_ICLROnEventManager: が ICLROnEventManager 型であることを指定し `ppObject` ます。 [ICLROnEventManager](iclroneventmanager-interface.md)  
   
-- IID_ICLRPolicyManager: `ppObject` が[ICLRPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)型であることを指定します。  
+- IID_ICLRPolicyManager: が ICLRPolicyManager 型であることを指定し `ppObject` ます。 [ICLRPolicyManager](iclrpolicymanager-interface.md)  
   
-- IID_ICLRTaskManager: `ppObject` が[ICLRTaskManager](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)型であることを指定します。  
+- IID_ICLRTaskManager: が ICLRTaskManager 型であることを指定し `ppObject` ます。 [ICLRTaskManager](iclrtaskmanager-interface.md)  
   
  `ppObject`  
  入出力要求されたマネージャーへのインターフェイスポインター。無効なマネージャーの種類が要求された場合は null。  
@@ -59,24 +59,24 @@ HRESULT GetCLRManager (
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|S_OK|メソッドが正常に返されました。|  
+|S_OK|メソッドから正常に値が返されました。|  
 |HOST_E_CLRNOTAVAILABLE|CLR がプロセスに読み込まれていないか、CLR がマネージドコードを実行できない状態であるか、または呼び出しが正常に処理されていません。|  
 |HOST_E_TIMEOUT|呼び出しがタイムアウトしました。|  
 |HOST_E_NOT_OWNER|呼び出し元がロックを所有していません。|  
 |HOST_E_ABANDONED|ブロックされたスレッドまたはファイバーが待機しているときに、イベントが取り消されました。|  
-|E_FAIL|原因不明の致命的なエラーが発生しました。 メソッドから E_FAIL が返された後は、そのプロセス内で CLR を使用できなくなります。 後続のホストメソッドの呼び出しでは、HOST_E_CLRNOTAVAILABLE が返されます。|  
+|E_FAIL|原因不明の致命的なエラーが発生しました。 メソッドが E_FAIL を返すと、そのプロセス内で CLR が使用できなくなります。 後続のホストメソッドの呼び出しでは HOST_E_CLRNOTAVAILABLE が返されます。|  
 |E_NOINTERFACE|インターフェイス型はサポートされていません。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICLRControl インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
-- [IHostControl インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+- [ICLRControl インターフェイス](iclrcontrol-interface.md)
+- [IHostControl インターフェイス](ihostcontrol-interface.md)

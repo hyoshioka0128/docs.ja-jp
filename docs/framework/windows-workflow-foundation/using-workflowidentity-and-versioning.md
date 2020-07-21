@@ -2,12 +2,12 @@
 title: WorkflowIdentity と Versioning の使用
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: 66ef4fed682554d9fab2a7b0f85bb9cfaf8e8a29
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 97224caa24b38a00a1cbb4fa76781eea3a10faaf
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74142049"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787911"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>WorkflowIdentity と Versioning の使用
 
@@ -78,7 +78,7 @@ wfApp.Load(instanceId);
 
 前のコードが実行されると、次の <xref:System.Activities.VersionMismatchException> がスローされます。
 
-```
+```output
 The WorkflowIdentity ('MortgageWorkflow v1; Version=1.0.0.0') of the loaded instance does not match the WorkflowIdentity ('MortgageWorkflow v2; Version=2.0.0.0') of the provided workflow definition. The instance can be loaded using a different definition, or updated using Dynamic Update.
 ```
 
@@ -150,7 +150,7 @@ wfApp.Load(instance);
 
 .NET Framework 4.5 ワークフローアプリケーションが、指定されたスクリプトを使用してアップグレードされていない永続性データベースで新しいバージョン管理機能を使用するすべての永続化操作を試みると、次のようなメッセージと共に <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> がスローされます。
 
-```
+```output
 The SqlWorkflowInstanceStore has a database version of '4.0.0.0'. InstancePersistenceCommand 'System.Activities.DurableInstancing.CreateWorkflowOwnerWithIdentityCommand' cannot be run against this database version.  Please upgrade the database to '4.5.0.0'.
 ```
 
@@ -160,10 +160,10 @@ The SqlWorkflowInstanceStore has a database version of '4.0.0.0'. InstancePersis
 
 2. **[ファイル]** メニューの [**開く** **] をクリック**します。 次のフォルダーに移動します: `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en`。
 
-3. **Sqlworkflowinstancestoreschemaupgrade.sql**を選択し、 **[開く]** をクリックします。
+3. 選択**SqlWorkflowInstanceStoreSchemaUpgrade.sql** をクリック**オープン**します。
 
 4. **[使用できるデータベース]** ドロップダウンで、永続性データベースの名前を選択します。
 
 5. **[クエリ]** メニューの **[実行]** をクリックします。
 
-クエリが完了すると、データベース スキーマがアップグレードされるため、必要に応じて、永続化されたワークフロー インスタンスに割り当てられた既定のワークフロー ID を確認できます。 **オブジェクトエクスプローラー**の **[データベース]** ノードで永続性データベースを展開し、 **[ビュー]** ノードを展開します。 **System.activities.durableinstancing.instances**を右クリックし、[**上位1000行の選択]** を選択します。 列の最後までスクロールし、ビューに追加された6つの**列 ([** **IdentityPackage**]、 **[ビルド]** 、 **[メジャー]** 、 **[マイナー]** 、 **[リビジョン]** ) が表示されていることを確認します。 永続化されたワークフローでは、null のワークフロー id を表す null 値がこれらのフィールドに対して**null**になります。
+クエリが完了すると、データベース スキーマがアップグレードされるため、必要に応じて、永続化されたワークフロー インスタンスに割り当てられた既定のワークフロー ID を確認できます。 **オブジェクトエクスプローラー**の **[データベース]** ノードで永続性データベースを展開し、 **[ビュー]** ノードを展開します。 右クリックして**System.Activities.DurableInstancing.Instances**選択**上位 1000 行**します。 列の最後までスクロールし、ビューに追加された6つの**列 ([** **IdentityPackage**]、 **[ビルド]** 、 **[メジャー]** 、 **[マイナー]** 、 **[リビジョン]** ) が表示されていることを確認します。 永続化されたワークフローでは、null のワークフロー id を表す null 値がこれらのフィールドに対して**null**になります。

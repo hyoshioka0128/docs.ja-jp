@@ -3,103 +3,145 @@ title: dotnet テストと xUnit を使用した .NET Core での単体テスト
 description: dotnet テストおよび xUnit を使用した Visual Basic ソリューションのサンプルを段階的に構築していく対話型エクスペリエンスを通じて、.NET Core の単体テストの概念について説明します。
 author: billwagner
 ms.author: wiwagn
-ms.date: 09/01/2017
-ms.custom: seodec18
-ms.openlocfilehash: 1738aa805947fbe0c1b7c2c770947ce650692b5f
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 05/18/2020
+ms.openlocfilehash: d87550d692e0b7f3bfee1633bd00cbf501cc2e67
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117054"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502757"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>dotnet テストと xUnit を使用した Visual Basic .NET Core ライブラリでの単体テスト
 
-このチュートリアルでは、単体テストの概念について学習するためにサンプル ソリューションを段階的に構築する対話型のエクスペリエンスを示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、開始する前に[サンプル コードを参照またはダウンロード](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-dotnet-test)してください。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
+このチュートリアルでは、単体テスト プロジェクトとライブラリ プロジェクトが含まれるソリューションを構築する方法を示します。 構築済みのソリューションを使用してチュートリアルに従う場合は、[サンプル コードを表示またはダウンロードしてください](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/)。 ダウンロード方法については、「[サンプルおよびチュートリアル](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)」を参照してください。
 
-[!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
+## <a name="create-the-solution"></a>ソリューションを作成する
 
-## <a name="creating-the-source-project"></a>ソース プロジェクトの作成
-
-シェル ウィンドウを開きます。 ソリューションを保存するための *unit-testing-vb-using-dotnet-test* というディレクトリを作成します。
-この新しいディレクトリ内で [`dotnet new sln`](../tools/dotnet-new.md) を実行して、ソリューションを新たに作成します。 こうすることで、クラス ライブラリと単体テスト プロジェクトの両方を管理しやすくなります。
-ソリューションのディレクトリ内で、*PrimeService* ディレクトリを作成します。 現時点のディレクトリとファイルの構造は次のようになっています。
+このセクションでは、ソース プロジェクトとテスト プロジェクトを含むソリューションが作成されます。 完成したソリューションのディレクトリ構造は次のようになります。
 
 ```
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
-```
-
-*PrimeService* を現在のディレクトリにし、[`dotnet new classlib -lang VB`](../tools/dotnet-new.md) を実行してソース プロジェクトを作成します。 *Class1.VB* の名前を *PrimeService.VB* に変更します。 `PrimeService` クラスのエラーが発生する実装を作成します。
-
-```vb
-Namespace Prime.Services
-    Public Class PrimeService
-        Public Function IsPrime(candidate As Integer) As Boolean
-            Throw New NotImplementedException("Please create a test first")
-        End Function
-    End Class
-End Namespace
-```
-
-*unit-testing-vb-using-dotnet-test* ディレクトリに戻ります。 [`dotnet sln add .\PrimeService\PrimeService.vbproj`](../tools/dotnet-sln.md) を実行して、クラス ライブラリ プロジェクトをソリューションに追加します。
-
-## <a name="creating-the-test-project"></a>テスト プロジェクトの作成
-
-次に、*PrimeService.Tests* ディレクトリを作成します。 次の一覧はディレクトリ構造を示したものです。
-
-```
-/unit-testing-vb-using-dotnet-test
-    unit-testing-vb-using-dotnet-test.sln
-    /PrimeService
-        Source Files
+        PrimeService.vb
         PrimeService.vbproj
     /PrimeService.Tests
-```
-
-*PrimeService.Tests* ディレクトリを現在のディレクトリにし、[`dotnet new xunit -lang VB`](../tools/dotnet-new.md) を使用して新しいプロジェクトを作成します。 このコマンドによって、テスト ライブラリとして xUnit を使用するテスト プロジェクトが作成されます。 生成されたテンプレートで、*PrimeServiceTests.vbproj* のテスト ランナーが構成されます。
-
-```xml
-<ItemGroup>
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
-  <PackageReference Include="xunit" Version="2.2.0" />
-  <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
-</ItemGroup>
-```
-
-テスト プロジェクトには、単体テストを作成して実行するための、他のパッケージが必要です。 前の手順の `dotnet new` によって、xUnit と xUnit ランナーが追加されています。 ここで、プロジェクトに別の依存関係として `PrimeService` クラス ライブラリを追加します。 次の [`dotnet add reference`](../tools/dotnet-add-reference.md) コマンドを使用します。
-
-```dotnetcli
-dotnet add reference ../PrimeService/PrimeService.vbproj
-```
-
-全体のファイルは GitHub の[サンプル リポジトリ](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService.Tests.vbproj)で確認できます。
-
-フォルダーの最終的なレイアウトは次のようになります。
-
-```
-/unit-testing-using-dotnet-test
-    unit-testing-using-dotnet-test.sln
-    /PrimeService
-        Source Files
-        PrimeService.vbproj
-    /PrimeService.Tests
-        Test Source Files
+        PrimeService_IsPrimeShould.vb
         PrimeServiceTests.vbproj
 ```
 
-*unit-testing-vb-using-dotnet-test* ディレクトリで [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md) を実行します。 
+テスト ソリューションを作成する手順を次に示します。 テスト ソリューションをワンステップで作成する手順については、[テスト ソリューションを作成するためのコマンド](#create-test-cmd)に関する記事を参照してください。
 
-## <a name="creating-the-first-test"></a>最初のテストの作成
+* シェル ウィンドウを開きます。
+* 次のコマンドを実行します。
 
-失敗するテストを 1 つ作成してそれを合格させる、というプロセスを繰り返します。 *PrimeService.Tests* ディレクトリから *UnitTest1.vb* を削除し、*PrimeService_IsPrimeShould.VB* という名前の新しい Visual Basic ファイルを作成します。 次のコードを追加します。
+  ```dotnetcli
+  dotnet new sln -o unit-testing-using-dotnet-test
+  ```
+
+  [`dotnet new sln`](../tools/dotnet-new.md) コマンドによって、新しいソリューションが *unit-testing-using-dotnet-test* ディレクトリに作成されます。
+* ディレクトリを *unit-testing-using-dotnet-test* フォルダーに変更します。
+* 次のコマンドを実行します。
+
+  ```dotnetcli
+  dotnet new classlib -o PrimeService --lang VB
+  ```
+
+   [`dotnet new classlib`](../tools/dotnet-new.md) コマンドによって、*PrimeService* フォルダーに新しいクラス ライブラリ プロジェクトが作成されます。 この新しいクラス ライブラリに、テスト対象のコードが含まれることになります。
+* *Class1.vb* の名前を *PrimeService.vb* に変更します。
+* *PrimeService.vb* のコードを、次のコードに置き換えます。
+  
+  ```vb
+  Imports System
+  
+  Namespace Prime.Services
+      Public Class PrimeService
+          Public Function IsPrime(candidate As Integer) As Boolean
+              Throw New NotImplementedException("Not implemented.")
+          End Function
+      End Class
+  End Namespace
+  ```
+
+* 上記のコードでは次の操作が行われます。
+  * 実装されていないことを示すメッセージを含む <xref:System.NotImplementedException> がスローされます。
+  * このチュートリアルの中で、後で更新します。
+
+<!-- preceding code shows an english bias. Message makes no sense outside english -->
+
+* *unit-testing-using-dotnet-test* ディレクトリで、次のコマンドを実行して、クラス ライブラリ プロジェクトをソリューションに追加します。
+
+  ```dotnetcli
+  dotnet sln add ./PrimeService/PrimeService.vbproj
+  ```
+
+* 次のコマンドを実行して、*PrimeService.Tests* プロジェクトを作成します。
+
+  ```dotnetcli
+  dotnet new xunit -o PrimeService.Tests
+  ```
+
+* 上記のコマンドにより、次のことが行われます。
+  * *PrimeService.Tests* ディレクトリに *PrimeService.Tests* プロジェクトが作成されます。 このテスト プロジェクトでは、テスト ライブラリとして [xUnit](https://xunit.net/) が使用されます。
+  * プロジェクト ファイルに次の `<PackageReference />` 要素を追加することで、テスト ランナーを構成します。
+    * "Microsoft.NET.Test.Sdk"
+    * "xunit"
+    * "xunit.runner.visualstudio"
+
+* 次のコマンドを実行して、ソリューション ファイルにテスト プロジェクトを追加します。
+
+  ```dotnetcli
+  dotnet sln add ./PrimeService.Tests/PrimeService.Tests.vbproj
+  ```
+
+* *PrimeService.Tests* プロジェクトへの依存関係として `PrimeService` クラス ライブラリを追加します。
+
+  ```dotnetcli
+  dotnet add ./PrimeService.Tests/PrimeService.Tests.vbproj reference ./PrimeService/PrimeService.vbproj  
+  ```
+
+<a name="create-test-cmd"></a>
+
+### <a name="commands-to-create-the-solution"></a>ソリューションを作成するためのコマンド
+
+このセクションでは、前のセクション内のすべてのコマンドの概要を示します。 前のセクションの手順を完了している場合は、このセクションをスキップしてください。
+
+次のコマンドによって、Windows コンピューター上にテスト ソリューションが作成されます。 macOS と Unix の場合は、`ren` コマンドを `ren` の OS バージョンに更新してファイルの名前を変更します。
+
+```dotnetcli
+dotnet new sln -o unit-testing-using-dotnet-test
+cd unit-testing-using-dotnet-test
+dotnet new classlib -o PrimeService
+ren .\PrimeService\Class1.vb PrimeService.vb
+dotnet sln add ./PrimeService/PrimeService.vbproj
+dotnet new xunit -o PrimeService.Tests
+dotnet add ./PrimeService.Tests/PrimeService.Tests.vbproj reference ./PrimeService/PrimeService.vbproj
+dotnet sln add ./PrimeService.Tests/PrimeService.Tests.vbproj
+```
+
+前のセクションの「*PrimeService.vb* 内のコードを次のコードに置き換える」の指示に従います。
+
+## <a name="create-a-test"></a>テストの作成
+
+テスト駆動開発 (TDD) の一般的なアプローチは、ターゲット コードを実装する前にテストを記述することです。 このチュートリアルでは、この TDD アプローチを使用します。 `IsPrime` メソッドは呼び出し可能ですが、実装されていません。 `IsPrime` のテスト呼び出しは失敗します。 TDD では、失敗することがわかっているテストを記述します。 テストに合格するように、ターゲット コードを更新します。 このアプローチを繰り返して、失敗するテストを記述した後、テストに合格するようにターゲット コードを更新します。
+
+*PrimeService.Tests* プロジェクトを更新します。
+
+* *PrimeService.Tests/UnitTest1.vb* を削除します。
+* *PrimeService.Tests/PrimeService_IsPrimeShould.vb* ファイルを作成します。
+* *PrimeService_IsPrimeShould.vb* のコードを、次のコードに置き換えます。
 
 ```vb
 Imports Xunit
 
 Namespace PrimeService.Tests
     Public Class PrimeService_IsPrimeShould
-        Private _primeService As Prime.Services.PrimeService = New Prime.Services.PrimeService()
+        Private ReadOnly _primeService As Prime.Services.PrimeService
+
+        Public Sub New()
+            _primeService = New Prime.Services.PrimeService()
+        End Sub
+
 
         <Fact>
         Sub IsPrime_InputIs1_ReturnFalse()
@@ -112,35 +154,80 @@ Namespace PrimeService.Tests
 End Namespace
 ```
 
-`<Fact>` 属性は、テスト ランナーによって実行されるテスト メソッドを表します。 *unit-testing-using-dotnet-test* で [`dotnet test`](../tools/dotnet-test.md) を実行してテストとクラス ライブラリをビルドし、それからテストを実行します。 xUnit テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` を実行すると、作成した単体テスト プロジェクトを使用してテスト ランナーが開始されます。
+`[Fact]` 属性で、テスト ランナーによって実行されるテスト メソッドを宣言します。 *PrimeService.Tests* フォルダーから、`dotnet test` を実行します。 [dotnet test](../tools/dotnet-test.md) コマンドで、両方のプロジェクトをビルドし、テストを実行します。 xUnit テスト ランナーには、テストを実行するためのプログラムのエントリ ポイントが含まれています。 `dotnet test` で、単体テスト プロジェクトを使用するテスト ランナーが開始されます。
 
-テストが失敗します。 実装はまだ作成していません。 最も単純な動作のコードを `PrimeService` クラスに記述して、このテストが成功するようにします。
+`IsPrime` が実装されていないため、テストは失敗します。 TDD アプローチでは、このテストに合格するのに十分なコードだけを記述します。 次のコードを使用して `IsPrime` を更新します。
 
 ```vb
 Public Function IsPrime(candidate As Integer) As Boolean
     If candidate = 1 Then
         Return False
     End If
-    Throw New NotImplementedException("Please create a test first.")
+    Throw New NotImplementedException("Not implemented.")
 End Function
 ```
 
-*unit-testing-vb-using-dotnet-test* ディレクトリで、もう一度 `dotnet test` を実行します。 `dotnet test` コマンドは `PrimeService` プロジェクトのビルドを実行してから、`PrimeService.Tests` プロジェクトのビルドを実行します。 両方のプロジェクトをビルドすると、この単一テストが実行されます。 成功します。
+`dotnet test` を実行します。 テストに合格します。
 
-## <a name="adding-more-features"></a>他の機能の追加
+### <a name="add-more-tests"></a>さらにテストを追加する
 
-テストが成功したので、他のテストも記述してみましょう。 素数に関する、いくつかの単純なケースが他にもあります(0、-1)。 `<Fact>` 属性を使用すると、これらの例を新しいテストとして追加できますが、すぐに煩雑になります。 一連の類似のテストを記述できるようになる、他の xUnit 属性があります。  `<Theory>` 属性は同じコードを実行するものの、異なる入力引数が含まれる一連のテストを表します。 `<InlineData>` 属性を使用して、そのような入力の値を指定することができます。
-
-新しいテストを作成するのではなく、この 2 つの属性を適用することで 1 つの理論を作成できます。 その理論とは、複数の 2 未満の値を調べて、もっとも小さい素数を特定するという手法です。
-
-[!code-vb[Sample_TestCode](../../../samples/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb?name=Sample_TestCode)]
-
-`dotnet test` を実行して、これらの 2 つのテストが失敗したとします。 すべてのテストを成功させるために、メソッドの先頭にある `if` 句を変更します。
+0 と -1 のための素数テストを追加します。 前のテストをコピーし、次のコードを 0 と -1 を使用するように変更できます。
 
 ```vb
-if candidate < 2
+Dim result As Boolean = _primeService.IsPrime(1)
+
+Assert.False(result, "1 should not be prime")
 ```
 
-他のテスト、理論、コードをメイン ライブラリに追加して、反復を続けます。 [テストの最終版](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb)ができ、[ライブラリの完全な実装](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService/PrimeService.vb)が完了しました。
+パラメーターだけを変更するときにテスト コードをコピーすると、コードの重複が発生してテストが膨張します。 次の xUnit 属性を使用して、類似する一連のテストを記述できます。
 
-これで、小さなライブラリとそのライブラリの単体テストのセットが構築されました。 ソリューションを構築したことで、新しいパッケージとテストの追加が通常のワークフローに組み込まれました。 アプリケーションの目標を達成することに時間と労力の多くを割き、集中して取り組みました。
+- `[Theory]` は同じコードを実行するものの、異なる入力引数が含まれる一連のテストを表します。
+- `[InlineData]` 属性は、これらの入力の値を指定します。
+
+新しいテストを作成するのではなく、上記の xUnit 属性を適用することで、単一の理論を作成できます。 以下のコードを
+
+```vb
+<Fact>
+Sub IsPrime_InputIs1_ReturnFalse()
+    Dim result As Boolean = _primeService.IsPrime(1)
+
+    Assert.False(result, "1 should not be prime")
+End Sub
+```
+
+次のコードに置き換えます。
+
+```vb
+<Theory>
+<InlineData(-1)>
+<InlineData(0)>
+<InlineData(1)>
+Sub IsPrime_ValuesLessThan2_ReturnFalse(ByVal value As Integer)
+    Dim result As Boolean = _primeService.IsPrime(value)
+
+    Assert.False(result, $"{value} should not be prime")
+End Sub
+```
+
+上記のコードでは、`[Theory]` と `[InlineData]` によって、2 未満のいくつかの値をテストできます。 2 は最小の素数です。
+
+`dotnet test` を実行すると、2 のテストは失敗します。 すべてのテストに合格するようにするには、次のコードで `IsPrime` メソッドを更新します。
+
+```vb
+Public Function IsPrime(candidate As Integer) As Boolean
+    If candidate < 2 Then
+        Return False
+    End If
+    Throw New NotImplementedException("Not fully implemented.")
+End Function
+```
+
+TDD アプローチに従って、失敗するテストをさらに追加した後、ターゲット コードを更新します。 [テストの最終版](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb)と、[ライブラリの完全な実装](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService/PrimeService.vb)を参照してください。
+
+完成した `IsPrime` メソッドは、素数性をテストするための効率的なアルゴリズムではありません。
+
+### <a name="additional-resources"></a>その他の技術情報
+
+- [xUnit.net の公式サイト](https://xunit.net/)
+- [ASP.NET Core のコントローラー ロジックをテストする](/aspnet/core/mvc/controllers/testing)
+- [`dotnet add reference`](../tools/dotnet-add-reference.md)

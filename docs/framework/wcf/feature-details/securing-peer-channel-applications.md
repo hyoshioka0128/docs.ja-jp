@@ -2,15 +2,15 @@
 title: セキュリティによるピア チャネル アプリケーションの保護
 ms.date: 03/30/2017
 ms.assetid: d4a0311d-3f78-4525-9c4b-5c93c4492f28
-ms.openlocfilehash: 4b52e0476ce6ac54a2e4a3a8cfceb112d662186b
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: a77449710e9093bc8ea2d5446e6359c26a3d1c1e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959885"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589878"
 ---
 # <a name="securing-peer-channel-applications"></a>セキュリティによるピア チャネル アプリケーションの保護
-などの他のバインディング、WinFX`NetPeerTcpBinding`セキュリティが既定で有効になっているし、両方 (または両方) のトランスポートとメッセージ ベースのセキュリティを提供します。 このトピックでは、これら 2 種類のセキュリティについて説明します。 セキュリティの種類は、バインディング仕様のセキュリティ モード タグ (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`) で指定します。  
+WinFX の他のバインドと同様に、で `NetPeerTcpBinding` は既定でセキュリティが有効になっており、トランスポートベースのセキュリティとメッセージベースのセキュリティの両方 (またはその両方) を提供しています。 このトピックでは、これら 2 種類のセキュリティについて説明します。 セキュリティの種類は、バインディング仕様のセキュリティ モード タグ (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`) で指定します。  
   
 ## <a name="transport-based-security"></a>トランスポート ベースのセキュリティ  
  ピア チャネルでは、トランスポートをセキュリティで保護するための 2 種類の認証資格情報がサポートされます。両方とも、関連する `ClientCredentialSettings.Peer` で `ChannelFactory` プロパティを設定する必要があります。  
@@ -39,9 +39,9 @@ ms.locfileid: "65959885"
  メッセージ認証を使用して、メッセージが信用されるソースから送信されていること、および送信中にメッセージが改ざんされていないことを確認します。 メッセージ認証を使用しないと、悪質なクライアントがメッセージを使用して容易に他人になりすましたり、メッセージを容易に改ざんしたりできます。  
   
 ## <a name="peer-channel-code-examples"></a>ピア チャネルのコード例  
- [ピア チャネルのシナリオ](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md)  
+ [ピア チャネルのシナリオ](peer-channel-scenarios.md)  
   
 ## <a name="see-also"></a>関連項目
 
-- [ピア チャネルのセキュリティ](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)
-- [ピア チャネル アプリケーションの構築](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [ピア チャネルのセキュリティ](peer-channel-security.md)
+- [ピア チャネル アプリケーションの構築](building-a-peer-channel-application.md)

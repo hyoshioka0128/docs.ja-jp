@@ -2,12 +2,12 @@
 title: PII セキュリティ ロックダウン
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 63410ecc19e94e57f943e5d7dc13a6098bd91d51
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 64c07825f0756b029781e173eb2098711cdbe60a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714626"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600478"
 ---
 # <a name="pii-security-lockdown"></a>PII セキュリティ ロックダウン
 このサンプルでは、Windows Communication Foundation (WCF) サービスのセキュリティ関連のいくつかの機能を制御する方法を示します。  
@@ -20,11 +20,11 @@ ms.locfileid: "74714626"
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
 ## <a name="discussion"></a>ディスカッション  
@@ -34,20 +34,20 @@ ms.locfileid: "74714626"
   
  Web ホストのシナリオでは、他のサービスのサブディレクトリにサービスを設定できます。 構成値を決定する既定の意味的方法によると、入れ子になったディレクトリ内の構成ファイルで親ディレクトリの構成値をオーバーライドできます。 特定の状況では、さまざまな理由でこれが望ましくない場合があります。 WCF サービス構成は、入れ子になった構成値を使用して入れ子になったサービスを実行するときに、入れ子になった構成が例外を生成するように、構成値のロックをサポートします。  
   
- このサンプルでは、トレースおよびメッセージ ログによる、ユーザー名やパスワードなどの個人を特定できる既知の情報 (PII) のログ記録を制御する方法を示します。 既定では、既知の PII のログ記録は無効です。ただし特定の状況では、PII のログ記録はアプリケーションをデバック処理する際に重要になる場合があります。 このサンプルは、[はじめに](../../../../docs/framework/wcf/samples/getting-started-sample.md)に基づいています。 さらに、このサンプルではトレースとメッセージ ログを使用します。 詳細については、[トレースとメッセージログ](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md)のサンプルを参照してください。  
+ このサンプルでは、トレースおよびメッセージ ログによる、ユーザー名やパスワードなどの個人を特定できる既知の情報 (PII) のログ記録を制御する方法を示します。 既定では、既知の PII のログ記録は無効です。ただし特定の状況では、PII のログ記録はアプリケーションをデバック処理する際に重要になる場合があります。 このサンプルは、[はじめに](getting-started-sample.md)に基づいています。 さらに、このサンプルではトレースとメッセージ ログを使用します。 詳細については、[トレースとメッセージログ](tracing-and-message-logging.md)のサンプルを参照してください。  
   
 ## <a name="encrypting-configuration-file-elements"></a>構成ファイルの要素の暗号化  
  共有 Web ホストの環境をセキュリティ保護するには、機密情報が含まれる可能性のあるデータベース接続文字列など、特定の構成要素を暗号化することが望ましい場合があります。 構成要素は、.NET Framework フォルダーにある aspnet_regiis ツールを使用して暗号化できます。たとえば、%WINDIR%\Microsoft.NET\Framework\v4.0.20728. のようになります。  
   
 #### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>サンプルの Web.config で appSettings セクションの値を暗号化するには  
   
-1. [Start-> Run...] を使用してコマンドプロンプトを開きます。 `cmd` を入力し、[ **OK]** をクリックします。  
+1. [Start->Run...] を使用してコマンドプロンプトを開きます。 「」 `cmd` と入力し、[ **OK]** をクリックします。  
   
 2. コマンド「`cd %WINDIR%\Microsoft.NET\Framework\v4.0.20728`」を実行して、現在の .NET Framework ディレクトリに移動します。  
   
 3. コマンド「`aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`」を実行して、Web.config フォルダーの appSettings 構成設定を暗号化します。  
   
- 構成ファイルの暗号化に関するセクションの詳細については、「ASP.NET 構成での操作方法 ([secure ASP.NET アプリケーションの構築: 認証、承認、およびセキュリティ](https://go.microsoft.com/fwlink/?LinkId=95137)で保護された通信)」と「ASP.NET 構成での操作方法 (Rsa[を使用して ASP.NET 2.0 の構成セクションを暗号化する方法](https://go.microsoft.com/fwlink/?LinkId=95138))」を参照してください。  
+ 構成ファイルの暗号化に関するセクションの詳細については、「ASP.NET 構成での操作方法 ([secure ASP.NET アプリケーションの構築: 認証、承認、およびセキュリティ](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))で保護された通信)」と「ASP.NET 構成での操作方法 (Rsa[を使用して ASP.NET 2.0 の構成セクションを暗号化する方法](https://docs.microsoft.com/previous-versions/msp-n-p/ff650304(v=pandp.10)))」を参照してください。  
   
 ## <a name="locking-configuration-file-elements"></a>構成ファイルの要素のロック  
  Web ホストのシナリオでは、サービスのサブディレクトリにサービスを設定できます。 こうした状況で、サブディレクトリ内のサービスの構成値を計算するには、Machine.config 内の値を調べ、続いて親ディレクトリの任意の Web.config ファイルとマージしてディレクトリ ツリーの下層に移動します。そして最後に、サービスが含まれるディレクトリ内の Web.config ファイルをマージします。 ほとんどの構成要素での既定の動作は、サブディレクトリ内の構成ファイルが、親ディレクトリに設定されている値をオーバーライドできるようにすることです。 特定の状況では、サブディレクトリ内の構成ファイルが、親ディレクトリの構成に設定されている値をオーバーライドしないようにするのが望ましい場合があります。  
@@ -59,14 +59,14 @@ ms.locfileid: "74714626"
 ```xml  
 <configuration>  
    <system.serviceModel>  
-      <behaviors>   
-          <serviceBehaviors>   
-             <behavior name="CalculatorServiceBehavior" lockItem="true">   
-               <serviceMetadata httpGetEnabled="True"/>   
-               <serviceDebug includeExceptionDetailInFaults="False" />   
-             </behavior>   
-          </serviceBehaviors>   
-       </behaviors>   
+      <behaviors>
+          <serviceBehaviors>
+             <behavior name="CalculatorServiceBehavior" lockItem="true">
+               <serviceMetadata httpGetEnabled="True"/>
+               <serviceDebug includeExceptionDetailInFaults="False" />
+             </behavior>
+          </serviceBehaviors>
+       </behaviors>
     </system.serviceModel>  
 </configuration>  
 ```  
@@ -76,7 +76,7 @@ ms.locfileid: "74714626"
 ## <a name="pii-logging-configuration"></a>PII ログの構成  
  PII のログ記録は 2 つのスイッチで制御されます。1 つは Machine.config にあるコンピューター全体の設定で、コンピューターの管理者がこれを使用することにより、PII のログ記録を許可または拒否できます。もう 1 つはアプリケーション設定で、アプリケーションの管理者がこれを使用することにより、Web.config または App.config ファイル内の各ソースで PII のログ記録の有効/無効を切り替えることができます。  
   
- コンピューター全体の設定は、machine.config の `machineSettings` 要素で `true` または `false`に `enableLoggingKnownPii` を設定することによって制御されます。たとえば、次の例では、アプリケーションで PII のログ記録を有効にすることができます。  
+ コンピューター全体の設定は、 `enableLoggingKnownPii` `true` `false` machine.config の要素で、をまたはに設定することによって制御されます `machineSettings` 。たとえば、次の例では、アプリケーションで PII のログ記録を有効にすることができます。  
   
 ```xml  
 <configuration>  
@@ -98,13 +98,13 @@ ms.locfileid: "74714626"
     <system.diagnostics>  
         <sources>  
             <source name="System.ServiceModel.MessageLogging" logKnownPii="true">  
-                <listeners>   
-                ...   
+                <listeners>
+                ...
                 </listeners>  
             </source>  
             <source name="System.ServiceModel" switchValue="Verbose, ActivityTracing">  
             <listeners>  
-        ...   
+        ...
             </listeners>  
             </source>  
         </sources>  
@@ -124,24 +124,24 @@ ms.locfileid: "74714626"
   
  また、DPAPI や RSA を使用して構成ファイルの要素を暗号化することもできます。 詳細については、次のリンクを参照してください。  
   
-- [セキュリティで保護された ASP.NET アプリケーションの構築: 認証、承認、セキュリティで保護された通信](https://go.microsoft.com/fwlink/?LinkId=95137)  
+- [セキュリティで保護された ASP.NET アプリケーションの構築: 認証、承認、セキュリティで保護された通信](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))  
   
-- [方法: RSA を使用して ASP.NET 2.0 の構成セクションを暗号化する](https://go.microsoft.com/fwlink/?LinkId=95138)  
+- [方法 : RSA を使用して ASP.NET 2.0 で構成セクションを暗号化する](https://docs.microsoft.com/previous-versions/msp-n-p/ff650304(v=pandp.10))  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>サンプルを設定、ビルド、および実行するには  
   
-1. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。  
+1. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。  
   
 2. Machine.config を編集して `enableLoggingKnownPii` 属性を `true` に設定し、必要に応じて親ノードを追加します。  
   
-3. ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+3. ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](building-the-samples.md)」の手順に従います。  
   
-4. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](../../../../docs/framework/wcf/samples/running-the-samples.md)」の手順に従います。  
+4. サンプルを単一コンピューター構成または複数コンピューター構成で実行するには、「 [Windows Communication Foundation サンプルの実行](running-the-samples.md)」の手順に従います。  
   
 #### <a name="to-clean-up-the-sample"></a>サンプルをクリーンアップするには  
   
 1. Machine.config を編集して `enableLoggingKnownPii` 属性を `false` に設定します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [AppFabric の監視のサンプル](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [AppFabric の監視のサンプル](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

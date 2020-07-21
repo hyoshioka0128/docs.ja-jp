@@ -1,13 +1,13 @@
 ---
 title: 型拡張
 description: 型拡張F#を使用して、以前に定義したオブジェクト型に新しいメンバーを追加する方法について説明します。
-ms.date: 11/04/2019
-ms.openlocfilehash: d26d7b2b507f04e9cb68ade4c0409403643f74ba
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.date: 02/05/2020
+ms.openlocfilehash: 9ab3a007783f67fd8d80cff840ac3085fdcd60f7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978256"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092682"
 ---
 # <a name="type-extensions"></a>型拡張
 
@@ -33,7 +33,8 @@ open System.Runtime.CompilerServices
 
 [<Extension>]
 type Extensions() =
-    [static] member self-identifier.extension-name (ty: typename, [args]) =
+    [<Extension>]
+    static member self-identifier.extension-name (ty: typename, [args]) =
         body
     ...
 ```
@@ -78,7 +79,7 @@ type Variant with
 
 省略可能な型拡張は、拡張される型の元のモジュール、名前空間、またはアセンブリの外側に表示される拡張機能です。
 
-省略可能な型拡張は、自分で定義していない型を拡張する場合に便利です。 (例:
+省略可能な型拡張は、自分で定義していない型を拡張する場合に便利です。 次に例を示します。
 
 ```fsharp
 module Extensions
@@ -98,13 +99,13 @@ type IEnumerable<'T> with
 
 任意拡張のメンバーはコンパイルされると、静的メンバーになります。このメンバーに対する最初のパラメーターとして、オブジェクト インスタンスが暗黙で渡されます。 ただし、これらは、それらが宣言されている方法に従って、インスタンスメンバーまたは静的メンバーであるかのように動作します。
 
-オプションの拡張メンバーは、またはC# VB コンシューマーにも表示されません。 他のF#コードでのみ使用できます。
+オプションの拡張メンバーは、またはC# Visual Basic コンシューマーにも表示されません。 他のF#コードでのみ使用できます。
 
 ## <a name="generic-limitation-of-intrinsic-and-optional-type-extensions"></a>組み込みおよびオプションの型拡張の一般的な制限
 
 型変数が制限されているジェネリック型に対して型拡張を宣言できます。 要件は、拡張宣言の制約が宣言された型の制約と一致することです。
 
-ただし、宣言された型と型拡張の間で制約が一致した場合でも、宣言された型よりも型パラメーターに対して異なる要件を課す拡張メンバーの本体によって制約が推論される可能性があります。 (例:
+ただし、宣言された型と型拡張の間で制約が一致した場合でも、宣言された型よりも型パラメーターに対して異なる要件を課す拡張メンバーの本体によって制約が推論される可能性があります。 次に例を示します。
 
 ```fsharp
 open System.Collections.Generic
@@ -128,7 +129,7 @@ type IEnumerable<'T> with
 
 最後に、拡張メソッド ("C#スタイル拡張メンバー" と呼ばれることもありF#ます) は、でクラスの静的メンバーメソッドとして宣言できます。
 
-拡張メソッドは、型変数を制約するジェネリック型の拡張機能を定義する場合に便利です。 (例:
+拡張メソッドは、型変数を制約するジェネリック型の拡張機能を定義する場合に便利です。 次に例を示します。
 
 ```fsharp
 namespace Extensions
@@ -136,12 +137,21 @@ namespace Extensions
 open System.Runtime.CompilerServices
 
 [<Extension>]
-type IEnumerableExtensions() =
+type IEnumerableExtensions =
     [<Extension>]
     static member inline Sum(xs: IEnumerable<'T>) = Seq.sum xs
 ```
 
 このコードを使用すると、`Extensions` が開かれているかスコープ内にある限り、<xref:System.Collections.Generic.IEnumerable%601>で `Sum` が定義されているかのように表示されます。
+
+VB.NET code で拡張機能を使用できるようにするには、アセンブリレベルで追加の `ExtensionAttribute` が必要です。
+
+```fsharp
+module AssemblyInfo
+open System.Runtime.CompilerServices
+[<assembly:Extension>]
+do ()
+```
 
 ## <a name="other-remarks"></a>その他の解説
 
@@ -166,7 +176,7 @@ type IEnumerableExtensions() =
 
 最後に、1つの型に対して複数の組み込み型拡張が存在する場合は、すべてのメンバーが一意である必要があります。 オプション型拡張の場合は、1 つの型に対する複数の型拡張が存在する場合でも、各メンバーに同じ名前を付けることができます。 クライアント コードで同じメンバー名が定義されている 2 つの異なるスコープを開いている場合にのみ、あいまいさに対するエラーが発生します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [F# 言語リファレンス](index.md)
-- [メンバー](./members/index.md)
+- [[メンバー]](./members/index.md)

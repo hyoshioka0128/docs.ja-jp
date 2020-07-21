@@ -1,17 +1,17 @@
 ---
-title: '方法 : 未登録で Windows Communication Foundation のサービス モニカーを使用する'
+title: '方法: 未登録で Windows Communication Foundation のサービス モニカーを使用する'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
-ms.openlocfilehash: c08fc362694469560eb7368eb5e536c08ec19bdf
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: f69314948a0e0a69e49ec148f94572f17d0b8e3c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975995"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595051"
 ---
-# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>方法 : 未登録で Windows Communication Foundation のサービス モニカーを使用する
+# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>方法: 未登録で Windows Communication Foundation のサービス モニカーを使用する
 Windows Communication Foundation (WCF) サービスに接続して通信するには、WCF クライアントアプリケーションに、サービスアドレス、バインディング構成、およびサービスコントラクトの詳細が含まれている必要があります。  
   
  通常、WCF サービスモニカーは、必要な属性の種類を事前に登録して、必要なコントラクトを取得しますが、これが不可能な場合もあります。 登録の代わりに、モニカーは、`wsdl` パラメーターまたは Metadata Exchange を使用し、`mexAddress` パラメーターを使用することによって、WSDL (Web Services Definition Language) ドキュメントの形でコントラクトの定義を取得できます。  
@@ -59,4 +59,4 @@ binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/
   
 ## <a name="see-also"></a>関連項目
 
-- [方法 : サービス モニカーを登録および構成する](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+- [方法: サービス モニカーを登録および構成する](how-to-register-and-configure-a-service-moniker.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 64d9b80e-b883-4539-89c7-03573185a1eb
 topic_type:
 - apiref
-ms.openlocfilehash: 8a4d205586921b377147eeab80754e1a0d9e52b0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 39b0c065a324f2b3939467901739f995bc9abbad
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427845"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614761"
 ---
 # <a name="isymunmanagedwritersetsymattribute-method"></a>ISymUnmanagedWriter::SetSymAttribute メソッド
 名前に基づいてカスタム属性を定義します。 これらの属性は、メタデータのカスタム属性とは異なり、シンボルストアに保持されます。  
@@ -40,10 +40,10 @@ HRESULT SetSymAttribute(
  から属性を定義するメタデータトークン。  
   
  `name`  
- から属性名を格納している `WCHAR` へのポインター。  
+ から`WCHAR`属性名を格納しているへのポインター。  
   
  `cData`  
- から`data` 配列のサイズを示す `ULONG32`。  
+ から`ULONG32`配列のサイズを示す `data` 。  
   
  `data`  
  から属性値。  
@@ -54,6 +54,6 @@ HRESULT SetSymAttribute(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedWriter インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter インターフェイス](isymunmanagedwriter-interface.md)

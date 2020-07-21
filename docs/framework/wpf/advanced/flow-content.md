@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: d32501af-0bac-4b80-8a20-61a6996753fe
 ms.openlocfilehash: 47bdc48eb6f2fcb0ffd73f06a58bd01d716e56fc
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61789299"
 ---
 # <a name="flow-content"></a>フロー コンテンツ
-フロー コンテンツ要素でホストするための適切なフロー コンテンツを作成するための構成要素の提供、<xref:System.Windows.Documents.FlowDocument>します。  
+フロー コンテンツの要素は、<xref:System.Windows.Documents.FlowDocument> でホストするのに適したフロー コンテンツを作成する構成要素です。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [フロー ドキュメントの概要](flow-document-overview.md)  
@@ -23,7 +23,7 @@ ms.locfileid: "61789299"
  [テーブルの概要](table-overview.md)  
  [方法トピック](flow-content-elements-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Documents.FlowDocument>  
   <xref:System.Windows.Documents.Block>  
   <xref:System.Windows.Documents.List>  

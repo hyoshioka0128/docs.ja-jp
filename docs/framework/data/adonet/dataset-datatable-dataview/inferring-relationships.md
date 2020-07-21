@@ -4,13 +4,13 @@ ms.date: 03/30/2017
 ms.assetid: 8fa86a9d-6545-4a9d-b1f5-58d9742179c7
 ms.openlocfilehash: 4c9c13453e4a830fcda337e8163649ba6491a995
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70785365"
 ---
 # <a name="inferring-relationships"></a>リレーションシップの推論
-テーブルとして推論される要素に、同じくテーブルとして推論される子の要素が含まれている場合には、2 つのテーブル間に <xref:System.Data.DataRelation> が作成されます。 **ParentTableName_Id**という名前の新しい列が、親要素用に作成されたテーブルと、子要素に対して作成されたテーブルの両方に追加されます。 この id 列の**ColumnMapping**プロパティは、 **Mappingtype. Hidden**に設定されます。 この列は、親テーブルの自動インクリメント主キーになり、2つのテーブル間の**DataRelation**に使用されます。 追加された id 列のデータ型は、他のすべての推定列 ( **system.string**) のデータ型とは異なり、system.string に**なります。** **DeleteRule** <xref:System.Data.ForeignKeyConstraint> Cascade = を指定したは、親テーブルと子テーブルの両方で新しい列を使用して作成されます。  
+テーブルとして推論される要素に、同じくテーブルとして推論される子の要素が含まれている場合には、2 つのテーブル間に <xref:System.Data.DataRelation> が作成されます。 この場合、**ParentTableName_Id** という名前の新しい列が、親の要素に対して作成されたテーブルと、子の要素に対して作成されたテーブルの両方に追加されます。 この ID 列の **ColumnMapping** プロパティは、**MappingType.Hidden** に設定されます。 この列が、親テーブルの自動的にインクリメントされる主キーとなり、2 つのテーブル間の **DataRelation** で使用されます。 推論される他のすべての列のデータ型は **System.String** になりますが、追加される ID 列のデータ型は **System.Int32** になります。 親テーブルと子テーブル両方の新しい列を使用して、**DeleteRule** = **Cascade** である <xref:System.Data.ForeignKeyConstraint> も作成されます。  
   
  たとえば、次のような XML があるとします。  
   
@@ -23,51 +23,51 @@ ms.locfileid: "70785365"
 </DocumentElement>  
 ```  
   
- 推論プロセスでは、次の2つのテーブルが生成されます。**Element1**と**ChildElement1**。  
+ 推論プロセスにより 2 つのテーブルが生成されます: **Element1** と **ChildElement1**。  
   
- **Element1**テーブルには、次の2つの列があります。**Element1_Id**と**ChildElement2**。 **Element1_Id**列の**ColumnMapping**プロパティは、 **mappingtype. Hidden**に設定されます。 **ChildElement2**列の**ColumnMapping**プロパティは、 **mappingtype. Element**に設定されます。 **Element1_Id**列は、 **Element1**テーブルの主キーとして設定されます。  
+ **Element1** テーブルには、次の 2 つの列があります: **Element1_Id** と **ChildElement2**。 **Element1_Id** 列の **ColumnMapping** プロパティは、**MappingType.Hidden** に設定されます。 **ChildElement2** 列の **ColumnMapping** プロパティは、**MappingType.Element** に設定されます。 **Element1_Id** 列は、**Element1** テーブルの主キーとして設定されます。  
   
- **ChildElement1**テーブルには、 **attr1**、 **attr2** 、 **Element1_Id**の3つの列があります。 **Attr1**列と**Attr2**列の**ColumnMapping**プロパティは、 **mappingtype. Attribute**に設定されます。 **Element1_Id**列の**ColumnMapping**プロパティは、 **mappingtype. Hidden**に設定されます。  
+ **ChildElement1** テーブルには、**attr1**、**attr2**、**Element1_Id** という名前の 3 つの列があります。 **attr1** 列と **attr2** 列の **ColumnMapping** プロパティは、**MappingType.Attribute** に設定されます。 **Element1_Id** 列の **ColumnMapping** プロパティは、**MappingType.Hidden** に設定されます。  
   
- 両方のテーブルの**Element1_Id**列を使用して、 **DataRelation**と**ForeignKeyConstraint**が作成されます。  
+ 両方のテーブルの **Element1_Id** 列を使用して、**DataRelation** と **ForeignKeyConstraint** が作成されます。  
   
- **セット**DocumentElement  
+ **DataSet:** DocumentElement  
   
- **一覧**Element1  
+ **テーブル:** Element1  
   
 |Element1_Id|ChildElement2|  
 |------------------|-------------------|  
 |0|Text2|  
   
- **一覧**ChildElement1  
+ **テーブル:** ChildElement1  
   
 |attr1|attr2|Element1_Id|  
 |-----------|-----------|------------------|  
 |value1|value2|0|  
   
- **DataRelation**Element1_ChildElement1  
+ **DataRelation:** Element1_ChildElement1  
   
- **Parentcolumn**Element1  
+ **ParentTable:** Element1  
   
  **ParentColumn:** Element1_Id  
   
- **ChildTable**ChildElement1  
+ **ChildTable:** ChildElement1  
   
  **ChildColumn:** Element1_Id  
   
- **複合**True  
+ **Nested:** True  
   
- **ForeignKeyConstraint**Element1_ChildElement1  
+ **ForeignKeyConstraint:** Element1_ChildElement1  
   
- **項目**Element1_Id  
+ **Column:** Element1_Id  
   
- **Parentcolumn**Element1  
+ **ParentTable:** Element1  
   
- **ChildTable**ChildElement1  
+ **ChildTable:** ChildElement1  
   
- **DeleteRule**Cascade  
+ **DeleteRule:** Cascade  
   
- **AcceptRejectRule**なし  
+ **AcceptRejectRule:** None  
   
 ## <a name="see-also"></a>関連項目
 

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 368881ab-c4ea-4731-bf22-c596aac7c66c
 topic_type:
 - apiref
-ms.openlocfilehash: cf4fa9c5ec35391a0e772e25112f305bfa6e1564
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c6f368f4288f8203067c1f9ff350ce0f3389f514
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126901"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83617095"
 ---
 # <a name="iappdomainbinding-interface"></a>IAppDomainBinding インターフェイス
 アプリケーションドメインが作成されたことをホストアプリケーションに通知するために、共通言語ランタイム (CLR) によって呼び出されるメソッドを提供します。  
@@ -28,17 +28,17 @@ ms.locfileid: "73126901"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[OnAppDomain メソッド](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-onappdomain-method.md)|アプリケーションドメインが作成されたことをホストに通知するために、共通言語ランタイム (CLR) によって呼び出されます。|  
+|[OnAppDomain メソッド](iappdomainbinding-onappdomain-method.md)|アプリケーションドメインが作成されたことをホストに通知するために、共通言語ランタイム (CLR) によって呼び出されます。|  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ホスト インターフェイス](hosting-interfaces.md)

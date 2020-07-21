@@ -7,10 +7,10 @@ helpviewer_keywords:
 - configuration schema [.NET Framework], startup settings
 ms.assetid: 03de6972-442a-4648-9f3e-efa654e3b949
 ms.openlocfilehash: e5f9c9af64ff38e7c0f1f26ccab039261b052e30
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "61701516"
 ---
 # <a name="startup-settings-schema"></a>スタートアップ設定スキーマ
@@ -19,9 +19,9 @@ ms.locfileid: "61701516"
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<requiredRuntime>](requiredruntime-element.md)|バージョン 1.0 の共通言語ランタイムのみがアプリケーションでサポートされることを指定します。 ランタイムのバージョン 1.1 でビルドされたアプリケーションは、**\<supportedRuntime >** 要素を使用します。|  
+|[\<requiredRuntime>](requiredruntime-element.md)|バージョン 1.0 の共通言語ランタイムのみがアプリケーションでサポートされることを指定します。 ランタイムバージョン1.1 でビルドされたアプリケーションでは、要素を使用する必要があり **\<supportedRuntime>** ます。|  
 |[\<supportedRuntime>](supportedruntime-element.md)|アプリケーションでサポートされる共通言語ランタイムのバージョンを指定します。|  
-|[\<startup>](startup-element.md)|**\<requiredRuntime>** 要素と **\<supportedRuntime>** 要素を含みます。|  
+|[\<startup>](startup-element.md)|要素と要素が含まれてい **\<requiredRuntime>** **\<supportedRuntime>** ます。|  
   
 ## <a name="see-also"></a>関連項目
 

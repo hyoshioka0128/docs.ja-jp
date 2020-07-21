@@ -2,12 +2,12 @@
 title: REF (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c5f4cb35-69e9-44cc-b63b-ee38922bbda1
-ms.openlocfilehash: 08bcaad4fdc0cf5324ff9976fcf48c23b206e72f
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.openlocfilehash: 40a5afd7eb99dba7cae8fe14ed0a45213fda94a0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319393"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149948"
 ---
 # <a name="ref-entity-sql"></a>REF (Entity SQL)
 エンティティ インスタンスへの参照を返します。  
@@ -15,7 +15,7 @@ ms.locfileid: "72319393"
 ## <a name="syntax"></a>構文  
   
 ```sql  
-REF( expression )   
+REF( expression )
 ```  
   
 ## <a name="arguments"></a>引数  
@@ -33,7 +33,7 @@ REF( expression )
 ## <a name="example"></a>例  
  次の Entity SQL クエリは、REF 演算子を使用して入力エンティティ引数の参照を返します。 プロパティ抽出演算子 (.) を使用して Product エンティティのプロパティにアクセスすることにより、同じクエリでこの参照が逆参照されます。 このクエリは、AdventureWorks Sales Model に基づいています。 このクエリをコンパイルして実行するには、次の手順を実行します。  
   
-1. [「方法: PrimitiveType の結果を返すクエリを実行](../how-to-execute-a-query-that-returns-primitivetype-results.md)する」の手順に従います。  
+1. 「[方法: PrimitiveType 結果を返すクエリを実行する](../how-to-execute-a-query-that-returns-primitivetype-results.md)」の手順に従います。  
   
 2. 次のクエリを引数として `ExecutePrimitiveTypeQuery` メソッドに渡します。  
   

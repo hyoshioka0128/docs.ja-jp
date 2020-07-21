@@ -3,30 +3,29 @@ title: System.Xml の使用法
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 82302f0d-a621-4c6f-b57d-999bd61f21a6
-author: KrzysztofCwalina
-ms.openlocfilehash: fc94ac62d1f2413c5f51446a8f6d0a52d9151557
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 07828219f2e17be925d060fa3bb33a9209ecb62b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650129"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291670"
 ---
 # <a name="systemxml-usage"></a>System.Xml の使用法
-このセクションで内に存在するいくつかの型の使用方法について説明<xref:System.Xml?displayProperty=nameWithType>XML データを表すために使用する名前空間。  
-  
- **X DO NOT** 使用<xref:System.Xml.XmlNode>または<xref:System.Xml.XmlDocument>XML データを表します。 インスタンスを使用して優先<xref:System.Xml.XPath.IXPathNavigable>、 <xref:System.Xml.XmlReader>、 <xref:System.Xml.XmlWriter>、またはのサブタイプ<xref:System.Xml.Linq.XNode>代わりにします。 `XmlNode` `XmlDocument`パブリック Api で公開するために設計されていません。  
-  
- **✓ DO** 使用`XmlReader`、 `IXPathNavigable`、またはのサブタイプ`XNode`をそのまま使用したり、XML を返すメンバーの入力または出力として。  
-  
- 代わりにこれらの抽象化を使用して、 `XmlDocument`、 `XmlNode`、または<xref:System.Xml.XPath.XPathDocument>これ、インメモリ XML ドキュメントの特定の実装からメソッドを分離し、公開仮想の XML データ ソースを操作することができますので、 `XNode`、 `XmlReader`、または<xref:System.Xml.XPath.XPathNavigator>します。  
-  
- **X DO NOT** サブクラス`XmlDocument`を基になるオブジェクト モデルまたはデータ ソースの XML ビューを表す型を作成するかどうか。  
-  
- *Portions © 2005, 2009 Microsoft Corporation.All rights reserved.*  
-  
- *Pearson Education, Inc. からのアクセス許可によって了承を得て転載[Framework デザイン ガイドライン。規則、手法、および再利用可能な .NET ライブラリの第 2 版のパターン](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)Krzysztof Cwalina、Brad 内容では、Microsoft Windows の開発シリーズの一部として、Addison-wesley Professional、2008 年 10 月 22日を公開します。*  
-  
+このセクションでは、 <xref:System.Xml?displayProperty=nameWithType> XML データを表すために使用できる名前空間に存在するいくつかの型の使用方法について説明します。
+
+ ❌<xref:System.Xml.XmlNode> <xref:System.Xml.XmlDocument> XML データを表すためにまたはを使用しないでください。 <xref:System.Xml.XPath.IXPathNavigable> <xref:System.Xml.XmlReader> <xref:System.Xml.XmlWriter> 代わりにの、、、またはの各サブタイプのインスタンスの使用を優先し <xref:System.Xml.Linq.XNode> ます。 `XmlNode`と `XmlDocument` は、パブリック api で公開するように設計されていません。
+
+ ✔️は `XmlReader` 、 `IXPathNavigable` XML を `XNode` 受け入れるか返すメンバーの入力または出力として、、、またはの各サブタイプを使用します。
+
+ 、、またはではなく、これらの抽象化を使用し `XmlDocument` `XmlNode` <xref:System.Xml.XPath.XPathDocument> ます。これは、メモリ内の xml ドキュメントの特定の実装からメソッドを分離し、、、またはを公開する仮想 XML データソースとの連携を可能にするため `XNode` `XmlReader` <xref:System.Xml.XPath.XPathNavigator> です。
+
+ ❌`XmlDocument`基になるオブジェクトモデルまたはデータソースの XML ビューを表す型を作成する場合は、サブクラス化しないでください。
+
+ *©2005、2009 Microsoft Corporation の部分。すべての権限が予約されています。*
+
+ *2008 年 10 月 22 日に Microsoft Windows Development シリーズの一部として、Addison-Wesley Professional によって発行された、Krzysztof Cwalina および Brad Abrams による「[Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)」 (フレームワーク デザイン ガイドライン: 再利用可能な .NET ライブラリの規則、用法、パターン、第 2 版) から Pearson Education, Inc. の許可を得て再印刷されています。*
+
 ## <a name="see-also"></a>関連項目
 
-- [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)
-- [使用方法のガイドライン](../../../docs/standard/design-guidelines/usage-guidelines.md)
+- [フレームワークデザインのガイドライン](index.md)
+- [使用に関するガイドライン](usage-guidelines.md)

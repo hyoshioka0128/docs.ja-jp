@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: 90e07c2d-237f-47b4-a632-771570b77fd0
 ms.openlocfilehash: a9ef840d98a6c7aa5db841dd0ff860e2fb1d044a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61911535"
 ---
 # <a name="grid-how-to-topics"></a>グリッドに関する「方法」トピック
-このセクションのトピックを使用して要素を配置する方法を説明する、<xref:System.Windows.Controls.Grid>要素。  
+このセクションのトピックでは、<xref:System.Windows.Controls.Grid> 要素を使用して要素を配置する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [グリッドを使用して標準 UI ダイアログ ボックスをビルドする](how-to-build-a-standard-ui-dialog-box-by-using-grid.md)  
@@ -26,7 +26,7 @@ ms.locfileid: "61911535"
  [グリッドの子要素を配置する](how-to-position-the-child-elements-of-a-grid.md)  
  [グリッド間でサイズ設定プロパティを共有する](how-to-share-sizing-properties-between-grids.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

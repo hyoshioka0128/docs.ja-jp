@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 73f536f6-4668-4a4a-b3e4-ac7df862d5be
 topic_type:
 - apiref
-ms.openlocfilehash: 291f6c05171b5e507afaa70537aafdc9002a506e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4d69f13d4716b43c815148ff0fe4aa087b57c6e5
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125409"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82892753"
 ---
 # <a name="icordebugcontrollerenumeratethreads-method"></a>ICorDebugController::EnumerateThreads メソッド
 プロセス内のアクティブなマネージスレッドの列挙子を取得します。  
@@ -37,16 +37,16 @@ HRESULT EnumerateThreads (
  `ppThreads`  
  入出力プロセス内でアクティブになっているすべてのマネージスレッドの列挙子を表す "いい Threadenum" オブジェクトのアドレスへのポインター。  
   
-## <a name="remarks"></a>コメント  
- スレッドがアクティブであると見なされるのは、["CreateThread"](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) コールバックがディスパッチされてから、"  [Managedcallback:: exitthread](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitthread-method.md) " コールバックがディスパッチされる前です。 マネージスレッドは、必ずしもスタック上にマネージフレームを持つとは限りません。 スレッドは、によっては、"、 [" という](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md)ように列挙できます。 列挙体は、自然に空になります。  
+## <a name="remarks"></a>解説  
+ スレッドがアクティブであると見なされるのは、"CreateThread" コールバックがディスパッチされてから、" [ICorDebugManagedCallback::CreateThread](icordebugmanagedcallback-createthread-method.md) [Managedcallback:: exitthread](icordebugmanagedcallback-exitthread-method.md) " コールバックがディスパッチされる前です。 マネージスレッドは、必ずしもスタック上にマネージフレームを持つとは限りません。 スレッドは、によっては、"、 [" という](icordebugmanagedcallback-createprocess-method.md)ように列挙できます。 列挙体は、自然に空になります。  
   
-## <a name="requirements"></a>要件  
- **・** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorDebug .idl、CorDebug. h  
+ **ヘッダー:** CorDebug.idl、CorDebug.h  
   
- **ライブラリ**CorGuids .lib  
+ **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目

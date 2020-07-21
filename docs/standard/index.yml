@@ -1,0 +1,163 @@
+### YamlMime:Landing
+title: .NET のドキュメント
+summary: さまざまな種類のアプリケーションを構築するための、オープンソースの開発者プラットフォームである .NET について説明します。
+metadata:
+  title: .NET のドキュメント
+  description: さまざまな種類のアプリケーションを構築するための、オープンソースの開発者プラットフォームである .NET について説明します。
+  ms.topic: landing-page
+  ms.date: 04/22/2020
+  ms.openlocfilehash: 67fa6bb8c14ef3fad05b4874553a9ce75f811833
+  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/24/2020
+  ms.locfileid: "82135816"
+landingContent:
+- title: .NET について
+  linkLists:
+  - linkListType: download
+    links:
+    - text: .NET SDK をダウンロードする
+      url: https://dotnet.microsoft.com/download
+  - linkListType: overview
+    links:
+    - text: .NET のツアー
+      url: tour.md
+    - text: .NET とは何ですか?
+      url: https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet
+  - linkListType: concept
+    links:
+    - text: .NET Standard
+      url: net-standard.md
+    - text: .NET Core
+      url: ../core/about.md
+    - text: ターゲット フレームワーク
+      url: frameworks.md
+    - text: 共通言語ランタイム (CLR)
+      url: clr.md
+    - text: サーバー アプリ用 .NET Core と .NET Framework の選択
+      url: choosing-core-framework-server.md
+  - linkListType: whats-new
+    links:
+    - text: .NET Standard の新機能
+      url: whats-new/whats-new-in-dotnet-standard.md
+    - text: .NET Core の新機能
+      url: ../core/whats-new/dotnet-core-3-1.md
+- title: データのシリアル化
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: JSON のシリアル化と逆シリアル化
+      url: serialization/system-text-json-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: C# を使用した JSON のシリアル化と逆シリアル化
+      url: serialization/system-text-json-how-to.md
+    - text: Newtonsoft. Json から System.Text.Json への移行
+      url: serialization/system-text-json-migrate-from-newtonsoft-how-to.md
+    - text: JSON シリアル化のためのカスタム コンバーターの作成
+      url: serialization/system-text-json-converters-how-to.md
+  - linkListType: sample
+    links:
+    - text: XML シリアル化の例
+      url: serialization/examples-of-xml-serialization.md
+- title: 日付、数値、文字列の書式設定と変換
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 数値書式指定文字列
+      url: base-types/standard-numeric-format-strings.md
+    - text: 日付と時刻の書式指定文字列
+      url: base-types/standard-date-and-time-format-strings.md
+    - text: 複合書式指定
+      url: base-types/composite-formatting.md
+    - text: タイム ゾーン間での時刻の変換
+      url: datetime/converting-between-time-zones.md
+    - text: 文字列からの文字のトリムと削除
+      url: base-types/trimming.md
+    - text: .NET の正規表現
+      url: base-types/regular-expressions.md
+  - linkListType: how-to-guide
+    links:
+    - text: 文字列を DateTime に変換する
+      url: base-types/parsing-datetime.md
+    - text: 数値に先行するゼロを埋め込む
+      url: base-types/how-to-pad-a-number-with-leading-zeros.md
+    - text: 日付および時刻の値のミリ秒部分を表示する
+      url: base-types/how-to-display-milliseconds-in-date-and-time-values.md
+  - linkListType: reference
+    links:
+    - text: 正規表現言語
+      url: base-types/regular-expression-language-quick-reference.md
+- title: クラスとライブラリのデザイン
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: デザインのガイドライン
+      url: design-guidelines/index.md
+  - linkListType: concept
+    links:
+    - text: 名前付け規則
+      url: design-guidelines/general-naming-conventions.md
+    - text: 大文字の表記規則
+      url: design-guidelines/capitalization-conventions.md
+- title: イベントと例外の使用
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 例外の推奨事項
+      url: exceptions/best-practices-for-exceptions.md
+    - text: イベントの処理と発生
+      url: events/index.md
+  - linkListType: how-to-guide
+    links:
+    - text: try-catch ブロックを使用して例外をキャッチする
+      url: exceptions/how-to-use-the-try-catch-block-to-catch-exceptions.md
+    - text: イベントの発生と使用
+      url: events/how-to-raise-and-consume-events.md
+- title: ファイルおよびストリーム入出力
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ファイルおよびストリーム入出力
+      url: io/index.md
+    - text: Windows 上のファイル パス形式
+      url: io/file-path-formats.md
+  - linkListType: how-to-guide
+    links:
+    - text: テキストのファイルへの書き込み
+      url: io/how-to-write-text-to-a-file.md
+    - text: ファイルのテキストの読み取り
+      url: io/how-to-read-text-from-a-file.md
+    - text: ファイルを圧縮して抽出する
+      url: io/how-to-compress-and-extract-files.md
+    - text: ログ ファイルを開いて情報を追加する
+      url: io/how-to-open-and-append-to-a-log-file.md
+- title: メモリ使用量の管理
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ガベージ コレクションの基礎
+      url: garbage-collection/fundamentals.md
+    - text: Dispose メソッドの実装
+      url: garbage-collection/implementing-dispose.md
+- title: 並列プログラミングについて
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: .NET での並列プログラミング
+      url: parallel-programming/index.md
+  - linkListType: concept
+    links:
+    - text: タスク並列ライブラリ (TPL)
+      url: parallel-programming/task-parallel-library-tpl.md
+    - text: タスク ベースの非同期プログラミング
+      url: parallel-programming/task-based-asynchronous-programming.md
+    - text: タスクのキャンセル
+      url: parallel-programming/task-cancellation.md
+  - linkListType: how-to-guide
+    links:
+    - text: Parallel.ForEach を使用して単純な並列プログラムを記述する
+      url: parallel-programming/how-to-write-a-simple-parallel-foreach-loop.md
+    - text: タスクから値を返す
+      url: parallel-programming/how-to-return-a-value-from-a-task.md

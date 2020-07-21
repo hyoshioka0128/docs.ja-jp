@@ -1,5 +1,6 @@
 ---
 title: MsgBox のサンプル
+description: MsgBox を使用して文字列型を In パラメーターとして値渡しするサンプルを参照します。 .NET で EntryPoint、CharSet、ExactSpelling の各フィールドをいつ使用するかを示します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - marshaling, MsgBox sample
 - data marshaling, MsgBox sample
 ms.assetid: 9e0edff6-cc0d-4d5c-a445-aecf283d9c3a
-ms.openlocfilehash: 9f1e6d58742f60b6043a4be9218b80b323cd523e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: ccf882e1f801dd18e5b65a4279fc580d927dd29d
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124104"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904092"
 ---
 # <a name="msgbox-sample"></a>MsgBox のサンプル
 このサンプルでは、文字列型を In パラメーターとして値渡しする方法と、<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>、および <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling> の各フィールドを使用する場合について説明します。  
@@ -24,7 +25,7 @@ ms.locfileid: "73124104"
 - User32.dll からエクスポートされる **MessageBox**。  
   
     ```cpp
-    int MessageBox(HWND hWnd, LPCTSTR lpText, LPCTSTR lpCaption,   
+    int MessageBox(HWND hWnd, LPCTSTR lpText, LPCTSTR lpCaption,
        UINT uType);  
     ```  
   

@@ -2,12 +2,12 @@
 title: Azure Container Service (Kubernetes) に Windows コンテナーをデプロイするタイミング
 description: Azure Cloud と Windows コンテナーで既存の .NET アプリケーションを最新化する | Azure コンテナー サービス (Kubernetes) に Windows コンテナーをデプロイするタイミング
 ms.date: 04/30/2018
-ms.openlocfilehash: 903082deba635dd0dfc22d0186fbc589f8d05b92
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3ff51a70d4e158b831155ab4992ec32f5d98cedb
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "69577945"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987765"
 ---
 # <a name="when-to-deploy-windows-containers-to-azure-container-service-that-is-kubernetes"></a>Azure Container Service (Kubernetes) に Windows コンテナーをデプロイするタイミング
 

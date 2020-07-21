@@ -2,12 +2,12 @@
 title: WCF モニカーの COM クライアントと組み合わせての使用
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: bcac9e344e2d981f9f165480cb84ac37c99fa5b0
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 76b7697f431575e7bde83204739cb23f96d27064
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837780"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596488"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>WCF モニカーの COM クライアントと組み合わせての使用
 このサンプルでは、Windows Communication Foundation (WCF) サービスモニカーを使用して、Microsoft Office Visual Basic for Applications (Office VBA) や Visual Basic 6.0 などの COM ベースの開発環境に Web サービスを統合する方法を示します。 このサンプルは、Windows スクリプト ホストのクライアント (.vbs)、サポート クライアント ライブラリ (.dll)、およびインターネット インフォメーション サービス (IIS) でホストされるサービス ライブラリ (.dll) で構成されています。 このサービスは電卓サービスの 1 つであり、COM クライアントはサービスの算術演算 (Add、Subtract、Multiply、および Divide) を呼び出します。 クライアント アクティビティは、メッセージ ボックス ウィンドウに表示されます。  
@@ -17,11 +17,11 @@ ms.locfileid: "74837780"
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\COM`  
   
  サービスは、次に示すコード例で定義される `ICalculator` コントラクトを実装します。  
@@ -50,7 +50,7 @@ public interface ICalculator
 - Metadata Exchange コントラクト – 実行時に Metadata Exchange (MEX) エンドポイントから取得されます。  
   
 ## <a name="typed-contract"></a>型指定のあるコントラクト  
- 型指定のあるコントラクトと共にモニカーを使用するには、属性が適切に設定されているサービス コントラクトの型を COM に登録する必要があります。 まず、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、クライアントを生成する必要があります。 次のコマンドをクライアント ディレクトリでコマンド プロンプトから実行して、型指定のあるプロキシを生成します。  
+ 型指定のあるコントラクトと共にモニカーを使用するには、属性が適切に設定されているサービス コントラクトの型を COM に登録する必要があります。 まず、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、クライアントを生成する必要があります。 次のコマンドをクライアント ディレクトリでコマンド プロンプトから実行して、型指定のあるプロキシを生成します。  
   
 ```console  
 svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost/servicemodelsamples/service.svc /out:generatedClient.cs  
@@ -81,17 +81,17 @@ gacutil.exe /i client.dll
   
 ```vbscript
 Set typedServiceMoniker = GetObject(  
-"service4:address=http://localhost/ServiceModelSamples/service.svc, binding=wsHttpBinding,   
+"service4:address=http://localhost/ServiceModelSamples/service.svc, binding=wsHttpBinding,
 contractType={9213C6D2-5A6F-3D26-839B-3BA9B82228D3}")  
 ```  
   
- モニカーが使用するパラメーターでの指定:  
+ モニカーが使用するパラメーターでの指定:   
   
 - サービス エンドポイントのアドレス。  
   
 - エンドポイントとの接続にクライアントが使用する必要のあるバインディング。 クライアントの構成ファイルにはカスタム バインドを定義できますが、この場合はシステム定義の wsHttpBinding を使用します。 Windows スクリプト ホストで使用する場合、カスタム バインディングは、Cscript.exe と同じディレクトリにある Cscript.exe.config で定義されます。  
   
-- エンドポイントでサポートされるコントラクトの型。 これは上の手順で生成され、登録された型です。 Visual Basic スクリプトには厳密に型指定された COM 環境がないので、コントラクトの識別子を指定する必要があります。 この GUID は CalcProxy.tlb からの `interfaceID` で、OLE/COM オブジェクト ビューアー (OleView.exe) などの COM ツールを使用して表示できます。 Office VBA や Visual Basic 6.0 などの厳密に型指定された環境では、コントラクト パラメーターを使用する代わりに、タイプ ライブラリへの明示的な参照を追加してプロキシ オブジェクトの型を宣言することができます。 これにより、クライアント アプリケーションの開発中に IntelliSense のサポートも提供されます。  
+- エンドポイントでサポートされるコントラクトの型。 これは上の手順で生成され、登録された型です。 Visual Basic スクリプトには厳密に型指定された COM 環境が用意されていないため、コントラクトの識別子を指定する必要があります。 この GUID は CalcProxy.tlb からの `interfaceID` で、OLE/COM オブジェクト ビューアー (OleView.exe) などの COM ツールを使用して表示できます。 Office VBA や Visual Basic 6.0 などの厳密に型指定された環境では、タイプライブラリへの明示的な参照を追加してから、プロキシオブジェクトの型を宣言して、コントラクトパラメーターの代わりに使用できます。 これにより、クライアント アプリケーションの開発中に IntelliSense のサポートも提供されます。  
   
  サービス モニカーを使用してプロキシ インスタンスを構築しておくと、クライアント アプリケーションはプロキシでメソッドを呼び出すことができます。これにより、対応するサービス操作を呼び出すサービス モニカー インフラストラクチャは次のようになります。  
   
@@ -125,7 +125,7 @@ wsdlMonikerString = wsdlMonikerString + ", contract=ICalculator, contractNamespa
 Set wsdlServiceMoniker = GetObject(wsdlMonikerString)  
 ```  
   
- モニカーが使用するパラメーターでの指定:  
+ モニカーが使用するパラメーターでの指定:   
   
 - サービス エンドポイントのアドレス。  
   
@@ -163,7 +163,7 @@ mexMonikerString = mexMonikerString + ", contract=ICalculator, contractNamespace
 Set mexServiceMoniker = GetObject(mexMonikerString)  
 ```  
   
- モニカーが使用するパラメーターでの指定:  
+ モニカーが使用するパラメーターでの指定:   
   
 - サービスの Metadata Exchange エンドポイントのアドレス。  
   
@@ -184,24 +184,24 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 #### <a name="to-set-up-and-build-the-sample"></a>サンプルをセットアップしてビルドするには  
   
-1. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。  
+1. [Windows Communication Foundation サンプルの1回限りのセットアップ手順](one-time-setup-procedure-for-the-wcf-samples.md)を実行したことを確認します。  
   
-2. ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)」の手順に従います。  
+2. ソリューションの C# 版または Visual Basic .NET 版をビルドするには、「 [Building the Windows Communication Foundation Samples](building-the-samples.md)」の手順に従います。  
   
 3. Visual Studio の開発者コマンドプロンプトで、言語固有のフォルダーの下にある \ client\bin フォルダーを開きます。  
   
     > [!NOTE]
-    > Windows Vista、[!INCLUDE[lserver](../../../../includes/lserver-md.md)]、Windows 7、または Windows Server 2008 R2 を使用している場合は、管理者特権でコマンドプロンプトを実行してください。  
+    > Windows Vista、Windows Server 2008、Windows 7、または Windows Server 2008 R2 を使用している場合は、管理者特権でコマンドプロンプトを実行してください。  
   
-4. 「`tlbexp.exe client.dll /out:CalcProxy.tlb`」と入力して、dll を tlb ファイルにエクスポートします。 "タイプ ライブラリ エクスポーターの警告" が表示されることが予想されますが、ジェネリック型は不要なので問題にはなりません。  
+4. 「」と入力 `tlbexp.exe client.dll /out:CalcProxy.tlb` して、dll を tlb ファイルにエクスポートします。 "タイプ ライブラリ エクスポーターの警告" が表示されることが予想されますが、ジェネリック型は不要なので問題にはなりません。  
   
-5. 型を COM に登録するには、`regasm.exe /tlb:CalcProxy.tlb client.dll` を入力します。 "タイプ ライブラリ エクスポーターの警告" が表示されることが予想されますが、ジェネリック型は不要なので問題にはなりません。  
+5. 型を `regasm.exe /tlb:CalcProxy.tlb client.dll` COM に登録するには、「」と入力します。 "タイプ ライブラリ エクスポーターの警告" が表示されることが予想されますが、ジェネリック型は不要なので問題にはなりません。  
   
-6. アセンブリをグローバルアセンブリキャッシュに追加するには、「`gacutil.exe /i client.dll`」と入力します。  
+6. アセンブリを `gacutil.exe /i client.dll` グローバルアセンブリキャッシュに追加するには、「」と入力します。  
   
 #### <a name="to-run-the-sample-on-the-same-computer"></a>サンプルを同じコンピューターで実行するには  
   
-1. 次のアドレスを入力して、ブラウザーを使用してサービスにアクセスできることをテストします: `http://localhost/servicemodelsamples/service.svc`。 これに応答して、確認ページが表示されます。  
+1. 次のアドレスを入力して、ブラウザーを使用してサービスにアクセスできることをテスト `http://localhost/servicemodelsamples/service.svc` します。 これに応答して、確認ページが表示されます。  
   
 2. 言語固有のフォルダーの下の \client にある ComCalcClient.vbs を実行します。 クライアント アクティビティがメッセージ ボックス ウィンドウに表示されます。  
   
@@ -221,13 +221,13 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 6. Client.dll ライブラリを、言語固有のフォルダーにある \client\bin\ フォルダーからクライアント コンピューターのディレクトリにコピーします。  
   
-7. コマンド プロンプトで、クライアント コンピューターのコピー先ディレクトリに移動します。 Windows Vista または [!INCLUDE[lserver](../../../../includes/lserver-md.md)]を使用している場合は、管理者としてコマンドプロンプトを実行してください。  
+7. コマンド プロンプトで、クライアント コンピューターのコピー先ディレクトリに移動します。 Windows Vista または Windows Server 2008 を使用している場合は、管理者としてコマンドプロンプトを実行してください。  
   
-8. 「`tlbexp.exe client.dll /out:CalcProxy.tlb`」と入力して、dll を tlb ファイルにエクスポートします。 "タイプ ライブラリ エクスポーターの警告" が表示されることが予想されますが、ジェネリック型は不要なので問題にはなりません。  
+8. 「」と入力 `tlbexp.exe client.dll /out:CalcProxy.tlb` して、dll を tlb ファイルにエクスポートします。 "タイプ ライブラリ エクスポーターの警告" が表示されることが予想されますが、ジェネリック型は不要なので問題にはなりません。  
   
-9. 型を COM に登録するには、`regasm.exe /tlb:CalcProxy.tlb client.dll` を入力します。 コマンドを実行する前に、パスが `regasm.exe` を含むフォルダーに設定されていることを確認してください。  
+9. 型を `regasm.exe /tlb:CalcProxy.tlb client.dll` COM に登録するには、「」と入力します。 コマンドを実行する前に、パスがに含まれるフォルダーに設定されていることを確認し `regasm.exe` ます。  
   
-10. アセンブリをグローバルアセンブリキャッシュに追加するには、「`gacutil.exe /i client.dll`」と入力します。 コマンドを実行する前に、パスが `gacutil.exe` を含むフォルダーに設定されていることを確認してください。  
+10. アセンブリを `gacutil.exe /i client.dll` グローバルアセンブリキャッシュに追加するには、「」と入力します。 コマンドを実行する前に、パスがに含まれるフォルダーに設定されていることを確認し `gacutil.exe` ます。  
   
 11. ブラウザーを使用して、サービスにクライアント コンピューターからアクセスできるかどうかをテストします。  
   

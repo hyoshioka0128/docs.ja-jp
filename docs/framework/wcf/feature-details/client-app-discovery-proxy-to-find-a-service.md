@@ -2,15 +2,15 @@
 title: '方法: 探索プロキシを使用してサービスを検索するクライアント アプリケーションを実装する'
 ms.date: 03/30/2017
 ms.assetid: 62b41a75-cf40-4c52-a842-a5f1c70e247f
-ms.openlocfilehash: 30db2bfc6191b1703f6d63ec2a925df42ecc93e4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a1e770531a196d73dfc7d93bf70ed432df343c88
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963871"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587015"
 ---
 # <a name="how-to-implement-a-client-application-that-uses-the-discovery-proxy-to-find-a-service"></a>方法: 探索プロキシを使用してサービスを検索するクライアント アプリケーションを実装する
-これは、探索プロキシの実装方法に関する 3 つのトピックのうちの、3 番目のトピックです。 前のトピックでは[、次の方法について説明します。探索プロキシ](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)に登録する探索可能なサービスを実装します。探索プロキシに自身を登録する WCF サービスを実装しています。 このトピックでは、探索プロキシを使用して WCF サービスを検索する WCF クライアントを作成します。  
+これは、探索プロキシの実装方法に関する 3 つのトピックのうちの、3 番目のトピックです。 前のトピック「[方法: 探索プロキシに登録する探索可能なサービスを実装](discoverable-service-that-registers-with-the-discovery-proxy.md)する」では、探索プロキシに登録する WCF サービスを実装しています。 このトピックでは、探索プロキシを使用して WCF サービスを検索する WCF クライアントを作成します。  
   
 ### <a name="implement-the-client"></a>クライアントの実装  
   
@@ -79,7 +79,7 @@ ms.locfileid: "69963871"
 
         try  
         {  
-            // Search for services that implement ICalculatorService              
+            // Search for services that implement ICalculatorService
             FindResponse findResponse = discoveryClient.Find(new FindCriteria(typeof(ICalculatorService)));  
 
             Console.WriteLine("Found {0} ICalculatorService endpoint(s).", findResponse.Endpoints.Count);  
@@ -101,7 +101,7 @@ ms.locfileid: "69963871"
     }  
     ```  
   
- これで、クライアント アプリケーションの実装が完了しました。 次の[手順に進みます。探索プロキシ](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)をテストします。  
+ これで、クライアント アプリケーションの実装が完了しました。 [「方法: 探索プロキシをテスト](how-to-test-the-discovery-proxy.md)する」に進みます。  
   
 ## <a name="example"></a>例  
  このトピックのコード全体の一覧を以下に示します。  
@@ -226,7 +226,7 @@ namespace Microsoft.Samples.Discovery
   
             try  
             {  
-                // Find ICalculatorService endpoints              
+                // Find ICalculatorService endpoints
                 FindResponse findResponse = discoveryClient.Find(new FindCriteria(typeof(ICalculatorService)));  
   
                 Console.WriteLine("Found {0} ICalculatorService endpoint(s).", findResponse.Endpoints.Count);  
@@ -283,6 +283,6 @@ namespace Microsoft.Samples.Discovery
   
 ## <a name="see-also"></a>関連項目
 
-- [WCF Discovery の概要](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [方法: 探索プロキシを実装する](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
-- [方法: 探索プロキシに登録する探索可能なサービスを実装する](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [WCF Discovery の概要](wcf-discovery-overview.md)
+- [方法: 探索プロキシを実装する](how-to-implement-a-discovery-proxy.md)
+- [方法: 探索プロキシで登録される探索可能なサービスの実装する](discoverable-service-that-registers-with-the-discovery-proxy.md)

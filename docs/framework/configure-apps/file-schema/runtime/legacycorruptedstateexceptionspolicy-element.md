@@ -6,18 +6,18 @@ helpviewer_keywords:
 - legacyCorruptedStateExceptionsPolicy element
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 ms.openlocfilehash: d1d29a37999a01f3e370897a1052f4f94435a218
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73116459"
 ---
-# <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy > 要素
+# <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy> 要素
 共通言語ランタイムで、マネージコードがアクセス違反とその他の破損状態例外をキャッチできるようにするかどうかを指定します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<legacyCorruptedStateExceptionsPolicy >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<legacyCorruptedStateExceptionsPolicy>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -36,7 +36,7 @@ ms.locfileid: "73116459"
   
 ## <a name="enabled-attribute"></a>enabled 属性  
   
-|[値]|説明|  
+|値|Description|  
 |-----------|-----------------|  
 |`false`|アプリケーションでは、アクセス違反などの破損状態の例外エラーはキャッチされません。 既定値です。|  
 |`true`|アプリケーションは、アクセス違反などの破損状態の例外エラーをキャッチします。|  
@@ -46,21 +46,21 @@ ms.locfileid: "73116459"
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>解説  
  .NET Framework バージョン3.5 以前では、共通言語ランタイムは、破損したプロセス状態によって発生した例外をキャッチするために、マネージコードを許可しました。 この種類の例外の例として、アクセス違反があります。  
   
- .NET Framework 4 以降では、マネージコードは `catch` ブロックでこれらの種類の例外をキャッチしなくなりました。 ただし、次の2つの方法で、この変更をオーバーライドし、破損状態例外の処理を維持することができます。  
+ .NET Framework 4 以降では、マネージコードはブロック内のこれらの種類の例外をキャッチしなくなりました `catch` 。 ただし、次の2つの方法で、この変更をオーバーライドし、破損状態例外の処理を維持することができます。  
   
-- `<legacyCorruptedStateExceptionsPolicy>` 要素の `enabled` 属性を `true`に設定します。 この構成設定は、プロセス全体に適用され、すべてのメソッドに影響します。  
+- `<legacyCorruptedStateExceptionsPolicy>`要素の `enabled` 属性をに設定 `true` します。 この構成設定は、プロセス全体に適用され、すべてのメソッドに影響します。  
   
- -または-  
+ または  
   
-- 例外 `catch` ブロックを含むメソッドに <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> 属性を適用します。  
+- <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType>例外ブロックを含むメソッドに属性を適用 `catch` します。  
   
  この構成要素は、.NET Framework 4 以降でのみ使用できます。  
   

@@ -2,12 +2,12 @@
 title: Send アクティビティのキャッシュ共有レベルの変更
 ms.date: 03/30/2017
 ms.assetid: 03926a64-753d-460e-ac06-2a4ff8e1bbf5
-ms.openlocfilehash: 587440bd343513aeff51f1ed0947573fbe612f22
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 101aab98a7d34ad45ad29efbe252cff0814ca290
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952590"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185391"
 ---
 # <a name="changing-the-cache-sharing-levels-for-send-activities"></a>Send アクティビティのキャッシュ共有レベルの変更
 <xref:System.ServiceModel.Activities.SendMessageChannelCache> 拡張機能により、キャッシュ共有レベルのカスタマイズやチャネル ファクトリ キャッシュの設定のカスタマイズを行えるほか、<xref:System.ServiceModel.Activities.Send> メッセージング アクティビティを使用してサービス エンドポイントにメッセージを送信するワークフローのチャネル キャッシュの設定のカスタマイズも可能になります。 これらのワークフローは、通常はクライアント ワークフローですが、<xref:System.ServiceModel.WorkflowServiceHost> でホストされるワークフロー サービスである場合もあります。 チャネル ファクトリ キャッシュには、<xref:System.ServiceModel.ChannelFactory%601> オブジェクトがキャッシュされます。 チャネル キャッシュには、チャネルがキャッシュされます。  
@@ -20,11 +20,11 @@ ms.locfileid: "69952590"
   
  ワークフローの <xref:System.ServiceModel.Activities.Send> アクティビティに使用可能なさまざまなキャッシュ共有レベルと、推奨される使用方法を次に示します。  
   
-- **ホストレベル**:ホスト共有レベルでは、キャッシュは、ワークフローサービスホストでホストされているワークフローインスタンスでのみ使用できます。 キャッシュはプロセス全体のキャッシュのワークフロー サービス ホスト間で共有できます。  
+- **ホスト レベル**: ホスト共有レベルでは、キャッシュはワークフロー サービス ホストでホストされているワークフロー インスタンスでのみ使用できます。 キャッシュはプロセス全体のキャッシュのワークフロー サービス ホスト間で共有できます。  
   
-- **インスタンスレベル**:インスタンス共有レベルでは、特定のワークフローインスタンスがその有効期間全体にわたってキャッシュを使用できますが、キャッシュは他のワークフローインスタンスでは使用できません。  
+- **インスタンス レベル**: インスタンス共有レベルでは、キャッシュは有効期間を通じて特定のワークフロー インスタンスで使用できますが、キャッシュは他のワークフロー インスタンスでは使用できません。  
   
-- **キャッシュなし**:構成で定義されているエンドポイントを使用するワークフローがある場合、キャッシュは既定でオフになっています。 この場合、キャッシュをオンにすると安全性が損なわれることがあるため、オフにしておくことをお勧めします。 たとえば、送信ごとに異なる ID (異なる資格情報、または偽装の使用) が必要な場合があります。  
+- **キャッシュなし**: 構成で定義されたエンドポイントを使用するワークフローがある場合、キャッシュは既定でオフになっています。 この場合、キャッシュをオンにすると安全性が損なわれることがあるため、オフにしておくことをお勧めします。 たとえば、送信ごとに異なる ID (異なる資格情報、または偽装の使用) が必要な場合があります。  
   
 ## <a name="changing-the-cache-sharing-level-for-a-client-workflow"></a>クライアント ワークフローのキャッシュ共有レベルの変更  
  クライアント ワークフローでのキャッシュの共有を設定するには、<xref:System.ServiceModel.Activities.SendMessageChannelCache> クラスのインスタンスを目的のワークフロー インスタンスのセットに拡張として追加します。 この結果、すべてのワークフロー インスタンス間でキャッシュが共有されます。 次のコード例は、この手順を実行する方法を示しています。  
@@ -39,11 +39,11 @@ static SendMessageChannelCache sharedChannelCacheExtension =
   
  次に、各クライアント ワークフローのインスタンスにキャッシュ拡張を追加します。  
   
-```csharp 
+```csharp
 WorkflowApplication clientInstance1 = new WorkflowApplication(new clientWorkflow1());  
 WorkflowApplication clientInstance2 = new WorkflowApplication(new clientWorkflow2());  
   
-// Share the cache extension object   
+// Share the cache extension object
   
 clientInstance1.Extensions.Add(sharedChannelCacheExtension);  
 clientInstance2.Extensions.Add(sharedChannelCacheExtension);  
@@ -73,20 +73,20 @@ host2.WorkflowExtensions.Add(sharedChannelCacheExtension);
   
  ホストされるワークフロー サービスでのキャッシュ共有をインスタンス レベルに設定するには、`Func<SendMessageChannelCache>` デリゲートをワークフロー サービス ホストに拡張として追加し、<xref:System.ServiceModel.Activities.SendMessageChannelCache> クラスの新しいインスタンスをインスタンス化するコードにこのデリゲートを割り当てます。 この結果、ワークフロー サービス ホストのすべてのワークフロー インスタンスで 1 つのキャッシュが共有されるのではなく、ワークフロー インスタンスごとに異なるキャッシュが使用されます。 次のコード例は、このデリゲートがポイントする <xref:System.ServiceModel.Activities.SendMessageChannelCache> 拡張を直接定義するラムダ式を使用して上記の処理を実行する方法を示しています。  
   
-```csharp 
+```csharp
 serviceHost.WorkflowExtensions.Add(() => new SendMessageChannelCache  
 {  
     // Use FactorySettings property to add custom factory cache settings.  
-    FactorySettings = new ChannelCacheSettings   
+    FactorySettings = new ChannelCacheSettings
     { MaxItemsInCache = 5, },  
     // Use ChannelSettings property to add custom channel cache settings.  
-    ChannelSettings = new ChannelCacheSettings   
+    ChannelSettings = new ChannelCacheSettings
     { MaxItemsInCache = 10 },  
 });  
 ```  
   
 ## <a name="customizing-cache-settings"></a>キャッシュ設定のカスタマイズ  
- チャネル ファクトリ キャッシュおよびチャネル キャッシュのキャッシュ設定をカスタマイズできます。 キャッシュ設定は <xref:System.ServiceModel.Activities.ChannelCacheSettings> クラスで定義されています。 クラス<xref:System.ServiceModel.Activities.SendMessageChannelCache>は、チャネルファクトリキャッシュの既定のキャッシュ設定と、パラメーターなしのコンストラクターのチャネルキャッシュを定義します。 次の表は、これらのキャッシュ設定の既定値をキャッシュのタイプごとに示しています。  
+ チャネル ファクトリ キャッシュおよびチャネル キャッシュのキャッシュ設定をカスタマイズできます。 キャッシュ設定は <xref:System.ServiceModel.Activities.ChannelCacheSettings> クラスで定義されています。 この<xref:System.ServiceModel.Activities.SendMessageChannelCache>クラスは、チャネル ファクトリ キャッシュとチャネル キャッシュの既定のキャッシュ設定をパラメーターなしのコンストラクターで定義します。 次の表は、これらのキャッシュ設定の既定値をキャッシュのタイプごとに示しています。  
   
 |設定|LeaseTimeout (分)|IdleTimeout (分)|MaxItemsInCache|  
 |-|-|-|-|  
@@ -97,16 +97,16 @@ serviceHost.WorkflowExtensions.Add(() => new SendMessageChannelCache
   
 ```csharp  
 ChannelCacheSettings factorySettings = new ChannelCacheSettings{  
-                        MaxItemsInCache = 5,   
-                        IdleTimeout = TimeSpan.FromMinutes(5),   
+                        MaxItemsInCache = 5,
+                        IdleTimeout = TimeSpan.FromMinutes(5),
                         LeaseTimeout = TimeSpan.FromMinutes(20)};  
   
 ChannelCacheSettings channelSettings = new ChannelCacheSettings{  
-                        MaxItemsInCache = 5,   
+                        MaxItemsInCache = 5,
                         IdleTimeout = TimeSpan.FromMinutes(2),  
                         LeaseTimeout = TimeSpan.FromMinutes(10) };  
   
-SendMessageChannelCache customChannelCacheExtension =   
+SendMessageChannelCache customChannelCacheExtension =
     new SendMessageChannelCache(factorySettings, channelSettings);  
   
 clientInstance.Extensions.Add(customChannelCacheExtension);  
@@ -115,7 +115,7 @@ clientInstance.Extensions.Add(customChannelCacheExtension);
  構成で定義されているエンドポイントがワークフロー サービスにある場合にキャッシュを有効にするには、<xref:System.ServiceModel.Activities.SendMessageChannelCache> パラメーターが <xref:System.ServiceModel.Activities.SendMessageChannelCache.%23ctor%2A> に設定された、パラメーター化されたコンストラクター `allowUnsafeCaching` を使用して `true` クラスをインスタンス化します。 次に、このクラスの新しいインスタンスをワークフロー サービス ホストまたはワークフロー インスタンスに拡張として追加します。 次のコード例は、ワークフロー インスタンスのキャッシュを有効にする方法を示しています。  
   
 ```csharp  
-SendMessageChannelCache customChannelCacheExtension =   
+SendMessageChannelCache customChannelCacheExtension =
     new SendMessageChannelCache{ AllowUnsafeCaching = true };  
   
 clientInstance.Extensions.Add(customChannelCacheExtension);  
@@ -130,8 +130,8 @@ ChannelCacheSettings factorySettings = new ChannelCacheSettings
   
 ChannelCacheSettings channelSettings = new ChannelCacheSettings();  
   
-SendMessageChannelCache customChannelCacheExtension =   
-    new SendMessageChannelCache(factorySettings, channelSettings);   
+SendMessageChannelCache customChannelCacheExtension =
+    new SendMessageChannelCache(factorySettings, channelSettings);
   
 clientInstance.Extensions.Add(customChannelCacheExtension);  
 ```  
@@ -144,23 +144,23 @@ ChannelCacheSettings factorySettings = new ChannelCacheSettings();
 ChannelCacheSettings channelSettings = new ChannelCacheSettings  
     { MaxItemsInCache = 0};  
   
-SendMessageChannelCache customChannelCacheExtension =   
-    new SendMessageChannelCache(factorySettings, channelSettings);   
+SendMessageChannelCache customChannelCacheExtension =
+    new SendMessageChannelCache(factorySettings, channelSettings);
   
 clientInstance.Extensions.Add(customChannelCacheExtension);  
 ```  
   
- ホストされたワークフロー サービスでは、ファクトリ キャッシュとチャネル キャッシュの設定をアプリケーション構成ファイルで指定できます。 これを行うには、ファクトリ キャッシュおよびチャネル キャッシュのキャッシュ設定を含むサービス動作を追加し、そのサービス動作をサービスに追加します。 次の例は、カスタムファクトリキャッシュとチャネルキャッシュ設定を`MyChannelCacheBehavior`使用したサービス動作を含む構成ファイルの内容を示しています。 このサービス動作は、 `behaviorConfiguration`属性を通じてサービスに追加されます。  
+ ホストされたワークフロー サービスでは、ファクトリ キャッシュとチャネル キャッシュの設定をアプリケーション構成ファイルで指定できます。 これを行うには、ファクトリ キャッシュおよびチャネル キャッシュのキャッシュ設定を含むサービス動作を追加し、そのサービス動作をサービスに追加します。 次の例は、カスタム ファクトリ キャッシュとチャネル`MyChannelCacheBehavior`キャッシュ設定を使用したサービス動作を含む構成ファイルの内容を示しています。 このサービス動作は、 属性を介して`behaviorConfiguration`サービスに追加されます。  
   
 ```xml  
-<configuration>    
+<configuration>
   <system.serviceModel>  
-    <!-- List of other config sections here -->   
+    <!-- List of other config sections here -->
     <behaviors>  
       <serviceBehaviors>  
         <behavior name="MyChannelCacheBehavior">  
           <sendMessageChannelCache allowUnsafeCaching ="false" >  
-            <!-- Control only the host level settings -->   
+            <!-- Control only the host level settings -->
             <factorySettings maxItemsInCache = "8" idleTimeout = "00:05:00" leaseTimeout="10:00:00" />  
             <channelSettings maxItemsInCache = "32" idleTimeout = "00:05:00" leaseTimeout="00:06:00" />  
           </sendMessageChannelCache>  

@@ -3,14 +3,12 @@ title: XML ドキュメント オブジェクト モデル (DOM)
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: b5e52844-4820-47c0-a61d-de2da33e9f54
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 160d056491ca71f6de039e8cac7302a61504fcd5
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: dbc53d713d77cfdc9d0dbb8a201f2b5627a76921
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662480"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283391"
 ---
 # <a name="xml-document-object-model-dom"></a>XML ドキュメント オブジェクト モデル (DOM)
 
@@ -35,7 +33,7 @@ XML ドキュメント オブジェクト モデル (DOM) クラスは、XML ド
 
 この XML データが DOM 構造に読み込まれるとき、メモリがどのように構造化されるかを次の図に示します。
 
-![XML ドキュメントの構造](../../../../docs/standard/data/xml/media/xml-to-domtree.gif "XML_To_DOMTree") XML ドキュメントの構造
+![XML ドキュメントの構造](media/xml-to-domtree.gif "XML_To_DOMTree") XML ドキュメントの構造
 
 図中のそれぞれの円は、XML ドキュメント構造における 1 つのノードを表します。これは **XmlNode** オブジェクトと呼ばれます。 **XmlNode** オブジェクトは、DOM ツリーの基本オブジェクトです。 **XmlNode** を拡張する **XmlDocument** クラスは、たとえばドキュメントをメモリに読み込んだり、XML をファイルに保存するなど、ドキュメント全体を操作するメソッドをサポートしています。 さらに **XmlDocument** では、XML ドキュメント全体のノードを参照して操作する手段も提供されます。 **XmlNode** と **XmlDocument** は、いずれもパフォーマンスと使いやすさが向上しており、次の操作を実行するメソッドとプロパティを持っています。
 
@@ -66,17 +64,17 @@ XML ドキュメント オブジェクト モデル (DOM) クラスは、XML ド
 
 - 図中に **book** および **pubinfo** として同レベルに表現されているノードは兄弟です。
 
-DOM の特性の 1 つは、属性の取り扱い方法にあります。 属性は、互いに親子関係や兄弟関係を持つノードではありません。 属性は要素ノードのプロパティと見なされ、名前と値ペアから構成されます。 たとえば、要素 `format="dollar` に関連付けられている `price`" という形式の XML データがある場合は、単語 `format` が名前になり、`format` 属性の値は `dollar` になります。 **price** ノードの `format="dollar"` 属性を取得するには、カーソルが `price` 要素ノード上にあるときに **GetAttribute** メソッドを呼び出します。 詳細については、「[DOM の属性へのアクセス](../../../../docs/standard/data/xml/accessing-attributes-in-the-dom.md)」を参照してください。
+DOM の特性の 1 つは、属性の取り扱い方法にあります。 属性は、互いに親子関係や兄弟関係を持つノードではありません。 属性は要素ノードのプロパティと見なされ、名前と値ペアから構成されます。 たとえば、要素 `format="dollar` に関連付けられている `price`" という形式の XML データがある場合は、単語 `format` が名前になり、`format` 属性の値は `dollar` になります。 **price** ノードの `format="dollar"` 属性を取得するには、カーソルが `price` 要素ノード上にあるときに **GetAttribute** メソッドを呼び出します。 詳細については、「[DOM の属性へのアクセス](accessing-attributes-in-the-dom.md)」を参照してください。
 
 XML をメモリに読み込むと、ノードが作成されます。 ただし、すべてのノードが同じタイプというわけではありません。 XML の要素の規則と構文は、処理命令の規則と構文とは異なります。 したがって、さまざまなデータが読み込まれるときに、個々のノードにノード型が割り当てられます。 このノード型によって、ノードの特性と機能が決定されます。
 
-メモリに生成されるノード型の詳細については、「[XML ノードの種類](../../../../docs/standard/data/xml/types-of-xml-nodes.md)」を参照してください。 ノード ツリーに作成されるオブジェクトの詳細については、「[オブジェクト階層の XML データへのマップ](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)」を参照してください。
+メモリに生成されるノード型の詳細については、「[XML ノードの種類](types-of-xml-nodes.md)」を参照してください。 ノード ツリーに作成されるオブジェクトの詳細については、「[オブジェクト階層の XML データへのマップ](mapping-the-object-hierarchy-to-xml-data.md)」を参照してください。
 
-Microsoft では、XML ドキュメントの操作を容易にするために、W3C (World Wide Web Consortium) DOM Level 1 および Level 2 で規定されている API を拡張しています。 W3C の標準を完全にサポートする一方で、追加のクラス、メソッド、プロパティにより、W3C の XML DOM で実現できる以上の機能が付加されています。 新しいクラスを使用すると、リレーショナル データにアクセスし、ADO.NET との同期をとりながら、データを XML として公開できます。 詳細については、「[Dataset と XmlDataDocument の同期](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)」を参照してください。
+Microsoft では、XML ドキュメントの操作を容易にするために、W3C (World Wide Web Consortium) DOM Level 1 および Level 2 で規定されている API を拡張しています。 W3C の標準を完全にサポートする一方で、追加のクラス、メソッド、プロパティにより、W3C の XML DOM で実現できる以上の機能が付加されています。 新しいクラスを使用すると、リレーショナル データにアクセスし、ADO.NET との同期をとりながら、データを XML として公開できます。 詳細については、「[Dataset と XmlDataDocument の同期](../../../framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)」を参照してください。
 
 DOM が最も役に立つのは、XML データをメモリに読み込み、その構造を変更したり、ノードを追加または削除したり、要素内のテキストとしてノードが保持しているデータを変更したりする場合です。 ただし、他のクラスも用意されており、シナリオによっては DOM より高速になる場合もあります。 XML に対して高速、非キャッシュ、前方参照専用のストリーム アクセスを行うには、**XmlReader** と **XmlWriter** を使用します。 カーソル モデルと **XPath** を使用したランダム アクセスが必要な場合は、**XPathNavigator** クラスを使用します。
 
 ## <a name="see-also"></a>関連項目
 
-- [XML ノードの種類](../../../../docs/standard/data/xml/types-of-xml-nodes.md)
-- [オブジェクト階層の XML データへのマップ](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)
+- [XML ノードの種類](types-of-xml-nodes.md)
+- [オブジェクト階層の XML データへのマップ](mapping-the-object-hierarchy-to-xml-data.md)

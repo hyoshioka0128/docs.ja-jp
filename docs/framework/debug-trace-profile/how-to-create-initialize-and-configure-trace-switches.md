@@ -1,5 +1,6 @@
 ---
 title: '方法: トレース スイッチを作成、初期化、および構成する'
+description: .NET で BooleanSwitch および system.servicemodel クラスを使用して、トレーススイッチを作成、初期化、および構成します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,19 +12,16 @@ helpviewer_keywords:
 - tracing [.NET Framework], enabling or disabling
 - Web.config configuration file, trace switches
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 13f89af41520fa023d8841d6dc6d7766e2abe6da
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: MT
+ms.openlocfilehash: 6a43e143abba96c841f04b7be9d482c55e78aa8f
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052716"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051325"
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>方法: トレース スイッチを作成、初期化、および構成する
 トレース スイッチを使用すると、トレース出力を有効/無効にしたり、トレースの出力をフィルター処理したりできます。  
   
-<a name="create"></a>   
+<a name="create"></a>
 ## <a name="creating-and-initializing-a-trace-switch"></a>トレース スイッチの作成と初期化  
  トレース スイッチを使用するには、まずトレース スイッチを作成し、コード内に配置する必要があります。 事前定義されている 2 つのクラスからスイッチ オブジェクトを作成することができます。それは、<xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> クラスと <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> クラスです。 トレース メッセージを表示させるかどうかのみ処理すればよい場合は <xref:System.Diagnostics.BooleanSwitch> を使用し、トレースのレベルを区別する必要がある場合は <xref:System.Diagnostics.TraceSwitch> を使用します。 <xref:System.Diagnostics.TraceSwitch> を使用する場合は、独自のデバッグ メッセージを定義して、それらのメッセージを異なるトレース レベルに関連付けることができます。 どちらの種類のスイッチも、トレースまたはデバッグの両方で使用できます。 既定では、<xref:System.Diagnostics.BooleanSwitch> は無効に設定され、<xref:System.Diagnostics.TraceSwitch> はレベル <xref:System.Diagnostics.TraceLevel.Off?displayProperty=nameWithType> に設定されています。 トレース スイッチは、それらを使用する可能性のあるコードの任意の部分に作成して配置することができます。  
   
@@ -33,7 +31,7 @@ ms.locfileid: "71052716"
   
 1. スイッチを型 <xref:System.Diagnostics.BooleanSwitch?displayProperty=nameWithType> または型 <xref:System.Diagnostics.TraceSwitch?displayProperty=nameWithType> のいずれかに定義し、スイッチの名前と説明を設定します。  
   
-2. トレース スイッチを構成します。 詳細については、「[トレース スイッチの構成](#configure)」を参照してください。  
+2. トレース スイッチを構成します。 詳細については、「[トレーススイッチの構成](#configure)」を参照してください。  
   
      次のコードでは、それぞれの種類のスイッチを 1 つずつ作成します。  
   
@@ -43,18 +41,18 @@ ms.locfileid: "71052716"
     ```  
   
     ```csharp  
-    System.Diagnostics.BooleanSwitch dataSwitch =   
+    System.Diagnostics.BooleanSwitch dataSwitch =
        new System.Diagnostics.BooleanSwitch("Data", "DataAccess module");  
-    System.Diagnostics.TraceSwitch generalSwitch =   
-       new System.Diagnostics.TraceSwitch("General",   
+    System.Diagnostics.TraceSwitch generalSwitch =
+       new System.Diagnostics.TraceSwitch("General",
        "Entire application");  
     ```  
   
-<a name="configure"></a>   
+<a name="configure"></a>
 ## <a name="configuring-trace-switches"></a>トレース スイッチの構成  
  アプリケーションを配布した後も、引き続き、アプリケーション内のトレース スイッチを構成することによりトレース出力を有効/無効にできます。 この場合、"スイッチを構成する" とは、初期化された後に外部ソースからその値を変更することを意味します。 構成ファイルを使用してスイッチ オブジェクトの値を変更することができます。 トレース スイッチを構成すると、スイッチのオン/オフの切り替えやレベル設定を行えるほか、リスナーに引き渡すメッセージの量と種類を決定できます。  
   
- スイッチは、.config ファイルを使用して構成されています。 Web アプリケーションでは、これは、プロジェクトに関連付けられた Web.config ファイルです。 Windows アプリケーションでは、このファイルは、(アプリケーション名).exe.config という名前です。配置されたアプリケーションでは、このファイルは実行可能ファイルと同じフォルダーになければなりません。  
+ スイッチは、.config ファイルを使用して構成されています。 Web アプリケーションでは、これは、プロジェクトに関連付けられた Web.config ファイルです。 Windows アプリケーションでは、このファイルの名前は (アプリケーション名) .exe.config です。配置されたアプリケーションでは、このファイルは実行可能ファイルと同じフォルダーに存在する必要があります。  
   
  アプリケーションが、スイッチのインスタンスを作成するコードを初めて実行したときに、構成ファイルを確認して名前付きのスイッチに関するトレース レベルの情報を取得します。 トレース システムが特定のスイッチに関して構成ファイルを調べるのは、アプリケーションが初めてスイッチを作成するとき 1 回のみです。  
   
@@ -73,13 +71,13 @@ ms.locfileid: "71052716"
   
 1. トレース スイッチを使用するには、「[Creating and initializing a trace switch](#create)」(トレース スイッチの作成と初期化) のセクションで説明されているように、まず、それらを作成してコードに配置する必要があります。  
   
-2. プロジェクトに構成ファイル (app.config または Web.config) が含まれない場合は、 **[プロジェクト]** メニューから **[新しい項目の追加]** を選択します。  
+2. プロジェクトに構成ファイル (app.config または Web.config) が含まれない場合は、**[プロジェクト]** メニューから **[新しい項目の追加]** を選択します。  
   
-    - **Visual Basic:** **[新しい項目の追加]** ダイアログボックスで、 **[アプリケーション構成ファイル]** を選択します。  
+    - **Visual Basic:****[新しい項目の追加]** ダイアログ ボックスで **[アプリケーション構成ファイル]** を選択します。  
   
          アプリケーション構成ファイルが作成され、開かれます。 これは、XML ドキュメントであり、ルート要素は `<configuration>.` です。  
   
-    - **Visual C#:** **[新しい項目の追加]** ダイアログボックスで、 **[XML ファイル]** を選択します。 このファイルに **app.config** という名前を付けます。XML エディターで、XML 宣言の後に次の XML を追加します。  
+    - **Visual C# :****[新しい項目の追加]** ダイアログ ボックスで **[XML ファイル]** を選択します。 このファイルに**app.config**という名前を指定します。Xml エディターで、XML 宣言の後に次の XML を追加します。  
   
         ```xml  
         <configuration>  
@@ -128,6 +126,6 @@ ms.locfileid: "71052716"
 ## <a name="see-also"></a>関連項目
 
 - [アプリケーションのトレースとインストルメント](tracing-and-instrumenting-applications.md)
-- [方法: アプリケーションコードにトレースステートメントを追加する](how-to-add-trace-statements-to-application-code.md)
+- [方法: アプリケーション コードにトレース ステートメントを追加する](how-to-add-trace-statements-to-application-code.md)
 - [トレース スイッチ](trace-switches.md)
 - [トレースおよびデバッグ設定のスキーマ](../configure-apps/file-schema/trace-debug/index.md)

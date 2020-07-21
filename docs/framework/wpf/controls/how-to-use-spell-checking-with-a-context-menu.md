@@ -11,16 +11,16 @@ helpviewer_keywords:
 ms.assetid: 61f69a20-2ff3-4056-9060-e32f4483ec5e
 ms.openlocfilehash: 72b24c386eb99140c9c2729688994b81f92e1a6f
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61699150"
 ---
 # <a name="how-to-use-spell-checking-with-a-context-menu"></a>方法: コンテキスト メニューでスペル チェックを使用する
-既定では、編集コントロールでスペル チェックを有効にするとがなど<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>、コンテキスト メニューでスペル チェックの選択肢を取得します。 たとえば、ユーザーは、スペル ミスの単語を右クリックし、ときのセットを取得するオプションや、スペルの修正候補**すべて無視**します。 ただし、独自のカスタム コンテキスト メニューで、既定のショートカット メニューをオーバーライドするときにこの機能は失われ、コンテキスト メニューでスペル チェック機能を再度有効にするコードを記述する必要があります。 次の例でこれを有効にする方法を示しています、<xref:System.Windows.Controls.TextBox>します。  
+既定では、<xref:System.Windows.Controls.TextBox> や <xref:System.Windows.Controls.RichTextBox> のような編集コントロールでスペルチェックを有効にすると、コンテキスト メニューにスペルチェックの選択肢が表示されます。 たとえば、綴りが間違っている単語をユーザーがクリックすると、綴り案がひととおり表示されるか、 **[すべて無視]** オプションが表示されます。 ただし、既定のコンテキスト メニューを独自のコンテキスト メニューでオーバーライドすると、この機能は失われます。コンテキスト メニューでスペルチェック機能を再び有効にするコードを記述する必要があります。 次の例では、<xref:System.Windows.Controls.TextBox> でこれを有効にする方法を示します。  
   
 ## <a name="example"></a>例  
- 次の例は、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]を作成する、<xref:System.Windows.Controls.TextBox>コンテキスト メニューを実装するために使用される一部のイベントにします。  
+ 次の例では、コンテキスト メニューの実装に使用されるイベントをいくつか含む <xref:System.Windows.Controls.TextBox> を作成する [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を示します。  
   
  [!code-xaml[TextBoxMiscSnippets_snip#SpellerCustomContextMenuExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/speller_custom_context_menu.xaml#spellercustomcontextmenuexamplewholepage)]  
   
@@ -30,11 +30,11 @@ ms.locfileid: "61699150"
  [!code-csharp[TextBoxMiscSnippets_snip#SpellerCustomContextMenuCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/csharp/speller_custom_context_menu.xaml.cs#spellercustomcontextmenucodeexamplewholepage)]
  [!code-vb[TextBoxMiscSnippets_snip#SpellerCustomContextMenuCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBoxMiscSnippets_snip/visualbasic/speller_custom_context_menu.xaml.vb#spellercustomcontextmenucodeexamplewholepage)]  
   
- これを行うために使用されるコード、<xref:System.Windows.Controls.RichTextBox>は似ています。 主な違いは、パラメーターに渡される、`GetSpellingError`メソッド。 <xref:System.Windows.Controls.TextBox>、キャレット位置の整数インデックスを渡します。  
+ <xref:System.Windows.Controls.RichTextBox> でこれを行うためのコードも似ています。 主な違いは、`GetSpellingError` メソッドに渡されるパラメーターです。 <xref:System.Windows.Controls.TextBox> の場合、カーソル位置の整数インデックスが渡されます。  
   
  `spellingError = myTextBox.GetSpellingError(caretIndex);`  
   
- <xref:System.Windows.Controls.RichTextBox>、渡す、<xref:System.Windows.Documents.TextPointer>キャレットの位置を指定します。  
+ <xref:System.Windows.Controls.RichTextBox> の場合、キャレット位置を指定する <xref:System.Windows.Documents.TextPointer> が渡されます。  
   
  `spellingError = myRichTextBox.GetSpellingError(myRichTextBox.CaretPosition);`  
   

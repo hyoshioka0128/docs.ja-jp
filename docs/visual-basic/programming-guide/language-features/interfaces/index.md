@@ -7,12 +7,12 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-ms.openlocfilehash: 619aa6695db756e56a836fd76693cc8a3976f8e2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 90f8e5d4eb7bb6b367ee5ffd4a4323097c6bde9c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345055"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "85503805"
 ---
 # <a name="interfaces-visual-basic"></a>インターフェイス (Visual Basic)
 *インターフェイス*は、クラスが実装できるプロパティ、メソッド、およびイベントを定義します。 インターフェイスでは、密接に関連するプロパティ、メソッド、およびイベントの小さなグループとして機能を定義できます。これにより、既存のコードを損なうことなく、インターフェイスを拡張して実装を開発できるため、互換性の問題を減らすことができます。 追加のインターフェイスと実装を開発することで、いつでも新しい機能を追加できます。  
@@ -33,20 +33,20 @@ ms.locfileid: "74345055"
  名前空間内で、インターフェイス ステートメントは既定では `Friend` ですが、明示的に `Public` または `Friend` として宣言することもできます。 クラス、モジュール、インターフェイス、および構造体内で定義されたインターフェイスは、既定では `Public` ですが、明示的に `Public`、`Friend`、`Protected`、または `Private` として宣言することもできます。  
   
 > [!NOTE]
-> `Shadows` キーワードは、すべてのインターフェイス メンバーに適用できます。 `Overloads` キーワードは、インターフェイス定義で宣言された `Sub`、`Function`、および `Property` ステートメントに適用できます。 さらに、`Property` ステートメントには `Default`、`ReadOnly`、または `WriteOnly` 修飾子を付けることができます。 他の修飾子 (`Public`、`Private`、`Friend`、`Protected`、`Shared`、`Overrides`、`MustOverride`、または `Overridable`) は許可されていません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
+> `Shadows` キーワードは、すべてのインターフェイス メンバーに適用できます。 `Overloads` キーワードは、インターフェイス定義で宣言された `Sub`、`Function`、および `Property` ステートメントに適用できます。 さらに、`Property` ステートメントには `Default`、`ReadOnly`、または `WriteOnly` 修飾子を付けることができます。 他の修飾子 (`Public`、`Private`、`Friend`、`Protected`、`Shared`、`Overrides`、`MustOverride`、または `Overridable`) は許可されていません。 詳細については、「[宣言コンテキストと既定のアクセス レベル](../../../language-reference/statements/declaration-contexts-and-default-access-levels.md)」を参照してください。  
   
  たとえば、次のコードは、1 つの関数、1 つのプロパティ、および 1 つのイベントを持つインターフェイスを定義します。  
   
  [!code-vb[VbVbalrOOP#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#17)]  
   
 ## <a name="implementing-interfaces"></a>インターフェイスの実装  
- Visual Basic の予約語 `Implements` は、次の2つの方法で使用されます。 `Implements` ステートメントは、クラスまたは構造体がインターフェイスを実装することを示します。 `Implements` キーワードは、クラス メンバーまたは構造体メンバーが特定のインターフェイス メンバーを実装することを示します。  
+ Visual Basic では、予約語 `Implements` が 2 つの方法で使用されます。 `Implements` ステートメントは、クラスまたは構造体がインターフェイスを実装することを示します。 `Implements` キーワードは、クラス メンバーまたは構造体メンバーが特定のインターフェイス メンバーを実装することを示します。  
   
 ### <a name="implements-statement"></a>Implements ステートメント  
  クラスまたは構造体が 1 つ以上のインターフェイスを実装する場合は、`Implements` ステートメントを `Class` または `Structure` ステートメントの直後に記述する必要があります。 `Implements` ステートメントには、クラスによって実装されるインターフェイスのコンマ区切りのリストが必要です。 クラスまたは構造体は、すべてのインターフェイス メンバーを `Implements` キーワードを使用して実装する必要があります。  
   
 ### <a name="implements-keyword"></a>Implements キーワード  
- `Implements` キーワードには、実装されるインターフェイス メンバーのコンマ区切りのリストが必要です。 一般的には、1 つのインターフェイス メンバーのみが指定されますが、複数のメンバーを指定することもできます。 インターフェイス メンバーの指定は、クラス内の implements ステートメントで指定する必要があるインターフェイス名と、ピリオドと、実装されるメンバー関数、プロパティ、またはイベントの名前で構成されます。 インターフェイスメンバーを実装するメンバーの名前には、任意の有効な識別子を使用できます。また、以前のバージョンの Visual Basic で使用されている `InterfaceName_MethodName` 規則に限定されません。  
+ `Implements` キーワードには、実装されるインターフェイス メンバーのコンマ区切りのリストが必要です。 一般的には、1 つのインターフェイス メンバーのみが指定されますが、複数のメンバーを指定することもできます。 インターフェイス メンバーの指定は、クラス内の implements ステートメントで指定する必要があるインターフェイス名と、ピリオドと、実装されるメンバー関数、プロパティ、またはイベントの名前で構成されます。 インターフェイス メンバーを実装するメンバーの名前には、有効な任意の識別子を使用できます。また、Visual Basic の以前のバージョンで使用されている `InterfaceName_MethodName` 規則の制限を受けません。  
   
  たとえば、次のコードは、インターフェイスのメソッドを実装する `Sub1` という名前のサブルーチンを宣言する方法を示しています。  
   
@@ -73,7 +73,7 @@ ms.locfileid: "74345055"
   
  [!code-vb[VbVbalrOOP#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#40)]  
   
- 最後の例は、`Interface2` から継承されたメソッドを含めて、`Interface1` を実装します。  
+ 最後の例は、`Interface1` から継承されたメソッドを含めて、`Interface2` を実装します。  
   
  [!code-vb[VbVbalrOOP#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#41)]  
   
@@ -81,7 +81,7 @@ ms.locfileid: "74345055"
   
 ## <a name="related-topics"></a>関連トピック  
   
-|[タイトル]|説明|  
+|Title|説明|  
 |-----------|-----------------|  
-|[チュートリアル: インターフェイスの作成と実装](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|独自のインターフェイスを定義および実装する処理の詳細な手順を説明します。|  
+|[チュートリアル: インターフェイスの作成と実装](walkthrough-creating-and-implementing-interfaces.md)|独自のインターフェイスを定義および実装する処理の詳細な手順を説明します。|  
 |[ジェネリック インターフェイスの分散](../../concepts/covariance-contravariance/variance-in-generic-interfaces.md)|ジェネリック インターフェイスでの共変性と反変性について説明し、.NET Framework でのバリアント ジェネリック インターフェイスの一覧を示します。|

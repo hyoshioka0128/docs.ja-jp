@@ -8,70 +8,68 @@ helpviewer_keywords:
 - section Element
 - <section> Element
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8c1675540df6844f98572c11cfb140bff23b31a8
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 88f74c02ef627e9136e4437ffa150c36445266a3
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089016"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79153732"
 ---
-# <a name="section-element"></a>\<section > 要素
+# <a name="section-element"></a>\<section> 要素
 
 構成セクションの宣言が含まれています。
 
-[ **\<configuration>** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<セクション >**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<section>**
 
-[ **\<configuration>** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<configSections >** ](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sectionGroup >** ](sectiongroup-element-for-configsections.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**セクション >**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<sectionGroup>**](sectiongroup-element-for-configsections.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<section>**
 
 ## <a name="syntax"></a>構文
 
 ```xml
 <section name="section name"
          type="configuration section handler class, assembly"
-         allowDefinition="Everywhere|MachineOnly|MachineToApplication" 
+         allowDefinition="Everywhere|MachineOnly|MachineToApplication"
          allowLocation="true|false" />
 ```
 
-## <a name="required-attributes"></a>必要な属性
+## <a name="required-attributes"></a>必須属性
 
 |           | 説明 |
 | --------- | ----------- |
 | **name**  | 構成セクションの名前を指定します。 |
-| **type**  | 構成ファイルからセクションを読み取る構成セクションハンドラークラスの名前を指定します。 型の値には、"完全修飾名"、"完全修飾名"、". アセンブリ名" の構文があります。 単純なアセンブリ名は、 *.dll*ファイル拡張子のないルートファイル名です。 |
+| **type**  | 構成ファイルからセクションを読み取る構成セクションハンドラークラスの名前を指定します。 型の値には、"完全修飾名"、"完全修飾名"、".. アセンブリ名" の構文があります。 単純なアセンブリ名は、 *.dll*ファイル拡張子のないルートファイル名です。 |
 
 ## <a name="optional-attributes"></a>省略可能な属性
 
 次の属性は、ASP.NET アプリケーションにのみ適用されます。 構成システムは、他のアプリケーションの種類に対してこれらの属性を無視します。
 
-|                     | 説明 |
+|                     | Description |
 | ------------------- | ----------- |
-| **allowDefinition** | セクションを使用できる構成ファイルを指定します。 次のいずれかの値を使用します。<br><br>**全体**<br>すべての構成ファイルでセクションを使用できるようにします。 既定値です。<br>**MachineOnly**<br>セクション*をコンピューターの構成ファイル (machine.config*) でのみ使用できるようにします。<br>**MachineToApplication**<br>コンピューターの構成ファイルまたはアプリケーション構成ファイルでセクションを使用できるようにします。 |
-| **allowLocation**   | セクションを **\<location >** 要素内で使用できるかどうかを判断します。 次のいずれかの値を使用します。<br><br>**true**<br>セクションを **\<location >** 要素内で使用できるようにします。 既定値です。<br>**false**<br>では、 **\<location >** 要素内でセクションを使用することはできません。 |
+| **allowDefinition** | セクションを使用できる構成ファイルを指定します。 次のいずれかの値を使用します。<br><br>**すべての場所**<br>すべての構成ファイルでセクションを使用できるようにします。 既定値です。<br>**MachineOnly**<br>セクション*をコンピューターの構成ファイル (machine.config*) でのみ使用できるようにします。<br>**MachineToApplication**<br>コンピューターの構成ファイルまたはアプリケーション構成ファイルでセクションを使用できるようにします。 |
+| **allowLocation**   | 要素内でセクションを使用できるかどうかを判断し **\<location>** ます。 次のいずれかの値を使用します。<br><br>**true**<br>要素内でセクションを使用できるようにし **\<location>** ます。 既定値です。<br>**false**<br>では、要素内でセクションを使用することはできません **\<location>** 。 |
 
 ## <a name="parent-elements"></a>親要素
 
-|     | 説明 |
+|     | Description |
 | --- | ----------- |
-| [ **\<configSections >** Element](configsections-element-for-configuration.md) | 構成セクションと名前空間の宣言が含まれています。 |
-| [ **\<sectionGroup >** Element](sectiongroup-element-for-configsections.md) | 構成セクションの名前空間を定義します。 |
+| [**\<configSections>** Element](configsections-element-for-configuration.md) | 構成セクションと名前空間の宣言が含まれています。 |
+| [**\<sectionGroup>** Element](sectiongroup-element-for-configsections.md) | 構成セクションの名前空間を定義します。 |
 
 > [!NOTE]
-> **\<section >** 要素は **\<configsections >** または **\<sectionGroup >** のいずれかの子要素であり、両方ではありません。
+> **\<section>** 要素はまたはのいずれかの子要素であり、両方では **\<configSections>** **\<sectionGroup>** ありません。
 
 ## <a name="child-elements"></a>子要素
 
-None
+なし
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-構成セクションを宣言すると、基本的に構成ファイルの新しい要素が定義されます。 新しい要素には、構成セクションハンドラー (つまり、<xref:System.Configuration.IConfigurationSectionHandler> インターフェイスを実装するクラス) が読み取る設定が含まれています。 定義するセクションの属性と子要素は、設定の読み取りに使用するセクションハンドラーによって異なります。
+構成セクションを宣言すると、基本的に構成ファイルの新しい要素が定義されます。 新しい要素には、構成セクションハンドラー (つまり、インターフェイスを実装するクラス) の読み取りの設定が含まれ <xref:System.Configuration.IConfigurationSectionHandler> ます。 定義するセクションの属性と子要素は、設定の読み取りに使用するセクションハンドラーによって異なります。
 
 *Machine.config*ファイルで構成セクションハンドラーを宣言すると、 **allowdefinition**属性で特に指定されていない限り、そのコンピューター上の任意のアプリケーション構成ファイルの構成セクションを使用できます。
 
@@ -83,11 +81,11 @@ None
 <configuration>
   <configSections>
     <section name="sampleSection"
-             type="System.Configuration.SingleTagSectionHandler" 
+             type="System.Configuration.SingleTagSectionHandler"
              allowLocation="false" />
   </configSections>
-  <sampleSection setting1="Value1" 
-                 setting2="value two" 
+  <sampleSection setting1="Value1"
+                 setting2="value two"
                  setting3="third value" />
 </configuration>
 ```

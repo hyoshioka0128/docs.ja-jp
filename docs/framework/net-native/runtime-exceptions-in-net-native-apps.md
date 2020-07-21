@@ -2,18 +2,18 @@
 title: .NET ネイティブ アプリでのランタイム例外
 ms.date: 03/30/2017
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
-ms.openlocfilehash: 3132e2c9502c91cbfa0b120f664fd0c6f99a2663
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 12df2ef7bf6e86a60dfa4c130f35969e72ac5211
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128146"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79180951"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>.NET ネイティブ アプリでのランタイム例外
 デバッグ構成とリリース構成は完全に異なるため、ターゲット プラットフォームでユニバーサル Windows プラットフォーム アプリのリリース ビルドをテストすることは重要です。 既定では、デバッグ構成は .NET Core ランタイムを使用してアプリをコンパイルしますが、リリース構成は .NET ネイティブを使用してアプリをネイティブ コードにコンパイルします。  
   
 > [!IMPORTANT]
-> アプリのリリースバージョンをテストするときに発生する可能性のある[MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)、および[誤 Singruntimeartifactexception](missingruntimeartifactexception-class-net-native.md)例外の処理については、「手順 4:メタデータの欠落を手動で解決する:[はじめに](getting-started-with-net-native.md)のトピックのほか、[リフレクションと .NET ネイティブ](reflection-and-net-native.md)および[ランタイムディレクティブ (system.xml) 構成ファイルリファレンスも参照](runtime-directives-rd-xml-configuration-file-reference.md)してください。  
+> アプリのリリースバージョンをテストするときに発生する可能性のある[MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)、および[誤 Singruntimeartifactexception](missingruntimeartifactexception-class-net-native.md)例外の処理については、[はじめに](getting-started-with-net-native.md)の[.NET ネイティブ](reflection-and-net-native.md)トピックの「手順 4: メタデータの欠落を手動で解決する」を[参照してください。](runtime-directives-rd-xml-configuration-file-reference.md)  
   
 ## <a name="debug-and-release-builds"></a>デバッグ ビルドとリリース ビルド  
  .NET Core ランタイムに対してデバッグ ビルドを実行した場合は、ネイティブ コードにコンパイルされません。 このため、一般にランタイムによって提供されるすべてのサービスをアプリで使用することができます。  
@@ -31,7 +31,7 @@ ms.locfileid: "73128146"
 > [!NOTE]
 > **[.NET ネイティブ ツール チェーンを使用してコンパイルする]** ボックスをオンまたはオフにすることによって、デバッグ ビルドとリリース ビルドを .NET ネイティブ ツール チェーンでコンパイルするかどうかを制御できます。   ただし、Windows ストアは常に .NET ネイティブ ツールのチェーンを使用してアプリの製品バージョンをコンパイルすることに注意してください。  
   
-<a name="Messages"></a>   
+<a name="Messages"></a>
 ## <a name="runtime-exception-messages"></a>Runtime exception messages  
  アプリケーションの実行可能ファイルのサイズを最小限に抑えるために、.NET ネイティブは例外メッセージの全文を組み込みません。 そのため、リリース ビルドでスローされるランタイム例外では、例外メッセージの全文が表示されない場合があります。 代わりに、部分的な文字列を含むテキストが、詳細を示すリンクと共に表示される可能性があります。 たとえば、以下のような例外情報が表示されます。  
   
@@ -51,7 +51,7 @@ Exception thrown: 'System.AggregateException' in NativeApp.exe.
 Additional information: Value does not fall within the expected range.  
 ```  
   
-<a name="CallStack"></a>   
+<a name="CallStack"></a>
 ## <a name="runtime-call-stack"></a>Runtime call stack  
  インライン展開および他の最適化のために、.NET ネイティブ ツール チェーンでコンパイルされたアプリで表示される呼び出し履歴では、ランタイム例外へのパスを明確に識別できない場合があります。  
   
@@ -59,5 +59,5 @@ Additional information: Value does not fall within the expected range.
   
 ## <a name="see-also"></a>関連項目
 
-- [Windows ユニバーサルアプリのデバッグ .NET ネイティブ](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/)
+- [.NET ネイティブの Windows ユニバーサル アプリのデバッグ](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/)
 - [はじめに](getting-started-with-net-native.md)

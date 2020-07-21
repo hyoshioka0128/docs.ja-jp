@@ -2,26 +2,26 @@
 title: '方法: デリゲート メソッドを呼び出す'
 ms.date: 07/20/2015
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
-ms.openlocfilehash: 520bacfbe6103490e0459cd5af149c1d55a8fce4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: f319727c007b93c7b334af0598f1b9f7c034144d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345266"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410722"
 ---
 # <a name="how-to-invoke-a-delegate-method-visual-basic"></a>方法: デリゲート メソッドを呼び出す (Visual Basic)
 
-この例では、メソッドをデリゲートに関連付けて、デリゲートを使用してそのメソッドを呼び出す方法を示します。
+この例では、メソッドをデリゲートに関連付け、デリゲートからそのメソッドを呼び出す方法を示します。
 
-### <a name="create-the-delegate-and-matching-procedures"></a>デリゲートと一致するプロシージャを作成する
+### <a name="create-the-delegate-and-matching-procedures"></a>デリゲートおよび一致するプロシージャを作成する
 
-1. `MySubDelegate`という名前のデリゲートを作成します。
+1. `MySubDelegate` という名前のデリゲートを作成します。
 
     ```vb
     Delegate Sub MySubDelegate(ByVal x As Integer)
     ```
 
-2. デリゲートと同じシグネチャを持つメソッドを含むクラスを宣言します。
+2. デリゲートと同じシグネチャのメソッドを含むクラスを宣言します。
 
     ```vb
     Class class1
@@ -31,7 +31,7 @@ ms.locfileid: "74345266"
     End Class
     ```
 
-3. デリゲートのインスタンスを作成し、組み込みの `Invoke` メソッドを呼び出すことによって、デリゲートに関連付けられているメソッドを呼び出すメソッドを定義します。
+3. デリゲートのインスタンスを作成して、デリゲートに関連付けられているメソッドを、組み込みの `Invoke` メソッドを呼び出すことで起動するメソッドを定義します。
 
     ```vb
     Protected Sub DelegateTest()
@@ -43,9 +43,9 @@ ms.locfileid: "74345266"
     End Sub
     ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Delegate ステートメント](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [デリゲート](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [イベント](../../../../visual-basic/programming-guide/language-features/events/index.md)
+- [Delegate ステートメント](../../../language-reference/statements/delegate-statement.md)
+- [デリゲート](index.md)
+- [イベント](../events/index.md)
 - [マルチスレッド アプリケーション](../../../../standard/threading/using-threads-and-threading.md)

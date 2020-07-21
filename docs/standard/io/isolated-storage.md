@@ -1,5 +1,6 @@
 ---
 title: 分離ストレージ
+description: 分離ストレージについて確認します。これは、コードと保存データを関連付ける標準化された方法を定義することにより、分離性と安全性を提供するデータ ストレージ機構です。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -18,14 +19,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 33583f430e5af2f3fa7027233febd9ec61f85a3f
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: b9915faff2593cc51868c20e1a83a05ffca9f548
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802454"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325930"
 ---
 # <a name="isolated-storage"></a>分離ストレージ
 <a name="top"></a>デスクトップ アプリでは、分離ストレージは、コードと保存データを関連付ける標準化された方法を定義することにより、分離性と安全性を提供するデータ ストレージ機構です。 標準化には、ほかにも利点があります。 管理者は分離ストレージの操作用にデザインされたツールを使用して、ファイルのストレージ領域の構成、セキュリティ ポリシーの設定、および不要なデータの削除を行うことができます。 分離ストレージを使用すると、ファイル システムの安全な場所を指定するための固有のパスを指定する必要がなくなり、分離ストレージのアクセス権限を持たない他のアプリケーションからデータを保護できます。 アプリケーションのストレージ領域の場所を示すハードコーディングされた情報は不要になります。
@@ -107,6 +106,97 @@ ms.locfileid: "74802454"
 |<xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>|ユーザー別の分離。 通常、管理ツールやデバッグ ツールのみ、このレベルのアクセス許可が使用されます。|このアクセス許可によるアクセスでは、アセンブリの分離とは関係なく、ユーザーの分離ストレージ ファイルやディレクトリはどれも表示または削除できます。 情報のリークとデータ消失のリスクだけでなく、ほかのリスクもあります。|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.UnrestrictedIsolatedStorage>|全ユーザー、ドメイン、およびアセンブリ別の分離。 通常、管理ツールやデバッグ ツールのみ、このレベルのアクセス許可が使用されます。|このアクセス許可では、すべてのユーザーのすべての分離ストアがあらゆるリスクにさらされる可能性があります。|
 
+## <a name="safety-of-isolated-storage-components-with-regard-to-untrusted-data"></a>信頼されていないデータに関する分離ストレージ コンポーネントの安全性
+
+__このセクションは、次のフレームワークに適用されます。__
+
+- .NET Framework (すべてのバージョン)
+- .NET Core 2.1 以降
+- .NET 5.0 以降
+
+.NET Framework および .NET Core では、ユーザー、アプリケーション、またはコンポーネントのデータを保持するメカニズムとして、[分離ストレージ](/dotnet/standard/io/isolated-storage)が提供されます。 これは主に、現在非推奨のコード アクセス セキュリティのシナリオ向けに設計されたレガシ コンポーネントです。
+
+さまざまな分離ストレージ API とツールを使用して、信頼境界を越えてデータを読み取ることができます。 たとえば、コンピューター全体のスコープからデータを読み取ることで、コンピューター上の信頼度が低い可能性のある他のユーザー アカウントからデータを集計できます。 コンピューター全体の分離ストレージ スコープから読み取るコンポーネントまたはアプリケーションでは、このデータを読み取った場合の影響に注意する必要があります。
+
+### <a name="security-sensitive-apis-which-can-read-from-the-machine-wide-scope"></a>コンピューター全体のスコープから読み取ることができる、セキュリティ上の注意が必要な API
+
+次の API のいずれかを呼び出すコンポーネントまたはアプリケーションでは、コンピューター全体のスコープから読み取りを行います:
+
+* [IsolatedStorageFile.GetEnumerator](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getenumerator)。IsolatedStorageScope.Machine フラグを含むスコープを渡します
+* [IsolatedStorageFile.GetMachineStoreForApplication](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestoreforapplication)
+* [IsolatedStorageFile.GetMachineStoreForAssembly](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestoreforassembly)
+* [IsolatedStorageFile.GetMachineStoreForDomain](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestorefordomain)
+* [IsolatedStorageFile.GetStore](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getstore)。IsolatedStorageScope.Machine フラグを含むスコープを渡します
+* [IsolatedStorageFile.Remove](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.remove)。`IsolatedStorageScope.Machine` フラグを含むスコープを渡します
+
+次のコードに示すように、`/machine` スイッチで呼び出された場合、[分離ストレージ ツール](/dotnet/framework/tools/storeadm-exe-isolated-storage-tool) `storeadm.exe` が影響を受けます。
+
+```txt
+storeadm.exe /machine [any-other-switches]
+```
+
+分離ストレージ ツールは、Visual Studio および .NET Framework SDK の一部として提供されています。
+
+アプリケーションに上記の API への呼び出しが含まれていない場合、またはワークフローでこのように `storeadm.exe` を呼び出さない場合、このドキュメントは適用されません。
+
+### <a name="impact-in-multi-user-environments"></a>マルチユーザー環境での影響
+
+前述のように、これらの API からのセキュリティへの影響は、ある信頼環境から作成されたデータが別の信頼環境から読み取られることに起因します。 通常、分離ストレージでは、次の 3 つの場所のいずれかを使用して、データの読み取りと書き込みを行います。
+
+1. `%LOCALAPPDATA%\IsolatedStorage\`:たとえば、`User` スコープの場合は `C:\Users\<username>\AppData\Local\IsolatedStorage\` となります。
+2. `%APPDATA%\IsolatedStorage\`:たとえば、`User|Roaming` スコープの場合は `C:\Users\<username>\AppData\Roaming\IsolatedStorage\` となります。
+3. `%PROGRAMDATA%\IsolatedStorage\`:たとえば、`Machine` スコープの場合は `C:\ProgramData\IsolatedStorage\` となります。
+
+最初の 2 つの場所は、ユーザーごとに分離されます。 Windows では、同じコンピューター上の異なるユーザー アカウントで、互いのユーザー プロファイル フォルダーにアクセスできないようにします。 `User` または `User|Roaming` ストアを使用する 2 つの異なるユーザー アカウントでは、互いのデータは表示されず、互いのデータに干渉することはできません。
+
+3 つ目の場所は、コンピューター上のすべてのユーザー アカウントで共有されます。 この場所に対して異なるアカウントで読み取りと書き込みを行うことができ、互いのデータを表示できます。
+
+上記のパスは、使用している Windows のバージョンによって異なる場合があります。
+
+ここで、2 人の登録済みユーザー _Mallory_ と _Bob_ を持つマルチユーザー システムについて考えてみましょう。 Mallory は、ユーザー プロファイル ディレクトリ `C:\Users\Mallory\` にアクセスすることができます。また、共有コンピューター全体のストレージの場所である `C:\ProgramData\IsolatedStorage\` にアクセスできます。 Bob のユーザー プロファイル ディレクトリ `C:\Users\Bob\` にはアクセスできません。
+
+Mallory が Bob を攻撃したいと考えている場合、コンピューター全体のストレージの場所にデータを書き込んでから、Bob にコンピューター全体のストアから読み取らせようとします。 Bob がこのストアから読み取るアプリを実行すると、そのアプリでは、Mallory がそこに配置した (ただし、Bob のユーザー アカウントのコンテキスト内から) データを処理します。 このドキュメントの残りの部分では、さまざまな攻撃ベクトルと、アプリでこれらの攻撃に対するリスクを最小限に抑えるために行うことができる手順について検討します。
+
+__注:__ このような攻撃を行うには、Mallory には以下が必要になります。
+
+* コンピューター上のユーザー アカウント。
+* ファイル システム上の既知の場所にファイルを配置できること。
+* ある時点で Bob がこのデータの読み取りを試みるアプリを実行することがわかっていること。
+
+これらは、自宅の PC や 1 人の従業員のエンタープライズ ワークステーションなど、標準のシングルユーザー デスクトップ環境に適用される脅威ベクトルではありません。
+
+#### <a name="elevation-of-privilege"></a>権限の昇格
+
+Bob のアプリで Mallory のファイルが読み取られ、そのペイロードの内容に基づいて何らかのアクションを自動的に実行しようとすると、__権限の昇格__攻撃が発生します。 コンピューター全体のストアからスタートアップ スクリプトの内容を読み取り、それらの内容を `Process.Start` に渡すアプリがあるとします。 Mallory がコンピューター全体のストア内に悪意のあるスクリプトを配置した場合、Bob が自分のアプリを起動すると、次のようになります。
+
+* 彼のアプリでは、"_Bob のユーザー プロファイルのコンテキストで_"、Mallory の悪意のあるスクリプトを解析して起動します。
+* Mallory は、ローカル コンピューター上の Bob のアカウントにアクセスできるようになります。
+
+#### <a name="denial-of-service"></a>サービス拒否
+
+Bob のアプリで Mallory のファイルが読み取られてクラッシュしたか、正常に機能しなくなった場合、__サービス拒否__攻撃が発生します。 コンピューター全体のストアからスタートアップ スクリプトを解析しようとする、前述のアプリについてもう一度考えてみましょう。 Mallory がコンピューター全体のストア内に内容が誤った形式のファイルを配置できる場合、彼女は次の操作を行う可能性があります。
+
+* Bob のアプリで、スタートアップ パスの早い段階で例外がスローされるようにする。
+* 例外により、アプリが正常に起動しなくなるようにする。
+
+彼女はその後、Bob が自身のユーザー アカウントでアプリを起動できないようにしました。
+
+#### <a name="information-disclosure"></a>情報の漏えい
+
+Mallory が Bob をだまし、彼女が通常はアクセスできないファイルの内容を彼に公開させることができる場合、__情報の漏えい__攻撃が発生します。 Mallory が読み取りたいと考えている、シークレット ファイル *C:\Users\Bob\secret.txt* を Bob が持っているとします。 彼女は、このファイルへのパスを知っていますが、Windows では彼女が Bob のユーザー プロファイル ディレクトリにアクセスすることが禁止されているため、読み取ることはできません。
+
+代わりに、Mallory はコンピューター全体のストアにハード リンクを配置します。 これは特別な種類のファイルであり、それ自体に内容は含まれておらず、ディスク上の別のファイルを指します。 ハード リンク ファイルを読み取ろうとすると、そのリンクのターゲットとなるファイルの内容が代わりに読み取られます。 ハード リンクを作成した後も、Mallory はファイルの内容を読み取ることはできません。これは、彼女がそのリンクのターゲット (`C:\Users\Bob\secret.txt`) にアクセスできないためです。 しかし、Bob はこのファイルにアクセス "_できます_"。
+
+Bob のアプリでは、コンピューター全体のストアから読み取るときに、ファイル自体がコンピューター全体のストアに存在する場合と同様に、彼の `secret.txt` ファイルの内容を誤って読み取るようになりました。 Bob のアプリが終了するときに、コンピューター全体のストアにファイルを再度保存しようとした場合、ファイルの実際のコピーを *C:\ProgramData\IsolatedStorage\* ディレクトリに配置することになります。 このディレクトリは、コンピューター上のどのユーザーも読み取ることができるため、Mallory はファイルの内容を読み取れるようになりました。
+
+### <a name="best-practices-to-defend-against-these-attacks"></a>これらの攻撃から保護するためのベスト プラクティス
+
+__重要:__ ご利用の環境に相互に信頼されていないユーザーが複数存在する場合は、API `IsolatedStorageFile.GetEnumerator(IsolatedStorageScope.Machine)` を呼び出したり、ツール `storeadm.exe /machine /list` を起動したり__しないでください__。 これらはいずれも、信頼できるデータを操作していることを前提としています。 攻撃者がコンピューター全体のストアに悪意のあるペイロードをシードできる場合、そのペイロードにより、これらのコマンドを実行するユーザーのコンテキストで、特権の昇格攻撃が発生する可能性があります。
+
+マルチユーザー環境で操作する場合は、"_コンピューター_" のスコープをターゲットとする分離ストレージ機能の使用を再検討してください。 アプリでコンピューター全体の場所からデータを読み取る必要がある場合は、管理者アカウントでのみ書き込み可能な場所からデータを読み取ることをお勧めします。 `%PROGRAMFILES%` ディレクトリと `HKLM` レジストリ ハイブは、管理者のみが書き込み可能で、誰もが読み取れる場所の例です。 そのため、これらの場所から読み取られるデータは信頼できると見なされます。
+
+マルチユーザー環境で "_コンピューター_" のスコープをアプリで使用する必要がある場合は、コンピューター全体のストアから読み取ったすべてのファイルの内容を確認してください。 アプリでこれらのファイルからのオブジェクト グラフを逆シリアル化する場合は、`BinaryFormatter` や `NetDataContractSerializer` などの危険なシリアライザーではなく、`XmlSerializer` のような安全なシリアライザーを使用することを検討してください。 深く入れ子にされたオブジェクト グラフ、あるいはファイルの内容に基づいてリソースを割り当てるオブジェクト グラフを使用する場合は注意が必要です。
+
 <a name="isolated_storage_locations"></a>
 
 ## <a name="isolated-storage-locations"></a>分離ストレージの場所
@@ -166,20 +256,20 @@ ms.locfileid: "74802454"
 
 |Title|説明|
 |-----------|-----------------|
-|[分離のタイプ](../../../docs/standard/io/types-of-isolation.md)|さまざまなタイプの分離を説明します。|
-|[方法: 分離ストレージでストアを取得する](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|<xref:System.IO.IsolatedStorage.IsolatedStorageFile> クラスを使用して、ユーザーおよびアセンブリ別に分離されたストアを取得する例を示します。|
-|[方法: 分離ストレージでストアを列挙する](../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> メソッドを使用して、特定のユーザーのすべての分離ストレージのサイズを計算する方法を示します。|
-|[方法: 分離ストレージでストアを削除する](../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|<xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> メソッドを 2 とおりの方法で使用して、分離ストアを削除する方法を示します。|
-|[方法: 分離ストレージの領域不足状態に備える](../../../docs/standard/io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|分離ストアの残りの領域を計測する方法を示します。|
-|[方法: 分離ストレージでファイルおよびディレクトリを作成する](../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|分離ストア内にファイルやディレクトリを作成する例を示します。|
-|[方法: 分離ストレージ内で既存のファイルおよびディレクトリを検索する](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|分離ストレージ内のディレクトリ構造やファイルを読み取る方法を示します。|
-|[方法: 分離ストレージ内でファイルの読み取りと書き込みを行う](../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|分離ストレージ ファイルに文字列を書き込み、その文字列を読み取る例を示します。|
-|[方法: 分離ストレージでファイルおよびディレクトリを削除する](../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|分離ストレージのファイルやディレクトリを削除する方法を示します。|
-|[ファイルおよびストリーム入出力](../../../docs/standard/io/index.md)|ファイルとデータ ストリームに同期的および非同期的にアクセスする方法を説明します。|
+|[分離のタイプ](types-of-isolation.md)|さまざまなタイプの分離を説明します。|
+|[方法: 分離ストレージでストアを取得する](how-to-obtain-stores-for-isolated-storage.md)|<xref:System.IO.IsolatedStorage.IsolatedStorageFile> クラスを使用して、ユーザーおよびアセンブリ別に分離されたストアを取得する例を示します。|
+|[方法: 分離ストレージでストアを列挙する](how-to-enumerate-stores-for-isolated-storage.md)|<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> メソッドを使用して、特定のユーザーのすべての分離ストレージのサイズを計算する方法を示します。|
+|[方法: 分離ストレージでストアを削除する](how-to-delete-stores-in-isolated-storage.md)|<xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> メソッドを 2 とおりの方法で使用して、分離ストアを削除する方法を示します。|
+|[方法: 分離ストレージの領域不足状態に備える](how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|分離ストアの残りの領域を計測する方法を示します。|
+|[方法: 分離ストレージでファイルおよびディレクトリを作成する](how-to-create-files-and-directories-in-isolated-storage.md)|分離ストア内にファイルやディレクトリを作成する例を示します。|
+|[方法: 分離ストレージ内で既存のファイルおよびディレクトリを検索する](how-to-find-existing-files-and-directories-in-isolated-storage.md)|分離ストレージ内のディレクトリ構造やファイルを読み取る方法を示します。|
+|[方法: 分離ストレージ内でファイルの読み取りと書き込みを行う](how-to-read-and-write-to-files-in-isolated-storage.md)|分離ストレージ ファイルに文字列を書き込み、その文字列を読み取る例を示します。|
+|[方法: 分離ストレージでファイルおよびディレクトリを削除する](how-to-delete-files-and-directories-in-isolated-storage.md)|分離ストレージのファイルやディレクトリを削除する方法を示します。|
+|[ファイルおよびストリーム入出力](index.md)|ファイルとデータ ストリームに同期的および非同期的にアクセスする方法を説明します。|
 
 <a name="reference"></a>
 
-## <a name="reference"></a>辞書／辞典／その他
+## <a name="reference"></a>関連項目
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType>
 

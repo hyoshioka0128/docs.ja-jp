@@ -1,18 +1,17 @@
 ---
-title: '方法: クエリでラムダ式を使用する - C# プログラミング ガイド'
-ms.custom: seodec18
+title: クエリでラムダ式を使用する方法 - C# プログラミング ガイド
 ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [C#], in LINQ
 ms.assetid: 3cac4d25-d11f-4abd-9e7c-0f02e97ae06d
-ms.openlocfilehash: e7e7da211599b5ce0263377ecaf25b404399ce9c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 92bdbf842c5c30b2f32e06f622f3e08f3c7a878f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423167"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75711962"
 ---
-# <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>方法: クエリでラムダ式を使用する (C# プログラミング ガイド)
+# <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>クエリでラムダ式を使用する方法 (C# プログラミング ガイド)
 クエリ構文でラムダ式を直接使うことはありませんが、メソッドの呼び出しで使い、クエリ式はメソッドの呼び出しを含むことができます。 実際、一部のクエリ操作はメソッド構文でのみ表現できます。 クエリ構文とメソッド構文の違いについて詳しくは、「[LINQ でのクエリ構文とメソッド構文](../concepts/linq/query-syntax-and-method-syntax-in-linq.md)」をご覧ください。  
   
 ## <a name="example"></a>例  
@@ -28,9 +27,9 @@ ms.locfileid: "73423167"
  [!code-csharp[csProgGuideLINQ#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csrefLINQHowTos.cs#2)]  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- このコードを実行するには、メソッドをコピーして `StudentClass` (これは「[方法: オブジェクトのコレクションを照会する](../../linq/query-a-collection-of-objects.md)」で提供されています) に貼り付けた後、`Main` メソッドからそれを呼び出します。  
+ このコードを実行するには、メソッドをコピーして、「[オブジェクトのコレクションにクエリを実行する](../../linq/query-a-collection-of-objects.md)」で提供されている `StudentClass` に貼り付けた後、`Main` メソッドからそれを呼び出します。
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ラムダ式](./lambda-expressions.md)
 - [式ツリー (C#)](../concepts/expression-trees/index.md)

@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: 587e36f6-1957-424e-9d89-c43724f26d84
 ms.openlocfilehash: 4936ba7bcd78c4867dae99df8bad11776cf655db
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62010320"
 ---
 # <a name="animation-and-timing-how-to-topics"></a>アニメーションおよびタイミングに関する「方法」トピック
-次のトピックを使用する方法について説明、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]アニメーションおよびタイミング システム、アプリケーションでします。  
+次のトピックでは、アプリケーションで [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のアニメーションとタイミング システムを使用する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [アニメーションを加速または減速させる](how-to-accelerate-or-decelerate-an-animation.md)  
@@ -43,7 +43,7 @@ ms.locfileid: "62010320"
  [プロパティ値が変化したときにアニメーションをトリガーする](how-to-trigger-an-animation-when-a-property-value-changes.md)  
  [開始後のストーリーボードをイベント トリガーを使用して制御する](how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Media.Animation.Timeline>  
   
  <xref:System.Windows.Media.Animation.Storyboard>  

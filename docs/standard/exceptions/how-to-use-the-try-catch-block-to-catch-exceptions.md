@@ -1,5 +1,6 @@
 ---
 title: '方法: Try ブロックと Catch ブロックを使用して例外をキャッチする'
+description: Try ブロックを使用して、例外を発生させたりスローしたりする可能性のあるステートメントを含めます。 例外を処理するステートメントを 1 つまたは複数の Catch ブロックに配置します。
 ms.date: 02/06/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,14 +12,12 @@ helpviewer_keywords:
 - try/catch blocks
 - catch blocks
 ms.assetid: a3ce6dfd-1f64-471b-8ad8-8cfaf406275d
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: eaa389f461e70aae41f2e09437fd725a3bcefa5e
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 60ed213ea777fe35873fd1e67555b7506e3ca587
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696727"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768912"
 ---
 # <a name="how-to-use-the-trycatch-block-to-catch-exceptions"></a>Try ブロックと Catch ブロックを使用して例外をキャッチする方法
 

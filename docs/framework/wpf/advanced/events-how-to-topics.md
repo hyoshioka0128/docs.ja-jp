@@ -8,13 +8,13 @@ helpviewer_keywords:
 ms.assetid: 00463181-36eb-4be0-bfa2-452854cce642
 ms.openlocfilehash: 54c69e57efb99f5008d5fa5a21f748cd8e535afe
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61962444"
 ---
 # <a name="events-how-to-topics"></a>イベントに関する「方法」トピック
-このセクションのトピックでは、WPF でイベントを使用する方法について説明します。  
+このセクションのトピックでは、WPF のイベントの使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [コードを使用してイベント ハンドラーを追加する](how-to-add-an-event-handler-using-code.md)  
@@ -23,7 +23,7 @@ ms.locfileid: "61962444"
  [イベント ハンドラーでソース要素を検索する](how-to-find-the-source-element-in-an-event-handler.md)  
  [ルーティング イベントのクラス処理を追加する](how-to-add-class-handling-for-a-routed-event.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.RoutedEvent>  
   
  <xref:System.Windows.EventManager>  

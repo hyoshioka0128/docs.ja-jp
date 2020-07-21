@@ -2,18 +2,18 @@
   href: index.yml
 - name: 'F# とは'
   href: what-is-fsharp.md
-- name: はじめに
+- name: 作業開始
   href: get-started/index.md
   items:
     - name: 'F# をインストールする'
       href: get-started/install-fsharp.md
-    - name: 'Visual Studio での F# の概要'
+    - name: 'Visual Studio における F#'
       href: get-started/get-started-visual-studio.md
-    - name: 'Visual Studio Code での F# の概要'
+    - name: 'Visual Studio Code における F#'
       href: get-started/get-started-vscode.md
-    - name: '.NET Core CLI での F# の概要'
+    - name: '.NET Core CLI での F#'
       href: get-started/get-started-command-line.md
-    - name: 'Visual Studio for Mac での F# の概要'
+    - name: 'Visual Studio for Mac における F#'
       href: get-started/get-started-with-visual-studio-for-mac.md
 - name: 'F# のツアー'
   href: tour.md
@@ -256,6 +256,8 @@
       href: language-reference/caller-information.md
     - name: 冗語構文
       href: language-reference/verbose-syntax.md
+    - name: コンパイラのエラーと警告
+      href: language-reference/compiler-messages/index.md
 - name: 'F# スタイル ガイド'
   href: style-guide/index.md
   items:
@@ -265,7 +267,7 @@
       href: style-guide/conventions.md
     - name: 'F# コンポーネント デザインのガイドライン'
       href: style-guide/component-design-guidelines.md
-- name: 'Azure での F# の使用'
+- name: 'Azure で F# を使用する'
   href: using-fsharp-on-azure/index.md
   items:
     - name: 'F# を使用した Azure Blob Storage の概要'

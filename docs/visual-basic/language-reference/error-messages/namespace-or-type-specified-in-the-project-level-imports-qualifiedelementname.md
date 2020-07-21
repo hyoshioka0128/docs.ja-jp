@@ -7,40 +7,40 @@ f1_keywords:
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-ms.openlocfilehash: 105fa8da838938d13022c210c1f65cdafd251003
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 0ee235252d69e6f77ce53b048f45e73d0969e864
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918308"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409453"
 ---
-# <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>プロジェクト レベル インポートで指定された Namespace または型\<qualifiedelementname >' のパブリック メンバーを含んでいないか、見つかりません
-プロジェクト レベル インポートで指定された Namespace または型\<qualifiedelementname >' のパブリック メンバーを含んでいないか、見つかりません。 確認して、名前空間または型が定義されているし、少なくとも 1 つのパブリック メンバーが含まれています。 エイリアス名には他のエイリアスが含まれていないことを確認します。  
+# <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>プロジェクト レベルのインポート '\<qualifiedelementname>' で指定された名前空間または型が、パブリック メンバーを含んでいないか、または見つかりません。
+プロジェクト レベルのインポート '\<qualifiedelementname>' で指定された名前空間または型が、パブリック メンバーを含んでいないか、または見つかりません。 名前空間または型が定義されており、少なくとも 1 つのパブリック メンバーが含まれていることを確認してください。 別名の名前に他の別名が含まれていないことを確認してください。  
   
- 見つからないか、いずれかを一切定義しませんコンテナー要素を指定して、プロジェクトのインポート プロパティ`Public`メンバー。  
+ プロジェクトの import プロパティが、見つからないか、`Public` メンバーを定義しないコンテナー要素を指定しています。  
   
- A*要素を含む*名前空間、クラス、構造体、モジュール、インターフェイス、または列挙型にすることができます。 コンテナー要素には、変数、プロシージャ、または他のコンテナー要素などのメンバーが含まれています。  
+ *コンテナー要素*は、名前空間、クラス、構造体、モジュール、インターフェイス、または列挙型にすることができます。 コンテナー要素には、変数、プロシージャ、その他のコンテナー要素などのメンバーが含まれています。  
   
- インポートの目的は、それらを修飾することがなくコードの名前空間または型メンバーにアクセスを許可します。 プロジェクトは、名前空間または型への参照を追加する必要もあります。 詳細については、「を格納している要素のインポート」を参照してください[References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)します。  
+ インポートの目的は、コードによって名前空間または型のメンバーに、それらを修飾しなくてもアクセスできるようにすることです。 また、プロジェクトで名前空間や型への参照を追加する必要がある場合もあります。 詳細については、「[宣言された要素の参照](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)」の "コンテナー要素のインポート" に関するセクションを参照してください。  
   
- コンパイラに指定されたコンテナー要素が見つからない場合、それを使用して参照を解決できません。 要素を検索しますが、いずれかの要素を公開しません`Public`メンバー、その参照はありませんが成功することができます。 いずれの場合も要素をインポートしても無意味です。  
+ コンパイラは、指定したコンテナー要素が見つからない場合、それを使用する参照を解決できません。 要素が見つかったが、要素が `Public` のメンバーを公開していない場合、参照を正常に実行できません。 どちらの場合も、要素をインポートしても意味がありません。  
   
- 使用する、**プロジェクト デザイナー**をインポートする要素を指定します。 使用して、**インポートされた名前空間**のセクション、**参照**ページ。 取得する、**プロジェクト デザイナー**をダブルクリックして、 **My Project**アイコン**ソリューション エクスプ ローラー**します。  
+ インポートする要素を指定するには、**プロジェクト デザイナー**を使用します。 **[参照]** ページの **[インポートされた名前空間]** セクションを使用します。 **プロジェクト デザイナー**には、**ソリューション エクスプローラー**の **[マイ プロジェクト]** アイコンをダブルクリックするとアクセスできます。  
   
  **エラー ID:** BC40057  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1. 開く、**プロジェクト デザイナー**に切り替えると、**参照**ページ。  
+1. **プロジェクト デザイナー**を開き、 **[参照]** ページに切り替えます。  
   
-2. **インポートされた名前空間**セクションで、コンテナーの要素がプロジェクトからアクセスできることを確認します。  
+2. **[インポートされた名前空間]** セクションで、コンテナー要素がプロジェクトからアクセス可能であることを確認します。  
   
-3. コンテナーの要素が少なくとも 1 つを公開していることを確認します。`Public`メンバー。  
+3. コンテナー要素が少なくとも 1 つの `Public` メンバーを公開していることを確認します。  
   
 ## <a name="see-also"></a>関連項目
 
 - [[参照設定] ページ (プロジェクト デザイナー) (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
 - [プロジェクトおよびソリューションのプロパティの管理](/visualstudio/ide/managing-project-and-solution-properties)
-- [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [Visual Basic における名前空間](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [宣言された要素の参照](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Public](../modifiers/public.md)
+- [Visual Basic における名前空間](../../programming-guide/program-structure/namespaces.md)
+- [宣言された要素の参照](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)

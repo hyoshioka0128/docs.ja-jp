@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: 805c235c-0a0e-4e34-8d96-9dc3865cf2df
 ms.openlocfilehash: bb8d77bd3df848e6e9ed186cc621c02d36842175
 ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73458292"
 ---
 # <a name="treeview"></a>TreeView
-<xref:System.Windows.Controls.TreeView> コントロールは、折りたたみ可能なノードを使用して階層構造で情報を表示します。  
+<xref:System.Windows.Controls.TreeView> コントロールでは、折りたたみ可能なノードを使用して情報を階層構造で表示します。  
   
  次の図は、入れ子になった <xref:System.Windows.Controls.TreeViewItem> コントロールを持つ <xref:System.Windows.Controls.TreeView> コントロールの例です。  
   
@@ -26,7 +26,7 @@ ms.locfileid: "73458292"
  [TreeView の概要](treeview-overview.md)  
  [方法トピック](treeview-how-to-topics.md)  
   
-## <a name="reference"></a>辞書／辞典／その他  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.TreeView>  
   <xref:System.Windows.Controls.TreeViewItem>  
   

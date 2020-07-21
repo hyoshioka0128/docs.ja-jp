@@ -1,16 +1,15 @@
 ---
 title: 式形式のメンバー - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 02/06/2019
 helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
-ms.openlocfilehash: 45dcc58b252963e80798ba86ca5c4f461d493fac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f212bb707d3dd2d4a7cc917d335a83cff01ed0cf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120142"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75711988"
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>式形式のメンバー (C# プログラミング ガイド)
 
@@ -26,12 +25,12 @@ member => expression;
 
 |メンバー  |サポートが開始されたバージョン |
 |---------|---------|
-|[メソッド](#methods)  |C# 6 |
+|[方法](#methods)  |C# 6 |
 |[読み取り専用プロパティ](#read-only-properties)   |C# 6  |
 |[Property](#properties)  |C# 7.0 |
 |[コンストラクター](#constructors)   |C# 7.0 |
 |[ファイナライザー](#finalizers)     |C# 7.0 |
-|[インデクサー](#indexers)       |C# 7.0 |
+|[Indexer](#indexers)       |C# 7.0 |
 
 ## <a name="methods"></a>メソッド
 
@@ -57,7 +56,7 @@ PropertyType PropertyName => expression;
 
 プロパティの詳細については、「[プロパティ (C# プログラミング ガイド)](../classes-and-structs/properties.md)」を参照してください。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 C# 7.0 以降では、式本体の定義を使用してプロパティ `get` と `set` アクセサーを実装することができます。 これを実行する方法を次の例に示します。
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8653bd4c-2290-43d2-a3e1-cbbd50033f4f
 topic_type:
 - apiref
-ms.openlocfilehash: af881d23ff77f05dadbbc745b973979e35ebe9f7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a82a2150f32b1b335da083ca235ed9d2966a0b6e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447570"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494203"
 ---
 # <a name="imethodmallocalloc-method"></a>IMethodMalloc::Alloc メソッド
 
@@ -39,21 +39,21 @@ PVOID Alloc (
 `cb`\
 からメソッド本体に割り当てるバイト数。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
- 割り当てられたメモリは、このアロケーターに関連付けられているモジュールのベースアドレスよりも大きいアドレスから開始されます。 つまり、各アロケーターは特定のモジュールに対して作成され、そのベースアドレスからの正のオフセットでメモリの割り当てが試行されます。 `Alloc` が、モジュールのベースアドレスよりも大きいアドレスで、要求されたバイト数を割り当てることができなかった場合は、使用可能なメモリ領域の実際の量に関係なく、E_OUTOFMEMORY を返します。
+ 割り当てられたメモリは、このアロケーターに関連付けられているモジュールのベースアドレスよりも大きいアドレスから開始されます。 つまり、各アロケーターは特定のモジュールに対して作成され、そのベースアドレスからの正のオフセットでメモリの割り当てが試行されます。 が、 `Alloc` モジュールのベースアドレスよりも大きいアドレスで要求されたバイト数を割り当てられなかった場合は、使用可能な実際のメモリ容量に関係なく E_OUTOFMEMORY を返します。
 
- `Alloc` メソッドは、 [ICorProfilerInfo:: SetILFunctionBody](icorprofilerinfo-setilfunctionbody-method.md)メソッドと組み合わせて使用する必要があります。
+ メソッドは、 `Alloc` [ICorProfilerInfo:: SetILFunctionBody](icorprofilerinfo-setilfunctionbody-method.md)メソッドと組み合わせて使用する必要があります。
 
 ## <a name="requirements"></a>要件
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
 
  **ヘッダー** : CorProf.idl、CorProf.h
 
  **ライブラリ:** CorGuids.lib
 
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [IMethodMalloc インターフェイス](imethodmalloc-interface.md)

@@ -1,13 +1,14 @@
 ---
 title: 単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化
+description: 単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用したパフォーマンスを最適化します。 .NET の System.Transactions インフラストラクチャについて説明します。
 ms.date: 03/30/2017
 ms.assetid: 57beaf1a-fb4d-441a-ab1d-bc0c14ce7899
-ms.openlocfilehash: f486315b8a8c90e6616ca95fb6be4b2ae3719b7e
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: MT
+ms.openlocfilehash: 89ce82e673340c93254983c078f78a2501129383
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205901"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141979"
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化
 
@@ -32,7 +33,7 @@ ms.locfileid: "70205901"
 <xref:System.Transactions> トランザクションのエスカレートが必要な場合 (複数の RM をサポートする場合など) は、<xref:System.Transactions> がリソース マネージャーに通知します。この通知は、<xref:System.Transactions.ITransactionPromoter.Promote%2A> インターフェイスの派生元である <xref:System.Transactions.ITransactionPromoter> インターフェイス上の <xref:System.Transactions.IPromotableSinglePhaseNotification> メソッドを呼び出すことで行われます。 次に、リソース マネージャーは、ローカル トランザクション (ログが不要) から DTC トランザクションに参加できるトランザクション オブジェクトへ、トランザクションを内部的に変換し、既に実行済みの作業に関連付けます。 トランザクションのコミットが要求されると、トランザクション マネージャーが <xref:System.Transactions.IPromotableSinglePhaseNotification.SinglePhaseCommit%2A> 通知をリソース マネージャーに送信し、リソース マネージャーがエスカレーション中に作成される分散トランザクションをコミットします。
 
 > [!NOTE]
-> トランザクション**コミット**トレース (エスカレートされたトランザクションでコミットが呼び出されたときに生成される) には、DTC トランザクションのアクティビティ ID が含まれます。
+> エスカレートされたトランザクションでコミットが呼び出されたときに生成される **TransactionCommitted** トレースは、DTC トランザクションのアクティビティ ID を含んでいます。
 
 管理エスカレーションの詳細については、「[トランザクション管理のエスカレーション](transaction-management-escalation.md)」を参照してください。
 
@@ -50,7 +51,7 @@ ms.locfileid: "70205901"
 
 4. この時点で CN1 は、SQL 2005 固有のメカニズムと <xref:System.Data> を使用して、トランザクションをエスカレートします。
 
-5. <xref:System.Transactions.ITransactionPromoter.Promote%2A> メソッドからの戻り値は、トランザクションの反映トークンを含むバイト配列です。 <xref:System.Transactions>は、この反映トークンを使用して、ローカルトランザクションに組み込むことができる DTC トランザクションを作成します。
+5. <xref:System.Transactions.ITransactionPromoter.Promote%2A> メソッドからの戻り値は、トランザクションの反映トークンを含むバイト配列です。 <xref:System.Transactions> では、この反映トークンを使用して、ローカル トランザクションに組み込むことができる DTC トランザクションが作成されます。
 
 6. この時点で CN2 は、<xref:System.Transactions.TransactionInterop> によるメソッドの 1 つを呼び出すことで受信したデータを使用して、SQL にトランザクションを渡すことができます。
 
@@ -58,11 +59,11 @@ ms.locfileid: "70205901"
 
 ## <a name="single-phase-commit-optimization"></a>単一フェーズ コミットの最適化
 
-単一フェーズ コミット プロトコルは、すべての更新が明示的な調整なしに行われるため、実行時に、より効率的です。 この最適化を活用するには、リソースの <xref:System.Transactions.ISinglePhaseNotification> インターフェイスを使用してリソース マネージャーを実装し、<xref:System.Transactions.Transaction.EnlistDurable%2A> メソッドまたは <xref:System.Transactions.Transaction.EnlistVolatile%2A> メソッドを使用してトランザクションに参加する必要があります。 具体的には 、単一フェーズコミットが<xref:System.Transactions.EnlistmentOptions.None>確実に実行されるように、EnlistmentOptions パラメーターはと同じである必要があります。
+単一フェーズ コミット プロトコルは、すべての更新が明示的な調整なしに行われるため、実行時に、より効率的です。 この最適化を活用するには、リソースの <xref:System.Transactions.ISinglePhaseNotification> インターフェイスを使用してリソース マネージャーを実装し、<xref:System.Transactions.Transaction.EnlistDurable%2A> メソッドまたは <xref:System.Transactions.Transaction.EnlistVolatile%2A> メソッドを使用してトランザクションに参加する必要があります。 特に、単一フェーズ コミットを確実に実行するには、*EnlistmentOptions* パラメーターを <xref:System.Transactions.EnlistmentOptions.None> と同じにする必要があります。
 
 <xref:System.Transactions.ISinglePhaseNotification> インターフェイスは <xref:System.Transactions.IEnlistmentNotification> インターフェイスから派生するため、RM が単一フェーズ コミットを実行できない場合でも、2 フェーズ コミット通知を受信できます。 RM が TM から <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A> 通知を受信した場合は、コミットするために必要な作業を実行する必要があります。そして、それに応じて <xref:System.Transactions.SinglePhaseEnlistment.Committed%2A> パラメーター上の <xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A>、<xref:System.Transactions.SinglePhaseEnlistment.InDoubt%2A>、または <xref:System.Transactions.SinglePhaseEnlistment> メソッドを呼び出すことにより、トランザクションのコミットまたはロールバックのどちらが実行されるかを、トランザクション マネージャーに通知する必要があります。 この段階で、参加リストの <xref:System.Transactions.Enlistment.Done%2A> の応答は、ReadOnly セマンティクスを意味します。 したがって、他のメソッドに加えて、<xref:System.Transactions.Enlistment.Done%2A> を応答しないでください。
 
-揮発性の参加リストが1つしかなく、永続参加リストがない場合、揮発性の参加リストは SPC 通知を受信します。 揮発性の参加リストと永続参加リストが1つしかない場合、揮発性の参加リストは2PC を受け取ります。 完了すると、永続参加リストが SPC を受信します。
+揮発性の参加リストが 1 つしかなく、永続参加リストがない場合、揮発性の参加リストは SPC 通知を受け取ります。 揮発性の参加リストがあり、永続参加リストが 1 つしかない場合、揮発性の参加リストは 2PC を受け取ります。 完了すると、永続参加リストが SPC を受信します。
 
 ## <a name="see-also"></a>関連項目
 

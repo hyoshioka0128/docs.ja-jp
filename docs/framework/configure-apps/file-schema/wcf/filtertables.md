@@ -3,19 +3,19 @@ title: <filterTables>
 ms.date: 03/30/2017
 ms.assetid: 41f1ac35-f559-473a-b2c3-8cc83a6a3831
 ms.openlocfilehash: c68479737cefe542a10a404a8b31a4820a430ffb
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855206"
 ---
-# <a name="filtertables"></a>\<filterTables >
+# \<filterTables>
 ルーティング フィルターとターゲット エンドポイントとのマッピングを格納するルーティング テーブルを定義する構成セクションを表します。フィルターが一致したときにメッセージを送信するために使用されます。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ルーティング >** ](routing.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<filterTables >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<routing>**](routing.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<filterTables>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -50,7 +50,7 @@ ms.locfileid: "70855206"
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<ルーティング >](routing.md)|ルーティング フィルターおよびルーティング テーブルを含む構成セクション。|  
+|[\<routing>](routing.md)|ルーティング フィルターおよびルーティング テーブルを含む構成セクション。|  
   
 ## <a name="see-also"></a>関連項目
 

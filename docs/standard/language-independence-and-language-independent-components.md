@@ -13,12 +13,12 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: 689ca9f7278dcf91b12bc62b5255a968388bb9f8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aa569c0da5b963243596ef440ef37c08b4fae37f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120757"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288239"
 ---
 # <a name="language-independence-and-language-independent-components"></a>言語への非依存性、および言語非依存コンポーネント
 
@@ -147,11 +147,11 @@ CLS 準拠の規則を次の表に示します。 これらの規則のテキス
 |プロパティ|[プロパティ](#properties)|プロパティの型は、getter の戻り値の型であり、かつ setter の最後の引数の型でなければいけない。 プロパティのパラメーターの型は、getter へのパラメーターの型であり、かつ setter の最後のパラメーター以外のすべての型でなければいけない。 すべての型は CLS 準拠でなければならない。また、マネージド ポインターであってはいけない。つまり、参照渡しではいけない。|27|
 |プロパティ|[プロパティ](#properties)|プロパティは、特定の名前付けパターンに従わなくてはいけない。 CLS 規則 24 で触れられている `SpecialName` 属性は、適切な名前比較で無視され、識別子規則に従わなければいけない。 プロパティには getter メソッド、setter メソッド、またはこの両方が必ずなければいけない。|28|
 |型変換|[型変換](#conversion)|`op_Implicit` または `op_Explicit` が指定されている場合は、強制変換のための別の方法を用意する必要がある。|39|
-|種類|[型および型メンバーのシグネチャ](#Types)|ボックス化された値型は CLS 準拠ではない。|3|
-|種類|[型および型メンバーのシグネチャ](#Types)|シグネチャに出現するすべての型は CLS 準拠でなければいけない。 ジェネリック型のインスタンスを構成するすべての型は CLS 準拠でなければいけない。|11|
-|種類|[型および型メンバーのシグネチャ](#Types)|型指定された参照は CLS 準拠ではありません。|14|
-|種類|[型および型メンバーのシグネチャ](#Types)|アンマネージ ポインター型は CLS 準拠ではない。|17|
-|種類|[型および型メンバーのシグネチャ](#Types)|CLS 準拠のクラス、値型、およびインターフェイスでは、CLS に準拠しないメンバーの実装は不要である。|20|
+|型|[型および型メンバーのシグネチャ](#Types)|ボックス化された値型は CLS 準拠ではない。|3|
+|型|[型および型メンバーのシグネチャ](#Types)|シグネチャに出現するすべての型は CLS 準拠でなければいけない。 ジェネリック型のインスタンスを構成するすべての型は CLS 準拠でなければいけない。|11|
+|型|[型および型メンバーのシグネチャ](#Types)|型指定された参照は CLS 準拠ではありません。|14|
+|型|[型および型メンバーのシグネチャ](#Types)|アンマネージ ポインター型は CLS 準拠ではない。|17|
+|型|[型および型メンバーのシグネチャ](#Types)|CLS 準拠のクラス、値型、およびインターフェイスでは、CLS に準拠しないメンバーの実装は不要である。|20|
 
 <a name="Types"></a>
 
@@ -170,7 +170,7 @@ CLS 準拠の規則を次の表に示します。 これらの規則のテキス
 
 - ジェネリック パラメーターで制約として使用されるすべての型が、CLS に準拠する必要があります。
 
-.NET Framework の[共通型システム](../../docs/standard/base-types/common-type-system.md)には、共通言語ランタイムが直接サポートする組み込み型がいくつか含まれ、アセンブリのメタデータで特別にエンコードされています。 これらの組み込み型のうち、次の表に示す型は CLS に準拠しています。
+.NET Framework の[共通型システム](base-types/common-type-system.md)には、共通言語ランタイムが直接サポートする組み込み型がいくつか含まれ、アセンブリのメタデータで特別にエンコードされています。 これらの組み込み型のうち、次の表に示す型は CLS に準拠しています。
 
 |CLS 準拠型|説明|
 |-------------------------|-----------------|
@@ -191,7 +191,7 @@ CLS 準拠の規則を次の表に示します。 これらの規則のテキス
 |非準拠型|説明|CLS に準拠する代替|
 |-------------------------|-----------------|--------------------------------|
 |<xref:System.SByte>|8 ビット符号付き整数データ型|<xref:System.Int16>|
-|<xref:System.TypedReference>|オブジェクトとそのランタイム型へのポインター|なし|
+|<xref:System.TypedReference>|オブジェクトとそのランタイム型へのポインター|None|
 |<xref:System.UInt16>|16 ビット符号なし整数|<xref:System.Int32>|
 |<xref:System.UInt32>|32 ビット符号なし整数|<xref:System.Int64>|
 |<xref:System.UInt64>|64 ビット符号なし整数|<xref:System.Int64> (オーバーフローの可能性あり)、<xref:System.Numerics.BigInteger>、または <xref:System.Double>|
@@ -527,7 +527,7 @@ CLS 準拠の属性のコンストラクターまたはプロパティは、次�
 
 ## <a name="the-clscompliantattribute-attribute"></a>CLSCompliantAttribute 属性
 
-<xref:System.CLSCompliantAttribute> 属性は、プログラム要素が共通言語仕様でコンパイルされているかどうかを示すために使用されます。 <xref:System.CLSCompliantAttribute.%23ctor%28System.Boolean%29?displayProperty=nameWithType> コンストラクターには、プログラム要素が CLS に準拠しているかどうかを示す 1 つの必須パラメーター、`isCompliant` が含まれます。
+<xref:System.CLSCompliantAttribute> 属性は、プログラム要素が共通言語仕様でコンパイルされているかどうかを示すために使用されます。 <xref:System.CLSCompliantAttribute.%23ctor%28System.Boolean%29> コンストラクターには、プログラム要素が CLS に準拠しているかどうかを示す 1 つの必須パラメーター、`isCompliant` が含まれます。
 
 コンパイル時に、CLS 準拠が前提とされる非準拠要素が検出され、警告が出力されます。 非準拠として明示的に宣言された型またはメンバーに対しては、警告は出力されません。
 
@@ -571,7 +571,7 @@ CLS 準拠のコンポーネントを作成するには:
 
 ## <a name="cross-language-interoperability"></a>言語間の相互運用性
 
-言語に依存しないということは、いくつか意味があります。 たとえば、ある言語で記述された型を、別の言語で記述されたアプリからシームレスに利用することができます。これについては、記事「[言語への非依存性、および言語非依存コンポーネント](../../docs/standard/language-independence-and-language-independent-components.md)」で説明されています。 また、複数の言語で記述されたコードを 1 つの .NET .NET Framework アセンブリにまとめることもできます。ここでは、この点について焦点を当てて説明します。
+言語に依存しないということは、いくつか意味があります。 たとえば、ある言語で記述された型を、別の言語で記述されたアプリからシームレスに利用することができます。これについては、記事「[言語への非依存性、および言語非依存コンポーネント](language-independence-and-language-independent-components.md)」で説明されています。 また、複数の言語で記述されたコードを 1 つの .NET .NET Framework アセンブリにまとめることもできます。ここでは、この点について焦点を当てて説明します。
 
 次の例では、`NumericLib` および `StringLib` という 2 つのクラスを含む Utilities.dll という名前のクラス ライブラリを作成して言語間の相互運用性を示します。 `NumericLib` クラスは C# で記述され、`StringLib` クラスは Visual Basic で記述されています。 以下は StringUtil.vb のソース コードで、`ToTitleCase` クラスに `StringLib` という単一のメンバーが含まれます。
 

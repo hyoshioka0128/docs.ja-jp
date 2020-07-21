@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: ba7aaa70-f77b-4555-a79d-68a12c8e134b
 ms.openlocfilehash: d8201eeceeb39ffea888849eba32e77ee7c25ece
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62054914"
 ---
 # <a name="flowdocumentreader"></a>FlowDocumentReader
-<xref:System.Windows.Controls.FlowDocumentReader>コントロールを使用する表示<xref:System.Windows.Documents.FlowDocument>コンテンツ。 複数の表示モードをサポートします。  
+<xref:System.Windows.Controls.FlowDocumentReader> コントロールは <xref:System.Windows.Documents.FlowDocument> コンテンツを表示するために使用されます。 複数の表示モードをサポートしています。  
   
 ## <a name="see-also"></a>関連項目
 

@@ -3,10 +3,10 @@ title: 位置に基づいて子要素を検索する方法 (XPath-LINQ to XML) (
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
 ms.openlocfilehash: cc0ff5639345d36ebb0423a12b66de8f1a70ade1
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141123"
 ---
 # <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>位置に基づいて子要素を検索する方法 (XPath-LINQ to XML) (C#)
@@ -21,7 +21,7 @@ ms.locfileid: "74141123"
 ## <a name="example"></a>例  
  この例では、2 番目から 4 番目の `Test` 要素を検索します。 結果は要素のコレクションです。  
   
- この例では、次の XML ドキュメントを使用します: 「[サンプル XML ファイル:テスト構成 (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md)」。  
+ この例では、「[サンプル XML ファイル: テスト構成 (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md)」の XML ドキュメントを使用します。  
   
 ```csharp  
 XElement testCfg = XElement.Load("TestConfig.xml");  

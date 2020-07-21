@@ -1,5 +1,6 @@
 ---
 title: Semaphore と SemaphoreSlim
+description: Semaphore と SemaphoreSlim について学習します。 クラス Semaphore は、Win32 セマフォ オブジェクトの Thin ラッパーです。 クラス SemaphoreSlim は、軽量で高速のセマフォです。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - SemaphoreSlim class, about SemaphoreSlim class
 - threading [.NET Framework], Semaphore class
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
-ms.openlocfilehash: b9f7c122ac8acf34f740aca5f0fafc162edcea82
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 21f0d7e3fb446a7b750c45cfe8ef3f087a77888a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127585"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600452"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semaphore と SemaphoreSlim
 <xref:System.Threading.Semaphore?displayProperty=nameWithType> クラスは、名前付きセマフォ (システム全体) またはローカル セマフォを表します。 これは、Win32 セマフォ オブジェクトの Thin ラッパーです。 Win32 セマフォは、リソースのプールへのアクセスの制御に使用できるカウント セマフォです。  
@@ -48,4 +49,4 @@ ms.locfileid: "73127585"
 
 - <xref:System.Threading.Semaphore>
 - <xref:System.Threading.SemaphoreSlim>
-- [スレッド処理オブジェクトと機能](../../../docs/standard/threading/threading-objects-and-features.md)
+- [スレッド処理オブジェクトと機能](threading-objects-and-features.md)

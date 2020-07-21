@@ -1,4 +1,4 @@
-- name: '.NET マイクロサービス:コンテナー化された .NET アプリケーションのアーキテクチャ'
+- name: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ'
   href: index.md
   items:
     - name: コンテナーと Docker の概要
@@ -118,7 +118,7 @@
         - name: インフラストラクチャの永続レイヤーの設計
           href: microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design.md
         - name: Entity Framework Core でインフラストラクチャの永続レイヤーを実装する
-          href: microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implemenation-entity-framework-core.md
+          href: microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implementation-entity-framework-core.md
         - name: 永続インフラストラクチャとして NoSQL データベースを使用する
           href: microservice-ddd-cqrs-patterns/nosql-database-persistence-infrastructure.md
         - name: マイクロサービス アプリケーション レイヤーと Web API を設計する
@@ -136,9 +136,7 @@
           href: implement-resilient-applications/implement-retries-exponential-backoff.md
         - name: 回復力の高い Entity Framework Core SQL 接続の実装
           href: implement-resilient-applications/implement-resilient-entity-framework-core-sql-connections.md
-        - name: 指数のバックオフを含むカスタムの HTTP 呼び出しの再試行について
-          href: implement-resilient-applications/explore-custom-http-call-retries-exponential-backoff.md
-        - name: HttpClientFactory を使用して回復力の高い HTTP 要求を実装する
+        - name: IHttpClientFactory を使用して回復力の高い HTTP 要求を実装する
           href: implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests.md
         - name: Polly で指数バックオフを含む HTTP 呼び出しの再試行を実装する
           href: implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly.md

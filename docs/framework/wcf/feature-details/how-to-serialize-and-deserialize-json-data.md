@@ -1,22 +1,23 @@
 ---
 title: '方法: DataContractJsonSerializer を使用する'
+description: .NET 型オブジェクトを JSON エンコードされたデータにシリアル化してから、そのようなデータを .NET 型のインスタンスに逆シリアル化する方法について説明します。
 ms.date: 03/25/2019
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-ms.openlocfilehash: 354f0c58a83e07ff3180977311adf85ae306dd21
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4ffa0e9dec0a677a38d244b4a0da476d91852da5
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976870"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246806"
 ---
 # <a name="how-to-use-datacontractjsonserializer"></a>DataContractJsonSerializer の使用方法
 
 > [!NOTE]
-> この記事では、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>について説明します。 JSON のシリアル化と逆シリアル化を含むほとんどのシナリオでは、system.string[名前空間](../../../standard/serialization/system-text-json-overview.md)のツールを使用することをお勧めします。
+> この記事では、について説明 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> します。 JSON のシリアル化と逆シリアル化を含むほとんどのシナリオでは、[名前空間のSystem.Text.Js](../../../standard/serialization/system-text-json-overview.md)で api を使用することをお勧めします。
 
 JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJAX 対応の Web サービスとの間で、少量のデータを高速に交換できる効率的なデータ エンコード形式です。
 
-この記事では、.NET 型オブジェクトを JSON エンコードされたデータにシリアル化し、JSON 形式のデータを .NET 型のインスタンスに逆シリアル化する方法について説明します。 この例では、データコントラクトを使用して、ユーザー定義 `Person` 型のシリアル化と逆シリアル化を示し、<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> を使用します。
+この記事では、.NET 型オブジェクトを JSON エンコードされたデータにシリアル化し、JSON 形式のデータを .NET 型のインスタンスに逆シリアル化する方法について説明します。 この例では、データコントラクトを使用して、ユーザー定義型のシリアル化と逆シリアル化を示し `Person` 、を使用し <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> ます。
 
 通常、AJAX 対応のエンドポイントで公開されるサービス操作でデータコントラクト型を使用する場合、JSON のシリアル化と逆シリアル化は、Windows Communication Foundation (WCF) によって自動的に処理されます。 ただし、場合によっては、JSON データを直接操作する必要があります。
 
@@ -51,7 +52,7 @@ JSON (JavaScript Object Notation) は、クライアント ブラウザーと AJ
     p.age = 42;
     ```
 
-2. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>を使用して、`Person` オブジェクトをメモリストリームにシリアル化します。
+2. を `Person` 使用して、オブジェクトをメモリストリームにシリアル化し <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> ます。
 
     ```csharp
     var stream1 = new MemoryStream();

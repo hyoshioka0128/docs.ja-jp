@@ -6,50 +6,50 @@ helpviewer_keywords:
 - XML comments, Visual Basic
 - Visual Basic code, documenting with XML
 ms.assetid: a0d35dc7-c5f9-4d74-92ff-a1c6f28d5235
-ms.openlocfilehash: bdf0da7a8acc919e4a1d66b81e30c9ed912dd321
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: f391fb909cfe4de8f27afb24d6db389e2c8cdfae
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347441"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590930"
 ---
-# <a name="documenting-your-code-with-xml-visual-basic"></a>XML の使用によるコードのドキュメントの作成 (Visual Basic)
+# <a name="document-your-code-with-xml-visual-basic"></a>XML の使用によるコードのドキュメントの作成 (Visual Basic)
 
-Visual Basic では、XML を使用してコードをドキュメント化できます。
+Visual Basic では、XML を使用してコードを文書化できます。
 
-## <a name="xml-documentation-comments"></a>XML ドキュメントのコメント
+## <a name="xml-documentation-comments"></a>XML ドキュメント コメント
 
-Visual Basic は、プロジェクトの XML ドキュメントを自動的に作成する簡単な方法を提供します。 型とメンバーの XML スケルトンを自動的に生成し、各パラメーターの概要、説明ドキュメント、およびその他の解説を提供できます。 適切な設定を使用すると、XML ドキュメントはプロジェクトと同じ名前の xml ファイルに自動的に出力され、.xml 拡張子が付けられます。 詳細については、「[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)」を参照してください。
+Visual Basic には、プロジェクトの XML ドキュメントを自動的に作成する簡単な方法が用意されています。 型とメンバーの XML スケルトンを自動的に生成し、概要、各パラメーターの説明ドキュメント、その他の注釈を指定できます。 適切な設定により、XML ドキュメントは、ご利用のプロジェクトと同じルート ファイル名を使用して XML ファイルに自動的に出力されます。 詳細については、「[-doc](../../reference/command-line-compiler/doc.md)」を参照してください。
 
-XML ファイルは、XML として使用することも、それ以外の方法で操作することもできます。 このファイルは、プロジェクトの出力 .exe ファイルまたは .dll ファイルと同じディレクトリにあります。
+XML ファイルは、XML として使用したり、操作したりできます。 このファイルは、プロジェクトの出力 .exe または .dll ファイルと同じディレクトリにあります。
 
-XML ドキュメントは `'''`から始まります。 これらのコメントの処理にはいくつか制限があります。
+XML ドキュメントは `'''` で始まります。 これらのコメントの処理にはいくつか制限があります。
 
-- ドキュメントは整形式の XML である必要があります。 XML が整形式でない場合は、警告が生成され、ドキュメントファイルにはエラーが発生したことを示すコメントが含まれます。
+- ドキュメントは整形式の XML である必要があります。 XML が整形式ではない場合は、警告が生成され、エラーが発生したことを示すコメントがドキュメント ファイルに追加されます。
 
-- 開発者は、独自のタグ セットを自由に作成できます。 推奨される一連のタグがあります (このトピックの「関連セクション」を参照してください)。 推奨されるタグの一部には特別な意味があります。
+- 開発者は、独自のタグ セットを自由に作成できます。 推奨されるタグのセットがあります ([XML のコメント用タグ](../../language-reference/xmldoc/index.md)に関するページを参照してください)。 推奨されるタグの一部には特別な意味があります。
 
-  - \<param> タグは、パラメーターの記述に使われます。 このタグがあると、コンパイラは、パラメーターが存在すること、およびすべてのパラメーターがドキュメントで記述されていることを確認します。 検証が失敗した場合、コンパイラは警告を発行します。
+  - \<param> タグは、パラメーターの記述に使用します。 このタグがあると、コンパイラは、パラメーターが存在すること、およびすべてのパラメーターがドキュメントで記述されていることを確認します。 検証が失敗すると、コンパイラは警告を発行します。
 
-  - `cref` 属性は任意のタグにアタッチでき、コード要素への参照を提供します。 コンパイラは、このコード要素が存在することを確認します。 検証が失敗した場合、コンパイラは警告を発行します。 また、コンパイラは、`cref` 属性で記述されている型を検索するときに、`Imports` のすべてのステートメントを尊重します。
+  - `cref` 属性は任意のタグにアタッチでき、コード要素への参照を提供します。 コンパイラは、このコード要素が存在することを確認します。 検証が失敗すると、コンパイラは警告を発行します。 また、コンパイラは、`cref` 属性で記述されている型を探すときに、`Imports` ステートメントを優先します。
 
-  - \<summary > タグは、型またはメンバーに関する追加情報を表示するために Visual Studio の IntelliSense によって使用されます。
+  - \<summary> タグは、型またはメンバーに関する追加情報を表示するために、Visual Studio の IntelliSense によって使用されます。
 
 ## <a name="related-sections"></a>関連項目
 
-ドキュメントコメントを含む XML ファイルの作成の詳細については、次のトピックを参照してください。
+ドキュメント コメントを含む XML ファイルの作成方法の詳細については、次のトピックをご覧ください。
 
-- [-doc](../../../visual-basic/reference/command-line-compiler/doc.md)
+- [-doc](../../reference/command-line-compiler/doc.md)
 
-- [XML のコメント用タグ](../../../visual-basic/language-reference/xmldoc/index.md)
+- [XML のコメント用タグ](../../language-reference/xmldoc/index.md)
 
-- [XML ファイルの処理](../../../visual-basic/programming-guide/program-structure/processing-the-xml-file.md)
+- [XML ファイルの処理](processing-the-xml-file.md)
 
-- [方法: XML ドキュメントを作成する](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
+- [方法: XML ドキュメントを作成する](how-to-create-xml-documentation.md)
 
 - [Visual Studio の XML ツール](/visualstudio/xml-tools/xml-tools-in-visual-studio)
 
 ## <a name="see-also"></a>関連項目
 
-- [Visual Basic でのアプリケーションの開発](../../../visual-basic/developing-apps/index.md)
-- [Visual Basic のプログラミング ガイド](../../../visual-basic/programming-guide/index.md)
+- [Visual Basic でのアプリケーションの開発](../../developing-apps/index.md)
+- [Visual Basic プログラミング ガイド](../index.md)

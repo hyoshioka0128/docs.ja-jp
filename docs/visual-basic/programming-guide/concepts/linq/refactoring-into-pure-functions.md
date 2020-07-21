@@ -2,12 +2,12 @@
 title: 純粋関数へのリファクタリング
 ms.date: 07/20/2015
 ms.assetid: 99e7d27b-a3ff-4577-bdb2-5a8278d6d7af
-ms.openlocfilehash: 22b371c6136836d6e0f1281f824b69378c0d3e4a
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 415b088661eca347330f4776901d68ee514d8dad
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346520"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413480"
 ---
 # <a name="refactoring-into-pure-functions-visual-basic"></a>純粋関数へのリファクタリング (Visual Basic)
 
@@ -21,7 +21,7 @@ ms.locfileid: "74346520"
 
  関数型プログラミングに移行するには、既存のコードをリファクターして不要な副作用や外部依存関係を排除するのが 1 つの方法です。 この方法で、既存のコードの純粋関数バージョンを作成できます。
 
-このトピックでは、純粋関数の特徴とそれ以外の関数の特徴について説明します。 [「チュートリアル: WordprocessingML ドキュメント内のコンテンツの操作 (Visual Basic)」チュートリアルで](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)は、WordprocessingML ドキュメントの操作方法について説明し、純粋関数を使用したリファクタリング方法の2つの例を示します。
+このトピックでは、純粋関数の特徴とそれ以外の関数の特徴について説明します。 「[チュートリアル:WordprocessingML ドキュメント内のコンテンツの操作 (Visual Basic)](tutorial-manipulating-content-in-a-wordprocessingml-document.md)」チュートリアルでは、WordprocessingML ドキュメントの操作方法を説明し、純粋関数を使用してリファクターする方法を示す 2 つの例を紹介しています。
 
 ## <a name="eliminating-side-effects-and-external-dependencies"></a>副作用と外部依存関係の排除
 
@@ -52,7 +52,7 @@ End Module
 StringOne-StringTwo
 ```
 
-変更されているデータがアクセス `public` か `private` か、または `shared` メンバーまたはインスタンスメンバーであるかどうかは無関係であることに注意してください。 純粋関数は、関数の外部にあるデータを一切変更しません。
+この場合、変更されるデータに `public` アクセスと `private` アクセスのどちらがあるか、またはこのデータが `shared` メンバーとインスタンス メンバーのどちらであるかは関係ありません。 純粋関数は、関数の外部にあるデータを一切変更しません。
 
 ### <a name="non-pure-function-that-changes-an-argument"></a>引数を変更する非純粋関数
 
@@ -103,9 +103,9 @@ End Module
 
 標準クエリ演算子の重要な特性は、純粋関数として実装される点です。
 
-詳細については、「[標準クエリ演算子の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)」を参照してください。
+詳細については、「[標準クエリ演算子の概要 (Visual Basic)](standard-query-operators-overview.md)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-- [純粋関数型変換の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [関数型プログラミングと命令型プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)
+- [純粋関数型変換の概要 (Visual Basic)](introduction-to-pure-functional-transformations.md)
+- [関数型プログラミングと命令型プログラミング (Visual Basic)](functional-programming-vs-imperative-programming.md)

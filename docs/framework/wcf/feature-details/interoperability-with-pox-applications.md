@@ -2,23 +2,23 @@
 title: POX アプリケーションとの相互運用性
 ms.date: 03/30/2017
 ms.assetid: 449276b8-4633-46f0-85c9-81f01d127636
-ms.openlocfilehash: 17b85ab41589a130e950cd52c759305cc17e92b7
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 64a6d850a32b14bc60cd43466e04b53a7a39be81
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591050"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579268"
 ---
 # <a name="interoperability-with-pox-applications"></a>POX アプリケーションとの相互運用性
 
-"Plain Old XML"(POX) アプリケーションは、SOAP エンベロープで囲まれていない XML アプリケーション データのみを含んだ生の HTTP メッセージの交換によって通信します。 Windows Communication Foundation (WCF) には、サービスと POX メッセージを使用するクライアントの両方を提供できます。 サービスでは、Web ブラウザーなどのクライアント エンドポイントを公開するサービスと POX メッセージを送受信するためのスクリプト言語を実装するために WCF を使用できます。 クライアントでは、POX ベースのサービスと通信するクライアントを実装するために、WCF プログラミング モデルを使用できます。  
+"Plain Old XML" (POX) アプリケーションは、SOAP エンベロープで囲まれていない XML アプリケーションデータのみを含む未加工の HTTP メッセージを交換することによって通信します。 Windows Communication Foundation (WCF) では、POX メッセージを使用するサービスとクライアントの両方を提供できます。 サービスでは、WCF を使用して、Web ブラウザーや、POX メッセージを送受信するスクリプト言語などのクライアントにエンドポイントを公開するサービスを実装できます。 クライアントでは、WCF プログラミングモデルを使用して、POX ベースのサービスと通信するクライアントを実装できます。  
   
 > [!NOTE]
-> このドキュメントは、.NET Framework 3.0 用に作成されたでした。  .NET framework 3.5 POX アプリケーションを操作するための組み込みサポートしています。 参照の詳細については[WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)します。
+> このドキュメントは、もともと .NET Framework 3.0 用に書かれています。  .NET Framework 3.5 には、POX アプリケーションを操作するためのサポートが組み込まれています。 の詳細については、「 [WCF WEB HTTP プログラミングモデル](wcf-web-http-programming-model.md)」を参照してください。
   
-## <a name="pox-programming-with-wcf"></a>WCF による POX プログラミング
+## <a name="pox-programming-with-wcf"></a>WCF を使用した POX プログラミング
 
-POX メッセージを使用して HTTP 経由で通信する WCF サービスを[ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)します。
+POX メッセージを使用して HTTP で通信する WCF サービスでは、を使用し [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) ます。
 
 ```xml
 <customBinding>
@@ -31,13 +31,13 @@ POX メッセージを使用して HTTP 経由で通信する WCF サービス�
 
 このカスタム バインドには、次の 2 つの要素があります。
 
-- [\<httpTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md)
+- [\<httpTransport>](../../configure-apps/file-schema/wcf/httptransport.md)
 
-- [\<textMessageEncoding>](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md)
+- [\<textMessageEncoding>](../../configure-apps/file-schema/wcf/textmessageencoding.md)
 
-標準の WCF のテキスト メッセージ エンコーダーが使用する特別に構成された、<xref:System.ServiceModel.Channels.MessageVersion.None%2A>値で、XML メッセージ ペイロードされずに到着する SOAP エンベロープにラップを処理するようになります。
+標準の WCF テキストメッセージエンコーダーは、値を使用するように特別に構成されています。これに <xref:System.ServiceModel.Channels.MessageVersion.None%2A> より、SOAP エンベロープにラップされていない XML メッセージペイロードを処理できます。
 
-POX メッセージを使用して HTTP を介して通信する WCF クライアントは、(次の命令型コードに示す) のようなバインディングを使用します。
+POX メッセージを使用して HTTP で通信する WCF クライアントは、同様のバインディングを使用します (次の命令型コードを参照)。
 
 ```csharp
 private static Binding CreatePoxBinding()
@@ -52,13 +52,13 @@ private static Binding CreatePoxBinding()
 
 POX クライアントでは、メッセージの送信先となる URI を明示的に指定する必要があるため、クライアントの <xref:System.ServiceModel.Channels.HttpTransportBindingElement> プロパティを <xref:System.ServiceModel.Channels.TransportBindingElement.ManualAddressing%2A> に設定することで、通常、`true` を手動アドレス指定モードに構成する必要があります。 これにより、アプリケーション コードによってメッセージのアドレスが明示的に指定されることになり、アプリケーションで異なる HTTP URI にメッセージを送信するたびに、新しい <xref:System.ServiceModel.ChannelFactory> を作成する必要がなくなります。
 
-POX メッセージでは重要なプロトコル情報の搬送に SOAP ヘッダーを使用しないため、POX クライアントおよびサービスでは、メッセージの送受信に使用される、基になる HTTP 要求の情報を操作する必要が生じる場合がよく起こります。 HTTP ヘッダーやステータス コードなどの HTTP 固有のプロトコル情報は、2 つのクラスを使用して、WCF プログラミング モデルに表示されます。
+POX メッセージでは重要なプロトコル情報の搬送に SOAP ヘッダーを使用しないため、POX クライアントおよびサービスでは、メッセージの送受信に使用される、基になる HTTP 要求の情報を操作する必要が生じる場合がよく起こります。 HTTP ヘッダーや状態コードなどの HTTP 固有のプロトコル情報は、次の2つのクラスを通じて WCF プログラミングモデルに表示されます。
 
 - <xref:System.ServiceModel.Channels.HttpRequestMessageProperty> には、HTTP メソッドと要求ヘッダーなど、HTTP 要求についての情報が含まれます。
 
 - <xref:System.ServiceModel.Channels.HttpResponseMessageProperty> には、HTTP ステータス コード、ステータスの説明、および任意の HTTP 応答ヘッダーなど、HTTP 応答についての情報が含まれます。
   
-次のコード例は、宛先は、HTTP GET 要求メッセージを作成する方法を示します`http://localhost:8100/customers`します。
+に対応する HTTP GET 要求メッセージを作成する方法を次のコード例に示し `http://localhost:8100/customers` ます。
 
 ```csharp
 Message request = Message.CreateMessage( MessageVersion.None, String.Empty );

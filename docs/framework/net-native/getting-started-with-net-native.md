@@ -3,10 +3,10 @@ title: .NET ネイティブの概要
 ms.date: 03/30/2017
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 ms.openlocfilehash: 1c0c25ddf379c31a9c7b4437d36e7e0cbf1bb2f3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128409"
 ---
 # <a name="getting-started-with-net-native"></a>.NET ネイティブの概要
@@ -15,7 +15,7 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
 
 1. [Windows 10 を対象とするユニバーサル Windows プラットフォーム (UWP) ストア アプリを開発](#Step1)し、アプリのデバッグ ビルドをテストして、そのアプリが適切に動作することを確認します。
 
-2. [追加のリフレクションおよびシリアル化の使用を処理します](#Step2)。
+2. [追加のリフレクションおよびシリアル化の使用を処理](#Step2)します。
 
 3. [リリース ビルドのアプリを展開して、テストします](#Step3)。
 
@@ -34,7 +34,7 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
 
 2. UWP アプリ プロジェクトのコンパイルに .NET ネイティブ ツール チェーンを使用する場合と使用しない場合では、両者の間に既知の互換性問題がある点にご注意ください。 詳細については、 [移行ガイド](migrating-your-windows-store-app-to-net-native.md) を参照してください。
 
-ローカルシステム (またC#はシミュレーター) で実行される .NET ネイティブの領域に対して、コードを記述または Visual Basic できるようになりました。
+ローカルシステム (またはシミュレーター) で実行される .NET ネイティブの領域に対して C# または Visual Basic コードを記述できるようになりました。
 
 > [!IMPORTANT]
 > アプリを開発するときに、コードでのシリアル化またはリフレクションを使用する場合は注意してください。
@@ -58,7 +58,7 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
 
 - 非リフレクション ベースのシリアライザー。 <xref:System.Runtime.Serialization.DataContractSerializer>、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>、および <xref:System.Xml.Serialization.XmlSerializer> クラスなど、.NET Framework クラス ライブラリ内にあるシリアライザーは、リフレクションに依存しません。 ただし、これらのシリアライザーでは、シリアル化または逆シリアル化されるオブジェクトに基づいてコードが生成される必要があります。  詳しくは、「 [シリアル化とメタデータ](serialization-and-metadata.md)」の「Microsoft のシリアライザー」セクションをご覧ください。
 
-- サードパーティ シリアライザー。 サードパーティ製のシリアル化ライブラリ (最も一般的なものは Newtonsoft JSON シリアライザー) であり、一般的にリフレクションに基づいており、オブジェクトのシリアル化と逆シリアル化をサポートするために \*の .xml ファイルにエントリが必要です。 詳しくは、「 [シリアル化とメタデータ](serialization-and-metadata.md)」の「サードパーティ シリアライザー」セクションをご覧ください。
+- サードパーティ シリアライザー。 サードパーティ製のシリアル化ライブラリ (最も一般的なものは Newtonsoft JSON シリアライザー) であり、一般的にリフレクションに基づいており、 \* オブジェクトのシリアル化と逆シリアル化をサポートするために、.xml ファイルのエントリが必要です。 詳しくは、「 [Serialization and Metadata](serialization-and-metadata.md)」の「サードパーティ シリアライザー」セクションをご覧ください。
 
 **リフレクションに依存するメソッド**
 
@@ -79,7 +79,7 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
 
 ## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a>手順 3: リリース ビルドのアプリを展開してテストする
 
-ランタイム ディレクティブ ファイルを更新したら、アプリのリリース ビルドを再ビルドして配置できます。 .NET ネイティブバイナリは、プロジェクトの **[プロパティ]** ダイアログボックスの **[コンパイル]** タブにある **[ビルド出力パス]** テキストボックスで指定されたディレクトリの ILC サブディレクトリに配置されます。このフォルダーにないバイナリはコンパイルされていません.NET ネイティブを使用します。 ターゲット プラットフォームごとに、アプリを十分にテストし、失敗シナリオを含むすべてのシナリオをテストします。
+ランタイム ディレクティブ ファイルを更新したら、アプリのリリース ビルドを再ビルドして配置できます。 .NET ネイティブバイナリは、プロジェクトの [**プロパティ**] ダイアログボックスの [**コンパイル**] タブにある [**ビルド出力パス**] テキストボックスで指定されたディレクトリの ILC サブディレクトリに配置されます。このフォルダーにないバイナリは、.NET ネイティブではコンパイルされていません。 ターゲット プラットフォームごとに、アプリを十分にテストし、失敗シナリオを含むすべてのシナリオをテストします。
 
 アプリが正常に動作しない場合 (特に実行時に [MissingMetadataException](missingmetadataexception-class-net-native.md) 例外または [MissingInteropDataException](missinginteropdataexception-class-net-native.md) 例外をスローする場合)、次のセクション「[手順 4: メタデータの欠落を手動で解決する](#Step4)」の手順を実行してください。 初回例外を有効にすると、このようなバグの検出に役立ちます。
 
@@ -89,7 +89,7 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
 
 ## <a name="step-4-manually-resolve-missing-metadata"></a>手順 4: メタデータの欠落を手動で解決する
 
-デスクトップでは発生しない .NET ネイティブで発生する最も一般的なエラーは、ランタイムの[MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)、または[誤 singruntimeartifactexception](missingruntimeartifactexception-class-net-native.md)例外です。 メタデータの欠落は、予期しない動作やアプリの失敗によって判明することもあります。 このセクションでは、ランタイム ディレクティブ ファイルにディレクティブを追加することによって、これらの例外をデバッグして解決する方法を説明します。 ランタイム ディレクティブの形式については、「[ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](runtime-directives-rd-xml-configuration-file-reference.md)」を参照してださい。 ランタイム ディレクティブを追加したら、もう一度 [アプリを展開およびテスト](#Step3) して、例外が発生しなくなるまで新しい [MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)、および  [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) 例外を解決する必要があります。
+デスクトップでは発生しない .NET ネイティブで発生する最も一般的なエラーは、ランタイムの[MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)、または[誤 singruntimeartifactexception](missingruntimeartifactexception-class-net-native.md)例外です。 メタデータの欠落は、予期しない動作やアプリの失敗によって判明することもあります。 このセクションでは、ランタイム ディレクティブ ファイルにディレクティブを追加することによって、これらの例外をデバッグして解決する方法を説明します。 ランタイム ディレクティブの形式については、「[ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](runtime-directives-rd-xml-configuration-file-reference.md)」を参照してださい。 ランタイム ディレクティブを追加したら、もう一度 [アプリを配置およびテスト](#Step3) して、例外が発生しなくなるまで新しい [MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)、および  [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) 例外を解決する必要があります。
 
 > [!TIP]
 > 高いレベルでランタイム ディレクティブを指定して、アプリがコードの変更に対応できるようにします。  メンバー レベルではなく、名前空間レベルおよび型レベルでランタイム ディレクティブを追加することをお勧めします。 回復性と、バイナリを大きくすることに伴うコンパイル時間の延長の間にはトレードオフがある場合があることに注意してください。
@@ -115,17 +115,17 @@ Windows 10 用に新しい Windows アプリを作成する場合も、既存の
 
 アプリのテスト時に発生する例外およびその他の問題の処理に関する具体的な例については、次のページを参照してください。
 
-- [例: データ バインディング時の例外の処理](example-handling-exceptions-when-binding-data.md)
+- [例:データ バインド時の例外の処理](example-handling-exceptions-when-binding-data.md)
 
-- [例: 動的プログラミングのトラブルシューティング](example-troubleshooting-dynamic-programming.md)
+- [例:動的プログラミングのトラブルシューティング](example-troubleshooting-dynamic-programming.md)
 
 - [.NET ネイティブ アプリでのランタイム例外](runtime-exceptions-in-net-native-apps.md)
 
 ## <a name="see-also"></a>関連項目
 
 - [ランタイム ディレクティブ (rd.xml) 構成ファイル リファレンス](runtime-directives-rd-xml-configuration-file-reference.md)
-- [.NET ネイティブのセットアップと構成](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
-- [.NET ネイティブとコンパイル](net-native-and-compilation.md)
+- [.NET ネイティブのセットアップおよび構成](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
+- [.NET Native とコンパイル](net-native-and-compilation.md)
 - [リフレクションおよび .NET ネイティブ](reflection-and-net-native.md)
 - [リフレクションに依存する API](apis-that-rely-on-reflection.md)
 - [シリアル化とメタデータ](serialization-and-metadata.md)

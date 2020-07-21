@@ -2,12 +2,12 @@
 title: '方法: サービス データのパーティション分割'
 ms.date: 03/30/2017
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-ms.openlocfilehash: 49aefd88d73732a139a79f8c53d5beca44d4d4ba
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3b2f86ee6a4dea25fb5c972d4cecb1b9ed411b29
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947872"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601193"
 ---
 # <a name="how-to-service-data-partitioning"></a>方法: サービス データのパーティション分割
 このトピックでは、メッセージを同じ送信先サービスの複数のインスタンスにパーティション分割するのに必要な、基本的な手順について説明します。 サービス データのパーティション分割は、一般的に、優れた品質のサービスを提供するためにサービスを拡張する必要がある場合や、さまざまな顧客からの要求を特定の方法で処理する必要がある場合に使用されます。 たとえば、高い値または "Gold" の顧客からのメッセージは、標準の顧客からのメッセージよりも高い優先順位で処理する必要がある場合があります。  
@@ -175,4 +175,4 @@ ms.locfileid: "69947872"
   
 ## <a name="see-also"></a>関連項目
 
-- [ルーティング サービス](../../../../docs/framework/wcf/samples/routing-services.md)
+- [ルーティング サービス](../samples/routing-services.md)

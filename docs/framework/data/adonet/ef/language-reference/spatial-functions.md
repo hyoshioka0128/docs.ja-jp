@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 90cb177d-88a0-45be-97e8-3b306283c6e0
 ms.openlocfilehash: eba384e77389f82006479f165178e80fcac244b1
 ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72319299"
@@ -16,4 +16,4 @@ ms.locfileid: "72319299"
 GeometryFromText('POINT (43 -73)')  
 ```  
   
- @No__t 0 のメソッドには、すべての空間正規 Entity Framework メソッドがあります。 目的のメソッドをクリックすると、関数に渡す必要のあるパラメーターを確認できます。
+ <xref:System.Data.Common.CommandTrees.ExpressionBuilder.Spatial.SpatialEdmFunctions> メソッドには、Entity Framework の空間に関するすべての正規のメソッドがあります。 目的のメソッドをクリックすると、関数に渡す必要のあるパラメーターを確認できます。

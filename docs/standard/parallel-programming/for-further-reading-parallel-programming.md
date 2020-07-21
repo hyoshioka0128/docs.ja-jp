@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - tasks, further reading
 ms.assetid: 98aee307-dde6-4cad-bb58-078497b8064f
-ms.openlocfilehash: d424c04f52e08b0fdb72e187bd8999ef16427080
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8aadb491c5a8c339b4d8df73202ee717900ef775
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134209"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447161"
 ---
 # <a name="for-further-reading-parallel-programming"></a>関連項目 (並列プログラミング)
 
@@ -22,9 +22,9 @@ ms.locfileid: "73134209"
 
 - [.NET の並列プログラミングに関するブログ](https://devblogs.microsoft.com/pfxteam/)には、.NET の並列プログラミングに関する多くの詳細な記事が含まれています。
 
-- [.NET Framework による並列プログラミングのサンプル](https://code.msdn.microsoft.com/ParExtSamples) ページには、中度および高度な並列プログラミング手法を示す多くのサンプルが含まれています。
+- [.NET Core および .NET Standard による並列プログラミングのサンプル](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)に関するページには、中度および高度な並列プログラミング手法を示す多くのサンプルがあります。
 
 ## <a name="see-also"></a>関連項目
 
-- [並列コンピューティング デベロッパー センター](https://msdn.microsoft.com/vstudio/bb964701)
+- [並列コンピューティング デベロッパー センター](https://docs.microsoft.com/previous-versions/bb964701(v=msdn.10))
 - [Visual C++ の並列プログラミング](/cpp/parallel/parallel-programming-in-visual-cpp)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - End statement [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 0e64467c-0f34-4aab-9ddd-43f8b9d55d90
-ms.openlocfilehash: cb2fb4abb21b7b9c6575cec4aca1374f63687607
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: fe17a82662c4014069c77f2da76723a051ab9084
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343724"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404707"
 ---
 # <a name="end-statement"></a>End ステートメント
 直ちに実行を終了します。  
@@ -30,33 +30,33 @@ ms.locfileid: "74343724"
 End  
 ```  
   
-## <a name="remarks"></a>コメント  
- `End` ステートメントをプロシージャ内の任意の場所に配置して、アプリケーション全体の実行を強制的に停止することができます。 `End` `Open` ステートメントで開かれたすべてのファイルを閉じ、アプリケーションのすべての変数をクリアします。 オブジェクトへの参照を保持しているプログラムが他になく、そのコードも実行されていない場合、アプリケーションはすぐに終了します。  
+## <a name="remarks"></a>Remarks  
+ プロシージャの任意の場所に `End` ステートメントを配置して、アプリケーション全体の実行を強制的に停止することができます。 `End` によって、`Open` ステートメントを使用して開いたファイルがすべて閉じられ、アプリケーションのすべての変数がクリアされます。 オブジェクトへの参照を保持している他のプログラムがなくなり、そのコードが実行されなくなると、アプリケーションはすぐに終了します。  
   
 > [!NOTE]
-> `End` ステートメントは、コードの実行を突然停止し、`Dispose` または `Finalize` メソッド、またはその他の Visual Basic コードを呼び出しません。 他のプログラムによって保持されているオブジェクト参照は無効になります。 `End` ステートメントが `Try` または `Catch` ブロック内で検出された場合、コントロールは対応する `Finally` ブロックに渡されません。  
+> `End` ステートメントを使用すると、コードの実行は突然停止され、`Dispose` または `Finalize` メソッド、またはその他の Visual Basic コードは呼び出されません。 他のプログラムに保持されているオブジェクト参照は無効になります。 `Try` または `Catch` ブロック内に `End` ステートメントが存在すると、制御は対応する `Finally` ブロックには渡されません。  
   
- `Stop` ステートメントは実行を中断しますが、`End`とは異なり、コンパイル済みの実行可能 (.exe) ファイルに存在しない限り、ファイルは閉じられず、変数はクリアされません。  
+ `Stop` ステートメントでは実行が中断されますが、`End` とは異なり、コンパイル済みの実行可能 (.exe) ファイルで検出されていない限り、ファイルを閉じたり、変数をクリアしたりしません。  
   
- `End` は、開いている可能性のあるリソースには参加せずにアプリケーションを終了するため、使用する前に、正常に終了するようにしてください。 たとえば、アプリケーションでフォームが開いている場合は、コントロールが `End` ステートメントに到達する前に、それらを閉じる必要があります。  
+ `End` を使用すると、開いている可能性のあるリソースを処理することなくアプリケーションが終了するため、使用する前に完全に終了するようにします。 たとえば、アプリケーションでフォームを開いている場合は、コントロールが `End` ステートメントに到達する前にフォームを閉じる必要があります。  
   
- `End` は、すぐに停止する必要がある場合にのみ使用してください。 プロシージャを終了する通常の方法 ([Return ステートメント](../../../visual-basic/language-reference/statements/return-statement.md)ステートメントと[Exit ステートメント](../../../visual-basic/language-reference/statements/exit-statement.md)) は、プロシージャを正常に終了するだけでなく、呼び出し元のコードが正常に終了する機会を与えることもできます。 たとえば、コンソールアプリケーションは、単純に `Main` プロシージャから `Return` できます。  
+ `End` は慎重に使用し、すぐに停止する必要がある場合にのみ使用してください。 プロシージャを終了する通常の方法 ([Return ステートメント](return-statement.md)と [Exit ステートメント](exit-statement.md)) では、プロシージャが完全に終了されるだけでなく、呼び出し元のコードにも正常に終了する機会が与えられます。 たとえば、コンソール アプリケーションでは、`Main` プロシージャから単に `Return` を実行できます。  
   
 > [!IMPORTANT]
-> `End` ステートメントは、<xref:System> 名前空間の <xref:System.Environment> クラスの <xref:System.Environment.Exit%2A> メソッドを呼び出します。 <xref:System.Environment.Exit%2A> には `UnmanagedCode` のアクセス許可が必要です。 そうしないと、<xref:System.Security.SecurityException> エラーが発生します。  
+> `End` ステートメントを使用すると、<xref:System> 名前空間内の <xref:System.Environment> クラスの <xref:System.Environment.Exit%2A> メソッドが呼び出されます。 <xref:System.Environment.Exit%2A> を使用するには `UnmanagedCode` アクセス許可が必要です。 そうしないと、<xref:System.Security.SecurityException> エラーが発生します。  
   
- その後に追加のキーワードが続く場合は、 [end \<キーワード > ステートメント](../../../visual-basic/language-reference/statements/end-keyword-statement.md)によって、適切なプロシージャまたはブロックの定義の最後まで記述ます。 たとえば、`End Function` は `Function` プロシージャの定義を終了します。  
+ 追加のキーワードが続く場合、[End \<keyword> ステートメント](end-keyword-statement.md)を使用して、適切なプロシージャまたはブロックの定義の終わりを示します。 たとえば、`End Function` を使用して `Function` プロシージャの定義を終了します。  
   
 ## <a name="example"></a>例  
  次の例では、`End` ステートメントを使用して、ユーザーから要求された場合にコードの実行を終了します。  
   
  [!code-vb[VbVersHelp60Controls#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVersHelp60Controls/VB/Form1.vb#64)]  
   
-## <a name="smart-device-developer-notes"></a>スマートデバイスの開発者向けメモ  
+## <a name="smart-device-developer-notes"></a>スマート デバイス開発者向けのメモ  
  このステートメントはサポートされていません。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Security.Permissions.SecurityPermissionFlag>
-- [Stop ステートメント](../../../visual-basic/language-reference/statements/stop-statement.md)
-- [End \<keyword > ステートメント](../../../visual-basic/language-reference/statements/end-keyword-statement.md)
+- [Stop ステートメント](stop-statement.md)
+- [End \<keyword> ステートメント](end-keyword-statement.md)

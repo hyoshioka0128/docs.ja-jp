@@ -5,15 +5,15 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: 2689b2c8-b4dc-4b71-b9bd-f95e619122d7
-ms.openlocfilehash: dde304cc2b9db9cb01f9264ca1359b8979512cfa
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: bcf55668bdc70902e346c401549a88f6ccb9072e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458782"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095126"
 ---
 # <a name="mcprocesscontent-attribute"></a>mc:ProcessContent 属性
-[Mc: Ignorable 属性](mc-ignorable-attribute.md)を指定することにより、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] のプロセッサによって直接の親要素が無視される可能性がある場合でも、関連する親要素によって処理されるコンテンツを保持する [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 要素を指定します。 `mc:ProcessContent` 属性は、カスタム名前空間マッピングと [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] バージョン管理の両方で、マークアップ互換性をサポートしています。  
+[mc:Ignorable 属性](mc-ignorable-attribute.md)を指定することで直接の親要素が [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサによって無視される場合でも、関連する親要素によってコンテンツが処理される必要がある [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 要素を指定します。 `mc:ProcessContent` 属性は、カスタムの名前空間マッピングと [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] のバージョン管理の両方で、マークアップ互換性をサポートします。  
   
 ## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
   
@@ -34,17 +34,17 @@ ms.locfileid: "73458782"
   
 |||  
 |-|-|  
-|*ignorablePrefix*|XML 1.0 仕様に従って、任意の有効なプレフィックス文字列。|  
-|*ignorableUri*|XML 1.0 仕様に従って、名前空間を指定するための任意の有効な URI。|  
-|*ThisElementCanBeIgnored*|基になる型を解決できない場合に [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] のプロセッサ実装によって無視される要素。|  
-|*情報*|*ThisElementCanBeIgnored*は無視としてマークされます。 プロセッサがその要素を無視した場合、 *[content]* は*オブジェクト*によって処理されます。|  
+|*ignorablePrefix*|XML 1.0 仕様に従う有効なプレフィックス文字列。|  
+|*ignorableUri*|XML 1.0 仕様に従う、名前空間を指定するための有効な URI。|  
+|*ThisElementCanBeIgnored*|基になる型を解決できない場合に、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] プロセッサ実装によって無視できる要素。|  
+|*[content]*|*ThisElementCanBeIgnored* は無視可能とマークされています。 プロセッサによってその要素が無視された場合、 *[content]* は *object* によって処理されます。|  
   
 ## <a name="remarks"></a>Remarks  
- 既定では、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] のプロセッサは無視された要素内のコンテンツを無視します。 `mc:ProcessContent`によって特定の要素を指定できます。また、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサは、無視された要素内のコンテンツを処理し続けます。 これは通常、コンテンツが複数のタグで入れ子になっている場合に使用されます。少なくとも1つは無視可能で、少なくとも1つは無視可能ではありません。  
+ 既定で [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサでは、無視された要素内のコンテンツは無視されます。 `mc:ProcessContent` を使用して特定の要素を指定すると、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] プロセッサでは、無視された要素内のコンテンツが引き続き処理されます。 通常、これは、コンテンツが複数のタグ内に入れ子にされ、少なくとも 1 つのタグが無視可能で、少なくとも 1 つは無視可能ではない場合に使用されます。ません。  
   
- 属性では、複数のプレフィックスを指定できます。たとえば、`mc:ProcessContent="ignore:Element1 ignore:Element2"`のようにスペース区切り文字を使用します。  
+ スペース区切りを使用して、属性に複数のプレフィックスを指定できます (例: `mc:ProcessContent="ignore:Element1 ignore:Element2"`)。  
   
- `http://schemas.openxmlformats.org/markup-compatibility/2006` 名前空間は、SDK のこの領域内には記載されていない他の要素と属性を定義します。 詳細については、「 [XML マークアップ互換性の仕様](https://go.microsoft.com/fwlink/?LinkId=73824)」を参照してください。  
+ `http://schemas.openxmlformats.org/markup-compatibility/2006` 名前空間には、SDK のこの領域ではドキュメント化されていない他の要素と属性を定義します。 詳細については、[XML マークアップ互換性仕様](https://docs.microsoft.com/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification)に関するページを参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

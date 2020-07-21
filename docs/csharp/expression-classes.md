@@ -4,12 +4,12 @@ description: 式ツリーをサポートするフレームワークの型、式�
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-ms.openlocfilehash: 157e97594f27345ac96fe91f7dd6f29907c2c7ac
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 8483c46dde3ea97138e55ab84a5924a3d2578730
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037616"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146087"
 ---
 # <a name="framework-types-supporting-expression-trees"></a>式ツリーをサポートするフレームワークの型
 
@@ -19,7 +19,7 @@ ms.locfileid: "73037616"
 クラスの全リストは <xref:System.Linq.Expressions> で確認できます。
 ここでは、リストのすべてを説明するのではなく、フレームワークのクラスがどう設計されているかを把握します。
 
-言語設計の観点から言えば、式は、評価して値を返すコードの本体です。 式はごく単純な場合があります。定数式 `1` は定数値 1 を返します。 これらはより複雑になる場合があります。式 `(-B + Math.Sqrt(B*B - 4 * A * C)) / (2 * A)` は二次方程式の 1 つの解を返します (式に解がある場合)。  
+言語設計の観点から言えば、式は、評価して値を返すコードの本体です。 式はごく単純な場合があります。定数式 `1` は定数値 1 を返します。 式が複雑になる場合もあります。式 `(-B + Math.Sqrt(B*B - 4 * A * C)) / (2 * A)` は二次方程式の 1 つの解を返します (式に解がある場合)。  
 
 ## <a name="it-all-starts-with-systemlinqexpression"></a>すべては System.Linq.Expression から始まる
 
@@ -65,5 +65,5 @@ var addition = Expression.Add(one, two);
 3. `ExpressionVisitor` クラスを調べて、変更された式ツリーを作成します。
 
 これら 3 つの部分をそれぞれ調べれば、さらに多くのことがわかります。 これら 3 つのステップのいずれかを実行すれば、必要なことが必ず見つかります。
- 
+
  [次へ -- 式ツリーの実行](expression-trees-execution.md)

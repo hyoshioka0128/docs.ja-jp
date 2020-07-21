@@ -10,34 +10,34 @@ helpviewer_keywords:
 ms.assetid: 5939d574-5f53-469e-85f5-1f2b13607caa
 ms.openlocfilehash: 76a78debdce14123cc465ac9abf4db906fe0a2df
 ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/22/2019
 ms.locfileid: "69961352"
 ---
 # <a name="how-to-navigate-forward-or-back-through-navigation-history"></a>方法: 移動履歴の前後への移動
-この例では、ナビゲーション履歴のエントリに前方または後方に移動する方法を示します。  
+この例では、ナビゲーション履歴内のエントリ間を前方または後方に移動する方法を示します。  
   
 ## <a name="example"></a>例  
- 次のホストのコンテンツから実行されるコードは、一度に1つずつ、ナビゲーション履歴を前方または後方に移動できます。  
+ 次のホストのコンテンツから実行されたコードでは、ナビゲーション履歴内を、一度に 1 エントリずつ、前方または後方に移動できます。  
   
-- <xref:System.Windows.Navigation.NavigationWindow>従っ<xref:System.Windows.Navigation.NavigationService>  
+- <xref:System.Windows.Navigation.NavigationService> を使用する <xref:System.Windows.Navigation.NavigationWindow>  
   
-- <xref:System.Windows.Controls.Frame>従っ<xref:System.Windows.Navigation.NavigationService>  
+- <xref:System.Windows.Navigation.NavigationService> を使用する <xref:System.Windows.Controls.Frame>  
   
 - Internet Explorer  
   
- 1つ前のエントリに移動する前に、まず、 **CanGoForward**プロパティを調べることによって、"進む" ナビゲーション履歴にエントリがあることを確認する必要があります。 1つ前のエントリに移動するには、 **Goforward**メソッドを呼び出します。 これを次の例に示します。  
+ 1 つ前方のエントリに移動するには、その前にまず、**CanGoForward** プロパティを調べて、ナビゲーション履歴で前方にエントリがあることを確認する必要があります。 1 つ前方のエントリに移動するには、**GoForward** メソッドを呼び出します。 これを次の例に示します。  
   
  [!code-csharp[HOWTONavigationSnippets#NavigateForwardCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/HomePage.xaml.cs#navigateforwardcode)]
  [!code-vb[HOWTONavigationSnippets#NavigateForwardCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/homepage.xaml.vb#navigateforwardcode)]  
   
- 1つ前のエントリに移動するには、まず、 **CanGoBack**プロパティを調べて、[戻る] ナビゲーション履歴にエントリがあることを確認する必要があります。 1つ前のエントリに移動するには、 **GoBack**メソッドを呼び出します。 これを次の例に示します。  
+ 1 つ後方のエントリに移動するには、その前にまず、**CanGoBack** プロパティを調べて、ナビゲーション履歴で後方にエントリがあることを確認する必要があります。 1 つ後方のエントリに移動するには、**GoBack** メソッドを呼び出します。 これを次の例に示します。  
   
  [!code-csharp[HOWTONavigationSnippets#NavigateBackCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/HomePage.xaml.cs#navigatebackcode)]
  [!code-vb[HOWTONavigationSnippets#NavigateBackCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/homepage.xaml.vb#navigatebackcode)]  
   
- **CanGoForward**、 **goforward**、 **CanGoBack**、および**GoBack**は、、 <xref:System.Windows.Navigation.NavigationWindow> <xref:System.Windows.Controls.Frame>、および<xref:System.Windows.Navigation.NavigationService>によって実装されます。  
+ **CanGoForward**、**GoForward**、**CanGoBack**、**GoBack** は、<xref:System.Windows.Navigation.NavigationWindow>、<xref:System.Windows.Controls.Frame>、<xref:System.Windows.Navigation.NavigationService> によって実装されています。  
   
 > [!NOTE]
-> **Goforward**を呼び出し、"進む" ナビゲーション履歴にエントリがない場合、または**GoBack**を呼び出し、[戻る] ナビゲーション<xref:System.InvalidOperationException>履歴にエントリがない場合は、がスローされます。
+> **GoForward** を呼び出して、ナビゲーション履歴の前方にエントリがない場合、または **GoBack** を呼び出して、ナビゲーション履歴の後方にエントリがない場合は、<xref:System.InvalidOperationException> がスローされます。

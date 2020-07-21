@@ -1,5 +1,6 @@
 ---
 title: デバッグ、トレース、およびプロファイリング
+description: 「.NET でのデバッグ、トレース、およびプロファイリング」を参照してください。 Just-in-time (JIT) デバッグ、アプリケーションのトレースとインストルメント化などに関する記事をご覧ください。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - debugging [.NET Framework]
@@ -13,14 +14,12 @@ helpviewer_keywords:
 - troubleshooting applications [.NET Framework]
 - application development [.NET Framework], profiling
 ms.assetid: 4a04863e-2475-46f4-bc3f-3c11510c2a4b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 43e9438ed2c1cd82bb4d89ff082545021b2d543e
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 745f16652c02e3409e7fa7a48beacbf7e777e924
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73195344"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415980"
 ---
 # <a name="debugging-tracing-and-profiling"></a>デバッグ、トレース、およびプロファイリング
 .NET Framework アプリケーションをデバッグするには、アプリケーションにデバッガーをアタッチできるようにコンパイラとランタイム環境を構成する必要があり、可能であれば、アプリケーションとそれに対応する Microsoft Intermediate Language (MSIL) について記号マップと行マップの両方を生成する必要があります。 マネージド アプリケーションのデバッグが完了した後は、パフォーマンスを向上するようにプロファイルできます。 プロファイルでは、最も頻繁に実行されるコードを生成するソース コード行と、そのコードの実行に要する時間を評価して記述します。  
@@ -43,11 +42,11 @@ ms.locfileid: "73195344"
  [デバッガー表示属性によるデバッグ機能の拡張](enhancing-debugging-with-the-debugger-display-attributes.md)  
  型の開発者が、その型をデバッガーで表示した場合にどのように見えるかを指定する方法について説明します。  
   
- [Performance Counters](performance-counters.md)  
+ [パフォーマンス カウンター](performance-counters.md)  
  アプリケーションのパフォーマンスを追跡するために使用できるカウンターについて説明します。  
   
 ## <a name="related-sections"></a>関連項目  
- [Visual Studio での ASP.NET または ASP.NET Core アプリのデバッグ](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)  
+ [Visual Studio で ASP.NET または ASP.NET Core アプリをデバッグする](/visualstudio/debugger/how-to-enable-debugging-for-aspnet-applications)  
  開発時と配置後に ASP.NET アプリケーションをデバッグするための要件と手順について説明します。  
   
  [開発ガイド](../development-guide.md)  

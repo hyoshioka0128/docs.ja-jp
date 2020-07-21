@@ -6,24 +6,24 @@ helpviewer_keywords:
 - strings [WPF], animating with key frames
 - key frames [WPF], animating strings with
 ms.assetid: c62bc9fd-c09a-4227-bce0-0a1ab82049dd
-ms.openlocfilehash: 4a37408ad90fda12a95e66c1b44018967b376837
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: c954806ca901bbfc3ab6d4bbcc237cd0e404f154
+ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651429"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80344670"
 ---
 # <a name="how-to-animate-a-string-by-using-key-frames"></a>方法: キー フレームを使用して文字列をアニメーション化する
-この例があり、この例では、文字列をアニメーション化する方法を示しています、<xref:System.Windows.Controls.ContentControl.Content%2A>のプロパティを<xref:System.Windows.Controls.Button>キー フレームを使用して、コントロール。  
+この例では、キー フレームを使用して、文字列をアニメーション化する方法を示します。この例で使用する文字列は、<xref:System.Windows.Controls.Button> コントロールの <xref:System.Windows.Controls.ContentControl.Content%2A> プロパティです。  
   
 ## <a name="example"></a>例  
- 次の例では、<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>をアニメーション化するクラス、<xref:System.Windows.Controls.ContentControl.Content%2A>のプロパティを<xref:System.Windows.Controls.Button>します。  
+ 次の例では、<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames> クラスを使用して、<xref:System.Windows.Controls.Button> の <xref:System.Windows.Controls.ContentControl.Content%2A> プロパティをアニメーション化します。  
   
- この例ではすべてのキー フレームのインスタンスを使用して、<xref:System.Windows.Media.Animation.DiscreteStringKeyFrame>クラスをキー フレームで作成される文字列のアニメーションは不連続のキー フレームのみを使用できます。 などの不連続のキーフレーム<xref:System.Windows.Media.Animation.DiscreteStringKeyFrame>されている値の間に急なジャンプを作成、変更、アニメーションに迅速に実行およびはなく。  
+ この例のすべてのキー フレームは、<xref:System.Windows.Media.Animation.DiscreteStringKeyFrame> クラスのインスタンスを使用します。これは、キー フレームを使用して作成される文字列アニメーションでは、不連続キー フレームしか使用できないためです。 <xref:System.Windows.Media.Animation.DiscreteStringKeyFrame> のような不連続キー フレームは、ある値から次の値への突然の変化を作成します。つまり、アニメーションの変化は急速に行われ、滑らかではありません。  
   
  [!code-xaml[keyframes_snip#StringAnimationUsingKeyFramesWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/StringAnimationUsingKeyFramesExample.xaml#stringanimationusingkeyframeswholepage)]  
   
- サンプル全体については、「[キーフレーム アニメーションのサンプル](https://go.microsoft.com/fwlink/?LinkID=160012)」を参照してください。  
+ サンプル全体については、「[キーフレーム アニメーションのサンプル](https://github.com/microsoft/WPF-Samples/tree/master/Animation/KeyFrameAnimation)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

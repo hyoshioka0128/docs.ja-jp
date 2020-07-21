@@ -2,12 +2,12 @@
 title: ModelItem 編集コンテキストの使用
 ms.date: 03/30/2017
 ms.assetid: 7f9f1ea5-0147-4079-8eca-be94f00d3aa1
-ms.openlocfilehash: a47cb53e50d221c0ae07cf0841688fe4f8ced7d4
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: e1481d96e39f837d72834222d2839c520e880cc6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988916"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142515"
 ---
 # <a name="using-the-modelitem-editing-context"></a>ModelItem 編集コンテキストの使用
 <xref:System.Activities.Presentation.Model.ModelItem> 編集コンテキストは、ホスト アプリケーションがデザイナーとの通信に使用するオブジェクトです。 <xref:System.Activities.Presentation.EditingContext> は使用できる 2 つのメソッド <xref:System.Activities.Presentation.EditingContext.Items%2A> と <xref:System.Activities.Presentation.EditingContext.Services%2A> を公開します。  
@@ -57,8 +57,8 @@ public interface IMyService
     {  
         public IEnumerable<string> GetValues(string DisplayName)  
         {  
-            return new string[]  {   
-                DisplayName + " One",   
+            return new string[]  {
+                DisplayName + " One",
                 DisplayName + " Two",  
                 "Three " + DisplayName  
             } ;  
@@ -87,7 +87,7 @@ protected override void OnModelItemChanged(object newItem)
                 listBox1.ItemsSource = servInstance.GetValues(this.ModelItem.Properties["DisplayName"].ComputedValue.ToString());  
             }  
             );  
-        subscribed = true;   
+        subscribed = true;
     }  
 }  
 ```  
@@ -96,52 +96,52 @@ protected override void OnModelItemChanged(object newItem)
  Items コレクションの使用は Services コレクションの使用と似ていますが、Publish の代わりに <xref:System.Activities.Presentation.ContextItemManager.SetValue%2A> が使用されます。 このコレクションは、複雑な機能よりも、デザイナーとホスト間での単純なデータの共有に適しています。  
   
 ## <a name="editingcontext-host-items-and-services"></a>EditingContext ホスト項目およびサービス  
- .NET Framework には、編集コンテキストを使用してアクセスできる組み込みの項目とサービスが多数用意されています。  
+ .NET Framework には、編集コンテキストを通じてアクセスされる組み込みの項目とサービスが多数用意されています。  
   
  項目:  
   
-- <xref:System.Activities.Presentation.Hosting.AssemblyContextControlItem> :ワークフロー内でコントロール (式エディターなど) に使用される参照先のローカルアセンブリのリストを管理します。  
+- <xref:System.Activities.Presentation.Hosting.AssemblyContextControlItem>: ワークフロー内でコントロール (式エディターなど) に使用される参照先ローカル アセンブリのリストを管理します。  
   
-- <xref:System.Activities.Presentation.Hosting.ReadOnlyState>:デザイナーが読み取り専用状態であるかどうかを示します。  
+- <xref:System.Activities.Presentation.Hosting.ReadOnlyState>: デザイナーが読み取り専用状態かどうかを示します。  
   
-- <xref:System.Activities.Presentation.View.Selection>:現在選択されているオブジェクトのコレクションを定義します。  
+- <xref:System.Activities.Presentation.View.Selection>: 現在選択されているオブジェクトのコレクションを定義します。  
   
 - <xref:System.Activities.Presentation.Hosting.WorkflowCommandExtensionItem>:  
   
-- <xref:System.Activities.Presentation.WorkflowFileItem> :現在の編集セッションの基になっているファイルに関する情報を提供します。  
+- <xref:System.Activities.Presentation.WorkflowFileItem>: 現在の編集セッションが基づくファイルに関する情報を提供します。  
   
- サービス:  
+ 複数サービス:   
   
-- <xref:System.Activities.Presentation.Model.AttachedPropertiesService>:を使用して<xref:System.Activities.Presentation.Model.AttachedPropertiesService.AddProperty%2A>、現在のインスタンスにプロパティを追加できるようにします。  
+- <xref:System.Activities.Presentation.Model.AttachedPropertiesService>: <xref:System.Activities.Presentation.Model.AttachedPropertiesService.AddProperty%2A> を使用して現在のインスタンスにプロパティを追加できます。  
   
-- <xref:System.Activities.Presentation.View.DesignerView>:デザイナーキャンバスのプロパティへのアクセスを許可します。  
+- <xref:System.Activities.Presentation.View.DesignerView>: デザイナー キャンバスのプロパティにアクセスできるようにします。  
   
-- <xref:System.Activities.Presentation.IActivityToolboxService> :ツールボックスの内容を更新できるようにします。  
+- <xref:System.Activities.Presentation.IActivityToolboxService>: ツールボックスの内容を更新できるようにします。  
   
-- <xref:System.Activities.Presentation.Hosting.ICommandService> :デザイナーコマンド (コンテキストメニューなど) をカスタム指定のサービス実装に統合するために使用します。  
+- <xref:System.Activities.Presentation.Hosting.ICommandService>: デザイナー コマンド (コンテキスト メニューなど) をカスタム提供サービスの実装と統合するために使用します。  
   
-- <xref:System.Activities.Presentation.Debug.IDesignerDebugView> :デザイナーデバッガーの機能を提供します。  
+- <xref:System.Activities.Presentation.Debug.IDesignerDebugView>: デザイナー デバッガーの機能を提供します。  
   
-- <xref:System.Activities.Presentation.View.IExpressionEditorService> :[式エディター] ダイアログへのアクセスを提供します。  
+- <xref:System.Activities.Presentation.View.IExpressionEditorService>: [式エディター] ダイアログへのアクセスを可能にします。  
   
-- <xref:System.Activities.Presentation.IIntegratedHelpService> :デザイナーに、統合されたヘルプ機能を提供します。  
+- <xref:System.Activities.Presentation.IIntegratedHelpService>: デザイナーに統合ヘルプ機能を提供します。  
   
-- <xref:System.Activities.Presentation.Validation.IValidationErrorService>:を使用<xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A>した検証エラーへのアクセスを提供します。  
+- <xref:System.Activities.Presentation.Validation.IValidationErrorService>:  <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A> を使用した検証エラーへのアクセスを可能にします。  
   
-- <xref:System.Activities.Presentation.IWorkflowDesignerStorageService>:データを格納および取得するための内部サービスを提供します。 このサービスは、.NET Framework によって内部的に使用され、外部で使用するためのものではありません。  
+- <xref:System.Activities.Presentation.IWorkflowDesignerStorageService>: データを格納および取得するための内部サービスを提供します。 このサービスは、.NET Framework によって内部的に使用され、外部での使用を目的としていません。  
   
-- <xref:System.Activities.Presentation.IXamlLoadErrorService>:を使用して<xref:System.Activities.Presentation.IXamlLoadErrorService.ShowXamlLoadErrors%2A>、XAML 読み込みエラーコレクションへのアクセスを提供します。  
+- <xref:System.Activities.Presentation.IXamlLoadErrorService>:  <xref:System.Activities.Presentation.IXamlLoadErrorService.ShowXamlLoadErrors%2A> を使用した XAML 読み込みエラー コレクションへのアクセスを可能にします。  
   
-- <xref:System.Activities.Presentation.Services.ModelService>:編集されているワークフローのモデルと対話するためにデザイナーによって使用されます。  
+- <xref:System.Activities.Presentation.Services.ModelService>: 編集されているワークフローのモデルと対話するためにデザイナーによって使用されます。  
   
-- <xref:System.Activities.Presentation.Model.ModelTreeManager> :を使用して<xref:System.Activities.Presentation.Model.ModelItem.Root%2A>、モデルアイテムツリーのルートへのアクセスを提供します。  
+- <xref:System.Activities.Presentation.Model.ModelTreeManager>:  <xref:System.Activities.Presentation.Model.ModelItem.Root%2A> を使用したモデル アイテム ツリーのルートへのアクセスを可能にします。  
   
-- <xref:System.Activities.Presentation.UndoEngine>:元に戻す/やり直し機能を提供します。  
+- <xref:System.Activities.Presentation.UndoEngine>: 元に戻す機能とやり直し機能を提供します。  
   
-- <xref:System.Activities.Presentation.Services.ViewService>:ビジュアル要素を基になるモデルアイテムにマップします。  
+- <xref:System.Activities.Presentation.Services.ViewService>: 基になるモデル アイテムにビジュアル要素をマップします。  
   
-- <xref:System.Activities.Presentation.View.ViewStateService>:モデルアイテムのビューステートを格納します。  
+- <xref:System.Activities.Presentation.View.ViewStateService>: モデル アイテムのビュー ステートを格納します。  
   
-- <xref:System.Activities.Presentation.View.VirtualizedContainerService> :仮想コンテナーの UI 動作をカスタマイズするために使用します。  
+- <xref:System.Activities.Presentation.View.VirtualizedContainerService>: 仮想コンテナーの UI 動作をカスタマイズするために使用します。  
   
-- <xref:System.Activities.Presentation.Hosting.WindowHelperService> :イベント通知のデリゲートを登録および登録解除するために使用します。 ウィンドウ所有者も設定できます。
+- <xref:System.Activities.Presentation.Hosting.WindowHelperService>: イベント通知のデリゲートを登録および登録解除するために使用します。 ウィンドウ所有者も設定できます。

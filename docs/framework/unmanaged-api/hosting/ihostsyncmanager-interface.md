@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2e081a37-6a28-4c93-b7ab-1c96a464637c
 topic_type:
 - apiref
-ms.openlocfilehash: 02a59b8ef63f7e866e419db4e3232da7eec19558
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fd3c941d89fbd93f30fc1af235f6310b23758973
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132630"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501457"
 ---
 # <a name="ihostsyncmanager-interface"></a>IHostSyncManager インターフェイス
 Win32 同期関数を使用する代わりに、共通言語ランタイム (CLR) がホストを呼び出して同期プリミティブを作成できるようにするメソッドを提供します。  
@@ -28,29 +28,29 @@ Win32 同期関数を使用する代わりに、共通言語ランタイム (CLR
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[CreateAutoEvent メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createautoevent-method.md)|自動リセットイベントオブジェクトを作成します。|  
-|[CreateCrst メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createcrst-method.md)|同期のための重要なセクションオブジェクトを作成します。|  
-|[CreateCrstWithSpinCount メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createcrstwithspincount-method.md)|同期のためにスピンカウントを持つクリティカルセクションオブジェクトを作成します。|  
-|[CreateManualEvent メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createmanualevent-method.md)|手動リセットイベントオブジェクトを作成します。|  
-|[CreateMonitorEvent メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createmonitorevent-method.md)|監視対象の自動リセットイベントオブジェクトを作成します。|  
-|[CreateRWLockReaderEvent メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createrwlockreaderevent-method.md)|リーダーロックの実装のための手動リセットイベントオブジェクトを作成します。|  
-|[CreateRWLockWriterEvent メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createrwlockwriterevent-method.md)|ライターロックの実装用の自動リセットイベントオブジェクトを作成します。|  
-|[CreateSemaphore メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-createsemaphore-method.md)|CLR が待機イベントのセマフォとして使用する[IHostSemaphore](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md)オブジェクトを作成します。|  
-|[SetCLRSyncManager メソッド](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-setclrsyncmanager-method.md)|現在の `IHostSyncManager` インスタンスに関連付ける[ICLRSyncManager](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)インスタンスを設定します。|  
+|[CreateAutoEvent メソッド](ihostsyncmanager-createautoevent-method.md)|自動リセットイベントオブジェクトを作成します。|  
+|[CreateCrst メソッド](ihostsyncmanager-createcrst-method.md)|同期のための重要なセクションオブジェクトを作成します。|  
+|[CreateCrstWithSpinCount メソッド](ihostsyncmanager-createcrstwithspincount-method.md)|同期のためにスピンカウントを持つクリティカルセクションオブジェクトを作成します。|  
+|[CreateManualEvent メソッド](ihostsyncmanager-createmanualevent-method.md)|手動リセットイベントオブジェクトを作成します。|  
+|[CreateMonitorEvent メソッド](ihostsyncmanager-createmonitorevent-method.md)|監視対象の自動リセットイベントオブジェクトを作成します。|  
+|[CreateRWLockReaderEvent メソッド](ihostsyncmanager-createrwlockreaderevent-method.md)|リーダーロックの実装のための手動リセットイベントオブジェクトを作成します。|  
+|[CreateRWLockWriterEvent メソッド](ihostsyncmanager-createrwlockwriterevent-method.md)|ライターロックの実装用の自動リセットイベントオブジェクトを作成します。|  
+|[CreateSemaphore メソッド](ihostsyncmanager-createsemaphore-method.md)|CLR が待機イベントのセマフォとして使用する[IHostSemaphore](ihostsemaphore-interface.md)オブジェクトを作成します。|  
+|[SetCLRSyncManager メソッド](ihostsyncmanager-setclrsyncmanager-method.md)|現在のインスタンスに関連付ける[ICLRSyncManager](iclrsyncmanager-interface.md)インスタンスを設定 `IHostSyncManager` します。|  
   
-## <a name="remarks"></a>Remarks  
- CLR は、IID_IHostSyncManager の `IID` を使用して[IHostControl:: GetHostManager](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-gethostmanager-method.md)メソッドを呼び出すことによって、ホストの `IHostSyncManager` の実装を検出します。  
+## <a name="remarks"></a>解説  
+ CLR は、 `IHostSyncManager` IID_IHostSyncManager のを使用して[IHostControl:: GetHostManager](ihostcontrol-gethostmanager-method.md)メソッドを呼び出すことで、ホストのの実装を検出し `IID` ます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICLRSyncManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
-- [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRSyncManager インターフェイス](iclrsyncmanager-interface.md)
+- [ホスト インターフェイス](hosting-interfaces.md)

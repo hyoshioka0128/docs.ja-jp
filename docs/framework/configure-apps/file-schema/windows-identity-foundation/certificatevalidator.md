@@ -3,21 +3,21 @@ title: <certificateValidator>
 ms.date: 03/30/2017
 ms.assetid: 86161897-c20f-4ad8-9d7f-050c247251bf
 author: BrucePerlerMS
-ms.openlocfilehash: 30f81dd5948a7d366c1116cffd347c85a396f5ae
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 3f3d79d3567c1714a79423b7767ce3f454b9d52d
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252125"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79152789"
 ---
-# <a name="certificatevalidator"></a>\<certificateValidator の >
-証明書の検証に使用するカスタムの種類を指定します。 この型は、 `certificateValidationMode` [ \<certificatevalidation >](certificatevalidation.md)要素の属性が "Custom" に設定されている場合にのみ使用されます。  
+# \<certificateValidator>
+証明書の検証に使用するカスタムの種類を指定します。 この型は `certificateValidationMode` 、要素の属性 [\<certificateValidation>](certificatevalidation.md) が "Custom" に設定されている場合にのみ使用されます。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<システムの >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<構成 >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<certificateValidation >** ](certificatevalidation.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<certificateValidator の >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<certificateValidation>**](certificatevalidation.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<certificateValidator>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -39,16 +39,16 @@ ms.locfileid: "70252125"
   
 |属性|説明|  
 |---------------|-----------------|  
-|型|<xref:System.IdentityModel.Selectors.X509CertificateValidator>クラスから派生するカスタム型を指定します。 この型を使用するには、 [ \<certificatevalidation >](certificatevalidation.md)要素の属性を"Custom"に設定します。`certificateValidationMode` `type`属性を指定する方法の詳細については、「[カスタム型参照](../windows-workflow-foundation/index.md)」を参照してください。 任意。|  
+|type|クラスから派生するカスタム型を指定し <xref:System.IdentityModel.Selectors.X509CertificateValidator> ます。 `certificateValidationMode` [\<certificateValidation>](certificatevalidation.md) この型を使用するには、要素の属性を "Custom" に設定します。 属性を指定する方法の詳細については `type` 、「[カスタム型参照](../windows-workflow-foundation/index.md)」を参照してください。 省略可能。|  
   
 ### <a name="child-elements"></a>子要素  
  なし  
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
-|[\<certificateValidation >](certificatevalidation.md)|トークンハンドラーが証明書を検証するために使用する設定を制御します。|  
+|[\<certificateValidation>](certificatevalidation.md)|トークンハンドラーが証明書を検証するために使用する設定を制御します。|  
   
 ## <a name="example"></a>例  
   
@@ -56,6 +56,6 @@ ms.locfileid: "70252125"
 <certificateValidation certificateValidationMode="Custom"  
                        revocationMode="Online"  
                        trustedStoreLocation="LocalMachine">  
-    <certificateValidator type="MyNamespace.CustomValidator, MyAssembly" />    
-</certificateValidation>        
+    <certificateValidator type="MyNamespace.CustomValidator, MyAssembly" />
+</certificateValidation>
 ```

@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 6ab1fe6b-3eed-4432-a248-b487e7234e5b
 ms.openlocfilehash: 975fafebe255d5ff4848fde2c0b0ff08b68d4f7b
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62020232"
 ---
 # <a name="drawings"></a>描画
-<xref:System.Windows.Media.Drawing> オブジェクトは、図形、画像、またはテキストを効率的に描画するために使用されます。 描画するときに描画を使用、<xref:System.Windows.Media.DrawingBrush>をプログラミングまたは<xref:System.Windows.Media.Visual>オブジェクト。  
+<xref:System.Windows.Media.Drawing> オブジェクトは、図形、イメージ、またはテキストを効率的に描画するために使用します。 描画は、<xref:System.Windows.Media.DrawingBrush> を使用した塗りつぶし、または <xref:System.Windows.Media.Visual> オブジェクトを使用したプログラミングで使用します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Drawing オブジェクトの概要](drawing-objects-overview.md)  

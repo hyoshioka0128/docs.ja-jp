@@ -11,7 +11,7 @@ ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
 author: ghogen
 ms.openlocfilehash: 5637d569ad5261bff6865af4ab2ed8b7631d2d38
 ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053556"
@@ -59,7 +59,7 @@ Windows サービス プロジェクトのテンプレートを使用しない�
   
 6. 他に独自の処理を定義するメソッドがあればそれをオーバーライドし、サービスが行うアクションを記述します。  
   
-7. サービス アプリケーションの必要なインストーラーを追加します。 詳細については、「[方法 :サービス アプリケーションにインストーラーを追加する](how-to-add-installers-to-your-service-application.md)」を参照してください。  
+7. サービス アプリケーションの必要なインストーラーを追加します。 詳細については、[サービス アプリケーションにインストーラーを追加する](how-to-add-installers-to-your-service-application.md)」を参照してください。  
   
 8. **[ビルド]** メニューの **[ソリューションのビルド]** をクリックして、プロジェクトを作成します。  
   
@@ -68,7 +68,7 @@ Windows サービス プロジェクトのテンプレートを使用しない�
   
 9. セットアップ プロジェクトと、サービスをインストールするカスタム処理を作成します。 例については、「[チュートリアル: コンポーネント デザイナーによる Windows サービス アプリケーションの作成](walkthrough-creating-a-windows-service-application-in-the-component-designer.md)」を参照してください。  
   
-10. サービスをインストールします。 詳細については、「[方法 :サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。  
+10. サービスをインストールします。 詳細については、[サービスをインストールおよびアンインストールする](how-to-install-and-uninstall-services.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

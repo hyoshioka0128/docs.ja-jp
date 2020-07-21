@@ -1,23 +1,24 @@
 ---
 title: Flowchart のワークフロー
+description: この記事では、通常、Workflow Foundation でシーケンシャルでないワークフローを実装するために使用されるフローチャートアクティビティについて説明します。
 ms.date: 03/30/2017
 ms.assetid: b0a3475c-d22f-49eb-8912-973c960aebf5
-ms.openlocfilehash: 1840f677929509e4902498c5aa8920f49cb13496
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce0661653a1d50b3f7264246b810faabbd12bf5f
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773595"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419916"
 ---
 # <a name="flowchart-workflows"></a>Flowchart のワークフロー
 
 フローチャートは、プログラムを診断するための既知のパラダイムです。 通常、Flowchart アクティビティはシーケンシャル以外のワークフローを実装するために使用されますが、`FlowDecision` ノードが使用されない場合は、シーケンシャル ワークフローにも使用できます。
 
-## <a name="flowchart-workflow-structure"></a>フローチャート ワークフローの構造
+## <a name="flowchart-workflow-structure"></a>フローチャートワークフロー構造
 
  Flowchart アクティビティは、実行されるアクティビティのコレクションを含むアクティビティです。  フローチャートには、変数の値に基づいて含まれているアクティビティ間の実行を指示する、<xref:System.Activities.Statements.FlowDecision> や <xref:System.Activities.Statements.FlowSwitch%601> などのフロー制御要素も含まれています。
 
-## <a name="types-of-flow-nodes"></a>フロー ノードの種類
+## <a name="types-of-flow-nodes"></a>フローノードの種類
 
  要素の実行時に必要なフロー制御の種類に応じて、さまざまな種類の要素が使用されます。 フローチャート要素には次のような種類があります。
 
@@ -29,7 +30,7 @@ ms.locfileid: "61773595"
 
 各リンクには、子アクティビティの実行に使用できる `Action` を定義した <xref:System.Activities.ActivityAction> プロパティと、現在の要素の実行が完了したときに実行する 1 つ以上の要素を定義した 1 つ以上の `Next` プロパティがあります。
 
-### <a name="creating-a-basic-activity-sequence-with-a-flowstep-node"></a>FlowStep ノードによる基本的な activity sequence を作成します。
+### <a name="creating-a-basic-activity-sequence-with-a-flowstep-node"></a>FlowStep ノードを使用した基本的なアクティビティシーケンスの作成
 
 2 つのアクティビティを連続して実行する基本的なシーケンスをモデル化するには、`FlowStep` 要素を使用します。 次の例では、2 つの `FlowStep` 要素を使用して 2 つのアクティビティを連続して実行しています。
 
@@ -46,14 +47,14 @@ ms.locfileid: "61773595"
     </Assign>
     <FlowStep.Next>
       <FlowStep>
-        <WriteLine Text="["Hello, " & result]"/>
+        <WriteLine Text="Hello, " & [result]/>
       </FlowStep>
     </FlowStep.Next>
   </FlowStep>
 </Flowchart>
 ```
 
-### <a name="creating-a-conditional-flowchart-with-a-flowdecision-node"></a>FlowDecision ノードによる条件付きの作成
+### <a name="creating-a-conditional-flowchart-with-a-flowdecision-node"></a>FlowDecision ノードを含む条件付きフローチャートの作成
 
 フローチャート ワークフローの条件付きフロー ノードをモデル化するには (つまり、従来のフローチャートの決定シンボルとして機能するリンクを作成するには)、<xref:System.Activities.Statements.FlowDecision> ノードを使用します。 ノードの <xref:System.Activities.Statements.FlowDecision.Condition%2A> プロパティは、条件を定義する式に設定されます。また、<xref:System.Activities.Statements.FlowDecision.True%2A> プロパティと <xref:System.Activities.Statements.FlowDecision.False%2A> プロパティは、式が <xref:System.Activities.Statements.FlowNode> または `true` に評価された場合に実行される `false` インスタンスに設定されます。 次の例では、<xref:System.Activities.Statements.FlowDecision> ノードを使用するワークフローを定義する方法を示します。
 
@@ -80,7 +81,7 @@ ms.locfileid: "61773595"
 </Flowchart>
 ```
 
-### <a name="creating-an-exclusive-switch-with-a-flowswitch-node"></a>FlowSwitch ノードによる排他的スイッチの作成
+### <a name="creating-an-exclusive-switch-with-a-flowswitch-node"></a>FlowSwitch ノードを使用した排他スイッチの作成
 
 一致する値に基づいて 1 つの排他的パスを選択するフローチャートをモデル化するには、<xref:System.Activities.Statements.FlowSwitch%601> ノードを使用します。 <xref:System.Activities.Statements.FlowSwitch%601.Expression%2A> プロパティは、選択に対して一致する値を定義する <xref:System.Activities.Activity%601> の型パラメーターを持つ <xref:System.Object> に設定されます。 <xref:System.Activities.Statements.FlowSwitch%601.Cases%2A> プロパティは、条件式に対して一致する、キーと <xref:System.Activities.Statements.FlowNode> オブジェクトのディクショナリと、特定のケースが条件式に一致する場合のフローの実行方法を定義する <xref:System.Activities.Statements.FlowNode> オブジェクトのセットを定義します。 また、<xref:System.Activities.Statements.FlowSwitch%601> は、条件式に一致するケースがない場合の実行フローを定義する <xref:System.Activities.Statements.FlowSwitch%601.Default%2A> プロパティも定義します。 次のコードは、<xref:System.Activities.Statements.FlowSwitch%601> 要素を使用するワークフローを定義する方法の例です。
 

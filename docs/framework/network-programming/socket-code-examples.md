@@ -1,5 +1,6 @@
 ---
 title: ソケットのコード例
+description: 次の例から、クライアントの Socket クラスを使用してネットワーク サービスに接続し、サーバーとしてクライアントからの接続を待ち受ける方法を確認してください。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application protocols, sockets
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: f3fc7533-6956-42c6-bbc3-73e5a221027d
-ms.openlocfilehash: cbb77907c018b9b8f56895adf21f1f353ab71f88
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0a0911a779ed3d4938ad7ff57f048c176cf677fb
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71047296"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502159"
 ---
 # <a name="socket-code-examples"></a>ソケットのコード例
 次のコード例は、リモート ネットワーク サービスに接続するためのクライアントとして、また、リモート クライアントからの接続を待ち受けるためのサーバーとして <xref:System.Net.Sockets.Socket> クラスを利用する方法を示すものです。  

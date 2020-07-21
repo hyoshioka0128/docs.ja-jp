@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual Basic Web sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-ms.openlocfilehash: 9e55910573b3aa3aecf9082f1b77659a45f883a1
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: ea645e33c67bf1d39b477d8e4ce82b7a69a177fd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196986"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398234"
 ---
 # <a name="additional-resources"></a>その他の技術情報
 
@@ -32,7 +32,7 @@ ms.locfileid: "73196986"
 
 |URL|説明|
 |----------|----------------|
-|[Visual Basic ドキュメントのサンプル](https://github.com/dotnet/samples/tree/master/snippets/visualbasic)|Visual Basic および .NET のドキュメント全体で使用されるサンプルが含まれています。|
+|[Visual Basic ドキュメントのサンプル](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic)|Visual Basic および .NET のドキュメント全体で使用されるサンプルが含まれています。|
 
 ### <a name="forums"></a>フォーラム
 
@@ -63,5 +63,5 @@ ms.locfileid: "73196986"
 
 ## <a name="see-also"></a>関連項目
 
-- [Visual Basic 入門](../../visual-basic/getting-started/index.md)
+- [Visual Basic 入門](index.md)
 - [ご意見](/visualstudio/ide/feedback-options)

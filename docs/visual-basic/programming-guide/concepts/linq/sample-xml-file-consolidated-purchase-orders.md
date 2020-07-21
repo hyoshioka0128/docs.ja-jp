@@ -1,13 +1,13 @@
 ---
-title: サンプル XML ファイル:統合された購入 Orders3
+title: サンプル XML ファイル:統合購買発注書 3
 ms.date: 07/20/2015
 ms.assetid: 7203da90-a514-415a-b978-6980e89f3e9c
-ms.openlocfilehash: edeb1381b674ee9f6fba45f14c7b6f12b363a37a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: de5acdd92b9d6dd300eb7bc7471db845cc00d44a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787089"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413350"
 ---
 # <a name="sample-xml-file-consolidated-purchase-orders"></a>サンプル XML ファイル:統合購買発注書
 次の XML ファイルは、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ドキュメントのさまざまな例で使用されます。 このファイルは、形式の異なる複数企業の購買発注書をまとめたものです。 各企業の購買発注書は、別々の名前空間に含まれています。  
@@ -146,4 +146,4 @@ ms.locfileid: "61787089"
   
 ## <a name="see-also"></a>関連項目
 
-- [サンプル XML ドキュメント (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [サンプル XML ドキュメント (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

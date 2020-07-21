@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF, federation
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
-ms.openlocfilehash: 2331e484f22be7e3154a4cff981ee320a9b143a5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c31c2612b595e627b0c4c2d7fbb3a359b19ee704
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948154"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595493"
 ---
 # <a name="federation"></a>フェデレーション
-ここでは、フェデレーション セキュリティの概念について簡単に説明します。 また、フェデレーションセキュリティアーキテクチャを展開するための Windows Communication Foundation (WCF) のサポートについても説明します。 フェデレーションを示すサンプルアプリケーションについては、「 [Federation sample](../../../../docs/framework/wcf/samples/federation-sample.md)」を参照してください。  
+ここでは、フェデレーション セキュリティの概念について簡単に説明します。 また、フェデレーションセキュリティアーキテクチャを展開するための Windows Communication Foundation (WCF) のサポートについても説明します。 フェデレーションを示すサンプルアプリケーションについては、「 [Federation sample](../samples/federation-sample.md)」を参照してください。  
   
 ## <a name="definition-of-federated-security"></a>フェデレーション セキュリティの定義  
  フェデレーション セキュリティにより、クライアントがアクセスするサービスと、関連する認証および承認の手順を明確に分離できます。 また、フェデレーション セキュリティを使用すると、異なる信頼レルムに属する複数のシステム、ネットワーク、および組織間のコラボレーションが可能になります。  
@@ -29,15 +29,15 @@ ms.locfileid: "69948154"
 |要素|説明|  
 |-------------|-----------------|  
 |ドメイン/レルム|セキュリティ管理または信頼の単位。 ドメインには通常、1 つの組織が含まれます。|  
-|フェデレーション|信頼が確立されたドメインのコレクション。 信頼のレベルはさまざまですが、通常は認証レベルが含まれ、ほとんどの場合に承認レベルが含まれます。 典型的なフェデレーションには、一連のリソースへの共有アクセスを可能にする信頼を確立した多くの組織が含まれます。|  
+|フェデレーション|信頼が確立されたドメインのコレクション。 信頼のレベルは異なる場合がありますが、通常は認証が含まれ、また、ほぼ常に承認が含まれます。 標準的なフェデレーションには、一連のリソースへの共有アクセスのために信頼が確立された多くの組織が含まれる場合があります。|  
 |STS (セキュリティ トークン サービス)|セキュリティ トークンを発行する Web サービス。つまり、信頼できる証拠に基づいて、サービスを信頼する任意の相手に対してアサーションを行います。 これによりドメイン間における信頼の橋渡しの基礎が形成されます。|  
   
-### <a name="example-scenario"></a>サンプル シナリオ  
+### <a name="example-scenario"></a>シナリオ例  
  次の図は、フェデレーションセキュリティの例を示しています。  
   
  ![一般的なフェデレーションセキュリティシナリオを示す図](./media/federation/typical-federated-security-scenario.gif)  
   
- このシナリオには、次の2つの組織が含まれます。A と B。組織 B には、組織 A の一部のユーザーが貴重な Web リソース (Web サービス) を持っています。  
+ このシナリオでは、A と B の 2 つの組織があります。組織 B には、組織 A の一部のユーザーにとって有用な Web リソース (Web サービス) があります。  
   
 > [!NOTE]
 > このセクションでは、*リソース*、*サービス*、および*Web サービス*という用語を同義に使用します。  
@@ -60,21 +60,21 @@ ms.locfileid: "69948154"
   
  フェデレーション セキュリティ アーキテクチャでは、組織 A のユーザーが、組織 B の Web サービスにアクセスする場合に、組織 B の STS から発行された有効なセキュリティ トークンを提示する必要があることを認識しています。この STS が、特定のサービスへのアクセスを認証および承認します。  
   
- STS B に接続したユーザーは、STS に関連付けられたポリシーから別のレベルの間接指定を受け取ります。 このユーザーは、STS B がセキュリティ トークンを発行する前に、STS A (クライアントの信頼レルム) の有効なセキュリティ トークンを提示しておく必要があります。 これは、2つの組織間で確立された信頼関係により、組織 B は組織 A のユーザーの id を管理する必要がないことを意味します。実際には、STS B には通常`issuerAddress` null `issuerMetadataAddress`とが含まれます。 詳細については、「[方法 :ローカル発行者](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)を構成します。 この場合、クライアントは STS A を見つけるためにローカルポリシーを調べます。この構成は、"*ホーム領域のフェデレーション*" と呼ばれ、sts B は sts A に関する情報を保持する必要がないため、拡張性が向上します。  
+ STS B に接続したユーザーは、STS に関連付けられたポリシーから別のレベルの間接指定を受け取ります。 このユーザーは、STS B がセキュリティ トークンを発行する前に、STS A (クライアントの信頼レルム) の有効なセキュリティ トークンを提示しておく必要があります。 これは、2つの組織間で確立された信頼関係により、組織 B は組織 A のユーザーの id を管理する必要がないことを意味します。実際には、STS B には通常 null とが含ま `issuerAddress` `issuerMetadataAddress` れます。 詳細については、「[方法: ローカル発行者を構成](how-to-configure-a-local-issuer.md)する」を参照してください。 この場合、クライアントは STS A を見つけるためにローカルポリシーを調べます。この構成は、"*ホーム領域のフェデレーション*" と呼ばれ、sts B は sts A に関する情報を保持する必要がないため、拡張性が向上します。  
   
  ユーザーは、組織 A の STS に接続し、組織 A 内の他のリソースにアクセスする際に通常使用する認証資格情報を提示して、セキュリティ トークンを取得します。これにより、ユーザーが複数の資格情報セットを保持する必要があるという問題や、複数のサービス サイトで同じ資格情報セットを使用するという問題が、ある程度解決されます。  
   
  STS A からセキュリティ トークンを取得したユーザーは、このトークンを STS B に提示します。組織 B はユーザーの要求の承認手順を進め、独自のセキュリティ トークン セットからユーザーにセキュリティ トークンを発行します。 ユーザーは、このトークンを組織 B のリソースに提示し、サービスにアクセスします。  
   
 ## <a name="support-for-federated-security-in-wcf"></a>WCF におけるフェデレーション セキュリティのサポート  
- WCF では、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)を通じてフェデレーションセキュリティアーキテクチャをデプロイするためのターンキーをサポートしています。  
+ WCF では、を通じてフェデレーションセキュリティアーキテクチャをデプロイするためのターンキーをサポート [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) しています。  
   
- [ \<WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)要素は、セキュリティで保護され、信頼性が高く、相互運用可能なバインドを提供します。このバインディングでは、要求/応答通信スタイルの基になるトランスポート機構として HTTP が使用され、テキストと XML がエンコード用のワイヤ形式。  
+ 要素は、 [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) セキュリティで保護された信頼性の高い相互運用可能なバインディングを提供します。これにより、エンコードのワイヤ形式として、テキストと XML を使用した、要求/応答通信スタイルの基になるトランスポート機構として HTTP が使用されます。  
   
- フェデレーションセキュリティシナリオでの[ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)の使用は、次のセクションで説明するように、論理的に独立した2つのフェーズに分離することができます。  
+ [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md)フェデレーションセキュリティシナリオでを使用することは、次のセクションで説明するように、論理的に独立した2つのフェーズに分離できます。  
   
-### <a name="phase-1-design-phase"></a>フェーズ 1:設計フェーズ  
- 設計フェーズでは、クライアントは[ServiceModel メタデータユーティリティツール (svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、サービスエンドポイントが公開するポリシーを読み取り、サービスの認証と承認の要件を収集します。 次のフェデレーション セキュリティの通信パターンをクライアントで作成するために、適切なプロキシが構築されます。  
+### <a name="phase-1-design-phase"></a>第 1 フェーズ : 設計  
+ 設計フェーズでは、クライアントは[ServiceModel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して、サービスエンドポイントが公開するポリシーを読み取り、サービスの認証と承認の要件を収集します。 次のフェデレーション セキュリティの通信パターンをクライアントで作成するために、適切なプロキシが構築されます。  
   
 - クライアント信頼レルムにある STS からセキュリティ トークンを取得する。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "69948154"
   
 - サービスにトークンを提示してサービスにアクセスする。  
   
-### <a name="phase-2-run-time-phase"></a>フェーズ 2:実行時フェーズ  
+### <a name="phase-2-run-time-phase"></a>第 2 フェーズ : 実行時  
  実行時フェーズでは、クライアントは WCF クライアントクラスのオブジェクトをインスタンス化し、WCF クライアントを使用して呼び出しを行います。 WCF の基になるフレームワークは、フェデレーションセキュリティ通信パターンで前述の手順を処理し、クライアントがサービスをシームレスに使用できるようにします。  
   
 ## <a name="sample-implementation-using-wcf"></a>WCF を使用した実装のサンプル  
@@ -97,12 +97,12 @@ ms.locfileid: "69948154"
   
  ![MyServiceEndpoint の詳細を示す図。](./media/federation/myserviceendpoint-details.gif)  
   
- サービスエンドポイント`MyServiceEndpoint`は、 [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)を使用し、STS B によって発行された`accessAuthorized`クレームを持つ有効なセキュリティアサーションマークアップ言語 (SAML) トークンを必要とします。これは、サービス構成で宣言によって指定されます。  
+ サービスエンドポイントは、を使用し、 `MyServiceEndpoint` [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) `accessAuthorized` STS B によって発行されたクレームを持つ有効なセキュリティアサーションマークアップ言語 (SAML) トークンを必要とします。これは、サービス構成で宣言によって指定されます。  
   
 ```xml  
 <system.serviceModel>  
   <services>  
-    <service type="FederationSample.MyService"      
+    <service type="FederationSample.MyService"
         behaviorConfiguration='MyServiceBehavior'>  
         <endpoint address=""  
             binding=" wsFederationHttpBinding"  
@@ -120,7 +120,7 @@ ms.locfileid: "69948154"
            <message issuedTokenType=  
 "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1">  
            <issuer address="http://localhost/FederationSample/STS-B/STS.svc" />  
-            <issuerMetadata   
+            <issuerMetadata
            address=  
 "http://localhost/FederationSample/STS-B/STS.svc/mex" />  
          <requiredClaimTypes>  
@@ -134,7 +134,7 @@ ms.locfileid: "69948154"
   
   <behaviors>  
     <behavior name='MyServiceBehavior'>  
-      <serviceAuthorization   
+      <serviceAuthorization
 operationRequirementType="FederationSample.MyServiceOperationRequirement, MyService" />  
        <serviceCredentials>  
          <serviceCertificate findValue="CN=FederationSample.com"  
@@ -148,7 +148,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 ```  
   
 > [!NOTE]
-> `MyService` が要求するクレームについては、細かい点に注意が必要です。 2 番目の図は、`MyService` が `accessAuthorized` クレームを含む SAML トークンを要求していることを示しています。 より正確には、これで、`MyService` が必要とするクレームの種類が指定されます。 このクレームの種類の完全修飾名は、 `http://tempuri.org:accessAuthorized`サービス構成ファイルで使用される (関連する名前空間と共に) です。 このクレームの値は、このクレームが存在することが示しており、STS B によって `true` に設定されると想定されます。  
+> `MyService` が要求するクレームについては、細かい点に注意が必要です。 2 番目の図は、`MyService` が `accessAuthorized` クレームを含む SAML トークンを要求していることを示しています。 より正確には、これで、`MyService` が必要とするクレームの種類が指定されます。 このクレームの種類の完全修飾名は、 `http://tempuri.org:accessAuthorized` サービス構成ファイルで使用される (関連する名前空間と共に) です。 このクレームの値は、このクレームが存在することが示しており、STS B によって `true` に設定されると想定されます。  
   
  このポリシーは、`MyServiceOperationRequirement` の一部として実装されている `MyService` クラスによって実行時に適用されます。  
   
@@ -207,7 +207,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 ```  
   
 > [!NOTE]
-> ここで`userAuthenticated`も、要求は STS B で必要な要求の種類です。このクレームの種類の完全修飾名は、 `http://tempuri.org:userAuthenticated` STS 構成ファイルで使用される (関連する名前空間と共に) です。 このクレームの値は、このクレームが存在することを示しており、STS A によって `true` に設定されると想定されます。  
+> ここで `userAuthenticated` も、要求は STS B で必要な要求の種類です。このクレームの種類の完全修飾名は、 `http://tempuri.org:userAuthenticated` STS 構成ファイルで使用される (関連する名前空間と共に) です。 このクレームの値は、このクレームが存在することを示しており、STS A によって `true` に設定されると想定されます。  
   
  STS B の一部として実装されているこのポリシーは、`STS_B_OperationRequirement` クラスによって実行時に適用されます。  
   
@@ -222,9 +222,9 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
 #### <a name="sts-a"></a>STS A  
  STS A を次の図に示します。  
   
- ![フェデレーション](../../../../docs/framework/wcf/feature-details/media/sts-b.gif "STS_B")  
+ ![フェデレーション](media/sts-b.gif "STS_B")  
   
- STS B と同様に、STS A もセキュリティ トークンを発行する Web サービスであり、そのための単一のエンドポイントを公開します。 ただし、別のバインド (`wsHttpBinding`) を使用しており、ユーザーが`emailAddress`要求に有効な CardSpace を提示する必要があります。 応答で、STS A は `userAuthenticated` クレームを含む SAML トークンを発行します。 これは、サービス構成で宣言によって指定されます。  
+ STS B と同様に、STS A もセキュリティ トークンを発行する Web サービスであり、そのための単一のエンドポイントを公開します。 ただし、別のバインド () を使用 `wsHttpBinding` しており、ユーザーが要求に有効な CardSpace を提示する必要があり `emailAddress` ます。 応答で、STS A は `userAuthenticated` クレームを含む SAML トークンを発行します。 これは、サービス構成で宣言によって指定されます。  
   
 ```xml  
 <system.serviceModel>  
@@ -235,12 +235,12 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
                 bindingConfiguration="STS-A_Binding"  
                 contract="FederationSample.ISts">  
        <identity>  
-       <certificateReference findValue="CN=FederationSample.com"    
+       <certificateReference findValue="CN=FederationSample.com"
                        x509FindType="FindBySubjectDistinguishedName"  
-                       storeLocation="LocalMachine"   
+                       storeLocation="LocalMachine"
                        storeName="My" />  
        </identity>  
-    <endpoint>  
+    </endpoint>  
   </service>  
 </services>  
   
@@ -286,9 +286,9 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
   
  ![MyService サービス呼び出しの手順を示す図。](./media/federation/federation-myservice-service-call-process.gif)  
   
-## <a name="summary"></a>Summary  
+## <a name="summary"></a>まとめ  
  フェデレーション セキュリティを使用すると、役割を明確に分離できるため、安全で拡張性のあるサービス アーキテクチャを構築できます。 分散アプリケーションを構築および配置するためのプラットフォームとして、WCF はフェデレーションセキュリティを実装するためのネイティブサポートを提供します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [セキュリティ](../../../../docs/framework/wcf/feature-details/security.md)
+- [セキュリティ](security.md)

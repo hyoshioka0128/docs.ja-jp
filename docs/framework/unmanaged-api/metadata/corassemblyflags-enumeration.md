@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bb8db3b6-d81d-49fc-b74c-dbc908a9eab9
 topic_type:
 - apiref
-ms.openlocfilehash: fda890cee5f513ea8cf7e82e710f5451a860c49f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b1a83f07f03ddb17d5c306453cf838101a77ed65
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443912"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007937"
 ---
 # <a name="corassemblyflags-enumeration"></a>CorAssemblyFlags 列挙型
 アセンブリ コンパイルに適用されるメタデータを記述する値が格納されます。  
@@ -64,25 +64,25 @@ typedef enum CorAssemblyFlags {
 |`afPA_IA64`|プロセッサアーキテクチャが Itanium (PE32 +) であることを示します。|  
 |`afPA_AMD64`|プロセッサアーキテクチャが AMD X64 (PE32 +) であることを示します。|  
 |`afPA_ARM`|プロセッサアーキテクチャが ARM (PE32) であることを示します。|  
-|`afPA_NoPlatform`|アセンブリが参照アセンブリであることを示します。つまり、アーキテクチャには適用されますが、どのアーキテクチャでも実行することはできません。 したがって、フラグは `afPA_Mask`と同じです。|  
-|`afPA_Specified`|プロセッサのアーキテクチャフラグを `AssemblyRef` レコードに反映する必要があることを示します。|  
+|`afPA_NoPlatform`|アセンブリが参照アセンブリであることを示します。つまり、アーキテクチャには適用されますが、どのアーキテクチャでも実行することはできません。 したがって、フラグはと同じ `afPA_Mask` です。|  
+|`afPA_Specified`|プロセッサアーキテクチャフラグをレコードに反映する必要があることを示し `AssemblyRef` ます。|  
 |`afPA_Mask`|プロセッサアーキテクチャを記述するマスク。|  
 |`afPA_FullMask`|プロセッサアーキテクチャの説明を含めることを指定します。|  
 |`afPA_Shift`|プロセッサアーキテクチャフラグのインデックスとの間のシフト数を示します。|  
-|`afEnableJITcompileTracking`|<xref:System.Diagnostics.DebuggableAttribute>の <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> に対応する値を示します。|  
-|`afDisableJITcompileOptimizer`|<xref:System.Diagnostics.DebuggableAttribute>の <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> に対応する値を示します。|  
+|`afEnableJITcompileTracking`|のからの対応する値を示し <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> <xref:System.Diagnostics.DebuggableAttribute> ます。|  
+|`afDisableJITcompileOptimizer`|のからの対応する値を示し <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> <xref:System.Diagnostics.DebuggableAttribute> ます。|  
 |`afRetargetable`|アセンブリを実行時に別のパブリッシャーからのアセンブリに再ターゲットできることを示します。|  
 |`afContentType_Mask`|コンテンツの種類を説明するマスク。|  
 |`afContentType_Default`|既定のコンテンツタイプを示します。|  
 |`afContentType_WindowsRuntime`|Windows ランタイムコンテンツの種類を示します。|  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

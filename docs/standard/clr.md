@@ -1,5 +1,6 @@
 ---
 title: 共通言語ランタイム (CLR) の概要 - .NET Framework
+description: .NET のランタイム環境である共通言語ランタイム (CLR) の概要について説明します。 CLR ではコードを実行でき、また開発プロセスを容易にするサービスがあります。
 ms.date: 04/02/2019
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 ms.custom: updateeachrelease
-ms.openlocfilehash: 6f9ad8aafc37039b55ae3bf6eb743e07ad8e2235
-ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
+ms.openlocfilehash: ef455ac1c49c1f457d0fa432db91b5375c045840
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884411"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769211"
 ---
 # <a name="common-language-runtime-clr-overview"></a>共通言語ランタイム (CLR) の概要
 
@@ -58,7 +59,7 @@ ms.locfileid: "74884411"
 
 - ガベージ コレクション。
 
-- タイプ セーフとセキュリティを強化するために関数ポインターではなくデリゲートを使用。 デリゲートの詳細については、「[共通型システム](../../docs/standard/base-types/common-type-system.md)」を参照してください。
+- タイプ セーフとセキュリティを強化するために関数ポインターではなくデリゲートを使用。 デリゲートの詳細については、「[共通型システム](base-types/common-type-system.md)」を参照してください。
 
 ## <a name="clr-versions"></a>CLR のバージョン
 

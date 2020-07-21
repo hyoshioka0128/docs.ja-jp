@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d0d65060-6f90-42a2-95cf-6ffb04352996
 topic_type:
 - apiref
-ms.openlocfilehash: 9dbbdcc9d0fb9f0a8d2a64edfa4a0ad92570933c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 652ebf1be6a58e08da27aaed5b2e84a8f2aee98a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450010"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503771"
 ---
 # <a name="imetadataimportenumsignatures-method"></a>IMetaDataImport::EnumSignatures メソッド
 現在のスコープ内のスタンドアロン シグネチャを表す Signature トークンを列挙します。  
@@ -47,28 +47,28 @@ HRESULT EnumSignatures (
  [in] `rSignatures` 配列の最大サイズ。  
   
  `pcSignatures`  
- 入出力`rSignatures`で返された署名トークンの数。  
+ 入出力で返された署名トークンの数 `rSignatures` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumSignatures` が正常に返されました。|  
-|`S_FALSE`|列挙するトークンがありません。 この場合、`pcSignatures` は0になります。|  
+|`S_OK`|`EnumSignatures`正常に返されました。|  
+|`S_FALSE`|列挙するトークンがありません。 この場合、 `pcSignatures` は0になります。|  
   
-## <a name="remarks"></a>コメント  
- 署名トークンは、 [IMetaDataEmit:: GetTokenFromSig](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromsig-method.md)メソッドによって作成されます。  
+## <a name="remarks"></a>解説  
+ 署名トークンは、 [IMetaDataEmit:: GetTokenFromSig](imetadataemit-gettokenfromsig-method.md)メソッドによって作成されます。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

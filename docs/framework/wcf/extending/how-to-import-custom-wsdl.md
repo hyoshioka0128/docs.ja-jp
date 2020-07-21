@@ -2,12 +2,12 @@
 title: '方法 : カスタム WSDL をインポートする'
 ms.date: 03/30/2017
 ms.assetid: ddc3718d-ce60-44f6-92af-a5c67477dd99
-ms.openlocfilehash: 10fc3282560d35e61044a367f8172571096d76bd
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 614842f2d77d967e0a6d4841e5e5e4fcc8805580
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975886"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185548"
 ---
 # <a name="how-to-import-custom-wsdl"></a>方法 : カスタム WSDL をインポートする
 このトピックでは、カスタム WSDL をインポートする方法について説明します。 カスタム WSDL を処理するには、<xref:System.ServiceModel.Description.IWsdlImportExtension> インターフェイスを実装する必要があります。  
@@ -57,8 +57,8 @@ ms.locfileid: "73975886"
     ```xml  
     <system.serviceModel>  
           <client>  
-            <endpoint   
-              address="http://localhost:8000/Fibonacci"   
+            <endpoint
+              address="http://localhost:8000/Fibonacci"
               binding="wsHttpBinding"  
               contract="IFibonacci"  
             />  

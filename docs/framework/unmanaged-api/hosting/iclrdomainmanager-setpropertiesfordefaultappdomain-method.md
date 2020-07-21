@@ -13,12 +13,12 @@ helpviewer_keywords:
 - ICLRDomainManager::SetPropertiesForDefaultAppDomain method [.NET Framework hosting]
 - SetPropertiesForDefaultAppDomain method [.NET Framework hosting]
 ms.assetid: 43e61c4b-c435-45ec-9ef6-c68403aa4200
-ms.openlocfilehash: 37919be2d0ebd7d243615bc5845b0781ac13e574
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5e1c1b1984c63bedb3c073f45a7b9a3574afdcec
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129310"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615684"
 ---
 # <a name="iclrdomainmanagersetpropertiesfordefaultappdomain-method"></a>ICLRDomainManager::SetPropertiesForDefaultAppDomain メソッド
 既定のアプリケーションドメインを初期化するために使用されるプロパティを設定します。  
@@ -35,10 +35,10 @@ HRESULT SetPropertiesForDefaultAppDomain(
   
 ## <a name="parameters"></a>パラメーター  
  `nProperties`  
- から`pwszPropertyNames` と `pwszPropertyValues`内のエントリの数。  
+ からとのエントリの数 `pwszPropertyNames` `pwszPropertyValues` 。  
   
  `pwszPropertyNames`  
- からプロパティ名の配列。プロパティがない場合は null。 現時点では、このメソッドで認識される唯一のプロパティ名は "PARTIAL_TRUST_VISIBLE_ASSEMBLIES" です。  
+ からプロパティ名の配列。プロパティがない場合は null。 現時点では、このメソッドによって認識される唯一のプロパティ名は "PARTIAL_TRUST_VISIBLE_ASSEMBLIES" です。  
   
  `pwszPropertyValues`  
  からプロパティ値の配列。プロパティがない場合は null。  
@@ -49,21 +49,21 @@ HRESULT SetPropertiesForDefaultAppDomain(
 |HRESULT|説明|  
 |-------------|-----------------|  
 |S_OK|メソッドは正常に完了しました。|  
-|HRESULT_FROM_WIN32(ERROR_UNKNOWN_PROPERTY)|`pwszPropertyNames` には、このメソッドで認識されないプロパティ名が含まれています。|  
+|HRESULT_FROM_WIN32 (ERROR_UNKNOWN_PROPERTY)|`pwszPropertyNames`には、このメソッドで認識されないプロパティ名が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
- "PARTIAL_TRUST_VISIBLE_ASSEMBLIES" のプロパティ値は、<xref:System.Security.PartialTrustVisibilityLevel.NotVisibleByDefault?displayProperty=nameWithType> フラグが指定された条件付き <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) 属性を持つアセンブリのリストです。このフラグは、既定のアプリケーションドメインの部分的に信頼された呼び出し元に表示されます。  
+## <a name="remarks"></a>解説  
+ "PARTIAL_TRUST_VISIBLE_ASSEMBLIES" のプロパティ値は、条件付き (APTCA) 属性を持つアセンブリのリストです。このフラグは、 <xref:System.Security.AllowPartiallyTrustedCallersAttribute> <xref:System.Security.PartialTrustVisibilityLevel.NotVisibleByDefault?displayProperty=nameWithType> 既定のアプリケーションドメインの部分的に信頼された呼び出し元に対して表示されます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** メタホスト .h  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ホスティング](../../../../docs/framework/unmanaged-api/hosting/index.md)
-- [ICLRDomainManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-interface.md)
+- [ホスティング](index.md)
+- [ICLRDomainManager インターフェイス](iclrdomainmanager-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: スレッドの一時中断および中断
+description: .NET でスレッドを一時中断および中断する方法について説明します。 Thread.Sleep や Thread.Interrupt のようなメソッドや、ThreadInterruptedException などの例外を使用する方法について説明します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,16 +11,16 @@ helpviewer_keywords:
 - threading [.NET Framework], pausing
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
-ms.openlocfilehash: 3020694b93479d5f1d64d31c203f8fe033a10320
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f7f414ec716bac5f1e840c5e8a0946024e059fb6
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129002"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769120"
 ---
 # <a name="pausing-and-interrupting-threads"></a>スレッドの一時中断および中断
 
-スレッドの活動を同期する最も一般的な方法は、スレッドのブロックと解放を行うか、コード領域またはオブジェクトをロックすることです。 ロックとブロックのしくみの詳細については、「[同期プリミティブの概要](../../../docs/standard/threading/overview-of-synchronization-primitives.md)」を参照してください。  
+スレッドの活動を同期する最も一般的な方法は、スレッドのブロックと解放を行うか、コード領域またはオブジェクトをロックすることです。 ロックとブロックのしくみの詳細については、「[同期プリミティブの概要](overview-of-synchronization-primitives.md)」を参照してください。  
   
  また、スレッドそのものをスリープ状態にすることもできます。 スレッドがブロックされているかまたはスリープ状態の場合は、<xref:System.Threading.ThreadInterruptedException> を使用して待機状態を解除できます。  
   
@@ -45,13 +46,13 @@ ms.locfileid: "73129002"
   
 - <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> はスレッドをどのような待機からも起動し、これによって起動先のスレッドで <xref:System.Threading.ThreadInterruptedException> がスローされます。  
   
-- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> はスレッドをどのような待機からも起動し、これによってスレッドで <xref:System.Threading.ThreadAbortException> がスローされます。 詳細については、「[スレッドの破棄](../../../docs/standard/threading/destroying-threads.md)」を参照してください。  
+- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> はスレッドをどのような待機からも起動し、これによってスレッドで <xref:System.Threading.ThreadAbortException> がスローされます。 詳細については、「[スレッドの破棄](destroying-threads.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Threading.Thread>
 - <xref:System.Threading.ThreadInterruptedException>
 - <xref:System.Threading.ThreadAbortException>
-- [スレッド化](../../../docs/standard/threading/index.md)
-- [スレッドの使用とスレッド処理](../../../docs/standard/threading/using-threads-and-threading.md)
-- [同期プリミティブの概要](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
+- [スレッド化](index.md)
+- [スレッドの使用とスレッド処理](using-threads-and-threading.md)
+- [同期プリミティブの概要](overview-of-synchronization-primitives.md)

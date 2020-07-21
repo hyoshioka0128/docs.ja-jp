@@ -1,22 +1,20 @@
 ---
 title: .NET Framework 4.5 のインストール中のシステム再起動の削減
+description: .NET 4.5 のインストール中に行われるシステムの再起動を減らす方法について説明します。 .NET 4.5 のインストール中に .NET 4 のアプリが使用されている場合は、再起動が必要になることがあります。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, reducing system restarts
 - installing .NET Framework
 - installation [.NET Framework]
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e2b030508897f13cce1fc6439809b98bbae17813
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: HT
+ms.openlocfilehash: bfde0c2f7297c048ba70062918e2281afbccf391
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975670"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618208"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>.NET Framework 4.5 のインストール中のシステム再起動の削減
-.NET Framework 4.5 インストーラーは[再起動マネージャー](/windows/win32/rstmgr/about-restart-manager)を使用して、インストール中のシステムの再起動を可能な限り回避します。 アプリケーションのセットアップ プログラムで .NET Framework をインストールする場合は、再起動マネージャーとやり取りしてこの機能を利用できます。 詳細については、[.NET Framework 4.5 インストーラーの進行状況を表示する](how-to-get-progress-from-the-dotnet-installer.md)」を参照してください。  
+.NET Framework 4.5 インストーラーは[再起動マネージャー](/windows/win32/rstmgr/about-restart-manager)を使用して、インストール中のシステムの再起動を可能な限り回避します。 アプリケーションのセットアップ プログラムで .NET Framework をインストールする場合は、再起動マネージャーとやり取りしてこの機能を利用できます。 詳細については、「[方法:.NET Framework 4.5 インストーラーの進行状況を表示する](how-to-get-progress-from-the-dotnet-installer.md)」を参照してください。  
   
 ## <a name="reasons-for-a-restart"></a>再起動の理由  
  .NET Framework 4.5 のインストールでは、.NET Framework 4 アプリケーションがインストール中に使用されている場合は、システムの再起動が必要になります。 これは、.NET Framework 4.5 によって .NET Framework 4 のファイルが置き換えられ、インストール中にこれらのファイルが使用可能になっていることが必要とされるためです。 多くの場合、再起動は使用中の .NET Framework 4 アプリケーションをプリエンティブに検出し、終了することで回避できます。 ただし、一部のシステム アプリケーションは終了しないでください。 このような場合、再起動は回避できません。  

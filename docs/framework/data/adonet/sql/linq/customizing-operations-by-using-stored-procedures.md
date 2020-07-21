@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: aedbecc1-c33c-4fb4-8861-fdf7e1dc6b8a
 ms.openlocfilehash: 63f4cb3cbb90afc37629b336972b5e09d20346b3
 ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/04/2019
 ms.locfileid: "70247531"
@@ -15,10 +15,10 @@ ms.locfileid: "70247531"
 # <a name="customizing-operations-by-using-stored-procedures"></a>ストアド プロシージャによる操作のカスタマイズ
 ストアド プロシージャは、既定の動作をオーバーライドする方法として一般的に使用されます。 このトピックでは、ストアド プロシージャ用に生成されたメソッド ラッパーを使用する方法、およびストアド プロシージャを直接呼び出す方法の例を示します。  
   
- Visual Studio を使用している場合は、オブジェクトリレーショナルデザイナーを使用して、挿入、更新、および削除を実行するストアドプロシージャを割り当てることができます。  
+ Visual Studio を使用している場合、オブジェクト リレーショナル デザイナーを使用して、挿入、更新、および削除を実行するストアド プロシージャを割り当てることができます。  
   
 > [!NOTE]
-> データベースによって生成された値を読み取るには、ストアド プロシージャの出力パラメーターを使用します。 出力パラメーターを使用できない場合は、オブジェクトリレーショナルデザイナーによって生成されるオーバーライドに依存するのではなく、部分メソッドの実装を記述します。 データベースによって生成される値に割り当てられているメンバーは、`INSERT` 操作または `UPDATE` 操作が正常に完了した後で、適切な値に設定する必要があります。 詳細については、「[既定の動作をオーバーライドするときの開発者の責任](responsibilities-of-the-developer-in-overriding-default-behavior.md)」を参照してください。  
+> データベースによって生成された値を読み取るには、ストアド プロシージャの出力パラメーターを使用します。 出力パラメーターを使用できない場合は、オブジェクト リレーショナル デザイナーによって生成されたオーバーライドを利用するのではなく、部分メソッドを実装します。 データベースによって生成される値に割り当てられているメンバーは、`INSERT` 操作または `UPDATE` 操作が正常に完了した後で、適切な値に設定する必要があります。 詳細については、「[既定の動作をオーバーライドするときの開発者の責任](responsibilities-of-the-developer-in-overriding-default-behavior.md)」を参照してください。  
   
 ## <a name="example"></a>例  
   

@@ -1,6 +1,7 @@
 ---
-title: '方法: キー コンテナーに非対称キーを格納する'
-ms.date: 03/30/2017
+title: '方法: キーコンテナーに非対称キーを格納する'
+description: .NET のキーコンテナーに非対称キーを格納する方法について説明します。 非対称キーを作成し、キーコンテナーに保存し、キーを取得して削除する方法について説明します。
+ms.date: 05/26/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -15,217 +16,235 @@ helpviewer_keywords:
 - encryption [.NET Framework], asymmetric keys
 - decryption keys
 ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8edb88d13732650e00292d63ad4e1975a97ac704
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: a0fbde37491043cc1aab71e9733087bf410b997d
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291632"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769030"
 ---
-# <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>方法: キー コンテナーに非対称キーを格納する
-非対称秘密キーは、ローカル コンピューターにそのまま平文として保存しないでください。 秘密キーを格納する必要がある場合は、キー コンテナーを使用することをお勧めします。 キー コンテナーの詳細については、「[コンピューター レベルおよびユーザー レベルの RSA キー コンテナーについて](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100))」を参照してください。  
-  
-### <a name="to-create-an-asymmetric-key-and-save-it-in-a-key-container"></a>非対称キーを作成し、キー コンテナーに格納するには  
-  
-1. @No__t-0 クラスの新しいインスタンスを作成し、キーコンテナーを呼び出す名前を <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> フィールドに渡します。  
-  
-2. @No__t 0 クラス (通常は**RSACryptoServiceProvider**または**DSACryptoServiceProvider**) から派生したクラスの新しいインスタンスを作成し、以前に作成した**cspparameters**オブジェクトをそのコンストラクターに渡します。  
-  
-### <a name="to-delete-the-key-from-a-key-container"></a>キー コンテナーからキーを削除するには  
-  
-1. **CspParameters** クラスの新しいインスタンスを作成し、キー コンテナーを呼び出すときに使用する名前を **CspParameters.KeyContainerName** フィールドに渡します。  
-  
-2. **AsymmetricAlgorithm** クラスから派生したクラス (通常は **RSACryptoServiceProvider** または **DSACryptoServiceProvider**) の新しいインスタンスを作成し、前に作成した **CspParameters** オブジェクトをそのコンストラクターに渡します。  
-  
-3. **AsymmetricAlgorithm** から派生したクラスの **PersistKeyInCSP** プロパティを **false** (Visual Basic では **False**) に設定します。  
-  
-4. **AsymmetricAlgorithm** から派生したクラスの **Clear** メソッドを呼び出します。 このメソッドは、クラスのすべてのリソースを解放し、キー コンテナーを消去します。  
-  
-## <a name="example"></a>例  
- 非対称キーを作成し、それをキー コンテナーへ格納し、後でキーを取得し、最後にキー コンテナーからキーを削除する方法の例を次に示します。  
-  
- `GenKey_SaveInContainer` メソッドと `GetKeyFromContainer` メソッドのコードは類似していることに注意してください。  <xref:System.Security.Cryptography.CspParameters> オブジェクトのキー コンテナー名を指定した場合、<xref:System.Security.Cryptography.AsymmetricAlgorithm> プロパティまたは <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> プロパティを true に設定して、指定したキー コンテナーを <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> オブジェクトに渡すと、次のような処理が行われます。  指定した名前のキー コンテナーが存在しない場合、コンテナーが作成されてキーが保持されます。  指定した名前のキー コンテナーが存在する場合、そのコンテナー内のキーが現在の <xref:System.Security.Cryptography.AsymmetricAlgorithm> オブジェクトに自動的に読み込まれます。  つまり、最初に実行される `GenKey_SaveInContainer` メソッドのコードはこのキーを保持し、2 番目に実行される `GetKeyFromContainer` メソッドのコードはこのキーを読み込みます。  
-  
-```vb  
-Imports System  
-Imports System.IO  
-Imports System.Security.Cryptography  
- _  
-  
-Public Class StoreKey  
-  
-    Public Shared Sub Main()  
-        Try  
-            ' Create a key and save it in a container.  
-            GenKey_SaveInContainer("MyKeyContainer")  
-  
-            ' Retrieve the key from the container.  
-            GetKeyFromContainer("MyKeyContainer")  
-  
-            ' Delete the key from the container.  
-            DeleteKeyFromContainer("MyKeyContainer")  
-  
-            ' Create a key and save it in a container.  
-            GenKey_SaveInContainer("MyKeyContainer")  
-  
-            ' Delete the key from the container.  
-            DeleteKeyFromContainer("MyKeyContainer")  
-        Catch e As CryptographicException  
-            Console.WriteLine(e.Message)  
-        End Try  
-    End Sub  
-  
-    Public Shared Sub GenKey_SaveInContainer(ByVal ContainerName As String)  
-        ' Create the CspParameters object and set the key container   
-        ' name used to store the RSA key pair.  
-        Dim cp As New CspParameters()  
-        cp.KeyContainerName = ContainerName  
-  
-        ' Create a new instance of RSACryptoServiceProvider that accesses  
-        ' the key container MyKeyContainerName.  
-        Dim rsa As New RSACryptoServiceProvider(cp)  
-  
-        ' Display the key information to the console.  
-        Console.WriteLine("Key added to container:  {0}", rsa.ToXmlString(True))  
-    End Sub  
-  
-    Public Shared Sub GetKeyFromContainer(ByVal ContainerName As String)  
-        ' Create the CspParameters object and set the key container   
-        '  name used to store the RSA key pair.  
-        Dim cp As New CspParameters()  
-        cp.KeyContainerName = ContainerName  
-  
-        ' Create a new instance of RSACryptoServiceProvider that accesses  
-        ' the key container MyKeyContainerName.  
-        Dim rsa As New RSACryptoServiceProvider(cp)  
-  
-        ' Display the key information to the console.  
-        Console.WriteLine("Key retrieved from container : {0}", rsa.ToXmlString(True))  
-    End Sub  
-  
-    Public Shared Sub DeleteKeyFromContainer(ByVal ContainerName As String)  
-        ' Create the CspParameters object and set the key container   
-        '  name used to store the RSA key pair.  
-        Dim cp As New CspParameters()  
-        cp.KeyContainerName = ContainerName  
-  
-        ' Create a new instance of RSACryptoServiceProvider that accesses  
-        ' the key container.  
-        Dim rsa As New RSACryptoServiceProvider(cp)  
-  
-        ' Delete the key entry in the container.  
-        rsa.PersistKeyInCsp = False  
-  
-        ' Call Clear to release resources and delete the key from the container.  
-        rsa.Clear()  
-  
-        Console.WriteLine("Key deleted.")  
-    End Sub  
-End Class  
-```  
-  
-```csharp  
-using System;  
-using System.IO;  
-using System.Security.Cryptography;  
-  
-public class StoreKey  
-  
-{  
-    public static void Main()  
-    {  
-        try  
-        {  
-            // Create a key and save it in a container.  
-            GenKey_SaveInContainer("MyKeyContainer");  
-  
-            // Retrieve the key from the container.  
-            GetKeyFromContainer("MyKeyContainer");  
-  
-            // Delete the key from the container.  
-            DeleteKeyFromContainer("MyKeyContainer");  
-  
-            // Create a key and save it in a container.  
-            GenKey_SaveInContainer("MyKeyContainer");  
-  
-            // Delete the key from the container.  
-            DeleteKeyFromContainer("MyKeyContainer");  
-        }  
-        catch(CryptographicException e)  
-        {  
-            Console.WriteLine(e.Message);  
-        }  
-  
-    }  
-  
-    public static void GenKey_SaveInContainer(string ContainerName)  
-    {  
-        // Create the CspParameters object and set the key container   
-        // name used to store the RSA key pair.  
-        CspParameters cp = new CspParameters();  
-        cp.KeyContainerName = ContainerName;  
-  
-        // Create a new instance of RSACryptoServiceProvider that accesses  
-        // the key container MyKeyContainerName.  
-        RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(cp);  
-  
-        // Display the key information to the console.  
-        Console.WriteLine("Key added to container: \n  {0}", rsa.ToXmlString(true));  
-    }  
-  
-    public static void GetKeyFromContainer(string ContainerName)  
-    {  
-        // Create the CspParameters object and set the key container   
-        // name used to store the RSA key pair.  
-        CspParameters cp = new CspParameters();  
-        cp.KeyContainerName = ContainerName;  
-  
-        // Create a new instance of RSACryptoServiceProvider that accesses  
-        // the key container MyKeyContainerName.  
-        RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(cp);  
-  
-        // Display the key information to the console.  
-        Console.WriteLine("Key retrieved from container : \n {0}", rsa.ToXmlString(true));  
-    }  
-  
-    public static void DeleteKeyFromContainer(string ContainerName)  
-    {  
-        // Create the CspParameters object and set the key container   
-        // name used to store the RSA key pair.  
-        CspParameters cp = new CspParameters();  
-        cp.KeyContainerName = ContainerName;  
-  
-        // Create a new instance of RSACryptoServiceProvider that accesses  
-        // the key container.  
-        RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(cp);  
-  
-        // Delete the key entry in the container.  
-        rsa.PersistKeyInCsp = false;  
-  
-        // Call Clear to release resources and delete the key from the container.  
-        rsa.Clear();  
-  
-        Console.WriteLine("Key deleted.");  
-    }  
-}  
-```  
-  
-```console  
-Key added to container:  
-<RSAKeyValue> Key Information A</RSAKeyValue>  
-Key retrieved from container :  
-<RSAKeyValue> Key Information A</RSAKeyValue>  
-Key deleted.  
-Key added to container:  
-<RSAKeyValue> Key Information B</RSAKeyValue>  
-Key deleted.  
-```  
-  
+# <a name="store-asymmetric-keys-in-a-key-container"></a>キーコンテナーに非対称キーを格納する
+
+非対称秘密キーは、ローカル コンピューターにそのまま平文として保存しないでください。 秘密キーを保存する必要がある場合は、キーコンテナーを使用します。 キーコンテナーの詳細については、「[コンピューターレベルおよびユーザーレベルの RSA キーコンテナー](https://docs.microsoft.com/previous-versions/aspnet/f5cs0acs(v=vs.100))について」を参照してください。
+
+## <a name="create-an-asymmetric-key-and-save-it-in-a-key-container"></a>非対称キーを作成してキーコンテナーに保存する
+
+1. クラスの新しいインスタンスを作成 <xref:System.Security.Cryptography.CspParameters> し、キーコンテナーを呼び出す名前をフィールドに渡し <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> ます。
+
+1. クラス (通常はまたは) から派生したクラスの新しいインスタンスを作成 <xref:System.Security.Cryptography.AsymmetricAlgorithm> <xref:System.Security.Cryptography.RSACryptoServiceProvider> し、 <xref:System.Security.Cryptography.DSACryptoServiceProvider> 以前に作成したオブジェクトを `CspParameters` そのコンストラクターに渡します。
+
+> [!NOTE]
+> 非対称キーの作成と取得は1つの操作です。 キーがコンテナーにまだ存在しない場合は、返される前に作成されます。
+>
+> - <xref:System.Security.Cryptography.RSA.ToXmlString%2A?displayProperty=nameWithType>
+> - <xref:System.Security.Cryptography.DSA.ToXmlString%2A?displayProperty=nameWithType>
+
+## <a name="delete-the-key-from-the-key-container"></a>キーコンテナーからキーを削除します。
+
+1. クラスの新しいインスタンスを作成 `CspParameters` し、キーコンテナーを呼び出す名前をフィールドに渡し <xref:System.Security.Cryptography.CspParameters.KeyContainerName?displayProperty=nameWithType> ます。
+
+1. クラス (通常はまたは) から派生したクラスの新しいインスタンスを作成 <xref:System.Security.Cryptography.AsymmetricAlgorithm> `RSACryptoServiceProvider` し、 `DSACryptoServiceProvider` 以前に作成したオブジェクトを `CspParameters` そのコンストラクターに渡します。
+
+1. <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp?displayProperty=nameWithType> <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp?displayProperty=nameWithType> から派生するクラスのまたはのプロパティ `AsymmetricAlgorithm` を `false` (Visual Basic) に設定し `False` ます。
+
+1. `Clear`から派生したクラスのメソッドを呼び出し `AsymmetricAlgorithm` ます。 このメソッドは、クラスのすべてのリソースを解放し、キー コンテナーを消去します。 
+
+## <a name="example"></a>例
+
+非対称キーを作成し、それをキー コンテナーへ格納し、後でキーを取得し、最後にキー コンテナーからキーを削除する方法の例を次に示します。
+
+`GenKey_SaveInContainer` メソッドと `GetKeyFromContainer` メソッドのコードは類似していることに注意してください。 オブジェクトのキーコンテナー名を指定し、 <xref:System.Security.Cryptography.CspParameters> <xref:System.Security.Cryptography.AsymmetricAlgorithm> <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp%2A> プロパティまたはプロパティがに設定されたオブジェクトに渡すと <xref:System.Security.Cryptography.DSACryptoServiceProvider.PersistKeyInCsp%2A> `true` 、の動作は次のようになります。
+
+- 指定した名前のキー コンテナーが存在しない場合、コンテナーが作成されてキーが保持されます。
+- 指定した名前のキー コンテナーが存在する場合、そのコンテナー内のキーが現在の <xref:System.Security.Cryptography.AsymmetricAlgorithm> オブジェクトに自動的に読み込まれます。
+
+このため、メソッドのコードは `GenKey_SaveInContainer` 最初に実行されるので、キーを永続化します。一方、メソッドのコードは、 `GetKeyFromContainer` 2 番目に実行されるため、キーを読み込みます。
+
+```vb
+Imports System
+Imports System.Security.Cryptography
+
+Public Class StoreKey
+
+    Public Shared Sub Main()
+        Try
+            ' Create a key and save it in a container.
+            GenKey_SaveInContainer("MyKeyContainer")
+
+            ' Retrieve the key from the container.
+            GetKeyFromContainer("MyKeyContainer")
+
+            ' Delete the key from the container.
+            DeleteKeyFromContainer("MyKeyContainer")
+
+            ' Create a key and save it in a container.
+            GenKey_SaveInContainer("MyKeyContainer")
+
+            ' Delete the key from the container.
+            DeleteKeyFromContainer("MyKeyContainer")
+        Catch e As CryptographicException
+            Console.WriteLine(e.Message)
+        End Try
+    End Sub
+
+    Private Shared Sub GenKey_SaveInContainer(ByVal ContainerName As String)
+        ' Create the CspParameters object and set the key container
+        ' name used to store the RSA key pair.
+        Dim parameters As New CspParameters With {
+            .KeyContainerName = ContainerName
+        }
+
+        ' Create a new instance of RSACryptoServiceProvider that accesses
+        ' the key container MyKeyContainerName.
+        Using rsa As New RSACryptoServiceProvider(parameters)
+            ' Display the key information to the console.
+            Console.WriteLine($"Key added to container:  {rsa.ToXmlString(True)}")
+        End Using
+    End Sub
+
+    Private Shared Sub GetKeyFromContainer(ByVal ContainerName As String)
+        ' Create the CspParameters object and set the key container
+        '  name used to store the RSA key pair.
+        Dim parameters As New CspParameters With {
+            .KeyContainerName = ContainerName
+        }
+
+        ' Create a new instance of RSACryptoServiceProvider that accesses
+        ' the key container MyKeyContainerName.
+        Using rsa As New RSACryptoServiceProvider(parameters)
+            ' Display the key information to the console.
+            Console.WriteLine($"Key retrieved from container : {rsa.ToXmlString(True)}")
+        End Using
+    End Sub
+
+    Private Shared Sub DeleteKeyFromContainer(ByVal ContainerName As String)
+        ' Create the CspParameters object and set the key container
+        '  name used to store the RSA key pair.
+        Dim parameters As New CspParameters With {
+            .KeyContainerName = ContainerName
+        }
+
+        ' Create a new instance of RSACryptoServiceProvider that accesses
+        ' the key container.
+        ' Delete the key entry in the container.
+        Dim rsa As New RSACryptoServiceProvider(parameters) With {
+            .PersistKeyInCsp = False
+        }
+
+        ' Call Clear to release resources and delete the key from the container.
+        rsa.Clear()
+
+        Console.WriteLine("Key deleted.")
+    End Sub
+End Class
+```
+
+```csharp
+using System;
+using System.Security.Cryptography;
+
+public class StoreKey
+{
+    public static void Main()
+    {
+        try
+        {
+            // Create a key and save it in a container.
+            GenKey_SaveInContainer("MyKeyContainer");
+
+            // Retrieve the key from the container.
+            GetKeyFromContainer("MyKeyContainer");
+
+            // Delete the key from the container.
+            DeleteKeyFromContainer("MyKeyContainer");
+
+            // Create a key and save it in a container.
+            GenKey_SaveInContainer("MyKeyContainer");
+
+            // Delete the key from the container.
+            DeleteKeyFromContainer("MyKeyContainer");
+        }
+        catch (CryptographicException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    private static void GenKey_SaveInContainer(string containerName)
+    {
+        // Create the CspParameters object and set the key container
+        // name used to store the RSA key pair.
+        var parameters = new CspParameters
+        {
+            KeyContainerName = containerName
+        };
+
+        // Create a new instance of RSACryptoServiceProvider that accesses
+        // the key container MyKeyContainerName.
+        using var rsa = new RSACryptoServiceProvider(parameters);
+
+        // Display the key information to the console.
+        Console.WriteLine($"Key added to container: \n  {rsa.ToXmlString(true)}");
+    }
+
+    private static void GetKeyFromContainer(string containerName)
+    {
+        // Create the CspParameters object and set the key container
+        // name used to store the RSA key pair.
+        var parameters = new CspParameters
+        {
+            KeyContainerName = containerName
+        };
+
+        // Create a new instance of RSACryptoServiceProvider that accesses
+        // the key container MyKeyContainerName.
+        using var rsa = new RSACryptoServiceProvider(parameters);
+
+        // Display the key information to the console.
+        Console.WriteLine($"Key retrieved from container : \n {rsa.ToXmlString(true)}");
+    }
+
+    private static void DeleteKeyFromContainer(string containerName)
+    {
+        // Create the CspParameters object and set the key container
+        // name used to store the RSA key pair.
+        var parameters = new CspParameters
+        {
+            KeyContainerName = containerName
+        };
+
+        // Create a new instance of RSACryptoServiceProvider that accesses
+        // the key container.
+        using var rsa = new RSACryptoServiceProvider(parameters)
+        {
+            // Delete the key entry in the container.
+            PersistKeyInCsp = false
+        };
+
+        // Call Clear to release resources and delete the key from the container.
+        rsa.Clear();
+
+        Console.WriteLine("Key deleted.");
+    }
+}
+```
+
+出力は次のようになります。
+
+```console
+Key added to container:
+<RSAKeyValue> Key Information A</RSAKeyValue>
+Key retrieved from container :
+<RSAKeyValue> Key Information A</RSAKeyValue>
+Key deleted.
+Key added to container:
+<RSAKeyValue> Key Information B</RSAKeyValue>
+Key deleted.
+```
+
 ## <a name="see-also"></a>関連項目
 
-- [暗号化と復号化のためのキーの生成](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
-- [データの暗号化](../../../docs/standard/security/encrypting-data.md)
-- [データの復号化](../../../docs/standard/security/decrypting-data.md)
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [暗号化と復号化のためのキーの生成](generating-keys-for-encryption-and-decryption.md)
+- [データの暗号化](encrypting-data.md)
+- [データの復号化](decrypting-data.md)
+- [暗号化サービス](cryptographic-services.md)

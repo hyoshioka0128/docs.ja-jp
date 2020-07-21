@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 48adc154-9058-4fef-9c43-e9aad80e4dbf
 topic_type:
 - apiref
-ms.openlocfilehash: 92e07d2f59a1f2fa063b81282aa0f014f373cd04
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b348f29884eb7d359c5dd6df27af49cd748477c1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73196363"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79178964"
 ---
 # <a name="icordebugassemblygetcodebase-method"></a>ICorDebugAssembly::GetCodeBase メソッド
-このメソッドは、.NET Framework の現在のバージョンでは実装されていません。  
+このメソッドは、現在のバージョンの .NET Framework には実装されていません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -31,7 +31,7 @@ ms.locfileid: "73196363"
 HRESULT GetCodeBase (  
     [in] ULONG32  cchName,  
     [out] ULONG32 *pcchName,  
-    [out, size_is(cchName), length_is(*pcchName)]   
+    [out, size_is(cchName), length_is(*pcchName)]
         WCHAR szName[]  
 );  
 ```

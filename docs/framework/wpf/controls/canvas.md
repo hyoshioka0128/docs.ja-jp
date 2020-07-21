@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: fdb390e9-1bba-4b5f-87fe-c3bc246fa7e9
 ms.openlocfilehash: 7b3e1c942308aa90887b6370ed402a1a87364415
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62052197"
 ---
 # <a name="canvas"></a>Canvas
-<xref:System.Windows.Controls.Canvas> レイアウト コントロールの子要素の絶対位置を設定できますです。  
+<xref:System.Windows.Controls.Canvas> は、子要素の絶対配置を可能にするレイアウト コントロールです。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法トピック](canvas-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

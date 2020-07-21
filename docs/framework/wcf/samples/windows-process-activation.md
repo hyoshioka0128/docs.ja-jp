@@ -2,22 +2,22 @@
 title: Windows プロセス アクティブ化
 ms.date: 03/30/2017
 ms.assetid: 37b79642-1e6f-44b3-9777-98af57443bfa
-ms.openlocfilehash: bcac3a9860dd03ed048bc27969fa1e1f070e788a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c24ef6098be447c957a58a4b7f8440c78dcdca73
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949930"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602298"
 ---
 # <a name="windows-process-activation"></a>Windows プロセス アクティブ化
 このセクションには、ネットワーク プロトコルを使用したサービスのアクティブ化について説明するサンプルが含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [NamedPipe アクティベーション](../../../../docs/framework/wcf/samples/namedpipe-activation.md)  
+ [NamedPipe アクティベーション](namedpipe-activation.md)  
  名前付きパイプを介して通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス (WAS: Windows Process Activation Service) を使用してサービスをホストする方法を示します。  
   
- [TCP アクティベーション](../../../../docs/framework/wcf/samples/tcp-activation.md)  
+ [TCP アクティベーション](tcp-activation.md)  
  net.tcp プロトコルで通信するサービスをアクティブ化するために、Windows プロセス アクティブ化サービス (WAS) を使用してサービスをホストする方法を示します。
 
- [MSMQ アクティベーション](../../../../docs/framework/wcf/samples/msmq-activation.md)  
- Net.msmq プロトコルを介して通信するサービスをアクティブ化する Windows プロセス アクティブ化サービス (WAS) を使用するサービスをホストする方法を示します。
+ [MSMQ アクティベーション](msmq-activation.md)  
+ Windows プロセスアクティブ化サービス (WAS) を使用して、net.tcp プロトコルで通信するサービスをアクティブ化するサービスをホストする方法を示します。

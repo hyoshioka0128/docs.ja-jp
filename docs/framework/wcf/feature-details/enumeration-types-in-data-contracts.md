@@ -1,5 +1,6 @@
 ---
 title: データ コントラクトの列挙型
+description: データコントラクトモデルが、WFC プログラミングモデルの一部として列挙を表現する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-ms.openlocfilehash: f8d399859e4f861158ab74db9ed410aec280dbe2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: ff3184a285e88d47d4545a38a6c74b2f209827fb
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586678"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247300"
 ---
 # <a name="enumeration-types-in-data-contracts"></a>データ コントラクトの列挙型
 列挙はデータ コントラクト モデルで表現できます。 このトピックでは、いくつかの例を通してプログラミング モデルを説明します。  
@@ -30,7 +31,7 @@ ms.locfileid: "65586678"
  <xref:System.Runtime.Serialization.DataContractAttribute> プロパティ (<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> と <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>) を、列挙データ コントラクトとして通常通り使用できます。  
   
 ### <a name="enumeration-member-values"></a>列挙メンバー値  
- 通常、データ コントラクトには、数値ではなく列挙メンバー名が含まれます。 ただし、受信側が WCF クライアントの場合は、データ コントラクト モデルを使用している場合、エクスポートされたスキーマには、数値が保持されます。 ない場合を使用する場合に注意してください、 [XmlSerializer クラスを使用して](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)します。  
+ 通常、データ コントラクトには、数値ではなく列挙メンバー名が含まれます。 ただし、データコントラクトモデルを使用する場合、受信側が WCF クライアントの場合、エクスポートされたスキーマは数値を保持します。 [XmlSerializer クラスを使用](using-the-xmlserializer-class.md)してを使用する場合は、この方法ではないことに注意してください。  
   
  前の例では、`condition` が `Used` に設定され、データが XML にシリアル化されると、結果の XML は `<condition>Used</condition>` になりますが `<condition>1</condition>` にはなりません。 したがって、次のデータ コントラクトは、`CarConditionEnum` のデータ コントラクトと同じです。  
   
@@ -39,7 +40,7 @@ ms.locfileid: "65586678"
   
  たとえば、`CarConditionEnum` を送信側で使用し、`CarConditionWithNumbers` を受信側で使用できます。 送信側で `Used` に値 "1" を使用し、受信側で値 "20" を使用しても、XML 表現は送信側と受信側共に `<condition>Used</condition>` です。  
   
- データ コントラクトに含めるには、<xref:System.Runtime.Serialization.EnumMemberAttribute> 属性を適用する必要があります。 .NET framework では、常に特別な値が 0 (ゼロ) も任意の列挙体の既定値は、列挙型に適用できます。 ただし、この特殊値ゼロも <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性を使用してマークされない限りシリアル化できません。  
+ データ コントラクトに含めるには、<xref:System.Runtime.Serialization.EnumMemberAttribute> 属性を適用する必要があります。 .NET Framework では、常に特別な値 0 (ゼロ) を列挙型に適用できます。これは、列挙体の既定値でもあります。 ただし、この特殊値ゼロも <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性を使用してマークされない限りシリアル化できません。  
   
  これには、次のような 2 つの例外があります。  
   
@@ -81,7 +82,7 @@ ms.locfileid: "65586678"
   
 1. 数値にマップする列挙メンバー (<xref:System.Runtime.Serialization.EnumMemberAttribute> 属性が適用されている) の検索を試みます。 見つかった場合、そのメンバーのみを含むリストを送信します。  
   
-2. 合計の各部にマップされる列挙メンバー (それぞれに <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性が適用されている) が存在するような形で、数値をこの合計に分割します。 このメンバーすべてのリストを送信します。 なお、*最長一致アルゴリズム*、このような合計を検索するために使用し、したがってが存在する場合でも、このような合計が検出される保証はありません。 この問題を回避するには、列挙メンバーの数値を必ず 2 の累乗数にします。  
+2. 合計の各部にマップされる列挙メンバー (それぞれに <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性が適用されている) が存在するような形で、数値をこの合計に分割します。 このメンバーすべてのリストを送信します。 このような合計を見つけるために*最長一致アルゴリズム*が使用されるため、このような合計が存在する場合でも、そのような合計が検出されるという保証はありません。 この問題を回避するには、列挙メンバーの数値を必ず 2 の累乗数にします。  
   
 3. 前の 2 つの手順が失敗し、数値がゼロ以外の場合、<xref:System.Runtime.Serialization.SerializationException> をスローします。 数値がゼロの場合、空のリストを送信します。  
   
@@ -99,5 +100,5 @@ ms.locfileid: "65586678"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
-- [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [サービス コントラクトでのデータ転送の指定](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+- [データ コントラクトの使用](using-data-contracts.md)
+- [サービス コントラクトでのデータ転送の指定](specifying-data-transfer-in-service-contracts.md)

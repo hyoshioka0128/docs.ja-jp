@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d079131b-685b-4869-95be-826b88d28bd2
 topic_type:
 - apiref
-ms.openlocfilehash: 88a007654646ba42ebcaf1b42e002282a1040c7f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a197d260c55d24f906da7d7f2768bb7ba1ad751f
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134064"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895347"
 ---
 # <a name="icordebugsetmanagedhandler-method"></a>ICorDebug::SetManagedHandler メソッド
 マネージイベントのイベントハンドラーオブジェクトを指定します。  
@@ -35,22 +35,22 @@ HRESULT SetManagedHandler (
   
 ## <a name="parameters"></a>パラメーター  
  `pCallback`  
- からイベントハンドラーオブジェクトである、ツール[コールバック](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)オブジェクトへのポインター。  
+ からイベントハンドラーオブジェクトである、ツール[コールバック](icordebugmanagedcallback-interface.md)オブジェクトへのポインター。  
   
-## <a name="remarks"></a>Remarks  
- `SetManagedHandler` は、作成時に呼び出す必要があります。  
+## <a name="remarks"></a>解説  
+ `SetManagedHandler`作成時にを呼び出す必要があります。  
   
- `ICorDebugManagedCallback` の実装に、デバッグ中のアプリケーションのデバッグイベントを処理するための十分なインターフェイスが含まれていない場合、`SetManagedHandler` は E_NOINTERFACE の HRESULT を返します。  
+ の`ICorDebugManagedCallback`実装に、デバッグ対象のアプリケーションのデバッグイベントを処理するための十分なインターフェイスが`SetManagedHandler`含まれていない場合は、E_NOINTERFACE の HRESULT が返されます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebug インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug インターフェイス](icordebug-interface.md)

@@ -2,15 +2,15 @@
 title: '方法: 探索プロキシで登録される探索可能なサービスの実装する'
 ms.date: 03/30/2017
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-ms.openlocfilehash: 053ace300610cd4129c4541f4e2658ac8d09da85
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bf878dff59a9a258567ff99098b0b3f8761194e2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626984"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599231"
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>方法: 探索プロキシで登録される探索可能なサービスの実装する
-これは、探索プロキシの実装方法に関する 4 つのトピックのうちの 2 番目のトピックです。 前のトピックで[方法。探索プロキシの実装](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)、探索プロキシを実装します。 このトピックでは、アナウンス メッセージを送信する WCF サービスを作成 (`Hello`と`Bye`) に、探索プロキシに登録または登録解除、探索プロキシの原因です。
+これは、探索プロキシの実装方法に関する 4 つのトピックのうちの 2 番目のトピックです。 前のトピック「[方法: 探索プロキシを実装](how-to-implement-a-discovery-proxy.md)する」では、探索プロキシを実装しています。 このトピックでは、アナウンスメッセージ (および) を探索プロキシに送信する WCF サービスを作成し `Hello` `Bye` ます。これにより、探索プロキシに登録および登録解除が行われます。
 
 ### <a name="to-define-the-service-contract"></a>サービス コントラクトを定義するには
 
@@ -156,7 +156,7 @@ ms.locfileid: "64626984"
     }
     ```
 
-これで、探索サービスの実装が完了しました。 進んでください[方法。探索プロキシを使用して、サービスを検索するクライアント アプリケーションの実装](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)します。
+これで、探索サービスの実装が完了しました。 [「方法: 探索プロキシを使用してサービスを検索するクライアントアプリケーションを実装](client-app-discovery-proxy-to-find-a-service.md)する」に進みます。
 
 ## <a name="example"></a>例
  このトピックで使用するコード全体の一覧を次に示します。
@@ -291,6 +291,6 @@ namespace Microsoft.Samples.Discovery
 
 ## <a name="see-also"></a>関連項目
 
-- [WCF Discovery](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)
-- [方法: 探索プロキシを実装します。](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
-- [方法: 探索プロキシを使用して、サービスを検索するクライアント アプリケーションを実装します。](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+- [WCF Discovery](wcf-discovery.md)
+- [方法: 探索プロキシを実装する](how-to-implement-a-discovery-proxy.md)
+- [方法: 探索プロキシを使用してサービスを検索するクライアント アプリケーションを実装する](client-app-discovery-proxy-to-find-a-service.md)

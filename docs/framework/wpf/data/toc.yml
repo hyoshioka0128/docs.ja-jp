@@ -80,8 +80,6 @@
       href: how-to-clear-bindings.md
     - name: DataTemplate によって生成された要素を検索する
       href: how-to-find-datatemplate-generated-elements.md
-    - name: Web サービスにバインドする
-      href: how-to-bind-to-a-web-service.md
 - name: LINQ to XML による WPF のデータ バインディング
   items:
     - name: 概要

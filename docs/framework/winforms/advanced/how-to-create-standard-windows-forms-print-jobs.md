@@ -1,5 +1,5 @@
 ---
-title: '方法: 標準の Windows フォーム印刷ジョブを作成する'
+title: 標準印刷ジョブの作成
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,25 +10,25 @@ helpviewer_keywords:
 - printing [Windows Forms], creating print jobs
 - printing [Visual Basic], in Windows applications
 ms.assetid: 03342b90-9cfe-40b2-838b-b479a13c5dea
-ms.openlocfilehash: 44673e6b26f088e71813aaac26c4b9a03429597a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d9607de7c74132e0d7dce605b16d62c79b7dbccb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938242"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182568"
 ---
-# <a name="how-to-create-standard-windows-forms-print-jobs"></a>方法: 標準の Windows フォーム印刷ジョブを作成する
-Windows フォームでの印刷の基礎は、 <xref:System.Drawing.Printing.PrintDocument>特<xref:System.Drawing.Printing.PrintDocument.PrintPage>にイベントであるコンポーネントです。 <xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントを処理するコードを記述することによって、印刷する内容と印刷方法を指定できます。  
+# <a name="how-to-create-standard-windows-forms-print-jobs"></a>方法 : 標準の Windows フォーム印刷ジョブを作成する
+Windows フォームでの印刷の基礎は<xref:System.Drawing.Printing.PrintDocument>、コンポーネント、つまり、イベント<xref:System.Drawing.Printing.PrintDocument.PrintPage>です。 イベントを処理するコードを<xref:System.Drawing.Printing.PrintDocument.PrintPage>記述することにより、印刷する内容と印刷方法を指定できます。  
   
 ### <a name="to-create-a-print-job"></a>印刷ジョブを作成するには  
   
-1. コンポーネントを<xref:System.Drawing.Printing.PrintDocument>フォームに追加します。  
+1. フォームに<xref:System.Drawing.Printing.PrintDocument>コンポーネントを追加します。  
   
 2. <xref:System.Drawing.Printing.PrintDocument.PrintPage> イベントを処理するコードを記述します。  
   
-     独自の印刷ロジックをコーディングする必要があります。 また、印刷する素材を指定する必要があります。  
+     独自の印刷ロジックをコーディングする必要があります。 また、印刷する品目を指定する必要があります。  
   
-     次のコード例では、赤い四角形の形状のサンプルグラフィックが<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントハンドラーに作成され、印刷される素材として機能します。  
+     次のコード例では、赤い四角形の形をしたサンプル グラフィックが<xref:System.Drawing.Printing.PrintDocument.PrintPage>、印刷するマテリアルとして機能するイベント ハンドラーに作成されます。  
   
     ```vb  
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage  
@@ -37,10 +37,10 @@ Windows フォームでの印刷の基礎は、 <xref:System.Drawing.Printing.Pr
     ```  
   
     ```csharp  
-    private void printDocument1_PrintPage(object sender,   
+    private void printDocument1_PrintPage(object sender,
     System.Drawing.Printing.PrintPageEventArgs e)  
     {  
-       e.Graphics.FillRectangle(Brushes.Red,   
+       e.Graphics.FillRectangle(Brushes.Red,
          new Rectangle(500, 500, 500, 500));  
     }  
     ```  
@@ -55,7 +55,7 @@ Windows フォームでの印刷の基礎は、 <xref:System.Drawing.Printing.Pr
        }  
     ```  
   
-     (ビジュアルC#とビジュアルC++)フォームのコンストラクターに次のコードを配置して、イベントハンドラーを登録します。  
+     (ビジュアル C# およびビジュアル C++)フォームのコンストラクターに次のコードを配置して、イベント ハンドラーを登録します。  
   
     ```csharp  
     this.printDocument1.PrintPage += new  
@@ -69,12 +69,12 @@ Windows フォームでの印刷の基礎は、 <xref:System.Drawing.Printing.Pr
        (this, &Form1::printDocument1_PrintPage);  
     ```  
   
-     また、イベント<xref:System.Drawing.Printing.PrintDocument.BeginPrint>および<xref:System.Drawing.Printing.PrintDocument.EndPrint>イベントのコードを記述することもできます。たとえば、印刷するページの総数を表す整数を含め、各ページが印刷するたびにデクリメントします。  
+     また、<xref:System.Drawing.Printing.PrintDocument.BeginPrint>イベントと<xref:System.Drawing.Printing.PrintDocument.EndPrint>イベントのコードを記述することもできます 。  
   
     > [!NOTE]
-    > フォームにコンポーネントを<xref:System.Windows.Forms.PrintDialog>追加して、ユーザーに対してクリーンで効率的なユーザーインターフェイス (UI) を提供できます。 コンポーネントのプロパティを設定すると、フォーム上で作業している印刷ドキュメントに関連するプロパティを設定できます。 <xref:System.Windows.Forms.PrintDialog.Document%2A> <xref:System.Windows.Forms.PrintDialog> コンポーネントの<xref:System.Windows.Forms.PrintDialog>詳細については、「 [PrintDialog コンポーネント](../controls/printdialog-component-windows-forms.md)」を参照してください。  
+    > フォームにコンポーネントを<xref:System.Windows.Forms.PrintDialog>追加すると、ユーザーにクリーンで効率的なユーザー インターフェイス (UI) を提供できます。 コンポーネントの<xref:System.Windows.Forms.PrintDialog.Document%2A>プロパティを<xref:System.Windows.Forms.PrintDialog>設定すると、フォームで作業している印刷ドキュメントに関連するプロパティを設定できます。 コンポーネントの<xref:System.Windows.Forms.PrintDialog>詳細については、「 [PrintDialog コンポーネント](../controls/printdialog-component-windows-forms.md)」を参照してください。  
   
-     プログラムで印刷ジョブを作成する方法など、Windows フォーム印刷ジョブの詳細については、「 <xref:System.Drawing.Printing.PrintPageEventArgs>」を参照してください。  
+     Windows フォーム印刷ジョブの詳細 (プログラムによる印刷ジョブの作成方法など) の詳細については、「 <xref:System.Drawing.Printing.PrintPageEventArgs>」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

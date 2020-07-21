@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 583a690a-e60f-4990-8991-d6efce069d76
 ms.openlocfilehash: c254a7362c7bc28f4b38fc0189ae0ea763bc90cc
 ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/28/2019
 ms.locfileid: "74568846"
 ---
 # <a name="service-operations-wcf-data-services"></a>サービス操作 (WCF Data Services)
 
-WCF Data Services を使用すると、データサービスのサービス操作を定義して、サーバーでメソッドを公開できます。 その他のデータ サービス リソースと同様に、サービス操作は URI によってアドレス指定できます。 サービス操作では、データ サービスでビジネス ロジックを公開できます (検証ロジックの実装、ロール ベースのセキュリティの適用、特殊なクエリ機能の公開など)。 サービス操作は、<xref:System.Data.Services.DataService%601> から派生するデータ クラスに追加されるメソッドです。 その他のすべてのデータ サービス リソースと同様に、パラメーターをサービス操作メソッドに指定できます。 たとえば、次のサービス操作 URI ([クイックスタート](quickstart-wcf-data-services.md)データサービスに基づく) は、`London` 値を `city` パラメーターに渡します。
+WCF Data Services では、データ サービスでサービス操作を定義して、サーバーでメソッドを公開できます。 その他のデータ サービス リソースと同様に、サービス操作は URI によってアドレス指定できます。 サービス操作では、データ サービスでビジネス ロジックを公開できます (検証ロジックの実装、ロール ベースのセキュリティの適用、特殊なクエリ機能の公開など)。 サービス操作は、<xref:System.Data.Services.DataService%601> から派生するデータ クラスに追加されるメソッドです。 その他のすべてのデータ サービス リソースと同様に、パラメーターをサービス操作メソッドに指定できます。 たとえば、次のサービス操作 URI ([クイックスタート](quickstart-wcf-data-services.md) データ サービスに基づく) は、`London` という値を `city` パラメーターに渡します。
 
 ```http
 http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'
@@ -28,9 +28,9 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'
 [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperationdef)]
 [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperationdef)]
 
-<xref:System.Data.Services.DataService%601.CurrentDataSource%2A> の <xref:System.Data.Services.DataService%601> を使用して、データ サービスが使用するデータ ソースに直接アクセスできます。 詳細については、「[方法: サービス操作を定義](how-to-define-a-service-operation-wcf-data-services.md)する」を参照してください。
+<xref:System.Data.Services.DataService%601.CurrentDataSource%2A> の <xref:System.Data.Services.DataService%601> を使用して、データ サービスが使用するデータ ソースに直接アクセスできます。 詳細については、[サービス操作を定義する](how-to-define-a-service-operation-wcf-data-services.md)」を参照してください。
 
-.NET Framework クライアントアプリケーションからサービス操作を呼び出す方法については、「[サービス操作の呼び出し](calling-service-operations-wcf-data-services.md)」を参照してください。
+.NET Framework クライアント アプリケーションからサービス操作を呼び出す方法の詳細については、「[サービス操作の呼び出し](calling-service-operations-wcf-data-services.md)」を参照してください。
 
 ## <a name="service-operation-requirements"></a>サービス操作の要件
 
@@ -80,7 +80,7 @@ http://localhost:12345/Northwind.svc/GetOrdersByState?state='CA'&includeItems=tr
 
 |有効な戻り値の型|URI のルール|
 |------------------------|---------------|
-|`void` (Visual Basic の場合は `Nothing`)。<br /><br /> -または-<br /><br /> エンティティ型<br /><br /> -または-<br /><br /> プリミティブ型|URI は、サービス操作の名前である 1 つのパス セグメントである必要があります。 クエリ オプションは許可されません。|
+|`void` (Visual Basic の場合は `Nothing`)。<br /><br /> \- または -<br /><br /> エンティティ型<br /><br /> \- または -<br /><br /> プリミティブ型|URI は、サービス操作の名前である 1 つのパス セグメントである必要があります。 クエリ オプションは許可されません。|
 |<xref:System.Collections.Generic.IEnumerable%601>|URI は、サービス操作の名前である 1 つのパス セグメントである必要があります。 結果型は <xref:System.Linq.IQueryable%601> 型ではないので、クエリ オプションは使用できません。|
 |<xref:System.Linq.IQueryable%601>|サービス操作の名前であるパスに追加したクエリ パス セグメント セグメントが許可されます。 クエリ オプションも許可されます。|
 
@@ -100,7 +100,7 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order
 > [!NOTE]
 > 元になるエンティティ セットの制限アクセスによって非表示にされている戻り値の型がサービス操作にある場合、サービス操作はクライアント アプリケーションで使用できません。
 
-詳細については、「[方法: サービス操作を定義](how-to-define-a-service-operation-wcf-data-services.md)する」を参照してください。
+詳細については、[サービス操作を定義する](how-to-define-a-service-operation-wcf-data-services.md)」を参照してください。
 
 ## <a name="raising-exceptions"></a>例外の発生
 
@@ -109,6 +109,6 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order
 [!code-csharp[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#handleexceptions)]
 [!code-vb[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#handleexceptions)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [インターセプター](interceptors-wcf-data-services.md)

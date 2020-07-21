@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル : WindowsFormsHost 要素を使用したプロパティの割り当て'
+title: 'チュートリアル: WindowsFormsHost 要素を使用したプロパティの割り当て'
 ms.date: 08/18/2018
 dev_langs:
 - csharp
@@ -8,52 +8,52 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 74809167-bf8e-48b7-a2e7-b4ea08bc7d8c
-ms.openlocfilehash: 94d175ec58f35b7e807786c221437d05c605c0bc
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: c076937d6431adf1750793d47ece88dc82edf95c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974226"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794100"
 ---
-# <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>チュートリアル : WindowsFormsHost 要素を使用したプロパティの割り当て
+# <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>チュートリアル: WindowsFormsHost 要素を使用したプロパティの割り当て
 
-このチュートリアルでは、<xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> プロパティを使用して、ホストされている [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールの対応するプロパティに [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティをマップする方法について説明します。
+このチュートリアルでは、<xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> プロパティを使用して、ホストされている Windows フォーム コントロールの対応するプロパティに [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティをマップする方法を示します。
 
 このチュートリアルでは、以下のタスクを行います。
 
 - プロジェクトの作成。
 
-- アプリケーションレイアウトを定義します。
+- アプリケーション レイアウトの定義
 
-- 新しいプロパティマッピングを定義します。
+- 新しいプロパティ マッピングの定義。
 
-- 既定のプロパティマッピングを削除しています。
+- 既定のプロパティ マッピングの削除。
 
-- 既定のプロパティマッピングを置き換える。
+- 既定のプロパティ マッピングの置き換え。
 
-- 既定のプロパティマッピングの拡張。
+- 既定のプロパティ マッピングの拡張。
 
-このチュートリアルで示すタスクの完全なコード一覧については、「 [WindowsFormsHost 要素のサンプルを使用したプロパティのマッピング](https://go.microsoft.com/fwlink/?LinkID=160019)」を参照してください。
+このチュートリアルで説明されているタスクの完全なコード一覧については、[WindowsFormsHost 要素を使用したプロパティのマッピングのサンプル](https://go.microsoft.com/fwlink/?LinkID=160019)を参照してください。
 
-終了すると、ホストされている [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールの対応するプロパティに [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティをマップできるようになります。
+完了すると、ホストされている Windows フォーム コントロールの対応するプロパティに [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] プロパティをマップできます。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>必須コンポーネント
 
 このチュートリアルを実行するには、次のコンポーネントが必要です。
 
 - Visual Studio 2017
 
-## <a name="create-and-set-up-the-project"></a>プロジェクトを作成して設定する
+## <a name="create-and-set-up-the-project"></a>プロジェクトの作成と設定
 
-1. `PropertyMappingWithWfhSample`という名前の**WPF アプリ**プロジェクトを作成します。
+1. `PropertyMappingWithWfhSample` という名前の **WPF アプリ** プロジェクトを作成します。
 
-2. **ソリューションエクスプローラー**で、windowsフォーム統合アセンブリへの参照を追加します。このアセンブリには、windowsフォーム integration .dll という名前が付けられています。
+2. **ソリューション エクスプローラー**で、WindowsFormsIntegration.dll という名前の WindowsFormsIntegration アセンブリへの参照を追加します。
 
-3. **ソリューションエクスプローラー**で、Drawing アセンブリおよび system.string アセンブリへの参照を追加します。
+3. **ソリューション エクスプローラー**で、System.Drawing および System.Windows.Forms アセンブリへの参照を追加します。
 
-## <a name="defining-the-application-layout"></a>アプリケーションレイアウトの定義
+## <a name="defining-the-application-layout"></a>アプリケーション レイアウトの定義
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ベースのアプリケーションでは、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素を使用して [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] コントロールをホストします。
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ベースのアプリケーションでは、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素を使用して Windows フォーム コントロールをホストします。
 
 ### <a name="to-define-the-application-layout"></a>アプリケーションのレイアウトを定義するには
 
@@ -63,95 +63,95 @@ ms.locfileid: "73974226"
 
      [!code-xaml[PropertyMappingWithWfhSample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml#1)]
 
-3. コードエディターで Window1.xaml.cs を開きます。
+3. コード エディターで Window1.xaml.cs を開きます。
 
 4. ファイルの先頭に、次の名前空間をインポートします。
 
      [!code-csharp[PropertyMappingWithWfhSample#20](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#20)]
      [!code-vb[PropertyMappingWithWfhSample#20](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#20)]
 
-## <a name="defining-a-new-property-mapping"></a>新しいプロパティマッピングの定義
+## <a name="defining-a-new-property-mapping"></a>新しいプロパティ マッピングの定義
 
-<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素には、いくつかの既定のプロパティマッピングが用意されています。 新しいプロパティマッピングを追加するには、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A>の <xref:System.Windows.Forms.Integration.PropertyMap.Add%2A> メソッドを呼び出します。
+<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素には、いくつかの既定のプロパティ マッピングが用意されています。 <xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> に対して <xref:System.Windows.Forms.Integration.PropertyMap.Add%2A> メソッドを呼び出して、新しいプロパティ マッピングを追加します。
 
-### <a name="to-define-a-new-property-mapping"></a>新しいプロパティマッピングを定義するには
+### <a name="to-define-a-new-property-mapping"></a>新しいプロパティ マッピングを定義するには
 
-- `Window1` クラスの定義に次のコードをコピーします。
+- 次のコードを `Window1` クラスの定義にコピーします。
 
      [!code-csharp[PropertyMappingWithWfhSample#14](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#14)]
      [!code-vb[PropertyMappingWithWfhSample#14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#14)]
 
-     `AddClipMapping` メソッドは、<xref:System.Windows.UIElement.Clip%2A> プロパティの新しいマッピングを追加します。
+     `AddClipMapping` メソッドを使用して、<xref:System.Windows.UIElement.Clip%2A> プロパティの新しいマッピングを追加します。
 
-     `OnClipChange` メソッドは、<xref:System.Windows.UIElement.Clip%2A> プロパティを [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]<xref:System.Windows.Forms.Control.Region%2A> プロパティに変換します。
+     `OnClipChange` メソッドを使用して、<xref:System.Windows.UIElement.Clip%2A> プロパティを Windows フォーム <xref:System.Windows.Forms.Control.Region%2A> プロパティに変換します。
 
-     `Window1_SizeChanged` メソッドは、ウィンドウの <xref:System.Windows.FrameworkElement.SizeChanged> イベントを処理し、アプリケーションウィンドウに合うようにクリッピング領域のサイズを調整します。
+     `Window1_SizeChanged` メソッドを使用して、ウィンドウの <xref:System.Windows.FrameworkElement.SizeChanged> イベントを処理し、アプリケーション ウィンドウに合わせてクリッピング領域のサイズを変更します。
 
-## <a name="removing-a-default-property-mapping"></a>既定のプロパティマッピングの削除
+## <a name="removing-a-default-property-mapping"></a>既定のプロパティ マッピングの削除
 
-<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A>の <xref:System.Windows.Forms.Integration.PropertyMap.Remove%2A> メソッドを呼び出すことによって、既定のプロパティマッピングを削除します。
+<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> に対して <xref:System.Windows.Forms.Integration.PropertyMap.Remove%2A> メソッドを呼び出して、既定のプロパティ マッピングを削除します。
 
-### <a name="to-remove-a-default-property-mapping"></a>既定のプロパティマッピングを削除するには
+### <a name="to-remove-a-default-property-mapping"></a>既定のプロパティ マッピングを削除するには
 
-- `Window1` クラスの定義に次のコードをコピーします。
+- 次のコードを `Window1` クラスの定義にコピーします。
 
      [!code-csharp[PropertyMappingWithWfhSample#13](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#13)]
      [!code-vb[PropertyMappingWithWfhSample#13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#13)]
 
-     `RemoveCursorMapping` メソッドは、<xref:System.Windows.FrameworkElement.Cursor%2A> プロパティの既定のマッピングを削除します。
+     `RemoveCursorMapping` メソッドを使用して、<xref:System.Windows.FrameworkElement.Cursor%2A> プロパティの既定のマッピングを削除します。
 
-## <a name="replacing-a-default-property-mapping"></a>既定のプロパティマッピングの置換
+## <a name="replacing-a-default-property-mapping"></a>既定のプロパティ マッピングの置換
 
-既定のマッピングを削除し、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A>に対して <xref:System.Windows.Forms.Integration.PropertyMap.Add%2A> メソッドを呼び出すことによって、既定のプロパティマッピングを置き換えます。
+既定のプロパティ マッピングを削除するには、既定のマッピングを削除し、<xref:System.Windows.Forms.Integration.WindowsFormsHost> 要素の <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> に対して <xref:System.Windows.Forms.Integration.PropertyMap.Add%2A> メソッドを呼び出します。
 
-### <a name="to-replace-a-default-property-mapping"></a>既定のプロパティマッピングを置き換えるには
+### <a name="to-replace-a-default-property-mapping"></a>既定のプロパティ マッピングを置き換えるには
 
-- `Window1` クラスの定義に次のコードをコピーします。
+- 次のコードを `Window1` クラスの定義にコピーします。
 
      [!code-csharp[PropertyMappingWithWfhSample#12](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#12)]
      [!code-vb[PropertyMappingWithWfhSample#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#12)]
 
-     `ReplaceFlowDirectionMapping` メソッドは、<xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティの既定のマッピングを置き換えます。
+     `ReplaceFlowDirectionMapping` メソッドを使用して、<xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティの既定のマップを置き換えます。
 
-     `OnFlowDirectionChange` メソッドは、<xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティを [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]<xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティに変換します。
+     `OnFlowDirectionChange` メソッドを使用して、<xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティを Windows フォーム <xref:System.Windows.Forms.Control.RightToLeft%2A> プロパティに変換します。
 
-     `cb_CheckedChanged` メソッドは、<xref:System.Windows.Forms.CheckBox> コントロールの <xref:System.Windows.Forms.CheckBox.CheckedChanged> イベントを処理します。 <xref:System.Windows.Forms.CheckBox.CheckState%2A> プロパティの値に基づいて <xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティを割り当てます。
+     `cb_CheckedChanged` メソッドを使用して、<xref:System.Windows.Forms.CheckBox> コントロールの <xref:System.Windows.Forms.CheckBox.CheckedChanged> イベントを処理します。 <xref:System.Windows.Forms.CheckBox.CheckState%2A> プロパティの値に基づいて <xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティが割り当てられます
 
-## <a name="extending-a-default-property-mapping"></a>既定のプロパティマッピングの拡張
+## <a name="extending-a-default-property-mapping"></a>既定のプロパティ マッピングの拡張
 
-既定のプロパティマッピングを使用し、独自のマッピングで拡張することもできます。
+既定のプロパティ マッピングを使用できます。また、独自のマッピングを使用して拡張することもできます。
 
-### <a name="to-extend-a-default-property-mapping"></a>既定のプロパティマッピングを拡張するには
+### <a name="to-extend-a-default-property-mapping"></a>既定のプロパティ マッピングを拡張するには
 
-- `Window1` クラスの定義に次のコードをコピーします。
+- 次のコードを `Window1` クラスの定義にコピーします。
 
      [!code-csharp[PropertyMappingWithWfhSample#15](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#15)]
      [!code-vb[PropertyMappingWithWfhSample#15](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#15)]
 
-     `ExtendBackgroundMapping` メソッドは、既存の <xref:System.Windows.Controls.Control.Background%2A> プロパティのマッピングにカスタムプロパティトランスレーターを追加します。
+     `ExtendBackgroundMapping` メソッドを使用して、カスタム プロパティ トランスレーターを既存の <xref:System.Windows.Controls.Control.Background%2A> プロパティ マッピングに追加します。
 
-     `OnBackgroundChange` メソッドは、ホストされているコントロールの <xref:System.Windows.Forms.Control.BackgroundImage%2A> プロパティに特定のイメージを割り当てます。 `OnBackgroundChange` メソッドは、既定のプロパティマッピングが適用された後に呼び出されます。
+     `OnBackgroundChange` メソッドを使用して、ホストされているコントロールの <xref:System.Windows.Forms.Control.BackgroundImage%2A> プロパティに特定の画像を割り当てます。 `OnBackgroundChange` メソッドは、既定のプロパティ マッピングが適用された後に呼び出されます。
 
-## <a name="initializing-your-property-mappings"></a>プロパティマッピングの初期化
+## <a name="initializing-your-property-mappings"></a>プロパティ マッピングの初期化
 
-<xref:System.Windows.FrameworkElement.Loaded> イベントハンドラーで前に説明したメソッドを呼び出すことによって、プロパティマッピングを設定します。
+前述のメソッドを <xref:System.Windows.FrameworkElement.Loaded> イベント ハンドラーで呼び出して、プロパティ マッピングを設定します。
 
-### <a name="to-initialize-your-property-mappings"></a>プロパティマッピングを初期化するには
+### <a name="to-initialize-your-property-mappings"></a>プロパティ マッピングを初期化するには
 
-1. `Window1` クラスの定義に次のコードをコピーします。
+1. 次のコードを `Window1` クラスの定義にコピーします。
 
      [!code-csharp[PropertyMappingWithWfhSample#11](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMappingWithWfhSample/CSharp/PropertyMappingWithWfh/Window1.xaml.cs#11)]
      [!code-vb[PropertyMappingWithWfhSample#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertyMappingWithWfhSample/VisualBasic/PropertyMappingWithWfh/Window1.xaml.vb#11)]
 
-     `WindowLoaded` メソッドは、<xref:System.Windows.FrameworkElement.Loaded> イベントを処理し、次の初期化を実行します。
+     `WindowLoaded` メソッドを使用して <xref:System.Windows.FrameworkElement.Loaded> イベントを処理し、次の初期化を実行します。
 
-    - <xref:System.Windows.Forms.CheckBox> コントロール [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]を作成します。
+    - Windows フォーム <xref:System.Windows.Forms.CheckBox> コントロールを作成します。
 
-    - チュートリアルの前の手順で定義したメソッドを呼び出して、プロパティマッピングを設定します。
+    - このチュートリアルで前に定義したメソッドを呼び出して、プロパティ マッピングを設定します。
 
     - マップされたプロパティに初期値を割り当てます。
 
-2. **F5** キーを押してアプリケーションをビルドし、実行します。 <xref:System.Windows.FrameworkElement.FlowDirection%2A> マッピングの効果を確認するには、このチェックボックスをオンにします。 このチェックボックスをオンにすると、レイアウトが左から右方向に反転します。
+2. **F5** キーを押してアプリケーションをビルドし、実行します。 チェック ボックスをクリックして、<xref:System.Windows.FrameworkElement.FlowDirection%2A> のマッピングの結果を確認します。 チェック ボックスをクリックすると、レイアウトが左右反転します。
 
 ## <a name="see-also"></a>関連項目
 

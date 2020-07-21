@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 4a4a0954-82e2-4eae-bcaf-7c4552f3532d
 ms.openlocfilehash: 16be25336bac386c993eae7527c9377be1073d1e
 ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72319274"
@@ -21,7 +21,7 @@ SELECT 句には、オプションの ALL/DISTINCT 修飾子に続けてオプ�
 
 ## <a name="arguments"></a>引数
 
-`n` 返される行の数を指定する数値式。 `n` は単一の数値リテラルかまたは単一のパラメーターです。
+`n` 返す行の数を指定する数値式。 `n` は単一の数値リテラルかまたは単一のパラメーターです。
 
 ## <a name="remarks"></a>Remarks
 
@@ -33,7 +33,7 @@ TOP 式には、単一の数値リテラルまたは単一のパラメーター�
 select distinct top(10) c.a1, c.a2 from T as a
 ```
 
-パラメーター化された TOP 式の例を次に示します。
+パラメーター化された TOP 式の例を以下に示します。
 
 ```sql
 select distinct top(@topParam) c.a1, c.a2 from T as a
@@ -45,7 +45,7 @@ TOP は、クエリが並べ替えられていない限り、非決定的です�
 
 次の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリは、TOP を使用して、クエリ結果から返される 1 番上の 1 行を指定します。 このクエリは、AdventureWorks Sales Model に基づいています。 このクエリをコンパイルして実行するには、次の手順を実行します。
 
-1. 「 [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。
+1. 「[方法: StructuralType 結果を返すクエリを実行する](../how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。
 
 2. 次のクエリを引数として `ExecuteStructuralTypeQuery` メソッドに渡します。
 

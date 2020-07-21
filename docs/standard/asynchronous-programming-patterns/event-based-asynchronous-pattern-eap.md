@@ -1,5 +1,6 @@
 ---
 title: イベント ベースの非同期パターン (EAP)
+description: .NET のイベント ベースの非同期パターン (EAP) に関する記事へのリンクを示します。これには、実装、ベスト プラクティス、EAP クライアントの実装などについての記事が含まれます。
 ms.date: 07/23/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - asynchronous programming, design patterns
 - asynchronous programming
 ms.assetid: c6baed9f-2a25-4728-9a9a-53b7b14840cf
-ms.openlocfilehash: ee8c90d63478e444b7d25cb7cbb5c969963d7c63
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 03b4d914d72b96b882c774565654c022b145b5f2
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130945"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768873"
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>イベント ベースの非同期パターン (EAP)
 
@@ -60,7 +61,7 @@ ms.locfileid: "73130945"
  [タスク並列ライブラリ (TPL)](../parallel-programming/task-parallel-library-tpl.md)  
  非同期操作および並列操作のプログラミング モデルについて説明します。  
   
- [スレッド化](../../../docs/standard/threading/index.md)  
+ [スレッド化](../threading/index.md)  
  .NET のマルチスレッド機能について説明します。  
   
 ## <a name="see-also"></a>関連項目

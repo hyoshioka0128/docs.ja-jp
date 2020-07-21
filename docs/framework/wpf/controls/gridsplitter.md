@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 98b007e8-ea6b-41b5-8120-ca7134e8239f
 ms.openlocfilehash: 9fd1b50e4c3f79218de2d0d54f98d645ebb5fd61
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61911431"
 ---
 # <a name="gridsplitter"></a>GridSplitter
-<xref:System.Windows.Controls.GridSplitter>行または列の間にスペースを再分配、<xref:System.Windows.Controls.Grid>コントロール。  
+<xref:System.Windows.Controls.GridSplitter> は、<xref:System.Windows.Controls.Grid> コントロールの行間または列間にスペースを再配分します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法トピック](gridsplitter-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.GridSplitter>  
   
 ## <a name="related-sections"></a>関連項目

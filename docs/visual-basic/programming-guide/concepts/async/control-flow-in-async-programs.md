@@ -2,21 +2,21 @@
 title: 非同期プログラムにおける制御フロー
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 94b2c2ea89f729e882229d4ecce7faa169c24267
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 0c479b9dd2a691b1b353fac54ee3320a895b1c7f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347938"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396663"
 ---
-# <a name="control-flow-in-async-programs-visual-basic"></a>非同期プログラムの制御フロー (Visual Basic)
+# <a name="control-flow-in-async-programs-visual-basic"></a>非同期プログラムにおける制御フロー (Visual Basic)
 
 `Async` キーワードと `Await` キーワードを使用すると、非同期のプログラムの作成と保守をより簡単に行えます。 ただし、プログラムがどのように動作するかを理解しないと、その結果は予想に反するものになる場合があります。 このトピックでは、簡単な非同期プログラムによる制御フローをトレースして、制御があるメソッドから別のメソッドに移るタイミングと、その都度転送される情報について説明します。
 
 > [!NOTE]
 > `Async` キーワードおよび `Await` キーワードは、Visual Studio 2012 で導入されました。
 
-通常、[非同期修飾子を使用して](../../../../visual-basic/language-reference/modifiers/async.md)非同期コードを含むメソッドをマークします。 Async 修飾子でマークされたメソッドでは、 [Await (Visual Basic)](../../../../visual-basic/language-reference/operators/await-operator.md)演算子を使用して、呼び出された非同期処理が完了するまでメソッドが一時停止する場所を指定できます。 詳細については、「 [Async および Await を使用した非同期プログラミング」 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)を参照してください。
+一般に、[Async](../../../language-reference/modifiers/async.md) 修飾子を使用した非同期コードを含むメソッドをマークします。 async 修飾子でマークされたメソッドでは、[Await (Visual Basic)](../../../language-reference/operators/await-operator.md) 演算子を使用して、呼び出される非同期処理の終了をメソッドが待機する場所を指定できます。 詳細については、「[Async および Await を使用した非同期プログラミング (Visual Basic)](index.md)」を参照してください。
 
 次の例では、非同期メソッドを使用して、指定した Web サイトのコンテンツを文字列としてダウンロードし、その文字列の長さを表示します。 この例には、次の 2 つのメソッドが含まれています。
 
@@ -97,11 +97,11 @@ Length of the downloaded string: 33946.
 このトピックで使用するコードは、MSDN からダウンロードするか、または自分でビルドできます。
 
 > [!NOTE]
-> この例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 以降がコンピューターにインストールされている必要があります。
+> この例を実行するには、Visual Studio 2012 以降と .NET Framework 4.5 以降が、コンピューターにインストールされている必要があります。
 
 ### <a name="download-the-program"></a>プログラムをダウンロードする
 
-このトピックのアプリケーションは、「[非同期のサンプル: 非同期プログラムにおける制御フロー](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)」からダウンロードできます。 次の手順でプログラムを開いて実行します。
+このトピックのアプリケーションは、「[非同期のサンプル:非同期プログラムにおける制御フロー](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)」からダウンロードできます。 次の手順でプログラムを開いて実行します。
 
 1. ダウンロードしたファイルを解凍し、Visual Studio を開始します。
 
@@ -117,11 +117,11 @@ Length of the downloaded string: 33946.
 
 1. Visual Studio を起動します。
 
-2. メニュー バーで、 **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。
+2. メニュー バーで、 **[ファイル]** 、 **[新規作成]** 、 **[プロジェクト]** の順にクリックします。
 
     **[新しいプロジェクト]** ダイアログ ボックスが表示されます。
 
-3. **[インストールされたテンプレート]** ペインで、 **[Visual Basic]** を選択し、プロジェクトの種類の一覧から **[WPF アプリケーション]** を選択します。
+3. **[インストールされたテンプレート]** ペインで、 **[Visual Basic]** を選択し、プロジェクトの種類の一覧で **[WPF アプリケーション]** を選択します。
 
 4. プロジェクトの名前として「`AsyncTracer`」と入力し、 **[OK]** をクリックします。
 
@@ -151,9 +151,9 @@ Length of the downloaded string: 33946.
 
 7. <xref:System.Net.Http> への参照を追加します。
 
-8. **ソリューションエクスプローラー**で、mainwindow.xaml のショートカットメニューを開き、 **[コードの表示]** を選択します。
+8. **ソリューション エクスプローラー**で MainWindow.xaml.vb のショートカット メニューを開き、 **[コードの表示]** を選択します。
 
-9. Mainwindow.xaml で、コードを次のコードに置き換えます。
+9. MainWindow.xaml.vb のコードを次のコードに置き換えます。
 
     ```vb
     ' Add an Imports statement and a reference for System.Net.Http.
@@ -256,9 +256,9 @@ Length of the downloaded string: 33946.
 
 `startButton_Click` が `AccessTheWebAsync` を呼び出し、`AccessTheWebAsync` が非同期 <xref:System.Net.Http.HttpClient> メソッド <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29> を呼び出すと、最初の 2 行の表示行がパスをトレースします。 次の図は、メソッドからメソッドへの呼び出しを示しています。
 
-![手順 1. と 2.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-onetwo.png "AsyncTrace-ONETWO")
+![手順 1. および 2.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-onetwo.png "AsyncTrace-ONETWO")
 
-`AccessTheWebAsync` と `client.GetStringAsync` の戻り値の型はどちらも <xref:System.Threading.Tasks.Task%601> です。 `AccessTheWebAsync` では、TResult は整数です。 `GetStringAsync` では、TResult は文字列です。 非同期メソッドの戻り値の型の詳細については、「[非同期の戻り値の型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)」を参照してください。
+`AccessTheWebAsync` と `client.GetStringAsync` の戻り値の型はどちらも <xref:System.Threading.Tasks.Task%601> です。 `AccessTheWebAsync` では、TResult は整数です。 `GetStringAsync` では、TResult は文字列です。 非同期メソッドの戻り値の型について詳しくは、「[非同期の戻り値の型 (Visual Basic)](async-return-types.md)」を参照してください。
 
 タスクを返す非同期のメソッドは、制御が呼び出し元に戻ると、タスク インスタンスを返します。 `Await` 演算子が呼び出されたメソッドで実行されるか、または呼び出されたメソッドが終了すると、非同期メソッドから呼び出し元に制御が戻ります。 「3」から「6」のラベルの付いた表示行はこのプロセスの部分をトレースします。
 
@@ -286,9 +286,9 @@ THREE: Back in AccessTheWebAsync.
 Dim urlContents As String = Await getStringTask
 ```
 
-次の図は、`client.GetStringAsync` から割り当てへの制御フローを示しています。これは、`getStringTask`、および `getStringTask` の作成から Await 演算子の適用までの間に発生します。
+次の図は `client.GetStringAsync` から `getStringTask` への割り当てへの制御フロー、および `getStringTask` の作成から Await 演算子のアプリケーションへの制御フローを示しています。
 
-![手順 3.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-three.png "AsyncTrace-3")
+![手順 3.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-three.png "AsyncTrace-Three")
 
 await 式は `AccessTheWebAsync` が制御を返すまで `client.GetStringAsync` を中断します。 その間、コントロールは `AccessTheWebAsync` の呼び出し元である `startButton_Click` に戻されます。
 
@@ -307,7 +307,7 @@ await 式は `AccessTheWebAsync` が制御を返すまで `client.GetStringAsync
 Dim getLengthTask As Task(Of Integer) = AccessTheWebAsync()
 ```
 
-`AccessTheWebAsync` と同様に、`startButton_Click` は、非同期タスク (`getLengthTask`) の結果に依存しない処理を、タスクが待機するまで続行できます。 次の出力行はその作業を表しています。
+`AccessTheWebAsync` と同様に、`startButton_Click` は、非同期タスク (`getLengthTask`) の結果に依存しない処理を、タスクが待機するまで続行できます。 次の出力行はその処理を表します。
 
 ```console
 FOUR:  Back in startButton_Click.
@@ -323,7 +323,7 @@ Dim contentLength As Integer = Await getLengthTask
 
 次の図で、矢印は `AccessTheWebAsync` の await 式から `getLengthTask` への値の割り当てへの制御のフロー、および `startButton_Click` が待機するまでの `getLengthTask` の通常の処理を示しています。
 
-![手順 4.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-four.png "AsyncTrace-4")
+![手順 4.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-four.png "AsyncTrace-FOUR")
 
 ### <a name="step-five"></a>手順 5.
 
@@ -340,7 +340,7 @@ return ステートメントのオペランド `urlContents.Length` は `AccessT
 
 次の図は、`client.GetStringAsync` (および `getStringTask`) が完了した後の制御の移動を示します。
 
-![手順 5.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace-5")
+![手順 5.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace-FIVE")
 
 `AccessTheWebAsync` は完了するまで実行され、完了を待機していた `startButton_Click` に制御が戻ります。
 
@@ -365,11 +365,11 @@ Dim contentLength As Integer = Await getLengthTask
 
 次の図は `AccessTheWebAsync` から `startButton_Click` に制御が戻ることを示しています。
 
-![手順 6.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-6")
+![手順 6.](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-SIX")
 
 ## <a name="see-also"></a>関連項目
 
-- [Async および Await を使用した非同期プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [非同期の戻り値の型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
-- [チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [非同期のサンプル: 非同期プログラムにおける制御フロー (C# と Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)
+- [Async および Await を使用した非同期プログラミング (Visual Basic)](index.md)
+- [非同期の戻り値の型 (Visual Basic)](async-return-types.md)
+- [チュートリアル: Async と Await を使用した Web へのアクセス (Visual Basic)](walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Async Sample:非同期プログラムにおける制御フロー (C# および Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)

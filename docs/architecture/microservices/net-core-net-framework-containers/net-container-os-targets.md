@@ -1,13 +1,13 @@
 ---
 title: .NET コンテナーで対象とする OS
 description: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ | .NET コンテナーで対象とする OS'
-ms.date: 01/07/2019
-ms.openlocfilehash: dcf91f5ab808a8704201979f6bab1140c3343bce
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: a09e3981ece478a9795c0f27acc98d604864cdd5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736905"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "77501860"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>.NET コンテナーで対象とする OS
 
@@ -34,10 +34,10 @@ Dockerfile ファイルにイメージ名を追加すると、次の例のよう
 
 | イメージ | コメント |
 |-------|----------|
-| mcr.microsoft.com/dotnet/core/runtime:2.2 | .NET Core 2.2 マルチアーキテクチャ:Docker ホストに応じて、Linux と Windows Nano Server をサポートします。 |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2 | ASP.NET Core 2.2 マルチアーキテクチャ:Docker ホストに応じて、Linux と Windows Nano Server をサポートします。 <br/> aspnetcore イメージでは、ASP.NET Core 用に 少しの最適化が行われています。 |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine | Linux Alpine ディストリビューションでの .NET Core 2.2 ランタイムのみ |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2-nanoserver-1803 | Windows Nano Server (Windows Server バージョン 1803) では .NET Core 2.2 ランタイムのみ |
+| mcr.microsoft.com/dotnet/core/runtime:3.1 | .NET Core 3.1 マルチアーキテクチャ:Docker ホストに応じて、Linux と Windows Nano Server をサポートします。 |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1 | ASP.NET Core 3.1 マルチアーキテクチャ:Docker ホストに応じて、Linux と Windows Nano Server をサポートします。 <br/> aspnetcore イメージでは、ASP.NET Core 用に 少しの最適化が行われています。 |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim | Linux Debian ディストリビューションの .NET Core 3.1 ランタイムのみ |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1809 | Windows Nano Server (Windows Server バージョン 1809) では .NET Core 3.1 ランタイムのみ |
 
 ## <a name="additional-resources"></a>その他の技術情報
 

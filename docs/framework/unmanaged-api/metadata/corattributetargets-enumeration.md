@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 694c0fa0-7011-41a9-9dfd-f0e16ea574b5
 topic_type:
 - apiref
-ms.openlocfilehash: 5f83cb96e39b257a1d35786130cd5ed31d071de7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f1836f26af99f91ab1765107573f6b067edd5e95
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443871"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007924"
 ---
 # <a name="corattributetargets-enumeration"></a>CorAttributeTargets 列挙型
 属性を適用できるアプリケーション要素を指定します。  
@@ -44,15 +44,15 @@ typedef enum CorAttributeTargets
     catDelegate            = 0x1000,  
     catGenericParameter    = 0x4000,  
   
-    catAll                 =   
-        catAssembly | catModule | catClass | catStruct |   
-        catEnum | catConstructor | catMethod | catProperty |   
-        catField | catEvent | catInterface | catParameter |   
+    catAll                 =
+        catAssembly | catModule | catClass | catStruct |
+        catEnum | catConstructor | catMethod | catProperty |
+        catField | catEvent | catInterface | catParameter |
         catDelegate | catGenericParameter,  
   
-    catClassMembers        =   
-        catClass | catStruct | catEnum | catConstructor |   
-        catMethod | catProperty | catField | catEvent |   
+    catClassMembers        =
+        catClass | catStruct | catEnum | catConstructor |
+        catMethod | catProperty | catField | catEvent |
         catDelegate | catInterface  
   
 } CorAttributeTargets;  
@@ -65,32 +65,32 @@ typedef enum CorAttributeTargets
 |`catAssembly`|アセンブリに属性を適用できます。|  
 |`catModule`|属性は、移植可能な実行可能ファイル (.dll または .exe) モジュールに適用できます。|  
 |`catClass`|クラスに属性を適用できます。|  
-|`catStruct`|構造体に属性を適用できます。つまり、値型です。|  
-|`catEnum`|属性を列挙に適用できます。|  
+|`catStruct`|構造体、つまり、値型に属性を適用できます。|  
+|`catEnum`|列挙体に属性を適用できます。|  
 |`catConstructor`|コンストラクターに属性を適用できます。|  
 |`catMethod`|メソッドに属性を適用できます。|  
-|`catProperty`|属性をプロパティに適用できます。|  
+|`catProperty`|プロパティに属性を適用できます。|  
 |`catField`|フィールドに属性を適用できます。|  
 |`catEvent`|イベントに属性を適用できます。|  
 |`catInterface`|インターフェイスに属性を適用できます。|  
 |`catParameter`|パラメーターに属性を適用できます。|  
 |`catDelegate`|デリゲートに属性を適用できます。|  
-|`catGenericParameter`|ジェネリックパラメーターに属性を適用できます。|  
+|`catGenericParameter`|ジェネリック パラメーターに属性を適用できます。|  
 |`catAll`|任意のアプリケーション要素に属性を適用できます。|  
 |`catClassMembers`|属性は、クラスのメンバーに適用できます。|  
   
 ## <a name="remarks"></a>コメント  
- `CorAttributeTargets` 列挙値をビットごとの OR 演算と組み合わせて、適切な組み合わせを取得できます。  
+ `CorAttributeTargets`列挙値をビットごとの or 演算と組み合わせて、適切な組み合わせを取得できます。  
   
- `CorAttributeTargets` は、マネージ <xref:System.AttributeTargets?displayProperty=nameWithType> 列挙体と同じです。  
+ は、 `CorAttributeTargets` マネージ列挙に似て <xref:System.AttributeTargets?displayProperty=nameWithType> います。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

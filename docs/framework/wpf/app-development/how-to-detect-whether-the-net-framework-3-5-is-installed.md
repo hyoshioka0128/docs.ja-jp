@@ -9,22 +9,22 @@ helpviewer_keywords:
 ms.assetid: 8556a9d2-1eb8-48ef-919c-5baf22a2a9a2
 ms.openlocfilehash: 18e5c819eb4deb62208280816d11dce0940d134d
 ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053428"
 ---
 # <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a>方法: .NET Framework 3.5 がインストールされているかどうかを確認する
-.NET Framework 3.5 を対象とするシステムに管理者が Windows Presentation Foundation (WPF) アプリケーションを配置できるようにするには、まず .NET Framework 3.5 ランタイムが存在することを確認する必要があります。 このトピックでは、.NET Framework 3.5 がシステムに存在するかどうかを確認するために管理者が使用できる HTML/JavaScript で記述されたスクリプトについて説明します。  
+管理者は、.NET Framework 3.5 を対象とするシステムに Windows Presentation Foundation (WPF) アプリケーションを配置する前に、まず、.NET Framework 3.5 ランタイムが存在することを確認する必要があります。 このトピックでは、.NET Framework 3.5 がシステムに存在するかどうかを確認するために管理者が使用できる HTML/JavaScript で記述されたスクリプトを提供します。  
   
 > [!NOTE]
-> .NET Framework のインストール、配置、および検出の詳細については、「[開発者向けの .NET Framework のインストール](../../install/guide-for-developers.md)」を参照してください。  
+> .NET Framework のインストール、配置、検出について詳しくは、「[開発者向けの .NET Framework のインストール](../../install/guide-for-developers.md)」をご覧ください。  
   
 ## <a name="example"></a>例  
- .NET Framework 3.5 がインストールされている場合、MSI は UserAgent 文字列に ".NET CLR" とバージョン番号を追加します。 次の例は、単純な HTML ページに埋め込まれたスクリプトを示しています。 このスクリプトは、UserAgent 文字列を検索して .NET Framework 3.5 がインストールされているかどうかを確認し、検索結果にステータスメッセージを表示します。  
+ .NET Framework 3.5 がインストールされている場合、MSI によって UserAgent 文字列に ".NET CLR" とバージョン番号が追加されます。 次の例は、単純な HTML ページに埋め込まれたスクリプトを示しています。 このスクリプトでは、UserAgent 文字列を検索し .NET Framework 3.5 がインストールされているかどうかを判断し、検索結果に状態メッセージを表示します。  
   
 > [!NOTE]
-> このスクリプトは Internet Explorer 向けに設計されています。 他のブラウザーでは、.NET CLR 情報を UserAgent 文字列に含めることはできません。  
+> このスクリプトは、Internet Explorer 向けに設計されています。 他のブラウザーでは、.NET CLR の情報が UserAgent 文字列に含まれていないことがあります。  
   
 ```html  
 <HTML>  
@@ -116,13 +116,13 @@ ms.locfileid: "71053428"
 </HTML>  
 ```  
   
- ".NET CLR" バージョンの検索に成功すると、次の種類のステータスメッセージが表示されます。  
+ ".NET CLR" バージョンの検索に成功すると、次の種類の状態メッセージが表示されます。  
   
  `This machine has the correct version of the .NET Framework 3.5.`  
   
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 3.0.590; .NET CLR 3.5.20726; MS-RTC LM 8).`  
   
- それ以外の場合は、次の種類のステータスメッセージが表示されます。  
+ それ以外の場合は、次の種類の状態メッセージが表示されます。  
   
  `This machine does not have the correct version of the .NET Framework 3.5. The required version is v3.5.0.0.`  
   

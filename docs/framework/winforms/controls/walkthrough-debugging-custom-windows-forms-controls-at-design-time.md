@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル : カスタム Windows フォーム コントロールのデザイン時のデバッグ'
+title: デザイン時にカスタムコントロールをデバッグする
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,12 +18,12 @@ ms.assetid: 1fd83ccd-3798-42fc-85a3-6cba99467387
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: a8572c1e70e36faf3a179de7a69e88e9cf1e781b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d9e292a1219c24571bcb35db2fe357b0197c8812
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460620"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740184"
 ---
 # <a name="walkthrough-debug-custom-windows-forms-controls-at-design-time"></a>チュートリアル: デザイン時にカスタム Windows フォームコントロールをデバッグする
 
@@ -31,7 +31,7 @@ ms.locfileid: "73460620"
 
 他の .NET Framework クラスをデバッグする場合と同様に、Visual Studio を使用してカスタムコントロールをデバッグできます。 違いは、カスタムコントロールのコードを実行している Visual Studio の別のインスタンスをデバッグすることです。
 
-## <a name="create-the-project"></a>プロジェクトの作成
+## <a name="create-the-project"></a>プロジェクトを作成する
 
 最初にアプリケーションのプロジェクトを作成します。 このプロジェクトは、カスタムコントロールをホストするアプリケーションをビルドするために使用します。
 
@@ -47,7 +47,7 @@ Visual Studio で、Windows アプリケーションプロジェクトを作成�
 
 4. ソリューションをビルドします。
 
-## <a name="checkpoint"></a>チェックポイント
+## <a name="checkpoint"></a>Checkpoint
 
 この時点で、**ツールボックス**にカスタムコントロールが表示されます。
 
@@ -143,12 +143,12 @@ Visual Studio で、Windows アプリケーションプロジェクトを作成�
 
 デザイン時にカスタムコントロールをデバッグできるようになったので、Visual Studio IDE とのコントロールの相互作用を拡張する多くの可能性があります。
 
-- <xref:System.ComponentModel.Component> クラスの <xref:System.ComponentModel.Component.DesignMode%2A> プロパティを使用して、デザイン時にのみ実行されるコードを記述できます。 詳細については、「<xref:System.ComponentModel.Component.DesignMode%2A>」を参照してください。
+- <xref:System.ComponentModel.Component> クラスの <xref:System.ComponentModel.Component.DesignMode%2A> プロパティを使用して、デザイン時にのみ実行されるコードを記述できます。 詳細については、<xref:System.ComponentModel.Component.DesignMode%2A> を参照してください。
 
 - コントロールのプロパティには、デザイナーとのカスタムコントロールの対話を操作するために適用できる属性がいくつかあります。 これらの属性は、<xref:System.ComponentModel?displayProperty=nameWithType> 名前空間にあります。
 
 - カスタムコントロールのカスタムデザイナーを作成できます。 これにより、Visual Studio によって公開される拡張可能なデザイナーインフラストラクチャを使用して、デザインエクスペリエンスを完全に制御できます。 詳細については、「[チュートリアル: Visual Studio のデザイン時機能を利用する Windows フォームコントロールの作成](creating-a-wf-control-design-time-features.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [チュートリアル: Visual Studio のデザイン時機能を活用した Windows フォーム コントロールの作成](creating-a-wf-control-design-time-features.md)

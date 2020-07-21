@@ -3,14 +3,12 @@ title: XML ドキュメントと XML データ
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 60614a95e4091b4d7bd9ae3a71e2ddeca53e29ba
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: a752d634141a56df1caa61eb5d375dd2a402832f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424863"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287689"
 ---
 # <a name="xml-documents-and-data"></a>XML ドキュメントと XML データ
 
@@ -56,33 +54,33 @@ ms.locfileid: "73424863"
 
   XSLT 処理が必要になるときのパフォーマンスを常に高めるために、<xref:System.Xml.XPath.XPathDocument> クラスを使用できます。このクラスは、<xref:System.Xml.Xsl.XslCompiledTransform> クラスと効率よく連携するように設計された、XPath クエリ用の最適化された読み取り専用ストアです。
 
-- **ADO.NET との統合。** XML クラスと [ADO.NET](../../../../docs/framework/data/adonet/index.md) が緊密に統合されることで、リレーショナル データと XML が結合されます。 <xref:System.Data.DataSet> クラスは、データベースから取得されたデータのメモリ内キャッシュです。 <xref:System.Data.DataSet> クラスは、<xref:System.Xml.XmlReader> クラスと <xref:System.Xml.XmlWriter> クラスを使用して XML を読み書きする機能、内部リレーショナル スキーマ構造を XML スキーマ (XSD) として永続化する機能、および XML ドキュメントからスキーマ構造を推論する機能を備えています。
+- **ADO.NET との統合。** XML クラスと [ADO.NET](../../../framework/data/adonet/index.md) が緊密に統合されることで、リレーショナル データと XML が結合されます。 <xref:System.Data.DataSet> クラスは、データベースから取得されたデータのメモリ内キャッシュです。 <xref:System.Data.DataSet> クラスは、<xref:System.Xml.XmlReader> クラスと <xref:System.Xml.XmlWriter> クラスを使用して XML を読み書きする機能、内部リレーショナル スキーマ構造を XML スキーマ (XSD) として永続化する機能、および XML ドキュメントからスキーマ構造を推論する機能を備えています。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[XML の処理オプション](../../../../docs/standard/data/xml/xml-processing-options.md) XML データの処理に関するオプションについて説明します。
+[XML の処理オプション](xml-processing-options.md) XML データの処理に関するオプションについて説明します。
 
-[メモリ内の XML データの処理](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md) XML データをメモリ内で処理する 3 つの方法について説明します。LINQ to XML (C#) および [LINQ to XML (Visual Basic)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)、<xref:System.Xml.XmlDocument> クラス (W3C ドキュメント オブジェクト モデルに基づく)、および <xref:System.Xml.XPath.XPathDocument> クラス (XPath データ モデルに基づく)。
+[メモリ内の XML データの処理](processing-xml-data-in-memory.md) XML データをメモリ内で処理する 3 つの方法について説明します。[LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) および [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)、<xref:System.Xml.XmlDocument> クラス (W3C ドキュメント オブジェクト モデルに基づく)、および <xref:System.Xml.XPath.XPathDocument> クラス (XPath データ モデルに基づく)。
 
-[XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)\
+[XSLT 変換](xslt-transformations.md)\
 XSLT プロセッサの使い方について説明します。
 
-[XML スキーマ オブジェクト モデル (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)\
+[XML スキーマ オブジェクト モデル (SOM)](xml-schema-object-model-som.md)\
 スキーマの読み込みと編集のための <xref:System.Xml.Schema.XmlSchema> クラスを提供することで、XML スキーマ (XSD) の作成と操作に使用されるクラスについて説明します。
 
-[XML とリレーショナル データおよび ADO.NET との統合](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)\
+[XML とリレーショナル データおよび ADO.NET との統合](xml-integration-with-relational-data-and-adonet.md)\
 .NET Framework が <xref:System.Data.DataSet> オブジェクトと <xref:System.Xml.XmlDataDocument> オブジェクトを介して、データのリレーショナル表現および階層表現の両方に対するリアルタイムの同期アクセスを実現するしくみついて説明します。
 
-[XML ドキュメントでの名前空間の管理](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)\
+[XML ドキュメントでの名前空間の管理](managing-namespaces-in-an-xml-document.md)\
 <xref:System.Xml.XmlNamespaceManager> クラスを使用して、名前空間情報を格納および保持する方法について説明します。
 
-[System.Xml クラスでの型のサポート](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)\
+[System.Xml クラスでの型のサポート](type-support-in-the-system-xml-classes.md)\
 XML データ型を CLR 型にマップする方法、XML データ型を変換する方法、および <xref:System.Xml> クラスのその他の型サポート機能について説明します。
 
 ## <a name="related-sections"></a>関連項目
 
-[ADO.NET](../../../../docs/framework/data/adonet/index.md)\
+[ADO.NET](../../../framework/data/adonet/index.md)\
 ADO.NET を使用してデータにアクセスする方法について説明します。
 
-[セキュリティ](../../../../docs/standard/security/index.md)\
+[セキュリティ](../../security/index.md)\
 .NET Framework セキュリティ システムの概要を説明します。

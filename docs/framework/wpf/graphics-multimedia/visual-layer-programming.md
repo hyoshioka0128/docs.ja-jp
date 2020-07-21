@@ -11,13 +11,13 @@ helpviewer_keywords:
 ms.assetid: d82c89db-077f-4c3c-a4f8-310ebfbe0fe2
 ms.openlocfilehash: 599ef73e2e8c772559badb3a562a12f8311e9c60
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61762099"
 ---
 # <a name="visual-layer-programming"></a>ビジュアル層のプログラミング
-<xref:System.Windows.Media.Visual>オブジェクトは、コア[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]そのプライマリの役割は描画をサポートするオブジェクト。 などのユーザー インターフェイス コントロール<xref:System.Windows.Controls.Button>と<xref:System.Windows.Controls.TextBox>から派生、<xref:System.Windows.Media.Visual>クラス、およびレンダリング データを保持するのに使用します。  
+<xref:System.Windows.Media.Visual> オブジェクトは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] の中心的なオブジェクトであり、その第一の役割は描画をサポートすることです。 <xref:System.Windows.Controls.Button> や <xref:System.Windows.Controls.TextBox> など、ユーザー インターフェイス コントロールは <xref:System.Windows.Media.Visual> クラスから誘導され、レンダリング データの保持にこのクラスが利用されます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ビジュアル層でのヒット テスト](hit-testing-in-the-visual-layer.md)  

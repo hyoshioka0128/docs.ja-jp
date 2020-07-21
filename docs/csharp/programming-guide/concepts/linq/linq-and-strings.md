@@ -2,18 +2,18 @@
 title: LINQ と文字列 (C#)
 ms.date: 07/20/2015
 ms.assetid: dbe2d657-b3f3-487e-b645-21fb2d71cd7b
-ms.openlocfilehash: fb1714c54331ead80cd28435cf3ed1c4c54a704e
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: b805bc7318b8c5fe70ab1c060d1058a6bbc4f177
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140902"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75635536"
 ---
 # <a name="linq-and-strings-c"></a>LINQ と文字列 (C#)
 
 文字列やそのコレクションは、LINQ を使って照会したり変換したりすることができます。 特に、テキスト ファイル内の半構造化されたデータでその利便性が発揮されます。 LINQ クエリは、従来の文字列関数や正規表現と組み合わせることができます。 たとえば、<xref:System.String.Split%2A?displayProperty=nameWithType> または <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType> メソッドを使用して、文字列の配列を作成し、その後で LINQ を使用してクエリを実行したり変更したりすることができます。 LINQ クエリの `where` 句で <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> メソッドを使用できます。 LINQ を使用して、正規表現によって返される <xref:System.Text.RegularExpressions.MatchCollection> の結果に対してクエリを実行したり変更したりすることができます。
 
-このセクションで説明する手法を使えば、半構造化されたテキスト データを XML に変換することもできます。 詳細については、[CSV ファイルから XML を生成する (C#)](how-to-generate-xml-from-csv-files.md)」を参照してください。
+このセクションで説明する手法を使えば、半構造化されたテキスト データを XML に変換することもできます。 詳細については、「[CSV ファイルから XML を生成する方法](how-to-generate-xml-from-csv-files.md)」を参照してください。
 
 このセクションの例は、次の 2 つのカテゴリに分かれています。
 
@@ -24,11 +24,11 @@ ms.locfileid: "74140902"
 - [文字列での単語の出現回数をカウントする方法 (LINQ) (C#)](how-to-count-occurrences-of-a-word-in-a-string-linq.md)  
   テキストに対する単純なクエリを LINQ で行う方法が紹介されています。
 
-- [方法: 指定された単語のセットを含む文章を照会する (LINQ) (C#)](how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq.md)
+- [指定されたワードのセットを含む文章を照会する方法 (LINQ) (C#)](how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq.md)
 
   区切りを指定してテキスト ファイルを分割する方法やその各構成要素に対してクエリを実行する方法が紹介されています。
 
-- [方法: 文字列内の文字をクエリする (LINQ) (C#)](how-to-query-for-characters-in-a-string-linq.md)
+- [文字列内の文字を照会する方法 (LINQ) (C#)](how-to-query-for-characters-in-a-string-linq.md)
 
   文字列がクエリ可能型であることを実証します。
 
@@ -40,15 +40,15 @@ ms.locfileid: "74140902"
 
 テキスト ファイルにはさまざまな種類がありますが、タブ区切りファイルやコンマ区切りファイル、固定長行など同様の形式を持った一連の行で構成されていることは少なくありません。 そのようなテキスト ファイルをメモリに読み込んだ後、LINQ を使って、必要な行を照会したり編集したりすることができます。 複数ソースからのデータを組み合わせる作業も LINQ クエリなら簡単に行うことができます。
 
-- [方法: 2 つのリストの差集合を見つける (LINQ) (C#)](how-to-find-the-set-difference-between-two-lists-linq.md)
+- [2 つのリストの差集合を見つける方法 (LINQ) (C#)](how-to-find-the-set-difference-between-two-lists-linq.md)
 
   ある特定のリストには存在しているものの、それ以外には存在しない文字列をすべて探す方法が紹介されています。
 
-- [方法: 任意の単語またはフィールドを基準にテキスト データの並べ替えまたはフィルター処理を実行する (LINQ) (C#)](how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [任意のワードまたはフィールドを基準にテキスト データの並べ替えまたはフィルター処理を実行する方法 (LINQ) (C#)](how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
 
   単語やフィールドに基づいてテキスト行を並べ替える方法が紹介されています。
 
-- [方法: 区切り記号入りファイルのフィールドの順序を変更する (LINQ) (C#)](how-to-reorder-the-fields-of-a-delimited-file-linq.md)
+- [区切りファイルのフィールドの順序を変更する方法 (LINQ) (C#)](how-to-reorder-the-fields-of-a-delimited-file-linq.md)
 
   .csv ファイルの行に含まれるフィールドを並べ替える方法が紹介されています。
 
@@ -56,15 +56,15 @@ ms.locfileid: "74140902"
 
   文字列リストをさまざまな方法で結合する方法が紹介されています。
 
-- [方法: 複数のソースからオブジェクト コレクションにデータを設定する (LINQ) (C#)](how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [複数のソースからオブジェクト コレクションにデータを設定する方法 (LINQ) (C#)](how-to-populate-object-collections-from-multiple-sources-linq.md)
 
   複数のテキスト ファイルをデータ ソースとしてオブジェクトのコレクションを作成する方法が紹介されています。
 
-- [方法: 異種ファイルのコンテンツを結合する (LINQ) (C#)](how-to-join-content-from-dissimilar-files-linq.md)
+- [異種ファイルのコンテンツを結合する方法 (LINQ) (C#)](how-to-join-content-from-dissimilar-files-linq.md)
   
   2 つのリストに含まれる文字列を、一致するキーを使って 1 つの文字列に結合する方法が紹介されています。
 
-- [方法: グループを使用して 1 つのファイルを複数のファイルに分割する (LINQ) (C#)](how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [グループを使用して 1 つのファイルを複数のファイルに分割する方法 (LINQ) (C#)](how-to-split-a-file-into-many-files-by-using-groups-linq.md)
   
   1 つのファイルをデータ ソースとして新しいファイルを作成する方法が紹介されています。
 
@@ -72,7 +72,7 @@ ms.locfileid: "74140902"
   
   .csv ファイルでテキスト データに対して数学的計算を実行する方法が紹介されています。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [統合言語クエリ (LINQ) (C#)](index.md)
-- [方法: CSV ファイルから XML を生成する](how-to-generate-xml-from-csv-files.md)
+- [CSV ファイルから XML を生成する方法](how-to-generate-xml-from-csv-files.md)

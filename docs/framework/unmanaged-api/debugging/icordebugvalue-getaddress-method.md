@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a247c792-45e1-4538-9e1f-b46acca4a463
 topic_type:
 - apiref
-ms.openlocfilehash: 906ca2540e421953b3ce39300aa7b2376f789929
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 467ba53f90081f0c3499fb22acab96b5e380a3f4
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137097"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83395840"
 ---
 # <a name="icordebugvaluegetaddress-method"></a>ICorDebugValue::GetAddress メソッド
 この "ICorDebugValue" オブジェクトのアドレスを取得します。このオブジェクトはデバッグ中です。  
@@ -35,18 +35,18 @@ HRESULT GetAddress (
   
 ## <a name="parameters"></a>パラメーター  
  `pAddress`  
- 入出力この値オブジェクトのアドレスを指定する `CORDB_ADDRESS` オブジェクトへのポインター。  
+ 入出力`CORDB_ADDRESS`この値オブジェクトのアドレスを指定するオブジェクトへのポインター。  
   
-## <a name="remarks"></a>Remarks  
- 値が使用できない場合は、0 (ゼロ) が返されます。 これは、値がレジスタの少なくとも一部であるか、ガベージコレクターハンドル (`GCHandle`) に格納されている場合に発生する可能性があります。  
+## <a name="remarks"></a>解説  
+ 値が使用できない場合は、0 (ゼロ) が返されます。 これは、値がレジスタの少なくとも一部の場合、またはガベージコレクターハンドル () に格納されている場合に発生する可能性が `GCHandle` あります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目

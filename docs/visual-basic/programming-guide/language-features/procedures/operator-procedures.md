@@ -11,42 +11,42 @@ helpviewer_keywords:
 - operator overloading
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
-ms.openlocfilehash: b395f5fcf1b89bb49e55e207c4910e95f2aae69d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: a1dd183570c8aa50efff85bdaebef90bd3b0120f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345999"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364319"
 ---
 # <a name="operator-procedures-visual-basic"></a>演算子プロシージャ (Visual Basic)
 
-演算子プロシージャは、定義したクラスまたは構造体の標準演算子 (`*`、`<>`、`And`など) の動作を定義する一連の Visual Basic ステートメントです。 これは、*演算子のオーバーロード*とも呼ばれます。
+演算子プロシージャは、定義済みのクラスまたは構造体での標準演算子 (`*`、`<>`、`And` など) の動作を定義する一連の Visual Basic ステートメントです。 これは、"*演算子のオーバーロード*" とも呼ばれます。
 
 ## <a name="when-to-define-operator-procedures"></a>演算子プロシージャを定義する場合
 
-クラスまたは構造体を定義したら、そのクラスまたは構造体の型として変数を宣言できます。 このような変数は、式の一部として操作に参加する必要がある場合があります。 これを行うには、演算子のオペランドである必要があります。
+クラスまたは構造体を定義したら、そのクラスまたは構造体の型で変数を宣言できます。 このような変数は、式の一部として演算に関与することが必要な場合があります。 そのためには、演算子のオペランドである必要があります。
 
-Visual Basic は、基本データ型に対してのみ演算子を定義します。 1つまたは両方のオペランドがクラスまたは構造体の型である場合は、演算子の動作を定義できます。
+Visual Basic では、基本的なデータ型でのみ演算子を定義します。 オペランドの一方または両方がクラスまたは構造体の型である場合、演算子の動作を定義できます。
 
-詳細については、「 [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)」を参照してください。
+詳細については、「[Operator Statement](../../../language-reference/statements/operator-statement.md)」をご覧ください。
 
-## <a name="types-of-operator-procedure"></a>演算子プロシージャの種類
+## <a name="types-of-operator-procedure"></a>演算子プロシージャの型
 
-演算子プロシージャには、次のいずれかの型を指定できます。
+演算子プロシージャは、次のいずれかの型にすることができます。
 
 - 引数がクラスまたは構造体の型である単項演算子の定義。
 
-- 少なくとも1つの引数がクラスまたは構造体の型である二項演算子の定義。
+- 引数の少なくとも 1 つがクラスまたは構造体の型である 2 項演算子の定義。
 
 - 引数がクラスまたは構造体の型である変換演算子の定義。
 
 - クラスまたは構造体の型を返す変換演算子の定義。
 
- 変換演算子は常に単項演算であり、定義する演算子として常に `CType` を使用します。
+ 変換演算子は常に単項であり、定義する演算子として常に `CType` を使用します。
 
 ## <a name="declaration-syntax"></a>宣言の構文
 
-演算子プロシージャを宣言する構文は次のとおりです。
+演算子プロシージャを宣言するための構文は次のとおりです。
 
 ```vb
 Public Shared [Widening | Narrowing] Operator operatorsymbol ( operand1 [,  operand2 ]) As datatype
@@ -56,47 +56,47 @@ Public Shared [Widening | Narrowing] Operator operatorsymbol ( operand1 [,  oper
 End Operator
 ```
 
-`Widening` または `Narrowing` キーワードは、型変換演算子でのみ使用します。 演算子シンボルは、型変換演算子の場合は常に[CType 関数](../../../../visual-basic/language-reference/functions/ctype-function.md)です。
+`Widening` または `Narrowing` キーワードは、型変換演算子でのみ使用します。 型変換演算子では、演算子記号は常に [CType 関数](../../../language-reference/functions/ctype-function.md)です。
 
-2つのオペランドを宣言して二項演算子を定義し、1つのオペランドを宣言して、単項演算子 (型変換演算子を含む) を定義します。 すべてのオペランドは `ByVal`として宣言する必要があります。
+2 項演算子を定義するには、2 つのオペランドを宣言し、型変換演算子を含め、単項演算子を定義するには、1 つのオペランドを宣言します。 すべてのオペランドを `ByVal` で宣言する必要があります。
 
-各オペランドは、[サブプロシージャ](./sub-procedures.md)のパラメーターを宣言するのと同じ方法で宣言します。
+[Sub プロシージャ](./sub-procedures.md)のパラメーターを宣言する場合と同様に、各オペランドを宣言します。
 
-### <a name="data-type"></a>データ型
+### <a name="data-type"></a>データの種類
 
-定義したクラスまたは構造体に演算子を定義しているため、少なくとも1つのオペランドがそのクラスまたは構造体のデータ型である必要があります。 型変換演算子の場合、オペランドまたは戻り値の型は、クラスまたは構造体のデータ型である必要があります。
+定義済みのクラスまたは構造体で演算子を定義するため、オペランドの少なくとも一方は、そのクラスまたは構造体のデータ型である必要があります。 型変換演算子の場合、オペランドまたは戻り値の型が、クラスまたは構造体のデータ型である必要があります。
 
-詳細については、「 [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)」を参照してください。
+詳細については、「[Operator Statement](../../../language-reference/statements/operator-statement.md)」をご覧ください。
 
-## <a name="calling-syntax"></a>呼び出し構文
+## <a name="calling-syntax"></a>呼び出しの構文
 
-演算子プロシージャを暗黙的に呼び出すには、式の中で演算子記号を使用します。 オペランドは、定義済みの演算子に対して実行するのと同じ方法で指定します。
+演算子プロシージャは、式で演算子記号を使用して暗黙的に呼び出します。 事前定義された演算子の場合と同様にオペランドを指定します。
 
-演算子プロシージャへの暗黙的な呼び出しの構文は次のとおりです。
+演算子プロシージャの暗黙的な呼び出しの構文は次のとおりです。
 
-`Dim testStruct As`*structurename*
+`Dim testStruct As`  *構造体名*
 
-`Dim testNewStruct As`*structurename*`= testStruct`*演算子シンボル*`10`
+`Dim testNewStruct As`  *構造体名*  `= testStruct`  *演算子記号*  `10`
 
-### <a name="illustration-of-declaration-and-call"></a>宣言と呼び出しの図
+### <a name="illustration-of-declaration-and-call"></a>宣言と呼び出しの実例
 
-次の構造体は、上位および下位の要素として符号付き128ビット整数値を格納します。 2つの `veryLong` 値を加算し、結果として得られる `veryLong` 値を生成する `+` 演算子を定義します。
+次の構造体は、構成要素の上位および下位の要素として、符号付き 128 ビット整数値を格納します。 2 つの `veryLong` 値を加算し、結果の `veryLong` 値を生成する `+` 演算子を定義します。
 
 [!code-vb[VbVbcnProcedures#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#23)]
 
-次の例は、`veryLong`で定義されている `+` 演算子の一般的な呼び出しを示しています。
+次の例は、`veryLong` で定義された `+` 演算子の一般的な呼び出しを示しています。
 
 [!code-vb[VbVbcnProcedures#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#24)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [手順](./index.md)
 - [Sub プロシージャ](./sub-procedures.md)
 - [Function プロシージャ](./function-procedures.md)
 - [Property プロシージャ](./property-procedures.md)
 - [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)
-- [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)
-- [方法 : 演算子を定義する](./how-to-define-an-operator.md)
-- [方法 : 変換演算子を定義する](./how-to-define-a-conversion-operator.md)
-- [方法 : 演算子プロシージャを呼び出す](./how-to-call-an-operator-procedure.md)
+- [Operator ステートメント](../../../language-reference/statements/operator-statement.md)
+- [方法: 演算子を定義する](./how-to-define-an-operator.md)
+- [方法: 変換演算子を定義する](./how-to-define-a-conversion-operator.md)
+- [方法: 演算子プロシージャを呼び出す](./how-to-call-an-operator-procedure.md)
 - [方法: 演算子を定義するクラスを使用する](./how-to-use-a-class-that-defines-operators.md)

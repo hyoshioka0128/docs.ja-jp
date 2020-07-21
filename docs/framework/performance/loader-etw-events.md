@@ -1,18 +1,17 @@
 ---
 title: ローダー ETW イベント
+description: アプリケーションドメインイベント、CLR ローダーアセンブリイベント、モジュールイベント、CLR ドメインモジュールイベント、モジュール範囲イベントなどのローダー ETW イベントを確認します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a6928b5ac41a6af36dc7d5e7f5bb02074ba742e5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 8220e8e773409be76bc7522d57551f1bddb90e5d
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974588"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474359"
 ---
 # <a name="loader-etw-events"></a>ローダー ETW イベント
 これらのイベントは、アプリケーションのドメイン、アセンブリ、およびモジュールのロードとアンロードに関連する情報を収集します。  
@@ -22,7 +21,7 @@ ms.locfileid: "73974588"
 ## <a name="application-domain-events"></a>アプリケーション ドメイン イベント
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|event|レベル|  
+|イベントを発生させるキーワード|Event|Level|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AppDomainLoad_V1` および `AppDomainUnLoad_V1`|情報提供 (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|情報提供 (4)|  
@@ -30,7 +29,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント情報を示します。  
   
-|event|イベント ID|説明|  
+|Event|イベント ID|説明|  
 |-----------|--------------|-----------------|  
 |`AppDomainLoad_V1` (すべてのアプリケーション ドメインについて記録)|156|プロセスの有効期間中に、アプリケーション ドメインが作成されるたびに発生します。|  
 |`AppDomainUnLoad_V1`|157|プロセスの有効期間中に、アプリケーション ドメインが破壊されるたびに発生します。|  
@@ -39,7 +38,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント データを示します。  
   
-|フィールド名|データの種類|説明|  
+|フィールド名|データ型|説明|  
 |----------------|---------------|-----------------|  
 |AppDomainID|win:UInt64|アプリケーション ドメインの一意の識別子。|  
 |AppDomainFlags|win:UInt32|0x1: 既定のドメイン。<br /><br /> 0x2: 実行可能ファイル。<br /><br /> 0x4: アプリケーション ドメイン、ビット 28 ～ 31: このドメインの共有ポリシー。<br /><br /> 0: 共有ドメイン。|  
@@ -50,7 +49,7 @@ ms.locfileid: "73974588"
 ## <a name="clr-loader-assembly-events"></a>CLR ローダー アセンブリ イベント  
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|event|レベル|  
+|イベントを発生させるキーワード|Event|Level|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AssemblyLoad` および `AssemblyUnload`|情報提供 (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|情報提供 (4)|  
@@ -58,7 +57,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント情報を示します。  
   
-|event|イベント ID|説明|  
+|Event|イベント ID|説明|  
 |-----------|--------------|-----------------|  
 |`AssemblyLoad_V1`|154|アセンブリが読み込まれたときに発生します。|  
 |`AssemblyUnload_V1`|155|アセンブリがアンロードされたときに発生します。|  
@@ -67,19 +66,19 @@ ms.locfileid: "73974588"
   
  次の表に、イベント データを示します。  
   
-|フィールド名|データの種類|説明|  
+|フィールド名|データ型|説明|  
 |----------------|---------------|-----------------|  
 |AssemblyID|win:UInt64|アセンブリの一意の ID。|  
 |AppDomainID|win:UInt64|このアセンブリのドメインの ID。|  
 |BindingID|win:UInt64|アセンブリ バインディングを一意に識別する ID。|  
 |AssemblyFlags|win:UInt32|0x1: ドメインに中立的なアセンブリ。<br /><br /> 0x2: 動的アセンブリ。<br /><br /> 0x4: アセンブリにネイティブ イメージがある。<br /><br /> 0x8: 収集可能なアセンブリ。|  
 |AssemblyName|win:UnicodeString|完全修飾アセンブリ名。|  
-|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|   
+|ClrInstanceID|win:UInt16|CLR または CoreCLR のインスタンスの一意の ID。|
 
 ## <a name="module-events"></a>モジュール イベント
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|event|レベル|  
+|イベントを発生させるキーワード|Event|Level|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`ModuleLoad_V2` および `ModuleUnload_V2`|情報提供 (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|情報提供 (4)|  
@@ -88,7 +87,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント情報を示します。  
   
-|event|イベント ID|説明|  
+|Event|イベント ID|説明|  
 |-----------|--------------|-----------------|  
 |`ModuleLoad_V2`|152|プロセスの有効期間中にモジュールが読み込まれるときに発生します。|  
 |`ModuleUnload_V2`|153|プロセスの有効期間中にモジュールがアンロードされるときに発生します。|  
@@ -97,7 +96,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント データを示します。  
   
-|フィールド名|データの種類|説明|  
+|フィールド名|データ型|説明|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|モジュールの一意な ID。|  
 |AssemblyID|win:UInt64|このモジュールが存在するアセンブリの ID。|  
@@ -113,7 +112,7 @@ ms.locfileid: "73974588"
 |NativePdbAge|win:UInt32|このモジュールに一致する NGen PDB に書き込まれた期間を表す数値 (該当する場合)。 (「解説」を参照してください。)|  
 |NativePdbBuildPath|win:UnicodeString|このモジュールに一致する管理対象の NGen PDB が構成されている場所へのパス (該当する場合)。 これは、ファイル名だけの場合もあります。 (「解説」を参照してください。)|  
   
-### <a name="remarks"></a>Remarks  
+### <a name="remarks"></a>解説  
   
 - 名前に"Pdb"が付いているフィールドは、プロファイル セッション中に読み込まれたモジュールに一致する PDB を検索するプロファイリング ツールによって使用できます。 これらのフィールドの値は、読み込まれたモジュールに一致する PDB の位置を特定するためにデバッガーが通常使用する、モジュールの IMAGE_DIRECTORY_ENTRY_DEBUG のセクションに書き込まれたデータに対応します。  
   
@@ -124,7 +123,7 @@ ms.locfileid: "73974588"
 ## <a name="clr-domain-module-events"></a>CLR ドメイン モジュール イベント
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|event|レベル|  
+|イベントを発生させるキーワード|Event|Level|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`DomainModuleLoad_V1`|情報提供 (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|情報提供 (4)|  
@@ -132,7 +131,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント情報を示します。  
   
-|event|イベント ID|説明|  
+|Event|イベント ID|説明|  
 |-----------|--------------|-----------------|  
 |`DomainModuleLoad_V1`|151|モジュールがアプリケーション ドメインに読み込まれるときに発生します。|  
 |`DomainModuleDCStart_V1`|151|開始ランダウン中にアプリケーション ドメインに読み込まれたモジュールを列挙し、すべてのアプリケーション ドメインについてログに記録されます。|  
@@ -140,7 +139,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント データを示します。  
   
-|フィールド名|データの種類|説明|  
+|フィールド名|データ型|説明|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|このモジュールが所属するアセンブリを識別します。|  
 |AssemblyID|win:UInt64|このモジュールが存在するアセンブリの ID。|  
@@ -154,7 +153,7 @@ ms.locfileid: "73974588"
 ## <a name="module-range-events"></a>モジュールの範囲イベント
  次の表に、キーワードとレベルを示します。  
   
-|イベントを発生させるキーワード|event|レベル|  
+|イベントを発生させるキーワード|Event|Level|  
 |-----------------------------------|-----------|-----------|  
 |`PerfTrackKeyWord`)|`ModuleRange`|情報提供 (4)|  
 |`PerfTrackKeyWord`|`ModuleRangeDCStart`|情報提供 (4)|  
@@ -162,7 +161,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント情報を示します。  
   
-|event|イベント ID|説明|  
+|Event|イベント ID|説明|  
 |-----------|--------------|-----------------|  
 |`ModuleRange`|158|ロードされたネイティブ イメージ ジェネレーター (NGen) のイメージが IBC によって最適化されていて、NGen イメージのホット セクションに関する情報が含まれる場合は、このイベントが存在します。|  
 |`ModuleRangeDCStart`|160|ランダウンの開始時に発生する `ModuleRange` イベント。|  
@@ -170,7 +169,7 @@ ms.locfileid: "73974588"
   
  次の表に、イベント データを示します。  
   
-|フィールド名|データの種類|説明|  
+|フィールド名|データ型|説明|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|win:UInt16|CLR の複数のインスタンスが読み込まれている場合、プロセス内の CLR の特定のインスタンスを一意に識別します。|  
 |ModuleID|win:UInt64|このモジュールが所属するアセンブリを識別します。|  
@@ -180,7 +179,7 @@ ms.locfileid: "73974588"
 |RangeSize1|win:UInt32|0 は無効なデータを示します。|  
 |RangeBegin2|win:UnicodeString||  
   
-### <a name="remarks"></a>Remarks  
+### <a name="remarks"></a>解説  
  .NET Framework のプロセスで読み込まれた NGen イメージが IBC に最適化されている場合、NGen イメージにホットの範囲を含む `ModuleRange` イベントが `moduleID` と `ClrInstanceID`と共にログに記録されます。  NGen イメージが IBC に最適化されていない場合は、このイベントは記録されません。 モジュール名を確認するには、このイベントをモジュールの読み込みの ETW イベントで照合する必要があります。  
   
  このイベントのペイロードのサイズは変数です。 `Count` フィールドは、イベントに含まれている範囲オフセットの数を示します。  このイベントは、実際の範囲を判断するために Windows `IStart` イベントと照合する必要があります。 Windows Image Load イベントは、イメージが読み込まれ、読み込まれたイメージの仮想アドレスが含まれている場合は必ず記録されます。  

@@ -3,10 +3,10 @@ title: マイクロサービス単位のデータ管理
 description: マイクロサービス単位のデータ管理は、マイクロサービスのキー ポイントの 1 つです。 各マイクロサービスは、他とそのデータベースを共有することがない、その唯一の所有者である必要があります。 マイクロサービスのすべてのインスタンスは、当然同じ高可用性のデータベースに接続されます。
 ms.date: 09/20/2018
 ms.openlocfilehash: f606d6314f38bf3e2c163871af432806dddc7446
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73191909"
 ---
 # <a name="data-sovereignty-per-microservice"></a>マイクロサービス単位のデータ管理

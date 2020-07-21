@@ -2,12 +2,12 @@
 title: 標準クエリ演算子の概要
 ms.date: 07/20/2015
 ms.assetid: 302bd39e-2ec1-495b-94bf-37d370d6f05f
-ms.openlocfilehash: 9660e1d92db87e1ae906b3fd6616a51c8b8715fa
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 7c229a576f6695282473352d6253d2c699c76604
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349309"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406782"
 ---
 # <a name="standard-query-operators-overview-visual-basic"></a>標準クエリ演算子の概要 (Visual Basic)
 
@@ -15,7 +15,7 @@ ms.locfileid: "74349309"
 
 LINQ 標準クエリ演算子には 2 つのセットがあります。1 つは <xref:System.Collections.Generic.IEnumerable%601> 型のオブジェクトを操作する演算子、もう 1 つは <xref:System.Linq.IQueryable%601> 型のオブジェクトを操作する演算子です。 各セットを構成するメソッドは、それぞれ、<xref:System.Linq.Enumerable> および <xref:System.Linq.Queryable> クラスの静的メンバーです。 そのメソッドの操作対象である型の "*拡張メソッド*" として定義されています。 つまり、静的メソッド構文またはインスタンス メソッド構文のいずれかを使用して呼び出すことができます。
 
-さらに、いくつかの標準クエリ演算子メソッドが、<xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Linq.IQueryable%601> を基にする型以外の型を操作します。 <xref:System.Linq.Enumerable> 型は、このような 2 つのメソッドを定義し、その両方が <xref:System.Collections.IEnumerable> 型のオブジェクトを操作します。 これらのメソッド <xref:System.Linq.Enumerable.Cast%60%601%28System.Collections.IEnumerable%29> と <xref:System.Linq.Enumerable.OfType%60%601%28System.Collections.IEnumerable%29> を使用して、LINQ パターンでクエリされるパラメーター化されていないまたは非ジェネリック型のコレクションを有効にすることができます。 これを行うには、厳密に型指定されたオブジェクトのコレクションを作成します。 <xref:System.Linq.Queryable> クラスは、型 <xref:System.Linq.Queryable.Cast%60%601%28System.Linq.IQueryable%29> のオブジェクトを操作する 2 つの類似したメソッド <xref:System.Linq.Queryable.OfType%60%601%28System.Linq.IQueryable%29> と <xref:System.Linq.Queryable> を定義します。
+さらに、いくつかの標準クエリ演算子メソッドが、<xref:System.Collections.Generic.IEnumerable%601> または <xref:System.Linq.IQueryable%601> を基にする型以外の型を操作します。 <xref:System.Linq.Enumerable> 型は、このような 2 つのメソッドを定義し、その両方が <xref:System.Collections.IEnumerable> 型のオブジェクトを操作します。 これらのメソッド <xref:System.Linq.Enumerable.Cast%60%601%28System.Collections.IEnumerable%29> と <xref:System.Linq.Enumerable.OfType%60%601%28System.Collections.IEnumerable%29> を使用して、LINQ パターンでクエリされるパラメーター化されていないまたは非ジェネリック型のコレクションを有効にすることができます。 これを行うには、厳密に型指定されたオブジェクトのコレクションを作成します。 <xref:System.Linq.Queryable> クラスは、型 <xref:System.Linq.Queryable> のオブジェクトを操作する 2 つの類似したメソッド <xref:System.Linq.Queryable.Cast%60%601%28System.Linq.IQueryable%29> と <xref:System.Linq.Queryable.OfType%60%601%28System.Linq.IQueryable%29> を定義します。
 
 標準クエリ演算子の実行のタイミングは、シングルトン値を返すか、値のシーケンスを返すかで異なります。 これらのシングルトン値を返すメソッド (たとえば、<xref:System.Linq.Enumerable.Average%2A> と <xref:System.Linq.Enumerable.Sum%2A>) は、すぐに実行されます。 シーケンスを返すメソッドは、クエリの実行を遅延させ、列挙可能なオブジェクトを返します。
 
@@ -66,49 +66,49 @@ MsgBox(output.ToString())
 
 ## <a name="query-expression-syntax"></a>クエリ式の構文
 
-頻繁に使用される標準クエリ演算子の中には、C# および Visual Basic 言語専用のキーワード構文が使用されているものがあります。こうした構文では、標準クエリ演算子を、"*クエリ* *式*" の一部として呼び出すことができます。 専用キーワードとそれに対応する構文を持つ標準クエリ演算子の詳細については、「[標準クエリ演算子のクエリ式の構文 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)」を参照してください。
+頻繁に使用される標準クエリ演算子の中には、C# および Visual Basic 言語専用のキーワード構文が使用されているものがあります。こうした構文では、標準クエリ演算子を、"*クエリ* *式*" の一部として呼び出すことができます。 専用キーワードおよびそれに対応する構文が使用されている標準クエリ演算子の詳細については、「[標準クエリ演算子のクエリ式構文 (Visual Basic)](query-expression-syntax-for-standard-query-operators.md)」を参照してください。
 
 ## <a name="extending-the-standard-query-operators"></a>標準クエリ演算子の拡張
 
 標準クエリ演算子のセットを拡張するには、対象のドメインまたはテクノロジに適したドメイン固有のメソッドを作成します。 また、標準クエリ演算子を、リモート評価、クエリ変換、最適化などの追加サービスが用意されている独自の実装で置き換えることもできます。 例については、「<xref:System.Linq.Enumerable.AsEnumerable%2A>」を参照してください。
 
-## <a name="related-sections"></a>関連セクション
+## <a name="related-sections"></a>関連項目
 
 次のリンクをクリックすると、さまざまな標準クエリ演算子に関する追加情報を機能別に確認することができます。
 
-- [データの並べ替え](../../../../visual-basic/programming-guide/concepts/linq/sorting-data.md)
+- [データの並べ替え](sorting-data.md)
 
-- [操作の設定 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/set-operations.md)
+- [セット操作 (Visual Basic)](set-operations.md)
 
-- [データのフィルター処理 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/filtering-data.md)
+- [データのフィルター処理 (Visual Basic)](filtering-data.md)
 
-- [量指定子操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/quantifier-operations.md)
+- [量指定子操作 (Visual Basic)](quantifier-operations.md)
 
-- [プロジェクション操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)
+- [射影操作 (Visual Basic)](projection-operations.md)
 
-- [データのパーティション分割 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/partitioning-data.md)
+- [データのパーティション分割 (Visual Basic)](partitioning-data.md)
 
-- [結合操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md)
+- [結合操作 (Visual Basic)](join-operations.md)
 
-- [データのグループ化 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/grouping-data.md)
+- [データのグループ化 (Visual Basic)](grouping-data.md)
 
-- [生成操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/generation-operations.md)
+- [生成操作 (Visual Basic)](generation-operations.md)
 
-- [等値演算 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/equality-operations.md)
+- [等値演算 (Visual Basic)](equality-operations.md)
 
-- [要素の操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/element-operations.md)
+- [要素操作 (Visual Basic)](element-operations.md)
 
-- [データ型の変換 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/converting-data-types.md)
+- [データ型の変換 (Visual Basic)](converting-data-types.md)
 
-- [連結演算 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/concatenation-operations.md)
+- [連結演算 (Visual Basic)](concatenation-operations.md)
 
-- [集計操作 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/aggregation-operations.md)
+- [集計操作 (Visual Basic)](aggregation-operations.md)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.Linq.Enumerable>
 - <xref:System.Linq.Queryable>
-- [LINQ の概要 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)
-- [標準クエリ演算子のクエリ式の構文 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
-- [実行方法による標準クエリ演算子の分類 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md)
-- [拡張メソッド](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
+- [LINQ の概要 (Visual Basic)](introduction-to-linq.md)
+- [標準クエリ演算子のクエリ式構文 (Visual Basic)](query-expression-syntax-for-standard-query-operators.md)
+- [実行方法による標準クエリ演算子の分類 (Visual Basic)](classification-of-standard-query-operators-by-manner-of-execution.md)
+- [拡張メソッド](../../language-features/procedures/extension-methods.md)

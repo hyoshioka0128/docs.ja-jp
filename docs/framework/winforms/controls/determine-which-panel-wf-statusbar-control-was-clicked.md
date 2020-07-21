@@ -1,5 +1,5 @@
 ---
-title: '方法: Windows フォームの StatusBar コントロールでクリックされたパネルを確認する'
+title: StatusBar コントロールでクリックされたパネルを確認する
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,27 +13,27 @@ helpviewer_keywords:
 - PanelClick event [Windows Forms], determining panel clicked
 - Panel control [Windows Forms], determining click
 ms.assetid: d14c6092-04b2-4a07-8ddf-0dd11277ff5f
-ms.openlocfilehash: 6229d8965949641105cd0e9708474c3249d52d1d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eb3b10d515ba5b62236594e063ca7f060b34b73e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965717"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182364"
 ---
-# <a name="how-to-determine-which-panel-in-the-windows-forms-statusbar-control-was-clicked"></a>方法: Windows フォームの StatusBar コントロールでクリックされたパネルを確認する
+# <a name="how-to-determine-which-panel-in-the-windows-forms-statusbar-control-was-clicked"></a>方法 : Windows フォームの StatusBar コントロールでクリックされたパネルを確認する
 > [!IMPORTANT]
-> <xref:System.Windows.Forms.StatusBar> <xref:System.Windows.Forms.StatusBarPanel> <xref:System.Windows.Forms.StatusBar>コントロール<xref:System.Windows.Forms.StatusStrip>と<xref:System.Windows.Forms.ToolStripStatusLabel>コントロールは、および<xref:System.Windows.Forms.StatusBarPanel>コントロールに対して、機能の置き換えと追加を行います。ただし、コントロールとコントロールは、下位互換性と将来の使用の両方のために保持されます。し.  
+> コントロール<xref:System.Windows.Forms.StatusStrip>と<xref:System.Windows.Forms.ToolStripStatusLabel>コントロールは、 コントロールと<xref:System.Windows.Forms.StatusBar><xref:System.Windows.Forms.StatusBarPanel>コントロールに機能を置き換え、追加します。ただし、下位<xref:System.Windows.Forms.StatusBar>互換性<xref:System.Windows.Forms.StatusBarPanel>と将来の使用の両方を目的として、コントロールと コントロールは保持されます。  
   
- ユーザーのクリックに応答するように[StatusBar コントロール](statusbar-control-windows-forms.md)コントロールをプログラミングするには、 <xref:System.Windows.Forms.StatusBar.PanelClick>イベント内で case ステートメントを使用します。 イベントには、クリック<xref:System.Windows.Forms.StatusBarPanel>されたへの参照を含む引数 (パネル引数) が含まれています。 この参照を使用して、クリックされたパネルのインデックスを特定し、それに応じてプログラムを作成できます。  
+ ユーザーのクリックに応答するように[StatusBar コントロール](statusbar-control-windows-forms.md)をプログラムするには、イベント内で case<xref:System.Windows.Forms.StatusBar.PanelClick>ステートメントを使用します。 イベントには、クリックされた<xref:System.Windows.Forms.StatusBarPanel>. この参照を使用して、クリックされたパネルのインデックスを判別し、それに応じてプログラムすることができます。  
   
 > [!NOTE]
-> <xref:System.Windows.Forms.StatusBar>コントロール`true`の<xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティがに設定されていることを確認します。  
+> コントロールの<xref:System.Windows.Forms.StatusBar><xref:System.Windows.Forms.StatusBar.ShowPanels%2A>プロパティが`true`に設定されていることを確認します。  
   
 ### <a name="to-determine-which-panel-was-clicked"></a>クリックされたパネルを確認するには  
   
-1. `switch case` `Select Case` C# C++イベントハンドラーでは、(Visual Basic) または (visual または visual) ステートメントを使用して、クリックされたパネルを判別します。これを行うには、イベント引数でクリックしたパネルのインデックスを調べます。 <xref:System.Windows.Forms.StatusBar.PanelClick>  
+1. <xref:System.Windows.Forms.StatusBar.PanelClick>イベント ハンドラーで`Select Case`、(Visual Basic の)`switch case`または (Visual C# または Visual C++) ステートメントを使用して、イベント引数でクリックされたパネルのインデックスを調べて、クリックされたパネルを特定します。  
   
-     次のコード例では<xref:System.Windows.Forms.StatusBar> 、コントロール、 `StatusBarPanel1` `StatusBar1`、 `StatusBarPanel2`およびという2つ<xref:System.Windows.Forms.StatusBarPanel>のオブジェクトのプレゼンスをフォームに指定する必要があります。  
+     次のコード例では、<xref:System.Windows.Forms.StatusBar>フォーム上、コントロール、および 2 つの`StatusBar1`<xref:System.Windows.Forms.StatusBarPanel>オブジェクト、`StatusBarPanel1`および`StatusBarPanel2`が存在している必要があります。  
   
     ```vb  
     Private Sub StatusBar1_PanelClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.StatusBarPanelClickEventArgs) Handles StatusBar1.PanelClick  
@@ -47,7 +47,7 @@ ms.locfileid: "69965717"
     ```  
   
     ```csharp  
-    private void statusBar1_PanelClick(object sender,   
+    private void statusBar1_PanelClick(object sender,
     System.Windows.Forms.StatusBarPanelClickEventArgs e)  
     {  
        switch (statusBar1.Panels.IndexOf(e.StatusBarPanel))  
@@ -79,11 +79,11 @@ ms.locfileid: "69965717"
        }  
     ```  
   
-     (ビジュアルC#、ビジュアルC++)フォームのコンストラクターに次のコードを配置して、イベントハンドラーを登録します。  
+     (ビジュアル C#、ビジュアル C++)フォームのコンストラクターに次のコードを配置して、イベント ハンドラーを登録します。  
   
     ```csharp  
-    this.statusBar1.PanelClick += new   
-       System.Windows.Forms.StatusBarPanelClickEventHandler   
+    this.statusBar1.PanelClick += new
+       System.Windows.Forms.StatusBarPanelClickEventHandler
        (this.statusBar1_PanelClick);  
     ```  
   
@@ -97,6 +97,6 @@ ms.locfileid: "69965717"
 
 - <xref:System.Windows.Forms.StatusBar>
 - <xref:System.Windows.Forms.ToolStripStatusLabel>
-- [方法: ステータスバーパネルのサイズを設定する](how-to-set-the-size-of-status-bar-panels.md)
-- [チュートリアル: 実行時のステータスバー情報の更新](walkthrough-updating-status-bar-information-at-run-time.md)
+- [方法 : ステータス バー パネルのサイズを設定する](how-to-set-the-size-of-status-bar-panels.md)
+- [チュートリアル : ステータス バー情報の実行時更新](walkthrough-updating-status-bar-information-at-run-time.md)
 - [StatusBar コントロールの概要](statusbar-control-overview-windows-forms.md)

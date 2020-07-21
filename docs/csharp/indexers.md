@@ -4,12 +4,12 @@ description: C# のインデクサーとインデックス付きプロパティ�
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: 86e646b341cf098d8621f095d4bfc9ea2191940d
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e9b1cb18157982f068f1c1e4546e637f2bd707cb
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039119"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394694"
 ---
 # <a name="indexers"></a>インデクサー
 
@@ -39,7 +39,7 @@ public int this[string key]
 
 プロパティの操作方法から習得したほとんどすべてのことをインデクサーにも適用できます。 その唯一の例外は、"*自動実装プロパティ*" です。 コンパイラは、必ずしもインデクサーに適切なストレージを生成できるとは限りません。
 
-項目のセット内の項目を参照するための引数が存在することも、インデクサーとプロパティの違いです。 インデクサーごとの引数リストが一意である場合は、1 つの型に複数のインデクサーを定義できます。 それでは、クラス定義で 1 つ以上のインデクサーを使用するさまざまなシナリオを見ていきましょう。 
+項目のセット内の項目を参照するための引数が存在することも、インデクサーとプロパティの違いです。 インデクサーごとの引数リストが一意である場合は、1 つの型に複数のインデクサーを定義できます。 それでは、クラス定義で 1 つ以上のインデクサーを使用するさまざまなシナリオを見ていきましょう。
 
 ## <a name="scenarios"></a>シナリオ
 
@@ -50,7 +50,7 @@ public int this[string key]
 
 ### <a name="arrays-and-vectors"></a>配列とベクター
 
-インデクサーを作成する最も一般的なシナリオの 1 つは、型が配列またはベクターをモデル化する場合です。 データの番号付きリストをモデル化するためのインデクサーを作成できます。 
+インデクサーを作成する最も一般的なシナリオの 1 つは、型が配列またはベクターをモデル化する場合です。 データの番号付きリストをモデル化するためのインデクサーを作成できます。
 
 独自のインデクサーを作成する利点は、ニーズに合わせてそのコレクションのストレージを定義できることです。 一度でメモリに読み込むには大きすぎる履歴データを型でモデル化するシナリオを考えてみましょう。 使用状況に基づいて、コレクションのセクションを読み込んだりアンロードしたりする必要があります。 次の例では、この動作をモデル化します。 存在するデータ ポイント数が報告されます。 必要に応じて、データのセクションを保持するページを作成します。 より新しい要求によって必要とされるページのための領域を確保するために、メモリからページを削除します。
 
@@ -224,9 +224,10 @@ public class ArgsActions
 
 ### <a name="multi-dimensional-maps"></a>多次元マップ
 
-複数の引数を使用するインデクサーを作成できます。 さらに、これらの引数は、同じ型でなくてもかまいません。 2 つの例を見てみましょう。   
+複数の引数を使用するインデクサーを作成できます。 さらに、これらの引数は、同じ型でなくてもかまいません。 2 つの例を見てみましょう。
 
-最初の例は、マンデルブロ集合の値を生成するクラスを示しています。 集合の数学的な背景情報の詳細については、[こちらの記事](https://en.wikipedia.org/wiki/Mandelbrot_set)を参照してください。 インデクサーは、2 つの倍精度浮動小数点数を使用して、X および Y 平面上の点を定義します。
+最初の例は、マンデルブロ集合の値を生成するクラスを示しています。 集合の数学的な背景情報の詳細については、[こちらの記事](https://en.wikipedia.org/wiki/Mandelbrot_set)を参照してください。
+インデクサーは、2 つの倍精度浮動小数点数を使用して、X および Y 平面上の点を定義します。
 get アクセサーは、点が集合内に存在しないと判断されるまで、イテレーションの回数を計算します。 イテレーションの最大数に達した場合、点は集合内に存在し、クラスの maxIterations 値が返されます。 マンデルブロ集合でよく知られている、コンピューターで生成される画像では、点が集合外に存在すると判断するために必要なイテレーションの数に対して色を定義します。
 
 ```csharp
@@ -267,9 +268,9 @@ public class Mandelbrot
 最後の使用例を調べてみましょう。この例では、インデクサーが異なる型の複数の引数を受け取ります。 気温の履歴データを管理するプログラムがあるとします。 このインデクサーは、市区町村と日付を使用して、その場所の最高気温と最低気温を設定または取得します。
 
 ```csharp
-using DateMeasurements = 
+using DateMeasurements =
     System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>;
-using CityDataMeasurements = 
+using CityDataMeasurements =
     System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>>;
 
 public class HistoricalWeatherData
@@ -312,16 +313,17 @@ public class HistoricalWeatherData
 
 この例では、気象データを 2 つの異なる引数にマップするインデクサーを作成します。その引数は、city (`string` で表されます) と date (`DateTime` で表されます) です。 内部ストレージでは、2 つの `Dictionary` クラスを使用して、2 次元ディクショナリを表します。 パブリック API は、基になるストレージを表さなくなります。 代わりに、インデクサーの言語機能を使用すると、基になるストレージで別の主要コレクション型を使用する必要があっても、抽象化を表すパブリック インターフェイスを作成できます。
 
-このコードには、一部の開発者にはなじみのない部分が 2 つあります。 次の 2 つの `using` ステートメントです。
+このコードには、一部の開発者にはなじみのない部分が 2 つあります。 これら 2 つの `using` ディレクティブです。
 
 ```csharp
 using DateMeasurements = System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>;
 using CityDataMeasurements = System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>>;
 ```
 
-構築ジェネリック型の "*エイリアス*" を作成しています。 これらのステートメントにより、後のコードでは、`Dictionary<DateTime, Measurements>` と `Dictionary<string, Dictionary<DateTime, Measurements> >` のジェネリック コンストラクションではなく、よりわかりやすい `DateMeasurements` と `CityDateMeasurements` という名前を使用できます。 このコンストラクトでは、`=` 記号の右辺で完全修飾型名を使用する必要はありません。
+構築ジェネリック型の "*エイリアス*" を作成しています。 これらのステートメントにより、後のコードでは、`Dictionary<DateTime, Measurements>` と `Dictionary<string, Dictionary<DateTime, Measurements> >` のジェネリック コンストラクションではなく、よりわかりやすい `DateMeasurements` と `CityDateMeasurements` という名前を使用できます。
+このコンストラクトでは、`=` 記号の右辺で完全修飾型名を使用する必要はありません。
 
-2 つ目の手法では、コレクションへのインデックス作成に使用された任意の `DateTime` オブジェクトから時間部分を取り除きます。 .NET Framework には、日付のみの型が含まれていません。
+2 つ目の手法では、コレクションへのインデックス作成に使用された任意の `DateTime` オブジェクトから時間部分を取り除きます。 .NET には、日付のみの型は含まれません。
 開発者は `DateTime` 型を使用しますが、`Date` プロパティを使用して、その日のすべての `DateTime` オブジェクトが等しくなるようにしてください。
 
 ## <a name="summing-up"></a>まとめ

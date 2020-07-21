@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: 1ed5a30e-f415-4c26-a52f-9f028a68f66f
 ms.openlocfilehash: ef041fad1bb9195d9fc6cba172de8c2fdc7507bd
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61911740"
 ---
 # <a name="flowdocumentpageviewer"></a>FlowDocumentPageViewer
-<xref:System.Windows.Controls.FlowDocumentPageViewer>コントロールを使用する表示<xref:System.Windows.Documents.FlowDocument>ページごとのコンテンツ。 これと対照的、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、どの表示<xref:System.Windows.Documents.FlowDocument>スクロール ビューアーのコンテンツ。  
+<xref:System.Windows.Controls.FlowDocumentPageViewer> コントロールは、<xref:System.Windows.Documents.FlowDocument> コンテンツをページごとに表示するために使用します。 <xref:System.Windows.Documents.FlowDocument> コンテンツをスクロール ビューアーに表示する <xref:System.Windows.Controls.FlowDocumentScrollViewer> とは対照的です。  
   
 ## <a name="see-also"></a>関連項目
 

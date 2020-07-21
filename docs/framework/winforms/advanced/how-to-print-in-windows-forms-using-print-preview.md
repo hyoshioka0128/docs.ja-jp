@@ -1,5 +1,6 @@
 ---
-title: '方法: Windows フォームで印刷プレビューを使用して印刷する'
+title: 印刷プレビューを使用して印刷する
+description: Windows フォーム Printpreview ダイアログコントロールを使用して、アプリケーションに印刷プレビューサービスを追加する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - printing [Windows Forms], with print preview
 - print preview
 ms.assetid: 4a16f7e2-ae10-4485-b0ae-3d558334d0fe
-ms.openlocfilehash: 07137d03dd9a20d8eab564757618e48e25b45353
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: abcf77db40f648df1a0cd49922bb49e5c9407811
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931769"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621614"
 ---
 # <a name="how-to-print-in-windows-forms-using-print-preview"></a>方法: Windows フォームで印刷プレビューを使用して印刷する
 Windows フォームのプログラミングでは、印刷サービスに加えて印刷プレビューを提供することは非常に一般的です。 印刷プレビューのサービスをアプリケーションに追加する簡単な方法は、ファイルの印刷に <xref:System.Windows.Forms.PrintPreviewDialog> コントロールを <xref:System.Drawing.Printing.PrintDocument.PrintPage> イベント処理ロジックと組み合わせて使用することです。  
@@ -64,6 +65,6 @@ Windows フォームのプログラミングでは、印刷サービスに加え
   
 ## <a name="see-also"></a>関連項目
 
-- [方法: Windows フォームで複数ページのテキストファイルを印刷する](how-to-print-a-multi-page-text-file-in-windows-forms.md)
+- [方法: Windows フォームで複数ページのテキスト ファイルを印刷する](how-to-print-a-multi-page-text-file-in-windows-forms.md)
 - [Windows フォームにおける印刷のサポート](windows-forms-print-support.md)
 - [Windows フォームでのより安全な印刷](../more-secure-printing-in-windows-forms.md)

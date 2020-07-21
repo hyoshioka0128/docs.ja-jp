@@ -2,12 +2,12 @@
 title: Docker について
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | Docker について
 ms.date: 08/31/2018
-ms.openlocfilehash: 215d756c631440c99a3a8ad8128ec61fef3bc26d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: a53845d3bbcf24f3eaeb98b9e08b6f35a023c30e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740100"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75337707"
 ---
 # <a name="what-is-docker"></a>Docker について
 
@@ -19,7 +19,7 @@ ms.locfileid: "73740100"
 
 Docker コンテナーは、オンプレミスのカスタマー データセンター内、外部サービス プロバイダー内、Azure 上のクラウド内など、どこでも実行できます。 Docker イメージ コンテナーは、Linux と Windows 上でネイティブに実行できます。 ただし、Windows イメージは Windows ホスト上でのみ実行でき、Linux イメージは (現在のところ Hyper-V Linux VM を使用して) Linux ホストと Windows ホスト上で実行できます (ここで言うホストとは、サーバーまたは VM です)。
 
-開発者は、Windows、Linux、または macOS 上の開発環境を使用できます。 開発用コンピューターで、アプリとその依存関係を含む、Docker イメージが展開されている Docker ホストを実行します。 Linux または Mac 上で開発する場合は、Linux ベースの Docker ホストを使用し、Linux コンテナー専用のイメージを作成できます (Mac 上で開発する場合は、macOS からコードを編集したり Docker CLI を実行したりすることができますが、この記事の執筆時点では、コンテナーは macOS 上で直接動作しません)。Windows 上で開発する場合は、Linux または Windows コンテナーのいずれかのイメージを作成できます。
+開発者は、Windows、Linux、または macOS 上の開発環境を使用できます。 開発用コンピューターで、アプリとその依存関係を含む、Docker イメージが展開されている Docker ホストを実行します。 Linux または macOS 上で開発する場合は、Linux ベースの Docker ホストを使用し、Linux コンテナー専用のイメージを作成できます。 (macOS 上で開発する場合は、macOS からコードを編集したり Docker CLI を実行したりすることができますが、この記事の執筆時点では、コンテナーは macOS 上で直接動作しません)。Windows 上で開発する場合は、Linux または Windows コンテナーのいずれかのイメージを作成できます。
 
 開発環境でコンテナーをホストし、開発ツールを追加するために、Docker は Windows 用または macOS 用の [Docker Community Edition (CE)](https://www.docker.com/community-edition) をリリースしています。 これらの製品で、コンテナーをホストするために必要な VM (Docker ホスト) がインストールされます。 Docker は [Docker Enterprise Edition (EE) ](https://www.docker.com/enterprise-edition) もリリースしています。エンタープライズ開発向けに設計されており、大規模なビジネスクリティカル アプリケーションをビルドし、リリースし、運用環境で実行する IT チームに使用されています。
 

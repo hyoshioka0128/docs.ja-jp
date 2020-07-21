@@ -79,7 +79,7 @@
                   href: primitives-activities-in-wf.md
                 - name: トランザクション
                   href: transaction-activities-in-wf.md
-                - name: Collection
+                - name: コレクション
                   href: collection-activities-in-wf.md
                 - name: エラー処理
                   href: error-handling-activities-in-wf.md
@@ -136,7 +136,7 @@
               href: variables-and-arguments.md
             - name: 式
               href: expressions.md
-            - name: 'C# の式'
+            - name: C# の式
               href: csharp-expressions.md
             - name: プロパティと引数
               href: properties-vs-arguments.md

@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
 ms.openlocfilehash: 212bda6f64829792e965dd6714428a05b30c995b
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70794275"
@@ -47,16 +47,16 @@ ms.locfileid: "70794275"
   
  以下の代替策を検討する必要があります。  
   
-- EXECUTE AS ステートメントに NO REVERT 句と WITH COOKIE 句を指定してコンテキスト切り替えを行う。 ログインにマップされていないユーザー アカウントをデータベースに作成し、 このアカウントに権限を割り当てるようにします。 EXECUTE AS はパスワード ベースではなく、権限ベースであるため、非ログイン ユーザーで使用した方が高いセキュリティを確保できます。 詳細については、「 [SQL Server で権限借用を使用してアクセス許可をカスタマイズ](customizing-permissions-with-impersonation-in-sql-server.md)する」を参照してください。  
+- EXECUTE AS ステートメントに NO REVERT 句と WITH COOKIE 句を指定してコンテキスト切り替えを行う。 ログインにマップされていないユーザー アカウントをデータベースに作成し、 このアカウントに権限を割り当てるようにします。 EXECUTE AS はパスワード ベースではなく、権限ベースであるため、非ログイン ユーザーで使用した方が高いセキュリティを確保できます。 詳しくは、「[SQL Server での借用を使用した権限のカスタマイズ](customizing-permissions-with-impersonation-in-sql-server.md)」をご覧ください。  
   
-- 証明書を使ってストアド プロシージャに署名し、そのプロシージャを実行するのに必要な権限だけを付与する。 詳細については、「 [SQL Server でのストアドプロシージャ](signing-stored-procedures-in-sql-server.md)への署名」を参照してください。  
+- 証明書を使ってストアド プロシージャに署名し、そのプロシージャを実行するのに必要な権限だけを付与する。 詳しくは、「[SQL Server でのストアド プロシージャの署名](signing-stored-procedures-in-sql-server.md)」をご覧ください。  
   
 ## <a name="external-resources"></a>外部リソース  
  詳細については、次のリソースを参照してください。  
   
 |リソース|説明|  
 |--------------|-----------------|  
-|[アプリケーションロール](/sql/relational-databases/security/authentication-access/application-roles)|SQL Server 2008 でアプリケーション ロールを作成および使用する方法について説明します。|  
+|[アプリケーション ロール](/sql/relational-databases/security/authentication-access/application-roles)|SQL Server 2008 でアプリケーション ロールを作成および使用する方法について説明します。|  
   
 ## <a name="see-also"></a>関連項目
 

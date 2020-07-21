@@ -2,19 +2,19 @@
 title: クエリの概念
 ms.date: 03/30/2017
 ms.assetid: 9a125749-ccb5-49d5-999d-d2db7171d74d
-ms.openlocfilehash: 2fab2f18240557f72a444c1c41d4137350d183ef
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 1e3e4d0e66442443094a6182b0d06a35a5057a83
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792806"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634353"
 ---
 # <a name="query-concepts"></a>クエリの概念
-このセクションでは、[!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] で [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] クエリを設計するうえでの主要な概念について説明します。  
+このセクションでは、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] での LINQ クエリの設計に関する主要な概念について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [LINQ to SQL クエリ](linq-to-sql-queries.md)  
- 一般的な [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] トピックを参照し、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 固有のアイテムについて説明します。  
+ LINQ の一般的なトピックを参照し、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 固有の項目について説明します。  
   
  [リレーションシップを介したクエリの実行](querying-across-relationships.md)  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] オブジェクト モデルで関連付けを使用する方法について説明します。  
@@ -33,4 +33,4 @@ ms.locfileid: "70792806"
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] のオブジェクト識別子の概念について説明します。  
   
  [LINQ クエリの概要 (C#)](../../../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
- [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] のクエリ操作の概要について説明します。
+ LINQ でのクエリ操作の概要について説明します。

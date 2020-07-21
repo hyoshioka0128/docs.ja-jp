@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: be1fad236dd3eed047b010e93285aec8bc607b61
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394337"
 ---
 ### <a name="hosting-ihostingenvironment-and-iapplicationlifetime-types-marked-obsolete-and-replaced"></a>ホスティング:IHostingEnvironment と IApplicationLifetime の型が不使用とマークされ、置き換えられました
@@ -26,7 +26,7 @@ ms.locfileid: "72394337"
 
 `Microsoft.Extensions.Hosting` が ASP.NET Core 2.1 で導入されたときに、`IHostingEnvironment` や `IApplicationLifetime` などの一部の型が `Microsoft.AspNetCore.Hosting` からコピーされました。 ASP.NET Core 3.0 の一部の変更により、アプリに `Microsoft.Extensions.Hosting` と `Microsoft.AspNetCore.Hosting` の両方の名前空間が含まれるようになります。 これらの重複する型を使用すると、両方の名前空間が参照されるときに "あいまいな参照" コンパイラ エラーが発生します。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 次のように、古い型の使用を新しく導入された型に置き換えます。
 

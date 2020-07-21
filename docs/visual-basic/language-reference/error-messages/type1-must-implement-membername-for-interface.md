@@ -1,5 +1,5 @@
 ---
-title: <type1>'<typename>' は、インターフェイス '<membername>' に対して '<interfacename>' を実装しなければなりません。
+title: <type1>'<typename>' は、インターフェイス '<interfacename>' に対して '<membername>' を実装しなければなりません。
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30154
@@ -7,35 +7,35 @@ f1_keywords:
 helpviewer_keywords:
 - BC30154
 ms.assetid: 259afdfa-3608-4760-adcb-88ec0da5020d
-ms.openlocfilehash: a824b66eaad964049ced5cae5eb2cc370d00ba7f
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
-ms.translationtype: MT
+ms.openlocfilehash: 4ffe18e11c388a8c69ef0592bde1b78f5b219680
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696891"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84386855"
 ---
-# <a name="type1typename-must-implement-membername-for-interface-interfacename"></a>\<type1 > '\<typename > ' は、インターフェイス '\<interfacename > ' に '\<membername > ' を実装しなければなりません
-'\<typename > ' は、インターフェイス '\<interfacename > ' に対して '\<membername > ' を実装しなければなりません。 実装するプロパティには、' ReadOnly '/' WriteOnly ' 指定子が一致しなければなりません。  
+# <a name="type1typename-must-implement-membername-for-interface-interfacename"></a>\<type1>'\<typename>' は、インターフェイス '\<interfacename>' に対して '\<membername>' を実装しなければなりません。
+'\<typename>' は、インターフェイス '\<interfacename>' に対して '\<membername>' を実装しなければなりません。 プロパティの実装には、一致する 'ReadOnly'/'WriteOnly' 指定子が必要です。  
   
- インターフェイスを実装するクラスまたは構造体が要求しますが、インターフェイスで定義されたプロシージャ、プロパティ、またはイベントを実装しません。 インターフェイスのすべてのメンバーを実装する必要があります。  
+ クラスまたは構造体では、インターフェイスを実装することが要求されますが、インターフェイスによって定義されるプロシージャ、プロパティ、またはイベントは実装しません。 インターフェイスのすべてのメンバーを実装する必要があります。  
   
  **エラー ID:** BC30154  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1. インターフェイスで定義されているものと同じ名前およびシグネチャを持つメンバーを宣言します。 少なくとも `End Function`、`End Sub`、または `End Property` ステートメントを含めるようにしてください。  
+1. インターフェイスで定義されているものと同じ名前およびシグネチャのメンバーを宣言します。 少なくとも `End Function`、`End Sub`、または `End Property` ステートメントを含めてください。  
   
-2. `Function`、`Sub`、`Property`、または `Event` ステートメントの末尾に `Implements` 句を追加します。 例 :  
+2. `Function`、`Sub`、`Property`、または `Event` ステートメントの末尾に `Implements` 句を追加します。 次に例を示します。  
   
     ```vb  
     Public Event ItHappened() Implements IBaseInterface.ItHappened  
     ```  
   
-3. プロパティを実装するときは、インターフェイス定義と同じ方法で `ReadOnly` または `WriteOnly` が使用されていることを確認してください。  
+3. プロパティを実装するときは、インターフェイス定義と同じ方法で `ReadOnly` または `WriteOnly` が使用されていることを確認します。  
   
 4. プロパティを実装する場合は、必要に応じて `Get` および `Set` プロシージャを宣言します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Implements ステートメント](../../../visual-basic/language-reference/statements/implements-statement.md)
-- [インターフェイス](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+- [Implements ステートメント](../statements/implements-statement.md)
+- [インターフェイス](../../programming-guide/language-features/interfaces/index.md)

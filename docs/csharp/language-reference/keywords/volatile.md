@@ -1,6 +1,5 @@
 ---
 title: volatile - C# リファレンス
-ms.custom: seodec18
 ms.date: 10/24/2018
 f1_keywords:
 - volatile_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - volatile keyword [C#]
 ms.assetid: 78089bc7-7b38-4cfd-9e49-87ac036af009
-ms.openlocfilehash: e72173ba1b91f03ccb1c15ca6451ac997666bc7f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c7a6c442c33ac2b41f652805837f455a957819de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422126"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75712846"
 ---
 # <a name="volatile-c-reference"></a>volatile (C# リファレンス)
 
@@ -48,11 +47,11 @@ ms.locfileid: "73422126"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# 言語仕様: volatile キーワード](../../../../_csharplang/spec/classes.md#volatile-fields)
 - [C# リファレンス](../index.md)
-- [C# プログラミング ガイド](../../programming-guide/index.md)
+- [C# プログラミングガイド](../../programming-guide/index.md)
 - [C# のキーワード](index.md)
 - [修飾子](index.md)
 - [lock ステートメント](lock-statement.md)

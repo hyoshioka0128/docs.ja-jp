@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 62eb5d55-53ee-4fb3-8d47-7b6c96808f9e
 topic_type:
 - apiref
-ms.openlocfilehash: 95183701987d3ddec3835a17c5d256c25c2c4c64
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 83ac91133b226e2ac263356941c3fc3288355e7e
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132068"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379933"
 ---
 # <a name="icordebugtypegetstaticfieldvalue-method"></a>ICorDebugType::GetStaticFieldValue メソッド
 指定したスタックフレーム内の指定したフィールドトークンによって参照される静的フィールドの値を格納する、ICorDebugValue オブジェクトへのインターフェイスポインターを取得します。  
@@ -37,29 +37,29 @@ HRESULT GetStaticFieldValue (
   
 ## <a name="parameters"></a>パラメーター  
  `fieldDef`  
- から静的フィールドを指定する `mdFieldDef` トークンです。  
+ から`mdFieldDef`静的フィールドを指定するトークンです。  
   
  `pFrame`  
  からスタックフレームを表す、テキストフレームへのポインター。  
   
  `ppValue`  
- 入出力静的フィールドの値を格納している `ICorDebugValue` のアドレスへのポインター。  
+ 入出力`ICorDebugValue`静的フィールドの値を格納しているのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- `GetStaticFieldValue` メソッドは、型が ELEMENT_TYPE_CLASS または ELEMENT_TYPE_VALUETYPE の場合にのみ使用できます。この場合、は、[型:: GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md)メソッドによって示されます。  
+ メソッドが使用されるのは、 `GetStaticFieldValue` 型が ELEMENT_TYPE_CLASS または ELEMENT_TYPE_VALUETYPE である場合です。この場合、は、"の[型:: GetType](icordebugtype-gettype-method.md)メソッドによって示されます。  
   
- 非ジェネリック型の場合、`GetStaticFieldValue` によって実行される操作は、によって返される、は、によって返された、テキスト:: [GetStaticFieldValue](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getstaticfieldvalue-method.md)と同じにすることができます、には、[テキスト:: getclass](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md)です。  
+ 非ジェネリック型の場合、によって実行される操作は、によって返される、によって `GetStaticFieldValue` 型: [: GetStaticFieldValue](icordebugclass-getstaticfieldvalue-method.md)を呼び出すことと同じになります。このクラスは、[テキスト:: getclass](icordebugtype-getclass-method.md)です。  
   
  ジェネリック型の場合、静的フィールド値は特定のインスタンス化に対して相対的になります。 また、静的フィールドがスレッド、コンテキスト、またはアプリケーションドメインに対して相対的である可能性がある場合は、デバッガーが適切な値を決定するためにスタックフレームが役立ちます。  
   
 ## <a name="remarks"></a>Remarks  
- `GetStaticFieldValue` は、`ICorDebugType::GetType` の呼び出しが ELEMENT_TYPE_CLASS または ELEMENT_TYPE_VALUETYPE の値を返す場合にのみ使用できます。  
+ `GetStaticFieldValue`は、の呼び出しによって `ICorDebugType::GetType` ELEMENT_TYPE_CLASS または ELEMENT_TYPE_VALUETYPE の値が返される場合にのみ使用できます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

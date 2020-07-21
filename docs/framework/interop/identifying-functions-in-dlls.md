@@ -1,5 +1,6 @@
 ---
 title: DLL 内の関数の識別
+description: DLL 内の関数を識別します。 DLL 関数の ID は、関数の名前または序数と、実装が含まれている DLL ファイル名で構成されます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - platform invoke, identifying functions
@@ -11,12 +12,11 @@ helpviewer_keywords:
 - identifying DLL functions
 - DLL functions
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
-ms.openlocfilehash: 1a94bb2020b07ba8405d901f46ec4a0687e79700
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 054d1351a9ee6adab17117c9f423aa26d0d9ed59
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121973"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622732"
 ---
 # <a name="identifying-functions-in-dlls"></a>DLL 内の関数の識別
 DLL 関数の ID は、次の要素で構成されます。  
@@ -41,7 +41,7 @@ DLL 関数の ID は、次の要素で構成されます。
 |Kernel32.dll|メモリ管理とリソースの処理のための低レベルのオペレーティング システム関数。|  
 |User32.dll|メッセージの処理、タイマー、メニュー、通信用の Windows 管理関数。|  
   
- Windows API の詳細については、プラットフォーム SDK を参照してください。 プラットフォームの起動で使用する NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](marshaling-data-with-platform-invoke.md)」を参照してください。  
+ Windows API の詳細については、プラットフォーム SDK を参照してください。 プラットフォーム呼び出しで使用する .NET ベースの宣言を作成する方法を示す例については、「[プラットフォーム呼び出しによるデータのマーシャリング](marshaling-data-with-platform-invoke.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

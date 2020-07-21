@@ -2,14 +2,14 @@
 title: ML.NET CLI によるテレメトリ収集
 description: 分析のために使用状況の情報を収集する ML.NET CLI テレメトリ機能、収集されるデータ、機能を無効にする方法について説明します。 また、.NET の使用許諾契約と Microsoft GDPR 準拠に関する情報のリンクも紹介します。
 ms.topic: conceptual
-ms.date: 09/03/2019
-ms.custom: ''
-ms.openlocfilehash: edd74b6f3d3c50d5eff012629f0b1db6b62d9021
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.date: 06/03/2020
+ms.custom: mlnet-tooling
+ms.openlocfilehash: 833ee2ae54cf3a52adaf070837a33e00267d25dc
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977265"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599840"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>ML.NET CLI によるテレメトリ収集
 
@@ -30,7 +30,7 @@ ms.locfileid: "73977265"
 - `mlnet`
 - `mlnet --help`
 
-`mlnet auto-train` などの [ML.NET CLI コマンド](../reference/ml-net-cli-reference.md)を実行すると、テレメトリは "*有効です*"。
+`mlnet classification` などの [ML.NET CLI コマンド](../reference/ml-net-cli-reference.md)を実行すると、テレメトリは "*有効です*"。
 
 ## <a name="opt-out-of-data-collection"></a>データ収集のオプトアウト
 
@@ -42,8 +42,8 @@ ML.NET CLI のテレメトリ機能は既定で有効です。
 
 この機能は次のデータを収集します。
 
-- 呼び出されたコマンド (`auto-train` など)
-- 使用されたコマンド ライン パラメーターの名前 ("dataset-name、label-column-name、ml-task、output-path、max-exploration-time、verbosity")
+- 呼び出されたコマンド (`classification` など)
+- 使用されるコマンドライン パラメーターの名前 ("dataset、label-col、output-path、train-time、verbosity")
 - ハッシュされた MAC アドレス: マシンの暗号化された (SHA256) 匿名で一意の ID
 - 呼び出しのタイムスタンプ
 - 地理的位置を特定するためにのみ使用される 3 オクテットの IP アドレス (完全な IP アドレスではない)
@@ -51,7 +51,7 @@ ML.NET CLI のテレメトリ機能は既定で有効です。
 - ハッシュされたデータセット ファイル名
 - データセット ファイルサイズ バケット
 - オペレーティング システムとバージョン
-- タスク パラメーターの値:カテゴリ値 (`regression`、`binary-classification`、`multiclass-classification` など)
+- ML タスク コマンドの値: カテゴリ値 (`regression`、`classification`、`recommendation` など)
 - ML.NET CLI バージョン (0.3.27703.4)
 
 データは [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) テクノロジを使用して Microsoft サーバーに安全に送信され、制限されたアクセスの下で保持され、厳格なセキュリティ コントロールの下で安全な [Azure Storage](https://azure.microsoft.com/services/storage/) システムから使用されます。
@@ -72,7 +72,7 @@ Microsoft による ML.NET CLI の配布には、[マイクロソフト ソフ�
 
 ## <a name="disclosure"></a>開示
 
-`mlnet auto-train` などの [ML.NET CLI コマンド](../reference/ml-net-cli-reference.md)を初めて実行すると、ML.NET CLI ツールにテレメトリをオプトアウトする方法が説明された開示テキストが表示されます。 テキストは、実行している CLI のバージョンによって多少異なります。
+`mlnet classification` などの [ML.NET CLI コマンド](../reference/ml-net-cli-reference.md)を初めて実行すると、ML.NET CLI ツールにテレメトリをオプトアウトする方法が説明された開示テキストが表示されます。 テキストは、実行している CLI のバージョンによって多少異なります。
 
 ## <a name="see-also"></a>関連項目
 

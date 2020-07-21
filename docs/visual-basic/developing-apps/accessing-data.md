@@ -5,12 +5,12 @@ helpviewer_keywords:
 - data [Visual Basic]
 - Visual Basic, data access
 ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
-ms.openlocfilehash: 0f17df93fc4ef22ef45f7ceff89bfb5f1ab1c18d
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
-ms.translationtype: MT
+ms.openlocfilehash: c9094e1550ad837444b7670cf54226322583be79
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523960"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387609"
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Visual Basic アプリケーションにおけるデータ アクセス
 
@@ -24,7 +24,7 @@ Visual Basic には、データにアクセスするアプリケーションを�
 [.NET 用の Visual Studio データ ツール](/visualstudio/data-tools/visual-studio-data-tools-for-dotnet)  
 Visual Studio を使用して、データを操作するアプリケーションを作成する方法に関するページへのリンクを示します。
 
-[LINQ](../../visual-basic/programming-guide/language-features/linq/index.md)  
+[LINQ](../programming-guide/language-features/linq/index.md)  
 Visual Basic での LINQ の使用方法について説明するトピックへのリンクを示します。
 
 [LINQ to SQL](../../framework/data/adonet/sql/linq/index.md)  

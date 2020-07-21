@@ -1,5 +1,6 @@
 ---
 title: XML シリアル化を制御する属性
+description: この記事では、クラスおよびクラス メンバーに適用して、XmlSerializer がそのクラスのインスタンスをシリアル化または逆シリアル化する方法を制御する属性を紹介します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - classes, serializing
@@ -9,19 +10,19 @@ helpviewer_keywords:
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: 0d1aee4650ea29083348af482e445011289e9581
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: fbc42ff696107f4a1b06d3611fc97a09cc4a3542
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61794967"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84276700"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>XML シリアル化を制御する属性
-次の表に示す属性をクラスおよびクラス メンバーに適用すると、<xref:System.Xml.Serialization.XmlSerializer> がそのクラスのインスタンスをシリアル化または逆シリアル化する方法を制御できます。 これらの属性で XML シリアル化を制御する方法については、「[属性を使用した XML シリアル化の制御](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)」を参照してください。  
+次の表に示す属性をクラスおよびクラス メンバーに適用すると、<xref:System.Xml.Serialization.XmlSerializer> がそのクラスのインスタンスをシリアル化または逆シリアル化する方法を制御できます。 これらの属性で XML シリアル化を制御する方法については、「[属性を使用した XML シリアル化の制御](controlling-xml-serialization-using-attributes.md)」を参照してください。  
   
- また、これらの属性を使用して、XML Web サービスによって生成されるリテラル スタイルの SOAP メッセージを制御することもできます。 これらの属性を XML Web サービス メソッドに適用する方法の詳細については、「[XML Web サービスを使用した XML シリアル化](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)」を参照してください。  
+ また、これらの属性を使用して、XML Web サービスによって生成されるリテラル スタイルの SOAP メッセージを制御することもできます。 これらの属性を XML Web サービス メソッドに適用する方法の詳細については、「[XML Web サービスを使用した XML シリアル化](xml-serialization-with-xml-web-services.md)」を参照してください。  
   
- 属性の詳細については、「[属性](../../../docs/standard/attributes/index.md)」を参照してください。  
+ 属性の詳細については、「[属性](../attributes/index.md)」を参照してください。  
   
 |属性|対象|指定内容|  
 |---------------|----------------|---------------|  
@@ -41,13 +42,13 @@ ms.locfileid: "61794967"
   
  <xref:System.Xml.Serialization> 名前空間にあるこれらの属性の他に、<xref:System.ComponentModel.DefaultValueAttribute> 属性もフィールドに適用できます。 **DefaultValueAttribute** は、メンバーの値が指定されていない場合に、メンバーに自動的に割り当てられる値を設定します。  
   
- エンコード済みの SOAP XML シリアル化を制御する場合は、「[エンコード済み SOAP シリアル化を制御する属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)」を参照してください。  
+ エンコード済みの SOAP XML シリアル化を制御する場合は、「[Attributes That Control Encoded SOAP Serialization](attributes-that-control-encoded-soap-serialization.md)」(エンコード済み SOAP シリアル化を制御する属性) を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
-- [XML シリアル化および SOAP シリアル化](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [XML シリアル化および SOAP シリアル化](xml-and-soap-serialization.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [属性を使用した XML シリアル化の制御](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
-- [方法: XML Stream の代替要素名を指定します。](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
-- [方法: オブジェクトをシリアル化します。](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [方法: オブジェクトを逆シリアル化します。](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [属性を使用した XML シリアル化の制御](controlling-xml-serialization-using-attributes.md)
+- [方法: XML ストリームの代替要素名を指定する](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [方法: オブジェクトをシリアル化する](how-to-serialize-an-object.md)
+- [方法: オブジェクトを逆シリアル化する](how-to-deserialize-an-object.md)

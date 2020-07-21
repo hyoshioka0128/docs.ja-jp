@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: e392f6b2e57bebf1ab916bc6142aebbc8f341db2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 184c9f61fd8456b22e8ecb262c131793160b49b0
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615309"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244011"
 ---
 # <a name="delegates-and-lambdas"></a>デリゲートとラムダ
 
@@ -44,11 +44,11 @@ public class Program
 * `Reverse rev = ReverseString;` 行では、対応するデリゲート型の変数にメソッドを割り当てることができることを示しています。
 * `Console.WriteLine(rev("a string"));` 行では、デリゲート型の変数を使用してデリゲートを呼び出す方法を示しています。
 
-開発プロセスを効率化するため、.NET にはプログラマが再利用できるデリゲート型のセットが含まれているため、新しい型を作成する必要はありません。 これらは `Func<>`、`Action<>`、および `Predicate<>` で、新しいデリゲート型を定義することなく、.NET API を通じてさまざまな場所で使用できます。 もちろん、これらの 3 つの間にはそのシグネチャで見られるように、いくつかの違いがあり、ほとんどがその用途に関係しています。
+開発プロセスを効率化するため、.NET にはプログラマが再利用できるデリゲート型のセットが含まれているため、新しい型を作成する必要はありません。 これらの型は `Func<>`、`Action<>` および `Predicate<>` であり、新しいデリゲート型を定義しなくても使用できます。 使用を意図した方法で実行する必要がある 3 つの型には、いくつかの違いがあります。
 
-* `Action<>` は、デリゲートの引数を使用してアクションを実行する必要がある場合に使用されます。
-* `Func<>` は、通常、変換が手元にあるときに使用されます。つまり、デリゲートの引数を異なる結果に変換する必要があります。 これの典型的な例が予測です。
-* `Predicate<>` は、引数がデリゲートの条件を満たすかどうかを判断する必要がある場合に使用されます。 `Func<T, bool>` として書き込むこともできます。
+* `Action<>` は、デリゲートの引数を使用してアクションを実行する必要がある場合に使用されます。 カプセル化されるメソッドは、値を返しません。
+* `Func<>` は、通常、変換が手元にあるときに使用されます。つまり、デリゲートの引数を異なる結果に変換する必要があります。 予測が良い例です。 カプセル化されるメソッドは、指定された値を返します。
+* `Predicate<>` は、引数がデリゲートの条件を満たすかどうかを判断する必要がある場合に使用されます。 また、`Func<T, bool>` として書き込むこともできます。これは、メソッドがブール値を返すことを意味します。
 
 ここで、上記の例を使用して、カスタム型の代わりに `Func<>` デリゲートを使用して書き換えることができます。 プログラムは引き続きまったく同じに実行されます。
 
@@ -72,9 +72,9 @@ public class Program
 }
 ```
 
-このシンプルな例では、`Main` メソッドの外部にメソッドを定義することは、少し余分なようです。 これは、.NET Framework 2.0 で**匿名デリゲート**の概念が導入されたためです。 そのサポートにより、追加の型やメソッドを指定せずに、"インライン" デリゲートを作成することができます。 必要に応じて、デリゲートの定義を単純にインライン化します。
+このシンプルな例では、`Main` メソッドの外部にメソッドを定義することは、少し余分なようです。 .NET Framework 2.0 では、*匿名デリゲート*の概念が導入されました。これにより、追加の型やメソッドを指定しなくても "インライン" デリゲートを作成できます。
 
-たとえば、デリゲートを切り替え、この匿名デリゲートを使用して、偶数だけをリストから除外し、コンソールに表示します。
+次の例では、匿名デリゲートによってリストが偶数だけにフィルター処理され、コンソールに出力されます。
 
 ```csharp
 using System;
@@ -108,9 +108,7 @@ public class Program
 
 ご覧のように、デリゲートの本体は、他のデリゲートと同じく、単なる式のセットです。 しかし、それを別の定義にする代わりに、<xref:System.Collections.Generic.List%601.FindAll%2A?displayProperty=nameWithType> メソッドへの呼び出しでそれを_アド ホック_で導入しました。
 
-ただし、この方法でも、破棄できる多くのコードがまだ残ります。 このような場合に**ラムダ式**が機能します。
-
-ラムダ式 (または略して単に "ラムダ") は、最初に C# 3.0 で統合言語クエリ (LINQ) のコア ビルディング ブロックの 1 つとして導入されました。 これらは、デリゲートの使用の利便性を高める構文です。 これらは、シグネチャとメソッド本体を宣言しますが、デリゲートに割り当てられない限り、独自の正式な ID を持ちません。 デリゲートの場合とは異なり、これらをイベント登録の左側として、またはさまざまな LINQ 句およびメソッド内に、直接割り当てることができます。
+ただし、この方法でも、破棄できる多くのコードがまだ残ります。 このような場合に*ラムダ式*が機能します。 ラムダ式 (または略して単に "ラムダ") は、C# 3.0 で統合言語クエリ (LINQ) のコア ビルディング ブロックの 1 つとして導入されました。 これらは、デリゲートの使用の利便性を高める構文です。 これらは、シグネチャとメソッド本体を宣言しますが、デリゲートに割り当てられない限り、独自の正式な ID を持ちません。 デリゲートの場合とは異なり、これらをイベント登録の右側として、またはさまざまな LINQ 句およびメソッド内に、直接割り当てることができます。
 
 ラムダ式はデリゲートを指定するもう 1 つの方法であるため、上記のサンプルを匿名デリゲートの代わりにラムダ式を使用するように書き換えることができるようになる必要があります。
 
@@ -139,7 +137,7 @@ public class Program
 }
 ```
 
-上の例で、使用されているラムダ式は `i => i % 2 == 0` です。 繰り返しますが、これは、匿名デリゲートの使用に**非常に**便利な構文であるため、内部での動作は匿名デリゲートの動作と似ています。
+上の例で、使用されているラムダ式は `i => i % 2 == 0` です。 これも、デリゲートの使用の利便性を高める構文にすぎません。 内部で行われる処理は、匿名デリゲートの場合と似ています。
 
 ここでも、ラムダは単なるデリゲートです。つまり、次のコード スニペットに示すように、ラムダは問題なくイベント ハンドラーとして使用することができます。
 
@@ -155,10 +153,10 @@ public MainWindow()
 }
 ```
 
-このコンテキストでの `+=` 演算子は、[イベント](../../docs/csharp/language-reference/keywords/event.md)をサブスクライブするために使用されます。 詳細については、「[方法 :イベント サブスクリプションとサブスクリプションの解除](../../docs/csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)」を参照してください。
+このコンテキストでの `+=` 演算子は、[イベント](../csharp/language-reference/keywords/event.md)をサブスクライブするために使用されます。 詳細については、「[イベントのサブスクリプションとサブスクリプション解除を行う方法](../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)」を参照してください。
 
 ## <a name="further-reading-and-resources"></a>参考資料とリソース
 
-* [デリゲート](../../docs/csharp/programming-guide/delegates/index.md)
-* [匿名関数](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
-* [ラムダ式](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+* [デリゲート](../csharp/programming-guide/delegates/index.md)
+* [匿名関数](../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
+* [ラムダ式](../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

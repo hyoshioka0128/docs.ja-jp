@@ -5,10 +5,10 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: ae9fc47bf07a7e28688942b856b4743ae7aadc36
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69577245"
 ---
 # <a name="conclusion"></a>まとめ
@@ -30,4 +30,4 @@ ms.locfileid: "69577245"
 **ツールボックスではなく、ツールとしてのサーバーレス。** サーバーレスは、アプリケーション アーキテクチャに限定されたソリューションではありません。 従来の階層、モノリシック バック エンド、コンテナーなどが含まれることがあるハイブリッド アプリケーションの一部として活用できるツールです。 サーバーレスは既存のソリューションを強化する目的で使用できます。アプリケーション開発にとって融通の利かないアプローチではありません。
 
 >[!div class="step-by-step"]
->[前へ](serverless-business-scenarios.md)
+>[[戻る]](serverless-business-scenarios.md)

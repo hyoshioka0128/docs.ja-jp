@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID68
 ms.assetid: 9a89beda-140e-4b32-8d0a-2dc598ef279a
-ms.openlocfilehash: 2738ce692f5eb2df433cd5cb1a5e1ae4a5968cab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d1c31af1df65855d3632e64983314767f76c9375
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970080"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84394792"
 ---
 # <a name="device-unavailable"></a>デバイスが準備されていません
 ネットワーク接続が失われたか、アクセスしようとしているデバイスがオフラインであるか、または存在しません。  
@@ -22,4 +22,4 @@ ms.locfileid: "61970080"
   
 ## <a name="see-also"></a>関連項目
 
-- [エラーの種類](../../visual-basic/programming-guide/language-features/error-types.md)
+- [エラーの種類](../programming-guide/language-features/error-types.md)

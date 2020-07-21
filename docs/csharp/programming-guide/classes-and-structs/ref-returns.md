@@ -2,12 +2,12 @@
 title: ref 戻り値と ref ローカル変数 (C# ガイド)
 description: ref 戻り値と ref ローカル変数を定義して使用する方法について説明します。
 ms.date: 04/04/2018
-ms.openlocfilehash: 7ade422b5b3805ef2e1f487252a98fb85cdfe70c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 87a9538db60d69062f0fb48ed9683a9d4f972b91
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736821"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170074"
 ---
 # <a name="ref-returns-and-ref-locals"></a>ref 戻り値と ref ローカル変数
 
@@ -82,7 +82,7 @@ ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
 
 この後 `p` を使用することは、`GetContactInformation` によって返された変数を使用することと同じです。`p` はその変数のエイリアスであるためです。 `p` を変更すると、`GetContactInformation` から返される変数も変更されます。
 
-`ref` キーワードは、ローカル変数宣言の前 "*および*" メソッド呼び出しの前の両方で使用します。 
+`ref` キーワードは、ローカル変数宣言の前 "*および*" メソッド呼び出しの前の両方で使用します。
 
 同じ方法で、参照渡しの値にアクセスできます。 場合によっては、参照渡しの値へのアクセスによって負荷がかかる可能性があるコピー操作が回避され、パフォーマンスが向上します。 たとえば、次のステートメントは、値の参照に使用される ref ローカル値をどのように定義できるかを示しています。
 
@@ -90,7 +90,7 @@ ref Person p = ref contacts.GetContactInformation("Brandie", "Best");
 ref VeryLargeStruct reflocal = ref veryLargeStruct;
 ```
 
-`ref` キーワードは、ローカル変数宣言の前 "*および*" 2 番目の例の値の前で使用します。 両方の例の、変数宣言と代入の両方の `ref` キーワードを含めないと、コンパイラ エラー CS8172 "値を使用して参照渡し変数を初期化することはできません" が生成されます。 
+`ref` キーワードは、ローカル変数宣言の前 "*および*" 2 番目の例の値の前で使用します。 両方の例の、変数宣言と代入の両方の `ref` キーワードを含めないと、コンパイラ エラー CS8172 "値を使用して参照渡し変数を初期化することはできません" が生成されます。
 
 C# 7.3 より前は、初期化後に別の記憶域を参照するように ref ローカル変数を割り当て直すことはできませんでした。 この制限はなくなりました。 再割り当ての例を次に示します。
 
@@ -103,7 +103,7 @@ refLocal = ref anotherVeryLargeStruct; // reassigned, refLocal refers to differe
 
 ## <a name="ref-returns-and-ref-locals-an-example"></a>ref 戻り値と ref ローカル変数: 使用例
 
-次の例では、整数値の配列を格納する `NumberStore` クラスを定義しています。 `FindNumber` メソッドは、引数として渡された数値に等しいかそれより大きい最初の数値を参照渡しで返します。 引数に等しいかそれより大きい数値がない場合、メソッドはインデックス 0 の数値を返します。 
+次の例では、整数値の配列を格納する `NumberStore` クラスを定義しています。 `FindNumber` メソッドは、引数として渡された数値に等しいかそれより大きい最初の数値を参照渡しで返します。 引数に等しいかそれより大きい数値がない場合、メソッドはインデックス 0 の数値を返します。
 
 [!code-csharp[ref-returns](../../../../samples/snippets/csharp/programming-guide/ref-returns/NumberStore.cs#1)]
 
@@ -119,7 +119,7 @@ refLocal = ref anotherVeryLargeStruct; // reassigned, refLocal refers to differe
 
 この 2 番目のバージョンは、シークされる値が配列の末尾近くにあるようなシナリオのシーケンスが長い場合に、より効率的です。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ref キーワード](../../language-reference/keywords/ref.md)
 - [安全で効率的なコードを記述する](../../write-safe-efficient-code.md)

@@ -1,18 +1,17 @@
 ---
 title: 透過的セキュリティ コード
+description: 透過的なコードモデルの目的、透過性レベルを指定する方法、およびセキュリティにおける透過性の適用について理解します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - transparent code
 - security-transparent code
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f90b64b5e9ab5a167333a594ace7f247b1b2b7e7
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a167efe12b88f796fba4abc6d60ebffe4693709a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975526"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309847"
 ---
 # <a name="security-transparent-code"></a>透過的セキュリティ コード
 
@@ -43,7 +42,7 @@ ms.locfileid: "73975526"
 
 レベルは次のとおりです。
 
-- レベル 2 (<xref:System.Security.SecurityRuleSet.Level2>) – .NET Framework 4 つの透過性規則。
+- レベル 2 ( <xref:System.Security.SecurityRuleSet.Level2> ) – .NET Framework 4 つの透過性規則。
 
 - レベル 1 (<xref:System.Security.SecurityRuleSet.Level1>) – .NET Framework 2.0 の透過性規則。
 
@@ -99,4 +98,4 @@ ms.locfileid: "73975526"
 ## <a name="see-also"></a>関連項目
 
 - [透過的セキュリティコード、レベル1](security-transparent-code-level-1.md)
-- [透過的セキュリティコード、レベル2](security-transparent-code-level-2.md)
+- [透過的セキュリティ コード、レベル 2](security-transparent-code-level-2.md)

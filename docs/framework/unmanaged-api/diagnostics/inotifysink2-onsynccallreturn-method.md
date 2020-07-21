@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c1bda761-6292-4750-a14b-7d5db8f33456
 topic_type:
 - apiref
-ms.openlocfilehash: d2d90d33ce7a8135f40a0fb4039a2418dd1987ac
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ff1dabcfc366607639cd98be4392f8dd59dc83a1
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435972"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442008"
 ---
 # <a name="inotifysink2onsynccallreturn-method"></a>INotifySink2::OnSyncCallReturn メソッド
 呼び出しから制御が戻ったときに呼び出されます。  
@@ -38,7 +38,7 @@ HRESULT OnSyncCallReturn
   
 ## <a name="parameters"></a>パラメーター  
  `in_CallID`  
- からから返される呼び出しの ID。 「 [CALL_ID 構造](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md)」を参照してください。  
+ からから返される呼び出しの ID。 「 [CALL_ID 構造](call-id-structure.md)」を参照してください。  
   
  `in_pBuffer`  
  から呼び出しバッファー。  
@@ -54,6 +54,6 @@ HRESULT OnSyncCallReturn
   
 ## <a name="see-also"></a>関連項目
 
-- [INotifySink2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [INotifySource2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
-- [INotifyConnection2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+- [INotifySink2 インターフェイス](inotifysink2-interface.md)
+- [INotifySource2 インターフェイス](inotifysource2-interface.md)
+- [INotifyConnection2 インターフェイス](inotifyconnection2-interface.md)

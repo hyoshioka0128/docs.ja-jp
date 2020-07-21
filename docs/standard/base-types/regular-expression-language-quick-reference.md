@@ -1,5 +1,6 @@
 ---
 title: 正規表現言語 - クイック リファレンス
+description: このクイック リファレンスでは、正規表現パターンを使用して入力テキストを照合する方法について説明します。 パターンには、1 個以上の文字リテラル、演算子、またはコンストラクトが含まれます。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 f1_keywords:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - cheat sheet
 - .NET Framework regular expressions, language elements
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
-ms.openlocfilehash: fb84e746e1dffedebfbe289c8e7599bc50097f07
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a2fc2c56eeb29f5e89dc0b9f94636408ff10700f
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128082"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446367"
 ---
 # <a name="regular-expression-language---quick-reference"></a>正規表現言語 - クイック リファレンス
 
@@ -60,7 +61,7 @@ ms.locfileid: "73128082"
 |---------------------|-----------------|-------------|-------------|
 |`[` *character_group* `]`|*character_group*内の任意の 1 文字と一致します。 既定では、大文字と小文字が区別されます。|`[ae]`|『`"gray"`』の「`"a"`」<br /><br /> 『`"lane"`』の「`"a"`」、「`"e"`」|
 |`[^` *character_group* `]`|否定:*character_group* 内にない任意の 1 文字と一致します。 既定では、*character_group* の文字について、大文字と小文字が区別されます。|`[^aei]`|『`"reign"`』の「`"r"`」、「`"g"`」、「`"n"`」|
-|`[` *先頭* `-` *last* `]`|文字範囲:*first* から *last* までの範囲にある任意の 1 文字と一致します。|`[A-Z]`|『`"AB123"`』の「`"A"`」、「`"B"`」|
+|`[` *first* `-` *last* `]`|文字範囲:*first* から *last* までの範囲にある任意の 1 文字と一致します。|`[A-Z]`|『`"AB123"`』の「`"A"`」、「`"B"`」|
 |`.`|ワイルドカード:\n を除く任意の 1 文字と一致します。<br /><br /> リテラルのピリオド文字 (. または `\u002E`) と一致させるには、この文字の前にエスケープ文字 (`\.`) を指定します。|`a.e`|『`"nave"`』の「`"ave"`」<br /><br /> 『`"water"`』の「`"ate"`」|
 |`\p{` *name* `}`|*name*で指定された名前付きブロックまたは Unicode 一般カテゴリ内の任意の 1 文字と一致します。|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|『`"City Lights"`』の「`"C"`」、「`"L"`」<br /><br /> 『`"ДЖem"`』の「`"Д"`」、「`"Ж"`」|
 |`\P{` *name* `}`|*name*で指定された名前付きブロックまたは Unicode 一般カテゴリにない任意の 1 文字と一致します。|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|『`"City"`』の「`"i"`」、「`"t"`」、「`"y"`」<br /><br /> 『`"ДЖem"`』の「`"e"`」、「`"m"`」|
@@ -101,7 +102,7 @@ ms.locfileid: "73128082"
 |`(?!` *subexpression* `)`|ゼロ幅の否定先読みアサーションです。|`\b(?!un)\w+\b`|『`"unsure sure unity used"`』の「`"sure"`」、「`"used"`」|
 |`(?<=` *subexpression* `)`|ゼロ幅の正の後読みアサーションです。|`(?<=19)\d{2}\b`|『`"1851 1999 1950 1905 2003"`』の「`"99"`」、「`"50"`」、「`"05"`」|
 |`(?<!` *subexpression* `)`|ゼロ幅の負の後読みアサーションです。|`(?<!19)\d{2}\b`|『`"1851 1999 1950 1905 2003"`』の「`"51"`」、「`"03"`」|
-|`(?>` *subexpression* `)`|非バックトラッキング ("最長") 部分式です。|`[13579](?>A+B+)`|『`"1ABB 3ABBC 5AB 5AC"`』の「`"1ABB"`」、「`"3ABB"`」、および「`"5AB"`」|
+|`(?>` *subexpression* `)`|アトミック グループ。|`[13579](?>A+B+)`|『`"1ABB 3ABBC 5AB 5AC"`』の「`"1ABB"`」、「`"3ABB"`」、および「`"5AB"`」|
 
 ## <a name="quantifiers"></a>量指定子
 
@@ -138,8 +139,8 @@ ms.locfileid: "73128082"
 |代替構成体|説明|パターン|一致件数|
 |---------------------------|-----------------|-------------|-------------|
 |<code>&#124;</code>|縦棒 (<code>&#124;</code>) 文字で区切られたいずれかの要素と一致します。|<code>th(e&#124;is&#124;at)</code>|『`"this is the day."`』の「`"the"`」、「`"this"`」|
-|`(?(` *式* `)` *可* <code>&#124;</code> *no* `)`|*expression* で指定される正規表現パターンが一致する場合は *yes* と一致します。それ以外の場合は、*no* (省略可能) 部分と一致します。 *expression* はゼロ幅アサーションとして解釈されます。|<code>(?(A)A\d{2}\b&#124;\b\d{3}\b)</code>|『`"A10 C103 910"`』の「`"A10"`」、「`"910"`」|
-|`(?(` *name* `)` *可* <code>&#124;</code> *no* `)`|名前付きまたは番号付きのキャプチャ グループ *name* に一致が見つかった場合は *yes*と一致します。それ以外の場合は *no*(省略可能) と一致します。|<code>(?&lt;quoted&gt;&quot;)?(?(quoted).+?&quot;&#124;\S+\s)</code>|『`"Dogs.jpg \"Yiska playing.jpg\""`』の「`"Dogs.jpg "`」、「`"\"Yiska playing.jpg\""`」|
+|`(?(` *expression* `)` *yes* <code>&#124;</code> *no* `)`|*expression* で指定される正規表現パターンが一致する場合は *yes* と一致します。それ以外の場合は、*no* (省略可能) 部分と一致します。 *expression* はゼロ幅アサーションとして解釈されます。|<code>(?(A)A\d{2}\b&#124;\b\d{3}\b)</code>|『`"A10 C103 910"`』の「`"A10"`」、「`"910"`」|
+|`(?(` *name* `)` *yes* <code>&#124;</code> *no* `)`|名前付きまたは番号付きのキャプチャ グループ *name* に一致が見つかった場合は *yes*と一致します。それ以外の場合は *no*(省略可能) と一致します。|<code>(?&lt;quoted&gt;&quot;)?(?(quoted).+?&quot;&#124;\S+\s)</code>|『`"Dogs.jpg \"Yiska playing.jpg\""`』の「`"Dogs.jpg "`」、「`"\"Yiska playing.jpg\""`」|
 
 ## <a name="substitutions"></a>置換
 
@@ -191,6 +192,5 @@ ms.locfileid: "73128082"
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
 - [正規表現](regular-expressions.md)
 - [正規表現クラス](the-regular-expression-object-model.md)
-- [正規表現の例](regular-expression-examples.md)
 - [正規表現 - クイック リファレンス (Word 形式でダウンロード)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)
 - [正規表現 - クイック リファレンス (PDF 形式でダウンロード)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

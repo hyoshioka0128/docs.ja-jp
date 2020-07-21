@@ -2,12 +2,12 @@
 title: シリアル化
 ms.date: 07/20/2015
 ms.assetid: 67379a76-5465-4af8-a781-0b0b25a62d9a
-ms.openlocfilehash: 9ce97e541cb204b92663464e36d9e8f221ccc3f2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: db14147a23940fa2403613036750be1bca566e8e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351914"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "85503831"
 ---
 # <a name="serialization-visual-basic"></a>シリアル化 (Visual Basic)
 シリアル化は、オブジェクトを格納するか、メモリ、データベース、またはファイルに転送するためにバイト ストリームに変換するプロセスです。 その主な目的は、必要なときに再作成できるように、オブジェクトの状態を保存しておくことです。 逆のプロセスは、逆シリアル化と呼ばれます。  
@@ -58,12 +58,12 @@ ms.locfileid: "74351914"
 ## <a name="designer-serialization"></a>デザイナーのシリアル化  
  デザイナーのシリアル化はシリアル化の特殊な形式であり、通常は開発ツールに関連付けられているオブジェクトの永続性の種類を含みます。 デザイナーのシリアル化は、後でオブジェクト グラフを復元できるように、オブジェクト グラフをソース ファイルに変換するプロセスです。 ソース ファイルには、コードとマークアップを含めることができますが、SQL テーブル情報を含めることもできます。  
   
-## <a name="BKMK_RelatedTopics">関連トピックと例</a>  
- [チュートリアル: Visual Studio でのオブジェクトの永続化 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md)  
+## <a name="related-topics-and-examples"></a><a name="BKMK_RelatedTopics"></a>関連トピックと例  
+ [チュートリアル: Visual Studio でのオブジェクトの永続化 (Visual Basic)](walkthrough-persisting-an-object-in-visual-studio.md)  
  シリアル化によってインスタンス間でオブジェクトのデータを永続化して値を保存しておき、次にそのオブジェクトをインスタンス化するときにその値を取得する方法を示します。  
   
- [方法: XML ファイルからオブジェクト データを読み込む (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)  
+ [方法: XML ファイルからオブジェクト データを読み込む (Visual Basic)](how-to-read-object-data-from-an-xml-file.md)  
  <xref:System.Xml.Serialization.XmlSerializer> クラスを使用して、XML ファイルに以前に書き込まれたオブジェクト データを読み込む方法を示します。  
   
- [方法: XML ファイルにオブジェクト データを書き込む (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)  
+ [方法: XML ファイルにオブジェクト データを書き込む (Visual Basic)](how-to-write-object-data-to-an-xml-file.md)  
  <xref:System.Xml.Serialization.XmlSerializer> クラスを使用して、クラスから XML ファイルにオブジェクトを書き込む方法を示します。

@@ -12,17 +12,17 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-ms.openlocfilehash: 561d0759af4f7557bae39540cbb00f8038726ddc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 66979415f2951acc78dc4eb7b2aafe3c84e85397
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69950805"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289942"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>イベントベースの非同期パターンを実装するための推奨される手順
 イベントベースの非同期パターンは、使い慣れたイベントおよびデリゲートのセマンティクスと共に、クラス内の非同期動作を公開する効果的な方法を提供します。 イベント ベースの非同期パターンを実装するには、いくつかの固有の動作要件に従う必要があります。 以降のセクションでは、イベントベースの非同期パターンに従うクラスを実装する際に検討すべき要件とガイドラインについて説明します。  
   
- 概要については、「[イベントベースの非同期パターンの実装](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)」を参照してください。  
+ 概要については、「[イベントベースの非同期パターンの実装](implementing-the-event-based-asynchronous-pattern.md)」を参照してください。  
   
 ## <a name="required-behavioral-guarantees"></a>必要な動作保証  
  イベントベースの非同期パターンを実装する場合は、クラスが適切に動作し、クラスのクライアントがそのような動作に依存できるようにするため、多数の保証を提供する必要があります。  
@@ -43,14 +43,14 @@ ms.locfileid: "69950805"
   
 ```csharp  
 // Good design  
-private void Form1_MethodNameCompleted(object sender, xxxCompletedEventArgs e)   
-{   
+private void Form1_MethodNameCompleted(object sender, xxxCompletedEventArgs e)
+{
     DemoType result = e.Result;  
 }  
   
 // Bad design  
-private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventArgs e)   
-{   
+private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventArgs e)
+{
     DemoType result = (DemoType)(e.Result);  
 }  
 ```  
@@ -73,7 +73,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 - クラスで複数の同時呼び出しがサポートされている場合は、開発者が各呼び出しを個別に追跡できるようにするため、`userSuppliedState` というオブジェクト値状態パラメーター、またはタスク ID を受け取る <em>MethodName</em>**Async** オーバーライドを定義します。 このパラメーターは、常に <em>MethodName</em>**Async** メソッドのシグネチャの最終パラメーターにする必要があります。  
   
-- オブジェクト値状態パラメーターまたはタスク ID を受け取る <em>MethodName</em>**Async** オーバーロードがクラスによって定義される場合は、そのタスク ID の操作の有効期間を追跡し、完了ハンドラーに戻す必要があります。 役に立つヘルパー クラスがあります。 コンカレンシー管理の詳細については、「[方法: イベントベースの非同期パターンをサポートするコンポーネントを実装する](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)」を参照してください。  
+- オブジェクト値状態パラメーターまたはタスク ID を受け取る <em>MethodName</em>**Async** オーバーロードがクラスによって定義される場合は、そのタスク ID の操作の有効期間を追跡し、完了ハンドラーに戻す必要があります。 役に立つヘルパー クラスがあります。 コンカレンシー管理の詳細については、「[方法: イベントベースの非同期パターンをサポートするコンポーネントを実装する](component-that-supports-the-event-based-asynchronous-pattern.md)」を参照してください。  
   
 - クラスによって、状態パラメーターなしで <em>MethodName</em>**Async** メソッドが定義され、このクラスで複数の同時呼び出しがサポートされていない場合、直前の <em>MethodName</em>**Async** 呼び出しが完了する前に <em>MethodName</em>**Async** を呼び出そうとすると、<xref:System.InvalidOperationException> が発生するようにします。  
   
@@ -127,7 +127,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 > [!NOTE]
 > アプリケーション モデルのポリシーに対し明示的に準拠しないものの、イベント ベースの非同期パターンを使用する他のメリットを利用したい場合は、これらの規則を回避できます。 たとえば、Windows Forms でのクラス操作をフリー スレッド化するとします。 開発者がフリー スレッド化クラスの暗黙的な制限を理解している場合は、フリースレッド化クラスを作成できます。 コンソール アプリケーションは <xref:System.ComponentModel.AsyncOperation.Post%2A> 呼び出しの実行を同期しません。 これが原因で、`ProgressChanged` イベントが正しくない順序で発生することがあります。 <xref:System.ComponentModel.AsyncOperation.Post%2A> 呼び出しを順次実行するには、<xref:System.Threading.SynchronizationContext?displayProperty=nameWithType> クラスを実装およびインストールします。  
   
- <xref:System.ComponentModel.AsyncOperation> と <xref:System.ComponentModel.AsyncOperationManager> を使用して非同期操作を使用可能にする方法の詳細については、「[方法: イベントベースの非同期パターンをサポートするコンポーネントを実装する](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)」を参照してください。  
+ <xref:System.ComponentModel.AsyncOperation> と <xref:System.ComponentModel.AsyncOperationManager> を使用して非同期操作を使用可能にする方法の詳細については、「[方法: イベントベースの非同期パターンをサポートするコンポーネントを実装する](component-that-supports-the-event-based-asynchronous-pattern.md)」を参照してください。  
   
 ## <a name="guidelines"></a>ガイドライン  
   
@@ -141,7 +141,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 - <xref:System.ComponentModel.Component> から派生したクラスを編集する場合、独自の <xref:System.Threading.SynchronizationContext> クラスを実装およびインストールしないでください。 使用される <xref:System.Threading.SynchronizationContext> を制御するのは、コンポーネントではなくアプリケーション モデルです。  
   
-- どのようなマルチスレッドを使用する場合でも、深刻かつ複雑なバグが発生する可能性があります。 マルチスレッドを使用するソリューションを実装する前に、「[マネージド スレッド処理の実施](../../../docs/standard/threading/managed-threading-best-practices.md)」を参照してください。  
+- どのようなマルチスレッドを使用する場合でも、深刻かつ複雑なバグが発生する可能性があります。 マルチスレッドを使用するソリューションを実装する前に、「[マネージド スレッド処理の実施](../threading/managed-threading-best-practices.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
@@ -150,9 +150,9 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.BackgroundWorker>
-- [イベントベースの非同期パターンの実装](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)
-- [イベント ベースの非同期パターン (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [イベントベースの非同期パターンをいつ実装するかの決定](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
-- [イベントベースの非同期パターンを実装するための推奨される手順](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
-- [方法: イベントベースの非同期パターンをサポートするコンポーネントを使用する](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
-- [方法: イベントベースの非同期パターンをサポートするコンポーネントを実装する](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
+- [イベントベースの非同期パターンの実装](implementing-the-event-based-asynchronous-pattern.md)
+- [イベント ベースの非同期パターン (EAP)](event-based-asynchronous-pattern-eap.md)
+- [イベントベースの非同期パターンをいつ実装するかの決定](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
+- [イベントベースの非同期パターンを実装するための推奨される手順](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
+- [方法: イベントベースの非同期パターンをサポートするコンポーネントを使用する](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
+- [方法: イベントベースの非同期パターンをサポートするコンポーネントを実装する](component-that-supports-the-event-based-asynchronous-pattern.md)

@@ -1,14 +1,14 @@
 ---
 title: ML.NET の自動 ML API を使用する方法
 description: ML.NET の自動 ML API によって、モデル構築プロセスが自動化され、展開できる状態のモデルが生成されます。 自動機械学習タスクの構成に使用できるオプションについて説明します。
-ms.date: 11/7/2019
+ms.date: 12/18/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: c1c18decc48bc1499aa55210becff305cdec4a53
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b322c484282d025033d747d2093f7b5b4d216fde
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977116"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "75636563"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>ML.NET の自動機械学習 API を使用する方法
 
@@ -38,6 +38,7 @@ using Microsoft.ML.AutoML;
 * 二項分類
 * 多クラス分類
 * 回帰
+* 推奨事項
 
 ## <a name="create-experiment-settings"></a>実験設定を作成する
 
@@ -59,6 +60,12 @@ using Microsoft.ML.AutoML;
 
   ```csharp
   var experimentSettings = new RegressionExperimentSettings();
+  ```
+
+* 推奨事項
+
+  ```csharp
+  var experimentSettings = new RecommendationExperimentSettings();
   ```
 
 ## <a name="configure-experiment-settings"></a>実験設定を構成する
@@ -110,12 +117,13 @@ ML タスクごとにサポートされるトレーナーの一覧は、以下�
 * [サポートされる二項分類アルゴリズム](xref:Microsoft.ML.AutoML.BinaryClassificationTrainer)
 * [サポートされる多クラス分類アルゴリズム](xref:Microsoft.ML.AutoML.MulticlassClassificationTrainer)
 * [サポートされる回帰アルゴリズム](xref:Microsoft.ML.AutoML.RegressionTrainer)
+* [サポートされるレコメンデーション アルゴリズム](xref:Microsoft.ML.AutoML.RecommendationTrainer)
 
 ## <a name="optimizing-metric"></a>最適化メトリック
 
 上の例に示すように、最適化メトリックによって、モデルのトレーニング中に最適化されるメトリックが決まります。 選択できる最適化メトリックは、選択したタスクの種類によって決まります。 利用できるメトリックの一覧を次に示します。
 
-|[二項分類](xref:Microsoft.ML.AutoML.BinaryClassificationMetric) | [多クラス分類](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric) |[回帰](xref:Microsoft.ML.AutoML.RegressionMetric)
+|[二項分類](xref:Microsoft.ML.AutoML.BinaryClassificationMetric) | [多クラス分類](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric) |[回帰とレコメンデーション](xref:Microsoft.ML.AutoML.RegressionMetric)
 |-- |-- |--
 |正確度| LogLoss | RSquared
 |AreaUnderPrecisionRecallCurve | LogLossReduction | MeanAbsoluteError
@@ -219,7 +227,7 @@ ML タスクごとに利用できるすべてのメトリックを次に示し�
 
 * [二項分類メトリック](xref:Microsoft.ML.AutoML.BinaryClassificationMetric)
 * [多クラス分類メトリック](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric)
-* [回帰メトリック](xref:Microsoft.ML.AutoML.RegressionMetric)
+* [回帰とレコメンデーション メトリック](xref:Microsoft.ML.AutoML.RegressionMetric)
 
 ## <a name="see-also"></a>関連項目
 

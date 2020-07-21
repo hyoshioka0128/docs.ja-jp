@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b8685c1e-b80c-4198-8eb3-748d6f48a99e
 topic_type:
 - apiref
-ms.openlocfilehash: c458fef77b49f522ca21dd5487731f4d43588cea
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8409e56b5ec4dbe47035a0555b6b7ce175b517ee
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437101"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490979"
 ---
 # <a name="imetadataimportgetpinvokemap-method"></a>IMetaDataImport::GetPinvokeMap メソッド
 PInvoke 呼び出しの対象アセンブリを表す ModuleRef トークンを取得します。  
@@ -43,30 +43,30 @@ HRESULT GetPinvokeMap (
  からPInvoke マッピングメタデータを取得する FieldDef または MethodDef トークン。  
   
  `pdwMappingFlags`  
- 入出力マッピングに使用されるフラグへのポインター。 この値は、 [CorPinvokeMap](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md)列挙体のビットマスクです。  
+ 入出力マッピングに使用されるフラグへのポインター。 この値は、 [CorPinvokeMap](corpinvokemap-enumeration.md)列挙体のビットマスクです。  
   
  `szImportName`  
  入出力アンマネージターゲット DLL の名前。  
   
  `cchImportName`  
- から`szImportName`のワイド文字単位のサイズ。  
+ からのワイド文字のサイズ `szImportName` 。  
   
  `pchImportName`  
- 入出力`szImportName`に返されるワイド文字数。  
+ 入出力で返されたワイド文字の数 `szImportName` 。  
   
  `pmrImportDLL`  
  入出力アンマネージターゲットオブジェクトライブラリを表す ModuleRef トークンへのポインター。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

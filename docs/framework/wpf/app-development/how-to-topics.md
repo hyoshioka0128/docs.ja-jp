@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: c33980e8-36e7-45ce-a485-8c826dd29009
 ms.openlocfilehash: 27eb7acbab7d9c90f0c0c311ef6331a16b7896e8
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62006656"
 ---
 # <a name="how-to-topics"></a>方法のトピック
-次のトピックでは、Windows Presentation Foundation (WPF) アドインを作成する方法を説明します。  
+以下のトピックでは、Windows Presentation Foundation (WPF) アドインを作成する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [UI を返すアドインを作成する](how-to-create-an-add-in-that-returns-a-ui.md)  

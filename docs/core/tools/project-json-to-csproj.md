@@ -3,13 +3,12 @@ title: project.json と csproj の比較
 description: 「project.json 要素と csproj 要素の間のマッピング」を参照してください。
 author: natemcmaster
 ms.date: 03/13/2017
-ms.custom: seodec18
-ms.openlocfilehash: 6ac63f18bd42193e964aaeae3c54c887c9c63163
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: a997b48f645ed58d15610a68aee7c67411f9763f
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747412"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205831"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>project.json プロパティと csproj プロパティの間のマッピング
 
@@ -180,7 +179,7 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-移行されたプロジェクトの `<RuntimeFrameworkVersion>` 値はインストールした SDK のバージョンにより決定されます。
+移行されたプロジェクトの `<RuntimeFrameworkVersion>` 値はインストールされている SDK のバージョンにより決定されます。
 
 ### <a name="top-level-dependencies"></a>最上位の依存関係
 
@@ -338,9 +337,9 @@ MSBuild では、ビルド中、すべてのプロジェクトが*移植可能*�
 
 `dotnet publish --framework netcoreapp1.0 --runtime osx.10.11-x64`
 
-詳細については、「[自己完結型の展開 (SCD)](../deploying/index.md#self-contained-deployments-scd)」を参照してください。
+詳細については、「[自己完結型の展開 (SCD)](../deploying/index.md#publish-self-contained)」を参照してください。
 
-## <a name="tools"></a>ツール
+## <a name="tools"></a>tools
 
 ```json
 {
@@ -486,8 +485,7 @@ MSBuild では、ビルド中、すべてのプロジェクトが*移植可能*�
 </PropertyGroup>
 ```
 
-MSBuild では、`owners` 要素に相当するものはありません。
-`summary` の場合、MSBuild の `<Description>` プロパティを利用できます (ただし、`summary` の値はそのプロパティに自動的に移行されません)。そのプロパティが [`description`](#other-common-root-level-options) 要素にマッピングされているためです。
+MSBuild では、`owners` 要素に相当するものはありません。 `summary` の場合、MSBuild の `<Description>` プロパティを利用できます。 そのプロパティは [`description`](#other-common-root-level-options) 要素にマッピングされているため、`summary` の値はそのプロパティに自動的には移行されません。
 
 ## <a name="scripts"></a>スクリプト
 
@@ -529,7 +527,7 @@ MSBuild でこれに相当するものは[ターゲット](/visualstudio/msbuild
 }
 ```
 
-"System.GC.Server" プロパティを除き、このグループのすべての設定がプロジェクト フォルダーの *runtimeconfig.template.json* というファイルに配置されます。オプションは移行プロセス中にルート オブジェクトに移動します。
+`System.GC.Server` プロパティを除き、このグループのすべての設定がプロジェクト フォルダーの *runtimeconfig.template.json* というファイルに配置されます。オプションは移行プロセス中にルート オブジェクトに移動します。
 
 ```json
 {
@@ -542,7 +540,7 @@ MSBuild でこれに相当するものは[ターゲット](/visualstudio/msbuild
 }
 ```
 
-"System.GC.Server" プロパティは csproj ファイルに移行されます。
+`System.GC.Server` プロパティは、次のように csproj ファイルに移行されます。
 
 ```xml
 <PropertyGroup>
@@ -570,7 +568,7 @@ MSBuild でこれに相当するものは[ターゲット](/visualstudio/msbuild
 }
 ```
 
-csproj ではサポートされていません。 代わりに、*.nuspec* ファイルにコンテンツ ファイルを追加する必要があります。
+csproj ではサポートされていません。 代わりに、 *.nuspec* ファイルにコンテンツ ファイルを追加する必要があります。
 詳細については、「[Including content files](/nuget/schema/nuspec#including-content-files)」 (コンテンツ ファイルを追加する) を参照してください。
 
 ## <a name="files"></a>ファイル
@@ -622,8 +620,7 @@ MSBuild では、これは[項目](/visualstudio/msbuild/common-msbuild-project-
 ```
 
 > [!NOTE]
-> 既定の [Glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))の多くは .NET Core SDK により自動的に追加されます。
-> 詳細については、「[Default Compile Item Values](https://aka.ms/sdkimplicititems)」 (既定のコンパイル項目値) を参照してください。
+> 既定の [Glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))の多くは .NET Core SDK により自動的に追加されます。 詳細については、「[コンパイルへの既定の組み込み](../project-sdk/overview.md#default-compilation-includes)」を参照してください。
 
 すべての MSBuild `ItemGroup` 要素で `Include`、`Exclude`、`Remove` がサポートされています。
 
@@ -676,4 +673,4 @@ MSBuild では、これは[項目](/visualstudio/msbuild/common-msbuild-project-
 
 ## <a name="see-also"></a>関連項目
 
-- [CLI の変更の概要](../tools/cli-msbuild-architecture.md)
+- [CLI の変更の概要](cli-msbuild-architecture.md)

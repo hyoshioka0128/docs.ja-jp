@@ -1,13 +1,13 @@
 ---
 title: 判別共用体
-description: 判別共用体のF#使用方法について説明します。
+description: F# の判別共用体の使用方法について説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: 79da6c6ff9d3699818014d86f6c95edc3e43b4c1
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 539e2843c0bbc8c5ac9c0597ffc5443f8cd127f8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71083041"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401071"
 ---
 # <a name="discriminated-unions"></a>判別共用体
 
@@ -24,11 +24,11 @@ type [accessibility-modifier] type-name =
     [ member-list ]
 ```
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-判別共用体は他の言語の共用体型と似ていますが、異なる点もあります。 C++ の共用体型や Visual Basic のバリアント型と同じように、値に格納されるデータは固定ではありません。複数の異なるオプションのいずれかを格納できます。 ただし、これらの他の言語の共用体とは異なり、使用可能な各オプションには*ケース識別子*が指定されています。 ケース識別子には、使用できる各種の値の型の名前を指定します。指定した型のオブジェクトは値の型として使用できます。値は省略可能です。 値を省略する場合は、ケースが列挙型のケースと等しくなります。 値がある場合は、各値に、指定した型の単一値、あるいは同じ型または異なる型の複数のフィールドを集約したタプルを使用できます。 個々のフィールドには名前を付けることができますが、同じケース内の他のフィールドに名前が付けられていても、名前は省略可能です。
+判別共用体は他の言語の共用体型と似ていますが、異なる点もあります。 C++ の共用体型や Visual Basic のバリアント型と同じように、値に格納されるデータは固定ではありません。複数の異なるオプションのいずれかを格納できます。 ただし、これらの他の言語の共用体とは異なり、使用可能なオプションには*case 識別子*がそれぞれ与えられます。 ケース識別子には、使用できる各種の値の型の名前を指定します。指定した型のオブジェクトは値の型として使用できます。値は省略可能です。 値を省略する場合は、ケースが列挙型のケースと等しくなります。 値がある場合は、各値に、指定した型の単一値、あるいは同じ型または異なる型の複数のフィールドを集約したタプルを使用できます。 個々のフィールドに名前を付けることができますが、同じ大文字小文字の付いた他のフィールドに名前が付いている場合でも、名前は省略可能です。
 
-判別共用体のアクセシビリティは`public`、既定でに設定されています。
+判別共用体のアクセシビリティは既定で`public`に設定されます。
 
 たとえば、Shape 型の次のような宣言を検討します。
 
@@ -39,7 +39,7 @@ type Shape =
     | Prism of width : float * float * height : float
 ```
 
-上のコードは、次の3つのケースのいずれかの値を持つことができる判別共用体図形を宣言しています。四角形、円、および Prism。 各ケースに異なるフィールド セットがあります。 四角形の場合は、2 つの名前付きフィールドがあり、両方とも `float` 型で、幅と長さの名前が付いています。 円の場合は、1 つの名前付きフィールドがあり、半径の名前が付いています。 Prism ケースには3つのフィールドがあり、そのうち2つ (幅と高さ) は名前付きフィールドです。 名前のないフィールドは匿名フィールドと呼ばれます。
+前のコードでは、判別共用体の Shape を宣言します。これには四角形、円、およびプリズムの 3 つのケースのいずれかの値を指定できます。 各ケースに異なるフィールド セットがあります。 四角形の場合は、2 つの名前付きフィールドがあり、両方とも `float` 型で、幅と長さの名前が付いています。 円の場合は、1 つの名前付きフィールドがあり、半径の名前が付いています。 Prism の場合は 3 つのフィールドがあり、そのうちの 2 つ (幅と高さ) は名前付きフィールドです。 名前のないフィールドは、匿名フィールドと呼ばれます。
 
 次の例では、名前付きフィールドと匿名フィールドに値を設定してオブジェクトを構築します。
 
@@ -73,18 +73,18 @@ type Option<'a> =
 パターン一致式では、名前付きフィールドを使用して判別共用体一致を指定できます。 前に宣言された Shape 型には、次のコードに示すように、フィールドの値を抽出するために名前付きフィールドを使用できます。
 
 ```fsharp
-let getShapeHeight shape =
+let getShapeWidth shape =
     match shape with
-    | Rectangle(height = h) -> h
+    | Rectangle(width = w) -> w
     | Circle(radius = r) -> 2. * r
-    | Prism(height = h) -> h
+    | Prism(width = w) -> w
 ```
 
-通常は、共用体の名前で、修飾せずにケース識別子を使用できます。 名前を共用体の名前で常に修飾する場合は、 [RequireQualifiedAccess](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-[fsharp])属性を共用体型の定義に適用します。
+通常は、共用体の名前で、修飾せずにケース識別子を使用できます。 名前を常に共用体の名前で修飾する場合は、共用体の型定義に[RequireQualifiedAccess](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-[fsharp])属性を適用できます。
 
-### <a name="unwrapping-discriminated-unions"></a>判別共用体のラップ解除
+### <a name="unwrapping-discriminated-unions"></a>アンラッピング判別共用体
 
-判別F#共用体では、単一の型をラップするためにドメインモデリングでよく使用されます。 パターンマッチングを使用して基になる値を簡単に抽出することもできます。 1つのケースに一致式を使用する必要はありません。
+F# で判別共用体は、単一の型をラップするドメイン モデリングでよく使用されます。 パターンマッチングを使用して、基礎となる値を簡単に抽出できます。 1 つのケースに対して一致式を使用する必要はありません。
 
 ```fsharp
 let ([UnionCaseIdentifier] [values]) = [UnionValue]
@@ -101,7 +101,7 @@ let someFunctionUsingShaderProgram shaderProgram =
     ...
 ```
 
-関数のパラメーターでは、パターンマッチングも直接許可されているので、1つのケースをラップ解除できます。
+パターンマッチングは関数パラメータでも直接使用できるため、1 つのケースをアンラップできます。
 
 ```fsharp
 let someFunctionUsingShaderProgram (ShaderProgram id) =
@@ -111,7 +111,7 @@ let someFunctionUsingShaderProgram (ShaderProgram id) =
 
 ## <a name="struct-discriminated-unions"></a>構造体の判別共用体
 
-判別共用体を構造体として表すこともできます。  これは、 `[<Struct>]`属性を使用して行います。
+また、判別共用体を構造体として表すこともできます。  これは`[<Struct>]`属性で行われます。
 
 ```fsharp
 [<Struct>]
@@ -124,11 +124,11 @@ type Multicase =
     | Case3 of Case3 : double
 ```
 
-これらは値型であり、参照型ではないため、参照判別共用体の場合と比較して、追加の考慮事項があります。
+これらは値型であり、参照型ではないため、参照判別共用体と比較して、さらに考慮すべき点があります。
 
-1. 値型としてコピーされ、値型のセマンティクスを持ちます。
-2. Multicase struct 判別共用体と共に再帰型定義を使用することはできません。
-3. Multicase struct 判別共用体には、一意のケース名を指定する必要があります。
+1. これらは値型としてコピーされ、値型のセマンティクスを持ちます。
+2. マルチケース構造体の判別共用体と共に再帰的な型定義を使用することはできません。
+3. 複数ケースの構造体の判別共用体に対しては、大文字と小文字の一意の名前を指定する必要があります。
 
 ## <a name="using-discriminated-unions-instead-of-object-hierarchies"></a>オブジェクト階層ではなく、判別共用体を使用する場合
 
@@ -140,7 +140,7 @@ type Multicase =
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2004.fs)]
 
-出力は次のとおりです。
+出力は次のようになります。
 
 ```console
 Area of circle that has radius 15.000000: 706.858347
@@ -156,7 +156,7 @@ Area of rectangle that has height 5.000000 and width 10.000000 is 50.000000
 
 このコードでは、`resultSumTree` の値は 10 です。 次の図は、`myTree` のツリー構造を示しています。
 
-![MyTree のツリー構造を示す図。](../media/discriminated-unions/tree-structure-mytree.png)
+![myTree のツリー構造を示す図。](../media/discriminated-unions/tree-structure-mytree.png)
 
 判別共用体は、ツリーのノードが異種の場合でも、問題なく機能します。 次のコードの `Expression` 型は、数と変数の加算と乗算をサポートする簡単なプログラミング言語での式の抽象構文ツリーを表します。 共用体の一部のケースは再帰的ではなく、数 (`Number`) または変数 (`Variable`) を表します。 他のケースは再帰的で、演算 (`Add` および `Multiply`) を表し、オペランドも式です。 `Evaluate` 関数では、match 式を使用して再帰的に構文ツリーを処理しています。
 
@@ -166,7 +166,7 @@ Area of rectangle that has height 5.000000 and width 10.000000 is 50.000000
 
 ## <a name="members"></a>メンバー
 
-判別共用体のメンバーを定義することができます。 次の例は、プロパティを定義し、インターフェイスを実装する方法を示しています。
+判別共用体にメンバーを定義することは可能です。 次の例は、プロパティを定義し、インターフェイスを実装する方法を示しています。
 
 ```fsharp
 open System
@@ -198,7 +198,7 @@ type Shape =
 
 ## <a name="common-attributes"></a>共通属性
 
-判別共用体では、一般的に次の属性が見られます。
+判別共用体では、次の属性が一般的に見られます。
 
 - `[<RequireQualifiedAccess>]`
 - `[<NoEquality>]`

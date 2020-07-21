@@ -1,27 +1,25 @@
 ---
 title: Polly で指数バックオフを含む HTTP 呼び出しの再試行を実装する
-description: HTTP エラーを Polly と HttpClientFactory で処理する方法について説明します
-ms.date: 01/07/2019
-ms.openlocfilehash: 551cd1230c565b30c81090c984747e726680b9ed
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+description: HTTP エラーを Polly と IHttpClientFactory で処理する方法について説明します
+ms.date: 03/03/2020
+ms.openlocfilehash: 49396dd545a05699278254474c77acf1483e0e0c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089954"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78846797"
 ---
-# <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>HttpClientFactory ポリシーと Polly ポリシーで指数バックオフを含む HTTP 呼び出しの再試行を実装する
+# <a name="implement-http-call-retries-with-exponential-backoff-with-ihttpclientfactory-and-polly-policies"></a>IHttpClientFactory ポリシーと Polly ポリシーで指数バックオフを含む HTTP 呼び出しの再試行を実装する
 
 指数のバックオフでの再試行のためのアプローチとしては、オープン ソースである [Polly ライブラリ](https://github.com/App-vNext/Polly)のような高度な .NET ライブラリを利用することをお勧めします。
 
 Polly とは、回復機能と一時的な障害処理の機能を提供する .NET ライブラリです。 このような機能は、再試行、遮断器、バルクヘッド分離、タイムアウト、フォールバックなどの Polly ポリシーを適用することで実装できます。 Polly は .NET Framework 4.x と .NET Standard 1.0、1.1、および 2.0 (.NET Core をサポート) を対象としています。
 
-ただし、HttpClient で Polly のライブラリを使用する独自のカスタム コードを作成することは非常に複雑になる可能性があります。 eShopOnContainers の最初のバージョンでは、[ResilientHttpClient ビルディングブロック](https://github.com/dotnet-architecture/eShopOnContainers/commit/0c317d56f3c8937f6823cf1b45f5683397274815#diff-e6532e623eb606a0f8568663403e3a10)が Polly を基盤としていました。 ただし、[HttpClientFactory](use-httpclientfactory-to-implement-resilient-http-requests.md) がリリースされ、Polly との回復性の高い HTTP 通信がはるかに簡単に実装できるようになったため、eShopOnContainers ではビルディング ブロックが非推奨になりました。
+次の手順では、前のセクションで説明した、`IHttpClientFactory` に統合された Polly で HTTP 再試行を使用する方法を示します。
 
-次の手順では、前のセクションで説明した、HttpClientFactory に統合された Polly で HTTP 再試行を使用する方法を示します。
+**ASP.NET Core 3.1 パッケージを参照する**
 
-**ASP.NET Core 2.2 パッケージを参照する**
-
-`HttpClientFactory` は .NET Core 2.1 以降で使用できますが、最新の ASP.NET Core 2.2 パッケージを NuGet から入手し、プロジェクトで使用することをお勧めします。 通常、`AspNetCore` メタパッケージと拡張パッケージ `Microsoft.Extensions.Http.Polly` が必要になります。
+`IHttpClientFactory` は .NET Core 2.1 以降で使用できますが、最新の ASP.NET Core 3.1 パッケージを NuGet から入手し、プロジェクトで使用することをお勧めします。 また、通常は `Microsoft.Extensions.Http.Polly` 拡張機能パッケージを参照する必要もあります。
 
 **Startup で、Polly の再試行ポリシーでクライアントを構成する**
 
@@ -73,7 +71,7 @@ Polly はプロジェクトの Web サイトを通じて、実稼働可能なジ
 - **再試行パターン**  
   [https://docs.microsoft.com/azure/architecture/patterns/retry](/azure/architecture/patterns/retry)
 
-- **Polly と HttpClientFactory**  
+- **Polly および IHttpClientFactory**  
   <https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory>
 
 - **Polly (.NET の復元および一時的な障害処理ライブラリ)**  
@@ -86,5 +84,5 @@ Polly はプロジェクトの Web サイトを通じて、実稼働可能なジ
   <https://brooker.co.za/blog/2015/03/21/backoff.html>
 
 >[!div class="step-by-step"]
->[前へ](explore-custom-http-call-retries-exponential-backoff.md)
+>[前へ](use-httpclientfactory-to-implement-resilient-http-requests.md)
 >[次へ](implement-circuit-breaker-pattern.md)

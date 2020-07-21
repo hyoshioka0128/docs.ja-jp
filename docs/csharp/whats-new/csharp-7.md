@@ -3,12 +3,12 @@ title: C# 7.0 の新機能 - C# ガイド
 description: C# 言語のバージョン 7.0 での新機能の概要を説明します。
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 0f26a9647503ebb667d961fefaa05a25a71ec6f5
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 38b1afebf6d4fa69c46424c2d9a3631e8f3a8707
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926571"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174745"
 ---
 # <a name="whats-new-in-c-70"></a>C# 7.0 の新機能
 
@@ -88,7 +88,7 @@ C# には、設計の意図を説明するために使用される、クラス�
 
 [!code-csharp[DeconstructPoint](~/samples/snippets/csharp/new-in-7/program.cs#DeconstructPoint "Deconstruct a point")]
 
-タプルの詳細については、[タプルに関する記事](../tuples.md)を参照してください。
+詳細については、[タプル型](../language-reference/builtin-types/value-tuples.md)に関するページを参照してください。
 
 ## <a name="discards"></a>破棄
 
@@ -211,7 +211,7 @@ ref ローカル変数および ref 戻り値の追加により、値のコピ�
 [!code-csharp[TaskExample](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
 > [!NOTE]
-> ローカル関数によってサポートされる設計の中には、"*ラムダ式*" を使用して実現できるものもあります。 興味のある方は、[その違いの詳細を確認してください](../local-functions-vs-lambdas.md)。
+> ローカル関数によってサポートされる設計の中には、"*ラムダ式*" を使用して実現できるものもあります。 詳細については、[ローカル関数とラムダ式](../programming-guide/classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions)に関するページをご覧ください。
 
 ## <a name="more-expression-bodied-members"></a>式形式のメンバーの追加
 
@@ -236,7 +236,7 @@ C# では、`throw` は常にステートメントでした。 `throw` は式で
 
 非同期メソッドから `Task` オブジェクトを返すと、特定のパスでパフォーマンスのボトルネックが発生する可能性があります。 `Task` は参照型です。したがって、これを使うことは、オブジェクトを割り当てることを意味します。 `async` 修飾子で宣言されたメソッドがキャッシュされた結果を返すか、同期的に完了する場合、追加の割り当ては、コードのパフォーマンスが重要なセクションにおいて大きな時間コストにつながります。 厳密なループ処理でこのような割り当てが発生した場合、コストがかかる場合があります。
 
-新しい言語機能では、非同期メソッドの戻り値の型が `Task`、`Task<T>`、`void` に限定されません。 返される型は引き続き非同期パターンを満たす必要があります。つまり、`GetAwaiter` メソッドはアクセス可能である必要があります。 1 つの具体的な例として、この新しい言語機能を使用するために .NET Framework に `ValueTask` 型が追加されました。
+新しい言語機能では、非同期メソッドの戻り値の型が `Task`、`Task<T>`、`void` に限定されません。 返される型は引き続き非同期パターンを満たす必要があります。つまり、`GetAwaiter` メソッドはアクセス可能である必要があります。 1 つの具体的な例として、この新しい言語機能を使用するために .NET に `ValueTask` 型が追加されました。
 
 [!code-csharp[UsingValueTask](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#UsingValueTask "Using ValueTask")]
 

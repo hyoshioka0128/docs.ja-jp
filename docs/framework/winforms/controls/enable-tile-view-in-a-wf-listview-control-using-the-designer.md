@@ -1,17 +1,17 @@
 ---
-title: '方法 : デザイナーを使って Windows フォーム ListView コントロールの "並べて表示" ビューを有効にする'
+title: デザイナーを使用して ListView コントロールのタイルビューを有効にする
 ms.date: 03/30/2017
 helpviewer_keywords:
 - tile view feature
 - ListView control [Windows Forms], tile view
 - tiling [Windows Forms], Windows Forms, controls
 ms.assetid: 12f0816a-52b8-41ee-a6d9-ded3a8a5817a
-ms.openlocfilehash: 4f51d3a596bc3358942cdfd654b3e4515d96cd07
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: a0429efaab14995ab1e3f3b0dfd91db61de72fbf
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960099"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745802"
 ---
 # <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control-using-the-designer"></a>方法 : デザイナーを使って Windows フォーム ListView コントロールの "並べて表示" ビューを有効にする
 <xref:System.Windows.Forms.ListView> コントロールのタイルビュー機能を使用すると、グラフィカルな情報とテキスト情報の間で視覚的なバランスを取ることができます。 並べて表示ビューの項目で表示されるテキスト情報は、詳細ビュー用に定義されている列情報と同じ情報です。 タイルビューは、<xref:System.Windows.Forms.ListView> コントロールのグループ化機能または挿入マーク機能と組み合わせて機能します。

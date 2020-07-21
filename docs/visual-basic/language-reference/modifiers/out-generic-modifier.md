@@ -7,18 +7,18 @@ helpviewer_keywords:
 - Out keyword [Visual Basic]
 - covariance, Out keyword [Visual Basic]
 ms.assetid: c4418369-1518-4a46-9a1e-054c61038eca
-ms.openlocfilehash: 0460015b44971fa638dba47183690ffcc89ca55f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 28ae7d6fd51170aa822072fc2f5357443f51a353
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351422"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392094"
 ---
 # <a name="out-generic-modifier-visual-basic"></a>Out (ジェネリック修飾子) (Visual Basic)
 
-ジェネリック型パラメーターの場合、`Out` キーワードは、型が共変であることを指定します。
+ジェネリック型パラメーターの `Out` キーワードは、型が共変であることを指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 共変性は、ジェネリック パラメーターによって指定された型よりも強い派生型を使用できるようにする機能です。 これにより、バリアント インターフェイスを実装するクラスの暗黙の型変換とデリゲート型の暗黙の型変換が可能となります。
 
@@ -37,11 +37,11 @@ ms.locfileid: "74351422"
 
 - 型パラメーターがインターフェイス メソッドのジェネリック制約として使用されない。
 
-ジェネリックデリゲートでは、メソッドの戻り値の型としてのみ使用され、メソッドの引数には使用されない場合、型パラメーターを共変として宣言できます。
+汎用デリゲートでは、メソッドの戻り値の型としてのみ使用され、メソッド引数には使用されない型パラメーターを、共変として宣言できます。
 
 共変性および反変性は参照型ではサポートされますが、値の型ではサポートされません。
 
-Visual Basic では、デリゲート型を指定しなくても、共変のインターフェイスでイベントを宣言することはできません。 また、共変のインターフェイスは、入れ子になったクラス、列挙型、または構造体を持つことはできませんが、入れ子になったインターフェイスを持つことができます
+Visual Basic では、デリゲート型を指定せずに共変のインターフェイスでイベントを宣言することはできません。 また、共変のインターフェイスでは、入れ子になったクラス、列挙型、または構造体を使用することはできませんが、入れ子になったインターフェイスを使用することはできます。
 
 ## <a name="behavior"></a>動作
 
@@ -57,11 +57,11 @@ Visual Basic では、デリゲート型を指定しなくても、共変のイ�
 
 ## <a name="example"></a>例
 
-次の例では、共変の汎用デリゲートを宣言、インスタンス化、および呼び出す方法を示します。 また、デリゲート型に対して暗黙的な変換を使用する方法についても説明します。
+次の例では、共変の汎用デリゲートを宣言、インスタンス化、および呼び出す方法を示します。 また、デリゲート型の暗黙的な変換を使用する方法も示します。
 
 [!code-vb[vbVarianceKeywords#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvariancekeywords/vb/module1.vb#4)]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ジェネリック インターフェイスの分散](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
-- [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
+- [ジェネリック インターフェイスの変性](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
+- [In](in-generic-modifier.md)

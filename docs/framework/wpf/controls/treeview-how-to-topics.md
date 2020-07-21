@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: b9e9790e-7bfd-45d1-8b7a-1e0d125182a8
 ms.openlocfilehash: fa7ef39083eb192c6ea675568b955fc78608ba88
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61761313"
 ---
 # <a name="treeview-how-to-topics"></a>TreeView に関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.TreeView>階層構造で情報を表示するコントロール。  
+このセクションのトピックでは、<xref:System.Windows.Controls.TreeView> コントロールを使用し、階層構造で情報を表示する方法を説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [単純または複雑な TreeView を作成する](how-to-create-simple-or-complex-treeviews.md)  
@@ -24,7 +24,7 @@ ms.locfileid: "61761313"
   [TreeView のパフォーマンスを改善する](how-to-improve-the-performance-of-a-treeview.md)  
   [TreeView での TreeViewItem の検索](how-to-find-a-treeviewitem-in-a-treeview.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.TreeView>  
   
  <xref:System.Windows.Controls.TreeViewItem>  

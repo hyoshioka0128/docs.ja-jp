@@ -2,12 +2,12 @@
 title: ハイブリッド クラウド シナリオへの移行
 description: Azure クラウドおよび Windows コンテナーを使用して既存の .NET アプリケーションを最新化する | ハイブリッド クラウド シナリオへの移行
 ms.date: 04/30/2018
-ms.openlocfilehash: 4348a9b538042fee7ebd9c08f480491f17425937
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: dcbb799a45609f8bb811866c4041951abf1fda8b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "72394546"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75937360"
 ---
 # <a name="migrate-to-hybrid-cloud-scenarios"></a>ハイブリッド クラウド シナリオへの移行
 
@@ -37,13 +37,13 @@ Azure Stack には、お客様のニーズに合わせて次の 2 つのデプ�
 
 ### <a name="azure-stack-integrated-systems"></a>Azure Stack 統合システム
 
-Azure Stack 統合システムは、Microsoft とハードウェア パートナーのパートナーシップを通じて提供されます。 このパートナーシップでは、管理の簡略化とのバランスが取れたクラウドベースのイノベーションを提供するソリューションが作成されます。 Azure Stack はハードウェアとソフトウェアの統合システムとして提供されるため、クラウドからのイノベーションを採用しつつ適度な柔軟性と制御性が得られます。 Azure Stack 統合システムは、4 ノードから 12 ノードまでのサイズがあり、ハードウェア パートナーと Microsoft によって共同でサポートされます。 Azure Stack 統合システムを使用して、運用ワークロード向けに新しいシナリオを実装します。
+Azure Stack 統合システムは、Microsoft とハードウェア パートナーのパートナーシップを通じて提供されます。 このパートナーシップでは、管理の簡略化とのバランスが取れたクラウドベースのイノベーションを提供するソリューションが作成されます。 Azure Stack はハードウェアとソフトウェアの統合システムとして提供されるため、クラウドからのイノベーションを引き続き採用しながら、適度な柔軟性と制御性を得られます。 Azure Stack 統合システムは、4 ノードから 12 ノードまでのサイズがあり、ハードウェア パートナーと Microsoft によって共同でサポートされます。 Azure Stack 統合システムを使用して、運用ワークロード向けに新しいシナリオを実装します。
 
 ### <a name="azure-stack-development-kit"></a>Azure Stack Development Kit
 
 Microsoft Azure Stack Development Kit は、Azure Stack の評価と学習に使用できる Azure Stack の単一ノード デプロイです。 Azure Stack Development Kit は開発環境としても使用でき、Azure と一貫性のある API とツールを使用して開発できます。 Azure Stack Development Kit は、運用環境での使用を想定していません。
 
-### <a name="additional-resources"></a>その他の技術情報
+### <a name="additional-resources"></a>その他のリソース
 
 - **Azure ハイブリッド クラウド**
 
@@ -59,7 +59,7 @@ Microsoft Azure Stack Development Kit は、Azure Stack の評価と学習に使
 
 - **Active Directory サポートを含むコンテナーの作成**
 
-    <https://blogs.msdn.microsoft.com/containerstuff/2017/01/30/create-a-container-with-active-directory-support/>
+    <https://docs.microsoft.com/archive/blogs/containerstuff/create-a-container-with-active-directory-support>
 
 - **Azure ハイブリッド特典のライセンス**
 

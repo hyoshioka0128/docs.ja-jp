@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: dd2bc956-7dbe-49fc-a646-daa0d267f2df
 topic_type:
 - apiref
-ms.openlocfilehash: 6600ca7e70ac77ffba0c75812f27d388c354ece6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 70ee853ff657a75dcc4df1454c4354f9d3f8202f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438319"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614722"
 ---
 # <a name="isymunmanagedwriter2defineconstant2-method"></a>ISymUnmanagedWriter2::DefineConstant2 メソッド
 定数値の名前を定義します。  
@@ -50,7 +50,7 @@ HRESULT DefineConstant2(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedWriter2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-interface.md)
-- [DefineConstant メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineconstant-method.md)
+- [ISymUnmanagedWriter2 インターフェイス](isymunmanagedwriter2-interface.md)
+- [DefineConstant メソッド](isymunmanagedwriter-defineconstant-method.md)

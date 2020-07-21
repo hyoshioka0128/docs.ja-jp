@@ -5,34 +5,34 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 4114c974da9c108f641aebdb69f32fb3b0c484c9
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 530bb54936f97f1d7460d63cfa316c760cbd449d
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591531"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441818"
 ---
 # <a name="security-considerations-for-data"></a>セキュリティに関するデータの考慮事項
 
-Windows Communication Foundation (WCF) でのデータを扱う場合、さまざまな脅威のカテゴリを考慮する必要があります。 データ処理に関連する最も重要な脅威の種類を次の表に示します。 WCF には、これらの脅威を軽減するためにツールが用意されています。
+Windows Communication Foundation (WCF) でデータを処理する場合は、いくつかの脅威のカテゴリを考慮する必要があります。 データ処理に関連する最も重要な脅威の種類を次の表に示します。 WCF には、これらの脅威を軽減するツールが用意されています。
 
-信頼されていないデータを受信するときに、サービス拒否が起こる、データが非常に長い計算を発生させることによって過剰な量のメモリ、スレッド、利用可能な接続、またはプロセッサ サイクルなど、さまざまなリソースにアクセスする受信側にあります。 サーバーに対するサービス拒否攻撃によって、サーバーがクラッシュし、正当なクライアントからのメッセージを処理できなくなる場合があります。
+信頼されていないデータを受信した場合、データが受信側によって膨大な量のリソース (メモリ、スレッド、利用可能な接続、プロセッササイクルなど) にアクセスすると、時間のかかる計算が発生する可能性があります。 サーバーに対するサービス拒否攻撃によって、サーバーがクラッシュし、正当なクライアントからのメッセージを処理できなくなる場合があります。
 
-受信は、データが、受信側コードを実行すると、信頼されていない悪意のあるコードの実行が意図しません。
+悪意のあるコードを実行する信頼されていないデータを実行すると、受信側は意図していなかったコードを実行します。
 
-情報漏えいが起こるリモートの攻撃者は、受信側パーティをより多くの情報を開示するように、その要求に応答を強制します。
+情報漏えいリモート攻撃者は、要求に対してより多くの情報を開示するような方法で、受信側パーティが要求に応答するように強制します。
 
 ## <a name="user-provided-code-and-code-access-security"></a>ユーザー指定のコードとコード アクセス セキュリティ
 
-Windows Communication Foundation (WCF) インフラストラクチャの桁数は、ユーザーによって提供されるコードを実行します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> シリアル化エンジンでは、ユーザー指定のプロパティの `set` アクセサーと `get` アクセサーが呼び出されることがあります。 ユーザー指定の派生クラスには、WCF チャネル インフラストラクチャは呼び出すことができますも、<xref:System.ServiceModel.Channels.Message>クラス。
+Windows Communication Foundation (WCF) インフラストラクチャのさまざまな場所で、ユーザーが提供するコードを実行します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> シリアル化エンジンでは、ユーザー指定のプロパティの `set` アクセサーと `get` アクセサーが呼び出されることがあります。 WCF チャネルインフラストラクチャは、クラスのユーザー指定の派生クラスを呼び出すこともでき <xref:System.ServiceModel.Channels.Message> ます。
 
 コード作成者は、コードにセキュリティの脆弱性が存在しないことを確認する必要があります。 たとえば、整数型のデータ メンバー プロパティを使用してデータ コントラクト型を作成し、 `set` アクセサー実装でこのプロパティ値に基づいて配列を割り当てた場合、悪質なメッセージにこのデータ メンバーの極端に大きな値が含まれていると、サービス拒否攻撃の危険にさらされることになります。 一般的に、受信データに基づく割り当てや、ユーザー指定のコードでの長時間に及ぶ処理は回避します (特に、長時間に及ぶ処理が少量の受信データによって発生する可能性がある場合)。 ユーザー指定のコードのセキュリティ分析を実行するときは、必ず失敗した場合 (つまり、例外をスローするすべてのコード分岐) も考慮してください。
 
-ユーザー指定コードの特に重要な例は、各操作に対するサービス実装内部のコードです。 サービス実装のセキュリティを確保することはユーザーの責任です。 サービス拒否の脆弱性を生じるような、セキュリティで保護されていない操作実装は、不注意によって容易に作成されてしまいます。 たとえば、文字列を受け取り、名前がその文字列で始まる顧客のリストをデータベースから返す操作があるとします。 使用しているデータベースの規模が大きく、渡された文字列が 1 文字の場合、ユーザーのコードは、使用可能なメモリより大きなメッセージを作成しようとする可能性があります。これによって、サービス全体が失敗します (、 <xref:System.OutOfMemoryException> .NET Framework で回復可能でないし、常に、アプリケーションの終了になります)。
+ユーザー指定コードの特に重要な例は、各操作に対するサービス実装内部のコードです。 サービス実装のセキュリティを確保することはユーザーの責任です。 サービス拒否の脆弱性を生じるような、セキュリティで保護されていない操作実装は、不注意によって容易に作成されてしまいます。 たとえば、文字列を受け取り、名前がその文字列で始まる顧客のリストをデータベースから返す操作があるとします。 使用しているデータベースの規模が大きく、渡された文字列が 1 文字の場合、ユーザーのコードは、使用可能なメモリより大きなメッセージを作成しようとする可能性があります。これによって、サービス全体が失敗します ( <xref:System.OutOfMemoryException> .NET Framework では回復できず、常にアプリケーションが終了します。)
 
 悪質なコードがさまざまな機能拡張ポイントに接続されないようにする必要があります。 これが特に関係するのは、部分信頼で実行する場合、部分信頼アセンブリの型を処理する場合、または部分信頼コードで使用できるコンポーネントを作成する場合です。 詳細については、後のセクションの「部分信頼に関する脅威」を参照してください。
 
-部分信頼で実行する場合、データ コントラクトのシリアル化インフラストラクチャがサポートするのは、データ コントラクト プログラミング モデルの一部のサブセットのみです。たとえば、 <xref:System.SerializableAttribute> 属性を使用するプライベート データ メンバーや型はサポートされません。 詳細については、次を参照してください。[部分信頼](../../../../docs/framework/wcf/feature-details/partial-trust.md)します。
+部分信頼で実行する場合、データ コントラクトのシリアル化インフラストラクチャがサポートするのは、データ コントラクト プログラミング モデルの一部のサブセットのみです。たとえば、 <xref:System.SerializableAttribute> 属性を使用するプライベート データ メンバーや型はサポートされません。 詳細については、「[部分信頼](partial-trust.md)」を参照してください。
 
 ## <a name="avoiding-unintentional-information-disclosure"></a>意図しない情報公開の回避
 
@@ -54,21 +54,21 @@ Windows Communication Foundation (WCF) インフラストラクチャの桁数�
 
 サービス拒否攻撃の緩和には通常、クォータを使用します。 クォータを超えると、通常は <xref:System.ServiceModel.QuotaExceededException> 例外がスローされます。 クォータが設定されていないと、悪質なメッセージが使用可能なすべてのメモリにアクセスし、 <xref:System.OutOfMemoryException> 例外が発生したり、使用可能なすべてのスタックにアクセスし、 <xref:System.StackOverflowException>例外が発生したりする可能性があります。
 
-クォータが超過した状況は、回復可能です。実行中のサービスでこの状況が発生した場合、現在処理されているメッセージは破棄されますが、サービスの実行は続行され、次のメッセージが処理されます。 メモリ不足とスタック オーバーフローの場合は復旧できません、.NET Framework で任意の場所このような例外が発生した場合、サービスを終了します。
+クォータが超過した状況は、回復可能です。実行中のサービスでこの状況が発生した場合、現在処理されているメッセージは破棄されますが、サービスの実行は続行され、次のメッセージが処理されます。 ただし、メモリ不足とスタックオーバーフローのシナリオは、.NET Framework のどこでも回復できません。このような例外が発生した場合、サービスは終了します。
 
-WCF でのクォータは、事前割り当てを伴いません。 たとえば、さまざまなクラスにある <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> クォータを 128 KB に設定した場合、各メッセージに 128 KB が自動的に割り当てられるわけではありません。 実際の割当量は、実際の受信メッセージのサイズによって異なります。
+WCF のクォータには、事前割り当ては含まれません。 たとえば、さまざまなクラスにある <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> クォータを 128 KB に設定した場合、各メッセージに 128 KB が自動的に割り当てられるわけではありません。 実際の割当量は、実際の受信メッセージのサイズによって異なります。
 
-トランスポート層には、利用できるクォータが多数あります。 使用しているトランスポート チャネル (HTTP、TCP など) によって指定されるクォータもあります。 ここでは、これらのクォータの一部について説明しますが、詳細については、「 [トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)」を参照してください。
+トランスポート層には、利用できるクォータが多数あります。 使用しているトランスポート チャネル (HTTP、TCP など) によって指定されるクォータもあります。 ここでは、これらのクォータの一部について説明しますが、詳細については、「 [Transport Quotas](transport-quotas.md)」を参照してください。
 
 ### <a name="hashtable-vulnerability"></a>ハッシュ テーブルの脆弱性
 
-データ コントラクトにハッシュ テーブルまたはコレクションが含まれている場合は脆弱性が存在します。 多数の値がハッシュ テーブルに挿入されると問題が発生します。ハッシュ テーブルでは、このような多数の値によって同じハッシュ値が生成されます。 これは、DOS 攻撃に使用される可能性があります。  MaxReceivedMessageSize のバインディング クォータを設定して、この脆弱性を軽減できます。 このような攻撃を防ぐためにこのクォータを設定している場合は注意が必要です。 このクォータにより、WCF メッセージのサイズに上限が設定されます。 また、データ コントラクトではハッシュ テーブルやコレクションを使用しないようにしてください。
+データ コントラクトにハッシュ テーブルまたはコレクションが含まれている場合は脆弱性が存在します。 多数の値がハッシュ テーブルに挿入されると問題が発生します。ハッシュ テーブルでは、このような多数の値によって同じハッシュ値が生成されます。 これは、DOS 攻撃に使用される可能性があります。  この脆弱性は、MaxReceivedMessageSize binding クォータを設定することによって軽減できます。 このような攻撃を防ぐためにこのクォータを設定している場合は注意が必要です。 このクォータにより、WCF メッセージのサイズに上限が設定されます。 また、データ コントラクトではハッシュ テーブルやコレクションを使用しないようにしてください。
 
 ## <a name="limiting-memory-consumption-without-streaming"></a>メモリ消費の制限 (ストリーミングなしの場合)
 
 大きいメッセージに関するセキュリティ モデルは、ストリーミングが使用されているかどうかによって異なります。 ストリーミングを使用しない基本的なケースでは、メッセージはメモリにバッファーされます。 この場合、 <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> またはシステム指定のバインディングで <xref:System.ServiceModel.Channels.TransportBindingElement> クォータを使用して、アクセスするメッセージの最大サイズを制限することによって、サイズの大きいメッセージからシステムを保護します。 サービスが複数のメッセージを同時に処理していることがありますが、この場合、メッセージはすべてメモリ内にあります。 この脅威を軽減するには、調整機能を使用します。
 
-また、 `MaxReceivedMessageSize` ではメッセージごとのメモリ消費に対して上限値が設定されませんが、メッセージごとのメモリ消費が定数係数以内に制限されます。 たとえば、 `MaxReceivedMessageSize` が 1 MB のときに 1 MB のメッセージを受信し、逆シリアル化した場合、逆シリアル化されたオブジェクト グラフを格納するために追加のメモリが必要となるため、メモリの総消費量が 1 MB を超えることになります。 このため、受信するデータは大きくなくてもメモリ消費量が極端に大きくなるような、シリアル化可能な型は作成しないようにします。 たとえば、データ コントラクト"MyContract"が 50 個の省略可能なデータ メンバー フィールドと追加の 100 のプライベート フィールドは、XML の構築でインスタンス化する可能性があります"\<MyContract/>"。 この XML は、150 個のフィールドに対応するメモリにアクセスすることになります。 既定では、このデータ メンバーは省略可能です。 このような型が配列に含まれていると、問題はさらに悪化します。
+また、 `MaxReceivedMessageSize` ではメッセージごとのメモリ消費に対して上限値が設定されませんが、メッセージごとのメモリ消費が定数係数以内に制限されます。 たとえば、 `MaxReceivedMessageSize` が 1 MB のときに 1 MB のメッセージを受信し、逆シリアル化した場合、逆シリアル化されたオブジェクト グラフを格納するために追加のメモリが必要となるため、メモリの総消費量が 1 MB を超えることになります。 このため、受信するデータは大きくなくてもメモリ消費量が極端に大きくなるような、シリアル化可能な型は作成しないようにします。 たとえば、50のオプションのデータメンバーフィールドと100プライベートフィールドを含むデータコントラクト "MyContract" は、XML 構築 "" を使用してインスタンス化でき \<MyContract/> ます。 この XML は、150 個のフィールドに対応するメモリにアクセスすることになります。 既定では、このデータ メンバーは省略可能です。 このような型が配列に含まれていると、問題はさらに悪化します。
 
 `MaxReceivedMessageSize` だけでは、すべてのサービス拒否攻撃を防止できません。 たとえば、受信メッセージによって、デシリアライザーが深く入れ子になったオブジェクト グラフ (オブジェクトに別のオブジェクトが格納され、その別のオブジェクトにさらに別のオブジェクトが格納されているということが繰り返されているオブジェクト) を逆シリアル化することを強制される場合があります。 <xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Xml.Serialization.XmlSerializer> は、このオブジェクト グラフを逆シリアル化するために入れ子形態でメソッドを呼び出します。 メソッド呼び出しがレベルの深い入れ子構造になっていると、回復不可能な <xref:System.StackOverflowException>が発生する可能性があります。 この脅威は、このトピックの後半の「XML の安全な使用」で説明するように、 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth%2A> クォータを設定して、XML の入れ子レベルを制限することによって軽減できます。
 
@@ -76,21 +76,21 @@ WCF でのクォータは、事前割り当てを伴いません。 たとえば
 
 ## <a name="limiting-memory-consumption-with-streaming"></a>メモリ消費の制限 (ストリーミングありの場合)
 
-ストリーミング中、 `MaxReceivedMessageSize` の設定値を小さくすることで、サービス拒否攻撃を防止できます。 ただし、ストリーミングを伴う場合、状況が複雑になります。 たとえば、ファイル アップロード サービスでは使用可能なメモリより大きいファイルが許容されます。 この場合、メモリにバッファーされるデータはほとんどなく、メッセージが直接ディスクにストリーミングされると予測して、 `MaxReceivedMessageSize` を非常に大きな値に設定します。 悪意のあるメッセージは、ここでは、ストリーミングするのではなくデータをバッファーする WCF を強制何らかの方法でことができる場合`MaxReceivedMessageSize`不要になったメッセージのすべての使用可能なメモリへのアクセスを防ぎます。
+ストリーミング中、 `MaxReceivedMessageSize` の設定値を小さくすることで、サービス拒否攻撃を防止できます。 ただし、ストリーミングを伴う場合、状況が複雑になります。 たとえば、ファイル アップロード サービスでは使用可能なメモリより大きいファイルが許容されます。 この場合、メモリにバッファーされるデータはほとんどなく、メッセージが直接ディスクにストリーミングされると予測して、 `MaxReceivedMessageSize` を非常に大きな値に設定します。 悪意のあるメッセージが何らかの方法で、ストリーミングではなくデータをバッファーに格納する場合、は、 `MaxReceivedMessageSize` 使用可能なすべてのメモリにアクセスするメッセージから保護することができなくなります。
 
-この脅威を軽減するために固有のクォータ設定が存在 WCF データ処理のさまざまなコンポーネントでその制限バッファリングします。 この中で最も重要なのは、複数のトランスポート バインド要素と標準バインディングに存在する `MaxBufferSize` プロパティです。 ストリーミングを使用する場合は、メッセージごとに割り当て可能なメモリの最大量を考慮して、このクォータを設定する必要があります。 `MaxReceivedMessageSize`と同様、この設定ではメモリ消費の絶対的な最大値が設定されるのではなく、メモリ消費が定数係数以内に制限されるだけです。 また、 `MaxReceivedMessageSize`の場合と同じく、複数のメッセージが同時に処理されている可能性もあります。
+この脅威を軽減するために、バッファリングを制限するさまざまな WCF データ処理コンポーネントに特定のクォータ設定が存在します。 この中で最も重要なのは、複数のトランスポート バインド要素と標準バインディングに存在する `MaxBufferSize` プロパティです。 ストリーミングを使用する場合は、メッセージごとに割り当て可能なメモリの最大量を考慮して、このクォータを設定する必要があります。 `MaxReceivedMessageSize`と同様、この設定ではメモリ消費の絶対的な最大値が設定されるのではなく、メモリ消費が定数係数以内に制限されるだけです。 また、 `MaxReceivedMessageSize`の場合と同じく、複数のメッセージが同時に処理されている可能性もあります。
 
 ### <a name="maxbuffersize-details"></a>MaxBufferSize の詳細
 
-`MaxBufferSize`プロパティは、バッファリングの WCF は、一括を制限します。 たとえば、WCF は、SOAP ヘッダーと SOAP エラー、さらに、Message Transmission Optimization Mechanism (MTOM) メッセージで自然な読み取り順序ではないことが検出された MIME パートを常にバッファーされます。 この設定では、このようなすべての状況でバッファー量が制限されます。
+プロパティは、 `MaxBufferSize` WCF が行うすべての一括バッファリングを制限します。 たとえば、WCF では、常に SOAP ヘッダーと SOAP エラー、およびメッセージ伝送最適化メカニズム (MTOM) メッセージの自然な読み取り順序ではないと検出された MIME パートがバッファーに格納されます。 この設定では、このようなすべての状況でバッファー量が制限されます。
 
-WCF では、これを実現を渡すことによって、`MaxBufferSize`さまざまなコンポーネントがバッファーに格納する値。 たとえば、 <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> クラスの一部の <xref:System.ServiceModel.Channels.Message> オーバーロードは、 `maxSizeOfHeaders` パラメーターを受け取ります。 WCF 渡します、 `MaxBufferSize` SOAP ヘッダーのバッファー量を制限するには、このパラメータの値。 <xref:System.ServiceModel.Channels.Message> クラスを直接使用する場合、このパラメーターを設定することが重要です。 一般に、コンポーネントでクォータ パラメーターを受け取る WCF を使用する場合をこれらのパラメーターのセキュリティの影響を理解し、それらが正しく設定です。
+WCF では、バッファーに格納さ `MaxBufferSize` れる可能性のあるさまざまなコンポーネントに値を渡すことによってこれを実現します。 たとえば、 <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> クラスの一部の <xref:System.ServiceModel.Channels.Message> オーバーロードは、 `maxSizeOfHeaders` パラメーターを受け取ります。 WCF は、 `MaxBufferSize` このパラメーターに値を渡して、SOAP ヘッダーのバッファー量を制限します。 <xref:System.ServiceModel.Channels.Message> クラスを直接使用する場合、このパラメーターを設定することが重要です。 一般に、クォータパラメーターを受け取る WCF のコンポーネントを使用する場合は、これらのパラメーターのセキュリティへの影響を理解し、それらを正しく設定することが重要です。
 
 MTOM メッセージ エンコーダーには、 `MaxBufferSize` 設定もあります。 標準バインディングを使用する場合、この値は自動的にトランスポート レベルの `MaxBufferSize` に設定されます。 ただし、MTOM メッセージ エンコーダーのバインド要素を使用してカスタム バインディングを作成する場合、ストリーミングの使用時には `MaxBufferSize` プロパティを安全な値に設定することが重要です。
 
 ## <a name="xml-based-streaming-attacks"></a>XML ベースのストリーミング攻撃
 
-`MaxBufferSize` 単独では不十分な WCF は、バッファリングのストリーミングが予想されるときに適用できないことを確認します。 たとえば、WCF の XML リーダーでは常に全体の XML 要素の開始タグをバッファーして、新しい要素の読み取りを開始するときにします。 この処理は、名前空間と属性を適切に処理するために行われます。 (たとえば、大きいファイルを直接ディスクにストリーミングするシナリオを可能にする目的で) `MaxReceivedMessageSize` が大きい値に設定されている場合、メッセージの本文全体が大きい XML 要素の開始タグであるような、悪質なメッセージが作成される可能性があります。 このメッセージを読み取ろうとすると、 <xref:System.OutOfMemoryException>が発生します。 これは、多くの可能な XML ベースのサービス拒否攻撃すべて軽減するには、このトピックの後半を使用して XML の安全な」のセクションで説明した XML リーダーのクォータを使用している 1 つです。 ストリーミングを使用する場合、これらのクォータをすべて設定することが特に重要です。
+`MaxBufferSize`だけでは、ストリーミングが予想される場合に WCF を強制的にバッファリングできないようにするだけでは不十分です。 たとえば、WCF XML リーダーは、新しい要素の読み取りを開始するときに、XML 要素の開始タグ全体を常にバッファーに格納します。 この処理は、名前空間と属性を適切に処理するために行われます。 (たとえば、大きいファイルを直接ディスクにストリーミングするシナリオを可能にする目的で) `MaxReceivedMessageSize` が大きい値に設定されている場合、メッセージの本文全体が大きい XML 要素の開始タグであるような、悪質なメッセージが作成される可能性があります。 このメッセージを読み取ろうとすると、 <xref:System.OutOfMemoryException>が発生します。 これは、xml ベースのサービス拒否攻撃の1つであり、このトピックの後半の「XML の安全な使用」で説明されている xml リーダーのクォータを使用してすべて軽減できます。 ストリーミングを使用する場合、これらのクォータをすべて設定することが特に重要です。
 
 ### <a name="mixing-streaming-and-buffering-programming-models"></a>ストリーミングとバッファー プログラミング モデルの混在
 
@@ -118,20 +118,20 @@ MTOM メッセージ エンコーダーには、 `MaxBufferSize` 設定もあり
 
 ストリーミング サービス拒否攻撃では、メモリ消費は発生しません。 代わりに、この攻撃では送信側または受信側でデータの転送が遅くなります。 データが送信または受信されるのを待っている間、スレッドや利用可能な接続などのリソースが消耗します。 この状況は、悪質な攻撃を受けた結果として、または正当な送信側または受信側が遅いネットワーク接続を使用していることが原因で起こる可能性があります。
 
-この攻撃を軽減するには、トランスポートのタイムアウトを適切に設定します。 詳細については、次を参照してください。[トランスポート クォータ](../../../../docs/framework/wcf/feature-details/transport-quotas.md)します。 次に、同期しない使用`Read`または`Write`WCF でストリームを操作する際に操作します。
+この攻撃を軽減するには、トランスポートのタイムアウトを適切に設定します。 詳細については、「[トランスポートクォータ](transport-quotas.md)」を参照してください。 第2に、 `Read` `Write` WCF でストリームを操作するときは、同期または操作を使用しないでください。
 
 ## <a name="using-xml-safely"></a>XML の安全な使用
 
 > [!NOTE]
-> このセクションは XML に関するものですが、ここに記載された情報は、JSON (JavaScript Object Notation) ドキュメントにも該当します。 [JSON と XML 間のマッピング](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md)を使用することで、クォータは同様に機能します。
+> このセクションは XML に関するものですが、ここに記載された情報は、JSON (JavaScript Object Notation) ドキュメントにも該当します。 [Mapping Between JSON and XML](mapping-between-json-and-xml.md)を使用することで、クォータは同様に機能します。
 
 ### <a name="secure-xml-readers"></a>セキュリティで保護された XML リーダー
 
-XML Infoset は、WCF では、すべてのメッセージ処理の基礎を形成します。 信頼できない送信元からの XML データを受け入れる場合、多数のサービス拒否攻撃が存在する可能性があり、これを軽減する必要があります。 WCF には、特別なセキュリティで保護された XML リーダーが用意されています。 これらのリーダーは、WCF (テキスト、バイナリ、または MTOM) で標準エンコーディングのいずれかを使用する場合、自動的に作成されます。
+XML Infoset は、WCF でのすべてのメッセージ処理の基礎を形成します。 信頼できない送信元からの XML データを受け入れる場合、多数のサービス拒否攻撃が存在する可能性があり、これを軽減する必要があります。 WCF は、特別なセキュリティで保護された XML リーダーを提供します。 これらのリーダーは、WCF の標準エンコーディング (テキスト、バイナリ、MTOM) のいずれかを使用するときに自動的に作成されます。
 
 このリーダーでは、一部のセキュリティ機能が常にアクティブです。 たとえば、このリーダーは文書型定義 (DTD) を処理しません。文書型定義は、サービス拒否攻撃のソースの 1 つになり得るものであり、正当な SOAP メッセージに使用すべきではありません。 他のセキュリティ機能としてリーダーのクォータがあり、これらを設定する必要があります。この機能については、次のセクションで説明します。
 
-XML リーダーを直接使用する場合 (など、独自のカスタム エンコーダーを作成するとき、または直接使用する場合、<xref:System.ServiceModel.Channels.Message>クラス)、常に信頼されていないデータを処理する可能性がある場合に、WCF のセキュリティで保護されたリーダーを使用します。 セキュリティで保護されたリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>クラス上で <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> 、または <xref:System.Xml.XmlDictionaryReader> の静的ファクトリ メソッドのオーバーロードのいずれかを呼び出すことによって作成します。 リーダーを作成したら、安全なクォータ値を渡します。 `Create` メソッドのオーバーロードを呼び出さないでください。 これらには、WCF のリーダーは作成しないでください。 作成されるのは、このセクションで説明したセキュリティ機能で保護されていないリーダーです。
+XML リーダーを直接操作する場合 (独自のカスタムエンコーダーを作成する場合や、クラスを直接操作する場合など <xref:System.ServiceModel.Channels.Message> ) は、信頼されていないデータを処理する可能性がある場合は常に、WCF のセキュリティで保護されたリーダーを使用します。 セキュリティで保護されたリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>クラス上で <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> 、または <xref:System.Xml.XmlDictionaryReader> の静的ファクトリ メソッドのオーバーロードのいずれかを呼び出すことによって作成します。 リーダーを作成したら、安全なクォータ値を渡します。 `Create` メソッドのオーバーロードを呼び出さないでください。 これらの方法では、WCF リーダーは作成されません。 作成されるのは、このセクションで説明したセキュリティ機能で保護されていないリーダーです。
 
 ### <a name="reader-quotas"></a>リーダーのクォータ
 
@@ -147,7 +147,7 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 #### <a name="maxdepth"></a>MaxDepth
 
-このクォータは、XML 要素の入れ子の深さの最大値を制限します。 たとえば、ドキュメント"\<A >\<B >\<C/>\</B >\</A >"が 3 つの入れ子の深さ。 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> が重要な理由は、次のとおりです。
+このクォータは、XML 要素の入れ子の深さの最大値を制限します。 たとえば、ドキュメント "" の \<A> \<B> \<C/> \</B> \</A> 入れ子の深さは3です。 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> が重要な理由は、次のとおりです。
 
 - `MaxDepth` は `MaxBytesPerRead`と相互に関係しています。リーダーは常に、現在の要素とそのすべての先祖に関するデータをメモリ内に維持します。このため、リーダーのメモリ消費の最大値は、この 2 つの設定値の積に比例します。
 
@@ -167,9 +167,9 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 ## <a name="threats-specific-to-the-binary-encoding"></a>バイナリ エンコーディングに固有の脅威
 
-バイナリ XML エンコーディングを WCF のサポートが含まれています、*ディクショナリ文字列*機能します。 長い文字列をわずかなバイト数でエンコードすることができます。 これによって、パフォーマンスは大幅に向上しますが、新たなサービス拒否攻撃の脅威を招き、その対策が必要になります。
+WCF でサポートされるバイナリ XML エンコーディングには、*ディクショナリ文字列*機能が含まれています。 長い文字列をわずかなバイト数でエンコードすることができます。 これによって、パフォーマンスは大幅に向上しますが、新たなサービス拒否攻撃の脅威を招き、その対策が必要になります。
 
-ディクショナリには、 *静的ディクショナリ* と *動的ディクショナリ*の 2 種類があります。 静的ディクショナリは、バイナリ エンコーディングで短いコードを使用して表現できる長い文字列の組み込みリストです。 この文字列のリストは、リーダーの作成時に固定され、変更できません。 WCF は既定で使用する静的ディクショナリ内の文字列のない十分な大きさに深刻なサービス拒否の脅威が、ディクショナリ拡大攻撃から引き続き使用可能性があります。 独自の静的ディクショナリを使用する高度なシナリオでは、長いディクショナリ文字列を追加するときに注意が必要です。
+ディクショナリには、 *静的ディクショナリ* と *動的ディクショナリ*の 2 種類があります。 静的ディクショナリは、バイナリ エンコーディングで短いコードを使用して表現できる長い文字列の組み込みリストです。 この文字列のリストは、リーダーの作成時に固定され、変更できません。 WCF が既定で使用する静的ディクショナリ内の文字列は、重大なサービス拒否攻撃の脅威をもたらすために十分な大きさではありませんが、ディクショナリ拡張攻撃でも使用される可能性があります。 独自の静的ディクショナリを使用する高度なシナリオでは、長いディクショナリ文字列を追加するときに注意が必要です。
 
 動的ディクショナリ機能では、メッセージで独自の文字列を定義し、その文字列を短いコードに関連付けることができます。 この文字列とコードのマッピングは、通信セッション中にメモリに格納されるので、後続のメッセージは文字列を再送信する必要がなく、既に定義されているコードを利用できます。 この文字列は、任意の長さになるので、静的ディクショナリの場合よりも重大な脅威を招く可能性があります。
 
@@ -183,7 +183,7 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>、 `MaxStringContentLength`、および `MaxArrayLength` の各プロパティで制限されるのは、メモリ消費だけです。 メモリ使用量は `MaxReceivedMessageSize`によって既に制限されているため、通常、ストリーミングを使用しない状況で脅威を軽減するためにこれらのプロパティを使用する必要はありません。 ただし、 `MaxReceivedMessageSize` では、展開前のバイト数がカウントされます。 バイナリ エンコーディングを使用しているとき、メモリ消費は、 `MaxReceivedMessageSize`という因数によってのみ制限される、 <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize%2A>を超える可能性があります。 このため、バイナリ エンコーディングを使用するときはすべてのリーダーのクォータ (特に <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>) を必ず設定することが重要です。
 
-<xref:System.Runtime.Serialization.DataContractSerializer>と共にバイナリ エンコーディングを使用する場合、 `IExtensibleDataObject` インターフェイスを誤用して、ディクショナリ拡大攻撃を引き起こす可能性があります。 このインターフェイスは、コントラクトの一部でない任意のデータに対して無制限のストレージを提供します。 `MaxSessionSize` に `MaxReceivedMessageSize` を掛けた値によって問題が起こらない程度に低くクォータを設定できない場合は、バイナリ エンコーディングを使用するときに `IExtensibleDataObject` 機能を無効にします。 `IgnoreExtensionDataObject` 属性では `true` プロパティを `ServiceBehaviorAttribute` に設定します。 または `IExtensibleDataObject` インターフェイスを実装しないという方法もあります。 詳細については、「[上位互換性のあるデータ コントラクト](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)」を参照してください。
+<xref:System.Runtime.Serialization.DataContractSerializer>と共にバイナリ エンコーディングを使用する場合、 `IExtensibleDataObject` インターフェイスを誤用して、ディクショナリ拡大攻撃を引き起こす可能性があります。 このインターフェイスは、コントラクトの一部でない任意のデータに対して無制限のストレージを提供します。 `MaxSessionSize` に `MaxReceivedMessageSize` を掛けた値によって問題が起こらない程度に低くクォータを設定できない場合は、バイナリ エンコーディングを使用するときに `IExtensibleDataObject` 機能を無効にします。 `IgnoreExtensionDataObject` 属性では `true` プロパティを `ServiceBehaviorAttribute` に設定します。 または `IExtensibleDataObject` インターフェイスを実装しないという方法もあります。 詳細については、「[上位互換性のあるデータ コントラクト](forward-compatible-data-contracts.md)」を参照してください。
 
 ### <a name="quotas-summary"></a>クォータの概要
 
@@ -191,7 +191,7 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 |条件|設定が重要なクォータ|
 |---------------|-----------------------------|
-|ストリーミングのない、またはストリーミングのある小さいメッセージ、テキスト、MTOM エンコーディング|`MaxReceivedMessageSize`、 `MaxBytesPerRead`、および `MaxDepth`|
+|ストリーミングのない、またはストリーミングのある小さいメッセージ、テキスト、MTOM エンコーディング|`MaxReceivedMessageSize`、`MaxBytesPerRead`、`MaxDepth`|
 |ストリーミングのない、またはストリーミングのある小さいメッセージ、バイナリ エンコーディング|`MaxReceivedMessageSize`、 `MaxSessionSize`、およびすべての `ReaderQuotas`|
 |大きいストリーミング メッセージ、テキスト、MTOM エンコーディング|`MaxBufferSize` およびすべての `ReaderQuotas`|
 |大きいストリーミング メッセージ、バイナリ エンコーディング|`MaxBufferSize`、 `MaxSessionSize`、およびすべての `ReaderQuotas`|
@@ -212,7 +212,7 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 ## <a name="datacontractserializer"></a>DataContractSerializer
 
-(<xref:System.Xml.Serialization.XmlSerializer> のセキュリティ情報については、関連ドキュメントを参照してください)。<xref:System.Xml.Serialization.XmlSerializer> のセキュリティ モデルは、<xref:System.Runtime.Serialization.DataContractSerializer> のセキュリティ モデルに似ていますが、細かい部分が異なります。 たとえば、型を含めるために、 <xref:System.Xml.Serialization.XmlIncludeAttribute> 属性ではなく <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性が使用されます。 <xref:System.Xml.Serialization.XmlSerializer> に固有のいくつかの脅威については、このトピックの後半で説明します。
+(のセキュリティ情報につい <xref:System.Xml.Serialization.XmlSerializer> ては、関連するドキュメントを参照してください。)のセキュリティモデルは、 <xref:System.Xml.Serialization.XmlSerializer> のセキュリティモデルと似ていますが、ほとんどの場合、 <xref:System.Runtime.Serialization.DataContractSerializer> 詳細は異なります。 たとえば、型を含めるために、 <xref:System.Xml.Serialization.XmlIncludeAttribute> 属性ではなく <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性が使用されます。 <xref:System.Xml.Serialization.XmlSerializer> に固有のいくつかの脅威については、このトピックの後半で説明します。
 
 ### <a name="preventing-unintended-types-from-being-loaded"></a>意図しない型の読み込み防止
 
@@ -236,7 +236,7 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 これらのメカニズムを使用すると、デシリアライザーが読み込むことのできる型が追加されるので、攻撃を受け得る表面積は拡大します。 既知の型リストに、悪質な型または意図しない型が追加されることのないように、これらのメカニズムを制御する必要があります。
 
-型が既知の型リストに追加されると、コントラクトでその型の使用が禁止されている場合でも、その型をいつでも読み込むことができ、その型のインスタンスを作成できるようになります。 たとえば、前述のメカニズムのいずれかを使用して "MyDangerousType" という型が既知の型のリストに追加されるとします。 これによって、次のことが起こります。
+型が既知の型リストに追加されると、コントラクトでその型の使用が禁止されている場合でも、その型をいつでも読み込むことができ、その型のインスタンスを作成できるようになります。 たとえば、前述のメカニズムのいずれかを使用して "MyDangerousType" という型が既知の型のリストに追加されるとします。 これは、次のことを意味します。
 
 - `MyDangerousType` が読み込まれ、そのクラス コンストラクターが実行されます。
 
@@ -244,9 +244,9 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 既知の型のリストを返すメソッドを作成する場合、またはリストを直接 <xref:System.Runtime.Serialization.DataContractSerializer> コンストラクターに渡す場合は、リストを準備するためのコードをセキュリティで保護し、信頼されたデータだけを操作対象にします。
 
-構成で既知の型を指定する場合は、構成ファイルをセキュリティで保護します。 構成では必ず厳密な名前を使用します (型が含まれている署名付きアセンブリの公開キーを指定します)。ただし、読み込む型のバージョンは指定しないでください。 型ローダーにより、可能であれば最新のバージョンが自動的に選択されます。 構成では、特定のバージョンを指定する場合は、次のリスクを実行します。型が今後のバージョンで修正されるセキュリティの脆弱性がありますが、構成に明示的に指定されているため、引き続き脆弱なバージョンを読み込みます。
+構成で既知の型を指定する場合は、構成ファイルをセキュリティで保護します。 構成では必ず厳密な名前を使用します (型が含まれている署名付きアセンブリの公開キーを指定します)。ただし、読み込む型のバージョンは指定しないでください。 型ローダーにより、可能であれば最新のバージョンが自動的に選択されます。 セキュリティの脆弱性を持つ型の場合、その脆弱性が今後のバージョンで修正される可能性があります。しかし、構成でバージョンを明示的に指定していると、脆弱なバージョンが引き続き読み込まれます。構成で特定のバージョンを指定した場合には、このリスクを負うことになります。
 
-多くの既知の型を持つには、別の結果としてがあります。<xref:System.Runtime.Serialization.DataContractSerializer>シリアル化し、逆シリアル化する必要がありますが、各種類のエントリを使って、アプリケーション ドメインでシリアル化/逆シリアル化コードのキャッシュを作成します。 このキャッシュは、アプリケーション ドメインの実行中はクリアされません。 このため、アプリケーションに多くの既知の型が使用されていることを知る攻撃者は、これらの既知の型がすべて逆シリアル化され、キャッシュで大量のメモリが消費されるように仕向けることが可能です。
+既知の型が多すぎると、もう 1 つ問題が生じます。 <xref:System.Runtime.Serialization.DataContractSerializer> は、アプリケーション ドメインでシリアル化コードまたは逆シリアル化コードのキャッシュを作成し、シリアル化または逆シリアル化する必要がある型ごとにエントリを作成します。 このキャッシュは、アプリケーション ドメインの実行中はクリアされません。 このため、アプリケーションに多くの既知の型が使用されていることを知る攻撃者は、これらの既知の型がすべて逆シリアル化され、キャッシュで大量のメモリが消費されるように仕向けることが可能です。
 
 ### <a name="preventing-types-from-being-in-an-unintended-state"></a>型の意図しない状態の防止
 
@@ -270,21 +270,21 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 - <xref:System.Runtime.Serialization.DataContractSerializer> で逆シリアル化が行われる際に、ほとんどのクラスで、コンストラクターが実行されません。 このため、コンストラクターで実行される状態管理には依存できません。
 
-- コールバックを使用して、オブジェクトを確実に有効な状態にします。 <xref:System.Runtime.Serialization.OnDeserializedAttribute> 属性でマークされたコールバックは、逆シリアル化の完了後に実行され、全体の状態を調査して訂正できるので便利です。 詳細については、次を参照してください。[バージョン トレラントなシリアル化コールバック](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)します。
+- コールバックを使用して、オブジェクトを確実に有効な状態にします。 <xref:System.Runtime.Serialization.OnDeserializedAttribute> 属性でマークされたコールバックは、逆シリアル化の完了後に実行され、全体の状態を調査して訂正できるので便利です。 詳細については、「[バージョントレラントなシリアル化コールバック](version-tolerant-serialization-callbacks.md)」を参照してください。
 
 - データ コントラクト型は、プロパティの setter が特定の順序で呼び出されなくてもよいように設計します。
 
-- <xref:System.SerializableAttribute> 属性でマークされた従来の型を使用する場合は十分に注意します。 それらの多くは、信頼できるデータのみで使用するための .NET Framework リモート処理を使用する設計されました。 この属性でマークされた既存の型は、状態の安全性を考えて設計されていない可能性があります。
+- <xref:System.SerializableAttribute> 属性でマークされた従来の型を使用する場合は十分に注意します。 その多くは、信頼できるデータでのみ使用するために .NET Framework リモート処理と連携するように設計されています。 この属性でマークされた既存の型は、状態の安全性を考えて設計されていない可能性があります。
 
 - 状態の安全性に関しては、データの存在を保証するために、 <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> 属性の <xref:System.Runtime.Serialization.DataMemberAttribute> プロパティに依存することはできません。 データは常に `null`、 `zero`、または `invalid`になります。
 
-- 信頼できないデータ ソースから逆シリアル化されたオブジェクト グラフは、検証せずに信頼してはいけません。 各オブジェクトが整合状態にあっても、オブジェクト グラフ全体としては整合状態にない場合があります。 さらに、オブジェクト グラフの保存モードが無効になっている場合でも、逆シリアル化されたグラフに、同じオブジェクトへの複数の参照または循環参照が存在することがあります。 詳細については、次を参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)します。
+- 信頼できないデータ ソースから逆シリアル化されたオブジェクト グラフは、検証せずに信頼してはいけません。 各オブジェクトが整合状態にあっても、オブジェクト グラフ全体としては整合状態にない場合があります。 さらに、オブジェクト グラフの保存モードが無効になっている場合でも、逆シリアル化されたグラフに、同じオブジェクトへの複数の参照または循環参照が存在することがあります。 詳細については、「[シリアル化と逆シリアル化](serialization-and-deserialization.md)」を参照してください。
 
 ### <a name="using-the-netdatacontractserializer-securely"></a>NetDataContractSerializer の安全な使用
 
-<xref:System.Runtime.Serialization.NetDataContractSerializer> は、型に対して密結合を使用するシリアル化エンジンです。 これは、 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> および <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>に類似しています。 つまり、受信データから、.NET Framework アセンブリと型名を読み取ることによってインスタンス化する種類を決定します。 このシリアル化エンジンにプラグインする指定された方法はありませんが、WCF の一部である、カスタム コードを記述する必要があります。 `NetDataContractSerializer`主に、.NET Framework リモート処理から WCF への移行を容易に提供されます。 詳細については、関連するセクションを参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)します。
+<xref:System.Runtime.Serialization.NetDataContractSerializer> は、型に対して密結合を使用するシリアル化エンジンです。 これは、 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> および <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>に類似しています。 つまり、受信データから .NET Framework アセンブリと型名を読み取って、インスタンス化する型を決定します。 これは WCF の一部ですが、このシリアル化エンジンにプラグインする方法は用意されていません。カスタムコードを記述する必要があります。 は、 `NetDataContractSerializer` 主に .NET Framework リモート処理から WCF への移行を容易にするために用意されています。 詳細については、「[シリアル化と逆シリアル化](serialization-and-deserialization.md)」の関連セクションを参照してください。
 
-読み込むことができる型はメッセージ自身が示すことができるため、 <xref:System.Runtime.Serialization.NetDataContractSerializer> のメカニズムは本質的にセキュリティで保護されていません。このエンジンでは、信頼されたデータだけを使用してください。 <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> プロパティを使用して、セキュリティで保護され、型を限定する型バインダーを記述して、安全な型の読み込みだけを許可することによって、このエンジンをセキュリティで保護された状態にすることができます。
+読み込むことができる型はメッセージ自身が示すことができるため、 <xref:System.Runtime.Serialization.NetDataContractSerializer> のメカニズムは本質的にセキュリティで保護されていません。このエンジンでは、信頼されたデータだけを使用してください。 詳細については、「 [Binaryformatter セキュリティガイド](/dotnet/standard/serialization/binaryformatter-security-guide)」を参照してください。
 
 信頼されたデータを使用している場合でも、特に <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> プロパティが <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple>に設定されている場合は、読み込む型が受信データで適切に指定されないことがあります。 アプリケーションのディレクトリまたはグローバル アセンブリ キャッシュにアクセスできればだれにでも、読み込むべき型の代わりに、悪質な型を配置することができます。 アクセス許可を適切に設定することによって、アプリケーション ディレクトリとグローバル アセンブリ キャッシュのセキュリティを必ず確保してください。
 
@@ -310,7 +310,7 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 - 部分信頼コードで拡張ポイント (サロゲート)、シリアル化する型、または他の方法によってシリアル化プロセスを制御している場合、部分信頼コードが原因でシリアライザーが大量のデータをシリアル化ストリームに出力し、このストリームの受信側に対してサービス拒否 (DoS: Denial of Service) を引き起こす可能性があります。 DoS の脅威の影響を受けやすいターゲットを対象とするデータをシリアル化する場合、部分信頼の型をシリアル化したり、部分信頼コードでシリアル化を制御したりしないでください。
 
-- 部分信頼コードへのアクセスを許可する場合、<xref:System.Runtime.Serialization.DataContractSerializer>インスタンスまたはそれ以外の場合、制御、[データ コントラクト サロゲート](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)たくさんのシリアル化/逆シリアル化のプロセスが細かくコントロールを練習可能性があります。 たとえば、コードによって任意の型が挿入されたり、情報漏えいにつながったりする場合があります。また、生成されたオブジェクト グラフやシリアル化されたデータが改ざんされたり、生成されたシリアル化ストリームをオーバーフローさせたりする場合もあります。 <xref:System.Runtime.Serialization.NetDataContractSerializer> に関する同等の脅威については、「NetDataContractSerializer の安全な使用」で説明しています。
+- 部分信頼コードがインスタンスにアクセスできるようにする場合 <xref:System.Runtime.Serialization.DataContractSerializer> 、または[データコントラクトサロゲート](../extending/data-contract-surrogates.md)を制御する場合は、シリアル化と逆シリアル化のプロセスを細かく制御することが必要になることがあります。 たとえば、コードによって任意の型が挿入されたり、情報漏えいにつながったりする場合があります。また、生成されたオブジェクト グラフやシリアル化されたデータが改ざんされたり、生成されたシリアル化ストリームをオーバーフローさせたりする場合もあります。 <xref:System.Runtime.Serialization.NetDataContractSerializer> に関する同等の脅威については、「NetDataContractSerializer の安全な使用」で説明しています。
 
 - <xref:System.Runtime.Serialization.DataContractAttribute> 属性が型 (または <xref:System.SerializableAttribute> ではなく <xref:System.Runtime.Serialization.ISerializable>とマークされた型) に適用されている場合、すべてのコンストラクターが非パブリックであるか、または要求で保護されている場合でも、デシリアライザーはこのような型のインスタンスを作成できます。
 
@@ -338,7 +338,7 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
     [!code-csharp[CDF_WCF_SecurityConsiderationsForData#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/cdf_wcf_securityconsiderationsfordata/cs/program.cs#1)]
 
-    上の例で、 `PermissionsHelper.InternetZone` は部分信頼の <xref:System.Security.PermissionSet> に対応します。 せずに、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性に、アプリケーションは失敗、スロー、<xref:System.Security.SecurityException>部分信頼で非パブリック メンバーをシリアル化できないことを示します。
+    上の例で、 `PermissionsHelper.InternetZone` は部分信頼の <xref:System.Security.PermissionSet> に対応します。 属性を指定しないと、 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> アプリケーションは失敗し、 <xref:System.Security.SecurityException> 非パブリックメンバーが部分信頼でシリアル化できないことを示すがスローされます。
 
     ただし、ソース ファイルに次の行を追加すると、プログラムは正常に実行されます。
 
@@ -354,11 +354,11 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 ## <a name="schema-import"></a>スキーマのインポート
 
-通常、型を生成するためにスキーマをインポートするプロセスは、設計時にのみ発生します。たとえば、クライアント クラスを生成するために Web サービス上で [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) を使用しているときなどです。 ただし、さらに高度なシナリオでは、スキーマを実行時に処理することがあります。 この場合、サービス拒否攻撃の危険にさらされる可能性があることを覚えておく必要があります。 スキーマによっては、インポートに時間がかかる場合があります。 スキーマが信頼できないソースからのものである可能性がある場合は、このようなシナリオで <xref:System.Xml.Serialization.XmlSerializer> のスキーマ インポート コンポーネントを使用しないでください。
+通常、型を生成するためにスキーマをインポートするプロセスは、設計時にのみ発生します。たとえば、クライアント クラスを生成するために Web サービス上で [ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) を使用しているときなどです。 ただし、さらに高度なシナリオでは、スキーマを実行時に処理することがあります。 この場合、サービス拒否攻撃の危険にさらされる可能性があることを覚えておく必要があります。 スキーマによっては、インポートに時間がかかる場合があります。 スキーマが信頼できないソースからのものである可能性がある場合は、このようなシナリオで <xref:System.Xml.Serialization.XmlSerializer> のスキーマ インポート コンポーネントを使用しないでください。
 
 ## <a name="threats-specific-to-aspnet-ajax-integration"></a>ASP.NET AJAX 統合に固有の脅威
 
-ユーザーが実装して<xref:System.ServiceModel.Description.WebScriptEnablingBehavior>または<xref:System.ServiceModel.Description.WebHttpBehavior>WCF は、XML および JSON メッセージを受け入れることができるエンドポイントを公開します。 ただし、XML リーダーと JSON リーダーの両方が使用するリーダー クォータのセットは 1 つしかありません。 一部のクォータ設定が一方のリーダーには適切であっても、もう一方のリーダーには大きすぎる場合があります。
+ユーザーが <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> またはを実装すると <xref:System.ServiceModel.Description.WebHttpBehavior> 、WCF は XML メッセージと JSON メッセージの両方を受け入れることができるエンドポイントを公開します。 ただし、XML リーダーと JSON リーダーの両方が使用するリーダー クォータのセットは 1 つしかありません。 一部のクォータ設定が一方のリーダーには適切であっても、もう一方のリーダーには大きすぎる場合があります。
 
 `WebScriptEnablingBehavior`を実装すると、ユーザーはエンドポイントで JavaScript プロキシを公開するオプションを使用できます。 セキュリティに関する次の問題を考慮する必要があります。
 
@@ -368,9 +368,9 @@ XML リーダーを直接使用する場合 (など、独自のカスタム エ�
 
 ## <a name="a-note-on-components"></a>コンポーネントに関する注意事項
 
-WCF は、柔軟でカスタマイズ可能なシステムです。 このトピックの内容のほとんどは、最も一般的な WCF の使用シナリオに注目します。 ただし、WCF は、さまざまな方法で提供するコンポーネントを作成することができます。 各コンポーネントを使用した場合のセキュリティへの影響について理解することが重要です。 特に次の点に注意してください。
+WCF は、柔軟でカスタマイズ可能なシステムです。 このトピックのほとんどの内容は、最も一般的な WCF 使用シナリオに焦点を当てています。 ただし、WCF に用意されているコンポーネントは、さまざまな方法で構成できます。 各コンポーネントを使用した場合のセキュリティへの影響について理解することが重要です。 特に次の点に違いがあります。
 
-- XML リーダーを使用する必要があるときは、 <xref:System.Xml.XmlDictionaryReader> クラスに用意されたリーダーを使用し、それ以外のリーダーは使用しないようにします。 安全なリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> のいずれかのメソッドを使用して作成できます。 <xref:System.Xml.XmlReader.Create%2A> メソッドは使用しないでください。 リーダーは、必ず安全なクォータを使用して設定します。 WCF でのシリアル化エンジンは、WCF のセキュリティで保護された XML リーダーで使用する場合にのみセキュリティで保護されました。
+- XML リーダーを使用する必要があるときは、 <xref:System.Xml.XmlDictionaryReader> クラスに用意されたリーダーを使用し、それ以外のリーダーは使用しないようにします。 安全なリーダーは、 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> のいずれかのメソッドを使用して作成できます。 <xref:System.Xml.XmlReader.Create%2A> メソッドは使用しないでください。 リーダーは、必ず安全なクォータを使用して設定します。 Wcf のシリアル化エンジンは、WCF のセキュリティで保護された XML リーダーと共に使用する場合にのみ、セキュリティで保護されます。
 
 - <xref:System.Runtime.Serialization.DataContractSerializer> を使用して、信頼できない可能性のあるデータを逆シリアル化する場合は、必ず <xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A> プロパティを設定します。
 
@@ -387,4 +387,4 @@ WCF は、柔軟でカスタマイズ可能なシステムです。 このトピ
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.XmlDictionaryReader>
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [既知のデータ コントラクト型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+- [既知のデータ コントラクト型](data-contract-known-types.md)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c861d61cbbe8075db4b17a702e863336ea621f2b
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 53d2c989120c92f4e2d18f50ce4b364bd4c9b604
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198483"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75901886"
 ---
 ### <a name="http-synchronous-io-disabled-in-all-servers"></a>HTTP:すべてのサーバーで同期 IO が無効になっています
 
@@ -41,7 +41,7 @@ if (syncIOFeature != null)
 
 `TextWriter`、または `Dispose` で同期 API を呼び出す別のストリームで問題が発生した場合は、代わりに新しい `DisposeAsync` API を呼び出します。
 
-詳細については、[aspnet/AspNetCore#7644](https://github.com/aspnet/AspNetCore/issues/7644) を参照してください。
+ディスカッションについては、[dotnet/aspnetcore#7644](https://github.com/dotnet/aspnetcore/issues/7644) を参照してください。
 
 #### <a name="version-introduced"></a>導入されたバージョン
 
@@ -65,7 +65,7 @@ if (syncIOFeature != null)
 
 これらの同期 API は長い間、スレッドの枯渇とアプリのハングの原因になっていました。 ASP.NET Core 3.0 Preview 3 以降では、同期操作は既定で無効になっています。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 非同期バージョンのメソッドを使用します。 この動作は、一時的な軽減策として、要求ごとにオーバーライドすることもできます。
 

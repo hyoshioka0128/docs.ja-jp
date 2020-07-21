@@ -1,17 +1,18 @@
 ---
 title: 非同期プログラミングのパターン
+description: .NET のタスクベースの非同期パターン (TAP)、イベントベースの非同期パターン (EAP)、非同期プログラミング モデル (APM) について説明します。
 ms.date: 10/16/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - asynchronous design patterns, .NET
 - .NET Framework, asynchronous design patterns
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
-ms.openlocfilehash: dfce69ee18b8346cd802b4934de63bf0a39c72f0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bd4d44d8de8a64be82e9ce6af593a86719b59fcf
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124267"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84583506"
 ---
 # <a name="asynchronous-programming-patterns"></a>非同期プログラミングのパターン
 
@@ -59,7 +60,7 @@ APM の対応する部分では `BeginRead` メソッドと `EndRead` メソッ�
 public class MyClass  
 {  
     public IAsyncResult BeginRead(  
-        byte [] buffer, int offset, int count,   
+        byte [] buffer, int offset, int count,
         AsyncCallback callback, object state);  
     public int EndRead(IAsyncResult asyncResult);  
 }  

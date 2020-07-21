@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4d5e5f00-bcab-4f41-b191-176511a186a7
 topic_type:
 - apiref
-ms.openlocfilehash: bb73ccdd9eee4b5a655a56b5d6757e0c6003fbc9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c2abf2813c6e1a9db4264bded32d9cb9c58a2bcb
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437125"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491057"
 ---
 # <a name="imetadataimportgetparamprops-method"></a>IMetaDataImport::GetParamProps メソッド
 指定した ParamDef トークンによって参照されるパラメーターのメタデータ値を取得します。  
@@ -56,37 +56,37 @@ HRESULT GetParamProps (
  入出力パラメーターの名前を保持するバッファー。  
   
  `cchName`  
- から`szName`のワイド文字で要求されたサイズ。  
+ からのワイド文字で要求されたサイズ `szName` 。  
   
  `pchName`  
- 入出力`szName`のワイド文字で返されたサイズ。  
+ 入出力のワイド文字で返されたサイズ `szName` 。  
   
  `pdwAttr`  
- 入出力パラメーターに関連付けられているすべての属性フラグへのポインター。 これは `CorParamAttr` 値のビットマスクです。  
+ 入出力パラメーターに関連付けられているすべての属性フラグへのポインター。 これは、値のビットマスクです `CorParamAttr` 。  
   
  `pdwCPlusTypeFlag`  
- 入出力パラメーターが <xref:System.ValueType>であることを示すフラグへのポインター。  
+ 入出力パラメーターがであることを示すフラグへのポインター <xref:System.ValueType> 。  
   
  `ppValue`  
  入出力パラメーターによって返される定数文字列へのポインター。  
   
  `pcchValue`  
- 入出力ワイド文字の `ppValue` のサイズ。 `ppValue` が文字列を保持していない場合は0。  
+ 入出力のサイズ `ppValue` 。ワイド文字の場合は `ppValue` 。が文字列を保持しない場合は0。  
   
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-`pulSequence` のシーケンス値は、パラメーターに対して1から始まります。 戻り値のシーケンス番号は0です。
+パラメーターの場合、のシーケンス値は `pulSequence` 1 から始まります。 戻り値のシーケンス番号は0です。
 
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

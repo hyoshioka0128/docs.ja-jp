@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bf84d0af-53e1-4c04-bc5b-7e5f81ba2cc2
 topic_type:
 - apiref
-ms.openlocfilehash: d1d3a5eb6e0b24b40a35c13a99465dd3c7032a91
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5537a48fd085ce98de855fa1ec0913e2637e58e0
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138940"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83376194"
 ---
 # <a name="icordebugstringvalue-interface"></a>ICorDebugStringValue インターフェイス
 文字列値に適用される、値のサブクラスです。  
@@ -28,23 +28,23 @@ ms.locfileid: "73138940"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[GetLength メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getlength-method.md)|この `ICorDebugStringValue`によって参照される文字列の文字数を取得します。|  
-|[GetString メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getstring-method.md)|この `ICorDebugStringValue`によって参照される文字列を取得します。|  
+|[GetLength メソッド](icordebugstringvalue-getlength-method.md)|このによって参照される文字列の文字数を取得し `ICorDebugStringValue` ます。|  
+|[GetString メソッド](icordebugstringvalue-getstring-method.md)|このによって参照される文字列を取得し `ICorDebugStringValue` ます。|  
   
 ## <a name="remarks"></a>Remarks  
   
 > [!NOTE]
 > このインターフェイスは、コンピューター間またはプロセス間でのリモート呼び出しをサポートしていません。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)

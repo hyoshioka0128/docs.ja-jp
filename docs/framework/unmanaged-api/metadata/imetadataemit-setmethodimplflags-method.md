@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4bc82d9b-9544-4be3-ba51-a2d4d806158a
 topic_type:
 - apiref
-ms.openlocfilehash: b8755629cca27784609de8166dddf44ed1c82bdc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a02456393680169ce33369ee5914f6c5216081c6
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432542"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009224"
 ---
 # <a name="imetadataemitsetmethodimplflags-method"></a>IMetaDataEmit::SetMethodImplFlags メソッド
 指定したトークンによって参照される、継承されたメソッドの実装のメタデータシグネチャを設定または更新します。  
@@ -28,9 +28,9 @@ ms.locfileid: "74432542"
 ## <a name="syntax"></a>構文  
   
 ```cpp  
-HRESULT SetMethodImplFlags (   
-    [in]  mdMethodDef   md,   
-    [in]  DWORD         dwImplFlags   
+HRESULT SetMethodImplFlags (
+    [in]  mdMethodDef   md,
+    [in]  DWORD         dwImplFlags
 );  
 ```  
   
@@ -39,18 +39,18 @@ HRESULT SetMethodImplFlags (
  から変更するメソッドのトークン。  
   
  `dwImplFlags`  
- からメソッド実装機能を指定する[Cormethodimpl](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md)列挙値の組み合わせ。  
+ からメソッド実装機能を指定する[Cormethodimpl](cormethodimpl-enumeration.md)列挙値の組み合わせ。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit インターフェイス](imetadataemit-interface.md)
+- [IMetaDataEmit2 インターフェイス](imetadataemit2-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: '方法: アセンブリの内容を表示する'
+description: IL 逆アセンブラーを使用して、アセンブリの属性と、他のモジュールやアセンブリへの参照を表示できます。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, viewing information
@@ -14,12 +15,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 72b02209d74b6b183af6c11d9bd037889ea08543
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: aed490459252466c6da06e5422b83b1bc20fb885
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347054"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380064"
 ---
 # <a name="how-to-view-assembly-contents"></a>方法: アセンブリの内容を表示する
 
@@ -118,7 +119,7 @@ End Class
 
 アセンブリ マニフェストは、アセンブリの内容に応じて、多くの異なるディレクティブを格納できます。 アセンブリ マニフェストに含まれる多様なディレクティブの一覧については、ECMA のドキュメント、特に「Partition II: Metadata Definition and Semantics」(パーティション II: メタデータの定義とセマンティクス) および「Partition III:CIL Instruction Set」(パーティション III: CIL 命令セット) を参照してください。
 
-- [ECMA の C# および共通言語基盤の標準](/dotnet/standard/components#applicable-standards)
+- [ECMA の C# および共通言語基盤の標準](../components.md#applicable-standards)
 - [Standard ECMA-335 - 共通言語基盤 (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm)
 
 ## <a name="see-also"></a>関連項目

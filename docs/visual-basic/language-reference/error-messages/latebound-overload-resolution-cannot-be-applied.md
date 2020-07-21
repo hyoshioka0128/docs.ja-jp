@@ -8,30 +8,30 @@ helpviewer_keywords:
 - overload resolution [Visual Basic], with late-bound argument
 - BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
-ms.openlocfilehash: 1fe3c4a29b542302b3615459142a3c565aa8244f
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
-ms.translationtype: MT
+ms.openlocfilehash: 4500a177c7a4729fe5131af1b007fd38e77afe07
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68513026"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397338"
 ---
-# <a name="latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>アクセスするインスタンスがインターフェイス型である\<ため、遅延バインディングされたオーバーロードの解決は ' procedurename > ' に適用できません
+# <a name="latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>アクセスするインスタンスがインターフェイス型であるため、遅延バインドされたオーバーロードの解決は '\<procedurename>' に適用されません。
 
-コンパイラは、オーバーロードされたプロパティまたはプロシージャへの参照を解決しようとしていますが、引数`Object`が型であり、参照元のオブジェクトがインターフェイスのデータ型を持っているため、参照は失敗します。 引数`Object`は、コンパイラが参照を遅延バインディングとして解決することを強制します。
+コンパイラでは、オーバーロードされたプロパティまたはプロシージャへの参照を解決しようとしますが、引数の型が `Object` であり、参照元のオブジェクトがインターフェイスのデータ型を持つため、参照が失敗します。 `Object` 引数は、コンパイラに参照を遅延バインドとして強制的に解決させます。
 
-このような場合、コンパイラは、基になるインターフェイスを使用するのではなく、実装するクラスを使用してオーバーロードを解決します。 クラスがオーバーロードされたバージョンの1つの名前を変更した場合、コンパイラはそのバージョンの名前が異なるため、そのバージョンがオーバーロードであるとは見なされません。 これにより、コンパイラは、参照を解決するための正しい選択が行われている可能性がある場合に、名前が変更されたバージョンを無視します。
+このような状況では、コンパイラは、基になるインターフェイスを使用するのではなく、実装するクラスを使用してオーバーロードを解決します。 クラスで、オーバーロードされたいずれかのバージョンの名前が変更された場合、コンパイラは、そのバージョンの名前が異なるため、それをオーバーロードされているものと見なしません。 これにより、名前が変更されたバージョンが参照を解決するための正しい選択である可能性がある場合に、コンパイラがそれを無視します。
 
 **エラー ID:** BC30933
 
 ## <a name="to-correct-this-error"></a>このエラーを解決するには
 
-- 引数`CType`をから`Object`呼び出すオーバーロードのシグネチャで指定された型にキャストするには、を使用します。
+- `CType` を使用して、`Object` からの引数を、呼び出すオーバーロードのシグネチャで指定された型にキャストします。
 
-  参照元のオブジェクトを基になるインターフェイスにキャストすることはできないことに注意してください。 このエラーを回避するには、引数をキャストする必要があります。
+  参照元のオブジェクトを、基になるインターフェイスにキャストすることは役に立ちません。 このエラーを回避するには、引数をキャストする必要があります。
 
 ## <a name="example"></a>例
 
-次の例は、コンパイル時にこの`Sub`エラーを発生させるオーバーロードされたプロシージャの呼び出しを示しています。
+次の例では、コンパイル時にこのエラーを発生させるオーバーロードされた `Sub` プロシージャの呼び出しを示しています。
 
 ```vb
 Module m1
@@ -55,19 +55,19 @@ Module m1
 End Module
 ```
 
-前の例では、コンパイラがの呼び出しを`s1`書き込み済みとして許可した場合、インターフェイス`i1`で`c1`はなくクラスを使用して解決が行われます。 これは、で定義されている`s2` `i1`正しい選択であっても`c1`、コンパイラではその名前が異なるために考慮されないことを意味します。
+前の例で、コンパイラが記述どおりに `s1` の呼び出しを許可した場合、インターフェイス `i1` ではなく `c1` クラスを使用して解決が行われます。 これは、`i1` によって定義されているとおりに、正しい選択であっても、`c1` でその名前が異なるため、コンパイラが `s2` を考慮しないことを意味します。
 
-このエラーを修正するには、次のいずれかのコード行の呼び出しを変更します。
+このエラーを修正するには、呼び出しを次のいずれかのコード行に変更します。
 
 ```vb
 refer.s1(CType(o1, Integer))
 refer.s1(CType(o1, Double))
 ```
 
-前のコード行では、オーバーロードに対し`Object`て`o1`定義されているいずれかのパラメーター型に変数を明示的にキャストします。
+前の各コード行では、`Object` 変数 `o1` をオーバーロードに定義されているいずれかのパラメーター型に明示的にキャストしています。
 
 ## <a name="see-also"></a>関連項目
 
-- [プロシージャのオーバーロード](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)
-- [オーバーロードの解決](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
-- [CType 関数](../../../visual-basic/language-reference/functions/ctype-function.md)
+- [プロシージャのオーバーロード](../../programming-guide/language-features/procedures/procedure-overloading.md)
+- [オーバーロードの解決](../../programming-guide/language-features/procedures/overload-resolution.md)
+- [CType 関数](../functions/ctype-function.md)

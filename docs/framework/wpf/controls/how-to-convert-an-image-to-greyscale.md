@@ -11,13 +11,13 @@ helpviewer_keywords:
 ms.assetid: 77935ff0-4500-4307-9710-96999dcf579f
 ms.openlocfilehash: f3b7837c6c25db1aa3bdd11786df90660a75da87
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61910937"
 ---
 # <a name="how-to-convert-an-image-to-greyscale"></a>方法: イメージをグレースケールに変換する
-この例では、イメージをグレースケールを使用して変換する<xref:System.Windows.Media.Imaging.FormatConvertedBitmap>します。  
+この例では、<xref:System.Windows.Media.Imaging.FormatConvertedBitmap> を使用してイメージをグレースケールに変換する方法を示します。  
   
 ## <a name="example"></a>例  
  [!code-xaml[ImagingSnippetGallery_snip#FormatConvertedBitmapXamlExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_snip/CS/FormatConvertedBitmapExample.xaml#formatconvertedbitmapxamlexamplewholepage)]  

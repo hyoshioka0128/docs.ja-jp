@@ -1,13 +1,14 @@
 ---
 title: WCF サービスからの REST スタイル サービスの呼び出し
+description: スコープを作成し、そのスコープから REST スタイルのサービスを呼び出すことによって、WCF サービスが REST スタイルのサービスで適切なコンテキストを使用するようにする方法について説明します。
 ms.date: 03/30/2017
 ms.assetid: 77df81d8-7f53-4daf-8d2d-bf7996e94d5a
-ms.openlocfilehash: c2a3467fb5fe28194dcb8ee7715353f4cb6a1bff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 15f468923cf55feb85e7aeca1a2cc5e38050d665
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048219"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245298"
 ---
 # <a name="calling-a-rest-style-service-from-a-wcf-service"></a>WCF サービスからの REST スタイル サービスの呼び出し
 
@@ -86,7 +87,7 @@ public class NormalService : INormalInterface
 
 ## <a name="create-the-client-proxy-for-the-rest-style-service"></a>REST スタイルのサービスのクライアント プロキシを作成する
 
-使用して<xref:System.ServiceModel.ClientBase%601>クライアント プロキシの実装。 呼び出される各メソッドで、新しい <xref:System.ServiceModel.OperationContextScope> が作成され、操作の呼び出しに使用されます。
+を使用して <xref:System.ServiceModel.ClientBase%601> クライアントプロキシを実装します。 呼び出される各メソッドで、新しい <xref:System.ServiceModel.OperationContextScope> が作成され、操作の呼び出しに使用されます。
 
 ```csharp
 public class MyRestClient : ClientBase<IRestInterface>, IRestInterface
@@ -243,5 +244,5 @@ public class CallingRESTSample
 
 ## <a name="see-also"></a>関連項目
 
-- [方法: 基本的な WCF Web HTTP サービスを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)
-- [WCF Web HTTP プログラミング オブジェクト モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
+- [方法: 基本的な WCF Web HTTP サービスを作成する](how-to-create-a-basic-wcf-web-http-service.md)
+- [WCF Web HTTP プログラミング オブジェクト モデル](wcf-web-http-programming-object-model.md)

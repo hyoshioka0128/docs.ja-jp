@@ -1,19 +1,20 @@
 ---
-title: Message クラスの使用
+title: メッセージ クラスの使用
+description: WCF の基礎となる Message クラスについて説明します。 一部の高度なシナリオでは、メッセージクラスを直接使用するようにプログラミングする必要があります。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-ms.openlocfilehash: 76ac5fad653604c7abe403def72d31696d26b547
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f806e257cfd3ccc5118a5783e2eda48eef4ba0bf
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967847"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246494"
 ---
-# <a name="using-the-message-class"></a>Message クラスの使用
-クラス<xref:System.ServiceModel.Channels.Message>は、Windows Communication Foundation (WCF) の基本となります。 クライアントとサービスの間のすべての通信は、最終的には <xref:System.ServiceModel.Channels.Message> インスタンスの送受信となります。  
+# <a name="using-the-message-class"></a>メッセージ クラスの使用
+クラスは、 <xref:System.ServiceModel.Channels.Message> Windows Communication Foundation (WCF) の基本となります。 クライアントとサービスの間のすべての通信は、最終的には <xref:System.ServiceModel.Channels.Message> インスタンスの送受信となります。  
   
  通常は、<xref:System.ServiceModel.Channels.Message> クラスと直接対話することはありません。 代わりに、データコントラクト、メッセージコントラクト、操作コントラクトなどの WCF サービスモデル構造を使用して、受信メッセージと送信メッセージを記述します。 ただし、一部の高度なシナリオでは、<xref:System.ServiceModel.Channels.Message> を直接使用してプログラムを作成することができます。 たとえば、次のような場合に <xref:System.ServiceModel.Channels.Message> クラスを使用できます。  
   
@@ -23,7 +24,7 @@ ms.locfileid: "69967847"
   
 - メッセージ コンテンツに関係なく、一般的な方法でメッセージを処理する必要がある場合 (メッセージをルーティングまたは転送する場合や、ルーターシステム、負荷分散システム、または発行/定期受信システムを構築する場合など)。  
   
- <xref:System.ServiceModel.Channels.Message>クラスを使用する前に、[データ転送アーキテクチャの概要](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)に関する WCF データ転送アーキテクチャについて理解しておいてください。  
+ クラスを使用する前に <xref:System.ServiceModel.Channels.Message> 、[データ転送アーキテクチャの概要](data-transfer-architectural-overview.md)に関する WCF データ転送アーキテクチャについて理解しておいてください。  
   
  <xref:System.ServiceModel.Channels.Message> は、一般的な目的で使用するデータ コンテナーですが、その設計は SOAP プロトコルのメッセージ設計に厳密に従っています。 SOAP と同様に、メッセージには本文とヘッダーの両方があります。 メッセージ本文には実際のペイロード データが格納され、ヘッダーには追加の名前付きデータ コンテナーが格納されます。 本文とヘッダーの読み書きルールは異なります。たとえば、ヘッダーは必ずメモリにバッファーされるので順序や回数に関係なくアクセスできますが、本文は 1 度だけ読み取ってストリーミングできます。 通常 SOAP を使用する場合、メッセージ本文は SOAP 本文にマップされ、メッセージ ヘッダーは SOAP ヘッダーにマップされます。  
   
@@ -87,14 +88,14 @@ ms.locfileid: "69967847"
  `Message` の本文には、アクセス方法に関係なく 1 回しかアクセスできません。 メッセージ オブジェクトには `State` プロパティがあります。このプロパティは Created として初期化されます。 この状態は、前の 3 つのアクセス方法により、それぞれ Written、Read、Copied に設定されます。 また、メッセージ本文の内容が不要になったときは、`Close` メソッドによって状態が Closed に設定されます。 メッセージ本文には、状態が Created の場合にのみアクセスできます。状態が変更された後で Created に戻す方法はありません。  
   
 ## <a name="writing-messages"></a>メッセージの書き込み  
- <xref:System.ServiceModel.Channels.Message.WriteBodyContents%28System.Xml.XmlDictionaryWriter%29> メソッドは、指定された `Message` インスタンスの本文の内容を指定された XML ライターに書き込みます。 メソッド<xref:System.ServiceModel.Channels.Message.WriteBody%2A>は、本文の内容を適切なラッパー要素 (たとえば、<`soap:body`>) に囲む点を除いて、同じことを行います。 最後の <xref:System.ServiceModel.Channels.Message.WriteMessage%2A> は、ラップしている SOAP エンベロープとヘッダーを含めて、メッセージ全体を書き込みます。 SOAP がオフになって<xref:System.ServiceModel.Channels.Message.Version>いる<xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType>(が) 場合、3つのメソッドはすべて同じ処理を行います。つまり、メッセージ本文の内容を書き出します。  
+ <xref:System.ServiceModel.Channels.Message.WriteBodyContents%28System.Xml.XmlDictionaryWriter%29> メソッドは、指定された `Message` インスタンスの本文の内容を指定された XML ライターに書き込みます。 メソッドは、 <xref:System.ServiceModel.Channels.Message.WriteBody%2A> 本文の内容を適切なラッパー要素 (たとえば、<>) に囲む点を除いて、同じことを行い `soap:body` ます。 最後の <xref:System.ServiceModel.Channels.Message.WriteMessage%2A> は、ラップしている SOAP エンベロープとヘッダーを含めて、メッセージ全体を書き込みます。 SOAP がオフになっている ( <xref:System.ServiceModel.Channels.Message.Version> が <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> ) 場合、3つのメソッドはすべて同じ処理を行います。つまり、メッセージ本文の内容を書き出します。  
   
  たとえば、次のコードは、受信メッセージの本文をファイルに書き込みます。  
   
  [!code-csharp[C_UsingTheMessageClass#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#5)]
  [!code-vb[C_UsingTheMessageClass#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#5)]  
   
- さらに、特定の SOAP 開始要素タグを書き込む 2 つのヘルパー メソッドがあります。 これらのメソッドはメッセージ本文にアクセスしないため、メッセージの状態は変わりません。 不足している機能には次が含まれます。  
+ さらに、特定の SOAP 開始要素タグを書き込む 2 つのヘルパー メソッドがあります。 これらのメソッドはメッセージ本文にアクセスしないため、メッセージの状態は変わりません。 次の設定があります。  
   
 - <xref:System.ServiceModel.Channels.Message.WriteStartBody%2A> は、本文の開始要素を書き込みます (例 : `<soap:Body>`)。  
   
@@ -133,7 +134,7 @@ ms.locfileid: "69967847"
  `MessageBuffer` クラスには、この他にも注目すべきメンバーがあります。 バッファーの内容が不要になったときは、<xref:System.ServiceModel.Channels.MessageBuffer.Close%2A> メソッドを呼び出してリソースを解放できます。 <xref:System.ServiceModel.Channels.MessageBuffer.BufferSize%2A> プロパティは、割り当てられたバッファーのサイズを返します。 <xref:System.ServiceModel.Channels.MessageBuffer.MessageContentType%2A> プロパティは、メッセージの MIME コンテンツ タイプを返します。  
   
 ## <a name="accessing-the-message-body-for-debugging"></a>デバッグのためのメッセージ本文へのアクセス  
- デバッグの目的では、<xref:System.ServiceModel.Channels.Message.ToString%2A> メソッドを呼び出して、メッセージの文字列表現を取得できます。 一般に、メッセージがテキスト エンコーダーでエンコードされていれば、この表現はネットワーク上でのメッセージの表示形式と一致します。ただし、XML の場合は人間にとって読みやすいように書式設定されます。 1 つの例外はメッセージ本文です。 本文は 1 度しか読み取ることができません。また、`ToString` はメッセージの状態を変更しません。 このため、 `ToString`メソッドは本体にアクセスできず、プレースホルダー (たとえば、"...") に置き換えられる可能性があります。または3つのドット) をメッセージ本文の代わりに、 したがって、メッセージ本文の内容が重要な場合は、`ToString` を使用してメッセージを記録しないでください。  
+ デバッグの目的では、<xref:System.ServiceModel.Channels.Message.ToString%2A> メソッドを呼び出して、メッセージの文字列表現を取得できます。 一般に、メッセージがテキスト エンコーダーでエンコードされていれば、この表現はネットワーク上でのメッセージの表示形式と一致します。ただし、XML の場合は人間にとって読みやすいように書式設定されます。 1 つの例外はメッセージ本文です。 本文は 1 度しか読み取ることができません。また、`ToString` はメッセージの状態を変更しません。 このため、 `ToString` メソッドは本体にアクセスできず、プレースホルダー (たとえば、"...") に置き換えられる可能性があります。または3つのドット) をメッセージ本文の代わりに、 したがって、メッセージ本文の内容が重要な場合は、`ToString` を使用してメッセージを記録しないでください。  
   
 ## <a name="accessing-other-message-parts"></a>メッセージの他の部分へのアクセス  
  メッセージの本文以外の情報にアクセスするさまざまなプロパティが用意されています。 ただし、これらのプロパティは、メッセージを閉じると呼び出すことができなくなります。  
@@ -151,7 +152,7 @@ ms.locfileid: "69967847"
  <xref:System.ServiceModel.Channels.Message.GetBodyAttribute%28System.String%2CSystem.String%29> メソッドを使用すると、特定の名前や名前空間で識別される本文のラッパー要素 (`<soap:Body>` など) の特定の属性にアクセスできます。 このような属性が見つからない場合は、`null` が返されます。 このメソッドは、`Message` の状態が Created の場合 (メッセージ本文がまだアクセスされていない場合) にのみ呼び出すことができます。  
   
 ## <a name="working-with-headers"></a>ヘッダーの操作  
- に`Message`は、*ヘッダー*と呼ばれる任意の数の名前付き XML フラグメントを含めることができます。 通常、各フラグメントは SOAP ヘッダーにマップされます。 ヘッダーには、`Headers` 型の <xref:System.ServiceModel.Channels.MessageHeaders> プロパティを使用してアクセスします。 <xref:System.ServiceModel.Channels.MessageHeaders> は、<xref:System.ServiceModel.Channels.MessageHeaderInfo> オブジェクトのコレクションです。個々のヘッダーには、その <xref:System.Collections.IEnumerable> インターフェイスまたはインデクサーを使用してアクセスできます。 たとえば、次のコードでは、`Message` のすべてのヘッダー名を表示します。  
+ には、 `Message` *ヘッダー*と呼ばれる任意の数の名前付き XML フラグメントを含めることができます。 通常、各フラグメントは SOAP ヘッダーにマップされます。 ヘッダーには、`Headers` 型の <xref:System.ServiceModel.Channels.MessageHeaders> プロパティを使用してアクセスします。 <xref:System.ServiceModel.Channels.MessageHeaders> は、<xref:System.ServiceModel.Channels.MessageHeaderInfo> オブジェクトのコレクションです。個々のヘッダーには、その <xref:System.Collections.IEnumerable> インターフェイスまたはインデクサーを使用してアクセスできます。 たとえば、次のコードでは、`Message` のすべてのヘッダー名を表示します。  
   
  [!code-csharp[C_UsingTheMessageClass#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#8)]
  [!code-vb[C_UsingTheMessageClass#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#8)]  
@@ -168,7 +169,7 @@ ms.locfileid: "69967847"
  ヘッダーの XML データにアクセスするには、<xref:System.ServiceModel.Channels.MessageHeaders.GetReaderAtHeader%2A> を呼び出し、特定のヘッダー インデックスの XML リーダーを返すことができます。 ヘッダーの内容をオブジェクトに逆シリアル化する場合は、<xref:System.ServiceModel.Channels.MessageHeaders.GetHeader%60%601%28System.Int32%29> または他のいずれかのオーバーロードを使用します。 最も基本的なオーバーロードは、既定の設定で構成された <xref:System.Runtime.Serialization.DataContractSerializer> を使用してヘッダーを逆シリアル化します。 異なるシリアライザーを使用したり、異なる構成の `DataContractSerializer` を使用したりする場合は、`XmlObjectSerializer` を受け取るオーバーロードの 1 つを使用します。 インデックスの代わりに、ヘッダー名、名前空間、オプションとして `Actor` 値のリストを受け取るオーバーロードもあります。これは、`FindHeader` と `GetHeader` の組み合わせです。  
   
 ## <a name="working-with-properties"></a>プロパティの操作  
- `Message` インスタンスには、任意の数の任意の型の名前付きオブジェクトを含めることができます。 このコレクションは、`Properties` 型の `MessageProperties` プロパティを使用してアクセスできます。 コレクションは、<xref:System.Collections.Generic.IDictionary%602> インターフェイスを実装しており、<xref:System.String> から <xref:System.Object> へのマッピングの機能を果たします。 通常、プロパティ値は、ネットワーク上のメッセージのどの部分にも直接マップされるのではなく、WCF チャネルスタックまたは<xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29>サービスフレームワークのさまざまなチャネルに対して、さまざまなメッセージ処理ヒントを提供します。 例については、「[データ転送アーキテクチャの概要](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)」を参照してください。  
+ `Message` インスタンスには、任意の数の任意の型の名前付きオブジェクトを含めることができます。 このコレクションは、`Properties` 型の `MessageProperties` プロパティを使用してアクセスできます。 コレクションは、<xref:System.Collections.Generic.IDictionary%602> インターフェイスを実装しており、<xref:System.String> から <xref:System.Object> へのマッピングの機能を果たします。 通常、プロパティ値は、ネットワーク上のメッセージのどの部分にも直接マップされるのではなく、WCF チャネルスタックまたはサービスフレームワークのさまざまなチャネルに対して、さまざまなメッセージ処理ヒントを提供し <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> ます。 例については、「[データ転送アーキテクチャの概要](data-transfer-architectural-overview.md)」を参照してください。  
   
 ## <a name="inheriting-from-the-message-class"></a>Message クラスからの継承  
  `CreateMessage` を使用して作成された組み込みのメッセージ型がユーザーの要件を満たさない場合は、`Message` クラスから派生するクラスを作成します。  
@@ -181,7 +182,7 @@ ms.locfileid: "69967847"
  [!code-csharp[C_UsingTheMessageClass#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#9)]
  [!code-vb[C_UsingTheMessageClass#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#9)]  
   
- <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> メソッドと <xref:System.ServiceModel.Channels.Message.OnCreateBufferedCopy%2A> メソッドには、ほとんどの場合に有効な既定の実装があります。 既定の実装は、<xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A> を呼び出し、結果をバッファーに格納して、格納後のバッファーを操作します。 ただし、これが十分ではない場合もあります。 前の例では、メッセージを読み込むと 100,000 個の XML 要素がバッファーに格納されることになりますが、これは望ましくありません。 <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> をオーバーライドすると、乱数を提供するカスタムの <xref:System.Xml.XmlDictionaryReader> 派生クラスを返すことができます。 次の例に<xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A>示すように、をオーバーライド<xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents>して、メソッドが返すリーダーを使用することができます。  
+ <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> メソッドと <xref:System.ServiceModel.Channels.Message.OnCreateBufferedCopy%2A> メソッドには、ほとんどの場合に有効な既定の実装があります。 既定の実装は、<xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A> を呼び出し、結果をバッファーに格納して、格納後のバッファーを操作します。 ただし、これが十分ではない場合もあります。 前の例では、メッセージを読み込むと 100,000 個の XML 要素がバッファーに格納されることになりますが、これは望ましくありません。 <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> をオーバーライドすると、乱数を提供するカスタムの <xref:System.Xml.XmlDictionaryReader> 派生クラスを返すことができます。 次の例に示すように、をオーバーライドし <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A> て、メソッドが返すリーダーを使用することができ <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> ます。  
   
  [!code-csharp[C_UsingTheMessageClass#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#10)]
  [!code-vb[C_UsingTheMessageClass#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#10)]  
@@ -193,7 +194,7 @@ ms.locfileid: "69967847"
  メッセージのコピーを作成した場合、作成したコピーでは、元のメッセージのメッセージ ヘッダーが使用されます。  
   
 ### <a name="other-members-that-can-be-overridden"></a>オーバーライド可能なその他のメンバー  
- <xref:System.ServiceModel.Channels.Message.OnWriteStartEnvelope%2A>、<xref:System.ServiceModel.Channels.Message.OnWriteStartHeaders%2A>、および <xref:System.ServiceModel.Channels.Message.OnWriteStartBody%2A> メソッドをオーバーライドして、SOAP エンベロープ、SOAP ヘッダー、SOAP 本文要素の開始タグの書き込み方法を指定できます。通常、これらは、`<soap:Envelope>`、`<soap:Header>`、および `<soap:Body>` に対応します。 一般的に、<xref:System.ServiceModel.Channels.Message.Version> プロパティで <xref:System.ServiceModel.Channels.MessageVersion.None> が返された場合、これらのメソッドで何も書き込まないでください。  
+ 、、およびの各メソッドをオーバーライドして <xref:System.ServiceModel.Channels.Message.OnWriteStartEnvelope%2A> 、 <xref:System.ServiceModel.Channels.Message.OnWriteStartHeaders%2A> <xref:System.ServiceModel.Channels.Message.OnWriteStartBody%2A> SOAP エンベロープ、soap ヘッダー、および soap 本文要素の開始タグの書き込み方法を指定できます。通常 `<soap:Envelope>` 、これらは、、、およびに対応 `<soap:Header>` `<soap:Body>` します。 一般的に、<xref:System.ServiceModel.Channels.Message.Version> プロパティで <xref:System.ServiceModel.Channels.MessageVersion.None> が返された場合、これらのメソッドで何も書き込まないでください。  
   
 > [!NOTE]
 > `OnGetReaderAtBodyContents` の既定の実装では、`OnWriteStartEnvelope` を呼び出して結果をバッファーに格納する前に、`OnWriteStartBody` と `OnWriteBodyContents` を呼び出します。 ヘッダーは書き込まれません。  

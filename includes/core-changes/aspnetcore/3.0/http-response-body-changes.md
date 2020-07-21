@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cd66317bc93343e03a73dec74dff534776ca42e4
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198484"
 ---
 ### <a name="http-response-body-infrastructure-changes"></a>HTTP:応答本文のインフラストラクチャの変更
@@ -30,7 +30,7 @@ HTTP 応答本文に関連付けられた次の 3 つの API がありました�
 
 目的は、応答本文の API を単一の新しい機能インターフェイスに結合することです。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 `IHttpResponseFeature.Body`、`IHttpSendFileFeature`、または `IHttpBufferingFeature` を以前に使用していた場所で `IHttpResponseBodyFeature` を使用します。
 

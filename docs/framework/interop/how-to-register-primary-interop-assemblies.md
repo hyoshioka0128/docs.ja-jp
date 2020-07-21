@@ -1,16 +1,16 @@
 ---
 title: '方法: プライマリ相互運用機能アセンブリを登録する'
+description: アセンブリ登録ツール (Regasm.exe) を使用してプライマリ相互運用機能アセンブリを登録し、相互運用機能アセンブリに関連するその他の問題を確認します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - registering primary interop assemblies
 - primary interop assemblies, registering
 ms.assetid: 4b2fcf8a-429d-43ce-8334-e026040be8bb
-ms.openlocfilehash: c799e4ead2932f1c376a57488df30390ad48b90f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: a15bda7b40f160b31028c62cf7c73bdedd9541fa
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73107680"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622745"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>方法: プライマリ相互運用機能アセンブリを登録する
 

@@ -1,5 +1,6 @@
 ---
 title: '方法: 公開キーと秘密キーのキー ペアを作成する'
+description: 厳密な名前が付いたアセンブリが作成するためにコンパイル時に利用される、公開キーと秘密キーからなる暗号鍵の組み合わせを作成する方法について説明します。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - key pairs for strong-named assemblies
@@ -15,12 +16,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 8a9845e3cd18ff86ec04216ad0e9c5606186b113
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 675871170e7fd4171f0fe09b04d1dbb8906beda4
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122520"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378550"
 ---
 # <a name="how-to-create-a-public-private-key-pair"></a>方法: 公開キーと秘密キーのキー ペアを作成する
 
@@ -33,7 +34,7 @@ ms.locfileid: "73122520"
 
 キー ペアを作成するには、コマンド プロンプトに次のコマンドを入力します。
 
-**sn –k** \<*ファイル名*>
+**sn –k** \<*file name*>
 
 このコマンドでは、*ファイル名*はキー ペアを含む出力ファイルの名前になります。
 

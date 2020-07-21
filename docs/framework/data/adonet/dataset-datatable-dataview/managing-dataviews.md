@@ -7,17 +7,17 @@ dev_langs:
 ms.assetid: 0b67fab5-1722-4d2b-bfc1-247a75f0f1ee
 ms.openlocfilehash: 5e85fccddf6359791ea702667a36b44f611815dc
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70784507"
 ---
 # <a name="managing-dataviews"></a>DataViews の管理
-<xref:System.Data.DataViewManager> のすべてのテーブルのビュー設定を管理するには、<xref:System.Data.DataView> を使用します。 リレーションシップを移動するグリッドなど、複数のテーブルにバインドするコントロールがある場合は、 **DataViewManager**が理想的です。  
+<xref:System.Data.DataViewManager> のすべてのテーブルのビュー設定を管理するには、<xref:System.Data.DataView> を使用します。 リレーションシップを移動するグリッドなどのように、1 つのコントロールを複数のテーブルに連結する場合は、**DataViewManager** が適しています。  
   
- **DataViewManager**には、 <xref:System.Data.DataViewSetting> <xref:System.Data.DataSet>内のテーブルのビュー設定を設定するために使用されるオブジェクトのコレクションが含まれています。 に<xref:System.Data.DataViewSettingCollection>は、 <xref:System.Data.DataViewSetting> **データセット**内のテーブルごとに1つのオブジェクトが格納されます。 参照されるテーブルの既定の**Applydefaultsort**、 **Sort**、 **RowFilter**、 **Rowstatefilter**の各プロパティは、 **DataViewSetting**を使用して設定できます。 特定のテーブルの**DataViewSetting**は、名前または序数参照を使用して参照することも、特定のテーブルオブジェクトへの参照を渡すことによって参照することもできます。 **DataViewManager**内の**DataViewSetting**オブジェクトのコレクションには、 **DataViewSettings**プロパティを使用してアクセスできます。  
+ **DataViewManager** には、<xref:System.Data.DataSet> のテーブルのビュー設定に使用される <xref:System.Data.DataViewSetting> オブジェクトのコレクションが含まれています。 <xref:System.Data.DataViewSettingCollection> には、**DataSet** の各テーブルに対応する <xref:System.Data.DataViewSetting> オブジェクトが 1 つずつ含まれています。 **DataViewSetting** を使用することで、参照テーブルの既定の **ApplyDefaultSort**、**Sort**、**RowFilter**、**RowStateFilter** の各プロパティを設定できます。 名前または序数参照によって、または参照をその特定のテーブル オブジェクトに渡すことによって、特定のテーブルの **DataViewSetting** を参照できます。 **DataViewSettings** プロパティを使用することで、**DataViewManager** の **DataViewSetting** オブジェクトのコレクションにアクセスできます。  
   
- 次のコード例では、**データセット**に**Northwind**データベーステーブル SQL Server、**顧客**、**注文**、および**注文の詳細**を入力して、テーブル間のリレーションシップを作成し、 **DataViewManager**を使用します。既定の**DataView**設定を設定し、 **DataGrid**を**DataViewManager**にバインドします。 この例では、テーブルの主キーによって並べ替えられるように、**データセット**内のすべてのテーブルの既定の**DataView**設定を設定し (**applydefaultsort** = **true**)、 **Customers**テーブルの並べ替え順序をに変更します。**CompanyName**で並べ替えます。  
+ 次のコード例では、**DataSet** に、SQL Server の **Northwind** データベースの **Customers**、**Orders**、**Order Details** の各テーブルを格納し、テーブル間のリレーションシップを作成し、**DataViewManager** を使用して既定の **DataView** の設定を指定し、**DataGrid** を **DataViewManager** にバインドします。 この例では、**DataSet** のすべてのテーブルに対して、テーブルの主キーによって並べ替えるように (**ApplyDefaultSort** = **true**) **DataView** の既定の設定を指定した後、**Customers** テーブルの並べ替え順序を **CompanyName** で並べ替えるように変更します。  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection to Northwind.  

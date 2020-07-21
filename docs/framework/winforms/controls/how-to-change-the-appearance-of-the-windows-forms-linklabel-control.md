@@ -1,5 +1,5 @@
 ---
-title: '方法: Windows フォーム LinkLabel コントロールの表示形式を変更する'
+title: リンクラベル コントロールの外観を変更する
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,21 +12,21 @@ helpviewer_keywords:
 - examples [Windows Forms], LinkLabel control
 - LinkLabel control [Windows Forms], examples
 ms.assetid: fdc5854f-5162-4457-8cbe-1042feb2d132
-ms.openlocfilehash: f0a5805561509501ca38a7fec6b4731af190e3c3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: df66991289373a05fc7c27b7768a96643e3bbae0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322018"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142131"
 ---
-# <a name="how-to-change-the-appearance-of-the-windows-forms-linklabel-control"></a>方法: Windows フォーム LinkLabel コントロールの表示形式を変更する
-によって表示されるテキストを変更することができます、<xref:System.Windows.Forms.LinkLabel>さまざまな目的に合わせてコントロール。 たとえば、下線付きで特定の色で表示するテキストを設定してテキストをクリックすることをユーザーに示すために一般的なプラクティスを勧めします。 ユーザーは、テキストをクリックすると、異なる色に色を変更します。 この動作を制御するには、5 つの異なるプロパティを設定することができます。 <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>プロパティ。  
+# <a name="how-to-change-the-appearance-of-the-windows-forms-linklabel-control"></a>方法 : Windows フォーム LinkLabel コントロールの表示形式を変更する
+コントロールによって表示されるテキストは、<xref:System.Windows.Forms.LinkLabel>さまざまな目的に合わせて変更できます。 たとえば、テキストを特定の色で下線で表示するように設定することで、テキストをクリックできることをユーザーに示すのが一般的です。 ユーザーがテキストをクリックすると、色が別の色に変わります。 この<xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>動作を制御するには、 、 、 、<xref:System.Windows.Forms.LinkLabel.LinkArea%2A>および<xref:System.Windows.Forms.LinkLabel.LinkColor%2A><xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>プロパティの 5<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>つの異なるプロパティを設定できます。  
   
-### <a name="to-change-the-appearance-of-a-linklabel-control"></a>LinkLabel コントロールの外観を変更するには  
+### <a name="to-change-the-appearance-of-a-linklabel-control"></a>リンク ラベル コントロールの外観を変更するには  
   
-1. 設定、<xref:System.Windows.Forms.LinkLabel.LinkColor%2A>と<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>必要な色のプロパティ。  
+1. プロパティ<xref:System.Windows.Forms.LinkLabel.LinkColor%2A>と<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>プロパティを目的の色に設定します。  
   
-     これを行うプログラムから、またはデザイン時に、**プロパティ**ウィンドウ。  
+     これは、プログラムによって、またはデザイン時に **[プロパティ]** ウィンドウで実行できます。  
   
     ```vb  
     ' You can set the color using decimal values for red, green, and blue  
@@ -49,9 +49,9 @@ ms.locfileid: "59322018"
     linkLabel1->VisitedLinkColor = Color::Purple;  
     ```  
   
-2. 設定、<xref:System.Windows.Forms.LinkLabel.Text%2A>プロパティに適切なキャプション。  
+2. プロパティを<xref:System.Windows.Forms.LinkLabel.Text%2A>適切なキャプションに設定します。  
   
-     これを行うプログラムから、またはデザイン時に、**プロパティ**ウィンドウ。  
+     これは、プログラムによって、またはデザイン時に **[プロパティ]** ウィンドウで実行できます。  
   
     ```vb  
     LinkLabel1.Text = "Click here to see more."  
@@ -65,9 +65,9 @@ ms.locfileid: "59322018"
     linkLabel1->Text = "Click here to see more.";  
     ```  
   
-3. 設定、<xref:System.Windows.Forms.LinkLabel.LinkArea%2A>プロパティのキャプションのどの部分がリンクとして示されます。  
+3. キャプションのどの<xref:System.Windows.Forms.LinkLabel.LinkArea%2A>部分をリンクとして示すかを決定するには、プロパティを設定します。  
   
-     <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>値を表示、 <xref:System.Windows.Forms.LinkArea> 2 つの数値、文字の開始位置および文字の数を格納しています。 これを行うプログラムから、またはデザイン時に、**プロパティ**ウィンドウ。  
+     値<xref:System.Windows.Forms.LinkLabel.LinkArea%2A>は、開始文字の<xref:System.Windows.Forms.LinkArea>位置と文字数の 2 つの数字を含むで表されます。 これは、プログラムによって、またはデザイン時に **[プロパティ]** ウィンドウで実行できます。  
   
     ```vb  
     LinkLabel1.LinkArea = new LinkArea(6,4)  
@@ -81,13 +81,13 @@ ms.locfileid: "59322018"
     linkLabel1->LinkArea = LinkArea(6,4);  
     ```  
   
-4. 設定、<xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>プロパティを<xref:System.Windows.Forms.LinkBehavior.AlwaysUnderline>、 <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>、または<xref:System.Windows.Forms.LinkBehavior.NeverUnderline>します。  
+4. プロパティを<xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkBehavior.AlwaysUnderline> <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>、または<xref:System.Windows.Forms.LinkBehavior.NeverUnderline>に設定します。  
   
-     設定されている場合<xref:System.Windows.Forms.LinkBehavior.HoverUnderline>、によって決まりますキャプションの一部<xref:System.Windows.Forms.LinkLabel.LinkArea%2A>にポインターを合わせると下線付きのみです。  
+     に<xref:System.Windows.Forms.LinkBehavior.HoverUnderline>設定されている場合、指定された<xref:System.Windows.Forms.LinkLabel.LinkArea%2A>キャプションの部分は、ポインタが上にある場合にのみ下線が引かれます。  
   
-5. <xref:System.Windows.Forms.LinkLabel.LinkClicked>イベント ハンドラーでは、設定、<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>プロパティを`true`します。  
+5. イベント<xref:System.Windows.Forms.LinkLabel.LinkClicked>ハンドラーで、プロパティを<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>に`true`設定します。  
   
-     リンクにアクセスしたときに、色では、通常、何らかの方法でその外観を変更する一般的な方法です。 指定された色に変更は、<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>プロパティ。  
+     リンクが訪れた場合、通常は色によって外観を変更するのが一般的です。 テキストは、プロパティで指定された色に<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>変更されます。  
   
     ```vb  
     Protected Sub LinkLabel1_LinkClicked (ByVal sender As Object, _  
@@ -102,7 +102,7 @@ ms.locfileid: "59322018"
     ```csharp  
     protected void LinkLabel1_LinkClicked(object sender, System.EventArgs e)  
     {  
-       // Change the color of the link text by setting LinkVisited   
+       // Change the color of the link text by setting LinkVisited
        // to True.  
        linkLabel1.LinkVisited = true;  
        // Then do whatever other action is appropriate  
@@ -114,7 +114,7 @@ ms.locfileid: "59322018"
        System::Void linkLabel1_LinkClicked(System::Object ^  sender,  
           System::Windows::Forms::LinkLabelLinkClickedEventArgs ^  e)  
        {  
-          // Change the color of the link text by setting LinkVisited   
+          // Change the color of the link text by setting LinkVisited
           // to True.  
           linkLabel1->LinkVisited = true;  
           // Then do whatever other action is appropriate  
@@ -128,5 +128,5 @@ ms.locfileid: "59322018"
 - <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>
 - <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>
 - [LinkLabel コントロールの概要](linklabel-control-overview-windows-forms.md)
-- [方法: オブジェクトへのリンクまたは Web ページと Windows フォーム LinkLabel コントロール](link-to-an-object-or-web-page-with-wf-linklabel-control.md)
+- [方法 : Windows フォーム LinkLabel コントロールでオブジェクトまたは Web ページにリンクする](link-to-an-object-or-web-page-with-wf-linklabel-control.md)
 - [LinkLabel コントロール](linklabel-control-windows-forms.md)

@@ -1,17 +1,44 @@
 ---
-ms.openlocfilehash: f18b96eaeec8a6427ffb7776327517989d0225d0
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 418bcdca1e9a325894891d7b0e080ce035e2d1b4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72887793"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614684"
 ---
 ### <a name="aspnet-accessibility-improvements-in-net-framework-471"></a>.NET Framework 4.7.1 の ASP.NET アクセシビリティ機能の強化
 
-|   |   |
-|---|---|
-|説明|.NET Framework 4.7.1 以降、ASP.NET のお客様のサポートを改善する目的で、ASP.NET Web コントロールによる Visual Studio のアクセシビリティ テクノロジの処理方法が向上しています。  この機能強化には次の変更内容が含まれています。<ul><li>[詳細の表示] ウィザードの [フィールドの追加] ダイアログや ListView ウィザードの [ListView の構成] ダイアログなど、コントロールで不足していた UI アクセシビリティ パターンを実装するための変更。</li><li>データ ページャー フィールド エディターなど、ハイ コントラスト モードでの表示を改善するための変更。</li><li>DataPager コントロールの [ページャーのフィールドを編集] ウィザードの [フィールド] ダイアログ、[ObjectContext の構成] ダイアログ、[データ ソースの構成] ウィザードの [Configure Data Selction]\(データの選択の構成\) ダイアログなど、キーボードの操作性を改善するための変更。</li></ul>|
-|提案される解決策|**これらの変更を選択する方法と選択しない方法**<br>Visual Studio のデザイナーでこれらの変更を利用するには、.NET Framework 4.7.1 以降で実行する必要があります。 Web アプリケーションの場合、次のいずれかの手法をとることで、以上の変更によって機能が強化されます。<ul><li>Visual Studio 2017 15.3 以降をインストールする。このバージョンからは既定で、次の項目にある AppContext スイッチで新しいアクセシビリティ機能に対応しています。</li><li>下の例のように、devenv.exe.config ファイルの <code>&lt;runtime&gt;</code> セクションに <code>Switch.UseLegacyAccessibilityFeatures</code> AppContext スイッチを追加し、それを <code>false</code> に設定することで、以前のアクセシビリティ動作を無効にする。</li></ul><pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;&#10;&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;...&#13;&#10;&lt;!-- AppContextSwitchOverrides value attribute is in the form of &#39;key1=true/false;key2=true/false&#39;  --&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.UseLegacyAccessibilityFeatures=false&quot; /&gt;&#13;&#10;...&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>.NET Framework 4.7.1 以降を対象とするアプリケーションで以前のアクセシビリティ動作を残す場合、この AppContext スイッチを明示的に <code>true</code> に設定することで以前のアクセシビリティ機能を選択できます。|
-|スコープ|マイナー|
-|Version|4.7.1|
-|型|再ターゲット中|
+#### <a name="details"></a>説明
+
+.NET Framework 4.7.1 以降、ASP.NET のお客様のサポートを改善する目的で、ASP.NET Web コントロールによる Visual Studio のアクセシビリティ テクノロジの処理方法が向上しています。  この機能強化には次の変更内容が含まれています。
+
+- [詳細の表示] ウィザードの [フィールドの追加] ダイアログや ListView ウィザードの [ListView の構成] ダイアログなど、コントロールで不足していた UI アクセシビリティ パターンを実装するための変更。
+- データ ページャー フィールド エディターなど、ハイ コントラスト モードでの表示を改善するための変更。
+- DataPager コントロールの [ページャーのフィールドを編集] ウィザードの [フィールド] ダイアログ、[ObjectContext の構成] ダイアログ、[データ ソースの構成] ウィザードの [データの選択の構成] ダイアログなど、キーボードの操作性を改善するための変更。
+
+#### <a name="suggestion"></a>提案される解決策
+
+**以上の変更を選択する方法と選択しない方法** Visual Studio デザイナーの場合、.NET Framework 4.7.1 以降で実行しなければ、以上の変更から改善を得ることはありません。 Web アプリケーションの場合、次のいずれかの手法をとることで、以上の変更によって機能が強化されます。
+
+- Visual Studio 2017 15.3 以降をインストールする。このバージョンからは既定で、次の項目にある AppContext スイッチで新しいアクセシビリティ機能に対応しています。
+- 下の例のように、devenv.exe.config ファイルの `<runtime>` セクションに `Switch.UseLegacyAccessibilityFeatures` AppContext スイッチを追加し、それを `false` に設定することで、以前のアクセシビリティ動作を無効にする。
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<runtime>
+...
+<!-- AppContextSwitchOverrides value attribute is in the form of 'key1=true/false;key2=true/false'  -->
+<AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false" />
+...
+</runtime>
+</configuration>
+```
+
+.NET Framework 4.7.1 以降を対象とするアプリケーションで以前のアクセシビリティ動作を残す場合、この AppContext スイッチを明示的に `true` に設定することで以前のアクセシビリティ機能を選択できます。
+
+| 名前    | [値]       |
+|:--------|:------------|
+| スコープ   | マイナー       |
+| バージョン | 4.7.1       |
+| 種類    | 再ターゲット中 |

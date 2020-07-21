@@ -6,18 +6,18 @@ f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#client
 ms.assetid: bf0f7031-76c8-4e7e-a6c6-9ad9119134be
 ms.openlocfilehash: 7aa3755be97a839cb576d53852b75cfe50e39276
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "72773949"
 ---
-# <a name="client"></a>\<client >
+# \<client>
 `client` 要素は、クライアントが接続可能なエンドポイントの一覧を定義します。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<system >** ](system-servicemodel.md) \
-&nbsp; &nbsp; &nbsp; &nbsp; **\<client >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<client>**
 
 ## <a name="syntax"></a>構文
 
@@ -36,14 +36,14 @@ ms.locfileid: "72773949"
  以降のセクションでは、属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
- None
+ なし
 
 ### <a name="child-elements"></a>子要素
 
 |要素|説明|
 |-------------|-----------------|
-|[\< エンドポイント >](endpoint-of-client.md)|このクライアントが接続できるエンドポイントを指定するエンドポイント要素のコレクションを格納します。|
-|[\<metadata >](metadata.md)|メタデータを処理するための設定を含みます。|
+|[\<endpoint>](endpoint-of-client.md)|このクライアントが接続できるエンドポイントを指定するエンドポイント要素のコレクションを格納します。|
+|[\<metadata>](metadata.md)|メタデータを処理するための設定を含みます。|
 
 ### <a name="parent-elements"></a>親要素
 
@@ -51,7 +51,7 @@ ms.locfileid: "72773949"
 |-------------|-----------------|
 |[\<system.serviceModel>](system-servicemodel.md)|すべての Windows Communication Foundation (WCF) 構成要素のルート要素です。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
  `client` セクションは、クライアントが接続可能なエンドポイントの一覧を定義します。 クライアント セクションに示される各エンドポイントは、独自のバインディング、動作、およびコントラクトを定義します。 各エンドポイントは、`name` 属性と `contract` 属性の組み合わせで一意に識別されます。 クライアント コードは、クライアントが実装するサービスのエンドポイントに接続するための `name` を指定します。 `name` 属性が省略されている場合、クライアントが実装するコントラクトのエンドポイントが既定のエンドポイントとして機能します。
 
  さらに、このセクションはメタデータを処理するための設定も指定します。

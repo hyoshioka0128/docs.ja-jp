@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: cf2cc94c-bbc2-4e54-a601-605038ab63fe
 ms.openlocfilehash: c0be95d84aa1b4b8b05e623f9012664de1a401a6
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62054888"
 ---
 # <a name="grid"></a>グリッド
-<xref:System.Windows.Controls.Grid>要素を使用して、行と列の内容を正確に配置します。  
+<xref:System.Windows.Controls.Grid> 要素は、行と列のコンテンツを正確に配置するために使用されます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [方法トピック](grid-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
-ms.openlocfilehash: 69db887bf8e7b51c4450c04bd1a08d3d952e84f7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 10d6db63368ee55040f85f922b9483982e8ff264
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643572"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596969"
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>方法: X.509 証明書を使用してサービスをセキュリティで保護する
-X.509 証明書でサービスをセキュリティで保護するには、ほとんどのバインドでは、Windows Communication Foundation (WCF) を使用する基本的な手法です。 ここでは、X.509 証明書を使用して自己ホスト サービスを構成する手順を示します。  
+X.509 証明書を使用してサービスをセキュリティで保護することは、Windows Communication Foundation (WCF) のほとんどのバインディングで使用される基本的な手法です。 ここでは、X.509 証明書を使用して自己ホスト サービスを構成する手順を示します。  
   
- サーバーの認証に使用できる有効な証明書があることが前提条件になります。 この証明書は、信頼された証明機関によってサーバーに対して発行される必要があります。 証明書が無効な場合、サービスの使用を試みるすべてのクライアントがサービスを信頼しなくなるため、接続が作成されません。 証明書の使用に関する詳細については、次を参照してください。 [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)します。  
+ サーバーの認証に使用できる有効な証明書があることが前提条件になります。 この証明書は、信頼された証明機関によってサーバーに対して発行される必要があります。 証明書が無効な場合、サービスの使用を試みるすべてのクライアントがサービスを信頼しなくなるため、接続が作成されません。 証明書の使用方法の詳細については、「[証明書の](working-with-certificates.md)使用」を参照してください。  
   
 ### <a name="to-configure-a-service-with-a-certificate-using-code"></a>コードにより証明書を使用してサービスを構成するには  
   
-1. サービス コントラクトを作成し、サービスを実装します。 詳細については、次を参照してください。[のデザインと実装サービス](../../../../docs/framework/wcf/designing-and-implementing-services.md)します。  
+1. サービス コントラクトを作成し、サービスを実装します。 詳細については、「[サービスの設計と実装](../designing-and-implementing-services.md)」を参照してください。  
   
 2. 次のコードに示すように、<xref:System.ServiceModel.WSHttpBinding> クラスのインスタンスを作成し、そのセキュリティ モードを <xref:System.ServiceModel.SecurityMode.Message> に設定します。  
   
@@ -31,7 +31,7 @@ X.509 証明書でサービスをセキュリティで保護するには、ほ�
      [!code-csharp[C_SecureWithCertificate#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#2)]
      [!code-vb[C_SecureWithCertificate#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#2)]  
   
-4. サービスのベース アドレス用に <xref:System.Uri> クラスのインスタンスを作成します。 `WSHttpBinding`はそのスキーマを持つ Uniform Resource Identifier (URI)、HTTP トランスポートが開始する必要がありますまたは Windows Communication Foundation (WCF) サービスが開かれたときに例外がスローされます。  
+4. サービスのベース アドレス用に <xref:System.Uri> クラスのインスタンスを作成します。 は `WSHttpBinding` HTTP トランスポートを使用するため、Uniform Resource Identifier (URI) はそのスキーマで始まる必要があります。または、サービスを開いたときに Windows Communication Foundation (WCF) によって例外がスローされます。  
   
      [!code-csharp[C_SecureWithCertificate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#3)]
      [!code-vb[C_SecureWithCertificate#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#3)]  
@@ -84,4 +84,4 @@ X.509 証明書でサービスをセキュリティで保護するには、ほ�
   
 ## <a name="see-also"></a>関連項目
 
-- [証明書の使用](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [証明書の使用](working-with-certificates.md)

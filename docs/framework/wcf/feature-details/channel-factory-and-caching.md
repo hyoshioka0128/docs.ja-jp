@@ -2,18 +2,18 @@
 title: チャネル ファクトリとキャッシュ
 ms.date: 03/30/2017
 ms.assetid: 954f030e-091c-4c0e-a7a2-10f9a6b1f529
-ms.openlocfilehash: 98b77071204e2c2f98609e6c5bb1ca84a896dd58
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5b8348a98b484ca08e3dbeba141dc49825c8c071
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040208"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587366"
 ---
 # <a name="channel-factory-and-caching"></a>チャネル ファクトリとキャッシュ
 
 WCF クライアント アプリケーションでは、<xref:System.ServiceModel.ChannelFactory%601> クラスを使用して WCF サービスとの通信チャネルを作成します。  <xref:System.ServiceModel.ChannelFactory%601> インスタンスを作成する場合は、次の操作が必要になるため、オーバーヘッドが生じます。
 
-- 構築、<xref:System.ServiceModel.Description.ContractDescription>ツリー
+- <xref:System.ServiceModel.Description.ContractDescription> ツリーの構築
 
 - 必要なすべての CLR 型の反映
 
@@ -26,7 +26,7 @@ WCF クライアント アプリケーションでは、<xref:System.ServiceMode
 > [!TIP]
 > <xref:System.ServiceModel.ChannelFactory%601> クラスを直接使用する場合は、チャネル ファクトリの作成を直接制御できます。
 
-[ServiceModel メタデータユーティリティツール (svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して生成された WCF <xref:System.ServiceModel.ClientBase%601>クライアントプロキシは、から派生します。 <xref:System.ServiceModel.ClientBase%601> では、チャネル ファクトリのキャッシュ動作を定義する静的な <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A> プロパティを定義します。 キャッシュ設定は特定の型に対して行われます。 たとえば、以下に`ClientBase<ITest>.CacheSettings`定義されているいずれかの値に設定すると、型`ITest`のプロキシ/ClientBase にのみ影響します。 最初のプロキシ/ClientBase インスタンスが作成された時点で、特定の <xref:System.ServiceModel.ClientBase%601> のキャッシュ設定は不変になります。
+[ServiceModel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)を使用して生成された WCF クライアントプロキシは、から派生 <xref:System.ServiceModel.ClientBase%601> します。 <xref:System.ServiceModel.ClientBase%601> では、チャネル ファクトリのキャッシュ動作を定義する静的な <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A> プロパティを定義します。 キャッシュ設定は特定の型に対して行われます。 たとえば、 `ClientBase<ITest>.CacheSettings` 以下に定義されているいずれかの値に設定すると、型のプロキシ/ClientBase にのみ影響し `ITest` ます。 最初のプロキシ/ClientBase インスタンスが作成された時点で、特定の <xref:System.ServiceModel.ClientBase%601> のキャッシュ設定は不変になります。
 
 ## <a name="specifying-caching-behavior"></a>キャッシュ動作の指定
 
@@ -34,8 +34,8 @@ WCF クライアント アプリケーションでは、<xref:System.ServiceMode
 
 |キャッシュの設定値|説明|
 |-------------------------|-----------------|
-|<xref:System.ServiceModel.CacheSetting.AlwaysOn>|アプリケーション ドメイン内の <xref:System.ServiceModel.ClientBase%601> のすべてのインスタンスはキャッシュに参加できます。 開発者は、セキュリティがキャッシュに悪影響を与えないことを確認しています。 の "セキュリティに影響する" プロパティにアクセスする場合でも、 <xref:System.ServiceModel.ClientBase%601>キャッシュは無効になりません。 の<xref:System.ServiceModel.ClientBase%601> "セキュリティに影響する" プロパティは<xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>、 <xref:System.ServiceModel.ClientBase%601.Endpoint%2A> 、 <xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A>およびです。|
-|<xref:System.ServiceModel.CacheSetting.Default>|構成ファイルで定義されているエンドポイントから作成された <xref:System.ServiceModel.ClientBase%601> のインスタンスのみがアプリケーション ドメイン内のキャッシュに参加します。 そのアプリケーション ドメイン内にプログラムで作成された <xref:System.ServiceModel.ClientBase%601> のインスタンスはキャッシュに参加しません。 また、"セキュリティに影響する" プロパティが<xref:System.ServiceModel.ClientBase%601>アクセスされると、のインスタンスに対してキャッシュが無効になります。|
+|<xref:System.ServiceModel.CacheSetting.AlwaysOn>|アプリケーション ドメイン内の <xref:System.ServiceModel.ClientBase%601> のすべてのインスタンスはキャッシュに参加できます。 開発者は、セキュリティがキャッシュに悪影響を与えないことを確認しています。 の "セキュリティに影響する" プロパティにアクセスする場合でも、キャッシュは無効になりません <xref:System.ServiceModel.ClientBase%601> 。 の "セキュリティに影響する" プロパティ <xref:System.ServiceModel.ClientBase%601> は <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> 、、 <xref:System.ServiceModel.ClientBase%601.Endpoint%2A> および <xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A> です。|
+|<xref:System.ServiceModel.CacheSetting.Default>|構成ファイルで定義されているエンドポイントから作成された <xref:System.ServiceModel.ClientBase%601> のインスタンスのみがアプリケーション ドメイン内のキャッシュに参加します。 そのアプリケーション ドメイン内にプログラムで作成された <xref:System.ServiceModel.ClientBase%601> のインスタンスはキャッシュに参加しません。 また、 <xref:System.ServiceModel.ClientBase%601> "セキュリティに影響する" プロパティがアクセスされると、のインスタンスに対してキャッシュが無効になります。|
 |<xref:System.ServiceModel.CacheSetting.AlwaysOff>|対象となるアプリケーション ドメイン内にある特定の型の <xref:System.ServiceModel.ClientBase%601> のすべてのインスタンスのキャッシュが無効になります。|
 
 <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A> プロパティを使用する方法を次のコード スニペットに示します。
@@ -116,7 +116,7 @@ public partial class TestClient : System.ServiceModel.ClientBase, ITest {}
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.ServiceModel.ClientBase%601>
-- [クライアントを構築する](../../../../docs/framework/wcf/building-clients.md)
-- [クライアント](../../../../docs/framework/wcf/feature-details/clients.md)
-- [WCF クライアントを使用したサービスへのアクセス](../../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)
-- [方法: ChannelFactory を使用する](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)
+- [クライアントを構築する](../building-clients.md)
+- [クライアント](clients.md)
+- [WCF クライアントを使用したサービスへのアクセス](../accessing-services-using-a-wcf-client.md)
+- [方法: ChannelFactory を使用する](how-to-use-the-channelfactory.md)

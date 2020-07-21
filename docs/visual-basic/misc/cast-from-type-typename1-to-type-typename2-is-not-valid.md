@@ -1,17 +1,17 @@
 ---
-title: 型からキャスト '<typename1>' type' に<typename2>' が無効です
+title: 型 "<typename1>" から型 '<typename2>' へのキャストは有効ではありません
 ms.date: 07/20/2015
 f1_keywords:
 - vbrInvalidCast_FromTo
 ms.assetid: 4e6a8957-63ca-461f-a833-f48a1ff2eba6
-ms.openlocfilehash: 2b4cf3a3b7f693a8ba2b9542847ab1bfc776b9ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1f2465f491ccfb8f8199cc47a9adbd993c9991d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769955"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364826"
 ---
-# <a name="cast-from-type-typename1-to-type-typename2-is-not-valid"></a>型からキャスト '\<typename1 >' 型に'\<typename2 >' が無効です
+# <a name="cast-from-type-typename1-to-type-typename2-is-not-valid"></a>型 "\<typename1>" から型 '\<typename2>' へのキャストは有効ではありません
 変数の型を変換しようとしていますが、その変換はできません。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -20,4 +20,4 @@ ms.locfileid: "61769955"
   
 ## <a name="see-also"></a>関連項目
 
-- [Visual Basic における型変換](../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Visual Basic における型変換](../programming-guide/language-features/data-types/type-conversions.md)

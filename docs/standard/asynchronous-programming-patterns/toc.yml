@@ -19,7 +19,7 @@
           href: implementing-the-event-based-asynchronous-pattern.md
         - name: イベントベースの非同期パターンを実装するための推奨される手順
           href: best-practices-for-implementing-the-event-based-asynchronous-pattern.md
-        - name: イベントベースの非同期パターンをいつ実装するかの決定
+        - name: イベントベースの非同期パターンの実装時期を決定する
           href: deciding-when-to-implement-the-event-based-asynchronous-pattern.md
         - name: '方法: イベントベースの非同期パターンをサポートするコンポーネントを実装する'
           href: component-that-supports-the-event-based-asynchronous-pattern.md

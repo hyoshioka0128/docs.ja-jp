@@ -1,5 +1,6 @@
 ---
 title: WCF クライアントを使用したサービスへのアクセス
+description: WCF サービスの WCF クライアントプロキシを作成する方法について説明します。 クライアントアプリケーションは、クライアントプロキシを使用してサービスと通信します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: 462d9a3923009f0124c2b90b6fa86dfa9869a3c5
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 25446a89a0b5657d32d77e2d0d57f58f36bed71b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72316535"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245545"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>WCF クライアントを使用したサービスへのアクセス
 
@@ -26,10 +27,10 @@ ms.locfileid: "72316535"
 
 3. WCF クライアント プロキシをインスタンス化します。
 
-WCF クライアント プロキシは、サービス モデル メタデータ ユーティリティ ツール (SvcUtil.exe) を使用することによって、手動で生成することができます。詳細は「[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)」を参照してください。 WCF クライアントプロキシは、**サービス参照の追加**機能を使用して Visual Studio 内で生成することもできます。 いずれかの方法で WCF クライアント プロキシを生成するには、サービスが実行中であることが必要です。 サービスが自己ホスト型の場合は、ホストを実行する必要があります。 サービスが IIS/WAS でホストされている場合、特に必要な操作はありません。
+WCF クライアントプロキシは、サービスモデルメタデータユーティリティツール (SvcUtil.exe) を使用して手動で生成できます。詳細については、「 [ServiceModel Metadata Utility tool (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)」を参照してください。 WCF クライアントプロキシは、**サービス参照の追加**機能を使用して Visual Studio 内で生成することもできます。 いずれかの方法で WCF クライアント プロキシを生成するには、サービスが実行中であることが必要です。 サービスが自己ホスト型の場合は、ホストを実行する必要があります。 サービスが IIS/WAS でホストされている場合、特に必要な操作はありません。
 
 ## <a name="servicemodel-metadata-utility-tool"></a>ServiceModel メタデータ ユーティリティ ツール
- [ServiceModel メタデータユーティリティツール (svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)は、メタデータからコードを生成するためのコマンドラインツールです。 基本的な Svcutil.exe コマンドの使用例を次に示します。
+ [ServiceModel メタデータユーティリティツール (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)は、メタデータからコードを生成するためのコマンドラインツールです。 基本的な Svcutil.exe コマンドの使用例を次に示します。
 
 ```console
 Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -56,7 +57,7 @@ Svcutil.exe <file1 [,file2]>
 
 ## <a name="add-service-reference-in-visual-studio"></a>Visual Studio の "サービス参照の追加"
 
- サービスが実行されている状態で、WCF クライアントプロキシを含むプロジェクトを右クリックし、[ > **サービス参照**の**追加**] を選択します。 [**サービス参照の追加] ダイアログボックス**で、呼び出すサービスの URL を入力**し、[実行] ボタンを**クリックします。 このダイアログ ボックスには、指定したアドレスで利用可能なサービスの一覧が表示されます。 サービスをダブルクリックして、使用可能なコントラクトと操作を確認し、生成されたコードの名前空間を指定して、 **[OK]** ボタンをクリックします。
+ サービスが実行されている状態で、WCF クライアントプロキシを含むプロジェクトを右**Add**クリックし、[  >  **サービス参照**の追加] を選択します。 [**サービス参照の追加] ダイアログボックス**で、呼び出すサービスの URL を入力**し、[実行] ボタンを**クリックします。 このダイアログ ボックスには、指定したアドレスで利用可能なサービスの一覧が表示されます。 サービスをダブルクリックして、使用可能なコントラクトと操作を確認し、生成されたコードの名前空間を指定して、[ **OK** ] ボタンをクリックします。
 
 ## <a name="example"></a>例
  サービス用に作成されたコントラクトのコード例を次に示します。
@@ -176,9 +177,9 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 
 ## <a name="debugging-exceptions-thrown-by-a-client"></a>クライアントによってスローされた例外のデバッグ
 
-WCF クライアントによってスローされる多くの例外は、サービスの例外によって発生します。 いくつかの例を次に示します。
+WCF クライアントによってスローされる多くの例外は、サービスの例外によって発生します。 この例を次にいくつか示します。
 
-- <xref:System.Net.Sockets.SocketException>: 既存の接続はリモートホストによって強制的に切断されました。
+- <xref:System.Net.Sockets.SocketException>: 既存の接続がリモート ホストによって強制終了されました。
 
 - <xref:System.ServiceModel.CommunicationException>: 基になる接続が予期せずに閉じられました。
 
@@ -186,14 +187,14 @@ WCF クライアントによってスローされる多くの例外は、サー�
 
 このような種類の例外が発生した場合、問題を解決するには、サービス側でトレースをオンにし、そこで発生した例外を特定することをお勧めします。 トレースの詳細に[ついては、「トレース](./diagnostics/tracing/index.md)と[トレースを使用したアプリケーションのトラブルシューティング](./diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [方法: クライアントを作成する](how-to-create-a-wcf-client.md)
-- [方法 : 双方向コントラクトを使用してサービスにアクセスする](./feature-details/how-to-access-services-with-a-duplex-contract.md)
-- [方法 : サービス操作を非同期に呼び出す](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)
-- [方法 : 一方向コントラクトと要求/応答コントラクトを使用してサービスにアクセスする](./feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
-- [方法 : WSE 3.0 サービスにアクセスする](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
+- [方法: 双方向コントラクトを使用してサービスにアクセスする](./feature-details/how-to-access-services-with-a-duplex-contract.md)
+- [方法: サービス操作を非同期に呼び出す](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)
+- [方法: 一方向コントラクトと要求/応答コントラクトを使用してサービスにアクセスする](./feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
+- [方法: WSE 3.0 サービスにアクセスする](./feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
 - [生成されたクライアント コードの理解](./feature-details/understanding-generated-client-code.md)
-- [方法 : XmlSerializer を使用する WCF クライアント アプリケーションの起動時間を短縮する](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+- [方法: XmlSerializer を使用する WCF クライアント アプリケーションの起動時間を短縮する](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
 - [クライアントのランタイム動作の指定](specifying-client-run-time-behavior.md)
 - [クライアントの動作の構成](configuring-client-behaviors.md)

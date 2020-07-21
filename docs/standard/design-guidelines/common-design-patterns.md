@@ -1,24 +1,24 @@
 ---
 title: 共通デザイン パターン
+description: .NET の一般的なデザインパターンについて説明するリンクを参照してください。依存関係プロパティと dispose パターンです。
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - design patterns in class libraries
 - class library design guidelines [.NET Framework], design patterns
 ms.assetid: f7bd1361-4ab2-4132-972d-a044b8f197e1
-author: KrzysztofCwalina
-ms.openlocfilehash: 1fa45c2934ec1c8358bd024af7a05877d183b945
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: d44a01152d0bddc8aaad9423f97c2a5b95458258
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421356"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767755"
 ---
 # <a name="common-design-patterns"></a>共通デザイン パターン
 多くの書籍には、ソフトウェアパターン、パターン言語、およびパターンに関する非常に広範なパターンに対応するアンチパターンがあります。 したがって、この章では、.NET Framework Api の設計で頻繁に使用されるごく限られたパターンセットに関連するガイドラインと説明を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [依存関係プロパティ](../../../docs/standard/design-guidelines/dependency-properties.md)  
+ [依存関係プロパティ](dependency-properties.md)  
  [Dispose パターン](../garbage-collection/implementing-dispose.md)  
  *©2005、2009 Microsoft Corporation の部分。すべての権限が予約されています。*  
   
@@ -26,4 +26,4 @@ ms.locfileid: "73421356"
   
 ## <a name="see-also"></a>関連項目
 
-- [フレームワーク デザインのガイドライン](../../../docs/standard/design-guidelines/index.md)
+- [フレームワークデザインのガイドライン](index.md)

@@ -11,36 +11,36 @@ helpviewer_keywords:
 ms.assetid: 86a49235-62d9-414e-923e-53126e3f930a
 ms.openlocfilehash: 0d0d88e3b527beacfa5f879027e696aa75b18147
 ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2019
 ms.locfileid: "74283688"
 ---
 # <a name="thumb-styles-and-templates"></a>つまみのスタイルとテンプレート
 
-このトピックでは、<xref:System.Windows.Controls.Primitives.Thumb> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」を参照してください。
+このトピックでは、<xref:System.Windows.Controls.Primitives.Thumb> コントロールのスタイルとテンプレートについて説明します。 <xref:System.Windows.Controls.ControlTemplate>の既定値を変更して外観を制御します。 詳細については、「[コントロールのためにテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)」をご覧ください。
 
-## <a name="thumb-parts"></a>Thumb パーツ
+## <a name="thumb-parts"></a>Thumb のパーツ
 
-<xref:System.Windows.Controls.Primitives.Thumb> コントロールには、名前付きの部分がありません。
+<xref:System.Windows.Controls.Primitives.Thumb> コントロールに名前付きパーツはありません。
 
 ## <a name="thumb-states"></a>Thumb の状態
 
-次の表は、<xref:System.Windows.Controls.Primitives.Thumb> コントロールの表示状態を示しています。
+次の表は、<xref:System.Windows.Controls.Primitives.Thumb> コントロールの表示状態の一覧を示します。
 
 |VisualState 名|VisualStateGroup 名|説明|
 |-|-|-|
 |標準|CommonStates|既定の状態です。|
-|MouseOver|CommonStates|マウス ポインターがコントロール上に配置されます。|
+|MouseOver|CommonStates|マウス ポインターがコントロール上に配置されています。|
 |押されている|CommonStates|コントロールが押されています。|
-|Disabled|CommonStates|コントロールが無効になっています。|
+|無効|CommonStates|コントロールが無効になっています。|
 |フォーカスされている|FocusStates|コントロールにフォーカスがあります。|
 |フォーカスされていない|FocusStates|コントロールにフォーカスがありません。|
-|Valid|ValidationStates|コントロールは <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false`ます。|
+|有効|ValidationStates|このコントロールで <xref:System.Windows.Controls.Validation> クラスを使用し、<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは `false` です。|
 |InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがある `true` です。|
 |InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 添付プロパティは、コントロールにフォーカスがない `true` です。|
 
-## <a name="thumb-controltemplate-example"></a>Thumb ControlTemplate の例
+## <a name="thumb-controltemplate-example"></a>Thumb の ControlTemplate の例
 
 次の例は、<xref:System.Windows.Controls.Primitives.Thumb> コントロールの <xref:System.Windows.Controls.ControlTemplate> を定義する方法を示しています。
 
@@ -59,4 +59,4 @@ ms.locfileid: "74283688"
 - [コントロールのスタイルとテンプレート](control-styles-and-templates.md)
 - [コントロールのカスタマイズ](control-customization.md)
 - [スタイルとテンプレート](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [コントロールのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)
+- [コントロールのためのテンプレートを作成する](../../../desktop-wpf/themes/how-to-create-apply-template.md)

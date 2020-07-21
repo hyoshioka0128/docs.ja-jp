@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Regasm.exe
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
-ms.openlocfilehash: 45b4c6c08d3afb948444a8c97dc32bd41f2615ce
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5eeed43f3d60bd5e443226a16963557546d81e7c
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104951"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635414"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (アセンブリ登録ツール)
 
@@ -36,7 +36,7 @@ regasm assemblyFile [options]
 
 |オプション|説明|
 |------------|-----------------|
-|**/codebase**|レジストリに Codebase エントリを作成します。 Codebase エントリは、グローバル アセンブリ キャッシュにインストールされないアセンブリのファイル パスを指定します。 登録しようとしているアセンブリを、後でグローバル アセンブリ キャッシュにインストールする場合は、このオプションを指定する必要はありません。 **/codebase** オプションと共に指定する *assemblyFile* 引数は、[厳密な名前付きのアセンブリ](../../standard/assembly/strong-named.md)である必要があります。|
+|**/codebase**|レジストリに Codebase エントリを作成します。 Codebase エントリによって、グローバル アセンブリ キャッシュにインストールされないアセンブリのファイル パスが指定されます。 登録しようとしているアセンブリを、後でグローバル アセンブリ キャッシュにインストールする場合は、このオプションを指定しないでください。 **/codebase** オプションと共に指定する *assemblyFile* 引数は、[厳密な名前付きのアセンブリ](../../standard/assembly/strong-named.md)である必要があります。|
 |**/registered**|このツールが既に登録されているタイプ ライブラリだけを参照するように指定します。|
 |**/asmpath:directory**|アセンブリ参照を含むディレクトリを指定します。 **/regfile** オプションと共に使用する必要があります。|
 |**/nologo**|Microsoft 著作権情報を表示しません。|
@@ -50,9 +50,9 @@ regasm assemblyFile [options]
 > [!NOTE]
 > Regasm.exe のコマンド行オプションでは大文字と小文字が区別されません。 オプションの一部を指定するだけで一意に識別できます。 たとえば、 **/n** は **/nologo** と等価であり、 **/t:** *outfile.tlb* は **/tlb:** *outfile.tlb* と等価です。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
-**/regfile** オプションを使用すると、直接にレジストリを変更しなくても、レジストリ エントリを含む .reg ファイルを生成できます。 コンピューターのレジストリを更新するには、レジストリ エディター ツール (Regedit.exe) を使用して .reg ファイルをインポートします。 .reg ファイルには、ユーザー定義の登録機能で行われるレジストリの更新についての情報は含まれません。  **/regfile** オプションは、マネージド クラスのレジストリ エントリだけを生成します。  このオプションは、`TypeLibID` と `InterfaceID` のエントリは生成しません。
+**/regfile** オプションを使用すると、直接にレジストリを変更しなくても、レジストリ エントリを含む .reg ファイルを生成できます。 コンピューターのレジストリを更新するには、レジストリ エディター ツール (Regedit.exe) を使用して .reg ファイルをインポートします。 .reg ファイルには、ユーザー定義の登録機能で行われる可能性があるレジストリの更新は含まれません。 **/regfile** オプションは、マネージド クラスのレジストリ エントリだけを生成します。 このオプションは、`TypeLibID` と `InterfaceID` のエントリは生成しません。
 
 **/tlb** オプションを指定すると、アセンブリ内で見つかった型を記述するタイプ ライブラリが Regasm.exe で生成および登録されます。 生成されたタイプ ライブラリは、現在の作業ディレクトリ、または出力ファイル用に指定されたディレクトリ内に格納されます。 他のアセンブリを参照するアセンブリについてタイプ ライブラリを生成すると、一度に複数のタイプ ライブラリが生成されることがあります。 タイプ ライブラリを使用して、Visual Studio などの開発用ツールに対して型情報を提供できます。 登録するアセンブリがタイプ ライブラリ インポーター ([Tlbimp.exe](tlbimp-exe-type-library-importer.md)) で生成されたアセンブリである場合には、 **/tlb** オプションを使用しないでください。 タイプ ライブラリからインポートされたアセンブリからは、タイプ ライブラリをエクスポートできません。 **/tlb** オプションを使用した場合の効果は、タイプ ライブラリ エクスポーター ([Tlbexp.exe](tlbexp-exe-type-library-exporter.md)) と Regasm.exe を使用した場合と同じです。ただし、Tlbexp.exe では、生成されたタイプ ライブラリが登録されません。  **/tlb** オプションを使用してタイプ ライブラリを登録する場合、 **/tlb** オプションと **/unregister** オプションを使用してタイプ ライブラリの登録を解除できます。 この 2 つのオプションを使用すると、タイプ ライブラリとインターフェイス エントリの登録を解除でき、これによって、レジストリをかなり整理できます。
 

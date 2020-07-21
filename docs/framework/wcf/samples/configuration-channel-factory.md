@@ -2,17 +2,17 @@
 title: 構成チャネル ファクトリ
 ms.date: 03/30/2017
 ms.assetid: 3b749493-bd8a-4ccb-893e-5948901a1486
-ms.openlocfilehash: 1a236f1812d3124e83702a97e1877b7fec10be64
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 0f00ba5e217420fe416100071d380e413c3df118
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715503"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79183949"
 ---
 # <a name="configuration-channel-factory"></a>構成チャネル ファクトリ
-このサンプルでは、<xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> の使用方法を示します。 <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> を使用すると、WCF クライアントの構成を一元的に管理できます。 これは、アプリケーション ドメインによる読み込みの後に構成が選択または変更される場合にも役立ちます。
+このサンプルでは、<xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> の使用方法を示します。 WCF<xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>クライアント構成の一元管理を可能にします。 これは、アプリケーション ドメインによる読み込みの後に構成が選択または変更される場合にも役立ちます。
 
-## <a name="demonstrates"></a>例
+## <a name="demonstrates"></a>対象
  <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>
 
 ## <a name="discussion"></a>ディスカッション
@@ -35,19 +35,19 @@ ICalculatorChannel client1 = factory1.CreateChannel();
 
 1. 管理者特権で Visual Studio 2012 を開きます。
 
-2. ConfigurationChannelFactory ソリューション (2 つのプロジェクト) を右クリックし、 **[プロパティ]** を選択します。
+2. ConfigurationChannelFactory ソリューション (2 プロジェクト) を右クリックし、[**プロパティ]** を選択します。
 
-3. **[共通プロパティ]** で、 **[スタートアッププロジェクト]** を選択し、 **[マルチスタートアッププロジェクト]** をクリックします。
+3. [**共通のプロパティ]** で [**スタートアップ プロジェクト**] をクリックし、[**複数のスタートアップ プロジェクト**] をクリックします。
 
-4. **サービス**プロジェクトを一覧の先頭に移動し、**アクションを ' start '** に変更します。次に、サービスプロジェクトの**後**に、**アクション ' start '** を使用して**クライアント**プロジェクトを移動します。これにより、**サービス**プロジェクトの後に**クライアント**プロジェクトが実行されます。
+4. **サービス**プロジェクトを一覧の先頭に移動し **、"開始**" アクションを使用して **、サービス**プロジェクトの後に**クライアント**プロジェクトを**Action ‘Start’** 移動します。 **Client** **Service**
 
-5. **[OK]** をクリックし、f5 キー (または CTRL + F5 キー) を押してサンプルを実行します。
+5. **[OK]** をクリックし、F5 キー (または Ctrl + F5 キー) を押してサンプルを実行します。
 
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は[、.NET Framework 4 の Windows コミュニケーション ファウンデーション (WCF) および Windows ワークフローファウンデーション (WF) サンプル](https://www.microsoft.com/download/details.aspx?id=21459)に移動して、すべての Windows 通信基盤 (WCF) とサンプルを[!INCLUDE[wf1](../../../../includes/wf1-md.md)]ダウンロードします。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigurationChannelFactory`

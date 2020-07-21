@@ -1,25 +1,24 @@
 ---
 title: ランタイム情報 ETW イベント
+description: SKU、バージョン番号、ランタイムがアクティブ化された方法 (コマンドラインパラメーターを含む)、GUID などを記録するランタイム情報 ETW イベントについて説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - runtime information events [.NET Framework]
 - ETW, runtime information events
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6ab3844b293d09cec02236fb9befd836aa4113ea
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 385519229bdb76841cdf592d95e96d2288ec5e1a
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046226"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474229"
 ---
 # <a name="runtime-information-etw-events"></a>ランタイム情報 ETW イベント
 これらの ETW イベントは、SKU、バージョン番号、ランタイムのアクティブ化の方法、起動時に使用されたコマンド ライン パラメーター、GUID (該当する場合) などのランタイムに関する情報をログに記録します。 1 つのプロセスで複数のランタイムが実行されている場合は、これらのイベントの情報 (ClrInstanceID) によって、ランタイムのあいまいさを解消できます。  
   
- 次の表に、2 つのランタイム情報イベントを示します。 これらのイベントは、任意のキーワードまたはマスクで発生させることができます (詳細については、「 [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md)」を参照してください)。  
+ 次の表に、2 つのランタイム情報イベントを示します。 これらのイベントは、任意のキーワードまたはマスクで発生させることができます  (詳細については、「 [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md)」を参照してください)。  
   
-|イベント|イベント ID|プロバイダー|説明|  
+|Event|イベント ID|プロバイダー|説明|  
 |-----------|--------------|--------------|-----------------|  
 |`RuntimeInformationEvent`|187|CLRRuntime|ランタイムが読み込まれたときに発生します。|  
 |`RuntimeInformationDCStart`|187|CLRRundown|読み込まれているランタイムを列挙します。|  
@@ -40,7 +39,7 @@ ms.locfileid: "71046226"
 |VMVersion – QFE|win:UInt16|clr.dll または coreclr.dll の修正プログラムのバージョン番号。|  
 |StartupFlags|win:UInt32|mscoree.h で定義された起動フラグ。|  
 |StartupMode|win:UInt8|0x01 - マネージド実行可能ファイル。<br /><br /> 0x02 - ホストされた CLR。<br /><br /> 0x04 - C++ マネージド相互運用。<br /><br /> 0x08 - COM アクティブ化。<br /><br /> 0x10 - その他。|  
-|実行中|win:UnicodeString|StartupMode=0x01 の場合のみ null 以外。|  
+|CommandLine|win:UnicodeString|StartupMode=0x01 の場合のみ null 以外。|  
 |ComObjectGUID|win:GUID|StartupMode=0x08 の場合のみ null 以外。|  
 |RuntimeDLLPath|win:UnicodeString|プロセスに読み込まれた CLR .dll ファイルへのパス。|  
   

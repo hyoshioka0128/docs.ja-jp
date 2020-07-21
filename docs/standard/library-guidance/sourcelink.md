@@ -1,15 +1,13 @@
 ---
 title: ソース リンクと .NET ライブラリ
 description: ソース リンクを使用して .NET ライブラリのデバッグ機能を改善するためのベスト プラクティス推奨事項。
-author: jamesnk
-ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: 89f9e3b1fd70003c528465f29a143b157468d539
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 5dee2a6b1f77daa641351e02c1dd3e0a38f66550
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089287"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201984"
 ---
 # <a name="source-link"></a>ソース リンク
 
@@ -17,6 +15,7 @@ ms.locfileid: "74089287"
 
 ## <a name="source-link-demo"></a>ソース リンクのデモ
 
+<!--markdownlint-disable MD034 -->
 > [!VIDEO https://www.youtube.com/embed/gyRGhCQPkB4?start=61]
 
 ## <a name="using-source-link"></a>ソース リンクを使用する
@@ -27,7 +26,7 @@ ms.locfileid: "74089287"
 
 ![NuGet パッケージ エクスプローラーのソース リンク](./media/sourcelink/nuget-package-explorer-sourcelink.png "NuGet パッケージ エクスプローラーのソース リンク")
 
-**✔️ 検討** ソース リンクを使用して、お使いのアセンブリと NuGet パッケージにソース管理のメタデータを追加する。
+✔️ 検討 ソース リンクを使用して、お使いのアセンブリと NuGet パッケージにソース管理のメタデータを追加する。
 
 > [!TIP]
 > デバッガー属性を型に追加することで開発者のデバッグ機能をさらに強化できます。
@@ -36,9 +35,13 @@ ms.locfileid: "74089287"
 > * <xref:System.Diagnostics.DebuggerStepThroughAttribute> では、デバッガーに対してコードのステップ インではなくステップ実行が指示されます。
 > * <xref:System.Diagnostics.DebuggerBrowsableAttribute> では、デバッガー変数ウィンドウにメンバーを表示するかどうかが制御されます。
 
-**✔️ 検討** シンボル ファイルを発行する (`*.pdb`)。
+✔️ 検討 シンボル ファイルを発行する (`*.pdb`)。
 
 > デバッグのエクスペリエンスを最善にするには、ライブラリ上でシンボル ファイルを発行してソース リンクを使用する必要があります。 シンボル ファイルとシンボル パッケージの詳細については、「[シンボル パッケージ](./nuget.md#symbol-packages)」を参照してください。
+
+✔️ 検討 決定論的ビルドを有効にする
+
+> 決定論的ビルドでは、結果として得られるバイナリが指定されたソースから構築され、追跡可能性を提供することの検証を可能にします。 決定論的ビルドとそれを有効にするための手順の詳細については、[決定論的ビルド](https://github.com/clairernovotny/DeterministicBuilds)に関するページを参照してください。
 
 >[!div class="step-by-step"]
 >[前へ](dependencies.md)

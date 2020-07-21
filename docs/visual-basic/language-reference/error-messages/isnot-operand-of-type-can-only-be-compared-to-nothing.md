@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC32128
 ms.assetid: 1155b23a-ad75-4bab-b9da-73f35c767a36
-ms.openlocfilehash: 06dc6f1532fecefba4e507bd0cc24aadc936d137
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
-ms.translationtype: MT
+ms.openlocfilehash: fb61b04021bd844fade94413b4f3b28b82f6411b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524374"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402799"
 ---
 # <a name="isnot-operand-of-type-typename-can-only-be-compared-to-nothing-because-typename-is-a-nullable-type"></a>'typename' は Null 許容型であるため、'typename' 型の 'IsNot' オペランドは 'Nothing' とのみ比較できます
 
-Nullable として宣言された変数が、`IsNot` 演算子を使用した `Nothing` 以外の式と比較されました。
+Null 許容値型として宣言された変数が、`Nothing` 演算子を使用して、`IsNot` 以外の式と比較されました。
 
 **エラー ID:** BC32128
 
@@ -36,5 +36,5 @@ End If
 
 ## <a name="see-also"></a>関連項目
 
-- [null 許容値型](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [IsNot 演算子](../../../visual-basic/language-reference/operators/isnot-operator.md)
+- [null 許容値型](../../programming-guide/language-features/data-types/nullable-value-types.md)
+- [IsNot 演算子](../operators/isnot-operator.md)

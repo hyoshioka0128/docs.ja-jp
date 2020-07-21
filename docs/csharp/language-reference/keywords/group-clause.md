@@ -1,6 +1,5 @@
 ---
 title: group 句 - C# リファレンス
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - group
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: dd14a4baf9967f41690e7978b8b6cf57c9275e36
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 75a366ec24e4e48af7e87d3372950aad8d76435b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428510"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75713469"
 ---
 # <a name="group-clause-c-reference"></a>group 句 (C# リファレンス)
 
@@ -54,7 +53,7 @@ ms.locfileid: "74428510"
 
 ### <a name="grouping-by-numeric-range"></a>数値の範囲でグループ化する
 
-次の例では、パーセンタイルの範囲を示す数値のグループ キーを作成する式を使用しています。 `group` 句でメソッドを 2 度呼び出さなくて済むように、メソッド呼び出しの結果を格納する便利な場所として [let](let-clause.md) を使用できます。 クエリ式でメソッドを安全に使用する方法について詳しくは、「[方法: クエリ式の例外を処理する](../../linq/handle-exceptions-in-query-expressions.md)」をご覧ください。
+次の例では、パーセンタイルの範囲を示す数値のグループ キーを作成する式を使用しています。 `group` 句でメソッドを 2 度呼び出さなくて済むように、メソッド呼び出しの結果を格納する便利な場所として [let](let-clause.md) を使用できます。 クエリ式でメソッドを安全に使用する方法の詳細については、「[クエリ式の例外の処理](../../linq/handle-exceptions-in-query-expressions.md)」を参照してください。
 
 [!code-csharp[cscsrefQueryKeywords#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#15)]
 
@@ -66,7 +65,7 @@ ms.locfileid: "74428510"
 group person by new {name = person.surname, city = person.city};
 ```
 
-クエリ変数を別のメソッドに渡す場合には、名前付きの型を使用します。 キーの自動実装プロパティを使用して特殊クラスを作成し、<xref:System.Object.Equals%2A> メソッドと <xref:System.Object.GetHashCode%2A> メソッドをオーバーライドします。 これらのメソッドを厳密にオーバーライドする必要がない構造体を使用することも可能です。 詳細については、「[方法: 自動実装するプロパティを使用して簡易クラスを実装する](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md)」と[ディレクトリ ツリーで重複するファイルをクエリする方法](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)に関するページをご覧ください。 後述の記事には、名前付きの型を複合キーで使用する方法のコード例があります。
+クエリ変数を別のメソッドに渡す場合には、名前付きの型を使用します。 キーの自動実装プロパティを使用して特殊クラスを作成し、<xref:System.Object.Equals%2A> メソッドと <xref:System.Object.GetHashCode%2A> メソッドをオーバーライドします。 これらのメソッドを厳密にオーバーライドする必要がない構造体を使用することも可能です。 詳細については、「[自動実装するプロパティを使用して簡易クラスを実装する方法](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md)」と「[ディレクトリ ツリーで重複するファイルを照会する方法](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)」を参照してください。 後述の記事には、名前付きの型を複合キーで使用する方法のコード例があります。
 
 ## <a name="example"></a>例
 
@@ -86,7 +85,7 @@ group person by new {name = person.surname, city = person.city};
 
 コンパイル時に `group` 句が <xref:System.Linq.Enumerable.GroupBy%2A> メソッドの呼び出しに変換されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Linq.IGrouping%602>
 - <xref:System.Linq.Enumerable.GroupBy%2A>

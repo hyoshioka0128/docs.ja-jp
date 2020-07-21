@@ -1,5 +1,5 @@
 ---
-title: ICorDebugProcess4::ProcessStateChanged メソッド
+title: ICorDebugProcess4::P rocessStateChanged メソッド
 ms.date: 02/07/2019
 api_name:
 - ICorDebugProcess4::ProcessStateChanged
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: adfd563e19389642ac0ed0a3cef4aae8a32fa466
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 910c411d2c63ce2c6cf262e28e08546657dc2a4c
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767190"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213570"
 ---
-# <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::ProcessStateChanged メソッド
+# <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::P rocessStateChanged メソッド
 
-デバッガーをプロセスの出力がデバッグ対象の実行を続行は ICorDebug パイプラインに通知します。
+アウトプロセスデバッガーがデバッグ対象の実行を継続していることを ICorDebug パイプラインに通知します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,24 +37,24 @@ HRESULT ProcessStateChanged(
 ## <a name="parameters"></a>パラメーター
 
  `eChange`\
-[in]メンバー、 [CorDebugStateChange 列挙体](cordebugstatechange-enumeration.md)プロセスの実行状態の変更を記述します。
+からプロセスの実行状態の変更を記述する[CorDebugStateChange 列挙体](cordebugstatechange-enumeration.md)のメンバー。
 
 ## <a name="remarks"></a>Remarks
 
-指定されたメソッドは、`ICorDebugProcess4`インターフェイスし、仮想メソッド テーブルの 4 番目のスロットに対応しています。
+指定されたメソッドはインターフェイスの一部で `ICorDebugProcess4` あり、仮想メソッドテーブルの4番目のスロットに対応します。
 
 ## <a name="requirements"></a>必要条件
 
- **プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
 
- **ヘッダー:** なし
+ **ヘッダー:** 存在
 
- **ライブラリ:** なし
- 
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
+ **ライブラリ:** 存在
+
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>関連項目
 
 - [ICorDebugProcess4 インターフェイス](icordebugprocess4-interface.md)
-- [デバッグ インターフェイス](debugging-interfaces.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)
 - [デバッグ](index.md)

@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - routing [WCF], message filters
 ms.assetid: cb33ba49-8b1f-4099-8acb-240404a46d9a
-ms.openlocfilehash: b8de58b6935ee59fc8c787dfcf7445afcd0774b9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a953dea9224d75907c593d87f06a0b0888f0af2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912700"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79184662"
 ---
 # <a name="message-filters"></a>メッセージ フィルター
 コンテンツ ベースのルーティングを実装する場合、ルーティング サービスは、アドレス、エンドポイント名、特定の XPath ステートメントなど、メッセージの特定のセクションを確認する <xref:System.ServiceModel.Dispatcher.MessageFilter> 実装を使用します。 [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] に付属のメッセージ フィルターの中にニーズを満たすものがない場合は、<xref:System.ServiceModel.Dispatcher.MessageFilter> 基本クラスの新しい実装を作成することで、カスタム フィルターを作成できます。  
   
- ルーティングサービスを構成する場合は、 **messagefilter**の種類<xref:System.ServiceModel.Routing.Configuration.FilterElement>と、メッセージ内で検索する特定の文字列値など、フィルターの作成に必要なサポートデータを記述するフィルター要素 (オブジェクト) を定義する必要があります. フィルター要素を作成しても、個々のメッセージ フィルターが定義されるだけです。フィルターを使用してメッセージを評価およびルーティングするには、フィルター テーブル (<xref:System.ServiceModel.Routing.Configuration.FilterTableEntryCollection>) を定義する必要もあります。  
+ ルーティング サービスを構成する場合は **、MessageFilter**の<xref:System.ServiceModel.Routing.Configuration.FilterElement>種類と、メッセージ内で検索する特定の文字列値など、フィルタの作成に必要なサポート データを記述するフィルタ要素 (オブジェクト) を定義する必要があります。 フィルター要素を作成しても、個々のメッセージ フィルターが定義されるだけです。フィルターを使用してメッセージを評価およびルーティングするには、フィルター テーブル (<xref:System.ServiceModel.Routing.Configuration.FilterTableEntryCollection>) を定義する必要もあります。  
   
  フィルター テーブル内の各エントリは、特定のフィルター要素を参照し、メッセージがフィルターに一致した場合にメッセージのルーティング先となるクライアント エンドポイントを指定します。 フィルター テーブルのエントリでは、バックアップ エンドポイントのコレクション (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>) を指定することもできます。このコレクションは、プライマリ エンドポイントへの送信時に転送エラーが発生した場合に、メッセージの転送先となるエンドポイントのリストを定義します。 それらのエンドポイントのいずれかで転送が成功するまで、指定された順番でバックアップ エンドポイントへの転送が試行されます。  
   
@@ -25,30 +25,30 @@ ms.locfileid: "69912700"
   
 |フィルターの型|説明|フィルター データの意味|フィルターの例|  
 |------------------|-----------------|-------------------------|--------------------|  
-|アクション|<xref:System.ServiceModel.Dispatcher.ActionMessageFilter> クラスを使用して、特定のアクションを含むメッセージを照合します。|フィルター処理するアクション。|\<filter name = "action1" filterType = "Action" filterdata = "http://namespace/contract/operation"/>|  
-|EndpointAddress|クラスを使用して<xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  == 、特定のアドレスを含むメッセージを照合します`true`。 <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>|フィルター処理するアドレス (To ヘッダー)。|\<filter name="address1" filterType="EndpointAddress" filterData="http://host/vdir/s.svc/b"  />|  
-|EndpointAddressPrefix|クラスを使用して<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  == 、特定のアドレスプレフィックスを含むメッセージを照合します。`true` <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>|最長プレフィックス一致を使用してフィルター処理するアドレス。|\<filter name="prefix1" filterType="EndpointAddressPrefix" filterData="http://host/" />|  
-|And|常に両方の条件を評価してから結果を返す <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> クラスを使用します。|filterData は使用されません。代わりに、filter1 および filter2 には、対応するメッセージフィルターの名前 (テーブルにも含まれます) が含まれています。これは、**と**で同時に使用する必要があります。|\<filter name="and1" filterType="And" filter1="address1" filter2="action1" />|  
-|カスタム|<xref:System.ServiceModel.Dispatcher.MessageFilter> クラスを拡張し、文字列を受け取るコンストラクターを持つユーザー定義の型。|customType 属性は、作成するクラスの完全修飾型名で、filterData は、フィルターの作成時にコンストラクターに渡す文字列です。|\<filter name="custom1" filterType="Custom" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" filterData="Custom Data" />|  
-|EndpointName|<xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> クラスを使用して、メッセージを受信したサービス エンドポイントの名前を基にメッセージを照合します。|サービスエンドポイントの名前 (例: "serviceEndpoint1")。  このサービス エンドポイントは、ルーティング サービスで公開されるいずれかのエンドポイントでなければなりません。|\<filter name = "stock1" filterType = "Endpoint" filterData = "SvcEndpoint"/>|  
-|MatchAll|<xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> クラスを使用します。 このフィルターは、すべての着信メッセージを照合します。|filterData は使用されません。 このフィルターは、常にすべてのメッセージを照合します。|\<filter name="matchAll1" filterType="MatchAll" />|  
-|XPath|<xref:System.ServiceModel.Dispatcher.XPathMessageFilter> クラスを使用して、メッセージ内の特定の XPath クエリを照合します。|メッセージの照合時に使用する XPath クエリ。|\<filter name = "XPath1" filterType = "XPath" filterData = "/ns: element"/>|  
+|アクション|<xref:System.ServiceModel.Dispatcher.ActionMessageFilter> クラスを使用して、特定のアクションを含むメッセージを照合します。|フィルター処理するアクション。|\<フィルター名="アクション1" フィルタータイプ="アクション" フィルターデータhttp://namespace/contract/operation=" "/>|  
+|EndpointAddress|特定の<xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>アドレスを含<xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A> == `true`むメッセージを照合するために、クラスを使用します。|フィルター処理するアドレス (To ヘッダー)。|\<フィルター名="アドレス1"フィルタータイプ="エンドポイントアドレス"フィルターデータ=""/>http://host/vdir/s.svc/b|  
+|EndpointAddressPrefix|特定の<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>アドレス プレフィックス<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A> == `true`を含むメッセージを照合するために、クラスを使用します。|最長プレフィックス一致を使用してフィルター処理するアドレス。|\<フィルター名="プレフィックス1" フィルタータイプ="エンドポイントアドレスプレフィックス" フィルターデータhttp://host/=" "/>|  
+|And|常に両方の条件を評価してから結果を返す <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> クラスを使用します。|フィルターデータは使用されません。代わりに、filter1 と filter2 には対応するメッセージ フィルターの名前 (テーブル内) があり **、AND**を結合する必要があります。|\<フィルター名="と1" フィルタータイプ="と"フィルター1="アドレス1"フィルタ2="アクション1"/>|  
+|Custom|<xref:System.ServiceModel.Dispatcher.MessageFilter> クラスを拡張し、文字列を受け取るコンストラクターを持つユーザー定義の型。|customType 属性は、作成するクラスの完全修飾型名で、filterData は、フィルターの作成時にコンストラクターに渡す文字列です。|\<フィルター名="カスタム1" フィルタータイプ="カスタム" カスタムタイプ="カスタムアセンブリ.カスタムMsgFilter, カスタムアセンブリ" フィルターデータ="カスタムデータ" />|  
+|EndpointName|<xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> クラスを使用して、メッセージを受信したサービス エンドポイントの名前を基にメッセージを照合します。|サービス エンドポイントの名前 ("serviceEndpoint1" など)。  このサービス エンドポイントは、ルーティング サービスで公開されるいずれかのエンドポイントでなければなりません。|\<フィルター名="stock1" フィルタータイプ="エンドポイント" フィルターデータ="Svc エンドポイント" />|  
+|MatchAll|<xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> クラスを使用します。 このフィルターは、すべての着信メッセージを照合します。|filterData は使用されません。 このフィルターは、常にすべてのメッセージを照合します。|\<フィルター名="マッチAll1" フィルタータイプ="マッチオール" />|  
+|XPath|<xref:System.ServiceModel.Dispatcher.XPathMessageFilter> クラスを使用して、メッセージ内の特定の XPath クエリを照合します。|メッセージの照合時に使用する XPath クエリ。|\<フィルター名="XPath1" フィルタータイプ="XPath" フィルターデータ="//ns:要素" />|  
   
  次の例では、XPath、EndpointName、および PrefixEndpointAddress メッセージ フィルターを使用するフィルター エントリを定義しています。 また、この例では、RoundRobinFilter1 エントリと RoundRobinFilter2 エントリに対するカスタム フィルターの使用方法も示しています。  
   
 ```xml  
 <filters>  
-     <filter name="XPathFilter" filterType="XPath"   
+     <filter name="XPathFilter" filterType="XPath"
              filterData="/s12:Envelope/s12:Header/custom:RoundingCalculator = 1"/>  
-     <filter name="EndpointNameFilter" filterType="EndpointName"   
+     <filter name="EndpointNameFilter" filterType="EndpointName"
              filterData="calculatorEndpoint"/>  
-     <filter name="PrefixAddressFilter" filterType="PrefixEndpointAddress"   
+     <filter name="PrefixAddressFilter" filterType="PrefixEndpointAddress"
              filterData="http://localhost/routingservice/router/rounding/"/>  
-     <filter name="RoundRobinFilter1" filterType="Custom"   
-             customType="RoutingServiceFilters.RoundRobinMessageFilter,   
+     <filter name="RoundRobinFilter1" filterType="Custom"
+             customType="RoutingServiceFilters.RoundRobinMessageFilter,
              RoutingService" filterData="group1"/>  
-     <filter name="RoundRobinFilter2" filterType="Custom"   
-             customType="RoutingServiceFilters.RoundRobinMessageFilter,   
+     <filter name="RoundRobinFilter2" filterType="Custom"
+             customType="RoutingServiceFilters.RoundRobinMessageFilter,
              RoutingService" filterData="group1"/>  
 </filters>  
 ```  
@@ -71,7 +71,7 @@ ms.locfileid: "69912700"
 |tempuri|`http://tempuri.org`|  
 |ser|`http://schemas.microsoft.com/2003/10/Serialization`|  
   
- XPath クエリに特定の名前空間を使用することがわかっている場合は、その名前空間を一意の名前空間プレフィックスと併せて名前空間テーブルに追加し、完全名前空間ではなく、プレフィックスを XPath クエリで使用できます。 次の例では、名前空間`"http://my.custom.namespace"`のプレフィックスとして "custom" を定義しています。これは、filterdata に含まれる XPath クエリで使用されます。  
+ XPath クエリに特定の名前空間を使用することがわかっている場合は、その名前空間を一意の名前空間プレフィックスと併せて名前空間テーブルに追加し、完全名前空間ではなく、プレフィックスを XPath クエリで使用できます。 次の例では、名前空間`"http://my.custom.namespace"`に "custom" というプレフィックスを定義し、filterData に含まれる XPath クエリで使用します。  
   
 ```xml  
 <namespaceTable>  
@@ -98,7 +98,7 @@ ms.locfileid: "69912700"
            <add filterName="SubtractAction" endpointName="Subtraction" />  
          </filters>  
        </table>  
-     </filterTables>      
+     </filterTables>
 </routing>  
 ```  
   
@@ -115,13 +115,13 @@ ms.locfileid: "69912700"
 ```xml  
 <filterTables>  
      <filterTable name="filterTable1">  
-          <add filterName="XPathFilter" endpointName="roundingCalcEndpoint"   
+          <add filterName="XPathFilter" endpointName="roundingCalcEndpoint"
                priority="2"/>  
-          <add filterName="EndpointNameFilter" endpointName="regularCalcEndpoint"   
+          <add filterName="EndpointNameFilter" endpointName="regularCalcEndpoint"
                priority="1"/>  
-          <add filterName="PrefixAddressFilter" endpointName="roundingCalcEndpoint"   
+          <add filterName="PrefixAddressFilter" endpointName="roundingCalcEndpoint"
                priority="1"/>  
-          <add filterName="MatchAllMessageFilter" endpointName="defaultCalcEndpoint"   
+          <add filterName="MatchAllMessageFilter" endpointName="defaultCalcEndpoint"
                priority="0"/>  
      </filterTable>  
 </filterTables>  
@@ -133,7 +133,7 @@ ms.locfileid: "69912700"
 > 可能な場合は、優先度の評価によってパフォーマンスが低下する可能性があるため、優先度を指定する代わりに、排他的なフィルターを使用してください。  
   
 ### <a name="backup-lists"></a>バックアップ リスト  
- フィルター テーブルの各フィルターには、必要に応じて、バックアップ リストを指定できます。バックアップ リストは、エンドポイントの名前付きコレクション (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>) です。 このコレクションには、<xref:System.ServiceModel.CommunicationException> に指定されているプライマリ エンドポイントへの送信時に <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.EndpointName%2A> が発生した場合に、メッセージの転送先となるエンドポイントの順序指定されたリストが保持されます。 次の例では、2つのエンドポイントを含む "backupServiceEndpoints" という名前のバックアップリストを定義します。  
+ フィルター テーブルの各フィルターには、必要に応じて、バックアップ リストを指定できます。バックアップ リストは、エンドポイントの名前付きコレクション (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>) です。 このコレクションには、<xref:System.ServiceModel.CommunicationException> に指定されているプライマリ エンドポイントへの送信時に <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.EndpointName%2A> が発生した場合に、メッセージの転送先となるエンドポイントの順序指定されたリストが保持されます。 次の例では、2 つのエンドポイントを含む "backupServiceEndpoints" という名前のバックアップ リストを定義します。  
   
 ```xml  
 <filterTables>  
@@ -149,4 +149,4 @@ ms.locfileid: "69912700"
 </backupLists>  
 ```  
   
- 前の例では、プライマリエンドポイント "宛先" への送信が失敗した場合、ルーティングサービスは、リストされているシーケンス内の各エンドポイントに送信しようとします。最初に、backupServiceQueue に送信し、その後、次のようになった場合は alternateServiceQueue に送信します。backupServiceQueue への送信が失敗する。 すべてのバックアップ エンドポイントへの送信が失敗した場合は、エラーが返されます。
+ 前の例では、プライマリ エンドポイント "宛先" への送信が失敗した場合、ルーティング サービスは、リストされている順序で各エンドポイントに送信を試み、最初に backupServiceQueue に送信し、次に代替サービス キューに送信します。バックアップに送信サービスキューが失敗します。 すべてのバックアップ エンドポイントへの送信が失敗した場合は、エラーが返されます。

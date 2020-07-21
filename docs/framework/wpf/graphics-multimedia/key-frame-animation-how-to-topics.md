@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: a5f9ab1a-d14c-4816-8540-3c5b8c8143d5
 ms.openlocfilehash: 6b4f5de92f19223a6692236fb3496a1dbbddef5c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61785646"
 ---
 # <a name="key-frame-animation-how-to-topics"></a>キー フレーム アニメーションに関する「方法」トピック
-このセクションのトピックでは、キー フレーム アニメーションを使用して、2 つのプロパティ値とコントロールの補間をアニメーション化する方法を示します。  
+このセクションのトピックでは、キー フレーム アニメーションを使用して、2 つ以上のプロパティ値のアニメーション化と、アニメーション補間の制御方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [キー フレームを使用してオブジェクトをアニメーション化する](how-to-animate-an-object-by-using-key-frames.md)  
@@ -30,7 +30,7 @@ ms.locfileid: "61785646"
  [キー フレームを使用して境界線の太さをアニメーション化する](how-to-animate-the-thickness-of-a-border-by-using-key-frames.md)  
  [キー フレーム アニメーションのタイミングを制御する](how-to-control-key-frame-animation-timing.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>  
   
  <xref:System.Windows.Media.Animation.Storyboard>  

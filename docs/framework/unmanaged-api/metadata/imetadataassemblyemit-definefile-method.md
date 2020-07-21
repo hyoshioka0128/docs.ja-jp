@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c065aadf-c1ca-4981-bde6-597042cb29c4
 topic_type:
 - apiref
-ms.openlocfilehash: 0b7ca6f9878ed2fa2d90ea93e5101f0a66ec2d5e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 61d81c94e3a9c092b5d45791962635c761e8da8a
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440209"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008145"
 ---
 # <a name="imetadataassemblyemitdefinefile-method"></a>IMetaDataAssemblyEmit::DefineFile メソッド
 このアセンブリが参照するアセンブリのメタデータを含む `File` メタデータ構造体を作成し、関連付けられたメタデータ トークンを返します。  
@@ -29,8 +29,8 @@ ms.locfileid: "74440209"
   
 ```cpp  
 HRESULT DefineFile (  
-    [in]  LPCWSTR        szName,   
-    [in]  const void     *pbHashValue,   
+    [in]  LPCWSTR        szName,
+    [in]  const void     *pbHashValue,
     [in]  ULONG          cbHashValue,  
     [in]  DWORD          dwFileFlags,  
     [out] mdFile         *pmdf  
@@ -45,26 +45,26 @@ HRESULT DefineFile (
  からアセンブリに関連付けられているハッシュデータへのポインター。  
   
  `cbHashValue`  
- から`pbHashValue`のサイズ (バイト単位)。  
+ からのサイズ (バイト単位) `pbHashValue` 。  
   
  `dwFileFlags`  
- からプロパティ設定を指定する `FileFlags` 値のビットごとの組み合わせ。  
+ から`FileFlags`プロパティ設定を指定する値のビットごとの組み合わせ。  
   
  `pmdf`  
- 入出力返された `File` トークンへのポインター。  
+ 入出力返されたトークンへのポインター `File` 。  
   
 ## <a name="remarks"></a>コメント  
- このアセンブリがビルドされた時点で、このアセンブリに含まれていたファイルごとに1つの `File` メタデータ構造を定義する必要があります。メタデータを含むファイルは除きます。  
+ このアセンブリがビルドされた時点 `File` で、このアセンブリに含まれていたファイルごとに1つのメタデータ構造を定義する必要があります。メタデータを含むファイルは除きます。  
   
-## <a name="requirements"></a>要件  
- **プラットフォーム:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **プラットフォーム:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataAssemblyEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit インターフェイス](imetadataassemblyemit-interface.md)

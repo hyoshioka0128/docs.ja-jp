@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00061a25-ba05-47a7-b984-fd916b06b149
 topic_type:
 - apiref
-ms.openlocfilehash: c9ac624e17223def206e86fd92ee4fd2de7f6082
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6346b1e34e508e5c173bfd0119ac7451d7eef40e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436752"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490797"
 ---
 # <a name="imetadataimportgettypedefprops-method"></a>IMetaDataImport::GetTypeDefProps メソッド
-指定した TypeDef トークンによって表される <xref:System.Type> のメタデータ情報を返します。  
+<xref:System.Type>指定した TypeDef トークンによって表されるのメタデータ情報を返します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -46,27 +46,27 @@ HRESULT GetTypeDefProps (
  入出力型名を格納しているバッファー。  
   
  `cchTypeDef`  
- から`szTypeDef`のワイド文字単位のサイズ。  
+ からのワイド文字のサイズ `szTypeDef` 。  
   
  `pchTypeDef`  
- 入出力`szTypeDef`に返されるワイド文字数。  
+ 入出力で返されたワイド文字の数 `szTypeDef` 。  
   
  `pdwTypeDefFlags`  
- 入出力型定義を変更するすべてのフラグへのポインター。 この値は、 [Cortypeattr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md)列挙子のビットマスクです。  
+ 入出力型定義を変更するすべてのフラグへのポインター。 この値は、 [Cortypeattr](cortypeattr-enumeration.md)列挙子のビットマスクです。  
   
  `ptkExtends`  
  入出力要求された型の基本型を表す TypeDef または TypeRef メタデータトークン。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

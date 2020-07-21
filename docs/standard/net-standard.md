@@ -1,22 +1,20 @@
 ---
 title: .NET Standard
-description: .NET Standard、そのバージョン、.NET Standard をサポートする .NET 実装について説明します。
-author: mairaw
-ms.author: mairaw
-ms.date: 09/23/2019
+description: .NET Standard、そのバージョン、それをサポートする .NET 実装について学習します。
+ms.date: 02/13/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 4fa0153cfa9dd52f4d80301d228dde3f16225bfd
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 34074b420547cff802f1835656540be7b8eb58b4
+ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582034"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81607481"
 ---
 # <a name="net-standard"></a>.NET Standard
 
-[.NET Standard](https://github.com/dotnet/standard) は、すべての .NET 実装で使用できるようにすることを目的とした .NET API の正式な仕様です。 .NET Standard の背後にある意図は、.NET エコシステムの高度な統一性を確立することです。 [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) は引き続き .NET 実装の動作の統一性を確立しますが、.NET ライブラリの実装用の .NET 基底クラス ライブラリ (BCL) に同様の仕様はありません。
+[.NET Standard](https://github.com/dotnet/standard) は、すべての .NET 実装で使用できるようにすることを目的とした .NET API の正式な仕様です。 .NET Standard の背後にある意図は、.NET エコシステムの高度な統一性を確立することです。 [ECMA 335](https://github.com/dotnet/runtime/blob/master/docs/project/dotnet-standards.md) では引き続き .NET 実装の動作に対する統一性が確立されます。ECMA 335 では標準ライブラリの小さなセットが指定されていますが、.NET Standard 仕様には幅広い .NET API が含まれています。
 
 .NET Standard により、次の主なシナリオが可能になります。
 
@@ -102,9 +100,9 @@ NuGet パッケージは 1 つまたは複数の[フレームワーク](framewor
 - .NET Standard と同じかそれ以下のバージョンに依存するライブラリを使用します。
 - それより上の .NET Standard バージョンに依存するライブラリを見つけた場合は、それと同じバージョンを採用するか、そのライブラリを使用しないようにする必要があります。
 
-## <a name="targeting-net-standard"></a>.NET Standard を対象とする
+## <a name="target-net-standard"></a>ターゲットの .NET Standard
 
-`netstandard` フレームワークと NETStandard.Library メタパッケージの組み合わせを使用して、[.NET Standard Library をビルド](../core/tutorials/libraries.md)できます。 [.NET Core ツールを使用して .NET Standard を対象とする](../core/packages.md)例を参照できます。
+`netstandard` フレームワークと NETStandard.Library メタパッケージの組み合わせを使用して、[.NET Standard Library をビルド](../core/tutorials/libraries.md)できます。 [.NET Core ツールでターゲットとする .NET Standard](../core/packages.md) の例を参照できます。
 
 ## <a name="net-framework-compatibility-mode"></a>.NET Framework 互換モード
 
@@ -114,13 +112,13 @@ NuGet パッケージは 1 つまたは複数の[フレームワーク](framewor
 
 ## <a name="net-standard-libraries-and-visual-studio"></a>.NET Standard ライブラリと Visual Studio
 
-Visual Studio で .NET Standard ライブラリを作成するには、Windows の場合 [Visual Studio 2017 バージョン 15.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) 以降、macOS の場合 [Visual Studio for Mac バージョン 7.1](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 以降がインストールされている必要があります。
+Visual Studio で .NET Standard ライブラリを作成するには、Windows の場合 [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) または Visual Studio 2017 バージョン 15.3 以降、macOS の場合 [Visual Studio for Mac バージョン 7.1](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 以降がインストールされている必要があります。
 
 プロジェクトで .NET Standard 2.0 ライブラリを使用するだけである場合は、Visual Studio 2015 でこれを行うこともできます。 ただし、NuGet クライアント 3.6 以降がインストールされている必要があります。 Visual Studio 2015 用の NuGet クライアントは、[NuGet のダウンロード](https://www.nuget.org/downloads)のページからダウンロードできます。
 
 ## <a name="comparison-to-portable-class-libraries"></a>ポータブル クラス ライブラリとの比較
 
-.NET Standard は、[ポータブル クラス ライブラリ (PCL)](./cross-platform/cross-platform-development-with-the-portable-class-library.md) に代わるものです。 .NET Standard は、標準 BCL を精選し、結果として、.NET 実装間で高度な統一性を確立することによって、ポータブル ライブラリの作成の方法を向上しています。 .NET Standard を対象とするライブラリは、PCL つまり ".NET Standard ベースの PCL" です。 既存の PCL は、"プロファイルベースの PCL" です。
+.NET Standard は、[ポータブル クラス ライブラリ (PCL)](./cross-platform/cross-platform-development-with-the-portable-class-library.md) に代わるものです。 .NET Standard では、標準 BCL を整理し、結果として、.NET 実装全体で高度な統一性を確立することによって、ポータブル ライブラリの作成の方法を向上させています。 .NET Standard を対象とするライブラリは、PCL つまり ".NET Standard ベースの PCL" です。 既存の PCL は、"プロファイルベースの PCL" です。
 
 .NET Standard と PCL プロファイルは、似たような目的で作成されましたが、主な点が異なります。
 
@@ -145,7 +143,7 @@ Visual Studio で .NET Standard ライブラリを作成するには、Windows �
 
 `netstandard` としてパッケージされたプロファイルベースの PCL は、通常パッケージされるプロファイルベースの PCL より使いやすくなります。 `netstandard` パッケージは、既存のユーザーと互換性があります。
 
-標準 .NET と互換性がある PCL プロファイルのセットを確認できます。
+.NET Standard と互換性がある PCL プロファイルのセットを確認できます。
 
 | PCL プロファイル | .NET Standard | PCL プラットフォーム
 |:-----------:|:-------------:|------------------------------------------------------------------------------

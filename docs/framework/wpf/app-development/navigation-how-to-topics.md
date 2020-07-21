@@ -8,13 +8,13 @@ helpviewer_keywords:
 ms.assetid: f804648e-558c-4f60-8e48-d11f4a23c436
 ms.openlocfilehash: 4d1cfd1388e68ff6a5f8c6a6b209dc38dd2f80d3
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61981696"
 ---
 # <a name="navigation-how-to-topics"></a>ナビゲーションに関する「方法」トピック
-次のトピックを使用する方法を説明する[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]ナビゲーション。  
+以下のトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] のナビゲーションを使用する方法を示します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ページ関数を呼び出す](how-to-call-a-page-function.md)  

@@ -3,14 +3,12 @@ title: System.Xml クラスでの型のサポート
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 63570538-06e3-4401-ad4d-ac50be90c7bf
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 954ff12ae1ac8b4d601c35fcd76ea35b2bb3acbf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8ceda15cb8463db3e81260529ebb1e3a67a0c1af
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939451"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283300"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a>System.Xml クラスでの型のサポート
 .NET Framework Version 2.0 では、コアの XML クラスが強化され、型サポート機能が追加されています。 <xref:System.Xml.XmlReader>、<xref:System.Xml.XmlWriter>、および <xref:System.Xml.XPath.XPathNavigator> クラスには、XML スキーマ型と共通言語ランタイム (CLR) 型の間の変換機能を含む型サポート機能が含まれています。  
@@ -29,14 +27,14 @@ ms.locfileid: "69939451"
 > .NET Framework Version 1.0 では、XML スキーマ型と CLR 型の間の変換に <xref:System.Xml.XmlConvert> クラスが必要でした。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [XML データ型から CLR 型へのマッピング](../../../../docs/standard/data/xml/mapping-xml-data-types-to-clr-types.md)  
+ [XML データ型から CLR 型へのマッピング](mapping-xml-data-types-to-clr-types.md)  
  XML データ型から CLR 型への既定のマッピングについて説明します。  
   
- [XML 型サポートの実装に関するメモ](../../../../docs/standard/data/xml/xml-type-support-implementation-notes.md)  
+ [XML 型サポートの実装に関するメモ](xml-type-support-implementation-notes.md)  
  型サポート実装の詳細のいくつかについて説明します。  
   
- [XML データ型の変換](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
+ [XML データ型の変換](conversion-of-xml-data-types.md)  
  XML スキーマ型と CLR 型の間の変換に <xref:System.Xml.XmlConvert> クラスを使用する方法について説明します。  
   
 ## <a name="related-sections"></a>関連項目  
- [厳密に型指定された XML データへの XPathNavigator を使用したアクセス](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)
+ [厳密に型指定された XML データへの XPathNavigator を使用したアクセス](accessing-strongly-typed-xml-data-using-xpathnavigator.md)

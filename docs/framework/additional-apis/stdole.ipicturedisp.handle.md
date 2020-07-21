@@ -1,5 +1,6 @@
 ---
-title: IPictureDisp.Handle プロパティ (最)
+title: IPictureDisp プロパティ (stdole)
+description: .NET の IPictureDisp プロパティについて説明します。 このプロパティは、stdole 名前空間と、(stdole.dll ライブラリ内の) stdole アセンブリにあります。
 ms.date: 02/22/2019
 topic_type:
 - apiref
@@ -10,12 +11,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 27a081b0faee348d8ff2064aa473fef315ee5d1c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c75cb2b28801924987d42fe442fee492245fe809
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634404"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105313"
 ---
 # <a name="ipicturedisphandle-property"></a>IPictureDisp.Handle プロパティ
 
@@ -23,7 +24,7 @@ ms.locfileid: "65634404"
 int Handle { get; }
 ```
 
-## <a name="property-value"></a>プロパティの値
+## <a name="property-value"></a>プロパティ値
 
 <xref:System.Int32>\
 
@@ -31,4 +32,4 @@ int Handle { get; }
 
 **名前空間:** `stdole`
 
-**アセンブリ:** stdole.dll) の「最
+**アセンブリ:** stdole (stdole.dll)

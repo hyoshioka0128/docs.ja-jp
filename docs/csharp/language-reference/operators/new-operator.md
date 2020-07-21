@@ -1,16 +1,15 @@
 ---
 title: new 演算子 - C# リファレンス
-ms.custom: seodec18
 ms.date: 06/25/2019
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: c21132a6622ce697fe3c52a461a33f548e0c8f31
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: ed18c42cd28412a967c94a65c2a92b0b75097b52
+ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036385"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199730"
 ---
 # <a name="new-operator-c-reference"></a>new 演算子 (C# リファレンス)
 
@@ -22,21 +21,21 @@ ms.locfileid: "73036385"
 
 型の新しいインスタンスを作成するには、通常は `new` 演算子を使用して、その型の[コンストラクター](../../programming-guide/classes-and-structs/constructors.md)の 1 つを呼び出します。
 
-[!code-csharp-interactive[invoke constructor](~/samples/csharp/language-reference/operators/NewOperator.cs#Constructor)]
+[!code-csharp-interactive[invoke constructor](snippets/NewOperator.cs#Constructor)]
 
 [オブジェクトまたはコレクション初期化子](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)を `new` 演算子と共に使用して、1 つのステートメント内でオブジェクトのインスタンス化と初期化を行うことができます。次に例を示します。
 
-[!code-csharp-interactive[constructor with initializer](~/samples/csharp/language-reference/operators/NewOperator.cs#ConstructorWithInitializer)]
+[!code-csharp-interactive[constructor with initializer](snippets/NewOperator.cs#ConstructorWithInitializer)]
 
 ## <a name="array-creation"></a>配列の作成
 
 `new` 演算子を使用して配列インスタンスを作成することもできます。次に例を示します。
 
-[!code-csharp-interactive[create array](~/samples/csharp/language-reference/operators/NewOperator.cs#Array)]
+[!code-csharp-interactive[create array](snippets/NewOperator.cs#Array)]
 
 1 つのステートメント内で配列の初期化構文を使用して配列インスタンスを作成し、そこに要素を設定します。 次の例に、これを行うためのさまざまな方法を示します。
 
-[!code-csharp-interactive[initialize array](~/samples/csharp/language-reference/operators/NewOperator.cs#ArrayInitialization)]
+[!code-csharp-interactive[initialize array](snippets/NewOperator.cs#ArrayInitialization)]
 
 配列の詳細については、「[配列](../../programming-guide/arrays/index.md)」を参照してください。
 
@@ -44,7 +43,7 @@ ms.locfileid: "73036385"
 
 [匿名型](../../programming-guide/classes-and-structs/anonymous-types.md)のインスタンスを作成するには、`new` 演算子とオブジェクト初期化子構文を使用します。
 
-[!code-csharp-interactive[anonymous type](~/samples/csharp/language-reference/operators/NewOperator.cs#AnonymousType)]
+[!code-csharp-interactive[anonymous type](snippets/NewOperator.cs#AnonymousType)]
 
 ## <a name="destruction-of-type-instances"></a>型インスタンストの破棄
 

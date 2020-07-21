@@ -1,5 +1,6 @@
 ---
 title: .NET の文字列からの文字のトリムと削除
+description: .NET で、文字列の先頭または末尾から空白スペースを削除する方法、または文字列内の指定した位置から任意の数のスペースまたは文字を削除する方法について説明します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: 66a4945f536c2f30d61a878e6449a6b0f6b45f22
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 630fe6b51d151d1f1384f2e3cde62750c303d883
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132892"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446894"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>.NET の文字列からの文字のトリムと削除
 文章を個々の単語に分割すると、単語の先頭または末尾に空白が残る場合があります。 そのような場合は、**System.String** クラスのトリム メソッドのいずれかを使用して、文字列内の指定した位置から任意の数の空白またはその他の文字を削除できます。 使用できるトリム メソッドとその説明を次の表に示します。  
@@ -77,7 +78,7 @@ ms.locfileid: "73132892"
   
  このコードは、コンソールに `World!` と出力します。  
   
-## <a name="remove"></a>削除 
+## <a name="remove"></a>削除
 
  <xref:System.String.Remove%2A?displayProperty=nameWithType> メソッドは、既存の文字列内の指定した位置を開始位置として、指定した数の文字を削除します。 このメソッドは、インデックスが 0 から始まっていることを前提としています。  
   
@@ -96,4 +97,4 @@ ms.locfileid: "73132892"
   
 ## <a name="see-also"></a>関連項目
 
-- [基本的な文字列操作](../../../docs/standard/base-types/basic-string-operations.md)
+- [基本的な文字列操作](basic-string-operations.md)

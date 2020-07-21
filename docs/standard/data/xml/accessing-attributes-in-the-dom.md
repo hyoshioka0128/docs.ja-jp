@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9b456dc407f634e7f40f69bbac9b6d932f1f4420
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: a77780621032e2ce59b9db04a179c7086588219b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350708"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291644"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>DOM の属性へのアクセス
 
@@ -260,6 +258,6 @@ using System.Xml;
 XmlAttribute attr = doc.DocumentElement.Attributes[0];
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [XML ドキュメント オブジェクト モデル (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML ドキュメント オブジェクト モデル (DOM)](xml-document-object-model-dom.md)

@@ -1,5 +1,6 @@
 ---
 title: ランタイムがアセンブリを検索する方法
+description: .NET でアプリケーションを構成するアセンブリを共通言語ランタイム (CLR) が特定し、バインドする方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - app.config files, assembly locations
@@ -9,14 +10,11 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 01cef9646ca9c4f49ab8376364648f66b9651e4a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: HT
+ms.openlocfilehash: 4cf1e5787fe2e430d20208d8e79b610e9126c67c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052128"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622628"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>ランタイムがアセンブリを検索する方法
 
@@ -35,7 +33,7 @@ ms.locfileid: "71052128"
 
 アセンブリ名だけを指定するなど、アセンブリについての情報の一部だけを指定した呼び出しメソッドを提供することで、アセンブリを動的に参照することもできます。 その場合は、アセンブリの検索はアプリケーション ディレクトリ内だけでなされ、その他のチェックは実行されません。 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> や <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>などのアセンブリの読み込み用のさまざまなメソッドを使用した部分参照を作成します。
 
-最後に、<xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> などのメソッドを使用して動的参照を作成し、情報の一部だけを提供できます。その後で、アプリケーション構成ファイル内の [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) 要素を使用してその参照を修飾します。 この要素を使用すると、完全な参照情報 (名前、バージョン、カルチャ、および適用可能な場合は公開キー トークン) をコード内ではなく、アプリケーション構成ファイル内に提供できます。 アプリケーション ディレクトリ外部のアセンブリへの参照を完全に限定する必要がある場合、またはグローバル アセンブリ キャッシュ内のアセンブリを参照するが、完全参照をコード内ではなく構成ファイル内に指定する方が便利な場合は、この手法を使用します。
+最後に、<xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> などのメソッドを使用して動的参照を作成し、部分的な情報のみを提供することができます。次に、アプリケーション構成ファイルで [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) 要素を使用して参照を修飾します。 この要素を使用すると、完全な参照情報 (名前、バージョン、カルチャ、および適用可能な場合は公開キー トークン) をコード内ではなく、アプリケーション構成ファイル内に提供できます。 アプリケーション ディレクトリ外部のアセンブリへの参照を完全に限定する必要がある場合、またはグローバル アセンブリ キャッシュ内のアセンブリを参照するが、完全参照をコード内ではなく構成ファイル内に指定する方が便利な場合は、この手法を使用します。
 
 > [!NOTE]
 > このタイプの部分参照は、複数のアプリケーションで共有されるアセンブリに対しては使用しないでください。 構成設定はアセンブリ別ではなくアプリケーション別に適用されるため、このタイプの部分参照を使用する共有アセンブリについては、その共有アセンブリを使用するアプリケーションごとに、そのアプリケーションの構成ファイル内に限定情報を含める必要があります。
@@ -74,7 +72,7 @@ ms.locfileid: "71052128"
 
 - マシン構成ファイル
 
-これらのファイルには、特定のアセンブリについて、バインディング リダイレクト、コードの場所、バインディング モードなどの情報が同じ構文で記述されています。 バインディング プロセスをリダイレクトする各構成ファイルは [\<assemblyBinding> 要素](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)を含めることができます。 [\<assemblyBinding> 要素](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)の子要素には [\<dependentAssembly> 要素](../configure-apps/file-schema/runtime/dependentassembly-element.md)が含まれます。 [\<dependentAssembly> 要素](../configure-apps/file-schema/runtime/dependentassembly-element.md)の子は、[\<assemblyIdentity> 要素](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment)、[\<bindingRedirect> 要素](../configure-apps/file-schema/runtime/bindingredirect-element.md)と、[\<codeBase> 要素](../configure-apps/file-schema/runtime/codebase-element.md)が含まれます。
+これらのファイルには、特定のアセンブリについて、バインディング リダイレクト、コードの場所、バインディング モードなどの情報が同じ構文で記述されています。 各構成ファイルには、バインディング プロセスをリダイレクトする [\<assemblyBinding> 要素](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)を含めることができます。 [\<assemblyBinding> 要素](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)の子要素には、[\<dependentAssembly> 要素](../configure-apps/file-schema/runtime/dependentassembly-element.md)が含まれます。 [\<dependentAssembly> 要素](../configure-apps/file-schema/runtime/dependentassembly-element.md)の子には、[\<assemblyIdentity> 要素](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment)、[\<bindingRedirect> 要素](../configure-apps/file-schema/runtime/bindingredirect-element.md)、および [\<codeBase> 要素](../configure-apps/file-schema/runtime/codebase-element.md)が含まれます。
 
 > [!NOTE]
 > 構成情報は、この 3 つの構成ファイル内に含まれていますが、すべての要素がすべての構成ファイルで有効なわけではありません。 たとえば、バインディング モードやプライベート パス情報は、アプリケーション構成ファイルだけに含めることができます。 各ファイルに含まれる情報の完全な一覧については、「 [構成ファイルを使用してアプリを構成する方法](../configure-apps/index.md)」を参照してください。
@@ -83,7 +81,7 @@ ms.locfileid: "71052128"
 
 最初に、共通言語ランタイムは、アプリケーション構成ファイル内に呼び出し元アセンブリのマニフェストに格納されているバージョン情報をオーバーライドする情報がないかどうかをチェックします。 アプリケーション構成ファイルはアプリケーションと共に配置できますが、アプリケーションの実行にとっては必須ではありません。 通常、このファイルはほとんど瞬時に取得できますが、Internet Explorer Web ベースのシナリオの場合のように、アプリケーション ベースがリモート コンピューターに存在するときは、構成ファイルをダウンロードする必要があります。
 
-クライアント実行可能ファイルの場合、アプリケーション構成ファイルは、アプリケーションの実行可能ファイルと同じディレクトリに配置され、実行可能ファイルと同じ名前に拡張子 .config を付けた基本名が割り当てられます。 たとえば、C:\Program Files\Myapp\Myapp.exe の構成ファイルは、C:\Program Files\Myapp\Myapp.exe.config です。ブラウザー ベースのシナリオでは、HTML ファイルは明示的に構成ファイルを指すために **\<link>** 要素を使用する必要があります。
+クライアント実行可能ファイルの場合、アプリケーション構成ファイルは、アプリケーションの実行可能ファイルと同じディレクトリに配置され、実行可能ファイルと同じ名前に拡張子 .config を付けた基本名が割り当てられます。 たとえば、C:\Program Files\Myapp\Myapp.exe の構成ファイルは、C:\Program Files\Myapp\Myapp.exe.config です。ブラウザーベースのシナリオでは、HTML ファイルは **\<link>** 要素を使用して、構成ファイルを明示的に参照する必要があります。
 
 次のコードは、アプリケーション構成ファイルの簡単な例を示します。 この例では、 <xref:System.Diagnostics.TextWriterTraceListener> を <xref:System.Diagnostics.Debug.Listeners%2A> コレクションに追加し、デバッグ情報のファイルへの記録を有効にします。
 
@@ -136,14 +134,14 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 発行者ポリシー ファイルを使用するのは、共有コンポーネントが更新され、そのコンポーネントを使用するすべてのアプリケーションが共有コンポーネントの新しいバージョンを選択する必要がある場合です。 アプリケーション構成ファイルにセーフ モードが適用されていない限り、アプリケーション構成ファイル内の設定は、発行者ポリシー ファイル内の設定によってオーバーライドされます。
 
 #### <a name="safe-mode"></a>セーフ モード
-通常、発行者ポリシー ファイルは、Service Pack またはプログラム更新の一部として明示的にインストールされます。 アップグレードされた共有コンポーネントに何か問題がある場合は、セーフ モードを使用して発行者ポリシー ファイル内のオーバーライドを無視できます。 セーフ モードは **\<publisherPolicy apply="yes**&#124;**no"/>** 要素によって決まります。この要素は、アプリケーション構成ファイルだけにあります。 この要素は、発行者ポリシーの構成情報をバインディング プロセスから削除するかどうかを指定します。
+通常、発行者ポリシー ファイルは、Service Pack またはプログラム更新の一部として明示的にインストールされます。 アップグレードされた共有コンポーネントに何か問題がある場合は、セーフ モードを使用して発行者ポリシー ファイル内のオーバーライドを無視できます。 セーフモードは、アプリケーション構成ファイルにのみ存在する **\<publisherPolicy apply="yes**&#124;**no"/>** 要素によって決定されます。 この要素は、発行者ポリシーの構成情報をバインディング プロセスから削除するかどうかを指定します。
 
-セーフ モードは、アプリケーション全体に対して設定するか、または選択したアセンブリに対して設定できます。 つまり、アプリケーションを構成するすべてのアセンブリのポリシーをオフに設定するか、または一部のアセンブリについてだけポリシーをオフにし、それ以外はオフにしないように設定できます。 アプリケーションを構成するアセンブリに発行者ポリシーを選択的に適用するには、 **\<publisherPolicy apply\=no/>** を設定し、\<**dependentAssembly**> 要素を使用して適用対象のアセンブリを指定します。 アプリケーションを構成するすべてのアセンブリに発行者ポリシーを適用するには、依存アセンブリの場合は、要素なしの **\<publisherPolicy apply\=no/>** を設定します。 構成の詳細については、「 [構成ファイルを使用してアプリを構成する方法](../configure-apps/index.md)」を参照してください。
+セーフ モードは、アプリケーション全体に対して設定するか、または選択したアセンブリに対して設定できます。 つまり、アプリケーションを構成するすべてのアセンブリのポリシーをオフに設定するか、または一部のアセンブリについてだけポリシーをオフにし、それ以外はオフにしないように設定できます。 アプリケーションを構成するアセンブリに対して発行者ポリシーを選択的に適用するには、 **\<publisherPolicy apply\=no/>** を設定し、\<**dependentAssembly**> 要素を使用して、影響を受けるアセンブリを指定します。 アプリケーションを構成するすべてのアセンブリに発行者ポリシーを適用するには、依存アセンブリ要素なしで **\<publisherPolicy apply\=no/>** を設定します。 構成の詳細については、「 [構成ファイルを使用してアプリを構成する方法](../configure-apps/index.md)」を参照してください。
 
 ### <a name="machine-configuration-file"></a>マシン構成ファイル
 3 番目に、ランタイムはマシン構成ファイルをチェックします。 このファイルは、Machine.config という名前で、ローカル コンピューターの、ランタイムがインストールされているルート ディレクトリの Config サブディレクトリにあります。 管理者は、このマシン構成ファイルを使用して、そのコンピューターに固有のアセンブリ バインディング制限を指定できます。 マシン構成ファイル内の設定は、ほかのすべての構成設定に優先します。ただし、これは、他のすべての構成設定をこのマシン構成ファイルに配置する必要があるという意味ではありません。 管理者ポリシー ファイルによって決定されるバージョンは最終的であり、オーバーライドすることはできません。 Machine.config ファイル内に指定されたオーバーライドは、すべてのアプリケーションに作用します。 構成ファイルの詳細については、「 [構成ファイルを使用してアプリを構成する方法](../configure-apps/index.md)」を参照してください。
 
-<a name="step2"></a> 
+<a name="step2"></a>
 
 ## <a name="step-2-checking-for-previously-referenced-assemblies"></a>手順 2: 前に参照したアセンブリの検索
 
@@ -152,7 +150,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 アセンブリに対する前の要求が失敗している場合、そのアセンブリに対する後続の要求は、アセンブリの読み込みを試みることなく即座に失敗します。 .NET Framework Version 2.0 からは、アセンブリ バインディング エラーがキャッシュされ、キャッシュされた情報を使用してアセンブリの読み込みを試みるかどうかが判断されるようになりました。
 
 > [!NOTE]
-> バインディング エラーをキャッシュしない .NET Framework Version 1.0 および 1.1 の動作に戻すには、構成ファイルに [\<disableCachingBindingFailures> 要素](../configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md)を追加します。
+> バインディング エラーをキャッシュしていなかった .NET Framework バージョン 1.0 および 1.1 の動作に戻すには、構成ファイルに [\<disableCachingBindingFailures> 要素](../configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md)を含めます。
 
 <a name="step3"></a>
 
@@ -166,25 +164,25 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 
 共通言語ランタイムは、呼び出し元アセンブリの参照および構成ファイル内の情報を使用して正しいアセンブリ バージョンを決定した後、およびグローバル アセンブリ キャッシュ内をチェック (厳密な名前が付いたアセンブリの場合だけ) した後で、アセンブリの検索を試みます。 アセンブリを検索するプロセスは、次のとおりです。
 
-1. [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素は、アプリケーション構成ファイルに格納されている場合、ランタイムはこの要素に指定されている場所を調べます。 一致するアセンブリが見つかった場合は、そのアセンブリが使用され、プローブは実行されません。 指定されている場所でアセンブリが見つからなかった場合、バインド要求は失敗します。
+1. アプリケーション構成ファイルで [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が見つかった場合、ランタイムは、指定された場所をチェックします。 一致するアセンブリが見つかった場合は、そのアセンブリが使用され、プローブは実行されません。 指定されている場所でアセンブリが見つからなかった場合、バインド要求は失敗します。
 
 2. 次に、ランタイムは、後でこのセクションで指定する規則に従って、参照先アセンブリをプローブします。
 
 > [!NOTE]
-> アセンブリがディレクトリ内に複数バージョンあり、特定バージョンのアセンブリを参照する場合は、[\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素の `privatePath` 属性ではなく [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素を使用する必要があります。 [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素を使用すると、ランタイムは、参照されている単純なアセンブリ名に一致するアセンブリを初めて検出した時点で、それが適切な一致かどうかに関係なくプローブを停止します。 適切な一致である場合は、そのアセンブリが使用されます。 適切な一致でない場合、プローブは停止し、バインディングは失敗します。
+> ディレクトリ内に複数のバージョンのアセンブリが存在し、そのアセンブリの特定のバージョンを参照する場合は、[\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素の `privatePath` 属性ではなく、[\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素を使用する必要があります。 [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素を使用すると、ランタイムは、参照されている単純なアセンブリ名と一致するアセンブリを最初に検出したときに、それが正しい一致かどうかにかかわらず、プローブを停止します。 適切な一致である場合は、そのアセンブリが使用されます。 適切な一致でない場合、プローブは停止し、バインディングは失敗します。
 
 ### <a name="locating-the-assembly-through-codebases"></a>コードベースによるアセンブリの検索
 
-コードベース情報は、構成ファイルで [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素を使用して指定できます。 コードベースは、ランタイムが参照先アセンブリのプローブを試みる前に、常にチェックされます。 最終バージョン リダイレクトを含む発行者ポリシー ファイルに [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素も含まれている場合、その [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が使用されます。 たとえば、アプリケーション構成ファイルに [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が指定されていて、アプリケーション情報をオーバーライドする発行者ポリシー ファイルにも [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が指定されている場合、発行者ポリシー ファイルの [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が使用されます。
+コードベース情報は、構成ファイルで [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素を使用して指定できます。 コードベースは、ランタイムが参照先アセンブリのプローブを試みる前に、常にチェックされます。 最終バージョンのリダイレクトを含む発行者ポリシー ファイルにも [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が含まれている場合、使用されるのは、その [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素になります。 たとえば、アプリケーション構成ファイルで [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が指定されていて、アプリケーション情報をオーバーライドする発行者ポリシー ファイルでも [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が指定されている場合は、発行者ポリシーファイルの [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素が使用されます。
 
-一致が [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素で指定された場所に見つからなかった場合、バインド要求は失敗し、その後の手順は実行されません。 ランタイムは、アセンブリが呼び出し元アセンブリの検索条件と一致すると判断したときにそのアセンブリを使用します。 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) の特定の要素に指定されたファイルが読み込まれると、ランタイムは、名前、バージョン、カルチャ、および公開キーが呼び出し元アセンブリの参照と一致するかどうかをチェックします。
+[\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素で指定された場所に一致が見つからない場合、バインド要求は失敗し、それ以降の手順は実行されません。 ランタイムは、アセンブリが呼び出し元アセンブリの検索条件と一致すると判断したときにそのアセンブリを使用します。 指定した [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素によって指定されたファイルが読み込まれると、ランタイムは、名前、バージョン、カルチャ、および公開キーが呼び出し元のアセンブリの参照と一致するかどうかをチェックします。
 
 > [!NOTE]
-> アプリケーションのルート ディレクトリの外部で参照されているアセンブリは、厳密な名前が付けられていなければならず、グローバル アセンブリ キャッシュにインストールするか、または [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素を使用して指定する必要があります。
+> アプリケーションのルート ディレクトリ外にある参照アセンブリは、厳密な名前を持っている必要があります。また、グローバル アセンブリ キャッシュにインストールされているか、[\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素を使用して指定されている必要があります。
 
 ### <a name="locating-the-assembly-through-probing"></a>プローブによるアセンブリの検索
 
-アプリケーション構成ファイルに [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素がない場合、ランタイムは 4 個の条件を使用してアセンブリをプローブします。
+アプリケーション構成ファイルに [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 要素がない場合、ランタイムは、次の 4 つの条件を使用してアセンブリをプローブします。
 
 - アプリケーション ベース (アプリケーションが実行されるルート位置)。
 
@@ -192,7 +190,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 
 - 名前 (参照先アセンブリの名前)。
 
-- [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素の `privatePath` 属性 (ルート位置の下にあるサブディレクトリのユーザー定義の一覧)。 この場所は、アプリケーション ドメインの <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> プロパティを使用して、アプリケーション構成ファイルとマネージド コード内に指定できます。 マネージド コード内に指定した場合は、マネージド コード `privatePath` が先にプローブされ、その後でアプリケーション構成ファイルに指定したパスがプローブされます。
+- [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素の `privatePath` 属性。これは、ルート場所の下にあるサブディレクトリのユーザー定義リストです。 この場所は、アプリケーション ドメインの <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> プロパティを使用して、アプリケーション構成ファイルとマネージド コード内に指定できます。 マネージド コード内に指定した場合は、マネージド コード `privatePath` が先にプローブされ、その後でアプリケーション構成ファイルに指定したパスがプローブされます。
 
 #### <a name="probing-the-application-base-and-culture-directories"></a>アプリケーション ベース ディレクトリとカルチャ ディレクトリのプローブ
 
@@ -210,7 +208,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 
 #### <a name="probing-with-the-privatepath-attribute"></a>privatePath 属性を使用したプローブ
 
-参照アセンブリの名前をカルチャ サブディレクトリとサブディレクトリの他に、ランタイムは、[\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素の `privatePath` 属性を使用して指定されたディレクトリをプローブします。 `privatePath` 属性を使用して指定するディレクトリは、アプリケーションのルート ディレクトリのサブディレクトリである必要があります。 プローブされるディレクトリは、参照先アセンブリ要求にカルチャ情報が含まれているかどうかによって異なります。
+ランタイムは、参照アセンブリ用に指定されたカルチャ サブディレクトリおよびサブディレクトリに加え、[\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素の `privatePath` 属性を使用して指定されたディレクトリもプローブします。 `privatePath` 属性を使用して指定するディレクトリは、アプリケーションのルート ディレクトリのサブディレクトリである必要があります。 プローブされるディレクトリは、参照先アセンブリ要求にカルチャ情報が含まれているかどうかによって異なります。
 
 ランタイムは、参照されている単純なアセンブリ名に一致するアセンブリを最初に見つけた時点で、それが適切な一致かどうかに関係なく、プローブを停止します。 適切な一致である場合は、そのアセンブリが使用されます。 適切な一致でない場合、プローブは停止し、バインディングは失敗します。
 
@@ -234,7 +232,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 
 - アプリケーション ルート ディレクトリ: `http://www.code.microsoft.com`
 
-- 構成ファイルの [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素による指定: bin
+- 構成ファイルの [\<probing>](../configure-apps/file-schema/runtime/probing-element.md) 要素の指定: bin
 
 - カルチャ: de
 

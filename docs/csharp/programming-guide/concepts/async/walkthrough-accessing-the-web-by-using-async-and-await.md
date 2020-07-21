@@ -2,12 +2,12 @@
 title: 'チュートリアル: Async と Await を使用した Web へのアクセス (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 42b09dab26fd514e184163eaf41aff117d3a463f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: edc45f252b75c742afe4f073ca7dd92d9784d2c4
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281791"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240636"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>チュートリアル: Async と Await を使用した Web へのアクセス (C#)
 
@@ -40,7 +40,7 @@ async/await 機能を使用することで、非同期プログラムをより�
 
 1. Visual Studio コード エディターで、 **[MainWindow.xaml]** タブをクリックします。
 
-2. **[ツールボックス]** ウィンドウが表示されていない場合は、 **[表示]** メニューを開き、 **[ツールボックス]** をクリックします。
+2. **[ツールボックス]** ウィンドウが表示されていない場合は、 **[表示]** メニューを開き、 **[ツールボックス]** を選択します。
 
 3. **[Button]** コントロールと **[TextBox]** コントロールを **[MainWindow]** ウィンドウに追加します。
 
@@ -254,7 +254,7 @@ Control returned to startButton_Click.
 
      `webReq.GetResponseAsync` への呼び出しによって、`Task(Of WebResponse)` または `Task<WebResponse>` が返されます。 その後、`WebResponse` 値を取得するため、タスクに await 演算子が適用されます。
 
-     非同期メソッドにタスクの完了に依存しない処理がある場合、メソッドはこれら 2 つのステートメントの間、つまり非同期メソッドへの呼び出しから、`await` 演算子の適用までの間にその処理を続行することができます。 この例については、「[async と await を使用して複数の Web 要求を並列実行する方法 (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)」および「[Task.WhenAll を使用して AsyncWalkthrough を拡張する方法 (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)」を参照してください。
+     非同期メソッドにタスクの完了に依存しない処理がある場合、メソッドはこれら 2 つのステートメントの間、つまり非同期メソッドへの呼び出しから、`await` 演算子の適用までの間、その処理を続行することができます。 この例については、「[async と await を使用して複数の Web 要求を並列実行する方法 (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)」および「[Task.WhenAll を使用して AsyncWalkthrough を拡張する方法 (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)」を参照してください。
 
 3. 前の手順で `await` 演算子を追加したため、コンパイラ エラーが発生します。 この演算子は、[async](../../../language-reference/keywords/async.md) 修飾子でマークされているメソッドでのみ使用できます。 `CopyTo` への呼び出しを `CopyToAsync` への呼び出しに置き換える変換手順を繰り返す間は、エラーを無視してください。
 
@@ -283,7 +283,7 @@ Control returned to startButton_Click.
     private async byte[] GetURLContents(string url)
     ```
 
-5. C# での非同期メソッドの戻り値の型は、<xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、または `void` のみを指定できます。 通常、`void` の戻り値の型は、`void` を必要とする非同期イベント ハンドラーでのみ使用します。 それ以外のケースでは、完成したメソッドに、T 型の値を返す [return](../../../language-reference/keywords/return.md) ステートメントが含まれる場合は `Task(T)` を使用し、完成したメソッドが意味のある値を返さない場合は `Task` を使用します。 戻り値の型 `Task` は、"Task(void)" を意味するものと考えることができます。
+5. C# での非同期メソッドの戻り値の型は、<xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、または `void` のみを指定できます。 通常、`void` の戻り値の型は、`void` を必要とする非同期イベント ハンドラーでのみ使用します。 それ以外のケースでは、完成したメソッドに、T 型の値を返す [Return](../../../language-reference/keywords/return.md) ステートメントが含まれる場合は `Task(T)` を使用し、完成したメソッドが意味のある値を返さない場合は `Task` を使用します。 戻り値の型 `Task` は、"Task(void)" を意味するものと考えることができます。
 
      詳しくは、「[非同期の戻り値の型 (C#)](./async-return-types.md)」をご覧ください。
 
@@ -330,7 +330,7 @@ Control returned to startButton_Click.
 
     - メソッド名に "Async" を追加します。
 
-    - 今回、タスク戻り変数の T がない理由は、`SumPageSizesAsync` が T のための値を返さないからです (メソッドに `return` ステートメントがありません)。ただし、メソッドは待機可能になるために `Task` を返す必要があります。 そのため、メソッドの戻り値の型を `void` から `Task` に変更します。
+    - 今回、タスク戻り変数の T がない理由は、`SumPageSizesAsync` が T のための値を返さないからです。(メソッドに `return` ステートメントがありません)。ただし、メソッドは待機可能になるために `Task` を返す必要があります。 そのため、メソッドの戻り値の型を `void` から `Task` に変更します。
 
     これらの変更を次のコードに示します。
 
@@ -395,9 +395,9 @@ Control returned to startButton_Click.
 
     - 最も重要な点は、ダウンロード中に UI スレッドがブロックされないことです。 Web リソースをダウンロード、カウント、および表示している間に、ウィンドウの移動やサイズ変更を行うことができます。 いずれかの Web サイトの処理が遅い、または応答しない場合、**閉じる**ボタン (右上隅の赤色のフィールドにある [x]) をクリックすることで、操作を取り消すことができます。
 
-## <a name="replace-method-geturlcontentsasync-with-a-net-framework-method"></a>GetURLContentsAsync メソッドを .NET Framework メソッドに置き換える
+## <a name="replace-method-geturlcontentsasync-with-a-net-method"></a>GetURLContentsAsync メソッドを .NET メソッドに置き換える
 
-1. .NET Framework 4.5 では、使用できる非同期メソッドが数多く用意されています。 その 1 つである、<xref:System.Net.Http.HttpClient> の <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29> メソッドは、このチュートリアルに必要な処理だけを実行します。 これを、前述の手順で作成した `GetURLContentsAsync` メソッドの代わりに使用できます。
+1. .NET Framework 4.5 以降のバージョンでは、使用できる非同期メソッドが数多く用意されています。 その 1 つである、<xref:System.Net.Http.HttpClient> の <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29> メソッドは、このチュートリアルに必要な処理だけを実行します。 これを、前述の手順で作成した `GetURLContentsAsync` メソッドの代わりに使用できます。
 
      まずは、`SumPageSizesAsync` メソッドに `HttpClient` オブジェクトを作成します。 次の宣言をメソッドの先頭に追加します。
 

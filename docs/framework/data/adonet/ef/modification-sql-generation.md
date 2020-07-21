@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
 ms.openlocfilehash: b6c1b71effba17d33c035d0f1df386bf56d405b5
 ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73039895"
@@ -13,7 +13,7 @@ ms.locfileid: "73039895"
 
 ここでは、SQL:1999 準拠のデータベース プロバイダーのための変更 SQL 生成モジュールを開発する方法について説明します。 このモジュールは、変更コマンド ツリーを適切な SQL INSERT ステートメント、UPDATE ステートメント、または DELETE ステートメントに変換します。
 
-Select ステートメントの SQL 生成の詳細については、「 [sql の生成](sql-generation.md)」を参照してください。
+SELECT ステートメントでの SQL 生成については、「[SQL 生成](sql-generation.md)」をご覧ください。
 
 ## <a name="overview-of-modification-command-trees"></a>変更コマンド ツリーの概要
 
@@ -27,11 +27,11 @@ DbModificationCommandTree は、DbCommandTree から継承される変更 DML �
 
 - DbDeleteCommandTree
 
-Entity Framework によって生成される DbModificationCommandTree とその実装は、常に単一行演算を表します。 ここでは、これら 3 つの種類の実装と、.NET Framework Version 3.5 における制約について説明します。
+DbModificationCommandTree と、Entity Framework によって生成されるその実装は、常に単一行の操作を表します。 ここでは、これら 3 つの種類の実装と、.NET Framework Version 3.5 における制約について説明します。
 
 ![図](./media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")
 
-DbModificationCommandTree には、変更操作のターゲット セットを表す Target プロパティがあります。 入力セットを定義する Target の Expression プロパティは、常に DbScanExpression です。  DbScanExpression は、テーブルまたはビューを表すことができます。また、対象のメタデータプロパティの "定義クエリ" が null 以外の場合は、クエリで定義されたデータのセットを表すことができます。
+DbModificationCommandTree には、変更操作のターゲット セットを表す Target プロパティがあります。 入力セットを定義する Target の Expression プロパティは、常に DbScanExpression です。  DbScanExpression では、テーブルまたはビューを表すことができます。また、Target の "Defining Query" メタデータ プロパティが null 以外の場合は、クエリによって定義されたデータのセットを表すことができます。
 
 モデル内で定義クエリを使用してセットが定義されているが、対応する変更操作のための関数が指定されていない場合、クエリを表す DbScanExpression は、変更のターゲットとしてプロバイダーにのみ影響を与えます。 プロバイダーによっては、このようなシナリオはサポートされません (たとえば、SqlClient ではサポートされません)。
 
@@ -62,7 +62,7 @@ Returning 値は、挿入または更新された行に基づいて返される�
 
 SetClauses は、挿入または更新操作を定義する insert set 句または update set 句のリストを指定します。
 
-リストの要素は、insert または update の変更操作で1つの句を指定する DbModificationClause 型として指定されます。 DbSetClause は DbModificationClause から継承し、プロパティの値を設定する変更操作で句を指定します。 .NET Framework のバージョン3.5 以降では、Setclauses のすべての要素の型は Setclauses です。
+リストの要素は DbModificationClause 型として指定され、挿入または更新の変更操作において 1 つの句を指定します。 DbSetClause は DbModificationClause を継承し、変更操作においてプロパティの値を設定する句を指定します。 .NET Framework のバージョン 3.5 以降では、SetClauses のすべての要素が SetClause 型です。
 
 Property は、更新する必要があるプロパティを指定します。 これは常に、対応する DbModificationCommandTree の Target への参照を表す、DbVariableReferenceExpression に対する DbPropertyExpression です。
 
@@ -72,11 +72,11 @@ Value は、プロパティを更新するための新しい値を指定しま�
 
 Predicate は、ターゲット コレクションのどのメンバーを更新または削除する必要があるかを判定するために使用される述語を指定します。 これは、DbExpressions の次のサブセットから構成される式ツリーです。
 
-- DbComparisonExpression が Equals で、右側の子が DbPropertyExpression で、次のように制限されており、左側の子が DbConstantExpression になっています。
+- Equals 型の DbComparisonExpression。右辺の子は以下のように制限される DbPropertyExpression、左辺の子は DbConstantExpression です。
 
 - DbConstantExpression
 
-- DbPropertyExpression を以下の制限付きで DbIsNullExpression
+- 以下のように制限される、DbPropertyExpression に対する DbIsNullExpression。
 
 - 対応する DbModificationCommandTree の Target への参照を表す、DbVariableReferenceExpression に対する DbPropertyExpression。
 
@@ -88,7 +88,7 @@ Predicate は、ターゲット コレクションのどのメンバーを更新
 
 ## <a name="modification-sql-generation-in-the-sample-provider"></a>サンプル プロバイダーでの変更 SQL 生成
 
-[Entity Framework サンプルプロバイダー](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0)は、Entity Framework をサポートする ADO.NET データプロバイダーのコンポーネントを示しています。 このサンプルは、SQL Server 2005 データベースを対象としており、System.Data.SqlClient ADO.NET 2.0 データ プロバイダーの最上位にラッパーとして実装されます。
+[Entity Framework Sample Provider](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) では、Entity Framework をサポートする ADO.NET データ プロバイダーのコンポーネントが示されています。 このサンプルは、SQL Server 2005 データベースを対象としており、System.Data.SqlClient ADO.NET 2.0 データ プロバイダーの最上位にラッパーとして実装されます。
 
 SQL Generation\DmlSqlGenerator.cs ファイル内にあるサンプル プロバイダーの変更 SQL 生成モジュールは、DbModificationCommandTree を入力として受け取り、単一の変更 SQL ステートメントを生成します。この後に、DbModificationCommandTree によって指定された場合にリーダーを返す SELECT ステートメントが続く場合もあります。 生成されたコマンドの構造は、対象の SQL Server データベースの影響を受けます。
 
@@ -114,7 +114,7 @@ DbPropertyExpression のインスタンスが常に入力テーブルを表す�
 
 サンプル プロバイダーで指定されている DbInsertCommandTree に対して生成される挿入コマンドは、以下に示す 2 つの挿入テンプレートのどちらかに基づいています。
 
-1 つ目のテンプレートには、SetClauses のリストの値を受け取って挿入を実行するコマンドと、挿入された行の Returning プロパティが null 以外の場合にその Returning プロパティで指定されたプロパティを返す SELECT ステートメントが含まれています。 行が挿入された場合、述語要素 "\@@ROWCOUNT > 0" は true になります。 述語要素 "keyMemberI = keyValueI &#124; scope_identity ()" は、keymemberi がストアによって生成されたキーである場合にのみ、図形 "keymemberi = scope_identity ()" を受け取ります。これは、scope_identity () が id に挿入された最後の id 値を返すためです (ストアによって生成された列)。
+1 つ目のテンプレートには、SetClauses のリストの値を受け取って挿入を実行するコマンドと、挿入された行の Returning プロパティが null 以外の場合にその Returning プロパティで指定されたプロパティを返す SELECT ステートメントが含まれています。 行が挿入された場合、述語要素 "\@@ROWCOUNT > 0" は true になります。 述語要素 "keyMemberI =  keyValueI &#124; scope_identity()" は、keyMemberI がストア生成キーの場合にのみ "keyMemberI =  scope_identity()" という構造をとります。これは、ID (ストア生成の ID) 列に挿入された最後の ID 値が scope_identity() によって返されるためです。
 
 ```sql
 -- first insert Template
@@ -210,7 +210,7 @@ WHERE <predicate>
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]
 ```
 
-Set 句には、set 句が指定されていない場合にのみ、偽の set 句 ("@i = 0") が含まれます。 これは、ストア計算列が再計算されるようにするためです。
+set 句が指定されない場合にのみ、仮の set 句 ("@i = 0") が設定されます。 これは、ストア計算列が再計算されるようにするためです。
 
 Returning プロパティが null でない場合にのみ、SELECT ステートメントが生成され、Returning プロパティに指定されたプロパティが返されます。
 

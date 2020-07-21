@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: c4dbe632-6e7f-4d7f-9df5-98737a758bc3
 ms.openlocfilehash: ae8ba54cc852bb85350492c95e3e890aebf6534f
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61769279"
@@ -18,7 +18,7 @@ ms.locfileid: "61769279"
 この例では、メディアの再生とイベントを同期する方法を示します。  
   
 ## <a name="example"></a>例  
- 次の例では、<xref:System.Windows.Controls.MediaElement>コントロールと<xref:System.Windows.Media.MediaTimeline>、ユーザーがクリックしたときに発生するサウンドを再生するクラス、<xref:System.Windows.Controls.Button>します。  
+ 次の例では、<xref:System.Windows.Controls.MediaElement> コントロールと <xref:System.Windows.Media.MediaTimeline> クラスを使用し、ユーザーが <xref:System.Windows.Controls.Button> をクリックしたときに発生する音を再生します。  
   
  [!code-xaml[MediaGallery_snippet#SoundFromUserEventExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snippet/CSharp/SoundFromUserEventExample.xaml#soundfromusereventexamplewholepage)]  
   

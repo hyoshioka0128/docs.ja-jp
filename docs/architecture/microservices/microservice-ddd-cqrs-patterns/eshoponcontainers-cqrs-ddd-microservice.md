@@ -1,13 +1,13 @@
 ---
 title: eShopOnContainers で DDD マイクロサービスの CQRS と CQS のアプローチを適用する
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | CQRS を eShopOnContainers の注文マイクロサービスに実装する方法を理解する。
-ms.date: 10/08/2018
-ms.openlocfilehash: 0380e759595e8a159e89f858a5ced4dacfa4e9b4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.date: 03/03/2020
+ms.openlocfilehash: 2916df596a6d0f887411f3ef0074aed395ef58ba
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674129"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306943"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>eShopOnContainers の DDD マイクロサービスに CQRS および CQS のアプローチを適用する
 
@@ -23,13 +23,13 @@ eShopOnContainers 参照アプリケーションの注文マイクロサービ�
 
 そうしたパターンの 1 つは集計パターンです。これについては、後のセクションでさらに説明します。 簡単に言うと、集約パターンでは、多数のドメイン オブジェクトがドメイン内で互いに持つリレーションシップの結果として、1 つの単位として処理されます。 このパターンを採用しても、クエリに利点があるとは限りません。クエリ ロジックの複雑さが増す可能性があります。 読み取り専用クエリの場合、複数のオブジェクトを単一の集計として扱う利点はありません。 複雑さが増すだけです。
 
-図 7-2 に示されているように、このガイドでは、DDD パターンをマイクロサービスのトランザクション/更新領域 (つまり、コマンドによってトリガーされる部分) にのみ使用することを提案しています。 クエリはよりシンプルなアプローチに従うことができ、CQRS アプローチに従ってコマンドから分離する必要があります。
+前のセクションの図 7-2 に示されているように、このガイドでは、DDD パターンをマイクロサービスのトランザクション/更新領域 (つまり、コマンドによってトリガーされる部分) にのみ使用することを提案しています。 クエリはよりシンプルなアプローチに従うことができ、CQRS アプローチに従ってコマンドから分離する必要があります。
 
 「クエリ サイド」を実装する場合、EF Core、AutoMapper プロジェクション、ストアド プロシージャ、ビュー、具体化されたビュー、マイクロ ORM など本格的な ORM の多様なアプローチから選択できます。
 
-このガイドと eShopOnContainers (具体的には注文マイクロサービス) では、[Dapper](https://github.com/StackExchange/dapper-dot-net) のようなマイクロ ORM を使用して直接的なクエリを実装します。 この場合、SQL ステートメントに基づくクエリを実装でき、わずかなオーバーヘッドしかない軽量フレームワークのおかげで、最良のパフォーマンスが得られます。
+このガイドと eShopOnContainers (具体的には注文マイクロサービス) では、[Dapper](https://github.com/StackExchange/dapper-dot-net) のようなマイクロ ORM を使用して直接的なクエリを実装します。 この場合、SQL ステートメントに基づくクエリを実装でき、オーバーヘッドが小さい軽量フレームワークのおかげで、最良のパフォーマンスが得られます。
 
-このアプローチを使用するにあたり、モデルに加える更新が原因で SQL データベースにエンティティを保存する方法に影響が及ぶ場合は、Dapper など、クエリ実行のための独立した (EF 以外の) アプローチで使用される SQL クエリにも、別途更新が必要であることにご注意ください。
+このアプローチを使用するにあたり、モデルに加える更新が原因で SQL データベースにエンティティを保持する方法に影響が及ぶ場合は、Dapper など、クエリ実行のための独立した (EF 以外の) アプローチで使用される SQL クエリにも、別途更新が必要になります。
 
 ## <a name="cqrs-and-ddd-patterns-are-not-top-level-architectures"></a>CQRS パターンと DDD パターンは最上位のアーキテクチャではない
 
@@ -48,7 +48,7 @@ CQRS とほとんどの DDD のパターン (DDD レイヤー、集約を伴う�
   <https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf>
 
 - **Udi Dahan。CQRS の明確化** \
-  <http://udidahan.com/2009/12/09/clarified-cqrs/>
+  <https://udidahan.com/2009/12/09/clarified-cqrs/>
 
 >[!div class="step-by-step"]
 >[前へ](apply-simplified-microservice-cqrs-ddd-patterns.md)

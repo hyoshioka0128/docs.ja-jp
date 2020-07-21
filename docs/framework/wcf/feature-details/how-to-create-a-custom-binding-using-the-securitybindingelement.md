@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
-ms.openlocfilehash: da67d923b36d673c87c90ba79b72ad4e1fc64a0c
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 15fdd50b05bd2217cb9819373cd1c015da52b15b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988764"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599010"
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>方法: SecurityBindingElement を使用してカスタム バインドを作成する
-Windows Communication Foundation (WCF) には、構成できるシステム指定のバインディングがいくつか用意されていますが、WCF がサポートするすべてのセキュリティオプションを構成するときに完全な柔軟性は提供されません。 ここでは、個別のバインド要素からカスタム バインドを直接作成する方法を説明し、このようなバインディングを作成する場合に指定できるセキュリティ設定のいくつかに焦点を当てます。 カスタムバインディングの作成の詳細については、「[バインディングの拡張](../../../../docs/framework/wcf/extending/extending-bindings.md)」を参照してください。  
+Windows Communication Foundation (WCF) には、構成できるシステム指定のバインディングがいくつか用意されていますが、WCF がサポートするすべてのセキュリティオプションを構成するときに完全な柔軟性は提供されません。 ここでは、個別のバインド要素からカスタム バインディングを直接作成する方法を説明し、このようなバインディングを作成する場合に指定できるセキュリティ設定のいくつかに焦点を当てます。 カスタムバインディングの作成の詳細については、「[バインディングの拡張](../extending/extending-bindings.md)」を参照してください。  
   
 > [!WARNING]
 > <xref:System.ServiceModel.Channels.SecurityBindingElement> では、<xref:System.ServiceModel.Channels.IDuplexSessionChannel> が <xref:System.ServiceModel.TransferMode> に設定されている場合に TCP トランスポートによって使用される既定のチャネル形状である <xref:System.ServiceModel.TransferMode.Buffered> チャネル形状をサポートしていません。 このシナリオで <xref:System.ServiceModel.TransferMode> を使用するには、<xref:System.ServiceModel.TransferMode.Streamed> を <xref:System.ServiceModel.Channels.SecurityBindingElement> に設定する必要があります。  
@@ -25,7 +25,7 @@ Windows Communication Foundation (WCF) には、構成できるシステム指�
   
  これに対し、カスタム バインドを作成する場合は、バインド要素が作成および構成され、そのバインド要素から <xref:System.ServiceModel.Channels.CustomBinding> が作成されます。  
   
- これを行うには、<xref:System.ServiceModel.Channels.BindingElementCollection> クラスのインスタンスによって表されるコレクションに個別のバインド要素を追加し、`Elements` の `CustomBinding` プロパティをそのオブジェクトと同じにします。 次の順序でバインド要素を追加する必要があります。トランザクションフロー、信頼できるセッション、セキュリティ、複合二重、一方向、ストリームセキュリティ、メッセージエンコーディング、トランスポート。 どのバインディングでも、これらすべてのバインド要素が必要になるとは限りません。  
+ これを行うには、<xref:System.ServiceModel.Channels.BindingElementCollection> クラスのインスタンスによって表されるコレクションに個別のバインド要素を追加し、`Elements` の `CustomBinding` プロパティをそのオブジェクトと同じにします。 バインド要素は、トランザクション フロー、信頼できるセッション、セキュリティ、複合二重、一方向、ストリーム セキュリティ、メッセージ エンコーディング、トランスポートの順に追加する必要があります。 どのバインディングでも、これらすべてのバインド要素が必要になるとは限りません。  
   
 ## <a name="securitybindingelement"></a>SecurityBindingElement  
  3 つのバインド要素がメッセージ レベルのセキュリティに関連しており、これらはすべて <xref:System.ServiceModel.Channels.SecurityBindingElement> クラスから派生します。 この 3 つのバインディングとは、<xref:System.ServiceModel.Channels.TransportSecurityBindingElement>、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>、および <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> です。 <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> は混合モード セキュリティを提供するために使用されます。 他の 2 つの要素は、メッセージ層でセキュリティを提供する場合に使用します。  
@@ -51,17 +51,17 @@ Windows Communication Foundation (WCF) には、構成できるシステム指�
   
  前述の要因の各組み合わせに有効なバインド要素のスタックの構成を次の表に示します。 これらは最小限の要件であることに注意してください。 メッセージ エンコーディング バインド要素、トランザクション バインド要素などの追加のバインド要素をバインディングに追加することもできます。  
   
-|セキュリティ モード|Transport|コントラクトのメッセージ交換パターン|コントラクトのメッセージ交換パターン|コントラクトのメッセージ交換パターン|  
+|セキュリティ モード|トランスポート|コントラクトのメッセージ交換パターン|コントラクトのメッセージ交換パターン|コントラクトのメッセージ交換パターン|  
 |-------------------|---------------|---------------------------------------|---------------------------------------|---------------------------------------|  
 |||`Datagram`|`Request Reply`|`Duplex`|  
-|Transport|Https||||  
+|トランスポート|Https||||  
 |||OneWayBindingElement|||  
 |||HttpsTransportBindingElement|HttpsTransportBindingElement||  
 ||TCP||||  
 |||OneWayBindingElement|||  
 |||SSL または Windows StreamSecurityBindingElement|SSL または Windows StreamSecurityBindingElement|SSL または Windows StreamSecurityBindingElement|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
-|メッセージ|Http|SymmetricSecurityBindingElement|SymmetricSecurityBindingElement|SymmetricSecurityBindingElement (認証モード = SecureConversation)|  
+|Message|Http|SymmetricSecurityBindingElement|SymmetricSecurityBindingElement|SymmetricSecurityBindingElement (認証モード = SecureConversation)|  
 |||||CompositeDuplexBindingElement|  
 |||OneWayBindingElement||OneWayBindingElement|  
 |||HttpTransportBindingElement|HttpTransportBindingElement|HttpTransportBindingElement|  
@@ -75,13 +75,13 @@ Windows Communication Foundation (WCF) には、構成できるシステム指�
 |||SSL または Windows StreamSecurityBindingElement|SSL または Windows StreamSecurityBindingElement|SSL または Windows StreamSecurityBindingElement|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
   
- SecurityBindingElements には構成可能な設定が多数あることに注意してください。 詳細については、「[認証モード](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)の使用」を参照してください。  
+ SecurityBindingElements には構成可能な設定が多数あることに注意してください。 詳細については、「[認証モード](securitybindingelement-authentication-modes.md)の使用」を参照してください。  
   
- 詳細については、「[セキュリティで保護された通信とセッション](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md)」を参照してください。  
+ 詳細については、「[セキュリティで保護された通信とセッション](secure-conversations-and-secure-sessions.md)」を参照してください。  
   
 ## <a name="procedures"></a>手順  
   
-#### <a name="to-create-a-custom-binding-that-uses-a-symmetricsecuritybindingelement"></a>SymmetricSecurityBindingElement を使用するカスタム バインドを作成するには  
+#### <a name="to-create-a-custom-binding-that-uses-a-symmetricsecuritybindingelement"></a>SymmetricSecurityBindingElement を使用するカスタム バインディングを作成するには  
   
 1. <xref:System.ServiceModel.Channels.BindingElementCollection> クラスのインスタンスを `outputBec` という名前で作成します。  
   
@@ -112,5 +112,5 @@ Windows Communication Foundation (WCF) には、構成できるシステム指�
 - <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [バインディングの拡張](../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [システム標準のバインディング](../../../../docs/framework/wcf/system-provided-bindings.md)
+- [バインディングの拡張](../extending/extending-bindings.md)
+- [システム標準のバインディング](../system-provided-bindings.md)

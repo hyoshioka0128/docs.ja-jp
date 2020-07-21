@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bc4288b6-3331-4ae3-990d-e1d6e62ecb67
 topic_type:
 - apiref
-ms.openlocfilehash: d6ee36ac4d4510637e5f8240c3b8930a9bec7970
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 75cc729a3d0ffa7ac67b29be2defb84b05cc6bb0
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123829"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82894472"
 ---
 # <a name="icordebugchaingetregisterset-method"></a>ICorDebugChain::GetRegisterSet メソッド
 このチェーンのアクティブな部分のレジスタセットを取得します。  
@@ -35,13 +35,13 @@ HRESULT GetRegisterSet (
   
 ## <a name="parameters"></a>パラメーター  
  `ppRegisters`  
- 入出力このチェーンのアクティブな部分のレジスタセットを表す、[のオブジェクトの](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)アドレスへのポインター。  
+ 入出力このチェーンのアクティブな部分のレジスタセットを表す、[のオブジェクトの](icordebugregisterset-interface.md)アドレスへのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

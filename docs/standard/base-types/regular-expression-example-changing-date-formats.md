@@ -1,6 +1,6 @@
 ---
 title: '正規表現の例: 日付形式の変更'
-ms.date: 03/30/2017
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -13,16 +13,18 @@ helpviewer_keywords:
 - regular expressions [.NET Framework], examples
 - pattern-matching with regular expressions, examples
 ms.assetid: 5fcc75a5-09d7-45ae-a4c0-9ad6085ac83d
-ms.openlocfilehash: 358e26957747073fec9dfe9eb0d404cb438afaf9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3b657ac6c88a1ee846f7f1d2156a18fd34621808
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084188"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803951"
 ---
 # <a name="regular-expression-example-changing-date-formats"></a>正規表現の例: 日付形式の変更
 次のコード例では、<xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> メソッドを使用して、*mm*/*dd*/*yy* 形式の日付を *dd*-*mm*-*yy* 形式の日付に置き換えます。  
-  
+
+[!INCLUDE [regex](../../../includes/regex.md)]
+
 ## <a name="example"></a>例  
  [!code-csharp[RegularExpressions.Examples.ChangeDateFormats#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Examples.ChangeDateFormats/cs/Example_ChangeDateFormats1.cs#1)]
  [!code-vb[RegularExpressions.Examples.ChangeDateFormats#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Examples.ChangeDateFormats/vb/Example_ChangeDateFormats1.vb#1)]  
@@ -35,7 +37,7 @@ ms.locfileid: "73084188"
 ## <a name="comments"></a>コメント  
  この正規表現パターン `\b(?<month>\d{1,2})/(?<day>\d{1,2})/(?<year>\d{2,4})\b` の解釈を次の表に示します。  
   
-|パターン|説明|  
+|パターン|[説明]|  
 |-------------|-----------------|  
 |`\b`|ワード境界から照合を開始します。|  
 |`(?<month>\d{1,2})`|1 桁または 2 桁の 10 進数と一致します。 これは、`month` キャプチャ グループです。|  
@@ -47,7 +49,7 @@ ms.locfileid: "73084188"
   
  パターン `${day}-${month}-${year}` は、次の表に示すように置換文字列を定義します。  
   
-|パターン|説明|  
+|パターン|[説明]|  
 |-------------|-----------------|  
 |`$(day)`|`day` キャプチャ グループによってキャプチャされた文字列を追加します。|  
 |`-`|ハイフンを追加します。|  
@@ -55,6 +57,6 @@ ms.locfileid: "73084188"
 |`-`|ハイフンを追加します。|  
 |`$(year)`|`year` キャプチャ グループによってキャプチャされた文字列を追加します。|  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [.NET の正規表現](../../../docs/standard/base-types/regular-expressions.md)
+- [.NET の正規表現](regular-expressions.md)

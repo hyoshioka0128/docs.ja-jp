@@ -1,20 +1,20 @@
 ---
-title: Visual Basic2 での XML リテラルの概要
+title: Visual Basic の XML リテラルの概要 2
 ms.date: 07/20/2015
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-ms.openlocfilehash: 5355a3c0f01bb247e38e52816693ee47d7d50556
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
-ms.translationtype: MT
+ms.openlocfilehash: 8b92d22727c50274d57a5e407a0ca42807de3a94
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834988"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397585"
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Visual Basic の XML リテラルの概要
 ここでは、Visual Basic での XML ツリーの作成について説明します。  
   
- LINQ クエリの結果を XML ツリーのコンテンツとして使用する方法の詳細については、「[関数型構築 (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)」を参照してください。  
+ LINQ クエリの結果を XML ツリーの内容として使用する方法については、「[関数型構築 (LINQ to XML) (Visual Basic)](functional-construction-linq-to-xml.md)」を参照してください。  
   
- Visual Basic の XML リテラルの詳細については、「 [Visual Basic の LINQ to XML の概要](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)」を参照してください。  
+ Visual Basic における XML リテラルの詳細については、「[Visual Basic における LINQ to XML の概要](../../language-features/xml/overview-of-linq-to-xml.md)」を参照してください。  
   
 ## <a name="creating-xml-trees"></a>XML ツリーの作成  
  <xref:System.Xml.Linq.XElement> (この場合は `contacts`) を作成する方法を次の例に示します。  
@@ -40,7 +40,7 @@ Dim contacts As XElement = _
   
 ```vb  
 Dim n as XElement = <Customer>Adventure Works</Customer>  
-Console.WriteLine(n)   
+Console.WriteLine(n)
 ```  
   
  この例を実行すると、次の出力が生成されます。  
@@ -197,4 +197,4 @@ Child2 was attached
   
 ## <a name="see-also"></a>関連項目
 
-- [XML ツリーの作成 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [XML ツリーの作成 (Visual Basic)](creating-xml-trees.md)

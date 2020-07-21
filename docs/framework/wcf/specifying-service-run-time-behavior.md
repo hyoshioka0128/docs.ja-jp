@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
-ms.openlocfilehash: ffa2f906ac2ff4630de83938ce365c1b9d5d4d64
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 246f16cee85633499a6a1c200e608ee7bccf133c
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976634"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81243103"
 ---
 # <a name="specifying-service-run-time-behavior"></a>サービスのランタイム動作の指定
-サービス コントラクトを設計して ([Designing Service Contracts](designing-service-contracts.md))、実装 ([Implementing Service Contracts](implementing-service-contracts.md)) が終わると、サービス ランタイムの実行動作を構成できます。 ここでは、システム指定のサービスと操作の動作について説明し、新しい動作を作成するための詳細情報の参照先を示します。 一部の動作は属性として適用されますが、多くの動作はアプリケーション構成ファイルまたはプログラムを使用して適用されます。 サービスアプリケーションの構成の詳細については、「[サービスの構成](configuring-services.md)」を参照してください。  
+サービス コントラクトを設計して ([Designing Service Contracts](designing-service-contracts.md))、実装 ([Implementing Service Contracts](implementing-service-contracts.md)) が終わると、サービス ランタイムの実行動作を構成できます。 ここでは、システム指定のサービスと操作の動作について説明し、新しい動作を作成するための詳細情報の参照先を示します。 一部の動作は属性として適用されますが、多くの動作はアプリケーション構成ファイルまたはプログラムを使用して適用されます。 サービス アプリケーションの構成の詳細については、「[サービスの構成](configuring-services.md)」を参照してください。  
   
 ## <a name="overview"></a>概要  
  コントラクトは、その種類のサービスの入力、出力、データ型、および機能を定義します。 サービス コントラクトを実装すると、クラスが 1 つ作成されます。このクラスを任意のアドレスのバインディングで構成すると、実装されたコントラクトが満たされます。 コントラクト、バインディング、およびアドレスはすべて、クライアントにとって既知の情報です。これらの情報がないと、クライアントはサービスを利用できません。  
   
- ただし、実行の詳細 (スレッド処理の問題点やインスタンスの管理など) は、クライアントには見えません。 サービス コントラクトを実装したら、 *動作*を使用してさまざまな操作特性を構成できます。 動作は、ランタイムプロパティを設定するか、またはカスタマイズの種類をランタイムに挿入することによって、Windows Communication Foundation (WCF) ランタイムを変更するオブジェクトです。 ユーザー定義の動作を作成してランタイムを変更する方法の詳細については、「 [ServiceHost とサービスモデルレイヤーの拡張](./extending/extending-servicehost-and-the-service-model-layer.md)」を参照してください。  
+ ただし、実行の詳細 (スレッド処理の問題点やインスタンスの管理など) は、クライアントには見えません。 サービス コントラクトを実装したら、 *動作*を使用してさまざまな操作特性を構成できます。 動作は、ランタイム プロパティを設定するか、ランタイムにカスタマイズの種類を挿入することによって、Windows 通信基盤 (WCF) ランタイムを変更するオブジェクトです。 ユーザー定義の動作を作成してランタイムを変更する方法の詳細については、「 [ServiceHost の拡張」および「サービス モデルレイヤー](./extending/extending-servicehost-and-the-service-model-layer.md)」を参照してください。  
   
  <xref:System.ServiceModel.ServiceBehaviorAttribute?displayProperty=nameWithType> と <xref:System.ServiceModel.OperationBehaviorAttribute?displayProperty=nameWithType> 属性は、最も広範に使用できる動作であり、最も一般的に要求される操作機能を公開します。 これらは属性であるため、サービス実装または操作実装に適用します。 その他の動作 ( <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> や <xref:System.ServiceModel.Description.ServiceDebugBehavior?displayProperty=nameWithType>など) は、通常、アプリケーション構成ファイルを使用して適用されますが、プログラムにより使用することもできます。  
   
- このトピックでは、<xref:System.ServiceModel.ServiceBehaviorAttribute> と <xref:System.ServiceModel.OperationBehaviorAttribute> 属性の概要を示し、動作が動作するさまざまなスコープについて説明します。また、WCF 開発者にとって重要な、さまざまなスコープでのシステム指定の動作の多くについて簡単に説明します。  
+ このトピックでは、属性<xref:System.ServiceModel.ServiceBehaviorAttribute>と<xref:System.ServiceModel.OperationBehaviorAttribute>属性の概要、動作が動作するさまざまなスコープについて説明し、WCF 開発者が関心を持つ可能性のあるさまざまなスコープでのシステム提供の動作の多くを簡単に説明します。  
   
 ## <a name="servicebehaviorattribute-and-operationbehaviorattribute"></a>ServiceBehaviorAttribute と OperationBehaviorAttribute  
  最も重要な動作は <xref:System.ServiceModel.ServiceBehaviorAttribute> 属性と <xref:System.ServiceModel.OperationBehaviorAttribute> 属性です。これらの属性を使用すると、以下を制御できます。  
@@ -43,7 +43,7 @@ ms.locfileid: "73976634"
   
 - アドレス フィルターとヘッダー処理  
   
-- 偽装  
+- 権限借用  
   
 - これらの属性を使用するには、サービス実装または操作実装をそのスコープに適切な属性でマークし、プロパティを設定します。 たとえば、次のコード例は、 <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A?displayProperty=nameWithType> プロパティを使用した操作実装を示しています。この実装では、この操作の呼び出し元が偽装をサポートするように要求します。  
   
@@ -59,9 +59,9 @@ ms.locfileid: "73976634"
   
  ただし、サービス オブジェクトを独自に作成し、そのオブジェクトを使用するサービス ホストを作成することもできます。 そのためには、 <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティを <xref:System.ServiceModel.InstanceContextMode.Single> に設定するか、サービス ホストが開かれたときに例外をスローする必要があります。  
   
- このようなサービスを作成するには、 <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> コンストラクターを使用します。 この方法は、シングルトン サービスが使用する特定のオブジェクト インスタンスを提供する場合に、カスタムの <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> を実装する代わりに使用できます。 このオーバーロードは、サービス実装型を構築するのが困難な場合 (たとえば、パラメーターなしのパブリックコンストラクターが実装されていない場合) に使用できます。
+ このようなサービスを作成するには、 <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29> コンストラクターを使用します。 この方法は、シングルトン サービスが使用する特定のオブジェクト インスタンスを提供する場合に、カスタムの <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> を実装する代わりに使用できます。 このオーバーロードは、サービス実装型の構築が困難な場合 (たとえば、パラメーターなしのパブリック コンストラクターを実装していない場合) に使用できます。
   
- このコンストラクターにオブジェクトが提供されている場合は、Windows Communication Foundation (WCF) のインスタンス化動作に関連する一部の機能が異なる動作をすることに注意してください。 たとえば、既知のオブジェクト インスタンスを指定した場合、 <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> を呼び出しても効果はありません。 他のインスタンス解放機構も、同様に無視されます。 <xref:System.ServiceModel.ServiceHost> クラスは常に、すべての操作について <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> に設定されているかのように動作します。  
+ このコンストラクターにオブジェクトが提供されると、Windows 通信財団 (WCF) のインスタンス化動作に関連するいくつかの機能は異なる動作をします。 たとえば、既知のオブジェクト インスタンスを指定した場合、 <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> を呼び出しても効果はありません。 他のインスタンス解放機構も、同様に無視されます。 <xref:System.ServiceModel.ServiceHost> クラスは常に、すべての操作について <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> に設定されているかのように動作します。  
   
 ## <a name="other-service-endpoint-contract-and-operation-behaviors"></a>その他のサービス、エンドポイント、コントラクト、および操作の動作  
  <xref:System.ServiceModel.ServiceBehaviorAttribute> 属性などのサービスの動作は、サービス全体に影響します。 たとえば、 <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithType> プロパティを <xref:System.ServiceModel.ConcurrencyMode.Multiple?displayProperty=nameWithType> に設定すると、そのサービスの各操作で発生するスレッドの同期の問題を自分で処理する必要があります。 エンドポイントの動作はエンドポイント全体に影響し、システム指定のエンドポイントの動作はクライアント機能に対して影響します。 また、コントラクトの動作はコントラクト レベルで影響し、操作の動作は操作の実行を変更します。  
@@ -77,7 +77,7 @@ ms.locfileid: "73976634"
 ### <a name="service-behaviors"></a>サービスの動作  
  次の動作は、サービスに影響します。  
   
-- <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. WCF サービスに適用され、そのサービスを ASP.NET 互換モードで実行できるかどうかを示します。  
+- <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. WCF サービスに適用され、そのサービスを互換モードで実行できるかどうかを示ASP.NET。  
   
 - <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. サービスがクライアントのクレームを承認する方法を制御します。  
   
@@ -96,13 +96,13 @@ ms.locfileid: "73976634"
   
 - <xref:System.ServiceModel.CallbackBehaviorAttribute>. 双方向クライアント アプリケーションのコールバック サービス実装を構成します。  
   
-- <xref:System.ServiceModel.Description.CallbackDebugBehavior>. WCF コールバックオブジェクトのサービスデバッグを有効にします。  
+- <xref:System.ServiceModel.Description.CallbackDebugBehavior>. WCF コールバック オブジェクトのサービス デバッグを有効にします。  
   
 - <xref:System.ServiceModel.Description.ClientCredentials>. クライアントとサービスの資格情報、およびクライアントで使用するサービス資格情報の認証設定をユーザーが構成できるようにします。  
   
 - <xref:System.ServiceModel.Description.ClientViaBehavior>. トランスポート チャネルを作成する対象の URI (Uniform Resource Identifier) を指定するために、クライアントが使用します。  
   
-- <xref:System.ServiceModel.Description.MustUnderstandBehavior>. `MustUnderstand` の処理を無効にするよう WCF に指示します。  
+- <xref:System.ServiceModel.Description.MustUnderstandBehavior>. 処理を無効にするように`MustUnderstand`WCF に指示します。  
   
 - <xref:System.ServiceModel.Description.SynchronousReceiveBehavior>. チャネルの同期受信プロセスを使用するようにランタイムに指示します。  
   
@@ -123,4 +123,4 @@ ms.locfileid: "73976634"
 ## <a name="see-also"></a>関連項目
 
 - [サービスの構成](configuring-services.md)
-- [方法 : サービスのインスタンス化を制御する](./feature-details/how-to-control-service-instancing.md)
+- [方法: サービスのインスタンス化を制御する](./feature-details/how-to-control-service-instancing.md)

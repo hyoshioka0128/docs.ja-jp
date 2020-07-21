@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 6082a171d24c55ea52c153bbd920bb7486be78a7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 5e9a00ab78a57c3c1686d7c87ed8b45d9b2649af
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784373"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150832"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>DataSet に対する XPath クエリの実行
-同期<xref:System.Data.DataSet>されたと<xref:System.Xml.XmlDataDocument>の間のリレーションシップにより、 **XmlDataDocument**にアクセスする xml パス言語 (XPath) クエリなどの xml サービスを使用できるようになり、特定の機能をより簡単に実行できるようになります。**データセット**への直接アクセス。 たとえば<xref:System.Data.DataTable> 、の**Select**メソッドを使用して**データセット**内の他のテーブルとの間でリレーションシップを移動するのではなく、**データセット**と同期されている**XmlDataDocument**に対して XPath クエリを実行することで、の形式の XML 要素のリスト<xref:System.Xml.XmlNodeList>。 ノードとし<xref:System.Xml.XmlElement>てキャストされた**xmlnodelist**のノードを**XmlDataDocument**の**getrowfromelement**メソッドに渡して、同期<xref:System.Data.DataRow> **された内のテーブルの行に一致する参照を返すことができます。データセット**。  
+同期された <xref:System.Data.DataSet> と <xref:System.Xml.XmlDataDocument> との間のリレーションシップによって、XPath (XML Path Language) クエリなどの XML サービスが使用できます。XML サービスは **XmlDataDocument** にアクセスし、**DataSet** に直接アクセスするよりも、特定の機能を効率的に実行できます。 たとえば、<xref:System.Data.DataTable> の **Select** メソッドを使用して **DataSet** の他のテーブルとのリレーションシップをナビゲートする代わりに、**DataSet** と同期化された **XmlDataDocument** に対して XPath クエリを実行すると、<xref:System.Xml.XmlNodeList> 形式で XML 要素のリストを取得できます。 <xref:System.Xml.XmlElement> ノードとしてキャストされた **XmlNodeList** のノードを **XmlDataDocument** の **GetRowFromElement** メソッドに渡すと、同期化された **DataSet** のテーブルの行に一致する <xref:System.Data.DataRow> 参照が返されます。  
   
- たとえば、次に示すコード サンプルでは孫 XPath クエリが実行されます。 **データセット**には、次の3つのテーブルが格納されます。**顧客**、**注文**、および**OrderDetails**。 このサンプルでは、 **Customers**テーブルと**orders**テーブルの間、および**orders**テーブルと**OrderDetails**テーブルの間に親子関係が最初に作成されます。 次に、XPath クエリが実行されて、孫**OrderDetails**ノードに43という値の**ProductID**ノードがある**Customers**ノードの**xmlnodelist**が返されます。 基本的に、このサンプルでは、XPath クエリを使用して、 **ProductID**が43の製品を発注した顧客を特定します。  
+ たとえば、次に示すコード サンプルでは孫 XPath クエリが実行されます。 **DataSet** には、次の 3 つのテーブルが格納されます: **Customers**、**Orders**、**OrderDetails**。 このサンプルでは、**Customers** テーブルと **Orders** テーブルの間に親子のリレーションが作成され、次に **Orders** テーブルと **OrderDetails** テーブルの間に親子のリレーションが作成されます。 XPath クエリが実行され、値 43 の **ProductID** ノードを持つ孫 **OrderDetails** ノードのある **Customers** ノードの **XmlNodeList** リストが返されます。 つまり、このサンプルでは、XPath クエリを使用して **ProductID** が 43 の製品を注文した顧客を確認します。  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  
@@ -43,7 +43,7 @@ dataSet.Relations.Add("OrderDetail", _
   dataSet.Tables("Orders").Columns("OrderID"), _  
 dataSet.Tables("OrderDetails").Columns("OrderID"), false).Nested = true  
   
-Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)   
+Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)
   
 Dim nodeList As XmlNodeList = xmlDoc.DocumentElement.SelectNodes( _  
   "descendant::Customers[*/OrderDetails/ProductID=43]")  
@@ -84,10 +84,10 @@ dataSet.Relations.Add("CustOrders",
   
 dataSet.Relations.Add("OrderDetail",  
   dataSet.Tables["Orders"].Columns["OrderID"],  
-  dataSet.Tables["OrderDetails"].Columns["OrderID"],   
+  dataSet.Tables["OrderDetails"].Columns["OrderID"],
   false).Nested = true;  
   
-XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);   
+XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);
   
 XmlNodeList nodeList = xmlDoc.DocumentElement.SelectNodes(  
   "descendant::Customers[*/OrderDetails/ProductID=43]");  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9b9079fb-579e-4141-b3f0-791072dd40dc
 topic_type:
 - apiref
-ms.openlocfilehash: e8d65e739504e01a7d11b37d1b34d7313b13a5e1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1263467fc5db92d4dd21c4f09a98af309e2c4d55
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138332"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504421"
 ---
 # <a name="coinitializecor-function"></a>CoInitializeCor 関数
 `CoInitializeCor` は互換性のために残されています。  
@@ -33,12 +33,12 @@ STDAPI CoInitializeCor (
 );  
 ```  
   
-## <a name="remarks"></a>Remarks  
- 共通言語ランタイムを初期化するには、 [Corbindtoruntimeex](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)または[Corbindtoの entruntime](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md)を使用します。  
+## <a name="remarks"></a>解説  
+ 共通言語ランタイムを初期化するには、 [Corbindtoruntimeex](corbindtoruntimeex-function.md)または[Corbindtoの entruntime](corbindtocurrentruntime-function.md)を使用します。  
   
-## <a name="requirements"></a>［要件］  
+## <a name="requirements"></a>要件  
  **ヘッダー:** Cor  
   
 ## <a name="see-also"></a>関連項目
 
-- [メタデータ グローバル静的関数](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+- [メタデータ グローバル静的関数](../metadata/metadata-global-static-functions.md)

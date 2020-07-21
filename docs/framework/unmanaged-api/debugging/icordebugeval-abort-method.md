@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7070b6d0-f2e0-44ff-b124-0944cd807e69
 topic_type:
 - apiref
-ms.openlocfilehash: 78402e5e099815fe309618e692285de91b8b29f7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 98a9b285323bc3ad94b4f555e72a4b3242519801
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124239"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976292"
 ---
 # <a name="icordebugevalabort-method"></a>ICorDebugEval::Abort メソッド
 こののオブジェクトが現在実行している計算を中止します。  
@@ -32,13 +32,13 @@ HRESULT Abort ();
 ```  
   
 ## <a name="remarks"></a>Remarks  
- 評価が入れ子になっていて、それが最新のものではない場合、`Abort` メソッドは失敗する可能性があります。  
+ 評価が入れ子になっていて、それが最新ではない`Abort`場合、メソッドは失敗する可能性があります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

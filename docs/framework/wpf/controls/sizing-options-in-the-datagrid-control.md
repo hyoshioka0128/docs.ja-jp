@@ -8,82 +8,82 @@ helpviewer_keywords:
 ms.assetid: 96a0e47e-b010-4302-98ef-2daac446d8db
 ms.openlocfilehash: 6d100fb17b1ee3e652985a637d333d9f65e20d36
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61970990"
 ---
 # <a name="sizing-options-in-the-datagrid-control"></a>DataGrid コントロールのサイズ変更方法
-さまざまなオプションは、コントロールを使用する方法、<xref:System.Windows.Controls.DataGrid>自体のサイズします。 <xref:System.Windows.Controls.DataGrid>、および個々 の行と列で、 <xref:System.Windows.Controls.DataGrid>、その内容を自動的にサイズに設定することができます、または特定の値に設定することができます。 既定で、<xref:System.Windows.Controls.DataGrid>拡大およびその内容のサイズに合わせて縮小されます。  
+<xref:System.Windows.Controls.DataGrid> 自体でサイズをどのように変更するかを制御するために、さまざまなオプションを使用できます。 <xref:System.Windows.Controls.DataGrid>、および <xref:System.Windows.Controls.DataGrid> 内の個々の行と列は、その内容に合わせて自動的にサイズ変更するように設定することも、特定の値に設定することもできます。 既定では、<xref:System.Windows.Controls.DataGrid> はその内容のサイズに合わせて拡大縮小します。  
   
-## <a name="sizing-the-datagrid"></a>データ グリッドのサイズ変更  
+## <a name="sizing-the-datagrid"></a>DataGrid のサイズ変更  
   
-### <a name="cautions-when-using-automatic-sizing"></a>自動サイズ設定を使用する場合の注意事項  
- 既定では、<xref:System.Windows.FrameworkElement.Height%2A>と<xref:System.Windows.FrameworkElement.Width%2A>のプロパティ、<xref:System.Windows.Controls.DataGrid>に設定されている<xref:System.Double.NaN?displayProperty=nameWithType>("`Auto`"XAML で)、および<xref:System.Windows.Controls.DataGrid>その内容のサイズに調整されます。  
+### <a name="cautions-when-using-automatic-sizing"></a>自動サイズ変更を使用する場合の注意事項  
+ 既定では、<xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.FrameworkElement.Height%2A> および <xref:System.Windows.FrameworkElement.Width%2A> プロパティは <xref:System.Double.NaN?displayProperty=nameWithType> (XAML では "`Auto`") に設定され、<xref:System.Windows.Controls.DataGrid> でその内容のサイズに合わせて調整されます。  
   
- など、その子のサイズを制限しませんが、コンテナー内に配置されたときに、<xref:System.Windows.Controls.Canvas>または<xref:System.Windows.Controls.StackPanel>、<xref:System.Windows.Controls.DataGrid>コンテナーの表示範囲を超えた拡大して、スクロール バーは表示されません。 この条件は、使いやすさとパフォーマンスの両方の影響を与えます。  
+ <xref:System.Windows.Controls.Canvas> や <xref:System.Windows.Controls.StackPanel> など、その子のサイズが制限されないコンテナー内に配置された場合、<xref:System.Windows.Controls.DataGrid> はコンテナーの可視境界を超えて広がり、スクロールバーは表示されません。 この状況は、使いやすさとパフォーマンスの両方に影響します。  
   
- 場合、データ セットにバインドするとき、<xref:System.Windows.FrameworkElement.Height%2A>の<xref:System.Windows.Controls.DataGrid>は制限されません、バインドされたデータ セットの各データ項目の行を追加する続行されます。 これが発生することができます、<xref:System.Windows.Controls.DataGrid>行が追加されると、アプリケーションの表示の境界の外側に拡張します。 <xref:System.Windows.Controls.DataGrid>は表示されませんスクロールバー例ではこのため、その<xref:System.Windows.FrameworkElement.Height%2A>は新しい行に対応するために増加し続けます。  
+ データ セットにバインドされているときに、<xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.FrameworkElement.Height%2A> が制限されていない場合、バインドされたデータ セット内の各データ項目に対する行の追加が続行されます。 これにより、行が追加されるにつれて、アプリケーションの可視境界外に <xref:System.Windows.Controls.DataGrid> が拡大する可能性があります。 この場合、<xref:System.Windows.Controls.DataGrid> にはスクロールバーが表示されません。これは、その <xref:System.Windows.FrameworkElement.Height%2A> が新しい行に合わせて拡大し続けるためです。  
   
- 内の行ごとのオブジェクトが作成された、<xref:System.Windows.Controls.DataGrid>します。 大規模なデータ セットを使用して、許可するかどうか、<xref:System.Windows.Controls.DataGrid>それ自体のサイズに自動的に、多数のオブジェクトの作成、アプリケーションのパフォーマンスに影響する可能性があります。  
+ <xref:System.Windows.Controls.DataGrid> 内の行ごとにオブジェクトが作成されます。 大規模なデータ セットを操作し、<xref:System.Windows.Controls.DataGrid> 自体で自動的にサイズ変更できるようにする場合に、多数のオブジェクトを作成すると、アプリケーションのパフォーマンスに影響する可能性があります。  
   
- これらの問題を避けるためには、大規模なデータ セットを使用する場合、お勧め具体的には設定されて、<xref:System.Windows.FrameworkElement.Height%2A>の<xref:System.Windows.Controls.DataGrid>を制限するコンテナーに配置することもその<xref:System.Windows.FrameworkElement.Height%2A>など、<xref:System.Windows.Controls.Grid>します。 ときに、<xref:System.Windows.FrameworkElement.Height%2A>が制限された、<xref:System.Windows.Controls.DataGrid>はその指定内に収まる行のみが作成<xref:System.Windows.FrameworkElement.Height%2A>、し、新しいデータを表示するために必要なようにこれらの行をリサイクルします。  
+ 大規模なデータ セットを操作するときにこれらの問題を回避するには、<xref:System.Windows.Controls.DataGrid> の <xref:System.Windows.FrameworkElement.Height%2A> を明示的に設定するか、<xref:System.Windows.Controls.Grid> など、その <xref:System.Windows.FrameworkElement.Height%2A> を制限するコンテナーに配置することをお勧めします。 <xref:System.Windows.FrameworkElement.Height%2A> が制限されている場合、<xref:System.Windows.Controls.DataGrid> では、その指定された <xref:System.Windows.FrameworkElement.Height%2A> 内に収まる行のみを作成し、新しいデータを表示するために必要に応じて、それらの行をリサイクルします。  
   
-### <a name="setting-the-datagrid-size"></a>データ グリッド サイズの設定  
- <xref:System.Windows.Controls.DataGrid>指定した境界内で自動的にサイズを設定することができます、または<xref:System.Windows.Controls.DataGrid>特定のサイズに設定することができます。 次の表に、コントロールに設定できるプロパティ、<xref:System.Windows.Controls.DataGrid>サイズ。  
+### <a name="setting-the-datagrid-size"></a>DataGrid サイズの設定  
+ <xref:System.Windows.Controls.DataGrid> を指定された境界内で自動的にサイズ変更するように設定することも、<xref:System.Windows.Controls.DataGrid> を特定のサイズに設定することもできます。 次の表には、<xref:System.Windows.Controls.DataGrid> サイズを制御するために設定できるプロパティが示されています。  
   
 |プロパティ|説明|  
 |--------------|-----------------|  
-|<xref:System.Windows.FrameworkElement.Height%2A>|特定の高さを設定、<xref:System.Windows.Controls.DataGrid>します。|  
-|<xref:System.Windows.FrameworkElement.MaxHeight%2A>|高さの上限の境界を設定、<xref:System.Windows.Controls.DataGrid>します。 <xref:System.Windows.Controls.DataGrid>この高さに達するまで垂直方向に拡張されます。|  
-|<xref:System.Windows.FrameworkElement.MinHeight%2A>|高さの下限の境界を設定、<xref:System.Windows.Controls.DataGrid>します。 <xref:System.Windows.Controls.DataGrid>この高さに達するまで垂直方向に縮小されます。|  
-|<xref:System.Windows.FrameworkElement.Width%2A>|特定の幅を設定、<xref:System.Windows.Controls.DataGrid>します。|  
-|<xref:System.Windows.FrameworkElement.MaxWidth%2A>|幅の上限の境界を設定、<xref:System.Windows.Controls.DataGrid>します。 <xref:System.Windows.Controls.DataGrid>この幅に到達するまで水平方向に拡張されます。|  
-|<xref:System.Windows.FrameworkElement.MinWidth%2A>|幅の下限の境界を設定、<xref:System.Windows.Controls.DataGrid>します。 <xref:System.Windows.Controls.DataGrid>この幅に到達するまで水平方向に縮小されます。|  
+|<xref:System.Windows.FrameworkElement.Height%2A>|<xref:System.Windows.Controls.DataGrid> の特定の高さを設定します。|  
+|<xref:System.Windows.FrameworkElement.MaxHeight%2A>|<xref:System.Windows.Controls.DataGrid> の高さの上限を設定します。 <xref:System.Windows.Controls.DataGrid> は、この高さに達するまで垂直方向に拡大します。|  
+|<xref:System.Windows.FrameworkElement.MinHeight%2A>|<xref:System.Windows.Controls.DataGrid> の高さの下限を設定します。 <xref:System.Windows.Controls.DataGrid> は、この高さに達するまで垂直方向に縮小します。|  
+|<xref:System.Windows.FrameworkElement.Width%2A>|<xref:System.Windows.Controls.DataGrid> の特定の幅を設定します。|  
+|<xref:System.Windows.FrameworkElement.MaxWidth%2A>|<xref:System.Windows.Controls.DataGrid> の幅の上限を設定します。 <xref:System.Windows.Controls.DataGrid> は、この幅に達するまで水平方向に拡大します。|  
+|<xref:System.Windows.FrameworkElement.MinWidth%2A>|<xref:System.Windows.Controls.DataGrid> の幅の下限を設定します。 <xref:System.Windows.Controls.DataGrid> は、この幅に達するまで水平方向に縮小します。|  
   
 ## <a name="sizing-rows-and-row-headers"></a>行と行ヘッダーのサイズ変更  
   
-### <a name="datagrid-rows"></a>データ グリッドの行  
- 既定を<xref:System.Windows.Controls.DataGrid>行の<xref:System.Windows.FrameworkElement.Height%2A>プロパティに設定されて<xref:System.Double.NaN?displayProperty=nameWithType>("`Auto`"XAML で)、行の高さがその内容のサイズを展開します。 すべての行の高さ、<xref:System.Windows.Controls.DataGrid>を設定して指定することができます、<xref:System.Windows.Controls.DataGrid.RowHeight%2A?displayProperty=nameWithType>プロパティ。 ユーザーは、行ヘッダー区分線をドラッグして行の高さを変更できます。  
+### <a name="datagrid-rows"></a>DataGrid 行  
+ 既定では、<xref:System.Windows.Controls.DataGrid> 行の <xref:System.Windows.FrameworkElement.Height%2A> プロパティが <xref:System.Double.NaN?displayProperty=nameWithType> (XAML では "`Auto`") に設定され、行の高さはその内容のサイズに合わせて拡張されます。 <xref:System.Windows.Controls.DataGrid> 内のすべての行の高さは、<xref:System.Windows.Controls.DataGrid.RowHeight%2A?displayProperty=nameWithType> プロパティを設定することで指定できます。 ユーザーは行ヘッダーの区切り線をドラッグすることで、行の高さを変更できます。  
   
-### <a name="datagrid-row-headers"></a>DataGrid の行ヘッダー  
- 行のヘッダーを表示する、<xref:System.Windows.Controls.DataGrid.HeadersVisibility%2A>にプロパティを設定する必要があります<xref:System.Windows.Controls.DataGridHeadersVisibility.Row?displayProperty=nameWithType>または<xref:System.Windows.Controls.DataGridHeadersVisibility.All?displayProperty=nameWithType>します。 既定では、行ヘッダーを表示およびそのコンテンツに合わせてサイズが自動的に調整します。 行ヘッダーは、設定して特定の幅を与えることができます、<xref:System.Windows.Controls.DataGrid.RowHeaderWidth%2A?displayProperty=nameWithType>プロパティ。  
+### <a name="datagrid-row-headers"></a>DataGrid 行ヘッダー  
+ 行ヘッダーを表示するには、<xref:System.Windows.Controls.DataGrid.HeadersVisibility%2A> プロパティを <xref:System.Windows.Controls.DataGridHeadersVisibility.Row?displayProperty=nameWithType> または <xref:System.Windows.Controls.DataGridHeadersVisibility.All?displayProperty=nameWithType> に設定する必要があります。 行ヘッダーは既定で表示され、その内容に合わせて自動的にサイズ変更されます。 行ヘッダーには、<xref:System.Windows.Controls.DataGrid.RowHeaderWidth%2A?displayProperty=nameWithType> プロパティを設定することで特定の幅を指定できます。  
   
-## <a name="sizing-columns-and-column-headers"></a>列および列ヘッダーのサイズ変更  
+## <a name="sizing-columns-and-column-headers"></a>列と列ヘッダーのサイズ変更  
   
-### <a name="datagrid-columns"></a>DataGrid の列  
- <xref:System.Windows.Controls.DataGrid>の値を使用して、 <xref:System.Windows.Controls.DataGridLength> 、<xref:System.Windows.Controls.DataGridLengthUnitType>絶対または自動サイズ変更モードを指定する構造体。  
+### <a name="datagrid-columns"></a>DataGrid 列  
+ <xref:System.Windows.Controls.DataGrid> では、<xref:System.Windows.Controls.DataGridLength> および <xref:System.Windows.Controls.DataGridLengthUnitType> 構造体の値を使用して、絶対または自動のサイズ変更モードを指定します。  
   
- 次の表で指定された値、<xref:System.Windows.Controls.DataGridLengthUnitType>構造体。  
+ 次の表には、<xref:System.Windows.Controls.DataGridLengthUnitType> 構造体で提供される値が示されています。  
   
 |名前|説明|  
 |----------|-----------------|  
-|<xref:System.Windows.Controls.DataGridLengthUnitType.Auto>|既定の自動サイズ変更をモード サイズ<xref:System.Windows.Controls.DataGrid>セルと列ヘッダーの内容に基づく列。|  
-|<xref:System.Windows.Controls.DataGridLengthUnitType.SizeToCells>|セル ベースの自動モードのサイズをサイズ変更<xref:System.Windows.Controls.DataGrid>列ヘッダーを含まない、列のセルの内容に基づく列。|  
-|<xref:System.Windows.Controls.DataGridLengthUnitType.SizeToHeader>|ヘッダー ベースの自動モードのサイズをサイズ変更<xref:System.Windows.Controls.DataGrid>のみの列ヘッダーの内容に基づく列。|  
-|<xref:System.Windows.Controls.DataGridLengthUnitType.Pixel>|ピクセル ベース モードのサイズをサイズ変更<xref:System.Windows.Controls.DataGrid>指定された数値に基づく列。|  
-|<xref:System.Windows.Controls.DataGridLengthUnitType.Star>|星のサイズ変更モードは、使用可能なスペースを分配する加重比率で使用されます。<br /><br /> XAML では、星型の値は n * n が数値を表しますとして表現されます。 1\*と等価\*します。 たとえば、2 つ内の列を<xref:System.Windows.Controls.DataGrid>の幅が\*と 2 つ\*、最初の列が使用可能な領域の 1 つの部分を受信し、2 番目の列が使用可能な領域の 2 つの部分を受信します。|  
+|<xref:System.Windows.Controls.DataGridLengthUnitType.Auto>|既定の自動サイズ変更モードでは、セルと列ヘッダーの両方の内容に基づいて、<xref:System.Windows.Controls.DataGrid> 列のサイズが変更されます。|  
+|<xref:System.Windows.Controls.DataGridLengthUnitType.SizeToCells>|セルベースの自動サイズ変更モードでは、列ヘッダーを含まない列のセルの内容に基づいて、<xref:System.Windows.Controls.DataGrid> 列のサイズが変更されます。|  
+|<xref:System.Windows.Controls.DataGridLengthUnitType.SizeToHeader>|ヘッダーベースの自動サイズ変更モードでは、列ヘッダーの内容のみに基づいて、<xref:System.Windows.Controls.DataGrid> 列のサイズが変更されます。|  
+|<xref:System.Windows.Controls.DataGridLengthUnitType.Pixel>|ピクセルベースのサイズ変更モードでは、指定された数値に基づいて、<xref:System.Windows.Controls.DataGrid> 列のサイズが変更されます。|  
+|<xref:System.Windows.Controls.DataGridLengthUnitType.Star>|スター サイズ指定モードは、使用可能な領域を重み付け比率で分散させるために使用されます。<br /><br /> XAML では、スター値は n* で表されます。ここで、n は数値を表します。 1\* は \* と同じです。 たとえば、<xref:System.Windows.Controls.DataGrid> の 2 つの列の幅が \* と 2\* である場合、最初の列では使用可能な領域の 1 つの部分を受け取り、2 番目の列では使用可能な領域の 2 つの部分を受け取ります。|  
   
- <xref:System.Windows.Controls.DataGridLengthConverter>数値または文字列値間のデータを変換するクラスを使用できると<xref:System.Windows.Controls.DataGridLength>値。  
+ <xref:System.Windows.Controls.DataGridLengthConverter> クラスを使用すると、数値または文字列値と <xref:System.Windows.Controls.DataGridLength> 値の間でデータを変換できます。  
   
- 既定で、<xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType>プロパティに設定されて<xref:System.Windows.Controls.DataGridLength.SizeToHeader%2A>、および<xref:System.Windows.Controls.DataGridColumn.Width%2A?displayProperty=nameWithType>プロパティに設定されて<xref:System.Windows.Controls.DataGridLength.Auto%2A>します。 サイズ変更モードを設定すると<xref:System.Windows.Controls.DataGridLength.Auto%2A>または<xref:System.Windows.Controls.DataGridLength.SizeToCells%2A>列が表示される多くのコンテンツの幅に増加します。 スクロールすると、これらのサイズ変更モードによりコンテンツを展開する列、現在の列のサイズをスクロールして表示よりも大きい。 コンテンツのスクロールされて見えない後は、列は圧縮されません。  
+ 既定では、<xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType> プロパティは <xref:System.Windows.Controls.DataGridLength.SizeToHeader%2A> に設定され、<xref:System.Windows.Controls.DataGridColumn.Width%2A?displayProperty=nameWithType> プロパティは <xref:System.Windows.Controls.DataGridLength.Auto%2A> に設定されます。 サイズ変更モードが <xref:System.Windows.Controls.DataGridLength.Auto%2A> または <xref:System.Windows.Controls.DataGridLength.SizeToCells%2A> に設定されている場合、列は表示される最も幅の広い内容の幅に合わせて拡大します。 スクロール時に、現在の列のサイズより大きい内容がスクロールされて表示されると、これらのサイズ変更モードにより列が拡張されます。 内容がスクロールされて表示されなくなると、列は圧縮されません。  
   
- 内の列、 <xref:System.Windows.Controls.DataGrid> 、指定した境界内でのみ自動的にサイズを設定することも、または列は、特定のサイズに設定することができます。 次の表では、列のサイズを制御する設定できるプロパティを示します。  
+ <xref:System.Windows.Controls.DataGrid> 内の列は、指定された境界内でのみ自動的にサイズ変更されるように設定することも、列を特定のサイズに設定することもできます。 次の表に、列のサイズを制御するために設定できるプロパティを示します。  
   
 |プロパティ|説明|  
 |--------------|-----------------|  
-|<xref:System.Windows.Controls.DataGrid.MaxColumnWidth%2A?displayProperty=nameWithType>|すべての列に上限を設定、<xref:System.Windows.Controls.DataGrid>します。|  
-|<xref:System.Windows.Controls.DataGridColumn.MaxWidth%2A?displayProperty=nameWithType>|個々 の列の上限の境界を設定します。 <xref:System.Windows.Controls.DataGrid.MaxColumnWidth%2A?displayProperty=nameWithType> をオーバーライドします。|  
-|<xref:System.Windows.Controls.DataGrid.MinColumnWidth%2A?displayProperty=nameWithType>|すべての列の下限の境界を設定、<xref:System.Windows.Controls.DataGrid>します。|  
-|<xref:System.Windows.Controls.DataGridColumn.MinWidth%2A?displayProperty=nameWithType>|個々 の列の下限の境界を設定します。 <xref:System.Windows.Controls.DataGrid.MinColumnWidth%2A?displayProperty=nameWithType> をオーバーライドします。|  
-|<xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType>|すべての列に特定の幅を設定、<xref:System.Windows.Controls.DataGrid>します。|  
-|<xref:System.Windows.Controls.DataGridColumn.Width%2A?displayProperty=nameWithType>|個々 の列を特定の幅を設定します。 <xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType> をオーバーライドします。|  
+|<xref:System.Windows.Controls.DataGrid.MaxColumnWidth%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.DataGrid> 内のすべての列の上限を設定します。|  
+|<xref:System.Windows.Controls.DataGridColumn.MaxWidth%2A?displayProperty=nameWithType>|個々の列の上限を設定します。 <xref:System.Windows.Controls.DataGrid.MaxColumnWidth%2A?displayProperty=nameWithType> をオーバーライドします。|  
+|<xref:System.Windows.Controls.DataGrid.MinColumnWidth%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.DataGrid> 内のすべての列の下限を設定します。|  
+|<xref:System.Windows.Controls.DataGridColumn.MinWidth%2A?displayProperty=nameWithType>|個々の列の下限を設定します。 <xref:System.Windows.Controls.DataGrid.MinColumnWidth%2A?displayProperty=nameWithType> をオーバーライドします。|  
+|<xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.DataGrid> 内のすべての列に対して特定の幅を設定します。|  
+|<xref:System.Windows.Controls.DataGridColumn.Width%2A?displayProperty=nameWithType>|個々の列に対して特定の幅を設定します。 <xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType> をオーバーライドします。|  
   
-### <a name="datagrid-column-headers"></a>DataGrid の列ヘッダー  
- 既定では、<xref:System.Windows.Controls.DataGrid>列ヘッダーを表示します。 列ヘッダーを非表示にする、<xref:System.Windows.Controls.DataGrid.HeadersVisibility%2A>にプロパティを設定する必要があります<xref:System.Windows.Controls.DataGridHeadersVisibility.Row?displayProperty=nameWithType>または<xref:System.Windows.Controls.DataGridHeadersVisibility.None?displayProperty=nameWithType>します。 既定では、列ヘッダーが表示される場合、そのサイズは、コンテンツに合わせて自動的にされます。 列ヘッダーは、設定して特定の高さを与えることができます、<xref:System.Windows.Controls.DataGrid.ColumnHeaderHeight%2A?displayProperty=nameWithType>プロパティ。  
+### <a name="datagrid-column-headers"></a>DataGrid 列ヘッダー  
+ 既定では、<xref:System.Windows.Controls.DataGrid> 列ヘッダーが表示されます。 列ヘッダーを非表示にするには、<xref:System.Windows.Controls.DataGrid.HeadersVisibility%2A> プロパティを <xref:System.Windows.Controls.DataGridHeadersVisibility.Row?displayProperty=nameWithType> または <xref:System.Windows.Controls.DataGridHeadersVisibility.None?displayProperty=nameWithType> に設定する必要があります。 既定では、列ヘッダーが表示されると、その内容に合わせて自動的にサイズが変更されます。 列ヘッダーには、<xref:System.Windows.Controls.DataGrid.ColumnHeaderHeight%2A?displayProperty=nameWithType> プロパティを設定することで、特定の高さを指定できます。  
   
-### <a name="resizing-with-the-mouse"></a>マウスを使用してサイズ変更  
- サイズを変更できるユーザー<xref:System.Windows.Controls.DataGrid>行と列、行または列ヘッダー区分線をドラッグします。 <xref:System.Windows.Controls.DataGrid>行または列のヘッダー区分線をダブルクリックして行および列の自動サイズ変更もサポートします。 ユーザーが特定の列のサイズを変更しないように、設定、<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType>プロパティを`false`の個々 の列。 ユーザーがすべての列のサイズを変更できないようにする設定、<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType>プロパティを`false`します。 ユーザーがすべての行のサイズを変更できないようにする設定、<xref:System.Windows.Controls.DataGrid.CanUserResizeRows%2A?displayProperty=nameWithType>プロパティを`false`します。  
+### <a name="resizing-with-the-mouse"></a>マウスによるサイズ変更  
+ ユーザーは、行または列ヘッダー区分線をドラッグして、<xref:System.Windows.Controls.DataGrid> の行と列のサイズを変更できます。 <xref:System.Windows.Controls.DataGrid> では、行または列ヘッダー区分線をダブルクリックすることによる行と列の自動サイズ変更もサポートされます。 特定の列のサイズがユーザーに変更されないようにするには、個々の列に対して <xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType> プロパティを `false` に設定します。 すべての列のサイズがユーザーに変更されないようにするには、<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType> プロパティを `false` に設定します。 すべての行のサイズがユーザーに変更されないようにするには、<xref:System.Windows.Controls.DataGrid.CanUserResizeRows%2A?displayProperty=nameWithType> プロパティを `false` に設定します。  
   
 ## <a name="see-also"></a>関連項目
 

@@ -3,10 +3,10 @@ title: 名前空間内のすべてのノードを検索する方法 (C#)
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
 ms.openlocfilehash: 408f4207798720428d0dd3821d33fd3edf2f897e
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141189"
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-c"></a>名前空間内のすべてのノードを検索する方法 (C#)
@@ -46,7 +46,7 @@ Nodes in the http://www.adventure-works.com namespace
 ## <a name="example"></a>例  
  次のクエリでアクセスする XML ファイルには、2 つの異なる名前空間内にある購買発注書が含まれています。 このクエリは、いずれかの名前空間内にある要素だけを含む新しいツリーを作成します。  
   
- この例では、次の XML ドキュメントを使用します: 「[サンプル XML ファイル: 統合購買発注書](./sample-xml-file-consolidated-purchase-orders.md)」。  
+ この例では、「[サンプル XML ファイル : 統合購買発注書](./sample-xml-file-consolidated-purchase-orders.md)」の XML ドキュメントを使用します。  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  

@@ -4,13 +4,12 @@ description: dotnet vstest コマンドを使用して、ソース コードで�
 author: kendrahavens
 ms.author: kehavens
 ms.date: 10/18/2017
-ms.custom: seodec18
-ms.openlocfilehash: e4fd25dc9ff30bdfe85cd1167a1dc41ea20a5f80
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 7618d37782de3a16f1963380bbb56945fb73e8eb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771933"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75714266"
 ---
 # <a name="test-published-output-with-dotnet-vstest"></a>パブリッシュされた出力を dotnet vstest でテストします
 

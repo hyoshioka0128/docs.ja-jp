@@ -1,18 +1,18 @@
 ---
-title: '方法 : ヘッダー情報にアクセスして XML フラグメントをストリーム出力する'
+title: '方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する'
 ms.date: 07/20/2015
 ms.assetid: effd10df-87c4-4d7a-8a9a-1434d829dca5
-ms.openlocfilehash: 489e128e86a47e0e7f76c14a6cf1baf80fb0c406
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 8d0543ff5a772768292c0e3117f41bea9367d23a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332449"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397688"
 ---
-# <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a>方法: ヘッダー情報にアクセスして XML フラグメントをストリーム配信する (Visual Basic)
+# <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a>方法: ヘッダー情報にアクセスして XML フラグメントをストリーム出力する (Visual Basic)
 大きな XML ファイルを任意に読み取り、アプリケーションのメモリ使用量を予想できるようにアプリケーションを作成しなければならない場合があります。 大きな XML ファイルを XML ツリーに設定しようとすると、ファイルのサイズに比例してメモリが過剰に使用されます。 したがって、代わりにストリーミングの手法を使用する必要があります。  
   
- これを実現する 1 つの選択肢として、<xref:System.Xml.XmlReader> を使用してアプリケーションを作成する方法があります。 ただし、場合によっては、XML ツリーに対してクエリを実行するとき、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] の使用が必要になることがあります。 このような場合は、カスタムの軸メソッドを独自に記述します。 詳細については、「[方法: LINQ to XML 軸メソッドを記述する (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)」を参照してください。  
+ これを実現する 1 つの選択肢として、<xref:System.Xml.XmlReader> を使用してアプリケーションを作成する方法があります。 ただし、場合によっては、XML ツリーに対してクエリを実行するとき、LINQ の使用が必要になることがあります。 このような場合は、カスタムの軸メソッドを独自に記述します。 詳細については、[LINQ to XML 軸メソッドを記述する (Visual Basic)](how-to-write-a-linq-to-xml-axis-method.md)」を参照してください。  
   
  独自の軸メソッドを記述するには、<xref:System.Xml.XmlReader> を使用して、対象となるノードの 1 つに到達するまでノードを読み取る小さなメソッドを記述します。 このメソッドから <xref:System.Xml.Linq.XNode.ReadFrom%2A> が呼び出され、これにより <xref:System.Xml.XmlReader> からデータが読み取られ、XML フラグメントがインスタンス化されます。 これで、カスタムの軸メソッド上に LINQ クエリを記述できます。  
   
@@ -230,6 +230,6 @@ End Class
 </Root>  
 ```  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [高度な LINQ to XML プログラミング (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [高度な LINQ to XML プログラミング (Visual Basic)](advanced-linq-to-xml-programming.md)

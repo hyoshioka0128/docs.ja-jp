@@ -7,10 +7,10 @@ helpviewer_keywords:
 - .NET Framework changes
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 ms.openlocfilehash: c46f781d495b87a4f24e77935df7c4814c8567ae
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73196701"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>.NET Framework のアプリケーションの互換性
@@ -62,7 +62,7 @@ ms.locfileid: "73196701"
 **透明**\
 アプリの開発者やユーザーには大きな影響を及ぼさない変更。 アプリはこの変更のために変更を加える必要はありません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [バージョンおよび依存関係](versions-and-dependencies.md)
 - [新機能](../whats-new/index.md)

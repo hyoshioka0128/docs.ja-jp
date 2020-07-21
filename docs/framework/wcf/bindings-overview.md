@@ -1,18 +1,19 @@
 ---
 title: Windows Communication Foundation のバインディングの概要
+description: バインドについて説明します。バインディングは、バインディングの要素を含む、WCF サービスへの接続方法と、サービスエンドポイントのバインディングを指定する方法を指定します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: 8c1e44609a0a20ffcec55af43e49ee62b0842378
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: da8050c4e9aeb111de3a54315b3650bcf09f23ed
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320758"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247715"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Windows Communication Foundation のバインディングの概要
-バインドは、Windows Communication Foundation (WCF) サービスのエンドポイントに接続するために必要な通信の詳細を指定するために使用されるオブジェクトです。 WCF サービスの各エンドポイントでは、バインドを適切に指定する必要があります。 このトピックでは、バインディングによって定義される通信の詳細の種類、バインディングの要素、WCF に含まれるバインディング、およびエンドポイントに対してバインディングを指定する方法について説明します。  
+バインドは、Windows Communication Foundation (WCF) サービスのエンドポイントに接続するために必要な通信の詳細を指定するために使用されるオブジェクトです。 WCF サービスの各エンドポイントに、バインドを正しく指定する必要があります。 このトピックでは、バインディングによって定義される通信の詳細の種類、バインディングの要素、WCF に含まれるバインディング、およびエンドポイントに対してバインディングを指定する方法について説明します。  
   
 ## <a name="what-a-binding-defines"></a>バインディングの定義内容  
  バインディングの情報は非常に基本的にも複雑にもなりえます。 最も基本的なバインディングはトランスポート プロトコル (HTTP など) のみを指定したもので、これはエンドポイントへの接続に必ず使用します。 一般に、エンドポイントに接続する方法についてバインドに含まれる情報は、次のいずれかのカテゴリに分類されます。  
@@ -20,7 +21,7 @@ ms.locfileid: "72320758"
  **プロトコル**  
  使用されているセキュリティ機構 (信頼性の高いメッセージング機能またはトランザクション コンテキストのフロー設定のいずれか) を決定します。  
   
- **暗号化**  
+ **[エンコード]**  
  メッセージ エンコーディング (テキストまたはバイナリなど) を決定します。  
   
  **トランスポート**  
@@ -40,9 +41,9 @@ ms.locfileid: "72320758"
   
 - <xref:System.ServiceModel.NetMsmqBinding>: .NET Framework を使用して、他の WCF エンドポイントとのキューに置かれたメッセージ接続を作成します。  
 
-- <xref:System.ServiceModel.NetTcpBinding>: このバインディングは HTTP バインディングよりも高いパフォーマンスを提供し、ローカルネットワークでの使用に最適です。
+- <xref:System.ServiceModel.NetTcpBinding>: このバインディングは、HTTP バインディングよりも高いパフォーマンスを提供し、ローカルネットワークでの使用に最適です。
   
- WCF 指定の全バインディングの説明付き一覧については、「[システム指定のバインディング](system-provided-bindings.md)」を参照してください。  
+ WCF に用意されているすべてのバインディングの完全な一覧と説明については、「[システム指定のバインディング](system-provided-bindings.md)」を参照してください。  
   
 ## <a name="using-your-own-bindings"></a>独自のバインディングの使用  
  システム指定のバインディングに、サービス アプリケーションに必要な正しい組み合わせの機能がない場合、独自のバインディングを作成できます。 これには、2 つの方法があります。 <xref:System.ServiceModel.Channels.CustomBinding> オブジェクトを使用して既存のバインド要素から新しいバインディングを作成するか、<xref:System.ServiceModel.Channels.Binding> バインディングから派生することによって完全にユーザー定義のバインディングを作成することができます。 これらの2つの方法を使用して独自のバインディングを作成する方法の詳細については、「[カスタムバインド](./extending/custom-bindings.md)」および「[ユーザー定義バインディングの作成](./extending/creating-user-defined-bindings.md)」を参照してください。  

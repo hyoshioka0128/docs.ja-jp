@@ -1,26 +1,19 @@
-items:
 - name: スレッド セーフなコレクション
   href: index.md
   items:
-  - name: BlockingCollection の概要
-    href: blockingcollection-overview.md
-  - name: スレッドセーフなコレクションを使用する状況
-    href: when-to-use-a-thread-safe-collection.md
-  - name: '方法: BlockingCollection の項目を個別に追加および取得する'
-    href: how-to-add-and-take-items.md
-  - name: '方法: ForEach を使用して BlockingCollection 内の項目を削除する'
-    href: how-to-use-foreach-to-remove.md
-  - name: '方法: ConcurrentDictionary の項目を追加および削除する'
-    href: how-to-add-and-remove-items.md
-  - name: '方法: 境界ブロッキング機能をコレクションに追加する'
-    href: how-to-add-bounding-and-blocking.md
-  - name: '方法: パイプラインでブロッキング コレクションの配列を使用する'
-    href: how-to-use-arrays-of-blockingcollections.md
-  - name: '方法: ConcurrentBag を使用してオブジェクト プールを作成する'
-    href: how-to-create-an-object-pool.md
-ms.openlocfilehash: 6b17867548e1089eaa58d2c8a262fe4c6438948f
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58470162"
+    - name: BlockingCollection の概要
+      href: blockingcollection-overview.md
+    - name: スレッドセーフなコレクションを使用する状況
+      href: when-to-use-a-thread-safe-collection.md
+    - name: '方法: BlockingCollection の項目を個別に追加および取得する'
+      href: how-to-add-and-take-items.md
+    - name: '方法: ForEach を使用して BlockingCollection 内の項目を削除する'
+      href: how-to-use-foreach-to-remove.md
+    - name: '方法: ConcurrentDictionary の項目を追加および削除する'
+      href: how-to-add-and-remove-items.md
+    - name: '方法: 境界ブロッキング機能をコレクションに追加する'
+      href: how-to-add-bounding-and-blocking.md
+    - name: '方法: パイプラインでブロッキング コレクションの配列を使用する'
+      href: how-to-use-arrays-of-blockingcollections.md
+    - name: '方法: ConcurrentBag を使用してオブジェクト プールを作成する'
+      href: how-to-create-an-object-pool.md

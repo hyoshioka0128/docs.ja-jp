@@ -10,28 +10,28 @@ helpviewer_keywords:
 ms.assetid: c94548b2-c1e9-4b62-b10c-dd8740eb23d8
 ms.openlocfilehash: bfed42bcf3693ef744b3ed2b54ebe070931513a9
 ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/10/2019
 ms.locfileid: "70855735"
 ---
 # <a name="richtextbox-overview"></a>RichTextBox の概要
 
-<xref:System.Windows.Controls.RichTextBox>コントロールを使用すると、段落、画像、テーブルなどのフローコンテンツを表示または編集できます。 このトピックでは<xref:System.Windows.Controls.TextBox> 、クラスについて説明し、とC#の両方[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]で使用する方法の例を示します。
+<xref:System.Windows.Controls.RichTextBox> コントロールでは、段落、イメージ、テーブルなどのフロー コンテンツを表示または編集できます。 このトピックでは、<xref:System.Windows.Controls.TextBox> クラスを紹介し、それを [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] と C# の両方で使用する方法の例を示します。
 
 <a name="textbox_or_richtextbox"></a>
 
 ## <a name="textbox-or-richtextbox"></a>TextBox か RichTextBox か
 
-<xref:System.Windows.Controls.RichTextBox> と<xref:System.Windows.Controls.TextBox>はどちらもテキストの編集を許可しますが、2つのコントロールはさまざまなシナリオで使用されます。 は<xref:System.Windows.Controls.RichTextBox> 、ユーザーが書式設定されたテキスト、画像、テーブル、またはその他のリッチコンテンツを編集する必要がある場合に適しています。 たとえば、書式設定や画像などを必要とするドキュメント、記事、ブログを編集する場合は、を<xref:System.Windows.Controls.RichTextBox>使用することをお勧めします。 には、 <xref:System.Windows.Controls.RichTextBox>より少ないシステムリソースが必要です。また、プレーンテキストのみを編集する必要がある場合(フォームの使用状況など)に最適です。<xref:System.Windows.Controls.TextBox> の<xref:System.Windows.Controls.TextBox>詳細については、「[テキストボックスの概要](textbox-overview.md)」を参照してください。 次の表は、と<xref:System.Windows.Controls.TextBox> <xref:System.Windows.Controls.RichTextBox>の主な機能をまとめたものです。
+<xref:System.Windows.Controls.RichTextBox> と <xref:System.Windows.Controls.TextBox> の両方で、ユーザーはテキストを編集できますが、2 つのコントロールは異なるシナリオで使用されます。 <xref:System.Windows.Controls.RichTextBox> は、ユーザーが書式設定されたテキスト、イメージ、テーブル、またはその他のリッチ コンテンツを編集する必要がある場合に適しています。 たとえば、書式設定やイメージなどを必要とするドキュメント、記事、またはブログを編集する場合は、<xref:System.Windows.Controls.RichTextBox> を使用することをお勧めします。 <xref:System.Windows.Controls.TextBox> で必要なシステム リソースは、<xref:System.Windows.Controls.RichTextBox> よりも少なく、プレーン テキストのみを編集する必要がある場合 (つまり、フォームでの使用) に最適です。 <xref:System.Windows.Controls.TextBox> の詳細については、「[TextBox の概要](textbox-overview.md)」を参照してください。 次の表は、<xref:System.Windows.Controls.TextBox> と <xref:System.Windows.Controls.RichTextBox> の主な機能をまとめたものです。
 
-|コントロール|リアルタイム スペル チェック|コンテキスト メニュー|(Ctr + <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> B) のような書式設定コマンド|<xref:System.Windows.Documents.FlowDocument>画像、段落、テーブルなどのコンテンツ|
+|Control|リアルタイム スペル チェック|コンテキスト メニュー|<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> (Ctr + B) のような書式設定コマンド|イメージ、段落、テーブルのような <xref:System.Windows.Documents.FlowDocument> コンテンツ|
 |-------------|------------------------------|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|<xref:System.Windows.Controls.TextBox>|[はい]|[はい]|いいえ|No.|
-|<xref:System.Windows.Controls.RichTextBox>|[はい]|はい|はい|[はい]|
+|<xref:System.Windows.Controls.TextBox>|はい|はい|いいえ|いいえ。|
+|<xref:System.Windows.Controls.RichTextBox>|はい|はい|はい|はい|
 
 > [!NOTE]
-> は (Ctr + B) のよう<xref:System.Windows.Documents.EditingCommands.ToggleBold%2A>な書式設定関連のコマンドをサポートしていませんが、の<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A>ような多くの基本的なコマンドが両方のコントロールでサポートされています。 <xref:System.Windows.Controls.TextBox>
+> <xref:System.Windows.Controls.TextBox> では <xref:System.Windows.Documents.EditingCommands.ToggleBold%2A> (Ctr + B) のような書式設定関連のコマンドはサポートされませんが、<xref:System.Windows.Documents.EditingCommands.MoveToLineEnd%2A> などの多くの基本的なコマンドは両方のコントロールでサポートされます。
 
 上の表の機能については、後で詳しく説明します。
 
@@ -39,11 +39,11 @@ ms.locfileid: "70855735"
 
 ## <a name="creating-a-richtextbox"></a>RichTextBox の作成
 
-次のコードは、 <xref:System.Windows.Controls.RichTextBox>ユーザーがのリッチコンテンツを編集できるを作成する方法を示しています。
+以下のコードには、ユーザーがリッチ コンテンツを編集できる <xref:System.Windows.Controls.RichTextBox> を作成する方法が示されています。
 
 [!code-xaml[RichTextBoxMiscSnippets_snip#BasicRichTextBoxExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/BasicRichTextBoxExample.xaml#basicrichtextboxexamplewholepage)]
 
-具体的には、で<xref:System.Windows.Controls.RichTextBox>編集されるコンテンツはフローコンテンツです。 フロー コンテンツは、書式設定されたテキスト、イメージ、リスト、テーブルなどのさまざまな種類の要素を格納できます。 フロー ドキュメントの詳細については、[フロー ドキュメントの概要](../advanced/flow-document-overview.md)を参照してください。 フローコンテンツを格納するために、 <xref:System.Windows.Controls.RichTextBox>はオブジェクト<xref:System.Windows.Documents.FlowDocument>をホストします。このオブジェクトには編集可能なコンテンツが含まれています。 でのフローの<xref:System.Windows.Controls.RichTextBox>内容を示すために、次のコードは、段落と太字のテキストを使用してを<xref:System.Windows.Controls.RichTextBox>作成する方法を示しています。
+具体的には、<xref:System.Windows.Controls.RichTextBox> で編集されるコンテンツはフロー コンテンツです。 フロー コンテンツは、書式設定されたテキスト、イメージ、リスト、テーブルなどのさまざまな種類の要素を格納できます。 フロー ドキュメントの詳細については、[フロー ドキュメントの概要](../advanced/flow-document-overview.md)を参照してください。 フロー コンテンツを含めるために、<xref:System.Windows.Controls.RichTextBox> では <xref:System.Windows.Documents.FlowDocument> オブジェクトがホストされ、次にそれには編集可能なコンテンツが含まれます。 <xref:System.Windows.Controls.RichTextBox> のフロー コンテンツを示すために、次のコードでは、段落と何らかの太字のテキストを使用して <xref:System.Windows.Controls.RichTextBox> を作成する方法を示します。
 
 [!code-xaml[RichTextBoxMiscSnippets_snip#RichTextBoxWithContentExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/RichTextBoxWithContentExample.xaml#richtextboxwithcontentexamplewholepage)]
 
@@ -54,16 +54,16 @@ ms.locfileid: "70855735"
 
 ![RichTextBox with content](./media/editing-richtextbox-with-content.png "Editing_RichTextBox_with_Content")
 
-や<xref:System.Windows.Documents.Paragraph> <xref:System.Windows.Documents.Bold>のような要素は、内のコンテンツをどのように表示するかを決定します。<xref:System.Windows.Controls.RichTextBox> ユーザーがコンテンツを<xref:System.Windows.Controls.RichTextBox>編集すると、このフローの内容が変更されます。 フロー コンテンツの機能およびその操作方法の詳細については、[フロー ドキュメントの概要](../advanced/flow-document-overview.md)を参照してください。
+<xref:System.Windows.Documents.Paragraph> や <xref:System.Windows.Documents.Bold> などの要素で、<xref:System.Windows.Controls.RichTextBox> 内のコンテンツがどのように表示されるかが決まります。 ユーザーが <xref:System.Windows.Controls.RichTextBox> コンテンツを編集すると、このフロー コンテンツが変更されます。 フロー コンテンツの機能およびその操作方法の詳細については、[フロー ドキュメントの概要](../advanced/flow-document-overview.md)を参照してください。
 
 > [!NOTE]
-> 内のフローコンテンツ<xref:System.Windows.Controls.RichTextBox>は、他のコントロールに含まれるフローコンテンツとまったく同じようには動作しません。 たとえば、に<xref:System.Windows.Controls.RichTextBox>は列がないため、自動サイズ変更の動作はありません。 また、内<xref:System.Windows.Controls.RichTextBox>では、検索、表示モード、ページナビゲーション、ズームなどの組み込み機能を使用できません。
+> <xref:System.Windows.Controls.RichTextBox> 内のフロー コンテンツは、他のコントロールに含まれているフロー コンテンツと一部異なる動作をします。 たとえば、<xref:System.Windows.Controls.RichTextBox> に列がないと、自動サイズ変更動作は行われません。 また、検索、表示モード、ページ ナビゲーション、ズームなどの組み込み機能は、<xref:System.Windows.Controls.RichTextBox> 内では利用できません。
 
 <a name="realtime_spellechecking"></a>
 
 ## <a name="real-time-spell-checking"></a>リアルタイム スペル チェック
 
-<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>でリアルタイムスペルチェックを有効にすることができます。 スペル チェックをオンにすると、スペル ミスの語句の下に赤色の線が表示されます (下図を参照)。
+<xref:System.Windows.Controls.TextBox> または <xref:System.Windows.Controls.RichTextBox> で、リアルタイム スペル チェックを有効にすることができます。 スペル チェックをオンにすると、スペル ミスの語句の下に赤色の線が表示されます (下図を参照)。
 
 ![スペル チェックを含む Textbox](./media/editing-textbox-with-spellchecking.png "Editing_TextBox_with_Spellchecking")
 
@@ -73,7 +73,7 @@ ms.locfileid: "70855735"
 
 ## <a name="context-menu"></a>コンテキスト メニュー
 
-既定では、 <xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.RichTextBox>の両方に、ユーザーがコントロール内を右クリックしたときに表示されるコンテキストメニューがあります。 コンテキスト メニューでは、ユーザーは、切り取り、コピー、または貼り付けをできます (下図を参照)。
+既定では、<xref:System.Windows.Controls.TextBox> と <xref:System.Windows.Controls.RichTextBox> の両方に、ユーザーがコントロール内を右クリックしたときに表示されるコンテキスト メニューがあります。 コンテキスト メニューでは、ユーザーは、切り取り、コピー、または貼り付けをできます (下図を参照)。
 
 ![コンテキスト メニューを含む TextBox](./media/editing-textbox-with-context-menu.png "Editing_TextBox_with_Context_Menu")
 
@@ -83,7 +83,7 @@ ms.locfileid: "70855735"
 
 ## <a name="editing-commands"></a>コマンドの編集
 
-編集コマンドを使用すると、ユーザーが内<xref:System.Windows.Controls.RichTextBox>の編集可能なコンテンツを書式設定できます。 には、基本的な<xref:System.Windows.Controls.RichTextBox>編集コマンドに加え<xref:System.Windows.Controls.TextBox>て、でサポートされていない書式設定コマンドが含まれています。 たとえば、で編集する場合、 <xref:System.Windows.Controls.RichTextBox>ユーザーは Ctr + B キーを押して、太字のテキストの書式設定を切り替えることができます。 使用<xref:System.Windows.Documents.EditingCommands>できるコマンドの完全な一覧については、「」を参照してください。 キーボード ショートカットを使用するだけでなく、ボタンのようにコマンドをフックしてその他のコントロールにすることができます。 次の例では、テキストの書式設定を変更するためにユーザーが使用できるボタンを含む簡単なツールバーを作成する方法を示します。
+コマンドの編集では、ユーザーは、<xref:System.Windows.Controls.RichTextBox> 内の編集可能なコンテンツの書式を設定できます。 <xref:System.Windows.Controls.RichTextBox> には、基本的な編集コマンドのほかに、<xref:System.Windows.Controls.TextBox> ではサポートされない書式設定コマンドが含まれています。 たとえば、<xref:System.Windows.Controls.RichTextBox> で編集する場合、ユーザーは、Ctr + B キーを押して太字テキストの書式設定を切り替えることができます。 使用できるコマンドの完全な一覧については、「<xref:System.Windows.Documents.EditingCommands>」を参照してください。 キーボード ショートカットを使用するだけでなく、ボタンのようにコマンドをフックしてその他のコントロールにすることができます。 次の例では、テキストの書式設定を変更するためにユーザーが使用できるボタンを含む簡単なツールバーを作成する方法を示します。
 
 [!code-xaml[RichTextBox_InputPanel_snip#RichTextBoxWithToolBarExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBox_InputPanel_snip/CS/Window1.xaml#richtextboxwithtoolbarexamplewholepage)]
 
@@ -95,13 +95,13 @@ ms.locfileid: "70855735"
 
 ## <a name="detect-when-content-changes"></a>コンテンツがいつ変更されたかの検出
 
-通常、 <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>イベントは、 <xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>のテキストが必要に<xref:System.Windows.UIElement.KeyDown>応じて変更されるたびに検出するために使用します。 例については、「[TextBox のテキストがいつ変更されたかを検出する](how-to-detect-when-text-in-a-textbox-has-changed.md)」を参照してください。
+通常、<xref:System.Windows.Controls.TextBox> または <xref:System.Windows.Controls.RichTextBox> のテキストが変更されたときには常に、予想どおり、<xref:System.Windows.UIElement.KeyDown> ではなく、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> イベントを使用して検出する必要があります。 例については、「[TextBox のテキストがいつ変更されたかを検出する](how-to-detect-when-text-in-a-textbox-has-changed.md)」を参照してください。
 
 <a name="save_load_and_print_richtextbox_content"></a>
 
 ## <a name="save-load-and-print-richtextbox-content"></a>RichTextBox コンテンツの保存、読み込み、および印刷
 
-次の例は、の<xref:System.Windows.Controls.RichTextBox>コンテンツをファイルに保存し、その内容を<xref:System.Windows.Controls.RichTextBox>に読み込んでから、内容を印刷する方法を示しています。 この例のマークアップを次に示します。
+次の例では、<xref:System.Windows.Controls.RichTextBox> のコンテンツをファイルに保存し、そのコンテンツを <xref:System.Windows.Controls.RichTextBox> に再度読み込み、コンテンツを印刷する方法を示します。 この例のマークアップを次に示します。
 
 [!code-xaml[RichTextBoxMiscSnippets_snip#SaveLoadPrintRTBExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_snip/CSharp/SaveLoadPrintRTB.xaml#saveloadprintrtbexamplewholepage)]
 

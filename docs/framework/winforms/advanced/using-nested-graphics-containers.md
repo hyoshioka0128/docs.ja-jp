@@ -9,52 +9,52 @@ helpviewer_keywords:
 - graphics [Windows Forms], clipping
 - graphics [Windows Forms], transformations in nested objects
 ms.assetid: a0d9f178-43a4-4323-bb5a-d3e3f77ae6c1
-ms.openlocfilehash: 4533fbba62c36714f55cd8bd55fde7a1c8f6c9e6
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 460ebb37ee62691a1e282f756840121fd378ebd8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505044"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182461"
 ---
 # <a name="using-nested-graphics-containers"></a>入れ子になっているグラフィックス コンテナーの使用
-GDI + を一時的に置き換えるかで状態の一部の拡張に使用できるコンテナーを提供します、<xref:System.Drawing.Graphics>オブジェクト。 呼び出すことでコンテナーを作成する、<xref:System.Drawing.Graphics.BeginContainer%2A>のメソッドを<xref:System.Drawing.Graphics>オブジェクト。 呼び出すことができます<xref:System.Drawing.Graphics.BeginContainer%2A>繰り返しを入れ子になったコンテナーを形成します。 呼び出しごとに<xref:System.Drawing.Graphics.BeginContainer%2A>への呼び出しと組み合わせて使用する必要があります<xref:System.Drawing.Graphics.EndContainer%2A>します。  
+GDI+ には、オブジェクト内の状態の一部を一時的に置換または拡張するために<xref:System.Drawing.Graphics>使用できるコンテナーが用意されています。 オブジェクトの<xref:System.Drawing.Graphics.BeginContainer%2A>メソッドを呼び出してコンテナーを<xref:System.Drawing.Graphics>作成します。 ネストされたコンテナー<xref:System.Drawing.Graphics.BeginContainer%2A>を形成するために、繰り返し呼び出すことができます。 の<xref:System.Drawing.Graphics.BeginContainer%2A>各呼び出しは、 への<xref:System.Drawing.Graphics.EndContainer%2A>呼び出しと対にする必要があります。  
   
-## <a name="transformations-in-nested-containers"></a>入れ子になったコンテナー内の変換  
- 次の例では、作成、<xref:System.Drawing.Graphics>オブジェクトおよびコンテナー内で<xref:System.Drawing.Graphics>オブジェクト。 ワールド変換、<xref:System.Drawing.Graphics>オブジェクトが x 方向に 100 の翻訳単位と y 軸方向に 80 単位。 コンテナーのワールド変換は、30 度回転します。 コードの呼び出しを行う`DrawRectangle(pen, -60, -30, 120, 60)`2 回クリックします。 最初の呼び出し<xref:System.Drawing.Graphics.DrawRectangle%2A>コンテナー内では、呼び出しの間には、呼び出し<xref:System.Drawing.Graphics.BeginContainer%2A>と<xref:System.Drawing.Graphics.EndContainer%2A>します。 2 番目の呼び出し<xref:System.Drawing.Graphics.DrawRectangle%2A>への呼び出し後は<xref:System.Drawing.Graphics.EndContainer%2A>します。  
+## <a name="transformations-in-nested-containers"></a>入れ子になったコンテナーの変換  
+ 次の例では、<xref:System.Drawing.Graphics>そのオブジェクト内にオブジェクトと<xref:System.Drawing.Graphics>コンテナーを作成します。 オブジェクトの<xref:System.Drawing.Graphics>ワールド変換は、x 方向の変換 100 単位、y 方向の 80 単位です。 コンテナのワールド変換は30度回転です。 コードは 2`DrawRectangle(pen, -60, -30, 120, 60)`回呼び出しを行います。 最初の<xref:System.Drawing.Graphics.DrawRectangle%2A>呼び出しはコンテナー内にあります。つまり、呼び出しは と の<xref:System.Drawing.Graphics.BeginContainer%2A>呼<xref:System.Drawing.Graphics.EndContainer%2A>び出しの間にあります。 2 番目の<xref:System.Drawing.Graphics.DrawRectangle%2A>呼び出しは<xref:System.Drawing.Graphics.EndContainer%2A>、 への呼び出しの後です。  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#61](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#61)]
  [!code-vb[System.Drawing.MiscLegacyTopics#61](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#61)]  
   
- 上記のコードでは、コンテナー内から描画する四角形が変換されるまずコンテナー (回転) のワールド変換をしのワールド変換して、<xref:System.Drawing.Graphics>オブジェクト (変換)。 ワールド変換によってのみ、コンテナーの外部から描画する四角形が変換される、<xref:System.Drawing.Graphics>オブジェクト (変換)。 次の図は、2 つの四角形を示します。 
+ 上記のコードでは、コンテナー内から描画された四角形は、最初にコンテナーのワールド変換 (回転) によって変換され、次にオブジェクトのワールド<xref:System.Drawing.Graphics>変換 (移動) によって変換されます。 コンテナの外側から描画される四角形は、<xref:System.Drawing.Graphics>オブジェクトのワールド変換 (変換) によってのみ変換されます。 次の図は、2 つの四角形を示しています。
   
  ![入れ子になったコンテナーを示す図。](./media/using-nested-graphics-containers/nested-containers-illustration.png)  
   
-## <a name="clipping-in-nested-containers"></a>入れ子になったコンテナーのクリッピング  
- 次の例では、入れ子になったコンテナーのクリッピング領域を処理します。 このコードを作成、<xref:System.Drawing.Graphics>オブジェクトおよびコンテナー内で<xref:System.Drawing.Graphics>オブジェクト。 クリッピング領域、<xref:System.Drawing.Graphics>オブジェクトは、四角形であり、コンテナーのクリッピング領域は楕円。 コードは、2 つの呼び出し、<xref:System.Drawing.Graphics.DrawLine%2A>メソッド。 最初の呼び出し<xref:System.Drawing.Graphics.DrawLine%2A>、コンテナーと、2 番目の呼び出しの内部<xref:System.Drawing.Graphics.DrawLine%2A>がコンテナーの範囲外です (呼び出しの後<xref:System.Drawing.Graphics.EndContainer%2A>)。 最初の行が 2 つのクリッピング領域の交差部分によって切り取られます。 クリッピング四角形領域によってのみ、2 行目のクリップ、<xref:System.Drawing.Graphics>オブジェクト。  
+## <a name="clipping-in-nested-containers"></a>ネストされたコンテナでのクリッピング  
+ 入れ子になったコンテナーがクリッピング領域を処理する方法を次の例に示します。 コードは、その<xref:System.Drawing.Graphics>オブジェクト内にオブジェクトとコンテナー<xref:System.Drawing.Graphics>を作成します。 <xref:System.Drawing.Graphics>オブジェクトのクリッピング領域は長方形で、コンテナのクリッピング領域は楕円です。 コードは、メソッドに 2<xref:System.Drawing.Graphics.DrawLine%2A>つの呼び出しを行います。 最初の呼び<xref:System.Drawing.Graphics.DrawLine%2A>出しはコンテナー内にあり、2 番目<xref:System.Drawing.Graphics.DrawLine%2A>の呼び出しはコンテナーの外側<xref:System.Drawing.Graphics.EndContainer%2A>にあります (呼び出し後)。 最初の線は、2 つのクリップ領域の交点によってクリップされます。 2 番目の線は、オブジェクトの四角形のクリップ領域によってのみ<xref:System.Drawing.Graphics>クリップされます。  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#62](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#62)]
  [!code-vb[System.Drawing.MiscLegacyTopics#62](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#62)]  
   
- 次の図は、2 つのクリップされた行を示しています。
+ 次の図は、2 つのクリップされた線を示しています。
   
- ![クリップされた行を含む入れ子になったコンテナーを示す図。](./media/using-nested-graphics-containers/nested-container-clipped-lines.png)  
+ ![線が切り取られた入れ子になったコンテナーを示す図。](./media/using-nested-graphics-containers/nested-container-clipped-lines.png)  
   
- 2 つの例に示すとおり、変換、およびクリッピング領域は入れ子になったコンテナーで累積されます。 コンテナーのワールド変換を設定した場合、<xref:System.Drawing.Graphics>オブジェクト、両方の変換は、コンテナー内から描画された項目に適用されます。 コンテナーの変換が適用されている最初との変換になります、<xref:System.Drawing.Graphics>オブジェクトが適用されます。 コンテナーのクリッピング領域を設定した場合、<xref:System.Drawing.Graphics>オブジェクト、コンテナーの内部から描画された項目は、重なる部分の 2 つのクリッピング領域のクリップされます。  
+ 前の 2 つの例が示すように、変換とクリッピング領域は、入れ子になったコンテナーで累積されます。 コンテナと<xref:System.Drawing.Graphics>オブジェクトのワールド変換を設定すると、両方の変換がコンテナ内から描画される項目に適用されます。 コンテナの変換が最初に適用され、オブジェクトの変換が 2<xref:System.Drawing.Graphics>番目に適用されます。 コンテナと<xref:System.Drawing.Graphics>オブジェクトのクリッピング領域を設定すると、コンテナ内部から描画された項目は、2 つのクリッピング領域の交点によってクリップされます。  
   
-## <a name="quality-settings-in-nested-containers"></a>入れ子になったコンテナーの画質の設定  
- 品質の設定 (<xref:System.Drawing.Graphics.SmoothingMode%2A>、<xref:System.Drawing.Graphics.TextRenderingHint%2A>など) で入れ子になったコンテナーは累積的な以外ではなく、コンテナーの品質設定を一時的に交換の品質設定を<xref:System.Drawing.Graphics>オブジェクト。 新しいコンテナーを作成するときに、そのコンテナーの品質設定は、既定値に設定されます。 たとえば、ある、<xref:System.Drawing.Graphics>のスムージング モードを使ってオブジェクト<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>します。 コンテナーを作成するときに、コンテナー内のスムージング モードが既定のモードをスムージングに。 自由に、コンテナーのスムージング モードを設定して、モードを設定するに従って、コンテナー内から抽出されたすべての項目が描画されます。 アイテムへの呼び出しの後に描画<xref:System.Drawing.Graphics.EndContainer%2A>スムージング モードに従ってが描画されます (<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>) への呼び出しの前にあった<xref:System.Drawing.Graphics.BeginContainer%2A>します。  
+## <a name="quality-settings-in-nested-containers"></a>入れ子になったコンテナーの品質設定  
+ 入れ子<xref:System.Drawing.Graphics.SmoothingMode%2A>になった<xref:System.Drawing.Graphics.TextRenderingHint%2A>コンテナーの品質設定 ( 、、など ) は累積されません。むしろ、コンテナの品質設定は<xref:System.Drawing.Graphics>、オブジェクトの品質設定を一時的に置き換えます。 新しいコンテナーを作成すると、そのコンテナーの品質設定が既定値に設定されます。 たとえば、スムージング モード<xref:System.Drawing.Graphics>が<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>のオブジェクトがあるとします。 コンテナを作成する場合、コンテナ内部のスムージング モードが既定のスムージング モードになります。 コンテナのスムージング モードは自由に設定でき、コンテナ内から描画される項目は、設定したモードに従って描画されます。 呼<xref:System.Drawing.Graphics.EndContainer%2A>び出しの後に描画された項目は、 への呼び<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>出しの前に設定されていたスムー<xref:System.Drawing.Graphics.BeginContainer%2A>ジング モード ( ) に従って描画されます。  
   
-## <a name="several-layers-of-nested-containers"></a>入れ子になったコンテナーの複数のレイヤー  
- 内の 1 つのコンテナーに限定されない、<xref:System.Drawing.Graphics>オブジェクト。 コンテナーのシーケンスを作成することができます、前の入れ子になった各、ワールド変換、クリッピング領域、およびこれらの入れ子になったコンテナーのそれぞれの品質設定を指定することができます。 最も内側のコンテナーから描画メソッドを呼び出す場合は、最も外側のコンテナーで最も内側のコンテナーで開始および終了の順序で、変換が適用されます。 最も内側のコンテナーから描画された項目は、重なる部分のすべてのクリッピング領域のクリップされます。  
+## <a name="several-layers-of-nested-containers"></a>ネストされたコンテナの複数の層  
+ <xref:System.Drawing.Graphics>オブジェクト内の 1 つのコンテナに制限はありません。 前のコンテナでネストされたコンテナのシーケンスを作成し、ネストされた各コンテナのワールド変換、クリッピング領域、および品質設定を指定できます。 最も内側のコンテナーの内部から描画メソッドを呼び出すと、変換は最も内側のコンテナーから始まり、最も外側のコンテナーで終わる順に適用されます。 最も内側のコンテナーの内側から描画された項目は、すべてのクリッピング領域の交差部分によってクリップされます。  
   
- 次の例では、作成、<xref:System.Drawing.Graphics>オブジェクトし、そのテキストのレンダリング ヒント設定<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>します。 コード内で他の入れ子になった 1 つ、2 つのコンテナーを作成します。 設定されている外側のコンテナーのテキストのレンダリング ヒント<xref:System.Drawing.Text.TextRenderingHint.SingleBitPerPixel>、内側のコンテナーのテキストのレンダリング ヒントに設定されていると<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>します。 コードが 3 つの文字列を描画します。 外側のコンテナーから、からの内部コンテナーから 1 つ、<xref:System.Drawing.Graphics>オブジェクト自体。  
+ 次の例では、<xref:System.Drawing.Graphics>オブジェクトを作成し、テキストレンダリングヒント<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>をに設定します。 このコードは、2 つのコンテナーを作成し、もう 1 つは入れ子にします。 外側のコンテナーのテキスト レンダリング ヒントが<xref:System.Drawing.Text.TextRenderingHint.SingleBitPerPixel>に設定され、内部コンテナーのテキスト レンダリング ヒントが<xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias>に設定されます。 このコードは、内部コンテナーから 1 つ、外側のコンテナーから 1 つ、オブジェクト<xref:System.Drawing.Graphics>自体から 1 つずつ、3 つの文字列を描画します。  
   
  [!code-csharp[System.Drawing.MiscLegacyTopics#63](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/CS/Class1.cs#63)]
  [!code-vb[System.Drawing.MiscLegacyTopics#63](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscLegacyTopics/VB/Class1.vb#63)]  
   
- 次の図は、3 つの文字列を示します。 描画および内部のコンテナーから、文字列、<xref:System.Drawing.Graphics>によってオブジェクトが滑らかにします。 外側のコンテナーから抽出された文字列が滑らかになってアンチ エイリアスによって、<xref:System.Drawing.Graphics.TextRenderingHint%2A>プロパティに設定されて<xref:System.Drawing.Text.TextRenderingHint.SingleBitPerPixel>します。  
+ 次の図は、3 つの文字列を示しています。 内部コンテナーと<xref:System.Drawing.Graphics>オブジェクトから描画される文字列は、アンチエイリアシングによってスムージングされます。 <xref:System.Drawing.Graphics.TextRenderingHint%2A>プロパティが に設定されているため、外側のコンテナーから描画された文字列は、アンチエイリアシングによって<xref:System.Drawing.Text.TextRenderingHint.SingleBitPerPixel>スムージングされません。  
   
- ![入れ子になったコンテナーから抽出された文字列を示す図。](./media/using-nested-graphics-containers/nested-containers-three-strings.png)  
+ ![入れ子になったコンテナーから描画された文字列を示す図。](./media/using-nested-graphics-containers/nested-containers-three-strings.png)  
   
 ## <a name="see-also"></a>関連項目
 

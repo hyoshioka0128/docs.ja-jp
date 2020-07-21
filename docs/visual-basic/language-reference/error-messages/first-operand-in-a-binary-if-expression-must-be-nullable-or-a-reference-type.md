@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC33107
 ms.assetid: 493c8899-3f6b-4471-8eb6-9284e8492768
-ms.openlocfilehash: a73a66313e7ca540711838c4d147d6bd163ec8d6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: ca16c6604ee071668a5c65d7e9052b233e2313c7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625570"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403019"
 ---
 # <a name="first-operand-in-a-binary-if-expression-must-be-nullable-or-a-reference-type"></a>バイナリ 'If' 式の最初のオペランドは Null 許容または参照型である必要があります
-`If`式が 2 つまたは 3 つの引数を受け取ることができます。 2 つの引数を送信すると、最初の引数は、参照型または null 許容型でする必要があります。 最初の引数の評価が何も以外の場合`Nothing`、その値が返されます。 最初の引数が評価された場合`Nothing`、2 番目の引数が評価され、返されます。  
+`If` 式は、2 つまたは 3 つの引数を取ることができます。 2 つの引数のみを送信する場合、最初の引数は参照型または Null 許容値型である必要があります。 最初の引数が `Nothing` 以外に評価される場合は、その値が返されます。 最初の引数が `Nothing` に評価される場合は、2 番目の引数が評価されて返されます。  
   
- たとえば、次のコードには 2 つ`If`で 3 つの引数と 2 つの引数の式。 式を計算し、同じ値を返します。  
+ たとえば、次のコードには、3 つの引数を含むものと 2 つの引数を含むものの、2 つの `If` 式が含まれています。 これらの式は、同じ値を計算して返します。  
   
 ```vb  
 ' firstChoice is a nullable value type.  
@@ -46,7 +46,7 @@ Dim booleanVar = True
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 最初の引数が null 許容型または参照型であるようにコードを変更することはできない場合、は、3 つの引数に変換することを検討してください`If`式、または、`If...Then...Else`ステートメント。  
+- 最初の引数が Null 許容値型または参照型になるようにコードを変更できない場合は、3 つの引数の `If` 式、または `If...Then...Else` ステートメントに変換することを検討してください。  
   
 ```vb  
 Console.WriteLine(If(choice1 < choice2, 1, 2))  
@@ -55,6 +55,6 @@ Console.WriteLine(If(booleanVar, "Test returns True.", "Test returns False."))
   
 ## <a name="see-also"></a>関連項目
 
-- [If 演算子](../../../visual-basic/language-reference/operators/if-operator.md)
-- [If...Then...Else ステートメント](../../../visual-basic/language-reference/statements/if-then-else-statement.md)
-- [null 許容値型](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
+- [If 演算子](../operators/if-operator.md)
+- [If...Then...Else ステートメント](../statements/if-then-else-statement.md)
+- [null 許容値型](../../programming-guide/language-features/data-types/nullable-value-types.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 71f0eab5-0170-46f8-9f88-1df5abdeb34a
 topic_type:
 - apiref
-ms.openlocfilehash: a3ae474a73f4c8e4b98c4b2bc5d04e55bcae6874
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bb13c7329c558aa92ec65237aa8a9963c82fe1dc
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128664"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83804509"
 ---
 # <a name="ihostmemorymanagerneedsvirtualaddressspace-method"></a>IHostMemoryManager::NeedsVirtualAddressSpace メソッド
 共通言語ランタイム (CLR) が、指定されたメモリを使用しようとしていることをホストに通知します。  
@@ -41,20 +41,20 @@ HRESULT NeedsVirtualAddressSpace (
  `size`  
  からメモリのサイズ (バイト単位)。  
   
-## <a name="remarks"></a>Remarks  
- `NeedsVirtualAddressSpace` メソッドはコールバックメソッドであり、ホストアプリケーションのライターによって実装される必要があります。 これは CLR によって呼び出されます。  
+## <a name="remarks"></a>解説  
+ `NeedsVirtualAddressSpace`メソッドはコールバックメソッドであり、ホストアプリケーションのライターによって実装される必要があります。 これは CLR によって呼び出されます。  
   
- ホストが、指定されたメモリを使用しないようにする場合は、E_OUTOFMEMORY HRESULT を返すことがあります。  
+ ホストが指定されたメモリを使用しないようにする場合は、E_OUTOFMEMORY HRESULT が返されることがあります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IHostMemoryManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+- [IHostMemoryManager インターフェイス](ihostmemorymanager-interface.md)

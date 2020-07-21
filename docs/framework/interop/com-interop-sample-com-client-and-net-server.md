@@ -1,5 +1,6 @@
 ---
-title: 'COM 相互運用機能のサンプル: COM クライアントおよび .NET サーバー'
+title: 'COM 相互運用の例: COM クライアントと .NET サーバー'
+description: 住宅ローンの計算を実行する COM クライアントと .NET サーバーの相互運用を示すコード サンプルをお読みください。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,17 +9,16 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
-ms.openlocfilehash: a317d97219017e0ab14456a0ff74b7ae75e432c2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 1a9c17cda6a6d129327b296e5d7d851902f78d35
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123708"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620886"
 ---
-# <a name="com-interop-sample-com-client-and-net-server"></a>COM 相互運用機能のサンプル: COM クライアントおよび .NET サーバー
+# <a name="com-interop-sample-com-client-and-net-server"></a>COM 相互運用の例: COM クライアントと .NET サーバー
 [COM クライアント](#cpconcominteropsamplecomclientnetserveranchor1)と [.NET サーバー](#cpconcominteropsamplecomclientnetserveranchor2)を相互運用して、住宅ローンの計算を行うサンプルを次に示します。 この例では、クライアントはマネージド `Loan` クラスのインスタンスを作成して呼び出し、4 つの引数 (そのうち 1 つは 0) をこのインスタンスに渡し、計算結果を表示します。 このセクション全体で、このサンプルのコード例を使用します。  
   
-<a name="cpconcominteropsamplecomclientnetserveranchor1"></a>   
+<a name="cpconcominteropsamplecomclientnetserveranchor1"></a>
 ## <a name="com-client"></a>COM クライアント  
   
 ```cpp  
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
   
     ILoanPtr pILoan(__uuidof(Loan));  
   
-    if (argc < 5)   
+    if (argc < 5)
     {  
         printf("Usage: ConLoan Balance Rate Term Payment\n");  
         printf("    Either Balance, Rate, Term, or Payment must be 0\n");  
@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
     pILoan->put_Term(term);  
     pILoan->put_Payment(payment);  
   
-    if (openingBalance == 0.00)   
+    if (openingBalance == 0.00)
          pILoan->ComputeOpeningBalance(&openingBalance);  
     if (rate == 0.00) pILoan->ComputeRate(&rate);  
     if (term == 0) pILoan->ComputeTerm(&term);  
@@ -67,17 +67,17 @@ int main(int argc, char* argv[])
     double Interest = 0.0;  
   
     printf("%4s%10s%12s%10s%12s\n", "Nbr", "Payment", "Principal", "Interest", "Balance");  
-    printf("%4s%10s%12s%10s%12s\n", "---", "-------", "---------",   
+    printf("%4s%10s%12s%10s%12s\n", "---", "-------", "---------",
 "--------", "-------");  
   
     pILoan->GetFirstPmtDistribution(payment, &Balance, &Principal, &Interest, &MorePmts);  
   
-    for (short PmtNbr = 1; MorePmts; PmtNbr++)   
+    for (short PmtNbr = 1; MorePmts; PmtNbr++)
     {  
         printf("%4i%10.2f%12.2f%10.2f%12.2f\n",  
         PmtNbr, payment, Principal, Interest, Balance);  
   
-        pILoan->GetNextPmtDistribution(payment, &Balance, &Principal, &Interest, &MorePmts);   
+        pILoan->GetNextPmtDistribution(payment, &Balance, &Principal, &Interest, &MorePmts);
     }  
   
     CoUninitialize();  
@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
 }  
 ```  
   
-<a name="cpconcominteropsamplecomclientnetserveranchor2"></a>   
+<a name="cpconcominteropsamplecomclientnetserveranchor2"></a>
 ## <a name="net-server"></a>.NET サーバー  
   
 ```vb  
@@ -93,13 +93,13 @@ Imports System
 Imports System.Reflection  
   
 <Assembly: AssemblyKeyFile("sample.snk")>  
-Namespace LoanLib      
+Namespace LoanLib
   
-    Public Interface ILoan          
+    Public Interface ILoan
         Property OpeningBalance() As Double  
-        Property Rate() As Double         
-        Property Payment() As Double         
-        Property Term() As Short          
+        Property Rate() As Double
+        Property Payment() As Double
+        Property Term() As Short
         Property RiskRating() As String  
         Function ComputePayment() As Double  
         Function ComputeOpeningBalance() As Double  
@@ -111,7 +111,7 @@ Namespace LoanLib
         Function GetNextPmtDistribution(PmtAmt As Double, _  
            ByRef Balance As Double, ByRef PrinPortion As Double, _  
            ByRef IntPortion As Double) As Boolean  
-    End Interface      
+    End Interface
   
     Public Class Loan  
         Implements ILoan  
@@ -119,7 +119,7 @@ Namespace LoanLib
         Private m_rate As Double  
         Private m_payment As Double  
         Private m_term As Short  
-        Private m_riskRating As String   
+        Private m_riskRating As String
   
         Public Property OpeningBalance() As Double _  
         Implements ILoan.OpeningBalance  
@@ -130,7 +130,7 @@ Namespace LoanLib
             Set  
                 m_openingBalance = value  
             End Set  
-        End Property   
+        End Property
   
         Public Property Rate() As Double _  
         Implements ILoan.Rate  
@@ -141,7 +141,7 @@ Namespace LoanLib
             Set  
                 m_rate = value  
             End Set  
-        End Property   
+        End Property
   
         Public Property Payment() As Double _  
         Implements ILoan.Payment  
@@ -152,7 +152,7 @@ Namespace LoanLib
             Set  
                 m_payment = value  
             End Set  
-        End Property   
+        End Property
   
         Public Property Term() As Short _  
         Implements ILoan.Term  
@@ -163,7 +163,7 @@ Namespace LoanLib
             Set  
                 m_term = value  
             End Set  
-        End Property   
+        End Property
   
         Public Property RiskRating() As String _  
         Implements ILoan.RiskRating  
@@ -182,7 +182,7 @@ Namespace LoanLib
             Payment = Util.Round(OpeningBalance *(Rate / _  
                (1 - Math.Pow(1 + Rate, - Term))), 2)  
             Return Payment  
-        End Function          
+        End Function
   
         Public Function ComputeOpeningBalance() As Double _  
         Implements ILoan.ComputeOpeningBalance  
@@ -190,7 +190,7 @@ Namespace LoanLib
             OpeningBalance = Util.Round(Payment /(Rate / _  
                (1 - Math.Pow(1 + Rate, - Term))), 2)  
             Return OpeningBalance  
-        End Function          
+        End Function
   
         Public Function ComputeRate() As Double _  
         Implements ILoan.ComputeRate  
@@ -206,7 +206,7 @@ Namespace LoanLib
                 End If  
             Next  
             Return Rate  
-        End Function          
+        End Function
   
         Public Function ComputeTerm() As Short _  
         Implements ILoan.ComputeTerm  
@@ -222,7 +222,7 @@ Namespace LoanLib
                 End If  
             Next  
             Return Term  
-        End Function          
+        End Function
   
         Public Function GetFirstPmtDistribution(PmtAmt As Double, _  
         ByRef Balance As Double, ByRef PrinPortion As Double, _  
@@ -232,7 +232,7 @@ Namespace LoanLib
             Balance = OpeningBalance  
             Return GetNextPmtDistribution(PmtAmt, Balance, PrinPortion, _  
                IntPortion)  
-        End Function          
+        End Function
   
         Public Function GetNextPmtDistribution(PmtAmt As Double, _  
         ByRef Balance As Double, ByRef PrinPortion As Double, _  
@@ -245,10 +245,10 @@ Namespace LoanLib
   
             If Balance <= 0.0 Then  
                 Return False  
-            End If   
+            End If
             Return True  
         End Function  
-    End Class      
+    End Class
   
     Friend Class Util  
   
@@ -273,7 +273,7 @@ namespace LoanLib {
     public interface ILoan {  
         double OpeningBalance{get; set;}  
         double Rate{get; set;}  
-        double Payment{get; set;}     
+        double Payment{get; set;}
         short  Term{get; set;}  
         String RiskRating{get; set;}  
   
@@ -292,7 +292,7 @@ namespace LoanLib {
         private double rate;  
         private double payment;  
         private short  term;  
-        private String riskRating;        
+        private String riskRating;
   
         public double OpeningBalance {  
             get { return openingBalance; }  
@@ -320,13 +320,13 @@ namespace LoanLib {
         }  
   
         public double ComputePayment() {  
-             Payment = Util.Round(OpeningBalance * (Rate / (1 –   
+             Payment = Util.Round(OpeningBalance * (Rate / (1 –
                         Math.Pow((1 + Rate), -Term))), 2);  
              return Payment;  
         }  
   
         public double ComputeOpeningBalance() {  
-            OpeningBalance = Util.Round(Payment / (Rate / (1 - Math.Pow((1   
+            OpeningBalance = Util.Round(Payment / (Rate / (1 - Math.Pow((1
                               + Rate), -Term))), 2);  
              return OpeningBalance;  
         }  
@@ -335,43 +335,43 @@ namespace LoanLib {
             double DesiredPayment = Payment;  
   
             for (Rate = 0.001; Rate < 28.0; Rate += 0.001) {  
-                Payment = Util.Round(OpeningBalance * (Rate / (1 –   
+                Payment = Util.Round(OpeningBalance * (Rate / (1 –
                            Math.Pow((1 + Rate), -Term))), 2);  
   
                 if (Payment >= DesiredPayment)  
                     break;  
             }  
-            return Rate;     
+            return Rate;
         }  
   
         public short ComputeTerm() {  
             double DesiredPayment = Payment;  
   
             for (Term = 1; Term < 480 ; Term ++) {  
-                Payment = Util.Round(OpeningBalance * (Rate / (1 –   
+                Payment = Util.Round(OpeningBalance * (Rate / (1 –
                            Math.Pow((1 + Rate), -Term))),2);  
   
                 if (Payment <= DesiredPayment)  
                     break;  
             }  
   
-            return Term;     
+            return Term;
         }  
   
-        public bool GetFirstPmtDistribution(double PmtAmt, ref double   
+        public bool GetFirstPmtDistribution(double PmtAmt, ref double
             Balance, out double PrinPortion, out double IntPortion) {  
              Balance = OpeningBalance;  
-             return GetNextPmtDistribution(PmtAmt, ref Balance, out   
-             PrinPortion, out IntPortion);   
+             return GetNextPmtDistribution(PmtAmt, ref Balance, out
+             PrinPortion, out IntPortion);
         }  
   
-        public bool GetNextPmtDistribution(double PmtAmt, ref double   
+        public bool GetNextPmtDistribution(double PmtAmt, ref double
            Balance, out double PrinPortion, out double IntPortion) {  
             IntPortion = Util.Round(Balance * Rate, 2);  
             PrinPortion = Util.Round(PmtAmt - IntPortion,2);  
             Balance = Util.Round(Balance - PrinPortion,2);  
   
-            if (Balance <= 0.0)   
+            if (Balance <= 0.0)
                 return false;  
   
             return true;  

@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: ee50e943-9349-4c84-ab1c-c35d3ada1a9c
 ms.openlocfilehash: a21d5bbffdb1a78d3062929a1ca384a750af59a7
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70781158"
@@ -41,11 +41,11 @@ ms.locfileid: "70781158"
  [!code-csharp[DLinqQueryConcepts#8](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#8)]
  [!code-vb[DLinqQueryConcepts#8](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#8)]  
   
-## <a name="comparison"></a>条件式  
- この 2 種類の実行方法は、強力なオプションの組み合わせになります。つまり、大規模なコレクションではリモート実行を、小規模なコレクションまたは完全なコレクションが必要な場合はローカル実行を選択できます。 リモート実行は <xref:System.Linq.IQueryable> を使用して実装し、ローカル実行はメモリ内の <xref:System.Collections.Generic.IEnumerable%601> コレクションに対して行います。 ローカルでの実行を強制するに<xref:System.Collections.Generic.IEnumerable%601>は (つまり、)、「[型をジェネリック IEnumerable に変換](convert-a-type-to-a-generic-ienumerable.md)する」を参照してください。  
+## <a name="comparison"></a>比較  
+ この 2 種類の実行方法は、強力なオプションの組み合わせになります。つまり、大規模なコレクションではリモート実行を、小規模なコレクションまたは完全なコレクションが必要な場合はローカル実行を選択できます。 リモート実行は <xref:System.Linq.IQueryable> を使用して実装し、ローカル実行はメモリ内の <xref:System.Collections.Generic.IEnumerable%601> コレクションに対して行います。 ローカル実行 (つまり <xref:System.Collections.Generic.IEnumerable%601>) を強制するには、「[汎用 IEnumerable への型の変換](convert-a-type-to-a-generic-ienumerable.md)」を参照してください。  
   
 ### <a name="queries-against-unordered-sets"></a>順序なしのセットに対するクエリ  
- を実装<xref:System.Collections.Generic.List%601>するローカルコレクションと、リレーショナルデータベース内の順序付けられていない*セット*に対して実行されるリモートクエリを提供するコレクションの重要な違いに注意してください。 インデックス値を使用するメソッドなど、<xref:System.Collections.Generic.List%601> のメソッドにはリストのセマンティクスが必要ですが、これは通常、順序なしのセットに対するリモート クエリからは得られません。 このため、このようなメソッドでは、ローカル実行を可能にするために暗黙的に <xref:System.Data.Linq.EntitySet%601> が読み込まれます。  
+ <xref:System.Collections.Generic.List%601> を実装するローカル コレクションと、リレーショナル データベース内の "*順序なしのセット*" に対してリモート クエリを実行するコレクションの間には、重要な違いがあることに注意してください。 インデックス値を使用するメソッドなど、<xref:System.Collections.Generic.List%601> のメソッドにはリストのセマンティクスが必要ですが、これは通常、順序なしのセットに対するリモート クエリからは得られません。 このため、このようなメソッドでは、ローカル実行を可能にするために暗黙的に <xref:System.Data.Linq.EntitySet%601> が読み込まれます。  
   
 ## <a name="see-also"></a>関連項目
 

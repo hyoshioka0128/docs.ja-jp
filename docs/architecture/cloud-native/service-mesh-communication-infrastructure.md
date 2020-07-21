@@ -2,17 +2,15 @@
 title: サービス メッシュ通信インフラストラクチャ
 description: サービスメッシュテクノロジがクラウドネイティブマイクロサービス通信を効率化するしくみについて説明します
 author: robvet
-ms.date: 09/10/2019
-ms.openlocfilehash: a9192bf9f5827d05b2453c796c72e11782f9f911
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.date: 05/13/2020
+ms.openlocfilehash: 1b11024cd029433c756812850e2665b7836a13d3
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "73841283"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613689"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>サービス メッシュ通信インフラストラクチャ
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 この章では、マイクロサービス通信の課題について詳しく説明しました。 開発チームは、バックエンドサービスが相互に通信する方法を重視する必要があると言いました。 理想的には、サービス間の通信が少なくて済むということです。 ただし、バックエンドサービスが操作の完了に相互に依存していることが多いため、回避することは常に可能であるとは限りません。
 
@@ -20,11 +18,11 @@ ms.locfileid: "73841283"
 
 *サービスメッシュ*を利用して、新しい急速に進化するテクノロジを中心としたマイクロサービス通信センターのより新しいアプローチ。 [サービスメッシュ](https://www.nginx.com/blog/what-is-a-service-mesh/)は、サービス間の通信、回復性、およびさまざまな横断的懸念を処理する組み込みの機能を備えた、構成可能なインフラストラクチャレイヤーです。 これらの懸念事項については、マイクロサービスからサービスメッシュレイヤーに移行します。 マイクロサービスからは、通信が抽象化されます。
 
-サービスメッシュの重要なコンポーネントはプロキシです。 クラウドネイティブアプリケーションでは、通常、プロキシのインスタンスは各マイクロサービスと共存します。 異なるプロセスで実行されますが、2つは密接にリンクされ、同じライフサイクルを共有します。 このパターンは、サイドカー[パターン](https://docs.microsoft.com/azure/architecture/patterns/sidecar)として知られており、図4-23 に示しています。
+サービスメッシュの重要なコンポーネントはプロキシです。 クラウドネイティブアプリケーションでは、通常、プロキシのインスタンスは各マイクロサービスと共存します。 異なるプロセスで実行されますが、2つは密接にリンクされ、同じライフサイクルを共有します。 このパターンは、サイドカー[パターン](https://docs.microsoft.com/azure/architecture/patterns/sidecar)として知られており、図4-24 に示しています。
 
 ![サイドカーを使用したサービスメッシュ](./media/service-mesh-with-side-car.png)
 
-**図 4-23**. サイドカーを使用したサービスメッシュ
+**図 4-24** サイドカーを使用したサービスメッシュ
 
 前の図では、各マイクロサービスと共に実行されるプロキシによってメッセージが傍受されていることに注意してください。 各プロキシは、マイクロサービスに固有のトラフィックルールを使用して構成できます。 メッセージを認識し、サービスや外部との間でルーティングできます。
 
@@ -36,23 +34,23 @@ ms.locfileid: "73841283"
 
 6章では、アーキテクチャと使用可能なオープンソースの実装に関する議論など、サービスメッシュテクノロジについて詳しく説明します。
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>要約
 
 この章では、クラウドネイティブの通信パターンについて説明しました。 まず、フロントエンドクライアントがバックエンドマイクロサービスと通信する方法について説明します。 その過程で、API ゲートウェイのプラットフォームとリアルタイム通信について説明します。 次に、マイクロサービスが他のバックエンドサービスと通信する方法について見ていきます。 サービス間の同期 HTTP 通信と非同期メッセージングの両方を検討しました。 GRPC は、クラウドネイティブ環境における今後のテクノロジです。 最後に、マイクロサービスの通信を効率化することができる、サービスメッシュを持つ、急速に進化する新しいテクノロジが導入されました。
 
 クラウドネイティブシステムでの通信の実装に役立つ、管理された Azure サービスに特に重点を置いていました。
 
-- [Azure アプリケーションゲートウェイ](https://docs.microsoft.com/azure/application-gateway/overview)
+- [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/overview)
 - [Azure API Management](https://azure.microsoft.com/services/api-management/)
 - [Azure SignalR Service](https://azure.microsoft.com/services/signalr-service/)
 - [Azure Storage キュー](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction)
 - [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)
 - [Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
-- [Azure イベントハブ](https://azure.microsoft.com/services/event-hubs/)
+- [Azure Event Hub](https://azure.microsoft.com/services/event-hubs/)
 
 次に、クラウドネイティブシステムの分散データと、それが提示する利点と課題に移ります。
 
-### <a name="references"></a>参照
+### <a name="references"></a>References
 
 - [.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)
 
@@ -64,14 +62,14 @@ ms.locfileid: "73841283"
 
 - [Azure Kubernetes Service の受信について (AKS)](https://vincentlauzon.com/2018/10/10/about-ingress-in-azure-kubernetes-service-aks/)
 
-- [実用的な gRPC](https://www.worldcat.org/title/practical-grpc/oclc/1042342319)
-
 - [gRPC のドキュメント](https://grpc.io/docs/guides/)
 
-- [WCF 開発者向け grpc](https://bing.com) [Mark'S grpc book]
+- [WCF 開発者向け gRPC](https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers/)
 
 - [GRPC サービスと HTTP Api の比較](https://docs.microsoft.com/aspnet/core/grpc/comparison?view=aspnetcore-3.0)
 
+- [.NET ビデオを使用した gRPC サービスのビルド](https://channel9.msdn.com/Shows/The-Cloud-Native-Show/Building-Microservices-with-gRPC-and-NET)
+
 >[!div class="step-by-step"]
->[前へ](rest-grpc.md)
+>[前へ](grpc.md)
 >[次へ](distributed-data.md)

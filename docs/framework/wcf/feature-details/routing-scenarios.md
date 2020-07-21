@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - routing [WCF], scenarios
 ms.assetid: ec22f308-665a-413e-9f94-7267cb665dab
-ms.openlocfilehash: 334e9fe7ca6931f87c75023f3322638b36001b6a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 455a6e42aea064d48846994b4e729b90667bc8e1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923067"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590502"
 ---
 # <a name="routing-scenarios"></a>ルーティング シナリオ
 ルーティング サービスは自由にカスタマイズできますが、まったく新しい構成を作成するときは、効率的なルーティング ロジックを設計するのが困難である場合があります。  しかし、ほとんどのルーティング サービスの構成で想定されている一般的なシナリオがいくつかあります。 これらのシナリオは、特定の構成に直接、適用できない場合もありますが、これらのシナリオに対応するルーティング サービスの構成方法を理解しておくことは、ルーティング サービスを理解する助けとなります。  
@@ -34,17 +34,17 @@ ms.locfileid: "69923067"
   
  ルーティング サービスを使用することで、クライアント アプリケーションからメッセージを受信するための 1 つのエンドポイントを公開し、メッセージの内容に基づいて、各メッセージを適切なバージョンのサービスにルーティングできます。 最も基本的な実装には、メッセージを処理するサービスのバージョンを示すカスタム ヘッダーをメッセージに追加することが含まれます。 ルーティング サービスでは、各メッセージにカスタム ヘッダーがあるかどうかを確認し、メッセージを適切な送信先エンドポイントにルーティングするために XPathMessageFilter を使用できます。  
   
- サービスバージョン管理構成の作成に使用する手順につい[ては、「方法:サービスの](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)バージョン管理。
+ サービスのバージョン管理構成の作成に使用する手順については、「[方法: サービスのバージョン管理](how-to-service-versioning.md)」を参照してください。
   
 ### <a name="service-data-partitioning"></a>サービス データのパーティション分割  
  分散環境を設計するときは、多くの場合、複数のコンピューターに処理負荷を分散することが望ましいとされています。これは、可用性を高め、個々のコンピューターの処理負荷を軽減し、メッセージの特定のサブセットに対して専用のリソースを提供するためです。 ルーティング サービスは負荷分散専用のソリューションに代わるものではありませんが、このサービスが内容に基づくルーティングを実施する機能は、特定の送信先に類似のメッセージをルーティングする方法として使用できます。 この例として、その他のクライアントから受信するメッセージとは別に、特定のクライアントからのメッセージを処理する必要がある場合が挙げられます。  
   
- サービスデータのパーティション分割構成の作成に使用する手順に[ついては、「」を参照してください。サービスデータの](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)パーティション分割。  
+ サービスデータのパーティション分割構成の作成に使用する手順については、「[方法: データのパーティション分割](how-to-service-data-partitioning.md)」を参照してください。  
   
 ### <a name="dynamic-routing"></a>動的ルーティング  
  変化するビジネス ニーズを満たすために、ルーティング構成を変更した方がよい場合がよくあります。たとえば、新しいバージョンのサービスに対してルートを追加する、ルーティング条件を変更する、または、特定のメッセージに対してフィルターがルーティング先とする送信先エンドポイントを変更することが考えられます。 ルーティング サービスでは、<xref:System.ServiceModel.Routing.RoutingExtension> を使用して、新しい RoutingConfiguration を実行時に提供できるため、これが実現されます。 新しい構成は直ちに有効になりますが、ルーティング サービスで処理される任意の新しいセッションのみに適用されます。  
   
- 動的ルーティングの実装に使用する手順につい[ては、「」を参照してください。動的更新](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)。
+ 動的ルーティングの実装に使用する手順については、「[方法: 動的更新](how-to-dynamic-update.md)」を参照してください。
   
 ### <a name="multicast"></a>マルチキャスト  
  メッセージをルーティングするときに、通常は、各メッセージを 1 つの特定の送信先エンドポイントにルーティングします。  しかし、メッセージのコピーを複数の送信先エンドポイントにルーティングする必要がある場合もあります。 マルチキャスト ルーティングを実行するには、次の条件を満たしている必要があります。  
@@ -63,17 +63,17 @@ ms.locfileid: "69923067"
   
  ルーティング サービスは、ネットワークまたは通信関連の障害発生時のメッセージに対して堅牢なエラー処理機能を提供することで、このシナリオを対処しようとします。 可能な送信先エンドポイントのリストを作成し、このリストを各メッセージ フィルターと関連付けることで、設定可能な送信先が 1 つのみであるために発生する単一障害点を排除します。 障害が発生した場合、ルーティング サービスは、メッセージが配信されるか、通信以外の障害が発生するか、またはすべてのエンドポイントに対する試行が終わるまで、次のエンドポイントにメッセージを配信しようとします。  
   
- エラー処理の構成に使用する手順につい[ては、「」を参照してください。エラー処理](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)。
+ エラー処理の構成に使用する手順については、「[方法: エラー処理](how-to-error-handling.md)」を参照してください。
   
 ### <a name="in-this-section"></a>このセクションの内容  
- [方法: サービスのバージョン管理](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)  
+ [方法: サービスのバージョン管理](how-to-service-versioning.md)  
   
- [方法: サービスデータのパーティション分割](../../../../docs/framework/wcf/feature-details/how-to-service-data-partitioning.md)  
+ [方法: サービス データのパーティション分割](how-to-service-data-partitioning.md)  
   
- [方法: 動的更新](../../../../docs/framework/wcf/feature-details/how-to-dynamic-update.md)  
+ [方法: 動的な更新](how-to-dynamic-update.md)  
   
- [方法: エラー処理](../../../../docs/framework/wcf/feature-details/how-to-error-handling.md)  
+ [方法: エラー処理](how-to-error-handling.md)  
   
 ## <a name="see-also"></a>関連項目
 
-- [ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
+- [ルーティングの概要](routing-introduction.md)

@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataModule::GetVersionId メソッド
+title: 'IXCLRDataModule:: GetVersionId メソッド'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataModule::GetVersionId Method
@@ -15,14 +15,14 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 5bd84f784ea92e7b2ce2465e64972dc84e16a16c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9d5ef137a5d76c3d7545ab16921352123e978fb1
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744695"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420865"
 ---
-# <a name="ixclrdatamodulegetversionid-method"></a>IXCLRDataModule::GetVersionId メソッド
+# <a name="ixclrdatamodulegetversionid-method"></a>IXCLRDataModule:: GetVersionId メソッド
 
 モジュールのバージョン識別子を取得します。
 
@@ -39,18 +39,18 @@ HRESULT GetVersionId(
 ## <a name="parameters"></a>パラメーター
 
 `vid`\
-[out]モジュールのバージョンの識別子です。
+入出力モジュールのバージョン識別子。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-指定されたメソッドは、`IXCLRDataModule`インターフェイスし、40 のスロットの仮想メソッド テーブルに対応しています。
+指定されたメソッドはインターフェイスの一部で `IXCLRDataModule` あり、仮想メソッドテーブルの4番目のスロットに対応します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
-**ヘッダー:** なし  
-**ライブラリ:** なし  
-**.NET Framework のバージョン:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
+**ヘッダー:** 存在  
+**ライブラリ:** 存在  
+**.NET Framework のバージョン:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>関連項目
 

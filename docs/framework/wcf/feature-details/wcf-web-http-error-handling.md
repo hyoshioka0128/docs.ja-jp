@@ -2,12 +2,12 @@
 title: WCF Web HTTP エラー処理
 ms.date: 03/30/2017
 ms.assetid: 02891563-0fce-4c32-84dc-d794b1a5c040
-ms.openlocfilehash: 34912bccaefb645541f47d083c5c307b20ff77c5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b1d41bebafa2795d390b120ad84475417389479b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975956"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598646"
 ---
 # <a name="wcf-web-http-error-handling"></a>WCF Web HTTP エラー処理
 Windows Communication Foundation (WCF) Web HTTP エラー処理を使用すると、HTTP 状態コードを指定し、操作と同じ形式 (XML、JSON など) を使用してエラーの詳細を返す WCF Web HTTP サービスからエラーを返すことができます。  
@@ -48,14 +48,14 @@ public string Operation2()
   
 - <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> プロパティの値 (<xref:System.ServiceModel.Web.OutgoingWebResponseContext> にアクセスして取得)。  
   
- これらの値が操作の書式設定に与える影響の詳細については、「 [WCF WEB HTTP 書式設定](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)」を参照してください。  
+ これらの値が操作の書式設定に与える影響の詳細については、「 [WCF WEB HTTP 書式設定](wcf-web-http-formatting.md)」を参照してください。  
   
  <xref:System.ServiceModel.Web.WebFaultException> は <xref:System.ServiceModel.FaultException> であるため、SOAP エンドポイントと Web HTTP エンドポイントを公開するサービスのエラー例外プログラミング モデルとして使用できます。  
   
 ## <a name="see-also"></a>関連項目
 
-- [WCF Web HTTP プログラミング モデル](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
-- [WCF Web HTTP 形式](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)
-- [エラーの定義と指定](../../../../docs/framework/wcf/defining-and-specifying-faults.md)
-- [例外とエラーの処理](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)
-- [エラーの送受信](../../../../docs/framework/wcf/sending-and-receiving-faults.md)
+- [WCF Web HTTP プログラミング モデル](wcf-web-http-programming-model.md)
+- [WCF Web HTTP 形式](wcf-web-http-formatting.md)
+- [エラーの定義と指定](../defining-and-specifying-faults.md)
+- [例外とエラーの処理](../extending/handling-exceptions-and-faults.md)
+- [エラーの送受信](../sending-and-receiving-faults.md)

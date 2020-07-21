@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 95d2aa0d-8eeb-4a9f-a216-5249f7e2c167
 topic_type:
 - apiref
-ms.openlocfilehash: 46cd8b5c22f48ba45c4da7fa8876d6807a21f2b3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f0f6fe321f4d38129b6d70ce94a7ea8de8fff6c8
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124153"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935669"
 ---
 # <a name="resolvetypelib-method"></a>ResolveTypeLib メソッド
 完全修飾パスを返すことにより、タイプライブラリの簡易名を解決します。  
@@ -53,7 +53,7 @@ HRESULT ResolveTypeLib(
  からタイプライブラリのマイナーバージョン番号。 たとえば、バージョン*x.y*の場合、マイナーバージョン番号は*y*になります。  
   
  `syskind`  
- からオペレーティング環境を識別する[SYSKIND](https://docs.microsoft.com/windows/win32/api/oaidl/ne-oaidl-syskind)フラグ。 共通値は SYS_WIN32 と SYS_WIN64 です。  
+ からオペレーティング環境を識別する[SYSKIND](/windows/win32/api/oaidl/ne-oaidl-syskind)フラグ。 共通値は SYS_WIN32 と SYS_WIN64 です。  
   
  `pbstrResolvedTlbName`  
  入出力`bstrSimpleName` パラメーターに指定されたタイプライブラリの完全パスを格納する[BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr)へのポインター。  
@@ -61,9 +61,9 @@ HRESULT ResolveTypeLib(
 ## <a name="remarks"></a>Remarks  
  `ResolveTypeLib` メソッドは、 [tlbexp.exe (タイプライブラリエクスポーター)](../../tools/tlbexp-exe-type-library-exporter.md)の処理中に[LoadTypeLibWithResolver 関数](loadtypelibwithresolver-function.md)によって呼び出されます。  
   
- このインターフェイスのカスタム実装では、`bstrSimpleName` パラメーターに指定されたタイプライブラリの完全パスを含む[BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr)を返す必要があります。  
+ このインターフェイスのカスタム実装では、`bstrSimpleName`パラメーターに指定されたタイプライブラリの完全パスを含む [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) を返す必要があります。  
   
-## <a name="requirements"></a>［要件］  
+## <a name="requirements"></a>要件  
  **:** 「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Tlf .idl, Tl. h  

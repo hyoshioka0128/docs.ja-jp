@@ -2,35 +2,35 @@
 title: XML スキーマ (XSD) の UNIQUE 制約の DataSet 制約への割り当て
 ms.date: 03/30/2017
 ms.assetid: 56da90bf-21d3-4d1a-8bb8-de908866b78d
-ms.openlocfilehash: 6b847aba31aa75f7be3bd6a11b6bcb8231c06bc4
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 8bcf705ce4415929e685be79f813846bbb40bb36
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040362"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150845"
 ---
 # <a name="map-unique-xml-schema-xsd-constraints-to-dataset-constraints"></a>XML スキーマ (XSD) の UNIQUE 制約の DataSet 制約への割り当て
-XML スキーマ定義言語 (XSD) スキーマでは、 **unique**要素は要素または属性の一意性制約を指定します。 XML スキーマをリレーショナル スキーマに変換する処理では、XML スキーマの要素または属性で指定した UNIQUE 制約が、生成される <xref:System.Data.DataTable> に対応する <xref:System.Data.DataSet> の UNIQUE 制約に割り当てられます。  
+XML スキーマ定義言語 (XSD) スキーマでは、**unique** 要素を使用して要素または属性の一意性制約を指定します。 XML スキーマをリレーショナル スキーマに変換する処理では、XML スキーマの要素または属性で指定した UNIQUE 制約が、生成される <xref:System.Data.DataTable> に対応する <xref:System.Data.DataSet> の UNIQUE 制約に割り当てられます。  
   
- 次の表は、 **unique**要素で指定できる**msdata**属性の概要を示しています。  
+ **unique** 要素で指定できる **msdata** 属性を次の表に示します。  
   
 |属性名|説明|  
 |--------------------|-----------------|  
-|**msdata: ConstraintName**|この属性を指定した場合、その値が制約名として使用されます。 それ以外の場合、 **name**属性は制約名の値を提供します。|  
-|**msdata: PrimaryKey**|**Unique**要素に `PrimaryKey="true"` が存在する場合は、 **IsPrimaryKey**プロパティを**true**に設定して unique 制約が作成されます。|  
+|**msdata:ConstraintName**|この属性を指定した場合、その値が制約名として使用されます。 それ以外の場合は、**name** 属性によって制約名の値が設定されます。|  
+|**msdata:PrimaryKey**|**unique** 要素が `PrimaryKey="true"` である場合、一意制約は、**IsPrimaryKey** プロパティが **true** に設定された状態で作成されます。|  
   
- Unique 制約を指定するために**unique**要素を使用する XML スキーマの例を次に示します。  
+ **unique** 要素を使用して一意性制約を指定する XML スキーマの例を次に示します。  
   
 ```xml  
-<xs:schema id="SampleDataSet"   
-            xmlns:xs="http://www.w3.org/2001/XMLSchema"   
+<xs:schema id="SampleDataSet"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   <xs:element name="Customers">  
     <xs:complexType>  
       <xs:sequence>  
-        <xs:element name="CustomerID" type="xs:integer"   
+        <xs:element name="CustomerID" type="xs:integer"
            minOccurs="0"/>  
-        <xs:element name="CompanyName" type="xs:string"   
+        <xs:element name="CompanyName" type="xs:string"
            minOccurs="0"/>  
        <xs:element name="Phone" type="xs:string" />  
      </xs:sequence>  
@@ -48,13 +48,13 @@ XML スキーマ定義言語 (XSD) スキーマでは、 **unique**要素は要�
 </xs:schema>  
 ```  
   
- スキーマ内の**unique**要素は、ドキュメントインスタンス内のすべての**Customers**要素について、 **CustomerID**子要素の値が一意である必要があることを指定します。 **データセット**の構築では、マッピングプロセスによってこのスキーマが読み取られ、次のテーブルが生成されます。  
+ スキーマの **unique** 要素では、ドキュメント インスタンスのすべての **Customers** 要素に対し、**CustomerID** 子要素の値が一意である必要があることが指定されます。 **DataSet** を作成する場合は、割り当て処理によってスキーマが読み込まれ、次のテーブルが生成されます。  
   
 ```text  
 Customers (CustomerID, CompanyName, Phone)  
 ```  
   
- また、次の**データセット**に示すように、マッピングプロセスによって**CustomerID**列に unique 制約が作成されます。 (わかりやすいように、関連するプロパティだけを示します)。  
+ 次の **DataSet** に示すように、マッピング プロセスによって **CustomerID** 列に対する一意制約も作成されます。 (わかりやすいように、関連するプロパティだけを示します)。  
   
 ```text  
       DataSetName: MyDataSet  
@@ -68,23 +68,23 @@ TableName: Customers
       IsPrimaryKey: False  
 ```  
   
- 生成された**データセット**では、unique 制約に対して**IsPrimaryKey**プロパティが**False**に設定されています。 列の**unique**プロパティは、 **CustomerID**列の値が一意である必要があることを示します (ただし、列の**allowdbnull**プロパティで指定されているように、null 参照にすることができます)。  
+ 生成される **DataSet** では、一意制約のために **IsPrimaryKey** プロパティが **False** に設定されます。 列の **unique** プロパティでは、**CustomerID** 列の値が一意であることが示されます (ただし、列の **AllowDBNull** プロパティで指定されているように、null 参照でもかまいません)。  
   
- スキーマを変更し、オプションの**msdata: PrimaryKey**属性値を**True**に設定すると、unique 制約がテーブルに作成されます。 **Allowdbnull**列のプロパティが**False**に設定され、制約の**IsPrimaryKey**プロパティが**True**に設定されているため、 **CustomerID**列が主キー列になります。  
+ スキーマを変更し、オプションの **msdata:PrimaryKey** 属性を **True** に設定すると、一意制約がテーブルに作成されます。 **AllowDBNull** 列プロパティが **False** に設定され、制約の **IsPrimaryKey** プロパティが **True** に設定されるため、**CustomerID** 列が主キー列になります。  
   
- XML スキーマの要素や属性を組み合わせて UNIQUE 制約を指定できます。 次の例では、スキーマに別の**xs: field**要素を追加することにより、 **CustomerID**値と**CompanyName**値の組み合わせを任意のインスタンスのすべての**顧客**に対して一意にする必要があることを指定する方法を示します。  
+ XML スキーマの要素や属性を組み合わせて UNIQUE 制約を指定できます。 次の例では、スキーマに別の **xs:field** 要素を追加することにより、**CustomerID** の値と **CompanyName** の値の組み合わせを任意のインスタンスのすべての **Customers** に対して必ず一意になるように指定する方法を示します。  
   
 ```xml  
-      <xs:unique     
-         msdata:ConstraintName="SomeName"    
-         name="UniqueCustIDConstr" >   
-  <xs:selector xpath=".//Customers" />   
-  <xs:field xpath="CustomerID" />   
-  <xs:field xpath="CompanyName" />   
+      <xs:unique
+         msdata:ConstraintName="SomeName"
+         name="UniqueCustIDConstr" >
+  <xs:selector xpath=".//Customers" />
+  <xs:field xpath="CustomerID" />
+  <xs:field xpath="CompanyName" />
 </xs:unique>  
 ```  
   
- これは、結果の**データセット**で作成される制約です。  
+ その結果、**DataSet** に作成される制約を次に示します。  
   
 ```text  
 ConstraintName: SomeName  

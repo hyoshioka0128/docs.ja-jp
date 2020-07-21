@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: c1b33289-c389-4ac2-b153-3cbb0d8324ad
 ms.openlocfilehash: f5d69a1743941a235b3a1fda38023b11b3f26809
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61912315"
 ---
 # <a name="control-library"></a>コントロール ライブラリ
-Windows Presentation Foundation (WPF) コントロール ライブラリで Windows Presentation Foundation (WPF)、アルファベット順の一覧が提供されているコントロールについての情報が含まれています。  
+Windows Presentation Foundation (WPF) コントロール ライブラリには、Windows Presentation Foundation (WPF) が提供するコントロールについての情報が、アルファベット順にあります。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [Border](border.md)  
@@ -66,7 +66,7 @@ Windows Presentation Foundation (WPF) コントロール ライブラリで Wind
  [WrapPanel](wrappanel.md)  
  [Viewbox](viewbox.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls>  
   
  <xref:System.Windows.Controls.Primitives>  

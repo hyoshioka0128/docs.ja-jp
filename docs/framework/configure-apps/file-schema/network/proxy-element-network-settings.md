@@ -1,5 +1,6 @@
 ---
 title: <proxy> 要素 (ネットワーク設定)
+description: <proxy>ネットワーク設定要素は、.NET Framework のプロキシサーバーオプションを定義します。 この記事には例が含まれています。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/proxy
@@ -8,30 +9,30 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 5f327a2bb4fe316497614f14669907d514c20654
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 8ae30b8c29dcf3aaa183ff295c7ee8592322797f
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089190"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141782"
 ---
 # <a name="proxy-element-network-settings"></a>\<proxy> 要素 (ネットワーク設定)
 プロキシ サーバーを定義します。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system.net>** ](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<[**defaultProxy>** ](defaultproxy-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**proxy>**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<defaultProxy>**](defaultproxy-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<proxy>**
 
 ## <a name="syntax"></a>構文  
   
 ```xml  
 <proxy
-  autoDetect="true|false|unspecified" 
-  bypassonlocal="true|false|unspecified"
+  autoDetect="True|False|Unspecified"
+  bypassonlocal="True|False|Unspecified"
   proxyaddress="uriString"
   scriptLocation="uriString"
-  usesystemdefault="true|false|unspecified"
+  usesystemdefault="True|False|Unspecified"
 />
 ```  
   
@@ -42,11 +43,11 @@ ms.locfileid: "74089190"
   
 |**属性**|**説明**|  
 |-------------------|---------------------|  
-|`autoDetect`|プロキシが自動的に検出されるかどうかを指定します。 既定値は `unspecified`です。|  
-|`bypassonlocal`|ローカルリソースに対してプロキシをバイパスするかどうかを指定します。 ローカルリソースには、ローカルサーバー (`http://localhost`、`http://loopback`、または `http://127.0.0.1`) と、ピリオドなしの URI (`http://webserver`) が含まれます。 既定値は `unspecified`です。|  
+|`autoDetect`|プロキシを自動的に検出するかどうかを指定します。 既定値は `Unspecified` です。|  
+|`bypassonlocal`|ローカル リソースの場合に、プロキシがバイパスされるかどうかを指定します。 ローカルリソースには、ローカルサーバー ( `http://localhost` 、 `http://loopback` 、または `http://127.0.0.1` ) と、ピリオドなしの URI () が含ま `http://webserver` れます。 既定値は `Unspecified` です。|  
 |`proxyaddress`|使用するプロキシ URI を指定します。|  
-|`scriptLocation`|構成スクリプトの場所を指定します。 この属性には、`bypassonlocal` 属性を使用しないでください。 |  
-|`usesystemdefault`|Internet Explorer のプロキシ設定を使用するかどうかを指定します。 `true`に設定すると、それ以降の属性は Internet Explorer のプロキシ設定よりも優先されます。 既定値は `unspecified`です。|  
+|`scriptLocation`|構成スクリプトの場所を指定します。 この属性には属性を使用しない `bypassonlocal` でください。 |  
+|`usesystemdefault`|Internet Explorer のプロキシ設定を使用するかどうかを指定します。 に設定する `True` と、それ以降の属性は Internet Explorer のプロキシ設定よりも優先されます。 既定値は `Unspecified` です。|  
   
 ### <a name="child-elements"></a>子要素  
  なし。  
@@ -59,16 +60,16 @@ ms.locfileid: "74089190"
   
 ## <a name="text-value"></a>テキスト値  
   
-## <a name="remarks"></a>Remarks  
- `proxy` 要素は、アプリケーションのプロキシサーバーを定義します。 この要素が構成ファイルにない場合、.NET Framework は Internet Explorer のプロキシ設定を使用します。  
+## <a name="remarks"></a>注釈  
+ 要素は、 `proxy` アプリケーションのプロキシサーバーを定義します。 この要素が構成ファイルにない場合、.NET Framework は Internet Explorer のプロキシ設定を使用します。  
   
- `proxyaddress` 属性の値は、整形式の Uniform Resource Indicator (URI) である必要があります。  
+ 属性の値は、整形 `proxyaddress` 式の Uniform Resource Indicator (URI) である必要があります。  
   
- `scriptLocation` 属性は、プロキシ構成スクリプトの自動検出を参照します。 Internet Explorer で **[自動構成スクリプトを使用する]** オプションが選択されている場合、<xref:System.Net.WebProxy> クラスは、通常は wpad.dat という名前の構成スクリプトを見つけようとします。 `bypassonlocal` が任意の値に設定されている場合、`scriptLocation` は無視されます。
+ 属性は、 `scriptLocation` プロキシ構成スクリプトの自動検出を参照します。 <xref:System.Net.WebProxy>Internet Explorer で [**自動構成スクリプトを使用する**] オプションが選択されている場合、クラスは、(通常は wpad.dat という名前の) 構成スクリプトの検索を試みます。 が任意の値に設定されている場合 `bypassonlocal` 、 `scriptLocation` は無視されます。
   
- バージョン2.0 に移行する .NET Framework バージョン1.1 アプリケーションの場合は、`usesystemdefault` 属性を使用します。  
+ `usesystemdefault`バージョン2.0 に移行する .NET Framework バージョン1.1 アプリケーションの場合は、属性を使用します。  
   
- `proxyaddress` 属性が無効な既定のプロキシを指定している場合は、例外がスローされます。 例外の <xref:System.Exception.InnerException%2A> プロパティに、このエラーの根本原因に関する詳細情報が含まれています。  
+ `proxyaddress`属性が無効な既定のプロキシを指定している場合は、例外がスローされます。 例外の <xref:System.Exception.InnerException%2A> プロパティに、このエラーの根本原因に関する詳細情報が含まれています。  
   
 ## <a name="configuration-files"></a>構成ファイル  
  この要素は、アプリケーション構成ファイルまたはマシン構成ファイル (Machine.config) で使用できます。  
@@ -81,9 +82,9 @@ ms.locfileid: "74089190"
   <system.net>  
     <defaultProxy>  
       <proxy  
-        usesystemdefault="true"  
+        usesystemdefault="True"  
         proxyaddress="http://192.168.1.10:3128"  
-        bypassonlocal="true"  
+        bypassonlocal="True"  
       />  
     </defaultProxy>  
   </system.net>  

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fe4150e8-071d-43fb-8e06-c3c616dbeed2
 topic_type:
 - apiref
-ms.openlocfilehash: 39f72e670ddc700c257f50f6bad6fab702ec21b6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 93a194ea72ab894544927cf96304397b7211b5ac
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432774"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009159"
 ---
 # <a name="corsetenc-enumeration"></a>CorSetENC 列挙型
 メタデータの生成中の動作を決定する値が格納されます。  
@@ -53,15 +53,15 @@ typedef enum CorSetENC {
 |`MDUpdateExtension`|更新プログラムが追加のみで構成されることを示します。 トークンは移動できません。|  
 |`MDUpdateIncremental`|コンパイルが増分であることを示します。|  
 |`MDUpdateDelta`|は、変更されたメタデータのみを保存することを示します。|  
-|`MDUpdateMask`|`MDUpdateENC`、`MDUpdateFull` および `MDUpdateIncremental`が含まれます。|  
+|`MDUpdateMask`|`MDUpdateENC`、、およびが含まれ `MDUpdateFull` `MDUpdateIncremental` ます。|  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorHdr. h  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [メタデータ列挙型](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [メタデータ列挙体](metadata-enumerations.md)

@@ -7,20 +7,18 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 45f6b402ae01b7f762f8ef10dcfb0bc46f949db6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: f6c2829d45db147c81592c00710f04168b40679e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343572"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287702"
 ---
 # <a name="including-or-importing-xml-schemas"></a>XML スキーマのインクルードまたはインポート
 XML スキーマには、`<xs:import />` 要素、`<xs:include />` 要素、および `<xs:redefine />` 要素を含めることができます。 これらのスキーマ要素は、インクルードまたはインポートするスキーマの構造を補足するために使用できる他の XML スキーマを参照します。 <xref:System.Xml.Schema.XmlSchemaImport> クラス、<xref:System.Xml.Schema.XmlSchemaInclude> クラス、および <xref:System.Xml.Schema.XmlSchemaRedefine> クラスは、スキーマ オブジェクト モデル (SOM) API でこれらの要素にマップされます。  
   
 ## <a name="including-or-importing-an-xml-schema"></a>XML スキーマのインクルードまたはインポート  
- 次のコード サンプルは、アドレス スキーマを使用して「[XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)」で作成したカスタム スキーマを補足します。 アドレス スキーマを使用してカスタム スキーマを補足すると、カスタム スキーマでアドレス型が使用できるようになります。  
+ 次のコード サンプルは、アドレス スキーマを使用して「[XML スキーマの作成](building-xml-schemas.md)」で作成したカスタム スキーマを補足します。 アドレス スキーマを使用してカスタム スキーマを補足すると、カスタム スキーマでアドレス型が使用できるようになります。  
   
  アドレス スキーマを統合するには、`<xs:include />` 要素または `<xs:import />` 要素を使用して、アドレス スキーマのコンポーネントをそのまま使用するか、または `<xs:redefine />` 要素を使用して、カスタム スキーマのニーズに合わせてコンポーネントを変更します。 アドレス スキーマの `targetNamespace` はカスタム スキーマのものとは異なっているため、`<xs:import />` 要素 (インポートのセマンティクス) が使用されます。  
   
@@ -101,9 +99,9 @@ XML スキーマには、`<xs:import />` 要素、`<xs:include />` 要素、お�
   
 ## <a name="see-also"></a>関連項目
 
-- [XML スキーマ オブジェクト モデルの概要](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
-- [XML スキーマの読み取りと書き込み](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
-- [XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [XML スキーマの走査](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
-- [XML スキーマの編集](../../../../docs/standard/data/xml/editing-xml-schemas.md)
-- [スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
+- [XML スキーマ オブジェクト モデルの概要](xml-schema-object-model-overview.md)
+- [XML スキーマの読み取りと書き込み](reading-and-writing-xml-schemas.md)
+- [XML スキーマの作成](building-xml-schemas.md)
+- [XML スキーマの走査](traversing-xml-schemas.md)
+- [XML スキーマの編集](editing-xml-schemas.md)
+- [スキーマをコンパイルするための XmlSchemaSet](xmlschemaset-for-schema-compilation.md)

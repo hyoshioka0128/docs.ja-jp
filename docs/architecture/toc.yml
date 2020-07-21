@@ -1,4 +1,4 @@
-- name: .NET アプリケーション アーキテクチャ ガイド
+- name: .NET アプリのアーキテクチャ ガイド
   href: index.yml
 - name: 電子書籍
   expanded: true
@@ -9,16 +9,18 @@
       href: grpc-for-wcf-developers/
     - name: Azure クラウドと Windows コンテナーで既存の .NET アプリケーションを最新式にする
       href: modernize-with-azure-containers/
-    - name: Microsoft プラットフォームとツールでコンテナー化された Docker アプリケーションのライフサイクル
+    - name: Microsoft プラットフォームとツールでのコンテナー化された Docker アプリケーションのライフサイクル
       href: containerized-lifecycle/
     - name: '.NET マイクロサービス: コンテナー化された .NET アプリケーションのアーキテクチャ'
       href: microservices/
     - name: 'サーバーレス アプリ: アーキテクチャ、パターン、および Azure の実装'
       href: serverless/
+    - name: Azure 向けクラウド ネイティブ .NET アプリの設計
+      href: cloud-native/
+    - name: .NET Core 3.1 を使用した Windows 10 でのデスクトップ アプリ最新化
+      href: modernize-desktop/
 - name: 電子書籍のプレビュー
   expanded: true
   items:
-    - name: Azure 向けクラウド ネイティブ .NET アプリの設計
-      href: cloud-native/
     - name: ASP.NET Web Forms 開発者向け Blazor
       href: blazor-for-web-forms-developers/

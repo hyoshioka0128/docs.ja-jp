@@ -1,5 +1,6 @@
 ---
 title: CoreResponseData クラス
+description: HTTP ヘッダーと応答本文の解析を表す CoreResponseData クラスについて説明します。 これは .NET の System.Net 名前空間にあります。
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: 640a925c3aec86b4743b1b2b62eb3793af1cc0bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8248cc20f6528a1c3bc64c9b9339a3a3000d03a0
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675417"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989805"
 ---
 # <a name="coreresponsedata-class"></a>CoreResponseData クラス
 
-`CoreResponseData`クラスは、HTTP ヘッダーおよび応答本文の解析を表します。
+クラスは、 `CoreResponseData` HTTP ヘッダーと応答本文の解析を表します。
 
 ## <a name="syntax"></a>構文
   
@@ -28,14 +29,14 @@ internal class CoreResponseData
 ```
 
 > [!WARNING]
-> この API は、内部、およびコード内で直接使用するものではありません。 代わりに、使用する必要があります、<xref:System.Diagnostics.DiagnosticSource>ネットワーク用のコードをフックします。 参照してください[DiagnosticSource ユーザー ガイド](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)します。
-> 
-> Microsoft はいかなる運用アプリケーションでこのクラスの使用をサポートしていません。
+> この API は内部的なものであり、コード内で直接使用するためのものではありません。 代わりに、を使用して <xref:System.Diagnostics.DiagnosticSource> ネットワークコードをフックする必要があります。 「 [DiagnosticSource User'S Guide](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)」を参照してください。
+>
+> Microsoft では、どのような状況でも、実稼働アプリケーションでのこのクラスの使用はサポートしていません。
 
 ## <a name="requirements"></a>必要条件
 
 **名前空間:** <xref:System.Net>
 
-**アセンブリ:**(System.dll) のシステム
+**アセンブリ:** システム (System.dll)
 
-**.NET framework のバージョン:** 2.0 以降で使用可能です。
+**.NET Framework のバージョン:** 2.0 以降で使用できます。

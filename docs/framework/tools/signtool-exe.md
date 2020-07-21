@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-ms.openlocfilehash: 636aa76a17a887aefe51b7e7858099c541dbb21f
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 8ce31b1399700906d6d6e2a369dcfc4b61fe9646
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801842"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180321"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (署名ツール)
 署名ツールはコマンド ライン ツールで、ファイルにデジタル署名を添付し、ファイルの署名を検証し、ファイルにタイム スタンプを付けます。  
@@ -50,7 +50,7 @@ signtool [command] [options] [file_name | ...]
 |**/v**|コマンドが正常に実行したか、失敗したかにかかわらず、詳細出力と警告メッセージが表示されます。|  
 |**/debug**|デバッグ情報を表示します。|  
   
-<a name="catdb"></a>   
+<a name="catdb"></a>
 ## <a name="catdb-command-options"></a>catdb コマンド オプション  
  次の表に、`catdb` コマンドと共に使用できるオプションを示します。  
   
@@ -61,7 +61,7 @@ signtool [command] [options] [file_name | ...]
 |`/r`|指定したカタログをカタログ データベースから削除します。 このオプションが指定されていない場合、署名ツールはカタログ データベースに指定されたカタログを追加します。|  
 |`/u`|追加されたカタログ ファイルに対して、一意な名前を自動的に生成するように指定します。 必要に応じて、既存のカタログ ファイルと名前が競合しないように、カタログ ファイルの名前が変更されます。 このオプションが指定されていない場合、署名ツールは追加されるカタログと同じ名前を持つ既存のカタログを上書きします。|  
   
-<a name="sign"></a>   
+<a name="sign"></a>
 ## <a name="sign-command-options"></a>sign コマンド オプション  
  次の表に、`sign` コマンドと共に使用できるオプションを示します。  
   
@@ -81,7 +81,7 @@ signtool [command] [options] [file_name | ...]
 |`/n`  *SubjectName*|署名証明書の件名を指定します。 この値には、件名全体の部分文字列を指定できます。|  
 |`/nph`|サポートされている場合に、実行可能ファイルのページ ハッシュを抑制します。 既定値は、SIGNTOOL_PAGE_HASHES 環境変数と wintrust.dll のバージョンによって決定されます。 PE ファイル以外では、このオプションは無視されます。|  
 |`/p`  *Password*|PFX ファイルを開くときに使用するパスワードを指定します。 PFX ファイルを指定するには、`/f` オプションを使用します。|  
-|`/p7` *Path*|指定する各コンテンツ ファイルについて公開キー暗号化規格 (PKCS) #7 ファイルを作成することを指定します。 PKCS #7 ファイルの名前は *path*\\*filename*.p7 です。|  
+|`/p7` *パス*|指定する各コンテンツ ファイルについて公開キー暗号化規格 (PKCS) #7 ファイルを作成することを指定します。 PKCS #7 ファイルの名前は *path*\\*filename*.p7 です。|  
 |`/p7ce` *Value*|署名された PKCS#7 コンテンツのオプションを指定します。 署名されたコンテンツを PKCS #7 ファイルに埋め込む場合は *Value* を "Embedded" に設定し、デタッチされた PKCS #7 ファイルの署名されたデータ部分を作成する場合には "DetachedSignedData" に設定します。 `/p7ce` オプションを使用しない場合は、既定で署名されたコンテンツが埋め込まれます。|  
 |`/p7co` *\<OID>*|署名された PKCS#7 コンテンツを識別するオブジェクト識別子 (OID) を指定します。|  
 |`/ph`|サポートされている場合に、実行可能ファイルのページ ハッシュを生成します。|  
@@ -97,7 +97,7 @@ signtool [command] [options] [file_name | ...]
   
  使用例については、「[Using SignTool to Sign a File](/windows/desktop/SecCrypto/using-signtool-to-sign-a-file)」(SignTool を使用してファイルに署名する) を参照してください。  
   
-<a name="TimeStamp"></a>   
+<a name="TimeStamp"></a>
 ## <a name="timestamp-command-options"></a>TimeStamp コマンド オプション  
  次の表に、`TimeStamp` コマンドと共に使用できるオプションを示します。  
   
@@ -111,7 +111,7 @@ signtool [command] [options] [file_name | ...]
   
  使用例については、「[Adding Time Stamps to Previously Signed Files](/windows/desktop/SecCrypto/adding-time-stamps-to-previously-signed-files)」(署名済みのファイルにタイム スタンプを追加する) を参照してください。  
   
-<a name="Verify"></a>   
+<a name="Verify"></a>
 ## <a name="verify-command-options"></a>Verify コマンド オプション  
   
 |Verify オプション|説明|  

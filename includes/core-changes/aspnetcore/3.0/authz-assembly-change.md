@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: b91cdc7a0d2e4258662155a840500ce21ab35760
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74101175"
 ---
-### <a name="authorization-addauthorization-overload-moved-to-different-assembly"></a>Authorization:AddAuthorization のオーバーロードが別のアセンブリに移動した
+### <a name="authorization-addauthorization-overload-moved-to-different-assembly"></a>承認:AddAuthorization のオーバーロードが別のアセンブリに移動した
 
 `Microsoft.AspNetCore.Authorization` に以前あったコア `AddAuthorization` メソッドが `AddAuthorizationCore` に名前変更されました。 古い `AddAuthorization` メソッドはまだありますが、代わりに `Microsoft.AspNetCore.Authorization.Policy` アセンブリに含まれています。 両方のメソッドを使用するアプリには影響はありません。 `Microsoft.AspNetCore.Authorization.Policy` は、「[共有フレームワーク: Microsoft.AspNetCore.App から削除されたアセンブリ](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp)」に説明されているスタンドアロン パッケージではなく共有フレームワークで出荷されるようになりました。
 
@@ -25,7 +25,7 @@ ms.locfileid: "74101175"
 
 `AddAuthorization` は、承認に必要な一般的なすべてのサービスを追加するのにより適切なメソッド名です。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 `Microsoft.AspNetCore.Authorization.Policy` に参照を追加するか、代わりに `AddAuthorizationCore` を使用します。
 

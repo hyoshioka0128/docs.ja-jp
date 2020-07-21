@@ -1,15 +1,13 @@
 ---
-title: 継続的インテグレーション (CI) で .NET Core SDK とツールを使用する
-description: .NET Core SDK とそのツールをビルド サーバーで使用する方法に関する情報。
-author: mairaw
+title: .NET Core SDK とツールを使用した継続的インテグレーション (CI)
+description: 継続的インテグレーションで .NET Core SDK とそのツールをビルド サーバー上で使用する方法について説明します。
 ms.date: 05/18/2017
-ms.custom: seodec18
-ms.openlocfilehash: 481d54904192ee82da1f9d34bbf62fa8ffe1cd3b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ddccb477bc112157a155e2217e04c329e7ab51c5
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428594"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415996"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>継続的インテグレーション (CI) で .NET Core SDK とツールを使用する
 
@@ -34,7 +32,7 @@ macOS をご利用の場合、PKG インストーラーをお使いください�
 > [!NOTE]
 > **Azure DevOps Services**
 >
-> インストーラー スクリプトの使用時、ネイティブ依存性は自動的にはインストールされません。 オペレーティング システムにネイティブ依存性がない場合、それをインストールする必要があります。 詳細については、[.NET Core の依存関係と要件](../install/dependencies.md?tabs=netcore30&pivots=os-linux)に関する記事を参照してください。
+> インストーラー スクリプトの使用時、ネイティブ依存性は自動的にはインストールされません。 オペレーティング システムにネイティブ依存性がない場合、それをインストールする必要があります。 詳細については、[.NET Core の依存関係と要件](../install/windows.md#dependencies)に関する記事を参照してください。
 
 ## <a name="ci-setup-examples"></a>CI セットアップ例
 
@@ -161,7 +159,7 @@ Azure DevOps Services で手動セットアップ スクリプトを使用する
 
    ![ビルド ステップの追加](./media/using-ci-with-cli/add-build-step.png)
 
-1. **[タスク カタログ]** が表示されます。 このカタログには、ビルドで使用するタスクが含まれています。 スクリプトがあるので、 **[追加]** ボタンを **PowerShell:Run a PowerShell スクリプト**に選択します。
+1. **[タスク カタログ]** が表示されます。 このカタログには、ビルドで使用するタスクが含まれています。 スクリプトがあるので、**PowerShell: Run a PowerShell スクリプト**の **[追加]** ボタンを選択します。
 
    ![PowerShell スクリプトの追加手順](./media/using-ci-with-cli/add-powershell-script.png)
 
@@ -175,6 +173,6 @@ Azure DevOps Services で手動セットアップ スクリプトを使用する
 
 .NET Core ツールを利用して .NET Core コードのビルド プロセスを構造化するとき、通常、2 つの手法があります。MSBuild を直接利用するか、.NET Core コマンドライン コマンドを利用します。 いずれの手法を採用するかは、手法と複雑性との兼ね合いで使いやすいものを選択してください。 MSBuild を利用すれば、タスクやターゲットとしてビルド プロセスを表現できますが、MSBuild プロジェクト ファイルの構文は複雑で、学習の難易度が上がります。 .NET Core コマンドライン ツールはおそらく、使い方がより単純です。ただし、`bash` や PowerShell のようなスクリプト記述言語でオーケストレーション ロジックを記述する必要があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [.NET ダウンロード - Linux](https://dotnet.microsoft.com/download?initial-os=linux)

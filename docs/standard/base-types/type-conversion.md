@@ -1,5 +1,6 @@
 ---
 title: .NET Framework における型変換
+description: .NET での型変換について確認します。ここでは、変換元の値と等価な値が新しい型で作成されますが、それが元のものと同一であるとは限りません。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -24,12 +25,12 @@ helpviewer_keywords:
 - Implicit operator
 - data types [.NET Framework], converting
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
-ms.openlocfilehash: 0e88303f2bac2dae90a97f9d2de92af1d2a0f80d
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 11345081610459dbf053d846aa04369301010732
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976488"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769224"
 ---
 # <a name="type-conversion-in-the-net-framework"></a>.NET Framework における型変換
 すべての値には関連付けられた型があり、その値に割り振られる容量、可能な値の範囲、使用できるメンバーなどの属性を定義しています。 多くの値は複数の型として表現できます。 たとえば、値 4 は整数または浮動小数点数として表現できます。 型変換を実行すると、変換元の型の値と等価な値が新しい型で作成されますが、それが元のオブジェクトと同一である (値が正確に一致する) とは限りません。  
@@ -85,7 +86,7 @@ ms.locfileid: "73976488"
   
  たとえば、<xref:System.UInt32>、<xref:System.Int64>、および <xref:System.UInt64> の各データ型の範囲は、次の表に示すように、<xref:System.Int32> データ型より広くなっています。  
   
-|型|Int32 の範囲との比較|  
+|種類|Int32 の範囲との比較|  
 |----------|------------------------------------|  
 |<xref:System.Int64>|<xref:System.Int64.MaxValue?displayProperty=nameWithType> が <xref:System.Int32.MaxValue?displayProperty=nameWithType> より大きく、<xref:System.Int64.MinValue?displayProperty=nameWithType> が <xref:System.Int32.MinValue?displayProperty=nameWithType> より小さく (負の値の範囲が広く) なっています。|  
 |<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType> が <xref:System.Int32.MaxValue?displayProperty=nameWithType> より大きくなっています。|  
@@ -157,7 +158,7 @@ ms.locfileid: "73976488"
  [!code-csharp[Conceptual.Conversion#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/convert1.cs#9)]
  [!code-vb[Conceptual.Conversion#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/convert1.vb#9)]  
   
- <xref:System.Convert> クラスでサポートされる拡大変換と縮小変換の一覧表については、「[型変換の表](../../../docs/standard/base-types/conversion-tables.md)」を参照してください。  
+ <xref:System.Convert> クラスでサポートされる拡大変換と縮小変換の一覧表については、「[型変換の表](conversion-tables.md)」を参照してください。  
 
 ### <a name="custom-conversions-with-the-changetype-method"></a>ChangeType メソッドを使用するカスタム変換  
  <xref:System.Convert> クラスは、各基本型どうしの変換をサポートするだけでなく、カスタム型を 1 つ以上の定義済みの型に変換できます。 この変換は <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> メソッドによって実行されます。さらに、このメソッドが、<xref:System.IConvertible.ToType%2A?displayProperty=nameWithType> パラメーターの `value` メソッドに対する呼び出しをラップします。 したがって、`value` パラメーターで指定されるオブジェクトに、<xref:System.IConvertible> インターフェイスが実装されている必要があります。  
@@ -194,4 +195,4 @@ ms.locfileid: "73976488"
 
 - <xref:System.Convert?displayProperty=nameWithType>
 - <xref:System.IConvertible>
-- [型変換の表](../../../docs/standard/base-types/conversion-tables.md)
+- [型変換の表](conversion-tables.md)

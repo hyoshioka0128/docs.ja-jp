@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 60573ad7-8821-4721-a068-3f7a6d25926a
 topic_type:
 - apiref
-ms.openlocfilehash: 4fed7dbe4ec8343a3854d1f277e3228b14c0bf21
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 39343ffc88fc9b421b916e33e3e75e4e34fc233d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450026"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503792"
 ---
 # <a name="imetadataimportenumproperties-method"></a>IMetaDataImport::EnumProperties メソッド
 指定した TypeDef トークンによって参照される型のプロパティを表す PropertyDef トークンを列挙します。  
@@ -51,25 +51,25 @@ HRESULT EnumProperties (
  [in] `rProperties` 配列の最大サイズ。  
   
  `pcProperties`  
- 入出力`rProperties`で返された PropertyDef トークンの数。  
+ 入出力で返された PropertyDef トークンの数 `rProperties` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumProperties` が正常に返されました。|  
-|`S_FALSE`|列挙するトークンがありません。 この場合、`pcProperties` は0になります。|  
+|`S_OK`|`EnumProperties`正常に返されました。|  
+|`S_FALSE`|列挙するトークンがありません。 この場合、 `pcProperties` は0になります。|  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

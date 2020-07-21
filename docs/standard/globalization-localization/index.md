@@ -1,5 +1,6 @@
 ---
 title: .NET アプリケーションのグローバライズとローカライズ
+description: 国際化対応アプリケーションを開発する方法について説明します。 .NET でのグローバリゼーション、ローカライズ可能性の確認、ローカライズについて説明します。
 ms.date: 06/08/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
-ms.openlocfilehash: eae1c38c2383d13bfb4dab83f2fe9551970b39f4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a3894b7bf9b8aa013b346c169d21c6db270fe987
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120882"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600790"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>.NET アプリケーションのグローバライズとローカライズ
 
@@ -50,6 +51,10 @@ ms.locfileid: "73120882"
 
 国際対応アプリケーションを作成するための最初の手順を説明します。カルチャや言語に依存しないアプリケーションの設計とコーディングを行います。
 
+[.NET グローバリゼーションと ICU](globalization-icu.md)
+
+.NET グローバリゼーションで [ICU (International Components for Unicode)](http://site.icu-project.org/home) がどのように使用されるかについて説明します。
+
 [ローカライズ化の確認](localizability-review.md)
 
 ローカライズされたアプリケーションを作成するための 2 つ目の手順を説明します。ローカライズのための潜在的な問題点を識別します。
@@ -66,7 +71,7 @@ ms.locfileid: "73120882"
 
 国際対応 ASP.NET アプリケーションのグローバリゼーション、ローカリゼーション、および開発の推奨手順について説明します。
 
-## <a name="reference"></a>辞書／辞典／その他
+## <a name="reference"></a>関連項目
 
 - <xref:System.Globalization?displayProperty=nameWithType> 名前空間
 
@@ -80,10 +85,10 @@ ms.locfileid: "73120882"
 
    ASCII、ANSI、Unicode、およびその他の文字エンコーディングを表すクラスが格納されている名前空間です。
 
-- [Resgen.exe (リソース ファイル ジェネレーター)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)
+- [Resgen.exe (リソース ファイル ジェネレーター)](../../framework/tools/resgen-exe-resource-file-generator.md)
 
    Resgen.exe を使用して .txt ファイルと XML ベース リソース フォーマット (.resx) ファイルを共通言語ランタイムのバイナリ .resources ファイルに変換する方法について説明します。
 
-- [Winres.exe (Windows フォーム リソース エディター)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)
+- [Winres.exe (Windows フォーム リソース エディター)](../../framework/tools/winres-exe-windows-forms-resource-editor.md)
 
    Winres.exe を使用して Windows フォームのフォームをローカライズする方法について説明します。

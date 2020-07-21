@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: 3752ac7108a9fcd55b61b32b889a717ef7c0faff
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: b04fda81ae51462d9e686585de1477b4c9af4b26
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714475"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79180385"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (マニフェストの生成および編集ツール)
 
@@ -85,7 +85,7 @@ Mage [commands] [commandOptions]
 |**-pwd, -Password** `passwd`|デジタル証明書でマニフェストに署名する場合に使用するパスワードです。 **-CertFile** オプションと共に使用する必要があります。|
 |**-t, -ToFile** `filePath`|作成または変更されたファイルの出力パスを指定します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 *Mage.exe* では、どの引数も大文字と小文字が区別されません。 コマンドおよびオプションの前には、ダッシュ (-) またはスラッシュ (/) を付けることができます。
 

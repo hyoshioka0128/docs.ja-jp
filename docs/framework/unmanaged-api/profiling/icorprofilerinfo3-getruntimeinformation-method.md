@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4400fb8c-0407-4791-8557-f011fd2aee51
 topic_type:
 - apiref
-ms.openlocfilehash: 20556d85655a0a1bbe069a94b99c19c774a13ce6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b8e503af11fa1d02aac2ec83edde0ffbd562d8e5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449685"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496400"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation メソッド
 プロファイリングされている共通言語ランタイム (CLR) に関するバージョン情報を提供します。  
@@ -43,10 +43,10 @@ HRESULT GetRuntimeInformation(
   
 ## <a name="parameters"></a>パラメーター  
  `pClrInstanceId`  
- 入出力プロセス内で実行されている CLR インスタンスの代表 ID。 これは、event tracing for Windows (ETW) のスタートアップイベントで報告される `ClrInstanceID` と同じです。  
+ 入出力プロセス内で実行されている CLR インスタンスの代表 ID。 これは、 `ClrInstanceID` event tracing For Windows (ETW) のスタートアップイベントによって報告されると同じです。  
   
  `pRuntimeType`  
- 入出力ランタイム型。 このパラメーターは、CLR のデスクトップバージョンの `COR_PRF_DESKTOP_CLR`、または Silverlight で使用される CLR のコアバージョンの `COR_PRF_CORE_CLR` を返します。  
+ 入出力ランタイム型。 このパラメーター `COR_PRF_DESKTOP_CLR` は、clr のデスクトップバージョンに対して、または `COR_PRF_CORE_CLR` Silverlight で使用される clr のコアバージョンに対してを返します。  
   
  `pMajorVersion`  
  入出力CLR のメジャーバージョン番号。  
@@ -61,28 +61,28 @@ HRESULT GetRuntimeInformation(
  入出力ソフトウェア更新プログラムに関連付けられている CLR のバージョン番号。  
   
  `cchVersionString`  
- から`szVersionString` が指すバッファーの長さ (文字数)。  
+ からが指すバッファーの長さ (文字数) `szVersionString` 。  
   
  `pcchVersionString`  
- 入出力`szVersionString`の長さ (文字数)。  
+ 入出力の長さ (文字数) `szVersionString` 。  
   
  `szVersionString`  
  入出力CLR のバージョン文字列。  
   
-## <a name="remarks"></a>コメント  
- 任意のパラメーターに null を渡すことができます。 ただし、`szVersionString` が null の場合を除き、`pcchVersionString` を null にすることはできません。  
+## <a name="remarks"></a>解説  
+ 任意のパラメーターに null を渡すことができます。 ただし、が null の場合を除き、を `pcchVersionString` null にすることはできません `szVersionString` 。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ICorProfilerInfo3 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [プロファイル](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo3 インターフェイス](icorprofilerinfo3-interface.md)
+- [プロファイリングのインターフェイス](profiling-interfaces.md)
+- [プロファイル](index.md)

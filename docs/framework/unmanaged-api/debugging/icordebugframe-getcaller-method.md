@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bfdc946b-8238-4eb9-8a85-884049fb0fd4
 topic_type:
 - apiref
-ms.openlocfilehash: 843399b7e3de522e2c4574963897430aa60a5a50
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b29de0b70daa783197e78fe985d379d4124bc140
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73114795"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205146"
 ---
 # <a name="icordebugframegetcaller-method"></a>ICorDebugFrame::GetCaller メソッド
 このフレームを呼び出した現在のチェーン内のテキストボックスオブジェクトへのポインターを取得します。  
@@ -35,13 +35,13 @@ HRESULT GetCaller (
   
 ## <a name="parameters"></a>パラメーター  
  `ppFrame`  
- 入出力呼び出し元のフレームを表す `ICorDebugFrame` オブジェクトのアドレスへのポインター。 呼び出されたフレームが現在のチェーンの最も外側のフレームである場合、この値は null になります。  
+ 入出力呼び出し元のフレームを表すオブジェクトのアドレスへのポインター `ICorDebugFrame` 。 呼び出されたフレームが現在のチェーンの最も外側のフレームである場合、この値は null になります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

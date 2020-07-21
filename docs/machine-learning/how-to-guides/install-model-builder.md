@@ -4,13 +4,13 @@ description: ML.NET モデル ビルダー ツールのインストール方法�
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 11/21/2019
-ms.custom: mvc, how-to
-ms.openlocfilehash: b87f712ad7a8b2229c1d42db4bad1fe511475ac7
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.custom: mvc, how-to, mlnet-tooling
+ms.openlocfilehash: b944d7f6044553251132824e7e4213119e34500e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552942"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "78848653"
 ---
 # <a name="how-to-install-mlnet-model-builder"></a>ML.NET モデル ビルダーのインストール方法
 
@@ -19,7 +19,7 @@ ML.NET モデル ビルダーをインストールして .NET アプリケーシ
 > [!NOTE]
 > モデル ビルダーは現在のところ、プレビュー段階です。
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>前提条件
 
 - Visual Studio 2017 バージョン 15.9.12 以降 / Visual Studio 2019
 - .NET Core 2.1 SDK 以降。
@@ -97,6 +97,6 @@ ML.NET モデル ビルダーは、Visual Studio Marketplace または Visual St
 
 1. プロンプトの指示に従って、アンインストールを行います
 
-## <a name="upgrade"></a>Upgrade
+## <a name="upgrade"></a>アップグレード
 
 アップグレード プロセスは、インストール プロセスに似ています。 Visual Studio Marketplace から最新バージョンをダウンロードするか、または Visual Studio で拡張機能マネージャーを使用します。

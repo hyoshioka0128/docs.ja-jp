@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 98daef1f-15d4-483e-985c-d78ea3abe8c8
 ms.openlocfilehash: 5d6656ab77f7ad0f7366a230d98b95cff5b2677b
 ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/10/2019
 ms.locfileid: "70854435"
@@ -17,7 +17,7 @@ ms.locfileid: "70854435"
   
 - 0 個以上の型指定されたエンティティ オブジェクトのコレクション、または概念モデルで定義された複合型のプロジェクション。  
   
-- Entity Framework によってサポートされる CLR 型。
+- Entity Framework でサポートされる CLR 型。
   
 - インライン コレクション。  
   

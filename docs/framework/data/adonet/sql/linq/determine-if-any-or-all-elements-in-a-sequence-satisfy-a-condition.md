@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 339ec145-826c-46d2-8cf2-3acd252cd072
 ms.openlocfilehash: 7de65579cb41641aded0b9a320fac59804959ff5
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70782232"
@@ -18,7 +18,7 @@ ms.locfileid: "70782232"
  <xref:System.Linq.Queryable.Any%2A> 演算子は、シーケンスの要素が 1 つでも条件を満たす場合に `true` を返します。  
   
 ## <a name="example"></a>例  
- 次の例では、最低 1 件の注文がある顧客のシーケンスを返します。 指定`Where`された`true`にがある`Customer`場合/ 、 `where`句はに評価されます。`Order`  
+ 次の例では、最低 1 件の注文がある顧客のシーケンスを返します。 `Where`/`where` 句は、指定した `Customer` に `Order` がある場合に `true` と評価されます。  
   
  [!code-csharp[DLinqQueryExamples#37](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#37)]
  [!code-vb[DLinqQueryExamples#37](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#37)]  

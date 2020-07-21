@@ -2,12 +2,12 @@
 title: 重要な習得事項
 description: コンテナー化された .NET アプリケーションのための .NET マイクロサービス アーキテクチャに関するガイド/電子書籍の重要なポイントを取り上げ、マイクロサービス アーキテクチャを使用する際に発生する高レベルの問題の概要 (長所と短所、設計と開発の DDD パターン、回復性、セキュリティ、オーケストレーターの使用など) を説明します。
 ms.date: 10/19/2018
-ms.openlocfilehash: 3b8b7be9b3903c64221cba7c6abdb1e38f5d944f
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 0e793a76fa59d6c131422480071d85ab3f18102c
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674459"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80988779"
 ---
 # <a name="key-takeaways"></a>重要な習得事項
 

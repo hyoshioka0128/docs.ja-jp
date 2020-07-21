@@ -1,13 +1,14 @@
 ---
 title: IPv6 の有効化と無効化
+description: 次の構成手順に従って、IPv6 プロトコルの使用を有効にします。これには、コンピューターまたはアプリケーションの構成ファイルの変更も含まれます。
 ms.date: 03/30/2017
 ms.assetid: 6408d3ef-c9ba-49d9-b15e-fe74bd3ef031
-ms.openlocfilehash: 66c802dd5feb865faf7469cb7da04fbffcb4a2d6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 7729647b09df20a98d5d639a641cb0a31f557330
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048563"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502614"
 ---
 # <a name="enabling-and-disabling-ipv6"></a>IPv6 の有効化と無効化
 IPv6 プロトコルを使用するには、IPv6 をサポートしているオペレーティング システムのバージョンを実行していることを確認し、オペレーティング システムとネットワーク クラスが正しく構成されていることを確認してください。  

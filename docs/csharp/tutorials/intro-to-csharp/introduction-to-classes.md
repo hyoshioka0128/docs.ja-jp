@@ -3,12 +3,12 @@ title: クラスおよびオブジェクト - C# チュートリアルの概要
 description: 初めての C# プログラムを作成し、オブジェクト指向の概念を確認します
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: e4cf7912de69946289c0594944b8ac3a8c252ac2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 5edb2d7b11caace2d794b7958dfeb75ef502ee2b
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736827"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396862"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>クラスおよびオブジェクトを使用したオブジェクト指向プログラミングについて確認します
 
@@ -33,7 +33,7 @@ namespace classes
 }
 ```
 
-このチュートリアルでは、銀行口座を表す新しい型を作成します。 通常、開発者は各クラスを別々のテキスト ファイルで定義します。 この方法なら、プログラムのサイズが大きくなっても管理が容易です。 *classes* ディレクトリに「*BankAccount.cs*」という名前の新しいファイルを作成します。 
+このチュートリアルでは、銀行口座を表す新しい型を作成します。 通常、開発者は各クラスを別々のテキスト ファイルで定義します。 この方法なら、プログラムのサイズが大きくなっても管理が容易です。 *classes* ディレクトリに「*BankAccount.cs*」という名前の新しいファイルを作成します。
 
 このファイルには、***銀行口座***の定義が含まれます。 オブジェクト指向プログラミングでは、***クラス***の形式で型を作成することによりコードを整理します。 これらのクラスには、特定のエンティティを表すコードが含まれています。 `BankAccount` クラスは銀行口座を表します。 コードでは、メソッドとプロパティを使用した特定の操作を実装します。 このチュートリアルでは、銀行口座は次の動作をサポートします。
 
@@ -47,7 +47,7 @@ namespace classes
 
 ## <a name="define-the-bank-account-type"></a>銀行口座の型を定義する
 
-動作を定義するクラスの基本を作成することから開始できます。 内容は次のようになります。
+動作を定義するクラスの基本を作成することから開始できます。 **File:New** コマンドを使用して、新しいファイルを作成します。 *BankAccount.cs* という名前を付けます。 *BankAccount.cs* ファイルに次のコードを追加します。
 
 ```csharp
 using System;
@@ -71,15 +71,15 @@ namespace classes
 }
 ```
 
-先に進む前に、構築したものを確認してみましょう。  `namespace` 宣言は、コードを論理的に整理する方法を提供します。 このチュートリアルで取り扱うコードは比較的小さいため、1 つの名前空間にすべてのコードを配置します。 
+先に進む前に、構築したものを確認してみましょう。  `namespace` 宣言は、コードを論理的に整理する方法を提供します。 このチュートリアルで取り扱うコードは比較的小さいため、1 つの名前空間にすべてのコードを配置します。
 
-`public class BankAccount` は、これから作成するクラスまたは型を定義します。 クラス宣言のあとにある `{` と `}` の内側はすべて、クラスの動作を定義しています。 `BankAccount` クラスには、5 つの***メンバー***があります。 最初の 3 つは***プロパティ***です。 プロパティはデータ要素であり、検証やその他の規則を適用するコードを持つことができます。 最後の 2 つは***メソッド***です。 メソッドは 1 つの機能を実行するコード ブロックです。 各メンバーの名前を確認すると、開発者がそのクラスの作用を把握するための十分な情報が得られます。
+`public class BankAccount` は、これから作成するクラスまたは型を定義します。 クラス宣言のあとにある `{` と `}` の内側はすべて、クラスの状態と動作を定義しています。 `BankAccount` クラスには、5 つの***メンバー***があります。 最初の 3 つは***プロパティ***です。 プロパティはデータ要素であり、検証やその他の規則を適用するコードを持つことができます。 最後の 2 つは***メソッド***です。 メソッドは 1 つの機能を実行するコード ブロックです。 各メンバーの名前を確認すると、開発者がそのクラスの作用を把握するための十分な情報が得られます。
 
 ## <a name="open-a-new-account"></a>新しいアカウントを開く
 
-実装する最初の機能は、銀行口座を開く機能です。 顧客が口座を開く場合、初期残高や口座の (1 名または複数名の) 所有者の情報を入力する必要があります。 
+実装する最初の機能は、銀行口座を開く機能です。 顧客が口座を開く場合、初期残高や口座の (1 名または複数名の) 所有者の情報を入力する必要があります。
 
-`BankAccount` 型の新しいオブジェクトを作成すると、これらの値を割り当てる***コンストラクター***が定義されます。 ***コンストラクター***はクラスと同じ名前のメンバーです。 これは、そのクラス型のオブジェクトを初期化するために使用されます。 `BankAccount` 型に次のコンストラクターを追加します。
+`BankAccount` 型の新しいオブジェクトを作成すると、これらの値を割り当てる***コンストラクター***が定義されます。 ***コンストラクター***はクラスと同じ名前のメンバーです。 これは、そのクラス型のオブジェクトを初期化するために使用されます。 `BankAccount` 型に次のコンストラクターを追加します。 `MakeDeposit` クラス宣言の上に次のコードを配置します。
 
 ```csharp
 public BankAccount(string name, decimal initialBalance)
@@ -89,24 +89,24 @@ public BankAccount(string name, decimal initialBalance)
 }
 ```
 
-[`new`](../../language-reference/operators/new-operator.md) を使用してオブジェクトを作成すると、コンストラクターが呼び出されます。 *Program.cs* の `Console.WriteLine("Hello World!");` の行を次の行で置き換えます (`<name>` を自分の名前に置き換えます)。
+[`new`](../../language-reference/operators/new-operator.md) を使用してオブジェクトを作成すると、コンストラクターが呼び出されます。 *Program.cs* の `Console.WriteLine("Hello World!");` の行を次のコードで置き換えます (`<name>` を自分の名前に置き換えます)。
 
 ```csharp
 var account = new BankAccount("<name>", 1000);
 Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} initial balance.");
 ```
 
-「`dotnet run`」と入力すると何が起こるか見てみましょう。  
+これまでに構築したものを実行してみましょう。 Visual Studio を使用している場合は、 **[実行]** メニューから **[デバッグなしで開始]** を選択します。 コマンド ラインを使用している場合は、プロジェクトを作成したディレクトリで `dotnet run` を入力します。
 
 口座番号が空であることに気付かれましたか? 次にこの問題を解決します。 口座番号はオブジェクトが作成されるときに割り当てられる必要があります。 しかし、それを作成する責任を呼び出し元に負わせるべきではありません。 `BankAccount` クラスのコードは、新しい口座番号の割り当て方を知っている必要があります。  そのための簡単な方法は、10 桁の数字で始めることです。 そして、新しい口座番号が作成されるごとに値を 1 増加します。 最後に、オブジェクトが作成されるときに現在の口座番号を格納します。
 
-`BankAccount` クラスに次のメンバー宣言を追加します。
+`BankAccount`クラスにメンバーの宣言を追加します。 `BankAccount` クラスの先頭の左中かっこ `{` の後に、次のコードを配置します。
 
 ```csharp
 private static int accountNumberSeed = 1234567890;
 ```
 
-これがデータ メンバーです。 これは `private` であり、`BankAccount` クラス内のコードのみがこれにアクセスできます。 この方法により、プライベートな実装 (口座番号の生成方法) から (口座番号を持つなどの) パブリックな責任を分離できます。`static` でもあるため、すべての `BankAccount` オブジェクトによって共有されます。 静的でない変数の値は `BankAccount` オブジェクトのインスタンスごとに一意です。 次の 2 行をコンストラクターに追加して、口座番号を割り当てます。
+これがデータ メンバーです。 これは `private` であり、`BankAccount` クラス内のコードのみがこれにアクセスできます。 この方法により、プライベートな実装 (口座番号の生成方法) から (口座番号を持つなどの) パブリックな責任を分離できます。 `static` でもあるため、すべての `BankAccount` オブジェクトによって共有されます。 静的でない変数の値は `BankAccount` オブジェクトのインスタンスごとに一意です。 次の 2 行をコンストラクターに追加して、口座番号を割り当てます。 それらは `this.Balance = initialBalance` という行の後に配置します。
 
 ```csharp
 this.Number = accountNumberSeed.ToString();
@@ -121,11 +121,11 @@ accountNumberSeed++;
 
 トランザクションを表す新しい型を作成するところから始めましょう。 これは一切の責任を持たない単純型です。 いくつかのプロパティが必要になります。 「*Transaction.cs*」という名前の新しいファイルを作成します。 これに次のコードを追加します。
 
-[!code-csharp[Transaction](~/samples/csharp/classes-quickstart/Transaction.cs)]
+[!code-csharp[Transaction](~/samples/snippets/csharp/classes-quickstart/Transaction.cs)]
 
-`BankAccount` クラスに `Transaction` オブジェクトの <xref:System.Collections.Generic.List%601> を追加しましょう。 次の宣言を追加します。
+`BankAccount` クラスに `Transaction` オブジェクトの <xref:System.Collections.Generic.List%601> を追加しましょう。 *BankAccount.cs* ファイルのコンストラクターの後に次の宣言を追加します。
 
-[!code-csharp[TransactionDecl](~/samples/csharp/classes-quickstart/BankAccount.cs#TransactionDeclaration)]
+[!code-csharp[TransactionDecl](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#TransactionDeclaration)]
 
 <xref:System.Collections.Generic.List%601> クラスでは、別の名前空間をインポートする必要があります。 *BankAccount.cs* の最初に次を追加します。
 
@@ -135,23 +135,23 @@ using System.Collections.Generic;
 
 `Balance` の報告方法を変更しましょう。  これは、すべてのトランザクションの値を合計することで確認できます。 `BankAccount` クラスの `Balance` の宣言を次のように変更します。
 
-[!code-csharp[BalanceComputation](~/samples/csharp/classes-quickstart/BankAccount.cs#BalanceComputation)]
+[!code-csharp[BalanceComputation](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#BalanceComputation)]
 
 この例は、***プロパティ***の重要な一面を示しています。 これで、別のプログラマーが値を要求したときに残高が計算されるようになりました。 この計算処理は、すべてのトランザクションを列挙して、その合計値を現在の残高として提供します。
 
-次に `MakeDeposit` メソッドと `MakeWithdrawal` メソッドを実装します。 これらのメソッドは、初期残高が正の値でなければならず、引き出し後の残高が負の値になってはいけない、という最後の 2 つの規則を適用します。 
+次に `MakeDeposit` メソッドと `MakeWithdrawal` メソッドを実装します。 これらのメソッドは、初期残高が正の値でなければならず、引き出し後の残高が負の値になってはいけない、という最後の 2 つの規則を適用します。
 
-これにより、***例外***の概念が導入されます。 メソッドが作業を正常に完了できないことを示す標準的な方法は、例外をスローすることです。 例外の型とそれに関連付けられたメッセージがエラーを説明します。 `MakeDeposit` メソッドは、預金額が負の値になる場合に例外をスローします。 `MakeWithdrawal` メソッドは、引き出し額が負の値になる場合、または引き出しを適用した結果、残高が負の値になる場合に例外をスローします。
+これにより、***例外***の概念が導入されます。 メソッドが作業を正常に完了できないことを示す標準的な方法は、例外をスローすることです。 例外の型とそれに関連付けられたメッセージがエラーを説明します。 `MakeDeposit` メソッドは、預金額が負の値になる場合に例外をスローします。 `MakeWithdrawal` メソッドは、引き出し額が負の値になる場合、または引き出しを適用した結果、残高が負の値になる場合に例外をスローします。 `allTransactions` リストの宣言の後に、次のコードを追加します。
 
-[!code-csharp[DepositAndWithdrawal](~/samples/csharp/classes-quickstart/BankAccount.cs#DepositAndWithdrawal)]
+[!code-csharp[DepositAndWithdrawal](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#DepositAndWithdrawal)]
 
 [`throw`](../../language-reference/keywords/throw.md) ステートメントが例外を**スロー**します。 現在のブロックの実行が終了し、コントロールによってコール スタックで最初に一致した `catch` ブロックに転送されます。 あとで `catch` ブロックを追加してこのコードをテストします。
 
 残高を直接更新するのではなく、最初のトランザクションを追加するようにするため、コンストラクターを 1 か所変更する必要があります。 既に `MakeDeposit` メソッドは記述したので、このメソッドをコンストラクターから呼び出します。 完成したコンストラクターは次のようになります。
 
-[!code-csharp[Constructor](~/samples/csharp/classes-quickstart/BankAccount.cs#Constructor)]
+[!code-csharp[Constructor](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#Constructor)]
 
-<xref:System.DateTime.Now?displayProperty=nameWithType> は、現在の日付と時刻を返すプロパティです。 `Main` メソッドにいくつかの預金と引き出しを追加することで、これをテストします。
+<xref:System.DateTime.Now?displayProperty=nameWithType> は、現在の日付と時刻を返すプロパティです。 新しい `BankAccount` を作成するコードの後で、`Main` メソッドにいくつかの預金と引き出しを追加することで、これをテストします。
 
 ```csharp
 account.MakeWithdrawal(500, DateTime.Now, "Rent payment");
@@ -160,7 +160,7 @@ account.MakeDeposit(100, DateTime.Now, "Friend paid me back");
 Console.WriteLine(account.Balance);
 ```
 
-次に、残高が負の値になっているアカウントを作成してみることで、エラー条件のキャッチをテストします。
+次に、残高が負の値になっている口座を作成してみることで、エラー条件のキャッチをテストします。 追加したコードの後に、次のコードを追加します。
 
 ```csharp
 // Test that the initial balances must be positive.
@@ -175,7 +175,7 @@ catch (ArgumentOutOfRangeException e)
 }
 ```
 
-[`try` と `catch` のステートメント](../../language-reference/keywords/try-catch.md)を使用して、例外をスローする可能性のあるコード ブロックをマークし、想定したエラーをキャッチします。 同じ方法で、残高が負の値になっている場合に例外をスローするコードをテストします。
+[`try` と `catch` のステートメント](../../language-reference/keywords/try-catch.md)を使用して、例外をスローする可能性のあるコード ブロックをマークし、想定したエラーをキャッチします。 同じ方法で、残高が負の値になっている場合に例外をスローするコードをテストします。 `Main` メソッドの末尾に、次のコードを追加します。
 
 ```csharp
 // Test for a negative balance.
@@ -196,7 +196,7 @@ catch (InvalidOperationException e)
 
 このチュートリアルを完了すると、トランザクション履歴の `string` を作成する `GetAccountHistory` メソッドを記述できるようになります。 このメソッドを `BankAccount` 型に追加します。
 
-[!code-csharp[History](~/samples/csharp/classes-quickstart/BankAccount.cs#History)]
+[!code-csharp[History](~/samples/snippets/csharp/classes-quickstart/BankAccount.cs#History)]
 
 これは、<xref:System.Text.StringBuilder> クラスを使用して、各トランザクションを 1 行で表す文を含んだ文字列をフォーマットします。 文字列をフォーマットするコードについては、このチュートリアルで先述しました。 新しい文字の 1 つは `\t` です。 これはタブを挿入して出力をフォーマットします。
 
@@ -206,10 +206,10 @@ catch (InvalidOperationException e)
 Console.WriteLine(account.GetAccountHistory());
 ```
 
-「`dotnet run`」と入力して結果を表示します。
+プログラムを実行して結果を確認します。
 
 ## <a name="next-steps"></a>次の手順
 
-うまくいかない場合は、このチュートリアルのソースを [GitHub リポジトリ](https://github.com/dotnet/samples/tree/master/csharp/classes-quickstart/)で確認できます。
+うまくいかない場合は、このチュートリアルのソースを [GitHub リポジトリ](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/classes-quickstart/)で確認できます。
 
 これで、C# のチュートリアルの概要をすべて説明しました。 さらに詳しい情報については、その他の[チュートリアル](../index.md)を試してください。

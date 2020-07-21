@@ -2,12 +2,12 @@
 title: ISymUnmanagedWriter4 インターフェイス
 ms.date: 03/30/2017
 ms.assetid: 4af5e8c0-987d-405e-b934-8b9e70fcae6e
-ms.openlocfilehash: a656777461c50b5a1593917278eb54abda982dc2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 21d6520aae1367368973da1692f6bca3aeb2c129
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134562"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493657"
 ---
 # <a name="isymunmanagedwriter4-interface"></a>ISymUnmanagedWriter4 インターフェイス
 ISymUnmanagedWriter4 インターフェイス。  
@@ -21,14 +21,14 @@ ISymUnmanagedWriter4 インターフェイス。
 ## <a name="methods"></a>メソッド  
  このインターフェイスには、次のメソッドが含まれています。  
   
-|メソッド|説明|  
+|Method|説明|  
 |------------|-----------------|  
-|[GetDebugInfoWithPadding メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-getdebuginfowithpadding-method.md)|[GetDebugInfo メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md)と同じように機能します。ただし、文字列データの固定サイズを `MAX_PATH`にするために、終端の null 文字の後にパス文字列がゼロで埋め込まれる点が異なります。 埋め込みは、パス文字列の長さが `MAX_PATH`未満の場合にのみ指定します。<br /><br /> これにより、PE ファイルを区別するツールを簡単に記述できるようになります。|  
+|[GetDebugInfoWithPadding メソッド](isymunmanagedwriter4-getdebuginfowithpadding-method.md)|関数は[GetDebugInfo メソッド](isymunmanagedwriter-getdebuginfo-method.md)と同じですが、文字列データを固定サイズにするために、終端の null 文字の後にパス文字列がゼロで埋め込まれる点が異なり `MAX_PATH` ます。 埋め込みは、パス文字列の長さがより小さい場合にのみ指定 `MAX_PATH` します。<br /><br /> これにより、PE ファイルを区別するツールを簡単に記述できるようになります。|  
   
-## <a name="requirements"></a>［要件］  
+## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
 ## <a name="see-also"></a>関連項目
 
-- [シンボル ストア診断インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
-- [ISymUnmanagedWriter3 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
+- [シンボル ストア診断インターフェイス](diagnostics-symbol-store-interfaces.md)
+- [ISymUnmanagedWriter3 インターフェイス](isymunmanagedwriter3-interface.md)

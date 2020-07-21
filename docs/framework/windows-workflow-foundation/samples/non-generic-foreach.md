@@ -2,12 +2,12 @@
 title: 非ジェネリックの ForEach
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
-ms.openlocfilehash: a4bbc594ec0bf2d387e700508c7d92685216accc
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 08dbac3974915f823a4f6e39f35927453a7c4b3a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715653"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79142707"
 ---
 # <a name="non-generic-foreach"></a>非ジェネリックの ForEach
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] のツールボックスには、制御フロー アクティビティのセットが用意されています。これには、<xref:System.Activities.Statements.ForEach%601> コレクションを反復処理できる <xref:System.Collections.Generic.IEnumerable%601> が含まれています。  
@@ -17,7 +17,7 @@ ms.locfileid: "74715653"
  このサンプルでは、非ジェネリックの <xref:System.Activities.Statements.ForEach%601> アクティビティとそのデザイナーを実装する方法を示します。 このアクティビティは、<xref:System.Collections.ArrayList> の反復処理に使用できます。  
   
 ## <a name="foreach-activity"></a>ForEach アクティビティ  
- C# および VB の `foreach` ステートメントは、コレクションの要素を列挙し、コレクションの各要素に対して埋め込みステートメントを実行します。 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] に相当する `foreach` のアクティビティは、<xref:System.Activities.Statements.ForEach%601> および <xref:System.Activities.Statements.ParallelForEach%601> です。 <xref:System.Activities.Statements.ForEach%601> アクティビティには、値のリストと本体が含まれます。 実行時に、リストが反復処理されて、リスト内の値ごとに本体が実行されます。  
+ C# /Visual `foreach` Basic ステートメントは、コレクションの各要素に埋め込みステートメントを実行して、コレクションの要素を列挙します。 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] に相当する `foreach` のアクティビティは、<xref:System.Activities.Statements.ForEach%601> および <xref:System.Activities.Statements.ParallelForEach%601> です。 <xref:System.Activities.Statements.ForEach%601> アクティビティには、値のリストと本体が含まれます。 実行時に、リストが反復処理されて、リスト内の値ごとに本体が実行されます。  
   
  ほとんどの場合、ジェネリック バージョンのアクティビティを使用することをお勧めします。ジェネリック バージョンのアクティビティは、そのアクティビティを使用するシナリオの大半に対応し、コンパイル時の型チェックが実現するためです。 非ジェネリック バージョンは、非ジェネリックの <xref:System.Collections.IEnumerable> インターフェイスを実装する型を反復処理するために使用できます。  
   
@@ -34,7 +34,7 @@ public class ForEach : NativeActivity
   
     [DefaultValue(null)]  
     [DependsOn("Values")]  
-    ActivityAction<object> Body { get; set; }   
+    ActivityAction<object> Body { get; set; }
 }  
 ```  
   
@@ -56,8 +56,8 @@ Activity sampleUsage =
     new ForEach  
     {  
        Values = new InArgument<IEnumerable>(c=> names),  
-       Body = new ActivityAction<object>   
-       {                          
+       Body = new ActivityAction<object>
+       {
            Argument = iterationVariable,  
            Handler = new WriteLine  
            {  
@@ -67,12 +67,12 @@ Activity sampleUsage =
    };  
 ```  
   
-|条件|[メッセージ]|重要度|例外の種類|  
+|条件|Message|重大度|例外の種類|  
 |---------------|-------------|--------------|--------------------|  
 |値が `null` である|必須のアクティビティ引数 'Values' の値が指定されませんでした。|エラー|<xref:System.InvalidOperationException>|  
   
 ## <a name="foreach-designer"></a>ForEach デザイナー  
- サンプルのアクティビティ デザイナーは、組み込みの <xref:System.Activities.Statements.ForEach%601> アクティビティ用に提供されているデザイナーに外観が似ています。 デザイナーは、[**サンプル**の**非ジェネリックアクティビティ**] カテゴリの [ツールボックス] に表示されます。 デザイナーのツールボックスには**ForEachWithBodyFactory**という名前が付けられます。これは、アクティビティがツールボックス内の <xref:System.Activities.Presentation.IActivityTemplateFactory> を公開し、適切に構成された <xref:System.Activities.ActivityAction>を持つアクティビティを作成するためです。  
+ サンプルのアクティビティ デザイナーは、組み込みの <xref:System.Activities.Statements.ForEach%601> アクティビティ用に提供されているデザイナーに外観が似ています。 デザイナーは、[**サンプル**] の [**非汎用アクティビティ]** カテゴリのツールボックスに表示されます。 このデザイナー<xref:System.Activities.Presentation.IActivityTemplateFactory>は、ツールボックスで**ForEachWithBodyFactory**という名前が付けられています。 <xref:System.Activities.ActivityAction>  
   
 ```csharp  
 public sealed class ForEachWithBodyFactory : IActivityTemplateFactory  
@@ -97,17 +97,17 @@ public sealed class ForEachWithBodyFactory : IActivityTemplateFactory
   
 1. 選択したプロジェクトをソリューションのスタートアップ プロジェクトに設定します。  
   
-    1. **Codetestclient**は、コードを使用してアクティビティを使用する方法を示しています。  
+    1. **コードを**使用してアクティビティを使用する方法を示します。  
   
-    2. **デザイナ Testclient**デザイナー内でアクティビティを使用する方法を示します。  
+    2. **デザイナー**内でアクティビティを使用する方法を示します。  
   
-2. プロジェクトをビルドおよび実行します。  
+2. プロジェクトをビルドして実行します。  
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は[、.NET Framework 4 の Windows コミュニケーション ファウンデーション (WCF) および Windows ワークフローファウンデーション (WF) サンプル](https://www.microsoft.com/download/details.aspx?id=21459)に移動して、すべての Windows 通信基盤 (WCF) とサンプルを[!INCLUDE[wf1](../../../../includes/wf1-md.md)]ダウンロードします。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NonGenericForEach`

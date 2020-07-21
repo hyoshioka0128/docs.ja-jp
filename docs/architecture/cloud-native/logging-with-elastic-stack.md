@@ -1,20 +1,35 @@
 ---
 title: エラスティック スタックを使用したログ記録
 description: エラスティックスタック、Logstash、および Kibana を使用したログ記録
-ms.date: 09/23/2019
-ms.openlocfilehash: 989834925bc08541bf484e1a4567a56ac324872f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 05/13/2020
+ms.openlocfilehash: e886141fa691b75b882b5d67eae4ceb242e8089f
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73841739"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613851"
 ---
 # <a name="logging-with-elastic-stack"></a>エラスティック スタックを使用したログ記録
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
 優れた一元化されたログツールが多数あり、無料のオープンソースツールからコストが高いオプションまで、コストが大きく異なります。 多くの場合、無料のツールは有料オファリングと同じか、それよりも優れています。 このようなツールの1つに、エラスティック検索、Logstash、Kibana という3つのオープンソースコンポーネントが組み合わされています。
+
 これらのツールをまとめて、エラスティックスタックまたは ELK スタックと呼びます。
+
+## <a name="elastic-stack"></a>エラスティックスタック
+
+エラスティックスタックは、Kubernetes クラスターから情報を収集するための強力なオプションです。 Kubernetes では、Elasticsearch エンドポイントへのログの送信がサポートされています。[ほとんど](https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/)の場合、図7-5 に示すように、環境変数を設定するだけで始める必要があります。
+
+```kubernetes
+KUBE_LOGGING_DESTINATION=elasticsearch
+KUBE_ENABLE_NODE_LOGGING=true
+```
+
+**図 7-5**。 Kubernetes の構成変数
+
+これにより、クラスターに Elasticsearch がインストールされ、すべてのクラスターログをそのクラスターに送信するターゲットになります。
+
+![Kibana ダッシュボードの例。 Kubernetes 図7-6 からのログ取り込まれたに対するクエリの結果を示して ](./media/kibana-dashboard.png)
+ **Figure 7-6**います。 Kubernetes から取り込まれたのログに対するクエリの結果を表示する Kibana ダッシュボードの例
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>エラスティックスタックの利点は何ですか?
 
@@ -24,7 +39,7 @@ ms.locfileid: "73841739"
 
 最初のコンポーネントは[Logstash](https://www.elastic.co/products/logstash)です。 このツールは、さまざまなソースからログ情報を収集するために使用されます。 たとえば、Logstash はディスクからログを読み取り、 [Serilog](https://serilog.net/)などのログライブラリからもメッセージを受信できます。 Logstash では、ログの受信時に基本的なフィルター処理と拡張を行うことができます。 たとえば、ログに IP アドレスが含まれている場合は、地理的な参照を行うように Logstash を構成し、そのメッセージの国または郵便の発信元を取得するように構成することができます。
 
-Serilog は、パラメーター化されたログ記録が可能な .NET 言語のログライブラリです。 フィールドを埋め込むテキストログメッセージを生成する代わりに、パラメーターが個別に保持されます。 これにより、よりインテリジェントなフィルター処理と検索が可能になります。 Logstash に書き込むためのサンプル Serilog 構成は、図7-2 に示されています。
+Serilog は、パラメーター化されたログ記録が可能な .NET 言語のログライブラリです。 フィールドを埋め込むテキストログメッセージを生成する代わりに、パラメーターが個別に保持されます。 これにより、よりインテリジェントなフィルター処理と検索が可能になります。 Logstash に書き込むためのサンプル Serilog 構成は、図7-7 に示されています。
 
 ```csharp
 var log = new LoggerConfiguration()
@@ -32,9 +47,9 @@ var log = new LoggerConfiguration()
          .CreateLogger();
 ```
 
-**図 7-2**ログ情報を HTTP 経由で logstash に直接書き込むための serilog config
+**図 7-7**。 ログ情報を HTTP 経由で logstash に直接書き込むための serilog config
 
-Logstash は、図7-3 に示すような構成を使用します。
+Logstash は、図7-8 に示すような構成を使用します。
 
 ```
 input {
@@ -52,19 +67,19 @@ output {
 }
 ```
 
-**図 7-3** -Serilog からログを使用するための logstash の構成
+**図 7-8**。 Serilog からログを使用するための Logstash 構成
 
 広範なログ操作が必要ないシナリオでは、[拍](https://www.elastic.co/products/beats)と呼ばれる logstash の代替手段として使用されます。 拍は、ログからネットワークデータや稼働時間の情報まで、さまざまなデータを収集できるツールファミリです。 多くのアプリケーションでは、Logstash と拍の両方を使用します。
 
 ログが Logstash によって収集されたら、そのログを配置する必要があります。 Logstash は多くの異なる出力をサポートしますが、より興味深いものの1つはエラスティック検索です。
 
-## <a name="elastic-search"></a>エラスティック検索
+## <a name="elastic-search"></a>ElasticSearch
 
 エラスティック検索は、ログの受信時にインデックスを作成できる強力な検索エンジンです。 ログに対してクエリを実行することが簡単になります。 エラスティック検索は膨大な量のログを処理でき、極端なケースでは多数のノードにわたってスケールアウトできます。
 
 パラメーターを格納するために作成されたログメッセージ、またはパラメーターが Logstash 処理によって分割されていることを示すログメッセージは、Elasticsearch がこの情報を保持するように直接照会できます。
 
-`jill@example.com`によってアクセスされた上位10ページを検索するクエリは、図7-4 に示されています。
+によってアクセスされた上位10ページを検索するクエリは `jill@example.com` 、図7-9 に示されています。
 
 ```
 "query": {
@@ -82,7 +97,7 @@ output {
   }
 ```
 
-**図 7-4** -ユーザーがアクセスした上位10ページを検索するための Elasticsearch クエリ
+**図 7-9**。 ユーザーがアクセスした上位10ページを検索するための Elasticsearch クエリ
 
 ## <a name="visualizing-information-with-kibana-web-dashboards"></a>Kibana web ダッシュボードを使用した情報の視覚化
 
@@ -96,7 +111,7 @@ output {
 
 もう1つのオプションは、最近発表された[サービスとしての ELK オファリング](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/)です。
 
-## <a name="references"></a>参照
+## <a name="references"></a>References
 
 - [エラスティックスタックを Azure にインストールする](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 

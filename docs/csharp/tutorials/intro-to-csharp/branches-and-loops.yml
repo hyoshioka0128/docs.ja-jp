@@ -11,12 +11,12 @@ metadata:
   interactive: csharp
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: リスト コレクション
-  ms.openlocfilehash: ab709b6b30b5a173e2faf08b577e4d7a3d9a9034
-  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+  ms.openlocfilehash: e7679c511cf67eed55687c5815bcf7faf4e1e624
+  ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 11/12/2019
-  ms.locfileid: "73969427"
+  ms.lasthandoff: 05/14/2020
+  ms.locfileid: "83396857"
 items:
 - durationInMinutes: 1
   content: >
@@ -64,15 +64,10 @@ items:
     この最初のサンプルは、`if` とブール型の機能を示しています。 *ブール値*は、`true` または `false` という 2 つの値のいずれかを持つことができる変数です。 C# ではブール変数の `bool` という特殊な型を定義しています。 `if` ステートメントは、`bool` の値を確認します。 値が `true` の場合、`if` に続くステートメントを実行します。 それ以外の場合はスキップします。
 
 
-    条件を確認してその条件に基づいてステートメントを実行するというこのプロセスは非常に機能的です。 さらに詳しく見てみましょう。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
+    条件を確認してその条件に基づいてステートメントを実行するというこのプロセスは機能的です。 さらに詳しく見てみましょう。
 - title: if と else を組み合わせた使用
   durationInMinutes: 10
-  content: "\ntrue 分岐と false 分岐で別々のコードを実行するには、条件が false のときに実行する `else` 分岐を作成します。 これを試してみます。\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\n`else` キーワードに続くステートメントは、判定中の条件が `false` のときにのみ実行されます。 `if` と `else` をブール条件と組み合わせれば、必要な機能がすべて整います。\n\n> [!IMPORTANT]\n> `if` と `else` のステートメント内にあるインデントは、人が読みやすいようにするためのものです。\n> C# 言語はインデントや空白文字を重要なものとして扱いません。\n> `if` や `else` のキーワードに続くステートメントは、条件に基づいて実行されます。 このチュートリアルのすべてのサンプルでは、一般的な記述方法に従い、ステートメントの制御フローに基づいて行にインデントを挿入しています。\n\nインデントは重要ではないため、条件に基づいて実行するブロック内に 1 つ以上のステートメントがある場合には、`{` と `}` を使用して示します。 通常、C# プログラマーは `if` と `else` の句にはこの中かっこを使用します。 次の例は、さきほど作成したものと同じ内容です。 試してみてください。\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> このチュートリアルの残りの箇所では、一般に認められている記述方法に従って、すべてのコード サンプルで中かっこを使用しています。\n\nさらに複雑な条件を判定できます。\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not equal to the second\");\n}\n```\n\n`==` シンボルは、\"*同等性*\" をテストします。 `==` を使用すると、同等性のテストが `a = 5` で確認した割り当てと区別されます。\n\n`&&` は \"and\" (および) を表します。 これは、true 分岐でステートメントを実行するには、両方の条件が true になる必要があることを意味しています。  また、これらの例では、ステートメントが `{` と `}` で囲まれていれば、各条件分岐に複数のステートメントを持つことができることを示しています。\n\n\"or\" (または) を表すために `||` を使用することもできます。\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not equal to the second\");\n}\n```\n\n`a`、`b`、および `c`の値を変更し、探索する `&&` と `||` を切り替えます。 `&&` 演算子と `||` 演算子がどのように機能するかをより深く理解できます。\n\n> [!NOTE]\n> このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。\n"
+  content: "\ntrue 分岐と false 分岐で別々のコードを実行するには、条件が false のときに実行する `else` 分岐を作成します。 これを試してみます。\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\n`else` キーワードに続くステートメントは、判定中の条件が `false` のときにのみ実行されます。 `if` と `else` をブール条件と組み合わせれば、必要な機能がすべて整います。\n\n> [!IMPORTANT]\n> `if` と `else` のステートメント内にあるインデントは、人が読みやすいようにするためのものです。\n> C# 言語はインデントや空白文字を重要なものとして扱いません。\n> `if` や `else` のキーワードに続くステートメントは、条件に基づいて実行されます。 このチュートリアルのすべてのサンプルでは、一般的な記述方法に従い、ステートメントの制御フローに基づいて行にインデントを挿入しています。\n\nインデントは重要ではないため、条件に基づいて実行するブロック内に 1 つ以上のステートメントがある場合には、`{` と `}` を使用して示します。 通常、C# プログラマーは `if` と `else` の句にはこの中かっこを使用します。 次の例は、作成したものと同じ内容です。 試してみてください。\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> このチュートリアルの残りの箇所では、一般に認められている記述方法に従って、すべてのコード サンプルで中かっこを使用しています。\n\nさらに複雑な条件を判定できます。\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not equal to the second\");\n}\n```\n\n`==` シンボルは、\"*同等性*\" をテストします。 `==` を使用すると、同等性のテストが `a = 5` で確認した割り当てと区別されます。\n\n`&&` は \"and\" (および) を表します。 これは、true 分岐でステートメントを実行するには、両方の条件が true になる必要があることを意味しています。  また、これらの例では、ステートメントが `{` と `}` で囲まれていれば、各条件分岐に複数のステートメントを持つことができることを示しています。\n\n\"or\" (または) を表すために `||` を使用することもできます。\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not equal to the second\");\n}\n```\n\n`a`、`b`、および `c`の値を変更し、探索する `&&` と `||` を切り替えます。 `&&` 演算子と `||` 演算子がどのように機能するかをより深く理解できます。\n"
 - title: ループを使用した処理の繰り返し
   durationInMinutes: 6
   content: >
@@ -125,11 +120,6 @@ items:
 
 
     では、最後のループ ステートメントの確認に移りましょう。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: for ループの処理
   durationInMinutes: 5
   content: >
@@ -170,9 +160,10 @@ items:
     完了したら次に進み、学習したことを使用して自分でいくつかのコードを記述してみましょう。
 
 
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
+    このチュートリアルでは説明していないループ ステートメントが1つあります。`foreach` ステートメントです。 `foreach` ステートメントは、一連の項目内のすべての項目に対してステートメントを繰り返します。 これは、"*コレクション*" で最もよく使用されます。次のチュートリアルで説明します。
+- title: 入れ子になったループの作成
+  durationInMinutes: 10
+  content: "`while`、`do`、または `for` ループを別のループ内に入れ子にして、外側のループの各項目を内側のループの各項目と組み合わせて使用してマトリックスを作成することができます。 行と列を表す一連の英数字ペアを作成してみましょう。\n\n1 つの `for` ループで行を生成できます。\n\n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  Console.WriteLine($\"The row is {row}\");\n}\n```\n\n別のループで列を生成できます。\n\n```csharp\nfor (char column = 'a'; column < 'k'; column++)\n{\n  Console.WriteLine($\"The column is {column}\");\n}\n```\n\n一方のループをもう一方のループ内に入れ子にして、ペアを形成することができます。\n  \n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  for (char column = 'a'; column < 'k'; column++)\n  {\n    Console.WriteLine($\"The cell is ({row}, {column})\");\n  }\n}\n```\n\n外側のループは、内側のループが完全に実行されるたびに 1 回インクリメントされることがわかります。 行と列の入れ子を逆にし、自分で変更を確認します。\n"
 - title: 分岐とループの組み合わせ
   durationInMinutes: 12
   content: >
@@ -187,11 +178,6 @@ items:
 
 
     ご自身で試してみてください。 そして自分がとった方法を確認してください。 ヒントを出します。答えは 63 になるはずです。
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: 課題完了
   durationInMinutes: 1
   content: >
@@ -214,17 +200,12 @@ items:
     Console.WriteLine($"The sum is {sum}");
 
     ```
-
-
-    > [!NOTE]
-
-    > このオンライン コーディング体験はプレビュー モードです。 問題が生じた場合は、[dotnet/try リポジトリ](https://github.com/dotnet/try/issues)でその問題をお知らせください。
 - title: おめでとうございます!
   content: >-
     これで "分岐とループ" に関する対話式チュートリアルは終了です。 下の **[リスト コレクション]** リンクを選択して、次の対話式チュートリアルを開始することができます。また、[.NET サイト](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)にアクセスして .NET Core SDK をダウンロードし、ご利用のマシン上でプロジェクトを作成し、コーディングを続けることもできます。 "次の手順" セクションでは、これらのチュートリアルに戻ります。
 
 
-    次のトピックでこれらの概念の詳細を学習できます。
+    次の記事でこれらの概念の詳細を学習できます。
 
 
     - [if と else ステートメント](../../language-reference/keywords/if-else.md)

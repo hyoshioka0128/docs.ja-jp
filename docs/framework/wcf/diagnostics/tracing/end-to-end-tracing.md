@@ -2,32 +2,32 @@
 title: エンドツーエンドのトレース
 ms.date: 03/30/2017
 ms.assetid: f5ac7fc7-f97c-4313-b068-54e0c471b2aa
-ms.openlocfilehash: fd2964b39c758e41620fb453ddd8f61a1aa550aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fc8fc448bdcf94ab25349f6b34961a34e5ed2a5a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912536"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598581"
 ---
 # <a name="end-to-end-tracing"></a>エンドツーエンドのトレース
-エンド ツー エンド (e2e) のトレースでは、開発者はコード パスが失敗した理由を調査したり、キャパシティ プランニングやパフォーマンス分析の詳細なトレースを提供する Windows Communication Foundation (WCF) インフラストラクチャ内のコードの実行ができます。 Windows Communication Foundation (WCF) が、エラーの原因の診断に役立つ 3 つの相関機構を提供します。 アクティビティ、転送、および伝達します。  
+エンドツーエンド (e2e) のトレースにより、開発者は、Windows Communication Foundation (WCF) インフラストラクチャでコードの実行に従い、コードパスが失敗した原因を調査したり、容量計画とパフォーマンス分析の詳細なトレースを提供したりすることができます。 Windows Communication Foundation (WCF) には、エラーの原因を診断するのに役立つ3つの相関関係メカニズム (アクティビティ、転送、および伝達) が用意されています。  
   
- 参照してください[エンド ツー エンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)のエンド ツー エンドのトレースのシナリオ、および個々 のアクティビティとトレース デザインについてはします。  
+ エンドツーエンドのトレースシナリオの一覧と、それぞれのアクティビティとトレースの設計については、「[エンドツーエンドのトレースのシナリオ](end-to-end-tracing-scenarios.md)」を参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
- [アクティビティ](../../../../../docs/framework/wcf/diagnostics/tracing/activity.md):Windows Communication Foundation (WCF) トレース モデルでのアクティビティ トレースをについて説明します。  
+ [アクティビティ](activity.md): WINDOWS COMMUNICATION FOUNDATION (WCF) トレースモデルのアクティビティトレースについて説明します。  
   
- [転送](../../../../../docs/framework/wcf/diagnostics/tracing/transfer.md):Windows Communication Foundation (WCF) トレース モデルでの転送について説明し、エンドポイント内のアクティビティを関連付けるために転送を使用します。  
+ [転送](transfer.md): WINDOWS COMMUNICATION FOUNDATION (WCF) トレースモデルでの転送について説明し、transfer を使用してエンドポイント内のアクティビティを関連付けます。  
   
- [伝達](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md):アクティビティの伝達で、Windows Communication Foundation (WCF) トレース モデル、および伝達を使用したエンドポイント間でのアクティビティの関連付けをについて説明します。  
+ [伝達](propagation.md): WINDOWS COMMUNICATION FOUNDATION (WCF) トレースモデルでのアクティビティの伝達、および伝達を使用したエンドポイント間でのアクティビティの関連付けについて説明します。  
   
- [トレースの種類の概要](../../../../../docs/framework/wcf/diagnostics/tracing/trace-type-summary.md)  
+ [トレースの種類の概要](trace-type-summary.md)  
   
  すべてのアクティビティ トレースの概要を説明します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [トレースの構成](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [エンドツーエンドのトレースのシナリオ](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [トレースの構成](configuring-tracing.md)
+- [サービス トレース ビューアーを使用した相関トレースの表示とトラブルシューティング](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [エンドツーエンドのトレースのシナリオ](end-to-end-tracing-scenarios.md)
+- [サービス トレース ビューアー ツール (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

@@ -1,5 +1,6 @@
 ---
-title: '方法: Windows フォーム CheckedListBox コントロールでオンになっている項目を判断する'
+title: CheckedListBox コントロールでチェックされている項目を確認する
+description: CheckedItems プロパティに格納されているコレクションを反復処理して、Windows フォーム CheckedListBox コントロールでチェックされている項目を確認する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,19 +10,19 @@ helpviewer_keywords:
 - check boxes [Windows Forms], determining checked state
 - CheckedListBox control [Windows Forms], determining checked state
 ms.assetid: 178b477d-27c9-489c-8914-44a9623a4d41
-ms.openlocfilehash: 10793053934dce0bb83113004a79f1c265f5f267
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fd8845ef83da7406ff4f1468506a23e3f4d386a0
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010918"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618351"
 ---
 # <a name="how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control"></a>方法: Windows フォーム CheckedListBox コントロールでオンになっている項目を判断する
-Windows フォームでのデータを表示するときに<xref:System.Windows.Forms.CheckedListBox>コントロールすることができますか、コレクションを反復処理に格納されている、<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>プロパティ、または手順を使用して、一覧から、<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>どの項目がチェックを調べます。 <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>メソッドの引数として、項目のインデックス番号を受け取り、返します`true`または`false`します。 予想どおり何とは異なり、<xref:System.Windows.Forms.ListBox.SelectedItems%2A>と<xref:System.Windows.Forms.ListBox.SelectedIndices%2A>プロパティはどの項目がチェックを特定できません。 項目が強調表示が決まります。  
+Windows フォームコントロールにデータを表示する場合は、 <xref:System.Windows.Forms.CheckedListBox> プロパティに格納されているコレクションを反復処理するか、 <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> メソッドを使用してリストをステップ実行し、 <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> どの項目がチェックされるかを決定できます。 メソッドは、 <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> 引数として項目のインデックス番号を取得し、 `true` またはを返し `false` ます。 期待しているものとは異なり、 <xref:System.Windows.Forms.ListBox.SelectedItems%2A> プロパティとプロパティではどの <xref:System.Windows.Forms.ListBox.SelectedIndices%2A> 項目がチェックされるかが決定されないため、どの項目が強調表示されるかが決まります。  
   
-### <a name="to-determine-checked-items-in-a-checkedlistbox-control"></a>CheckedListBox コントロールでチェックされた項目を確認するには  
+### <a name="to-determine-checked-items-in-a-checkedlistbox-control"></a>CheckedListBox コントロールでチェックされている項目を確認するには  
   
-1. 反復処理、<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>コレクションは、0 から始まるために、0 から始まるコレクション。 このメソッドは数が表示項目の一覧で、メモは、全体的なリストではなく項目を確認します。 次のコードがなどのテキストを表示する場合は、一覧の最初の項目がチェックされないため、2 番目の項目がオンになって、ように"チェックされている項目 1 MyListItem2 ="。  
+1. コレクションが0から始まる <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> ため、コレクションを反復処理して0から開始します。 このメソッドは、リスト全体ではなく、チェックされた項目の一覧に項目番号を提供します。 このため、リストの最初の項目がチェックされず、2番目の項目がオンになっている場合は、次のコードに "Checked Item 1 = MyListItem2" のようなテキストが表示されます。  
   
     ```vb  
     ' Determine if there are any items checked.  
@@ -68,7 +69,7 @@ Windows フォームでのデータを表示するときに<xref:System.Windows.
   
      - または  
   
-2. ステップ実行、<xref:System.Windows.Forms.CheckedListBox.Items%2A>コレクション、コレクションは、0 から始まるために、0 から始まるおよび呼び出し、<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>項目ごとにメソッド。 このメソッドは数が表示項目全体の一覧では、最初の項目の場合、リストはチェックされませんので実行して、2 番目の項目がオンになって、ようなものが表示されます"項目 2 = MyListItem2"。  
+2. コレクションをステップ実行します。コレクションは0から始まり、 <xref:System.Windows.Forms.CheckedListBox.Items%2A> <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> 各項目に対してメソッドを呼び出します。 この方法では、一覧の項目番号が表示されるので、リスト内の最初の項目がチェックされず、2番目の項目がオンになっている場合は、"Item 2 = MyListItem2" のような内容が表示されます。  
   
     ```vb  
     Dim i As Integer  
@@ -84,7 +85,7 @@ Windows フォームでのデータを表示するときに<xref:System.Windows.
   
     ```csharp  
     int i;  
-    string s;   
+    string s;
     s = "Checked items:\n" ;  
     for (i = 0; i <= (checkedListBox1.Items.Count-1); i++)  
     {  
@@ -98,7 +99,7 @@ Windows フォームでのデータを表示するときに<xref:System.Windows.
   
     ```cpp  
     int i;  
-    String ^ s;   
+    String ^ s;
     s = "Checked items:\n" ;  
     for (i = 0; i <= (checkedListBox1->Items->Count-1); i++)  
     {  

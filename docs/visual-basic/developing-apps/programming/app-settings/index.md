@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Settings object [Visual Basic], application settings
 - examples [Visual Basic], application settings
 ms.assetid: e38d0cc7-247a-46ca-ba04-f2913f0adb2e
-ms.openlocfilehash: 49f65e9c39a29056cb1c552f0d577fcf0d75d658
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1c564694c7ca047378c66fd2b7f3f3ecd5ce687b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353246"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410128"
 ---
 # <a name="accessing-application-settings-visual-basic"></a>アプリケーション設定へのアクセス (Visual Basic)
 
@@ -28,12 +28,12 @@ ms.locfileid: "74353246"
   
 |終了|解決方法については、|  
 |--------|---------|  
-|ユーザー設定の値を更新する|[方法: Visual Basic でユーザー設定を変更する](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
-|アプリケーション設定とユーザー設定をプロパティ グリッドに表示する|[方法: Visual Basic でユーザー設定のためのプロパティ グリッドを作成する](../../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
-|更新されたユーザー設定の値を保存する|[方法: Visual Basic でユーザー設定を永続化する](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
-|ユーザー設定の値を確認する|[方法: Visual Basic でアプリケーション設定を読み取る](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
+|ユーザー設定の値を更新する|[方法: Visual Basic でユーザー設定を変更する](how-to-change-user-settings.md)|  
+|アプリケーション設定とユーザー設定をプロパティ グリッドに表示する|[方法: Visual Basic でユーザー設定のためのプロパティ グリッドを作成する](how-to-create-property-grids-for-user-settings.md)|  
+|更新されたユーザー設定の値を保存する|[方法: Visual Basic でユーザー設定を永続化する](how-to-persist-user-settings.md)|  
+|ユーザー設定の値を確認する|[方法: Visual Basic でアプリケーション設定を読み取る](how-to-read-application-settings.md)|  
   
 ## <a name="see-also"></a>関連項目
 
 - [アプリケーションの設定の管理 (.NET)](/visualstudio/ide/managing-application-settings-dotnet)
-- [My.Settings オブジェクト](../../../../visual-basic/language-reference/objects/my-settings-object.md)
+- [My.Settings オブジェクト](../../../language-reference/objects/my-settings-object.md)

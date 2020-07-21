@@ -1,13 +1,13 @@
 ---
-title: ランタイムの構成
+title: ランタイムの構成オプション
 description: ランタイム構成設定を使用して .NET Core アプリケーションを構成する方法について説明します。
-ms.date: 11/13/2019
-ms.openlocfilehash: 2665026347e94d26026821beb2bfcf8441f755f6
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.date: 01/21/2020
+ms.openlocfilehash: 68690689fd4f936e3af76ab647f0b58d8ec6ca27
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801920"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761955"
 ---
 # <a name="net-core-run-time-configuration-settings"></a>.NET Core ランタイム構成設定
 
@@ -18,53 +18,102 @@ ms.locfileid: "74801920"
 - アプリケーションの複数のインスタンスが 1 つのシステムで同時に実行され、最適なパフォーマンスを実現するために各インスタンスを構成する必要がある。
 
 > [!NOTE]
-> このドキュメントは現在作成中です。 ここに記載されている情報が不完全であるか、不正確であることがわかった場合は、[イシューを作成](https://github.com/dotnet/docs/issues)してお知らせになるか、[pull request を送信](https://github.com/dotnet/docs/pulls)してイシューに対処してください。 dotnet/docs リポジトリに対する pull request の送信については、[共同作成者のガイド](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md)を参照してください。
+> このドキュメントは現在作成中です。 ここに記載されている情報が不完全であるか、不正確であることがわかった場合は、[イシューを作成](https://github.com/dotnet/docs/issues)してお知らせになるか、[pull request を送信](https://github.com/dotnet/docs/pulls)してイシューに対処してください。 dotnet/docs リポジトリに対する pull request の送信については、[共同作成者のガイド](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute)のページを参照してください。
 
-.NET Core には、実行時にアプリケーションを構成するための次のメカニズムが用意されています。
+.NET Core には、実行時にアプリケーションを構成する次のメカニズムがあります。
 
 - [runtimeconfig.json ファイル](#runtimeconfigjson)
 
+- [MSBuild プロパティ](#msbuild-properties)
+
 - [環境変数](#environment-variables)
 
-ドキュメントのこのセクションの記事は、デバッグやガベージ コレクションなどのカテゴリ別に分類されています。 必要に応じて、*runtimeconfig. json* (.NET Core のみ)、*app.config* (.NET Framework のみ)、および環境変数の構成オプションが示されています。
-
-## <a name="runtimeconfigjson"></a>runtimeconfig.json
-
-アプリの *runtimeconfig.json* ファイルの **configProperties** セクションで、ランタイム構成オプションを指定します。 このセクションには次の形式が含まれます。
-
-```json
-{
-   "runtimeOptions": {
-      "configProperties": {
-         "config-property-name1": "config-value1",
-         "config-property-name2": "config-value2"
-      }
-   }
-}
-```
-
-ファイルの例を次に示します。
-
-```json
-{
-   "runtimeOptions": {
-      "configProperties": {
-         "System.GC.Concurrent": true,
-         "System.GC.RetainVM": true,
-         "System.Threading.ThreadPool.MinThreads": "4",
-         "System.Threading.ThreadPool.MaxThreads": "25"
-      }
-   }
-}
-```
-
-*runtimeconfig. json* ファイルは、[dotnet build](../tools/dotnet-build.md) コマンドによってビルド ディレクトリに自動的に作成されます。 また、Visual Studio で **[ビルド]** メニュー オプションを選択したときにも作成されます。 ファイルが作成されたら、編集できます。
+> [!TIP]
+> 環境変数を使用して実行時オプションを構成すると、すべての .NET Core アプリに設定が適用されます。 *runtimeconfig.json* またはプロジェクト ファイルで実行時オプションを構成すると、そのアプリケーションにのみ設定が適用されます。
 
 一部の構成値は、<xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> メソッドを呼び出すことによって、プログラムで設定することもできます。
 
+ドキュメントのこのセクションの記事は、[デバッグ](debugging-profiling.md)や[ガベージ コレクション](garbage-collector.md)などのカテゴリに分類されています。 必要に応じて、*runtimeconfig.json* ファイル、MSBuild のプロパティ、環境変数用の構成オプションを示しています。また相互参照用に .NET Framework プロジェクトの *app.config* ファイルも示しています。
+
+## <a name="runtimeconfigjson"></a>runtimeconfig.json
+
+プロジェクトが[ビルドされた](../tools/dotnet-build.md)場合、出力ディレクトリに *[appname].runtimeconfig.json* ファイルが生成されます。 *runtimeconfig.template.json* ファイルがプロジェクト ファイルと同じフォルダーにある場合、それに設定されているすべてのオプションは *[appname].runtimeconfig.json* ファイルにマージされます。 そのアプリをご自分でビルドする場合は、構成オプションはすべて *runtimeconfig.template.json* ファイルに追加してください。 そのアプリを実行しているだけの場合は、 *[appname].runtimeconfig.json* ファイルに直接挿入します。
+
+> [!NOTE]
+> この *[appname].runtimeconfig.json* ファイルは、以降のビルドで上書きされます。
+
+*runtimeconfig.json* ファイルの **configProperties** セクションに、ランタイム構成オプションを指定します。 このセクションには次の形式が含まれます。
+
+```json
+"configProperties": {
+  "config-property-name1": "config-value1",
+  "config-property-name2": "config-value2"
+}
+```
+
+### <a name="example-appnameruntimeconfigjson-file"></a>[appname].runtimeconfig.json ファイルの例
+
+このオプションを出力 JSON ファイルに入力する場合、`runtimeOptions` プロパティの下に入れます。
+
+```json
+{
+  "runtimeOptions": {
+    "tfm": "netcoreapp3.1",
+    "framework": {
+      "name": "Microsoft.NETCore.App",
+      "version": "3.1.0"
+    },
+    "configProperties": {
+      "System.GC.Concurrent": false,
+      "System.Threading.ThreadPool.MinThreads": 4,
+      "System.Threading.ThreadPool.MaxThreads": 25
+    }
+  }
+}
+```
+
+### <a name="example-runtimeconfigtemplatejson-file"></a>runtimeconfig.template.json ファイルの例
+
+このオプションをテンプレート JSON ファイルに入力する場合、`runtimeOptions` プロパティを省略します。
+
+```json
+{
+  "configProperties": {
+    "System.GC.Concurrent": false,
+    "System.Threading.ThreadPool.MinThreads": "4",
+    "System.Threading.ThreadPool.MaxThreads": "25"
+  }
+}
+```
+
+## <a name="msbuild-properties"></a>MSBuild プロパティ
+
+一部の実行構成オプションは、 *.csproj* の MSBuild のプロパティ、または SDK 形式の .NET Core プロジェクトの *.vbproj* ファイルを使用して設定できます。 MSBuild のプロパティは、*runtimeconfig.template.json* ファイルで設定されているオプションよりも優先されます。 また、 *[appname].runtimeconfig.json* ファイルに設定されているすべてのオプションもビルド時に上書きします。
+
+次に、ランタイム動作を構成する MSBuild のプロパティがある SDK 形式のプロジェクト ファイルの例を示します。
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <ThreadPoolMinThreads>4</ThreadPoolMinThreads>
+    <ThreadPoolMaxThreads>25</ThreadPoolMaxThreads>
+  </PropertyGroup>
+
+</Project>
+```
+
+実行時の動作を構成する MSBuild プロパティについては、[ガベージ コレクション](garbage-collector.md)に関するページなど、各領域の個々の記事に記載されています。 これらは、SDK スタイルのプロジェクトの MSBuild プロパティ リファレンスの「[実行時構成](../project-sdk/msbuild-props.md#run-time-configuration-properties)」セクションにも記載されています。
+
 ## <a name="environment-variables"></a>環境変数
 
-環境変数を使用すると、ランタイムの構成情報を指定できます。 環境変数として指定された構成ノブには、一般に **COMPlus_** のプレフィックスが付いています。
+環境変数を使用すると、ランタイムの構成情報を指定できます。 環境変数を使用して実行時オプションを構成すると、すべての .NET Core アプリに設定が適用されます。 環境変数として指定された構成ノブには、一般に **COMPlus_** のプレフィックスが付いています。
 
 環境変数は、Windows のコントロール パネル、コマンド ライン、または Windows と Unix ベースのシステムの両方で <xref:System.Environment.SetEnvironmentVariable(System.String,System.String)?displayProperty=nameWithType> メソッドを呼び出すことによって、プログラムで定義できます。
 

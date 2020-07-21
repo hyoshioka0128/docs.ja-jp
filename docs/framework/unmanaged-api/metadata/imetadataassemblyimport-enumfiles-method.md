@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f0d721e2-b946-426d-8e20-9124bd04e4cb
 topic_type:
 - apiref
-ms.openlocfilehash: e4549789ea1af584c0850a535d9f6bb54f844ce0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ed8bafd67b5d55a5116111b7721fbdc31c52aca6
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443548"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009097"
 ---
 # <a name="imetadataassemblyimportenumfiles-method"></a>IMetaDataAssemblyImport::EnumFiles メソッド
 現在のアセンブリマニフェストで参照されているファイルを列挙します。  
@@ -29,9 +29,9 @@ ms.locfileid: "74443548"
   
 ```cpp  
 HRESULT EnumFiles (  
-    [in, out] HCORENUM    *phEnum,   
-    [out] mdFile          rFiles[],   
-    [in]  ULONG           cMax,   
+    [in, out] HCORENUM    *phEnum,
+    [out] mdFile          rFiles[],
+    [in]  ULONG           cMax,
     [out] ULONG           *pcTokens  
 );  
 ```  
@@ -41,30 +41,30 @@ HRESULT EnumFiles (
  [入力、出力]列挙子へのポインター。 このメソッドの最初の呼び出しでは、null 値を指定する必要があります。  
   
  `rFiles`  
- 入出力`mdFile` メタデータトークンを格納するために使用される配列。  
+ 入出力メタデータトークンを格納するために使用される配列 `mdFile` 。  
   
  `cMax`  
- から`rFiles`に配置できる `mdFile` トークンの最大数。  
+ から`mdFile`に格納できるトークンの最大数 `rFiles` 。  
   
  `pcTokens`  
- 入出力`rFiles`に実際に配置されている `mdFile` トークンの数。  
+ 入出力`mdFile`実際に配置されたトークンの数 `rFiles` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFiles` が正常に返されました。|  
-|`S_FALSE`|列挙するトークンがありません。 この場合、`pcTokens` は0に設定されます。|  
+|`S_OK`|`EnumFiles`正常に返されました。|  
+|`S_FALSE`|列挙するトークンがありません。 この場合、 `pcTokens` は0に設定されます。|  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataAssemblyImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataAssemblyImport インターフェイス](imetadataassemblyimport-interface.md)

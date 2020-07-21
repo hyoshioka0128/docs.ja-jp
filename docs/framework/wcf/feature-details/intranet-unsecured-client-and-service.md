@@ -5,27 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: 65b8597727da256e832351792b9d5d9bd016eb28
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 591f7db0f6b4e928a991961d3bc7c404f41028bf
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587005"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579281"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>セキュリティで保護されていないイントラネットのクライアントとサービス
-次の図は、WCF アプリケーションをセキュリティで保護されたプライベート ネットワークに関する情報を提供するために開発の単純な Windows Communication Foundation (WCF) サービスを示しています。 重要度の低いデータは、ネットワークの本質的にセキュリティで保護されたことが必要ですか、WCF インフラストラクチャの下のレイヤーによってセキュリティが提供されるため、セキュリティは必要ありません。  
+次の図は、セキュリティで保護されたプライベートネットワークに関する情報を WCF アプリケーションに提供するために開発された simple Windows Communication Foundation (WCF) サービスを示しています。 データが重要度の低い、ネットワークが本質的にセキュリティで保護されている、または WCF インフラストラクチャの下にあるレイヤーによってセキュリティが提供されるため、セキュリティは必要ありません。  
   
- ![イントラネットのセキュリティ保護されていないクライアントとサービスのシナリオ。](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
+ ![イントラネットのセキュリティで保護されていないクライアントとサービスのシナリオ。](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
   
 |特徴|説明|  
 |--------------------|-----------------|  
 |セキュリティ モード|なし|  
-|Transport|TCP|  
-|バインディング|<xref:System.ServiceModel.NetTcpBinding>|  
+|トランスポート|TCP|  
+|バインド|<xref:System.ServiceModel.NetTcpBinding>|  
 |相互運用性|WCF のみ|  
 |認証|なし|  
 |整合性|なし|  
-|機密性|なし|  
+|機密情報|なし|  
   
 ## <a name="service"></a>サービス  
  次のコードと構成は、別々に実行します。 次のいずれかの操作を行います。  
@@ -49,11 +49,11 @@ ms.locfileid: "64587005"
   <system.serviceModel>  
     <behaviors />  
     <services>  
-      <service behaviorConfiguration=""   
+      <service behaviorConfiguration=""
                name="ServiceModel.Calculator">  
-        <endpoint address="net.tcp://localhost:8008/Calculator"   
+        <endpoint address="net.tcp://localhost:8008/Calculator"
                   binding="netTcpBinding"  
-                  bindingConfiguration="tcp_Unsecured"   
+                  bindingConfiguration="tcp_Unsecured"
                   name="netTcp_ICalculator"  
                   contract="ServiceModel.ICalculator" />  
       </service>  
@@ -81,7 +81,7 @@ ms.locfileid: "64587005"
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>コード  
- 次のコードでは、TCP プロトコルを使用してセキュリティ保護されていないエンドポイントにアクセスする基本的な WCF クライアントを示します。  
+ 次のコードは、TCP プロトコルを使用してセキュリティで保護されていないエンドポイントにアクセスする基本的な WCF クライアントを示しています。  
   
  [!code-csharp[C_UnsecuredClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#2)]
  [!code-vb[C_UnsecuredClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#2)]  
@@ -103,9 +103,9 @@ ms.locfileid: "64587005"
     </bindings>  
     <client>  
       <endpoint address="net.tcp://machineName:8008/Calculator "  
-                binding="netTcpBinding"   
+                binding="netTcpBinding"
                 bindingConfiguration="NetTcpBinding_ICalculator"  
-                contract="ICalculator"   
+                contract="ICalculator"
                 name="NetTcpBinding_ICalculator" />  
     </client>  
   </system.serviceModel>  
@@ -115,5 +115,5 @@ ms.locfileid: "64587005"
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.ServiceModel.NetTcpBinding>
-- [セキュリティの概要](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Windows Server App Fabric のセキュリティ モデル](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [セキュリティの概要](security-overview.md)
+- [Windows Server AppFabric のセキュリティ モデル](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

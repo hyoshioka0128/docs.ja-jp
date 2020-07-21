@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: c9849df3-d000-4cdf-8345-5edcd053919d
 ms.openlocfilehash: b7456eeb4fc248998730a21f757699497c83f4e9
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61791067"
 ---
 # <a name="stackpanel-how-to-topics"></a>StackPanel に関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.StackPanel>要素コンテンツを水平方向または垂直方向にスタックにします。  
+このセクションのトピックでは、<xref:System.Windows.Controls.StackPanel> 要素を使用して、コンテンツを水平方向または垂直方向に積み重ねる方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [StackPanel または DockPanel を選択する](how-to-choose-between-stackpanel-and-dockpanel.md)  
  [StackPanel を作成する](how-to-create-a-stackpanel.md)  
  [StackPanel にコンテンツを水平方向または垂直方向に配置する](how-to-horizontally-or-vertically-align-content-in-a-stackpanel.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  

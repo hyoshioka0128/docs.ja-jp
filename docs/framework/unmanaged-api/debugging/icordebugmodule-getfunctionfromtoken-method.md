@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6fe12194-4ef7-43c1-9570-ade35ccf127a
 topic_type:
 - apiref
-ms.openlocfilehash: cb966a918c63b4fbc00dcf52819b9384427dfdaa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a33b6ff308f3444496e5a1cb2e04f28e80305db5
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129588"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212582"
 ---
 # <a name="icordebugmodulegetfunctionfromtoken-method"></a>ICorDebugModule::GetFunctionFromToken メソッド
 メタデータトークンによって指定された関数を取得します。  
@@ -36,19 +36,19 @@ HRESULT GetFunctionFromToken(
   
 ## <a name="parameters"></a>パラメーター  
  `methodDef`  
- から関数のメタデータを参照する `mdMethodDef` メタデータトークン。  
+ から`mdMethodDef`関数のメタデータを参照するメタデータトークン。  
   
  `ppFunction`  
  入出力関数を表す、のオブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- `methodDef` で渡された値が Microsoft 中間言語 (MSIL) メソッドを参照していない場合、`GetFunctionFromToken` メソッドは CORDBG_E_FUNCTION_NOT_IL HRESULT を返します。  
+ 渡された `GetFunctionFromToken` 値 `methodDef` が Microsoft 中間言語 (MSIL) メソッドを参照していない場合、メソッドは CORDBG_E_FUNCTION_NOT_IL HRESULT を返します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

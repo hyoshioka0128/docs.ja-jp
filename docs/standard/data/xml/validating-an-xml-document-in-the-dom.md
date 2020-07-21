@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b25bf81a17b14da558fb002b4740e31d6cda7a82
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 949dc52c332b17784b0e1851d178465fe4881b6f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040451"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287637"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>DOM における XML ドキュメントの検証
 
@@ -94,5 +92,5 @@ XML スキーマ検証エラーは、DOM に読み込まれる XML データの�
 - <xref:System.Xml.XmlReader>
 - <xref:System.Xml.Schema.ValidationEventHandler>
 - <xref:System.Xml.XmlReaderSettings>
-- [DOM モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
-- [XML スキーマの使用](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
+- [DOM モデルを使用した XML データの処理](process-xml-data-using-the-dom-model.md)
+- [XML スキーマの使用](working-with-xml-schemas.md)

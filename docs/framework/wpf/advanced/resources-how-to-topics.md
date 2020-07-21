@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 9f986a6d-7cc8-45ac-bb0f-43177a57649d
 ms.openlocfilehash: 568ff84c6de2d80527921fe6f3179e6bb123f72f
 ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73458720"
@@ -25,7 +25,7 @@ ms.locfileid: "73458720"
  [SystemParameters を使用する](how-to-use-systemparameters.md)  
  [システム パラメーター キーを使用する](how-to-use-system-parameters-keys.md)  
   
-## <a name="reference"></a>辞書／辞典／その他  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.FrameworkTemplate.Resources%2A>  
   
  <xref:System.Windows.SystemColors>  

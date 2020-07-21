@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0b933686-226e-4373-92b7-fac579ee7b1a
 topic_type:
 - apiref
-ms.openlocfilehash: 944313893d88b8eff97291d2517e4863a5ae958a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1c11946bc5ea69a090091c014aba859935b48b36
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092760"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396669"
 ---
 # <a name="icordebugtype2gettypeid-method"></a>ICorDebugType2:: GetTypeID メソッド
-この型の[COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md)を取得します。  
+この型の[COR_TYPEID](cor-typeid-structure.md)を取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -35,31 +35,31 @@ HRESULT GetTypeID(
   
 ## <a name="parameters"></a>パラメーター  
  `id`  
- 入出力この [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) 型のへのポインター。  
+ 入出力このテキスト型の[COR_TYPEID](cor-typeid-structure.md)へのポインター。  
   
 ## <a name="return-value"></a>戻り値  
- 戻り値は、成功の場合は `S_OK` で、失敗の場合は `HRESULT` コードです。 `HRESULT` コードには次のものが含まれます。  
+ 戻り値は、成功の場合は `S_OK` で、失敗の場合は `HRESULT` コードです。 コードには `HRESULT` 次のものが含まれます。  
   
 |リターン コード|説明|  
 |-----------------|-----------------|  
-|`S_OK`|メソッドが成功しました。 メソッドは、有効な[COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md)を取得しました。|  
+|`S_OK`|メソッドが成功しました。 メソッドが有効な[COR_TYPEID](cor-typeid-structure.md)を取得しました。|  
 |`CORDBG_E_CLASS_NOT_LOADED`|型が読み込まれていません。|  
 |`CORDBG_E_UNSUPPORTED`|この型はサポートされていません。|  
   
-## <a name="remarks"></a>コメント  
- このメソッドは、 [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md)に読み込まれている可能性があるか、またはランタイムに読み込まれていない型を表す、は、ランタイムに読み込まれた型を識別する不透明なハンドルとして機能する、の型からのマッピングを提供します。  
+## <a name="remarks"></a>解説  
+ このメソッドは、ランタイムに読み込まれている可能性がある型を表す、または[COR_TYPEID](cor-typeid-structure.md)ランタイムに読み込まれていない可能性のある型を表す、、ランタイムに読み込まれた型を識別する不透明なハンドルとして機能する、の型からのマッピングを提供します。  
   
- によって表される型がまだ読み込まれていない場合、このメソッドは `CORDBG_E_CLASS_NOT_LOADED`を返します。  型がサポートされていない場合は、`CORDBG_E_UNSUPPORTED`を返します。  
+ によって表される型がまだ読み込まれていない場合、このメソッドはを返し `CORDBG_E_CLASS_NOT_LOADED` ます。  型がサポートされていない場合は、を返し `CORDBG_E_UNSUPPORTED` ます。  
   
 ## <a name="requirements"></a>要件  
- **・** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** CorDebug .idl、CorDebug. h  
+ **ヘッダー:** CorDebug.idl、CorDebug.h  
   
- **ライブラリ**CorGuids .lib  
+ **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugType2 インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugtype2-interface.md)
+- [ICorDebugType2 インターフェイス](icordebugtype2-interface.md)

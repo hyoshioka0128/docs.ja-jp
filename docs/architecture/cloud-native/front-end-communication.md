@@ -2,17 +2,15 @@
 title: フロントエンドのクライアント通信
 description: フロントエンドクライアントがクラウドネイティブシステムと通信する方法について説明します。
 author: robvet
-ms.date: 09/08/2019
-ms.openlocfilehash: a488337b48e30b99bfcc9894a780350f32af864f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 05/13/2020
+ms.openlocfilehash: 97421e9b90b19c720b1ab0ff8dd1e5f029cba5e4
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73841793"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83614059"
 ---
 # <a name="front-end-client-communication"></a>フロントエンドのクライアント通信
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 クラウドネイティブシステムでは、フロントエンドクライアント (モバイル、web、およびデスクトップアプリケーション) は、独立したバックエンドマイクロサービスと対話するために通信チャネルを必要とします。  
 
@@ -37,7 +35,7 @@ ms.locfileid: "73841793"
 
 ![API ゲートウェイパターン](./media/api-gateway-pattern.png)
 
-**図 4-3.** API ゲートウェイパターン
+**図 4-3.** API ゲートウェイ パターン
 
 前の図では、API ゲートウェイサービスがバックエンドコアマイクロサービスをどのように抽象化しているかに注目してください。 Web API として実装され、*リバースプロキシ*として機能し、受信トラフィックを内部マイクロサービスにルーティングします。
 
@@ -62,12 +60,12 @@ API ゲートウェイと同様、主な機能は、受信 HTTP 要求を下流�
 |Ocelot の機能  | |
 | :-------- | :-------- |
 | ルーティング | 認証 |
-| 要求の集計 | Authorization |
-| サービスの検出 (Consul と Eureka を使用) | 調整 |
+| 要求の集計 | 承認 |
+| サービスの検出 (Consul と Eureka を使用) | Throttling |
 | 負荷分散 | ログ記録, トレース |
 | キャッシュ | ヘッダー/クエリ文字列の変換 |
 | 相関関係パススルー | カスタムミドルウェア |
-| サービス品質 | 再試行ポリシー |
+| サービスの品質 (QoS) | 再試行ポリシー |
 
 各 Ocelot ゲートウェイは、JSON 構成ファイルの上流および下流のアドレスと構成可能な機能を指定します。 クライアントは、HTTP 要求を Ocelot ゲートウェイに送信します。 Ocelot は、受け取った後、そのパイプラインを介して HttpRequest オブジェクトを渡し、その構成によって指定された状態にします。 パイプラインの最後に、Ocelot によって新しい HTTPResponseObject が作成され、下流のサービスに渡されます。 応答の場合、Ocelot はパイプラインを反転し、応答をクライアントに送り返します。
 
@@ -75,7 +73,7 @@ Ocelot は NuGet パッケージとして入手できます。 NET Standard 2.0 
 
 商用 API ゲートウェイの豊富な機能セットを必要としない単純なクラウドネイティブアプリケーションでは、Ocelot を検討してください。
 
-## <a name="azure-application-gateway"></a>Azure アプリケーションゲートウェイ
+## <a name="azure-application-gateway"></a>Azure Application Gateway
 
 単純なゲートウェイの要件については、 [Azure アプリケーションゲートウェイ](https://docs.microsoft.com/azure/application-gateway/overview)を検討してください。 Azure [PaaS サービス](https://azure.microsoft.com/overview/what-is-paas/)として利用できます。これには、URL ルーティング、SSL 終了、Web アプリケーションファイアウォールなどの基本的なゲートウェイ機能が含まれています。 このサービスでは、[レイヤー7の負荷分散](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)機能がサポートされています。 レイヤー7では、低レベルの TCP ネットワークパケットだけでなく、HTTP メッセージの実際のコンテンツに基づいて要求をルーティングすることができます。
 
@@ -83,9 +81,9 @@ Ocelot は NuGet パッケージとして入手できます。 NET Standard 2.0 
 
 [Application Gateway 受信コントローラー](https://azure.github.io/application-gateway-kubernetes-ingress/)は、Azure アプリケーションゲートウェイが[Azure Kubernetes Service](https://azure.microsoft.com/services/kubernetes-service/)と直接連携できるようにします。 図4.5 にアーキテクチャを示します。
 
-![Application Gateway 受信コントローラー](./media/application-gateway-ingress-controller.png)
+![Application Gateway イングレス コントローラー](./media/application-gateway-ingress-controller.png)
 
-**図 4-5.** Application Gateway 受信コントローラー
+**図 4-5.** Application Gateway イングレス コントローラー
 
 Kubernetes には、受信と呼ばれる HTTP (レベル 7) の負荷分散をサポートする組み込み機能が含まれ[ています](https://kubernetes.io/docs/concepts/services-networking/ingress/)。 受信では、AKS 内のマイクロサービスインスタンスを外部に公開する方法に関する一連のルールを定義します。 前のイメージでは、受信コントローラーがクラスター用に構成された受信規則を解釈し、Azure アプリケーションゲートウェイを自動的に構成します。 これらのルールに基づいて、Application Gateway は AKS 内で実行されているマイクロサービスにトラフィックをルーティングします。 受信コントローラーは、受信規則の変更をリッスンし、Azure アプリケーションゲートウェイに適切な変更を加えます。
 
@@ -95,7 +93,7 @@ Kubernetes には、受信と呼ばれる HTTP (レベル 7) の負荷分散を�
 
 ![Azure API Management](./media/azure-api-management.png)
 
-**図 4-6.** Azure API Management
+**図 4-6** Azure API Management
 
 まず、API Management 構成可能なルールとポリシーに基づいて、バックエンドサービスへのアクセスを制御できるゲートウェイサーバーを公開します。 これらのサービスは、Azure クラウド、オンプレミスのデータセンター、または他のパブリッククラウドに配置できます。 API キーと JWT トークンによって、だれが何を実行できるかが決まります。 すべてのトラフィックは、分析のためにログに記録されます。
 
@@ -108,7 +106,7 @@ Kubernetes には、受信と呼ばれる HTTP (レベル 7) の負荷分散を�
 - サービスアクセスを制限します。
 - 認証を強制します。  
 - 必要に応じて、1つのソースからの呼び出しを調整します。
-- キャッシュを有効にします。
+- キャッシュを有効にする。
 - 特定の IP アドレスからの呼び出しをブロックします。
 - サービスのフローを制御します。
 - SOAP から REST または別のデータ形式 (XML から JSON など) に要求を変換します。
@@ -119,12 +117,12 @@ Azure API Management は、次の[4 つの異なるレベル](https://azure.micr
 
 - 開発者
 - Basic
-- 標準
-- 割り増し
+- Standard
+- Premium
 
 Developer レベルは、非運用環境のワークロードと評価を目的としています。 他の層では、より多くの電力、機能、およびより高いサービスレベルアグリーメント (Sla) が提供されます。 Premium レベルでは、 [Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)と[複数リージョンのサポート](https://docs.microsoft.com/azure/api-management/api-management-howto-deploy-multi-region)が提供されます。 すべてのレベルには、1時間あたりの固定料金があります。
 
-Microsoft は最近、Azure API Management の[API Management サーバーレス層](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/)を発表しました。 *従量課金レベル*と呼ばれるサービスは、サーバーレスコンピューティングモデルを中心に設計された API Management の一種です。 前に示した "事前に割り当てられた" 価格レベルとは異なり、従量課金レベルでは迅速なプロビジョニングとアクションごとの料金が提供されます。
+Azure クラウドは、Azure API Management の[サーバーレスレベル](https://azure.microsoft.com/blog/announcing-azure-api-management-for-serverless-architectures/)も提供します。 *従量課金レベル*と呼ばれるサービスは、サーバーレスコンピューティングモデルを中心に設計された API Management の一種です。 前に示した "事前に割り当てられた" 価格レベルとは異なり、従量課金レベルでは迅速なプロビジョニングとアクションごとの料金が提供されます。
 
 これにより、次のユースケースで API ゲートウェイの機能が有効になります。
 
@@ -142,8 +140,6 @@ Microsoft は最近、Azure API Management の[API Management サーバーレス
   
 新しい従量課金レベルは、サーバーレスリソースを Api として公開するクラウドネイティブシステムに適しています。
 
-> このドキュメントの執筆時点では、Azure クラウドでの従量課金レベルはプレビュー段階です。
-
 ## <a name="real-time-communication"></a>リアルタイム通信
 
 リアルタイム (プッシュ) 通信は、HTTP 経由でバックエンドのクラウドネイティブシステムと通信するフロントエンドアプリケーションのためのもう1つのオプションです。 金融情報、オンライン教育、ゲーム、ジョブ進行状況の更新などのアプリケーションでは、バックエンドからリアルタイムにリアルタイムに応答する必要があります。 通常の HTTP 通信では、新しいデータが利用可能になったことをクライアントが知る方法はありません。 クライアントは、サーバーに対して継続的に要求を*ポーリング*または送信する必要があります。 *リアルタイム*通信では、サーバーはいつでも新しいデータをクライアントにプッシュできます。
@@ -158,9 +154,9 @@ Microsoft は最近、Azure API Management の[API Management サーバーレス
 
 ![Azure SignalR](./media/azure-signalr-service.png)
 
-**図 4-7.** Azure SignalR
+**図 4-7** Azure SignalR
 
-Azure SignalR Service のもう1つの利点は、サーバーレスクラウドネイティブサービスを実装することです。 Azure Functions のトリガーを使用して、必要に応じてコードが実行される可能性があります。 このシナリオは、コードがクライアントとの長い接続を維持していないため、厄介な場合があります。 この状況は、サービスが既に接続を管理しているため、Azure SignalR サービスで処理できます。
+Azure SignalR Service のもう1つの利点は、サーバーレスクラウドネイティブサービスを実装することです。 Azure Functions のトリガーを使用して、必要に応じてコードが実行される可能性があります。 このシナリオは、コードがクライアントとの長い接続を維持していないため、厄介な場合があります。 Azure SignalR サービスでは、サービスが既に接続を管理しているため、このような状況に対処できます。
 
 Azure SignalR サービスは、Azure SQL Database、Service Bus、Redis Cache などの他の Azure サービスと密接に統合されているため、クラウドネイティブアプリケーションで多くの可能性が生まれます。
 

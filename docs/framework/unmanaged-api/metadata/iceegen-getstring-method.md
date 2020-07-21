@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7cc22562-128c-440a-9147-55ff20f173d7
 topic_type:
 - apiref
-ms.openlocfilehash: e81ef33f4fb684cce29aa9afb756451b1e5db896
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b7b15261d825c1bd5f217c4cecd82ed36a716d0e
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426161"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008262"
 ---
 # <a name="iceegengetstring-method"></a>ICeeGen::GetString メソッド
 指定した相対仮想アドレスに格納されている文字列を取得します。  
@@ -31,7 +31,7 @@ ms.locfileid: "74426161"
   
 ```cpp  
 HRESULT GetString (  
-    [in]  ULONG      RVA,   
+    [in]  ULONG      RVA,
     [out] LPWSTR     *lpString  
 );  
 ```  
@@ -43,15 +43,15 @@ HRESULT GetString (
  `lpString`  
  入出力返された文字列。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ICeeGen インターフェイス](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [ICeeGen インターフェイス](iceegen-interface.md)

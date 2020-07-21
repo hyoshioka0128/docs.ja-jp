@@ -1,17 +1,17 @@
 ---
-title: 型の開始値に変換できません '<type1>'、値の制限'<type2>'とステップの値'<type3>' 共通の型に
+title: 型 '<type1>' の開始値、'<type2>' の制限値、または '<type3>' のステップ値を共通の型に変換できません
 ms.date: 07/20/2015
 f1_keywords:
 - vbrForLoop_CommonType3
 ms.assetid: 21c45bcf-539c-488a-9cae-221558c37146
-ms.openlocfilehash: cdf92cfcba6b17e49ad818d99066c63635ff9809
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7becef7a7ef6abf20ff48aa8c74c0015dda9fdd7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008099"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400836"
 ---
-# <a name="cannot-convert-start-value-of-type-type1-limit-value-of-type2-and-step-value-of-type3-to-a-common-type"></a>型の開始値に変換できません '\<type1 >' の値を制限'\<type2 >' のステップ値と '\<type3 >' は共通型に
+# <a name="cannot-convert-start-value-of-type-type1-limit-value-of-type2-and-step-value-of-type3-to-a-common-type"></a>型 '\<type1>' の開始値、'\<type2>' の制限値、または '\<type3>' のステップ値を共通の型に変換できません
 指定された `For...Next` コントロールの値は、異なる型であるため、共通の型に変換できないので無効です。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -20,4 +20,4 @@ ms.locfileid: "62008099"
   
 ## <a name="see-also"></a>関連項目
 
-- [For...Next ステートメント](../../visual-basic/language-reference/statements/for-next-statement.md)
+- [For...Next ステートメント](../language-reference/statements/for-next-statement.md)

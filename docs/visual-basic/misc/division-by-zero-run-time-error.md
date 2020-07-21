@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID11
 ms.assetid: 5b9bc5d6-792e-48bc-a974-012e07ad95f3
-ms.openlocfilehash: 194dcebe40b7f14ba4bf4ebce6f2b1294d3e6791
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31efe395e17dfc7382abf2478139e1a2d36cc31d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970340"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84394649"
 ---
 # <a name="division-by-zero-visual-basic-run-time-error"></a>0 による除算 (Visual Basic 実行時エラー)
 除数として使用する式の値が 0 です。  
@@ -22,4 +22,4 @@ ms.locfileid: "61970340"
   
 ## <a name="see-also"></a>関連項目
 
-- [引数の値渡しと参照渡し](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [引数の値渡しと参照渡し](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

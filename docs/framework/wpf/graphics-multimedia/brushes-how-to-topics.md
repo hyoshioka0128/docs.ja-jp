@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: 43e7f798-9558-4498-b5b6-4a4c6baf956b
 ms.openlocfilehash: 4bf49449cd51753e7dc59c169fe51f13dcc67a81
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62010216"
 ---
 # <a name="brushes-how-to-topics"></a>ブラシに関する「方法」トピック
-次のトピックを使用する方法について説明[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]画面にコンテンツを描画するブラシ。  
+次のトピックでは、スクリーンにコンテンツを塗りつぶすために [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ブラシを使用する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [SolidColorBrush の色または不透明度をアニメーション化する](how-to-animate-the-color-or-opacity-of-a-solidcolorbrush.md)  
@@ -37,7 +37,7 @@ ms.locfileid: "62010216"
  [ブラシを変換する](how-to-transform-a-brush.md)  
  [グラデーションでシステム カラーを使用する](how-to-use-system-colors-in-a-gradient.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Media.Brush>  
   
  <xref:System.Windows.Media.SolidColorBrush>  

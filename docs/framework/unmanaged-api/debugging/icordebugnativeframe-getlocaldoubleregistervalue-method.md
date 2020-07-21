@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1f838215-ac8a-434f-8ce6-03021d3098d9
 topic_type:
 - apiref
-ms.openlocfilehash: a45061b6a3105565fdbb36173731b3c3dfe5aa4f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 21c4d00e4156b9db27ae4188aace19764a2be53e
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137290"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83213076"
 ---
 # <a name="icordebugnativeframegetlocaldoubleregistervalue-method"></a>ICorDebugNativeFrame::GetLocalDoubleRegisterValue メソッド
 このネイティブフレームの指定した2つのレジスタに格納されている引数またはローカル変数の値を取得します。  
@@ -42,27 +42,27 @@ HRESULT GetLocalDoubleRegisterValue (
  から値の上位ワードを含むレジスタを指定する "CorDebugRegister" 列挙体の値。  
   
  `lowWordReg`  
- から値の下位ワードを含むレジスタを指定する `CorDebugRegister` 列挙体の値。  
+ から`CorDebugRegister`値の下位ワードを含むレジスタを指定する列挙体の値。  
   
  `cbSigBlob`  
- から`pvSigBlob` パラメーターによって参照されるバイナリメタデータシグネチャのサイズを指定する整数。  
+ からパラメーターによって参照されるバイナリメタデータシグネチャのサイズを指定する整数 `pvSigBlob` 。  
   
  `pvSigBlob`  
- から値の型のバイナリメタデータシグネチャを指す `PCCOR_SIGNATURE` 値。  
+ から`PCCOR_SIGNATURE`値の型のバイナリメタデータシグネチャを指す値。  
   
  `ppValue`  
  入出力指定したレジスタに格納されている取得値を表す "ICorDebugValue" オブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- `GetLocalDoubleRegisterValue` メソッドは、ネイティブフレームまたは just-in-time (JIT) でコンパイルされたフレームのどちらでも使用できます。  
+ メソッドは、 `GetLocalDoubleRegisterValue` ネイティブフレームまたは just-in-time (JIT) でコンパイルされたフレームのどちらでも使用できます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目

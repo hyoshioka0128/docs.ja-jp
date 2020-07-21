@@ -6,21 +6,21 @@ helpviewer_keywords:
 - MEF, Composition Analysis Tool
 - Mefx [MEF], Composition Analysis Tool
 ms.assetid: c48a7f93-83bb-4a06-aea0-d8e7bd1502ad
-ms.openlocfilehash: bb2748b16a16d7d01b076402889829f5b31a1912
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 7d0acf16ace5aad60b32b7139a58a258fb080ee0
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126369"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79181303"
 ---
 # <a name="composition-analysis-tool-mefx"></a>コンポジション分析ツール (Mefx)
 合成分析ツール (Mefx) は、Managed Extensibility Framework (MEF) のパートが含まれたライブラリ (.dll) ファイルとアプリケーション (.exe) ファイルを分析するコマンド ライン アプリケーションです。 Mefx の主な目的は、開発者が煩雑なトレース コードをアプリケーション自体に追加することなく、MEF アプリケーションの合成エラーを診断できるようにすることです。 また、Mefx は、サード パーティが提供するライブラリのパートについて理解する際にも役立ちます ここでは、Mefx の使用方法について説明し、構文のリファレンスを示します。  
   
-<a name="getting_mefx"></a>   
+<a name="getting_mefx"></a>
 ## <a name="getting-mefx"></a>Mefx の入手  
  Mefx は、GitHub の [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef/releases/tag/4.0) で入手できます。 ツールをダウンロードして解凍してください。  
   
-<a name="basic_syntax"></a>   
+<a name="basic_syntax"></a>
 ## <a name="basic-syntax"></a>基本構文  
  Mefx は、次の形式でコマンド ラインから起動します。  
   
@@ -39,7 +39,7 @@ mefx /file:MyAddIn.dll /directory:Program\AddIns [action...]
   
  ファイルとディレクトリを指定した後、コマンドと、そのコマンドのオプションを指定する必要があります。  
   
-<a name="listing_available_parts"></a>   
+<a name="listing_available_parts"></a>
 ## <a name="listing-available-parts"></a>使用可能なパートの一覧を表示する  
  `/parts` アクションを使用すると、読み込んだファイルで宣言されているすべてのパートの一覧が表示されます。 結果は、パート名の単純なリストです。  
   
@@ -57,7 +57,7 @@ mefx /file:MyAddIn.dll /type:MyAddIn.AddIn /verbose
   [Export] MyAddIn.MemberPart (ContractName=" MyAddIn.MemberPart")  
 ```  
   
-<a name="listing_imports_and_exports"></a>   
+<a name="listing_imports_and_exports"></a>
 ## <a name="listing-imports-and-exports"></a>インポートとエクスポートの一覧表示  
  `/imports` アクションと `/exports` アクションでは、インポートされたすべてのパートと、エクスポートされたすべてのパートがそれぞれ一覧表示されます。 `/importers` アクションまたは `/exporters` アクションを使用して、特定の型をインポートまたはエクスポートするパートを一覧表示することもできます。  
   
@@ -68,7 +68,7 @@ MyAddin.AddIn
   
  これらのアクションに `/verbose` オプションを適用することもできます。  
   
-<a name="finding_rejected_parts"></a>   
+<a name="finding_rejected_parts"></a>
 ## <a name="finding-rejected-parts"></a>拒否されたパートの検索  
  使用可能なパートを読み込んだ後、Mefx は MEF 合成エンジンを使用してそれらのパートを合成します。 正常に構成できないパートのことを、 *拒否された*パートと呼びます。 拒否されたすべてのパートの一覧を表示するには、 `/rejected` アクションを使用します。  
   
@@ -105,7 +105,7 @@ from: ClassLibrary1.ChainOne from: AssemblyCatalog (Assembly="ClassLibrary1, Ver
   
  `[Exception]` と `[Unsuitable]` の結果に、有用な情報が含まれています。 `[Exception]` の結果には、パートが拒否された理由に関する情報が示されています。 `[Unsuitable]` の結果には、他の点では一致するパートを使用してインポートを満たせなかった理由が示されています。ここでは、インポートが見つからないために、パートそのものが拒否されたということが分かります。  
   
-<a name="analyzing_primary_causes"></a>   
+<a name="analyzing_primary_causes"></a>
 ## <a name="analyzing-primary-causes"></a>主要な原因を分析する  
  長い依存関係チェーンで複数のパートがリンクされている場合、最下位付近のパートに関係する問題によって、チェーン全体が拒否されることがあります。 エラーの根本原因が必ずしも明らかであるとは限らないため、このような問題は診断が難しい場合があります。 問題解決に役立てるために、 `/causes` アクションを使用できます。このアクションでは、拒否の連鎖の根本原因を見つけることを試みます。  
   
@@ -114,7 +114,7 @@ from: ClassLibrary1.ChainOne from: AssemblyCatalog (Assembly="ClassLibrary1, Ver
 > [!NOTE]
 > ほとんどの場合、連鎖するエラーの根本原因を Mefx で診断できます。 ただし、パートがプログラムによってコンテナーに追加される場合、階層コンテナーが関係している場合、またはカスタムの `ExportProvider` 実装が関係している場合には、Mefx によって原因を診断することができません これらの状況では一般にエラーの診断が難しいため、できるだけ避けることをお勧めします。  
   
-<a name="white_lists"></a>   
+<a name="white_lists"></a>
 ## <a name="white-lists"></a>ホワイト リスト  
  `/whitelist` オプションでは、拒否されることが予想されるパートの一覧を示すテキスト ファイルを指定できます。 予期されない拒否にはフラグが設定されます。 これは、一部の依存関係が見つからない不完全なライブラリまたはサブライブラリを分析する際に役立ちます。 `/whitelist` オプションは、 `/rejected` アクションまたは `/causes` アクションに適用できます。  
   

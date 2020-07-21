@@ -1,15 +1,13 @@
 ---
 title: .NET Core ランタイムと SDK をバージョン管理する方法
 description: この記事では、.NET Core SDK と ランタイムをバージョン管理する方法について説明します (セマンティック バージョニングと似ています)。
-author: bleroy
-ms.date: 07/26/2018
-ms.custom: seodec18
-ms.openlocfilehash: b8cfb2d40b1ae88ef03daca6c31b283256bc6f26
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.date: 06/24/2020
+ms.openlocfilehash: 5e315f49227f3c2ea40652a30fabbf566bdfe495
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72179955"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619755"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>.NET Core をバージョン管理する方法の概要
 
@@ -25,14 +23,14 @@ ms.locfileid: "72179955"
 
 SDK バージョン番号の 3 番目の位置には、マイナー番号とパッチ番号の両方が示されます。 マイナー バージョンには 100 が乗算されます。 マイナー バージョン 1、パッチ バージョン 2 の場合は、102 と表現されます。 最後の 2 桁はパッチの番号を示しています。 たとえば、.NET Core 2.2 のリリースの場合、次の表のようなリリースが作成される可能性があります。
 
-| 変更                | .NET Core ランタイム | .NET Core SDK (*) |
+| 変更                | .NET Core ランタイム | .NET Core SDK (\*) |
 |-----------------------|-------------------|-------------------|
 | 初期リリース       | 2.2.0             | 2.2.100           |
 | SDK パッチ             | 2.2.0             | 2.2.101           |
 | ランタイムおよび SDK パッチ | 2.2.1             | 2.2.102           |
 | SDK 機能変更    | 2.2.1             | 2.2.200           |
 
-(\*) 上記の表では、今後リリースされる 2.2 .NET Core Runtime が例として使用されています。 .NET Core 2.1 に対する最初の SDK が 2.1.300 であることが、履歴アーティファクトで示されていたからです。 詳細については、「[.NET Core のバージョンの選択](selection.md)」を参照してください。
+(\*) 上記の表では、2.2 .NET Core Runtime が例として使用されています。 .NET Core 2.1 に対する最初の SDK が 2.1.300 であることが、履歴アーティファクトで示されていたからです。 詳細については、「[.NET Core のバージョンの選択](selection.md)」を参照してください。
 
 注:
 
@@ -105,11 +103,14 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 | 2.1       | 最大 2.0     |
 | 2.2       | 最大 2.0     |
 | 3.0       | 最大 2.1     |
+| 3.1       | 最大 2.1     |
+
+.NET Standard のバージョンの対話型テーブルと、それらが .NET 実装にどのように対応しているのかについては、「[.NET Standard のバージョン](https://dotnet.microsoft.com/platform/dotnet-standard#versions)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
 - [ターゲット フレームワーク](../../standard/frameworks.md)
-- [.NET Core の配布パッケージ](../build/distribution-packaging.md)
+- [.NET Core の配布パッケージ](../distribution-packaging.md)
 - [.NET Core サポート ライフサイクルのファクト シート](https://dotnet.microsoft.com/platform/support/policy)
 - [.NET core 2 + バージョン バインディング](https://github.com/dotnet/designs/issues/3)
 - [.NET Core の Docker イメージ](https://hub.docker.com/_/microsoft-dotnet-core/)

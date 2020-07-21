@@ -1,16 +1,17 @@
 ---
 title: '方法: グローバル プロキシの選択をオーバーライドする'
+description: 次の例に従って、WebRequest を URL に送信することで、グローバル プロキシの選択をオーバーライドします。これにより、この選択がプロキシ サーバーでオーバーライドされます。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0da481a9-b414-4230-beb0-e3ceba882fe5
-ms.openlocfilehash: 44845fb67aac4ff9ab9dda8cf4934153c8c4f23c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 91f64775e2f401be9b740fe9e4c41e1087eb9617
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048269"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502510"
 ---
 # <a name="how-to-override-a-global-proxy-selection"></a>方法: グローバル プロキシの選択をオーバーライドする
 この例では、`www.contoso.com` に **WebRequest** を送信し、ポート 80 の `alternateproxy` という名前のプロキシ サーバーでグローバル プロキシの選択をオーバーライドします。  

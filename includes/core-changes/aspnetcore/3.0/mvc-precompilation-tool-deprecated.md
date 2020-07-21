@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3f702febc78488b9413ec9303ded211493650f02
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 8395428e1729a00fc1af72cf53fe689ee95b5fdf
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198490"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721373"
 ---
 ### <a name="mvc-precompilation-tool-deprecated"></a>MVC:プリコンパイル ツールは非推奨です
 
@@ -28,9 +28,9 @@ Razor SDK では、この機能がネイティブでサポートされます。 
 
 Razor SDK によって、より多くの機能が提供され、ビルド時に *.cshtml* ファイルの正確性が確認されます。 また、SDK によってアプリの起動時間が改善されます。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
-ASP.NET Core 2.1 以降のユーザーの場合は、[Razor SDK](/aspnet/core/razor-pages/sdk?view=aspnetcore-3.0) でのプリコンパイルのネイティブ サポートを使用するように更新します。 バグまたは不足している機能によって Razor SDK への移行が妨げられる場合は、[aspnet/AspNetCore](https://github.com/aspnet/AspNetCore/issues) で問題を開きます。
+ASP.NET Core 2.1 以降のユーザーの場合は、[Razor SDK](/aspnet/core/razor-pages/sdk?view=aspnetcore-3.0) でのプリコンパイルのネイティブ サポートを使用するように更新します。 バグまたは不足している機能によって Razor SDK への移行が妨げられる場合は、[dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues) で問題を開きます。
 
 #### <a name="category"></a>カテゴリ
 
@@ -38,11 +38,11 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>影響を受ける API
 
-なし
+None
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 Not detectable via API analysis
 

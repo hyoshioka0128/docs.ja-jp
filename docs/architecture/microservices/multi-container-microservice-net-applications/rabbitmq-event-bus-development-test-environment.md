@@ -2,18 +2,18 @@
 title: 開発環境またはテスト環境の RabbitMQ でイベント バスを実装する
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | 開発環境またはテスト環境の統合イベント向けに RabbitMQ でイベント バスのメッセージングを実装します。
 ms.date: 10/02/2018
-ms.openlocfilehash: ba1cea9384893955ae0743ac8d6a34c350224cd5
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 1af72d18825eb610d6900178205450e2c2e34c25
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711198"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306891"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>開発環境またはテスト環境の RabbitMQ でイベント バスを実装する
 
-eShopOnContainers アプリケーションの場合のようにコンテナーで実行される RabbitMQ に基づいてカスタム イベント バスを作成した場合、その使用は開発環境およびテスト環境に限定する必要があるということを述べることから始めます。 カスタム イベント バスについては、実働可能なサービス バスの一部として作成していない限り、運用環境で使用すべきではありません。 単純なカスタム イベント バスには、商用サービス バスが備えている重要な実働可能機能の多くが不足している可能性があります。
+eShopOnContainers アプリケーションの場合のようにコンテナーで実行される RabbitMQ に基づいてカスタム イベント バスを作成した場合、その使用は開発環境およびテスト環境に限定する必要があるということを述べることから始めます。 これは、実働可能なサービス バスの一部として作成しているのでない限り、運用環境では使用しないでください。 単純なカスタム イベント バスには、商用サービス バスが備えている重要な実働可能機能の多くが不足している可能性があります。
 
-eShopOnContainers でのイベント バスのカスタム実装の 1 つは基本的には RabbitMQ API を使用するライブラリです (Azure Service Bus に基づく別の実装もあります)。
+eShopOnContainers でのイベント バスのカスタム実装の 1 つは、基本的に、RabbitMQ API を使用するライブラリです。 (Azure Service Bus に基づく別の実装もあります)。
 
 図 6-21 に示すように、RabbitMQ でのイベント バスの実装により、マイクロサービスはイベントのサブスクライブ、イベントの発行、およびイベントの受け取りを行うことができます。
 
@@ -114,14 +114,14 @@ Subscribe メソッドは IIntegrationEventHandler オブジェクト (現在の
 
 ## <a name="additional-resources"></a>その他の技術情報
 
-RabbitMQ に対応した実稼働可能なソリューション。
+RabbitMQ に対応した実働可能なソリューション。
 
 - **EasyNetQ** - RabbitMQ 向けのオープン ソース .NET API クライアント \
-  <http://easynetq.com/>
+  <https://easynetq.com/>
 
 - **MassTransit** \
   <https://masstransit-project.com/>
   
->[!div class="step-by-step"]
->[前へ](integration-event-based-microservice-communications.md)
->[次へ](subscribe-events.md)
+> [!div class="step-by-step"]
+> [前へ](integration-event-based-microservice-communications.md)
+> [次へ](subscribe-events.md)

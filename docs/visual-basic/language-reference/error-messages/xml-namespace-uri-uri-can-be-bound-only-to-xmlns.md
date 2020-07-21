@@ -1,5 +1,5 @@
 ---
-title: XML 名前空間 URI '<uri>' 'xmlns' にのみバインドできます
+title: XML 名前空間 URI '<uri>' は 'xmlns' にのみバインドできます。
 ms.date: 07/20/2015
 f1_keywords:
 - bc31183
@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC31183
 ms.assetid: 0ab1dbce-8397-4959-b2cd-f58798b051a0
-ms.openlocfilehash: dd5e67d573176a6b1a011b3191fca9607af85538
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 9d791ae699f369ebe69e03fc5019d3ca58554224
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766624"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406483"
 ---
-# <a name="xml-namespace-uri-httpwwww3orgxml1998namespace-can-be-bound-only-to-xmlns"></a>XML 名前空間 URI `http://www.w3.org/XML/1998/namespace`; 'xmlns' にのみバインドできます
-URI `http://www.w3.org/XML/1998/namespace` XML 名前空間の宣言に使用されます。 この URI は予約された名前空間であり、XML 名前空間の宣言に含めることができません。  
+# <a name="xml-namespace-uri-httpwwww3orgxml1998namespace-can-be-bound-only-to-xmlns"></a>XML 名前空間 URI `http://www.w3.org/XML/1998/namespace` は 'xmlns' にのみバインドできます
+URI `http://www.w3.org/XML/1998/namespace` は、XML 名前空間宣言で使用されます。 この URI は予約された名前空間であり、XML 名前空間宣言に含めることはできません。  
   
  **エラー ID:** BC31183  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-XML 名前空間の宣言を削除するか、URI を置き換えて `http://www.w3.org/XML/1998/namespace` で有効な名前空間 URI。  
+XML 名前空間宣言を削除するか、URI `http://www.w3.org/XML/1998/namespace` を有効な名前空間 URI に置き換えます。  
   
 ## <a name="see-also"></a>関連項目
 
-- [Imports ステートメント (XML 名前空間)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)
-- [XML リテラル](../../../visual-basic/language-reference/xml-literals/index.md)
-- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [Imports ステートメント (XML 名前空間)](../statements/imports-statement-xml-namespace.md)
+- [XML リテラル](../xml-literals/index.md)
+- [XML](../../programming-guide/language-features/xml/index.md)

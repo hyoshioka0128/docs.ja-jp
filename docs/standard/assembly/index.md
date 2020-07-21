@@ -1,5 +1,6 @@
 ---
 title: .NET のアセンブリ
+description: アセンブリは、.NET ベースのアプリケーションの配置、バージョン管理、再利用、アクティベーション スコープ、およびセキュリティ権限の基本単位です。
 ms.date: 08/15/2019
 ms.assetid: 149f5ca5-5b34-4746-9542-1ae43b2d0256
 helpviewer_keywords:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: 8e68d2dbb13d226ba738bdf8455418c9e771d6a6
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 364a1a8c0fbaae93a02495aaf2e8c519ffb46451
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733157"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290942"
 ---
 # <a name="assemblies-in-net"></a>.NET のアセンブリ
 
@@ -63,7 +64,7 @@ ms.locfileid: "73733157"
 
 アセンブリを作成するには、いくつかの方法があります。 Visual Studio など、 *.dll* ファイルや *.exe* ファイルを作成できる開発ツールを使用できます。 他の開発環境のモジュールを使ってアセンブリを作成するには、Windows SDK の各種ツールを使用できます。 動的アセンブリの作成には、<xref:System.Reflection.Emit?displayProperty=nameWithType> などの共通言語ランタイム API も使用できます。
 
-アセンブリをコンパイルするには、Visual Studio でビルドするか、.NET Core コマンド ライン インターフェイス ツールでビルドするか、コマンド ライン コンパイラを使用して .NET Framework アセンブリを構築します。 .NET Core コマンド ライン インターフェイス ツールを使ったアセンブリのビルドについて詳しくは、「[.NET Core コマンド ライン インターフェイス (CLI) ツール](../../core/tools/index.md)」を参照してください。 コマンド ライン コンパイラを使ったアセンブリのビルドについては、「[csc.exe を使用したコマンド ラインからのビルド](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)」(C#)、および[コマンド ラインからのビルド](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) (Visual Basic) に関する記事を参照してください。
+アセンブリをコンパイルするには、Visual Studio でビルドするか、.NET Core コマンド ライン インターフェイス ツールでビルドするか、コマンド ライン コンパイラを使用して .NET Framework アセンブリを構築します。 .NET Core CLI を使ったアセンブリのビルドについて詳しくは、「[.NET Core CLI の概要](../../core/tools/index.md)」をご覧ください。 コマンド ライン コンパイラを使ったアセンブリのビルドについては、「[csc.exe を使用したコマンド ラインからのビルド](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)」(C#)、および[コマンド ラインからのビルド](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) (Visual Basic) に関する記事を参照してください。
 
 > [!NOTE]
 > Visual Studio でアセンブリをビルドするには、 **[ビルド]** メニューの **[ビルド]** を選択します。
@@ -85,7 +86,7 @@ ms.locfileid: "73733157"
 アプリケーションでアセンブリを使用するには、アセンブリへの参照を追加する必要があります。 アセンブリが参照された後は、その名前空間のアクセス可能なすべての型、プロパティ、メソッド、およびその他のメンバーを、そのコードがご自分のソース ファイルの一部であるかのようにアプリケーションで使用することができます。
 
 > [!NOTE]
-> .NET クラス ライブラリのほとんどのアセンブリは自動的に参照されます。 システム アセンブリが自動的に参照されない場合、.NET Core では、アセンブリを含む NuGet パッケージへの参照を追加できます。 Visual Studio で NuGet パッケージ マネージャーを使用するか、またはアセンブリの [\<PackageReference>](../../core/tools/dependencies.md#the-new-packagereference-element) 要素を *.csproj* または *.vbproj* プロジェクトに追加します。 .NET Framework では、アセンブリへの参照を追加するには、Visual Studio の **[参照の追加]** ダイアログを使用するか、[C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) または [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) コンパイラに向けてコマンド ライン オプション `-reference` を使用します。
+> .NET クラス ライブラリのほとんどのアセンブリは自動的に参照されます。 システム アセンブリが自動的に参照されない場合、.NET Core では、アセンブリを含む NuGet パッケージへの参照を追加できます。 Visual Studio で NuGet パッケージ マネージャーを使用するか、またはアセンブリの [\<PackageReference>](../../core/tools/dependencies.md#the-packagereference-element) 要素を *.csproj* または *.vbproj* プロジェクトに追加します。 .NET Framework では、アセンブリへの参照を追加するには、Visual Studio の **[参照の追加]** ダイアログを使用するか、[C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) または [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) コンパイラに向けてコマンド ライン オプション `-reference` を使用します。
 
 C# では、1 つのアプリケーションで同じアセンブリの 2 つのバージョンを使用することができます。 詳細については、「[extern エイリアス](../../csharp/language-reference/keywords/extern-alias.md)」を参照してください。
 
@@ -101,19 +102,19 @@ C# では、1 つのアプリケーションで同じアセンブリの 2 つの
 |[アセンブリのバージョン管理](versioning.md)|.NET Framework のバージョン管理ポリシーの概要。|
 |[アセンブリの配置](../../framework/app-domains/assembly-placement.md)|アセンブリの配置場所。|
 |[アセンブリと side-by-side 実行](side-by-side-execution.md)|複数のバージョンのランタイムやアセンブリの同時使用。|
-|[動的メソッドおよびアセンブリの出力](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|動的アセンブリの作成方法。|
-|[ランタイムがアセンブリを検索する方法](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|実行時に .NET Framework でアセンブリ参照がどのように解決されるか。|
+|[動的メソッドおよびアセンブリの出力](../../framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|動的アセンブリの作成方法。|
+|[ランタイムがアセンブリを検索する方法](../../framework/deployment/how-the-runtime-locates-assemblies.md)|実行時に .NET Framework でアセンブリ参照がどのように解決されるか。|
 
-## <a name="reference"></a>辞書／辞典／その他
+## <a name="reference"></a>関連項目
 
 <xref:System.Reflection.Assembly?displayProperty=nameWithType>
 
 ## <a name="see-also"></a>関連項目
 
 - [.NET アセンブリ ファイルの形式](file-format.md)
-- [.NET のアセンブリ](index.md)
 - [フレンド アセンブリ](friend.md)
 - [参照アセンブリ](reference-assemblies.md)
 - [方法: アセンブリを読み込み、アンロードする](load-unload.md)
 - [方法: .NET Core でアセンブリのアンローダビリティを使用およびデバッグする](unloadability.md)
 - [方法: ファイルがアセンブリであるかどうかを確認する](identify.md)
+- [方法: MetadataLoadContext を使用してアセンブリの内容を検査する](inspect-contents-using-metadataloadcontext.md)

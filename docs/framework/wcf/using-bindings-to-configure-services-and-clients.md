@@ -1,15 +1,16 @@
 ---
 title: サービスとクライアントを構成するためのバインディングの使用
+description: バインディングには、WFC クライアントまたはサービスで使用される構成情報が含まれます。 バインディングを定義する方法と、サービスエンドポイントのバインディングを指定する方法について説明します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-ms.openlocfilehash: dd83072d3a1c76279fcc00ea5b0a4a41e278e10a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 60db37d4381191314e9d5588dd61015a7078e84d
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321508"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245935"
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>サービスとクライアントを構成するためのバインディングの使用
 バインディングとは、エンドポイントへの接続に必要な通信の詳細設定を指定するオブジェクトです。 具体的には、バインディングには構成情報が含まれており、この情報を使用してそれぞれのエンドポイントまたはクライアント チャネルで使用されるトランスポート仕様、ワイヤ形式 (メッセージ エンコード) 仕様、プロトコル仕様が定義され、クライアントまたはサービスのランタイムが作成されます。 機能する Windows Communication Foundation (WCF) サービスを作成するには、サービスの各エンドポイントにバインディングが必要です。 ここでは、エンドポイントにおけるバインディングの概要と定義方法、特定のバインディングの指定方法を説明します。  
@@ -20,10 +21,10 @@ ms.locfileid: "72321508"
  プロトコル  
  使用されているセキュリティ機構 (信頼性の高いメッセージング機能またはトランザクション コンテキストのフロー設定のいずれか) を決定します。  
   
- Transport  
+ トランスポート  
  使用する基本のトランスポート プロトコル (TCP や HTTP など) を決定します。  
   
- エンコード  
+ Encoding  
  メッセージ エンコード (Text/XML、バイナリ、MTOM (Message Transmission Optimization Mechanism) など) を決定します。これは、メッセージをネットワーク上のバイト ストリームとしてどのように表現するかを決定します。  
   
 ## <a name="system-provided-bindings"></a>システム標準のバインディング  
@@ -40,7 +41,7 @@ ms.locfileid: "72321508"
  システム指定のバインディングの完全な一覧と説明については、「[システム指定のバインディング](system-provided-bindings.md)」を参照してください。  
   
 ## <a name="custom-bindings"></a>カスタム バインディング  
- システム指定のバインディング コレクションに、サービス アプリケーションに必要な機能の適切な組み合わせが含まれていない場合は、<xref:System.ServiceModel.Channels.CustomBinding> バインディングを作成できます。 @No__t-0 バインディングの要素の詳細については、「 [\<customBinding >](../configure-apps/file-schema/wcf/custombinding.md) 」と「[カスタムバインド](./extending/custom-bindings.md)」を参照してください。  
+ システム指定のバインディング コレクションに、サービス アプリケーションに必要な機能の適切な組み合わせが含まれていない場合は、<xref:System.ServiceModel.Channels.CustomBinding> バインディングを作成できます。 バインディングの要素の詳細については <xref:System.ServiceModel.Channels.CustomBinding> 、「」 [\<customBinding>](../configure-apps/file-schema/wcf/custombinding.md) および「[カスタムバインド](./extending/custom-bindings.md)」を参照してください。  
   
 ## <a name="using-bindings"></a>バインディングの使用  
  バインディングを使用する際には、次の 2 つの基本手順があります。  

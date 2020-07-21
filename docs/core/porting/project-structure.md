@@ -3,23 +3,22 @@ title: .NET Framework および .NET Core のプロジェクトを整理する
 description: プロジェクト所有者が横並びの .NET Framework と .NET Core に対してソリューションをコンパイルするときに役立ちます。
 author: conniey
 ms.date: 12/07/2018
-ms.custom: seodec18
-ms.openlocfilehash: 789f50ffb61b80f590a24bc45693df895b3424f7
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: d71cc3102846c08f4e35831921b8cc4ca82f9e1b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801929"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75777330"
 ---
 # <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>.NET Framework と .NET Core の両方をサポートするようにプロジェクトを整理する
 
-.NET Framework と .NET Core 両方のコンパイルに同時に対応するソリューションを作成する方法について説明します。 この目標を達成できるようにプロジェクトを整理するいくつかのオプションを参照してください。 ここでは、.NET Core でプロジェクト レイアウトを設定する方法について決定するときに考慮する典型的なシナリオを紹介します。 この一覧はプロジェクトのニーズに基づいて選択されており、すべてを網羅しるわけではりません。
+.NET Framework と .NET Core 両方のコンパイルに同時に対応するソリューションを作成できます。 この記事では、この目標を達成するために役立つ、いくつかのプロジェクトの整理のオプションについて説明します。 ここでは、.NET Core でプロジェクト レイアウトを設定する方法について決定するときに考慮する典型的なシナリオを紹介します。 この一覧はプロジェクトのニーズに基づいて選択されており、すべてを網羅しているわけではありません。
 
 - [**既存のプロジェクトと .NET Core プロジェクトを結合し、シングル プロジェクトを作成する**](#replace-existing-projects-with-a-multi-targeted-net-core-project)
 
   *効果:*
-  - 複数のプロジェクトをコンパイルするのではなく、シングル プロジェクトをコンパイルすることでビルド プロセスをシンプルにします。それぞれ、異なる .NET Framework バージョンまたはプラットフォームをターゲットにします。
-  - ターゲットが複数のプロジェクトのソース ファイル管理をシンプルにします。シングル プロジェクト ファイルを管理することになります。 ソース ファイルの追加/削除時、代替方法では、これらを他のプロジェクトと手動で同期する必要があります。
+  - 複数のプロジェクトではなくシングル プロジェクトをコンパイルすることで、ビルド プロセスをシンプルにします。それぞれ、異なる .NET Framework バージョンまたはプラットフォームをターゲットにします。
+  - ターゲットが複数のプロジェクトのソース ファイル管理をシンプルにします。シングル プロジェクト ファイルを管理することになります。 ソース ファイルの追加または削除時に、代替方法では、これらを他のプロジェクトと手動で同期する必要があります。
   - 使用する NuGet パッケージを簡単に生成します。
   - コンパイラ ディレクティブを利用することで、ライブラリの特定の .NET Framework バージョンに対してコードを記述できます。
 
@@ -62,11 +61,8 @@ ms.locfileid: "74801929"
 
 [**ソース コード**](https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj-keep-existing/)
 
-注目するべき変更点:
+.NET Core と既存のプロジェクトを別々のフォルダーに保存します。 プロジェクトを別々のフォルダーに保存すれば、Visual Studio 2017 以降のバージョンを所有する必要がありません。 古いプロジェクトだけを開く別個のソリューションを作成できます。
 
-- .NET Core と既存のプロジェクトを別々のフォルダーに保存します。
-  - プロジェクトを別々のフォルダーに保存すれば、Visual Studio 2017 以降のバージョンを所有する必要がありません。 古いプロジェクトだけを開く別個のソリューションを作成できます。
-
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [.NET Core の移植に関するドキュメント](index.md)

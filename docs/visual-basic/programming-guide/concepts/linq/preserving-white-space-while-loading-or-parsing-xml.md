@@ -1,13 +1,13 @@
 ---
-title: 読み込み時または解析 XML2 空白の維持
+title: XML の読み込み時または解析時の空白の維持 2
 ms.date: 07/20/2015
 ms.assetid: ef6518e0-2c8d-462c-8b92-a16e9dc737ad
-ms.openlocfilehash: 7febbf1ea27d3e73df8b91869befcd0b29a07c6e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 9c60c707730ed0b07e82040a4ce3aab5d83eef1c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666138"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396442"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>XML の読み込み時または解析時の空白の維持
 このトピックでは、空白に対する [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] の動作を制御する方法について説明します。  
@@ -16,7 +16,7 @@ ms.locfileid: "64666138"
   
  もう 1 つのよくあるシナリオは、意図的にインデントされた XML を読み取って変更する場合です。 場合によっては、このインデントを一切変更しないようにする必要があります。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] でこれを実現するには、XML を読み込む際または解析する際に空白を維持し、XML をシリアル化するときに書式設定を無効にします。  
   
- このトピックでは、空白に対する、XML ツリーを設定するメソッドの動作について説明します。 XML ツリーをシリアル化するときの空白の制御については、「[シリアル化時の空白の維持](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-serializing.md)」を参照してください。  
+ このトピックでは、空白に対する、XML ツリーを設定するメソッドの動作について説明します。 XML ツリーをシリアル化するときの空白の制御については、「[シリアル化時の空白の維持](preserving-white-space-while-serializing.md)」を参照してください。  
   
 ## <a name="behavior-of-methods-that-populate-xml-trees"></a>XML ツリーを設定するメソッドの動作  
  <xref:System.Xml.Linq.XElement> クラスと <xref:System.Xml.Linq.XDocument> クラスにある次のメソッドは、XML ツリーを設定します。 XML ツリーは、ファイル、<xref:System.IO.TextReader>、<xref:System.Xml.XmlReader>、または文字列から設定することができます。  
@@ -39,4 +39,4 @@ ms.locfileid: "64666138"
   
 ## <a name="see-also"></a>関連項目
 
-- [(Visual Basic) の XML の解析](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [XML の解析 (Visual Basic)](parsing-xml.md)

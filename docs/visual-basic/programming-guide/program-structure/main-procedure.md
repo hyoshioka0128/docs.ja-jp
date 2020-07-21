@@ -8,34 +8,34 @@ helpviewer_keywords:
 - Main method [Visual Basic]
 - main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
-ms.openlocfilehash: 61cd397b82b4bb9a8b24a1a7d30eaea68e37368f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: cf6003206566dfe8f70a7f75cd4d7ec7565794a5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347355"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403175"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Visual Basic の Main プロシージャ
-すべての Visual Basic アプリケーションには、`Main`と呼ばれるプロシージャを含める必要があります。 この手順は、アプリケーションの開始点と全体的な制御として機能します。 .NET Framework は、アプリケーションが読み込まれ、それに制御を渡す準備ができたときに、`Main` プロシージャを呼び出します。 Windows フォームアプリケーションを作成する場合を除き、独自に実行するアプリケーションの場合は、`Main` の手順を記述する必要があります。
+すべての Visual Basic アプリケーションには、`Main` と呼ばれるプロシージャが含まれている必要があります。 このプロシージャは、アプリケーションの開始点となり、アプリケーションの全体的な制御を行います。 .NET Framework では、アプリケーションが読み込まれ、制御を渡す準備ができると、`Main` プロシージャを呼び出します。 Windows フォーム アプリケーションを作成する場合を除き、単独で実行されるアプリケーションでは、`Main` プロシージャを記述する必要があります。
 
- `Main` には、最初に実行されるコードが含まれています。 `Main`では、プログラムの開始時に最初に読み込まれるフォームを特定し、アプリケーションのコピーが既にシステムで実行されているかどうかを確認したり、アプリケーションの一連の変数を設定したり、アプリケーションが必要とするデータベースを開いたりすることができます。
+ `Main` には、最初に実行されるコードが含まれます。 `Main` では、プログラムの起動時に最初に読み込まれるフォームを決定したり、アプリケーションのコピーがシステムで既に実行されているかどうかを確認したりできます。また、アプリケーションの一連の変数を確立したり、アプリケーションに必要なデータベースを開いたりすることもできます。
 
 ## <a name="requirements-for-the-main-procedure"></a>Main プロシージャの要件
- 独自の (通常は拡張子 .exe) で実行されるファイルには、`Main` プロシージャが含まれている必要があります。 ライブラリ (拡張子 .dll など) は独自には実行されず、`Main` の手順は必要ありません。 作成できるさまざまな種類のプロジェクトの要件は次のとおりです。
+ 単独で実行されるファイル (通常は拡張子が .exe) には、`Main` プロシージャが含まれている必要があります。 ライブラリ (拡張子.dll など) は単独では実行されないので、`Main` プロシージャは不要です。 作成できるさまざまな種類のプロジェクトの要件は次のとおりです。
 
-- コンソールアプリケーションは自身で実行されるため、少なくとも1つの `Main` プロシージャを指定する必要があります。
+- コンソール アプリケーションは単独で実行されるので、少なくとも 1 つの `Main` プロシージャを指定する必要があります。
 
-- Windows フォームアプリケーションは独自に実行されます。 ただし、このようなアプリケーションでは、Visual Basic コンパイラによって `Main` プロシージャが自動的に生成されるため、作成する必要はありません。
+- Windows フォーム アプリケーションは単独で実行されます。 ただし、このようなアプリケーションの `Main` プロシージャは、Visual Basic コンパイラによって自動的に生成されるので、記述する必要はありません。
 
-- クラスライブラリには `Main` プロシージャは必要ありません。 これには、Windows コントロールライブラリと Web コントロールライブラリが含まれます。 Web アプリケーションはクラスライブラリとして配置されます。
+- クラス ライブラリには、`Main` プロシージャは不要です。 これには、Windows コントロール ライブラリや Web コントロール ライブラリが含まれます。 Web アプリケーションは、クラス ライブラリとして展開されます。
 
 ## <a name="declaring-the-main-procedure"></a>Main プロシージャの宣言
- `Main` プロシージャを宣言するには、次の4つの方法があります。 引数を受け取ることも、それ以外の値を返すこともできます。
+ `Main` プロシージャを宣言するには、4 つの方法があります。 引数を受け取ることも、受け取らないこともできます。また、値を返すことも返さないこともできます。
 
 > [!NOTE]
-> クラスで `Main` を宣言する場合は、`Shared` キーワードを使用する必要があります。 モジュールでは、`Main` を `Shared`する必要はありません。
+> `Main` をクラスで宣言する場合は、`Shared` キーワードを使用する必要があります。 モジュールでは、`Main` は `Shared` である必要はありません。
 
-- 最も簡単な方法は、引数を取らず、値を返さない `Sub` プロシージャを宣言することです。
+- 最も簡単な方法は、引数を受け取らず、値を返さない `Sub` プロシージャを宣言することです。
 
     ```vb
     Module mainModule
@@ -47,7 +47,7 @@ ms.locfileid: "74347355"
     End Module
     ```
 
-- `Main` は、オペレーティングシステムがプログラムの終了コードとして使用する `Integer` 値を返すこともできます。 他のプログラムでは、Windows の ERRORLEVEL 値を調べることによって、このコードをテストできます。 終了コードを返すには、`Main` を `Sub` プロシージャの代わりに `Function` プロシージャとして宣言する必要があります。
+- `Main` では、オペレーティング システムがプログラムの終了コードとして使用する `Integer` 値を返すこともできます。 他のプログラムは Windows の ERRORLEVEL 値を調べることで、このコードをテストできます。 終了コードを返すには、`Sub` プロシージャではなく、`Function` プロシージャとして `Main` を宣言する必要があります。
 
     ```vb
     Module mainModule
@@ -64,7 +64,7 @@ ms.locfileid: "74347355"
     End Module
     ```
 
-- `Main` は、引数として `String` 配列を受け取ることもできます。 配列内の各文字列には、プログラムを呼び出すために使用されるコマンドライン引数の1つが含まれています。 値に応じて、さまざまなアクションを実行できます。
+- `Main` では、引数として `String` 配列を受け取ることもできます。 配列内の各文字列には、プログラムの呼び出しに使用されるコマンド ライン引数の 1 つが含まれます。 値に応じてさまざまなアクションを実行できます。
 
     ```vb
     Module mainModule
@@ -88,7 +88,7 @@ ms.locfileid: "74347355"
     End Module
     ```
 
-- 次のように、`Main` を宣言して、コマンドライン引数を確認し、終了コードを返すことはできません。
+- 次のように、コマンド ライン引数を調べ、終了コードは返さないように、`Main` を宣言できます。
 
     ```vb
     Module mainModule
@@ -108,15 +108,15 @@ ms.locfileid: "74347355"
     End Module
     ```
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>
 - <xref:System.Array.Length%2A>
 - <xref:Microsoft.VisualBasic.Information.UBound%2A>
-- [Visual Basic プログラムの構造](../../../visual-basic/programming-guide/program-structure/structure-of-a-visual-basic-program.md)
-- [-main](../../../visual-basic/reference/command-line-compiler/main.md)
-- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
-- [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)
-- [Integer データ型](../../../visual-basic/language-reference/data-types/integer-data-type.md)
-- [String データ型](../../../visual-basic/language-reference/data-types/string-data-type.md)
+- [Visual Basic プログラムの構造](structure-of-a-visual-basic-program.md)
+- [-main](../../reference/command-line-compiler/main.md)
+- [Shared](../../language-reference/modifiers/shared.md)
+- [Sub ステートメント](../../language-reference/statements/sub-statement.md)
+- [Function ステートメント](../../language-reference/statements/function-statement.md)
+- [Integer データ型](../../language-reference/data-types/integer-data-type.md)
+- [String データ型](../../language-reference/data-types/string-data-type.md)

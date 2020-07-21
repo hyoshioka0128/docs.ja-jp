@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.HttpChannelMessageReceiveFailed
 ms.date: 03/30/2017
 ms.assetid: 9eb311da-fdcc-4dd3-9d85-05b3280dfdda
-ms.openlocfilehash: b848963caff706ff8a886c1e358ad6688e9611c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e11b376924ee74e5d0d67da0cac59af41655dc44
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666691"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594076"
 ---
 # <a name="systemservicemodelchannelshttpchannelmessagereceivefailed"></a>System.ServiceModel.Channels.HttpChannelMessageReceiveFailed
 HTTP チャネルを介したメッセージの受信に失敗しました。  
@@ -17,6 +17,6 @@ HTTP チャネルを介したメッセージの受信に失敗しました。
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

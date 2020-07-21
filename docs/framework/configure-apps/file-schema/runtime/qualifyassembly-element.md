@@ -9,20 +9,20 @@ helpviewer_keywords:
 - <qualifyAssembly> element
 - qualifyAssembly element
 ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
-ms.openlocfilehash: 17cfe9fc39d65f146beef5d02c701f5e3e2fbbe1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 74e83900c68ab4b3fe01beb3f97657b0140d78ad
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73115784"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79153920"
 ---
-# <a name="qualifyassembly-element"></a>\<qualifyAssembly > 要素
+# <a name="qualifyassembly-element"></a>\<qualifyAssembly> 要素
 部分名が使用された場合に動的に読み込む必要があるアセンブリの完全名を指定します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp; &nbsp; &nbsp; &nbsp;[ **\<assemblyBinding**](assemblybinding-element-for-runtime.md) > \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**qualifyAssembly >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<assemblyBinding>**](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<qualifyAssembly>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -47,25 +47,25 @@ ms.locfileid: "73115784"
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`assemblyBinding`|アセンブリ バージョンのリダイレクトおよびアセンブリの位置に関する情報が含まれます。|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
- 部分アセンブリ名を使用して <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> メソッドを呼び出すと、共通言語ランタイムは、アプリケーションのベースディレクトリでのみアセンブリを検索します。 アプリケーション構成ファイル内の **\<qualifyAssembly >** 要素を使用して、アセンブリの完全な情報 (名前、バージョン、公開キートークン、およびカルチャ) を指定し、共通言語ランタイムがグローバルでアセンブリを検索するようにします。アセンブリキャッシュ。  
+## <a name="remarks"></a>解説  
+ <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>部分的なアセンブリ名を使用してメソッドを呼び出すと、共通言語ランタイムによって、アプリケーションのベースディレクトリでのみアセンブリが検索されます。 **\<qualifyAssembly>** アプリケーション構成ファイルの要素を使用してアセンブリの完全な情報 (名前、バージョン、公開キートークン、およびカルチャ) を指定すると、共通言語ランタイムによってグローバルアセンブリキャッシュ内のアセンブリが検索されます。  
   
- **FullName**属性には、アセンブリ id の4つのフィールド (名前、バージョン、公開キートークン、およびカルチャ) を含める必要があります。 **Partialname**属性は、アセンブリを部分的に参照する必要があります。 少なくともアセンブリのテキスト名 (最も一般的なケース) を指定する必要がありますが、バージョン、公開キートークン、またはカルチャ (または4つすべての4つの組み合わせを含む) を含めることもできます。 **Partialname**は、呼び出しで指定された名前と一致する必要があります。 たとえば、構成ファイルで**Partialname**属性として `"math"` を指定し、コードで `Assembly.Load("math, Version=3.3.3.3")` を呼び出すことはできません。  
+ **FullName**属性には、アセンブリ id の4つのフィールド (名前、バージョン、公開キートークン、およびカルチャ) を含める必要があります。 **Partialname**属性は、アセンブリを部分的に参照する必要があります。 少なくともアセンブリのテキスト名 (最も一般的なケース) を指定する必要がありますが、バージョン、公開キートークン、またはカルチャ (または4つすべての4つの組み合わせを含む) を含めることもできます。 **Partialname**は、呼び出しで指定された名前と一致する必要があります。 たとえば、 `"math"` 構成ファイルで**partialname**属性としてを指定し、コードでを呼び出すことはできません `Assembly.Load("math, Version=3.3.3.3")` 。  
   
 ## <a name="example"></a>例  
- 次の例では、`Assembly.Load("math")` 呼び出しを論理的に `Assembly.Load("math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral")`に変換します。  
+ 次の例では、呼び出しを論理的 `Assembly.Load("math")` にに変換し `Assembly.Load("math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral")` ます。  
   
 ```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
-         <qualifyAssembly partialName="math"   
+         <qualifyAssembly partialName="math"
                          fullName=  
 "math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral"/>  
       </assemblyBinding>  

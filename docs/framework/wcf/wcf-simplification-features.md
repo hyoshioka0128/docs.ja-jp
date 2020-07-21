@@ -2,12 +2,12 @@
 title: WCF の単純化機能
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: dd944ad2963e29fd3aa9254f3a37f2c2b98ce70d
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 28a05053fda8380b55a1a9eee20119b8c4cfccfe
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802389"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452657"
 ---
 # <a name="wcf-simplification-features"></a>WCF の単純化機能
 
@@ -78,7 +78,7 @@ WCF では、コントラクト優先の開発がサポートされるように�
 
 ## <a name="add-service-reference-from-a-portable-subset-project"></a>ポータブル サブセット プロジェクトからのサービス参照の追加
 
-ポータブルサブセットプロジェクトを使用すると、.NET アセンブリプログラマは、1つのソースツリーとビルドシステムを維持しながら、複数の .NET 実装 (デスクトップ、Silverlight、Windows Phone、XBOX) を引き続きサポートできます。 ポータブルサブセットプロジェクトは、.net の任意の実装で使用できる .net framework アセンブリである .NET ポータブルライブラリのみを参照します。 開発者から見れば、他の WCF クライアント アプリケーション内でサービス参照を追加するのと同じです。 詳細については、「[ポータブルサブセットプロジェクトでのサービス参照の追加](add-service-reference-in-a-portable-subset-project.md)」を参照してください。
+ポータブルサブセットプロジェクトを使用すると、.NET アセンブリプログラマは、1つのソースツリーとビルドシステムを維持しながら、複数の .NET 実装 (デスクトップ、Silverlight、Windows Phone、Xbox) を引き続きサポートできます。 ポータブルサブセットプロジェクトは、任意の .NET 実装で使用できるアセンブリである .NET ポータブルライブラリのみを参照します。 開発者から見れば、他の WCF クライアント アプリケーション内でサービス参照を追加するのと同じです。 詳細については、「[ポータブルサブセットプロジェクトでのサービス参照の追加](add-service-reference-in-a-portable-subset-project.md)」を参照してください。
 
 ## <a name="aspnet-compatibility-mode-default-changed"></a>ASP.NET 互換性モードの既定値の変更
 
@@ -94,7 +94,7 @@ WCF には ASP.NET 互換性モードが用意されています。これによ�
 
 次の表は、変更された設定と追加情報の場所を示しています。
 
-|property|On|新しい既定値|その他の情報|
+|プロパティ|On|新しい既定値|詳細|
 |--------------|--------|-----------------|----------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 秒|このプロパティは、TCP 接続が .NET フレーミングプロトコルを使用して自身を認証するために実行できる時間を決定します。 クライアントは、サーバーが認証を実行するための十分な情報を得る前に初期データを送信する必要があります。 このタイムアウトは意図的に ReceiveTimeout (10 分) よりも小さい値に設定されます。これにより、悪意のある認証されていないクライアントは、長時間にわたってサーバーへの接続を保持できません。 既定値は 30 秒です。 詳細については <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A> を参照してください。|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * プロセッサの数|このソケット レベルのプロパティは、キューに入れられる "受入保留中の" 要求の数を示します。 リッスン バックログ キューがいっぱいになると、新しいソケット要求は拒否されます。 詳細については <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A> を参照してください。|
@@ -109,7 +109,7 @@ WCF には ASP.NET 互換性モードが用意されています。これによ�
 
 <xref:System.Xml.XmlDictionaryReaderQuotas> には、メッセージの作成中にエンコーダーで使用されるメモリの量を制限する XML ディクショナリ リーダーの構成可能なクォータ値が格納されます。 これらのクォータは構成可能ですが、開発者がこのクォータを明示的に設定する必要性を低くするために既定値が変更されました。 `MaxReceivedMessageSize` クォータは変更されていないため、メモリ使用量を引き続き制限して、<xref:System.Xml.XmlDictionaryReaderQuotas> の複雑さを処理する必要性を回避できます。 次の表に、クォータ、クォータの新しい既定値、および各クォータの用途の簡単な説明を示します。
 
-|クォータの名前|既定値|説明|
+|クォータ名|Default value|説明|
 |----------------|-------------------|-----------------|
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>|Int32.MaxValue|許される最大配列長を取得または設定します。 このクォータは、XML リーダーが返すプリミティブ配列 (バイト配列など) の最大サイズを制限します。 このクォータは、XML リーダー自体のメモリ消費は制限しませんが、このリーダーを使用するコンポーネントのメモリ消費を制限します。 たとえば、 <xref:System.Runtime.Serialization.DataContractSerializer> が <xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>でセキュリティ保護されたリーダーを使用するときは、このクォータを超えるバイト配列を逆シリアル化することはありません。|
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>|Int32.MaxValue|1 回の読み取りで返すことができる最大バイト数を取得または設定します。 このクォータは、要素の開始タグとその属性を読み取るときに、1 回の読み取り操作で読み取るバイト数を制限します (ストリーミングを使用しない場合、要素名自体がクォータに照らし合わせてカウントされることはありません)。 XML 属性が多すぎると、属性名は一意かどうかを確認する必要があるため、処理時間が大幅に増加する可能性があります。 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> によってこの脅威を軽減できます。|

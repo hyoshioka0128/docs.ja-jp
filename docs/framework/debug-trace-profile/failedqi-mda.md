@@ -1,5 +1,6 @@
 ---
 title: failedQI MDA
+description: .NET の failedQI マネージデバッグアシスタント (MDA) を確認します。これは、のキャストまたはランタイム呼び出し可能ラッパー (RCW) からの COM 呼び出しが失敗したときにアクティブになる場合があります。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - failed QueryInterface
@@ -8,19 +9,17 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), failed QueryInterface
 - managed debugging assistants (MDAs), failed QueryInterface
 ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fec1bfb402f3b394ceb36590c3a880f82c5cb101
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2d7f14c67d47e58bcb88eab4621df63d7c598a7a
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052793"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415941"
 ---
 # <a name="failedqi-mda"></a>failedQI MDA
 `failedQI` マネージド デバッグ アシスタント (MDA: Managed Debugging Asssitant) は、ランタイムがランタイム呼び出し可能ラッパー (RCW: Runtime Callable Wrapper) の代わりに COM インターフェイス ポインター上の `QueryInterface` を呼び出し、その `QueryInterface` 呼び出しに失敗するとアクティブ化されます。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
  RCW でのキャストに失敗します。または、RCW からの COM 呼び出しが予期せず失敗します。  
   
 ## <a name="cause"></a>原因  

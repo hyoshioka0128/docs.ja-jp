@@ -1,5 +1,6 @@
 ---
 title: ランタイム呼び出し可能ラッパー
+description: CLR は、.NET クライアントと COM オブジェクトの間の呼び出しを管理するランタイム呼び出し可能ラッパーを介して COM オブジェクトを公開します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM interop, COM wrappers
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - runtime callable wrappers
 - interoperation with unmanaged code, COM wrappers
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
-ms.openlocfilehash: 70ed4176872e18ccafa00808630fcc51337b8479
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 6868c79791d960dd1ae55ab09d4ac3b40ce52655
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123210"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420488"
 ---
 # <a name="runtime-callable-wrapper"></a>ランタイム呼び出し可能ラッパー
 共通言語ランタイムは、ランタイム呼び出し可能ラッパー (RCW) と呼ばれるプロキシを介して COM オブジェクトを公開します。 .NET クライアントでは RCW が普通のオブジェクトとして示されますが、その主な機能は、.NET クライアントと COM オブジェクトの間で呼び出しをマーシャリングすることです。  
@@ -31,9 +32,9 @@ ms.locfileid: "73123210"
  標準ラッパーは、組み込みのマーシャリング規則を適用します。 たとえば、.NET クライアントが文字列型を引数の一部としてアンマネージ オブジェクトに渡すとき、ラッパーは文字列を BSTR 型に変換します。 COM オブジェクトが、マネージド呼び出し元に BSTR を返す場合、呼び出し元は文字列を受信します。 クライアントとサーバーはどちらも、それぞれが使い慣れているデータを送受信します。 その他の型は、変換する必要がありません。 たとえば、標準的なラッパーはマネージド コードとアンマネージド コードの間で、型を変換しないで 4 バイトの整数を常に受け渡しします。  
   
 ## <a name="marshaling-selected-interfaces"></a>選択したインターフェイスのマーシャリング  
- [ランタイム呼び出し可能ラッパー](runtime-callable-wrapper.md) (RCW) の主な目標は、マネージドとアンマネージドのプログラミング モデルの違いを見えなくすることです。 次の図に示すように、RCW は選択された COM インターフェイスを .NET クライアントに公開することなく使用して、シームレスな移行を実現します。 
+ [ランタイム呼び出し可能ラッパー](runtime-callable-wrapper.md) (RCW) の主な目標は、マネージドとアンマネージドのプログラミング モデルの違いを見えなくすることです。 次の図に示すように、RCW は選択された COM インターフェイスを .NET クライアントに公開することなく使用して、シームレスな移行を実現します。
 
- 次の図は、COM インターフェイスとランタイム呼び出し可能ラッパーを示しています。 
+ 次の図は、COM インターフェイスとランタイム呼び出し可能ラッパーを示しています。
   
  ![ランタイム呼び出し可能ラッパーとインターフェイスのスクリーンショット。](./media/runtime-callable-wrapper/runtime-callable-wrapper-interfaces.gif)  
   

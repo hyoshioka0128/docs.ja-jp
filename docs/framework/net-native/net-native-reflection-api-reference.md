@@ -3,10 +3,10 @@ title: .NET ネイティブ リフレクション API リファレンス
 ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
 ms.openlocfilehash: 01678ea6230a53416f213730ae6bb66e6bc057f8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128216"
 ---
 # <a name="net-native-reflection-api-reference"></a>.NET ネイティブ リフレクション API リファレンス
@@ -23,12 +23,12 @@ ms.locfileid: "73128216"
 - [MissingMetadataException トラブルシューティング ツール](https://dotnet.github.io/native/troubleshooter/method.html) (メソッドの場合)。  
   
 > [!NOTE]
-> このリファレンスでは、.NET ネイティブに固有の3つの例外の種類について説明します。 .NET Framework コアリフレクション API のリファレンスドキュメントについては、<xref:System.Reflection>、<xref:System.Reflection.Context>、および <xref:System.Reflection.Emit> の名前空間に関する説明を参照してください。 .NET Framework の主要な相互運用 API に関するリファレンス ドキュメントについては、「 <xref:System.Runtime.InteropServices>」を参照してください。  
+> このリファレンスでは、.NET ネイティブに固有の3つの例外の種類について説明します。 .NET Framework コアリフレクション API のリファレンスドキュメントについては、 <xref:System.Reflection> 、、およびの各 <xref:System.Reflection.Context> 名前空間を参照してください <xref:System.Reflection.Emit> 。 .NET Framework の主要な相互運用 API に関するリファレンス ドキュメントについては、「 <xref:System.Runtime.InteropServices>」を参照してください。  
   
 ## <a name="systemreflection-namespace"></a>System.Reflection 名前空間  
  <xref:System.Reflection> 名前空間には、.NET Framework でリフレクションに使用される主要な型が含まれています。 .NET ネイティブには、次の2つの新しい例外の種類も含まれています。  
   
-|インスタンス|説明|  
+|クラス|説明|  
 |-----------|-----------------|  
 |[MissingMetadataException](missingmetadataexception-class-net-native.md)|この例外は、存在しないメタデータを取得するためにリフレクションが使用された場合にスローされます。|  
 |[MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)|この例外は、型または型のメンバーのメタデータは使用可能だが、その実装が削除されている場合にスローされます。|  
@@ -38,7 +38,7 @@ ms.locfileid: "73128216"
 ## <a name="systemruntimecompilerservices-namespace"></a>System.Runtime.CompilerServices 名前空間  
  <xref:System.Runtime.CompilerServices> 名前空間には、言語コンパイラによって自動的にデザインされた型が含まれています。 .NET ネイティブには、新しい例外の種類も含まれています。  
   
-|インスタンス|説明|  
+|クラス|説明|  
 |-----------|-----------------|  
 |[MissingInteropDataException](missinginteropdataexception-class-net-native.md)|この例外は、手動マーシャリング メソッドが呼び出されたが、型のメタデータがスタティック分析でも、ランタイム ディレクティブ ファイルにも見つからない場合にスローされます。|  
   

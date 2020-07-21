@@ -14,14 +14,14 @@ helpviewer_keywords:
 ms.assetid: 21ceed9e-62b2-4024-b027-6d095109955a
 topic_type:
 - apiref
-ms.openlocfilehash: 9bcc03cc97a62b4c1cadacd7c0b2bc46b9fec470
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c50fe09648793ba7340960654811ff31187269d8
+ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134142"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82860785"
 ---
-# <a name="_efn_getmanagedexcepstack-function"></a>\_EFN\_GetManagedExcepStack 関数
+# <a name="_efn_getmanagedexcepstack-function"></a>\_EFN\_getmanagedexcepstack 関数
 指定したマネージド例外オブジェクトのアドレスに応じて、中に含まれているスタック トレースの文字列バージョンを返します。  
   
 ## <a name="syntax"></a>構文  
@@ -40,7 +40,7 @@ HRESULT _EFN_GetManagedExcepStack(
  からデバッグ中のクライアント。  
   
  `StackObjAddr`  
- から<xref:System.Exception>から派生したマネージオブジェクトポインター。  
+ からから<xref:System.Exception>派生したマネージオブジェクトポインター。  
   
  szStackString  
  入出力返された文字列。  
@@ -48,16 +48,16 @@ HRESULT _EFN_GetManagedExcepStack(
  `cbString`  
  入出力文字列バッファーで使用できる文字数。  
   
-## <a name="remarks"></a>Remarks  
- 現在コンテキスト内にあるスレッドにマネージコードがない場合、関数は、ファシリティ値が0xa0 で、エラーコードが0x1000 の HRESULT SOS_E_NOMANAGEDCODE を返します。  
+## <a name="remarks"></a>解説  
+ 現在コンテキスト内にあるスレッドにマネージコードがない場合、関数は、ファシリティ値が0xa0 でエラーコードが0x1000 の HRESULT SOS_E_NOMANAGEDCODE を返します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** SOS_Stacktrace  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [デバッグ グローバル静的関数](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+- [デバッグ グローバル静的関数](debugging-global-static-functions.md)

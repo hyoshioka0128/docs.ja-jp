@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC32126
 ms.assetid: 2325668b-e2ad-40ee-a1ec-30450236c20d
-ms.openlocfilehash: e55e561fa20a3740d352537958681b0a66fc381e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 61c6fe7c33b3292066e653304ded43a863413723
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592041"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397221"
 ---
 # <a name="methods-of-systemnullableof-t-cannot-be-used-as-operands-of-the-addressof-operator"></a>'System.Nullable(Of T)' のメソッドを 'AddressOf' 演算子のオペランドとして使用することはできません。
-ステートメントを使用して、`AddressOf`のプロシージャを表すオペランドと演算子、<xref:System.Nullable%601>構造体。  
+ステートメントで、<xref:System.Nullable%601> 構造のプロシージャを表すオペランドで、`AddressOf` 演算子を使用します。  
   
  **エラー ID:** BC32126  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- プロシージャ名に置き換えます、`AddressOf`句のメンバーでないオペランドとして<xref:System.Nullable%601>します。  
+- `AddressOf` 句のプロシージャ名を、<xref:System.Nullable%601> のメンバーではないオペランドに置き換えます。  
   
-- メソッドをラップするクラスを作成<xref:System.Nullable%601>を使用します。 次の例では、`NullableWrapper`クラスという名前の新しいメソッドを定義する`GetValueOrDefault`します。 この新しいメソッドのメンバーでないため、<xref:System.Nullable%601>に適用できる`nullInstance`、引数を形成する、null 許容型のインスタンス`AddressOf`します。  
+- 使用する <xref:System.Nullable%601> のメソッドをラップするクラスを記述します。 次の例では、`NullableWrapper` クラスで `GetValueOrDefault` という名前の新しいメソッドを定義しています。 この新しいメソッドは <xref:System.Nullable%601> のメンバーではないため、null 許容型のインスタンスである `nullInstance` に適用して `AddressOf` の引数を形成できます。  
   
 ```vb  
 Module Module1  
@@ -64,6 +64,6 @@ End Module
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Nullable%601>
-- [AddressOf 演算子](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [null 許容値型](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [Visual Basic におけるジェネリック型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [AddressOf 演算子](../operators/addressof-operator.md)
+- [null 許容値型](../../programming-guide/language-features/data-types/nullable-value-types.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)

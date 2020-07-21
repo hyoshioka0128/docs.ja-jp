@@ -2,12 +2,12 @@
 title: Azure クラウドおよび Windows コンテナーを使用して既存の .NET アプリケーションを最新化する (第 2 版)
 description: この電子書籍では、既存のアプリケーションを Azure クラウドおよびコンテナーへとリフト アンド シフトして最新化する方法について説明します。
 ms.date: 04/28/2018
-ms.openlocfilehash: 67b1c7743697832684e96225e3d365da625ce6a3
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 95a5870254481a4c6c9eed82b5be5e1eb10be346
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73089762"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987947"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Azure クラウドおよび Windows コンテナーを使用して既存の .NET アプリケーションを最新化する (第 2 版)
 
@@ -19,13 +19,13 @@ Divisions of Microsoft Corporation
 One Microsoft Way  
 Redmond, Washington 98052-6399  
 
-Copyright © 2018 by Microsoft Corporation  
+Copyright © 2020 by Microsoft Corporation  
 
 All rights reserved. 本書のいかなる部分も、書面による発行者の許可なしに、いかなる形式または方法によっても、複製することを禁じます。
 
 このブックは、電子書籍の形式で、<https://dot.net/architecture> などのマイクロソフトの複数のチャネルを介して利用できます。
 
-この書籍で電子メールに関連する質問がある場合は、[dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book) に電子メールをお送りください。
+この書籍に関する質問がある場合は、[dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book) にメールでお問い合わせください。
 
 本書は "現状有姿" で提供され、著者の見解と意見を表しています。 URL および他の参照されているインターネットの Web サイトをはじめ、本書に記載されている見解、意見、および情報は、通知なく変更されることがあります。
 
@@ -98,7 +98,7 @@ Web アプリケーションまたはサービスを最新化し、クラウド�
 | **長所**|
 | <li>再設計なし、新しいコードなし <li> 最小限の労力による迅速な移行 <li> Azure でサポートされる最小公倍数 <li> 基本的な可用性の保証 <li> クラウドへの移行後にする方が簡単な最新化 | <li> 再設計なし <li> 最小限のコード/構成の変更 <li> コンテナーに展開とリリースのための DevOps の機敏性の改善 <li> 密度の増大と展開コストの削減 <li> アプリとの依存関係の移植性 <li> ホスト ターゲットの柔軟性:PaaS アプローチまたは IaaS | <li> クラウドの設計者はクラウドから最高のメリットを得られますが、新しいコードが必要です。 <li> マイクロサービス クラウドネイティブ アプローチ <li> クラウドの回復性と高度なスケーラビリティを備えた最新のミッションクリティカル アプリケーション <li> フル マネージド サービス <li> スケールに最適化 <li> サブシステムによる自律的な機敏性に最適化 <li> 展開と DevOps 上の構築 |
 | **課題** |
-| <li> 運用費のシフトまたはデータセンターの閉鎖以外の小さなクラウドの価値 <li> ほとんど管理されていない:OS またはミドルウェアの修正プログラムはありません。Terraform、Spinnaker、Puppet などのインフラストラクチャ ソリューションを使用する場合があります | <li> コンテナー化は、開発者や IT 運用向けの学習曲線における追加の手順です <li> このアプローチでは、通常、DevOps と CI/CD パイプラインが "必須" です。 これが現在の組織のカルチャに存在していない場合は、追加の課題になる可能性があります。| <li> クラウド ネイティブ アプリとマイクロサービス アーキテクチャの再設計が必要です。また、通常、最新化を行うときに大幅なコードのリファクタリングまたは書き換えが必要になります (時間と予算の増加)。|
+| <li> 運用費のシフトまたはデータセンターの閉鎖以外の小さなクラウドの価値 <li> ほとんど管理されていない:OS またはミドルウェアの修正プログラムはありません。Terraform、Spinnaker、Puppet などのインフラストラクチャ ソリューションを使用する場合があります | <li> コンテナー化は、開発者や IT 運用向けの学習曲線における追加の手順です <li> このアプローチでは、通常、DevOps と CI/CD パイプラインが ’必須’ です。 これが現在の組織のカルチャに存在していない場合は、追加の課題になる可能性があります。| <li> クラウド ネイティブ アプリとマイクロサービス アーキテクチャの再設計が必要です。また、通常、最新化を行うときに大幅なコードのリファクタリングまたは書き換えが必要になります (時間と予算の増加)。|
 > **表 1-1** 既存の .NET アプリケーションとサービスの最新化パスのメリットと課題
 
 ### <a name="key-technologies-and-architectures-by-maturity-level"></a>成熟度レベル別の主要なテクノロジおよびアーキテクチャ
@@ -199,7 +199,7 @@ GitHub の [EShopModernizing](https://github.com/dotnet-architecture/eShopModern
 
 ## <a name="send-your-feedback"></a>フィードバックの送信
 
-このガイドは、既存の .NET Web アプリケーションの改善と最新化のオプションについて理解できるように設計されています。 ガイドと関連するサンプル アプリケーションは進化しています。 ご意見をお待ちしております。 このガイドを改善する方法についてご意見があれば、[dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book) に送信してください。
+このガイドは、既存の .NET Web アプリケーションの改善と最新化のオプションについて理解できるように設計されています。 ガイドと関連するサンプル アプリケーションは進化しています。 皆様からのご意見をお待ちしております。 このガイドを改善する方法についてご意見があれば、[dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book) に送信してください。
 
 >[!div class="step-by-step"]
 >[次へ](lift-and-shift-existing-apps-azure-iaas.md) <!-- Next Chapter -->

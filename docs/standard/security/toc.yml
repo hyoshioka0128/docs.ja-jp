@@ -19,8 +19,11 @@
         - name: 偽装と復帰
           href: impersonating-and-reverting.md
     - name: 暗号モデル
-      href: cryptography-model.md
       items:
+        - name: 概要
+          href: cryptography-model.md
+        - name: クロスプラットフォーム暗号化
+          href: cross-platform-cryptography.md
         - name: 暗号化サービス
           href: cryptographic-services.md
         - name: 暗号化と復号化のためのキーの生成

@@ -1,5 +1,6 @@
 ---
 title: Windows Presentation Foundation
+description: Windows で基幹業務デスクトップ アプリケーションを構築するための Windows Presentation Foundation (WPF) の統合プログラミング モデルについて説明します。
 ms.date: 01/25/2018
 applies_to:
 - Windows 10
@@ -14,16 +15,16 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-ms.openlocfilehash: 69cdae86a295793c8da6b7f663b22846ae2c32b2
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
-ms.translationtype: MT
+ms.openlocfilehash: 078e747ab9237324aba8168b543b2347e845de81
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919365"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853404"
 ---
 # <a name="windows-presentation-foundation"></a>Windows Presentation Foundation
 
-Windows Presentation Foundation (WPF) は、Windows で基幹業務デスクトップアプリケーションを構築するための統一されたプログラミングモデルを開発者に提供します。
+Windows Presentation Foundation (WPF) とは、開発者が Windows 上で基幹業務デスクトップ アプリケーションを構築するための統一されたプログラミング モデルです。
 
 - [WPF の概要](introduction-to-wpf.md)
 - [はじめに](getting-started/index.md)
@@ -32,6 +33,6 @@ Windows Presentation Foundation (WPF) は、Windows で基幹業務デスクト�
 - [コントロール](controls/index.md)
 - [データ](data/index.md)
 - [グラフィックスとマルチメディア](graphics-multimedia/index.md)
-- [Security](security-wpf.md)
+- [セキュリティ](security-wpf.md)
 - [WPF のサンプル](wpf-samples.md)
 - [クラス ライブラリ](class-library-wpf.md)

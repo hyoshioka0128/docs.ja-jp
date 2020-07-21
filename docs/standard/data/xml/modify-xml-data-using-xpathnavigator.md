@@ -7,21 +7,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ba6393d19909d8be762ee38b4c925987528d6304
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3b64bc8666274798ebaefc87ef3883fcec1ef6b1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967351"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288837"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>XpathNavigator による XML データの変更
 <xref:System.Xml.XPath.XPathNavigator> クラスは、XML ドキュメント内のノードを変更するためのメソッドのセットを提供します。 これらのメソッドを使用するには、<xref:System.Xml.XPath.XPathNavigator> オブジェクトが編集可能である必要があります。つまり、その <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> プロパティを `true` にする必要があります。  
   
  XML ドキュメントを編集できる <xref:System.Xml.XPath.XPathNavigator> オブジェクトは、<xref:System.Xml.XmlDocument.CreateNavigator%2A> クラスの <xref:System.Xml.XmlDocument> メソッドによって作成されます。 <xref:System.Xml.XPath.XPathNavigator> クラスによって作成される <xref:System.Xml.XPath.XPathDocument> オブジェクトは読み取り専用で、<xref:System.Xml.XPath.XPathNavigator> オブジェクトによって作成される <xref:System.Xml.XPath.XPathDocument> オブジェクトの編集メソッドを使用しようとすると、<xref:System.NotSupportedException> が発生します。  
   
- 編集可能な <xref:System.Xml.XPath.XPathNavigator> オブジェクトの作成方法については、「[XPathDocument および XmlDocument を使用した XML データの読み取り](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)」を参照してください。  
+ 編集可能な <xref:System.Xml.XPath.XPathNavigator> オブジェクトの作成方法については、「[XPathDocument および XmlDocument を使用した XML データの読み取り](reading-xml-data-using-xpathdocument-and-xmldocument.md)」を参照してください。  
   
 ## <a name="modifying-nodes"></a>ノードの変更  
  ノードの値を簡単に変更するには、<xref:System.Xml.XPath.XPathNavigator.SetValue%2A> と <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> クラスの <xref:System.Xml.XPath.XPathNavigator> メソッドを使用します。  
@@ -41,7 +39,7 @@ ms.locfileid: "69967351"
 > [!NOTE]
 > <xref:System.Xml.XPath.XPathNodeType.Namespace> ノードまたは <xref:System.Xml.XPath.XPathNodeType.Root> ノードの編集はサポートされません。  
   
- <xref:System.Xml.XPath.XPathNavigator> クラスは、ノードの挿入および削除に使用されるメソッドのセットも提供しています。 XML ドキュメントのノードの挿入と削除の詳細については、「[XPathNavigator による XML データの挿入](../../../../docs/standard/data/xml/insert-xml-data-using-xpathnavigator.md)」と「[XPathNavigator による XML データの削除](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)」のトピックを参照してください。  
+ <xref:System.Xml.XPath.XPathNavigator> クラスは、ノードの挿入および削除に使用されるメソッドのセットも提供しています。 XML ドキュメントのノードの挿入と削除の詳細については、「[XPathNavigator による XML データの挿入](insert-xml-data-using-xpathnavigator.md)」と「[XPathNavigator による XML データの削除](remove-xml-data-using-xpathnavigator.md)」のトピックを参照してください。  
   
 ### <a name="modifying-untyped-values"></a>型指定されていない値の変更  
  <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> メソッドは、パラメーターとして渡された型指定されていない `string` 値を挿入するだけです。このパラメーターは、<xref:System.Xml.XPath.XPathNavigator> オブジェクトの現在位置にあるノードの値です。 値に型は設定されず、スキーマ情報が使用可能な場合でも、ノードの型に対して新しい値が有効どうかを検証せずに挿入されます。  
@@ -115,7 +113,7 @@ navigator.SetTypedValue(DateTime.Now);
   
  要素の有効性がその子の要素および属性の有効性に依存することを考えると、要素が以前有効だった場合、どちらを変更しても要素の有効性が変わる結果になります。 具体的には、要素の子要素または属性が挿入、更新または削除されると、その要素の有効性は不明になります。 これは、要素の <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> プロパティの <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> プロパティが <xref:System.Xml.Schema.XmlSchemaValidity.NotKnown> に設定されることによって表されます。 さらに、要素の親要素 (およびその親、そのまた親と続く) の有効性も不明になるため、この効果は、XML ドキュメント全体で再帰的に上方向にカスケードされます。  
   
- スキーマ検証および <xref:System.Xml.XPath.XPathNavigator> クラスの詳細については、「[XPathNavigator を使用したスキーマ検証](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)」を参照してください。  
+ スキーマ検証および <xref:System.Xml.XPath.XPathNavigator> クラスの詳細については、「[XPathNavigator を使用したスキーマ検証](schema-validation-using-xpathnavigator.md)」を参照してください。  
   
 ### <a name="modifying-attributes"></a>属性の変更  
  <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> および <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> メソッドは、型指定されていない属性ノードと型指定された属性ノード、および「ノードの変更」に記載されているその他のノード型の変更に使用できます。  
@@ -227,7 +225,7 @@ Console.WriteLine(navigator.OuterXml);
 ```xml  
 <root xmlns:a="http://www.contoso.com">  
     <parent a:parent-id="1234" xmlns:a="http://www.contoso.com/parent-id">  
-        <a:child xmlns:a="http://www.contoso.com/">  
+        <a:child xmlns:a="http://www.contoso.com/" />  
     </parent>  
 </root>  
 ```  
@@ -246,13 +244,13 @@ Console.WriteLine(navigator.OuterXml);
 > `xsi:nil` 属性が `false` に設定された要素のコンテンツが削除されても、その属性の値は `true` に変更されません。  
   
 ## <a name="saving-an-xml-document"></a>XML ドキュメントの保存  
- ここに記載されている編集メソッドによる <xref:System.Xml.XmlDocument> オブジェクトに対する変更の保存は、<xref:System.Xml.XmlDocument> クラスのメソッドを使用して実行されます。 <xref:System.Xml.XmlDocument> オブジェクトに対する変更の保存に関する詳細については、「[ドキュメントの保存と書き込み](../../../../docs/standard/data/xml/saving-and-writing-a-document.md)」を参照してください。  
+ ここに記載されている編集メソッドによる <xref:System.Xml.XmlDocument> オブジェクトに対する変更の保存は、<xref:System.Xml.XmlDocument> クラスのメソッドを使用して実行されます。 <xref:System.Xml.XmlDocument> オブジェクトに対する変更の保存に関する詳細については、「[ドキュメントの保存と書き込み](saving-and-writing-a-document.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [XPathNavigator による XML データの挿入](../../../../docs/standard/data/xml/insert-xml-data-using-xpathnavigator.md)
-- [XPathNavigator による XML データの削除](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)
+- [XPath データ モデルを使用した XML データの処理](process-xml-data-using-the-xpath-data-model.md)
+- [XPathNavigator による XML データの挿入](insert-xml-data-using-xpathnavigator.md)
+- [XPathNavigator による XML データの削除](remove-xml-data-using-xpathnavigator.md)

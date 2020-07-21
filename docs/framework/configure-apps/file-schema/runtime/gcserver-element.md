@@ -9,19 +9,19 @@ helpviewer_keywords:
 - <gcServer> element
 ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 ms.openlocfilehash: 8eab5e36bab90510aff4f1a3e15328197ac59ed7
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73968944"
 ---
-# <a name="gcserver-element"></a>\<gcServer > 要素
+# <a name="gcserver-element"></a>\<gcServer> 要素
 
 共通言語ランタイムがサーバーのガベージ コレクションを実行するかどうかを指定します。
 
 [\<configuration>](../configuration-element.md)\
-&nbsp;&nbsp;[\<ランタイム >](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<gcServer >
+&nbsp;&nbsp;[\<runtime>](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<gcServer>
 
 ## <a name="syntax"></a>構文
 
@@ -42,7 +42,7 @@ ms.locfileid: "73968944"
 
 #### <a name="enabled-attribute"></a>enabled 属性
 
-|[値]|説明|
+|値|Description|
 |-----------|-----------------|
 |`false`|サーバーのガベージ コレクションを実行しません。 既定値です。|
 |`true`|サーバーのガベージ コレクションを実行します。|
@@ -53,12 +53,12 @@ ms.locfileid: "73968944"
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
 共通言語ランタイム (CLR) は、2 種類のガベージ コレクションをサポートしています。1 つはワークステーション ガベージ コレクションで、すべてのシステムで使用できるものです。もう 1 つはサーバー ガベージ コレクションで、マルチプロセッサ システムで使用できるものです。 CLR が実行するガベージコレクションの種類を制御するには、 **gcServer**要素を使用します。 <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType> プロパティを使用して、サーバー ガベージ コレクションが有効かどうかを決定します。
 
@@ -67,7 +67,7 @@ ms.locfileid: "73968944"
 この要素は、アプリケーション構成ファイルでのみ使用できます。要素がマシン構成ファイルにある場合には無視されます。
 
 > [!NOTE]
-> .NET Framework 4 以前のバージョンでは、サーバー ガベージ コレクションを有効にすると同時実行ガベージ コレクションが使用できません。 .NET Framework 4.5 以降では、サーバーのガベージコレクションは同時に実行されます。 非同時サーバーガベージコレクションを使用するには、 **gcServer**要素を `true` に設定し、 [gcConcurrent 要素](gcconcurrent-element.md)を `false`に設定します。
+> .NET Framework 4 以前のバージョンでは、サーバー ガベージ コレクションを有効にすると同時実行ガベージ コレクションが使用できません。 .NET Framework 4.5 以降では、サーバーのガベージコレクションは同時に実行されます。 非同時サーバーガベージコレクションを使用するには、 **gcServer**要素をに設定し、 `true` [gcConcurrent 要素](gcconcurrent-element.md)をに設定し `false` ます。
 
 .NET Framework 4.6.2 以降では、次の要素を使用してサーバー GC を構成することもできます。
 

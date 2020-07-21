@@ -1,13 +1,14 @@
 ---
 title: カスタム アクティビティの設計と実装
+description: この記事では、複合アクティビティを作成するか、新しいアクティビティの種類を作成することによって、Workflow Foundation でカスタムアクティビティを作成するためのリソースを提供します。
 ms.date: 03/30/2017
 ms.assetid: 4e30e63d-6e33-4842-a7a4-ce807cef1fad
-ms.openlocfilehash: b0d04572c65fd4e3e0ae96241217c9ae9aa0e2c5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9c184bff9518bb5581f3bf4cd408db224736192b
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915362"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419994"
 ---
 # <a name="designing-and-implementing-custom-activities"></a>カスタム アクティビティの設計と実装
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] のカスタム アクティビティを作成するには、システム標準アクティビティを複合アクティビティにアセンブルするか、<xref:System.Activities.CodeActivity>、<xref:System.Activities.AsyncCodeActivity>、または <xref:System.Activities.NativeActivity> から派生する新しい型を作成します。 ここでは、いずれかのメソッドを使用してカスタム アクティビティを作成する方法について説明します。  

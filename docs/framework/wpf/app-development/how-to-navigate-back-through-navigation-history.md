@@ -10,23 +10,23 @@ helpviewer_keywords:
 ms.assetid: 9343234b-d864-441d-b8a7-d895cba80a87
 ms.openlocfilehash: 53b32e145390d7052262042c7a793699c163b373
 ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/22/2019
 ms.locfileid: "69969350"
 ---
 # <a name="how-to-navigate-back-through-navigation-history"></a>方法: 移動履歴を遡る
-この例は、"戻る" ナビゲーション履歴のエントリに移動する方法を示しています。  
+この例では、ナビゲーション履歴の後方のエントリに移動する方法を示します。  
   
 ## <a name="example"></a>例  
- 、、または Internet Explorer <xref:System.Windows.Navigation.NavigationWindow> <xref:System.Windows.Controls.Frame>を使用して<xref:System.Windows.Navigation.NavigationService>、でホストされているコンテンツから実行されているコードは、一度に1つずつナビゲーション履歴に戻ることができます。  
+ <xref:System.Windows.Navigation.NavigationWindow>、<xref:System.Windows.Navigation.NavigationService> を使用する <xref:System.Windows.Controls.Frame>、または Internet Explorer でホストされているコンテンツから実行されているコードでは、一度に 1 エントリずつ、ナビゲーション履歴内を後方に移動できます。  
   
- 1つ前のエントリに移動するには、最初に、 **GoBack**メソッドを呼び出して、 **CanGoBack**プロパティを調べて、1つ前のエントリに戻る前に、戻るナビゲーション履歴にエントリがあることを確認する必要があります。 これを次の例に示します。  
+ **GoBack** メソッドを呼び出すことによって 1 つ後方のエントリに移動する前に、**CanGoBack** プロパティを調べて、ナビゲーション履歴の後方にエントリがあることを確認する必要があります。 これを次の例に示します。  
   
  [!code-csharp[HOWTONavigationSnippets#NavigateBackCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/HomePage.xaml.cs#navigatebackcode)]
  [!code-vb[HOWTONavigationSnippets#NavigateBackCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/homepage.xaml.vb#navigatebackcode)]  
   
- **CanGoBack**と**GoBack**は、、 <xref:System.Windows.Navigation.NavigationWindow> <xref:System.Windows.Controls.Frame>、および<xref:System.Windows.Navigation.NavigationService>によって実装されます。  
+ **CanGoBack** と **GoBack** は、<xref:System.Windows.Navigation.NavigationWindow>、<xref:System.Windows.Controls.Frame>、<xref:System.Windows.Navigation.NavigationService> によって実装されています。  
   
 > [!NOTE]
-> **GoBack**を呼び出し、[戻る] ナビゲーション履歴<xref:System.InvalidOperationException>にエントリがない場合は、が発生します。
+> **GoBack** を呼び出して、ナビゲーション履歴の後方にエントリがない場合は、<xref:System.InvalidOperationException> が発生します。

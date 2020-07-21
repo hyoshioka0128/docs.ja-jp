@@ -1,19 +1,19 @@
 ---
-title: 軽減策:新しい 64 ビット JIT コンパイラ
+title: '軽減策: 新しい 64 ビット JIT コンパイラ'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT compiler, 64-bit
 - JIT compilation, 64-bit
 - RyuJIT compiler
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
-ms.openlocfilehash: dd8c2c6b3cfa919970f68f2faae2044568f6c9ac
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 883aaf032bde632b08f965d3450cfbea4feb8e65
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73457918"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181252"
 ---
-# <a name="mitigation-new-64-bit-jit-compiler"></a>軽減策:新しい 64 ビット JIT コンパイラ
+# <a name="mitigation-new-64-bit-jit-compiler"></a>軽減策: 新しい 64 ビット JIT コンパイラ
 .NET Framework 4.6 以降では、ランタイムに Just-In-Time コンパイル用の新しい 64 ビット JIT コンパイラが含まれています。 この変更は、32 ビット JIT コンパイラでのコンパイルには影響しません。  
   
 ## <a name="unexpected-behavior-or-exceptions"></a>予期しない動作または例外  
@@ -36,7 +36,7 @@ ms.locfileid: "73457918"
   
 - 特定の条件下では、`if` ステートメントを使用して、`try` ブロックの開始前と `try` ブロックの終了時の条件をテストし、同じ条件を `catch` または `finally` ブロックで評価する場合、新しい 64 ビット JIT コンパイラが、コードの最適化の際に `catch` または `finally` ブロックから `if` 条件を削除します。 その結果、`catch` または `finally` ブロックの `if` ステートメント内のコードは無条件で実行されます。  
   
-<a name="General"></a>   
+<a name="General"></a>
 ## <a name="mitigation-of-known-issues"></a>既知の問題の軽減策  
  上記の問題が発生する場合は、次のいずれかの方法で解決できます。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "73457918"
   
 - 古い 64 ビット JIT コンパイラでコンパイルします。 この方法の詳細については、「[その他の問題の軽減策](#Other)」を参照してください。  
   
-<a name="Other"></a>   
+<a name="Other"></a>
 ## <a name="mitigation-of-other-issues"></a>その他の問題の軽減策  
  古い 64 ビット コンパイラと新しい 64 ビット JIT コンパイラでコンパイルされたコードの動作、またはアプリのデバッグ バージョンとリリース バージョン (両方とも新しい 64 ビット JIT コンパイラでコンパイル) の動作に違いが見られる場合は、次のようにして、古い 64 ビット JIT コンパイラでアプリをコンパイルすることができます。  
   
@@ -67,7 +67,7 @@ ms.locfileid: "73457918"
   
  [Microsoft Connect](https://connect.microsoft.com/VisualStudio) でバグを報告し、問題を弊社に知らせることもできます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [アプリケーションの互換性](application-compatibility.md)
 - [\<useLegacyJit> 要素](../configure-apps/file-schema/runtime/uselegacyjit-element.md)

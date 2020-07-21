@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 189c36be-028c-4fba-a002-5edfb8fcd07f
 topic_type:
 - apiref
-ms.openlocfilehash: 8cebb66ecf298eaaca0e7af23a9b8c6a2932c23f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b89e968e9b12943c8192af3b280f8bd321a02110
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131829"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378792"
 ---
 # <a name="icordebugstackwalknext-method"></a>ICorDebugStackWalk::Next メソッド
-このオブジェクトを次のフレームに[移動します](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)。  
+このオブジェクトを次のフレームに[移動します](icordebugstackwalk-interface.md)。  
   
 ## <a name="syntax"></a>構文  
   
@@ -37,26 +37,26 @@ HRESULT Next();
 |HRESULT|説明|  
 |-------------|-----------------|  
 |S_OK|ランタイムが次のフレームに正常にアンワインドされました (「解説」を参照してください)。|  
-|E_FAIL|`ICorDebugStackWalk` オブジェクトを拡張できませんでした。|  
+|E_FAIL|`ICorDebugStackWalk`オブジェクトを拡張できませんでした。|  
 |CORDBG_S_AT_END_OF_STACK|このアンワインドの結果、スタックの末尾に到達しました。|  
 |CORDBG_E_PAST_END_OF_STACK|フレームポインターは既にスタックの末尾にあります。そのため、追加のフレームにアクセスすることはできません。|  
   
 ## <a name="exceptions"></a>例外  
   
 ## <a name="remarks"></a>Remarks  
- `Next` メソッドは、ランタイムが現在のフレームをアンワインドできる場合にのみ、`ICorDebugStackWalk` オブジェクトを呼び出し元のフレームに進めます。 それ以外の場合、オブジェクトは、ランタイムがアンワインドできる次のフレームに進みます。  
+ メソッドは、 `Next` `ICorDebugStackWalk` ランタイムが現在のフレームをアンワインドできる場合にのみ、オブジェクトを呼び出し元のフレームに進めます。 それ以外の場合、オブジェクトは、ランタイムがアンワインドできる次のフレームに進みます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugStackWalk インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [デバッグ](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugStackWalk インターフェイス](icordebugstackwalk-interface.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)
+- [デバッグ](index.md)

@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: bfdc127f-8d94-4566-8bef-f583c6ae7398
 author: BrucePerlerMS
 ms.openlocfilehash: 853dc9817d080e59ac7a792576eda862bd0b1f1d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70252025"
 ---
-# <a name="cookiehandler"></a>\<cookieHandler >
-(SAM) が<xref:System.IdentityModel.Services.SessionAuthenticationModule> cookie の読み取りと書き込みに使用するを構成します。<xref:System.IdentityModel.Services.CookieHandler>  
+# \<cookieHandler>
+<xref:System.IdentityModel.Services.CookieHandler> <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) が cookie の読み取りと書き込みに使用するを構成します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<> のシステム**](system-identitymodel-services.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<federationConfiguration >** ](federationconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<cookieHandler >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel.services>**](system-identitymodel-services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<federationConfiguration>**](federationconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<cookieHandler>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -46,39 +46,39 @@ ms.locfileid: "70252025"
 |---------------|-----------------|  
 |name|書き込まれたすべてのクッキーの基本名を指定します。 既定値は "FedAuth" です。|  
 |path|書き込まれたすべてのクッキーのパス値を指定します。 既定値は "HttpRuntime. AppDomainAppVirtualPath" です。|  
-|モード|SAM によっ<xref:System.IdentityModel.Services.CookieHandlerMode>て使用されるクッキーハンドラーの種類を指定する値の1つ。 次の値を使用できます。<br /><br /> -"Default"-"Chunked" と同じです。<br />-"Chunked" — <xref:System.IdentityModel.Services.ChunkedCookieHandler>クラスのインスタンスを使用します。 この cookie ハンドラーによって、個々の cookie が設定された最大サイズを超えないようにします。 これを実現するには、1つの論理クッキーをネットワーク上の多数の cookie に "チャンキング" します。<br />-"Custom" —は、から<xref:System.IdentityModel.Services.CookieHandler>派生したカスタムクラスのインスタンスを使用します。 派生クラスは、 `<customCookieHandler>`子要素によって参照されます。<br /><br /> 既定値は "Default" です。|  
-|persistentSessionLifetime|永続的なセッションの有効期間を指定します。 ゼロの場合は、一時的なセッションが常に使用されます。 既定値は "0:0:0" で、一時的なセッションを指定します。 最大値は "365:0:0" で、これは365日のセッションを指定します。 値は、次の制限に従って指定する`<xs:pattern value="([0-9.]+:){0,1}([0-9]+:){0,1}[0-9.]+" />`必要があります。つまり、左端の値には日を指定し、中央の値 (存在する場合) は時間を指定し、右端の値 (存在する場合) は分を指定します。|  
+|mode|<xref:System.IdentityModel.Services.CookieHandlerMode>SAM によって使用されるクッキーハンドラーの種類を指定する値の1つ。 次の値を使用できます。<br /><br /> -"Default"-"Chunked" と同じです。<br />-"Chunked" —クラスのインスタンスを使用 <xref:System.IdentityModel.Services.ChunkedCookieHandler> します。 この cookie ハンドラーによって、個々の cookie が設定された最大サイズを超えないようにします。 これを実現するには、1つの論理クッキーをネットワーク上の多数の cookie に "チャンキング" します。<br />-"Custom" —は、から派生したカスタムクラスのインスタンスを使用 <xref:System.IdentityModel.Services.CookieHandler> します。 派生クラスは、子要素によって参照され `<customCookieHandler>` ます。<br /><br /> 既定値は "Default" です。|  
+|persistentSessionLifetime|永続的なセッションの有効期間を指定します。 ゼロの場合は、一時的なセッションが常に使用されます。 既定値は "0:0:0" で、一時的なセッションを指定します。 最大値は "365:0:0" で、これは365日のセッションを指定します。 値は、次の制限に従って指定する必要があります。つまり、左端の値には日を指定し、中央の値 `<xs:pattern value="([0-9.]+:){0,1}([0-9]+:){0,1}[0-9.]+" />` (存在する場合) は時間を指定し、右端の値 (存在する場合) は分を指定します。|  
 |requireSsl|書き込まれたすべてのクッキーに対して "Secure" フラグを出力するかどうかを指定します。 この値が設定されている場合、サインインセッションの cookie は HTTPS 経由でのみ使用できます。 既定値は "true" です。|  
 |hideFromScript|書き込まれたクッキーに対して "HttpOnly" フラグを出力するかどうかを制御します。 一部の web ブラウザーでは、クライアント側のスクリプトに cookie 値へのアクセスを保持することで、このフラグが適用されます。 既定値は "true" です。|  
-|ドメイン|書き込まれたすべてのクッキーのドメイン値。 既定値は "" です。|  
+|domain|書き込まれたすべてのクッキーのドメイン値。 既定値は "" です。|  
   
 ### <a name="child-elements"></a>子要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
-|[\<chunkedCookieHandler>](chunkedcookiehandler.md)|を<xref:System.IdentityModel.Services.ChunkedCookieHandler>構成します。 この要素は、 `mode` `<cookieHandler>`要素の属性が "Default" または "Chunked" の場合にのみ存在する可能性があります。|  
-|[\<customCookieHandler>](customcookiehandler.md)|カスタムクッキーハンドラーの種類を設定します。 要素の属性が "Custom" `mode`の場合、この要素は存在する必要があります。 `<cookieHandler>` `mode`属性の他の値には存在できません。 カスタム型は、 <xref:System.IdentityModel.Services.CookieHandler>クラスから派生する必要があります。|  
+|[\<chunkedCookieHandler>](chunkedcookiehandler.md)|を構成 <xref:System.IdentityModel.Services.ChunkedCookieHandler> します。 この要素は `mode` 、要素の属性 `<cookieHandler>` が "Default" または "Chunked" の場合にのみ存在する可能性があります。|  
+|[\<customCookieHandler>](customcookiehandler.md)|カスタムクッキーハンドラーの種類を設定します。 `mode`要素の属性 `<cookieHandler>` が "Custom" の場合、この要素は存在する必要があります。 属性の他の値には存在できません `mode` 。 カスタム型は、クラスから派生する必要があり <xref:System.IdentityModel.Services.CookieHandler> ます。|  
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
-|[\<federationConfiguration>](federationconfiguration.md)|<xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (Wsfam) <xref:System.IdentityModel.Services.SessionAuthenticationModule>と (SAM) を構成する設定が含まれています。|  
+|[\<federationConfiguration>](federationconfiguration.md)|<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>(Wsfam) と (SAM) を構成する設定が含まれてい <xref:System.IdentityModel.Services.SessionAuthenticationModule> ます。|  
   
-## <a name="remarks"></a>Remarks  
- は<xref:System.IdentityModel.Services.CookieHandler> 、HTTP プロトコルレベルでの未加工の cookie の読み取りと書き込みを行います。 <xref:System.IdentityModel.Services.ChunkedCookieHandler>または<xref:System.IdentityModel.Services.CookieHandler>クラスから派生したカスタム cookie ハンドラーを構成できます。  
+## <a name="remarks"></a>解説  
+ <xref:System.IdentityModel.Services.CookieHandler>は、HTTP プロトコルレベルでの未加工の cookie の読み取りと書き込みを行います。 <xref:System.IdentityModel.Services.ChunkedCookieHandler>またはクラスから派生したカスタム cookie ハンドラーを構成でき <xref:System.IdentityModel.Services.CookieHandler> ます。  
   
- チャンク cookie ハンドラーを構成するには、mode 属性を "Chunked" または "Default" に設定します。 既定のチャンクサイズは2000バイトですが、必要に応じて、子要素を`<chunkedCookieHandler>`含めることによって別のチャンクサイズを指定することもできます。  
+ チャンク cookie ハンドラーを構成するには、mode 属性を "Chunked" または "Default" に設定します。 既定のチャンクサイズは2000バイトですが、必要に応じて、子要素を含めることによって別のチャンクサイズを指定することもでき `<chunkedCookieHandler>` ます。  
   
- カスタム cookie ハンドラーを構成するには、mode 属性を "Custom" に設定します。 また、カスタムハンドラーの`<customCookieHandler>`型を参照する子要素も指定する必要があります。  
+ カスタム cookie ハンドラーを構成するには、mode 属性を "Custom" に設定します。 また、 `<customCookieHandler>` カスタムハンドラーの型を参照する子要素も指定する必要があります。  
   
- 要素は、 <xref:System.IdentityModel.Services.CookieHandlerElement>クラスによって表されます。 `<cookieHandler>` 構成で指定されたクッキーハンドラーは、 <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A> <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティに設定され<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>ているオブジェクトのプロパティから取得できます。  
+ `<cookieHandler>`要素は、クラスによって表され <xref:System.IdentityModel.Services.CookieHandlerElement> ます。 構成で指定されたクッキーハンドラーは、プロパティに設定されている <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A> オブジェクトのプロパティから取得でき <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> ます。  
   
 ## <a name="example"></a>例  
- 次の XML は、 `<cookieHandler>`要素を示しています。 この例では、 `mode`属性が指定されていないため、既定の cookie ハンドラーが SAM によって使用されます。 これは<xref:System.IdentityModel.Services.ChunkedCookieHandler>クラスのインスタンスです。 `<chunkedCookieHandler>`子要素が指定されていないため、既定のチャンクサイズが使用されます。 属性が設定`requireSsl` `false`されているため、HTTPS は必要ありません。  
+ 次の XML は、要素を示して `<cookieHandler>` います。 この例では、 `mode` 属性が指定されていないため、既定の cookie ハンドラーが SAM によって使用されます。 これはクラスのインスタンスです <xref:System.IdentityModel.Services.ChunkedCookieHandler> 。 `<chunkedCookieHandler>`子要素が指定されていないため、既定のチャンクサイズが使用されます。 属性が設定されているため、HTTPS は必要ありません `requireSsl` `false` 。  
   
 > [!WARNING]
-> この例では、セッション cookie を書き込むために HTTPS は必要ありません。 これは、 `<cookieHandler>`要素`requireSsl`の属性がに`false`設定されているためです。 ほとんどの運用環境では、セキュリティ上のリスクが生じる可能性があるため、この設定は推奨されません。  
+> この例では、セッション cookie を書き込むために HTTPS は必要ありません。 これは、 `requireSsl` 要素の属性 `<cookieHandler>` がに設定されているためです `false` 。 ほとんどの運用環境では、セキュリティ上のリスクが生じる可能性があるため、この設定は推奨されません。  
   
 ```xml  
 <cookieHandler requireSsl="false" />  

@@ -1,5 +1,5 @@
 ---
-title: '方法 : 省略可能なパラメーターを受け取るプロシージャをオーバーロードする'
+title: '方法: 省略可能なパラメーターを受け取るプロシージャをオーバーロードする'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], parameters
@@ -10,33 +10,33 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-ms.openlocfilehash: 4d31980e4b968cff274091ba4f307dffddab1100
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 9ae6818b1e03ccd00ed554e98690e02ffa45de99
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350864"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387843"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>方法: 省略可能なパラメーターを受け取るプロシージャをオーバーロードする (Visual Basic)
-プロシージャに[省略可能](../../../../visual-basic/language-reference/modifiers/optional.md)なパラメーターが1つ以上ある場合、その暗黙的なオーバーロードのいずれかに一致するオーバーロードされたバージョンを定義することはできません。 詳細については、「[プロシージャのオーバーロードに関する考慮事項](./considerations-in-overloading-procedures.md)」の「省略可能なパラメーターの暗黙のオーバーロード」を参照してください。  
+プロシージャに 1 つ以上の [Optional](../../../language-reference/modifiers/optional.md) パラメーターがある場合、暗黙的なオーバーロードのいずれかに一致するオーバーロードされたバージョンを定義することはできません。 詳細については、「[プロシージャのオーバーロードに関する注意事項](./considerations-in-overloading-procedures.md)」の「Optional パラメーターの暗黙的なオーバーロード」をご覧ください。  
   
-## <a name="one-optional-parameter"></a>1つの省略可能なパラメーター  
+## <a name="one-optional-parameter"></a>1 つの省略可能なパラメーター  
   
-#### <a name="to-overload-a-procedure-that-takes-one-optional-parameter"></a>省略可能なパラメーターを1つ受け取るプロシージャをオーバーロードするには  
+#### <a name="to-overload-a-procedure-that-takes-one-optional-parameter"></a>1 つの省略可能なパラメーターを受け取るプロシージャをオーバーロードするには  
   
-1. パラメーターリストに省略可能なパラメーターを含む `Sub` または `Function` 宣言ステートメントを記述します。 このオーバーロードされたバージョンでは、`Optional` キーワードを使用しないでください。  
+1. パラメーター リストに省略可能なパラメーターが含まれた、`Sub` または `Function` 宣言ステートメントを記述します。 このオーバーロードされたバージョンでは、`Optional` キーワードは使用しないでください。  
   
-2. `Sub` または `Function` キーワードの前に[Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)キーワードを付けます。  
+2. `Sub` または `Function` キーワードの前に [Overloads](../../../language-reference/modifiers/overloads.md) キーワードを指定します。  
   
-3. 呼び出し元のコードがオプションの引数を提供するときに実行する必要があるプロシージャコードを記述します。  
+3. 呼び出し元のコードで省略可能な引数が指定されたときに実行する必要があるプロシージャ コードを記述します。  
   
-4. 必要に応じて、`End Sub` または `End Function` ステートメントを使用してプロシージャを終了します。  
+4. プロシージャを、必要に応じて `End Sub` または `End Function` ステートメントで終了します。  
   
-5. パラメーターリストに省略可能なパラメーターが含まれない点を除いて、最初の宣言と同じである2番目の宣言ステートメントを記述します。  
+5. パラメーター リストに省略可能なパラメーターが含まれていない点を除いて、最初の宣言と同じである 2 番目の宣言ステートメントを記述します。  
   
-6. 呼び出し元のコードで省略可能な引数が指定されていない場合に実行するプロシージャコードを記述します。 必要に応じて、`End Sub` または `End Function` ステートメントを使用してプロシージャを終了します。  
+6. 呼び出し元のコードで省略可能な引数が指定されないときに実行する必要があるプロシージャ コードを記述します。 プロシージャを、必要に応じて `End Sub` または `End Function` ステートメントで終了します。  
   
-     次の例では、省略可能なパラメーターを使用して定義されたプロシージャ、2つのオーバーロードされたプロシージャのセット、および無効なオーバーロードバージョンと有効なオーバーロードされたバージョンの両方の最後の例を示します。  
+     次の例は、省略可能なパラメーターで定義されたプロシージャ、2 つのオーバーロードされたプロシージャの同等のセット、無効および有効なオーバーロードされたバージョンの例を示しています。  
   
      [!code-vb[VbVbcnProcedures#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#59)]  
   
@@ -45,23 +45,23 @@ ms.locfileid: "74350864"
      [!code-vb[VbVbcnProcedures#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#61)]  
   
 ## <a name="multiple-optional-parameters"></a>複数の省略可能なパラメーター  
- 省略可能なパラメーターを複数持つプロシージャの場合は、通常、3つ以上のオーバーロードされたバージョンが必要です。 たとえば、2つの省略可能なパラメーターがあり、呼び出し元のコードが互いに独立してそれぞれを指定または省略できる場合は、指定された引数の組み合わせごとに1つずつ、4つのオーバーロードされたバージョンが必要です。  
+ 複数の省略可能なパラメーターがあるプロシージャでは、通常、3 つ以上のオーバーロードされたバージョンが必要です。 たとえば、2 つの省略可能なパラメーターがあり、呼び出し元のコードが各パラメーターを相互に独立して指定または省略できる場合、4 つのオーバーロードされたバージョン (指定された引数の可能な組み合わせごとに 1 つ) が必要です。  
   
- 省略可能なパラメーターの数が増えるにつれて、オーバーロードの複雑さが増します。 指定された引数の組み合わせが受け入れられない場合は、N 個の省略可能なパラメーターについては、2 ^ N のオーバーロードされたバージョンが必要です。 プロシージャの性質によっては、オーバーロードされたすべてのバージョンを定義する余分な作業をロジックが明確にすることがわかります。  
+ 省略可能なパラメーターの数が増えると、オーバーロードの複雑さが増します。 指定された引数の一部の組み合わせが許容されない場合を除き、N 個の省略可能なパラメーターには 2 ^ N 個のオーバーロードされたバージョンが必要となります。 プロシージャの性質によっては、オーバーロードされたバージョンをすべて定義することによってロジックが明確になることから、余分な労力をかけるだけの価値がある場合もあります。  
   
 #### <a name="to-overload-a-procedure-that-takes-more-than-one-optional-parameter"></a>複数の省略可能なパラメーターを受け取るプロシージャをオーバーロードするには  
   
-1. 指定された省略可能な引数の組み合わせを、プロシージャのロジックに対して使用できるかどうかを判断します。 1つの省略可能なパラメーターが別のパラメーターに依存している場合、許容されない組み合わせが発生する可能性が たとえば、1つのパラメーターが人名を受け取り、別のパラメーターがその年齢を受け入れる場合、age を指定し、名前を省略する引数の組み合わせは使用できません。  
+1. プロシージャのロジックで許容される、指定された省略可能な引数の組み合わせを特定します。 ある省略可能なパラメーターが別の省略可能なパラメーターに依存する場合、許容されない組み合わせが生じる可能性があります。 たとえば、あるパラメーターが個人の名前を受け入れ、別のパラメーターがその個人の年齢を受け入れる場合、年齢を指定し、名前を省略する引数の組み合わせは許容されません。  
   
-2. 指定された省略可能な引数の組み合わせを使用できる場合は、対応するパラメーターリストを定義する `Sub` または `Function` 宣言ステートメントを記述します。 `Optional` キーワードは使用しないでください。  
+2. 指定された省略可能な引数の許容される組み合わせごとに、対応するパラメーター リストを定義する、`Sub` または `Function` 宣言ステートメントを記述します。 `Optional` キーワードは使用しないでください。  
   
-3. 各宣言で、`Sub` または `Function` キーワードの前に[Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)キーワードを使用します。  
+3. 各宣言で、`Sub` または `Function` キーワードの前に [Overloads](../../../language-reference/modifiers/overloads.md) キーワードを指定します。  
   
-4. 各宣言の後に、呼び出し元のコードがその宣言のパラメーターリストに対応する引数リストを提供するときに実行する必要があるプロシージャコードを記述します。  
+4. 各宣言の後に、呼び出し元のコードでその宣言のパラメーター リストに対応する引数リストが指定されたときに実行する必要があるプロシージャ コードを記述します。  
   
-5. 必要に応じて、`End Sub` または `End Function` ステートメントを使用して各プロシージャを終了します。  
+5. 各プロシージャを、必要に応じて `End Sub` または `End Function` ステートメントで終了します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [手順](./index.md)
 - [プロシージャのパラメーターと引数](./procedure-parameters-and-arguments.md)
@@ -69,7 +69,7 @@ ms.locfileid: "74350864"
 - [パラメーター配列](./parameter-arrays.md)
 - [プロシージャのオーバーロード](./procedure-overloading.md)
 - [プロシージャのトラブルシューティング](./troubleshooting-procedures.md)
-- [方法 : プロシージャの複数のバージョンを定義する](./how-to-define-multiple-versions-of-a-procedure.md)
-- [方法 : オーバーロードされたプロシージャを呼び出す](./how-to-call-an-overloaded-procedure.md)
-- [方法 : 不特定数のパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [方法: プロシージャの複数のバージョンを定義する](./how-to-define-multiple-versions-of-a-procedure.md)
+- [方法: オーバーロードされたプロシージャを呼び出す](./how-to-call-an-overloaded-procedure.md)
+- [方法: 不特定数のパラメーターを受け取るプロシージャをオーバーロードする](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [オーバーロードの解決](./overload-resolution.md)

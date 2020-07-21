@@ -8,30 +8,30 @@ helpviewer_keywords:
 - signature confirmation
 - WCF, security
 ms.assetid: 2424c137-c7c2-4aa9-8d5d-a066e12fefda
-ms.openlocfilehash: 6f44ae5e3615df7f529a25f4097ef042feba544d
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 9423922753efee7aac32e430f97307c715e43464
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425439"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586924"
 ---
 # <a name="how-to-set-up-a-signature-confirmation"></a>方法: 署名確認を設定する
 
-*署名確認*は送信者の元のメッセージへの応答で受信した応答が生成されたことを確認するメッセージのイニシエーターのメカニズムです。 署名確認は、WS-Security 1.1 仕様で定義されています。 エンドポイントが WS-Security 1.0 をサポートしている場合は、署名確認を使用できません。
+*署名確認*は、受信した応答が送信者の元のメッセージに応答して生成されたことをメッセージ発信側が確認するためのメカニズムです。 署名確認は、WS-Security 1.1 仕様で定義されています。 エンドポイントが WS-Security 1.0 をサポートしている場合は、署名確認を使用できません。
 
-以下の手順では、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> を使用して署名確認を有効にする方法を示します。 <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> でも同じ手順を使用できます。 基本的な手順に基づいています[方法。SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)します。
+以下の手順では、<xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> を使用して署名確認を有効にする方法を示します。 <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> でも同じ手順を使用できます。 この手順は、 [「方法: カスタムバインディングを使用してカスタムバインディングを作成](how-to-create-a-custom-binding-using-the-securitybindingelement.md)する」に記載されている基本的な手順に基づいています。
 
 ### <a name="to-enable-signature-confirmation-in-code"></a>コードを使用して署名確認を有効にするには
 
-1.   <xref:System.ServiceModel.Channels.BindingElementCollection> クラスのインスタンスを作成します。
+1. <xref:System.ServiceModel.Channels.BindingElementCollection> クラスのインスタンスを作成します。
 
-2. インスタンスを作成、<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>クラス。
+2. クラスのインスタンスを作成 <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> します。
 
 3. <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> を `true` に設定します。
 
 4. バインディング コレクションにセキュリティ要素を追加します。
 
-5. 指定されている、カスタム バインドを作成[方法。SecurityBindingElement を使用してカスタム バインディングを作成する](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)します。
+5. 「[方法: カスタムバインディングを使用してカスタムバインディングを作成](how-to-create-a-custom-binding-using-the-securitybindingelement.md)する」で指定されているように、カスタムバインディングを作成します。
 
 ### <a name="to-enable-signature-confirmation-in-configuration"></a>構成を使用して署名確認を有効にするには
 
@@ -43,9 +43,9 @@ ms.locfileid: "67425439"
 
 4. `<security>` 子要素を追加し、`requireSignatureConfirmation` 属性を `true` に設定します。
 
-5. 省略可能です。 ブートス トラップ中に署名確認を有効にするには追加、 [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)子要素とセット、`requireSignatureConfirmation`属性を`true`します。
+5. 任意。 ブートストラップ中に署名確認を有効にするには、 [\<secureConversationBootstrap>](../../configure-apps/file-schema/wcf/secureconversationbootstrap.md) 子要素を追加し、 `requireSignatureConfirmation` 属性をに設定し `true` ます。
 
-6. 適切なトランスポート要素を追加します。 次の例では、追加、 [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md):
+6. 適切なトランスポート要素を追加します。 次の例では、を追加し [\<httpTransport>](../../configure-apps/file-schema/wcf/httptransport.md) ます。
 
     ```xml
     <bindings>
@@ -73,5 +73,5 @@ ms.locfileid: "67425439"
 - <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A>
-- [方法: SecurityBindingElement を使用してカスタム バインディングを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [方法: 指定した認証モード用の SecurityBindingElement を作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+- [方法: SecurityBindingElement を使用してカスタム バインドを作成する](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [方法: 指定した認証モード用の SecurityBindingElement を作成する](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

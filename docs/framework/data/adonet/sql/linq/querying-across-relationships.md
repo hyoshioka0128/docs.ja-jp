@@ -7,7 +7,7 @@ dev_langs:
 ms.assetid: 297878d0-685b-4c01-b2e0-9d731b7322bc
 ms.openlocfilehash: 1675e4c6a610373e1c981b383ae0229739d96dd0
 ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/07/2019
 ms.locfileid: "72003319"
@@ -20,20 +20,20 @@ ms.locfileid: "72003319"
  [!code-csharp[DLinqQueryConcepts#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#3)]
  [!code-vb[DLinqQueryConcepts#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#3)]  
   
- リレーションシップのプロパティが存在しない場合は、次のコードのように、SQL クエリの場合と同様に、*結合*として手動で作成する必要があります。  
+ リレーションシップのプロパティが存在しない場合は、SQL クエリの場合と同じように "*結合*" として、手動で記述する必要があります。次にコードの例を示します。  
   
  [!code-csharp[DLinqQueryConcepts#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#4)]
  [!code-vb[DLinqQueryConcepts#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#4)]  
   
- *リレーションシップ*プロパティを使用して、この特定のリレーションシップを1回だけ定義できます。 こうすると、使いやすいドット構文を使用できるようになります。 しかし、それだけがリレーションシップ プロパティの利点ではありません。なぜなら、通常はドメイン固有のオブジェクト モデルは階層構造またはグラフとして定義されるからです。 プログラムで使用するオブジェクトには他のオブジェクトへの参照が含まれます。 このオブジェクト間リレーションシップがデータベースの外部キー型リレーションシップに相当するのは、単なる幸運な偶然です。 プロパティへのアクセスは、結合を記述するための便利な方法となります。  
+ "*リレーションシップ*" のプロパティを使用すると、このようなリレーションシップを一度で定義できます。 こうすると、使いやすいドット構文を使用できるようになります。 しかし、それだけがリレーションシップ プロパティの利点ではありません。なぜなら、通常はドメイン固有のオブジェクト モデルは階層構造またはグラフとして定義されるからです。 プログラムで使用するオブジェクトには他のオブジェクトへの参照が含まれます。 このオブジェクト間リレーションシップがデータベースの外部キー型リレーションシップに相当するのは、単なる幸運な偶然です。 プロパティへのアクセスは、結合を記述するための便利な方法となります。  
   
  この点では、リレーションシップ プロパティは、クエリそのものよりもクエリの結果でより重要です。 クエリによって特定の顧客に関するデータが取得された後で、クラス定義ではその顧客の注文が存在することが示されます。 つまり、特定の顧客の `Orders` プロパティにその顧客のすべての注文が含まれると見なすことができます。 実際には、これはクラスをこのように定義することにより宣言したコントラクトです。 クエリによって注文が要求されなかった場合でも、ここに注文が含まれていると見なすことができます。 オブジェクト モデルに対して期待されるのは、それがデータベースがメモリ内に拡張されたものであり、関連オブジェクトがすぐに使用できる状態にある、という錯覚を維持することです。  
   
  リレーションシップが得られたので、クラスに定義されたリレーションシップ プロパティを参照してクエリを作成できます。 これらのリレーションシップ参照は、データベース内の外部キー リレーションシップに対応します。 これらのリレーションシップを使用する操作は、SQL で同等の複雑な結合として変換されます。 <xref:System.Data.Linq.Mapping.AssociationAttribute> 属性を使用してリレーションシップを定義している限りは、明示的な結合を [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] で記述する必要はありません。  
   
- この錯覚を維持するために、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] は*遅延読み込み*と呼ばれる手法を実装しています。 詳細については、「[遅延読み込みと即時読み込み](deferred-versus-immediate-loading.md)」を参照してください。  
+ この錯覚を維持するために、[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] には "*遅延読み込み*" と呼ばれる機能が実装されています。 詳細については、「[遅延読み込みと即時読み込み](deferred-versus-immediate-loading.md)」を参照してください。  
   
- 次の SQL クエリを検討して、`CustomerID`-`OrderID` のペアの一覧を射影します。  
+ `CustomerID`-`OrderID` ペアのリストを投影する次のような SQL クエリがあるとします。  
   
 ```sql
 SELECT t0.CustomerID, t1.OrderID  
@@ -42,16 +42,16 @@ FROM   Customers AS t0 INNER JOIN
 WHERE  (t0.City = @p0)  
 ```  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] を使用して同じ結果を得るには、`Orders` クラスに既に存在する `Customer` プロパティ参照を使用します。 `Orders` リファレンスは、次のコードのように、クエリを実行し、`OrderID` のペア -`CustomerID`を射影するために必要な情報を提供します。  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] を使用して同じ結果を得るには、`Orders` クラスに既に存在する `Customer` プロパティ参照を使用します。 次のコードに示すとおり、`Orders` の参照からは、クエリを実行し、`CustomerID`-`OrderID` ペアを投影するために必要な情報が提供されます。  
   
  [!code-csharp[DLinqQueryConcepts#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#5)]
  [!code-vb[DLinqQueryConcepts#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#5)]  
   
- 逆の操作も可能です。 つまり、`Orders` にクエリを実行し、その `Customer` リレーションシップ参照を使用して、関連付けられた `Customer` オブジェクトに関する情報にアクセスできます。 次のコードでは、前と同じように `OrderID` ペア -同じ `CustomerID`を射影しますが、今回は `Customers`ではなく `Orders` に対してクエリを実行します。  
+ 逆の操作も可能です。 つまり、`Orders` にクエリを実行し、その `Customer` リレーションシップ参照を使用して、関連付けられた `Customer` オブジェクトに関する情報にアクセスできます。 次のコードでは、前の例と同じ `CustomerID`-`OrderID` ペアが投影されますが、ここでは `Customers` ではなく `Orders` のクエリを実行しています。  
   
  [!code-csharp[DLinqQueryConcepts#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#6)]
  [!code-vb[DLinqQueryConcepts#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#6)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [クエリの概念](query-concepts.md)

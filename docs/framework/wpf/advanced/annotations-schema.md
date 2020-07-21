@@ -8,7 +8,7 @@ helpviewer_keywords:
 ms.assetid: a893442b-e220-4603-bf6a-b01fefcb4b37
 ms.openlocfilehash: 1d11b0bb2086bb449c0ffc0ff89430a55096a28d
 ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/20/2019
 ms.locfileid: "68364346"
@@ -17,23 +17,23 @@ ms.locfileid: "68364346"
 
 このトピックでは、Microsoft Annotations Framework でユーザー注釈データの保存と取得に使用される XML スキーマ定義 (XSD) について説明します。
 
-注釈フレームワークは、内部表現から XML 形式に注釈データをシリアル化します。  この変換に使用される XML 形式は、Annotations Framework XSD スキーマによって記述されています。  このスキーマは実装非依存の XML 形式を定義します。実装非依存の XML 形式を利用し、アプリケーション間で注釈データを交換できます。
+Annotations Framework では、注釈データが内部表現から XML 形式にシリアル化されます。  この変換に使用される XML 形式は Annotations Framework XSD スキーマで表現されます。  このスキーマは実装非依存の XML 形式を定義します。実装非依存の XML 形式を利用し、アプリケーション間で注釈データを交換できます。
 
-注釈フレームワークの XML スキーマ定義は、2つのサブスキーマで構成されます。
+Annotations Framework XML スキーマ定義は 2 つのサブスキーマで構成されています。
 
 - 注釈 XML コア スキーマ (コア スキーマ)。
 
 - 注釈 XML 基本スキーマ (基本スキーマ)。
 
-コアスキーマは、の<xref:System.Windows.Annotations.Annotation>プライマリ XML 構造を定義します。  コアスキーマで定義されている XML 要素の大部分は、 <xref:System.Windows.Annotations>名前空間の型に対応しています。  コア スキーマは 3 つの拡張ポイントを公開します。そのポイントでアプリケーションは独自の XML データを追加できます。  これらの拡張ポイント<xref:System.Windows.Annotations.Annotation.Authors%2A>に<xref:System.Windows.Annotations.ContentLocatorPart>は、、、および "Content" が含まれます。  (コンテンツ要素は<xref:System.Xml.XmlElement>リストの形式で提供されます)。
+コア スキーマでは、<xref:System.Windows.Annotations.Annotation> のプライマリ XML 構造が定義されています。  コア スキーマに定義されている XML 要素の多くが <xref:System.Windows.Annotations> 名前空間の型に対応します。  コア スキーマは 3 つの拡張ポイントを公開します。そのポイントでアプリケーションは独自の XML データを追加できます。  これらの拡張ポイントには、<xref:System.Windows.Annotations.Annotation.Authors%2A>、<xref:System.Windows.Annotations.ContentLocatorPart>、および "Content" が含まれます。  (Content 要素は <xref:System.Xml.XmlElement> リストの形式で提供されます。)
 
-このトピックで説明する基本スキーマでは<xref:System.Windows.Annotations.Annotation.Authors%2A>、初期 Windows Presentation Foundation (WPF) リリースに含まれる、 <xref:System.Windows.Annotations.ContentLocatorPart>、およびコンテンツタイプの拡張機能を定義します。
+このトピックで説明する基本スキーマでは、<xref:System.Windows.Annotations.Annotation.Authors%2A>、<xref:System.Windows.Annotations.ContentLocatorPart>、および初回の Windows Presentation Foundation (WPF) リリースに付属の Content 型の拡張が定義されています。
 
 <a name="CoreSchema"></a>
 
 ## <a name="annotations-xml-core-schema"></a>注釈 XML コア スキーマ
 
-注釈 xml コアスキーマは、オブジェクトの格納<xref:System.Windows.Annotations.Annotation>に使用される xml 構造を定義します。
+注釈 XML コア スキーマでは、<xref:System.Windows.Annotations.Annotation> オブジェクトの保存に使用される XML 構造が定義されています。
 
 ```xml
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"
@@ -187,7 +187,7 @@ ms.locfileid: "68364346"
 
 ## <a name="annotations-xml-base-schema"></a>注釈 XML 基本スキーマ
 
-基本スキーマでは<xref:System.Windows.Annotations.Annotation.Authors%2A>、コアスキーマに定義されている3つの抽象要素 (、 <xref:System.Windows.Annotations.ContentLocatorPart>、 <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>) の XML 構造を定義します。
+基本スキーマでは、コア スキーマで定義された 3 つの抽象要素 (<xref:System.Windows.Annotations.Annotation.Authors%2A>、<xref:System.Windows.Annotations.ContentLocatorPart>、および <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>) の XML 構造が定義されています。
 
 ```xml
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"
@@ -500,7 +500,7 @@ ms.locfileid: "68364346"
 
 ## <a name="sample-xml-produced-by-annotations-xmlstreamstore"></a>注釈 XmlStreamStore で作成されたサンプル XML
 
-次の XML は、注釈<xref:System.Windows.Annotations.Storage.XmlStreamStore>の出力と、3つの注釈 (強調表示、テキスト付箋、インクスティックメモ) を含むサンプルファイルの編成を示しています。
+続く XML では、注釈 <xref:System.Windows.Annotations.Storage.XmlStreamStore> の出力と、3 つの注釈、すなわち、蛍光ペン、テキスト付箋、インク付箋を含むサンプル ファイルの編成が表示されます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

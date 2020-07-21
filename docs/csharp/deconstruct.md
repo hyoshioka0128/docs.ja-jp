@@ -2,14 +2,14 @@
 title: タプルとその他の型の分解
 description: タプルとその他の型を分解する方法について説明します。
 ms.technology: csharp-fundamentals
-ms.date: 07/18/2016
+ms.date: 11/23/2017
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: 23d193faf9702628698fe558f6667aeb130e8916
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8defd75a7cdff3490d2b0a6097ec2a898576e113
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100661"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174167"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>タプルとその他の型の分解
 
@@ -106,4 +106,4 @@ C# には、非タプル型を分解するためのサポートが組み込ま�
 ## <a name="see-also"></a>関連項目
 
 - [破棄](discards.md)
-- [タプル](tuples.md)
+- [タプル型](language-reference/builtin-types/value-tuples.md)

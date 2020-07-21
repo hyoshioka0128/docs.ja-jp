@@ -1,18 +1,17 @@
 ---
 title: CLR ETW プロバイダー
+description: 2つの共通言語ランタイム (CLR) event tracing for Windows (ETW) プロバイダー (runtimne プロバイダーとランダウンプロバイダー) の詳細を確認します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ETW, CLR providers
 - CLR ETW providers
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 93a0271c521de6e390e323d92e93a5e7bf94444f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 9f86e8334482880c4f7cb23ec93a3c826c083389
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046736"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309652"
 ---
 # <a name="clr-etw-providers"></a>CLR ETW プロバイダー
 共通言語ランタイム (CLR: Common Language Runtime) には、ランタイム プロバイダーとランダウン プロバイダーという 2 つのプロバイダーがあります。  
@@ -37,7 +36,7 @@ ms.locfileid: "71046736"
   
  通常は、プロセスが開始される前に ETW のログを有効にし、プロセスの終了後にログを無効にしますが、 プロセスの実行中に ETW ログを有効にする場合もあります。その場合は、そのプロセスについて追加の情報が必要です。 たとえば、シンボルを解決するには、ログを有効にする前に既に読み込まれていたメソッドのメソッド イベントを記録する必要があります。  
   
- `DCStart` イベントと `DCEnd` イベントは、データの収集が開始されたときと停止されたときのプロセスの状態をキャプチャします (状態とは、既に Just-In-Time コンパイルされているメソッド、既に読み込まれているアセンブリなど、高レベルの情報を指します)。これらの 2 つのイベントを使用すると、そのプロセスで既に行われたことに関する情報 (どのメソッドが Just-In-Time コンパイルされたかなど) を取得できます。  
+ `DCStart` イベントと `DCEnd` イベントは、データの収集が開始されたときと停止されたときのプロセスの状態をキャプチャします  (状態とは、既に just-in-time (JIT) コンパイルされたメソッドや読み込まれたアセンブリなど、高レベルの情報を指します)。この2つのイベントでは、プロセスで既に発生した内容に関する情報を提供できます。たとえば、どのメソッドが JIT コンパイルされたかなどです。  
   
  ランダウン プロバイダーで発生するイベントは、名前に `DC`、`DCStart`、`DCEnd`、または `DCInit` を含むイベントだけです。 また、これらのイベントはランダウン プロバイダーでしか発生しません。  
   
@@ -61,7 +60,7 @@ ms.locfileid: "71046736"
 1. CLR ランタイム プロバイダーを使用して ETW のログの記録を有効にします。  
   
     ```console
-    xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:0x5 -f clr1.etl      
+    xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:0x5 -f clr1.etl
     ```  
   
      ログは、clr1.etl ファイルに保存されます。  
@@ -69,7 +68,7 @@ ms.locfileid: "71046736"
 2. プロセスの実行中にプロファイリングを停止するには、ランダウン プロバイダーを開始して `DCEnd` イベントをキャプチャします。  
   
     ```console
-    xperf -start clrRundown -on A669021C-C450-4609-A035-5AF59AF4DF18:0xB8:0x5 -f clr2.etl      
+    xperf -start clrRundown -on A669021C-C450-4609-A035-5AF59AF4DF18:0xB8:0x5 -f clr2.etl
     ```  
   
      これにより、`DCEnd` イベントの収集を有効にして、ランダウン セッションを開始できます。 すべてのイベントが収集されるまでには 30 ～ 60 秒かかります。 ログは、clr1.et2 ファイルに保存されます。  
@@ -77,7 +76,7 @@ ms.locfileid: "71046736"
 3. すべての ETW プロファイリングを停止します。  
   
     ```console
-    xperf -stop clrRundown   
+    xperf -stop clrRundown
     xperf -stop clr  
     ```  
   

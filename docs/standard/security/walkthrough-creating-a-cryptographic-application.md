@@ -1,5 +1,6 @@
 ---
 title: 'チュートリアル: 暗号化アプリケーションの作成'
+description: 暗号化アプリケーションの作成について説明します。 Windows フォームアプリケーションでコンテンツを暗号化および復号化する方法について説明します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,14 +11,12 @@ helpviewer_keywords:
 - cryptography [NET Framework], cryptographic application example
 - cryptography [NET Framework], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ee6dafa8578c59d23908bf0e184091bb4ceaeb45
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 72116227fbec2435d428ad2bbdb4cc74e5c3663f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895287"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602181"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>チュートリアル: 暗号化アプリケーションの作成
 このチュートリアルでは、コンテンツの暗号化および復号化の方法を示します。 コード例は、Windows フォーム アプリケーション向けに設計されています。 このアプリケーションは、スマート カードを使用するなどの実際のシナリオは示していません。 代わりに、暗号化と復号化の基礎を示しています。  
@@ -37,7 +36,7 @@ ms.locfileid: "70895287"
 |----------|-----------------|  
 |Windows フォーム アプリケーションの作成|アプリケーションを実行するために必要なコントロールの一覧を表示します。|  
 |グローバル オブジェクトの宣言|文字列のパスの変数、<xref:System.Security.Cryptography.CspParameters>、および <xref:System.Security.Cryptography.RSACryptoServiceProvider> を宣言して、<xref:System.Windows.Forms.Form> クラスのグローバル コンテキストを指定します。|  
-|非対称キーの作成|非対称の公開キーと秘密キーの値のペアを作成し、これにキー コンテナー名を割り当てます。|  
+|非対称キーを作成する|非対称の公開キーと秘密キーの値のペアを作成し、これにキー コンテナー名を割り当てます。|  
 |ファイルの暗号化|暗号化するファイルを選択するダイアログ ボックスを表示し、ファイルを暗号化します。|  
 |ファイルの復号化|復号化する暗号化されたファイルを選択するダイアログ ボックスを表示し、ファイルを復号化します。|  
 |秘密キーの取得|キー コンテナー名を使用して、完全なキーのペアを取得します。|  
@@ -53,7 +52,7 @@ ms.locfileid: "70895287"
 ## <a name="creating-a-windows-forms-application"></a>Windows フォーム アプリケーションの作成  
  このチュートリアルにあるほとんどのコード例は、ボタン コントロールのイベント ハンドラーとして設計されています。 次の表は、サンプル アプリケーションに必要なコントロールと、コード例に一致する必要な名前を示しています。  
   
-|コントロール|Name|テキストのプロパティ (必要に応じて)|  
+|コントロール|名前|テキストのプロパティ (必要に応じて)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|ファイルの暗号化|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|ファイルの復号化|  
@@ -82,7 +81,7 @@ ms.locfileid: "70895287"
  [!code-vb[CryptoWalkThru#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#2)]  
   
 ## <a name="encrypting-a-file"></a>ファイルの暗号化  
- このタスクには、 `Encrypt File`ボタン (`buttonEncryptFile_Click`) のイベントハンドラーメソッドと`EncryptFile`メソッドの2つのメソッドが含まれます。 最初のメソッドは、ファイルを選択するためのダイアログ ボックスを表示し、暗号化を実行する 2 番目のメソッドにファイル名を渡します。  
+ このタスクには、ボタン () のイベントハンドラーメソッド `Encrypt File` とメソッドの2つのメソッドが含ま `buttonEncryptFile_Click` れます。 `EncryptFile` 最初のメソッドは、ファイルを選択するためのダイアログ ボックスを表示し、暗号化を実行する 2 番目のメソッドにファイル名を渡します。  
   
  暗号化されたコンテンツ、キー、および IV は、すべて 1 つの <xref:System.IO.FileStream> に保存されます。これを暗号化パッケージといいます。  
   
@@ -182,9 +181,9 @@ ms.locfileid: "70895287"
   
 #### <a name="to-create-keys-encrypt-and-decrypt"></a>キーの作成、暗号化、および復号化を行うには  
   
-1. [`Create Keys`] ボタンをクリックします。 ラベルはキー名を表示し、完全なキーのペアであることを示します。  
+1. `Create Keys` ボタンをクリックします。 ラベルはキー名を表示し、完全なキーのペアであることを示します。  
   
-2. [`Export Public Key`] ボタンをクリックします。 公開キーのパラメーターのエクスポートにより現在のキーは変更されないことに注意してください。  
+2. `Export Public Key` ボタンをクリックします。 公開キーのパラメーターのエクスポートにより現在のキーは変更されないことに注意してください。  
   
 3. [`Encrypt File`] ボタンをクリックして、ファイルを選択します。  
   
@@ -196,7 +195,7 @@ ms.locfileid: "70895287"
   
 #### <a name="to-encrypt-using-the-public-key"></a>公開キーを使用して暗号化するには  
   
-1. [`Import Public Key`] ボタンをクリックします。 ラベルはキー名を表示し、公開キーのみであることを示します。  
+1. `Import Public Key` ボタンをクリックします。 ラベルはキー名を表示し、公開キーのみであることを示します。  
   
 2. [`Encrypt File`] ボタンをクリックして、ファイルを選択します。  
   
@@ -206,10 +205,10 @@ ms.locfileid: "70895287"
   
 #### <a name="to-decrypt-using-the-private-key"></a>秘密キーを使用して復号化するには  
   
-1. [`Get Private Key`] ボタンをクリックします。 ラベルはキー名を表示し、完全なキーのペアであるかどうかを示します。  
+1. `Get Private Key` ボタンをクリックします。 ラベルはキー名を表示し、完全なキーのペアであるかどうかを示します。  
   
 2. [`Decrypt File`] ボタンをクリックし、暗号化したファイルを選択します。 復号化するための完全なキーのペアがあるため、これは成功します。  
   
 ## <a name="see-also"></a>関連項目
 
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [暗号化サービス](cryptographic-services.md)

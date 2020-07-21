@@ -2,18 +2,18 @@
 title: ルーティング サービス
 ms.date: 03/30/2017
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
-ms.openlocfilehash: 3119f32d57cff01b81e4a8f4a3f3a571013300ea
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 833c824e17d70a982a2f7bb13fe388b9b2b0dec1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662785"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590450"
 ---
 # <a name="routing-service"></a>ルーティング サービス
 
 ルーティング サービスは、メッセージ ルーターとして機能する、汎用の SOAP 中継局です。 ルーティング サービスの主要な機能は、メッセージのコンテンツに基づいてメッセージをルーティングする機能です。これにより、メッセージのヘッダーまたはメッセージ本文内に含まれる値に基づいて、メッセージをクライアント エンドポイントに転送できます。
 
-<xref:System.ServiceModel.Routing.RoutingService>で Windows Communication Foundation (WCF) サービスとして実装されますが、<xref:System.ServiceModel.Routing>名前空間。 ルーティング サービスは、メッセージを受信し、その内容に基づいて各メッセージを 1 つ以上のクライアント エンドポイントにルーティングする、1 つ以上のサービス エンドポイントを公開します。 このサービスには、次の機能が用意されています。
+は、 <xref:System.ServiceModel.Routing.RoutingService> 名前空間に Windows Communication Foundation (WCF) サービスとして実装され <xref:System.ServiceModel.Routing> ます。 ルーティング サービスは、メッセージを受信し、その内容に基づいて各メッセージを 1 つ以上のクライアント エンドポイントにルーティングする、1 つ以上のサービス エンドポイントを公開します。 このサービスには、次の機能が用意されています。
 
 - コンテンツ ベースのルーティング
 
@@ -35,16 +35,16 @@ ms.locfileid: "67662785"
 
 上記の機能の 1 つ以上を実現する中間サービスを作成することもできますが、このような実装では、特定のシナリオまたはソリューションに制限され、新しいアプリケーションにすぐに適用できません。
 
-ルーティング サービスには、ジェネリック、動的に構成できる、プラグ可能な SOAP 中継ぎ局は、WCF サービスおよびチャネル モデルと互換性が、コンテンツ ベースの SOAP ベースのメッセージのルーティングを実行することができます。
+ルーティングサービスは、WCF サービスおよびチャネルモデルと互換性があり、SOAP ベースのメッセージのコンテンツベースのルーティングを実行できる、動的に構成可能な汎用のプラグ可能な SOAP 中継局を提供します。
 
 > [!NOTE]
-> ルーティング サービスは、現在 WCF REST サービスのルーティングをサポートしていません。  REST 呼び出しをルーティングするには、使用を検討して<xref:System.Web.Routing>または[アプリケーション要求ルーティング処理](https://go.microsoft.com/fwlink/?LinkId=164589)します。
+> ルーティング サービスは、現在 WCF REST サービスのルーティングをサポートしていません。  REST 呼び出しをルーティングするに <xref:System.Web.Routing> は、または[アプリケーション要求ルーティング](https://go.microsoft.com/fwlink/?LinkId=164589)を使用することを検討してください。
 
 ## <a name="content-based-routing"></a>コンテンツ ベースのルーティング
 
 コンテンツ ベースのルーティングは、メッセージに含まれている 1 つ以上の値に基づいて、メッセージをルーティングする機能です。 ルーティング サービスでは、各メッセージを確認し、メッセージの内容と開発者が作成したルーティング ロジックに基づいて、送信先エンドポイントにメッセージをルーティングします。 コンテンツ ベースのルーティングは、サービス集計、サービスのバージョン管理、および優先度ルーティングの基礎になります。
 
-コンテンツ ベースのルーティングを実装するために、ルーティング サービスは <xref:System.ServiceModel.Dispatcher.MessageFilter> 実装に依存しています。これらの実装は、ルーティングするメッセージ内の特定の値を照合するために使用されます。 場合、 **MessageFilter**に関連付けられている送信先エンドポイントにメッセージ、メッセージがルーティングされる一致、 **MessageFilter**します。  メッセージ フィルターはフィルター テーブル (<xref:System.ServiceModel.Routing.Configuration.FilterTableCollection>) にグループ化されて、複雑なルーティング ロジックを構築します。 たとえば、フィルター テーブルに 5 つの相互に排他的なメッセージ フィルターが含まれ、それによって、5 つの送信先エンドポイントのうちの 1 つだけにメッセージがルーティングされる場合があります。
+コンテンツ ベースのルーティングを実装するために、ルーティング サービスは <xref:System.ServiceModel.Dispatcher.MessageFilter> 実装に依存しています。これらの実装は、ルーティングするメッセージ内の特定の値を照合するために使用されます。 **Messagefilter**がメッセージに一致する場合、メッセージは**messagefilter**に関連付けられている送信先エンドポイントにルーティングされます。  メッセージ フィルターはフィルター テーブル (<xref:System.ServiceModel.Routing.Configuration.FilterTableCollection>) にグループ化されて、複雑なルーティング ロジックを構築します。 たとえば、フィルター テーブルに 5 つの相互に排他的なメッセージ フィルターが含まれ、それによって、5 つの送信先エンドポイントのうちの 1 つだけにメッセージがルーティングされる場合があります。
 
 ルーティング サービスを使用すると、コンテンツ ベースのルーティングの実行に使用するロジックを構成できるほか、ルーティング ロジックを実行時に動的に更新できます。
 
@@ -58,7 +58,7 @@ ms.locfileid: "67662785"
 
 - 動的構成
 
-メッセージ フィルターとフィルター テーブルの詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)と[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)します。
+メッセージフィルターとフィルターテーブルの詳細については、「[ルーティングの概要](routing-introduction.md)」と「[メッセージフィルター](message-filters.md)」を参照してください。
 
 ### <a name="service-aggregation"></a>サービスの集計
 
@@ -66,7 +66,7 @@ ms.locfileid: "67662785"
 
 ### <a name="service-versioning"></a>サービスのバージョン管理
 
-ソリューションを新しいバージョンに移行するときに、既存の顧客に対応するために、古いバージョンを同時に維持する必要がある場合があります。 このような場合の多くでは、新しいバージョンに接続するクライアントが、ソリューションとの通信時に別のアドレスを使用することが必要になります。 ルーティング サービスを使用すると、メッセージに含まれるバージョン固有の情報に基づいて、適切なソリューションにメッセージをルーティングすることで、ソリューションの両方のバージョンに対応する単一のサービス エンドポイントを公開できます。 このような実装の例については、次を参照してください[How To:。サービスのバージョン管理](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md)します。
+ソリューションを新しいバージョンに移行するときに、既存の顧客に対応するために、古いバージョンを同時に維持する必要がある場合があります。 このような場合の多くでは、新しいバージョンに接続するクライアントが、ソリューションとの通信時に別のアドレスを使用することが必要になります。 ルーティング サービスを使用すると、メッセージに含まれるバージョン固有の情報に基づいて、適切なソリューションにメッセージをルーティングすることで、ソリューションの両方のバージョンに対応する単一のサービス エンドポイントを公開できます。 このような実装の例については、「[方法: サービスのバージョン管理](how-to-service-versioning.md)」を参照してください。
 
 ### <a name="priority-routing"></a>優先度ルーティング
 
@@ -76,7 +76,7 @@ ms.locfileid: "67662785"
 
 サービスを中断させずにメッセージを処理する必要があるミッション クリティカルなシステムをサポートするには、システム内のコンポーネントの構成を実行時に変更できることが非常に重要です。 このニーズを満たすために、ルーティング サービスでは <xref:System.ServiceModel.IExtension%601> 実装が提供されています。これは、実行時にルーティング サービス構成を動的に更新できるようにする <xref:System.ServiceModel.Routing.RoutingExtension> です。
 
-ルーティング サービスの動的構成の詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)します。
+ルーティングサービスの動的構成の詳細については、「[ルーティングの概要](routing-introduction.md)」を参照してください。
 
 ## <a name="protocol-bridging"></a>プロトコル ブリッジ
 
@@ -86,25 +86,25 @@ ms.locfileid: "67662785"
 
 ## <a name="soap-processing"></a>SOAP 処理
 
-一般的なルーティング要件は、異なる SOAP 要件を持つエンドポイント間でメッセージをルーティングできることです。 ルーティング サービスは、この要件をサポートするために、<xref:System.ServiceModel.Routing.SoapProcessingBehavior>自動的に作成する新しい**MessageVersion**にメッセージがルーティングされる前に、送信先エンドポイントの要件を満たしています。 この動作も作成する新しい**MessageVersion**ことを確認する、要求元のクライアント アプリケーションに返す前にすべての応答メッセージに対して、 **MessageVersion**応答の一致しています。元の要求。
+一般的なルーティング要件は、異なる SOAP 要件を持つエンドポイント間でメッセージをルーティングできることです。 この要件をサポートするために、ルーティングサービスは、 <xref:System.ServiceModel.Routing.SoapProcessingBehavior> メッセージがルーティングされる前に、送信先エンドポイントの要件を満たす新しい**MessageVersion**を自動的に作成するを提供します。 また、この動作により、応答メッセージを要求元のクライアントアプリケーションに返す前に、応答メッセージの新しい**MessageVersion**が作成され、応答の**MessageVersion**が元の要求のものと一致するようになります。
 
-SOAP 処理の詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)します。
+SOAP 処理の詳細については、「[ルーティングの概要](routing-introduction.md)」を参照してください。
 
 ## <a name="error-handling"></a>エラー処理
 
 システムを構成する分散サービスがネットワーク通信に依存する場合は、システム内の通信が、一時的なネットワーク障害に対応可能である必要があります。  ルーティング サービスはエラー処理を実装しており、これによって、サービスの停止を招く可能性がある多くの通信障害を処理できます。
 
-ルーティング サービスがメッセージを送信している間に <xref:System.ServiceModel.CommunicationException> が発生した場合は、エラー処理が実行されます。  これらの例外は、一般的に、<xref:System.ServiceModel.EndpointNotFoundException>、<xref:System.ServiceModel.ServerTooBusyException>、<xref:System.ServiceModel.CommunicationObjectFaultedException> など、定義されているクライアント エンドポイントとの通信を試みている間に問題が発生したことを示します。  エラー処理コードもキャッチされ、しようとして再送信すると、 **TimeoutException**発生すると、別の一般的な例外から派生していないです**CommunicationException**。
+ルーティング サービスがメッセージを送信している間に <xref:System.ServiceModel.CommunicationException> が発生した場合は、エラー処理が実行されます。  これらの例外は、一般的に、<xref:System.ServiceModel.EndpointNotFoundException>、<xref:System.ServiceModel.ServerTooBusyException>、<xref:System.ServiceModel.CommunicationObjectFaultedException> など、定義されているクライアント エンドポイントとの通信を試みている間に問題が発生したことを示します。  また、エラー処理コードは、 **TimeoutException**が発生したときに送信を試行します。これは、 **CommunicationException**から派生していないもう1つの一般的な例外です。
 
-エラー処理の詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)します。
+エラー処理の詳細については、「[ルーティングの概要](routing-introduction.md)」を参照してください。
 
 ## <a name="backup-endpoints"></a>バックアップ エンドポイント
 
 フィルター テーブル内の各フィルター定義と関連付けられる送信先クライアント エンドポイントに加えて、転送エラーが発生した場合にメッセージをルーティングする、バックアップ エンドポイントのリストも作成できます。 エラーが発生した場合に、フィルター エントリのバックアップ リストが定義されていると、ルーティング サービスにより、そのリストに定義されている最初のエンドポイントにメッセージが送信されます。 この送信に失敗した場合は、送信に成功する、送信失敗に関連しないエラーが返される、またはバックアップ リスト内のすべてのエンドポイントで送信エラーが返されるまで、次のエンドポイントへの送信が試みられます。
 
-バックアップ エンドポイントの詳細については、次を参照してください。[ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)と[メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)します。
+バックアップエンドポイントの詳細については、「[ルーティングの概要](routing-introduction.md)」と「[メッセージフィルター](message-filters.md)」を参照してください。
 
-## <a name="streaming"></a>ストリーム
+## <a name="streaming"></a>ストリーミング
 
 バインディングがストリーミングをサポートするように設定すると、ルーティング サービスはメッセージを正常にストリーミングできます。  ただし、メッセージのバッファーが必要となる可能性のある条件がいくつかあります。
 
@@ -118,6 +118,6 @@ SOAP 処理の詳細については、次を参照してください。[ルー�
 
 ## <a name="see-also"></a>関連項目
 
-- [ルーティングの概要](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
-- [ルーティング コントラクト](../../../../docs/framework/wcf/feature-details/routing-contracts.md)
-- [メッセージ フィルター](../../../../docs/framework/wcf/feature-details/message-filters.md)
+- [ルーティングの概要](routing-introduction.md)
+- [ルーティング コントラクト](routing-contracts.md)
+- [メッセージ フィルター](message-filters.md)

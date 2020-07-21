@@ -1,5 +1,6 @@
 ---
 title: マネージド デバッグ アシスタントによるエラーの診断
+description: マネージデバッグアシスタントを使用して .NET のエラーを診断します。 Mda は、ランタイム状態情報を提供するために CLR と連携して動作するデバッグ支援です。
 ms.date: 08/14/2018
 f1_keywords:
 - EHMDA
@@ -29,14 +30,12 @@ helpviewer_keywords:
 - output, managed debugging assistants
 - errors [.NET Framework], managed debugging assistants
 ms.assetid: 76994ee6-9fa9-4059-b813-26578d24427c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6cb2a240a2e7e82b7015eb7a6d99c2117fa63045
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: ac6fdc09fb057cc55659ce076d37ab96fe2354d1
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052898"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416097"
 ---
 # <a name="diagnose-errors-with-managed-debugging-assistants"></a>マネージデバッグアシスタントを使用してエラーを診断する
 
@@ -66,11 +65,11 @@ ms.locfileid: "71052898"
 |[nonComVisibleBaseClass](noncomvisiblebaseclass-mda.md)|[notMarshalable](notmarshalable-mda.md)|
 |[openGenericCERCall](opengenericcercall-mda.md)|[overlappedFreeError](overlappedfreeerror-mda.md)|
 |[pInvokeLog](pinvokelog-mda.md)|[pInvokeStackImbalance](pinvokestackimbalance-mda.md)|
-|[raceOnRCWCleanup](raceonrcwcleanup-mda.md)|[reentrancy](reentrancy-mda.md)|
+|[raceOnRCWCleanup](raceonrcwcleanup-mda.md)|[再](reentrancy-mda.md)|
 |[releaseHandleFailed](releasehandlefailed-mda.md)|[reportAvOnComRelease](reportavoncomrelease-mda.md)|
 |[streamWriterBufferedDataLost](streamwriterbuffereddatalost-mda.md)|[virtualCERCall](virtualcercall-mda.md)|
 
-既定では、.NET Framework はすべてのマネージド デバッガーに対して MDA のサブセットをアクティブにします。 Visual Studio で既定のセットを表示するには、 **[デバッグ]** メニューの [ **Windows** > **例外設定**] を選択し、 **[マネージデバッグアシスタント]** の一覧を展開します。
+既定では、.NET Framework はすべてのマネージド デバッガーに対して MDA のサブセットをアクティブにします。 Visual Studio で既定のセットを表示するには**Windows**  >  、[**デバッグ**] メニューの [Windows**例外設定**] を選択し、[**マネージデバッグアシスタント**] の一覧を展開します。
 
 ![Visual Studio の [例外設定] ウィンドウ](./media/diagnosing-errors-with-managed-debugging-assistants/exception-settings-mdas.png)
 
@@ -79,11 +78,11 @@ ms.locfileid: "71052898"
 MDA は、レジストリ キー、環境変数、およびアプリケーション構成設定を使用して有効または無効にできます。 アプリケーション構成設定を使用するには、レジストリ キーまたは環境変数を有効にする必要があります。
 
 > [!TIP]
-> Mda を無効にする代わりに、MDA の通知を受信するたびに、Visual Studio が MDA ダイアログボックスを表示しないようにすることができます。 これを行うには、 **[デバッグ]** メニューの [ **Windows** > **例外設定**] をクリックし、 **[マネージデバッグアシスタント]** の一覧を展開して、個々の MDA に対して スローされ **[たときにブレーク]** チェックボックスをオンまたはオフにします。
+> Mda を無効にする代わりに、MDA の通知を受信するたびに、Visual Studio が MDA ダイアログボックスを表示しないようにすることができます。 これを行うには、[デバッグ] メニューの [ **Windows**例外設定] をクリックし、[  >  **Exception Settings** **マネージデバッグアシスタント**] の一覧を展開して、個々の MDA に対して [スローされ**たときにブレーク**] チェックボックスをオンまたはオフにします。 **Debug**
 
 ### <a name="registry-key"></a>レジストリ キー
 
-Mda を有効にするには、 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\を追加します。Windows レジストリの Netframework\ MDA**サブキー (型 REG_SZ, 値 1)。 次の例を、 *Mdaenable*という名前のテキストファイルにコピーします。Windows レジストリエディター (Regedit.exe) を開き、 **[ファイル]** メニューの **[インポート]** をクリックします。 *Mdaenable .reg*ファイルを選択して、そのコンピューターで mda を有効にします。 サブキーを**1**に設定すると (DWORD 値が**1**ではない)、 *ApplicationName*... .config ファイルから mda 設定を読み取ることができます。 たとえば、メモ帳の MDA 構成ファイルには、notepad.exe という名前が付けられます。
+Mda を有効にするには、HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft を追加し** \\ ます。Windows レジストリの Netframework\ MDA**サブキー (型 REG_SZ、値 1)。 次の例を、 *Mdaenable*という名前のテキストファイルにコピーします。Windows レジストリエディター (RegEdit.exe) を開き、[**ファイル**] メニューの [**インポート**] をクリックします。 *Mdaenable .reg*ファイルを選択して、そのコンピューターで mda を有効にします。 サブキーを文字列値**1** (DWORD 値**1**以外) に設定すると、 *ApplicationName*.mda.config ファイルから MDA 設定を読み取ることができます。 たとえば、メモ帳の MDA 構成ファイルには、notepad.exe.mda.config という名前が付けられます。
 
 ```text
 Windows Registry Editor Version 5.00
@@ -129,7 +128,7 @@ MDA のアクティブ化は、COMPLUS_MDA 環境変数によって制御する�
 
 ### <a name="application-specific-configuration-settings"></a>アプリケーション固有の構成設定
 
-アプリケーションの MDA 構成ファイルでは、一部のアシスタントを個別に有効化、無効化、および構成できます。 MDA を構成する目的でアプリケーション構成ファイルの使用を有効にするには、MDA レジストリ キーまたは COMPLUS_MDA 環境変数を設定する必要があります。 アプリケーション構成ファイルは、通常、アプリケーションの実行可能ファイル (.exe) と同じディレクトリに置かれます。 このファイル名の形式は、*ApplicationName*.mda.config です (notepad.exe.mda.config など)。アプリケーション構成ファイルで有効にされたアシスタントには、そのアシスタントの動作を制御するために特別にデザインされた属性や要素が存在する場合があります。
+アプリケーションの MDA 構成ファイルでは、一部のアシスタントを個別に有効化、無効化、および構成できます。 MDA を構成する目的でアプリケーション構成ファイルの使用を有効にするには、MDA レジストリ キーまたは COMPLUS_MDA 環境変数を設定する必要があります。 アプリケーション構成ファイルは、通常、アプリケーションの実行可能ファイル (.exe) と同じディレクトリに置かれます。 ファイル名の形式は*ApplicationName*.mda.config; です。たとえば、notepad.exe.mda.config のようにします。アプリケーション構成ファイルで有効になっているアシスタントには、そのアシスタントの動作を制御するために特別に設計された属性または要素が含まれている場合があります。
 
 次の例は、[マーシャリング](marshaling-mda.md)を有効化および構成する方法を示しています。
 
@@ -148,7 +147,7 @@ MDA のアクティブ化は、COMPLUS_MDA 環境変数によって制御する�
 </mdaConfig>
 ```
 
-`Marshaling` MDA では、アプリケーションでのマネージド コードからアンマネージド コードへの遷移ごとに、アンマネージド型にマーシャリングされるマネージド型についての情報が出力されます。 MDA `Marshaling`は、 **methodfilter**および**fieldfilter**子要素で指定されたメソッドと構造体のフィールドの名前をそれぞれフィルター処理することもできます。
+`Marshaling` MDA では、アプリケーションでのマネージド コードからアンマネージド コードへの遷移ごとに、アンマネージド型にマーシャリングされるマネージド型についての情報が出力されます。 MDA は、 `Marshaling` **Methodfilter**および**fieldfilter**子要素で指定されたメソッドと構造体のフィールドの名前をそれぞれフィルター処理することもできます。
 
 次の例では、既定の設定を使用して複数の Mda を有効にする方法を示します。
 
@@ -170,11 +169,11 @@ MDA のアクティブ化は、COMPLUS_MDA 環境変数によって制御する�
 
 MDA が有効になっている場合、デバッガーでコードが実行されていなくても、アクティブになります。 デバッガーが存在しない場合に MDA イベントが発生した場合、そのイベントはハンドルされない例外とは異なりますが、イベント メッセージはハンドルされない例外のダイアログ ボックスに表示されます。 このダイアログ ボックスが表示されないようにするには、デバッグ環境でコードを実行しているのではないときに、MDA を有効にする設定を削除します。
 
-Visual Studio 統合開発環境 (IDE: integrated development environment) でコードを実行すると、特定の MDA イベントに対して表示される [例外] ダイアログボックスを使用しないようにすることができます。 これを行うには、 **[デバッグ]** メニューの [ **Windows** > **例外設定**] をクリックします。 **[例外設定]** ウィンドウで、 **[マネージデバッグアシスタント]** の一覧を展開し、個々の MDA に対して スローされ **[たときにブレークする]** チェックボックスをオフにします。 また、このダイアログボックスを使用して、MDA の例外ダイアログボックスの表示を*有効*にすることもできます。
+Visual Studio 統合開発環境 (IDE: integrated development environment) でコードを実行すると、特定の MDA イベントに対して表示される [例外] ダイアログボックスを使用しないようにすることができます。 これを行うには、[**デバッグ**] メニューの [ **Windows**  >  **例外設定**] をクリックします。 [**例外設定**] ウィンドウで、[**マネージデバッグアシスタント**] の一覧を展開し、個々の MDA に対して [スローされ**たときにブレークする**] チェックボックスをオフにします。 また、このダイアログボックスを使用して、MDA の例外ダイアログボックスの表示を*有効*にすることもできます。
 
 ## <a name="mda-output"></a>MDA の出力
 
-Mda の出力は次の例のようになります。 `PInvokeStackImbalance` mda からの出力が表示されます。
+MDA の出力は次の例のようになります。 mda からの出力が表示され `PInvokeStackImbalance` ます。
 
 **PInvoke 関数 ' MDATest! ' を呼び出しています。MDATest. Program:: StdCall ' がスタックを不均衡にしました。マネージ PInvoke 署名がアンマネージターゲットシグネチャと一致しないことが原因である可能性があります。PInvoke 署名の呼び出し規約とパラメーターが、ターゲットのアンマネージシグネチャと一致することを確認します。**
 

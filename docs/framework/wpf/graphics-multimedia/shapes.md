@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 893253b8-c2df-4f22-961d-cbc533d64c79
 ms.openlocfilehash: c25e26130adc7f012d375f35a173a4b5dc9871f0
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62008177"
 ---
 # <a name="shapes"></a>図形
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 使用して基本的な図形を描画するためのサポートの提供、<xref:System.Windows.Shapes.Shape>クラス。 図形オブジェクトから派生<xref:System.Windows.FrameworkElement>し、そのため、レイアウト システムに参加しを使用するだけに描画できる[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]します。  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] では、<xref:System.Windows.Shapes.Shape> クラスを使用した基本図形の描画がサポートされます。 図形オブジェクトは <xref:System.Windows.FrameworkElement> から派生するので、レイアウト システムに参加して、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] を使用するだけで描画できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [WPF での図形と基本描画の概要](shapes-and-basic-drawing-in-wpf-overview.md)  

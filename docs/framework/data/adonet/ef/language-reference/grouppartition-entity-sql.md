@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: d0482e9b-086c-451c-9dfa-ccb024a9efb6
 ms.openlocfilehash: 19df566c254a3f3202eb3554ab43ee0d7c944181
 ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/03/2019
 ms.locfileid: "71833763"
@@ -22,7 +22,7 @@ GROUPPARTITION( [ALL|DISTINCT] expression )
  `expression`  
  任意のブール型 ( [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ) の式を指定します。  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
  次のクエリでは、製品の一覧と、製品ごとの注文明細の数量のコレクションが生成されます。  
   
 ```sql  
@@ -41,13 +41,13 @@ SELET p, Sum(ol.Quantity) FROM LOB.OrderLines AS ol
   
  `GROUPPARTITION` 演算子は、ユーザー定義の集計関数と組み合わせて使用できます。  
   
-`GROUPPARTITION` は、グループ化された入力セットへの参照を格納する特殊な集計演算子です。 この参照は、GROUP BY がスコープに含まれているクエリ内の任意の位置で使用できます。 例 :
+`GROUPPARTITION` は、グループ化された入力セットへの参照を格納する特殊な集計演算子です。 この参照は、GROUP BY がスコープに含まれているクエリ内の任意の位置で使用できます。 次に例を示します。
   
 ```sql  
 SELECT p, GroupPartition(ol.Quantity) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p
 ```  
   
- 通常の `GROUP BY`では、グループ化の結果は非表示になります。 結果は集計関数でのみ使用できます。 グループ化の結果を表示するには、サブクエリを使用してグループ化の結果と、入力セットを相関させる必要があります。 次の 2 つのクエリは等価です。  
+ 通常の `GROUP BY` では、グループ化の結果は非表示です。 結果は集計関数でのみ使用できます。 グループ化の結果を表示するには、サブクエリを使用してグループ化の結果と、入力セットを相関させる必要があります。 次の 2 つのクエリは等価です。  
   
 ```sql  
 SELET p, (SELECT q FROM GroupPartition(ol.Quantity) AS q) FROM LOB.OrderLines AS ol GROUP BY ol.Product AS p

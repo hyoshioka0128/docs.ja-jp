@@ -9,7 +9,7 @@ helpviewer_keywords:
 ms.assetid: 5ddb23a6-7813-4058-b59d-29ff3341638c
 ms.openlocfilehash: 57473d0a22bc7441e4c32506f57f402bab963c2d
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61771073"
@@ -20,5 +20,5 @@ ms.locfileid: "61771073"
   [インクの収集](collecting-ink.md)  
   [手書き認識](handwriting-recognition.md)  
   [インクの格納](storing-ink.md)  
-  [インク オブジェクト モデル:Windows フォームおよび COM と WPF の比較](the-ink-object-model-windows-forms-and-com-versus-wpf.md)  
+  [インク オブジェクト モデル: Windows フォームおよび COM と WPF の比較](the-ink-object-model-windows-forms-and-com-versus-wpf.md)  
   [高度なインク処理](advanced-ink-handling.md)

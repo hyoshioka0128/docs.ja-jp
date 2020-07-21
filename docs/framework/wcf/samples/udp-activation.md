@@ -2,15 +2,15 @@
 title: UDP アクティベーション
 ms.date: 03/30/2017
 ms.assetid: 4b0ccd10-0dfb-4603-93f9-f0857c581cb7
-ms.openlocfilehash: 0f5d07e65abc0b29989834aff496f7c27ea557b5
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 13d20524693b234a14b2b31061c6259f75b1c0b8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715807"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591112"
 ---
 # <a name="udp-activation"></a>UDP アクティベーション
-このサンプルは、 [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルを基にしています。 [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md)サンプルを拡張して、Windows プロセスアクティブ化サービス (WAS) を使用したプロセスのアクティブ化をサポートします。  
+このサンプルは、 [Transport: UDP](transport-udp.md)サンプルを基にしています。 [Transport: UDP](transport-udp.md)サンプルを拡張して、Windows プロセスアクティブ化サービス (WAS) を使用したプロセスのアクティブ化をサポートします。  
   
  サンプルは、次の 3 つの主要素で構成されます。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "74715807"
   
  アプリケーションに初めて新しい要求が届くと、このリスナ アダプタは `WebhostOpenListenerChannelInstance` を WAS に呼び出します。ワーカー プロセスがまだ開始されていない場合は、これにより開始されます。 次に、プロトコル ハンドラが読み込まれ、リスナ アダプタと仮想アプリケーション間の通信を開始できるようになります。  
   
- リスナーアダプターは、次のように <`listenerAdapters`> セクションの%SystemRoot%\System32\inetsrv\ApplicationHost.config に登録されます。  
+ リスナーアダプターは、次のように < > セクションの%SystemRoot%\System32\inetsrv\ApplicationHost.config に登録され `listenerAdapters` ます。  
   
 ```xml  
 <add name="net.udp" identity="S-1-5-21-2127521184-1604012920-1887927527-387045" />  
@@ -59,7 +59,7 @@ ms.locfileid: "74715807"
  このサンプルでは、WCF を使用して、アクティベーターと WAS ワーカープロセス間の通信を行います。 アクティベータに存在するサービスは、コントロール サービスと呼ばれます。  
   
 ## <a name="protocol-handlers"></a>プロトコル ハンドラー  
- リスナ アダプタが `WebhostOpenListenerChannelInstance` を呼び出した後、ワーカー プロセスが開始されていない場合は WAS プロセス マネージャによって開始されます。 ワーカー プロセス内部のアプリケーション マネージャは、UDP プロセス プロトコル ハンドラ (PPH) を読み込み、`ListenerChannelId` を要求します。 の PPH は `IAdphManager`を呼び出します。`StartAppDomainProtocolListenerChannel` を実行して、UDP AppDomain プロトコルハンドラー (ADPH) を開始します。  
+ リスナ アダプタが `WebhostOpenListenerChannelInstance` を呼び出した後、ワーカー プロセスが開始されていない場合は WAS プロセス マネージャによって開始されます。 ワーカー プロセス内部のアプリケーション マネージャは、UDP プロセス プロトコル ハンドラ (PPH) を読み込み、`ListenerChannelId` を要求します。 PPH は、呼び出しを有効にし `IAdphManager` ます。`StartAppDomainProtocolListenerChannel` を実行して、UDP AppDomain プロトコルハンドラー (ADPH) を開始します。  
   
 ## <a name="hostedudptransportconfiguration"></a>HostedUDPTransportConfiguration  
  この情報は、Web.config で次のように登録されます。  
@@ -89,18 +89,18 @@ ms.locfileid: "74715807"
   
     - さらに、この仮想アプリケーションの "net.udp" プロトコルを有効にします。  
   
-3. ユーザー インターフェイス アプリケーション "WasNetActivator.exe" を起動します。 **[セットアップ]** タブをクリックし、次のチェックボックスをオンにして、 **[インストール]** をクリックしてインストールします。  
+3. ユーザー インターフェイス アプリケーション "WasNetActivator.exe" を起動します。 [**セットアップ**] タブをクリックし、次のチェックボックスをオンにして、[**インストール**] をクリックしてインストールします。  
   
     - UDP リスナ アダプタ  
   
     - UDP プロトコル ハンドラ  
   
-4. ユーザーインターフェイスアプリケーション "の**アクティブ化**" タブをクリックします。 **[開始]** ボタンをクリックして、リスナーアダプターを開始します。 これで、プログラムを実行する準備ができました。  
+4. ユーザーインターフェイスアプリケーション "の**アクティブ化**" タブをクリックします。 [**開始**] ボタンをクリックして、リスナーアダプターを開始します。 これで、プログラムを実行する準備ができました。  
   
     > [!NOTE]
     > このサンプルの実行後は、Cleanup.bat を実行して、[既定の Web サイト] から net.udp バインディングを削除する必要があります。  
   
-## <a name="sample-usage"></a>サンプルの使用方法  
+## <a name="sample-usage"></a>使用例  
  コンパイル後、次の 4 つの異なるバイナリが生成されます。  
   
 - Client.exe: クライアント コード。 App.config は、クライアント構成ファイルの Client.exe.config にコンパイルされます。  
@@ -119,7 +119,7 @@ ms.locfileid: "74715807"
   
     - インターネット インフォメーション サービス (IIS): W3SVC。  
   
-2. 次に、アクティベータ WasNetActivator.exe を起動します。 **[アクティブ化]** タブのドロップダウンリストで、唯一のプロトコルである**UDP**が選択されています。 **[開始]** ボタンをクリックして、アクティベーターを開始します。  
+2. 次に、アクティベータ WasNetActivator.exe を起動します。 [**アクティブ化**] タブのドロップダウンリストで、唯一のプロトコルである**UDP**が選択されています。 [**開始**] ボタンをクリックして、アクティベーターを開始します。  
   
 3. アクティベータが開始されると、コマンド ウィンドウで Client.exe を実行することにより、クライアント コードを実行できます。 このサンプルの出力は、次のようになります。  
   
@@ -155,9 +155,9 @@ ms.locfileid: "74715807"
   
 > [!IMPORTANT]
 > サンプルは、既にコンピューターにインストールされている場合があります。 続行する前に、次の (既定の) ディレクトリを確認してください。  
->   
+>
 > `<InstallDrive>:\WF_WCF_Samples`  
->   
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。  
->   
+>
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。  
+>
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\UdpActivation`  

@@ -1,5 +1,6 @@
 ---
 title: 信頼性に関するベスト プラクティス
+description: SQL Server など、.NET ホストベースのサーバーアプリケーションでの信頼性に関するベストプラクティスを参照してください。 リソースのリークや停止を防ぐことができます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - marking locks
@@ -38,14 +39,12 @@ helpviewer_keywords:
 - STA-dependent features
 - fibers
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 40c1b98f82fe53819edc437bbac575c1df206496
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 134b71153f95dffd4525f307d291ce4389e0ce60
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834538"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474242"
 ---
 # <a name="reliability-best-practices"></a>信頼性に関するベスト プラクティス
 
@@ -241,7 +240,7 @@ SQL Server の場合、同期またはスレッド化を導入するために使
 
 ### <a name="do-not-block-indefinitely-in-unmanaged-code"></a>アンマネージコードで無制限にブロックしない
 
-マネージド コード内ではなくアンマネージド コード内でブロックすると、CLR がスレッドを中止できないため、サービス拒否攻撃を受ける可能性があります。  ブロックされたスレッドは、少なくとも一部の非常に安全でない操作を実行せずに、CLR が <xref:System.AppDomain> をアンロードするのを妨げます。  Windows 同期プリミティブを使用したブロックは、許可できないことを明確に示したものです。  ソケット`ReadFile`でのの呼び出しでのブロックは、可能であれば回避する必要があります。理想的には、Windows API は、このような操作のためのメカニズムを提供することをお勧めします。
+マネージド コード内ではなくアンマネージド コード内でブロックすると、CLR がスレッドを中止できないため、サービス拒否攻撃を受ける可能性があります。  ブロックされたスレッドは、少なくとも一部の非常に安全でない操作を実行せずに、CLR が <xref:System.AppDomain> をアンロードするのを妨げます。  Windows 同期プリミティブを使用したブロックは、許可できないことを明確に示したものです。  ソケットでのの呼び出しでのブロックは、可能であれ `ReadFile` ば回避する必要があります。理想的には、WINDOWS API は、このような操作のためのメカニズムを提供することをお勧めします。
 
 ネイティブを呼び出すメソッドでは、合理的な有限のタイムアウトで Win32 呼び出しを使うのが理想的です。  ユーザーがタイムアウトを指定できる場合は、何らかの特定のセキュリティ アクセス許可なしでは、ユーザーが無限のタイムアウトを指定できないようにする必要があります。  ガイドラインとしては、メソッドが 10 秒以上ブロックする場合は、タイムアウトをサポートするバージョンを使うか、CLR のサポートを追加する必要があります。
 
@@ -277,7 +276,7 @@ COM シングルスレッド アパートメント (STA) を使用するコー�
 
 #### <a name="code-analysis-rule"></a>コード分析規則
 
-すべてのオブジェクトまたはすべての例外をキャッチしているマネージド コード内のすべての catch ブロックを確認します。  でC#は、これはと`catch`の`catch(Exception)`両方{}にフラグを行う{}ことを意味します。  例外の種類を非常に限定的にすることを考えます。または、コードを調べて、予期しない例外の種類をキャッチした場合に不適切に動作しないことを確認します。
+すべてのオブジェクトまたはすべての例外をキャッチしているマネージド コード内のすべての catch ブロックを確認します。  C# では、これはとの両方にフラグを行うことを意味し `catch` {} `catch(Exception)` {} ます。  例外の種類を非常に限定的にすることを考えます。または、コードを調べて、予期しない例外の種類をキャッチした場合に不適切に動作しないことを確認します。
 
 ### <a name="do-not-assume-a-managed-thread-is-a-win32-thread--it-is-a-fiber"></a>マネージスレッドが Win32 スレッドであることを想定しないでください。
 

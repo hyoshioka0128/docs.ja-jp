@@ -15,74 +15,74 @@ helpviewer_keywords:
 ms.assetid: 4db97cf9-e4c1-4233-8efa-cbdc0e14a8e4
 topic_type:
 - apiref
-ms.openlocfilehash: c12d3a7a7d1e52529435361aa12e22e4edeecf03
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d2693a94f02214df6d7265b26e3d70d91adcf8a7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448295"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503836"
 ---
 # <a name="imetadataassemblyimportfindassembliesbyname-method"></a>IMetaDataAssemblyImport::FindAssembliesByName メソッド
-参照を解決するために共通言語ランタイム (CLR) によって採用されている標準規則を使用して、指定した `szAssemblyName` パラメーターを持つアセンブリの配列を取得します。  
+`szAssemblyName`参照を解決するために共通言語ランタイム (CLR) によって採用されている標準規則を使用して、指定したパラメーターを持つアセンブリの配列を取得します。  
   
 ## <a name="syntax"></a>構文  
   
 ```cpp  
 HRESULT FindAssembliesByName (  
-    [in]  LPCWSTR     szAppBase,   
-    [in]  LPCWSTR     szPrivateBin,   
-    [in]  LPCWSTR     szAssemblyName,   
-    [out] IUnknown    *ppIUnk[],   
-    [in]  ULONG       cMax,   
+    [in]  LPCWSTR     szAppBase,
+    [in]  LPCWSTR     szPrivateBin,
+    [in]  LPCWSTR     szAssemblyName,
+    [out] IUnknown    *ppIUnk[],
+    [in]  ULONG       cMax,
     [out] ULONG       *pcAssemblies  
 );  
 ```  
   
 ## <a name="parameters"></a>パラメーター  
  `szAppBase`  
- から指定されたアセンブリを検索するルートディレクトリ。 この値が `null`に設定されている場合、`FindAssembliesByName` はアセンブリのグローバルアセンブリキャッシュだけを検索します。  
+ から指定されたアセンブリを検索するルートディレクトリ。 この値がに設定されている場合 `null` 、 `FindAssembliesByName` はアセンブリのグローバルアセンブリキャッシュ内だけを検索します。  
   
  `szPrivateBin`  
  からルートディレクトリの下のセミコロンで区切られたサブディレクトリ (たとえば、"bin; bin2") の一覧。このディレクトリで、アセンブリを検索します。 これらのディレクトリは、既定のプローブルールで指定されているものに加えてプローブされます。  
   
  `szAssemblyName`  
- から検索するアセンブリの名前。 この文字列の形式は、<xref:System.Reflection.AssemblyName>のクラス参照ページで定義されています。  
+ から検索するアセンブリの名前。 この文字列の形式は、のクラス参照ページで定義されてい <xref:System.Reflection.AssemblyName> ます。  
   
  `ppIUnk`  
- から`IMetadataAssemblyImport` インターフェイスポインターを格納する[IUnknown](/cpp/atl/iunknown)型の配列。  
+ からインターフェイスポインターを格納する[IUnknown](/cpp/atl/iunknown)型の配列 `IMetadataAssemblyImport` 。  
   
  `cMax`  
- 入出力`ppIUnk`に配置できるインターフェイスポインターの最大数。  
+ 入出力に配置できるインターフェイスポインターの最大数 `ppIUnk` 。  
   
  `pcAssemblies`  
- 入出力返されたインターフェイスポインターの数。 つまり、実際に `ppIUnk`に配置されたインターフェイスポインターの数。  
+ 入出力返されたインターフェイスポインターの数。 つまり、実際に配置されたインターフェイスポインターの数 `ppIUnk` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`FindAssembliesByName` が正常に返されました。|  
+|`S_OK`|`FindAssembliesByName`正常に返されました。|  
 |`S_FALSE`|アセンブリがありません。|  
   
-## <a name="remarks"></a>コメント  
- アセンブリ名が指定されている場合、`FindAssembliesByName` メソッドは、アセンブリ参照を解決するための標準の規則に従って、アセンブリを検索します。 (詳細については、「[ランタイムがアセンブリを検索する方法](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)」を参照してください)。`FindAssembliesByName` を使用すると、呼び出し元は、アプリケーションベースやプライベート検索パスなど、アセンブリリゾルバーコンテキストのさまざまな側面を構成できます。  
+## <a name="remarks"></a>解説  
+ アセンブリ名が指定されている場合、メソッドは、 `FindAssembliesByName` アセンブリ参照を解決するための標準の規則に従って、アセンブリを検索します。 (詳細については、「[ランタイムがアセンブリを検索する方法](../../deployment/how-the-runtime-locates-assemblies.md)」を参照してください)。`FindAssembliesByName`呼び出し元は、アプリケーションベースやプライベート検索パスなど、アセンブリリゾルバーコンテキストのさまざまな側面を構成できます。  
   
- `FindAssembliesByName` メソッドでは、アセンブリ解決ロジックを呼び出すために、プロセスで CLR を初期化する必要があります。 したがって、`FindAssembliesByName`を呼び出す前に[Coinitializeee](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) (COINITEE_DEFAULT を渡す) を呼び出してから、 [CoUninitializeCor](../../../../docs/framework/unmanaged-api/hosting/couninitializecor-function.md)の呼び出しを実行する必要があります。  
+ `FindAssembliesByName`メソッドでは、アセンブリ解決ロジックを呼び出すために、プロセスで CLR を初期化する必要があります。 したがって、を呼び出す前に[Coinitializeee](../hosting/coinitializeee-function.md) (COINITEE_DEFAULT を渡す) を呼び出してから、CoUninitializeCor の呼び出しを実行する必要があり `FindAssembliesByName` [CoUninitializeCor](../hosting/couninitializecor-function.md)ます。  
   
- `FindAssembliesByName` は、渡されたアセンブリ名のアセンブリマニフェストを含むファイルへの[IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)ポインターを返します。 指定したアセンブリ名が完全に指定されていない場合 (たとえば、バージョンが含まれていない場合) は、複数のアセンブリが返されることがあります。  
+ `FindAssembliesByName`渡されたアセンブリ名のアセンブリマニフェストを格納しているファイルへの[IMetaDataImport](imetadataimport-interface.md)ポインターを返します。 指定したアセンブリ名が完全に指定されていない場合 (たとえば、バージョンが含まれていない場合) は、複数のアセンブリが返されることがあります。  
   
- `FindAssembliesByName` は、コンパイル時に参照アセンブリを検索するコンパイラによって一般的に使用されます。  
+ `FindAssembliesByName`は、コンパイル時に参照アセンブリの検索を試行するコンパイラによって一般的に使用されます。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ランタイムがアセンブリを検索する方法](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [IMetaDataAssemblyImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [ランタイムがアセンブリを検索する方法](../../deployment/how-the-runtime-locates-assemblies.md)
+- [IMetaDataAssemblyImport インターフェイス](imetadataassemblyimport-interface.md)

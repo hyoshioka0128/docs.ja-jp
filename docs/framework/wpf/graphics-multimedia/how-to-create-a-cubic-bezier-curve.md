@@ -7,30 +7,30 @@ helpviewer_keywords:
 - graphics [WPF], cubic Bezier curves
 - cubic Bezier curves [WPF]
 ms.assetid: 450a3a77-7c57-48b0-a008-0f6051add980
-ms.openlocfilehash: 36544abc774b7fe82c2ff47483cfedd6fb13e344
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: c12bd84fcebb3acebb80bef5f4479ad535fd6691
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054628"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452111"
 ---
 # <a name="how-to-create-a-cubic-bezier-curve"></a>方法: 3 次ベジエ曲線を作成する
-この例では、3 次ベジエ曲線を作成する方法を示します。 3 次ベジエ曲線を作成するには、使用、 <xref:System.Windows.Media.PathGeometry>、 <xref:System.Windows.Media.PathFigure>、および<xref:System.Windows.Media.BezierSegment>クラス。  結果のジオメトリを表示するには使用、<xref:System.Windows.Shapes.Path>要素と共に使用または、<xref:System.Windows.Media.GeometryDrawing>または<xref:System.Windows.Media.DrawingContext>します。 次の例についてから 3 次ベジエ曲線を描画 (10, 100) に (300, 100)。 曲線がの制御点 (100, 0) と (200、200)。  
+この例では、3 次ベジエ曲線を作成する方法を示します。 3 次ベジエ曲線を作成するには、<xref:System.Windows.Media.PathGeometry>、<xref:System.Windows.Media.PathFigure>、<xref:System.Windows.Media.BezierSegment> の各クラスを使用します。  結果として得られるジオメトリを表示するには、<xref:System.Windows.Shapes.Path> 要素を使用するか、それを <xref:System.Windows.Media.GeometryDrawing> または <xref:System.Windows.Media.DrawingContext> と共に使用します。 次の例では、(10, 100) から (300, 100) までの 3 次ベジエ曲線を描画します。 この曲線には、(100, 0) と (200, 200) の制御点があります。  
   
 ## <a name="example"></a>例  
  [xaml]  
   
- [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]マークアップの省略構文を使用してパスを記述することがあります。  
+ [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] では、省略されたマークアップ構文を使用してパスを記述できます。  
   
  [!code-xaml[GeometrySample#53](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/geometryattributesyntaxexample.xaml#53)]  
   
  [xaml]  
   
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]、オブジェクト タグを使用して 3 次ベジエ曲線を描画することもできます。 次の例は、前の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の例と同じです。  
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] では、オブジェクト タグを使用して 3 次ベジエ曲線を描画することもできます。 次の例は、前の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の例と同じです。  
   
  [!code-xaml[GeometrySample#33](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/pathgeometryexample.xaml#33)]  
   
- この例は、より大きなサンプルの一部です。完全なサンプルについては、「[ジオメトリのサンプル](https://go.microsoft.com/fwlink/?LinkID=159989)」を参照してください。  
+ この例は、より大きなサンプルの一部です。完全なサンプルについては、「[ジオメトリのサンプル](https://github.com/Microsoft/WPF-Samples/tree/master/Graphics/Geometry)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

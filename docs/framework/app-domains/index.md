@@ -1,5 +1,6 @@
 ---
 title: アプリケーション ドメインとアセンブリを使用したプログラミング
+description: .NET でのアプリケーション ドメインとアセンブリを使用したプログラミングについて説明します。 アプリケーション ドメインおよびアセンブリの作成方法に関するトピックおよび例へのリンクを参照してください。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], programming
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - application domains, programming
 - programming application domains
 ms.assetid: 96d3b8e3-bef8-4da0-9a81-9841e23a94e9
-ms.openlocfilehash: 2c849d27c70971d17bf4359ee7ae1081ee976a5f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1c28fe0abeb279a1dbbc6dcf043c1780c72d79df
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119817"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903439"
 ---
 # <a name="programming-with-application-domains-and-assemblies"></a>アプリケーション ドメインとアセンブリを使用したプログラミング
 
@@ -28,7 +29,7 @@ Microsoft Internet Explorer、ASP.NET、Windows シェルなどのホストは�
 [アプリケーション ドメインの使用](use.md)  
 アプリケーション ドメインを作成、構成、および使用する例を示します。  
   
-[アセンブリを使用したプログラミング](../../standard/assembly/program.md)  
+[アセンブリを使用したプログラミング](../../standard/assembly/index.md)  
 アセンブリを作成し、署名し、その属性を設定する方法を説明します。  
   
 ## <a name="related-sections"></a>関連項目  

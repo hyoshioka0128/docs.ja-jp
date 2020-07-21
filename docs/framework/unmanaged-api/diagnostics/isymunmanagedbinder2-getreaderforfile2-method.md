@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: dd92dcaf-403c-464d-a254-21594985dddd
 topic_type:
 - apiref
-ms.openlocfilehash: 756ba2e71ca2e3e817a0a8b89165bb807368c1f9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 97b9fa537fdd9147d6d9eda036013add5393e33c
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449333"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441709"
 ---
 # <a name="isymunmanagedbinder2getreaderforfile2-method"></a>ISymUnmanagedBinder2::GetReaderForFile2 メソッド
 メタデータインターフェイスとファイル名を指定すると、モジュールに関連付けられているデバッグシンボルを読み取る正しい[ISymUnmanagedReader](isymunmanagedreader-interface.md)インターフェイスが返されます。  
   
- このメソッドは、 [ISymUnmanagedBinder:: GetReaderForFile](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)メソッドよりも、プログラムデータベース (PDB) ファイルをより広範囲に検索します。  
+ このメソッドは、 [ISymUnmanagedBinder:: GetReaderForFile](isymunmanagedbinder-getreaderforfile-method.md)メソッドよりも、プログラムデータベース (PDB) ファイルをより広範囲に検索します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -49,7 +49,7 @@ HRESULT GetReaderForFile2(
  から検索パスへのポインター。  
   
  `searchPolicy`  
- からシンボルリーダーの検索を実行するときに使用するポリシーを指定する[Corsymsearchpolicyattributes](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md)列挙体の値。  
+ からシンボルリーダーの検索を実行するときに使用するポリシーを指定する[Corsymsearchpolicyattributes](corsymsearchpolicyattributes-enumeration.md)列挙体の値。  
   
  `pRetVal`  
  入出力返された[ISymUnmanagedReader](isymunmanagedreader-interface.md)インターフェイスに設定されたポインター。  
@@ -60,10 +60,10 @@ HRESULT GetReaderForFile2(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="remarks"></a>コメント  
- このバージョンのメソッドでは、モジュールの横の右側以外の領域で PDB ファイルを検索できます。 検索ポリシーは、 [Corsymsearchpolicyattributes](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md)を組み合わせることによって制御できます。 たとえば、`AllowReferencePathAccess | AllowSymbolServerAccess` は、実行可能ファイルの横にある PDB とシンボルサーバーを検索しますが、レジストリに対してクエリを実行したり、実行可能ファイルのパスを使用したりすることはありません。 `searchPath` パラメーターが指定されている場合、これらのディレクトリは常に検索されます。  
+## <a name="remarks"></a>解説  
+ このバージョンのメソッドでは、モジュールの横の右側以外の領域で PDB ファイルを検索できます。 検索ポリシーは、 [Corsymsearchpolicyattributes](corsymsearchpolicyattributes-enumeration.md)を組み合わせることによって制御できます。 たとえば、は、 `AllowReferencePathAccess | AllowSymbolServerAccess` 実行可能ファイルの横にある PDB とシンボルサーバーを検索しますが、レジストリに対してクエリを実行したり、実行可能ファイルのパスを使用したりしません。 パラメーターを `searchPath` 指定すると、これらのディレクトリは常に検索されます。  
   
 ## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedBinder2 インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-interface.md)
-- [GetReaderForFile メソッド](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)
+- [ISymUnmanagedBinder2 インターフェイス](isymunmanagedbinder2-interface.md)
+- [GetReaderForFile メソッド](isymunmanagedbinder-getreaderforfile-method.md)

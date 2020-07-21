@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8684cd06-ad3e-48ef-832e-15320e1f43a2
 topic_type:
 - apiref
-ms.openlocfilehash: 14356a12c944ef93dba5e7b818d3ee5cf5adc607
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0fd7dfc1a48e21abbc80692c110bee55beb68e6b
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125418"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82892865"
 ---
 # <a name="icordebugcontrollercontinue-method"></a>ICorDebugController::Continue メソッド
 
@@ -37,24 +37,24 @@ HRESULT Continue (
 ## <a name="parameters"></a>パラメーター
 
 `fIsOutOfBand`  
-から帯域外イベントから続行する場合は `true` に設定します。それ以外の場合は、を `false`に設定します。
+から帯域外`true`イベントから続行する場合はに設定します。それ以外の場合`false`は、をに設定します。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-`Continue` は、`ICorDebugController::Stop` メソッドの呼び出し後にプロセスを続行します。
+`Continue`メソッドの`ICorDebugController::Stop`呼び出し後にプロセスを続行します。
 
-混合モードのデバッグを実行する場合は、アウトオブバンドイベントから続行する場合を除き、Win32 イベントスレッドで `Continue` を呼び出さないでください。
+混合モードのデバッグを実行する場合は、 `Continue`帯域外のイベントから継続している場合を除き、Win32 イベントスレッドでを呼び出さないでください。
 
-*帯域内イベント*は、マネージイベント、またはデバッガーがプロセスのマネージ状態との対話をサポートする通常のアンマネージイベントのいずれかです。 この場合、デバッガーは、`fOutOfBand` パラメーターが `false` に設定された状態で[ICorDebugUnmanagedCallback::D Eのイベント](icordebugunmanagedcallback-debugevent-method.md)コールバックを受け取ります。
+*帯域内イベント*は、マネージイベント、またはデバッガーがプロセスのマネージ状態との対話をサポートする通常のアンマネージイベントのいずれかです。 この場合、デバッガーは、 `fOutOfBand`パラメーターがに`false`設定された状態で[ICorDebugUnmanagedCallback::D eのイベント](icordebugunmanagedcallback-debugevent-method.md)コールバックを受け取ります。
 
-*アウトオブバンドイベント*は、イベントによってプロセスが停止されている間に、プロセスのマネージ状態との相互作用が不可能なアンマネージイベントです。 この場合、デバッガーは、`fOutOfBand` パラメーターが `true`に設定された `ICorDebugUnmanagedCallback::DebugEvent` コールバックを受け取ります。
+*アウトオブバンドイベント*は、イベントによってプロセスが停止されている間に、プロセスのマネージ状態との相互作用が不可能なアンマネージイベントです。 この場合、デバッガーは`ICorDebugUnmanagedCallback::DebugEvent` `fOutOfBand`パラメーターをに`true`設定してコールバックを受け取ります。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
-**:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
 
 **ヘッダー:** CorDebug.idl、CorDebug.h
 
 **ライブラリ:** CorGuids.lib
 
-**.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

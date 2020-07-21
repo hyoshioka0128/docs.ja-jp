@@ -1,6 +1,5 @@
 ---
 title: throw - C# リファレンス
-ms.custom: seodec18
 ms.date: 03/02/2015
 f1_keywords:
 - throw
@@ -10,18 +9,18 @@ helpviewer_keywords:
 - throw expression [C#]
 - throw keyword [C#]
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
-ms.openlocfilehash: f274802c84ff8f3dd2588db8b83a0d0de36d2d68
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 04d3138e3390627355b4b2d4e25c6b00248cec1a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73101771"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79398113"
 ---
 # <a name="throw-c-reference"></a>throw (C# リファレンス)
 
 プログラムの実行中に例外が発生したことを通知します。  
   
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 `throw` の構文は次のとおりです。
 
@@ -48,13 +47,13 @@ throw [e];
 
 ## <a name="the-throw-expression"></a>`throw` 式
 
-C# 7.0 以降、`throw` は、式およびステートメントとして使用できます。 これにより、以前サポートされていなかったコンテキストでの例外のスローが可能になります。 次の設定があります。
+C# 7.0 以降、`throw` は、式およびステートメントとして使用できます。 これにより、以前サポートされていなかったコンテキストでの例外のスローが可能になります。 チェックの内容は次のとおりです
 
 - [条件演算子](../operators/conditional-operator.md)。 次の例では、`throw` 式を使用して、メソッドに空の文字列配列が渡された場合に <xref:System.ArgumentException> をスローします。 C# 7.0 より前では、このロジックが `if`/`else` ステートメントで使用されている必要があります。
 
    [!code-csharp[csrefKeyword#4](~/samples/snippets/csharp/language-reference/keywords/throw/conditional.cs#1)]
 
-- [Null 合体演算子](../operators/null-coalescing-operator.md)。 次の例では、null 合体演算子と共に `throw` 式を使用して、`Name` プロパティに割り当てられた文字列が `null` の場合に例外をスローします。
+- [ull 合体演算子](../operators/null-coalescing-operator.md)。 次の例では、null 合体演算子と共に `throw` 式を使用して、`Name` プロパティに割り当てられた文字列が `null` の場合に例外をスローします。
 
    [!code-csharp[csrefKeyword#5](~/samples/snippets/csharp/language-reference/keywords/throw/coalescing.cs#1)]
 
@@ -66,7 +65,7 @@ C# 7.0 以降、`throw` は、式およびステートメントとして使用�
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# リファレンス](../index.md)
 - [C# プログラミングガイド](../../programming-guide/index.md)

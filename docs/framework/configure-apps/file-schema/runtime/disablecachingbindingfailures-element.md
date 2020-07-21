@@ -11,18 +11,18 @@ helpviewer_keywords:
 - disableCachingBindingFailures element
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
 ms.openlocfilehash: 23633cb282b8e59b4df4bcc2cd38717d805a207e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73117498"
 ---
-# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures > 要素
+# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures> 要素
 プローブによってアセンブリが見つからなかったために発生するバインドエラーのキャッシュを無効にするかどうかを指定します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCachingBindingFailures >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<disableCachingBindingFailures>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -41,7 +41,7 @@ ms.locfileid: "73117498"
   
 ## <a name="enabled-attribute"></a>enabled 属性  
   
-|[値]|説明|  
+|値|説明|  
 |-----------|-----------------|  
 |0|プローブによってアセンブリが見つからなかったために発生するバインドエラーのキャッシュを無効にしないでください。 これは .NET Framework バージョン2.0 以降の既定のバインディング動作です。|  
 |1|プローブによってアセンブリが見つからなかったために発生するバインドエラーのキャッシュを無効にします。 この設定は、.NET Framework バージョン1.1 のバインド動作に戻ります。|  
@@ -51,15 +51,15 @@ ms.locfileid: "73117498"
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|  
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|  
   
-## <a name="remarks"></a>Remarks  
- .NET Framework バージョン2.0 以降では、アセンブリを読み込む既定の動作では、すべてのバインドおよび読み込みエラーがキャッシュされます。 つまり、アセンブリの読み込みに失敗した場合、同じアセンブリを読み込むための後続の要求は、アセンブリを特定しなくてもすぐに失敗します。 この要素は、プローブパスにアセンブリが見つからなかったために発生するバインディングエラーの既定の動作を無効にします。 これらのエラーは <xref:System.IO.FileNotFoundException>をスローします。  
+## <a name="remarks"></a>解説  
+ .NET Framework バージョン2.0 以降では、アセンブリを読み込む既定の動作では、すべてのバインドおよび読み込みエラーがキャッシュされます。 つまり、アセンブリの読み込みに失敗した場合、同じアセンブリを読み込むための後続の要求は、アセンブリを特定しなくてもすぐに失敗します。 この要素は、プローブパスにアセンブリが見つからなかったために発生するバインディングエラーの既定の動作を無効にします。 これらのエラーはスロー <xref:System.IO.FileNotFoundException> します。  
   
- この要素の影響を受けないバインドと読み込みのエラーもあります。この要素は常にキャッシュされます。 これらのエラーは、アセンブリが見つかりましたが、読み込むことができなかったことが原因で発生します。 <xref:System.BadImageFormatException> または <xref:System.IO.FileLoadException>をスローします。 このようなエラーの例を次に示します。  
+ この要素の影響を受けないバインドと読み込みのエラーもあります。この要素は常にキャッシュされます。 これらのエラーは、アセンブリが見つかりましたが、読み込むことができなかったことが原因で発生します。 <xref:System.BadImageFormatException>または <xref:System.IO.FileLoadException> をスローします。 このようなエラーの例を次に示します。  
   
 - ファイルを読み込もうとしても有効なアセンブリではない場合、不適切なファイルが正しいアセンブリに置き換えられても、その後のアセンブリの読み込み試行は失敗します。  
   

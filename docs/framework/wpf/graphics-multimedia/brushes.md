@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: 26710879-12ad-4c63-9bc6-a1834bb4243b
 ms.openlocfilehash: f52834a652f3f88a526f359a558e192c5f34839c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62020258"
 ---
 # <a name="brushes"></a>ブラシ
-次のトピックを使用する方法を説明する[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]「描画」画面にコンテンツをブラシ  
+後続のトピックでは、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ブラシを使用してコンテンツを画面で "塗りつぶす" 方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [WPF のブラシの概要](wpf-brushes-overview.md)  
@@ -27,7 +27,7 @@ ms.locfileid: "62020258"
  [TileBrush の概要](tilebrush-overview.md)  
  [方法トピック](brushes-how-to-topics.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Media.Brush>  
   
  <xref:System.Windows.Media.SolidColorBrush>  

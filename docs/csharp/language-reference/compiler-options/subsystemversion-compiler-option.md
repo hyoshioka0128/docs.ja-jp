@@ -3,10 +3,10 @@ title: -subsystemversion (C# コンパイラ オプション)
 ms.date: 07/20/2015
 ms.assetid: a99fce81-9d92-4813-9874-bee777041445
 ms.openlocfilehash: d76c9424340b4b6f3c211c849b466be55eb79d1e
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74802031"
 ---
 # <a name="-subsystemversion-c-compiler-options"></a>-subsystemversion (C# コンパイラ オプション)
@@ -44,7 +44,7 @@ ms.locfileid: "74802031"
 |Windows Server 2008|6.01|
 |Windows 8|6.02|
 
-## <a name="default-values"></a>既定の値
+## <a name="default-values"></a>既定値
 
 **-subsystemversion** コンパイラ オプションの既定値は条件によって異なります。その条件を次に示します。
 
@@ -64,6 +64,6 @@ ms.locfileid: "74802031"
 
 Visual Studio で **-subsystemversion** コンパイラ オプションを設定するには、.csproj ファイルを開き、MSBuild XML で `SubsystemVersion` プロパティの値を指定する必要があります。 Visual Studio IDE でこのオプションを設定することはできません。 詳細については、このトピックの「既定値」または「[MSBuild プロジェクトの共通プロパティ](/visualstudio/msbuild/common-msbuild-project-properties)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# コンパイラ オプション](./index.md)

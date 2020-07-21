@@ -6,23 +6,23 @@ f1_keywords:
 ms.assetid: 71a4a045-65bb-417d-b3bd-99a9fa3c53f6
 ms.openlocfilehash: 15bc530d1030a8c4d720321ea249fdd7fb6cd8b6
 ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64623094"
 ---
 # <a name="clipboard-format-is-not-valid"></a>クリップボードの形式が有効ではありません。
-指定されたクリップボードの形式は、実行中のメソッドと互換性がありません。 このエラーの考えられる原因には。  
+指定されたクリップボードの形式が、実行されるメソッドと互換性がありません。 このエラーでは以下の原因が考えられます。  
   
-- クリップボードを使用して`GetText`または`SetText`メソッド以外のクリップボード形式を`vbCFText`または`vbCFLink`します。  
+- クリップボードの `GetText` または `SetText` メソッドに `vbCFText` または `vbCFLink` 以外のクリップボードの形式を使用している。  
   
-- クリップボードを使用して`GetData`または`SetData`メソッド以外のクリップボード形式を`vbCFBitmap`、 `vbCFDIB`、または`vbCFMetafile`します。  
+- クリップボードの `GetData` または `SetData` メソッドに `vbCFBitmap`、`vbCFDIB`、または `vbCFMetafile` 以外のクリップボードの形式を使用している。  
   
-- 使用して、`GetData`または`SetData`のメソッド、`DataObject`登録されている形式 (& HC000 - & HFFFF)、Microsoft Windows によって予約された範囲内のクリップボード形式のときにそのクリップボードの形式で Microsoft Windows 登録されていません.  
+- クリップボードの形式が Microsoft Windows に登録されていないときに、登録されている形式 (&HC000-& HFFFF) に対して Microsoft Windows によって予約されている範囲内のクリップボードの形式を使用して、`DataObject` の `GetData` または `SetData` メソッドを使用している。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-- 無効な形式を削除し、有効なものを指定します。  
+- 無効な形式を削除して、有効な形式を指定してください。  
   
 ## <a name="see-also"></a>関連項目
 

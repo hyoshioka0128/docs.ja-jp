@@ -5,12 +5,12 @@ helpviewer_keywords:
 - elevation of privilege [WCF]
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-ms.openlocfilehash: 8838b139efa20bc796fc21567cc6fc9ee8691eee
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 823b41f86080d4802f76fe69865279a7c3506238
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283244"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597411"
 ---
 # <a name="elevation-of-privilege"></a>権限の昇格
 *特権の昇格*によって、最初に許可された権限以外に攻撃者の承認アクセス許可が付与されます。 たとえば、"読み取り専用" アクセス許可の権限セットを持つ攻撃者が、何らかの方法で権限セットを "読み取り/書き込み" アクセス許可を含むものに昇格させます。  
@@ -18,14 +18,14 @@ ms.locfileid: "74283244"
 ## <a name="trusted-sts-should-sign-saml-token-claims"></a>SAML トークンのクレームには信頼された STS による署名が必要  
  SAML (Security Assertions Markup Language) トークンは、発行済みトークンの既定の型である汎用 XML トークンです。 SAML トークンは、通常の交換においてエンド Web サービスから信頼されたセキュリティ トークン サービス (STS) によって作成できます。 SAML トークンには、ステートメント内にクレームが格納されます。 攻撃者は、有効なトークンからクレームをコピーして新しい SAML トークンを作成し、別の発行者による署名を行うことがあります。 この目的は、サーバーが発行者を検証するかどうかを確認し、検証しない場合に、この脆弱性を利用して信頼された STS が意図したものよりも高い権限を与える SAML トークンを作成することです。  
   
- <xref:System.IdentityModel.Tokens.SamlAssertion> クラスは、SAML トークンに含まれるデジタル署名を検証します。<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> クラスの <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> が <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> に設定されている場合、既定の <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust> は、SAML トークンが有効な X.509 証明書によって署名されていることを要求します。 SAML トークンの発行者が信頼されているかどうかを判断するには、`ChainTrust` モードだけでは不十分です。 より詳細な信頼モデルを必要とするサービスは、承認ポリシーと強制ポリシーを使用して、発行済みトークン認証によって生成されたクレーム セットの発行者をチェックするか、<xref:System.ServiceModel.Security.IssuedTokenServiceCredential> の X.509 検証設定を使用して、許可する署名証明書のセットを制限できます。 詳細については、「Id モデルと[フェデレーションおよび発行済みトークン](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)[を使用したクレームと承認の管理](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)」を参照してください。  
+ <xref:System.IdentityModel.Tokens.SamlAssertion> クラスは、SAML トークンに含まれるデジタル署名を検証します。<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> クラスの <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> が <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> に設定されている場合、既定の <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust> は、SAML トークンが有効な X.509 証明書によって署名されていることを要求します。 SAML トークンの発行者を信頼できるかどうか判断するには、`ChainTrust` モードだけでは不十分です。 より詳細な信頼モデルを必要とするサービスは、承認ポリシーと強制ポリシーを使用して、発行済みトークン認証によって生成されたクレーム セットの発行者をチェックするか、<xref:System.ServiceModel.Security.IssuedTokenServiceCredential> の X.509 検証設定を使用して、許可する署名証明書のセットを制限できます。 詳細については、「Id モデルと[フェデレーションおよび発行済みトークン](federation-and-issued-tokens.md)[を使用したクレームと承認の管理](managing-claims-and-authorization-with-the-identity-model.md)」を参照してください。  
   
 ## <a name="switching-identity-without-a-security-context"></a>セキュリティ コンテキストを使用しない ID の切り替え  
  次の例は、WinFX にのみ適用されます。  
   
  クライアントとサーバーの間に接続が確立されている場合、クライアントの id は変更されません。ただし、次の条件がすべて当てはまる場合は、WCF クライアントが開かれた後であることが条件となります。  
   
-- (トランスポートセキュリティセッションまたはメッセージセキュリティセッションを使用して) セキュリティコンテキストを確立する手順はオフになっています (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> プロパティは、トランスポートセキュリティケースで使用される、メッセージセキュリティまたはトランスポートがセキュリティセッションを確立できない場合に `false` に設定されます。 トランスポート セキュリティの場合は、セキュリティ セッションを確立できないトランスポート (HTTPS など) が使用されている)。  
+- (トランスポートセキュリティセッションまたはメッセージセキュリティセッションを使用して) セキュリティコンテキストを確立する手順はオフになってい <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> ます (メッセージセキュリティの場合は、プロパティはに設定され、トランスポート `false` セキュリティの場合はセキュリティセッションを確立できません)。 トランスポート セキュリティの場合は、セキュリティ セッションを確立できないトランスポート (HTTPS など) が使用されている)。  
   
 - Windows 認証を使用している。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "74283244"
 > `BeginOpen` メソッドを使用する場合、キャプチャされた資格情報は、このメソッドを呼び出したプロセスの資格情報であることが保証されません。  
   
 ## <a name="token-caches-allow-replay-using-obsolete-data"></a>トークン キャッシュによる以前のデータを使用した再生の許可  
- WCF では、ローカルセキュリティ機関 (LSA) の `LogonUser` 機能を使用して、ユーザー名とパスワードによってユーザーを認証します。 Logon 関数はコストのかかる操作なので、WCF では、認証されたユーザーを表すトークンをキャッシュしてパフォーマンスを向上させることができます。 キャッシュ機構は、それ以降に使用できるように `LogonUser` の結果を保存します。 このメカニズムは、既定では無効になっています。有効にするには、<xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> プロパティを `true`に設定するか、 [\<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md)の `cacheLogonTokens` 属性を使用します。  
+ WCF では、 `LogonUser` ユーザー名とパスワードによってユーザーを認証するために、ローカルセキュリティ機関 (LSA) の機能が使用されます。 Logon 関数はコストのかかる操作なので、WCF では、認証されたユーザーを表すトークンをキャッシュしてパフォーマンスを向上させることができます。 キャッシュ機構は、それ以降に使用できるように `LogonUser` の結果を保存します。 このメカニズムは、既定では無効になっています。有効にするには、 <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> プロパティをに設定する `true` か `cacheLogonTokens` 、の属性を使用し [\<userNameAuthentication>](../../configure-apps/file-schema/wcf/usernameauthentication.md) ます。  
   
  <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> プロパティを <xref:System.TimeSpan> に設定するか、`cachedLogonTokenLifetime` 要素の `userNameAuthentication` 属性を使用することで、キャッシュされたトークンの有効期間 (TTL) を設定できます。既定値は 15 分です。 Windows からユーザー アカウントが削除された場合や、パスワードが変更されている場合でも、トークンがキャッシュされている間は、同じユーザー名とパスワードを指定すると、どのクライアントもこのトークンを使用できます。 TTL が期限切れになり、トークンがキャッシュから削除されるまで、WCF では (悪意のある可能性がある) ユーザーの認証を許可します。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "74283244"
 ## <a name="the-service-uses-a-different-certificate-than-the-client-intended"></a>クライアントで予定していたものと異なる証明書をサービスで使用する場合  
  一定の条件下で、クライアントが X.509 証明書を使用してメッセージにデジタル署名したときに、予定していたものと異なる証明書をサービスが取得する場合があります。  
   
- 退避は、次の環境で発生します。  
+ これは、次のような状況で発生する可能性があります。  
   
 - クライアントが X.509 証明書を使用してメッセージにデジタル署名したときに、その X.509 証明書をメッセージに添付するのではなく、サブジェクト キー識別子を使用して証明書を参照しているだけの場合。  
   
@@ -84,9 +84,9 @@ ms.locfileid: "74283244"
   
 ## <a name="see-also"></a>関連項目
 
-- [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [情報の漏えい](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
-- [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
-- [改変](../../../../docs/framework/wcf/feature-details/tampering.md)
-- [サポートされていないシナリオ:](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+- [セキュリティの考慮事項](security-considerations-in-wcf.md)
+- [情報の公開](information-disclosure.md)
+- [サービス拒否](denial-of-service.md)
+- [リプレイ攻撃](replay-attacks.md)
+- [改ざん](tampering.md)
+- [サポートされていないシナリオ](unsupported-scenarios.md)

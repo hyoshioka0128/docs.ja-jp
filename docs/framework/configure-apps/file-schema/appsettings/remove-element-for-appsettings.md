@@ -7,22 +7,20 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a0fcdb75aa733a9d7634ec1c3b31dcbbb87e090e
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 83abbdbf0d3e4dfd16c0e8c649200c4ecc7329f7
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088728"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "77215489"
 ---
 # <a name="remove-element-for-appsettings"></a>\<appSettings> の \<remove> 要素
 
 カスタムアプリケーション設定を削除します。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<remove**>
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<appSettings>**](appsettings-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
 
 ## <a name="syntax"></a>構文
 
@@ -42,15 +40,15 @@ ms.locfileid: "74088728"
 
 |     | 説明 |
 | --- | ----------- |
-| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | ファイル パス、XML Web サービス URL、またはアプリケーションのその他のカスタム構成情報など、カスタム アプリケーションの設定が含まれています。 |
+| [**\<appSettings>**](appsettings-element-for-configuration.md) | ファイル パス、XML Web サービス URL、またはアプリケーションのその他のカスタム構成情報など、カスタム アプリケーションの設定が含まれています。 |
 
 ## <a name="child-elements"></a>子要素
 
-None
+なし
 
 ## <a name="example"></a>例
 
-次の例は、`ApplicationName`のカスタム構成設定を削除する方法を示しています。
+次の例は、のカスタム構成設定を削除する方法を示してい `ApplicationName` ます。
 
 ```xml
 <appSettings>

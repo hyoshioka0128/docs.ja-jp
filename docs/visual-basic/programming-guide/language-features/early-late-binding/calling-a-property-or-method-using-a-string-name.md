@@ -12,41 +12,41 @@ helpviewer_keywords:
 - properties [Visual Basic], setting at run time
 - CallByName function
 ms.assetid: 79a7b8b4-b8c7-4ad8-aca8-12a9a2b32f03
-ms.openlocfilehash: cb584f0dfbd905ca071f9a86b1eab231f3017538
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 29072479db36f9f8a81ffd7f3f5b10208ebaa984
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345209"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410658"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>文字列名によるプロパティまたはメソッドの呼び出し (Visual Basic)
-ほとんどの場合、オブジェクトのプロパティとメソッドをデザイン時に検出し、それらを処理するコードを記述できます。 ただし、場合によっては、オブジェクトのプロパティやメソッドを事前に把握していない場合や、エンドユーザーが実行時にプロパティを指定したりメソッドを実行したりできるようにすることが必要になる場合もあります。  
+オブジェクトのプロパティやメソッドは、デザイン時に把握して、これらを処理するコードを作成できることがほとんどです。 しかし、オブジェクトのプロパティやメソッドを事前に知ることができない場合や、実行時にエンド ユーザーがプロパティを指定したりメソッドを実行したりできる柔軟性を持たせたい場合があります。  
   
 ## <a name="callbyname-function"></a>CallByName 関数  
- たとえば、演算子を COM コンポーネントに渡すことによってユーザーによって入力された式を評価するクライアントアプリケーションなどを考えてみます。 新しい演算子を必要とする新しい関数をコンポーネントに常に追加するとします。 標準のオブジェクトアクセス手法を使用する場合は、新しい演算子を使用する前に、クライアントアプリケーションを再コンパイルして再配布する必要があります。 これを回避するには、`CallByName` 関数を使用して、アプリケーションを変更せずに、新しい演算子を文字列として渡すことができます。  
+ 例として、COM コンポーネントにユーザーが演算子を渡すことで入力した式を評価する、クライアント アプリケーションを考えます。 ここでは、新しい演算子が必要な新しい関数を、継続的にコンポーネントに追加するものとします。 標準的なオブジェクトへのアクセス手法を使用する場合、新しい演算子を使用するには、クライアント アプリケーションを再コンパイルして配布し直す必要があります。 これは、`CallByName` 関数を使用して新しい演算子を文字列として渡すことで回避できます。アプリケーションを変更する必要はありません。  
   
- `CallByName` 関数を使用すると、実行時に文字列を使用してプロパティまたはメソッドを指定できます。 `CallByName` 関数のシグネチャは次のようになります。  
+ `CallByName` 関数を使用すると、文字列を使用して実行時にプロパティまたはメソッドを指定することができます。 `CallByName` 関数のシグネチャは次のようになります。  
   
- *結果* = `CallByName`(*Object*、 *ProcedureName*、 *CallType*、 *Arguments*())  
+ *Result* = `CallByName`(<*オブジェクト*>, <*プロシージャ名*>, <*呼び出しの型*>, <*引数*>())  
   
- 最初の引数*object*は、操作対象のオブジェクトの名前を受け取ります。 *ProcedureName*引数は、呼び出されるメソッドまたはプロパティプロシージャの名前を含む文字列を受け取ります。 *CallType*引数は、呼び出すプロシージャの種類を表す定数を受け取ります。メソッド (`Microsoft.VisualBasic.CallType.Method`)、読み取りプロパティ (`Microsoft.VisualBasic.CallType.Get`)、またはプロパティセット (`Microsoft.VisualBasic.CallType.Set`) です。 *Arguments*引数 (省略可能) は、プロシージャの引数を含む `Object` 型の配列を受け取ります。  
+ 最初の引数である <*オブジェクト*> は、処理対象のオブジェクトの名前を取ります。 <*プロシージャ名*> 引数は、呼び出すメソッドまたはプロパティのプロシージャ名を含んだ文字列を取ります。 <*呼び出しの型*> 引数は、メソッド (`Microsoft.VisualBasic.CallType.Method`)、読み取り対象のプロパティ (`Microsoft.VisualBasic.CallType.Get`)、設定対象のプロパティ (`Microsoft.VisualBasic.CallType.Set`) のいずれかのうち、呼び出すプロシージャの型を表す定数を取ります。 <*引数*> 引数は省略可能であり、プロシージャに渡す引数が含まれる `Object` 型の配列を取ります。  
   
- 現在のソリューションではクラスと共に `CallByName` を使用できますが、ほとんどの場合、.NET Framework アセンブリから COM オブジェクトまたはオブジェクトにアクセスするために使用されます。  
+ `CallByName` は、現在のソリューションのクラスと共に使用できますが、多くの場合は、COM オブジェクトまたは .NET Framework アセンブリのオブジェクトにアクセスするために使用します。  
   
- 次のコードに示すように、`MathClass`という名前のクラスを含むアセンブリへの参照を追加するとします。このクラスには、`SquareRoot`という名前の新しい関数があります。  
+ 次のコードに示すように、`SquareRoot` という名前の新しい関数を持つ、`MathClass` という名前のクラスが含まれるアセンブリへの参照を追加するとします。  
   
  [!code-vb[VbVbalrOOP#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#53)]  
   
- アプリケーションでは、テキストボックスコントロールを使用して、呼び出すメソッドとその引数を制御できます。 たとえば、評価する式が `TextBox1` に含まれていて、`TextBox2` を使用して関数の名前を入力した場合は、次のコードを使用して `TextBox1`の式で `SquareRoot` 関数を呼び出すことができます。  
+ アプリケーションでテキスト ボックス コントロールを使用して、呼び出し対象のメソッドとその引数を制御できます。 たとえば、`TextBox1` に評価対象の式が含まれており、`TextBox2` を使用して関数名を入力する場合、次のコードを使用することで、`TextBox1` 内の式を対象とする `SquareRoot` 関数を呼び出すことができます。  
   
  [!code-vb[VbVbalrOOP#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#54)]  
   
- `TextBox2`の `TextBox1`"SquareRoot" に「64」と入力し、`CallMath` プロシージャを呼び出すと、`TextBox1` 内の数値の平方根が評価されます。 この例のコードでは、`SquareRoot` 関数 (必須の引数として評価される式を含む文字列を受け取ります) を呼び出し、`TextBox1` (64 の平方根) で "8" を返します。 もちろん、ユーザーが `TextBox2`に無効な文字列を入力した場合、文字列にメソッドではなくプロパティの名前が含まれている場合、またはメソッドに追加の必須引数がある場合は、実行時エラーが発生します。 `CallByName` を使用してこれらのエラーやその他のエラーを予測する場合は、堅牢なエラー処理コードを追加する必要があります。  
+ `TextBox1` に「64」、`TextBox2` に「SquareRoot」と入力してから `CallMath` プロシージャを呼び出すと、`TextBox1` に含まれる数字の平方根が算出されます。 この例のコードでは、`SquareRoot` 関数 (評価対象の式が含まれる文字列を必須引数として取ります) を呼び出して、`TextBox1` で "8" (64 の平方根) を返します。 当然のことながら、ユーザーが `TextBox2` に無効な文字列を入力するか、文字列にメソッド名ではなくプロパティ名が含まれているか、メソッドに追加の必須引数がある場合には、実行時エラーが発生します。 `CallByName` を使用するときには、こうしたエラーやその他のエラーも考慮して、堅牢なエラー処理コードを追加する必要があります。  
   
 > [!NOTE]
-> `CallByName` 関数は役に立つ場合がありますが、パフォーマンスへの影響を考慮する必要があります。つまり、`CallByName` を使用してプロシージャを呼び出すと、遅延バインディングの呼び出しより少し遅くなります。 ループの内部など、繰り返し呼び出される関数を呼び出す場合、`CallByName` はパフォーマンスに重大な影響を与える可能性があります。  
+> `CallByName` 関数は便利な場合もありますが、その有用性をパフォーマンスに対する影響と比較して考慮するようにしてください。`CallByName` を使用してプロシージャを呼び出すと、遅延バインディング呼び出しに比べてやや時間がかかります。 ループ内など、繰り返し呼び出される関数を呼び出す場合、`CallByName` を使用するとパフォーマンスに著しい負荷がかかる可能性があります。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:Microsoft.VisualBasic.Interaction.CallByName%2A>
-- [オブジェクトの型の決定](../../../../visual-basic/programming-guide/language-features/early-late-binding/determining-object-type.md)
+- [オブジェクトの型の決定](determining-object-type.md)

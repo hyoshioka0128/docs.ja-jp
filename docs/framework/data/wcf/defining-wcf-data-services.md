@@ -6,20 +6,20 @@ helpviewer_keywords:
 ms.assetid: 05006ff3-02dc-410e-831e-54ec3e7e24ef
 ms.openlocfilehash: 26cfee95f7cd3b956ff263d90b713e9d70b98202
 ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/12/2019
 ms.locfileid: "73975327"
 ---
 # <a name="defining-wcf-data-services"></a>WCF Data Services の定義
 
-このセクションでは、データを Open Data Protocol (OData) フィードとして公開する WCF Data Services を作成および構成する方法について説明します。 データサービスの作成に必要な基本的な手順の詳細については、「[データをサービスとして公開](exposing-your-data-as-a-service-wcf-data-services.md)する」を参照してください。
+このセクションでは、WCF Data Services を作成し、Open Data Protocol (OData) フィードとしてデータを公開するように構成する方法について説明します。 データ サービスの基本的な作成手順については、「[サービスとしてのデータの公開](exposing-your-data-as-a-service-wcf-data-services.md)」を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
  [データ サービスの構成](configuring-the-data-service-wcf-data-services.md)
 
- WCF Data Services によって提供されるデータサービス構成オプションについて説明します。
+ WCF Data Services によって提供されるデータ サービス構成オプションについて説明します。
 
  [Data Services プロバイダー](data-services-providers-wcf-data-services.md)
 
@@ -51,11 +51,11 @@ ms.locfileid: "73975327"
 
  [データ サービスのバージョン管理](data-service-versioning-wcf-data-services.md)
 
- OData のさまざまなバージョンを操作する方法について説明します。
+ 異なるバージョンの OData を使用する方法について説明します。
 
  [WCF Data Services プロトコル実装の詳細](wcf-data-services-protocol-implementation-details.md)
 
- WCF Data Services によって現在実装されていない OData プロトコルのオプション機能について説明します。
+ WCF Data Services で現在実装されていない OData プロトコルのオプション機能について説明します。
 
 ## <a name="see-also"></a>関連項目
 

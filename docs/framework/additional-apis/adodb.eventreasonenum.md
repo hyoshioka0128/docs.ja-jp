@@ -1,5 +1,6 @@
 ---
 title: EventReason 列挙 (adodb)
+description: .NET の EventReason 列挙に関する情報を取得します。 この列挙体は、adodb 名前空間と adodb アセンブリ (adodb.dll ライブラリ内) にあります。
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - adodb.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 0d02fb683335cf0db7d73d9d3ea545e65ca384a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bbb616625777e0193af4da10770502da904f401a
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675469"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989900"
 ---
 # <a name="eventreason-enumeration"></a>EventReason 列挙型
 
@@ -34,7 +35,7 @@ public enum EventReasonEnum
 |adRsnUndoAddNew  |   |
 |adRsnUndoDelete  |   |
 |adRsnRequery  |   |
-|adRsnResynch  |   |
+|adRsnResynch 同期  |   |
 | adRsnClose  |   |
 | adRsnMove  |   |
 | adRsnFirstChange  |   |
@@ -46,4 +47,4 @@ public enum EventReasonEnum
 
 **名前空間:** `adodb`
 
-**アセンブリ:** adodb (で adodb.dll)
+**アセンブリ:** adodb (adodb.dll)

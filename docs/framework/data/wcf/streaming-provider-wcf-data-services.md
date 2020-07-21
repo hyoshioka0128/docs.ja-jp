@@ -10,22 +10,22 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: a5793eae92ffdfa65872c93273bd7cfefdc6f674
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
-ms.translationtype: MT
+ms.openlocfilehash: 83f28c50c53281692e1c3c6d55cc55e8d9304ad9
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568807"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116601"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>ストリーミング プロバイダー (WCF Data Services)
 
-データ サービスは、ラージ オブジェクトのバイナリ データを公開できます。 このバイナリ データは、ビデオ ストリームとオーディオ ストリーム、画像、ドキュメント ファイル、またはその他の種類のバイナリのメディアを表すことができます。 データ モデルのエンティティに 1 つ以上のバイナリ プロパティが含まれている場合、データ サービスは、このバイナリ データを応答フィードのエントリ内に Base-64 としてエンコードして返します。 この方法で大きなバイナリデータを読み込んでシリアル化するとパフォーマンスに影響する可能性があるため、Open Data Protocol (OData) は、そのデータが属するエンティティとは独立してバイナリデータを取得するためのメカニズムを定義します。 これは、バイナリ データとエンティティを分離して 1 つ以上のデータ ストリームを生成することで実現されます。
+データ サービスは、ラージ オブジェクトのバイナリ データを公開できます。 このバイナリ データは、ビデオ ストリームとオーディオ ストリーム、画像、ドキュメント ファイル、またはその他の種類のバイナリのメディアを表すことができます。 データ モデルのエンティティに 1 つ以上のバイナリ プロパティが含まれている場合、データ サービスは、このバイナリ データを応答フィードのエントリ内に Base-64 としてエンコードして返します。 この方法で大きなバイナリ データを読み込んでシリアル化するとパフォーマンスに影響を及ぼす可能性があるため、Open Data Protocol (OData) では、属するエンティティとは独立してバイナリ データを取得するためのメカニズムが定義されています。 これは、バイナリ データとエンティティを分離して 1 つ以上のデータ ストリームを生成することで実現されます。
 
 - メディア リソース - エンティティに属するバイナリ データ (ビデオ、オーディオ、画像、その他の種類のメディア リソース ストリームなど)。
 
 - メディア リンク エントリ - 関連するメディア リソース ストリームへの参照を含むエンティティ。
 
-WCF Data Services では、ストリーミングデータプロバイダーを実装することによってバイナリリソースストリームを定義します。 ストリーミングプロバイダーの実装では、特定のエンティティに関連付けられたメディアリソースストリームが <xref:System.IO.Stream> オブジェクトとしてデータサービスに提供されます。 この実装によって、データ サービスでは、指定された MIME の種類のバイナリ データ ストリームとしてメディア リソースを HTTP 経由で受け入れて、返すことができます。
+WCF Data Services では、ストリーミング データ プロバイダーを実装することによってバイナリ リソース ストリームを定義します。 ストリーミング プロバイダーを実装すると、<xref:System.IO.Stream> オブジェクトとして特定のエンティティに関連付けられているメディア リソース ストリームがデータ サービスに提供されます。 この実装によって、データ サービスでは、指定された MIME の種類のバイナリ データ ストリームとしてメディア リソースを HTTP 経由で受け入れて、返すことができます。
 
 バイナリ データのストリーミングをサポートするデータ サービスを構成するには、次の手順に従う必要があります。
 
@@ -39,7 +39,7 @@ WCF Data Services では、ストリーミングデータプロバイダーを�
 
 5. サーバー上またはデータ ソース内のバイナリ リソースへのアクセスを有効にします。
 
-このトピックの例は、「ストリーミング[プロバイダーシリーズ: ストリーミングプロバイダーの実装 (パート 1)」 Data Services](https://go.microsoft.com/fwlink/?LinkID=198989)で詳しく説明されているストリーミングフォトサービスのサンプルに基づいています。 このサンプルサービスのソースコードは、MSDN コードギャラリーの[ストリーミングフォトデータサービスのサンプルページ](https://go.microsoft.com/fwlink/?LinkID=198988)にあります。
+このトピックの例はサンプルのストリーミング フォト サービスに基づいています。詳細については、ブログの記事「[Data Services ストリーミング プロバイダー シリーズ: ストリーミング プロバイダーの実装 (パート 1)](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-implementing-a-streaming-provider-part-1)」を参照してください。 Streaming Photo Data Service サンプルのソース コードは、[GitHub](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample) で入手できます。
 
 ## <a name="defining-a-media-link-entry-in-the-data-model"></a>データ モデル内のメディア リンク エントリの定義
 
@@ -53,15 +53,15 @@ WCF Data Services では、ストリーミングデータプロバイダーを�
 
 また、エンティティまたはデータ モデルを定義する .edmx ファイルまたは .csdl ファイルのルートに名前空間 `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` を追加する必要があります。
 
-Entity Framework プロバイダーを使用し、メディアリソースを公開するデータサービスの例については、「 [Data Services ストリーミングプロバイダーシリーズ: ストリーミングプロバイダーの実装 (パート 1)](https://go.microsoft.com/fwlink/?LinkID=198989)」を参照してください。
+Entity Framework プロバイダーを使用してメディア リソースを公開するデータ サービスの例については、ブログの記事「[Data Services ストリーミング プロバイダー シリーズ: ストリーミング プロバイダーの実装 (パート 1)](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-implementing-a-streaming-provider-part-1)」を参照してください。
 
 **リフレクション プロバイダー**
 
 エンティティがメディア リンク エントリであることを示すには、リフレクション プロバイダーのエンティティ型を定義するクラスに <xref:System.Data.Services.Common.HasStreamAttribute> を追加します。
 
-**カスタムデータサービスプロバイダー**
+**カスタム データ サービス プロバイダー**
 
-カスタム サービス プロバイダーを使用する場合は、<xref:System.Data.Services.Providers.IDataServiceMetadataProvider> インターフェイスを実装してデータ サービスのメタデータを定義します。 詳細については、「[カスタムデータサービスプロバイダー](custom-data-service-providers-wcf-data-services.md)」を参照してください。 エンティティ型 (メディア リンク エントリ) を表す <xref:System.Data.Services.Providers.ResourceType> で <xref:System.Data.Services.Providers.ResourceType.IsMediaLinkEntry%2A> プロパティを `true` に設定して、バイナリ リソース ストリームが <xref:System.Data.Services.Providers.ResourceType> に属することを示します。
+カスタム サービス プロバイダーを使用する場合は、<xref:System.Data.Services.Providers.IDataServiceMetadataProvider> インターフェイスを実装してデータ サービスのメタデータを定義します。 詳しくは、「[カスタム データ サービス プロバイダー](custom-data-service-providers-wcf-data-services.md)」をご覧ください。 エンティティ型 (メディア リンク エントリ) を表す <xref:System.Data.Services.Providers.ResourceType> で <xref:System.Data.Services.Providers.ResourceType.IsMediaLinkEntry%2A> プロパティを `true` に設定して、バイナリ リソース ストリームが <xref:System.Data.Services.Providers.ResourceType> に属することを示します。
 
 ## <a name="implementing-the-idataservicestreamprovider-interface"></a>IDataServiceStreamProvider インターフェイスの実装
 
@@ -79,27 +79,27 @@ Entity Framework プロバイダーを使用し、メディアリソースを公
 
 ## <a name="creating-the-streaming-data-service"></a>ストリーミング データ サービスの作成
 
-WCF Data Services ランタイムに <xref:System.Data.Services.Providers.IDataServiceStreamProvider> の実装へのアクセスを提供するには、作成するデータサービスも <xref:System.IServiceProvider> インターフェイスを実装する必要があります。 次の例は、<xref:System.IServiceProvider.GetService%2A> メソッドを実装して、`PhotoServiceStreamProvider` を実装する <xref:System.Data.Services.Providers.IDataServiceStreamProvider> クラスのインスタンスを返す方法を示しています。
+WCF Data Services ランタイムで <xref:System.Data.Services.Providers.IDataServiceStreamProvider> の実装にアクセスできるようにするには、作成するデータ サービスで <xref:System.IServiceProvider> インターフェイスも実装する必要があります。 次の例は、<xref:System.IServiceProvider.GetService%2A> メソッドを実装して、`PhotoServiceStreamProvider` を実装する <xref:System.Data.Services.Providers.IDataServiceStreamProvider> クラスのインスタンスを返す方法を示しています。
 
 [!code-csharp[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_photo_streaming_service/cs/photodata.svc.cs#photoservicestreamingprovider)]
 [!code-vb[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_photo_streaming_service/vb/photodata.svc.vb#photoservicestreamingprovider)]
 
-データサービスの作成方法に関する一般的な情報については、「[データサービスの構成](configuring-the-data-service-wcf-data-services.md)」を参照してください。
+データ サービスの作成方法に関する一般的な情報については、「[データ サービスの構成](configuring-the-data-service-wcf-data-services.md)」を参照してください。
 
 ## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>ホスト環境での大きなバイナリ ストリームの有効化
 
-ASP.NET Web アプリケーションでデータサービスを作成する場合は、Windows Communication Foundation (WCF) を使用して HTTP プロトコルの実装を提供します。 既定では、WCF では HTTP メッセージのサイズは 65K バイトのみに制限されます。 また、データ サービスに対する大きなバイナリ データのストリーミングを可能にするには、大きなバイナリ ファイルを有効にして、転送にストリームを使用するように Web アプリケーションを構成する必要もあります。 そのためには、アプリケーションの Web.config ファイルの `<configuration />` 要素に次の内容を追加します。
+ASP.NET Web アプリケーションでデータ サービスを作成する場合、Windows Communication Foundation (WCF) を使用して HTTP プロトコルが実装されます。 既定では、HTTP メッセージのサイズは WCF によって 65 KB のみに制限されます。 また、データ サービスに対する大きなバイナリ データのストリーミングを可能にするには、大きなバイナリ ファイルを有効にして、転送にストリームを使用するように Web アプリケーションを構成する必要もあります。 そのためには、アプリケーションの Web.config ファイルの `<configuration />` 要素に次の内容を追加します。
 
 > [!NOTE]
-> 要求メッセージと応答メッセージの両方でバイナリデータがストリーミングされ、WCF によってバッファリングされないようにするには、<xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> 転送モードを使用する必要があります。
+> <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> 転送モードを使用して、要求メッセージと応答メッセージの両方のバイナリ データをストリーミングし、WCF によってバッファリングされないようにする必要があります。
 
-詳細については、「[ストリーミングメッセージ転送](../../wcf/feature-details/streaming-message-transfer.md)と[トランスポートクォータ](../../wcf/feature-details/transport-quotas.md)」を参照してください。
+詳細については、「[メッセージ転送ストリーミング](../../wcf/feature-details/streaming-message-transfer.md)」および「[トランスポート クォータ](../../wcf/feature-details/transport-quotas.md)」を参照してください。
 
-また、既定では、インターネット インフォメーション サービス (IIS) でも要求のサイズが 4 MB に制限されます。 IIS での実行時にデータサービスが 4 MB を超えるストリームを受信できるようにするには、次の例に示すように、`<system.web />` 構成セクションで[HttpRuntime 要素 (ASP.NET Settings スキーマ)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100))の `maxRequestLength` 属性も設定する必要があります。
+また、既定では、インターネット インフォメーション サービス (IIS) でも要求のサイズが 4 MB に制限されます。 IIS 上で実行時にデータ サービスが 4 MB を超えるストリームを受信できるようにするには、次の例で示すように、`<system.web />` 構成セクション内の [httpRuntime 要素 (ASP.NET 設定スキーマ)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) の `maxRequestLength` 属性も設定する必要があります。
 
 ## <a name="using-data-streams-in-a-client-application"></a>クライアント アプリケーションでのデータ ストリームの使用
 
-WCF Data Services クライアントライブラリを使用すると、これらの公開されたリソースをクライアントでバイナリストリームとして取得し、更新することができます。 詳細については、「[バイナリデータの操作](working-with-binary-data-wcf-data-services.md)」を参照してください。
+WCF Data Services クライアント ライブラリを使用すると、クライアントのバイナリ ストリームとして公開されたリソースを取得および更新できます。 詳しくは、「[バイナリ データの操作](working-with-binary-data-wcf-data-services.md)」をご覧ください。
 
 ## <a name="considerations-for-working-with-a-streaming-provider"></a>ストリーミング プロバイダーの使用に関する考慮事項
 
@@ -117,7 +117,7 @@ WCF Data Services クライアントライブラリを使用すると、これ�
 
   - メディア リソースであるバイナリ プロパティをデータ モデルに含めないようにしてください。 データ モデルで公開されるプロパティはすべて、応答フィードのエントリで返されます。
 
-  - 大きなバイナリ ストリームのパフォーマンスを向上させるには、カスタム ストリーム クラスを作成してバイナリ データをデータベースに格納することをお勧めします。 このクラスは、<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> の実装によって返され、バイナリ データをチャンク単位でデータベースに送信します。 SQL Server データベースでは、バイナリデータが 1 MB を超える場合、FILESTREAM を使用してデータをデータベースにストリーミングすることをお勧めします。
+  - 大きなバイナリ ストリームのパフォーマンスを向上させるには、カスタム ストリーム クラスを作成してバイナリ データをデータベースに格納することをお勧めします。 このクラスは、<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> の実装によって返され、バイナリ データをチャンク単位でデータベースに送信します。 SQL Server データベースでは、バイナリ データが 1 MB を超える場合、FILESTREAM を使用してデータをデータベースにストリーミングすることをお勧めします。
 
   - データ サービスによって受信される大きなバイナリ ストリームを格納できるようにデータベースが設計されていることを確認してください。
 
@@ -125,19 +125,19 @@ WCF Data Services クライアントライブラリを使用すると、これ�
 
 - <xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A> メソッド、<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A> メソッド、または <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> メソッドを実装する場合は、メソッドのパラメーターとして指定される eTag 値および Content-Type 値を使用する必要があります。 <xref:System.Data.Services.Providers.IDataServiceStreamProvider> プロバイダーの実装には、eTag ヘッダーまたは Content-Type ヘッダーを設定しないでください。
 
-- 既定では、クライアントはチャンクされた HTTP Transfer-Encoding を使用して、大きなバイナリ ストリームを送信します。 ASP.NET 開発サーバーではこの種のエンコードがサポートされていないため、この Web サーバーを使用して、大きなバイナリストリームを受け入れる必要があるストリーミングデータサービスをホストすることはできません。 ASP.NET 開発サーバーの詳細については、「 [Visual Studio の Web サーバー for ASP.NET Web Projects](https://docs.microsoft.com/previous-versions/aspnet/58wxa9w5(v=vs.120))」を参照してください。
+- 既定では、クライアントはチャンクされた HTTP Transfer-Encoding を使用して、大きなバイナリ ストリームを送信します。 ASP.NET 開発サーバーではこの種類のエンコードがサポートされていないので、この Web サーバーを使用して大きなバイナリ ストリームを受け取る必要があるストリーミング データ サービスをホストすることはできません。 ASP.NET 開発サーバーの詳細については、「 [ASP.NET Web プロジェクト用の Visual Studio の Web サーバー](https://docs.microsoft.com/previous-versions/aspnet/58wxa9w5(v=vs.120))」を参照してください。
 
 <a name="versioning"></a>
 
 ## <a name="versioning-requirements"></a>バージョン管理の要件
 
-ストリーミングプロバイダーには、次の OData プロトコルのバージョン管理要件があります。
+ストリーミング プロバイダーには、次に示す OData プロトコルのバージョン管理の要件があります。
 
-- ストリーミングプロバイダーでは、データサービスが OData プロトコル以降のバージョンのバージョン2.0 をサポートしている必要があります。
+- ストリーミング プロバイダーを使用するには、データ サービスでバージョン 2.0 以降の OData プロトコルがサポートされている必要があります。
 
-詳細については、「[データサービスのバージョン管理](data-service-versioning-wcf-data-services.md)」を参照してください。
+詳細については、「[データ サービスのバージョン管理](data-service-versioning-wcf-data-services.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [Data Services プロバイダー](data-services-providers-wcf-data-services.md)
 - [カスタム データ サービス プロバイダー](custom-data-service-providers-wcf-data-services.md)

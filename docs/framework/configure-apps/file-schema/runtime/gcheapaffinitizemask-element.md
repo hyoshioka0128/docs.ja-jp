@@ -5,19 +5,19 @@ helpviewer_keywords:
 - gcHeapCount element
 - <gcHeapCount> element
 ms.openlocfilehash: 09d6523fb10692dd3617a3827d5bccf112bc632b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73978421"
 ---
-# <a name="gcheapaffinitizemask-element"></a>\<GCHeapAffinitizeMask > 要素
+# <a name="gcheapaffinitizemask-element"></a>\<GCHeapAffinitizeMask> 要素
 
 GC ヒープと個々のプロセッサ間の関係を定義します。
 
-\<構成 > \
-&nbsp;&nbsp;\<ランタイム > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapAffinitizeMask >
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapAffinitizeMask>
 
 ## <a name="syntax"></a>構文
 
@@ -38,7 +38,7 @@ GC ヒープと個々のプロセッサ間の関係を定義します。
 
 #### <a name="enabled-attribute"></a>enabled 属性
 
-|[値]|説明|
+|値|Description|
 |-----------|-----------------|
 |`nnnn`|サーバー GC ヒープと個々のプロセッサ間の関係を定義するビットマスクを形成する10進値。 |
 
@@ -48,22 +48,22 @@ GC ヒープと個々のプロセッサ間の関係を定義します。
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|Description|
 |-------------|-----------------|
 |`configuration`|共通言語ランタイムおよび .NET Framework アプリケーションで使用されるすべての構成ファイルのルート要素です。|
 |`runtime`|アセンブリのバインディングとガベージ コレクションに関する情報が含まれています。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-既定では、サーバー GC スレッドはそれぞれの CPU とハード関係があるため、1つの GC ヒープ、1つのサーバー GC スレッド、および各プロセッサにつき1つのバックグラウンドサーバー GC スレッドが存在するようになります。 4\.6.2 .NET Framework 以降では、ヒープの数が**g Apcount**要素によって制限されている場合に、 **GCHeapAffinitizeMask**要素を使用して、サーバー GC ヒープとプロセッサ間の関係を制御できます。
+既定では、サーバー GC スレッドはそれぞれの CPU とハード関係があるため、1つの GC ヒープ、1つのサーバー GC スレッド、および各プロセッサにつき1つのバックグラウンドサーバー GC スレッドが存在するようになります。 4.6.2 .NET Framework 以降では、ヒープの数が**g Apcount**要素によって制限されている場合に、 **GCHeapAffinitizeMask**要素を使用して、サーバー GC ヒープとプロセッサ間の関係を制御できます。
 
 **GCHeapAffinitizeMask**は通常、次の2つのフラグと共に使用されます。
 
-- [GCNoAffinitize](gcnoaffinitize-element.md)。サーバー GC スレッド/ヒープが cpu と関連付けられているかどうかを制御します。 [GCNoAffinitize](gcnoaffinitize-element.md)要素の `enabled` 属性は、 **GCHeapAffinitizeMask**設定が使用されるように `false` (既定値) である必要があります。
+- [GCNoAffinitize](gcnoaffinitize-element.md)。サーバー GC スレッド/ヒープが cpu と関連付けられているかどうかを制御します。 `enabled`GCHeapAffinitizeMask 設定を使用するには、 [GCNoAffinitize](gcnoaffinitize-element.md)要素の属性が `false` (既定**GCHeapAffinitizeMask**値) である必要があります。
 
 - "サーバー GC のプロセスで使用されるヒープの[数を制限](gcheapcount-element.md)する"。 既定では、プロセッサごとに1つのヒープがあります。
 
-**nnnn**は、10進値として表現されるビットマスクです。 バイト0のビット0はプロセッサ0を表し、バイト0のビット1はプロセッサ1を表します。 (例:
+**nnnn**は、10進値として表現されるビットマスクです。 バイト0のビット0はプロセッサ0を表し、バイト0のビット1はプロセッサ1を表します。 例:
 
 ```xml
 <GCHeapAffinitizeMask enabled="1023"/>

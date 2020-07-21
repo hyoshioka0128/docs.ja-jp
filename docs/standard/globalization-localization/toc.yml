@@ -3,6 +3,8 @@
   items:
     - name: グローバリゼーション
       href: globalization.md
+    - name: グローバリゼーションと ICU
+      href: globalization-icu.md
     - name: ローカライズ化の確認
       href: localizability-review.md
     - name: ローカリゼーション

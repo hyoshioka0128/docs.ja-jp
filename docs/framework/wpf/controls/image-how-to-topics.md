@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: e6e51cf9-8fa1-457e-856b-a5e513bc5caf
 ms.openlocfilehash: 5c300df2c63f4fa852c8cce318a5461f3be5f226
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61696120"
 ---
 # <a name="image-how-to-topics"></a>イメージに関する「方法」トピック
-このセクションのトピックでは、使用する方法をについて説明します、<xref:System.Windows.Controls.Image>要素。  
+このセクションのトピックでは、<xref:System.Windows.Controls.Image> 要素の使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [イメージ要素を使用する](how-to-use-the-image-element.md)  
@@ -23,7 +23,7 @@ ms.locfileid: "61696120"
   [イメージをトリミングする](how-to-crop-an-image.md)  
   [イメージを回転させる](how-to-rotate-an-image.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Image>  
   
  <xref:System.Windows.Media.Imaging.BitmapImage>  

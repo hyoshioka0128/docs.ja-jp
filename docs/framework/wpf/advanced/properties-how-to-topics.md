@@ -10,7 +10,7 @@ helpviewer_keywords:
 ms.assetid: e16dd710-1530-4462-81a2-43719b973970
 ms.openlocfilehash: 78bf1dbe9c9c95a3ae1afe2515adbd8bc65a7d44
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61628614"
@@ -22,7 +22,7 @@ ms.locfileid: "61628614"
  [方法: 添付プロパティを登録する](how-to-register-an-attached-property.md)  
  [依存関係プロパティのメタデータをオーバーライドする](how-to-override-metadata-for-a-dependency-property.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.DependencyProperty>  
   
  <xref:System.Windows.PropertyMetadata>  
@@ -32,4 +32,4 @@ ms.locfileid: "61628614"
  <xref:System.Windows.DependencyObject>  
   
 ## <a name="related-sections"></a>関連項目  
- [Properties](properties-wpf.md)
+ [プロパティ](properties-wpf.md)

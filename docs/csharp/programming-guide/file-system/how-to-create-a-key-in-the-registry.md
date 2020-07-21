@@ -1,19 +1,19 @@
 ---
-title: 方法:レジストリにキーを作成する (Visual C#)
+title: レジストリにキーを作成する方法 - C# プログラミング ガイド
 ms.date: 07/20/2015
 helpviewer_keywords:
 - registry, adding keys and values [C#]
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-ms.openlocfilehash: e67a80fa8f9a088f0eefe2dd2eeaa983e0a5a2c3
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 9e340083ffca118337dc9a53bdf20808cd1b15cb
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590041"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241631"
 ---
-# <a name="how-to-create-a-key-in-the-registry-visual-c"></a>方法:レジストリにキーを作成する (Visual C#)
+# <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>レジストリにキーを作成する方法 (C# プログラミング ガイド)
 現在のユーザーのレジストリに存在する "Names" というキーの下に "Name" と "Isabella" という値のペアを追加する例を次に示します。  
   
 ## <a name="example"></a>例  
@@ -48,7 +48,7 @@ key.Close();
   
 - レジストリ キーが読み取り専用の場合。  
   
-## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+## <a name="net-security"></a>.NET セキュリティ  
  ローカル コンピューター (`Microsoft.Win32.Registry.CurrentUser`) よりもユーザー フォルダー (`Microsoft.Win32.Registry.LocalMachine`) にデータを書き込む方が安全です。  
   
  レジストリの値を作成するときは、その値が既存の値である場合の処理を決めておく必要があります。 悪意のあるユーザーによって作成された別のプロセスが既に値を作成し、アクセス権を持っている可能性があります。 レジストリ値にデータを設定すると、そのデータを他のプロセスから利用できるようになります。 これを回避するには、`Overload:Microsoft.Win32.RegistryKey.GetValue` メソッドをオーバーライドします。 このメソッドは、キーがまだ存在しない場合、null を返します。  

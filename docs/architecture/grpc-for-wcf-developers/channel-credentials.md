@@ -1,31 +1,31 @@
 ---
-title: チャネル資格情報-WCF 開発者向け gRPC
-description: ASP.NET Core 3.0 で gRPC チャネル資格情報を実装して使用する方法について説明します。
+title: チャネル資格情報 - WCF 開発者向け gRPC
+description: ASP.NET Core 3.0 で gRPC チャネル資格情報を実装して使用する方法。
 ms.date: 09/02/2019
-ms.openlocfilehash: 133de2c732e72844f249f11bfe22b5980b828b89
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 9ebe0aecb517e4cc2fe280632c4ecb593da9871c
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711500"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79148206"
 ---
 # <a name="channel-credentials"></a>チャンネルの資格情報
 
-名前が示すように、チャネルの資格情報は、基になる gRPC チャネルにアタッチされます。 標準形式のチャネル資格情報では、クライアント証明書認証が使用されます。 このプロセスでは、クライアントは接続を確立するときに TLS 証明書を提供し、サーバーは呼び出しを許可する前にこれを確認します。
+名前が示すように、チャネル資格情報は基になる gRPC チャネルにアタッチされます。 チャネル資格情報の標準形式では、クライアント証明書認証が使用されます。 このプロセスでは、クライアントは接続を行うときに TLS 証明書を提供し、サーバーは呼び出しを許可する前にこれを検証します。
 
-チャネル資格情報と呼び出し資格情報を組み合わせて、gRPC サービスに包括的なセキュリティを提供することができます。 チャネル資格情報は、クライアントアプリケーションがサービスへのアクセスを許可されていることを証明し、呼び出し資格情報は、クライアントアプリケーションを使用しているユーザーに関する情報を提供します。
+チャネル資格情報と呼び出し資格情報を組み合わせて、gRPC サービスの包括的なセキュリティを提供できます。 チャネル資格情報は、クライアント アプリケーションがサービスにアクセスすることを許可されていることを証明し、呼び出しの資格情報は、クライアント アプリケーションを使用しているユーザーに関する情報を提供します。
 
-クライアント証明書の認証は、ASP.NET Core と同じように、gRPC に対して機能します。 詳細については、「 [ASP.NET Core で証明書認証を構成する](/aspnet/core/security/authentication/certauth)」を参照してください。
+クライアント証明書認証は、gRPC で ASP.NETコアで動作するのと同じように機能します。 詳細については、「 [ASP.NET Core で証明書認証を構成する](/aspnet/core/security/authentication/certauth)」を参照してください。
 
-開発目的では自己署名証明書を使用できますが、運用環境では、信頼された機関によって署名された適切な HTTPS 証明書を使用する必要があります。
+開発目的では自己署名証明書を使用できますが、実稼働環境では、信頼された機関によって署名された適切な HTTPS 証明書を使用する必要があります。
 
 ## <a name="add-certificate-authentication-to-the-server"></a>サーバーに証明書認証を追加する
 
-証明書認証は、ホストレベル (Kestrel サーバーなど) と ASP.NET Core パイプラインの両方で構成します。
+証明書認証は、ホスト レベル (Kestrel サーバーなど) と ASP.NET コア パイプラインの両方で構成します。
 
-### <a name="configure-certificate-validation-on-kestrel"></a>Kestrel で証明書の検証を構成する
+### <a name="configure-certificate-validation-on-kestrel"></a>ケストレルで証明書検証を構成する
 
-クライアント証明書を要求するように Kestrel (ASP.NET Core HTTP サーバー) を構成し、必要に応じて、入力方向の接続を受け入れる前に、指定された証明書の検証を実行することができます。 これを行うには、`Startup`ではなく、`Program` クラスの `CreateWebHostBuilder` メソッドを使用します。
+Kestrel (ASP.NETコア HTTP サーバー) を構成して、クライアント証明書を要求し、必要に応じて、着信接続を受け入れる前に、指定された証明書の検証を実行するように設定できます。 これは、 ではなく`CreateWebHostBuilder`クラスの`Program`メソッドで`Startup`行います。
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -48,13 +48,13 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ```
 
-`ClientCertificateMode.RequireCertificate` 設定を使用すると、Kestrel がクライアント証明書を提供しない接続要求を直ちに拒否しますが、この設定自体によって提供される証明書は検証されません。 `ClientCertificateValidation` コールバックを追加して、接続が確立された時点で、ASP.NET Core パイプラインが実行される前に、Kestrel がクライアント証明書を検証できるようにします。 (この場合、コールバックは、サーバー証明書と同じ*証明機関*によって発行されたものであることを保証します。) 
+この`ClientCertificateMode.RequireCertificate`設定により、Kestrel はクライアント証明書を提供しない接続要求を直ちに拒否しますが、この設定だけでは、提供された証明書は検証されません。 コールバックを`ClientCertificateValidation`追加して、kestrel が接続が確立された時点で、ASP.NET Core パイプラインが関与する前にクライアント証明書を検証できるようにします。 (この場合、コールバックは、サーバー証明書と同じ*認証局*によって発行されたことを確認します)。
 
-### <a name="add-aspnet-core-certificate-authentication"></a>ASP.NET Core 証明書認証の追加
+### <a name="add-aspnet-core-certificate-authentication"></a>ASP.NETコア証明書認証を追加する
 
-証明書認証は、 [AspNetCore](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Certificate) NuGet パッケージによって提供されます。
+[証明書](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Certificate)の認証を提供する証明書の認証を提供します。
 
-`ConfigureServices` メソッドに証明書認証サービスを追加し、`Configure` メソッドで ASP.NET Core パイプラインに認証と承認を追加します。
+メソッドに証明書認証サービスを`ConfigureServices`追加し、メソッドの ASP.NET Core パイプラインに認証と承認`Configure`を追加します。
 
 ```csharp
 public class Startup
@@ -93,9 +93,9 @@ public class Startup
 }
 ```
 
-## <a name="provide-channel-credentials-in-the-client-application"></a>クライアントアプリケーションでチャネル資格情報を指定する
+## <a name="provide-channel-credentials-in-the-client-application"></a>クライアント アプリケーションでチャネル資格情報を提供する
 
-`Grpc.Net.Client` パッケージを使用して、接続に使用する `GrpcChannel` に提供される <xref:System.Net.Http.HttpClient> インスタンスで証明書を構成します。
+パッケージでは`Grpc.Net.Client`、接続に`GrpcChannel`使用されるに提供される<xref:System.Net.Http.HttpClient>インスタンスに証明書を構成します。
 
 ```csharp
 class Program
@@ -122,11 +122,11 @@ class Program
 }
 ```
 
-## <a name="combine-channelcredentials-and-callcredentials"></a>ChannelCredentials と CallCredentials を組み合わせる
+## <a name="combine-channelcredentials-and-callcredentials"></a>チャネル資格情報と呼び出し資格情報の組み合わせ
 
-証明書とトークン認証の両方を使用するようにサーバーを構成できます。 これを行うには、Kestrel サーバーに証明書の変更を適用し、ASP.NET Core で JWT ベアラーミドルウェアを使用します。
+証明書とトークン認証の両方を使用するようにサーバーを構成できます。 これを行うには、証明書の変更を Kestrel サーバーに適用し、ASP.NET Core の JWT ベアラー ミドルウェアを使用します。
 
-クライアントに `ChannelCredentials` と `CallCredentials` の両方を提供するには、`ChannelCredentials.Create` メソッドを使用して呼び出し資格情報を適用します。 その場合でも、<xref:System.Net.Http.HttpClient> インスタンスを使用して証明書認証を適用する必要があります。 `SslCredentials` コンストラクターに任意の引数を渡すと、内部クライアントコードが例外をスローします。 `SslCredentials` パラメーターは、`Grpc.Core` パッケージとの互換性を維持するために、`Grpc.Net.Client` パッケージの `Create` メソッドにのみ含まれています。
+クライアント`ChannelCredentials``CallCredentials`の両方を提供するには、メソッドを`ChannelCredentials.Create`使用して呼び出しの資格情報を適用します。 インスタンスを使用して証明書認証を適用する<xref:System.Net.Http.HttpClient>必要があります。 `SslCredentials`コンストラクターに引数を渡すと、内部クライアント コードは例外をスローします。 パラメーター`SslCredentials`は、パッケージと`Grpc.Net.Client``Create``Grpc.Core`の互換性を維持するためにパッケージのメソッドにのみ含まれます。
 
 ```csharp
 var handler = new HttpClientHandler();
@@ -151,10 +151,10 @@ var grpc = new Portfolios.PortfoliosClient(channel);
 ```
 
 > [!TIP]
-> 証明書認証を使用しないクライアントには、`ChannelCredentials.Create` 方法を使用できます。 これは、チャネルで行われるすべての呼び出しでトークン資格情報を渡すために便利な方法です。
+> 証明書認証なしで`ChannelCredentials.Create`クライアントに対してこのメソッドを使用できます。 これは、チャネルで行われるすべての呼び出しでトークンの資格情報を渡す便利な方法です。
 
-[証明書認証が追加された Fullstockticker サンプル gRPC アプリケーション](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/FullStockTickerSample/grpc/FullStockTickerAuth/FullStockTicker)のバージョンは、GitHub にあります。
+[証明書認証が追加された FullStockTicker サンプル gRPC アプリケーション](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/FullStockTickerSample/grpc/FullStockTickerAuth/FullStockTicker)のバージョンは GitHub にあります。
 
 >[!div class="step-by-step"]
->[前へ](call-credentials.md)
->[次へ](encryption.md)
+>[前次](call-credentials.md)
+>[Next](encryption.md)

@@ -1,34 +1,34 @@
 ---
-title: WCF 開発者向けの RPC-gRPC の種類
-description: WCF でサポートされているリモートプロシージャコールの種類と gRPC で対応するリモートプロシージャコールのレビュー
+title: RPC の種類 - WCF 開発者向け gRPC
+description: WCF でサポートされているリモート プロシージャコールの種類と、gRPC での対応するリモート プロシージャ コールの種類のレビュー
 ms.date: 09/02/2019
-ms.openlocfilehash: 64375236da17c0aedbafe1cb441e72a144203358
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 40c0779dc015904e9dabbb448075e3c5aa5dc49a
+ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967269"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80111089"
 ---
 # <a name="types-of-rpc"></a>RPC の種類
 
-Windows Communication Foundation (WCF) 開発者は、次の種類のリモートプロシージャコール (RPC) を扱うために使用されることがあります。
+Windows 通信基盤 (WCF) 開発者として、次の種類のリモート プロシージャ コール (RPC) を扱うことに慣れている可能性があります。
 
-- 要求/応答
-- 通信
-  - セッションを含む一方向の二重
-  - セッションを使用した全二重
+- リクエスト/返信
+- 二重：
+  - セッションを使用した一方向の二重化
+  - 全二重 (セッションを使用)
 - 一方向
 
-これらの RPC の種類は、既存の gRPC の概念に自然にマップすることができます。この章では、これらの各領域について説明します。 同様の例については、 [5 章](migrate-wcf-to-grpc.md)でさらに詳しく説明します。
+これらの RPC 型は、既存の gRPC の概念にかなり自然に対応できます。 この章では、これらの各領域を順番に説明します。 [第5章](migrate-wcf-to-grpc.md)では、同様の例をより詳しく見ていきます。
 
 | WCF | gRPC |
 | --- | ---- |
 | 通常の要求/応答 | 単項 |
-| クライアントコールバックインターフェイスを使用したセッションを使用した双方向サービス | サーバーストリーミング |
+| クライアント コールバック インターフェイスを使用したセッションを使用した双方向サービス | サーバー ストリーミング |
 | セッションを使用した全二重サービス | 双方向ストリーミング |
-| 一方向の操作 | クライアントストリーミング |
+| 一方向操作 | クライアント ストリーミング |
 
-## <a name="requestreply"></a>要求/応答
+## <a name="requestreply"></a>リクエスト/返信
 
 少量のデータを取得して返す単純な要求/応答メソッドの場合は、最も単純な gRPC パターンである単項 RPC を使用します。
 
@@ -57,19 +57,21 @@ public async Task ShowThing(int thingId)
 }
 ```
 
-ご覧のように、gRPC の単項 RPC サービスメソッドを実装することは、WCF 操作の実装とよく似ています。ただし、gRPC では、インターフェイスを実装する代わりに基底クラスのメソッドをオーバーライドします。 サーバーでは、gRPC の基本メソッドは常に <xref:System.Threading.Tasks.Task%601>を返しますが、クライアントはサービスを呼び出すための非同期メソッドとブロッキングメソッドの両方を提供します。
+ご覧のとおり、gRPC 単項 RPC サービス メソッドの実装は、WCF 操作の実装と同様です。 違いは、gRPC では、インターフェイスを実装する代わりに基本クラスのメソッドをオーバーライドする点です。 サーバーでは、gRPC 基本メソッドは常<xref:System.Threading.Tasks.Task%601>に 戻りますが、クライアントはサービスを呼び出すために非同期メソッドとブロッキングメソッドの両方を提供します。
 
-## <a name="wcf-duplex-one-way-to-client"></a>WCF 双方向、クライアントへの一方向
+## <a name="wcf-duplex-one-way-to-client"></a>WCF 二重方式(クライアントへの 1 つの方法)
 
-WCF アプリケーション (特定のバインドを使用) では、クライアントとサーバーの間に永続的な接続を作成できます。また、<xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> プロパティで指定された*コールバックインターフェイス*を使用して、接続が閉じられるまで、サーバーはクライアントにデータを非同期に送信できます。
+WCF アプリケーション (特定のバインディング) は、クライアントとサーバー間の永続的な接続を作成できます。 サーバーは、プロパティで指定された*コールバック インターフェイス*を使用して、接続が閉じられるまで、クライアントに非同期的<xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType>にデータを送信できます。
 
-gRPC サービスは、メッセージストリームと同様の機能を提供します。 実装という点で、ストリームは WCF 双方向サービスに*厳密*にはマップされませんが、同じ結果が得られる可能性があります。
+gRPC サービスは、メッセージ ストリームと同様の機能を提供します。 ストリームは、実装の面で WCF 双方向サービスに*正確*にマップされませんが、同じ結果を得ることができます。
 
 ### <a name="grpc-streaming"></a>gRPC ストリーミング
 
-gRPC では、クライアントからサーバー、およびサーバーからクライアントへの永続的なストリームの作成がサポートされています。 両方の種類のストリームが同時にアクティブになる場合があります。これを双方向ストリーミングと呼びます。 ストリームは、任意の非同期メッセージング、時間の経過と共に使用できます。また、1つの要求または応答で生成および送信するには大きすぎる大規模なデータセットを渡すこともできます。
+gRPC は、クライアントからサーバーへ、およびサーバーからクライアントへの永続ストリームの作成をサポートします。 両方の種類のストリームを同時にアクティブにできます。 この機能は双方向ストリーミングと呼ばれます。
 
-次の例は、サーバーストリーミング RPC を示しています。
+ストリームは、時間の経過と同時に任意の非同期メッセージングに使用できます。 また、1 つの要求または応答で生成および送信するには大きすぎる大きなデータセットを渡すために使用することもできます。
+
+次の例は、サーバー ストリーミング RPC を示しています。
 
 ```protobuf
 service ClockStreamer {
@@ -94,7 +96,7 @@ public class ClockStreamerService : ClockStreamer.ClockStreamerBase
 }
 ```
 
-このサーバーストリームは、次のコードに示すように、クライアントアプリケーションから使用できます。
+このサーバー ストリームは、次のコードに示すように、クライアント アプリケーションから使用できます。
 
 ```csharp
 public async Task TellTheTimeAsync(CancellationToken token)
@@ -113,19 +115,19 @@ public async Task TellTheTimeAsync(CancellationToken token)
 ```
 
 > [!NOTE]
-> サーバーストリーミング Rpc は、サブスクリプション形式のサービスに役立ちます。また、データセット全体をメモリ内に構築するのが非効率であるか不可能である場合は、非常に大きなデータセットを送信するためにも役立ちます。 ただし、ストリーミング応答は、1つのメッセージ内の `repeated` フィールドを送信する場合ほど高速ではありません。そのため、ルールストリーミングは小さいデータセットには使用できません。
+> サーバー ストリーミング RPC は、サブスクリプション スタイルのサービスに役立ちます。 また、メモリ内でデータセット全体を構築することが非効率的または不可能な場合に、大規模なデータセットを送信する場合にも役立ちます。 ただし、ストリーミング応答は、単一のメッセージでフィールドを`repeated`送信するほど高速ではありません。 原則として、小規模なデータセットにストリーミングを使用しないでください。
 
-### <a name="differences-to-wcf"></a>WCF との違い
+### <a name="differences-from-wcf"></a>WCF との違い
 
-WCF 双方向サービスでは、複数のメソッドを持つことができるクライアントコールバックインターフェイスが使用されます。 GRPC サーバーストリーミングサービスは、1つのストリームでのみメッセージを送信できます。 複数のメソッドが必要な場合は、[任意のフィールドまたはフィールドの](protobuf-any-oneof.md)いずれかを含むメッセージ型を使用して、異なるメッセージを送信し、それらを処理するためのコードをクライアントに記述します。
+WCF 双方向サービスは、複数のメソッドを持つことができるクライアント コールバック インターフェイスを使用します。 gRPC サーバー ストリーミング サービスは、単一のストリームを介してメッセージを送信することしかできません。 複数のメソッドが必要な場合は[、Any フィールドまたはいずれかのフィールド](protobuf-any-oneof.md)でメッセージの種類を使用して異なるメッセージを送信し、クライアントでメッセージを処理するコードを記述します。
 
-WCF では、セッションを使用した[ServiceContract](xref:System.ServiceModel.ServiceContractAttribute)クラスは、接続が閉じられるまで保持され、セッション内で複数のメソッドを呼び出すことができます。 GRPC では、実装メソッドによって返される `Task` は、接続が閉じられるまで完了しません。
+WCF では、セッションを持つ[ServiceContract](xref:System.ServiceModel.ServiceContractAttribute)クラスは、接続が閉じられるまで存続します。 セッション内で複数のメソッドを呼び出すことができます。 gRPC では、`Task`実装メソッドが返すが、接続が閉じられるまで終了しないはずです。
 
-## <a name="wcf-one-way-operations-and-grpc-client-streaming"></a>WCF の一方向操作と gRPC クライアントストリーミング
+## <a name="wcf-one-way-operations-and-grpc-client-streaming"></a>WCF の一方向操作と gRPC クライアント ストリーミング
 
-WCF は、トランスポート固有の確認を返す一方向操作 (`[OperationContract(IsOneWay = true)]`) を提供します。 gRPC サービスメソッドは、空の場合でも常に応答を返し、クライアントは常にその応答を待機する必要があります。 GRPC の "火災と忘れる" スタイルのメッセージングでは、クライアントストリーミングサービスを作成できます。
+WCF は、トランスポート固有の受信確認`[OperationContract(IsOneWay = true)]`を返す一方向の操作 ( でマーク ) を提供します。 gRPC サービスメソッドは、空であっても常に応答を返します。 クライアントは常にその応答を待つ必要があります。 gRPC でのメッセージングの "ファイアアンドフォーゲット" スタイルでは、クライアント ストリーミング サービスを作成できます。
 
-### <a name="thing_logproto"></a>thing_log. proto
+### <a name="thing_logproto"></a>thing_log.プロト
 
 ```protobuf
 service ThingLog {
@@ -156,7 +158,7 @@ public class ThingLogService : Protos.ThingLog.ThingLogBase
 }
 ```
 
-### <a name="thinglog-client-example"></a>のログクライアントの例
+### <a name="thinglog-client-example"></a>ThingLog クライアントの例
 
 ```csharp
 public class ThingLogger : IAsyncDisposable
@@ -187,13 +189,13 @@ public class ThingLogger : IAsyncDisposable
 }
 ```
 
-ここでも、前の例で示したように、クライアントストリーミングの Rpc を使用して、サーバーに非常に大きなデータセットを送信することができます。 パフォーマンスに関する同じ警告が適用されます。小規模なデータセットの場合は、通常のメッセージで `repeated` フィールドを使用します。
+前の例に示すように、クライアント ストリーミング RPC を使用して、ファイア アンド フォーゲット メッセージングを行うことができます。 また、非常に大きなデータセットをサーバーに送信するためにも使用できます。 パフォーマンスに関する警告は、小さいデータセットの場合は`repeated`、通常のメッセージでフィールドを使用するという警告が適用されます。
 
-## <a name="wcf-full-duplex-services"></a>WCF の全二重サービス
+## <a name="wcf-full-duplex-services"></a>WCF 全二重サービス
 
-WCF 双方向バインドでは、サービスインターフェイスとクライアントコールバックインターフェイスの両方に対して複数の一方向操作がサポートされているため、クライアントとサーバー間の継続的なメッセージ交換が可能になります。 gRPC では、双方向ストリーミング Rpc と同様のものがサポートされていますが、両方のパラメーターが `stream` 修飾子でマークされています。
+WCF 双方向バインディングは、サービス インターフェイスとクライアント コールバック インターフェイスの両方で複数の一方向操作をサポートします。 このサポートにより、クライアントとサーバー間の継続的な会話が可能になります。 gRPC は双方向ストリーミング RPC と同様のものをサポートしており、両方のパラメータに修飾子`stream`が付いています。
 
-### <a name="chatproto"></a>チャット. プロトコル
+### <a name="chatproto"></a>チャット.プロト
 
 ```protobuf
 service Chatter {
@@ -226,9 +228,9 @@ public class ChatterService : Chatter.ChatterBase
 }
 ```
 
-前の例では、実装メソッドが要求ストリーム (`IAsyncStreamReader<MessageRequest>`) と応答ストリーム (`IServerStreamWriter<MessageResponse>`) の両方を受信し、接続が閉じられるまでメッセージの読み取りと書き込みを行うことができることを確認できます。
+前の例では、実装メソッドが要求ストリーム ( ) と応答ストリーム`IAsyncStreamReader<MessageRequest>`( )`IServerStreamWriter<MessageResponse>`の両方を受け取ることがわかります。 このメソッドは、接続が閉じられるまでメッセージの読み取りと書き込みを行うことができます。
 
-### <a name="chatter-client"></a>Chatter クライアント
+### <a name="chatter-client"></a>チャタクライアント
 
 ```csharp
 public class Chat : IAsyncDisposable
@@ -269,5 +271,5 @@ public class Chat : IAsyncDisposable
 ```
 
 >[!div class="step-by-step"]
->[前へ](wcf-bindings.md)
->[次へ](metadata.md)
+>[前次](wcf-bindings.md)
+>[Next](metadata.md)

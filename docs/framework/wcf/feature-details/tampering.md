@@ -1,16 +1,16 @@
 ---
-title: 改変
+title: 改ざん
 ms.date: 03/30/2017
 ms.assetid: 3bad93be-60bb-4f89-96ab-a1c3dc7c0fad
-ms.openlocfilehash: 7a4265c30a6713f9557de2b3d1e99c87b7dd3e58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e618ab369a46d403aa8db26c4b472e2be3634785
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703388"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600712"
 ---
-# <a name="tampering"></a>改変
-*改ざん*はメッセージまたはメッセージの配信を変更し、意図されたもの以外の目的のため、変更したメッセージを使用して動作します。  
+# <a name="tampering"></a>改ざん
+*改ざん*とは、メッセージを変更したり、メッセージの配信を行ったり、変更されたメッセージを目的以外の目的で使用したりする行為です。  
   
 ## <a name="do-not-disable-ws-addressing"></a>WS-Addressing を無効にしない  
  WS-Addressing の仕様では、各メッセージにアドレス ヘッダーが提供されるため、メッセージの受信者はメッセージの送信者を検証できます。 この機能を無効にするには、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティを <xref:System.ServiceModel.Channels.AddressingVersion.None%2A> に設定します。  
@@ -21,9 +21,9 @@ ms.locfileid: "61703388"
   
 ## <a name="see-also"></a>関連項目
 
-- [セキュリティの考慮事項](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [情報の漏えい](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
-- [権限の昇格](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
-- [サービス拒否](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [サポートされていないシナリオ:](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
-- [リプレイ攻撃](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+- [セキュリティの考慮事項](security-considerations-in-wcf.md)
+- [情報の公開](information-disclosure.md)
+- [特権の昇格](elevation-of-privilege.md)
+- [サービス拒否](denial-of-service.md)
+- [サポートされていないシナリオ](unsupported-scenarios.md)
+- [リプレイ攻撃](replay-attacks.md)

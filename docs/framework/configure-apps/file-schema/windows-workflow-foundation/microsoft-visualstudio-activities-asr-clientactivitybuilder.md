@@ -9,12 +9,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: e7287d3f-59ee-448f-b7fe-b640508501a5
-ms.openlocfilehash: dbaf2dd6834bfdabc717e63c32309086bc8aed3a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 497cf5170abb167af2c1a4a7a96a27a795e6f13f
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947583"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "79152055"
 ---
 # <a name="microsoftvisualstudioactivitiesasrclientactivitybuilder"></a>Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder
 このクラスを使用して、ワークフロー アクティビティにデータを提供する <xref:System.Activities.ActivityBuilder> オブジェクトを作成および構成します。  
@@ -22,7 +22,7 @@ ms.locfileid: "69947583"
 ## <a name="syntax"></a>構文  
   
 ```csharp  
-public class ClientActivityBuilder   
+public class ClientActivityBuilder
 ```  
   
 ## <a name="see-also"></a>関連項目

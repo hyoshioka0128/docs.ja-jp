@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: cce69574-5861-4a30-b730-2e18d915d8ee
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6040a7aa8f3244ea0ce2e66042537bc45c347b05
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 0951e83c3035de751801d194696eb64993260ef8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037850"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289838"
 ---
 # <a name="traversing-xml-schemas"></a>XML スキーマの走査
 
@@ -41,7 +39,7 @@ ms.locfileid: "70037850"
 >
 > <xref:System.Xml.Schema.XmlSchema.UnhandledAttributes%2A> プロパティを使用すると、スキーマの名前空間に属さないすべての属性にアクセスできます。 これらの属性はスキーマ プロセッサで処理されません。
 
-以下のコード サンプルでは、「[XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)」トピックで作成されたカスタム スキーマの走査の例を示します。 このコード サンプルは、上記のコレクションを使用してスキーマを走査し、スキーマのすべての要素と属性をコンソールに出力する例を示します。
+以下のコード サンプルでは、「[XML スキーマの作成](building-xml-schemas.md)」トピックで作成されたカスタム スキーマの走査の例を示します。 このコード サンプルは、上記のコレクションを使用してスキーマを走査し、スキーマのすべての要素と属性をコンソールに出力する例を示します。
 
 このサンプルでは、次の手順でカスタム スキーマの走査を行います。
 
@@ -67,14 +65,14 @@ ms.locfileid: "70037850"
 
 <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A?displayProperty=nameWithType> プロパティには、<xref:System.Xml.Schema.XmlSchemaSimpleType> (ユーザー定義の単純型または複合型の場合は <xref:System.Xml.Schema.XmlSchemaComplexType>) を使用できます。 また、W3C 勧告『XML Schema』で定義されている組み込みデータ型の場合には、<xref:System.Xml.Schema.XmlSchemaDatatype> を使用することもできます。 カスタム スキーマの場合、<xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> 要素の `Customer` は <xref:System.Xml.Schema.XmlSchemaComplexType> で、`FirstName` 要素および `LastName` 要素は <xref:System.Xml.Schema.XmlSchemaSimpleType> です。
 
-「[XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)」のコード サンプルでは、<xref:System.Xml.Schema.XmlSchemaComplexType.Attributes%2A?displayProperty=nameWithType> コレクションを使用して、`Customer` 要素に属性 `CustomerId` を追加しました。 これは、スキーマのコンパイル前のプロパティです。 対応するスキーマのコンパイル後の情報セット プロパティは、<xref:System.Xml.Schema.XmlSchemaComplexType.AttributeUses%2A?displayProperty=nameWithType> コレクションで、複合型のすべての属性 (型の派生を通じて継承される属性を含む) を持っています。
+「[XML スキーマの作成](building-xml-schemas.md)」のコード サンプルでは、<xref:System.Xml.Schema.XmlSchemaComplexType.Attributes%2A?displayProperty=nameWithType> コレクションを使用して、`Customer` 要素に属性 `CustomerId` を追加しました。 これは、スキーマのコンパイル前のプロパティです。 対応するスキーマのコンパイル後の情報セット プロパティは、<xref:System.Xml.Schema.XmlSchemaComplexType.AttributeUses%2A?displayProperty=nameWithType> コレクションで、複合型のすべての属性 (型の派生を通じて継承される属性を含む) を持っています。
 
 ## <a name="see-also"></a>関連項目
 
-- [XML スキーマ オブジェクト モデルの概要](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
-- [XML スキーマの読み取りと書き込み](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
-- [XML スキーマの作成](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [XML スキーマの編集](../../../../docs/standard/data/xml/editing-xml-schemas.md)
-- [XML スキーマのインクルードまたはインポート](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
-- [スキーマをコンパイルするための XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [スキーマのコンパイル後の情報セット](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+- [XML スキーマ オブジェクト モデルの概要](xml-schema-object-model-overview.md)
+- [XML スキーマの読み取りと書き込み](reading-and-writing-xml-schemas.md)
+- [XML スキーマの作成](building-xml-schemas.md)
+- [XML スキーマの編集](editing-xml-schemas.md)
+- [XML スキーマのインクルードまたはインポート](including-or-importing-xml-schemas.md)
+- [スキーマをコンパイルするための XmlSchemaSet](xmlschemaset-for-schema-compilation.md)
+- [スキーマのコンパイル後の情報セット](post-schema-compilation-infoset.md)

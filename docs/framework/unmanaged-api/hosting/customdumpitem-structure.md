@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: fd9085ff-7beb-4c38-97f0-037cd8ba4f65
 topic_type:
 - apiref
-ms.openlocfilehash: ae64edd8a3a628100d4c51d0b78be1bc8d49fc17
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5c77a332593ba470d2e29b87cba182a770d5db7e
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138277"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616438"
 ---
 # <a name="customdumpitem-structure"></a>CustomDumpItem 構造体
 エラー報告のカスタムダンプに追加するアイテムについて説明します。  
@@ -28,7 +28,7 @@ ms.locfileid: "73138277"
   
 ```cpp  
 struct {  
-    ECustomDumpItemKind itemKind;   
+    ECustomDumpItemKind itemKind;
     union {  
         UINT_PTR pReserved;  
     }  
@@ -39,21 +39,21 @@ struct {
   
 |メンバー|説明|  
 |------------|-----------------|  
-|`itemKind`|追加する項目の種類を示す[ECustomDumpItemKind](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md)値。|  
-|`pReserved`|現在使用されていません。 共用体に追加された項目は、ポインターサイズ以下である必要があります。 `struct` が必要な場合は、それを個別に割り当てて、それをポイントする必要があります。|  
+|`itemKind`|追加する項目の種類を示す[ECustomDumpItemKind](ecustomdumpitemkind-enumeration.md)値。|  
+|`pReserved`|現在は使用しません。 共用体に追加された項目は、ポインターサイズ以下である必要があります。 `struct`が必要な場合は、それを個別に割り当てて、それをポイントする必要があります。|  
   
-## <a name="remarks"></a>Remarks  
- [ICLRErrorReportingManager:: BeginCustomDump](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md)は `CustomDumpItem`型のパラメーターを受け取ります。  
+## <a name="remarks"></a>解説  
+ [ICLRErrorReportingManager:: BeginCustomDump](iclrerrorreportingmanager-begincustomdump-method.md)は、型のパラメーターを受け取り `CustomDumpItem` ます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ホスト構造体](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+- [ホスト構造体](hosting-structures.md)

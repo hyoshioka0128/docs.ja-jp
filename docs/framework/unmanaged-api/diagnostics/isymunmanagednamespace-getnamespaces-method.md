@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0ea9d9af-8709-4a46-872b-f54d9e840088
 topic_type:
 - apiref
-ms.openlocfilehash: da2906187c02bbc7a35c937663e3fc7db1ebda13
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 48c50ac6be6d525676d85578e5a55a27104c180a
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433891"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615099"
 ---
 # <a name="isymunmanagednamespacegetnamespaces-method"></a>ISymUnmanagedNamespace::GetNamespaces メソッド
 この名前空間の子を取得します。  
@@ -37,10 +37,10 @@ HRESULT GetNamespaces(
   
 ## <a name="parameters"></a>パラメーター  
  `cNameSpaces`  
- から`namespaces` 配列のサイズを示す `ULONG32`。  
+ から`ULONG32`配列のサイズを示す `namespaces` 。  
   
  `pcNameSpaces`  
- 入出力名前空間を格納するために必要なバッファーのサイズ (文字数) を受け取る `ULONG32` へのポインター。  
+ 入出力`ULONG32`名前空間を格納するために必要なバッファーのサイズ (文字数) を受け取るへのポインター。  
   
  `namespaces`  
  入出力名前空間を格納しているバッファーへのポインター。  
@@ -51,6 +51,6 @@ HRESULT GetNamespaces(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedNamespace インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
+- [ISymUnmanagedNamespace インターフェイス](isymunmanagednamespace-interface.md)

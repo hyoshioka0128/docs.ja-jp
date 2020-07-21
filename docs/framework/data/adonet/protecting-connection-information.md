@@ -1,27 +1,28 @@
 ---
 title: 接続情報の保護
+description: 接続文字列のセキュリティの脆弱性について説明します。これは、接続文字列の構築方法と保持方法、および認証の種類が原因で生じる場合があります。
 ms.date: 03/30/2017
 ms.assetid: 1471f580-bcd4-4046-bdaf-d2541ecda2f4
-ms.openlocfilehash: 37aab00a967b9912ba01cc3f27f68f8a3e85fdb2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 0e693fd99384a2808a621b358f8e70c6777c3930
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783057"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286651"
 ---
 # <a name="protecting-connection-information"></a>接続情報の保護
-アプリケーションのセキュリティを実現するうえで、データ ソースへのアクセスを保護することは、最も重要な目標の 1 つです。 保護されていない接続文字列は脆弱性を招く原因になります。 接続情報をテキスト形式で保存したり、メモリ内に保持したりすると、システム全体のセキュリティが損なわれる可能性があります。 ソースコードに埋め込まれている接続文字列は、 [Ildasm.exe (IL 逆アセンブラー](../../tools/ildasm-exe-il-disassembler.md)を使用して読み取って、コンパイルされたアセンブリに Microsoft 中間言語 (MSIL) を表示できます。  
+アプリケーションのセキュリティを実現するうえで、データ ソースへのアクセスを保護することは、最も重要な目標の 1 つです。 保護されていない接続文字列は脆弱性を招く原因になります。 接続情報をテキスト形式で保存したり、メモリ内に保持したりすると、システム全体のセキュリティが損なわれる可能性があります。 ソース コードに組み込まれた接続文字列は、[Ildasm.exe (IL Disassembler)](../../tools/ildasm-exe-il-disassembler.md) を使って、コンパイル済みアセンブリの Microsoft Intermediate Language (MSIL) を表示することで読み取ることができます。  
   
  接続文字列に関係したセキュリティ上の脆弱性は、使用されている認証の種類、メモリやディスクへの接続文字列の保存方法、実行時に接続文字列を作成する際の手法などから発生します。  
   
 ## <a name="use-windows-authentication"></a>Windows 認証の使用  
- データ ソースへのアクセスを制限するには、ユーザー ID、パスワード、データ ソース名などの接続情報をセキュリティで保護する必要があります。 ユーザー情報が公開されないようにするために、可能な限り Windows 認証 (*統合セキュリティ*とも呼ばれる) を使用することをお勧めします。 Windows 認証は、接続文字列に `Integrated Security` キーワードまたは `Trusted_Connection` キーワードを使用することによって指定できます。こうすることで、ユーザー ID とパスワードを使う必要がなくなります。 Windows 認証を使用した場合、ユーザーは Windows によって認証され、サーバー リソースやデータベース リソースへのアクセスは Windows のユーザーおよびグループに付与された権限によって制御されます。  
+ データ ソースへのアクセスを制限するには、ユーザー ID、パスワード、データ ソース名などの接続情報をセキュリティで保護する必要があります。 ユーザー情報の漏洩を防ぐためにも、できるだけ Windows 認証 ("*統合セキュリティ*" とも呼ばれます) を使用することをお勧めします。 Windows 認証は、接続文字列に `Integrated Security` キーワードまたは `Trusted_Connection` キーワードを使用することによって指定できます。こうすることで、ユーザー ID とパスワードを使う必要がなくなります。 Windows 認証を使用した場合、ユーザーは Windows によって認証され、サーバー リソースやデータベース リソースへのアクセスは Windows のユーザーおよびグループに付与された権限によって制御されます。  
   
- Windows 認証が使用できない場合、ユーザーの資格情報を接続文字列に含めることになるため、十分な注意が必要です。 ASP.NET アプリケーションでは、Windows アカウントを、データベースやその他のネットワーク リソースに接続する際の固定 ID として構成できます。 **Web.config ファイルで**identity 要素の権限借用を有効にし、ユーザー名とパスワードを指定します。  
+ Windows 認証が使用できない場合、ユーザーの資格情報を接続文字列に含めることになるため、十分な注意が必要です。 ASP.NET アプリケーションでは、Windows アカウントを、データベースやその他のネットワーク リソースに接続する際の固定 ID として構成できます。 **web.config** ファイルの identity 要素で権限の借用を有効にし、ユーザー名とパスワードを指定します。  
   
 ```xml  
-<identity impersonate="true"   
-        userName="MyDomain\UserAccount"   
+<identity impersonate="true"
+        userName="MyDomain\UserAccount"
         password="*****" />  
 ```  
   
@@ -37,7 +38,7 @@ ms.locfileid: "70783057"
  `Persist Security Info` の既定値は false です。すべての接続文字列には、この既定値を使用することをお勧めします。 `Persist Security Info` を `true` または `yes` に設定すると、ユーザー ID やパスワードなどのセキュリティ関連情報を、接続を開いた後にその接続から取得できます。 `Persist Security Info` を `false` または `no` に設定した場合、その情報を使って接続を開いた後で、セキュリティ情報が破棄されるため、信頼できないソースによってセキュリティ関連情報がアクセスされることを確実に防ぐことができます。  
   
 ## <a name="encrypt-configuration-files"></a>構成ファイルの暗号化  
- 接続文字列は構成ファイルに保存することもでき、そうすることで、アプリケーションのコードに接続文字列を組み込むことを避けられます。 構成ファイルは、.NET Framework が基本的な要素を定義するために使用する標準的な XML ファイルです。 構成ファイル内の接続文字列は、通常、Windows**アプリケーションの場合は app.config の**  **\<connectionStrings >** 要素、ASP.NET アプリケーションの場合**は web.config ファイルに**格納されます。 構成ファイルからの接続文字列の格納、取得、および暗号化の基本の詳細については、「[接続文字列と構成ファイル](connection-strings-and-configuration-files.md)」を参照してください。  
+ 接続文字列は構成ファイルに保存することもでき、そうすることで、アプリケーションのコードに接続文字列を組み込むことを避けられます。 構成ファイルは、.NET Framework が基本的な要素を定義するために使用する標準的な XML ファイルです。 通常、構成ファイル内の接続文字列は、**app.config** ファイル (Windows アプリケーションの場合) または **web.config** ファイル (ASP.NET アプリケーションの場合) の **\<connectionStrings>** 要素に格納されます。 構成ファイルへの接続文字列の格納、構成ファイルからの接続文字列の取得、および暗号化については、「[接続文字列と構成ファイル](connection-strings-and-configuration-files.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

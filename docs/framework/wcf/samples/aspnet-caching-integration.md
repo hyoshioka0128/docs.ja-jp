@@ -2,18 +2,18 @@
 title: ASP.NET キャッシュ統合
 ms.date: 03/30/2017
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
-ms.openlocfilehash: 23c10e56dba7daec2d1027de92e8252c8fe69055
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: c541f3caad8a500b9fdb33d00b58706bac876e37
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716179"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594752"
 ---
 # <a name="aspnet-caching-integration"></a>ASP.NET キャッシュ統合
 
 このサンプルでは、WCF WEB HTTP プログラミング モデルで ASP.NET 出力キャッシュを利用する方法を示します。 ここでは、ASP.NET 出力キャッシュ統合機能について集中的に説明します。
 
-## <a name="demonstrates"></a>例
+## <a name="demonstrates"></a>対象
 
 ASP.NET 出力キャッシュとの統合
 
@@ -22,17 +22,17 @@ ASP.NET 出力キャッシュとの統合
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) と [!INCLUDE[wf1](../../../../includes/wf1-md.md)] サンプルをダウンロードしてください。 このサンプルは、次のディレクトリに格納されます。
+> このディレクトリが存在しない場合は、 [Windows Communication Foundation (wcf) および Windows Workflow Foundation (WF) のサンプルの .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459)にアクセスして、すべての WINDOWS COMMUNICATION FOUNDATION (wcf) とサンプルをダウンロードして [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ください。 このサンプルは、次のディレクトリに格納されます。
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AspNetCachingIntegration`
 
 ## <a name="discussion"></a>ディスカッション
 
-このサンプルでは、<xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> を使用して、Windows Communication Foundation (WCF) サービスで ASP.NET 出力キャッシュを使用します。 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> は、サービス操作に適用される属性で、特定の操作からの応答に適用する構成ファイル内のキャッシュ プロファイルの名前を指定します。
+このサンプルでは、を使用して、 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> Windows Communication Foundation (WCF) サービスで ASP.NET 出力キャッシュを使用します。 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> は、サービス操作に適用される属性で、特定の操作からの応答に適用する構成ファイル内のキャッシュ プロファイルの名前を指定します。
 
-サンプルサービスプロジェクトの Service.cs ファイルでは、`GetCustomer` と `GetCustomers` の両方の操作が <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>でマークされます。この場合、キャッシュプロファイル名は "CacheFor60Seconds" になります。 サービスプロジェクトの web.config ファイルでは、<`system.web`> の <`caching`> 要素の下にキャッシュプロファイル "CacheFor60Seconds" が用意されています。 このキャッシュプロファイルの場合、`duration` 属性の値は "60" であるため、このプロファイルに関連付けられている応答は ASP.NET 出力キャッシュに60秒間キャッシュされます。 また、このキャッシュプロファイルでは、`varmByParam` 属性が "format" に設定されているため、`format` クエリ文字列パラメーターの値が異なる要求の応答が個別にキャッシュされます。 最後に、キャッシュプロファイルの `varyByHeader` 属性が "Accept" に設定されているため、Accept ヘッダー値が異なる要求の応答は個別にキャッシュされます。
+サンプルサービスプロジェクトの Service.cs ファイルでは、 `GetCustomer` 操作と操作の両方 `GetCustomers` が、 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> キャッシュプロファイル名 "CacheFor60Seconds" を提供するに設定されています。 サービスプロジェクトの web.config ファイルでは、< > の < > 要素の下にキャッシュプロファイル "CacheFor60Seconds" が用意されてい `caching` `system.web` ます。 このキャッシュプロファイルでは、属性の値 `duration` は "60" なので、このプロファイルに関連付けられている応答は ASP.NET 出力キャッシュに60秒間キャッシュされます。 また、このキャッシュプロファイルでは、 `varmByParam` 属性が "format" に設定されているため、クエリ文字列パラメーターの値が異なる要求の `format` 応答が個別にキャッシュされます。 最後に、キャッシュプロファイルの `varyByHeader` 属性が "Accept" に設定されているため、accept ヘッダー値が異なる要求の応答は個別にキャッシュされます。
 
-Client プロジェクトの Program.cs では、<xref:System.Net.HttpWebRequest> を使用してこのようなクライアントを作成する方法を示します。 これは、WCF サービスにアクセスする 1 つの方法にすぎません。 また、WCF チャネルファクトリや <xref:System.Net.WebClient>などの他の .NET Framework クラスを使用してサービスにアクセスすることもできます。 SDK のその他のサンプル ([基本的な HTTP サービス](../../../../docs/framework/wcf/samples/basic-http-service.md)サンプルなど) は、これらのクラスを使用して WCF サービスと通信する方法を示しています。
+Client プロジェクトの Program.cs では、<xref:System.Net.HttpWebRequest> を使用してこのようなクライアントを作成する方法を示します。 これは、WCF サービスにアクセスする 1 つの方法にすぎません。 また、WCF チャネルファクトリやなどの他の .NET Framework クラスを使用してサービスにアクセスすることもでき <xref:System.Net.WebClient> ます。 SDK のその他のサンプル ([基本的な HTTP サービス](basic-http-service.md)サンプルなど) は、これらのクラスを使用して WCF サービスと通信する方法を示しています。
 
 ## <a name="to-run-the-sample"></a>サンプルを実行するには
 
@@ -50,13 +50,13 @@ Client プロジェクトの Program.cs では、<xref:System.Net.HttpWebRequest
 
 1. ASP.NET キャッシュ統合サンプルのソリューションを開きます。
 
-2. Ctrl キーと Shift キーを押しながら B キーを押して、ソリューションをビルドします。
+2. Ctrl + Shift + B キーを押して、ソリューションをビルドします。
 
 3. **ソリューションエクスプローラー**ウィンドウがまだ開いていない場合は、Ctrl + W + S キーを押します。
 
-4. **[ソリューションエクスプローラー]** ウィンドウで、**サービス**プロジェクトを右クリックし、 **[新しいインスタンスを開始]** を選択します。 これで、サービスをホストする ASP.NET 開発サーバーが起動します。
+4. [**ソリューションエクスプローラー** ] ウィンドウで、**サービス**プロジェクトを右クリックし、[**新しいインスタンスを開始**] を選択します。 これで、サービスをホストする ASP.NET 開発サーバーが起動します。
 
-5. **[ソリューションエクスプローラー]** ウィンドウで、**クライアント**プロジェクトを右クリックし、 **[新しいインスタンスを開始]** を選択します。
+5. [**ソリューションエクスプローラー** ] ウィンドウで、**クライアント**プロジェクトを右クリックし、[**新しいインスタンスを開始**] を選択します。
 
 6. クライアント コンソール ウィンドウが表示されて、実行中のサービスの URI および実行中のサービスの HTML ヘルプ ページの URI が示されます。 ブラウザーでヘルプ ページの URI を入力することで、いつでも HTML ヘルプ ページを表示することができます。
 
@@ -66,4 +66,4 @@ Client プロジェクトの Program.cs では、<xref:System.Net.HttpWebRequest
 
 9. サービスのデバッグを停止するには、Shift キーを押しながら F5 キーを押します。
 
-10. Windows 通知領域で、ASP.NET development server アイコンを右クリックし、 **[停止]** を選択します。
+10. Windows 通知領域で、ASP.NET development server アイコンを右クリックし、[**停止**] を選択します。

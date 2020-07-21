@@ -1,5 +1,6 @@
 ---
 title: 非同期ファイル I/O
+description: .NET での非同期ファイル I/O について確認します。 ReadAsync、WriteAsync などの非同期操作を簡略化する非同期メソッドについて学習します。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,14 +18,12 @@ helpviewer_keywords:
 - multiple I/O requests
 - data streams, synchronous streams
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b39373239d6aefaa671afebbb85dc2156866358f
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 9506a366b6f1e363ec13550e5ed68c7176dd4d0a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204803"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598620"
 ---
 # <a name="asynchronous-file-io"></a>非同期ファイル I/O
 

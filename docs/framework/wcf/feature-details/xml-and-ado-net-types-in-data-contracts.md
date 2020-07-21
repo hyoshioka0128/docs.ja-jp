@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2ce8461-3c15-4c41-8c81-1cb78f5b59a6
-ms.openlocfilehash: 0d052c0f178c2dc6e2eb5a740faa42239fb91068
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 975d4f4f37bbbd895cab4e87686f15017e90f382
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64637230"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600076"
 ---
 # <a name="xml-and-adonet-types-in-data-contracts"></a>データ コントラクトの XML および ADO.NET の種類
-Windows Communication Foundation (WCF) のデータ コントラクト モデルでは、XML を直接表す特定の種類をサポートします。 シリアライザーは、これらの型を XML にシリアル化するとき、型の XML コンテンツを書き出しますが、それ以上の処理は行いません。 サポートされている型は、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlNode> の配列 (`XmlNode` 型自体はサポートされていません)、および <xref:System.Xml.Serialization.IXmlSerializable> を実装した型です。 データベース プログラミングでは、<xref:System.Data.DataSet> 型、<xref:System.Data.DataTable> 型、および型指定されたデータセットが一般的に使用されます。 これらの型は `IXmlSerializable` インターフェイスを実装するので、データ コントラクト モデルでシリアル化可能です。 この型に関する考慮事項について、このトピックの最後に説明します。  
+Windows Communication Foundation (WCF) データコントラクトモデルでは、XML を直接表す特定の型がサポートされています。 シリアライザーは、これらの型を XML にシリアル化するとき、型の XML コンテンツを書き出しますが、それ以上の処理は行いません。 サポートされている型は、<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlNode> の配列 (`XmlNode` 型自体はサポートされていません)、および <xref:System.Xml.Serialization.IXmlSerializable> を実装した型です。 データベース プログラミングでは、<xref:System.Data.DataSet> 型、<xref:System.Data.DataTable> 型、および型指定されたデータセットが一般的に使用されます。 これらの型は `IXmlSerializable` インターフェイスを実装するので、データ コントラクト モデルでシリアル化可能です。 この型に関する考慮事項について、このトピックの最後に説明します。  
   
 ## <a name="xml-types"></a>XML 型  
   
@@ -35,7 +35,7 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
 </MyDataContract>  
 ```  
   
- ラッパー データ メンバー要素 `<myDataMember>` が引き続き存在している点に注意してください。 データ コントラクト モデルにはこの要素を削除する方法がありません。 このモデルを処理するシリアライザー (<xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.NetDataContractSerializer>) では、このラッパー要素に特別な属性が出力されることがあります。 この特別な属性には、標準の XML スキーマ インスタンスの "nil" 属性 (`XmlElement` を `null` に設定できるようにする属性) や "type" 属性 (`XmlElement` をポリモーフィックに使用できるようにする属性) などがあります。 また、次の XML 属性は、WCF に固有します。"Id"、"Ref"、"Type"および"Assembly"です。 これらの属性が出力されるのは、オブジェクト グラフの保存モードを有効にするか `XmlElement` を使用する場合に <xref:System.Runtime.Serialization.NetDataContractSerializer> をサポートするためです  (オブジェクト グラフの保存モードの詳細については、次を参照してください[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)。)。  
+ ラッパー データ メンバー要素 `<myDataMember>` が引き続き存在している点に注意してください。 データ コントラクト モデルにはこの要素を削除する方法がありません。 このモデルを処理するシリアライザー (<xref:System.Runtime.Serialization.DataContractSerializer> と <xref:System.Runtime.Serialization.NetDataContractSerializer>) では、このラッパー要素に特別な属性が出力されることがあります。 この特別な属性には、標準の XML スキーマ インスタンスの "nil" 属性 (`XmlElement` を `null` に設定できるようにする属性) や "type" 属性 (`XmlElement` をポリモーフィックに使用できるようにする属性) などがあります。 また、次の XML 属性は、WCF に固有のものです。 "Id"、"Ref"、"Type"、および "Assembly"。 これらの属性が出力されるのは、オブジェクト グラフの保存モードを有効にするか `XmlElement` を使用する場合に <xref:System.Runtime.Serialization.NetDataContractSerializer> をサポートするためです  (オブジェクトグラフの保存モードの詳細については、「[シリアル化と逆シリアル化](serialization-and-deserialization.md)」を参照してください)。  
   
  `XmlElement` の配列またはコレクションを使用できます。これらは、他の配列またはコレクションとして処理されます。 つまり、コレクション全体のラッパー要素と、配列に含まれる `<myDataMember>` ごとに個別のラッパー要素 (上記の例の `XmlElement` と同様) が存在することになります。  
   
@@ -43,7 +43,7 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
   
  `XmlElement` に逆シリアル化される XML フラグメントでは、先祖要素のプレフィックス定義に依存するのではなく、使用するすべてのプレフィックスを定義しておく必要があります。 これは、`DataContractSerializer` を使用して、`DataContractSerializer` 以外の別のソースから XML にアクセスする場合にのみ考慮する必要があります。  
   
- 使用すると、 `DataContractSerializer`、`XmlElement`型のデータ メンバーにのみ、ポリモーフィックに割り当てることが<xref:System.Object>します。 <xref:System.Collections.IEnumerable> が実装されていても、`XmlElement` をコレクション型として使用したり、<xref:System.Collections.IEnumerable> データ メンバーに割り当てることはできません。 すべてのポリモーフィックな割り当てと同様、`DataContractSerializer`データ コントラクト名を出力 – 結果の XML にこの例では、"XmlElement"になって、"http://schemas.datacontract.org/2004/07/System.Xml"名前空間。  
+ と共に使用する場合、には `DataContractSerializer` `XmlElement` ポリモーフィックを割り当てることができますが、型のデータメンバーにのみ割り当てられ <xref:System.Object> ます。 <xref:System.Collections.IEnumerable> が実装されていても、`XmlElement` をコレクション型として使用したり、<xref:System.Collections.IEnumerable> データ メンバーに割り当てることはできません。 すべてのポリモーフィックな割り当てと同様に、は、 `DataContractSerializer` 結果の XML にデータコントラクト名を出力します。この場合、"" 名前空間の "XmlElement" になり http://schemas.datacontract.org/2004/07/System.Xml ます。  
   
  `NetDataContractSerializer` を使用する場合、`XmlElement` の有効なポリモーフィック割り当て (`Object` または `IEnumerable` への割り当て) がすべてサポートされます。  
   
@@ -75,7 +75,7 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
   
  結果的に無効な XML になる `XmlNode` の配列は、シリアル化できません。 たとえば、最初のインスタンスが `XmlNode` で、次のインスタンスが `XmlElement` という 2 つの <xref:System.Xml.XmlAttribute> インスタンスの配列は、無効です。このシーケンスは、有効な XML インスタンスに対応していません (属性を関連付ける場所がありません)。  
   
- `XmlNode` の配列の逆シリアル化時には、ノードが作成され、そのノードに受信 XML からの情報が追加されます。 有効な親 <xref:System.Xml.XmlDocument> は、デシリアライザーによって提供されます。 すべてのノードが逆シリアル化、ラッパー データ メンバー要素の属性が、(ポリモーフィック割り当てを示すために使用する属性) などの WCF シリアライザーによって配置された属性を除外します。 XML フラグメントですべての名前空間プレフィックスを定義するときの注意点は、`XmlNode` の逆シリアル化に適用されるのと同様に、`XmlElement` の配列の逆シリアル化にも適用されます。  
+ `XmlNode` の配列の逆シリアル化時には、ノードが作成され、そのノードに受信 XML からの情報が追加されます。 有効な親 <xref:System.Xml.XmlDocument> は、デシリアライザーによって提供されます。 すべてのノードは、ラッパーデータメンバー要素のすべての属性を含めて逆シリアル化されますが、WCF シリアライザーによって配置された属性 (ポリモーフィックな割り当てを示すために使用される属性など) は除外されます。 XML フラグメントですべての名前空間プレフィックスを定義するときの注意点は、`XmlNode` の逆シリアル化に適用されるのと同様に、`XmlElement` の配列の逆シリアル化にも適用されます。  
   
  オブジェクト グラフの保存を有効にしてシリアライザーを使用した場合、オブジェクトの等価性は、個別の `XmlNode` インスタンスではなく、`XmlNode` 配列のレベルでのみ保存されます。  
   
@@ -87,10 +87,10 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
   
  <xref:System.Array> の `Object` または `Array` の `IEnumerable` 型のデータ メンバーに `XmlNode` インスタンスを追加しても、そのデータ メンバーが `Array` インスタンスの `XmlNode` として扱われることはありません。 配列の各メンバーは個別にシリアル化されます。  
   
- `DataContractSerializer` を使用する場合、`XmlNode` の配列をポリモーフィックに割り当てることができますが、その対象は `Object` 型のデータ メンバーだけです。 `IEnumerable` が実装されていても、`XmlNode` の配列をコレクション型として使用したり、`IEnumerable` データ メンバーに割り当てることはできません。 すべてのポリモーフィックな割り当てと同様、`DataContractSerializer`データ コントラクト名を出力"結果の XML にこの例では、ArrayOfXmlNode「です」で、"http://schemas.datacontract.org/2004/07/System.Xml"名前空間。 使用すると、`NetDataContractSerializer`の有効な割り当て、`XmlNode`配列はサポートされています。  
+ `DataContractSerializer` を使用する場合、`XmlNode` の配列をポリモーフィックに割り当てることができますが、その対象は `Object` 型のデータ メンバーだけです。 `IEnumerable` が実装されていても、`XmlNode` の配列をコレクション型として使用したり、`IEnumerable` データ メンバーに割り当てることはできません。 すべてのポリモーフィックな割り当てと同様に、は、 `DataContractSerializer` 結果の XML にデータコントラクト名を出力します。この場合、"" 名前空間の "ArrayOfXmlNode" になり http://schemas.datacontract.org/2004/07/System.Xml ます。 と共に使用する場合 `NetDataContractSerializer` 、配列の有効な代入 `XmlNode` がサポートされます。  
   
 ### <a name="schema-considerations"></a>スキーマの考慮事項  
- XML 型のスキーマ マッピングの詳細については、次を参照してください。 [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)します。 ここでは、重要な点の概要について説明します。  
+ XML 型のスキーママッピングの詳細については、「[データコントラクトスキーマの参照](data-contract-schema-reference.md)」を参照してください。 ここでは、重要な点の概要について説明します。  
   
  `XmlElement` 型のデータ メンバーは、次の匿名型を使用して定義された要素にマップされます。  
   
@@ -129,7 +129,7 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
   
  `IXmlSerializable` を実装しており、以前に定義したコンテンツ型である型のデータ メンバーを逆シリアル化すると、デシリアライザーはそのデータ メンバーのラッパー要素に XML リーダーを配置し、<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> メソッドに制御を渡します。 このメソッドは、開始タグと終了タグを含む、要素全体を読み取る必要があります。 `ReadXml` コードでは、要素が空の場合も忘れずに処理してください。 また、`ReadXml` の実装では、特定の方法で名前が付けられたラッパー要素に依存しないようにしてください。 シリアライザーによって選択される名前は、異なる場合があります。  
   
- `IXmlSerializable` コンテンツ型は、たとえば <xref:System.Object> 型のデータ メンバーなどに、ポリモーフィックに割り当てることができます。 また、型インスタンスを null にすることもできます。 さらに、`IXmlSerializable` 型は、オブジェクト グラフの保存を有効にして <xref:System.Runtime.Serialization.NetDataContractSerializer> で使用することも可能です。 これらすべての機能が特定の属性をラッパー要素にアタッチする WCF のシリアライザーが必要です ("nil"と WCF 固有の名前空間で XML スキーマ インスタンス名前空間と"Id"、"Ref"、"Type"および"Assembly"で"type")。  
+ `IXmlSerializable` コンテンツ型は、たとえば <xref:System.Object> 型のデータ メンバーなどに、ポリモーフィックに割り当てることができます。 また、型インスタンスを null にすることもできます。 さらに、`IXmlSerializable` 型は、オブジェクト グラフの保存を有効にして <xref:System.Runtime.Serialization.NetDataContractSerializer> で使用することも可能です。 これらのすべての機能では、WCF シリアライザーが特定の属性をラッパー要素にアタッチする必要があります (XML スキーマインスタンス名前空間の "nil" と "type"、WCF 固有の名前空間の "Id"、"Ref"、"Type"、"Assembly")。  
   
 #### <a name="attributes-to-ignore-when-implementing-readxml"></a>ReadXml を実装するときに無視する属性  
  `ReadXml` コードに制御を渡す前に、デシリアライザーは、XML 要素を調べ、前述の特別な XML 属性を検出し、その属性に従って動作します。 たとえば、"nil" が `true` の場合は、null 値が逆シリアル化され、`ReadXml` は呼び出されません。 ポリモーフィズムが検出された場合は、要素のコンテンツが別の型と同様に逆シリアル化されます。 ポリモーフィックに割り当てられた型の `ReadXml` 実装が呼び出されます。 どの場合も、これらの特別な属性がデシリアライザーによって処理されるため、`ReadXml` 実装ではこれらの属性を無視する必要があります。  
@@ -137,11 +137,11 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
 ### <a name="schema-considerations-for-ixmlserializable-content-types"></a>IXmlSerializable コンテンツ型のスキーマに関する考慮事項  
  `IXmlSerializable` コンテンツ型のスキーマをエクスポートすると、スキーマ プロバイダー メソッドが呼び出されます。 このスキーマ プロバイダー メソッドには、<xref:System.Xml.Schema.XmlSchemaSet> が渡されます。 このメソッドは、有効なスキーマをスキーマ セットに追加できます。 スキーマ セットには、スキーマをエクスポートした時点で既に認識されていたスキーマが格納されます。 スキーマ プロバイダー メソッドは、スキーマ セットに項目を追加する必要があるときに、適切な名前空間を持つ <xref:System.Xml.Schema.XmlSchema> がそのセットに既に存在するかどうかを確認する必要があります。 存在する場合、スキーマ プロバイダー メソッドは新しい項目を既存の `XmlSchema` に追加する必要があります。 存在しない場合、新しい `XmlSchema` インスタンスを作成する必要があります。 これは、`IXmlSerializable` 型の配列を使用する場合に重要です。 たとえば、`IXmlSerializable` 型を名前空間 "B" の "A" 型としてエクスポートする場合、スキーマ プロバイダー メソッドが呼び出される前に、"B" が "ArrayOfA" 型を保持するためのスキーマがスキーマ セットに既に存在している可能性があります。  
   
- 型を <xref:System.Xml.Schema.XmlSchemaSet> に追加する以外に、コンテンツ型のスキーマ プロバイダー メソッドは null 以外の値を返す必要があります。 このメソッドは、特定の <xref:System.Xml.XmlQualifiedName> 型で使用するスキーマ型の名前を指定する `IXmlSerializable` を返すことができます。 この修飾名は、その型のデータ コントラクト名および名前空間としても使用されます。 スキーマ プロバイダー メソッドは、スキーマ セットにまだ存在していない型であっても、復帰時に返すことができます。 ただし、関連するすべての型がエクスポートされる (<xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> の関連するすべての型に対して <xref:System.Runtime.Serialization.XsdDataContractExporter> メソッドが呼び出され、<xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> プロパティにアクセスする) までに、その型がスキーマ セットに存在している必要があります。 関連するすべての `Schemas` 呼び出しが実行される前に `Export` プロパティにアクセスすると、<xref:System.Xml.Schema.XmlSchemaException> が発生する可能性があります。 エクスポート プロセスの詳細については、次を参照してください。[クラスからのスキーマのエクスポート](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)します。  
+ 型を <xref:System.Xml.Schema.XmlSchemaSet> に追加する以外に、コンテンツ型のスキーマ プロバイダー メソッドは null 以外の値を返す必要があります。 このメソッドは、特定の <xref:System.Xml.XmlQualifiedName> 型で使用するスキーマ型の名前を指定する `IXmlSerializable` を返すことができます。 この修飾名は、その型のデータ コントラクト名および名前空間としても使用されます。 スキーマ プロバイダー メソッドは、スキーマ セットにまだ存在していない型であっても、復帰時に返すことができます。 ただし、関連するすべての型がエクスポートされる (<xref:System.Runtime.Serialization.XsdDataContractExporter.Export%2A> の関連するすべての型に対して <xref:System.Runtime.Serialization.XsdDataContractExporter> メソッドが呼び出され、<xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas%2A> プロパティにアクセスする) までに、その型がスキーマ セットに存在している必要があります。 関連するすべての `Schemas` 呼び出しが実行される前に `Export` プロパティにアクセスすると、<xref:System.Xml.Schema.XmlSchemaException> が発生する可能性があります。 エクスポートプロセスの詳細については、「[クラスからのスキーマのエクスポート](exporting-schemas-from-classes.md)」を参照してください。  
   
- スキーマ プロバイダー メソッドは、使用する <xref:System.Xml.Schema.XmlSchemaType> を返すこともできます。 その型は、匿名の場合とそうでない場合があります。 匿名の場合、`IXmlSerializable` 型のスキーマは、`IXmlSerializable` 型がデータ メンバーとして使用されるたびに匿名型としてエクスポートされます。 `IXmlSerializable` 型には、データ コントラクト名と名前空間が引き続き保持されます  (これで説明されているように決定されますが[Data Contract Names](../../../../docs/framework/wcf/feature-details/data-contract-names.md)する点を除いて、<xref:System.Runtime.Serialization.DataContractAttribute>属性を使用して、名前をカスタマイズすることはできません)。匿名でない場合、型は `XmlSchemaSet` に含まれている型のいずれかである必要があります。 これは、型の `XmlQualifiedName` を返す場合と同じです。  
+ スキーマ プロバイダー メソッドは、使用する <xref:System.Xml.Schema.XmlSchemaType> を返すこともできます。 その型は、匿名の場合とそうでない場合があります。 匿名の場合、`IXmlSerializable` 型のスキーマは、`IXmlSerializable` 型がデータ メンバーとして使用されるたびに匿名型としてエクスポートされます。 `IXmlSerializable` 型には、データ コントラクト名と名前空間が引き続き保持されます  (これは、「[データコントラクト名](data-contract-names.md)」で説明されているように、 <xref:System.Runtime.Serialization.DataContractAttribute> 名前のカスタマイズには属性を使用できない点が異なります)。匿名でない場合は、内のいずれかの型である必要があり `XmlSchemaSet` ます。 これは、型の `XmlQualifiedName` を返す場合と同じです。  
   
- さらに、型のグローバル要素宣言がエクスポートされます。 型に <xref:System.Xml.Serialization.XmlRootAttribute> 属性が適用されていない場合、その要素にはデータ コントラクトと同じ名前と名前空間が使用され、その "nillable" プロパティは true に設定されます。 唯一の例外は、スキーマ名前空間 ("http://www.w3.org/2001/XMLSchema")-スキーマの名前空間に新しい要素を追加することが禁止されているために、対応するグローバル要素が空白の名前空間は、型のデータ コントラクトがこの名前空間にある場合。 型に `XmlRootAttribute` 属性が適用されている場合、グローバル要素宣言は、<xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A>、<xref:System.Xml.Serialization.XmlRootAttribute.Namespace%2A>、および <xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A> の各プロパティを使用してエクスポートされます。 `XmlRootAttribute` が適用された場合の既定値は、データ コントラクト名、空白の名前空間、および true に設定された "nillable" です。  
+ さらに、型のグローバル要素宣言がエクスポートされます。 型に <xref:System.Xml.Serialization.XmlRootAttribute> 属性が適用されていない場合、その要素にはデータ コントラクトと同じ名前と名前空間が使用され、その "nillable" プロパティは true に設定されます。 唯一の例外は、スキーマの名前空間 (" http://www.w3.org/2001/XMLSchema ") です。型のデータコントラクトがこの名前空間にある場合、対応するグローバル要素は、スキーマの名前空間に新しい要素を追加することが禁止されているため、空の名前空間にあります。 型に `XmlRootAttribute` 属性が適用されている場合、グローバル要素宣言は、<xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A>、<xref:System.Xml.Serialization.XmlRootAttribute.Namespace%2A>、および <xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A> の各プロパティを使用してエクスポートされます。 `XmlRootAttribute` が適用された場合の既定値は、データ コントラクト名、空白の名前空間、および true に設定された "nillable" です。  
   
  同じグローバル要素宣言の規則が、従来のデータセット型に適用されます。 `XmlRootAttribute` は、カスタム コードによって追加されたグローバル要素宣言をオーバーライドできません。これには、スキーマ プロバイダー メソッドを使用して `XmlSchemaSet` に追加された場合と、従来のデータセット型に対して `GetSchema` を使用して追加された場合があります。  
   
@@ -154,7 +154,7 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
   
 - `ReadXml` の実装では、ラッパー要素の読み取りは想定されていません。 読み取ることが想定されているのは、`WriteXml` で生成される要素 1 つのみです。  
   
-- 要素型を一様にシリアル化する場合 (データ コントラクトのデータ メンバーとしてシリアル化する場合など) は、コンテンツ型の場合と同様に、`WriteXml` を呼び出す前にラッパー要素が出力されます。 ただし、`WriteXml` コンストラクターまたは `DataContractSerializer` コンストラクターによるシリアライザーの構築時にルート名と名前空間が明示的に指定されていない限り、トップ レベルで要素型をシリアル化しても、通常は `NetDataContractSerializer` で書き出される要素を囲むラッパー要素が出力されることはありません。 詳細については、次を参照してください。[シリアル化および逆シリアル化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)します。  
+- 要素型を一様にシリアル化する場合 (データ コントラクトのデータ メンバーとしてシリアル化する場合など) は、コンテンツ型の場合と同様に、`WriteXml` を呼び出す前にラッパー要素が出力されます。 ただし、`WriteXml` コンストラクターまたは `DataContractSerializer` コンストラクターによるシリアライザーの構築時にルート名と名前空間が明示的に指定されていない限り、トップ レベルで要素型をシリアル化しても、通常は `NetDataContractSerializer` で書き出される要素を囲むラッパー要素が出力されることはありません。 詳細については、「[シリアル化と逆シリアル化](serialization-and-deserialization.md)」を参照してください。  
   
 - 構築時にルート名と名前空間を指定せずにトップ レベルで要素型をシリアル化した場合、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A> と <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> では基本的に何も実行されず、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A> によって `WriteXml` が呼び出されます。 このモードでは、シリアル化されるオブジェクトは null にできず、ポリモーフィックに割り当てることができません。 また、オブジェクト グラフの保存を有効化できず、`NetDataContractSerializer` も使用できません。  
   
@@ -176,29 +176,29 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
 ### <a name="importing-ixmlserializable-schema"></a>IXmlSerializable スキーマのインポート  
  `IXmlSerializable` 型から生成されたスキーマをインポートする場合、次のような状況が考えられます。  
   
-- 」の説明に従って、生成されたスキーマは、有効なデータ コントラクト スキーマにあります[Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)します。 この場合は、スキーマを通常どおりにインポートでき、通常のデータ コントラクト型が生成されます。  
+- 生成されるスキーマは、「[データコントラクトスキーマの参照](data-contract-schema-reference.md)」で説明されている有効なデータコントラクトスキーマである場合があります。 この場合は、スキーマを通常どおりにインポートでき、通常のデータ コントラクト型が生成されます。  
   
-- 生成されたスキーマが、有効なデータ コントラクト スキーマではない場合があります。 たとえば、スキーマ プロバイダー メソッドによって、データ コントラクト モデルでサポートされていない XML 属性を含むスキーマが生成されることがあります。 この場合、スキーマを `IXmlSerializable` 型としてインポートできます。 このインポート モードが既定で上にないが簡単で有効にできる – など、`/importXmlTypes`コマンド ライン スイッチを[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)します。 詳細に記載されて、[クラスを生成するスキーマをインポート](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)します。 型インスタンスを処理するには、XML を直接操作する必要があります。 `XmlSerializer` の使用方法に関するトピックを参照し、より広い範囲のスキーマをサポートする別のシリアル化技術を使用することを検討することもできます。  
+- 生成されたスキーマが、有効なデータ コントラクト スキーマではない場合があります。 たとえば、スキーマ プロバイダー メソッドによって、データ コントラクト モデルでサポートされていない XML 属性を含むスキーマが生成されることがあります。 この場合、スキーマを `IXmlSerializable` 型としてインポートできます。 このインポートモードは、既定ではオンになっていませんが、 `/importXmlTypes` [ServiceModel メタデータユーティリティツール (svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)へのコマンドラインスイッチなどを使用して、簡単に有効にすることができます。 この詳細については、「[クラスを生成するためのスキーマのインポート](importing-schema-to-generate-classes.md)」を参照してください。 型インスタンスを処理するには、XML を直接操作する必要があります。 `XmlSerializer` の使用方法に関するトピックを参照し、より広い範囲のスキーマをサポートする別のシリアル化技術を使用することを検討することもできます。  
   
 - 新しい型を生成する代わりに、プロキシ内の既存の `IXmlSerializable` 型を再利用できます。 この場合、「型を作成するためのスキーマのインポート」で説明する参照型の機能を使用して、再利用する型を示すことができます。 これは、Svcutil.exe で `/reference` スイッチを使用して、再利用する型を含むアセンブリを指定することに相当します。  
   
 ## <a name="representing-arbitrary-xml-in-data-contracts"></a>データ コントラクトでの任意の XML の表現  
  `XmlElement` 型、`XmlNode` の配列、および `IXmlSerializable` 型を使用すると、任意の XML をデータ コントラクト モデルに挿入できます。 `DataContractSerializer` と `NetDataContractSerializer` は、プロセスには介入せずに、使用している XML ライターにこの XML コンテンツを渡します。 ただし、XML ライターは、出力する XML に対して特定の制限を適用することがあります。 次に重要な例を具体的に示します。  
   
-- XML ライターは通常は XML ドキュメントの宣言を許可しない (たとえば、\<ですか? xml バージョン ='1.0 ' ですか? >) 別のドキュメントの書き込み中。 完全な XML ドキュメントを取得して、それを `Array` データ メンバーの `XmlNode` としてシリアル化したりすることはできません。 これを実行するには、ドキュメントの宣言を取り除くか、独自のエンコード方法でこの宣言を表現する必要があります。  
+- 通常、XML ライターでは、 \<?xml version=’1.0’ ?> 別のドキュメントの書き込み中に xml ドキュメント宣言 (など) を使用することはできません。 完全な XML ドキュメントを取得して、それを `Array` データ メンバーの `XmlNode` としてシリアル化したりすることはできません。 これを実行するには、ドキュメントの宣言を取り除くか、独自のエンコード方法でこの宣言を表現する必要があります。  
   
-- すべての WCF に付属している XML ライターでは、XML 処理命令 (\<でしょうか。 … ? >) と文書型定義 (\<! … >)、SOAP メッセージではできないためです。 この場合も、独自のエンコード機構を使用して、この制限に対処できます。 生成される XML に XML 処理命令と文書型定義を含める必要がある場合は、この 2 つをサポートする XML ライターを使用するカスタム エンコーダーを作成できます。  
+- SOAP メッセージでは許可されていないため、WCF で提供されるすべての XML ライターは XML 処理命令 ( \<? … ?> ) およびドキュメント型定義 ( \<! … > ) を拒否します。 この場合も、独自のエンコード機構を使用して、この制限に対処できます。 生成される XML に XML 処理命令と文書型定義を含める必要がある場合は、この 2 つをサポートする XML ライターを使用するカスタム エンコーダーを作成できます。  
   
-- `WriteXml` を実装するときは、XML ライターで <xref:System.Xml.XmlWriter.WriteRaw%2A> メソッドを呼び出さないようにします。 WCF は、さまざまな XML のエンコーディング (バイナリを含む) を使用して、非常に困難かを使用してが`WriteRaw`結果がどのエンコードでも使用できるようにします。  
+- `WriteXml` を実装するときは、XML ライターで <xref:System.Xml.XmlWriter.WriteRaw%2A> メソッドを呼び出さないようにします。 WCF では、さまざまな XML エンコーディング (バイナリを含む) を使用し `WriteRaw` ます。そのため、結果を任意のエンコーディングで使用できるようにすることは非常に困難または不可能です。  
   
-- 実装するときに`WriteXml`を使用しないでください、<xref:System.Xml.XmlWriter.WriteEntityRef%2A>と<xref:System.Xml.XmlWriter.WriteNmToken%2A>WCF に付属している XML ライターでサポートされていないメソッドです。  
+- を実装する場合は、 `WriteXml` <xref:System.Xml.XmlWriter.WriteEntityRef%2A> <xref:System.Xml.XmlWriter.WriteNmToken%2A> WCF で提供される XML ライターでサポートされていないメソッドとメソッドを使用しないようにしてください。  
   
 ## <a name="using-dataset-typed-dataset-and-datatable"></a>DataSet、Typed DataSet、および DataTable の使用  
  データ コントラクト モデルでは、この 3 つの型の使用が完全にサポートされています。 これらの型を使用する場合は、次の点に注意してください。  
   
-- これらの型のスキーマ (特に<xref:System.Data.DataSet>とその型指定された派生クラス) 一部の WCF 以外のプラットフォームと相互運用ができないか、これらのプラットフォームを使用するとユーザビリティの低い可能性があります。 また、`DataSet` 型の使用はパフォーマンスに影響を与えることがあります。 さらに、将来的にアプリケーションのバージョン管理が通常より難しくなる可能性もあります。 コントラクトでは、`DataSet` 型の代わりに、明示的に定義されたデータ コントラクト型を使用することを検討してください。  
+- これらの型 (特に、型指定された派生クラス) のスキーマは、 <xref:System.Data.DataSet> 一部の非 WCF プラットフォームと相互運用できない可能性があります。また、これらのプラットフォームで使用する場合、使いやすさが低下する可能性があります。 また、`DataSet` 型の使用はパフォーマンスに影響を与えることがあります。 さらに、将来的にアプリケーションのバージョン管理が通常より難しくなる可能性もあります。 コントラクトでは、`DataSet` 型の代わりに、明示的に定義されたデータ コントラクト型を使用することを検討してください。  
   
-- `DataSet` スキーマまたは `DataTable` スキーマをインポートする際には、これらの型を参照することが重要です。 これは Svcutil.exe コマンド ライン ツールでは、System.Data.dll アセンブリ名を渡すことによって実現できます、`/reference`スイッチします。 型指定されたデータセット スキーマをインポートする場合、その型指定されたデータセットの型を参照する必要があります。 Svcutil.exe を使用して渡すために、型指定されたデータセットのアセンブリの場所、`/reference`スイッチします。 型の参照の詳細については、次を参照してください。、[クラスを生成するスキーマをインポート](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)します。  
+- `DataSet` スキーマまたは `DataTable` スキーマをインポートする際には、これらの型を参照することが重要です。 Svcutil.exe コマンドラインツールを使用すると、スイッチに system.servicemodel アセンブリ名を渡すことによってこれを実現できます。 `/reference` 型指定されたデータセット スキーマをインポートする場合、その型指定されたデータセットの型を参照する必要があります。 Svcutil.exe を使用して、型指定されたデータセットのアセンブリの場所をスイッチに渡し `/reference` ます。 参照型の詳細については、「[クラスを生成するためのスキーマのインポート](importing-schema-to-generate-classes.md)」を参照してください。  
   
  データ コントラクト モデルでは、型指定された DataSet のサポートが制限されています。 型指定された DataSet は、シリアル化と逆シリアル化が可能であり、スキーマをエクスポートすることもできます。 ただし、データ コントラクト スキーマのインポートでは、既存のスキーマの再利用のみが行われるため、型指定された新しい DataSet 型をスキーマから生成することはできません。 Svcutil.exe ツールで `/r` スイッチを使用して、型指定された既存の DataSet を指し示すことができます。 型指定されたデータセットを使用するサービスで、`/r` スイッチを指定せずに Svcutil.exe を使用しようとすると、代替のシリアライザー (XmlSerializer) が自動的に選択されます。 DataContractSerializer を使用することも、スキーマから DataSet を生成することも必要である場合は、(サービスで `/d` スイッチを指定した Xsd.exe ツールを使用して) 型指定された DataSet 型を生成し、型をコンパイルした後に、Svcutil.exe で `/r` スイッチを使用して、それらの型を指し示します。  
   
@@ -206,5 +206,5 @@ Windows Communication Foundation (WCF) のデータ コントラクト モデル
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.Serialization.IXmlSerializable>
-- [データ コントラクトの使用](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [データ コントラクト シリアライザーでサポートされる型](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [データ コントラクトの使用](using-data-contracts.md)
+- [データ コントラクト シリアライザーでサポートされる型](types-supported-by-the-data-contract-serializer.md)

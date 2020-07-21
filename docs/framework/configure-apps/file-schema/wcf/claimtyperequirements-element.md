@@ -3,13 +3,13 @@ title: <claimTypeRequirements> 要素
 ms.date: 03/30/2017
 ms.assetid: a26efe73-4bad-4731-8cad-27f00d54354b
 ms.openlocfilehash: b4d8479dd9a24774afbd0549caf9e261f55fa147
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69926147"
 ---
-# <a name="claimtyperequirements-element"></a>\<claimTypeRequirements > 要素
+# <a name="claimtyperequirements-element"></a>\<claimTypeRequirements> 要素
 必須のクレームの種類のコレクションを指定します。  
   
  フェデレーション シナリオでは、サービスが受信資格情報についての要件を記述します。 たとえば、受信資格情報は、特定のクレーム タイプのセットを処理する必要があります。 このコレクションの子要素はそれぞれ、フェデレーション資格情報に表示されると予想される必須のクレームおよび省略可能なクレームの種類を指定します。  
@@ -26,12 +26,12 @@ ms.locfileid: "69926147"
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - [サービス ID と認証](../../../wcf/feature-details/service-identity-and-authentication.md)
 - [フェデレーションと発行済みトークン](../../../wcf/feature-details/federation-and-issued-tokens.md)
-- [カスタム バインドを使用したセキュリティ機能](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [カスタム バインディングを使用したセキュリティ機能](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
 - [フェデレーションと発行済みトークン](../../../wcf/feature-details/federation-and-issued-tokens.md)
 - [\<add>](add-of-claimtyperequirements.md)
-- [バインディング](../../../wcf/bindings.md)
+- [バインド](../../../wcf/bindings.md)
 - [バインディングの拡張](../../../wcf/extending/extending-bindings.md)
 - [カスタム バインディング](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [方法: 設定を使用してカスタムバインディングを作成する](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [カスタム バインド セキュリティ](../../../wcf/samples/custom-binding-security.md)
+- [方法: SecurityBindingElement を使用してカスタム バインドを作成する](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [カスタム バインディング セキュリティ](../../../wcf/samples/custom-binding-security.md)

@@ -17,17 +17,33 @@
       href: tutorials/amazon-emr-spark-deployment.md
     - name: Databricks のデプロイする
       href: tutorials/databricks-deployment.md
+    - name: バッチ処理
+      href: tutorials/batch-processing.md
     - name: 構造化ストリーミング
       href: tutorials/streaming.md
+    - name: 感情分析
+      href: tutorials/ml-sentiment-analysis.md
 - name: 使い方ガイド
   items:
+    - name: 配信ガイド
+      href: how-to-guides/broadcast-guide.md
+    - name: UDF ガイド
+      href: how-to-guides/udf-guide.md
     - name: アプリケーションをデバッグする
       href: how-to-guides/debug.md
     - name: HDInsight にジョブを送信する
       href: how-to-guides/hdinsight-deploy-methods.md
     - name: Databricks にジョブを送信する
       href: how-to-guides/databricks-deploy-methods.md
-- name: 辞書／辞典／その他
+    - name: ワーカーおよび UDF のバイナリを展開する
+      href: how-to-guides/deploy-worker-udf-binaries.md
+    - name: Ubuntu 上でアプリケーションをビルドする
+      href: how-to-guides/ubuntu-instructions.md
+    - name: Windows 上でアプリケーションをビルドする
+      href: how-to-guides/windows-instructions.md
+    - name: Azure HDInsight に対話型ノートブックをインストールする
+      href: how-to-guides/hdinsight-notebook-installation.md
+- name: 関連項目
   items:
     - name: API リファレンス
       href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'

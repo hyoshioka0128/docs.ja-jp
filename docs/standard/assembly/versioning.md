@@ -1,5 +1,6 @@
 ---
 title: アセンブリのバージョン管理
+description: .NET アセンブリのバージョン管理について説明します。 CLR を使用するアセンブリのバージョン管理は、すべてアセンブリ レベルで行われます。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - informational versions
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - resolving assembly binding requests
 - versioning, assemblies
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
-ms.openlocfilehash: bbb3dae2ce66c93d05a2a1c0f7e426901fa7b2e0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fdffbcc0bbafed62228cba35e8f85fbec7f7fbab
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140181"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380083"
 ---
 # <a name="assembly-versioning"></a>アセンブリのバージョン管理
 

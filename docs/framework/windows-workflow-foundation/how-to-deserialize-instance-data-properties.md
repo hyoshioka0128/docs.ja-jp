@@ -2,12 +2,12 @@
 title: '方法: インスタンス データ プロパティを逆シリアル化する'
 ms.date: 03/30/2017
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
-ms.openlocfilehash: e037d5f8d0b221aa0eb8fdc6eceabf6efb2dc387
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 8142671fc1bc154337019e025d8443f0570106b3
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989634"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79143084"
 ---
 # <a name="how-to-deserialize-instance-data-properties"></a>方法: インスタンス データ プロパティを逆シリアル化する
 ユーザーまたはワークフロー管理者は、永続化されたワークフロー インスタンスの状態を手動で調べることが必要になる場合があります。 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> は、次の 4 列を公開するインスタンス テーブルに関するビューを提供します。  
@@ -20,11 +20,11 @@ ms.locfileid: "70989634"
   
 - WriteOnlyComplexDataProperties  
   
- プリミティブデータプロパティは、.NET Framework 型が "common" と見なされるプロパティ (たとえば、Int32 や String) を参照し、複合データプロパティは他のすべての型を参照します。 プリミティブ型の正確な列挙については、後で示すコード例を参照してください。  
+ プリミティブ データ プロパティは、.NET Framework 型が "共通" と見なされるプロパティ (Int32 や String など) を参照し、複合データ プロパティは他のすべての型を参照します。 プリミティブ型の正確な列挙については、後で示すコード例を参照してください。  
   
  Read/write プロパティは、インスタンスが読み込まれるときにワークフロー ランタイムに戻されるプロパティを表します。 WriteOnly プロパティは、データベースに書き込まれた後に再度読み取られることはありません。  
   
- この例では、プリミティブ データ プロパティを逆シリアル化できるコードを示します。 このコードは、読み取られること列または WriteOnlyPrimitiveDataProperties 列から読み取ったバイト配列を指定すると、バイナリラージオブジェクト (BLOB) <xref:System.Collections.Generic.Dictionary%602>を、 \<それぞれのキー値が格納されている XName、object > 型のに変換します。pair は、プロパティ名とそれに対応する値を表します。  
+ この例では、プリミティブ データ プロパティを逆シリアル化できるコードを示します。 ReadWritePrimitiveDataProperties または WriteOnlyPrimitiveDataProperties 列から読み取られたバイト配列を指定すると、このコードはバイナリ ラージ<xref:System.Collections.Generic.Dictionary%602>オブジェクト\<(BLOB) を XName 型に変換します>。  
   
  複合データ プロパティを逆シリアル化する操作は現在サポートされていないので、この例ではその方法は示しません。  
   
@@ -104,7 +104,7 @@ namespace PropertyReader
                     // if the instance state is compressed using GZip algorithm  
                     if (isCompressed)  
                     {  
-                        // decompress the data using the GZip   
+                        // decompress the data using the GZip
                         using (GZipStream stream = new GZipStream(memoryStream, CompressionMode.Decompress))  
                         {  
                             // create an XmlReader object and pass it on to the helper method ReadPrimitiveDataProperties  
@@ -117,7 +117,7 @@ namespace PropertyReader
                     }  
                     else  
                     {  
-                        // if the instance data is not compressed   
+                        // if the instance data is not compressed
                         // create an XmlReader object and pass it on to the helper method ReadPrimitiveDataProperties  
                         using (XmlReader reader = XmlDictionaryReader.CreateBinaryReader(memoryStream, XmlDictionaryReaderQuotas.Max))  
                         {  

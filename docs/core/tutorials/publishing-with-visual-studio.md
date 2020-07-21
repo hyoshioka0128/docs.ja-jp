@@ -1,55 +1,115 @@
 ---
-title: Visual Studio 2017 での .NET Core Hello World アプリケーションの発行
+title: Visual Studio を使用して .NET Core コンソール アプリケーションを発行する
 description: 発行では、.NET Core アプリケーションを実行するために必要なファイルのセットを作成します。
-author: BillWagner
-ms.author: wiwagn
-ms.date: 10/05/2017
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: f8c37f47cc8dfb999f2371773a50c2dd91e074a5
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.date: 06/08/2020
+dev_langs:
+- csharp
+- vb
+ms.custom: vs-dotnet
+ms.openlocfilehash: 44646a307d230db395b55b9dec5acfd168605940
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660475"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701285"
 ---
-# <a name="publish-your-net-core-hello-world-application-with-visual-studio-2017"></a>Visual Studio 2017 での .NET Core Hello World アプリケーションの発行
+# <a name="tutorial-publish-a-net-core-console-application-using-visual-studio"></a>チュートリアル: Visual Studio を使用して .NET Core コンソール アプリケーションを発行する
 
-「[Visual Studio 2017 での .NET Core を使用した C# Hello World アプリケーションの構築](with-visual-studio.md)」または「[Visual Studio 2017 での .NET Core を使用した Visual Basic Hello World アプリケーションの構築](vb-with-visual-studio.md)」では、Hello World コンソール アプリケーションを構築しました。 「[Visual Studio 2017 での C# Hello World アプリケーションのデバッグ](debugging-with-visual-studio.md)」では、Visual Studio デバッガーを使ってアプリケーションをテストしました。 正しく動作することが確認できたので、他のユーザーが使用できるように発行することができます。 発行では、アプリケーションを実行するために必要なファイルのセットが作成されます。これらのファイルは、対象コンピューターにコピーすることで配置できます。
+このチュートリアルでは、他のユーザーが実行できるコンソール アプリを発行する方法について説明します。 発行では、アプリケーションを実行するために必要なファイルのセットを作成します。 ファイルを配置するには、それをターゲット マシンにコピーします。
 
-アプリケーションを発行および実行するには 
+## <a name="prerequisites"></a>必須コンポーネント
 
-1. Visual Studio がアプリケーションのリリース バージョンをビルドしていることを確認します。 必要に応じて、ツール バーのビルド構成の設定を **[デバッグ]** から **[リリース]** に変更します。
+- このチュートリアルでは、[Visual Studio 2019 での .NET Core コンソール アプリケーションの作成](with-visual-studio.md)に関するページで作成した、コンソール アプリを使用します。
+
+## <a name="publish-the-app"></a>アプリの発行
+
+1. Visual Studio を起動します。
+
+1. [Visual Studio での .NET Core コンソール アプリケーションの作成](with-visual-studio.md)に関する記事で作成した *HelloWorld* プロジェクトを開きます。
+
+1. Visual Studio でリリース ビルド構成が使用されていることを確認します。 必要に応じて、ツール バーのビルド構成の設定を **[デバッグ]** から **[リリース]** に変更します。
 
    ![リリース ビルドが選択された Visual Studio のツールバー](media/publishing-with-visual-studio/visual-studio-toolbar-release.png)
 
-1. **HelloWorld** プロジェクト (HelloWorld ソリューションではなく) を右クリックし、メニューから **[発行]** を選びます。 Visual Studio のメイン メニューの **[ビルド]** から **[HelloWorld を発行]** を選択することもできます。
+1. **HelloWorld** プロジェクト (HelloWorld ソリューションではなく) を右クリックし、メニューから **[発行]** を選びます。
 
    ![Visual Studio の [発行] コンテキスト メニュー](media/publishing-with-visual-studio/publish-context-menu.png)
 
-   ![Visual Studio の [発行] ウィンドウ](media/publishing-with-visual-studio/publish-settings-window.png)
+1. **[発行]** ページの **[ターゲット]** タブで、 **[フォルダー]** 、 **[次へ]** の順に選択します。
 
-1. コンソール ウィンドウが開きます。 たとえば、Windows タスク バーの **[検索するテキストをここに入力]** テキスト ボックスに「`Command Prompt`」 (または省略して「`cmd`」) と入力し、**コマンド プロンプト** デスクトップ アプリを選ぶか、コマンド プロンプトが検索結果で選択されている場合は Enter キーを押して、コンソール ウィンドウを開きます。
+   ![Visual Studio で発行先を選択します](media/publishing-with-visual-studio/pick-publish-target.png)
 
-1. アプリケーションのプロジェクト ディレクトリの `bin\release\PublishOutput` サブディレクトリで、発行されたアプリケーションに移動します。 次の図に示すように、発行された出力には次の 4 つのファイルが含まれます。
+1. **[発行]** ページの **[場所]** タブで、 **[完了]** を選択します。
 
-      * *HelloWorld.deps.json*
+   ![Visual Studio の [発行] ページの [場所] タブ](media/publishing-with-visual-studio/publish-page-loc-tab.png)
 
-         アプリケーションのランタイム依存関係ファイル。 アプリケーションの実行に必要な .NET Core コンポーネントとライブラリ (アプリケーションが含まれる動的リンク ライブラリを含む) を定義します。 詳細については、「[ランタイム構成ファイル](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md)」を参照してください。
- 
-      * *HelloWorld.dll*
+1. **[発行]** ウィンドウの **[発行]** タブで、 **[発行]** を選択します。
 
-         アプリケーションが含まれるファイル。 動的リンク ライブラリであり、コンソール ウィンドウに `dotnet HelloWorld.dll` コマンドを入力することで実行できます。 
+   ![Visual Studio の [発行] ウィンドウ](media/publishing-with-visual-studio/publish-page.png)
 
-      * *HelloWorld.pdb* (配置は省略可能)
+## <a name="inspect-the-files"></a>ファイルを検査する
 
-         デバッグ シンボルが含まれるファイル。 このファイルはアプリケーションと一緒に配置する必要はありませんが、発行されるバージョンのアプリケーションをデバッグする必要がある場合に保存しておく必要があります。
+この発行プロセスでは、フレームワークに依存する配置が既定で作成されます。これは、.NET Core ランタイムがインストールされているコンピューター上で発行されたアプリケーションが実行される配置の種類です。 ユーザーは、実行可能ファイルをダブルクリックするか、コマンドプロンプトから `dotnet HelloWorld.dll` コマンドを実行することで、発行されたアプリを実行できます。
 
-      * *HelloWorld.runtimeconfig.json*
+次の手順で、発行プロセスによって作成されるファイルを確認します。
 
-         アプリケーションのランタイム構成ファイル。 ビルドされたアプリケーションが実行時に基盤とする .NET Core のバージョンを識別します。 詳細については、「[ランタイム構成ファイル](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md)」を参照してください。  
+1. **ソリューション エクスプローラー**で、 **[すべてのファイルを表示]** を選択します。
 
-   ![発行されたファイルが表示されているコンソール ウィンドウ](media/publishing-with-visual-studio/published-files-output.png)
+1. プロジェクト フォルダーで *bin/Release/netcoreapp3.1/publish* を展開します。
 
-発行プロセスでは、フレームワークに依存する配置が作成されます。これは、.NET Core がシステムにインストールされていれば、.NET Core によってサポートされる任意のプラットフォームで発行されたアプリケーションが動作する配置の種類です。 ユーザーはコンソール ウィンドウから `dotnet HelloWorld.dll` コマンドを発行することによって、アプリケーションを実行できます。
+   :::image type="content" source="media/publishing-with-visual-studio/published-files-output.png" alt-text="発行されたファイルを表示しているソリューション エクスプローラー":::
 
-.NET Core アプリケーションの発行と展開の詳細については、「[.NET Core アプリケーション展開](../deploying/index.md)」を参照してください。
+   この図に示すように、発行された出力には次のファイルが含まれます。
+
+   * *HelloWorld.deps.json*
+
+      このファイルは、アプリケーションのランタイム依存関係ファイルです。 これは、アプリの実行に必要な .NET Core コンポーネントとライブラリ (アプリケーションが含まれる動的リンク ライブラリを含む) を定義します。 詳細については、「[ランタイム構成ファイル](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md)」を参照してください。
+
+   * *HelloWorld.dll*
+
+      これは、[フレームワークに依存する展開](../deploying/deploy-with-cli.md#framework-dependent-deployment)バージョンのアプリケーションです。 このダイナミック リンク ライブラリを実行するには、コマンド プロンプトで`dotnet HelloWorld.dll` を入力します。 アプリ実行のこの方法は、.NET Core ランタイムがインストールされている任意のプラットフォームで動作します。
+
+   * *HelloWorld.exe*
+
+      これは、[フレームワークに依存する実行可能ファイル](../deploying/deploy-with-cli.md#framework-dependent-executable) バージョンのアプリケーションです。 これを実行するには、コマンド プロンプトで `HelloWorld.exe` を入力します。 ファイルはオペレーティング システム固有のものです。
+
+   * *HelloWorld.pdb* (配置は省略可能)
+
+      これは、デバッグ シンボル ファイルです。 このファイルはアプリケーションと一緒に配置する必要はありませんが、発行されるバージョンのアプリケーションをデバッグする必要がある場合に保存しておく必要があります。
+
+   * *HelloWorld.runtimeconfig.json*
+
+      これは、アプリケーションのランタイム構成ファイルです。 ビルドされたアプリケーションが実行時に基盤とする .NET Core のバージョンを識別します。 構成オプションを追加することもできます。 詳細については、「[.NET Core ランタイム構成設定](../run-time-config/index.md#runtimeconfigjson)」を参照してください。
+
+## <a name="run-the-published-app"></a>発行済みアプリを実行する
+
+1. **ソリューション エクスプローラー**で、 *[publish]* フォルダーを右クリックし、 **[完全なパスのコピー]** を選択します。
+
+1. コマンド プロンプトを開いて、*publish* フォルダーに移動します。 これを行うには、「`cd`」と入力して、完全なパスを貼り付けます。 次に例を示します。
+
+   ```
+   cd C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\publish\
+   ```
+
+1. 実行可能ファイルを使用してアプリを実行します。
+
+   1. 「`HelloWorld.exe`」と入力して、<kbd>Enter</kbd> キーを押します。
+
+   1. プロンプトに応答して名前を入力し、任意のキーを押して終了します。
+
+1. `dotnet` コマンドを使用して、アプリを実行します。
+
+   1. 「`dotnet HelloWorld.dll`」と入力して、<kbd>Enter</kbd> キーを押します。
+
+   1. プロンプトに応答して名前を入力し、任意のキーを押して終了します。
+
+## <a name="additional-resources"></a>その他の技術情報
+
+- [.NET Core アプリケーションの展開](../deploying/index.md)
+
+## <a name="next-steps"></a>次の手順
+
+このチュートリアルでは、コンソール アプリを発行しました。 次のチュートリアルでは、クラス ライブラリを作成します。
+
+> [!div class="nextstepaction"]
+> [Visual Studio で .NET Standard ライブラリを構築する](library-with-visual-studio.md)

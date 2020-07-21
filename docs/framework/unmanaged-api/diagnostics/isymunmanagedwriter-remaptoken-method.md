@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bca92682-ee1e-467f-8fb0-d8d4617f82fe
 topic_type:
 - apiref
-ms.openlocfilehash: 9e441d4ff39632d9381e445ee99249d04539ad87
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 53cc908e0dc8cc5cc980ec365ccac0df4e620cac
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427885"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609769"
 ---
 # <a name="isymunmanagedwriterremaptoken-method"></a>ISymUnmanagedWriter::RemapToken メソッド
 メタデータが生成されたときにメタデータトークンが再マップされたことをシンボルライターに通知します。 シンボルライターがシンボルストア内に古いトークンを格納している場合は、格納されているトークンを新しい値で更新するか、読み取りフェーズ中に対応するシンボルリーダーがマップを再マップするようにマップを保存する必要があります。  
@@ -38,7 +38,7 @@ HRESULT RemapToken(
  から再マップされたメタデータトークン。  
   
  `newToken`  
- から`oldToken` が再マップされた新しいメタデータトークン。  
+ からが再マップされた新しいメタデータトークン `oldToken` 。  
   
 ## <a name="return-value"></a>戻り値  
  メソッドが成功した場合は S_OK。それ以外の場合は、E_FAIL またはその他のエラーコードを指定します。  
@@ -46,6 +46,6 @@ HRESULT RemapToken(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedWriter インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [ISymUnmanagedWriter インターフェイス](isymunmanagedwriter-interface.md)

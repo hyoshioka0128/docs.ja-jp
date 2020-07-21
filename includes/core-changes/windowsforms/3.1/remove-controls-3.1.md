@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7ff8345fd0a3ca30375cf93d22625f89d5d9a053
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 6f494d9376063a7b1219ab37706f4e9d88f68993
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567342"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144992"
 ---
 ### <a name="removed-controls"></a>削除されたコントロール
 
@@ -16,19 +16,9 @@ ms.locfileid: "74567342"
 
 次の型は現在なくなっています。
 
-- <xref:System.Windows.Forms.Menu>
-- <xref:System.Windows.Forms.Menu.MenuItemCollection>
-- <xref:System.Windows.Forms.MainMenu>
 - <xref:System.Windows.Forms.ContextMenu>
-- <xref:System.Windows.Forms.MenuItem>
-- <xref:System.Windows.Forms.ToolBar>
-- <xref:System.Windows.Forms.ToolBarAppearance>
-- <xref:System.Windows.Forms.ToolBarButton>
-- <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection>
-- <xref:System.Windows.Forms.ToolBarButtonClickEventArgs>
-- <xref:System.Windows.Forms.ToolBarButtonStyle>
-- <xref:System.Windows.Forms.ToolBarTextAlign>
 - <xref:System.Windows.Forms.DataGrid>
+- <xref:System.Windows.Forms.DataGrid.HitTestType>
 - <xref:System.Windows.Forms.DataGridBoolColumn>
 - <xref:System.Windows.Forms.DataGridCell>
 - <xref:System.Windows.Forms.DataGridColumnStyle>
@@ -42,26 +32,36 @@ ms.locfileid: "74567342"
 - <xref:System.Windows.Forms.GridTablesFactory>
 - <xref:System.Windows.Forms.GridTableStylesCollection>
 - <xref:System.Windows.Forms.IDataGridEditingService>
-- <xref:System.Windows.Forms.DataGrid.HitTestType>
 - <xref:System.Windows.Forms.Design.IMenuEditorService>
+- <xref:System.Windows.Forms.MainMenu>
+- <xref:System.Windows.Forms.Menu>
+- <xref:System.Windows.Forms.Menu.MenuItemCollection>
+- <xref:System.Windows.Forms.MenuItem>
+- <xref:System.Windows.Forms.ToolBar>
+- <xref:System.Windows.Forms.ToolBarAppearance>
+- <xref:System.Windows.Forms.ToolBarButton>
+- <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection>
+- <xref:System.Windows.Forms.ToolBarButtonClickEventArgs>
+- <xref:System.Windows.Forms.ToolBarButtonStyle>
+- <xref:System.Windows.Forms.ToolBarTextAlign>
 
 #### <a name="version-introduced"></a>導入されたバージョン
 
 3.1
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 削除されたコントロールにはいずれも、推奨の代替コントロールが与えられています。 次の表を参照してください。
 
 | 削除されたコントロール (API) | 推奨代替 | 削除されている関連 API |
 |-|-|-|
+| ContextMenu | ContextMenuStrip | |
 | DataGrid | DataGridView | DataGridCell、DataGridRow、DataGridTableCollection、DataGridColumnCollection、DataGridTableStyle、DataGridColumnStyle、DataGridLineStyle、DataGridParentRowsLabel、DataGridParentRowsLabelStyle、DataGridBoolColumn、DataGridTextBox、GridColumnStylesCollection、GridTableStylesCollection、HitTestType |
+| MainMenu | MenuStrip | |
+| メニュー | ToolStripDropDown、ToolStripDropDownMenu | MenuItemCollection |
+| MenuItem | ToolStripMenuItem | |
 | ToolBar | ToolStrip | ToolBarAppearance |
 | ToolBarButton | ToolStripButton | ToolBarButtonClickEventArgs、ToolBarButtonClickEventHandler、ToolBarButtonStyle、ToolBarTextAlign|
-| ContextMenu | ContextMenuStrip | |
-| メニュー | ToolStripDropDown、ToolstripDropDownMenu | MenuItemCollection |
-| MainMenu | MenuStrip | |
-| MenuItem | ToolstripMenuItem | |
 
 #### <a name="category"></a>カテゴリ
 
@@ -69,19 +69,24 @@ Windows フォーム
 
 #### <a name="affected-apis"></a>影響を受ける API
 
+- <xref:System.Windows.Forms.ContextMenu?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.GridColumnStylesCollection?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.GridTablesFactory?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.GridTableStylesCollection?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.IDataGridEditingService?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.MainMenu?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Menu?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Menu.MenuItemCollection?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.MainMenu?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.ContextMenu?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.MenuItem?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolBar?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolBarAppearance?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolBarButton?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.ToolBar.ToolBarButtonCollection?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolBarButtonClickEventArgs?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolBarButtonStyle?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.ToolBarTextAlign?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.DataGrid.HitTestType?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridBoolColumn?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridCell?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridColumnStyle?displayProperty=nameWithType>
@@ -91,16 +96,11 @@ Windows フォーム
 - <xref:System.Windows.Forms.DataGridTableStyle?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridTextBox?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridTextBoxColumn?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.GridColumnStylesCollection?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.GridTablesFactory?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.GridTableStylesCollection?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.IDataGridEditingService?displayProperty=nameWithType>
-- <xref:System.Windows.Forms.DataGrid.HitTestType?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Design.IMenuEditorService?displayProperty=nameWithType>
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - `T:System.Windows.Forms.Menu`
 - `T:System.Windows.Forms.Menu.MenuItemCollection`

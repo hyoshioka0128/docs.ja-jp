@@ -1,13 +1,13 @@
 ---
 title: C# 8.0 の新機能 - C# ガイド
 description: C# 8.0 で使用できる新しい機能の概要を説明します。
-ms.date: 09/20/2019
-ms.openlocfilehash: 540b95beaf00c17812a3b602602504278be69b0e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.date: 04/07/2020
+ms.openlocfilehash: b4a9a1be0b0b60b0abda0b1f031dc648d831b46a
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429391"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174732"
 ---
 # <a name="whats-new-in-c-80"></a>C# 8.0 の新機能
 
@@ -25,6 +25,7 @@ C# 8.0 では、C# 言語に次の機能と機能強化が追加されていま�
 - [破棄可能な ref 構造体](#disposable-ref-structs)
 - [Null 許容参照型](#nullable-reference-types)
 - [非同期ストリーム](#asynchronous-streams)
+- [非同期の破棄可能](#asynchronous-disposable)
 - [インデックスと範囲](#indices-and-ranges)
 - [null 合体割り当て](#null-coalescing-assignment)
 - [構築されたアンマネージド型](#unmanaged-constructed-types)
@@ -75,7 +76,7 @@ warning CS8656: Call to non-readonly member 'Point.Distance.get' from a 'readonl
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-`readonly` 修飾子は読み取り専用プロパティに必要であることに注意してください。 コンパイラでは、`get` アクセサーが状態を変更しないことを想定していないため、`readonly` を明示的に宣言する必要があります。 自動実装プロパティは例外です。このコンパイラは、自動実装されたすべてのゲッターを readonly として処理します。したがって、ここでは、`X` および `Y` プロパティに `readonly` 修飾子を追加する必要はありません。
+`readonly` 修飾子は読み取り専用プロパティに必要であることに注意してください。 コンパイラでは、`get` アクセサーが状態を変更しないことを想定していないため、`readonly` を明示的に宣言する必要があります。 自動実装プロパティは例外です。このコンパイラは、自動実装されたすべてのゲッターを `readonly` として処理します。したがって、ここでは、`X` および `Y` プロパティに `readonly` 修飾子を追加する必要はありません。
 
 コンパイラによって、`readonly` メンバーによって状態が変更されないというルールが適用されます。 次のメソッドは、`readonly` 修飾子を削除しない限りコンパイルされません。
 
@@ -87,7 +88,9 @@ public readonly void Translate(int xOffset, int yOffset)
 }
 ```
 
-この機能により、設計の意図を指定し、コンパイラによってそれが適用され、その意図に基づいて最適化が行われるようにすることができます。 読み取り専用メンバーの詳細については、[`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples) の言語リファレンスに関する記事を参照してください。
+この機能により、設計の意図を指定し、コンパイラによってそれが適用され、その意図に基づいて最適化が行われるようにすることができます。
+
+詳細については、[構造体型](../language-reference/builtin-types/struct.md)に関する記事の「[`readonly` インスタンス メンバー](../language-reference/builtin-types/struct.md#readonly-instance-members)」セクションを参照してください。
 
 ## <a name="default-interface-methods"></a>既定のインターフェイス メソッド
 
@@ -180,7 +183,7 @@ public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
     location switch
     {
         { State: "WA" } => salePrice * 0.06M,
-        { State: "MN" } => salePrice * 0.75M,
+        { State: "MN" } => salePrice * 0.075M,
         { State: "MI" } => salePrice * 0.05M,
         // other cases removed for brevity...
         _ => 0M
@@ -191,7 +194,7 @@ public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
 
 ### <a name="tuple-patterns"></a>タプル パターン
 
-いくつかのアルゴリズムは複数の入力に依存しています。 **タプル パターン**を使うと、[タプル](../tuples.md)として表現された複数の値に基づいて切り替えを行うことができます。  "*rock、paper、scissors (じゃんけん)* " ゲーム用の switch 式を示すコードを以下に示します。
+いくつかのアルゴリズムは複数の入力に依存しています。 **タプル パターン**を使うと、[タプル](../language-reference/builtin-types/value-tuples.md)として表現された複数の値に基づいて切り替えを行うことができます。  "*rock、paper、scissors (じゃんけん)* " ゲーム用の switch 式を示すコードを以下に示します。
 
 ```csharp
 public static string RockPaperScissors(string first, string second)
@@ -319,7 +322,7 @@ static int WriteLinesToFile(IEnumerable<string> lines)
 
 ## <a name="static-local-functions"></a>静的ローカル関数
 
-`static` 修飾子をローカル関数に追加することにより、ローカル関数で外側のスコープの変数がキャプチャ (参照) されないようにすることができます。 それを行うと、`CS8421` "静的ローカル関数は \<variable> への参照を含むことができない" が生成されます。 
+`static` 修飾子をローカル関数に追加することにより、ローカル関数で外側のスコープの変数がキャプチャ (参照) されないようにすることができます。 それを行うと、`CS8421` "静的ローカル関数は \<variable> への参照を含むことができない" が生成されます。
 
 次のコードについて考えてみましょう。 ローカル関数 `LocalFunction` は、外側のスコープ (`M` メソッド) で宣言されている変数 `y` にアクセスしています。 そのため、`LocalFunction` では `static` 修飾子を宣言することはできません。
 
@@ -391,7 +394,11 @@ await foreach (var number in GenerateSequence())
 }
 ```
 
-[非同期ストリームの作成と使用](../tutorials/generate-consume-asynchronous-stream.md)に関するチュートリアルを使用して、自分で非同期ストリームを試すことができます。
+[非同期ストリームの作成と使用](../tutorials/generate-consume-asynchronous-stream.md)に関するチュートリアルを使用して、自分で非同期ストリームを試すことができます。 既定では、ストリーム要素はキャプチャされたコンテキストで処理されます。 コンテキストのキャプチャを無効にする場合は、<xref:System.Threading.Tasks.TaskAsyncEnumerableExtensions.ConfigureAwait%2A?displayProperty=nameWithType> 拡張メソッドを使用します。 同期コンテキストについて、および現在のコンテキストのキャプチャについての詳細は、「[タスク ベースの非同期パターンの利用](../../standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)」を参照してください。
+
+## <a name="asynchronous-disposable"></a>非同期の破棄可能
+
+C# 8.0 以降、この言語では <xref:System.IAsyncDisposable?displayProperty=nameWithType> インターフェイスを実装する非同期の破棄可能な型がサポートされます。 `using` 式のオペランドで、<xref:System.IDisposable> または <xref:System.IAsyncDisposable> を実装できます。 `IAsyncDisposable` の場合、<xref:System.IAsyncDisposable.DisposeAsync%2A?displayProperty=nameWithType> から返される <xref:System.Threading.Tasks.Task> を `await` するコードがコンパイラによって生成されます。 詳細については、「[`using` ステートメント](../language-reference/keywords/using-statement.md)」を参照してください。
 
 ## <a name="indices-and-ranges"></a>インデックスと範囲
 
@@ -520,7 +527,7 @@ C# 8.0 以降、[stackalloc](../language-reference/operators/stackalloc.md) 式�
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };
-var ind = numbers.IndexOfAny(stackalloc[] { 2, 4, 6 ,8 });
+var ind = numbers.IndexOfAny(stackalloc[] { 2, 4, 6, 8 });
 Console.WriteLine(ind);  // output: 1
 ```
 

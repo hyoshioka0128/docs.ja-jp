@@ -1,30 +1,29 @@
 ---
 title: Override キーワードと New キーワードによるバージョン管理 - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: c85f5b6b4552dc4a10c7ad66b8f93331f97a8621
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 7bcc7e68810c97142cebca7595266a0e4a69ed51
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196204"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83207937"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Override キーワードと New キーワードによるバージョン管理 (C# プログラミング ガイド)
 C# 言語は、異なるライブラリ内の[基底](../../language-reference/keywords/base.md)クラスと派生クラス間でのバージョン管理を進化させると同時に、下位互換性も維持されるよう設計されています。 そのため、たとえば、派生クラスのメンバーと同じ名前を使用して基底[クラス](../../language-reference/keywords/class.md)の新規メンバーが導入されても、C# では完全にサポートされ、予期しない動作は発生しません。 ただしこのことは、メソッドが派生メソッドをオーバーライドするためのものなのか、それとも同じ名前の派生メソッドを非表示にする新規メソッドなのかを、クラスで明示的に記述しなければならないということでもあります。  
   
  C# では、派生クラスに基底クラスと同じ名前のメソッドを含めることができます。  
-  
-- 基底クラスのメソッドは、[virtual](../../language-reference/keywords/virtual.md) で定義する必要があります。  
-  
+
 - 派生クラスのメソッドの前に [new](../../language-reference/keywords/new-modifier.md) または [override](../../language-reference/keywords/override.md) キーワードがない場合、コンパイラは警告を発し、メソッドは `new` キーワードが存在する場合と同様に動作します。  
   
 - 派生クラスのメソッドの前に `new` キーワードがある場合、そのメソッドは基底クラスのメソッドに依存しないメソッドとして定義されます。  
   
 - 派生クラスのメソッドの前に `override` キーワードがある場合、派生クラスのオブジェクトは、基底クラスのメソッドの代わりにそのメソッドを呼び出します。  
+
+- 派生クラスのメソッドに `override` キーワードを適用するには、基底クラスのメソッドを[仮想](../../language-reference/keywords/virtual.md)に定義する必要があります。
   
 - 基底クラスのメソッドは、`base` キーワードを使用して派生クラス内から呼び出すことができます。  
   

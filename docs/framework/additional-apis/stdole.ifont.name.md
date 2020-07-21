@@ -1,5 +1,6 @@
 ---
-title: IFont.Name プロパティ (最)
+title: IFont.Name プロパティ (stdole)
+description: .NET の IFont.Name プロパティに関する参照情報を取得します。 この読み取り/書き込みプロパティは、stdole 名前空間と stdole アセンブリにあります。
 ms.date: 02/22/2019
 topic_type:
 - apiref
@@ -11,12 +12,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: b74992174d244845e1db2b283d962f2b87071c91
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: bdc773956c15554b0700d78dcdc833d8111da896
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634425"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989508"
 ---
 # <a name="ifontname-property"></a>IFont.Name プロパティ
 
@@ -24,7 +25,7 @@ ms.locfileid: "65634425"
 string Name { get; set; }
 ```
 
-## <a name="property-value"></a>プロパティの値
+## <a name="property-value"></a>プロパティ値
 
 <xref:System.String>\
 
@@ -32,4 +33,4 @@ string Name { get; set; }
 
 **名前空間:** `stdole`
 
-**アセンブリ:** stdole.dll) の「最
+**アセンブリ:** stdole (stdole.dll)

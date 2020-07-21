@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 38c1940b-ada1-40ba-8295-4c0833744e1e
 topic_type:
 - apiref
-ms.openlocfilehash: 43f86e704e4a52a702b8f563e3c613806eb061b5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 39d2fd0163b0e61295187461d5dbdf5742450306
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137525"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379514"
 ---
 # <a name="icordebugstepperstep-method"></a>ICorDebugStepper::Step メソッド
 この ICorDebugStepper は、含まれるスレッドを1ステップずつ実行します。また、必要に応じて、スレッド内で呼び出される関数を使用したシングルステップ実行を継続します。  
@@ -35,16 +35,16 @@ HRESULT Step (
   
 ## <a name="parameters"></a>パラメーター  
  `bStepIn`  
- から`true` に設定すると、スレッド内で呼び出される関数にステップインします。 関数をステップオーバーするには、`false` に設定します。  
+ から`true`スレッド内で呼び出される関数にステップインするには、をに設定します。 関数を `false` ステップオーバーするには、をに設定します。  
   
 ## <a name="remarks"></a>Remarks  
- 共通言語ランタイムがこのステッパのフレームで次のマネージ命令を実行すると、手順が完了します。 マネージコードに含まれていないステッパで `Step` が呼び出された場合、次のマネージコード命令がスレッドによって実行されると、手順が完了します。  
+ 共通言語ランタイムがこのステッパのフレームで次のマネージ命令を実行すると、手順が完了します。 `Step`マネージコードに含まれていないステッパでが呼び出された場合、次のマネージコード命令がスレッドによって実行されると、手順が完了します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

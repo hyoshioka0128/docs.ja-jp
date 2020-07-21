@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Action delegate, creating with lambda expression
 - lambda expressions, with Action and Func
 ms.assetid: 645b2c17-29d0-4ffa-8684-430743cc2f2d
-ms.openlocfilehash: d1b716e977702d03db176da70be00a1e5c789a4b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3d985a003fe613699c89e38583f84be9e21b383d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129024"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290669"
 ---
 # <a name="lambda-expressions-in-plinq-and-tpl"></a>PLINQ および TPL のラムダ式
 
@@ -26,11 +26,11 @@ ms.locfileid: "73129024"
 
 ## <a name="func-delegate"></a>Func デリゲート
 
-`Func` デリゲートは、値を返すメソッドをカプセル化します。 Func シグネチャでは、末尾または最も右の型パラメーターが常に戻り値の型を指定します。 コンパイラ エラーの一般的な原因の 1 つは、2 つの入力パラメーターを <xref:System.Func%602?displayProperty=nameWithType> に渡そうとしていることです。この型は、実際には 1 つの入力パラメーターのみを受け取ります。 Framework クラス ライブラリでは、<xref:System.Func%601?displayProperty=nameWithType>、<xref:System.Func%602?displayProperty=nameWithType>、<xref:System.Func%603?displayProperty=nameWithType> から <xref:System.Func%6017?displayProperty=nameWithType> までの 17 バージョンの `Func` を定義します。
+`Func` デリゲートは、値を返すメソッドをカプセル化します。 `Func` シグネチャでは、末尾または最も右の型パラメーターが常に戻り値の型を指定します。 コンパイラ エラーの一般的な原因の 1 つは、2 つの入力パラメーターを <xref:System.Func%602?displayProperty=nameWithType> に渡そうとしていることです。この型は、実際には 1 つの入力パラメーターのみを受け取ります。 .NET では、17 のバージョンの `Func` が定義されています (<xref:System.Func%601?displayProperty=nameWithType>、<xref:System.Func%602?displayProperty=nameWithType>、<xref:System.Func%603?displayProperty=nameWithType> ... <xref:System.Func%6017?displayProperty=nameWithType>)。
 
 ## <a name="action-delegate"></a>Action デリゲート
 
-<xref:System.Action?displayProperty=nameWithType> デリゲートは、値を返さない、または [void](../../csharp/language-reference/keywords/void.md) を返すメソッド (Visual Basic では Sub) をカプセル化します。 Action 型シグネチャでは、型パラメーターは、入力パラメーターのみを表します。 Func のように、Framework クラス ライブラリでは、型パラメーターを持たないバージョンから 16 の型パラメーターを持つバージョンまでの、17 バージョンの Action が定義されています。
+<xref:System.Action?displayProperty=nameWithType> デリゲートは、値を返さないメソッド (Visual Basic では Sub) をカプセル化します。 `Action` 型シグネチャでは、型パラメーターは、入力パラメーターのみを表します。 `Func` と同じように、.NET では、型パラメーターを持たないバージョンから 16 の型パラメーターを持つバージョンまでの 17 のバージョンの `Action` が定義されています。
 
 ## <a name="example"></a>例
 
@@ -39,6 +39,6 @@ ms.locfileid: "73129024"
 [!code-csharp[System.Threading.Tasks.Parallel#02](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallel/cs/parallelforeach.cs#02)]
 [!code-vb[System.Threading.Tasks.Parallel#02](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallel/vb/parallelforeach.vb#02)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [並列プログラミング](../../../docs/standard/parallel-programming/index.md)
+- [並列プログラミング](index.md)

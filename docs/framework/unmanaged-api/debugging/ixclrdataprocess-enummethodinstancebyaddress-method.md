@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess::EnumMethodInstanceByAddress メソッド
+title: 'IXCLRDataProcess:: EnumMethodInstanceByAddress メソッド'
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess::EnumMethodInstanceByAddress Method
@@ -15,16 +15,16 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 89b89a0cb056a0515bf0859069455a73f62aae4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 142099ae5cf9637cc28e8c82aabcd831cc8f0f52
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769614"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420800"
 ---
-# <a name="ixclrdataprocessenummethodinstancebyaddress-method"></a>IXCLRDataProcess::EnumMethodInstanceByAddress メソッド
+# <a name="ixclrdataprocessenummethodinstancebyaddress-method"></a>IXCLRDataProcess:: EnumMethodInstanceByAddress メソッド
 
-このプロセスがアドレス オフセットから始まるのメソッドのインスタンスを列挙します。
+このプロセスのメソッドインスタンスを、アドレスオフセットを開始位置として列挙します。
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
@@ -40,22 +40,20 @@ HRESULT EnumMethodInstanceByAddress(
 ## <a name="parameters"></a>パラメーター
 
 `handle`\
-[in]メソッド インスタンスを列挙するためのハンドル。
+からメソッドインスタンスを列挙するハンドル。
 
 `mod`\
-[out]列挙メソッドのインスタンス。
+入出力列挙されたメソッドインスタンス。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-指定されたメソッドは、`IXCLRDataProcess`インターフェイスし、仮想メソッド テーブルの 28 のスロットに対応しています。
+指定されたメソッドはインターフェイスの一部で `IXCLRDataProcess` あり、仮想メソッドテーブルの29スロットに対応します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-**プラットフォーム:** [システム要件](../../../../docs/framework/get-started/system-requirements.md)に関するページを参照してください。   
-**ヘッダー:** なし   
-**ライブラリ:** なし   
-**.NET Framework のバージョン:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]   
- 
+**:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。
+**ヘッダー:** None **Library:** None **.NET Framework バージョン:**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
+
 ## <a name="see-also"></a>関連項目
 
 - [CLRDataSourceType 列挙型](clrdatasourcetype-enumeration.md)

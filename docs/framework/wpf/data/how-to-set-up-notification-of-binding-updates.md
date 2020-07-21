@@ -1,5 +1,5 @@
 ---
-title: '方法 : バインディングの更新の通知を設定する'
+title: '方法: バインディングの更新の通知を設定する'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - notifications [WPF], binding updates
@@ -8,18 +8,18 @@ helpviewer_keywords:
 ms.assetid: 5673073e-dbe1-49da-980a-484a88f9595a
 ms.openlocfilehash: dfa0f9264247f7585c1743e40fd980906556efd0
 ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2019
 ms.locfileid: "73454954"
 ---
-# <a name="how-to-set-up-notification-of-binding-updates"></a>方法 : バインディングの更新の通知を設定する
+# <a name="how-to-set-up-notification-of-binding-updates"></a>方法: バインディングの更新の通知を設定する
 この例では、バインドのバインディング ターゲット (ターゲット) またはバインディング ソース (ソース) のプロパティが更新されたときに通知するように設定する方法を示します。  
   
 ## <a name="example"></a>例  
- [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、バインドのソースまたはターゲットが更新されるたびにデータ更新イベントを発生させます。 内部的には、このイベントは、バインドされたデータが変更されているため、更新する必要があることを [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] に通知するために使用されます。 これらのイベントが機能し、一方向または双方向のバインドが正常に機能するには、<xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを使用してデータクラスを実装する必要があることに注意してください。 詳細については、「[プロパティの変更通知を実装する](how-to-implement-property-change-notification.md)」を参照してください。  
+ [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] は、バインドのソースまたはターゲットが更新されるたびにデータ更新イベントを発生させます。 内部的には、このイベントは、バインドされたデータが変更されているため、更新する必要があることを [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] に通知するために使用されます。 これらのイベントを、一方向または双方向のバインドで適切に機能させるには、データ クラスを <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスを使用して実装する必要があります。 詳細については、「[プロパティの変更通知を実装する](how-to-implement-property-change-notification.md)」を参照してください。  
   
- <xref:System.Windows.Data.Binding.NotifyOnTargetUpdated%2A> または <xref:System.Windows.Data.Binding.NotifyOnSourceUpdated%2A> プロパティ (またはその両方) をバインドの `true` に設定します。 このイベントをリッスンするために提供するハンドラーは、変更を通知する要素に直接アタッチするか、コンテキスト内の何かが変更されたことを認識する場合は、全体的なデータ コンテキストにアタッチする必要があります。  
+ バインドで <xref:System.Windows.Data.Binding.NotifyOnTargetUpdated%2A> プロパティまたは <xref:System.Windows.Data.Binding.NotifyOnSourceUpdated%2A> プロパティ (またはその両方) を `true` に設定します。 このイベントをリッスンするために提供するハンドラーは、変更を通知する要素に直接アタッチするか、コンテキスト内の何かが変更されたことを認識する場合は、全体的なデータ コンテキストにアタッチする必要があります。  
   
  ターゲットのプロパティが更新されたときの通知を設定する方法の例を次に示します。  
   

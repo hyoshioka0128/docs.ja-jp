@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d7061343-d0a3-4fd5-b312-61974f98bd62
 topic_type:
 - apiref
-ms.openlocfilehash: 6f8df824ed36b7793d5f07e5b5cf51f65f9c8e24
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 11529ce896f265f2b200fa6e511d4b913e9147c8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432239"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008223"
 ---
 # <a name="ihostfiltermarktoken-method"></a>IHostFilter::MarkToken メソッド
 指定されたメタデータトークンが処理されることを示します。  
@@ -38,18 +38,18 @@ HRESULT MarkToken (
  から処理するメタデータトークン。  
   
 ## <a name="remarks"></a>コメント  
- 通常、トークンがメタデータスコープ内にある場合は、トークンを処理する必要があります。 `MarkToken` メソッドは、 [IMetaDataEmit:: SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md)メソッドを使用してメタデータエンジンに渡されます。  
+ 通常、トークンがメタデータスコープ内にある場合は、トークンを処理する必要があります。 メソッドは、 `MarkToken` [IMetaDataEmit:: SetHandler](imetadataemit-sethandler-method.md)メソッドを使用してメタデータエンジンに渡されます。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [メタデータ インターフェイス](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
-- [IHostFilter インターフェイス](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-interface.md)
+- [メタデータ インターフェイス](metadata-interfaces.md)
+- [IHostFilter インターフェイス](ihostfilter-interface.md)

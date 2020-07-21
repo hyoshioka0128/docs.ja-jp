@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
-ms.openlocfilehash: 1a2723a445c71dd883492907587f8cbe7b89666a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 67fbbb035a3a6683cefbf24e299f32579b674bbd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613217"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597255"
 ---
 # <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a>WCF 配信オブジェクト モデルを Atom や RSS に割り当てる方法
-Windows Communication Foundation (WCF) 配信サービスを開発する場合は、フィードと、次のクラスを使用して項目を作成します。  
+Windows Communication Foundation (WCF) 配信サービスを開発する場合は、次のクラスを使用してフィードと項目を作成します。  
   
 - <xref:System.ServiceModel.Syndication.SyndicationFeed>  
   
@@ -31,9 +31,9 @@ Windows Communication Foundation (WCF) 配信サービスを開発する場合�
   
 - <xref:System.ServiceModel.Syndication.XmlSyndicationContent>  
   
- <xref:System.ServiceModel.Syndication.SyndicationFeed> はフォーマッタが定義されている任意の配信フォーマットにシリアル化できます。 WCF は、2 つのフォーマッタが付属しています:<xref:System.ServiceModel.Syndication.Atom10FeedFormatter>と<xref:System.ServiceModel.Syndication.Rss20FeedFormatter>します。  
+ <xref:System.ServiceModel.Syndication.SyndicationFeed> はフォーマッタが定義されている任意の配信フォーマットにシリアル化できます。 WCF には、とという2つのフォーマッタが付属 <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> して <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> います。  
   
- RSS 2.0 仕様より Atom 1.0 仕様の方が、<xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> 周辺のオブジェクト モデルをより細かく調整しています。 これは、Atom 1.0 が、あいまいな要素または RSS 2.0 仕様から省略された要素を定義する、より基本的な仕様であるためです。 このため、WCF 配信オブジェクト モデルの項目が多表現されているない直接 RSS 2.0 仕様でします。 シリアル化中に<xref:System.ServiceModel.Syndication.SyndicationFeed>と<xref:System.ServiceModel.Syndication.SyndicationItem>RSS 2.0 にオブジェクトを WCF では、Atom に固有のデータ要素を Atom 仕様に準拠している名前空間で修飾された拡張機能の要素としてシリアル化できます。 これは、<xref:System.ServiceModel.Syndication.Rss20FeedFormatter> コンストラクターに渡すパラメーターで制御できます。  
+ RSS 2.0 仕様より Atom 1.0 仕様の方が、<xref:System.ServiceModel.Syndication.SyndicationFeed> および <xref:System.ServiceModel.Syndication.SyndicationItem> 周辺のオブジェクト モデルをより細かく調整しています。 これは、Atom 1.0 が、あいまいな要素または RSS 2.0 仕様から省略された要素を定義する、より基本的な仕様であるためです。 このため、WCF 配信オブジェクトモデルの多くの項目は、RSS 2.0 仕様に直接表現されていません。 <xref:System.ServiceModel.Syndication.SyndicationFeed>とオブジェクトを <xref:System.ServiceModel.Syndication.SyndicationItem> RSS 2.0 にシリアル化する場合、WCF では、atom 仕様に準拠した名前空間で修飾された拡張要素として、atom 固有のデータ要素をシリアル化できます。 これは、<xref:System.ServiceModel.Syndication.Rss20FeedFormatter> コンストラクターに渡すパラメーターで制御できます。  
   
  このトピックのコード例では、ここで定義される 2 つのメソッドのいずれかを使い、実際のシリアル化を行っています。  
   
@@ -399,8 +399,8 @@ Windows Communication Foundation (WCF) 配信サービスを開発する場合�
   
 ## <a name="see-also"></a>関連項目
 
-- [WCF 配信の概要](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
-- [配信のアーキテクチャ](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)
-- [方法: 基本的な RSS フィードを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)
-- [方法: 基本的な Atom フィードを作成します。](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)
-- [方法: Atom の両方としてフィードを公開および RSS](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
+- [WCF 配信の概要](wcf-syndication-overview.md)
+- [配信のアーキテクチャ](architecture-of-syndication.md)
+- [方法: 基本的な RSS フィードを作成する](how-to-create-a-basic-rss-feed.md)
+- [方法: 基本的な ATOM フィードを作成する](how-to-create-a-basic-atom-feed.md)
+- [方法: Atom および RSS の両方としてフィードを公開する](how-to-expose-a-feed-as-both-atom-and-rss.md)

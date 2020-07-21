@@ -1,5 +1,5 @@
 ---
-title: インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラム
+title: インストールされている NET Framework セキュリティの更新プログラムと修正プログラムを確認する
 description: コンピューターにインストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する方法について説明します。
 ms.date: 11/27/2017
 dev_langs:
@@ -9,14 +9,12 @@ helpviewer_keywords:
 - updates, determining for .NET Framework
 - .NET Framework, determining updates
 ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: aad202e7c9df01c2893e74a39744f2c32783f1f0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 5c7bf48d5786530a9bcb69fb7cf605ac2c80a4eb
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73735203"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79181266"
 ---
 # <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>インストールされている NET Framework セキュリティ更新プログラムおよび修正プログラムを確認する方法
 
@@ -37,7 +35,7 @@ ms.locfileid: "73735203"
 
      インストールされている更新プログラムは、適用された .NET Framework バージョンを識別するサブキーの下に一覧表示されています。 各更新プログラムは、サポート技術情報の (KB) 番号で識別されます。
 
-レジストリ エディターでは、各バージョンの .NET Framework バージョンとインストールされている更新プログラムが別々のサブキーに格納されます。 インストールされているバージョン番号の詳細については、「[方法: インストールされている .NET Framework バージョンを確認する](how-to-determine-which-versions-are-installed.md)」を参照してください。
+レジストリ エディターでは、各バージョンの .NET Framework バージョンとインストールされている更新プログラムが別々のサブキーに格納されます。 インストールされているバージョン番号を検出する方法については、「[方法: インストールされている .NET Framework バージョンを確認する](how-to-determine-which-versions-are-installed.md)」を参照してください。
 
 ## <a name="query-the-registry-using-code"></a>コードを使用してレジストリのクエリを実行する
 
@@ -76,7 +74,7 @@ $DotNetVersions = Get-ChildItem HKLM:\SOFTWARE\WOW6432Node\Microsoft\Updates | W
  "*.NET Framework*"}
 
 ForEach($Version in $DotNetVersions){
-    
+
    $Updates = Get-ChildItem $Version.PSPath
     $Version.PSChildName
     ForEach ($Update in $Updates){
@@ -106,7 +104,7 @@ KB2600211
 KB2600217
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [方法: インストールされている .NET Framework バージョンを確認する](how-to-determine-which-versions-are-installed.md)
 - [開発者向けの .NET Framework のインストール](../install/guide-for-developers.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], integration overview
 ms.assetid: 02c5697f-6e2e-47d6-b715-f3a28aebfbd5
-ms.openlocfilehash: 99e3c2f4445673f3b74048a2b466203af7bc2795
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: c283e7cbc4cb4b8bc37dd1313480410df93a93bf
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045880"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596826"
 ---
 # <a name="integrating-with-com-applications-overview"></a>COM アプリケーションとの統合の概要
 
@@ -18,7 +18,7 @@ Windows Communication Foundation (WCF) を使用すると、マネージコー�
 > [!NOTE]
 > サービスモニカーは、すべての通信に WCF 通信チャネルを使用します。 このチャネルのセキュリティ メカニズムと識別メカニズムは、標準の COM および DCOM プロキシで使用されるものとは異なります。 また、サービスモニカーでは WCF 通信チャネルが使用されるため、すべての呼び出しで既定のタイムアウト期間は1分です。
 
-サービスモニカーは、 `GetObject`関数と共に使用して、アンマネージ開発者に、WCF Web サービスを呼び出すための厳密に型指定された COM 固有のアプローチを提供します。 これには、WCF Web サービスコントラクトと使用するバインディングの、COM から参照できるローカルな定義が必要です。 他の WCF クライアントと同様に、サービスモニカーは、サービスへの型指定されたチャネルを構築する必要があります。ただし、このチャネルの構築は、最初のメソッド呼び出しで COM プログラマに透過的に行われます。
+サービスモニカーは、関数と共に使用して、 `GetObject` アンマネージ開発者に、WCF Web サービスを呼び出すための厳密に型指定された COM 固有のアプローチを提供します。 これには、WCF Web サービスコントラクトと使用するバインディングの、COM から参照できるローカルな定義が必要です。 他の WCF クライアントと同様に、サービスモニカーは、サービスへの型指定されたチャネルを構築する必要があります。ただし、このチャネルの構築は、最初のメソッド呼び出しで COM プログラマに透過的に行われます。
 
 他の WCF クライアントとの共通点として、モニカーを使用する場合、アプリケーションは、サービスと通信するためのアドレス、バインディング、およびコントラクトを指定します。 コントラクトは、次のいずれかの方法で指定できます。
 
@@ -69,4 +69,4 @@ Windows Communication Foundation (WCF) を使用すると、マネージコー�
 
 ## <a name="see-also"></a>関連項目
 
-- [方法: サービスモニカーの登録と構成](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+- [方法: サービス モニカーを登録および構成する](how-to-register-and-configure-a-service-moniker.md)

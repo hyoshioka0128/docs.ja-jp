@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: a5c266b6-969c-4049-a471-ddca7b10fb89
 ms.openlocfilehash: a3cd3bd0861ef2e2896d33e52594b0712e984149
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61942780"
 ---
 # <a name="input-and-commands-how-to-topics"></a>入力およびコマンドに関する「方法」トピック
-このセクションのトピックでは、Windows Presentation Foundation (WPF) で、入力とコマンド実行のインフラストラクチャを使用する方法について説明します。  
+このセクションのトピックでは、Windows Presentation Foundation (WPF) の入力およびコマンド インフラストラクチャの使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [コマンドを有効にする](how-to-enable-a-command.md)  
@@ -30,7 +30,7 @@ ms.locfileid: "61942780"
  [コマンドをサポートしないコントロールにコマンドをフックする](how-to-hook-up-a-command-to-a-control-with-no-command-support.md)  
  [コマンドをサポートするコントロールにコマンドをフックする](how-to-hook-up-a-command-to-a-control-with-command-support.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.FrameworkElement>  

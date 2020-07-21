@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6b0d9259-dbe2-45bb-b34d-990f60c73424
 topic_type:
 - apiref
-ms.openlocfilehash: 848255d44ce8637182f18288d30151a3f0df0912
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2bf1b8b10aded8e61b9bceab0ee02b1d7c0b752a
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092163"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762813"
 ---
 # <a name="iclrtaskmanagergetcurrenttasktype-method"></a>ICLRTaskManager::GetCurrentTaskType メソッド
 現在実行中のタスクの種類を取得します。  
@@ -35,17 +35,17 @@ HRESULT GetCurrentTaskType(
   
 ## <a name="parameters"></a>パラメーター  
  `pTaskType`  
- 入出力現在実行中のタスクの種類を示す[Etasktype](../../../../docs/framework/unmanaged-api/hosting/etasktype-enumeration.md)列挙値へのポインター。  
+ 入出力現在実行中のタスクの種類を示す[Etasktype](etasktype-enumeration.md)列挙値へのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Mscoree.dll  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICLRTaskManager インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [ICLRTaskManager インターフェイス](iclrtaskmanager-interface.md)

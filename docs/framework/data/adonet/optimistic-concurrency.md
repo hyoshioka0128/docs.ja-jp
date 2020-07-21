@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: ddb53c9224d56803c3528d79c5ccdf5534b9ab03
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: e8d24a3998ca97fdf45e647bc40c1f7d6018ec20
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039819"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79149454"
 ---
 # <a name="optimistic-concurrency"></a>オプティミスティック コンカレンシー
-マルチユーザー環境には、データベースのデータを更新するための 2 つのモデルがあります。オプティミスティック コンカレンシーとペシミスティック コンカレンシーです。 ph x="1" /&gt; オブジェクトは、データをリモート処理するときや、データと対話するときのように長時間にわたる利用状況では、オプティミスティック コンカレンシーの使用を奨励するように設計されています。  
+マルチユーザー環境には、データベースのデータを更新するための 2 つのモデルがあります。オプティミスティック コンカレンシーとペシミスティック コンカレンシーです。 <xref:System.Data.DataSet> オブジェクトは、データをリモート処理するときや、データと対話するときのように長時間にわたる利用状況では、オプティミスティック コンカレンシーの使用を奨励するように設計されています。  
   
  ペシミスティック コンカレンシーでは、他のユーザーが現在のユーザーに影響を与えるようなデータ変更を実行するのを防ぐために、データ ソースで行をロックする必要があります。 ペシミスティック モデルでは、あるユーザーがロックの適用される操作を実行すると、他のユーザーは、ロックが解除されるまで、競合する操作を実行できません。 このモデルは、コンカレンシーの競合が発生するときに、トランザクションをロールバックするよりもデータをロックで保護する方が低コストに抑えられるため、データの競合が多い環境で主に使用されます。  
   
@@ -30,9 +30,9 @@ ms.locfileid: "73039819"
   
  午後 1 時に、User1 が、次の値を持つデータベースから行を読み取ります。  
   
- **CustID LastName FirstName**  
+ **CustID     LastName     FirstName**  
   
- 101 Smith Bob  
+ 101          Smith             Bob  
   
 |列名|元の値|現在の値|データベース内の値|  
 |-----------------|--------------------|-------------------|-----------------------|  
@@ -42,7 +42,7 @@ ms.locfileid: "73039819"
   
  午後 1 時 1 分に、User2 が同じ行を読み取ります。  
   
- 1:03 p.m. に、User2 は**FirstName**を "Bob" から "Robert" に変更し、データベースを更新します。  
+ 午後 1 時 3 分に、User2 が **FirstName** を "Bob" から "Robert" に変更し、データベースを更新します。  
   
 |列名|元の値|現在の値|データベース内の値|  
 |-----------------|--------------------|-------------------|-----------------------|  
@@ -71,7 +71,7 @@ ms.locfileid: "73039819"
 SELECT Col1, Col2, Col3 FROM Table1  
 ```  
   
- **Table1**の行を更新するときにオプティミスティック同時実行制御違反をテストするには、次の UPDATE ステートメントを実行します。  
+ **Table1** 内の行の更新時にオプティミスティック コンカレンシー違反についてテストするために、次の UPDATE ステートメントを実行します。  
   
 ```sql
 UPDATE Table1 Set Col1 = @NewCol1Value,  
@@ -96,14 +96,14 @@ UPDATE Table1 Set Col1 = @NewVal1
  オプティミスティック コンカレンシー モデルを使用するときは、より制限の少ない抽出条件を適用するように選択することもできます。 たとえば、WHERE 句で主キー列だけを使用すると、前回のクエリ実行後に主キー以外の列が更新されたかどうかに関係なく、データが上書きされます。 WHERE 句を特定の列だけに適用することもできます。特定の列だけに WHERE 句を適用した場合は、特定のフィールドが前回のクエリ実行後に更新されていない限りデータが上書きされます。  
   
 ### <a name="the-dataadapterrowupdated-event"></a>DataAdapter.RowUpdated イベント  
- <xref:System.Data.Common.DataAdapter> オブジェクトの**RowUpdated**イベントを、前に説明した手法と組み合わせて使用して、オプティミスティック同時実行制御違反のアプリケーションに通知を提供することができます。 **RowUpdated**は、**変更**された行を**データセット**から更新しようとするたびに発生します。 これにより、例外発生時の処理、カスタム エラー情報の追加、再試行ロジックの追加などの特別の処理コードを追加できます。 <xref:System.Data.Common.RowUpdatedEventArgs> オブジェクトは、テーブル内の変更された行について、特定の update コマンドによって影響を受けた行の数を含む**RecordsAffected**プロパティを返します。 オプティミスティック同時実行制御をテストするように update コマンドを設定することにより、 **RecordsAffected**プロパティは、オプティミスティック同時実行制御違反が発生したときに、レコードが更新されなかったため、値0を返します。 この場合、例外がスローされます。 **RowUpdated**イベントを使用すると、 **Updatestatus. skipcurrentrow**などの適切な**RowUpdatedEventArgs**値を設定することによって、この発生を処理し、例外を回避できます。 **RowUpdated**イベントの詳細については、「 [DataAdapter イベントの処理](handling-dataadapter-events.md)」を参照してください。  
+ これまでに説明した方法と併せて、<xref:System.Data.Common.DataAdapter> オブジェクトの **RowUpdated** イベントを使用しても、オプティミスティック コンカレンシー違反をアプリケーションに通知できます。 **RowUpdated** は、**DataSet** から **Modified** 行の更新を行ったときに発生します。 これにより、例外発生時の処理、カスタム エラー情報の追加、再試行ロジックの追加などの特別の処理コードを追加できます。 <xref:System.Data.Common.RowUpdatedEventArgs> オブジェクトは、テーブルの行を変更する特定の更新コマンドの影響を受けた行数を含む **RecordsAffected** プロパティを返します。 オプティミスティック コンカレンシーをテストするように更新コマンドを設定した場合は、オプティミスティック コンカレンシー違反の発生時に、**RecordsAffected** プロパティは値 0 を結果として返します。値が 0 なのはレコードが更新されないためです。 この場合、例外がスローされます。 **RowUpdated** イベントを使用すると、発生したイベントを処理したり、**UpdateStatus.SkipCurrentRow** のような適切な **RowUpdatedEventArgs.Status** 値を設定することで例外を回避したりできます。 **RowUpdated** イベントについて詳しくは、「[DataAdapter のイベント処理](handling-dataadapter-events.md)」をご覧ください。  
   
- 必要に応じて、 **update**を呼び出す前に**ContinueUpdateOnError**を**True**に設定し、**更新**が完了したときに特定の行の**RowError**プロパティに格納されているエラー情報に応答することができます。 詳細については、「[行エラー情報](./dataset-datatable-dataview/row-error-information.md)」を参照してください。  
+ 必要に応じて、**Update** を呼び出す前に **DataAdapter.ContinueUpdateOnError** を **true** に設定し、**Update** 完了時に特定の行の **RowError** プロパティに格納されたエラー情報に対処することができます。 詳しくは、「[行エラー情報](./dataset-datatable-dataview/row-error-information.md)」をご覧ください。  
   
 ## <a name="optimistic-concurrency-example"></a>オプティミスティック コンカレンシーの例  
- 次の例では、 **DataAdapter**の**UpdateCommand**をオプティミスティック同時実行制御をテストするように設定し、 **RowUpdated**イベントを使用してオプティミスティック同時実行制御違反をテストしています。 オプティミスティック同時実行制御違反が発生すると、アプリケーションは、更新プログラムが発行された行の**RowError**を、オプティミスティック同時実行制御違反を反映するように設定します。  
+ **DataAdapter** の **UpdateCommand** をオプティミスティック コンカレンシーをテストするように設定してから、**RowUpdated** イベントを使用してオプティミスティック コンカレンシー違反がないかどうかをテストする簡単な例を次に示します。 オプティミスティック コンカレンシー違反が検出されると、アプリケーションは、オプティミスティック コンカレンシー違反が反映されるように更新が実行された行の **RowError** を設定します。  
   
- UPDATE コマンドの WHERE 句に渡されるパラメーター値は、それぞれの列の**元**の値にマップされることに注意してください。  
+ UPDATE コマンドの WHERE 句に渡されたパラメーター値は、それぞれの列の **Original** 値に割り当てられることに注意してください。  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -143,7 +143,7 @@ adapter.Update(dataSet, "Customers")
 Dim dataRow As DataRow  
   
 For Each dataRow In dataSet.Tables("Customers").Rows  
-    If dataRow.HasErrors Then   
+    If dataRow.HasErrors Then
        Console.WriteLine(dataRow (0) & vbCrLf & dataRow.RowError)  
     End If  
 Next  
@@ -198,7 +198,7 @@ foreach (DataRow dataRow in dataSet.Tables["Customers"].Rows)
   
 protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)  
 {  
-  if (args.RecordsAffected == 0)   
+  if (args.RecordsAffected == 0)
   {  
     args.Row.RowError = "Optimistic Concurrency Violation Encountered";  
     args.Status = UpdateStatus.SkipCurrentRow;  

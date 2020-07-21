@@ -1,17 +1,15 @@
 ---
-title: セキュリティ
+title: Security
 description: Azure 向けのクラウドネイティブ .NET アプリの設計 |保護
-ms.date: 06/30/2019
-ms.openlocfilehash: 848255de70038798417a558543d0b1ea8cff1e37
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.date: 05/13/2020
+ms.openlocfilehash: 9afbc2c960fdd16721e1d3aa7fd01d5c0c1fe2f9
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "73840995"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83613669"
 ---
-# <a name="security"></a>セキュリティ
-
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+# <a name="security"></a>Security
 
 1日ではなく、会社がハッキングされたり、ユーザーのデータが失われたりすることについて、ニュースに何のストーリーも含まれていません。 他の国では、セキュリティを後で扱うことによって作成された問題を解決できません。 長年にわたり、企業は顧客データのセキュリティと、実際にはネットワーク全体を "優れた" ものとして扱ってきました。 Windows server は修正プログラム脆弱性に残されており、従来のバージョンの PHP は実行されたままで、MongoDB データベースは世界中にオープンになっています。
 

@@ -3,12 +3,12 @@ title: 既定のインターフェイス メソッドを使用して mixin 型�
 description: 既定のインターフェイス メンバーを使用すると、実装のためにオプションの既定の実装を使用してインターフェイスを拡張できます。
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: fb8fc1f432bdf909bae4f54bb76d10d7619f71a3
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 0095d76eadfe0c6a1b30bf8a0c5000509f5e1bf9
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140846"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396712"
 ---
 # <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>チュートリアル: 既定のインターフェイス メソッドでインターフェイスを使用してクラスを作成するときの機能の混合
 
@@ -24,7 +24,7 @@ ms.locfileid: "74140846"
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。C# 8.0 コンパイラも実行されるようにします。 C# 8.0 コンパイラは [Visual Studio 2019 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) または [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) 以降で使用できます。
+お使いのコンピューターを、.NET Core が実行されるように設定する必要があります。C# 8.0 コンパイラも実行されるようにします。 C# 8.0 コンパイラは [Visual Studio 2019 バージョン 16.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) または [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) 以降から使用できます。
 
 ## <a name="limitations-of-extension-methods"></a>拡張メソッドの制限事項
 
@@ -45,7 +45,7 @@ C# 8.0 以降では、既定の実装をインターフェイス メソッドと
 
 これらの拡張機能の一部は、最小セットをサポートするデバイスでエミュレートできます。 これは、既定の実装を提供することを示します。 より多くの機能が組み込まれているデバイスの場合、デバイス ソフトウェアではネイティブ機能を使用します。 他の照明については、インターフェイスを実装し、既定の実装を使用することを選択できます。
 
-このシナリオでは、拡張メソッドよりも既定のインターフェイス メンバーの方が適したソリューションです。 クラス作成者は、実装するインターフェイスを制御できます。 選択したインターフェイスはメソッドとして利用できます。 また、既定のインターフェイス メソッドは既定で仮想であるため、メソッドのディスパッチでは常にクラス内の実装が選択されます。 
+このシナリオでは、拡張メソッドよりも既定のインターフェイス メンバーの方が適したソリューションです。 クラス作成者は、実装するインターフェイスを制御できます。 選択したインターフェイスはメソッドとして利用できます。 また、既定のインターフェイス メソッドは既定で仮想であるため、メソッドのディスパッチでは常にクラス内の実装が選択されます。
 
 これらの違いを示すコードを作成してみましょう。
 
@@ -53,21 +53,21 @@ C# 8.0 以降では、既定の実装をインターフェイス メソッドと
 
 まず、すべての照明の動作を定義するインターフェイスを作成します。
 
-[!code-csharp[Declare base interface](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetILightInterfaceV1)]
+[!code-csharp[Declare base interface](./snippets/mixins-with-default-interface-methods/UnusedExampleCode.cs?name=SnippetILightInterfaceV1)]
 
 基本的な天井の照明器具では、次のコードに示すようにこのインターフェイスを実装する場合があります。
 
-[!code-csharp[First overhead light](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetOverheadLightV1)]
+[!code-csharp[First overhead light](./snippets/mixins-with-default-interface-methods/UnusedExampleCode.cs?name=SnippetOverheadLightV1)]
 
 このチュートリアルでは、IoT デバイスを駆動していませんが、コンソールにメッセージを書き込んでそのアクティビティをエミュレートします。 家を自動化せずにコードを調べることができます。
 
 次に、タイムアウト後に自動的にオフにできる照明のインターフェイスを定義します。
 
-[!code-csharp[pure Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
+[!code-csharp[pure Timer interface](./snippets/mixins-with-default-interface-methods/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
 
 天井の照明に基本的な実装を追加することもできますが、おすすめのソリューションは、このインターフェイス定義を変更して `virtual` の既定の実装を提供することです。
 
-[!code-csharp[Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/ITimerLight.cs?name=SnippetTimerLightFinal)]
+[!code-csharp[Timer interface](./snippets/mixins-with-default-interface-methods/ITimerLight.cs?name=SnippetTimerLightFinal)]
 
 この変更を追加することで、`OverheadLight` クラスで、インターフェイスのサポートを宣言してタイマー関数を実装できます。
 
@@ -77,27 +77,27 @@ public class OverheadLight : ITimerLight { }
 
 照明の種類によっては、より高度なプロトコルがサポートされている場合があります。 次のコードに示すように、`TurnOnFor` の独自の実装を提供できます。
 
-[!code-csharp[Override the timer function](~/samples/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
+[!code-csharp[Override the timer function](./snippets/mixins-with-default-interface-methods/HalogenLight.cs?name=SnippetHalogenLight)]
 
-仮想クラス メソッドのオーバーライドとは異なり、`HalogenLight` クラスの `TurnOnFor` の宣言では、`override` キーワードは使用されません。 
+仮想クラス メソッドのオーバーライドとは異なり、`HalogenLight` クラスの `TurnOnFor` の宣言では、`override` キーワードは使用されません。
 
 ## <a name="mix-and-match-capabilities"></a>機能の混在と対応付け
 
 より高度な機能を導入すると、既定のインターフェイス メソッドの利点が明らかになります。 インターフェイスを使用すると、機能を混在させて対応付けることができます。 また、各クラスの作成者は、既定の実装とカスタム実装のいずれかを選択できるようになります。 点滅する照明の既定の実装を持つインターフェイスを追加してみましょう。
 
-[!code-csharp[Define the blinking light interface](~/samples/csharp/tutorials/mixins-with-interfaces/IBlinkingLight.cs?name=SnippetBlinkingLight)]
+[!code-csharp[Define the blinking light interface](./snippets/mixins-with-default-interface-methods/IBlinkingLight.cs?name=SnippetBlinkingLight)]
 
 既定の実装では、任意の照明を点滅させることができます。 天井の照明には、既定の実装を使用して、タイマーと点滅の両方の機能を追加できます。
 
-[!code-csharp[Use the default blink function](~/samples/csharp/tutorials/mixins-with-interfaces/OverheadLight.cs?name=SnippetOverheadLight)]
+[!code-csharp[Use the default blink function](./snippets/mixins-with-default-interface-methods/OverheadLight.cs?name=SnippetOverheadLight)]
 
 新しい照明の種類である `LEDLight` では、タイマー関数と点滅関数の両方を直接サポートします。 この照明のスタイルでは、`ITimerLight` と `IBlinkingLight` の両方のインターフェイスを実装し、`Blink` メソッドをオーバーライドします。
 
-[!code-csharp[Override the blink function](~/samples/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
+[!code-csharp[Override the blink function](./snippets/mixins-with-default-interface-methods/LEDLight.cs?name=SnippetLEDLight)]
 
 `ExtraFancyLight` は、点滅とタイマーの両方の関数を直接サポートしている可能性があります。
 
-[!code-csharp[Override the blink and timer function](~/samples/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
+[!code-csharp[Override the blink and timer function](./snippets/mixins-with-default-interface-methods/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
 
 以前に作成した `HalogenLight` は、点滅をサポートしていません。 そのため、サポートされているインターフェイスの一覧に `IBlinkingLight` を追加しないでください。
 
@@ -105,21 +105,21 @@ public class OverheadLight : ITimerLight { }
 
 次に、テスト コードを書いてみましょう。 C# の[パターン マッチング](../pattern-matching.md)機能を利用して、サポートされているインターフェイスを調べることで、照明の機能を決定することができます。  次のメソッドでは、各照明のサポートされている機能を実行します。
 
-[!code-csharp[Test a light's capabilities](~/samples/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetTestLightFunctions)]
+[!code-csharp[Test a light's capabilities](./snippets/mixins-with-default-interface-methods/Program.cs?name=SnippetTestLightFunctions)]
 
 `Main` メソッドの次のコードでは、各照明の種類を順番に作成し、その照明をテストします。
 
-[!code-csharp[Test a light's capabilities](~/samples/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetMainMethod)]
+[!code-csharp[Test a light's capabilities](./snippets/mixins-with-default-interface-methods/Program.cs?name=SnippetMainMethod)]
 
 ## <a name="how-the-compiler-determines-best-implementation"></a>コンパイラで最適な実装を決定する方法
 
 このシナリオは、実装のない基底インターフェイスを示しています。 `ILight` インターフェイスにメソッドを追加すると、新たな複雑さが生じます。 既定のインターフェイス メソッドを管理する言語規則により、複数の派生インターフェイスを実装する具象クラスへの影響が最小限に抑えられます。 元のインターフェイスを新しいメソッドで拡張して、その使用方法がどのように変わるかを説明します。 すべてのインジケーター照明では、その電源の状態を列挙値として報告できます。
 
-[!code-csharp[Enumeration for power status](~/samples/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetPowerStatus)]
+[!code-csharp[Enumeration for power status](./snippets/mixins-with-default-interface-methods/ILight.cs?name=SnippetPowerStatus)]
 
-既定の実装では AC 電源が想定されています。
+既定の実装では、電源は想定されていません。
 
-[!code-csharp[Report a default power status](~/samples/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetILightInterface)]
+[!code-csharp[Report a default power status](./snippets/mixins-with-default-interface-methods/ILight.cs?name=SnippetILightInterface)]
 
 `ExtraFancyLight` が `ILight` インターフェイスと `ITimerLight` および `IBlinkingLight` 両方の派生インターフェイスのサポートを宣言していても、これらの変更は正常にコンパイルされます。 `ILight` インターフェイスで宣言される "最も近い" 実装は 1 つのみです。 オーバーライドを宣言した任意のクラスは、1 つの "最も近い" 実装になります。 上記のクラスの例では、他の派生インターフェイスのメンバーをオーバーライドしています。
 

@@ -1,13 +1,14 @@
 ---
 title: .NET リモート処理から WCF への移行
+description: .NET リモート処理を使用するアプリケーションを WCF を使用するように移行する方法について説明します。 WCF では、いくつかの一般的なリモート処理シナリオを実行できます。
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: 926ccee49c7a445c724cecd72015ec5a5307cf58
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: f6f526db09806008314980b71233b208d25359fc
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990180"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246156"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>.NET リモート処理から WCF への移行
 この記事では、.NET リモート処理を使用するアプリケーションを、Windows Communication Foundation (WCF) を使用するように移行する方法について説明します。 これらの製品間で類似する概念を比較した後、WCF で一般的なリモート処理のシナリオを実現する方法を説明します。  
@@ -19,14 +20,14 @@ ms.locfileid: "70990180"
   
 ||.NET リモート処理|WCF|  
 |-|-------------------|---------|  
-|サーバーの型|サブクラス MarshalByRefObject|[ServiceContract] 属性でマーク|  
+|サーバーの種類|サブクラス MarshalByRefObject|[ServiceContract] 属性でマーク|  
 |サービス操作|サーバーの型のパブリック メソッド|[OperationContract] 属性でマーク|  
 |シリアル化|ISerializable または [Serializable]|DataContractSerializer または XmlSerializer|  
 |渡されるオブジェクト|値渡しまたは参照渡し|値渡しのみ|  
 |エラーと例外|すべてのシリアル化可能な例外|FaultContract\<TDetail>|  
-|クライアント プロキシ オブジェクト|厳密に型指定された透過的プロキシが MarshalByRefObjects から自動的に作成されます|厳密に型指定されたプロキシは、\<ChannelFactory tchannel を使用してオンデマンドで生成され >|  
+|クライアント プロキシ オブジェクト|厳密に型指定された透過的プロキシが MarshalByRefObjects から自動的に作成されます|厳密に型指定されたプロキシは、ChannelFactory を使用してオンデマンドで生成されます。\<TChannel>|  
 |必要なプラットフォーム|クライアントとサーバーの両方で Microsoft OS と .NET を使用する必要があります|クロスプラットフォーム|  
-|メッセージ形式|プライベート|業界標準 (SOAP、WS-* など)|  
+|メッセージの形式|Private|業界標準 (SOAP、WS-* など)|  
   
 ### <a name="server-implementation-comparison"></a>サーバー実装の比較  
   
@@ -48,8 +49,8 @@ public class RemotingServer : MarshalByRefObject
 TcpChannel channel = new TcpChannel(8080);  
 ChannelServices.RegisterChannel(channel, ensureSecurity : true);  
 RemotingConfiguration.RegisterWellKnownServiceType(  
-    typeof(RemotingServer),   
-    "RemotingServer",   
+    typeof(RemotingServer),
+    "RemotingServer",
     WellKnownObjectMode.Singleton);  
 Console.WriteLine("RemotingServer is running.  Press ENTER to terminate...");  
 Console.ReadLine();  
@@ -101,7 +102,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(WCFServer), baseAddress)
   
  WCF サービスの構成方法やホスト方法には、さまざまなものがあります。 これは、"自己ホスト型" と呼ばれる一例にすぎません。 詳細については、次のトピックを参照してください。  
   
-- [方法: サービスコントラクトの定義](how-to-define-a-wcf-service-contract.md)  
+- [方法: サービス コントラクトを定義する](how-to-define-a-wcf-service-contract.md)  
   
 - [構成ファイルを使用してサービスを構成する方法](configuring-services-using-configuration-files.md)  
   
@@ -116,7 +117,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(WCFServer), baseAddress)
 TcpChannel channel = new TcpChannel();  
 ChannelServices.RegisterChannel(channel, ensureSecurity : true);  
 RemotingServer server = (RemotingServer)Activator.GetObject(  
-                            typeof(RemotingServer),   
+                            typeof(RemotingServer),
                             "tcp://localhost:8080/RemotingServer");  
   
 RemotingCustomer customer = server.GetCustomer(42);  
@@ -132,7 +133,7 @@ Console.WriteLine($"Customer {customer.FirstName} {customer.LastName} received."
 NetTcpBinding binding = new NetTcpBinding();  
 String url = "net.tcp://localhost:8000/wcfserver";  
 EndpointAddress address = new EndpointAddress(url);  
-ChannelFactory<IWCFServer> channelFactory =   
+ChannelFactory<IWCFServer> channelFactory =
     new ChannelFactory<IWCFServer>(binding, address);  
 IWCFServer server = channelFactory.CreateChannel();  
   
@@ -142,9 +143,9 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
   
  この例では、リモート処理の例に最も近いことから、チャネル レベルでのプログラミングを示しています。 また、Visual Studio の**サービス参照の追加**アプローチを使用して、クライアントプログラミングを簡略化するコードを生成することもできます。 詳細については、次のトピックを参照してください。  
   
-- [クライアント チャネル レベルのプログラミング](./extending/client-channel-level-programming.md)  
+- [クライアントのチャネル レベルのプログラミング](./extending/client-channel-level-programming.md)  
   
-- [方法: サービス参照の追加、更新、または削除](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
+- [方法: サービス参照を追加、更新、または削除する](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
   
 ### <a name="serialization-usage"></a>シリアル化の使用方法  
  .NET リモート処理と WCF は、どちらもクライアントとサーバーの間のオブジェクト送信にシリアル化を使用しますが、次の重要な点が異なります。  
@@ -247,9 +248,9 @@ public interface IWCFServer
   
 ```csharp
 throw new FaultException<CustomerServiceFault>(  
-    new CustomerServiceFault() {   
-        CustomerId = customerId,   
-        ErrorMessage = "Illegal customer Id"   
+    new CustomerServiceFault() {
+        CustomerId = customerId,
+        ErrorMessage = "Illegal customer Id"
     });  
 ```  
   
@@ -284,28 +285,28 @@ catch (FaultException<CustomerServiceFault> fault)
   
 ### <a name="why-migrate-from-remoting-to-wcf"></a>リモート処理から WCF に移行する理由  
   
-- **.NET リモート処理は従来の製品です。** 「 [.Net リモート処理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29)」で説明されているように、これは従来の製品と見なされ、新規の開発にはお勧めできません。 新規および既存のアプリケーションには、WCF または ASP.NET Web API をお勧めします。  
+- **.NET リモート処理はレガシー製品です。** 「 [.Net リモート処理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29)」で説明されているように、これは従来の製品と見なされ、新規の開発にはお勧めできません。 新規および既存のアプリケーションには、WCF または ASP.NET Web API をお勧めします。  
   
-- **WCF では、クロスプラットフォームの標準を使用します。** WCF は、クロスプラットフォームの相互運用性を考慮して設計されており、さまざまな業界標準 (SOAP、WS-Security、WS-Trust など) をサポートしています。 WCF サービスでは、Windows 以外のオペレーション システムで動作中のクライアントとの相互運用ができます。 リモート処理は、主に、サーバーおよびクライアント アプリケーションの両方が Windows オペレーティング システムで .NET Framework を使用して実行される環境向けに設計されました。  
+- **WCF では、クロスプラットフォーム標準を使用しています。** WCF は、クロスプラットフォームの相互運用性を考慮して設計されており、さまざまな業界標準 (SOAP、WS-Security、WS-Trust など) をサポートしています。 WCF サービスでは、Windows 以外のオペレーション システムで動作中のクライアントとの相互運用ができます。 リモート処理は、主に、サーバーアプリケーションとクライアントアプリケーションの両方が Windows オペレーティングシステムで .NET Framework を使用して実行する環境向けに設計されています。
   
-- **WCF にはセキュリティが組み込まれています。** WCF は、セキュリティを考慮して設計されており、認証、トランスポート レベルのセキュリティ、メッセージ レベルのセキュリティなどのために、数多くのオプションが用意されています。リモート処理は、アプリケーションの相互運用を容易にするように設計されましたが、信頼できない環境で安全性を確保できるようには設計されていません。 WCF は信頼できる環境と信頼できない環境の両方で動作するよう設計されました。  
+- **WCF にはセキュリティが組み込まれています。** WCF はセキュリティを考慮して設計されており、認証、トランスポートレベルのセキュリティ、メッセージレベルのセキュリティなどのさまざまなオプションを提供しています。リモート処理は、アプリケーションの相互運用を容易にするように設計されていますが、信頼されていない環境ではセキュリティで保護するように設計されていません。 WCF は信頼できる環境と信頼できない環境の両方で動作するよう設計されました。  
   
 ### <a name="migration-recommendations"></a>移行の推奨事項  
  .NET リモート処理から WCF に移行するための推奨手順を次に示します。  
   
-- **サービスコントラクトを作成します。** サービス インターフェイスの型を定義し、[ServiceContract] 属性でマークします。クライアントからの呼び出しを可能にするすべてのメソッドを [OperationContract] でマークします。  
+- **サービス コントラクトを作成する。** サービス インターフェイスの型を定義し、[ServiceContract] 属性でマークします。クライアントからの呼び出しを可能にするすべてのメソッドを [OperationContract] でマークします。  
   
 - **データコントラクトを作成します。** サーバーとクライアントの間で交換されるデータ型を定義し、[DataContract] 属性でマークします。 クライアントから使用できるようにするすべてのフィールドとプロパティを [DataMember] でマークします。  
   
-- **エラーコントラクトを作成します (省略可能)。** エラーが検出されたときにサーバーとクライアントの間で交換される型を作成します。 これらの型を [DataContract] と [DataMember] でマークしてシリアル化できるようにします。 [OperationContract] でマークしたすべてのサービス操作について、どのエラーが返されるのかを示すために [FaultContract] でも同様にマークします。  
+- **エラー コントラクトを作成する (省略可能)。** エラーが検出されたときにサーバーとクライアントの間で交換される型を作成します。 これらの型を [DataContract] と [DataMember] でマークしてシリアル化できるようにします。 [OperationContract] でマークしたすべてのサービス操作について、どのエラーが返されるのかを示すために [FaultContract] でも同様にマークします。  
   
-- **サービスを構成してホストします。** サービス コントラクトの作成後の手順としては、エンドポイントでサービスを公開するためにバインドを構成します。 詳細については[、「エンドポイント:アドレス、バインディング、およびコントラクト](./feature-details/endpoints-addresses-bindings-and-contracts.md)。  
+- **サービスを構成し、ホストする。** サービス コントラクトの作成後の手順としては、エンドポイントでサービスを公開するためにバインドを構成します。 詳細については、「[エンドポイント: アドレス、バインディング、およびコントラクト](./feature-details/endpoints-addresses-bindings-and-contracts.md)」を参照してください。  
   
  リモート処理アプリケーションの WCF への移行が完了した後は、.NET リモート処理で依存関係を削除する必要があります。 これにより、リモート処理の脆弱性がアプリケーションから確実に取り除かれます。 実行する必要がある手順は、次のとおりです。  
   
-- **MarshalByRefObject の使用を中止しています。** MarshalByRefObject 型は、リモート処理のためだけに存在する型で、WCF では使用されません。 MarshalByRefObject をサブクラスに持つアプリケーション型は、削除するか変更する必要があります。  
+- **MarshalByRefObject の使用を中止する。** MarshalByRefObject 型は、リモート処理のためだけに存在する型で、WCF では使用されません。 MarshalByRefObject をサブクラスに持つアプリケーション型は、削除するか変更する必要があります。  
   
-- **[Serializable] と ISerializable の使用を中止しています。** [Serializable] 属性と ISerializable インターフェイスは、信頼できる環境内の型をシリアル化するように設計されたものであり、これらはリモート処理によって使用されます。 WCF のシリアル化では、[DataContract] と [DataMember] でマークされている型を使用します。 アプリケーションで使用されるデータ型は、ISerializable や [Serializable] を使用せずに [DataContract] を使用するように変更する必要があります。  
+- **[Serializable] と ISerializable の使用を中止する。** [Serializable] 属性と ISerializable インターフェイスは、信頼できる環境内の型をシリアル化するように設計されたものであり、これらはリモート処理によって使用されます。 WCF のシリアル化では、[DataContract] と [DataMember] でマークされている型を使用します。 アプリケーションで使用されるデータ型は、ISerializable や [Serializable] を使用せずに [DataContract] を使用するように変更する必要があります。  
   
 ### <a name="migration-scenarios"></a>移行のシナリオ  
  WCF で次の一般的なリモート処理のシナリオを実現する方法を見てみましょう。  
@@ -335,7 +336,7 @@ public class RemotingServer : MarshalByRefObject
 }  
 ```  
   
-#### <a name="scenario-1-service-returns-an-object-by-value"></a>シナリオ 1:サービスは値によってオブジェクトを返します  
+#### <a name="scenario-1-service-returns-an-object-by-value"></a>シナリオ 1: サービスが値渡しでオブジェクトを返す  
  このシナリオでは、値渡しでクライアントにオブジェクトを返すサーバーについて説明します。 WCF は常にサーバーから値渡しでオブジェクトを返すため、次の各手順では、単に通常の WCF サービスを構築する方法について説明します。  
   
 1. まずは、WCF サービスのパブリック インターフェイスを定義し、[ServiceContract] 属性でマークします。 クライアントが呼び出すサーバー側のメソッドを識別するために [OperationContract] を使用します。  
@@ -370,7 +371,7 @@ public class RemotingServer : MarshalByRefObject
    }  
   
    [DataContract]  
-   public class PremiumCustomer : Customer   
+   public class PremiumCustomer : Customer
    {  
        [DataMember]  
        public int AccountId { get; set; }  
@@ -434,7 +435,7 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-     **サービス参照の追加**の使用方法の詳細につい[ては、「」を参照してください。サービス参照](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)を追加、更新、または削除します。  
+     **サービス参照の追加**の使用方法の詳細については、「[方法: サービス参照を追加、更新、または削除](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)する」を参照してください。  
   
 7. これで、クライアントから WCF サービスを呼び出すことができます。 WCF サービスを呼び出すには、そのサービスのチャネル ファクトリを作成し、チャネルを要求して、そのチャネルで必要なメソッドを直接呼び出します。 この方法が可能なのは、チャネルがサービスのインターフェイスを実装し、基になる要求/応答のロジックを処理するためです。 このメソッドの呼び出しからの戻り値は、サーバーの応答の逆シリアル化されたコピーです。  
   
@@ -448,7 +449,7 @@ public class RemotingServer : MarshalByRefObject
   
  WCF によってサーバーからクライアントに返されるオブジェクトは、常に値渡しです。 オブジェクトは、サーバーから送信されたデータの逆シリアル化されたコピーです。 クライアントは、コールバックによってサーバー コードを呼び出すリスクを冒すことなく、これらのローカル コピーでメソッドを呼び出すことができます。  
   
-#### <a name="scenario-2-server-returns-an-object-by-reference"></a>例 2:サーバーが参照渡しでオブジェクトを返す  
+#### <a name="scenario-2-server-returns-an-object-by-reference"></a>シナリオ 2: サーバーから参照渡しでオブジェクトを返す  
  このシナリオでは、参照渡しでクライアントにオブジェクトを提供するサーバーについて説明します。 .NET リモート処理では、参照渡しでシリアル化された MarshalByRefObject から派生したすべての型に対してこの処理が自動的に行われます。 このシナリオの例としては、たとえば複数のクライアントが、独立したセッションフルなサーバー側オブジェクトを持てるようにします。 前述したように、WCF サービスによって返されるオブジェクトは常に値渡しであるため、参照渡しのオブジェクトに直接相当するものはありませんが、<xref:System.ServiceModel.EndpointAddress10> オブジェクトを使用して参照渡しセマンティクスに類似するものを実現することは可能です。 これは、サーバー上のセッションフルな参照渡しのオブジェクトを取得するためにクライアントが使用できる、シリアル化可能な値渡しのオブジェクトです。 これによって、独立したセッションフルなサーバー側オブジェクトを持つ複数のクライアントを用意するというシナリオが可能になります。  
   
 1. まずは、セッションフル オブジェクト自体に対応する WCF サービス コントラクトを定義する必要があります。  
@@ -505,9 +506,9 @@ public class RemotingServer : MarshalByRefObject
    ```csharp
    public class SessionBoundFactory : ISessionBoundFactory  
        {  
-           public static ChannelFactory<ISessionBoundObject> _factory =   
+           public static ChannelFactory<ISessionBoundObject> _factory =
                new ChannelFactory<ISessionBoundObject>("sessionbound");  
- 
+
            public SessionBoundFactory()  
            {  
            }  
@@ -524,7 +525,7 @@ public class RemotingServer : MarshalByRefObject
   
 4. 以下の例に示すように、次の 2 つの処理を実行して、サーバーの構成ファイルを変更する必要があります。  
   
-    1. セッションフルオブジェクト\<のエンドポイントを記述するクライアント > セクションを宣言します。 この処理が必要な理由は、この状況ではサーバーがクライアントとしても機能するためです。  
+    1. \<client>セッションフルオブジェクトのエンドポイントを記述するセクションを宣言します。 この処理が必要な理由は、この状況ではサーバーがクライアントとしても機能するためです。  
   
     2. ファクトリおよびセッションフル オブジェクトのエンドポイントを宣言します。 この処理は、クライアントがサービス エンドポイントと通信して EndpointAddress10 の取得とセッションフル チャネルの作成を実行できるようにするために必要です。  
   
@@ -602,18 +603,18 @@ public class RemotingServer : MarshalByRefObject
     4. セッションフル オブジェクトと対話し、複数の呼び出し間でインスタンスが同じであることを示す。  
   
    ```csharp
-   ChannelFactory<ISessionBoundFactory> channelFactory =   
+   ChannelFactory<ISessionBoundFactory> channelFactory =
        new ChannelFactory<ISessionBoundFactory>("factory");  
    ISessionBoundFactory sessionFactory = channelFactory.CreateChannel();  
   
    EndpointAddress10 address1 = sessionFactory.GetInstanceAddress();  
    EndpointAddress10 address2 = sessionFactory.GetInstanceAddress();  
   
-   ChannelFactory<ISessionBoundObject> sessionObjectFactory1 =   
-       new ChannelFactory<ISessionBoundObject>(new NetTcpBinding(),   
+   ChannelFactory<ISessionBoundObject> sessionObjectFactory1 =
+       new ChannelFactory<ISessionBoundObject>(new NetTcpBinding(),
                                                address1.ToEndpointAddress());  
-   ChannelFactory<ISessionBoundObject> sessionObjectFactory2 =   
-       new ChannelFactory<ISessionBoundObject>(new NetTcpBinding(),   
+   ChannelFactory<ISessionBoundObject> sessionObjectFactory2 =
+       new ChannelFactory<ISessionBoundObject>(new NetTcpBinding(),
                                                address2.ToEndpointAddress());  
   
    ISessionBoundObject sessionInstance1 = sessionObjectFactory1.CreateChannel();  
@@ -631,7 +632,7 @@ public class RemotingServer : MarshalByRefObject
   
  WCF は常に値渡しでオブジェクトを返しますが、EndpointAddress10 を使用することで、参照渡しのセマンティクスに相当するものをサポートすることは可能です。 これによって、クライアントからセッションフル WCF サービス インスタンスを要求できるようになり、要求後は他のすべての WCF サービスのように対話ができます。  
   
-#### <a name="scenario-3-client-sends-server-a-by-value-instance"></a>例 3:クライアントがサーバーに値渡しのインスタンスを送信する  
+#### <a name="scenario-3-client-sends-server-a-by-value-instance"></a>シナリオ 3: クライアントから値渡しのインスタンスをサーバーに送信する  
  このシナリオでは、サーバーに値渡しで非プリミティブ オブジェクト インスタンスを送信するクライアントについて説明します。 WCF は値渡しでのみオブジェクトを送信するため、このシナリオでは通常の WCF の使用方法を示します。  
   
 1. シナリオ 1 と同じ WCF サービスを使用します。  
@@ -642,10 +643,10 @@ public class RemotingServer : MarshalByRefObject
    ChannelFactory<ICustomerService> factory =  
        new ChannelFactory<ICustomerService>("customerservice");  
    ICustomerService service = factory.CreateChannel();  
-   PremiumCustomer customer = new PremiumCustomer {   
-   FirstName = "Bob",   
-   LastName = "Jones",   
-   CustomerId = 43,   
+   PremiumCustomer customer = new PremiumCustomer {
+   FirstName = "Bob",
+   LastName = "Jones",
+   CustomerId = 43,
    AccountId = 99};  
    bool success = service.UpdateCustomer(customer);  
    Console.WriteLine($"  Server returned {success}.");

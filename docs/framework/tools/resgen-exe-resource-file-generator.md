@@ -15,12 +15,12 @@ helpviewer_keywords:
 - binary resources files
 - embedding files in runtime binary executable
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
-ms.openlocfilehash: 5fc2bcb03ae6814d69e229ba083c1d5c44ae8ff3
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: b9be030689ecf78b3482743e486e32012e9ca5d4
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204621"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201112"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (リソース ファイル ジェネレーター)
 リソース ファイル ジェネレーター (Resgen.exe) は、テキスト (.txt または .restext) ファイルおよび XML ベースのリソース形式 (.resx) ファイルを共通言語ランタイムのバイナリ (.resources) ファイルに変換します。この .resources ファイルは、ランタイム バイナリ実行可能ファイルまたはサテライト アセンブリに埋め込むことができます。 「[リソース ファイルの作成](../resources/creating-resource-files-for-desktop-apps.md)」をご覧ください。  
@@ -60,7 +60,7 @@ resgen /?
 ## <a name="syntax"></a>構文  
   
 ```console  
-resgen  [-define:symbol1[,symbol2,...]] [/useSourcePath] filename.extension  | /compile filename.extension... [outputFilename.extension] [/r:assembly] [/str:lang[,namespace[,class[,file]]] [/publicclass]]   
+resgen  [-define:symbol1[,symbol2,...]] [/useSourcePath] filename.extension  | /compile filename.extension... [outputFilename.extension] [/r:assembly] [/str:lang[,namespace[,class[,file]]] [/publicclass]]
 ```  
   
 ```console  
@@ -126,14 +126,14 @@ resgen filename.extension [outputDirectory]
   
 - [厳密に型指定されたリソース クラスの生成](resgen-exe-resource-file-generator.md#Strong)  
   
-<a name="Compiling"></a>   
+<a name="Compiling"></a>
 ### <a name="compiling-resources-into-a-binary-file"></a>リソースのバイナリ ファイルへのコンパイル  
  Resgen.exe の最も一般的な用途は、テキスト ベースのリソース ファイル (.txt または .restext ファイル) または XML ベースのリソース ファイル (.resx ファイル) をバイナリ .resources ファイルにコンパイルすることです。 次に、出力ファイルは、言語コンパイラを使用してメインのアセンブリに、または[アセンブリ リンカー (AL.exe)](al-exe-assembly-linker.md) を使用してサテライト アセンブリに埋め込むことができます。  
   
  リソース ファイルをコンパイルする構文は次のとおりです。  
   
 ```console  
-resgen inputFilename [outputFilename]   
+resgen inputFilename [outputFilename]
 ```  
   
  パラメーターは次のとおりです。  
@@ -149,7 +149,7 @@ resgen inputFilename [outputFilename]
  Resources.txt に含まれる名前と値のペアを読み取り、Resources.resources という名前のバイナリ .resources ファイルを書き込むコマンドを次に示します。 出力ファイル名は明示的に指定されていないため、入力ファイルと同じ名前を既定で受け取ります。  
   
 ```console  
-resgen Resources.txt   
+resgen Resources.txt
 ```  
   
  Resources.restext に含まれる名前と値のペアを読み取り、StringResources.resources という名前のバイナリ リソース ファイルを書き込むコマンドを次に示します。  
@@ -164,7 +164,7 @@ resgen Resources.restext StringResources.resources
 resgen Resources.resx Resources.resources  
 ```  
   
-<a name="Convert"></a>   
+<a name="Convert"></a>
 ### <a name="converting-between-resource-file-types"></a>リソース ファイルの種類間の変換  
  テキストベースか XML ベースのリソース ファイルをバイナリ .resources ファイルにコンパイルすることに加えて、Resgen.exe は、任意のサポートされるファイルの種類を他のサポートされるファイルの種類に変換できます。 これによって、次の変換を実行できます。  
   
@@ -199,7 +199,7 @@ resgen Resources.resx Resources.txt
 resgen Resources.resx Resources.restext  
 ```  
   
-<a name="Multiple"></a>   
+<a name="Multiple"></a>
 ### <a name="compiling-or-converting-multiple-files"></a>複数のファイルのコンパイルまたは変換  
  `/compile` スイッチを使用すると、1 回の操作でリソース ファイルの一覧を別の形式に変換できます。 構文は次のとおりです。  
   
@@ -213,7 +213,7 @@ resgen /compile filename.extension [filename.extension...]
 resgen /compile StringResources.txt TableResources.resx ImageResources.resx  
 ```  
   
-<a name="Exporting"></a>   
+<a name="Exporting"></a>
 ### <a name="exporting-resources-to-a-resw-file"></a>.resw ファイルへのリソースのエクスポート  
  Windows 8.x Store アプリケーションを開発する場合は、既存のデスクトップ アプリケーションのリソースを使用することもできます。 ただし、2 つの種類のアプリケーションは、異なるファイル形式をサポートします。 デスクトップ アプリケーションでは、テキストのリソース (.txt または .restext) または .resx ファイルはバイナリ .resources ファイルにコンパイルされます。 Windows 8.x Store アプリケーションでは、.resw ファイルはバイナリ パッケージ リソース インデックス (PRI) ファイルにコンパイルされます。 Resgen.exe を使用して、このギャップを埋めることができます。これを行うには、実行可能ファイルまたはサテライト アセンブリからリソースを抽出して、Windows 8.x Store アプリケーションの開発時に使用できる 1 つ以上の .resw ファイルを記述します。  
   
@@ -240,7 +240,7 @@ resgen filename.extension  [outputDirectory]
 resgen MyApp.exe Win8Resources  
 ```  
   
-<a name="Conditional"></a>   
+<a name="Conditional"></a>
 ### <a name="conditionally-compiling-resources"></a>リソースの条件付きコンパイル  
  .NET Framework 4.5 以降、Resgen.exe では、テキスト (.txt および .restext) ファイル内の文字列リソースの条件付きコンパイルがサポートされています。 これによって、複数のビルド構成で 1 つのテキスト ベースのリソース ファイルを使用できます。  
   
@@ -250,7 +250,7 @@ resgen MyApp.exe Win8Resources
   
 ```text
 #ifdef PRODUCTION  
-AppTitle=My Software Company Project Manager   
+AppTitle=My Software Company Project Manager
 #endif  
 #ifdef CONSULT  
 AppTitle=My Consulting Company Project Manager  
@@ -269,7 +269,7 @@ resgen /define:CONSULT UIResources.restext
   
  これによって、2 つの文字列リソースを含む .resources ファイルが生成されます。 `AppTitle` リソースの値は "My Consulting Company Project Manager" です。  
   
-<a name="Strong"></a>   
+<a name="Strong"></a>
 ### <a name="generating-a-strongly-typed-resource-class"></a>厳密に型指定されたリソース クラスを生成しています  
  Resgen.exe は厳密に型指定されたリソースをサポートします。このサポートでは、静的な読み取り専用プロパティを持つクラスを作成して、リソースへのアクセスをカプセル化します。 これによって、リソースを取得するために <xref:System.Resources.ResourceManager> クラスのメソッドを直接呼び出す方法の代替手段が可能になります。 `/str` クラスの機能をラップする、Resgen.exe の <xref:System.Resources.Tools.StronglyTypedResourceBuilder> オプションを使用して、厳密に型指定されたリソース サポートを有効にすることができます。 `/str` オプションを指定した場合の Resgen.exe の出力は、入力パラメーターで参照されるリソースと一致する厳密に型指定されたプロパティを含むクラスです。 このクラスは、処理されたファイルで使用できるリソースに対する、厳密に型指定された読み取り専用アクセスを提供します。  
   
@@ -324,7 +324,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  たとえば、次のコマンドでは、StringResources.txt という名前のリソース ファイルを StringResources.resources にコンパイルし、リソース マネージャーへのアクセスに使用できる StringResources.vb という名前の Visual Basic ソース コード ファイルに `StringResources` という名前のクラスを生成します。  
   
 ```console  
-resgen StringResources.txt /str:vb,,StringResources   
+resgen StringResources.txt /str:vb,,StringResources
 ```  
   
 ## <a name="see-also"></a>関連項目

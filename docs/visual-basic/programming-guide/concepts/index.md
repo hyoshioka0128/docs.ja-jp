@@ -1,13 +1,13 @@
 ---
-title: Visual Basic のプログラミング概念
+title: プログラミングの概念
 ms.date: 02/27/2017
 ms.assetid: cc9cac84-61f6-476e-b8c7-9bae7749bd90
-ms.openlocfilehash: 4c550002e1049fb716d2836737b6c3fa5b9df4f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 500e2670e9f2aafce31f814a08d1da4f0a1d06fd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966172"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "85503825"
 ---
 # <a name="programming-concepts-visual-basic"></a>プログラミングの概念 (Visual Basic)
 
@@ -17,17 +17,17 @@ ms.locfileid: "61966172"
 
 |Title|説明|
 |-----------|-----------------|
-|[Async および Await を使用した非同期プログラミング (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)|[Async](../../../visual-basic/language-reference/modifiers/async.md) キーワードと [Await](../../../visual-basic/language-reference/operators/await-operator.md) キーワードを使用して非同期ソリューションを記述する方法を説明します。 チュートリアルが含まれています。|
-|[属性の概要 (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md)|属性を使用して、型、フィールド、メソッド、プロパティなどのプログラミング要素に関する追加情報を指定する方法について説明します。|
-|[呼び出し元情報 (Visual Basic)](../../../visual-basic/programming-guide/concepts/caller-information.md)|メソッドの呼び出し元に関する情報を取得する方法について説明します。 この情報には、ソース コードのファイル パスと行番号および呼び出し元のメンバー名が含まれます。|
-|[コレクション (Visual Basic)](../../../visual-basic/programming-guide/concepts/collections.md)|.NET Framework で提供されているコレクションの種類のいくつかについて説明します。 単純なコレクションおよびキーと値のペアのコレクションを使用する方法を示します。|
-|[共変性と反変性 (Visual Basic)](../../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)|インターフェイスやデリゲートでのジェネリック型パラメーターの暗黙の型変換を有効にする方法について説明します。|
-|[式ツリー (Visual Basic)](../../../visual-basic/programming-guide/concepts/expression-trees/index.md)|式ツリーを使用して、実行可能コードの動的変更を有効にする方法について説明します。|
-|[反復子 (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md)|コレクションのステップ実行に使用し、要素を一度に 1 つずつ返す、反復子について説明します。|
-|[統合言語クエリ (LINQ) (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/index.md)|Visual Basic の言語の構文と、モデルのリレーショナル データベース、XML ドキュメント、データセット、およびインメモリ コレクションを照会するための強力なクエリ機能について説明します。|
-|[オブジェクト指向プログラミング (Visual Basic)](../../../visual-basic/programming-guide/concepts/object-oriented-programming.md)|カプセル化、継承、ポリモーフィズムなど、オブジェクト指向に関する一般的な概念について説明します。|
-|[リフレクション (Visual Basic)](../../../visual-basic/programming-guide/concepts/reflection.md)|リフレクションを使用して、動的に型のインスタンスを作成する方法、作成したインスタンスを既存のオブジェクトにバインドする方法、または既存のオブジェクトから型を取得して、そのオブジェクトのメソッドを呼び出したり、フィールドやプロパティにアクセスしたりする方法について説明します。|
-|[シリアル化 (Visual Basic)](../../../visual-basic/programming-guide/concepts/serialization/index.md)|バイナリ、XML、および SOAP のシリアル化の主要な概念について説明します。|
+|[Async および Await を使用した非同期プログラミング (Visual Basic)](async/index.md)|[Async](../../language-reference/modifiers/async.md) キーワードと [Await](../../language-reference/operators/await-operator.md) キーワードを使用して非同期ソリューションを記述する方法を説明します。 チュートリアルが含まれています。|
+|[属性の概要 (Visual Basic)](attributes/index.md)|属性を使用して、型、フィールド、メソッド、プロパティなどのプログラミング要素に関する追加情報を指定する方法について説明します。|
+|[呼び出し元情報 (Visual Basic)](caller-information.md)|メソッドの呼び出し元に関する情報を取得する方法について説明します。 この情報には、ソース コードのファイル パスと行番号および呼び出し元のメンバー名が含まれます。|
+|[コレクション (Visual Basic)](collections.md)|.NET Framework で提供されているコレクションの種類のいくつかについて説明します。 単純なコレクションおよびキーと値のペアのコレクションを使用する方法を示します。|
+|[共変性と反変性 (Visual Basic)](covariance-contravariance/index.md)|インターフェイスやデリゲートでのジェネリック型パラメーターの暗黙の型変換を有効にする方法について説明します。|
+|[式ツリー (Visual Basic)](expression-trees/index.md)|式ツリーを使用して、実行可能コードの動的変更を有効にする方法について説明します。|
+|[反復子 (Visual Basic)](iterators.md)|コレクションのステップ実行に使用し、要素を一度に 1 つずつ返す、反復子について説明します。|
+|[統合言語クエリ (LINQ) (Visual Basic)](linq/index.md)|Visual Basic の言語構文の強力なクエリ機能と、リレーショナル データベース、XML ドキュメント、データセット、インメモリ コレクションを照会するためのモデルについて説明します。|
+|[オブジェクト指向プログラミング (Visual Basic)](object-oriented-programming.md)|カプセル化、継承、ポリモーフィズムなど、オブジェクト指向に関する一般的な概念について説明します。|
+|[リフレクション (Visual Basic)](reflection.md)|リフレクションを使用して、動的に型のインスタンスを作成する方法、作成したインスタンスを既存のオブジェクトにバインドする方法、または既存のオブジェクトから型を取得して、そのオブジェクトのメソッドを呼び出したり、フィールドやプロパティにアクセスしたりする方法について説明します。|
+|[シリアル化 (Visual Basic)](serialization/index.md)|バイナリ、XML、および SOAP のシリアル化の主要な概念について説明します。|
 
 ## <a name="related-sections"></a>関連項目
 

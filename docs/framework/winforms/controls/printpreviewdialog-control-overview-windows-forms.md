@@ -1,17 +1,17 @@
 ---
-title: PrintPreviewDialog コントロールの概要 (Windows フォーム)
+title: PrintPreviewDialog コントロールの概要
 ms.date: 01/08/2018
 f1_keywords:
 - PrintPreviewDialog
 helpviewer_keywords:
 - PrintPreviewDialog control (using designer), about PrintPreviewDialog
 ms.assetid: efd4ee8d-6edd-47ec-88e4-4a4759bd2384
-ms.openlocfilehash: 670886956e1b348895862c117ccf9cf586bde8bb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6fb971493336cda1e04c720dd09147e650918c3a
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141222"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741416"
 ---
 # <a name="printpreviewdialog-control-overview-windows-forms"></a>Printプレビューダイアログコントロールの概要 (Windows フォーム)
 
@@ -53,7 +53,7 @@ Windows フォーム <xref:System.Windows.Forms.PrintPreviewDialog> コントロ
 
 <xref:System.Drawing.Printing.PrintDocument.QueryPageSettings> イベントを使用してプリンターの設定を変更した場合、最適化構成スイッチが設定されていても、<xref:System.Windows.Forms.PrintPreviewDialog> コントロールのパフォーマンスは向上しません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Windows.Forms.PrintPreviewDialog>
 - [PrintPreviewControl コントロールの概要](printpreviewcontrol-control-overview-windows-forms.md)

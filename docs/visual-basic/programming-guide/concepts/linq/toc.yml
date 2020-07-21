@@ -295,7 +295,7 @@
           href: linq-to-xml-for-xpath-users.md
           items:
             - name: XPath と LINQ to XML の比較
-              href: comparison-of-xpath-and-linq-to-xml.md
+              href: ../../../../csharp/programming-guide/concepts/linq/comparison-of-xpath-and-linq-to-xml.md
             - name: '方法: 子要素を検索する (XPath-LINQ to XML)'
               href: how-to-find-a-child-element-xpath-linq-to-xml.md
             - name: '方法: 子要素の一覧を検索する (XPath-LINQ to XML)'

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - calendars [.NET Framework], displaying dates
 - displaying date and time data
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
-ms.openlocfilehash: 455996d091f92367667e7077a4524898cd8face6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8d02b74f63ec5b6260679ae4cea04791681ec238
+ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138750"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80523924"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>方法: グレゴリオ暦以外の暦の日付を表示する
 <xref:System.DateTime> 型と <xref:System.DateTimeOffset> 型は既定の暦としてグレゴリオ暦を使用しています。 つまり、日付と時刻値の `ToString` メソッドを呼び出すと、その日付の時刻が別の暦を使用して作成された場合でも、その日付の時刻はグレゴリオ暦の文字列形式で表示されます。 これを次の例で示します。この例では、2 つの方法を使用してペルシャ暦で日付と時刻の値を作成していますが、<xref:System.DateTime.ToString%2A> メソッドを呼び出すと、これらの日付と時刻の値はグレゴリオ暦で表示されます。 この例では、一般的に使われているものの、特定の暦で日付を表示するには正しくない 2 つの手法が反映されています。  
@@ -81,8 +81,4 @@ ms.locfileid: "73138750"
   
 - `DisplayDate` は、2 つのパラメーターに渡されるオーバーロードされたパブリック メソッドです。<xref:System.DateTime> または <xref:System.DateTimeOffset> のいずれかの値を `CalendarUtility` オブジェクトによって表される暦で表し、カルチャの書式指定規則が使用されます。 日付の文字列表現を返す際の動作は、ターゲットの暦が、使用される書式指定規則のカルチャでサポートされているかどうかによって異なります。  
   
- この例では、<xref:System.DateTime> または <xref:System.DateTimeOffset> 値を作成するために使用する暦に関係なく、その値は通常、グレゴリオ暦の日付として表現されます。 これは、<xref:System.DateTime> と <xref:System.DateTimeOffset> 型は、どの暦情報も保持しないからです。 これらは内部的に 0001 年 1 月 1 日の午前 0 時から経過したタイマー刻みの数として表されます。 その数の解釈は、暦に依存します。 ほとんどのカルチャでは、既定の暦はグレゴリオ暦です。  
-  
-## <a name="see-also"></a>関連項目
-
-- [書式設定操作の実行](../../../docs/standard/base-types/performing-formatting-operations.md)
+ この例では、<xref:System.DateTime> または <xref:System.DateTimeOffset> 値を作成するために使用する暦に関係なく、その値は通常、グレゴリオ暦の日付として表現されます。 これは、<xref:System.DateTime> と <xref:System.DateTimeOffset> 型は、どの暦情報も保持しないからです。 これらは内部的に 0001 年 1 月 1 日の午前 0 時から経過したタイマー刻みの数として表されます。 その数の解釈は、暦に依存します。 ほとんどのカルチャでは、既定の暦はグレゴリオ暦です。

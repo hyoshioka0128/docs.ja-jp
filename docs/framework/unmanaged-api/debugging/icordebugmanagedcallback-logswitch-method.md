@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0ac59d27-783f-4a87-b7a8-baa3ccc54582
 topic_type:
 - apiref
-ms.openlocfilehash: a72eabb1b405c67f5603164e56a589a237603d2f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f095bc0272e0e6f16467b9758d5e392d371139dd
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130691"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212686"
 ---
 # <a name="icordebugmanagedcallbacklogswitch-method"></a>ICorDebugManagedCallback::LogSwitch メソッド
-共通言語ランタイム (CLR) マネージスレッドが、デバッグ/トレーススイッチを作成、変更、または削除するために <xref:System.Diagnostics.Switch> クラスのメソッドを呼び出したことをデバッガーに通知します。  
+共通言語ランタイム (CLR) マネージスレッドが、 <xref:System.Diagnostics.Switch> デバッグ/トレーススイッチを作成、変更、または削除するために、クラスのメソッドを呼び出したことをデバッガーに通知します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -48,7 +48,7 @@ HRESULT LogSwitch (
  からイベントログに書き込まれた説明メッセージの重大度レベルを示す値。  
   
  `ulReason`  
- からデバッグ/トレーススイッチで実行された操作を示す[Logswitchcallreason](../../../../docs/framework/unmanaged-api/debugging/logswitchcallreason-enumeration.md)列挙体の値。  
+ からデバッグ/トレーススイッチで実行された操作を示す[Logswitchcallreason](logswitchcallreason-enumeration.md)列挙体の値。  
   
  `pLogSwitchName`  
  からデバッグ/トレーススイッチの名前へのポインター。  
@@ -56,15 +56,15 @@ HRESULT LogSwitch (
  `pParentName`  
  からデバッグ/トレーススイッチの親の名前へのポインター。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugManagedCallback インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback インターフェイス](icordebugmanagedcallback-interface.md)

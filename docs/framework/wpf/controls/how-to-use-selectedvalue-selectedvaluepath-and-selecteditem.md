@@ -14,26 +14,26 @@ helpviewer_keywords:
 ms.assetid: 2fc92ad4-f02c-4f89-bbe9-d4978a7af0db
 ms.openlocfilehash: d9f7a8f04f53b7d38a49dfef2c947dfa1c2d263d
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61699137"
 ---
 # <a name="how-to-use-selectedvalue-selectedvaluepath-and-selecteditem"></a>方法: SelectedValue、SelectedValuePath、および SelectedItem を使用する
-この例は、使用する方法を示します、<xref:System.Windows.Controls.TreeView.SelectedValue%2A>と<xref:System.Windows.Controls.TreeView.SelectedValuePath%2A>プロパティの値を指定する、<xref:System.Windows.Controls.TreeView.SelectedItem%2A>の<xref:System.Windows.Controls.TreeView>します。  
+この例からは、<xref:System.Windows.Controls.TreeView.SelectedValue%2A> プロパティと <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> プロパティを使用し、<xref:System.Windows.Controls.TreeView> の <xref:System.Windows.Controls.TreeView.SelectedItem%2A> に値を指定する方法がわかります。  
   
 ## <a name="example"></a>例  
- <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A>プロパティを指定する方法を提供する、<xref:System.Windows.Controls.TreeView.SelectedValue%2A>の<xref:System.Windows.Controls.TreeView.SelectedItem%2A>で、<xref:System.Windows.Controls.TreeView>します。 <xref:System.Windows.Controls.TreeView.SelectedItem%2A>内のオブジェクトを表す、<xref:System.Windows.Controls.ItemsControl.Items%2A>コレクションと<xref:System.Windows.Controls.TreeView>選択された項目の 1 つのプロパティの値を表示します。 <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A>プロパティの値を決定するために使用されるプロパティへのパスを指定します、<xref:System.Windows.Controls.TreeView.SelectedValue%2A>プロパティ。 このトピックの例では、この概念を示します。  
+ <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> プロパティからは、<xref:System.Windows.Controls.TreeView> 内の <xref:System.Windows.Controls.TreeView.SelectedValue%2A> に <xref:System.Windows.Controls.TreeView.SelectedItem%2A> を指定する方法が与えられます。 <xref:System.Windows.Controls.TreeView.SelectedItem%2A> は <xref:System.Windows.Controls.ItemsControl.Items%2A> コレクション内のオブジェクトです。<xref:System.Windows.Controls.TreeView> には、選択した項目の単一プロパティの値が表示されます。 <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> プロパティによって、<xref:System.Windows.Controls.TreeView.SelectedValue%2A> プロパティの値を決定する目的で使用されるプロパティのパスが指定されます。 このトピックの例はこの概念を説明するものです。  
   
- 次の例は、<xref:System.Windows.Data.XmlDataProvider>従業員情報を格納します。  
+ 次の例では、社員情報が含まれる <xref:System.Windows.Data.XmlDataProvider> を示します。  
   
  [!code-xaml[TreeViewSelectedValue#XMLDataProvider](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSelectedValue/CS/Window1.xaml#xmldataprovider)]  
   
- 次の例では、定義、<xref:System.Windows.HierarchicalDataTemplate>を表示する、`EmployeeName`と`EmployeeWorkDay`の`Employee`します。 なお、<xref:System.Windows.HierarchicalDataTemplate>で指定されていない、`EmployeeNumber`テンプレートの一部として。  
+ 次の例では、`Employee` の `EmployeeName` と `EmployeeWorkDay` を表示する <xref:System.Windows.HierarchicalDataTemplate> が定義されます。 <xref:System.Windows.HierarchicalDataTemplate> ではテンプレートの一部として `EmployeeNumber` が指定されないことにご留意ください。  
   
  [!code-xaml[TreeViewSelectedValue#HierarchicalDataTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSelectedValue/CS/Window1.xaml#hierarchicaldatatemplate)]  
   
- 次の例は、<xref:System.Windows.Controls.TreeView>を使用して、以前に定義された<xref:System.Windows.HierarchicalDataTemplate>設定して、<xref:System.Windows.Controls.TreeView.SelectedValue%2A>プロパティを`EmployeeNumber`します。 選択すると、`EmployeeName`で、 <xref:System.Windows.Controls.TreeView>、<xref:System.Windows.Controls.TreeView.SelectedItem%2A>プロパティが返す、`EmployeeInfo`に、選択した対応するデータ項目`EmployeeName`します。 ただし、ため、<xref:System.Windows.Controls.TreeView.SelectedValuePath%2A>この<xref:System.Windows.Controls.TreeView>に設定されている`EmployeeNumber`、<xref:System.Windows.Controls.TreeView.SelectedValue%2A>に設定されている、`EmployeeNumber`します。  
+ 次の例では、前に定義した <xref:System.Windows.HierarchicalDataTemplate> を使用し、<xref:System.Windows.Controls.TreeView.SelectedValue%2A> プロパティを `EmployeeNumber` に設定する <xref:System.Windows.Controls.TreeView> を示します。 <xref:System.Windows.Controls.TreeView> で `EmployeeName` を選択すると、<xref:System.Windows.Controls.TreeView.SelectedItem%2A> プロパティから、選択した `EmployeeName` に対応する `EmployeeInfo` データ項目が返されます。 ただし、この <xref:System.Windows.Controls.TreeView> の <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> が `EmployeeNumber` に設定されているため、<xref:System.Windows.Controls.TreeView.SelectedValue%2A> は `EmployeeNumber` に設定されます。  
   
  [!code-xaml[TreeViewSelectedValue#SelectedValuePath](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSelectedValue/CS/Window1.xaml#selectedvaluepath)]  
   

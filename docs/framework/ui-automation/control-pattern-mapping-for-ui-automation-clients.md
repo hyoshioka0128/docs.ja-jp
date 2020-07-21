@@ -5,22 +5,22 @@ helpviewer_keywords:
 - control patterns, for UI Automation clients
 - UI Automation, clients, control patterns for
 ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
-ms.openlocfilehash: 48298cb8d89958c701d7150aeb497e82d565bde1
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 689e649343c93d0670c6870098a09f61097f4fb4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433861"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79180226"
 ---
 # <a name="control-pattern-mapping-for-ui-automation-clients"></a>UI オートメーション クライアントのコントロール パターン マッピング
 > [!NOTE]
-> このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](/windows/win32/winauto/entry-uiauto-win32)」を参照してください。  
+> このドキュメントは、[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 名前空間で定義されているマネージド <xref:System.Windows.Automation> クラスを使用する .NET Framework 開発者を対象としています。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]の最新情報については、「 [Windows Automation API: UI オートメーション](/windows/win32/winauto/entry-uiauto-win32)」をご覧ください。  
   
  このトピックでは、コントロール型とそれに関連するコントロール パターンを示します。  
   
  次の表に、コントロール パターンを次のカテゴリに整理して示します。  
   
-- サポートあり。 コントロールはこのコントロール パターンをサポートする必要があります。  
+- サポートされています。 コントロールはこのコントロール パターンをサポートする必要があります。  
   
 - 条件付きサポート。 コントロールは、その状態に応じてこのコントロール パターンをサポートする場合があります。  
   
@@ -29,43 +29,43 @@ ms.locfileid: "74433861"
 > [!NOTE]
 > 一部のコントロールは、その機能に応じて複数のコントロール パターンを条件付きでサポートします。 たとえば、メニュー項目コントロールは、メニュー コントロール内での機能に応じて、 <xref:System.Windows.Automation.InvokePattern>、 <xref:System.Windows.Automation.ExpandCollapsePattern>、 <xref:System.Windows.Automation.TogglePattern>、または <xref:System.Windows.Automation.SelectionItemPattern> コントロール パターンを条件付きでサポートします。  
   
-<a name="control_mapping_clients"></a>   
+<a name="control_mapping_clients"></a>
 ## <a name="ui-automation-control-patterns-for-clients"></a>クライアントの UI オートメーション コントロール パターン  
   
-|コントロール型|サポートされています|条件付きサポート|サポートされません|  
+|コントロール型|サポートされています|条件付きサポート|サポートされていません|  
 |------------------|---------------|-------------------------|-------------------|  
 |ボタン|なし|呼び出し、トグル、展開/折りたたみ|なし|  
-|カレンダー|グリッド、テーブル|選択、スクロール|値|  
+|Calendar|グリッド、テーブル|選択、スクロール|Value|  
 |チェック ボックス|切り替え|なし|なし|  
 |コンボ ボックス|展開/折りたたみ|選択、値|スクロール|  
-|データ グリッド|Grid|スクロール、選択、テーブル|なし|  
+|データ グリッド|グリッド|スクロール、選択、テーブル|なし|  
 |データ項目|選択項目|展開/折りたたみ、グリッド項目、スクロール項目、テーブル、トグル、値|なし|  
 |ドキュメント|Text|スクロール、値|なし|  
-|編集|なし|テキスト、範囲の値、値|なし|  
+|[編集]|なし|テキスト、範囲の値、値|なし|  
 |グループ|なし|展開/折りたたみ|なし|  
-|ヘッダー|なし|Transform|なし|  
+|ヘッダー|なし|変換|なし|  
 |ヘッダー項目|なし|変換、呼び出し|なし|  
-|ハイパーリンク|呼び出し|値|なし|  
-|イメージ|なし|グリッド項目、テーブル項目|呼び出し、選択項目|  
-|一覧|なし|グリッド、複数のビュー、スクロール、選択|Table|  
+|ハイパーリンク|Invoke|Value|なし|  
+|Image|なし|グリッド項目、テーブル項目|呼び出し、選択項目|  
+|List|なし|グリッド、複数のビュー、スクロール、選択|テーブル|  
 |リスト項目|選択項目|展開/折りたたみ、グリッド項目、呼び出し、スクロール項目、トグル、値|なし|  
 |メニュー|なし|なし|なし|  
 |メニュー バー|なし|展開/折りたたみ、ドック、変換|なし|  
 |メニュー項目|なし|展開/折りたたみ、呼び出し、選択項目、トグル|なし|  
-|ウィンドウ|なし|ドック、 スクロール、変換|ウィンドウ|  
+|ペイン|なし|ドック、 スクロール、変換|ウィンドウ|  
 |進行状況バー|なし|範囲の値、値|なし|  
 |オプション ボタン|選択項目|なし|切り替え|  
 |スクロール バー|なし|範囲値|スクロール|  
-|[区切り文字]|なし|なし|なし|  
-|[スライダー]|なし|範囲の値、選択、値|なし|  
+|区切り記号|なし|なし|なし|  
+|スライダー|なし|範囲の値、選択、値|なし|  
 |Spinner|なし|範囲の値、選択、値|なし|  
 |分割ボタン|呼び出し、展開/折りたたみ|なし|なし|  
-|ステータス バー|なし|Grid|なし|  
-|タブ|選択内容|スクロール|なし|  
-|タブ項目|選択項目|なし|呼び出し|  
-|Table|グリッド、グリッド項目、テーブル、テーブル項目|なし|なし|  
-|Text|なし|グリッド項目、テーブル項目、テキスト|値|  
-|サム|Transform|なし|なし|  
+|ステータス バー|なし|グリッド|なし|  
+|タブ|[選択]|スクロール|なし|  
+|タブ項目|選択項目|なし|Invoke|  
+|テーブル|グリッド、グリッド項目、テーブル、テーブル項目|なし|なし|  
+|Text|なし|グリッド項目、テーブル項目、テキスト|Value|  
+|つまみ|変換|なし|なし|  
 |タイトル バー|なし|なし|なし|  
 |ツール バー|なし|ドック、展開/折りたたみ、変換|なし|  
 |ツール ヒント|なし|テキスト、ウィンドウ|なし|  
@@ -76,6 +76,6 @@ ms.locfileid: "74433861"
 > [!NOTE]
 > 上記のサポート対象のコントロール パターンが存在せず、条件付きサポートのコントロール パターンが 1 つ以上存在するコントロール型では、それらの条件付きコントロール パターンのうちの 1 つが必ずサポートされます。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [UI オートメーションの概要](ui-automation-overview.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 53441f3a-68d2-477c-906e-37c55dfcfb4d
 topic_type:
 - apiref
-ms.openlocfilehash: 66186d25e8fee0d6b25c0a2069d46ff9a104c625
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fe7350e6d8e400ae37b5b8b7854a56f3c5c53ea7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450039"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491754"
 ---
 # <a name="imetadataimportenummodulerefs-method"></a>IMetaDataImport::EnumModuleRefs メソッド
 インポートされたモジュールを表す ModuleRef トークンを列挙します。  
@@ -47,25 +47,25 @@ HRESULT EnumModuleRefs (
  [in] `rModuleRefs` 配列の最大サイズ。  
   
  `pcModuleRefs`  
- 入出力`rModuleRefs`で返された ModuleRef トークンの数。  
+ 入出力で返された ModuleRef トークンの数 `rModuleRefs` 。  
   
 ## <a name="return-value"></a>戻り値  
   
 |HRESULT|説明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumModuleRefs` が正常に返されました。|  
-|`S_FALSE`|列挙するトークンがありません。 この場合、`pcModuleRefs` は0になります。|  
+|`S_OK`|`EnumModuleRefs`正常に返されました。|  
+|`S_FALSE`|列挙するトークンがありません。 この場合、 `pcModuleRefs` は0になります。|  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

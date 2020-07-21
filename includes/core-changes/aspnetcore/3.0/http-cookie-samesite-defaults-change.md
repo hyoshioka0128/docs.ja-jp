@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 15ba678431b97e7c961c119d83546569bdf9bad2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74282529"
 ---
 ### <a name="http-some-cookie-samesite-defaults-changed-to-none"></a>HTTP:SameSite の cookie オプションの既定値が一部、None に変更されました
@@ -26,7 +26,7 @@ ms.locfileid: "74282529"
 
 既定値が変更され、`SameSite` がオプトイン機能になりました。
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 cookie を出す各コンポーネントでは、そのシナリオに `SameSite` が適切かどうかを決定する必要があります。 影響を受ける API の使用状況を確認し、必要に応じて `SameSite` を再構成します。
 

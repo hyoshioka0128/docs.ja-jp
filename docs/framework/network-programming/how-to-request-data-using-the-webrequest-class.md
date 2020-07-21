@@ -1,5 +1,6 @@
 ---
 title: '方法: WebRequest クラスを使用してデータを要求する'
+description: .NET Framework で WebRequest クラスを使用して、Web ページやファイルなどのリソースをサーバーから要求する方法について学習します。
 ms.date: 03/21/2019
 dev_langs:
 - csharp
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - receiving data, using WebRequest class
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
-ms.openlocfilehash: e670a2a503ce704eff847e9e0b3ee340ab52fe62
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 5dcc1a7dad226288e3f74969b86e2dd457c0eed0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048163"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502471"
 ---
 # <a name="how-to-request-data-by-using-the-webrequest-class"></a>方法: WebRequest クラスを使用してデータを要求する
 

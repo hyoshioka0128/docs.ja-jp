@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, miscellaneous constructs
 - regular expressions, miscellaneous constructs
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
-ms.openlocfilehash: a43ce44e11a9231dee2961ee02bac745d9ca71cb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8ca888074aa757a1bfba786a7bec5928b75b1da2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141604"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290410"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>正規表現でのその他の構成体
 .NET の正規表現には、次の 3 つのその他の言語コンストラクトが含まれます。 1 つは、正規表現パターンの途中で特定の一致オプションを有効または無効にすることができます。 残りの 2 つは、正規表現にコメントを含めることができます。  
@@ -25,7 +25,7 @@ ms.locfileid: "73141604"
   
 `(?imnsx-imnsx)`  
   
- 疑問符の後に有効にするオプション、マイナス記号の後に無効にするオプションを指定します。 各オプションの説明を次の表に示します。 各オプションの詳細については、「[正規表現のオプション](../../../docs/standard/base-types/regular-expression-options.md)」を参照してください。  
+ 疑問符の後に有効にするオプション、マイナス記号の後に無効にするオプションを指定します。 各オプションの説明を次の表に示します。 各オプションの詳細については、「[正規表現のオプション](regular-expression-options.md)」を参照してください。  
   
 |オプション|説明|  
 |------------|-----------------|  
@@ -38,7 +38,7 @@ ms.locfileid: "73141604"
  `(?imnsx-imnsx)` コンストラクトによって定義された正規表現オプションの変更は、囲んでいるグループの末尾まで有効です。  
   
 > [!NOTE]
-> `(?imnsx-imnsx:`*subexpression*`)` グループ化コンストラクトは、部分式と同じ機能を提供します。 詳細については、「 [グループ化構成体](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)」を参照してください。  
+> `(?imnsx-imnsx:`*subexpression*`)` グループ化コンストラクトは、部分式と同じ機能を提供します。 詳細については、「 [グループ化構成体](grouping-constructs-in-regular-expressions.md)」を参照してください。  
   
  次の例では `i`、`n`、`x` オプションを使用して、大文字と小文字の区別をせず、明示的なキャプチャを有効にして、正規表現の途中の正規表現パターン内の空白を無視します。  
   
@@ -99,4 +99,4 @@ ms.locfileid: "73141604"
   
 ## <a name="see-also"></a>関連項目
 
-- [正規表現言語 - クイック リファレンス](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [正規表現言語 - クイック リファレンス](regular-expression-language-quick-reference.md)

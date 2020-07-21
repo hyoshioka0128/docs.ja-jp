@@ -7,10 +7,10 @@ helpviewer_keywords:
 - fusion [.NET Framework], using the unmanaged API
 ms.assetid: f8f20967-ea17-4900-bf05-87a078095fe6
 ms.openlocfilehash: 2bf7bbb59cf983ed536a579ee3a418603f78b49a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73131639"
 ---
 # <a name="fusion-unmanaged-api-reference"></a>fusion (アンマネージ API リファレンス)

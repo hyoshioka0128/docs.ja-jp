@@ -10,12 +10,12 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: 25f042dec5fd5594b7e166cc064394e90db01c27
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: b59fc27be31f1a38e2a6c3cabd82598933b5ed53
+ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036116"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81121403"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>ユーザー定義の変換演算子 (C# リファレンス)
 
@@ -23,13 +23,13 @@ ms.locfileid: "73036116"
 
 暗黙的変換では特別な構文を呼び出す必要はなく、代入やメソッド呼び出しなど、さまざまな状況で発生する可能性があります。 事前に定義された C# の暗黙的な変換は常に成功し、例外がスローされることはありません。 ユーザー定義の暗黙的な変換も同様に動作します。 カスタムの変換によって例外がスローされたり情報が失われたりする可能性がある場合は、明示的な変換として定義します。
 
-ユーザー定義の変換は、[is](type-testing-and-cast.md#is-operator) および [as](type-testing-and-cast.md#as-operator) 演算子からは考慮されません。 ユーザー定義の明示的な変換を呼び出すには、[キャスト演算子 ()](type-testing-and-cast.md#cast-operator-) を使用します。
+ユーザー定義の変換は、[is](type-testing-and-cast.md#is-operator) および [as](type-testing-and-cast.md#as-operator) 演算子からは考慮されません。 ユーザー定義の明示的な変換を呼び出すには、[キャスト式](type-testing-and-cast.md#cast-expression)を使用します。
 
 暗黙的または明示的な変換を定義するには、`operator` とそれぞれ `implicit` または `explicit` のキーワードを使用します。 変換を定義する型は、その変換のソース型またはターゲット型のいずれかである必要があります。 2 つのユーザー定義型間の変換は、2 つの型のどちらでも定義できます。
 
 次の例は、暗黙的な変換と明示的な変換を定義する方法を示しています。
 
-[!code-csharp[implicit an explicit conversions](~/samples/csharp/language-reference/operators/UserDefinedConversions.cs)]
+[!code-csharp[implicit an explicit conversions](snippets/UserDefinedConversions.cs)]
 
 また、事前に定義された C# 演算子をオーバーロードするには `operator` キーワードも使用します。 詳細については、「[演算子のオーバーロード](operator-overloading.md)」を参照してください。
 
@@ -49,4 +49,5 @@ ms.locfileid: "73036116"
 - [演算子のオーバーロード](operator-overloading.md)
 - [型テストとキャスト演算子](type-testing-and-cast.md)
 - [キャストと型変換](../../programming-guide/types/casting-and-type-conversions.md)
-- [Chained user-defined explicit conversions in C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/) (C# でのユーザー定義の明示的変換の連結)
+- [設計ガイドライン - 変換演算子](../../../standard/design-guidelines/operator-overloads.md#conversion-operators)
+- [Chained user-defined explicit conversions in C#](https://docs.microsoft.com/archive/blogs/ericlippert/chained-user-defined-explicit-conversions-in-c) (C# でのユーザー定義の明示的変換の連結)

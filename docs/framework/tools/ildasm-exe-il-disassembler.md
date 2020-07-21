@@ -10,10 +10,10 @@ helpviewer_keywords:
 - disassembling file for MSIL Assembler input
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 ms.openlocfilehash: f23f8c48a31dffa7d350c872aed7505da7a36861
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73105055"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL 逆アセンブラー)
@@ -87,9 +87,9 @@ ildasm [options] [PEfilename] [options]
 |**/objectfile**=`filename`|指定したライブラリ内の単一のオブジェクト ファイルのメタデータを表示します。|
 
 > [!NOTE]
-> *Ildasm.exe* に関するすべてのオプションでは大文字と小文字が区別されず、先頭の 3 文字で認識されます。 たとえば、 **/quo** は **/quoteallnames** と等価です。 引数を伴うオプションの場合は、オプションと引数の間に区切り記号としてコロン (:) または等号 (=) を挿入できます。 たとえば、 **/output:** *filename* は **/output=** *filename*と等価です。
+> *Ildasm.exe* に関するすべてのオプションでは大文字と小文字が区別されず、先頭の 3 文字で認識されます。 たとえば、 **/quo** は **/quoteallnames** と等価です。 引数を伴うオプションの場合は、オプションと引数の間に区切り記号としてコロン (:) または等号 (=) を挿入できます。 たとえば、 **/output:** *filename* は **/output=** *filename* と同等です。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 *Ildasm.exe* はディスク上のファイルについてだけ動作します。 グローバル アセンブリ キャッシュ内にインストールされたファイルについては動作しません。
 

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 87ce7c5b-fd82-453e-bf55-c8a32150b183
 topic_type:
 - apiref
-ms.openlocfilehash: 7c3b0331cc4d987070b2d04beb621c4966a27cb9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4e5939e9e74899a33f28927c4fda09d0a8fb30a0
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129838"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209735"
 ---
 # <a name="icordebugmdagetflags-method"></a>ICorDebugMDA::GetFlags メソッド
-によって表されるマネージデバッグアシスタント (MDA) に関連付けら[れている](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)フラグを取得します。  
+によって表されるマネージデバッグアシスタント (MDA) に関連付けら[れている](icordebugmda-interface.md)フラグを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -35,18 +35,18 @@ HRESULT GetFlags (
   
 ## <a name="parameters"></a>パラメーター  
  `pFlags`  
- からこの MDA のフラグの設定を指定する[Cordebugmdaflags](../../../../docs/framework/unmanaged-api/debugging/cordebugmdaflags-enumeration.md)列挙値のビットごとの組み合わせ。  
+ からこの MDA のフラグの設定を指定する[Cordebugmdaflags](cordebugmdaflags-enumeration.md)列挙値のビットごとの組み合わせ。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugMDA インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
-- [マネージド デバッグ アシスタントによるエラーの診断](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [ICorDebugMDA インターフェイス](icordebugmda-interface.md)
+- [マネージド デバッグ アシスタントによるエラーの診断](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

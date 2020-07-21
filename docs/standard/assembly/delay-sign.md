@@ -1,5 +1,6 @@
 ---
 title: アセンブリへの遅延署名
+description: この記事では、遅延 (部分) 署名について説明します。遅延署名では、厳密な名前の署名のために PE ファイルの領域が予約されますが、実際の署名は延期されます。
 ms.date: 08/19/2019
 helpviewer_keywords:
 - deferring assembly signing
@@ -12,12 +13,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 113df1ad3fc3ac1e27ebfef572494c1f15a3dbb5
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 7b5c8c8463fdc573782fa457bf5671c72a7e25f7
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733161"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378505"
 ---
 # <a name="delay-sign-an-assembly"></a>アセンブリへの遅延署名
 

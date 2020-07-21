@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.MessageReceived
 ms.date: 03/30/2017
 ms.assetid: 9e6942a4-051f-416c-9674-7e729b9edd33
-ms.openlocfilehash: fc2de674bf6a112ff6800ea4a1b2d02e7ead2094
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0211244909e6302752985f3958c2d07ac30b34f8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792432"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601999"
 ---
 # <a name="systemservicemodelchannelsmessagereceived"></a>System.ServiceModel.Channels.MessageReceived
 System.ServiceModel.Channels.MessageReceived  
@@ -15,10 +15,10 @@ System.ServiceModel.Channels.MessageReceived
 ## <a name="description"></a>説明  
  チャネルを介してメッセージを受信しました。  
   
- 場合、WCF メッセージが受信したときに、このトレースが出力されます、`System.ServiceModel`トレース ソースが情報レベルか verbose レベルで有効にします。 このトレースはアクティビティのグラフ ビューでメッセージの相関矢印を表示するために必要です。  
+ このトレースは、 `System.ServiceModel` トレースソースが情報レベルまたは詳細レベルで有効になっている場合に、WCF メッセージを受信したときに生成されます。 このトレースはアクティビティのグラフ ビューでメッセージの相関矢印を表示するために必要です。  
   
 ## <a name="see-also"></a>関連項目
 
-- [トレース](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [トレースを使用したアプリケーションのトラブルシューティング](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理と診断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [トレース](index.md)
+- [トレースを使用したアプリケーションのトラブルシューティング](using-tracing-to-troubleshoot-your-application.md)
+- [管理と診断](../index.md)

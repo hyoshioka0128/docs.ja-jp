@@ -1,5 +1,6 @@
 ---
 title: COM への .NET Core コンポーネントの公開
+description: このチュートリアルでは、.NET Core から COM にクラスを公開する方法について説明します。 COM サーバーと、レジストリを使用しない COM 用のサイドバイサイド サーバー マニフェストを生成します。
 ms.date: 07/12/2019
 helpviewer_keywords:
 - exposing .NET Core components to COM
@@ -8,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 8d9b8eb274777a0ed019a207c6e8610cc73ec390
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 17d85b9e9734fae0bb69f94da8c08669216ab0ae
+ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973310"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81242869"
 ---
 # <a name="exposing-net-core-components-to-com"></a>COM への .NET Core コンポーネントの公開
 
@@ -32,7 +33,7 @@ ms.locfileid: "73973310"
 最初の手順では、ライブラリを作成します。
 
 1. 新しいフォルダーを作成し、そのフォルダーで次のコマンドを実行します。
-    
+
     ```dotnetcli
     dotnet new classlib
     ```
@@ -41,7 +42,21 @@ ms.locfileid: "73973310"
 3. ファイルの先頭に、`using System.Runtime.InteropServices;` を追加します。
 4. `IServer` という名前のインターフェイスを作成します。 次に例を示します。
 
-   [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
+   ```csharp
+   using System;
+   using System.Runtime.InteropServices;
+
+   [ComVisible(true)]
+   [Guid(ContractGuids.ServerInterface)]
+   [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+   public interface IServer
+   {
+       /// <summary>
+       /// Compute the value of the constant Pi.
+       /// </summary>
+       double ComputePi();
+   }
+   ```
 
 5. このインターフェイスに、実装する COM インターフェイス用のインターフェイス GUID を使用して、`[Guid("<IID>")]` 属性を追加します。 たとえば、`[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]` のようにします。 この GUID は、COM 用のこのインターフェイスの唯一の識別子であるため、一意である必要があることに注意してください。 Visual Studio で GUID を作成するには、[ツール] > [GUID の作成] の順に移動して GUI の作成ツールを開きます。
 6. インターフェイスに `[InterfaceType]` 属性を追加し、お使いのインターフェイスで実装すべき基本 COM インターフェイスを指定します。
@@ -77,5 +92,7 @@ GitHub の dotnet/samples リポジトリには、完全に機能する [COM サ
 ## <a name="additional-notes"></a>補足メモ
 
 .NET Core では、.NET Framework とは異なり、.NET Core アセンブリからの COM タイプ ライブラリ (TLB) の生成はサポートしていません。 このガイダンスは、COM インターフェイスのネイティブ宣言のために、IDL ファイルまたは C/C++ ヘッダーを手動で記述する方法について説明するものです。
+
+COM コンポーネントの[自己完結型の配置](../deploying/index.md#publish-self-contained)はサポートされていません。 COM コンポーネントの[ランタイムに依存する配置](../deploying/index.md#publish-runtime-dependent)のみがサポートされています。
 
 また、.NET Framework と .NET Core の両方を同じプロセスに読み込むと、診断が制限されます。 主にマネージド コンポーネントのデバッグが制限されます。これは、.NET Framework と .NET Core の両方を同時にデバッグすることはできないためです。 また、2 つのランタイム インスタンスはマネージド アセンブリを共有しません。 つまり、2 つのランタイム間で実際の .NET 型を共有することはできません。代わりに、すべての対話を、公開されている COM インターフェイス コントラクトに制限する必要があります。

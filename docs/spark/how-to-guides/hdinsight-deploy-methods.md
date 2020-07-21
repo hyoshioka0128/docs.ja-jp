@@ -1,24 +1,26 @@
 ---
 title: .NET for Apache Spark ジョブを Azure HDInsight に送信する
 description: spark-submit と Apache Livy を使用して、.NET for Apache Spark ジョブを Azure HDInsight に送信する方法について説明します。
-ms.date: 11/19/2019
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: cdd5e15ffde78ccb8b3156ee047b8ca98f7320b8
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 50611b1f62934a446e5b80a8c53698efe23cd1fc
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74553023"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617692"
 ---
 # <a name="submit-a-net-for-apache-spark-job-to-azure-hdinsight"></a>.NET for Apache Spark ジョブを Azure HDInsight に送信する
 
 .NET for Apache Spark ジョブを HDInsight に展開するには、`spark-submit` と Apache Livy の 2 つの方法があります。
 
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
+
 ## <a name="deploy-using-spark-submit"></a>spark-submit を使用して展開する
 
 [spark-submit](https://spark.apache.org/docs/latest/submitting-applications.html) コマンドを使用して、.NET for Apache Spark ジョブを Azure HDInsight に送信できます。
- 
+
 1. Azure portal の HDInsight Spark クラスターに移動し、 **[SSH およびクラスターのログイン]** を選択します。
 
 2. ssh ログイン情報をコピーし、ログインをターミナルに貼り付けます。 クラスターの作成時に設定したパスワードを使用してクラスターにサインインします。 Ubuntu および Spark のウェルカム メッセージが表示されます。
@@ -28,7 +30,7 @@ ms.locfileid: "74553023"
    ```bash
    $SPARK_HOME/bin/spark-submit \
    --master yarn \
-   --class org.apache.spark.deploy.DotnetRunner \
+   --class org.apache.spark.deploy.dotnet.DotnetRunner \
    wasbs://mycontainer@mystorageaccount.blob.core.windows.net/microsoft-spark-2.3.x-0.6.0.jar \
    wasbs://mycontainer@mystorageaccount.blob.core.windows.net/publish.zip mySparkApp
    ```
@@ -54,7 +56,7 @@ curl -k -v -X POST "https://<your spark cluster>.azurehdinsight.net/livy/batches
 EOF
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 * [.NET for Apache Spark の概要](../tutorials/get-started.md)
 * [.NET for Apache Spark アプリケーションを Azure HDInsight にデプロイする](../tutorials/hdinsight-deployment.md)

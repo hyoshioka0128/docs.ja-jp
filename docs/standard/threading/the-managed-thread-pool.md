@@ -10,11 +10,11 @@ helpviewer_keywords:
 - threading [.NET], pooling
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
 ms.openlocfilehash: 2671ce7c9721b15de8a3805da27040e973a62804
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127533"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79398557"
 ---
 # <a name="the-managed-thread-pool"></a>マネージド スレッド プール
 
@@ -30,7 +30,7 @@ ms.locfileid: "73127533"
   
 ### <a name="exceptions-in-thread-pool-threads"></a>スレッド プールのスレッドでの例外
 
-スレッド プールのスレッドで未処理の例外が発生すると、プロセスが終了します。 この規則には、次の 3 つの例外があります。  
+スレッド プールのスレッドで未処理の例外が発生すると、プロセスが終了します。 このルールには次の 3 つの例外があります。  
   
 - <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> が呼び出されたため、スレッド プールのスレッドに <xref:System.Threading.ThreadAbortException?displayProperty=nameWithType> がスローされる。  
 - アプリケーション ドメインがアンロードされるため、スレッド プールのスレッドに <xref:System.AppDomainUnloadedException?displayProperty=nameWithType> がスローされる。  
@@ -83,7 +83,7 @@ ms.locfileid: "73127533"
 - スレッドをシングルスレッド アパートメント内に配置する必要がある場合。 <xref:System.Threading.ThreadPool> スレッドはすべてマルチスレッド アパートメント内にあります。  
 - 安定した ID をスレッドに関連付ける必要がある場合、またはスレッドを特定のタスク専用にする必要がある場合。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.Threading.ThreadPool?displayProperty=nameWithType>
 - <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>

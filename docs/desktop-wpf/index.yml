@@ -1,0 +1,59 @@
+### YamlMime:Landing
+title: Windows Presentation Foundation (WPF) のドキュメント
+summary: .NET Core 上の、Windows 用のオープンソースのグラフィカル ユーザー インターフェイスである、Windows Presentation Foundation の使用について学習します。
+metadata:
+  title: .NET Core 用の Windows Presentation Foundation (WPF) のドキュメント
+  description: .NET Core 上の、Windows 用のオープンソースのグラフィカル ユーザー インターフェイスである、Windows Presentation Foundation の使用について学習します。
+  ms.topic: landing-page
+  ms.date: 03/25/2020
+  ms.openlocfilehash: 8d3be7a04153ee0a120919fbb634001cd3257eb2
+  ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/02/2020
+  ms.locfileid: "85840377"
+landingContent:
+- title: WPF について学習する
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Presentation Foundation の概要
+      url: overview/index.md
+    - text: Windows Presentation Foundation における XAML
+      url: fundamentals/xaml.md
+- title: WPF の使用を開始する
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: .NET Framework 上の WPF との違い
+      url: migration/differences-from-net-framework.md
+    - text: Framework から Core への移行
+      url: migration/convert-project-from-net-framework.md
+  - linkListType: tutorial
+    links:
+    - text: WPF アプリケーションを作成する
+      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json
+- title: 基礎 - XAML
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: XAML リソースの定義
+      url: fundamentals/xaml-resources-define.md
+    - text: スタイルとテンプレート
+      url: fundamentals/styles-templates-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: リソースを作成して適用する
+      url: fundamentals/styles-templates-create-apply-style.md
+    - text: テンプレートを作成して適用する
+      url: themes/how-to-create-apply-template.md
+  - linkListType: reference
+    links:
+    - text: XAML 言語リファレンス
+      url: xaml-services/index.md
+- title: 基礎 - データ
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: データ バインディング
+      url: data/data-binding-overview.md

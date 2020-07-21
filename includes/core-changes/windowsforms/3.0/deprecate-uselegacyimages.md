@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 07527c247e6ccd53d2a77793946ffc796c3e1cbb
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: c980b0c0be9f4d6a529baa0743dec9ac16ca0d7f
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74643917"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721162"
 ---
-### <a name="switchsystemwindowsformsuselegacyimages-compatibility-switch-not-supported"></a>Switch.System.Windows.Forms.UseLegacyImages 互換性スイッチはサポートされていません
+### <a name="uselegacyimages-compatibility-switch-not-supported"></a>UseLegacyImages 互換性スイッチはサポートされていません
 
 .NET Framework 4.8 で導入された `Switch.System.Windows.Forms.UseLegacyImages` 互換性スイッチは、.NET Core 3.0 上の Windows フォームではサポートされていません。
 
@@ -20,7 +20,7 @@ ms.locfileid: "74643917"
 
 3.0 Preview 9
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 スイッチを削除します。 そのスイッチはサポートされておらず、代替機能はありません。
 
@@ -34,7 +34,7 @@ Windows フォーム
 
 <!-- 
 
-### Affected APIs
+#### Affected APIs
 
 - Not detectable via API analysis
 

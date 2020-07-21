@@ -1,5 +1,6 @@
 ---
 title: 同期操作と非同期操作
+description: 非同期サービス操作の実装と呼び出しについて説明します。 WCF サービスとクライアントは、アプリケーションの2つのレベルで非同期操作を使用できます。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: 143cc0f4566d86f1d42ebd11063f9af3c1ec331f
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: f52f2613c96c0149c330bb75f80c6738f8d41146
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802441"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245921"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>同期操作と非同期操作
 ここでは、非同期サービス操作の実装と呼び出しについて説明します。  
@@ -38,7 +39,7 @@ ms.locfileid: "74802441"
   
 - 次のような場合には、クライアントまたは呼び出し元アプリケーションで非同期手法を使用します。  
   
-- 中間層アプリケーションから操作を呼び出す場合 (このようなシナリオの詳細については、「[中間層クライアント アプリケーション](./feature-details/middle-tier-client-applications.md)」を参照してください)。  
+- 中間層アプリケーションから操作を呼び出す場合  (このようなシナリオの詳細については、「[中間層クライアント アプリケーション](./feature-details/middle-tier-client-applications.md)」を参照してください)。  
   
 - ASP.NET ページ内で操作を呼び出す場合、非同期ページを使用します。  
   
@@ -56,24 +57,24 @@ ms.locfileid: "74802441"
 3. IAsyncResult 非同期パターン  
   
 #### <a name="task-based-asynchronous-pattern"></a>タスク ベースの非同期パターン  
- 非同期操作を実装する方法としては、最も直接的でわかりやすいタスク ベースの非同期パターンが推奨されます。 この方法を使用するには、単にサービス操作を実装し、戻り値の型 Task\<T> (T は論理操作によって返される型) を指定します。 例:  
+ 非同期操作を実装する方法としては、最も直接的でわかりやすいタスク ベースの非同期パターンが推奨されます。 このメソッドを使用するには、サービス操作を実装し、タスクの戻り値の型を指定するだけです \<T> 。ここで、T は論理演算によって返される型です。 次に例を示します。  
   
 ```csharp  
-public class SampleService:ISampleService   
-{   
+public class SampleService:ISampleService
+{
    // ...  
-   public async Task<string> SampleMethodTaskAsync(string msg)   
-   {   
-      return Task<string>.Factory.StartNew(() =>   
-      {   
-         return msg;   
-      });   
+   public async Task<string> SampleMethodTaskAsync(string msg)
+   {
+      return Task<string>.Factory.StartNew(() =>
+      {
+         return msg;
+      });
    }  
    // ...  
 }  
 ```  
   
- SampleMethodTaskAsync 操作は、論理操作によって文字列が返されるため、Task\<string> を返します。 タスク ベースの非同期パターンの詳細については、「[タスク ベースの非同期パターン](https://go.microsoft.com/fwlink/?LinkId=232504)」を参照してください。  
+ SampleMethodTaskAsync 操作は、 \<string> 論理操作によって文字列が返されるため、タスクを返します。 タスク ベースの非同期パターンの詳細については、「[タスク ベースの非同期パターン](https://go.microsoft.com/fwlink/?LinkId=232504)」を参照してください。  
   
 > [!WARNING]
 > タスク ベースの非同期パターンを使用している場合、操作の完了を待機している間に例外が発生すると T:System.AggregateException がスローされる場合があります。 この例外は、クライアントまたはサービスで発生することがあります。  
@@ -110,7 +111,7 @@ public class AsyncExample
  イベント ベースの非同期パターンの詳細については、「[イベント ベースの非同期パターンの概要](../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)」を参照してください。  
   
 #### <a name="iasyncresult-asynchronous-pattern"></a>IAsyncResult 非同期パターン  
- サービス操作は、.NET Framework 非同期プログラミングパターンを使用して非同期方式で実装し、`<Begin>` メソッドに <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A> プロパティを `true`に設定してマークすることができます。 この場合の非同期操作は、同期操作と同じ形式でメタデータに公開されます。つまり、要求メッセージとそれに関連する応答メッセージを伴う単独操作として公開されます。 このとき、クライアント プログラミング モデルは選択が可能です。 サービスが呼び出されたときに要求/応答メッセージ交換が行われていれば、クライアント プログラミング モデルは、このパターンを同期操作または非同期操作として表すことができます。  
+ サービス操作は .NET Framework 非同期プログラミングパターンを使用して非同期方式で実装でき、 `<Begin>` プロパティがに設定されたメソッドをマークすることができ <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A> `true` ます。 この場合の非同期操作は、同期操作と同じ形式でメタデータに公開されます。つまり、要求メッセージとそれに関連する応答メッセージを伴う単独操作として公開されます。 このとき、クライアント プログラミング モデルは選択が可能です。 サービスが呼び出されたときに要求/応答メッセージ交換が行われていれば、クライアント プログラミング モデルは、このパターンを同期操作または非同期操作として表すことができます。  
   
  一般に、システムの非同期の性質を考えると、スレッドへの依存は避ける必要があります。  操作のディスパッチ処理のさまざまな段階にデータを渡す最も信頼性の高い方法は、拡張機能を使用する方法です。  
   
@@ -174,25 +175,25 @@ svcutil http://localhost:8000/servicemodelsamples/service/mex /async /tcv:Versio
   
  これらのオプションを指定すると、Svcutil.exe によって、イベント インフラストラクチャを持つ WCF クライアント クラスが生成されます。このインフラストラクチャにより、呼び出し元アプリケーションは、応答を受信して適切なアクションを実行するイベント ハンドラーを実装し、割り当てることができます。 詳細な例については、「[方法 : サービス操作を非同期に呼び出す](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)」を参照してください。  
   
- ただし、イベントベースの非同期モデルは、.NET Framework 3.5 でのみ使用できます。 また、<xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>を使用して WCF クライアントチャネルを作成した場合、.NET Framework 3.5 でもサポートされません。 WCF クライアント チャネル オブジェクトを使用する場合、<xref:System.IAsyncResult?displayProperty=nameWithType> オブジェクトを使用して操作を非同期に呼び出す必要があります。 この手法を使用するには、次の例に示すように、[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) で **/async** コマンド オプションを指定します。  
+ ただし、イベントベースの非同期モデルは、.NET Framework 3.5 でのみ使用できます。 また、を使用して WCF クライアントチャネルを作成した場合、.NET Framework 3.5 でもサポートされません <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> 。 WCF クライアント チャネル オブジェクトを使用する場合、<xref:System.IAsyncResult?displayProperty=nameWithType> オブジェクトを使用して操作を非同期に呼び出す必要があります。 この手法を使用するには、次の例に示すように、[ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) で **/async** コマンド オプションを指定します。  
   
 ```console  
-svcutil http://localhost:8000/servicemodelsamples/service/mex /async   
+svcutil http://localhost:8000/servicemodelsamples/service/mex /async
 ```  
   
  これにより、対応する `<Begin>` メソッドを持ち、<xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A> プロパティが `true` に設定された `<End>` メソッドとして各操作がモデル化されたサービス コントラクトが生成されます。 <xref:System.ServiceModel.ChannelFactory%601> の詳細な使用例については、「[方法 : チャネル ファクトリを使用して、非同期的に操作を呼び出す](./feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md)」を参照してください。  
   
- いずれの場合も、サービスが同期的に実装されていても、アプリケーションは操作を非同期に呼び出すことができます。これは、アプリケーションで同じパターンを使用してローカルの同期メソッドを非同期に呼び出す場合と同様です。 操作の実装方法は、クライアントにとって重要ではありません。応答メッセージが到着すると、その内容がクライアントの非同期 <`End`> メソッドにディスパッチされ、クライアントが情報を取得します。  
+ いずれの場合も、サービスが同期的に実装されていても、アプリケーションは操作を非同期に呼び出すことができます。これは、アプリケーションで同じパターンを使用してローカルの同期メソッドを非同期に呼び出す場合と同様です。 操作の実装方法は、クライアントにとって重要ではありません。応答メッセージが到着すると、その内容がクライアントの非同期 <> メソッドにディスパッチされ、 `End` クライアントが情報を取得します。  
   
 ### <a name="one-way-message-exchange-patterns"></a>一方向メッセージ交換パターン  
- クライアントまたはサービスが単独で一方向操作 (<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> が `true` に設定されている操作には相関する応答がない) を相手側に送信できる、非同期メッセージ交換パターンを作成することもできます (これにより、双方向メッセージ交換パターンが一方向メッセージで使用されます)。この場合、サービスコントラクトは、両側が非同期呼び出しまたは実装として実装できる一方向メッセージ交換を指定します。または、必要に応じて指定します。 一般的に、コントラクトが一方向メッセージ交換の場合、メッセージが送信されるとアプリケーションは応答を待機することなく他の作業を継続できるため、多くの場合、実装が非同期になります。  
+ クライアントまたはサービスが単独で一方向操作 (<xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> が `true` に設定されている操作には相関する応答がない) を相手側に送信できる、非同期メッセージ交換パターンを作成することもできます  (これにより、双方向メッセージ交換パターンが一方向メッセージで使用されます)。この場合、サービスコントラクトは、両側が非同期呼び出しまたは実装として実装できる一方向メッセージ交換を指定します。または、必要に応じて指定します。 一般的に、コントラクトが一方向メッセージ交換の場合、メッセージが送信されるとアプリケーションは応答を待機することなく他の作業を継続できるため、多くの場合、実装が非同期になります。  
   
 ### <a name="event-based-asynchronous-clients-and-message-contracts"></a>イベント ベースの非同期クライアントとメッセージ コントラクト  
  イベント ベースの非同期モデルのデザイン ガイドラインには、複数の値を返す場合に、1 つの値を `Result` プロパティとして返し、残りの値を <xref:System.EventArgs> オブジェクトのプロパティとして返すことが記載されています。 この 1 つの結果として、クライアントがイベント ベースの非同期コマンド オプションを使用してメタデータをインポートし、操作から複数の値が返される場合、既定の <xref:System.EventArgs> オブジェクトは 1 つの値を `Result` プロパティとして返し、残りの値は <xref:System.EventArgs> オブジェクトのプロパティになります。  
   
- メッセージ オブジェクトを `Result` プロパティとして受け取り、返された値をそのオブジェクトのプロパティとして取得する場合は、 **/messageContract** コマンド オプションを使用します。 これにより、`Result` オブジェクトの <xref:System.EventArgs> プロパティとして応答メッセージを返すシグネチャが生成されます。 すべての内部戻り値は、応答メッセージ オブジェクトのプロパティになります。  
+ メッセージ オブジェクトを `Result` プロパティとして受け取り、返された値をそのオブジェクトのプロパティとして取得する場合は、**/messageContract** コマンド オプションを使用します。 これにより、`Result` オブジェクトの <xref:System.EventArgs> プロパティとして応答メッセージを返すシグネチャが生成されます。 すべての内部戻り値は、応答メッセージ オブジェクトのプロパティになります。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A>
 - <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A>

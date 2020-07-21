@@ -2,12 +2,12 @@
 title: インフラストラクチャの永続レイヤーの設計
 description: コンテナー化された .NET アプリケーションの .NET マイクロサービス アーキテクチャ | インフラストラクチャの永続レイヤーの設計でリポジトリ パターンを調べる。
 ms.date: 10/08/2018
-ms.openlocfilehash: f1c5df1cc5672760374610a416ae22b45cd76c25
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3c18582eb5db61a61b366c06f361d297e698b39a
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737944"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100848"
 ---
 # <a name="design-the-infrastructure-persistence-layer"></a>インフラストラクチャの永続レイヤーの設計
 
@@ -110,9 +110,6 @@ eShopOnContainers に実装されたリポジトリは、その変更追跡を�
 
 ### <a name="repository-pattern"></a>リポジトリ パターン
 
-- **リポジトリ パターン** \
-  <https://deviq.com/repository-pattern/>
-
 - **Edward Hieatt、Rob Mee。リポジトリ パターン。** \
   <https://martinfowler.com/eaaCatalog/repository.html>
 
@@ -132,4 +129,4 @@ eShopOnContainers に実装されたリポジトリは、その変更追跡を�
 
 >[!div class="step-by-step"]
 >[前へ](domain-events-design-implementation.md)
->[次へ](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
+>[次へ](infrastructure-persistence-layer-implementation-entity-framework-core.md)

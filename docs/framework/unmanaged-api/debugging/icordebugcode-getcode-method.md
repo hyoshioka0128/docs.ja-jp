@@ -15,21 +15,21 @@ helpviewer_keywords:
 ms.assetid: 7137e3d1-1dad-48d8-8c37-16ac816534d3
 topic_type:
 - apiref
-ms.openlocfilehash: db24228de7e8c98fd97f890b1e408515172299b3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 59a497d203d241bbc6e0f884007d4a401c112073
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125667"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82893654"
 ---
 # <a name="icordebugcodegetcode-method"></a>ICorDebugCode::GetCode メソッド
-指定した関数のすべてのコードを取得し、逆アセンブリ用に書式設定します。 このメソッドは .NET Framework バージョン2.0 では非推奨とされました。 代わりに[ICorDebugCode2:: GetCodeChunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)を使用してください。  
+指定した関数のすべてのコードを取得し、逆アセンブリ用に書式設定します。 このメソッドは .NET Framework バージョン2.0 では非推奨とされました。 代わりに[ICorDebugCode2:: GetCodeChunks](icordebugcode2-getcodechunks-method.md)を使用してください。  
   
 ## <a name="syntax"></a>構文  
   
 ```cpp  
 HRESULT GetCode (  
-    [in] ULONG32     startOffset,   
+    [in] ULONG32     startOffset,
     [in] ULONG32     endOffset,  
     [in] ULONG32     cBufferAlloc,  
     [out, size_is(cBufferAlloc),  
@@ -46,7 +46,7 @@ HRESULT GetCode (
  から関数の終了位置のオフセット。  
   
  `cBufferAlloc`  
- からコードが返される `buffer` 配列のサイズ。  
+ からコードが返される`buffer`配列のサイズ。  
   
  `buffer`  
  入出力コードが返される配列。  
@@ -54,11 +54,11 @@ HRESULT GetCode (
  `pcBufferSize`  
  入出力返されたバイト数。  
   
-## <a name="remarks"></a>Remarks  
+## <a name="remarks"></a>解説  
  関数のコードが複数のチャンクに分割されている場合は、ネイティブオフセットが増加する順序で連結されます。 命令の境界はチェックされません。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
@@ -68,4 +68,4 @@ HRESULT GetCode (
   
 ## <a name="see-also"></a>関連項目
 
-- [GetCodeChunks メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)
+- [GetCodeChunks メソッド](icordebugcode2-getcodechunks-method.md)

@@ -1,24 +1,25 @@
 ---
 title: '方法: データベースに接続する'
+description: LINQ to SQL で DataContext を使用してデータベースに接続する方法について説明します。 DataContext を使用してデータベースに接続し、行を取得する方法については、これらの例を参照してください。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c33d74b3-530d-421b-a121-96786dd263a5
-ms.openlocfilehash: 48ff4af2c881104d5699910e20ef86eea0466d2a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: c3320a598cb8407ab584530c615c2e5ef0de53c8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793859"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286405"
 ---
 # <a name="how-to-connect-to-a-database"></a>方法: データベースに接続する
-データベースへの接続、データベースからのオブジェクトの取得、およびデータベースへの変更内容の反映において、<xref:System.Data.Linq.DataContext> は主要な仲介役です。 <xref:System.Data.Linq.DataContext> ADO.NET<xref:System.Data.SqlClient.SqlConnection>を使用する場合と同じように、を使用します。 つまり、接続または接続文字列を指定して <xref:System.Data.Linq.DataContext> を初期化します。 詳細については [DataContext メソッド (O/R デザイナー)](/visualstudio/data-tools/datacontext-methods-o-r-designer) を参照してください。  
+データベースへの接続、データベースからのオブジェクトの取得、およびデータベースへの変更内容の反映では、<xref:System.Data.Linq.DataContext> を仲介役として使用します。 <xref:System.Data.Linq.DataContext> の使い方は、ADO.NET の <xref:System.Data.SqlClient.SqlConnection> と同じです。 つまり、接続または接続文字列を指定して、<xref:System.Data.Linq.DataContext> を初期化します。 詳しくは、「[DataContext メソッド (O/R デザイナー)](/visualstudio/data-tools/datacontext-methods-o-r-designer)」をご覧ください。  
   
- <xref:System.Data.Linq.DataContext> の役割は、オブジェクトを求める要求を、データベースに対して発行する SQL クエリに変換し、その結果からオブジェクトを組み立てることです。 <xref:System.Data.Linq.DataContext> では、標準クエリ演算子と同じ演算子パターン ([!INCLUDE[vbteclinqext](../../../../../../includes/vbteclinqext-md.md)] や `Where` など) を実装することで、`Select` を使用できます。  
+ <xref:System.Data.Linq.DataContext> の役割は、オブジェクトを求める要求を、データベースに対して発行する SQL クエリに変換し、その結果からオブジェクトを組み立てることです。 <xref:System.Data.Linq.DataContext> では、標準クエリ演算子と同じ演算子パターン (`Where` や `Select` など) が実装されており、統合言語クエリ (LINQ) を使用できます。  
   
 > [!IMPORTANT]
-> セキュリティで保護された接続を確立することは、最も重要です。 詳細については、「 [LINQ to SQL のセキュリティ](security-in-linq-to-sql.md)」を参照してください。  
+> セキュリティで保護された接続を確立することは、最も重要です。 詳細については、「[LINQ to SQL のセキュリティ](security-in-linq-to-sql.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では、<xref:System.Data.Linq.DataContext> を使用して、Northwind サンプル データベースに接続し、市が London である顧客の行を取得しています。  

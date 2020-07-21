@@ -3,10 +3,10 @@ title: リフレクション (C#)
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
 ms.openlocfilehash: a56fb24b63e4d80dbb67b079466b67cd11672023
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74711661"
 ---
 # <a name="reflection-c"></a>リフレクション (C#)
@@ -59,7 +59,7 @@ Console.WriteLine(info);
 - <xref:System.Reflection.Emit>
 - [属性に格納されている情報の取得](../../../standard/attributes/retrieving-information-stored-in-attributes.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [C# プログラミング ガイド](../index.md)
+- [C# プログラミングガイド](../index.md)
 - [.NET のアセンブリ](../../../standard/assembly/index.md)

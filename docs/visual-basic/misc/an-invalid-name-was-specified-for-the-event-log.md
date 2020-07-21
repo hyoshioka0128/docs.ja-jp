@@ -2,12 +2,12 @@
 title: イベント ログに無効な名前が指定されました
 ms.date: 07/20/2015
 ms.assetid: b1b158bd-f13f-4371-a8af-31c0e86ae6be
-ms.openlocfilehash: 05f37239510482de218847f069dc74cbef91f398
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 70b1de2a3776a9c68260cc431b65e754d7247a0c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609174"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84412924"
 ---
 # <a name="an-invalid-name-was-specified-for-the-event-log"></a>イベント ログに無効な名前が指定されました
 イベント ログに無効な名前が指定されました。 通常これは、名前に含まれる無効な文字、空のファイル名、または長すぎるファイル名の結果です。  
@@ -22,5 +22,5 @@ ms.locfileid: "64609174"
   
 ## <a name="see-also"></a>関連項目
 
-- [方法: ファイル パスを解析する](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
-- [方法: ファイルの名前を変更する](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+- [方法: ファイル パスを解析する](../developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [方法: ファイルの名前を変更する](../developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)

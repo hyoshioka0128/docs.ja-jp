@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ce8f6aa6-4ebf-4a86-b429-4bbc8af41a8f
 topic_type:
 - apiref
-ms.openlocfilehash: 41021a524142afe34727584265aee578e31a64b3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7f1276e1adeece086ca7b6791eb6e870faf4d010
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433216"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502874"
 ---
 # <a name="icorprofilerinfo2getfunctionfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs メソッド
-指定されたメタデータトークン、格納クラス、および任意の型引数の `ClassID` 値を使用して、関数の `FunctionID` を取得します。  
+`FunctionID`指定されたメタデータトークン、クラス、および `ClassID` 任意の型引数の値を使用して、関数のを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -42,7 +42,7 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
  から関数が存在するモジュールの ID。  
   
  `funcDef`  
- から関数を参照する `mdMethodDef` メタデータトークン。  
+ から`mdMethodDef`関数を参照するメタデータトークン。  
   
  `classId`  
  からクラスを含んでいる関数の ID。  
@@ -51,28 +51,28 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
  から指定された関数の型パラメーターの数。 非ジェネリック関数の場合、この値は0である必要があります。  
   
  `typeArgs`  
- から`ClassID` 値の配列。それぞれが関数の引数です。 `cTypeArgs` が0に設定されている場合、`typeArgs` の値は NULL になります。  
+ から値の配列 `ClassID` 。それぞれが関数の引数です。 が0に設定されている場合、の値は `typeArgs` NULL `cTypeArgs` になります。  
   
  `pFunctionID`  
- 入出力指定した関数の `FunctionID` へのポインター。  
+ 入出力`FunctionID`指定した関数のへのポインター。  
   
-## <a name="remarks"></a>コメント  
- `mdMethodDef` メタデータトークンではなく `mdMethodRef` メタデータを使用して `GetFunctionFromTokenAndTypeArgs` メソッドを呼び出すと、予期しない結果になる場合があります。 呼び出し元は、`mdMethodRef` を渡すときに `mdMethodDef` に解決する必要があります。  
+## <a name="remarks"></a>解説  
+ メタデータ `GetFunctionFromTokenAndTypeArgs` トークンではなくメタデータを使用してメソッドを呼び出すと、 `mdMethodRef` `mdMethodDef` 予期しない結果が発生する可能性があります。 呼び出し元は、 `mdMethodRef` を渡すときにをに解決する必要があり `mdMethodDef` ます。  
   
- 関数がまだ読み込まれていない場合は、`GetFunctionFromTokenAndTypeArgs` を呼び出すと読み込みが発生します。これは、多くのコンテキストでは危険な操作です。 たとえば、モジュールまたは型の読み込み中にこのメソッドを呼び出すと、ランタイムが循環読み込みを試みたときに無限ループが発生する可能性があります。  
+ 関数がまだ読み込まれていない場合、を呼び出すと `GetFunctionFromTokenAndTypeArgs` 読み込みが発生します。これは、多くのコンテキストでは危険な操作です。 たとえば、モジュールまたは型の読み込み中にこのメソッドを呼び出すと、ランタイムが循環読み込みを試みたときに無限ループが発生する可能性があります。  
   
- 一般に、`GetFunctionFromTokenAndTypeArgs` の使用は推奨されていません。 プロファイラーが特定の関数のイベントに関心を持っている場合は、その関数の `ModuleID` と `mdMethodDef` を格納し、 [ICorProfilerInfo2:: GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md)を使用して、特定の `FunctionID` が目的の関数のものであるかどうかを確認する必要があります。  
+ 一般に、の使用 `GetFunctionFromTokenAndTypeArgs` は推奨されていません。 プロファイラーが特定の関数のイベントに関心を持っている場合は、 `ModuleID` その関数のとを格納し、 `mdMethodDef` [ICorProfilerInfo2:: GetFunctionInfo2](icorprofilerinfo2-getfunctioninfo2-method.md)を使用して、 `FunctionID` 目的の関数のが指定されているかどうかを確認します。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorProfilerInfo インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2 インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo インターフェイス](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 インターフェイス](icorprofilerinfo2-interface.md)

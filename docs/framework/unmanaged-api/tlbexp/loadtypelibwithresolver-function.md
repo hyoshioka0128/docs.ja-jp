@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7123a89b-eb9b-463a-a552-a081e33b0a3a
 topic_type:
 - apiref
-ms.openlocfilehash: 82fa0903474ee04b767fd9c68812efe7f0cc4fa0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: adbb5eca3b7ffa36d0c963d0dacc3b2afdb664d4
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124161"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935555"
 ---
 # <a name="loadtypelibwithresolver-function"></a>LoadTypeLibWithResolver 関数
 タイプライブラリを読み込み、指定された[ITypeLibResolver インターフェイス](itypelibresolver-interface.md)を使用して、内部で参照されているタイプライブラリを解決します。  
@@ -39,7 +39,7 @@ HRESULT LoadTypeLibWithResolver(
  からタイプライブラリのファイルパス。  
   
  `regkind`  
- からタイプライブラリの登録方法を制御する[Regkind 列挙](https://docs.microsoft.com/windows/win32/api/oleauto/ne-oleauto-regkind)フラグ。 指定できる値は次のとおりです。  
+ からタイプライブラリの登録方法を制御する[Regkind 列挙](/windows/win32/api/oleauto/ne-oleauto-regkind)フラグ。 指定できる値は次のとおりです。  
   
 - `REGKIND_DEFAULT`: 既定の登録動作を使用します。  
   
@@ -59,9 +59,9 @@ HRESULT LoadTypeLibWithResolver(
 |戻り値|説明|  
 |------------------|-------------|  
 |`S_OK`|成功。|  
-|`E_OUTOFMEMORY`|メモリが不足しています。|  
+|`E_OUTOFMEMORY`|メモリ不足です。|  
 |`E_POINTER`|1つ以上のポインターが無効です。|  
-|`E_INVALIDARG`|1つ以上の引数が無効です。|  
+|`E_INVALIDARG`|1 つ以上の引数が無効です。|  
 |`TYPE_E_IOERROR`|関数はファイルに書き込めませんでした。|  
 |`TYPE_E_REGISTRYACCESS`|システム登録データベースを開けませんでした。|  
 |`TYPE_E_INVALIDSTATE`|タイプライブラリを開けませんでした。|  
@@ -82,7 +82,7 @@ HRESULT LoadTypeLibWithResolver(
   
  `LoadTypeLibWithResolver` を直接呼び出す場合は、独自の[ITypeLibResolver インターフェイス](itypelibresolver-interface.md)実装を指定する必要があります。  
   
-## <a name="requirements"></a>［要件］  
+## <a name="requirements"></a>要件  
  **:** 「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Tlf .h  

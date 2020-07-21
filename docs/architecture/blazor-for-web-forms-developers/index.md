@@ -1,15 +1,18 @@
 ---
 title: ASP.NET Web Forms 開発者向け Blazor
-description: Blazor と .NET Core を使用し、使い慣れた簡単な方法で、.NET を含むフルスタック Web アプリを構築する方法について説明します。
+description: Blazor と .NET Core を使用し、使い慣れた簡単な方法で、.NET によるフルスタック Web アプリを構築する方法について説明します。
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 394d11038b59f4cbe9e9955df43b6198eb5daaf8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 779eb47d9796c61df9939d0e7de287443870576e
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088126"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173251"
 ---
 # <a name="blazor-for-aspnet-web-forms-developers"></a>ASP.NET Web Forms 開発者向け Blazor
 
@@ -71,7 +74,7 @@ Mac および macOS は Apple Inc. の商標です。
 
 ## <a name="what-this-book-doesnt-cover"></a>本書で取り上げないもの
 
-本書は Blazor の紹介文であり、包括的な移行ガイドではありません。 ASP.NET Web Forms から Blazor にプロジェクトを移行する方法に関するガイドが含まれていますが、微妙な違いや詳細をあらゆる点で説明する試みはありません。 ASP.NET から ASP.NET Core に移行する一般的な手順については、ASP.NET Core ドキュメントの[移行ガイダンス](https://docs.microsoft.com/aspnet/core/migration/proper-to-2x/)を参照してください。
+本書は Blazor の紹介文であり、包括的な移行ガイドではありません。 ASP.NET Web Forms から Blazor にプロジェクトを移行する方法に関するガイダンスが含まれていますが、微妙な違いや詳細をあらゆる点で説明する試みはありません。 ASP.NET から ASP.NET Core に移行する一般的な手順については、ASP.NET Core ドキュメントの[移行ガイダンス](https://docs.microsoft.com/aspnet/core/migration/proper-to-2x/)を参照してください。
 
 ### <a name="additional-resources"></a>その他の技術情報
 

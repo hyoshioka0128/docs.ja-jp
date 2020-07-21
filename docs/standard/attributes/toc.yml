@@ -1,9 +1,0 @@
-- name: 属性
-  href: index.md
-  items:
-    - name: 属性の適用
-      href: applying-attributes.md
-    - name: カスタム属性の記述
-      href: writing-custom-attributes.md
-    - name: 属性に格納されている情報の取得
-      href: retrieving-information-stored-in-attributes.md

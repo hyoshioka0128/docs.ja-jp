@@ -1,23 +1,24 @@
 ---
 title: Windows Workflow Foundation の新機能
+description: .NET Framework 4 での Windows Workflow Foundation の変更について説明します。 ワークフローの作成、実行、および保守が容易になります。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Workflow Foundation [WF], what's new
 - WF [WF], what's new
 ms.assetid: 11f96014-001e-41a0-bcc2-d0684a52fa43
-ms.openlocfilehash: 8f79c6d2a564571f8b753f322a79e91a01b1cf2f
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: b25b71a61f8a96d59c79e780d9fe5cd03abfa299
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74142006"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419344"
 ---
 # <a name="whats-new-in-windows-workflow-foundation"></a>Windows Workflow Foundation の新機能
 
 .NET Framework 4 の Windows Workflow Foundation (WF) は、以前のバージョンのいくつかの開発パラダイムを変更します。 ワークフローでは、新しい機能のホストの作成、実行、保守、実装が簡単になっています。 .NET 3.0 と .NET 3.5 ワークフローアプリケーションを移行して最新バージョンを使用する方法の詳細については、「[移行のガイダンス](migration-guidance.md)」を参照してください。  
   
 ## <a name="workflow-activity-model"></a>ワークフロー アクティビティ モデル  
- アクティビティは、現在はワークフロー作成の基本単位であり、<xref:System.Workflow.Activities.SequentialWorkflowActivity> クラスや <xref:System.Workflow.Activities.StateMachineWorkflowActivity> クラスは使用されなくなっています。 <xref:System.Activities.Activity> クラスは、ワークフロー動作の基本抽象クラスです。 このため、アクティビティの作成者は、基本的なカスタム アクティビティ機能用に <xref:System.Activities.CodeActivity> を実装するか、一定範囲のランタイムを使用するカスタム アクティビティ機能用に <xref:System.Activities.NativeActivity> を実装することができます。 <xref:System.Activities.Activity> は、カスタム開発されているか、[組み込みのアクティビティライブラリ](net-framework-4-5-built-in-activity-library.md)に含まれているかにかかわらず、他の <xref:System.Activities.NativeActivity>、<xref:System.Activities.CodeActivity>、<xref:System.Activities.AsyncCodeActivity>、または <xref:System.Activities.DynamicActivity> オブジェクトの観点から、アクティビティ作成者が新しい動作を宣言によって表現するために使用されるクラスです。  
+ アクティビティは、現在はワークフロー作成の基本単位であり、<xref:System.Workflow.Activities.SequentialWorkflowActivity> クラスや <xref:System.Workflow.Activities.StateMachineWorkflowActivity> クラスは使用されなくなっています。 <xref:System.Activities.Activity> クラスは、ワークフロー動作の基本抽象クラスです。 このため、アクティビティの作成者は、基本的なカスタム アクティビティ機能用に <xref:System.Activities.CodeActivity> を実装するか、一定範囲のランタイムを使用するカスタム アクティビティ機能用に <xref:System.Activities.NativeActivity> を実装することができます。 <xref:System.Activities.Activity>は、 <xref:System.Activities.NativeActivity> <xref:System.Activities.CodeActivity> <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.DynamicActivity> カスタム開発されているか、[組み込みのアクティビティライブラリ](net-framework-4-5-built-in-activity-library.md)に含まれているかにかかわらず、他の、、、またはオブジェクトの観点から、アクティビティ作成者が新しい動作を宣言によって表現するために使用されるクラスです。  
   
 ## <a name="rich-composite-activity-options"></a>豊富な複合アクティビティ オプション  
  <xref:System.Activities.Statements.Flowchart> は新しい強力な制御フロー アクティビティです。作成者は、これを使用して任意のループや条件分岐をモデル化できます。 <xref:System.Activities.Statements.Flowchart> により、以前は <xref:System.Workflow.Activities.StateMachineWorkflowActivity> でのみ実装が可能であったイベント ドリブン プログラミング モデルを使用できます。 手続き型のワークフローでは、<xref:System.Activities.Statements.TryCatch> や <xref:System.Activities.Statements.Switch%601> などの従来のフロー制御構造をモデル化する新しいフロー制御アクティビティを利用できます。  

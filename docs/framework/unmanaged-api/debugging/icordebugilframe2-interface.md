@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f94b9d53-d8f8-4424-a95e-53a1bfd26e4a
 topic_type:
 - apiref
-ms.openlocfilehash: 08c2946a9bd6251f377ea594c0c3ca5d1bd98c67
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2e0f284625e99215900c6aaab94e4eae611787ed
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73095088"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212101"
 ---
 # <a name="icordebugilframe2-interface"></a>ICorDebugILFrame2 インターフェイス
 
@@ -29,23 +29,23 @@ ms.locfileid: "73095088"
   
 |メソッド|説明|  
 |------------|-----------------|  
-|[EnumerateTypeParameters メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md)|このフレームの <xref:System.Type> パラメーターを格納している、テキスト型オブジェクトを取得します。|  
-|[RemapFunction メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-remapfunction-method.md)|新しい MSIL オフセットを指定して、編集された関数を再マップします。|  
+|[EnumerateTypeParameters メソッド](icordebugilframe2-enumeratetypeparameters-method.md)|このフレームのパラメーターを格納している、テキスト型の型の列挙体オブジェクトを取得し <xref:System.Type> ます。|  
+|[RemapFunction メソッド](icordebugilframe2-remapfunction-method.md)|新しい MSIL オフセットを指定して、編集された関数を再マップします。|  
   
 ## <a name="remarks"></a>Remarks  
   
 > [!NOTE]
 > このインターフェイスは、コンピューター間またはプロセス間でのリモート呼び出しをサポートしていません。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [デバッグ インターフェイス](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [デバッグのインターフェイス](debugging-interfaces.md)

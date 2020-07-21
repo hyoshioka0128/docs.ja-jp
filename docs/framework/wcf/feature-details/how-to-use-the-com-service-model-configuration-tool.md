@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], using service model configuration tool
 ms.assetid: 7e68cd8d-5fda-4641-b92f-290db874376e
-ms.openlocfilehash: 67bacade0435f1c63bc79b3282f6bded55b67304
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: f9e761bafd84726b51a2010a932c68c67c37f899
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991582"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595285"
 ---
 # <a name="how-to-use-the-com-service-model-configuration-tool"></a>方法: COM+ サービス モデル構成ツールを使用する
 適切なホスト モードを選択したら、COM+ サービス モデル構成コマンド ライン ツール (ComSvcConfig.exe) を使用して、Web サービスとして公開されるアプリケーション インターフェイスを構成します。  
@@ -19,7 +19,7 @@ ms.locfileid: "70991582"
   
  Windows 7 コンピューターで ComSvcConfig.exe を使用して、最新のサービス モデル バージョン (現在 v4.5) を使用するように Web サービスを構成する場合は、次の手順を実行します。  
   
-1. レジストリキー `[HKEY_LOCAL_COMPUTER\SOFTWARE\Microsoft\.NETFramework]\OnlyUseLatestCLR`を DWORD 値0x00000001 に設定します。  
+1. レジストリキーを `[HKEY_LOCAL_COMPUTER\SOFTWARE\Microsoft\.NETFramework]\OnlyUseLatestCLR` DWORD 値0x00000001 に設定します。  
   
 2. comsvcconfig.exe を実行します。  
   
@@ -41,7 +41,7 @@ ms.locfileid: "70991582"
   
      このコマンドは、Web サービスとして公開されるインターフェイスのセットに (OnlineStore COM+ アプリケーションの) `IFinances` コンポーネントの `ItemOrders.IFinancial` インターフェイスを追加します。 サービスは COM+ ホスト モードを使用するため、アプリケーションを明示的にアクティブ化する必要があります。  
   
-     コンポーネントとインターフェイスには\*ワイルドカードアスタリスク () 文字を使用できますが、選択した機能のみを Web サービスとして公開することが必要になる場合があるため、使用しないでください。 ワイルドカードを使用すると、このコンポーネントの将来のバージョンを使用して実行したときに、構成構文の決定時には存在しなかったインターフェイスが誤って公開される可能性があります。  
+     コンポーネントとインターフェイスにはワイルドカードアスタリスク ( \* ) 文字を使用できますが、選択した機能のみを Web サービスとして公開することが必要になる場合があるため、使用しないでください。 ワイルドカードを使用すると、このコンポーネントの将来のバージョンを使用して実行したときに、構成構文の決定時には存在しなかったインターフェイスが誤って公開される可能性があります。  
   
      /verbose オプションを指定すると、ツールは、エラーだけでなく警告も表示します。  
   
@@ -111,4 +111,4 @@ ms.locfileid: "70991582"
   
 ## <a name="see-also"></a>関連項目
 
-- [COM+ アプリケーションとの統合の概要](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)
+- [COM + アプリケーションとの統合の概要](integrating-with-com-plus-applications-overview.md)

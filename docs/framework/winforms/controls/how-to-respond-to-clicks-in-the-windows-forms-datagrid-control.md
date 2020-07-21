@@ -1,5 +1,5 @@
 ---
-title: '方法: Windows フォーム DataGrid コントロールのクリックに応答する'
+title: データ グリッド コントロールのクリックに応答する
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,22 +12,22 @@ helpviewer_keywords:
 - examples [Windows Forms], DataGrid control
 - DataGrid control [Windows Forms], click events
 ms.assetid: a0aa204b-8351-4d82-9933-ee21a5c9e409
-ms.openlocfilehash: 54e41c6960c24f68cb27a6f6fb859b4b9223ed27
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e72d117b12d43ece8c4d05ed29ab45693418eede
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914997"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79141940"
 ---
-# <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a>方法: Windows フォーム DataGrid コントロールのクリックに応答する
+# <a name="how-to-respond-to-clicks-in-the-windows-forms-datagrid-control"></a>方法 : Windows フォーム DataGrid コントロールのクリックに応答する
 > [!NOTE]
 > <xref:System.Windows.Forms.DataGridView> コントロールは、<xref:System.Windows.Forms.DataGrid> コントロールに代わると共に追加の機能を提供します。ただし、<xref:System.Windows.Forms.DataGrid> コントロールは、下位互換性を保つ目的および将来使用する目的で保持されます。 詳細については、「[Windows フォームの DataGridView コントロールと DataGrid コントロールの違いについて](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)」を参照してください。  
   
- Windows フォーム<xref:System.Windows.Forms.DataGrid>がデータベースに接続されると、ユーザーがクリックしたセルを監視できます。  
+ Windows フォーム<xref:System.Windows.Forms.DataGrid>がデータベースに接続されたら、ユーザーがクリックしたセルを監視できます。  
   
-### <a name="to-detect-when-the-user-of-the-datagrid-selects-a-different-cell"></a>DataGrid のユーザーが別のセルを選択したことを検出するには  
+### <a name="to-detect-when-the-user-of-the-datagrid-selects-a-different-cell"></a>DataGrid のユーザーが別のセルを選択したときに検出するには  
   
-- <xref:System.Windows.Forms.DataGrid.CurrentCellChanged>イベントハンドラーで、適切に応答するコードを記述します。  
+- イベント<xref:System.Windows.Forms.DataGrid.CurrentCellChanged>ハンドラーで、適切に応答するコードを記述します。  
   
     ```vb  
     Private Sub myDataGrid_CurrentCellChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles myDataGrid.CurrentCellChanged  
@@ -38,16 +38,16 @@ ms.locfileid: "69914997"
     ```  
   
     ```csharp  
-    private void myDataGrid_CurrentCellChanged(object sender,   
+    private void myDataGrid_CurrentCellChanged(object sender,
     System.EventArgs e)  
     {  
        MessageBox.Show ("Col is " + myDataGrid.CurrentCell.ColumnNumber  
-          + ", Row is " + myDataGrid.CurrentCell.RowNumber   
+          + ", Row is " + myDataGrid.CurrentCell.RowNumber
           + ", Value is " + myDataGrid[myDataGrid.CurrentCell] );  
     }  
     ```  
   
-     (ビジュアルC#)フォームのコンストラクターに次のコードを配置して、イベントハンドラーを登録します。  
+     (ビジュアル C#)フォームのコンストラクターに次のコードを配置して、イベント ハンドラーを登録します。  
   
     ```csharp  
     this.myDataGrid.CurrentCellChanged += new  
@@ -56,9 +56,9 @@ ms.locfileid: "69914997"
   
 ### <a name="to-determine-which-part-of-the-datagrid-the-user-clicked"></a>ユーザーがクリックした DataGrid の部分を確認するには  
   
-- <xref:System.Windows.Forms.Control.MouseDown>イベントや<xref:System.Windows.Forms.DataGrid.HitTest%2A> イベント<xref:System.Windows.Forms.Control.Click>など、適切なイベントハンドラーでメソッドを呼び出します。  
+- イベント<xref:System.Windows.Forms.Control.Click>または<xref:System.Windows.Forms.DataGrid.HitTest%2A>イベントなど、適切なイベント ハンドラーでメソッド<xref:System.Windows.Forms.Control.MouseDown>を呼び出します。  
   
-     メソッド<xref:System.Windows.Forms.DataGrid.HitTest%2A>は、クリック<xref:System.Windows.Forms.DataGrid.HitTestInfo>された領域の行と列を含むオブジェクトを返します。  
+     この<xref:System.Windows.Forms.DataGrid.HitTest%2A>メソッドは、<xref:System.Windows.Forms.DataGrid.HitTestInfo>クリックされた領域の行と列を含むオブジェクトを返します。  
   
     ```vb  
     Private Sub myDataGrid_MouseDown(ByVal sender As Object, _  
@@ -92,7 +92,7 @@ ms.locfileid: "69914997"
     ```  
   
     ```csharp  
-    private void myDataGrid_MouseDown(object sender,   
+    private void myDataGrid_MouseDown(object sender,
     System.Windows.Forms.MouseEventArgs e)  
     {  
        DataGrid myGrid = (DataGrid) sender;  
@@ -100,7 +100,7 @@ ms.locfileid: "69914997"
        hti = myGrid.HitTest(e.X, e.Y);  
        string message = "You clicked ";  
   
-       switch (hti.Type)   
+       switch (hti.Type)
        {  
           case System.Windows.Forms.DataGrid.HitTestType.None :  
              message += "the background.";  
@@ -132,7 +132,7 @@ ms.locfileid: "69914997"
     }  
     ```  
   
-     (ビジュアルC#)フォームのコンストラクターに次のコードを配置して、イベントハンドラーを登録します。  
+     (ビジュアル C#)フォームのコンストラクターに次のコードを配置して、イベント ハンドラーを登録します。  
   
     ```csharp  
     this.myDataGrid.MouseDown += new  
@@ -143,4 +143,4 @@ ms.locfileid: "69914997"
 ## <a name="see-also"></a>関連項目
 
 - [DataGrid コントロール](datagrid-control-windows-forms.md)
-- [方法: 実行時に表示されるデータを Windows フォーム DataGrid コントロールに変更する](change-displayed-data-at-run-time-wf-datagrid-control.md)
+- [方法 : Windows フォーム DataGrid コントロールに表示されるデータを実行時に変更する](change-displayed-data-at-run-time-wf-datagrid-control.md)

@@ -2,12 +2,12 @@
 title: ORDER BY (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c0b61572-ecee-41eb-9d7f-74132ec8a26c
-ms.openlocfilehash: 2010ef9d6fe37e65824cac877074453db1b789db
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.openlocfilehash: 1233971b172079aa48227d0ec520068afbdf0952
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319446"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150070"
 ---
 # <a name="order-by-entity-sql"></a>ORDER BY (Entity SQL)
 SELECT ステートメントで返されるオブジェクトで使用される並べ替え順を指定します。  
@@ -15,13 +15,13 @@ SELECT ステートメントで返されるオブジェクトで使用される�
 ## <a name="syntax"></a>構文  
   
 ```sql  
-[ ORDER BY   
+[ ORDER BY
    {  
       order_by_expression [SKIP n] [LIMIT n]  
       [ COLLATE collation_name ]  
       [ ASC | DESC ]  
    }  
-   [ ,…n ]   
+   [ ,…n ]
 ]  
 ```  
   
@@ -53,7 +53,7 @@ SELECT ステートメントで返されるオブジェクトで使用される�
   
  順序付けされたセットで、最上位の投影を除きコードが反復処理を行う場合、出力でその順序が維持されることは保証されません。  
 
-次の例では、順序は維持されることが保証されています。
+次の例では、順序が維持されることが保証されます。
 
 ```sql  
 SELECT C1.FirstName, C1.LastName  
@@ -102,7 +102,7 @@ ORDER BY ...
 ## <a name="ordering-nested-queries"></a>入れ子になったクエリの順序  
  Entity Framework では、入れ子になった式をクエリ内の任意の場所に配置できるため、入れ子になったクエリの順序は維持されません。  
 
-次のクエリでは、結果を姓で並べ替えます。  
+次のクエリでは、結果が姓の順に並べ替えられます。  
 
 ```sql  
 SELECT C1.FirstName, C1.LastName  
@@ -122,7 +122,7 @@ SELECT C2.FirstName, C2.LastName
 ## <a name="example"></a>例  
  次の [!INCLUDE[esql](../../../../../../includes/esql-md.md)] クエリでは、SELECT ステートメントで返されたオブジェクトの並べ替え順序の指定に ORDER BY 演算子を使用します。 このクエリは、AdventureWorks Sales Model に基づいています。 このクエリをコンパイルして実行するには、次の手順を実行します。  
   
-1. 「 [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。  
+1. 「[方法: StructuralType 結果を返すクエリを実行する](../how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。  
   
 2. 次のクエリを引数として `ExecuteStructuralTypeQuery` メソッドに渡します。  
   

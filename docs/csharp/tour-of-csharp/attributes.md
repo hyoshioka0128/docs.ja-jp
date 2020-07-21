@@ -1,14 +1,14 @@
 ---
 title: C# の属性 - C# 言語のツアー
 description: C# で属性を使用した宣言型のプログラミングについて
-ms.date: 08/10/2016
+ms.date: 02/27/2020
 ms.assetid: 753bcfe2-7ddd-4487-9513-ba70937fc8e9
-ms.openlocfilehash: 79bd14ebd3b25eabc0b9f7ed8f9e9585a050805f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: dc5b194c22fc2746ff8b0ab3e550e560a3666bbe
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634638"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78159209"
 ---
 # <a name="attributes"></a>属性
 
@@ -31,4 +31,4 @@ C# プログラムにおける型、メンバー、およびその他のエン�
 [!code-csharp[AttributeRead](../../../samples/snippets/csharp/tour/attributes/Program.cs#ReadAttributes)]
 
 >[!div class="step-by-step"]
->[前へ](delegates.md)
+>[[戻る]](delegates.md)

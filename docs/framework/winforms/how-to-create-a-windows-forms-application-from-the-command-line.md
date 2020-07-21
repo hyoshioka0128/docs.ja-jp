@@ -1,5 +1,7 @@
 ---
-title: '方法: コマンドラインから Windows フォームアプリケーションを作成する'
+title: コマンドラインから Windows フォームアプリケーションを作成する
+titleSuffix: ''
+description: コマンドラインから Windows フォームアプリケーションを作成して実行するための基本的な手順を実行する方法について説明します。
 ms.date: 03/14/2018
 dev_langs:
 - csharp
@@ -9,32 +11,32 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - Windows Forms, creating basic form
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
-ms.openlocfilehash: af1548602ece8ea0f5720a836ec05648854e198f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b63bf884b9fd03a0510c7f240f19d7a14196971a
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127248"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903455"
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>方法: コマンドラインから Windows フォームアプリケーションを作成する
 
 次の手順では、コマンドラインから Windows フォーム アプリケーションを作成して実行するために完了する必要のある基本的な手順について説明します。 Visual Studio では、これらの手順に対する広範なサポートが用意されています。  「[チュートリアル: WPF での Windows フォームコントロールのホスト](../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)」も参照してください。
   
-## <a name="procedure"></a>プロシージャ  
+## <a name="procedure"></a>手順  
   
 #### <a name="to-create-the-form"></a>フォームを作成するには  
   
-1. 空のコードファイルに、次の `Imports` または `using` ステートメントを入力します。  
+1. 空のコードファイルに、次の `Imports` またはステートメントを入力し `using` ます。  
   
      [!code-csharp[System.Windows.Forms.BasicForm#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.BasicForm#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/VB/Form1.vb#2)]  
   
-2. Form クラスから継承する `Form1` という名前のクラスを宣言します。
+2. Form クラスから継承するという名前のクラスを宣言し `Form1` ます。
   
      [!code-csharp[System.Windows.Forms.BasicForm#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.BasicForm#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/VB/Form1.vb#3)]  
   
-3. `Form1`のパラメーターなしのコンストラクターを作成します。
+3. のパラメーターなしのコンストラクターを作成 `Form1` します。
   
      後続の手順で、コンストラクターにさらにコードを追加します。
   
@@ -43,9 +45,9 @@ ms.locfileid: "73127248"
   
 4. `Main` メソッドをクラスに追加します。
   
-    1. C# `Main` メソッドに <xref:System.STAThreadAttribute> を適用して、Windows フォームアプリケーションがシングルスレッドアパートメントであることを指定します。 (Visual Basic で開発された Windows フォームアプリケーションでは、既定でシングルスレッドアパートメントモデルが使用されるため、Visual Basic では属性は必要ありません)。  
+    1. を <xref:System.STAThreadAttribute> C# メソッドに適用し `Main` て、Windows フォームアプリケーションがシングルスレッドアパートメントであることを指定します。 (Visual Basic で開発された Windows フォームアプリケーションでは、既定でシングルスレッドアパートメントモデルが使用されるため、Visual Basic では属性は必要ありません)。  
   
-    2. オペレーティングシステムのスタイルをアプリケーションに適用するには、<xref:System.Windows.Forms.Application.EnableVisualStyles%2A> を呼び出します。  
+    2. <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>を呼び出して、オペレーティングシステムのスタイルをアプリケーションに適用します。  
   
     3. フォームのインスタンスを作成して実行します。  
   
@@ -58,13 +60,13 @@ ms.locfileid: "73127248"
   
 2. フォームをコンパイルします。  
   
-    - を使用してC#いる場合は、次のように入力します。 `csc form1.cs`  
+    - C# を使用する場合は、次のように入力します。`csc form1.cs`  
   
          `-or-`  
   
-    - Visual Basic を使用している場合は、次のように入力します。 `vbc form1.vb`  
+    - Visual Basic を使用している場合は、次のように入力します。`vbc form1.vb`  
   
-3. コマンドプロンプトで、次のように入力し `Form1.exe`  
+3. コマンド プロンプトに `Form1.exe` を入力します。  
   
 ## <a name="adding-a-control-and-handling-an-event"></a>コントロールの追加とイベントの処理
 
@@ -104,16 +106,16 @@ ms.locfileid: "73127248"
 7. 前の手順で説明したように、アプリケーションをコンパイルして実行します。  
   
 ## <a name="example"></a>例  
- 
+
 次のコード例は、前の手順の完全な例です。
   
  [!code-csharp[System.Windows.Forms.FormWithButton#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FormWithButton/CS/Form1.cs#1)]
  [!code-vb[System.Windows.Forms.FormWithButton#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FormWithButton/VB/Form1.vb#1)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 - <xref:System.Windows.Forms.Form>
 - <xref:System.Windows.Forms.Control>
 - [Windows フォームの表示形式の変更](changing-the-appearance-of-windows-forms.md)
 - [Windows フォーム アプリケーションの拡張](./advanced/index.md)
-- [Windows フォームについて](getting-started-with-windows-forms.md)
+- [Windows フォームでのはじめに](getting-started-with-windows-forms.md)

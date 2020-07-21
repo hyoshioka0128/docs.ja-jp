@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 879d2311-0ff1-4616-a8b3-959ea5868b2e
 topic_type:
 - apiref
-ms.openlocfilehash: 39175e338e4fd98dd4af1325138da732ed81c764
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7bf73266f0269cfcd5371c5155856800036cc066
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137921"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209839"
 ---
 # <a name="icordebugframegetfunction-method"></a>ICorDebugFrame::GetFunction メソッド
 このスタックフレームに関連付けられているコードを格納している関数を取得します。  
@@ -38,13 +38,13 @@ HRESULT GetFunction (
  入出力このスタックフレームに関連付けられているコードを格納している関数を表す、オブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- フレームが特定の関数に関連付けられていない場合、`GetFunction` メソッドは失敗する可能性があります。  
+ `GetFunction`フレームが特定の関数に関連付けられていない場合、メソッドは失敗する可能性があります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

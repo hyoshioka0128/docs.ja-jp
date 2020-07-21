@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7a439d92-348a-44dd-b60f-cad7cba56379
 topic_type:
 - apiref
-ms.openlocfilehash: c7bf8e3ebedb17a4536b604909434c3e004fc828
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 62b34128be99ce7750d45e6c19e26bef7fcc98c5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439830"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502952"
 ---
 # <a name="icorprofilerinfogetmodulemetadata-method"></a>ICorProfilerInfo::GetModuleMetaData メソッド
 指定したモジュールにマップされるメタデータインターフェイスインスタンスを取得します。  
@@ -40,28 +40,28 @@ HRESULT GetModuleMetaData(
  からインターフェイスインスタンスのマップ先となるモジュールの ID。  
   
  `dwOpenFlags`  
- からマニフェストファイルを開くモードを指定する[Coropenflags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md)列挙体の値。 `ofRead`、`ofWrite`、および `ofNoTransform` ビットのみが有効です。  
+ からマニフェストファイルを開くモードを指定する[Coropenflags](../metadata/coropenflags-enumeration.md)列挙体の値。 、、 `ofRead` およびの各 `ofWrite` ビットのみ `ofNoTransform` が有効です。  
   
  `riid`  
- からインスタンスを取得するメタデータインターフェイスの参照 ID (GUID)。 インターフェイスの一覧については、「[メタデータインターフェイス](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)」を参照してください。  
+ からインスタンスを取得するメタデータインターフェイスの参照 ID (GUID)。 インターフェイスの一覧については、「[メタデータインターフェイス](../metadata/metadata-interfaces.md)」を参照してください。  
   
  `ppOut`  
  入出力メタデータインターフェイスインスタンスのアドレスへのポインター。  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  メタデータを読み取り/書き込みモードで開くように要求することはできますが、メタデータに対して行われた変更はコンパイラからのものとして最適化できないため、プログラムのメタデータ実行が遅くなります。  
   
- 一部のモジュール (リソースモジュールなど) にはメタデータがありません。 このような場合、`GetModuleMetaData` は S_FALSE の HRESULT 値と、*`ppOut`に null を返します。  
+ 一部のモジュール (リソースモジュールなど) にはメタデータがありません。 このような場合、 `GetModuleMetaData` は S_FALSE の HRESULT 値を返し、* では null を返し `ppOut` ます。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ICorProfilerInfo インターフェイス](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo インターフェイス](icorprofilerinfo-interface.md)

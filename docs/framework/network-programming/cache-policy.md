@@ -1,5 +1,6 @@
 ---
 title: キャッシュ ポリシー
+description: 要求されたリソースのキャッシュ コピーを使用して要求を満たすことができるかどうかを決定するルールである、キャッシュ ポリシーについて学習します。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - time-based cache policies
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - content cache policies
 - expired content
 ms.assetid: 1a7e04ec-7872-41c2-96c6-52566dcb412b
-ms.openlocfilehash: 2d3d85ebd80f417ebd0fa0e619097e15f2a6a39b
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: d63d2b6bf8426968d2120647c8ecea2b7602825a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048769"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502666"
 ---
 # <a name="cache-policy"></a>キャッシュ ポリシー
 キャッシュ ポリシーには、要求されたリソースのキャッシュ コピーを使用して要求を満たすことができるかどうかを決定するルールを定義します。 アプリケーションは、更新のクライアント キャッシュ要件を指定しますが、実質的なキャッシュ ポリシーは、クライアントのキャッシュ要件、サーバーのコンテンツ有効期限要件、およびサーバーの再検証要件によって決まります。 最新のコンテンツをクライアント アプリケーションに確実に返すために、クライアントのキャッシュ ポリシーとサーバーの要件の相互作用によって、常に最も保守的なキャッシュ ポリシーが適用されます。  

@@ -1,5 +1,5 @@
 ---
-title: '方法: 分離ストレージでストアを削除する'
+title: '方法 : 分離ストレージでストアを削除する'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,16 +15,14 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting stores
 - data storage using isolated storage, deleting stores
 ms.assetid: 3947e333-5af6-4601-b2f1-24d4d6129cf3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a935ec663dd178d35aff745e907d2aae48e5b65c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 885dc8e3ca0ea99de460cee7dd093b061f916388
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622594"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291891"
 ---
-# <a name="how-to-delete-stores-in-isolated-storage"></a>方法: 分離ストレージでストアを削除する
+# <a name="how-to-delete-stores-in-isolated-storage"></a>方法 : 分離ストレージでストアを削除する
 分離ストレージ ファイルを削除するため、 <xref:System.IO.IsolatedStorage.IsolatedStorageFile> クラスは 2 つのメソッドを提供します。  
   
 - インスタンス メソッド <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove> は引数を使わず、そのインスタンス メソッドを呼び出すストアを削除します。 この操作にアクセス許可は必要ありません。 ストアにアクセスできるすべてのコードは、その内部の一部のデータやすべてのデータを削除できます。  
@@ -38,7 +36,7 @@ ms.locfileid: "64622594"
  [!code-csharp[Conceptual.IsolatedStorage#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source3.cs#3)]
  [!code-vb[Conceptual.IsolatedStorage#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source3.vb#3)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
-- [分離ストレージ](../../../docs/standard/io/isolated-storage.md)
+- [分離ストレージ](isolated-storage.md)

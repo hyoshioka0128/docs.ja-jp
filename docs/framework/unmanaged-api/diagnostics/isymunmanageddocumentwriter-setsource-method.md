@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea5b9d9f-ff06-4bd3-8de5-6435343aba59
 topic_type:
 - apiref
-ms.openlocfilehash: ff18f95bd6b4cfde5aaa4d3f6f68b58fd37c04b3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 06c6f9b05d34ea98dde437393ded289cbab2f61d
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449071"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83615528"
 ---
 # <a name="isymunmanageddocumentwritersetsource-method"></a>ISymUnmanagedDocumentWriter::SetSource メソッド
 書き込まれるドキュメントの埋め込み元を設定します。  
@@ -35,7 +35,7 @@ HRESULT SetSource(
   
 ## <a name="parameters"></a>パラメーター  
  `sourceSize`  
- から`source` バッファーのサイズを格納している `ULONG32`。  
+ から`ULONG32`バッファーのサイズを格納している `source` 。  
   
  `source`  
  から埋め込みソースを格納するバッファー。  
@@ -46,6 +46,6 @@ HRESULT SetSource(
 ## <a name="requirements"></a>要件  
  **ヘッダー:** CorSym .idl、CorSym .h  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [ISymUnmanagedDocumentWriter インターフェイス](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
+- [ISymUnmanagedDocumentWriter インターフェイス](isymunmanageddocumentwriter-interface.md)

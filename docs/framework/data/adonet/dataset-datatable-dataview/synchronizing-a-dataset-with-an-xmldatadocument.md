@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-ms.openlocfilehash: 272b76c0448da9e069fba331c3ae99c1de02ed16
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.openlocfilehash: 2ee5b0937f24fac745f72cf6ef6e4bef9ec97ba8
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784267"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79150782"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>DataSet と XmlDataDocument の同期
-このセクションでは、<xref:System.Xml.XmlDataDocument> と同期され、厳密に型指定された <xref:System.Data.DataSet> を使用して、注文書を処理する手順の 1 ステップを例に説明します。 次の例では、ソース XML ドキュメントの一部にのみ一致する、最小化されたスキーマを使用して**データセット**を作成します。 この例では、 **XmlDataDocument**を使用してソース xml ドキュメントの忠実性を維持し、xml ドキュメントのサブセットを公開するために**データセット**を使用できるようにします。  
+このセクションでは、<xref:System.Xml.XmlDataDocument> と同期され、厳密に型指定された <xref:System.Data.DataSet> を使用して、注文書を処理する手順の 1 ステップを例に説明します。 この例では、**DataSet** をソース XML ドキュメントの一部だけと一致する最小限のスキーマと共に作成します。 この例では、**XmlDataDocument** を使用してソース XML ドキュメントが完全に保持されるため、XML ドキュメントのサブセットを公開するときに **DataSet** を使用できます。  
   
  注文書に関する情報 (顧客情報、発注品目、出荷情報など) をすべて含む XML ドキュメントの例を次に示します。  
   
@@ -109,15 +109,15 @@ ms.locfileid: "70784267"
 </PurchaseOrder>  
 ```  
   
- 前述の XML ドキュメントに含まれている注文書の情報を処理する手順の 1 ステップとして、企業の現在の在庫のデータを使用してこの注文書が処理されます。 企業の倉庫で注文を処理する従業員は、注文書の内容をすべて確認する必要はありません。確認する必要がある情報は、注文書の製品情報だけです。 XML ドキュメントから製品情報のみを公開するには、XML スキーマ定義言語 (XSD) スキーマとして記述されたスキーマを使用して、厳密に型指定された**データセット**を作成します。このスキーマは、順序付けされた製品と数量にマップされます。 厳密に型指定された**dataset**オブジェクトの詳細については、「[型付き dataset](typed-datasets.md)」を参照してください。  
+ 前述の XML ドキュメントに含まれている注文書の情報を処理する手順の 1 ステップとして、企業の現在の在庫のデータを使用してこの注文書が処理されます。 企業の倉庫で注文を処理する従業員は、注文書の内容をすべて確認する必要はありません。確認する必要がある情報は、注文書の製品情報だけです。 XML ドキュメントの製品情報だけを公開するには、厳密に型指定した DataSet を作成し、XML スキーマ定義言語 (XSD) スキーマとして記述されているスキーマをこの **DataSet** に読み込みます。このスキーマは、注文の製品と数量に対応しています。 厳密に型指定された **DataSet** オブジェクトの詳細については、「[型指定されたデータセット](typed-datasets.md)」を参照してください。  
   
- 次のコードは、このサンプルの厳密に型指定された**DataSet**の生成元となるスキーマを示しています。  
+ このサンプルの厳密に型指定された **DataSet** の生成元となるスキーマを次のコードに示します。  
   
 ```xml  
 <?xml version="1.0" standalone="yes"?>  
-<xs:schema id="OrderDetail" xmlns=""   
-                            xmlns:xs="http://www.w3.org/2001/XMLSchema"   
-                            xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"   
+<xs:schema id="OrderDetail" xmlns=""
+                            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                            xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"
                             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   <xs:element name="OrderDetail" msdata:IsDataSet="true">  
     <xs:complexType>  
@@ -157,11 +157,11 @@ ms.locfileid: "70784267"
 </xs:schema>  
 ```  
   
- **データセット**のスキーマには、元の XML ドキュメントの**OrderDetails**要素と**Products**要素からの情報のみが含まれていることに注意してください。 **Dataset**を**XmlDataDocument**と同期することで、**データセット**に含まれていない要素が XML ドキュメントで保持されるようになります。  
+ 元の XML ドキュメントの **OrderDetails** 要素と **Products** 要素の情報だけが **DataSet** のスキーマにインクルードされます。 **DataSet** を **XmlDataDocument** と同期させることで、**DataSet** にインクルードされていない要素も XML ドキュメントに保持されます。  
   
- XML スキーマから生成された厳密に型指定された**データセット**( **Northwind. fillorder**の名前空間を持つ) を使用して、**データセット**と読み込まれた**XmlDataDocument**を同期して、元の xml ドキュメントの一部を公開できます。ソース XML ドキュメントから。 スキーマから生成されたデータ**セット**には構造が含まれていますが、データは含まれていません。 データは、XML を**XmlDataDocument**に読み込むときに入力されます。 既にデータが含まれているデータ**セット**と同期された**XmlDataDocument**を読み込もうとすると、例外がスローされます。  
+ **Northwind.FillOrder** の名前空間を使用して XML スキーマから生成される、厳密に型指定された **DataSet** を使用すると、**DataSet** とソース XML ドキュメントから読み込まれた **XmlDataDocument** を同期させることで、元の XML ドキュメントの一部を公開できます。 このスキーマから生成された **DataSet** には構造が含まれていますが、データは含まれていません。 XML を **XmlDataDocument** に読み込むと、データが格納されます。 データが既に含まれている **DataSet** と同期された **XmlDataDocument** を読み込もうとすると、例外がスローされます。  
   
- **データセット**(および**XmlDataDocument**) が更新された後、 **XmlDataDocument**は、次に示すように、**データセット**によって無視された要素を含む変更された XML ドキュメントを書き出すことができます。 注文書の処理手順では、注文品目の入力後に、変更された XML ドキュメントが注文処理の次のステップ (社内の出荷部門) に渡されます。  
+ **DataSet** (および **XmlDataDocument**) が更新された後、**XmlDataDocument** によって、変更後の XML ドキュメントと、**DataSet** によって無視された要素を出力できます。この例を次に示します。 注文書の処理手順では、注文品目の入力後に、変更された XML ドキュメントが注文処理の次のステップ (社内の出荷部門) に渡されます。  
   
 ```vb  
 Imports System  
@@ -174,7 +174,7 @@ Public class Sample
   
     Dim orderDS As OrderDetail = New OrderDetail  
   
-    Dim xmlDocument As XmlDataDocument = New XmlDataDocument(orderDS)   
+    Dim xmlDocument As XmlDataDocument = New XmlDataDocument(orderDS)
   
     xmlDocument.Load("Order.xml")  
   
@@ -208,9 +208,9 @@ public class Sample
 {  
   public static void Main()  
   {  
-    OrderDetail orderDS = new OrderDetail();   
+    OrderDetail orderDS = new OrderDetail();
   
-    XmlDataDocument xmlDocument = new XmlDataDocument(orderDS);   
+    XmlDataDocument xmlDocument = new XmlDataDocument(orderDS);
   
     xmlDocument.Load("Order.xml");  
   

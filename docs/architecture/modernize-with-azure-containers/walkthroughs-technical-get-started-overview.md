@@ -2,12 +2,12 @@
 title: チュートリアルと技術的な概要
 description: Azure クラウドおよび Windows コンテナーを使用して既存の .NET アプリケーションを最新化する | チュートリアルと技術的な概要
 ms.date: 04/28/2018
-ms.openlocfilehash: 190b33c4307b09bab0543d481e66ac9328074a0d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: cff418d9b6e931a3082d8a2f8b818e7275139578
+ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "69660884"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987870"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>チュートリアルと技術的な概要
 
@@ -64,7 +64,7 @@ ms.locfileid: "69660884"
 
 ASP.NET 4.x またはそれ以前のバージョンでの依存関係 (MVC または Web Forms に対する) は、ASP.NET Core MVC を使用してコードを完全に書き直さない限り、これらのアプリケーションが .NET Core 上で実行されないことを意味します。
 
-### <a name="scenario-2-wcf-service-and-winforms-client-app-3-tier-app"></a>シナリオ 2:WCF サービスと WinForms クライアント アプリ (3 層アプリ)
+### <a name="scenario-2-wcf-service-and-winforms-client-app-3-tier-app"></a>シナリオ 2: WCF サービスと WinForms クライアント アプリ (3 層アプリ)
 
 次の図は、元の 3 層レガシ アプリケーションのシンプルなシナリオを示しています。
 
@@ -105,7 +105,7 @@ Windows コンテナーを使用して、運用環境、開発環境、テスト
 
 ![開発環境でのコンテナー化された ASP.NET アプリケーションのアーキテクチャの概略図](./media/image5-3.png)
 
-### <a name="scenario-2-containerized-wcf-service"></a>シナリオ 2:コンテナー化された WCF サービス
+### <a name="scenario-2-containerized-wcf-service"></a>シナリオ 2: コンテナー化された WCF サービス
 
 次の図は、コンテナー化された WCF サービスを使用した 3 層アプリケーションのシナリオを示しています。
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 70a32bf3-9051-4f96-ae87-11356d06a073
 topic_type:
 - apiref
-ms.openlocfilehash: 5434aa2d12bd9a29a8c2fc784421442469ceb1ce
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fb381a872cbeb787da0c6920f2cdeef434fb33ea
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74440555"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008093"
 ---
 # <a name="imetadataassemblyemitsetassemblyrefprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyRefProps メソッド
 指定された `AssemblyRef` メタデータ構造体を変更します。  
@@ -32,8 +32,8 @@ HRESULT SetAssemblyRefProps (
     [in] mdAssemblyRef              ar,  
     [in] const void                 *pbPublicKeyOrToken,  
     [in] ULONG                      cbPublicKeyOrToken,  
-    [in] LPCWSTR                    szName,   
-    [in] const ASSEMBLYMETADATA     *pMetaData,   
+    [in] LPCWSTR                    szName,
+    [in] const ASSEMBLYMETADATA     *pMetaData,
     [in] const void                 *pbHashValue,  
     [in] ULONG                      cbHashValue,  
     [in] DWORD                      dwAssemblyRefFlags  
@@ -42,13 +42,13 @@ HRESULT SetAssemblyRefProps (
   
 ## <a name="parameters"></a>パラメーター  
  `ar`  
- から変更する `AssemblyRef` メタデータ構造を指定するメタデータトークン。  
+ から変更するメタデータ構造を指定するメタデータトークン `AssemblyRef` 。  
   
  `pbPublicKeyOrToken`  
  から参照アセンブリの発行元の公開キー。  
   
  `cbPublicKeyOrToken`  
- から`pbPublicKeyOrToken`のサイズ (バイト単位)。  
+ からのサイズ (バイト単位) `pbPublicKeyOrToken` 。  
   
  `szName`  
  からユーザーが判読できる、アセンブリのテキスト名。  
@@ -60,23 +60,23 @@ HRESULT SetAssemblyRefProps (
  からアセンブリに関連付けられているハッシュデータへのポインター。  
   
  `cbHashValue`  
- から`pbHashValue`のサイズ (バイト単位)。  
+ からのサイズ (バイト単位) `pbHashValue` 。  
   
  `dwAssemblyRefFlags`  
- から参照アセンブリの属性を指定する[Assemblyrefflags](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md)値のビットごとの組み合わせ。  
+ から参照アセンブリの属性を指定する[Assemblyrefflags](assemblyrefflags-enumeration.md)値のビットごとの組み合わせ。  
   
 ## <a name="remarks"></a>コメント  
- `AssemblyRef` メタデータ構造を作成するには、 [IMetaDataAssemblyEmit::D efineAssemblyRef](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassemblyref-method.md)メソッドを使用します。  
+ メタデータ構造を作成するには `AssemblyRef` 、 [IMetaDataAssemblyEmit::D efineAssemblyRef](imetadataassemblyemit-defineassemblyref-method.md)メソッドを使用します。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataAssemblyEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyEmit インターフェイス](imetadataassemblyemit-interface.md)

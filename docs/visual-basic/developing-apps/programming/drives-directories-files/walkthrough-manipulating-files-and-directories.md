@@ -15,14 +15,14 @@ helpviewer_keywords:
 - writing to files [Visual Basic], walkthroughs
 - I/O [Visual Basic], reading text from files
 ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
-ms.openlocfilehash: 83dc6ce0d29c1c368c36b51fc84ecad34d72e01f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4b77618e5cd525cf3ad012405f402681aa5bb52c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74333804"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406665"
 ---
-# <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>チュートリアル: Visual Basic によるファイルとディレクトリの操作
+# <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>チュートリアル : Visual Basic によるファイルとディレクトリの操作
 
 このチュートリアルでは、Visual Basic でのファイル I/O の基礎について概説します。 具体的には、ディレクトリ内のテキスト ファイルをリストして調査する小さなアプリケーションを作成する方法について説明します。 このアプリケーションは、選択された各テキスト ファイルについて、ファイルの属性とコンテンツの最初の行を取得します。 ログ ファイルに情報を書き込むオプションもあります。  
   
@@ -44,13 +44,13 @@ ms.locfileid: "74333804"
   
 4. 次の表にあるコントロールをフォームに追加し、それらのプロパティに対応する値を設定します。  
   
-    |Control|プロパティ|値|  
+    |Control|property|値|  
     |-------------|--------------|-----------|  
-    |**ListBox**|**Name**|`filesListBox`|  
-    |**Button**|**Name**<br /><br /> **[テキスト]**|`browseButton`<br /><br /> **参照**|  
-    |**Button**|**Name**<br /><br /> **[テキスト]**|`examineButton`<br /><br /> **調査**|  
-    |**CheckBox**|**Name**<br /><br /> **[テキスト]**|`saveCheckBox`<br /><br /> **結果の保存**|  
-    |**FolderBrowserDialog**|**Name**|`FolderBrowserDialog1`|  
+    |**ListBox**|**名前**|`filesListBox`|  
+    |**Button**|**名前**<br /><br /> **テキスト**|`browseButton`<br /><br /> **参照**|  
+    |**Button**|**名前**<br /><br /> **テキスト**|`examineButton`<br /><br /> **調査**|  
+    |**CheckBox**|**名前**<br /><br /> **テキスト**|`saveCheckBox`<br /><br /> **結果の保存**|  
+    |**FolderBrowserDialog**|**名前**|`FolderBrowserDialog1`|  
   
 ### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>フォルダーを選択し、フォルダー内のファイルをリストするには  
   
@@ -148,7 +148,7 @@ ms.locfileid: "74333804"
   
 5. `Form1_Load` イベント ハンドラーの末尾に、`SetEnabled` に対する呼び出しを追加します。  
   
-6. アプリケーションを実行します。 `ListBox` で項目が選択されていない場合は、 **[結果の保存**] チェック ボックスと **[調査]** ボタンが無効になります。  
+6. アプリケーションを実行します。 `ListBox` で項目が選択されていない場合は、**[結果の保存**] チェック ボックスと **[調査]** ボタンが無効になります。  
   
 ## <a name="full-example-using-mycomputerfilesystem"></a>My.Computer.FileSystem を使用した完全な例  
 
@@ -162,9 +162,9 @@ ms.locfileid: "74333804"
   
  [!code-vb[VbVbcnMyFileSystem#111](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class3.vb#111)]  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.IO>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>
-- [チュートリアル: .NET Framework のメソッドによるファイル操作](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)
+- [チュートリアル : .NET Framework のメソッドによるファイル操作](walkthrough-manipulating-files-by-using-net-framework-methods.md)

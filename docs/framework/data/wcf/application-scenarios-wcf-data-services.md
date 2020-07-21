@@ -5,18 +5,18 @@ helpviewer_keywords:
 - WCF Data Services, learn more
 - WCF Data Services, scenarios
 ms.assetid: 7c82658f-e7c0-46b6-834d-6592f67ab5ea
-ms.openlocfilehash: 38bba2e9f63ab6cce0ede1a82658b6a21f5d4a4b
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
-ms.translationtype: MT
+ms.openlocfilehash: 8eb1e6e2a9338230520ebf3aec1c9ba50aa15ed9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569391"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346195"
 ---
 # <a name="application-scenarios-wcf-data-services"></a>アプリケーション シナリオ (WCF Data Services)
 
-WCF Data Services は、データを Open Data Protocol (OData) フィードとして公開および使用するための中核的なシナリオのセットをサポートしています。 このトピックでは、これらのシナリオに関連するトピックを紹介します。
+WCF Data Services では、データを Open Data Protocol (OData) フィードとして公開および使用するための重要なシナリオがサポートされています。 このトピックでは、これらのシナリオに関連するトピックを紹介します。
 
-OData フィードとしてデータベースからリレーショナルデータを公開します。
+データベースからリレーショナル データを OData フィードとして公開する。
 
 - [クイック スタート](quickstart-wcf-data-services.md)
 
@@ -24,7 +24,7 @@ OData フィードとしてデータベースからリレーショナルデー�
 
 - [方法: ADO.NET Entity Framework データ ソースを使用してデータ サービスを作成する](create-a-data-service-using-an-adonet-ef-data-wcf.md)
 
-任意の CLR データクラスを OData フィードとして公開します。
+任意の CLR データ クラスを OData フィードとして公開する。
 
 - [サービスとしてのデータの公開](exposing-your-data-as-a-service-wcf-data-services.md)
 
@@ -32,7 +32,7 @@ OData フィードとしてデータベースからリレーショナルデー�
 
 - [Data Services プロバイダー](data-services-providers-wcf-data-services.md)
 
-.NET Framework ベースのクライアントアプリケーションで OData フィードを使用します。
+.NET Framework ベースのクライアント アプリケーションの OData フィードを使用する。
 
 - [クイック スタート](quickstart-wcf-data-services.md)
 
@@ -40,23 +40,23 @@ OData フィードとしてデータベースからリレーショナルデー�
 
 - [WCF Data Services クライアント ライブラリ](wcf-data-services-client-library.md)
 
-Silverlight ベースのクライアントアプリケーションで OData フィードを使用します。
+Silverlight ベースのクライアント アプリケーションの OData フィードを使用する。
 
 - [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))
 
 - [非同期操作](asynchronous-operations-wcf-data-services.md)
 
-- [方法: データサービスデータをコントロールにバインドする (Silverlight クライアント)](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))
+- [方法: データ サービスのデータのコントロールへのバインド (Silverlight クライアント)](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))
 
-AJAX ベースのクライアントアプリケーションで OData フィードを使用します。
+AJAX ベースのクライアント アプリケーションの OData フィードを使用する。
 
 - [クライアント アプリケーションでのデータ サービスの使用](using-a-data-service-in-a-client-application-wcf-data-services.md)
 
-- [OData: URI 規則](https://go.microsoft.com/fwlink/?LinkId=185564)
+- [OData: URI 規則](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
 
-- [OData: JavaScript Object Notation (JSON) 形式](https://go.microsoft.com/fwlink/?LinkId=185790)
+- [OData: JavaScript Object Notation (JSON) 形式](https://www.odata.org/developers/protocols/json-format/)
 
-OData を使用してクライアントとサーバー間でデータを転送するエンドツーエンドのデータソリューションを作成します。
+OData を使用してクライアントとサーバーの間のデータ送信を行うエンド ツー エンドのデータ ソリューションを作成する。
 
 - [クイック スタート](quickstart-wcf-data-services.md)
 
@@ -64,7 +64,7 @@ OData を使用してクライアントとサーバー間でデータを転送�
 
 - [WCF Data Services クライアント ライブラリ](wcf-data-services-client-library.md)
 
-クライアントでの待機時間の問題を回避するために、OData フィードを非同期的に使用する .NET Framework ベースのクライアントアプリケーションを作成します。
+クライアントの待機時間に伴う問題を回避するために OData フィードを非同期で使用する .NET Framework ベースのクライアント アプリケーションを作成する。
 
 - [方法: 非同期データ サービス クエリを実行する](how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)
 
@@ -72,13 +72,13 @@ OData を使用してクライアントとサーバー間でデータを転送�
 
 - [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))
 
-ストリームとしてアクセスおよび変更されるバイナリラージオブジェクトを使用して、OData フィードを公開および使用します。
+ストリームとしてアクセスおよび変更されるバイナリ ラージ オブジェクトで OData フィードを公開して使用する。
 
 - [ストリーミング プロバイダー](streaming-provider-wcf-data-services.md)
 
 - [バイナリ データの操作](working-with-binary-data-wcf-data-services.md)
 
-Windows Presentation Framework (WPF) アプリケーションのコントロールに OData フィードをバインドします。
+OData フィードを Windows Presentation Framework (WPF) アプリケーションのコントロールにバインドする。
 
 - [コントロールへのデータのバインド](binding-data-to-controls-wcf-data-services.md)
 
@@ -98,7 +98,7 @@ Windows Presentation Framework (WPF) アプリケーションのコントロー�
 
 - [サービス操作](service-operations-wcf-data-services.md)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [クイック スタート](quickstart-wcf-data-services.md)
 - [リソース](wcf-data-services-resources.md)

@@ -3,14 +3,12 @@ title: XSLT エラーの解決
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 32a4875b42c0282ffdb90e3fc825b38af935affb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ada0b352cd867417ed3ecf86291df023ca7c579e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590057"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289097"
 ---
 # <a name="recoverable-xslt-errors"></a>XSLT エラーの解決
 W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を実装者が決定できる事項があります。 このような事項は、随意動作と見なされています。 たとえば、XSLT 1.0 Recommendation は、セクション 7.3「Creating Processing Instructions」で、`xsl:processing-instruction` の内容をインスタンス化したときに、テキスト ノード以外のノードが作成されるのはエラーであるとしています。 いくつかの問題に関しては、プロセッサがエラー状態から回復するときにどのような対処をするべきかを、XSLT 1.0 Recommendation が規定しています。 セクション 7.3 に記述されている問題に関しては、W3C では、作成されたノードとその内容を無視することで、このエラーから回復できるとしています。  
@@ -52,8 +50,8 @@ W3C 勧告『XSL Transformations (XSLT) Version 1.0』には、対処方法を�
 |`value` の `xsl:number` 属性が NAN、無限、または 0.5 未満である。|errata 24|復元|  
 |document 関数への 2 番目の引数ノード セットが空であり、URI 参照が相対 URI 参照である。|errata 14|復元|  
   
- <sup>*</sup> この動作は、<xref:System.Xml.Xsl.XslTransform> クラスの動作とは異なります。 詳細については、「[XslTransform クラスの随意動作の実装](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)」を参照してください。  
+ <sup>*</sup> この動作は、<xref:System.Xml.Xsl.XslTransform> クラスの動作とは異なります。 詳細については、「[XslTransform クラスの随意動作の実装](implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 
-- [XSLT 変換](../../../../docs/standard/data/xml/xslt-transformations.md)
+- [XSLT 変換](xslt-transformations.md)

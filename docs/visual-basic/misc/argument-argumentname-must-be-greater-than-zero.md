@@ -1,17 +1,17 @@
 ---
-title: 引数 '<argumentname>' 0 より大きくなければなりません
+title: 引数 '<argumentname>' は、0 より大きくする必要があります。
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_GTZero1
 ms.assetid: f9939fbd-6c4f-4871-9452-9ea0267e948e
-ms.openlocfilehash: 9c5e2526a46ae155d304c08e1460f9a61111e251
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c44d2cde5f8b78971d1f54cb5ea1eea42c4fdd7e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024431"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84382134"
 ---
-# <a name="argument-argumentname-must-be-greater-than-zero"></a>引数 '\<argumentname >' 0 より大きくなければなりません
+# <a name="argument-argumentname-must-be-greater-than-zero"></a>引数 '\<argumentname>' は、0 より大きくする必要があります。
 引数は 0 以下であるため無効です。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
@@ -22,4 +22,4 @@ ms.locfileid: "62024431"
   
 ## <a name="see-also"></a>関連項目
 
-- [引数の値渡しと参照渡し](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [引数の値渡しと参照渡し](../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

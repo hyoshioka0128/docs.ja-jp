@@ -1,13 +1,14 @@
 ---
 title: LINQ to Entities
+description: LINQ to Entities クエリを作成して実行する方法について説明します。このクエリを使用すると、Visual Basic や Visual C# を使用して Entity Framework 概念モデルに対するクエリを作成できます。
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: bc568cb9dff170062651c908471a36cd17eac980
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
-ms.translationtype: MT
+ms.openlocfilehash: 389a81872f4652c69e2b845359cf4e5a275aed5c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854373"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286845"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 LINQ to Entities は、開発者が Visual Basic または Visual C# を使用して Entity Framework 概念モデルに対するクエリを作成するための統合言語クエリ (LINQ) のサポートを提供します。 Entity Framework に対するクエリで代表的なものが、コマンド ツリー クエリです。これはオブジェクト コンテキストに対して実行されます。 LINQ to Entities では、統合言語クエリ (LINQ) クエリをコマンド ツリー クエリに変換し、そのクエリを Entity Framework に対して実行します。返されたオブジェクトは、Entity Framework でも LINQ でも使用できます。 次に、LINQ to Entities クエリを作成して実行する手順を示します。  
@@ -30,7 +31,7 @@ LINQ to Entities は、開発者が Visual Basic または Visual C# を使用�
   
  LINQ to Entities クエリは、クエリ式の構文とメソッド ベースのクエリ構文という 2 とおりの構文を使って作成できます。 クエリ式の構文とメソッド ベースのクエリ構文は、C# 3.0 と Visual Basic 9.0 で新たに導入された機能です。  
   
- 詳細については、「 [LINQ to Entities のクエリ](queries-in-linq-to-entities.md)」を参照してください。  
+ 詳しくは、「[LINQ to Entities でのクエリ](queries-in-linq-to-entities.md)」をご覧ください。  
   
 ## <a name="query-conversion"></a>クエリの変換  
  LINQ to Entities クエリを Entity Framework に対して実行するには、LINQ クエリを Entity Framework に対して実行できるコマンド ツリー表現に変換する必要があります。  
@@ -39,18 +40,18 @@ LINQ to Entities は、開発者が Visual Basic または Visual C# を使用�
   
  Entity Framework では、演算子と式は 1 つの型の階層で表された後、コマンド ツリーに配置されます。 このコマンド ツリーが、Entity Framework でのクエリの実行に使用されます。 LINQ クエリをコマンド ツリーとして表現できない場合、クエリの変換中に例外がスローされます。 LINQ to Entities クエリを変換する際には、標準クエリ演算子の変換と式の変換という 2 つの変換が実行されます。  
   
- LINQ to Entities で正しく変換されない LINQ 標準クエリ演算子は多数あります。 このような演算子を使用すると、クエリの変換時に例外が発生します。 サポートされている LINQ to Entities 演算子の一覧については、「[サポート対象およびサポート非対象の LINQ メソッド (LINQ to Entities)](supported-and-unsupported-linq-methods-linq-to-entities.md)」を参照してください。  
+ LINQ to Entities で正しく変換されない LINQ 標準クエリ演算子は多数あります。 このような演算子を使用すると、クエリの変換時に例外が発生します。 サポートされている LINQ to Entities の演算子の一覧については、「[サポート対象の LINQ メソッドとサポート非対象の LINQ メソッド (LINQ to Entities)](supported-and-unsupported-linq-methods-linq-to-entities.md)」をご覧ください。  
   
- LINQ to Entities で標準クエリ演算子を使用する方法の詳細については、「 [LINQ to Entities クエリの標準クエリ演算子](standard-query-operators-in-linq-to-entities-queries.md)」を参照してください。  
+ LINQ to Entities の標準クエリ演算子の使用方法の詳細については、「[LINQ to Entities クエリの標準クエリ演算子](standard-query-operators-in-linq-to-entities-queries.md)」をご覧ください。  
   
- 一般的に、LINQ to Entities の式はサーバー上で評価されるため、式の動作が CLR セマンティクスに従っているとは限りません。 詳細については、「 [LINQ to Entities クエリの式](expressions-in-linq-to-entities-queries.md)」を参照してください。  
+ 一般的に、LINQ to Entities の式はサーバー上で評価されるため、式の動作が CLR セマンティクスに従っているとは限りません。 詳しくは、「[LINQ to Entities クエリ内の式](expressions-in-linq-to-entities-queries.md)」をご覧ください。  
   
- CLR メソッドの呼び出しがデータソースの正規関数にどのようにマップされるかについては、「 [Clr メソッドから正規関数](clr-method-to-canonical-function-mapping.md)へのマッピング」を参照してください。  
+ CLR メソッドの呼び出しがデータ ソースの正規関数にどのようにマップされるかについては、「[CLR メソッドと正規関数とのマッピング](clr-method-to-canonical-function-mapping.md)」をご覧ください。  
   
- LINQ to Entities クエリ内から正規、データベース、およびカスタム関数を呼び出す方法については、「 [LINQ to Entities クエリでの関数の呼び出し](calling-functions-in-linq-to-entities-queries.md)」を参照してください。  
+ LINQ to Entities のクエリから正規関数、データベース関数、カスタム関数を呼び出す方法については、「[LINQ to Entities クエリ内の関数の呼び出し](calling-functions-in-linq-to-entities-queries.md)」をご覧ください。  
   
 ## <a name="query-execution"></a>クエリの実行  
- ユーザーが LINQ クエリを作成すると、Entity Framework と互換性のある表現 (コマンド ツリーの形) に変換された後、データ ソースに対して実行されます。 クエリの実行時に、すべてのクエリ式 (またはクエリの構成要素) がクライアントまたはサーバー上で評価されます。 これには、結果の具体化やエンティティの投影で使用される式も含まれます。 詳細については、「[クエリの実行](query-execution.md)」を参照してください。 クエリを一度コンパイルし、異なるパラメーターを使用して何度も実行することによってパフォーマンスを向上させる方法については、「[コンパイル済みクエリ (LINQ to Entities)](compiled-queries-linq-to-entities.md)」を参照してください。  
+ ユーザーが LINQ クエリを作成すると、Entity Framework と互換性のある表現 (コマンド ツリーの形) に変換された後、データ ソースに対して実行されます。 クエリの実行時に、すべてのクエリ式 (またはクエリの構成要素) がクライアントまたはサーバー上で評価されます。 これには、結果の具体化やエンティティの投影で使用される式も含まれます。 詳しくは、「[クエリの実行](query-execution.md)」をご覧ください。 クエリを 1 回コンパイルしてから、異なるパラメーターを使用して数回実行することでパフォーマンスを向上させる方法については、「[コンパイル済みクエリ (LINQ to Entities)](compiled-queries-linq-to-entities.md)」をご覧ください。  
   
 ## <a name="materialization"></a>具体化  
  具体化は、クエリの結果を CLR 型としてクライアントに返すプロセスです。 LINQ to Entities では、クエリの結果のデータ レコードは決して返されません。常に返されるのは、ユーザーまたは Entity Framework で定義された CLR 型、またはコンパイラによって生成される CLR 型 (匿名型) です。 オブジェクトの具体化は、すべて Entity Framework によって実行されます。 Entity Framework と CLR とのマッピングができないことが原因でエラーが発生すると、オブジェクトの具体化中に例外がスローされます。  
@@ -59,13 +60,13 @@ LINQ to Entities は、開発者が Visual Basic または Visual C# を使用�
   
 - 0 個以上の型指定されたエンティティ オブジェクトのコレクション、または概念モデルで定義されている複合型のプロジェクション。  
   
-- Entity Framework によってサポートされる CLR 型。  
+- Entity Framework でサポートされる CLR 型。  
   
 - インライン コレクション。  
   
 - 匿名型。  
   
- 詳細については、「[クエリ結果](query-results.md)」を参照してください。  
+ 詳しくは、「[クエリ結果](query-results.md)」をご覧ください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [LINQ to Entities でのクエリ](queries-in-linq-to-entities.md)  

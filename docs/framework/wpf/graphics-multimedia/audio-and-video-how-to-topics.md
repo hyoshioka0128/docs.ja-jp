@@ -9,13 +9,13 @@ helpviewer_keywords:
 ms.assetid: f7d96707-ffb5-486c-9e85-db6f0d5ac547
 ms.openlocfilehash: 2f46a548f28cffb1824ffbdc51f8d4d79c4c9d02
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61650454"
 ---
 # <a name="audio-and-video-how-to-topics"></a>オーディオとビデオに関する「方法」トピック
-次のトピックを使用する方法について説明、<xref:System.Windows.Controls.MediaElement>アプリケーションでのオーディオおよびビデオ コンテンツを統合します。  
+次のトピックでは、<xref:System.Windows.Controls.MediaElement> を使用して、アプリケーションにオーディオとビデオのコンテンツを統合する方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [MediaElement (再生、一時停止、停止、ボリューム、および速度) を制御する](how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
@@ -25,7 +25,7 @@ ms.locfileid: "61650454"
  [アニメーションを使用してメディアを再生する](how-to-play-media-with-animations.md)  
  [MediaElement で変換を使用する](how-to-use-transforms-on-a-mediaelement.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.MediaElement>  
   
  <xref:System.Windows.Media.MediaPlayer>  

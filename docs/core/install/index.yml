@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Windows、Linux、および macOS に .NET Core をインストールする
+summary: Windows、Linux、macOS の各バージョンに .NET をインストールする方法について説明します。 .NET Core アプリの開発、配置、および実行に必要な依存関係を確認します。
+metadata:
+  title: Windows、Linux、および macOS に .NET Core をインストールする
+  description: Windows、Linux、macOS の各バージョンで、.NET Core をどこにダウンロードしてインストールするかについて説明します。 .NET Core アプリの開発、配置、および実行に必要な依存関係を確認します。
+  ms.topic: landing-page
+  ms.date: 06/29/2020
+  ms.openlocfilehash: dbc159bc4ff2d10bf55bd0c0b4d4e07a8fc04a4a
+  ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 07/01/2020
+  ms.locfileid: "85804009"
+landingContent:
+- title: Windows
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows にインストールする
+      url: windows.md
+    - text: サポートされている Windows リリース
+      url: windows.md#supported-releases
+    - text: 依存関係
+      url: windows.md#dependencies
+    - text: Visual Studio を使用してインストールする
+      url: windows.md#install-with-visual-studio
+    - text: Visual Studio Code と共にインストールする
+      url: windows.md#install-alongside-visual-studio-code
+- title: macOS
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: macOS へのインストール
+      url: macos.md
+    - text: サポートされている macOS リリース
+      url: macos.md#supported-releases
+    - text: 依存関係
+      url: macos.md#dependencies
+    - text: Visual Studio Code と共にインストールする
+      url: macos.md#install-alongside-visual-studio-code
+- title: Linux
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Linux の概要
+      url: linux.md
+    - text: Alpine
+      url: linux-alpine.md
+    - text: CentOS
+      url: linux-centos.md
+    - text: Debian
+      url: linux-debian.md
+    - text: Fedora
+      url: linux-fedora.md
+    - text: openSUSE
+      url: linux-opensuse.md
+    - text: Red Hat Enterprise Linux
+      url: linux-rhel.md
+    - text: SUSE Linux Enterprise Server
+      url: linux-sles.md
+    - text: Ubuntu
+      url: linux-ubuntu.md

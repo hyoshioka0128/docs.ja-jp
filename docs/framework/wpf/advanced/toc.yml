@@ -7,7 +7,7 @@
       href: xaml-in-wpf.md
       items:
         - name: XAML の概要 (WPF)
-          href: xaml-overview-wpf.md
+          href: ../../../desktop-wpf/fundamentals/xaml.md
         - name: XAML 構文の詳細
           href: xaml-syntax-in-detail.md
         - name: WPF における分離コードと XAML
@@ -290,7 +290,7 @@
       href: resources-wpf.md
       items:
         - name: XAML リソース
-          href: xaml-resources.md
+          href: ../../../desktop-wpf/fundamentals/xaml-resources-define.md
           items:
             - name: リソースとコード
               href: resources-and-code.md
@@ -463,24 +463,25 @@
           href: localization-attributes-and-comments.md
         - name: WPF の双方向機能の概要
           href: bidirectional-features-in-wpf-overview.md
-        - name: 方法のトピック
-          href: globalization-and-localization-how-to-topics.md
+        - name: 方法
           items:
-            - name: アプリケーションをローカライズする
+            - name: アプリをローカライズする
               href: how-to-localize-an-application.md
             - name: 自動レイアウトを使用してボタンを作成する
               href: how-to-use-automatic-layout-to-create-a-button.md
             - name: 自動レイアウト用のグリッドを使用する
               href: how-to-use-a-grid-for-automatic-layout.md
-            - name: ResourceDictionary を使用してローカライズ可能な文字列リソースを管理する
+            - name: ResourceDictionary を使用してリソースを管理する
               href: how-to-use-a-resourcedictionary-to-manage-localizable-string-resources.md
-            - name: ローカライズ可能アプリケーションでリソースを使用する
+            - name: ローカライズ可能なアプリでリソースを使用する
               href: how-to-use-resources-in-localizable-applications.md
     - name: レイアウト
       href: layout.md
     - name: 移行と相互運用性
       href: migration-and-interoperability.md
       items:
+        - name: WPF 3.X から WPF 4.5 に移行する
+          href: types-migrated-from-wpf-to-system.md
         - name: WPF と Windows フォームの相互運用性
           href: wpf-and-windows-forms-interoperation.md
           items:

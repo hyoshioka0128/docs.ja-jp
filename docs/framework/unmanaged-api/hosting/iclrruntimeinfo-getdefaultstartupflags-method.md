@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 35c2173e-3b0b-4b2a-950d-e0a01c6df052
 topic_type:
 - apiref
-ms.openlocfilehash: 0ce822533b0699f3467dc08044aa4dab59285a77
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8513787f48ae89632816face386bbcda20555dac
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120311"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83703885"
 ---
 # <a name="iclrruntimeinfogetdefaultstartupflags-method"></a>ICLRRuntimeInfo::GetDefaultStartupFlags メソッド
 ランタイムを開始するために使用されるスタートアップフラグとホスト構成ファイルを取得します。  
@@ -42,7 +42,7 @@ HRESULT GetDefaultStartupFlags(
  入出力現在のホスト構成ファイルのディレクトリパスへのポインター。  
   
  `pcchHostConfigFile`  
- [入力、出力]入力時に、バッファーオーバーランを回避するための `pwzHostConfigFile`のサイズ。 `pwzHostConfigFile` が null の場合、メソッドは、事前割り当てに必要な `pwzHostConfigFile` のサイズを返します。  
+ [入力、出力]入力時には、 `pwzHostConfigFile` バッファーオーバーランを回避するためののサイズ。 `pwzHostConfigFile`が null の場合、メソッドは、 `pwzHostConfigFile` 事前割り当てのために必要なサイズを返します。  
   
 ## <a name="return-value"></a>戻り値  
  このメソッドは、次の特定の HRESULT と、メソッドエラーを示す HRESULT エラーを返します。  
@@ -51,20 +51,20 @@ HRESULT GetDefaultStartupFlags(
 |-------------|-----------------|  
 |S_OK|メソッドは正常に完了しました。|  
   
-## <a name="remarks"></a>Remarks  
- このメソッドは、既定のフラグ値 (`STARTUP_CONCURRENT_GC` と `NULL`)、または[ICLRRuntimeInfo:: SetDefaultStartupFlags メソッド](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-setdefaultstartupflags-method.md)の以前の呼び出しによって提供された値、またはこのランタイムにバインドされている場合は、いずれかの `CorBind*` メソッドによって設定された値を返します。  
+## <a name="remarks"></a>解説  
+ このメソッドは、既定のフラグ値 ( `STARTUP_CONCURRENT_GC` および `NULL` )、または[ICLRRuntimeInfo:: SetDefaultStartupFlags メソッド](iclrruntimeinfo-setdefaultstartupflags-method.md)の以前の呼び出しによって提供された値、または `CorBind*` メソッドがこのランタイムにバインドされている場合は、いずれかのメソッドによって設定された値を返します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** メタホスト .h  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICLRRuntimeInfo インターフェイス](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
-- [ホスト インターフェイス](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [ホスティング](../../../../docs/framework/unmanaged-api/hosting/index.md)
+- [ICLRRuntimeInfo インターフェイス](iclrruntimeinfo-interface.md)
+- [ホスト インターフェイス](hosting-interfaces.md)
+- [ホスティング](index.md)

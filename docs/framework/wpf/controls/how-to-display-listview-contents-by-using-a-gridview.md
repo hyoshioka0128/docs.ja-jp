@@ -7,22 +7,22 @@ helpviewer_keywords:
 ms.assetid: 5bc1e767-ab46-4f14-bd41-3d5d39e1d000
 ms.openlocfilehash: 9b467c95d541c326a41d1ed4bd9eb5c87e25bd5c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61910495"
 ---
 # <a name="how-to-display-listview-contents-by-using-a-gridview"></a>方法: GridView を使用して ListView コンテンツを表示する
-この例は、定義する方法を示します、<xref:System.Windows.Controls.GridView>の表示モード、<xref:System.Windows.Controls.ListView>コントロール。  
+この例からは、<xref:System.Windows.Controls.ListView> コントロールの <xref:System.Windows.Controls.GridView> 表示モードを定義する方法がわかります。  
   
 ## <a name="example"></a>例  
- 表示モードを定義することができます、<xref:System.Windows.Controls.GridView>を指定して<xref:System.Windows.Controls.GridViewColumn>オブジェクト。 次の例は、定義する方法を示します<xref:System.Windows.Controls.GridViewColumn>に対して指定されているデータの内容にバインドするオブジェクト、<xref:System.Windows.Controls.ListView>コントロール。 これは、<xref:System.Windows.Controls.GridView>の例では、3 つを指定します<xref:System.Windows.Controls.GridViewColumn>にマップされているオブジェクト、 `FirstName`、 `LastName`、および`EmployeeNumber`のフィールド、`EmployeeInfoDataSource`として設定されている、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.ListView>コントロール。  
+ <xref:System.Windows.Controls.GridViewColumn> オブジェクトを指定することによって <xref:System.Windows.Controls.GridView> の表示モードを定義できます。 次の例では、<xref:System.Windows.Controls.ListView> コントロールに指定されているデータ コンテンツにバインドされる <xref:System.Windows.Controls.GridViewColumn> オブジェクトを定義する方法を示します。 この <xref:System.Windows.Controls.GridView> の例では、<xref:System.Windows.Controls.ListView> コントロールの <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> として設定される `EmployeeInfoDataSource` の `FirstName`、`LastName`、`EmployeeNumber` フィールドにマッピングされる 3 つの <xref:System.Windows.Controls.GridViewColumn> オブジェクトが指定されます。  
   
  [!code-xaml[ListViewCode#ListViewEmployee](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
   
- 次の図は、この例の表示方法を示します。  
+ この例がどのように表示されるかを次の図に示します。  
   
- ![GridView 出力を含むの ListView を示すスクリーン ショット。](./media/gridview-overview/listview-gridview-output.jpg)  
+ ![GridView の出力が表示された ListView のスクリーンショット。](./media/gridview-overview/listview-gridview-output.jpg)  
   
 ## <a name="see-also"></a>関連項目
 

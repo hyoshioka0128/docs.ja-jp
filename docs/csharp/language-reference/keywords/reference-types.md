@@ -1,6 +1,5 @@
 ---
 title: 参照型 - C# リファレンス
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - cs.referencetypes
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - C# language, reference types
 - types [C#], reference types
 ms.assetid: 801cf030-6e2d-4a0d-9daf-1431b0c31f47
-ms.openlocfilehash: 61b9f8096e1b2093b1ea5589f4336618cd189c34
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b2d6cc94c11ca6305a75e9ee489af53ad957201e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422459"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "76744516"
 ---
 # <a name="reference-types-c-reference"></a>参照型 (C# リファレンス)
 
@@ -36,10 +35,9 @@ C# では、参照型と値型という 2 種類の型をサポートしてい�
 
 - [string](../builtin-types/reference-types.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [C# リファレンス](../index.md)
-- [C# プログラミング ガイド](../../programming-guide/index.md)
 - [C# のキーワード](index.md)
-- [型](/dotnet/csharp/language-reference/keywords)
-- [値型](value-types.md)
+- [ポインター型](../../programming-guide/unsafe-code-pointers/pointer-types.md)
+- [値型](../builtin-types/value-types.md)

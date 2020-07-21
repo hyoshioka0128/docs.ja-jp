@@ -1,5 +1,6 @@
 ---
 title: マネージド スレッド処理のベスト プラクティス
+description: .NET でのマネージド スレッド処理のベスト プラクティスについて説明します。 多数のスレッドの調整やブロッキング スレッドの処理など、困難な状況に対応します。
 ms.date: 10/15/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,18 +11,18 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: 26b0535fa918a802dd0922554ae197ba10396d56
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fa0af1461ba568583127316934b9d55577dd4c5a
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129560"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662824"
 ---
 # <a name="managed-threading-best-practices"></a>マネージド スレッド処理のベスト プラクティス
 マルチスレッドには慎重なプログラミングが必要です。 ほとんどのタスクでは、スレッド プールのスレッドを使って実行の要求をキューに置くことによって、処理の複雑さを軽減できます。 このトピックでは、マルチ スレッド動作の調整や、ブロックするスレッドの処理など、より難しい状況について説明します。  
   
 > [!NOTE]
-> .NET Framework 4 以降では、マルチスレッド プログラミングの複雑さとリスクを軽減する API が Task Parallel Library および PLINQ に用意されています。 詳細については、[.NET の並列プログラミング](../../../docs/standard/parallel-programming/index.md)に関するページをご覧ください。  
+> .NET Framework 4 以降では、マルチスレッド プログラミングの複雑さとリスクを軽減する API が Task Parallel Library および PLINQ に用意されています。 詳細については、[.NET の並列プログラミング](../parallel-programming/index.md)に関するページをご覧ください。  
   
 ## <a name="deadlocks-and-race-conditions"></a>デッドロックと競合状態  
  マルチスレッドはスループットと応答速度の問題を解決しますが、その一方で、デッドロックと競合状態という新たな問題を発生させます。  
@@ -64,7 +65,7 @@ else {
   
  マルチスレッドされたアプリケーションでは、値の読み込みとインクリメントを行ったスレッドが、この 3 つの処理を実行する別のスレッドに先を越される可能性があります。最初のスレッドは、実行を再開して値を格納するとき、待機中に値が変更されたかどうかを考慮せずに、`objCt` の値を上書きしてしまいます。  
   
- このような特定の競合状態は、<xref:System.Threading.Interlocked> など、<xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType> クラスのメソッドを使用することによって容易に回避できます。 複数のスレッド間でデータを同期する他の手法については、「[マルチスレッド処理のためのデータの同期](../../../docs/standard/threading/synchronizing-data-for-multithreading.md)」を参照してください。  
+ このような特定の競合状態は、<xref:System.Threading.Interlocked> など、<xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType> クラスのメソッドを使用することによって容易に回避できます。 複数のスレッド間でデータを同期する他の手法については、「[マルチスレッド処理のためのデータの同期](synchronizing-data-for-multithreading.md)」を参照してください。  
   
  競合状態は、複数のスレッドの動作を同期するときにも発生します。 コードを記述するときには、そのコードの行 (または行を構成する各マシン命令) を実行するスレッドが別のスレッドに追い越された場合に何が起きるのかを考慮しておく必要があります。  
   
@@ -90,7 +91,7 @@ else {
   
 - メイン プログラムから、イベントなどを使用して、ワーカー スレッドの実行を制御しないでください。 ワーカー スレッドの側で、作業ができるようになるまでの待機、作業の実行、および実行終了後のプログラムへの通知を行うように、プログラムをデザインします。 ワーカー スレッドによるブロックを行わない場合は、スレッド プールのスレッドを使用することを考慮します。 ワーカー スレッドがブロックを行う場合は、<xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType> が役立ちます。  
   
-- ロック オブジェクトとして型を使用しないでください。 つまり、C# の `lock(typeof(X))`、Visual Basic の `SyncLock(GetType(X))` などのコードを使用すること、または <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> を <xref:System.Type> オブジェクトと組み合わせて使用することを避けます。 <xref:System.Type?displayProperty=nameWithType> のインスタンスは、1 つの型につきアプリケーション ドメインごとに 1 つのみです。 ロックする型がパブリックの場合、自分以外のコードでもその型をロックできるため、デッドロックになる可能性があります。 詳細については、「[信頼性に関するベスト プラクティス](../../../docs/framework/performance/reliability-best-practices.md)」を参照してください。  
+- ロック オブジェクトとして型を使用しないでください。 つまり、C# の `lock(typeof(X))`、Visual Basic の `SyncLock(GetType(X))` などのコードを使用すること、または <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> を <xref:System.Type> オブジェクトと組み合わせて使用することを避けます。 <xref:System.Type?displayProperty=nameWithType> のインスタンスは、1 つの型につきアプリケーション ドメインごとに 1 つのみです。 ロックする型がパブリックの場合、自分以外のコードでもその型をロックできるため、デッドロックになる可能性があります。 詳細については、「[信頼性に関するベスト プラクティス](../../framework/performance/reliability-best-practices.md)」を参照してください。  
   
 - インスタンスをロックする場合 (たとえば、C# の `lock(this)`、Visual Basic の `SyncLock(Me)`) には注意してください。 アプリケーション内の、その型以外の他のコードがオブジェクトをロックすると、デッドロックが発生する場合があります。  
   
@@ -107,7 +108,7 @@ else {
     ```  
   
     ```csharp  
-    lock(lockObject)   
+    lock(lockObject)
     {  
         myField++;  
     }  
@@ -174,5 +175,5 @@ else {
   
 ## <a name="see-also"></a>関連項目
 
-- [スレッド化](../../../docs/standard/threading/index.md)
-- [スレッドおよびスレッド処理](../../../docs/standard/threading/threads-and-threading.md)
+- [スレッド化](index.md)
+- [スレッドおよびスレッド処理](threads-and-threading.md)

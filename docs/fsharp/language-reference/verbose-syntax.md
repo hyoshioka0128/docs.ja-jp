@@ -1,27 +1,27 @@
 ---
 title: 冗語構文
-description: F#プログラミング言語における verbose 構文と簡易構文の違いについて説明します。
+description: F# プログラミング言語での詳細構文と軽量構文の違いについて説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: 575585b201acc1366980cfc5cf523c4117259084
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 722807695c56beb0d681b95a78ed8cb8c1df3ddf
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421179"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463904"
 ---
 # <a name="verbose-syntax"></a>冗語構文
 
-言語のさまざまな構成要素で使用できる構文には、 *verbose 構文*と*簡易構文*の2つの形式があります。 F# Verbose 構文は一般的に使用されるものではありませんが、インデントの影響が少なくなるという利点があります。 軽量の構文は短く、インデントを使用して、`begin`、`end`、`in`などの追加のキーワードではなく、コンストラクトの開始と終了を通知します。 既定の構文は、簡易構文です。 このトピックでは、軽量F#構文が有効になっていない場合のコンストラクトの構文について説明します。 Verbose 構文は常に有効になっているため、簡易構文を有効にした場合でも、一部のコンストラクトに対して verbose 構文を使用できます。 `#light "off"` ディレクティブを使用して、軽量構文を無効にすることができます。
+F# 言語の多くの構文には、*詳細な構文*と*簡易構文*の 2 種類の構文が用意されています。 詳細な構文は、一般的には使用されませんが、インデントに対する感度が低いという利点があります。 軽量構文は短く、インデントを使用して、 `begin`、`end`などの`in`追加のキーワードではなく、コンストラクトの先頭と末尾を通知します。 既定の構文は、簡易構文です。 このトピックでは、簡易構文が有効でない場合の F# コンストラクトの構文について説明します。 詳細構文は常に有効であるため、簡易構文を有効にしても、一部の構文では詳細構文を使用できます。 ディレクティブを使用して、簡易構文を`#light "off"`無効にすることができます。
 
-## <a name="table-of-constructs"></a>構造体の表
+## <a name="table-of-constructs"></a>コンストラクトの表
 
-次の表は、2つの形式のF#間に違いがあるコンテキストでの言語構成要素の簡易構文と詳細な構文を示しています。 この表では、山かっこ (&lt;&gt;) は、ユーザーが指定した構文要素を囲みます。 これらのコンストラクトで使用される構文の詳細については、各言語構成要素のドキュメントを参照してください。
+次の表は、2 つの形式の間に違いがあるコンテキストでの F# 言語構成要素の軽量構文と詳細構文を示しています。 この表では、山かっこ (&lt;&gt;) でユーザーが指定した構文要素を囲みます。 これらの構文で使用される構文の詳細については、各言語構成要素のドキュメントを参照してください。
 
 <table>
 <tr>
-<th>言語構成要素</th>
-<th>簡易構文</th>
-<th>Verbose 構文</th>
+<th>言語構成</th>
+<th>軽量構文</th>
+<th>詳細構文</th>
 </tr>
 <tr>
 <td>
@@ -30,8 +30,8 @@ ms.locfileid: "73421179"
 <td>
 
 ```xml
-<expression1>
-<expression2>
+<expression1 />
+<expression2 />
 ```
 
 </td><td>
@@ -44,7 +44,7 @@ ms.locfileid: "73421179"
 </tr>
 <tr><td>
 
-入れ子になった `let` バインド
+ネストされた`let`バインディング
 
 </td><td>
 
@@ -67,7 +67,7 @@ let f x =
 </td>
 </tr>
 <tr><td>
-コードブロック
+コード ブロック
 </td><td>
 
 ```fsharp
@@ -164,7 +164,7 @@ in
 
 </td>
 </tr>
-<tr><td>録音
+<tr><td>レコード (record)
 </td><td>
 
 ```fsharp
@@ -189,7 +189,7 @@ type <record-name> =
 
 </td>
 </tr>
-<tr><td>クラス
+<tr><td>class
 </td><td>
 
 ```fsharp
@@ -208,7 +208,7 @@ type <class-name>(<params>) =
 
 </td>
 </tr>
-<tr><td>構造体</td><td>
+<tr><td>structure</td><td>
 
 ```fsharp
 [<StructAttribute>]
@@ -227,7 +227,7 @@ type <structure-name> =
 
 </td>
 </tr>
-<tr><td>判別共用体</td><td>
+<tr><td>差別化組合</td><td>
 
 ```fsharp
 type <union-name> =
@@ -311,7 +311,7 @@ interface <interface-name>
 
 </td>
 </tr>
-<tr><td>型拡張</td><td>
+<tr><td>型拡張子</td><td>
 
 ```fsharp
 type <type-name>

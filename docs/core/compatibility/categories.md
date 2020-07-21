@@ -1,25 +1,24 @@
 ---
-title: 破壊的変更のカテゴリ - .NET Core
-description: .NET Core での破壊的変更のカテゴリの分類方法について説明します。
+title: 互換性
+description: コードの変更が .NET の互換性に影響を与えるしくみについて説明します。
 ms.date: 06/10/2019
-ms.openlocfilehash: 4569c1ab19cb9bfa3e16aa8d5f941705eb926fa7
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 1cf14b7ff4143367653bd1c305cc1dda6711f980
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567919"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415694"
 ---
-# <a name="breaking-change-categories"></a>破壊的変更のカテゴリ
+# <a name="how-code-changes-can-affect-compatibility"></a>コード変更が互換性に影響を与えるしくみ
 
-"*互換性*" とは、コードが最初に開発されたときのものとは異なる .NET 実装のバージョンで、コードがコンパイルまたは実行できることを指します。 特定の変更があると、6 つの異なる方法で互換性に影響する場合があります。 互換性を評価するときに考慮される[変更の個々の種類](index.md)は、次の 5 つのカテゴリに分類できます。
+"*互換性*" とは、コードが最初に開発されたときのものとは異なる .NET 実装のバージョンで、コードがコンパイルまたは実行できることを指します。 [特定の変更](index.md)があると、6 つの異なる方法で互換性に影響する場合があります。
 
 - [動作の変更](#behavioral-change)
 - [バイナリの互換性](#binary-compatibility)
 - [ソースの互換性](#source-compatibility)
 - [デザイン時の互換性](#design-time-compatibility)
 - [下位互換性](#backwards-compatibility)
-
-[上位互換性](#forward-compatibility)は .NET Core の目標ではありません。
+- [上位互換性](#forward-compatibility) (.NET Core の目標ではありません)
 
 ## <a name="behavioral-change"></a>動作の変更
 
@@ -43,7 +42,7 @@ ms.locfileid: "74567919"
 
 下位互換性とは、API の既存のコンシューマーが、新しいバージョンに対して同じ動作で実行できることを指します。 動作の変更とバイナリの互換性の変更の両方が、下位互換性に影響します。 コンシューマーがその API の新しいバージョンで実行されるときに、実行できない、または動作が異なる場合、その API は "*下位非互換*" です。
 
-開発者は新しいバージョンの API が既定で下位互換であることを期待しているので、下位互換性に影響する変更は行わないことを強く推奨します。
+開発者は新しいバージョンの API が下位互換であることを期待しているので、下位互換性に影響する変更は行わないことを推奨します。
 
 ## <a name="forward-compatibility"></a>上位互換性
 

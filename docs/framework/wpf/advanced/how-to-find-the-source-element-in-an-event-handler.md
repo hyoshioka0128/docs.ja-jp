@@ -10,16 +10,16 @@ helpviewer_keywords:
 ms.assetid: 85f71c5a-b714-4c65-9711-7d905c2bbe98
 ms.openlocfilehash: 9a49878c9ad8313903df4506796998fd43e2e749
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61757509"
 ---
 # <a name="how-to-find-the-source-element-in-an-event-handler"></a>方法: イベント ハンドラーでソース要素を検索する
-この例では、イベント ハンドラーでソース要素を検索する方法を示します。  
+この例からは、イベント ハンドラーでソース要素を検索する方法がわかります。  
   
 ## <a name="example"></a>例  
- 次の例は、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>分離コード ファイルで宣言されているイベント ハンドラー。 ハンドラーがアタッチされているボタンをクリックすると、ハンドラーは、プロパティ値を変更します。 ハンドラー コードを使用して、<xref:System.Windows.RoutedEventArgs.Source%2A>のルーティング イベントのデータを変更するイベントの引数で報告されるプロパティ、<xref:System.Windows.FrameworkElement.Width%2A>プロパティ値、<xref:System.Windows.RoutedEventArgs.Source%2A>要素。  
+ 次の例では、分離コード ファイルで宣言されている <xref:System.Windows.Controls.Primitives.ButtonBase.Click> イベント ハンドラーを示します。 ハンドラーが添付されているボタンをユーザーがクリックすると、ハンドラーのプロパティ値が変わります。 ハンドラー コードでは、イベント引数で報告されるルーティング イベントの <xref:System.Windows.RoutedEventArgs.Source%2A> プロパティを使用し、<xref:System.Windows.RoutedEventArgs.Source%2A> 要素の <xref:System.Windows.FrameworkElement.Width%2A> プロパティ値を変更します。  
   
  [!code-xaml[RoutedEventSource#XAMLHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventSource/CSharp/default.xaml#xamlhandler)]  
   

@@ -3,20 +3,20 @@ title: <filterTable>
 ms.date: 03/30/2017
 ms.assetid: e9f05441-3ad1-49b9-a267-71724aa094b4
 ms.openlocfilehash: 918a365004efea82f4ef4c8868f6821d4bb6da18
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855193"
 ---
-# <a name="filtertable"></a>\<filterTable >
-メッセージを評価するフィルターの一覧と、フィルターが true と評価された場合にメッセージのルーティング先となるクライアントエンドポイントを含むルーティングテーブルを表します。  
+# \<filterTable>
+メッセージを評価するフィルターの一覧と、フィルターが true に評価された場合にメッセージをルーティングするクライアント エンドポイントを格納するルーティング テーブルを表します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ルーティング >** ](routing.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<filterTables >** ](filtertables.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<filterTable >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<routing>**](routing.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<filterTables>**](filtertables.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<filterTable>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -54,7 +54,7 @@ ms.locfileid: "70855193"
   
 |要素|説明|  
 |-------------|-----------------|  
-|[\<ルーティング >](routing.md)|ルーティング テーブルを含む構成セクション。|  
+|[\<routing>](routing.md)|ルーティング テーブルを含む構成セクション。|  
   
 ## <a name="see-also"></a>関連項目
 

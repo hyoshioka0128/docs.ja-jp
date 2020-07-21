@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Unicode, file encoding
 - file encoding
 ms.assetid: ea2c5f5f-bbb1-4150-9928-b9951fa6bc57
-ms.openlocfilehash: 52770187568d0ba0f54ec36ee2c3d754a9b4d9a8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f906b2f2d747a7950c70a24549bbf5423e5b87b4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348892"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401746"
 ---
 # <a name="file-encodings-visual-basic"></a>ファイル エンコーディング (Visual Basic)
 
@@ -30,7 +30,7 @@ ms.locfileid: "74348892"
 
 <xref:System.Text.Encoding> クラスは文字エンコーディングを表します。 次の表は、利用可能なエンコーディングの型の一覧とそれぞれの説明です。
 
-|name|説明|
+|name|[説明]|
 |---|---|
 |<xref:System.Text.ASCIIEncoding>|Unicode 文字の ASCII 文字エンコードを表します。|
 |<xref:System.Text.UnicodeEncoding>|Unicode 文字の UTF-16 エンコーディングを表します。|
@@ -38,7 +38,7 @@ ms.locfileid: "74348892"
 |<xref:System.Text.UTF7Encoding>|Unicode 文字の UTF-7 エンコードを表します。|
 |<xref:System.Text.UTF8Encoding>|Unicode 文字の UTF-8 エンコードを表します。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [ファイルの読み取り](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [ファイルへの書き込み](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [ファイルの読み取り](reading-from-files.md)
+- [ファイルへの書き込み](writing-to-files.md)

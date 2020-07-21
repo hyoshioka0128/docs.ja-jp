@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Visual Basic code, directives
 - directives
 ms.assetid: 20d5fe65-490a-4c23-88c2-ee4f490ed762
-ms.openlocfilehash: b5e857198351b30c0d7a38dce1a9e6d1209b5258
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
-ms.translationtype: MT
+ms.openlocfilehash: b5fcf3cb8801bc99dd2096c28cc41ebefeb34592
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838144"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "85503815"
 ---
 # <a name="directives-visual-basic"></a>ディレクティブ (Visual Basic)
 
@@ -19,15 +19,15 @@ ms.locfileid: "74838144"
   
 ## <a name="in-this-section"></a>このセクションの内容  
 
- [#Const ディレクティブ](../../../visual-basic/language-reference/directives/const-directive.md)--コンパイラ定数を定義します。  
+ [#Const ディレクティブ](const-directive.md) -- コンパイラ定数を定義します  
   
- [#ExternalSource ディレクティブ](../../../visual-basic/language-reference/directives/externalsource-directive.md)--ソース行とソース外部のテキストとの間のマッピングを示します。  
+ [#ExternalSource ディレクティブ](externalsource-directive.md) -- ソース行とソース外部のテキストのマッピングを指定します  
   
- [#If...次に... #Else ディレクティブ](../../../visual-basic/language-reference/directives/if-then-else-directives.md)--選択したコードブロックをコンパイルします  
+ [#If...Then...#Else ディレクティブ](if-then-else-directives.md) -- 選択したコード ブロックをコンパイルします  
   
- [#Region ディレクティブ](../../../visual-basic/language-reference/directives/region-directive.md)--Visual Studio エディターでコードのセクションを折りたたんで非表示にします  
+ [#Region ディレクティブ](region-directive.md) -- Visual Studio エディターでコードのセクションを折りたたんで非表示にします  
   
- **#Disable、#Enable** --コードの領域に対して特定の警告を有効または無効にします。  
+ **#Disable、#Enable** -- コードの領域に対して特定の警告を無効および有効にします。  
   
 ```vb  
 #Disable Warning BC42356 ' suppress warning about no awaits in this method  
@@ -39,7 +39,7 @@ ms.locfileid: "74838144"
   
  警告コードのコンマ区切りリストを無効および有効にすることもできます。  
   
-## <a name="related-sections"></a>関連セクション  
+## <a name="related-sections"></a>関連項目  
 
- [Visual Basic の言語リファレンス](../../../visual-basic/language-reference/index.md)  
+ [Visual Basic の言語リファレンス](../index.md)  
   

@@ -27,12 +27,12 @@ helpviewer_keywords:
 - security, profiling API considerations
 - stack depth [.NET Framework profiling]
 ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
-ms.openlocfilehash: 08015e2e5918ca64f601ec912a906cfb6319ed6c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3836b562d969726a6587d702d3edf45abb147d10
+ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427097"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588507"
 ---
 # <a name="profiling-overview"></a>プロファイリングの概要
 
@@ -46,26 +46,26 @@ CLR アプリケーションのプロファイリングには、通常のコン�
 
 ## <a name="the-profiling-api"></a>プロファイル API
 
-Typically, the profiling API is used to write a *code profiler*, which is a program that monitors the execution of a managed application.
+通常、プロファイル API は、マネージ アプリケーションの実行を監視するプログラムである*コード プロファイラー*を作成するために使用されます。
 
-プロファイル API は、プロファイラー DLL によって使用されます。プロファイラー DLL は、プロファイリング対象アプリケーションと同じプロセスに読み込まれます。 The profiler DLL implements a callback interface ([ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) in the .NET Framework version 1.0 and 1.1, [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) in version 2.0 and later). CLR は、このインターフェイス内のメソッドを呼び出して、プロファイリングされたプロセスのイベントをプロファイラーに通知します。 The profiler can call back into the runtime by using the methods in the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) and [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) interfaces to obtain information about the state of the profiled application.
+プロファイル API は、プロファイラー DLL によって使用されます。プロファイラー DLL は、プロファイリング対象アプリケーションと同じプロセスに読み込まれます。 プロファイラー DLL はコールバック インターフェイスを実装しています[(.NET](icorprofilercallback-interface.md) Framework バージョン 1.0 および 1.1 の[ICorProfilerCallback2](icorprofilercallback2-interface.md)バージョン 2.0 以降)。 CLR は、このインターフェイス内のメソッドを呼び出して、プロファイリングされたプロセスのイベントをプロファイラーに通知します。 プロファイラーは、プロファイルされたアプリケーションの状態に関する情報を取得する[ICorProfilerInfo](icorprofilerinfo-interface.md)および[ICorProfilerInfo2](icorprofilerinfo2-interface.md)インターフェイスのメソッドを使用して、ランタイムにコールバックできます。
 
 > [!NOTE]
 > プロファイリングされたアプリケーションと同じプロセスで実行するのは、プロファイラー ソリューションのデータ収集の部分だけにしてください。 ユーザー インターフェイスとデータ分析は、すべて別のプロセスで実行する必要があります。
 
 次の図は、プロファイラー DLL がプロファイリング対象アプリケーションおよび CLR とやり取りする方法を示しています。
 
-![Screenshot that shows the profiling architecture.](./media/profiling-overview/profiling-architecture.png)
+![プロファイルのアーキテクチャを示すスクリーンショット。](./media/profiling-overview/profiling-architecture.png)
 
 ### <a name="the-notification-interfaces"></a>通知インターフェイス
 
-[ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) and [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) can be considered notification interfaces. These interfaces consist of methods such as [ClassLoadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md), [ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md), and [JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md). クラスのロードまたはアンロード、関数のコンパイルなどを行うたびに、プロファイラーの `ICorProfilerCallback` インターフェイスまたは `ICorProfilerCallback2` インターフェイスの対応するメソッドが呼び出されます。
+[通知インターフェイス](icorprofilercallback-interface.md)[と見](icorprofilercallback2-interface.md)なすことができます。 これらのインターフェイス[は、](icorprofilercallback-classloadfinished-method.md)[次](icorprofilercallback-classloadstarted-method.md)のようなメソッドで構成[されます。](icorprofilercallback-jitcompilationstarted-method.md) クラスのロードまたはアンロード、関数のコンパイルなどを行うたびに、プロファイラーの `ICorProfilerCallback` インターフェイスまたは `ICorProfilerCallback2` インターフェイスの対応するメソッドが呼び出されます。
 
-For example, a profiler could measure code performance through two notification functions: [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) and [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md). この場合は、各通知のタイムスタンプを記録し、結果を累積して、アプリケーションの実行時に CPU またはウォール クロック時間を最も多く使用した関数を示す一覧を出力します。
+たとえば、プロファイラーは、2 つの通知関数を使用してコードのパフォーマンスを測定できます: [FunctionEnter2](functionenter2-function.md)と[FunctionLeave2](functionleave2-function.md)。 この場合は、各通知のタイムスタンプを記録し、結果を累積して、アプリケーションの実行時に CPU またはウォール クロック時間を最も多く使用した関数を示す一覧を出力します。
 
 ### <a name="the-information-retrieval-interfaces"></a>情報取得インターフェイス
 
-The other main interfaces involved in profiling are [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) and [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md). プロファイラーは、分析に役立つ追加情報を取得する必要がある場合に、これらのインターフェイスを呼び出します。 For example, whenever the CLR calls the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) function, it supplies a function identifier. The profiler can get more information about that function by calling the [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) method to discover the function's parent class, its name, and so on.
+プロファイリングに関連する他の主要なインターフェイスは[、ICorProfilerInfo](icorprofilerinfo-interface.md)と[ICorProfilerInfo2 です](icorprofilerinfo2-interface.md)。 プロファイラーは、分析に役立つ追加情報を取得する必要がある場合に、これらのインターフェイスを呼び出します。 たとえば、CLR 関数関数を呼び出すたびに[、関数](functionenter2-function.md)識別子が提供されます。 プロファイラーは、[関数の親](icorprofilerinfo2-getfunctioninfo2-method.md)クラス、名前などを検出するメソッドを呼び出すことによって、その関数に関する詳細情報を取得できます。
 
 ## <a name="supported-features"></a>サポートされている機能
 
@@ -105,7 +105,7 @@ The other main interfaces involved in profiling are [ICorProfilerInfo](../../../
 
 API は、CPU とメモリの消費に関しては効率的です。 プロファイルを実行しても、誤った結果をもたらすほどの大きい変化がプロファイリング対象のアプリケーションで発生することはありません。
 
-プロファイル API は、サンプリング プロファイラーと非サンプリング プロファイラーの両方に役立ちます。 A *sampling profiler* inspects the profile at regular clock ticks, say, at 5 milliseconds apart. A *non-sampling profiler* is informed of an event synchronously with the thread that causes the event.
+プロファイル API は、サンプリング プロファイラーと非サンプリング プロファイラーの両方に役立ちます。 *サンプリング プロファイラー*は、通常のクロック ティックでプロファイルを検査します (たとえば、5 ミリ秒離れた状態)。 *非サンプリング プロファイラー*は、イベントを発生させるスレッドと同期的にイベントを通知されます。
 
 ### <a name="unsupported-functionality"></a>サポートされていない機能
 
@@ -123,13 +123,11 @@ API は、CPU とメモリの消費に関しては効率的です。 プロフ�
 
   - CLR コード プロファイラーは、プロファイリング対象のアプリケーションが実行しているローカル コンピューターのランタイムに、1 つ以上のコールバック インターフェイスを登録する必要があります。 これにより、リモート コード プロファイラーの作成が制限されます。
 
-- 高可用性が必要な稼働環境でのプロファイル。 プロファイル API は、開発時の診断をサポートするために作成された API です。 稼働環境をサポートするために必要な厳密なテストは実施されていません。
-
 ## <a name="notification-threads"></a>通知スレッド
 
-通常は、イベントを生成するスレッドが通知も実行します。 Such notifications (for example, [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) and [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md)) do not need to supply the explicit `ThreadID`. また、プロファイラーでは、グローバル ストレージに分析ブロックのインデックスを作成するのではなく、影響を受けるスレッドの `ThreadID` を基に、スレッド ローカル ストレージを使用して分析ブロックを格納および更新する方法を採用する場合があります。
+通常は、イベントを生成するスレッドが通知も実行します。 このような通知 ([たとえば、FunctionEnter](functionenter-function.md)や[FunctionLeave)](functionleave-function.md)は、明示的`ThreadID`な . また、プロファイラーでは、グローバル ストレージに分析ブロックのインデックスを作成するのではなく、影響を受けるスレッドの `ThreadID` を基に、スレッド ローカル ストレージを使用して分析ブロックを格納および更新する方法を採用する場合があります。
 
-これらのコールバックはシリアル化されないことに注意してください。 ユーザーは、スレッド セーフなデータ構造を作成すると共に、必要に応じてプロファイラー コードをロックして、複数のスレッドからの並行アクセスを防ぐことで、コードを保護する必要があります。 そのため、状況によっては、通常とは異なるシーケンスでコールバックを受け取る場合があります。 たとえば、マネージド アプリケーションで、まったく同じコードを実行する 2 つのスレッドを生成するとします。 In this case, it is possible to receive a [ICorProfilerCallback::JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) event for some function from one thread and a `FunctionEnter` callback from the other thread before receiving the [ICorProfilerCallback::JITCompilationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md) callback. この場合、ユーザーは、まだ完全に Just-In-Time (JIT) コンパイルが行われていない可能性がある関数についての `FunctionEnter` コールバックを受け取ります。
+これらのコールバックはシリアル化されないことに注意してください。 ユーザーは、スレッド セーフなデータ構造を作成すると共に、必要に応じてプロファイラー コードをロックして、複数のスレッドからの並行アクセスを防ぐことで、コードを保護する必要があります。 そのため、状況によっては、通常とは異なるシーケンスでコールバックを受け取る場合があります。 たとえば、マネージド アプリケーションで、まったく同じコードを実行する 2 つのスレッドを生成するとします。 この場合、あるスレッドから一部の関数の[ICorProfilerCallback::JITCompilationStarted](icorprofilercallback-jitcompilationstarted-method.md)イベントを受け取り`FunctionEnter`、もう一方のスレッドからのコールバックを受け取ってから、コールバックを受け取[ることができます](icorprofilercallback-jitcompilationfinished-method.md)。 この場合、ユーザーは、まだ完全に Just-In-Time (JIT) コンパイルが行われていない可能性がある関数についての `FunctionEnter` コールバックを受け取ります。
 
 ## <a name="security"></a>セキュリティ
 
@@ -145,9 +143,9 @@ CLR プロファイル API をレビューすると、マネージド コンポ�
 
 これは設計上は可能ですが、プロファイル API はマネージド コンポーネントをサポートしていません。 CLR プロファイラーは完全にアンマネージにする必要があります。 CLR プロファイラーでマネージド コードとアンマネージド コードを組み合わせようとすると、アクセス違反、プログラム エラー、またはデッドロックが発生する可能性があります。 プロファイラーのマネージド コンポーネントからアンマネージド コンポーネントに対してイベントが生成され、そのイベントでマネージド コンポーネントが再度呼び出されて、循環参照が発生することになります。
 
-CLR プロファイラーがマネージド コードを安全に呼び出すことができる唯一の場所は、Microsoft Intermediate Language (MSIL) で表されたメソッドの本体です。 The recommended practice for modifying the MSIL body is to use the  JIT recompilation methods in the [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interface.
+CLR プロファイラーがマネージド コードを安全に呼び出すことができる唯一の場所は、Microsoft Intermediate Language (MSIL) で表されたメソッドの本体です。 MSIL 本体を変更する場合の推奨される方法は[、ICorProfilerCallback4](icorprofilercallback4-interface.md)インターフェイスで JIT 再コンパイル メソッドを使用することです。
 
-また、MSIL を変更するために古いインストルメンテーション メソッドを使用することもできます。 Before the just-in-time (JIT) compilation of a function is completed, the profiler can insert managed calls in the MSIL body of a method and then JIT-compile it (see the [ICorProfilerInfo::GetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbody-method.md) method). この方法で、マネージド コードの選択的インストルメンテーションや、JIT に関する統計およびパフォーマンス データの収集を行うことができます。
+また、MSIL を変更するために古いインストルメンテーション メソッドを使用することもできます。 関数のジャスト イン タイム (JIT) コンパイルが完了する前に、プロファイラーはメソッドの MSIL 本体にマネージ呼び出しを挿入し、それを JIT コンパイルできます[(ICorProfilerInfo::GetILFunctionBody](icorprofilerinfo-getilfunctionbody-method.md)メソッドを参照)。 この方法で、マネージド コードの選択的インストルメンテーションや、JIT に関する統計およびパフォーマンス データの収集を行うことができます。
 
 または、コード プロファイラーを使用して、アンマネージド コードを呼び出すすべてのマネージド関数の MSIL 本体にネイティブ フックを挿入することもできます。 この方法は、インストルメンテーションやカバレッジに使用できます。 たとえば、コード プロファイラーで各 MSIL ブロックの後ろにインストルメンテーション フックを挿入すると、そのブロックが実行されたことを確認できます。 メソッドの MSIL 本体の変更には細心の注意が要求され、多くの要素を検討する必要があります。
 
@@ -161,11 +159,11 @@ CLR プロファイラーがマネージド コードを安全に呼び出すこ
 
 .NET Framework Versions 1.0 および 1.1 では、これらのメソッドは CLR デバッグ API のインプロセス サブセットを通して使用することができます。 これらは CorDebug.idl ファイルに定義されています。
 
-In the .NET Framework 2.0 and later, you can use the [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method for this functionality.
+NET Framework 2.0 以降では、この機能の[ICorProfilerInfo2::DoStackSnapshot](icorprofilerinfo2-dostacksnapshot-method.md)メソッドを使用できます。
 
 ## <a name="using-com"></a>COM の使用
 
-プロファイリングのインターフェイスは COM インターフェイスとして定義されますが、共通言語ランタイム (CLR: Common Language Runtime) は、これらのインターフェイスを使用するための COM の初期化を行いません。 The reason is to avoid having to set the threading model by using the [CoInitialize](/windows/desktop/api/objbase/nf-objbase-coinitialize) function before the managed application has had a chance to specify its desired threading model. 同様に、プロファイラーでも、プロファイリング対象アプリケーションと互換性のないスレッド処理モデルが選択されてアプリケーション エラーが発生する可能性を避けるために、`CoInitialize` を呼び出さないようにする必要があります。
+プロファイリングのインターフェイスは COM インターフェイスとして定義されますが、共通言語ランタイム (CLR: Common Language Runtime) は、これらのインターフェイスを使用するための COM の初期化を行いません。 その理由は、マネージ アプリケーションが目的のスレッド モデルを指定する機会が得られる前に[、CoInitialize](/windows/desktop/api/objbase/nf-objbase-coinitialize)関数を使用してスレッド モデルを設定する必要がなくなります。 同様に、プロファイラーでも、プロファイリング対象アプリケーションと互換性のないスレッド処理モデルが選択されてアプリケーション エラーが発生する可能性を避けるために、`CoInitialize` を呼び出さないようにする必要があります。
 
 ## <a name="call-stacks"></a>呼び出し履歴
 
@@ -175,11 +173,11 @@ In the .NET Framework 2.0 and later, you can use the [ICorProfilerInfo2::DoStack
 
 スタック スナップショットは、ある特定の時点でのスレッドのスタックのトレースです。 プロファイル API はスタックでのマネージド関数のトレースをサポートしますが、アンマネージド 関数のトレースはプロファイラー独自のスタック ウォーカーで処理する必要があります。
 
-For more information about how to program the profiler to walk managed stacks, see the [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method in this documentation set, and [Profiler Stack Walking in the .NET Framework 2.0: Basics and Beyond](https://go.microsoft.com/fwlink/?LinkId=73638).
+マネージ スタックをウォークするようにプロファイラーをプログラムする方法の詳細については、このドキュメント セット[の ICorProfilerInfo2::DoStackSnapshot](icorprofilerinfo2-dostacksnapshot-method.md)メソッド、および[.NET Framework 2.0 のプロファイラー スタック ウォーク: 基本とそれ以降](https://docs.microsoft.com/previous-versions/dotnet/articles/bb264782(v=msdn.10))」を参照してください。
 
 ### <a name="shadow-stack"></a>シャドウ スタック
 
-スナップショット方式を頻繁に使用すると、すぐにパフォーマンスの問題につながる可能性があります。 If you want to take stack traces frequently, your profiler should instead build a shadow stack by using the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md), and [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) exception callbacks. シャドウ スタックは常に最新であり、スタック スナップショットが必要なときいつでも簡単にストレージにコピーできます。
+スナップショット方式を頻繁に使用すると、すぐにパフォーマンスの問題につながる可能性があります。 スタック トレースを頻繁に取得する場合は、代わりに、プロファイラーは[、関数Enter2、](functionenter2-function.md)[関数Leave2、関数](functionleave2-function.md)[Tailcall2](functiontailcall2-function.md)、および[ICorProfilerCallback2](icorprofilercallback2-interface.md)例外コールバックを使用してシャドウ スタックを構築する必要があります。 シャドウ スタックは常に最新であり、スタック スナップショットが必要なときいつでも簡単にストレージにコピーできます。
 
 シャドウ スタックでは、関数の引数、戻り値、およびジェネリックなインスタンス化に関する情報を取得できます。 この情報は、シャドウ スタックを通してのみ使用でき、制御が関数に渡されたときに取得できます。 ただし、後から関数の実行中にこの情報を使用することはできません。
 
@@ -189,10 +187,10 @@ For more information about how to program the profiler to walk managed stacks, s
 
 ## <a name="related-topics"></a>関連トピック
 
-|Title|説明|
+|タイトル|説明|
 |-----------|-----------------|
-|[プロファイル環境の設定](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)|プロファイラーを初期化し、イベント通知を設定して、Windows サービスをプロファイリングする方法について説明します。|
-|[プロファイリングのインターフェイス](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)|プロファイル API で使用されるアンマネージ インターフェイスについて説明します。|
-|[グローバル静的関数のプロファイル](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)|プロファイル API で使用されるアンマネージ グローバル静的関数について説明します。|
-|[列挙型のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)|プロファイル API で使用されるアンマネージ列挙体について説明します。|
-|[構造体のプロファイリング](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)|プロファイル API で使用されるアンマネージ構造体について説明します。|
+|[プロファイル環境の設定](setting-up-a-profiling-environment.md)|プロファイラーを初期化し、イベント通知を設定して、Windows サービスをプロファイリングする方法について説明します。|
+|[プロファイリングのインターフェイス](profiling-interfaces.md)|プロファイル API で使用されるアンマネージ インターフェイスについて説明します。|
+|[グローバル静的関数のプロファイル](profiling-global-static-functions.md)|プロファイル API で使用されるアンマネージ グローバル静的関数について説明します。|
+|[列挙体のプロファイリング](profiling-enumerations.md)|プロファイル API で使用されるアンマネージ列挙体について説明します。|
+|[構造体のプロファイリング](profiling-structures.md)|プロファイル API で使用されるアンマネージ構造体について説明します。|

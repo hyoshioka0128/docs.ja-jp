@@ -1,5 +1,5 @@
 ---
-title: '方法: BitmapImage を使用します。'
+title: '方法: BitmapImage を使用する'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: 5a5733aa-396d-4d72-b0c3-77f8c25d9a42
 ms.openlocfilehash: fa5842040876754d5f0d358258f1eab7d09d79c9
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61769318"
 ---
-# <a name="how-to-use-a-bitmapimage"></a>方法: BitmapImage を使用します。
-この例は、使用する方法を示します、<xref:System.Windows.Media.Imaging.BitmapImage>のソースとして、<xref:System.Windows.Controls.Image>制御[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]します。  
+# <a name="how-to-use-a-bitmapimage"></a>方法: BitmapImage を使用する
+この例では、[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] で <xref:System.Windows.Controls.Image> コントロールのソースとして <xref:System.Windows.Media.Imaging.BitmapImage> を使用する方法を示します。  
   
 ## <a name="example"></a>例  
  [!code-xaml[ImageElementExample_snip#ImageSimpleExampleInlineMarkup](~/samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/ImageSimpleExample.xaml#imagesimpleexampleinlinemarkup)]  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bdda4bd7-4743-4d58-a22b-8067e967db95
 topic_type:
 - apiref
-ms.openlocfilehash: 1190f83e2671216cf1627eeb710ba576e4b2ec93
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c2e8aaa2774e3e2699a73c40804391ca245047b1
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125355"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976591"
 ---
 # <a name="icordebugcontrollersetallthreadsdebugstate-method"></a>ICorDebugController::SetAllThreadsDebugState メソッド
 プロセス内のすべてのマネージスレッドのデバッグ状態を設定します。  
@@ -42,15 +42,15 @@ HRESULT SetAllThreadsDebugState (
  からデバッグ状態設定から除外されるスレッドを表す "のスレッド" オブジェクトへのポインター。 この値が null の場合、スレッドは除外されません。  
   
 ## <a name="remarks"></a>Remarks  
- `SetAllThreadsDebugState` メソッドは、 [EnumerateThreads メソッド](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-enumeratethreads-method.md)によって表示されないスレッドに影響を与える可能性があります。そのため、`SetAllThreadsDebugState` メソッドで中断されたスレッドは、`SetAllThreadsDebugState` メソッドを使用して再開する必要があります。  
+ メソッド`SetAllThreadsDebugState`は、 [EnumerateThreads メソッド](icordebugcontroller-enumeratethreads-method.md)によって表示されないスレッドに影響を与える可能性があり`SetAllThreadsDebugState`ます。そのため、メソッドを使用`SetAllThreadsDebugState`して中断されたスレッドは、メソッドを使用して再開する必要があります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目

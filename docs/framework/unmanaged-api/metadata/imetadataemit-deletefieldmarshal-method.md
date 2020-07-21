@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7c75aef9-c742-4b33-a14b-56ff94b0f725
 topic_type:
 - apiref
-ms.openlocfilehash: 652169c67461c1663c005dd014290c4cf2d993ba
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6d0f9a8c5c3baf7594e098a3d5544bad55fdc917
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74434373"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84009289"
 ---
 # <a name="imetadataemitdeletefieldmarshal-method"></a>IMetaDataEmit::DeleteFieldMarshal メソッド
 指定したトークンによって参照されるオブジェクトの PInvoke マーシャリングメタデータ署名を破棄します。  
@@ -35,18 +35,18 @@ HRESULT DeleteFieldMarshal (
   
 ## <a name="parameters"></a>パラメーター  
  `tk`  
- からマーシャリングメタデータシグネチャを削除する対象のフィールドまたはパラメーターを表す `mdFieldDef` または `mdParamDef` トークン。  
+ から`mdFieldDef` `mdParamDef` マーシャリングメタデータ署名を削除する対象のフィールドまたはパラメーターを表すまたはトークン。  
   
-## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll のリソースとして使用されます。  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataEmit インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [IMetaDataEmit2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit インターフェイス](imetadataemit-interface.md)
+- [IMetaDataEmit2 インターフェイス](imetadataemit2-interface.md)

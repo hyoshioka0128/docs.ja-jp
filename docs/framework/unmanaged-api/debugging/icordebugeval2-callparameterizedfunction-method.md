@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 72f54a45-dbe6-4bb4-8c99-e879a27368e5
 topic_type:
 - apiref
-ms.openlocfilehash: b521c96d26202119dad6fedb61cbd9da8b3c2e52
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 72bcc2479f7b6f41b384fc2517f0b04694663398
+ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137638"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82976149"
 ---
 # <a name="icordebugeval2callparameterizedfunction-method"></a>ICorDebugEval2::CallParameterizedFunction メソッド
-指定されたは、パラメーターを <xref:System.Type> 受け取るコンストラクターを持つクラスの内部に入れ子にすることができます。また、パラメーターの <xref:System.Type> を受け取ることもできる、指定されたのに対して、この関数の呼び出しを設定します。  
+指定されたは、コンストラクターがパラメーターを受け取る<xref:System.Type>クラス内で入れ子にすることができます。また、パラメーターを<xref:System.Type>受け取ることもできます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -39,7 +39,7 @@ HRESULT CallParameterizedFunction (
   
 ## <a name="parameters"></a>パラメーター  
  `pFunction`  
- から呼び出される関数を表す `ICorDebugFunction` オブジェクトへのポインター。  
+ から呼び出される関数を`ICorDebugFunction`表すオブジェクトへのポインター。  
   
  `nTypeArgs`  
  から関数が受け取る引数の数。  
@@ -54,17 +54,17 @@ HRESULT CallParameterizedFunction (
  からポインターの配列。各ポインターは、関数の引数で渡された値を表す ICorDebugValue オブジェクトを指します。  
   
 ## <a name="remarks"></a>Remarks  
- `CallParameterizedFunction` は、型パラメーターを持つクラス内に存在しても、それ自体が型パラメーターを受け取る可能性があるか、またはその両方であることを除いて、は、のように[します。](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md) 型引数は、クラスに対して最初に指定する必要があります。その後、関数に対して指定する必要があります。  
+ `CallParameterizedFunction`は、関数が型パラメーターを持つクラス内に存在しても、それ自体が型パラメーターを受け取る可能性があるか、またはその両方であるかを除いて、のように[します。](icordebugeval-callfunction-method.md) 型引数は、クラスに対して最初に指定する必要があります。その後、関数に対して指定する必要があります。  
   
  関数が別のアプリケーションドメインにある場合は、遷移が発生します。 ただし、すべての型引数と値引数は、ターゲットアプリケーションドメインに存在する必要があります。  
   
- 関数の評価は、限られたシナリオでのみ実行できます。 `CallParameterizedFunction` または `ICorDebugEval::CallFunction` が失敗した場合、返される HRESULT は失敗の最も一般的な原因を示します。  
+ 関数の評価は、限られたシナリオでのみ実行できます。 また`CallParameterizedFunction`は`ICorDebugEval::CallFunction`が失敗した場合、返される HRESULT は失敗の最も一般的な原因を示します。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

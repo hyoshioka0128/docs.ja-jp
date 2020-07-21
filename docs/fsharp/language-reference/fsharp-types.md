@@ -1,13 +1,13 @@
 ---
-title: F# の型
+title: 種類
 description: でF#使用される型、および型の名前F#付けと記述方法について説明します。
 ms.date: 05/16/2016
-ms.openlocfilehash: 8f2526dce46d53a92c01c9347e1ed97681a45ecc
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 70d79525318c8d2eb0711d6a1b50be1ac0cf0226
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425305"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348216"
 ---
 # <a name="f-types"></a>F# の型
 
@@ -33,18 +33,18 @@ F#関数型プログラミングを念頭に置いて設計された便利なコ
 
 次の表は、型のF#型構文の側面を示しています。
 
-|[種類]|型の構文|使用例|
+|の型|型の構文|使用例|
 |----|-----------|--------|
-|プリミティブ型|*型名*|`int`<br /><br />`float`<br /><br />`string`|
-|集計の種類 (クラス、構造体、共用体、レコード、列挙型など)|*型名*|`System.DateTime`<br /><br />`Color`|
-|型略称|*型略称-名前*|`bigint`|
-|完全修飾型|*名前空間。型名*<br /><br />、または<br /><br />*modules. type-name*<br /><br />、または<br /><br />*名前空間. modules. タイプ名*|`System.IO.StreamWriter`|
-|array|*型名*[] または<br /><br />*型名の*配列|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
+|プリミティブ型|*type-name*|`int`<br /><br />`float`<br /><br />`string`|
+|集計の種類 (クラス、構造体、共用体、レコード、列挙型など)|*type-name*|`System.DateTime`<br /><br />`Color`|
+|型略称|*type-abbreviation-name*|`bigint`|
+|完全修飾型|*namespaces.type-name*<br /><br />または<br /><br />*modules.type-name*<br /><br />または<br /><br />*namespaces.modules.type-name*|`System.IO.StreamWriter`|
+|アレイ|*型名*[] または<br /><br />*型名の*配列|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
 |2次元配列|*型名*[,]|`int[,]`<br /><br />`float[,]`|
 |3次元配列|*型名*[,,]|`float[,,]`|
 |tuple|*「-name1* &#42; *型-name2* ...」と入力します。|たとえば、`(1,'b',3)` の型 `int * char * int`|
-|ジェネリック型|*型パラメーター*の*汎用型名*<br /><br />、または<br /><br />*汎用型名*&lt;*型パラメーターリスト*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
-|構築された型 (特定の型引数が指定されたジェネリック型)|*型引数*の*汎用型名*<br /><br />、または<br /><br />*汎用型名*&lt;*型引数リスト*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
+|ジェネリック型|*type-parameter* *generic-type-name*<br /><br />または<br /><br />*汎用型名*&lt;*型パラメーターリスト*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
+|構築された型 (特定の型引数が指定されたジェネリック型)|*型引数* *ジェネリック型名*<br /><br />または<br /><br />*汎用型名*&lt;*型引数リスト*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
 |1つのパラメーターを持つ関数型|*パラメーター-type1* -&gt;*戻り値の型*|`int` を受け取り、型を持つ `string` を返す関数 `int -> string`|
 |複数のパラメーターを持つ関数の型|*パラメーター-type1* -&gt;*パラメーター-* 型 -&gt;...-&gt;*戻り値の型*|`int` と `float` を受け取り、型を持つ `string` を返す関数 `int -> float -> string`|
 |パラメーターとしての高階関数|(*関数型*)|`List.map` の型 `('a -> 'b) -> 'a list -> 'b list`|
@@ -58,7 +58,7 @@ F#関数型プログラミングを念頭に置いて設計された便利なコ
 |[プリミティブ型](basic-types.md)|整数型、ブール型、および文字型など、組み込みの単純型について説明します。|
 |[Unit 型](unit-type.md)|`unit` 型について説明します。この型は、1つの値を持ち、() によって示されます。Visual Basic でのC# `void` と `Nothing` と同じです。|
 |[タプル](tuples.md)|組の型 (ペア、3要素、となどでグループ化された任意の型の関連する値で構成される型) について説明します。|
-|[Options](options.md)|オプションの種類について説明します。この型は、値を持つか空にすることができます。|
+|[オプション](options.md)|オプションの種類について説明します。この型は、値を持つか空にすることができます。|
 |[リスト](lists.md)|順序付けられ、変更できない一連の要素をすべて同じ型のリストについて説明します。|
 |[配列](arrays.md)|配列について説明します。配列は、連続したメモリブロックを占有し、固定サイズの、同じ型の変更可能な要素の順序付きセットです。|
 |[シーケンス](sequences.md)|一連の値を表すシーケンス型について説明します。個々の値は、必要な場合にのみ計算されます。|
@@ -69,6 +69,6 @@ F#関数型プログラミングを念頭に置いて設計された便利なコ
 |[構造体](structures.md)|.NET 値型に対応するオブジェクト型である `struct` 型について説明します。 `struct` 型は、通常、小さいデータの集計を表します。|
 |[インターフェイス](interfaces.md)|インターフェイス型について説明します。これは、特定の機能を提供し、データを含まないメンバーのセットを表す型です。 インターフェイス型は、役に立つオブジェクト型によって実装される必要があります。|
 |[デリゲート](delegates.md)|関数をオブジェクトとして表すデリゲート型について説明します。|
-|[列挙体](enumerations.md)|名前付きの値のセットに値が属する列挙型について説明します。|
+|[列挙型](enumerations.md)|名前付きの値のセットに値が属する列挙型について説明します。|
 |[属性](attributes.md)|別の型のメタデータを指定するために使用される属性について説明します。|
 |[例外の種類](./exception-handling/exception-types.md)|エラー情報を指定する例外について説明します。|

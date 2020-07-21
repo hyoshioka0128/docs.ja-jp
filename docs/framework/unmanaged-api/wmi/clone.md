@@ -1,6 +1,6 @@
 ---
-title: Clone 関数 (アンマネージ API リファレンス)
-description: Clone 関数は、現在のオブジェクトの完全な複製である新しいオブジェクトを返します。
+title: クローン関数 (アンマネージ API リファレンス)
+description: Clone 関数は、現在のオブジェクトの完全なクローンである新しいオブジェクトを返します。
 ms.date: 11/06/2017
 api_name:
 - Clone
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - Clone function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: c8e7781a3efe7679ef2e05747862911db88bcc5f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cb4951a1f289417482bfa1287028cc66349a5938
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141617"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79176852"
 ---
 # <a name="clone-function"></a>Clone 関数
-現在のオブジェクトの完全な複製である新しいオブジェクトが返されます。   
+現在のオブジェクトの完全な複製である新しいオブジェクトが返されます。
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -30,47 +30,47 @@ ms.locfileid: "73141617"
   
 ```cpp  
 HRESULT Clone (
-   [in] int                  vFunc, 
-   [in] IWbemClassObject*    ptr, 
+   [in] int                  vFunc,
+   [in] IWbemClassObject*    ptr,
    [out] IWbemClassObject**  ppCopy
-); 
+);
 ```  
 
 ## <a name="parameters"></a>パラメーター
 
 `vFunc`  
-からこのパラメーターは使用されていません。
+[in]このパラメーターは使用されません。
 
 `ptr`  
-から[IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)インスタンスへのポインター。
+[in][インスタンス](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject)へのポインター。
 
 `ppCopy`  
-入出力完全な唯一の `ptr`である新しいオブジェクト。 現在のオブジェクトのコピーを受け取った場合、この引数を `null` ことはできません。
+[アウト]の完全な孤独である新しいオブジェクト`ptr`。 この引数は、`null`現在のオブジェクトのコピーを受け取った場合は使用できません。
 
 ## <a name="return-value"></a>戻り値
 
-この関数によって返される次の値は、 *WbemCli*ヘッダーファイルで定義されています。また、コード内で定数として定義することもできます。
+この関数によって返される次の値は *、WbemCli.h*ヘッダー ファイルで定義されているか、コード内で定数として定義できます。
 
-|定数  |[値]  |説明  |
+|常時  |Value  |説明  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | 一般的なエラーが発生しました。 |
-| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null` がパラメーターとして指定されましたが、この使用法では有効ではありません。 |
-| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | オブジェクトを複製するのに十分なメモリがありません。 |
-| `WBEM_S_NO_ERROR` | 0 | 関数の呼び出しに成功しました。  |
+| `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null`はパラメータとして指定されており、この使用法では有効ではありません。 |
+| `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | メモリ不足でオブジェクトのクローンを作成できません。 |
+| `WBEM_S_NO_ERROR` | 0 | 関数呼び出しが正常に行われました。  |
   
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-この関数は、 [IWbemClassObject:: Clone](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone)メソッドの呼び出しをラップします。
+この関数は、メソッドの呼び出しをラップ[します](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone)。
 
-複製されたオブジェクトは、参照カウントが1の COM オブジェクトです。
+複製されたオブジェクトは、参照カウントが 1 の COM オブジェクトです。
 
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
- **ヘッダー:** WMINet_Utils  
+ **ヘッダー:** WMINet_Utils.idl  
   
  **.NET Framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [WMI およびパフォーマンスカウンター (アンマネージ API リファレンス)](index.md)
+- [WMI およびパフォーマンス カウンター (アンマネージド API リファレンス)](index.md)

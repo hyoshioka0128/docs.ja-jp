@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: 49dfef1a-dddf-4fc6-a511-6d5f925a4781
 ms.openlocfilehash: 734b5265c1d25e4538c40f5a43bff220d675eedb
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61932579"
 ---
 # <a name="listview-overviews"></a>ListView の概要
-このセクションのトピックでは、使用する方法を説明する<xref:System.Windows.Controls.ListView>コントロール。  
+このセクションの各トピックでは、<xref:System.Windows.Controls.ListView> コントロールの使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [ListView の概要](listview-overview.md)  
  [GridView の概要](gridview-overview.md)  
  [GridView の列ヘッダー スタイルおよびテンプレートの概要](gridview-column-header-styles-and-templates-overview.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.ListView>  
   
  <xref:System.Windows.Controls.GridView>  

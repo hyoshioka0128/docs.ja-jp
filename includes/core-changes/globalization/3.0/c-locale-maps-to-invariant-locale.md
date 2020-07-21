@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d35de48dd22003c851cf5dba9e8517ec48b9217b
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: c0551fa086644497c631cd9b6d7058398ff9ccfa
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567779"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702300"
 ---
 ### <a name="c-locale-maps-to-the-invariant-locale"></a>"C" ロケールは、インバリアント ロケールにマップされます
 
@@ -20,18 +20,20 @@ en_US_POSIX では大文字と小文字を区別しない並べ替え/検索文�
 
 3.0
 
-### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 この変更を認識する以外には特にありません。 この変更は、"C" ロケール マッピングを使用するアプリケーションにのみ影響します。
 
-### <a name="category"></a>カテゴリ
+#### <a name="category"></a>カテゴリ
 
 グローバリゼーション
 
-### <a name="affected-apis"></a>影響を受ける API
+#### <a name="affected-apis"></a>影響を受ける API
 
 すべての照合順序 API とカルチャ API は、この変更の影響を受けます。
 
 <!--
+
+#### Affected APIs
 
 -->

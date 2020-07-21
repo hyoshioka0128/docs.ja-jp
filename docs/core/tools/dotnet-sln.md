@@ -1,37 +1,35 @@
 ---
 title: dotnet sln コマンド
 description: dotnet-sln コマンドは、ソリューション ファイルでプロジェクトを追加、削除、一覧表示するための便利なオプションを提供します。
-ms.date: 10/29/2019
-ms.openlocfilehash: 18702c7638798117bd04d5c6a829d64cc6bf18a8
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.date: 02/14/2020
+ms.openlocfilehash: 231287477d986f9ec4a5404cc5278e76c297faa4
+ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191822"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81463399"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
-**この記事の対象: ✓** .NET Core 1.x SDK 以降のバージョン
+**この記事の対象:** ✔️ .NET Core 2.x SDK 以降のバージョン
 
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+## <a name="name"></a>名前
 
-## <a name="name"></a>name
-
-`dotnet sln` - .NET Core ソリューション ファイルを変更します。
+`dotnet sln` - .NET Core ソリューション ファイル内のプロジェクトを一覧表示または変更します。
 
 ## <a name="synopsis"></a>構文
 
 ```dotnetcli
-dotnet sln [<SOLUTION_FILE>] [command] [-h|--help]
+dotnet sln [<SOLUTION_FILE>] [command]
+
+dotnet sln [command] -h|--help
 ```
 
 ## <a name="description"></a>説明
 
-`dotnet sln` コマンドは、ソリューション ファイルでプロジェクトを追加、削除、一覧表示するための便利な方法を提供します。
+`dotnet sln` コマンドでは、ソリューション ファイル内のプロジェクトを一覧表示および変更するための便利な方法を提供します。
 
-`dotnet sln` コマンドを使用するには、ソリューション ファイルが既に存在している必要があります。 作成する必要がある場合、下の例のように [dotnet new](dotnet-new.md) コマンドを使用します。
+`dotnet sln` コマンドを使用するには、ソリューション ファイルが既に存在している必要があります。 作成する必要がある場合、以下の例のように [dotnet new](dotnet-new.md) コマンドを使用します。
 
 ```dotnetcli
 dotnet new sln
@@ -41,77 +39,15 @@ dotnet new sln
 
 - **`SOLUTION_FILE`**
 
-  使用するソリューション ファイル。 指定されていない場合、現在のディレクトリで検索されます。 ディレクトリに複数のソリューション ファイルがある場合、1 つを指定する必要があります。
+  使用するソリューション ファイル。 この引数が省略された場合、コマンドでは、現在のディレクトリでの検索を行います。 ソリューション ファイルが見つからない場合、または複数のソリューション ファイルが見つかった場合、コマンドは失敗します。
 
 ## <a name="options"></a>オプション
 
 - **`-h|--help`**
 
-  コマンドの短いヘルプを印刷します。
+  コマンドの使用方法を示した説明を出力します。
 
 ## <a name="commands"></a>コマンド
-
-### `add`
-
-ソリューション ファイルに 1 つまたは複数のプロジェクトを追加します。
-
-#### <a name="synopsis"></a>構文
-
-```dotnetcli
-dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder] <PROJECT_PATH>
-dotnet sln add [-h|--help]
-```
-
-#### <a name="arguments"></a>引数
-
-- **`SOLUTION_FILE`**
-
-  使用するソリューション ファイル。 指定されていない場合、現在のディレクトリで検索されます。 ディレクトリに複数のソリューション ファイルがある場合、1 つを指定する必要があります。
-
-- **`PROJECT_PATH`**
-
-  ソリューションに追加するプロジェクトへのパス。 複数のプロジェクトを追加するには、それぞれをスペースで区切って順に追加します。 Unix/Linux シェルの[glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))拡張機能は、`dotnet sln`コマンドで正しく処理されます。
-
-#### <a name="options"></a>オプション
-
-- **`-h|--help`**
-
-  コマンドの短いヘルプを印刷します。
-
-- **`--in-root`**
-
-  ソリューション フォルダーを作成するのではなく、プロジェクトをソリューションのルートに配置します。 .NET Core 3.0 SDK 以降で使用できます。
-
-- **`-s|--solution-folder`**
-
-  プロジェクトの追加先のソリューション フォルダーのパス。 .NET Core 3.0 SDK 以降で使用できます。
-
-### `remove`
-
-ソリューション ファイルから 1 つまたは複数のプロジェクトを削除します。
-
-#### <a name="synopsis"></a>構文
-
-```dotnetcli
-dotnet sln [<SOLUTION_FILE>] remove <PROJECT_PATH>
-dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
-```
-
-#### <a name="arguments"></a>引数
-
-- **`SOLUTION_FILE`**
-
-  使用するソリューション ファイル。 指定されていない場合、現在のディレクトリで検索されます。 ディレクトリに複数のソリューション ファイルがある場合、1 つを指定する必要があります。
-
-- **`PROJECT_PATH`**
-
-  ソリューションから削除するプロジェクトへのパス。 複数のプロジェクトを削除するには、それぞれをスペースで区切って順に追加します。 Unix/Linux シェルの[glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))拡張機能は、`dotnet sln`コマンドで正しく処理されます。
-
-#### <a name="options"></a>オプション
-
-- **`-h|--help`**
-
-  コマンドの短いヘルプを印刷します。
 
 ### `list`
 
@@ -122,53 +58,139 @@ dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
 ```dotnetcli
 dotnet sln list [-h|--help]
 ```
-  
+
 #### <a name="arguments"></a>引数
 
 - **`SOLUTION_FILE`**
 
-  使用するソリューション ファイル。 指定されていない場合、現在のディレクトリで検索されます。 ディレクトリに複数のソリューション ファイルがある場合、1 つを指定する必要があります。
+  使用するソリューション ファイル。 この引数が省略された場合、コマンドでは、現在のディレクトリでの検索を行います。 ソリューション ファイルが見つからない場合、または複数のソリューション ファイルが見つかった場合、コマンドは失敗します。
 
 #### <a name="options"></a>オプション
 
 - **`-h|--help`**
 
-  コマンドの短いヘルプを印刷します。
+  コマンドの使用方法を示した説明を出力します。
+  
+### `add`
+
+1 つ以上のプロジェクトをソリューション ファイルに追加します。
+
+#### <a name="synopsis"></a>構文
+
+```dotnetcli
+dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder <PATH>] <PROJECT_PATH> [<PROJECT_PATH>...]
+dotnet sln add [-h|--help]
+```
+
+#### <a name="arguments"></a>引数
+
+- **`SOLUTION_FILE`**
+
+  使用するソリューション ファイル。 指定されていない場合、コマンドでは、現在のディレクトリでの検索を行います。複数のソリューション ファイルがある場合、コマンドは失敗します。
+
+- **`PROJECT_PATH`**
+
+  ソリューションに追加する 1 つ以上のプロジェクトへのパス。 Unix/Linux シェルの[glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))拡張機能は、`dotnet sln`コマンドで正しく処理されます。
+
+#### <a name="options"></a>オプション
+
+- **`-h|--help`**
+
+  コマンドの使用方法を示した説明を出力します。
+
+- **`--in-root`**
+
+  ソリューション フォルダーを作成するのではなく、プロジェクトをソリューションのルートに配置します。 .NET Core 3.0 SDK 以降で使用できます。
+
+- **`-s|--solution-folder <PATH>`**
+
+  プロジェクトの追加先のソリューション フォルダーのパス。 .NET Core 3.0 SDK 以降で使用できます。
+
+### `remove`
+
+ソリューション ファイルから 1 つまたは複数のプロジェクトを削除します。
+
+#### <a name="synopsis"></a>構文
+
+```dotnetcli
+dotnet sln [<SOLUTION_FILE>] remove <PROJECT_PATH> [<PROJECT_PATH>...]
+dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
+```
+
+#### <a name="arguments"></a>引数
+
+- **`SOLUTION_FILE`**
+
+  使用するソリューション ファイル。 指定されていない場合、コマンドでは、現在のディレクトリでの検索を行います。複数のソリューション ファイルがある場合、コマンドは失敗します。
+
+- **`PROJECT_PATH`**
+
+  ソリューションに追加する 1 つ以上のプロジェクトへのパス。 Unix/Linux シェルの[glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))拡張機能は、`dotnet sln`コマンドで正しく処理されます。
+
+#### <a name="options"></a>オプション
+
+- **`-h|--help`**
+
+  コマンドの使用方法を示した説明を出力します。
 
 ## <a name="examples"></a>使用例
 
-ソリューションに 1 つの C# プロジェクトを追加する:
+- ソリューション内のプロジェクトを一覧表示する:
 
-```dotnetcli
-dotnet sln todo.sln add todo-app/todo-app.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln list
+  ```
 
-ソリューションから 1 つの C# プロジェクトを削除する:
+- ソリューションに 1 つの C# プロジェクトを追加する:
 
-```dotnetcli
-dotnet sln todo.sln remove todo-app/todo-app.csproj
-```
+  ```dotnetcli
+  dotnet sln add todo-app/todo-app.csproj
+  ```
 
-ソリューションに複数の C# プロジェクトを追加する:
+- ソリューションから 1 つの C# プロジェクトを削除する:
 
-```dotnetcli
-dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
-```
+  ```dotnetcli
+  dotnet sln remove todo-app/todo-app.csproj
+  ```
 
-ソリューションから複数の C# プロジェクトを削除する:
+- ソリューションのルートに複数の C# プロジェクトを追加する:
 
-```dotnetcli
-dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj --in-root
+  ```
 
-glob パターンを使用して、ソリューションに複数の C# プロジェクトを追加する (Unix/Linux のみ):
+- ソリューションに複数の C# プロジェクトを追加する:
 
-```dotnetcli
-dotnet sln todo.sln add **/*.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln add todo-app/todo-app.csproj back-end/back-end.csproj
+  ```
 
-glob パターンを使用して、ソリューションから複数の C# プロジェクトを削除する (Unix/Linux のみ):
+- ソリューションから複数の C# プロジェクトを削除する:
 
-```dotnetcli
-dotnet sln todo.sln remove **/*.csproj
-```
+  ```dotnetcli
+  dotnet sln todo.sln remove todo-app/todo-app.csproj back-end/back-end.csproj
+  ```
+
+- glob パターンを使用して、ソリューションに複数の C# プロジェクトを追加する (Unix/Linux のみ):
+
+  ```dotnetcli
+  dotnet sln todo.sln add **/*.csproj
+  ```
+
+- glob パターンを使用して、ソリューションに複数の C# プロジェクトを追加する (Windows PowerShell のみ):
+
+  ```dotnetcli
+  dotnet sln todo.sln add (ls **/*.csproj)
+  ```
+
+- glob パターンを使用して、ソリューションから複数の C# プロジェクトを削除する (Unix/Linux のみ):
+
+  ```dotnetcli
+  dotnet sln todo.sln remove **/*.csproj
+  ```
+
+- glob パターンを使用して、ソリューションから複数の C# プロジェクトを削除する (Windows PowerShell のみ):
+
+  ```dotnetcli
+  dotnet sln todo.sln remove (ls **/*.csproj)
+  ```

@@ -24,7 +24,7 @@ ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
 author: ghogen
 ms.openlocfilehash: 8ff1adaa025dc11417c3dcfdaf42ea203828be57
 ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/17/2019
 ms.locfileid: "71053520"
@@ -41,9 +41,9 @@ Microsoft Windows サービス (旧 NT サービス) を使用すると、Micros
 ## <a name="service-applications-vs-other-visual-studio-applications"></a>サービス アプリケーションと他の Visual Studio アプリケーション  
  サービス アプリケーションの動作は、次に示すように、他のプロジェクトと異なります。  
   
-- サービス アプリケーション プロジェクトが作成するコンパイル済み実行可能ファイルは、プロジェクトの使用開始前にサーバーにインストールしておく必要があります。 F5 キーまたは F11 キーを押してサービス アプリケーションをデバッグまたは実行することはできません。サービスを即時に実行したり、サービスのコードにステップ インすることはできません。 サービスのインストールと起動を行ってから、デバッガーをサービスのプロセスにアタッチする必要があります。 詳細については、「[方法 :Windows サービス アプリケーションをデバッグする](how-to-debug-windows-service-applications.md)  
+- サービス アプリケーション プロジェクトが作成するコンパイル済み実行可能ファイルは、プロジェクトの使用開始前にサーバーにインストールしておく必要があります。 F5 キーまたは F11 キーを押してサービス アプリケーションをデバッグまたは実行することはできません。サービスを即時に実行したり、サービスのコードにステップ インすることはできません。 サービスのインストールと起動を行ってから、デバッガーをサービスのプロセスにアタッチする必要があります。 詳細については、[Windows サービス アプリケーションをデバッグする](how-to-debug-windows-service-applications.md)  
   
-- 一部のプロジェクトの場合とは異なり、サービス アプリケーションのインストール コンポーネントは必ず作成する必要があります。 インストール コンポーネントは、サーバーへのサービスのインストールと登録を行い、Windows **サービス コントロール マネージャー**でサービスのエントリを作成します。 詳細については、「[方法 :サービス アプリケーションにインストーラーを追加する](how-to-add-installers-to-your-service-application.md)」を参照してください。  
+- 一部のプロジェクトの場合とは異なり、サービス アプリケーションのインストール コンポーネントは必ず作成する必要があります。 インストール コンポーネントは、サーバーへのサービスのインストールと登録を行い、Windows **サービス コントロール マネージャー**でサービスのエントリを作成します。 詳細については、[サービス アプリケーションにインストーラーを追加する](how-to-add-installers-to-your-service-application.md)」を参照してください。  
   
 - サービス アプリケーションの `Main` メソッドは、プロジェクトに含まれているサービスの Run コマンドを実行する必要があります。 `Run` メソッドによって、適切なサーバーの**サービス コントロール マネージャー**にサービスが読み込まれます。 **Windows サービス**のプロジェクト テンプレートを使用すると、このメソッドは自動的に作成されます。 サービスの読み込みとサービスの起動は異なります。 詳細については、後述の「サービスの有効期間」を参照してください。  
   
@@ -72,13 +72,13 @@ Microsoft Windows サービス (旧 NT サービス) を使用すると、Micros
 ## <a name="services-and-the-servicecontroller-component"></a>サービスと ServiceController コンポーネント  
  <xref:System.ServiceProcess.ServiceController> コンポーネントは、インストール済みのサービスに接続し、サービスの状態を操作するときに使用します。<xref:System.ServiceProcess.ServiceController> コンポーネントを使用すると、サービスの起動と停止、およびサービスの一時停止と継続を実行できます。また、カスタム コマンドをサービスに送信することもできます。 ただし、サービス アプリケーションを作成する場合は、<xref:System.ServiceProcess.ServiceController> コンポーネントを使用する必要はありません。 ほとんどの場合は、サービスを定義している Windows サービス アプリケーションとは別のアプリケーションに <xref:System.ServiceProcess.ServiceController> コンポーネントが含まれています。  
   
- 詳細については、「 <xref:System.ServiceProcess.ServiceController> 」を参照してください。  
+ 詳細については、「<xref:System.ServiceProcess.ServiceController>」を参照してください。  
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
   
 - サービスは、**Windows サービス** アプリケーション プロジェクトなどの .NET Framework 対応プロジェクト内で作成する必要があります。 .NET Framework 対応プロジェクトは、ビルド時に .exe ファイルを作成し、<xref:System.ServiceProcess.ServiceBase> クラスから継承を行います。  
   
-- Windows サービスを含むプロジェクトには、プロジェクトのインストール コンポーネントと、プロジェクトのサービスのインストール コンポーネントが必要です。 これは **[プロパティ]** ウィンドウで簡単に設定できます。 詳細については、「[方法 :サービス アプリケーションにインストーラーを追加する](how-to-add-installers-to-your-service-application.md)」を参照してください。  
+- Windows サービスを含むプロジェクトには、プロジェクトのインストール コンポーネントと、プロジェクトのサービスのインストール コンポーネントが必要です。 これは **[プロパティ]** ウィンドウで簡単に設定できます。 詳細については、[サービス アプリケーションにインストーラーを追加する](how-to-add-installers-to-your-service-application.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
 

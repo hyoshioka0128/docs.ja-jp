@@ -1,164 +1,164 @@
 ---
-title: WPF のグローバリゼーションおよびローカリゼーションの概要
+title: グローバリゼーションおよびローカリゼーションの概要
 ms.date: 03/30/2017
 helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: b8777e1402bef1708136a5f81a641beb8c761905
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
-ms.translationtype: MT
+ms.openlocfilehash: ba49b3ec0f6edebff6278f4e90ae22baba9f1edf
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740708"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452670"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>WPF のグローバリゼーションおよびローカリゼーションの概要
 
-製品の利用可能性を1つの言語のみに制限すると、お客様の潜在顧客ベースを世界の65億人口の一部に限定できます。 アプリケーションを世界中のユーザーに提供する場合、製品のコスト効率に優れたローカライズ方法の1つは、より多くの顧客にリーチするための最良で経済的な方法の1つです。
+製品を 1 つの言語だけで提供するということは、潜在的な顧客ベースを、75 億人という世界人口のほんの一部だけに限定してしまうことを意味します。 アプリケーションを世界中のユーザーに提供したいのであれば、製品をコスト効率よくローカライズすることが、より多くの顧客にリーチするための最良かつ経済的な方法の 1 つだと言えます。
 
-この概要では、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]でのグローバリゼーションとローカライズについて説明します。 グローバリゼーションとは、複数の場所で実行されるアプリケーションの設計および開発です。 たとえば、グローバリゼーションでは、異なるカルチャのユーザーに対して、ローカライズされたユーザーインターフェイスと地域データをサポートしています。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、自動レイアウト、サテライトアセンブリ、ローカライズされた属性、コメントなど、グローバリゼーションのデザイン機能が用意されています。
+この概要では、[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] でのグローバリゼーションとローカライズについて説明します。 グローバリゼーションとは、複数の場所で効果的に使用できるアプリケーションを設計、開発することです。 たとえば、グローバリゼーションでは、異なるカルチャのユーザーに対して、ローカライズされたユーザー インターフェイスや地域データを提供します。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、自動レイアウト、サテライト アセンブリ、ローカライズされた属性、コメントなど、グローバリゼーションに対応したデザイン機能を提供しています。
 
-ローカライズとは、アプリケーションがサポートする特定のカルチャに合わせて、アプリケーションリソースをローカライズされたバージョンに変換することです。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]でローカライズする場合は、<xref:System.Windows.Markup.Localizer> 名前空間の Api を使用します。 これらの Api は、 [LocBaml ツールサンプル](https://go.microsoft.com/fwlink/?LinkID=160016)コマンドラインツールを活用しています。 LocBaml を構築して使用する方法の詳細については、「[アプリケーションをローカライズ](how-to-localize-an-application.md)する」を参照してください。
+ローカリゼーションとは、アプリケーションのリソースを翻訳し、そのアプリケーションがサポートする特定のカルチャに対応したローカライズ バージョンを作ることです。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] でローカライズを行う場合は、<xref:System.Windows.Markup.Localizer> 名前空間の API を使用します。 これらの API によって、[LocBaml ツール サンプル](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml)のコマンドライン ツールを効果的に活用できます。 LocBaml の使用方法について詳しくは、「[アプリケーションをローカライズする](how-to-localize-an-application.md)」を参照してください。
 
-## <a name="best-practices-for-globalization-and-localization-in-wpf"></a>WPF でのグローバリゼーションとローカライズのベストプラクティス
+## <a name="best-practices-for-globalization-and-localization-in-wpf"></a>WPF でのグローバリゼーションとローカライズに関するベスト プラクティス
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] に組み込まれているグローバリゼーションおよびローカリゼーションの機能を最大限に活用するには、このセクションで説明する UI デザインとローカリゼーション関連のヒントに従ってください。
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] に組み込まれているグローバリゼーションやローカリゼーションの機能を最大限に活用するには、このセクションで説明する UI デザインやローカリゼーション関連のヒントに従うのが効果的です。
 
-### <a name="best-practices-for-wpf-ui-design"></a>WPF UI デザインのベストプラクティス
+### <a name="best-practices-for-wpf-ui-design"></a>WPF UI デザインのベスト プラクティス
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ベースの [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]を設計する場合は、次のベストプラクティスを実装することを検討してください。
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ベースの [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を設計する場合は、次のベスト プラクティスを実施することを検討してください。
 
-- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]で [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を作成します。コードに [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を作成しないようにします。 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を使用して [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を作成する場合は、組み込みのローカライズ Api を使用して公開します。
+- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を作成しましょう。[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] をコードで作成することは避けましょう。 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を使用して [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を作成すれば、組み込みのローカライズ API を通じてコードを公開することができます。
 
-- コンテンツのレイアウトに絶対位置と固定サイズを使用することは避けてください。代わりに、相対サイズまたは自動サイズ設定を使用します。
+- コンテンツのレイアウトに絶対位置や固定サイズを使用することは避けましょう。代わりに、相対サイズや自動サイズ設定を使用するようにしましょう。
 
-  - <xref:System.Windows.Window.SizeToContent%2A> を使用し、幅と高さを `Auto`に設定したままにします。
+  - <xref:System.Windows.Window.SizeToContent%2A> を使用し、幅と高さの設定を `Auto` のままにしましょう。
 
-  - [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]s をレイアウトするために <xref:System.Windows.Controls.Canvas> を使用しないでください。
+  - <xref:System.Windows.Controls.Canvas> を使って [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] をレイアウトすることは避けましょう。
 
-  - <xref:System.Windows.Controls.Grid> とそのサイズ共有機能を使用します。
+  - <xref:System.Windows.Controls.Grid> とそのサイズ共有機能を使用しましょう。
 
-- ローカライズされたテキストには多くの領域が必要になるため、余白に余分なスペースを用意します。 余分なスペースを使用すると、使用できる文字数を増やすことができます。
+- テキストをローカライズすると、より多くの領域が必要になることが多いので、余白のスペースを十分に用意しましょう。 十分なスペースをとることで、文字がはみ出すのを防ぐことができます。
 
-- クリッピングを回避するには、<xref:System.Windows.Controls.TextBlock> の <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> を有効にします。
+- クリッピングを防ぐために、<xref:System.Windows.Controls.TextBlock> の <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> を有効にしましょう。
 
-- `xml:lang` 属性を設定します。 この属性は、特定の要素とその子要素のカルチャを表します。 このプロパティの値により、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]のいくつかの機能の動作が変更されます。 たとえば、ハイフネーション、スペルチェック、数字の置換、複雑なスクリプトの整形、およびフォントフォールバックの動作を変更します。 [XAML での xml: lang の処理](../../xaml-services/xml-lang-handling-in-xaml.md)の設定の詳細については、「 [WPF のグローバリゼーション](globalization-for-wpf.md)」を参照してください。
+- `xml:lang` 属性を設定します。 この属性は、特定の要素とその子要素のカルチャを表します。 このプロパティの値によって、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のいくつかの機能の動作が変わります。 たとえば、ハイフネーション、スペル チェック、数字の置換、複雑なスクリプトの整形、およびフォント フォールバックの動作が変更されます。 [XAML における xml:lang の処理](../../../desktop-wpf/xaml-services/xml-language-handling.md)の設定方法について詳しくは、「[WPF のグローバリゼーション](globalization-for-wpf.md)」を参照してください。
 
-- さまざまな言語で使用されるフォントをより適切に制御できるように、カスタマイズされた複合フォントを作成します。 既定では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は Windows\Fonts ディレクトリ内の GlobalUserInterface フォントを使用します。
+- さまざまな言語で使用されるフォントをより適切に制御できるように、カスタマイズされた複合フォントを作成しましょう。 既定では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では Windows\Fonts ディレクトリ内の GlobalUserInterface フォントが使用されます。
 
-- テキストを右から左に記述するカルチャでローカライズできるナビゲーションアプリケーションを作成する場合は、ページが <xref:System.Windows.Navigation.NavigationWindow>から <xref:System.Windows.FlowDirection> を継承しないように、すべてのページの <xref:System.Windows.FlowDirection> を明示的に設定します。
+- 作成しようとしているナビゲーション アプリケーションが、テキストを右から左に記述するカルチャでローカライズされる可能性がある場合は、すべてのページの <xref:System.Windows.FlowDirection> を明示的に設定して、<xref:System.Windows.Navigation.NavigationWindow> から <xref:System.Windows.FlowDirection> が継承されないようにしましょう。
 
-- ブラウザーの外部でホストされているスタンドアロンナビゲーションアプリケーションを作成する場合は、最初のアプリケーションの <xref:System.Windows.Application.StartupUri%2A> をページではなく <xref:System.Windows.Navigation.NavigationWindow> に設定します (たとえば、`<Application StartupUri="NavigationWindow.xaml">`)。 このデザインでは、ウィンドウとナビゲーションバーの <xref:System.Windows.FlowDirection> を変更できます。 詳細と例については、「[グローバリゼーションのホームページのサンプル](https://go.microsoft.com/fwlink/?LinkID=159990)」を参照してください。
+- ブラウザーの外部でホストされるスタンドアロン ナビゲーション アプリケーションを作成する場合は、最初のアプリケーションの <xref:System.Windows.Application.StartupUri%2A> を、ページではなく <xref:System.Windows.Navigation.NavigationWindow> に設定しましょう (例: `<Application StartupUri="NavigationWindow.xaml">`)。 このデザインにより、ウィンドウとナビゲーション バーの <xref:System.Windows.FlowDirection> を変えることができます。 詳細と例については、[グローバリゼーション ホームページのサンプル](https://github.com/microsoft/WPF-Samples/tree/master/Globalization%20and%20Localization/GlobalizationHomepage)に関する記事を参照してください。
 
-### <a name="best-practices-for-wpf-localization"></a>WPF のローカライズのベストプラクティス
+### <a name="best-practices-for-wpf-localization"></a>WPF のローカライズに関するベスト プラクティス
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ベースのアプリケーションをローカライズする場合は、次のベストプラクティスを実装することを検討してください。
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ベースのアプリケーションをローカライズする場合は、次のベスト プラクティスを実施することを検討してください。
 
-- ローカライズコメントを使用して、ローカライザーに追加のコンテキストを提供します。
+- ローカライズ コメントを使用して、ローカライザーに追加のコンテキストを提供しましょう。
 
-- ローカリゼーション属性を使用して、要素の <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを選択的に省略するのではなく、ローカリゼーションを制御します。 詳細については[、「ローカリゼーションの属性とコメント](localization-attributes-and-comments.md)」を参照してください。
+- 要素の <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを選択的に省略するのではなく、ローカリゼーション属性を使用してローカリゼーションを制御しましょう。 詳細については、「[ローカリゼーション属性とコメント](localization-attributes-and-comments.md)」を参照してください。
 
-- `msbuild -t:updateuid` と `-t:checkuid` を使用して、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]の <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを追加および確認します。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> のプロパティを使用して、開発とローカリゼーションの間の変更を追跡します。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> のプロパティは、新しい開発変更をローカライズするのに役立ちます。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> のプロパティを [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]に手動で追加した場合、タスクは通常、単調で正確ではなくなります。
+- `msbuild -t:updateuid` と `-t:checkuid` を使用して、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを追加および確認しましょう。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティは、開発とローカリゼーションの間の変更を追跡するために使用します。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティは、開発上の新しい変更をローカライズするのに役立ちます。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを手動で [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] に追加すると、通常、タスクが面倒で不正確になります。
 
-  - ローカライズを開始した後で <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> のプロパティを編集または変更しないでください。
+  - ローカライズを開始した後で <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティの編集や変更を行うことは避けましょう。
 
-  - 重複する <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティは使用しないでください (コピーと貼り付けコマンドを使用する場合は、この点に注意してください)。
+  - <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを重複して使用することは避けましょう (コピーと貼り付けのコマンドを使用する際には、この点に注意してください)。
 
-  - AssemblyInfo. * の `UltimateResourceFallback` の場所を設定して、フォールバックに適した言語を指定します (たとえば、`[assembly: NeutralResourcesLanguage("en-US",   UltimateResourceFallbackLocation.Satellite)]`)。
+  - AssemblyInfo.\* で `UltimateResourceFallback` の場所を設定して、フォールバック用の適切な言語を指定しましょう (`[assembly: NeutralResourcesLanguage("en-US",   UltimateResourceFallbackLocation.Satellite)]` など)。
 
-    プロジェクトファイルの `<UICulture>` タグを省略して、メインアセンブリにソース言語を含める場合は、`UltimateResourceFallback` の場所をサテライトではなくメインアセンブリとして設定します (たとえば、`[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)]`)。
+    プロジェクト ファイルの `<UICulture>` タグを省略して、メイン アセンブリにソース言語を含める場合は、`UltimateResourceFallback` の場所をサテライトではなくメイン アセンブリとして設定しましょう (たとえば、`[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)]`)。
 
 ## <a name="localize-a-wpf-application"></a>WPF アプリケーションのローカライズ
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションをローカライズする場合、いくつかのオプションがあります。 たとえば、アプリケーション内のローカライズ可能なリソースを XML ファイルにバインドしたり、ローカライズ可能なテキストを resx テーブルに格納したり、ローカライザーに [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイルを使用させることができます。 このセクションでは、XAML の BAML 形式を使用するローカライズワークフローについて説明します。これには、いくつかの利点があります。
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションをローカライズする際には、いくつかのオプションがあります。 たとえば、アプリケーション内のローカライズ可能なリソースを XML ファイルにバインドしたり、ローカライズ可能なテキストを resx テーブルに格納したり、ローカライザーに [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ファイルを使用させたりすることができます。 このセクションでは、BAML 形式の XAML を使用するローカライズ ワークフローについて説明します。これには、いくつかの利点があります。
 
-- をビルドした後でローカライズできます。
+- ビルドの後にローカライズを行うことができます。
 
-- 開発時にローカライズできるように、以前のバージョンの XAML の baml 形式のローカライズを使用して、新しいバージョンの XAML 形式に更新できます。
+- BAML 形式の XAML を、旧バージョンのローカリゼーションによって新バージョンへと更新することで、開発時にローカライズも同時進行することができます。
 
-- XAML の BAML 形式は [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]のコンパイル済みの形式であるため、コンパイル時に元のソース要素とセマンティクスを検証することができます。
+- BAML 形式の XAML は [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] のコンパイル済みの形式なので、元のソース要素とセマンティクスをコンパイル時に検証することができます。
 
-### <a name="localization-build-process"></a>ローカリゼーションビルドプロセス
+### <a name="localization-build-process"></a>ローカリゼーション ビルド プロセス
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを開発する場合、ローカリゼーションのビルドプロセスは次のようになります。
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを開発する場合、ローカリゼーションのビルド プロセスは次のようになります。
 
-- 開発者は [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを作成し、globalizes します。 プロジェクトファイルでは、アプリケーションをコンパイルするときに、言語に依存しないメインアセンブリが生成されるように、開発者が `<UICulture>en-US</UICulture>` を設定します。 このアセンブリには、ローカライズ可能なすべてのリソースを含むサテライトファイルがあります。 必要に応じて、ローカライズ Api がメインアセンブリからの抽出をサポートしているため、ソース言語をメインアセンブリに保持できます。
+- 開発者が [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションを作成し、グローバライズします。 開発者は、プロジェクト ファイルで `<UICulture>en-US</UICulture>` を設定し、アプリケーションのコンパイル時に、言語に依存しないメイン アセンブリが生成されるようにします。 このアセンブリには、ローカライズ可能なすべてのリソースを含んだサテライト .resources.dll ファイルがあります。 ローカリゼーション API ではメイン アセンブリからの抽出がサポートされているので、必要であれば、ソース言語をメイン アセンブリ内に保持することもできます。
 
-- ファイルがビルドにコンパイルされると、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] は、XAML の BAML 形式に変換されます。 カルチャに依存しない `MyDialog.exe` とカルチャに依存する (英語) `MyDialog.resources.dll` ファイルは、英語圏の顧客にリリースされます。
+- ファイルがコンパイルされてビルドになると、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] は BAML 形式の XAML へと変換されます。 英語圏の顧客には、カルチャに依存しない `MyDialog.exe` と、カルチャに依存する (英語版の) `MyDialog.resources.dll` ファイルがリリースされます。
 
-### <a name="localization-workflow"></a>ローカライズワークフロー
+### <a name="localization-workflow"></a>ローカリゼーション ワークフロー
 
-ローカライズプロセスは、unlocalized `MyDialog.resources.dll` ファイルがビルドされた後に開始されます。 元の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] の要素とプロパティは、<xref:System.Windows.Markup.Localizer>の Api を使用して、XAML の BAML 形式からキーと値のペアに抽出されます。 ローカライザーは、キーと値のペアを使用してアプリケーションをローカライズします。 ローカライズが完了したら、新しい値から新しい. resource .dll を生成することができます。
+ローカリゼーション プロセスは、ローカライズされていない `MyDialog.resources.dll` ファイルがビルドされた後に開始されます。 元の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] の [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 要素とプロパティは、<xref:System.Windows.Markup.Localizer> にある API を使用して BAML 形式の XAML から抽出され、キーと値のペアに変換されます。 ローカライザーは、キーと値のペアを使用してアプリケーションをローカライズします。 ローカライズが完了したら、新しい値から新しい. resource.dll を生成することができます。
 
-キーと値のペアのキーは、開発者によって元の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]に配置された `x:Uid` 値です。 これらの `x:Uid` 値を使用すると、ローカリゼーション時に開発者とローカライザーの間で発生した変更を API で追跡およびマージできます。 たとえば、ローカライザーがローカライズを開始した後に、開発者が [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を変更した場合、開発の変更を既に完了しているローカリゼーション作業とマージして、最小限の翻訳作業が失われるようにすることができます。
+キーと値のペアのキーは、開発者によって元の [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]に配置される `x:Uid` 値です。 これらの `x:Uid` 値を使用すると、ローカリゼーション中に開発者とローカライザーの間で発生した変更を、API で追跡およびマージできます。 たとえば、ローカライザーがローカライズを開始した後に開発者が [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を変更した場合、その変更を既にローカライズされている内容とマージすれば、翻訳結果が失われるのを最小限に減らすことができます。
 
-次の図は、XAML の BAML 形式に基づく一般的なローカライズワークフローを示しています。 この図は、開発者がアプリケーションを英語で書いていることを前提としています。 開発者は、WPF アプリケーションを作成して globalizes します。 プロジェクトファイルでは、開発者が `<UICulture>en-US</UICulture>` を設定して、ビルド時に、ローカライズ可能なすべてのリソースを含むサテライトと共に、言語に依存しないメインアセンブリが生成されるようにします。 または、WPF のローカライズ Api がメインアセンブリからの抽出をサポートしているため、メインアセンブリにソース言語を保持することもできます。 ビルドプロセスの後、XAML は BAML にコンパイルされます。 カルチャに依存しない MyDialog .exe は、英語のお客様に送付されます。
+次の図は、BAML 形式の XAML に基づく一般的なローカリゼーション ワークフローを示したものです。 この図では、開発者がアプリケーションを英語で記述していることを前提としています。 開発者は、WPF アプリケーションを作成し、グローバライズします。 開発者は、プロジェクト ファイルで `<UICulture>en-US</UICulture>` を設定することで、言語に依存しないメイン アセンブリと、ローカライズ可能なすべてのリソースを含んだサテライトがビルド時に生成されるようにします。 WPF のローカリゼーション API ではメイン アセンブリからの抽出がサポートされているので、必要であれば、ソース言語をメイン アセンブリ内に保持することもできます。 ビルド プロセスの後、XAML は BAML へとコンパイルされます。 英語圏の顧客には、カルチャに依存しない MyDialog.exe.resources.dll が提供されます。
 
-![ローカライズワークフローを示す図。](./media/wpf-globalization-and-localization-overview/localization-workflow.png)
+![ローカリゼーション ワークフローを示した図。](./media/wpf-globalization-and-localization-overview/localization-workflow.png)
 
-![Unlocalized ワークフローを示す図。](./media/wpf-globalization-and-localization-overview/unlocalized-workflow.png)
+![ローカライズしないワークフローを示した図。](./media/wpf-globalization-and-localization-overview/unlocalized-workflow.png)
 
 ## <a name="examples-of-wpf-localization"></a>WPF のローカライズの例
 
-このセクションには、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションをビルドおよびローカライズする方法を理解するのに役立つ、ローカライズされたアプリケーションの例が含まれています。
+このセクションでは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] アプリケーションをビルドしてローカライズする方法を理解するのに役立つ、ローカライズされたアプリケーションの例を紹介します。
 
-#### <a name="run-dialog-box-example"></a>[実行] ダイアログボックスの例
+### <a name="run-dialog-box-example"></a>[ファイル名を指定して実行] ダイアログ ボックスの例
 
-次の図は、 **[実行]** ダイアログボックスのサンプルの出力を示しています。
+次の図は、 **[ファイル名を指定して実行]** ダイアログ ボックスの出力サンプルです。
 
-**英語：**
+**英語:**
 
-![英語版の [実行] ダイアログボックスを示すスクリーンショット。](./media/wpf-globalization-and-localization-overview/run-dialog-box-english.png)
+![英語版の [ファイル名を指定して実行] ダイアログ ボックスのスクリーンショット。](./media/wpf-globalization-and-localization-overview/run-dialog-box-english.png)
 
-**ドイツ語：**
+**ドイツ語:**
 
-![ドイツ語版の [実行] ダイアログボックスを示すスクリーンショット。](./media/wpf-globalization-and-localization-overview/run-dialog-box-german.png)
+![ドイツ語版の [ファイル名を指定して実行] ダイアログ ボックスのスクリーンショット。](./media/wpf-globalization-and-localization-overview/run-dialog-box-german.png)
 
-**[グローバル実行] ダイアログボックスのデザイン**
+**[ファイル名を指定して実行] ダイアログ ボックスをグローバル対応でデザインする**
 
-この例では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] と [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]を使用して、 **[実行]** ダイアログボックスを作成します。 このダイアログボックスは、Microsoft Windows の スタート メニューから使用できる **実行** ダイアログボックスに相当します。
+この例では、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] と [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] を使用して **[ファイル名を指定して実行]** ダイアログ ボックスを生成します。 このダイアロ グボックスは、Microsoft Windows の [スタート] メニューから使用できる **[ファイル名を指定して実行]** ダイアログ ボックスと同じものです。
 
-グローバルダイアログボックスを作成するためのいくつかの特徴を次に示します。
+グローバル ダイアログ ボックスを作成する際の重要なポイントを以下にいくつか示します。
 
 **自動レイアウト**
 
-*Window1.xaml で、次のようにします。*
+*Window1.xaml:*
 
 `<Window SizeToContent="WidthAndHeight">`
 
-前のウィンドウプロパティは、コンテンツのサイズに応じてウィンドウのサイズを自動的に変更します。 このプロパティは、ローカライズ後にサイズが大きくなるコンテンツがウィンドウに表示されないようにします。また、ローカライズ後にコンテンツのサイズを小さくすると、不要な領域が削除されます。
+上記の Window プロパティでは、コンテンツのサイズに応じてウィンドウのサイズを自動的に変更するよう指定しています。 このプロパティにより、ローカライズ後にコンテンツのサイズが大きくなった場合でも、それがウィンドウからはみ出るのを防ぐことができます。また、ローカライズ後にコンテンツのサイズが小さくなった場合にも、不要な領域が表示されるのを回避できます。
 
 `<Grid x:Uid="Grid_1">`
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ローカライズ Api が正常に機能するためには <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティが必要です。
+<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ローカリゼーション API を正しく機能させるために必要です。
 
-これらは、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]の開発とローカライズの間の変更を追跡するために [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ローカリゼーション Api によって使用されます。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを使用すると、新しいバージョンの [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]の古いローカライズにマージできます。 コマンドシェルで `msbuild -t:updateuid RunDialog.csproj` を実行して、<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを追加します。 これは、プロパティを手動で追加すると、通常は時間がかかり、正確さが低下するため、<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを追加するための推奨される方法です。 `msbuild -t:checkuid RunDialog.csproj`を実行して <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティが正しく設定されていることを確認できます。
+これらのプロパティは、[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] の開発とローカリゼーションの間で起こる変更を追跡するために、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ローカリゼーション API によって使用されます。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを使用すると、新しいバージョンの [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] を、その [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] の古いローカリゼーションとマージすることができます。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを追加するには、コマンド シェルで `msbuild -t:updateuid RunDialog.csproj` を実行します。 これが、<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティを追加するための推奨の方法となります。通常、プロパティを手動で追加すると時間がかかり、正確さも低下します。 <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> プロパティが正しく設定されていることを確認するには、`msbuild -t:checkuid RunDialog.csproj` を実行します。
 
-[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] は <xref:System.Windows.Controls.Grid> コントロールを使用して構成されています。これは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]で自動レイアウトを活用するための便利なコントロールです。 ダイアログボックスは、3つの行と5つの列に分割されることに注意してください。 行と列の定義のいずれかが固定サイズではありません。そのため、各セルに配置されている [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] の要素は、ローカリゼーション時のサイズの増減に合わせて調整できます。
+[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] は <xref:System.Windows.Controls.Grid> コントロールを使用して構築されます。これは、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で自動レイアウトを活用するために役立つコントロールです。 なお、このダイアログ ボックスは、3 つの行と 5 つの列に分割されることに注意してください。 行と列のいずれも、固定サイズでは定義されていません。そのため、各セルに配置されている [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 要素は、ローカリゼーション時に起こるサイズの増減に合わせて調整できます。
 
 [!code-xaml[GlobalizationRunDialog#GridColumnDef](~/samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationRunDialog/CS/Window1.xaml#gridcolumndef)]
 
-**Open:** label および <xref:System.Windows.Controls.ComboBox> が配置されている最初の2つの列は、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 合計幅の10% を使用します。
+最初の 2 つの列には、**Open:** というラベルと <xref:System.Windows.Controls.ComboBox> が配置されていますが、これらの列では、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 全体の幅の 10% が使用されます。
 
 [!code-xaml[GlobalizationRunDialog#GridColumnDef2](~/samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationRunDialog/CS/Window1.xaml#gridcolumndef2)]
 
-この例では、<xref:System.Windows.Controls.Grid>の共有サイズ設定機能を使用していることに注意してください。 最後の3つの列は、同じ <xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A>に配置することで、これを利用します。 これにより、プロパティの名前と同じように、列が同じサイズを共有できるようになります。 "Browse..."長い文字列 "Durchsuchen..." にローカライズされているので、すべてのボタンの幅が大きくなります。小さい "OK" ボタンと、大規模な "Durchsuchen..." を指定する必要はありません。;.
+この例では、<xref:System.Windows.Controls.Grid> の共有サイズ設定機能を使用していることに注意してください。 残りの 3 つの列については、同じ <xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A> に配置して、この機能を利用します。 これは、プロパティ名からもわかるように、複数の列で同じサイズを共有できるようにする機能です。 つまり、"Browse..." がローカライズされて "Durchsuchen..." となり、文字列がより長くなった場合、小さい "OK" ボタンに対して不釣り合いな "Durchsuchen..." が表示されるのではなく、すべてのボタンの幅が大きくなります。
 
-**xml: lang**
+**xml:lang**
 
 `xml:lang="en-US"`
 
-[XAML での xml: lang の処理](../../xaml-services/xml-lang-handling-in-xaml.md)が、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]のルート要素に配置されていることに注意してください。 このプロパティは、指定された要素とその子のカルチャを記述します。 この値は [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のいくつかの機能で使用されるため、ローカライズ時に適切に変更する必要があります。 この値によって、ハイフネーションおよびスペルチェックの単語に使用する言語辞書が変更されます。 また、数字の表示や、フォントフォールバックシステムが使用するフォントを選択する方法にも影響します。 最後に、プロパティは数値の表示方法に影響を及ぼし、複雑なスクリプトで記述されたテキストの整形方法に影響します。 既定値は "en-us" です。
+[XAML での xml:lang の処理](../../../desktop-wpf/xaml-services/xml-language-handling.md)が [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] のルート要素に配置されていることに注意してください。 このプロパティは、指定された要素とその子要素のカルチャを表します。 この値は [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のいくつかの機能で使用されるので、ローカライズ時に適切に変更する必要があります。 ハイフネーションや単語のスペルチェックに使用される言語辞書は、この値によって変わります。 また、この値は、桁の表示方法や、フォント フォールバック システムでの使用フォントの選択方法にも影響します。 さらに、このプロパティは、数値の表示方法や、複雑なスクリプトでのテキストの整形方法にも影響します。 既定値は "en-US" です。
 
-**サテライトリソースアセンブリのビルド**
+**サテライト リソース アセンブリのビルド**
 
-*.Csproj:*
+*.csproj:*
 
-`.csproj` ファイルを編集し、次のタグを無条件 `<PropertyGroup>`に追加します。
+`.csproj` ファイルを編集し、無条件の `<PropertyGroup>` に次のタグを追加します。
 
 `<UICulture>en-US</UICulture>`
 
-`UICulture` 値が追加されていることに注目してください。 これが en-us などの有効な <xref:System.Globalization.CultureInfo> 値に設定されている場合、プロジェクトをビルドすると、ローカライズ可能なすべてのリソースを含むサテライトアセンブリが生成されます。
+`UICulture` の値が追加されていることに注目してください。 これが en-US などの有効な <xref:System.Globalization.CultureInfo> 値に設定されている場合、プロジェクトをビルドすると、ローカライズ可能なすべてのリソースを含んだサテライト アセンブリが生成されます。
 
 `<Resource Include="RunIcon.JPG">`
 
@@ -166,126 +166,126 @@ ms.locfileid: "73740708"
 
 `</Resource>`
 
-`RunIcon.JPG` は、すべてのカルチャで同じように表示される必要があるため、ローカライズする必要はありません。 `Localizable` は `false` に設定されるため、サテライトアセンブリではなく、言語に依存しないメインアセンブリに保持されます。 コンパイルされていないすべてのリソースの既定値は、`true`に設定 `Localizable` ます。
+`RunIcon.JPG` は、すべてのカルチャで同様に表示されるので、ローカライズする必要はありません。 `Localizable` は `false` に設定されているので、サテライト アセンブリではなく、言語に依存しないメイン アセンブリに保持されます。 コンパイルされていないすべてのリソースの既定値では、`true` が `Localizable` に設定されます。
 
-**[実行] ダイアログのローカライズ**
+**[ファイル名を指定して実行] ダイアログのローカライズ**
 
 **Parse**
 
-アプリケーションをビルドした後、ローカライズするための最初の手順として、ローカライズ可能なリソースをサテライトアセンブリから解析します。 このトピックでは、 [Locbaml ツールサンプル](https://go.microsoft.com/fwlink/?LinkID=160016)にある locbaml ツールのサンプルを使用します。 LocBaml は、ローカライズプロセスに適したローカリゼーションツールの構築を開始するのに役立つサンプルツールでのみあることに注意してください。 LocBaml を使用して、次を実行して解析します。 **locbaml/Parse RunDialog. .resources/out:** "rundialog. .resources. .RESOURCES. .csv" ファイルを生成します。
+アプリケーションをビルドしたら、それをローカライズするための最初の手順として、サテライト アセンブリのローカライズ可能なリソースを解析します。 このトピックでは、[LocBaml ツール サンプル](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml)の記事に記載されている、サンプルの LocBaml ツールを使用します。 LocBaml はあくまでも、ローカライズ プロセスに適したローカリゼーション ツールの構築の開始に役立つ、サンプル ツールであることに注意してください。 LocBaml を使用して、**LocBaml /parse RunDialog.resources.dll /out:** を解析し、"RunDialog.resources.dll.CSV" ファイルを生成します。
 
-**地域**
+**Localize**
 
-Unicode をサポートしているお気に入りの CSV エディターを使用して、このファイルを編集します。 ローカライズカテゴリが "なし" のすべてのエントリを除外します。 次のエントリが表示されます。
+お好みの CSV エディター (Unicode をサポートしているもの) を使用して、このファイルを編集します。 ローカライズ カテゴリが "None" であるすべてのエントリを除外してください。 次のエントリが表示されます。
 
-|リソースキー|ローカライズのカテゴリ|[値]|
+|リソース キー|ローカリゼーション カテゴリ|[値]|
 |-|-|-|
-|Button_1: $Content を実行します。|Button|OK|
-|Button_2: $Content を実行します。|Button|キャンセル|
-|Button_3: $Content を実行します。|Button|参照...|
-|ComboBox_1: を実行 $Content します。|ComboBox||
-|TextBlock_1: $Content を実行します。|テキスト|プログラム、フォルダー、ドキュメント、またはインターネットリソースの名前を入力すると、Windows によってファイルが開きます。|
-|TextBlock_2: $Content を実行します。|テキスト|開き|
-|Window_1: Windows. Window. Title|Title|実行|
+|Button_1:System.Windows.Controls.Button.$Content|Button|OK|
+|Button_2:System.Windows.Controls.Button.$Content|Button|キャンセル|
+|Button_3:System.Windows.Controls.Button.$Content|Button|参照...|
+|ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|テキスト|実行するプログラム名、または開くフォルダーやドキュメント名、インターネット リソース名を入力してください。|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|テキスト|[オープン]\:|
+|Window_1:System.Windows.Window.Title|Title|実行|
 
-アプリケーションをドイツ語にローカライズするには、次の変換が必要です。
+アプリケーションをドイツ語にローカライズするには、次のように変換する必要があります。
 
-|リソースキー|ローカライズのカテゴリ|[値]|
+|リソース キー|ローカリゼーション カテゴリ|[値]|
 |-|-|-|
-|Button_1: $Content を実行します。|Button|OK|
-|Button_2: $Content を実行します。|Button|Abbrechen|
-|Button_3: $Content を実行します。|Button|Durchsuchen...|
-|ComboBox_1: を実行 $Content します。|ComboBox||
-|TextBlock_1: $Content を実行します。|テキスト|Geben Sie den namen eines programms、Ordners、Dokuments 順番 einer internetresource an。|
-|TextBlock_2: $Content を実行します。|テキスト|Öffnen:|
-|Window_1: Windows. Window. Title|Title|実行|
+|Button_1:System.Windows.Controls.Button.$Content|Button|OK|
+|Button_2:System.Windows.Controls.Button.$Content|Button|Abbrechen|
+|Button_3:System.Windows.Controls.Button.$Content|Button|Durchsuchen…|
+|ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|テキスト|Geben Sie den Namen eines Programms, Ordners, Dokuments oder einer Internetresource an.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|テキスト|Öffnen:|
+|Window_1:System.Windows.Window.Title|Title|実行|
 
-**生み**
+**Generate**
 
-ローカリゼーションの最後の手順では、新たにローカライズされたサテライトアセンブリを作成します。 これは、次の LocBaml コマンドを使用して実現できます。
+ローカリゼーションの最後の手順として、新たにローカライズされたサテライト アセンブリを作成します。 これを行うには、次の LocBaml コマンドを使用します。
 
-**LocBaml/generate RunDialog. .resources. .resources:... .resources. .resources. .CSV:./cul: デデュープ**
+**LocBaml.exe /generate RunDialog.resources.dll /trans:RunDialog.resources.dll.CSV /out: . /cul:de-DE**
 
-ドイツ語のウィンドウでは、このリソース .dll がメインアセンブリの横にある de 以外のフォルダーに配置されている場合、このリソースは en-us フォルダーにあるものではなく、自動的に読み込まれます。 これをテストするためにドイツ語版の Windows がインストールされていない場合は、使用している Windows の任意のカルチャ (`en-US`など) にカルチャを設定し、元のリソース DLL を置き換えます。
+ドイツ語版の Windows では、メイン アセンブリの隣の de-DE フォルダーにこの resources.dll が配置されている場合、en-US フォルダーにあるリソースではなく、このリソースが自動的に読み込まれます。 ドイツ語版の Windows がインストールされていない場合、これをテストするには、使用している Windows でカルチャを任意のカルチャ (`en-US` など) に設定し、元のリソース DLL を置き換えてください。
 
-**サテライトリソースの読み込み**
+**サテライト リソースの読み込み**
 
-|MyDialog .exe|en-US\MyDialog.resources.dll|de-DE\MyDialog.resources.dll|
+|MyDialog.exe|en-US\MyDialog.resources.dll|de-DE\MyDialog.resources.dll|
 |------------------|------------------------------------|------------------------------------|
 |コード|元の英語の BAML|ローカライズされた BAML|
-|カルチャに依存しないリソース|英語のその他のリソース|ドイツ語にローカライズされたその他のリソース|
+|カルチャに依存しないリソース|その他の英語のリソース|ドイツ語にローカライズされたその他のリソース|
 
-.NET framework は、アプリケーションの `Thread.CurrentThread.CurrentUICulture`に基づいて、読み込むサテライトリソースアセンブリを自動的に選択します。 これは、既定では、Windows OS のカルチャになります。 そのため、ドイツ語版の Windows を使用している場合は、de-DE\MyDialog.resources.dll が読み込まれます。英語版の Windows を使用している場合は、en-US\MyDialog.resources.dll が読み込まれます。 プロジェクトの AssemblyInfo. * で NeutralResourcesLanguage を指定することにより、アプリケーションの最終的なフォールバックリソースを設定できます。 たとえば、次のように指定します。
+.NET では、アプリケーションの <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> に基づいて、読み込むサテライト リソース アセンブリが自動的に選択されます。 これは、既定では Windows OS のカルチャになります。 ドイツ語版の Windows を使用している場合は、*de-DE\MyDialog.resources.dll* ファイルが読み込まれます。 英語版の Windows を使用している場合は、*en-US\MyDialog.resources.dll* ファイルが読み込まれます。 アプリケーションの最終的なフォールバック リソースは、プロジェクトの *AssemblyInfo* ファイルで `NeutralResourcesLanguage` 属性を指定することによって設定できます。 たとえば、次のように指定します。
 
 `[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]`
 
-de-DE\MyDialog.resources.dll または de\MyDialog.resources.dll が両方とも使用できない場合、en-US\MyDialog.resources.dll はドイツ語のウィンドウで使用されます。
+このように指定すると、次のいずれのファイルも使用できない場合に、*en-US\MyDialog.resources.dll* ファイルがドイツ語版の Windows で使用されます: *de-DE\MyDialog.resources.dll* または *de\MyDialog.resources.dll*。
 
-### <a name="microsoft-saudi-arabia-homepage"></a>Microsoft サウジアラビアホームページ
+### <a name="microsoft-saudi-arabia-homepage"></a>Microsoft サウジ アラビアのホームページ
 
-次の図は、英語とアラビアのホームページを示しています。 これらのグラフィックスを生成する完全なサンプルについては、「[グローバリゼーションのホームページのサンプル](https://go.microsoft.com/fwlink/?LinkID=159990)」を参照してください。
+次の図は、英語とアラビア語のホームページを示したものです。 これらのグラフィックスを生成する完全なサンプルについては、[グローバリゼーション ホームページのサンプル](https://github.com/microsoft/WPF-Samples/tree/master/Globalization%20and%20Localization/GlobalizationHomepage)を参照してください。
 
-**英語：**
+**英語:**
 
-![英語のホームページを示すスクリーンショット。](./media/wpf-globalization-and-localization-overview/english-home-page-sample.jpg)
+![英語版のホーム ページのスクリーンショット。](./media/wpf-globalization-and-localization-overview/english-home-page-sample.jpg)
 
-**アラビア語：**
+**アラビア語:**
 
-![アラビアのホームページを示すスクリーンショット。](./media/wpf-globalization-and-localization-overview/arabic-home-page-sample.jpg)
+![アラビア語版のホーム ページのスクリーンショット。](./media/wpf-globalization-and-localization-overview/arabic-home-page-sample.jpg)
 
-### <a name="designing-a-global-microsoft-home-page"></a>グローバルな Microsoft ホームページを設計する
+### <a name="designing-a-global-microsoft-home-page"></a>グローバル対応の Microsoft ホームページのデザイン
 
-Microsoft サウジアラビア web サイトのこのモックアップでは、RightToLeft 言語用に提供されているグローバリゼーション機能について説明しています。 ヘブライ語やアラビア語などの言語では、右から左への読み取り順序が使用されているため、多くの場合、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] のレイアウトは、英語などの左から右に記述する言語とはまったく異なるレイアウトになることがあります。 左から右に記述する言語から右から左の言語へのローカライズや、その逆の変換は、非常に困難な場合があります。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、このようなローカライズをはるかに簡単にするように設計されています。
+Microsoft サウジアラビアの Web サイトを表したこのモック アップは、RightToLeft 言語用に提供されているグローバリゼーション機能を説明するためのものです。 ヘブライ語やアラビア語などの言語では、読み取りの方向が右から左なので、多くの場合、[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] のレイアウトは、左から右に記述する英語などの言語とはまったく異なるレイアウトになります。 左から右に記述する言語を右から左の言語へとローカライズしたり、その逆のローカライズを行ったりする場合には、作業が非常に困難になる場合があります。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、このようなローカライズを大幅に簡素化できるように設計されています。
 
-**System.windows.flowdirection>**
+**FlowDirection**
 
-*ホームページ:*
+*Homepage.xaml:*
 
 [!code-xaml[GlobalizationHomepage#Homepage](~/samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationHomepage/CS/Homepage.xaml#homepage)]
 
-<xref:System.Windows.Controls.Page>の <xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティに注目してください。 このプロパティを <xref:System.Windows.FlowDirection.RightToLeft> に変更すると、<xref:System.Windows.Controls.Page> とその子要素の <xref:System.Windows.FrameworkElement.FlowDirection%2A> が変更されるため、アラビア語のユーザーが期待するように、この [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] のレイアウトが右から左へと反転されます。 任意の要素に対して明示的な <xref:System.Windows.FrameworkElement.FlowDirection%2A> を指定することで、継承動作をオーバーライドできます。 <xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティは、<xref:System.Windows.FrameworkElement> またはドキュメント関連の要素で使用でき、<xref:System.Windows.FlowDirection.LeftToRight>の暗黙的な値を持ちます。
+<xref:System.Windows.Controls.Page> の <xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティに注目してください。 このプロパティを <xref:System.Windows.FlowDirection.RightToLeft> に変更すると、<xref:System.Windows.Controls.Page> とその子要素の <xref:System.Windows.FrameworkElement.FlowDirection%2A> が変更されるため、この [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] のレイアウトが右から左へと反転され、アラビア語のユーザー向けの表示になります。 継承動作は、任意の要素に対して明示的な <xref:System.Windows.FrameworkElement.FlowDirection%2A> を指定することでオーバーライドできます。 <xref:System.Windows.FrameworkElement.FlowDirection%2A> プロパティは、<xref:System.Windows.FrameworkElement> またはドキュメント関連の要素で使用でき、暗黙的な値は <xref:System.Windows.FlowDirection.LeftToRight> となります。
 
-ルート <xref:System.Windows.FrameworkElement.FlowDirection%2A> が変更されたときに、背景のグラデーションブラシが正しく反転していることを確認します。
+ルートの <xref:System.Windows.FrameworkElement.FlowDirection%2A> が変更されたことで、背景のグラデーション ブラシまでもが正しく反転されていることに注目してください。
 
-**System.windows.flowdirection> = "LeftToRight"**
+**FlowDirection="LeftToRight"**
 
-![グラデーションフローを左から右に示すスクリーンショット。](./media/wpf-globalization-and-localization-overview/gradient-flow-left-right.png)
+![左から右のグラデーション フローを示すスクリーンショット。](./media/wpf-globalization-and-localization-overview/gradient-flow-left-right.png)
 
-**System.windows.flowdirection> = "RightToLeft"**
+**FlowDirection="RightToLeft"**
 
-![右から左へのグラデーションフローを示すスクリーンショット。](./media/wpf-globalization-and-localization-overview/gradient-flow-right-left.png)
+![右から左のグラデーション フローを示すスクリーンショット。](./media/wpf-globalization-and-localization-overview/gradient-flow-right-left.png)
 
 **パネルとコントロールに固定ディメンションを使用しない**
 
-ホームページを参照してください。一番上の <xref:System.Windows.Controls.DockPanel>の [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 全体に対して指定された固定幅と高さ以外には、その他の固定ディメンションはありません。 ソーステキストより長い可能性のあるローカライズされたテキストをクリップしないように、固定ディメンションを使用しないようにします。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] パネルとコントロールは、含まれているコンテンツに基づいて自動的にサイズが変更されます。 ほとんどのコントロールには、より詳細な制御を設定できる最小値と最大値もあります (たとえば、MinWidth = "20")。 <xref:System.Windows.Controls.Grid>では、'\*' を使用して相対幅と高さを設定することも (たとえば、`Width="0.25*"`)、セルサイズの共有機能を使用することもできます。
+Homepage.xaml を見ると、上部の <xref:System.Windows.Controls.DockPanel> の [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] 全体に対して固定の幅と高さが指定されているのを除いては、固定のディメンションはありません。 ローカライズ後のテキストがソース テキストよりも長くなる可能性がある場合は、テキストがクリップされるのを防ぐため、固定ディメンションを使用しないようにしましょう。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のパネルとコントロールは、配置先のコンテンツに基づいて自動的にサイズ変更されます。 ほとんどのコントロールには、最小値と最大値もあるので、より詳細な制御を設定できます (たとえば、MinWidth = "20")。 また、<xref:System.Windows.Controls.Grid> を使用する場合は、'\*' を使って相対的な幅と高さを設定したり (たとえば、`Width="0.25*"`)、セル サイズの共有機能を使用したりすることもできます。
 
-**ローカリゼーションコメント**
+**ローカリゼーション コメント**
 
-コンテンツがあいまいになり、翻訳が困難な場合があります。 開発者またはデザイナーは、ローカライズコメントを使用してローカライザーに追加のコンテキストとコメントを提供できます。 たとえば、次のようなローカライズは、文字 '&#124;' の使用法を明確にします。
+場合によっては、コンテンツがあいまいで、翻訳が困難なケースもあります。 ローカライズ コメントを使用すれば、開発者やデザイナーがローカライザーに追加のコンテキストやコメントを提供できます。 たとえば、次の例では、'&#124;' という文字の用途をローカリゼーション コメントによって明示しています。
 
 [!code-xaml[GlobalizationHomepage#LocalizationComment](~/samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationHomepage/CS/Homepage.xaml#localizationcomment)]
 
-このコメントは TextBlock_1's コンテンツに関連付けられ、LocBaml ツール (「[アプリケーションのローカライズ](how-to-localize-an-application.md)」を参照) の場合は、出力 .csv ファイルの TextBlock_1 行の6番目の列に表示されます。
+このコメントは TextBlock_1 のコンテンツに関連付けられます。LocBaml ツールの場合 (「[アプリケーションのローカライズ](how-to-localize-an-application.md)」を参照)、出力される .csv ファイルの TextBlock_1 の行の 6 番目の列に表示されます。
 
-|リソースキー|カテゴリ|できる|修正|コメント|[値]|
+|リソース キー|カテゴリ|読み取り可能|変更可能|コメント|[値]|
 |-|-|-|-|-|-|
-|TextBlock_1: $Content を実行します。|テキスト|true|true|この文字は、装飾規則として使用されます。|&#124;|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|テキスト|true|true|この文字は、装飾規則として使用されます。|&#124;|
 
-コメントは、次の構文を使用して、任意の要素のコンテンツまたはプロパティに配置できます。
+コメントは、次の構文を使用して、任意の要素のコンテンツやプロパティに配置できます。
 
 [!code-xaml[GlobalizationHomepage#LocalizationCommentsProp](~/samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationHomepage/CS/Homepage.xaml#localizationcommentsprop)]
 
 **ローカリゼーション属性**
 
-多くの場合、開発者またはローカライズマネージャーは、ローカライザーの読み取りと変更を制御する必要があります。 たとえば、ローカライザーが会社の名前や法律上の表現を翻訳したくない場合があります。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には、要素のコンテンツまたはプロパティの読みやすさ、変更可能性、カテゴリを設定できる属性が用意されています。この属性を使用して、ローカライズツールで要素のロック、非表示、または並べ替えを行うことができます。 詳細については、「<xref:System.Windows.Localization.Attributes%2A>」を参照してください。 このサンプルでは、LocBaml ツールはこれらの属性の値のみを出力します。 すべてのコントロールにこれらの属性の既定値がありますが、ではこれらの属性をオーバーライドできます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] たとえば、次の例では、`TextBlock_1` の既定のローカリゼーション属性をオーバーライドし、コンテンツを読み取り可能に設定しますが、ローカライザーでは変更できないように設定します。
+多くの場合、開発者やローカリゼーション マネージャーは、ローカライザーがどのような読み取り操作や変更操作を実行できるかを制御する必要があります。 たとえば、会社の名前や法律上の表記をローカライザーに翻訳させたくない場合もあるでしょう。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、要素のコンテンツやプロパティの可読性、変更可能性、およびカテゴリを設定するための属性が使用できます。これらの属性は、ローカリゼーション ツールで要素をロックしたり、非表示にしたり、並べ替えたりするために使用できます。 詳細については、「<xref:System.Windows.Localization.Attributes%2A>」を参照してください。 このサンプルでは、LocBaml ツールによってこれらの属性の値のみを出力しています。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] のすべてのコントロールには、これらの属性の既定値がありますが、これらの属性はオーバーライドすることもできます。 たとえば、次の例では、`TextBlock_1` の既定のローカリゼーション属性をオーバーライドし、コンテンツを読み取り可能に設定しています。ただし、ローカライザーはこれを変更できないように設定しています。
 
 [!code-xaml[LocalizationComAtt#LocalizationAttributes](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationComAtt/CSharp/Attributes.xaml#localizationattributes)]
 
-読みやすさと変更可能性属性に加えて、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] には共通の UI カテゴリ (<xref:System.Windows.LocalizationCategory>) の列挙型が用意されています。これを使用すると、ローカライザーにより多くのコンテキストを与えることができます。 プラットフォームコントロールの既定のカテゴリ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] は、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] でもオーバーライドできます。
+可読性と変更可能性の属性に加えて、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では一般的な UI カテゴリ (<xref:System.Windows.LocalizationCategory>) の列挙型も用意されています。これを使用することで、ローカライザーにより多くのコンテキストを提供することができます。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で提供されているプラットフォーム コントロールの既定のカテゴリ は、[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] でオーバーライドすることもできます。
 
 [!code-xaml[LocalizationComAtt#LocalizationAttributesOverridden](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationComAtt/CSharp/Attributes.xaml#localizationattributesoverridden)]
 
-によって提供さ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 既定のローカリゼーション属性は、コードを使用してオーバーライドすることもできます。これにより、カスタムコントロールに適切な既定値を正しく設定できます。 (例:
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] で提供されている既定のローカリゼーション属性は、コードを使用してオーバーライドすることもできます。これにより、カスタム コントロールに適切な既定値を正しく設定することができます。 次に例を示します。
 
 ```csharp
 [Localizability(Readability = Readability.Readable, Modifiability=Modifiability.Unmodifiable, LocalizationCategory.None)]
@@ -295,14 +295,14 @@ public class CorporateLogo : TextBlock
 }
 ```
 
-[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で設定されたインスタンスごとの属性は、カスタムコントロールのコードで設定した値よりも優先されます。 属性とコメントの詳細については、「[ローカリゼーション属性とコメント](localization-attributes-and-comments.md)」を参照してください。
+[!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] で設定されたインスタンスごとの属性は、カスタム コントロールのコードで設定した値よりも優先されます。 属性とコメントの詳細については、「[ローカリゼーション属性とコメント](localization-attributes-and-comments.md)」を参照してください。
 
-**フォントフォールバックと複合フォント**
+**フォント フォールバックと複合フォント**
 
-特定のコードポイントの範囲をサポートしていないフォントを指定した場合 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]、compositefont は、Windows\Fonts ディレクトリにあるグローバルユーザーインターフェイスを使用しているものに自動的にフォールバックします。 複合フォントは他のフォントと同様に動作し、要素の `FontFamily` を設定することによって明示的に使用できます (たとえば、`FontFamily="Global User Interface"`)。 独自の複合フォントを作成し、特定のコードポイントの範囲と言語に使用するフォントを指定することで、独自のフォントフォールバック設定を指定できます。
+特定のコードポイント範囲をサポートしていないフォントを指定した場合、[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] では、Windows\Fonts ディレクトリにあるグローバル ユーザーの Interface.compositefont を使用して、その範囲をサポートしているフォントへと自動的にフォールバックされます。 複合フォントは他のフォントと同様に動作し、要素の `FontFamily` を設定することによって明示的に使用できます (たとえば、`FontFamily="Global User Interface"`)。 特定のコードポイント範囲と言語に使用するフォントを指定し、独自のフォント フォールバック設定を指定することで、独自の複合フォントを作成することもできます。
 
 複合フォントの詳細については、「<xref:System.Windows.Media.FontFamily>」を参照してください。
 
 **Microsoft ホームページのローカライズ**
 
-このアプリケーションをローカライズするには、[実行] ダイアログの例と同じ手順に従います。 アラビア語用のローカライズされた .csv ファイルは、[グローバリゼーションホームページのサンプル](https://go.microsoft.com/fwlink/?LinkID=159990)でご利用いただけます。
+このアプリケーションは、[ファイル名を指定して実行] ダイアログの例と同じ手順に従ってローカライズできます。 アラビア語用にローカライズされた .csv ファイルは、[グローバリゼーション ホームページのサンプル](https://github.com/microsoft/WPF-Samples/tree/master/Globalization%20and%20Localization/GlobalizationHomepage)から入手できます。

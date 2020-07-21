@@ -4,35 +4,35 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID35
 ms.assetid: 661fdb90-ee7d-40ce-b30b-5e7267bd957a
-ms.openlocfilehash: 8b81460eccb6be8baa2ea7bc68d0f80c9d16398e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 9eb13d943f9f1cffc984847f7339111e06f5aa6b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349577"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373928"
 ---
 # <a name="sub-or-function-not-defined-visual-basic"></a>Sub または Function が定義されていません。(Visual Basic)
 呼び出されるには、`Sub` または `Function` が定義されている必要があります。 このエラーでは以下の原因が考えられます。  
   
 - プロシージャ名のスペルが間違っています。  
   
-- **[参照]** ダイアログボックスでそのプロジェクトへの参照を明示的に追加せずに、別のプロジェクトからプロシージャを呼び出そうとしています。  
+- **[参照]** ダイアログ ボックスで、プロジェクトへの参照を明示的に追加せずに、別のプロジェクトからプロシージャを呼び出そうとしています。  
   
-- 呼び出し元のプロシージャからは参照できないプロシージャを指定します。  
+- 呼び出し元のプロシージャから参照できないプロシージャを指定しています。  
   
-- 指定されたライブラリまたはコードリソースにない Windows ダイナミックリンクライブラリ (DLL) ルーチンまたは Macintosh コードリソースルーチンを宣言しています。  
+- 指定したライブラリまたはコード リソースにない Windows ダイナミックリンク ライブラリ (DLL) ルーチンまたは Macintosh コードリソース ルーチンを宣言しています。  
   
 ## <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1. プロシージャ名のスペルが正しいことを確認してください。  
+1. プロシージャ名のスペルが正しいことを確認します。  
   
-2. **[参照]** ダイアログボックスで、呼び出すプロシージャを含むプロジェクトの名前を検索します。 表示されない場合は、 **[参照]** ボタンをクリックして検索します。 プロジェクト名の左側にあるチェックボックスをオンにして、[ **OK]** をクリックします。  
+2. **[参照]** ダイアログボックスで、呼び出すプロシージャを含むプロジェクトの名前を見つけます。 それが表示されない場合、 **[参照]** ボタンをクリックして検索します。 プロジェクト名の左側にあるチェック ボックスをオンにして、 **[OK]** をクリックします。  
   
 3. ルーチンの名前を確認します。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [エラーの種類](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [エラーの種類](../../programming-guide/language-features/error-types.md)
 - [プロジェクト内の参照の管理](/visualstudio/ide/managing-references-in-a-project)
-- [Sub ステートメント](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Function ステートメント](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Sub ステートメント](../statements/sub-statement.md)
+- [Function ステートメント](../statements/function-statement.md)

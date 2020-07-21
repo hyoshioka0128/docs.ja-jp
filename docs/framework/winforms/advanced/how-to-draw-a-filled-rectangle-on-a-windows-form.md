@@ -1,5 +1,6 @@
 ---
 title: '方法: Windows フォームに塗りつぶした四角形を描画する'
+description: Windows フォームで塗りつぶされた四角形をプログラムで描画する方法について説明します。 また、コードをコンパイルする方法についても説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,15 +13,15 @@ helpviewer_keywords:
 - rectangles [Windows Forms], drawing
 - drawing rectangles
 ms.assetid: d656a93c-987d-4809-aafd-493fe17450f0
-ms.openlocfilehash: e551eacf0924c9bffa802fb5d2ba8bae7c1c3a98
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ad8ec97000e29b2194a9eda713aa43d5557b44c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004303"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621640"
 ---
 # <a name="how-to-draw-a-filled-rectangle-on-a-windows-form"></a>方法: Windows フォームに塗りつぶした四角形を描画する
-この例では、フォームに塗りつぶした四角形を描画します。  
+この例では、フォーム上に塗りつぶされた四角形を描画します。  
   
 ## <a name="example"></a>例  
  [!code-cpp[System.Drawing.ConceptualHowTos#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/cpp/form1.cpp#2)]
@@ -28,10 +29,10 @@ ms.locfileid: "62004303"
  [!code-vb[System.Drawing.ConceptualHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/VB/form1.vb#2)]  
   
 ## <a name="compiling-the-code"></a>コードのコンパイル  
- このメソッドを呼び出すことはできません、<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。 フォームのサイズを変更または別の形式によって隠されている場合、描画のコンテンツを再描画されませんされます。 コンテンツを自動的に再描画するために、オーバーライドする必要があります、<xref:System.Windows.Forms.Control.OnPaint%2A>メソッド。  
+ イベントハンドラーでは、このメソッドを呼び出すことはできません <xref:System.Windows.Forms.Form.Load> 。 フォームのサイズが変更されたり、別の形式で隠されたりした場合、描画コンテンツは再描画されません。 コンテンツが自動的に再描画されるようにするには、メソッドをオーバーライドする必要があり <xref:System.Windows.Forms.Control.OnPaint%2A> ます。  
   
 ## <a name="robust-programming"></a>信頼性の高いプログラミング  
- 常に呼び出す必要があります<xref:System.IDisposable.Dispose%2A>などのシステム リソースを消費するすべてのオブジェクトに対する<xref:System.Drawing.Brush>と<xref:System.Drawing.Graphics>オブジェクト。  
+ やオブジェクトなどの <xref:System.IDisposable.Dispose%2A> システムリソースを消費するオブジェクトに対しては、常にを呼び出す必要があり <xref:System.Drawing.Brush> <xref:System.Drawing.Graphics> ます。  
   
 ## <a name="see-also"></a>関連項目
 

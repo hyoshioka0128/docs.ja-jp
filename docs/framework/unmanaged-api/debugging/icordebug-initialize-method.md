@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6fae3b23-5c9f-47c0-85d8-6bb75e050786
 topic_type:
 - apiref
-ms.openlocfilehash: a5cda98cac0bc3fc6fb101fd0404b062224cb578
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aeecf19cb85ce5d7781c3dfedca079e97cab76ce
+ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134083"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82895356"
 ---
 # <a name="icordebuginitialize-method"></a>ICorDebug::Initialize メソッド
 `ICorDebug` オブジェクトを初期化します。  
@@ -31,18 +31,18 @@ ms.locfileid: "73134083"
 HRESULT Initialize ();  
 ```  
   
-## <a name="remarks"></a>Remarks  
- デバッガーは、作成時に `Initialize` を呼び出して、デバッグサービスを初期化する必要があります。 `ICorDebug` の他のメソッドが呼び出される前に、このメソッドを呼び出す必要があります。  
+## <a name="remarks"></a>解説  
+ デバッガーは、作成`Initialize`時にを呼び出して、デバッグサービスを初期化する必要があります。 このメソッド`ICorDebug`は、の他のメソッドが呼び出される前に呼び出す必要があります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebug インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug インターフェイス](icordebug-interface.md)

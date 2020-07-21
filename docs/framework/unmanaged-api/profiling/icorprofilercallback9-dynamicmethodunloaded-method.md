@@ -8,12 +8,12 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: 05a788179ff40a6889ed613b5f8659dd3f8e066f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2391ad854b17ec117940a3d3568c40d6cf7f4725
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73196319"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498974"
 ---
 # <a name="icorprofilercallback9dynamicmethodunloaded-method"></a>ICorProfilerCallback9::D ynamicMethodUnloaded メソッド
 [.NET Framework 4.7.2 以降のバージョンでサポートされています]  
@@ -30,16 +30,16 @@ HRESULT DynamicMethodUnloaded(
   
 ## <a name="parameters"></a>パラメーター  
 [入力] `functionId`  
-ガベージコレクションおよびアンロードされたメモリ内の関数の識別子。   
+ガベージコレクションおよびアンロードされたメモリ内の関数の識別子。
 
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>要件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー** : CorProf.idl、CorProf.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>関連項目
 

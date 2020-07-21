@@ -5,15 +5,16 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF]
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-ms.openlocfilehash: b4a4005a23c8c74edecb00475669e019b50a17af
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 6459e3f0cf0ab72af8027bd6802a0e7aa574aece
+ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851226"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80635786"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>方法: カスタム WS-Metadata Exchange バインディングを構成する
-ここでは、カスタム WS-Metadata Exchange バインディングを構成する方法について説明します。 Windows Communication Foundation (WCF) には、4つのシステム定義のメタデータバインドが含まれていますが、必要なバインドを使用してメタデータを公開できます。 ここでは、`wsHttpBinding` を使用してメタデータを公開する方法を示します。 このバインディングでは、メタデータをセキュリティで保護して公開することができます。 この記事のコードは、[はじめに](../samples/getting-started-sample.md)に基づいています。  
+
+この記事では、カスタム WS メタデータエクスチェンジ バインディングを構成する方法について説明します。 Wcf (Wcf) には、システム定義のメタデータ バインディングが 4 つ含まれていますが、任意のバインドを使用してメタデータを公開できます。 この記事では、 を使用してメタデータを公開`wsHttpBinding`する方法について説明します。 このバインディングでは、メタデータをセキュリティで保護して公開することができます。 この記事のコードは、[作業の開始](../samples/getting-started-sample.md)に基づいています。  
   
 ### <a name="using-a-configuration-file"></a>構成ファイルの使用  
   
@@ -32,8 +33,8 @@ ms.locfileid: "70851226"
 2. この新しい動作を参照する `behaviorConfiguration` 属性をサービス タグに追加します。  
   
     ```xml  
-    <service        name="Microsoft.ServiceModel.Samples.CalculatorService"  
-    behaviorConfiguration="CalculatorServiceBehavior">   
+    <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
+    behaviorConfiguration="CalculatorServiceBehavior" />
     ```  
   
 3. メタデータ エンドポイントを追加し、アドレスに mex、バインディングに `wsHttpBinding`、コントラクトに <xref:System.ServiceModel.Description.IMetadataExchange> をそれぞれ指定します。  
@@ -44,7 +45,7 @@ ms.locfileid: "70851226"
               contract="IMetadataExchange" />  
     ```  
   
-4. Metadata Exchange エンドポイントが適切に動作することを確認するには、クライアントの構成ファイルにエンドポイント タグを追加します。  
+4. メタデータ交換エンドポイントが正常に動作していることを確認するには、クライアント構成ファイルにエンドポイントタグを追加します。  
   
     ```xml  
     <endpoint name="MyMexEndpoint"               address="http://localhost:8000/servicemodelsamples/service/mex"  
@@ -117,6 +118,6 @@ ms.locfileid: "70851226"
 
 - [メタデータ公開動作](../samples/metadata-publishing-behavior.md)
 - [メタデータの抽出](../samples/retrieve-metadata.md)
-- [メタデータ](../feature-details/metadata.md)
+- [Metadata](../feature-details/metadata.md)
 - [メタデータの公開](../feature-details/publishing-metadata.md)
 - [メタデータ エンドポイントを公開する](../publishing-metadata-endpoints.md)

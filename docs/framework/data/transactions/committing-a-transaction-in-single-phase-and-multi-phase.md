@@ -1,25 +1,26 @@
 ---
 title: 単一フェースおよび複数フェーズでのトランザクションのコミット
+description: .NET における単一フェースおよび複数フェーズでのトランザクションのコミットについて説明します。 トランザクションに複数のリソースが含まれる場合は、2 フェーズ コミット (2PC) を実行する必要があります。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 694ea153-e4db-41ae-96ac-9ac66dcb69a9
-ms.openlocfilehash: 2abb9c13e9b0cb394546252e0e51e53c8ff9eefb
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: MT
+ms.openlocfilehash: 2f4486998f347bf1db6d22433e6e48b553609c18
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70206005"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141825"
 ---
 # <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>単一フェースおよび複数フェーズでのトランザクションのコミット
-トランザクションで使用される各リソースは、リソース マネージャー (RM) によって管理され、その動作はトランザクション マネージャー (TM) によって調整されます。 トランザクションの参加[要素としてのリソースの参加](enlisting-resources-as-participants-in-a-transaction.md)に関するトピックでは、リソース (または複数のリソース) をトランザクションに参加させる方法について説明します。 ここでは、参加リソース間でトランザクションのコミットメントを調整する方法について説明します。  
+トランザクションで使用される各リソースは、リソース マネージャー (RM) によって管理され、その動作はトランザクション マネージャー (TM) によって調整されます。 「[トランザクションの参加要素としてのリソースの参加](enlisting-resources-as-participants-in-a-transaction.md)」トピックでは、単一 (または複数) のリソースがトランザクションに参加する方法が説明されています。 ここでは、参加リソース間でトランザクションのコミットメントを調整する方法について説明します。  
   
  トランザクションの最後に、アプリケーションはトランザクションのコミットまたはロールバックを要求します。 トランザクション マネージャーは、一部のリソース マネージャーがトランザクションのコミットを選択し、他のリソース マネージャーがトランザクションのロールバックを選択するというようなリスクを回避する必要があります。  
   
- トランザクションに複数のリソースが含まれる場合は、2 フェーズ コミット (2PC) を実行する必要があります。 2 フェーズ コミット プロトコル (準備フェーズとコミット フェーズ) により、すべてのリソースに対する変更がトランザクションの終了時に完全にコミットされるか、または完全にロールバックされることが保証されます。 その後、すべての参加要素に最終結果が通知されます。 2フェーズコミットプロトコルの詳細については、「*トランザクション処理:の概念と手法 (データ管理 Systems の Morgan gray Series) ISBN:* 1558601902 "(Jim 灰色)。  
+ トランザクションに複数のリソースが含まれる場合は、2 フェーズ コミット (2PC) を実行する必要があります。 2 フェーズ コミット プロトコル (準備フェーズとコミット フェーズ) により、すべてのリソースに対する変更がトランザクションの終了時に完全にコミットされるか、または完全にロールバックされることが保証されます。 その後、すべての参加要素に最終結果が通知されます。 2 フェーズ コミット プロトコルの詳細については、『*トランザクション処理: 概念と手法*』(Morgan Kaufmann Series in Data Management Systems、ISBN: 1558601902、Jim Gray 著) をお読みください。  
   
- 単一フェーズ コミット プロトコルに参加することで、トランザクションのパフォーマンスを最適化することもできます。 詳細については、「[単一フェーズコミットを使用した最適化」と「昇格可能な単一フェーズ通知](optimization-spc-and-promotable-spn.md)」を参照してください。  
+ 単一フェーズ コミット プロトコルに参加することで、トランザクションのパフォーマンスを最適化することもできます。 詳しくは、「[単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化](optimization-spc-and-promotable-spn.md)」をご覧ください。  
   
  トランザクション結果の通知を受信するだけで、コミットまたはロールバックの選択には参加しない場合は、<xref:System.Transactions.Transaction.TransactionCompleted> イベントに登録する必要があります。  
   
@@ -88,8 +89,8 @@ public void Rollback (Enlistment enlistment)
 {  
      // Do any work necessary when rollback notification is received  
   
-     // Declare done on the enlistment    
-     enlistment.Done();    
+     // Declare done on the enlistment
+     enlistment.Done();
 }  
 ```  
   
@@ -107,7 +108,7 @@ public void InDoubt (Enlistment enlistment)
 ```  
   
 ## <a name="single-phase-commit-optimization"></a>単一フェーズ コミットの最適化  
- 単一フェーズ コミット プロトコルは、すべての更新が明示的な調整なしに行われるため、実行時に、より効率的です。 このプロトコルの詳細については、「[単一フェーズコミットを使用した最適化」と「昇格可能な単一フェーズ通知](optimization-spc-and-promotable-spn.md)」を参照してください。  
+ 単一フェーズ コミット プロトコルは、すべての更新が明示的な調整なしに行われるため、実行時に、より効率的です。 このプロトコルについて詳しくは、「[単一フェーズ コミットおよび昇格可能単一フェーズ通知を使用した最適化](optimization-spc-and-promotable-spn.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目
 

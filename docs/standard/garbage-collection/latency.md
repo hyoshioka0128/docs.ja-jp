@@ -6,12 +6,12 @@ helpviewer_keywords:
 - garbage collection, intrusiveness
 - garbage collection, latency modes
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
-ms.openlocfilehash: a8eaf0c80aa32978eead80c51a905cbcd66a537b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ee45fe5e8016c7507bc3a873e615fd8379810a8e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283589"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286016"
 ---
 # <a name="latency-modes"></a>待機モード
 
@@ -58,12 +58,12 @@ ms.locfileid: "74283589"
 
 - 割り当てられる可能性のあるスレッドに注意します。 <xref:System.Runtime.GCSettings.LatencyMode%2A> プロパティの設定はプロセス全体に適用されるため、<xref:System.OutOfMemoryException> 例外は割り当てられている任意のスレッドで生成できます。
 
-- 低待機時間コードを制約された実行領域にラップします。 詳細については、「[制約された実行領域](../../../docs/framework/performance/constrained-execution-regions.md)」を参照してください。
+- 低待機時間コードを制約された実行領域にラップします。 詳細については、「[制約された実行領域](../../framework/performance/constrained-execution-regions.md)」を参照してください。
 
 - 待機時間を短くする期間中でも、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%29?displayProperty=nameWithType> メソッドを呼び出せばジェネレーション 2 のガベージ コレクションを強制できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - <xref:System.GC?displayProperty=nameWithType>
-- [発生したコレクション](../../../docs/standard/garbage-collection/induced.md)
-- [ガベージ コレクション](../../../docs/standard/garbage-collection/index.md)
+- [発生したコレクション](induced.md)
+- [ガベージ コレクション](index.md)

@@ -1,5 +1,5 @@
 ---
-title: Windows フォームにおけるファイルおよびデータへのより安全なアクセス
+title: より安全なファイルおよびデータ アクセス
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,23 +13,23 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: 94b165757de636b2570798a21fd7c483264e37c5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a29c2f7137440e64fbf8095f77d5d10d0505bc2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949949"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79185893"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Windows フォームにおけるファイルおよびデータへのより安全なアクセス
-.NET Framework は、リソースとデータを保護するためにアクセス許可を使用します。 アプリケーションでデータを読み取りまたは書き込みできる場所は、アプリケーションに付与されるアクセス許可に依存します。 部分信頼環境でアプリケーションを実行すると、データにアクセス許可がないか、またはデータにアクセスする方法を変更しなければならない可能性があります。  
+.NET Framework では、リソースとデータを保護するためにアクセス許可を使用します。 アプリケーションでデータを読み取りまたは書き込みできる場所は、アプリケーションに付与されるアクセス許可に依存します。 部分信頼環境でアプリケーションを実行すると、データにアクセス許可がないか、またはデータにアクセスする方法を変更しなければならない可能性があります。  
   
  セキュリティの制限が発生した場合、アクセス許可をアサートする (アプリケーションに付与されていると仮定した場合)、または部分信頼で動作するよう作成されたバージョンの機能を使用するという 2 つのオプションがあります。 次のセクションでは、部分信頼環境で実行されているアプリケーションからファイル、データベース、およびレジストリ アクセスを操作する方法について説明します。  
   
 > [!NOTE]
-> 既定では、ClickOnce 配置を生成するツールは、これらの展開を実行するコンピューターから完全信頼を要求するように既定で設定されています。 部分信頼でを実行するという追加のセキュリティ上の利点が必要な場合は、Visual Studio またはいずれかの Windows SDK ツール (Mage.exe または Mageui.exe) でこの既定値を変更する必要があります。 Windows フォームのセキュリティ、およびアプリケーションの適切な信頼レベルを決定する方法の詳細については、[Windows フォームのセキュリティの概要](security-in-windows-forms-overview.md)を参照してください。  
+> 既定では、ClickOnce 配置を生成するツールは、既定で、これらの展開を実行するコンピューターから完全信頼を要求します。 部分信頼で実行するセキュリティ上の利点を追加する場合は、Visual Studio またはいずれかの Windows SDK ツール (Mage.exe または MageUI.exe) でこの既定値を変更する必要があります。 Windows フォームのセキュリティの詳細と、アプリケーションに対する適切な信頼レベルを決定する方法については、「 [Windows フォームのセキュリティの概要](security-in-windows-forms-overview.md)」を参照してください。  
   
 ## <a name="file-access"></a>ファイル アクセス  
- クラス<xref:System.Security.Permissions.FileIOPermission>は、.NET Framework 内のファイルとフォルダーへのアクセスを制御します。 既定では、セキュリティ システムは、ローカルのイントラネットやインターネット ゾーンなどの部分信頼環境に <xref:System.Security.Permissions.FileIOPermission> を付与しません。 ただし、ファイルへのアクセスを必要とするアプリケーションは、アプリケーションの設計を変更するかファイルにアクセスする別の方法を使用すると、引き続きこれらの環境で機能することが可能です。 既定では、ローカル イントラネット ゾーンに、同じサイトと同じディレクトリにアクセスして、その起点のサイトに接続し、インストール ディレクトリから読み取るための権限が付与されます。 既定では、インターネット ゾーンは、起点のサイトに接続する権限のみが付与されます。  
+ この<xref:System.Security.Permissions.FileIOPermission>クラスは、.NET Framework でファイルとフォルダーへのアクセスを制御します。 既定では、セキュリティ システムは、ローカルのイントラネットやインターネット ゾーンなどの部分信頼環境に <xref:System.Security.Permissions.FileIOPermission> を付与しません。 ただし、ファイルへのアクセスを必要とするアプリケーションは、アプリケーションの設計を変更するかファイルにアクセスする別の方法を使用すると、引き続きこれらの環境で機能することが可能です。 既定では、ローカル イントラネット ゾーンに、同じサイトと同じディレクトリにアクセスして、その起点のサイトに接続し、インストール ディレクトリから読み取るための権限が付与されます。 既定では、インターネット ゾーンは、起点のサイトに接続する権限のみが付与されます。  
   
 ### <a name="user-specified-files"></a>ユーザー指定のファイル  
  ファイルへのアクセス許可を持たないときに処理する方法の 1 つは、<xref:System.Windows.Forms.OpenFileDialog> クラスまたは <xref:System.Windows.Forms.SaveFileDialog> クラスを使用して、特定のファイル情報の入力をユーザーに求める方法です。 このユーザーの操作では、アプリケーションが悪意を持ってプライベート ファイルを読み込んだり、重要なファイルを上書きしたりできないことを、ある程度保証できます。 <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> メソッドと <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> メソッドは、ユーザーが指定したファイルのファイル ストリームを開くことで、ファイルの読み取りアクセスと書き込みアクセスを提供します。 メソッドは、ファイルのパスを隠すことで、ユーザーのファイルの保護にも役立ちます。  
@@ -47,7 +47,7 @@ ms.locfileid: "69949949"
 > [!NOTE]
 > <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> メソッドが実際に呼び出されるまでは、特定のアクセス許可は要求されません。  
   
- ファイル ダイアログ ボックスを表示するためのアクセス許可は、<xref:System.Windows.Forms.FileDialog>、<xref:System.Windows.Forms.OpenFileDialog>、および <xref:System.Windows.Forms.SaveFileDialog> の各クラスのすべてのメンバーに対するフルアクセスをアプリケーションに付与しません。 各メソッドを呼び出すために必要なアクセス許可については、.NET Framework クラスライブラリのドキュメントで、そのメソッドのリファレンストピックを参照してください。  
+ ファイル ダイアログ ボックスを表示するためのアクセス許可は、<xref:System.Windows.Forms.FileDialog>、<xref:System.Windows.Forms.OpenFileDialog>、および <xref:System.Windows.Forms.SaveFileDialog> の各クラスのすべてのメンバーに対するフルアクセスをアプリケーションに付与しません。 各メソッドを呼び出すために必要なアクセス許可については、.NET Framework クラス ライブラリのドキュメントの参照トピックを参照してください。  
   
  次のコード例では、<xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> メソッドを使用して、ユーザーが指定したファイルを <xref:System.Windows.Forms.RichTextBox> コントロールに開きます。 この例では、<xref:System.Security.Permissions.FileDialogPermission> および関連付けられた <xref:System.Security.Permissions.FileDialogPermissionAttribute.Open%2A> 列挙値が必要です。 例では、保存機能を無効にする必要があるかどうかを判断するために、<xref:System.Security.SecurityException> を処理する方法を示しています。 この例では、<xref:System.Windows.Forms.Form> が `ButtonOpen` という名前の <xref:System.Windows.Forms.Button> コントロールと、`RtfBoxMain` という名前の <xref:System.Windows.Forms.RichTextBox> コントロールを必要とします。  
   
@@ -56,7 +56,7 @@ ms.locfileid: "69949949"
   
 ```vb  
 Private Sub ButtonOpen_Click(ByVal sender As System.Object, _  
-    ByVal e As System.EventArgs) Handles ButtonOpen.Click   
+    ByVal e As System.EventArgs) Handles ButtonOpen.Click
   
     Dim editingFileName as String = ""  
     Dim saveAllowed As Boolean = True  
@@ -64,9 +64,9 @@ Private Sub ButtonOpen_Click(ByVal sender As System.Object, _
     ' Displays the OpenFileDialog.  
     If (OpenFileDialog1.ShowDialog() = DialogResult.OK) Then  
         Dim userStream as System.IO.Stream  
-        Try   
+        Try
             ' Opens the file stream for the file selected by the user.  
-            userStream =OpenFileDialog1.OpenFile()   
+            userStream =OpenFileDialog1.OpenFile()
             Me.RtfBoxMain.LoadFile(userStream, _  
                 RichTextBoxStreamType.PlainText)  
         Finally  
@@ -76,14 +76,14 @@ Private Sub ButtonOpen_Click(ByVal sender As System.Object, _
         ' Tries to get the file name selected by the user.  
         ' Failure means that the application does not have  
         ' unrestricted permission to the file.  
-        Try   
+        Try
             editingFileName = OpenFileDialog1.FileName  
         Catch ex As Exception  
-            If TypeOf ex Is System.Security.SecurityException Then   
-                ' The application does not have unrestricted permission   
+            If TypeOf ex Is System.Security.SecurityException Then
+                ' The application does not have unrestricted permission
                 ' to the file so the save feature will be disabled.  
-                saveAllowed = False   
-            Else   
+                saveAllowed = False
+            Else
                 Throw ex  
             End If  
         End Try  
@@ -92,16 +92,16 @@ End Sub
 ```  
   
 ```csharp  
-private void ButtonOpen_Click(object sender, System.EventArgs e)   
+private void ButtonOpen_Click(object sender, System.EventArgs e)
 {  
     String editingFileName = "";  
     Boolean saveAllowed = true;  
   
     // Displays the OpenFileDialog.  
-    if (openFileDialog1.ShowDialog() == DialogResult.OK)   
+    if (openFileDialog1.ShowDialog() == DialogResult.OK)
     {  
         // Opens the file stream for the file selected by the user.  
-        using (System.IO.Stream userStream = openFileDialog1.OpenFile())   
+        using (System.IO.Stream userStream = openFileDialog1.OpenFile())
         {  
             this.RtfBoxMain.LoadFile(userStream,  
                 RichTextBoxStreamType.PlainText);  
@@ -111,19 +111,19 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
         // Tries to get the file name selected by the user.  
         // Failure means that the application does not have  
         // unrestricted permission to the file.  
-        try   
+        try
         {  
             editingFileName = openFileDialog1.FileName;  
-        }   
-        catch (Exception ex)   
+        }
+        catch (Exception ex)
         {  
-            if (ex is System.Security.SecurityException)   
+            if (ex is System.Security.SecurityException)
             {  
-                // The application does not have unrestricted permission   
+                // The application does not have unrestricted permission
                 // to the file so the save feature will be disabled.  
-                saveAllowed = false;   
-            }   
-            else   
+                saveAllowed = false;
+            }
+            else
             {  
                 throw ex;  
             }  
@@ -133,19 +133,19 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
 ```  
   
 > [!NOTE]
-> Visual C# では、イベント ハンドラーを有効にするコードを必ず追加してください。 前の例でのコードを使用することで、次のコードではイベント ハンドラー `this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);` を有効にする方法を示します。  
+> Visual C# では、イベント ハンドラーを有効にするコードを追加することを確認します。 前の例でのコードを使用することで、次のコードではイベント ハンドラー `this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);` を有効にする方法を示します。  
   
-### <a name="other-files"></a>その他のファイル  
- 場合によって、アプリケーション設定を保存しなければならないという場合など、ユーザーが指定しないファイルへの読み取りまたは書き込みを実行する必要があります。 ローカルのイントラネット ゾーンとインターネット ゾーンでは、アプリケーションにローカル ファイルにデータを格納するためのアクセス許可がありません。 ただし、アプリケーションが分離ストレージにデータを格納できるようにします。 分離ストレージは (特定の記憶場所ではなく) 抽象的なデータ コンパートメントであり、データが保存される実際のディレクトリの場所を含む、ストアと呼ばれる 1 つ以上の分離ストレージ ファイルが含まれます。 <xref:System.Security.Permissions.FileIOPermission> のようなファイルのアクセス許可は必要なく、代わりに <xref:System.Security.Permissions.IsolatedStoragePermission> クラスが分離ストレージのアクセス許可を制御します。 既定では、ローカル イントラネット ゾーンとインターネット ゾーンで実行されているアプリケーションが、分離ストレージを使用してデータを格納できます。ただし、ディスク クォータのように設定が変わることがあります。 分離ストレージの詳細については、「[分離ストレージ](../../standard/io/isolated-storage.md)」を参照してください。  
+### <a name="other-files"></a>他のファイル数  
+ 場合によって、アプリケーション設定を保存しなければならないという場合など、ユーザーが指定しないファイルへの読み取りまたは書き込みを実行する必要があります。 ローカルのイントラネット ゾーンとインターネット ゾーンでは、アプリケーションにローカル ファイルにデータを格納するためのアクセス許可がありません。 ただし、アプリケーションが分離ストレージにデータを格納できるようにします。 分離ストレージは (特定の記憶場所ではなく) 抽象的なデータ コンパートメントであり、データが保存される実際のディレクトリの場所を含む、ストアと呼ばれる 1 つ以上の分離ストレージ ファイルが含まれます。 <xref:System.Security.Permissions.FileIOPermission> のようなファイルのアクセス許可は必要なく、代わりに <xref:System.Security.Permissions.IsolatedStoragePermission> クラスが分離ストレージのアクセス許可を制御します。 既定では、ローカル イントラネット ゾーンとインターネット ゾーンで実行されているアプリケーションが、分離ストレージを使用してデータを格納できます。ただし、ディスク クォータのように設定が変わることがあります。 分離ストレージの詳細については、「[分離](../../standard/io/isolated-storage.md)ストレージ 」を参照してください。  
   
- 次の例では、分離ストレージを使用して、ストアにあるファイルにデータを書き込みます。 この例では、<xref:System.Security.Permissions.IsolatedStorageFilePermission> および <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser> 列挙値が必要です。 例では、分離ストレージ内のファイルに対する、<xref:System.Windows.Forms.Button> コントロールの特定のプロパティ値の読み取りと書き込みを示しています。 `Read` 関数はアプリケーションの起動後に呼び出され、`Write` 関数はアプリケーションの終了前に呼び出されます。 この例では、 `Read`関数`Write`と関数が、という<xref:System.Windows.Forms.Form>名前`MainButton`のコントロール<xref:System.Windows.Forms.Button>を含むのメンバーとして存在する必要があります。  
+ 次の例では、分離ストレージを使用して、ストアにあるファイルにデータを書き込みます。 この例では、<xref:System.Security.Permissions.IsolatedStorageFilePermission> および <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser> 列挙値が必要です。 例では、分離ストレージ内のファイルに対する、<xref:System.Windows.Forms.Button> コントロールの特定のプロパティ値の読み取りと書き込みを示しています。 `Read` 関数はアプリケーションの起動後に呼び出され、`Write` 関数はアプリケーションの終了前に呼び出されます。 この例では、`Read`という`Write`名前`MainButton`のコントロールを含む<xref:System.Windows.Forms.Form>のメンバー<xref:System.Windows.Forms.Button>として、 関数が存在している必要があります。  
   
 ```vb  
-' Reads the button options from the isolated storage. Uses Default values   
+' Reads the button options from the isolated storage. Uses Default values
 ' for the button if the options file does not exist.  
-Public Sub Read()   
+Public Sub Read()
     Dim isoStore As System.IO.IsolatedStorage.IsolatedStorageFile = _  
-        System.IO.IsolatedStorage.IsolatedStorageFile. _   
+        System.IO.IsolatedStorage.IsolatedStorageFile. _
         GetUserStoreForDomain()  
   
     Dim filename As String = "options.txt"  
@@ -154,28 +154,28 @@ Public Sub Read()
         If (isoStore.GetFileNames(filename).GetLength(0) <> 0) Then  
   
             ' Opens the file because it exists.  
-            Dim isos As New System.IO.IsolatedStorage.IsolatedStorageFileStream _   
+            Dim isos As New System.IO.IsolatedStorage.IsolatedStorageFileStream _
                  (filename, IO.FileMode.Open,isoStore)  
             Dim reader as System.IO.StreamReader  
-            Try   
+            Try
                 reader = new System.IO.StreamReader(isos)  
   
                 ' Reads the values stored.  
                 Dim converter As System.ComponentModel.TypeConverter  
-                converter = System.ComponentModel.TypeDescriptor.GetConverter _   
+                converter = System.ComponentModel.TypeDescriptor.GetConverter _
                     (GetType(Color))  
   
-                Me.MainButton.BackColor = _   
-                        CType(converter.ConvertFromString _   
+                Me.MainButton.BackColor = _
+                        CType(converter.ConvertFromString _
                          (reader.ReadLine()), Color)  
                 me.MainButton.ForeColor = _  
-                        CType(converter.ConvertFromString _   
+                        CType(converter.ConvertFromString _
                          (reader.ReadLine()), Color)  
   
-                converter = System.ComponentModel.TypeDescriptor.GetConverter _   
+                converter = System.ComponentModel.TypeDescriptor.GetConverter _
                     (GetType(Font))  
                 me.MainButton.Font = _  
-                        CType(converter.ConvertFromString _   
+                        CType(converter.ConvertFromString _
                          (reader.ReadLine()), Font)  
   
             Catch ex As Exception  
@@ -192,13 +192,13 @@ Public Sub Read()
 End Sub  
   
 ' Writes the button options to the isolated storage.  
-Public Sub Write()   
+Public Sub Write()
     Dim isoStore As System.IO.IsolatedStorage.IsolatedStorageFile = _  
-        System.IO.IsolatedStorage.IsolatedStorageFile. _   
+        System.IO.IsolatedStorage.IsolatedStorageFile. _
         GetUserStoreForDomain()  
   
     Dim filename As String = "options.txt"  
-    Try   
+    Try
         ' Checks if the file exists, and if it does, tries to delete it.  
         If (isoStore.GetFileNames(filename).GetLength(0) <> 0) Then  
             isoStore.DeleteFile(filename)  
@@ -209,21 +209,21 @@ Public Sub Write()
   
     ' Creates the options.txt file and writes the button options to it.  
     Dim writer as System.IO.StreamWriter  
-    Try   
-        Dim isos As New System.IO.IsolatedStorage.IsolatedStorageFileStream _   
+    Try
+        Dim isos As New System.IO.IsolatedStorage.IsolatedStorageFileStream _
              (filename, IO.FileMode.CreateNew, isoStore)  
   
         writer = New System.IO.StreamWriter(isos)  
         Dim converter As System.ComponentModel.TypeConverter  
   
-        converter = System.ComponentModel.TypeDescriptor.GetConverter _   
+        converter = System.ComponentModel.TypeDescriptor.GetConverter _
            (GetType(Color))  
         writer.WriteLine(converter.ConvertToString( _  
             Me.MainButton.BackColor))  
         writer.WriteLine(converter.ConvertToString( _  
             Me.MainButton.ForeColor))  
   
-        converter = System.ComponentModel TypeDescriptor.GetConverter _   
+        converter = System.ComponentModel TypeDescriptor.GetConverter _
            (GetType(Font))  
         writer.WriteLine(converter.ConvertToString( _  
             Me.MainButton.Font))  
@@ -238,11 +238,11 @@ End Sub
 ```  
   
 ```csharp  
-// Reads the button options from the isolated storage. Uses default values   
+// Reads the button options from the isolated storage. Uses default values
 // for the button if the options file does not exist.  
-public void Read()   
+public void Read()
 {  
-    System.IO.IsolatedStorage.IsolatedStorageFile isoStore =   
+    System.IO.IsolatedStorage.IsolatedStorageFile isoStore =
         System.IO.IsolatedStorage.IsolatedStorageFile.  
         GetUserStoreForDomain();  
   
@@ -250,14 +250,14 @@ public void Read()
     try  
     {  
         // Checks to see if the options.txt file exists.  
-        if (isoStore.GetFileNames(filename).GetLength(0) != 0)   
+        if (isoStore.GetFileNames(filename).GetLength(0) != 0)
         {  
             // Opens the file because it exists.  
-            System.IO.IsolatedStorage.IsolatedStorageFileStream isos =   
+            System.IO.IsolatedStorage.IsolatedStorageFileStream isos =
                 new System.IO.IsolatedStorage.IsolatedStorageFileStream  
                     (filename, System.IO.FileMode.Open,isoStore);  
             System.IO.StreamReader reader = null;  
-            try   
+            try
             {  
                 reader = new System.IO.StreamReader(isos);  
   
@@ -265,17 +265,17 @@ public void Read()
                 TypeConverter converter ;  
                 converter = TypeDescriptor.GetConverter(typeof(Color));  
   
-                this.MainButton.BackColor =   
+                this.MainButton.BackColor =
                  (Color)(converter.ConvertFromString(reader.ReadLine()));  
-                this.MainButton.ForeColor =   
+                this.MainButton.ForeColor =
                  (Color)(converter.ConvertFromString(reader.ReadLine()));  
   
                 converter = TypeDescriptor.GetConverter(typeof(Font));  
-                this.MainButton.Font =   
+                this.MainButton.Font =
                   (Font)(converter.ConvertFromString(reader.ReadLine()));  
             }  
             catch (Exception ex)  
-            {   
+            {
                 System.Diagnostics.Debug.WriteLine  
                      ("Cannot read options " + ex.ToString());  
             }  
@@ -284,8 +284,8 @@ public void Read()
                 reader.Close();  
             }  
         }  
-    }   
-    catch (Exception ex)   
+    }
+    catch (Exception ex)
     {  
         System.Diagnostics.Debug.WriteLine  
             ("Cannot read options " + ex.ToString());  
@@ -293,22 +293,22 @@ public void Read()
 }  
   
 // Writes the button options to the isolated storage.  
-public void Write()   
+public void Write()
 {  
-    System.IO.IsolatedStorage.IsolatedStorageFile isoStore =   
+    System.IO.IsolatedStorage.IsolatedStorageFile isoStore =
         System.IO.IsolatedStorage.IsolatedStorageFile.  
         GetUserStoreForDomain();  
   
     string filename = "options.txt";  
-    try   
+    try
     {  
         // Checks if the file exists and, if it does, tries to delete it.  
-        if (isoStore.GetFileNames(filename).GetLength(0) != 0)   
+        if (isoStore.GetFileNames(filename).GetLength(0) != 0)
         {  
             isoStore.DeleteFile(filename);  
         }  
     }  
-    catch (Exception ex)   
+    catch (Exception ex)
     {  
         System.Diagnostics.Debug.WriteLine  
             ("Cannot delete file " + ex.ToString());  
@@ -316,10 +316,10 @@ public void Write()
   
     // Creates the options file and writes the button options to it.  
     System.IO.StreamWriter writer = null;  
-    try   
+    try
     {  
-        System.IO.IsolatedStorage.IsolatedStorageFileStream isos = new   
-            System.IO.IsolatedStorage.IsolatedStorageFileStream(filename,   
+        System.IO.IsolatedStorage.IsolatedStorageFileStream isos = new
+            System.IO.IsolatedStorage.IsolatedStorageFileStream(filename,
             System.IO.FileMode.CreateNew,isoStore);  
   
         writer = new System.IO.StreamWriter(isos);  
@@ -337,7 +337,7 @@ public void Write()
   
     }  
     catch (Exception ex)  
-    {   
+    {
         System.Diagnostics.Debug.WriteLine  
            ("Cannot write options " + ex.ToString());  
     }  
@@ -348,10 +348,10 @@ public void Write()
 }  
 ```  
   
-## <a name="database-access"></a>データベースへのアクセス  
- データベースにアクセスするために必要なアクセス許可は、データベース プロバイダーに応じて異なります。ただし、適切なアクセス許可で実行されているアプリケーションのみがデータ接続を使用してデータベースにアクセスできます。 データベースへのアクセスに必要な権限の詳細については、「[コードアクセスセキュリティと ADO.NET](../data/adonet/code-access-security.md)」を参照してください。  
+## <a name="database-access"></a>データベース アクセス  
+ データベースにアクセスするために必要なアクセス許可は、データベース プロバイダーに応じて異なります。ただし、適切なアクセス許可で実行されているアプリケーションのみがデータ接続を使用してデータベースにアクセスできます。 データベースへのアクセスに必要なアクセス許可の詳細については、「 コード[アクセス セキュリティとADO.NET](../data/adonet/code-access-security.md)」を参照してください。  
   
- アプリケーションを部分信頼で実行するためにデータベースに直接アクセスできない場合は、データにアクセスする別の方法として Web サービスを使用することができます。 Web サービスは、ネットワーク経由でプログラムでアクセスできるソフトウェアです。 Web サービスを使用すると、アプリケーションはコード グループのゾーンにまたがるデータを共有できます。 既定では、ローカル イントラネット ゾーンとインターネット ゾーンのアプリケーションに、元のサイトへのアクセス権が付与され、同じサーバーにホストされる Web サービスを呼び出すことができます。 詳細については、[ASP.NET AJAX の Web サービス](https://docs.microsoft.com/previous-versions/aspnet/bb398785(v=vs.100))または  [indows Communication Foundation](../wcf/index.md)に関するページを参照してください。  
+ アプリケーションを部分信頼で実行するためにデータベースに直接アクセスできない場合は、データにアクセスする別の方法として Web サービスを使用することができます。 Web サービスは、ネットワーク経由でプログラムでアクセスできるソフトウェアです。 Web サービスを使用すると、アプリケーションはコード グループのゾーンにまたがるデータを共有できます。 既定では、ローカル イントラネット ゾーンとインターネット ゾーンのアプリケーションに、元のサイトへのアクセス権が付与され、同じサーバーにホストされる Web サービスを呼び出すことができます。 詳細については、「 [AJAX](https://docs.microsoft.com/previous-versions/aspnet/bb398785(v=vs.100))または Windows[コミュニケーション ファウンデーション](../wcf/index.md)の Web サービスASP.NET 」を参照してください。  
   
 ## <a name="registry-access"></a>レジストリへのアクセス  
  <xref:System.Security.Permissions.RegistryPermission> クラスは、オペレーティング システムのレジストリへのアクセスを制御します。 既定では、ローカルで実行されているアプリケーションのみが、レジストリにアクセスできます。  <xref:System.Security.Permissions.RegistryPermission> はレジストリにアクセスしようとする権利のみをアプリケーションに付与します。オペレーティング システムは、引き続きレジストリのセキュリティを強制するため、アクセスが成功するかどうかは保証されません。  
@@ -364,5 +364,5 @@ public void Write()
 - [Windows フォームのセキュリティに関するその他の考慮事項](additional-security-considerations-in-windows-forms.md)
 - [Windows フォームのセキュリティの概要](security-in-windows-forms-overview.md)
 - [Windows フォームのセキュリティ](windows-forms-security.md)
-- [Mage.exe (マニフェストの生成および編集ツール)](../tools/mage-exe-manifest-generation-and-editing-tool.md)
+- [Mage.exe (マニフェスト生成および編集ツール)](../tools/mage-exe-manifest-generation-and-editing-tool.md)
 - [MageUI.exe (マニフェスト生成および編集ツールのグラフィカル クライアント)](../tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)

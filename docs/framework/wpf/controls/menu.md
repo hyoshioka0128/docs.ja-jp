@@ -9,15 +9,15 @@ helpviewer_keywords:
 ms.assetid: 4317fb80-408c-47c7-9223-b29e4742c4ee
 ms.openlocfilehash: 93152861ff3a2ab1782b86b1de0951d89a8cc85d
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61770732"
 ---
 # <a name="menu"></a>メニュー
-A<xref:System.Windows.Controls.Menu>コマンドまたはイベント ハンドラーに関連付けられている要素の階層編成できるようにするコントロールです。 各<xref:System.Windows.Controls.Menu>複数含めることができます<xref:System.Windows.Controls.MenuItem>コントロール。 各<xref:System.Windows.Controls.MenuItem>コマンドの呼び出しまたは呼び出すことができます、`Click`イベント ハンドラー。 A<xref:System.Windows.Controls.MenuItem>複数持つこともできます<xref:System.Windows.Controls.MenuItem>サブメニューを形成する子要素として。  
+<xref:System.Windows.Controls.Menu> は、コマンドまたはイベント ハンドラーに関連付けられている要素を階層的に編成できるコントロールです。 各 <xref:System.Windows.Controls.Menu> には、複数の <xref:System.Windows.Controls.MenuItem> コントロールを含めることができます。 各 <xref:System.Windows.Controls.MenuItem> では、コマンドを呼び出すか、`Click` イベント ハンドラーを呼び出すことができます。 <xref:System.Windows.Controls.MenuItem> には、子として複数の <xref:System.Windows.Controls.MenuItem> 要素を与え、サブメニューを作ることもできます。  
   
- 次の図は、メニュー コントロールの 3 つの異なる状態を示します。 既定の状態はマウスのポインターなどのデバイスが配置されていないときに、<xref:System.Windows.Controls.Menu>します。 フォーカス状態の場合は、マウス ポインターが配置されて、<xref:System.Windows.Controls.Menu>押された状態は、上でマウス ボタンがクリックされたときに発生します。 および、<xref:System.Windows.Controls.Menu>します。  
+ 次の画像では、メニュー コントロールの 3 つの異なる状態を示します。 マウス ポインターなどのデバイスが <xref:System.Windows.Controls.Menu> 上に置かれていないときが既定の状態です。 マウス ポインターを <xref:System.Windows.Controls.Menu> の上に置くと焦点を合わせた状態となり、<xref:System.Windows.Controls.Menu> の上でマウス ボタンがクリックされると押された状態になります。  
   
  ![メニューの状態](./media/ss-ctl-menu.gif "SS_CTL_menu")  
 さまざまな状態のメニュー  
@@ -25,7 +25,7 @@ A<xref:System.Windows.Controls.Menu>コマンドまたはイベント ハンド�
 ## <a name="in-this-section"></a>このセクションの内容  
  [メニューの概要](menu-overview.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Menu>  
   <xref:System.Windows.Controls.MenuItem>  
   <xref:System.Windows.Controls.Primitives.MenuBase>  

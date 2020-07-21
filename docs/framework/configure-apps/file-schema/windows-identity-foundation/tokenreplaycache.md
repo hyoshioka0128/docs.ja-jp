@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 1572ab23-6933-41b5-bfb4-0c4548145500
 author: BrucePerlerMS
 ms.openlocfilehash: 9f3a95fd0a39f199eaf13c7509aff22caa0e3b66
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70251785"
 ---
-# <a name="tokenreplaycache"></a>\<tokenReplayCache>
+# \<tokenReplayCache>
 トークン再生キャッシュをサービスまたはセキュリティトークンハンドラーコレクションに登録します。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<システムの >** ](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<構成 >** ](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<キャッシュ >** ](caches.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<tokenReplayCache >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<caches>**](caches.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<tokenReplayCache>**  
   
 ## <a name="syntax"></a>構文  
   
@@ -39,19 +39,19 @@ ms.locfileid: "70251785"
   
 |属性|説明|  
 |---------------|-----------------|  
-|型|<xref:System.IdentityModel.Tokens.TokenReplayCache>クラスから派生する型。 カスタム`type`を指定する方法の詳細については、「[カスタム型参照]」を参照してください。
+|type|クラスから派生する型 <xref:System.IdentityModel.Tokens.TokenReplayCache> 。 カスタムを指定する方法の詳細については `type` 、「[カスタム型参照]」を参照してください。
   
 ### <a name="child-elements"></a>子要素  
  なし  
   
 ### <a name="parent-elements"></a>親要素  
   
-|要素|説明|  
+|要素|Description|  
 |-------------|-----------------|  
-|[\<キャッシュ >](caches.md)|サービスまたはセキュリティトークンハンドラーコレクションによって使用されるキャッシュを登録します。|  
+|[\<caches>](caches.md)|サービスまたはセキュリティトークンハンドラーコレクションによって使用されるキャッシュを登録します。|  
   
-## <a name="remarks"></a>Remarks  
- トークン再生キャッシュは、再生されたトークンを検出するために使用されます。 トークンリプレイ検出は、トークンの最大有効期間を指定する[ \<tokenreplaydetection >](tokenreplaydetection.md)要素によって有効にされます。  
+## <a name="remarks"></a>解説  
+ トークン再生キャッシュは、再生されたトークンを検出するために使用されます。 トークンリプレイ検出は、要素によって有効にされ [\<tokenReplayDetection>](tokenreplaydetection.md) ます。これは、トークンの最大有効期間も指定します。  
   
 ## <a name="example"></a>例  
  次の XML は、再生されたトークンを検出するためのカスタムキャッシュの構成を示しています。  

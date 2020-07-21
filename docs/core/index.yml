@@ -1,0 +1,127 @@
+### YamlMime:Landing
+title: .NET Core ドキュメント
+summary: クロスプラットフォーム アプリを構築するためのオープンソースの汎用開発フレームワークである .NET Core について説明します。
+metadata:
+  title: .NET Core ドキュメント
+  description: .NET Core は、クロスプラットフォーム アプリを構築するためのオープンソースの汎用開発プラットフォームです。
+  ms.topic: landing-page
+  ms.date: 03/25/2020
+  ms.openlocfilehash: 0d8e8515512068ba391a906182142eb5ee2f38c4
+  ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 07/01/2020
+  ms.locfileid: "85620756"
+landingContent:
+- title: .NET Core について学習する
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: .NET Core の概要
+      url: introduction.md
+    - text: .NET Core の概要
+      url: about.md
+    - text: .NET Core SDK の概要
+      url: sdk.md
+  - linkListType: get-started
+    links:
+    - text: .NET Core の概要
+      url: get-started.md
+    - text: ASP.NET Core の概要
+      url: /aspnet/core/
+  - linkListType: concept
+    links:
+    - text: .NET Core サポートポリシー
+      url: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
+  - linkListType: whats-new
+    links:
+    - text: .NET Core 3.1 の新機能
+      url: whats-new/dotnet-core-3-1.md
+    - text: .NET Core 3.0 の新機能
+      url: whats-new/dotnet-core-3-0.md
+- title: .NET Core をインストールします。
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 使用する .NET Core のバージョンを選択する
+      url: versions/selection.md
+  - linkListType: download
+    links:
+    - text: .NET Core をダウンロードする
+      url: https://dotnet.microsoft.com/download/dotnet-core
+  - linkListType: how-to-guide
+    links:
+    - text: .NET Core SDK をインストールする
+      url: install/sdk.md
+    - text: .NET Core ランタイムをインストールする
+      url: install/runtime.md
+    - text: Linux パッケージ マネージャーを使用してインストールする
+      url: install/linux-package-manager-ubuntu-1904.md
+    - text: インストールされているバージョンを確認する
+      url: install/how-to-detect-installed-versions.md
+  - linkListType: reference
+    links:
+    - text: .NET Core SDK とランタイムの依存関係
+      url: install/dependencies.md
+- title: .NET Core の概要
+  linkLists:
+  - linkListType: video
+    links:
+    - text: 'チュートリアル: 10 分で Hello World'
+      url: https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro
+  - linkListType: tutorial
+    links:
+    - text: Visual Studio Code で Hello World アプリを作成する
+      url: tutorials/with-visual-studio-code.md
+    - text: Visual Studio で Hello World アプリを作成する
+      url: tutorials/with-visual-studio.md
+    - text: NET Core アプリのコンテナー化
+      url: docker/build-container.md
+  - linkListType: deploy
+    links:
+    - text: アプリの発行
+      url: deploying/index.md
+- title: .NET Framework からの移行
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: .NET Framework から .NET Core への移植
+      url: porting/index.md
+- title: コマンド ラインからの .NET Core の使用
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: .NET Core CLI
+      url: tools/index.md
+  - linkListType: tutorial
+    links:
+    - text: CLI の使用を開始する
+      url: tutorials/cli-create-console-app.md
+  - linkListType: deploy
+    links:
+    - text: アプリを発行する
+      url: deploying/deploy-with-cli.md
+  - linkListType: reference
+    links:
+    - text: dotnet new
+      url: tools/dotnet-new.md
+    - text: dotnet publish
+      url: tools/dotnet-publish.md
+- title: .NET Core を使用した単体テスト
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: .NET Core と .NET Standard の単体テスト
+      url: testing/index.md
+  - linkListType: tutorial
+    links:
+    - text: dotnet テストと xUnit を使用した C# コードのテスト
+      url: testing/unit-testing-with-dotnet-test.md
+    - text: NUnit を使用した単体テスト
+      url: testing/unit-testing-with-nunit.md
+    - text: MSTest を使用した単体テスト
+      url: testing/unit-testing-with-mstest.md
+  - linkListType: concept
+    links:
+    - text: 単体テストを記述するためのベスト プラクティス
+      url: testing/unit-testing-best-practices.md

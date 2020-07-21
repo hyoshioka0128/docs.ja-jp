@@ -1,5 +1,6 @@
 ---
 title: 非同期サーバー ソケットの例
+description: この .NET Framework プログラムの例では、非同期ソケットを使用してクライアントから接続を受信するサーバーを作成します。 これは文字列を受信してエコーを返します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - sockets, code examples
 - asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
-ms.openlocfilehash: 555b0661bf68a7461f87bf2895e47284a03c41a6
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 089de8ce9629e30cb6e4458c0f9a4613c9674a21
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71048959"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502718"
 ---
 # <a name="asynchronous-server-socket-example"></a>非同期サーバー ソケットの例
-次のプログラム例では、クライアントからの接続要求を受け取るサーバーを作成します。 このサーバーは非同期ソケットで構築されます。そのため、クライアントからの接続を待機している間に、サーバー アプリケーションの実行が中断されることはありません。 このアプリケーションはクライアントから文字列を受信し、それをコンソールに表示してから、クライアントにエコーで返します。 クライアントからの文字列には、文字列 "\<EOF>" が含まれている必要があります。これは、メッセージの終わりを伝えるためのものです。  
+次のプログラム例では、クライアントからの接続要求を受け取るサーバーを作成します。 このサーバーは非同期ソケットで構築されます。そのため、クライアントからの接続を待機している間に、サーバー アプリケーションの実行が中断されることはありません。 このアプリケーションはクライアントから文字列を受信し、それをコンソールに表示し、クライアントにエコー バックします。 クライアントからの文字列には、メッセージの終わりを伝えるための文字列 "\<EOF>" が含まれている必要があります。  
   
 ```vb  
 Imports System  
@@ -45,9 +46,9 @@ Public Class AsynchronousSocketListener
     Public Shared allDone As New ManualResetEvent(False)  
   
     ' This server waits for a connection and then uses  asychronous operations to  
-    ' accept the connection, get data from the connected client,   
+    ' accept the connection, get data from the connected client,
     ' echo that data back to the connected client.  
-    ' It then disconnects from the client and waits for another client.   
+    ' It then disconnects from the client and waits for another client.
     Public Shared Sub Main()  
         ' Establish the local endpoint for the socket.  
         Dim ipHostInfo As IPHostEntry = Dns.GetHostEntry(Dns.GetHostName())  
@@ -94,18 +95,18 @@ Public Class AsynchronousSocketListener
         Dim state As StateObject = CType(ar.AsyncState, StateObject)  
         Dim handler As Socket = state.workSocket  
   
-        ' Read data from the client socket.   
+        ' Read data from the client socket.
         Dim bytesRead As Integer = handler.EndReceive(ar)  
   
         If bytesRead > 0 Then  
             ' There  might be more data, so store the data received so far.  
             state.sb.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead))  
   
-            ' Check for end-of-file tag. If it is not there, read   
+            ' Check for end-of-file tag. If it is not there, read
             ' more data.  
             content = state.sb.ToString()  
             If content.IndexOf("<EOF>") > -1 Then  
-                ' All the data has been read from the   
+                ' All the data has been read from the
                 ' client. Display it on the console.  
                 Console.WriteLine("Read {0} bytes from socket. " + vbLf + " Data : {1}", content.Length, content)  
                 ' Echo the data back to the client.  
@@ -157,7 +158,7 @@ public class StateObject {
     // Receive buffer.  
     public byte[] buffer = new byte[BufferSize];  
 // Received data string.  
-    public StringBuilder sb = new StringBuilder();    
+    public StringBuilder sb = new StringBuilder();
 }  
   
 public class AsynchronousSocketListener {  
@@ -190,7 +191,7 @@ public class AsynchronousSocketListener {
   
                 // Start an asynchronous socket to listen for connections.  
                 Console.WriteLine("Waiting for a connection...");  
-                listener.BeginAccept(   
+                listener.BeginAccept(
                     new AsyncCallback(AcceptCallback),  
                     listener );  
   
@@ -230,7 +231,7 @@ public class AsynchronousSocketListener {
         StateObject state = (StateObject) ar.AsyncState;  
         Socket handler = state.workSocket;  
   
-        // Read data from the client socket.   
+        // Read data from the client socket.
         int bytesRead = handler.EndReceive(ar);  
   
         if (bytesRead > 0) {  
@@ -238,11 +239,11 @@ public class AsynchronousSocketListener {
             state.sb.Append(Encoding.ASCII.GetString(  
                 state.buffer, 0, bytesRead));  
   
-            // Check for end-of-file tag. If it is not there, read   
+            // Check for end-of-file tag. If it is not there, read
             // more data.  
             content = state.sb.ToString();  
             if (content.IndexOf("<EOF>") > -1) {  
-                // All the data has been read from the   
+                // All the data has been read from the
                 // client. Display it on the console.  
                 Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",  
                     content.Length, content );  

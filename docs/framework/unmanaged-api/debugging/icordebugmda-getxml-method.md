@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 29746b24-3766-4255-8813-0426c45e73e5
 topic_type:
 - apiref
-ms.openlocfilehash: f80bdffbf5c0ba39980bd27c6e89a368547340c0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 219aa27296dffa525bf3e2b836825437a8ce77b0
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129809"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83207655"
 ---
 # <a name="icordebugmdagetxml-method"></a>ICorDebugMDA::GetXML メソッド
-[によって](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)表されるマネージデバッグアシスタント (MDA) に関連付けられた完全な XML ストリームを取得します。  
+[によって](icordebugmda-interface.md)表されるマネージデバッグアシスタント (MDA) に関連付けられた完全な XML ストリームを取得します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -47,18 +47,18 @@ HRESULT GetXML (
  入出力XML ストリームを格納する配列。 配列が空である可能性があります。  
   
 ## <a name="remarks"></a>Remarks  
- `GetXML` メソッドは、関連付けられている XML ストリームのサイズによっては、パフォーマンスに影響する可能性があります。  
+ メソッドは、 `GetXML` 関連付けられている XML ストリームのサイズによっては、パフォーマンスに影響を与える可能性があります。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>関連項目
 
-- [ICorDebugMDA インターフェイス](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
-- [マネージド デバッグ アシスタントによるエラーの診断](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [ICorDebugMDA インターフェイス](icordebugmda-interface.md)
+- [マネージド デバッグ アシスタントによるエラーの診断](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

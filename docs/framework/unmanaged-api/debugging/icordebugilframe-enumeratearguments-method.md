@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 00ac81e2-a774-422a-bd88-54a4b3c99f73
 topic_type:
 - apiref
-ms.openlocfilehash: d74c5a6f966201c8ca9d2854de2e9986e7f1d0fa
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3945b1dea62dc0616d669356faf60f0d09cfb084
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131027"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83210307"
 ---
 # <a name="icordebugilframeenumeratearguments-method"></a>ICorDebugILFrame::EnumerateArguments メソッド
 このフレーム内の引数の列挙子を取得します。  
@@ -38,13 +38,13 @@ HRESULT EnumerateArguments (
  入出力このフレーム内の引数の列挙子である、の各オブジェクトのアドレスへのポインター。  
   
 ## <a name="remarks"></a>Remarks  
- `EnumerateArguments` このテキストボックスオブジェクトで表される呼び出しフレームで使用可能な引数を一覧表示できる列挙子を取得します。 この一覧には、 [vararg](/cpp/windows/vararg)である引数 (可変個の引数) と、`vararg`でない引数が含まれます。  
+ `EnumerateArguments`このテキストボックスオブジェクトで表される呼び出しフレームで使用可能な引数を一覧表示できる列挙子を取得します。 この一覧には、 [vararg](/cpp/windows/vararg)である引数 (可変個の引数) と、ではない引数が含まれ `vararg` ます。  
   
-## <a name="requirements"></a>［要件］  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+## <a name="requirements"></a>必要条件  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** CorDebug.idl、CorDebug.h  
   
  **ライブラリ:** CorGuids.lib  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

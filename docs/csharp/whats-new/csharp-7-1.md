@@ -2,12 +2,12 @@
 title: C# 7.1 の新機能
 description: C# 7.1 の新機能の概要。
 ms.date: 04/09/2019
-ms.openlocfilehash: ee68cbf129d02fc58155a603d6a3f63cfb182cd0
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: fe6e49eb01e24a27bc7970900c05150378ab194a
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105546"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174771"
 ---
 # <a name="whats-new-in-c-71"></a>C# 7.1 の新機能
 
@@ -17,7 +17,7 @@ C# 7.1 では、[言語バージョン選択](../language-reference/configure-la
 
 このリリースの新しい言語機能は次のとおりです。
 
-- [`async` `Main` メソッド](#async-main)
+- [`async` `Main`メソッド](#async-main)
   - アプリケーションのエントリ ポイントに `async` 修飾子を設定できます。
 - [`default` リテラル式](#default-literal-expressions)
   - ターゲットの種類を推論できるとき、既定の値式で既定のリテラル式を使用できます。
@@ -106,7 +106,7 @@ string label = "Colors used in the map";
 var pair = (count, label); // element names are "count" and "label"
 ```
 
-この機能の詳細については、[タプル](../tuples.md)に関する記事を参照してください。
+この機能の詳細については、[タプルの型](../language-reference/builtin-types/value-tuples.md)に関する記事を参照してください。
 
 ## <a name="pattern-matching-on-generic-type-parameters"></a>ジェネリック型パラメーターのパターン マッチ
 

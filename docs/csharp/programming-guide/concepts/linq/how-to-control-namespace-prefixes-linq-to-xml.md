@@ -3,10 +3,10 @@ title: 名前空間プレフィックスを制御する方法 (C#) (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 64de5186-b81a-4ddd-8327-8693df59a01b
 ms.openlocfilehash: 9f43c0804d8c830fa75f1e1390cb578c5f5d5106
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141383"
 ---
 # <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>名前空間プレフィックスを制御する方法 (C#) (LINQ to XML)
@@ -54,6 +54,6 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [名前空間の概要 (LINQ to XML)](namespaces-overview-linq-to-xml.md)

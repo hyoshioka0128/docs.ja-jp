@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 30580b3fde5b8a99862896bb7d31c6c4024f97e8
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 935d9b2368ea4a0eeca7943dcbd584d24d2a6633
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568085"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721167"
 ---
 ### <a name="floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception"></a>浮動小数点の解析操作が失敗したり OverflowException がスローされたりすることがなくなった
 
@@ -22,7 +22,7 @@ ms.locfileid: "74568085"
 
 3.0
 
-#### <a name="recommended-action"></a>推奨される操作
+#### <a name="recommended-action"></a>推奨アクション
 
 この変更は、次の 2 つのいずれかの方法でコードに影響を与える可能性があります。
 
@@ -32,7 +32,7 @@ ms.locfileid: "74568085"
 
 #### <a name="category"></a>カテゴリ
 
-CoreFx
+Core .NET ライブラリ
 
 #### <a name="affected-apis"></a>影響を受ける API
 
@@ -43,7 +43,7 @@ CoreFx
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `Overload:System.Double.Parse`
 - `Overload:System.Double.TryParse`

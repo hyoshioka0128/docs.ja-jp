@@ -1,5 +1,6 @@
 ---
 title: moduloObjectHashcode MDA
+description: ModuloObjectHashcode managed デバッグアシスタント (MDA) を確認します。これにより、GetHashCode メソッドの結果の剰余値を取得するようにオブジェクトクラスが変更されます。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - managed debugging assistants (MDAs), hashcode modulus
@@ -10,19 +11,17 @@ helpviewer_keywords:
 - GetHashCode method
 - modulus of hashcodes
 ms.assetid: b45366ff-2a7a-4b8e-ab01-537b72e9de68
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1679e283a801044ad5a0baed89f17e6acc74259c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a929ec2b9196f1f6cad0528fdf7323839a86fa55
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052455"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052066"
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode MDA
 `moduloObjectHashcode` マネージド デバッグ アシスタント (MDA) は、<xref:System.Object.GetHashCode%2A> メソッドによって返されるハッシュ コードに対してモジュロ演算を実行するように、<xref:System.Object> クラスの動作を変更します。 この MDA の既定の係数は 1 であり、これにより <xref:System.Object.GetHashCode%2A> はすべてのオブジェクトに対して 0 を返すようになります。  
   
-## <a name="symptoms"></a>症状  
+## <a name="symptoms"></a>現象  
  新しいバージョンの共通言語ランタイム (CLR) に移行すると、プログラムが正しく動作しなくなります。  
   
 - プログラムは、<xref:System.Collections.Hashtable> から正しくないオブジェクトを取得します。  
@@ -38,7 +37,7 @@ ms.locfileid: "71052455"
   
  キー変更のハッシュ コードの計算に使われるアルゴリズムがランタイムのあるバージョンから別のバージョンに変更された場合、<xref:System.Collections.Hashtable> からの列挙の順序が変わる可能性があります。 ハッシュ テーブルからのキーまたは値の列挙順序にプログラムが依存しているかどうかは、この MDA を有効にすることでテストできます。  
   
-## <a name="resolution"></a>解決策  
+## <a name="resolution"></a>解決方法  
  オブジェクト ID の代わりに、ハッシュ コードを使わないでください。 ハッシュ コードを比較しないように、<xref:System.Object.Equals%2A?displayProperty=nameWithType> メソッドのオーバーライドを実装します。  
   
  ハッシュ テーブル内のキーまたは値の列挙の順序への依存関係を作成しないでください。  

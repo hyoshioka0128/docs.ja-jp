@@ -3,7 +3,7 @@ title: $
 ms.date: 10/31/2017
 ms.openlocfilehash: 007f64e3bee9ba7fa310d500eb8938d7e1633d58
 ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349586"
@@ -18,7 +18,7 @@ ms.locfileid: "74349586"
 
 挿入文字列の詳細については、トピック「[挿入文字列](../../programming-guide/language-features/strings/interpolated-strings.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [Visual Basic リファレンス](../index.md)
-- [特殊文字の Visual Basic](index.md)
+- [Visual Basic 特殊文字](index.md)

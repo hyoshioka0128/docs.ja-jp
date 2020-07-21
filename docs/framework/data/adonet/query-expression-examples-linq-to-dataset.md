@@ -4,13 +4,13 @@ ms.date: 03/30/2017
 ms.assetid: f743fbc7-faff-45e5-af1e-61577d87f0cc
 ms.openlocfilehash: 4dd078c99d545397a032586d6814e0232a7641cc
 ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/07/2019
 ms.locfileid: "70783025"
 ---
 # <a name="query-expression-examples-linq-to-dataset"></a>クエリ式の例 (LINQ to DataSet)
-このセクションでは、標準クエリ演算子を使用するクエリ式構文のプログラミング例に LINQ to DataSet を示します。 これら<xref:System.Data.DataSet>の例で使用されるは、「 `FillDataSet` [データセットへのデータの読み込み](loading-data-into-a-dataset.md)」で指定されているメソッドを使用して設定されます。 詳細については、「[標準クエリ演算子C#の概要」 ()](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)または「[標準クエリ演算子の概要 (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)」を参照してください。  
+このセクションでは、標準クエリ演算子を使用する LINQ to DataSet プログラミングの例を、クエリ式の構文を中心に説明します。 これらの例で使用されている <xref:System.Data.DataSet> は、`FillDataSet` メソッド (「[DataSet へのデータの読み込み](loading-data-into-a-dataset.md)」を参照) を使用して設定します。 詳しくは、「[標準クエリ演算子の概要 (C#)](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)」または「[標準クエリ演算子の概要 (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)」を参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [射影](query-expression-syntax-examples-projection-linq-to-dataset.md)  

@@ -10,16 +10,16 @@ helpviewer_keywords:
 - operating systems supported
 - hardware requirements
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
-ms.openlocfilehash: d171a1aafe2d7e69dfbc9b16577b2d56672fdd3f
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 571075f7d0f330cf88ac9618376876b4f72e75ed
+ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802209"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389481"
 ---
 # <a name="net-framework-system-requirements"></a>.NET Framework のシステム要件
 
-このトピックの表では、次のバージョンの .NET Framework のハードウェア、オペレーティング システム、およびソフトウェアの要件を示します。
+この記事の表では、次のバージョンの .NET Framework のハードウェア、オペレーティング システム、およびソフトウェアの要件を示します。
 
 - .NET Framework 4.5 とそのポイント リリース (4.5.1 と 4.5.2)。
 - .NET Framework 4.6 とそのポイント リリース (4.6.1 と 4.6.2)。
@@ -54,14 +54,14 @@ ms.locfileid: "74802209"
 
 | オペレーティング システム | サポートされているエディション | OS と共にプレインストール済み | 個別にインストール可能 |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows 10 May 2019 Update | 32 ビットおよび 64 ビット | .NET Framework 4.8 | -- |
-| Windows 10 October 2018 Update | 32 ビットおよび 64 ビット | .NET Framework 4.7.2 | .NET Framework 4.8 |
-| Windows 10 April 2018 Update | 32 ビットおよび 64 ビット | .NET Framework 4.7.2 |.NET Framework 4.8|
-| Windows 10 Fall Creators Update | 32 ビットおよび 64 ビット | .NET Framework 4.7.1 | .NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows 10 Creators Update | 32 ビットおよび 64 ビット | .NET Framework 4.7 | .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
-| Windows 10 Anniversary Update | 32 ビットおよび 64 ビット | .NET Framework 4.6.2 |.NET Framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8  |
-| Windows 10 の 11 月更新版 | 32 ビットおよび 64 ビット | .NET Framework 4.6.1 | .NET Framework 4.6.2 |
-| Windows 10 | 32 ビットおよび 64 ビット | .NET Framework 4.6 | .NET Framework 4.6.1 <br/><br/> .NET Framework 4.6.2 |
+| Windows 10 May 2019 Update<br/> (バージョン 1903) | 32 ビットおよび 64 ビット | .NET Framework 4.8 | -- |
+| Windows 10 October 2018 Update<br/> (バージョン 1809) | 32 ビットおよび 64 ビット | .NET Framework 4.7.2 | .NET Framework 4.8 |
+| Windows 10 April 2018 Update<br/> (バージョン 1803) | 32 ビットおよび 64 ビット | .NET Framework 4.7.2 |.NET Framework 4.8|
+| Windows 10 Fall Creators Update<br/> (バージョン 1709) | 32 ビットおよび 64 ビット | .NET Framework 4.7.1 | .NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
+| Windows 10 Creators Update<br/> (バージョン 1703) | 32 ビットおよび 64 ビット | .NET Framework 4.7 | .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
+| Windows 10 Anniversary Update<br/> (バージョン 1607) | 32 ビットおよび 64 ビット | .NET Framework 4.6.2 |.NET Framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8  |
+| Windows 10 の 11 月更新版<br/> (バージョン 1511) | 32 ビットおよび 64 ビット | .NET Framework 4.6.1 | .NET Framework 4.6.2 |
+| Windows 10<br/> (バージョン 1507) | 32 ビットおよび 64 ビット | .NET Framework 4.6 | .NET Framework 4.6.1 <br/><br/> .NET Framework 4.6.2 |
 | Windows 8.1 | 32 ビット、64 ビット、および ARM | .NET Framework 4.5.1 | .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />.NET Framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
 | Windows 8 | 32 ビット、64 ビット、および ARM | .NET Framework 4.5 | .NET Framework 4.5.1<br /><br />.NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1 |
 | Windows 7 SP1|32 ビットおよび 64 ビット | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />.NET Framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
@@ -94,9 +94,9 @@ ms.locfileid: "74802209"
 | Windows Server 2008 R2 SP1|64 ビット | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6<br /><br /> .NET Framework 4.6.1<br /><br /> .NET Framework 4.6.2<br /><br />.NET Framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2<br/><br/>.NET Framework 4.8 |
 | Windows Server 2008 SP2|32 ビットおよび 64 ビット | -- | .NET Framework 4<br /><br /> .NET Framework 4.5<br /><br /> .NET Framework 4.5.1<br /><br /> .NET Framework 4.5.2<br /><br /> .NET Framework 4.6 |
 
- **注:**
+**注:**
 
-- [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] に .NET Framework 4.5 が含まれているため、個別にインストールする必要はありません。 同様に、[!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] には .NET Framework 4.5.1 が含まれています。
+- Windows Server 2012 には .NET Framework 4.5 が含まれているため、これを個別にインストールする必要はありません。 同様に、Windows Server 2012 R2 には .NET Framework 4.5.1 が含まれています。
 
 - .NET Framework は、Windows Server 2008 R2 SP1 以降の Server Core ロールを限定付きでサポートしています。 サポートされない API の一覧については、「[Server Core .NET Functionality](https://docs.microsoft.com/previous-versions//dd745015(v=vs.85))」 (Server Core .NET 機能) を参照してください。
 

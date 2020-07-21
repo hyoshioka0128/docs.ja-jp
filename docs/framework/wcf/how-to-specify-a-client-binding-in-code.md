@@ -1,21 +1,22 @@
 ---
-title: '方法 : コード内でクライアント バインディングを指定する'
+title: '方法: コード内でクライアント バインディングを指定する'
+description: WCF クライアントのバインディングをコードで強制的に指定する方法について説明します。 この例では、クライアントがサービスにアクセスします。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6bee5da4-adf7-42e6-8f78-63a9e5c6dbad
-ms.openlocfilehash: ec5db7a305a63ac7ae9c2e2a7bb1c9c7691b8daa
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: e5e1dff98121985a598579d83043de838e21e5f1
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320886"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244505"
 ---
-# <a name="how-to-specify-a-client-binding-in-code"></a>方法 : コード内でクライアント バインディングを指定する
+# <a name="how-to-specify-a-client-binding-in-code"></a>方法: コード内でクライアント バインディングを指定する
 この例では、電卓サービスを使用するためのクライアントを作成し、そのクライアントのバインディングを強制的にコードで指定します。 クライアントは `CalculatorService` にアクセスします。これにより、`ICalculator` インターフェイスが実装され、サービスとクライアントの両方で <xref:System.ServiceModel.BasicHttpBinding> クラスが使用されます。  
   
- ここで説明する手順では、電卓サービスが実行されていることを前提としています。 サービスの構築の詳細については、「[方法: 構成でサービスバインディングを指定](how-to-specify-a-service-binding-in-configuration.md)する」を参照してください。 また、 [ServiceModel メタデータユーティリティツール (svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)WINDOWS COMMUNICATION FOUNDATION (WCF) を使用して、クライアントコンポーネントを自動的に生成します。 このツールでは、サービスにアクセスするためのクライアント コードが生成されます。  
+ ここで説明する手順では、電卓サービスが実行されていることを前提としています。 サービスの構築の詳細については、「[方法: 構成でサービスバインディングを指定](how-to-specify-a-service-binding-in-configuration.md)する」を参照してください。 また、 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)WINDOWS COMMUNICATION FOUNDATION (WCF) を使用して、クライアントコンポーネントを自動的に生成します。 このツールでは、サービスにアクセスするためのクライアント コードが生成されます。  
   
  クライアントは 2 つの部分で構成されます。 Svcutil.exe によって、`ClientCalculator` インターフェイスを実装する `ICalculator` が生成されます。 次に、`ClientCalculator` のインスタンスを作成し、サービスのバインディングとアドレスをコードで指定して、このクライアント アプリケーションを作成します。  
   
@@ -26,7 +27,7 @@ ms.locfileid: "72320886"
 1. コマンド ラインから Svcutil.exe を実行して、サービス メタデータからコードを生成します。  
   
     ```console  
-    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
+    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
     ```  
   
 2. 生成されたクライアントには、クライアントの実装時に満たされなければならないサービス コントラクトを定義する `ICalculator` インターフェイスが含まれます。  

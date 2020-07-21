@@ -9,16 +9,16 @@ helpviewer_keywords:
 - time zones [.NET Framework], ambiguous time
 - ambiguous time [.NET Framework]
 ms.assetid: 2cf5fb25-492c-4875-9245-98cac8348e97
-ms.openlocfilehash: 0b5b28c588237fb2f7f069aaef06f3f73d5268bf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ad69c0984a9d8c01ebd2198486cd0f6492a6116e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122250"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84281506"
 ---
 # <a name="how-to-resolve-ambiguous-times"></a>方法: あいまいな時刻を解決する
 
-あいまいな時刻とは、複数の世界協定時刻 (UTC) にマップされる時刻です。 これは、あるタイム ゾーンの夏時間から標準時間に移行する際など、時計の時刻を前に戻すときに発生します。 あいまいな時刻を処理する場合は、次のいずれかの操作を行います。
+あいまいな時刻は複数の世界協定時刻 (UTC) にマップされる時刻です。 あいまいな時刻は、あるタイム ゾーンの夏時間から標準時間に移行する際など、時計の時刻を前に戻すときに発生します。 あいまいな時刻を処理する場合は、次のいずれかの操作を行います。
 
 - 時刻が UTC にどのようにマップされるかを想定します。 たとえば、あいまいな時刻は常にタイム ゾーンの標準時刻で表されると想定できます。
 
@@ -28,11 +28,11 @@ ms.locfileid: "73122250"
 
 ### <a name="to-map-an-ambiguous-time-to-a-time-zones-standard-time"></a>あいまいな時刻をタイム ゾーンの標準時刻にマップするには
 
-1. <xref:System.TimeZoneInfo.IsAmbiguousTime%2A> メソッドを呼び出して、時刻があいまいであるかどうかを確認します。
+1. メソッドを呼び出して <xref:System.TimeZoneInfo.IsAmbiguousTime%2A> 、時刻があいまいであるかどうかを確認します。
 
-2. 時刻があいまいな場合は、タイムゾーンの <xref:System.TimeZoneInfo.BaseUtcOffset%2A> プロパティによって返された <xref:System.TimeSpan> オブジェクトから時刻を減算します。
+2. 時刻があいまいな場合は、タイム <xref:System.TimeSpan> ゾーンのプロパティによって返されたオブジェクトから時刻を減算し <xref:System.TimeZoneInfo.BaseUtcOffset%2A> ます。
 
-3. `static` (Visual Basic .NET で`Shared`) <xref:System.DateTime.SpecifyKind%2A> メソッドを呼び出して、UTC の日付と時刻の値の <xref:System.DateTime.Kind%2A> プロパティを <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>に設定します。
+3. `static`( `Shared` Visual Basic .net で) メソッドを呼び出して、 <xref:System.DateTime.SpecifyKind%2A> UTC の日付と時刻の値の <xref:System.DateTime.Kind%2A> プロパティをに設定し <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> ます。
 
 ## <a name="example"></a>例
 
@@ -41,19 +41,19 @@ ms.locfileid: "73122250"
 [!code-csharp[System.TimeZone2.Concepts#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#10)]
 [!code-vb[System.TimeZone2.Concepts#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#10)]
 
-この例は、渡された <xref:System.DateTime> 値があいまいであるかどうかを判断する `ResolveAmbiguousTime` という名前のメソッドで構成されています。 値があいまいな場合、メソッドは、対応する UTC 時刻を表す <xref:System.DateTime> 値を返します。 メソッドは、ローカルタイムゾーンの <xref:System.TimeZoneInfo.BaseUtcOffset%2A> プロパティの値をローカル時刻から減算することによって、この変換を処理します。
+この例は、渡された `ResolveAmbiguousTime` 値があいまいであるかどうかを判断するという名前のメソッドで構成されてい <xref:System.DateTime> ます。 値があいまいな場合、メソッドは対応する <xref:System.DateTime> UTC 時刻を表す値を返します。 メソッドは、ローカルタイムゾーンのプロパティの値をローカル時刻から減算することによって、この変換を処理し <xref:System.TimeZoneInfo.BaseUtcOffset%2A> ます。
 
-通常、あいまいな時刻は、<xref:System.TimeZoneInfo.GetAmbiguousTimeOffsets%2A> メソッドを呼び出し、あいまいな時刻の UTC オフセットを含む <xref:System.TimeSpan> オブジェクトの配列を取得することによって処理されます。 しかし、この例は、あいまいな時刻は常にタイム ゾーンの標準時刻にマップされるという想定に基づいています。 <xref:System.TimeZoneInfo.BaseUtcOffset%2A> プロパティは、UTC とタイムゾーンの標準時刻の間のオフセットを返します。
+通常、あいまいな時刻は、メソッドを呼び出して、 <xref:System.TimeZoneInfo.GetAmbiguousTimeOffsets%2A> <xref:System.TimeSpan> あいまいな時刻の UTC オフセットを含むオブジェクトの配列を取得することによって処理されます。 しかし、この例は、あいまいな時刻は常にタイム ゾーンの標準時刻にマップされるという想定に基づいています。 プロパティは、 <xref:System.TimeZoneInfo.BaseUtcOffset%2A> UTC とタイムゾーンの標準時刻の間のオフセットを返します。
 
-この例では、ローカルタイムゾーンへのすべての参照は、<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> プロパティを使用して作成されます。ローカルタイムゾーンがオブジェクト変数に割り当てられることはありません。 これは、<xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> メソッドを呼び出すと、ローカルタイムゾーンが割り当てられているすべてのオブジェクトが無効になるため、推奨される方法です。
+この例では、ローカルタイムゾーンへのすべての参照は、プロパティを使用して行われ <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> ます。ローカルタイムゾーンは、オブジェクト変数に割り当てられることはありません。 メソッドを呼び出すと、 <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> ローカルタイムゾーンが割り当てられているオブジェクトが無効になるため、この方法をお勧めします。
 
 ## <a name="compiling-the-code"></a>コードのコンパイル
 
 この例で必要な要素は次のとおりです。
 
-- <xref:System> 名前空間は、`using` ステートメント (コードでC#必要) を使用してインポートされます。
+- <xref:System> `using` ステートメント (C# コードでは必須) を使用して名前空間をインポートする。
 
 ## <a name="see-also"></a>関連項目
 
-- [日付、時刻およびタイム ゾーン](../../../docs/standard/datetime/index.md)
-- [方法: ユーザーがあいまいな時刻を解決できるようにする](../../../docs/standard/datetime/let-users-resolve-ambiguous-times.md)
+- [日付、時刻、およびタイム ゾーン](index.md)
+- [方法: ユーザーがあいまいな時刻を解決できるようにする](let-users-resolve-ambiguous-times.md)

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 8b57affa05c77d8ed20bfead7de767a8dd994241
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: 633b457106203e213f5d30003e576b7e8132f4d2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348592"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400488"
 ---
 # <a name="-reference-visual-basic"></a>-reference (Visual Basic)
-コンパイラは、指定したアセンブリ内の型情報を、現在コンパイルしているプロジェクトで使用できるようにします。  
+コンパイラによって、指定されたアセンブリ内の型情報を、現在のコンパイル対象のプロジェクトで使用できるようにします。  
   
 ## <a name="syntax"></a>構文  
   
@@ -25,7 +25,7 @@ ms.locfileid: "74348592"
 -reference:fileList  
 ```
 
-または
+or
 
 ```console
 -r:fileList  
@@ -33,38 +33,38 @@ ms.locfileid: "74348592"
   
 ## <a name="arguments"></a>引数  
   
-|用語|Definition|  
+|項目|定義|  
 |---|---|  
-|`fileList`|必須。 アセンブリ ファイル名のコンマ区切りリスト。 ファイル名に空白が含まれている場合は、名前を二重引用符で囲みます。|  
+|`fileList`|必須です。 アセンブリ ファイル名のコンマ区切りリスト。 ファイル名に空白が含まれている場合は、名前を二重引用符で囲みます。|  
   
-## <a name="remarks"></a>コメント  
- インポートするファイルには、アセンブリメタデータが含まれている必要があります。 アセンブリの外部で参照できるのはパブリック型だけです。 [-Addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)オプションは、モジュールからメタデータをインポートします。  
+## <a name="remarks"></a>Remarks  
+ インポートするファイルには、アセンブリ メタデータが含まれている必要があります。 アセンブリ外で表示されるのはパブリック型のみです。 [-addmodule](addmodule.md) オプションでは、モジュールからメタデータをインポートします。  
   
- 別のアセンブリ (アセンブリ B) を参照するアセンブリ (アセンブリ A) を参照する場合は、次の場合にアセンブリ B を参照する必要があります。  
+ あるアセンブリ (アセンブリ A) を参照していて、それ自体では別のアセンブリ (アセンブリ B) が参照される場合、次の場合はアセンブリ B を参照する必要があります。  
   
 - アセンブリ A の型がアセンブリ B の型から継承されているか、アセンブリ B のインターフェイスを実装する。  
   
 - アセンブリ B の戻り値の型またはパラメーターの型を使用するフィールド、プロパティ、イベント、またはメソッドが呼び出される。  
   
- アセンブリ参照が1つ以上存在するディレクトリを指定するには、 [-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)を使用します。  
+ 1 つまたは複数のアセンブリ参照が配置されているディレクトリを指定するには、[-libpath](libpath.md) を使用します。  
   
- コンパイラがアセンブリ (モジュールではない) の型を認識するには、型を強制的に解決する必要があります。 これを行う方法の1つの例は、型のインスタンスを定義することです。 コンパイラのアセンブリの型名を解決するために、他の方法を使用できます。 たとえば、アセンブリ内の型から継承する場合、型名はコンパイラに認識されます。  
+ コンパイラで (モジュールではなく) アセンブリの型を認識するには、型を強制的に解決する必要があります。 これを行う方法の 1 つの例は、型のインスタンスを定義することです。 コンパイラのアセンブリの型名を解決するために、他の方法を使用できます。 たとえば、アセンブリの型から継承する場合、型名はコンパイラに認識されるようになります。  
   
- Vbc.exe ファイルは、一般的に使用される .NET Framework アセンブリを参照します。既定では、このファイルが使用されます。 コンパイラで Vbc.exe を使用しない場合は、`-noconfig` を使用します。  
+ 既定では、よく使われる .NET Framework アセンブリを参照する Vbc.rsp 応答ファイルが使用されます。 コンパイラで Vbc.rsp が使われないようにする場合は、`-noconfig` を使用します。  
   
- `-reference` の省略形は `/r` です。  
+ `-reference` の省略形は `-r` です。  
   
 ## <a name="example"></a>例  
- 次のコマンドは、`Metad1.dll` と `Metad2.dll` からソースファイル `Input.vb` と参照アセンブリをコンパイルして `Out.exe`を生成します。  
+ 次のコマンドでは、ソース ファイル `Input.vb` と、`Metad1.dll` および `Metad2.dll` からの参照アセンブリをコンパイルして、`Out.exe` を生成します。  
   
 ```console
 vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb  
 ```  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Visual Basic のコマンド ライン コンパイラ](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [コンパイル コマンド ラインのサンプル](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic のコマンド ライン コンパイラ](index.md)
+- [-noconfig](noconfig.md)
+- [-target (Visual Basic)](target.md)
+- [Public](../../language-reference/modifiers/public.md)
+- [コンパイル コマンド ラインのサンプル](sample-compilation-command-lines.md)

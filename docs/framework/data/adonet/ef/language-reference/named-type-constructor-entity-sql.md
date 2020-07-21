@@ -4,7 +4,7 @@ ms.date: 03/30/2017
 ms.assetid: 549dea04-d93d-4c87-a292-f81b1598dbfd
 ms.openlocfilehash: f40adce1a9e031ed0b7cd5d03d9c63db255aa610
 ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72319574"
@@ -20,7 +20,7 @@ ms.locfileid: "72319574"
   
 ## <a name="arguments"></a>引数  
  `identifier`  
- 単純な識別子および引用符で囲まれた識別子の値。 詳細については、「[識別子](identifiers-entity-sql.md)」を参照してください。  
+ 単純な識別子および引用符で囲まれた識別子の値。 詳しくは、「[識別子](identifiers-entity-sql.md)」をご覧ください。  
   
  `expression`  
  型の宣言に表示される順序と同じ順序であると見なされる型の属性。  
@@ -52,7 +52,7 @@ ms.locfileid: "72319574"
 ## <a name="example"></a>例  
  次の Entity SQL クエリでは、名前付きの型コンストラクターを使用して、概念モデル型のインスタンスを作成します。 このクエリは、AdventureWorks Sales Model に基づいています。 このクエリをコンパイルして実行するには、次の手順を実行します。  
   
-1. 「 [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。  
+1. 「[方法: StructuralType 結果を返すクエリを実行する](../how-to-execute-a-query-that-returns-structuraltype-results.md)」の手順に従います。  
   
 2. 次のクエリを引数として `ExecuteStructuralTypeQuery` メソッドに渡します。  
   

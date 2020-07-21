@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 1588f9bf-9001-4437-a8fc-cc57ef50561c
 ms.openlocfilehash: f530fa04e25bfa18095fc3b2a182d3d624789f54
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62054901"
 ---
 # <a name="frame"></a>フレーム
-<xref:System.Windows.Controls.Frame>コントロールは、コンテンツ内のコンテンツのナビゲーションをサポートしています。 <xref:System.Windows.Controls.Frame> ようにルート要素を主催<xref:System.Windows.Window>、 <xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Page>、 <xref:System.Windows.Controls.UserControl>、 <xref:System.Windows.Documents.FlowDocument>、またはルート要素が属しているコンテンツ ツリー内で、アイランドとして。  
+<xref:System.Windows.Controls.Frame> コントロールは、コンテンツ内のコンテンツ ナビゲーションをサポートします。 <xref:System.Windows.Controls.Frame> は、<xref:System.Windows.Window>、<xref:System.Windows.Navigation.NavigationWindow>、<xref:System.Windows.Controls.Page>、<xref:System.Windows.Controls.UserControl>、<xref:System.Windows.Documents.FlowDocument> などのルート要素でホストできます。または、ルート要素に属するコンテンツ ツリー内のアイランドとしてホストできます。  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Frame>  
   
 ## <a name="related-sections"></a>関連項目  

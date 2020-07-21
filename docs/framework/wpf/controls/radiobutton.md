@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: 6c9ba847-eab7-4bba-9c74-6b56ef72067b
 ms.openlocfilehash: 32db3436b536cd1a27dd79e0e98cdc3e6f21c4c9
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "62024132"
 ---
 # <a name="radiobutton"></a>RadioButton
-<xref:System.Windows.Controls.RadioButton> コントロールがいくつかのオプション間で 1 つの選択肢をユーザーに提供するまとめてグループ化は、通常一度に 1 つだけのボタンを選択できます。  
+<xref:System.Windows.Controls.RadioButton> コントロールは通常、グループにまとめられ、ユーザーはいくつかの選択肢から 1 つ選択できます。選択できるボタンは一度に 1 つだけです。  
   
- 次の図の例を示します、<xref:System.Windows.Controls.RadioButton>コントロール。  
+ 次の図に <xref:System.Windows.Controls.RadioButton> コントロールの例を示します。  
   
- ![ラジオ ボタンの状態](./media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")  
-一般的なオプション ボタン  
+ ![オプション ボタンの状態](./media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")  
+典型的な RadioButton  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.Controls.Primitives.ToggleButton>  
   
 ## <a name="related-sections"></a>関連項目

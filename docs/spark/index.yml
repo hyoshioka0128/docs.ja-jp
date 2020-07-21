@@ -11,15 +11,19 @@ metadata:
   author: mamccrea
   ms.author: mamccrea
   ms.date: 09/11/2019
-  ms.openlocfilehash: bce56c20e30df1f6eb6d6be5edb7ea766a783d83
-  ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+  ms.openlocfilehash: 5b477daf0f52d48a6f068fa8eafeb1b787d19c39
+  ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/27/2019
-  ms.locfileid: "71332560"
+  ms.lasthandoff: 05/12/2020
+  ms.locfileid: "83212228"
 landingContent:
-- title: .NET for Apache Spark について
+- title: .NET for Apache Spark の基礎
   linkLists:
+  - linkListType: whats-new
+    links:
+    - text: .NET の新機能に関するドキュメント
+      url: /dotnet/whats-new/index
   - linkListType: overview
     links:
     - text: .NET for Apache Spark とは
@@ -30,7 +34,7 @@ landingContent:
       url: /dotnet/api/?view=spark-dotnet
     - text: GitHub
       url: https://github.com/dotnet/spark
-- title: 作業開始
+- title: 10 分で開始する
   linkLists:
   - linkListType: tutorial
     links:
@@ -54,3 +58,15 @@ landingContent:
     links:
     - text: アプリケーションをデバッグする
       url: how-to-guides/debug.md
+    - text: ワーカーおよび UDF のバイナリを展開する
+      url: how-to-guides/deploy-worker-udf-binaries.md
+- title: ビッグ データ処理
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: バッチ処理
+      url: tutorials/batch-processing.md
+    - text: 構造化ストリーミング
+      url: tutorials/streaming.md
+    - text: 感情分析
+      url: tutorials/ml-sentiment-analysis.md

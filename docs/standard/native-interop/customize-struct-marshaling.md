@@ -1,18 +1,16 @@
 ---
 title: 構造体のマーシャリングのカスタマイズ - .NET
 description: .NET で構造体をネイティブ表現にマーシャリングする方法をカスタマイズする手順について説明します。
-author: jkoritzinsky
-ms.author: jekoritz
 ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: f4b8402413f4d2f558d8e61ad4f10490dece9835
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 8248ca589f41967a9112ba61c09599b337814de7
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423990"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84003894"
 ---
 # <a name="customizing-structure-marshaling"></a>構造体のマーシャリングのカスタマイズ
 
@@ -22,11 +20,11 @@ ms.locfileid: "73423990"
 
 .NET には <xref:System.Runtime.InteropServices.StructLayoutAttribute?displayProperty=nameWithType> 属性と <xref:System.Runtime.InteropServices.LayoutKind?displayProperty=nameWithType> 列挙型が用意されており、フィールドをメモリに配置する方法をカスタマイズできます。 次のガイダンスを使用すると、一般的な問題を回避できます。
 
-**✔️ 推奨**: 可能な限り `LayoutKind.Sequential` を使用するようにします。
+✔️ 推奨: 可能な限り `LayoutKind.Sequential` を使用するようにします。
 
-**✔️ 実行**: ネイティブ構造体に共用体などの明示的なレイアウトもある場合は、マーシャリング時に `LayoutKind.Explicit` のみを使用します。
+✔️ 実行: ネイティブ構造体に共用体などの明示的なレイアウトもある場合にのみ、マーシャリングで `LayoutKind.Explicit` を使用します。
 
-.NET Core 3.0 より前のランタイムを対象にする必要がある場合は、Windows 以外のプラットフォームで構造体をマーシャリングするときに `LayoutKind.Explicit` を使用し**ないように❌** します。 3\.0 より前の .NET Core ランタイムでは、Intel または AMD 64 ビットの Windows 以外のシステムでは、明示的な構造を値でネイティブ関数に渡すことがサポートされていません。 ただし、ランタイムはすべてのプラットフォーム上で明示的な構造体の参照渡しをサポートしています。
+❌ 回避: .NET Core 3.0 より前のランタイムをターゲットにする必要がある場合、Windows 以外のプラットフォームで構造体をマーシャリングするときは `LayoutKind.Explicit` を使用しないでください。 3\.0 より前の .NET Core ランタイムは、Intel または AMD 64 ビットの Windows 以外のシステム上でネイティブ関数への値による明示的な構造体の受け渡しをサポートしていません。 ただし、ランタイムはすべてのプラットフォーム上で明示的な構造体の参照渡しをサポートしています。
 
 ## <a name="customizing-boolean-field-marshaling"></a>ブール値フィールドのマーシャリングのカスタマイズ
 

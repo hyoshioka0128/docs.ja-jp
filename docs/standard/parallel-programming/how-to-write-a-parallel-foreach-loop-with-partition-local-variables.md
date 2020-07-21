@@ -1,5 +1,6 @@
 ---
 title: '方法: パーティション ローカル変数を使用する Parallel.ForEach ループを記述する'
+description: .NET でパーティション ローカル変数を使用する Parallel.ForEach ループを記述する方法の例を確認します。
 ms.date: 06/26/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,18 +9,18 @@ dev_langs:
 helpviewer_keywords:
 - parallel foreach loop, how to use local state
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
-ms.openlocfilehash: cca48889670c3bd67366c879ccede94c89542c8d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f598955fb2d6800f81bce050bdf474fc63bfb554
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139688"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599777"
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>方法: パーティション ローカル変数を使用する Parallel.ForEach ループを記述する
 
 パーティション ローカル変数を使用する <xref:System.Threading.Tasks.Parallel.ForEach%2A> メソッドを記述する方法を次の例に示します。 <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループが実行されると、そのソース コレクションが複数のパーティションに分割されます。 各パーティションは、パーティション ローカル変数の独自のコピーを所有しています。 パーティション ローカル変数は、1 つのスレッドに対して複数のパーティションを実行できる点を除き、[スレッド ローカル変数](xref:System.Threading.ThreadLocal%601)と似ています。
 
-この例のコードおよびパラメーターは、対応する <xref:System.Threading.Tasks.Parallel.For%2A> メソッドによく似ています。 詳細については、[スレッド ローカル変数を使用する Parallel.For ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)」を参照してください。
+この例のコードおよびパラメーターは、対応する <xref:System.Threading.Tasks.Parallel.For%2A> メソッドによく似ています。 詳細については、「[方法:スレッド ローカル変数を使用する Parallel.For ループを記述する](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)」を参照してください。
 
 <xref:System.Threading.Tasks.Parallel.ForEach%2A> ループでパーティション ローカル変数を使用するには、2 つのタイプのパラメーターを取るメソッド オーバーロードのうち、いずれか 1 つを呼び出す必要があります。 最初の型パラメーター `TSource` でソース要素の型を指定し、2 番目の型パラメーター `TLocal` でパーティション ローカル変数の型を指定します。
 
@@ -50,6 +51,6 @@ ms.locfileid: "73139688"
 
 ## <a name="see-also"></a>関連項目
 
-- [データの並列化](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
-- [方法: スレッド ローカル変数を使用する Parallel.For ループを記述する](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)
-- [PLINQ および TPL のラムダ式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)
+- [データの並列化](data-parallelism-task-parallel-library.md)
+- [方法: スレッド ローカル変数を使用する Parallel.For ループを記述する](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)
+- [PLINQ および TPL のラムダ式](lambda-expressions-in-plinq-and-tpl.md)

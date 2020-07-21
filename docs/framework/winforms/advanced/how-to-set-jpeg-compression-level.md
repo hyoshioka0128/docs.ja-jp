@@ -1,5 +1,6 @@
 ---
 title: '方法: JPEG 圧縮レベルの設定'
+description: Windows フォームで圧縮レベルを変更して、JPEG イメージの品質を調整する方法について説明します。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - images [Windows Forms], changing encoder parameters
 - JPEG images [Windows Forms], setting quality level
 ms.assetid: 4b9a74e3-9504-43c1-9f28-ace651d0772e
-ms.openlocfilehash: 1b325c0cb8fe9da4b198d19164c73af9b1609973
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1f6a96e8a05fff40eb08da0ce318faa86a06cc3a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626134"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618715"
 ---
 # <a name="how-to-set-jpeg-compression-level"></a>方法: JPEG 圧縮レベルの設定
-イメージをディスクに保存するときに、ファイル サイズを最小化したり品質を向上させるために、イメージのパラメーターを修正したりする必要がある場合があります。 圧縮レベルを修正して、JPEG イメージの品質を調整することができます。 JPEG イメージを保存するときに、圧縮レベルを指定するに作成する必要があります、<xref:System.Drawing.Imaging.EncoderParameters>オブジェクトに渡すと、<xref:System.Drawing.Image.Save%2A>のメソッド、<xref:System.Drawing.Image>クラス。 初期化、<xref:System.Drawing.Imaging.EncoderParameters>オブジェクトのいずれかで構成される配列を持つこと、<xref:System.Drawing.Imaging.EncoderParameter>します。 作成するときに、 <xref:System.Drawing.Imaging.EncoderParameter>、指定、<xref:System.Drawing.Imaging.Encoder.Quality>エンコーダー、および、必要な圧縮レベル。  
+イメージをディスクに保存するときに、ファイル サイズを最小化したり品質を向上させるために、イメージのパラメーターを修正したりする必要がある場合があります。 圧縮レベルを修正して、JPEG イメージの品質を調整することができます。 JPEG イメージを保存するときに圧縮レベルを指定するには、オブジェクトを作成 <xref:System.Drawing.Imaging.EncoderParameters> し、そのオブジェクトをクラスのメソッドに渡す必要があり <xref:System.Drawing.Image.Save%2A> <xref:System.Drawing.Image> ます。 オブジェクトを初期化して、 <xref:System.Drawing.Imaging.EncoderParameters> 1 つの配列が含まれるようにし <xref:System.Drawing.Imaging.EncoderParameter> ます。 を作成するときに <xref:System.Drawing.Imaging.EncoderParameter> 、 <xref:System.Drawing.Imaging.Encoder.Quality> エンコーダーと必要な圧縮レベルを指定します。  
   
 ## <a name="example"></a>例  
- 次のコード例を作成、<xref:System.Drawing.Imaging.EncoderParameter>オブジェクトし、3 つの JPEG イメージを保存します。 別々 の品質レベルに変更することによって各 JPEG イメージが保存された、`long`に渡される値、<xref:System.Drawing.Imaging.EncoderParameter>コンス トラクター。 品質レベル 0 は最も圧縮率が高く、品質レベル 100 は最も低い圧縮率に対応します。  
+ 次のコード例では、 <xref:System.Drawing.Imaging.EncoderParameter> オブジェクトを作成し、3つの JPEG イメージを保存します。 各 JPEG イメージは、 `long` コンストラクターに渡される値を変更することによって、異なる品質レベルで保存され <xref:System.Drawing.Imaging.EncoderParameter> ます。 品質レベル 0 は最も圧縮率が高く、品質レベル 100 は最も低い圧縮率に対応します。  
   
 ```csharp  
 private void VaryQualityLevel()  
@@ -125,12 +126,12 @@ End Function
   
 - Windows フォーム アプリケーション  
   
-- A<xref:System.Windows.Forms.PaintEventArgs>はのパラメーター<xref:System.Windows.Forms.PaintEventHandler>します。  
+- <xref:System.Windows.Forms.PaintEventArgs>のパラメーターである <xref:System.Windows.Forms.PaintEventHandler> 。  
   
 - `TestPhoto.jpg` という名前のイメージ ファイル。保存場所は **c:\\** です。  
   
 ## <a name="see-also"></a>関連項目
 
-- [方法: エンコーダーがサポートするパラメーターを確認します。](how-to-determine-the-parameters-supported-by-an-encoder.md)
+- [方法: エンコーダーがサポートするパラメーターの確認](how-to-determine-the-parameters-supported-by-an-encoder.md)
 - [ビットマップの種類](types-of-bitmaps.md)
 - [マネージド GDI+ でのイメージ エンコーダーおよびイメージ デコーダーの使用](using-image-encoders-and-decoders-in-managed-gdi.md)

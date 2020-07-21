@@ -1,16 +1,15 @@
 ---
 title: in (ジェネリック修飾子) - C# リファレンス
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - contravariance, in keyword [C#]
 - in keyword [C#]
-ms.openlocfilehash: 0806169b9b1c3521dcf89f5ea0fa5aec188030c2
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 57da13f6dc6719166b9051afeb2532ba5fbeff3a
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422774"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "75713483"
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (ジェネリック修飾子) (C# リファレンス)
 
@@ -42,7 +41,7 @@ ms.locfileid: "73422774"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [out](out-generic-modifier.md)
 - [共変性と反変性](../../programming-guide/concepts/covariance-contravariance/index.md)

@@ -15,31 +15,31 @@ helpviewer_keywords:
 ms.assetid: 42790918-4142-4938-b8f4-a56979a55846
 topic_type:
 - apiref
-ms.openlocfilehash: bc5bbba2fa4a95955e52a2e083a2097178b5d96a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0357444aa8fa38bce5a7175cf6aacfe1a2b2b16e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437521"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503641"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps メソッド
-指定されたメタデータトークンによって参照される <xref:System.Type> メンバーの、名前、バイナリ署名、相対仮想アドレスなど、指定されたメンバー定義のメタデータに格納されている情報を取得します。 これは単純なヘルパーメソッドです。 *mb*が MethodDef の場合は、 **getmethodprops**が呼び出されます。*mb*が FieldDef の場合は、 **getfieldprops**が呼び出されます。 詳細については、これらの他の方法を参照してください。 
+指定された <xref:System.Type> メタデータトークンによって参照されるメンバーの、名前、バイナリ署名、相対仮想アドレスなど、指定されたメンバー定義のメタデータに格納されている情報を取得します。 これは単純なヘルパーメソッドです。 *mb*が MethodDef の場合は、 **getmethodprops**が呼び出されます。*mb*が FieldDef の場合は、 **getfieldprops**が呼び出されます。 詳細については、これらの他の方法を参照してください。
   
 ## <a name="syntax"></a>構文  
   
 ```cpp  
 HRESULT GetMemberProps (  
-   [in]  mdToken           mb,   
+   [in]  mdToken           mb,
    [out] mdTypeDef         *pClass,  
-   [out] LPWSTR            szMember,   
-   [in]  ULONG             cchMember,   
-   [out] ULONG             *pchMember,   
+   [out] LPWSTR            szMember,
+   [in]  ULONG             cchMember,
+   [out] ULONG             *pchMember,
    [out] DWORD             *pdwAttr,  
-   [out] PCCOR_SIGNATURE   *ppvSigBlob,   
-   [out] ULONG             *pcbSigBlob,   
-   [out] ULONG             *pulCodeRVA,   
-   [out] DWORD             *pdwImplFlags,   
-   [out] DWORD             *pdwCPlusTypeFlag,   
+   [out] PCCOR_SIGNATURE   *ppvSigBlob,
+   [out] ULONG             *pcbSigBlob,
+   [out] ULONG             *pulCodeRVA,
+   [out] DWORD             *pdwImplFlags,
+   [out] DWORD             *pdwCPlusTypeFlag,
    [out] UVCP_CONSTANT     *ppValue,  
    [out] ULONG             *pcchValue  
 );  
@@ -56,7 +56,7 @@ HRESULT GetMemberProps (
  入出力メンバーの名前。  
   
  `cchMember`  
- から`szMember` バッファーのワイド文字単位のサイズ。  
+ からバッファーのサイズ (ワイド文字単位) `szMember` 。  
   
  `pchMember`  
  入出力返される名前のワイド文字単位のサイズ。  
@@ -68,7 +68,7 @@ HRESULT GetMemberProps (
  入出力メンバーのバイナリメタデータシグネチャへのポインター。  
   
  `pcbSigBlob`  
- 入出力`ppvSigBlob`のサイズ (バイト単位)。  
+ 入出力のサイズ (バイト単位) `ppvSigBlob` 。  
   
  `pulCodeRVA`  
  入出力メンバーの相対仮想アドレスへのポインター。  
@@ -77,24 +77,24 @@ HRESULT GetMemberProps (
  入出力メンバーに関連付けられているメソッド実装フラグ。  
   
  `pdwCPlusTypeFlag`  
- 入出力<xref:System.ValueType>をマークするフラグ。 これは `ELEMENT_TYPE_*` の値の1つです。
+ 入出力をマークするフラグ <xref:System.ValueType> 。 値の1つです `ELEMENT_TYPE_*` 。
   
  `ppValue`  
  入出力このメンバーによって返される定数文字列値。  
   
  `pcchValue`  
- 入出力`ppValue`の文字単位のサイズ。 `ppValue` が文字列を保持していない場合は0。  
+ 入出力の文字数のサイズ `ppValue` `ppValue` 。が文字列を保持しない場合は0。  
   
 ## <a name="requirements"></a>要件  
- **:** 「[システム要件](../../../../docs/framework/get-started/system-requirements.md)」を参照してください。  
+ **:**「[システム要件](../../get-started/system-requirements.md)」を参照してください。  
   
  **ヘッダー:** Cor  
   
  **ライブラリ:** Mscoree.dll にリソースとして含まれています  
   
- **.NET Framework のバージョン:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework のバージョン:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [IMetaDataImport インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 インターフェイス](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport インターフェイス](imetadataimport-interface.md)
+- [IMetaDataImport2 インターフェイス](imetadataimport2-interface.md)

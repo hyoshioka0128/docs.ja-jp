@@ -8,13 +8,13 @@ helpviewer_keywords:
 ms.assetid: 09f3a88d-b132-4505-a8bb-55cbfc6bb55a
 ms.openlocfilehash: 1f0d53d1ec37d200c20ed1b0053b8992cf89c4e0
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61926465"
 ---
 # <a name="base-elements-how-to-topics"></a>基本要素に関する「方法」トピック
-このセクションのトピックでは、次の 4 つの WPF 基本要素を使用する方法をについて説明します。 <xref:System.Windows.UIElement>、 <xref:System.Windows.ContentElement>、 <xref:System.Windows.FrameworkElement>、および<xref:System.Windows.FrameworkContentElement>します。  
+このセクションのトピックでは、<xref:System.Windows.UIElement>、<xref:System.Windows.ContentElement>、<xref:System.Windows.FrameworkElement>、および <xref:System.Windows.FrameworkContentElement> の WPF の 4 つの基本要素の使用方法について説明します。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  [UIElement を透明または半透明にする](how-to-make-a-uielement-transparent-or-semi-transparent.md)  
@@ -28,7 +28,7 @@ ms.locfileid: "61926465"
  [ThicknessConverter オブジェクトを使用する](how-to-use-a-thicknessconverter-object.md)  
  [ContextMenuOpening イベントを処理する](how-to-handle-the-contextmenuopening-event.md)  
   
-## <a name="reference"></a>参照  
+## <a name="reference"></a>関連項目  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.ContentElement>  

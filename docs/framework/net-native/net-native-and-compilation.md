@@ -3,10 +3,10 @@ title: .NET Native とコンパイル
 ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 ms.openlocfilehash: cf5c9f05b2f2cb4ca15e4add5b53bc9bdca757a3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128242"
 ---
 # <a name="net-native-and-compilation"></a>.NET Native とコンパイル
@@ -58,9 +58,9 @@ ms.locfileid: "73128242"
 
 .NET ネイティブ ツール チェーンによって生成される結果のアプリは、プロジェクト ディレクトリの Debug または Release ディレクトリ内の ilc.out という名前のディレクトリに出力されます。 これは次のようなファイルで構成されます。
 
-- *\<アプリ名>* .exe。 *\<アプリ名>* .dll 内の特殊な `Main` エクスポートに制御を移すだけのスタブ実行可能ファイルです。
+- *\<appName>*.exe。 `Main` .dll 内の特殊なエクスポートに制御を転送するだけのスタブ実行可能ファイルです。 *\<appName>*
 
-- *\<アプリ名>* .dll。すべてのアプリケーション コードのほか、依存関係のある .NET Framework クラス ライブラリおよびサード パーティ製のライブラリを格納した Windows のダイナミック リンク ライブラリです。  さらに、たとえば Windows と相互運用するために必要なコードや、アプリ内のオブジェクトをシリアル化するために必要なコードなどのサポート コードも格納しています。
+- *\<appName>*.dll は、すべてのアプリケーションコードと、依存関係があるすべてのサードパーティ製ライブラリの .NET Framework コードを含む、すべてのアプリケーションコードを含む Windows ダイナミックリンクライブラリです。  さらに、たとえば Windows と相互運用するために必要なコードや、アプリ内のオブジェクトをシリアル化するために必要なコードなどのサポート コードも格納しています。
 
 - mrt100_app.dll。リファクタリングしたランタイムであり、ガベージ コレクションなどのランタイム サービスを提供します。
 
@@ -105,6 +105,6 @@ ms.locfileid: "73128242"
 ## <a name="see-also"></a>関連項目
 
 - [メタデータと自己言及的なコンポーネント](../../standard/metadata-and-self-describing-components.md)
-- [.NET ネイティブ内 (Channel 9 ビデオ)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
+- [インサイド .NET ネイティブ (Channel 9 ビデオ)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
 - [リフレクションおよび .NET ネイティブ](reflection-and-net-native.md)
 - [.NET ネイティブの一般的なトラブルシューティング](net-native-general-troubleshooting.md)

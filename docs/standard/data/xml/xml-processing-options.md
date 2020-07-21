@@ -1,16 +1,15 @@
 ---
 title: XML の処理オプション
+description: XML の処理オプションについて確認します。これには、LINQ to XML、XmlReader、XmlWriter、XmlDocument、XPathNavigator、XslCompiledTransform、XmlLite、MSXML が含まれます。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 33ced8ee-1745-4e71-8dee-ebe70ec067c7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3fc7def48bff71935fce7c6ed914ad20c66e5182
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: c41b3dd99264b9043c5914b84bbb76ac02b317ac
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425179"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767768"
 ---
 # <a name="xml-processing-options"></a>XML の処理オプション
 XML データの処理に使用できる Microsoft テクノロジの一覧については、次の表を参照してください。  
@@ -24,7 +23,7 @@ XML データの処理に使用できる Microsoft テクノロジの一覧に�
 |<xref:System.Xml.XmlWriter?displayProperty=nameWithType>|ストリーム ベース|- 高速、非キャッシュ、前方参照専用の XML データ生成手段を提供します。<br />- <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> メソッドを使用してオブジェクトを作成し、<xref:System.Xml.XmlWriterSettings> クラスを使用して、そのオブジェクトで有効にする一連の機能を指定できます。|  
 |<xref:System.Xml.XmlDocument?displayProperty=nameWithType>|メモリ内|- [W3C ドキュメント オブジェクト モデル (DOM) 勧告の DOM Level 1 Core](https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html) および [DOM Level 2 Core](https://www.w3.org/TR/DOM-Level-2-Core/) を実装します。<br />- 使い慣れた DOM モデルに基づくメソッドとプロパティを使用して、ノードを作成、挿入、削除、変更することができます。<br />- このオプションは、W3C DOM を利用する既存のコードを変更する場合に使用します。|  
 |<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|メモリ内|- カーソル モデルを利用する複数の編集オプションとナビゲーション機能を提供します。<br />- XML ドキュメントを <xref:System.Xml.XPath.XPathDocument> オブジェクトまたは <xref:System.Xml.XmlDocument> オブジェクトに格納できます。<br />- XML の読み取り専用処理で優れたパフォーマンスを発揮します。<br />- このオプションは、XPath クエリや XSLT 変換を使用して既存のコードを変更する場合に使用します。|  
-|<xref:System.Xml.Xsl.XslCompiledTransform>|メモリ内|- XSL 変換を使用して XML データを変換するためのオプションを提供します。<br />- [XSLT コンパイラ (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md) を使用すると、プリコンパイルした変換をアプリで参照できます。|  
+|<xref:System.Xml.Xsl.XslCompiledTransform>|メモリ内|- XSL 変換を使用して XML データを変換するためのオプションを提供します。<br />- [XSLT コンパイラ (xsltc.exe)](xslt-compiler-xsltc-exe.md) を使用すると、プリコンパイルした変換をアプリで参照できます。|  
   
 ## <a name="win32-and-com-based-options"></a>Win32 オプションと COM ベースのオプション  
   
@@ -35,6 +34,6 @@ XML データの処理に使用できる Microsoft テクノロジの一覧に�
   
 ## <a name="see-also"></a>関連項目
 
-- [DOM モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
-- [XPath データ モデルを使用した XML データの処理](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [XSLT コンパイラ (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)
+- [DOM モデルを使用した XML データの処理](process-xml-data-using-the-dom-model.md)
+- [XPath データ モデルを使用した XML データの処理](process-xml-data-using-the-xpath-data-model.md)
+- [XSLT コンパイラ (xsltc.exe)](xslt-compiler-xsltc-exe.md)

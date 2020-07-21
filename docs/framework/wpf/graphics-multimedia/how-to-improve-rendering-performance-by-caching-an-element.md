@@ -10,16 +10,16 @@ helpviewer_keywords:
 ms.assetid: 4739c1fc-60ba-4c46-aba6-f6c1a2688f19
 ms.openlocfilehash: 118e8b0cca52c44788c9d5b291d710f765e7af2a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "61947278"
 ---
 # <a name="how-to-improve-rendering-performance-by-caching-an-element"></a>方法: 要素をキャッシュしてレンダリングのパフォーマンスを向上させる
-使用して、 <xref:System.Windows.Media.BitmapCache> 、複雑なのレンダリング パフォーマンスを向上させるためにクラス<xref:System.Windows.UIElement>します。 要素をキャッシュするには、新しいインスタンスを作成、<xref:System.Windows.Media.BitmapCache>クラスし、要素に割り当てる<xref:System.Windows.UIElement.CacheMode%2A>プロパティ。 再利用することができます、<xref:System.Windows.Media.BitmapCache>で効率的に、<xref:System.Windows.Media.BitmapCacheBrush>します。  
+<xref:System.Windows.Media.BitmapCache> クラスを使用すると、複雑な <xref:System.Windows.UIElement> のレンダリング パフォーマンスを向上させることができます。 要素をキャッシュするには、<xref:System.Windows.Media.BitmapCache> クラスの新しいインスタンスを作成し、それを要素の <xref:System.Windows.UIElement.CacheMode%2A> プロパティに割り当てます。 <xref:System.Windows.Media.BitmapCache>は、<xref:System.Windows.Media.BitmapCacheBrush> で効率的に再利用できます。  
   
 ## <a name="example"></a>例  
- 次のコード例では、複合型の要素を作成して、要素がアニメーション化されるときにパフォーマンスが向上ビットマップとしてキャッシュする方法を示します。 要素は、図形のジオメトリの頂点の数を保持するキャンバスです。 A<xref:System.Windows.Media.BitmapCache>に割り当てられている値、既定値は、<xref:System.Windows.UIElement.CacheMode%2A>キャンバスのし、キャッシュされたビットマップのスムーズな拡張、アニメーションを示しています。  
+ 次のコード例では、複合要素を作成し、それをビットマップとしてキャッシュして、要素をアニメーション化するときにパフォーマンスを向上させる方法を示します。 この要素は、頂点が多数ある形状ジオメトリを保持するキャンバスです。 既定値の <xref:System.Windows.Media.BitmapCache> がキャンバスの <xref:System.Windows.UIElement.CacheMode%2A> に割り当てられ、キャッシュされたビットマップはアニメーションでスムーズにスケーリングされます。  
   
  [!code-xaml[System.Windows.Media.BitmapCache#_BitmapCacheXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/system.windows.media.bitmapcache/cs/window1.xaml#_bitmapcachexaml)]  
   
@@ -28,4 +28,4 @@ ms.locfileid: "61947278"
 - <xref:System.Windows.Media.BitmapCache>
 - <xref:System.Windows.Media.BitmapCacheBrush>
 - <xref:System.Windows.UIElement.CacheMode%2A>
-- [方法: キャッシュされた要素をブラシとして使用します。](how-to-use-a-cached-element-as-a-brush.md)
+- [方法: キャッシュされた要素をブラシとして使用する](how-to-use-a-cached-element-as-a-brush.md)

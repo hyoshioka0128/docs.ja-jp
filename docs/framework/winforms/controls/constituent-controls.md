@@ -9,15 +9,15 @@ helpviewer_keywords:
 - constituent controls [Windows Forms]
 - user controls [Windows Forms], constituent controls
 ms.assetid: 5565e720-198b-4bbd-a2bd-c447ba641798
-ms.openlocfilehash: 522a1012fc7bdd54860b0538064ee073f7a761f7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2865a3d85bd56151038ee90c18d199d3a584b5d4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918426"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79182411"
 ---
 # <a name="constituent-controls"></a>内在コントロール
-ユーザー コントロールを構成するコントロール ("*内在コントロール*" と呼ばれます) は、カスタム グラフィックスのレンダリングに関してはそれほど柔軟ではありません。 すべての Windows フォームコントロールは、独自の<xref:System.Windows.Forms.Control.OnPaint%2A>メソッドを使用して独自のレンダリングを処理します。 このメソッドは保護されているため、開発者はアクセスできず、したがってコントロールが描画されるときに実行を防ぐことはできません。 ただし、これは、内在コントロールの外観に影響を与えるコードを追加できないという意味ではありません。 イベント ハンドラーを追加することで、追加のレンダリングを実現できます。 たとえば、という名前<xref:System.Windows.Forms.UserControl> `MyButton`のボタンを使用してを作成したとします。 によって<xref:System.Web.UI.WebControls.Button>提供された内容を超えて追加のレンダリングを使用する場合は、次のようなコードをユーザーコントロールに追加します。  
+ユーザー コントロールを構成するコントロール ("*内在コントロール*" と呼ばれます) は、カスタム グラフィックスのレンダリングに関してはそれほど柔軟ではありません。 すべての Windows フォーム コントロールは、独自の<xref:System.Windows.Forms.Control.OnPaint%2A>メソッドを使用して独自のレンダリングを処理します。 このメソッドは保護されているため、開発者はアクセスできず、したがってコントロールが描画されるときに実行を防ぐことはできません。 ただし、これは、内在コントロールの外観に影響を与えるコードを追加できないという意味ではありません。 イベント ハンドラーを追加することで、追加のレンダリングを実現できます。 たとえば、 という名前<xref:System.Windows.Forms.UserControl>`MyButton`のボタンを使用して を作成したとします。 によって<xref:System.Web.UI.WebControls.Button>提供される以上の追加のレンダリングを必要とする場合は、次のようなコードをユーザー コントロールに追加します。  
   
 ```vb  
 Public Sub MyPaint(ByVal sender as Object, e as PaintEventArgs) Handles _  
@@ -28,10 +28,10 @@ End Sub
   
 ```csharp  
 // Add the event handler to the button's Paint event.  
-MyButton.Paint +=   
+MyButton.Paint +=
    new System.Windows.Forms.PaintEventHandler (this.MyPaint);  
 // Create the custom painting method.  
-protected void MyPaint (object sender,   
+protected void MyPaint (object sender,
 System.Windows.Forms.PaintEventArgs e)  
 {  
    // Additional rendering code goes here.  
@@ -39,14 +39,14 @@ System.Windows.Forms.PaintEventArgs e)
 ```  
   
 > [!NOTE]
-> などの一部の Windows フォームコントロール<xref:System.Windows.Forms.TextBox>は、Windows によって直接描画されます。 これらのインスタンス<xref:System.Windows.Forms.Control.OnPaint%2A>では、メソッドは呼び出されません。したがって、上記の例は呼び出されません。  
+> などの<xref:System.Windows.Forms.TextBox>Windows フォーム コントロールの一部は、Windows によって直接描画されます。 これらの場合、<xref:System.Windows.Forms.Control.OnPaint%2A>メソッドは呼び出されないため、上記の例は呼び出されることはありません。  
   
- この例は、`MyButton.Paint` イベントが実行されるたびに実行するメソッドを作成し、それによって追加のグラフィカル表示をコントロールに追加します。 これにより `MyButton.OnPaint` の実行は妨げられないので、カスタム描画に加えて、ボタンによって通常実行されるすべての描画が実行されることに注意してください。 GDI+ テクノロジとカスタム レンダリングについて詳しくは、　[GDI+ を使ったグラフィカル イメージの作成](../advanced/how-to-create-graphics-objects-for-drawing.md) に関するページをご覧ください。 コントロールの表示を独自のものにしたい場合の最善の方法は、継承コントロールを作成し、カスタム レンダリング コードをそこに記述するというものです。 詳しくは、「[ユーザー描画コントロール](user-drawn-controls.md)」をご覧ください。  
+ この例は、`MyButton.Paint` イベントが実行されるたびに実行するメソッドを作成し、それによって追加のグラフィカル表示をコントロールに追加します。 これにより `MyButton.OnPaint` の実行は妨げられないので、カスタム描画に加えて、ボタンによって通常実行されるすべての描画が実行されることに注意してください。 GDI+ テクノロジとカスタム レンダリングについて詳しくは、「[Creating Graphical Images with GDI+](../advanced/how-to-create-graphics-objects-for-drawing.md)」 (GDI+ でのグラフィカル イメージの作成) をご覧ください。 コントロールの表示を独自のものにしたい場合の最善の方法は、継承コントロールを作成し、カスタム レンダリング コードをそこに記述するというものです。 詳しくは、「[ユーザー描画コントロール](user-drawn-controls.md)」をご覧ください。  
   
 ## <a name="see-also"></a>関連項目
 
 - <xref:System.Windows.Forms.UserControl>
 - <xref:System.Windows.Forms.Control.OnPaint%2A>
 - [ユーザー描画コントロール](user-drawn-controls.md)
-- [方法: 描画用のグラフィックスオブジェクトを作成する](../advanced/how-to-create-graphics-objects-for-drawing.md)
+- [方法 : 描画する Graphics オブジェクトを作成する](../advanced/how-to-create-graphics-objects-for-drawing.md)
 - [さまざまなカスタム コントロール](varieties-of-custom-controls.md)

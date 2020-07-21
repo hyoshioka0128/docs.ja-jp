@@ -1,18 +1,17 @@
 ---
 title: 匿名関数 - C# プログラミング ガイド
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [C#], as anonymous functions
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: 078596dcbfd907be53cae2ab3e7dcaa9e311c3f4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: c99aaf4f35d2d294a9f07de54129bb3b4fbfbfde
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588819"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241904"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>匿名関数 (C# プログラミング ガイド)
 
@@ -22,7 +21,7 @@ ms.locfileid: "69588819"
 
 ## <a name="the-evolution-of-delegates-in-c"></a>C\# のデリゲートの進化
 
- C# 1.0 では、コードのどこかで定義したメソッドを使用して明示的に初期化することで、デリゲートのインスタンスを作成していました。 C# 2.0 では、デリゲートの呼び出しで実行できる名前なしのインライン ステートメント ブロックを記述する方法として、匿名メソッドの概念が導入されました。 C# 3.0 では、ラムダ式が導入されました。ラムダ式は、概念的には匿名メソッドと似ていますが、より表現力が豊かで簡潔です。 これら 2 つの機能は総称として*匿名関数*と呼ばれます。 一般的に、バージョン 3.5 以降の .NET Framework をターゲットとするアプリケーションであれば、ラムダ式を使用することが推奨されます。  
+ C# 1.0 では、コードのどこかで定義したメソッドを使用して明示的に初期化することで、デリゲートのインスタンスを作成していました。 C# 2.0 では、デリゲートの呼び出しで実行できる名前なしのインライン ステートメント ブロックを記述する方法として、匿名メソッドの概念が導入されました。 C# 3.0 では、ラムダ式が導入されました。ラムダ式は、概念的には匿名メソッドと似ていますが、より表現力が豊かで簡潔です。 これら 2 つの機能は総称として*匿名関数*と呼ばれます。 一般的に、.NET Framework 3.5 以降のバージョンを対象とするアプリケーションであれば、ラムダ式を使用することが推奨されます。  
   
  次の例は、C# 1.0 から C# 3.0 のデリゲート作成の進化を示しています。  
   

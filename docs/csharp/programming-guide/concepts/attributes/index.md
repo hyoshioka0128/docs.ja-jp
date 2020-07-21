@@ -1,12 +1,12 @@
 ---
 title: 属性 (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 2a07035ea97bb0ff1a8f4793fe8a30d3a42c34a7
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 358285a39f72ad3ddf1b265e20b443308375d074
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141567"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241579"
 ---
 # <a name="attributes-c"></a>属性 (C#)
 
@@ -41,7 +41,7 @@ ms.locfileid: "74141567"
 [!code-csharp[Using the conditional attribute](~/samples/snippets/csharp/attributes/AttributesOverview.cs#5)]
 
 > [!NOTE]
-> 慣例により、属性名はすべて "Attribute" という単語で終わります。これは、.NET ライブラリの他の項目と区別するためです。 ただし、コード内で属性を使用する場合は、attribute サフィックスを指定する必要はありません。 たとえば、`[DllImport]` は `[DllImportAttribute]` と同等ですが、.NET Framework クラス ライブラリでは `DllImportAttribute` は属性の実際の名前を表します。
+> 慣例により、属性名はすべて "Attribute" という単語で終わります。これは、.NET ライブラリの他の項目と区別するためです。 ただし、コード内で属性を使用する場合は、attribute サフィックスを指定する必要はありません。 たとえば、`[DllImport]` は `[DllImportAttribute]` と同等ですが、.NET クラス ライブラリでは `DllImportAttribute` は属性の実際の名前を表します。
 
 ### <a name="attribute-parameters"></a>属性のパラメーター
 
@@ -81,7 +81,7 @@ ms.locfileid: "74141567"
 
 対象の値 `field` を指定して、[auto-implemented プロパティ](../../../properties.md)に作成されたバッキング フィールドに属性を適用します。
 
-次の例では、アセンブリとモジュールに属性を適用する方法を示します。 詳細については、「[共通の属性 (C#)](common-attributes.md)」を参照してください。
+次の例では、アセンブリとモジュールに属性を適用する方法を示します。 詳細については、「[共通の属性 (C#)](../../../language-reference/attributes/global.md)」を参照してください。
 
 ```csharp
 using System;
@@ -95,14 +95,14 @@ C# でメソッド、メソッドのパラメーター、およびメソッド�
 [!code-csharp[Applying attributes to different code elements](../../../../../samples/snippets/csharp/attributes/AttributesOverview.cs#6)]
 
 > [!NOTE]
-> `ValidatedContract` が有効になるように定義されるターゲットが何であっても、`return` は指定する必要があります。これは、`ValidatedContract` が戻り値にのみ適用されるように定義されている場合でも必要です。 つまり、コンパイラは `AttributeUsage` 情報を使用して、あいまいな属性ターゲットを解決しません。 詳細については、「[AttributeUsage (C#)](attributeusage.md)」を参照してください。
+> `ValidatedContract` が有効になるように定義されるターゲットが何であっても、`return` は指定する必要があります。これは、`ValidatedContract` が戻り値にのみ適用されるように定義されている場合でも必要です。 つまり、コンパイラは `AttributeUsage` 情報を使用して、あいまいな属性ターゲットを解決しません。 詳細については、「[AttributeUsage (C#)](../../../language-reference/attributes/general.md)」を参照してください。
 
 ## <a name="common-uses-for-attributes"></a>属性の一般的な使用法
 
 次の表に、コードでの属性の一般的な使用法をいくつか示します。
 
-- Web サービスの `WebMethod` 属性を使用してメソッドをマークして、メソッドが SOAP プロトコルを介して呼び出されるようにします。 詳細については、<xref:System.Web.Services.WebMethodAttribute> を参照してください。
-- ネイティブ コードと相互運用するときにメソッドのパラメーターをマーシャリングする方法を記述します。 詳細については、<xref:System.Runtime.InteropServices.MarshalAsAttribute> を参照してください。
+- Web サービスの `WebMethod` 属性を使用してメソッドをマークして、メソッドが SOAP プロトコルを介して呼び出されるようにします。 詳細については、「<xref:System.Web.Services.WebMethodAttribute>」を参照してください。
+- ネイティブ コードと相互運用するときにメソッドのパラメーターをマーシャリングする方法を記述します。 詳細については、「<xref:System.Runtime.InteropServices.MarshalAsAttribute>」を参照してください。
 - クラス、メソッド、およびインターフェイスの COM プロパティを記述します。
 - <xref:System.Runtime.InteropServices.DllImportAttribute> クラスを使用してアンマネージ コードを呼び出します。
 - タイトル、バージョン、説明、または商標についてのアセンブリを記述します。
@@ -120,8 +120,8 @@ C# でメソッド、メソッドのパラメーター、およびメソッド�
 - [カスタム属性の作成 (C#)](creating-custom-attributes.md)  
 - [リフレクションを使用した属性へのアクセス (C#)](accessing-attributes-by-using-reflection.md)  
 - [属性を使用して C/C++ の共用体を作成する方法 (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
-- [共通属性 (C#)](common-attributes.md)  
-- [呼び出し元情報 (C#)](../caller-information.md)  
+- [共通属性 (C#)](../../../language-reference/attributes/global.md)  
+- [呼び出し元情報 (C#)](../../../language-reference/attributes/caller-information.md)  
 
 ## <a name="see-also"></a>関連項目
 
