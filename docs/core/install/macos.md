@@ -96,7 +96,7 @@ macOS Catalina (バージョン 10.15) 以降では、2019 年 6 月 1 日より
 
 *System.Drawing.Common* アセンブリを使用する .NET Core アプリケーションでは、libgdiplus をインストールする必要があります。
 
-libgdiplus を取得する簡単な方法は、macOS の [Homebrew ("brew")](https://brew.sh/) パッケージ マネージャーを使用することです。 *brew* をインストールしたら、端末 (コマンド) プロンプトで次のコマンドを実行して libgdiplus をインストールします。
+libgdiplus を取得する簡単な方法は、macOS の [Homebrew ("brew")](https://brew.sh/) パッケージ マネージャーを使用することです。 *brew* をインストールしたら、ターミナル (コマンド) プロンプトで次のコマンドを実行して libgdiplus をインストールします。
 
 ```console
 brew update
