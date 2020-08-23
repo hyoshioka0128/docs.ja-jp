@@ -29,11 +29,11 @@ F# は、環境に応じて複数の方法でインストールできます。
 
 1. パスに[git](https://git-scm.com/download)がインストールされ、使用可能であることを確認します。 コマンド プロンプトで入力し`git --version`**、Enter**キーを押すと、正しくインストールされていることを確認できます。
 
-2. [.NET コア SDK](https://dotnet.microsoft.com/download)と[Visual Studio コード](https://code.visualstudio.com)をインストールします。
+2. [.NET Core SDK](https://dotnet.microsoft.com/download)と[Visual Studio Code](https://code.visualstudio.com)をインストールします。
 
 3. 拡張機能アイコンを選択し、「Ionide」を検索します。
 
-   Visual Studio コードで F# のサポートに必要なプラグインは[、Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)だけです。 しかし, また、[フェイ](https://fake.build/)クサポートを取得するために[Ionide-FAKE](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-FAKE)をインストールし[、Paket](https://fsprojects.github.io/Paket/)のサポートを得るために[Ionide-Paket](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-Paket)を取得することができます. FAKE と Paket は、プロジェクトをビルドし、依存関係を管理するための追加の F# コミュニティ ツールです。
+   Visual Studio Code で F# のサポートに必要なプラグインは[、Ionide-fsharp](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)だけです。 しかし, また、[フェイ](https://fake.build/)クサポートを取得するために[Ionide-FAKE](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-FAKE)をインストールし[、Paket](https://fsprojects.github.io/Paket/)のサポートを得るために[Ionide-Paket](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-Paket)を取得することができます. FAKE と Paket は、プロジェクトをビルドし、依存関係を管理するための追加の F# コミュニティ ツールです。
 
 ## <a name="install-f-with-visual-studio-for-mac"></a>Mac 用の Visual Studio で F# をインストールする
 
