@@ -38,7 +38,7 @@ ms.locfileid: "85617640"
 
 ## <a name="access-your-storage-accounts"></a>ストレージ アカウントにアクセスする
 
-1. Azure ストレージ エクスプローラーを開きます。
+1. Azure Storage Explorer を開きます。
 
 2. 左側のメニューで **[アカウントの追加]** を選択し、自分の Azure アカウントにサインインします。
 
