@@ -38,7 +38,7 @@ dotnet remove reference -h|--help
 
 `PROJECT_REFERENCES`
 
-削除するプロジェクト間 (P2P) 参照。 1 つまたは複数のプロジェクトを指定できます。 [glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))は Unix/Linux ベースの端末でサポートされています。
+削除するプロジェクト間 (P2P) 参照。 1 つまたは複数のプロジェクトを指定できます。 [glob パターン](https://en.wikipedia.org/wiki/Glob_(programming))は Unix/Linux ベースのターミナルでサポートされています。
 
 ## <a name="options"></a>オプション
 
