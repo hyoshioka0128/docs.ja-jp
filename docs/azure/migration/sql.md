@@ -15,7 +15,7 @@ ms.locfileid: "86174284"
 この記事では、SQL Server データベースを Azure に移行するための 2 つの選択肢について概説します。 Azure では、運用 SQL Server データベースを移行するための主な選択肢が 3 つあります。 この記事では、次の 2 つの選択肢を中心に説明します。
 
 1. [Azure VM 上の SQL Server](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview): Azure で実行されている Windows 仮想マシンにインストールされ、ホストされている SQL Server インスタンス。これは、サービスとしてのインフラストラクチャ (IaaS) とも呼ばれます。
-2. [Azure SQL Database](/azure/sql-database/sql-database-technical-overview):フル マネージドの Azure SQL データベース サービス。これは、サービスとしてのプラットフォーム (PaaS) とも呼ばれます。
+2. [Azure SQL Database](/azure/sql-database/sql-database-technical-overview):フル マネージドの Azure SQL Database サービス。これは、サービスとしてのプラットフォーム (PaaS) とも呼ばれます。
 
 それぞれに、移行前に評価する必要がある長所と短所があります。 3 番目の選択肢は、[Azure SQL Database Managed Instance](/azure/sql-database/sql-database-managed-instance) です。
 
@@ -56,7 +56,7 @@ ms.locfileid: "86174284"
 
 一連のシナリオに基づく各サービスの違いを次の表に示します。
 
-| シナリオ | Azure VM の SQL Server | Azure SQL データベース |
+| シナリオ | Azure VM の SQL Server | Azure SQL Database |
 |----------|-------------------------|--------------------|
 | 移行 | データベースの最小限の変更が必要です。 | [Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595) によって Azure SQL で利用できないと判断された機能を使用する場合や、ローカルにインストールされた実行可能ファイルなどの他の依存関係がある場合、データベースの変更が必要になることがあります。|
 | 可用性、復旧、アップグレードの管理 | 可用性と復旧は手動で構成します。 アップグレードは、[VM Scale Sets](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) を使用して自動化できます。 | 自動的に管理されます。 |
