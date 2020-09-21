@@ -240,7 +240,7 @@ ENTRYPOINT ["dotnet", "NetCore.Docker.dll"]
 
 次のコマンド `ENTRYPOINT` は、実行可能ファイルとして実行するためにコンテナーを構成するよう Docker に指示します。 コンテナーの起動時に、`ENTRYPOINT` コマンドが実行されます。 このコマンドが終了すると、コンテナーは自動的に停止します。
 
-端末から `docker build -t counter-image -f Dockerfile .` を実行し、そのコマンドが終了したら `docker images` を実行します。
+ターミナル から `docker build -t counter-image -f Dockerfile .` を実行し、そのコマンドが終了したら `docker images` を実行します。
 
 ```Docker
 docker build -t counter-image -f Dockerfile .
