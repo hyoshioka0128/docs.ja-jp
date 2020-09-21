@@ -171,7 +171,7 @@ Visual Studio Code には、Visual Studio のような自動化された .NET Co
 
 01. [Visual Studio Code をダウンロードしてインストールします](https://code.visualstudio.com/Download)。
 01. [.NET Core SDK をダウンロードしてインストールします](https://dotnet.microsoft.com/download/dotnet-core)。
-01. [Visual Studio Code マーケットプレースから C# 拡張機能をインストールします](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)。
+01. [Visual Studio Code Marketplace から C# 拡張機能をインストールします](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)。
 
 ## <a name="install-with-bash-automation"></a>bash オートメーションを使用してインストールする
 
