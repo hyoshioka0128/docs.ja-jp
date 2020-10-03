@@ -196,7 +196,7 @@ dotnet new -h|--help
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  ターゲットにする[フレームワーク](../../standard/frameworks.md)が指定されます。 値: .NET Core クラス ライブラリを作成するには `netcoreapp<version>`、.NET 標準クラス ライブラリを作成するには `netstandard<version>` です。 既定値は `netstandard2.0` です。
+  ターゲットにする[フレームワーク](../../standard/frameworks.md)が指定されます。 値: .NET Core クラス ライブラリを作成するには `netcoreapp<version>`、.NET standards クラス ライブラリを作成するには `netstandard<version>` です。 既定値は `netstandard2.0` です。
 
 - **`--langVersion <VERSION_NUMBER>`**
 
