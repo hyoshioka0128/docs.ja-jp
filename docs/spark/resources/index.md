@@ -21,4 +21,4 @@ ms.locfileid: "91955500"
 
 ### <a name="how-to-engage-contribute-and-provide-feedback"></a>参加、投稿、フィードバックを行う方法
 
-.NET for Apache Spark チームでは、イシューとプル要求の両形式での[投稿](https://github.com/dotnet/spark/blob/master/docs/contributing.md)を推奨しています。 まずは投稿する既存の[イシュー](https://github.com/dotnet/spark/issues)を見つけます。 イシューがない場合は、新しい[イシュー](https://github.com/dotnet/spark/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+)を開きます。
+.NET for Apache Spark チームでは、イシューとプルリクエストの両形式での[投稿](https://github.com/dotnet/spark/blob/master/docs/contributing.md)を推奨しています。 まずは投稿する既存の[イシュー](https://github.com/dotnet/spark/issues)を見つけます。 イシューがない場合は、新しい[イシュー](https://github.com/dotnet/spark/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+)を開きます。
