@@ -53,7 +53,7 @@ Spark 言語拡張機能の相互運用のサポートについては[提案](ht
 
 ## <a name="contributions"></a>投稿
 
-.NET for Apache Spark チームでは、GitHub イシューとプル要求の両方での投稿を推奨しています。 まず、[既存のイシュー](https://github.com/dotnet/spark/issues)を探します。 既存のイシューが見つからない場合は、[新しいイシューを開始](https://github.com/dotnet/spark/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+)します。
+.NET for Apache Spark チームでは、GitHub イシューとプルリクエストの両方での投稿を推奨しています。 まず、[既存のイシュー](https://github.com/dotnet/spark/issues)を探します。 既存のイシューが見つからない場合は、[新しいイシューを開始](https://github.com/dotnet/spark/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+)します。
 
 ## <a name="next-steps"></a>次の手順
 
