@@ -60,7 +60,7 @@ ASP.NET のクロスプラットフォームで高パフォーマンスなオー
 
 System.\* (および限られた範囲の Microsoft.\*) 名前空間を構成するライブラリのセット。 BCL は汎用の下位レベル フレームワークであり、ASP.NET Core などの上位レベル アプリケーション フレームワークはそれを基にして構築されています。
 
-[.NET 5 (および .NET Core) 以降のバージョン](#net-5-and-later-versions)用の BCL のソース コードは、[.NET ランタイム リポジトリ](https://github.com/dotnet/runtime)に含まれています。 この新しい .NET の実装用の BCL API の大部分は、.NET Framework でも使用できるため、このソース コードは、.NET Framework BCL ソース コードが分岐したものと考えることができます。
+[.NET 5 (および .NET Core) 以降のバージョン](#net-5-and-later-versions)用の BCL のソース コードは、[.NET ランタイム リポジトリ](https://github.com/dotnet/runtime)に含まれています。 この新しい .NET の実装用の BCL API の大部分は、.NET Framework でも使用できるため、このソース コードは、.NET Framework BCL ソース コードがブランチしたものと考えることができます。
 
 ## <a name="clr"></a>CLR
 
