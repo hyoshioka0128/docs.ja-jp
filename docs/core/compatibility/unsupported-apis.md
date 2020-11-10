@@ -1,7 +1,7 @@
 ---
 title: .NET Core と .NET 5 以降でサポートされていない API
 titleSuffix: ''
-description: .Net Core と .NET 5.0 以降のバージョンで常に例外をスローする .NET API について学習します。
+description: .NET Core と .NET 5.0 以降のバージョンで常に例外をスローする .NET API について学習します。
 ms.date: 10/13/2020
 ms.openlocfilehash: 51d73557a48910d9cb1c4d3cdced34dfe4d849d8
 ms.sourcegitcommit: 6bef8abde346c59771a35f4f76bf037ff61c5ba3
