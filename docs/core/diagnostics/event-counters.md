@@ -15,7 +15,7 @@ ms.locfileid: "91955318"
 
 EventCounters は、軽量でクロスプラットフォームであり、ほぼリアルタイムのパフォーマンス メトリックの収集に使用される .NET Core API です。 EventCounters は、Windows 上の .NET Framework の "パフォーマンス カウンター" に代わるクロスプラットフォームとして追加されました。 この記事では、EventCounters の概要とその実装方法および使用方法について学習します。
 
-.Net Core ランタイムといくつかの .NET ライブラリにより、.NET Core 3.0 以降の EventCounters が使用され、基本的な診断情報が公開されます。 .NET ランタイムによって提供される EventCounters とは別に、独自の EventCounters を実装することもできます。 EventCounters を使用して、さまざまなメトリックを追跡できます。
+.NET Core ランタイムといくつかの .NET ライブラリにより、.NET Core 3.0 以降の EventCounters が使用され、基本的な診断情報が公開されます。 .NET ランタイムによって提供される EventCounters とは別に、独自の EventCounters を実装することもできます。 EventCounters を使用して、さまざまなメトリックを追跡できます。
 
 EventCounters は <xref:System.Diagnostics.Tracing.EventSource> の一部として存在し、定期的にリスナー ツールに自動的にプッシュされます。 <xref:System.Diagnostics.Tracing.EventSource> の他のすべてのイベントと同様に、<xref:System.Diagnostics.Tracing.EventListener> と EventPipe を介してインプロセスとアウトプロセスの両方で使用できます。 この記事では、EventCounters のクロスプラットフォーム機能に焦点を当てています。PerfView と ETW (Event Trace for Windows) は意図的に除外していますが、両方とも EventCounters で使用できます。
 
