@@ -1,6 +1,6 @@
 ---
 title: macOS Catalina の公証に対応する
-description: macOS で、.NET Core ランタイム、SDK、および .Net Core でビルドされたアプリをインストールするときに、公証と、証明書に関する問題を処理する方法について説明します。
+description: macOS で、.NET Core ランタイム、SDK、および .NET Core でビルドされたアプリをインストールするときに、公証と、証明書に関する問題を処理する方法について説明します。
 author: adegeo
 ms.author: adegeo
 ms.date: 02/14/2020
