@@ -299,7 +299,7 @@ let doWork data = async {
 * **AwesomeLibrary.CSharp** - C# で使用するためのパブリック API を含むプロジェクト
 * **AwesomeLibrary.FSharp** - F# で使用するためのパブリック API を含むプロジェクト
 
-自分の端末で次のコマンドを実行し、このガイドと同じ構造を作成することができます。
+自分のターミナルで次のコマンドを実行し、このガイドと同じ構造を作成することができます。
 
 ```dotnetcli
 mkdir AwesomeLibrary && cd AwesomeLibrary
