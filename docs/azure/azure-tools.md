@@ -29,7 +29,7 @@ Azure PowerShell は、コマンド ラインから、または PowerShell ス�
 Azure Storage Explorer は、Azure でストレージ リソースとデータを管理するための無料の GUI ツールです。  Azure キュー、テーブル、CosmosDB でデータを管理するだけでなく、BLOB とファイルをアップロード、ダウンロードおよび管理することができます。  Azure のいずれかのストレージ リソースで作業する予定の場合は、Azure Storage Explorer をインストールすることをお勧めします。  Windows、macOS および Linux で使用できるバージョンがあります。  
 
 > [!div class="nextstepaction"]
-> [Azure ストレージ エクスプローラーをダウンロードする](https://azure.microsoft.com/en-us/features/storage-explorer/)
+> [Azure Storage Explorer をダウンロードする](https://azure.microsoft.com/en-us/features/storage-explorer/)
 
 ## <a name="azure-data-studio"></a>Azure Data Studio
 
